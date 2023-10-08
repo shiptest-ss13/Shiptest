@@ -4,6 +4,7 @@
 	icon = 'icons/obj/railing.dmi'
 	icon_state = "railing"
 	flags_1 = ON_BORDER_1
+	layer = RAILING_LAYER
 	pass_flags_self = LETPASSTHROW
 	density = TRUE
 	anchored = TRUE
@@ -81,11 +82,10 @@
 		to_chat(user, "<span class='notice'>You [anchored ? "fasten the railing to":"unfasten the railing from"] the floor.</span>")
 	return TRUE
 
-/obj/structure/railing/CanPass(atom/movable/mover, turf/target)
+/obj/structure/railing/CanPass(atom/movable/mover, border_dir)
 	. = ..()
-	if(get_dir(loc, target) & dir)
-		var/checking = FLYING | FLOATING
-		return . || mover.throwing || mover.movement_type & checking
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
 	return TRUE
 
 /obj/structure/railing/proc/on_exit(datum/source, atom/movable/leaving, direction)
@@ -144,12 +144,12 @@
 /obj/structure/railing/modern
 	name = "modern railing"
 	desc = "Modern looking railing meant to protect idiots like you from falling."
-	icon = 'icons/obj/railing_m.dmi'
+	icon = 'icons/obj/railing_modern.dmi'
 	icon_state = "railing_m"
 	layer = ABOVE_MOB_LAYER
 	///icon for the color overlay
 	var/image/cover
-	///cover color, by default this one
+	///cover color, by default white
 	var/railing_color = "#ffffff"
 	color = null
 
@@ -157,18 +157,24 @@
 	GetCover()
 	return ..()
 
+/obj/structure/railing/modern/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>The handrail can be recolored with a <b>spraycan</b>.</span>"
+
 /obj/structure/railing/modern/proc/GetCover()
 	if(cover)
 		cut_overlay(cover)
-	cover = mutable_appearance('icons/obj/railing_m.dmi', "[icon_state]_color") //allows for the handrail part to be colored while keeping the body gray
+	cover = mutable_appearance('icons/obj/railing_modern.dmi', "[icon_state]_color") //allows for the handrail part to be colored while keeping the body gray
 	cover.color = railing_color
 	add_overlay(cover)
 
 /obj/structure/railing/modern/attacked_by(obj/item/I, mob/living/user)
 	. = ..()
-	if(istype(I, /obj/item/toy/crayon))
-		var/obj/item/toy/crayon/C = I
-		railing_color = C.crayon_color
+	if(istype(I, /obj/item/toy/crayon/spraycan))
+		var/obj/item/toy/crayon/spraycan/C = I
+		if(C.is_capped)
+			return
+		railing_color = C.paint_color
 	if(railing_color)
 		GetCover()
 
@@ -176,6 +182,8 @@
 	icon_state = "railing_m_end"
 
 /obj/structure/railing/modern/corner
+	name = "modern railing corner"
 	icon_state = "railing_m_corner"
 	density = FALSE
 	climbable = FALSE
+	buildstackamount = 1

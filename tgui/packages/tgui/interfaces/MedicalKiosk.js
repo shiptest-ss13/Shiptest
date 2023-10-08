@@ -19,7 +19,7 @@ export const MedicalKiosk = (props, context) => {
   const { active_status_1, active_status_2, active_status_3, active_status_4 } =
     data;
   return (
-    <Window width={575} height={420} resizable>
+    <Window width={575} height={420}>
       <Window.Content scrollable>
         <Flex mb={1}>
           <Flex.Item mr={1}>
@@ -86,7 +86,7 @@ const MedicalKioskScanButton = (props, context) => {
           color={paid ? 'green' : 'grey'}
         />
       </Stack.Item>
-      <Stack.Item grow>
+      <Stack.Item grow basis="content">
         <Button
           fluid
           icon={icon}

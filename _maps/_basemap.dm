@@ -1,5 +1,5 @@
 /// VERY IMPORTANT FOR RUNNING FAST IN PRODUCTION!
-/// If you define this flag, more things will init during initializations rather than when they're needed, such as planetoids.
+/// If you define this flag, centcom will load. It's also supposed to preload planetoids, but that is disabled.
 //#define FULL_INIT
 
 #ifdef FULL_INIT
@@ -8,10 +8,8 @@
 	#include "map_files\generic\blank.dmm"
 #endif
 
-#ifndef LOWMEMORYMODE
-	#ifdef ALL_MAPS
-		#ifdef CIBUILDING
-			#include "templates.dm"
-		#endif
+#ifdef ALL_MAPS
+	#ifdef CIBUILDING
+		#include "templates.dm"
 	#endif
 #endif

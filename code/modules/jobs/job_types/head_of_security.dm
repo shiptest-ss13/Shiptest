@@ -1,15 +1,9 @@
 /datum/job/hos
 	name = "Head of Security"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 14
-	exp_requirements = 300
 	officer = TRUE
 	wiki_page = "Head_of_Security" //WS Edit - Wikilinks/Warning
-
-	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_SECURITY
 
 	outfit = /datum/outfit/job/hos
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
@@ -44,10 +38,10 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/HoS
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	suit_store = /obj/item/gun/energy/e_gun
+	suit_store = null
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/melee/classic_baton=1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -75,7 +69,7 @@
 	head = /obj/item/clothing/head/warden
 	suit = /obj/item/clothing/suit/armor/vest/syndie
 	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
+	backpack_contents = list(/obj/item/melee/classic_baton=1,/obj/item/storage/box/survival/syndie=1)
 
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
@@ -85,3 +79,49 @@
 	alt_uniform = null
 	head = /obj/item/clothing/head/beret/sec/hos
 
+/datum/outfit/job/hos/frontiersmen
+	name = "Master At Arms (frontiersmen)"
+
+	ears = /obj/item/radio/headset/syndicate/alt
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
+	head = /obj/item/clothing/head/caphat/frontier
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
+	shoes = /obj/item/clothing/shoes/cowboy/black
+	gloves = /obj/item/clothing/gloves/combat
+	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	suit_store = null
+
+/datum/outfit/job/hos/roumain
+	jobtype = /datum/job/hos/roumain
+	name = "Hunter Montagne (Saint-Roumain Militia)"
+	ears = /obj/item/radio/headset/headset_com
+	uniform = /obj/item/clothing/under/suit/roumain
+	alt_uniform = null
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
+	alt_suit = null
+	dcoat = null
+	head = /obj/item/clothing/head/HoS/cowboy/montagne
+	gloves = null
+	id = /obj/item/card/id/silver
+	belt = null
+	glasses = null
+	suit_store = null
+	r_pocket = null
+	l_pocket = null
+	duffelbag = /obj/item/storage/backpack/cultpack
+	courierbag = /obj/item/storage/backpack/cultpack
+	backpack = /obj/item/storage/backpack/cultpack
+	satchel = /obj/item/storage/backpack/cultpack
+	box = null
+	implants = null
+	chameleon_extras = null
+	backpack_contents = list(
+		/obj/item/book/manual/srmlore,
+		/obj/item/stamp/chap = 1,
+		/obj/item/melee/classic_baton/telescopic=1
+		)
+
+/datum/job/hos/roumain
+	outfit = /datum/outfit/job/hos/roumain
+	mind_traits = null

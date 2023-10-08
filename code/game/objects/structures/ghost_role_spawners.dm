@@ -68,7 +68,7 @@
 	yolk.equipOutfit(/datum/outfit/ashwalker)//this is an authentic mess we're making
 	yolk.update_body()
 	yolk.gib()
-	qdel(egg)
+	QDEL_NULL(egg)
 	return ..()
 
 
@@ -92,6 +92,11 @@
 	var/datum/team/ashwalkers/team
 	var/obj/structure/ash_walker_eggshell/eggshell
 
+
+/obj/effect/mob_spawn/human/ash_walker/Destroy()
+	eggshell = null
+	return ..()
+
 /obj/effect/mob_spawn/human/ash_walker/allow_spawn(mob/user)
 	if(!(user.key in team.players_spawned))//one per person unless you get a bonus spawn
 		return TRUE
@@ -111,7 +116,7 @@
 		ADD_TRAIT(H, TRAIT_PRIMITIVE, ROUNDSTART_TRAIT)
 	team.players_spawned += (new_spawn.key)
 	eggshell.egg = null
-	qdel(eggshell)
+	QDEL_NULL(eggshell)
 
 /obj/effect/mob_spawn/human/ash_walker/Initialize(mapload, datum/team/ashwalkers/ashteam)
 	. = ..()
@@ -397,7 +402,7 @@
 
 /obj/effect/mob_spawn/human/hotel_staff/Destroy()
 	new/obj/structure/fluff/empty_sleeper/syndicate(get_turf(src))
-	..()
+	return ..()
 
 /obj/effect/mob_spawn/human/demonic_friend
 	name = "Essence of friendship"
@@ -491,6 +496,7 @@
 
 /datum/outfit/syndicate_empty/sbc
 	name = "Syndicate Battlecruiser Ship Deck Assistant"
+	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	r_pocket = /obj/item/kitchen/knife/combat/survival
@@ -511,12 +517,11 @@
 /datum/outfit/syndicate_empty/sbc/engi
 	name = "Syndicate Battlecruiser Ship Engineer"
 	glasses = /obj/item/clothing/glasses/meson/night
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
+	uniform = /obj/item/clothing/under/syndicate/gorlex
 	r_pocket = /obj/item/analyzer
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
 	belt = /obj/item/storage/belt/utility/syndicate
 	back = /obj/item/storage/backpack/industrial
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large, /obj/item/stack/sheet/mineral/plastitanium=50)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/medical
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
@@ -530,42 +535,37 @@
 
 /datum/outfit/syndicate_empty/sbc/med
 	name = "Syndicate Battlecruiser Ship Medical Doctor"
-	uniform = /obj/item/clothing/under/syndicate/intern
-	glasses = /obj/item/clothing/glasses/hud/health/prescription
-	l_pocket = /obj/item/gun/energy/e_gun/mini
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/defibrillator/compact/combat/loaded
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
+	glasses = /obj/item/clothing/glasses/hud/health
+	belt = /obj/item/pda/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
-	r_hand = /obj/item/gun/medbeam
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical, /obj/item/storage/firstaid/tactical, /obj/item/storage/box/medipens=3)
+	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
 	short_desc = "You are an assault operative aboard the syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to follow your captain's orders, keep intruders out of the ship, and assault Space Station 13. There is an armory, multiple assault ships, and beam cannons to attack the station with."
 	important_info = "Work as a team with your fellow operatives and work out a plan of attack. If you are overwhelmed, escape back to your ship!"
-	outfit = /datum/outfit/syndicate_empty/sbc/assault
+	outfit = /datum/outfit/syndicate_empty/sbc/operative
 	assignedrole = "Battlecruiser Assault Operative"
 	mob_name = "syndicate assault operative"
 	id_job = "Syndicate Assault Operative"
 
-/datum/outfit/syndicate_empty/sbc/assault
-	name = "Syndicate Battlecruiser Assault Operative"
+/datum/outfit/syndicate_empty/sbc/operative
+	name = "Syndicate Battlecruiser Operative"
 	uniform = /obj/item/clothing/under/syndicate/camo
-	l_pocket = /obj/item/ammo_box/magazine/m10mm
-	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/night
 	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack/duffelbag/syndie
 	suit = /obj/item/clothing/suit/armor/vest
-	suit_store = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/gun_voucher/syndicate=1)
 
-/datum/outfit/syndicate_empty/sbc/assault/operative
-	name = "Syndicate Battlecruiser Operative"
-	head = /obj/item/clothing/head/warden
+/datum/outfit/syndicate_empty/sbc/lieutenant
+	name = "Syndicate Battlecruiser Lieutenant"
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt/leader
 	uniform = /obj/item/clothing/under/syndicate/combat
-	id = /obj/item/card/id/syndicate_command/operative
+	id = /obj/item/card/id/syndicate_command/lieutenant
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
@@ -573,17 +573,17 @@
 	short_desc = "You are the captain aboard the Syndicate flagship <i>Starfury</i>."
 	flavour_text = "Your job is to oversee your crew, defend the ship, and destroy Space Station 13. The ship has an armory, multiple ships, beam cannons, and multiple crewmembers to accomplish this goal."
 	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
-	outfit = /datum/outfit/syndicate_empty/sbc/assault/captain
+	outfit = /datum/outfit/syndicate_empty/sbc/captain
 	id_access_list = list(150,151)
 	id_job = "Syndicate Captain"
 	assignedrole = "Battlecruiser Captain"
 	mob_name = "syndicate captain"
 
-/datum/outfit/syndicate_empty/sbc/assault/captain
+/datum/outfit/syndicate_empty/sbc/captain
 	name = "Syndicate Battlecruiser Captain"
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
-	r_pocket = /obj/item/melee/classic_baton/telescopic
-	uniform = /obj/item/clothing/under/syndicate/gorlex
+	ears = /obj/item/radio/headset/syndicate/alt/captain
+	uniform = /obj/item/clothing/under/syndicate/aclf
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	suit_store = /obj/item/gun/ballistic/revolver/mateba
 	head = /obj/item/clothing/head/HoS/syndicate
@@ -918,16 +918,6 @@
 	name = "Syndicate Operative - Lost"
 	tc = 10
 
-/obj/effect/mob_spawn/human/lost/solgov
-	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper"
-	name = "old cryogenics pod"
-	desc = "A sleeper designed to put its occupant into a deep coma."
-	short_desc = "You are a SolGov Commander."
-	flavour_text = "You are being sent in to stop a treat. Your objective is- wait where the hell are you? You still have your gear but... you have no idea where you are?"
-	assignedrole = "Lost SolGov Commander"
-	outfit = /datum/outfit/solgov/commander
-
 //Slime Lab
 
 /obj/effect/mob_spawn/human/slime_rancher
@@ -943,7 +933,7 @@
 	flavour_text = "You and your fellows have been stationed here for more time than you've cared to track, especially since the computers have done it for you. . \
 	Keep the lab in good operating condition, breed slimes, and trade to get what you aren't able to produce yourselves. "
 	important_info = "Do not abandon the base. The place is too damn expensive to just run off from."
-	uniform = /obj/item/clothing/under/rank/rnd/scientist/xenobiologist/skirt
+	uniform = /obj/item/clothing/under/rank/rnd/scientist/skirt
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	id = /obj/item/card/id/away/slime
 	assignedrole = "Slime Research Staff"

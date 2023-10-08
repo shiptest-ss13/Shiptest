@@ -1,7 +1,7 @@
 /datum/reagent/blood
-	data = list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
+	data = list("viruses"=null,"blood_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null,"quirks"=null)
 	name = "Blood"
-	color = "#C80000" // rgb: 200, 0, 0
+	color = COLOR_BLOOD
 	metabolization_rate = 5 //fast rate so it disappears fast.
 	taste_description = "iron"
 	taste_mult = 1.3
@@ -24,17 +24,22 @@
 				L.ForceContractDisease(D)
 
 	if(iscarbon(L))
-		var/mob/living/carbon/C = L
-		if(C.get_blood_id() == /datum/reagent/blood && (method == INJECT || (method == INGEST && C.dna && C.dna.species && (DRINKSBLOOD in C.dna.species.species_traits))))
-			if(!data || !(data["blood_type"] in get_safe_blood(C.dna.blood_type)))
-				C.reagents.add_reagent(/datum/reagent/toxin, reac_volume * 0.5)
-			else
-				C.blood_volume = min(C.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM)
+		var/mob/living/carbon/exposed_carbon = L
+		if(exposed_carbon.get_blood_id() == /datum/reagent/blood && (method == INJECT || (method == INGEST && exposed_carbon.dna && exposed_carbon.dna.species && (DRINKSBLOOD in exposed_carbon.dna.species.species_traits))))
+			if(data && data["blood_type"])
+				var/datum/blood_type/blood_type = data["blood_type"]
+				if(blood_type.type in exposed_carbon.dna.blood_type.compatible_types)
+					exposed_carbon.blood_volume = min(exposed_carbon.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM)
+					return
+			exposed_carbon.reagents.add_reagent(/datum/reagent/toxin, reac_volume * 0.5)
 
 
 /datum/reagent/blood/on_new(list/data)
 	if(istype(data))
 		SetViruses(src, data)
+		var/datum/blood_type/blood_type = data["blood_type"]
+		if(blood_type)
+			color = blood_type.color
 
 /datum/reagent/blood/on_merge(list/mix_data)
 	if(data && mix_data)
@@ -113,6 +118,7 @@
 		src.data |= data.Copy()
 
 /datum/reagent/vaccine/fungal_tb
+	name = "Fungal TB Vaccine"
 
 /datum/reagent/vaccine/fungal_tb/New(data)
 	. = ..()
@@ -572,8 +578,8 @@
 						/datum/species/moth,
 						/datum/species/pod,
 						/datum/species/jelly,
-						/datum/species/abductor,
-						/datum/species/squid)
+						/datum/species/abductor
+	)
 	process_flags = ORGANIC | SYNTHETIC
 
 /datum/reagent/mutationtoxin/lizard
@@ -662,13 +668,6 @@
 	race = /datum/species/ipc
 	process_flags = ORGANIC | SYNTHETIC
 
-/datum/reagent/mutationtoxin/squid
-	name = "Squid Mutation Toxin"
-	description = "A salty toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/squid
-	process_flags = ORGANIC | SYNTHETIC
-
 /datum/reagent/mutationtoxin/kepi //crying
 	name = "Kepori Mutation Toxin"
 	description = "A feathery toxin."
@@ -694,7 +693,7 @@
 	taste_description = "brai...nothing in particular"
 
 /datum/reagent/mutationtoxin/goofzombie
-	name = "Zombie Mutation Toxin"
+	name = "Krokodil Zombie Mutation Toxin"
 	description = "An undead toxin... kinda..."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/human/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
@@ -1099,7 +1098,7 @@
 /datum/reagent/uranium/radium/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
 	return FALSE
 
-/datum/reagent/radium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+/datum/reagent/uranium/radium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
 	if(chems.has_reagent(type, 1))
 		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 2.5))
@@ -2244,11 +2243,12 @@
 	return ..()
 
 /datum/reagent/pax/peaceborg
-	name = "synthpax"
+	name = "Synthpax"
 	description = "A colorless liquid that suppresses violence in its subjects. Cheaper to synthesize than normal Pax, but wears off faster."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 
 /datum/reagent/peaceborg
+	name = "Abstract Peaceborg Reagent"
 	can_synth = FALSE
 
 /datum/reagent/peaceborg/confuse
@@ -2723,7 +2723,7 @@
 	O.transfer_fingerprints_to(conc_floor)
 	conc_floor.harden_lvl = 0
 	conc_floor.check_harden()
-	conc_floor.update_icon()
+	conc_floor.update_appearance()
 	qdel(O)
 	return
 
@@ -2780,3 +2780,9 @@
 	race = /datum/species/lizard/ashwalker/kobold
 	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
 	taste_description = "short savagery"
+
+/datum/reagent/polar_bear_fur //used for icewine crafting
+	name = "Polar Bear Fur"
+	description = "Fur obtained from griding up a polar bears hide"
+	reagent_state = SOLID
+	color = "#eeeeee" // rgb: 238, 238, 238

@@ -7,10 +7,10 @@
 	var/list/fibers				//assoc print = print
 
 /datum/component/forensics/InheritComponent(datum/component/forensics/F, original)		//Use of | and |= being different here is INTENTIONAL.
-	fingerprints = fingerprints | F.fingerprints
-	hiddenprints = hiddenprints | F.hiddenprints
-	blood_DNA = blood_DNA | F.blood_DNA
-	fibers = fibers | F.fibers
+	fingerprints = LAZY_LISTS_OR(fingerprints, F.fingerprints)
+	hiddenprints = LAZY_LISTS_OR(hiddenprints, F.hiddenprints)
+	blood_DNA = LAZY_LISTS_OR(blood_DNA, F.blood_DNA)
+	fibers = LAZY_LISTS_OR(fibers, F.fibers)
 	check_blood()
 	return ..()
 
@@ -43,9 +43,13 @@
 
 /datum/component/forensics/proc/wipe_blood_DNA()
 	blood_DNA = null
-	if(isitem(parent))
-		qdel(parent.GetComponent(/datum/component/decal/blood))
 	return TRUE
+
+/datum/component/forensics/proc/is_bloody(datum/source, clean_types)
+	if(!isitem(parent))
+		return FALSE
+
+	return length(blood_DNA) > 0
 
 /datum/component/forensics/proc/wipe_fibers()
 	fibers = null
@@ -186,4 +190,4 @@
 		return
 	if(!length(blood_DNA))
 		return
-	parent.LoadComponent(/datum/component/decal/blood)
+	parent.AddElement(/datum/element/decal/blood, _color = get_blood_dna_color(blood_DNA))

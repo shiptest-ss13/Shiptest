@@ -18,8 +18,6 @@
 
 #define STATUS_EFFECT_POWERREGEN /datum/status_effect/cyborg_power_regen //Regenerates power on a given cyborg over time
 
-#define STATUS_EFFECT_HISGRACE /datum/status_effect/his_grace //His Grace.
-
 #define STATUS_EFFECT_WISH_GRANTERS_GIFT /datum/status_effect/wish_granters_gift //If you're currently resurrecting with the Wish Granter
 
 #define STATUS_EFFECT_BLOODDRUNK /datum/status_effect/blooddrunk //Stun immunity and greatly reduced damage taken
@@ -98,6 +96,8 @@
 #define STATUS_EFFECT_STASIS /datum/status_effect/grouped/stasis //Halts biological functions like bleeding, chemical processing, blood regeneration, walking, etc
 
 #define STATUS_EFFECT_FAKE_VIRUS /datum/status_effect/fake_virus //gives you fluff messages for cough, sneeze, headache, etc but without an actual virus
+
+#define STATUS_EFFECT_METAB_FROZEN /datum/status_effect/metab_frozen // Affected cannot process chems
 
 /////////////
 // NEUTRAL //

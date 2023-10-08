@@ -1,0 +1,272 @@
+2023-07-01:
+  Bjarl, Ghilker, Comyx, Assorted /tg/ contributors:
+  - rscadd: anomalies will now randomly spawn on planets
+  - rscadd: bioscrambler anomalies, they randomly change your organs and bodyparts
+  - rscadd: hallucination anomalies, they cause hallucinations
+  - rscadd: big anomalies, they're like normal anomalies but big.
+  - bugfix: disk renaming should only work with pens now
+2023-07-02:
+  BarteG44:
+  - rscadd: Makes graves buildable
+  Ryll-Ryll/Shaps:
+  - admin: Adds pinging to adminsay!
+  - admin: Adds the ability to link datums!
+  - admin: 'Adds linking tickets to asay! Simply put a # followed by a ticket number
+      for it to be linked in the chat!'
+  thgvr:
+  - rscadd: A metric ton of Vox sprites
+  - rscdel: Vox no longer need environmental regulators
+  tmtmtl30:
+  - tweak: There is now a cap on the number of ships that may be spawned by players
+      in a round.
+  - tweak: Spawning a ship, or joining as an officer on a ship, may now carry a playtime
+      requirement.
+  - bugfix: 'Ship limits have been fixed: Many ships can only be spawned a finite
+      number of times per round.'
+  - admin: Admins may now disable join menu ship spawning.
+2023-07-03:
+  thgvr:
+  - bugfix: Mining vendors have scanners again
+2023-07-04:
+  retlaw34:
+  - rscadd: You now have 20 character slots!
+2023-07-05:
+  BarteG44:
+  - rscadd: Added chemical crates
+  - rscadd: Added chemical jugs
+  - balance: moved the chem dispenser to applied bluespace research
+  MemedHams:
+  - rscadd: Gives holofields a glow up.
+  - tweak: Adjusts holofield layering so the emitters are visible.
+2023-07-06:
+  Bjarl:
+  - balance: Static anomalies now deal more brain damage.
+  - balance: heartbeat anomalies now apply radiation burns to better telegraph their
+      hazard.
+  - rscadd: Most turrets now have a stun projectile
+  - rscadd: Turrets can now be repaired with a welder, and will report how damaged
+      they are when examined.
+  - rscdel: laser tag turrets. Rest in piss bozo.
+  - rscdel: Dwarves, Squidpeople
+  BogCreature:
+  - bugfix: The modcomp arcade minigame now properly gives gaming XP
+  'Imaginos, Memed Hams ':
+  - soundadd: Borrows nsv's firealarm noise.
+  - soundadd: Borrows tg's printer noise.
+  - rscadd: Ports TG's Cannabis sprites.
+  - rscadd: Ports the old codersprite solars (I think they came from bay?)
+  - rscdel: The entire goon folder.
+  MarkSuckerberg:
+  - bugfix: Turffires should work again.
+  - tweak: Makes overmap movement and vox thermoregulators higher priority processing
+      targets
+  - rscadd: Colours in character creation are no longer crunched into three hex digits,
+      allowing for 16773120 new colours to use for mutcolour, haircolour, etcetera.
+  MothBlocks, MarkSuckerberg:
+  - rscadd: The rest of the autowiki system, as well as the vending machine and tech
+      node
+  Pawn, retlaw34:
+  - rscadd: Overmap consoles now have updated firmware, and as such have new sprites.
+  SapphicOverload:
+  - tweak: reinforced floors can no longer ignited by hotspots
+  ZephyrTFA:
+  - admin: Overmap Token Manager, use it.
+  goober3:
+  - tweak: Salvageable computers are now deconstructed into retro computer frames.
+  - tweak: Broken machinery can now be unwrenched.
+  - tweak: Destructive analyzers deconstruction messages have been tweaked to better
+      indicate laser intensity.
+  meemofcourse:
+  - tweak: Updated brain trauma messages
+  phoaly:
+  - tweak: tweaks the Hunter Montagne job outfit and job datum
+  - bugfix: 'Fixes #2101'
+  thgvr:
+  - bugfix: removes surgery table cloaking device
+2023-07-07:
+  FlufflesTheDog:
+  - bugfix: Independent Litieguai's organ freezer now properly freezes the provided
+      organs
+  SapphicOverload:
+  - tweak: skeletons and plasmamen no longer husk, because they don't have flesh
+  - bugfix: fixed skeletons not having bones
+2023-07-08:
+  Hibou48888:
+  - bugfix: big mortars now check the correct container for fullness before refusing
+      to fill said container
+  thgvr:
+  - rscadd: fucky wucky admin button
+2023-07-10:
+  Bjarl:
+  - bugfix: Turrets properly report their integrity now
+  - bugfix: Assorted floating wall mounts and other oddities have been fixed, please
+      continue to report any you see.
+  MarkSuckerberg:
+  - bugfix: The wiki verb now works again
+  PositiveEntropy:
+  - imageadd: The Rack, Dresser and Holopad have been redone and updated!
+  SapphicOverload:
+  - tweak: tritium burn rate is based on oxygen-fuel ratio instead of being binary
+      fast/slow
+  - bugfix: fixed tritium fires breaking conservation of mass and consuming too much
+      oxygen
+  phoaly:
+  - bugfix: Fixes improperly declared outfits in ship jsons
+2023-07-12:
+  Bjarl:
+  - rscadd: table mounted intercoms now exist
+  - rscadd: The Chronicle Class, a Real Solgov Ship, is now in game
+2023-07-13:
+  PositiveEntropy:
+  - tweak: Changes the headsets that the SolGov captain, overseer, and representative
+      use into loudmode versions of their original incarnations!
+  - imageadd: Resprites shuttle chairs into way better versions in comparison to their
+      previous, non-license compliant versions!
+2023-07-15:
+  Apogee-dev:
+  - tweak: Updated the Hyena with turret controls and visual updates
+  - balance: Rebalanced the Hyena's mining gear
+  PositiveEntropy:
+  - imageadd: Redoes a good majority of chairs!
+  Thgvr. Halcyon, Mark Suckerberg:
+  - rscadd: Adds new preferences to make characters fully prosthetic or a FBP (only
+      difference being brain type)
+  - rscadd: Lizard prosthetic/synthetic bodyparts with absolutely wonderful sprites
+      by <b>Thgvr</b>! It's just a visual difference, and any species can use them,
+      but they most resemble lizards, so.
+  - rscadd: Adds missing robotic vox bodyparts
+  - tweak: All species have the ability to change their two mutcolours. I don't think
+      this is really a loss at all.
+  thgvr:
+  - balance: Belts no longer fit in bags
+2023-07-18:
+  Imaginos16:
+  - imageadd: Resprites the bobcurl haircut!
+  SapphicOverload:
+  - imageadd: updates some atmos sprites to fit in with the rest of engineering
+  retlaw34:
+  - rscadd: Solar armories and all related content
+  - balance: Bullets travel twice as fast  now
+  - tweak: Bullets also glow in the dark now
+2023-07-21:
+  tmtmtl30:
+  - bugfix: The roundstart join menu now correctly ignores playtime restrictions if
+      USE_EXP_TRACKING is disabled or no database is found.
+2023-07-22:
+  Bjarl:
+  - rscadd: Planets now can (and will) play a sound when you land on them
+  - rscadd: Gas / Plasma giants, cold, dockable worlds with absolutely no livable
+      surfaces. As a matter of fact it's all chasm. All highly pressurized, gas rich,
+      chasm.
+  - rscadd: Dust storms and carp storms now grace the sector.
+  - rscadd: physical storms (dust, carp, asteroid), will now only trigger if you go
+      through them too fast. Take it easy and you might get through unscathed.
+  - rscadd: planets will now have a name on the overmap
+  - rscadd: overmap hazards now have a description
+  - tweak: Space carp can now survive in hyperspace, their natural habitat
+  - balance: minor and moderate electrical storms will no longer Explode you
+  - balance: asteroid storm lists have been trimmed of Extremely Deadly ones
+  - bugfix: restores planet naming behavior, I believe this was unintentionally removed
+      at some point
+  - bugfix: Ion storms work again. Fuck you whoever touched them last.
+  - soundadd: planet_landing_1 and planet_landing_2,  (tech_notification and sos_morse_code
+      from CM respectively. I don't know how to attribute properly please tell me
+      how if you have issue with this attribution because I did not make these sounds
+      they're from Colonial Marines)
+  - imageadd: static and sparkler anomalies have "updated" icons
+  - rscadd: The Junker has another Mystery Safe
+  - rscadd: Ships can now start with varying amounts of money.
+  - rscadd: Ship access might work now
+  - bugfix: slurring
+  - balance: PKAs are now bulky
+  - rscadd: you can rotate door assemblies with alt-click
+  MarkSuckerberg:
+  - admin: Adds ticket claiming, interacting with a ticket will "claim" it and present
+      a warning to all other admins who try to interact also.
+  - bugfix: Pitch-black mutcolours are now randomised again
+  PositiveEntropy:
+  - balance: The Chronicle-class has been supplied with many new weapons fresh from
+      the solarian armory!
+  goober3:
+  - tweak: Large asteroids have been reworked into asteroid fields.
+  ritorizo:
+  - tweak: Mechanical surgery won't cancel at any wrong move.
+  thgvr:
+  - rscdel: You can no longer tend wounds with a pen
+  - balance: Ghetto surgery is less reliable across the board.
+  - balance: Organs will now decay in ~30 minutes, heart and brain in ~45 minutes.
+  - balance: Inducers now work for revival surgery.
+  - rscadd: Resprites underwear/socks/undershirts, adds a bunch of new ones, greyscales
+      some
+  - rscadd: Redesigns athletic shorts
+  - rscadd: Resprites the basic pants in loadouts
+  - rscadd: Hoodies, they're in loadouts. Couple colors selectable
+  - rscadd: Resprites organs, by Onule
+  - rscadd: Support for Kepori underwear/socks/undershirt
+  - rscdel: Some underwear/shirts were removed
+  - rscdel: Medical job alt outfits
+2023-07-24:
+  Apogee-dev:
+  - rscdel: Removed the Metis
+  CoiledLamb, Imaginos16:
+  - rscadd: resprites almost all of the atmospheric tank sprites
+  PositiveEntropy:
+  - rscadd: Adds a SolGov medical ship, the Paracelsus-class!
+2023-07-25:
+  Apogee-dev:
+  - balance: Removed Syndie headsets from non-officer jobs for parity with other factions
+  PositiveEntropy, Retlaw34:
+  - rscadd: Adds the solarian SSG-669C Sniper Rifle!
+  - rscadd: Adds a cloak for the SolGov captain!
+  thgvr:
+  - rscdel: Drip outfit is removed for being too crusty
+  - rscdel: Sec hailer sounds are gone
+  - rscdel: Bag of Holding is no longer researchable
+  - rscdel: Bluespace bodybag is no longer researchable
+2023-07-26:
+  Apogee-dev:
+  - bugfix: fixed mismatched perspective on east/west-facing holofield sprites
+2023-07-27:
+  Apogee-dev:
+  - tweak: Updated the Riggs with a holofield and some visual polish
+  Bjarl:
+  - bugfix: mhelps should no longer take several minutes to send
+  PositiveEntropy:
+  - imageadd: Fox tails have been successfully tweaked into what they were supposed
+      to look like
+2023-07-29:
+  Bjarl:
+  - rscadd: toggle ship spawn now sends a message to players.
+  meemofcourse:
+  - admin: There are more options to headset messages, including Inteq, CMM, and multiple
+      Syndicate branches.
+  thgvr:
+  - bugfix: ipc organs are printable again
+  tmtmtl30:
+  - rscadd: Ships now spawn at the outpost, in hangars. Take the elevator in the top-right
+      down to the main level.
+  - rscadd: 100% guaranteed most realistic ss13 elevator experience if you ignore
+      all the things that aren't realistic
+2023-07-30:
+  Apogee-dev:
+  - rscdel: Removed the Hound from the ship spawn menu
+  Zevotech:
+  - bugfix: Removed a map template with no corresponding file from jungle.dm, hopefully
+      preventing jungleplanets from spawning without a ruin.
+  - bugfix: The bathroom tile in lab4071.dmm is no longer screaming to be fixed.
+  - bugfix: fixed flooring and removed a tinyfan in onlyaspoonful.dmm
+  - tweak: max integrity of fluff/paper has been reduced to 10
+  - rscadd: clericden.dmm and cryocontainment.dmm have been expanded with more loot
+      and enemies
+  meemofcourse:
+  - rscadd: Abandoned library
+  thgvr:
+  - tweak: Nemo is admin spawn only
+2023-07-31:
+  Apogee-dev:
+  - tweak: removed a single pickaxe from the Colossus
+  - bugfix: added missing bedsheets and techfab to the Colossus
+  Geoengi:
+  - tweak: Removed the ability for the Toy C-20r to accept a suppressor.
+  - bugfix: Gave the Toy C-20r the proper firing sound.
+  - spellcheck: Fixed the description of the rainbow moth.

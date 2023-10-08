@@ -36,7 +36,7 @@
 
 /obj/machinery/atmospherics/components/proc/hide_pipe(datum/source, covered)
 	showpipe = !covered
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/components/update_icon()
 	update_icon_nopipes()
@@ -45,7 +45,7 @@
 	plane = showpipe ? FLOOR_PLANE : FLOOR_PLANE
 
 	if(!showpipe)
-		return
+		return ..()
 
 	var/connected = 0 //Direction bitset
 
@@ -62,6 +62,7 @@
 
 	if(!shift_underlay_only)
 		PIPING_LAYER_SHIFT(src, piping_layer)
+	return ..()
 
 /obj/machinery/atmospherics/components/proc/get_pipe_underlay(state, dir, color = null)
 	if(color)
@@ -75,9 +76,10 @@
 	// Every node has a parent pipeline and an air associated with it, but we need to accomdate for edge cases like init dir cache building...
 	if(parents[i])
 		nullifyPipenet(parents[i])
-	if(airs[i])
-		QDEL_NULL(airs[i])
-	..()
+	airs[i] = null
+	if(!QDELETED(src))
+		airs[i] = new /datum/gas_mixture(200)
+	return ..()
 
 /obj/machinery/atmospherics/components/on_construction()
 	..()
@@ -100,25 +102,25 @@
 /obj/machinery/atmospherics/components/proc/nullifyPipenet(datum/pipeline/reference)
 	if(!reference)
 		CRASH("nullifyPipenet(null) called by [type] on [COORD(src)]")
-	for (var/i in 1 to parents.len)
+
+	for (var/i in 1 to length(parents))
 		if (parents[i] == reference)
 			reference.other_airs -= airs[i] // Disconnects from the pipeline side
 			parents[i] = null // Disconnects from the machinery side.
 
 	reference.other_atmosmch -= src
 
-	/**
-	*  We explicitly qdel pipeline when this particular pipeline
-	*  is projected to have no member and cause GC problems.
-	*  We have to do this because components don't qdel pipelines
-	*  while pipes must and will happily wreck and rebuild everything
-	*	again every time they are qdeleted.
+	/*
+	We explicitly qdel pipeline when this particular pipeline
+	is projected to have no member and cause GC problems.
+	We have to do this because components don't qdel pipelines
+	while pipes must and will happily wreck and rebuild
+	everything again every time they are qdeleted.
 	*/
+	if(length(reference.other_atmosmch) || length(reference.members) || QDESTROYING(reference))
+		return
 
-	if(!length(reference.other_atmosmch) && !length(reference.members))
-		if(QDESTROYING(reference))
-			CRASH("nullifyPipenet() called on qdeleting [reference]")
-		qdel(reference)
+	qdel(reference)
 
 /obj/machinery/atmospherics/components/returnPipenetAirs(datum/pipeline/reference)
 	var/list/returned_air = list()
@@ -133,14 +135,22 @@
 		return list(nodes[parents.Find(reference)])
 	return ..()
 
-/obj/machinery/atmospherics/components/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/A)
-	parents[nodes.Find(A)] = reference
+/obj/machinery/atmospherics/components/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/connection)
+	var/connection_index = nodes.Find(connection)
+	if(!connection_index)
+		message_admins("Doubled pipe found at [ADMIN_VERBOSEJMP(connection)]! Please report to mappers.") //This will cascade into even more errors. Sorry!
+		CRASH("Doubled pipe found, causing an error in setPipenet")
+	var/list/datum/pipeline/to_replace = parents[connection_index]
+	//Some references to clean up if it isn't empty
+	if(to_replace)
+		nullifyPipenet(to_replace)
+	parents[connection_index] = reference
 
 /obj/machinery/atmospherics/components/returnPipenet(obj/machinery/atmospherics/A = nodes[1]) //returns parents[1] if called without argument
 	return parents[nodes.Find(A)]
 
-/obj/machinery/atmospherics/components/replacePipenet(datum/pipeline/Old, datum/pipeline/New)
-	parents[parents.Find(Old)] = New
+/obj/machinery/atmospherics/components/replacePipenet(datum/pipeline/old_pipeline, datum/pipeline/new_pipeline)
+	parents[parents.Find(old_pipeline)] = new_pipeline
 
 /obj/machinery/atmospherics/components/unsafe_pressure_release(mob/user, pressures)
 	..()
@@ -186,8 +196,8 @@
 		if(!parent)
 			//WARNING("Component is missing a pipenet! Rebuilding...")
 			SSair.add_to_rebuild_queue(src)
-		else
-			parent.update = TRUE
+			return
+		parent.update = TRUE
 
 /obj/machinery/atmospherics/components/returnPipenets()
 	. = list()

@@ -9,13 +9,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	flags_inv = HIDESUITSTORAGE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/cloak //WS Edit - Exowear Pockets
 	greyscale_colors = list(list(11, 15), list(12, 22), list(12, 22))
 	greyscale_icon_state = "cloak"
 
-/obj/item/clothing/neck/cloak/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)
 
 /obj/item/clothing/neck/cloak/hos
 	name = "head of security's cloak"
@@ -52,6 +48,21 @@
 	desc = "Worn by the Head of Personnel. It smells faintly of bureaucracy."
 	icon_state = "hopcloak"
 
+/obj/item/clothing/neck/cloak/overseer
+	name = "SolGov overseer's cloak"
+	desc = "Worn by the Overseer. It smells faintly of bureaucracy."
+	icon_state = "solgov_cloak"
+
+/obj/item/clothing/neck/cloak/solgov
+	name = "SolGov weibel"
+	desc = "Worn by SolGov officials. It smells faintly of bureaucracy."
+	icon_state = "solgov_weibel"
+
+/obj/item/clothing/neck/cloak/solgovcap
+	name = "SolGov captain's cloak"
+	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
+	icon_state = "solgov_cap_cloak"
+
 /obj/item/clothing/neck/cloak/trans
 	name = "vampire cloak"
 	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
@@ -79,7 +90,7 @@
 	name = "drake armour"
 	icon_state = "dragon"
 	desc = "A suit of armour fashioned from the remains of an ash drake."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/spear, /obj/item/pinpointer/deepcore)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/resonator, /obj/item/mining_scanner, /obj/item/t_scanner/adv_mining_scanner, /obj/item/gun/energy/kinetic_accelerator, /obj/item/pickaxe, /obj/item/spear)
 	armor = list("melee" = 50, "bullet" = 10, "laser" = 40, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 100, "acid" = 100)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/drake
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS

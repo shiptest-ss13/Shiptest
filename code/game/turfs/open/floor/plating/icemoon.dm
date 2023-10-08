@@ -27,7 +27,7 @@
 		return
 	if(!(entered_dirs & AM.dir))
 		entered_dirs |= AM.dir
-		update_icon()
+		update_appearance()
 
 /turf/open/floor/plating/asteroid/snow/Exited(atom/movable/AM)
 	. = ..()
@@ -35,7 +35,7 @@
 		return
 	if(!(exited_dirs & AM.dir))
 		exited_dirs |= AM.dir
-		update_icon()
+		update_appearance()
 
 // adapted version of footprints' update_icon code
 /turf/open/floor/plating/asteroid/snow/update_overlays()
@@ -72,7 +72,7 @@
 		if(old_exited_dirs & Ddir)
 			exited_dirs |= NDir
 
-	update_icon()
+	update_appearance()
 	return ..()
 
 /turf/open/floor/plating/asteroid/snow/getDug()

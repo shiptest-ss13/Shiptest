@@ -6,22 +6,35 @@
 		"GENERAL",
 		"SPACE",
 		"BRITISH_NAVY",
-		"MERCANTILE"
+		"MERCANTILE",
+		"NANOTRASEN"
 	],
 	"map_short_name": "Delta-class",
+	"description": "The Delta is a compact and advanced mining ship that supplements its comparatively small organic crew with a full suite of robotics facilities, including an AI and a host of mining and logistics drones and cyborgs. While much-loved by Nanotrasen logisticians for their minimal upkeep and high cost efficiency, Deltas are far less popular among the crews chosen to operate them, as they are severely lacking in crew accommodations and defensive armament.",
+	"tags": [
+		"Science",
+		"Robotics"
+	],
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_delta.dmm",
+	"starting_funds": 4000,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",
 			"officer": true,
 			"slots": 1
 		},
-		"Roboticist": 2,
+		"Roboticist": {
+			"outfit": "/datum/outfit/job/roboticist",
+			"slots": 2
+		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 1
 		},
-		"Assistant": 3
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": true
 }

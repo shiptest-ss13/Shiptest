@@ -27,7 +27,7 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
-	unique_prosthesis = TRUE
+	bodytype = BODYTYPE_VOX
 
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
@@ -35,6 +35,13 @@
 	species_r_arm = /obj/item/bodypart/r_arm/vox
 	species_l_leg = /obj/item/bodypart/leg/left/vox
 	species_r_leg = /obj/item/bodypart/leg/right/vox
+
+	species_robotic_chest = /obj/item/bodypart/chest/robot/vox
+	species_robotic_head = /obj/item/bodypart/head/robot/vox
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/vox
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/vox
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/vox
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/vox
 
 	var/datum/action/innate/tail_hold/tail_action
 
@@ -60,25 +67,11 @@
 
 /datum/species/vox/New()
 	. = ..()
-	offset_clothing = list(
-		"[BELT_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 9), "[EAST]" = list("x" = 0, "y" = 9), "[SOUTH]" = list("x" = 0, "y" = 9), "[WEST]" = list("x" =  0, "y" = 9)),
-	)
 
-/datum/species/vox/random_name(gender,unique,lastname,attempts)
-	. = ""
-
-	var/new_name = ""
-	var/static/list/syllables = list("ti", "ti", "ti", "hi", "hi", "ki", "ki", "ki", "ki", "ya", "ta", "ha", "ka", "ya", "chi", "cha", "kah", \
-		"skre", "ahk", "ehk", "rawk", "kra", "ki", "ii", "kri", "ka")
-	for(var/x = rand(3,8) to 0 step -1)
-		new_name += pick(syllables)
-	. += "[capitalize(new_name)]"
-
-	if(unique && attempts < 10)
-		if(findname(new_name))
-			. = .(gender, TRUE, null, attempts++)
-
-	return .
+/datum/species/vox/random_name(gender,unique,lastname)
+	if(unique)
+		return random_unique_vox_name()
+	return vox_name()
 
 
 
@@ -121,13 +114,6 @@
 			return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
 		if(WEST)
 			return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
-
-/datum/species/vox/after_equip_job(datum/job/J, mob/living/carbon/human/H)
-	. = ..()
-	var/obj/item/environmental_regulator/regulator = new
-	if(!H.equip_to_slot_if_possible(regulator, ITEM_SLOT_BACK, swap = TRUE))
-		if(!H.put_in_hands(regulator, forced = TRUE))
-			regulator.forceMove(get_turf(H))
 
 /datum/action/innate/tail_hold
 	name = "Tail Hold"

@@ -11,7 +11,7 @@
 
 	maxHealth = STANDARD_ORGAN_THRESHOLD
 	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = STANDARD_ORGAN_DECAY
+	decay_factor = STANDARD_VITAL_ORGAN_DECAY
 
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/iron = 5)
 
@@ -116,8 +116,6 @@
 	if(world.time > severe_cooldown) //So we cant just spam emp to kill people.
 		owner.adjustToxLoss(10)
 		severe_cooldown = world.time + 10 SECONDS
-	if(prob(emp_vulnerability/severity))	//Chance of permanent effects
-		organ_flags = ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 
 /obj/item/organ/liver/cybernetic/upgraded/ipc
 	icon = 'icons/obj/surgery.dmi'

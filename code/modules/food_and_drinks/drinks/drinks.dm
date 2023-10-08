@@ -123,7 +123,7 @@
 /obj/item/reagent_containers/food/drinks/proc/smash(atom/target, mob/thrower, ranged = FALSE)
 	if(!isGlass)
 		return
-	if(QDELING(src) || !target)		//Invalid loc
+	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
 		return
 	if(bartender_check(target) && ranged)
 		return
@@ -344,7 +344,7 @@
 	list_reagents = list(random_reagent.type = 50)
 	. = ..()
 	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
 	name = "space beer"
@@ -542,26 +542,6 @@
 	new T(loc)
 	return INITIALIZE_HINT_QDEL
 
-/obj/item/reagent_containers/food/drinks/soda_cans/suicide_act(mob/living/carbon/human/H)
-	if(!reagents.total_volume)
-		H.visible_message("<span class='warning'>[H] is trying to take a big sip from [src]... The can is empty!</span>")
-		return SHAME
-	if(!is_drainable())
-		open_soda()
-		sleep(10)
-	H.visible_message("<span class='suicide'>[H] takes a big sip from [src]! It looks like [H.p_theyre()] trying to commit suicide!</span>")
-	playsound(H,'sound/items/drink.ogg', 80, TRUE)
-	reagents.trans_to(H, src.reagents.total_volume, transfered_by = H) //a big sip
-	sleep(5)
-	H.say(pick("Now, Outbomb Cuban Pete, THAT was a game.", "All these new fangled arcade games are too slow. I prefer the classics.", "They don't make 'em like Orion Trail anymore.", "You know what they say. Worst day of spess carp fishing is better than the best day at work.", "They don't make 'em like good old fashioned singularity engines anymore."))
-	if(H.age >= H.dna.species.species_age_min * 2)
-		H.Stun(50)
-		sleep(50)
-		playsound(H,'sound/items/drink.ogg', 80, TRUE)
-		H.say(pick("Another day, another dollar.", "I wonder if I should hold?", "Diversifying is for young'ns.", "Yeap, times were good back then."))
-		return MANUAL_SUICIDE_NONLETHAL
-	sleep(20) //dramatic pause
-	return TOXLOSS
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack(mob/M, mob/user)
 	if(istype(M, /mob/living/carbon) && !reagents.total_volume && user.a_intent == INTENT_HARM && user.zone_selected == BODY_ZONE_HEAD)
@@ -758,3 +738,38 @@
 	desc = "A dangerous fusion of flavors!"
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
+
+/obj/item/reagent_containers/food/drinks/ration
+	name = "empty ration pouch"
+	desc = "If you ever wondered where air came from..."
+	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
+	icon = 'icons/obj/food/ration.dmi'
+	icon_state = "ration_package"
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
+	in_container = TRUE
+	reagent_flags = NONE
+	spillable = FALSE
+	w_class = WEIGHT_CLASS_SMALL
+	volume = 50
+
+/obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
+	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	reagents.flags |= OPENCONTAINER
+	spillable = TRUE
+
+/obj/item/reagent_containers/food/drinks/ration/attack_self(mob/user)
+	if(!is_drainable())
+		open_ration(user)
+		icon_state = "[icon_state]_open"
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/ration/attack(mob/living/M, mob/user, def_zone)
+	if (!is_drainable())
+		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		return 0
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/ration/pan_genezan_vodka
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 30)

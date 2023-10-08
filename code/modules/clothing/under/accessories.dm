@@ -11,6 +11,10 @@
 	var/datum/component/storage/detached_pockets
 	var/attachment_slot = CHEST
 
+/obj/item/clothing/accessory/Destroy()
+	set_detached_pockets(null)
+	return ..()
+
 /obj/item/clothing/accessory/proc/can_attach_accessory(obj/item/clothing/U, mob/user)
 	if(!attachment_slot || (U && U.body_parts_covered & attachment_slot))
 		return TRUE
@@ -23,7 +27,7 @@
 		if(SEND_SIGNAL(U, COMSIG_CONTAINS_STORAGE))
 			return FALSE
 		U.TakeComponent(storage)
-		detached_pockets = storage
+		set_detached_pockets(storage)
 	U.attached_accessory = src
 	forceMove(U)
 	layer = FLOAT_LAYER
@@ -65,6 +69,17 @@
 	U.cut_overlays()
 	U.attached_accessory = null
 	U.accessory_overlay = null
+
+/obj/item/clothing/accessory/proc/set_detached_pockets(new_pocket)
+	if(detached_pockets)
+		UnregisterSignal(detached_pockets, COMSIG_PARENT_QDELETING)
+	detached_pockets = new_pocket
+	if(detached_pockets)
+		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, .proc/handle_pockets_del)
+
+/obj/item/clothing/accessory/proc/handle_pockets_del(datum/source)
+	SIGNAL_HANDLER
+	set_detached_pockets(null)
 
 /obj/item/clothing/accessory/proc/on_uniform_equip(obj/item/clothing/under/U, user)
 	return
@@ -279,7 +294,7 @@
 
 /obj/item/clothing/accessory/armband
 	name = "red armband"
-	desc = "An fancy red armband!"
+	desc = "A fancy red armband!"
 	icon_state = "redband"
 	attachment_slot = null
 
@@ -288,33 +303,33 @@
 	desc = "An armband, worn by personnel authorized to act as a deputy of corporate security."
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is brown."
+	name = "brown armband"
+	desc = "A fancy brown armband!"
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	name = "orange armband"
+	desc = "A fancy orange and yellow armband!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
-	name = "science guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is purple."
+	name = "purple armband"
+	desc = "A fancy purple armband!"
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
-	name = "hydroponics guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is green and blue."
+	name = "green and blue armband"
+	desc = "A fancy green and blue armband!"
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white."
+	name = "white armband"
+	desc = "A fancy white armband!"
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white and blue."
+	name = "white and blue armband"
+	desc = "A fancy white and blue armband!"
 	icon_state = "medblueband"
 
 //////////////

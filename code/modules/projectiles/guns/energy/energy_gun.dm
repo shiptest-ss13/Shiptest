@@ -22,6 +22,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 	small_gun = TRUE
+	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
 	charge_sections = 3
 	can_flashlight = FALSE // Can't attach or detach the flashlight, and override it's icon update
@@ -127,7 +128,7 @@
 
 /obj/item/gun/energy/e_gun/nuclear/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
 	failcheck()
-	update_icon()
+	update_appearance()
 	..()
 
 /obj/item/gun/energy/e_gun/nuclear/proc/failcheck()
@@ -154,14 +155,14 @@
 	. = ..()
 	if(reactor_overloaded)
 		. += "[icon_state]_fail_3"
-	else
-		switch(fail_tick)
-			if(0)
-				. += "[icon_state]_fail_0"
-			if(1 to 150)
-				. += "[icon_state]_fail_1"
-			if(151 to INFINITY)
-				. += "[icon_state]_fail_2"
+		return
+	switch(fail_tick)
+		if(0)
+			. += "[icon_state]_fail_0"
+		if(1 to 150)
+			. += "[icon_state]_fail_1"
+		if(151 to INFINITY)
+			. += "[icon_state]_fail_2"
 
 /obj/item/gun/energy/e_gun/rdgun
 	name = "research director's PDW"

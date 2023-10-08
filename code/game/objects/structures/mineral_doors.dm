@@ -57,7 +57,7 @@
 		return
 	return TryToSwitchState(user)
 
-/obj/structure/mineral_door/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/mineral_door/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(istype(mover, /obj/effect/beam))
 		return !opacity
@@ -95,7 +95,7 @@
 	door_opened = TRUE
 	layer = OPEN_DOOR_LAYER
 	air_update_turf(1)
-	update_icon()
+	update_appearance()
 	isSwitchingStates = FALSE
 
 	if(close_delay != -1)
@@ -116,11 +116,12 @@
 	door_opened = FALSE
 	layer = initial(layer)
 	air_update_turf(1)
-	update_icon()
+	update_appearance()
 	isSwitchingStates = FALSE
 
 /obj/structure/mineral_door/update_icon_state()
 	icon_state = "[initial(icon_state)][door_opened ? "open":""]"
+	return ..()
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user)
 	if(pickaxe_door(user, I))

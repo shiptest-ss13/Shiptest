@@ -41,6 +41,13 @@
 	small_item = TRUE
 	contains = list(/obj/item/storage/firstaid/toxin)
 
+/datum/supply_pack/medical/firstaid_rad_single
+	name = "Radiation Treatment Kit Single-Pack"
+	desc = "Contains one first aid kit focused on reducing the damage done by radiation."
+	cost = 1000
+	small_item = TRUE
+	contains = list(/obj/item/storage/firstaid/radiation)
+
 /*
 		Tools
 */
@@ -88,28 +95,6 @@
 					/obj/item/reagent_containers/blood/lizard)
 	crate_name = "blood freezer"
 	crate_type = /obj/structure/closet/crate/freezer
-
-/datum/supply_pack/medical/chemical
-	name = "Chemical Starter Kit Crate"
-	desc = "Contains thirteen different chemicals, for all the fun experiments you can make."
-	cost = 1000 // This is intentionally underpriced; the hope is that people will start using ghettochem, upon which time the price can be raised.
-	contains = list(/obj/item/reagent_containers/glass/bottle/hydrogen,
-					/obj/item/reagent_containers/glass/bottle/carbon,
-					/obj/item/reagent_containers/glass/bottle/nitrogen,
-					/obj/item/reagent_containers/glass/bottle/oxygen,
-					/obj/item/reagent_containers/glass/bottle/fluorine,
-					/obj/item/reagent_containers/glass/bottle/phosphorus,
-					/obj/item/reagent_containers/glass/bottle/silicon,
-					/obj/item/reagent_containers/glass/bottle/chlorine,
-					/obj/item/reagent_containers/glass/bottle/radium,
-					/obj/item/reagent_containers/glass/bottle/sacid,
-					/obj/item/reagent_containers/glass/bottle/ethanol,
-					/obj/item/reagent_containers/glass/bottle/potassium,
-					/obj/item/reagent_containers/glass/bottle/sugar,
-					/obj/item/clothing/glasses/science,
-					/obj/item/reagent_containers/dropper,
-					/obj/item/storage/box/beakers)
-	crate_name = "chemical crate"
 
 /datum/supply_pack/medical/surplus
 	name = "Medical Surplus Crate"

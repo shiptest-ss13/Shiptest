@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
-	liked_food = MEAT | RAW
+	liked_food = MEAT | RAW | GORE // Regular spiders literally liquify the insides of their prey and drink em like a smoothie. I think this fits
 	disliked_food = FRUIT | GROSS
 	toxic_food = VEGETABLES | DAIRY | CLOTH
 	mutanteyes = /obj/item/organ/eyes/night_vision/spider

@@ -3,8 +3,6 @@ Assistant
 */
 /datum/job/assistant
 	name = "Assistant"
-	total_positions = 5
-	spawn_positions = 5
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit = /datum/outfit/job/assistant
@@ -71,19 +69,6 @@ Assistant
 	accessory = /obj/item/clothing/accessory/armband/cargo
 
 //Shiptest outfits
-
-/datum/outfit/job/assistant/solgov
-	name = "Sailor (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/beret/solgov/plain
-
-/datum/outfit/job/assistant/solgov/rebel
-	name = "Sailor (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	head = /obj/item/clothing/head/beret/solgov/terragov/plain
 
 /datum/outfit/job/assistant/minutemen
 	name = "Volunteer (Minutemen)"
@@ -160,6 +145,36 @@ Assistant
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/safety_helmet
 
+/datum/outfit/job/assistant/syndicate/sbc
+	name = "Deck Assistant (Twinkleshine)"
+
+	uniform = /obj/item/clothing/under/syndicate
+	alt_uniform = /obj/item/clothing/under/syndicate/intern
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/combat
+	ears = /obj/item/radio/headset/syndicate/alt
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	back = /obj/item/storage/backpack
+	implants = list(/obj/item/implant/weapons_auth)
+	id = /obj/item/card/id/syndicate_command/crew_id
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/assistant/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("PlayerSyndicate")
+
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(1, 4)) // squidquest real
+	I.assignment = "Deck Assistant"
+	I.access |= list(ACCESS_SYNDICATE)
+	I.update_label()
+
 /datum/outfit/job/assistant/independent/crewmatefancy
 	name = "Crewmate (Independent)"
 
@@ -218,7 +233,7 @@ Assistant
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"
 
-	uniform = /obj/item/clothing/under/rank/medical/chemist/junior_chemist
+	uniform = /obj/item/clothing/under/rank/medical/
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	accessory = /obj/item/clothing/neck/scarf/orange
 	l_pocket = /obj/item/pda/medical
@@ -235,3 +250,12 @@ Assistant
 	l_pocket = /obj/item/kitchen/knife/combat/survival
 	gloves = /obj/item/clothing/gloves/combat
 	implants = list(/obj/item/implant/radio)
+
+/datum/outfit/job/assistant/frontiersmen
+	name = "Deckhand (frontiersmen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	shoes = /obj/item/clothing/shoes/jackboots
+	r_pocket = /obj/item/radio
+	head = /obj/item/clothing/head/beret/sec/frontier
+	ears = /obj/item/radio/headset/pirate

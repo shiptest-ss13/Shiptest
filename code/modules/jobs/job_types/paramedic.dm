@@ -1,7 +1,5 @@
 /datum/job/paramedic
 	name = "Paramedic"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Paramedic"
 
 	outfit = /datum/outfit/job/paramedic
@@ -47,18 +45,6 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/paramedic/solgov
-	name = "Combat Medic (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband/medblue
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/beret/solgov
-	suit =  /obj/item/clothing/suit/armor/vest/bulletproof/solgov/rep
-	ears = /obj/item/radio/headset/headset_medsec/alt
-
-	backpack = /obj/item/storage/backpack/security
-
 /datum/outfit/job/paramedic/traumateam
 	name = "Paramedic (Trauma Team Technician)"
 
@@ -71,7 +57,6 @@
 	name = "Paramedic (Gorlex)"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots

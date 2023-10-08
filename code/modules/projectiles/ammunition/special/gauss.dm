@@ -5,6 +5,7 @@
 	icon_state = "gauss-pellet"
 	projectile_type = /obj/projectile/bullet/gauss
 	auto_rotate = FALSE
+	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
 	var/energy_cost = 100
 
 /obj/item/ammo_casing/caseless/gauss/lance
@@ -19,8 +20,8 @@
 /obj/item/ammo_casing/caseless/gauss/slug
 	name = "ferromagnetic slug"
 	desc = "A large metal slug."
-	caliber = "lance"
+	caliber = "slug"
 	icon_state = "gauss-slug"
 	projectile_type = /obj/projectile/bullet/gauss/slug
 	auto_rotate = TRUE
-	energy_cost = 800
+	energy_cost = 700

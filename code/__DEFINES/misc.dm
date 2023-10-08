@@ -54,18 +54,6 @@
 #define GAME_STATE_PLAYING 3
 #define GAME_STATE_FINISHED 4
 
-//FONTS:
-// Used by Paper and PhotoCopier (and PaperBin once a year).
-// Used by PDA's Notekeeper.
-// Used by NewsCaster and NewsPaper.
-// Used by Modular Computers
-#define PEN_FONT "Verdana"
-#define FOUNTAIN_PEN_FONT "Segoe Script"
-#define CRAYON_FONT "Comic Sans MS"
-#define PRINTER_FONT "Times New Roman"
-#define SIGNFONT "Times New Roman"
-#define CHARCOAL_FONT "Candara"
-
 #define RESIZE_DEFAULT_SIZE 1
 
 //transfer_ai() defines. Main proc in ai_core.dm
@@ -90,12 +78,11 @@
 GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 
 //Bloody shoes/footprints
-#define MAX_SHOE_BLOODINESS 100
-#define BLOODY_FOOTPRINT_BASE_ALPHA 150
-#define BLOOD_GAIN_PER_STEP 100
-#define BLOOD_LOSS_PER_STEP 5
-#define BLOOD_LOSS_IN_SPREAD 20
-#define BLOOD_AMOUNT_PER_DECAL 20
+#define BLOODY_FOOTPRINT_BASE_ALPHA 80 /// Minimum alpha of footprints
+#define BLOOD_AMOUNT_PER_DECAL 50 /// How much blood a regular blood splatter contains
+#define BLOOD_ITEM_MAX 200 /// How much blood an item can have stuck on it
+#define BLOOD_POOL_MAX 300 /// How much blood a blood decal can contain
+#define BLOOD_FOOTPRINTS_MIN 5 /// How much blood a footprint need to at least contain
 
 //Bloody shoe blood states
 #define BLOOD_STATE_HUMAN "blood"
@@ -184,13 +171,6 @@ GLOBAL_LIST_INIT(ghost_accs_options, list(GHOST_ACCS_NONE, GHOST_ACCS_DIR, GHOST
 
 GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DEFAULT_SPRITE, GHOST_OTHERS_THEIR_SETTING)) //Same as ghost_accs_options.
 
-//pda fonts
-#define MONO "Monospaced"
-#define VT "VT323"
-#define ORBITRON "Orbitron"
-#define SHARE "Share Tech Mono"
-
-GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 
 /////////////////////////////////////
 // atom.appearence_flags shortcuts //
@@ -247,19 +227,6 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define SHELTER_DEPLOY_BAD_TURFS "bad turfs"
 #define SHELTER_DEPLOY_BAD_AREA "bad area"
 #define SHELTER_DEPLOY_ANCHORED_OBJECTS "anchored objects"
-
-//debug printing macros
-//_world and _usr should really never be used.
-#define debug2_world(msg) if (GLOB.Debug2) to_chat(world, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_usr(msg) if (GLOB.Debug2&&usr) to_chat(usr, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_admins(msg) if (GLOB.Debug2) to_chat(GLOB.admins, \
-	type = MESSAGE_TYPE_DEBUG, \
-	text = "DEBUG: [msg]")
-#define debug2_world_log(msg) if (GLOB.Debug2) log_world("DEBUG: [msg]")
 
 #define INCREMENT_TALLY(L, stat) if(L[stat]){L[stat]++}else{L[stat] = 1}
 
@@ -413,6 +380,7 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define GAUSSIAN_BLUR(filter_size) filter(type="blur", size=filter_size)
 
 #define STANDARD_GRAVITY 1 //Anything above this is high gravity, anything below no grav
+#define GAS_GIANT_GRAVITY 2
 #define GRAVITY_DAMAGE_TRESHOLD 3 //Starting with this value gravity will start to damage mobs
 
 #define CAMERA_NO_GHOSTS 0

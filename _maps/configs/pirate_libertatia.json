@@ -3,6 +3,15 @@
 	"map_name": "Libertatia-class Hauler",
 	"map_short_name": "Libertatia-class",
 	"map_path": "_maps/shuttles/shiptest/pirate_libertatia.dmm",
+	"description": "A widely-available and dirt-cheap courier ship by Miskilamo Spacefaring, Libertatias are shoddy overhauls of old civilian atmospheric ships or the burned-out wrecks of other Libertatias, made nominally space worthy and capable of carrying a modest cargo at blistering speeds. While marketed as courier ships and short-range cargo shuttles, the Libertatia found its true target market in the hands of smugglers, blockade runners, and pirates, who find its speed, low sensor signature, and rock-bottom price point extremely attractive. In recent years, it’s become far more common to see Libertatias captained by pirates than anyone else, especially in the loosely-patrolled Frontier sectors. Surprisingly enough, the more organized Frontiersmen pirate group shows little love for the humble Libertatia, instead preferring larger and more threatening ships.",
+	"tags": [
+		"Combat"
+	],
+	"prefix": "ISV",
+	"namelists": [
+		"PIRATES",
+		"NATURAL_AGGRESSIVE"
+	],
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/pirate",

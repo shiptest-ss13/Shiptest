@@ -1,7 +1,5 @@
 /datum/job/chaplain
 	name = "Chaplain"
-	total_positions = 1
-	spawn_positions = 1
 	wiki_page = "Chaplain" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/chaplain
@@ -142,19 +140,3 @@
 	name = "Chaplain (Rabbi)"
 	head = /obj/item/clothing/head/kippah
 	l_hand = /obj/item/storage/book/bible/torah
-
-/datum/outfit/job/chaplain/roumain
-	name = "Hunter Montagne (Saint-Roumain Militia)"
-	uniform = /obj/item/clothing/under/suit/roumain
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
-	head = /obj/item/clothing/head/HoS/cowboy/montagne
-	gloves = null
-	id = /obj/item/card/id/captains_spare
-	duffelbag = /obj/item/storage/backpack/cultpack
-	courierbag = /obj/item/storage/backpack/cultpack
-	backpack_contents = list(
-		/obj/item/stamp/chap = 1,
-		/obj/item/melee/classic_baton/telescopic=1
-		)

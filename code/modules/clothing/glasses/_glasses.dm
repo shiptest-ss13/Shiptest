@@ -9,6 +9,7 @@
 	equip_delay_other = 25
 	resistance_flags = NONE
 	custom_materials = list(/datum/material/glass = 250)
+	supports_variations = VOX_VARIATION
 	greyscale_colors = list(list(14, 26), list(17, 26))
 	greyscale_icon_state = "glasses"
 	var/vision_flags = 0
@@ -19,10 +20,6 @@
 	var/list/icon/current = list() //the current hud icons
 	var/vision_correction = 0 //does wearing these glasses correct some of our vision defects?
 	var/glass_colour_type //colors your vision when worn
-
-/obj/item/clothing/glasses/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is stabbing \the [src] into [user.p_their()] eyes! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/clothing/glasses/examine(mob/user)
 	. = ..()
@@ -66,9 +63,6 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
 
-/obj/item/clothing/glasses/meson/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is putting \the [src] to [user.p_their()] eyes and overloading the brightness! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/clothing/glasses/meson/night
 	name = "night vision meson scanner"
@@ -103,6 +97,7 @@
 	resistance_flags = ACID_PROOF
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	custom_price = 250
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/science/item_action_slot_check(slot)
 	if(slot == ITEM_SLOT_EYES)
@@ -128,22 +123,43 @@
 	flash_protect = FLASH_PROTECTION_SENSITIVE
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
-
-/obj/item/clothing/glasses/science/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is tightening \the [src]'s straps around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return OXYLOSS
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/eyepatch
 	name = "eyepatch"
 	desc = "Yarr."
-	icon_state = "eyepatch"
-	item_state = "eyepatch"
+	icon_state = "eyepatch-0"
+	item_state = "eyepatch-0"
+	var/flipped = FALSE
+
+/obj/item/clothing/glasses/eyepatch/AltClick(mob/user)
+	. = ..()
+	flipped = !flipped
+	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	icon_state = "eyepatch-[flipped]"
+	item_state = "eyepatch-[flipped]"
+	update_appearance()
+
+/obj/item/clothing/glasses/eyepatch/examine(mob/user)
+	. = ..()
+	. += "It is currently aligned to the [flipped == 0 ? "right" : "left"] side."
+
+/obj/item/clothing/glasses/eyepatch/attackby(obj/item/I, mob/user, params)
+	. = ..()
+	if(istype(I, /obj/item/clothing/glasses/eyepatch))
+		var/obj/item/clothing/glasses/eyepatch/old_patch = I
+		var/obj/item/clothing/glasses/blindfold/eyepatch/double_patch = new/obj/item/clothing/glasses/blindfold/eyepatch
+		double_patch.forceMove(user.drop_location())
+		to_chat(user, "<span class='notice'>You combine the eyepatches with a knot.</span>")
+		old_patch.Destroy()
+		Destroy()
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
 	desc = "Such a dapper eyepiece!"
 	icon_state = "monocle"
 	item_state = "headset" // lol
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/material
 	name = "optical material scanner"
@@ -177,6 +193,7 @@
 	icon_state = "glasses"
 	item_state = "glasses"
 	vision_correction = 1 //corrects nearsightedness
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/regular/jamjar
 	name = "jamjar glasses"
@@ -208,6 +225,7 @@
 	tint = 1
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 	dog_fashion = /datum/dog_fashion/head
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/sunglasses/reagent
 	name = "beer goggles"
@@ -284,6 +302,7 @@
 	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT
 	flags_cover = GLASSESCOVERSEYES
 	glass_colour_type = /datum/client_colour/glass_colour/gray
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
@@ -333,11 +352,12 @@
 
 /obj/item/clothing/glasses/blindfold/white/visual_equipped(mob/living/carbon/human/user, slot)
 	if(ishuman(user) && slot == ITEM_SLOT_EYES)
-		update_icon(user)
+		update_icon(ALL, user)
 		user.update_inv_glasses() //Color might have been changed by update_icon.
 	..()
 
-/obj/item/clothing/glasses/blindfold/white/update_icon(mob/living/carbon/human/user)
+/obj/item/clothing/glasses/blindfold/white/update_icon(updates = ALL, mob/living/carbon/human/user)
+	. = ..()
 	if(ishuman(user) && !colored_before)
 		add_atom_colour("#[user.eye_color]", FIXED_COLOUR_PRIORITY)
 		colored_before = TRUE
@@ -350,6 +370,21 @@
 		M.appearance_flags |= RESET_COLOR
 		M.color = "#[H.eye_color]"
 		. += M
+
+/obj/item/clothing/glasses/blindfold/eyepatch
+	name = "double eyepatch"
+	desc = "For those pirates who've been at it a while. May interfere with navigating ability."
+	icon_state = "eyepatchd"
+	item_state = "eyepatchd"
+
+/obj/item/clothing/glasses/blindfold/eyepatch/attack_self(mob/user)
+	. = ..()
+	var/obj/item/clothing/glasses/eyepatch/patch_one = new/obj/item/clothing/glasses/eyepatch
+	var/obj/item/clothing/glasses/eyepatch/patch_two = new/obj/item/clothing/glasses/eyepatch
+	patch_one.forceMove(user.drop_location())
+	patch_two.forceMove(user.drop_location())
+	to_chat(user, "<span class='notice'>You undo the knot on the eyepatches.</span>")
+	Destroy()
 
 /obj/item/clothing/glasses/sunglasses/big
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Larger than average enhanced shielding blocks flashes."
@@ -414,8 +449,21 @@
 /obj/item/clothing/glasses/thermal/eyepatch
 	name = "optical thermal eyepatch"
 	desc = "An eyepatch with built-in thermal optics."
-	icon_state = "eyepatch"
-	item_state = "eyepatch"
+	icon_state = "eyepatch-0"
+	item_state = "eyepatch-0"
+	var/flipped = FALSE
+
+/obj/item/clothing/glasses/thermal/eyepatch/AltClick(mob/user)
+	. = ..()
+	flipped = !flipped
+	to_chat(user, "<span class='notice'>You shift the eyepatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	icon_state = "eyepatch-[flipped]"
+	item_state = "eyepatch-[flipped]"
+	update_appearance()
+
+/obj/item/clothing/glasses/thermal/eyepatch/examine(mob/user)
+	. = ..()
+	. += "It is currently aligned to the [flipped == 0 ? "right" : "left"] side."
 
 /obj/item/clothing/glasses/cold
 	name = "cold goggles"

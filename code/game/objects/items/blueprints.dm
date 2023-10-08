@@ -228,6 +228,8 @@
 		M.name = replacetext(M.name,oldtitle,title)
 	for(var/obj/machinery/door/M in A)
 		M.name = replacetext(M.name,oldtitle,title)
+	for(var/obj/machinery/fax/M in A)
+		M.fax_name = replacetext(M.fax_name,oldtitle,title)
 	//TODO: much much more. Unnamed airlocks, cameras, etc.
 
 /obj/item/areaeditor/shuttle
@@ -382,6 +384,11 @@
 
 	to_chat(creator, "<span class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")
 	return TRUE
+
+/obj/item/areaeditor/shuttle/cyborg
+	name = "ship structure schematics"
+	desc = "A digital copy of the local ship blueprints and zoning stored in your memory, used to expand flying shuttles."
+	fluffnotice = "For use in engineering cyborgs only. Wipe from memory upon disabling."
 
 // VERY EXPENSIVE (I think)
 /obj/docking_port/mobile/proc/recalculate_bounds()

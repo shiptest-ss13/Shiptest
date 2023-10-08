@@ -12,6 +12,10 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nucleardump)
+"cw" = (
+/obj/effect/turf_decal/syndicateemblem/top/right,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/nucleardump)
 "cU" = (
 /obj/structure/radioactive/waste,
 /turf/open/floor/plating/asteroid/airless,
@@ -36,6 +40,10 @@
 /obj/structure/radioactive,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered)
+"gs" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/nucleardump)
 "gw" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/open/floor/plasteel/dark,
@@ -79,15 +87,11 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/nucleardump/supermatter)
 "kB" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/nucleardump)
 "kN" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nucleardump)
 "kP" = (
@@ -96,6 +100,11 @@
 	},
 /turf/template_noop,
 /area/space/nearstation)
+"la" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/syndicateemblem/middle/right,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/nucleardump)
 "ld" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/structure/radioactive,
@@ -114,8 +123,7 @@
 /obj/effect/turf_decal/industrial/fire{
 	dir = 4
 	},
-/obj/effect/turf_decal/radiation/white{
-	color = "#B20000";
+/obj/structure/sign/warning/radiation{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
@@ -168,6 +176,12 @@
 /obj/effect/turf_decal/industrial/fire,
 /turf/open/floor/plasteel/dark/airless,
 /area/space/nearstation)
+"pf" = (
+/obj/machinery/door/airlock/grunge{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/nucleardump)
 "pJ" = (
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/mineral/plastitanium/red,
@@ -223,7 +237,9 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/nucleardump)
 "uo" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -231,6 +247,10 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/nucleardump)
+"ur" = (
+/obj/effect/turf_decal/syndicateemblem/top/left,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nucleardump)
 "uF" = (
 /obj/machinery/power/port_gen/pacman/super,
@@ -254,16 +274,14 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon{
 	dir = 4
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/nucleardump)
 "xR" = (
 /turf/closed/wall,
 /area/space/nearstation)
 "yn" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/nucleardump)
 "yw" = (
@@ -300,15 +318,11 @@
 /area/ruin/space/has_grav/nucleardump)
 "Bl" = (
 /mob/living/simple_animal/hostile/hivebot/range,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/nucleardump)
 "BW" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/vault,
 /area/ruin/space/has_grav/nucleardump/supermatter)
 "BX" = (
@@ -377,6 +391,11 @@
 	},
 /turf/open/floor/engine/air,
 /area/ruin/space/has_grav/nucleardump/supermatter)
+"Jb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/syndicateemblem/top/middle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/nucleardump)
 "Km" = (
 /obj/structure/window/plasma/reinforced/fulltile/unanchored,
 /turf/open/floor/vault,
@@ -389,6 +408,8 @@
 /area/space/nearstation)
 "KS" = (
 /mob/living/simple_animal/hostile/carp,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/syndicateemblem/bottom/middle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nucleardump)
 "Ln" = (
@@ -431,10 +452,13 @@
 /turf/open/floor/engine/air,
 /area/ruin/space/has_grav/nucleardump/supermatter)
 "Oq" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
+/area/ruin/space/has_grav/nucleardump)
+"OB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/syndicateemblem/bottom/right,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nucleardump)
 "OF" = (
 /obj/structure/radioactive/waste,
@@ -472,19 +496,18 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/nucleardump)
 "Ra" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/engine/air,
 /area/ruin/space/has_grav/nucleardump/supermatter)
 "Ry" = (
-/obj/machinery/light/built,
+/obj/machinery/light/built/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/nucleardump)
 "RC" = (
-/obj/effect/decal/hammerandsickle,
 /mob/living/simple_animal/chicken,
 /obj/item/melee/greykingsword,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/syndicateemblem/middle/middle,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nucleardump)
 "RD" = (
@@ -509,6 +532,11 @@
 "Tm" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/nucleardump)
+"Tw" = (
+/obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/nucleardump)
 "Ud" = (
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel,
@@ -528,9 +556,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/engine/air,
 /area/ruin/space/has_grav/nucleardump/supermatter)
 "VE" = (
@@ -538,7 +564,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/nucleardump)
 "VK" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
@@ -546,6 +574,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark/airless,
+/area/ruin/space/has_grav/nucleardump)
+"VL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/syndicateemblem/middle/left,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/nucleardump)
 "VU" = (
 /turf/open/floor/mineral/plastitanium,
@@ -569,6 +602,11 @@
 "Yx" = (
 /turf/open/floor/vault,
 /area/ruin/space/has_grav/nucleardump/supermatter)
+"YZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/syndicateemblem/bottom/left,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/nucleardump)
 "Zh" = (
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/dark,
@@ -578,8 +616,7 @@
 	dir = 4
 	},
 /obj/structure/radioactive/waste,
-/obj/effect/turf_decal/radiation/white{
-	color = "#B20000";
+/obj/structure/sign/warning/radiation{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/dark,
@@ -847,9 +884,9 @@ oT
 fi
 Ln
 pJ
-iZ
-iZ
-iZ
+ur
+VL
+YZ
 iZ
 VU
 fi
@@ -881,10 +918,10 @@ fu
 fi
 VU
 iZ
-iZ
+Jb
 RC
 KS
-iZ
+gs
 VU
 fi
 fi
@@ -915,10 +952,10 @@ LH
 fi
 QE
 iZ
-iZ
-iZ
-iZ
-iZ
+cw
+la
+OB
+gs
 MX
 fi
 rp
@@ -950,8 +987,8 @@ fi
 ls
 VU
 kN
-iZ
-kN
+gs
+Tw
 VU
 mX
 fi
@@ -984,7 +1021,7 @@ fi
 Vb
 fi
 fi
-Zh
+pf
 fi
 fi
 fi

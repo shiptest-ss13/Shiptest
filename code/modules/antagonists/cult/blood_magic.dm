@@ -356,9 +356,10 @@
 	var/datum/action/innate/cult/blood_spell/source
 
 /obj/item/melee/blood_magic/New(loc, spell)
-	source = spell
-	uses = source.charges
-	health_cost = source.health_cost
+	if(spell)
+		source = spell
+		uses = source.charges
+		health_cost = source.health_cost
 	..()
 
 /obj/item/melee/blood_magic/Destroy()
@@ -373,7 +374,7 @@
 			source.desc = source.base_desc
 			source.desc += "<br><b><u>Has [uses] use\s remaining</u></b>."
 			source.UpdateButtonIcon()
-	..()
+	return ..()
 
 /obj/item/melee/blood_magic/attack_self(mob/living/user)
 	afterattack(user, user, TRUE)
@@ -608,7 +609,7 @@
 			if(candidate.mmi)
 				channeling = TRUE
 				user.visible_message("<span class='danger'>A dark cloud emanates from [user]'s hand and swirls around [candidate]!</span>")
-				playsound(T, 'sound/machines/airlock_alien_prying.ogg', 80, TRUE)
+				playsound(T, 'sound/machines/creaking.ogg', 80, TRUE)
 				var/prev_color = candidate.color
 				candidate.color = "black"
 				if(do_after(user, 90, target = candidate))
@@ -802,12 +803,6 @@
 					temp += max((B.bloodiness**2)/800,1)
 				new /obj/effect/temp_visual/cult/turf/floor(get_turf(B))
 				qdel(B)
-		for(var/obj/effect/decal/cleanable/trail_holder/TH in view(T, 2))
-			qdel(TH)
-		var/obj/item/clothing/shoes/shoecheck = user.shoes
-		if(shoecheck && shoecheck.bloody_shoes[/datum/reagent/blood])
-			temp += shoecheck.bloody_shoes[/datum/reagent/blood]/20
-			shoecheck.bloody_shoes[/datum/reagent/blood] = 0
 		if(temp)
 			user.Beam(T,icon_state="drainbeam",time=15)
 			new /obj/effect/temp_visual/cult/sparks(get_turf(user))

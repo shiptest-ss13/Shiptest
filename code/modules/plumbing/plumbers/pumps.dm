@@ -4,6 +4,7 @@
 	desc = "Pump up those sweet liquids from under the surface. Uses thermal energy from geysers to power itself." //better than placing 200 cables, because it wasnt fun
 	icon = 'icons/obj/plumbing/plumbers.dmi'
 	icon_state = "pump"
+	base_icon_state = "pump"
 	anchored = FALSE
 	density = TRUE
 	idle_power_usage = 10
@@ -30,7 +31,7 @@
 	. = ..()
 	if(. == SUCCESSFUL_UNFASTEN)
 		geyser = null
-		update_icon()
+		update_appearance()
 		geyserless = FALSE //we switched state, so lets just set this back aswell
 
 /obj/machinery/plumbing/liquid_pump/process()
@@ -40,7 +41,7 @@
 	if(!geyser)
 		for(var/obj/structure/geyser/G in loc.contents)
 			geyser = G
-			update_icon()
+			update_appearance()
 		if(!geyser) //we didnt find one, abort
 			geyserless = TRUE
 			visible_message("<span class='warning'>The [name] makes a sad beep!</span>")
@@ -57,8 +58,9 @@
 
 /obj/machinery/plumbing/liquid_pump/update_icon_state()
 	if(geyser)
-		icon_state = initial(icon_state) + "-on"
+		icon_state = "[base_icon_state]-on"
 	else if(panel_open)
-		icon_state = initial(icon_state) + "-open"
+		icon_state = "[base_icon_state]-open"
 	else
-		icon_state = initial(icon_state)
+		icon_state = "[base_icon_state]"
+	return ..()

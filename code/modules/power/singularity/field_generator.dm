@@ -187,7 +187,7 @@ field_generator power level display
 	var/new_level = round(num_power_levels * power / field_generator_max_power)
 	if(new_level != power_level)
 		power_level = new_level
-		update_icon()
+		update_appearance()
 
 /obj/machinery/field/generator/proc/turn_off()
 	active = FG_OFFLINE
@@ -200,7 +200,7 @@ field_generator power level display
 	if(active || warming_up <= 0)
 		return
 	warming_up--
-	update_icon()
+	update_appearance()
 	if(warming_up > 0)
 		addtimer(CALLBACK(src, .proc/cool_down), 50)
 
@@ -212,7 +212,7 @@ field_generator power level display
 	if(!active)
 		return
 	warming_up++
-	update_icon()
+	update_appearance()
 	if(warming_up >= 3)
 		start_fields()
 	else
@@ -326,7 +326,7 @@ field_generator power level display
 	connected_gens |= G
 	G.connected_gens |= src
 	shield_floor(TRUE)
-	update_icon()
+	update_appearance()
 
 
 /obj/machinery/field/generator/proc/cleanup()
@@ -343,7 +343,7 @@ field_generator power level display
 			FG.cleanup()
 		connected_gens -= FG
 	clean_up = 0
-	update_icon()
+	update_appearance()
 
 	//This is here to help fight the "hurr durr, release singulo cos nobody will notice before the
 	//singulo eats the evidence". It's not fool-proof but better than nothing.

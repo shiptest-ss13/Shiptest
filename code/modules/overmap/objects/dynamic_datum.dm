@@ -41,6 +41,9 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
+	//controls what kind of sound we play when we land and the maptext comes up
+	var/landing_sound
+
 /datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
 
@@ -52,12 +55,13 @@
 /datum/overmap/dynamic/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
-		qdel(dock, TRUE)
+		qdel(dock)
+	ruin_turfs = null
+	. = ..()
+	//This NEEDS to be last so any docked ships get deleted properly
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
-	ruin_turfs = null
-	return ..()
 
 /datum/overmap/dynamic/get_jump_to_turf()
 	if(reserve_docks)
@@ -80,16 +84,18 @@
 
 /datum/overmap/dynamic/post_docked(datum/overmap/ship/controlled/dock_requester)
 	if(planet_name)
-		for(var/mob/M as anything in GLOB.player_list)
-			if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
-				M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+		for(var/mob/Mob as anything in GLOB.player_list)
+			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
+				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+				playsound(Mob, landing_sound, 50)
+
 
 /datum/overmap/dynamic/post_undocked(datum/overmap/dock_requester)
 	if(preserve_level)
 		return
 
-	if(length(mapzone?.get_mind_mobs()))
-		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
+	if(length(mapzone?.get_mind_mobs()) || SSlag_switch.measures[DISABLE_PLANETDEL])
+		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	var/list/results = SSovermap.get_unused_overmap_square()
@@ -97,7 +103,7 @@
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
 		reserve_docks -= dock
-		qdel(dock, TRUE)
+		qdel(dock)
 	reserve_docks = null
 	if(mapzone)
 		mapzone.clear_reservation()
@@ -113,10 +119,17 @@
 		probabilities = list()
 		for(var/datum/planet_type/planet_type as anything in subtypesof(/datum/planet_type))
 			probabilities[initial(planet_type.planet)] = initial(planet_type.weight)
-
 	planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
 
-	Rename(planet.name)
+
+	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
+		planet_name = "[gen_planet_name()]"
+		Rename(planet_name)
+		token.name = "[planet_name]" + " ([planet.name])"
+	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
+		Rename(planet.name)
+		token.name = "[planet.name]"
+
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc
 	token.color = planet.color
@@ -124,6 +137,8 @@
 	default_baseturf = planet.default_baseturf
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
+	landing_sound = planet.landing_sound
+	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
@@ -138,6 +153,7 @@
 
 	if(!preserve_level)
 		token.desc += " It may not still be here if you leave it."
+		token.update_appearance()
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -157,6 +173,8 @@
  * * visiting shuttle - The docking port of the shuttle visiting the level.
  */
 /datum/overmap/dynamic/proc/load_level()
+	if(SSlag_switch.measures[DISABLE_PLANETGEN] && !(HAS_TRAIT(usr, TRAIT_BYPASS_MEASURES)))
+		return FALSE
 	if(mapzone)
 		return TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
@@ -192,7 +210,7 @@
 	icon_state = "away"
 	// DO NOT PUT UNIQUE_AREA IN THESE FLAGS FOR ANY SUBTYPE. IT CAUSES WEATHER PROBLEMS
 	// THE ONLY REASON IT DIDN'T BEFORE IS BECAUSE THE CODE DIDN'T RESPECT THE FLAG
-	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED | NOTELEPORT
+	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED
 	flags_1 = CAN_BE_DIRTY_1
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	sound_environment = SOUND_ENVIRONMENT_STONEROOM
@@ -218,31 +236,48 @@
 	ambientsounds = SPOOKY
 	allow_weather = FALSE
 
+/area/overmap_encounter/planetoid/cave/explored
+	area_flags = VALID_TERRITORY
+
+//exploreds are for ruins
+
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
 	ambientsounds = MINING
+
+/area/overmap_encounter/planetoid/lava/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/ice
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 
+/area/overmap_encounter/planetoid/ice/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/sand
 	name = "\improper Sandy Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = MINING
+
+/area/overmap_encounter/planetoid/sand/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/jungle
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = AWAY_MISSION
 
+/area/overmap_encounter/planetoid/jungle/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
 
-/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
+/area/overmap_encounter/planetoid/rockplanet/explored
 	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/beachplanet
@@ -250,10 +285,16 @@
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
 
+/area/overmap_encounter/planetoid/beachplanet/explored
+	area_flags = VALID_TERRITORY
+
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
 	ambientsounds = MAINTENANCE
+
+/area/overmap_encounter/planetoid/wasteplanet/explored
+	area_flags = VALID_TERRITORY
 
 /area/overmap_encounter/planetoid/reebe
 	name = "\improper Yellow Space"
@@ -261,6 +302,13 @@
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
 
+/area/overmap_encounter/planetoid/asteroid
+	name = "\improper Asteroid Field"
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = SPACE
 
-
-
+/area/overmap_encounter/planetoid/gas_giant
+	name = "\improper Gas Giant"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = REEBE
+	has_gravity = GAS_GIANT_GRAVITY

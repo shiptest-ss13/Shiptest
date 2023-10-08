@@ -4,7 +4,7 @@
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
 	volume = 200
-	var/blood_type = null
+	var/datum/blood_type/blood_type = null
 	var/unique_blood = null
 	var/labelled = 0
 	fill_icon_thresholds = list(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
@@ -12,8 +12,8 @@
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
 	if(blood_type != null)
-		reagents.add_reagent(unique_blood ? unique_blood : /datum/reagent/blood, 200, list("donor"=null,"viruses"=null,"blood_DNA"=null,"blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
-		update_icon()
+		reagents.add_reagent(unique_blood ? unique_blood : /datum/reagent/blood, 200, list("viruses"=null,"blood_DNA"=null,"blood_type"=get_blood_type(blood_type),"resistances"=null,"trace_chem"=null))
+		update_appearance()
 
 /obj/item/reagent_containers/blood/on_reagent_change(changetype)
 	if(reagents)
@@ -22,13 +22,14 @@
 			blood_type = B.data["blood_type"]
 		else
 			blood_type = null
-	update_pack_name()
-	update_icon()
+	update_name()
+	update_appearance()
 
-/obj/item/reagent_containers/blood/proc/update_pack_name()
+/obj/item/reagent_containers/blood/update_name(updates)
+	. = ..()
 	if(!labelled)
 		if(blood_type)
-			name = "blood pack - [blood_type]"
+			name = "blood pack[blood_type ? " - [unique_blood ? blood_type : blood_type.name]" : null]"
 		else
 			name = "blood pack"
 
@@ -61,6 +62,12 @@
 /obj/item/reagent_containers/blood/lizard
 	blood_type = "L"
 
+/obj/item/reagent_containers/blood/elzuose
+	blood_type = "E"
+
+/obj/item/reagent_containers/blood/synthetic
+	blood_type = "Coolant"
+
 /obj/item/reagent_containers/blood/squid
 	blood_type = "S"
 
@@ -82,6 +89,6 @@
 			name = "blood pack - [t]"
 		else
 			labelled = 0
-			update_pack_name()
+			update_name()
 	else
 		return ..()

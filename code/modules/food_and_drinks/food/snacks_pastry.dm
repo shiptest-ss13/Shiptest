@@ -76,7 +76,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/ketchup = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/ketchup = 2)
 	tastes = list("meat" = 1)
-	foodtype = JUNKFOOD | MEAT | GROSS | FRIED | BREAKFAST
+	foodtype = JUNKFOOD | MEAT | GORE | FRIED | BREAKFAST
 	is_decorated = TRUE
 
 /obj/item/reagent_containers/food/snacks/donut/berry
@@ -377,13 +377,14 @@
 
 /obj/item/reagent_containers/food/snacks/soylentgreen
 	name = "\improper Soylent Green"
-	desc = "Not made of people. Honest." //Totally people.
+	desc = "Not made of people. Honest*." //Totally people.
 	icon_state = "soylent_green"
 	trash = /obj/item/trash/waffles
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#9ACD32"
 	tastes = list("waffles" = 7, "people" = 1)
+	// The wafers are supposed to be flavorful and nutritious in the movie. They shouldn't be gross in a dystopian future where the chef regularly feeds people from the morgue to you.
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/soylenviridians
@@ -769,15 +770,22 @@
 
 /obj/item/reagent_containers/food/snacks/pancakes/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
-/obj/item/reagent_containers/food/snacks/pancakes/update_icon()
-	if(contents.len)
-		name = "stack of pancakes"
-	else
-		name = initial(name)
+/obj/item/food/pancakes/update_name()
+	name = contents.len ? "stack of pancakes" : initial(name)
+	return ..()
+
+/obj/item/food/pancakes/update_icon(updates=ALL)
+	if(!(updates & UPDATE_OVERLAYS))
+		return ..()
+
+	updates &= ~UPDATE_OVERLAYS
+	. = ..() // Don't update overlays. We're doing that here
+
 	if(contents.len < LAZYLEN(overlays))
-		overlays-=overlays[overlays.len]
+		overlays -= overlays[overlays.len]
+	. |= UPDATE_OVERLAYS
 
 /obj/item/reagent_containers/food/snacks/pancakes/examine(mob/user)
 	var/ingredients_listed = ""
@@ -815,13 +823,13 @@
 			to_chat(user, "<span class='notice'>You add the [I] to the [name].</span>")
 			P.name = initial(P.name)
 			contents += P
-			update_snack_overlays(P)
+			update_customizable_overlays(P)
 			if (P.contents.len)
 				for(var/V in P.contents)
 					P = V
 					P.name = initial(P.name)
 					contents += P
-					update_snack_overlays(P)
+					update_customizable_overlays(P)
 			P = I
 			P.contents.Cut()
 		return
@@ -830,19 +838,19 @@
 		return O.attackby(I, user, params)
 	..()
 
-/obj/item/reagent_containers/food/snacks/pancakes/update_snack_overlays(obj/item/reagent_containers/food/snacks/P)
+/obj/item/reagent_containers/food/snacks/pancakes/update_customizable_overlays(obj/item/reagent_containers/food/snacks/P)
 	var/mutable_appearance/pancake = mutable_appearance(icon, "[P.item_state]_[rand(1,3)]")
 	pancake.pixel_x = rand(-1,1)
 	pancake.pixel_y = 3 * contents.len - 1
 	add_overlay(pancake)
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/snacks/pancakes/attack(mob/M, mob/user, def_zone, stacked = TRUE)
 	if(user.a_intent == INTENT_HARM || !contents.len || !stacked)
 		return ..()
 	var/obj/item/O = contents[contents.len]
 	. = O.attack(M, user, def_zone, FALSE)
-	update_icon()
+	update_appearance()
 
 #undef PANCAKE_MAX_STACK
 

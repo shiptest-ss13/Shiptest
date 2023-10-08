@@ -189,7 +189,7 @@
 		mask = new mask_type(src)
 	if(storage_type)
 		storage = new storage_type(src)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/suit_storage_unit/Destroy()
 	QDEL_NULL(suit)
@@ -236,7 +236,7 @@
 	if(!is_operational && state_open)
 		open_machine()
 		dump_contents()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/suit_storage_unit/dump_contents()
 	dropContents()
@@ -328,12 +328,12 @@
 			if (item_to_dispense)
 				vars[choice] = null
 				try_put_in_hand(item_to_dispense, user)
-				update_icon()
+				update_appearance()
 			else
 				var/obj/item/in_hands = user.get_active_held_item()
 				if (in_hands)
 					attackby(in_hands, user)
-				update_icon()
+				update_appearance()
 
 	interact(user)
 
@@ -402,7 +402,7 @@
 		uv_cycles--
 		uv = TRUE
 		locked = TRUE
-		update_icon()
+		update_appearance()
 		if(occupant)
 			if(uv_super)
 				mob_occupant.adjustFireLoss(rand(20, 36))
@@ -416,7 +416,7 @@
 		locked = FALSE
 		if(uv_super)
 			visible_message("<span class='warning'>[src]'s door creaks open with a loud whining noise. A cloud of foul black smoke escapes from its chamber.</span>")
-			playsound(src, 'sound/machines/airlock_alien_prying.ogg', 50, TRUE)
+			playsound(src, 'sound/machines/creaking.ogg', 50, TRUE)
 			helmet = null
 			qdel(helmet)
 			suit = null
@@ -433,7 +433,7 @@
 			else
 				visible_message("<span class='warning'>[src]'s door slides open, barraging you with the nauseating smell of charred flesh.</span>")
 				mob_occupant.radiation = 0
-			playsound(src, 'sound/machines/airlockclose.ogg', 25, TRUE)
+			playsound(src, 'sound/machines/airlocks/standard/close.ogg', 25, TRUE)
 			var/list/things_to_clear = list() //Done this way since using GetAllContents on the SSU itself would include circuitry and such.
 			if(suit)
 				things_to_clear += suit
@@ -539,7 +539,7 @@
 			storage = I
 
 		visible_message("<span class='notice'>[user] inserts [I] into [src]</span>", "<span class='notice'>You load [I] into [src].</span>")
-		update_icon()
+		update_appearance()
 		return
 
 	if(panel_open && is_wire_tool(I))
@@ -547,7 +547,7 @@
 		return
 	if(!state_open)
 		if(default_deconstruction_screwdriver(user, "[base_icon_state]", "[base_icon_state]", I))
-			update_icon()
+			update_appearance()
 			return
 	if(default_pry_open(I))
 		dump_contents()
@@ -595,4 +595,4 @@
 		else if(istype(AM, /obj/item) && !storage)
 			AM.forceMove(src)
 			storage = AM
-	update_icon()
+	update_appearance()

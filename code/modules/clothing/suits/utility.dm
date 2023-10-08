@@ -131,6 +131,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	resistance_flags = NONE
 	flags_1 = RAD_PROTECT_CONTENTS_1
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/radiation
 	name = "radiation suit"
@@ -152,6 +153,7 @@
 	flags_inv = HIDEJUMPSUIT
 	resistance_flags = NONE
 	flags_1 = RAD_PROTECT_CONTENTS_1
+	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/radiation/space
 	name = "low-pressure radiation helmet"

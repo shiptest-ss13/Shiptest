@@ -32,9 +32,9 @@
 	icon_state = "salt_pile"
 	var/safepasses = 3 //how many times can this salt pile be passed before dissipating
 
-/obj/effect/decal/cleanable/food/salt/CanAllowThrough(atom/movable/AM, turf/target)
+/obj/effect/decal/cleanable/food/salt/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(is_species(AM, /datum/species/snail))
+	if(is_species(mover, /datum/species/snail))
 		return FALSE
 
 /obj/effect/decal/cleanable/food/salt/Bumped(atom/movable/AM)
@@ -53,14 +53,6 @@
 	safepasses--
 	if(safepasses <= 0 && !QDELETED(src))
 		qdel(src)
-	if(issquidperson(AM))
-		var/mob/living/carbon/human/H = AM
-		if(H.movement_type & FLYING)
-			return
-		H.adjustFireLoss(2, TRUE)
-		H.reagents.add_reagent(/datum/reagent/consumable/sodiumchloride, 5)
-		playsound(H, 'sound/weapons/sear.ogg', 50, TRUE)
-		to_chat(H, "<span class='userdanger'>[src] burns you!</span>")
 
 /obj/effect/decal/cleanable/food/flour
 	name = "flour"

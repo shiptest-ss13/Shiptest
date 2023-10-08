@@ -25,11 +25,11 @@
 	icon_state = "lattice-14"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ak" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ao" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt,
@@ -47,24 +47,15 @@
 "au" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ax" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/starhall)
-"aB" = (
-/obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crewquarters)
 "aG" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "aJ" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -84,7 +75,7 @@
 "aU" = (
 /obj/item/stack/cable_coil/cut/orange,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "aX" = (
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -92,9 +83,8 @@
 	name = "External Shutters"
 	},
 /obj/structure/frame/machine,
-/obj/structure/spacevine,
 /turf/open/floor/plating/airless,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "aZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -108,7 +98,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "bb" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -121,11 +111,11 @@
 /obj/structure/grille,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bd" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "be" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/window/northleft,
@@ -145,12 +135,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/light/small/broken{
-	dir = 8;
-	pixel_y = 14
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bh" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
@@ -159,7 +146,7 @@
 /obj/structure/spacevine,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bo" = (
 /obj/item/stack/cable_coil/cut/orange,
 /obj/structure/flora/junglebush,
@@ -173,11 +160,7 @@
 	pixel_x = -25;
 	pixel_y = -10
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -190,34 +173,32 @@
 "bA" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bC" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bD" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "starlauncherone"
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "bI" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bK" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bL" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bN" = (
 /obj/structure/lattice{
 	icon_state = "lattice-127"
@@ -233,11 +214,9 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bQ" = (
 /obj/effect/turf_decal/corner/opaque/orange/bordercee{
 	dir = 1
@@ -255,10 +234,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/item/shard,
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/interceptor/security)
 "bS" = (
@@ -273,8 +248,12 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -284,10 +263,6 @@
 /area/ruin/jungle/interceptor/bridge)
 "ca" = (
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "cb" = (
@@ -305,12 +280,12 @@
 "cg" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cj" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cl" = (
 /obj/effect/turf_decal/corner/opaque/lime/border{
 	dir = 5
@@ -330,7 +305,9 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
 "co" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -368,7 +345,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cJ" = (
 /obj/structure/cable/orange{
 	icon_state = "0-8"
@@ -381,7 +358,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cK" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -397,11 +374,15 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "cL" = (
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cN" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
@@ -414,18 +395,18 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cT" = (
 /obj/effect/decal/cleanable/plastic,
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cV" = (
 /obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/robot_debris/gib,
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "cX" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -446,21 +427,21 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "df" = (
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut/orange,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "dj" = (
 /obj/structure/flora/junglebush/large,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ds" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "dv" = (
 /obj/structure/closet/wall/blue{
 	dir = 4;
@@ -483,7 +464,7 @@
 "dy" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "dA" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
@@ -533,7 +514,7 @@
 "dQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "dW" = (
 /obj/structure/cable/orange{
 	icon_state = "0-4"
@@ -564,11 +545,11 @@
 	},
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "en" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ez" = (
 /obj/item/stack/cable_coil/cut/orange,
 /obj/effect/decal/cleanable/plastic,
@@ -577,7 +558,7 @@
 "eC" = (
 /obj/item/shard,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "eD" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -588,11 +569,11 @@
 /obj/structure/catwalk/over,
 /obj/structure/spacevine,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "eE" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "eG" = (
 /obj/item/restraints/handcuffs/cable,
 /obj/effect/turf_decal/corner/transparent/bar/three_quarters{
@@ -614,7 +595,7 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "eR" = (
 /obj/structure/girder,
 /obj/structure/spacevine,
@@ -654,12 +635,15 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -677,7 +661,7 @@
 /obj/structure/spacevine/dense,
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "fl" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -707,7 +691,7 @@
 "fu" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "fw" = (
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 8
@@ -750,14 +734,10 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "fR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -766,7 +746,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "fV" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -789,14 +769,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/robot_debris/gib,
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -25;
-	pixel_x = 5
-	},
+/obj/machinery/firealarm/directional/south,
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -7;
+	pixel_x = -10;
 	pixel_y = -23
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -820,11 +796,11 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ge" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gf" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -833,6 +809,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
+"gm" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/starhall)
 "gq" = (
 /obj/machinery/door/window/northleft,
 /obj/effect/turf_decal/industrial/warning{
@@ -845,7 +830,7 @@
 	},
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -855,7 +840,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gx" = (
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
@@ -865,9 +850,7 @@
 /obj/structure/curtain/cloth,
 /obj/machinery/door/window/westleft,
 /obj/effect/decal/remains/human,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/turf_decal/corner/opaque/black{
 	icon_state = "siding_line";
 	dir = 4
@@ -892,6 +875,10 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
 "gD" = (
@@ -905,7 +892,7 @@
 /obj/item/flashlight/seclite,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gG" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 6
@@ -930,18 +917,18 @@
 "gR" = (
 /obj/effect/decal/remains/robot,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gU" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hh" = (
 /obj/structure/lattice{
 	icon_state = "lattice-143"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hi" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt,
@@ -956,12 +943,12 @@
 "hv" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hw" = (
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/orange,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -977,14 +964,15 @@
 "hy" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hC" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/structure/spacevine,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
-/obj/structure/spacevine,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlauncherone)
 "hD" = (
@@ -993,11 +981,9 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/spacevine,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hE" = (
 /obj/effect/turf_decal/corner/opaque/blue/full,
 /obj/structure/frame/machine,
@@ -1053,7 +1039,7 @@
 "hS" = (
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hV" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
@@ -1061,9 +1047,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -1098,9 +1082,7 @@
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/green,
 /obj/item/stack/ore/salvage/scrapmetal,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "if" = (
@@ -1108,7 +1090,7 @@
 /obj/item/stack/cable_coil/cut/green,
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ig" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/afthall)
@@ -1159,7 +1141,7 @@
 /area/ruin/jungle/interceptor/starhall)
 "iw" = (
 /turf/open/floor/plating/dirt/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "iy" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1172,16 +1154,20 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "iC" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "iO" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "iQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1207,12 +1193,8 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/airless,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "jf" = (
 /obj/item/roller{
 	pixel_x = 5
@@ -1272,12 +1254,12 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "jF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "jG" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass/jungle,
@@ -1295,11 +1277,7 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "jM" = (
@@ -1324,7 +1302,7 @@
 /obj/effect/decal/cleanable/plastic,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "jT" = (
 /obj/structure/cable/green{
 	icon_state = "1-8"
@@ -1364,9 +1342,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "km" = (
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech,
@@ -1374,7 +1350,7 @@
 "kE" = (
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "kL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1391,7 +1367,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "kP" = (
 /obj/structure/chair,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1418,9 +1394,7 @@
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
 /obj/structure/spacevine,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "li" = (
@@ -1429,13 +1403,17 @@
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/starlaunchertwo)
+"lj" = (
+/obj/structure/flora/junglebush/c,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/space)
 "ll" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "lm" = (
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "lp" = (
 /obj/structure/lattice{
 	icon_state = "lattice-139"
@@ -1504,7 +1482,7 @@
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ma" = (
 /obj/structure/grille,
 /turf/open/floor/plating/rust,
@@ -1538,19 +1516,19 @@
 /obj/structure/frame/machine,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "mz" = (
 /obj/structure/lattice{
 	icon_state = "lattice-143"
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "mA" = (
 /obj/structure/lattice{
 	icon_state = "lattice-21"
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "mH" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/green{
@@ -1561,7 +1539,7 @@
 /area/ruin/jungle/interceptor/starhall)
 "mM" = (
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "mU" = (
 /obj/structure/closet/wall/blue{
 	dir = 4;
@@ -1593,10 +1571,10 @@
 	},
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ne" = (
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nf" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -1608,7 +1586,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nr" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -1618,18 +1596,11 @@
 	},
 /obj/structure/chair,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nw" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband{
-	dir = 8;
-	pixel_x = 22;
-	pixel_y = 1
-	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = -22
-	},
+/obj/item/radio/intercom/wideband/directional/east,
+/obj/item/radio/intercom/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -1638,10 +1609,11 @@
 "ny" = (
 /obj/structure/grille,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nA" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 4
 	},
 /obj/structure/lattice{
 	icon_state = "lattice-127"
@@ -1654,7 +1626,7 @@
 /obj/effect/decal/cleanable/robot_debris/gib,
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nE" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -1664,12 +1636,13 @@
 	pixel_y = -1
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nF" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlauncherone)
@@ -1678,11 +1651,11 @@
 	icon_state = "tree2"
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nO" = (
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nW" = (
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner{
 	dir = 1
@@ -1699,7 +1672,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nZ" = (
 /turf/open/floor/plasteel/stairs/medium{
 	dir = 1
@@ -1731,9 +1704,7 @@
 "oj" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
@@ -1742,11 +1713,7 @@
 	icon_state = "0-4"
 	},
 /obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = -6
-	},
+/obj/item/radio/intercom/directional/south,
 /obj/machinery/button/massdriver{
 	id = "starlaunchertwo";
 	name = "starboard launcher two button";
@@ -1757,7 +1724,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "oz" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -1775,7 +1742,7 @@
 "oJ" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "oM" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/cable/yellow{
@@ -1783,7 +1750,7 @@
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "oT" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable/green{
@@ -1795,17 +1762,25 @@
 	pixel_x = 25;
 	pixel_y = -9
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlaunchertwo)
+"oY" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/cable/orange{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/security)
 "oZ" = (
 /obj/effect/turf_decal/corner/opaque/purple/three_quarters{
 	icon_state = "borderfloorcorner_white";
@@ -1828,7 +1803,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "pq" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -1863,11 +1838,11 @@
 /obj/structure/grille/broken,
 /obj/item/shard,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "px" = (
 /obj/structure/catwalk/over,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "py" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1905,30 +1880,28 @@
 /obj/structure/spacevine,
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "pJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "pM" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "pO" = (
 /obj/effect/turf_decal/corner/opaque/yellow/full,
 /obj/structure/frame/computer{
 	anchored = 1
 	},
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
 "pW" = (
 /obj/item/shard,
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "pX" = (
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/afthall)
@@ -1937,9 +1910,11 @@
 /obj/structure/girder,
 /obj/structure/girder,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qa" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -1961,9 +1936,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/forehall)
 "qf" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/decal/cleanable/robot_debris/gib,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -1991,10 +1964,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "ql" = (
@@ -2013,9 +1983,7 @@
 	pixel_y = -23
 	},
 /obj/structure/closet/emcloset/anchored,
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -2038,15 +2006,13 @@
 "qw" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qx" = (
 /obj/machinery/deepfryer,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 5
 	},
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "qy" = (
@@ -2059,7 +2025,7 @@
 "qG" = (
 /obj/structure/spacevine/dense,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qH" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Janitor's Closet"
@@ -2072,14 +2038,14 @@
 "qJ" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qS" = (
 /obj/structure/lattice{
 	icon_state = "lattice-139"
 	},
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "qY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2108,7 +2074,7 @@
 "ri" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "rp" = (
 /obj/effect/turf_decal/corner/opaque/purple/three_quarters{
 	icon_state = "borderfloor_white";
@@ -2121,14 +2087,14 @@
 "rq" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "rs" = (
 /obj/structure/lattice{
 	icon_state = "lattice-127"
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "rx" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -2159,19 +2125,17 @@
 "rH" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/machinery/airalarm/directional/south,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "rO" = (
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "rQ" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "rU" = (
 /obj/structure/closet/emcloset/wall{
 	dir = 8;
@@ -2194,31 +2158,25 @@
 /obj/structure/spacevine/dense,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "sa" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "sc" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "sd" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /turf/open/floor/plating/airless,
 /area/ruin/jungle/interceptor/starhall)
 "sf" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/structure/lattice{
 	icon_state = "lattice-13"
 	},
@@ -2249,7 +2207,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "sB" = (
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/bridge)
@@ -2277,19 +2235,17 @@
 /obj/structure/lattice{
 	icon_state = "lattice-127"
 	},
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/bridge)
 "sV" = (
 /obj/item/shard,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "sX" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "tf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -2298,7 +2254,7 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "th" = (
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
@@ -2329,16 +2285,14 @@
 	dir = 10
 	},
 /obj/structure/frame/machine,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "ty" = (
 /obj/item/shard,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "tz" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -2362,7 +2316,7 @@
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "tF" = (
 /obj/structure/lattice{
 	icon_state = "lattice-127"
@@ -2386,7 +2340,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
 "tQ" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2409,12 +2363,12 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ud" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "uf" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -2461,7 +2415,7 @@
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "uv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder,
@@ -2496,18 +2450,18 @@
 	},
 /obj/item/shard,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "uJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "uN" = (
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "uR" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
@@ -2562,11 +2516,11 @@
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/cave/explored)
 "vl" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "vs" = (
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
@@ -2579,7 +2533,9 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/starhall)
 "vx" = (
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2599,7 +2555,15 @@
 	id = "portlauncheroneshutters"
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
+"vF" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters";
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/bridge)
 "vG" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/security)
@@ -2607,14 +2571,15 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/starhall)
+/area/overmap_encounter/planetoid/jungle/explored)
 "vL" = (
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "vN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2633,7 +2598,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starlaunchertwo)
@@ -2642,7 +2608,7 @@
 	icon_state = "lattice-23"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wg" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -2650,9 +2616,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/three_quarters{
 	dir = 4
 	},
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
 "wn" = (
@@ -2663,7 +2627,8 @@
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/forehall)
@@ -2679,23 +2644,23 @@
 /obj/item/clothing/shoes/jackboots,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wv" = (
 /obj/effect/decal/cleanable/plastic,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wz" = (
 /obj/item/stack/cable_coil/cut/green,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wD" = (
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wG" = (
 /obj/machinery/button/door{
 	dir = 8;
@@ -2706,10 +2671,10 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wH" = (
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wI" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -2723,12 +2688,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/broken{
-	dir = 8;
-	pixel_y = 14
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "wJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -2764,9 +2726,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
@@ -2777,6 +2737,14 @@
 "wS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/forehall)
+"wT" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "bridgeshutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/bridge)
 "wU" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium,
@@ -2797,7 +2765,7 @@
 /turf/open/floor/plating/grass/jungle/lit,
 /area/ruin/jungle/interceptor/porthall)
 "xa" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -2831,7 +2799,7 @@
 "xn" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xr" = (
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 4
@@ -2845,7 +2813,7 @@
 	icon_state = "lattice-139"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xA" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -2875,11 +2843,13 @@
 	icon_state = "borderfloor_white";
 	dir = 4
 	},
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/interceptor/porthall)
+"xT" = (
+/obj/structure/girder,
+/turf/open/floor/plating/dirt/jungle/dark/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "xY" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -2889,7 +2859,7 @@
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "yc" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -2912,9 +2882,8 @@
 /obj/structure/toilet{
 	dir = 4
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/remains/human,
-/obj/item/clothing/under/rank/civilian/janitor/sanitation_tech,
 /obj/item/clothing/head/soft/purple,
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plating/rust,
@@ -2925,7 +2894,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ym" = (
 /obj/machinery/mineral/ore_redemption{
 	input_dir = 2;
@@ -2939,11 +2908,11 @@
 "yn" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "yp" = (
 /obj/item/stack/cable_coil/cut/green,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ys" = (
 /obj/structure/cable/orange{
 	icon_state = "0-8"
@@ -2972,12 +2941,13 @@
 "yw" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /obj/item/shard,
 /obj/structure/grille,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "yA" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
@@ -3006,13 +2976,11 @@
 "yH" = (
 /obj/item/shard,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "yZ" = (
 /obj/effect/turf_decal/corner_steel_grid/full,
 /obj/item/kirbyplants/dead,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "za" = (
@@ -3032,8 +3000,12 @@
 /obj/machinery/power/smes/shuttle{
 	dir = 1
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "zd" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -3045,11 +3017,11 @@
 	name = "Port Podbay Blast Door"
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "zm" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "zq" = (
 /obj/machinery/mass_driver{
 	dir = 1;
@@ -3081,7 +3053,7 @@
 	},
 /obj/effect/decal/cleanable/robot_debris/gib,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "zu" = (
 /obj/structure/cable/orange{
 	icon_state = "0-4"
@@ -3105,18 +3077,18 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "zR" = (
 /obj/structure/lattice{
 	icon_state = "lattice-159"
 	},
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ac" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/spacevine,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ah" = (
 /obj/item/restraints/handcuffs/cable,
 /obj/item/flashlight/seclite,
@@ -3124,9 +3096,7 @@
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/ammo_box/c9mm,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/turf_decal/corner/transparent/bar/three_quarters{
 	dir = 4
 	},
@@ -3150,7 +3120,7 @@
 	icon_state = "lattice-21"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ar" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3162,12 +3132,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ax" = (
 /obj/structure/spacevine,
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ay" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -3198,7 +3168,7 @@
 /obj/structure/flora/junglebush/b,
 /obj/structure/spacevine,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "AP" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/interceptor/afthall)
@@ -3227,7 +3197,7 @@
 	icon_state = "lattice-4"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Bc" = (
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/industrial/warning{
@@ -3242,7 +3212,7 @@
 "Be" = (
 /obj/structure/girder,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Bg" = (
 /obj/item/storage/bag/trash,
 /obj/item/reagent_containers/spray/cleaner{
@@ -3260,10 +3230,6 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/plastic,
-/obj/machinery/light/small/broken{
-	dir = 8;
-	pixel_y = 14
-	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crewquarters)
 "Bh" = (
@@ -3293,7 +3259,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "By" = (
 /obj/structure/cable/green{
 	icon_state = "4-10"
@@ -3317,7 +3283,7 @@
 "BH" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "BM" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 8
@@ -3362,7 +3328,7 @@
 "Cg" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ch" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3379,14 +3345,14 @@
 /obj/structure/flora/junglebush/c,
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Cj" = (
 /obj/machinery/mass_driver{
 	dir = 1;
 	id = "portlauncherone"
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Cn" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
@@ -3405,11 +3371,7 @@
 	pixel_x = -25;
 	pixel_y = -10
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -3445,23 +3407,27 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/machinery/door/firedoor/border_only,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starhall)
+"CN" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/crewquarters)
 "CO" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "CR" = (
 /obj/structure/spacevine,
 /obj/machinery/power/emitter/energycannon{
@@ -3502,11 +3468,11 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Dg" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Dn" = (
 /obj/structure/cable/green{
 	icon_state = "2-8"
@@ -3525,14 +3491,15 @@
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/security)
 "Dw" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Dx" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -3556,9 +3523,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/interceptor/porthall)
@@ -3566,13 +3531,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "DG" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/firealarm{
-	pixel_y = 25;
-	pixel_x = 5
-	},
+/obj/machinery/firealarm/directional/north,
 /obj/machinery/light_switch{
 	pixel_y = 23;
 	pixel_x = -7
@@ -3584,7 +3546,9 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/security,
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/opaque/red/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -3608,11 +3572,11 @@
 "DX" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Eb" = (
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ef" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/fueltank,
@@ -3629,20 +3593,20 @@
 "Ez" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "EJ" = (
 /obj/structure/lattice{
 	icon_state = "lattice-3"
 	},
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "EK" = (
 /obj/structure/lattice{
 	icon_state = "lattice-8"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "EL" = (
 /obj/structure/cable/orange{
 	icon_state = "2-4"
@@ -3659,21 +3623,14 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 5
 	},
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "ES" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "EY" = (
 /obj/structure/chair/office/light{
 	dir = 8
@@ -3699,9 +3656,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Fk" = (
@@ -3736,7 +3691,7 @@
 "FE" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "FO" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -3749,11 +3704,11 @@
 	dir = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "FQ" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "FT" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -3796,7 +3751,7 @@
 "Gi" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Gj" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating,
@@ -3836,13 +3791,11 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "GM" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "GT" = (
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/industrial/warning{
@@ -3852,22 +3805,19 @@
 /obj/structure/cable/green{
 	icon_state = "1-9"
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "GU" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "GW" = (
 /obj/structure/lattice{
 	icon_state = "lattice-4"
 	},
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "GX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -3946,26 +3896,27 @@
 /area/ruin/jungle/interceptor/porthall)
 "Hv" = (
 /turf/closed/wall/mineral/titanium,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "HA" = (
 /obj/structure/lattice{
 	icon_state = "lattice-39"
 	},
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "HB" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "HD" = (
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "HE" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/afthall)
@@ -4023,7 +3974,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/airlock/command/glass,
+/obj/machinery/door/airlock/command/glass{
+	dir = 4
+	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
@@ -4031,7 +3984,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "bridgeshutters"
+	id = "bridgeshutters";
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/jungle/interceptor/bridge)
@@ -4039,7 +3993,9 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4061,7 +4017,9 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/ruin/jungle/interceptor/afthall)
 "Iw" = (
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	dir = 8
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4094,7 +4052,7 @@
 	icon_state = "lattice-3"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "IN" = (
 /obj/machinery/processor,
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
@@ -4122,9 +4080,9 @@
 /obj/item/stack/cable_coil/cut/red,
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Je" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -4140,7 +4098,7 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Jl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -4152,14 +4110,10 @@
 	pixel_x = -25;
 	pixel_y = -10
 	},
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Jm" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/machinery/door/poddoor/shutters{
@@ -4167,6 +4121,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
+"Jt" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "Jw" = (
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt,
@@ -4176,7 +4134,7 @@
 /obj/structure/spacevine,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "JA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -4197,7 +4155,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "JK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder,
@@ -4207,7 +4165,7 @@
 "JL" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "JN" = (
 /obj/structure/chair/stool/bar{
 	dir = 4
@@ -4240,17 +4198,14 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
 "JZ" = (
 /obj/structure/girder,
 /obj/structure/spacevine,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Kc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -4281,12 +4236,16 @@
 /obj/item/stack/cable_coil/cut/orange,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters"
+	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
 "Kr" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Kt" = (
 /obj/effect/turf_decal/corner/opaque/blue/diagonal{
 	dir = 4
@@ -4347,6 +4306,7 @@
 	pixel_x = -25;
 	pixel_y = -16
 	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/crewquarters)
 "KW" = (
@@ -4357,11 +4317,12 @@
 "KY" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "KZ" = (
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Ld" = (
@@ -4369,17 +4330,11 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/open,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/afthall)
 "Le" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 25;
@@ -4389,18 +4344,19 @@
 /area/ruin/jungle/interceptor/starhall)
 "Lf" = (
 /obj/effect/spawner/structure/window/shuttle,
+/obj/structure/spacevine,
+/obj/structure/spacevine,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 4
 	},
-/obj/structure/spacevine,
-/obj/structure/spacevine,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Lh" = (
 /obj/structure/spacevine,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ln" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -4422,7 +4378,7 @@
 /obj/effect/decal/cleanable/plastic,
 /obj/structure/spacevine,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ly" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -4526,7 +4482,7 @@
 "Mn" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ms" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
@@ -4548,19 +4504,12 @@
 "Mw" = (
 /obj/structure/girder,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "MA" = (
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/under/rank/prisoner,
 /obj/item/clothing/shoes/sneakers/orange,
 /obj/item/clothing/shoes/sneakers/orange,
-/obj/machinery/button/massdriver{
-	id = "starlauncherone";
-	name = "starboard launcher one button";
-	pixel_x = 4;
-	dir = 1;
-	pixel_y = 10
-	},
 /obj/structure/bed,
 /obj/item/bedsheet/orange,
 /obj/effect/turf_decal/corner/opaque/orange/bordercee,
@@ -4572,6 +4521,7 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/jungle/interceptor/security)
 "MF" = (
@@ -4599,11 +4549,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "MO" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "MP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable/orange{
@@ -4639,7 +4589,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ni" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/starlauncherone)
@@ -4708,7 +4658,7 @@
 	icon_state = "lattice-23"
 	},
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "NV" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/frame/computer{
@@ -4733,7 +4683,7 @@
 "NZ" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Oc" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4743,14 +4693,14 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Oh" = (
 /obj/structure/lattice{
 	icon_state = "lattice-47"
 	},
 /obj/item/stack/cable_coil/cut/orange,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ok" = (
 /obj/structure/chair,
 /turf/open/floor/plasteel/white,
@@ -4767,11 +4717,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Os" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ot" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -4817,11 +4767,6 @@
 /area/ruin/jungle/interceptor/forehall)
 "Oy" = (
 /obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = 5
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -4871,11 +4816,11 @@
 	},
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OK" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OL" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -4887,11 +4832,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OM" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OO" = (
 /obj/item/shard,
 /turf/open/floor/plasteel/stairs/left,
@@ -4910,15 +4855,15 @@
 /area/ruin/jungle/interceptor/starhall)
 "OQ" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OR" = (
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OU" = (
 /obj/structure/grille/broken,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -4926,7 +4871,7 @@
 	},
 /obj/item/stack/cable_coil/cut/orange,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Pd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -4983,7 +4928,7 @@
 "PS" = (
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "PU" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -4994,7 +4939,7 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qd" = (
 /obj/item/scalpel{
 	pixel_y = 12
@@ -5004,7 +4949,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/porthall)
 "Qf" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -5015,24 +4960,24 @@
 "Qo" = (
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qp" = (
 /obj/structure/grille/broken,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qq" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qr" = (
 /obj/structure/cable/orange{
 	icon_state = "0-2"
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qs" = (
 /obj/machinery/door/airlock/security,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -5046,12 +4991,12 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qt" = (
 /obj/structure/girder,
 /obj/structure/spacevine/dense,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -5062,7 +5007,7 @@
 /obj/item/light/bulb/broken,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qz" = (
 /obj/structure/lattice{
 	icon_state = "lattice-12"
@@ -5077,7 +5022,7 @@
 /obj/structure/grille/broken,
 /obj/structure/spacevine,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/starhall)
+/area/overmap_encounter/planetoid/jungle/explored)
 "QH" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
@@ -5108,9 +5053,7 @@
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
 "Rb" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/porthall)
@@ -5127,7 +5070,7 @@
 	},
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/green,
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -5157,9 +5100,7 @@
 	dir = 1;
 	id = "starlaunchertwo"
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "RD" = (
@@ -5178,7 +5119,7 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "RG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -5198,17 +5139,15 @@
 	icon_state = "lattice-1"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "RT" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
+/obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "RV" = (
 /obj/item/shard,
 /turf/open/floor/plating/dirt/jungle,
@@ -5246,7 +5185,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "So" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/interceptor/starlaunchertwo)
@@ -5262,11 +5201,7 @@
 	pixel_x = 25;
 	pixel_y = -6
 	},
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 25;
-	pixel_y = 6
-	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/starhall)
 "Sr" = (
@@ -5287,17 +5222,17 @@
 "Ss" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/pod/dark,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "St" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Sy" = (
 /obj/structure/catwalk/over,
 /obj/machinery/door/firedoor/border_only,
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Sz" = (
 /obj/structure/cable/orange{
 	icon_state = "1-8"
@@ -5312,7 +5247,7 @@
 "SC" = (
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "SD" = (
 /obj/machinery/door/airlock/engineering,
 /obj/structure/cable/green{
@@ -5330,7 +5265,9 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/afthall)
 "SG" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
@@ -5378,6 +5315,15 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/crewquarters)
+"SP" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/jungle/interceptor/starhall)
 "ST" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/orange{
@@ -5395,12 +5341,12 @@
 "SU" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "SW" = (
 /obj/structure/grille,
 /obj/item/shard,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Tb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -5424,7 +5370,7 @@
 "Tq" = (
 /obj/structure/flora/junglebush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Tw" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/jungle/interceptor/starlaunchertwo)
@@ -5438,11 +5384,11 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "TG" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "TI" = (
 /turf/open/floor/plasteel/stairs/right,
 /area/ruin/jungle/interceptor/afthall)
@@ -5466,7 +5412,7 @@
 /obj/effect/decal/cleanable/oil,
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "TX" = (
 /obj/structure/closet/secure_closet/engineering_welding{
 	req_access = null
@@ -5476,7 +5422,7 @@
 	},
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "TZ" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -5496,7 +5442,7 @@
 /obj/structure/catwalk/over,
 /obj/structure/spacevine,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ua" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/rust,
@@ -5514,7 +5460,7 @@
 	},
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Uf" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/cable/orange{
@@ -5553,7 +5499,7 @@
 "Ut" = (
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Uu" = (
 /obj/structure/spacevine,
 /turf/closed/wall/mineral/titanium,
@@ -5564,7 +5510,7 @@
 	},
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "UB" = (
 /obj/machinery/door/window/eastright{
 	dir = 1;
@@ -5589,7 +5535,7 @@
 	},
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "UI" = (
 /obj/structure/table/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5641,13 +5587,13 @@
 "UR" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/dirt,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "UU" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "UW" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -5674,10 +5620,6 @@
 /area/ruin/jungle/interceptor/starhall)
 "UZ" = (
 /obj/structure/cable,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "condorwindows";
-	name = "External Shutters"
-	},
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/orange,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -5689,7 +5631,7 @@
 	},
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vc" = (
 /obj/structure/cable/green{
 	icon_state = "0-2"
@@ -5698,11 +5640,11 @@
 /obj/structure/frame/machine,
 /obj/item/circuitboard/machine/smes,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vi" = (
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
@@ -5714,9 +5656,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 9
 	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
 "Vq" = (
@@ -5729,24 +5669,22 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/machinery/light/small/broken{
-	dir = 4;
-	pixel_y = 12
-	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
 "Vr" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "condorwindows";
-	name = "External Shutters"
+	name = "External Shutters";
+	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vy" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "VC" = (
 /obj/structure/bed,
 /obj/item/bedsheet/blue,
@@ -5779,7 +5717,7 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /obj/structure/girder/displaced,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "VK" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/cable/green{
@@ -5792,7 +5730,7 @@
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "VO" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -5835,7 +5773,16 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
+"Wc" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "condorwindows";
+	name = "External Shutters";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/jungle/explored)
 "We" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -5895,13 +5842,11 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/interceptor/crewquarters)
 "Ww" = (
-/obj/machinery/light/small/broken{
-	dir = 4
-	},
+/obj/machinery/light/small/broken/directional/east,
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Wx" = (
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner{
 	dir = 8
@@ -5916,19 +5861,17 @@
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "WB" = (
 /obj/structure/spacevine/dense,
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "WC" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/starhall)
 "WP" = (
@@ -5940,7 +5883,7 @@
 /obj/structure/spacevine,
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "WW" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/bordercorner{
 	dir = 4
@@ -5954,7 +5897,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Xd" = (
 /obj/structure/window/reinforced/spawner,
 /obj/effect/turf_decal/corner/opaque/lime/border,
@@ -5967,7 +5910,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 6
 	},
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/jungle/interceptor/porthall)
 "Xh" = (
@@ -5975,7 +5918,7 @@
 	icon_state = "lattice-137"
 	},
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Xj" = (
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
@@ -5997,7 +5940,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Xt" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -6026,7 +5969,7 @@
 "Xy" = (
 /obj/structure/lattice,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "XB" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -6055,7 +5998,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 10
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
@@ -6075,7 +6018,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starlauncherone)
 "XQ" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/wood,
@@ -6091,10 +6034,12 @@
 "XY" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ya" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4
+	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6152,7 +6097,7 @@
 /obj/effect/decal/cleanable/plastic,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Yl" = (
 /obj/structure/cable/orange{
 	icon_state = "1-2"
@@ -6177,16 +6122,10 @@
 	},
 /obj/structure/catwalk/over,
 /obj/structure/catwalk/over,
-/obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist{
-	name = "Engineering Specialist Jumpsuit"
-	},
-/obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist{
-	name = "Engineering Specialist Jumpsuit"
-	},
 /obj/item/clothing/accessory/armband/engine,
 /obj/item/clothing/accessory/armband/engine,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Yq" = (
 /obj/structure/cable/orange{
 	icon_state = "1-10"
@@ -6219,7 +6158,7 @@
 	},
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "YM" = (
 /obj/structure/cable/orange{
 	icon_state = "0-8"
@@ -6233,13 +6172,9 @@
 	dir = 1;
 	pixel_y = 2
 	},
-/obj/item/radio/intercom{
-	dir = 1;
-	pixel_y = 6;
-	pixel_x = 5
-	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating/rust,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "YN" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
@@ -6267,6 +6202,9 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/jungle/interceptor/starhall)
+"YV" = (
+/turf/open/floor/plating/grass/jungle/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "YX" = (
 /obj/structure/girder,
 /obj/item/shard,
@@ -6274,7 +6212,7 @@
 /area/ruin/jungle/interceptor/afthall)
 "YY" = (
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "YZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
@@ -6289,16 +6227,18 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/junglebush/c,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Zc" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ze" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/security/glass,
+/obj/machinery/door/airlock/security/glass{
+	dir = 4
+	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
@@ -6317,7 +6257,7 @@
 "Zl" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Zm" = (
 /obj/effect/spawner/structure/window/shuttle,
 /obj/structure/disposalpipe/segment,
@@ -6333,12 +6273,12 @@
 	},
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Zp" = (
 /obj/structure/flora/junglebush/b,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Zt" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -6349,7 +6289,7 @@
 /area/ruin/jungle/interceptor/bridge)
 "Zx" = (
 /turf/closed/mineral/random/jungle,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/cave/explored)
 "ZB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6376,7 +6316,7 @@
 "ZO" = (
 /obj/structure/flora/junglebush/b,
 /turf/open/floor/plating/dirt/jungle/dark/lit,
-/area/ruin/jungle/interceptor/crashsite)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ZU" = (
 /obj/effect/decal/cleanable/robot_debris/gib,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -6638,7 +6578,7 @@ Hv
 bA
 OQ
 Vr
-Vr
+Wc
 FE
 FE
 OQ
@@ -7055,7 +6995,7 @@ Be
 JZ
 Hv
 FE
-Vr
+Wc
 rs
 tD
 bI
@@ -7214,7 +7154,7 @@ bA
 FE
 FE
 OQ
-Vr
+Wc
 SW
 qJ
 OQ
@@ -7528,7 +7468,7 @@ au
 YY
 YY
 GZ
-Dr
+oY
 Dr
 vG
 Ah
@@ -7571,7 +7511,7 @@ Zx
 Zx
 Zx
 Zx
-Mw
+xT
 St
 ak
 Ez
@@ -7646,7 +7586,7 @@ hH
 Ok
 xP
 KU
-Rd
+wT
 Ms
 zd
 fi
@@ -7964,9 +7904,9 @@ Wo
 BU
 Yi
 Mb
-Rd
+vF
 nA
-Rd
+wT
 Ik
 Km
 Km
@@ -8003,7 +7943,7 @@ Zx
 Zx
 ao
 ql
-aB
+CN
 RK
 Hn
 gx
@@ -8114,7 +8054,7 @@ iO
 vl
 vl
 Wt
-aB
+CN
 RK
 RK
 Wt
@@ -8224,7 +8164,7 @@ vl
 Mn
 vl
 vl
-XE
+Hv
 QE
 vI
 DM
@@ -8265,7 +8205,7 @@ Zx
 Zx
 Zx
 Zx
-cL
+YV
 vl
 iO
 iO
@@ -8317,8 +8257,8 @@ Zx
 Zx
 Zx
 Zx
-cL
-Ez
+YV
+Jt
 zm
 vl
 iO
@@ -8594,7 +8534,7 @@ Gc
 Gc
 Ni
 hC
-hC
+nF
 nF
 Ni
 Gc
@@ -8708,7 +8648,7 @@ cL
 vl
 vl
 cL
-ll
+lj
 gQ
 UY
 XC
@@ -8824,7 +8764,7 @@ DM
 XE
 DM
 DM
-pC
+SP
 wO
 XE
 cL
@@ -8977,9 +8917,9 @@ Tw
 uv
 Uu
 wO
-pC
-pC
-pC
+gm
+gm
+gm
 XE
 DM
 DM

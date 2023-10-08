@@ -13,11 +13,13 @@
 	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
 		return 1
 
-
-
 /datum/surgery_step/add_prosthetic
 	name = "add prosthetic"
-	implements = list(/obj/item/bodypart = 100, /obj/item/organ_storage = 100, /obj/item/chainsaw = 100, /obj/item/melee/synthetic_arm_blade = 100)
+	implements = list(
+		/obj/item/bodypart = 100,
+		/obj/item/organ_storage = 100,
+		/obj/item/chainsaw = 100,
+		/obj/item/melee/synthetic_arm_blade = 100)
 	time = 32
 	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
 	var/organ_rejection_dam = 0
@@ -86,7 +88,7 @@
 			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)]!</span>")
 		return
 	else
-		var/obj/item/bodypart/L = target.newBodyPart(target_zone, FALSE, FALSE)
+		var/obj/item/bodypart/L = target.new_body_part(target_zone, FALSE, FALSE)
 		L.is_pseudopart = TRUE
 		if(!L.attach_limb(target))
 			display_results(user, target, "<span class='warning'>You fail in attaching [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!</span>",

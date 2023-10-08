@@ -102,7 +102,10 @@
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.dmg_overlay_type)
 			if(BP.brutestate)
-				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")	//we're adding icon_states of the base image as overlays
+				var/image/brute_overlay = image('icons/mob/dam_mob.dmi', "[BP.dmg_overlay_type]_[BP.body_zone]_[BP.brutestate]0")
+				if(BP.use_damage_color)
+					brute_overlay.color = BP.damage_color
+				damage_overlay.add_overlay(brute_overlay)
 			if(BP.burnstate)
 				damage_overlay.add_overlay("[BP.dmg_overlay_type]_[BP.body_zone]_0[BP.burnstate]")
 
@@ -117,7 +120,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_MASK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_MASK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(wear_mask)
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
@@ -131,7 +134,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(wear_neck)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
@@ -145,7 +148,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(back)
 		overlays_standing[BACK_LAYER] = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi', mob_species = dna?.species)
@@ -161,7 +164,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_HEAD) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(head)
 		overlays_standing[HEAD_LAYER] = head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = 'icons/mob/clothing/head.dmi', mob_species = dna?.species)
@@ -185,7 +188,7 @@
 		for(var/hand in hud_used.hand_slots)
 			var/atom/movable/screen/inventory/hand/H = hud_used.hand_slots[hand]
 			if(H)
-				H.update_icon()
+				H.update_appearance()
 
 //update whether our head item appears on our hud.
 /mob/living/carbon/proc/update_hud_head(obj/item/I)
@@ -259,15 +262,17 @@
 /////////////////////////
 //Updated by Kapu#1178
 //TG variant port by MrSamu99#8996
-/*
-	Called from update_body_parts() these procs handle the limb icon cache.
-	the limb icon cache adds an icon_render_key to a human mob, it represents:
-	- Gender, if applicable
-	- The ID of the limb
-	- Draw color, if applicable
-	These procs only store limbs as to increase the number of matching icon_render_keys
-	This cache exists because drawing 6/7 icons for humans constantly is quite a waste
-	See RemieRichards on irc.rizon.net #coderbus (RIP remie :sob:)
+/**
+ * Called from update_body_parts() these procs handle the limb icon cache.
+ * the limb icon cache adds an icon_render_key to a human mob, it represents:
+ * - Gender, if applicable
+ * - The ID of the limb
+ * - Whether or not it's digitigrade
+ * - Draw color, if applicable
+ *
+ * These procs only store limbs as to increase the number of matching icon_render_keys
+ * This cache exists because drawing 6/7 icons for humans constantly is quite a waste
+ * See RemieRichards on irc.rizon.net #coderbus (RIP remie :sob:)
 */
 /obj/item/bodypart/proc/generate_icon_key()
 	RETURN_TYPE(/list)
@@ -276,6 +281,8 @@
 		. += "[limb_gender]-"
 	. += "[limb_id]"
 	. += "-[body_zone]"
+	if(bodytype & BODYTYPE_DIGITIGRADE && !plantigrade_forced)
+		. += "-digitigrade"
 	if(should_draw_greyscale && draw_color)
 		. += "-[draw_color]"
 

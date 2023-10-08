@@ -42,7 +42,7 @@
  *
  * required user mob The mob interacting with the UI.
  *
- * return list Statuic Data to be sent to the UI.
+ * return list Static Data to be sent to the UI.
  */
 /datum/proc/ui_static_data(mob/user)
 	return list()
@@ -61,6 +61,17 @@
 		ui = SStgui.get_open_ui(user, src)
 	if(ui)
 		ui.send_full_update()
+
+/**
+ * public
+ *
+ * Will force an update on static data for all viewers.
+ * Should be done manually whenever something happens to
+ * change static data.
+ */
+/datum/proc/update_static_data_for_all_viewers()
+	for (var/datum/tgui/window as anything in SStgui.open_uis_by_src[REF(src)])
+		window.send_full_update()
 
 /**
  * public

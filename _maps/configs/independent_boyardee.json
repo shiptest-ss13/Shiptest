@@ -2,14 +2,37 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Boyardee-class Entertainment Vessel",
 	"prefix": "ISV",
-	"namelists": ["GENERAL", "MERCANTILE"],
+	"description": "Named for an ancient Solarian folk hero known for providing food to the masses shortly after the Night of Fire, the Boyardee-class is a remarkably popular civilian vessel, and a welcome sight to any weary travelers tired of synthesized tap water and stale rations for breakfast, lunch and dinner every day. The Boyardee-class features a full bar, an advanced hydroponics setup, a large kitchen and an expansive seating area, perfect for serving hungry customers and thirsty colonists. During the early days of the Syndicate, associated organizations would often create their own retrofits of the Boyardee to serve as recruiting centers or “shore-leave” posts, though these variants have mostly ceased to exist in the Frontier.",
+	"tags": [
+		"Service",
+		"Botany",
+		"RP Focus"
+	],
+	"namelists": [
+		"GENERAL",
+		"SPACE",
+		"MERCANTILE"
+	],
+	"starting_funds": 5000,
 	"map_short_name": "Boyardee-class",
 	"map_path": "_maps/shuttles/shiptest/independent_boyardee.dmm",
 	"job_slots": {
-		"Bartender": 1,
-		"Cook": 5,
-		"Botanist": 2,
-		"Janitor": 1,
+		"Bartender": {
+			"outfit": "/datum/outfit/job/bartender",
+			"slots": 1
+		},
+		"Cook": {
+			"outfit": "/datum/outfit/job/cook",
+			"slots": 3
+		},
+		"Botanist": {
+			"outfit": "/datum/outfit/job/botanist",
+			"slots": 2
+		},
+		"Janitor": {
+			"outfit": "/datum/outfit/job/janitor",
+			"slots": 1
+		},
 		"Waiter": {
 			"outfit": "/datum/outfit/job/assistant/waiter",
 			"slots": 2

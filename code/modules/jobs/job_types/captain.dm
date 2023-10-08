@@ -1,12 +1,7 @@
 /datum/job/captain
 	name = "Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 30
-	exp_requirements = 180
-	exp_type = EXP_TYPE_CREW
-	exp_type_department = EXP_TYPE_COMMAND
 	officer = TRUE
 	wiki_page = "Captain"
 
@@ -62,17 +57,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 
-/datum/outfit/job/captain/solgov
-	name = "Captain (SolGov)"
-
-	ears = /obj/item/radio/headset/solgov/captain
-	shoes = /obj/item/clothing/shoes/laceup
-	suit = /obj/item/clothing/suit/toggle/solgov
-
-/datum/outfit/job/captain/solgov/rebel
-	name = "Captain (Deserter)"
-	suit = /obj/item/clothing/suit/toggle/solgov/terragov
-
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
 
@@ -111,6 +95,39 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
+
+/datum/outfit/job/captain/syndicate/sbc
+	name = "Captain (Twinkleshine)"
+
+	uniform = /obj/item/clothing/under/syndicate/aclf
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/syndicate/alt/captain
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
+	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
+	suit_store = /obj/item/gun/ballistic/revolver/mateba
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	belt = /obj/item/storage/belt/military/assault
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
+	id = /obj/item/card/id/syndicate_command/captain_id
+	implants = list(/obj/item/implant/weapons_auth)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
+	courierbag = /obj/item/storage/backpack/messenger/sec
+
+	box = /obj/item/storage/box/survival/syndie
+
+/datum/outfit/job/captain/syndicate/sbc/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("PlayerSyndicate")
+
+	var/obj/item/card/id/I = H.wear_id
+	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(9, 12)) // squidquest real
+	I.access = get_all_accesses()+get_all_syndicate_access()
+	I.update_label()
 
 /datum/outfit/job/captain/syndicate/gorlex
 	name = "Captain (Gorlex Marauders)"
@@ -173,7 +190,7 @@
 	satchel = /obj/item/storage/backpack/satchel/
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
-	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/spacecash/bundle/c10000=1)
+	backpack_contents = list(/obj/item/clothing/accessory/medal/gold/captain=1, /obj/item/spacecash/bundle/c10000=1)
 
 /datum/outfit/job/captain/inteq
 	name = "IRMG Vanguard (Inteq)"
@@ -193,7 +210,7 @@
 	accessory = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/captain)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
 
 /datum/outfit/job/captain/inteq/naked
 	name = "IRMG Vanguard (Inteq) (Naked)"
@@ -219,3 +236,36 @@
 	l_pocket = /obj/item/kitchen/knife/combat
 	implants = list(/obj/item/implant/radio)
 	accessory = null
+
+/datum/outfit/job/captain/frontiersmen
+	name = "Captain (Frontiersmen)"
+
+	ears = /obj/item/radio/headset/pirate/alt/captain
+	uniform = /obj/item/clothing/under/rank/security/officer/frontier/admiral
+	head = /obj/item/clothing/head/caphat/frontier/admiral
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer
+	suit = /obj/item/clothing/suit/armor/frontier
+	shoes = /obj/item/clothing/shoes/cowboy
+	gloves = /obj/item/clothing/gloves/combat
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
+
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
+
+/datum/outfit/job/captain/nt/lp_lieutenant
+	name = "LP Lieutenant"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lplieu
+	belt = /obj/item/pda/captain
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/lp
+	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/alt/skirt/lp
+	dcoat = /obj/item/clothing/suit/jacket
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/command
+
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com

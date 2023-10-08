@@ -2,12 +2,23 @@
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Pillbottle-class Locust Transport",
 	"prefix": null,
-	"namelists": ["PILLS"],
+	"namelists": [
+		"PILLS",
+		"PIRATES"
+	],
 	"map_short_name": "Pillbottle-class",
+	"description": "The “Pillbottle,” as a class, should not rightfully exist. Tell-tale signs indicate that these ships originated as bulk carriers and tugs, but they have since been haphazardly converted into a carrier of sorts for a wing of Pill-class escape pods. As with the Pills, Pillbottles are crewed entirely by escaped prisoners, and as a rule, they operate in a state of complete anarchy. The only consistent aspect of Pillbottle crews is their inconsistency, but the realities of prison life tend to make the worst out of anyone.",
+	"tags": [
+		"Specialist"
+	],
 	"map_path": "_maps/shuttles/shiptest/independent_pillbottle.dmm",
 	"limit":1,
+	"starting_funds": 0,
 	"job_slots": {
-		"Prisoner": 10
+		"Prisoner": {
+			"outfit": "/datum/outfit/job/prisoner",
+			"slots": 10
+		}
 	},
 	"enabled": false
 }

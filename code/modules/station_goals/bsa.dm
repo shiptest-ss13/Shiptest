@@ -232,6 +232,7 @@
 	circuit = /obj/item/circuitboard/computer/bsa_control
 	icon = 'icons/obj/machines/particle_accelerator.dmi'
 	icon_state = "control_boxp"
+	unique_icon = TRUE
 
 	var/obj/machinery/bsa/full/cannon
 	var/notice
@@ -272,7 +273,7 @@
 		if("recalibrate")
 			calibrate(usr)
 			. = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/computer/bsa_control/proc/calibrate(mob/user)
 	if(!GLOB.bsa_unlock)

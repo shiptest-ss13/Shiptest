@@ -5,25 +5,27 @@
 	network = "KunaiComms"
 	},
 /obj/item/paper/crumpled{
-	info = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
+	default_raw_text = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
 	},
 /obj/item/multitool,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ab" = (
 /obj/machinery/computer/helm{
 	dir = 8
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "ac" = (
 /obj/docking_port/mobile{
 	dir = 4;
-	dwidth = 3;
-	height = 12;
 	name = "hunter shuttle";
-	rechargeTime = 1800;
-	width = 7;
 	port_direction = 2;
 	preferred_direction = 4
 	},
@@ -35,7 +37,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "Interpolship";
-	name = "Bay Shutters"
+	name = "Bay Shutters";
+	dir = 4
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ship/storage)
@@ -87,9 +90,7 @@
 "aj" = (
 /obj/structure/closet/crate/eva,
 /obj/effect/turf_decal/box,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /turf/open/floor/engine/hull/interior,
@@ -140,10 +141,7 @@
 	name = "engine shutters";
 	id = "polengine"
 	},
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner_techfloor_grid{
+/obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
 /turf/open/floor/plasteel/tech,
@@ -152,7 +150,8 @@
 /obj/structure/cable,
 /obj/machinery/door/poddoor/shutters{
 	id = "Interpolship";
-	name = "Bay Shutters"
+	name = "Bay Shutters";
+	dir = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "polshield";
@@ -168,6 +167,16 @@
 /obj/structure/chair/comfy/shuttle,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
+"cF" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = "polwindow";
+	name = "Blast Shield";
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "fa" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -186,17 +195,20 @@
 /area/ship/storage)
 "gi" = (
 /obj/structure/table,
-/obj/item/radio/intercom{
-	dir = 8;
+/obj/machinery/light/floor,
+/obj/item/radio/intercom/directional{
 	pixel_y = 2;
-	pixel_x = -9
+	dir = 4;
+	pixel_x = 16
 	},
-/obj/item/radio/intercom{
-	dir = 8;
+/obj/item/radio/intercom/directional{
 	pixel_y = 2;
+	dir = 4;
 	pixel_x = 4
 	},
-/obj/machinery/light/floor,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "gs" = (
@@ -302,8 +314,9 @@
 	},
 /obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/box,
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/light/directional/east,
+/obj/machinery/light_switch{
+	pixel_y = 22
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
@@ -323,14 +336,14 @@
 "qn" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
-/obj/item/radio/intercom/wideband{
-	dir = 4;
-	pixel_y = 4;
-	pixel_x = -26
+/obj/item/radio/intercom/wideband/directional/west,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
 	},
-/obj/effect/turf_decal/corner_techfloor_grid,
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 9
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -351,7 +364,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
-	name = "Bridge"
+	name = "Bridge";
+	dir = 4
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -361,7 +375,8 @@
 	},
 /obj/machinery/door/poddoor/shutters{
 	id = "Interpolship";
-	name = "Bay Shutters"
+	name = "Bay Shutters";
+	dir = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	id = "polshield"
@@ -375,7 +390,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "DP" = (
@@ -477,9 +492,7 @@
 /area/ship/storage)
 "SE" = (
 /obj/structure/chair/comfy/shuttle,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "Wx" = (
@@ -612,9 +625,9 @@ Pq
 (12,1,1) = {"
 Pq
 Wx
-DP
-DP
-DP
+cF
+cF
+cF
 Wx
 Pq
 "}

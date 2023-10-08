@@ -8,12 +8,21 @@
 	icon_keyboard = "med_key"
 	circuit = /obj/item/circuitboard/computer/operating
 
-	var/mob/living/carbon/human/patient
 	var/obj/structure/table/optable/table
 	var/obj/machinery/stasis/sbed
 	var/list/advanced_surgeries = list()
 	var/datum/techweb/linked_techweb
 	light_color = LIGHT_COLOR_BLUE
+
+/obj/machinery/computer/operating/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/operating/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/operating/Initialize()
 	. = ..()
@@ -93,23 +102,18 @@
 		surgery["desc"] = initial(S.desc)
 		surgeries += list(surgery)
 	data["surgeries"] = surgeries
-	data["patient"] = null
-	if(table)
-		data["table"] = table
-		if(!table.check_eligible_patient())
-			return data
-		data["patient"] = list()
-		patient = table.patient
-	else
-		if(sbed)
-			data["table"] = sbed
-			if(!ishuman(sbed.occupant) &&  !ismonkey(sbed.occupant))
-				return data
-			data["patient"] = list()
-			patient = sbed.occupant
-		else
-			data["patient"] = null
-			return data
+
+	//If there's no patient just hop to it yeah?
+	if(!table)
+		data["patient"] = null
+		return data
+
+	data["table"] = table
+	if(!table.check_eligible_patient())
+		return data
+	data["patient"] = list()
+	var/mob/living/carbon/human/patient = table.patient
+
 	switch(patient.stat)
 		if(CONSCIOUS)
 			data["patient"]["stat"] = "Conscious"
@@ -124,7 +128,7 @@
 			data["patient"]["stat"] = "Dead"
 			data["patient"]["statstate"] = "bad"
 	data["patient"]["health"] = patient.health
-	data["patient"]["blood_type"] = patient.dna.blood_type
+	data["patient"]["blood_type"] = patient.dna.blood_type.name
 	data["patient"]["maxHealth"] = patient.maxHealth
 	data["patient"]["minHealth"] = HEALTH_THRESHOLD_DEAD
 	data["patient"]["bruteLoss"] = patient.getBruteLoss()

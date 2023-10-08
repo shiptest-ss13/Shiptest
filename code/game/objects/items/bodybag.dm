@@ -5,6 +5,7 @@
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "bodybag_folded"
 	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/plastic = 4000)
 	var/unfoldedbag_path = /obj/structure/closet/body_bag
 
 /obj/item/bodybag/attack_self(mob/user)
@@ -30,17 +31,6 @@
 	R.add_fingerprint(user)
 	R.foldedbag_instance = src
 	moveToNullspace()
-
-/obj/item/bodybag/suicide_act(mob/user)
-	if(isopenturf(user.loc))
-		user.visible_message("<span class='suicide'>[user] is crawling into [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		var/obj/structure/closet/body_bag/R = new unfoldedbag_path(user.loc)
-		R.add_fingerprint(user)
-		qdel(src)
-		user.forceMove(R)
-		playsound(src, 'sound/items/zip.ogg', 15, TRUE, -3)
-		return (OXYLOSS)
-	..()
 
 // Bluespace bodybag
 

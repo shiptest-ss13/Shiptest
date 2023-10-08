@@ -9,16 +9,14 @@
 	slot_flags = ITEM_SLOT_FEET
 	greyscale_colors = list(list(13, 3), list(14, 2), list(12, 2))
 	greyscale_icon_state = "shoes"
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION
 
 	permeability_coefficient = 0.5
 	slowdown = SHOES_SLOWDOWN
 	strip_delay = 1 SECONDS
 
-	var/blood_state = BLOOD_STATE_NOT_BLOODY
-	var/list/bloody_shoes = list(BLOOD_STATE_HUMAN = 0,BLOOD_STATE_XENO = 0, BLOOD_STATE_OIL = 0, BLOOD_STATE_NOT_BLOODY = 0)
 	var/offset = 0
 	var/equipped_before_drop = FALSE
-	var/can_be_bloody = TRUE
 	///Whether these shoes have laces that can be tied/untied
 	var/can_be_tied = TRUE
 	///Are we currently tied? Can either be SHOES_UNTIED, SHOES_TIED, or SHOES_KNOTTED
@@ -28,37 +26,16 @@
 	///any alerts we have active
 	var/atom/movable/screen/alert/our_alert
 
-/obj/item/clothing/shoes/suicide_act(mob/living/carbon/user)
-	if(rand(2)>1)
-		user.visible_message("<span class='suicide'>[user] begins tying \the [src] up waaay too tightly! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		var/obj/item/bodypart/l_leg = user.get_bodypart(BODY_ZONE_L_LEG)
-		var/obj/item/bodypart/r_leg = user.get_bodypart(BODY_ZONE_R_LEG)
-		if(l_leg)
-			l_leg.dismember()
-		if(r_leg)
-			r_leg.dismember()
-		playsound(user, "desceration", 50, TRUE, -1)
-		return BRUTELOSS
-	else//didnt realize this suicide act existed (was in miscellaneous.dm) and didnt want to remove it, so made it a 50/50 chance. Why not!
-		user.visible_message("<span class='suicide'>[user] is bashing [user.p_their()] own head in with [src]! Ain't that a kick in the head?</span>")
-		for(var/i = 0, i < 3, i++)
-			sleep(3)
-			playsound(user, 'sound/weapons/genhit2.ogg', 50, TRUE)
-		return(BRUTELOSS)
-
 /obj/item/clothing/shoes/worn_overlays(isinhands = FALSE)
 	. = list()
 	if(!isinhands)
-		var/bloody = FALSE
-		if(HAS_BLOOD_DNA(src))
-			bloody = TRUE
-		else
-			bloody = bloody_shoes[BLOOD_STATE_HUMAN]
-
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damagedshoe")
-		if(bloody)
-			. += mutable_appearance('icons/effects/blood.dmi', "shoeblood")
+		if(HAS_BLOOD_DNA(src))
+			var/mutable_appearance/bloody_shoes
+			bloody_shoes = mutable_appearance('icons/effects/blood.dmi', "shoeblood")
+			bloody_shoes.color = get_blood_dna_color(return_blood_DNA())
+			. += bloody_shoes
 
 /obj/item/clothing/shoes/examine(mob/user)
 	. = ..()
@@ -103,17 +80,6 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inv_shoes()
-
-/obj/item/clothing/shoes/wash(clean_types)
-	. = ..()
-	if(!(clean_types & CLEAN_TYPE_BLOOD) || blood_state == BLOOD_STATE_NOT_BLOODY)
-		return
-	bloody_shoes = list(BLOOD_STATE_HUMAN = 0,BLOOD_STATE_XENO = 0, BLOOD_STATE_OIL = 0, BLOOD_STATE_NOT_BLOODY = 0)
-	blood_state = BLOOD_STATE_NOT_BLOODY
-	if(ismob(loc))
-		var/mob/M = loc
-		M.update_inv_shoes()
-	return TRUE
 
 /obj/item/proc/negates_gravity()
 	return FALSE
@@ -166,9 +132,6 @@
 		return
 
 	if(user == loc && tied != SHOES_TIED) // if they're our own shoes, go tie-wards
-		if(INTERACTING_WITH(user, our_guy))
-			to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
-			return
 		user.visible_message("<span class='notice'>[user] begins [tied ? "unknotting" : "tying"] the laces of [user.p_their()] [src.name].</span>", "<span class='notice'>You begin [tied ? "unknotting" : "tying"] the laces of your [src.name]...</span>")
 
 		if(do_after(user, lace_time, needhand=TRUE, target=our_guy, extra_checks=CALLBACK(src, .proc/still_shoed, our_guy)))
@@ -185,9 +148,6 @@
 			return
 		if(tied == SHOES_KNOTTED)
 			to_chat(user, "<span class='warning'>The laces on [loc]'s [src.name] are already a hopelessly tangled mess!</span>")
-			return
-		if(INTERACTING_WITH(user, our_guy))
-			to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
 			return
 
 		var/mod_time = lace_time
@@ -269,10 +229,6 @@
 
 /obj/item/clothing/shoes/attack_self(mob/user)
 	. = ..()
-
-	if(INTERACTING_WITH(user, src))
-		to_chat(user, "<span class='warning'>You're already interacting with [src]!</span>")
-		return
 
 	to_chat(user, "<span class='notice'>You begin [tied ? "untying" : "tying"] the laces on [src]...</span>")
 

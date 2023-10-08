@@ -3,15 +3,17 @@
 	"map_name": "Osprey-class Exploration Cruiser",
 	"prefix": "NTSV",
 	"namelists": [
-		"GENERAL",
+		"NANOTRASEN",
 		"SPACE",
-		"BRITISH_NAVY",
 		"MYTHOLOGICAL",
 		"WEAPONS"
 	],
 	"map_short_name": "Osprey-class",
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_osprey.dmm",
+	"description": "Some of the most modern ships in Nanotrasen’s fleet and a prestigious assignment for their captains, the famed Osprey of the ICW’s most dramatic astronautical engagements lives on as a very well-appointed exploration ship. Extensively refurbished from their origins as Bluespace Artillery platforms, the contemporary Osprey repurposes military-grade sensor equipment and AI systems for exploration and scientific work. Features include respectably-equipped medical, culinary, and scientific facilities and an AI core, as well as a ship-wide disposals and delivery system and a very spacious cargo bay. However, the powerful (if temperamental) supermatter engines that powered the initial batch of Ospreys were stripped out during their rebuilds, and the replacement generator banks have left contemporary Ospreys somewhat power-starved.",
+	"tags": ["Cargo", "Robotics", "Generalist"],
 	"limit": 1,
+	"starting_funds": 4000,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain/nt",
@@ -23,23 +25,50 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Scientist": 2,
-		"Medical Doctor": 1,
-		"Paramedic": 1,
+		"Scientist": {
+			"outfit": "/datum/outfit/job/scientist",
+			"slots": 2
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 1
+		},
+		"Paramedic": {
+			"outfit": "/datum/outfit/job/paramedic",
+			"slots": 1
+		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 1
 		},
-		"Atmospheric Technician": 1,
-		"Quartermaster": 1,
-		"Cargo Technician": 1,
+		"Atmospheric Technician": {
+			"outfit": "/datum/outfit/job/atmos",
+			"slots": 1
+		},
+		"Quartermaster": {
+			"outfit": "/datum/outfit/job/quartermaster",
+			"slots": 1
+		},
+		"Cargo Technician": {
+			"outfit": "/datum/outfit/job/cargo_tech",
+			"slots": 1
+		},
 		"Shaft Miner": {
 			"outfit": "/datum/outfit/job/miner/classic",
 			"slots": 1
 		},
-		"Cook": 1,
-		"Janitor": 1,
-		"Assistant": 3
+		"Cook": {
+			"outfit": "/datum/outfit/job/cook",
+			"slots": 1
+		},
+		"Janitor": {
+			"outfit": "/datum/outfit/job/janitor",
+			"slots": 1
+		},
+		"Assistant": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
 	},
 	"enabled": true
 }

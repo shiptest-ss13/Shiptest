@@ -296,7 +296,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 				to_chat(M, "<span class='cultlarge'>\"I accept this meager sacrifice.\"</span>")
 
 	var/obj/item/soulstone/stone = new /obj/item/soulstone(get_turf(src))
-	if(sacrificial.mind && !sacrificial.suiciding)
+	if(sacrificial.mind)
 		stone.invisibility = INVISIBILITY_MAXIMUM //so it's not picked up during transfer_soul()
 		stone.transfer_soul("FORCE", sacrificial, usr)
 		stone.invisibility = 0
@@ -999,9 +999,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 		switch(outcome)
 			if(1 to 10)
 				var/datum/round_event_control/disease_outbreak/D = new()
-				var/datum/round_event_control/mice_migration/M = new()
+				// var/datum/round_event_control/mice_migration/M = new()
 				D.runEvent()
-				M.runEvent()
+				// M.runEvent()
 			if(11 to 20)
 				var/datum/round_event_control/radiation_storm/RS = new()
 				RS.runEvent()
@@ -1019,16 +1019,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 			if(51 to 60)
 				var/datum/round_event_control/spider_infestation/SI = new()
 				SI.runEvent()
-			if(61 to 70)
-				var/datum/round_event_control/anomaly/anomaly_flux/AF
-				var/datum/round_event_control/anomaly/anomaly_grav/AG
-				var/datum/round_event_control/anomaly/anomaly_pyro/AP
-				var/datum/round_event_control/anomaly/anomaly_vortex/AV
-				AF.runEvent()
-				AG.runEvent()
-				AP.runEvent()
-				AV.runEvent()
-			if(71 to 80)
+			if(61 to 80)
 				var/datum/round_event_control/spacevine/SV = new()
 				var/datum/round_event_control/grey_tide/GT = new()
 				SV.runEvent()

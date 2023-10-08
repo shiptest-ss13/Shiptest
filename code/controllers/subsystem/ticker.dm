@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(ticker)
 	var/current_state = GAME_STATE_STARTUP	//state of current round (used by process()) Use the defines GAME_STATE_* !
 	var/force_ending = 0					//Round was ended by admin intervention
 	// If true, there is no lobby phase, the game starts immediately.
-	var/start_immediately = FALSE
+	var/start_immediately = TRUE
 	var/setup_done = FALSE //All game setup done including mode post setup and
 
 	var/hide_mode = 0
@@ -240,7 +240,6 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, "<B>Unable to start [mode.name].</B> Not enough players, [mode.required_players] players and [mode.required_enemies] eligible antagonists needed. Reverting to pre-game lobby.")
 			qdel(mode)
 			mode = null
-			SSjob.ResetOccupations()
 			return 0
 
 	CHECK_TICK
@@ -254,7 +253,6 @@ SUBSYSTEM_DEF(ticker)
 			log_game("[mode.name] failed pre_setup, cause: [mode.setup_error]")
 			QDEL_NULL(mode)
 			to_chat(world, "<B>Error setting up [GLOB.master_mode].</B> Reverting to pre-game lobby.")
-			SSjob.ResetOccupations()
 			return 0
 	else
 		message_admins("<span class='notice'>DEBUG: Bypassing prestart checks...</span>")
@@ -358,7 +356,7 @@ SUBSYSTEM_DEF(ticker)
 			m = pick(memetips)
 
 	if(m)
-		to_chat(world, "<span class='purple'><b>Tip of the round: </b>[html_encode(m)]</span>")
+		to_chat(world, span_purple(examine_block("<span class='oocplain'><b>Tip of the round: </b>[html_encode(m)]</span>")))
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	if(!queued_players.len)
@@ -429,13 +427,14 @@ SUBSYSTEM_DEF(ticker)
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
 
-	switch (current_state)
-		if(GAME_STATE_SETTING_UP)
-			Master.SetRunLevel(RUNLEVEL_SETUP)
-		if(GAME_STATE_PLAYING)
-			Master.SetRunLevel(RUNLEVEL_GAME)
-		if(GAME_STATE_FINISHED)
-			Master.SetRunLevel(RUNLEVEL_POSTGAME)
+	if (Master) //Set Masters run level if it exists
+		switch (current_state)
+			if(GAME_STATE_SETTING_UP)
+				Master.SetRunLevel(RUNLEVEL_SETUP)
+			if(GAME_STATE_PLAYING)
+				Master.SetRunLevel(RUNLEVEL_GAME)
+			if(GAME_STATE_FINISHED)
+				Master.SetRunLevel(RUNLEVEL_POSTGAME)
 
 /datum/controller/subsystem/ticker/proc/send_news_report()
 	var/news_message

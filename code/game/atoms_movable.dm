@@ -72,6 +72,9 @@
 	*/
 	var/list/important_recursive_contents
 
+	/// Whether a user will face atoms on entering them with a mouse. Despite being a mob variable, it is here for performance
+	var/face_mouse = FALSE
+
 /atom/movable/Initialize(mapload)
 	. = ..()
 	switch(blocks_emissive)
@@ -91,12 +94,8 @@
 
 
 /atom/movable/Destroy(force)
-	if(proximity_monitor)
-		QDEL_NULL(proximity_monitor)
-	if(language_holder)
-		QDEL_NULL(language_holder)
-	if(em_block)
-		QDEL_NULL(em_block)
+	QDEL_NULL(language_holder)
+	QDEL_NULL(em_block)
 
 	unbuckle_all_mobs(force = TRUE)
 
@@ -348,7 +347,7 @@
 // Here's where we rewrite how byond handles movement except slightly different
 // To be removed on step_ conversion
 // All this work to prevent a second bump
-/atom/movable/Move(atom/newloc, direction, glide_size_override = 0)
+/atom/movable/Move(atom/newloc, direction, glide_size_override = 0, update_dir = TRUE)
 	. = FALSE
 	if(!newloc || newloc == loc)
 		return
@@ -356,7 +355,7 @@
 	if(!direction)
 		direction = get_dir(src, newloc)
 
-	if(set_dir_on_move)
+	if(set_dir_on_move && dir != direction && update_dir && !face_mouse) //for facing direction on harm - face_mouse
 		setDir(direction)
 
 	var/is_multi_tile_object = bound_width > 32 || bound_height > 32
@@ -484,7 +483,7 @@
 						moving_diagonally = SECOND_DIAG_STEP
 						. = step(src, SOUTH)
 			if(moving_diagonally == SECOND_DIAG_STEP)
-				if(!. && set_dir_on_move)
+				if(!. && set_dir_on_move && !face_mouse)
 					setDir(first_step_dir)
 				else if (!inertia_moving)
 					inertia_next_move = world.time + inertia_move_delay
@@ -516,7 +515,7 @@
 
 	last_move = direct
 
-	if(set_dir_on_move)
+	if(set_dir_on_move && !face_mouse)
 		setDir(direct)
 	if(. && has_buckled_mobs() && !handle_buckled_mob_movement(loc, direct, glide_size_override)) //movement failed due to buckled mob(s)
 		return FALSE
@@ -524,9 +523,11 @@
 //Called after a successful Move(). By this point, we've already moved
 /atom/movable/proc/Moved(atom/OldLoc, Dir, Forced = FALSE, list/old_locs)
 	SHOULD_CALL_PARENT(TRUE)
+
 	if (!inertia_moving)
 		inertia_next_move = world.time + inertia_move_delay
 		newtonian_move(Dir)
+
 	if (length(client_mobs_in_contents))
 		update_parallax_contents()
 
@@ -537,17 +538,46 @@
 		stack_trace("move_stacks is negative in Moved()!")
 		move_stacks = 0 //setting it to 0 so that we dont get every movable with negative move_stacks runtiming on every movement
 
+	var/previous_virtual_z = OldLoc?.virtual_z() || 0
+	var/current_virtual_z = virtual_z()
+	if(current_virtual_z && current_virtual_z != previous_virtual_z)
+		on_virtual_z_change(current_virtual_z, previous_virtual_z)
+
 	SEND_SIGNAL(src, COMSIG_MOVABLE_MOVED, OldLoc, Dir, Forced, old_locs)
 
 	return TRUE
 
+/// Called when an atom moves to a different virtual z. Warning, it will pass z-level 0 in new_virtual_z on creation and 0 in previous_virtual_z whenever moved to nullspace
+/atom/movable/proc/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	SHOULD_NOT_SLEEP(TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+	SEND_SIGNAL(src, COMSIG_ATOM_VIRTUAL_Z_CHANGE, new_virtual_z, previous_virtual_z)
+
+/mob/living/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	. = ..()
+	if(!client)
+		return
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(SSmobs.players_by_virtual_z, "[previous_virtual_z]", src)
+	if(new_virtual_z)
+		LAZYADDASSOC(SSmobs.players_by_virtual_z, "[new_virtual_z]", src)
+		SSidlenpcpool.try_wakeup_virtual_z(new_virtual_z)
+
+/mob/dead/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	. = ..()
+	if(!client)
+		return
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[previous_virtual_z]", src)
+	if(new_virtual_z)
+		LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[new_virtual_z]", src)
 
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
 // You probably want CanPass()
 /atom/movable/Cross(atom/movable/AM)
 	. = TRUE
 	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSS, AM)
-	return CanPass(AM, AM.loc, TRUE)
+	return CanPass(AM, get_dir(src, AM))
 
 ///default byond proc that is deprecated for us in lieu of signals. do not call
 /atom/movable/Crossed(atom/movable/crossed_atom, oldloc)
@@ -646,7 +676,7 @@
 			var/old_z = (oldturf ? oldturf.z : null)
 			var/dest_z = (destturf ? destturf.z : null)
 			if (old_z != dest_z)
-				onTransitZ(old_z, dest_z)
+				on_z_change(old_z, dest_z)
 			destination.Entered(src, oldloc)
 			if(destarea && old_area != destarea)
 				destarea.Entered(src, old_area)
@@ -665,11 +695,10 @@
 
 	Moved(oldloc, NONE, TRUE)
 
-/atom/movable/proc/onTransitZ(old_z,new_z)
+/atom/movable/proc/on_z_change(old_z, new_z)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_z, new_z)
-	for (var/atom/movable/AM as anything in src) // Notify contents of Z-transition. This can be overridden IF we know the items contents do not care.
-		AM.onTransitZ(old_z,new_z)
-
+	for (var/atom/movable/AM as anything in src)
+		AM.on_z_change(old_z, new_z)
 
 ///Proc to modify the movement_type and hook behavior associated with it changing.
 /atom/movable/proc/setMovetype(newval)
@@ -677,7 +706,6 @@
 		return
 	. = movement_type
 	movement_type = newval
-
 
 /**
  * Called whenever an object moves and by mobs when they attempt to move themselves through space
@@ -855,24 +883,24 @@
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
 
-/atom/movable/CanAllowThrough(atom/movable/mover, turf/target)
+/atom/movable/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(mover in buckled_mobs)
 		return TRUE
 
 /// Returns true or false to allow src to move through the blocker, mover has final say
-/atom/movable/proc/CanPassThrough(atom/blocker, turf/target, blocker_opinion)
+/atom/movable/proc/CanPassThrough(atom/blocker, movement_dir, blocker_opinion)
 	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_BE_PURE(TRUE)
 	return blocker_opinion
 
 /// called when this atom is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
 /atom/movable/proc/on_exit_storage(datum/component/storage/concrete/master_storage)
-	SEND_SIGNAL(src, CONSIG_STORAGE_EXITED, master_storage)
+	SEND_SIGNAL(src, COMSIG_STORAGE_EXITED, master_storage)
 
 /// called when this atom is added into a storage item, which is passed on as S. The loc variable is already set to the storage item.
 /atom/movable/proc/on_enter_storage(datum/component/storage/concrete/master_storage)
-	SEND_SIGNAL(src, COMISG_STORAGE_ENTERED, master_storage)
+	SEND_SIGNAL(src, COMSIG_STORAGE_ENTERED, master_storage)
 
 /atom/movable/proc/get_spacemove_backup()
 	var/atom/movable/dense_object_backup
@@ -886,7 +914,7 @@
 			return turf
 		else
 			var/atom/movable/AM = A
-			if(!AM.CanPass(src) || AM.density)
+			if(AM.density || !AM.CanPass(src, get_dir(src, AM)))
 				if(AM.anchored)
 					return AM
 				dense_object_backup = AM
@@ -906,56 +934,64 @@
 		return //don't do an animation if attacking self
 	var/pixel_x_diff = 0
 	var/pixel_y_diff = 0
+	var/turn_dir = 1
 
 	var/direction = get_dir(src, A)
 	if(direction & NORTH)
 		pixel_y_diff = 8
+		turn_dir = prob(50) ? -1 : 1
 	else if(direction & SOUTH)
 		pixel_y_diff = -8
+		turn_dir = prob(50) ? -1 : 1
 
 	if(direction & EAST)
 		pixel_x_diff = 8
 	else if(direction & WEST)
 		pixel_x_diff = -8
 
-	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, time = 2)
-	animate(src, pixel_x = pixel_x - pixel_x_diff, pixel_y = pixel_y - pixel_y_diff, time = 2)
+	var/matrix/initial_transform = matrix(transform)
+	var/matrix/rotated_transform = transform.Turn(15 * turn_dir)
+	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff, transform=rotated_transform, time = 1, easing=BACK_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
+	animate(pixel_x = pixel_x - pixel_x_diff, pixel_y = pixel_y - pixel_y_diff, transform=initial_transform, time = 2, easing=SINE_EASING, flags = ANIMATION_PARALLEL)
 
 /atom/movable/proc/do_item_attack_animation(atom/A, visual_effect_icon, obj/item/used_item)
-	var/image/I
+	var/image/attack_image
 	if(visual_effect_icon)
-		I = image('icons/effects/effects.dmi', A, visual_effect_icon, A.layer + 0.1)
+		attack_image = image('icons/effects/effects.dmi', A, visual_effect_icon, A.layer + 0.1)
 	else if(used_item)
-		I = image(icon = used_item, loc = A, layer = A.layer + 0.1)
-		I.plane = GAME_PLANE
+		attack_image = image(icon = used_item, loc = A, layer = A.layer + 0.1)
+		attack_image.plane = GAME_PLANE
 
 		// Scale the icon.
-		I.transform *= 0.75
+		attack_image.transform *= 0.4
 		// The icon should not rotate.
-		I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+		attack_image.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 
 		// Set the direction of the icon animation.
 		var/direction = get_dir(src, A)
 		if(direction & NORTH)
-			I.pixel_y = -16
+			attack_image.pixel_y = -12
 		else if(direction & SOUTH)
-			I.pixel_y = 16
+			attack_image.pixel_y = 12
 
 		if(direction & EAST)
-			I.pixel_x = -16
+			attack_image.pixel_x = -14
 		else if(direction & WEST)
-			I.pixel_x = 16
+			attack_image.pixel_x = 14
 
 		if(!direction) // Attacked self?!
-			I.pixel_z = 16
+			attack_image.pixel_y = 12
+			attack_image.pixel_x = 5 * (prob(50) ? 1 : -1)
 
-	if(!I)
+	if(!attack_image)
 		return
 
-	flick_overlay(I, GLOB.clients, 5) // 5 ticks/half a second
+	flick_overlay(attack_image, GLOB.clients, 10) // 10 ticks/a whole second
 
 	// And animate the attack!
-	animate(I, alpha = 175, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
+	animate(attack_image, alpha = 175, transform = matrix() * 0.75, pixel_x = 0, pixel_y = 0, pixel_z = 0, time = 3)
+	animate(time = 1)
+	animate(alpha = 0, time = 3, easing = CIRCULAR_EASING|EASE_OUT)
 
 /atom/movable/vv_get_dropdown()
 	. = ..()
@@ -1117,10 +1153,10 @@
 	set waitfor = FALSE
 	if(!istype(loc, /turf))
 		return
-	var/image/I = image(icon = src, loc = loc, layer = layer + 0.1)
-	I.plane = GAME_PLANE
-	I.transform *= 0.75
-	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	var/image/pickup_animation = image(icon = src, loc = loc, layer = layer + 0.1)
+	pickup_animation.plane = GAME_PLANE
+	pickup_animation.transform *= 0.75
+	pickup_animation.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	var/turf/T = get_turf(src)
 	var/direction
 	var/to_x = target.base_pixel_x
@@ -1138,12 +1174,13 @@
 		to_x -= 32
 	if(!direction)
 		to_y += 16
-	flick_overlay(I, GLOB.clients, 6)
+
+	flick_overlay(pickup_animation, GLOB.clients, 6)
 	var/matrix/M = new
 	M.Turn(pick(-30, 30))
-	animate(I, alpha = 175, pixel_x = to_x, pixel_y = to_y, time = 3, transform = M, easing = CUBIC_EASING)
+	animate(pickup_animation, alpha = 175, pixel_x = to_x, pixel_y = to_y, time = 3, transform = M, easing = CUBIC_EASING)
 	sleep(1)
-	animate(I, alpha = 0, transform = matrix(), time = 1)
+	animate(pickup_animation, alpha = 0, transform = matrix(), time = 1)
 
 /atom/movable/Exited(atom/movable/gone, direction)
 	. = ..()

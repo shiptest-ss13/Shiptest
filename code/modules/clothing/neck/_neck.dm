@@ -169,10 +169,6 @@
 	icon_state = "stethoscope"
 	cuttable = FALSE
 
-/obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
-	return OXYLOSS
-
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
 		if(user.a_intent == INTENT_HELP)
@@ -275,7 +271,7 @@
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
-//However, these 3 don't have corgi versions of their sprites
+//However, these 4 don't have corgi versions of their sprites
 /obj/item/clothing/neck/stripedredscarf
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
@@ -289,6 +285,11 @@
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
+	custom_price = 10
+
+/obj/item/clothing/neck/stripedsolgovscarf
+	name = "striped solgov scarf"
+	icon_state = "stripedsolgovscarf"
 	custom_price = 10
 
 /obj/item/clothing/neck/petcollar

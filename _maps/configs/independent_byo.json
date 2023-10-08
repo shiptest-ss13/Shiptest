@@ -3,6 +3,16 @@
 	"map_name": "BYO-class Do-It-Yourself Enthusiast Special",
 	"map_short_name": "BYO-class",
 	"map_path": "_maps/shuttles/shiptest/independent_byo.dmm",
+	"description": "The BYO can barely be considered a “ship” when initially deployed; more of a construction platform launched hazardously into space. The only thing that separates crews on a BYO from breathable safety and the cold vacuum of space are typically little airtight flaps of plastic. Equipped with a plethora of building material and tools fit for construction, BYO vessels are seen in a variety of shapes and sizes, and almost never with any consistency of form.",
+	"tags": [
+		"Engineering",
+		"Construction"
+	],
+	"namelists": [
+		"ENGINEERING",
+		"GENERAL"
+	],
+	"prefix": "ISV",
 	"job_slots": {
 		"Architect": {
 			"outfit": "/datum/outfit/job/engineer/hazard",
@@ -13,5 +23,5 @@
 			"slots": 4
 		}
 	},
-	"enabled": true
+	"enabled": false
 }

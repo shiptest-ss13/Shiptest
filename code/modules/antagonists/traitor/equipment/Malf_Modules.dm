@@ -245,6 +245,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	owner_AI.doomsday_device.start()
 	for(var/obj/item/pinpointer/nuke/P in GLOB.pinpointer_list)
 		P.switch_mode_to(TRACK_MALF_AI) //Pinpointers start tracking the AI wherever it goes
+		P.alert = TRUE //WEEWOO
 	qdel(src)
 
 /obj/machinery/doomsday_device
@@ -256,21 +257,31 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	verb_exclaim = "blares"
 	var/timing = FALSE
 	var/obj/effect/countdown/doomsday/countdown
+	var/mob/living/silicon/ai/owner
 	var/detonation_timer
 	var/next_announce
 
 /obj/machinery/doomsday_device/Initialize()
 	. = ..()
+	if(!isAI(loc))
+		stack_trace("Doomsday created outside an AI somehow, shit's fucking broke. Anyway, we're just gonna qdel now. Go make a github issue report.")
+		return INITIALIZE_HINT_QDEL
+	owner = loc
 	countdown = new(src)
 
 /obj/machinery/doomsday_device/Destroy()
 	QDEL_NULL(countdown)
 	STOP_PROCESSING(SSfastprocess, src)
 	SSmapping.remove_nuke_threat(src)
-	for(var/A in GLOB.ai_list)
-		var/mob/living/silicon/ai/AI = A
-		if(AI.doomsday_device == src)
-			AI.doomsday_device = null
+	set_security_level("red")
+	for(var/mob/living/silicon/robot/borg in owner?.connected_robots)
+		borg.toggle_headlamp(FALSE, TRUE) //forces borg lamp to update
+	owner?.doomsday_device = null
+	owner?.nuking = null
+	owner = null
+	for(var/obj/item/pinpointer/nuke/P in GLOB.pinpointer_list)
+		P.switch_mode_to(TRACK_NUKE_DISK) //Party's over, back to work, everyone
+		P.alert = FALSE
 	return ..()
 
 /obj/machinery/doomsday_device/proc/start()
@@ -347,7 +358,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	cost = 30
 	power_type = /datum/action/innate/ai/ranged/override_machine
 	unlock_text = "<span class='notice'>You procure a virus from the Space Dark Web and distribute it to the station's machines.</span>"
-	unlock_sound = 'sound/machines/airlock_alien_prying.ogg'
+	unlock_sound = 'sound/machines/creaking.ogg'
 
 /datum/action/innate/ai/ranged/override_machine
 	name = "Override Machine"
@@ -615,7 +626,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	cost = 25
 	power_type = /datum/action/innate/ai/break_fire_alarms
 	unlock_text = "<span class='notice'>You replace the thermal sensing capabilities of all fire alarms with a manual override, allowing you to turn them off at will.</span>"
-	unlock_sound = 'goon/sound/machinery/firealarm.ogg'
+	unlock_sound = 'sound/machines/firealarm.ogg'
 
 /datum/action/innate/ai/break_fire_alarms
 	name = "Override Thermal Sensors"
@@ -626,7 +637,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /datum/action/innate/ai/break_fire_alarms/Activate()
 	for(var/obj/machinery/firealarm/F in GLOB.machines)
 		F.obj_flags |= EMAGGED
-		F.update_icon()
+		F.update_appearance()
 	to_chat(owner, "<span class='notice'>All thermal sensors on the station have been disabled. Fire alerts will no longer be recognized.</span>")
 	owner.playsound_local(owner, 'sound/machines/terminal_off.ogg', 50, 0)
 

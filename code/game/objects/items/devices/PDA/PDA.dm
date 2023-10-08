@@ -83,14 +83,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	var/underline_flag = TRUE //flag for underline
 
-/obj/item/pda/suicide_act(mob/living/carbon/user)
-	var/deathMessage = msg_input(user)
-	if (!deathMessage)
-		deathMessage = "i ded"
-	user.visible_message("<span class='suicide'>[user] is sending a message to the Grim Reaper! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	tnote += "<i><b>&rarr; To The Grim Reaper:</b></i><br>[deathMessage]<br>"//records a message in their PDA as being sent to the grim reaper
-	return BRUTELOSS
-
 /obj/item/pda/examine(mob/user)
 	. = ..()
 	if(!id && !inserted_item)
@@ -114,7 +106,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		inserted_item = new inserted_item(src)
 	else
 		inserted_item =	new /obj/item/pen(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/pda/equipped(mob/user, slot)
 	. = ..()
@@ -244,7 +236,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<ul>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)] Notekeeper</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)] Messenger</a></li>"
-				dat += "<li><a href='byond://?src=[REF(src)];choice=41'>[PDAIMG(notes)] View Crew Manifest</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=6'>[PDAIMG(skills)]Skill Tracker</a></li>"
 
 				if(cartridge)
@@ -291,7 +282,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if (pai)
 					if(pai.loc != src)
 						pai = null
-						update_icon()
+						update_appearance()
 					else
 						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=1'>pAI Device Configuration</a></li>"
 						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=2'>Eject pAI Device</a></li>"
@@ -373,7 +364,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			if(41) //crew manifest
 				dat += "<h4>Crew Manifest</h4>"
 				dat += "<center>"
-				dat += SSjob.get_manifest_html()
+				dat += SSovermap.get_manifest_html()
 				dat += "</center>"
 
 			if(3)
@@ -441,7 +432,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					scanmode = 0
 					cartridge.host_pda = null
 					cartridge = null
-					update_icon()
+					update_appearance()
 
 //MENU FUNCTIONS===================================
 
@@ -621,7 +612,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	. = id
 	id = null
 	updateSelfDialog()
-	update_icon()
+	update_appearance()
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
@@ -739,7 +730,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 		to_chat(L, "<span class='infoplain'>[icon2html(src)] <b>PDA message from [hrefstart][signal.data["name"]] ([signal.data["job"]])[hrefend], </b>[inbound_message] [reply]</span>")
 
-	update_icon()
+	update_appearance()
 	add_overlay(icon_alert)
 
 /obj/item/pda/proc/send_to_all(mob/living/U)
@@ -815,7 +806,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		set_light_on(FALSE)
 	else if(light_range)
 		set_light_on(TRUE)
-	update_icon()
+	update_appearance()
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -829,7 +820,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		user.put_in_hands(inserted_item)
 		to_chat(user, "<span class='notice'>You remove [inserted_item] from [src].</span>")
 		inserted_item = null
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='warning'>This PDA does not have a pen in it!</span>")
 
@@ -843,7 +834,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		cartridge.host_pda = null
 		cartridge = null
 		updateSelfDialog()
-		update_icon()
+		update_appearance()
 
 //trying to insert or remove an id
 /obj/item/pda/proc/id_check(mob/user, obj/item/card/id/I)
@@ -860,7 +851,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		if(!user.transferItemToLoc(I, src))
 			return FALSE
 		insert_id(I, user)
-		update_icon()
+		update_appearance()
 	return TRUE
 
 
@@ -888,7 +879,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		cartridge.host_pda = src
 		to_chat(user, "<span class='notice'>You insert [cartridge] into [src].</span>")
 		updateSelfDialog()
-		update_icon()
+		update_appearance()
 
 	else if(istype(C, /obj/item/card/id))
 		var/obj/item/card/id/idcard = C
@@ -913,7 +904,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			return
 		pai = C
 		to_chat(user, "<span class='notice'>You slot \the [C] into [src].</span>")
-		update_icon()
+		update_appearance()
 		updateUsrDialog()
 	else if(is_type_in_list(C, contained_item)) //Checks if there is a pen
 		if(inserted_item)
@@ -923,7 +914,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				return
 			to_chat(user, "<span class='notice'>You slide \the [C] into \the [src].</span>")
 			inserted_item = C
-			update_icon()
+			update_appearance()
 	else if(istype(C, /obj/item/photo))
 		var/obj/item/photo/P = C
 		picture = P.picture
@@ -983,10 +974,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	if(!scanmode && istype(A, /obj/item/paper) && owner)
 		var/obj/item/paper/PP = A
-		if(!PP.info)
+		if(!PP.get_total_length())
 			to_chat(user, "<span class='warning'>Unable to scan! Paper is blank.</span>")
 			return
-		notehtml = PP.info
+		notehtml = PP.get_raw_text()
 		note = replacetext(notehtml, "<BR>", "\[br\]")
 		note = replacetext(note, "<li>", "\[*\]")
 		note = replacetext(note, "<ul>", "\[list\]")
