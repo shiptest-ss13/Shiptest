@@ -983,13 +983,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"gB" = (
-/obj/structure/sign/solgov_seal{
-	pixel_y = 29;
-	pixel_x = -1
-	},
-/turf/template_noop,
-/area/template_noop)
 "gI" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
@@ -1248,10 +1241,6 @@
 /obj/item/clothing/head/helmet/space/solgov,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"is" = (
-/obj/structure/sign/solgov_seal,
-/turf/template_noop,
-/area/template_noop)
 "iu" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/royalblue,
@@ -1443,12 +1432,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
-"jB" = (
-/obj/structure/sign/solgov_seal{
-	pixel_y = -27
-	},
-/turf/template_noop,
-/area/template_noop)
 "jE" = (
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue/corner{
 	dir = 1
@@ -2497,10 +2480,10 @@
 /area/ship/maintenance/port)
 "qt" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/crate_spawner,
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "qw" = (
@@ -2830,10 +2813,10 @@
 	dir = 4
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/crate_spawner,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "sn" = (
@@ -4100,7 +4083,6 @@
 /area/ship/crew/cryo)
 "Ap" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/crate_spawner,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -5096,9 +5078,9 @@
 /area/ship/cargo)
 "GJ" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/crate_spawner,
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/external)
 "GN" = (
@@ -5497,7 +5479,7 @@
 	dir = 1
 	},
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "JN" = (
@@ -5993,7 +5975,7 @@
 /area/ship/crew/canteen/kitchen)
 "Nj" = (
 /obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Np" = (
@@ -6141,6 +6123,10 @@
 /area/ship/crew/office)
 "Or" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/sign/solgov_seal{
+	pixel_y = 0;
+	pixel_x = -1
+	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/hallway/starboard)
 "OC" = (
@@ -8046,7 +8032,7 @@ ts
 xd
 mB
 Or
-gB
+iG
 "}
 (9,1,1) = {"
 xZ
@@ -8114,7 +8100,7 @@ ts
 BT
 Py
 Or
-gB
+iG
 "}
 (11,1,1) = {"
 xZ
@@ -8525,7 +8511,7 @@ iG
 iG
 "}
 (23,1,1) = {"
-jB
+iG
 Qb
 Mr
 WO
@@ -8555,7 +8541,7 @@ jf
 jv
 wW
 zd
-is
+iG
 iG
 "}
 (24,1,1) = {"
