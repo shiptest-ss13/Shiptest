@@ -5,7 +5,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "am" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -99,12 +99,12 @@
 "bh" = (
 /obj/structure/bed,
 /obj/item/bedsheet/solgov,
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/structure/sign/solgov_flag{
 	dir = 8;
 	pixel_x = 28
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm/dormthree)
@@ -342,7 +342,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "cX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -350,7 +350,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "da" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -581,9 +581,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/birch,
 /area/ship/crew/canteen)
-"ej" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/maintenance/external)
 "ek" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 9
@@ -819,7 +816,7 @@
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "fE" = (
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -835,7 +832,7 @@
 	dir = 8
 	},
 /obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
@@ -928,7 +925,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "gn" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -942,7 +939,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "gr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -1554,10 +1551,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
+	},
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
 "ku" = (
@@ -2050,6 +2047,18 @@
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/item/reagent_containers/food/snacks/meat/slab,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/reagent_containers/food/snacks/grown/cocoapod,
+/obj/item/reagent_containers/food/snacks/grown/cocoapod,
+/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
+/obj/item/reagent_containers/food/snacks/grown/citrus/orange,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/tomato,
+/obj/item/reagent_containers/food/snacks/grown/carrot,
+/obj/item/reagent_containers/food/snacks/grown/carrot,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "nB" = (
@@ -2285,7 +2294,7 @@
 "oN" = (
 /obj/structure/bookcase/random,
 /obj/structure/sign/poster/solgov/random{
-	pixel_x = -28
+	pixel_x = -32
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/library)
@@ -2512,15 +2521,12 @@
 	dir = 1
 	},
 /obj/structure/sign/poster/solgov/random{
-	pixel_x = 28
+	pixel_x = 32
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
 "qE" = (
 /obj/structure/table/wood,
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/item/kitchen/knife/letter_opener{
 	pixel_x = -13;
 	icon_state = "letter_opener_b";
@@ -2531,13 +2537,16 @@
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
 	dir = 2
 	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "qG" = (
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "qM" = (
 /obj/machinery/light/floor,
 /obj/structure/sign/solgov_seal{
@@ -2587,7 +2596,6 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "rm" = (
-/obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/crate_spawner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 1
@@ -2669,6 +2677,7 @@
 /obj/item/kitchen/knife/letter_opener,
 /obj/item/clothing/glasses/meson,
 /obj/machinery/light/directional/north,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "rQ" = (
@@ -2777,7 +2786,7 @@
 "sg" = (
 /obj/structure/fluff/hedge,
 /obj/structure/sign/poster/solgov/random{
-	pixel_x = -28
+	pixel_x = -32
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
@@ -2871,9 +2880,9 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "sz" = (
-/obj/structure/rack,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/light/directional/south,
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "sH" = (
@@ -3008,11 +3017,12 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/item/kitchen/knife/letter_opener,
 /obj/item/clothing/glasses/meson,
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
+	},
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "ts" = (
@@ -3232,7 +3242,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "uE" = (
 /obj/item/paper_bin,
 /obj/item/pen/solgov,
@@ -4073,11 +4083,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/library)
 "Aa" = (
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 5
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/cryo)
@@ -4097,7 +4107,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "AA" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
@@ -4152,10 +4162,10 @@
 	pixel_y = 3;
 	pixel_x = -10
 	},
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "Ba" = (
@@ -4320,7 +4330,7 @@
 "BP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "BQ" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 6
@@ -4598,7 +4608,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "DD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -4616,7 +4626,7 @@
 	dir = 8
 	},
 /obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -4691,7 +4701,7 @@
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "Ek" = (
 /obj/structure/railing/wood,
 /obj/structure/chair/stool/bar,
@@ -5056,7 +5066,7 @@
 "GF" = (
 /obj/structure/bookcase/random,
 /obj/structure/sign/poster/solgov/random{
-	pixel_x = 28
+	pixel_x = 32
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/library)
@@ -5082,7 +5092,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "GN" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -5315,12 +5325,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "IC" = (
-/obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/crate_spawner,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "IX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -5336,11 +5345,11 @@
 /obj/item/kitchen/knife/letter_opener{
 	pixel_x = 4
 	},
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
+	},
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
@@ -5533,10 +5542,10 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
-	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/solgov/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/security/armory)
 "JZ" = (
@@ -6106,7 +6115,7 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "Oq" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -6509,7 +6518,7 @@
 	pixel_y = 21
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "Rr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
@@ -6674,7 +6683,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/maintenance/external)
+/area/ship/maintenance/starboard)
 "Sr" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 6
@@ -6732,10 +6741,8 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/maintenance/port)
 "SA" = (
-/obj/structure/rack,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
 /obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/ore_box,
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "SB" = (
@@ -6821,6 +6828,7 @@
 /obj/item/clothing/glasses/meson/prescription,
 /obj/item/kitchen/knife/letter_opener,
 /obj/item/clothing/glasses/meson,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
 "Tf" = (
@@ -6855,9 +6863,6 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/canteen/kitchen)
-"Tu" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/maintenance/external)
 "Tv" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -7184,7 +7189,7 @@
 	},
 /obj/structure/table/wood/fancy/purple,
 /obj/structure/sign/poster/solgov/random{
-	pixel_y = 30
+	pixel_y = 32
 	},
 /turf/open/floor/wood/maple,
 /area/ship/crew/dorm/dormtwo)
@@ -7522,7 +7527,7 @@
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/sign/poster/solgov/random{
-	pixel_x = 28
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
@@ -8164,10 +8169,10 @@ MW
 iM
 ut
 cz
-ej
+DH
 DB
 Au
-ej
+DH
 iG
 "}
 (13,1,1) = {"
@@ -8201,7 +8206,7 @@ jw
 So
 gm
 qG
-ej
+DH
 iG
 "}
 (14,1,1) = {"
@@ -8232,10 +8237,10 @@ MW
 tr
 hR
 xU
-ej
+DH
 Rq
 GJ
-ej
+DH
 iG
 "}
 (15,1,1) = {"
@@ -8266,10 +8271,10 @@ MW
 up
 Kd
 kZ
-ej
+DH
 af
 BP
-ej
+DH
 iG
 "}
 (16,1,1) = {"
@@ -8300,10 +8305,10 @@ MW
 Td
 Kd
 Rh
-ej
+DH
 cQ
 gp
-ej
+DH
 iG
 "}
 (17,1,1) = {"
@@ -8334,10 +8339,10 @@ MW
 ZK
 Pu
 FJ
-ej
+DH
 BP
 Ef
-ej
+DH
 iG
 "}
 (18,1,1) = {"
@@ -8368,10 +8373,10 @@ MW
 rN
 xt
 yV
-ej
+DH
 cX
 Oo
-ej
+DH
 iG
 "}
 (19,1,1) = {"
@@ -8402,10 +8407,10 @@ MW
 MZ
 Kd
 Tz
-ej
+DH
 fC
 uC
-ej
+DH
 iG
 "}
 (20,1,1) = {"
@@ -8436,9 +8441,9 @@ MW
 Lk
 da
 MT
-ej
+DH
 IC
-Tu
+wb
 hE
 iG
 "}
