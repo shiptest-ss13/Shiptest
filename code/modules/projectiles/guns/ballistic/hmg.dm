@@ -12,7 +12,7 @@
 	spread_unwielded = 80
 	recoil = 1
 	recoil_unwielded = 4
-	wield_slowdown = 2
+	wield_slowdown = 4
 
 // L6 SAW //
 
