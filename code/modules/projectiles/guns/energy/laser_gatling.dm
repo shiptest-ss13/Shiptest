@@ -108,7 +108,7 @@
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = null
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = WEAPON_MEDIUM
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/minigun)
 	cell_type = /obj/item/stock_parts/cell/crap
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
