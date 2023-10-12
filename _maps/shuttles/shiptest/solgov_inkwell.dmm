@@ -5,7 +5,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "am" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -345,7 +345,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "cX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -353,7 +353,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "da" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -819,7 +819,7 @@
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "fE" = (
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -928,7 +928,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "gn" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -942,7 +942,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "gr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -2549,7 +2549,7 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "qM" = (
 /obj/machinery/light/floor,
 /obj/structure/sign/solgov_seal{
@@ -3251,7 +3251,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "uE" = (
 /obj/item/paper_bin,
 /obj/item/pen/solgov,
@@ -3656,6 +3656,10 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 11;
+	pixel_y = 21
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "xf" = (
@@ -4120,7 +4124,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "AA" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
@@ -4343,7 +4347,7 @@
 "BP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "BQ" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 6
@@ -4621,7 +4625,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "DD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -4714,7 +4718,7 @@
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "Ek" = (
 /obj/structure/railing/wood,
 /obj/structure/chair/stool/bar,
@@ -5105,7 +5109,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "GN" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -5342,7 +5346,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "IX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -6134,7 +6138,7 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "Oq" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -6322,6 +6326,9 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"PV" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/maintenance/aft)
 "Qb" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/cryo)
@@ -6538,7 +6545,7 @@
 	pixel_y = 21
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "Rr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
@@ -6703,7 +6710,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/maintenance/starboard)
+/area/ship/maintenance/aft)
 "Sr" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 6
@@ -7732,6 +7739,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
+"ZO" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/maintenance/aft)
 "ZR" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -8189,10 +8199,10 @@ MW
 iM
 ut
 cz
-DH
+ZO
 DB
 Au
-DH
+ZO
 iG
 "}
 (13,1,1) = {"
@@ -8226,7 +8236,7 @@ jw
 So
 gm
 qG
-DH
+ZO
 iG
 "}
 (14,1,1) = {"
@@ -8257,10 +8267,10 @@ MW
 tr
 hR
 xU
-DH
+ZO
 Rq
 GJ
-DH
+ZO
 iG
 "}
 (15,1,1) = {"
@@ -8291,10 +8301,10 @@ MW
 up
 Kd
 kZ
-DH
+ZO
 af
 BP
-DH
+ZO
 iG
 "}
 (16,1,1) = {"
@@ -8325,10 +8335,10 @@ MW
 Td
 Kd
 Rh
-DH
+ZO
 cQ
 gp
-DH
+ZO
 iG
 "}
 (17,1,1) = {"
@@ -8359,10 +8369,10 @@ MW
 ZK
 Pu
 FJ
-DH
+ZO
 BP
 Ef
-DH
+ZO
 iG
 "}
 (18,1,1) = {"
@@ -8393,10 +8403,10 @@ MW
 rN
 xt
 yV
-DH
+ZO
 cX
 Oo
-DH
+ZO
 iG
 "}
 (19,1,1) = {"
@@ -8427,10 +8437,10 @@ MW
 MZ
 Kd
 Tz
-DH
+ZO
 fC
 uC
-DH
+ZO
 iG
 "}
 (20,1,1) = {"
@@ -8461,9 +8471,9 @@ MW
 Lk
 da
 MT
-DH
+ZO
 IC
-wb
+PV
 hE
 iG
 "}
