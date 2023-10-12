@@ -213,8 +213,11 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "bU" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/library)
@@ -731,7 +734,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "fi" = (
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue/corner{
 	dir = 4
@@ -1869,7 +1872,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "mD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -2515,7 +2518,7 @@
 /obj/machinery/suit_storage_unit/solgov,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "qB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2891,6 +2894,9 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
+"sJ" = (
+/turf/closed/wall/mineral/titanium,
+/area/ship/storage)
 "sQ" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/double/solgov,
@@ -3215,8 +3221,11 @@
 /obj/machinery/door/poddoor{
 	id = "sgi_external"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "uy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -3643,8 +3652,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "xf" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
@@ -4365,7 +4378,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "BW" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -5454,6 +5467,12 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovblue/warning,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "JD" = (
@@ -5515,7 +5534,7 @@
 	id = "sgi_external"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "JT" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/full,
 /obj/structure/cable{
@@ -6137,7 +6156,7 @@
 	pixel_x = -1
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "OC" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -6274,8 +6293,9 @@
 	dir = 8;
 	pixel_x = 28
 	},
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
-/area/ship/hallway/starboard)
+/area/ship/storage)
 "PB" = (
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/wood/maple,
@@ -7999,9 +8019,9 @@ ts
 AZ
 KS
 Np
-ts
+sJ
 qx
-ts
+sJ
 hE
 iG
 "}
@@ -8033,7 +8053,7 @@ ts
 LZ
 gW
 FN
-ts
+sJ
 xd
 mB
 Or
@@ -8101,7 +8121,7 @@ ts
 dK
 tB
 YF
-ts
+sJ
 BT
 Py
 Or
@@ -8135,10 +8155,10 @@ ts
 ts
 mQ
 ts
-ts
-ts
-ts
-ts
+sJ
+sJ
+sJ
+sJ
 iG
 "}
 (12,1,1) = {"
