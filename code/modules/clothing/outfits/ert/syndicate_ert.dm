@@ -18,29 +18,53 @@
 	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol=1, /obj/item/ammo_box/magazine/m10mm=2, /obj/item/radio)
 	box = /obj/item/storage/box/survival/syndie
 
+	id_role = "Squaddie"
+
 /datum/outfit/centcom/ert/syndicate/leader
 	name = "ERT - Syndicate Basic Leader"
 
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/captain
 
+	id_role = "Sergeant"
+
 /datum/outfit/centcom/ert/syndicate/gorlex
 	name = "ERT - Syndicate Gorlex Trooper"
 
+	head = /obj/item/clothing/head/helmet/operator
 	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/armor/vest/syndie
-	belt = /obj/item/storage/belt/military/army
+	belt = /obj/item/storage/belt/military/assault
 	back = /obj/item/storage/backpack/security
 
+	id_role = "Trooper"
 
 /datum/outfit/centcom/ert/syndicate/gorlex/leader
 	name = "ERT - Syndicate Gorlex Sergeant"
 
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+
+	id_role = "Sergeant"
+
 /datum/outfit/centcom/ert/syndicate/cybersun
 	name = "ERT - Syndicate Cybersun Commando"
 
+	head = null
+	uniform = /obj/item/clothing/under/syndicate/combat
+	belt = /obj/item/tank/internals/oxygen
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
+	suit_store = null
+	back = /obj/item/tank/jetpack/carbondioxide
+
+
+	implants = list(/obj/item/implant/adrenalin)
+
+	id_role = "Operative"
+
 /datum/outfit/centcom/ert/syndicate/cybersun/leader
 	name = "ERT - Syndicate Cybersun Commando Leader"
+
+	id_role = "Lead Operative"
 
 /datum/outfit/centcom/ert/syndicate/cybersun/medic
 	name = "ERT - Syndicate Cybersun Paramedic"
@@ -59,7 +83,7 @@
 	r_pocket = /obj/item/pinpointer/crew
 	accessory = /obj/item/clothing/accessory/holster/marine
 
-
+	id_role = "Medical Technician"
 
 /datum/outfit/centcom/ert/syndicate/cybersun/medic/leader
 	name = "ERT - Syndicate Cybersun Lead Paramedic"
@@ -68,3 +92,5 @@
 	glasses = /obj/item/clothing/glasses/hud/security/night
 	ears = /obj/item/radio/headset/syndicate/captain
 	r_pocket = /obj/item/megaphone/command
+
+	id_role = "Lead Medical Technician"

@@ -401,3 +401,8 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/crux
+	file_name = "minutemen_crux"
+	name = "Crux Dropship"
+	prefix = "CMSV"

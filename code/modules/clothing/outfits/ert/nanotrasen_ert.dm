@@ -1,4 +1,4 @@
-// This is where the base ERT outfit goes
+// this is where the base ERT outfit goes
 /datum/outfit/centcom/ert
 	name = "ERT Common"
 
@@ -7,6 +7,8 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/headset_cent/alt
+	// determines what role goes on the ID of an ert member. cheap workaround for implementing it into the ert datum
+	var/id_role = "Emergency Response Officer"
 
 /datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -15,6 +17,7 @@
 	var/obj/item/card/id/W = H.wear_id
 	if(W)
 		W.registered_name = H.real_name
+		W.assignment = id_role
 		W.update_label()
 	..()
 
@@ -30,6 +33,8 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/gun/energy/e_gun=1)
 	l_pocket = /obj/item/switchblade
+
+	id_role = "Emergency Response Team Commander"
 
 /datum/outfit/centcom/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -99,6 +104,8 @@
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1)
 
+	id_role = "Medical Response Officer"
+
 /datum/outfit/centcom/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -133,6 +140,8 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/gun/energy/e_gun=1,\
 		/obj/item/construction/rcd/loaded=1)
+
+	id_role = "Engineering Response Officer"
 
 /datum/outfit/centcom/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -205,6 +214,8 @@
 		/obj/item/mop/advanced=1,\
 		/obj/item/reagent_containers/glass/bucket=1,\
 		/obj/item/grenade/clusterbuster/cleaner=1)
+
+	id_role = "Janitorial Response Officer"
 
 /datum/outfit/centcom/ert/janitor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -294,6 +305,8 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/marine
 
+	id_role = "Emergency Response Team Commander"
+
 /datum/outfit/centcom/ert/marine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -341,6 +354,8 @@
 	belt = /obj/item/storage/belt/medical/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 
+	id_role = "Medical Response Officer"
+
 /datum/outfit/centcom/ert/marine/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -368,6 +383,8 @@
 	belt = /obj/item/storage/belt/utility/full/ert
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
+	id_role = "Engineering Response Officer"
+
 /datum/outfit/centcom/ert/marine/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -383,6 +400,7 @@
 /datum/outfit/centcom/ert/lp
 	name = "ERT - Loss Prevention Security Specialist"
 
+	head = null
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt
 	id = /obj/item/card/id/lpsec
@@ -392,10 +410,13 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/sec
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/beret/sec
+
+	id_role = "Security Specialist"
 
 /datum/outfit/centcom/ert/lp/medic
 	name = "ERT - Loss Prevention Medical Specialist"
+
+	head = null
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/med
 	id = /obj/item/card/id/lpmed
@@ -404,6 +425,8 @@
 
 /datum/outfit/centcom/ert/lp/engineer
 	name = "ERT - Loss Prevention Engineering Specialist"
+
+	head = null
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
 	id = /obj/item/card/id/lpengie
@@ -415,6 +438,7 @@
 /datum/outfit/centcom/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"
 
+	head = null
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	id = /obj/item/card/id/lplieu
 	belt = /obj/item/storage/belt/military/army

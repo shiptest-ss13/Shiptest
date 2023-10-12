@@ -1,7 +1,4 @@
 /datum/outfit/centcom/ert/solgov
-	name = "ERT - SolGov Basic"
-
-/datum/outfit/centcom/ert/solgov/sonnensoldner
 	name = "ERT - SolGov Sonnensöldner"
 
 	id = /obj/item/card/id/solgov
@@ -15,6 +12,8 @@
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
 
+	id_role = "Sonnensöldner"
+
 /datum/outfit/centcom/ert/solgov/inspector
 	name = "ERT - SolGov Inspector"
 
@@ -27,3 +26,5 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	mask = null
 	glasses = null
+
+	id_role = "Inspector"

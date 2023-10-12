@@ -118,14 +118,7 @@
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/solgov
 	roles = list(/datum/antagonist/ert/solgov)
-	mission = "solgov lol"
-	rename_team = "Generic SolGov Team"
-	polldesc = "a SolGov response team"
-
-/datum/ert/solgov/sonnensoldner
-	leader_role = /datum/antagonist/ert/solgov/sonnensoldner
-	roles = list(/datum/antagonist/ert/solgov/sonnensoldner)
-	mission = "solgov lol"
+	mission = "Intervene in Solarian interests."
 	rename_team = "SolGov Sonnensoldner Team"
 	polldesc = "a SolGov mercenary team"
 
@@ -150,6 +143,7 @@
 	rename_team = "Generic Minutemen Team"
 	polldesc = "a Minutemen emergency team"
 	random_names = TRUE
+	ert_template = /datum/map_template/shuttle/subshuttles/crux
 
 /datum/ert/minutemen/bard
 	leader_role = /datum/antagonist/ert/minutemen/bard/leader
@@ -191,7 +185,7 @@
 
 /datum/ert/syndicate/gorlex
 	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
-	roles = list(/datum/antagonist/ert/syndicate/gorlex/leader)
+	roles = list(/datum/antagonist/ert/syndicate/gorlex)
 	mission = "Serve the interests of the Gorlex Maruders."
 	rename_team = "Gorlex Maruders Team"
 	polldesc = "a Syndicate Gorlex squad"

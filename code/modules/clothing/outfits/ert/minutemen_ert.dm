@@ -13,16 +13,6 @@
 
 	box = /obj/item/storage/box/survival/security
 
-/datum/outfit/centcom/ert/minutemen/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.assignment = H.mind.assigned_role
-		W.update_label()
-	..()
-
 /datum/outfit/centcom/ert/minutemen/leader
 	name = "ERT - Minutemen Basic Sargent"
 
@@ -73,7 +63,7 @@
 	head = /obj/item/clothing/head/helmet/riot/minutemen
 	l_hand = /obj/item/melee/baton/loaded
 	back = /obj/item/shield/riot
-	belt = /obj/item/gun/ballistic/automatic/smg/cm5
+	belt = /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
 	r_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 	l_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 
@@ -86,6 +76,14 @@
 /datum/outfit/centcom/ert/minutemen/gold_irs
 	name = "CMM GOLD Collector"
 
+	head = null
+	mask = null
+	glasses = /obj/item/clothing/glasses/sunglasses
+	uniform = /obj/item/clothing/under/rank/command/minutemen
+	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	ears = /obj/item/radio/headset/minutemen/alt/captain
+	back = /obj/item/storage/backpack/satchel/leather
+
 /datum/outfit/centcom/ert/minutemen/piratehunters
 	name = "ERT - Minutemen Pirate Hunter"
 
@@ -93,7 +91,6 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
 	belt = /obj/item/storage/belt/military/minutemen/loaded
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-
 
 /datum/outfit/centcom/ert/minutemen/piratehunters/leader
 	name = "ERT - Minutemen Pirate Hunter Leader"

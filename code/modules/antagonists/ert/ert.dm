@@ -256,12 +256,6 @@
 // ** SolGov **
 // ********************************************************************
 /datum/antagonist/ert/solgov
-	name = "SolGov Infantry"
-	outfit = /datum/outfit/centcom/ert/solgov
-	random_names = FALSE
-	role = "Sonnensöldner"
-
-/datum/antagonist/ert/solgov/sonnensoldner
 	name = "SolGov Sonnensöldner"
 	outfit = /datum/outfit/centcom/ert/solgov/sonnensoldner
 	random_names = FALSE
@@ -343,6 +337,11 @@
 	outfit = /datum/outfit/centcom/ert/syndicate
 	role = "Squaddie"
 
+/datum/antagonist/ert/syndicate/leader
+	name = "Syndicate Sergeant"
+	outfit = /datum/outfit/centcom/ert/syndicate/leader
+	role = "Sergeant"
+
 /datum/antagonist/ert/syndicate/gorlex
 	name = "Gorlex Trooper"
 	outfit = /datum/outfit/centcom/ert/syndicate/gorlex
@@ -361,7 +360,7 @@
 /datum/antagonist/ert/syndicate/cybersun/leader
 	name = "Cybersun Officer"
 	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/leader
-	role = "Operative Officer"
+	role = "Lead Operative"
 
 /datum/antagonist/ert/syndicate/cybersun/medic
 	name = "Cybersun Paramedic"
@@ -393,6 +392,6 @@
 	role = "Medic"
 
 /datum/antagonist/ert/frontier/engineer
-	name = "Frontiersmen Carpenter"
+	name = "Frontiersmen Engineer"
 	outfit = /datum/outfit/job/engineer/independent/frontiersmen
 	role = "Carpenter"
