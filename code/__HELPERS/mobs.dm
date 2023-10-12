@@ -39,6 +39,7 @@
 /proc/random_backpack()
 	return pick(GLOB.backpacklist)
 
+/* ZUBBER EDIT
 /proc/random_features()
 	if(!GLOB.tails_list_human.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
@@ -129,6 +130,10 @@
 		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
 		"wings" = "None",
 	)
+*/ //ZUBBER ENND
+
+/proc/random_features()//Not random now, use the species specific ones for that. This is kept for compatibility
+	return MANDATORY_FEATURE_LIST
 
 /proc/random_hairstyle(gender)
 	switch(gender)

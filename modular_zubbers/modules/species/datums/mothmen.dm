@@ -1,0 +1,96 @@
+/datum/species/moth
+	name = "\improper Mothman"
+	id = SPECIES_MOTH
+	default_color = "00FF00"
+	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)
+	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
+	default_features = list("moth_wings" = ACC_RANDOM, "moth_fluff" = ACC_RANDOM)
+	mutant_organs = list(/obj/item/organ/moth_wings)
+	attack_verb = "slash"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/moth
+	liked_food = FRUIT | SUGAR
+	disliked_food = GROSS
+	toxic_food = MEAT | RAW
+	mutanteyes = /obj/item/organ/eyes/compound 	//WS Edit - Compound eyes
+	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	species_language_holder = /datum/language_holder/moth
+	loreblurb = "Bug-mammal hybrids resembling Sol's lepidopterans. They share the least DNA with baseline humans of any human-derived geneline, being significant portions insect and modified whole-cloth DNA. Their classification as another human geneline or as something else is highly debated. All evidence that would point to their origin– which is presumably a genelab somewhere– has seemingly disappeared into thin air. Mothpeople themselves have no centralized culture or homeworld, leading to a fractured existence amongst the stars."
+	wings_icons = list("Megamoth", "Mothra")
+	has_innate_wings = TRUE
+	deathsound = 'sound/voice/moth/moth_a.ogg'
+
+	species_chest = /obj/item/bodypart/chest/moth
+	species_head = /obj/item/bodypart/head/moth
+	species_l_arm = /obj/item/bodypart/l_arm/moth
+	species_r_arm = /obj/item/bodypart/r_arm/moth
+	species_l_leg = /obj/item/bodypart/leg/left/moth
+	species_r_leg = /obj/item/bodypart/leg/right/moth
+
+/datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
+	. = ..()
+	if(ishuman(C))
+		var/mob/living/carbon/human/H = C
+		handle_mutant_bodyparts(H)
+
+/datum/species/moth/random_name(gender,unique,lastname)
+	if(unique)
+		return random_unique_moth_name()
+
+	var/randname = moth_name()
+
+	if(lastname)
+		randname += " [lastname]"
+
+	return randname
+
+/datum/species/handle_fire(mob/living/carbon/human/H, no_protection = FALSE)
+	. = ..()
+	if(.) //if the mob is immune to fire, don't burn wings off.
+		return
+	if(!("moth_wings" in H.dna.species.mutant_bodyparts)) //if they don't have wings, you can't burn em, can ye
+		return
+	if(H.dna.features["moth_wings"] != "Burnt Off" && H.bodytemperature >= 500 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
+		to_chat(H, "<span class='danger'>Your precious wings start to char!</span>")
+		H.dna.features["moth_wings"] = "Burnt Off"
+		if(flying_species) //This is all exclusive to if the person has the effects of a potion of flight
+			if(H.movement_type & FLYING)
+				ToggleFlight(H)
+				H.Knockdown(1.5 SECONDS)
+			fly.Remove(H)
+			QDEL_NULL(fly)
+			H.dna.features["wings"] = "None"
+		handle_mutant_bodyparts(H)
+
+	else if(H.dna.features["moth_wings"] == "Burnt Off" && H.bodytemperature >= 800 && H.fire_stacks > 0) //do not go into the extremely hot light. you will not survive
+		to_chat(H, "<span class='danger'>Your precious wings disintigrate into nothing!</span>")
+		if(/obj/item/organ/moth_wings in H.internal_organs)
+			qdel(H.getorganslot(ORGAN_SLOT_WINGS))
+		if(flying_species) //This is all exclusive to if the person has the effects of a potion of flight
+			if(H.movement_type & FLYING)
+				ToggleFlight(H)
+				H.Knockdown(1.5 SECONDS)
+			fly.Remove(H)
+			QDEL_NULL(fly)
+			H.dna.features["wings"] = "None"
+		handle_mutant_bodyparts(H)
+
+/datum/species/moth/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
+	if(chem.type == /datum/reagent/toxin/pestkiller)
+		H.adjustToxLoss(3)
+		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
+	return ..()
+
+/datum/species/moth/check_species_weakness(obj/item/weapon, mob/living/attacker)
+	if(istype(weapon, /obj/item/melee/flyswatter))
+		return 9 //flyswatters deal 10x damage to moths
+	return 0
+
+/datum/species/space_move(mob/living/carbon/human/H)
+	. = ..()
+	if(H.loc && !isspaceturf(H.loc) && H.getorganslot(ORGAN_SLOT_WINGS) && !flying_species) //"flying_species" is exclusive to the potion of flight, which has its flying mechanics. If they want to fly they can use that instead
+		var/datum/gas_mixture/current = H.loc.return_air()
+		if(current && (current.return_pressure() >= ONE_ATMOSPHERE*0.85)) //as long as there's reasonable pressure and no gravity, flight is possible
+			return TRUE

@@ -1,5 +1,6 @@
 //Elzuose mutant parts. Help has come.
 
+/*
 //Start horns
 
 /datum/sprite_accessory/elzu_horns
@@ -76,3 +77,4 @@
 /datum/sprite_accessory/tails_animated/elzu/stubby
 	name = "Stubby"
 	icon_state = "stubby"
+*/

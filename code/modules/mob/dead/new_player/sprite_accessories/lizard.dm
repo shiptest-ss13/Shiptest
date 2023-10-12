@@ -1,3 +1,4 @@
+/*
 //Sarathi Mutantparts
 
 //Start markings
@@ -168,12 +169,7 @@
 /datum/sprite_accessory/frills/none
 	name = "None"
 	icon_state = "none"
-//Ears are here because having frills+ears would overlap and be weird.
-/datum/sprite_accessory/frills/ears
-	name = "Normal ears"
-	icon_state = "ears"
-	hasinner = TRUE
-//End ears
+
 /datum/sprite_accessory/frills/simple
 	name = "Simple"
 	icon_state = "simple"
@@ -258,10 +254,14 @@
 	name = "Aquatic"
 	icon_state = "aqua"
 
+*/ //dfadfafdxadsasdf
 //Leg stuff, no better place to put it, no point in a legs.dm file
 
 /datum/sprite_accessory/legs 	//legs are a special case, they aren't actually sprite_accessories but are updated with them.
 	icon = null					//These datums exist for selecting legs on preference, and little else
+	key = "legs"
+	generic = "Leg Type"
+	color_src = null
 
 /datum/sprite_accessory/legs/none
 	name = "Normal Legs"

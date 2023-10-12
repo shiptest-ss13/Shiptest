@@ -168,9 +168,6 @@
 		nest.spawned_mobs -= src
 		nest = null
 
-	if(access_card)
-		QDEL_NULL(access_card)
-
 	return ..()
 
 /mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
@@ -196,6 +193,12 @@
 	. = ..()
 	if(stat == DEAD)
 		. += "<span class='deadsay'>Upon closer examination, [p_they()] appear[p_s()] to be dead.</span>"
+	//Temporary flavor text addition:
+	if(temporary_flavor_text)
+		if(length_char(temporary_flavor_text) <= 40)
+			. += "<span class='notice'>[temporary_flavor_text]</span>"
+		else
+			. += "<span class='notice'>[copytext_char(temporary_flavor_text, 1, 37)]... <a href='?src=[REF(src)];temporary_flavor=1'>More...</a></span>"
 
 
 /mob/living/simple_animal/update_stat()
@@ -626,14 +629,7 @@
 	if(AIStatus == togglestatus)
 		return
 
-	GLOB.simple_animals[AIStatus] -= src
-	GLOB.simple_animals[togglestatus] += list(src)
-	AIStatus = togglestatus
-
 	var/virt_z = "[virtual_z()]"
-	if(!virt_z)
-		return
-
 	switch(togglestatus)
 		if(AI_Z_OFF)
 			LAZYADDASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
@@ -641,14 +637,16 @@
 		else
 			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
 
+	GLOB.simple_animals[AIStatus] -= src
+	GLOB.simple_animals[togglestatus] += list(src)
+	AIStatus = togglestatus
+
 /mob/living/simple_animal/proc/check_should_sleep()
 	if (pulledby || shouldwakeup)
 		toggle_ai(AI_ON)
 		return
 
 	var/virt_z = "[virtual_z()]"
-	if(!virt_z)
-		return
 	var/players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, virt_z)
 	if(!length(players_on_virtual_z))
 		toggle_ai(AI_Z_OFF)
@@ -663,8 +661,5 @@
 
 /mob/living/simple_animal/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
-	if(previous_virtual_z)
-		LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[previous_virtual_z]", src)
 	toggle_ai(initial(AIStatus))
-	if(new_virtual_z)
-		check_should_sleep()
+	check_should_sleep()

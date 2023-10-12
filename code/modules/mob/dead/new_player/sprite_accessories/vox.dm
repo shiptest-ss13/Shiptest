@@ -4,7 +4,13 @@
 
 /datum/sprite_accessory/vox_head_quills
 	icon = 'icons/mob/species/vox/vox_quills.dmi'
-	color_src = null
+	color_src = null //TODO: Greyscale vox sprites. Or maybe just don't touch vox at all. Licence BS
+//	color_src = USE_ONE_COLOR
+//	default_color = DEFAULT_PRIMARY
+	key = "vox_head_quills"
+	generic = "Head Quills"
+	relevent_layers = list(BODY_ADJ_LAYER)
+	recommended_species = list(SPECIES_VOX) //i ESPECIALLY dont know why one would use these on non-rachinids
 
 /datum/sprite_accessory/vox_head_quills/none
 	name = "None"
@@ -78,6 +84,10 @@
 /datum/sprite_accessory/vox_neck_quills
 	icon = 'icons/mob/species/vox/vox_quills.dmi'
 	color_src = null
+	key = "vox_neck_quills"
+	generic = "Neck Quills"
+	relevent_layers = list(BODY_ADJ_LAYER)
+	recommended_species = list(SPECIES_VOX) //i ESPECIALLY dont know why one would use these on non-rachinids
 
 /datum/sprite_accessory/vox_neck_quills/none
 	name = "None"

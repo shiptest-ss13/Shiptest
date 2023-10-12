@@ -229,7 +229,10 @@
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	..()
 
-	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+	var/chassis = C.dna.mutant_bodyparts["ipc_chassis"]
+	if(!chassis)
+		return
+	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.sprite_accessories["ipc_chassis"][chassis[MUTANT_INDEX_NAME]]
 
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
 		if(BP.limb_id=="synth")

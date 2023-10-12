@@ -156,7 +156,7 @@
 	var/mob/living/carbon/human/H = user
 	if(!istype(H) || !H.dna || !H.dna.species || !H.dna.species.can_wag_tail(H))
 		return
-	if(!H.dna.species.is_wagging_tail())
+	if(!H.dna.species.is_wagging_tail(H))
 		H.dna.species.start_wagging_tail(H)
 	else
 		H.dna.species.stop_wagging_tail(H)
@@ -172,7 +172,7 @@
 	var/mob/living/carbon/human/H = user
 	if(!H.dna || !H.dna.species)
 		return
-	if(H.dna.species.is_wagging_tail())
+	if(H.dna.species.is_wagging_tail(H))
 		. = null
 
 /datum/emote/living/carbon/human/wing

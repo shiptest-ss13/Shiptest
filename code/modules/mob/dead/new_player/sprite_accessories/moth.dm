@@ -1,10 +1,11 @@
 //Mutant parts for moths
 
 //Start wings
-
+/*
 /datum/sprite_accessory/moth_wings
 	icon = 'icons/mob/moth_wings.dmi'
 	color_src = null
+	recommended_species = list(SPECIES_MOTH)
 
 /datum/sprite_accessory/moth_wings/plain
 	name = "Plain"
@@ -99,11 +100,14 @@
 	name = "Plasmafire"
 	icon_state = "plasmafire"
 
+*/
 //Start markings
-
+//prooobably should make these body markings
+/*
 /datum/sprite_accessory/moth_markings
 	icon = 'icons/mob/moth_markings.dmi'
 	color_src = null
+	recommended_species = list(SPECIES_MOTH)
 
 /datum/sprite_accessory/moth_markings/none
 	name = "None"
@@ -254,3 +258,4 @@
 /datum/sprite_accessory/moth_fluff/plasmafire
 	name = "Plasmafire"
 	icon_state = "plasmafire"
+*/

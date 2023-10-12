@@ -147,6 +147,7 @@
 		relevant_cap = max(hpc, epc)
 
 	if(href_list["show_preferences"])
+		client.prefs.needs_update = TRUE
 		client.prefs.ShowChoices(src)
 		return 1
 
@@ -220,10 +221,7 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/less_input_message
-	if(SSlag_switch.measures[DISABLE_DEAD_KEYLOOP])
-		less_input_message = " - Notice: Observer freelook is currently disabled."
-	var/this_is_like_playing_right = tgui_alert(src, "Are you sure you wish to observe? You will [CONFIG_GET(flag/norespawn) ? "not " : "" ]be able to respawn later.[less_input_message]", "Player Setup", list("Yes","No"))
+	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will [CONFIG_GET(flag/norespawn) ? "not " : "" ]be able to respawn later.","Player Setup","Yes","No")
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY
@@ -283,8 +281,6 @@
 		return JOB_UNAVAILABLE_ACCOUNTAGE
 	if(check_playtime && !ship.source_template.has_job_playtime(client, job))
 		return JOB_UNAVAILABLE_PLAYTIME
-	if(latejoin && !job.special_check_latejoin(client))
-		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
 /mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/overmap/ship/controlled/ship, check_playtime = TRUE)
@@ -309,8 +305,7 @@
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
-		var/atom/spawn_point = pick(ship.shuttle_port.spawn_points)
-		spawn_point.join_player_here(character)
+		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle_port.spawn_points))
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
@@ -364,11 +359,10 @@
 	GLOB.ship_select_tgui.ui_interact(src)
 
 /mob/dead/new_player/proc/can_join_round(silent = FALSE)
-	if(SSlag_switch.measures[DISABLE_NON_OBSJOBS])
-		if(silent)
-			return
-		to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
-		return
+	if(!GLOB.enter_allowed)
+		if(!silent)
+			to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+		return FALSE
 
 	if(!SSticker?.IsRoundInProgress())
 		if(!silent)
@@ -422,10 +416,8 @@
 	if(mind)
 		if(transfer_after)
 			mind.late_joiner = TRUE
-		mind.active = FALSE //we wish to transfer the key manually
-		mind.original_character_slot_index = client.prefs.default_slot
-		mind.transfer_to(H) //won't transfer key since the mind is not active
-		mind.set_original_character(H)
+		mind.active = 0					//we wish to transfer the key manually
+		mind.transfer_to(H)					//won't transfer key since the mind is not active
 
 	H.name = real_name
 	client.init_verbs()

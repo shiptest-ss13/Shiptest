@@ -1,7 +1,6 @@
 /mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.
 	var/t_He = p_they(TRUE)
-	var/t_he = p_they()
 	var/t_His = p_their(TRUE)
 	var/t_his = p_their()
 	var/t_him = p_them()
@@ -16,11 +15,33 @@
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
+
+	var/species_visible
+	var/species_name_string
+	if(skipface || get_visible_name() == "Unknown")
+		species_visible = FALSE
+	else
+		species_visible = TRUE
+
+	if(!species_visible)
+		species_name_string = "!"
+	else if (dna.features["custom_species"])
+		species_name_string = ", [prefix_a_or_an(dna.features["custom_species"])] <EM>[dna.features["custom_species"]]</EM>!"
+	else
+		species_name_string = ", [prefix_a_or_an(dna.species.name)] <EM>[dna.species.name]</EM>!"
+
+	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>[species_name_string]")
+	if(species_visible) //If they have a custom species shown, show the real one too
+		if(dna.features["custom_species"])
+			. += "[t_He] [t_is] [prefix_a_or_an(dna.species.name)] [dna.species.name]!"
+	else
+		. += "You can't make out what species they are."
+/*
 	var/apparent_species
 	if(dna?.species && !skipface)
 		apparent_species = ", \an [dna.species.name]"
 	. = list("<span class='info'>This is <EM>[!obscure_name ? name : "Unknown"][apparent_species]</EM>!")
-
+*/
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
 		//accessory
@@ -127,7 +148,7 @@
 				. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.</span>"
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_he] won't be coming back...</span>"
+				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...</span>"
 			else
 				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
 
@@ -387,7 +408,34 @@
 		var/flavor = print_flavor_text()
 		if(flavor)
 			. += flavor
+
+		var/line
+		if(length(dna.features["flavor_text"]))
+			var/message = dna.features["flavor_text"]
+			if(length_char(message) <= 40)
+				line = "<span class='notice'>[message]</span>"
+			else
+				line = "<span class='notice'>[copytext_char(message, 1, 37)]... <a href='?src=[REF(src)];lookup_info=flavor_text'>More...</a></span>"
+		if(client)
+			line += " <span class='notice'><a href='?src=[REF(src)];lookup_info=ooc_prefs'>\[OOC\]</a></span>"
+		if(line)
+			. += line
+
+	//Temporary flavor text addition:
+	if(temporary_flavor_text)
+		if(length_char(temporary_flavor_text) <= 40)
+			. += "<span class='notice'>[temporary_flavor_text]</span>"
+		else
+			. += "<span class='notice'>[copytext_char(temporary_flavor_text, 1, 37)]... <a href='?src=[REF(src)];temporary_flavor=1'>More...</a></span>"
 	. += "*---------*</span>"
+
+	for(var/genital in list("penis", "testicles", "vagina", "breasts"))
+		if(dna.species.mutant_bodyparts[genital])
+			var/datum/sprite_accessory/genital/G = GLOB.sprite_accessories[genital][dna.species.mutant_bodyparts[genital][MUTANT_INDEX_NAME]]
+			if(G)
+				if(!(G.is_hidden(src)))
+					. += "<span class='notice'>[t_He] has exposed genitals... <a href='?src=[REF(src)];lookup_info=genitals'>Look closer...</a></span>"
+					break
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 

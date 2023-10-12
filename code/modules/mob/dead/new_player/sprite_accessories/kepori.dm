@@ -5,6 +5,9 @@
 /datum/sprite_accessory/kepori_feathers
 	color_src = HAIR
 	icon = 'icons/mob/kepori_parts.dmi'
+	key = "kepori_feathers"
+	generic = "Kepori Feathers"
+	recommended_species = list(SPECIES_KEPORI) // i have no clue why you would ever use kepori customization on literally anything else, but be my guest. if you use this on teshari/whatever the fuck you call them i will kill you
 
 /datum/sprite_accessory/kepori_feathers/none
 	name = "None"
@@ -60,8 +63,12 @@
 //Start body feathers
 
 /datum/sprite_accessory/kepori_body_feathers
-	color_src = MUTCOLORS_SECONDARY
+	color_src = USE_ONE_COLOR
+	default_color = DEFAULT_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
+	key = "kepori_body_feathers"
+	generic = "Kepori Body Feathers"
+	recommended_species = list(SPECIES_KEPORI)
 
 /datum/sprite_accessory/kepori_body_feathers/none
 	name = "None"
@@ -91,6 +98,9 @@
 /datum/sprite_accessory/kepori_tail_feathers
 	color_src = MUTCOLORS_SECONDARY
 	icon = 'icons/mob/kepori_parts.dmi'
+	key = "kepori_tail_feathers"
+	generic = "Kepori Tail Feathers"
+	recommended_species = list(SPECIES_KEPORI)
 
 /datum/sprite_accessory/kepori_tail_feathers/none
 	name = "None"

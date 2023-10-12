@@ -509,12 +509,12 @@
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/leg/left/robot/vox
+/obj/item/bodypart/l_leg/robot/vox
 	name = "prosthetic vox left leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 
-/obj/item/bodypart/leg/right/robot/vox
+/obj/item/bodypart/r_leg/robot/vox
 	name = "prosthetic vox right leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
@@ -539,6 +539,55 @@
 	name = "surplus prosthetic vox right leg"
 	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
 	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/surplus
+	name = "surplus prosthetic left arm"
+	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	brute_reduction = 0
+	burn_reduction = 0
+	max_damage = 20
+
+/obj/item/bodypart/r_arm/robot/surplus
+	name = "surplus prosthetic right arm"
+	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	brute_reduction = 0
+	burn_reduction = 0
+	max_damage = 20
+
+/obj/item/bodypart/l_leg/robot/surplus
+	name = "surplus prosthetic left leg"
+	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	brute_reduction = 0
+	burn_reduction = 0
+	max_damage = 20
+
+/obj/item/bodypart/r_leg/robot/surplus
+	name = "surplus prosthetic right leg"
+	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	brute_reduction = 0
+	burn_reduction = 0
+	max_damage = 20
+
+/obj/item/bodypart/l_arm/robot/weak
+	brute_reduction = 0
+	burn_reduction = 0
+
+/obj/item/bodypart/r_arm/robot/weak
+	brute_reduction = 0
+	burn_reduction = 0
+
+/obj/item/bodypart/l_leg/robot/weak
+	brute_reduction = 0
+	burn_reduction = 0
+
+/obj/item/bodypart/r_leg/robot/weak
+	brute_reduction = 0
+	burn_reduction = 0
+
 
 #undef ROBOTIC_LIGHT_BRUTE_MSG
 #undef ROBOTIC_MEDIUM_BRUTE_MSG

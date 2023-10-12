@@ -56,8 +56,9 @@ There are several things that need to be remembered:
 	dna.species.handle_hair(src)
 
 //used when putting/removing clothes that hide certain mutant body parts to just update those and not update the whole body.
-/mob/living/carbon/human/proc/update_mutant_bodyparts()
-	dna.species.handle_mutant_bodyparts(src)
+/mob/living/carbon/human/proc/update_mutant_bodyparts(force_update = FALSE)
+	dna.species.handle_mutant_bodyparts(src, force_update = force_update)
+	update_body_parts()
 
 
 /mob/living/carbon/human/update_body()
@@ -122,7 +123,20 @@ There are several things that need to be remembered:
 		if(U.adjusted == ALT_STYLE)
 			t_color = "[t_color]_d"
 
+
 		var/mutable_appearance/uniform_overlay
+//************************************************************//
+		var/x_override
+
+		var/taur_alpha_mask = NONE
+		if(dna.species.mutant_bodyparts["taur"])
+			var/datum/sprite_accessory/taur/S = GLOB.sprite_accessories["taur"][dna.species.mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
+			if(U.body_parts_covered & LEGS) //If we cover legs, apply the taur alpha mask
+				taur_alpha_mask = S.alpha_mask_type
+
+
+//************************************************************//
+
 
 		var/icon_file
 		var/handled_by_bodytype = TRUE
@@ -142,7 +156,14 @@ There are several things that need to be remembered:
 				handled_by_bodytype = FALSE
 				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
 
-			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, override_state = target_overlay, mob_species = CHECK_USE_AUTOGEN)
+			if(uniform_overlay & (dna.species.bodytype & TAUR_ALL_VARIATION) && (U.supports_variations & TAUR_ALL_VARIATION))
+				x_override = 64
+
+			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(U))))
+				handled_by_bodytype = FALSE
+				icon_file = U.mob_overlay_icon || DEFAULT_UNIFORM_PATH
+
+			uniform_overlay = U.build_worn_icon(default_layer = UNIFORM_LAYER, default_icon_file = icon_file, isinhands = FALSE, override_file = icon_file, override_x_center = x_override, override_state = target_overlay, mob_species = CHECK_USE_AUTOGEN, taur_alpha_mask = taur_alpha_mask)
 
 		if(!uniform_overlay)
 			return
@@ -152,7 +173,6 @@ There are several things that need to be remembered:
 			apply_overlay(UNIFORM_LAYER)
 
 	update_mutant_bodyparts()
-
 
 /mob/living/carbon/human/update_inv_wear_id()
 	remove_overlay(ID_LAYER)
@@ -706,7 +726,7 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 ^this female part sucks and will be fully ripped out ideally
 
 */
-/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state = null, override_file = null, datum/species/mob_species = null, direction = null)
+/obj/item/proc/build_worn_icon(default_layer = 0, default_icon_file = null, isinhands = FALSE, override_state = null, override_file = null, datum/species/mob_species = null, direction = null, override_icon = null, override_x_center = null, override_y_center = null, mutant_styles = NONE,taur_alpha_mask = NONE)
 
 	// WS Edit Start - Worn Icon State
 	var/t_state
@@ -722,6 +742,8 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 	var/layer2use = alternate_worn_layer ? alternate_worn_layer : default_layer
 
 	var/mutable_appearance/standing
+	if(taur_alpha_mask)
+		standing = wear_alpha_masked_version(t_state, file2use, layer2use, taur_alpha_mask, greyscale_colors)
 	if(mob_species && (mob_species.species_clothing_path || ("[layer2use]" in mob_species.offset_clothing)))
 		standing = wear_species_version(file2use, t_state, layer2use, mob_species)
 	if(!standing)
@@ -758,6 +780,16 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 
 	return standing
 
+/obj/item/proc/wear_alpha_masked_version(passed_state, passed_icon, layer, taur_type, greyscale_colors)
+	var/static/list/alpha_masked_icons = list()
+	var/index = "[passed_state]-[passed_icon]--[taur_type]-[greyscale_colors]"
+	var/icon/alpha_icon = alpha_masked_icons[index]
+	if(!alpha_icon) //Create standing/laying icons if they don't exist
+		var/icon/blending_icon = icon(passed_icon, passed_state)
+		if(taur_type)
+			blending_icon.Blend(icon('modular_zubbers/modules/customization/icons/masking_helpers.dmi', taur_type), ICON_MULTIPLY, -15, -15)
+		alpha_masked_icons[index] = fcopy_rsc(blending_icon)
+	return mutable_appearance(alpha_masked_icons[index], layer = -layer)
 
 /obj/item/proc/get_held_offsets(direction)
 	var/list/L
@@ -803,6 +835,53 @@ in this situation default_icon_file is expected to match either the lefthand_ or
 				if(!observers.len)
 					observers = null
 					break
+
+//Removed the icon cache from this, as its not worth it to make a cache for the plathora of customizable species and markings
+//If icon cache exists what ends up happening is that people customizing their characters will be creating hundreds of caches as they customize markings, eating memory 4nr
+/mob/living/carbon/human/update_body_parts(update_limb_data)
+	var/list/needs_update = list()
+	var/limb_count_update = FALSE
+	for(var/obj/item/bodypart/limb as anything in bodyparts)
+		limb.update_limb(is_creating = update_limb_data) //Update limb actually doesn't do much, get_limb_icon is the cpu eater.
+		var/old_key = icon_render_keys?[limb.body_zone] //Checks the mob's icon render key list for the bodypart
+		icon_render_keys[limb.body_zone] = (limb.is_husked) ? limb.generate_husk_key().Join() : limb.generate_icon_key().Join() //Generates a key for the current bodypart
+		if(!(icon_render_keys[limb.body_zone] == old_key)) //If the keys match, that means the limb doesn't need to be redrawn
+			needs_update += limb
+
+	var/list/missing_bodyparts = get_missing_limbs()
+	if(((dna ? dna.species.max_bodypart_count : 6) - icon_render_keys.len) != missing_bodyparts.len) //Checks to see if the target gained or lost any limbs.
+		limb_count_update = TRUE
+		for(var/missing_limb in missing_bodyparts)
+			icon_render_keys -= missing_limb //Removes dismembered limbs from the key list
+
+	if(!needs_update.len && !limb_count_update)
+		return
+
+	remove_overlay(BODYPARTS_LAYER)
+
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/BP = X
+		BP.update_limb()
+
+	var/is_taur = FALSE
+	if(dna?.species.mutant_bodyparts["taur"])
+		var/datum/sprite_accessory/taur/S = GLOB.sprite_accessories["taur"][dna.species.mutant_bodyparts["taur"][MUTANT_INDEX_NAME]]
+		if(S.hide_legs)
+			is_taur = TRUE
+
+	//GENERATE NEW LIMBS
+	var/list/new_limbs = list()
+	for(var/X in bodyparts)
+		var/obj/item/bodypart/BP = X
+		if(is_taur && (BP.body_part == LEG_LEFT || BP.body_part == LEG_RIGHT))
+			continue
+
+		new_limbs += BP.get_limb_icon()
+	if(new_limbs.len)
+		overlays_standing[BODYPARTS_LAYER] = new_limbs
+
+	apply_overlay(BODYPARTS_LAYER)
+	update_damage_overlays()
 
 // Only renders the head of the human
 /mob/living/carbon/human/proc/update_body_parts_head_only(update_limb_data)

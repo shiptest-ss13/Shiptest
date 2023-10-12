@@ -5,6 +5,7 @@
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
 	body_zone = BODY_ZONE_HEAD
+	bodytypes = BODYTYPE_HUMANOID
 
 /datum/sprite_accessory/hair/afro
 	name = "Afro"
