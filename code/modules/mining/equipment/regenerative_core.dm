@@ -192,7 +192,6 @@
 			qdel(src)
 
 /obj/item/organ/regenerative_core/legion/crystal/update_icon_state()
-	/*icon_state = inert ? "crystal_heart_inert" : "crystal_heart"*/
 	if(preserved)
 		icon_state = "crystal_heart_preserved"
 	return ..()
