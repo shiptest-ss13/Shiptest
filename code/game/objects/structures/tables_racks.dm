@@ -751,7 +751,7 @@
 	if(building)
 		return
 	building = TRUE
-	to_chat(user, "<span class='notice'>You start assembling the [src]...</span>")
+	to_chat(user, "<span class='notice'>You start assembling [src]...</span>")
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return

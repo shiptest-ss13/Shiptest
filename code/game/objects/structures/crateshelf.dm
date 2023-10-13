@@ -131,6 +131,6 @@
 	qdel(src)
 
 /obj/item/rack_parts/shelf
-	name = "shelf parts"
+	name = "crate shelf parts"
 	desc = "Parts of a shelf."
 	construction_type = /obj/structure/crate_shelf
