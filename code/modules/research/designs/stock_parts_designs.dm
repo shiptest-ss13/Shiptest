@@ -34,7 +34,7 @@
 					/datum/material/bluespace = 2500,
 					)
 	category = list(
-					"Stock Parts"
+					"Stock Parts",
 					"Imported",
 					)
 
