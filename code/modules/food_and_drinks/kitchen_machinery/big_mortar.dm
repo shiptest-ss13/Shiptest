@@ -113,6 +113,7 @@
 						juice_target_item(target_item, user)
 					else
 						grind_target_item(target_item, user)
+					target_item = null
 
 			if("Grind")
 				for(var/obj/item/target_item as anything in contents)
@@ -120,6 +121,7 @@
 						grind_target_item(target_item, user)
 					else
 						juice_target_item(target_item, user)
+					target_item = null
 		return
 
 	if(!attacking_item.juice_results && !attacking_item.grind_results)
@@ -142,7 +144,6 @@
 
 	to_chat(user, span_notice("You juice [to_be_juiced] into a fine liquid."))
 	QDEL_NULL(to_be_juiced)
-	to_be_juiced = null
 
 ///Grinds the passed target item, and transfers any contained chems to the mortar as well
 /obj/structure/large_mortar/proc/grind_target_item(obj/item/to_be_ground, mob/living/carbon/human/user)
@@ -154,7 +155,6 @@
 
 	to_chat(user, span_notice("You break [to_be_ground] into powder."))
 	QDEL_NULL(to_be_ground)
-	to_be_ground = null
 
 #undef LARGE_MORTAR_STAMINA_MINIMUM
 #undef LARGE_MORTAR_STAMINA_USE
