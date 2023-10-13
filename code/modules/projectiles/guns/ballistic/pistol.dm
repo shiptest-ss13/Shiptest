@@ -30,6 +30,8 @@
 	spread_unwielded = 4
 	wield_slowdown = 0.15
 
+	muzzleflash_iconstate = "muzzle_flash_light"
+
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
 
@@ -303,7 +305,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/himehabu
 	name = "\improper Himehabu"
-	desc = "A very small .22 LR pistol, so small even it could fit in your boot. The long awaited successor to the Stechkin. A favorite among syndicate spies. Chambered in .22 LR."
+	desc = "A very small .22 LR pistol. The long awaited successor to the Stechkin; It has become a favorite among syndicate spies. Chambered in .22 LR."
 	icon_state = "himehabu"
 	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/m22lr

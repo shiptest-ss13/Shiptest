@@ -153,6 +153,6 @@
 /obj/projectile/bullet/c22lr
 	name = ".22LR bullet"
 	damage = 20
-	armour_penetration = -30
+	armour_penetration = -45
 	ricochet_incidence_leeway = 20
 	ricochet_chance = 45

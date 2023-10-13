@@ -58,6 +58,18 @@
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 1
 
+/obj/item/gun/ballistic/shotgun/riot/sawoff(mob/user)
+	. = ..()
+	if(.)
+		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = 0.25
+		wield_delay = 0.3 SECONDS //OP? maybe
+
+		spread = 8
+		spread_unwielded = 15
+		recoil = 3 //or not
+		recoil_unwielded = 5
+
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
 	spread = 4
@@ -232,6 +244,13 @@
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = 0.25
+		wield_delay = 0.3 SECONDS //OP? maybe
+
+		spread = 8
+		spread_unwielded = 15
+		recoil = 3 //or not
+		recoil_unwielded = 5
 
 // IMPROVISED SHOTGUN //
 
@@ -505,7 +524,7 @@
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/contender
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	can_be_sawn_off=TRUE
 	sawn_desc= "A single-shot pistol. It's hard to aim without a front sight."
 	w_class = WEIGHT_CLASS_BULKY
@@ -519,9 +538,22 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3
+	wield_slowdown = 0.7
+	spread_unwielded = 15
+	spread = 0
+	recoil = 0
+	recoil_unwielded = 5
+
 
 
 /obj/item/gun/ballistic/shotgun/contender/sawoff(mob/user)
 	. = ..()
 	if(.)
 		item_state = "contender_sawn"
+		wield_slowdown = 0.5
+		wield_delay = 0.5 SECONDS
+
+		spread_unwielded = 5 //mostly the hunting revolver stats
+		spread = 2
+		recoil = 2
+		recoil_unwielded = 3

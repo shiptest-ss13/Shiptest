@@ -24,6 +24,9 @@
 	bolt_wording = "hammer"
 	wield_slowdown = 0.3
 
+/obj/item/gun/ballistic/revolver/examine(mob/user)
+	. = ..()
+	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
 
 /obj/item/gun/ballistic/revolver/attack_hand(mob/user)
 	if(loc == user && user.is_holding(src))
@@ -334,7 +337,7 @@
 
 /obj/item/gun/ballistic/revolver/cattleman
 	name = "\improper Cattleman"
-	desc = "A strangely ancient revolver. Despite the age, it is a favortie of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small colonial police units. Uses .45 ACP."
+	desc = "A strangely ancient revolver. Despite the age, it is a favorite of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small colonial police units. Uses .45 ACP."
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "cattleman"
