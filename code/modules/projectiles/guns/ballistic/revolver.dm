@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
-	desc = "A suspicious revolver. Uses .357 ammo." //usually used by syndicates
+	desc = "A weighty revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
@@ -75,7 +75,7 @@
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper Colt Detective Special"
-	desc = "A classic, if not outdated, law enforcement firearm. Uses .38-special rounds."
+	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
@@ -115,7 +115,7 @@
 			if(magazine.ammo_count())
 				to_chat(user, "<span class='warning'>You can't modify it!</span>")
 				return TRUE
-			magazine.caliber = "357"
+			magazine.caliber = ".357"
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = "The barrel and chamber assembly seems to have been modified."
 			to_chat(user, "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
@@ -129,7 +129,7 @@
 			if(magazine.ammo_count())
 				to_chat(user, "<span class='warning'>You can't modify it!</span>")
 				return
-			magazine.caliber = "38"
+			magazine.caliber = ".38"
 			fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
 			desc = initial(desc)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
@@ -138,7 +138,7 @@
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
-	desc = "A retro high-powered autorevolver typically used by officers of the New Russia military. Uses .357 ammo."
+	desc = "A high-powered revolver with a unique auto-reloading system. Uses .357 ammo."
 	icon_state = "mateba"
 
 /obj/item/gun/ballistic/revolver/golden
@@ -151,7 +151,7 @@
 
 /obj/item/gun/ballistic/revolver/nagant
 	name = "\improper Nagant revolver"
-	desc = "An old model of revolver that originated in Russia. Able to be suppressed. Uses 7.62x38mmR ammo."
+	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. Uniquely able to be suppressed."
 	icon_state = "nagant"
 	can_suppress = TRUE
 
@@ -160,7 +160,7 @@
 
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
-	desc = "A massive, long-barreled revolver designed for hunting the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
+	desc = "A massive, long-barreled revolver designed for the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
 	icon_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 
@@ -169,7 +169,7 @@
 
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
-	desc = "A Russian-made revolver for drinking games. Uses .357 ammo, and has a mechanism requiring you to spin the chamber before each trigger pull."
+	desc = "A Solarian revolver for particularly lethal drinking games. It has a mechanism requiring you to spin the chamber before each trigger pull. Uses .357 ammo."
 	icon_state = "russianrevolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	var/spun = FALSE
@@ -183,8 +183,8 @@
 	..()
 	if(get_ammo() > 0)
 		spin()
-	update_icon()
-	A.update_icon()
+	update_appearance()
+	A.update_appearance()
 	return
 
 /obj/item/gun/ballistic/revolver/russian/attack_self(mob/user)
@@ -269,11 +269,11 @@
 
 /obj/item/gun/ballistic/revolver/srm
 	name = "SRM Standard Issue .357 Revolver"
-	desc = "A sturdy, powerful, and reliable revolver. Try not to find yourself on the other end."
+	desc = "A sturdy, powerful, and reliable revolver utilized by the Saint-Roumain Militia."
 
 /obj/item/gun/ballistic/revolver/pepperbox
 	name = "\improper pepperbox pistol"
-	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. How did it even end up here? While fast to fire, it is extremely inaccurate. Uses .357 ammo."
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	spread = 20

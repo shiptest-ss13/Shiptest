@@ -110,14 +110,6 @@
 /obj/item/melee/transforming/energy/sword/bananium/ignition_effect(atom/A, mob/user)
 	return ""
 
-/obj/item/melee/transforming/energy/sword/bananium/suicide_act(mob/user)
-	if(!active)
-		transform_weapon(user, TRUE)
-	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku, but the blade slips off of [user.p_them()] harmlessly!</span>")
-	var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
-	slipper.Slip(src, user)
-	return SHAME
-
 //BANANIUM SHIELD
 
 /obj/item/shield/energy/bananium
@@ -163,8 +155,9 @@
 		if(iscarbon(hit_atom) && !caught)//if they are a carbon and they didn't catch it
 			var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 			slipper.Slip(src, hit_atom)
-		if(thrownby && !caught)
-			addtimer(CALLBACK(src, /atom/movable.proc/throw_at, thrownby, throw_range+2, throw_speed, null, TRUE), 1)
+		var/mob/thrown_by = thrownby?.resolve()
+		if(thrown_by && !caught)
+			addtimer(CALLBACK(src, /atom/movable.proc/throw_at, thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
 	else
 		return ..()
 
@@ -200,12 +193,6 @@
 /obj/item/grown/bananapeel/bombanana/Destroy()
 	. = ..()
 	QDEL_NULL(bomb)
-
-/obj/item/grown/bananapeel/bombanana/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is deliberately slipping on the [src.name]! It looks like \he's trying to commit suicide.</span>")
-	playsound(loc, 'sound/misc/slip.ogg', 50, TRUE, -1)
-	bomb.preprime(user, 0, FALSE)
-	return (BRUTELOSS)
 
 //TEARSTACHE GRENADE
 

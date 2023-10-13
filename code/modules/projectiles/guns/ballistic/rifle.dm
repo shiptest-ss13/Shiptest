@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/rifle
 	name = "Bolt Rifle"
-	desc = "Some kind of bolt action rifle. You get the feeling you shouldn't have this."
+	desc = "Some kind of bolt-action rifle. You get the feeling you shouldn't have this."
 	icon_state = "hunting"
 	item_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
@@ -27,7 +27,7 @@
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 		process_chamber(FALSE, FALSE, FALSE)
 		bolt_locked = TRUE
-		update_icon()
+		update_appearance()
 		return
 	drop_bolt(user)
 
@@ -52,8 +52,8 @@
 
 /obj/item/gun/ballistic/rifle/boltaction
 	name = "\improper Illestren Hunting Rifle"
-	desc = "A point of pride for Hunter's Pride, this rifle is one of their most popular offerings. Despite its marketing, it is very rarely used for actual hunting and more often used for putting holes in people, for which it is even more popular for. Chambered in 7.62x54."
-	sawn_desc = "An extremely sawn-off Illestren, popularly known as an \"obrez\". There was probably a reason it wasn't made this short to begin with."
+	desc = "One of Hunter's Pride most successful firearms. The bolt-action is popular among colonists, pirates, snipers, and countless more. Chambered in 7.62x54."
+	sawn_desc = "An extremely sawn-off Illestren, generally known as an \"obrez\". There was probably a reason it wasn't made this short to begin with."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -80,16 +80,25 @@
 		process_fire(user, user, FALSE)
 		. = 1
 
+/obj/item/gun/ballistic/rifle/boltaction/solgov
+	name = "SSG-669C"
+	desc = "A bolt-action sniper rifle used by Solarian troops. Beloved for its rotary design and accuracy. Chambered in 8x58mm Caseless."
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/solgov
+	icon_state = "ssg669c"
+	item_state = "ssg669c"
+	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
+	can_be_sawn_off = FALSE
+
 /obj/item/gun/ballistic/rifle/boltaction/roumain
 	name = "standard-issue 'Smile' rifle"
-	desc = "A bolt action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
+	desc = "A bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
 	icon_state = "roma"
 	item_state = "roma"
 	can_be_sawn_off = FALSE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
-	name = "enchanted bolt action rifle"
+	name = "enchanted bolt-action rifle"
 	desc = "Careful not to lose your head."
 	var/guns_left = 30
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
@@ -141,7 +150,7 @@
 
 /obj/item/gun/ballistic/rifle/boltaction/polymer
 	name = "polymer survivor rifle"
-	desc = "Chambered in .300 Blackout, and manufactured with cheap tools, this rifle has seen its share of part replacements, repairs, and bubba-hack-jobs to keep it serviceable."
+	desc = "A bolt-action rifle made of scrap, desperation, and luck. Likely to shatter at any moment. Chambered in .300 Blackout."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "crackhead_rifle"
 	item_state = "crackhead_rifle"

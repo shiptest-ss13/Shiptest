@@ -281,12 +281,27 @@
 	icon_state = "solgov_dress"
 	item_state = "solgov_dress"
 
+/obj/item/clothing/suit/solgov/suit
+	name = "SolGov suit"
+	desc = "A formal SolGov suit, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN
+	icon_state = "solgov_suit"
+	item_state = "solgov_suit"
+
 /obj/item/clothing/suit/solgov/bureaucrat
 	name = "SolGov bureaucrat robe"
 	desc = "A set of unique SolGov robes, utilized by Solarian Bureaucrats."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "solgov_bureaucrat_robe"
 	item_state = "solgov_bureaucrat_robe"
+
+/obj/item/clothing/suit/solgov/overcoat
+	name = "SolGov overcoat"
+	desc = "A traditional solarian overcoat, used by cilivians and ship crews alike."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_overcoat"
+	item_state = "solgov_overcoat"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/solgov/jacket
 	name = "SolGov jacket"

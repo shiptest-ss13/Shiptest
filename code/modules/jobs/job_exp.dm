@@ -25,9 +25,13 @@ GLOBAL_PROTECT(exp_to_update)
 	return TRUE
 
 /datum/map_template/shuttle/proc/get_req_spawn_minutes()
+	if(!CONFIG_GET(flag/use_exp_tracking) || !SSdbcore.Connect())
+		return 0
 	return spawn_time_coeff * CONFIG_GET(number/ship_spawn_base_exp_min)
 
 /datum/map_template/shuttle/proc/get_req_officer_minutes()
+	if(!CONFIG_GET(flag/use_exp_tracking) || !SSdbcore.Connect())
+		return 0
 	return officer_time_coeff * CONFIG_GET(number/officer_join_base_exp_min)
 
 /client/proc/is_playtime_restriction_eligible()
@@ -88,7 +92,7 @@ GLOBAL_PROTECT(exp_to_update)
 		play_records[exp_read.item[1]] = text2num(exp_read.item[2])
 	qdel(exp_read)
 
-	for(var/rtype in SSjob.name_occupations)
+	for(var/rtype in GLOB.name_occupations)
 		if(!play_records[rtype])
 			play_records[rtype] = 0
 	for(var/rtype in GLOB.exp_specialmap)
@@ -139,7 +143,7 @@ GLOBAL_PROTECT(exp_to_update)
 			if(announce_changes)
 				to_chat(src,"<span class='notice'>You got: [minutes] Living EXP!</span>")
 			if(mob.mind.assigned_role)
-				for(var/job in SSjob.name_occupations)
+				for(var/job in GLOB.name_occupations)
 					if(mob.mind.assigned_role == job)
 						rolefound = TRUE
 						play_records[job] += minutes

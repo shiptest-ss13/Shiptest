@@ -11,6 +11,11 @@
 /area/ship/construction)
 "ci" = (
 /obj/item/stock_parts/cell/high,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 10;
+	pixel_y = -20
+	},
 /turf/open/floor/plating,
 /area/ship/construction)
 "ck" = (
@@ -580,12 +585,12 @@
 	name = "food crate"
 	},
 /obj/item/storage/cans/sixbeer,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
-/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/plating/airless,
 /area/ship/construction)
 "Vu" = (

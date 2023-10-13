@@ -68,7 +68,7 @@
 			A.reagents.trans_to(src, 10, transfered_by = user)
 			to_chat(user, "<span class='notice'>You fill the balloon with the contents of [A].</span>")
 			desc = "A translucent balloon with some form of liquid sloshing around in it."
-			update_icon()
+			update_appearance()
 
 /obj/item/toy/waterballoon/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/glass))
@@ -81,7 +81,7 @@
 				desc = "A translucent balloon with some form of liquid sloshing around in it."
 				to_chat(user, "<span class='notice'>You fill the balloon with the contents of [I].</span>")
 				I.reagents.trans_to(src, 10, transfered_by = user)
-				update_icon()
+				update_appearance()
 	else if(I.get_sharpness())
 		balloon_burst()
 	else
@@ -106,13 +106,13 @@
 		qdel(src)
 
 /obj/item/toy/waterballoon/update_icon_state()
-	if(src.reagents.total_volume >= 1)
+	if(reagents.total_volume >= 1)
 		icon_state = "waterballoon"
 		item_state = "balloon"
 	else
 		icon_state = "waterballoon-e"
 		item_state = "balloon-empty"
-
+	return ..()
 #define BALLOON_COLORS list("red", "blue", "green", "yellow")
 
 /obj/item/toy/balloon
@@ -178,51 +178,6 @@
 	icon = 'icons/obj/singularity.dmi'
 	icon_state = "singularity_s1"
 
-/obj/item/toy/spinningtoy/suicide_act(mob/living/carbon/human/user)
-	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-	if(!myhead)
-		user.visible_message("<span class='suicide'>[user] tries consuming [src]... but [user.p_they()] [user.p_have()] no mouth!</span>") // and i must scream
-		return SHAME
-	user.visible_message("<span class='suicide'>[user] consumes [src]! It looks like [user.p_theyre()] trying to commit suicicide!</span>")
-	playsound(user, 'sound/items/eatfood.ogg', 50, TRUE)
-	user.adjust_nutrition(50) // mmmm delicious
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (3SECONDS))
-	return MANUAL_SUICIDE
-
-/**
- * Internal function used in the toy singularity suicide
- *
- * Cavity implants the toy singularity into the body of the user (arg1), and kills the user.
- * Makes the user vomit and receive 120 suffocation damage if there already is a cavity implant in the user.
- * Throwing the singularity away will cause the user to start choking themself to death.
- * Arguments:
- * * user - Whoever is doing the suiciding
- */
-/obj/item/toy/spinningtoy/proc/manual_suicide(mob/living/carbon/human/user)
-	if(!user)
-		return
-	if(!user.is_holding(src)) // Half digestion? Start choking to death
-		user.visible_message("<span class='suicide'>[user] panics and starts choking [user.p_them()]self to death!</span>")
-		user.adjustOxyLoss(200)
-		user.death(FALSE) // unfortunately you have to handle the suiciding yourself with a manual suicide
-		user.ghostize(FALSE) // get the fuck out of our body
-		return
-	var/obj/item/bodypart/chest/CH = user.get_bodypart(BODY_ZONE_CHEST)
-	if(CH.cavity_item) // if he's (un)bright enough to have a round and full belly...
-		user.visible_message("<span class='danger'>[user] regurgitates [src]!</span>") // I swear i dont have a fetish
-		user.vomit(100, TRUE, distance = 0)
-		user.adjustOxyLoss(120)
-		user.dropItemToGround(src) // incase the crit state doesn't drop the singulo to the floor
-		user.set_suicide(FALSE)
-		return
-	user.transferItemToLoc(src, user, TRUE)
-	CH.cavity_item = src // The mother came inside and found Andy, dead with a HUGE belly full of toys
-	user.adjustOxyLoss(200) // You know how most small toys in the EU have that 3+ onion head icon and a warning that says "Unsuitable for children under 3 years of age due to small parts - choking hazard"? This is why.
-	user.death(FALSE)
-	user.ghostize(FALSE)
-
-
-
 /*
  * Toy gun: Why isnt this an /obj/item/gun?
  */
@@ -262,7 +217,7 @@
 			to_chat(user, text("<span class='notice'>You reload [] cap\s.</span>", 7 - src.bullets))
 			A.amount_left -= 7 - src.bullets
 			src.bullets = 7
-		A.update_icon()
+		A.update_appearance()
 		return 1
 	else
 		return ..()
@@ -298,6 +253,7 @@
 
 /obj/item/toy/ammo/gun/update_icon_state()
 	icon_state = "357OLD-[amount_left]"
+	return ..()
 
 /obj/item/toy/ammo/gun/examine(mob/user)
 	. = ..()
@@ -648,10 +604,6 @@
 	var/card_throw_range = 7
 	var/list/card_attack_verb = list("attacked")
 
-/obj/item/toy/cards/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
-	playsound(src, 'sound/items/cardshuffle.ogg', 50, TRUE)
-	return BRUTELOSS
 
 /obj/item/toy/cards/proc/apply_card_vars(obj/item/toy/cards/newobj, obj/item/toy/cards/sourceobj) // Applies variables for supporting multiple types of card deck
 	if(!istype(sourceobj))
@@ -708,7 +660,7 @@
 	H.pickup(user)
 	user.put_in_hands(H)
 	user.visible_message("<span class='notice'>[user] draws a card from the deck.</span>", "<span class='notice'>You draw a card from the deck.</span>")
-	update_icon()
+	update_appearance()
 	return H
 
 /obj/item/toy/cards/deck/update_icon_state()
@@ -721,6 +673,7 @@
 			icon_state = "deck_[deckstyle]_low"
 		else
 			icon_state = "deck_[deckstyle]_empty"
+	return ..()
 
 /obj/item/toy/cards/deck/attack_self(mob/user)
 	if(cooldown < world.time - 50)
@@ -741,7 +694,7 @@
 			qdel(SC)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
-		update_icon()
+		update_appearance()
 	else if(istype(I, /obj/item/toy/cards/cardhand))
 		var/obj/item/toy/cards/cardhand/CH = I
 		if(CH.parentdeck == src)
@@ -753,7 +706,7 @@
 			qdel(CH)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
-		update_icon()
+		update_appearance()
 	else
 		return ..()
 
@@ -1396,7 +1349,6 @@
 	name = "Security Officer action figure"
 	icon_state = "secofficer"
 	toysay = "I am the law!"
-	toysound = 'sound/runtime/complionator/dredd.ogg'
 
 /obj/item/toy/figure/virologist
 	name = "Virologist action figure"

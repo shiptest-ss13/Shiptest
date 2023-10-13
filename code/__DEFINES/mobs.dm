@@ -71,9 +71,6 @@
 #define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
 
-//Bodypart change blocking flags
-#define BP_BLOCK_CHANGE_SPECIES (1<<0)
-
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"
 #define SPECIES_ANDROID "android"
@@ -351,7 +348,7 @@
 #define DOOR_CRUSH_DAMAGE 15 //the amount of damage that airlocks deal when they crush you
 
 #define HUNGER_FACTOR 0.1 //factor at which mob nutrition decreases
-#define ETHEREAL_CHARGE_FACTOR (0.05 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases //WS Edit -- Ethereal Charge Scaling
+#define ETHEREAL_CHARGE_FACTOR (0.05 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 
@@ -433,3 +430,6 @@
 #define THROW_MODE_DISABLED 0
 #define THROW_MODE_TOGGLE 1
 #define THROW_MODE_HOLD 2
+
+//Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
+#define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)

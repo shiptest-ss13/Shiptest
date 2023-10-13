@@ -8,7 +8,7 @@
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
-	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom //WS edit - Wideband Radio
+	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
@@ -103,7 +103,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 /obj/item/radio/intercom/emp_act(severity)
 	. = ..() // Parent call here will set `on` to FALSE.
-	update_icon()
+	update_appearance()
 
 /obj/item/radio/intercom/end_emp_effect(curremp)
 	. = ..()
@@ -117,7 +117,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 		icon_state = "[initial(icon_state)]-p"
 
 /**
- * Proc called whenever the intercom's area loses or gains power. Responsible for setting the `on` variable and calling `update_icon()`.
+ * Proc called whenever the intercom's area loses or gains power. Responsible for setting the `on` variable and calling `update_appearance()`.
  *
  * Normally called after the intercom's area recieves the `COMSIG_AREA_POWER_CHANGE` signal, but it can also be called directly.
  * Arguments:
@@ -129,7 +129,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 		on = FALSE
 	else
 		on = current_area.powered(AREA_USAGE_EQUIP) // set "on" to the equipment power status of our area.
-	update_icon()
+	update_appearance()
 
 /obj/item/radio/intercom/add_blood_DNA(list/blood_dna)
 	return FALSE
@@ -144,6 +144,18 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	inverse = FALSE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
 
+//table Normal Intercoms
+
+/obj/item/radio/intercom/table
+	icon_state = "intercom-table"
+	wallframe = /obj/item/wallframe/intercom/table
+
+/obj/item/wallframe/intercom/table
+	icon_state = "intercom-table"
+	result_path = /obj/item/radio/intercom/table
+	pixel_shift = 0
+
+
 //wideband radio
 /obj/item/radio/intercom/wideband
 	name = "wideband relay"
@@ -155,6 +167,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	frequency = FREQ_WIDEBAND
 	freqlock = TRUE
 	freerange = TRUE
+	log = TRUE
 	wallframe = /obj/item/wallframe/intercom/wideband
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)

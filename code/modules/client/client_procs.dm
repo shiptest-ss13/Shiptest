@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	// Instantiate tgui panel
 	tgui_panel = new(src)
 
-	GLOB.ahelp_tickets.ClientLogin(src)
+	GLOB.ahelp_tickets.client_login(src)
 	GLOB.interviews.client_login(src)
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
@@ -469,6 +469,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	view_size.setZoomMode()
 	fit_viewport()
 	Master.UpdateTickRate()
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CLIENT_CONNECT, src)
 
 //////////////
 //DISCONNECT//
@@ -489,7 +490,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.clients -= src
 	GLOB.directory -= ckey
 	log_access("Logout: [key_name(src)]")
-	GLOB.ahelp_tickets.ClientLogout(src)
+	GLOB.ahelp_tickets.client_logout(src)
 	GLOB.interviews.client_logout(src)
 	SSserver_maint.UpdateHubStatus()
 	if(credits)

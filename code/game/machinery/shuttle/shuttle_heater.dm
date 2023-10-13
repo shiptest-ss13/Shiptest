@@ -160,17 +160,8 @@
 	icon_state_open = use_tank ? "heater_open" : "[initial(icon_state)]_open"
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/update_adjacent_engines()
-	var/engine_turf
-	switch(dir)
-		if(NORTH)
-			engine_turf = get_offset_target_turf(src, 0, -1)
-		if(SOUTH)
-			engine_turf = get_offset_target_turf(src, 0, 1)
-		if(EAST)
-			engine_turf = get_offset_target_turf(src, -1, 0)
-		if(WEST)
-			engine_turf = get_offset_target_turf(src, 1, 0)
-	if(!engine_turf)
+	var/engine_turf = get_step(src, dir)
+	if(!isturf(engine_turf))
 		return
 	for(var/obj/machinery/power/shuttle/engine/E in engine_turf)
 		E.update_icon_state()

@@ -282,33 +282,6 @@
 		visible_message("<span class='notice'>[src] fails to expand!</span>")
 	qdel(src)
 
-/obj/item/reagent_containers/food/snacks/monkeycube/suicide_act(mob/living/M)
-	M.visible_message("<span class='suicide'>[M] is putting [src] in [M.p_their()] mouth! It looks like [M.p_theyre()] trying to commit suicide!</span>")
-	var/eating_success = do_after(M, 10, TRUE, src, TRUE)
-	if(QDELETED(M)) //qdeletion: the nuclear option of self-harm
-		return SHAME
-	if(!eating_success || QDELETED(src)) //checks if src is gone or if they failed to wait for a second
-		M.visible_message("<span class='suicide'>[M] chickens out!</span>")
-		return SHAME
-	if(HAS_TRAIT(M, TRAIT_NOHUNGER)) //plasmamen don't have saliva/stomach acid
-		M.visible_message("<span class='suicide'>[M] realizes [M.p_their()] body won't activate [src]!</span>"
-		,"<span class='warning'>Your body won't activate [src]...</span>")
-		return SHAME
-	playsound(M, 'sound/items/eatfood.ogg', rand(10,50), TRUE)
-	M.temporarilyRemoveItemFromInventory(src) //removes from hands, keeps in M
-	addtimer(CALLBACK(src, .proc/finish_suicide, M), 15) //you've eaten it, you can run now
-	return MANUAL_SUICIDE
-
-/obj/item/reagent_containers/food/snacks/monkeycube/proc/finish_suicide(mob/living/M) ///internal proc called by a monkeycube's suicide_act using a timer and callback. takes as argument the mob/living who activated the suicide
-	if(QDELETED(M) || QDELETED(src))
-		return
-	if((src.loc != M)) //how the hell did you manage this
-		to_chat(M, "<span class='warning'>Something happened to [src]...</span>")
-		return
-	Expand()
-	M.visible_message("<span class='danger'>[M]'s torso bursts open as a primate emerges!</span>")
-	M.gib(null, TRUE, null, TRUE)
-
 /obj/item/reagent_containers/food/snacks/monkeycube/syndicate
 	faction = list("neutral", ROLE_SYNDICATE)
 
@@ -348,7 +321,7 @@
 
 /obj/item/reagent_containers/food/snacks/boiledspiderleg
 	name = "boiled spider leg"
-	desc = "A giant spider's leg that's still twitching after being cooked. Gross!"
+	desc = "A giant spider's leg that's still twitching after being cooked. Yum!" //Its cooked and not GORE, so it shouldnt imply that its gross to eat
 	icon_state = "spiderlegcooked"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -441,7 +414,7 @@
 	desc = "A human meat, on a stick."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("tender meat" = 3, "metal" = 1)
-	foodtype = MEAT | GROSS
+	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/kebab/monkey
 	name = "meat-kebab"
@@ -463,7 +436,7 @@
 	desc = "Severed lizard tail on a stick."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("meat" = 8, "metal" = 4, "scales" = 1)
-	foodtype = MEAT
+	foodtype = MEAT // NOT GORE, tastes delicious!
 
 /obj/item/reagent_containers/food/snacks/kebab/rat
 	name = "rat-kebab"
@@ -472,7 +445,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("rat meat" = 1, "metal" = 1)
-	foodtype = MEAT | GROSS
+	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/kebab/rat/double
 	name = "double rat-kebab"

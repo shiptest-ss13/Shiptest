@@ -2,22 +2,23 @@
 
 /obj/item/ammo_casing/shotgun
 	name = "shotgun slug"
-	desc = "A 12 gauge lead slug."
+	desc = "A 12-gauge lead slug."
 	icon = 'icons/obj/ammo_shotshells.dmi'
 	icon_state = "slug"
-	caliber = "shotgun"
+	caliber = "12ga"
 	custom_materials = list(/datum/material/iron=4000)
-	projectile_type = /obj/projectile/bullet/shotgun_slug
+	projectile_type = /obj/projectile/bullet/slug
 
 /obj/item/ammo_casing/shotgun/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? "" : "-spent"]"
+	return ..()
 
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
-	desc = "A 12 gauge buckshot shell."
+	desc = "A 12-gauge buckshot shell."
 	icon_state = "buckshot"
-	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot
-	pellets = 6
+	projectile_type = /obj/projectile/bullet/pellet/buckshot
+	pellets = 8
 	variance = 25
 
 /obj/item/ammo_casing/shotgun/beanbag
@@ -25,14 +26,14 @@
 	desc = "A weak beanbag slug for riot control."
 	icon_state = "beanbag"
 	custom_materials = list(/datum/material/iron=250)
-	projectile_type = /obj/projectile/bullet/shotgun_beanbag
+	projectile_type = /obj/projectile/bullet/slug/beanbag
 
 /obj/item/ammo_casing/shotgun/rubbershot
 	name = "rubber shot"
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "rubber"
-	projectile_type = /obj/projectile/bullet/pellet/shotgun_rubbershot
-	pellets = 6
+	projectile_type = /obj/projectile/bullet/pellet/rubbershot
+	pellets = 8
 	variance = 25
 	custom_materials = list(/datum/material/iron=4000)
 
@@ -46,16 +47,16 @@
 	name = "improvised shell"
 	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
 	icon_state = "improvised"
-	projectile_type = /obj/projectile/bullet/pellet/shotgun_improvised
+	projectile_type = /obj/projectile/bullet/pellet/improvised
 	custom_materials = list(/datum/material/iron=250)
 	pellets = 10
 	variance = 25
 
 /obj/item/ammo_casing/shotgun/incapacitate
 	name = "custom incapacitating shot"
-	desc = "A shotgun casing filled with... something. used to incapacitate targets."
+	desc = "A shotgun casing filled with... something. Used to incapacitate targets."
 	icon_state = "bounty"
-	projectile_type = /obj/projectile/bullet/pellet/shotgun_incapacitate
+	projectile_type = /obj/projectile/bullet/pellet/rubbershot/incapacitate
 	pellets = 12//double the pellets, but half the stun power of each, which makes this best for just dumping right in someone's face.
 	variance = 25
 	custom_materials = list(/datum/material/iron=4000)
@@ -64,12 +65,12 @@
 	name = "taser slug"
 	desc = "A stunning taser slug."
 	icon_state = "taser"
-	projectile_type = /obj/projectile/bullet/shotgun_stunslug
+	projectile_type = /obj/projectile/bullet/slug/stun
 	custom_materials = list(/datum/material/iron=250)
 
 /obj/item/ammo_casing/shotgun/dart
 	name = "shotgun dart"
-	desc = "A dart for use in shotguns. Can be injected with up to 30 units of any chemical."
+	desc = "A dart for use in shotguns. Can be injected with up to thirty units of any chemical."
 	icon_state = "dart"
 	projectile_type = /obj/projectile/bullet/dart
 	var/reagent_amount = 30
@@ -114,13 +115,13 @@
 	name = "meteorslug shell"
 	desc = "A shotgun shell rigged with CMC technology, which launches a massive slug when fired."
 	icon_state = "meteor"
-	projectile_type = /obj/projectile/bullet/shotgun_meteorslug
+	projectile_type = /obj/projectile/bullet/slug/meteor
 
 /obj/item/ammo_casing/shotgun/frag12
 	name = "FRAG-12 slug"
 	desc = "A high explosive breaching round for a 12 gauge shotgun."
 	icon_state = "frag12"
-	projectile_type = /obj/projectile/bullet/shotgun_frag12
+	projectile_type = /obj/projectile/bullet/slug/frag12
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"
@@ -151,7 +152,7 @@
 	name = "two-bore shell"
 	desc = "A massive fucking two-bore shell."
 	caliber = "twobore"
-	projectile_type = /obj/projectile/bullet/pellet/shotgun_buckshot/twobore
+	projectile_type = /obj/projectile/bullet/pellet/buckshot/twobore
 	pellets = 6
 	variance = 20
 	transform = matrix(2, 0, 0, 0, 2, 0)

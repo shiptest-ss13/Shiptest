@@ -26,10 +26,6 @@
 	var/picked = pick(special_die)
 	new picked(src)
 
-/obj/item/storage/pill_bottle/dice/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
-
 /obj/item/storage/pill_bottle/dice/hazard
 
 /obj/item/storage/pill_bottle/dice/hazard/PopulateContents()
@@ -62,11 +58,7 @@
 	. = ..()
 	if(!result)
 		result = roll(sides)
-	update_icon()
-
-/obj/item/dice/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is gambling with death! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
+	update_appearance()
 
 /obj/item/dice/d1
 	name = "d1"
@@ -183,8 +175,10 @@
 	diceroll(user)
 
 /obj/item/dice/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	diceroll(thrownby)
-	. = ..()
+	var/mob/thrown_by = thrownby?.resolve()
+	if(thrown_by)
+		diceroll(thrown_by)
+	return ..()
 
 /obj/item/dice/proc/diceroll(mob/user)
 	result = roll(sides)
@@ -202,7 +196,7 @@
 		comment = "NAT 20!"
 	else if(sides == 20 && result == 1)
 		comment = "Ouch, bad luck."
-	update_icon()
+	update_appearance()
 	if(initial(icon_state) == "d00")
 		result = (result - 1)*10
 	if(special_faces.len == sides)

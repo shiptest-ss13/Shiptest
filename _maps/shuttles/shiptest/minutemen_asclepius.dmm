@@ -1320,6 +1320,11 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -17
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/office)
 "op" = (
@@ -1584,6 +1589,11 @@
 /obj/structure/cable,
 /obj/structure/sign/poster/official/moth/hardhats{
 	pixel_x = 32
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2697,8 +2707,8 @@
 /obj/machinery/microwave{
 	pixel_y = 2
 	},
-/obj/effect/spawner/lootdrop/donkpockets,
-/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "AY" = (
@@ -2786,9 +2796,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/photocopier/faxmachine/longrange{
-	department = "Internal Affairs"
-	},
+/obj/machinery/fax,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "BQ" = (
@@ -3641,6 +3649,10 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/light_switch{
+	pixel_x = -13;
+	pixel_y = 22
+	},
 /turf/open/floor/wood,
 /area/ship/crew)
 "Im" = (
@@ -4057,8 +4069,8 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/storage/belt/security,
 /obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/item/ammo_box/magazine/m45/rubbershot,
-/obj/item/ammo_box/magazine/m45/rubbershot{
+/obj/item/ammo_box/magazine/m45/rubber,
+/obj/item/ammo_box/magazine/m45/rubber{
 	pixel_x = 3
 	},
 /obj/structure/railing{
@@ -4335,10 +4347,10 @@
 	name = "Chemistry locker";
 	pixel_y = -28
 	},
-/obj/item/clothing/under/rank/medical/chemist/pharmacist,
-/obj/item/clothing/under/rank/medical/chemist/pharmacist/skirt,
-/obj/item/clothing/under/rank/medical/chemist/pharmacologist/skirt,
-/obj/item/clothing/under/rank/medical/chemist/pharmacologist,
+/obj/item/clothing/under/rank/medical/chemist,
+/obj/item/clothing/under/rank/medical/chemist,
+/obj/item/clothing/under/rank/medical/chemist/skirt,
+/obj/item/clothing/under/rank/medical/chemist/skirt,
 /obj/item/clothing/suit/longcoat/chemist,
 /obj/item/clothing/suit/toggle/labcoat/chemist/side,
 /obj/item/clothing/head/beret/chem,
@@ -4417,7 +4429,6 @@
 /obj/item/clothing/under/rank/command/minutemen,
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /obj/item/clothing/suit/toggle/labcoat/cmo,
-/obj/item/clothing/under/rank/medical/chief_medical_officer/surgeon_general,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/autosurgeon/cmo,
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
@@ -4947,6 +4958,11 @@
 	},
 /obj/machinery/camera/autoname{
 	dir = 8
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -12;
+	pixel_y = -17
 	},
 /turf/open/floor/plasteel/dark{
 	icon_state = "grid"

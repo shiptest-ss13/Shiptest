@@ -22,7 +22,6 @@
 	options += "--------"
 	options += "Infinite Transit"
 	options += "Delete Shuttle"
-	options += "Into The Sunset (delete & greentext 'escape')"
 
 	var/selection = input(user, "Select where to fly [name]:", "Fly Shuttle") as null|anything in options
 	if(!selection)
@@ -38,14 +37,11 @@
 		if("Delete Shuttle")
 			if(alert(user, "Really delete [name]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
-			jumpToNullSpace()
+			if(QDELETED(current_ship))
+				qdel(src)
+			else
+				qdel(current_ship)
 			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name].")
-
-		if("Into The Sunset (delete & greentext 'escape')")
-			if(alert(user, "Really delete [name] and greentext escape objectives?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
-				return
-			intoTheSunset()
-			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name], and granted the crew greentext.")
 
 		else
 			if(options[selection])
