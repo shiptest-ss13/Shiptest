@@ -5,7 +5,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "am" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -213,11 +213,8 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "bU" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/library)
@@ -345,7 +342,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "cX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -353,7 +350,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "da" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -734,7 +731,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "fi" = (
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue/corner{
 	dir = 4
@@ -819,7 +816,7 @@
 /obj/effect/turf_decal/techfloor/corner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "fE" = (
 /obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -928,7 +925,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "gn" = (
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/structure/grille,
@@ -942,7 +939,7 @@
 /obj/effect/turf_decal/techfloor,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "gr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -1872,7 +1869,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/tech,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "mD" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -2518,7 +2515,7 @@
 /obj/machinery/suit_storage_unit/solgov,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/tech,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "qB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -2549,7 +2546,7 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "qM" = (
 /obj/machinery/light/floor,
 /obj/structure/sign/solgov_seal{
@@ -3221,11 +3218,8 @@
 /obj/machinery/door/poddoor{
 	id = "sgi_external"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "uy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -3251,7 +3245,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "uE" = (
 /obj/item/paper_bin,
 /obj/item/pen/solgov,
@@ -3652,16 +3646,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/machinery/light_switch{
-	pixel_x = 11;
-	pixel_y = 21
-	},
 /turf/open/floor/plasteel/tech,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "xf" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 10
@@ -4124,7 +4110,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "AA" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew/canteen/kitchen)
@@ -4347,7 +4333,7 @@
 "BP" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "BQ" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 6
@@ -4382,7 +4368,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "BW" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -4625,7 +4611,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "DD" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
@@ -4718,7 +4704,7 @@
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "Ek" = (
 /obj/structure/railing/wood,
 /obj/structure/chair/stool/bar,
@@ -5109,7 +5095,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "GN" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -5346,7 +5332,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "IX" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -5471,12 +5457,6 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/solgovblue/warning,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
 "JD" = (
@@ -5538,7 +5518,7 @@
 	id = "sgi_external"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "JT" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/full,
 /obj/structure/cable{
@@ -6138,7 +6118,7 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "Oq" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -6160,7 +6140,7 @@
 	pixel_x = -1
 	},
 /turf/closed/wall/mineral/titanium,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "OC" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -6297,9 +6277,8 @@
 	dir = 8;
 	pixel_x = 28
 	},
-/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel/tech,
-/area/ship/storage)
+/area/ship/hallway/starboard)
 "PB" = (
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/wood/maple,
@@ -6328,7 +6307,7 @@
 /area/ship/cargo)
 "PV" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "Qb" = (
 /turf/closed/wall/mineral/titanium,
 /area/ship/crew/cryo)
@@ -6545,7 +6524,7 @@
 	pixel_y = 21
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "Rr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
@@ -6710,7 +6689,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ship/maintenance/aft)
+/area/ship/storage)
 "Sr" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue{
 	dir = 6
@@ -7739,9 +7718,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo/office)
-"ZO" = (
-/turf/closed/wall/mineral/titanium,
-/area/ship/maintenance/aft)
 "ZR" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -8029,9 +8005,9 @@ ts
 AZ
 KS
 Np
-sJ
+ts
 qx
-sJ
+ts
 hE
 iG
 "}
@@ -8063,7 +8039,7 @@ ts
 LZ
 gW
 FN
-sJ
+ts
 xd
 mB
 Or
@@ -8131,7 +8107,7 @@ ts
 dK
 tB
 YF
-sJ
+ts
 BT
 Py
 Or
@@ -8165,10 +8141,10 @@ ts
 ts
 mQ
 ts
-sJ
-sJ
-sJ
-sJ
+ts
+ts
+ts
+ts
 iG
 "}
 (12,1,1) = {"
@@ -8199,10 +8175,10 @@ MW
 iM
 ut
 cz
-ZO
+sJ
 DB
 Au
-ZO
+sJ
 iG
 "}
 (13,1,1) = {"
@@ -8236,7 +8212,7 @@ jw
 So
 gm
 qG
-ZO
+sJ
 iG
 "}
 (14,1,1) = {"
@@ -8267,10 +8243,10 @@ MW
 tr
 hR
 xU
-ZO
+sJ
 Rq
 GJ
-ZO
+sJ
 iG
 "}
 (15,1,1) = {"
@@ -8301,10 +8277,10 @@ MW
 up
 Kd
 kZ
-ZO
+sJ
 af
 BP
-ZO
+sJ
 iG
 "}
 (16,1,1) = {"
@@ -8335,10 +8311,10 @@ MW
 Td
 Kd
 Rh
-ZO
+sJ
 cQ
 gp
-ZO
+sJ
 iG
 "}
 (17,1,1) = {"
@@ -8369,10 +8345,10 @@ MW
 ZK
 Pu
 FJ
-ZO
+sJ
 BP
 Ef
-ZO
+sJ
 iG
 "}
 (18,1,1) = {"
@@ -8403,10 +8379,10 @@ MW
 rN
 xt
 yV
-ZO
+sJ
 cX
 Oo
-ZO
+sJ
 iG
 "}
 (19,1,1) = {"
@@ -8437,10 +8413,10 @@ MW
 MZ
 Kd
 Tz
-ZO
+sJ
 fC
 uC
-ZO
+sJ
 iG
 "}
 (20,1,1) = {"
@@ -8471,7 +8447,7 @@ MW
 Lk
 da
 MT
-ZO
+sJ
 IC
 PV
 hE
