@@ -14,22 +14,22 @@
 
 // MAGAZINES
 
-/obj/item/disk/design_disk/ammunition/1911_mag
+/obj/item/disk/design_disk/ammunition/mag_1911
 	name = "design disk - 1911 magazine"
 	desc = "A design disk containing the pattern for the classic 1911's seven round .45ACP magazine."
 	illustration = "ammo"
 
-/obj/item/disk/design_disk/ammunition/1911_mag/Initialize()
+/obj/item/disk/design_disk/ammunition/mag_1911/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/colt_1911_magazine
 
 // ROUNDS
 
-/obj/item/disk/design_disk/ammunition/n762_rounds
+/obj/item/disk/design_disk/ammunition/n762
 	name = "design disk - n762 rounds"
-	desc = "A design disk containing specifications for n762 ammunition.
+	desc = "A design disk containing specifications for n762 ammunition."
 
-/obj/item/disk/design_disk/ammunition/n762/n762_rounds/Initialize()
+/obj/item/disk/design_disk/ammunition/n762/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/n762
 
