@@ -167,4 +167,3 @@
 	category = list(
 					"Power Designs",
 					)
-	

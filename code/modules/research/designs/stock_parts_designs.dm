@@ -542,7 +542,6 @@
 					/datum/material/iron=50,
 					/datum/material/glass=10,
 					)
-	
 	category = list(
 					"Stock Parts",
 					)
