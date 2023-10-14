@@ -107,6 +107,8 @@
 	blueprints[7] = new /datum/design/board/telecomms_hub
 	blueprints[8] = new /datum/design/board/subspace_broadcaster
 
+// LIMITED USE DISKS PAST HERE
+
 // HIGH TECH / RARE ENGINEERING ITEMS
 
 /obj/item/disk/design_disk/limited/advtools
@@ -117,7 +119,7 @@
 	max_blueprints = 3
 	max_charges = 1 //Essentially to be used as loot - choose a tool.
 
-/obj/item/disk/design_disk/engineering/t4parts/Initialize()
+/obj/item/disk/design_disk/limited/advtools/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/jawsoflife
 	blueprints[2] = new /datum/design/exwelder

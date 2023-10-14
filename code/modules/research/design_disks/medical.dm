@@ -3,6 +3,7 @@
 */
 
 // MEDICAL AND SURGICAL
+
 /obj/item/disk/design_disk/medical/ //Medical parent type
 	name = "design disk - Medical"
 	desc = "A design disk containing medical equipment."
@@ -98,3 +99,5 @@
 	blueprints[3] = new /datum/design/cybernetic_lungs/tier3
 	blueprints[4] = new /datum/design/cybernetic_stomach/tier3
 	blueprints[5] = new /datum/design/cybernetic_ears_u
+
+// LIMITED USE DISKS PAST HERE

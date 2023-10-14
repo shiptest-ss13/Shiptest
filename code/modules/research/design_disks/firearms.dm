@@ -3,6 +3,38 @@
 	as well as ammunition.
 */
 
+// AMMUNITION
+
+/obj/item/disk/design_disk/ammunition // Do not modify this subtype.
+	name = "Ammunition Design Disk"
+	desc = "An ammunition disk"
+	illustration = "target"
+	max_blueprints = 1 //Default for firearms disks is 1.
+	max_charges = 5 //Default for limited firearms disk is 5.
+
+// MAGAZINES
+
+/obj/item/disk/design_disk/ammunition/1911_mag
+	name = "design disk - 1911 magazine"
+	desc = "A design disk containing the pattern for the classic 1911's seven round .45ACP magazine."
+	illustration = "ammo"
+
+/obj/item/disk/design_disk/ammunition/1911_mag/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/colt_1911_magazine
+
+// ROUNDS
+
+/obj/item/disk/design_disk/ammunition/n762_rounds
+	name = "design disk - n762 rounds"
+	desc = "A design disk containing specifications for n762 ammunition.
+
+/obj/item/disk/design_disk/ammunition/n762/n762_rounds/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/n762
+
+// LIMITED USE DISKS PAST HERE - Firearm disks should almost never be unlimited.
+
 // GUNS
 
 /obj/item/disk/design_disk/limited/firearm/ // Do not modify this subtype.
@@ -21,12 +53,3 @@
 /obj/item/disk/design_disk/limited/firearm/disposable_gun/Initialize()
 	. = ..()
 	blueprints[1] = new /datum/design/disposable_gun/
-
-// AMMUNITION
-
-/obj/item/disk/design_disk/limited/ammunition // Do not modify this subtype.
-	name = "Limited Ammunition Design Disk"
-	desc = "A firearm disk with limited charges"
-	illustration = "target"
-	max_blueprints = 1 //Default for firearms disks is 1.
-	max_charges = 5 //Default for limited firearms disk is 5.
