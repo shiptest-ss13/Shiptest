@@ -80,7 +80,7 @@
 						"<span class='notice>You hear a thud.</span>")
 		crate.forceMove(drop_location()) // Drop the crate onto the shelf,
 		step_rand(crate, 1) // Then try to push it somewhere.
-		shelf_contents[crate] = null // Remove the reference to the crate from the list.
+		shelf_contents[shelf_contents.Find(crate)] = null // Remove the reference to the crate from the list.
 		handle_visuals()
 
 /obj/structure/crate_shelf/proc/handle_visuals()
