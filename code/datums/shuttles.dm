@@ -402,6 +402,11 @@
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
+/datum/map_template/shuttle/subshuttles/heron
+	file_name = "nanotrasen_falcon"
+	name = "Falcon Dropship"
+	prefix = "NTSV"
+
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
 	name = "Crux Dropship"
