@@ -34,7 +34,7 @@
 
 /obj/item/gun/ballistic/automatic/gyropistol
 	name = "gyrojet pistol"
-	desc = "A prototype pistol designed to fire self propelled rockets."
+	desc = "A prototype pistol designed to fire self-propelled rockets."
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m75
@@ -45,7 +45,7 @@
 
 /obj/item/gun/ballistic/rocketlauncher
 	name = "\improper PML-9"
-	desc = "A reusable rocket propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
+	desc = "A reusable rocket-propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
@@ -75,9 +75,7 @@
 
 /obj/item/gun/ballistic/rocketlauncher/solgov
 	name = "Panzerfaust XII"
-	desc = "The standard recoiless rifle of the Solarian Confederation. Legend goes that every couple of decades, the bureaucracy changes a small part of the rifle, then bumps up the number. Chambered in rockets."
-
+	desc = "The standard recoiless rifle of the Solarian Confederation. Barely varies from previous models."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "panzerfaust"
 	item_state = "panzerfaust"
-
