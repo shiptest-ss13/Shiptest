@@ -88,10 +88,7 @@
 	r_pocket = /obj/item/pinpointer/crew
 	accessory = /obj/item/clothing/accessory/holster/marine
 
-backpack_contents = list(/obj/item/storage/firstaid/tactical=1,
-	/obj/item/holosign_creator/medical=1,
-	/obj/item/autosurgeon/cmo=1,
-	/obj/item/radio=1)
+	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/autosurgeon/cmo=1, /obj/item/radio=1)
 
 	id_role = "Medical Technician"
 
