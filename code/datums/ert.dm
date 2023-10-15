@@ -212,7 +212,7 @@
 	roles = list(/datum/antagonist/ert/frontier)
 	rename_team = "Generic Frontiersmen Team"
 	mission = "Pillage in the name of the Frontiersmen."
-	polldesc = "a poorly armed group of pirates"
+	polldesc = "an armed group of pirates"
 	random_names = TRUE
 	leader_experience = FALSE
 	ert_template = /datum/map_template/shuttle/subshuttles/sugarcube
@@ -221,4 +221,4 @@
 	leader_role = /datum/antagonist/ert/frontier/leader
 	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
 	rename_team = "Assault Frontiersmen Team"
-	polldesc = "an armed squad of pirates"
+	polldesc = "a well armed squad of pirates"

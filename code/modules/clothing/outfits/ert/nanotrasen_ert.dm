@@ -422,6 +422,7 @@
 	id = /obj/item/card/id/lpmed
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 
+	id_role = "Medical Specialist"
 
 /datum/outfit/centcom/ert/lp/engineer
 	name = "ERT - Loss Prevention Engineering Specialist"
@@ -434,6 +435,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	glasses = /obj/item/clothing/glasses/welding
 
+	id_role = "Engineering Specialist"
 
 /datum/outfit/centcom/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"
@@ -447,3 +449,5 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+
+	id_role = "Lieutenant"

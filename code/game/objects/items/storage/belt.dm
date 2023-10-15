@@ -434,9 +434,9 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/storage/belt/military/cr20/PopulateContents()
+/obj/item/storage/belt/military/c20r/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 7)
 		new /obj/item/ammo_box/magazine/smgm45(src)
 
 

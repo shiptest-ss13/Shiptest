@@ -58,7 +58,7 @@
 
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
 
-	var/missiondesc = "Your team is being sent to [station_name()]."
+	var/missiondesc = "Your team is being sent to [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += " Lead your team to ensure the completion of your objectives."
 	else
@@ -220,6 +220,7 @@
 
 /datum/antagonist/ert/lp/lieutenant
 	name = "Loss Prevention Lieutenant"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/lp/lieutenant
 	role = "Lieutenant"
 
@@ -236,7 +237,7 @@
 
 /datum/antagonist/ert/inteq/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-	var/missiondesc = "As part of Inteq Risk Management, you have been sent to [station_name()]."
+	var/missiondesc = "As part of Inteq Risk Management, you have been sent to [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your squadron to ensure the completion of your contract."
 	else
@@ -257,7 +258,7 @@
 // ********************************************************************
 /datum/antagonist/ert/solgov
 	name = "SolGov Sonnensöldner"
-	outfit = /datum/outfit/centcom/ert/solgov/sonnensoldner
+	outfit = /datum/outfit/centcom/ert/solgov
 	random_names = FALSE
 	role = "Sonnensöldner"
 
@@ -265,6 +266,25 @@
 	name = "SolGov Inspector"
 	outfit = /datum/outfit/centcom/ert/solgov/inspector
 	role = "Solarian Inspector"
+
+/datum/antagonist/ert/official/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are a Solarian Inspector.</font></B>")
+	if (ert_team)
+		to_chat(owner, "The Department of Administrative Affairs is sending you to [station_name()] with the task: [ert_team.mission.explanation_text]")
+	else
+		to_chat(owner, "The Department of Administrative Affairs is sending you to [station_name()] with the task: [mission.explanation_text]")
+
+/datum/antagonist/ert/official/forge_objectives()
+	if (ert_team)
+		return ..()
+	if(mission)
+		return
+	var/datum/objective/missionobj = new ()
+	missionobj.owner = owner
+	missionobj.explanation_text = "Conduct a routine performance review of [station_name()]'s vessels."
+	missionobj.completed = TRUE
+	mission = missionobj
+	objectives |= mission
 
 // ********************************************************************
 // ** Minutemen **
@@ -277,7 +297,7 @@
 
 /datum/antagonist/ert/minutemen/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-	var/missiondesc = "As part of the Colonial Minutemen, you have been sent to [station_name()]."
+	var/missiondesc = "As part of the Colonial Minutemen, you have been sent to [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your team to ensure the completion of your objectives."
 	else
@@ -290,6 +310,7 @@
 
 /datum/antagonist/ert/minutemen/leader
 	name = "Minutemen Leader"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/minutemen/leader
 	role = "Sargent"
 
@@ -300,6 +321,7 @@
 
 /datum/antagonist/ert/minutemen/bard/leader
 	name = "BARD Leader"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/minutemen/bard/leader
 	role = "Sargent"
 
@@ -310,6 +332,7 @@
 
 /datum/antagonist/ert/minutemen/riot/leader
 	name = "Riot Sargent"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/minutemen/riot/leader
 	role = "Sargent"
 
@@ -325,6 +348,7 @@
 
 /datum/antagonist/ert/minutemen/piratehunters/leader
 	name = "Pirate Hunter Leader"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/minutemen/piratehunters/leader
 	role = "Sergeant"
 
@@ -337,8 +361,22 @@
 	outfit = /datum/outfit/centcom/ert/syndicate
 	role = "Squaddie"
 
+/datum/antagonist/ert/syndicate/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	var/missiondesc = "As part of the Syndicate Coalition, you have been sent to [station_name()].<BR>"
+	if(leader) //If Squad Leader
+		missiondesc += "Lead your team to ensure the completion of your objectives."
+	else
+		missiondesc += "Follow orders given to you by your Sergeant."
+	if(deathsquad)
+		missiondesc += "Leave no witnesses."
+
+	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
+
 /datum/antagonist/ert/syndicate/leader
 	name = "Syndicate Sergeant"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/syndicate/leader
 	role = "Sergeant"
 
@@ -349,6 +387,7 @@
 
 /datum/antagonist/ert/syndicate/gorlex/leader
 	name = "Gorlex Sergeant"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/leader
 	role = "Sergeant"
 
@@ -357,8 +396,22 @@
 	outfit = /datum/outfit/centcom/ert/syndicate/cybersun
 	role = "Operative"
 
+/datum/antagonist/ert/syndicate/cybersun/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	var/missiondesc = "As part of Cybersun enterprises, you have been sent to [station_name()].<BR>"
+	if(leader) //If Squad Leader
+		missiondesc += "Lead your team to ensure the completion of your objectives."
+	else
+		missiondesc += "Follow orders given to you by your Sergeant."
+	if(prob(50) && !leader)
+		missiondesc += "In addition to your contract with Cybersun, you are also a <B>Gorlex Hardliner</B>. You do not <I>like</I> Cybersun, but you work with them regardless."
+
+	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
+
 /datum/antagonist/ert/syndicate/cybersun/leader
-	name = "Cybersun Officer"
+	name = "Cybersun Commando Leader"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/leader
 	role = "Lead Operative"
 
@@ -367,8 +420,20 @@
 	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/medic
 	role = "Medical Technician"
 
+/datum/antagonist/ert/syndicate/cybersun/medic/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	var/missiondesc = "As part of Cybersun's Medical Intervention program, you have been sent to [station_name()] to aid Cybersun clients in distress.<BR>"
+	if(leader) //If Squad Leader
+		missiondesc += "Lead your team to ensure the safety of Cybersun's clientele.<BR>"
+	else
+		missiondesc += "Follow orders given to you by your Lead Technician. Assist Cybersun clients.<BR>"
+
+	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
+
 /datum/antagonist/ert/syndicate/cybersun/medic/leader
 	name = "Cybersun Lead Paramedic"
+	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/medic/leader
 	role = "Lead Medical Technician"
 
@@ -380,6 +445,17 @@
 	name = "Frontiersmen Pirate"
 	outfit = /datum/outfit/job/assistant/frontiersmen
 	role = "Buccaneer"
+
+/datum/antagonist/ert/frontier/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	var/missiondesc = "You have been sent on a mission by the Frontiersmen to [station_name()].<BR>"
+	if(leader) //If Squad Leader
+		missiondesc += "Lead your team to complete your objectives."
+	else
+		missiondesc += "Follow orders given to you by your Officer."
+
+	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
 
 /datum/antagonist/ert/frontier/leader
 	name = "Frontiersmen Officer"

@@ -13,11 +13,15 @@
 
 	box = /obj/item/storage/box/survival/security
 
+	id_role = "Minutemen"
+
 /datum/outfit/centcom/ert/minutemen/leader
 	name = "ERT - Minutemen Basic Sargent"
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/sec/cmm
+
+	id_role = "Sargent"
 
 /datum/outfit/centcom/ert/minutemen/bard
 	name = "ERT - Minutemen BARD"
@@ -40,6 +44,8 @@
 	/obj/item/flashlight/flare = 2
 	)
 
+	id_role = "Minutemen"
+
 /datum/outfit/centcom/ert/minutemen/bard/leader
 	name = "ERT - Minutemen BARD Sargent"
 
@@ -56,6 +62,8 @@
 	/obj/item/flashlight/seclite = 1
 	)
 
+	id_role = "Sargent"
+
 /datum/outfit/centcom/ert/minutemen/riot
 	name = "ERT - Minutemen Riot Officer"
 
@@ -67,11 +75,15 @@
 	r_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 	l_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 
+	id_role = "Minutemen"
+
 /datum/outfit/centcom/ert/minutemen/riot/leader
 	name = "ERT - Minutemen Riot Officer Sargent"
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/shield/riot/flash
+
+	id_role = "Sargent"
 
 /datum/outfit/centcom/ert/minutemen/gold_irs
 	name = "CMM GOLD Collector"
@@ -84,6 +96,8 @@
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 
+	id_role = "Lieutenant"
+
 /datum/outfit/centcom/ert/minutemen/piratehunters
 	name = "ERT - Minutemen Pirate Hunter"
 
@@ -91,6 +105,8 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
 	belt = /obj/item/storage/belt/military/minutemen/loaded
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+
+	id_role = "Minutemen"
 
 /datum/outfit/centcom/ert/minutemen/piratehunters/leader
 	name = "ERT - Minutemen Pirate Hunter Leader"
@@ -100,3 +116,5 @@
 	belt = /obj/item/storage/belt/military/minutemen
 	suit_store = /obj/item/gun/ballistic/automatic/gal
 	backpack_contents = list(/obj/item/ammo_box/magazine/gal=4)
+
+	id_role = "Sargent"

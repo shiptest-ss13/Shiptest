@@ -9,19 +9,26 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt
 
+	id_role = "Enforcer"
+
 /datum/outfit/centcom/ert/inteq/shotgun
 	name = "ERT - Inteq Shotgunner"
 
 	suit_store = /obj/item/gun/ballistic/shotgun/bulldog/inteq
+
+	id_role = "Enforcer"
 
 /datum/outfit/centcom/ert/inteq/medic
 	name = "ERT - Inteq Corpsman"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
 
+	id_role = "Enforcer"
 /datum/outfit/centcom/ert/inteq/leader
 	name = "ERT - Inteq Vanguard"
 
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	back = /obj/item/storage/backpack/messenger/inteq
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
+
+	id_role = "Enforcer"
