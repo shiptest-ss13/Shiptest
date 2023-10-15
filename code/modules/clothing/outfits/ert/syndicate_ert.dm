@@ -51,7 +51,7 @@
 
 	head = null
 	uniform = /obj/item/clothing/under/syndicate/combat
-	belt = /obj/item/tank/internals/oxygen
+	belt = /obj/item/storage/belt/military/c20r
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
 	suit_store = /obj/item/gun/ballistic/automatic/smg/c20r
 	ears = /obj/item/radio/headset/syndicate/alt
@@ -84,10 +84,14 @@
 	head = /obj/item/clothing/head/soft/cybersun
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	back = /obj/item/storage/backpack/ert/medical
-	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/autosurgeon/cmo=1, /obj/item/radio=1)
 	l_pocket = /obj/item/kitchen/knife/combat/survival
 	r_pocket = /obj/item/pinpointer/crew
 	accessory = /obj/item/clothing/accessory/holster/marine
+
+backpack_contents = list(/obj/item/storage/firstaid/tactical=1,
+	/obj/item/holosign_creator/medical=1,
+	/obj/item/autosurgeon/cmo=1,
+	/obj/item/radio=1)
 
 	id_role = "Medical Technician"
 

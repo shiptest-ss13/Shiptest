@@ -439,8 +439,6 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_box/magazine/smgm45(src)
 
-
-
 /obj/item/storage/belt/military/minutemen
 	name = "minutemen tactical webbing"
 	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."

@@ -37,9 +37,7 @@
 	l_hand = /obj/item/reagent_containers/hypospray/medipen/stimpack
 
 	backpack_contents = list(
-	/obj/item/ammo_box/c9mm = 2,
 	/obj/item/ammo_box/magazine/smgm9mm = 5,
-	/obj/item/grenade/c4 = 2,
 	/obj/item/flashlight/seclite = 1,
 	/obj/item/flashlight/flare = 2
 	)
@@ -74,6 +72,8 @@
 	belt = /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
 	r_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 	l_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
+
+	backpack_contents = list(/obj/item/ammo_box/magazine/smgm9mm/rubber=2)
 
 	id_role = "Minutemen"
 

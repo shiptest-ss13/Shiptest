@@ -24,6 +24,8 @@
 	head = /obj/item/clothing/head/solgov
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
+	suit = null
+	suit_store = null
 	mask = null
 	glasses = null
 
