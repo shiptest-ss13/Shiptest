@@ -127,7 +127,7 @@
 	smoothing_flags = SMOOTH_CORNERS
 	tiled_dirt = FALSE
 
-/turf/open/indestructible/hierophant/two
+/turf/open/indestructible/hierophant/two //I assume this exists to bypass turf smoothing to make patterns in the floor of the arena. cool!
 
 /turf/open/indestructible/hierophant/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	return FALSE
