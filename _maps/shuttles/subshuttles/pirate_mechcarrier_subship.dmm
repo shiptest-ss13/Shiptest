@@ -61,7 +61,8 @@
 /turf/open/floor/pod/dark,
 /area/ship/storage)
 "k" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/storage)
 "n" = (
@@ -75,6 +76,11 @@
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 21;
+	pixel_y = -8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
