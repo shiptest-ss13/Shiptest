@@ -76,6 +76,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "aI" = (
@@ -3987,6 +3988,9 @@
 /obj/item/robot_suit,
 /obj/structure/closet/crate/engineering,
 /obj/effect/turf_decal/industrial/hatch/orange,
+/obj/item/assembly/flash,
+/obj/item/assembly/flash,
+/obj/item/stock_parts/cell/high,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Qu" = (
@@ -4183,7 +4187,12 @@
 	pixel_x = 5
 	},
 /obj/item/pen/fountain{
-	pixel_x = -4
+	pixel_x = 6;
+	pixel_y = -8
+	},
+/obj/machinery/recharger{
+	pixel_x = -7;
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
