@@ -364,7 +364,10 @@
 	},
 /obj/effect/turf_decal/techfloor/corner,
 /mob/living/simple_animal/bot/secbot/beepsky/jr,
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/west{
+	pixel_y = 1;
+	pixel_x = -34
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/button/door{
 	dir = 4;
@@ -1914,7 +1917,6 @@
 /obj/item/gun/ballistic/automatic/pistol/m1911{
 	pixel_y = 3
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/item/gun/ballistic/automatic/pistol/m1911{
@@ -4146,9 +4148,10 @@
 	pixel_y = 28
 	},
 /obj/item/clothing/glasses/meson,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/circuitboard/machine/ore_redemption,
 /obj/item/gps/mining,
-/obj/item/pickaxe,
-/obj/item/pickaxe,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "SE" = (
@@ -4324,6 +4327,7 @@
 /obj/structure/sign/poster/contraband/stechkin{
 	pixel_y = -32
 	},
+/obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "Up" = (
