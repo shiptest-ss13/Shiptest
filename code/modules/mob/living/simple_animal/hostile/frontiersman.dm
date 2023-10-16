@@ -39,7 +39,7 @@
 	retreat_distance = 5
 	minimum_distance = 5
 	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
-	casingtype = /obj/item/ammo_casing/n762
+	casingtype = /obj/item/ammo_casing/n762_38
 
 
 /mob/living/simple_animal/hostile/frontier/ranged/mosin
@@ -47,7 +47,7 @@
 	icon_living = "frontiersmanrangedrifle"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
 				/obj/item/gun/ballistic/rifle/boltaction)
-	casingtype = /obj/item/ammo_casing/a762
+	casingtype = /obj/item/ammo_casing/a762_54
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper
@@ -68,7 +68,7 @@
 	rapid_fire_delay = 3
 	casingtype = /obj/item/ammo_casing/a762_39
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
-				/obj/item/gun/ballistic/automatic/assualt/ak47)
+				/obj/item/gun/ballistic/automatic/assault/ak47)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle
 	icon_state = "frontiersmanrangedmosin"
@@ -76,7 +76,7 @@
 
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/rifle/boltaction)
-	casingtype = /obj/item/ammo_casing/a762
+	casingtype = /obj/item/ammo_casing/a762_54
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy

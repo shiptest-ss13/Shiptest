@@ -27,17 +27,6 @@
 			target.mind.remove_antag_datum(/datum/antagonist/brainwashed)
 			deconverted = TRUE
 
-		if(target.mind.has_antag_datum(/datum/antagonist/rev/head)|| target.mind.unconvertable)
-			if(!silent)
-				target.visible_message("<span class='warning'>[target] seems to resist the implant!</span>", "<span class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")
-			removed(target, 1)
-			qdel(src)
-			return TRUE //the implant is still used
-
-		var/datum/antagonist/rev/rev = target.mind.has_antag_datum(/datum/antagonist/rev)
-		if(rev)
-			deconverted = TRUE
-			rev.remove_revolutionary(FALSE, user)
 		if(!silent)
 			if(target.mind in SSticker.mode.cult)
 				to_chat(target, "<span class='warning'>You feel something interfering with your mental conditioning, but you resist it!</span>")

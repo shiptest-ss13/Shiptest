@@ -1,8 +1,6 @@
 /datum/job/head_of_personnel
 	name = "Head of Personnel"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 10
 	officer = TRUE
 	wiki_page = "Head_of_Personnel" //WS Edit - Wikilinks/Warning
@@ -142,3 +140,11 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 
+/datum/outfit/job/head_of_personnel/pilot/heron
+	name = "pilot"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military
+	suit = /obj/item/clothing/suit/jacket/leather/duster
+	glasses = /obj/item/clothing/glasses/hud/spacecop
+	accessory = /obj/item/clothing/accessory/holster
+	head = /obj/item/clothing/head/beret/lt

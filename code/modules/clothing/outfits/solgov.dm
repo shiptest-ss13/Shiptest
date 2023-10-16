@@ -65,14 +65,12 @@
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol/solgov
-	l_pocket = /obj/item/ammo_box/magazine/pistol556mm
+	r_pocket = null
+	l_pocket = null
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
-	backpack_contents = list(/obj/item/crowbar/power,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/ammo_box/magazine/pistol556mm=2)
+	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
 	name = "Solarian Representative (SolGov)"
@@ -126,7 +124,7 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/soft/solgov
+	head = /obj/item/clothing/head/solgov_surgery
 	suit =  /obj/item/clothing/suit/solgov/jacket
 	l_hand = /obj/item/storage/firstaid/medical
 
@@ -153,7 +151,6 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
-		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
 	backpack = /obj/item/storage/backpack/explorer
@@ -210,3 +207,18 @@
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
+
+/datum/outfit/job/solgov/quartermaster
+	name = "Logistics Deck Officer (SolGov)"
+	job_icon = "quartermaster"
+	jobtype = /datum/job/qm
+
+	belt = /obj/item/pda/quartermaster
+	ears = /obj/item/radio/headset/solgov/captain
+	uniform = /obj/item/clothing/under/solgov/formal
+	suit = /obj/item/clothing/suit/solgov/overcoat
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/flatcap/solgov
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_hand = /obj/item/clipboard
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
