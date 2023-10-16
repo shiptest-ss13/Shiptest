@@ -976,7 +976,7 @@
 	name = "Montagne's Oak"
 	icon = 'icons/obj/flora/chapeltree.dmi'
 	icon_state = "churchtree"
-	desc = "A sturdy oak tree imported directly from Illestren the homeworld of the Saint-Roumain Militia. The soil was carfuly transfered from the same place it was planted. A apple tree branch has been grafted onto it"
+	desc = "A sturdy oak tree imported directly from Illestren the homeworld of the Saint-Roumain Militia. It contains a bacteria native to the planet. The soil was carfuly transfered from the same place it was planted. A apple tree branch has been grafted onto it. You could try watering it"
 	pixel_x = -16
 	max_integrity = 200
 	bound_height = 64
@@ -1015,7 +1015,7 @@
 
 /obj/structure/flora/tree/srm/Initialize()
 	START_PROCESSING(SSobj, src)
-	create_reagents(300, OPENCONTAINER & ~(DRAINABLE))
+	create_reagents(300, OPENCONTAINER)
 	. = ..()
 
 /obj/structure/flora/tree/srm/process()
@@ -1031,7 +1031,8 @@
 		if(health > 25)
 			if(prob(50))
 				var/obj/item/reagent_containers/food/snacks/grown/apple/apple = new(get_step(get_turf(src), apple_direction))
-				apple.name = "Illestren  Apple"
+				apple.name = "illestren Apple"
+				apple.desc = "You can grind this for bacteria."
 				apple.reagents.add_reagent(/datum/reagent/srm_bacteria, 10)
 				visible_message("<span class='green'>An [apple] falls from the tree.</span>")
 				health -= 25
