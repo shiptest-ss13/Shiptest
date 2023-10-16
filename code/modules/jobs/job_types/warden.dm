@@ -1,8 +1,6 @@
 /datum/job/warden
 	name = "Warden"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
@@ -79,7 +77,7 @@
 /datum/outfit/job/warden/minutemen/armed
 	name = "Field Commander (Colonial Minutemen) (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen/loaded
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)

@@ -151,7 +151,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src)
+	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src && !QDELETED(src)) //This can be called as a part of destroy
 		user.remove_language(/datum/language/piratespeak/, TRUE, TRUE, LANGUAGE_HAT)
 		to_chat(user, "<span class='boldnotice'>You can no longer speak like a pirate.</span>")
 
@@ -259,6 +259,12 @@
 	name = "flat cap"
 	desc = "A working man's hat."
 	icon_state = "flat_cap"
+	item_state = "detective"
+
+/obj/item/clothing/head/flatcap/solgov
+	name = "solarian flat cap"
+	desc = "A working solarian's hat, commonly used by Logistics Deck Officers."
+	icon_state = "flatcap_solgov"
 	item_state = "detective"
 
 /obj/item/clothing/head/hunter

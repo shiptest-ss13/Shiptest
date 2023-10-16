@@ -96,5 +96,6 @@
 		return INITIALIZE_HINT_QDEL
 
 /obj/effect/abstract/directional_lighting
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	vis_flags = VIS_HIDE

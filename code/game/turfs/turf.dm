@@ -118,8 +118,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if (smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
-	visibilityChanged()
-
 	for(var/atom/movable/content as anything in src)
 		Entered(content, null)
 
@@ -190,7 +188,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		for(var/A in B.contents)
 			qdel(A)
 		return
-	visibilityChanged()
 	QDEL_LIST(blueprint_data)
 	flags_1 &= ~INITIALIZED_1
 	requires_activation = FALSE
@@ -234,15 +231,14 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(density)
 		return TRUE
 
-	for(var/atom/movable/content as anything in contents)
+	for(var/atom/movable/movable_content as anything in contents)
 		// We don't want to block ourselves or consider any ignored atoms.
-		if((content == source_atom) || (content in ignore_atoms))
+		if((movable_content == source_atom) || (movable_content in ignore_atoms))
 			continue
-
 		// If the thing is dense AND we're including mobs or the thing isn't a mob AND if there's a source atom and
 		// it cannot pass through the thing on the turf,  we consider the turf blocked.
-		if(content.density && (!exclude_mobs || !ismob(content)))
-			if(source_atom && content.CanPass(source_atom, src))
+		if(movable_content.density && (!exclude_mobs || !ismob(movable_content)))
+			if(source_atom && movable_content.CanPass(source_atom, get_dir(src, source_atom)))
 				continue
 			return TRUE
 	return FALSE
@@ -352,11 +348,11 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	// By default byond will call Bump() on the first dense object in contents
 	// Here's hoping it doesn't stay like this for years before we finish conversion to step_
 	var/atom/firstbump
-	var/canPassSelf = CanPass(mover, src)
+	var/canPassSelf = CanPass(mover, get_dir(src, mover))
 	if(canPassSelf || (mover.movement_type & PHASING) || (mover.pass_flags & pass_flags_self))
 		for(var/atom/movable/thing as anything in contents)
 			if(QDELETED(mover))
-				return FALSE		//We were deleted, do not attempt to proceed with movement.
+				return FALSE //We were deleted, do not attempt to proceed with movement.
 			if(thing == mover || thing == mover.loc) // Multi tile objects and moving out of other objects
 				continue
 			if(!thing.Cross(mover))

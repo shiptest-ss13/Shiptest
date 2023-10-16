@@ -1,8 +1,6 @@
 /datum/job/captain
 	name = "Captain"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 30
 	officer = TRUE
 	wiki_page = "Captain"
@@ -58,6 +56,24 @@
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
+
+/datum/outfit/job/captain/nt/heron
+	name = "Captain (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/centcom/officer
+	head = /obj/item/clothing/head/centhat
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+
+/datum/outfit/job/captain/solgov
+	name = "Captain (SolGov)"
+
+	ears = /obj/item/radio/headset/solgov/captain
+	shoes = /obj/item/clothing/shoes/laceup
+	suit = /obj/item/clothing/suit/toggle/solgov
+
+/datum/outfit/job/captain/solgov/rebel
+	name = "Captain (Deserter)"
+	suit = /obj/item/clothing/suit/toggle/solgov/terragov
 
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"

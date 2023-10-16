@@ -309,7 +309,8 @@
 		character = equip
 
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle_port.spawn_points))
+		var/atom/spawn_point = pick(ship.shuttle_port.spawn_points)
+		spawn_point.join_player_here(character)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
@@ -421,8 +422,10 @@
 	if(mind)
 		if(transfer_after)
 			mind.late_joiner = TRUE
-		mind.active = 0					//we wish to transfer the key manually
-		mind.transfer_to(H)					//won't transfer key since the mind is not active
+		mind.active = FALSE //we wish to transfer the key manually
+		mind.original_character_slot_index = client.prefs.default_slot
+		mind.transfer_to(H) //won't transfer key since the mind is not active
+		mind.set_original_character(H)
 
 	H.name = real_name
 	client.init_verbs()

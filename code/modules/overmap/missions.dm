@@ -50,9 +50,11 @@
 	qdel(src)
 
 /datum/mission/Destroy()
+	UnregisterSignal(source_outpost, COMSIG_PARENT_QDELETING)
 	LAZYREMOVE(source_outpost.missions, src)
 	source_outpost = null
 	if(servant)
+		UnregisterSignal(servant, COMSIG_PARENT_QDELETING)
 		LAZYREMOVE(servant.missions, src)
 		servant = null
 	for(var/bound in bound_atoms)
