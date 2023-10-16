@@ -5,7 +5,7 @@
 	damage = 30
 	armour_penetration = -20
 
-// .50AE (Desert Eagle)
+// .50 AE (Desert Eagle)
 
 /obj/projectile/bullet/a50AE
 	name = ".50 AE bullet"
@@ -16,12 +16,12 @@
 	damage = 60
 	armour_penetration = -50
 
-// .38 (Detective's Gun & Winchester)
+// .38 (Colt Detective Special & Winchester)
 
 /obj/projectile/bullet/c38
-	name = ".38 bullet"
-	damage = 20
-	armour_penetration = -20
+	name = ".38 special bullet"
+	damage = 25
+	armour_penetration = -30
 	ricochets_max = 2
 	ricochet_chance = 50
 	ricochet_auto_aim_angle = 10
@@ -29,6 +29,8 @@
 
 /obj/projectile/bullet/c38/match
 	name = ".38 match bullet"
+	speed = 0.3
+	armour_penetration = -10
 	ricochets_max = 4
 	ricochet_chance = 100
 	ricochet_auto_aim_angle = 40
@@ -37,10 +39,12 @@
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1
 
-/obj/projectile/bullet/c38/match/bouncy
+/obj/projectile/bullet/c38/match/bouncy // I don't know why this is a subtype of match
 	name = ".38 rubber bullet"
-	damage = 10
-	stamina = 30
+	speed = 0.4
+	damage = 7
+	stamina = 38
+	armour_penetration = -60
 	ricochets_max = 6
 	ricochet_incidence_leeway = 70
 	ricochet_chance = 130
@@ -49,7 +53,7 @@
 
 /obj/projectile/bullet/c38/dumdum
 	name = ".38 dum-dum bullet"
-	damage = 15
+	damage = 20
 	armour_penetration = -50
 	ricochets_max = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
@@ -74,19 +78,17 @@
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
 	name = ".38 hot shot bullet"
-	damage = 20
 	ricochets_max = 0
 
 /obj/projectile/bullet/c38/hotshot/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(6)
+		M.adjust_fire_stacks(3)
 		M.IgniteMob()
 
 /obj/projectile/bullet/c38/iceblox //see /obj/projectile/temp for the original code
 	name = ".38 iceblox bullet"
-	damage = 20
 	var/temperature = 100
 	ricochets_max = 0
 
@@ -96,7 +98,7 @@
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
 
-// .357 (Syndie Revolver)
+// .357 (Syndicate Revolver)
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
@@ -105,6 +107,8 @@
 // admin only really, for ocelot memes
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"
+	speed = 0.3
+	armour_penetration = 10
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
@@ -126,6 +130,8 @@
 
 /obj/projectile/bullet/a4570/match
 	name = ".45-70 match bullet"
+	speed = 0.3
+	armour_penetration = 10
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
