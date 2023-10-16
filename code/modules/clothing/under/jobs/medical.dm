@@ -158,3 +158,26 @@
 	desc = "It's made of a special fiber that provides minor protection against biohazards."
 	icon_state = "emt_skirt"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
+
+/obj/item/clothing/under/rank/medical/gown //Clothing for medical ships
+	name = "patient gown"
+	desc = "A light white gown that allows easy access to any patient who wears this."
+	icon_state = "gownwhite"
+	item_state = "gownwhite"
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+	can_adjust = FALSE
+
+/obj/item/clothing/under/rank/medical/gown/green
+	desc = "A mint green gown that allows medics to save time."
+	icon_state = "gowngreen"
+	item_state = "gowngreen"
+
+/obj/item/clothing/under/rank/medical/gown/blue
+	desc = "A baby blue gown medics give to their patients. For when the patient wants to be EXTRA manly."
+	icon_state = "gownblue"
+	item_state = "gownblue"
+
+/obj/item/clothing/under/rank/medical/gown/pink
+	desc = "Hospital grade pink garments. For when the patient wants to feel pretty in pink."
+	icon_state = "gownpink"
+	icon_state = "gownpink"

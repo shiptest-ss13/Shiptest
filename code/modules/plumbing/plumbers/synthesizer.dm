@@ -99,7 +99,7 @@
 			if(new_reagent in dispensable_reagents)
 				reagent_id = new_reagent
 				. = TRUE
-	update_icon()
+	update_appearance()
 	reagents.clear_reagents()
 
 /obj/machinery/plumbing/synthesizer/update_overlays()

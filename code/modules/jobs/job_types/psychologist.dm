@@ -1,8 +1,6 @@
 //psychologist back :)
 /datum/job/psychologist
 	name = "Psychologist"
-	total_positions = 1
-	spawn_positions = 1
 
 	outfit = /datum/outfit/job/psychologist
 

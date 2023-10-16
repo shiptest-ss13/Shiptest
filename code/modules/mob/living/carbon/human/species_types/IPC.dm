@@ -2,6 +2,8 @@
 	name = "\improper Integrated Positronic Chassis" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
 	sexes = FALSE
+	species_age_min = 0
+	species_age_max = 300
 	species_traits = list(NOTRANSSTING,NOEYESPRITES,NO_DNA_COPY,TRAIT_EASYDISMEMBER,NOZOMBIE,MUTCOLORS,REVIVESBYHEALING,NOHUSK,NOMOUTH,NO_BONES) //all of these + whatever we inherit from the real species
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_VIRUSIMMUNE,TRAIT_NOBREATH,TRAIT_RADIMMUNE,TRAIT_GENELESS,TRAIT_LIMBATTACHMENT)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
@@ -71,12 +73,14 @@
 			mutantbrain = /obj/item/organ/brain/mmi_holder
 		else
 			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
+		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
 	return ..()
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	if(change_screen)
 		change_screen.Remove(C)
+	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
 	saved_screen = C.dna.features["ipc_screen"]
@@ -237,3 +241,7 @@
 			BP.limb_id = chassis_of_choice.limbs_id
 			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"
 			BP.update_limb()
+
+/mob/living/carbon/proc/charge(datum/source, amount, repairs)
+	if(nutrition < NUTRITION_LEVEL_WELL_FED)
+		adjust_nutrition(amount / 10) // The original amount is capacitor_rating*100

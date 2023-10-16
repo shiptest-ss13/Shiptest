@@ -1,7 +1,5 @@
 /datum/job/prisoner
 	name = "Prisoner"
-	total_positions = 0
-	spawn_positions = 2
 
 	outfit = /datum/outfit/job/prisoner
 
@@ -34,6 +32,6 @@
 /datum/outfit/job/prisoner/syndicatepatient
 	name = "Long Term Patient"
 	id = /obj/item/card/id/patient
-	uniform = /obj/item/clothing/under/misc/gown
+	uniform = /obj/item/clothing/under/rank/medical/gown
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/sandal/slippers

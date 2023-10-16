@@ -13,9 +13,9 @@
 		// Cargo Stuff
 		"c-reader", "desttagger", "salestagger", "handlabel", "packagewrap",
 		// Research Stuff
-		"destructive_analyzer", "circuit_imprinter", "experimentor", "rdconsole", "bepis", "rdserver", "design_disk", "tech_disk", "mechfab",
+		"destructive_analyzer", "experimentor", "rdconsole", "bepis", "rdserver", "design_disk", "tech_disk", "mechfab",
 		// Miscellaneous Stufff
-		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon",
+		"paystand", "space_heater", "bucket", "plastic_knife", "plastic_fork", "plastic_spoon", "fax",
 		// Security Stuff
 		"sec_rshot", "sec_beanbag_slug", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38", "buckshot_shell", "beanbag_slug", "rubber_shot",
 		//Handgun Ammo (Security)
@@ -399,17 +399,6 @@
 	prereq_ids = list("emp_adv")
 	design_ids = list("quadultra_micro_laser")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
-	export_price = 5000
-
-/////////////////////////Clown tech/////////////////////////
-/datum/techweb_node/clown
-	id = "clown"
-	display_name = "Clown Technology"
-	description = "Honk?!"
-	prereq_ids = list("base")
-	design_ids = list("air_horn", "honker_main", "honker_peri", "honker_targ", "honk_chassis", "honk_head", "honk_torso", "honk_left_arm", "honk_right_arm",
-	"honk_left_leg", "honk_right_leg", "mech_banana_mortar", "mech_mousetrap_mortar", "mech_honker", "mech_punching_face", "implant_trombone", "borg_transform_clown")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
 ////////////////////////Computer tech////////////////////////
