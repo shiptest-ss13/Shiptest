@@ -406,3 +406,8 @@
 	file_name = "independent_rock"
 	name = "Rock Shuttle"
 	prefix = "NTS"
+
+/datum/map_template/shuttle/subshuttles/heron
+	file_name = "nanotrasen_falcon"
+	name = "Falcon Dropship"
+	prefix = "NTSV"
