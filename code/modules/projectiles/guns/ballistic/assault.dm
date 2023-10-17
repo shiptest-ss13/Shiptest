@@ -204,6 +204,11 @@
 	else
 		return ..()
 
+/obj/item/gun/ballistic/automatic/assualt/e40/can_fire()
+	if(select == 2)
+		return secondary.can_fire()
+	else
+		return ..()
 
 /obj/item/gun/ballistic/automatic/assualt/e40/afterattack(atom/target, mob/living/user, flag, params)
 	if(select == 2)
