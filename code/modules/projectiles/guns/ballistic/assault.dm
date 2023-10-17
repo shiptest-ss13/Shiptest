@@ -222,6 +222,11 @@
 	else
 		..()
 
+/obj/item/gun/ballistic/automatic/assualt/e40/can_shoot()
+	if(select == 2)
+		return secondary.can_shoot()
+	return ..()
+
 /obj/item/gun/ballistic/automatic/assualt/e40/proc/secondary_update_icon()
 	update_icon()
 
