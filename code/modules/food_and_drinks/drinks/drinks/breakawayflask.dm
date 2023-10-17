@@ -55,30 +55,30 @@
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine
 	name = "Vintange Saint-Roumain Ashwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/ash_wine = 45, /datum/reagent/consumable/ethanol/absinthe  = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 45, /datum/reagent/consumable/ethanol/absinthe  = 5)
 	desc = "Ashwine was originally created using herbs native to Illestren, as a means of relaxing after a long hunt. The Saint-Roumain Militia has no prohibition on a little fun."
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine
 	name = "Vintange Saint-Roumain Icewine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/ice_wine = 45, /datum/reagent/consumable/ethanol/sake = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 45, /datum/reagent/consumable/ethanol/sake = 5)
 	desc = "Icewine, inspired by the frigid slopes of the 'Godforsaken Precipice' that forged the group's reputation as valiant survivalists, was engineered to both soothe overheated Hunters and freeze their foes in their tracks."
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine
 	name = "Vintange Saint-Roumain Shockwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/shock_wine = 45, /datum/reagent/consumable/ethanol/vodka = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/shock_wine = 45, /datum/reagent/consumable/ethanol/vodka = 5)
 	desc = "Shockwine, made to invigorate consumers and incapacitate targets, took inspiration from an incident early in the Saint-Roumain Militia's history, when a young Shadow stopped a rampaging beast by plunging an electrical cable that had been dislodged in the fighting into its side."
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine
 	name = "Vintange Saint-Roumain Hearthwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/hearth_wine = 45, /datum/reagent/consumable/ethanol/hcider = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/hearth_wine = 45, /datum/reagent/consumable/ethanol/hcider = 5)
 	desc = "Hearthwine is one of the most important tonics devised by the SRM – both for its potent abilities in staunching wounds or setting enemies aflame, and for its closeness to the divine fire associated with the Ashen Huntsman."
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine
 	name = "Vintange Saint-Roumain Forcewine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/force_wine = 45, /datum/reagent/consumable/ethanol/tequila = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 45, /datum/reagent/consumable/ethanol/tequila = 5)
 	desc = "Forcewine was originally created as a means to create temporary shelters during long tracking expeditions. While the structures proved to be not as versatile in shape as its brewers had hoped, its utility in creating barricades or heming in hostiles was still greatly appreciated."
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
 	name = "Vintange Saint-Roumain Prismwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)
 	desc = "Prismwine is one of the most recent additions to the Saint-Roumain Militia's reserve of trickwines. It was purpose-created for fighting hostiles that utilized more advanced energy projection attacks, such as the cryonic beams of watchers or the laser guns of interstellar pirates."
