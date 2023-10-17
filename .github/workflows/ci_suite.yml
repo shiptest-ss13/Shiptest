@@ -59,7 +59,7 @@ jobs:
           python-version: "3.9"
       - name: Run Check Regex
         run: |
-          tools/bootstrap/python -m ci.check_regex --log-changes-only
+          tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
       - name: Annotate Regex Matches
         if: always()
         run: |

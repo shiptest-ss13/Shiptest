@@ -2,7 +2,7 @@
 //Put handheld rocket launchers here if someone ever decides to make something so hilarious ~Paprika
 
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
-	desc = "A break-operated grenade launcher."
+	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
 	icon_state = "dshotgun_sawn"
 	item_state = "gun"
@@ -22,7 +22,7 @@
 		chamber_round()
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
-	desc = "A 6-shot grenade launcher."
+	desc = "A heavy grenade launcher with an oversized 6-shot cylinder."
 	name = "multi grenade launcher"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
@@ -34,7 +34,7 @@
 
 /obj/item/gun/ballistic/automatic/gyropistol
 	name = "gyrojet pistol"
-	desc = "A prototype pistol designed to fire self propelled rockets."
+	desc = "A prototype pistol designed to fire self-propelled rockets."
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/gun/general/grenade_launch.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m75
@@ -45,7 +45,7 @@
 
 /obj/item/gun/ballistic/rocketlauncher
 	name = "\improper PML-9"
-	desc = "A reusable rocket propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
+	desc = "A reusable rocket-propelled grenade launcher. The words \"NT this way\" and an arrow have been written near the barrel."
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
@@ -75,9 +75,7 @@
 
 /obj/item/gun/ballistic/rocketlauncher/solgov
 	name = "Panzerfaust XII"
-	desc = "The standard recoiless rifle of the Solarian Confederation. Legend goes that every couple of decades, the bureaucracy changes a small part of the rifle, then bumps up the number. Chambered in rockets."
-
+	desc = "The standard recoiless rifle of the Solarian Confederation. Barely varies from previous models."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "panzerfaust"
 	item_state = "panzerfaust"
-

@@ -3,8 +3,6 @@ Assistant
 */
 /datum/job/assistant
 	name = "Assistant"
-	total_positions = 5
-	spawn_positions = 5
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()
 	outfit = /datum/outfit/job/assistant

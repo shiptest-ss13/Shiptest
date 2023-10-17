@@ -235,32 +235,31 @@
 /turf/closed/indestructible/rock
 	name = "dense rock"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
-	icon = 'icons/turf/mining.dmi'
-	icon_state = "rock"
+	icon = 'icons/turf/walls/rock_wall.dmi'
+	icon_state = "rock_wall-0"
+	base_icon_state = "rock_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	no_connector_typecache = list(/turf/closed/mineral, /turf/closed/indestructible/rock)
+	connector_icon = 'icons/turf/connectors/smoothrocks_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	pixel_x = -4
+	pixel_y = -4
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
-	desc = "An extremely densely-packed rock, sheeted over with centuries worth of ice and snow."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "snowrock"
-	bullet_sizzle = TRUE
-	bullet_bounce_sound = null
-
-/turf/closed/indestructible/rock/snow/ice
-	name = "iced rock"
 	desc = "Extremely densely-packed sheets of ice and rock, forged over the years of the harsh cold."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "icerock"
-
-/turf/closed/indestructible/rock/snow/ice/ore
 	icon = 'icons/turf/walls/icerock_wall.dmi'
 	icon_state = "icerock_wall-0"
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	pixel_x = -4
 	pixel_y = -4
-
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
 
 /turf/closed/indestructible/paper
 	name = "thick paper wall"

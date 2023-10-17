@@ -76,6 +76,13 @@
 		GLOB.materials_list[D.id] = D
 	sortList(GLOB.materials_list, /proc/cmp_typepaths_asc)
 
+	//Default Jobs
+	for(var/path in subtypesof(/datum/job))
+		var/datum/job/new_job = new path()
+		GLOB.occupations += new_job
+		GLOB.name_occupations[new_job.name] = new_job
+		GLOB.type_occupations[path] = new_job
+
 	// Keybindings
 	init_keybindings()
 

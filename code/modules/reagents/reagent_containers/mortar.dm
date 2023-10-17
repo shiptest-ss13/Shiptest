@@ -53,7 +53,7 @@ to accommodate additional materials.
 		)
 		var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
 
-		if(!grinded || !in_range(src, user) || !user.is_holding(attacking_item) && !picked_option)
+		if(!grinded || !in_range(src, user) || !user.is_holding(attacking_item) || !picked_option)
 			return
 
 		balloon_alert(user, "grinding...")
@@ -68,12 +68,14 @@ to accommodate additional materials.
 					juice_target_item(grinded, user)
 				else
 					grind_target_item(grinded, user)
+				grinded = null
 
 			if("Grind")
 				if(grinded.grind_results)
 					grind_target_item(grinded, user)
 				else
 					juice_target_item(grinded, user)
+				grinded = null
 		return
 
 	if(!attacking_item.juice_results && !attacking_item.grind_results)

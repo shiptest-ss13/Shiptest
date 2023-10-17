@@ -64,12 +64,19 @@
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
+		var/paralyze_dur
 		if(!iscarbon(M))
 			reac_volume = reac_volume * 2
-		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT)
-		M.Paralyze(reac_volume)
+			paralyze_dur = reac_volume
+		else
+			if(reac_volume <= 50)
+				paralyze_dur = reac_volume
+			else
+				paralyze_dur = 50 + ((reac_volume - 50) / 4)
+		M.adjust_bodytemperature((-20*reac_volume) * TEMPERATURE_DAMAGE_COEFFICIENT, 50)
+		M.Paralyze(paralyze_dur)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
-		M.apply_status_effect(/datum/status_effect/ice_block_talisman,reac_volume)
+		M.apply_status_effect(/datum/status_effect/ice_block_talisman, paralyze_dur)
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine
 	name = "Shockwine"
@@ -125,14 +132,12 @@
 		M.fire_act()
 		var/turf/T = get_turf(M)
 		T.IgniteTurf(reac_volume)
-		new /obj/effect/hotspot(T)
-		T.hotspot_expose(reac_volume*10,reac_volume*1)
+		new /obj/effect/hotspot(T, reac_volume * 1, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + reac_volume * 10)
 		var/turf/otherT
 		for(var/direction in GLOB.cardinals)
 			otherT = get_step(T, direction)
 			otherT.IgniteTurf(reac_volume)
-			new /obj/effect/hotspot(otherT)
-			otherT.hotspot_expose(reac_volume*10,reac_volume*1)
+			new /obj/effect/hotspot(otherT, reac_volume * 1, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + reac_volume * 10)
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
@@ -193,10 +198,10 @@
 			var/mob/living/simple_animal/hostile/asteroid/the_animal = M
 			the_animal.armor.modifyRating(energy = -50)
 			spawn(reac_volume SECONDS)
-			the_animal.armor.modifyRating(energy = 50)
+				the_animal.armor.modifyRating(energy = 50)
 		if(ishuman(M))
 			var/mob/living/carbon/human/the_human = M
-			if(the_human.physiology.burn_mod <= 2)
+			if(the_human.physiology.burn_mod < 2)
 				the_human.physiology.burn_mod *= 2
 				the_human.visible_message("<span class='warning'>[the_human] seemed weakend!</span>")
 				spawn(reac_volume SECONDS)

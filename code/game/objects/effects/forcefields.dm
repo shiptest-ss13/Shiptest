@@ -8,11 +8,11 @@
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	var/timeleft = 300 //Set to 0 for permanent forcefields (ugh)
 
-/obj/effect/forcefield/Initialize(mapload, reac_volume)
+/obj/effect/forcefield/Initialize(mapload, new_timeleft)
 	. = ..()
 	//used to change the time for forcewine
-	if(reac_volume)
-		timeleft = reac_volume
+	if(new_timeleft)
+		timeleft = new_timeleft
 	if(timeleft)
 		QDEL_IN(src, timeleft)
 
@@ -41,7 +41,7 @@
 	timeleft = 600
 
 /obj/effect/forcefield/resin
-	desc = "Its rapidly decaying!"
+	desc = "It's rapidly decaying!"
 	name = "resin"
 	icon_state = "atmos_resin"
 	CanAtmosPass = ATMOS_PASS_NO

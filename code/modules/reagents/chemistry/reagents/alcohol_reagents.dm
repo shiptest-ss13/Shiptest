@@ -73,7 +73,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(!isliving(M))
 		return
 
-	if(method in list(TOUCH, VAPOR, PATCH))
+	if(method in list(TOUCH, SMOKE, VAPOR, PATCH))
 		M.adjust_fire_stacks(reac_volume / 15)
 
 		if(iscarbon(M))
@@ -501,15 +501,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "cubalibreglass"
 	glass_name = "Cuba Libre"
 	glass_desc = "A classic mix of rum, cola, and lime. A favorite of revolutionaries everywhere!"
-
-/datum/reagent/consumable/ethanol/cuba_libre/on_mob_life(mob/living/carbon/M)
-	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev)) //Cuba Libre, the traditional drink of revolutions! Heals revolutionaries.
-		M.adjustBruteLoss(-1, 0)
-		M.adjustFireLoss(-1, 0)
-		M.adjustToxLoss(-1, 0)
-		M.adjustOxyLoss(-5, 0)
-		. = 1
-	return ..() || .
 
 /datum/reagent/consumable/ethanol/whiskey_cola
 	name = "Whiskey Cola"
@@ -2442,7 +2433,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
 
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
-	if(method == INGEST || method == TOUCH)
+	if(method == INGEST || method == TOUCH || method == SMOKE)
 		if(istype(consumer))
 			consumer.hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
 			consumer.facial_hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
