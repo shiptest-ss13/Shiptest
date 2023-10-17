@@ -198,7 +198,6 @@
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assualt/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
-	. = ..()
 	if(select == 2)
 		secondary.process_fire(target, user, message, params, zone_override, bonus_spread)
 	else
