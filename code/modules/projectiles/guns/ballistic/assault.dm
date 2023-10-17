@@ -268,7 +268,3 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault)
 	fire_delay = 2
-
-/obj/item/gun/energy/laser/e40_laser_secondary/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
