@@ -168,7 +168,12 @@
 /datum/sprite_accessory/frills/none
 	name = "None"
 	icon_state = "none"
-
+//Ears are here because having frills+ears would overlap and be weird.
+/datum/sprite_accessory/frills/ears
+	name = "Normal ears"
+	icon_state = "ears"
+	hasinner = TRUE
+//End ears
 /datum/sprite_accessory/frills/simple
 	name = "Simple"
 	icon_state = "simple"

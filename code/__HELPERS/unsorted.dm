@@ -660,6 +660,11 @@ will handle it, but:
 	if(!istype(AM))
 		return
 
+	//Find coordinates
+	var/turf/T = get_turf(AM) //use checked_atom's turfs, as it's coords are the same as checked_atom's AND checked_atom's coords are lost if it is inside another atom
+	if(!T)
+		return null
+
 	//Find AM's matrix so we can use it's X/Y pixel shifts
 	var/matrix/M = matrix(AM.transform)
 
@@ -678,10 +683,6 @@ will handle it, but:
 	var/rough_x = round(round(pixel_x_offset,world.icon_size)/world.icon_size)
 	var/rough_y = round(round(pixel_y_offset,world.icon_size)/world.icon_size)
 
-	//Find coordinates
-	var/turf/T = get_turf(AM) //use AM's turfs, as it's coords are the same as AM's AND AM's coords are lost if it is inside another atom
-	if(!T)
-		return null
 	var/final_x = T.x + rough_x
 	var/final_y = T.y + rough_y
 
@@ -1381,7 +1382,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 // Makes a call in the context of a different usr
 // Use sparingly
-/world/proc/PushUsr(mob/M, datum/callback/CB, ...)
+/world/proc/push_usr(mob/M, datum/callback/CB, ...)
 	var/temp = usr
 	usr = M
 	if (length(args) > 2)
