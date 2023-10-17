@@ -55,29 +55,6 @@
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine
 	name = "Vintange Saint-Roumain Ashwine"
-<<<<<<< HEAD
-	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 45, /datum/reagent/consumable/ethanol/absinthe  = 5)
-
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine
-	name = "Vintange Saint-Roumain Icewine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 45, /datum/reagent/consumable/ethanol/sake = 5)
-
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine
-	name = "Vintange Saint-Roumain Shockwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/shock_wine = 45, /datum/reagent/consumable/ethanol/vodka = 5)
-
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine
-	name = "Vintange Saint-Roumain Hearthwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/hearth_wine = 45, /datum/reagent/consumable/ethanol/hcider = 5)
-
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine
-	name = "Vintange Saint-Roumain Forcewine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 45, /datum/reagent/consumable/ethanol/tequila = 5)
-
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
-	name = "Vintange Saint-Roumain Prismwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)
-=======
 	list_reagents = list(/datum/reagent/consumable/ethanol/ash_wine = 45, /datum/reagent/consumable/ethanol/absinthe  = 5)
 	desc = "Ashwine was originally created using herbs native to Illestren, as a means of relaxing after a long hunt. The Saint-Roumain Militia has no prohibition on a little fun."
 
@@ -105,4 +82,3 @@
 	name = "Vintange Saint-Roumain Prismwine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)
 	desc = "Prismwine is one of the most recent additions to the Saint-Roumain Militia's reserve of trickwines. It was purpose-created for fighting hostiles that utilized more advanced energy projection attacks, such as the cryonic beams of watchers or the laser guns of interstellar pirates."
->>>>>>> a6b18d547a3847b10b59ebf359617e56ac025d90
