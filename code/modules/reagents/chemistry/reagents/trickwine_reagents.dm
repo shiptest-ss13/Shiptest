@@ -1,6 +1,6 @@
 /datum/reagent/consumable/ethanol/trickwine
 	name = "Trickwine"
-	desc = "How is this even possible"
+	description = "How is this even possible"
 
 /datum/reagent/consumable/ethanol/trickwine/on_mob_end_metabolize(mob/living/L)
 	//SSblackbox.record_feedback("nested tally", "trickwine_drank", 1, list("[name]", "[L]"))
