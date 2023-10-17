@@ -53,24 +53,24 @@
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine
 	name = "Vintange Saint-Roumain Ashwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/ash_wine = 45, /datum/reagent/consumable/ethanol/absinthe  = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 45, /datum/reagent/consumable/ethanol/absinthe  = 5)
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine
 	name = "Vintange Saint-Roumain Icewine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/ice_wine = 45, /datum/reagent/consumable/ethanol/sake = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 45, /datum/reagent/consumable/ethanol/sake = 5)
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine
 	name = "Vintange Saint-Roumain Shockwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/shock_wine = 45, /datum/reagent/consumable/ethanol/vodka = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/shock_wine = 45, /datum/reagent/consumable/ethanol/vodka = 5)
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine
 	name = "Vintange Saint-Roumain Hearthwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/hearth_wine = 45, /datum/reagent/consumable/ethanol/hcider = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/hearth_wine = 45, /datum/reagent/consumable/ethanol/hcider = 5)
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine
 	name = "Vintange Saint-Roumain Forcewine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/force_wine = 45, /datum/reagent/consumable/ethanol/tequila = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 45, /datum/reagent/consumable/ethanol/tequila = 5)
 
 /obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine
 	name = "Vintange Saint-Roumain Prismwine"
-	list_reagents = list(/datum/reagent/consumable/ethanol/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)
+	list_reagents = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 45, /datum/reagent/consumable/ethanol/gin = 5)

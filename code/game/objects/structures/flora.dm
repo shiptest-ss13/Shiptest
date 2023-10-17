@@ -730,7 +730,7 @@
 	var/apple_direction = SOUTH
 	//Determines the health gained/lost when feeding the tree this chem
 	var/list/healthchems = list(
-		/datum/reagent/consumable/ethanol/ash_wine = 0.8,
+		/datum/reagent/consumable/ethanol/trickwine/ash_wine = 0.8,
 		/datum/reagent/water = 0.1,
 		/datum/reagent/plantnutriment = 0.2,
 		/datum/reagent/medicine/earthsblood = 1,

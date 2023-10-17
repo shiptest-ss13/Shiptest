@@ -1,4 +1,16 @@
-/datum/reagent/consumable/ethanol/ash_wine
+/datum/reagent/consumable/ethanol/trickwine
+	name = "Trickwine"
+	desc = "How is this even possible"
+
+/datum/reagent/consumable/ethanol/trickwine/on_mob_end_metabolize(mob/living/L)
+	//SSblackbox.record_feedback("nested tally", "trickwine_drank", 1, list("[name]", "[L]"))
+	return ..()
+
+/datum/reagent/consumable/ethanol/trickwine/ash_wine/expose_mob(mob/living/L, method=TOUCH, reac_volume)
+	//SSblackbox.record_feedback("nested tally", "trickwine_thrown", 1, list("[name]", "[L]"))
+	return ..()
+
+/datum/reagent/consumable/ethanol/trickwine/ash_wine
 	name = "Ashwine"
 	description = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
 	color = "#293D25"
@@ -9,7 +21,7 @@
 	glass_desc = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
 	breakaway_flask_icon_state = "baflaskashwine"
 
-/datum/reagent/consumable/ethanol/ash_wine/on_mob_life(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/ash_wine/on_mob_life(mob/living/M)
 	var/high_message = pick("You feel far more devoted to the cause", "You feel like you should go on a hunt")
 	var/cleanse_message = pick("Divine light purifies you.", "You are purged of foul spirts.")
 	if(prob(10))
@@ -22,7 +34,7 @@
 	..()
 	. = 1
 
-/datum/reagent/consumable/ethanol/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/consumable/ethanol/trickwine/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(!iscarbon(M))
 			var/mob/living/simple_animal/hostile/hostile_target = M
@@ -34,7 +46,7 @@
 		M.set_drugginess(3 * reac_volume)
 		M.emote(pick("twitch","giggle"))
 
-/datum/reagent/consumable/ethanol/ice_wine
+/datum/reagent/consumable/ethanol/trickwine/ice_wine
 	name = "Icewine"
 	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	color = "#21EFEB"
@@ -44,13 +56,13 @@
 	glass_desc = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
 	breakaway_flask_icon_state = "baflaskicewine"
 
-/datum/reagent/consumable/ethanol/ice_wine/on_mob_life(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	M.adjustFireLoss(-1)
 	..()
 	. = 1
 
-/datum/reagent/consumable/ethanol/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/consumable/ethanol/trickwine/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(!iscarbon(M))
 			reac_volume = reac_volume * 2
@@ -59,7 +71,7 @@
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman,reac_volume)
 
-/datum/reagent/consumable/ethanol/shock_wine
+/datum/reagent/consumable/ethanol/trickwine/shock_wine
 	name = "Shockwine"
 	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
 	color = "#00008b"
@@ -69,17 +81,17 @@
 	glass_desc = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
 	breakaway_flask_icon_state = "baflaskshockwine"
 
-/datum/reagent/consumable/ethanol/shock_wine/on_mob_metabolize(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/shock_wine/on_mob_metabolize(mob/living/M)
 	..()
 	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 	to_chat(M, "<span class='notice'>You feel faster the lightning!</span>")
 
-/datum/reagent/consumable/ethanol/shock_wine/on_mob_end_metabolize(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/shock_wine/on_mob_end_metabolize(mob/living/M)
 	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 	to_chat(M, "<span class='notice'>You slow to a crawl...</span>")
 	..()
 
-/datum/reagent/consumable/ethanol/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/consumable/ethanol/trickwine/shock_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		//simple mobs are so tanky and i want this to be useful on them
 		if(iscarbon(M))
@@ -88,7 +100,7 @@
 		do_sparks(5, FALSE, M)
 		playsound(M, 'sound/machines/defib_zap.ogg', 100, TRUE)
 
-/datum/reagent/consumable/ethanol/hearth_wine
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine
 	name = "Hearthwine"
 	description = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
 	color = "#ff8c00"
@@ -98,7 +110,7 @@
 	glass_desc = "Fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
 	breakaway_flask_icon_state = "baflaskhearthwine"
 
-/datum/reagent/consumable/ethanol/hearth_wine/on_mob_life(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
@@ -106,7 +118,7 @@
 	..()
 	. = 1
 
-/datum/reagent/consumable/ethanol/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/consumable/ethanol/trickwine/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(!iscarbon(M))
 			reac_volume = reac_volume * 2
@@ -122,7 +134,7 @@
 			new /obj/effect/hotspot(otherT)
 			otherT.hotspot_expose(reac_volume*10,reac_volume*1)
 
-/datum/reagent/consumable/ethanol/force_wine
+/datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
 	description = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
 	color = "#8b009b"
@@ -132,7 +144,7 @@
 	glass_desc = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
 	breakaway_flask_icon_state = "baflaskforcewine"
 
-/datum/reagent/consumable/ethanol/force_wine/on_mob_metabolize(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/force_wine/on_mob_metabolize(mob/living/M)
 	..()
 	ADD_TRAIT(M, TRAIT_ANTIMAGIC, "trickwine")
 	ADD_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
@@ -144,7 +156,7 @@
 	REMOVE_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
 	..()
 
-/datum/reagent/consumable/ethanol/force_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/consumable/ethanol/trickwine/force_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(!iscarbon(M))
 			reac_volume = reac_volume * 2
@@ -155,7 +167,7 @@
 			otherT = get_step(T, direction)
 			new /obj/effect/forcefield/resin(otherT, reac_volume * 4)
 
-/datum/reagent/consumable/ethanol/prism_wine
+/datum/reagent/consumable/ethanol/trickwine/prism_wine
 	name = "Prismwine"
 	description = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
 	color = "#add8e6"
@@ -165,17 +177,17 @@
 	glass_desc = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
 	breakaway_flask_icon_state = "baflaskprismwine"
 
-/datum/reagent/consumable/ethanol/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
+/datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
 	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 0.5
 		M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
 
-/datum/reagent/consumable/ethanol/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
+/datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
 	if(M.physiology.burn_mod > initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 2
 		M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
 
-/datum/reagent/consumable/ethanol/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+/datum/reagent/consumable/ethanol/trickwine/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
 		if(istype(M, /mob/living/simple_animal/hostile/asteroid))
 			var/mob/living/simple_animal/hostile/asteroid/the_animal = M
