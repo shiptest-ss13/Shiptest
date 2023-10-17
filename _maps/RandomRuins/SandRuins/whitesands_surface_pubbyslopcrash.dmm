@@ -70,14 +70,6 @@
 "bZ" = (
 /turf/open/floor/plating/asteroid/whitesands,
 /area/overmap_encounter/planetoid/sand)
-"ci" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "ck" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -210,12 +202,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
-"fo" = (
-/obj/structure/spacepoddoor{
-	dir = 4
-	},
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "fA" = (
 /obj/machinery/light/directional/east,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -412,12 +398,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbycrash)
-"ja" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "jt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance/two,
@@ -930,13 +910,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
-"tZ" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "uh" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
@@ -1062,10 +1035,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/whitesands/pubbycrash)
-"wX" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "xa" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1116,9 +1085,6 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/noticeboard{
 	pixel_y = 31
-	},
-/obj/structure/sign/painting/library{
-	pixel_x = 32
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -1309,15 +1275,6 @@
 /obj/effect/decal/cleanable/vomit/old,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
-"BY" = (
-/obj/structure/spacepoddoor{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/multi_tile/four_tile_hor{
-	id = "pubbywspodsw"
-	},
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "Cg" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical{
@@ -1367,10 +1324,6 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/asteroid/whitesands/lit,
 /area/overmap_encounter/planetoid/sand)
-"CI" = (
-/obj/effect/turf_decal/industrial/warning,
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "Dg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1451,15 +1404,6 @@
 /obj/machinery/door/airlock/public/glass,
 /turf/open/floor/plasteel,
 /area/ruin/whitesands/pubbycrash)
-"Ek" = (
-/obj/structure/spacepoddoor{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/multi_tile/four_tile_hor{
-	id = "pubbywspodnw"
-	},
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "Em" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash{
@@ -1763,14 +1707,6 @@
 /obj/item/stack/ore/salvage/scrapgold,
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
-"KD" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "KI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/plasma,
@@ -2117,11 +2053,6 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/dark,
 /area/ruin/whitesands/pubbycrash)
-"RN" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "RT" = (
 /turf/closed/mineral/random/whitesands,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -2764,7 +2695,7 @@ RT
 RT
 RT
 RT
-Ek
+RT
 AK
 aR
 Sy
@@ -2776,7 +2707,7 @@ AO
 jt
 Mi
 ek
-BY
+RT
 RT
 RT
 Vt
@@ -2791,9 +2722,9 @@ RT
 RT
 RT
 RT
-fo
-tZ
-KD
+RT
+RT
+RT
 Bz
 pT
 JI
@@ -2801,9 +2732,9 @@ Lm
 BH
 KS
 up
-ci
-RN
-fo
+RT
+RT
+RT
 RT
 RT
 Vt
@@ -2818,8 +2749,8 @@ Gl
 RT
 RT
 RT
-fo
-ja
+RT
+RT
 gL
 vc
 bW
@@ -2829,8 +2760,8 @@ Ct
 gy
 fX
 vc
-CI
-fo
+RT
+RT
 RT
 RT
 bZ
@@ -2845,7 +2776,7 @@ Gl
 Gl
 RT
 RT
-fo
+RT
 pR
 eq
 vL
@@ -2857,7 +2788,7 @@ lK
 pA
 VG
 WD
-fo
+RT
 RT
 RT
 bZ
@@ -3226,7 +3157,7 @@ RT
 RT
 RT
 RT
-wX
+RT
 Mr
 Dn
 lA
