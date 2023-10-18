@@ -203,9 +203,9 @@
 	else
 		return ..()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/can_fire()
+/obj/item/gun/ballistic/automatic/assualt/e40/can_shoot()
 	if(select == 2)
-		return secondary.can_fire()
+		return secondary.can_shoot()
 	else
 		return ..()
 
