@@ -78,8 +78,6 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_legs, GLOB.spider_legs_list)
 	if(!GLOB.spider_spinneret_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_spinneret, GLOB.spider_spinneret_list)
-	if(!GLOB.spider_mandibles_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_mandibles, GLOB.spider_mandibles_list)
 	if(!GLOB.kepori_feathers_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_feathers_list)
 	if(!GLOB.kepori_tail_feathers_list.len)
@@ -118,7 +116,6 @@
 		"moth_wings" = pick(GLOB.moth_wings_list),
 		"face_markings" = pick(GLOB.face_markings_list),
 		"spider_legs" = pick(GLOB.spider_legs_list),
-		"spider_mandibles" = pick(GLOB.spider_mandibles_list),
 		"spider_spinneret" = pick(GLOB.spider_spinneret_list),
 		"spines" = pick(GLOB.spines_list),
 		"squid_face" = pick(GLOB.squid_face_list),
