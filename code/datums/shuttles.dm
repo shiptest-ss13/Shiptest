@@ -407,7 +407,6 @@
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
-
 //your subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
