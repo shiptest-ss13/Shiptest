@@ -671,10 +671,9 @@
 		new /obj/item/grenade/c4/x4(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/firestarter
-	desc = "A large duffel bag containing a New Russian pyro backpack sprayer, Elite hardsuit, a Stechkin APS pistol, minibomb, ammo, and other equipment."
+	desc = "A large duffel bag containing a pyro backpack sprayer, Elite hardsuit, a Stechkin APS pistol, minibomb, ammo, and other equipment."
 
 /obj/item/storage/backpack/duffelbag/syndie/firestarter/PopulateContents()
-	new /obj/item/clothing/under/syndicate/soviet(src)
 	new /obj/item/watertank/op(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
 	new /obj/item/gun/ballistic/automatic/pistol/APS(src)
