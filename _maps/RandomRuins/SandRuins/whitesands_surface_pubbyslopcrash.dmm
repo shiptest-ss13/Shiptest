@@ -697,12 +697,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/whitesands/pubbycrash)
-"pA" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
-	},
-/turf/closed/mineral/random/whitesands,
-/area/overmap_encounter/planetoid/cave/explored)
 "pE" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -1227,19 +1221,6 @@
 /area/ruin/whitesands/pubbycrash)
 "AJ" = (
 /turf/closed/wall/mineral/titanium,
-/area/ruin/whitesands/pubbycrash)
-"AK" = (
-/obj/effect/turf_decal/industrial/stand_clear,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "pubbywspodnw";
-	name = "Pod Door Control";
-	pixel_x = -25
-	},
-/obj/machinery/light/directional/west,
-/turf/closed/mineral/random/whitesands,
 /area/ruin/whitesands/pubbycrash)
 "AO" = (
 /obj/machinery/light/directional/west,
@@ -2696,7 +2677,7 @@ RT
 RT
 RT
 RT
-AK
+RT
 aR
 Sy
 ET
@@ -2785,7 +2766,7 @@ KI
 QD
 vw
 lK
-pA
+RT
 VG
 WD
 RT
