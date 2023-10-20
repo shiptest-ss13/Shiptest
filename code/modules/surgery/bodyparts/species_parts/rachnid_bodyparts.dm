@@ -19,7 +19,7 @@
 /obj/item/bodypart/r_arm/rachnid
 	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
-	should_draw_greyscale = FALSE 
+	should_draw_greyscale = FALSE
 
 /obj/item/bodypart/leg/left/rachnid
 	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
