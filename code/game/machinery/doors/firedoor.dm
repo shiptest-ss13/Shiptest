@@ -495,7 +495,7 @@
 	density = TRUE
 	var/constructionStep = CONSTRUCTION_NOCIRCUIT
 	var/reinforced = 0
-	var/firelock_type
+	var/firelock_type = /obj/machinery/door/firedoor/closed
 
 /obj/structure/firelock_frame/examine(mob/user)
 	. = ..()
