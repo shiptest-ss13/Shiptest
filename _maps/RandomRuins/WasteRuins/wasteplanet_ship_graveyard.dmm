@@ -7074,6 +7074,10 @@
 	pixel_y = -6;
 	pixel_x = -7
 	},
+/obj/item/toy/plush/beeplushie{
+	pixel_x = 12;
+	pixel_y = -9
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/wasteplanet_graveyard/shippy)
 "AD" = (
@@ -8937,14 +8941,6 @@
 	icon_state = "foam_plating"
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
-"HX" = (
-/obj/structure/bed{
-	icon_state = "dirty_mattress";
-	pixel_x = -8;
-	pixel_y = 8
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
 "HY" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -20163,7 +20159,7 @@ Ec
 lF
 lS
 xI
-HX
+xI
 xI
 xI
 xI
