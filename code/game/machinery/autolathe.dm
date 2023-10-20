@@ -351,9 +351,10 @@
 		for(var/i=1, i<=multiplier, i++)
 			var/obj/item/new_item = new being_built.build_path(A)
 			new_item.autolathe_crafted(src)
-			if(locate(being_built.type) in d_disk.blueprints)
-				d_disk.used_charges += 1
-				d_disk.check_charges()
+			if(d_disk)
+				if(locate(being_built.type) in d_disk.blueprints)
+					d_disk.used_charges += 1
+					d_disk.check_charges()
 			if(length(picked_materials))
 				new_item.set_custom_materials(picked_materials, 1 / multiplier) //Ensure we get the non multiplied amount
 				for(var/x in picked_materials)

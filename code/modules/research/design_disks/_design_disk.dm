@@ -82,7 +82,7 @@
 	. = ..()
 	pixel_x = base_pixel_x + rand(-5, 5)
 	pixel_y = base_pixel_y + rand(-5, 5)
-	blueprints = new(max_blueprints)
+	blueprints = new/list(max_blueprints)
 
 /obj/item/disk/design_disk/examine(user)
 	. = ..()
