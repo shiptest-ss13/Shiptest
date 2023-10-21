@@ -3,11 +3,11 @@
 	description = "How is this even possible"
 
 /datum/reagent/consumable/ethanol/trickwine/on_mob_end_metabolize(mob/living/L)
-	//SSblackbox.record_feedback("nested tally", "trickwine_drank", 1, list("[name]", "[L]"))
+	SSblackbox.record_feedback("nested tally", "trickwine_drank", 1, list("[name]", "[L]"))
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	//SSblackbox.record_feedback("nested tally", "trickwine_thrown", 1, list("[name]", "[L]"))
+	SSblackbox.record_feedback("nested tally", "trickwine_thrown", 1, list("[name]", "[L]"))
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
@@ -155,7 +155,7 @@
 	ADD_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
 	M.visible_message("<span class='warning'>[M] glows a dim grey aura</span>")
 
-/datum/reagent/consumable/ethanol/force_wine/on_mob_end_metabolize(mob/living/M)
+/datum/reagent/consumable/ethanol/trickwine/force_wine/on_mob_end_metabolize(mob/living/M)
 	M.visible_message("<span class='warning'>[M]'s aura fades away </span>")
 	REMOVE_TRAIT(M, TRAIT_ANTIMAGIC, "trickwine")
 	REMOVE_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
