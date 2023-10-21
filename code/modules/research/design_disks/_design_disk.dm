@@ -106,8 +106,15 @@
 			illustration = "depleted"
 	update_icon()
 
+/obj/item/disk/design_disk/basic
+	name = "design disk - low capacity"
+	desc = "A disk for storing device design data for construction in lathes. This one has a little bit of extra storage space."
+	color = "#2ab44f"
+	max_blueprints = 2
+	modifiable = TRUE
+
 /obj/item/disk/design_disk/adv
-	name = "Advanced Component Design Disk"
+	name = "design disk - medium capacity"
 	desc = "A disk for storing device design data for construction in lathes. This one has a little bit of extra storage space."
 	color = "#bed876"
 	max_blueprints = 3
@@ -119,7 +126,7 @@
 							)
 
 /obj/item/disk/design_disk/super
-	name = "Super Component Design Disk"
+	name = "design disk - high capacity"
 	desc = "A disk for storing device design data for construction in lathes. This one has more extra storage space."
 	color = "#c25454"
 	max_blueprints = 5
@@ -132,7 +139,7 @@
 							)
 
 /obj/item/disk/design_disk/elite
-	name = "Elite Component Design Disk"
+	name = "design disk - super capacity"
 	color = "#333333"
 	desc = "A disk for storing device design data for construction in lathes. This one has absurd amounts of extra storage space."
 	max_blueprints = 10

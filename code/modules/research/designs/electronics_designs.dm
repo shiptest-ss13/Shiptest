@@ -77,7 +77,7 @@
 	id = "design_disk"
 	build_type = PROTOLATHE | AUTOLATHE
 	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
-	build_path = /obj/item/disk/design_disk
+	build_path = /obj/item/disk/design_disk/basic
 	category = list("Electronics")
 
 /datum/design/design_disk_adv
