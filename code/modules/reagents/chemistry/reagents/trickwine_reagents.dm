@@ -2,12 +2,9 @@
 	name = "Trickwine"
 	description = "How is this even possible"
 
-/datum/reagent/consumable/ethanol/trickwine/on_mob_end_metabolize(mob/living/L)
-	SSblackbox.record_feedback("nested tally", "trickwine_drank", 1, list("[name]", "[L]"))
-	return ..()
-
-/datum/reagent/consumable/ethanol/trickwine/ash_wine/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	SSblackbox.record_feedback("nested tally", "trickwine_thrown", 1, list("[name]", "[L]"))
+/datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/L, method=TOUCH, reac_volume)
+	SSblackbox.record_feedback("nested tally", "trickwine_thrown", 1, list("[name]", "[L]", "[method]", "[reac_volume]"))
+	//L.visible_message("<span class='warning'>[L], [name], [method], [reac_volume] expose test</span>")
 	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
@@ -31,8 +28,7 @@
 		M.adjustToxLoss(-2)
 		if(prob(10))
 			to_chat(M, "<span class='notice'>[cleanse_message]</span>")
-	..()
-	. = 1
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ash_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -45,6 +41,7 @@
 		M.Dizzy(2 * reac_volume)
 		M.set_drugginess(3 * reac_volume)
 		M.emote(pick("twitch","giggle"))
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
 	name = "Icewine"
@@ -59,8 +56,8 @@
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/on_mob_life(mob/living/M)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	M.adjustFireLoss(-1)
-	..()
-	. = 1
+	return ..()
+
 
 /datum/reagent/consumable/ethanol/trickwine/ice_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -77,6 +74,7 @@
 		M.Paralyze(paralyze_dur)
 		walk(M, 0) //stops them mid pathing even if they're stunimmunee
 		M.apply_status_effect(/datum/status_effect/ice_block_talisman, paralyze_dur)
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine
 	name = "Shockwine"
@@ -106,6 +104,7 @@
 		M.electrocute_act(reac_volume, src, siemens_coeff = 1, flags = SHOCK_NOSTUN|SHOCK_TESLA)
 		do_sparks(5, FALSE, M)
 		playsound(M, 'sound/machines/defib_zap.ogg', 100, TRUE)
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine
 	name = "Hearthwine"
@@ -122,8 +121,7 @@
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		H.bleed_rate = max(H.bleed_rate - 0.25, 0)
-	..()
-	. = 1
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -138,6 +136,7 @@
 			otherT = get_step(T, direction)
 			otherT.IgniteTurf(reac_volume)
 			new /obj/effect/hotspot(otherT, reac_volume * 1, FIRE_MINIMUM_TEMPERATURE_TO_EXIST + reac_volume * 10)
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
@@ -171,6 +170,7 @@
 		for(var/direction in GLOB.cardinals)
 			otherT = get_step(T, direction)
 			new /obj/effect/forcefield/resin(otherT, reac_volume * 4)
+	return ..()
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine
 	name = "Prismwine"
@@ -183,6 +183,7 @@
 	breakaway_flask_icon_state = "baflaskprismwine"
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
+	..()
 	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 0.5
 		M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
@@ -191,6 +192,7 @@
 	if(M.physiology.burn_mod > initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 2
 		M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
+	..()
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH)
@@ -207,3 +209,4 @@
 				spawn(reac_volume SECONDS)
 					the_human.physiology.burn_mod *= 0.5
 					the_human.visible_message("<span class='warning'>[the_human] has returned to normal!</span>")
+	return ..()
