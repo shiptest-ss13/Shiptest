@@ -132,6 +132,12 @@
 	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
 	suffix = "jungle_medtech_outbreak.dmm"
 
+/datum/map_template/ruin/jungle/cavecrew
+	name = "Frontiersmen Cave"
+	id = "cavecrew"
+	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
+	suffix = "jungle_cavecrew.dmm"
+
 /datum/map_template/ruin/jungle/library
 	name = "Abandoned Library"
 	id = "abandoned-library"

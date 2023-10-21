@@ -147,6 +147,11 @@
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	back = /obj/item/minigunpack
 
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
+	outfit = /datum/outfit/russiancorpse/trooper/heavy/gunless
+
+/datum/outfit/russiancorpse/trooper/heavy/gunless
+	back = null
 
 /obj/effect/mob_spawn/human/corpse/wizard
 	name = "Space Wizard Corpse"
