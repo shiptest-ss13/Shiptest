@@ -4,7 +4,7 @@
 
 // MEDICAL AND SURGICAL
 
-/obj/item/disk/design_disk/medical/ //Medical parent type
+/obj/item/disk/design_disk/medical //Medical parent type
 	name = "design disk - Medical"
 	desc = "A design disk containing medical equipment."
 	color = "#57b8f0"

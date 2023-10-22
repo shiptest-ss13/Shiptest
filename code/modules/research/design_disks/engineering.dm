@@ -90,23 +90,7 @@
 	blueprints[4] = new /datum/design/subspace_analyzer
 	blueprints[5] = new /datum/design/subspace_crystal
 	blueprints[6] = new /datum/design/subspace_transmitter
-
-/obj/item/disk/design_disk/engineering/telecommsboards
-	name = "design disk - Telecommunications Circuits"
-	desc = "A design disk containing designs for telecommunications circuit boards."
-	max_blueprints = 7
-
-/obj/item/disk/design_disk/engineering/telecomms/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/board/subspace_receiver
-	blueprints[2] = new /datum/design/board/subspace_broadcaster
-	blueprints[3] = new /datum/design/board/telecomms_bus
-	blueprints[4] = new /datum/design/board/telecomms_relay
-	blueprints[5] = new /datum/design/board/telecomms_processor
-	blueprints[6] = new /datum/design/board/telecomms_server
-	blueprints[7] = new /datum/design/board/telecomms_hub
-	blueprints[8] = new /datum/design/board/subspace_broadcaster
-
+	
 // LIMITED USE DISKS PAST HERE
 
 // HIGH TECH / RARE ENGINEERING ITEMS
