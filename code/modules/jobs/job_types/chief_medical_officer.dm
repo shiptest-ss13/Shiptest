@@ -117,3 +117,11 @@
 	r_pocket = /obj/item/pda/medical
 
 	chameleon_extras = null
+
+/datum/outfit/job/cmo/inteq/naked
+	name = "IRMG Honorable Corpsman (Inteq) (Naked)"
+	belt = null
+	suit = null
+	alt_suit = null
+	dcoat = null
+	r_pocket = null

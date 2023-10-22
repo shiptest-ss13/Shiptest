@@ -79,6 +79,13 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
+/datum/outfit/job/paramedic/inteq/naked
+	name = "IRMG Corpsman (Inteq) (Naked)"
+
+	head = null
+	suit = null
+	belt = null
+
 /datum/outfit/job/paramedic/minutemen
 	name = "BARD Combat Medic (Minutemen)"
 
