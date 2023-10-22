@@ -66,7 +66,7 @@
 
 	// Finding the dir of the mobile port
 	var/dpos = cached_map.find_next_delimiter_position(model_text, start_pos, ",","{","}")
-	var/cache_text = cached_map.trim_text(copytext(model_text, start_pos, dpos))
+	var/cache_text = trim_reduced(copytext(model_text, start_pos, dpos))
 	var/variables_start = findtext(cache_text, "{")
 	port_dir = NORTH // Incase something went wrong with variables from the cache
 	if(variables_start)
@@ -373,6 +373,12 @@
 	category = "subshuttles"
 	starting_funds = 0
 
+
+/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
+	file_name = "frontiersmen_gut"
+	name = "Gut Combat Freighter"
+	prefix = "ISV"
+
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
 	name = "Pill-Class Torture Device"
@@ -390,7 +396,6 @@
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
 	name_categories = list("PILLS")
-//your subshuttle here
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
@@ -402,7 +407,9 @@
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
+//your subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
 	name = "Falcon Dropship"
 	prefix = "NTSV"
+

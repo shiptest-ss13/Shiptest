@@ -79,7 +79,7 @@
 	name = "Captain (Pirate)"
 
 	ears = /obj/item/radio/headset/pirate/captain
-	uniform = /obj/item/clothing/under/costume/russian_officer
+	uniform = /obj/item/clothing/under/costume/pirate
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain
 	suit = /obj/item/clothing/suit/pirate/captain
