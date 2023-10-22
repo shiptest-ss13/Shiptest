@@ -128,13 +128,13 @@
 	},
 /obj/item/stock_parts/cell/high,
 /obj/item/stock_parts/cell/high,
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "aX" = (
@@ -1811,18 +1811,10 @@
 /obj/effect/turf_decal/trimline/transparent/bar/filled/line{
 	dir = 9
 	},
-/obj/machinery/power/apc/auto_name/directional/west{
-	pixel_x = -28;
-	pixel_y = -3
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -22;
-	pixel_y = 10
-	},
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "rv" = (
@@ -5284,8 +5276,12 @@
 /obj/machinery/chem_dispenser/drinks/fullupgrade,
 /obj/structure/table/reinforced,
 /obj/machinery/firealarm/directional/west{
-	pixel_x = -34;
-	pixel_y = -7
+	pixel_x = -33
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -21;
+	pixel_y = -11
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
