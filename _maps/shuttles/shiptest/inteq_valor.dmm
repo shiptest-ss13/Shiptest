@@ -551,6 +551,10 @@
 /obj/item/storage/box/zipties,
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/megaphone/sec,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/clothing/suit/armor/vest/alt,
+/obj/item/melee/baton/loaded,
+/obj/item/melee/baton/loaded,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ey" = (
@@ -786,6 +790,10 @@
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /obj/machinery/light/small/directional/east,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
 "gt" = (
@@ -884,6 +892,10 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "hN" = (
@@ -1334,6 +1346,10 @@
 	pixel_x = -10
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/item/spacecash/bundle/mediumrand{
+	pixel_x = 6;
+	pixel_y = 8
+	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -2221,6 +2237,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "tk" = (
@@ -2365,6 +2384,13 @@
 "uY" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/janitor)
+"vh" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/inteq,
+/obj/item/clothing/head/helmet/space/inteq,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/storage/eva)
 "vi" = (
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
 	dir = 8
@@ -2673,11 +2699,13 @@
 	locked = 0;
 	name = "fridge"
 	},
-/obj/item/reagent_containers/food/snacks/icecreamsandwich,
 /obj/item/storage/cans/sixbeer,
 /obj/effect/turf_decal/steeldecal/steel_decals_central4{
 	dir = 1
 	},
+/obj/item/reagent_containers/food/snacks/hotdog,
+/obj/effect/spawner/lootdrop/donkpockets,
+/obj/effect/spawner/lootdrop/donkpockets,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "yu" = (
@@ -2758,6 +2786,7 @@
 	req_access = list(58)
 	},
 /obj/item/storage/lockbox/medal/sec,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "zh" = (
@@ -2773,6 +2802,9 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
+	},
+/obj/machinery/light_switch{
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -2804,6 +2836,10 @@
 /obj/structure/closet/crate/bin,
 /obj/structure/sign/poster/official/get_your_legs{
 	pixel_y = 32
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
@@ -3401,6 +3437,10 @@
 	},
 /obj/structure/chair,
 /obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "EJ" = (
@@ -3475,6 +3515,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/cargo)
 "Fs" = (
@@ -3812,6 +3856,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"IL" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/storage)
 "IM" = (
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
@@ -4149,6 +4203,10 @@
 /obj/item/pickaxe/emergency,
 /obj/item/pickaxe/emergency,
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage/eva)
 "LR" = (
@@ -4293,6 +4351,9 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/item/soap{
+	pixel_x = -6
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew/janitor)
@@ -4717,6 +4778,11 @@
 	dir = 8
 	},
 /obj/structure/table,
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "QE" = (
@@ -4778,6 +4844,7 @@
 /obj/item/reagent_containers/blood/universal,
 /obj/item/reagent_containers/blood/universal,
 /obj/item/reagent_containers/blood/universal,
+/obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/storage)
 "Rh" = (
@@ -6022,7 +6089,7 @@ Hg
 tS
 HC
 MR
-fN
+vh
 fN
 iu
 tj
@@ -6103,7 +6170,7 @@ nX
 zK
 eg
 Yt
-Yt
+IL
 LI
 zS
 pt

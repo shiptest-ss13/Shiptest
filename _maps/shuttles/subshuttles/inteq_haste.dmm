@@ -23,7 +23,7 @@
 /obj/docking_port/mobile{
 	dir = 8;
 	name = "ambulance dock";
-	port_direction = 2;
+	port_direction = 4;
 	preferred_direction = 8
 	},
 /turf/open/floor/engine/hull,
@@ -137,6 +137,10 @@
 	pixel_x = -2;
 	pixel_y = 23;
 	id = "haste_door"
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
