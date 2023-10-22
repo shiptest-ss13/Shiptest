@@ -142,7 +142,7 @@
 	update_appearance()
 
 /obj/item/organ/regenerative_core/update_icon_state()
-	icon_state = inert ? "legion_soul_inert" : "legion_soul"
+	icon_state = inert ? "[icon_state]_inert" : "[icon_state]"
 	return ..()
 
 /obj/item/organ/regenerative_core/update_overlays()
@@ -162,6 +162,7 @@
 /obj/item/organ/regenerative_core/legion/crystal
 	name = "crystal heart"
 	desc = "A strange rock in the shape of a heart symbol. Applying will repair your body with crystals, but may have additional side effects. It seems it can't survive for very long outside a host."
+	icon_state = "crystal_heart"
 	crackle_animation = FALSE
 
 /obj/item/organ/regenerative_core/legion/crystal/Initialize()
@@ -191,7 +192,6 @@
 			qdel(src)
 
 /obj/item/organ/regenerative_core/legion/crystal/update_icon_state()
-	icon_state = inert ? "crystal_heart_inert" : "crystal_heart"
 	if(preserved)
 		icon_state = "crystal_heart_preserved"
 	return ..()
