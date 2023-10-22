@@ -1001,6 +1001,14 @@
 	dir = 6
 	},
 /obj/item/soap/syndie,
+/obj/machinery/firealarm/directional/north{
+	pixel_x = -6;
+	pixel_y = 34
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 9;
+	pixel_y = 33
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "jp" = (
@@ -2852,17 +2860,10 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 3;
-	pixel_y = 26
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/light_switch{
-	pixel_x = -11;
-	pixel_y = 23
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "BW" = (
@@ -3278,13 +3279,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/extinguisher_cabinet/directional/east{
-	pixel_x = 30;
-	pixel_y = -9
-	},
-/obj/machinery/firealarm/directional/east{
-	pixel_x = 36;
-	pixel_y = 4
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 22
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
