@@ -53,7 +53,13 @@
 	id = "cargoblastdoors"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/fans/tiny,
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "cargoholofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "ct" = (
@@ -488,6 +494,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "kr" = (
@@ -668,6 +677,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -1298,7 +1310,6 @@
 /obj/machinery/door/poddoor{
 	id = "cargoblastdoors"
 	},
-/obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/ship/cargo)
 "yn" = (
@@ -1309,6 +1320,19 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
+"ys" = (
+/obj/machinery/door/poddoor{
+	id = "cargoblastdoors"
+	},
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "cargoholofield"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "yF" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
@@ -2318,6 +2342,9 @@
 	icon_state = "2-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/cargo)
 "Ro" = (
@@ -2466,6 +2493,20 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ship/crew/canteen)
+"Ty" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating,
+/area/ship/cargo)
 "TD" = (
 /turf/closed/wall/r_wall,
 /area/ship/crew/hydroponics)
@@ -2521,6 +2562,14 @@
 	name = "Blast Door Control";
 	pixel_x = 25;
 	pixel_y = 25
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 24;
+	pixel_x = 37;
+	id = "cargoholofield"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
@@ -3274,7 +3323,7 @@ vZ
 as
 cp
 nc
-Av
+Ty
 tP
 FN
 np
@@ -3335,7 +3384,7 @@ vZ
 "}
 (25,1,1) = {"
 yi
-yk
+ys
 Uv
 jN
 YR

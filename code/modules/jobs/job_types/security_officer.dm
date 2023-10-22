@@ -226,6 +226,52 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	alt_uniform = null
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+
+/datum/outfit/job/security/nanotrasen/ert
+	name = "ERT Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = null
+	backpack = /obj/item/storage/backpack/ert/security
+	belt = /obj/item/storage/belt/military
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+
+/datum/outfit/job/security/nanotrasen/ert/engi
+	name = "ERT Engineering Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = null
+	backpack = /obj/item/storage/backpack/ert/engineer
+	belt = /obj/item/storage/belt/utility/full/ert
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+	accessory = /obj/item/clothing/accessory/armband/engine
+	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
+
+/datum/outfit/job/security/nanotrasen/ert/med
+	name = "ERT Medical Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = /obj/item/clothing/head/beret/med
+	backpack = /obj/item/storage/backpack/ert/medical
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+	accessory = /obj/item/clothing/accessory/armband/med
+	glasses = /obj/item/clothing/glasses/hud/health/night
+
+/datum/outfit/job/security/nanotrasen/mech_pilot
+	name = "Mech Pilot (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
+	head = /obj/item/clothing/head/beret/sec/officer
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
 
 /datum/outfit/job/security/roumain
 	name = "Hunter (Saint-Roumain Militia)"

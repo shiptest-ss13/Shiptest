@@ -199,7 +199,7 @@
 
 /datum/supply_pack/civilian/carpet_exotic
 	name = "Exotic Carpet Crate"
-	desc = "Exotic carpets straight from Space Russia, for all your decorating needs. Contains 100 tiles each of 8 different flooring patterns."
+	desc = "Exotic carpets for all your decorating needs. Contains 100 tiles each of 8 different flooring patterns."
 	cost = 3000
 	contains = list(/obj/item/stack/tile/carpet/blue/fifty,
 					/obj/item/stack/tile/carpet/blue/fifty,

@@ -136,7 +136,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	. = ..()
 	generation = gen
 	if(is_team_borer)
-		notify_ghosts("A cortical borer has been created in [get_area(src)]!", enter_link = "<a href=?src=\ref[src];ghostjoin=1>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK)
+		notify_ghosts("A cortical borer has been created in [get_area(src)]!", enter_link = "<a href=?src=[text_ref(src)];ghostjoin=1>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK)
 	var/numeral = rand(1000, 9999)
 	real_name = "Cortical Borer [numeral]"
 	truename = "[borer_names[min(generation, borer_names.len)]] [numeral]"
@@ -200,7 +200,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		chemicals -= C.chemuse
 		log_game("[src]/([src.ckey]) has injected [C.chemname] ([C.chem]) into their host [victim]/([victim.ckey])")
 
-		src << output(chemicals, "ViewBorer\ref[src]Chems.browser:update_chemicals")
+		src << output(chemicals, "ViewBorer[text_ref(src)]Chems.browser:update_chemicals")
 
 	..()
 
@@ -235,7 +235,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(statpanel("Status"))
 		stat(null, "Chemicals: [chemicals]")
 
-	src << output(chemicals, "ViewBorer\ref[src]Chems.browser:update_chemicals")
+	src << output(chemicals, "ViewBorer[text_ref(src)]Chems.browser:update_chemicals")
 
 /mob/living/simple_animal/borer/verb/Communicate()
 	set category = "Borer"
@@ -484,13 +484,13 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	for(var/datum in typesof(/datum/borer_chem))
 		var/datum/borer_chem/C = new datum()
 		if(C.chem)
-			content += "<tr><td><a class='chem-select' href='?_src_=\ref[src];src=\ref[src];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
+			content += "<tr><td><a class='chem-select' href='?_src_=[text_ref(src)];src=[text_ref(src)];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
 	content += "</table>"
 
 	var/html = get_html_template(content)
 
-	usr << browse(null, "window=ViewBorer\ref[src]Chems;size=600x800")
-	usr << browse(html, "window=ViewBorer\ref[src]Chems;size=600x800")
+	usr << browse(null, "window=ViewBorer[text_ref(src)]Chems;size=600x800")
+	usr << browse(html, "window=ViewBorer[text_ref(src)]Chems;size=600x800")
 
 	return
 
