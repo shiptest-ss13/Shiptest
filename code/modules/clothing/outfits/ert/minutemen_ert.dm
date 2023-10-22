@@ -73,7 +73,7 @@
 	r_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 	l_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/smgm9mm/rubber=2)
+	backpack_contents = null
 
 	id_role = "Minutemen"
 

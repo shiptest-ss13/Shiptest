@@ -7,9 +7,11 @@
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
-	suit_store = /obj/item/energyhalberd
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
+	l_hand = /obj/item/energyhalberd
+
+
 	box = /obj/item/storage/box/survival
 
 	id_role = "Sonnensöldner"
