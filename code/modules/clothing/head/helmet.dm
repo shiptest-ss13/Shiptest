@@ -475,17 +475,9 @@
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 	strip_delay = 60
 
-/obj/item/clothing/head/helmet/rus_helmet
-	name = "russian helmet"
-	desc = "It can hold a bottle of vodka."
-	icon_state = "rus_helmet"
-	item_state = "rus_helmet"
-	armor = list("melee" = 25, "bullet" = 30, "laser" = 0, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 50)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
-
 /obj/item/clothing/head/helmet/r_trapper
 	name = "reinforced trapper hat"
-	desc = "An occasional sight on the heads of soldiers stationed on cold worlds. 200% bear."
+	desc = "An occasional sight on the heads of Frontiersmen stationed on cold worlds. 200% bear."
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
