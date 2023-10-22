@@ -2,11 +2,6 @@
 	name = "Trickwine"
 	description = "How is this even possible"
 
-/datum/reagent/consumable/ethanol/trickwine/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	SSblackbox.record_feedback("nested tally", "trickwine_thrown", 1, list("[name]", "[L]", "[method]", "[reac_volume]"))
-	//L.visible_message("<span class='warning'>[L], [name], [method], [reac_volume] expose test</span>")
-	return ..()
-
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
 	name = "Ashwine"
 	description = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
