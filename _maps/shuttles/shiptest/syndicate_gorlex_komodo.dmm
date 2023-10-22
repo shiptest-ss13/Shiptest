@@ -2578,6 +2578,7 @@
 /obj/machinery/button/door{
 	id = "Syndie_warship_lockdown";
 	name = "Lockdown Control";
+	pixel_x = 4;
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/industrial/warning{
@@ -2594,6 +2595,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/machinery/light_switch{
+	pixel_x = -7;
+	pixel_y = 23
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
@@ -4634,9 +4639,7 @@
 /obj/machinery/airalarm/directional/west{
 	pixel_x = -29
 	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_y = 27
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -5041,15 +5044,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_x = 7
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
-	},
-/obj/machinery/light_switch{
-	pixel_x = -6;
-	pixel_y = 23
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
