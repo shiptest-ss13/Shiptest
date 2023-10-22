@@ -90,7 +90,7 @@
 	blueprints[4] = new /datum/design/subspace_analyzer
 	blueprints[5] = new /datum/design/subspace_crystal
 	blueprints[6] = new /datum/design/subspace_transmitter
-	
+
 // LIMITED USE DISKS PAST HERE
 
 // HIGH TECH / RARE ENGINEERING ITEMS
