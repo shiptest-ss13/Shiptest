@@ -354,3 +354,8 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/heron
+	file_name = "nanotrasen_falcon"
+	name = "Falcon Dropship"
+	prefix = "NTSV"

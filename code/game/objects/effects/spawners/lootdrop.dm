@@ -1273,5 +1273,5 @@
 	/obj/item/storage/ration/blackened_calamari = 5,
 	/obj/item/storage/ration/elbow_macaroni = 5,
 	/obj/item/storage/ration/cheese_pizza_slice = 5,
-	/obj/item/storage/ration/crayons
+	/obj/item/storage/ration/crayons = 2 // :)
 	)
