@@ -65,7 +65,7 @@
 /datum/outfit/job/head_of_personnel/pirate
 	name = "First Mate (Pirate)"
 	ears = /obj/item/radio/headset/pirate
-	uniform = /obj/item/clothing/under/costume/russian_officer
+	uniform = /obj/item/clothing/under/costume/pirate
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate
 	suit = /obj/item/clothing/suit/pirate

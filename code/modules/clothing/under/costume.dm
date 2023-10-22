@@ -54,13 +54,6 @@
 	item_state = "pirate"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/costume/soviet
-	name = "soviet uniform"
-	desc = "For the Motherland!"
-	icon_state = "soviet"
-	item_state = "soviet"
-	can_adjust = FALSE
-
 /obj/item/clothing/under/costume/kilt
 	name = "kilt"
 	desc = "Includes shoes and plaid."
@@ -195,19 +188,6 @@
 	desc = "A blue mech pilot's suit. For the more reluctant mech pilots."
 	icon_state = "blue_mech_suit"
 	item_state = "blue_mech_suit"
-
-/obj/item/clothing/under/costume/russian_officer
-	name = "\improper Russian officer's uniform"
-	desc = "The latest in fashionable russian outfits."
-	icon = 'icons/obj/clothing/under/security.dmi'
-	icon_state = "hostanclothes"
-	item_state = "hostanclothes"
-	mob_overlay_icon =  'icons/mob/clothing/under/security.dmi'
-	alt_covers_chest = TRUE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
-	strip_delay = 50
-	sensor_mode = SENSOR_COORDS
-	random_sensor = FALSE
 
 /obj/item/clothing/under/costume/jackbros
 	name = "jack bros outfit"

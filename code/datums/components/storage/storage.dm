@@ -592,8 +592,6 @@
 	// this must come before the screen objects only block, dunno why it wasn't before
 	if(over_object == M)
 		user_show_to_mob(M)
-		if(use_sound)
-			playsound(A, use_sound, 50, TRUE, -5)
 	if(!istype(over_object, /atom/movable/screen))
 		INVOKE_ASYNC(src, .proc/dump_content_at, over_object, M)
 		return
@@ -615,6 +613,8 @@
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
 	if(force || M.CanReach(parent, view_only = TRUE))
+		if(use_sound)
+			playsound(A, use_sound, 50, TRUE, -5)
 		show_to(M)
 
 /datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/O, mob/M)
