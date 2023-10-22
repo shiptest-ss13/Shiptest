@@ -62,6 +62,8 @@
 						"<span class='notice>You hear a thud.</span>")
 		crate.forceMove(drop_location()) // Drop the crate onto the shelf,
 		step_rand(crate, 1) // Then try to push it somewhere.
+		crate.layer = initial(crate.layer) // Reset the crate back to having the default layer, otherwise we might get strange interactions.
+		crate.pixel_y = initial(crate.pixel_y) // Reset the crate back to having no offset, otherwise it will be floating.
 		shelf_contents[shelf_contents.Find(crate)] = null // Remove the reference to the crate from the list.
 		handle_visuals()
 
