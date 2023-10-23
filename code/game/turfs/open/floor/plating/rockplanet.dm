@@ -59,6 +59,10 @@
 	name = "mud"
 	icon_state = "greenerdirt"
 
+/turf/open/floor/plating/asteroid/rockplanet/pond
+	name = "pond"
+	icon_state = "riverwater"
+
 /turf/open/floor/plating/asteroid/rockplanet/plating
 	name = "exterior plating"
 	icon_state = "plating"

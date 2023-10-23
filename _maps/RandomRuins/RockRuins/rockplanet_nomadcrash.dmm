@@ -224,11 +224,6 @@
 /obj/structure/curtain/cloth,
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/rockplanet/nanotrasen)
-"ho" = (
-/turf/open/floor/plating/asteroid/rockplanet/lit{
-	icon_state = "greenerdirt"
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "hy" = (
 /obj/effect/turf_decal/spline/fancy/opaque/yellow{
 	dir = 8
@@ -696,9 +691,6 @@
 /obj/structure/flora/tree/cactus,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"vh" = (
-/turf/open/floor/plating/dirt/jungle/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "vi" = (
 /obj/structure/flora/rock{
 	icon_state = "redrocks3"
@@ -1128,10 +1120,7 @@
 /obj/effect/turf_decal/weather/dirt/corner{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit{
-	icon_state = "riverwater";
-	name = "pond"
-	},
+/turf/open/floor/plating/asteroid/rockplanet/pond,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Hi" = (
 /obj/effect/turf_decal/weather/dirt/corner{
@@ -1381,10 +1370,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit{
-	icon_state = "riverwater";
-	name = "pond"
-	},
+/turf/open/floor/plating/asteroid/rockplanet/pond,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ms" = (
 /obj/structure/flora/rock{
@@ -1455,10 +1441,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/turf/open/floor/plating/asteroid/rockplanet/lit{
-	icon_state = "riverwater";
-	name = "pond"
-	},
+/turf/open/floor/plating/asteroid/rockplanet/pond,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "OP" = (
 /obj/structure/rack,
@@ -1520,10 +1503,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "PI" = (
 /obj/effect/turf_decal/weather/dirt,
-/turf/open/floor/plating/asteroid/rockplanet/lit{
-	icon_state = "riverwater";
-	name = "pond"
-	},
+/turf/open/floor/plating/asteroid/rockplanet/pond,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "PX" = (
 /obj/structure/railing{
@@ -1751,10 +1731,7 @@
 /turf/open/floor/engine/hull/interior,
 /area/ruin/rockplanet/nanotrasen)
 "XH" = (
-/turf/open/floor/plating/asteroid/rockplanet/lit{
-	icon_state = "riverwater";
-	name = "pond"
-	},
+/turf/open/floor/plating/asteroid/rockplanet/pond,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "XK" = (
 /turf/closed/wall/rust,
@@ -2968,8 +2945,8 @@ iN
 iN
 iN
 aX
-ho
-ho
+gY
+gY
 vS
 nf
 Tb
@@ -3018,8 +2995,8 @@ iN
 iN
 iN
 aX
-ho
-ho
+gY
+gY
 mu
 Si
 sZ
@@ -3069,7 +3046,7 @@ iN
 iN
 DP
 lw
-ho
+gY
 rW
 tI
 jm
@@ -3169,7 +3146,7 @@ TT
 Kl
 Md
 gY
-ho
+gY
 Ly
 jm
 jm
@@ -3806,7 +3783,7 @@ iN
 BA
 mW
 uD
-vh
+gY
 XK
 DR
 lg
@@ -3909,7 +3886,7 @@ Ly
 AS
 OZ
 RB
-vh
+gY
 XK
 LN
 is
