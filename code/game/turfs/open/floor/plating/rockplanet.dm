@@ -71,6 +71,10 @@
 	name = "exterior plating"
 	icon_state = "panelscorched"
 
+/turf/open/floor/plating/asteroid/rockplanet/stairs
+	name = "exterior stairs"
+	icon_state = "stairs"
+
 /turf/open/floor/plating/asteroid/rockplanet/hull_plating
 	name = "exterior hull plating"
 	icon_state = "regular_hull"
