@@ -38,7 +38,7 @@
 	back_story = "russian"
 	desc = "A small sleeper typically used to make long distance travel a bit more bearable."
 	mob_name = "russian"
-	outfit = /datum/outfit/russiancorpse/hunter
+	outfit = /datum/outfit/frontier/hunter
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 

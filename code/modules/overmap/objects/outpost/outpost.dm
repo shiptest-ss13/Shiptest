@@ -15,11 +15,11 @@
 	/// and tall hangars (with a greater height than width) in the list is discouraged; it is possible that a large hangar will "hide" a
 	/// smaller one by appearing earlier in the sorted list.
 	var/list/datum/map_template/outpost/hangar/hangar_templates = list(
-		/datum/map_template/outpost/hangar/test_20x20,
-		/datum/map_template/outpost/hangar/test_40x20,
-		/datum/map_template/outpost/hangar/test_40x40,
-		/datum/map_template/outpost/hangar/test_56x20,
-		/datum/map_template/outpost/hangar/test_56x40
+		/datum/map_template/outpost/hangar/indie_space_20x20,
+		/datum/map_template/outpost/hangar/indie_space_40x20,
+		/datum/map_template/outpost/hangar/indie_space_40x40,
+		/datum/map_template/outpost/hangar/indie_space_56x20,
+		/datum/map_template/outpost/hangar/indie_space_56x40
 	)
 	// NOTE: "planetary" outposts should use baseturf specification and possibly different ztrait sun type, for both hangars and main level.
 	var/list/main_level_ztraits = list(
