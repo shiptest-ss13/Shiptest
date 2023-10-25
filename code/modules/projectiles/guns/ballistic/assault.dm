@@ -163,7 +163,7 @@
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()
 
-/obj/item/gun/ballistic/automatic/assualt/e40
+/obj/item/gun/ballistic/automatic/assault/e40
 	name = "\improper E-40 Hybrid Rifle"
 	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic and laser system. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -183,7 +183,7 @@
 	fire_sound = 'sound/weapons/gun/laser/e40_bal.ogg'
 	manufacturer = MANUFACTURER_EOEHOMA
 
-/obj/item/gun/ballistic/automatic/assualt/e40/Initialize()
+/obj/item/gun/ballistic/automatic/assault/e40/Initialize()
 	. = ..()
 	secondary = new /obj/item/gun/energy/laser/e40_laser_secondary(src)
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
@@ -191,46 +191,52 @@
 	SEND_SIGNAL(secondary, COMSIG_GUN_DISABLE_AUTOFIRE)
 	update_appearance()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/do_autofire(datum/source, atom/target, mob/living/shooter, params)
+/obj/item/gun/ballistic/automatic/assault/e40/do_autofire(datum/source, atom/target, mob/living/shooter, params)
 	if(select == 2)
 		secondary.do_autofire(source, target, shooter, params)
 	else
 		return ..()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+/obj/item/gun/ballistic/automatic/assault/e40/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
+	if(select == 2)
+		secondary.do_autofire_shot(source, target, shooter, params)
+	else
+		return ..()
+
+/obj/item/gun/ballistic/automatic/assault/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	if(select == 2)
 		secondary.process_fire(target, user, message, params, zone_override, bonus_spread)
 	else
 		return ..()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/can_shoot()
+/obj/item/gun/ballistic/automatic/assault/e40/can_shoot()
 	if(select == 2)
 		return secondary.can_shoot()
 	else
 		return ..()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/afterattack(atom/target, mob/living/user, flag, params)
+/obj/item/gun/ballistic/automatic/assault/e40/afterattack(atom/target, mob/living/user, flag, params)
 	if(select == 2)
 		secondary.afterattack(target, user, flag, params)
 	else
 		return ..()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/attackby(obj/item/attack_obj, mob/user, params)
-	if(istype(attack_obj, /obj/item/stock_parts/cell/gun) ||(istype(attack_obj, /obj/item/screwdriver)))
+/obj/item/gun/ballistic/automatic/assault/e40/attackby(obj/item/attack_obj, mob/user, params)
+	if(istype(attack_obj, /obj/item/stock_parts/cell/gun) || istype(attack_obj, /obj/item/screwdriver))
 		secondary.attack_self()
 		secondary.attackby(attack_obj, user, params)
 	else
 		..()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/can_shoot()
+/obj/item/gun/ballistic/automatic/assault/e40/can_shoot()
 	if(select == 2)
 		return secondary.can_shoot()
 	return ..()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/proc/secondary_update_icon()
+/obj/item/gun/ballistic/automatic/assault/e40/proc/secondary_update_icon()
 	update_icon()
 
-/obj/item/gun/ballistic/automatic/assualt/e40/update_overlays()
+/obj/item/gun/ballistic/automatic/assault/e40/update_overlays()
 	. = ..()
 	//handle laser gunn overlays
 	if(!secondary)
@@ -244,7 +250,7 @@
 		. += "[icon_state]_cell"
 
 
-/obj/item/gun/ballistic/automatic/assualt/e40/burst_select()
+/obj/item/gun/ballistic/automatic/assault/e40/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
