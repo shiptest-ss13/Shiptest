@@ -8,9 +8,6 @@
 	var/ore_amount = 20
 	var/ore_type = /obj/item/stack/ore/iron
 
-/obj/structure/vein/proc/mine()
-	new ore_type(loc, ore_amount)
-
 /obj/machinery/drill
 	name = "big-ass ore drill"
 	desc = "It's like those drills you put in your hand but, like, way bigger."
