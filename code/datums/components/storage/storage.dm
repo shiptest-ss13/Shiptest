@@ -604,7 +604,7 @@
 		return
 	A.add_fingerprint(M)
 
-/datum/component/storage/proc/user_show_to_mob(mob/M, force = FALSE)
+/datum/component/storage/proc/user_show_to_mob(mob/M, force = FALSE, silent = FALSE)
 	var/atom/A = parent
 	if(!istype(M))
 		return FALSE
@@ -613,7 +613,7 @@
 		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
 	if(force || M.CanReach(parent, view_only = TRUE))
-		if(use_sound)
+		if(use_sound && !silent)
 			playsound(A, use_sound, 50, TRUE, -5)
 		show_to(M)
 
@@ -739,7 +739,7 @@
 /datum/component/storage/proc/show_to_ghost(datum/source, mob/dead/observer/M)
 	SIGNAL_HANDLER
 
-	return user_show_to_mob(M, TRUE)
+	return user_show_to_mob(M, TRUE, TRUE)
 
 /datum/component/storage/proc/signal_show_attempt(datum/source, mob/showto, force = FALSE)
 	SIGNAL_HANDLER
@@ -866,8 +866,6 @@
 	if(!quickdraw)
 		A.add_fingerprint(user)
 		user_show_to_mob(user)
-		if(use_sound)
-			playsound(A, use_sound, 50, TRUE, -5)
 		return
 
 	var/obj/item/I = locate() in real_location()
