@@ -114,9 +114,9 @@
 
 	idle_power_usage = 0
 	///what portion of the mols in the attached heater to "burn"
-	var/fuel_consumption = 0.025
+	var/fuel_consumption = 0.0125
 	//multiplier for thrust
-	thrust = 1
+	thrust = 2
 	///If this engine should create heat when burned.
 	var/heat_creation = FALSE
 	///A weakref of the connected engine heater with fuel.
