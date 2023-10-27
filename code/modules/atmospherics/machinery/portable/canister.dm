@@ -147,6 +147,13 @@
 	gas_type = GAS_FREON
 	filled = 1
 
+/obj/machinery/portable_atmospherics/canister/hydrogen
+	name = "hydrogen canister"
+	desc = "Hydrogen. Used in thruster fuel"
+	icon_state = "yellow"
+	gas_type = GAS_HYDROGEN
+	filled = 1
+
 /obj/machinery/portable_atmospherics/canister/fusion_test
 	name = "fusion test canister"
 	desc = "Don't be a badmin."
