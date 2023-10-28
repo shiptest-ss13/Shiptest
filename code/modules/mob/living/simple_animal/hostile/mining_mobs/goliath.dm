@@ -342,7 +342,6 @@
 	if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
 		B.on_entered(src, target)
-	. = ..()
 
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"
