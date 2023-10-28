@@ -178,3 +178,8 @@
 	name = "\improper Water Vapor Gas Miner"
 	overlay_color = "#99928E"
 	spawn_id = GAS_H2O
+
+/obj/machinery/atmospherics/miner/hydrogen
+	name = "\improper Hydrogen Gas Miner"
+	overlay_color = "#ffffffda"
+	spawn_id = GAS_HYDROGEN

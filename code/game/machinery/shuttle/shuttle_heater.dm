@@ -191,9 +191,12 @@
 	icon_state = "heater_pipe"
 	var/icon_state_closed = "heater_pipe"
 	var/icon_state_open = "heater_pipe_open"
-	var/gas_amount = 0
+	var/gas_amount = 0 //amount of gas used in calculations
 	var/fuel = 0
-	var/oxy = 0
+	var/oxy = 0 //used for debugging
+	var/safe_limit = 1010 //pressure before Problems hapepen
+	var/pressure_damage = 0
+	var/damage_state = 0
 	idle_power_usage = 50
 //	circuit = /obj/item/circuitboard/machine/shuttle/fire_heater
 
@@ -225,7 +228,27 @@
 	update_adjacent_engines()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/process_atmos()
-		update_parents()
+	var/datum/gas_mixture/air_contents = airs[1]
+	var/pressure = air_contents.return_pressure()
+	if(pressure > safe_limit)
+		pressure_damage += pressure/safe_limit
+		if(rand(1,48) == 48)
+			playsound(loc,'sound/effects/creak1.ogg', 60, TRUE, 20, pressure_affected = FALSE)
+		if(pressure_damage >= 1200)
+			damage_state += 1
+			pressure_damage = 0
+			playsound(loc,'sound/effects/bang.ogg', 240, TRUE, 5)
+	if(damage_state >= 1)
+		var/loc_air = loc.return_air()
+		air_contents.temperature_share(loc_air,0.4)
+		if(damage_state >= 2)
+			assume_air_ratio(air_contents, 0.01)
+			if(damage_state >= 3)
+				var/epicenter = loc
+				explosion(epicenter, 1, 2, 3, 3, TRUE, TRUE)
+	update_parents()
+
+// REMOVEWHENDONE /proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, mono_adj = FALSE)
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/default_change_direction_wrench(mob/user, obj/item/I)
 	if(!..())
@@ -292,9 +315,9 @@
 	return air_contents.get_moles(gas_type) >= required
 
 /**
- * Burns a specific amount of one type of gas. Returns how much was actually used.
- * * amount - The amount of mols of fuel to burn.
- * * gas_type - The gas type to burn.
+ * consumes a portion of the mols and checks how much could combust to make thrust.
+ * oxidation_power is the total value of all the oxidizers
+ * fuel_power is ^ but for fuel
  */
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/consume_fuel(gas_consumed)
 	var/datum/gas_mixture/air_contents = airs[1]

@@ -154,6 +154,15 @@
 	gas_type = GAS_HYDROGEN
 	filled = 1
 
+/obj/machinery/portable_atmospherics/canister/fuel_test
+	name = "hydrogen canister"
+	desc = "Hydrogen. Used in thruster fuel"
+
+/obj/machinery/portable_atmospherics/canister/fuel_test/create_gas()
+	air_contents.set_moles(GAS_O2,500)
+	air_contents.set_moles(GAS_HYDROGEN,1000)
+	air_contents.set_temperature(T20C)
+
 /obj/machinery/portable_atmospherics/canister/fusion_test
 	name = "fusion test canister"
 	desc = "Don't be a badmin."
