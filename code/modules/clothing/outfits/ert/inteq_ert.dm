@@ -23,7 +23,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
 
-	id_role = "Enforcer"
+	id_role = "Corpsman"
 /datum/outfit/centcom/ert/inteq/leader
 	name = "ERT - Inteq Vanguard"
 
@@ -31,4 +31,4 @@
 	back = /obj/item/storage/backpack/messenger/inteq
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 
-	id_role = "Enforcer"
+	id_role = "Vanguard"
