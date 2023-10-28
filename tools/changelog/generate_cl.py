@@ -27,7 +27,7 @@ import re
 from pathlib import Path
 
 from github import Github, InputGitAuthor
-from ruamel import yaml
+from ruamel import YAML
 
 CL_BODY = re.compile(r":cl:(.+)?\r\n((.|\n|\r)+?)\r\n\/:cl:", re.MULTILINE)
 CL_SPLIT = re.compile(r"(^\w+):\s+(\w.+)", re.MULTILINE)
@@ -70,6 +70,8 @@ else:
     write_cl["author"] = pr_author
 
 write_cl["delete-after"] = True
+
+yaml = YAML(typ='safe', pure=True)
 
 with open(Path.cwd().joinpath("tools/changelog/tags.yml")) as file:
     tags = yaml.safe_load(file)
