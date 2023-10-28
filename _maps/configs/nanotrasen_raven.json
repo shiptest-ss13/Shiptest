@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "NTSV",
+	"map_name": "Raven-class Supply Vessel",
+	"namelists": [
+		"NANOTRASEN",
+		"SPACE",
+		"NATURAL_AGGRESSIVE"
+	],
+	"map_short_name": "Raven-class",
+	"description": "A heavy supply shuttle. Contains many thrusters and a wide cargo bay for all your cargo needs. Kind of looks like a bus. Kind of.",
+	"tags": [
+		"Medical",
+		"Cargo",
+		"Engineering",
+		"Generalist"
+	],
+	"starting_funds": 2260,
+	"map_path": "_maps/shuttles/shiptest/nanotrasen_raven.dmm",
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Engineer": {
+			"outfit": "/datum/outfit/job/engineer",
+			"slots": 2
+		},
+		"Medical Doctor": {
+			"outfit": "/datum/outfit/job/doctor",
+			"slots": 2
+		},
+		"Cargo Worker": {
+			"outfit": "/datum/outfit/job/assistant",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}
