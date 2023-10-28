@@ -74,6 +74,7 @@
 	l_pocket = /obj/item/ammo_box/magazine/smgm9mm/rubber
 
 	backpack_contents = null
+	box = null
 
 	id_role = "Minutemen"
 
