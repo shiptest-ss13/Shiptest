@@ -16,6 +16,14 @@
 #define NITROUS_COOLING_MULTIPIER 500
 #define NITROUS_COOLING_MIN 173
 
+#define DAMAGE_NONE 0
+#define DAMAGE_LOW 1
+#define DAMAGE_MED 2
+#define DAMAGE_HIGH 3
+
+#define PRESSURE_LIMIT 1010 //in kpa
+#define PRESSURE_DAMAGE_MAX 1200 //gives 10 minutes per stage at the pressure limit
+
 /obj/machinery/atmospherics/components/unary/shuttle
 	name = "shuttle atmospherics device"
 	desc = "This does something to do with shuttle atmospherics"
@@ -193,10 +201,10 @@
 	var/icon_state_open = "heater_pipe_open"
 	var/gas_amount = 0 //amount of gas used in calculations
 	var/fuel = 0
-	var/oxy = 0 //used for debugging
-	var/safe_limit = 1010 //pressure before Problems hapepen
+	var/oxy = 0 //used for debugging REMOVEWHENDONE
 	var/pressure_damage = 0
 	var/damage_state = 0
+	var/metal_repair = FALSE //used to see if metal's been added during repair step
 	idle_power_usage = 50
 //	circuit = /obj/item/circuitboard/machine/shuttle/fire_heater
 
@@ -230,25 +238,23 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/process_atmos()
 	var/datum/gas_mixture/air_contents = airs[1]
 	var/pressure = air_contents.return_pressure()
-	if(pressure > safe_limit)
-		pressure_damage += pressure/safe_limit
-		if(rand(1,48) == 48)
-			playsound(loc,'sound/effects/creak1.ogg', 60, TRUE, 20, pressure_affected = FALSE)
-		if(pressure_damage >= 1200)
-			damage_state += 1
-			pressure_damage = 0
+	if(pressure > PRESSURE_LIMIT)
+		pressure_damage += pressure/PRESSURE_LIMIT //always more than 1
+		if(rand(1,48) == 48) //process_atmos() calls around twice a second, so this'll go off on average every 24 seconds.
+			playsound(loc,"hull_creaking", 60, TRUE, 20, pressure_affected = FALSE) // the ship is Not happy
+		if(pressure_damage >= PRESSURE_DAMAGE_MAX)
+			damage_state += 1 //damage state starts at 0, 1 causes temp leak, 2 causes gas leak, 3 causes explosion
+			pressure_damage = 0 // reset our counter here
 			playsound(loc,'sound/effects/bang.ogg', 240, TRUE, 5)
-	if(damage_state >= 1)
+	if(damage_state >= DAMAGE_LOW)
 		var/loc_air = loc.return_air()
-		air_contents.temperature_share(loc_air,0.4)
-		if(damage_state >= 2)
-			assume_air_ratio(air_contents, 0.01)
-			if(damage_state >= 3)
+		air_contents.temperature_share(loc_air,0.4) //equalizes temp with its turf
+		if(damage_state >= DAMAGE_MED)
+			assume_air_ratio(air_contents, 0.01) //leaks a bit of its tank
+			if(damage_state >= DAMAGE_HIGH)
 				var/epicenter = loc
-				explosion(epicenter, 1, 2, 3, 3, TRUE, TRUE)
+				explosion(epicenter, 1, 2, 3, 3, TRUE, TRUE) //boom
 	update_parents()
-
-// REMOVEWHENDONE /proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, mono_adj = FALSE)
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/default_change_direction_wrench(mob/user, obj/item/I)
 	if(!..())
@@ -357,19 +363,49 @@
 			air_contents.adjust_moles(id, -gas_amount)
 
 		thrust_power = min(oxidation_power,fuel_power)
-		oxy = oxidation_power //variables for debugging
+		oxy = oxidation_power //variables for debugging REMOVEWHENDONE
 		fuel = fuel_power
 		return(thrust_power)
-		//var/starting_amt = air_contents.get_moles(gas_type)
-		//air_contents.adjust_moles(gas_type, -amount)
-		//return min(starting_amt, amount)
-
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/check() //kill helmcrab if this exists in the final PR thanks
-	var/datum/gas_mixture/air_contents = airs[1]
-	oxy = air_contents.get_oxidation_power()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/attackby(obj/item/I, mob/living/user, params)
 	update_adjacent_engines()
+	if(damage_state == DAMAGE_MED && istype(I,/obj/item/stack/sheet/metal) && metal_repair == FALSE) //fix med damage with metal
+		I.use(1,FALSE,TRUE)
+		metal_repair = TRUE
+		to_chat(user, "<span class='notice'>You add new plating.</span>")
+		playsound(loc, 'sound/items/deconstruct.ogg', 50)
+		return
+
+	if(damage_state == DAMAGE_MED && I.tool_behaviour == TOOL_WRENCH && metal_repair == TRUE)
+		to_chat(user, "<span class='notice'>You start wrenching down the new plating.</span>")
+		if(I.use_tool(src, user, 40, volume=75))
+			metal_repair = FALSE
+			damage_state = DAMAGE_LOW
+			pressure_damage = 0
+			to_chat(user, "<span class='notice'>You secure the new plating.</span>")
+//			I.play_tool_sound(loc, 50)
+			return
+		return
+
+	if(damage_state == DAMAGE_LOW && I.tool_behaviour == TOOL_SCREWDRIVER) //fix low damage with screwdriver
+		to_chat(user, "<span class='notice'>You start screwing down the insulation layer.</span>")
+		if(I.use_tool(src, user, 40, volume=75))
+			damage_state = DAMAGE_NONE
+			pressure_damage = 0
+//			I.play_tool_sound(loc, 50)
+			to_chat(user, "<span class='notice'>You secure the insulation layer.</span>")
+			return
+		return
+
+	if(damage_state == DAMAGE_NONE && I.tool_behaviour == TOOL_SCREWDRIVER && pressure_damage >= PRESSURE_DAMAGE_MAX / 2) //lets you fix pressure damage before it increases damage state
+		to_chat(user, "<span class='notice'>You start tightening loose screws.</span>")
+		if(I.use_tool(src, user, 40, volume=75))
+			pressure_damage = 0
+//			I.play_tool_sound(loc, 50)
+			to_chat(user, "<span class='notice'>You tighten the screws.</span>")
+			return
+		return
+
 	if(default_deconstruction_screwdriver(user, icon_state_open, icon_state_closed, I))
 		return
 	if(default_pry_open(I))
