@@ -217,7 +217,7 @@
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
 	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "handcuff"
+	icon_state = "legcuff"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -234,6 +234,17 @@
 	desc = "A trap used to catch bears and other legged creatures."
 	var/armed = 0
 	var/trap_damage = 20
+
+/obj/item/restraints/legcuffs/beartrap/goliath
+	name = "tentacle mass"
+	desc = "Ew."
+	icon_state = "goliathtrap"
+	flags_1 = NONE
+	slowdown = 7
+	breakouttime = 4 SECONDS
+	item_flags = DROPDEL
+	armed = 1
+	trap_damage = 0
 
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()

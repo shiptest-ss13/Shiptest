@@ -337,10 +337,12 @@
 		deltimer(timerid)
 		timerid = addtimer(CALLBACK(src, .proc/retract), 10, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/L)
-	L.Stun(100)
-	L.adjustBruteLoss(rand(10,15))
-
+/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/target)
+	target.adjustBruteLoss(rand(10,15))
+	if(iscarbon(target))
+		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
+		B.on_entered(src, target)
+	. = ..()
 
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"

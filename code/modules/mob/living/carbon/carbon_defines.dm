@@ -15,7 +15,7 @@
 	var/silent = 0 		///Can't talk. Value goes down every life proc. NOTE TO FUTURE CODERS: DO NOT INITIALIZE NUMERICAL VARS AS NULL OR I WILL MURDER YOU.
 	var/dreaming = 0 ///How many dream images we have left to send
 
-	var/obj/item/handcuffed = null///Whether or not the mob is handcuffed
+	var/obj/item/handcuffed = null ///Whether or not the mob is handcuffed
 	var/obj/item/legcuffed = null  ///Same as handcuffs but for legs. Bear traps use this.
 
 	var/disgust = 0
