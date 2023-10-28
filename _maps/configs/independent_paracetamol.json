@@ -1,0 +1,23 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Paracetamol-class Personal Shuttle",
+	"prefix": "ISV",
+	"namelists": [
+		"CRUISE"
+	],
+	"map_short_name": "Paracetamol-class",
+	"description": "The Paracetamol is a personal shuttle for personal needs. It contains double plasma thrusters, enough rations for a couple of days, air and scrubber system and solar panels. It is a revisement of the original Pill-class which horribly failed and put a bad reputation on Adminium Incorporated. It is also known for it's speed, reaching max speeds of up to 800Gm/s.",
+	"tags": [
+		"Specialist"
+	],
+	"map_path": "_maps/shuttles/shiptest/independent_paracetamol.dmm",
+	"limit":3,
+	"starting_funds": 450,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/captain",
+			"slots": 1
+		}
+	},
+	"enabled": true
+}
