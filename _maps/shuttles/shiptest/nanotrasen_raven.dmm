@@ -284,12 +284,10 @@
 "gG" = (
 /obj/structure/table/wood,
 /obj/item/candle,
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_y = 30
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "gP" = (
@@ -820,9 +818,7 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_y = 30
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "ry" = (
@@ -1785,14 +1781,12 @@
 /obj/item/gps/mining,
 /obj/item/gps/mining,
 /obj/item/gps/mining,
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_y = 30
-	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/machinery/light_switch{
-	pixel_y = 28;
+	pixel_y = 23;
 	pixel_x = 10
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -1973,11 +1967,7 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
-/obj/machinery/airalarm/directional/north{
-	pixel_y = 30;
-	layer = 2.8;
-	pixel_x = -7
-	},
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
 "OH" = (
@@ -1988,9 +1978,6 @@
 /area/ship/crew/canteen/kitchen)
 "OP" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_y = 30
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1998,6 +1985,7 @@
 	pixel_y = 28;
 	pixel_x = 10
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Qe" = (
@@ -2316,9 +2304,6 @@
 /turf/open/floor/plating,
 /area/ship/medical)
 "Xl" = (
-/obj/machinery/power/apc/auto_name/directional/north{
-	pixel_y = 30
-	},
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -2327,6 +2312,7 @@
 	pixel_y = 28;
 	pixel_x = 10
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "Xm" = (
