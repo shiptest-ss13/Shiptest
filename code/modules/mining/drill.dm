@@ -3,9 +3,13 @@
 	desc = "It's like those drills you put in your hand but, like, way bigger."
 	icon = 'icons/obj/machines/drill.dmi'
 	icon_state = "deep_core_drill"
+	max_integrity = 250
+	integrity_failure = 0.25
 	density = TRUE
 	anchored = FALSE
 	use_power = NO_POWER_USE
+	layer = ABOVE_ALL_MOB_LAYER
+	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 
 	var/active = FALSE
 	var/obj/structure/vein/mining
@@ -14,6 +18,13 @@
 /obj/machinery/drill/Initialize()
 	. = ..()
 	soundloop = new(list(src), active)
+
+/obj/machinery/drill/process()
+	if(machine_stat & BROKEN || (active && !mining))
+		active = FALSE
+		update_overlays()
+		update_icon_state()
+		return
 
 /obj/machinery/drill/Destroy()
 	QDEL_NULL(soundloop)
@@ -51,14 +62,15 @@
 		to_chat(user, "<span class='notice'>[src] isn't sercured over an ore vein!</span>")
 		return
 	if(!active)
-		addtimer(CALLBACK(src, .proc/mine), 100)
 		playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 		user.visible_message( \
 					"[user] activates [src].", \
 					"<span class='notice'>You hit the ignition button to activate [src].</span>", \
 					"<span class='hear'>You hear a drill churn to life.</span>")
+		start_mining()
 		active = TRUE
 		soundloop.start()
+		mining.begin_spawning()
 		update_icon_state()
 		update_overlays()
 		return
@@ -68,9 +80,9 @@
 
 /obj/machinery/drill/update_icon_state()
 	if(anchored)
-		/*if(BROKEN)
+		if(machine_stat == BROKEN)
 			icon_state = "deep_core_drill-deployed_broken"
-			return ..()*/
+			return ..()
 		if(active)
 			icon_state = "deep_core_drill-active"
 			return ..()
@@ -78,9 +90,9 @@
 			icon_state = "deep_core_drill-idle"
 			return ..()
 	else
-		/*if(BROKEN)
+		if(machine_stat == BROKEN)
 			icon_state = "deep_core_drill-broken"
-			return ..()*/
+			return ..()
 		icon_state = "deep_core_drill"
 		return ..()
 
@@ -95,10 +107,28 @@
 	else
 		set_light(0)
 
+/obj/machinery/drill/proc/start_mining()
+	var/eta
+	if(mining.mining_charges >= 1)
+		eta = mining.mining_charges * 300
+		addtimer(CALLBACK(src, .proc/mine), 300)
+		say("Estimated time until vein depletion: [time2text(eta,"mm:ss")].")
+	else
+		say("Vein depleted.")
+		active = FALSE
+		soundloop.stop()
+		mining.deconstruct()
+		mining = null
+		update_icon_state()
+		update_overlays()
+
 /obj/machinery/drill/proc/mine()
-	mining.deconstruct()
-	active = FALSE
-	soundloop.stop()
-	mining = null
-	update_icon_state()
-	update_overlays()
+	if(mining.mining_charges)
+		mining.mining_charges -= 1
+		mining.drop_ore()
+		start_mining()
+	else if(!mining.mining_charges)
+		say("Error: Vein Depleted")
+		active = FALSE
+		update_icon_state()
+		update_overlays()

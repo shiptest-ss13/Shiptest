@@ -148,7 +148,7 @@
 	if(!search_objects)
 		. = hearers(vision_range, target_from) - src //Remove self, so we don't suicide
 
-		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha))
+		var/static/hostile_machines = typecacheof(list(/obj/machinery/porta_turret, /obj/mecha, /obj/machinery/drill))
 
 		. += typecache_filter_list(view(vision_range, targets_from), hostile_machines)
 
@@ -245,6 +245,12 @@
 			if(P.machine_stat & BROKEN) //Or turrets that are already broken
 				return FALSE
 			return TRUE
+
+		if(istype(the_target, /obj/machinery/drill))
+			var/obj/machinery/drill/drill = the_target
+			if(drill.active)
+				return TRUE
+			return FALSE
 
 	if(isobj(the_target))
 		if(attack_all_objects || is_type_in_typecache(the_target, wanted_objects))
