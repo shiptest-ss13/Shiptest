@@ -1299,9 +1299,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "Cw" = (
-/obj/machinery/camera/autoname{
-	dir = 10
-	},
 /obj/structure/cable,
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -25
@@ -1309,6 +1306,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
 	dir = 1
 	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "CI" = (
@@ -1890,6 +1888,7 @@
 /obj/machinery/advanced_airlock_controller{
 	pixel_x = -25
 	},
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "MW" = (
