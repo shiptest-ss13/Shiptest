@@ -28,7 +28,7 @@
 		chambered = magazine.get_round(TRUE)
 		chambered.forceMove(src)
 
-/obj/item/gun/ballistic/bow/attack_self(mob/user)
+/obj/item/gun/ballistic/bow/unique_action(mob/living/user)
 	if(chambered)
 		to_chat(user, "<span class='notice'>You [drawn ? "release" : "draw"] [src]'s string.</span>")
 		if(!drawn)

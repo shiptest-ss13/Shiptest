@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			return "unknown"
 
 ///Timed action involving two mobs, the user and the target.
-/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE)
 	if(!user || !target)
 		return FALSE
 
@@ -284,7 +284,12 @@ GLOBAL_LIST_EMPTY(species_list)
 			drifting = FALSE
 			user_loc = user.loc
 
-		if((!drifting && user.loc != user_loc) || target.loc != target_loc || user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
+
+		if(!ignore_loc_change && ((!drifting && user.loc != user_loc) || target.loc != target_loc))
+			. = FALSE
+			break
+
+		if(user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
 			. = FALSE
 			break
 	if(!QDELETED(progbar))

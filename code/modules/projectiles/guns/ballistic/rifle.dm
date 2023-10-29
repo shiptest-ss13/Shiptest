@@ -17,6 +17,13 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	spread = -1
+	spread_unwielded = 12
+	recoil = -3
+	recoil_unwielded = 4
+	wield_slowdown = 1
+	wield_delay = 1.2 SECONDS
+
 /obj/item/gun/ballistic/rifle/update_overlays()
 	. = ..()
 	. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
@@ -95,6 +102,12 @@
 	zoom_out_amt = 5
 
 	manufacturer = MANUFACTURER_SOLARARMORIES
+	spread = -5
+	spread_unwielded = 20
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 1
+	wield_delay = 1.3 SECONDS
 
 /obj/item/gun/ballistic/rifle/boltaction/roumain
 	name = "standard-issue 'Smile' rifle"

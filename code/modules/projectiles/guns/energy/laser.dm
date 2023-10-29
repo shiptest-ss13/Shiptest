@@ -11,6 +11,9 @@
 	supports_variations = VOX_VARIATION
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
+	spread = 0
+	spread_unwielded = 10
+
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	desc = "A modified version of the L-204 laser gun, this one fires less concentrated energy bolts designed for target practice."

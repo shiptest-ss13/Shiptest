@@ -6,12 +6,18 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode)
 	ammo_x_offset = 3
 
+	spread = 2
+	spread_unwielded = 4
+
 /obj/item/gun/energy/e_gun/advtaser
 	name = "hybrid taser"
 	desc = "A dual-mode taser designed to fire both short-range high-power electrodes and long-range disabler beams."
 	icon_state = "advtaser"
 	ammo_type = list(/obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 2
+
+	spread = 2
+	spread_unwielded = 4
 
 /obj/item/gun/energy/e_gun/advtaser/cyborg
 	name = "cyborg taser"
@@ -31,6 +37,9 @@
 	flight_x_offset = 15
 	flight_y_offset = 10
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
+
+	spread = 2
+	spread_unwielded = 4
 
 /obj/item/gun/energy/disabler/cyborg
 	name = "cyborg disabler"

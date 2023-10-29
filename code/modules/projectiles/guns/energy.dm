@@ -4,6 +4,9 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
 
+	muzzleflash_iconstate = "muzzle_flash_laser"
+	muzzle_flash_color = COLOR_SOFT_RED
+
 	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/gun
 	var/modifystate = 0
@@ -93,7 +96,7 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
-/obj/item/gun/energy/attack_self(mob/living/user as mob)
+/obj/item/gun/energy/unique_action(mob/living/user)
 	if(ammo_type.len > 1)
 		select_fire(user)
 		update_appearance()
@@ -196,6 +199,7 @@
 	if (shot.select_name)
 		to_chat(user, "<span class='notice'>[src] is now set to [shot.select_name].</span>")
 	chambered = null
+	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	recharge_newshot(TRUE)
 	update_appearance()
 	return
@@ -270,18 +274,18 @@
 		else if(BB.nodamage || !BB.damage || BB.damage_type == STAMINA)
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"

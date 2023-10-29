@@ -1,12 +1,31 @@
 /obj/item/gun/ballistic/automatic/assault
 	burst_size = 1
 	actions_types = list()
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = 0.6
+
+	fire_delay = 1
+
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+	spread_unwielded = 20
 
 /obj/item/gun/ballistic/automatic/assault/ak47
 	name = "\improper SVG-67"
 	desc = "A Frontier-built assault rifle descended from a pattern of unknown provenance. Its low cost, ease of maintenance, and powerful 7.62x39mm cartridge make it a popular choice among a wide variety of outlaws."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+
 	icon_state = "ak47"
 	item_state = "ak47"
 	mag_display = TRUE
@@ -14,6 +33,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/ak47
+	spread = 0
+	wield_delay = 0.7 SECONDS
 
 /obj/item/gun/ballistic/automatic/assault/ak47/ComponentInitialize()
 	. = ..()
@@ -89,6 +110,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/p16
+	spread = 2
+	wield_delay = 0.5 SECONDS
+	rack_sound = 'sound/weapons/gun/rifle/m16_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/m16_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/m16_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/assault/p16/ComponentInitialize()
 	. = ..()
@@ -134,6 +162,8 @@
 	mag_type = /obj/item/ammo_box/magazine/swiss
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	manufacturer = MANUFACTURER_SOLARARMORIES
+	spread = 8
+	spread_unwielded = 15
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/ComponentInitialize()
 	. = ..()
@@ -158,7 +188,7 @@
 			fire_delay = initial(fire_delay)
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd Matter.</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	update_appearance()
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()
