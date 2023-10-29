@@ -37,7 +37,7 @@
 /obj/item/clothing/mask/surgical/suns
 	name = "purple sterile mask"
 	desc = "A sterile mask designed to help prevent the spread of diseases. Now pretty in purple!"
-	icon_state = "suns_sterile
+	icon_state = "suns_sterile"
 	item_state = "suns_sterile"
 
 /obj/item/clothing/mask/fakemoustache
