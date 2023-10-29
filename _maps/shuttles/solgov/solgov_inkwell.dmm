@@ -2605,15 +2605,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
-"rr" = (
-/obj/docking_port/mobile{
-	dheight = 1;
-	dir = 2;
-	preferred_direction = 4;
-	port_direction = 8
-	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/crew/dorm/dormthree)
 "rz" = (
 /obj/machinery/holopad/emergency/command,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4848,6 +4839,12 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/docking_port/mobile{
+	dheight = 1;
+	dir = 2;
+	preferred_direction = 4;
+	port_direction = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
@@ -8461,7 +8458,7 @@ wm
 wm
 wm
 wm
-rr
+zc
 eM
 eM
 eM
