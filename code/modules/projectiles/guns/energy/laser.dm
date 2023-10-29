@@ -227,7 +227,12 @@
 	big_gun = TRUE
 	cell_type = /obj/item/stock_parts/cell/gun/large
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/eoehoma/e50)
+	weapon_weight = WEAPON_HEAVY
 	manufacturer = MANUFACTURER_EOEHOMA
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = 0.6
+	spread_unwielded = 20
 
 	shaded_charge = FALSE
 	ammo_x_offset = 4

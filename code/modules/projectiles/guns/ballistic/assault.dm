@@ -193,6 +193,9 @@
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()
 
+#define E40_BALLISTIC_MODE 1
+#define E40_LASER_MODE 2
+
 /obj/item/gun/ballistic/automatic/assault/e40
 	name = "\improper E-40 Hybrid Rifle"
 	desc = "A Hybrid Assault Rifle, best known for being having a dual ballistic and laser system. Chambered in .229 Eoehoma caseless, and uses energy for lasers."
@@ -222,31 +225,31 @@
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/assault/e40/do_autofire(datum/source, atom/target, mob/living/shooter, params)
-	if(select == 2)
+	if(select == E40_LASER_MODE)
 		secondary.do_autofire(source, target, shooter, params)
 	else
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/do_autofire_shot(datum/source, atom/target, mob/living/shooter, params)
-	if(select == 2)
+	if(select == E40_LASER_MODE)
 		secondary.do_autofire_shot(source, target, shooter, params)
 	else
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
-	if(select == 2)
+	if(select == E40_LASER_MODE)
 		secondary.process_fire(target, user, message, params, zone_override, bonus_spread)
 	else
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/can_shoot()
-	if(select == 2)
+	if(select == E40_LASER_MODE)
 		return secondary.can_shoot()
 	else
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/afterattack(atom/target, mob/living/user, flag, params)
-	if(select == 2)
+	if(select == E40_LASER_MODE)
 		secondary.afterattack(target, user, flag, params)
 	else
 		return ..()
@@ -259,7 +262,7 @@
 		..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/can_shoot()
-	if(select == 2)
+	if(select == E40_LASER_MODE)
 		return secondary.can_shoot()
 	return ..()
 
@@ -283,16 +286,16 @@
 /obj/item/gun/ballistic/automatic/assault/e40/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
-		if(0)
-			select = 1
+		if(NONE)
+			select = E40_BALLISTIC_MODE
 			to_chat(user, "<span class='notice'>You switch to full automatic ballistic.</span>")
-		if(1)
-			select = 2
+		if(E40_BALLISTIC_MODE)
+			select = E40_LASER_MODE
 			to_chat(user, "<span class='notice'>You switch to full auto laser.</span>")
 			SEND_SIGNAL(src, COMSIG_GUN_DISABLE_AUTOFIRE)
 			SEND_SIGNAL(secondary, COMSIG_GUN_ENABLE_AUTOFIRE)
-		if(2)
-			select = 1
+		if(E40_LASER_MODE)
+			select = E40_BALLISTIC_MODE
 			to_chat(user, "<span class='notice'>You switch to full automatic ballistic.</span>")
 			SEND_SIGNAL(src, COMSIG_GUN_ENABLE_AUTOFIRE)
 			SEND_SIGNAL(secondary, COMSIG_GUN_DISABLE_AUTOFIRE)

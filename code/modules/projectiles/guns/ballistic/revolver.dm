@@ -60,7 +60,6 @@
 	chamber_round(TRUE)
 	playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 	update_appearance()
->>>>>>> upstream/master
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE)
 	if(spin_cylinder)

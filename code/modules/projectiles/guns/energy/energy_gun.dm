@@ -49,6 +49,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = 0.6
+	spread_unwielded = 20
+
 /obj/item/gun/energy/e_gun/hades/Initialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
@@ -86,7 +90,7 @@
 	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/e_gun/hos/brazil/true
-	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is truly one of the finest weapons in this sector."
+	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
 	item_state = "hoslaser"
 	selfcharge = 1
