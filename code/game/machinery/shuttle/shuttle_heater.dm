@@ -202,11 +202,13 @@
 	var/gas_amount = 0 //amount of gas used in calculations
 	var/fuel = 0
 	var/oxy = 0 //used for debugging REMOVEWHENDONE
+	var/gas_capacity = 0
+	var/efficiency_multiplier = 1
 	var/pressure_damage = 0
 	var/damage_state = 0
 	var/metal_repair = FALSE //used to see if metal's been added during repair step
 	idle_power_usage = 50
-//	circuit = /obj/item/circuitboard/machine/shuttle/fire_heater
+	circuit = /obj/item/circuitboard/machine/shuttle/fire_heater
 
 	density = TRUE
 	max_integrity = 400
@@ -215,10 +217,6 @@
 	showpipe = TRUE
 
 	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
-
-	var/efficiency_multiplier = 1
-//percent of total mols consumed per thrust
-	var/gas_capacity = 5000
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/New()
 	. = ..()
@@ -275,7 +273,7 @@
 		node.addMember(src)
 	SSair.add_to_rebuild_queue(src)
 	return TRUE
-/*
+
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/RefreshParts()
 	var/cap = 0
 	var/eff = 0
@@ -284,9 +282,8 @@
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
 		eff += L.rating
 	gas_capacity = 5000 * ((cap - 1) ** 2) + 1000
-	efficiency_multiplier = round(((eff / 2) / 2.8) ** 2, 0.1)
+	efficiency_multiplier = round(sqrt(eff), 0.1)
 	update_gas_stats()
-*/
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/examine(mob/user)
 	. = ..()
@@ -370,7 +367,7 @@
 				fuel_power += HYDROGEN_THRUSTER_VALUE * gas_amount
 			air_contents.adjust_moles(id, -gas_amount)
 
-		thrust_power = min(oxidation_power,fuel_power) //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
+		thrust_power = min(oxidation_power,fuel_power) * efficiency_multiplier //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
 		oxy = oxidation_power //variables for debugging REMOVEWHENDONE
 		fuel = fuel_power
 		return(thrust_power)

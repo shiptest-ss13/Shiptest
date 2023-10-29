@@ -111,16 +111,20 @@
 	desc = "A thruster that burns fuel with oxider that is stored in an adjacent heater."
 	icon_state = "burst_plasma"
 	icon_state_off = "burst_plasma_off"
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/fire
 
 	idle_power_usage = 0
 	///what portion of the mols in the attached heater to "burn"
 	var/fuel_consumption = 0.0125
 	//multiplier for thrust
 	thrust = 2
-	///If this engine should create heat when burned.
+	//used by stockparts, efficiency_multiplier
+	var/consumption_multiplier = 1
+	//If this engine should create heat when burned.
 	var/heat_creation = FALSE
-	///A weakref of the connected engine heater with fuel.
+	//A weakref of the connected engine heater with fuel.
 	var/datum/weakref/attached_heater
+
 
 /obj/machinery/power/shuttle/engine/fire/burn_engine(percentage = 100, deltatime)
 	..()
@@ -129,7 +133,7 @@
 		return
 	if(heat_creation)
 		heat_engine()
-	var/actual_consumption = fuel_consumption * (percentage / 100) * deltatime
+	var/actual_consumption = fuel_consumption * (percentage / 100) * deltatime * consumption_multiplier
 	return resolved_heater.consume_fuel(actual_consumption) * thrust //this proc returns the min of the fuel/oxy possible burns, multiply by our thrust value
 
 /obj/machinery/power/shuttle/engine/fire/return_fuel()
@@ -169,7 +173,12 @@
 			update_icon_state()
 			return TRUE
 
-
+/obj/machinery/power/shuttle/engine/fire/RefreshParts()
+	var/laz = 0
+	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
+		laz += L.rating
+	consumption_multiplier = laz
+	return
 /**
  * ### Ion Engines
  * Engines that convert electricity to thrust. Yes, I know that's not how it works, it needs a propellant, but this is a video game.

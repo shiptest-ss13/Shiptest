@@ -1442,6 +1442,15 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/micro_laser = 1)
 
+/obj/item/circuitboard/machine/shuttle/engine/fire
+	name = "Combustion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/fueled/plasma
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/assembly/igniter = 1,
+		/obj/item/stack/sheet/plasteel = 2
+	)
+
 /obj/item/circuitboard/machine/shuttle/engine/electric
 	name = "Ion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/electric
@@ -1485,6 +1494,13 @@
 	req_components = list(/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/matter_bin = 1)
 
+/obj/item/circuitboard/machine/shuttle/fire_heater
+	name = "Combustion Engine Heater (Machine Board)"
+	build_path = /obj/machinery/atmospherics/components/unary/shuttle/fire_heater
+	req_components = list(
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/matter_bin = 1
+	)
 /obj/item/circuitboard/machine/shuttle/smes
 	name = "Electric Engine Precharger (Machine Board)"
 	build_path = /obj/machinery/power/smes/shuttle
