@@ -3666,6 +3666,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/birch,
 /area/ship/hallway/starboard)
+"xl" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/docking_port/mobile{
+	dheight = 1;
+	dir = 4;
+	preferred_direction = 4;
+	port_direction = 8
+	},
+/turf/open/floor/engine/hull,
+/area/ship/external/dark)
 "xs" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/techfloor/orange{
@@ -4839,12 +4851,6 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
-	},
-/obj/docking_port/mobile{
-	dheight = 1;
-	dir = 2;
-	preferred_direction = 4;
-	port_direction = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/canteen)
@@ -7883,7 +7889,7 @@ TY
 qM
 Wq
 Tv
-Tv
+xl
 Tv
 TY
 ce
