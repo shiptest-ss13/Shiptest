@@ -287,19 +287,27 @@
 	efficiency_multiplier = round(((eff / 2) / 2.8) ** 2, 0.1)
 	update_gas_stats()
 */
-/*
+
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/examine(mob/user)
 	. = ..()
-	. += "The engine heater's gas dial reads so many moles of gas.<br>" //fix!!
-*/
-/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/return_gas(datum/gas/gas_type)
+	. += "The engine heater's gas dial reads [return_gas()] kpa."
+	if(damage_state == DAMAGE_MED && metal_repair == FALSE)
+		. += "The engine heater's plating could be repaired with <b>metal</b>."
+	if(damage_state == DAMAGE_MED && metal_repair == TRUE)
+		. += "The engine heater's plating is ready to be <b>bolted</b> down."
+	if(damage_state == DAMAGE_LOW)
+		. += "The engine heater's insulation layer could be <b>pried</b> back into place."
+	if(damage_state == DAMAGE_NONE && pressure_damage >= PRESSURE_DAMAGE_MAX / 2)
+		. += "The engine heater's screws seem <b>loose</b>."
+	if(damage_state == DAMAGE_NONE && pressure_damage < PRESSURE_DAMAGE_MAX / 2)
+		. += "The engine heater is in good condition."
+
+/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/return_gas()
 	var/datum/gas_mixture/air_contents = airs[1]
 	if(!air_contents)
 		return
-	if(gas_type)
-		return air_contents.get_moles(gas_type)
 	else
-		return air_contents.total_moles()
+		return air_contents.return_pressure()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/return_gas_capacity()
 	var/datum/gas_mixture/air_contents = airs[1]
@@ -362,7 +370,7 @@
 				fuel_power += HYDROGEN_THRUSTER_VALUE * gas_amount
 			air_contents.adjust_moles(id, -gas_amount)
 
-		thrust_power = min(oxidation_power,fuel_power)
+		thrust_power = min(oxidation_power,fuel_power) //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
 		oxy = oxidation_power //variables for debugging REMOVEWHENDONE
 		fuel = fuel_power
 		return(thrust_power)
@@ -370,10 +378,20 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/attackby(obj/item/I, mob/living/user, params)
 	update_adjacent_engines()
 	if(damage_state == DAMAGE_MED && istype(I,/obj/item/stack/sheet/metal) && metal_repair == FALSE) //fix med damage with metal
-		I.use(1,FALSE,TRUE)
-		metal_repair = TRUE
-		to_chat(user, "<span class='notice'>You add new plating.</span>")
-		playsound(loc, 'sound/items/deconstruct.ogg', 50)
+		var/obj/item/stack/sheet/metal/S = I
+		if(S.get_amount() < 2)
+			to_chat(user, "<span class='warning'>You need at least 2 metal sheets to repair [src].</span>")
+			return
+		to_chat(user,"<span class='notice'>You start adding new plating.</span>")
+		if(do_after(user, 20, TRUE, src))
+			if(!I.use(2))
+				return
+			to_chat(user, "<span class='notice'>You add new plating.</span>")
+			I.use(1,FALSE,TRUE)
+			metal_repair = TRUE
+			pressure_damage = 0 //lets be nice and not let them explode while fixing this
+			playsound(loc, 'sound/items/deconstruct.ogg', 50)
+			return
 		return
 
 	if(damage_state == DAMAGE_MED && I.tool_behaviour == TOOL_WRENCH && metal_repair == TRUE)
@@ -383,16 +401,14 @@
 			damage_state = DAMAGE_LOW
 			pressure_damage = 0
 			to_chat(user, "<span class='notice'>You secure the new plating.</span>")
-//			I.play_tool_sound(loc, 50)
 			return
 		return
 
-	if(damage_state == DAMAGE_LOW && I.tool_behaviour == TOOL_SCREWDRIVER) //fix low damage with screwdriver
-		to_chat(user, "<span class='notice'>You start screwing down the insulation layer.</span>")
+	if(damage_state == DAMAGE_LOW && I.tool_behaviour == TOOL_CROWBAR) //fix low damage with screwdriver
+		to_chat(user, "<span class='notice'>You start prying in the insulation layer.</span>")
 		if(I.use_tool(src, user, 40, volume=75))
 			damage_state = DAMAGE_NONE
 			pressure_damage = 0
-//			I.play_tool_sound(loc, 50)
 			to_chat(user, "<span class='notice'>You secure the insulation layer.</span>")
 			return
 		return
@@ -401,7 +417,6 @@
 		to_chat(user, "<span class='notice'>You start tightening loose screws.</span>")
 		if(I.use_tool(src, user, 40, volume=75))
 			pressure_damage = 0
-//			I.play_tool_sound(loc, 50)
 			to_chat(user, "<span class='notice'>You tighten the screws.</span>")
 			return
 		return
