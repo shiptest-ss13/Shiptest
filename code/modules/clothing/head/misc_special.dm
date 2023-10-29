@@ -378,3 +378,12 @@
 	. = ..()
 	if(!warped)
 		warp_up()
+
+//SUNS lets you larp better than starfield ever will
+/obj/item/clothing/head/welding/suns
+	name = "Peackeeper Visor"
+	desc = "A head-mounted helmet designed to protect those on the field from bright lights, while also allowing a life support connection."
+	icon_state = "sunsvisor"
+	item_state = "sunsvisor"
+	tint = 0
+	visor_flags = ALLOWINTERNALS //Why? Because I'm not giving PK's sec masks nor hud sunglasses.

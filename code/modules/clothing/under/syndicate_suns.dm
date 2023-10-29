@@ -8,17 +8,33 @@
 	icon = 'icons/obj/clothing/under/syndicate_suns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/syndicate_suns.dmi'
 
+/obj/item/clothing/under/syndicate/suns/alt
+	name = "\improper SUNS formal suit"
+	desc = "A fancy-looking tailored shirt with a purple skirt. Worn typically by students in the first half of their academic journey."
+	icon_state = "suns_uniskirt1"
+	item_state = "suns_uniskirt1"
+
 /obj/item/clothing/under/syndicate/suns/uniform2
 	desc = "A uniform typically worn by students in the final years of their academic journey."
 	icon_state = "suns_uniform2"
 	item_state = "suns_uniform2"
 	can_adjust = TRUE
 
+/obj/item/clothing/under/syndicate/suns/uniform2/alt
+	desc = "A long skirt and blouse typically worn by students in the final years of their academic journey."
+	icon_state = "suns_uniskirt2"
+	item_state = "suns_uniskirt2"
+
 /obj/item/clothing/under/syndicate/suns/uniform3
 	desc = "A suit typically worn by SUNS graduates and SUNS academic staff. You've come a long way, friend."
 	icon_state = "suns_uniform3"
 	item_state = "suns_uniform3"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/syndicate/suns/uniform3/alt
+	desc = "A skirt and blouse typically worn by SUNS graduates and SUNS academic staff. You've come a long way, friend."
+	icon_state = "suns_uniskirt3"
+	item_state = "suns_uniskirt3"
 
 /obj/item/clothing/under/syndicate/suns/pkuniform
 	name = "\improper SUNS peacekeeper uniform"

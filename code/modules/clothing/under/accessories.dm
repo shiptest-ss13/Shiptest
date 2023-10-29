@@ -508,3 +508,24 @@
 	name = "solgov waistcoat"
 	desc = "A standard issue waistcoat in solgov colors."
 	icon_state = "solgov_waistcoat"
+
+obj/item/clothing/accessory/waistcoat/suns
+	name = "suns waistcoat"
+	desc = "An academic issued run of the mill waistcoat."
+	icon_state = "suns_waistcoat"
+	minimize_when_attached = TRUE
+
+obj/item/clothing/accessory/waistcoat/suns/ribbon
+	name = "suns ribbon"
+	desc = "An academic issued bow, for when you want to feel pretty."
+	icon_state = "suns_ribbon"
+
+obj/item/clothing/accessory/waistcoat/suns/gembow
+	name = "suns gembow"
+	desc = "An academic issued bow, for when you want to feel REALLY pretty."
+	icon_state = "suns_gembow"
+
+obj/item/clothing/accessory/waistcoat/suns/poof
+	name = "suns chest poof"
+	desc = "An academic issued bow, for when you want to feel sophisticated."
+	icon_state = "suns_poof"

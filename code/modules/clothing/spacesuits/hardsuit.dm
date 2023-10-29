@@ -1275,6 +1275,7 @@
 	desc = "The Quixote metaspacial mobility suit is the magnum opus of dimensional navigation equipment, combining durable composite armor with high mobility thrusters and defensive plating rated for all manner of exotic particles."
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/quixote/dimensional
 
+//Suns hardsuits
 /obj/item/clothing/head/helmet/space/hardsuit/security/suns
 	name = "\improper SUNS Peacekeeper hardsuit helmet"
 	icon_state = "hardsuit0-suns_pk"
@@ -1300,3 +1301,16 @@
 	item_state = "suns_miningsuit"
 	hardsuit_type = "suns_mining"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/suns
+
+/obj/item/clothing/head/helmet/space/hardsuit/solgov/suns //Stealing ur subtype lel
+	name = "\improper SUNS Captains helmet"
+	icon_state = "suns_commandhelm"
+	item_state = "suns_commandhelm"
+	desc = "An armored spaceproof helmet, the white glass on the side signifies a captain level rank."
+
+/obj/item/clothing/suit/space/hardsuit/solgov/suns
+	name = "\improper SUNS Captains hardsuit"
+	desc = "A well decorated space proof suit. The design was co-created by SolGov and SUNS academics."
+	icon_state = "suns_commandsuit"
+	item_state = "suns_commandsuit"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov/suns

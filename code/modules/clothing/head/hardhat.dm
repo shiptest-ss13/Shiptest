@@ -117,6 +117,11 @@
 	item_state = "hardhat_solgov"
 	dog_fashion = null
 
+/obj/item/clothing/head/safety_helmet/suns
+	desc = "A piece of headgear used in dangerous working conditions to protect the head."
+	icon_state = "suns_workerhelmet"
+	item_state = "suns_workerhelmet"
+
 /obj/item/clothing/head/hardhat/atmos
 	icon_state = "hardhat_atmos"
 	item_state = "hardhat_atmos"

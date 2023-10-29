@@ -429,6 +429,24 @@
 	. = ..()
 	allowed |= list(/obj/item/gun/ballistic/automatic/assualt/swiss_cheese, /obj/item/tank)
 
+/obj/item/clothing/suit/armor/vest/bulletproof/suns //remind me to make this something to buy
+	name = "\improper Peacekeeper Greatcoat"
+	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
+	icon_state = "suns_greatcoat"
+	item_state = "suns_greatcoat"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
+	name = "\improper Decorated academic coat"
+	desc = "An armored coat intended for SUNS Captains on the frontier. Go forth, and spread the message of the academy."
+	icon_state = "suns_captaincoat"
+	item_state = "suns_captaincoat"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
+	name = "academic staff coat"
+	desc = "A white coat used by Suns acedemic staff. It designates the second in command on the ship."
+	icon_state = "suns_xojacket"
+	item_state = "suns_xojacket"
+
 /obj/item/clothing/suit/armor/vest/hop
 	name = "head of personnel's parade jacket"
 	desc = "For when an armoured vest isn't fashionable enough."
