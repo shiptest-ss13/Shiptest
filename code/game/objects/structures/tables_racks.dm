@@ -339,6 +339,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	var/list/debris = list()
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/structure/table/glass/Initialize()
 	. = ..()
 	debris += new frame
@@ -423,6 +425,8 @@
 	max_integrity = 70
 	smoothing_groups = list(SMOOTH_GROUP_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_TABLES)
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/table/wood/narsie_act(total_override = TRUE)
 	if(!total_override)
@@ -775,6 +779,8 @@
 	integrity_failure = 0.25
 	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70) //trolld
 	can_flip = FALSE //same as reinforced and theres no sprites for it
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/table/wood/reinforced/deconstruction_hints(mob/user)
 	if(deconstruction_ready)
