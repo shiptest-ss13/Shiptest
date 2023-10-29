@@ -79,8 +79,7 @@
 /area/ruin/unpowered)
 "x" = (
 /obj/effect/mob_spawn/human/engineer{
-	gender = "female";
-	mob_species = null
+	gender = "female"
 	},
 /obj/item/clothing/suit/radiation,
 /obj/item/clothing/head/radiation{
@@ -89,6 +88,12 @@
 	},
 /obj/item/geiger_counter,
 /turf/open/floor/engine,
+/area/ruin/unpowered)
+"y" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 5
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/unpowered)
 "z" = (
 /obj/effect/decal/cleanable/dirt,
@@ -139,9 +144,6 @@
 	dir = 1
 	},
 /obj/structure/frame/machine,
-/obj/machinery/atmospherics/pipe/simple/general/visible{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
 	},
@@ -268,7 +270,7 @@ Q
 u
 Y
 j
-w
+y
 w
 w
 "}

@@ -1,0 +1,159 @@
+2023-09-01:
+  spockye:
+  - bugfix: fixed the jukebox/boombox/discomachine inactive sprite being invisisble
+2023-09-02:
+  Ebin-Halcyon:
+  - imageadd: Keporis have stolen some oversized hoodies and are now able to wear
+      them properly.
+  GenericDM:
+  - tweak: Custom radio channels no longer leak themselves
+  - tweak: Custom radio channels are assigned a random color.
+  MemedHams:
+  - bugfix: the solars on singularity station no longer runtime
+  - bugfix: a bunch of broken indestructible walls have been collapsed into one working
+      subtype
+  - tweak: adds smoothing connectors to indestructible rock walls and adds a seam
+      with normal rock walls, for clarity
+  Skrem7:
+  - balance: Standard 12g box magazines are now small-sized, rather than normal
+  - spellcheck: Adjusts mag-based shotguns, lever-actions, and shotgun mag descriptions
+      to be more efficient/accurate
+  - code_imp: Changes how bulldog/mastiff magazines check for their icon to be standardized
+      with the CM-15
+  - code_imp: All ammo_boxes now update_appearance upon being initialized
+  - bugfix: Bulldog drum magazines should no longer go invisible while checking for
+      a base_icon_sprite that doesn't exist
+  - bugfix: Spent shotgun shells now have proper sprite pathing
+  thgvr:
+  - rscdel: Clown cargo crate
+  - rscdel: Clown stuff in costume vendors
+2023-09-06:
+  Skies-Of-Blue:
+  - rscadd: pointing at something on yourself now shows the item
+  Zevotech:
+  - bugfix: Most rocks are now visible again
+  - rscadd: Most flora files now have missing texture sprites to make it easier to
+      spot when something has gone wrong.
+2023-09-09:
+  Zevotech:
+  - bugfix: fixed the icon states for junglebushes a, b, and c.
+2023-09-10:
+  GenericDM:
+  - bugfix: The SolGov surgical cap no longer turns invisible when handled.
+2023-09-11:
+  Dethstorm:
+  - rscadd: new stuff to wasteplanet_unhonorable
+  - rscadd: new areas for wasteplanet_unhonorable
+2023-09-14:
+  Apogee-dev:
+  - balance: nerfed some outlier rifle cartridges for consistency
+  - rscdel: Removed guns and ammo from sec spawn outfits
+  BarteG44:
+  - rscadd: Added a voice log for the wideband
+  Bjarl:
+  - rscdel: monkey and wishgranter code
+  MarkSuckerberg:
+  - admin: Adds lag switch toggles from /tg/, ONLY use them when the lag becomes unbearable!
+  PositiveEntropy, tf-4:
+  - rscadd: Adds the CentVend inside Central Command! You're now able to vend Central
+      Command clothing items for all your commanding needs!
+  - rscadd: 'Nanotrasen has added a new outfit for Special Ops Officers to enjoy,
+      instead of a simple leather jacket: The CentCom Officer''s Coat!'
+  - rscadd: Re-adds the CentCom Official's suit, making it the default clothing option
+      for CentCom Officials! The turtlenecks have instead been made to be the standard
+      ERT uniform.
+  - imageadd: Thanks to a collaboration between the frontier sector and the core sector,
+      the parade jackets now boast new and varied apperances for all to enjoy, with
+      a new parade jacket releasing for the Head of Security!
+  - imageadd: In no short effort than the finest of tailors, the captain's hat, the
+      centcom hat, the captain's jumpsuit and the captain's carapace now have finer
+      gold trims and the finest quality leather available, making them more vibrant
+      for all!
+  - imageadd: In no short effort of our best tailors, every Central Command outfit
+      have been either redesigned or reshaded! All of them!
+  Skrem7:
+  - spellcheck: Bodies that lack ownership are no longer described as "soulless"
+  - spellcheck: typo moment in nt-svg rifle ammo type
+  Zevotech:
+  - rscadd: exosuit fabricatiors can now be connected to the RND server via multitool
+  ritorizo:
+  - rscadd: Body bags in the autolathe.
+  thgvr:
+  - admin: Improved admin build mode menu and Drop pods from tgstation
+  - rscdel: ion storms are removed
+2023-09-15:
+  FalloutFalcon:
+  - rscadd: better rations
+  - rscdel: rationpack spawns
+  MarkSuckerberg:
+  - rscdel: Gang and revs gamemode (the gear remains)
+  - admin: Removes SSjob, occupations are now stored in a global list
+2023-09-16:
+  Pickle-Coding:
+  - bugfix: Allows the supermatter crystal to produce gases while powered, even in
+      absolutely empty turfs, excluding space turfs.
+2023-09-18:
+  Skrem7:
+  - tweak: The NT 'Boarder' ARG now loads standard P-16 magazines, rather than the
+      M-90gl toploaders.
+  - balance: Standardizes pellet projectiles to lose 10% damage of both types per
+      tile across the board. Improvised pellets no longer have a hardcapped 1-8 tile
+      range.
+  - balance: Less-lethal rounds now do 50% more stamina than the force of their lethal
+      counterparts, with 25% the normal force and double the negative AP. If the round
+      had positive or zero AP, it was subtracted by 20.
+  - balance: Shotgun slugs do 40 damage, down from 60, but have zero AP, rather than
+      -10. FRAG-12 and meteor slugs have had their damage adjusted to reflect their
+      relative force.
+  - balance: Surplus rifle fire_delay has been cut to 1 second from 3.
+  - balance: Any DMR, match, or sniper round now travels slightly faster than other
+      bullets. Shotgun slugs and pellets now travel slightly slower than other bullets.
+  - balance: Match rounds have had their AP slightly increased.
+  - bugfix: Fixed WT-550 magazines not displaying properly.
+  - spellcheck: Went over (almost) every single ballistic description, including the
+      guns themselves, magazines, ballistic casings, and speed loaders/stripper clips
+      to not only have better consistency and readability, but also be more clear
+      on the general effectiveness of each caliber.
+  - spellcheck: Assualt is gone.
+  - code_imp: Repaths/renames most ballistic ammo pathing to maintain consistency
+      or take advantage of inherits, when possible.
+2023-09-20:
+  RKz, Jacquerel:
+  - rscadd: New foodtype, GORE. Split from GROSS, GORE foodtype will be replacing
+      it where the food in particular resembles a corpse or organ. GROSS should only
+      apply to inedible or rotting foods. (baseball burgers)
+  - balance: All butchered player species are considered to be gore, only preferred
+      by Lizards, Arachnids, Kepori, Slimepeople and Flies. If you like the taste
+      of your fellow(or rival) crew, prepare accordingly.
+  - balance: Moved food preferences around to make more sense with the current system.
+      Nothing drastic, but species liked foods should be much more immersive in general.
+  Skrem7:
+  - rscadd: Adds the double eyepatch, a blindfold made by adding a normal eyepatch
+      to another
+  - tweak: Eyepatches can now swap sides with ALT+CLICK
+  - balance: Cybernetic organs can no longer require replacement due to EMPs (they
+      do not suffer permanent damage)
+  spockye:
+  - bugfix: temp fixed the jukebox(with subtypes) so they appear in the mapmaker
+2023-09-23:
+  Apogee-dev:
+  - tweak: Removed RnD from the Colossus and updated its looks
+2023-09-25:
+  retlaw34, Ebin-Halcyon, triplezeta:
+  - rscadd: IRMG Pointman hardsuit, admin only at the moment
+  - rscadd: Resprites and reworks the Cybersun hardsuit a little
+  - rscadd: Cybersun Medical technician hardsuit
+  - rscdel: Old cybersun hardsuit, It was unused anyways
+  - tweak: Extremely minor Blood red hardsuit sprite tweaks
+2023-09-26:
+  MarkSuckerberg:
+  - tweak: Firebots now extinguish turf fires.
+2023-09-27:
+  Zevotech:
+  - rscadd: Remaps the Skipper Heavy Cruiser
+  - rscadd: Adds an Atmos Tech, Cargo Tech and Cook job slot to the skipper
+  - rscdel: Removes two engineer slots from the skipper.
+2023-09-28:
+  PositiveEntropy:
+  - rscadd: New SolGov outfits now exist, including a winter coat!
+  - rscadd: The Logistics Deck Officer is now a possible job for SolGov ships!

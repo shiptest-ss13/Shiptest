@@ -40,6 +40,7 @@
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
+	QDEL_LIST(bioware)
 	GLOB.human_list -= src
 	return ..()
 
@@ -1412,13 +1413,6 @@
 
 /mob/living/carbon/human/species/golem/snow
 	race = /datum/species/golem/snow
-
-/mob/living/carbon/human/species/golem/capitalist
-	race = /datum/species/golem/capitalist
-
-/mob/living/carbon/human/species/golem/soviet
-	race = /datum/species/golem/soviet
-
 /mob/living/carbon/human/species/jelly
 	race = /datum/species/jelly
 

@@ -47,6 +47,7 @@
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
+	update_appearance()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
@@ -126,7 +127,8 @@
 		return
 
 	A.forceMove(drop_location())
-	if(!user.is_holding(src) || !user.put_in_hands(A)) //incase they're using TK
+	var/mob/living/carbon/human/H = user
+	if(!(user.is_holding(src) || H.l_store == src || H.r_store == src) || !user.put_in_hands(A)) //incase they're using TK
 		A.bounce_away(FALSE, NONE)
 	playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 	to_chat(user, "<span class='notice'>You remove a round from [src]!</span>")
@@ -157,6 +159,19 @@
 	for(var/material in bullet_cost)
 		temp_materials[material] = (bullet_cost[material] * stored_ammo.len) + base_cost[material]
 	set_custom_materials(temp_materials)
+
+/obj/item/ammo_box/AltClick(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if((user.is_holding(src) ||H.l_store == src || H.r_store == src) && !(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))	//caliber because boxes have none, instant load because speedloaders use the base ammo box type with instant load on, and magazine for the obvious.
+			attack_self(user)
+			return
+	..()
+
+/obj/item/ammo_box/examine(mob/user)
+	. = ..()
+	if(!(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))
+		. += "Alt-click on [src] while it in a pocket or your off-hand to take out a round while it is there."
 
 /obj/item/ammo_box/magazine
 	w_class = WEIGHT_CLASS_SMALL //Default magazine weight, only differs for tiny mags and drums

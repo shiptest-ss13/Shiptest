@@ -379,16 +379,16 @@ Turf and target are separate in case you want to teleport some distance from a t
 			break
 	return turf_to_check
 
-//Returns a list of all locations (except the area) the movable is within.
-/proc/get_nested_locs(atom/movable/AM, include_turf = FALSE)
+///Returns a list of all locations (except the area) the movable is within.
+/proc/get_nested_locs(atom/movable/atom_on_location, include_turf = FALSE)
 	. = list()
-	var/atom/location = AM.loc
-	var/turf/turf = get_turf(AM)
-	while(location && location != turf)
+	var/atom/location = atom_on_location.loc
+	var/turf/our_turf = get_turf(atom_on_location)
+	while(location && location != our_turf)
 		. += location
 		location = location.loc
-	if(location && include_turf) //At this point, only the turf is left, provided it exists.
-		. += location
+	if(our_turf && include_turf) //At this point, only the turf is left, provided it exists.
+		. += our_turf
 
 // returns the turf located at the map edge in the specified direction relative to A
 // used for mass driver
@@ -660,6 +660,11 @@ will handle it, but:
 	if(!istype(AM))
 		return
 
+	//Find coordinates
+	var/turf/T = get_turf(AM) //use checked_atom's turfs, as it's coords are the same as checked_atom's AND checked_atom's coords are lost if it is inside another atom
+	if(!T)
+		return null
+
 	//Find AM's matrix so we can use it's X/Y pixel shifts
 	var/matrix/M = matrix(AM.transform)
 
@@ -678,10 +683,6 @@ will handle it, but:
 	var/rough_x = round(round(pixel_x_offset,world.icon_size)/world.icon_size)
 	var/rough_y = round(round(pixel_y_offset,world.icon_size)/world.icon_size)
 
-	//Find coordinates
-	var/turf/T = get_turf(AM) //use AM's turfs, as it's coords are the same as AM's AND AM's coords are lost if it is inside another atom
-	if(!T)
-		return null
 	var/final_x = T.x + rough_x
 	var/final_y = T.y + rough_y
 
@@ -1363,11 +1364,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 	return "{[time_high]-[time_mid]-[GUID_VERSION][time_low]-[GUID_VARIANT][time_clock]-[node_id]}"
 
-// \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
-// If it ever becomes necesary to get a more performant REF(), this lies here in wait
-// #define REF(thing) (thing && istype(thing, /datum) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * If it ever becomes necesary to get a more performant REF(), this lies here in wait
+ * #define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : text_ref(thing))
+**/
 /proc/REF(input)
-	if(istype(input, /datum))
+	if(isdatum(input))
 		var/datum/thing = input
 		if(thing.datum_flags & DF_USE_TAG)
 			if(!thing.tag)
@@ -1375,11 +1378,11 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 				thing.datum_flags &= ~DF_USE_TAG
 			else
 				return "\[[url_encode(thing.tag)]\]"
-	return "\ref[input]"
+	return text_ref(input)
 
 // Makes a call in the context of a different usr
 // Use sparingly
-/world/proc/PushUsr(mob/M, datum/callback/CB, ...)
+/world/proc/push_usr(mob/M, datum/callback/CB, ...)
 	var/temp = usr
 	usr = M
 	if (length(args) > 2)

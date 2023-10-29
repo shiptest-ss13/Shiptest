@@ -367,6 +367,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	while (1)
 		tickdrift = max(0, MC_AVERAGE_FAST(tickdrift, (((REALTIMEOFDAY - init_timeofday) - (world.time - init_time)) / world.tick_lag)))
 		var/starting_tick_usage = TICK_USAGE
+
 		if (init_stage != init_stage_completed)
 			return MC_LOOP_RTN_NEWSTAGES
 		if (processing <= 0)
@@ -673,8 +674,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 /datum/controller/master/StartLoadingMap()
 	//disallow more than one map to load at once, multithreading it will just cause race conditions
-	while(map_loading)
-		stoplag()
+	UNTIL(!map_loading)
 	for(var/S in subsystems)
 		var/datum/controller/subsystem/SS = S
 		SS.StartLoadingMap()

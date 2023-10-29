@@ -54,6 +54,11 @@
 	jackpot_loop = new(list(src), FALSE)
 	wires = new /datum/wires/roulette(src)
 
+/obj/machinery/roulette/Destroy()
+	QDEL_NULL(jackpot_loop)
+	QDEL_NULL(wires)
+	return ..()
+
 /obj/machinery/roulette/obj_break(damage_flag)
 	prize_theft(0.05)
 	. = ..()
@@ -415,7 +420,7 @@
 
 	new /obj/machinery/roulette(toLaunch)
 
-	new /obj/effect/DPtarget(drop_location(), toLaunch)
+	new /obj/effect/pod_landingzone(drop_location(), toLaunch)
 	qdel(src)
 
 #undef ROULETTE_SINGLES_PAYOUT

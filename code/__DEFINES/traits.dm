@@ -224,6 +224,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_THERMAL_VISION "thermal_vision"
 /// Like antimagic, but doesn't block the user from casting
 #define TRAIT_ANTIMAGIC_NO_SELFBLOCK "anti_magic_no_selfblock"
+/// We have some form of forced gravity acting on us
+#define TRAIT_FORCED_GRAVITY "forced_gravity"
 #define TRAIT_ABDUCTOR_TRAINING "abductor-training"
 #define TRAIT_ABDUCTOR_SCIENTIST_TRAINING "abductor-scientist-training"
 #define TRAIT_SURGEON "surgeon"
@@ -272,7 +274,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SCOOPABLE "scoopable"
 //your smooches actually deal damage to their target
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
-#define TRAIT_CAN_SIGN_ON_COMMS "can_sign_on_comms"
+/// This mob overrides certian SSlag_switch measures with this special trait
+#define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
@@ -453,7 +456,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 #define TRAIT_FORCED_STANDING "forcedstanding"
 
-
 ///Movement type traits for movables. See elements/movetype_handler.dm
 #define TRAIT_MOVE_GROUND "move_ground"
 #define TRAIT_MOVE_FLYING "move_flying"
@@ -462,3 +464,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MOVE_PHASING "move_phasing"
 /// Disables the floating animation. See above.
 #define TRAIT_NO_FLOATING_ANIM "no-floating-animation"
+
+/// Trait granted by [mob/living/silicon/ai]
+/// Applied when the ai anchors itself
+#define AI_ANCHOR_TRAIT "ai_anchor"

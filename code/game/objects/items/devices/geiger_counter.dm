@@ -38,6 +38,7 @@
 	soundloop = new(list(src), FALSE)
 
 /obj/item/geiger_counter/Destroy()
+	QDEL_NULL(soundloop)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -111,15 +112,14 @@
 	return ..()
 
 /obj/item/geiger_counter/proc/update_sound()
-	var/datum/looping_sound/geiger/loop = soundloop
 	if(!scanning)
-		loop.stop()
+		soundloop.stop()
 		return
 	if(!radiation_count)
-		loop.stop()
+		soundloop.stop()
 		return
-	loop.last_radiation = radiation_count
-	loop.start()
+	soundloop.last_radiation = radiation_count
+	soundloop.start()
 
 /obj/item/geiger_counter/rad_act(amount)
 	. = ..()

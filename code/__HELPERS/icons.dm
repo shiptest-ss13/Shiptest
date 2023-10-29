@@ -1198,7 +1198,7 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 	if(isicon(icon) && isfile(icon))
 		//icons compiled in from 'icons/path/to/dmi_file.dmi' at compile time are weird and arent really /icon objects,
 		///but they pass both isicon() and isfile() checks. theyre the easiest case since stringifying them gives us the path we want
-		var/icon_ref = "\ref[icon]"
+		var/icon_ref = text_ref(icon)
 		var/locate_icon_string = "[locate(icon_ref)]"
 
 		icon_path = locate_icon_string
@@ -1209,7 +1209,7 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 		// the rsc reference returned by fcopy_rsc() will be stringifiable to "icons/path/to/dmi_file.dmi"
 		var/rsc_ref = fcopy_rsc(icon)
 
-		var/icon_ref = "\ref[rsc_ref]"
+		var/icon_ref = text_ref(rsc_ref)
 
 		var/icon_path_string = "[locate(icon_ref)]"
 
@@ -1219,7 +1219,7 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 		var/rsc_ref = fcopy_rsc(icon)
 		//if its the text path of an existing dmi file, the rsc reference returned by fcopy_rsc() will be stringifiable to a dmi path
 
-		var/rsc_ref_ref = "\ref[rsc_ref]"
+		var/rsc_ref_ref = text_ref(rsc_ref)
 		var/rsc_ref_string = "[locate(rsc_ref_ref)]"
 
 		icon_path = rsc_ref_string
@@ -1243,6 +1243,8 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
  */
 /proc/icon2html(atom/thing, client/target, icon_state, dir = SOUTH, frame = 1, moving = FALSE, sourceonly = FALSE, extra_classes = null)
 	if (!thing)
+		return
+	if(SSlag_switch.measures[DISABLE_USR_ICON2HTML] && usr && !HAS_TRAIT(usr, TRAIT_BYPASS_MEASURES))
 		return
 
 	var/key
@@ -1353,6 +1355,8 @@ GLOBAL_DATUM_INIT(dummySave, /savefile, new("tmp/dummySave.sav")) //Cache of ico
 //Costlier version of icon2html() that uses getFlatIcon() to account for overlays, underlays, etc. Use with extreme moderation, ESPECIALLY on mobs.
 /proc/costly_icon2html(thing, target, sourceonly = FALSE)
 	if (!thing)
+		return
+	if(SSlag_switch.measures[DISABLE_USR_ICON2HTML] && usr && !HAS_TRAIT(usr, TRAIT_BYPASS_MEASURES))
 		return
 
 	if (isicon(thing))

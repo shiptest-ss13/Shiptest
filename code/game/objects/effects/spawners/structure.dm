@@ -4,17 +4,19 @@ Because mapping is already tedious enough this spawner let you spawn generic
 again.
 */
 
+//These NEED to spawn immediately, because windows are important for keeping the space out
+INITIALIZE_IMMEDIATE(/obj/effect/spawner/structure)
+
 /obj/effect/spawner/structure
 	name = "map structure spawner"
+	//Just so stuff doesn't leak out while it's initializing
+	CanAtmosPass = ATMOS_PASS_NO
 	var/list/spawn_list
 
 /obj/effect/spawner/structure/Initialize()
 	. = ..()
-	if(spawn_list && spawn_list.len)
-		for(var/I in spawn_list)
-			new I(get_turf(src))
-	return INITIALIZE_HINT_QDEL
-
+	for(var/spawn_type in spawn_list)
+		new spawn_type(loc)
 
 //normal windows
 
