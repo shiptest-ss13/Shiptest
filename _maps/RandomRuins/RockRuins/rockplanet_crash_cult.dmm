@@ -480,23 +480,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"sA" = (
-/obj/docking_port/mobile{
-	callTime = 250;
-	can_move_docking_ports = 1;
-	dir = 2;
-	dwidth = 11;
-	height = 17;
-	launch_status = 0;
-	name = "Salvage Ship";
-	port_direction = 8;
-	preferred_direction = 4;
-	width = 33
-	},
-/obj/machinery/door/airlock/external,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered)
 "sN" = (
 /obj/machinery/processor,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1370,6 +1353,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"WS" = (
+/obj/machinery/door/airlock/external,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered)
 "Xh" = (
 /obj/structure/table,
 /obj/item/storage/bag/plants/portaseeder,
@@ -1386,9 +1374,6 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
-"XI" = (
-/turf/closed/mineral/random/rockplanet,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "XN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood,
@@ -1409,6 +1394,9 @@
 	},
 /turf/open/floor/plasteel/cult,
 /area/ruin/unpowered)
+"Zf" = (
+/turf/closed/mineral/random/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Zg" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/hidden{
 	dir = 9
@@ -1729,7 +1717,7 @@ RY
 nv
 "}
 (16,1,1) = {"
-sA
+WS
 Bz
 hw
 ul
@@ -1826,10 +1814,10 @@ li
 Es
 Es
 Es
-XI
+Zf
 "}
 (21,1,1) = {"
-XI
+Zf
 Es
 Us
 Es
@@ -1844,12 +1832,12 @@ xD
 Us
 eK
 ou
-XI
-XI
-XI
+Zf
+Zf
+Zf
 "}
 (22,1,1) = {"
-XI
+Zf
 Es
 Es
 jU
@@ -1863,14 +1851,14 @@ fg
 xD
 xD
 eK
-XI
-XI
-XI
-XI
+Zf
+Zf
+Zf
+Zf
 "}
 (23,1,1) = {"
-XI
-XI
+Zf
+Zf
 Es
 SP
 Es
@@ -1889,8 +1877,8 @@ SP
 Es
 "}
 (24,1,1) = {"
-XI
-XI
+Zf
+Zf
 Es
 ou
 Es
@@ -1904,14 +1892,14 @@ ct
 xD
 Es
 jU
-XI
-XI
+Zf
+Zf
 Es
 "}
 (25,1,1) = {"
-XI
-XI
-XI
+Zf
+Zf
+Zf
 Es
 Es
 Nt
@@ -1923,16 +1911,16 @@ GW
 xD
 xD
 Es
-XI
-XI
-XI
-XI
+Zf
+Zf
+Zf
+Zf
 "}
 (26,1,1) = {"
-XI
-XI
-XI
-XI
+Zf
+Zf
+Zf
+Zf
 Es
 Es
 Nt
@@ -1945,6 +1933,6 @@ Es
 Es
 Es
 Es
-XI
-XI
+Zf
+Zf
 "}

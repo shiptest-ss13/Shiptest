@@ -1,7 +1,5 @@
 /datum/job/qm
 	name = "Quartermaster"
-	total_positions = 1
-	spawn_positions = 1
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
 	officer = TRUE
 

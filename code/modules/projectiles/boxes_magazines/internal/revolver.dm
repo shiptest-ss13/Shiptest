@@ -7,7 +7,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev762
 	name = "\improper Nagant revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/n762
+	ammo_type = /obj/item/ammo_casing/n762_38
 	caliber = "7.62x38mmR"
 	max_ammo = 7
 	instant_load = FALSE
@@ -32,3 +32,10 @@
 /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	name = "pepperbox revolver cylinder"
 	max_ammo = 5
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45
+	name = "cattleman revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	max_ammo = 6
+	instant_load = TRUE

@@ -230,7 +230,7 @@
 	var/static/list/check_times = list()
 	var/list/payees = list()
 
-/obj/machinery/scanner_gate/luxury_shuttle/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/scanner_gate/luxury_shuttle/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 
 	if(mover in approved_passengers)
@@ -363,7 +363,7 @@
 
 /mob/living/simple_animal/hostile/bear/fightpit
 	name = "fight pit bear"
-	desc = "This bear's trained through ancient Russian secrets to fear the walls of its glass prison."
+	desc = "This bear's trained through ancient Solarian secrets to fear the walls of its glass prison."
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
 /obj/effect/decal/hammerandsickle

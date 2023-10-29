@@ -28,7 +28,7 @@
 		hal_target.client.images += fake_icon
 
 /obj/projectile/hallucination/Destroy()
-	if(hal_target.client)
+	if(hal_target?.client)
 		hal_target.client.images -= fake_icon
 	QDEL_NULL(fake_icon)
 	return ..()
@@ -128,7 +128,7 @@
 	hal_icon_state = "bullet"
 	hal_fire_sound = "gunshot"
 	hal_hitsound = 'sound/weapons/pierce.ogg'
-	hal_hitsound_wall = "ricochet"
+	hal_hitsound_wall = "bullet_impact"
 	hal_impact_effect = "impact_bullet"
 	hal_impact_effect_wall = "impact_bullet"
 	hit_duration = 5

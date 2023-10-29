@@ -24,6 +24,8 @@
 	var/cable = 1
 	var/list/debris = list()
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/machinery/door/window/Initialize(mapload, set_dir)
 	. = ..()
 	flags_1 &= ~PREVENT_CLICK_UNDER_1
@@ -103,11 +105,12 @@
 		do_animate("deny")
 	return
 
-/obj/machinery/door/window/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/door/window/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
-	if(get_dir(loc, target) == dir) //Make sure looking at appropriate border
+
+	if(border_dir == dir)
 		return FALSE
 
 	if(istype(mover, /obj/structure/window))

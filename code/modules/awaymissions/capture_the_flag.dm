@@ -39,6 +39,8 @@
 	. = ..()
 	if(!reset)
 		reset = new reset_path(get_turf(src))
+		reset.flag = src
+	RegisterSignal(src, COMSIG_PARENT_PREQDELETED, .proc/reset_flag) //just in case CTF has some map hazards (read: chasms).
 
 /obj/item/ctf/ComponentInitialize()
 	. = ..()
@@ -55,8 +57,24 @@
 				to_chat(M, "<span class='userdanger'>\The [src] has been returned to base!</span>")
 		STOP_PROCESSING(SSobj, src)
 
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/ctf/attack_hand(mob/living/user)
+/obj/item/ctf/proc/reset_flag(capture = FALSE)
+	SIGNAL_HANDLER
+
+	var/turf/our_turf = get_turf(src.reset)
+	if(!our_turf)
+		return TRUE
+	forceMove(our_turf)
+	for(var/mob/M in GLOB.player_list)
+		var/area/mob_area = get_area(M)
+		if(istype(mob_area, /area/ctf))
+			if(!capture)
+				to_chat(M, "<span class='userdanger'>[src] has been returned to the base!</span>")
+	STOP_PROCESSING(SSobj, src)
+	return TRUE //so if called by a signal, it doesn't delete
+
+//working with attack hand feels like taking my brain and putting it through an industrial pill press so i'm gonna be a bit liberal with the comments
+/obj/item/ctf/attack_hand(mob/living/user, list/modifiers)
+	//pre normal check item stuff, this is for our special flag checks
 	if(!is_ctf_target(user) && !anyonecanpickup)
 		to_chat(user, "<span class='warning'>Non-players shouldn't be moving the flag!</span>")
 		return
@@ -116,6 +134,13 @@
 	icon_state = "banner"
 	desc = "This is where a banner with Nanotrasen's logo on it would go."
 	layer = LOW_ITEM_LAYER
+	var/obj/item/ctf/flag
+
+/obj/effect/ctf/flag_reset/Destroy()
+	if(flag)
+		flag.reset = null
+		flag = null
+	return ..()
 
 /obj/effect/ctf/flag_reset/red
 	name = "red flag landmark"
@@ -173,7 +198,7 @@
 
 /obj/machinery/capture_the_flag/Destroy()
 	GLOB.poi_list.Remove(src)
-	..()
+	return ..()
 
 /obj/machinery/capture_the_flag/process()
 	for(var/i in spawned_mobs)
@@ -652,6 +677,11 @@
 	. = ..()
 	for(var/obj/machinery/capture_the_flag/CTF in GLOB.machines)
 		CTF.dead_barricades += src
+
+/obj/effect/ctf/dead_barricade/Destroy()
+	for(var/obj/machinery/capture_the_flag/CTF in GLOB.machines)
+		CTF.dead_barricades -= src
+	return ..()
 
 /obj/effect/ctf/dead_barricade/proc/respawn()
 	if(!QDELETED(src))
