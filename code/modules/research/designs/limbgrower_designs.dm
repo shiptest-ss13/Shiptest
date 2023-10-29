@@ -116,7 +116,7 @@
 	build_path = /obj/item/organ/tongue
 	category = list("initial",SPECIES_HUMAN)
 
-// Grows a fake lizard tail - not usable in lizard wine and other similar recipes.
+// Grows a fake lizard tail
 /datum/design/lizard_tail
 	name = "Lizard Tail"
 	id = "liztail"

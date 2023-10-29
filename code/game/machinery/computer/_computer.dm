@@ -21,6 +21,8 @@
 	///Does this computer have a unique icon_state? Prevents the changing of icons from alternative computer construction
 	var/unique_icon = FALSE
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	power_change()
