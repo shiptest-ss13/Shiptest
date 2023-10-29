@@ -26,19 +26,19 @@
 	var/spawn_time = 100 //10 seconds
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
+		/*/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,*/
 		)
 	var/spawn_text = "emerges from"
 	var/faction = list("hostile")
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
-	var/spawn_distance_min = 5
-	var/spawn_distance_max = 7
+	var/spawn_distance_min = 4
+	var/spawn_distance_max = 6
 
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)

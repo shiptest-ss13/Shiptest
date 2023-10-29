@@ -1,16 +1,22 @@
+#define MALF_LASER 1
+#define MALF_SENSOR 2
+#define MALF_CAPACITOR 3
+#define MALF_STRUCTURAL 4
+#define MALF_CALIBRATE 5
+
 /obj/machinery/drill
 	name = "big-ass ore drill"
 	desc = "It's like those drills you put in your hand but, like, way bigger."
 	icon = 'icons/obj/machines/drill.dmi'
 	icon_state = "deep_core_drill"
-	max_integrity = 250
-	integrity_failure = 0.25
+	max_integrity = 400
 	density = TRUE
 	anchored = FALSE
 	use_power = NO_POWER_USE
 	layer = ABOVE_ALL_MOB_LAYER
 	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 
+	var/malfunction
 	var/active = FALSE
 	var/obj/structure/vein/mining
 	var/datum/looping_sound/drill/soundloop
@@ -29,6 +35,10 @@
 /obj/machinery/drill/Destroy()
 	QDEL_NULL(soundloop)
 	return ..()
+
+/obj/machinery/drill/deconstruct(disassembled)
+	obj_break()
+	update_icon_state()
 
 /obj/machinery/drill/attackby(obj/item/tool, mob/living/user, params)
 	var/obj/structure/vein/vein = locate(/obj/structure/vein) in src.loc
@@ -109,10 +119,19 @@
 
 /obj/machinery/drill/proc/start_mining()
 	var/eta
+	if(obj_integrity <= max_integrity/2)
+		malfunction += rand(1,5)
+		say("Error: Drill malfunction detected!")
+		malfunction(malfunction)
+		active = FALSE
+		update_icon_state()
+		update_overlays()
+		return
 	if(mining.mining_charges >= 1)
 		eta = mining.mining_charges * 300
 		addtimer(CALLBACK(src, .proc/mine), 300)
 		say("Estimated time until vein depletion: [time2text(eta,"mm:ss")].")
+		return
 	else
 		say("Vein depleted.")
 		active = FALSE
@@ -127,8 +146,16 @@
 		mining.mining_charges -= 1
 		mining.drop_ore()
 		start_mining()
-	else if(!mining.mining_charges)
+	else if(!mining.mining_charges) //Extra check to prevent vein related errors locking us in place
 		say("Error: Vein Depleted")
 		active = FALSE
 		update_icon_state()
 		update_overlays()
+
+/obj/machinery/drill/proc/malfunction(var/malfunction_type)
+	switch(malfunction_type)
+		if(MALF_LASER)
+		if(MALF_SENSOR)
+		if(MALF_CAPACITOR)
+		if(MALF_STRUCTURAL)
+		if(MALF_CALIBRATE)
