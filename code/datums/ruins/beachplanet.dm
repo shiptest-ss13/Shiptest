@@ -59,3 +59,9 @@
 	id = "beach_crashed_engineer"
 	description = "An abandoned camp built by a crashed engineer"
 	suffix = "beach_crashed_engineer.dmm"
+
+/datum/map_template/ruin/beachplanet/floatresort
+	name = "Floating Beach Resort"
+	id = "beach_float_resort"
+	description = "A hidden paradise on the beach"
+	suffix = "beach_float_resort.dmm"

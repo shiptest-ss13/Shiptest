@@ -115,3 +115,33 @@
 /area/ruin/jungle/syndifort/jerry
 	name = "Syndicate Fort Tower"
 	icon_state = "bridge"
+
+// Cave Crew
+
+/area/ruin/jungle/cavecrew
+	name = "Cave"
+	icon_state = "red"
+
+/area/ruin/jungle/cavecrew/cargo
+	name = "Cave Cargo"
+	icon_state = "dk_yellow"
+
+/area/ruin/jungle/cavecrew/bridge
+	name = "Cave Bridge"
+	icon_state = "bridge"
+
+/area/ruin/jungle/cavecrew/hallway
+	name = "Cave Base Hallway"
+	icon_state = "hallP"
+
+/area/ruin/jungle/cavecrew/engineering
+	name = "Cave Base Engineering"
+	icon_state = "dk_yellow"
+
+/area/ruin/jungle/cavecrew/security
+	name = "Cave Base Security"
+	icon_state = "red"
+
+/area/ruin/jungle/cavecrew/dormitories
+	name = "Cave Base dormitories"
+	icon_state = "crew_quarters"
