@@ -41,6 +41,8 @@
 	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
 	casingtype = /obj/item/ammo_casing/n762_38
 
+/mob/living/simple_animal/hostile/frontier/ranged/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
 
 /mob/living/simple_animal/hostile/frontier/ranged/mosin
 	icon_state = "frontiersmanrangedrifle"
@@ -49,6 +51,9 @@
 				/obj/item/gun/ballistic/rifle/boltaction)
 	casingtype = /obj/item/ammo_casing/a762_54
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+
+/mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper
 	icon_state = "frontiersmanrangedelite"
@@ -60,6 +65,9 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/shotgun/lethal)
 
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
+
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/ak47
 	icon_state = "frontiersmanrangedak47"
 	icon_living = "frontiersmanrangedak47"
@@ -70,6 +78,9 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/automatic/assault/ak47)
 
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/ak47/neutured
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
+
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle
 	icon_state = "frontiersmanrangedmosin"
 	icon_living = "frontiersmanrangedmosin"
@@ -78,6 +89,9 @@
 				/obj/item/gun/ballistic/rifle/boltaction)
 	casingtype = /obj/item/ammo_casing/a762_54
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
+
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy
 	icon_state = "frontiersmanrangedminigun"
@@ -91,6 +105,9 @@
 	projectiletype = /obj/projectile/beam/weak/penetrator
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy)
 
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/heavy/neutered
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless)
+
 /mob/living/simple_animal/hostile/frontier/ranged/officer
 	name = "Frontiersman Officer"
 	icon_state = "frontiersmanofficer"
@@ -101,6 +118,9 @@
 	casingtype = /obj/item/ammo_casing/c9mm
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer,
 				/obj/item/gun/ballistic/automatic/pistol/APS)
+
+/mob/living/simple_animal/hostile/frontier/ranged/officer/neutured
+	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/officer)
 
 /mob/living/simple_animal/hostile/frontier/ranged/officer/Aggro()
 	..()
