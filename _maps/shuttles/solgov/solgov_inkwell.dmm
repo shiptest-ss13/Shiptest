@@ -3666,18 +3666,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/birch,
 /area/ship/hallway/starboard)
-"xl" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/docking_port/mobile{
-	dheight = 1;
-	dir = 4;
-	preferred_direction = 4;
-	port_direction = 8
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "xs" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/techfloor/orange{
@@ -4554,6 +4542,12 @@
 	pixel_x = -18;
 	id = "sgi_holocargo2"
 	},
+/obj/docking_port/mobile{
+	dheight = 1;
+	dir = 4;
+	preferred_direction = 4;
+	port_direction = 8
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Dt" = (
@@ -5091,6 +5085,12 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
+"GK" = (
+/obj/docking_port/mobile{
+	dir = 2
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/security/armory)
 "GN" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -7889,7 +7889,7 @@ TY
 qM
 Wq
 Tv
-xl
+Tv
 Tv
 TY
 ce
@@ -8245,7 +8245,7 @@ sJ
 iG
 "}
 (15,1,1) = {"
-LJ
+GK
 LJ
 LJ
 LJ
