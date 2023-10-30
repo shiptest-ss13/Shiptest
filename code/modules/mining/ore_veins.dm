@@ -26,15 +26,15 @@
 	var/spawn_time = 100 //10 seconds
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
-		/*/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,*/
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
 		)
 	var/spawn_text = "emerges from"
-	var/faction = list("hostile")
+	var/faction = list("hostile","mining")
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
 	var/spawn_distance_min = 4
@@ -69,13 +69,13 @@
 	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max)
 
 //Pulls a random ore from the vein list per vein_class
-/obj/structure/vein/proc/drop_ore()
+/obj/structure/vein/proc/drop_ore(multiplier)
 	var/class
 	class = vein_class
 	for(class, class>0, class--)
 		var/picked
 		picked = pick(vein_contents)
-		new picked(loc,rand(5,10))
+		new picked(loc,round(rand(5,10)*multiplier))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
