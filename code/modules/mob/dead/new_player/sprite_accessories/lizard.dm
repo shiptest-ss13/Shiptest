@@ -172,7 +172,7 @@
 /datum/sprite_accessory/frills/ears
 	name = "Normal ears"
 	icon_state = "ears"
-	hasinner = TRUE
+	secondary_color = TRUE
 //End ears
 /datum/sprite_accessory/frills/simple
 	name = "Simple"

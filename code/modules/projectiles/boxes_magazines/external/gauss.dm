@@ -9,7 +9,7 @@
 
 /obj/item/ammo_box/magazine/modelh
 	name = "Model H magazine (ferromagnetic slugs)"
-	desc = "A 10-round magazine for the Model H pistol. Ferromagnetic slugs are slow, but do incredible damage with significant armor penetration."
+	desc = "A 10-round magazine for the Model H pistol. Ferromagnetic slugs are slow and incredibly powerful bullets, but are easily stopped by even a sliver of armor."
 	icon_state = "smallmagmag"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/slug
 	caliber = "slug"

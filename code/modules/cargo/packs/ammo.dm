@@ -22,6 +22,15 @@
 					/obj/item/ammo_box/magazine/m45)
 	cost = 1500
 
+/datum/supply_pack/ammo/m45_speedloader
+	name = ".45 ACP Speedloader Crate"
+	desc = "Contains four .45 ACP speedloaders for revolvers, each containing six rounds."
+	contains = list(/obj/item/ammo_box/c45_speedloader,
+					/obj/item/ammo_box/c45_speedloader,
+					/obj/item/ammo_box/c45_speedloader,
+					/obj/item/ammo_box/c45_speedloader)
+	cost = 1500
+
 /datum/supply_pack/ammo/c38_mag
 	name = ".38 Speedloader Crate"
 	desc = "Contains four .38 speedloaders for revolvers, each containing six rounds."
