@@ -30,6 +30,8 @@
 	var/x_offset = -4
 	var/y_offset = -4
 
+	hitsound_type = PROJECTILE_HITSOUND_STONE
+
 /turf/closed/mineral/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(has_borders)
