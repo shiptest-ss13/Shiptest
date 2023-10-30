@@ -24,12 +24,6 @@
 	description = "A once prosperous autoinjector manufacturing plant."
 	suffix = "whitesands_surface_medipen_plant.dmm"
 
-/datum/map_template/ruin/whitesands/youreinsane
-	name = "Lost Engine"
-	id = "ws-youreinsane"
-	description = "Nanotrasen would like to remind all employees that the Pi\[REDACTED\]er is not real."
-	suffix = "whitesands_surface_youreinsane.dmm"
-
 /datum/map_template/ruin/whitesands/assaultpodcrash
 	name = "Crashed Syndicate Assault Drop Pod"
 	id = "ws-assaultpodcrash"
