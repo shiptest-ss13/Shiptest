@@ -156,6 +156,10 @@
 	///Default Y pixel offset
 	var/base_pixel_y
 
+	///Wanted sound when hit by a projectile
+	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+	///volume wanted for being hit
+	var/hitsound_volume = 50
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
@@ -586,6 +590,33 @@
 /atom/proc/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, P, def_zone)
 	. = P.on_hit(src, 0, def_zone, piercing_hit)
+
+/atom/proc/bullet_hit_sfx(obj/projectile/hitting_projectile)
+	var/selected_sound = ""
+
+	if(!hitsound_volume)
+		return FALSE
+	if(!hitsound_volume)
+		return FALSE
+
+	switch(hitsound_type)
+		if(PROJECTILE_HITSOUND_FLESH)
+			selected_sound = hitting_projectile.hitsound
+		if(PROJECTILE_HITSOUND_NON_LIVING)
+			selected_sound = hitting_projectile.hitsound_non_living
+		if(PROJECTILE_HITSOUND_GLASS)
+			selected_sound = hitting_projectile.hitsound_glass
+		if(PROJECTILE_HITSOUND_STONE)
+			selected_sound = hitting_projectile.hitsound_stone
+		if(PROJECTILE_HITSOUND_METAL)
+			selected_sound = hitting_projectile.hitsound_metal
+		if(PROJECTILE_HITSOUND_WOOD)
+			selected_sound = hitting_projectile.hitsound_wood
+		if(PROJECTILE_HITSOUND_SNOW)
+			selected_sound = hitting_projectile.hitsound_snow
+
+	playsound(src, selected_sound, hitsound_volume, TRUE)
+	return TRUE
 
 ///Return true if we're inside the passed in atom
 /atom/proc/in_contents_of(container)//can take class or object instance as argument
