@@ -623,6 +623,22 @@
 		I.attack_self(src)
 		update_inv_hands()
 
+/mob/verb/do_unique_action()
+	set name = "Do Unique Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		I.unique_action(src)
+		update_inv_hands()
+
 /**
  * Get the notes of this mob
  *

@@ -315,57 +315,10 @@
 /datum/map_template/shuttle/shiptest
 	category = "shiptest"
 
-/// Pirate ship templates
-/datum/map_template/shuttle/pirate
-	category = "misc"
-
-/datum/map_template/shuttle/pirate/default
-	file_name = "pirate_default"
-	name = "pirate ship (Default)"
-
-/// Fugitive hunter ship templates
-/datum/map_template/shuttle/hunter
-	category = "misc"
-
-/datum/map_template/shuttle/hunter/russian
-	file_name = "hunter_russian"
-	name = "Russian Cargo Ship"
-
-/datum/map_template/shuttle/hunter/bounty
-	file_name = "hunter_bounty"
-	name = "Bounty Hunter Ship"
-
 /// Shuttles to be loaded in ruins
 /datum/map_template/shuttle/ruin
 	category = "ruin"
 	starting_funds = 0
-
-/datum/map_template/shuttle/ruin/caravan_victim
-	file_name = "ruin_caravan_victim"
-	name = "Small Freighter"
-
-/datum/map_template/shuttle/ruin/pirate_cutter
-	file_name = "ruin_pirate_cutter"
-	name = "Pirate Cutter"
-
-/datum/map_template/shuttle/ruin/syndicate_dropship
-	file_name = "ruin_syndicate_dropship"
-	name = "Syndicate Dropship"
-
-/datum/map_template/shuttle/ruin/syndicate_fighter_shiv
-	file_name = "ruin_syndicate_fighter_shiv"
-	name = "Syndicate Fighter"
-
-/datum/map_template/shuttle/ruin/solgov_exploration_pod
-	file_name = "ruin_solgov_exploration_pod"
-	name = "SolGov Exploration Pod"
-
-/datum/map_template/shuttle/ruin/syndicate_interceptor
-	file_name = "ruin_syndicate_interceptor"
-	name = "Syndicate Interceptor"
-	prefix = "SSV"
-	name_categories = list("WEAPONS")
-	short_name = "Dartbird"
 
 //Subshuttles
 
