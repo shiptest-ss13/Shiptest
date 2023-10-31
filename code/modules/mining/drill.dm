@@ -10,8 +10,8 @@
 #define METAL_SECURED 2
 
 /obj/machinery/drill
-	name = "big-ass ore drill"
-	desc = "It's like those drills you put in your hand but, like, way bigger."
+	name = "heavy-duty laser mining drill"
+	desc = "A large scale laser drill. It's able to mine vast amounts of minerals from near-surface ore pockets, however the seismic activity tends to anger local fauna."
 	icon = 'icons/obj/machines/drill.dmi'
 	icon_state = "deep_core_drill"
 	max_integrity = 200
@@ -39,9 +39,16 @@
 		. += "<spawn class='notice'>The lower power light is blinking."
 	switch(malfunction)
 		if(4)
-			. += "<span class='notice'>The drill's structure looks like it needs to be <b>welded<b> back together.</span>"
+			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded<b> back together.</span>"
 		if(5)
-			. += "<span class='notice'>The drill's gimbal is out of alignment, it needs to be recalibrated with a <b>multitool<b>.</span>"
+			. += "<span class='notice'>The [src]'s gimbal is out of alignment, it needs to be recalibrated with a <b>multitool<b>.</span>"
+	switch(metal_attached)
+		if(METAL_PLACED)
+			. += "<span class='notice'>Replacement plating has been attached to [src], but has not been <b>bolted<b> in place yet.</span>"
+		if(METAL_SECURED)
+			. += "<span class='notice'>Replacement plating has been secured to [src], but still needs to be <b>welded<b> into place.</span>"
+	if(machine_stat && BROKEN && !metal_attached)
+		. += "<span class='notice'>[src]'s structure has been totaled, the <b>plasteel<b> plating needs to be replaced."
 
 /obj/machinery/drill/Initialize()
 	. = ..()
@@ -67,10 +74,12 @@
 	QDEL_NULL(soundloop)
 	return ..()
 
+//Instead of being qdeled the drill requires mildly expensive repairs to use again
 /obj/machinery/drill/deconstruct(disassembled)
 	if(active && mining)
 		say("Drill integrity failure, comencing emergency shutdown procedure.")
-		mining.deconstruct() //Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
+		//Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
+		mining.deconstruct()
 	obj_break()
 	update_icon_state()
 	update_overlays()
@@ -87,7 +96,9 @@
 				metal_attached = METAL_PLACED
 				to_chat(user, "<span class='notice'>You prepare to attach the plating to [src].</span>")
 				return
-		if(tool.tool_behaviour == TOOL_WELDER && do_after(user, 30*tool.toolspeed, target = src))
+			else
+				to_chat(user, "<span class='notice'>You don't have enough plasteel to fix the plating.</span>")
+		if(metal_attached == METAL_SECURED && tool.tool_behaviour == TOOL_WELDER && do_after(user, 30*tool.toolspeed, target = src))
 			playsound(src, 'sound/items/welder2.ogg', 50, TRUE)
 			to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
 			metal_attached = null
@@ -124,7 +135,7 @@
 			return
 	if(default_deconstruction_screwdriver(user,icon_state,icon_state,tool))
 		return TRUE
-	if(panel_open)
+	if(panel_open) //All malfunction repair and maintenance actions are handled under here
 		var/list/needed_parts = list(/obj/item/stock_parts/scanning_module,/obj/item/stock_parts/micro_laser,/obj/item/stock_parts/capacitor)
 		if(is_type_in_list(tool,needed_parts))
 			for(var/obj/item/stock_parts/part in component_parts)
@@ -177,6 +188,7 @@
 			return
 	return ..()
 
+//Can we even turn the damn thing on?
 /obj/machinery/drill/interact(mob/user, special_state)
 	. = ..()
 	if(malfunction)
@@ -226,6 +238,7 @@
 	else
 		set_light(0)
 
+//Handles all checks before starting the 30 second (on average) mining tick
 /obj/machinery/drill/proc/start_mining()
 	var/eta
 	var/power_use
@@ -237,7 +250,7 @@
 		soundloop.stop()
 		update_overlays()
 		return
-	if(obj_integrity <= max_integrity/2)
+	if(obj_integrity <= max_integrity/2.5)
 		malfunction = rand(1,5)
 		malfunction(malfunction)
 		active = FALSE
@@ -265,12 +278,13 @@
 		update_icon_state()
 		update_overlays()
 
+//Handles the process of withdrawing ore from the vein itself
 /obj/machinery/drill/proc/mine()
 	var/sensor_rating
 	for(var/obj/item/stock_parts/scanning_module/sensor in component_parts)
 		sensor_rating = sensor.rating
 	if(mining.mining_charges)
-		mining.mining_charges -= 1
+		mining.mining_charges--
 		mining.drop_ore(round(sqrt(sensor_rating), 0.1))
 		start_mining()
 	else if(!mining.mining_charges) //Extra check to prevent vein related errors locking us in place
@@ -279,6 +293,7 @@
 		update_icon_state()
 		update_overlays()
 
+//Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)
 	switch(malfunction_type)
 		if(MALF_LASER)
