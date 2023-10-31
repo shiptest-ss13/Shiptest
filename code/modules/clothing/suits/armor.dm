@@ -412,11 +412,23 @@
 	. = ..()
 	allowed |= list(/obj/item/gun/ballistic/automatic/assault/swiss_cheese, /obj/item/tank)
 
-/obj/item/clothing/suit/armor/vest/bulletproof/suns //remind me to make this something to buy
+/obj/item/clothing/suit/armor/vest/bulletproof/sunsehos //remind me to make this something to buy
 	name = "\improper Peacekeeper Greatcoat"
 	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
 	icon_state = "suns_greatcoat"
 	item_state = "suns_greatcoat"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/suns
+	name = "Peacekeeper Plating"
+	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
+	icon_state = "suns_pkarmor"
+	item_state = "suns_pkarmor"
+
+/obj/item/clothing/suit/armor/vest/bulletproof/sunshos
+	name = "Gilded Peacekeeper Plating"
+	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
+	icon_state = "suns_lpkarmor"
+	item_state = "suns_lpkarmor"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
 	name = "\improper Decorated academic coat"

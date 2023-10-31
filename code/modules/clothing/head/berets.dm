@@ -170,7 +170,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 90
 
-/obj/item/clothing/head/beret/captain/suns //I know what the typepath says, I'm not fixing it.
+/obj/item/clothing/head/beret/hop/suns
 	name = "academic staff beret"
 	desc = "A soft beret sporting a discontinued inkwell quill feather. If only it could hold ink once more"
 	icon_state = "suns_xoberet"
