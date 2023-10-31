@@ -224,10 +224,11 @@
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")		//WS Edit - Dry firing
-	playsound(src, dry_fire_sound, 30, TRUE)
-	if(safety)
-		to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
+	if(!safety)
+		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")		//WS Edit - Dry firing
+		playsound(src, dry_fire_sound, 30, TRUE)
+		return
+	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
