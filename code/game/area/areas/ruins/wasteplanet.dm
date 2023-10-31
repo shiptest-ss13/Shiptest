@@ -53,7 +53,7 @@
 	icon_state = "blue"
 
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship //ruined cargo hauler, dont mind this
-	name = "Scrapped Syndicate Haluer"
+	name = "Scrapped Syndicate Hauler"
 	icon_state = "red"
 
 /area/ruin/wasteplanet/wasteplanet_graveyard/shippy //what's that? the average shiptesters house?

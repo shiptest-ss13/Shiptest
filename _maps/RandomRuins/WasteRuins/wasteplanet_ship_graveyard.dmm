@@ -402,9 +402,12 @@
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "bG" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/plating/rust,
-/area/overmap_encounter/planetoid/wasteplanet/explored)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/industrial/warning/dust/corner{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/area/ruin/wasteplanet/wasteplanet_graveyard)
 "bH" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -855,7 +858,7 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "dC" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/directional/east,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "dD" = (
@@ -982,8 +985,8 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/plastic,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "dZ" = (
@@ -1362,7 +1365,6 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "fA" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/directional/east,
 /obj/machinery/status_display/shuttle{
 	pixel_x = 32
 	},
@@ -1691,7 +1693,7 @@
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "gL" = (
-/obj/machinery/light/directional/west,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "gN" = (
@@ -1938,7 +1940,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/machinery/light/directional/east,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "hJ" = (
@@ -2335,12 +2337,12 @@
 	dir = 6
 	},
 /obj/structure/table/wood,
-/obj/machinery/light/directional/east,
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 22;
 	pixel_y = 8
 	},
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/holofloor/wood,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "jp" = (
@@ -2815,6 +2817,7 @@
 "kU" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "kW" = (
@@ -3192,7 +3195,6 @@
 	pixel_x = 10;
 	pixel_y = 9
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/machinery/firealarm/directional/south,
 /obj/item/storage/pill_bottle/mannitol{
 	pixel_x = 10;
@@ -3200,6 +3202,7 @@
 	},
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/clothing/gloves/color/latex,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -3496,7 +3499,7 @@
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/machinery/light/directional/east,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "nL" = (
@@ -3818,7 +3821,6 @@
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "oX" = (
-/obj/machinery/light/small/directional/north,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
@@ -5083,7 +5085,6 @@
 /obj/structure/sign/minutemen{
 	pixel_y = -32
 	},
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -5195,6 +5196,7 @@
 "uk" = (
 /obj/structure/railing/corner,
 /obj/item/storage/belt/security/webbing,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "ul" = (
@@ -5465,7 +5467,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/light/directional/south,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -5576,7 +5578,6 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "vJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -6089,6 +6090,7 @@
 	},
 /obj/item/clothing/under/rank/security/officer/minutemen,
 /obj/item/clothing/accessory/armband/engine,
+/obj/machinery/light/small/broken/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "xe" = (
@@ -6187,11 +6189,11 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "xv" = (
 /obj/effect/turf_decal/siding/thinplating{
-	dir = 8
+	dir = 4
 	},
-/obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plating/rust,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "xw" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7310,7 +7312,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 5
 	},
-/obj/machinery/light/directional/north,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "BB" = (
@@ -7327,7 +7329,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
@@ -7562,6 +7563,7 @@
 "Cv" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Cw" = (
@@ -7806,9 +7808,6 @@
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Dm" = (
 /obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/shoes/magboots/syndie,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "Do" = (
@@ -8051,14 +8050,9 @@
 	},
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Eq" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 1
-	},
-/obj/machinery/light/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+/obj/machinery/light/broken/directional/east,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "Er" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/closet/secure_closet/freezer/fridge,
@@ -8248,6 +8242,7 @@
 /obj/structure/frame/computer{
 	dir = 8
 	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -8954,8 +8949,8 @@
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "Ic" = (
-/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "Id" = (
@@ -9211,15 +9206,18 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "Jg" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 1
+	},
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "Jh" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/directional/west,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 28
 	},
+/obj/machinery/light/small/broken/directional/west,
 /turf/open/floor/carpet/nanoweave,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Ji" = (
@@ -10700,7 +10698,6 @@
 "OK" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/structure/railing/corner,
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "OL" = (
@@ -11607,6 +11604,10 @@
 	},
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
+"Sa" = (
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "Sb" = (
 /obj/structure/girder,
 /turf/open/floor/plating/rust,
@@ -11651,6 +11652,7 @@
 	dir = 6
 	},
 /obj/structure/table/reinforced,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
 	},
@@ -11774,12 +11776,14 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
 	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "SP" = (
 /obj/effect/decal/fakelattice{
 	icon_state = "lattice-5"
 	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plating/asteroid/wasteplanet/lit,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "SQ" = (
@@ -11902,7 +11906,7 @@
 /turf/open/floor/holofloor/wood,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "Tj" = (
-/obj/machinery/light/directional/west,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "Tl" = (
@@ -12061,7 +12065,8 @@
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "TV" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Bathroom"
+	name = "Bathroom";
+	dir = 4
 	},
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
@@ -12222,7 +12227,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -12270,10 +12274,11 @@
 	dir = 6
 	},
 /obj/machinery/airalarm/directional/south,
+/obj/machinery/light/small/broken/directional/east,
 /turf/open/floor/plasteel,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "UW" = (
-/obj/machinery/light/directional/east,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "UX" = (
@@ -12392,7 +12397,6 @@
 	dir = 8;
 	pixel_x = 26
 	},
-/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
@@ -12662,7 +12666,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/steeldecal/steel_decals7,
 /obj/effect/turf_decal/steeldecal/steel_decals4,
-/obj/machinery/light/directional/north,
 /obj/machinery/requests_console{
 	pixel_y = 25
 	},
@@ -12712,7 +12715,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/machinery/light/small/directional/south,
 /obj/machinery/airalarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -13271,9 +13273,10 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "YR" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/dark,
-/area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
+/obj/effect/turf_decal/siding/thinplating,
+/obj/machinery/light/broken/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "YT" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/decal/cleanable/xenoblood,
@@ -13320,9 +13323,6 @@
 	},
 /area/ruin/wasteplanet/wasteplanet_graveyard)
 "Zf" = (
-/obj/machinery/suit_storage_unit/open,
-/obj/machinery/suit_storage_unit/open,
-/obj/machinery/suit_storage_unit/open,
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
@@ -13486,10 +13486,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "ZH" = (
-/obj/machinery/light/directional/south,
 /obj/structure/spider/stickyweb,
 /obj/structure/spider_player/cocoon,
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/wasteplanet/wasteplanet_graveyard/syndicate_ship)
 "ZI" = (
@@ -13510,6 +13510,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/salvageable/autolathe,
+/obj/machinery/light/small/broken/directional/north,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -14705,13 +14706,13 @@ yA
 yA
 yA
 MH
-SI
+bG
 Tt
 fu
 fu
 fu
 fu
-pS
+tD
 RK
 pS
 kp
@@ -15264,7 +15265,7 @@ pS
 ra
 xH
 uH
-xv
+vW
 FI
 bW
 Wo
@@ -15341,7 +15342,7 @@ xs
 ra
 aW
 qu
-Hb
+xv
 Ho
 Hb
 Hb
@@ -16422,7 +16423,7 @@ kJ
 Gy
 GU
 ra
-Cj
+Hs
 Nq
 ra
 pZ
@@ -16576,7 +16577,7 @@ yi
 yi
 sR
 ra
-aW
+Jg
 zm
 ra
 ra
@@ -16807,8 +16808,8 @@ ra
 ra
 ra
 ra
-Eq
-Qr
+Rl
+YR
 ra
 ra
 Mq
@@ -17093,7 +17094,7 @@ wW
 uf
 wW
 wW
-YR
+qw
 wW
 uz
 aj
@@ -17160,7 +17161,7 @@ Am
 Sy
 ZG
 ev
-ZG
+Sa
 wW
 YO
 hh
@@ -17236,7 +17237,7 @@ Am
 Am
 jw
 zW
-Zi
+ev
 DO
 wW
 de
@@ -17545,7 +17546,7 @@ Am
 Am
 Am
 Jq
-dK
+Eq
 Vr
 aj
 wW
@@ -17705,7 +17706,7 @@ wW
 xV
 wW
 wW
-UW
+Fg
 Fg
 Ye
 dV
@@ -17867,8 +17868,8 @@ qw
 uD
 QT
 QT
-Fg
 UW
+Fg
 Fg
 bc
 Fg
@@ -17942,7 +17943,7 @@ Am
 Am
 Am
 QT
-Jg
+Fg
 wW
 Qm
 uD
@@ -19978,7 +19979,7 @@ IS
 Yf
 pg
 SN
-bG
+sG
 fy
 Tn
 Yf
