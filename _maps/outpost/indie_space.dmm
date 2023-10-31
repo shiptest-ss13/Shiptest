@@ -5503,9 +5503,6 @@
 /obj/machinery/chem_dispenser/drinks/beer{
 	pixel_y = 13
 	},
-/obj/machinery/chem_dispenser/drinks{
-	pixel_y = 13
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
@@ -6972,6 +6969,14 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
+"WS" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille/indestructable,
+/turf/open/floor/plating,
+/area/outpost/maintenance/fore)
 "WV" = (
 /obj/machinery/vending/snack/random,
 /obj/effect/turf_decal/spline/fancy/opaque/lightgrey{
@@ -13539,7 +13544,7 @@ lE
 NK
 gS
 EP
-Rg
+WS
 LU
 RU
 Nv
