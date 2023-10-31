@@ -2,7 +2,7 @@
 	name = "jukebox"
 	desc = "A classic music player."
 	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "jukebox"
+	icon_state = "jukebox-"
 	verb_say = "states"
 	density = TRUE
 	var/active = FALSE
@@ -15,14 +15,14 @@
 /obj/machinery/jukebox/boombox
 	name = "boombox"
 	desc = "A theoretically-portable music player that's much larger and heavier than it really needs to be."
-	icon_state = "boombox"
+	icon_state = "boombox-"
 	density = FALSE
 
 
 /obj/machinery/jukebox/disco
 	name = "radiant dance machine mark IV"
 	desc = "The first three prototypes were discontinued after mass casualty incidents."
-	icon_state = "disco"
+	icon_state = "disco-"
 	anchored = FALSE
 	var/list/spotlights = list()
 	var/list/sparkles = list()
@@ -54,7 +54,7 @@
 	return ..()
 
 /obj/machinery/jukebox/update_icon_state()
-	icon_state = "[initial(icon_state)]-[active ? "active" : null]"
+	icon_state = "[initial(icon_state)][active ? "active" : null]"
 	return ..()
 
 /obj/machinery/jukebox/ui_status(mob/user)

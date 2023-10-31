@@ -83,7 +83,7 @@
 
 /obj/item/organ/tail/lizard/fake
 	name = "fabricated lizard tail"
-	desc = "A fabricated severed lizard tail. This one's made of synthflesh. Probably not usable for lizard wine."
+	desc = "A fabricated severed lizard tail. This one's made of synthflesh."
 
 /obj/item/organ/tail/elzu
 	name = "\improper Elzuose tail"

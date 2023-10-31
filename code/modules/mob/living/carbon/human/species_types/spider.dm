@@ -45,13 +45,13 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, MUTCOLORS_PARTSONLY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BUG
-	mutant_bodyparts = list("spider_legs", "spider_spinneret", "spider_mandibles")
-	default_features = list("spider_legs" = "Plain", "spider_spinneret" = "Plain", "spider_mandibles" = "Plain", "body_size" = "Normal")
+	mutant_bodyparts = list("spider_legs", "spider_spinneret")
+	default_features = list("spider_legs" = "Carapaced", "spider_spinneret" = "Plain", "body_size" = "Normal")
 	attack_verb = "slash"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/spider
-	liked_food = MEAT | RAW
+	liked_food = MEAT | RAW | GORE // Regular spiders literally liquify the insides of their prey and drink em like a smoothie. I think this fits
 	disliked_food = FRUIT | GROSS
 	toxic_food = VEGETABLES | DAIRY | CLOTH
 	mutanteyes = /obj/item/organ/eyes/night_vision/spider

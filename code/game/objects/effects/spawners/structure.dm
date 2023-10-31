@@ -15,11 +15,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/spawner/structure)
 
 /obj/effect/spawner/structure/Initialize()
 	. = ..()
-	if(spawn_list && spawn_list.len)
-		for(var/I in spawn_list)
-			new I(get_turf(src))
-	return INITIALIZE_HINT_QDEL
-
+	for(var/spawn_type in spawn_list)
+		new spawn_type(loc)
 
 //normal windows
 

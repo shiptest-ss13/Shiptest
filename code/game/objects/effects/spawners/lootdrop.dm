@@ -8,7 +8,7 @@
 	var/fan_out_items = FALSE //Whether the items should be distributed to offsets 0,1,-1,2,-2,3,-3.. This overrides pixel_x/y on the spawner itself
 
 /obj/effect/spawner/lootdrop/Initialize(mapload)
-	..()
+	. = ..()
 	if(loot && loot.len)
 		var/loot_spawned = 0
 		while((lootcount-loot_spawned) && loot.len)
@@ -31,7 +31,6 @@
 			else
 				break // WS edit - Support spawn weights of 0 in loot tables and ruins
 			loot_spawned++
-	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/lootdrop/donkpockets
 	name = "donk pocket box spawner"
@@ -1309,5 +1308,5 @@
 	/obj/item/storage/ration/blackened_calamari = 5,
 	/obj/item/storage/ration/elbow_macaroni = 5,
 	/obj/item/storage/ration/cheese_pizza_slice = 5,
-	/obj/item/storage/ration/crayons
+	/obj/item/storage/ration/crayons = 2 // :)
 	)
