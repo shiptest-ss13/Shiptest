@@ -247,6 +247,17 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	item_state = "slag"
 	singular_name = "slag chunk"
 
+/obj/item/stack/ore/ice
+	name = "ice crystals"
+	desc = "used in an electrolyzer for hydrogen production"
+	icon_state = "Diamond ore"
+	item_state = "Diamond ore"
+	singular_name = "ice chunk"
+	scan_state = "rock_Bananium"
+	mine_experience = 2
+	grind_results = list(/datum/reagent/consumable/ice = 10)
+	spreadChance = 10
+
 /obj/item/gibtonite
 	name = "gibtonite ore"
 	desc = "Extremely explosive if struck with mining equipment, Gibtonite is often used by miners to speed up their work by using it as a mining charge. This material is illegal to possess by unauthorized personnel under space law."

@@ -251,7 +251,7 @@
 			assume_air_ratio(air_contents, 0.01) //leaks a bit of its tank
 			if(damage_state >= DAMAGE_HIGH)
 				var/epicenter = loc
-				explosion(epicenter, 1, 2, 3, 3, TRUE, TRUE) //boom
+				explosion(epicenter, 2, 2, 3, 3, TRUE, TRUE) //boom
 	update_parents()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/default_change_direction_wrench(mob/user, obj/item/I)
@@ -380,7 +380,7 @@
 			to_chat(user, "<span class='warning'>You need at least 2 metal sheets to repair [src].</span>")
 			return
 		to_chat(user,"<span class='notice'>You start adding new plating.</span>")
-		if(do_after(user, 20, TRUE, src))
+		if(do_after(user, 40, TRUE, src))
 			if(!I.use(2))
 				return
 			to_chat(user, "<span class='notice'>You add new plating.</span>")
@@ -393,7 +393,7 @@
 
 	if(damage_state == DAMAGE_MED && I.tool_behaviour == TOOL_WRENCH && metal_repair == TRUE)
 		to_chat(user, "<span class='notice'>You start wrenching down the new plating.</span>")
-		if(I.use_tool(src, user, 40, volume=75))
+		if(I.use_tool(src, user, 60, volume=75))
 			metal_repair = FALSE
 			damage_state = DAMAGE_LOW
 			pressure_damage = 0
@@ -403,7 +403,7 @@
 
 	if(damage_state == DAMAGE_LOW && I.tool_behaviour == TOOL_CROWBAR) //fix low damage with screwdriver
 		to_chat(user, "<span class='notice'>You start prying in the insulation layer.</span>")
-		if(I.use_tool(src, user, 40, volume=75))
+		if(I.use_tool(src, user, 60, volume=75))
 			damage_state = DAMAGE_NONE
 			pressure_damage = 0
 			to_chat(user, "<span class='notice'>You secure the insulation layer.</span>")
@@ -412,7 +412,7 @@
 
 	if(damage_state == DAMAGE_NONE && I.tool_behaviour == TOOL_SCREWDRIVER && pressure_damage >= PRESSURE_DAMAGE_MAX / 2) //lets you fix pressure damage before it increases damage state
 		to_chat(user, "<span class='notice'>You start tightening loose screws.</span>")
-		if(I.use_tool(src, user, 40, volume=75))
+		if(I.use_tool(src, user, 60, volume=75))
 			pressure_damage = 0
 			to_chat(user, "<span class='notice'>You tighten the screws.</span>")
 			return

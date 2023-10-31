@@ -106,6 +106,10 @@
  * Engines that use oxidizer and fuel to output thrust. Theoretically works with any mix of fuels and oxiders. Wish me luck.
 */
 
+/obj/item/paper/guides/recycler
+	name = "paper - 'combustion thruster instructions'"
+	default_raw_text = "<h2>Combustion Thruster Instructions</h2> text <b>bold</b>"
+
 /obj/machinery/power/shuttle/engine/fire
 	name = "combustion thruster"
 	desc = "A thruster that burns fuel with oxider that is stored in an adjacent heater."
@@ -117,7 +121,7 @@
 	///what portion of the mols in the attached heater to "burn"
 	var/fuel_consumption = 0.0125
 	//multiplier for thrust
-	thrust = 2
+	thrust = 3
 	//used by stockparts, efficiency_multiplier
 	var/consumption_multiplier = 1
 	//If this engine should create heat when burned.
