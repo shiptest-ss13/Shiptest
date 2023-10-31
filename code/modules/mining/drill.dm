@@ -14,7 +14,7 @@
 	desc = "A large scale laser drill. It's able to mine vast amounts of minerals from near-surface ore pockets, however the seismic activity tends to anger local fauna."
 	icon = 'icons/obj/machines/drill.dmi'
 	icon_state = "deep_core_drill"
-	max_integrity = 200
+	max_integrity = 400
 	density = TRUE
 	anchored = FALSE
 	use_power = NO_POWER_USE
@@ -250,7 +250,7 @@
 		soundloop.stop()
 		update_overlays()
 		return
-	if(obj_integrity <= max_integrity/2.5)
+	if(obj_integrity <= max_integrity/1.5)
 		malfunction = rand(1,5)
 		malfunction(malfunction)
 		active = FALSE

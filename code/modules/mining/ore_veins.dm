@@ -28,9 +28,9 @@
 	var/max_mobs = 4
 	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 60,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 20,
-		/mob/living/simple_animal/hostile/asteroid/brimdemon = 30,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 20,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
 		)
@@ -40,6 +40,8 @@
 	var/spawner_type = /datum/component/spawner
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
+	var/wave_length = 10
+	var/wave_downtime = 600
 
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
@@ -67,7 +69,7 @@
 	return..()
 
 /obj/structure/vein/proc/begin_spawning()
-	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max)
+	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier)

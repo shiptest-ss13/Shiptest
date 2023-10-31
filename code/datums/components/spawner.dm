@@ -9,9 +9,13 @@
 	var/list/spawn_sound = list()
 	var/spawn_distance_min = 1
 	var/spawn_distance_max = 1
+	var/wave_length //Average time until break in spawning
+	var/wave_downtime
+	var/spawning_paused = FALSE
+	var/wave_timer
 
 
-/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max)
+/datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime)
 	if(_spawn_time)
 		spawn_time=_spawn_time
 	if(_mob_types)
@@ -28,13 +32,21 @@
 		spawn_distance_min=_spawn_distance_min
 	if(_spawn_distance_max)
 		spawn_distance_max=_spawn_distance_max
+	if(_wave_length)
+		wave_length = _wave_length
+	if(_wave_downtime)
+		wave_downtime = _wave_downtime
 
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), .proc/stop_spawning)
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process()
+	if(spawning_paused)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/START_PROCESSING, SSprocessing, src), wave_downtime)
+		spawning_paused = FALSE
+		wave_timer = null
+		stop_spawning()
 	try_spawn_mob()
-
 
 /datum/component/spawner/proc/stop_spawning(force)
 	SIGNAL_HANDLER
@@ -48,6 +60,11 @@
 /datum/component/spawner/proc/try_spawn_mob()
 	var/atom/P = parent
 	var/turf/spot = P.loc
+	if(!wave_timer && wave_length)
+		wave_timer = wave_length + world.time
+	if(world.time > wave_timer)
+		spawning_paused = TRUE
+		return 0
 	if(spawned_mobs.len >= max_mobs)
 		return 0
 	if(spawn_delay > world.time)
@@ -68,6 +85,8 @@
 	P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
 	if(length(spawn_sound))
 		playsound(P, pick(spawn_sound), 50, TRUE)
+
+
 
 /**
  * Behaves like the orange() proc, but only looks in the outer range of the function (The "peel" of the orange).
