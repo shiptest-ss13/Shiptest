@@ -1,15 +1,20 @@
+//For handling the types of randomized malfunctions
 #define MALF_LASER 1
 #define MALF_SENSOR 2
 #define MALF_CAPACITOR 3
 #define MALF_STRUCTURAL 4
 #define MALF_CALIBRATE 5
 
+//For handling the repair of a completely destroyed drill
+#define METAL_PLACED 1
+#define METAL_SECURED 2
+
 /obj/machinery/drill
 	name = "big-ass ore drill"
 	desc = "It's like those drills you put in your hand but, like, way bigger."
 	icon = 'icons/obj/machines/drill.dmi'
 	icon_state = "deep_core_drill"
-	max_integrity = 400
+	max_integrity = 200
 	density = TRUE
 	anchored = FALSE
 	use_power = NO_POWER_USE
@@ -24,11 +29,19 @@
 	var/obj/item/stock_parts/cell/cell
 	var/preload_cell_type = /obj/item/stock_parts/cell
 	var/power_cost = 50
+	var/metal_attached
 
-	var/debug_laser_var = /obj/item/stock_parts/micro_laser //REMOVE BEFORE PRING
-	var/debug_sensor_var = /obj/item/stock_parts/scanning_module
-	var/debug_capacitor_var = /obj/item/stock_parts/capacitor
-
+/obj/machinery/drill/examine(mob/user)
+	. = ..()
+	if(panel_open && component_parts)
+		. += display_parts(user, TRUE)
+	if(cell.charge < power_cost*5)
+		. += "<spawn class='notice'>The lower power light is blinking."
+	switch(malfunction)
+		if(4)
+			. += "<span class='notice'>The drill's structure looks like it needs to be <b>welded<b> back together.</span>"
+		if(5)
+			. += "<span class='notice'>The drill's gimbal is out of alignment, it needs to be recalibrated with a <b>multitool<b>.</span>"
 
 /obj/machinery/drill/Initialize()
 	. = ..()
@@ -55,15 +68,39 @@
 	return ..()
 
 /obj/machinery/drill/deconstruct(disassembled)
+	if(active && mining)
+		say("Drill integrity failure, comencing emergency shutdown procedure.")
+		mining.deconstruct() //Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
 	obj_break()
 	update_icon_state()
+	update_overlays()
 
 /obj/machinery/drill/get_cell()
 	return cell
 
 /obj/machinery/drill/attackby(obj/item/tool, mob/living/user, params)
 	var/obj/structure/vein/vein = locate(/obj/structure/vein) in src.loc
+	if(machine_stat && BROKEN)
+		if(istype(tool,/obj/item/stack/sheet/plasteel))
+			var/obj/item/stack/sheet/plasteel/plating = tool
+			if(plating.use(10,FALSE,TRUE))
+				metal_attached = METAL_PLACED
+				to_chat(user, "<span class='notice'>You prepare to attach the plating to [src].</span>")
+				return
+		if(tool.tool_behaviour == TOOL_WELDER && do_after(user, 30*tool.toolspeed, target = src))
+			playsound(src, 'sound/items/welder2.ogg', 50, TRUE)
+			to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
+			metal_attached = null
+			machine_stat = null
+			obj_integrity = max_integrity
+			update_icon_state()
+			return
 	if(tool.tool_behaviour == TOOL_WRENCH)
+		if(metal_attached && machine_stat && BROKEN)
+			playsound(src, 'sound/items/ratchet.ogg', 50, TRUE)
+			do_after(user, 30*tool.toolspeed, target = src)
+			to_chat(user, "<span class='notice'>You bolt the plating the plating in place on [src].</span>")
+			return
 		if(!vein && !anchored)
 			to_chat(user, "<span class='notice'>[src] must be on top of an ore vein.</span>")
 			return
@@ -71,50 +108,73 @@
 			to_chat(user, "<span class='notice'>[src] can't be unsecured while it's running!</span>")
 			return
 		playsound(src, 'sound/items/ratchet.ogg', 50, TRUE)
-		if(!anchored && do_after(user, 30, target = src))
+		if(!anchored && do_after(user, 30*tool.toolspeed, target = src))
 			to_chat(user, "<span class='notice'>You secure the [src] to the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			mining = vein
 			anchored = TRUE
 			update_icon_state()
 			return
-		if(do_after(user, 30, target = src))
+		if(do_after(user, 30*tool.toolspeed, target = src))
 			to_chat(user, "<span class='notice'>You unsecure the [src] from the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
 			mining = null
 			update_icon_state()
 			return
-	if(default_deconstruction_screwdriver(user,"deep_core_drill","deep_core_drill",tool))
+	if(default_deconstruction_screwdriver(user,icon_state,icon_state,tool))
 		return TRUE
 	if(panel_open)
-		/*var/list/needed_parts = list(/obj/item/stock_parts/scanning_module,/obj/item/stock_parts/micro_laser,/obj/item/stock_parts/capacitor)
+		var/list/needed_parts = list(/obj/item/stock_parts/scanning_module,/obj/item/stock_parts/micro_laser,/obj/item/stock_parts/capacitor)
 		if(is_type_in_list(tool,needed_parts))
 			for(var/obj/item/stock_parts/part in component_parts)
 				var/obj/item/stock_parts/new_part = tool
-				if(new_part.part_behaviour == part.part_behaviour)
-					if(new_part.rating > part.rating)*/
-
-
-
-
-			/*var/obj/item/stock_parts/new_part = tool
-			for(var/obj/item/stock_parts/part in component_parts)
 				if(new_part.parent_type == part.parent_type || istype(new_part,part))
-					if(new_part.rating > part.rating)
-						component_parts.Remove(part)
-						component_parts.Add(new_part)
-						to_chat(user, "<span class='notice'>You swap the drill's [part] with a [tool].</span>")
-						return
-					else
-						to_chat(user, "<span class='notice'>The [part] doesn't need replacing.</span>")
-						return
+					user.transferItemToLoc(tool,src)
+					part.forceMove(user.loc)
+					component_parts += new_part
+					component_parts -= part
+					break
 				else
-					new_part.forceMove(component_parts)
-					/*component_parts.Add(new_part)*/
-					malfunction = null*/
-
-
+					user.transferItemToLoc(tool,src)
+					component_parts += new_part
+					malfunction = null
+					obj_integrity = max_integrity
+					break
+			return
+		if(tool.tool_behaviour == TOOL_MULTITOOL && malfunction == MALF_CALIBRATE)
+			playsound()
+			do_after(user,(100*tool.toolspeed),src)
+			malfunction = null
+			obj_integrity = max_integrity
+			return
+		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
+			playsound()
+			do_after(user,(100*tool.toolspeed),src)
+			malfunction = null
+			obj_integrity = max_integrity
+			return
+		if(istype(tool, /obj/item/stock_parts/cell))
+			var/obj/item/stock_parts/cell/battery = tool
+			if(cell)
+				to_chat(user, "<span class='warning'>[src] already has a cell!</span>")
+			else //This should literally never be tripped unless someone tries to put a watch battery in it or something, but just in case
+				if(battery.maxcharge < power_cost)
+					to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
+					return
+			if(!user.transferItemToLoc(tool, src))
+				return
+			cell = tool
+			to_chat(user, "<span class='notice'>You install a cell in [src].</span>")
+			return
+		if(tool.tool_behaviour == TOOL_CROWBAR)
+			cell.update_appearance()
+			cell.forceMove(get_turf(src))
+			cell = null
+			to_chat(user, "<span class='notice'>You remove the cell from [src].</span>")
+			active = FALSE
+			update_appearance()
+			return
 	return ..()
 
 /obj/machinery/drill/interact(mob/user, special_state)
@@ -175,6 +235,7 @@
 		say("Error: Internal cell charge deplted")
 		active = FALSE
 		soundloop.stop()
+		update_overlays()
 		return
 	if(obj_integrity <= max_integrity/2)
 		malfunction = rand(1,5)
@@ -189,7 +250,7 @@
 		soundloop.start()
 		mining.begin_spawning()
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
-			mine_time = round((300/sqrt(laser.rating)))
+			mine_time = round((300/sqrt(laser.rating))*mining.mine_time_multiplier)
 		eta = mine_time*mining.mining_charges
 		cell.use(power_use)
 		addtimer(CALLBACK(src, .proc/mine), mine_time)

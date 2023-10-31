@@ -96,9 +96,12 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/structure/flora/rock/hell = 10,
+		/obj/structure/flora/rock/hell = 14,
+		/obj/structure/vein = 5,
+		/obj/structure/vein/classtwo = 2,
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
+		/obj/structure/vein/classthree = 1,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
 
 	)
@@ -161,7 +164,10 @@
 	feature_spawn_list = list(
 		/obj/structure/flora/tree/dead/barren = 50,
 		/obj/structure/flora/tree/dead/tall/grey = 45,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 5
+		/obj/effect/spawner/lootdrop/anomaly/lava = 10,
+		/obj/structure/vein = 5,
+		/obj/structure/vein/classtwo = 2,
+		/obj/structure/vein/classthree = 1,
 	)
 
 /datum/biome/lavaland/plains/dense/mixed

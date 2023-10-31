@@ -87,7 +87,7 @@
 	for(var/turf/possible_spawn in outer)
 		if(possible_spawn in inner)
 			continue
-		if(possible_spawn == /turf/closed)
+		if(istype(possible_spawn, /turf/closed))
 			continue
 		peel += possible_spawn
 	return peel

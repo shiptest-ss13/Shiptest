@@ -6,7 +6,7 @@
 	layer = HIGH_TURF_LAYER
 	move_resist = INFINITY
 
-	var/mining_charges = 9
+	var/mining_charges = 6
 	//Classification of the quality of possible ores within a vein, used to determine difficulty
 	var/vein_class = 1
 	//A weighted list of all possible ores that can generate in a vein
@@ -20,17 +20,18 @@
 		/obj/item/stack/ore/titanium = 1,
 		)
 	//The post initialize list of all possible drops from the vein
+	//Meant to be player facing in the form of mining scanners
 	var/list/vein_contents = list()
+	//Allows subtyped drills to determine how long it takes to mine one mining charge
+	var/mine_time_multiplier = 1
 	//Mob spawning variables
-	var/max_mobs = 5
-	var/spawn_time = 100 //10 seconds
+	var/max_mobs = 4
+	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 50,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
-		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/random = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 20,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 30,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
 		)
 	var/spawn_text = "emerges from"
@@ -80,3 +81,36 @@
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
 	visible_message("<span class='boldannounce'>[src] collapses!</span>")
+
+
+/obj/structure/vein/classtwo
+	mining_charges = 9
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/iron = 6,
+		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/silver = 4,
+		/obj/item/stack/ore/uranium = 4,
+		/obj/item/stack/ore/titanium = 5,
+		/obj/item/stack/ore/diamond = 1,
+		/obj/item/stack/ore/gold = 2,
+		/obj/item/stack/ore/bluespace_crystal = 1,
+		)
+	max_mobs = 6
+	spawn_time = 100
+
+/obj/structure/vein/classthree
+	mining_charges = 12
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/iron = 5,
+		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
+		/obj/item/stack/ore/titanium = 6,
+		/obj/item/stack/ore/diamond = 3,
+		/obj/item/stack/ore/gold = 5,
+		/obj/item/stack/ore/bluespace_crystal = 3,
+		)
+	max_mobs = 6 //Best not to go past 6 due to balance and lag reasons
+	spawn_time = 80
