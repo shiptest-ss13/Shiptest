@@ -7,6 +7,8 @@
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.5
 
+	hitsound_type = PROJECTILE_HITSOUND_METAL
+
 	var/climb_time = 20
 	var/climbable = FALSE
 	var/mob/living/structureclimber

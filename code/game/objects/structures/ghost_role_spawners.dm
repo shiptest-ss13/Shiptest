@@ -719,7 +719,6 @@
 
 /obj/effect/mob_spawn/human/pirate/special(mob/living/new_spawn)
 	new_spawn.fully_replace_character_name(new_spawn.real_name,generate_pirate_name())
-	new_spawn.mind.add_antag_datum(/datum/antagonist/pirate)
 
 /obj/effect/mob_spawn/human/pirate/proc/generate_pirate_name()
 	var/beggings = strings(PIRATE_NAMES_FILE, "beginnings")
