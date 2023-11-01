@@ -113,13 +113,13 @@
 
 //Suns space suit and helmet
 /obj/item/clothing/head/helmet/space/syndicate/suns
-	name = "suns space helmet"
+	name = "SUNS space helmet"
 	icon_state = "suns_vachelm"
 	item_state = "suns_vachelm"
 	desc = "An academic standard spacesuit helmet. Normally reserved for low budget tasks in space."
 
 /obj/item/clothing/suit/space/syndicate/suns
-	name = "suns space helmet"
+	name = "SUNS spacesuit"
 	icon_state = "suns_vacsuit"
 	item_state = "suns_vacsuit"
 	desc = "An academic standard spacesuit. Normally reserved for low budget tasks in space."
