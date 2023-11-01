@@ -1,5 +1,6 @@
 //allows production of hydrogen from ice chunks
 #define MOLS_PER_ICE 50
+
 /obj/machinery/mineral/electrolyzer_unloader
 	name = "ice unloading machine"
 	icon = 'icons/obj/machines/mining_machines.dmi'
@@ -132,6 +133,10 @@
 	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
 	var/molstomakedebug //removewhendone
 
+
+/obj/machinery/atmospherics/components/binary/electrolyzer_out/process_atmos()
+	update_parents()
+
 /obj/machinery/atmospherics/components/binary/electrolyzer_out/proc/electrolyze_item(obj/item/I)
 	var/datum/gas_mixture/air1 = airs[1] //hydrogen out
 	var/datum/gas_mixture/air2 = airs[2] //oxygen out
@@ -139,7 +144,10 @@
 	var/molstomake = S.get_amount() * MOLS_PER_ICE
 	molstomakedebug = molstomake
 	air1.adjust_moles (GAS_HYDROGEN, molstomake)
+	air1.set_temperature (T20C)
 	air2.adjust_moles (GAS_O2, molstomake / 2)
+	air2.set_temperature (T20C)
+	update_parents()
 /*
 /obj/machinery/mineral/electrolyzer
 	name = "ice crusher"
