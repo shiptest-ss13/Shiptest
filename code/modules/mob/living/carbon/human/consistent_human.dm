@@ -24,7 +24,6 @@
 	dna.features["moth_fluff"] = GLOB.moth_fluff_list[seed % length(GLOB.moth_fluff_list) + 1]
 	dna.features["spider_legs"] = GLOB.spider_legs_list[seed % length(GLOB.spider_legs_list) + 1]
 	dna.features["spider_spinneret"] = GLOB.spider_spinneret_list[seed % length(GLOB.spider_spinneret_list) + 1]
-	dna.features["spider_mandibles"] = GLOB.spider_mandibles_list[seed % length(GLOB.spider_mandibles_list) + 1]
 	dna.features["squid_face"] = GLOB.squid_face_list[seed % length(GLOB.squid_face_list) + 1]
 	dna.features["kepori_feathers"] = GLOB.kepori_feathers_list[seed % length(GLOB.kepori_feathers_list) + 1]
 	dna.features["kepori_body_feathers"] = GLOB.kepori_body_feathers_list[seed % length(GLOB.kepori_body_feathers_list) + 1]
