@@ -120,8 +120,8 @@
 
 /obj/item/clothing/suit/space/syndicate/suns
 	name = "suns space helmet"
-	icon_state = "suns_vachelm"
-	item_state = "suns_vachelm"
+	icon_state = "suns_vacsuit"
+	item_state = "suns_vacsuit"
 	desc = "An academic standard spacesuit. Normally reserved for low budget tasks in space."
 
 //Black-orange syndicate space suit
