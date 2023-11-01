@@ -2550,6 +2550,12 @@
 	pixel_y = 0;
 	pixel_x = 28
 	},
+/obj/docking_port/mobile{
+	dheight = 1;
+	dir = 4;
+	preferred_direction = 4;
+	port_direction = 8
+	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "qP" = (
@@ -4542,12 +4548,6 @@
 	pixel_x = -18;
 	id = "sgi_holocargo2"
 	},
-/obj/docking_port/mobile{
-	dheight = 1;
-	dir = 4;
-	preferred_direction = 4;
-	port_direction = 8
-	},
 /turf/open/floor/plasteel/mono,
 /area/ship/cargo)
 "Dt" = (
@@ -5085,12 +5085,6 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
-"GK" = (
-/obj/docking_port/mobile{
-	dir = 2
-	},
-/turf/closed/wall/mineral/titanium,
-/area/ship/security/armory)
 "GN" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -8245,7 +8239,7 @@ sJ
 iG
 "}
 (15,1,1) = {"
-GK
+LJ
 LJ
 LJ
 LJ
