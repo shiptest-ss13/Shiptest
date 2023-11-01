@@ -619,7 +619,7 @@
 			accessory_type = /obj/item/storage/box/matches
 		if (PREF_VAPE)
 			drug_container_type = /obj/item/clothing/mask/vape
-			accessory_type =
+			accessory_type = null
 		if (PREF_PIPE)
 			drug_container_type = /obj/item/clothing/mask/cigarette/pipe
 			accessory_type = /obj/item/storage/box/matches
