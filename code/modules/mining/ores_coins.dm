@@ -253,7 +253,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	icon_state = "Diamond ore"
 	item_state = "Diamond ore"
 	singular_name = "ice chunk"
-	scan_state = "rock_Bananium"
+	scan_state = "rock_Ice"
 	mine_experience = 2
 	grind_results = list(/datum/reagent/consumable/ice = 10)
 	spreadChance = 10
