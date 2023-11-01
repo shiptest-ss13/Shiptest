@@ -188,6 +188,20 @@ GLOBAL_LIST_INIT(exowearlist, list(PREF_NOEXOWEAR, PREF_EXOWEAR, PREF_ALTEXOWEAR
 #define UPLINK_PEN "Pen" //like a real spy!
 GLOBAL_LIST_INIT(uplink_spawn_loc_list, list(UPLINK_PDA, UPLINK_RADIO, UPLINK_PEN))
 
+//favorite cigarette brand
+#define PREF_CIG_SPACE "Space Cigarettes"
+#define PREF_CIG_DROMEDARY "DromedaryCo"
+#define PREF_CIG_UPLIFT "Uplift Smooth"
+#define PREF_CIG_ROBUST "Robust"
+#define PREF_CIG_ROBUSTGOLD "Robust Gold"
+#define PREF_CIG_CARP "Carp Classic"
+#define PREF_CIG_MIDORI "Midori Taboko"
+#define PREF_CIGAR "Cigars"
+#define PREF_CIGAR_SOLAR "Solarian Cigars"
+#define PREF_CIGAR_COHIBA "Cohiba Cigars"
+
+GLOBAL_LIST_INIT(valid_smoke_types, sortList(list(PREF_CIG_SPACE, PREF_CIG_DROMEDARY, PREF_CIG_UPLIFT, PREF_CIG_ROBUST, PREF_CIG_ROBUSTGOLD, PREF_CIG_CARP, PREF_CIG_MIDORI, PREF_CIGAR, PREF_CIGAR_SOLAR, PREF_CIGAR_COHIBA)))
+
 	//Female Uniforms
 GLOBAL_LIST_EMPTY(female_clothing_icons)
 	//Alternate species icons

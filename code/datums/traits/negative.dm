@@ -589,18 +589,37 @@
 	reagent_type = /datum/reagent/drug/nicotine
 	accessory_type = /obj/item/lighter/greyscale
 
+//I fucking hate prefscode
+
 /datum/quirk/junkie/smoker/on_spawn()
-	drug_container_type = pick(/obj/item/storage/fancy/cigarettes,
-		/obj/item/storage/fancy/cigarettes/cigpack_midori,
-		/obj/item/storage/fancy/cigarettes/cigpack_uplift,
-		/obj/item/storage/fancy/cigarettes/cigpack_robust,
-		/obj/item/storage/fancy/cigarettes/cigpack_robustgold,
-		/obj/item/storage/fancy/cigarettes/cigpack_carp)
+	var/mob/living/carbon/human/H = quirk_holder
+	switch (H.client?.prefs.preferred_smoke_brand)
+		if (PREF_CIG_SPACE)
+			drug_container_type = /obj/item/storage/fancy/cigarettes
+		if (PREF_CIG_DROMEDARY)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/dromedaryco
+		if (PREF_CIG_UPLIFT)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_uplift
+		if (PREF_CIG_ROBUST)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robust
+		if (PREF_CIG_ROBUSTGOLD)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
+		if (PREF_CIG_CARP)
+			drug_container_type= /obj/item/storage/fancy/cigarettes/cigpack_carp
+		if (PREF_CIG_MIDORI)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_midori
+		if (PREF_CIGAR)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars
+		if (PREF_CIGAR_SOLAR)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/havana
+		if (PREF_CIGAR_COHIBA)
+			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/cohiba
+		else
+			CRASH("Someone had an improper cigarette pref on loading")
 	. = ..()
 
 /datum/quirk/junkie/smoker/announce_drugs()
 	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a lighter [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
-
 
 /datum/quirk/junkie/smoker/on_process()
 	. = ..()
