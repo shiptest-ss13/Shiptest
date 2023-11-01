@@ -42,10 +42,9 @@
 
 /datum/component/spawner/process()
 	if(spawning_paused)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/START_PROCESSING, SSprocessing, src), wave_downtime)
+		sleep(wave_downtime)
 		spawning_paused = FALSE
 		wave_timer = null
-		stop_spawning()
 	try_spawn_mob()
 
 /datum/component/spawner/proc/stop_spawning(force)

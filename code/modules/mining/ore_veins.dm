@@ -1,10 +1,14 @@
+GLOBAL_LIST_EMPTY(ore_veins)
+
 /obj/structure/vein
 	name = "ore vein"
+	desc = "A mostly subsurface ore deposit."
 	icon = 'icons/obj/lavaland/terrain.dmi'
 	icon_state = "geyser"
 	anchored = TRUE
-	layer = HIGH_TURF_LAYER
+	layer = LOW_ITEM_LAYER
 	move_resist = INFINITY
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 	var/mining_charges = 6
 	//Classification of the quality of possible ores within a vein, used to determine difficulty
@@ -25,6 +29,7 @@
 	//Allows subtyped drills to determine how long it takes to mine one mining charge
 	var/mine_time_multiplier = 1
 	//Mob spawning variables
+	var/spawning_started = FALSE
 	var/max_mobs = 4
 	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
@@ -40,8 +45,8 @@
 	var/spawner_type = /datum/component/spawner
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
-	var/wave_length = 10
-	var/wave_downtime = 600
+	var/wave_length = 2 MINUTES
+	var/wave_downtime = 30 SECONDS
 
 
 //Generates amount of ore able to be pulled from the vein (mining_charges) and types of ore within it (vein_contents)
@@ -63,6 +68,11 @@
 		picked = pickweight(ore_list)
 		vein_contents.Add(picked)
 		ore_list.Remove(picked)
+	GLOB.ore_veins += src
+
+/obj/structure/vein/Destroy()
+	. = ..()
+	GLOB.ore_veins -= src
 
 /obj/structure/vein/deconstruct(disassembled)
 	destroy_effect()

@@ -49,6 +49,21 @@
 	recall_bound(sampler)
 	return ..()
 
+/datum/mission/drill/classtwo
+	name = "Class 2 core sample mission"
+	value = 3500
+	weight = 6
+	class_wanted = 2
+	num_wanted = 10
+
+/datum/mission/drill/classthree
+	name = "Class 3 core sample mission"
+	value = 5000
+	weight = 4
+	duration = 100 MINUTES
+	class_wanted = 3
+	num_wanted = 12
+
 /*
 		Core sampling drill
 */

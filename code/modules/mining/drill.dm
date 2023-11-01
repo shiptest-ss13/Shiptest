@@ -28,7 +28,7 @@
 	var/datum/looping_sound/drill/soundloop
 	var/obj/item/stock_parts/cell/cell
 	var/preload_cell_type = /obj/item/stock_parts/cell
-	var/power_cost = 50
+	var/power_cost = 100
 	var/metal_attached
 
 /obj/machinery/drill/examine(mob/user)
@@ -261,13 +261,17 @@
 		var/mine_time
 		active = TRUE
 		soundloop.start()
-		mining.begin_spawning()
+		if(!mining.spawning_started)
+			mining.begin_spawning()
+			mining.spawning_started = TRUE
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
 			mine_time = round((300/sqrt(laser.rating))*mining.mine_time_multiplier)
 		eta = mine_time*mining.mining_charges
 		cell.use(power_use)
 		addtimer(CALLBACK(src, .proc/mine), mine_time)
 		say("Estimated time until vein depletion: [time2text(eta,"mm:ss")].")
+		update_icon_state()
+		update_overlays()
 		return
 	else
 		say("Vein depleted.")
