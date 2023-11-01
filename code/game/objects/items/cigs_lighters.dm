@@ -754,7 +754,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	overlay_state = "slime"
 	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
-/obj/item/lighter/clockwork //WS edit: Clockwork Zippo, by Tergius. PR #395
+/obj/item/lighter/clockwork
 	name = "bronze zippo"
 	desc = "A zippo plated with brass. I mean bronze. Has a neat red flame!"
 	icon = 'icons/obj/cigarettes.dmi'
@@ -867,11 +867,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			to_chat(user, "<span class='notice'>You open the cap on [src].</span>")
 			reagents.flags |= OPENCONTAINER
 			if(obj_flags & EMAGGED)
-				add_overlay("[overlayname]open_high") //WS edit - lightable e-cigarettes
+				add_overlay("[overlayname]open_high")
 			else if(super)
-				add_overlay("[overlayname]open_med") //WS edit - lightable e-cigarettes
+				add_overlay("[overlayname]open_med")
 			else
-				add_overlay("[overlayname]open_low") //WS edit - lightable e-cigarettes
+				add_overlay("[overlayname]open_low")
 		else
 			screw = FALSE
 			to_chat(user, "<span class='notice'>You close the cap on [src].</span>")
@@ -884,12 +884,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				cut_overlays()
 				super = 1
 				to_chat(user, "<span class='notice'>You increase the voltage of [src].</span>")
-				add_overlay("[overlayname]open_med") //WS edit - lightable e-cigarettes
+				add_overlay("[overlayname]open_med")
 			else
 				cut_overlays()
 				super = 0
 				to_chat(user, "<span class='notice'>You decrease the voltage of [src].</span>")
-				add_overlay("[overlayname]open_low") //WS edit - lightable e-cigarettes
+				add_overlay("[overlayname]open_low")
 
 		if(screw && (obj_flags & EMAGGED))
 			to_chat(user, "<span class='warning'>[src] can't be modified!</span>")
@@ -922,7 +922,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			STOP_PROCESSING(SSobj, src)
 		src.update_icon_state()
 		user.update_inv_wear_mask()
-		user.update_inv_hands() //EndWS edit - Lightable e-cigarettes
+		user.update_inv_hands()
 
 
 /obj/item/clothing/mask/vape/emag_act(mob/user)// I WON'T REGRET WRITTING THIS, SURLY.
@@ -932,7 +932,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			obj_flags |= EMAGGED
 			super = 0
 			to_chat(user, "<span class='warning'>You maximize the voltage of [src].</span>")
-			add_overlay("[overlayname]open_high") //WS edit - lightable e-cigarettes
+			add_overlay("[overlayname]open_high")
 			var/datum/effect_system/spark_spread/sp = new /datum/effect_system/spark_spread //for effect
 			sp.set_up(5, 1, src)
 			sp.start()
@@ -948,7 +948,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/vape/equipped(mob/user, slot)
 	. = ..()
-	if(slot == ITEM_SLOT_MASK) //BeginWS edit - Lightable e-cigarettes
+	if(slot == ITEM_SLOT_MASK)
 		if(on)
 			if(!screw)
 				to_chat(user, "<span class='notice'>You start puffing on \the [src].</span>")
@@ -956,7 +956,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			else //it will not start if the vape is opened.
 				to_chat(user, "<span class='warning'>You need to close the cap first!</span>")
 		else
-			to_chat(user, "<span class='notice'>You need to turn on \the [src] first!")	//EndWS edit - Lightable e-cigarettes
+			to_chat(user, "<span class='notice'>You need to turn on \the [src] first!")
 
 /obj/item/clothing/mask/vape/dropped(mob/user)
 	. = ..()

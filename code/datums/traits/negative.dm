@@ -610,10 +610,19 @@
 			drug_container_type = /obj/item/storage/fancy/cigarettes/cigpack_midori
 		if (PREF_CIGAR)
 			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars
+			accessory_type = /obj/item/storage/box/matches
 		if (PREF_CIGAR_SOLAR)
 			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/havana
+			accessory_type = /obj/item/storage/box/matches
 		if (PREF_CIGAR_COHIBA)
 			drug_container_type = /obj/item/storage/fancy/cigarettes/cigars/cohiba
+			accessory_type = /obj/item/storage/box/matches
+		if (PREF_VAPE)
+			drug_container_type = /obj/item/clothing/mask/vape
+			accessory_type =
+		if (PREF_PIPE)
+			drug_container_type = /obj/item/clothing/mask/cigarette/pipe
+			accessory_type = /obj/item/storage/box/matches
 		else
 			CRASH("Someone had an improper cigarette pref on loading")
 	. = ..()
