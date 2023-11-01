@@ -628,7 +628,7 @@
 	. = ..()
 
 /datum/quirk/junkie/smoker/announce_drugs()
-	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a [accessory_type.name] [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
+	to_chat(quirk_holder, "<span class='boldnotice'>There is a [initial(drug_container_type.name)] [where_drug], and a [initial(accessory_type.name)] [where_accessory]. Make sure you get your favorite brand when you run out.</span>")
 
 /datum/quirk/junkie/smoker/on_process()
 	. = ..()
