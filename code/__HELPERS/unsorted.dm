@@ -32,6 +32,27 @@
 	else if(dx<0)
 		.+=360
 
+
+////Tile coordinates (x, y) to absolute coordinates (in number of pixels). Center of a tile is generally assumed to be (16,16), but can be offset.
+#define ABS_COOR(c) (((c - 1) * 32) + 16)
+#define ABS_COOR_OFFSET(c, o) (((c - 1) * 32) + o)
+
+/proc/get_angle_with_scatter(atom/start, atom/end, scatter, x_offset = 16, y_offset = 16)
+	var/end_apx
+	var/end_apy
+	if(isliving(end)) //Center mass.
+		end_apx = ABS_COOR(end.x)
+		end_apy = ABS_COOR(end.y)
+	else //Exact pixel.
+		end_apx = ABS_COOR_OFFSET(end.x, x_offset)
+		end_apy = ABS_COOR_OFFSET(end.y, y_offset)
+	scatter = ((rand(0, min(scatter, 45))) * (prob(50) ? 1 : -1)) //Up to 45 degrees deviation to either side.
+	. = round((90 - ATAN2(end_apx - ABS_COOR(start.x), end_apy - ABS_COOR(start.y))), 1) + scatter
+	if(. < 0)
+		. += 360
+	else if(. >= 360)
+		. -= 360
+
 /proc/Get_Pixel_Angle(y, x)//for getting the angle when animating something's pixel_x and pixel_y
 	if(!y)
 		return (x>=0)?90:270
@@ -660,6 +681,11 @@ will handle it, but:
 	if(!istype(AM))
 		return
 
+	//Find coordinates
+	var/turf/T = get_turf(AM) //use checked_atom's turfs, as it's coords are the same as checked_atom's AND checked_atom's coords are lost if it is inside another atom
+	if(!T)
+		return null
+
 	//Find AM's matrix so we can use it's X/Y pixel shifts
 	var/matrix/M = matrix(AM.transform)
 
@@ -678,10 +704,6 @@ will handle it, but:
 	var/rough_x = round(round(pixel_x_offset,world.icon_size)/world.icon_size)
 	var/rough_y = round(round(pixel_y_offset,world.icon_size)/world.icon_size)
 
-	//Find coordinates
-	var/turf/T = get_turf(AM) //use AM's turfs, as it's coords are the same as AM's AND AM's coords are lost if it is inside another atom
-	if(!T)
-		return null
 	var/final_x = T.x + rough_x
 	var/final_y = T.y + rough_y
 
@@ -1369,11 +1391,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 	return "{[time_high]-[time_mid]-[GUID_VERSION][time_low]-[GUID_VARIANT][time_clock]-[node_id]}"
 
-// \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
-// If it ever becomes necesary to get a more performant REF(), this lies here in wait
-// #define REF(thing) (thing && istype(thing, /datum) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * If it ever becomes necesary to get a more performant REF(), this lies here in wait
+ * #define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : text_ref(thing))
+**/
 /proc/REF(input)
-	if(istype(input, /datum))
+	if(isdatum(input))
 		var/datum/thing = input
 		if(thing.datum_flags & DF_USE_TAG)
 			if(!thing.tag)
@@ -1381,11 +1405,11 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 				thing.datum_flags &= ~DF_USE_TAG
 			else
 				return "\[[url_encode(thing.tag)]\]"
-	return "\ref[input]"
+	return text_ref(input)
 
 // Makes a call in the context of a different usr
 // Use sparingly
-/world/proc/PushUsr(mob/M, datum/callback/CB, ...)
+/world/proc/push_usr(mob/M, datum/callback/CB, ...)
 	var/temp = usr
 	usr = M
 	if (length(args) > 2)
