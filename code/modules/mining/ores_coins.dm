@@ -250,8 +250,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/ice
 	name = "ice crystals"
 	desc = "used in an electrolyzer for hydrogen production"
-	icon_state = "Diamond ore"
-	item_state = "Diamond ore"
+	icon_state = "Ice ore"
+	item_state = "Ice ore"
 	singular_name = "ice chunk"
 	scan_state = "rock_Ice"
 	mine_experience = 2

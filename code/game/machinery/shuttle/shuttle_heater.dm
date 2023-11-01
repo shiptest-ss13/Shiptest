@@ -200,8 +200,6 @@
 	var/icon_state_closed = "heater_pipe"
 	var/icon_state_open = "heater_pipe_open"
 	var/gas_amount = 0 //amount of gas used in calculations
-	var/fuel = 0
-	var/oxy = 0 //used for debugging REMOVEWHENDONE
 	var/gas_capacity = 0
 	var/efficiency_multiplier = 1
 	var/pressure_damage = 0
@@ -368,8 +366,6 @@
 			air_contents.adjust_moles(id, -gas_amount)
 
 		thrust_power = min(oxidation_power,fuel_power) * efficiency_multiplier //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
-		oxy = oxidation_power //variables for debugging REMOVEWHENDONE
-		fuel = fuel_power
 		return(thrust_power)
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/attackby(obj/item/I, mob/living/user, params)
