@@ -152,11 +152,16 @@
 	desc = "Hydrogen. Used in thruster fuel"
 	icon_state = "yellow"
 	gas_type = GAS_HYDROGEN
-	filled = 1
+
+/obj/machinery/portable_atmospherics/canister/fuel
+	name = "fuel canister"
+	desc = "A highly volatile mix of hydrogen and oxygen."
+	icon_state = "red"
 
 /obj/machinery/portable_atmospherics/canister/fuel_test
-	name = "hydrogen canister"
+	name = "test canister"
 	desc = "Hydrogen. Used in thruster fuel"
+	icon_state = "nob"
 
 /obj/machinery/portable_atmospherics/canister/fuel_test/create_gas()
 	air_contents.set_moles(GAS_O2,500)
@@ -231,6 +236,11 @@
 	air_contents.set_temperature(starter_temp)
 	air_contents.set_moles(GAS_O2, (O2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 	air_contents.set_moles(GAS_N2, (N2STANDARD * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+
+/obj/machinery/portable_atmospherics/canister/fuel/create_gas()
+	air_contents.set_temperature(starter_temp)
+	air_contents.set_moles(GAS_HYDROGEN, (2/3 * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
+	air_contents.set_moles((GAS_O2), (1/3 * maximum_pressure * filled) * air_contents.return_volume() / (R_IDEAL_GAS_EQUATION * air_contents.return_temperature()))
 
 /obj/machinery/portable_atmospherics/canister/update_icon_state()
 	if(machine_stat & BROKEN)

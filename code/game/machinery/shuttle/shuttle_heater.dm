@@ -286,6 +286,7 @@
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/examine(mob/user)
 	. = ..()
 	. += "The engine heater's gas dial reads [return_gas()] kpa."
+	. += "A lightly burnt hazard sticker reports a safe pressure of [PRESSURE_LIMIT] kpa. "
 	if(damage_state == DAMAGE_MED && metal_repair == FALSE)
 		. += "The engine heater's plating could be repaired with <b>metal</b>."
 	if(damage_state == DAMAGE_MED && metal_repair == TRUE)
@@ -431,3 +432,19 @@
 		return
 	for(var/obj/machinery/power/shuttle/engine/E in engine_turf)
 		E.update_icon_state()
+
+/obj/item/paper/guides/jobs/engi/combustion_thruster
+	name = "paper- 'Combustion Thruster Safety Instructions'"
+	default_raw_text = {"<h1>Combustion Thruster Basics</h1>
+	<p>Firstly, combustion thrusters are delicate machines due to their unique function, and therefore come with certain limits to said function.
+	The specific limit to remember is 1000kpa, above which your warranty will expire and the combustion heater will begin to take damage, with catastrophic falure inevitable after periods of high pressure.
+	The second thing to keep in mind is the fuel mix you are using. If you put in the wrong ratio, the thruster will waste the excess and you'll get less thrust.
+	The most notable ratios are 2:1 of Hydrogen and Oxygen, and 1:1 of Plasma and Oyxgen.
+	Additionally, N2O has been known to provide beneficial properties while being a potent oxidizer.</p>
+	<br>
+	<h3>Its making scary noises and leaking!</h3>
+	<p>Set your internals, pull a fire alarm, grab a fire suit, and continue with the following steps. <b>Ensure you disable all sources of ignition</b></p><ol>
+	<li>Place two sheets of metal over the leak in the heater</li>
+	<li>Wrench the new sheets of metal into place, to stop the leak</li>
+	<li>Crowbar back in the insulation layer to stop the heat transfer</li>
+	<li>For small damages, tighten loosened screws.</li></ol>"}

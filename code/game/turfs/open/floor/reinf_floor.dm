@@ -131,6 +131,14 @@
 	name = "fuel mix floor"
 	initial_gas_mix = ATMOS_TANK_FUEL
 
+/turf/open/floor/engine/hydrogen
+	article = "an"
+	name = "\improper hydrogen floor"
+	initial_gas_mix = ATMOS_TANK_HYDROGEN
+
+/turf/open/floor/engine/hydrogen_fuel
+	name = "hydrogen mix floor"
+	initial_gas_mix = ATMOS_TANK_HYDROGEN_FUEL
 
 /turf/open/floor/engine/cult
 	name = "engraved floor"
