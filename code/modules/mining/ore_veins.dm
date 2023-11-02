@@ -82,18 +82,22 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
 
 //Pulls a random ore from the vein list per vein_class
-/obj/structure/vein/proc/drop_ore(multiplier)
+/obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
 	var/class
 	class = vein_class
 	for(class, class>0, class--)
 		var/picked
 		picked = pick(vein_contents)
-		new picked(loc,round(rand(5,10)*multiplier))
+		new picked(pick(get_adjacent_open_turfs(current)),round(rand(5,10)*multiplier))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
 	visible_message("<span class='boldannounce'>[src] collapses!</span>")
 
+//
+//	Planetary and Class Subtypes
+//	The current set of subtypes are heavily subject to future balancing and reworking as the balance of them is tested more
+//
 
 /obj/structure/vein/classtwo
 	mining_charges = 9
@@ -126,3 +130,57 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	max_mobs = 6 //Best not to go past 6 due to balance and lag reasons
 	spawn_time = 80
+
+/obj/structure/vein/ice
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/wolf = 30,
+		/mob/living/simple_animal/hostile/asteroid/polarbear = 30,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 20,
+		/mob/living/simple_animal/hostile/asteroid/ice_demon = 10,
+		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
+		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 20,
+	)
+	//Ice planets earn a slightly higher rare ore chance on account of them being notably harder
+	ore_list = list(
+		/obj/item/stack/ore/iron = 5,
+		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/silver = 3,
+		/obj/item/stack/ore/uranium = 3,
+		/obj/item/stack/ore/titanium = 3,
+		/obj/item/stack/ore/titanium = 2,
+		/obj/item/stack/ore/gold = 1,
+		/obj/item/stack/ore/diamond = 1,
+		)
+
+/obj/structure/vein/ice/classtwo
+	mining_charges = 9
+	vein_class = 2
+	ore_list = list(
+		/obj/item/stack/ore/iron = 6,
+		/obj/item/stack/ore/plasma = 6,
+		/obj/item/stack/ore/silver = 5,
+		/obj/item/stack/ore/uranium = 5,
+		/obj/item/stack/ore/titanium = 6,
+		/obj/item/stack/ore/diamond = 2,
+		/obj/item/stack/ore/gold = 3,
+		/obj/item/stack/ore/bluespace_crystal = 1,
+		)
+	max_mobs = 6
+	spawn_time = 100
+
+/obj/structure/vein/ice/classthree
+	mining_charges = 12
+	vein_class = 3
+	ore_list = list(
+		/obj/item/stack/ore/iron = 5,
+		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/silver = 6,
+		/obj/item/stack/ore/uranium = 5,
+		/obj/item/stack/ore/titanium = 6,
+		/obj/item/stack/ore/diamond = 4,
+		/obj/item/stack/ore/gold = 6,
+		/obj/item/stack/ore/bluespace_crystal = 4,
+		)
+	max_mobs = 6
+	spawn_time = 80
+

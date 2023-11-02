@@ -117,9 +117,9 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 25,
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 50,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 13,
-		/obj/structure/vein = 25,
-		/obj/structure/vein/classtwo = 50,
-		/obj/structure/vein/classthree = 10,
+		/obj/structure/vein/ice = 25,
+		/obj/structure/vein/ice/classtwo = 50,
+		/obj/structure/vein/ice/classthree = 10,
 	)
 
 /datum/biome/snow/lush
@@ -171,9 +171,9 @@
 		/obj/structure/spawner/ice_moon/polarbear = 3,
 		/obj/structure/statue/snow/snowman = 3,
 		/obj/structure/statue/snow/snowlegion = 1,
-		/obj/structure/vein = 3,
-		/obj/structure/vein/classtwo = 4,
-		/obj/structure/vein/classthree = 1,
+		/obj/structure/vein/ice = 3,
+		/obj/structure/vein/ice/classtwo = 4,
+		/obj/structure/vein/ice/classthree = 1,
 	)
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf/random = 30,
@@ -219,9 +219,9 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 500,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 50,
 		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 1,
-		/obj/structure/vein = 300,
-		/obj/structure/vein/classtwo = 500,
-		/obj/structure/vein/classthree = 50,
+		/obj/structure/vein/ice = 300,
+		/obj/structure/vein/ice/classtwo = 500,
+		/obj/structure/vein/ice/classthree = 50,
 	)
 
 
@@ -276,9 +276,9 @@
 		/obj/structure/spawner/ice_moon = 30,
 		/obj/structure/spawner/ice_moon/polarbear = 30,
 		/obj/effect/spawner/lootdrop/anomaly/ice/cave = 10,
-		/obj/structure/vein = 30,
-		/obj/structure/vein/classtwo = 50,
-		/obj/structure/vein/classthree = 6,
+		/obj/structure/vein/ice = 30,
+		/obj/structure/vein/ice/classtwo = 50,
+		/obj/structure/vein/ice/classthree = 6,
 	)
 
 /datum/biome/cave/snow/thawed

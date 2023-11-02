@@ -63,6 +63,8 @@
 	. = ..()
 	if(!active)
 		return
+	if(target.loc == null)
+		return
 	if(!target)
 		. += "pinon[alert ? "alert" : ""]null[icon_suffix]"
 		return

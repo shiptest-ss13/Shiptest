@@ -39,16 +39,16 @@
 		. += "<spawn class='notice'>The lower power light is blinking."
 	switch(malfunction)
 		if(4)
-			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded<b> back together.</span>"
+			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded</b> back together.</span>"
 		if(5)
-			. += "<span class='notice'>The [src]'s gimbal is out of alignment, it needs to be recalibrated with a <b>multitool<b>.</span>"
+			. += "<span class='notice'>The [src]'s gimbal is out of alignment, it needs to be recalibrated with a <b>multitool</b>.</span>"
 	switch(metal_attached)
 		if(METAL_PLACED)
-			. += "<span class='notice'>Replacement plating has been attached to [src], but has not been <b>bolted<b> in place yet.</span>"
+			. += "<span class='notice'>Replacement plating has been attached to [src], but has not been <b>bolted</b> in place yet.</span>"
 		if(METAL_SECURED)
-			. += "<span class='notice'>Replacement plating has been secured to [src], but still needs to be <b>welded<b> into place.</span>"
+			. += "<span class='notice'>Replacement plating has been secured to [src], but still needs to be <b>welded</b> into place.</span>"
 	if(machine_stat && BROKEN && !metal_attached)
-		. += "<span class='notice'>[src]'s structure has been totaled, the <b>plasteel<b> plating needs to be replaced."
+		. += "<span class='notice'>[src]'s structure has been totaled, the <b>plasteel</b> plating needs to be replaced."
 
 /obj/machinery/drill/Initialize()
 	. = ..()
@@ -86,6 +86,11 @@
 
 /obj/machinery/drill/get_cell()
 	return cell
+
+//The RPED sort of trivializes a good deal of the malfunction mechancis, as such it will not be allowed to work
+/obj/machinery/drill/exchange_parts(mob/user, obj/item/storage/part_replacer/W)
+	to_chat(user, "<span calss='notice'>[W] does not seem to work on [src], it might require more delecitate parts replacement.")
+	return
 
 /obj/machinery/drill/attackby(obj/item/tool, mob/living/user, params)
 	var/obj/structure/vein/vein = locate(/obj/structure/vein) in src.loc
@@ -289,7 +294,7 @@
 		sensor_rating = sensor.rating
 	if(mining.mining_charges)
 		mining.mining_charges--
-		mining.drop_ore(round(sqrt(sensor_rating), 0.1))
+		mining.drop_ore(round(sqrt(sensor_rating), 0.1),src)
 		start_mining()
 	else if(!mining.mining_charges) //Extra check to prevent vein related errors locking us in place
 		say("Error: Vein Depleted")
@@ -317,8 +322,11 @@
 			return
 		if(MALF_STRUCTURAL)
 			say("Malfunction: Drill plating damaged, provide structural repairs before continuing mining operations.")
-			/*playsound()*/
 			return
 		if(MALF_CALIBRATE)
 			say("Malfunction: Drill laser calibrations out of alignment, please recalibrate before continuing.")
 			return
+
+/obj/item/paper/guides/drill
+	name = "Laser Mining Drill Operation Manual"
+	default_raw_text = "<center><b>Laser Mining Drill Operation Manual</b></center><br><br><center>Thank you for opting in to the paid testing of Nanotrasen's new, experimental laser drilling device (trademark pending). We are legally obligated to mention that despite this new and wonderful drilling device being less dangerous than past iterations (note the 75% decrease in plasma ignition incidents), the seismic activity created by the drill has been noted to anger most forms of xenofauna. As such our legal team advises only armed mining expeditions make use of this drill.<br><br><c><b>How to set up your Laser Mining Drill</b></center><br><br>1. Find a suitable ore vein with the included scanner.<br>2. Wrench the drill's anchors in place over the vein.<br>3. Protect the drill from any enraged xenofauna until it has finished drilling.<br><br><center>With all this done, your ore should be well on its way out of the ground and into your pockets! Be warned though, the Laser Mining Drill is prone to numerous malfunctions when exposed to most forms of physical trauma. As such, we advise any teams utilizing this drill to bring with them a set of replacement Nanotrasen brand stock parts and a set of tools to handle repairs. If the drill suffers a total structural failure, then plasteel alloy may be needed to repair said structure.</center>"
