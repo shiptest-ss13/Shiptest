@@ -419,8 +419,6 @@
 	if(world.time > severe_cooldown) //So we cant just spam emp to kill people.
 		owner.losebreath += 20
 		severe_cooldown = world.time + 30 SECONDS
-	if(prob(emp_vulnerability/severity))	//Chance of permanent effects
-		organ_flags = ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 
 #undef PP
 #undef PP_MOLES
