@@ -47,7 +47,7 @@
 			. += "<span class='notice'>Replacement plating has been attached to [src], but has not been <b>bolted</b> in place yet.</span>"
 		if(METAL_SECURED)
 			. += "<span class='notice'>Replacement plating has been secured to [src], but still needs to be <b>welded</b> into place.</span>"
-	if(machine_stat && BROKEN && !metal_attached)
+	if(machine_stat & BROKEN && !metal_attached)
 		. += "<span class='notice'>[src]'s structure has been totaled, the <b>plasteel</b> plating needs to be replaced."
 
 /obj/machinery/drill/Initialize()
@@ -94,7 +94,7 @@
 
 /obj/machinery/drill/attackby(obj/item/tool, mob/living/user, params)
 	var/obj/structure/vein/vein = locate(/obj/structure/vein) in src.loc
-	if(machine_stat && BROKEN)
+	if(machine_stat & BROKEN)
 		if(istype(tool,/obj/item/stack/sheet/plasteel))
 			var/obj/item/stack/sheet/plasteel/plating = tool
 			if(plating.use(10,FALSE,TRUE))
@@ -112,7 +112,7 @@
 			update_icon_state()
 			return
 	if(tool.tool_behaviour == TOOL_WRENCH)
-		if(metal_attached && machine_stat && BROKEN)
+		if(metal_attached && machine_stat & BROKEN)
 			playsound(src, 'sound/items/ratchet.ogg', 50, TRUE)
 			do_after(user, 30*tool.toolspeed, target = src)
 			to_chat(user, "<span class='notice'>You bolt the plating the plating in place on [src].</span>")
@@ -216,7 +216,7 @@
 
 /obj/machinery/drill/update_icon_state()
 	if(anchored)
-		if(machine_stat && BROKEN)
+		if(machine_stat & BROKEN)
 			icon_state = "deep_core_drill-deployed_broken"
 			return ..()
 		if(active)
@@ -226,7 +226,7 @@
 			icon_state = "deep_core_drill-idle"
 			return ..()
 	else
-		if(machine_stat && BROKEN)
+		if(machine_stat & BROKEN)
 			icon_state = "deep_core_drill-broken"
 			return ..()
 		icon_state = "deep_core_drill"
@@ -316,7 +316,7 @@
 				component_parts.Remove(sensor)
 			return
 		if(MALF_CAPACITOR)
-			say("Malfunction: Energy cell capacitor damaged, please replace before continuin mining operations.")
+			say("Malfunction: Energy cell capacitor damaged, please replace before continuing mining operations.")
 			for (var/obj/item/stock_parts/capacitor/capacitor in component_parts)
 				component_parts.Remove(capacitor)
 			return
