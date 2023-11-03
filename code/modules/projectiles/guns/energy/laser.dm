@@ -10,6 +10,9 @@
 	shaded_charge = 1
 	supports_variations = VOX_VARIATION
 
+	spread = 0
+	spread_unwielded = 10
+
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	desc = "A modified version of the basic laser gun, this one fires less concentrated energy bolts designed for target practice."
