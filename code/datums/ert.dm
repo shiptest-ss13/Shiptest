@@ -143,7 +143,7 @@
 	rename_team = "Generic Minutemen Team"
 	polldesc = "a Minutemen emergency team"
 	random_names = TRUE
-	ert_template = /datum/map_template/shuttle/subshuttles/crux
+
 
 /datum/ert/minutemen/bard
 	leader_role = /datum/antagonist/ert/minutemen/bard/leader
