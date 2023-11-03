@@ -657,12 +657,13 @@ so as to remain in compliance with the most up-to-date laws."
 	desc = "A body was created. You can enter it."
 	icon_state = "template"
 	timeout = 300
-	var/atom/target = null
+	var/datum/weakref/target_ref
 	var/action = NOTIFY_JUMP
 
 /atom/movable/screen/alert/notify_action/Click()
 	if(!usr || !usr.client || usr != owner)
 		return
+	var/atom/target = target_ref?.resolve()
 	if(!target)
 		return
 	var/mob/dead/observer/G = usr

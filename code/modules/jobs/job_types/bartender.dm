@@ -1,8 +1,7 @@
 /datum/job/bartender
 	name = "Bartender"
-	total_positions = 1
-	spawn_positions = 1
 	wiki_page = "Drinks"
+
 
 	outfit = /datum/outfit/job/bartender
 

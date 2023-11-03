@@ -1,7 +1,5 @@
 /datum/job/doctor
 	name = "Medical Doctor"
-	total_positions = 5
-	spawn_positions = 3
 	wiki_page = "Guide_to_Medicine"
 
 	outfit = /datum/outfit/job/doctor

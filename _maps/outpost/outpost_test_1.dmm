@@ -1526,7 +1526,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/plasteel/grimy,
 /area/outpost/crew/dorm)
 "ob" = (
@@ -3611,6 +3613,9 @@
 "Gm" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/outpost/crew/dorm)

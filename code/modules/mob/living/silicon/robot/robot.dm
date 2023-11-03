@@ -200,12 +200,14 @@
 		if(T && istype(radio) && istype(radio.keyslot))
 			radio.keyslot.forceMove(T)
 			radio.keyslot = null
-	qdel(wires)
-	qdel(module)
-	qdel(eye_lights)
-	wires = null
-	module = null
-	eye_lights = null
+	QDEL_NULL(wires)
+	QDEL_NULL(module)
+	QDEL_NULL(eye_lights)
+	QDEL_NULL(inv1)
+	QDEL_NULL(inv2)
+	QDEL_NULL(inv3)
+	QDEL_NULL(spark_system)
+	QDEL_LIST(upgrades)
 	cell = null
 	return ..()
 
@@ -438,11 +440,11 @@
 	return update_icons()
 
 /mob/living/silicon/robot/update_icons()
+	if(QDELETED(src))
+		return
 	cut_overlays()
 	icon_state = module.cyborg_base_icon
-	//WS changes - Thanks Cit - Allows modules to use different icon files
 	icon = (module.cyborg_icon_override ? module.cyborg_icon_override : initial(icon))
-	//EndWS Changes
 	if(module.cyborg_base_icon == "robot")
 		icon = 'icons/mob/robots.dmi'
 		pixel_x = initial(pixel_x)
@@ -505,7 +507,7 @@
 
 /mob/living/silicon/robot/proc/SetLockdown(state = TRUE)
 	// They stay locked down if their wire is cut.
-	if(wires.is_cut(WIRE_LOCKDOWN))
+	if(wires?.is_cut(WIRE_LOCKDOWN))
 		state = TRUE
 	if(state)
 		throw_alert("locked", /atom/movable/screen/alert/locked)
@@ -1146,7 +1148,7 @@
 /mob/living/silicon/robot/proc/logevent(string = "")
 	if(!string)
 		return
-	if(stat == DEAD) //Dead borgs log no longer
+	if(stat == DEAD || QDELETED(src)) //Dead borgs log no longer //Gone
 		return
 	if(!modularInterface)
 		stack_trace("Cyborg [src] ([type]) was somehow missing their integrated tablet. Please make a bug report.")

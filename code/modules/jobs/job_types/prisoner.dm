@@ -1,7 +1,5 @@
 /datum/job/prisoner
 	name = "Prisoner"
-	total_positions = 0
-	spawn_positions = 2
 
 	outfit = /datum/outfit/job/prisoner
 

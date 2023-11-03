@@ -168,6 +168,9 @@
 		nest.spawned_mobs -= src
 		nest = null
 
+	if(access_card)
+		QDEL_NULL(access_card)
+
 	return ..()
 
 /mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
@@ -623,7 +626,14 @@
 	if(AIStatus == togglestatus)
 		return
 
+	GLOB.simple_animals[AIStatus] -= src
+	GLOB.simple_animals[togglestatus] += list(src)
+	AIStatus = togglestatus
+
 	var/virt_z = "[virtual_z()]"
+	if(!virt_z)
+		return
+
 	switch(togglestatus)
 		if(AI_Z_OFF)
 			LAZYADDASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
@@ -631,16 +641,14 @@
 		else
 			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
 
-	GLOB.simple_animals[AIStatus] -= src
-	GLOB.simple_animals[togglestatus] += list(src)
-	AIStatus = togglestatus
-
 /mob/living/simple_animal/proc/check_should_sleep()
 	if (pulledby || shouldwakeup)
 		toggle_ai(AI_ON)
 		return
 
 	var/virt_z = "[virtual_z()]"
+	if(!virt_z)
+		return
 	var/players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, virt_z)
 	if(!length(players_on_virtual_z))
 		toggle_ai(AI_Z_OFF)
@@ -655,5 +663,8 @@
 
 /mob/living/simple_animal/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[previous_virtual_z]", src)
 	toggle_ai(initial(AIStatus))
-	check_should_sleep()
+	if(new_virtual_z)
+		check_should_sleep()
