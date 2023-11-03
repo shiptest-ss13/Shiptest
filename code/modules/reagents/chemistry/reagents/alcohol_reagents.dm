@@ -365,8 +365,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	shot_glass_icon_state = "shotglassred"
 
 /datum/reagent/consumable/ethanol/lizardwine
-	name = "lizard wine"
-	description = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol."
+	name = "Kalixcis Wine"
+	description = "A relatively popular Kalixcane beverage, made by infusing cacti in ethanol."
 	color = "#7E4043" // rgb: 126, 64, 67
 	boozepwr = 45
 	quality = DRINK_FANTASTIC

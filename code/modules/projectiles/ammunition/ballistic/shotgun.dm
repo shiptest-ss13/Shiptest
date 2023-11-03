@@ -9,6 +9,8 @@
 	custom_materials = list(/datum/material/iron=4000)
 	projectile_type = /obj/projectile/bullet/slug
 
+	bounce_sfx_override = 'sound/weapons/gun/general/bulletcasing_shotgun_bounce.ogg'
+
 /obj/item/ammo_casing/shotgun/update_icon_state()
 	icon_state = "[initial(icon_state)][BB ? "" : "-spent"]"
 	return ..()
