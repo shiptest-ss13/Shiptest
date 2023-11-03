@@ -47,7 +47,7 @@
 	flag = "energy"
 	light_color = LIGHT_COLOR_YELLOW
 	hitsound = 'sound/weapons/sear.ogg'
-	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+	hitsound_non_living = 'sound/weapons/effects/searwall.ogg'
 	nondirectional_sprite = TRUE
 
 /obj/projectile/seedling/Bump(atom/A)//Stops seedlings from destroying other jungle mobs through FF
