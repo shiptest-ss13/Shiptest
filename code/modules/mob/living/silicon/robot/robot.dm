@@ -498,6 +498,9 @@
 	set category = "IC"
 	set src = usr
 
+	return ..()
+
+/mob/living/silicon/robot/execute_mode()
 	if(incapacitated())
 		return
 	var/obj/item/W = get_active_held_item()
@@ -1091,12 +1094,11 @@
 			riding_datum.restore_position(user)
 	. = ..(user)
 
-/mob/living/silicon/robot/resist()
+/mob/living/silicon/robot/execute_resist()
 	. = ..()
 	if(!has_buckled_mobs())
 		return
-	for(var/i in buckled_mobs)
-		var/mob/unbuckle_me_now = i
+	for(var/mob/unbuckle_me_now as anything in buckled_mobs)
 		unbuckle_mob(unbuckle_me_now, FALSE)
 
 

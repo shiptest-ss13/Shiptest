@@ -362,6 +362,7 @@
 
 /obj/item/ration_heater
 	name = "flameless ration heater"
+	desc = "A magnisium based ration heater. It can be used to heat up entrees and other food items. reaches the same temperature as a microwave with half the volume."
 	icon = 'icons/obj/food/ration.dmi'
 	icon_state = "ration_package"
 	grind_results = list(/datum/reagent/iron = 10, /datum/reagent/water = 10, /datum/reagent/consumable/sodiumchloride = 5)
@@ -382,7 +383,7 @@
 			RegisterSignal(tocook, COMSIG_PARENT_QDELETING, PROC_REF(clear_cooking))
 			target.add_overlay(ration_overlay)
 			addtimer(CALLBACK(src, PROC_REF(cook)), 100)
-			visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
+			target.visible_message("<span class='notice'>\The [target] rapidly begins cooking...</span>")
 			playsound(src, 'sound/items/cig_light.ogg', 50, 1)
 			moveToNullspace()
 
@@ -391,22 +392,27 @@
 	UnregisterSignal(tocook, COMSIG_PARENT_QDELETING)
 	tocook.cut_overlay(ration_overlay)
 	tocook = null
+
 /obj/item/ration_heater/proc/cook()
-	var/cookturf = get_turf(tocook)
-	tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
-	playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
-	if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
-		clear_cooking()
-		tocook.microwave_act()
-	if(uses == 0)
-		qdel()
-	else
-		uses--
-		src.forceMove(cookturf)
+	if(!QDELETED(tocook))
+		var/cookturf = get_turf(tocook)
+		tocook.visible_message("<span class='notice'>\The [src] lets out a final hiss...</span>")
+		playsound(tocook, 'sound/items/cig_snuff.ogg', 50, 1)
+		if(istype(tocook, /obj/item/reagent_containers/food) || istype(tocook, /obj/item/grown))
+			tocook.visible_message("<span class='notice'>\The [tocook] is done warming up!</span>")
+			tocook.microwave_act()
+			if(!QDELETED(tocook))
+				clear_cooking()
+		if(uses == 0)
+			qdel()
+		else
+			uses--
+			src.forceMove(cookturf)
 
 /obj/item/ration_heater/examine(mob/user)
 	. = ..()
 	. += "It has [uses] uses left..."
+	. += "<span class='notice'>Examine rations to see which ones can be microwaved.</span>"
 
 #undef MICROWAVE_NORMAL
 #undef MICROWAVE_MUCK

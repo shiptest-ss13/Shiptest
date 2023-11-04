@@ -374,14 +374,6 @@
 		active = FALSE
 		set_light_on(active)
 
-/obj/item/clothing/shoes/russian
-	name = "russian boots"
-	desc = "Comfy shoes."
-	icon_state = "rus_shoes"
-	item_state = "rus_shoes"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	lace_time = 8 SECONDS
-
 /obj/item/clothing/shoes/cowboy
 	name = "cowboy boots"
 	desc = "A small sticker lets you know they've been inspected for snakes, It is unclear how long ago the inspection took place..."

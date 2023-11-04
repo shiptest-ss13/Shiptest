@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/recharge
 	name = "power pack"
-	desc = "A rechargeable, detachable battery that serves as a magazine for laser rifles."
+	desc = "A detachable, rechargeable battery for the laser rifle. Grants 20 shots at full charge."
 	icon_state = "oldrifle-20"
 	base_icon_state = "oldrifle"
 	ammo_type = /obj/item/ammo_casing/caseless/laser

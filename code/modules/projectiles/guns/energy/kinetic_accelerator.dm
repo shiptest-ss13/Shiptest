@@ -18,6 +18,10 @@
 	internal_cell = TRUE
 	custom_price = 750
 	w_class = WEIGHT_CLASS_BULKY
+
+	muzzleflash_iconstate = "muzzle_flash_light"
+	muzzle_flash_color = COLOR_WHITE
+
 	var/overheat_time = 16
 	var/holds_charge = FALSE
 	var/unique_frequency = FALSE // modified by KA modkits

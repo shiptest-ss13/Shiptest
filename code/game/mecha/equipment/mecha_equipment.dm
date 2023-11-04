@@ -134,7 +134,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/proc/detach(atom/moveto=null)
 	moveto = moveto || get_turf(chassis)
-	if(src.Move(moveto))
+	if(src.forceMove(moveto))
 		chassis.equipment -= src
 		if(chassis.selected == src)
 			chassis.selected = null

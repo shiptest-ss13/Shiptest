@@ -15,6 +15,8 @@
 	anchored = TRUE
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
+	hitsound_type = PROJECTILE_HITSOUND_FLESH
+
 	var/gps = null
 	var/obj/effect/light_emitter/tendril/emitted_light
 

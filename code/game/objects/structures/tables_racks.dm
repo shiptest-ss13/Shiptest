@@ -339,6 +339,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	var/list/debris = list()
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/structure/table/glass/Initialize()
 	. = ..()
 	debris += new frame
@@ -423,6 +425,8 @@
 	max_integrity = 70
 	smoothing_groups = list(SMOOTH_GROUP_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_TABLES)
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/table/wood/narsie_act(total_override = TRUE)
 	if(!total_override)
@@ -735,6 +739,7 @@
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron=2000)
 	var/building = FALSE
+	var/obj/construction_type = /obj/structure/rack
 
 /obj/item/rack_parts/attackby(obj/item/W, mob/user, params)
 	if (W.tool_behaviour == TOOL_WRENCH)
@@ -744,14 +749,17 @@
 		. = ..()
 
 /obj/item/rack_parts/attack_self(mob/user)
+	if(locate(construction_type) in get_turf(user))
+		balloon_alert(user, "no room!")
+		return
 	if(building)
 		return
 	building = TRUE
-	to_chat(user, "<span class='notice'>You start constructing a rack...</span>")
+	to_chat(user, "<span class='notice'>You start assembling [src]...</span>")
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
-		var/obj/structure/rack/R = new /obj/structure/rack(user.loc)
+		var/obj/structure/R = new construction_type(user.loc)
 		user.visible_message("<span class='notice'>[user] assembles \a [R].\
 			</span>", "<span class='notice'>You assemble \a [R].</span>")
 		R.add_fingerprint(user)
@@ -771,6 +779,8 @@
 	integrity_failure = 0.25
 	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70) //trolld
 	can_flip = FALSE //same as reinforced and theres no sprites for it
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/table/wood/reinforced/deconstruction_hints(mob/user)
 	if(deconstruction_ready)

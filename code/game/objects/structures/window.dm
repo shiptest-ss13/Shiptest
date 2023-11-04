@@ -30,6 +30,8 @@
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.4
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/structure/window/examine(mob/user)
 	. = ..()
 	if(flags_1 & NODECONSTRUCT_1)

@@ -24,6 +24,8 @@
 	var/cable = 1
 	var/list/debris = list()
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/machinery/door/window/Initialize(mapload, set_dir)
 	. = ..()
 	flags_1 &= ~PREVENT_CLICK_UNDER_1

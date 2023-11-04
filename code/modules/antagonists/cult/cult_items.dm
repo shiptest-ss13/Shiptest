@@ -173,7 +173,7 @@
 
 /obj/item/cult_bastard/IsReflect()
 	if(spinning)
-		playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+		playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 		return TRUE
 	else
 		..()
@@ -182,7 +182,7 @@
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/weapons/parry.ogg', 75, TRUE)
@@ -666,7 +666,7 @@
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/weapons/parry.ogg', 100, TRUE)

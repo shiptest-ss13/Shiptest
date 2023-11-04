@@ -426,7 +426,7 @@
 //Operator backpack spray
 /obj/item/watertank/op
 	name = "backpack water tank"
-	desc = "A New Russian backpack spray for systematic cleansing of carbon lifeforms."
+	desc = "A backpack spray for systematic cleansing of carbon lifeforms."
 	icon_state = "waterbackpackop"
 	item_state = "waterbackpackop"
 	w_class = WEIGHT_CLASS_NORMAL
