@@ -4,15 +4,15 @@
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
+	mask = null
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
-	l_hand = /obj/item/energyhalberd
-
 
 	box = /obj/item/storage/box/survival
+	l_hand = /obj/item/energyhalberd
 
 	id_role = "Sonnensöldner"
 
@@ -30,5 +30,7 @@
 	suit_store = null
 	mask = null
 	glasses = null
+
+	l_hand = null
 
 	id_role = "Inspector"
