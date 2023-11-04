@@ -84,29 +84,3 @@
 	P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
 	if(length(spawn_sound))
 		playsound(P, pick(spawn_sound), 50, TRUE)
-
-
-
-/**
- * Behaves like the orange() proc, but only looks in the outer range of the function (The "peel" of the orange).
- * Can't think of a better place to put this.
- * Credit to ArcaneMusic for this very handy proc
- */
-/proc/turf_peel(outer_range, inner_range, center, view_based = FALSE)
-	var/list/peel = list()
-	var/list/outer
-	var/list/inner
-	if(view_based)
-		outer = circleviewturfs(center, outer_range)
-		inner = circleviewturfs(center, inner_range)
-	else
-		outer = circlerangeturfs(center, outer_range)
-		inner = circlerangeturfs(center, inner_range)
-	for(var/turf/possible_spawn in outer)
-		if(possible_spawn in inner)
-			continue
-		if(istype(possible_spawn, /turf/closed))
-			continue
-		peel += possible_spawn
-	return peel
-
