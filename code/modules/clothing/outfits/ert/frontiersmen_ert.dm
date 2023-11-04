@@ -23,6 +23,7 @@
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
+	ears = /obj/item/radio/headset/pirate/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	suit = /obj/item/clothing/suit/armor/frontier
 	suit_store = /obj/item/gun/ballistic/revolver/nagant

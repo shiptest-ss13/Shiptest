@@ -2,20 +2,20 @@
 	name = "ERT - Syndicate Basic"
 
 	uniform = /obj/item/clothing/under/syndicate
-	suit = /obj/item/clothing/suit/armor/vest
+	suit = /obj/item/clothing/suit/armor/vest/syndie
 	suit_store = /obj/item/gun/ballistic/automatic/smg/c20r
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
-	mask = /obj/item/clothing/mask/gas/syndicate
-	head = /obj/item/clothing/head/helmet/swat
+	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	head = /obj/item/clothing/head/helmet/operator
 	back = /obj/item/storage/backpack/fireproof
 	belt = /obj/item/storage/belt/military/c20r
 	r_pocket = /obj/item/kitchen/knife/combat
 	l_pocket = /obj/item/grenade/frag
 
 	implants = list(/obj/item/implant/weapons_auth)
-	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol=1, /obj/item/ammo_box/magazine/m10mm=2, /obj/item/radio=1)
+	backpack_contents = list(/obj/item/radio=1)
 	box = /obj/item/storage/box/survival/syndie
 
 	id_role = "Squaddie"
@@ -26,23 +26,47 @@
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/captain
 
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol=1, /obj/item/ammo_box/magazine/m10mm=2, /obj/item/radio=1)
+
 	id_role = "Sergeant"
 
 /datum/outfit/centcom/ert/syndicate/gorlex
 	name = "ERT - Syndicate Gorlex Trooper"
 
-	head = /obj/item/clothing/head/helmet/operator
+	head = /obj/item/clothing/head/helmet/swat
 	uniform = /obj/item/clothing/under/syndicate/combat
-	suit = /obj/item/clothing/suit/armor/vest/syndie
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	belt = /obj/item/storage/belt/military/assault
 	back = /obj/item/storage/backpack/security
+	suit_store = /obj/item/gun/ballistic/automatic/smg/m90
+
+	backpack_contents = list(/obj/item/ammo_box/magazine/m556=4, /obj/item/radio=1)
 
 	id_role = "Trooper"
+
+/datum/outfit/centcom/ert/syndicate/gorlex/pointman
+	name = "ERT - Syndicate Gorlex Pointman"
+
+	suit_store = /obj/item/gun/ballistic/shotgun/bulldog
+	belt = /obj/item/storage/belt/military/bulldog
+
+/datum/outfit/centcom/ert/syndicate/gorlex/medic
+	name = "ERT - Syndicate Gorlex Medic"
+
+	head = /obj/item/clothing/head/beret/black
+	suit = /obj/item/clothing/suit/armor/vest/alt
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	glasses = /obj/item/clothing/glasses/hud/health
+
+	backpack_contents = list(/obj/item/gun/ballistic/automatic/pistol=1, /obj/item/ammo_box/magazine/m10mm=2, /obj/item/storage/firstaid/tactical=1, /obj/item/radio=1)
 
 /datum/outfit/centcom/ert/syndicate/gorlex/leader
 	name = "ERT - Syndicate Gorlex Sergeant"
 
 	head = /obj/item/clothing/head/HoS/beret/syndicate
+	back = /obj/item/storage/backpack/satchel/sec
+	mask = /obj/item/clothing/mask/gas/sechailer
+	glasses = /obj/item/clothing/glasses/hud/security/night
 
 	id_role = "Sergeant"
 
@@ -88,7 +112,7 @@
 	r_pocket = /obj/item/pinpointer/crew
 	accessory = /obj/item/clothing/accessory/holster/marine
 
-	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/autosurgeon/cmo=1, /obj/item/radio=1)
+	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/radio=1)
 
 	id_role = "Medical Technician"
 
@@ -99,5 +123,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/night
 	ears = /obj/item/radio/headset/syndicate/captain
 	r_pocket = /obj/item/megaphone/command
+
+	list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/autosurgeon/cmo=1, /obj/item/radio=1)
 
 	id_role = "Lead Medical Technician"

@@ -439,6 +439,11 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_box/magazine/smgm45(src)
 
+/obj/item/storage/belt/military/bulldog/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/magazine/m12g(src)
+
 /obj/item/storage/belt/military/minutemen
 	name = "minutemen tactical webbing"
 	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."
@@ -454,7 +459,7 @@
 
 /obj/item/storage/belt/military/snack/Initialize()
 	. = ..()
-	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
+	var/sponsor = pick("Donk! Co.", "CyberSun")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
 /obj/item/storage/belt/military/snack/ComponentInitialize()

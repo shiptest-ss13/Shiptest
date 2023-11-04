@@ -416,6 +416,8 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/kitchen/knife/combat
 
+	backpack_contents = list(/obj/item/radio=1)
+
 	id_role = "Security Specialist"
 
 /datum/outfit/centcom/ert/lp/medic
@@ -433,7 +435,7 @@
 	l_pocket = /obj/item/healthanalyzer
 	r_pocket = /obj/item/reagent_containers/hypospray/medipen/atropine
 
-	backpack_contents = list(/obj/item/storage/firstaid/medical=1)
+	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/radio=1)
 
 	id_role = "Medical Specialist"
 
@@ -455,7 +457,7 @@
 
 	id_role = "Engineering Specialist"
 
-	backpack_contents = list(/obj/item/stack/sheet/metal/fifty=1, /obj/item/stack/sheet/glass/fifty=1)
+	backpack_contents = list(/obj/item/stack/sheet/metal/fifty=1, /obj/item/stack/sheet/glass/fifty=1, /obj/item/radio=1)
 
 /datum/outfit/centcom/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"

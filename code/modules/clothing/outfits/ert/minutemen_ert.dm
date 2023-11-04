@@ -88,7 +88,7 @@
 	id_role = "Sargent"
 
 /datum/outfit/centcom/ert/minutemen/gold_irs
-	name = "CMM GOLD Collector"
+	name = "ERT - CMM GOLD Collector"
 
 	head = null
 	mask = null
@@ -98,6 +98,7 @@
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
+	id = /obj/item/card/id/silver
 
 	l_pocket = null
 	r_pocket = null
