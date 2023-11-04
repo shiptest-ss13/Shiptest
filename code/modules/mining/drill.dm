@@ -273,7 +273,7 @@
 			mine_time = round((300/sqrt(laser.rating))*mining.mine_time_multiplier)
 		eta = mine_time*mining.mining_charges
 		cell.use(power_use)
-		addtimer(CALLBACK(src, .proc/mine), mine_time)
+		addtimer(CALLBACK(src, PROC_REF(mine)), mine_time)
 		say("Estimated time until vein depletion: [time2text(eta,"mm:ss")].")
 		update_icon_state()
 		update_overlays()
