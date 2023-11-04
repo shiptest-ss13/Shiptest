@@ -28,7 +28,7 @@
 	suit_store = /obj/item/gun/ballistic/revolver/nagant
 	belt = /obj/item/storage/belt/military/assault
 
-	backpack_contents = list(/obj/item/ammo_box/n762_clip=3)
+	backpack_contents = list(/obj/item/ammo_box/n762_clip=3, /obj/item/binoculars=1, /obj/item/melee/classic_baton/telescopic)
 
 	id_role = "Officer"
 
@@ -41,7 +41,7 @@
 	belt = /obj/item/storage/belt/medical/surgery
 	suit_store = null
 
-	backpack_contents = list(/obj/item/storage/firstaid/medical=1)
+	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack=3)
 
 	id_role = "Medic"
 
@@ -53,6 +53,6 @@
 	head = /obj/item/clothing/head/hardhat/weldhat
 	suit_store = null
 
-	backpack_contents = list(/obj/item/grenade/c4=2)
+	backpack_contents = list(/obj/item/grenade/c4=3, /obj/item/crowbar/large=1)
 
 	id_role = "Carpenter"
