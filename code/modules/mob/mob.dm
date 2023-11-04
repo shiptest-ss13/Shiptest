@@ -453,7 +453,7 @@
 	set name = "Examine"
 	set category = "IC"
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/run_examinate, examinify))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(run_examinate), examinify))
 
 /mob/proc/run_examinate(atom/examinify)
 
@@ -608,7 +608,7 @@
 	set category = "Object"
 	set src = usr
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/execute_mode))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_mode)))
 
 ///proc version to finish /mob/verb/mode() execution. used in case the proc needs to be queued for the tick after its first called
 /mob/proc/execute_mode()

@@ -111,8 +111,8 @@
 
 /obj/item/gun/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	if(pin)
 		pin = new pin(src)
 	if(gun_light)
@@ -133,7 +133,7 @@
 	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
 	wield_time = world.time + wield_delay
 	if(wield_time > 0)
-		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, .proc/is_wielded), ignore_loc_change = TRUE))
+		if(do_mob(user, user, wield_delay, FALSE, TRUE, CALLBACK(src, PROC_REF(is_wielded)), ignore_loc_change = TRUE))
 			wielded_fully = TRUE
 	else
 		wielded_fully = TRUE
@@ -730,7 +730,7 @@
 		set_light_color(muzzle_flash_color)
 		set_light_on(TRUE)
 		update_light()
-		addtimer(CALLBACK(src, .proc/reset_light_range, prev_light), 1 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(reset_light_range), prev_light), 1 SECONDS)
 	//Offset the pixels.
 	switch(firing_angle)
 		if(0, 360)
@@ -803,7 +803,7 @@
 	flash_loc.vis_contents += muzzle_flash
 	muzzle_flash.applied = TRUE
 
-	addtimer(CALLBACK(src, .proc/remove_muzzle_flash, flash_loc, muzzle_flash), 0.2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(remove_muzzle_flash), flash_loc, muzzle_flash), 0.2 SECONDS)
 
 /obj/item/gun/proc/reset_light_range(lightrange)
 	set_light_range(lightrange)
