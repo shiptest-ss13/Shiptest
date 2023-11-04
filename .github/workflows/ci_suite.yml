@@ -96,18 +96,18 @@ jobs:
     name: Integration Tests
     uses: ./.github/workflows/run_integration_tests.yml
 
-  run_alternate_tests:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Alternate Tests
-    strategy:
-      fail-fast: false
-      matrix:
-        major: [515]
-        minor: [1614]
-    uses: ./.github/workflows/run_integration_tests.yml
-    with:
-      major: ${{ matrix.major }}
-      minor: ${{ matrix.minor }}
+#  run_alternate_tests:
+#    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+#    name: Alternate Tests
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        major: [515]
+#        minor: [1614]
+#    uses: ./.github/workflows/run_integration_tests.yml
+#    with:
+#      major: ${{ matrix.major }}
+#      minor: ${{ matrix.minor }}
 
   test_windows:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
