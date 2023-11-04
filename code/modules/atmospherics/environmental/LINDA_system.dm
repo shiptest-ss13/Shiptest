@@ -49,8 +49,6 @@
 		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))))
 			LAZYINITLIST(atmos_adjacent_turfs)
 			LAZYINITLIST(T.atmos_adjacent_turfs)
-			atmos_adjacent_turfs[T] = ATMOS_ADJACENT_ANY
-			T.atmos_adjacent_turfs[src] = ATMOS_ADJACENT_ANY
 		else
 			if (atmos_adjacent_turfs)
 				atmos_adjacent_turfs -= T
@@ -66,8 +64,6 @@
 	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
 
 /turf/proc/set_sleeping(should_sleep)
-
-/turf/proc/__update_auxtools_turf_adjacency_info()
 
 //returns a list of adjacent turfs that can share air with this one.
 //alldir includes adjacent diagonal tiles that can share

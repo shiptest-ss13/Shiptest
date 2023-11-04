@@ -115,8 +115,6 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/proc/extools_update_ssair()
 
-/datum/controller/subsystem/air/proc/auxtools_update_reactions()
-
 /proc/reset_all_air()
 	SSair.can_fire = FALSE
 	message_admins("Air reset begun.")
@@ -125,17 +123,6 @@ SUBSYSTEM_DEF(air)
 		CHECK_TICK
 	message_admins("Air reset done.")
 	SSair.can_fire = TRUE
-
-/datum/controller/subsystem/air/proc/thread_running()
-	return FALSE
-
-/proc/fix_corrupted_atmos()
-
-/datum/admins/proc/fixcorruption()
-	set category = "Debug"
-	set desc="Fixes air that has weird NaNs (-1.#IND and such). Hopefully."
-	set name="Fix Infinite Air"
-	fix_corrupted_atmos()
 
 /datum/controller/subsystem/air/fire(resumed = 0)
 	if(thread_running())
@@ -238,36 +225,8 @@ SUBSYSTEM_DEF(air)
 		if(state != SS_RUNNING)
 			return
 		resumed = 0
-	/*
-	// Monstermos and/or Putnamos--making large pressure deltas move faster
-	if(currentpart == SSAIR_EQUALIZE)
-		timer = TICK_USAGE_REAL
-		process_turf_equalize(resumed)
-		cost_equalize = MC_AVERAGE(cost_equalize, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
-		currentpart = SSAIR_EXCITEDGROUPS
-	// Making small pressure deltas equalize immediately so they don't process anymore
-	if(currentpart == SSAIR_EXCITEDGROUPS)
-		timer = TICK_USAGE_REAL
-		process_excited_groups(resumed)
-		cost_groups = MC_AVERAGE(cost_groups, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
-		currentpart = SSAIR_TURF_POST_PROCESS
-	// Quick multithreaded "should we display/react?" checks followed by finishing those up before the next step
-	if(currentpart == SSAIR_TURF_POST_PROCESS)
-		timer = TICK_USAGE_REAL
-		post_process_turfs(resumed)
-		cost_post_process = MC_AVERAGE(cost_post_process, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
-		currentpart = SSAIR_HOTSPOTS
-	*/
-	currentpart = SSAIR_PIPENETS
+
+		currentpart = SSAIR_PIPENETS
 
 /datum/controller/subsystem/air/Recover()
 	hotspots = SSair.hotspots
@@ -512,47 +471,17 @@ SUBSYSTEM_DEF(air)
 		if(MC_TICK_CHECK)
 			return
 
+
 /datum/controller/subsystem/air/proc/process_turf_equalize(resumed = 0)
-	if(process_turf_equalize_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(process_turf_equalize_auxtools(MC_TICK_REMAINING_MS))
 		pause()
-	/*
-	//cache for sanic speed
-	var/fire_count = times_fired
-	if (!resumed)
-		src.currentrun = active_turfs.Copy()
-	//cache for sanic speed (lists are references anyways)
-	var/list/currentrun = src.currentrun
-	while(currentrun.len)
-		var/turf/open/T = currentrun[currentrun.len]
-		currentrun.len--
-		if (T)
-			T.equalize_pressure_in_zone(fire_count)
-			//equalize_pressure_in_zone(T, fire_count)
-		if (MC_TICK_CHECK)
-			return
-	*/
 
 /datum/controller/subsystem/air/proc/process_turfs(resumed = 0)
-	if(process_turfs_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(process_turfs_auxtools(MC_TICK_REMAINING_MS))
 		pause()
-	/*
-	//cache for sanic speed
-	var/fire_count = times_fired
-	if (!resumed)
-		src.currentrun = active_turfs.Copy()
-	//cache for sanic speed (lists are references anyways)
-	var/list/currentrun = src.currentrun
-	while(currentrun.len)
-		var/turf/open/T = currentrun[currentrun.len]
-		currentrun.len--
-		if (T)
-			T.process_cell(fire_count)
-		if (MC_TICK_CHECK)
-			return
-	*/
 
 /datum/controller/subsystem/air/proc/process_excited_groups(resumed = 0)
-	if(process_excited_groups_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(process_excited_groups_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 
 /datum/controller/subsystem/air/proc/finish_turf_processing(resumed = 0)
@@ -560,16 +489,10 @@ SUBSYSTEM_DEF(air)
 		pause()
 
 /datum/controller/subsystem/air/proc/post_process_turfs(resumed = 0)
-	if(post_process_turfs_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(post_process_turfs_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 
-/datum/controller/subsystem/air/proc/finish_turf_processing_auxtools()
-/datum/controller/subsystem/air/proc/process_turfs_auxtools()
 /datum/controller/subsystem/air/proc/post_process_turfs_auxtools()
-/datum/controller/subsystem/air/proc/process_turf_equalize_auxtools()
-/datum/controller/subsystem/air/proc/process_excited_groups_auxtools()
-/datum/controller/subsystem/air/proc/get_amt_gas_mixes()
-/datum/controller/subsystem/air/proc/get_max_gas_mixes()
 /datum/controller/subsystem/air/proc/turf_process_time()
 /datum/controller/subsystem/air/proc/heat_process_time()
 
