@@ -124,6 +124,6 @@
 	ears = /obj/item/radio/headset/syndicate/captain
 	r_pocket = /obj/item/megaphone/command
 
-	list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/autosurgeon/cmo=1, /obj/item/radio=1)
+	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/autosurgeon/cmo=1, /obj/item/radio=1)
 
 	id_role = "Lead Medical Technician"
