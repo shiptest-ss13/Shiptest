@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 	if (!isnull(volume))
 		initial_volume = volume
 	AUXTOOLS_CHECK(AUXMOS)
-	if(!GLOB.auxtools_atmos_initialized && auxtools_atmos_init())
+	if(!GLOB.auxtools_atmos_initialized && auxtools_atmos_init(GLOB.gas_data))
 		GLOB.auxtools_atmos_initialized = TRUE
 	__gasmixture_register()
 	reaction_results = new

@@ -53,7 +53,7 @@
 			if (atmos_adjacent_turfs)
 				atmos_adjacent_turfs -= T
 			LAZYREMOVE(T.atmos_adjacent_turfs, src)
-		T.__update_auxtools_turf_adjacency_info(isspaceturf(T.get_z_base_turf()))
+		T.__update_auxtools_turf_adjacency_info()
 	UNSETEMPTY(atmos_adjacent_turfs)
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
 	for(var/turf/open/T as anything in atmos_adjacent_turfs)
@@ -61,7 +61,7 @@
 			FD.UpdateAdjacencyFlags()
 	for(var/obj/machinery/door/firedoor/FD in src)
 		FD.UpdateAdjacencyFlags()
-	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
+	__update_auxtools_turf_adjacency_info()
 
 /turf/proc/set_sleeping(should_sleep)
 
