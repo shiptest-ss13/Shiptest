@@ -160,7 +160,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		return
 	busy = TRUE
 	update_appearance()
-	addtimer(CALLBACK(src, .proc/wash_cycle), 200)
+	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 200)
 
 	START_PROCESSING(SSfastprocess, src)
 

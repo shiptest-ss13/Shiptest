@@ -92,7 +92,7 @@
 		name = "poster - [name]"
 		desc = "A large piece of space-resistant printed paper. [desc]"
 
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 300)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, 300)), 0)
 
 /obj/structure/sign/poster/proc/randomise()
 	var/obj/structure/sign/poster/selected

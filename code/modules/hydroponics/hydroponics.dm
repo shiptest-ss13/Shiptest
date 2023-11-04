@@ -35,7 +35,7 @@
 	// Here lies irrigation. You won't be missed, because you were never used.
 
 /obj/machinery/hydroponics/Initialize()
-	RegisterSignal(src, COMSIG_ATOM_EXITED, .proc/on_exited)
+	RegisterSignal(src, COMSIG_ATOM_EXITED, PROC_REF(on_exited))
 	//Here lies "nutrilevel", killed by ArcaneMusic 20??-2019. Finally, we strive for a better future. Please use "reagents" instead
 	create_reagents(20)
 	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
@@ -48,7 +48,7 @@
 
 /obj/machinery/hydroponics/constructable/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, PROC_REF(can_be_rotated)))
 	AddComponent(/datum/component/plumbing/simple_demand)
 
 /obj/machinery/hydroponics/constructable/proc/can_be_rotated(mob/user, rotation_type)
