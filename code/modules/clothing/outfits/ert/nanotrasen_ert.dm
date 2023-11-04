@@ -410,6 +410,11 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/sec
 	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
 	shoes = /obj/item/clothing/shoes/jackboots
+	back = /obj/item/storage/backpack/ert/security
+
+	box = /obj/item/storage/box/survival/security
+	l_pocket = /obj/item/restraints/handcuffs
+	r_pocket = /obj/item/kitchen/knife/combat
 
 	id_role = "Security Specialist"
 
@@ -421,6 +426,14 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/med
 	id = /obj/item/card/id/lpmed
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	back = /obj/item/storage/backpack/ert/medical
+	belt = /obj/item/storage/belt/medical/surgery
+
+	box = /obj/item/storage/box/survival/medical
+	l_pocket = /obj/item/healthanalyzer
+	r_pocket = /obj/item/reagent_containers/hypospray/medipen/atropine
+
+	backpack_contents = list(/obj/item/storage/firstaid/medical=1)
 
 	id_role = "Medical Specialist"
 
@@ -434,8 +447,15 @@
 	belt = /obj/item/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/combat
 	glasses = /obj/item/clothing/glasses/welding
+	back = /obj/item/storage/backpack/ert/engineer
+
+	box = /obj/item/storage/box/survival/engineer
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/wrench/combat
 
 	id_role = "Engineering Specialist"
+
+	backpack_contents = list(/obj/item/stack/sheet/metal/fifty=1, /obj/item/stack/sheet/glass/fifty=1)
 
 /datum/outfit/centcom/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"
@@ -449,5 +469,10 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	back = /obj/item/storage/backpack/ert
+
+	box = /obj/item/storage/box/survival/radio
+	l_pocket = /obj/item/megaphone/command
+	r_pocket = /obj/item/binoculars
 
 	id_role = "Lieutenant"
