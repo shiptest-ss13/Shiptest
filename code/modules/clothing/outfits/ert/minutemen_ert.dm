@@ -47,9 +47,10 @@
 /datum/outfit/centcom/ert/minutemen/bard/leader
 	name = "ERT - Minutemen BARD Sargent"
 
+	belt = /obj/item/storage/belt/military/assault/minutemen
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
-	suit_store = null
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	glasses = /obj/item/clothing/glasses/hud/security/night
 	r_pocket = /obj/item/grenade/c4
 	l_pocket = /obj/item/reagent_containers/hypospray/medipen/stimpack
@@ -91,11 +92,15 @@
 
 	head = null
 	mask = null
+	belt = /obj/item/clipboard
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
+
+	l_pocket = null
+	r_pocket = null
 
 	id_role = "Lieutenant"
 
