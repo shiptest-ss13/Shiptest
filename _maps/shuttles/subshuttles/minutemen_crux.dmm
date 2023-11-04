@@ -13,7 +13,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "b" = (
@@ -53,10 +52,15 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "g" = (
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "crux dock";
+	port_direction = 2;
+	preferred_direction = 8
+	},
 /obj/machinery/door/poddoor{
 	id = "crux_blastdoors";
 	dir = 4
@@ -69,7 +73,6 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/chair/comfy/shuttle,
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "i" = (
@@ -122,7 +125,6 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/landmark/ert_shuttle_spawn,
 /obj/machinery/button/door{
 	id = "crux_blastdoors";
 	name = "Cargo Bay Doors";
@@ -138,7 +140,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 4
 	},
-/obj/effect/landmark/ert_shuttle_spawn,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -173,7 +174,6 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 4
 	},
-/obj/effect/landmark/ert_shuttle_brief_spawn,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "z" = (
@@ -186,7 +186,6 @@
 	},
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/turf_decal/steeldecal/steel_decals6,
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "B" = (
@@ -362,7 +361,6 @@
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 4
 	},
-/obj/effect/landmark/ert_shuttle_spawn,
 /obj/item/radio/intercom/directional/south{
 	pixel_x = -12
 	},

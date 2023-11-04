@@ -1,28 +1,82 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"br" = (
-/obj/machinery/door/airlock/external{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ship/bridge)
-"hj" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
-	},
+"aD" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal,
+/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"lH" = (
-/obj/machinery/photocopier,
-/obj/effect/turf_decal/corner/opaque/green/half,
+"aW" = (
+/obj/machinery/computer/card/centcom{
+	dir = 8
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
+"br" = (
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"dw" = (
+/obj/machinery/door/airlock/external/glass{
+	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 4;
+	name = "ancon dock";
+	port_direction = 2;
+	preferred_direction = 4
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
+"hj" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/light,
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"jj" = (
+/obj/effect/turf_decal/trimline/opaque/green/warning{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"kE" = (
+/obj/effect/turf_decal/corner/opaque/green/half{
+	dir = 1
+	},
+/obj/machinery/power/port_gen/pacman,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"lu" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "nV" = (
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/structure/chair/office/light{
 	dir = 8
 	},
@@ -34,17 +88,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"ol" = (
-/obj/effect/turf_decal/trimline/opaque/green/warning{
+"pk" = (
+/obj/effect/turf_decal/trimline/opaque/green/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/white,
-/area/ship/bridge)
-"oF" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal,
-/obj/structure/extinguisher_cabinet/directional/north,
-/obj/effect/turf_decal/siding/thinplating/light{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "1-5"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -56,45 +108,33 @@
 "tk" = (
 /turf/open/space/basic,
 /area/template_noop)
-"vp" = (
-/obj/structure/table,
-/obj/machinery/microwave{
-	pixel_y = 6
-	},
-/obj/effect/turf_decal/corner/opaque/green/half{
-	dir = 1
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/bridge)
-"vv" = (
-/obj/structure/table,
-/obj/machinery/fax{
-	pixel_y = 5
-	},
-/obj/effect/turf_decal/corner/opaque/green/half,
-/turf/open/floor/plasteel/white,
-/area/ship/bridge)
-"vV" = (
-/turf/open/floor/plasteel,
-/area/ship/bridge)
-"wi" = (
+"ty" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/light{
-	dir = 9
+	dir = 6
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"ww" = (
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/bridge)
-"wQ" = (
+"up" = (
+/obj/machinery/photocopier,
 /obj/effect/turf_decal/corner/opaque/green/half,
 /turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"vV" = (
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 28
+	},
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/suit/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/obj/item/clothing/head/helmet/space/eva,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "xH" = (
 /obj/effect/turf_decal/siding/wood{
@@ -132,7 +172,10 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "yi" = (
-/turf/open/floor/plasteel/stairs,
+/obj/effect/turf_decal/corner/opaque/green/border{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ship/bridge)
 "yp" = (
 /obj/structure/grille,
@@ -168,22 +211,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
-"Bc" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/light,
-/turf/open/floor/plasteel/white,
-/area/ship/bridge)
-"BC" = (
-/obj/effect/turf_decal/corner/opaque/green/diagonal{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/thinplating/light{
-	dir = 6
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/bridge)
 "Ct" = (
 /obj/structure/chair/office/light{
 	dir = 4
@@ -196,14 +223,25 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"Fu" = (
-/obj/effect/turf_decal/trimline/opaque/green/corner{
-	dir = 1
+"DF" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"Fz" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/light{
+	dir = 9
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "FS" = (
-/obj/structure/railing/corner,
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 5
@@ -237,6 +275,9 @@
 	},
 /turf/open/floor/wood,
 /area/ship/bridge)
+"LE" = (
+/turf/closed/wall,
+/area/template_noop)
 "LV" = (
 /turf/closed/wall,
 /area/ship/bridge)
@@ -252,16 +293,22 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
+"Nk" = (
+/obj/effect/turf_decal/trimline/opaque/green/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/white,
+/area/ship/bridge)
 "Om" = (
 /obj/machinery/door/airlock/external/glass{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "Rg" = (
-/obj/structure/railing{
-	dir = 4
-	},
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 4
 	},
@@ -276,29 +323,27 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
-"SI" = (
-/obj/structure/chair/office/light{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/green/border{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ship/bridge)
-"Td" = (
-/obj/structure/table,
-/obj/item/storage/box/donkpockets/donkpocketpizza{
-	pixel_x = -4;
-	pixel_y = 10
-	},
-/obj/item/storage/box/donkpockets/donkpocketteriyaki{
-	pixel_x = 5;
-	pixel_y = 4
-	},
+"Rz" = (
 /obj/effect/turf_decal/corner/opaque/green/half{
 	dir = 1
 	},
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/white,
+/area/ship/bridge)
+"SI" = (
+/obj/effect/turf_decal/corner/opaque/green/border{
+	dir = 4
+	},
+/obj/structure/chair/comfy{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
 /area/ship/bridge)
 "Th" = (
 /obj/machinery/power/smes/shuttle/precharged{
@@ -325,32 +370,40 @@
 /obj/machinery/computer/helm{
 	dir = 8
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
-"XA" = (
-/obj/structure/closet/crate/internals,
-/obj/effect/turf_decal/corner/opaque/green/half{
+"XH" = (
+/obj/effect/turf_decal/corner/opaque/green/diagonal{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/thinplating/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
+"Zr" = (
+/turf/open/floor/plating,
+/area/ship/bridge)
 "ZG" = (
-/obj/structure/railing,
-/obj/structure/curtain{
-	layer = 3.07
+/obj/structure/table,
+/obj/machinery/fax{
+	pixel_y = 5
 	},
-/obj/machinery/shower{
-	pixel_y = 12
-	},
-/obj/structure/toilet,
-/turf/open/floor/plasteel/mono,
+/obj/effect/turf_decal/corner/opaque/green/half,
+/turf/open/floor/plasteel/white,
 /area/ship/bridge)
 
 (1,1,1) = {"
 tk
 tk
 LV
-Om
+dw
 br
 LV
 tk
@@ -361,7 +414,7 @@ tk
 zJ
 LV
 vV
-vV
+Zr
 LV
 zJ
 tk
@@ -378,38 +431,38 @@ LV
 "}
 (4,1,1) = {"
 yp
-XA
-ww
-ol
-ol
-Fu
-wQ
+lu
+pk
+jj
+jj
+Nk
+DF
 yp
 "}
 (5,1,1) = {"
 yp
-Td
-wi
+Rz
+Fz
 Ct
 MW
 TQ
-vv
+ZG
 yp
 "}
 (6,1,1) = {"
 yp
-vp
-hj
+kE
+XH
 KF
 IJ
-Bc
-lH
+hj
+up
 yp
 "}
 (7,1,1) = {"
 LV
 LV
-oF
+aD
 zI
 xH
 te
@@ -422,28 +475,28 @@ LV
 FS
 nV
 Rg
-BC
+ty
 LV
 tk
 "}
 (9,1,1) = {"
 tk
 LV
-ZG
+LV
 SI
 yi
-vV
+LV
 LV
 tk
 "}
 (10,1,1) = {"
 tk
-LV
+tk
 LV
 Vu
+aW
 LV
-LV
-LV
+tk
 tk
 "}
 (11,1,1) = {"
@@ -451,8 +504,8 @@ tk
 tk
 LV
 yp
-LV
-tk
+yp
+LE
 tk
 tk
 "}
