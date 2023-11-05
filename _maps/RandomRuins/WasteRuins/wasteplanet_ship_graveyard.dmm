@@ -599,7 +599,6 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
-/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "cB" = (
@@ -1977,7 +1976,7 @@
 	dir = 6
 	},
 /obj/structure/frame/machine,
-/turf/template_noop,
+/turf/open/floor/plasteel/tech/techmaint,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "hN" = (
 /obj/machinery/computer/monitor/secret{
@@ -3237,7 +3236,6 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
@@ -3662,7 +3660,7 @@
 /obj/machinery/door/airlock/grunge{
 	dir = 4
 	},
-/turf/open/floor/plating/asteroid/wasteplanet/lit,
+/turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
 "ov" = (
 /obj/effect/turf_decal/industrial/warning/dust,
@@ -5899,12 +5897,15 @@
 /turf/open/floor/plasteel/patterned,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "wC" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 4
+/obj/effect/turf_decal/siding/white{
+	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/plating/rust,
-/area/ruin/wasteplanet/wasteplanet_graveyard/nanotrasen_ship)
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/overmap_encounter/planetoid/wasteplanet/explored)
 "wD" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -6618,6 +6619,7 @@
 	},
 /obj/machinery/airalarm/directional/west,
 /obj/structure/frame/machine,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
 "yL" = (
@@ -7925,7 +7927,6 @@
 /obj/effect/turf_decal/techfloor/hole/right{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/grid,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -9564,7 +9565,6 @@
 /obj/machinery/vending/wallmed{
 	pixel_y = -28
 	},
-/obj/structure/extinguisher_cabinet/directional/north,
 /mob/living/simple_animal/bot/medbot/rockplanet,
 /turf/open/floor/plasteel/white,
 /area/overmap_encounter/planetoid/wasteplanet/explored)
@@ -16114,7 +16114,7 @@ nY
 Ho
 Hb
 YU
-wC
+YU
 Fx
 pX
 jp
@@ -19031,7 +19031,7 @@ Yf
 yM
 fv
 Yf
-ag
+wC
 Qy
 Kl
 Yf
