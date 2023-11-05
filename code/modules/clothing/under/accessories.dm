@@ -541,6 +541,6 @@
 	icon_state = "suns_gembow"
 
 /obj/item/clothing/accessory/waistcoat/suns/poof
-	name = "suns chest poof"
+	name = "\improper SUNS chest poof"
 	desc = "An academic issued bow, for when you want to feel sophisticated."
 	icon_state = "suns_poof"
