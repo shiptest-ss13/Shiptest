@@ -358,7 +358,7 @@
 	item_state = "suns_schooljacket"
 
 /obj/item/clothing/suit/toggle/suns/pkcoat
-	name = "\improper Peacekeeper Coat"
+	name = "peacekeeper coat"
 	desc = "An armored coat used during special occasions. This one is used in academic security."
 	icon_state = "suns_pkjacket"
 	item_state = "suns_pkjacket"
