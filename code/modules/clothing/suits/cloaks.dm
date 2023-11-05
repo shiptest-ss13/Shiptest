@@ -64,7 +64,7 @@
 	icon_state = "solgov_cap_cloak"
 
 /obj/item/clothing/neck/cloak/suns
-	name = "SUNS short cloak"
+	name = "\improper SUNS short cloak"
 	desc = "Worn by both the young and old alike. You can almost feel the academic pride."
 	icon_state = "suns_shouldercape"
 
