@@ -172,7 +172,7 @@
 
 /obj/item/clothing/head/beret/hop/suns
 	name = "academic staff beret"
-	desc = "A soft beret sporting a discontinued inkwell quill feather. If only it could hold ink once more"
+	desc = "A soft beret sporting a discontinued inkwell quill feather. If only it could hold ink once more."
 	icon_state = "suns_xoberet"
 
 /obj/item/clothing/head/beret/hop
