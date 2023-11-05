@@ -389,7 +389,7 @@
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //Why? Because I'm not giving PK's sec masks nor hud sunglasses.
 
 /obj/item/clothing/head/welding/suns/hos
-	name = "Gilded Peackeeper Visor"
+	name = "gilded peacekeeper visor"
 	desc = "A head-mounted helmet designed to protect those on the field, this one had a gold lining to indicate rank. The warnings on this helmet suggest it is not space proof."
 	icon_state = "sunslpkvisor"
 	item_state = "sunslpkvisor"
