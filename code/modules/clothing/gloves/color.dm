@@ -215,7 +215,7 @@
 	item_state = "suns_captaingloves"
 
 /obj/item/clothing/gloves/color/sunsxo
-	name = "Academic staff gloves"
+	name = "academic staff gloves"
 	desc = "White gloves that offer a good grip with writing utensils."
 	icon_state = "suns_xogloves"
 	item_state = "suns_xogloves"
