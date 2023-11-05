@@ -1371,7 +1371,7 @@
 	desc = "An armored spaceproof helmet, the white glass on the side signifies a captain level rank."
 
 /obj/item/clothing/suit/space/hardsuit/solgov/suns
-	name = "\improper SUNS Captains hardsuit"
+	name = "\improper SUNS captain's hardsuit"
 	desc = "A well decorated space proof suit. The design was co-created by SolGov and SUNS academics."
 	icon_state = "suns_commandsuit"
 	item_state = "suns_commandsuit"
