@@ -531,7 +531,7 @@
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/waistcoat/suns/ribbon
-	name = "suns ribbon"
+	name = "\improper SUNS ribbon"
 	desc = "An academic issued bow, for when you want to feel pretty."
 	icon_state = "suns_ribbon"
 
