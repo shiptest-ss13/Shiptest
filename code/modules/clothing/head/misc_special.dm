@@ -381,7 +381,7 @@
 
 //SUNS lets you larp better than starfield ever will
 /obj/item/clothing/head/welding/suns
-	name = "Peackeeper Visor"
+	name = "peacekeeper visor"
 	desc = "A head-mounted helmet designed to protect those on the field from bright lights, while also allowing a life support connection. The warnings on this helmet suggest it is not space proof."
 	icon_state = "sunsvisor"
 	item_state = "sunsvisor"
