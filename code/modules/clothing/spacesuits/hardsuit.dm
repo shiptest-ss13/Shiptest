@@ -1345,7 +1345,7 @@
 	hardsuit_type = "suns_pk"
 
 /obj/item/clothing/suit/space/hardsuit/security/suns
-	name = "\improper SUNS Peacekeeper hardsuit"
+	name = "\improper SUNS peacekeeper hardsuit"
 	icon_state = "suns_pkhardsuit"
 	item_state = "suns_pkhardsuit"
 	hardsuit_type = "suns_pk"
