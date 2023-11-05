@@ -12,8 +12,8 @@ GLOBAL_PROTECT(donators)
 	. = ..()
 	donator = GLOB.donators[ckey] || new /datum/donator(src)
 	donator.owner = src
-	add_verb(src, .proc/do_donator_redemption)
-	add_verb(src, .proc/do_donator_wcir)
+	add_verb(src, /client/proc/do_donator_redemption)
+	add_verb(src, /client/proc/do_donator_wcir)
 
 /client/Destroy()
 	. = ..()

@@ -148,7 +148,7 @@
 		if(user.buckled && isobj(user.buckled) && !user.buckled.anchored)
 			var/obj/B = user.buckled
 			var/movementdirection = turn(direction,180)
-			addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_chair, B, movementdirection), 1)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/extinguisher, move_chair), B, movementdirection), 1)
 
 		else user.newtonian_move(turn(direction, 180))
 
@@ -176,7 +176,7 @@
 			reagents.trans_to(W,1, transfered_by = user)
 
 		//Make em move dat ass, hun
-		addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_particles, water_particles), 2)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/extinguisher, move_particles), water_particles), 2)
 
 //Particle movement loop
 /obj/item/extinguisher/proc/move_particles(list/particles, repetition=0)
@@ -198,7 +198,7 @@
 			particles -= W
 	if(repetition < power)
 		repetition++
-		addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_particles, particles, repetition), 2)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/extinguisher, move_particles), particles, repetition), 2)
 
 //Chair movement loop
 /obj/item/extinguisher/proc/move_chair(obj/B, movementdirection, repetition=0)
@@ -216,7 +216,7 @@
 			return
 
 	repetition++
-	addtimer(CALLBACK(src, /obj/item/extinguisher/proc/move_chair, B, movementdirection, repetition), timer_seconds)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/extinguisher, move_chair), B, movementdirection, repetition), timer_seconds)
 
 /obj/item/extinguisher/AltClick(mob/user)
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

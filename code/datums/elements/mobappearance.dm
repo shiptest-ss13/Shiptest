@@ -23,11 +23,11 @@
 		mob_appearance(target)
 		target.RemoveElement(/datum/element/appearance_on_login)
 	else
-		RegisterSignal(target, COMSIG_MOB_LOGIN, .proc/on_mob_login)
+		RegisterSignal(target, COMSIG_MOB_LOGIN, PROC_REF(on_mob_login))
 
 /datum/element/appearance_on_login/proc/on_mob_login(mob/source)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/mob_appearance, source)
+	INVOKE_ASYNC(src, PROC_REF(mob_appearance), source)
 	UnregisterSignal(source, COMSIG_MOB_LOGIN)
 	source.RemoveElement(/datum/element/appearance_on_login)
 
@@ -40,7 +40,7 @@
 
 /datum/element/appearance_on_login/proc/mob_appearance(mob/living/simple_animal/target)
 
-	var/picked_icon = show_radial_menu(target, target, icon_list, custom_check = CALLBACK(src, .proc/check_menu, target), radius = 38, require_near = TRUE)
+	var/picked_icon = show_radial_menu(target, target, icon_list, custom_check = CALLBACK(src, PROC_REF(check_menu), target), radius = 38, require_near = TRUE)
 	if(picked_icon)
 		target.icon_state = "[picked_icon]"
 		target.icon_living = "[picked_icon]"

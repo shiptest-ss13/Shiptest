@@ -750,8 +750,8 @@
 	var/datum/action/innate/linked_speech/action = new(src)
 	linked_actions.Add(action)
 	action.Grant(M)
-	RegisterSignal(M, COMSIG_MOB_DEATH , .proc/unlink_mob)
-	RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/unlink_mob)
+	RegisterSignal(M, COMSIG_MOB_DEATH , PROC_REF(unlink_mob))
+	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(unlink_mob))
 	return TRUE
 
 /datum/species/jelly/stargazer/proc/unlink_mob(mob/living/M)
