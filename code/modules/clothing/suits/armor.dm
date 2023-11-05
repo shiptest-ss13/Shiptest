@@ -431,7 +431,7 @@
 	item_state = "suns_lpkarmor"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
-	name = "\improper Decorated academic coat"
+	name = "decorated academic coat"
 	desc = "An armored coat intended for SUNS Captains on the frontier. Go forth, and spread the message of the academy."
 	icon_state = "suns_captaincoat"
 	item_state = "suns_captaincoat"
