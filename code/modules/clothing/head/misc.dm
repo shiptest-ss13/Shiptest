@@ -56,7 +56,7 @@
 
 /obj/item/clothing/head/sunscmo //I was told I get one plauge doctor outfit and I'm using it
 	name = "medical instructor hat"
-	desc = "A hat worn by the more essentric medical staff."
+	desc = "A hat worn by the more eccentric medical staff."
 	icon_state = "suns_doctorhat"
 	permeability_coefficient = 0.01
 
