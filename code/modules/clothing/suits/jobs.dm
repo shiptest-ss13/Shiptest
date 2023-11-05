@@ -352,7 +352,7 @@
 	item_state = "suns_jacket"
 
 /obj/item/clothing/suit/toggle/suns/alt
-	name = "\improper black school jacket"
+	name = "black school jacket"
 	desc = "A plain black jacket with gold detailing. Found in universities all over the galaxy."
 	icon_state = "suns_schooljacket"
 	item_state = "suns_schooljacket"
