@@ -210,7 +210,7 @@
 
 /obj/item/clothing/gloves/color/captain/suns
 	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
-	name = "SUNS captain's gloves"
+	name = "\improper SUNS captain's gloves"
 	icon_state = "suns_captaingloves"
 	item_state = "suns_captaingloves"
 
