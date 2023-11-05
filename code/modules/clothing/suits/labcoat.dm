@@ -131,6 +131,6 @@ You're pretty sure this is just a raincoat.
 
 /obj/item/clothing/suit/toggle/labcoat/sunscmo
 	name = "medical instructor coat"
-	desc = "A labcoat often worn by the more essentric medical instructors."
+	desc = "A labcoat often worn by the more eccentric medical instructors."
 	icon_state = "suns_cmocoat"
 	item_state = "suns_cmocoat"
