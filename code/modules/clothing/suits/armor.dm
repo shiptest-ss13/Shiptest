@@ -426,7 +426,7 @@
 
 /obj/item/clothing/suit/armor/vest/bulletproof/sunshos
 	name = "gilded peacekeeper plating"
-	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
+	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
 	icon_state = "suns_lpkarmor"
 	item_state = "suns_lpkarmor"
 
