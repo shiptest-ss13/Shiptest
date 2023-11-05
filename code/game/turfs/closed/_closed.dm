@@ -268,8 +268,6 @@
 	smooth_icon = 'icons/turf/walls/rockwall_icemoon.dmi'
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
-	pixel_x = null
-	pixel_y = null
 
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
