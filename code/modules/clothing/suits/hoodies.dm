@@ -85,7 +85,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/hooded/hood/suns
-	name = "SUNS labcoat hood"
+	name = "\improper SUNS labcoat hood"
 	desc = "A hood to protect you from chemical spills."
 	icon_state = "suns_labcoathood"
 	item_state = "suns_labcoathood"
