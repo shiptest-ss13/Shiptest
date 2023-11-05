@@ -1339,7 +1339,7 @@
 
 //Suns hardsuits
 /obj/item/clothing/head/helmet/space/hardsuit/security/suns
-	name = "\improper SUNS Peacekeeper hardsuit helmet"
+	name = "\improper SUNS peacekeeper hardsuit helmet"
 	icon_state = "hardsuit0-suns_pk"
 	item_state = "hardsuit0-suns_pk"
 	hardsuit_type = "suns_pk"
