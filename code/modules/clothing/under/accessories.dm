@@ -525,7 +525,7 @@
 	icon_state = "solgov_waistcoat"
 
 /obj/item/clothing/accessory/waistcoat/suns
-	name = "suns waistcoat"
+	name = "\improper SUNS waistcoat"
 	desc = "An academic issued run of the mill waistcoat."
 	icon_state = "suns_waistcoat"
 	minimize_when_attached = TRUE
