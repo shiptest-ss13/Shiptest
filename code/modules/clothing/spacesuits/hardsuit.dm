@@ -1358,7 +1358,7 @@
 	hardsuit_type = "suns_mining"
 
 /obj/item/clothing/suit/space/hardsuit/mining/suns
-	name = "\improper SUNS Industrial hardsuit"
+	name = "\improper SUNS industrial hardsuit"
 	icon_state = "suns_miningsuit"
 	item_state = "suns_miningsuit"
 	hardsuit_type = "suns_mining"
