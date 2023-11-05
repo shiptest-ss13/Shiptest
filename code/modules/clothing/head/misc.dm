@@ -538,6 +538,6 @@
 	icon_state = "solgov_surgery"
 
 /obj/item/clothing/head/suns_surgery
-	name = "Suns surgery cap"
+	name = "\improper SUNS surgery cap"
 	desc = "A surgery cap used by academic students and profesionals alike."
 	icon_state = "suns_doctorcap"
