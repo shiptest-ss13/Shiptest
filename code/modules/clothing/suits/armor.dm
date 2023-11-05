@@ -414,7 +414,7 @@
 
 /obj/item/clothing/suit/armor/vest/bulletproof/sunsehos //remind me to make this something to buy
 	name = "peacekeeper greatcoat"
-	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
+	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
 	icon_state = "suns_greatcoat"
 	item_state = "suns_greatcoat"
 
