@@ -2,7 +2,7 @@
 /datum/component/wearertargeting/punchcooldown
 	signals = list(COMSIG_HUMAN_MELEE_UNARMED_ATTACK)
 	mobtype = /mob/living/carbon
-	proctype = .proc/reducecooldown
+	proctype = PROC_REF(reducecooldown)
 	valid_slots = list(ITEM_SLOT_GLOVES)
 	///The warcry this generates
 	var/warcry = "AT"
@@ -11,7 +11,7 @@
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE)
 		return
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/changewarcry)
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(changewarcry))
 
 ///Called on COMSIG_HUMAN_MELEE_UNARMED_ATTACK. Yells the warcry and and reduces punch cooldown.
 /datum/component/wearertargeting/punchcooldown/proc/reducecooldown(mob/living/carbon/M, atom/target)
@@ -24,7 +24,7 @@
 /datum/component/wearertargeting/punchcooldown/proc/changewarcry(datum/source, mob/user)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, .proc/changewarcry_async, user)
+	INVOKE_ASYNC(src, PROC_REF(changewarcry_async), user)
 
 /datum/component/wearertargeting/punchcooldown/proc/changewarcry_async(mob/user)
 	var/input = stripped_input(user,"What do you want your battlecry to be? Max length of 6 characters.", ,"", 7)
