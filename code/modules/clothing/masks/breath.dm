@@ -38,6 +38,6 @@
 
 /obj/item/clothing/mask/breath/suns
 	desc = "A close-fitting mask that covers JUST enough to connect an air supply"
-	name = "SUNS half face mask"
+	name = "\improper SUNS half face mask"
 	icon_state = "suns_captainmask"
 	item_state = "suns_captainmask"
