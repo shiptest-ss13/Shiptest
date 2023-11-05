@@ -76,7 +76,7 @@
 	item_state = "hoodie_gray"
 
 /obj/item/clothing/suit/hooded/hoodie/suns
-	name = "SUNS labcoat"
+	name = "\improper SUNS labcoat"
 	desc = "An academic labcoat designed to protect the wearer from chemical and non chemical spills."
 	icon_state = "suns_labcoat"
 	item_state = "suns_labcoat"
