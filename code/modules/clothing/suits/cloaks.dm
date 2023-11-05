@@ -69,7 +69,7 @@
 	icon_state = "suns_shouldercape"
 
 /obj/item/clothing/neck/cloak/sunsxo
-	name = "SUNS academic staff cloak"
+	name = "\improper SUNS academic staff cloak"
 	desc = "Worn by SUNS staff, you can almost smell all of the failing grades this cloak has given."
 	icon_state = "suns_xocape"
 
