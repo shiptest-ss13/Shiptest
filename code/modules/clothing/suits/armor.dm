@@ -419,7 +419,7 @@
 	item_state = "suns_greatcoat"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/suns
-	name = "Peacekeeper Plating"
+	name = "peacekeeper plating"
 	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
 	icon_state = "suns_pkarmor"
 	item_state = "suns_pkarmor"
