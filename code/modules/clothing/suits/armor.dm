@@ -413,7 +413,7 @@
 	allowed |= list(/obj/item/gun/ballistic/automatic/assault/swiss_cheese, /obj/item/tank)
 
 /obj/item/clothing/suit/armor/vest/bulletproof/sunsehos //remind me to make this something to buy
-	name = "\improper Peacekeeper Greatcoat"
+	name = "peacekeeper greatcoat"
 	desc = "A funky armored coat worn by essentric peacekeepers. Closing the coat is socially impropper."
 	icon_state = "suns_greatcoat"
 	item_state = "suns_greatcoat"
