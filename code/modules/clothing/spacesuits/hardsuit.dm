@@ -1365,7 +1365,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/suns
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov/suns //Stealing ur subtype lel
-	name = "\improper SUNS Captains helmet"
+	name = "\improper SUNS captain's hardsuit helmet"
 	icon_state = "suns_commandhelm"
 	item_state = "suns_commandhelm"
 	desc = "An armored spaceproof helmet, the white glass on the side signifies a captain level rank."
