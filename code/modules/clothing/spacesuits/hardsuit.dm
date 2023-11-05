@@ -1352,7 +1352,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/suns
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/suns
-	name = "\improper SUNS Industrial hardsuit helmet"
+	name = "\improper SUNS industrial hardsuit helmet"
 	icon_state = "hardsuit0-suns_mining"
 	item_state = "hardsuit0-suns_mining"
 	hardsuit_type = "suns_mining"
