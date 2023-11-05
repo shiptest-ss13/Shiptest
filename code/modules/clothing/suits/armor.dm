@@ -438,7 +438,7 @@
 
 /obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
 	name = "academic staff coat"
-	desc = "A white coat used by Suns acedemic staff. It designates the second in command on the ship."
+	desc = "A white coat used by SUNS academic staff. It designates the second in command on the ship."
 	icon_state = "suns_xojacket"
 	item_state = "suns_xojacket"
 
