@@ -186,7 +186,7 @@
 
 /obj/item/clothing/head/HoS/syndicate/suns //remind me to make this something to buy
 	name = "peacekeeper cap"
-	desc = "A black cap worn by the more essentric peacekeepers."
+	desc = "A black cap worn by the more eccentric peacekeepers."
 	icon_state = "suns_pkcap"
 	item_state = "suns_pkcap"
 
