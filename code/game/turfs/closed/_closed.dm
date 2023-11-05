@@ -261,6 +261,16 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 
+/turf/closed/indestructible/rock/snow/schist
+	name = "schist"
+	desc = "You doubt you could break this"
+	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	smooth_icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	icon_state = "rockwall_icemoon-0"
+	base_icon_state = "rockwall_icemoon"
+	pixel_x = null
+	pixel_y = null
+
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
 	desc = "A wall layered with impenetrable sheets of paper."
