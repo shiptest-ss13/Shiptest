@@ -268,6 +268,11 @@
 	smooth_icon = 'icons/turf/walls/rockwall_icemoon.dmi'
 	icon_state = "rockwall_icemoon-0"
 	base_icon_state = "rockwall_icemoon"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	environment_type = "snow_cavern"
+	turf_type = /turf/open/floor/plating/asteroid/icerock
+	baseturfs = /turf/open/floor/plating/asteroid/icerock
 
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
