@@ -213,8 +213,8 @@
 	if(get_dist(src, turf_target) > FLAMETHROWER_RANGE) //thiss shit doesnt work aaaaa
 		flamer_proj.range = FLAMETHROWER_RANGE
 
-	RegisterSignal(flamer_proj, COMSIG_MOVABLE_MOVED, .proc/handle_flaming)
-	RegisterSignal(flamer_proj, COMSIG_PARENT_QDELETING, .proc/stop_operating)
+	RegisterSignal(flamer_proj, COMSIG_MOVABLE_MOVED, PROC_REF(handle_flaming))
+	RegisterSignal(flamer_proj, COMSIG_PARENT_QDELETING, PROC_REF(stop_operating))
 
 	flamer_proj.fire() //off it goes
 

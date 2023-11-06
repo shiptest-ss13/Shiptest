@@ -1128,7 +1128,7 @@
 		to_chat(M, "<span class='warning'>You feel unstable...</span>")
 		M.Jitter(2)
 		current_cycle = 1
-		addtimer(CALLBACK(M, /mob/living/proc/bluespace_shuffle), 30)
+		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
 
 /mob/living/proc/bluespace_shuffle()
@@ -1919,7 +1919,7 @@
 	var/can_colour_mobs = TRUE
 
 /datum/reagent/colorful_reagent/New()
-	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateColor))
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(UpdateColor)))
 
 /datum/reagent/colorful_reagent/proc/UpdateColor()
 	color = pick(random_color_list)
@@ -1944,7 +1944,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/hair_dye/New()
-	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateColor))
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(UpdateColor)))
 
 /datum/reagent/hair_dye/proc/UpdateColor()
 	color = pick(potential_colors)
@@ -2414,7 +2414,7 @@
 /datum/reagent/gravitum/expose_obj(obj/O, volume)
 	O.AddElement(/datum/element/forced_gravity, 0)
 
-	addtimer(CALLBACK(O, .proc/_RemoveElement, list(/datum/element/forced_gravity, 0)), volume * time_multiplier)
+	addtimer(CALLBACK(O, PROC_REF(_RemoveElement), list(/datum/element/forced_gravity, 0)), volume * time_multiplier)
 
 /datum/reagent/gravitum/on_mob_add(mob/living/L)
 	L.AddElement(/datum/element/forced_gravity, 0) //0 is the gravity, and in this case weightless
@@ -2565,14 +2565,14 @@
 	)
 /datum/reagent/three_eye/on_mob_metabolize(mob/living/L)
 	. = ..()
-	//addtimer(CALLBACK(L, /mob.proc/add_client_colour, /datum/client_colour/thirdeye), 1.5 SECONDS)
+	//addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, add_client_colour), /datum/client_colour/thirdeye), 1.5 SECONDS)
 	L.add_client_colour(/datum/client_colour/thirdeye)
 	if(L.client?.holder) //You are worthy.
 		worthy = TRUE
 		L.visible_message("<span class='danger'><font size = 6>Grips their head and dances around, collapsing to the floor!</font></span>", \
 		"<span class='danger'><font size = 6>Visions of a realm BYOND your own flash across your eyes, before it all goes black...</font></span>")
-		addtimer(CALLBACK(L, /mob/living.proc/SetSleeping, 40 SECONDS), 10 SECONDS)
-		addtimer(CALLBACK(L.reagents, /datum/reagents.proc/remove_reagent, src.type, src.volume,), 10 SECONDS)
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, SetSleeping), 40 SECONDS), 10 SECONDS)
+		addtimer(CALLBACK(L.reagents, TYPE_PROC_REF(/datum/reagents, remove_reagent), src.type, src.volume,), 10 SECONDS)
 		return
 
 /datum/reagent/three_eye/on_mob_life(mob/living/carbon/M)
@@ -2600,7 +2600,7 @@
 
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		addtimer(CALLBACK(H, /mob/living.proc/seizure), rand(1 SECONDS, 5 SECONDS))
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living, seizure)), rand(1 SECONDS, 5 SECONDS))
 
 /datum/reagent/three_eye/overdose_process(mob/living/M)
 	. = ..()
@@ -2620,9 +2620,9 @@
 		to_chat(L, "<span class='danger'><font size = 6>Your mind reels and the world begins to fade away...</font></span>")
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
-			addtimer(CALLBACK(C, /mob/living/carbon.proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
+			addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 5 SECONDS) //Deathblow to the brain
 		else
-			addtimer(CALLBACK(L, /mob/living.proc/gib), 5 SECONDS)
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, gib)), 5 SECONDS)
 
 /datum/reagent/cement
 	name = "Cement"

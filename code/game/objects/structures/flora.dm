@@ -3,6 +3,8 @@
 	max_integrity = 40
 	anchored = TRUE
 
+	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
 /obj/structure/flora/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
@@ -21,6 +23,8 @@
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/ComponentInitialize()
 	. = ..()
@@ -51,6 +55,8 @@
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/pine
 	name = "pine tree"
@@ -362,13 +368,15 @@
 /obj/item/kirbyplants/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/tactical)
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 500)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, 500)), 0)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
 
 /obj/item/kirbyplants/random
 	icon = 'icons/obj/flora/_flora.dmi'
 	icon_state = "random_plant"
 	var/list/static/states
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
 
 /obj/item/kirbyplants/random/Initialize()
 	. = ..()
@@ -423,6 +431,8 @@
 	density = TRUE
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
 
 /obj/structure/flora/rock/Initialize()
 	. = ..()

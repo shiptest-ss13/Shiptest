@@ -20,17 +20,6 @@
 	desc = "It's a storage unit for things that have no right being here."
 	icon_state = "syndicate"
 
-/obj/structure/closet/gimmick/russian
-	name = "\improper Russian surplus closet"
-	desc = "It's a storage unit for Russian standard-issue surplus."
-
-/obj/structure/closet/gimmick/russian/PopulateContents()
-	..()
-	for(var/i in 1 to 5)
-		new /obj/item/clothing/head/trapper(src)
-	for(var/i in 1 to 5)
-		new /obj/item/clothing/under/costume/soviet(src)
-
 /obj/structure/closet/gimmick/tacticool
 	name = "tacticool gear closet"
 	desc = "It's a storage unit for Tacticool gear."

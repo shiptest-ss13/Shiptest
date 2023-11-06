@@ -23,11 +23,6 @@
 	species_l_leg = /obj/item/bodypart/leg/left/skeleton
 	species_r_leg = /obj/item/bodypart/leg/right/skeleton
 
-/datum/species/skeleton/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return ..()
-
 //Can still metabolize milk through meme magic
 /datum/species/skeleton/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	if(chem.type == /datum/reagent/consumable/milk)
