@@ -168,7 +168,7 @@
 	var/can_hit_turfs = FALSE
 
 	var/static/list/projectile_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /obj/projectile/Initialize()
