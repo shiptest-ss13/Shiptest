@@ -20,7 +20,7 @@
 /datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	scanner = spawn_bound(/obj/machinery/mission_scanner, accept_loc, VARSET_CALLBACK(src, scanner, null))
-	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, .proc/ship_moved)
+	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, PROC_REF(ship_moved))
 
 /datum/mission/research/Destroy()
 	scanner = null

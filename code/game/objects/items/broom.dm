@@ -17,8 +17,8 @@
 
 /obj/item/pushbroom/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/pushbroom/ComponentInitialize()
 	. = ..()
@@ -33,7 +33,7 @@
 	SIGNAL_HANDLER
 
 	to_chat(user, "<span class='notice'>You brace the [src] against the ground in a firm sweeping stance.</span>")
-	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, .proc/sweep)
+	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(sweep))
 
 /// triggered on unwield of two handed item
 /obj/item/pushbroom/proc/on_unwield(obj/item/source, mob/user)
