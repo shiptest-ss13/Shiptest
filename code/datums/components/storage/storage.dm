@@ -655,7 +655,7 @@
 /datum/component/storage/proc/show_to_ghost(datum/source, mob/dead/observer/M)
 	SIGNAL_HANDLER
 
-	return user_show_tou_mob(M, TRUE, TRUE)
+	return user_show_to_mob(M, TRUE, TRUE)
 
 /datum/component/storage/proc/signal_show_attempt(datum/source, mob/showto, force = FALSE)
 	SIGNAL_HANDLER
