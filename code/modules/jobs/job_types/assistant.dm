@@ -70,12 +70,6 @@ Assistant
 
 //Shiptest outfits
 
-/datum/outfit/job/assistant/minutemen
-	name = "Volunteer (Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	backpack = /obj/item/storage/backpack/security/cmm
-
 /datum/outfit/job/assistant/inteq
 	name = "IRMG Recruit (Inteq)"
 

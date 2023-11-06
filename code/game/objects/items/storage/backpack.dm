@@ -132,7 +132,7 @@
 	item_state = "securitypack"
 
 /obj/item/storage/backpack/security/cmm
-	name = "cmm backpack"
+	name = "CMM backpack"
 	desc = "It's a very blue backpack."
 	icon_state = "cmmpack"
 
@@ -286,7 +286,7 @@
 	item_state = "satchel-sec"
 
 /obj/item/storage/backpack/satchel/sec/cmm
-	name = "cmm satchel"
+	name = "CMM satchel"
 	desc = "A robust satchel for anti-piracy related needs."
 	icon_state = "satchel-cmm"
 

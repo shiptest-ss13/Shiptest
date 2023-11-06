@@ -55,33 +55,6 @@
 	l_pocket = /obj/item/ammo_box/magazine/pistol556mm
 	chameleon_extras = null
 
-/datum/outfit/job/warden/minutemen
-	name = "Field Commander (Colonial Minutemen)"
-
-	glasses = /obj/item/clothing/glasses/sunglasses
-	ears = /obj/item/radio/headset/minutemen/alt
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	accessory = /obj/item/clothing/accessory/armband
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	belt = /obj/item/storage/belt/military/minutemen
-	shoes = /obj/item/clothing/shoes/combat
-
-	l_pocket = /obj/item/flashlight/seclite
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-
-	box = /obj/item/storage/box/survival/engineer/radio
-	backpack = /obj/item/storage/backpack
-	backpack_contents = null
-
-/datum/outfit/job/warden/minutemen/armed
-	name = "Field Commander (Colonial Minutemen) (Armed)"
-
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/loaded
-
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
-
 /datum/outfit/job/warden/inteq
 	name = "Master At Arms (Inteq)"
 

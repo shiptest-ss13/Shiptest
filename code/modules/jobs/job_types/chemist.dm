@@ -99,9 +99,5 @@
 	gloves = /obj/item/clothing/gloves/color/latex
 	glasses = /obj/item/clothing/glasses/sunglasses
 
-/datum/outfit/job/chemist/minutemen
-	name = "Chemical Scientist(minutemen)"
 
-	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
-	ears = /obj/item/radio/headset/minutemen
 

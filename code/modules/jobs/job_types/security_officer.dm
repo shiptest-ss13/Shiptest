@@ -128,55 +128,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
-/datum/outfit/job/security/minutemen
-	name = "Minuteman (Colonial Minutemen)"
-
-	head = /obj/item/clothing/head/helmet/bulletproof/minutemen
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-
-	belt = /obj/item/storage/belt/military/minutemen
-
-	l_pocket = /obj/item/flashlight/seclite
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-
-	backpack = /obj/item/storage/backpack/security/cmm
-	box = /obj/item/storage/box/survival/engineer/radio
-	backpack_contents = null
-
-/datum/outfit/job/security/minutemen/naked
-	name = "Minuteman (Colonial Minutemen) (Naked)"
-
-	head = null
-	suit = null
-	mask = null
-	shoes = null
-	gloves = null
-	ears = null
-
-	belt = null
-
-	l_pocket = null
-	r_pocket = null
-
-/datum/outfit/job/security/minutemen/armed
-	name = "Minuteman (Colonial Minutemen) (Armed)"
-
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/loaded
-
-/datum/outfit/job/security/minutemen/mechpilot
-	name = "Mech Pilot  (Colonial Minutemen)"
-
-	suit = /obj/item/clothing/suit/armor/vest/alt
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	glasses = /obj/item/clothing/glasses/hud/diagnostic
-
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/restraints/handcuffs=1)
-
 /datum/outfit/job/security/inteq
 	name = "IRMG Enforcer (Inteq)"
 

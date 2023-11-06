@@ -53,14 +53,6 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
 	head = /obj/item/clothing/head/hardhat
 
-/datum/outfit/job/engineer/minutemen
-	name = "Mechanic (Colonial Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	accessory = /obj/item/clothing/accessory/armband/engine
-	head = /obj/item/clothing/head/hardhat/dblue
-	suit =  /obj/item/clothing/suit/hazardvest
-
 /datum/outfit/job/engineer/inteq
 	name = "IRMG Artificer (Inteq)"
 

@@ -91,14 +91,7 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/doctor/minutemen
-	name = "Field Medic (Colonial Minutemen)"
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	accessory = /obj/item/clothing/accessory/armband/medblue
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/med
-	suit = null
-	suit_store = null
+
 
 /datum/outfit/job/doctor/pirate
 	name = "Ship's Doctor (Pirate)"
