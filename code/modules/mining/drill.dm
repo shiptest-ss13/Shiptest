@@ -159,17 +159,23 @@
 					break
 			return
 		if(tool.tool_behaviour == TOOL_MULTITOOL && malfunction == MALF_CALIBRATE)
-			playsound()
-			do_after(user,(100*tool.toolspeed),src)
-			malfunction = null
-			obj_integrity = max_integrity
-			return
+			user.visible_message("<span class='notice'>[user] begins recalibrating [src].</span>", \
+				"<span class='notice'>You begin recalibrating [src]...</span>")
+			if(tool.use_tool(src, user, 100, volume=50))
+				malfunction = null
+				obj_integrity = max_integrity
+				return
 		if(tool.tool_behaviour == TOOL_WELDER && malfunction == MALF_STRUCTURAL)
-			playsound()
-			do_after(user,(100*tool.toolspeed),src)
-			malfunction = null
-			obj_integrity = max_integrity
-			return
+			if(!tool.tool_start_check(user, amount=0))
+				return
+			user.visible_message("<span class='notice'>[user] begins repairing [src].</span>", \
+				"<span class='notice'>You begin repairing [src]...</span>", \
+				"<span class='hear'>You hear welding.</span>")
+			if(tool.use_tool(src, user, 100, volume=50))
+				playsound()
+				malfunction = null
+				obj_integrity = max_integrity
+				return
 		if(istype(tool, /obj/item/stock_parts/cell))
 			var/obj/item/stock_parts/cell/battery = tool
 			if(cell)

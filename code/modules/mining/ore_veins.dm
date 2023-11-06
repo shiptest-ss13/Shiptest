@@ -36,8 +36,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 20,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
 		)
 	var/spawn_text = "emerges from"
 	var/faction = list("hostile","mining")

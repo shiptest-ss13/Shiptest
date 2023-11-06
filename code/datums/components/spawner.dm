@@ -41,6 +41,9 @@
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process()
+	if(!parent) //Sanity check for instances where the spawner may be sleeping while the parent is destroyed
+		Destroy(TRUE,FALSE)
+		return
 	if(spawning_paused)
 		sleep(wave_downtime)
 		spawning_paused = FALSE
