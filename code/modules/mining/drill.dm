@@ -103,20 +103,21 @@
 				return
 			else
 				to_chat(user, "<span class='notice'>You don't have enough plasteel to fix the plating.</span>")
-		if(metal_attached == METAL_SECURED && tool.tool_behaviour == TOOL_WELDER && do_after(user, 30*tool.toolspeed, target = src))
-			playsound(src, 'sound/items/welder2.ogg', 50, TRUE)
-			to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
-			metal_attached = null
-			machine_stat = null
-			obj_integrity = max_integrity
-			update_icon_state()
-			return
+		if(metal_attached == METAL_SECURED && tool.tool_behaviour == TOOL_WELDER)
+			if(tool.use_tool(src, user, 30, volume=50))
+				to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
+				metal_attached = null
+				machine_stat = null
+				obj_integrity = max_integrity
+				update_icon_state()
+				return
 	if(tool.tool_behaviour == TOOL_WRENCH)
 		if(metal_attached && machine_stat & BROKEN)
 			playsound(src, 'sound/items/ratchet.ogg', 50, TRUE)
-			do_after(user, 30*tool.toolspeed, target = src)
-			to_chat(user, "<span class='notice'>You bolt the plating the plating in place on [src].</span>")
-			return
+			if(tool.use_tool(src, user, 30, volume=50))
+				to_chat(user, "<span class='notice'>You bolt the plating the plating in place on [src].</span>")
+				metal_attached = METAL_SECURED
+				return
 		if(!vein && !anchored)
 			to_chat(user, "<span class='notice'>[src] must be on top of an ore vein.</span>")
 			return
@@ -124,14 +125,14 @@
 			to_chat(user, "<span class='notice'>[src] can't be unsecured while it's running!</span>")
 			return
 		playsound(src, 'sound/items/ratchet.ogg', 50, TRUE)
-		if(!anchored && do_after(user, 30*tool.toolspeed, target = src))
+		if(!anchored && tool.use_tool(src, user, 30, volume=50))
 			to_chat(user, "<span class='notice'>You secure the [src] to the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			mining = vein
 			anchored = TRUE
 			update_icon_state()
 			return
-		if(do_after(user, 30*tool.toolspeed, target = src))
+		else if(tool.use_tool(src, user, 30, volume=50))
 			to_chat(user, "<span class='notice'>You unsecure the [src] from the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
