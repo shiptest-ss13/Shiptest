@@ -22,7 +22,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 	var/area/current_area = get_area(src)
 	if(!current_area)
 		return
-	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, .proc/AreaPowerCheck)
+	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(AreaPowerCheck))
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()

@@ -149,6 +149,12 @@
 	icon_state = "carapace_ntformal"
 	item_state = "capspacesuit"
 
+/obj/item/clothing/suit/armor/vest/capcarapace/captunic
+	name = "captain's parade coat"
+	desc = "Worn by a Captain to show their class."
+	icon_state = "carapace_formal"
+	item_state = "bio_suit"
+
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
 	name = "colonial minutemen general coat"
 	desc = "A very fancy coat used by generals of the Colonial Minutemen."

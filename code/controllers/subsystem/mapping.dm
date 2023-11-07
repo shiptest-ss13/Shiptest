@@ -134,26 +134,12 @@ SUBSYSTEM_DEF(mapping)
 	for(var/datum/planet_type/type as anything in subtypesof(/datum/planet_type))
 		planet_types[initial(type.planet)] = new type
 
-	// Still supporting bans by filename
-	// I hate this so much. I want to kill it because I don't think ANYONE uses this
-	// Couldn't you just remove it on a fork or something??? come onnnnnnnnnnnn stop EXISTING already
-	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/wasteruinblacklist.txt")
-
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
 		// screen out the abstract subtypes
 		if(!initial(ruin_type.id))
 			continue
 		var/datum/map_template/ruin/R = new ruin_type()
-
-		if(R.mappath in banned)
-			continue
 
 		map_templates[R.name] = R
 		ruins_templates[R.name] = R
