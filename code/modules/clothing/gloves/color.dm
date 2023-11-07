@@ -202,6 +202,12 @@
 	strip_delay = 60
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
+/obj/item/clothing/gloves/color/captain/nt
+	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
+	name = "captain's gloves"
+	icon_state = "captainnt"
+	item_state = "egloves"
+
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"
 	desc = "Cheap sterile gloves made from latex. Transfers minor paramedic knowledge to the user via budget nanochips."
