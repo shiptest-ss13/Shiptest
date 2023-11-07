@@ -13,6 +13,8 @@
 	var/steps_amt = pick(1;25,2;50,3,4;200)
 	for(var/j in 1 to steps_amt)
 		step(src, direct)
+		if(QDELETED(src))
+			return
 		sleep(1)
 	qdel(src)
 
@@ -59,4 +61,4 @@
 	S.start()
 /datum/effect_system/explosion/smoke/start()
 	..()
-	addtimer(CALLBACK(src, .proc/create_smoke), 5)
+	addtimer(CALLBACK(src, PROC_REF(create_smoke)), 5)

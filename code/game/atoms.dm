@@ -55,8 +55,6 @@
 	///overlays managed by [update_overlays][/atom/proc/update_overlays] to prevent removing overlays that weren't added by the same proc
 	var/list/managed_overlays
 
-	///Proximity monitor associated with this atom
-	var/datum/proximity_monitor/proximity_monitor
 	///Cooldown tick timer for buckle messages
 	var/buckle_message_cooldown = 0
 	///Last fingerprints to touch this atom
@@ -158,6 +156,10 @@
 	///Default Y pixel offset
 	var/base_pixel_y
 
+	///Wanted sound when hit by a projectile
+	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+	///volume wanted for being hit
+	var/hitsound_volume = 50
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
@@ -170,7 +172,7 @@
  */
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
-	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()
+	if(GLOB.use_preloader && src.type == GLOB._preloader_path)//in case the instanciated atom is creating other atoms in New()
 		world.preloader_load(src)
 
 	if(datum_flags & DF_USE_TAG)
@@ -249,9 +251,10 @@
 	if (length(no_connector_typecache))
 		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
-	var/area/ship/current_ship_area = get_area(src)
-	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
-		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
+	if(!mapload)
+		var/area/ship/current_ship_area = get_area(src)
+		if(istype(current_ship_area) && current_ship_area.mobile_port)
+			connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
 
 	var/temp_list = list()
 	for(var/i in custom_materials)
@@ -333,19 +336,19 @@
 	P.setAngle(new_angle_s)
 	return TRUE
 
-///Can the mover object pass this atom, while heading for the target turf
-/atom/proc/CanPass(atom/movable/mover, turf/target)
+/// Whether the mover object can avoid being blocked by this atom, while arriving from (or leaving through) the border_dir.
+/atom/proc/CanPass(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_BE_PURE(TRUE)
 	if(mover.movement_type & PHASING)
 		return TRUE
-	. = CanAllowThrough(mover, target)
+	. = CanAllowThrough(mover, border_dir)
 	// This is cheaper than calling the proc every time since most things dont override CanPassThrough
 	if(!mover.generic_canpass)
-		return mover.CanPassThrough(src, target, .)
+		return mover.CanPassThrough(src, REVERSE_DIR(border_dir), .)
 
 /// Returns true or false to allow the mover to move through src
-/atom/proc/CanAllowThrough(atom/movable/mover, turf/target)
+/atom/proc/CanAllowThrough(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	//SHOULD_BE_PURE(TRUE)
 	if(mover.pass_flags & pass_flags_self)
@@ -588,6 +591,33 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, P, def_zone)
 	. = P.on_hit(src, 0, def_zone, piercing_hit)
 
+/atom/proc/bullet_hit_sfx(obj/projectile/hitting_projectile)
+	var/selected_sound = ""
+
+	if(!hitsound_volume)
+		return FALSE
+	if(!hitsound_volume)
+		return FALSE
+
+	switch(hitsound_type)
+		if(PROJECTILE_HITSOUND_FLESH)
+			selected_sound = hitting_projectile.hitsound
+		if(PROJECTILE_HITSOUND_NON_LIVING)
+			selected_sound = hitting_projectile.hitsound_non_living
+		if(PROJECTILE_HITSOUND_GLASS)
+			selected_sound = hitting_projectile.hitsound_glass
+		if(PROJECTILE_HITSOUND_STONE)
+			selected_sound = hitting_projectile.hitsound_stone
+		if(PROJECTILE_HITSOUND_METAL)
+			selected_sound = hitting_projectile.hitsound_metal
+		if(PROJECTILE_HITSOUND_WOOD)
+			selected_sound = hitting_projectile.hitsound_wood
+		if(PROJECTILE_HITSOUND_SNOW)
+			selected_sound = hitting_projectile.hitsound_snow
+
+	playsound(src, selected_sound, hitsound_volume, TRUE)
+	return TRUE
+
 ///Return true if we're inside the passed in atom
 /atom/proc/in_contents_of(container)//can take class or object instance as argument
 	if(ispath(container))
@@ -781,7 +811,7 @@
  */
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
-		addtimer(CALLBACK(src, .proc/hitby_react, AM), 2)
+		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
 
 /**
  * We have have actually hit the passed in atom
@@ -945,7 +975,7 @@
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, progress)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, TYPE_PROC_REF(/datum/component/storage, handle_mass_item_insertion), things, src_object, user, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(user, "<span class='notice'>You dump as much of [src_object.parent]'s contents [STR.insert_preposition]to [src] as you can.</span>")
@@ -967,16 +997,6 @@
  */
 /atom/proc/handle_atom_del(atom/A)
 	SEND_SIGNAL(src, COMSIG_ATOM_CONTENTS_DEL, A)
-
-/**
- * called when the turf the atom resides on is ChangeTurfed
- *
- * Default behaviour is to loop through atom contents and call their HandleTurfChange() proc
- */
-/atom/proc/HandleTurfChange(turf/T)
-	for(var/atom in src)
-		var/atom/A = atom
-		A.HandleTurfChange(T)
 
 /**
  * the vision impairment to give to the mob whose perspective is set to that atom
@@ -1320,6 +1340,9 @@
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	return
 
+/atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
+	return
+
 /// Generic logging helper
 /atom/proc/log_message(message, message_type, color=null, log_globally=TRUE)
 	if(!log_globally)
@@ -1516,6 +1539,11 @@
 			custom_material.on_applied(src, materials[custom_material] * multiplier * material_modifier, material_flags)
 		custom_materials[custom_material] += materials[x] * multiplier
 
+/// Returns the indice in filters of the given filter name.
+/// If it is not found, returns null.
+/atom/proc/get_filter_index(name)
+	return filter_data?.Find(name)
+
 /**
  * Returns true if this atom has gravity for the passed in turf
  *
@@ -1559,7 +1587,7 @@
 	else
 		// See if there's a gravity generator on our map zone
 		var/datum/map_zone/mapzone = T.get_map_zone()
-		if(mapzone.gravity_generators.len)
+		if(mapzone?.gravity_generators.len)
 			var/max_grav = 0
 			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
@@ -1646,3 +1674,24 @@
 		else
 			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
 			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[name]</span>"
+
+///Called whenever a player is spawned on the same turf as this atom.
+/atom/proc/join_player_here(mob/M)
+	// By default, just place the mob on the same turf as the marker or whatever.
+	M.forceMove(get_turf(src))
+
+/*
+* Used to set something as 'open' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setOpened()
+	return
+
+/*
+* Used to set something as 'closed' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setClosed()
+	return

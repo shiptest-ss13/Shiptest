@@ -46,7 +46,7 @@ RSF
 
 /obj/item/rsf/Initialize()
 	. = ..()
-	to_dispense = cost_by_item[1]
+	to_dispense ||= cost_by_item[1]
 
 /obj/item/rsf/examine(mob/user)
 	. = ..()
@@ -75,7 +75,7 @@ RSF
 	var/cost = 0
 	//Warning, prepare for bodgecode
 	while(islist(target))//While target is a list we continue the loop
-		var/picked = show_radial_menu(user, src, formRadial(target), custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE)
+		var/picked = show_radial_menu(user, src, formRadial(target), custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE)
 		if(!check_menu(user) || picked == null)
 			return
 		for(var/emem in target)//Back through target agian
@@ -152,6 +152,7 @@ RSF
 	dispense_cost = 100
 	discriptor = "cookie-units"
 	action_type = "Fabricates"
+	to_dispense = /obj/item/reagent_containers/food/snacks/cookie
 	///Tracks whether or not the cookiesynth is about to print a poisoned cookie
 	var/toxin = FALSE //This might be better suited to some initialize fuckery, but I don't have a good "poisoned" sprite
 	///Holds a copy of world.time taken the last time the synth gained a charge. Used with cooldowndelay to track when the next charge should be gained

@@ -149,31 +149,6 @@
 		W.registered_name = H.real_name
 		W.update_label()
 
-/datum/outfit/tunnel_clown
-	name = "Tunnel Clown"
-
-	uniform = /obj/item/clothing/under/rank/civilian/clown
-	shoes = /obj/item/clothing/shoes/clown_shoes
-	gloves = /obj/item/clothing/gloves/color/black
-	mask = /obj/item/clothing/mask/gas/clown_hat
-	ears = /obj/item/radio/headset
-	glasses = /obj/item/clothing/glasses/thermal/monocle
-	suit = /obj/item/clothing/suit/hooded/chaplain_hoodie
-	l_pocket = /obj/item/reagent_containers/food/snacks/grown/banana
-	r_pocket = /obj/item/bikehorn
-	id = /obj/item/card/id
-	r_hand = /obj/item/fireaxe
-
-/datum/outfit/tunnel_clown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	W.access = get_all_accesses()
-	W.assignment = "Tunnel Clown!"
-	W.registered_name = H.real_name
-	W.update_label()
-
 /datum/outfit/assassin
 	name = "Assassin"
 
@@ -226,7 +201,7 @@
 	ears = /obj/item/radio/headset/headset_cent/commander
 	glasses = /obj/item/clothing/glasses/eyepatch
 	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
-	head = /obj/item/clothing/head/centhat
+	head = /obj/item/clothing/head/centcom_cap
 	belt = /obj/item/gun/ballistic/revolver/mateba
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/ammo_box/a357
@@ -293,33 +268,6 @@
 	suit = /obj/item/clothing/suit/wizrobe/marisa
 	shoes = /obj/item/clothing/shoes/sandal/marisa
 	head = /obj/item/clothing/head/wizard/marisa
-
-/datum/outfit/centcom/soviet
-	name = "Soviet Admiral"
-
-	uniform = /obj/item/clothing/under/costume/soviet
-	head = /obj/item/clothing/head/pirate/captain
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	ears = /obj/item/radio/headset/headset_cent
-	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	suit = /obj/item/clothing/suit/pirate/captain
-	back = /obj/item/storage/backpack/satchel/leather
-	belt = /obj/item/gun/ballistic/revolver/mateba
-
-	id = /obj/item/card/id/centcom
-
-/datum/outfit/centcom/soviet/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	W.access = get_all_accesses()
-	W.access += get_centcom_access("Admiral")
-	W.assignment = "Admiral"
-	W.registered_name = H.real_name
-	W.update_label()
-	..()
 
 /datum/outfit/mobster
 	name = "Mobster"

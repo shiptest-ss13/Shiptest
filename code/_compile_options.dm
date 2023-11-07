@@ -15,9 +15,14 @@
 //#define REFERENCE_TRACKING
 #ifdef REFERENCE_TRACKING
 
+///Used for doing dry runs of the reference finder, to test for feature completeness
+///Slightly slower, higher in memory. Just not optimal
+//#define REFERENCE_TRACKING_DEBUG
+
 ///Run a lookup on things hard deleting by default.
 //#define GC_FAILURE_HARD_LOOKUP
 #ifdef GC_FAILURE_HARD_LOOKUP
+///Don't stop when searching, go till you're totally done
 #define FIND_REF_NO_CHECK_TICK
 #endif //ifdef GC_FAILURE_HARD_LOOKUP
 
@@ -25,6 +30,16 @@
 
 //#define VISUALIZE_ACTIVE_TURFS //Highlights atmos active turfs in green
 #endif //ifdef TESTING
+
+/// If this is uncommented, we set up the ref tracker to be used in a live environment
+/// And to log events to [log_dir]/harddels.log
+//#define REFERENCE_DOING_IT_LIVE
+#ifdef REFERENCE_DOING_IT_LIVE
+// compile the backend
+#define REFERENCE_TRACKING
+// actually look for refs
+#define GC_FAILURE_HARD_LOOKUP
+#endif // REFERENCE_DOING_IT_LIVE
 
 //#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
 
@@ -37,23 +52,6 @@
 /// Prefer the autowiki build target instead.
 // #define AUTOWIKI
 
-//Update this whenever you need to take advantage of more recent byond features
-#define MIN_COMPILER_VERSION 513
-#define MIN_COMPILER_BUILD 1514
-#if DM_VERSION < MIN_COMPILER_VERSION || DM_BUILD < MIN_COMPILER_BUILD
-//Don't forget to update this part
-#error Your version of BYOND is too out-of-date to compile this project. Go to https://secure.byond.com/download and update.
-#error You need version 513.1514 or higher
-#endif
-
-//Update this whenever the byond version is stable so people stop updating to hilariously broken versions
-//#define MAX_COMPILER_VERSION 514
-//#define MAX_COMPILER_BUILD 1571
-#ifdef MAX_COMPILER_VERSION
-#if DM_VERSION > MAX_COMPILER_VERSION || DM_BUILD > MAX_COMPILER_BUILD
-#warn WARNING: Your BYOND version is over the recommended version (514.1571)! Stability is not guaranteed.
-#endif
-#endif
 //Log the full sendmaps profile on 514.1556+, any earlier and we get bugs or it not existing
 #if DM_VERSION >= 514 && DM_BUILD >= 1556
 #define SENDMAPS_PROFILE
@@ -70,6 +68,14 @@
 
 #ifdef CITESTING
 #define TESTING
+#endif
+
+#ifdef UNIT_TESTS
+//Hard del testing defines
+#define REFERENCE_TRACKING
+#define REFERENCE_TRACKING_DEBUG
+#define FIND_REF_NO_CHECK_TICK
+#define GC_FAILURE_HARD_LOOKUP
 #endif
 
 // A reasonable number of maximum overlays an object needs

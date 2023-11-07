@@ -162,9 +162,9 @@
 
 /datum/antagonist/cult/get_admin_commands()
 	. = ..()
-	.["Dagger"] = CALLBACK(src,.proc/admin_give_dagger)
-	.["Dagger and Metal"] = CALLBACK(src,.proc/admin_give_metal)
-	.["Remove Dagger and Metal"] = CALLBACK(src, .proc/admin_take_all)
+	.["Dagger"] = CALLBACK(src, PROC_REF(admin_give_dagger))
+	.["Dagger and Metal"] = CALLBACK(src, PROC_REF(admin_give_metal))
+	.["Remove Dagger and Metal"] = CALLBACK(src, PROC_REF(admin_take_all))
 
 /datum/antagonist/cult/proc/admin_give_dagger(mob/admin)
 	if(!equip_cultist(metal=FALSE))
@@ -269,7 +269,7 @@
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/hallucinations/i_see_you2.ogg')
 				to_chat(B.current, "<span class='cultlarge'>The veil weakens as your cult grows, your eyes begin to glow...</span>")
-				addtimer(CALLBACK(src, .proc/rise, B.current), 200)
+				addtimer(CALLBACK(src, PROC_REF(rise), B.current), 200)
 		cult_risen = TRUE
 
 	if(ratio > CULT_ASCENDENT && !cult_ascendent)
@@ -277,7 +277,7 @@
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/hallucinations/im_here1.ogg')
 				to_chat(B.current, "<span class='cultlarge'>Your cult is ascendent and the red harvest approaches - you cannot hide your true nature for much longer!!</span>")
-				addtimer(CALLBACK(src, .proc/ascend, B.current), 200)
+				addtimer(CALLBACK(src, PROC_REF(ascend), B.current), 200)
 		cult_ascendent = TRUE
 
 
@@ -298,16 +298,6 @@
 		H.overlays_standing[HALO_LAYER] = new_halo_overlay
 		H.apply_overlay(HALO_LAYER)
 
-/datum/team/cult/proc/make_image(datum/objective/sacrifice/sac_objective)
-	var/datum/job/sacjob = SSjob.GetJob(sac_objective.target.assigned_role)
-	var/datum/preferences/sacface = sac_objective.target.current.client.prefs
-	var/icon/reshape = get_flat_human_icon(null, sacjob, sacface, list(SOUTH))
-	reshape.Shift(SOUTH, 4)
-	reshape.Shift(EAST, 1)
-	reshape.Crop(7,4,26,31)
-	reshape.Crop(-5,-3,26,30)
-	sac_objective.sac_image = reshape
-
 /datum/objective/sacrifice/find_target(dupe_search_range)
 	if(!istype(team, /datum/team/cult))
 		return
@@ -327,7 +317,6 @@
 		update_explanation_text()
 	else
 		message_admins("Cult Sacrifice: Could not find unconvertible or convertible target. WELP!")
-	C.make_image(src)
 	for(var/datum/mind/M in C.members)
 		if(M.current)
 			M.current.clear_alert("bloodsense")

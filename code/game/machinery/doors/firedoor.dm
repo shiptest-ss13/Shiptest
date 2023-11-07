@@ -71,6 +71,7 @@
 
 /obj/machinery/door/firedoor/Destroy()
 	remove_from_areas()
+	density = FALSE
 	air_update_turf(1)
 	affecting_areas.Cut()
 	return ..()
@@ -94,7 +95,7 @@
 
 /obj/machinery/door/firedoor/power_change()
 	. = ..()
-	INVOKE_ASYNC(src, .proc/latetoggle)
+	INVOKE_ASYNC(src, PROC_REF(latetoggle))
 
 /obj/machinery/door/firedoor/attack_hand(mob/user)
 	. = ..()
@@ -331,7 +332,7 @@
 	. = ..()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 
 	AddElement(/datum/element/connect_loc, loc_connections)
@@ -393,10 +394,16 @@
 		return 0 // not big enough to matter
 	return start_point.air.return_pressure() < 20 ? -1 : 1
 
-/obj/machinery/door/firedoor/border_only/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/door/firedoor/border_only/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(!(get_dir(loc, target) == dir)) //Make sure looking at appropriate border
-		return TRUE
+
+	if(.)
+		return
+
+	if(border_dir == dir) //Make sure looking at appropriate border
+		return FALSE
+
+	return TRUE
 
 /obj/machinery/door/firedoor/border_only/proc/on_exit(datum/source, atom/movable/leaving, direction)
 	SIGNAL_HANDLER
@@ -411,10 +418,9 @@
 		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/machinery/door/firedoor/border_only/CanAtmosPass(turf/T)
-	if(get_dir(loc, T) == dir)
-		return !density
-	else
+	if(!density)
 		return TRUE
+	return !(dir == get_dir(loc, T))
 
 /obj/machinery/door/firedoor/proc/emergency_pressure_close()
 	SHOULD_NOT_SLEEP(TRUE)
@@ -429,7 +435,7 @@
 	update_freelook_sight()
 	if(!(flags_1 & ON_BORDER_1))
 		crush()
-	addtimer(CALLBACK(src, /atom/.proc/update_icon), 5)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 5)
 
 /obj/machinery/door/firedoor/border_only/emergency_pressure_close()
 	if(density)
@@ -444,14 +450,14 @@
 			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
 				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
 				M.pulling.forceMove(T1)
-				INVOKE_ASYNC(M, /atom/movable/.proc/start_pulling)
+				INVOKE_ASYNC(M, TYPE_PROC_REF(/atom/movable, start_pulling))
 	for(var/mob/living/M in T2)
 		if(M.stat == CONSCIOUS && M.pulling && M.pulling.loc == T1 && !M.pulling.anchored && M.pulling.move_resist <= M.move_force)
 			var/mob/living/M2 = M.pulling
 			if(!istype(M2) || !M2.buckled || !M2.buckled.buckle_prevents_pull)
 				to_chat(M, "<span class='notice'>You pull [M.pulling] through [src] right as it closes.</span>")
 				M.pulling.forceMove(T2)
-				INVOKE_ASYNC(M, /atom/movable/.proc/start_pulling)
+				INVOKE_ASYNC(M, TYPE_PROC_REF(/atom/movable, start_pulling))
 	return ..()
 
 /obj/machinery/door/firedoor/heavy
@@ -489,7 +495,7 @@
 	density = TRUE
 	var/constructionStep = CONSTRUCTION_NOCIRCUIT
 	var/reinforced = 0
-	var/firelock_type
+	var/firelock_type = /obj/machinery/door/firedoor/closed
 
 /obj/structure/firelock_frame/examine(mob/user)
 	. = ..()
@@ -726,18 +732,18 @@
 	firelock_type = /obj/machinery/door/firedoor/border_only/closed
 	flags_1 = ON_BORDER_1
 
-/obj/machinery/door/firedoor/border_only/Initialize()
+/obj/structure/firelock_frame/border/Initialize()
 	. = ..()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/firelock_frame/border/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, PROC_REF(can_be_rotated)))
 
 /obj/structure/firelock_frame/border/proc/can_be_rotated(mob/user, rotation_type)
 	if (anchored)

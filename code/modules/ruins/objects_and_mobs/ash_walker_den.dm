@@ -19,6 +19,7 @@
 	var/datum/team/ashwalkers/ashies
 	var/last_act = 0
 	var/init_zlevel = 0		//This is my home, I refuse to settle anywhere else.
+	var/datum/linked_objective
 
 /obj/structure/lavaland/ash_walker/Initialize()
 	.=..()
@@ -26,8 +27,16 @@
 	ashies = new /datum/team/ashwalkers()
 	var/datum/objective/protect_object/objective = new
 	objective.set_target(src)
+	linked_objective = objective
 	ashies.objectives += objective
 	START_PROCESSING(SSprocessing, src)
+
+/obj/structure/lavaland/ash_walker/Destroy()
+	ashies.objectives -= linked_objective
+	ashies = null
+	QDEL_NULL(linked_objective)
+	STOP_PROCESSING(SSprocessing, src)
+	return ..()
 
 /obj/structure/lavaland/ash_walker/deconstruct(disassembled)
 	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))
@@ -58,7 +67,7 @@
 					deadmind = H.get_ghost(FALSE, TRUE)
 				to_chat(deadmind, "Your body has been returned to the nest. You are being remade anew, and will awaken shortly. </br><b>Your memories will remain intact in your new body, as your soul is being salvaged</b>")
 				SEND_SOUND(deadmind, sound('sound/magic/enter_blood.ogg',volume=100))
-				addtimer(CALLBACK(src, .proc/remake_walker, H.mind, H.real_name), 20 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(remake_walker), H.mind, H.real_name), 20 SECONDS)
 				new /obj/effect/gibspawner/generic(get_turf(H))
 				qdel(H)
 				return

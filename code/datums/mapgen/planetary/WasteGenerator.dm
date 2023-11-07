@@ -96,36 +96,36 @@
 	flora_spawn_list = list(
 
 		//mech spawners
-		/obj/effect/spawner/lootdrop/waste/mechwreck = 10,
-		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 2,
+		/obj/effect/spawner/lootdrop/waste/mechwreck = 100,
+		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 20,
 
 		//decals and fluff structures
-		/obj/effect/spawner/lootdrop/waste/trash = 180,
-		/obj/effect/spawner/lootdrop/waste/radiation = 8,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 1,
+		/obj/effect/spawner/lootdrop/waste/trash = 1800,
+		/obj/effect/spawner/lootdrop/waste/radiation = 80,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 10,
 
 		//stuff you can actually use
-		/obj/effect/spawner/lootdrop/waste/girder = 60,
-		/obj/structure/reagent_dispensers/fueltank = 10,
-		/obj/structure/reagent_dispensers/watertank = 20,
-		/obj/item/stack/cable_coil/cut = 50,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
-		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
-		/obj/effect/spawner/lootdrop/maintenance = 20,
-		/obj/effect/spawner/lootdrop/maintenance/two = 10,
-		/obj/effect/spawner/lootdrop/maintenance/three = 5,
-		/obj/effect/spawner/lootdrop/maintenance/four = 2,
+		/obj/effect/spawner/lootdrop/waste/girder = 600,
+		/obj/structure/reagent_dispensers/fueltank = 100,
+		/obj/structure/reagent_dispensers/watertank = 200,
+		/obj/item/stack/cable_coil/cut = 500,
+		/obj/structure/closet/crate/secure/loot = 30,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 50,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 300,
+		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 200,
+		/obj/effect/spawner/lootdrop/maintenance = 200,
+		/obj/effect/spawner/lootdrop/maintenance/two = 100,
+		/obj/effect/spawner/lootdrop/maintenance/three = 50,
+		/obj/effect/spawner/lootdrop/maintenance/four = 20,
 
 		//plants
-		/obj/structure/flora/ash/garden/waste = 7,
-		/obj/structure/flora/ash/glowshroom = 20, //more common in caves
+		/obj/structure/flora/ash/garden/waste = 70,
+		/obj/structure/flora/ash/glowshroom = 200, //more common in caves
 
 
 		//the illusive shrapnel plant
-		/obj/effect/mine/shrapnel/human_only = 1
+		/obj/effect/mine/shrapnel/human_only = 10
 	)
 
 	feature_spawn_list = list(
@@ -158,12 +158,12 @@
 	)
 
 	flora_spawn_list = list(
-		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 8,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 1,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 18,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
+		/obj/effect/spawner/lootdrop/waste/trash = 180,
+		/obj/effect/spawner/lootdrop/waste/radiation = 16,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 36,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 60,
 	)
 	mob_spawn_chance = 1
 
@@ -183,26 +183,26 @@
 
 /datum/biome/waste/clearing/mushroom
 	flora_spawn_list = list(
-		/obj/effect/spawner/lootdrop/waste/mechwreck = 10,
-		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 30,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 12,
-		/obj/effect/spawner/lootdrop/waste/girder = 60,
-		/obj/structure/reagent_dispensers/fueltank = 10,
-		/obj/structure/reagent_dispensers/watertank = 20,
-		/obj/item/stack/cable_coil/cut = 50,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
-		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
-		/obj/effect/spawner/lootdrop/maintenance = 20,
-		/obj/effect/spawner/lootdrop/maintenance/two = 10,
-		/obj/effect/spawner/lootdrop/maintenance/three = 5,
-		/obj/effect/spawner/lootdrop/maintenance/four = 2,
-		/obj/structure/flora/ash/garden/waste = 30,
-		/obj/structure/flora/ash/glowshroom = 180,
-		/obj/effect/mine/shrapnel/human_only = 1
+		/obj/effect/spawner/lootdrop/waste/mechwreck = 100,
+		/obj/effect/spawner/lootdrop/waste/trash = 900,
+		/obj/effect/spawner/lootdrop/waste/radiation = 300,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 120,
+		/obj/effect/spawner/lootdrop/waste/girder = 600,
+		/obj/structure/reagent_dispensers/fueltank = 100,
+		/obj/structure/reagent_dispensers/watertank = 200,
+		/obj/item/stack/cable_coil/cut = 500,
+		/obj/structure/closet/crate/secure/loot = 30,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 50,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 300,
+		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 200,
+		/obj/effect/spawner/lootdrop/maintenance = 200,
+		/obj/effect/spawner/lootdrop/maintenance/two = 100,
+		/obj/effect/spawner/lootdrop/maintenance/three = 50,
+		/obj/effect/spawner/lootdrop/maintenance/four = 20,
+		/obj/structure/flora/ash/garden/waste = 300,
+		/obj/structure/flora/ash/glowshroom = 1800,
+		/obj/effect/mine/shrapnel/human_only = 10
 	)
 
 /datum/biome/waste/tar_bed //tar colorings
@@ -213,7 +213,7 @@
 
 /datum/biome/waste/tar_bed/total
 	open_turf_types = list(
-		/turf/open/water/tar/waste/lit
+		/turf/open/water/tar/waste/lit = 1
 	)
 	flora_spawn_chance = 0
 
@@ -225,28 +225,28 @@
 	)
 
 	flora_spawn_list = list( //there are no plants here
-		/obj/effect/spawner/lootdrop/waste/mechwreck = 20,
-		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 5,
-		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 8,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
-		/obj/effect/spawner/lootdrop/waste/girder = 60,
-		/obj/structure/reagent_dispensers/fueltank = 10,
-		/obj/structure/reagent_dispensers/watertank = 20,
-		/obj/item/stack/cable_coil/cut = 50,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
-		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
-		/obj/effect/spawner/lootdrop/maintenance = 20,
-		/obj/effect/spawner/lootdrop/maintenance/two = 10,
-		/obj/effect/spawner/lootdrop/maintenance/three = 5,
-		/obj/effect/spawner/lootdrop/maintenance/four = 2,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 18,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.1,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30
+		/obj/effect/spawner/lootdrop/waste/mechwreck = 200,
+		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 50,
+		/obj/effect/spawner/lootdrop/waste/trash = 900,
+		/obj/effect/spawner/lootdrop/waste/radiation = 80,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 20,
+		/obj/effect/spawner/lootdrop/waste/girder = 600,
+		/obj/structure/reagent_dispensers/fueltank = 100,
+		/obj/structure/reagent_dispensers/watertank = 200,
+		/obj/item/stack/cable_coil/cut = 500,
+		/obj/structure/closet/crate/secure/loot = 30,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 50,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 300,
+		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 200,
+		/obj/effect/spawner/lootdrop/maintenance = 200,
+		/obj/effect/spawner/lootdrop/maintenance/two = 100,
+		/obj/effect/spawner/lootdrop/maintenance/three = 50,
+		/obj/effect/spawner/lootdrop/maintenance/four = 20,
+		/obj/structure/closet/crate/secure/loot = 30,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 180,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 300
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,
@@ -287,28 +287,28 @@
 	)
 
 	flora_spawn_list = list(
-		/obj/effect/spawner/lootdrop/waste/mechwreck = 10,
-		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 2,
-		/obj/effect/spawner/lootdrop/waste/trash = 180,
-		/obj/effect/spawner/lootdrop/waste/radiation = 8,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 1,
-		/obj/effect/spawner/lootdrop/waste/girder = 60,
-		/obj/structure/reagent_dispensers/fueltank = 10,
-		/obj/structure/reagent_dispensers/watertank = 20,
-		/obj/item/stack/cable_coil/cut = 50,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
-		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
-		/obj/effect/spawner/lootdrop/maintenance = 2,
-		/obj/effect/spawner/lootdrop/maintenance/two = 5,
-		/obj/effect/spawner/lootdrop/maintenance/three = 10,
-		/obj/effect/spawner/lootdrop/maintenance/four = 20,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 40,
-		/obj/structure/flora/ash/garden/waste = 7,
-		/obj/structure/flora/ash/glowshroom = 40, //more common in caves
-		/obj/effect/mine/shrapnel/human_only = 1
+		/obj/effect/spawner/lootdrop/waste/mechwreck = 100,
+		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 20,
+		/obj/effect/spawner/lootdrop/waste/trash = 1800,
+		/obj/effect/spawner/lootdrop/waste/radiation = 80,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 10,
+		/obj/effect/spawner/lootdrop/waste/girder = 600,
+		/obj/structure/reagent_dispensers/fueltank = 100,
+		/obj/structure/reagent_dispensers/watertank = 200,
+		/obj/item/stack/cable_coil/cut = 500,
+		/obj/structure/closet/crate/secure/loot = 30,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 50,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 5,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 300,
+		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 200,
+		/obj/effect/spawner/lootdrop/maintenance = 20,
+		/obj/effect/spawner/lootdrop/maintenance/two = 50,
+		/obj/effect/spawner/lootdrop/maintenance/three = 100,
+		/obj/effect/spawner/lootdrop/maintenance/four = 200,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 400,
+		/obj/structure/flora/ash/garden/waste = 70,
+		/obj/structure/flora/ash/glowshroom = 400, //more common in caves
+		/obj/effect/mine/shrapnel/human_only = 10
 	)
 
 	feature_spawn_list = list(
@@ -340,29 +340,29 @@
 
 /datum/biome/cave/waste/tar_bed/full
 	open_turf_types = list(
-		/turf/open/water/tar/waste
+		/turf/open/water/tar/waste = 1
 	)
 	flora_spawn_chance = 0
 
 /datum/biome/cave/waste/rad
 	flora_spawn_list = list(
-		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 25,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 7,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 15,
-		/obj/effect/spawner/lootdrop/waste/girder = 20,
-		/obj/structure/reagent_dispensers/fueltank = 1,
-		/obj/structure/reagent_dispensers/watertank = 1,
-		/obj/item/stack/cable_coil/cut = 50,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
-		/obj/effect/spawner/lootdrop/maintenance = 2,
-		/obj/effect/spawner/lootdrop/maintenance/two = 5,
-		/obj/effect/spawner/lootdrop/maintenance/three = 10,
-		/obj/effect/spawner/lootdrop/maintenance/four = 20,
-		/obj/structure/flora/ash/glowshroom = 180
+		/obj/effect/spawner/lootdrop/waste/trash = 900,
+		/obj/effect/spawner/lootdrop/waste/radiation = 250,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 70,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 50,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 5,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 150,
+		/obj/effect/spawner/lootdrop/waste/girder = 200,
+		/obj/structure/reagent_dispensers/fueltank = 10,
+		/obj/structure/reagent_dispensers/watertank = 10,
+		/obj/item/stack/cable_coil/cut = 500,
+		/obj/structure/closet/crate/secure/loot = 30,
+		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 200,
+		/obj/effect/spawner/lootdrop/maintenance = 20,
+		/obj/effect/spawner/lootdrop/maintenance/two = 50,
+		/obj/effect/spawner/lootdrop/maintenance/three = 100,
+		/obj/effect/spawner/lootdrop/maintenance/four = 200,
+		/obj/structure/flora/ash/glowshroom = 1800
 	)
 	feature_spawn_chance = 12
 
@@ -378,25 +378,25 @@
 		/turf/closed/wall/rust = 10
 	)
 	flora_spawn_list = list(
-		/obj/effect/spawner/lootdrop/waste/mechwreck = 20,
-		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 5,
-		/obj/effect/spawner/lootdrop/waste/trash = 90,
-		/obj/effect/spawner/lootdrop/waste/radiation = 16,
-		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 2,
-		/obj/effect/spawner/lootdrop/waste/girder = 60,
-		/obj/structure/reagent_dispensers/fueltank = 10,
-		/obj/structure/reagent_dispensers/watertank = 20,
-		/obj/item/stack/cable_coil/cut = 50,
-		/obj/structure/closet/crate/secure/loot = 3,
-		/obj/effect/spawner/lootdrop/waste/atmos_can = 5,
-		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 0.5,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 30,
-		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 20,
-		/obj/effect/spawner/lootdrop/maintenance = 2,
-		/obj/effect/spawner/lootdrop/maintenance/two = 5,
-		/obj/effect/spawner/lootdrop/maintenance/three = 10,
-		/obj/effect/spawner/lootdrop/maintenance/four = 20,
-		/obj/effect/spawner/lootdrop/waste/salvageable = 40,
+		/obj/effect/spawner/lootdrop/waste/mechwreck = 40,
+		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 10,
+		/obj/effect/spawner/lootdrop/waste/trash = 180,
+		/obj/effect/spawner/lootdrop/waste/radiation = 32,
+		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 4,
+		/obj/effect/spawner/lootdrop/waste/girder = 120,
+		/obj/structure/reagent_dispensers/fueltank = 20,
+		/obj/structure/reagent_dispensers/watertank = 40,
+		/obj/item/stack/cable_coil/cut = 100,
+		/obj/structure/closet/crate/secure/loot = 6,
+		/obj/effect/spawner/lootdrop/waste/atmos_can = 10,
+		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 60,
+		/obj/effect/spawner/lootdrop/waste/grille_or_trash = 40,
+		/obj/effect/spawner/lootdrop/maintenance = 4,
+		/obj/effect/spawner/lootdrop/maintenance/two = 10,
+		/obj/effect/spawner/lootdrop/maintenance/three = 20,
+		/obj/effect/spawner/lootdrop/maintenance/four = 40,
+		/obj/effect/spawner/lootdrop/waste/salvageable = 80,
 	)
 	mob_spawn_list = list( //nor organics, more biased towards hivebots though
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,

@@ -30,17 +30,17 @@
 /datum/overmap/ship/Initialize(position, ...)
 	. = ..()
 	if(docked_to)
-		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
+		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
 
 /datum/overmap/ship/Destroy()
-	. = ..()
 	if(movement_callback_id)
 		deltimer(movement_callback_id, SSovermap_movement)
+	return ..()
 
 /datum/overmap/ship/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	. = ..()
 	// override prevents runtime on controlled ship init due to docking after initializing at a position
-	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved, override = TRUE)
+	RegisterSignal(dock_target, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved), override = TRUE)
 
 /datum/overmap/ship/complete_undock()
 	UnregisterSignal(docked_to, COMSIG_OVERMAP_MOVED)
@@ -83,7 +83,7 @@
 		return
 
 	var/timer = 1 / MAGNITUDE(speed_x, speed_y) * offset
-	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE, SSovermap_movement)
+	movement_callback_id = addtimer(CALLBACK(src, PROC_REF(tick_move)), timer, TIMER_STOPPABLE, SSovermap_movement)
 
 /**
  * Called by [/datum/overmap/ship/proc/adjust_speed], this continually moves the ship according to its speed
@@ -106,7 +106,7 @@
 		return
 
 	var/timer = 1 / current_speed
-	movement_callback_id = addtimer(CALLBACK(src, .proc/tick_move), timer, TIMER_STOPPABLE, SSovermap_movement)
+	movement_callback_id = addtimer(CALLBACK(src, PROC_REF(tick_move)), timer, TIMER_STOPPABLE, SSovermap_movement)
 	token.update_screen()
 
 /**

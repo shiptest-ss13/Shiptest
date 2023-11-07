@@ -4,13 +4,13 @@
 /datum/component/art/Initialize(impress)
 	impressiveness = impress
 	if(isobj(parent))
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_obj_examine)
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_obj_examine))
 	else
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_other_examine)
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_other_examine))
 	if(isstructure(parent))
-		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/on_attack_hand)
+		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/apply_moodlet)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(apply_moodlet))
 
 /datum/component/art/proc/apply_moodlet(mob/M, impress)
 	SIGNAL_HANDLER
@@ -43,7 +43,7 @@
 
 /datum/component/art/proc/on_attack_hand(datum/source, mob/M)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/examine, source, M)
+	INVOKE_ASYNC(src, PROC_REF(examine), source, M)
 
 /datum/component/art/proc/examine(datum/source, mob/M)
 
@@ -51,16 +51,3 @@
 	if(!do_after(M, 20, target = parent))
 		return
 	on_obj_examine(source, M)
-
-/datum/component/art/rev
-
-/datum/component/art/rev/apply_moodlet(mob/M, impress)
-	M.visible_message(
-		"<span class='notice'>[M] stops to inspect [parent].</span>",
-		"<span class='notice'>You take in [parent], inspecting the fine craftsmanship of the proletariat.</span>"
-	)
-
-	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev))
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
-	else
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)

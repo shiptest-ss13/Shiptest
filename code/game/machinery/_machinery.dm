@@ -95,6 +95,8 @@ Class Procs:
 	anchored = TRUE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 
+	hitsound_type = PROJECTILE_HITSOUND_METAL
+
 	var/machine_stat = NONE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
@@ -138,10 +140,11 @@ Class Procs:
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
 	. = ..()
 	GLOB.machines += src
-	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, .proc/power_change)
-	if(ispath(circuit, /obj/item/circuitboard) && (mapload || apply_default_parts))
+	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(power_change))
+	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit
-		circuit.apply_default_parts(src)
+		if(mapload || apply_default_parts)
+			circuit.apply_default_parts(src)
 
 	if(processing_flags & START_PROCESSING_ON_INIT)
 		begin_processing()
@@ -164,16 +167,14 @@ Class Procs:
 /obj/machinery/LateInitialize()
 	. = ..()
 	power_change()
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/power_change)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(power_change))
 
 /obj/machinery/Destroy()
 	GLOB.machines.Remove(src)
 	end_processing()
 	dropContents()
-	if(length(component_parts))
-		for(var/atom/A in component_parts)
-			qdel(A)
-		component_parts.Cut()
+	QDEL_NULL(circuit)
+	QDEL_LIST(component_parts)
 	return ..()
 
 /obj/machinery/proc/locate_machinery()
@@ -410,7 +411,10 @@ Class Procs:
 /obj/machinery/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		on_deconstruction()
-		if(component_parts && component_parts.len)
+		if(circuit)
+			circuit.forceMove(loc)
+			circuit = null
+		if(length(component_parts))
 			spawn_frame(disassembled)
 			for(var/obj/item/I in component_parts)
 				I.forceMove(loc)
@@ -517,7 +521,7 @@ Class Procs:
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
-		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
+		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, PROC_REF(unfasten_wrench_check), prev_anchored, user)))
 			if(!anchored && ground.is_blocked_turf(exclude_mobs = TRUE, source_atom = src))
 				to_chat(user, "<span class='notice'>You fail to secure [src].</span>")
 				return CANT_UNFASTEN

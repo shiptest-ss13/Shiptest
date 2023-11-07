@@ -105,14 +105,14 @@
 /datum/component/overlay_lighting/RegisterWithParent()
 	. = ..()
 	if(directional)
-		RegisterSignal(parent, COMSIG_ATOM_DIR_CHANGE, .proc/on_parent_dir_change)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_parent_moved)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_RANGE, .proc/set_range)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_POWER, .proc/set_power)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_COLOR, .proc/set_color)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_ON, .proc/on_toggle)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_FLAGS, .proc/on_light_flags_change)
-	RegisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT, .proc/on_parent_crafted)
+		RegisterSignal(parent, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_parent_dir_change))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_moved))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_RANGE, PROC_REF(set_range))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_POWER, PROC_REF(set_power))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_COLOR, PROC_REF(set_color))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_ON, PROC_REF(on_toggle))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_FLAGS, PROC_REF(on_light_flags_change))
+	RegisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT, PROC_REF(on_parent_crafted))
 	var/atom/movable/movable_parent = parent
 	if(movable_parent.light_flags & LIGHT_ATTACHED)
 		overlay_lighting_flags |= LIGHTING_ATTACHED
@@ -156,8 +156,7 @@
 
 ///Clears the affected_turfs lazylist, removing from its contents the effects of being near the light.
 /datum/component/overlay_lighting/proc/clean_old_turfs()
-	for(var/t in affected_turfs)
-		var/turf/lit_turf = t
+	for(var/turf/lit_turf as anything in affected_turfs)
 		lit_turf.dynamic_lumcount -= lum_power
 	affected_turfs = null
 
@@ -167,9 +166,12 @@
 	if(!current_holder)
 		return
 	var/atom/movable/light_source = GET_LIGHT_SOURCE
+	. = list()
 	for(var/turf/lit_turf in view(lumcount_range, get_turf(light_source)))
 		lit_turf.dynamic_lumcount += lum_power
-		LAZYADD(affected_turfs, lit_turf)
+		. += lit_turf
+	if(length(.))
+		affected_turfs = .
 
 
 ///Clears the old affected turfs and populates the new ones.
@@ -213,13 +215,13 @@
 		var/atom/movable/old_parent_attached_to = .
 		UnregisterSignal(old_parent_attached_to, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED))
 		if(old_parent_attached_to == current_holder)
-			RegisterSignal(old_parent_attached_to, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
-			RegisterSignal(old_parent_attached_to, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+			RegisterSignal(old_parent_attached_to, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+			RegisterSignal(old_parent_attached_to, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 	if(parent_attached_to)
 		if(parent_attached_to == current_holder)
 			UnregisterSignal(current_holder, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED))
-		RegisterSignal(parent_attached_to, COMSIG_PARENT_QDELETING, .proc/on_parent_attached_to_qdel)
-		RegisterSignal(parent_attached_to, COMSIG_MOVABLE_MOVED, .proc/on_parent_attached_to_moved)
+		RegisterSignal(parent_attached_to, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_attached_to_qdel))
+		RegisterSignal(parent_attached_to, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_attached_to_moved))
 	check_holder()
 
 
@@ -239,10 +241,10 @@
 		clean_old_turfs()
 		return
 	if(new_holder != parent && new_holder != parent_attached_to)
-		RegisterSignal(new_holder, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
-		RegisterSignal(new_holder, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+		RegisterSignal(new_holder, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+		RegisterSignal(new_holder, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 		if(directional)
-			RegisterSignal(new_holder, COMSIG_ATOM_DIR_CHANGE, .proc/on_holder_dir_change)
+			RegisterSignal(new_holder, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_holder_dir_change))
 	if(overlay_lighting_flags & LIGHTING_ON)
 		make_luminosity_update()
 		add_dynamic_lumi()
@@ -407,8 +409,7 @@
 	. = lum_power
 	lum_power = new_lum_power
 	var/difference = . - lum_power
-	for(var/t in affected_turfs)
-		var/turf/lit_turf = t
+	for(var/turf/lit_turf as anything in affected_turfs)
 		lit_turf.dynamic_lumcount -= difference
 
 ///Here we append the behavior associated to changing lum_power.
@@ -460,7 +461,7 @@
 		return
 
 	UnregisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT)
-	RegisterSignal(new_craft, COMSIG_ATOM_USED_IN_CRAFT, .proc/on_parent_crafted)
+	RegisterSignal(new_craft, COMSIG_ATOM_USED_IN_CRAFT, PROC_REF(on_parent_crafted))
 	set_parent_attached_to(new_craft)
 
 #undef LIGHTING_ON

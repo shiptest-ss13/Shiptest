@@ -56,9 +56,6 @@
 /datum/antagonist/wizard/proc/send_to_lair()
 	if(!owner || !owner.current)
 		return
-	if(!GLOB.wizardstart.len)
-		SSjob.SendToLateJoin(owner.current)
-		to_chat(owner, "HOT INSERTION, GO GO GO")
 	owner.current.forceMove(pick(GLOB.wizardstart))
 
 /datum/antagonist/wizard/proc/create_objectives()
@@ -165,7 +162,7 @@
 
 /datum/antagonist/wizard/get_admin_commands()
 	. = ..()
-	.["Send to Lair"] = CALLBACK(src,.proc/admin_send_to_lair)
+	.["Send to Lair"] = CALLBACK(src, PROC_REF(admin_send_to_lair))
 
 /datum/antagonist/wizard/proc/admin_send_to_lair(mob/admin)
 	owner.current.forceMove(pick(GLOB.wizardstart))

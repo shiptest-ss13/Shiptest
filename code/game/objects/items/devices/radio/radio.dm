@@ -34,6 +34,8 @@
 	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
 	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
 	var/command = FALSE  // If true, use_command can be toggled at will.
+	var/log = FALSE // If true, the UI will display the voice log for the frequency
+	var/list/loglist = list() //the voice log
 
 	// Encryption key handling
 	var/obj/item/encryptionkey/keyslot
@@ -140,6 +142,8 @@
 	data["useCommand"] = use_command
 	data["subspace"] = subspace_transmission
 	data["subspaceSwitchable"] = subspace_switchable
+	data["chatlog"] = log
+	data["chatloglist"] = loglist
 	data["headset"] = FALSE
 
 	return data
@@ -196,7 +200,7 @@
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
-	INVOKE_ASYNC(src, .proc/talk_into_impl, M, message, channel, spans.Copy(), language, message_mods)
+	INVOKE_ASYNC(src, PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language, message_mods)
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language, list/message_mods)
@@ -268,7 +272,7 @@
 
 	// Non-subspace radios will check in a couple of seconds, and if the signal
 	// was never received, send a mundane broadcast (no headsets).
-	addtimer(CALLBACK(src, .proc/backup_transmission, signal), 20)
+	addtimer(CALLBACK(src, PROC_REF(backup_transmission), signal), 20)
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
@@ -363,7 +367,7 @@
 	for (var/ch_name in channels)
 		channels[ch_name] = 0
 	on = FALSE
-	addtimer(CALLBACK(src, .proc/end_emp_effect, curremp), 200)
+	addtimer(CALLBACK(src, PROC_REF(end_emp_effect), curremp), 200)
 
 /obj/item/radio/proc/end_emp_effect(curremp)
 	if(emped != curremp) //Don't fix it if it's been EMP'd again
@@ -371,6 +375,11 @@
 	emped = FALSE
 	on = TRUE
 	return TRUE
+
+/obj/item/radio/proc/log_trim()
+	if(loglist.len <= 50)
+		return
+	loglist.Cut(51)
 
 ///////////////////////////////
 //////////Borg Radios//////////

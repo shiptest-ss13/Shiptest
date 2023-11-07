@@ -149,6 +149,7 @@
 	for(var/turf/turf_to_disable as anything in border)
 		turf_to_disable.blocks_air = TRUE
 		turf_to_disable.set_sleeping(TRUE)
+		turf_to_disable.air_update_turf(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want
 	// ruins clogging up memory for the whole round.
@@ -158,6 +159,7 @@
 	var/list/turf_blacklist = list()
 	update_blacklist(T, turf_blacklist)
 
+	UNSETEMPTY(turf_blacklist)
 	parsed.turf_blacklist = turf_blacklist
 	if(!parsed.load(T.x, T.y, T.z, cropMap=TRUE, no_changeturf=(SSatoms.initialized == INITIALIZATION_INSSATOMS), placeOnTop=should_place_on_top))
 		return

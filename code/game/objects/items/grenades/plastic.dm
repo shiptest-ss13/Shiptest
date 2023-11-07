@@ -28,10 +28,9 @@
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
 
 /obj/item/grenade/c4/Destroy()
-	qdel(wires)
-	wires = null
+	QDEL_NULL(wires)
 	target = null
-	..()
+	return ..()
 
 /obj/item/grenade/c4/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -110,7 +109,7 @@
 
 		target.add_overlay(plastic_overlay)
 		to_chat(user, "<span class='notice'>You plant the bomb. Timer counting down from [det_time].</span>")
-		addtimer(CALLBACK(src, .proc/prime), det_time*10)
+		addtimer(CALLBACK(src, PROC_REF(prime)), det_time*10)
 
 // X4 is an upgraded directional variant of c4 which is relatively safe to be standing next to. And much less safe to be standing on the other side of.
 // C4 is intended to be used for infiltration, and destroying tech. X4 is intended to be used for heavy breaching and tight spaces.

@@ -89,7 +89,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 
 /datum/gateway_destination/gateway/post_transfer(atom/movable/AM)
 	. = ..()
-	addtimer(CALLBACK(AM,/atom/movable.proc/setDir,SOUTH),0)
+	addtimer(CALLBACK(AM, TYPE_PROC_REF(/atom/movable, setDir),SOUTH),0)
 
 /* Special home destination, so we can check exile implants */
 /datum/gateway_destination/gateway/home
@@ -179,6 +179,12 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	update_appearance()
 	portal_visuals = new
 	vis_contents += portal_visuals
+	return ..()
+
+/obj/machinery/gateway/Destroy()
+	destination.target_gateway = null
+	GLOB.gateway_destinations -= destination
+	destination = null
 	return ..()
 
 /obj/machinery/gateway/proc/generate_destination()

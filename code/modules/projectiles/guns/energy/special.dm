@@ -221,10 +221,10 @@
 	for(var/i in 1 to ammo_type.len)
 		var/obj/item/ammo_casing/energy/wormhole/W = ammo_type[i]
 		if(istype(W))
-			W.gun = src
+			W.gun = WEAKREF(src)
 			var/obj/projectile/beam/wormhole/WH = W.BB
 			if(istype(WH))
-				WH.gun = src
+				WH.gun = WEAKREF(src)
 
 /obj/item/gun/energy/wormhole_projector/process_chamber()
 	..()
@@ -260,7 +260,7 @@
 
 /obj/item/gun/energy/wormhole_projector/proc/create_portal(obj/projectile/beam/wormhole/W, turf/target)
 	var/obj/effect/portal/P = new /obj/effect/portal(target, 300, null, FALSE, null, atmos_link)
-	RegisterSignal(P, COMSIG_PARENT_QDELETING, .proc/on_portal_destroy)
+	RegisterSignal(P, COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy))
 	if(istype(W, /obj/projectile/beam/wormhole/orange))
 		qdel(p_orange)
 		p_orange = P

@@ -134,26 +134,12 @@ SUBSYSTEM_DEF(mapping)
 	for(var/datum/planet_type/type as anything in subtypesof(/datum/planet_type))
 		planet_types[initial(type.planet)] = new type
 
-	// Still supporting bans by filename
-	// I hate this so much. I want to kill it because I don't think ANYONE uses this
-	// Couldn't you just remove it on a fork or something??? come onnnnnnnnnnnn stop EXISTING already
-	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/wasteruinblacklist.txt")
-
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
 		// screen out the abstract subtypes
 		if(!initial(ruin_type.id))
 			continue
 		var/datum/map_template/ruin/R = new ruin_type()
-
-		if(R.mappath in banned)
-			continue
 
 		map_templates[R.name] = R
 		ruins_templates[R.name] = R
@@ -223,7 +209,7 @@ SUBSYSTEM_DEF(mapping)
 			var/value = job_slot_list[job]
 			var/slots
 			if(isnum(value))
-				job_slot = SSjob.GetJob(job)
+				job_slot = GLOB.name_occupations[job]
 				slots = value
 			else if(islist(value))
 				var/datum/outfit/job_outfit = text2path(value["outfit"])
@@ -231,6 +217,7 @@ SUBSYSTEM_DEF(mapping)
 					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
+				job_slot.display_order = length(S.job_slots)
 				job_slot.wiki_page = value["wiki_page"]
 				job_slot.officer = value["officer"]
 				slots = value["slots"]
@@ -259,6 +246,7 @@ SUBSYSTEM_DEF(mapping)
 			S.space_spawn = TRUE
 
 		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
 

@@ -37,7 +37,7 @@
 	if(!hit_atom)
 		return
 	if(!isliving(hit_atom))
-		if(hit_atom.density && !hit_atom.CanPass(src))
+		if(hit_atom.density && !hit_atom.CanPass(src, get_dir(hit_atom, src)))
 			visible_message("<span class='danger'>[src] smashes into [hit_atom]!</span>", "<span class='alertalien'>[src] smashes into [hit_atom]!</span>")
 			Paralyze(40, ignore_canstun = TRUE)
 		return
@@ -103,7 +103,7 @@
 		leaping = 1
 		weather_immunities += "lava"
 		update_icons()
-		throw_at(leap_target, MAX_ALIEN_LEAP_DIST, 2, src, FALSE, TRUE, callback = CALLBACK(src, .proc/leap_end))
+		throw_at(leap_target, MAX_ALIEN_LEAP_DIST, 2, src, FALSE, TRUE, callback = CALLBACK(src, PROC_REF(leap_end)))
 
 #undef MAX_ALIEN_LEAP_DIST
 
