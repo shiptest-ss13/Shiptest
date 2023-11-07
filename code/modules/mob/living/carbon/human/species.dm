@@ -978,8 +978,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.spider_legs_list[H.dna.features["spider_legs"]]
 				if("spider_spinneret")
 					S = GLOB.spider_spinneret_list[H.dna.features["spider_spinneret"]]
-				if ("spider_mandibles")
-					S = GLOB.spider_mandibles_list[H.dna.features["spider_mandibles"]]
 				if("kepori_body_feathers")
 					S = GLOB.kepori_body_feathers_list[H.dna.features["kepori_body_feathers"]]
 				if("kepori_tail_feathers")
@@ -1054,17 +1052,17 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					accessory_overlay.color = forced_colour
 			standing += accessory_overlay
 
-			if(S.hasinner)
-				var/mutable_appearance/inner_accessory_overlay = mutable_appearance(S.icon, layer = -layer)
+			if(S.secondary_color)
+				var/mutable_appearance/secondary_color_overlay = mutable_appearance(S.icon, layer = -layer)
 				if(S.gender_specific)
-					inner_accessory_overlay.icon_state = "[g]_[bodypart]inner_[S.icon_state]_[layertext]"
+					secondary_color_overlay.icon_state = "[g]_[bodypart]_secondary_[S.icon_state]_[layertext]"
 				else
-					inner_accessory_overlay.icon_state = "m_[bodypart]inner_[S.icon_state]_[layertext]"
+					secondary_color_overlay.icon_state = "m_[bodypart]_secondary_[S.icon_state]_[layertext]"
 
 				if(S.center)
-					inner_accessory_overlay = center_image(inner_accessory_overlay, S.dimension_x, S.dimension_y)
-				inner_accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
-				standing += inner_accessory_overlay
+					secondary_color_overlay = center_image(secondary_color_overlay, S.dimension_x, S.dimension_y)
+				secondary_color_overlay.color = "#[H.dna.features["mcolor2"]]"
+				standing += secondary_color_overlay
 
 		H.overlays_standing[layer] = standing.Copy()
 		standing = list()
@@ -1467,7 +1465,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hairstyle == "Bald") && (HAIR in species_traits))
 			to_chat(H, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
-			addtimer(CALLBACK(src, .proc/go_bald, H), 50)
+			addtimer(CALLBACK(src, PROC_REF(go_bald), H), 50)
 
 /datum/species/proc/go_bald(mob/living/carbon/human/H)
 	if(QDELETED(H))	//may be called from a timer
@@ -2239,7 +2237,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		buckled_obj.unbuckle_mob(H)
 		step(buckled_obj, olddir)
 	else
-		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, /mob/living/carbon/.proc/spin, 1, 1))
+		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon, spin), 1, 1))
 	return TRUE
 
 //UNSAFE PROC, should only be called through the Activate or other sources that check for CanFly
