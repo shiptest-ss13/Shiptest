@@ -1448,12 +1448,8 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/crew/cryo)
 "mc" = (
-/obj/machinery/conveyor{
-	dir = 8;
-	id = "mining_internal"
-	},
-/obj/structure/plasticflaps,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/mineral/stacking_machine,
 /turf/open/floor/plating,
 /area/outpost/storage)
 "mg" = (
@@ -1529,6 +1525,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/mineral/stacking_unit_console{
+	machinedir = 2;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/storage)
 "ne" = (
@@ -1605,6 +1605,7 @@
 	dir = 1;
 	color = "#808080"
 	},
+/obj/structure/closet/crate,
 /turf/open/floor/plasteel/dark,
 /area/outpost/storage)
 "nL" = (
@@ -3537,6 +3538,9 @@
 /obj/structure/fluff/paper/stack{
 	pixel_y = -14;
 	pixel_x = -15
+	},
+/obj/machinery/mineral/processing_unit_console{
+	pixel_x = 32
 	},
 /turf/open/floor/plating/dirt,
 /area/outpost/storage)
