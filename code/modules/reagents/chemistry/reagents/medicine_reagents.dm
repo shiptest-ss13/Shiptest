@@ -2140,6 +2140,10 @@
 	color = "#af9938"
 	taste_description = "root-beer and asbestos"
 
+
+/datum/reagent/medicine/coagulant
+	name = "Coagulant"
+	description = "I will port this soon"
 /datum/reagent/medicine/coagulant/seraka_extract
 	name = "Seraka Extract"
 	description = "A deeply coloured oil present in small amounts in Seraka Mushrooms. Acts as an effective blood clotting agent, but has a low overdose threshold."
