@@ -48,6 +48,7 @@
 		sleep(wave_downtime)
 		spawning_paused = FALSE
 		wave_timer = null
+		return
 	try_spawn_mob()
 
 /datum/component/spawner/proc/stop_spawning(force)
@@ -64,7 +65,7 @@
 	var/turf/spot = P.loc
 	if(!wave_timer && wave_length)
 		wave_timer = wave_length + world.time
-	if(world.time > wave_timer)
+	if(wave_timer && world.time > wave_timer)
 		spawning_paused = TRUE
 		return 0
 	if(spawned_mobs.len >= max_mobs)

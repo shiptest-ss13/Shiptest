@@ -103,17 +103,17 @@
 				return
 			else
 				to_chat(user, "<span class='notice'>You don't have enough plasteel to fix the plating.</span>")
+				return
 		if(metal_attached == METAL_SECURED && tool.tool_behaviour == TOOL_WELDER)
 			if(tool.use_tool(src, user, 30, volume=50))
 				to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
 				metal_attached = null
-				machine_stat = null
 				obj_integrity = max_integrity
+				set_machine_stat(machine_stat & ~BROKEN)
 				update_icon_state()
 				return
 	if(tool.tool_behaviour == TOOL_WRENCH)
 		if(metal_attached && machine_stat & BROKEN)
-			playsound(src, 'sound/items/ratchet.ogg', 50, TRUE)
 			if(tool.use_tool(src, user, 30, volume=50))
 				to_chat(user, "<span class='notice'>You bolt the plating the plating in place on [src].</span>")
 				metal_attached = METAL_SECURED
