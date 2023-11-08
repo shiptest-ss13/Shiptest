@@ -16,12 +16,11 @@
 
 	max_integrity = 1000
 	integrity_failure = 250
-	var/repair_integrity = 125
+	/// Amount we repair per weld cycle.
+	var/repair_integrity = 50
 
 	/// The ship we are linked to.
 	var/datum/overmap/ship/controlled/linked_ship
-	/// The apc we are drawing power from.
-	var/obj/machinery/power/apc/linked_apc
 
 	/// The rate of charge per tick.
 	var/charge_rate
@@ -31,6 +30,8 @@
 	var/charge
 	/// The ratio of power to charge
 	var/charge_ratio = 2
+	/// The ratio of damage to charge
+	var/damage_ratio = 4
 
 	/// The rate of spooling per tick.
 	var/spool_rate
@@ -38,7 +39,7 @@
 	var/spool_percent
 	/// The penalty for spooling while inoperable.
 	var/spool_inoperable_penalty = 0.8
-
+	/// Have we announced that we are inoperable?
 	var/inoperable_announced = FALSE
 
 /obj/machinery/power/ship_shield_generator/update_icon_state()
@@ -83,6 +84,7 @@
 	port_ship.shield_generator = src
 	linked_ship = port_ship
 	linked_ship.broadcast("Link established to ship magnetosphere array.")
+	START_PROCESSING(SSmachines, src)
 
 /obj/machinery/power/ship_shield_generator/process()
 	if(isnull(linked_ship))
@@ -130,11 +132,29 @@
 /obj/machinery/power/ship_shield_generator/proc/charge_depleted()
 	set_machine_stat(machine_stat|BROKEN)
 	linked_ship.broadcast("Critical failure in magnetocore, unable to error correct.")
+	charge = 0
 	spool_percent = 0
 	playsound(src, 'sound/mecha/mech_shield_drop.ogg', 50)
 
+/obj/machinery/power/ship_shield_generator/multitool_act(mob/living/user, obj/item/I)
+	if(obj_integrity < max_integrity)
+		balloon_alert(user, "damaged!")
+		return TRUE
+
+	if(!(machine_stat & BROKEN))
+		balloon_alert(user, "not broken!")
+		return TRUE
+
+	balloon_alert(user, "resetting...")
+	if(!do_after(user, 1 SECONDS, target = src))
+		balloon_alert(user, "interrupted!")
+		return TRUE
+
+	set_machine_stat(machine_stat & ~BROKEN)
+	balloon_alert(user, "reset.")
+
 /obj/machinery/power/ship_shield_generator/welder_act(mob/living/user, obj/item/weldingtool/welder)
-	if(obj_integrity >= max_integrity)
+	if(obj_integrity >= max_integrity && !(machine_stat & BROKEN))
 		return
 
 	if(!welder.isOn())
@@ -155,11 +175,34 @@
 		obj_integrity = min(obj_integrity + repair_integrity, max_integrity)
 		if(obj_integrity >= max_integrity)
 			balloon_alert(user, "repaired.")
-			set_machine_stat(machine_stat & ~BROKEN)
 			return TRUE
 
 		if(repair_time > 0.5 SECONDS)
-			repair_time -= 0.5 SECONDS
+			repair_time = max(repair_time - 0.2 SECONDS, 0.5 SECONDS)
 
 	balloon_alert(user, "stopped!")
 	return TRUE
+
+/// Handle blocking damage
+/obj/machinery/power/ship_shield_generator/proc/on_shield_block_damage(damage)
+	set waitfor = FALSE
+	return
+
+/// Handle taking enough damage to break the shield
+/obj/machinery/power/ship_shield_generator/proc/on_shield_break()
+	set waitfor = FALSE
+	return
+
+/// Handles blocking damage and draining charge.
+/// An attack which is not blocked will strike at full power.
+/obj/machinery/power/ship_shield_generator/proc/block_damage(damage)
+	if(!charge)
+		return FALSE
+
+	var/needed_charge = damage * damage_ratio
+	if(needed_charge < charge)
+		charge -= needed_charge
+		on_shield_block_damage(damage)
+		return TRUE
+	charge_depleted()
+	on_shield_break()

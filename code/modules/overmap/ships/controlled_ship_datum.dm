@@ -248,6 +248,15 @@
 
 	return ..()
 
+/// Checks if this ship has an active shield that is both enabled and charged.
+/datum/overmap/ship/controlled/proc/shield_active()
+	return !!shield_generator?.charge
+
+/// Attempts to deal damage to the shield of this ship.
+/// Returns TRUE if the attack was blocked by the shield, FALSE otherwise.
+/datum/overmap/ship/controlled/proc/shield_block(damage)
+	return shield_generator?.block_damage(damage)
+
 /**
  * Connects a new shuttle port to the ship datum. Should be used very shortly after the ship is created, if at all.
  * Used to connect the shuttle port to a ship datum that was created without a template.
