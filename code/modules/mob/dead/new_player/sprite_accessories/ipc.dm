@@ -238,6 +238,7 @@
 	icon = null
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
+	var/has_screen = TRUE //do we have a screen to toggle
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics (Custom)"
@@ -283,3 +284,24 @@
 /datum/sprite_accessory/ipc_chassis/zenghupharmaceuticals
 	name = "Zeng-Hu Pharmaceuticals"
 	limbs_id = "zhpipc"
+
+/datum/sprite_accessory/ipc_chassis/pgfmechanicsplantigrade
+	name = "PGF MECHANICS-plantigrade"
+	limbs_id = "pgfipc-p"
+	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
+	name = "PGF MECHANICS-digigrade"
+	limbs_id = "pgfipc-d"
+	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/inteqphase
+	name = "Inteq Mothership 'Phase'"
+	limbs_id = "inteqphase"
+	has_screen = FALSE
+
+/datum/sprite_accessory/ipc_chassis/inteqphasetailless
+	name = "Inteq Mothership 'Phase' Tailless"
+	limbs_id = "inteqphasetailless"
+	has_screen = FALSE
+
