@@ -307,6 +307,9 @@
 	outfit = /datum/outfit/job/assistant
 	icon_state = "corpsegreytider"
 
+/obj/effect/mob_spawn/human/corpse/assistant/husked
+	husk = TRUE
+
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
 
@@ -363,6 +366,14 @@
 	name = "Clown"
 	outfit = /datum/outfit/job/clown
 	icon_state = "corpseclown"
+
+/obj/effect/mob_spawn/human/mime
+	name = "Mime"
+	outfit = /datum/outfit/job/mime
+	icon_state = "corpsemime"
+
+/obj/effect/mob_spawn/human/mime/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/scientist
 	name = "Scientist"
