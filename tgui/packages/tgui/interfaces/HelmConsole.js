@@ -263,6 +263,7 @@ const ShipControlContent = (_props, context) => {
     burnPercentage,
     speed,
     estThrust,
+    radioFreq,
   } = data;
   let flyable = !data.docking && !data.docked;
 
@@ -312,6 +313,12 @@ const ShipControlContent = (_props, context) => {
             color={aiControls ? 'green' : 'red'}
             disabled={aiUser}
             onClick={() => act('toggle_ai_control')}
+          />
+          <Button
+            tooltip={`Ship Radio: ${radioFreq}`}
+            tooltipPosition="left"
+            icon="radio"
+            onClick={() => act('update_radio_freq')}
           />
         </>
       }

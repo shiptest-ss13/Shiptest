@@ -402,7 +402,8 @@
 
 	for(var/obj/machinery/computer/helm/helm as anything in helms)
 		SStgui.close_uis(helm)
-		helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
+		if(!helm.viewer)
+			helm.say(helm_locked ? "Helm console is now locked." : "Helm console has been unlocked.")
 
 /obj/item/key/ship
 	name = "ship key"

@@ -211,6 +211,7 @@
 	.["aiControls"] = allow_ai_control
 	.["burnDirection"] = current_ship.burn_direction
 	.["burnPercentage"] = current_ship.burn_percentage
+	.["radioFreq"] = "[current_ship.ship_radio_frequency * 0.1] Ghz"
 	for(var/datum/weakref/engine in current_ship.shuttle_port.engine_list)
 		var/obj/machinery/power/shuttle/engine/real_engine = engine.resolve()
 		if(!real_engine)
@@ -275,13 +276,28 @@
 				say("Error: [COOLDOWN_TIMELEFT(current_ship, rename_cooldown)/10] seconds until ship designation can be changed.")
 			update_static_data(usr, ui)
 			return
+
 		if("reload_ship")
 			reload_ship()
 			update_static_data(usr, ui)
 			return
+
+		if("update_radio_freq")
+			var/new_freq = input(ui.user, "Enter new frequency (in XXX.X format)", "Ship Radio Frequency", current_ship.ship_radio_frequency * 10) as num|null
+			new_freq *= 10
+			if(!sanitize_frequency(new_freq, TRUE))
+				say("Error: Invalid frequency.")
+				return
+			if(new_freq == current_ship.ship_radio_frequency)
+				return
+			current_ship.ship_radio_frequency = new_freq
+			current_ship.broadcast(src, "Ship Radio Frequency updated.")
+			return TRUE
+
 		if("reload_engines")
 			current_ship.refresh_engines()
 			return
+
 		if("toggle_ai_control")
 			if(issilicon(usr))
 				to_chat(usr, "<span class='warning'>You are unable to toggle AI controls.</span>")
