@@ -234,7 +234,7 @@
 	start_dock(dock_target, ticket)
 
 	if(dock_time && !force)
-		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_dock, dock_target, ticket), dock_time)
+		dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_dock), dock_target, ticket), dock_time)
 	else
 		complete_dock(dock_target, ticket)
 
@@ -312,7 +312,7 @@
 	docking = TRUE
 
 	if(dock_time && !force)
-		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_undock), dock_time)
+		dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_undock)), dock_time)
 	else
 		complete_undock()
 
@@ -332,7 +332,7 @@
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
 	token.forceMove(OVERMAP_TOKEN_TURF(x, y))
-	INVOKE_ASYNC(old_docked_to, .proc/post_undocked, src)
+	INVOKE_ASYNC(old_docked_to, PROC_REF(post_undocked), src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
 

@@ -55,7 +55,7 @@
 
 /obj/item/clothing/gloves/color/yellow/sprayon/equipped(mob/user, slot)
 	. = ..()
-	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, .proc/Shocked)
+	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, PROC_REF(Shocked))
 
 /obj/item/clothing/gloves/color/yellow/sprayon/proc/Shocked()
 	shocks_remaining--
@@ -79,7 +79,7 @@
 
 /obj/item/clothing/gloves/color/yellow/sprayon/tape/equipped(mob/user, slot)
 	. = ..()
-	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, .proc/Shocked)
+	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, PROC_REF(Shocked))
 
 /obj/item/clothing/gloves/color/yellow/sprayon/tape/Shocked(mob/user)
 	if(prob(50)) //Fear the unpredictable
@@ -208,6 +208,7 @@
 	strip_delay = 60
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
+<<<<<<< HEAD
 /obj/item/clothing/gloves/color/captain/suns
 	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
 	name = "\improper SUNS captain's gloves"
@@ -225,6 +226,13 @@
 	name = "stitched fingerless gloves"
 	icon_state = "suns_glovesfingerless"
 	item_state = "suns_glovesfingerless"
+=======
+/obj/item/clothing/gloves/color/captain/nt
+	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
+	name = "captain's gloves"
+	icon_state = "captainnt"
+	item_state = "egloves"
+>>>>>>> upstream/master
 
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"

@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 		if(!C)
 			continue
 
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/create_credit, C), CREDIT_SPAWN_SPEED * i + (3 * CREDIT_SPAWN_SPEED), TIMER_CLIENT_TIME)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(create_credit), C), CREDIT_SPAWN_SPEED * i + (3 * CREDIT_SPAWN_SPEED), TIMER_CLIENT_TIME)
 
 /proc/create_credit(credit)
 	new /atom/movable/screen/credit(null, credit)
@@ -59,7 +59,7 @@ GLOBAL_LIST_INIT(patrons, world.file2list("[global.config.directory]/patrons.txt
 	animate(src, transform = M, time = CREDIT_ROLL_SPEED)
 	target = M
 	animate(src, alpha = 255, time = CREDIT_EASE_DURATION, flags = ANIMATION_PARALLEL)
-	INVOKE_ASYNC(src, .proc/add_to_clients)
+	INVOKE_ASYNC(src, PROC_REF(add_to_clients))
 	QDEL_IN(src, CREDIT_ROLL_SPEED)
 
 /atom/movable/screen/credit/proc/add_to_clients()
