@@ -1,12 +1,16 @@
+GLOBAL_LIST_EMPTY(active_survey_points)
+
 /obj/effect/survey_point //sure effects shouldn't be attackable, sue me.
 	name = "Survey Point"
 	desc = "A location of particular survey value."
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "x"
+	alpha = 0
 	var/research_value
 
 /obj/effect/survey_point/Initialize()
 	. = ..()
+	GLOB.active_survey_points += src
 	research_value = rand(750, 1500)
 
 /obj/effect/survey_point/examine(mob/user)
@@ -22,8 +26,6 @@
 
 		var/turf/user_turf = get_turf(user)
 
-
-
 		if(!scangler.pack.powered)
 			to_chat(user, "Insufficient power to scan [src]")
 			return
@@ -31,7 +33,7 @@
 		to_chat(user, "<span class='notice'>You begin to scan [src] with [scangler].</span>")
 		scangler.active = TRUE
 
-		if(do_after(user, scangler.survey_delay, TRUE))
+		if(do_after(user, scangler.survey_delay, TRUE)) //note to self: refactor this into 3 procs - an attack by, do_scan, and drop_reward
 			flick(icon_state + "-print", item)
 			playsound(src, 'sound/machines/whirr_beep.ogg', 20)
 			user_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
@@ -67,3 +69,7 @@
 			var/obj/item/research_notes/research = user.get_inactive_held_item()
 			research.merge(result)
 	return
+
+/obj/effect/survey_point/Destroy()
+	. = ..()
+	GLOB.active_survey_points -= src

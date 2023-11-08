@@ -186,6 +186,60 @@
 				size = "small"
 	return "pinondirect[size]"
 
+//this makes me feel dirty.
+/obj/item/pinpointer/survey_data
+	name = "survey pinpointer"
+	desc = "A small electronic handheld tuned to detect planetary irregularities"
+
+/obj/item/pinpointer/survey_data/proc/trackable(mob/living/user)
+	var/turf/here = get_turf(src)
+	if((user.z == 0 || user.virtual_z() == here.virtual_z()))
+		var/turf/there = get_turf(user)
+		return (user.z != 0 || (there && ((there.virtual_z() == here.virtual_z()))))
+	return FALSE
+
+/obj/item/pinpointer/survey_data/attack_self(mob/living/user)
+	var/list/possible_targets
+	if(active)
+		toggle_on()
+		user.visible_message("<span class='notice'>[user] deactivates [user.p_their()] pinpointer.</span>", "<span class='notice'>You deactivate your pinpointer.</span>")
+		return
+	for(var/i in GLOB.active_survey_points)
+		var/obj/effect/survey_point/my_target = i
+		if(!trackable(my_target))
+			continue
+		possible_targets += my_target
+	if(!possible_targets.len)
+		user.visible_message("<span class='notice'>[user]'s pinpointer fails to detect a signal.</span>", "<span class='notice'>Your pinpointer fails to detect a signal.</span>")
+		return
+
+	target = get_closest_target(possible_targets)
+	toggle_on()
+	user.visible_message("<span class='notice'>[user] activates [user.p_their()] pinpointer.</span>", "<span class='notice'>You activate your pinpointer.</span>")
+
+/obj/item/pinpointer/survey_data/proc/get_closest_target(var/list/targets)
+	var/final_target
+	for(var/obj/effect/survey_point/targetee in targets)
+		if(targetee)
+			if(get_dist(src,targetee) < get_dist(src,final_target))
+				final_target = targetee
+	return final_target
+
+/obj/item/pinpointer/survey_data/get_direction_icon(here, there)
+	var/size = ""
+	if(here == there)
+		size = "small"
+	else
+		switch(get_dist(here, there))
+			if(1 to 4)
+				size = "xtrlarge"
+			if(5 to 16)
+				size = "large"
+			//17 through 28 use the normal pinion, "pinondirect"
+			if(29 to INFINITY)
+				size = "small"
+	return "pinondirect[size]"
+
 /obj/item/pinpointer/pair
 	name = "pair pinpointer"
 	desc = "A handheld tracking device that locks onto its other half of the matching pair."

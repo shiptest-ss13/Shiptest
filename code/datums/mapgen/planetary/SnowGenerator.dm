@@ -316,13 +316,13 @@
 	feature_spawn_chance = 0.4
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 4,
-		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 3,
-		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 5,
-		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 0.6,
-		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 0.2,
-		/obj/structure/spawner/ice_moon = 3,
-		/obj/structure/spawner/ice_moon/polarbear = 3,
-		/obj/effect/spawner/lootdrop/anomaly/ice/cave = 1
+		/obj/structure/spawner/ice_moon/demonic_portal/low_threat = 30,
+		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 50,
+		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 6,
+		/obj/structure/spawner/ice_moon/demonic_portal/extreme_threat = 2,
+		/obj/structure/spawner/ice_moon = 30,
+		/obj/structure/spawner/ice_moon/polarbear = 30,
+		/obj/effect/spawner/lootdrop/anomaly/ice/cave = 10
 	)
 
 /datum/biome/cave/volcanic/lava

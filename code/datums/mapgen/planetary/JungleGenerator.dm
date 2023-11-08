@@ -256,6 +256,6 @@
 	)
 	feature_spawn_chance = 2
 	feature_spawn_list = list(
-		/obj/item/rod_of_asclepius = 0.1,
-		/obj/effect/survey_point = 10
+		/obj/item/rod_of_asclepius = 1,
+		/obj/effect/survey_point = 100
 	)

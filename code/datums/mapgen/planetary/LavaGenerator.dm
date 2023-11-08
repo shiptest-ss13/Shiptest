@@ -94,13 +94,13 @@
 		/obj/structure/flora/ash/fireblossom = 1,
 		/obj/structure/flora/ash/puce = 5,
 	)
-	feature_spawn_chance = 0.6
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/survey_point = 3,
-		/obj/structure/flora/rock/hell = 5,
-		/obj/structure/elite_tumor = 1,
-		/obj/structure/geyser/random = 1,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 0.5
+		/obj/effect/survey_point = 30,
+		/obj/structure/flora/rock/hell = 50,
+		/obj/structure/elite_tumor = 10,
+		/obj/structure/geyser/random = 10,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 5
 
 	)
 	mob_spawn_chance = 4
@@ -160,10 +160,10 @@
 	)
 	feature_spawn_chance = 10
 	feature_spawn_list = list(
-		/obj/structure/flora/tree/dead/barren = 1,
-		/obj/structure/flora/tree/dead/tall/grey = 1,
-		/obj/effect/survey_point = 0.5,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 0.1
+		/obj/structure/flora/tree/dead/barren = 10,
+		/obj/structure/flora/tree/dead/tall/grey = 10,
+		/obj/effect/survey_point = 5,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 1
 	)
 
 /datum/biome/lavaland/plains/dense/mixed
