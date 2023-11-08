@@ -232,11 +232,6 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			/obj/item/storage/box/donkpockets/donkpocketberry = 1,
 			/obj/item/storage/box/donkpockets/donkpockethonk = 1,
 			) = 1,
-		list(//Donk-dinner Varieties
-			/obj/item/reagent_containers/food/snacks/ready_donk = 1,
-			/obj/item/reagent_containers/food/snacks/ready_donk/mac_n_cheese = 1,
-			/obj/item/reagent_containers/food/snacks/ready_donk/donkhiladas = 1,
-			) = 1,
 		/obj/item/reagent_containers/food/snacks/monkeycube = 1,
 		/obj/effect/spawner/lootdrop/ration = 1,
 		) = 8,

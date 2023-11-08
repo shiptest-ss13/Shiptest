@@ -107,15 +107,6 @@
 /obj/item/trash/attack(mob/M, mob/living/user)
 	return
 
-/obj/item/trash/peanuts
-	name = "\improper Gallery peanuts packet"
-	desc = "This thread is trash!"
-	icon_state = "peanuts"
-
-/obj/item/trash/cnds
-	name = "\improper C&Ds packet"
-	icon_state = "cnds"
-
 /obj/item/trash/can/food/tomatoes
 	name = "canned San Marzano tomatoes"
 	icon_state = "tomatoescan_empty"
@@ -139,8 +130,3 @@
 /obj/item/trash/spacers_sidekick
 	name = "\improper Spacer's Sidekick packet"
 	icon_state = "spacers_sidekick"
-
-/obj/item/trash/ready_donk
-	name = "empty Ready-donk"
-	desc = "It's been Donk-decimated."
-	icon_state = "ready_donk"
