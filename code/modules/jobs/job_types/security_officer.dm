@@ -168,12 +168,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	l_pocket = null
 	r_pocket = null
 
-/datum/outfit/job/security/minutemen/armed
-	name = "Minuteman (Colonial Minutemen) (Armed)"
-
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/loaded
-
 /datum/outfit/job/security/minutemen/mechpilot
 	name = "Mech Pilot  (Colonial Minutemen)"
 
@@ -182,13 +176,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/restraints/handcuffs=1)
-
-/datum/outfit/job/security/minutemen/bard/armed
-	name = "Biohazard Removal Specialist (Colonial Minutemen) (Armed)"
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
-	belt = /obj/item/storage/belt/military/assault/minutemen
-
-	backpack_contents = list(/obj/item/flamethrower/full/tank=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
 
 /datum/outfit/job/security/inteq
 	name = "IRMG Enforcer (Inteq)"

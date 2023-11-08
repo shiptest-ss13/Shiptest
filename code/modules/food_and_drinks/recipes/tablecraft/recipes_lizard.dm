@@ -117,7 +117,7 @@
 /datum/crafting_recipe/food/picoss_skewers
 	name = "Picoss skewers"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/carpmeat = 2,
+		/obj/item/reagent_containers/food/snacks/fishmeat = 2,
 		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
 		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
 		/obj/item/stack/rods = 1,
@@ -296,7 +296,7 @@
 	name = "BBQ fish flatbread"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
-		/obj/item/reagent_containers/food/snacks/carpmeat = 2,
+		/obj/item/reagent_containers/food/snacks/fishmeat = 2,
 		/datum/reagent/consumable/bbqsauce = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/fish
