@@ -94,7 +94,7 @@
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize(_source)
 	. = ..()
 	source = source
-	addtimer(CALLBACK(src, .proc/death), 100)
+	addtimer(CALLBACK(src, PROC_REF(death)), 100)
 	AddComponent(/datum/component/swarming)
 
 //Legion
@@ -222,7 +222,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), 50)
+	addtimer(CALLBACK(src, PROC_REF(death)), 50)
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
