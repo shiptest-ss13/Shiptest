@@ -773,7 +773,7 @@
 	dir = 5
 	},
 /obj/machinery/computer/atmos_control/tank/air_tank{
-	sensors = list("hairon"="Heron Air Mix Tank")
+	sensors = list("hairon"="Heron  Air  Mix  Tank")
 	},
 /obj/machinery/light_switch{
 	pixel_y = 23
@@ -6617,8 +6617,6 @@
 	req_access_txt = "20"
 	},
 /obj/item/clothing/neck/cloak/cap,
-/obj/item/clothing/gloves/color/captain,
-/obj/item/clothing/head/caphat,
 /obj/item/radio/headset/heads/captain/alt,
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/under/rank/centcom/officer,
@@ -6640,6 +6638,8 @@
 /obj/item/clothing/suit/hooded/wintercoat/centcom,
 /obj/item/clothing/head/beret/centcom_formal,
 /obj/item/stock_parts/cell/gun/upgraded,
+/obj/item/clothing/head/centcom_cap,
+/obj/item/clothing/gloves/combat,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm/dormtwo)
 "yc" = (
@@ -9267,6 +9267,10 @@
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
+"HR" = (
+/obj/item/clothing/gloves/color/captain/nt,
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ship/crew/law_office)
 "HT" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
@@ -9707,7 +9711,7 @@
 	dir = 9
 	},
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
-	sensors = list("heron_plasm"="Heron Plasma Tank")
+	sensors = list("heron_plasm"="Heron  Plasma  Tank")
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -15962,7 +15966,7 @@ oz
 Oa
 QG
 QG
-QG
+HR
 QG
 QG
 Ge
