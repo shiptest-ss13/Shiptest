@@ -22,6 +22,15 @@
 					/obj/item/ammo_box/magazine/m45)
 	cost = 1500
 
+/datum/supply_pack/ammo/m45_speedloader
+	name = ".45 ACP Speedloader Crate"
+	desc = "Contains four .45 ACP speedloaders for revolvers, each containing six rounds."
+	contains = list(/obj/item/ammo_box/c45_speedloader,
+					/obj/item/ammo_box/c45_speedloader,
+					/obj/item/ammo_box/c45_speedloader,
+					/obj/item/ammo_box/c45_speedloader)
+	cost = 1500
+
 /datum/supply_pack/ammo/c38_mag
 	name = ".38 Speedloader Crate"
 	desc = "Contains four .38 speedloaders for revolvers, each containing six rounds."
@@ -122,8 +131,8 @@
 	name = "WT-550 Auto Rifle Exotic Ammo Crate"
 	desc = "Contains one magazine of armor-piercing and one magazine of incendiary ammunition for the WT-550 Auto Rifle. Sadly, our manufacturer discontinued the uranium-tipped bullets."
 	cost = 2500
-	contains = list(/obj/item/ammo_box/magazine/wt550m9/wtap,
-					/obj/item/ammo_box/magazine/wt550m9/wtic)
+	contains = list(/obj/item/ammo_box/magazine/wt550m9/ap,
+					/obj/item/ammo_box/magazine/wt550m9/inc)
 
 /*
 		Rifle ammo

@@ -76,7 +76,7 @@
 /obj/machinery/computer/selling_pad_control/ui_data(mob/user)
 	var/list/data = list()
 	data["points"] = sell_account.account_balance
-	data["pad"] = pad.resolve() ? TRUE : FALSE
+	data["pad"] = pad?.resolve() ? TRUE : FALSE
 	data["sending"] = sending
 	data["status_report"] = status_report
 	return data
@@ -176,7 +176,7 @@
 	status_report = "Sending..."
 	sell_pad.visible_message("<span class='notice'>[sell_pad] starts charging up.</span>")
 	sell_pad.icon_state = "lpad-idle"
-	sending_timer = addtimer(CALLBACK(src,.proc/send),warmup_time, TIMER_STOPPABLE)
+	sending_timer = addtimer(CALLBACK(src, PROC_REF(send)),warmup_time, TIMER_STOPPABLE)
 
 /obj/machinery/computer/selling_pad_control/proc/stop_sending()
 	if(!sending)

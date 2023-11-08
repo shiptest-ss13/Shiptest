@@ -2,14 +2,14 @@
 	name = "sandy floor"
 	icon_state = "sandyfloor"
 
-/obj/effect/turf_decal/weather/snow
-	name = "snowy floor"
-	icon_state = "snowyfloor"
-
-/obj/effect/turf_decal/weather/snow/corner
-	name = "snow corner piece"
+/obj/effect/turf_decal/weather/snow //add a corner decal if you resprite this to look like the other sidings
+	name = "snow siding"
 	icon = 'icons/turf/snow.dmi'
-	icon_state = "snow_corner"
+	icon_state = "snow_side"
+
+/obj/effect/turf_decal/weather/snow/surround
+	name = "surround"
+	icon_state = "snow_surround"
 
 /obj/effect/turf_decal/weather/dirt
 	name = "dirt siding"

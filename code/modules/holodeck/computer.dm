@@ -89,7 +89,6 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 /obj/machinery/computer/holodeck/LateInitialize()//from here linked is populated and the program list is generated. its also set to load the offline program
 	linked = GLOB.areas_by_type[mapped_start_area]
-	bottom_left = locate(linked.x, linked.y, src.z)
 
 	var/area/computer_area = get_area(src)
 	if(istype(computer_area, /area/holodeck))
@@ -99,7 +98,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 	// the following is necessary for power reasons
 	if(!linked)
-		log_world("No matching holodeck area found")
+		log_mapping("No matching holodeck area found")
 		qdel(src)
 		return
 	else if (!offline_program)
@@ -115,6 +114,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 		else
 			linked.power_usage = list(AREA_USAGE_LEN)
 
+	bottom_left = locate(linked.x, linked.y, z)
 	COOLDOWN_START(src, holodeck_cooldown, HOLODECK_CD)
 	generate_program_list()
 	load_program(offline_program,TRUE)
@@ -183,7 +183,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 		var/turf/possible_blacklist = _turf
 		if (possible_blacklist.holodeck_compatible)
 			continue
-		input_blacklist += possible_blacklist
+		input_blacklist[possible_blacklist] = TRUE
 
 ///loads the template whose id string it was given ("offline_program" loads datum/map_template/holodeck/offline)
 /obj/machinery/computer/holodeck/proc/load_program(map_id, force = FALSE, add_delay = TRUE)
@@ -248,7 +248,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 			continue
 
 		atoms.flags_1 |= HOLOGRAM_1
-		RegisterSignal(atoms, COMSIG_PARENT_PREQDELETED, .proc/remove_from_holo_lists)
+		RegisterSignal(atoms, COMSIG_PARENT_PREQDELETED, PROC_REF(remove_from_holo_lists))
 
 		if (isholoeffect(atoms))//activates holo effects and transfers them from the spawned list into the effects list
 			var/obj/effect/holodeck_effect/holo_effect = atoms
@@ -333,7 +333,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 	if(toggleOn)
 		if(last_program && (last_program != offline_program))
-			addtimer(CALLBACK(src,.proc/load_program, last_program, TRUE), 25)
+			addtimer(CALLBACK(src, PROC_REF(load_program), last_program, TRUE), 25)
 		active = TRUE
 	else
 		last_program = program
@@ -342,7 +342,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 /obj/machinery/computer/holodeck/power_change()
 	. = ..()
-	INVOKE_ASYNC(src, .proc/toggle_power, !machine_stat)
+	INVOKE_ASYNC(src, PROC_REF(toggle_power), !machine_stat)
 
 ///shuts down the holodeck and force loads the offline_program
 /obj/machinery/computer/holodeck/proc/emergency_shutdown()

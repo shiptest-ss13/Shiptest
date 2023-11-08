@@ -243,24 +243,25 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		name = "\improper [get_area_name(area, TRUE)] APC"
 		set_machine_stat(machine_stat | MAINT)
 		update_appearance()
-		addtimer(CALLBACK(src, .proc/update), 5)
+		addtimer(CALLBACK(src, PROC_REF(update)), 5)
 
 /obj/machinery/power/apc/Destroy()
 	GLOB.apcs_list -= src
 
 	if(malfai && operating)
 		malfai.malf_picker.processing_time = clamp(malfai.malf_picker.processing_time - 10,0,1000)
-	area.power_light = FALSE
-	area.power_equip = FALSE
-	area.power_environ = FALSE
-	area.power_change()
-	area.poweralert(FALSE, src)
+	if(area)
+		area.power_light = FALSE
+		area.power_equip = FALSE
+		area.power_environ = FALSE
+		area.power_change()
+		area.poweralert(FALSE, src)
 	if(occupier)
 		malfvacate(1)
-	qdel(wires)
-	wires = null
+	if(wires)
+		QDEL_NULL(wires)
 	if(cell)
-		qdel(cell)
+		QDEL_NULL(cell)
 	if(terminal)
 		disconnect_terminal()
 	. = ..()
@@ -306,7 +307,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 
 	make_terminal()
 
-	addtimer(CALLBACK(src, .proc/update), 5)
+	addtimer(CALLBACK(src, PROC_REF(update)), 5)
 
 /obj/machinery/power/apc/examine(mob/user)
 	. = ..()
@@ -1082,7 +1083,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 			for(var/obj/machinery/light/L in area)
 				if(!initial(L.no_emergency)) //If there was an override set on creation, keep that override
 					L.no_emergency = emergency_lights
-					INVOKE_ASYNC(L, /obj/machinery/light/.proc/update, FALSE)
+					INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update), FALSE)
 				CHECK_TICK
 	return 1
 
@@ -1105,7 +1106,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 	to_chat(malf, "<span class='notice'>Beginning override of APC systems. This takes some time, and you cannot perform other actions during the process.</span>")
 	malf.malfhack = src
-	malf.malfhacking = addtimer(CALLBACK(malf, /mob/living/silicon/ai/.proc/malfhacked, src), 600, TIMER_STOPPABLE)
+	malf.malfhacking = addtimer(CALLBACK(malf, TYPE_PROC_REF(/mob/living/silicon/ai, malfhacked), src), 600, TIMER_STOPPABLE)
 
 	var/atom/movable/screen/alert/hackingapc/A
 	A = malf.throw_alert("hackingapc", /atom/movable/screen/alert/hackingapc)
@@ -1128,7 +1129,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	to_chat(malf, "<span class='notice'>Temporarily masking AI subroutines in APC. Expected duration: [duration] seconds</span>")
 
 	malf.malfhack = src
-	malf.malfhacking = addtimer(CALLBACK(src, /obj/machinery/power/apc/proc/malfunhidehack, malf), duration, TIMER_STOPPABLE)
+	malf.malfhacking = addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/power/apc, malfunhidehack), malf), duration, TIMER_STOPPABLE)
 
 	var/atom/movable/screen/alert/hackingapc/A
 	A = malf.throw_alert("hackingapc", /atom/movable/screen/alert/hackingapc)
@@ -1145,7 +1146,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	malf.clear_alert("hackingapc")
 
 	malfhackhide = -1
-	malfhackhidecooldown = addtimer(CALLBACK(src, /obj/machinery/power/apc/proc/malfhiderestore, malf), 600, TIMER_STOPPABLE)
+	malfhackhidecooldown = addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/power/apc, malfhiderestore), malf), 600, TIMER_STOPPABLE)
 
 /obj/machinery/power/apc/proc/malfhiderestore(mob/living/silicon/ai/malf)
 	if(src.machine_stat & BROKEN)
@@ -1493,7 +1494,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	environ = APC_CHANNEL_OFF
 	update_appearance()
 	update()
-	addtimer(CALLBACK(src, .proc/reset, APC_RESET_EMP), 600)
+	addtimer(CALLBACK(src, PROC_REF(reset), APC_RESET_EMP), 600)
 
 /obj/machinery/power/apc/blob_act(obj/structure/blob/B)
 	set_broken()
@@ -1519,7 +1520,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 	if(cell && cell.charge>=20)
 		cell.use(20)
-		INVOKE_ASYNC(src, .proc/break_lights)
+		INVOKE_ASYNC(src, PROC_REF(break_lights))
 
 /obj/machinery/power/apc/proc/break_lights()
 	for(var/obj/machinery/light/L in area)

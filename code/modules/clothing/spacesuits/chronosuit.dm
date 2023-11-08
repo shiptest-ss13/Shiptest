@@ -65,6 +65,7 @@
 
 /obj/item/clothing/suit/space/chronos/Destroy()
 	dropped()
+	QDEL_NULL(teleport_now)
 	return ..()
 
 /obj/item/clothing/suit/space/chronos/emp_act(severity)
@@ -141,12 +142,12 @@
 		user.Stun(INFINITY)
 
 		animate(user, color = "#00ccee", time = 3)
-		phase_timer_id = addtimer(CALLBACK(src, .proc/phase_2, user, to_turf, phase_in_ds), 3, TIMER_STOPPABLE)
+		phase_timer_id = addtimer(CALLBACK(src, PROC_REF(phase_2), user, to_turf, phase_in_ds), 3, TIMER_STOPPABLE)
 
 /obj/item/clothing/suit/space/chronos/proc/phase_2(mob/living/carbon/human/user, turf/to_turf, phase_in_ds)
 	if(teleporting && activated && user)
 		animate(user, color = list(0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 1,1,1,0), time = 2)
-		phase_timer_id = addtimer(CALLBACK(src, .proc/phase_3, user, to_turf, phase_in_ds), 2, TIMER_STOPPABLE)
+		phase_timer_id = addtimer(CALLBACK(src, PROC_REF(phase_3), user, to_turf, phase_in_ds), 2, TIMER_STOPPABLE)
 	else
 		finish_chronowalk(user, to_turf)
 
@@ -154,14 +155,14 @@
 	if(teleporting && activated && user)
 		user.forceMove(to_turf)
 		animate(user, color = "#00ccee", time = phase_in_ds)
-		phase_timer_id = addtimer(CALLBACK(src, .proc/phase_4, user, to_turf), phase_in_ds, TIMER_STOPPABLE)
+		phase_timer_id = addtimer(CALLBACK(src, PROC_REF(phase_4), user, to_turf), phase_in_ds, TIMER_STOPPABLE)
 	else
 		finish_chronowalk(user, to_turf)
 
 /obj/item/clothing/suit/space/chronos/proc/phase_4(mob/living/carbon/human/user, turf/to_turf)
 	if(teleporting && activated && user)
 		animate(user, color = "#ffffff", time = 3)
-		phase_timer_id = addtimer(CALLBACK(src, .proc/finish_chronowalk, user, to_turf), 3, TIMER_STOPPABLE)
+		phase_timer_id = addtimer(CALLBACK(src, PROC_REF(finish_chronowalk), user, to_turf), 3, TIMER_STOPPABLE)
 	else
 		finish_chronowalk(user, to_turf)
 
@@ -331,6 +332,10 @@
 	button_icon_state = "chrono_phase"
 	check_flags = AB_CHECK_CONSCIOUS //|AB_CHECK_INSIDE
 	var/obj/item/clothing/suit/space/chronos/chronosuit = null
+
+/datum/action/innate/chrono_teleport/Destroy()
+	chronosuit = null
+	return ..()
 
 /datum/action/innate/chrono_teleport/IsAvailable()
 	return (chronosuit && chronosuit.activated && chronosuit.camera && !chronosuit.teleporting)

@@ -39,7 +39,6 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_markings, GLOB.moth_markings_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_legs, GLOB.spider_legs_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_spinneret, GLOB.spider_spinneret_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_mandibles, GLOB.spider_mandibles_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_feathers_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_body_feathers, GLOB.kepori_body_feathers_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_tail_feathers, GLOB.kepori_tail_feathers_list)
@@ -75,6 +74,13 @@
 		var/datum/material/D = new path()
 		GLOB.materials_list[D.id] = D
 	sortList(GLOB.materials_list, /proc/cmp_typepaths_asc)
+
+	//Default Jobs
+	for(var/path in subtypesof(/datum/job))
+		var/datum/job/new_job = new path()
+		GLOB.occupations += new_job
+		GLOB.name_occupations[new_job.name] = new_job
+		GLOB.type_occupations[path] = new_job
 
 	// Keybindings
 	init_keybindings()

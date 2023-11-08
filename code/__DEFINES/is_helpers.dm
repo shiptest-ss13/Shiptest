@@ -4,6 +4,8 @@
 
 #define isatom(A) (isloc(A))
 
+#define isdatum(thing) (istype(thing, /datum))
+
 #define isweakref(D) (istype(D, /datum/weakref))
 
 //Turfs
@@ -168,6 +170,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define islandmine(A) (istype(A, /obj/effect/mine))
 
+#define issupplypod(A) (istype(A, /obj/structure/closet/supplypod))
+
 #define isammocasing(A) (istype(A, /obj/item/ammo_casing))
 
 #define isidcard(I) (istype(I, /obj/item/card/id))
@@ -226,6 +230,8 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
 #define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
+
+#define isProbablyWallMounted(O) (O.pixel_x > 20 || O.pixel_x < -20 || O.pixel_y > 20 || O.pixel_y < -20)
 
 #define isbook(O) (is_type_in_typecache(O, GLOB.book_types))
 

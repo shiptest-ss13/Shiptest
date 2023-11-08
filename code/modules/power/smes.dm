@@ -189,8 +189,6 @@
 /obj/machinery/power/smes/Destroy()
 	if(SSticker.IsRoundInProgress())
 		var/turf/T = get_turf(src)
-		message_admins("SMES deleted at [ADMIN_VERBOSEJMP(T)]")
-		log_game("SMES deleted at [AREACOORD(T)]")
 		investigate_log("<font color='red'>deleted</font> at [AREACOORD(T)]", INVESTIGATE_SINGULO)
 	if(terminal)
 		disconnect_terminal()
@@ -442,7 +440,7 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	emp_timer = addtimer(CALLBACK(src, .proc/emp_end, output_attempt), SMESEMPTIME, TIMER_UNIQUE | TIMER_OVERRIDE)
+	emp_timer = addtimer(CALLBACK(src, PROC_REF(emp_end), output_attempt), SMESEMPTIME, TIMER_UNIQUE | TIMER_OVERRIDE)
 	is_emped = TRUE
 	input_attempt = rand(0,1)
 	inputting = input_attempt

@@ -20,7 +20,7 @@
 /datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	scanner = spawn_bound(/obj/machinery/mission_scanner, accept_loc, VARSET_CALLBACK(src, scanner, null))
-	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, .proc/ship_moved)
+	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, PROC_REF(ship_moved))
 
 /datum/mission/research/Destroy()
 	scanner = null
@@ -56,7 +56,7 @@
 	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return
 	num_current++
-
+/* commented out until ion storms aren't literal torture
 /datum/mission/research/ion
 	name = "Ion storm research mission"
 	desc = "We require data on the behavior of ion storms in the system for an ongoing study. \
@@ -64,7 +64,7 @@
 			It must be powered to collect the data."
 	value = 3500
 	objective_type = /datum/overmap/event/emp
-
+*/
 /datum/mission/research/meteor
 	name = "Asteroid field research mission"
 	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \

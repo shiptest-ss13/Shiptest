@@ -33,8 +33,17 @@ SUBSYSTEM_DEF(air)
 	var/list/expansion_queue = list()
 	var/list/deferred_airs = list()
 	var/max_deferred_airs = 0
+
+	///List of all currently processing atmos machinery that doesn't interact with the air around it
 	var/list/obj/machinery/atmos_machinery = list()
+	///List of all currently processing atmos machinery that interacts with its loc's air
 	var/list/obj/machinery/atmos_air_machinery = list()
+
+	///Atmos machinery that will be added to atmos_machinery once maploading is finished
+	var/list/obj/machinery/deferred_atmos_machinery = list()
+	///Air atmos machinery that will be added to atmos_air_machinery once maploading is finished
+	var/list/obj/machinery/deferred_atmos_air_machinery = list()
+
 	var/list/pipe_init_dirs_cache = list()
 
 	//atmos singletons
@@ -66,8 +75,6 @@ SUBSYSTEM_DEF(air)
 	// Excited group processing will try to equalize groups with total pressure difference less than this amount.
 	var/excited_group_pressure_goal = 1
 
-
-	var/is_test_loading = FALSE
 
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
@@ -111,13 +118,13 @@ SUBSYSTEM_DEF(air)
 /datum/controller/subsystem/air/proc/auxtools_update_reactions()
 
 /proc/reset_all_air()
-	SSair.can_fire = 0
+	SSair.can_fire = FALSE
 	message_admins("Air reset begun.")
 	for(var/turf/open/T in world)
 		T.Initalize_Atmos(0)
 		CHECK_TICK
 	message_admins("Air reset done.")
-	SSair.can_fire = 1
+	SSair.can_fire = TRUE
 
 /datum/controller/subsystem/air/proc/thread_running()
 	return FALSE
@@ -159,8 +166,7 @@ SUBSYSTEM_DEF(air)
 	// This is only machinery like filters, mixers that don't interact with air
 	if(currentpart == SSAIR_ATMOSMACHINERY)
 		timer = TICK_USAGE_REAL
-		if(!is_test_loading)
-			process_atmos_machinery(resumed)
+		process_atmos_machinery(resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -197,8 +203,7 @@ SUBSYSTEM_DEF(air)
 		currentpart = SSAIR_ATMOSMACHINERY_AIR
 	if(currentpart == SSAIR_ATMOSMACHINERY_AIR)
 		timer = TICK_USAGE_REAL
-		if(!is_test_loading)
-			process_atmos_air_machinery(resumed)
+		process_atmos_air_machinery(resumed)
 		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
@@ -284,14 +289,20 @@ SUBSYSTEM_DEF(air)
  * Arguments:
  * * machine - The machine to start processing. Can be any /obj/machinery.
  */
-/datum/controller/subsystem/air/proc/start_processing_machine(obj/machinery/machine)
+/datum/controller/subsystem/air/proc/start_processing_machine(obj/machinery/machine, mapload)
 	if(machine.atmos_processing)
 		return
 	machine.atmos_processing = TRUE
 	if(machine.interacts_with_air)
-		atmos_air_machinery += machine
+		if(mapload)
+			deferred_atmos_air_machinery += machine
+		else
+			atmos_air_machinery += machine
 	else
-		atmos_machinery += machine
+		if(mapload)
+			deferred_atmos_machinery += machine
+		else
+			atmos_machinery += machine
 
 /**
  * Removes a given machine to the processing system for SSAIR_ATMOSMACHINERY processing.
@@ -305,8 +316,10 @@ SUBSYSTEM_DEF(air)
 	machine.atmos_processing = FALSE
 	if(machine.interacts_with_air)
 		atmos_air_machinery -= machine
+		deferred_atmos_air_machinery -= machine
 	else
 		atmos_machinery -= machine
+		deferred_atmos_machinery -= machine
 
 	// If we're currently processing atmos machines, there's a chance this machine is in
 	// the currentrun list, which is a cache of atmos_machinery. Remove it from that list
@@ -396,12 +409,8 @@ SUBSYSTEM_DEF(air)
 			if(item in net.members)
 				continue
 			if(item.parent)
-				var/static/pipenetwarnings = 10
-				if(pipenetwarnings > 0)
-					log_mapping("build_pipeline(): [item.type] added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf) around [AREACOORD(item)].")
-					pipenetwarnings--
-				if(pipenetwarnings == 0)
-					log_mapping("build_pipeline(): further messages about pipenets will be suppressed")
+				log_mapping("Doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
+				item.stack_trace("Possible doubled atmosmachine")
 
 			net.members += item
 			border += item
@@ -469,7 +478,7 @@ SUBSYSTEM_DEF(air)
 		if(!M)
 			atmos_air_machinery -= M
 		if(M.process_atmos(seconds) == PROCESS_KILL)
-			atmos_air_machinery.Remove(M)
+			stop_processing_machine(M)
 		if(MC_TICK_CHECK)
 			return
 
@@ -569,6 +578,14 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/StopLoadingMap()
 	map_loading = FALSE
+
+	if(length(deferred_atmos_machinery))
+		atmos_machinery += deferred_atmos_machinery
+		deferred_atmos_machinery.Cut()
+
+	if(length(deferred_atmos_air_machinery))
+		atmos_air_machinery += deferred_atmos_air_machinery
+		deferred_atmos_air_machinery.Cut()
 
 /datum/controller/subsystem/air/proc/setup_allturfs()
 	var/list/turfs_to_init = block(locate(1, 1, 1), locate(world.maxx, world.maxy, world.maxz))

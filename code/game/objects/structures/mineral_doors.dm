@@ -57,7 +57,7 @@
 		return
 	return TryToSwitchState(user)
 
-/obj/structure/mineral_door/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/mineral_door/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(istype(mover, /obj/effect/beam))
 		return !opacity
@@ -99,7 +99,7 @@
 	isSwitchingStates = FALSE
 
 	if(close_delay != -1)
-		addtimer(CALLBACK(src, .proc/Close), close_delay)
+		addtimer(CALLBACK(src, PROC_REF(Close)), close_delay)
 
 /obj/structure/mineral_door/proc/Close()
 	if(isSwitchingStates || !door_opened)

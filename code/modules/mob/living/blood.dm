@@ -9,7 +9,7 @@
 		return
 	else
 		bleedsuppress = TRUE
-		addtimer(CALLBACK(src, .proc/resume_bleeding), amount)
+		addtimer(CALLBACK(src, PROC_REF(resume_bleeding)), amount)
 
 /mob/living/carbon/human/proc/resume_bleeding()
 	bleedsuppress = 0
@@ -179,7 +179,6 @@
 	if(blood_id == /datum/reagent/blood) //actual blood reagent
 		var/blood_data = list()
 		//set the blood data
-		blood_data["donor"] = src
 		blood_data["viruses"] = list()
 
 		for(var/thing in diseases)
@@ -280,6 +279,8 @@
 		break
 	if(!B)
 		B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+	if(QDELETED(B)) //Give it up
+		return
 	B.bloodiness = min((B.bloodiness + BLOOD_AMOUNT_PER_DECAL), BLOOD_POOL_MAX)
 	B.transfer_mob_blood_dna(src) //give blood info to the blood decal.
 	if(temp_blood_DNA)

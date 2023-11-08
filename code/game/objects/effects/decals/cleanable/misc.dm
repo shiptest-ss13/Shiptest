@@ -268,7 +268,7 @@
 
 /obj/effect/decal/cleanable/squid_ink/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/slippery, 5SECONDS, NO_SLIP_WHEN_WALKING, CALLBACK(src, .proc/AfterSlip), 3SECONDS)
+	AddComponent(/datum/component/slippery, 5SECONDS, NO_SLIP_WHEN_WALKING, CALLBACK(src, PROC_REF(AfterSlip)), 3SECONDS)
 
 /obj/effect/decal/cleanable/squid_ink/proc/AfterSlip(mob/living/M)
 	M.AddComponent(/datum/component/outline)

@@ -1,8 +1,6 @@
 /datum/job/chief_engineer
 	name = "Chief Engineer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
@@ -116,6 +114,13 @@
 	belt = /obj/item/storage/belt/utility/full
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/job/ce/nt
+	name = "Chief Engineer (NT)"
+
+	head = /obj/item/clothing/head/beret/ce
+	belt = /obj/item/storage/belt/utility/full
+	suit = /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/ce/frontiersmen
 	name = "Head Carpenter (Frontiersmen)"

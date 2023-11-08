@@ -12,7 +12,7 @@
 
 /obj/structure/speaking_tile/Initialize()
 	. = ..()
-	var/json_file = file("data/npc_saves/Poly.json")
+	var/json_file = file("data/npc_saves/Polly.json")
 	if(!fexists(json_file))
 		return
 	var/list/json = json_decode(file2text(json_file))
@@ -45,7 +45,7 @@
 		if(9)
 			SpeakPeace(list("Alright maybe that's <b>too</b> boring.", "I can't keep manually typing these lines out though.", "It's hard to explain but the code structure I'm using is kind of terrible."))
 		if(10)
-			SpeakPeace(list("Oh I have an idea!", "Lets outsource this endless banter to Poly!", "Then you'll be able to keep listening to this without getting bored!"))
+			SpeakPeace(list("Oh I have an idea!", "Lets outsource this endless banter to Polly!", "Then you'll be able to keep listening to this without getting bored!"))
 			if(isnull(shenanigans) || !shenanigans.len)
 				shenanigans = list("Except the poly file is missing...")
 		if(11 to 14, 16 to 50, 52 to 99, 103 to 107, 109 to 203, 205 to 249, 252 to 665, 667 to 999, 1001 to 5642)
@@ -55,7 +55,7 @@
 		if(15)
 			SpeakPeace(list("See? Isn't this fun?","Now you can mash this for hours without getting bored.","Anyway I'll leave you it."))
 		if(51)
-			SpeakPeace(list("The fun never ends around here.", "The Poly text files stores up to 500 statements.", "But you've probably heard a few repeats by now."))
+			SpeakPeace(list("The fun never ends around here.", "The Polly text files stores up to 500 statements.", "But you've probably heard a few repeats by now."))
 		if(100)
 			SpeakPeace(list("And that's a solid hundred.", "Good hustle I guess.", "You've probably heard a lot of repeats by now."))
 		if(101)
@@ -129,7 +129,7 @@
 	var/newcolor = color2hex(pick(10;"green", 5;"blue", 3;"red", 1;"purple"))
 	add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -138,7 +138,7 @@
 	if(!ismob(AM))
 		return
 	var/mob/M = AM
-	INVOKE_ASYNC(src, .proc/do_hand_stuff, M)
+	INVOKE_ASYNC(src, PROC_REF(do_hand_stuff), M)
 
 /obj/item/rupee/proc/do_hand_stuff(mob/M)
 	if(M.put_in_hands(src))

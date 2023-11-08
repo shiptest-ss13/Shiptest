@@ -90,6 +90,7 @@
 
 /mob/living/silicon/pai/Destroy()
 	QDEL_NULL(internal_instrument)
+	QDEL_NULL(laws)
 	if(cable)
 		QDEL_NULL(cable)
 	if (loc != card)
@@ -120,12 +121,12 @@
 		aicamera = new /obj/item/camera/siliconcam/ai_camera(src)
 		aicamera.flash_enabled = TRUE
 
-	addtimer(CALLBACK(src, .proc/pdaconfig), 5)
+	addtimer(CALLBACK(src, PROC_REF(pdaconfig)), 5)
 
 	. = ..()
 
 	emittersemicd = TRUE
-	addtimer(CALLBACK(src, .proc/emittercool), 600)
+	addtimer(CALLBACK(src, PROC_REF(emittercool)), 600)
 
 	if(!holoform)
 		ADD_TRAIT(src, TRAIT_IMMOBILIZED, PAI_FOLDED)

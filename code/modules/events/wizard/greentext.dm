@@ -35,7 +35,7 @@
 /obj/item/greentext/Initialize(mapload)
 	. = ..()
 	GLOB.poi_list |= src
-	roundend_callback = CALLBACK(src,.proc/check_winner)
+	roundend_callback = CALLBACK(src, PROC_REF(check_winner))
 	SSticker.OnRoundend(roundend_callback)
 
 /obj/item/greentext/equipped(mob/living/user as mob)
@@ -83,8 +83,9 @@
 	if(!(resistance_flags & ON_FIRE) && !force)
 		return QDEL_HINT_LETMELIVE
 
-	SSticker.round_end_events -= roundend_callback
 	GLOB.poi_list.Remove(src)
+	LAZYREMOVE(SSticker.round_end_events, roundend_callback)
+	roundend_callback = null //This ought to free the callback datum, and prevent us from harddeling
 	for(var/i in GLOB.player_list)
 		var/mob/M = i
 		var/message = "<span class='warning'>A dark temptation has passed from this world"

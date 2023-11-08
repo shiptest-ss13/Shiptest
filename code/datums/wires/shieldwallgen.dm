@@ -28,7 +28,7 @@
 	switch(wire)
 		if(WIRE_SHOCK)
 			generator.shocked = !generator.shocked
-			addtimer(CALLBACK(generator, /obj/machinery/autolathe.proc/reset, wire), 60)
+			addtimer(CALLBACK(generator, TYPE_PROC_REF(/obj/machinery/autolathe, reset), wire), 60)
 		if(WIRE_ACTIVATE)
 			generator.toggle()
 		if(WIRE_DISABLE)

@@ -1,8 +1,6 @@
 /datum/job/officer
 	name = "Security Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	minimal_player_age = 7
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
 
@@ -89,7 +87,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1) //WS edit - security rearming
+	backpack_contents = null //WS edit - security rearming // SHIPTEST EDIT - security re-disarming. certified whitesands moment.
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -167,7 +165,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/job/security/minutemen/armed
 	name = "Minuteman (Colonial Minutemen) (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen/loaded
 
 /datum/outfit/job/security/minutemen/mechpilot
@@ -177,7 +175,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/restraints/handcuffs=1)
 
 /datum/outfit/job/security/inteq
 	name = "IRMG Enforcer (Inteq)"
@@ -192,8 +190,10 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	gloves = /obj/item/clothing/gloves/combat
 
+	backpack = /obj/item/storage/backpack/messenger/inteq
+	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security)
+	backpack_contents = list(/obj/item/pda/security)
 
 /datum/outfit/job/security/inteq/beluga
 	name = "IRMG Enforcer (Beluga)"
@@ -208,6 +208,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = null
 	gloves = /obj/item/clothing/gloves/color/evening
 
+	backpack = /obj/item/storage/backpack/messenger/inteq
+	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/pda/security)
 
@@ -224,6 +226,52 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	alt_uniform = null
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+
+/datum/outfit/job/security/nanotrasen/ert
+	name = "ERT Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = null
+	backpack = /obj/item/storage/backpack/ert/security
+	belt = /obj/item/storage/belt/military
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+
+/datum/outfit/job/security/nanotrasen/ert/engi
+	name = "ERT Engineering Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = null
+	backpack = /obj/item/storage/backpack/ert/engineer
+	belt = /obj/item/storage/belt/utility/full/ert
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+	accessory = /obj/item/clothing/accessory/armband/engine
+	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
+
+/datum/outfit/job/security/nanotrasen/ert/med
+	name = "ERT Medical Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = /obj/item/clothing/head/beret/med
+	backpack = /obj/item/storage/backpack/ert/medical
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+	accessory = /obj/item/clothing/accessory/armband/med
+	glasses = /obj/item/clothing/glasses/hud/health/night
+
+/datum/outfit/job/security/nanotrasen/mech_pilot
+	name = "Mech Pilot (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
+	head = /obj/item/clothing/head/beret/sec/officer
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
 
 /datum/outfit/job/security/roumain
 	name = "Hunter (Saint-Roumain Militia)"

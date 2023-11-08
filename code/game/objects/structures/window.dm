@@ -30,6 +30,8 @@
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.4
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/structure/window/examine(mob/user)
 	. = ..()
 	if(flags_1 & NODECONSTRUCT_1)
@@ -66,7 +68,7 @@
 	explosion_block = EXPLOSION_BLOCK_PROC
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 
 	if (flags_1 & ON_BORDER_1)
@@ -74,7 +76,7 @@
 
 /obj/structure/window/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, .proc/can_be_rotated),CALLBACK(src,.proc/after_rotation))
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, PROC_REF(can_be_rotated)),CALLBACK(src, PROC_REF(after_rotation)))
 
 /obj/structure/window/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
@@ -98,7 +100,7 @@
 	if(current_size >= STAGE_FIVE)
 		deconstruct(FALSE)
 
-/obj/structure/window/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/window/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
@@ -106,7 +108,7 @@
 	if(fulltile)
 		return FALSE
 
-	if(get_dir(loc, target) == dir)
+	if(border_dir == dir)
 		return FALSE
 
 	if(istype(mover, /obj/structure/window))
@@ -190,13 +192,13 @@
 	if(!(flags_1&NODECONSTRUCT_1) && !(reinf && state >= RWINDOW_FRAME_BOLTED))
 		if(I.tool_behaviour == TOOL_SCREWDRIVER)
 			to_chat(user, "<span class='notice'>You begin to [anchored ? "unscrew the window from":"screw the window to"] the floor...</span>")
-			if(I.use_tool(src, user, decon_speed, volume = 75, extra_checks = CALLBACK(src, .proc/check_anchored, anchored)))
+			if(I.use_tool(src, user, decon_speed, volume = 75, extra_checks = CALLBACK(src, PROC_REF(check_anchored), anchored)))
 				set_anchored(!anchored)
 				to_chat(user, "<span class='notice'>You [anchored ? "fasten the window to":"unfasten the window from"] the floor.</span>")
 			return
 		else if(I.tool_behaviour == TOOL_WRENCH && !anchored)
 			to_chat(user, "<span class='notice'>You begin to disassemble [src]...</span>")
-			if(I.use_tool(src, user, decon_speed, volume = 75, extra_checks = CALLBACK(src, .proc/check_state_and_anchored, state, anchored)))
+			if(I.use_tool(src, user, decon_speed, volume = 75, extra_checks = CALLBACK(src, PROC_REF(check_state_and_anchored), state, anchored)))
 				var/obj/item/stack/sheet/G = new glass_type(user.loc, glass_amount)
 				G.add_fingerprint(user)
 				playsound(src, 'sound/items/Deconstruct.ogg', 50, TRUE)
@@ -205,7 +207,7 @@
 			return
 		else if(I.tool_behaviour == TOOL_CROWBAR && reinf && (state == WINDOW_OUT_OF_FRAME) && anchored)
 			to_chat(user, "<span class='notice'>You begin to lever the window into the frame...</span>")
-			if(I.use_tool(src, user, 100, volume = 75, extra_checks = CALLBACK(src, .proc/check_state_and_anchored, state, anchored)))
+			if(I.use_tool(src, user, 100, volume = 75, extra_checks = CALLBACK(src, PROC_REF(check_state_and_anchored), state, anchored)))
 				state = RWINDOW_SECURE
 				to_chat(user, "<span class='notice'>You pry the window into the frame.</span>")
 			return
@@ -238,18 +240,24 @@
 /obj/structure/window/proc/check_state_and_anchored(checked_state, checked_anchored)
 	return check_state(checked_state) && check_anchored(checked_anchored)
 
+
 /obj/structure/window/mech_melee_attack(obj/mecha/M)
 	if(!can_be_reached())
 		return
 	..()
 
 /obj/structure/window/proc/can_be_reached(mob/user)
-	if(!fulltile)
-		if(get_dir(user,src) & dir)
-			for(var/obj/O in loc)
-				if(!O.CanPass(user, user.loc, 1))
-					return 0
-	return 1
+	if(fulltile)
+		return TRUE
+	var/checking_dir = get_dir(user, src)
+	if(!(checking_dir & dir))
+		return TRUE // Only windows on the other side may be blocked by other things.
+	checking_dir = REVERSE_DIR(checking_dir)
+	for(var/obj/blocker in loc)
+		if(!blocker.CanPass(user, checking_dir))
+			return FALSE
+	return TRUE
+
 
 /obj/structure/window/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
@@ -403,7 +411,7 @@
 				if(I.use_tool(src, user, 150, volume = 100))
 					to_chat(user, "<span class='notice'>The security bolts are glowing white hot and look ready to be removed.</span>")
 					state = RWINDOW_BOLTS_HEATED
-					addtimer(CALLBACK(src, .proc/cool_bolts), 300)
+					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -532,7 +540,7 @@
 				if(I.use_tool(src, user, 180, volume = 100))
 					to_chat(user, "<span class='notice'>The security screws are glowing white hot and look ready to be removed.</span>")
 					state = RWINDOW_BOLTS_HEATED
-					addtimer(CALLBACK(src, .proc/cool_bolts), 300)
+					addtimer(CALLBACK(src, PROC_REF(cool_bolts)), 300)
 				return
 		if(RWINDOW_BOLTS_HEATED)
 			if(I.tool_behaviour == TOOL_SCREWDRIVER)

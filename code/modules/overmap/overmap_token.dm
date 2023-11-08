@@ -37,7 +37,7 @@
 	update_appearance()
 
 /obj/overmap/Destroy(force)
-	if(parent)
+	if(!QDELETED(parent))
 		stack_trace("attempted to qdel a token that still has a parent")
 		return QDEL_HINT_LETMELIVE
 	if(render_map)

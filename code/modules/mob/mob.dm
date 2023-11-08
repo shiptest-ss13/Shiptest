@@ -16,13 +16,11 @@
  *
  * qdels any client colours in place on this mob
  *
- * Unsets the currently active machine
- *
- * Clears roundstart quirks list
+ * Clears any refs to the mob inside its current location
  *
  * Ghostizes the client attached to this mob
  *
- * Removes references to the mob from its former mind, and vice versa
+ * If our mind still exists, clear its current var to prevent harddels
  *
  * Parent call
  */
@@ -47,12 +45,10 @@
 	QDEL_LIST(client_colours)
 	active_storage = null
 	unset_machine()
-	ghostize()
-	if(mind)
-		mind.handle_mob_deletion(src)
-	if(istype(loc, /atom/movable))
-		var/atom/movable/movable_loc = loc
-		LAZYREMOVE(movable_loc.client_mobs_in_contents, src)
+	clear_client_in_contents() //Gotta do this here as well as Logout, since client will be null by the time it gets there, cause of that ghostize
+	ghostize() //False, since we're deleting it currently
+	if(mind?.current == src) //Let's just be safe yeah? This will occasionally be cleared, but not always. Can't do it with ghostize without changing behavior
+		mind.set_current(null)
 	return ..()
 
 
@@ -453,32 +449,36 @@
  * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
  * for why this isn't atom/verb/examine()
  */
-/mob/verb/examinate(atom/A as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
+/mob/verb/examinate(atom/examinify as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
 	set name = "Examine"
 	set category = "IC"
 
-	if(isturf(A) && !(sight & SEE_TURFS) && !(A in view(client ? client.view : world.view, src)))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(run_examinate), examinify))
+
+/mob/proc/run_examinate(atom/examinify)
+
+	if(isturf(examinify) && !(sight & SEE_TURFS) && !(examinify in view(client ? client.view : world.view, src)))
 		// shift-click catcher may issue examinate() calls for out-of-sight turfs
 		return
 
-	if(is_blind() && !blind_examine_check(A)) //blind people see things differently (through touch)
+	if(is_blind() && !blind_examine_check(examinify)) //blind people see things differently (through touch)
 		return
 
-	face_atom(A)
+	face_atom(examinify)
 
 	var/list/result
 	if(client)
 		LAZYINITLIST(client.recent_examines)
-		if(isnull(client.recent_examines[A]) || client.recent_examines[A] < world.time)
-			result = A.examine(src)
-			client.recent_examines[A] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(A, COMSIG_PARENT_QDELETING, .proc/clear_from_recent_examines, override=TRUE) // to flush the value if deleted early
-			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, A), EXAMINE_MORE_TIME)
-			handle_eye_contact(A)
+		if(isnull(client.recent_examines[examinify]) || client.recent_examines[examinify] < world.time)
+			result = examinify.examine(src)
+			client.recent_examines[examinify] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
+			RegisterSignal(examinify, COMSIG_PARENT_QDELETING, PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
+			addtimer(CALLBACK(src, PROC_REF(clear_from_recent_examines), examinify), EXAMINE_MORE_TIME)
+			handle_eye_contact(examinify)
 		else
-			result = A.examine_more(src)
+			result = examinify.examine_more(src)
 	else
-		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
+		result = examinify.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
 	if(result.len)
 		for(var/i in 1 to (length(result) - 1))
@@ -486,7 +486,7 @@
 
 	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
 
-	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
+	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
 
 /mob/proc/blind_examine_check(atom/examined_thing)
@@ -559,11 +559,11 @@
 	// check to see if their face is blocked or, if not, a signal blocks it
 	if(examined_mob.is_face_visible() && SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>You make eye contact with [examined_mob].</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	if(is_face_visible() && SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), examined_mob, msg), 3)
 
 
 ///Can this mob resist (default FALSE)
@@ -608,6 +608,10 @@
 	set category = "Object"
 	set src = usr
 
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_mode)))
+
+///proc version to finish /mob/verb/mode() execution. used in case the proc needs to be queued for the tick after its first called
+/mob/proc/execute_mode()
 	if(ismecha(loc))
 		return
 
@@ -617,6 +621,22 @@
 	var/obj/item/I = get_active_held_item()
 	if(I)
 		I.attack_self(src)
+		update_inv_hands()
+
+/mob/verb/do_unique_action()
+	set name = "Do Unique Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		I.unique_action(src)
 		update_inv_hands()
 
 /**
@@ -1075,6 +1095,14 @@
 		return LAZYLEN(match_list)
 	return FALSE
 
+/mob/proc/update_joined_player_list(newname, oldname)
+	if(newname == oldname)
+		return
+	if(oldname)
+		GLOB.joined_player_list -= oldname
+	if(newname)
+		GLOB.joined_player_list[newname] = TRUE
+
 
 /**
  * Fully update the name of a mob
@@ -1089,6 +1117,9 @@
 		return 0
 
 	log_played_names(ckey,newname)
+
+	if(GLOB.joined_player_list[oldname])
+		update_joined_player_list(newname, oldname)
 
 	real_name = newname
 	name = newname
@@ -1164,7 +1195,8 @@
 /mob/proc/update_mouse_pointer()
 	if(!client)
 		return
-	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
+	if(client.mouse_pointer_icon != initial(client.mouse_pointer_icon))//only send changes to the client if theyre needed
+		client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
 	if(examine_cursor_icon && client.keys_held["Shift"]) //mouse shit is hardcoded, make this non hard-coded once we make mouse modifiers bindable
 		client.mouse_pointer_icon = examine_cursor_icon
 	if(istype(loc, /obj/vehicle/sealed))
@@ -1174,6 +1206,11 @@
 	if(client.mouse_override_icon)
 		client.mouse_pointer_icon = client.mouse_override_icon
 
+/mob/proc/update_names_joined_list(new_name, old_name)
+	if(old_name)
+		GLOB.real_names_joined -= old_name
+	if(new_name)
+		GLOB.real_names_joined[new_name] = TRUE
 
 ///This mob is abile to read books
 /mob/proc/is_literate()
@@ -1349,3 +1386,64 @@
 /// Used for typing indicator, relevant on /living level
 /mob/proc/set_typing_indicator(state)
 	return
+
+/mob/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if(NAMEOF(src, control_object))
+			var/obj/O = var_value
+			if(!istype(O) || (O.obj_flags & DANGEROUS_POSSESSION))
+				return FALSE
+		if(NAMEOF(src, machine))
+			set_machine(var_value)
+			. =  TRUE
+		if(NAMEOF(src, focus))
+			set_focus(var_value)
+			. =  TRUE
+		if(NAMEOF(src, nutrition))
+			set_nutrition(var_value)
+			. =  TRUE
+		if(NAMEOF(src, stat))
+			set_stat(var_value)
+			. =  TRUE
+		if(NAMEOF(src, dizziness))
+			set_dizziness(var_value)
+			. =  TRUE
+		if(NAMEOF(src, eye_blind))
+			set_blindness(var_value)
+			. =  TRUE
+		if(NAMEOF(src, eye_blurry))
+			set_blurriness(var_value)
+			. =  TRUE
+
+	if(!isnull(.))
+		datum_flags |= DF_VAR_EDITED
+		return
+
+	var/slowdown_edit = (var_name == NAMEOF(src, cached_multiplicative_slowdown))
+	var/diff
+	if(slowdown_edit && isnum(cached_multiplicative_slowdown) && isnum(var_value))
+		remove_movespeed_modifier(/datum/movespeed_modifier/admin_varedit)
+		diff = var_value - cached_multiplicative_slowdown
+
+	. = ..()
+
+	if(. && slowdown_edit && isnum(diff))
+		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/admin_varedit, multiplicative_slowdown = diff)
+
+/mob/proc/set_active_storage(new_active_storage)
+	if(active_storage)
+		UnregisterSignal(active_storage, COMSIG_PARENT_QDELETING)
+	active_storage = new_active_storage
+	if(active_storage)
+		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, PROC_REF(active_storage_deleted))
+
+/mob/proc/active_storage_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_active_storage(null)
+
+///Clears the client in contents list of our current "eye". Prevents hard deletes
+/mob/proc/clear_client_in_contents()
+	if(client?.movingmob) //In the case the client was transferred to another mob and not deleted.
+		client.movingmob.client_mobs_in_contents -= src
+		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
+		client.movingmob = null

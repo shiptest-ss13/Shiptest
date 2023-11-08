@@ -51,7 +51,7 @@
 		O.r_hand = null
 		O.l_hand = null //It would be confusing if, say, the medical hologram had a fake medkit
 
-	INVOKE_ASYNC(src, .proc/icon_setup, O, _prefs)
+	INVOKE_ASYNC(src, PROC_REF(icon_setup), O, _prefs)
 
 	access_card = new /obj/item/card/id(src)
 	access_card?.access |= job_type.access //dunno how the access card would delete itself before then, but this is DM, after all
@@ -159,7 +159,7 @@
 /mob/living/simple_animal/hologram/proc/disco()
 	color = pick(HOLOGRAM_CYCLE_COLORS)
 	alpha = rand(75, 180)
-	addtimer(CALLBACK(src, .proc/disco, src), 5) //Call ourselves every 0.5 seconds to change color
+	addtimer(CALLBACK(src, PROC_REF(disco), src), 5) //Call ourselves every 0.5 seconds to change color
 
 /mob/living/simple_animal/hologram/med_hud_set_health()
 	var/image/holder = hud_list[DIAG_HUD]
@@ -225,7 +225,7 @@
 	var/formatted_laws = "<b>Hologram law:</b>\n"
 	formatted_laws += flavortext ? "<big><span class='warning'>[flavortext]</span></big>" : "<big>No laws set!</big>" //If flavortext set, show it, else show "No laws set!"
 	formatted_laws += "\n<span class='notice'>Emergency holograms are ghost spawns that can majorly affect the round due to their versatility. Act with common sense.</span>\n"+\
-					  "<span class='notice'>Using the role to grief or metagame against your set laws will be met with a silicon ban.</span>\n"
+					"<span class='notice'>Using the role to grief or metagame against your set laws will be met with a silicon ban.</span>\n"
 
 	var/policy = get_policy(ROLE_POSIBRAIN) //if we need something different than the use of posibrains for policy and bans, ping mark and he'll add a new define for it
 	if(policy)

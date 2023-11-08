@@ -26,8 +26,8 @@
 	// these are registered so we can cancel the application fill-out if the ship
 	// gets deleted before the application is finalized, or the character spawns in.
 	// your currently-open tgui windows don't get removed if you spawn into a body
-	RegisterSignal(app_mob, COMSIG_PARENT_QDELETING, .proc/applicant_deleting)
-	RegisterSignal(parent_ship, COMSIG_PARENT_QDELETING, .proc/important_deleting_during_apply)
+	RegisterSignal(app_mob, COMSIG_PARENT_QDELETING, PROC_REF(applicant_deleting))
+	RegisterSignal(parent_ship, COMSIG_PARENT_QDELETING, PROC_REF(important_deleting_during_apply))
 
 /datum/ship_application/Destroy()
 	SStgui.close_uis(src)
