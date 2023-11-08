@@ -142,7 +142,7 @@
 	flora_spawn_chance = 5
 	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
-		/obj/effect/survey_point
+		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/beach/dense
@@ -166,7 +166,7 @@
 	flora_spawn_chance = 10
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/survey_point
+		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/ocean/deep

@@ -105,7 +105,7 @@
 
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/survey_point
+		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/jungle/dense
@@ -153,14 +153,14 @@
 	mob_spawn_list = list(/mob/living/simple_animal/hostile/poison/giant_spider/tarantula = 1)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/survey_point
+		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/jungle_wasteland
 	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/wasteland/lit = 1)
-	feature_spawn_chance = 0.3
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/survey_point
+		/obj/effect/survey_point = 1
 	)
 
 /datum/biome/jungle/water
