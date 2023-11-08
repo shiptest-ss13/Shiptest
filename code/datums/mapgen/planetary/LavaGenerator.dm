@@ -95,7 +95,7 @@
 		/obj/structure/flora/ash/puce = 5,
 		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
-	feature_spawn_chance = 0.6
+	feature_spawn_chance = 1
 	feature_spawn_list = list(
 		/obj/structure/flora/rock/hell = 20,
 		/obj/structure/elite_tumor = 4,

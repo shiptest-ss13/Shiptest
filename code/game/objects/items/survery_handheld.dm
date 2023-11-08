@@ -117,6 +117,13 @@
 	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
 
 /obj/item/attachment/survey_scanner/attack_self(mob/user)
+	playsound(src, 'sound/effects/ping.ogg', 75)
+	for(var/obj/effect/survey_point/revealed in range(2, src))
+		revealed.alpha = 255 //could use an effect but I'm lazy
+	src.pack.deductcharge(usecost / 2)
+
+
+/obj/item/attachment/survey_scanner/AltClick(mob/living/user)
 	add_fingerprint(user)
 
 	if (user.stat || user.is_blind())
