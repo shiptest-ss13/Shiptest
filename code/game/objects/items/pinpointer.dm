@@ -199,7 +199,7 @@
 	return FALSE
 
 /obj/item/pinpointer/survey_data/attack_self(mob/living/user)
-	var/list/possible_targets
+	var/list/possible_targets = list()
 	if(active)
 		toggle_on()
 		user.visible_message("<span class='notice'>[user] deactivates [user.p_their()] pinpointer.</span>", "<span class='notice'>You deactivate your pinpointer.</span>")

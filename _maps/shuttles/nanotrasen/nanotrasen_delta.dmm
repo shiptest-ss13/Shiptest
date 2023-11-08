@@ -627,10 +627,6 @@
 /obj/machinery/vending/robotics,
 /turf/open/floor/plasteel/white,
 /area/ship/science/robotics)
-"cM" = (
-/obj/machinery/porta_turret/ship/weak,
-/turf/closed/wall/mineral/titanium,
-/area/ship/bridge)
 "cN" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1445,6 +1441,7 @@
 /obj/item/gear_pack/survey_pack/advanced/nt{
 	pixel_x = -6
 	},
+/obj/item/pinpointer/survey_data,
 /turf/open/floor/plasteel/white,
 /area/ship/science/robotics)
 "nq" = (
@@ -2681,26 +2678,6 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
-"Wf" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/machinery/camera,
-/obj/machinery/light/small/directional/north,
-/obj/structure/railing{
-	dir = 4
-	},
-/obj/structure/table,
-/obj/item/mmi/posibrain{
-	pixel_x = 5;
-	pixel_y = 6
-	},
-/obj/item/mmi/posibrain{
-	pixel_x = 5
-	},
-/obj/item/survey_handheld{
-	pixel_x = -6
-	},
-/turf/open/floor/plasteel/white,
-/area/ship/science/robotics)
 "WG" = (
 /obj/machinery/porta_turret/ship/weak{
 	dir = 4
