@@ -57,8 +57,8 @@
 
 /atom/movable/screen/storage/volumetric_box/Initialize(mapload, new_master, obj/item/our_item)
 	src.our_item = our_item
-	RegisterSignal(our_item, COMSIG_ITEM_MOUSE_ENTER, .proc/on_item_mouse_enter)
-	RegisterSignal(our_item, COMSIG_ITEM_MOUSE_EXIT, .proc/on_item_mouse_exit)
+	RegisterSignal(our_item, COMSIG_ITEM_MOUSE_ENTER, PROC_REF(on_item_mouse_enter))
+	RegisterSignal(our_item, COMSIG_ITEM_MOUSE_EXIT, PROC_REF(on_item_mouse_exit))
 	return ..()
 
 /atom/movable/screen/storage/volumetric_box/Destroy()
