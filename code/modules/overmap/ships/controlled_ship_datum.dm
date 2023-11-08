@@ -63,6 +63,11 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
+	/// The ship's shield generator
+	var/obj/machinery/power/ship_shield_generator/shield_generator
+	/// The frequency that the ship's radio uses
+	var/ship_radio_frequency = FREQ_COMMON
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
@@ -448,3 +453,17 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
+
+/datum/overmap/ship/controlled/proc/broadcast(atom/movable/speaker, message)
+	set waitfor = FALSE
+
+	var/datum/signal/subspace/vocal/signal = new(
+		speaker,
+		ship_radio_frequency,
+		new /atom/movable/virtualspeaker(null, speaker),
+		/datum/language/common,
+		message,
+		list(SPAN_ROBOT, SPAN_COMMAND),
+		list(MODE_CUSTOM_SAY_EMOTE = "coldly states"),
+	)
+	signal.send_to_receivers()
