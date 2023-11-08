@@ -38,6 +38,7 @@
 	soundloop = new(list(src), FALSE)
 
 /obj/item/geiger_counter/Destroy()
+	QDEL_NULL(soundloop)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -111,15 +112,14 @@
 	return ..()
 
 /obj/item/geiger_counter/proc/update_sound()
-	var/datum/looping_sound/geiger/loop = soundloop
 	if(!scanning)
-		loop.stop()
+		soundloop.stop()
 		return
 	if(!radiation_count)
-		loop.stop()
+		soundloop.stop()
 		return
-	loop.last_radiation = radiation_count
-	loop.start()
+	soundloop.last_radiation = radiation_count
+	soundloop.start()
 
 /obj/item/geiger_counter/rad_act(amount)
 	. = ..()
@@ -138,7 +138,7 @@
 	if(user.a_intent == INTENT_HELP)
 		if(!(obj_flags & EMAGGED))
 			user.visible_message("<span class='notice'>[user] scans [target] with [src].</span>", "<span class='notice'>You scan [target]'s radiation levels with [src]...</span>")
-			addtimer(CALLBACK(src, .proc/scan, target, user), 20, TIMER_UNIQUE) // Let's not have spamming GetAllContents
+			addtimer(CALLBACK(src, PROC_REF(scan), target, user), 20, TIMER_UNIQUE) // Let's not have spamming GetAllContents
 		else
 			user.visible_message("<span class='notice'>[user] scans [target] with [src].</span>", "<span class='danger'>You project [src]'s stored radiation into [target]!</span>")
 			target.rad_act(radiation_count)
@@ -212,7 +212,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
-	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, .proc/redirect_rad_act)
+	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, PROC_REF(redirect_rad_act))
 	listeningTo = user
 
 /obj/item/geiger_counter/cyborg/proc/redirect_rad_act(datum/source, amount)

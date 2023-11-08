@@ -199,7 +199,7 @@
 		adjustBruteLoss(25) //hella effective
 		inhibited = TRUE
 		update_action_buttons_icon()
-		addtimer(CALLBACK(src, .proc/reset_inhibit), 30)
+		addtimer(CALLBACK(src, PROC_REF(reset_inhibit)), 30)
 
 /mob/living/simple_animal/revenant/proc/reset_inhibit()
 	inhibited = FALSE
@@ -297,8 +297,8 @@
 		to_chat(src, "<span class='revenwarning'>You cannot use abilities from inside of a wall.</span>")
 		return FALSE
 	for(var/obj/O in T)
-		if(O.density && !O.CanPass(src, T))
-			to_chat(src, "<span class='revenwarning'>You cannot use abilities inside of a dense object.</span>")
+		if(O.density && !O.CanPass(src, get_dir(T, src)))
+			to_chat(src, span_revenwarning("You cannot use abilities inside of a dense object."))
 			return FALSE
 	if(inhibited)
 		to_chat(src, "<span class='revenwarning'>Your powers have been suppressed by nulling energy!</span>")
@@ -361,7 +361,7 @@
 
 /obj/item/ectoplasm/revenant/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/try_reform), 600)
+	addtimer(CALLBACK(src, PROC_REF(try_reform)), 600)
 
 /obj/item/ectoplasm/revenant/proc/scatter()
 	qdel(src)
@@ -442,7 +442,7 @@
 /obj/item/ectoplasm/revenant/Destroy()
 	if(!QDELETED(revenant))
 		qdel(revenant)
-	..()
+	return ..()
 
 //objectives
 /datum/objective/revenant

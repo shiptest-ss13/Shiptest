@@ -65,10 +65,13 @@
 /datum/overmap/Destroy(force, ...)
 	SSovermap.overmap_objects -= src
 	if(docked_to)
-		Undock(TRUE)
-	SSovermap.overmap_container[x][y] -= src
+		docked_to.post_undocked()
+		docked_to.contents -= src
+	if(isnum(x) && isnum(y))
+		SSovermap.overmap_container[x][y] -= src
 	token.parent = null
 	QDEL_NULL(token)
+	QDEL_LIST(contents)
 	return ..()
 
 /**
@@ -231,7 +234,7 @@
 	start_dock(dock_target, ticket)
 
 	if(dock_time && !force)
-		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_dock, dock_target, ticket), dock_time)
+		dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_dock), dock_target, ticket), dock_time)
 	else
 		complete_dock(dock_target, ticket)
 
@@ -309,7 +312,7 @@
 	docking = TRUE
 
 	if(dock_time && !force)
-		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_undock), dock_time)
+		dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_undock)), dock_time)
 	else
 		complete_undock()
 
@@ -328,8 +331,8 @@
 	docked_to.contents -= src
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
-	token.Move(OVERMAP_TOKEN_TURF(x, y))
-	INVOKE_ASYNC(old_docked_to, .proc/post_undocked, src)
+	token.forceMove(OVERMAP_TOKEN_TURF(x, y))
+	INVOKE_ASYNC(old_docked_to, PROC_REF(post_undocked), src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
 

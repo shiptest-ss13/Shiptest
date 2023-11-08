@@ -33,9 +33,10 @@
 	panel.layer = FLY_LAYER
 	Make(S)
 	connect_to_network()
-	RegisterSignal(SSsun, COMSIG_SUN_MOVED, .proc/queue_update_solar_exposure)
+	RegisterSignal(SSsun, COMSIG_SUN_MOVED, PROC_REF(queue_update_solar_exposure))
 
 /obj/machinery/power/solar/Destroy()
+	UnregisterSignal(SSsun, COMSIG_SUN_MOVED)
 	unset_control() //remove from control computer
 	return ..()
 
@@ -109,6 +110,9 @@
 
 /obj/machinery/power/solar/update_overlays()
 	. = ..()
+	//This can get called while it's not initialized
+	if(!panel)
+		return
 	var/matrix/turner = matrix()
 	turner.Turn(azimuth_current)
 	panel.transform = turner
@@ -339,7 +343,7 @@
 /obj/machinery/power/solar_control/Initialize()
 	. = ..()
 	azimuth_rate = SSsun.base_rotation
-	RegisterSignal(SSsun, COMSIG_SUN_MOVED, .proc/timed_track)
+	RegisterSignal(SSsun, COMSIG_SUN_MOVED, PROC_REF(timed_track))
 	connect_to_network()
 	if(powernet)
 		set_panels(azimuth_target)
@@ -349,6 +353,7 @@
 		M.unset_control()
 	if(connected_tracker)
 		connected_tracker.unset_control()
+	UnregisterSignal(SSsun, COMSIG_SUN_MOVED)
 	return ..()
 
 //search for unconnected panels and trackers in the computer powernet and connect them

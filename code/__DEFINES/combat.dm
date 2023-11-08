@@ -111,12 +111,8 @@
 #define SHOVE_SLOWDOWN_LENGTH 30
 #define SHOVE_SLOWDOWN_STRENGTH 0.85 //multiplier
 //Shove disarming item list
-GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
-	/obj/item/gun)))
-
-
+GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 //Combat object defines
-
 //Embedded objects
 #define EMBEDDED_PAIN_CHANCE 15	//Chance for embedded objects to cause pain (damage user)
 #define EMBEDDED_ITEM_FALLOUT 5	//Chance for embedded object to fall out (causing pain but removing the object)
@@ -138,8 +134,11 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define EMBED_POINTY_SUPERIOR list("embed_chance" = 100, "ignore_throwspeed_threshold" = TRUE)
 
 //Gun weapon weight
+/// Allows you to dual wield this gun and your offhand gun
 #define WEAPON_LIGHT 1
+/// Does not allow you to dual wield with this gun and your offhand gun
 #define WEAPON_MEDIUM 2
+/// You must wield the gun to fire this gun
 #define WEAPON_HEAVY 3
 //Gun trigger guards
 #define TRIGGER_GUARD_ALLOW_ALL -1

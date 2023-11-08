@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			if(41) //crew manifest
 				dat += "<h4>Crew Manifest</h4>"
 				dat += "<center>"
-				dat += SSjob.get_manifest_html()
+				dat += SSovermap.get_manifest_html()
 				dat += "</center>"
 
 			if(3)
@@ -1097,7 +1097,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			AM.emp_act(severity)
 	if (!(. & EMP_PROTECT_SELF))
 		emped++
-		addtimer(CALLBACK(src, .proc/emp_end), 200 * severity)
+		addtimer(CALLBACK(src, PROC_REF(emp_end)), 200 * severity)
 
 /obj/item/pda/proc/emp_end()
 	emped--

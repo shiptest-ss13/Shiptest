@@ -272,12 +272,15 @@
 		var/item = pick(contains)
 		new item(C)
 
-/datum/supply_pack/food/rations
-	name = "Surplus Ration Triple-Pak"
-	desc = "Crew starving? Chef slacking off? Keep everyone fed on the barest minimum of what can be considered food with surplus ration packs, directly from survival stores and military surplus! Pack includes 3 packs of 3 bars each."
-	cost = 600
-	contains = list(/obj/item/storage/box/rations,
-					/obj/item/storage/box/rations,
-					/obj/item/storage/box/rations,)
-	crate_name = "surplus rations box"
+/datum/supply_pack/food/ration
+	name = "Ration Crate"
+	desc = "6 standerd issue rations."
+	cost = 2000
+	contains = list(/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration,
+					/obj/effect/spawner/lootdrop/ration)
+	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/cardboard/rations

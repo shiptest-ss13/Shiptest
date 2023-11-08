@@ -1,7 +1,5 @@
 /datum/job/roboticist
 	name = "Roboticist"
-	total_positions = 2
-	spawn_positions = 2
 	wiki_page = "Guide_to_Robotics"
 
 	outfit = /datum/outfit/job/roboticist
@@ -37,4 +35,14 @@
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/minutemen
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
+
+/datum/outfit/job/roboticist/heron
+	name = "Mech Technician (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/rnd/roboticist
+	suit = /obj/item/clothing/suit/longcoat/robowhite
+	ears = /obj/item/radio/headset/nanotrasen
+	glasses = /obj/item/clothing/glasses/welding
+
+	backpack_contents = list(/obj/item/weldingtool/hugetank)
 

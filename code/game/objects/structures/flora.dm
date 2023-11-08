@@ -3,6 +3,8 @@
 	max_integrity = 40
 	anchored = TRUE
 
+	hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+
 /obj/structure/flora/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
@@ -21,6 +23,8 @@
 	pixel_x = -16
 	layer = FLY_LAYER
 	var/log_amount = 10
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/ComponentInitialize()
 	. = ..()
@@ -51,6 +55,8 @@
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
 
 /obj/structure/flora/tree/pine
 	name = "pine tree"
@@ -362,13 +368,15 @@
 /obj/item/kirbyplants/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/tactical)
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 500)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, 500)), 0)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
 
 /obj/item/kirbyplants/random
 	icon = 'icons/obj/flora/_flora.dmi'
 	icon_state = "random_plant"
 	var/list/static/states
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
 
 /obj/item/kirbyplants/random/Initialize()
 	. = ..()
@@ -415,13 +423,16 @@
 //and now these defines
 
 /obj/structure/flora/rock
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	desc = "A volcanic rock. Pioneers used to ride these babies for miles."
 	icon = 'icons/obj/flora/rocks.dmi'
 	resistance_flags = FIRE_PROOF
 	density = TRUE
 	max_integrity = 100
 	var/obj/item/stack/mineResult = /obj/item/stack/ore/glass/basalt
+
+	hitsound_type = PROJECTILE_HITSOUND_STONE
 
 /obj/structure/flora/rock/Initialize()
 	. = ..()
@@ -450,7 +461,8 @@
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
 /obj/structure/flora/rock/pile
-	icon_state = "lavarocks"
+	icon_state = "lavarocks1"
+	base_icon_state = "lavarocks"
 	desc = "A pile of rocks."
 
 //Jungle grass
@@ -472,14 +484,15 @@
 //Jungle rocks
 
 /obj/structure/flora/rock/jungle
-	icon_state = "rock"
+	icon_state = "rock1"
+	base_icon_state = "rock"
 	desc = "A pile of rocks."
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	density = FALSE
 
 /obj/structure/flora/rock/jungle/Initialize()
 	. = ..()
-	icon_state = "[initial(icon_state)][rand(1,5)]"
+	icon_state = "[base_icon_state][rand(1,5)]"
 
 
 //Jungle bushes
@@ -489,16 +502,19 @@
 	desc = "A wild plant that is found in jungles."
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha"
+	base_icon_state = "busha"
 
 /obj/structure/flora/junglebush/Initialize()
-	icon_state = "[icon_state][rand(1, 3)]"
+	icon_state = "[base_icon_state][rand(1, 3)]"
 	. = ..()
 
 /obj/structure/flora/junglebush/b
 	icon_state = "bushb"
+	base_icon_state = "bushb"
 
 /obj/structure/flora/junglebush/c
 	icon_state = "bushc"
+	base_icon_state = "bushc"
 
 /obj/structure/flora/junglebush/large
 	icon_state = "bush"
@@ -816,7 +832,8 @@
 	name = "lavatic rock"
 	desc = "A volcanic rock. Lava is gushing from it. "
 	icon = 'icons/obj/flora/lavarocks.dmi'
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	light_color = "#ab4907"
 	light_power = 3
 	light_range = 2
@@ -825,7 +842,8 @@
 	name = "rock shards"
 	desc = "Jagged shards of volcanic rock protuding from the ground."
 	icon = 'icons/obj/flora/lavarocks.dmi'
-	icon_state = "lavarocks"
+	icon_state = "lavarocks1"
+	base_icon_state = "lavarocks"
 	gender = PLURAL
 
 /obj/structure/flora/rock/asteroid
@@ -890,13 +908,15 @@
 /obj/structure/flora/rock/hell
 	name = "rock"
 	desc = "A volcanic rock, one of the few familiar things on this planet."
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	icon = 'icons/obj/flora/rocks.dmi'
 
 /obj/structure/flora/rock/beach
 	name = "sea stack"
 	desc = "A column of rock, formed by wave erosion."
-	icon_state = "basalt"
+	icon_state = "basalt1"
+	base_icon_state = "basalt"
 	icon = 'icons/obj/flora/rocks.dmi'
 
 /obj/structure/flora/tree/dead/barren

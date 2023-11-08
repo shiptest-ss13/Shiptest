@@ -506,7 +506,7 @@
 
 /obj/item/reagent_containers/food/snacks/chewable/lollipop/cyborg/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/spamcheck), 1200)
+	addtimer(CALLBACK(src, PROC_REF(spamcheck)), 1200)
 
 /obj/item/reagent_containers/food/snacks/chewable/lollipop/cyborg/equipped(mob/living/user, slot)
 	. = ..(user, slot)
@@ -584,7 +584,7 @@
 
 /obj/item/reagent_containers/food/snacks/gumball/cyborg/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/spamcheck), 1200)
+	addtimer(CALLBACK(src, PROC_REF(spamcheck)), 1200)
 
 /obj/item/reagent_containers/food/snacks/gumball/cyborg/equipped(mob/living/user, slot)
 	. = ..(user, slot)
@@ -734,7 +734,7 @@
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/canned/peaches/maint
-	name = "Maintenance Peaches"
+	name = "maintenance peaches"
 	desc = "I have a mouth and I must eat."
 	icon_state = "peachcanmaint"
 	trash = /obj/item/trash/can/food/peaches/maint
@@ -760,7 +760,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/crab_rangoon
-	name = "Crab Rangoon"
+	name = "crab rangoon"
 	desc = "Has many names, like crab puffs, cheese wontons, crab dumplings? Whatever you call them, they're a fabulous blast of cream cheesy crab."
 	icon_state = "crabrangoon"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 5)

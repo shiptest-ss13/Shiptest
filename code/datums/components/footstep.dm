@@ -1,3 +1,5 @@
+#define SHOULD_DISABLE_FOOTSTEPS(source) ((SSlag_switch.measures[DISABLE_FOOTSTEPS] && !(HAS_TRAIT(source, TRAIT_BYPASS_MEASURES))) || HAS_TRAIT(source, TRAIT_SILENT_FOOTSTEPS))
+
 ///Footstep component. Plays footsteps at parents location when it is appropriate.
 /datum/component/footstep
 	///How many steps the parent has taken since the last time a footstep was played.
@@ -21,7 +23,7 @@
 		if(FOOTSTEP_MOB_HUMAN)
 			if(!ishuman(parent))
 				return COMPONENT_INCOMPATIBLE
-			RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/play_humanstep)
+			RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), PROC_REF(play_humanstep))
 			return
 		if(FOOTSTEP_MOB_CLAW)
 			footstep_sounds = GLOB.clawfootstep
@@ -33,7 +35,7 @@
 			footstep_sounds = GLOB.footstep
 		if(FOOTSTEP_MOB_SLIME)
 			footstep_sounds = 'sound/effects/footstep/slime1.ogg'
-	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), .proc/play_simplestep) //Note that this doesn't get called for humans.
+	RegisterSignal(parent, list(COMSIG_MOVABLE_MOVED), PROC_REF(play_simplestep)) //Note that this doesn't get called for humans.
 
 ///Prepares a footstep. Determines if it should get played. Returns the turf it should get played on. Note that it is always a /turf/open
 /datum/component/footstep/proc/prepare_step()
@@ -71,6 +73,9 @@
 /datum/component/footstep/proc/play_simplestep()
 	SIGNAL_HANDLER
 
+	if (SHOULD_DISABLE_FOOTSTEPS(parent))
+		return
+
 	var/turf/open/T = prepare_step()
 	if(!T)
 		return
@@ -94,8 +99,9 @@
 /datum/component/footstep/proc/play_humanstep()
 	SIGNAL_HANDLER
 
-	if(HAS_TRAIT(parent, TRAIT_SILENT_FOOTSTEPS))
+	if (SHOULD_DISABLE_FOOTSTEPS(parent))
 		return
+
 	var/turf/open/T = prepare_step()
 	if(!T)
 		return
@@ -115,3 +121,5 @@
 				GLOB.barefootstep[T.barefootstep][2] * volume,
 				TRUE,
 				GLOB.barefootstep[T.barefootstep][3] + e_range, falloff_distance = 1)
+
+#undef SHOULD_DISABLE_FOOTSTEPS

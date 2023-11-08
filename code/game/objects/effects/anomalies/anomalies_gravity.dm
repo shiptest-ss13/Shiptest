@@ -21,7 +21,7 @@
 /obj/effect/anomaly/grav/Initialize(mapload, new_lifespan, drops_core)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -84,14 +84,14 @@
 
 /obj/effect/anomaly/grav/high
 	effectrange = 5
-	var/grav_field
+	var/datum/proximity_monitor/advanced/gravity/grav_field
 
 /obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/setup_grav_field)
+	INVOKE_ASYNC(src, PROC_REF(setup_grav_field))
 
 /obj/effect/anomaly/grav/high/proc/setup_grav_field()
-	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = effectrange, "host" = src, "gravity_value" = 2))
+	grav_field = new(src, effectrange, TRUE, 2)
 
 /obj/effect/anomaly/grav/high/Destroy()
 	QDEL_NULL(grav_field)

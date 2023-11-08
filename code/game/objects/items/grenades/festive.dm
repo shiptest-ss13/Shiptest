@@ -47,7 +47,7 @@
 
 /obj/item/sparkler/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	..()
+	return ..()
 
 /obj/item/sparkler/ignition_effect(atom/A, mob/user)
 	. = "<span class='notice'>[user] gracefully lights [A] with [src].</span>"
@@ -106,7 +106,7 @@
 	playsound(src, 'sound/effects/fuse.ogg', volume, TRUE)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/firecracker/prime()
 	. = ..()

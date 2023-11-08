@@ -27,12 +27,11 @@
 			AddComponent(/datum/component/infective, diseases_to_add)
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-		COMSIG_ATOM_EXITED = .proc/on_uncrossed,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, beauty)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, beauty)), 0)
 
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
@@ -80,10 +79,6 @@
 		reagents.expose_temperature(exposed_temperature)
 	..()
 
-/obj/effect/decal/cleanable/proc/on_uncrossed(datum/source, atom/movable/O)
-	SIGNAL_HANDLER
-	return
-
 //Add "bloodiness" of this blood's type, to the human's shoes
 //This is on /cleanable because fuck this ancient mess
 /obj/effect/decal/cleanable/proc/on_entered(datum/source, atom/movable/AM)
@@ -94,6 +89,8 @@
 
 /obj/effect/decal/cleanable/wash(clean_types)
 	..()
+	if(!(flags_1 & INITIALIZED_1))
+		return FALSE
 	qdel(src)
 	return TRUE
 
