@@ -846,8 +846,3 @@
 	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
 	icon_state = "inteq_droppouch"
 	item_state = "inteq_droppouch"
-
-/obj/item/storage/belt/security/webbing/inteq/alt/bulldog/PopulateContents()
-	. = ..()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_box/magazine/m12g(src)

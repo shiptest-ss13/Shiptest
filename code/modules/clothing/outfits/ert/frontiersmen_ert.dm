@@ -7,7 +7,7 @@
 	suit_store = /obj/item/gun/ballistic/rifle/boltaction
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/black
 	ears = /obj/item/radio/headset/pirate/alt
 	back = /obj/item/storage/backpack
 	belt = null
@@ -16,7 +16,7 @@
 
 	backpack_contents = list(/obj/item/ammo_box/a762=5, /obj/item/grenade/frag=1)
 
-	id_role = "Buccaneer"
+	id_role = "Grunt"
 
 /datum/outfit/centcom/ert/frontiersmen/leader
 	name = "ERT - Frontiersman Officer"
@@ -29,7 +29,7 @@
 	suit_store = /obj/item/gun/ballistic/revolver/nagant
 	belt = /obj/item/storage/belt/military/assault
 
-	backpack_contents = list(/obj/item/ammo_box/n762_clip=3, /obj/item/binoculars=1, /obj/item/melee/classic_baton/telescopic)
+	backpack_contents = list(/obj/item/ammo_box/n762_clip=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
 
 	id_role = "Officer"
 
@@ -44,7 +44,7 @@
 
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/reagent_containers/hypospray/medipen/stimpack=3)
 
-	id_role = "Medic"
+	id_role = "Stretcher-Bearer"
 
 /datum/outfit/centcom/ert/frontiersmen/engineer
 	name = "ERT - Frontiersman Engineer"
@@ -56,4 +56,4 @@
 
 	backpack_contents = list(/obj/item/grenade/c4=3, /obj/item/crowbar/large=1)
 
-	id_role = "Carpenter"
+	id_role = "Sapper"

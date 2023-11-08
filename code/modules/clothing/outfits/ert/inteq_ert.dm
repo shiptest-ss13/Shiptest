@@ -19,8 +19,10 @@
 /datum/outfit/centcom/ert/inteq/shotgun
 	name = "ERT - Inteq Shotgunner"
 
-	suit_store = /obj/item/gun/ballistic/shotgun/bulldog/inteq
-	belt = /obj/item/storage/belt/security/webbing/inteq/alt/bulldog
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat
+	belt = /obj/item/storage/belt/security/webbing/inteq/alt
+
+	backpack_contents = (/obj/item/storage/box/lethalshot=2)
 
 	id_role = "Enforcer"
 
