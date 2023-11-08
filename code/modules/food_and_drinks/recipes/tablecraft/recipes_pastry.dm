@@ -334,7 +334,7 @@
 		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
 		/obj/item/reagent_containers/food/snacks/grown/cannabis = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/dankpocket
+	result = /obj/item/reagent_containers/food/snacks/donkpocket/dankpocket
 	subcategory = CAT_PASTRY
 
 /datum/crafting_recipe/food/donkpocket/spicy

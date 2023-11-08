@@ -687,6 +687,7 @@
 	name = "Canned Air"
 	desc = "If you ever wondered where air came from..."
 	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
+	icon = 'icons/obj/food/canned.dmi'
 	icon_state = "peachcan"
 	in_container = TRUE
 	reagent_flags = NONE
@@ -899,6 +900,7 @@
 /obj/item/reagent_containers/food/snacks/ready_donk/warm
 	name = "warm Ready-Donk: Bachelor Chow"
 	desc = "A quick Donk-dinner, now with flavour! And it's even hot!"
+	icon = 'icons/obj/food/donk.dmi'
 	icon_state = "ready_donk_warm"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/medicine/omnizine = 3)
 	cooked_type = null
