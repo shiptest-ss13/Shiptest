@@ -226,6 +226,11 @@
 		/obj/item/stack/cable_coil = 2,
 		/obj/item/stock_parts/subspace/filter = 1)
 
+/obj/item/circuitboard/machine/shield_generator
+	name = "Ship Shield Generator (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/ship_shield_generator
+
 /obj/item/circuitboard/machine/pacman
 	name = "PACMAN-type Generator (Machine Board)"
 	icon_state = "engineering"

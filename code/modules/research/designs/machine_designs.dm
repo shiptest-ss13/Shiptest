@@ -496,6 +496,14 @@
 	category = list("Subspace Telecomms")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/ship_shield_generator
+	name = "Machine Design (Ship Shield Generator Board)"
+	desc = "The circuit board for a ship shield generator."
+	id = "ship_shield_generator"
+	build_path = /obj/item/circuitboard/machine/shield_generator
+	category = list("Misc. Machinery")
+	build_type = AUTOLATHE | IMPRINTER
+
 /datum/design/board/limbgrower
 	name = "Machine Design (Limb Grower Board)"
 	desc = "The circuit board for a limb grower."

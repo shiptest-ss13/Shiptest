@@ -6,13 +6,14 @@
 
 /obj/machinery/power/ship_shield_generator
 	name = "shield generator"
-	desc = "A high complex machinery which uses an projected electromagnetic field to protect the ship from damage."
+	desc = "A highly complex piece of machinery which uses a projected electromagnetic field to protect the ship from damage."
 	icon = 'icons/obj/machines/shield_generator.dmi'
 	icon_state = "core-off"
 	// we only need power to spool up the shield, no power is used if the core is already charged
 	active_power_usage = 2000
 	use_power = ACTIVE_POWER_USE
 	power_channel = AREA_USAGE_EQUIP
+	circuit = /obj/item/circuitboard/machine/shield_generator
 
 	max_integrity = 1000
 	integrity_failure = 250
