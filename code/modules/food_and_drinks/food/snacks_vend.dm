@@ -146,3 +146,112 @@
 	filling_color = "#97ee63"
 	tastes = list("pure electricity" = 3, "fitness" = 2)
 	foodtype = TOXIC
+
+/obj/item/reagent_containers/food/snacks/peanuts
+	name = "\improper Gallery's peanuts"
+	desc = "A favourite amongst the terminally angry."
+	icon_state = "peanuts"
+	trash = /obj/item/trash/peanuts
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
+	tastes = list("peanuts" = 4, "anger" = 1)
+	foodtype = JUNKFOOD | NUTS
+	junkiness = 10 //less junky than other options, since peanuts are a decently healthy snack option
+	w_class = WEIGHT_CLASS_SMALL
+	grind_results = list(/datum/reagent/consumable/peanut_butter = 5, /datum/reagent/consumable/cooking_oil = 2)
+
+/obj/item/reagent_containers/food/snacks/peanuts/salted
+	name = "\improper Gallery's salt reserves peanuts"
+	desc = "Tastes salty."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sodiumchloride = 1)
+	tastes = list("peanuts" = 3, "salt" = 1, "high blood pressure" = 1)
+
+/obj/item/reagent_containers/food/snacks/peanuts/wasabi
+	name = "\improper Gallery's raging wasabi peanuts"
+	desc = "The angriest of all peanut flavours."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/capsaicin = 1)
+	tastes = list("peanuts" = 3, "wasabi" = 1, "rage" = 1)
+
+/obj/item/reagent_containers/food/snacks/peanuts/honey_roasted
+	name = "\improper Gallery's delete sweet peanuts"
+	desc = "Oddly bitter for a sweet treat."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 1)
+	tastes = list("peanuts" = 3, "honey" = 1, "bitterness" = 1)
+
+/obj/item/reagent_containers/food/snacks/peanuts/barbecue
+	name = "\improper Gallery's IDEDBBQ peanuts"
+	desc = "Where there's smoke, there's not necessarily fire- sometimes it's just BBQ sauce."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/bbqsauce = 1)
+	tastes = list("peanuts" = 3, "bbq sauce" = 1, "arguments" = 1)
+
+/obj/item/reagent_containers/food/snacks/peanuts/random
+	name = "\improper Gallery's every-flavour peanuts"
+	desc = "What flavour will you get?"
+	icon_state = "peanuts"
+
+/obj/item/reagent_containers/food/snacks/peanuts/random/Initialize()
+	// Generate a sample p
+	var/peanut_type = pick(subtypesof(/obj/item/reagent_containers/food/snacks/peanuts) - /obj/item/reagent_containers/food/snacks/peanuts/random)
+	var/obj/item/reagent_containers/food/snacks/sample = new peanut_type(loc)
+
+	name = sample.name
+	desc = sample.desc
+	list_reagents = sample.list_reagents
+	tastes = sample.tastes
+
+	qdel(sample)
+
+	. = ..()
+
+/obj/item/reagent_containers/food/snacks/cnds
+	name = "\improper C&Ds"
+	desc = "Legally, we cannot say that these won't melt in your hands."
+	icon_state = "cnds"
+	trash = /obj/item/trash/cnds
+	list_reagents = list(/datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/coco = 1)
+	tastes = list("chocolate candy" = 3)
+	junkiness = 25
+	foodtype = JUNKFOOD
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/cnds/caramel
+	name = "caramel C&Ds"
+	desc = "Stuffed with sugary sweet caramel, making them a diabetic's worst nightmare."
+	list_reagents = list(/datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/coco = 1, /datum/reagent/consumable/caramel = 1)
+	tastes = list("chocolate candy" = 2, "caramel" = 1)
+
+/obj/item/reagent_containers/food/snacks/cnds/pretzel
+	name = "pretzel C&Ds"
+	desc = "Eine köstliche Begleitung zu Ihrem Lieblingsbier."
+	list_reagents = list(/datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/coco = 1)
+	tastes = list("chocolate candy" = 2, "pretzel" = 1)
+	foodtype = JUNKFOOD | GRAIN
+
+/obj/item/reagent_containers/food/snacks/cnds/peanut_butter
+	name = "peanut butter C&Ds"
+	desc = "Beloved by small children and aliens alike."
+	list_reagents = list(/datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/coco = 1, /datum/reagent/consumable/peanut_butter = 1)
+	tastes = list("chocolate candy" = 2, "peanut butter" = 1)
+
+/obj/item/reagent_containers/food/snacks/cnds/banana_honk
+	name = "banana honk C&Ds"
+	desc = "The official candy of clowns everywhere. Honk honk!"
+	list_reagents = list(/datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/coco = 1, /datum/reagent/consumable/banana = 1)
+	tastes = list("chocolate candy" = 2, "banana" = 1)
+
+/obj/item/reagent_containers/food/snacks/cnds/random
+	name = "mystery filled C&Ds"
+	desc = "Filled with one of four delicious flavours!"
+
+/obj/item/reagent_containers/food/snacks/cnds/random/Initialize()
+	var/random_flavour = pick(subtypesof(/obj/item/reagent_containers/food/snacks/cnds) - /obj/item/reagent_containers/food/snacks/cnds/random)
+
+	var/obj/item/reagent_containers/food/snacks/sample = new random_flavour(loc)
+
+	name = sample.name
+	desc = sample.desc
+	list_reagents = sample.list_reagents
+	tastes = sample.tastes
+
+	qdel(sample)
+
+	. = ..()
