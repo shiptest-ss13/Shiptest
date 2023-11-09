@@ -77,7 +77,6 @@
 		if(istype(target, /obj/item/stack/ore/ice))
 			electrolyze += target
 			continue
-		
 		not_electrolyzed = TRUE
 		if(isliving(target))
 			crush_living(target)
