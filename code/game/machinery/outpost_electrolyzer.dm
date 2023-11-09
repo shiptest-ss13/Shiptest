@@ -86,9 +86,8 @@
 	for(var/electro in electrolyze)
 		resolved_output.electrolyze_item(electro)
 
-	if(!ismob(AM0)) //MULCH IT IF IT AINT ICE
-		AM0.moveToNullspace()
-		qdel(AM0)
+	if(!ismob(electrolyze_target)) //MULCH IT IF IT AINT ICE
+		qdel(electrolyze_target)
 
 
 /obj/machinery/mineral/electrolyzer/proc/set_electrolyzer_output()
