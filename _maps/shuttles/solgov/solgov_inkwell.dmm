@@ -2550,12 +2550,6 @@
 	pixel_y = 0;
 	pixel_x = 28
 	},
-/obj/docking_port/mobile{
-	dheight = 1;
-	dir = 4;
-	preferred_direction = 4;
-	port_direction = 8
-	},
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
 "qP" = (
@@ -6444,6 +6438,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm)
+"Ra" = (
+/obj/docking_port/mobile{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ship/crew/dorm/dormthree)
 "Rc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -8458,7 +8458,7 @@ wm
 wm
 wm
 wm
-zc
+Ra
 eM
 eM
 eM
