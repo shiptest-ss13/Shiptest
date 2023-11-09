@@ -7427,8 +7427,9 @@
 /area/ship/engineering)
 "XZ" = (
 /obj/docking_port/mobile{
-	dir = 8;
-	preferred_direction = 4
+	can_move_docking_ports = 1;
+	preferred_direction = 4;
+	port_direction = 4
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ship/security/armory)
