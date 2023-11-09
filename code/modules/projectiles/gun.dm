@@ -711,11 +711,10 @@
 	if(ismob(loc) && has_safety)
 		var/mutable_appearance/safety_overlay
 		safety_overlay = mutable_appearance('icons/obj/guns/safety.dmi')
-		switch(safety)
-			if(TRUE)
-				safety_overlay.icon_state = "safety-on"
-			if(FALSE)
-				safety_overlay.icon_state = "safety-off"
+		if(safety)
+			safety_overlay.icon_state = "safety-on"
+		else
+			safety_overlay.icon_state = "safety-off"
 		. += safety_overlay
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
