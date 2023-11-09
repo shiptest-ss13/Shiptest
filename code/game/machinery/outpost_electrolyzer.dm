@@ -55,15 +55,15 @@
 	INVOKE_ASYNC(src, PROC_REF(electrolyze), AM)
 
 
-/obj/machinery/mineral/electrolyzer/proc/electrolyze(atom/movable/AM0, sound=TRUE)
+/obj/machinery/mineral/electrolyzer/proc/electrolyze(atom/movable/electrolyze_target, sound=TRUE)
 	if(machine_stat & (BROKEN|NOPOWER))
 		return
-	if(!isturf(AM0.loc))
+	if(!isturf(electrolyze_target.loc))
 		return
-	if(istype(AM0, /obj/effect))
+	if(istype(electrolyze_target, /obj/effect))
 		return	//effects are not touchable
 
-	var/list/to_electrolyze = AM0.GetAllContents()
+	var/list/to_electrolyze = electrolyze_target.GetAllContents()
 
 	var/list/electrolyze = list()
 
