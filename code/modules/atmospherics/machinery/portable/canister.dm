@@ -150,13 +150,13 @@
 /obj/machinery/portable_atmospherics/canister/hydrogen
 	name = "hydrogen canister"
 	desc = "Hydrogen. Used in thruster fuel"
-	icon_state = "yellow"
+	icon_state = "orangews"
 	gas_type = GAS_HYDROGEN
 
 /obj/machinery/portable_atmospherics/canister/fuel
 	name = "fuel canister"
 	desc = "A highly volatile mix of hydrogen and oxygen."
-	icon_state = "red"
+	icon_state = "orangewshaz"
 
 /obj/machinery/portable_atmospherics/canister/fuel_test
 	name = "test canister"
