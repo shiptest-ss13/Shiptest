@@ -14,7 +14,7 @@
 		return
 	if(iscarbon(user) && !user.research_scanner) //this'll probably cause some weirdness when I start using research scanner in more places / on more items. Oh well.
 		var/mob/living/carbon/bah = user
-		to_chat(bah, span_userdanger("Your head aches as you stare into the [src]!"))
+		to_chat(bah, span_userdanger("Your head aches as you stare into [src]!"))
 		bah.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 100)
 
 /obj/effect/anomaly/tvstatic/anomalyEffect()
@@ -30,10 +30,12 @@
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 
 	for(var/mob/living/carbon/looking in range(effectrange, src))
-		playsound(src, 'sound/effects/walkietalkie.ogg', 100)
+		playsound(src, 'sound/effects/walkietalkie.ogg', 75)
+		if(stored_mob)
+			say_fucky_things()
 		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD)
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
-			playsound(src, 'sound/effects/stall.ogg', 100)
+			playsound(src, 'sound/effects/stall.ogg', 50)
 			if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
 				if(prob(20))
 					var/mob/living/carbon/victim = looking
@@ -48,6 +50,36 @@
 
 /obj/effect/anomaly/tvstatic/Bumped(atom/movable/AM)
 	anomalyEffect()
+
+/obj/effect/anomaly/tvstatic/say_fucky_things()
+	switch(rand(1, 13))
+		if(1)
+			say("... Help me...")
+		if(2)
+			say("... I need to get out ...")
+		if(3)
+			say("...No hope....")
+		if(4)
+			say("....Let me loose...")
+		if(5)
+			say("...stay with me...")
+		if(6)
+			say("...I hope I live...")
+		if(7)
+			say("...please don't go...")
+		if(8)
+			say("...don't forget me...")
+		if(9)
+			say("...Are you there...?")
+		if(10)
+			say("...it hurts...")
+		if(11)
+			say("...the eyes...")
+		if(12)
+			say("...need to run...")
+		if(13)
+			say("...don't become like me...")
+	return
 
 /obj/effect/anomaly/tvstatic/detonate()
 	for(var/mob/living/carbon/looking in range(effectrange, src))
