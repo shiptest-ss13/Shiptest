@@ -205,7 +205,7 @@
 		. += "It has a <b>bayonet</b> lug on it."
 
 	if(has_safety)
-		. += "The safety's [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
+		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
