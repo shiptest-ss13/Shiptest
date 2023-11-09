@@ -52,7 +52,7 @@
 /obj/machinery/mineral/electrolyzer/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	set_electrolyzer_output()
-	INVOKE_ASYNC(src, .proc/electrolyze, AM)
+	INVOKE_ASYNC(src, PROC_REF(electrolyze), AM)
 
 
 /obj/machinery/mineral/electrolyzer/proc/electrolyze(atom/movable/AM0, sound=TRUE)
