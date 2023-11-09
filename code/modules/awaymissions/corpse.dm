@@ -367,14 +367,6 @@
 	outfit = /datum/outfit/job/clown
 	icon_state = "corpseclown"
 
-/obj/effect/mob_spawn/human/mime
-	name = "Mime"
-	outfit = /datum/outfit/job/mime
-	icon_state = "corpsemime"
-
-/obj/effect/mob_spawn/human/mime/husked
-	husk = TRUE
-
 /obj/effect/mob_spawn/human/scientist
 	name = "Scientist"
 	outfit = /datum/outfit/job/scientist
@@ -416,9 +408,13 @@
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"
+	icon_state = "corpsebartender"
 	id_job = "Bartender"
 	id_access_list = list(ACCESS_BAR)
 	outfit = /datum/outfit/spacebartender
+
+/obj/effect/mob_spawn/human/bartender/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/bartender/alive
 	death = FALSE
