@@ -369,7 +369,7 @@
 				admin_officer.equipOutfit(chosen_outfit)
 				admin_officer.key = usr.key
 			else
-				to_chat(usr, "<span class='warning'>Could not spawn you in as briefing officer as you are not a ghost!</spawn>")
+				to_chat(usr, span_warning("Could not spawn you in as briefing officer as you are not a ghost!"))
 
 		//Pick the (un)lucky players
 		var/numagents = min(ertemplate.teamsize, length(candidates))
