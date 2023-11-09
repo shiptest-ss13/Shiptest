@@ -329,6 +329,8 @@
 	outfit = /datum/outfit/job/cook
 	icon_state = "corpsecook"
 
+/obj/effect/mob_spawn/human/cook/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
@@ -393,6 +395,9 @@
 /obj/effect/mob_spawn/human/botanist
 	outfit = /datum/outfit/job/botanist
 	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/botanist/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/sec
 	outfit = /datum/outfit/job/security
