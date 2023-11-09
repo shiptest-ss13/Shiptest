@@ -81,7 +81,7 @@
 			not_electrolyzed = 1
 		if(isliving(AM))
 			crush_living(AM)
-	if(not_electrolyzed == 1)
+	if(not_electrolyzed)
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE, 1) // Dont play a ton of sounds for a ton of items
 	for(var/electro in electrolyze)
 		resolved_output.electrolyze_item(electro)
