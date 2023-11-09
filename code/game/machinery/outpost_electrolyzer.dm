@@ -14,11 +14,11 @@
 /obj/machinery/mineral/electrolyzer_unloader/pickup_item(datum/source, atom/movable/target, atom/oldLoc)
 	if(istype(target, /obj/structure/ore_box))
 		var/obj/structure/ore_box/box = target
-		for(var/obj/item/stack/ore/ice/O in box)
-			unload_mineral(O)
+		for(var/obj/item/stack/ore/ice/chunk in box)
+			unload_mineral(chunk)
 	else if(istype(target, /obj/item/stack/ore/ice))
-		var/obj/item/stack/ore/O = target
-		unload_mineral(O)
+		var/obj/item/stack/ore/chunk = target
+		unload_mineral(chunk)
 
 /obj/machinery/mineral/electrolyzer
 	name = "ice crusher"
