@@ -6,6 +6,12 @@
 	aSignal = /obj/item/assembly/signaler/anomaly/tvstatic
 	effectrange = 4
 	pulse_delay = 4 SECONDS
+	verb_say = "pleads"
+	verb_ask = "begs"
+	verb_exclaim = "screams"
+	verb_whisper = "whimpers"
+	verb_yell = "screams"
+	speech_span = SPAN_ITALICS
 	var/mob/living/carbon/stored_mob = null
 
 /obj/effect/anomaly/tvstatic/examine(mob/user)
@@ -13,9 +19,9 @@
 	if(!iscarbon(user))
 		return
 	if(iscarbon(user) && !user.research_scanner) //this'll probably cause some weirdness when I start using research scanner in more places / on more items. Oh well.
-		var/mob/living/carbon/bah = user
-		to_chat(bah, span_userdanger("Your head aches as you stare into [src]!"))
-		bah.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 100)
+		var/mob/living/carbon/victim = user
+		to_chat(victim, span_userdanger("Your head aches as you stare into [src]!"))
+		victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5, 100)
 
 /obj/effect/anomaly/tvstatic/anomalyEffect()
 	..()
@@ -29,9 +35,9 @@
 
 	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
 
-	for(var/mob/living/carbon/looking in range(effectrange, src))
+	for(var/mob/living/carbon/human/looking in range(effectrange, src))
 		playsound(src, 'sound/effects/walkietalkie.ogg', 75)
-		if(stored_mob)
+		if(stored_mob && looking.stat != DEAD && prob(25))
 			say_fucky_things()
 		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD)
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
@@ -104,6 +110,11 @@
 /obj/effect/anomaly/tvstatic/planetary
 	immortal = TRUE
 	immobile = TRUE
+
+/obj/effect/anomaly/tvstatic/planetary/Initialize(mapload)
+	if(prob(25))
+		stored_mob = /obj/effect/mob_spawn/human/corpse/damaged
+	. = ..()
 
 /obj/effect/particle_effect/staticball
 	name = "static blob"
