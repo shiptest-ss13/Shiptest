@@ -27,7 +27,7 @@
 	projectile_type = /obj/projectile/beam/laser/eoehoma
 	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
 
-/obj/item/ammo_casing/energy/laser/smg //WS edit: fun
+/obj/item/ammo_casing/energy/laser/smg
 	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"

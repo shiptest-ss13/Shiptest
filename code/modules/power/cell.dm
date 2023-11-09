@@ -412,7 +412,7 @@
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
-	rating = 0 //gun batteries now incompatible with RPED WS edit
+	rating = 0 //Makes it incompatible with RPED
 
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()
@@ -476,6 +476,19 @@
 	charge = 0
 	update_appearance()
 
+/obj/item/stock_parts/cell/gun/kalix
+	name = "PGF CELL PH"
+	desc = "PGF CELL PH"
+	icon_state = "kalix-cell"
+	maxcharge = 12750 // 15 shots at 850 energy per
+	chargerate = 1750
+
+/obj/item/stock_parts/cell/gun/pgf
+	name = "pgf CELL PH"
+	desc = "pgf CELL PH"
+	icon_state = "pgf-cell"
+	maxcharge = 20000 // 20 shots at 1000 energy per
+	chargerate = 2000
 
 #undef CELL_DRAIN_TIME
 #undef CELL_POWER_GAIN

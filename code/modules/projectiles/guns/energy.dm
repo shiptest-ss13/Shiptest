@@ -223,10 +223,15 @@
 		return
 	if(cell)
 		. += "[icon_state]_cell"
-	// Every time I see code this "flexible", a kitten fucking dies
+	// Every time I see code this "flexible", a kitten fucking dies //it got worse
+	//todo: refactor this a bit to allow showing of charge on a gun's cell
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
+	if(cell)
+		. += "[icon_state]_cell"
+		if(ratio == 0)
+			. += "[icon_state]_cellempty"
 	if(ratio == 0)
 		if(modifystate)
 			. += "[icon_state]_[shot.select_name]"
