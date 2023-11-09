@@ -335,6 +335,7 @@
 		var/turf/brief_spawn
 
 		if(!length(candidates))
+			to_chat(usr, span_warning("No applicants for ERT. Aborting spawn."))
 			return FALSE
 
 		if(ertemplate.use_custom_shuttle && ertemplate.ert_template)
