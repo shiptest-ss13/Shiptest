@@ -130,7 +130,6 @@
 	layer = OBJ_LAYER
 	showpipe = TRUE
 	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
-	var/molestomake
 
 /obj/machinery/atmospherics/components/binary/electrolyzer_out/process_atmos()
 	update_parents()
