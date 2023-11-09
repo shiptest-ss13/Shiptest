@@ -51,7 +51,7 @@
 /obj/effect/anomaly/tvstatic/Bumped(atom/movable/AM)
 	anomalyEffect()
 
-/obj/effect/anomaly/tvstatic/say_fucky_things()
+/obj/effect/anomaly/tvstatic/proc/say_fucky_things()
 	switch(rand(1, 13))
 		if(1)
 			say("... Help me...")
