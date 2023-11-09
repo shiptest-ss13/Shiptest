@@ -10,9 +10,12 @@
 	ears = /obj/item/radio/headset/inteq/alt
 	id = /obj/item/card/id
 	belt = /obj/item/storage/belt/security/webbing/inteq/ak47
+	back = /obj/item/storage/backpack/fireproof
 
 	l_pocket = /obj/item/kitchen/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
+
+	backpack_contents = list(/obj/item/radio=1)
 
 	id_role = "Enforcer"
 
@@ -22,7 +25,7 @@
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat
 	belt = /obj/item/storage/belt/security/webbing/inteq/alt
 
-	backpack_contents = list(/obj/item/storage/box/lethalshot=2)
+	backpack_contents = list(/obj/item/storage/box/lethalshot=2, /obj/item/radio=1)
 
 	id_role = "Enforcer"
 
@@ -36,6 +39,8 @@
 	l_pocket = /obj/item/healthanalyzer
 
 	id_role = "Corpsman"
+
+	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/radio=1)
 
 /datum/outfit/centcom/ert/inteq/leader
 	name = "ERT - Inteq Vanguard"
