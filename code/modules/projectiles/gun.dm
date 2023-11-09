@@ -510,8 +510,8 @@
 	safety = !safety
 
 	user.visible_message(
-		span_notice("[user] turns the safety on the [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-		span_notice("You turn the safety on the [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+		span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+		span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
 		vision_distance = COMBAT_MESSAGE_RANGE
 	)
 	update_appearance()
