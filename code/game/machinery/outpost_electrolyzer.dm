@@ -73,14 +73,14 @@
 
 	if(!resolved_output)
 		return
-	for(var/i in to_electrolyze)
-		var/atom/movable/AM = i
-		if(istype(AM, /obj/item/stack/ore/ice))
-			electrolyze += AM
-		else
-			not_electrolyzed = 1
-		if(isliving(AM))
-			crush_living(AM)
+	for(var/atom/movable/target as anything in to_electrolyze)
+		if(istype(target, /obj/item/stack/ore/ice))
+			electrolyze += target
+			continue
+		
+		not_electrolyzed = TRUE
+		if(isliving(target))
+			crush_living(target)
 	if(not_electrolyzed)
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE, 1) // Dont play a ton of sounds for a ton of items
 	for(var/electro in electrolyze)
