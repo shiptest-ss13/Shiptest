@@ -343,29 +343,29 @@
 		for(var/id in air_contents.get_gases())
 			gas_amount = air_contents.get_moles(id) * gas_consumed //this takes a percent (set by gas_consumed) and multiplies it by the total gas to get the amount of gas used by the calculation.
 
+			switch(id)
 			// adds each oxidizer's power to the total oxidation max
-			if(id == GAS_O2)
-				oxidation_power += O2_OXIDATION_VALUE * gas_amount
-			if(id == GAS_NITRYL)
-				oxidation_power += NITRYL_OXIDATION_VALUE * gas_amount
-			if(id == GAS_NITROUS) //burning nitrous cools down the heater's main tank, just like it cools the intake on real cars.
-				oxidation_power += NITROUS_OXIDATION_VALUE * gas_amount
-				var/heat_capacity = gas_amount * NITROUS_COOLING_MULTIPIER
-				var/air_heat_capacity = air_contents.heat_capacity()
-				var/combined_heat_capacity = heat_capacity + air_heat_capacity
-				if(combined_heat_capacity > 0)
-					var/combined_energy = heat_capacity * NITROUS_COOLING_MIN + air_heat_capacity * air_contents.return_temperature()
-					air_contents.set_temperature(combined_energy/combined_heat_capacity)
-
+				if(GAS_O2)
+					oxidation_power += O2_OXIDATION_VALUE * gas_amount
+				if(GAS_NITRYL)
+					oxidation_power += NITRYL_OXIDATION_VALUE * gas_amount
+				if(GAS_NITROUS) //burning nitrous cools down the heater's main tank, just like it cools the intake on real cars.
+					oxidation_power += NITROUS_OXIDATION_VALUE * gas_amount
+					var/heat_capacity = gas_amount * NITROUS_COOLING_MULTIPIER
+					var/air_heat_capacity = air_contents.heat_capacity()
+					var/combined_heat_capacity = heat_capacity + air_heat_capacity
+					if(combined_heat_capacity > 0)
+						var/combined_energy = heat_capacity * NITROUS_COOLING_MIN + air_heat_capacity * air_contents.return_temperature()
+						air_contents.set_temperature(combined_energy/combined_heat_capacity)
 			// adds each fuel gas's power to the fuel max (air.get_fuel_amount is busted, and trit should be Better anyways.)
-			if(id == GAS_PLASMA)
-				fuel_power += PLASMA_THRUSTER_VALUE * gas_amount
-			if(id == GAS_TRITIUM)
-				fuel_power += TRITRIUM_THRUSTER_VALUE * gas_amount
-			if(id == GAS_HYDROGEN)
-				fuel_power += HYDROGEN_THRUSTER_VALUE * gas_amount
-			air_contents.adjust_moles(id, -gas_amount)
+				if(GAS_PLASMA)
+					fuel_power += PLASMA_THRUSTER_VALUE * gas_amount
+				if(GAS_TRITIUM)
+					fuel_power += TRITRIUM_THRUSTER_VALUE * gas_amount
+				if(GAS_HYDROGEN)
+					fuel_power += HYDROGEN_THRUSTER_VALUE * gas_amount
 
+			air_contents.adjust_moles(id, -gas_amount)
 		thrust_power = min(oxidation_power,fuel_power) * efficiency_multiplier //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
 		return(thrust_power)
 
