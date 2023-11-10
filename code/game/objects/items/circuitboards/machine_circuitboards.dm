@@ -718,21 +718,34 @@
 /obj/item/circuitboard/machine/chem_dispenser/fullupgrade
 	build_path = /obj/machinery/chem_dispenser/fullupgrade
 	req_components = list(
-		/obj/item/stock_parts/matter_bin/bluespace = 2,
-		/obj/item/stock_parts/capacitor/quadratic = 2,
-		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/cell/bluespace = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stock_parts/cell = 1
 	)
 
 /obj/item/circuitboard/machine/chem_dispenser/mutagensaltpeter
 	build_path = /obj/machinery/chem_dispenser/mutagensaltpeter
 	req_components = list(
-		/obj/item/stock_parts/matter_bin/bluespace = 2,
-		/obj/item/stock_parts/capacitor/quadratic = 2,
-		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/cell/bluespace = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stock_parts/cell = 1
+	)
+
+/obj/item/circuitboard/machine/chem_dispenser/mutagen
+	build_path = /obj/machinery/chem_dispenser/mutagen
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stock_parts/cell = 1
 	)
 
 /obj/item/circuitboard/machine/chem_dispenser/abductor
@@ -1177,11 +1190,12 @@
 /obj/item/circuitboard/machine/chem_dispenser/drinks/fullupgrade
 	build_path = /obj/machinery/chem_dispenser/drinks/fullupgrade
 	req_components = list(
-		/obj/item/stock_parts/matter_bin/bluespace = 2,
-		/obj/item/stock_parts/capacitor/quadratic = 2,
-		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/cell/bluespace = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stock_parts/cell = 1
 	)
 
 /obj/item/circuitboard/machine/chem_dispenser/drinks/beer
@@ -1192,11 +1206,12 @@
 /obj/item/circuitboard/machine/chem_dispenser/drinks/beer/fullupgrade
 	build_path = /obj/machinery/chem_dispenser/drinks/beer/fullupgrade
 	req_components = list(
-		/obj/item/stock_parts/matter_bin/bluespace = 2,
-		/obj/item/stock_parts/capacitor/quadratic = 2,
-		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/matter_bin = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/cell/bluespace = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stock_parts/cell = 1
 	)
 
 /obj/item/circuitboard/machine/chem_master/condi
