@@ -1,4 +1,4 @@
-#define SAUNA_H2O_TEMP  T20C + 80
+#define SAUNA_H2O_TEMP T20C + 80
 #define SAUNA_LOG_FUEL 150
 #define SAUNA_MAXIMUM_FUEL 3000
 #define SAUNA_WATER_PER_WATER_UNIT 3
@@ -28,7 +28,7 @@
 
 	if(method != TOUCH) // Only splashing/pouring
 		return
-	
+
 	for(var/reagent in reagents)
 		if(istype(reagent, /datum/reagent/water))
 			water_amount += reagents[reagent] * SAUNA_WATER_PER_WATER_UNIT
