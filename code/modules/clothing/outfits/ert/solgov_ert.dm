@@ -33,4 +33,6 @@
 
 	l_hand = null
 
+	backpack_contents = list(/obj/item/stamp/solgov=1)
+
 	id_role = "Inspector"

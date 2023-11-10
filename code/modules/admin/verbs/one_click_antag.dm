@@ -345,7 +345,7 @@
 			if(!length(GLOB.emergencyresponseteamsoutpostpawn))
 				stack_trace("No ERT outpost spawns! ERT spawning at CentCom.")
 				return
-			spawnpoints = GLOB.emergencyresponseteamsoutpostpawn
+			spawn_turfs = list(GLOB.emergencyresponseteamsoutpostpawn)
 
 
 		if(ertemplate.use_custom_shuttle && ertemplate.ert_template)

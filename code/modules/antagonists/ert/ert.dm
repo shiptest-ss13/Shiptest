@@ -262,29 +262,18 @@
 	random_names = FALSE
 	role = "Sonnensöldner"
 
-/datum/antagonist/ert/solgov/inspector
+/datum/antagonist/ert/official/solgov
 	name = "SolGov Inspector"
 	outfit = /datum/outfit/centcom/ert/solgov/inspector
 	role = "Solarian Inspector"
 
-datum/antagonist/ert/solgov/inspector/greet()
+/datum/antagonist/ert/official/solgov/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are a Solarian Inspector.</font></B>")
 	if (ert_team)
 		to_chat(owner, "The Department of Administrative Affairs is sending you to [station_name()] with the task: [ert_team.mission.explanation_text]")
 	else
 		to_chat(owner, "The Department of Administrative Affairs is sending you to [station_name()] with the task: [mission.explanation_text]")
 
-/datum/antagonist/ert/official/forge_objectives()
-	if (ert_team)
-		return ..()
-	if(mission)
-		return
-	var/datum/objective/missionobj = new ()
-	missionobj.owner = owner
-	missionobj.explanation_text = "Conduct a routine performance review of [station_name()]'s vessels."
-	missionobj.completed = TRUE
-	mission = missionobj
-	objectives |= mission
 
 // ********************************************************************
 // ** Minutemen **

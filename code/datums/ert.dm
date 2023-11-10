@@ -126,8 +126,8 @@
 
 /datum/ert/solgov/inspector
 	teamsize = 1
-	leader_role = /datum/antagonist/ert/solgov/inspector
-	roles = list(/datum/antagonist/ert/solgov/inspector)
+	leader_role = /datum/antagonist/ert/official/solgov
+	roles = list(/datum/antagonist/ert/official/solgov)
 	rename_team = "SolGov Inspector"
 	polldesc = "a solarian inspector"
 
