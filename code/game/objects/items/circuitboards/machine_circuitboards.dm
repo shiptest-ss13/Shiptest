@@ -757,6 +757,7 @@
 		/obj/item/stock_parts/capacitor/quadratic = 2,
 		/obj/item/stock_parts/manipulator/femto = 2,
 		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
 		/obj/item/stock_parts/cell/bluespace = 1,
 	)
 	needs_anchored = FALSE
