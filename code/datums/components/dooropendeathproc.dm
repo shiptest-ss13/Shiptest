@@ -11,7 +11,7 @@
 	src.door_id = door_id
 
 /datum/component/poddoor_on_death/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOB_DEATH, .proc/open_doors)
+	RegisterSignal(parent, COMSIG_MOB_DEATH, PROC_REF(open_doors))
 
 /datum/component/poddoor_on_death/proc/open_doors()
 	for(var/obj/machinery/door/poddoor/D in GLOB.machines)
