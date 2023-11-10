@@ -1,9 +1,9 @@
 /datum/ert
 	var/mobtype = /mob/living/carbon/human
 	var/team = /datum/team/ert
-	var/opendoors = TRUE
+	var/opendoors = FALSE
 	var/leader_role = /datum/antagonist/ert/commander
-	var/enforce_human = TRUE
+	var/enforce_human = FALSE
 	var/roles = list(/datum/antagonist/ert/security, /datum/antagonist/ert/medic, /datum/antagonist/ert/engineer) //List of possible roles to be assigned to ERT members.
 	var/rename_team
 	var/code
@@ -11,15 +11,17 @@
 	var/teamsize = 5
 	var/polldesc
 	/// If TRUE, gives the team members "[role] [random last name]" style names
-	var/random_names = TRUE
+	var/random_names = FALSE
 	/// If TRUE, the admin who created the response team will be spawned in the briefing room in their preferred briefing outfit (assuming they're a ghost)
 	var/spawn_admin = FALSE
 	/// If TRUE, we try and pick one of the most experienced players who volunteered to fill the leader slot
 	var/leader_experience = TRUE
-	/// A custom map template to spawn the ERT at. If this is null or use_custom_shuttle is FALSE, the ERT will spawn at Centcom. By default, a Kunai-Class.
+	/// A custom map template to spawn the ERT at. If use_custom_shuttle is FALSE, the ERT will spawn on foot. By default, a Kunai-Class.
 	var/datum/map_template/ert_template = /datum/map_template/shuttle/subshuttles/kunai
 	/// If we should actually _use_ the ert_template custom shuttle
 	var/use_custom_shuttle = TRUE
+	/// If TRUE, the ERT will spawn at the outpost. If use_custom_shuttle is also TRUE, the shuttle will be docked at the outpost
+	var/spawn_at_outpost = FALSE
 
 // Nanotrasen
 

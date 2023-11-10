@@ -1090,6 +1090,7 @@
 "ki" = (
 /obj/structure/chair/office,
 /obj/machinery/light/small/directional/west,
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/grimy,
 /area/outpost/crew/dorm)
 "ks" = (
@@ -1762,6 +1763,7 @@
 	},
 /obj/machinery/light/small/directional/west,
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel,
 /area/outpost/crew/dorm)
 "pY" = (
@@ -1774,6 +1776,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/cargo)
+"pZ" = (
+/obj/effect/turf_decal/corner/opaque/bottlegreen{
+	dir = 10
+	},
+/obj/effect/landmark/ert_outpost_spawn,
+/turf/open/floor/plasteel,
+/area/outpost/crew/dorm)
 "qc" = (
 /obj/structure/table,
 /obj/structure/window/reinforced{
@@ -3823,6 +3832,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel,
 /area/outpost/crew/dorm)
 "HG" = (
@@ -5371,6 +5381,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen{
 	dir = 5
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel,
 /area/outpost/crew/dorm)
 "WT" = (
@@ -12737,7 +12748,7 @@ nU
 nU
 nU
 yl
-Df
+pZ
 wL
 Ez
 SC

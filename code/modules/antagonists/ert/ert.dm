@@ -267,7 +267,7 @@
 	outfit = /datum/outfit/centcom/ert/solgov/inspector
 	role = "Solarian Inspector"
 
-/datum/antagonist/ert/official/greet()
+datum/antagonist/ert/solgov/inspector/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are a Solarian Inspector.</font></B>")
 	if (ert_team)
 		to_chat(owner, "The Department of Administrative Affairs is sending you to [station_name()] with the task: [ert_team.mission.explanation_text]")

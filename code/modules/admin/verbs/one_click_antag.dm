@@ -225,6 +225,7 @@
 	.["mainsettings"]["random_names"]["value"] = newtemplate.random_names ? "Yes" : "No"
 	.["mainsettings"]["spawn_admin"]["value"] = newtemplate.spawn_admin ? "Yes" : "No"
 	.["mainsettings"]["use_custom_shuttle"]["value"] = newtemplate.use_custom_shuttle ? "Yes" : "No"
+	.["mainsettings"]["spawn_at_outpost"]["value"] = newtemplate.spawn_at_outpost ? "Yes" : "No"
 
 
 /datum/admins/proc/equipAntagOnDummy(mob/living/carbon/human/dummy/mannequin, datum/antagonist/antag)
@@ -294,6 +295,7 @@
 		"random_names" = list("desc" = "Randomize names", "type" = "boolean", "value" = "[(ertemplate.random_names ? "Yes" : "No")]"),
 		"spawn_admin" = list("desc" = "Spawn yourself as briefing officer", "type" = "boolean", "value" = "[(ertemplate.spawn_admin ? "Yes" : "No")]"),
 		"use_custom_shuttle" = list("desc" = "Use the ERT's custom shuttle (if it has one)", "type" = "boolean", "value" = "[(ertemplate.use_custom_shuttle ? "Yes" : "No")]"),
+		"spawn_at_outpost" = list("desc" = "Spawn the ERT/Dock the ERT at the Outpost", "type" = "boolean", "value" = "[(ertemplate.spawn_at_outpost ? "Yes" : "No")]"),
 		)
 	)
 
@@ -315,12 +317,13 @@
 		ertemplate.teamsize = prefs["teamsize"]["value"]
 		ertemplate.mission = prefs["mission"]["value"]
 		ertemplate.polldesc = prefs["polldesc"]["value"]
-		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 6 are effectively toggles
+		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 7 are effectively toggles
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes"
 		ertemplate.leader_experience = prefs["leader_experience"]["value"] == "Yes"
 		ertemplate.random_names = prefs["random_names"]["value"] == "Yes"
 		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
 		ertemplate.use_custom_shuttle = prefs["use_custom_shuttle"]["value"] == "Yes"
+		ertemplate.spawn_at_outpost = prefs["use_custom_shuttle"]["value"] == "Yes"
 
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 		var/index = 0
@@ -338,10 +341,33 @@
 			to_chat(usr, span_warning("No applicants for ERT. Aborting spawn."))
 			return FALSE
 
+		if(ertemplate.spawn_at_outpost && !ertemplate.use_custom_shuttle)
+			if(!length(GLOB.emergencyresponseteamsoutpostpawn))
+				stack_trace("No ERT outpost spawns! ERT spawning at CentCom.")
+				return
+			spawnpoints = GLOB.emergencyresponseteamsoutpostpawn
+
+
 		if(ertemplate.use_custom_shuttle && ertemplate.ert_template)
 			to_chat(usr, span_boldnotice("Attempting to spawn ERT custom shuttle, this may take a few seconds..."))
-			var/datum/map_template/shuttle/template = new ertemplate.ert_template // this is stolen from events/pirates.dm. i am a hack
-			var/datum/overmap/ship/controlled/ship = new(SSovermap.get_unused_overmap_square(), template)
+
+			var/datum/map_template/shuttle/template = new ertemplate.ert_template
+			var/spawn_location
+
+			if(ertemplate.spawn_at_outpost)
+				if(length(SSovermap.outposts) > 1)
+					var/temp_loc = input(usr, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+					if(!temp_loc)
+						message_admins("ERT Shuttle found no outpost to spawn at!")
+						return
+					spawn_location = temp_loc
+				else
+					spawn_location = SSovermap.outposts[1]
+
+			if(!spawn_location)
+				spawn_location = SSovermap.get_unused_overmap_square()
+
+			var/datum/overmap/ship/controlled/ship = new(spawn_location, template)
 
 			if(!ship)
 				CRASH("Loading ERT shuttle failed!")
@@ -364,7 +390,7 @@
 
 		if(ertemplate.spawn_admin)
 			if(isobserver(usr))
-				var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawnpoints[1])
+				var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawn_turfs || spawnpoints[1])
 				var/chosen_outfit = usr.client?.prefs?.brief_outfit
 				usr.client.prefs.copy_to(admin_officer)
 				admin_officer.equipOutfit(chosen_outfit)
