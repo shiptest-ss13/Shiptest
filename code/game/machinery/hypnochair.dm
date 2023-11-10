@@ -98,7 +98,7 @@
 	START_PROCESSING(SSobj, src)
 	start_time = world.time
 	update_appearance()
-	timerid = addtimer(CALLBACK(src, .proc/finish_interrogation), 450, TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(finish_interrogation)), 450, TIMER_STOPPABLE)
 
 /obj/machinery/hypnochair/process()
 	var/mob/living/carbon/C = occupant

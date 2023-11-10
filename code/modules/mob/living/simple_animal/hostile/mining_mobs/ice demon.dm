@@ -194,7 +194,7 @@
 	icon_state = "frozen"
 
 /datum/status_effect/ice_crystal/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, .proc/owner_moved)
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
 	if(!owner.stat)
 		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")

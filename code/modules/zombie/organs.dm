@@ -63,7 +63,7 @@
 		not even death can stop, you will rise again!</span>")
 	var/revive_time = rand(revive_time_min, revive_time_max)
 	var/flags = TIMER_STOPPABLE
-	timer_id = addtimer(CALLBACK(src, .proc/zombify, owner), revive_time, flags)
+	timer_id = addtimer(CALLBACK(src, PROC_REF(zombify), owner), revive_time, flags)
 
 /obj/item/organ/zombie_infection/proc/zombify(mob/living/carbon/C)
 	timer_id = null

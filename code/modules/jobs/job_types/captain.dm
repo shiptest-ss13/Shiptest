@@ -54,6 +54,7 @@
 
 	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
+	gloves = /obj/item/clothing/gloves/color/captain/nt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 
@@ -61,19 +62,9 @@
 	name = "Captain (Nanotrasen)"
 
 	uniform = /obj/item/clothing/under/rank/centcom/officer
+	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/centhat
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-
-/datum/outfit/job/captain/solgov
-	name = "Captain (SolGov)"
-
-	ears = /obj/item/radio/headset/solgov/captain
-	shoes = /obj/item/clothing/shoes/laceup
-	suit = /obj/item/clothing/suit/toggle/solgov
-
-/datum/outfit/job/captain/solgov/rebel
-	name = "Captain (Deserter)"
-	suit = /obj/item/clothing/suit/toggle/solgov/terragov
 
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
