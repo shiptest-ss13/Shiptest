@@ -172,7 +172,6 @@
 				"<span class='notice'>You begin repairing [src]...</span>", \
 				"<span class='hear'>You hear welding.</span>")
 			if(tool.use_tool(src, user, 100, volume=50))
-				playsound()
 				malfunction = null
 				obj_integrity = max_integrity
 				return
