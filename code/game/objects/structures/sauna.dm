@@ -1,7 +1,7 @@
 #define SAUNA_H2O_TEMP T20C + 60
 #define SAUNA_LOG_FUEL 150
 #define SAUNA_MAXIMUM_FUEL 3000
-#define SAUNA_WATER_PER_WATER_UNIT 3
+#define SAUNA_WATER_PER_WATER_UNIT 5
 
 /obj/structure/sauna_oven
 	name = "sauna oven"
@@ -90,7 +90,7 @@
 			used_amt = 1
 		else
 			used_amt = water_amount
-		// The above is equal to used_amt = max(water_amount/10, min(1, water_amount)
+		// The above is equal to used_amt = max(water_amount/10), min(1, water_amount)
 		water_amount -= used_amt
 		var/turf/pos = get_turf(src)
 		if(pos)
