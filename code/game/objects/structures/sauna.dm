@@ -86,11 +86,12 @@
 		var/used_amt
 		if(water_amount >= 10)
 			used_amt = water_amount/10
+		else if(water_amount >= 300)
+			used_amt = 30
 		else if(water_amount >= 1)
 			used_amt = 1
 		else
 			used_amt = water_amount
-		// The above is equal to used_amt = max(water_amount/10), min(1, water_amount)
 		water_amount -= used_amt
 		var/turf/pos = get_turf(src)
 		if(pos)
