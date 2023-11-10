@@ -10,9 +10,10 @@
 	var/spawn_distance_min = 1
 	var/spawn_distance_max = 1
 	var/wave_length //Average time until break in spawning
-	var/wave_downtime
+	var/wave_downtime //Average time until spawning starts again
 	var/spawning_paused = FALSE
 	var/wave_timer
+	var/downtime_timer
 
 
 /datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime)
@@ -63,11 +64,24 @@
 /datum/component/spawner/proc/try_spawn_mob()
 	var/atom/P = parent
 	var/turf/spot = P.loc
+	//Checks for handling the wave-based pausing and unpausing of spawning
+	//Almost certainly a better way to do this, but until then this technically works
+	if(spawning_paused)
+		if(!downtime_timer)
+			downtime_timer = wave_downtime + world.time
+		if(world.time > downtime_timer)
+			spawning_paused = FALSE
+			downtime_timer = null
+			return 0
+		else
+			return 0
 	if(!wave_timer && wave_length)
 		wave_timer = wave_length + world.time
 	if(wave_timer && world.time > wave_timer)
 		spawning_paused = TRUE
+		wave_timer = null
 		return 0
+	////////////////////////////////
 	if(spawned_mobs.len >= max_mobs)
 		return 0
 	if(spawn_delay > world.time)

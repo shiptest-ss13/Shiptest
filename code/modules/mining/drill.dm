@@ -124,7 +124,6 @@
 		if(active)
 			to_chat(user, "<span class='notice'>[src] can't be unsecured while it's running!</span>")
 			return
-		playsound(src, 'sound/items/ratchet.ogg', 50, TRUE)
 		if(!anchored && tool.use_tool(src, user, 30, volume=50))
 			to_chat(user, "<span class='notice'>You secure the [src] to the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
