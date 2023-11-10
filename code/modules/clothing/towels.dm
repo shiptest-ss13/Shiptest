@@ -54,6 +54,9 @@
 	if(iscyborg(user))
 		return
 
+	if(in_hands && shape != TOWEL_FOLDED)
+		. += span_notice("<b>Ctrl-click</b> to fold [src] neatly.")
+
 	if(shape == TOWEL_FULL || shape == TOWEL_WAIST)
 		. += span_notice("<b>Alt-click</b> to adjust the fit of [src].")
 
@@ -88,6 +91,21 @@
 		to_chat(user, "<span class='notice'>You tear [src] up.</span>")
 	else
 		return ..()
+
+/obj/item/towel/CtrlClick(mob/user)
+	. = ..()
+
+	if(. == FALSE)
+		return
+	if(shape == TOWEL_FOLDED)
+		to_chat(user, span_warning("You can't fold a towel that's already folded!"))
+	var/in_hands = TRUE
+	if(ishuman(user) && shape == TOWEL_USED)
+		in_hands = user.get_active_held_item() == src || user.get_inactive_held_item() == src
+		if(in_hands)
+			change_towel_shape(user, TOWEL_FOLDED, silent = TRUE)
+			to_chat(user, span_notice("You fold [src] up neatly."))
+		return
 
 /obj/item/towel/AltClick(mob/user)
 	. = ..()

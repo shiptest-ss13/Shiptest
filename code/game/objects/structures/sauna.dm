@@ -1,4 +1,4 @@
-#define SAUNA_H2O_TEMP T20C + 80
+#define SAUNA_H2O_TEMP T20C + 60
 #define SAUNA_LOG_FUEL 150
 #define SAUNA_MAXIMUM_FUEL 3000
 #define SAUNA_WATER_PER_WATER_UNIT 3
@@ -45,11 +45,11 @@
 	if(lit)
 		lit = FALSE
 		STOP_PROCESSING(SSobj, src)
-		user.visible_message("<span class='notice'>[user] turns on [src].</span>", "<span class='notice'>You turn on [src].</span>")
+		user.visible_message("<span class='notice'>[user] turns off [src].</span>", "<span class='notice'>You turn on [src].</span>")
 	else if (fuel_amount)
 		lit = TRUE
 		START_PROCESSING(SSobj, src)
-		user.visible_message("<span class='notice'>[user] turns off [src].</span>", "<span class='notice'>You turn off [src].</span>")
+		user.visible_message("<span class='notice'>[user] turns on [src].</span>", "<span class='notice'>You turn off [src].</span>")
 	update_icon()
 
 /obj/structure/sauna_oven/update_overlays()
