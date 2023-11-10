@@ -445,7 +445,7 @@
 		id.update_label()
 	else
 		to_chat(L, "<span class='userdanger'>Your owner is already dead! You will soon perish.</span>")
-		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, dust), 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
 	name = "Demonic Friend"
@@ -719,7 +719,6 @@
 
 /obj/effect/mob_spawn/human/pirate/special(mob/living/new_spawn)
 	new_spawn.fully_replace_character_name(new_spawn.real_name,generate_pirate_name())
-	new_spawn.mind.add_antag_datum(/datum/antagonist/pirate)
 
 /obj/effect/mob_spawn/human/pirate/proc/generate_pirate_name()
 	var/beggings = strings(PIRATE_NAMES_FILE, "beginnings")

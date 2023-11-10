@@ -33,7 +33,7 @@
 	/// What type of reagent this fish needs to be fed.
 	var/food = /datum/reagent/consumable/nutriment
 	/// How often the fish needs to be fed
-	var/feeding_frequency = 5 MINUTES
+	var/feeding_frequency = 20 MINUTES
 	/// Time of last feedeing
 	var/last_feeding
 
@@ -103,8 +103,8 @@
 	. = ..()
 	/* if(fillet_type)
 		AddElement(/datum/element/processable, TOOL_KNIFE, fillet_type, 1, 5) */
-	AddComponent(/datum/component/aquarium_content, .proc/get_aquarium_animation, list(COMSIG_FISH_STATUS_CHANGED,COMSIG_FISH_STIRRED))
-	RegisterSignal(src, COMSIG_ATOM_TEMPORARY_ANIMATION_START, .proc/on_temp_animation)
+	AddComponent(/datum/component/aquarium_content, PROC_REF(get_aquarium_animation), list(COMSIG_FISH_STATUS_CHANGED,COMSIG_FISH_STIRRED))
+	RegisterSignal(src, COMSIG_ATOM_TEMPORARY_ANIMATION_START, PROC_REF(on_temp_animation))
 
 	check_environment_after_movement()
 	if(status != FISH_DEAD)
@@ -165,8 +165,8 @@
 /obj/item/fish/proc/on_aquarium_insertion(obj/structure/aquarium)
 	if(isnull(last_feeding)) //Fish start fed.
 		last_feeding = world.time
-	RegisterSignal(aquarium, COMSIG_ATOM_EXITED, .proc/aquarium_exited)
-	RegisterSignal(aquarium, COMSIG_PARENT_ATTACKBY, .proc/attack_reaction)
+	RegisterSignal(aquarium, COMSIG_ATOM_EXITED, PROC_REF(aquarium_exited))
+	RegisterSignal(aquarium, COMSIG_PARENT_ATTACKBY, PROC_REF(attack_reaction))
 
 /obj/item/fish/proc/aquarium_exited(datum/source, atom/movable/gone, direction)
 	SIGNAL_HANDLER
@@ -265,10 +265,10 @@
 	var/health_change_per_second = 0
 	if(!proper_environment())
 		health_change_per_second -= 3 //Dying here
-	if(world.time - last_feeding >= feeding_frequency)
-		health_change_per_second -= 0.5 //Starving
-	else
+	if(world.time - last_feeding <= feeding_frequency)
 		health_change_per_second += 0.5 //Slowly healing
+	else
+		return
 	adjust_health(health + health_change_per_second)
 
 /obj/item/fish/proc/adjust_health(amt)
@@ -290,6 +290,8 @@
 	if(!istype(aquarium))
 		return
 	if(length(aquarium.tracked_fish) >= AQUARIUM_MAX_BREEDING_POPULATION) //so aquariums full of fish don't need to do these expensive checks
+		return
+	if(world.time - last_feeding >= feeding_frequency)
 		return
 	var/list/other_fish_of_same_type = list()
 	for(var/obj/item/fish/fish_in_aquarium in aquarium)
@@ -363,7 +365,7 @@
 /// Refreshes flopping animation after temporary animation finishes
 /obj/item/fish/proc/on_temp_animation(datum/source, animation_duration)
 	if(animation_duration > 0)
-		addtimer(CALLBACK(src, .proc/refresh_flopping), animation_duration)
+		addtimer(CALLBACK(src, PROC_REF(refresh_flopping)), animation_duration)
 
 /obj/item/fish/proc/refresh_flopping()
 	if(flopping)
