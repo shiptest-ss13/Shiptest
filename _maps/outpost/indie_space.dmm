@@ -501,24 +501,26 @@
 /area/outpost/crew/janitor)
 "dK" = (
 /obj/item/trash/can/food/beans{
-	pixel_x = -4;
-	pixel_y = -3
+	pixel_x = -16;
+	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/can/food/beans{
-	pixel_x = 5;
+	pixel_x = 7;
 	pixel_y = 5
 	},
 /obj/item/trash/can/food/beans{
-	pixel_y = 1
+	pixel_y = -2;
+	pixel_x = 2
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -9;
+	pixel_y = 18
 	},
 /turf/open/floor/plating/asteroid,
 /area/outpost/maintenance/central)
 "dL" = (
-/obj/machinery/door/airlock/maintenance{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
@@ -535,6 +537,10 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4;
+	req_access = list("101")
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms)
 "dN" = (
@@ -671,7 +677,9 @@
 "ey" = (
 /obj/machinery/door/firedoor/closed,
 /obj/structure/barricade/wooden/crude,
-/obj/machinery/door/airlock/mining,
+/obj/machinery/door/airlock/mining{
+	req_access = list("106")
+	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -1271,11 +1279,15 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/can/food/beans{
-	pixel_x = 5;
-	pixel_y = 5
+	pixel_x = 9;
+	pixel_y = 8
 	},
 /obj/item/trash/can/food/beans{
 	pixel_y = 1
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = 13;
+	pixel_y = -9
 	},
 /turf/open/floor/plating/asteroid,
 /area/outpost/maintenance/central)
@@ -1583,7 +1595,9 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "lq" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	req_access = list("101")
+	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1798,7 +1812,6 @@
 "mB" = (
 /obj/machinery/door/firedoor/closed,
 /obj/structure/barricade/wooden/crude,
-/obj/machinery/door/airlock/mining,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -1807,6 +1820,9 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/mining{
+	req_access = list("106")
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/port)
 "mC" = (
@@ -2242,7 +2258,6 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/central)
 "pC" = (
-/obj/machinery/door/airlock/maintenance,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -2253,6 +2268,10 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/maintenance{
+	req_access = list("101")
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/central)
 "pF" = (
@@ -3135,7 +3154,6 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "uv" = (
-/obj/structure/table/wood,
 /obj/machinery/libraryscanner,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -3345,7 +3363,9 @@
 /area/outpost/hallway/port)
 "vT" = (
 /obj/structure/rack,
-/mob/living/simple_animal/pet/mothroach,
+/mob/living/simple_animal/pet/mothroach{
+	name = "beanroach"
+	},
 /obj/item/reagent_containers/food/snacks/canned/beans,
 /obj/item/reagent_containers/food/snacks/canned/beans,
 /obj/item/reagent_containers/food/snacks/canned/beans,
@@ -3508,10 +3528,11 @@
 /area/outpost/maintenance/central)
 "wT" = (
 /obj/machinery/jukebox{
-	pixel_y = 26;
+	pixel_y = 16;
 	density = 0;
 	can_be_unanchored = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
@@ -4010,8 +4031,12 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/can/food/beans{
-	pixel_x = 5;
-	pixel_y = 5
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/obj/item/reagent_containers/food/snacks/canned/beans{
+	pixel_x = -14;
+	pixel_y = -7
 	},
 /turf/open/floor/plating/asteroid,
 /area/outpost/maintenance/central)
@@ -4045,9 +4070,6 @@
 /turf/open/floor/plating/asteroid,
 /area/outpost/external)
 "AI" = (
-/obj/machinery/door/airlock/maintenance{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -4072,6 +4094,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/door/airlock/maintenance{
+	dir = 4;
+	req_access = list("101")
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/central)
@@ -4397,7 +4423,8 @@
 "Cg" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks{
-	pixel_y = 13
+	pixel_y = 13;
+	layer = 3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/drinks/shaker{
@@ -4952,14 +4979,16 @@
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms)
 "GB" = (
-/obj/machinery/door/airlock/maintenance{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/maintenance{
+	dir = 4;
+	req_access = list("101")
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/port)
@@ -5752,7 +5781,8 @@
 /area/outpost/hallway/central)
 "KZ" = (
 /obj/machinery/door/airlock/maintenance{
-	dir = 4
+	dir = 4;
+	req_access = list("101")
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -6013,7 +6043,8 @@
 "MD" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/beer{
-	pixel_y = 13
+	pixel_y = 13;
+	layer = 3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
@@ -6739,12 +6770,14 @@
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "RG" = (
-/obj/machinery/door/airlock/mining,
 /obj/structure/barricade/wooden/crude,
 /obj/machinery/door/firedoor/closed,
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
+	},
+/obj/machinery/door/airlock/mining{
+	req_access = list("106")
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/port)
@@ -6808,6 +6841,10 @@
 /obj/item/trash/can/food/beans{
 	pixel_x = 5;
 	pixel_y = 5
+	},
+/obj/item/trash/can/food/beans{
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /turf/open/floor/plating/asteroid,
 /area/outpost/maintenance/central)
@@ -10731,7 +10768,7 @@ mC
 mC
 mC
 mC
-cb
+mC
 mC
 mC
 mC
@@ -11096,7 +11133,6 @@ mC
 mC
 mC
 mC
-cb
 mC
 mC
 mC
@@ -11105,7 +11141,8 @@ mC
 mC
 mC
 mC
-cb
+mC
+mC
 mC
 mC
 mC
@@ -11727,7 +11764,7 @@ mC
 mC
 mC
 mC
-cb
+mC
 mC
 mC
 mC
@@ -12101,7 +12138,7 @@ mC
 mC
 mC
 mC
-cb
+mC
 mC
 mC
 mC
@@ -12964,7 +13001,7 @@ mC
 mC
 mC
 mC
-cb
+mC
 mC
 mC
 mC
