@@ -28,6 +28,7 @@
 #define DYNAMIC_WORLD_ROCKPLANET "rockplanet" //wacky planets
 #define DYNAMIC_WORLD_BEACHPLANET "beachplanet"
 #define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
+#define DYNAMIC_WORLD_WOODS "woods"
 
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
@@ -35,7 +36,7 @@
 #define DYNAMIC_WORLD_GAS_GIANT "gas giant"
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
-/// Make sure you are adding new planet types to this, in order as seen above preferrably
+/// Make sure you are adding new planet types to this, in order as seen above preferrably // wouldnt it better to look for subtypes of /datum/planet_type instead of looking through this list?
 #define DYNAMIC_WORLD_LIST_ALL list(\
 	DYNAMIC_WORLD_LAVA,\
 	DYNAMIC_WORLD_ICE,\
@@ -44,6 +45,7 @@
 	DYNAMIC_WORLD_ROCKPLANET,\
 	DYNAMIC_WORLD_BEACHPLANET,\
 	DYNAMIC_WORLD_WASTEPLANET,\
+	DYNAMIC_WORLD_WOODS,\
 	DYNAMIC_WORLD_REEBE,\
 	DYNAMIC_WORLD_ASTEROID,\
 	DYNAMIC_WORLD_SPACERUIN,\

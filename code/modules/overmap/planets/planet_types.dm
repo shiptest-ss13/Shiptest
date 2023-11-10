@@ -160,3 +160,16 @@
 	icon_state = "globe"
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
+
+/datum/planet_type/woods
+	name = "woods planet"
+	desc = "Go to the woods."
+	planet = DYNAMIC_WORLD_WOODS
+	icon_state = "strange_event"
+	color = COLOR_GREEN
+	mapgen = /datum/map_generator/single_turf/woods
+	default_baseturf = /turf/open/floor/plating/dirt/jungle
+	weather_controller_type = /datum/weather_controller/lush
+	ruin_type = null
+	weight = 0
+	landing_sound = 'sound/effects/planet_landing_1.ogg'
