@@ -32,6 +32,7 @@
 	icon_state = "survey-elite"
 	survey_mult = 2
 	survey_delay = 2 SECONDS
+	slowdown = 0.6
 
 
 /obj/item/attachment/survey_scanner
