@@ -259,8 +259,6 @@
 	desc = "The neutralized core of a melter anomaly. It sizzles and crackles. It'd probably be valuable for research."
 	icon_state = "pyro core"
 
-
-
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return
 

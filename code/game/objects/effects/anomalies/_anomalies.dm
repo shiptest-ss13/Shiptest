@@ -15,10 +15,11 @@
 
 	var/lifespan = 990
 	var/death_time
-	var/research_value
 
 	//for anomaly effects, range is how far the effects can reach, the cooldown lets us wire in effects that happen every pulse delay seconds
 	var/effectrange = 6
+
+	var/anomalyResearchValue = 1
 
 	COOLDOWN_DECLARE(pulse_cooldown)
 	COOLDOWN_DECLARE(pulse_secondary_cooldown)
@@ -42,7 +43,6 @@
 	if (!impact_area)
 		return INITIALIZE_HINT_QDEL
 
-	research_value = rand(500,4000)
 	pulse_delay = rand(pulse_delay*0.5, pulse_delay*1.5)
 
 	src.drops_core = drops_core
@@ -50,7 +50,7 @@
 		aSignal = new aSignal(src)
 		aSignal.code = rand(1,100)
 		aSignal.anomaly_type = type
-		aSignal.research = research_value
+		aSignal.research = rand(1000,4000) * anomalyResearchValue
 
 		var/frequency = rand(MIN_FREE_FREQ, MAX_FREE_FREQ)
 		if(ISMULTIPLE(frequency, 2))//signaller frequencies are always uneven!
@@ -143,7 +143,7 @@
 			to_chat(user, span_notice("[src]'s primary field is fluctuating along frequency [format_frequency(aSignal.frequency)], code [aSignal.code]."))
 			if(bSignal)
 				to_chat(user, span_notice("A second field is fluctuating along [format_frequency(bSignal.frequency)], code [bSignal.code]. It is highly unstable." ))
-		return TRUE
+			return TRUE
 
 
 
