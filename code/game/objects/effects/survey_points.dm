@@ -4,7 +4,8 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 	name = "Survey Point"
 	desc = "A location of particular survey value."
 	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "x"
+	icon_state = "generic_event"
+	invisibility = INVISIBILITY_OBSERVER
 	alpha = 0
 	var/research_value
 
@@ -39,36 +40,38 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 			user_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
 			scangler.active = FALSE
 			scangler.pack.deductcharge(scangler.usecost)
+			drop_loot()
 			qdel(src)
 		else
 			flick(icon_state + "-corrupted", item)
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 20)
 			user_turf.visible_message("<span class='warning'>Warning: Results corrupted. Attempt scan again.</span>")
 			scangler.active = FALSE
-			return
-
-		var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(list(
-			"geographic analysis",
-			"soil composition",
-			"atmospheric deviation",
-			"planetary survey",
-			"background radiation levels",
-			"watertable readings",
-			"biohazard potential",
-			"plasma density",
-			"ore vein potential",
-			"fauna protein analysis",
-			"fern probablity index",
-			"carcinization threshold"
-		))) //I should just make this a proper list
-
-		var/obj/item/research_notes/notes = locate() in get_turf(user)
-		if(notes)
-			notes.merge(result)
-		else if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
-			var/obj/item/research_notes/research = user.get_inactive_held_item()
-			research.merge(result)
 	return
+
+/obj/effect/survey_point/proc/drop_loot()
+	var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(list(
+		"geographic analysis",
+		"soil composition",
+		"atmospheric deviation",
+		"planetary survey",
+		"background radiation levels",
+		"watertable readings",
+		"biohazard potential",
+		"plasma density",
+		"ore vein potential",
+		"fauna protein analysis",
+		"fern probablity index",
+		"carcinization threshold"
+	)))
+	var/obj/item/research_notes/notes = locate() in get_turf(user)
+	if(notes)
+		notes.merge(result)
+	else if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
+		var/obj/item/research_notes/research = user.get_inactive_held_item()
+		research.merge(result)
+
+
 
 /obj/effect/survey_point/Destroy()
 	. = ..()
