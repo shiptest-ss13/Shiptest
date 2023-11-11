@@ -172,7 +172,7 @@
 		/obj/structure/spawner/ice_moon/polarbear = 2,
 		/obj/structure/statue/snow/snowman = 3,
 		/obj/structure/statue/snow/snowlegion = 1,
-		/obj/effect/survey_point = 4
+		/obj/effect/survey_point = 4,
 		/obj/structure/vein/ice = 3,
 		/obj/structure/vein/ice/classtwo = 4,
 		/obj/structure/vein/ice/classthree = 1,
