@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 			user_turf.visible_message("<span class='notice'>Data recorded and enscribed to research packet.</span>")
 			scangler.active = FALSE
 			scangler.pack.deductcharge(scangler.usecost)
-			drop_loot()
+			drop_loot(user)
 			qdel(src)
 		else
 			flick(icon_state + "-corrupted", item)
@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 			scangler.active = FALSE
 	return
 
-/obj/effect/survey_point/proc/drop_loot()
+/obj/effect/survey_point/proc/drop_loot(mob/user)
 	var/obj/item/result = new /obj/item/research_notes(null, research_value, pick(list(
 		"geographic analysis",
 		"soil composition",
