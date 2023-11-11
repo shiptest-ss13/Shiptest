@@ -178,6 +178,19 @@
 	)
 	crate_name = "Shuttle in a Box"
 
+/datum/supply_pack/machinery/drill_crate
+	name = "Heavy duty laser mining drill"
+	desc = "An experimental laser-based mining drill that Nanotrasen is kindly allowing YOU, the customer, to opt into testing of."
+	cost = 1000 //Only while TMed, jack up the price before merging
+	contains = list(
+		/obj/machinery/drill,
+		/obj/item/pinpointer/mineral,
+		/obj/item/paper/guides/drill
+	)
+	crate_name = "laser mining drill crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
+
 /*
 		Power generation machines
 */

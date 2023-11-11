@@ -97,9 +97,12 @@
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 30,
-		/obj/structure/flora/rock/hell = 50,
-		/obj/structure/elite_tumor = 10,
+		/obj/structure/flora/rock/hell = 54,
+		/obj/structure/vein = 30,
+		/obj/structure/vein/classtwo = 20,
+		/obj/structure/elite_tumor = 15,
 		/obj/structure/geyser/random = 10,
+		/obj/structure/vein/classthree = 10,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 5
 
 	)
@@ -113,9 +116,9 @@
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 1,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 1,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal = 1,
-		/obj/structure/spawner/lavaland/low_threat = 12,
-		/obj/structure/spawner/lavaland/medium_threat = 4,
-		/obj/structure/spawner/lavaland/high_threat = 2,
+		/obj/structure/spawner/lavaland/low_threat = 8,
+		/obj/structure/spawner/lavaland/medium_threat = 3,
+		/obj/structure/spawner/lavaland/high_threat = 1,
 	)
 
 /datum/biome/lavaland/forest
@@ -160,10 +163,13 @@
 	)
 	feature_spawn_chance = 10
 	feature_spawn_list = list(
-		/obj/structure/flora/tree/dead/barren = 10,
-		/obj/structure/flora/tree/dead/tall/grey = 10,
-		/obj/effect/survey_point = 5,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 1
+		/obj/structure/flora/tree/dead/barren = 50,
+		/obj/structure/flora/tree/dead/tall/grey = 45,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 10,
+		/obj/effect/survey_pont = 25,
+		/obj/structure/vein = 5,
+		/obj/structure/vein/classtwo = 2,
+		/obj/structure/vein/classthree = 1,
 	)
 
 /datum/biome/lavaland/plains/dense/mixed
@@ -233,8 +239,8 @@
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random = 40,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10,
-		/obj/structure/spawner/lavaland/low_threat = 12,
-		/obj/structure/spawner/lavaland/medium_threat = 4,
+		/obj/structure/spawner/lavaland/low_threat = 8,
+		/obj/structure/spawner/lavaland/medium_threat = 3,
 		/obj/structure/spawner/lavaland/high_threat = 2,
 		/obj/structure/spawner/lavaland/extreme_threat = 1
 	)
