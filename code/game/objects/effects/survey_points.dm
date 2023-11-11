@@ -6,7 +6,7 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 	icon = 'icons/effects/landmarks_static.dmi'
 	icon_state = "generic_event"
 	invisibility = INVISIBILITY_OBSERVER
-	alpha = 0
+	alpha = 50
 	var/research_value
 
 /obj/effect/survey_point/Initialize()
