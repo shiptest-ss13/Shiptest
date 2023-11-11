@@ -166,7 +166,7 @@
 		/obj/structure/flora/tree/dead/barren = 50,
 		/obj/structure/flora/tree/dead/tall/grey = 45,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 10,
-		/obj/effect/survey_pont = 25,
+		/obj/effect/survey_point = 25,
 		/obj/structure/vein = 5,
 		/obj/structure/vein/classtwo = 2,
 		/obj/structure/vein/classthree = 1,
