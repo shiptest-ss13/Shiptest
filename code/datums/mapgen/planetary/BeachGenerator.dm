@@ -113,7 +113,7 @@
 	)
 	mob_spawn_chance = 1
 
-	feature_spawn_chance = 1
+	feature_spawn_chance = 0.2
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 1
 	)
@@ -163,7 +163,7 @@
 		/obj/structure/flora/rock/pile = 1,
 		/obj/structure/flora/ash/garden/seaweed = 1
 	)
-	flora_spawn_chance = 10
+	flora_spawn_chance = 1
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
 		/obj/effect/survey_point = 1
