@@ -35,6 +35,11 @@
 	update_power()
 	return
 
+/obj/item/gear_pack/examine(mob/user)
+	if(cell)
+		examine_list += "<span class='notice'>A small readout displays [PERCENT(cell.charge/cell.maxcharge)]% charge.</span>"
+
+
 /obj/item/gear_pack/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
 	if(attachment?.loc == src)
