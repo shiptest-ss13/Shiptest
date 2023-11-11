@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 /obj/effect/survey_point/Initialize()
 	. = ..()
 	GLOB.active_survey_points += src
-	research_value = rand(750, 1500)
+	research_value = rand(750, 2000)
 
 /obj/effect/survey_point/examine(mob/user)
 	. = ..()
@@ -70,8 +70,6 @@ GLOBAL_LIST_EMPTY(active_survey_points)
 	else if(!user.put_in_hands(result) && istype(user.get_inactive_held_item(), /obj/item/research_notes))
 		var/obj/item/research_notes/research = user.get_inactive_held_item()
 		research.merge(result)
-
-
 
 /obj/effect/survey_point/Destroy()
 	. = ..()

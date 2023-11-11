@@ -228,15 +228,15 @@
 /obj/item/pinpointer/survey_data/get_direction_icon(here, there)
 	var/size = ""
 	if(here == there)
-		size = "small"
+		size = "pinonalertdirect"
 	else
 		switch(get_dist(here, there))
-			if(1 to 4)
+			if(1 to 2)
 				size = "xtrlarge"
-			if(5 to 16)
+			if(3 to 8)
 				size = "large"
-			//17 through 28 use the normal pinion, "pinondirect"
-			if(29 to INFINITY)
+			//9 through 16 use the normal pinion, "pinondirect"
+			if(17 to INFINITY)
 				size = "small"
 	return "pinondirect[size]"
 

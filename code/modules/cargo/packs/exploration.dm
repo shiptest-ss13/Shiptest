@@ -105,5 +105,6 @@
 	cost = 2000
 	contains = list(
 		/obj/item/gear_pack/survey_pack/advanced,
+		/obj/item/pinpointer/survey_data
 	)
 	crate_name = "Survey Scanner Kit"
