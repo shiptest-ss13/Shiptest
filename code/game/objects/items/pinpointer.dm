@@ -217,7 +217,7 @@
 	toggle_on()
 	user.visible_message("<span class='notice'>[user] activates [user.p_their()] pinpointer.</span>", "<span class='notice'>You activate your pinpointer.</span>")
 
-/obj/item/pinpointer/survey_data/proc/get_closest_target(var/list/targets)
+/obj/item/pinpointer/survey_data/proc/get_closest_target(list/targets)
 	var/final_target
 	for(var/obj/effect/survey_point/targetee in targets)
 		if(targetee)
