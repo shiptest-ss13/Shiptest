@@ -50,6 +50,7 @@
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
+	load_sound = 'sound/weapons/gun/general/rocket_load.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
 	pin = /obj/item/firing_pin

@@ -54,14 +54,23 @@
 
 	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
+	gloves = /obj/item/clothing/gloves/color/captain/nt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
+
+/datum/outfit/job/captain/nt/heron
+	name = "Captain (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/centcom/officer
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/centhat
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
 
 	ears = /obj/item/radio/headset/pirate/captain
-	uniform = /obj/item/clothing/under/costume/russian_officer
+	uniform = /obj/item/clothing/under/costume/pirate
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain
 	suit = /obj/item/clothing/suit/pirate/captain

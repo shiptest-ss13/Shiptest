@@ -248,7 +248,7 @@
 		target.visible_message("<span class='danger'>[name] kicks [target.name] onto [target.p_their()] side!</span>",
 						"<span class='userdanger'>You're kicked onto your side by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
 		to_chat(src, "<span class='danger'>You kick [target.name] onto [target.p_their()] side!</span>")
-		addtimer(CALLBACK(target, /mob/living/proc/SetKnockdown, 0), SHOVE_CHAIN_PARALYZE)
+		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, SetKnockdown), 0), SHOVE_CHAIN_PARALYZE)
 		log_combat(src, target, "kicks", "onto their side (paralyzing)")
 
 	if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
@@ -304,7 +304,7 @@
 			if(target_held_item)
 				target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
 					"<span class='warning'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
-			addtimer(CALLBACK(target, /mob/living/carbon/proc/clear_shove_slowdown), SHOVE_SLOWDOWN_LENGTH)
+			addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
 		else if(target_held_item)
 			target.dropItemToGround(target_held_item)
 			knocked_item = TRUE
@@ -374,7 +374,7 @@
 	jitteriness += 1000
 	do_jitter_animation(jitteriness)
 	stuttering += 2
-	addtimer(CALLBACK(src, .proc/secondary_shock, should_stun), 20)
+	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.

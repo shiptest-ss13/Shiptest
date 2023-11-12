@@ -39,12 +39,18 @@
 					/obj/item/gun/ballistic/revolver)
 
 /datum/supply_pack/gun/detrevolver
-	name = "Revolver crate"
+	name = "Hunter's Pride Detective Revolver crate"
 	desc = "Contains two concealable Solarian revolvers, chambered in .38."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/revolver/detective,
 					/obj/item/gun/ballistic/revolver/detective)
 
+/datum/supply_pack/gun/cattlemanrevolver
+	name = "Cattleman Revolver crate"
+	desc = "Contains two concealable Cattleman revolvers, chambered in .45 ACP."
+	cost = 2500
+	contains = list(/obj/item/gun/ballistic/revolver/cattleman,
+					/obj/item/gun/ballistic/revolver/cattleman)
 
 
 /*

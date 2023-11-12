@@ -17,12 +17,6 @@
 
 	var/obj/item/dullahan_relay/myhead
 
-
-/datum/species/dullahan/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return FALSE
-
 /datum/species/dullahan/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	. = ..()
 	H.lose_hearing_sensitivity(ORGAN_TRAIT)
@@ -122,10 +116,10 @@
 		return INITIALIZE_HINT_QDEL
 	owner = new_owner
 	START_PROCESSING(SSobj, src)
-	RegisterSignal(owner, COMSIG_CLICK_SHIFT, .proc/examinate_check)
-	RegisterSignal(src, COMSIG_ATOM_HEARER_IN_VIEW, .proc/include_owner)
-	RegisterSignal(owner, COMSIG_LIVING_REGENERATE_LIMBS, .proc/unlist_head)
-	RegisterSignal(owner, COMSIG_LIVING_REVIVE, .proc/retrieve_head)
+	RegisterSignal(owner, COMSIG_CLICK_SHIFT, PROC_REF(examinate_check))
+	RegisterSignal(src, COMSIG_ATOM_HEARER_IN_VIEW, PROC_REF(include_owner))
+	RegisterSignal(owner, COMSIG_LIVING_REGENERATE_LIMBS, PROC_REF(unlist_head))
+	RegisterSignal(owner, COMSIG_LIVING_REVIVE, PROC_REF(retrieve_head))
 	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/item/dullahan_relay/process()
