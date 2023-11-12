@@ -136,7 +136,8 @@
 
 /obj/item/towel/dropped(mob/user, silent)
 	. = ..()
-	if(!ishuman(loc))
+
+	if(!ishuman(loc) && shape != TOWEL_FOLDED)
 		make_used(user, silent = TRUE)
 
 /*
