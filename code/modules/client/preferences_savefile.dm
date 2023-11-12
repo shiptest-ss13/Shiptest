@@ -523,7 +523,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	height_filter		= sanitize_inlist(height_filter, GLOB.height_filters, "Normal")
 	features["grad_style"]				= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
 	features["grad_color"]				= sanitize_hexcolor(features["grad_color"])
-	features["body_size"]				= sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
 	features["mcolor"]					= sanitize_hexcolor(features["mcolor"])
 	features["mcolor2"]					= sanitize_hexcolor(features["mcolor2"])
 	features["ethcolor"]				= copytext_char(features["ethcolor"], 1, 7)
