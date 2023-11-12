@@ -33,7 +33,7 @@
 		playsound(src, 'sound/effects/walkietalkie.ogg', 75)
 		if(stored_mob)
 			say_fucky_things()
-		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD)
+		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD || !looking.research_scanner && looking.stat != DEAD || !HAS_TRAIT(looking, TRAIT_DEAF))
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 200)
 			playsound(src, 'sound/effects/stall.ogg', 50)
 			if(looking.getOrganLoss(ORGAN_SLOT_BRAIN) >= 150 && looking.stat != DEAD)
@@ -82,14 +82,24 @@
 	return
 
 /obj/effect/anomaly/tvstatic/detonate()
-	for(var/mob/living/carbon/looking in range(effectrange, src))
+	for(var/mob/living/carbon/human/looking in range(effectrange, src))
 		visible_message("<span class='boldwarning'> The static lashes out, agony filling your mind as its tendrils scrape your thoughts!</span>")
 		if (!HAS_TRAIT(looking, TRAIT_MINDSHIELD) && looking.stat != DEAD)
 			looking.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100, 200)
 			playsound(src, 'sound/effects/stall.ogg', 100)
+		if(stored_mob)
+			mangle_corpse()
+			visible_message("<span class='warning'>The static sputters out [stored_mob], their body coming out in a burst of blood and gore!</span>")
+			new /obj/effect/gibspawner/human(loc)
+			stored_mob.forceMove(get_turf(src))
+			stored_mob = null
 		anomalyEffect()
 	. = ..()
 
+/obj/effect/anomaly/tvstatic/proc/mangle_corpse()
+	if(!stored_mob)
+		return
+	stored_mob.adjustBruteLoss(400)
 
 /obj/effect/anomaly/tvstatic/anomalyNeutralize()
 	var/turf/T = get_turf(src)
