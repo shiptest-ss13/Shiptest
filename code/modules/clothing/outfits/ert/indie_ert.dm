@@ -54,6 +54,7 @@
 	back = /obj/item/storage/backpack/fireproof
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	glasses = /obj/item/clothing/glasses/hud/health
+	suit_store = /obj/item/tank/internals/emergency_oxygen
 
 	l_pocket = /obj/item/extinguisher/mini
 
@@ -67,7 +68,6 @@
 	back = /obj/item/fireaxe
 	suit = /obj/item/clothing/suit/space/hardsuit/engine
 	head = null
-	back = /obj/item/storage/backpack/fireproof
 	belt = /obj/item/storage/belt/utility/atmostech
 	gloves = /obj/item/clothing/gloves/color/yellow
 
