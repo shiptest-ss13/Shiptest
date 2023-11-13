@@ -19,7 +19,7 @@
 	//for anomaly effects, range is how far the effects can reach, the cooldown lets us wire in effects that happen every pulse delay seconds
 	var/effectrange = 6
 
-	var/anomalyResearchValue = 1
+	var/anomalyResearchValueMult = 1
 
 	COOLDOWN_DECLARE(pulse_cooldown)
 	COOLDOWN_DECLARE(pulse_secondary_cooldown)
@@ -50,7 +50,7 @@
 		aSignal = new aSignal(src)
 		aSignal.code = rand(1,100)
 		aSignal.anomaly_type = type
-		aSignal.research = rand(1000,4000) * anomalyResearchValue
+		aSignal.research = rand(1000,4000) * anomalyResearchValueMult
 
 		var/frequency = rand(MIN_FREE_FREQ, MAX_FREE_FREQ)
 		if(ISMULTIPLE(frequency, 2))//signaller frequencies are always uneven!
@@ -154,7 +154,7 @@
 /obj/effect/anomaly/examine(mob/user)
 	. = ..()
 	if(user.research_scanner == TRUE)
-		to_chat(user, span_notice("If harvested, this anomaly would be worth [research_value] research points."))
+		to_chat(user, span_notice("If harvested, this anomaly would be worth [aSignal.research] research points."))
 
 /obj/effect/anomaly/throw_atom_into_space()
 	qdel(src)
