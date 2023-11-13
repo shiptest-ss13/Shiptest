@@ -275,7 +275,6 @@
 * SEE_TURFS // can see all turfs (and areas), no matter what
 * SEE_PIXELS// if an object is located on an unlit area, but some of its pixels are
 *           // in a lit area (via pixel_x,y or smooth movement), can see those pixels
-* SEE_SCIENCE // can see science points
 * BLIND     // can't see anything
 */
 
