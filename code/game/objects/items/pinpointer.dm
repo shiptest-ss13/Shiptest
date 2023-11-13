@@ -190,6 +190,7 @@
 /obj/item/pinpointer/survey_data
 	name = "survey pinpointer"
 	desc = "A small electronic handheld tuned to detect planetary irregularities"
+	process_scan = TRUE
 
 /obj/item/pinpointer/survey_data/proc/trackable(mob/living/user)
 	var/turf/here = get_turf(src)
@@ -228,7 +229,7 @@
 /obj/item/pinpointer/survey_data/get_direction_icon(here, there)
 	var/size = ""
 	if(here == there)
-		size = "pinonalertdirect"
+		size = "alert"
 	else
 		switch(get_dist(here, there))
 			if(1 to 2)
@@ -239,6 +240,11 @@
 			if(17 to INFINITY)
 				size = "small"
 	return "pinondirect[size]"
+
+/obj/item/pinpointer/survey_data/process()
+	if(target.virtual_z == null)
+		target = null
+	. = ..()
 
 /obj/item/pinpointer/pair
 	name = "pair pinpointer"
