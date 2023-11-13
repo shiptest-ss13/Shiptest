@@ -224,3 +224,23 @@
 	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
 	rename_team = "Assault Frontiersmen Team"
 	polldesc = "a well armed squad of pirates"
+	ert_template = /datum/map_template/shuttle/subshuttles/frontiersmen_gut
+
+/datum/ert/independent
+	teamsize = 3
+	opendoors = FALSE
+	leader_role = /datum/antagonist/ert/indie
+	roles = list(/datum/antagonist/ert/indie)
+	rename_team = "Security Independent Team"
+
+/datum/ert/independent/emt
+	teamsize = 4
+	leader_role = /datum/antagonist/ert/indie/emt
+	roles = list(/datum/antagonist/ert/indie/emt)
+	rename_team = "Medical Independent Team"
+
+/datum/ert/independent/firefighter
+	teamsize = 5
+	leader_role = /datum/antagonist/ert/indie/firefighter/leader
+	roles = list(/datum/antagonist/ert/indie/firefighter, /datum/antagonist/ert/indie/firefighter/medic)
+	rename_team = "Independent Firefighter Team"
