@@ -139,8 +139,10 @@
 
 /datum/overmap/ship/controlled/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	if(ticket.target != src || ticket.issuer != to_dock)
+		ticket.docking_error = "Invalid target."
 		return FALSE
 	if(!shuttle_port.check_dock(ticket.target_port))
+		ticket.docking_error = "Targeted docking port invalid."
 		return FALSE
 	return TRUE
 
