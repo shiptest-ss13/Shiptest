@@ -50,7 +50,7 @@
 		aSignal = new aSignal(src)
 		aSignal.code = rand(1,100)
 		aSignal.anomaly_type = type
-		aSignal.research = rand(1000,4000) * anomalyResearchValue
+		aSignal.research = rand(1000,4000) * anomalyResearchValueMult
 
 		var/frequency = rand(MIN_FREE_FREQ, MAX_FREE_FREQ)
 		if(ISMULTIPLE(frequency, 2))//signaller frequencies are always uneven!
