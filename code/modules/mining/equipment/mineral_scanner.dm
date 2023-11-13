@@ -143,12 +143,11 @@
 				user.visible_message("<span class='notice'>[user] deactivates [user.p_their()] scanner.</span>", "<span class='notice'>You deactivate your scanner.</span>")
 				return
 
-			var/vein = LocateVein(user)
+			var/vein = scan_for_target()
 			if(!vein)
 				user.visible_message("<span class='notice'>[user]'s scanner fails to detect any material.</span>", "<span class='notice'>Your scanner fails to detect any material.</span>")
 				return
 
-			target = vein
 			toggle_on()
 			user.visible_message("<span class='notice'>[user] activates [user.p_their()] scanner.</span>", "<span class='notice'>You activate your scanner.</span>")
 			update_icon()
@@ -167,6 +166,9 @@
 /obj/item/pinpointer/mineral/process()
 	switch(scanmode)
 		if(SCANMODE_SUBSURFACE)
+			if(active && target.loc == null)
+				target = null
+				toggle_on()
 			. = ..() //returns pinpointer code if its scanning for deepcore spots
 
 		if(SCANMODE_SURFACE)
@@ -196,7 +198,7 @@
 			scan_mode_overlay = mutable_appearance(icon, "null")
 	. += scan_mode_overlay
 
-/obj/item/pinpointer/mineral/proc/LocateVein(mob/living/user)
+/obj/item/pinpointer/mineral/scan_for_target()
 	var/turf/here = get_turf(src)
 	var/located_dist
 	var/obj/structure/located_vein
@@ -211,6 +213,7 @@
 		else
 			located_dist = get_dist(here, get_turf(I))
 			located_vein = I
+	target = located_vein
 	return located_vein
 
 //For scanning ore veins of their contents

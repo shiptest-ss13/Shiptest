@@ -63,7 +63,7 @@
 	. = ..()
 	if(!active)
 		return
-	if(!target)
+	if(!target || target.loc == null)
 		. += "pinon[alert ? "alert" : ""]null[icon_suffix]"
 		return
 	var/turf/here = get_turf(src)

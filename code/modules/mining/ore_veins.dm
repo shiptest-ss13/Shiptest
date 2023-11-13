@@ -17,11 +17,11 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//The design process is that class 1 veins have a small chance of generating with class 2 ores and so on
 	//As higher class veins will be increasingly harder to mine
 	var/list/ore_list = list(
-		/obj/item/stack/ore/iron = 5,
-		/obj/item/stack/ore/plasma = 4,
-		/obj/item/stack/ore/silver = 1,
+		/obj/item/stack/ore/iron = 6,
+		/obj/item/stack/ore/plasma = 2,
+		/obj/item/stack/ore/silver = 2,
 		/obj/item/stack/ore/uranium = 1,
-		/obj/item/stack/ore/titanium = 1,
+		/obj/item/stack/ore/titanium = 2,
 		)
 	//The post initialize list of all possible drops from the vein
 	//Meant to be player facing in the form of mining scanners
@@ -102,9 +102,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 2
 	ore_list = list(
 		/obj/item/stack/ore/iron = 6,
-		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/plasma = 2,
 		/obj/item/stack/ore/silver = 4,
-		/obj/item/stack/ore/uranium = 4,
+		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 5,
 		/obj/item/stack/ore/diamond = 1,
 		/obj/item/stack/ore/gold = 2,
@@ -117,12 +117,12 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 12
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/iron = 5,
-		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/iron = 7,
+		/obj/item/stack/ore/plasma = 2,
 		/obj/item/stack/ore/silver = 5,
-		/obj/item/stack/ore/uranium = 5,
+		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 6,
-		/obj/item/stack/ore/diamond = 3,
+		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/bluespace_crystal = 3,
 		)
@@ -139,12 +139,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 20,
 	)
 	//Ice planets earn a slightly higher rare ore chance on account of them being notably harder
+	//Alongside being a much more reliable source of plasma
 	ore_list = list(
 		/obj/item/stack/ore/iron = 5,
-		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/plasma = 6,
 		/obj/item/stack/ore/silver = 3,
-		/obj/item/stack/ore/uranium = 3,
-		/obj/item/stack/ore/titanium = 3,
+		/obj/item/stack/ore/uranium = 1,
+		/obj/item/stack/ore/titanium = 2,
 		/obj/item/stack/ore/titanium = 2,
 		/obj/item/stack/ore/gold = 1,
 		/obj/item/stack/ore/diamond = 1,
@@ -155,9 +156,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 2
 	ore_list = list(
 		/obj/item/stack/ore/iron = 6,
-		/obj/item/stack/ore/plasma = 6,
+		/obj/item/stack/ore/plasma = 8,
 		/obj/item/stack/ore/silver = 5,
-		/obj/item/stack/ore/uranium = 5,
+		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/diamond = 2,
 		/obj/item/stack/ore/gold = 3,
@@ -171,9 +172,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	vein_class = 3
 	ore_list = list(
 		/obj/item/stack/ore/iron = 5,
-		/obj/item/stack/ore/plasma = 5,
+		/obj/item/stack/ore/plasma = 8,
 		/obj/item/stack/ore/silver = 6,
-		/obj/item/stack/ore/uranium = 5,
+		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/diamond = 4,
 		/obj/item/stack/ore/gold = 6,
@@ -182,3 +183,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	max_mobs = 6
 	spawn_time = 80
 
+/obj/structure/vein/rock
+	mob_types = list(
+		/mob/living/simple_animal/)
