@@ -224,7 +224,8 @@
 		if(targetee)
 			if(get_dist(src,targetee) < get_dist(src,final_target))
 				final_target = targetee
-	return final_target
+		return final_target
+	return FALSE
 
 /obj/item/pinpointer/survey_data/get_direction_icon(here, there)
 	var/size = ""
@@ -242,8 +243,10 @@
 	return "pinondirect[size]"
 
 /obj/item/pinpointer/survey_data/process()
-	if(target.virtual_z == null)
+	if(get_closest_target == FALSE)
 		target = null
+		toggle_on()
+		to_chat("<span class='notice'>[src] deactivates suddenly, the area must be fully surveyed.</span>")
 	. = ..()
 
 /obj/item/pinpointer/pair
