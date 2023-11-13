@@ -77,7 +77,4 @@
 	close_sound_volume = 50
 	material_drop = /obj/item/stack/sheet/plasteel
 
-/obj/structure/closet/cardboard/rations
-	name = "Supply box"
-	desc = "For holding supplies, presumably."
 #undef SNAKE_SPAM_TICKS

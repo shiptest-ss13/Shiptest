@@ -375,48 +375,6 @@
 	foodtype = DAIRY | VEGETABLES | FRIED | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/reagent_containers/food/snacks/sustenance_bar
-	name = "surplus fleet PSB"
-	desc = "The PSB, or Prepacked Sustenance Bar, is a densely packed, nutrient rich food which is designed to hold the populace over \
-		during times of food shortage. Made from soy and pea protein, each lasts 3 days if adequately rationed. While they have a long shelf life, \
-		they do eventually go bad- prompting them to be sold as surplus by the fleet. This particular one is, like most artificially-flavoured moth food, mixed-herb flavoured."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "sustenance_bar"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
-	tastes = list("herbs" = 1)
-	foodtype = VEGETABLES | GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/sustenance_bar/neapolitan
-	name = "surplus fleet PSB- neapolitan flavour"
-	desc = "The PSB, or Prepacked Sustenance Bar, is a densely packed, nutrient rich food which is designed to hold the populace over \
-		during times of food shortage. Made from soy and pea protein, each lasts 3 days if adequately rationed. While they have a long shelf life, \
-		they do eventually go bad- prompting them to be sold as surplus by the fleet. This particular one is neapolitan flavoured- strawberry, vanilla, and chocolate."
-	tastes = list("strawberry" = 1, "vanilla" = 1, "chocolate" = 1)
-
-/obj/item/reagent_containers/food/snacks/sustenance_bar/cheese
-	name = "surplus fleet PSB- three-cheese flavour"
-	desc = "The PSB, or Prepacked Sustenance Bar, is a densely packed, nutrient rich food which is designed to hold the populace over \
-		during times of food shortage. Made from soy and pea protein, each lasts 3 days if adequately rationed. While they have a long shelf life, \
-		they do eventually go bad- prompting them to be sold as surplus by the fleet. This particular one is three-cheese flavoured- parmesan, mozzarella, and cheddar."
-	tastes = list("parmesan" = 1, "mozzarella" = 1, "cheddar" = 1)
-
-/obj/item/reagent_containers/food/snacks/sustenance_bar/mint
-	name = "surplus fleet PSB- mint choc chip flavour"
-	desc = "The PSB, or Prepacked Sustenance Bar, is a densely packed, nutrient rich food which is designed to hold the populace over \
-		during times of food shortage. Made from soy and pea protein, each lasts 3 days if adequately rationed. While they have a long shelf life, \
-		they do eventually go bad- prompting them to be sold as surplus by the fleet. This particular one is mint choc chip flavoured- peppermint, \
-		dark chocolate, and potato chips, showing that mothkind has no idea what mint choc chip is."
-	tastes = list("peppermint" = 1, "potato chips(?)" = 1, "dark chocolate" = 1)
-
-/obj/item/reagent_containers/food/snacks/sustenance_bar/wonka
-	name = "surplus fleet PSB- three course dinner"
-	desc = "The PSB, or Prepacked Sustenance Bar, is a densely packed, nutrient rich food which is designed to hold the populace over \
-		during times of food shortage. Made from soy and pea protein, each lasts 3 days if adequately rationed. While they have a long shelf life, \
-		they do eventually go bad- prompting them to be sold as surplus by the fleet. This particular one is split into three flavours, \
-		making up a typical meal- tomato soup, roast pumpkin, and blueberry pie." //Thankfully not made by Willy Wonka
-	tastes = list("tomato soup" = 1, "roast pumpkin" = 1, "blueberry pie" = 1)
-
 //Soups
 /obj/item/reagent_containers/food/snacks/soup/moth_cotton_soup
 	name = "flöfrölenmæsch" //flöf = cotton, rölen = ball, mæsch = soup

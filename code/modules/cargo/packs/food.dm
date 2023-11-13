@@ -246,12 +246,6 @@
 	crate_name = "beekeeping starter crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
-/datum/supply_pack/food/rations
-	name = "Surplus Mothic Ration Pack"
-	desc = "A single surplus ration pack from the Mothic Fleet. Comes with 3 random sustenance bars, and a package of Activin chewing gum."
-	cost = 200
-	contains = list(/obj/item/storage/box/rations)
-
 /datum/supply_pack/food/ready_donk
 	name = "Ready-Donk Single Meal"
 	desc = "A complete meal package for the terminally lazy. Contains one Ready-Donk meal."
@@ -283,4 +277,3 @@
 					/obj/effect/spawner/lootdrop/ration,
 					/obj/effect/spawner/lootdrop/ration)
 	crate_name = "ration crate"
-	crate_type = /obj/structure/closet/cardboard/rations
