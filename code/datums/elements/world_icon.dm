@@ -11,11 +11,9 @@
 /datum/element/world_icon
 	id_arg_index = 2
 	element_flags = ELEMENT_BESPOKE | ELEMENT_DETACH
-	/**
-	 * If we want COMPLEX world icon behavior, this proc will handle icon updating when the item is NOT in the inventory.
-	 * I just assumed that the default update_icon is for inventory sprites because ss13 basically focuses on how the sprites
-	 * look on your hand, not how they realistically look in the world.
-	 */
+	//If we want COMPLEX world icon behavior, this proc will handle icon updating when the item is NOT in the inventory.
+	//I just assumed that the default update_icon is for inventory sprites because ss13 basically focuses on how the sprites
+	//look on your hand, not how they realistically look in the world.
 	var/attached_proc
 	/// Only used if attached_proc doesn't exist, simply changes the icon of target to this when it's in the inventory
 	var/inventory_icon
@@ -36,16 +34,16 @@
 	src.world_icon_state = world_icon_state
 	src.inventory_icon = inventory_icon
 	src.inventory_icon_state = inventory_icon_state
-	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON, .proc/update_icon)
-	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON_STATE, .proc/update_icon_state)
-	RegisterSignal(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_STORAGE_ENTERED, COMSIG_ITEM_DROPPED, COMSIG_STORAGE_EXITED), .proc/inventory_updated)
+	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON, PROC_REF(update_icon))
+	RegisterSignal(target, COMSIG_ATOM_UPDATE_ICON_STATE, PROC_REF(update_icon_state))
+	RegisterSignal(target, list(COMSIG_ITEM_EQUIPPED, COMSIG_STORAGE_ENTERED, COMSIG_ITEM_DROPPED, COMSIG_STORAGE_EXITED), PROC_REF(inventory_updated))
 	target.update_appearance(UPDATE_ICON)
 	target.update_appearance(UPDATE_ICON_STATE)
 
 /datum/element/world_icon/Detach(obj/item/source)
 	. = ..()
 	UnregisterSignal(source, COMSIG_ATOM_UPDATE_ICON)
-	UnregisterSignal(source, COMSIG_ATOM_UPDATE_ICON_STATE, .proc/update_icon_state)
+	UnregisterSignal(source, COMSIG_ATOM_UPDATE_ICON_STATE, PROC_REF(update_icon_state))
 	UnregisterSignal(source, list(COMSIG_ITEM_EQUIPPED, COMSIG_STORAGE_ENTERED, COMSIG_ITEM_DROPPED, COMSIG_STORAGE_EXITED))
 	source.update_appearance(UPDATE_ICON)
 	source.update_appearance(UPDATE_ICON_STATE)
@@ -99,7 +97,7 @@
 		source.icon_state = source.icon_state
 		return
 
-	INVOKE_ASYNC(src, .proc/check_inventory_state, source)
+	INVOKE_ASYNC(src, PROC_REF(check_inventory_state, source))
 
 /datum/element/world_icon/proc/default_world_icon_state(obj/item/source)
 	SIGNAL_HANDLER
@@ -108,7 +106,7 @@
 		source.icon_state = source.icon_state
 		return
 
-	INVOKE_ASYNC(src, .proc/check_world_icon_state, source)
+	INVOKE_ASYNC(src, PROC_REF(check_world_icon_state, source))
 
 /datum/element/world_icon/proc/check_inventory_state(obj/item/source)
 	SIGNAL_HANDLER
