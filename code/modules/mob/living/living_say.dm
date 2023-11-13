@@ -167,6 +167,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
 				message = Ellipsis(message, 10, 1)
 				last_words = message
+				var/final_warning = alert(usr, "Your dying words will be \"[last_words]\", continue?", "Succumb", "Cancel", "Continue")
+				if(final_warning == "Cancel" || QDELETED(src))
+					return
 				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
 				succumbed = TRUE
 		else
