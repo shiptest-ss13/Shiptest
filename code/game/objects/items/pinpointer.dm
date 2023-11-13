@@ -243,10 +243,10 @@
 	return "pinondirect[size]"
 
 /obj/item/pinpointer/survey_data/process()
-	if(get_closest_target == FALSE)
+	if(get_closest_target() == FALSE)
 		target = null
 		toggle_on()
-		to_chat("<span class='notice'>[src] deactivates suddenly, the area must be fully surveyed.</span>")
+		to_chat("<span class='notice'>[src] deactivates suddenly, the area must be fully surveyed!</span>")
 	. = ..()
 
 /obj/item/pinpointer/pair

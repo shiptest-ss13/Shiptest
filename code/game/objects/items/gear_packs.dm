@@ -35,6 +35,12 @@
 	update_power()
 	return
 
+/obj/item/gear_pack/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>It is [ on ? "currently" : "not"] active.</span>"
+	if(cell)
+		. += "<span class = 'notice'> A small readout reports [PERCENT(cell.charge / cell.maxcharge)]% charge."
+
 /obj/item/gear_pack/fire_act(exposed_temperature, exposed_volume)
 	. = ..()
 	if(attachment?.loc == src)
