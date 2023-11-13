@@ -123,15 +123,13 @@
 		set_is_operational(TRUE)
 		START_PROCESSING(SSmachines, src)
 		use_power = IDLE_POWER_USE
-		update_icon_state()
 	else
 		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)
 		use_power = NO_POWER_USE
-		update_icon_state()
 	power_change() // calls update_appearance(), makes sure we're powered
 
-/obj/machinery/mission_scanner/update_icon_state()
+/obj/machinery/mission_scanner/update_appearance(updates)
 	. = ..()
 	if(is_operational)
 		icon_state = "scanner_power"
