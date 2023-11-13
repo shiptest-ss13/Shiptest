@@ -97,7 +97,7 @@
 		source.icon_state = source.icon_state
 		return
 
-	INVOKE_ASYNC(src, PROC_REF(check_inventory_state, source))
+	INVOKE_ASYNC(src, PROC_REF(check_inventory_state), source)
 
 /datum/element/world_icon/proc/default_world_icon_state(obj/item/source)
 	SIGNAL_HANDLER
@@ -106,7 +106,7 @@
 		source.icon_state = source.icon_state
 		return
 
-	INVOKE_ASYNC(src, PROC_REF(check_world_icon_state, source))
+	INVOKE_ASYNC(src, PROC_REF(check_world_icon_state), source)
 
 /datum/element/world_icon/proc/check_inventory_state(obj/item/source)
 	SIGNAL_HANDLER
