@@ -125,7 +125,7 @@
 		on = !on
 
 	if("inject" in signal.data)
-		INVOKE_ASYNC(src, .proc/inject)
+		INVOKE_ASYNC(src, PROC_REF(inject))
 		return
 
 	if("set_volume_rate" in signal.data)
@@ -133,7 +133,7 @@
 		var/datum/gas_mixture/air_contents = airs[1]
 		volume_rate = clamp(number, 0, air_contents.return_volume())
 
-	addtimer(CALLBACK(src, .proc/broadcast_status), 2)
+	addtimer(CALLBACK(src, PROC_REF(broadcast_status)), 2)
 
 	if(!("status" in signal.data)) //do not update_icon
 		update_appearance()

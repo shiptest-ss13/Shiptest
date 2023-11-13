@@ -167,7 +167,7 @@
 	if(mapload && access_txt)
 		access = text2access(access_txt)
 	update_label()
-	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, .proc/update_in_wallet)
+	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, PROC_REF(update_in_wallet))
 
 /obj/item/card/id/Destroy()
 	if (registered_account)
