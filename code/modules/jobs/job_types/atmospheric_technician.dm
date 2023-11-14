@@ -40,14 +40,6 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	internals_slot = ITEM_SLOT_SUITSTORE
 
-/datum/outfit/job/atmos/gec
-	name = "Atmospheric Technician (GEC)"
-
-	uniform = /obj/item/clothing/under/syndicate/gec/atmos_tech
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat
-	id = /obj/item/card/id/syndicate_command/crew_id
-
 /datum/outfit/job/atmos/frontiersmen
 	name = "Atmospheric Technician (Frontiersmen)"
 
