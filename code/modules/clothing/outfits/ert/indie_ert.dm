@@ -67,6 +67,7 @@
 
 	back = /obj/item/fireaxe
 	suit = /obj/item/clothing/suit/space/hardsuit/engine
+	suit_store = /obj/item/tank/internals/oxygen/red
 	head = null
 	belt = /obj/item/storage/belt/utility/atmostech
 	gloves = /obj/item/clothing/gloves/color/yellow
