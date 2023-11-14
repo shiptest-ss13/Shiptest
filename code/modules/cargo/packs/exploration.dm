@@ -92,7 +92,7 @@
 /datum/supply_pack/exploration/scanners
 	name = "Survey Scanner Kit"
 	desc = "Contains a Survey Scanner and survey locator, ideal for analyzing the surface of planets."
-	cost = 1250
+	cost = 1000
 	contains = list(
 		/obj/item/gear_pack/survey_pack,
 		/obj/item/pinpointer/survey_data
@@ -102,7 +102,7 @@
 /datum/supply_pack/exploration/adv_scanner
 	name = "Advanced Survey Scanner Kit"
 	desc = "Contains a state of the art Survey Scanner"
-	cost = 2000
+	cost = 1500
 	contains = list(
 		/obj/item/gear_pack/survey_pack/advanced,
 		/obj/item/pinpointer/survey_data

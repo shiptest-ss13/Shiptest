@@ -1,6 +1,6 @@
 /obj/item/gear_pack/survey_pack
 	name = "Survey Pack"
-	desc = "A large scientific kit designed for planetary survey"
+	desc = "A large scientific kit designed for planetary survey."
 	icon = 'icons/obj/item/survey_handheld.dmi'
 	icon_state = "survey"
 	item_state = "survey"
@@ -13,7 +13,7 @@
 
 /obj/item/gear_pack/survey_pack/advanced //can be purchased, is Expendy.
 	name = "Advanced Survey Pack"
-	desc = "A high hech piece of scientific kit designed for thorough planetary survey"
+	desc = "A high tech piece of scientific kit designed for thorough planetary survey."
 	icon_state = "survey-adv"
 	survey_mult = 1.5
 	slowdown = 0.8
