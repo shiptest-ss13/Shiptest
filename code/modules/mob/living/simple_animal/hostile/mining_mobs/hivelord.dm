@@ -94,7 +94,7 @@
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize(_source)
 	. = ..()
 	source = source
-	addtimer(CALLBACK(src, .proc/death), 100)
+	addtimer(CALLBACK(src, PROC_REF(death)), 100)
 	AddComponent(/datum/component/swarming)
 
 //Legion
@@ -222,7 +222,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), 50)
+	addtimer(CALLBACK(src, PROC_REF(death)), 50)
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
@@ -1036,5 +1036,11 @@
 			if(prob(75))
 				backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
 			if(prob(75))
-				backpack_contents += list(pick(/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock) = 1)
+				backpack_contents += list(pick(
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine,) = 2)
 	. = ..()

@@ -1,9 +1,10 @@
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
-	desc = "A weighty magnum revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
+	desc = "A weighty revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
+	rack_sound = 'sound/weapons/gun/revolver/revolver_prime.ogg'
 	load_sound = 'sound/weapons/gun/revolver/load_bullet.ogg'
 	eject_sound = 'sound/weapons/gun/revolver/empty.ogg'
 	vary_fire_sound = FALSE
@@ -15,17 +16,59 @@
 	tac_reloads = FALSE
 	var/spin_delay = 10
 	var/recent_spin = 0
-	fire_delay = 7
+	fire_delay = 2
+	spread_unwielded = 15
+	recoil = 0.5
+	recoil_unwielded = 1
+	semi_auto = FALSE
+	bolt_wording = "hammer"
+	wield_slowdown = 0.3
+
+	has_safety = FALSE //irl revolvers dont have safetys. i think. maybe
+	safety = FALSE
+
+/obj/item/gun/ballistic/revolver/examine(mob/user)
+	. = ..()
+	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
+
+/obj/item/gun/ballistic/revolver/attack_hand(mob/user)
+	if(loc == user && user.is_holding(src))
+		chambered = null
+		var/num_unloaded = 0
+		for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+			CB.forceMove(drop_location())
+			CB.bounce_away(FALSE, NONE)
+			num_unloaded++
+			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+		if (num_unloaded)
+			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
+			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			update_appearance()
+			return
+		else
+			return ..()
+	else
+		return ..()
+
+
+/obj/item/gun/ballistic/revolver/unique_action(mob/living/user)
+	rack(user)
+	return
+
+///updates a bunch of racking related stuff and also handles the sound effects and the like
+/obj/item/gun/ballistic/revolver/rack(mob/user = null)
+	if(user)
+		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
+	chamber_round(TRUE)
+	playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+	update_appearance()
+
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE)
 	if(spin_cylinder)
 		chambered = magazine.get_round(TRUE)
 	else
 		chambered = magazine.stored_ammo[1]
-
-/obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	..()
-	chamber_round(TRUE)
 
 /obj/item/gun/ballistic/revolver/AltClick(mob/user)
 	..()
@@ -75,8 +118,8 @@
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper Colt Detective Special"
-	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 Special rounds."
-	fire_sound = 'sound/weapons/gun/revolver/shot.ogg'
+	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 special rounds."
+	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
@@ -90,6 +133,8 @@
 		"The Peacemaker" = "detective_peacemaker",
 		"Black Panther" = "detective_panther"
 		)
+
+	recoil = 0 //weaker than normal revovler, no recoil
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))
@@ -140,6 +185,9 @@
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A high-powered revolver with a unique auto-reloading system. Uses .357 ammo."
 	icon_state = "mateba"
+	semi_auto = TRUE
+	spread = 0
+	spread_unwielded = 7
 
 /obj/item/gun/ballistic/revolver/golden
 	name = "\improper Golden revolver"
@@ -151,25 +199,34 @@
 
 /obj/item/gun/ballistic/revolver/nagant
 	name = "\improper Nagant revolver"
-	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. While its unique design prevents the use of speed loaders, it is the only revolver able to use a suppressor."
+	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. Uniquely able to be suppressed."
 	icon_state = "nagant"
 	can_suppress = TRUE
+	spread_unwielded = 12
+	recoil = 0
+	recoil_unwielded = 0
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
 
 
 /obj/item/gun/ballistic/revolver/hunting
 	name = "hunting revolver"
-	desc = "A massive, long-barreled revolver designed for hunting the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
+	desc = "A massive, long-barreled revolver designed for the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
 	icon_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	wield_slowdown = 0.5
+	spread_unwielded = 5
+	spread = 2
+	recoil = 2
+	recoil_unwielded = 3
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
 
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
-	desc = "A revolver for particularly lethal drinking games. Uses .357 ammo, and has a mechanism requiring you to spin the chamber before each trigger pull. The origin of its name remains a subject of intense debate. "
+	desc = "A Solarian revolver for particularly lethal drinking games. It has a mechanism requiring you to spin the chamber before each trigger pull. Uses .357 ammo."
 	icon_state = "russianrevolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rus357
 	var/spun = FALSE
@@ -269,12 +326,29 @@
 
 /obj/item/gun/ballistic/revolver/srm
 	name = "SRM Standard Issue .357 Revolver"
-	desc = "A sturdy, powerful, and reliable revolver. Try not to find yourself on the other end."
+	desc = "A sturdy, powerful, and reliable revolver utilized by the Saint-Roumain Militia."
 
 /obj/item/gun/ballistic/revolver/pepperbox
 	name = "\improper pepperbox pistol"
-	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. How did it even end up here? While fast to fire, it is extremely inaccurate. Uses .357 ammo."
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	spread = 20
-	fire_delay = 4
+	spread_unwielded = 50
+	fire_delay = 0
+	semi_auto = TRUE
+
+/obj/item/gun/ballistic/revolver/cattleman
+	name = "\improper Cattleman"
+	desc = "A strangely ancient revolver. Despite the age, it is a favorite of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small colonial police units. Uses .45 ACP."
+	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "cattleman"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	obj_flags = UNIQUE_RENAME
+	unique_reskin = list("Default" = "cattleman",
+		"Army" = "cattleman_army",
+		"General" = "cattleman_general"
+		)
+
+	recoil = 0 //weaker than normal revovler, no recoil

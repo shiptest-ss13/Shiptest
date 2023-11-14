@@ -22,7 +22,7 @@
 	icon_state = "frozen"
 
 /datum/status_effect/freon/on_apply()
-	RegisterSignal(owner, COMSIG_LIVING_RESIST, .proc/owner_resist)
+	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(owner_resist))
 	if(!owner.stat)
 		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")
@@ -34,7 +34,7 @@
 
 /datum/status_effect/freon/proc/owner_resist()
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/do_resist)
+	INVOKE_ASYNC(src, PROC_REF(do_resist))
 
 /datum/status_effect/freon/proc/do_resist()
 	to_chat(owner, "<span class='notice'>You start breaking out of the ice cube...</span>")

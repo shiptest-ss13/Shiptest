@@ -70,14 +70,6 @@
 	item_state = "g_suit"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/syndicate/soviet
-	name = "Ratnik 5 tracksuit"
-	desc = "Badly translated labels tell you to clean this in Vodka. Great for squatting in."
-	icon_state = "trackpants"
-	can_adjust = FALSE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	resistance_flags = NONE
-
 /obj/item/clothing/under/syndicate/combat
 	name = "combat uniform"
 	desc = "With a suit lined with this many pockets, you are ready to operate."
