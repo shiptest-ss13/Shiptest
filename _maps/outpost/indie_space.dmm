@@ -292,13 +292,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/cargo)
-"cb" = (
-/obj/machinery/satellite/meteor_shield{
-	active = 1;
-	icon_state = "sat_active"
-	},
-/turf/open/space/basic,
-/area/space)
 "cc" = (
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/structure/cable/yellow{
@@ -3336,10 +3329,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
-"vO" = (
-/obj/structure/lattice,
-/turf/closed/indestructible/rock,
-/area/outpost/external)
 "vR" = (
 /obj/structure/flora/grass/jungle,
 /obj/machinery/light/dim/directional/north,
@@ -11964,7 +11953,7 @@ HD
 HD
 HD
 HD
-vO
+em
 HD
 Cc
 je
@@ -11973,7 +11962,7 @@ je
 je
 Cc
 HD
-vO
+em
 mC
 mC
 mC
@@ -12345,7 +12334,7 @@ Oh
 ZM
 HD
 HD
-vO
+em
 rt
 rt
 rt
@@ -17855,7 +17844,7 @@ HD
 HD
 HD
 HD
-vO
+em
 HD
 HD
 HD
@@ -18232,7 +18221,7 @@ mC
 mC
 NH
 rt
-vO
+em
 HD
 HD
 HD
@@ -18343,7 +18332,6 @@ mC
 mC
 mC
 mC
-cb
 mC
 mC
 mC
@@ -18351,7 +18339,8 @@ mC
 mC
 mC
 mC
-cb
+mC
+mC
 mC
 NH
 mC
