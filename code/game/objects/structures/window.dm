@@ -58,7 +58,7 @@
 	if(reinf && anchored)
 		state = RWINDOW_SECURE
 
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 	if(fulltile)
 		setDir()

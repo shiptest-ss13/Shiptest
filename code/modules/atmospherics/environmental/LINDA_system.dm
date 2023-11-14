@@ -36,41 +36,77 @@
 			if(!.)
 				return .
 
+/turf/proc/update_conductivity(turf/T)
+	var/dir = get_dir_multiz(src, T)
+	var/opp = REVERSE_DIR(dir)
+
+	if(T == src)
+		return
+
+	//all these must be above zero for auxmos to even consider them
+	if(!thermal_conductivity || !heat_capacity || !T.thermal_conductivity || !T.heat_capacity)
+		conductivity_blocked_directions |= dir
+		T.conductivity_blocked_directions |= opp
+		return
+
+	for(var/obj/O in contents+T.contents)
+		if(O.BlockThermalConductivity(opp)) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
+			conductivity_blocked_directions |= dir
+			T.conductivity_blocked_directions |= opp
+
+/turf/proc/block_all_conductivity()
+	conductivity_blocked_directions |= NORTH | SOUTH | EAST | WEST | UP | DOWN
+
 /atom/movable/proc/BlockThermalConductivity() // Objects that don't let heat through.
 	return FALSE
 
 /turf/proc/ImmediateCalculateAdjacentTurfs()
 	var/canpass = CANATMOSPASS(src, src)
 	var/canvpass = CANVERTICALATMOSPASS(src, src)
+
+	conductivity_blocked_directions = 0
+
+	var/src_contains_firelock = 1
+	if(locate(/obj/machinery/door/firedoor) in src)
+		src_contains_firelock |= 2
+
 	for(var/direction in GLOB.cardinals_multiz)
 		var/turf/T = get_step_multiz(src, direction)
-		if(isnull(T))
+		if(!istype(T))
+			conductivity_blocked_directions |= direction
 			continue
-		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))))
+
+		var/other_contains_firelock = 1
+		if(locate(/obj/machinery/door/firedoor) in T)
+			other_contains_firelock |= 2
+
+		update_conductivity(T)
+
+		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))) )
 			LAZYINITLIST(atmos_adjacent_turfs)
 			LAZYINITLIST(T.atmos_adjacent_turfs)
-			atmos_adjacent_turfs[T] = ATMOS_ADJACENT_ANY
-			T.atmos_adjacent_turfs[src] = ATMOS_ADJACENT_ANY
+			atmos_adjacent_turfs[T] = other_contains_firelock | src_contains_firelock
+			T.atmos_adjacent_turfs[src] = src_contains_firelock
 		else
 			if (atmos_adjacent_turfs)
 				atmos_adjacent_turfs -= T
-			LAZYREMOVE(T.atmos_adjacent_turfs, src)
+			if (T.atmos_adjacent_turfs)
+				T.atmos_adjacent_turfs -= src
+			UNSETEMPTY(T.atmos_adjacent_turfs)
+
 		T.__update_auxtools_turf_adjacency_info()
 	UNSETEMPTY(atmos_adjacent_turfs)
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
-	for(var/turf/open/T as anything in atmos_adjacent_turfs)
-		for(var/obj/machinery/door/firedoor/FD in T)
-			FD.UpdateAdjacencyFlags()
-	for(var/obj/machinery/door/firedoor/FD in src)
-		FD.UpdateAdjacencyFlags()
 	__update_auxtools_turf_adjacency_info()
 
 /turf/proc/set_sleeping(should_sleep)
 
-//returns a list of adjacent turfs that can share air with this one.
-//alldir includes adjacent diagonal tiles that can share
-//	air with both of the related adjacent cardinal tiles
-/turf/proc/GetAtmosAdjacentTurfs(alldir = 0)
+/**
+ * Returns a list of adjacent turfs that can share air with this one.
+ * alldir includes adjacent diagonal tiles that can share
+ * air with both of the related adjacent cardinal tiles
+ */
+/turf/proc/GetAtmosAdjacentTurfs(alldir = FALSE)
 	var/adjacent_turfs
 	if (atmos_adjacent_turfs)
 		adjacent_turfs = atmos_adjacent_turfs.Copy()
@@ -102,20 +138,21 @@
 
 	return adjacent_turfs
 
-/atom/proc/air_update_turf(command = 0)
-	if(!isturf(loc) && command)
+/atom/proc/air_update_turf(calculate_adjacencies = FALSE)
+	var/turf/location = get_turf(src)
+	if(!location)
 		return
-	var/turf/T = get_turf(loc)
-	T.air_update_turf(command)
+	location.air_update_turf(calculate_adjacencies)
 
-/turf/air_update_turf(command = 0)
-	if(command)
-		ImmediateCalculateAdjacentTurfs()
+/turf/air_update_turf(calculate_adjacencies = FALSE)
+	if(!calculate_adjacencies)
+		return
+	ImmediateCalculateAdjacentTurfs()
 
 /atom/movable/proc/move_update_air(turf/T)
 	if(isturf(T))
-		T.air_update_turf(1)
-	air_update_turf(1)
+		T.air_update_turf(TRUE)
+	air_update_turf(TRUE)
 
 /atom/proc/atmos_spawn_air(text) //because a lot of people loves to copy paste awful code lets just make an easy proc to spawn your plasma fires
 	var/turf/open/T = get_turf(src)

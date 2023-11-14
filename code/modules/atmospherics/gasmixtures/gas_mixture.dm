@@ -21,7 +21,6 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 /datum/gas_mixture/New(volume)
 	if (!isnull(volume))
 		initial_volume = volume
-	AUXTOOLS_CHECK(AUXMOS)
 	if(!GLOB.auxtools_atmos_initialized && auxtools_atmos_init(GLOB.gas_data))
 		GLOB.auxtools_atmos_initialized = TRUE
 	__gasmixture_register()
@@ -97,12 +96,9 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Changed volume to [volume].")
 		set_volume(volume)
 
-/*
-we use a hook instead
 /datum/gas_mixture/Del()
 	__gasmixture_unregister()
 	. = ..()
-*/
 
 /datum/gas_mixture/vv_edit_var(var_name, var_value)
 	if(var_name == "_extools_pointer_gasmixture" || var_name == "gas_list_view_only")

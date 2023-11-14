@@ -78,7 +78,6 @@ SUBSYSTEM_DEF(time_track)
 			"air_hotspot_count",
 			"air_network_count",
 			"air_delta_count",
-			"air_deferred_airs_count",
 			"air_high_pressure_turfs",
 			"air_low_pressure_turfs",
 			"air_gasmix_count"
@@ -148,7 +147,6 @@ SUBSYSTEM_DEF(time_track)
 			length(SSair.hotspots),
 			length(SSair.networks),
 			length(SSair.high_pressure_delta),
-			length(SSair.deferred_airs),
 			SSair.high_pressure_turfs,
 			SSair.low_pressure_turfs,
 #ifdef SENDMAPS_PROFILE
