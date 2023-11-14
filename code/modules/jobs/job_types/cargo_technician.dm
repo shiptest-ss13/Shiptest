@@ -58,6 +58,7 @@
 	uniform = /obj/item/clothing/under/syndicate/donk
 	suit = /obj/item/clothing/suit/hazardvest/donk
 
+
 /datum/outfit/job/cargo_tech/frontiersmen
 	name = "Cargo Tech (frontiersmen)"
 

@@ -6,6 +6,13 @@
 	actions_types = list()
 	slowdown = 1
 	drag_slowdown = 1.5
+	fire_delay = 1
+
+	spread = 2
+	spread_unwielded = 80
+	recoil = 1
+	recoil_unwielded = 4
+	wield_slowdown = 4
 
 // L6 SAW //
 
@@ -29,7 +36,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw/examine(mob/user)
 	. = ..()
@@ -86,4 +93,4 @@
 
 /obj/item/gun/ballistic/automatic/hmg/solar/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)

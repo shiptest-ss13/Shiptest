@@ -3,8 +3,7 @@
 /obj/projectile/bullet/gauss
 	name = "ferromagnetic pellet"
 	icon_state = "gauss-pellet"
-	damage = 20
-	armour_penetration = 40
+	damage = 25
 	range = 35
 	light_color = COLOR_SOFT_RED
 	light_range = 3
@@ -15,6 +14,7 @@
 	name = "ferromagnetic lance"
 	icon_state = "redtrac"
 	damage = 30
+	armour_penetration = 20
 
 // Ferromagnetic Slug (Model H)
 
@@ -22,4 +22,5 @@
 	name = "ferromagnetic slug"
 	icon_state = "gauss-slug"
 	damage = 50
+	armour_penetration = -60
 	speed = 0.8
