@@ -166,9 +166,6 @@ Assistant
 /datum/outfit/job/assistant/roumain/post_equip(mob/living/carbon/human/H)
 	H.faction |= list("roumain")
 
-/datum/outfit/job/assistant/syndicate/cyberagent
-	name = "Junior Agent (Cybersun)"
-
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"
 
