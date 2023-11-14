@@ -54,14 +54,23 @@
 
 	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
+	gloves = /obj/item/clothing/gloves/color/captain/nt
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
+
+/datum/outfit/job/captain/nt/heron
+	name = "Captain (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/centcom/officer
+	gloves = /obj/item/clothing/gloves/combat
+	head = /obj/item/clothing/head/centhat
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 
 /datum/outfit/job/captain/pirate
 	name = "Captain (Pirate)"
 
 	ears = /obj/item/radio/headset/pirate/captain
-	uniform = /obj/item/clothing/under/costume/russian_officer
+	uniform = /obj/item/clothing/under/costume/pirate
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain
 	suit = /obj/item/clothing/suit/pirate/captain
@@ -80,71 +89,6 @@
 	head = /obj/item/clothing/head/caphat/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
 	alt_suit = null
-
-/datum/outfit/job/captain/syndicate
-	name = "Captain (ACLF)"
-	id = /obj/item/card/id/syndicate_command/captain_id
-	ears = /obj/item/radio/headset/syndicate/alt/captain
-	uniform = /obj/item/clothing/under/syndicate/aclf
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS/syndicate
-	gloves = /obj/item/clothing/gloves/combat
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
-
-/datum/outfit/job/captain/syndicate/sbc
-	name = "Captain (Twinkleshine)"
-
-	uniform = /obj/item/clothing/under/syndicate/aclf
-	gloves = /obj/item/clothing/gloves/combat
-	shoes = /obj/item/clothing/shoes/combat
-	ears = /obj/item/radio/headset/syndicate/alt/captain
-	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
-	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	suit_store = /obj/item/gun/ballistic/revolver/mateba
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military/assault
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
-	id = /obj/item/card/id/syndicate_command/captain_id
-	implants = list(/obj/item/implant/weapons_auth)
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
-
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
-	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
-
-/datum/outfit/job/captain/syndicate/sbc/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("PlayerSyndicate")
-
-	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(9, 12)) // squidquest real
-	I.access = get_all_accesses()+get_all_syndicate_access()
-	I.update_label()
-
-/datum/outfit/job/captain/syndicate/gorlex
-	name = "Captain (Gorlex Marauders)"
-
-	uniform = /obj/item/clothing/under/syndicate/aclf
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/aclfcap
-	suit = /obj/item/clothing/suit/aclf
-
-/datum/outfit/job/captain/syndicate/cybersun
-	name = "Cybersun Commander"
-
-	uniform = /obj/item/clothing/under/suit/black_really
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS/syndicate
-	gloves = /obj/item/clothing/gloves/combat
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 
 /datum/outfit/job/captain/minutemen
 	name = "Captain (Colonial Minutemen)"

@@ -17,7 +17,7 @@
 					if(!resisting && prob(MONKEY_RESIST_PROB))
 						resisting = TRUE
 						walk_to(src,0)
-						resist()
+						execute_resist()
 				else if(resisting)
 					resisting = FALSE
 				else if((mode == MONKEY_IDLE && !pickupTarget && !prob(MONKEY_SHENANIGAN_PROB)) || !handle_combat())
