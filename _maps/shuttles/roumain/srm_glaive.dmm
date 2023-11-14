@@ -208,9 +208,7 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/item/book/manual/trickwines_4_brewers,
-/turf/open/floor/grass{
-	icon_state = "junglegrass"
-	},
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "cJ" = (
 /obj/structure/cable/orange{
@@ -255,6 +253,7 @@
 "ds" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/item/reagent_containers/food/drinks/breakawayflask,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "dt" = (
@@ -726,15 +725,7 @@
 /area/ship/engineering/engine)
 "jG" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/structure/flora/tree/jungle{
-	icon_state = "churchtree";
-	icon = 'icons/obj/flora/chapeltree.dmi';
-	randomize_icon = 0;
-	pixel_x = -16;
-	pixel_y = 0;
-	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place.";
-	name = "Montagne's Oak"
-	},
+/obj/structure/flora/tree/srm,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "ko" = (
@@ -753,6 +744,12 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/construction)
+"lb" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/fermenting_barrel,
+/turf/open/floor/grass/ship/jungle,
+/area/ship/roumain)
 "lf" = (
 /obj/structure/cable/orange{
 	icon_state = "2-8"
@@ -1680,7 +1677,7 @@
 /area/ship/medical)
 "At" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
 /turf/open/floor/plating{
 	icon_state = "greenerdirt"
 	},
@@ -1776,7 +1773,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "BB" = (
@@ -2106,6 +2103,7 @@
 	name = "Body Holofield Switch";
 	id = "glaive_body_holo"
 	},
+/obj/structure/fermenting_barrel,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "FA" = (
@@ -2889,8 +2887,10 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Sl" = (
-/obj/structure/fermenting_barrel,
-/turf/open/floor/ship/dirt/dark,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/fermenting_barrel/distiller,
+/turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
 "Sx" = (
 /obj/structure/window/reinforced/spawner{
@@ -3951,8 +3951,8 @@ Lk
 cz
 YP
 ds
-aM
-aM
+lb
+Sl
 Fu
 wp
 wp
@@ -4177,7 +4177,7 @@ ZE
 MZ
 qN
 NL
-Sl
+NL
 NL
 NL
 NL

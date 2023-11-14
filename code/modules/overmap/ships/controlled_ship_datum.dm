@@ -77,6 +77,8 @@
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
+		if(shuttle_port.virtual_z() == null)
+			return TRUE
 		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
 	return TRUE
 
@@ -139,8 +141,10 @@
 
 /datum/overmap/ship/controlled/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	if(ticket.target != src || ticket.issuer != to_dock)
+		ticket.docking_error = "Invalid target."
 		return FALSE
 	if(!shuttle_port.check_dock(ticket.target_port))
+		ticket.docking_error = "Targeted docking port invalid."
 		return FALSE
 	return TRUE
 

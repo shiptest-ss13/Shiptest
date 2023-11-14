@@ -91,10 +91,6 @@
 	display_name = "jeans"
 	path = /obj/item/clothing/under/pants/jeans
 
-/datum/gear/uniform/pants/classicjeans
-	display_name = "classic jeans"
-	path = /obj/item/clothing/under/pants/classicjeans
-
 /datum/gear/uniform/pants/khaki
 	display_name = "khaki pants"
 	path = /obj/item/clothing/under/pants/khaki
@@ -118,10 +114,6 @@
 /datum/gear/uniform/pants/blackjeans
 	display_name = "black jeans"
 	path = /obj/item/clothing/under/pants/blackjeans
-
-/datum/gear/uniform/pants/mustangjeans
-	display_name = "Must Hang jeans"
-	path = /obj/item/clothing/under/pants/mustangjeans
 
 /datum/gear/uniform/pants/black
 	display_name = "black pants"
