@@ -83,16 +83,7 @@
 
 /obj/structure/sauna_oven/process()
 	if(water_amount)
-		var/used_amount
-		switch(water_amount) // Stops infinite vapor generation from shady TOUCH methods like showers.
-			if(0)
-				return
-			if(1)
-				used_amount = 1
-			if(2 to 199)
-				used_amount = water_amount * 0.1
-			else
-				used_amount = 20
+		var/used_amount = min(water_amount / 10, 20)
 		water_amount -= used_amount
 		var/turf/pos = get_turf(src)
 		if(pos)
