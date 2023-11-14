@@ -260,9 +260,9 @@
 	if(!in_range(src,pack))
 		var/mob/living/L = loc
 		if(istype(L))
-			to_chat(L, "<span class='warning'>[pack]'s [src] overextends and come out of your hands!</span>")
+			to_chat(L, "<span class='warning'>[pack]'s [src] overextends and comes out of your hands!</span>")
 		else
-			visible_message("<span class='notice'>[src] snap back into [pack].</span>")
+			visible_message("<span class='notice'>[src] snaps back into [pack].</span>")
 		snap_back()
 
 /obj/item/attachment/dropped(mob/user)
