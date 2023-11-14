@@ -31,17 +31,6 @@
 	blueprints[4] = new /datum/design/circular_saw
 	blueprints[5] = new /datum/design/cautery
 
-/obj/item/disk/design_disk/medical/surgery_basic
-	name = "design disk - basic surgical tools"
-	desc = "A design disk containing designs for basic sets of surgical tools."
-	max_blueprints = 3
-
-/obj/item/disk/design_disk/medical/surgery_basic/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/scalpel
-	blueprints[2] = new /datum/design/hemostat
-	blueprints[3] = new /datum/design/cautery
-
 // CHEMISTRY
 
 /obj/item/disk/design_disk/medical/chemistry
