@@ -1,6 +1,6 @@
 /obj/item/gun/energy/kalix //blue //todo: fix up belt_mirror.dmi, it's incomprehensible
-	name = "\improper Kalixcian light beamgun"
-	desc = "PH PGF DESC"
+	name = "Etherbor BG-12"
+	desc = "Brought to you by Etherbor Industries, proudly based within the PGF, is the BG-12 energy beam gun! The BG-12 is Etherbor's current newest civilian energy weapon model."
 	icon_state = "kalixgun"
 	item_state = "kalixgun"
 	icon = 'icons/obj/guns/faction/gezena/energy.dmi'
@@ -30,8 +30,8 @@
 	e_cost = 850
 
 /obj/item/gun/energy/kalix/pgf
-	name = "\improper Gezenan light beamgun"
-	desc = "PH PGF DESC"
+	name = "Etherbor BG-16"
+	desc = "An advanced variant of the BG-12, the BG-16 is the military-grade beam gun designed and manufactured by Etherbor Industries as the standard-issue weapon of the PGF."
 	icon_state = "pgfgun"
 	item_state = "pgfgun"
 
@@ -55,9 +55,9 @@
 	fire_sound = 'sound/weapons/gun/energy/laserpistol.ogg'
 	e_cost = 1000
 
-/obj/item/gun/energy/kalix/pgf/heavy //todo: make it actually use wielded component, or some other solution for twohanding, as it really sucks right now
-	name = "\improper Gezenan heavy beamgun"
-	desc = "PH PGF HEAVY DESC"
+/obj/item/gun/energy/kalix/pgf/heavy
+	name = "Etherbor HBG-7"
+	desc = "For when a BG-16 doesn’t cut it, the far bulkier HBG-7, provided by your friends at Etherbor Industries, has the stopping power and fire rate to bring down any target where a smaller caliber weapon just wouldn't cut it."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
 	icon = 'icons/obj/guns/faction/gezena/48x32.dmi'
