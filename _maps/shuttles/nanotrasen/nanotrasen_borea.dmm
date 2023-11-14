@@ -468,6 +468,11 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/box,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 11
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen/kitchen)
 "bD" = (
@@ -557,6 +562,11 @@
 	dir = 10
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -10
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
 "bR" = (
@@ -3161,6 +3171,10 @@
 /area/ship/hallway/starboard)
 "ir" = (
 /obj/structure/bookcase/random,
+/obj/machinery/light_switch{
+	pixel_y = 22;
+	pixel_x = 10
+	},
 /turf/open/floor/wood,
 /area/ship/crew/office)
 "is" = (
@@ -3338,6 +3352,11 @@
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	pixel_y = 11;
+	dir = 4;
+	pixel_x = -20
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "iR" = (
@@ -3388,8 +3407,6 @@
 	},
 /obj/item/door_remote/quartermaster,
 /obj/item/cartridge/quartermaster,
-/obj/item/clothing/under/suit/qm,
-/obj/item/clothing/under/suit/qm/skirt,
 /obj/item/clothing/under/rank/cargo/qm,
 /obj/item/clothing/under/rank/cargo/qm/skirt,
 /obj/item/clothing/head/beret/qm,
@@ -4554,6 +4571,15 @@
 /obj/structure/marker_beacon,
 /turf/open/floor/plating,
 /area/ship/bridge)
+"sR" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/hallway/aft)
 "sX" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -5724,6 +5750,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
+"FO" = (
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "Gf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -5797,7 +5831,7 @@
 "GX" = (
 /obj/structure/table,
 /obj/machinery/newscaster/directional/west,
-/obj/machinery/photocopier/faxmachine/longrange,
+/obj/machinery/fax,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Hc" = (
@@ -6888,6 +6922,11 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = 12
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
 "RO" = (
@@ -7114,8 +7153,6 @@
 /obj/item/clothing/under/rank/cargo/tech,
 /obj/item/clothing/under/rank/cargo/tech,
 /obj/item/clothing/under/rank/cargo/tech,
-/obj/item/clothing/under/suit/cargo_tech,
-/obj/item/clothing/under/suit/cargo_tech,
 /obj/item/clothing/under/rank/cargo/tech/skirt,
 /obj/item/clothing/under/rank/cargo/tech/skirt,
 /obj/item/clothing/under/rank/cargo/tech/skirt,
@@ -7158,6 +7195,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "0-2"
+	},
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_y = -11;
+	pixel_x = 20
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
@@ -7283,6 +7325,11 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 5
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
@@ -8262,7 +8309,7 @@ Lw
 dt
 bC
 cb
-Et
+sR
 vu
 gc
 KN
@@ -9056,7 +9103,7 @@ eX
 PV
 SG
 zZ
-UM
+FO
 mZ
 eQ
 Ku

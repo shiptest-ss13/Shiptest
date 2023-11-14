@@ -7,7 +7,7 @@
 	],
 	"map_name": "Borea-Class Merchant Cruiser",
 	"map_short_name": "Borea-Class",
-	"map_path": "_maps/shuttles/shiptest/nanotrasen_borea.dmm",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_borea.dmm",
 	"map_id": "nanotrasen_borea",
 	"description": "The Borea-Class Merchant Cruiser is the pride of Northwind Shipping's Frontier Fleet, a veritable behemoth of a hull that has been plying space lanes for centuries. While lightly armored, and  with handling that could graciously be compared to that of a brick, the interior of a Borea is a spacious area, used for hauling quanities of freight not seen outside dedicated freighters, as well as selling goods to anyone willing to purchase.",
 	"tags": ["Cargo", "Roleplay", "Service"],
@@ -25,7 +25,7 @@
 			"slots": 1
 		},
 		"Quartermaster": {
-			"outfit": "/datum/outfit/job/quartermaster/supplychief",
+			"outfit": "/datum/outfit/job/quartermaster",
 			"officer": true,
 			"slots": 1
 		},
@@ -38,7 +38,7 @@
 			"slots": 2
 		},
 		"Cargo Tech": {
-			"outfit": "/datum/outfit/job/cargo_tech/stockboy",
+			"outfit": "/datum/outfit/job/cargo_tech",
 			"slots": 4
 		},
 		"Chef": {
