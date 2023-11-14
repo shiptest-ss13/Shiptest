@@ -8,7 +8,7 @@ export BYOND_MAJOR=515
 export BYOND_MINOR=1619
 
 #rust version
-export RUST_VERSION=1.67.0
+export RUST_VERSION=1.73.0
 
 #rust_g git tag
 export RUST_G_VERSION=3.0.0
@@ -27,4 +27,4 @@ export PYTHON_VERSION=3.7.9
 export AUXMOS_REPO=https://github.com/Putnam3145/auxmos
 
 #auxmos version
-export AUXMOS_VERSION=v2.2.1
+export AUXMOS_VERSION=master
