@@ -198,11 +198,9 @@
 	roundend_category = "The Tunnel Snakes"
 	gang_name = "Tunnel Snakes"
 	gang_id = "TS"
-	acceptable_clothes = list(/obj/item/clothing/under/pants/classicjeans,
-							/obj/item/clothing/suit/jacket,
+	acceptable_clothes = list(/obj/item/clothing/suit/jacket,
 							/obj/item/clothing/mask/bandana/skull)
 	free_clothes = list(/obj/item/clothing/suit/jacket,
-						/obj/item/clothing/under/pants/classicjeans,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "TUNNEL SNAKES RULE!!! Make sure that everyone knows that, by getting 25% of people on station to wear any part of our uniform! TUNNEL SNAKES RULE!!!"
 	antag_hud_name = "Snakes"
