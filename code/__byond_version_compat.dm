@@ -1,28 +1,17 @@
 // This file contains defines allowing targeting byond versions newer than the supported
 
 //Update this whenever you need to take advantage of more recent byond features
-#define MIN_COMPILER_VERSION 514
-#define MIN_COMPILER_BUILD 1556
+#define MIN_COMPILER_VERSION 515
+#define MIN_COMPILER_BUILD 1609
 #if (DM_VERSION < MIN_COMPILER_VERSION || DM_BUILD < MIN_COMPILER_BUILD) && !defined(SPACEMAN_DMM)
 //Don't forget to update this part
 #error Your version of BYOND is too out-of-date to compile this project. Go to https://secure.byond.com/download and update.
-#error You need version 514.1556 or higher
-#endif
-
-#if (DM_VERSION == 514 && DM_BUILD > 1575 && DM_BUILD <= 1577)
-#error Your version of BYOND currently has a crashing issue that will prevent you from running Dream Daemon test servers.
-#error We require developers to test their content, so an inability to test means we cannot allow the compile.
-#error Please consider upgrading to 514.1577 or above.
-#endif
-
-#if (DM_VERSION == 514 && DM_BUILD == 1589)
-#error Warning! Byond 514.1589 has been known to be unstable. Use at your own risk.
-#error Please consider using 514.1588.
+#error You need version 515.1609 or higher
 #endif
 
 // Keep savefile compatibilty at minimum supported level
 #if DM_VERSION >= 515
-/savefile/byond_version = MIN_COMPILER_VERSION
+/savefile/byond_version = 514 //TODO: Make this MIN_COMPILER_VERSION before merge
 #endif
 
 // 515 split call for external libraries into call_ext
