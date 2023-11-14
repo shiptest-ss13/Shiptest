@@ -115,5 +115,6 @@
 	belt = null
 	suit = null
 	alt_suit = null
+	suit_store = null
 	dcoat = null
 	r_pocket = null

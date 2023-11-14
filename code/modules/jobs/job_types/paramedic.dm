@@ -68,6 +68,7 @@
 
 	head = null
 	suit = null
+	suit_store = null
 	belt = null
 
 /datum/outfit/job/paramedic/minutemen
