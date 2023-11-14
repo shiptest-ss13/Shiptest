@@ -477,15 +477,15 @@
 	update_appearance()
 
 /obj/item/stock_parts/cell/gun/kalix
-	name = "PGF CELL PH"
-	desc = "PGF CELL PH"
+	name = "Etherbor EWC-5"
+	desc = "Brought to you by Etherbor Industries, proudly based within the PGF, is the EWC-5, an energy cell compatible with any Etherbor Industries energy weapons."
 	icon_state = "kalix-cell"
 	maxcharge = 12750 // 15 shots at 850 energy per
 	chargerate = 1750
 
 /obj/item/stock_parts/cell/gun/pgf
-	name = "pgf CELL PH"
-	desc = "pgf CELL PH"
+	name = "Etherbor EWC-6m"
+	desc = "Exclusive only to the PGF military, the EWC-6m is an Etherbor energy weapon cell designed for military-grade use, including expanded capacity and output."
 	icon_state = "pgf-cell"
 	maxcharge = 20000 // 20 shots at 1000 energy per
 	chargerate = 2000
