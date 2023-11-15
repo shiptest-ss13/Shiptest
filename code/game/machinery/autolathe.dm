@@ -48,7 +48,7 @@
 							"Dinnerware"
 							)
 
-/obj/machinery/autolathe/Initialize()
+/obj/machinery/autolathe/Initialize(
 	AddComponent(
 		/datum/component/material_container,
 		list(
@@ -62,7 +62,7 @@
 		null,
 		null,
 		CALLBACK(src, PROC_REF(AfterMaterialInsert))
-	)
+	))
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
