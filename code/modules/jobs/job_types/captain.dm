@@ -90,7 +90,6 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	alt_suit = null
 
-<<<<<<< HEAD
 /datum/outfit/job/captain/syndicate
 	name = "Captain (ACLF)"
 	id = /obj/item/card/id/syndicate_command/captain_id
@@ -156,8 +155,6 @@
 	gloves = /obj/item/clothing/gloves/combat
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 
-=======
->>>>>>> upstream/master
 /datum/outfit/job/captain/minutemen
 	name = "Captain (Colonial Minutemen)"
 
