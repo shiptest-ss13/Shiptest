@@ -97,7 +97,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        args: [
+        arg: [
           "BASIC_TESTS",
           "CREATE_AND_DESTROY_TEST",
           "PLANET_GEN_TEST",
