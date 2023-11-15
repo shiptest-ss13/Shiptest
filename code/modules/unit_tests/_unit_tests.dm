@@ -103,10 +103,8 @@
 #include "supply_pack.dm"
 #include "teleporters.dm"
 #include "timer_sanity.dm"
-#include "unit_test.dm"
 
 #endif //SKIP_MAIN_TESTS
-
 
 #ifdef SKIP_PLACEMENT_TESTS
 
@@ -118,6 +116,8 @@
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
 #include "find_reference_sanity.dm"
 #endif
+
+#include "unit_test.dm"
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
