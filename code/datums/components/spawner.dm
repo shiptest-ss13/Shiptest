@@ -88,17 +88,29 @@
 		return 0
 	//Avoid using this with spawners that add this component on initialize
 	//It causes numerous runtime errors during planet generation
-	if(spawn_distance_max > 1)
-		spot = pick(turf_peel(spawn_distance_max, spawn_distance_min, P.loc, view_based = TRUE))
-		if(!spot)
-			spot = pick(circlerangeturfs(P.loc, spawn_distance_max))
 	spawn_delay = world.time + spawn_time
-	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(spot)
-	L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1)
-	spawned_mobs += L
-	L.nest = src
-	L.faction = src.faction
-	P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
-	if(length(spawn_sound))
-		playsound(P, pick(spawn_sound), 50, TRUE)
+	var/spawn_multiplier = 1
+	if(spawn_distance_max > 1)
+		var/player_count = 0
+		for(var/mob/living/players in range(spawn_distance_max, P.loc))
+			if(players.ckey && players.stat == CONSCIOUS)
+				player_count++
+		for(var/obj/mecha/mechs in range(spawn_distance_max, P.loc))
+			player_count++
+		if(player_count > 3)
+			spawn_multiplier = round(player_count/2)
+	spawn_multiplier = clamp(spawn_multiplier, 1, max_mobs - spawned_mobs.len)
+	for(spawn_multiplier, spawn_multiplier > 0, spawn_multiplier--)
+		if(spawn_distance_max > 1)
+			spot = pick(turf_peel(spawn_distance_max, spawn_distance_min, P.loc, view_based = TRUE))
+			if(!spot)
+				spot = pick(circlerangeturfs(P.loc, spawn_distance_max))
+		var/chosen_mob_type = pickweight(mob_types)
+		var/mob/living/simple_animal/L = new chosen_mob_type(spot)
+		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1)
+		spawned_mobs += L
+		L.nest = src
+		L.faction = src.faction
+		P.visible_message("<span class='danger'>[L] [pick(spawn_text)] [P].</span>")
+		if(length(spawn_sound))
+			playsound(P, pick(spawn_sound), 50, TRUE)

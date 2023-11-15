@@ -151,7 +151,7 @@
 					component_parts += new_part
 					component_parts -= part
 					break
-				else
+				else if(component_parts.len < needed_parts.len)
 					user.transferItemToLoc(tool,src)
 					component_parts += new_part
 					malfunction = null
