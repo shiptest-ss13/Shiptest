@@ -12,6 +12,7 @@ on:
         type: string
       arg:
         required: false
+        default: ALL_TESTS
         type: string
 jobs:
   run_integration_tests:
@@ -57,7 +58,7 @@ jobs:
         run: |
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS -D${{ inputs.arg || 'ALL_TESTS' }}
+          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS -D${{ inputs.arg }}
       - name: Run Tests
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
