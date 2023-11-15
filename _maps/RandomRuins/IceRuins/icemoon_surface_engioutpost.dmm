@@ -1456,11 +1456,11 @@
 /area/ruin)
 "dA" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/line,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 10
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -1468,19 +1468,21 @@
 /area/ruin)
 "dB" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/line,
-/obj/effect/turf_decal/weather/snow/corner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin)
 "dC" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/line,
-/obj/effect/turf_decal/weather/snow/corner,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/weather/snow{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"

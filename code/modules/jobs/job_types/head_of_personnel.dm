@@ -80,30 +80,6 @@
 	accessory = /obj/item/clothing/accessory/waistcoat
 	head = /obj/item/clothing/head/HoS/cowboy
 
-/datum/outfit/job/head_of_personnel/syndicate
-	name = "Bridge Officer (Syndicate)"
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS/beret/syndicate
-	gloves = /obj/item/clothing/gloves/color/white
-	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	glasses = /obj/item/clothing/glasses/hud/health
-
-/datum/outfit/job/head_of_personnel/syndicate/intel
-	name = "Intelligence Officer (Syndicate)"
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/suit/charcoal
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS/syndicate
-	gloves = /obj/item/clothing/gloves/combat
-	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	glasses = /obj/item/clothing/glasses/sunglasses
-
 /datum/outfit/job/head_of_personnel/beluga
 
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
