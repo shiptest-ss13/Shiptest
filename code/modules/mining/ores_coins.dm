@@ -14,6 +14,7 @@
 	item_state = "ore"
 	full_w_class = WEIGHT_CLASS_BULKY
 	singular_name = "ore chunk"
+	item_flags = NO_MAT_REDEMPTION
 	var/points = 0 //How many points this ore gets you from the ore redemption machine
 	var/refined_type = null //What this ore defaults to being refined into
 	var/mine_experience = 5 //How much experience do you get for mining this ore?
@@ -27,12 +28,12 @@
 	var/difference = min(ORESTACK_OVERLAYS_MAX, amount) - (LAZYLEN(stack_overlays)+1)
 	if(difference == 0)
 		return
-	else if(difference < 0 && LAZYLEN(stack_overlays))			//amount < stack_overlays, remove excess.
+	else if(difference < 0 && LAZYLEN(stack_overlays)) //amount < stack_overlays, remove excess.
 		if (LAZYLEN(stack_overlays)-difference <= 0)
 			stack_overlays = null
 		else
 			stack_overlays.len += difference
-	else if(difference > 0)			//amount > stack_overlays, add some.
+	else if(difference > 0) //amount > stack_overlays, add some.
 		for(var/i in 1 to difference)
 			var/mutable_appearance/newore = mutable_appearance(icon, icon_state)
 			newore.pixel_x = rand(-8,8)

@@ -368,6 +368,7 @@
 /obj/item/stack/ore/salvage
 	name = "salvage"
 	icon = 'icons/obj/salvage_structure.dmi'
+	item_flags = NONE
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()

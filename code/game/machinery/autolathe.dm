@@ -49,7 +49,20 @@
 							)
 
 /obj/machinery/autolathe/Initialize()
-	AddComponent(/datum/component/material_container,list(/datum/material/iron, /datum/material/glass, /datum/material/plastic, /datum/material/silver, /datum/material/gold, /datum/material/plasma, /datum/material/uranium, /datum/material/titanium), 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
+	AddComponent(
+		/datum/component/material_container,
+		list(
+			/datum/material/iron, /datum/material/glass,
+			/datum/material/plastic, /datum/material/silver,
+			/datum/material/gold, /datum/material/plasma,
+			/datum/material/uranium, /datum/material/titanium
+		),
+		0,
+		TRUE,
+		null,
+		null,
+		CALLBACK(src, PROC_REF(AfterMaterialInsert))
+	)
 	. = ..()
 
 	wires = new /datum/wires/autolathe(src)
@@ -266,7 +279,7 @@
 	materials.retrieve_all()
 
 /obj/machinery/autolathe/attackby(obj/item/O, mob/living/user, params)
-	if (busy)
+	if(busy)
 		to_chat(user, "<span class=\"alert\">The autolathe is busy. Please wait for completion of previous operation.</span>")
 		return TRUE
 
@@ -315,7 +328,6 @@
 		playsound(src, 'sound/machines/click.ogg', 50, FALSE)
 		eject(user)
 	return
-
 
 /obj/machinery/autolathe/proc/AfterMaterialInsert(obj/item/item_inserted, id_inserted, amount_inserted)
 	if(istype(item_inserted, /obj/item/stack/ore/bluespace_crystal))
