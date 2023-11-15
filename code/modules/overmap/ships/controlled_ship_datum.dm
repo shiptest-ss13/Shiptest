@@ -105,7 +105,7 @@
 		ship_account = new(name, source_template.starting_funds)
 
 #ifdef UNIT_TESTS
-	Rename("[source_template]")
+	Rename("[source_template]", TRUE)
 #else
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
