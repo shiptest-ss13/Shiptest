@@ -283,14 +283,6 @@
 		update_icon_state()
 		update_overlays()
 		return
-	else
-		say("Vein depleted.")
-		active = FALSE
-		soundloop.stop()
-		mining.deconstruct()
-		mining = null
-		update_icon_state()
-		update_overlays()
 
 //Handles the process of withdrawing ore from the vein itself
 /obj/machinery/drill/proc/mine()
@@ -300,7 +292,16 @@
 	if(mining.mining_charges)
 		mining.mining_charges--
 		mining.drop_ore(round(sqrt(sensor_rating), 0.1),src)
-		start_mining()
+		if(mining.mining_charges < 1)
+			say("Vein depleted.")
+			active = FALSE
+			soundloop.stop()
+			mining.deconstruct()
+			mining = null
+			update_icon_state()
+			update_overlays()
+		else
+			start_mining()
 	else if(!mining.mining_charges) //Extra check to prevent vein related errors locking us in place
 		say("Error: Vein Depleted")
 		active = FALSE
