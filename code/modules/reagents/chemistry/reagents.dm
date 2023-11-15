@@ -101,6 +101,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 			var/amount = round(reac_volume*modifier, 0.1)
 			if(amount >= 0.5)
 				M.reagents.add_reagent(type, amount)
+	SSblackbox.record_feedback("nested tally", "reagent expose mob", 1, list("[name]", "[M]", "[method]", "[reac_volume]"))
 	return 1
 
 /// Applies this reagent to an [/obj]
