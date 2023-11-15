@@ -30,6 +30,7 @@
 	var/preload_cell_type = /obj/item/stock_parts/cell
 	var/power_cost = 100
 	var/metal_attached
+	var/missing_part //I hate this but it's better than most the ideas I've had
 
 /obj/machinery/drill/examine(mob/user)
 	. = ..()
@@ -39,11 +40,11 @@
 		. += "<spawn class='notice'>The low power light is blinking.</span>"
 	switch(malfunction)
 		if(1)
-			. += "<span class='notice'>The [src]'s <b>laser array<b> appears to be broken and needs to be replaced.</span>"
+			. += "<span class='notice'>The [src]'s <b>laser array</b> appears to be broken and needs to be replaced.</span>"
 		if(2)
-			. += "<span class='notice'>The [src]'s <b>sensors<b> appear to be broken and need to be replaced.</span>"
+			. += "<span class='notice'>The [src]'s <b>sensors</b> appear to be broken and need to be replaced.</span>"
 		if(3)
-			. += "<span class='notice'>The [src]'s <b>capacitor<b> appears to be broken and needs to be replaced.</span>"
+			. += "<span class='notice'>The [src]'s <b>capacitor</b> appears to be broken and needs to be replaced.</span>"
 		if(4)
 			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded</b> back together.</span>"
 		if(5)
@@ -152,17 +153,20 @@
 		if(is_type_in_list(tool,needed_parts))
 			for(var/obj/item/stock_parts/part in component_parts)
 				var/obj/item/stock_parts/new_part = tool
-				if(new_part.parent_type == part.parent_type || istype(new_part,part))
+				if(new_part.part_behaviour == part.part_behaviour)
 					user.transferItemToLoc(tool,src)
 					part.forceMove(user.loc)
 					component_parts += new_part
 					component_parts -= part
+					to_chat(user, "<span class='notice'>You replace [part] with [new_part].</span>")
 					break
-				else if(component_parts.len < needed_parts.len)
+				else if(istype(new_part,missing_part))
 					user.transferItemToLoc(tool,src)
 					component_parts += new_part
 					malfunction = null
+					missing_part = null
 					obj_integrity = max_integrity
+					to_chat(user, "<span class='notice'>You replace the broken part with [new_part].</span>")
 					break
 			return
 		if(tool.tool_behaviour == TOOL_MULTITOOL && malfunction == MALF_CALIBRATE)
@@ -322,16 +326,19 @@
 			say("Malfunction: Laser array damaged, please replace before continuing mining operations.")
 			for (var/obj/item/stock_parts/micro_laser/laser in component_parts)
 				component_parts.Remove(laser)
+			missing_part = /obj/item/stock_parts/micro_laser
 			return
 		if(MALF_SENSOR)
 			say("Malfunction: Ground penetrating scanner damaged, please replace before continuing mining operations.")
 			for (var/obj/item/stock_parts/scanning_module/sensor in component_parts)
 				component_parts.Remove(sensor)
+			missing_part = /obj/item/stock_parts/scanning_module
 			return
 		if(MALF_CAPACITOR)
 			say("Malfunction: Energy cell capacitor damaged, please replace before continuing mining operations.")
 			for (var/obj/item/stock_parts/capacitor/capacitor in component_parts)
 				component_parts.Remove(capacitor)
+			missing_part = /obj/item/stock_parts/capacitor
 			return
 		if(MALF_STRUCTURAL)
 			say("Malfunction: Drill plating damaged, provide structural repairs before continuing mining operations.")
