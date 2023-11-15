@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/Initialize()
 	. = ..()
 	var/ore_type_amount
-	mining_charges = rand(roundmining_charges - 2,mining_charges + 2)
+	mining_charges = rand(round(mining_charges - 2),mining_charges + 2)
 	switch(vein_class)
 		if(1)
 			ore_type_amount = rand(1,3)
