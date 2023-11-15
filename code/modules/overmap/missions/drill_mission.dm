@@ -1,8 +1,8 @@
 /datum/mission/drill
 	name = "Class 1 core sample mission"
 	desc = "We require geological information from one of the neighboring planetoids . \
-			Please anchor the drill in place and defend it until it has gathered enough smaples.\
-			Operation of the core sampling drill is extremely dangerous, use caution. "
+			Please anchor the drill in place and defend it until it has gathered enough samples.\
+			Operation of the core sampling drill is extremely dangerous, caution is advised. "
 	value = 2000
 	duration = 80 MINUTES
 	weight = 8

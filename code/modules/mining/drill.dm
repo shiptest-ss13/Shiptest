@@ -36,7 +36,7 @@
 	if(panel_open && component_parts)
 		. += display_parts(user, TRUE)
 	if(cell.charge < power_cost*5)
-		. += "<spawn class='notice'>The lower power light is blinking."
+		. += "<spawn class='notice'>The low power light is blinking."
 	switch(malfunction)
 		if(4)
 			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded</b> back together.</span>"
@@ -77,7 +77,7 @@
 //Instead of being qdeled the drill requires mildly expensive repairs to use again
 /obj/machinery/drill/deconstruct(disassembled)
 	if(active && mining)
-		say("Drill integrity failure, comencing emergency shutdown procedure.")
+		say("Drill integrity failure. Engaging emergency shutdown procedure.")
 		//Just to make sure mobs don't spawn infinitely from the vein and as a failure state for players
 		mining.deconstruct()
 	obj_break()
@@ -89,7 +89,7 @@
 
 //The RPED sort of trivializes a good deal of the malfunction mechancis, as such it will not be allowed to work
 /obj/machinery/drill/exchange_parts(mob/user, obj/item/storage/part_replacer/W)
-	to_chat(user, "<span calss='notice'>[W] does not seem to work on [src], it might require more delecitate parts replacement.")
+	to_chat(user, "<span class='notice'>[W] does not seem to work on [src], it might require more delicate part manipulation.")
 	return
 
 /obj/machinery/drill/attackby(obj/item/tool, mob/living/user, params)
@@ -205,7 +205,7 @@
 		say("Please resolve existing malfunction before continuing mining operations.")
 		return
 	if(!mining)
-		to_chat(user, "<span class='notice'>[src] isn't sercured over an ore vein!</span>")
+		to_chat(user, "<span class='notice'>[src] isn't secured over an ore vein!</span>")
 		return
 	if(!active)
 		playsound(src, 'sound/machines/click.ogg', 100, TRUE)
@@ -216,7 +216,7 @@
 		start_mining()
 		return
 	else
-		to_chat(user, "<span class='notice'>[src] is currently busy, wait till it's done!</span>")
+		to_chat(user, "<span class='notice'>[src] is currently busy, wait until it's done!</span>")
 		return
 
 /obj/machinery/drill/update_icon_state()
@@ -255,7 +255,7 @@
 	for(var/obj/item/stock_parts/capacitor/capacitor in component_parts)
 		power_use = power_cost/capacitor.rating
 	if(cell.charge < power_use)
-		say("Error: Internal cell charge deplted")
+		say("Error: Internal cell charge depleted")
 		active = FALSE
 		soundloop.stop()
 		update_overlays()
