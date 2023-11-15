@@ -106,7 +106,7 @@
 
 #endif //SKIP_MAIN_TESTS
 
-#ifdef SKIP_PLACEMENT_TESTS
+#ifndef SKIP_PLACEMENT_TESTS
 
 #include "ruin_placement.dm"
 #include "ship_outpost_placement.dm"
