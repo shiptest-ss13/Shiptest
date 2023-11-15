@@ -86,7 +86,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	for(class, class>0, class--)
 		var/picked
 		picked = pick(vein_contents)
-		new picked(pick(get_adjacent_open_turfs(current)),round(rand(5,10)*multiplier))
+		new picked(pick(get_adjacent_open_turfs(current)),round(rand(10,15)*multiplier))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
