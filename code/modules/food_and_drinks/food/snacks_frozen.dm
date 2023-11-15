@@ -57,6 +57,17 @@
 	tastes = list("ice cream" = 1, "banana" = 1, "a bad joke" = 1)
 	foodtype = FRUIT | DAIRY | SUGAR
 
+/obj/item/reagent_containers/food/snacks/cornuto
+	name = "cornuto"
+	w_class = WEIGHT_CLASS_SMALL
+	icon = 'icons/obj/food/frozen_treats.dmi'
+	icon_state = "cornuto"
+	desc = "A neapolitan vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
+	tastes = list("chopped hazelnuts", "waffle")
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 2)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 1)
+	foodtype = DAIRY | SUGAR
+
 /////////////
 //SNOWCONES//
 /////////////
@@ -181,7 +192,6 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/spacemountainwind = 5)
 	tastes = list("ice" = 1, "water" = 1, "mountain wind" = 5)
 
-
 /obj/item/reagent_containers/food/snacks/snowcones/pwrgame
 	name = "pwrgame snowcone"
 	desc = "Pwrgame soda drizzled over a snowball in a paper cup."
@@ -202,6 +212,10 @@
 	icon_state = "rainbow_sc"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/laughter = 25)
 	tastes = list("ice" = 1, "water" = 1, "sunlight" = 5, "light" = 5, "slime" = 5, "paint" = 3, "clouds" = 3)
+
+/////////////
+//POPSICLES//
+/////////////
 
 /obj/item/reagent_containers/food/snacks/popsicle
 	name = "bug popsicle"
@@ -231,15 +245,6 @@
 	. = ..()
 	update_appearance()
 
-/obj/item/popsicle_stick
-	name = "popsicle stick"
-	icon = 'icons/obj/food/frozen_treats.dmi'
-	icon_state = "popsicle_stick"
-	desc = "This humble little stick usually carries a frozen treat, at the moment it seems freed from this atlassian burden."
-	custom_materials = list(/datum/material/wood=20)
-	w_class = WEIGHT_CLASS_TINY
-	force = 0
-
 /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_orange
 	name = "orange creamsicle"
 	desc = "A classic orange creamsicle. A sunny frozen treat."
@@ -262,7 +267,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 3, /datum/reagent/consumable/sugar = 2)
 	overlay_state = "jumbo"
 
-/obj/item/food/popsicle/licorice_creamsicle
+/obj/item/reagent_containers/food/popsicle/licorice_creamsicle
 	name = "Milky Way™"
 	desc = "A salty licorice ice cream. A salty frozen treat."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sodiumchloride = 1,  /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 4)
@@ -270,13 +275,11 @@
 	tastes = list("salty liquorice")
 	overlay_state = "licorice_creamsicle"
 
-/obj/item/reagent_containers/food/snacks/cornuto
-	name = "cornuto"
-	w_class = WEIGHT_CLASS_SMALL
+/obj/item/popsicle_stick
+	name = "popsicle stick"
 	icon = 'icons/obj/food/frozen_treats.dmi'
-	icon_state = "cornuto"
-	desc = "A neapolitan vanilla and chocolate icecream cone. It menaces with a sprinkling of caramelized nuts."
-	tastes = list("chopped hazelnuts", "waffle")
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 2)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 1)
-	foodtype = DAIRY | SUGAR
+	icon_state = "popsicle_stick"
+	desc = "This humble little stick usually carries a frozen treat, at the moment it seems freed from this atlassian burden."
+	custom_materials = list(/datum/material/wood=20)
+	w_class = WEIGHT_CLASS_TINY
+	force = 0
