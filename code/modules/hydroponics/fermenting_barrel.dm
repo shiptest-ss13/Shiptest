@@ -75,9 +75,14 @@
 		icon_state = "barrel"
 	return ..()
 
-/datum/crafting_recipe/fermenting_barrel
-	name = "Wooden Barrel"
-	result = /obj/structure/fermenting_barrel
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 8)
-	time = 50
-	category = CAT_PRIMAL
+/obj/structure/fermenting_barrel/distiller
+	name = "Distiller"
+	icon_state = "distiller"
+	desc = "A repurposed barrel and keg host to a special culture of bacteria native to Illestren"
+
+/obj/structure/fermenting_barrel/distiller/update_icon_state()
+	if(open)
+		icon_state = "distiller_open"
+	else
+		icon_state = "distiller"
+	return ..()

@@ -113,6 +113,7 @@
 						juice_target_item(target_item, user)
 					else
 						grind_target_item(target_item, user)
+					target_item = null
 
 			if("Grind")
 				for(var/obj/item/target_item as anything in contents)
@@ -120,6 +121,7 @@
 						grind_target_item(target_item, user)
 					else
 						juice_target_item(target_item, user)
+					target_item = null
 		return
 
 	if(!attacking_item.juice_results && !attacking_item.grind_results)

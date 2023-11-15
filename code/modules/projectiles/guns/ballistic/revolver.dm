@@ -25,6 +25,9 @@
 	bolt_wording = "hammer"
 	wield_slowdown = 0.3
 
+	has_safety = FALSE //irl revolvers dont have safetys. i think. maybe
+	safety = FALSE
+
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
 	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
