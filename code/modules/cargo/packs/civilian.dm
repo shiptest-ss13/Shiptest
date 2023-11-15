@@ -53,6 +53,20 @@
 		Bundles
 */
 
+/datum/supply_pack/civilian/sauna_starter
+	name = "DIY Sauna Crate"
+	desc = "A Kalixcian staple. Comes with a set of five freshly cleaned towels, and enough wood to make your very own Sauna. Water not included."
+	cost = 500
+	contains = list(/obj/item/stack/sheet/mineral/wood/twentyfive,
+					/obj/item/reagent_containers/glass/bucket/wooden,
+					/obj/item/towel,
+					/obj/item/towel,
+					/obj/item/towel,
+					/obj/item/towel,
+					/obj/item/towel,)
+	crate_name = "sauna starter crate"
+	crate_type = /obj/structure/closet/crate/wooden
+
 /datum/supply_pack/civilian/book_crate
 	name = "Book Crate"
 	desc = "Surplus from the Nanotrasen Archives, these six books are sure to be good reads."
@@ -271,7 +285,6 @@
 	contains = list(/obj/item/fishing_rod/master)
 	crate_name = "masterwork fishing rod case"
 	crate_type = /obj/structure/closet/crate/wooden
-
 
 /datum/supply_pack/civilian/fishinghooks
 	name = "Fishing Hook Variety Pack"
