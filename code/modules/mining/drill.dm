@@ -43,7 +43,7 @@
 		if(2)
 			. += "<span class='notice'>The [src]'s <b>sensors<b> appear to be broken and need to be replaced.</span>"
 		if(3)
-			. += "<span class='notice'>The [src]'s <b>capacitor<b> appears to be broken and needs to be replaced.</span>
+			. += "<span class='notice'>The [src]'s <b>capacitor<b> appears to be broken and needs to be replaced.</span>"
 		if(4)
 			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded</b> back together.</span>"
 		if(5)
