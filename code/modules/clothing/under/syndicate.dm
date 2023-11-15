@@ -133,6 +133,7 @@
 	desc = "A crimson-red suit used by the officers employed by Cybersun."
 	icon_state = "cybersun_officer"
 	alt_covers_chest = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/syndicate/medic
 	name = "Cybersun medical jumpsuit"
@@ -140,6 +141,7 @@
 	icon_state = "cybersun_med"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/medic/skirt
 	name = "Cybersun medical jumpskirt"
