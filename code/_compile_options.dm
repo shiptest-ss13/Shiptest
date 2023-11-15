@@ -42,6 +42,7 @@
 #endif // REFERENCE_DOING_IT_LIVE
 
 //#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
+//#define ALL_TESTS //Enables all tests, including the ones that take a long time to run
 
 #ifndef PRELOAD_RSC				//set to:
 #define PRELOAD_RSC 2			//	0 to allow using external resources or on-demand behaviour;
@@ -79,6 +80,7 @@
 #endif
 
 #ifdef ALL_TESTS
+#define BASIC_TESTS
 #define CREATE_AND_DESTROY_TEST
 #define PLANET_GEN_TEST
 #define RUIN_PLACEMENT_TEST

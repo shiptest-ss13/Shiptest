@@ -62,7 +62,7 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
-#ifndef SKIP_MAIN_TESTS
+#ifdef BASIC_TESTS
 
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
@@ -106,7 +106,7 @@
 #include "find_reference_sanity.dm"
 #endif
 
-#endif //SKIP_MAIN_TESTS
+#endif //BASIC_TESTS
 
 #ifdef CREATE_AND_DESTROY_TEST
 #include "create_and_destroy.dm"

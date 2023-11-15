@@ -10,7 +10,7 @@ on:
       minor:
         required: false
         type: string
-      args:
+      arg:
         required: false
         type: string
 jobs:
@@ -57,7 +57,7 @@ jobs:
         run: |
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS ${{ inputs.args }}
+          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS -D${{ inputs.arg || 'ALL_TESTS' }}
       - name: Run Tests
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
