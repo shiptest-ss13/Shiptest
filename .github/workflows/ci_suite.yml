@@ -106,14 +106,7 @@ jobs:
         ]
     uses: ./.github/workflows/run_integration_tests.yml
     with:
-      args: ${{ matrix.args }}
-
-  run_placement_tests:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
-    name: Placement Tests
-    uses: ./.github/workflows/run_integration_tests.yml
-    with:
-      args: -DSKIP_MAIN_TESTS
+      arg: ${{ matrix.arg }}
 
 #  run_alternate_tests:
 #    if: "!contains(github.event.head_commit.message, '[ci skip]')"
