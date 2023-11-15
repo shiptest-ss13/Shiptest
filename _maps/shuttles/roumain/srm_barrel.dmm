@@ -928,6 +928,10 @@
 	pixel_x = -9
 	},
 /obj/item/disk/holodisk/roumain,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine{
+	pixel_y = 8;
+	pixel_x = 14
+	},
 /obj/item/candle/infinite{
 	pixel_y = -1;
 	pixel_x = 8
@@ -1342,6 +1346,10 @@
 	pixel_x = 9
 	},
 /obj/item/disk/holodisk/roumain,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine{
+	pixel_y = 8;
+	pixel_x = -14
+	},
 /obj/item/candle/infinite{
 	pixel_y = -1;
 	pixel_x = -8
@@ -2054,6 +2062,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/item/reagent_containers/food/drinks/breakawayflask,
+/obj/item/reagent_containers/food/drinks/breakawayflask,
+/obj/item/reagent_containers/food/drinks/breakawayflask,
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
 "Vn" = (
@@ -2161,6 +2172,27 @@
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine{
+	pixel_y = 5;
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine{
+	pixel_y = 8;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine{
+	pixel_y = 13;
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine{
+	pixel_y = 13;
+	pixel_x = 6
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/roumain)
