@@ -7,6 +7,9 @@
 	muzzleflash_iconstate = "muzzle_flash_laser"
 	muzzle_flash_color = COLOR_SOFT_RED
 
+	has_safety = TRUE
+	safety = TRUE
+
 	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/gun
 	var/modifystate = 0
@@ -147,7 +150,9 @@
 			eject_cell(user)
 	return ..()
 
-/obj/item/gun/energy/can_shoot()
+/obj/item/gun/energy/can_shoot(visuals)
+	if(safety && !visuals)
+		return FALSE
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	return !QDELETED(cell) ? (cell.charge >= shot.e_cost) : FALSE
 
@@ -252,7 +257,7 @@
 
 ///Used by update_icon_state() and update_overlays()
 /obj/item/gun/energy/proc/get_charge_ratio()
-	return can_shoot() ? CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1) : 0
+	return can_shoot(visuals = TRUE) ? CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1) : 0
 	// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
 
 /obj/item/gun/energy/vv_edit_var(var_name, var_value)

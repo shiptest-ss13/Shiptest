@@ -384,7 +384,7 @@
 		return
 	return ..()
 
-/obj/item/gun/energy/gravity_gun/can_shoot()
+/obj/item/gun/energy/gravity_gun/can_shoot(visuals)
 	if(!firing_core)
 		return FALSE
 	return ..()

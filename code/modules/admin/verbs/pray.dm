@@ -38,6 +38,10 @@
 			cross.icon_state = "holylight"
 			font_color = "blue"
 			prayer_type = "SPIRITUAL PRAYER"
+	else if((usr.faction && ("roumain" in usr.faction)))
+		font_color = "purple"
+		prayer_type = "SRM PRAYER"
+		deity = "Ashen Hunter"
 
 	var/msg_tmp = msg
 	msg = "<span class='adminnotice'>[icon2html(cross, GLOB.admins)]<b><font color=[font_color]>[prayer_type][deity ? " (to [deity])" : ""]: </font>[ADMIN_FULLMONTY(src)] [ADMIN_SC(src)]:</b> <span class='linkify'>[msg]</span></span>"

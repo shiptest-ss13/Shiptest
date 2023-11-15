@@ -559,10 +559,16 @@
 	item_state = "solgov_envirohelm"
 
 /obj/item/clothing/head/helmet/operator
-	name = "\improper Operator helmet"
+	name = "\improper operator helmet"
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
+
+/obj/item/clothing/head/helmet/medical
+	name = "\improper trauma team helmet"
+	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
+	icon_state = "traumahelm"
+	item_state = "traumahelm"
 
 /obj/item/clothing/head/helmet/bulletproof/m10
 	name = "\improper M10 pattern Helmet"

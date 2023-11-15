@@ -237,6 +237,9 @@
 	can_suppress = FALSE
 	var/random_icon = TRUE
 
+	has_safety = FALSE //thing barely costs anything, why would it have a safety?
+	safety = FALSE
+
 /obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
 	. = ..()
 	var/picked = pick("none","red","purple","yellow","green","dark")
