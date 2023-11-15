@@ -14,6 +14,8 @@
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
+	manufacturer = MANUFACTURER_PGF
+
 /obj/projectile/beam/hitscan/kalix
 	name = "concentrated energy"
 	tracer_type = /obj/effect/projectile/tracer/kalix
@@ -64,6 +66,10 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/back.dmi'
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = 0.6
+	spread_unwielded = 20
 
 	ammo_type = list(/obj/item/ammo_casing/energy/pgf/heavy)
 

@@ -15,6 +15,7 @@
 #define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
+#define MANUFACTURER_PGF "the Etherbor Industries emblem"
 
 /obj/item/gun
 	name = "gun"
