@@ -152,7 +152,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 
 /obj/structure/vein/ice/classtwo
-	mining_charges = 9
+	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
 		/obj/item/stack/ore/iron = 6,
@@ -168,7 +168,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	spawn_time = 100
 
 /obj/structure/vein/ice/classthree
-	mining_charges = 12
+	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
 		/obj/item/stack/ore/iron = 5,
