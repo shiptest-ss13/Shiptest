@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/mine_time_multiplier = 1
 	//Mob spawning variables
 	var/spawning_started = FALSE
-	var/max_mobs = 4
+	var/max_mobs = 6
 	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast = 60,
@@ -51,7 +51,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/Initialize()
 	. = ..()
 	var/ore_type_amount
-	mining_charges = rand(round(mining_charges/1.5),mining_charges*1.5)
+	mining_charges = rand(roundmining_charges - 2,mining_charges + 2)
 	switch(vein_class)
 		if(1)
 			ore_type_amount = rand(1,3)
@@ -98,7 +98,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 //
 
 /obj/structure/vein/classtwo
-	mining_charges = 9
+	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
 		/obj/item/stack/ore/iron = 6,
@@ -114,7 +114,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	spawn_time = 100
 
 /obj/structure/vein/classthree
-	mining_charges = 12
+	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
 		/obj/item/stack/ore/iron = 7,

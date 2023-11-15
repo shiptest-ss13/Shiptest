@@ -36,8 +36,14 @@
 	if(panel_open && component_parts)
 		. += display_parts(user, TRUE)
 	if(cell.charge < power_cost*5)
-		. += "<spawn class='notice'>The low power light is blinking."
+		. += "<spawn class='notice'>The low power light is blinking.</span>"
 	switch(malfunction)
+		if(1)
+			. += "<span class='notice'>The [src]'s <b>laser array<b> appears to be broken and needs to be replaced.</span>"
+		if(2)
+			. += "<span class='notice'>The [src]'s <b>sensors<b> appear to be broken and need to be replaced.</span>"
+		if(3)
+			. += "<span class='notice'>The [src]'s <b>capacitor<b> appears to be broken and needs to be replaced.</span>
 		if(4)
 			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded</b> back together.</span>"
 		if(5)
@@ -72,6 +78,7 @@
 
 /obj/machinery/drill/Destroy()
 	QDEL_NULL(soundloop)
+	QDEL_NULL(cell)
 	return ..()
 
 //Instead of being qdeled the drill requires mildly expensive repairs to use again
