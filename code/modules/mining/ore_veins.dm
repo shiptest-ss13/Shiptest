@@ -182,7 +182,3 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	max_mobs = 6
 	spawn_time = 80
-
-/obj/structure/vein/rock
-	mob_types = list(
-		/mob/living/simple_animal/)
