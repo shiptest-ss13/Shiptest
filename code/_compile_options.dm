@@ -78,6 +78,13 @@
 #define GC_FAILURE_HARD_LOOKUP
 #endif
 
+#ifdef ALL_TESTS
+#define CREATE_AND_DESTROY_TEST
+#define PLANET_GEN_TEST
+#define RUIN_PLACEMENT_TEST
+#define SHIP_PLACEMENT_TEST
+#endif
+
 // A reasonable number of maximum overlays an object needs
 // If you think you need more, rethink it
 #define MAX_ATOM_OVERLAYS 100

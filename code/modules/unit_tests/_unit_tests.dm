@@ -108,19 +108,19 @@
 
 #endif //SKIP_MAIN_TESTS
 
-#ifdef CREATE_AND_DESTROY_TEST || ALL_TESTS
+#ifdef CREATE_AND_DESTROY_TEST
 #include "create_and_destroy.dm"
 #endif //CREATE_AND_DESTROY_TEST
 
-#ifdef PLANET_GEN_TEST || ALL_TESTS
+#ifdef PLANET_GEN_TEST
 #include "planet_gen.dm"
 #endif //PLANET_GEN
 
-#ifdef RUIN_PLACEMENT_TEST || ALL_TESTS
+#ifdef RUIN_PLACEMENT_TEST
 #include "ruin_placement.dm"
 #endif //RUIN_PLACEMENT_TEST
 
-#ifdef SHIP_PLACEMENT_TEST || ALL_TESTS
+#ifdef SHIP_PLACEMENT_TEST
 #include "ship_outpost_placement.dm"
 #endif //SHIP_PLACEMENT_TEST
 
