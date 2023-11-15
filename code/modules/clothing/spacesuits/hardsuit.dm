@@ -545,8 +545,8 @@
 //Pointman Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/inteq
 	name = "pointman hardsuit"
-	desc = "One of Inteq's strudiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
-	alt_desc = "One of Inteq's strudiest and finest combat armors. It is in combat mode. Retrofitted by the IRMG."
+	desc = "One of Inteq's finest retrofit combat armors, it is remains pleasantly sturdy while allowing superior mobility. It is in EVA mode."
+	alt_desc = "One of Inteq's finest retrofit combat armors, it is remains pleasantly sturdy while allowing superior mobility. It is in combat mode."
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
@@ -555,8 +555,8 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
 	name = "pointman hardsuit helmet"
-	desc = "One of Inteq's strudiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
-	alt_desc = "One of Inteq's strudiest and finest combat armors. It is in combat mode. Retrofitted by the IRMG."
+	desc = "One of Inteq's finest retrofit combat armors, it is remains pleasantly sturdy while allowing superior mobility. It is in EVA mode."
+	alt_desc = "One of Inteq's finest retrofit combat armors, it is remains pleasantly sturdy while allowing superior mobility. It is in combat mode."
 	icon_state = "hardsuit1-pointman"
 	hardsuit_type = "pointman"
 	full_retraction = TRUE

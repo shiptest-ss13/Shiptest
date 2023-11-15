@@ -175,50 +175,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/restraints/handcuffs=1)
 
-/datum/outfit/job/security/inteq
-	name = "IRMG Enforcer (Inteq)"
-
-	head = /obj/item/clothing/head/helmet/inteq
-	suit = /obj/item/clothing/suit/armor/vest/alt
-	belt = /obj/item/storage/belt/security/webbing/inteq
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
-	uniform = /obj/item/clothing/under/syndicate/inteq
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	shoes = /obj/item/clothing/shoes/combat
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	gloves = /obj/item/clothing/gloves/combat
-
-	backpack = /obj/item/storage/backpack/messenger/inteq
-	satchel = /obj/item/storage/backpack/messenger/inteq
-	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/pda/security)
-
-/datum/outfit/job/security/inteq/beluga
-	name = "IRMG Enforcer (Beluga)"
-
-	head = /obj/item/clothing/head/beret/sec/inteq
-	suit = null
-	belt = null
-	mask = null
-	uniform = /obj/item/clothing/under/syndicate/inteq
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	shoes = /obj/item/clothing/shoes/sneakers/black
-	glasses = null
-	gloves = /obj/item/clothing/gloves/color/evening
-
-	backpack = /obj/item/storage/backpack/messenger/inteq
-	satchel = /obj/item/storage/backpack/messenger/inteq
-	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/pda/security)
-
-/datum/outfit/job/security/inteq/naked
-	name = "IRMG Enforcer (Inteq) (Naked)"
-	head = null
-	suit = null
-	belt = null
-	mask = null
-	gloves = null
-
 /datum/outfit/job/security/nanotrasen
 	name = "Security Officer (Nanotrasen)"
 

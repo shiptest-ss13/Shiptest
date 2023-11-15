@@ -61,12 +61,7 @@
 	head = /obj/item/clothing/head/hardhat/dblue
 	suit =  /obj/item/clothing/suit/hazardvest
 
-/datum/outfit/job/engineer/inteq
-	name = "IRMG Artificer (Inteq)"
 
-	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
-	head = /obj/item/clothing/head/soft/inteq
-	shoes = /obj/item/clothing/shoes/combat
 
 /datum/outfit/job/engineer/pirate
 	name = "Ship's Engineer (Pirate)"

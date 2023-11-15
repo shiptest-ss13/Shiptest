@@ -30,9 +30,9 @@
 	l_pocket = /obj/item/pda/heads/ce
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard //WS Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
 	alt_suit = /obj/item/clothing/suit/hazardvest
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering //WS Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hardhat/white
 	gloves = /obj/item/clothing/gloves/color/black
@@ -71,20 +71,6 @@
 	gloves = null
 	neck = /obj/item/clothing/neck/tie/green
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/clothing/gloves/color/black=1)
-
-/datum/outfit/job/ce/inteq
-	name = "IRMG Artificer Class II (Inteq)"
-
-	ears = /obj/item/radio/headset/inteq
-	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
-	head = /obj/item/clothing/head/hardhat/white
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/storage/belt/utility/full
-
-	courierbag = /obj/item/storage/backpack/messenger/inteq
 
 /datum/outfit/job/ce/nt
 	name = "Chief Engineer (NT)"

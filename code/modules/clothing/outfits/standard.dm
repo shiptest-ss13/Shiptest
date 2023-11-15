@@ -411,10 +411,11 @@
 		/obj/item/gun/energy/e_gun/adv_stopping = 1
 		)
 
+//im gonna kill whoever subtyped this
 /datum/outfit/job/hos/inteq_honorable
 	name = "Inteq Honorable vanguard"
 	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
-	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
+	uniform = /obj/item/clothing/under/inteq/honorable
 	suit = /obj/item/clothing/suit/armor/hos/inteq/honorable
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
 	gloves = /obj/item/clothing/gloves/combat
@@ -426,6 +427,7 @@
 /datum/outfit/job/hos/inteq_honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
+	H.faction |= list(FACTION_PLAYER_INTEQ)
 
 	var/obj/item/card/id/W = H.wear_id
 	W.access = get_all_accesses()

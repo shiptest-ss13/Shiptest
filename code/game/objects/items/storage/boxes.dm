@@ -1343,7 +1343,7 @@
 /obj/item/storage/box/inteqmaid/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/clothing/head/maidheadband/inteq = 1,
-		/obj/item/clothing/under/syndicate/inteq/skirt/maid = 1,
+		/obj/item/clothing/under/inteq/skirt/maid = 1,
 		/obj/item/clothing/gloves/combat/maid/inteq = 1,)
 	generate_items_inside(items_inside,src)
 
