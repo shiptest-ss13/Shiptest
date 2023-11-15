@@ -183,7 +183,6 @@
 	build_path = /obj/item/circuitboard/machine/reagentgrinder
 	category = list ("Medical Machinery")
 
-
 /datum/design/board/dnascanner
 	name = "Machine Design (DNA Scanner)"
 	desc = "Allows for the construction of circuit boards used to build a Cloning Scanner."
@@ -264,7 +263,6 @@
 	build_path = /obj/item/circuitboard/machine/rdserver
 	category = list("Research Machinery", "initial", "Equipment")
 
-
 /datum/design/board/mechfab
 	name = "Machine Design (Exosuit Fabricator Board)"
 	desc = "The circuit board for an Exosuit Fabricator."
@@ -335,7 +333,6 @@
 	build_path = /obj/item/circuitboard/machine/microwave
 	category = list ("Misc. Machinery")
 
-
 /datum/design/board/gibber
 	name = "Machine Design (Gibber Board)"
 	desc = "The circuit board for a gibber."
@@ -350,7 +347,6 @@
 	id = "smartfridge"
 	build_path = /obj/item/circuitboard/machine/smartfridge
 	category = list ("Misc. Machinery")
-
 
 /datum/design/board/monkey_recycler
 	name = "Machine Design (Monkey Recycler Board)"
@@ -399,14 +395,12 @@
 	build_path = /obj/item/circuitboard/machine/recycler
 	category = list ("Misc. Machinery")
 
-
 /datum/design/board/scanner_gate
 	name = "Machine Design (Scanner Gate)"
 	desc = "The circuit board for a scanner gate."
 	id = "scanner_gate"
 	build_path = /obj/item/circuitboard/machine/scanner_gate
 	category = list ("Misc. Machinery")
-
 
 /datum/design/board/holopad
 	name = "Machine Design (AI Holopad Board)"
@@ -415,14 +409,12 @@
 	build_path = /obj/item/circuitboard/machine/holopad
 	category = list ("Misc. Machinery")
 
-
 /datum/design/board/autolathe
 	name = "Machine Design (Autolathe Board)"
 	desc = "The circuit board for an autolathe."
 	id = "autolathe"
 	build_path = /obj/item/circuitboard/machine/autolathe
 	category = list ("Misc. Machinery")
-
 
 /datum/design/board/recharger
 	name = "Machine Design (Weapon Recharger Board)"
@@ -432,20 +424,11 @@
 	build_path = /obj/item/circuitboard/machine/recharger
 	category = list("Misc. Machinery")
 
-
 /datum/design/board/vendor
 	name = "Machine Design (Vendor Board)"
 	desc = "The circuit board for a Vendor."
 	id = "vendor"
 	build_path = /obj/item/circuitboard/machine/vendor
-	category = list ("Misc. Machinery")
-
-
-/datum/design/board/ore_redemption
-	name = "Machine Design (Ore Redemption Board)"
-	desc = "The circuit board for an Ore Redemption machine."
-	id = "ore_redemption"
-	build_path = /obj/item/circuitboard/machine/ore_redemption
 	category = list ("Misc. Machinery")
 
 /datum/design/board/bluespace_miner
@@ -527,14 +510,12 @@
 	build_path = /obj/item/circuitboard/machine/vending/donksofttoyvendor
 	category = list ("Misc. Machinery")
 
-
 /datum/design/board/cell_charger
 	name = "Machine Design (Cell Charger Board)"
 	desc = "The circuit board for a cell charger."
 	id = "cell_charger"
 	build_path = /obj/item/circuitboard/machine/cell_charger
 	category = list ("Misc. Machinery")
-
 
 /datum/design/board/dish_drive
 	name = "Machine Design (Dish Drive)"
@@ -582,7 +563,6 @@
 	id = "paystand"
 	build_path = /obj/item/circuitboard/machine/paystand
 	category = list ("Misc. Machinery")
-
 
 /datum/design/board/fat_sucker
 	name = "Machine Design (Lipid Extractor)"
