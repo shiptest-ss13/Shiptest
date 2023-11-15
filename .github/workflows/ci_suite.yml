@@ -91,12 +91,22 @@ jobs:
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
-  run_main_tests:
+  run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
+    strategy:
+      fail-fast: true
+      matrix:
+        args: [
+          "-DCREATE_AND_DESTROY_TEST -DSKIP_MAIN_TESTS",
+          "-DPLANET_GEN_TEST -DSKIP_MAIN_TESTS",
+          "-DRUIN_PLACEMENT_TEST -DSKIP_MAIN_TESTS",
+          "-DSHIP_PLACEMENT_TEST -DSKIP_MAIN_TESTS",
+          ""
+        ]
     uses: ./.github/workflows/run_integration_tests.yml
     with:
-      args: -DSKIP_PLACEMENT_TESTS
+      args: ${{ matrix.args }}
 
   run_placement_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"

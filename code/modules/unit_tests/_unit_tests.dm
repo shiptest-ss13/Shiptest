@@ -71,7 +71,6 @@
 #include "combat.dm"
 #include "component_tests.dm"
 #include "connect_loc.dm"
-#include "create_and_destroy.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
 #include "keybinding_init.dm"
@@ -80,7 +79,6 @@
 #include "outfit_sanity.dm"
 #include "overmap.dm"
 #include "pills.dm"
-#include "planet_gen.dm"
 #include "plantgrowth_tests.dm"
 #include "projectiles.dm"
 #include "quick_swap_sanity.dm"
@@ -104,18 +102,27 @@
 #include "teleporters.dm"
 #include "timer_sanity.dm"
 
-#endif //SKIP_MAIN_TESTS
-
-#ifndef SKIP_PLACEMENT_TESTS
-
-#include "ruin_placement.dm"
-#include "ship_outpost_placement.dm"
-
-#endif //SKIP_PLACEMENT_TESTS
-
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
 #include "find_reference_sanity.dm"
 #endif
+
+#endif //SKIP_MAIN_TESTS
+
+#ifdef CREATE_AND_DESTROY_TEST || ALL_TESTS
+#include "create_and_destroy.dm"
+#endif //CREATE_AND_DESTROY_TEST
+
+#ifdef PLANET_GEN_TEST || ALL_TESTS
+#include "planet_gen.dm"
+#endif //PLANET_GEN
+
+#ifdef RUIN_PLACEMENT_TEST || ALL_TESTS
+#include "ruin_placement.dm"
+#endif //RUIN_PLACEMENT_TEST
+
+#ifdef SHIP_PLACEMENT_TEST || ALL_TESTS
+#include "ship_outpost_placement.dm"
+#endif //SHIP_PLACEMENT_TEST
 
 #include "unit_test.dm"
 
