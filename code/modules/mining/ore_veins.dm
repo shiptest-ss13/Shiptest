@@ -133,7 +133,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/wolf = 30,
 		/mob/living/simple_animal/hostile/asteroid/polarbear = 30,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow = 20,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril = 20,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon = 10,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity = 20,
