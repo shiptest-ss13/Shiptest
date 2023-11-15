@@ -63,7 +63,8 @@
 	id = "traumabridge";
 	name = "Window Blast Door"
 	},
-/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "ck" = (
@@ -97,12 +98,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/fore)
 "cX" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
 	name = "Window Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "dH" = (
@@ -137,9 +139,9 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/medical,
+/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed,
 /obj/item/clothing/mask/gas/sechailer,
-/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "el" = (
@@ -173,18 +175,6 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/rank/security/brig_phys,
-/obj/item/clothing/under/rank/security/brig_phys,
-/obj/item/clothing/under/rank/security/brig_phys,
-/obj/item/clothing/suit/toggle/labcoat/paramedic,
-/obj/item/clothing/suit/toggle/labcoat/paramedic,
-/obj/item/clothing/suit/toggle/labcoat/paramedic,
-/obj/item/clothing/head/soft/paramedic,
-/obj/item/clothing/head/soft/paramedic,
-/obj/item/clothing/head/soft/paramedic,
-/obj/item/storage/backpack/ert/medical,
-/obj/item/storage/backpack/ert/medical,
-/obj/item/storage/backpack/ert/medical,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
@@ -195,6 +185,15 @@
 	pixel_x = 28;
 	req_access_txt = "5"
 	},
+/obj/item/clothing/under/syndicate/medic,
+/obj/item/clothing/under/syndicate/medic,
+/obj/item/clothing/under/syndicate/medic,
+/obj/item/clothing/head/soft/cybersun/medical,
+/obj/item/clothing/head/soft/cybersun/medical,
+/obj/item/clothing/head/soft/cybersun/medical,
+/obj/item/clothing/suit/toggle/labcoat/raincoat,
+/obj/item/clothing/suit/toggle/labcoat/raincoat,
+/obj/item/clothing/suit/toggle/labcoat/raincoat,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "eS" = (
@@ -228,6 +227,10 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
+"gl" = (
+/obj/item/ammo_box/magazine/m10mm,
+/turf/template_noop,
+/area/template_noop)
 "go" = (
 /obj/effect/turf_decal/corner/opaque/red/full,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -806,17 +809,11 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ship/bridge)
 "se" = (
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/item/clothing/suit/armor/vest/alt,
-/obj/item/clothing/suit/armor/vest/alt,
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
 /obj/item/flashlight/seclite,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/airalarm/directional/north,
-/obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/head/helmet/sec,
 /obj/structure/closet/secure_closet/wall{
 	dir = 8;
 	icon_state = "sec_wall";
@@ -824,6 +821,11 @@
 	pixel_x = 28;
 	req_access_txt = "5"
 	},
+/obj/item/clothing/suit/armor/vest/marine/trauma,
+/obj/item/clothing/suit/armor/vest/marine/trauma,
+/obj/item/clothing/suit/armor/vest/marine/trauma,
+/obj/item/clothing/head/helmet/medical,
+/obj/item/clothing/head/helmet/medical,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "sq" = (
@@ -1083,6 +1085,10 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
+"vW" = (
+/obj/item/ammo_box/magazine/m10mm/ap,
+/turf/template_noop,
+/area/template_noop)
 "wD" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1;
@@ -1114,6 +1120,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"xR" = (
+/obj/item/storage/backpack/ert/medical,
+/turf/template_noop,
+/area/template_noop)
 "yi" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -1434,13 +1444,13 @@
 /area/ship/maintenance/starboard)
 "Hk" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/combatmedic,
-/obj/item/clothing/mask/gas/sechailer,
-/obj/item/tank/internals/emergency_oxygen/engi,
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/structure/sign/warning/nosmoking{
 	pixel_y = 32
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed,
+/obj/item/clothing/mask/gas/sechailer,
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "Hl" = (
@@ -1516,12 +1526,13 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "JA" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
 	id = "traumawindows";
 	name = "Window Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/medical)
 "Kc" = (
@@ -1554,9 +1565,9 @@
 /obj/machinery/light/directional/east,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/suit/space/hardsuit/medical,
+/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed,
 /obj/item/clothing/mask/gas/sechailer,
-/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/tank/internals/oxygen/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
 "Kv" = (
@@ -1870,11 +1881,12 @@
 /turf/open/floor/vault,
 /area/ship/storage)
 "PH" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	id = "traumawindows";
 	name = "Window Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/crew)
 "PL" = (
@@ -2032,6 +2044,10 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"Sr" = (
+/obj/item/ammo_box/magazine/m10mm/rubber,
+/turf/template_noop,
+/area/template_noop)
 "Sx" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -2137,10 +2153,6 @@
 /obj/item/reagent_containers/glass/bottle/morphine,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"TI" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
-/turf/open/floor/carpet/cyan,
-/area/ship/crew)
 "TO" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2503,10 +2515,11 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Yn" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/structure/curtain/cloth{
 	color = "#ACD1E9"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "Yv" = (
@@ -2554,12 +2567,13 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/medical)
 "Zb" = (
-/obj/effect/spawner/structure/window/shuttle,
 /obj/machinery/door/poddoor/preopen{
 	dir = 4;
 	id = "traumawindows";
 	name = "Window Blast Door"
 	},
+/obj/structure/grille,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/crew)
 "ZC" = (
@@ -2719,7 +2733,7 @@ UG
 UG
 UG
 UG
-ZC
+fp
 ZC
 vr
 ZC
@@ -3006,7 +3020,7 @@ Nn
 Nn
 Ev
 Ev
-TI
+iW
 iW
 Sc
 fa
@@ -3033,7 +3047,7 @@ UG
 UG
 UG
 UG
-UG
+gl
 iA
 Hl
 XW
@@ -3063,8 +3077,8 @@ UG
 UG
 UG
 UG
-UG
-UG
+xR
+vW
 PH
 XW
 iW
@@ -3094,7 +3108,7 @@ UG
 UG
 UG
 UG
-UG
+Sr
 iA
 Kc
 Zb
