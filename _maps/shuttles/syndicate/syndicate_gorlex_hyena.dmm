@@ -1693,6 +1693,12 @@
 /obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
+"BR" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "BZ" = (
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/machinery/suit_storage_unit/inherit{
@@ -2336,6 +2342,10 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
+"NA" = (
+/obj/machinery/porta_turret/ship/syndicate,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/bridge)
 "NF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
@@ -2500,7 +2510,9 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Qz" = (
-/obj/machinery/porta_turret/ship/ballistic,
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 6
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "QW" = (
@@ -2876,6 +2888,12 @@
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
+"Up" = (
+/obj/machinery/porta_turret/ship/syndicate/heavy{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "UI" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2886,6 +2904,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"UN" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "UX" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
@@ -3311,7 +3335,7 @@ sE
 "}
 (2,1,1) = {"
 nn
-BG
+BR
 ir
 PL
 SP
@@ -3328,7 +3352,7 @@ sE
 nX
 dU
 pi
-BG
+NA
 "}
 (3,1,1) = {"
 nn
@@ -3578,13 +3602,13 @@ UX
 GV
 GV
 GV
-BG
+NA
 nn
 Zb
 "}
 (15,1,1) = {"
 nn
-Qz
+UN
 cs
 cs
 XU
@@ -3836,13 +3860,13 @@ mL
 "}
 (27,1,1) = {"
 nn
-Qz
+Up
 Ap
 Jv
 oQ
 VC
 Ap
-Qz
+Up
 nn
 nn
 nn

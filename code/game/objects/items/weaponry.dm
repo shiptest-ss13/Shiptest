@@ -515,7 +515,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/statuebust/Initialize()
 	. = ..()
 	AddComponent(/datum/component/art, impressiveness)
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 1000)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, 1000)), 0)
 
 /obj/item/statuebust/hippocratic
 	name = "hippocrates bust"
@@ -760,8 +760,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/vibro_weapon/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/vibro_weapon/ComponentInitialize()
 	. = ..()
