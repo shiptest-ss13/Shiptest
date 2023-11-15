@@ -62,6 +62,8 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
+#ifndef SKIP_MAIN_TESTS
+
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
@@ -90,10 +92,8 @@
 #include "reagent_names.dm"
 #include "reagent_recipe_collisions.dm"
 #include "resist.dm"
-#include "ruin_placement.dm"
 #include "say.dm"
 #include "serving_tray.dm"
-#include "ship_outpost_placement.dm"
 #include "spawn_humans.dm"
 #include "species_unique_id.dm"
 #include "species_whitelists.dm"
@@ -104,6 +104,16 @@
 #include "teleporters.dm"
 #include "timer_sanity.dm"
 #include "unit_test.dm"
+
+#endif //SKIP_MAIN_TESTS
+
+
+#ifdef SKIP_PLACEMENT_TESTS
+
+#include "ruin_placement.dm"
+#include "ship_outpost_placement.dm"
+
+#endif //SKIP_PLACEMENT_TESTS
 
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
 #include "find_reference_sanity.dm"
