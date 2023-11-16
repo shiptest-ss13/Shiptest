@@ -357,7 +357,6 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/floordetail/traction,
 /obj/effect/turf_decal/industrial/loading,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
@@ -937,6 +936,7 @@
 /area/outpost/maintenance/fore)
 "gE" = (
 /obj/item/radio/intercom/directional/east,
+/obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
 "gO" = (
@@ -1362,6 +1362,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/bar)
+"jK" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned,
+/area/outpost/cargo)
 "jL" = (
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/industrial/warning{
@@ -2222,6 +2229,14 @@
 "pt" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper_bin{
+	pixel_x = 4;
+	pixel_y = -4
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 3;
+	pixel_y = -2
+	},
 /turf/open/floor/wood,
 /area/outpost/crew/library)
 "pA" = (
@@ -2316,11 +2331,10 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/floordetail/traction,
 /obj/effect/turf_decal/industrial/loading{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "qv" = (
@@ -3067,6 +3081,10 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/pill/epinephrine,
+/obj/item/paper_bin/bundlenatural{
+	pixel_x = 9;
+	pixel_y = 13
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "uf" = (
@@ -4396,6 +4414,10 @@
 	pixel_x = 15;
 	layer = 4.26
 	},
+/obj/item/pen/fourcolor{
+	pixel_x = 4;
+	pixel_y = -1
+	},
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
 "Ch" = (
@@ -4568,7 +4590,6 @@
 /area/outpost/vacant_rooms)
 "Dp" = (
 /obj/structure/railing/corner,
-/obj/effect/turf_decal/floordetail/traction,
 /obj/effect/turf_decal/industrial/loading{
 	dir = 8
 	},
@@ -6014,6 +6035,10 @@
 	layer = 3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/paper_bin{
+	pixel_x = 6;
+	pixel_y = -4
+	},
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
 "MF" = (
@@ -7449,7 +7474,6 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "VQ" = (
-/obj/effect/turf_decal/floordetail/traction,
 /obj/effect/turf_decal/industrial/loading{
 	dir = 4
 	},
@@ -7617,6 +7641,10 @@
 /turf/open/floor/plating/asteroid,
 /area/outpost/external)
 "Xe" = (
+/obj/structure/table/wood,
+/obj/item/radio/intercom/table{
+	dir = 4
+	},
 /turf/open/floor/wood/mahogany,
 /area/outpost/crew/bar)
 "Xg" = (
@@ -16127,7 +16155,7 @@ zC
 Tr
 tT
 tT
-tT
+jK
 qq
 md
 cV
