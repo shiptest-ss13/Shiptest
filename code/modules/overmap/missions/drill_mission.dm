@@ -90,7 +90,16 @@
 	if(mining.mining_charges)
 		mining.mining_charges--
 		num_current++
-		start_mining()
+		if(mining.mining_charges < 1)
+			say("Vein depleted.")
+			active = FALSE
+			soundloop.stop()
+			mining.deconstruct()
+			mining = null
+			update_icon_state()
+			update_overlays()
+		else
+			start_mining()
 	else if(!mining.mining_charges)
 		say("Error: Vein Depleted")
 		active = FALSE
