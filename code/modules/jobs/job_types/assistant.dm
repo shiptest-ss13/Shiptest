@@ -153,8 +153,6 @@ Assistant
 	gloves = /obj/item/clothing/gloves/color/white
 	accessory = /obj/item/clothing/neck/scarf/darkblue
 
-
-
 /datum/outfit/job/assistant/roumain
 	name = "Shadow (Saint-Roumain Militia)"
 
@@ -165,7 +163,8 @@ Assistant
 
 	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
 
-
+/datum/outfit/job/assistant/roumain/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("roumain")
 
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"

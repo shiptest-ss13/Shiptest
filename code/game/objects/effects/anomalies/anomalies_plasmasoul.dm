@@ -22,15 +22,6 @@
 			to_chat(mob, span_warning("Your blood feels thick.."))
 			playsound(mob, 'sound/effects/bubbles.ogg', 50)
 
-
-	if(!COOLDOWN_FINISHED(src, pulse_secondary_cooldown))
-		return
-
-	COOLDOWN_START(src, pulse_secondary_cooldown, pulse_delay*5)
-	var/turf/open/tile = get_turf(src)
-	if(istype(tile))
-		tile.atmos_spawn_air("plasma=750;TEMP=200") //free lag!
-
 /obj/effect/anomaly/plasmasoul/Bumped(atom/movable/AM)
 	var/turf/open/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
 	for(var/mob/living/mob in range(effectrange,src))
