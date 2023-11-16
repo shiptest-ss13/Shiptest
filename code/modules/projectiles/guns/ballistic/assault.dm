@@ -220,7 +220,7 @@
 	. = ..()
 	secondary = new /obj/item/gun/energy/laser/e40_laser_secondary(src)
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
-	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, .proc/secondary_update_icon)
+	RegisterSignal(secondary, COMSIG_ATOM_UPDATE_ICON, PROC_REF(secondary_update_icon))
 	SEND_SIGNAL(secondary, COMSIG_GUN_DISABLE_AUTOFIRE)
 	update_appearance()
 
