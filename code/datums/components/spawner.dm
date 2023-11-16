@@ -63,39 +63,41 @@
 
 /datum/component/spawner/proc/try_spawn_mob()
 	var/atom/P = parent
-	var/turf/spot = P.loc
+	var/turf/spot = get_turf(P)
 	//Checks for handling the wave-based pausing and unpausing of spawning
 	//Almost certainly a better way to do this, but until then this technically works
 	if(spawning_paused)
 		if(!downtime_timer)
-			downtime_timer = wave_downtime + world.time
-		if(world.time > downtime_timer)
+			COOLDOWN_START(src, downtime_timer, wave_downtime)
+		if(COOLDOWN_FINISHED(src, downtime_timer))
 			spawning_paused = FALSE
-			downtime_timer = null
-			return 0
-		else
-			return 0
-	if(!wave_timer && wave_length)
-		wave_timer = wave_length + world.time
-	if(wave_timer && world.time > wave_timer)
-		spawning_paused = TRUE
-		wave_timer = null
-		return 0
+			COOLDOWN_RESET(src, downtime_timer)
+		return
+	if(wave_length)
+		if(!wave_timer)
+			COOLDOWN_START(src, wave_timer, wave_length)
+		if(wave_timer && COOLDOWN_FINISHED(src, wave_timer))
+			spawning_paused = TRUE
+			COOLDOWN_RESET(src, wave_timer)
+			return
 	////////////////////////////////
-	if(spawned_mobs.len >= max_mobs)
-		return 0
-	if(spawn_delay > world.time)
-		return 0
+	if(length(spawned_mobs) >= max_mobs)
+		return
+	if(COOLDOWN_FINISHED(src, spawn_delay))
+		return
 	//Avoid using this with spawners that add this component on initialize
 	//It causes numerous runtime errors during planet generation
-	spawn_delay = world.time + spawn_time
+	COOLDOWN_START(src, spawn_delay, spawn_time)
 	var/spawn_multiplier = 1
 	if(spawn_distance_max > 1)
 		var/player_count = 0
-		for(var/mob/living/players in range(spawn_distance_max, P.loc))
-			if(players.ckey && players.stat == CONSCIOUS)
-				player_count++
-		for(var/obj/mecha/mechs in range(spawn_distance_max, P.loc))
+		for(var/mob/player as anything in GLOB.player_list)
+			if(!isliving(player))
+				continue
+			if(player.stat != CONSCIOUS)
+				continue
+			if(get_dist(get_turf(player), spot) > spawn_distance_max)
+				continue
 			player_count++
 		if(player_count > 3)
 			spawn_multiplier = round(player_count/2)
