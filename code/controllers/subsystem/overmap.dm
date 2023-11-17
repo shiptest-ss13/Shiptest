@@ -262,7 +262,7 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
 
 	// name is random but PROBABLY unique
-	var/encounter_name = dynamic_datum.planet_name || "Dynamic Overmap Encounter #[rand(1111,9999)]-[rand(1111,9999)]"
+	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		encounter_name,
@@ -318,7 +318,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
 	primary_dock.dir = NORTH
-	primary_dock.name = "\improper Uncharted Space"
+	primary_dock.name = "[encounter_name] docking location #1"
 	primary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 	primary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	primary_dock.dheight = 0
@@ -327,7 +327,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/obj/docking_port/stationary/secondary_dock = new(secondary_docking_turf)
 	secondary_dock.dir = NORTH
-	secondary_dock.name = "\improper Uncharted Space"
+	secondary_dock.name = "[encounter_name] docking location #2"
 	secondary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	secondary_dock.dheight = 0
@@ -350,7 +350,7 @@ SUBSYSTEM_DEF(overmap)
 
 		var/obj/docking_port/stationary/tertiary_dock = new(tertiary_docking_turf)
 		tertiary_dock.dir = NORTH
-		tertiary_dock.name = "\improper Uncharted Space"
+		tertiary_dock.name = "[encounter_name] docking location #3"
 		tertiary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 		tertiary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		tertiary_dock.dheight = 0
@@ -359,7 +359,7 @@ SUBSYSTEM_DEF(overmap)
 
 		var/obj/docking_port/stationary/quaternary_dock = new(quaternary_docking_turf)
 		quaternary_dock.dir = NORTH
-		quaternary_dock.name = "\improper Uncharted Space"
+		quaternary_dock.name = "[encounter_name] docking location #4"
 		quaternary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 		quaternary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		quaternary_dock.dheight = 0

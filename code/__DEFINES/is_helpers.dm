@@ -4,6 +4,8 @@
 
 #define isatom(A) (isloc(A))
 
+#define isdatum(thing) (istype(thing, /datum))
+
 #define isweakref(D) (istype(D, /datum/weakref))
 
 //Turfs

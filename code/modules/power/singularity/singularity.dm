@@ -45,9 +45,9 @@
 			target = singubeacon
 			break
 	AddElement(/datum/element/bsa_blocker)
-	RegisterSignal(src, COMSIG_ATOM_BSA_BEAM, .proc/bluespace_reaction)
+	RegisterSignal(src, COMSIG_ATOM_BSA_BEAM, PROC_REF(bluespace_reaction))
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered)
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -480,7 +480,7 @@
 /obj/singularity/deadchat_controlled/Initialize(mapload, starting_energy)
 	. = ..()
 	AddComponent(/datum/component/deadchat_control, DEMOCRACY_MODE, list(
-		"up" = CALLBACK(GLOBAL_PROC, .proc/_step, src, NORTH),
-		"down" = CALLBACK(GLOBAL_PROC, .proc/_step, src, SOUTH),
-		"left" = CALLBACK(GLOBAL_PROC, .proc/_step, src, WEST),
-		"right" = CALLBACK(GLOBAL_PROC, .proc/_step, src, EAST)))
+		"up" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, NORTH),
+		"down" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, SOUTH),
+		"left" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, WEST),
+		"right" = CALLBACK(GLOBAL_PROC, PROC_REF(_step), src, EAST)))

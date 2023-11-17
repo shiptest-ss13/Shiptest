@@ -331,13 +331,6 @@
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/suit/security/officer/russian
-	name = "\improper Russian officer's jacket"
-	desc = "This jacket is for those special occasions when a russian officer isn't required to wear their armor."
-	icon_state = "officertanjacket"
-	item_state = "officertanjacket"
-	body_parts_covered = CHEST|ARMS
-
 /obj/item/clothing/suit/shrine_maiden
 	name = "shrine maiden's outfit"
 	desc = "Makes you want to exterminate some troublesome youkai."
@@ -349,6 +342,12 @@
 /*
  * Misc
  */
+
+/obj/item/clothing/suit/cybersun_suit
+	name = "cybersun suit"
+	desc = "A plain white suit commonly used by Cybersun's officers."
+	icon_state = "cybersun_suit"
+	item_state = "cybersun_suit"
 
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"

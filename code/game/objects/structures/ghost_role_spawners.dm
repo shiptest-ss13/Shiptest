@@ -356,54 +356,6 @@
 	new/obj/structure/fluff/empty_sleeper/syndicate(get_turf(src))
 	return ..()
 
-//Space Hotel Staff
-/obj/effect/mob_spawn/human/hotel_staff //not free antag u little shits
-	name = "staff sleeper"
-	desc = "A sleeper designed for long-term stasis between guest visits."
-	mob_name = "hotel staff member"
-	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper_s"
-	objectives = "Cater to visiting guests with your fellow staff. Do not leave your assigned hotel and always remember: The customer is always right!"
-	death = FALSE
-	roundstart = FALSE
-	random = TRUE
-	outfit = /datum/outfit/hotelstaff
-	short_desc = "You are a staff member of a top-of-the-line space hotel!"
-	flavour_text = "You are a staff member of a top-of-the-line space hotel! Cater to guests and make sure the manager doesn't fire you."
-	important_info = "DON'T leave the hotel"
-	assignedrole = "Hotel Staff"
-
-/datum/outfit/hotelstaff
-	name = "Hotel Staff"
-	uniform = /obj/item/clothing/under/misc/assistantformal
-	shoes = /obj/item/clothing/shoes/laceup
-	r_pocket = /obj/item/radio/off
-	back = /obj/item/storage/backpack
-	implants = list(/obj/item/implant/mindshield)
-
-/obj/effect/mob_spawn/human/hotel_staff/security
-	name = "hotel security sleeper"
-	mob_name = "hotel security member"
-	outfit = /datum/outfit/hotelstaff/security
-	short_desc = "You are a peacekeeper."
-	flavour_text = "You have been assigned to this hotel to protect the interests of the company while keeping the peace between \
-		guests and the staff."
-	important_info = "Do NOT leave the hotel, as that is grounds for contract termination."
-	objectives = "Do not leave your assigned hotel. Try and keep the peace between staff and guests, non-lethal force heavily advised if possible."
-
-/datum/outfit/hotelstaff/security
-	name = "Hotel Security"
-	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
-	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/vest/blueshirt
-	head = /obj/item/clothing/head/helmet/blueshirt
-	back = /obj/item/storage/backpack/security
-	belt = /obj/item/storage/belt/security/full
-
-/obj/effect/mob_spawn/human/hotel_staff/Destroy()
-	new/obj/structure/fluff/empty_sleeper/syndicate(get_turf(src))
-	return ..()
-
 /obj/effect/mob_spawn/human/demonic_friend
 	name = "Essence of friendship"
 	desc = "Oh boy! Oh boy! A friend!"
@@ -445,7 +397,7 @@
 		id.update_label()
 	else
 		to_chat(L, "<span class='userdanger'>Your owner is already dead! You will soon perish.</span>")
-		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, dust), 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
 	name = "Demonic Friend"
@@ -475,121 +427,6 @@
 	implants = list(/obj/item/implant/weapons_auth)
 	id = /obj/item/card/id/syndicate
 
-/datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H)
-	H.faction |= ROLE_SYNDICATE
-
-//shiptest edit start, adding egors updated starfury roles, this should theoritacly not fuck with shit since this code is unused anyways
-/obj/effect/mob_spawn/human/syndicate/battlecruiser
-	name = "Syndicate Battlecruiser Ship Operative"
-	short_desc = "You are a crewmember aboard the Syndicate flagship <i>Starfury</i>."
-	flavour_text = "Your job is to follow your higher-ranking operatives' orders, assisting in pretty much anything that might need your help."
-	important_info = "While you don't have a strict role, you are supposed to obey orders given by anyone on the ship, including medical, engineering and assault operatives."
-	outfit = /datum/outfit/syndicate_empty/sbc
-	assignedrole = "Battlecruiser Operative"
-	mob_name = "syndicate operative"
-	id_job = "Syndicate Operative"
-	random = TRUE
-	roundstart = FALSE
-	death = FALSE
-	anchored = TRUE
-	density = FALSE
-
-/datum/outfit/syndicate_empty/sbc
-	name = "Syndicate Battlecruiser Ship Deck Assistant"
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
-	gloves = /obj/item/clothing/gloves/combat
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military/assault
-	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
-
-/obj/effect/mob_spawn/human/syndicate/battlecruiser/engineering
-	name = "Syndicate Battlecruiser Ship Engineer"
-	short_desc = "You are an engineer aboard the Syndicate flagship <i>Starfury</i>."
-	flavour_text = "Your job is to maintain the ship, and keep the engine running. If you are unfamiliar with how the supermatter engine functions, do not attempt to start it alone; ask a fellow crewman for help."
-	important_info = "While your role means you can help in the assault with your tools,  you must first and foremost keep the cruiser and engine in a working state."
-	outfit = /datum/outfit/syndicate_empty/sbc/engi
-	assignedrole = "Battlecruiser Engineer"
-	mob_name = "syndicate engineer"
-	id_job = "Syndicate Engineer"
-
-/datum/outfit/syndicate_empty/sbc/engi
-	name = "Syndicate Battlecruiser Ship Engineer"
-	glasses = /obj/item/clothing/glasses/meson/night
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	r_pocket = /obj/item/analyzer
-	belt = /obj/item/storage/belt/utility/syndicate
-	back = /obj/item/storage/backpack/industrial
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
-
-/obj/effect/mob_spawn/human/syndicate/battlecruiser/medical
-	name = "Syndicate Battlecruiser Ship Medical Doctor"
-	short_desc = "You are a medical doctor aboard the Syndicate flagship: the SBC Starfury."
-	flavour_text = "Your job is to maintain the crew's physical health and keep your comrades alive at all cost."
-	important_info = "The armory has nothing to help you with your job, and your role is to assist assault operatives, not to do their work for them."
-	outfit = /datum/outfit/syndicate_empty/sbc/med
-	assignedrole = "Battlecruiser Medical Doctor"
-	mob_name = "syndicate medic"
-	id_job = "Syndicate Medical Doctor"
-
-/datum/outfit/syndicate_empty/sbc/med
-	name = "Syndicate Battlecruiser Ship Medical Doctor"
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	glasses = /obj/item/clothing/glasses/hud/health
-	belt = /obj/item/pda/medical
-	back = /obj/item/storage/backpack/duffelbag/syndie/med
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical)
-
-/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
-	name = "Syndicate Battlecruiser Assault Operative"
-	short_desc = "You are an assault operative aboard the syndicate flagship <i>Starfury</i>."
-	flavour_text = "Your job is to follow your captain's orders, keep intruders out of the ship, and assault Space Station 13. There is an armory, multiple assault ships, and beam cannons to attack the station with."
-	important_info = "Work as a team with your fellow operatives and work out a plan of attack. If you are overwhelmed, escape back to your ship!"
-	outfit = /datum/outfit/syndicate_empty/sbc/operative
-	assignedrole = "Battlecruiser Assault Operative"
-	mob_name = "syndicate assault operative"
-	id_job = "Syndicate Assault Operative"
-
-/datum/outfit/syndicate_empty/sbc/operative
-	name = "Syndicate Battlecruiser Operative"
-	uniform = /obj/item/clothing/under/syndicate/camo
-	glasses = /obj/item/clothing/glasses/night
-	belt = /obj/item/storage/belt/military
-	back = /obj/item/storage/backpack/duffelbag/syndie
-	suit = /obj/item/clothing/suit/armor/vest
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/gun_voucher/syndicate=1)
-
-/datum/outfit/syndicate_empty/sbc/lieutenant
-	name = "Syndicate Battlecruiser Lieutenant"
-	head = /obj/item/clothing/head/HoS/beret/syndicate
-	ears = /obj/item/radio/headset/syndicate/alt/leader
-	uniform = /obj/item/clothing/under/syndicate/combat
-	id = /obj/item/card/id/syndicate_command/lieutenant
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
-
-/obj/effect/mob_spawn/human/syndicate/battlecruiser/captain
-	name = "Syndicate Battlecruiser Captain"
-	short_desc = "You are the captain aboard the Syndicate flagship <i>Starfury</i>."
-	flavour_text = "Your job is to oversee your crew, defend the ship, and destroy Space Station 13. The ship has an armory, multiple ships, beam cannons, and multiple crewmembers to accomplish this goal."
-	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
-	outfit = /datum/outfit/syndicate_empty/sbc/captain
-	id_access_list = list(150,151)
-	id_job = "Syndicate Captain"
-	assignedrole = "Battlecruiser Captain"
-	mob_name = "syndicate captain"
-
-/datum/outfit/syndicate_empty/sbc/captain
-	name = "Syndicate Battlecruiser Captain"
-	l_pocket = /obj/item/melee/transforming/energy/sword/saber/red
-	ears = /obj/item/radio/headset/syndicate/alt/captain
-	uniform = /obj/item/clothing/under/syndicate/aclf
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	suit_store = /obj/item/gun/ballistic/revolver/mateba
-	head = /obj/item/clothing/head/HoS/syndicate
-	mask = /obj/item/clothing/mask/cigarette/cigar/havana
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
-	id = /obj/item/card/id/syndicate_command/captain_id
 
 //Ancient cryogenic sleepers. Players become NT crewmen from a hundred year old space station, now on the verge of collapse.
 /obj/effect/mob_spawn/human/oldsec
@@ -719,7 +556,6 @@
 
 /obj/effect/mob_spawn/human/pirate/special(mob/living/new_spawn)
 	new_spawn.fully_replace_character_name(new_spawn.real_name,generate_pirate_name())
-	new_spawn.mind.add_antag_datum(/datum/antagonist/pirate)
 
 /obj/effect/mob_spawn/human/pirate/proc/generate_pirate_name()
 	var/beggings = strings(PIRATE_NAMES_FILE, "beginnings")
@@ -736,57 +572,6 @@
 
 /obj/effect/mob_spawn/human/pirate/gunner
 	rank = "Gunner"
-
-//Forgotten syndicate ship
-
-/obj/effect/mob_spawn/human/syndicatespace
-	name = "Syndicate Ship Crew Member"
-	roundstart = FALSE
-	death = FALSE
-	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper_s"
-	short_desc = "You are a syndicate operative, awoken deep in hostile space."
-	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotrasen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
-	important_info = "Obey orders given by your captain. Prevent yourself and any syndicate assets from falling into enemy hands."
-	outfit = /datum/outfit/syndicatespace/syndicrew
-	assignedrole = "Cybersun Crewmember"
-
-/obj/effect/mob_spawn/human/syndicatespace/Initialize(mapload)
-	. = ..()
-	var/policy = get_policy(ROLE_SYNDICATE_CYBERSUN)
-	if(policy)
-		important_info = policy
-
-/datum/outfit/syndicatespace/syndicrew/post_equip(mob/living/carbon/human/H)
-	H.faction |= ROLE_SYNDICATE
-
-/obj/effect/mob_spawn/human/syndicatespace/special(mob/living/new_spawn)
-	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
-
-/obj/effect/mob_spawn/human/syndicatespace/captain
-	name = "Syndicate Ship Captain"
-	roundstart = FALSE
-	death = FALSE
-	icon = 'icons/obj/machines/sleeper.dmi'
-	icon_state = "sleeper_s"
-	short_desc = "You are the captain of a long-slumbering syndicate vessel, stuck deep in enemy territory."
-	flavour_text = "Your ship is part of the infamous \"sleeper\" doctrine of syndicate strike forces, who flung unpowered vessels with cryo-frozen crew deep into Nanotrasen territory, tasked to cause havoc and carry out covert reconnisance. The chill in your bones informs you that you've been asleep far longer than intended. Your vessel appears to be in a sorry state, and a tinny alarm pierces through your fugue to report unknown contacts aboard the vessel. It's going to be one of those days."
-	important_info = "Protect the ship and secret documents in your backpack with your own life. Secure the syndicate assets present at your covert landing site. Prevent them, your crew, and yourself from falling into corporate hands."
-	outfit = /datum/outfit/syndicatespace/syndicaptain
-	assignedrole = "Cybersun Captain"
-
-/obj/effect/mob_spawn/human/syndicatespace/syndicaptain/Initialize(mapload)
-	. = ..()
-	var/policy = get_policy(ROLE_SYNDICATE_CYBERSUN_CAPTAIN)
-	if(policy)
-		important_info = policy
-
-/datum/outfit/syndicatespace/syndicaptain/post_equip(mob/living/carbon/human/H)
-	H.faction |= ROLE_SYNDICATE
-
-/obj/effect/mob_spawn/human/syndicatespace/captain/Destroy()
-	new/obj/structure/fluff/empty_sleeper/syndicate/captain(get_turf(src))
-	return ..()
 
 /datum/outfit/syndicatespace/syndicrew
 	name = "Syndicate Ship Crew Member"

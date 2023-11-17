@@ -252,7 +252,7 @@
 		if(!busy && prob(1))
 			stop_automated_movement = TRUE
 			Goto(pick(urange(20, src, 1)), move_to_delay)
-			addtimer(CALLBACK(src, .proc/do_action), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(do_action)), 5 SECONDS)
 		return 1
 
 /mob/living/simple_animal/hostile/poison/giant_spider/proc/do_action()
@@ -277,7 +277,7 @@
 					busy = MOVING_TO_TARGET
 					Goto(C, move_to_delay)
 					//give up if we can't reach them after 10 seconds
-					addtimer(CALLBACK(src, .proc/GiveUp, C), 10 SECONDS)
+					addtimer(CALLBACK(src, PROC_REF(GiveUp), C), 10 SECONDS)
 					return
 
 			//second, spin a sticky spiderweb on this tile
@@ -301,7 +301,7 @@
 							stop_automated_movement = 1
 							Goto(O, move_to_delay)
 							//give up if we can't reach them after 10 seconds
-							addtimer(CALLBACK(src, .proc/GiveUp, O), 10 SECONDS)
+							addtimer(CALLBACK(src, PROC_REF(GiveUp), O), 10 SECONDS)
 
 		else if(busy == MOVING_TO_TARGET && cocoon_target_ref)
 			var/mob/living/cocoon_target = cocoon_target_ref.resolve()
@@ -443,7 +443,7 @@
 		if(target_atom.anchored)
 			return
 		user.cocoon_target_ref = WEAKREF(target_atom)
-		INVOKE_ASYNC(user, /mob/living/simple_animal/hostile/poison/giant_spider/nurse/.proc/cocoon)
+		INVOKE_ASYNC(user, TYPE_PROC_REF(/mob/living/simple_animal/hostile/poison/giant_spider/nurse, cocoon))
 		remove_ranged_ability()
 		return TRUE
 
