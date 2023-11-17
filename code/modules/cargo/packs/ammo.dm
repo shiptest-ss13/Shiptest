@@ -197,7 +197,7 @@
 	name = ".45 ACP Bulk Crate"
 	desc = "Contains 2 boxes of .45 ACP, each containing 50 rounds."
 	contains = list(
-		/obj/item/ammo_box/c45
-		/obj/item/ammo_box/c45
+		/obj/item/ammo_box/c45,
+		/obj/item/ammo_box/c45,
 	)
 	cost = 2500
