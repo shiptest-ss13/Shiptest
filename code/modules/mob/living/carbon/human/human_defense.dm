@@ -97,6 +97,8 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE))
+		return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0)
