@@ -1,4 +1,4 @@
-/**
+/*!
  * Copyright (c) 2020 Aleksej Komarov
  * SPDX-License-Identifier: MIT
  */
@@ -11,7 +11,13 @@
 /client/verb/fix_tgui_panel()
 	set name = "Fix chat"
 	set category = "OOC"
+	
+	nuke_chat()
+
+/client/proc/nuke_chat()
 	var/action
+
+	// Catch all solution (kick the whole thing in the pants)
 	log_tgui(src, "Started fixing.",
 		context = "verb/fix_tgui_panel")
 	// Not ready
@@ -45,3 +51,11 @@
 		winset(src, "browseroutput", "is-disabled=1;is-visible=0")
 	log_tgui(src, "Failed to fix.",
 		context = "verb/fix_tgui_panel")
+
+/client/verb/refresh_tgui()
+	set name = "Refresh TGUI"
+	set category = "OOC"
+
+	for(var/window_id in tgui_windows)
+		var/datum/tgui_window/window = tgui_windows[window_id]
+		window.reinitialize()
