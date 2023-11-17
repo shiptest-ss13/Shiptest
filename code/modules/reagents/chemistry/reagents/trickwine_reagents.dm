@@ -182,6 +182,7 @@
 	ADD_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
 	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 0.5
+	M.AddComponent(/datum/component/prism_outline)
 	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)

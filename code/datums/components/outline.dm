@@ -50,3 +50,38 @@
 		playsound(A, 'sound/effects/slosh.ogg', 50, TRUE)
 		A.visible_message("<span class='notice'>The outline around [A] is washed away!")
 		qdel(src)
+
+/datum/component/prism_outline
+	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
+
+	var/permanent
+
+/datum/component/prism_outline/Initialize(perm = FALSE)
+	if(!isatom(parent))
+		return COMPONENT_INCOMPATIBLE
+	src.permanent = perm
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(OnExamine))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
+
+	var/atom/movable/A = parent
+	A.add_filter("prism-wine", 2, list("type"="outline", "color"="#8FD7DF", "size"=1))
+
+/datum/component/prism_outline/Destroy()
+	var/atom/movable/A = parent
+	A.remove_filter("prism-wine")
+	return ..()
+
+/datum/component/prism_outline/InheritComponent(datum/component/C, i_am_original, perm)
+	if(!i_am_original)
+		return
+	if(C)
+		var/datum/component/prism_outline/other = C
+		permanent = other.permanent
+	else
+		permanent = perm
+
+/datum/component/prism_outline/proc/OnExamine(datum/source, mob/user, atom/thing)
+	to_chat(user, "<span class='warning'>They are reflective!</span>")
+
+/datum/component/prism_outline/proc/OnAttackBy(datum/source, obj/item/I, mob/user, params)
+	return
