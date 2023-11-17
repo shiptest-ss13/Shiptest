@@ -77,15 +77,15 @@
 	name = "Buckshot Crate"
 	desc = "Contains two boxes of buckshot for use in lethal persuasion."
 	cost = 2000
-	contains = list(/obj/item/storage/box/lethalshot,
-					/obj/item/storage/box/lethalshot)
+	contains = list(/obj/item/ammo_box/a12g,
+					/obj/item/ammo_box/a12g)
 
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
 	desc = "Contains two boxes of slug shells for use in lethal persuasion."
 	cost = 2000
-	contains = list(/obj/item/storage/box/slugshot,
-					/obj/item/storage/box/slugshot)
+	contains = list(/obj/item/ammo_box/a12g/slug,
+					/obj/item/ammo_box/a12g/slug,)
 
 /*
 		.38 ammo
@@ -188,3 +188,16 @@
 					/obj/item/ammo_box/a762,
 					/obj/item/ammo_box/a762)
 	cost = 1000
+
+/*
+		.45???
+*/
+
+/datum/supply_pack/ammo/c45_bulk
+	name = ".45 ACP Bulk Crate"
+	desc = "Contains 2 boxes of .45 ACP, each containing 50 rounds."
+	contains = list(
+		/obj/item/ammo_box/c45
+		/obj/item/ammo_box/c45
+	)
+	cost = 2500
