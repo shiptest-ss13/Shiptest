@@ -71,7 +71,7 @@
 	icon_state = "library"
 	sound_environment = SOUND_AREA_LARGE_SOFTFLOOR
 
-area/outpost/crew/bathroom
+/area/outpost/crew/bathroom
 	name = "Bathroom"
 	icon_state = "restrooms"
 	sound_environment = SOUND_ENVIRONMENT_BATHROOM
@@ -191,7 +191,6 @@ area/outpost/crew/bathroom
 	icon_state = "storage"
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
-
 
 /area/outpost/vacant_rooms
 	name = "Vacant Rooms"
