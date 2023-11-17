@@ -156,6 +156,9 @@
 	icon_state = "icemoon_ground_smooth"
 	base_icon_state = "icemoon_ground_smooth"
 
+/turf/open/floor/plating/asteroid/icerock/temperate
+	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL
 	name = "cracked ice floor"

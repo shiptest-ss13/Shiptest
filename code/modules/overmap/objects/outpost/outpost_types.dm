@@ -79,9 +79,42 @@
 	dock_height = 40
 
 /*
+	Nanotrasen Ice Planet
+*/
+/datum/map_template/outpost/nanotrasen_ice
+	name = "nanotrasen_ice"
+/*
+/datum/map_template/outpost/hangar/nanotrasen_ice_20x20
+	name = "hangar/nanotrasen_ice_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/nanotrasen_ice_40x20
+	name = "hangar/nanotrasen_ice_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/nanotrasen_ice_40x40
+	name = "hangar/nanotrasen_ice_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/nanotrasen_ice_56x20
+	name = "hangar/nanotrasen_ice_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/nanotrasen_ice56x40
+	name = "hangar/nanotrasen_ice_56x40"
+	dock_width = 56
+	dock_height = 40
+*/ //hangars pending
+
+/*
 	/datum/overmap/outpost subtypes
 */
 
+/* //disabled for testing purposes. if you are seeing this i am dumb.
 /datum/overmap/outpost/indie_space
 	token_icon_state = "station_1"
 	main_template = /datum/map_template/outpost/indie_space
@@ -100,6 +133,12 @@
 		/datum/map_template/outpost/hangar/nt_asteroid_56x20,
 		/datum/map_template/outpost/hangar/nt_asteroid_56x40
 	)
+*/
+
+/datum/overmap/outpost/nanotrasen_ice
+	token_icon_state = "station_asteroid_0"
+	main_template = /datum/map_template/outpost/nanotrasen_ice
+	elevator_template = /datum/map_template/outpost/elevator_indie
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null
