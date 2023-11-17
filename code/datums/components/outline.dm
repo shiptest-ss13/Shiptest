@@ -81,7 +81,7 @@
 		permanent = perm
 
 /datum/component/prism_outline/proc/OnExamine(datum/source, mob/user, atom/thing)
-	to_chat(user, "<span class='warning'>They are reflective!</span>")
+	to_chat(user, "<span class='warning'>They light seems to bounce off them!</span>")
 
 /datum/component/prism_outline/proc/OnAttackBy(datum/source, obj/item/I, mob/user, params)
 	return
