@@ -288,7 +288,7 @@
 
 /datum/antagonist/ert/minutemen/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-	var/missiondesc = "Shoulder to shoulder with your fellow colonists in the Colonial Minutemen, you have been sent to [station_name()].<BR>"
+	var/missiondesc = "You stand shoulder to shoulder with your fellow colonists in the Colonial Minutemen within [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your team to ensure the completion of your objectives."
 	else
@@ -327,10 +327,17 @@
 	outfit = /datum/outfit/centcom/ert/minutemen/riot/leader
 	role = "Sargent"
 
-/datum/antagonist/ert/minutemen/gold_irs
-	name = "GOLD Collector"
-	outfit = /datum/outfit/centcom/ert/minutemen/gold_irs
+/datum/antagonist/ert/official/minutemen
+	name = "GOLD Inspector"
+	outfit = /datum/outfit/centcom/ert/minutemen/inspector
 	role = "Lieutenant"
+
+/datum/antagonist/ert/official/minutemen/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the GOLD Inspector.</font></B>")
+	if (ert_team)
+		to_chat(owner, "The Galactic Optimum Labor Division is sending you to [station_name()] with the task: [ert_team.mission.explanation_text]")
+	else
+		to_chat(owner, "The Galactic Optimum Labor Division is sending you to [station_name()] with the task: [mission.explanation_text]")
 
 /datum/antagonist/ert/minutemen/piratehunters
 	name = "Pirate Hunter"
@@ -372,12 +379,38 @@
 	role = "Sergeant"
 
 /datum/antagonist/ert/syndicate/gorlex
-	name = "Gorlex Trooper"
+	name = "2nd Battlegroup Trooper"
 	outfit = /datum/outfit/centcom/ert/syndicate/gorlex
 	role = "Trooper"
 
+/datum/antagonist/ert/syndicate/gorlex/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+	var/missiondesc = "You're a soldier of the 2nd Battlegroup, sometimes known as Gorlex Loyalists, sent to [station_name()].<BR>"
+	if(leader) //If Squad Leader
+		missiondesc += "Lead your team to ensure the completion of your objectives."
+	else
+		missiondesc += "Follow orders given to you by your Sergeant."
+
+	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
+
+/datum/antagonist/ert/syndicate/gorlex/pointman
+	name = "2nd Battlegroup Shotgunner"
+	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/pointman
+	role = "Pointman"
+
+/datum/antagonist/ert/syndicate/gorlex/medic
+	name = "2nd Battlegroup Medic"
+	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/medic
+	role = "Medic"
+
+/datum/antagonist/ert/syndicate/gorlex/sniper
+	name = "2nd Battlegroup Sniper"
+	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/sniper
+	role = "Marksman"
+
 /datum/antagonist/ert/syndicate/gorlex/leader
-	name = "Gorlex Sergeant"
+	name = "2nd Battlegroup Sergeant"
 	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/leader
 	role = "Sergeant"
@@ -439,7 +472,7 @@
 
 /datum/antagonist/ert/frontier/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-	var/missiondesc = "You are one of the ruthless, sadistic pirates in the Frontiersmen pirate fleet. They have sent you to [station_name()].<BR>"
+	var/missiondesc = "You are one of the ruthless, sadistic pirates in the Frontiersmen pirate fleet, stationed in [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your team to complete your objectives."
 	else
@@ -464,15 +497,15 @@
 	role = "Sapper"
 
 // ********************************************************************
-// ** Indie **
+// ** independent **
 // ********************************************************************
 
-/datum/antagonist/ert/indie
+/datum/antagonist/ert/independent
 	name = "Independent Security Officer"
-	outfit = /datum/outfit/centcom/ert/indie
+	outfit = /datum/outfit/centcom/ert/independent
 	role = "Security Officer"
 
-/datum/antagonist/ert/indie/greet()
+/datum/antagonist/ert/independent/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
 	var/missiondesc = "You are one of the many Independent contractors, workers and students on [station_name()].<BR>"
 	if(leader) //If Squad Leader
@@ -483,27 +516,27 @@
 	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
 	to_chat(owner,missiondesc)
 
-/datum/antagonist/ert/indie/emt
+/datum/antagonist/ert/independent/emt
 	name = "Independent Medical Technician"
-	outfit = /datum/outfit/centcom/ert/indie/emt
+	outfit = /datum/outfit/centcom/ert/independent/emt
 	role = "Paramedic"
 
-/datum/antagonist/ert/indie/firefighter
+/datum/antagonist/ert/independent/firefighter
 	name = "Independent Firefighter"
-	outfit = /datum/outfit/centcom/ert/indie/firefighter
+	outfit = /datum/outfit/centcom/ert/independent/firefighter
 	role = "Firefighter"
 
-/datum/antagonist/ert/indie/firefighter/medic
+/datum/antagonist/ert/independent/firefighter/medic
 	name = "Independent Firefighter Paramedic"
-	outfit = /datum/outfit/centcom/ert/indie/firefighter/medic
+	outfit = /datum/outfit/centcom/ert/independent/firefighter/medic
 	role = "Paramedic"
 
-/datum/antagonist/ert/indie/firefighter/leader
+/datum/antagonist/ert/independent/firefighter/leader
 	name = "Independent Firefighter Group Captain"
-	outfit = /datum/outfit/centcom/ert/indie/firefighter/leader
+	outfit = /datum/outfit/centcom/ert/independent/firefighter/leader
 	role = "Group Captain"
 
-/datum/antagonist/ert/indie/technician
+/datum/antagonist/ert/independent/technician
 	name = "Independent Technician"
-	outfit = /datum/outfit/centcom/ert/indie/technician
+	outfit = /datum/outfit/centcom/ert/independent/technician
 	role = "Technician"

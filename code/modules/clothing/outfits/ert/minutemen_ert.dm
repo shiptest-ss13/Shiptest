@@ -87,8 +87,8 @@
 
 	id_role = "Sargent"
 
-/datum/outfit/centcom/ert/minutemen/gold_irs
-	name = "ERT - CMM GOLD Collector"
+/datum/outfit/centcom/ert/minutemen/inspector
+	name = "ERT - Minutemen GOLD Inspector"
 
 	head = null
 	mask = null

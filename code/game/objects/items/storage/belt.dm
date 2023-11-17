@@ -303,6 +303,11 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
+/obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/m12g(src)
+
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
 	desc = "A versatile chest rig, cherished by miners and hunters alike."
@@ -436,13 +441,13 @@
 
 /obj/item/storage/belt/military/c20r/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 7)
+	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/smgm45(src)
 
-/obj/item/storage/belt/military/bulldog/PopulateContents()
+/obj/item/storage/belt/military/assault/m90/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_box/magazine/m12g(src)
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556(src)
 
 /obj/item/storage/belt/military/minutemen
 	name = "minutemen tactical webbing"

@@ -33,7 +33,7 @@
 	name = "ERT - Inteq Corpsman"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
-	belt = /obj/item/storage/belt/medical/paramedic
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	suit_store = null
 
 	l_pocket = /obj/item/healthanalyzer

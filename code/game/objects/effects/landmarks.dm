@@ -347,19 +347,18 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Emergency response team spawn"
 	icon_state = "ert_spawn"
 
+/obj/effect/landmark/ert_spawn/Initialize(mapload)
+	..()
+	GLOB.emergencyresponseteamspawn += loc
+	return INITIALIZE_HINT_QDEL
+
 /obj/effect/landmark/ert_outpost_spawn
 	name = "Emergency response team outpost spawn"
 	icon_state = "ert_spawn"
 
 /obj/effect/landmark/ert_outpost_spawn/Initialize(mapload)
 	..()
-	GLOB.emergencyresponseteamsoutpostpawn += loc
-	return INITIALIZE_HINT_QDEL
-
-
-/obj/effect/landmark/ert_spawn/Initialize(mapload)
-	..()
-	GLOB.emergencyresponseteamspawn += loc
+	GLOB.emergencyresponseteam_outpostspawn += loc
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/ert_shuttle_spawn

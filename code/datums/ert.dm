@@ -165,21 +165,21 @@
 	roles = list(/datum/antagonist/ert/minutemen/piratehunters)
 	mission = "Eliminate pirate presence within the sector."
 	rename_team = "Minutemen Pirate Hunter Team"
-	polldesc = "Minutemen pirate hunters"
+	polldesc = "a fireteam of Minutemen pirate hunters"
 
-/datum/ert/minutemen/gold_irs
-	teamsize = 3
-	leader_role = /datum/antagonist/ert/minutemen/gold_irs
-	roles = list(/datum/antagonist/ert/minutemen/gold_irs)
-	rename_team = "Minutemen GOLD Collection Squad"
-	polldesc = "Minutemen collection squad"
+/datum/ert/minutemen/inspector
+	teamsize = 1
+	leader_role = /datum/antagonist/ert/official/minutemen
+	roles = list(/datum/antagonist/ert/official/minutemen)
+	rename_team = "Minutemen GOLD Inspector"
+	polldesc = "a Minutemen inspector"
 
 // Syndicate
 
 /datum/ert/syndicate
 	teamsize = 4
 	opendoors = FALSE
-	leader_role = /datum/antagonist/ert/syndicate
+	leader_role = /datum/antagonist/ert/syndicate/leader
 	roles = list(/datum/antagonist/ert/syndicate)
 	mission = "Serve the interests of the Syndicate."
 	rename_team = "Generic Syndicate Team"
@@ -187,10 +187,10 @@
 
 /datum/ert/syndicate/gorlex
 	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
-	roles = list(/datum/antagonist/ert/syndicate/gorlex)
-	mission = "Serve the interests of the Gorlex Maruders."
-	rename_team = "Gorlex Maruders Team"
-	polldesc = "a Syndicate Gorlex squad"
+	roles = list(/datum/antagonist/ert/syndicate/gorlex, /datum/antagonist/ert/syndicate/gorlex/pointman, /datum/antagonist/ert/syndicate/gorlex/medic, /datum/antagonist/ert/syndicate/gorlex/sniper)
+	mission = "Serve the interests of the 2nd Battlegroup."
+	rename_team = "2nd Battlegroup Squad"
+	polldesc = "a loyalist Gorlex squad"
 
 /datum/ert/syndicate/cybersun
 	leader_role = /datum/antagonist/ert/syndicate/cybersun/leader
@@ -229,18 +229,21 @@
 /datum/ert/independent
 	teamsize = 3
 	opendoors = FALSE
-	leader_role = /datum/antagonist/ert/indie
-	roles = list(/datum/antagonist/ert/indie)
+	leader_role = /datum/antagonist/ert/independent
+	roles = list(/datum/antagonist/ert/independent)
 	rename_team = "Security Independent Team"
+	polldesc = "an independent security team"
 
 /datum/ert/independent/emt
 	teamsize = 4
-	leader_role = /datum/antagonist/ert/indie/emt
-	roles = list(/datum/antagonist/ert/indie/emt)
+	leader_role = /datum/antagonist/ert/independent/emt
+	roles = list(/datum/antagonist/ert/independent/emt)
 	rename_team = "Medical Independent Team"
+	polldesc = "an independent medical response team"
 
 /datum/ert/independent/firefighter
 	teamsize = 5
-	leader_role = /datum/antagonist/ert/indie/firefighter/leader
-	roles = list(/datum/antagonist/ert/indie/firefighter, /datum/antagonist/ert/indie/firefighter/medic)
+	leader_role = /datum/antagonist/ert/independent/firefighter/leader
+	roles = list(/datum/antagonist/ert/independent/firefighter, /datum/antagonist/ert/independent/firefighter/medic)
 	rename_team = "Independent Firefighter Team"
+	polldesc = "an independent firefighting team"

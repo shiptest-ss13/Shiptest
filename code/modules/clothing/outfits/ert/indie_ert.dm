@@ -2,11 +2,11 @@
 	name = "ERT - Independent Security Officer"
 
 	head = /obj/item/clothing/head/helmet/sec
+	ears = /obj/item/radio/headset/alt
 	mask = null
 	uniform = /obj/item/clothing/under/rank/security/officer
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/color/black
-	ears = /obj/item/radio/headset/alt
 	suit = /obj/item/clothing/suit/armor/vest
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/security/full
@@ -14,7 +14,7 @@
 
 	id_role = "Security Officer"
 
-/datum/outfit/centcom/ert/indie/emt
+/datum/outfit/centcom/ert/independent/emt
 	name = "ERT - Independent Paramedic"
 
 	head = /obj/item/clothing/head/soft/paramedic
@@ -29,7 +29,7 @@
 
 	id_role = "Emergency Medical Technician"
 
-/datum/outfit/centcom/ert/indie/firefighter
+/datum/outfit/centcom/ert/independent/firefighter
 	name = "ERT - Independent Firefighter (Standard)"
 
 	head = /obj/item/clothing/head/hardhat/red
@@ -47,7 +47,7 @@
 
 	id_role = "Firefighter"
 
-/datum/outfit/centcom/ert/indie/firefighter/medic
+/datum/outfit/centcom/ert/independent/firefighter/medic
 	name = "ERT - Independent Firefighter (Medic)"
 
 	mask = /obj/item/clothing/mask/breath/medical
@@ -62,7 +62,7 @@
 
 	id_role = "Emergency Medical Technician"
 
-/datum/outfit/centcom/ert/indie/firefighter/leader
+/datum/outfit/centcom/ert/independent/firefighter/leader
 	name = "ERT - Independent Firefighter (Group Captain)"
 
 	back = /obj/item/fireaxe
@@ -74,7 +74,7 @@
 
 	id_role = "Group Captain"
 
-/datum/outfit/centcom/ert/indie/technician
+/datum/outfit/centcom/ert/independent/technician
 	name = "ERT - Independent Technician"
 
 	head = /obj/item/clothing/head/hardhat
