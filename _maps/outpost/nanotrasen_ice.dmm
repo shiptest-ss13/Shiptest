@@ -3326,7 +3326,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "Ip" = (
-/obj/machinery/door/window/brigdoor/eastleft,
+/obj/machinery/door/window/brigdoor/eastleft{
+	req_one_access_txt = "101"
+	},
 /obj/structure/window/reinforced/spawner,
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white,
@@ -4343,12 +4345,11 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Te" = (
-/obj/structure/filingcabinet/double/grey,
-/obj/item/folder/blue,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
+/obj/structure/closet/secure_closet/brig,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "Tf" = (

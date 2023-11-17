@@ -114,7 +114,6 @@
 	/datum/overmap/outpost subtypes
 */
 
-/* //disabled for testing purposes. if you are seeing this i am dumb.
 /datum/overmap/outpost/indie_space
 	token_icon_state = "station_1"
 	main_template = /datum/map_template/outpost/indie_space
@@ -133,7 +132,6 @@
 		/datum/map_template/outpost/hangar/nt_asteroid_56x20,
 		/datum/map_template/outpost/hangar/nt_asteroid_56x40
 	)
-*/
 
 /datum/overmap/outpost/nanotrasen_ice
 	token_icon_state = "station_asteroid_0"
