@@ -76,6 +76,7 @@
 	set_anchored(!anchored)
 
 /obj/machinery/meteor_shield/update_icon_state()
+	. = ..()
 	icon_state = active ? "syndie_lethal" : "syndie_off"
 
 /obj/machinery/meteor_shield/proc/los(meteor)
