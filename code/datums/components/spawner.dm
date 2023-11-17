@@ -11,7 +11,6 @@
 	var/spawn_distance_max = 1
 	var/wave_length //Average time until break in spawning
 	var/wave_downtime //Average time until spawning starts again
-	var/spawning_paused = FALSE
 	var/wave_timer
 	var/downtime_timer
 
@@ -45,11 +44,6 @@
 	if(!parent) //Sanity check for instances where the spawner may be sleeping while the parent is destroyed
 		Destroy(TRUE,FALSE)
 		return
-	if(spawning_paused)
-		sleep(wave_downtime)
-		spawning_paused = FALSE
-		wave_timer = null
-		return
 	try_spawn_mob()
 
 /datum/component/spawner/proc/stop_spawning(force)
@@ -61,34 +55,31 @@
 			L.nest = null
 	spawned_mobs = null
 
+/datum/component/spawner/proc/unpause_spawning()
+	START_PROCESSING(SSprocessing, src)
+
 /datum/component/spawner/proc/try_spawn_mob()
 	var/atom/P = parent
 	var/turf/spot = get_turf(P)
 	//Checks for handling the wave-based pausing and unpausing of spawning
 	//Almost certainly a better way to do this, but until then this technically works
-	if(spawning_paused)
-		if(!downtime_timer)
-			COOLDOWN_START(src, downtime_timer, wave_downtime)
-		if(COOLDOWN_FINISHED(src, downtime_timer))
-			spawning_paused = FALSE
-			COOLDOWN_RESET(src, downtime_timer)
-		return
 	if(wave_length)
 		if(!wave_timer)
 			COOLDOWN_START(src, wave_timer, wave_length)
 		if(wave_timer && COOLDOWN_FINISHED(src, wave_timer))
-			spawning_paused = TRUE
 			COOLDOWN_RESET(src, wave_timer)
+			STOP_PROCESSING(SSprocessing, src)
+			addtimer(CALLBACK(src, PROC_REF(unpause_spawning)), wave_downtime)
 			return
 	////////////////////////////////
 	if(length(spawned_mobs) >= max_mobs)
 		return
-	if(COOLDOWN_FINISHED(src, spawn_delay))
+	if(!COOLDOWN_FINISHED(src, spawn_delay))
 		return
-	//Avoid using this with spawners that add this component on initialize
-	//It causes numerous runtime errors during planet generation
 	COOLDOWN_START(src, spawn_delay, spawn_time)
 	var/spawn_multiplier = 1
+	//Avoid using this with spawners that add this component on initialize
+	//It causes numerous runtime errors during planet generation
 	if(spawn_distance_max > 1)
 		var/player_count = 0
 		for(var/mob/player as anything in GLOB.player_list)
