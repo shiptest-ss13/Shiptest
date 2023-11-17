@@ -95,9 +95,12 @@
 	spawn_multiplier = clamp(spawn_multiplier, 1, max_mobs - spawned_mobs.len)
 	for(spawn_multiplier, spawn_multiplier > 0, spawn_multiplier--)
 		if(spawn_distance_max > 1)
-			spot = pick(turf_peel(spawn_distance_max, spawn_distance_min, P.loc, view_based = TRUE))
-			if(!spot)
-				spot = pick(circlerangeturfs(P.loc, spawn_distance_max))
+			var/origin = spot
+			var/list/peel = turf_peel(spawn_distance_max, spawn_distance_min, origin, view_based = TRUE)
+			if(peel.len>0)
+				spot = pick(peel)
+			else
+				spot = pick(circleviewturfs(origin, spawn_distance_max))
 		var/chosen_mob_type = pickweight(mob_types)
 		var/mob/living/simple_animal/L = new chosen_mob_type(spot)
 		L.flags_1 |= (P.flags_1 & ADMIN_SPAWNED_1)
