@@ -367,15 +367,11 @@
 	pixel_x = -3;
 	pixel_y = 6
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/syndi_cakes{
-	pixel_y = 6;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 6
 	},
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
@@ -584,17 +580,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 10
 	},
-/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
 "ei" = (
@@ -656,14 +647,10 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 5
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/mineral/processing_unit_console{
-	pixel_y = 20;
 	machinedir = 2;
-	output_dir = 4
+	output_dir = 4;
+	pixel_y = 20
 	},
 /obj/structure/railing,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -894,18 +881,14 @@
 	pixel_x = -2;
 	pixel_y = 9
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing{
 	dir = 9
 	},
 /obj/machinery/conveyor_switch{
 	id = "outpost2";
 	layer = 3.11;
-	pixel_y = 9;
-	pixel_x = -2
+	pixel_x = -2;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo)
@@ -924,14 +907,10 @@
 	pixel_x = 6;
 	pixel_y = -4
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/beer{
-	pixel_y = 13;
-	layer = 3
+	layer = 3;
+	pixel_y = 13
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper_bin{
@@ -1219,18 +1198,14 @@
 	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing{
 	dir = 6
 	},
 /obj/machinery/conveyor_switch{
 	id = "outpost1";
 	layer = 3.11;
-	pixel_y = 4;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
@@ -1258,10 +1233,6 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/machinery/firealarm/directional/east,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing/corner{
 	dir = 1
 	},
@@ -1353,17 +1324,13 @@
 	pixel_x = 15;
 	pixel_y = 12
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/glass/mortar,
 /obj/item/pestle,
 /obj/item/reagent_containers/food/drinks/mug/coco{
-	pixel_y = 12;
-	pixel_x = 15
+	pixel_x = 15;
+	pixel_y = 12
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -1534,15 +1501,11 @@
 	pixel_x = -16;
 	pixel_y = 24
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/flashlight/lamp/green{
-	pixel_y = 24;
-	pixel_x = -16
+	pixel_x = -16;
+	pixel_y = 24
 	},
 /turf/open/floor/carpet/royalblack,
 /area/outpost/crew/bar)
@@ -1561,18 +1524,14 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals_central2,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/disposal/deliveryChute{
-	name = "fun chute";
-	desc = "If it's so fun, what's the harm in it?"
+	desc = "If it's so fun, what's the harm in it?";
+	name = "fun chute"
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "arrow";
-	pixel_y = -19;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -19
 	},
 /obj/structure/disposalpipe/trunk,
 /obj/effect/turf_decal/corner_techfloor_gray{
@@ -1609,10 +1568,6 @@
 	pixel_x = -9;
 	pixel_y = 18
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/item/trash/can/food/beans{
 	pixel_x = -16;
 	pixel_y = 4
@@ -1624,8 +1579,8 @@
 	pixel_y = 5
 	},
 /obj/item/trash/can/food/beans{
-	pixel_y = -2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -2
 	},
 /obj/item/reagent_containers/food/snacks/canned/beans{
 	pixel_x = -9;
@@ -2122,14 +2077,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/floordetail/pryhole,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/toilet{
 	dir = 8;
-	pixel_y = 0;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /obj/effect/turf_decal/borderfloor/full,
 /obj/effect/decal/cleanable/dirt,
@@ -2401,14 +2352,10 @@
 	pixel_y = -5
 	},
 /obj/item/radio/intercom/directional/north,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table,
 /obj/item/clipboard{
-	pixel_y = -5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -5
 	},
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -2945,14 +2892,10 @@
 	pixel_y = 0
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "electricdanger";
-	pixel_y = 0;
-	pixel_x = 30
+	pixel_x = 30;
+	pixel_y = 0
 	},
 /obj/effect/turf_decal/steeldecal/steel_decals10,
 /turf/open/floor/plating,
@@ -3276,13 +3219,9 @@
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/confetti,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/sign/painting/library{
-	pixel_y = 0;
-	pixel_x = -26
+	pixel_x = -26;
+	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/wrapping,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3480,36 +3419,32 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/glass,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "!";
 	pixel_x = 9
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "f";
-	pixel_y = 0;
-	pixel_x = -19
+	pixel_x = -19;
+	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "u";
-	pixel_y = -5;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = -5
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "n"
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "arrow";
-	pixel_y = -19;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = -19
 	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "arrow";
-	pixel_y = -25;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -25
 	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/glass,
@@ -3551,18 +3486,14 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/modglass{
-	pixel_y = 1;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 1
 	},
 /obj/item/reagent_containers/food/drinks/modglass{
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3774,14 +3705,9 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 10
 	},
@@ -4259,14 +4185,10 @@
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/corner/transparent/brown/full,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/toilet{
 	dir = 4;
-	pixel_y = 0;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 0
 	},
 /obj/structure/mirror{
 	pixel_y = 30
@@ -4312,10 +4234,6 @@
 	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -4324,8 +4242,8 @@
 	},
 /obj/structure/extinguisher_cabinet/directional/east,
 /obj/effect/decal/cleanable/wrapping{
-	pixel_y = 11;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 11
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
@@ -4493,14 +4411,10 @@
 	pixel_x = 5;
 	pixel_y = -2
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/beer/light{
-	pixel_y = -2;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -2
 	},
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
@@ -4641,14 +4555,10 @@
 	pixel_x = -14;
 	pixel_y = 11
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/decal/cleanable/crayon{
 	icon_state = "arrow";
-	pixel_y = 11;
-	pixel_x = -14
+	pixel_x = -14;
+	pixel_y = 11
 	},
 /turf/closed/indestructible/reinforced,
 /area/outpost/maintenance/fore)
@@ -4727,14 +4637,10 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 10
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/mineral/processing_unit_console{
-	pixel_y = -31;
 	machinedir = 1;
-	output_dir = 1
+	output_dir = 1;
+	pixel_y = -31
 	},
 /obj/structure/railing{
 	dir = 1
@@ -4975,17 +4881,13 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/button/door{
-	specialfunctions = 4;
-	normaldoorcontrol = 1;
-	id = "out1";
 	dir = 1;
+	id = "out1";
+	normaldoorcontrol = 1;
+	pixel_x = -8;
 	pixel_y = -21;
-	pixel_x = -8
+	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/neutral/diagonal,
@@ -5070,18 +4972,14 @@
 /obj/item/reagent_containers/food/drinks/bottle/wine,
 /obj/machinery/light/small/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/wine{
-	pixel_y = 5;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/bottle/wine{
-	pixel_y = 5;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/bottle/wine,
 /obj/machinery/light/small/directional/east,
@@ -5216,13 +5114,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing/wood{
-	dir = 10;
-	color = "#792f27"
+	color = "#792f27";
+	dir = 10
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -5316,15 +5210,11 @@
 	pixel_x = 3;
 	pixel_y = 4
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/spacecash/bundle/c1{
-	pixel_y = 4;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 4
 	},
 /turf/open/floor/carpet/royalblack,
 /area/outpost/crew/bar)
@@ -5380,14 +5270,10 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/structure/sign/directions/service{
-	pixel_y = 22;
-	dir = 8
+	dir = 8;
+	pixel_y = 22
 	},
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 10
@@ -5561,10 +5447,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -5643,18 +5525,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/atmospherics/pipe/simple/multiz{
-	pixel_y = 1;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 1
 	},
 /obj/machinery/power/deck_relay,
 /obj/machinery/atmospherics/pipe/simple/multiz{
-	pixel_y = 1;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 1
 	},
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -6002,15 +5880,11 @@
 	pixel_x = 4;
 	pixel_y = 2
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
-	pixel_y = 2;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 2
 	},
 /turf/open/floor/carpet/green,
 /area/outpost/crew/bar)
@@ -6056,13 +5930,9 @@
 	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing/wood{
-	dir = 2;
-	color = "#792f27"
+	color = "#792f27";
+	dir = 2
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/stairs/wood{
@@ -6090,19 +5960,15 @@
 	pixel_x = 4;
 	pixel_y = -1
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks{
-	pixel_y = 13;
-	layer = 3
+	layer = 3;
+	pixel_y = 13
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/reagent_containers/food/drinks/shaker{
-	pixel_x = 15;
-	layer = 4.26
+	layer = 4.26;
+	pixel_x = 15
 	},
 /obj/item/pen/fourcolor{
 	pixel_x = 4;
@@ -6143,17 +6009,13 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/floordetail/tiled,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/button/door{
+	dir = 1;
 	id = "out2";
 	normaldoorcontrol = 1;
-	specialfunctions = 4;
-	dir = 1;
+	pixel_x = -9;
 	pixel_y = -22;
-	pixel_x = -9
+	specialfunctions = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/floordetail/tiled,
@@ -6175,15 +6037,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/firealarm/directional/south,
 /obj/item/kirbyplants{
 	icon_state = "plant-21";
-	pixel_y = 1;
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6367,13 +6225,9 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/vending/boozeomat{
-	pixel_y = 32;
-	density = 0
+	density = 0;
+	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/green,
@@ -6442,16 +6296,12 @@
 	pixel_x = -11;
 	pixel_y = 18
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/item/kirbyplants{
 	icon_state = "plant-02";
-	pixel_y = 18;
-	pixel_x = -11
+	pixel_x = -11;
+	pixel_y = 18
 	},
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
@@ -6543,16 +6393,12 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/pill/happy,
 /obj/item/pen{
-	pixel_y = 3;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 3
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -6795,31 +6641,27 @@
 	pixel_x = -28;
 	pixel_y = 0
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/item/kirbyplants{
 	icon_state = "plant-06";
-	pixel_y = 17;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 17
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-12";
-	pixel_y = 14;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 14
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-11";
-	pixel_y = 4;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /obj/structure/sign/poster/random{
-	pixel_y = 0;
-	pixel_x = -28
+	pixel_x = -28;
+	pixel_y = 0
 	},
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
@@ -7019,10 +6861,6 @@
 	pixel_x = 8;
 	pixel_y = 4
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/box/pillbottles,
@@ -7031,8 +6869,8 @@
 	pixel_x = -6
 	},
 /obj/projectile/bullet/dart/syringe{
-	pixel_y = 4;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 4
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
@@ -7225,16 +7063,6 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/structure/noticeboard{
-	name = "refinery notice board";
-	dir = 8;
-	pixel_y = 0;
-	pixel_x = 26
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -7637,14 +7465,10 @@
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 10
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/structure/sign/directions/supply{
-	pixel_y = 21;
-	dir = 4
+	dir = 4;
+	pixel_y = 21
 	},
 /obj/effect/turf_decal/corner/opaque/black{
 	dir = 10
@@ -7731,16 +7555,12 @@
 	pixel_x = -6;
 	pixel_y = 9
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/table/wood,
 /obj/item/radio/old,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/spacecash/bundle/c1{
-	pixel_y = 9;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 9
 	},
 /turf/open/floor/carpet/royalblack,
 /area/outpost/crew/bar)
@@ -7788,14 +7608,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/jukebox{
-	pixel_y = 16;
+	can_be_unanchored = 1;
 	density = 0;
-	can_be_unanchored = 1
+	pixel_y = 16
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7840,17 +7656,13 @@
 	name = "Restroom"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/airlock{
-	name = "Restroom";
-	id_tag = "out3"
+	id_tag = "out3";
+	name = "Restroom"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
@@ -8099,10 +7911,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -8237,14 +8045,9 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/radio/intercom/directional/south,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 10
 	},
@@ -8383,17 +8186,13 @@
 	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/light/small/directional/north,
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/garbage{
-	pixel_y = 6;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 6
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -8767,16 +8566,12 @@
 	specialfunctions = 4
 	},
 /obj/effect/turf_decal/corner/transparent/brown/full,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/button/door{
 	dir = 8;
-	pixel_x = 22;
-	pixel_y = 9;
 	id = "out3";
 	normaldoorcontrol = 1;
+	pixel_x = 22;
+	pixel_y = 9;
 	specialfunctions = 4
 	},
 /obj/effect/turf_decal/corner/transparent/brown/full,
@@ -8829,13 +8624,9 @@
 	output_dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/mineral/processing_unit{
-	output_dir = 4;
-	input_dir = 2
+	input_dir = 2;
+	output_dir = 4
 	},
 /obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -8916,13 +8707,9 @@
 	dir = 1;
 	id = "outpost3"
 	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/machinery/conveyor/auto{
-	id = "outpost3";
-	dir = 1
+	dir = 1;
+	id = "outpost3"
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
