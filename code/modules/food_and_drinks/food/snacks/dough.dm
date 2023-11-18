@@ -69,7 +69,7 @@
 /obj/item/reagent_containers/food/snacks/bun
 	name = "bun"
 	desc = "A base for any self-respecting burger."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/burger.dmi'
 	icon_state = "bun"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/burger

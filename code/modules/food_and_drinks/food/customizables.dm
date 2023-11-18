@@ -157,7 +157,7 @@
 	name = "burger"
 	desc = "A timeless classic."
 	ingredients_placement = INGREDIENTS_STACKPLUSTOP
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/burger.dmi'
 	icon_state = "custburg"
 	foodtype = GRAIN
 
@@ -167,7 +167,7 @@
 	ingMax = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/custom
 	slices_num = 5
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "tofubread"
 	foodtype = GRAIN
 
@@ -234,7 +234,7 @@
 	name = "toast"
 	desc = "A timeless classic."
 	ingredients_placement = INGREDIENTS_STACK
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "breadslice"
 	var/finished = 0
 	foodtype = GRAIN

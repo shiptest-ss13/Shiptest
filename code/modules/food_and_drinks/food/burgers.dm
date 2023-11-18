@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/burger
 	filling_color = "#CD853F"
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/burger.dmi'
 	icon_state = "hburger"
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
