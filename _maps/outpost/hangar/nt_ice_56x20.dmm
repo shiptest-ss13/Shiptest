@@ -251,22 +251,6 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"mR" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/neutral,
-/obj/effect/turf_decal/siding/white,
-/obj/item/newspaper{
-	pixel_x = 4;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_x = -2;
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel/patterned{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "mX" = (
 /obj/effect/turf_decal/borderfloor{
 	dir = 8
@@ -278,6 +262,26 @@
 /turf/open/floor/plasteel/patterned/brushed{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"nH" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/hangar)
+"qk" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/hangar)
 "qq" = (
 /obj/effect/decal/fakelattice,
@@ -301,6 +305,22 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"sZ" = (
+/obj/effect/turf_decal/siding/white,
+/obj/effect/turf_decal/siding/white{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/newspaper{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/hangar)
 "vh" = (
 /turf/closed/wall/r_wall/yesdiag,
 /area/hangar)
@@ -319,9 +339,6 @@
 "vT" = (
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white,
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
@@ -338,9 +355,6 @@
 	},
 /area/hangar)
 "zH" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/newscaster/directional/south,
@@ -362,9 +376,6 @@
 	},
 /area/hangar)
 "Ch" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
@@ -2905,7 +2916,7 @@ mX
 an
 an
 an
-al
+nH
 al
 al
 ag
@@ -2943,7 +2954,7 @@ ag
 ag
 aP
 vT
-al
+qk
 al
 al
 ag
@@ -3018,8 +3029,8 @@ aK
 aK
 Nu
 aJ
-mR
-al
+vT
+sZ
 al
 al
 ag
@@ -3057,7 +3068,7 @@ aK
 Nu
 ro
 Ch
-al
+qk
 al
 al
 ag

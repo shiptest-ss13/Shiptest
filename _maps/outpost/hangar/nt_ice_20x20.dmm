@@ -51,6 +51,20 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"ar" = (
+/obj/structure/table/reinforced,
+/obj/item/newspaper{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/patterned/ridged{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "av" = (
 /obj/effect/turf_decal/borderfloor/corner{
 	dir = 8
@@ -109,9 +123,6 @@
 	},
 /area/hangar)
 "aE" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/newscaster/directional/south,
@@ -236,9 +247,6 @@
 	},
 /area/hangar)
 "fN" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
@@ -273,22 +281,6 @@
 	color = "#808080"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"hL" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/neutral,
-/obj/effect/turf_decal/siding/white,
-/obj/item/newspaper{
-	pixel_x = 4;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_x = -2;
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -439,9 +431,6 @@
 "BW" = (
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white,
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
@@ -475,6 +464,14 @@
 	},
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/elevatorshaft{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"FJ" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -528,6 +525,14 @@
 /obj/effect/turf_decal/trimline/transparent/neutral/line,
 /obj/effect/turf_decal/siding/white{
 	dir = 5
+	},
+/turf/open/floor/plasteel/patterned/ridged{
+	planetary_atmos = 1
+	},
+/area/hangar)
+"Nf" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
 	},
 /turf/open/floor/plasteel/patterned/ridged{
 	planetary_atmos = 1
@@ -1548,7 +1553,7 @@ cD
 aO
 aO
 xl
-ac
+Nf
 ac
 ac
 am
@@ -1586,7 +1591,7 @@ am
 am
 xp
 BW
-ac
+FJ
 ac
 ac
 am
@@ -1661,8 +1666,8 @@ qz
 qz
 ax
 aA
-hL
-ac
+BW
+ar
 ac
 ac
 am
@@ -1700,7 +1705,7 @@ qz
 ax
 ME
 fN
-ac
+FJ
 ac
 ac
 am

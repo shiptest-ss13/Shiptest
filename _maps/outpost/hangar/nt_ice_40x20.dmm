@@ -36,9 +36,6 @@
 "aj" = (
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white,
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
@@ -286,6 +283,18 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"pS" = (
+/obj/structure/table/reinforced,
+/obj/item/newspaper{
+	pixel_x = 4;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -2;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/hangar)
 "qh" = (
 /obj/effect/decal/fakelattice,
 /obj/effect/decal/cleanable/dirt{
@@ -295,22 +304,6 @@
 	color = "#808080"
 	},
 /turf/open/floor/plasteel/elevatorshaft{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"rR" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/neutral,
-/obj/effect/turf_decal/siding/white,
-/obj/item/newspaper{
-	pixel_x = 4;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/food/drinks/coffee{
-	pixel_x = -2;
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -324,9 +317,6 @@
 	},
 /area/hangar)
 "ua" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
@@ -334,6 +324,12 @@
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"up" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-22"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/hangar)
 "wL" = (
 /obj/effect/decal/fakelattice,
@@ -351,9 +347,6 @@
 	},
 /area/hangar)
 "zF" = (
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/turf_decal/corner/opaque/neutral,
 /obj/effect/turf_decal/siding/white,
 /obj/machinery/newscaster/directional/south,
@@ -367,6 +360,12 @@
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"AM" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/ridged,
 /area/hangar)
 "DM" = (
 /obj/effect/turf_decal/borderfloor/corner{
@@ -2285,7 +2284,7 @@ as
 af
 af
 af
-aY
+up
 aY
 aY
 ab
@@ -2323,7 +2322,7 @@ ab
 ab
 Hn
 aj
-aY
+AM
 aY
 aY
 ab
@@ -2398,8 +2397,8 @@ av
 av
 aF
 ir
-rR
-aY
+aj
+pS
 aY
 aY
 ab
@@ -2437,7 +2436,7 @@ av
 aF
 XE
 ua
-aY
+AM
 aY
 aY
 ab
