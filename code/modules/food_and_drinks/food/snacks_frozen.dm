@@ -267,7 +267,7 @@
 	bonus_reagents = list(/datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 3, /datum/reagent/consumable/sugar = 2)
 	overlay_state = "jumbo"
 
-/obj/item/reagent_containers/food/popsicle/licorice_creamsicle
+/obj/item/reagent_containers/food/snacks/popsicle/licorice_creamsicle
 	name = "Milky Way™"
 	desc = "A salty licorice ice cream. A salty frozen treat."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sodiumchloride = 1,  /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 4)
