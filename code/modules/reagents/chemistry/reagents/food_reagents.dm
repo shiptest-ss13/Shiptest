@@ -835,12 +835,6 @@
 	color = "#D9A066"
 	nutriment_factor = 15 * REAGENTS_METABOLISM
 
-/datum/reagent/consumable/peanut_butter/on_mob_life(mob/living/carbon/M, delta_time, times_fired) //ET loves peanut butter
-	if(isabductor(M))
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "ET_pieces", /datum/mood_event/et_pieces)
-		M.set_drugginess(30 SECONDS * REM * delta_time)
-	..()
-
 /datum/reagent/consumable/vinegar
 	name = "Vinegar"
 	description = "Useful for pickling, or putting on chips."

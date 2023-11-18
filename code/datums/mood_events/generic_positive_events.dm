@@ -232,11 +232,6 @@
 	mood_change = 5
 	timeout = 3 MINUTES
 
-/datum/mood_event/et_pieces
-	description = "Mmm... I love peanut butter..."
-	mood_change = 50
-	timeout = 10 MINUTES
-
 /datum/mood_event/memories_of_home
 	description = "<span class='nicegreen'>This taste seems oddly nostalgic...</span>\n"
 	mood_change = 3
