@@ -490,23 +490,3 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/steeped_mushrooms
 	category = CAT_LIZARD
-
-/datum/crafting_recipe/food/rootbreadpbj
-	name = "Peanut butter and jelly rootwich"
-	reqs = list(
-		/obj/item/food/breadslice/root = 2,
-		/datum/reagent/consumable/peanut_butter = 5,
-		/datum/reagent/consumable/cherryjelly = 5
-	)
-	result = /obj/item/food/rootbread_peanut_butter_jelly
-	category = CAT_LIZARD
-
-/datum/crafting_recipe/food/rootbreadpbb
-	name = "Peanut butter and banana rootwich"
-	reqs = list(
-		/obj/item/food/breadslice/root = 2,
-		/datum/reagent/consumable/peanut_butter = 5,
-		/obj/item/food/grown/banana = 1
-	)
-	result = /obj/item/food/rootbread_peanut_butter_banana
-	category = CAT_LIZARD
