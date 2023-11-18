@@ -341,6 +341,11 @@
 			to_chat(usr, span_warning("No applicants for ERT. Aborting spawn."))
 			return FALSE
 
+		if(ertemplate.spawn_at_outpost && !ertemplate.use_custom_shuttle)
+			if(!length(GLOB.emergencyresponseteam_outpostspawn))
+				message_admins("No outpost spawns found!")
+			spawnpoints = GLOB.emergencyresponseteam_outpostspawn
+
 		if(ertemplate.use_custom_shuttle && ertemplate.ert_template)
 			to_chat(usr, span_boldnotice("Attempting to spawn ERT custom shuttle, this may take a few seconds..."))
 
@@ -348,10 +353,6 @@
 			var/spawn_location
 
 			if(ertemplate.spawn_at_outpost)
-				if(!length(GLOB.emergencyresponseteam_outpostspawn))
-					message_admins("No outpost spawns found!")
-				spawnpoints = GLOB.emergencyresponseteam_outpostspawn
-
 				if(length(SSovermap.outposts) > 1)
 					var/temp_loc = input(usr, "Select outpost to spawn at") as null|anything in SSovermap.outposts
 					if(!temp_loc)

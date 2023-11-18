@@ -21,7 +21,7 @@
 	/// If we should actually _use_ the ert_template custom shuttle
 	var/use_custom_shuttle = TRUE
 	/// If TRUE, the ERT will spawn at the outpost. If use_custom_shuttle is also TRUE, the shuttle will be docked at the outpost
-	var/spawn_at_outpost = FALSE
+	var/spawn_at_outpost = TRUE
 
 // Nanotrasen
 
@@ -66,6 +66,7 @@
 	polldesc = "a CentCom Official"
 	random_names = FALSE
 	leader_experience = FALSE
+	spawn_at_outpost = FALSE
 
 /datum/ert/centcom_official/New()
 	mission = "Conduct a routine review of [station_name()]'s vessels."
@@ -84,6 +85,7 @@
 	leader_role = /datum/antagonist/ert/intern/leader
 	teamsize = 7
 	opendoors = FALSE
+	spawn_at_outpost = FALSE
 	rename_team = "Horde of Interns"
 	mission = "Assist in conflict resolution."
 	polldesc = "an unpaid internship opportunity with Nanotrasen"
@@ -130,6 +132,7 @@
 	roles = list(/datum/antagonist/ert/official/solgov)
 	rename_team = "SolGov Inspector"
 	polldesc = "a solarian inspector"
+	spawn_at_outpost = FALSE
 
 /datum/ert/solgov/inspector/New()
 	mission = "Conduct a routine review on [station_name()]'s vessels."
@@ -184,6 +187,7 @@
 	mission = "Serve the interests of the Syndicate."
 	rename_team = "Generic Syndicate Team"
 	polldesc = "a Syndicate emergency team"
+	spawn_at_outpost = FALSE
 
 /datum/ert/syndicate/gorlex
 	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
@@ -217,6 +221,7 @@
 	polldesc = "an armed group of pirates"
 	random_names = TRUE
 	leader_experience = FALSE
+	spawn_at_outpost = FALSE
 	ert_template = /datum/map_template/shuttle/subshuttles/sugarcube
 
 /datum/ert/frontier/assault
