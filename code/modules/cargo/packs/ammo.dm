@@ -76,14 +76,14 @@
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
 	desc = "Contains two boxes of buckshot for use in lethal persuasion."
-	cost = 2000
+	cost = 500
 	contains = list(/obj/item/ammo_box/a12g,
 					/obj/item/ammo_box/a12g)
 
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
 	desc = "Contains two boxes of slug shells for use in lethal persuasion."
-	cost = 2000
+	cost = 500
 	contains = list(/obj/item/ammo_box/a12g/slug,
 					/obj/item/ammo_box/a12g/slug,)
 
@@ -200,4 +200,4 @@
 		/obj/item/ammo_box/c45,
 		/obj/item/ammo_box/c45,
 	)
-	cost = 2500
+	cost = 500
