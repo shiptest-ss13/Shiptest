@@ -955,6 +955,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 5
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "jI" = (
@@ -1542,6 +1543,7 @@
 /obj/structure/rack,
 /obj/structure/grille/broken,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "oF" = (
@@ -1704,6 +1706,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/port)
 "qE" = (
@@ -1799,6 +1802,7 @@
 "rv" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/mineral/unloading_machine,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/cargo/smeltery)
 "rA" = (
@@ -1976,6 +1980,7 @@
 "tl" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "tr" = (
@@ -2415,6 +2420,7 @@
 "xh" = (
 /obj/machinery/telecomms/allinone/indestructable,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)
 "xj" = (
@@ -2473,6 +2479,7 @@
 	pixel_x = 7;
 	anchored = 1
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/starboard)
 "xG" = (
@@ -2570,6 +2577,17 @@
 /obj/machinery/light/small/directional/south{
 	bulb_power = 0.5;
 	brightness = 3
+	},
+/obj/item/trash/tray,
+/obj/item/stack/cable_coil/cut/red,
+/obj/item/computer_hardware/hard_drive/small,
+/obj/item/computer_hardware/battery{
+	pixel_y = 6;
+	pixel_x = -4
+	},
+/obj/item/computer_hardware/network_card{
+	pixel_x = 4;
+	pixel_y = 2
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -2707,7 +2725,10 @@
 "Bm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/machinery/airalarm/directional/south,
+/obj/machinery/airalarm/directional/south{
+	heating_temp_minvalue = 250.15
+	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/armory)
 "Bu" = (
@@ -3271,6 +3292,7 @@
 	color = "#543C30";
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/concrete/tiles,
 /area/outpost/crew/bar)
 "HF" = (
@@ -3368,6 +3390,10 @@
 "Iy" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/mopbucket,
+/obj/item/caution{
+	pixel_y = 18;
+	pixel_x = -3
+	},
 /obj/item/mop,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/greenglow,
@@ -3602,6 +3628,17 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/stack/sheet/mineral/sandbags,
+/obj/item/holosign_creator/security,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security/armory)
 "LT" = (
@@ -3956,6 +3993,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 1
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "Pz" = (
@@ -3985,6 +4023,7 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 9
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "PN" = (
@@ -5128,6 +5167,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/robot_debris,
+/obj/item/shard,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "Zm" = (
