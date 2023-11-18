@@ -74,6 +74,9 @@
 	dir = 5
 	},
 /obj/machinery/door/window/brigdoor/eastleft,
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "aW" = (
@@ -190,6 +193,9 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/structure/sign/poster/official/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "cr" = (
@@ -225,6 +231,9 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/cell_charger,
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)
 "cC" = (
@@ -275,6 +284,9 @@
 	dir = 9
 	},
 /obj/machinery/door/window/brigdoor/westright,
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "de" = (
@@ -316,6 +328,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/kirbyplants{
 	icon_state = "plant-14"
+	},
+/obj/structure/sign/poster/official/random{
+	pixel_x = -32
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
@@ -505,6 +520,7 @@
 	dir = 8;
 	id = "ice_ERT_bay"
 	},
+/obj/structure/fans/tiny/invisible,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "fc" = (
@@ -713,6 +729,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)
 "hz" = (
@@ -1098,6 +1117,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/sign/poster/retro/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/port)
 "lv" = (
@@ -1139,6 +1161,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
 	},
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
@@ -1221,6 +1246,9 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
+/obj/structure/sign/poster/official/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)
 "mK" = (
@@ -1275,6 +1303,16 @@
 /obj/effect/spawner/lootdrop/maintenance/two,
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
+"na" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "smelter1"
+	},
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/cargo/smeltery)
 "ng" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -1378,6 +1416,9 @@
 /obj/machinery/camera{
 	dir = 1
 	},
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "nG" = (
@@ -1476,6 +1517,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/fans/tiny/invisible,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "oi" = (
@@ -1797,6 +1839,9 @@
 	pixel_x = -4;
 	pixel_y = -7
 	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
 "rv" = (
@@ -1892,6 +1937,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "rS" = (
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -2083,6 +2131,9 @@
 /obj/item/flashlight/lamp/green{
 	pixel_y = 3
 	},
+/obj/structure/sign/poster/retro/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/maintenance/starboard)
 "un" = (
@@ -2117,6 +2168,9 @@
 "uu" = (
 /obj/structure/table/wood,
 /obj/item/trash/tray,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "uy" = (
@@ -2149,6 +2203,9 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/firealarm/directional/east,
+/obj/structure/sign/poster/retro/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering/atmospherics)
 "uI" = (
@@ -2480,6 +2537,9 @@
 	anchored = 1
 	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/sign/poster/retro/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/maintenance/starboard)
 "xG" = (
@@ -2525,6 +2585,9 @@
 	layer = 4.1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/structure/sign/poster/official/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "yR" = (
@@ -2535,6 +2598,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/chem_pile,
+/obj/structure/sign/poster/retro/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "zn" = (
@@ -2725,9 +2791,7 @@
 "Bm" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/machinery/airalarm/directional/south{
-	heating_temp_minvalue = 250.15
-	},
+/obj/machinery/airalarm/directional/south,
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/armory)
@@ -2831,6 +2895,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /obj/machinery/camera{
 	dir = 9
+	},
+/obj/structure/sign/poster/retro/random{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
@@ -3006,6 +3073,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
+	},
+/obj/structure/sign/poster/retro/random{
+	pixel_x = -32
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
@@ -3316,6 +3386,9 @@
 	pixel_y = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/retro/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering/atmospherics)
 "Im" = (
@@ -4150,6 +4223,9 @@
 /obj/machinery/camera{
 	dir = 1
 	},
+/obj/structure/sign/poster/official/random{
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)
 "QP" = (
@@ -4229,6 +4305,9 @@
 	},
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/cut/red,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/maintenance/starboard)
 "Rv" = (
@@ -4777,6 +4856,9 @@
 	pixel_x = -6;
 	pixel_y = -4
 	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "WI" = (
@@ -5148,6 +5230,9 @@
 /obj/structure/displaycase/forsale,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/wrapping,
+/obj/structure/sign/poster/official/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "Zk" = (
@@ -11112,7 +11197,7 @@ cC
 cC
 cC
 Ak
-qR
+na
 ab
 Sr
 kK
