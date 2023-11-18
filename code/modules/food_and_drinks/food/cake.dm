@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/snacks/store/cake
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/cake.dmi'
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/plain
 	slices_num = 5
 	bitesize = 3
@@ -9,7 +9,7 @@
 	foodtype = GRAIN | DAIRY
 
 /obj/item/reagent_containers/food/snacks/cakeslice
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/cake.dmi'
 	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
 	customfoodfilling = 0 //to avoid infinite cake-ception

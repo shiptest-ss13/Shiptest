@@ -177,7 +177,7 @@
 	ingMax = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/custom
 	slices_num = 5
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/cake.dmi'
 	icon_state = "plaincake"
 	foodtype = GRAIN | DAIRY
 
@@ -204,7 +204,7 @@
 /obj/item/reagent_containers/food/snacks/customizable/pie
 	name = "pie"
 	ingMax = 6
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/pie.dmi'
 	icon_state = "pie"
 	foodtype = GRAIN | DAIRY
 

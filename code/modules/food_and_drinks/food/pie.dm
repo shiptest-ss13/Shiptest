@@ -1,6 +1,7 @@
 
 /obj/item/reagent_containers/food/snacks/pie
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/pie.dmi'
+	icon_state = "pie"
 	trash = /obj/item/trash/plate
 	bitesize = 3
 	w_class = WEIGHT_CLASS_NORMAL
@@ -12,7 +13,6 @@
 /obj/item/reagent_containers/food/snacks/pie/plain
 	name = "plain pie"
 	desc = "A simple pie, still delicious."
-	icon_state = "pie"
 	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/pie
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("pie" = 1)
@@ -21,7 +21,6 @@
 /obj/item/reagent_containers/food/snacks/pie/cream
 	name = "banana cream pie"
 	desc = "Just like back home, on clown planet! HONK!"
-	icon_state = "pie"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -156,7 +155,7 @@
 /obj/item/reagent_containers/food/snacks/pumpkinpieslice
 	name = "pumpkin pie slice"
 	desc = "A slice of pumpkin pie, with whipped cream on top. Perfection."
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/pie.dmi'
 	icon_state = "pumpkinpieslice"
 	trash = /obj/item/trash/plate
 	filling_color = "#FFA500"
@@ -222,7 +221,7 @@
 /obj/item/reagent_containers/food/snacks/blumpkinpieslice
 	name = "blumpkin pie slice"
 	desc = "A slice of blumpkin pie, with whipped cream on top. Is this edible?"
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/pie.dmi'
 	icon_state = "blumpkinpieslice"
 	trash = /obj/item/trash/plate
 	filling_color = "#1E90FF"
@@ -243,7 +242,7 @@
 /obj/item/reagent_containers/food/snacks/dulcedebatataslice
 	name = "dulce de batata slice"
 	desc = "A slice of sweet dulce de batata jelly."
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/pie.dmi'
 	icon_state = "dulcedebatataslice"
 	trash = /obj/item/trash/plate
 	filling_color = "#8B4513"
@@ -272,7 +271,7 @@
 /obj/item/reagent_containers/food/snacks/baklavaslice
 	name = "baklava dish"
 	desc = "A portion of a delightful healthy snack made of nut layers with thin bread"
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/pie.dmi'
 	icon_state = "baklavaslice"
 	trash = /obj/item/trash/plate
 	filling_color = "#1E90FF"
