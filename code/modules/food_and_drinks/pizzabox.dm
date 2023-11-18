@@ -311,17 +311,12 @@
 /obj/item/pizzabox/rustic/Initialize()
 	. = ..()
 	pizza = new /obj/item/reagent_containers/food/snacks/pizza/flatbread/italic(src)
-	boxtag = "Tiziran Flatbread"
+	boxtag = "Rustic Zohilian Flatbread"
 
 /obj/item/pizzabox/imperial/Initialize()
 	. = ..()
 	pizza = new /obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial(src)
-	boxtag = "Tiziran Flatbread"
-
-/obj/item/pizzabox/imperial/Initialize()
-	. = ..()
-	pizza = new /obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial(src)
-	boxtag = "Imperial Victory Flatbread"
+	boxtag = "Royal Zalish Flatbread"
 
 /obj/item/pizzabox/mothic_margherita/Initialize()
 	. = ..()

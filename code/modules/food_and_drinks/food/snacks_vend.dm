@@ -234,7 +234,7 @@
 
 /obj/item/reagent_containers/food/snacks/cnds/banana_honk
 	name = "banana honk C&Ds"
-	desc = "The official candy of clowns everywhere. Honk honk!"
+	desc = "An unpopular banana-flavoured variety of C&D’s which became taboo in the wake of the Inter-Corporate War."
 	list_reagents = list(/datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/coco = 1, /datum/reagent/consumable/banana = 1)
 	tastes = list("chocolate candy" = 2, "banana" = 1)
 
