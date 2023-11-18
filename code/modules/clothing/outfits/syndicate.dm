@@ -211,7 +211,7 @@
 
 	id = /obj/item/card/id/syndicate_command/captain_id
 	ears = /obj/item/radio/headset/syndicate/alt/captain
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS/syndicate
 	gloves = /obj/item/clothing/gloves/combat
@@ -232,7 +232,7 @@
 /datum/outfit/job/syndicate/captain/twink
 	name = "Captain (Twinkleshine)"
 
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/syndicate/alt/captain
@@ -253,10 +253,10 @@
 
 /datum/outfit/job/syndicate/captain/gorlex
 	name = "Captain (Gorlex Marauders)"
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 
-	head = /obj/item/clothing/head/aclfcap
-	suit = /obj/item/clothing/suit/aclf
+	head = /obj/item/clothing/head/gorlexcap
+	suit = /obj/item/clothing/suit/gorlex
 
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Captain (Cybersun)"
@@ -441,7 +441,8 @@
 
 /datum/outfit/job/syndicate/hos/twink
 	name = "Lieutenant (Twinkleshine)"
-	uniform = /obj/item/clothing/under/syndicate/aclf
+
+	uniform = /obj/item/clothing/under/syndicate/officer
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt
 	mask = /obj/item/clothing/mask/chameleon
@@ -451,7 +452,7 @@
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
-	alt_suit = /obj/item/clothing/suit/aclf
+	alt_suit = /obj/item/clothing/suit/gorlex
 	id = /obj/item/card/id/syndicate_command/lieutenant
 	implants = list(/obj/item/implant/weapons_auth)
 	backpack_contents = list(/obj/item/melee/baton)
