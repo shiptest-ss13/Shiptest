@@ -12,6 +12,8 @@
 	var/obj/item/charging = null
 	var/recharge_coeff = 1
 	var/using_power = FALSE //Did we put power into "charging" last process()?
+	///Did we finish recharging the currently inserted item?
+	var/finished_recharging = FALSE
 
 	var/static/list/allowed_devices = typecacheof(list(
 		/obj/item/gun/energy,
@@ -47,6 +49,7 @@
 	charging = new_charging
 	if (new_charging)
 		START_PROCESSING(SSmachines, src)
+		finished_recharging = FALSE
 		use_power = ACTIVE_POWER_USE
 		using_power = TRUE
 		update_appearance()
@@ -143,6 +146,10 @@
 				using_power = TRUE
 			update_appearance()
 			return
+		if(!using_power && !finished_recharging) //Inserted thing is at max charge/ammo, notify those around us
+			finished_recharging = TRUE
+			playsound(src, 'sound/machines/ping.ogg', 30, TRUE)
+			say("[charging] has finished recharging!")
 	else
 		return PROCESS_KILL
 

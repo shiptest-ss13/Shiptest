@@ -6,10 +6,11 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	modifystate = 1
 	can_flashlight = TRUE
-	ammo_x_offset = 3
+	ammo_x_offset = 2
 	flight_x_offset = 15
 	flight_y_offset = 10
 	dual_wield_spread = 60
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/e_gun/mindshield
 	pin = /obj/item/firing_pin/implant/mindshield
@@ -34,19 +35,35 @@
 	set_gun_light(new /obj/item/flashlight/seclite(src))
 	return ..()
 
-/obj/item/gun/energy/e_gun/stun
-	name = "tactical energy gun"
-	desc = "Military issue energy gun, is able to fire stun rounds."
+/obj/item/gun/energy/e_gun/hades
+	name = "SL AL-655 'Hades' energy rifle"
+	desc = "The standard issue rifle of Nanotrasen's Security Forces. Most have been put in long term storage following the ICW, and usually aren't issued to low ranking security divisions."
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "energytac"
 	ammo_x_offset = 2
-	ammo_type = list(/obj/item/ammo_casing/energy/electrode/spec, /obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
+	charge_sections = 5
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault, /obj/item/ammo_casing/energy/disabler)
+	cell_type = /obj/item/stock_parts/cell/gun/upgraded
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+
+	wield_delay = 0.7 SECONDS
+	wield_slowdown = 0.6
+	spread_unwielded = 20
+
+/obj/item/gun/energy/e_gun/hades/Initialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/energy/e_gun/old
 	name = "prototype energy gun"
-	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command."
+	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has a multifaceted energy lens, allowing the gun to alter the form of projectile it fires on command. The project was a dud, and Nanotrasen later acquired Sharplite to suit its laser weapon needs."
 	icon_state = "protolaser"
 	ammo_x_offset = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/electrode/old)
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 /obj/item/gun/energy/e_gun/mini/practice_phaser
 	name = "practice phaser"
@@ -63,18 +80,21 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hos, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
 	shaded_charge = TRUE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/e_gun/hos/brazil
 	name = "modified antique laser gun"
 	desc = "It's somehow modified to have more firemodes."
 	icon_state = "capgun_brazil_hos"
 	item_state = "hoslaser"
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/e_gun/hos/brazil/true
-	desc = "By using a original antique laser gun with a intact nuclear power cell, it is truly one of the finest weapons in this area of space."
+	desc = "This genuine antique laser gun, modified with an experimental suite of alternative firing modes based on the X-01 MultiPhase Energy Gun, is now truly one of the finest weapons in the frontier."
 	icon_state = "capgun_hos"
 	item_state = "hoslaser"
 	selfcharge = 1
+	manufacturer = MANUFACTURER_SHARPLITE
 
 /obj/item/gun/energy/e_gun/dragnet
 	name = "\improper DRAGnet"
@@ -120,6 +140,7 @@
 	var/reactor_overloaded
 	var/fail_tick = 0
 	var/fail_chance = 0
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/energy/e_gun/nuclear/process()
 	if(fail_tick > 0)
@@ -194,9 +215,13 @@
 	charge_sections = 3
 	weapon_weight = WEAPON_LIGHT
 
+/obj/item/gun/energy/e_gun/smg/Initialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"
-	desc = "A improved version of the E-SG 255. It now includes two firing modes, disable and kill, while still keeping that sweed integrated computer. Please note that the screen is right next to the switch mode button."
+	desc = "A improved version of the E-SG 255. It now includes two firing modes, disable and kill, while still keeping that sweet integrated computer. Please note that the screen is right next to the switch mode button."
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	inhand_x_dimension = 64
@@ -208,3 +233,17 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter/ultima, /obj/item/ammo_casing/energy/laser/ultima)
 	var/obj/item/modular_computer/integratedNTOS
 	var/NTOS_type = /obj/item/modular_computer/internal
+
+/obj/item/gun/energy/e_gun/e11
+	name = "E-11 hybrid energy rifle"
+	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but that's only if it manages to hit its target."
+	icon_state = "e11"
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
+	can_flashlight = TRUE
+	ammo_x_offset = 0
+	flight_x_offset = 20
+	flight_y_offset = 9
+	spread = 80
+	dual_wield_spread = 140
+	shaded_charge = TRUE
+	manufacturer = MANUFACTURER_EOEHOMA
