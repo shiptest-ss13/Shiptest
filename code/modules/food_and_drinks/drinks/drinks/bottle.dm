@@ -513,9 +513,9 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
 	isGlass = TRUE
 
-/obj/item/reagent_containers/food/drinks/bottle/mushi_kombucha
-	name = "Solzara Brewing Company Mushi Kombucha"
-	desc = "Best drunk over ice to savour the mushroomy flavour."
+/obj/item/reagent_containers/food/drinks/bottle/mushroom_kombucha
+	name = "Miner’s Might Mushroom Kombucha"
+	desc = "Best drunk over ice to savor the mushroomy flavor. Some refer to it as ‘shroombucha’."
 	icon_state = "shroomy_bottle"
 	volume = 30
 	list_reagents = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 30)

@@ -277,3 +277,4 @@
 					/obj/effect/spawner/lootdrop/ration,
 					/obj/effect/spawner/lootdrop/ration)
 	crate_name = "ration crate"
+	crate_type = /obj/structure/closet/crate
