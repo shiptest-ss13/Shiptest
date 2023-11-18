@@ -26,12 +26,12 @@
 
 	id = /obj/item/card/id/ert
 	suit = /obj/item/clothing/suit/space/hardsuit/ert
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/ert
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/e_gun=1)
+		/obj/item/melee/baton/loaded=1)
 	l_pocket = /obj/item/switchblade
 
 	id_role = "Emergency Response Team Commander"
@@ -60,13 +60,13 @@
 
 	id = /obj/item/card/id/ert/security
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	back = /obj/item/storage/backpack/ert/security
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/handcuffs=1,\
-		/obj/item/gun/energy/e_gun/stun=1,\
+		/obj/item/storage/box/handcuffs=1,
 		/obj/item/melee/baton/loaded=1)
 
 /datum/outfit/centcom/ert/security/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -94,13 +94,13 @@
 
 	id = /obj/item/card/id/ert/medical
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/med
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/storage/backpack/ert/medical
 	belt = /obj/item/storage/belt/medical
 	r_hand = /obj/item/storage/firstaid/regular
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/e_gun=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1)
 
@@ -131,6 +131,7 @@
 
 	id = /obj/item/card/id/ert/engineer
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/engi
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses =  /obj/item/clothing/glasses/meson/engine
 	back = /obj/item/storage/backpack/ert/engineer
 	belt = /obj/item/storage/belt/utility/full
@@ -138,7 +139,6 @@
 	r_hand = /obj/item/storage/firstaid/regular
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/e_gun=1,\
 		/obj/item/construction/rcd/loaded=1)
 
 	id_role = "Engineering Response Officer"
