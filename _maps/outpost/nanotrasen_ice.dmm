@@ -189,6 +189,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "cr" = (
@@ -540,6 +541,7 @@
 /obj/machinery/camera{
 	dir = 5
 	},
+/obj/machinery/newscaster/security_unit/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "fq" = (
@@ -661,6 +663,7 @@
 /obj/machinery/camera{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
 "gG" = (
@@ -1539,6 +1542,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)
 "oA" = (
@@ -1660,6 +1664,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security)
 "qm" = (
@@ -1676,6 +1681,7 @@
 "qn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "qs" = (
@@ -2144,6 +2150,7 @@
 	},
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering/atmospherics)
 "uI" = (
@@ -2436,6 +2443,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/bathroom)
 "xr" = (
@@ -2505,10 +2513,11 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/east,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/machinery/newscaster/security_unit/directional/east,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
 "yM" = (
@@ -2785,6 +2794,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plating,
 /area/outpost/maintenance/port)
 "Cf" = (
@@ -3460,6 +3470,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plating,
 /area/outpost/maintenance/starboard)
 "Kc" = (
@@ -3649,6 +3660,7 @@
 /obj/machinery/camera{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "Mv" = (
@@ -4310,6 +4322,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/checkpoint)
 "Sr" = (
@@ -4462,6 +4475,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 5
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/cargo/smeltery)
 "Ue" = (
@@ -4577,6 +4591,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
@@ -4686,6 +4701,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "Ws" = (
