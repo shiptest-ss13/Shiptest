@@ -77,6 +77,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 	mag_display = TRUE
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	spread = -5
 	spread_unwielded = 20
@@ -140,6 +141,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
 	burst_size = 0
 	actions_types = list()
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	wield_slowdown = 2
 	spread = -4
@@ -158,6 +160,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
 	burst_size = 0
 	actions_types = list()
+	manufacturer = MANUFACTURER_MINUTEMAN
 
 	wield_slowdown = 2
 	spread = -4

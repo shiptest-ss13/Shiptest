@@ -226,6 +226,8 @@
 	. = ..()
 	if(!automatic_charge_overlays || QDELETED(src))
 		return
+	if(cell)
+		. += "[icon_state]_cell"
 	// Every time I see code this "flexible", a kitten fucking dies //it got worse
 	//todo: refactor this a bit to allow showing of charge on a gun's cell
 	var/overlay_icon_state = "[icon_state]_charge"
