@@ -668,7 +668,7 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/weapons/laser.ogg'
-  
+
 /datum/chemical_reaction/drink/mushroom_tea
 	results = list(/datum/reagent/consumable/mushroom_tea = 5)
 	required_reagents = list(/datum/reagent/toxin/mushroom_powder = 1, /datum/reagent/water = 5)
