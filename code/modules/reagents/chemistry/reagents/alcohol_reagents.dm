@@ -2665,7 +2665,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Salt and Swell"
 	glass_desc = "Ah, I do like to be beside the seaside."
 
-/datum/reagent/consumable/ethanol/tiltaellen //yoghurt, salt, vinegar
+/datum/reagent/consumable/ethanol/tiltaellen //yoghurt, salt, vinegar. This cant taste good
 	name = "Tiltällen"
 	description = "A lightly fermented yoghurt drink with salt and a light dash of vinegar. Has a distinct sour cheesy flavour."
 	boozepwr = 10
