@@ -365,8 +365,23 @@
 //Chief Medical Officer
 
 /datum/outfit/job/syndicate/cmo
-	name = "Chief Medical Officer (Syndicate)"
+	name = "Medical Director (Cybersun)"
 	jobtype = /datum/job/cmo
+
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	ears = /obj/item/radio/headset/syndicate/alt/captain
+	id = /obj/item/card/id/syndicate_command/captain_id
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/pda/heads/cmo
+	l_pocket = /obj/item/pinpointer/crew
+	head = /obj/item/clothing/head/beret/cmo/cybersun
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	l_hand = /obj/item/storage/firstaid/medical
+	suit_store = /obj/item/flashlight/pen
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+/datum/outfit/job/syndicate/cmo/suns
+	name = "Medical Director (SUNS)"
 
 	uniform = /obj/item/clothing/under/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/captain
@@ -379,9 +394,6 @@
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-
-/datum/outfit/job/syndicate/cmo/suns
-	name = "Medical Director (SUNS)"
 
 //"Head Of Personnel"
 
