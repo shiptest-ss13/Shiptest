@@ -2563,7 +2563,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "sweet, tangy, and bitter alcohol"
 	glass_icon_state = "dragons_fang"
 	glass_name = "Dragon's Fang"
-	glass_desc = "A famous old Zohilian drink re-imagined with modern ingredients.""
+	glass_desc = "A famous old Zohilian drink re-imagined with modern ingredients."
 
 //Moth Drinks
 /datum/reagent/consumable/ethanol/curacao
