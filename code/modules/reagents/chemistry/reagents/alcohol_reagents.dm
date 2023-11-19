@@ -2622,7 +2622,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/mushi_kombucha
 	name = "Mushi Kombucha"
-	description = "A popular summer beverage on Tizira, made from sweetened mushroom tea."
+	description = "A popular summer beverage on Kalixcis, made from sweetened mushroom tea."
 	boozepwr = 10
 	color = "#C46400"
 	quality = DRINK_VERYGOOD

@@ -956,7 +956,7 @@
 
 /datum/reagent/consumable/mushroom_tea
 	name = "Mushroom Tea"
-	description = "A savoury glass of tea made from polypore mushroom shavings, originally native to Tizira."
+	description = "A savoury glass of tea made from polypore mushroom shavings, originally native to Kalixcis"
 	color = "#674945" // rgb: 16, 16, 0
 	nutriment_factor = 0
 	taste_description = "mushrooms"

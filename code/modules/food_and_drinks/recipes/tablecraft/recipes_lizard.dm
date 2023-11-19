@@ -1,12 +1,12 @@
-/datum/crafting_recipe/food/tiziran_sausage
-	name = "Raw Tiziran blood sausage"
+/datum/crafting_recipe/food/kalixcian_sausage
+	name = "Raw Kalixcian blood sausage"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/meat/rawcutlet = 1,
 		/obj/item/reagent_containers/food/snacks/meat/rawbacon = 1,
 		/datum/reagent/blood = 5,
 		/datum/reagent/consumable/sodiumchloride = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/raw_tiziran_sausage
+	result = /obj/item/reagent_containers/food/snacks/raw_kalixcian_sausage
 	category = CAT_LIZARD
 
 /datum/crafting_recipe/food/headcheese
@@ -77,7 +77,7 @@
 /datum/crafting_recipe/food/fried_blood_sausage
 	name = "Fried blood sausage"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/raw_tiziran_sausage = 1,
+		/obj/item/reagent_containers/food/snacks/raw_kalixcian_sausage = 1,
 		/datum/reagent/consumable/korta_flour = 5,
 		/datum/reagent/water = 5
 	)
@@ -373,10 +373,10 @@
 	category = CAT_LIZARD
 
 /datum/crafting_recipe/food/black_broth
-	name = "Tiziran black broth"
+	name = "Kalixcian black broth"
 	reqs = list(
 		/obj/item/reagent_containers/glass/bowl = 1,
-		/obj/item/reagent_containers/food/snacks/tiziran_sausage = 1,
+		/obj/item/reagent_containers/food/snacks/kalixcian_sausage = 1,
 		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
 		/datum/reagent/consumable/vinegar = 5,
 		/datum/reagent/blood = 5,
@@ -474,7 +474,7 @@
 	category = CAT_LIZARD
 
 /datum/crafting_recipe/food/lizard_dumplings
-	name = "Tiziran dumplings"
+	name = "Kalixcian dumplings"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
 		/datum/reagent/consumable/korta_flour = 5
