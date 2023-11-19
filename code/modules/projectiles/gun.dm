@@ -546,11 +546,17 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	if((can_flashlight && gun_light) && (can_bayonet && bayonet)) //give them a choice instead of removing both
-		var/list/possible_items = list(gun_light, bayonet)
-		var/obj/item/item_to_remove = input(user, "Select an attachment to remove", "Attachment Removal") as null|obj in sortNames(possible_items)
-		if(!item_to_remove || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-			return
-		return remove_gun_attachment(user, I, item_to_remove)
+		var/list/choose_options = list(
+			"Light" = image(icon = gun_light.icon, icon_state = gun_light.icon_state),
+			"Knife" = image(icon = bayonet.icon, icon_state = bayonet.icon_state)
+		)
+		var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+
+		if(picked_option == "Light")
+			return remove_gun_attachment(user, I, gun_light, "unscrewed")
+
+		else if(picked_option == "Knife")
+			return remove_gun_attachment(user, I, bayonet, "unfix")
 
 	else if(gun_light && can_flashlight) //if it has a gun_light and can_flashlight is false, the flashlight is permanently attached.
 		return remove_gun_attachment(user, I, gun_light, "unscrewed")
