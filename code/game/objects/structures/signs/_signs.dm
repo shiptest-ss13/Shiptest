@@ -298,12 +298,3 @@
 /obj/structure/sign/number/nine
 	name = "nine"
 	icon_state = "9"
-
-/obj/structure/sign/number/random
-	name = "numeral sign"
-	icon_state = "0"
-
-/obj/structure/sign/number/random/Initialize()
-	icon_state = "[rand(0, 9)]"
-	update_icon_state()
-	. = ..()
