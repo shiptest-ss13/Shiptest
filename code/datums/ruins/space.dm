@@ -6,12 +6,6 @@
 	allow_duplicates = FALSE
 	ruin_type = RUINTYPE_SPACE
 
-/datum/map_template/ruin/space/corporate_mining
-	id = "corporate_mining"
-	suffix = "corporate_mining.dmm"
-	name = "Corporate Mining Module"
-	description = "An old and rusty mining facility, with big ore potential."
-
 /datum/map_template/ruin/space/excavator_DK
 	id = "Excavator-DK"
 	suffix = "excavator_DK.dmm"
@@ -156,12 +150,6 @@
 	suffix = "lab4071.dmm"
 	name = "Syndicate Laboratory 4071"
 	description = "A Syndicate laboratory run by syndicate scientists."
-
-/datum/map_template/ruin/space/singularitylab
-	id = "singularitylab"
-	suffix = "singularity_lab.dmm"
-	name = "Singularity Lab"
-	description = "An overgrown facility, home to an unstarted singularity and many plants"
 
 /datum/map_template/ruin/space/spacemall
 	id = "spacemall"

@@ -55,12 +55,6 @@
 	description = "A store that once sold a variety of items and equipment."
 	suffix = "whitesands_surface_camp_drugstore.dmm"
 
-/datum/map_template/ruin/whitesands/survivors/saloon
-	name = "Hermit Saloon"
-	id = "ws-saloon"
-	description = "A western style saloon, most popular spot for the hermits to gather planetside"
-	suffix = "whitesands_surface_camp_saloon.dmm"
-
 /datum/map_template/ruin/whitesands/survivors/combination //combined extra large ruin of several other whitesands survivor ruins (excludes the drugstore)
 	name = "Wasteland Survivor Village"
 	id = "ws-combination"

@@ -326,7 +326,6 @@
 	category = "subshuttles"
 	starting_funds = 0
 
-
 /datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
 	file_name = "frontiersmen_gut"
 	name = "Gut Combat Freighter"
@@ -350,19 +349,14 @@
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
-/datum/map_template/shuttle/subshuttles/kunai
-	file_name = "independent_kunai"
-	name = "Kunai Dropship"
-	prefix = "SV"
-
 /datum/map_template/shuttle/subshuttles/sugarcube
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
 
-//your subshuttle here
 /datum/map_template/shuttle/subshuttles/heron
 	file_name = "nanotrasen_falcon"
 	name = "Falcon Dropship"
 	prefix = "NTSV"
 
+//your subshuttle here

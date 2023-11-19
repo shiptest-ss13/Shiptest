@@ -72,12 +72,6 @@
 	description = "A group of pirates on a small ship in the jungle."
 	suffix = "jungle_pirate.dmm"
 
-/datum/map_template/ruin/jungle/syndicate
-	name = "Jungle Syndicate Bunker"
-	id = "syndicatebunkerjungle"
-	description = "A small bunker owned by the Syndicate."
-	suffix = "jungle_syndicate.dmm"
-
 /datum/map_template/ruin/jungle/village
 	name = "Monkey Village"
 	id = "monkeyvillage"
@@ -113,12 +107,6 @@
 	id = "paradise"
 	description = "a crashed shuttle, and a hidden beautiful lake."
 	suffix = "jungle_paradise.dmm"
-
-/datum/map_template/ruin/jungle/airbase
-	name = "Bombed Airbase"
-	id = "airbase"
-	description = "A bombed out airbase from the ICW, taken back over by nature"
-	suffix = "jungle_bombed_starport.dmm"
 
 /datum/map_template/ruin/jungle/medtech
 	name = "MedTech facility"
