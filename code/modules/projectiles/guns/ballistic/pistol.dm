@@ -24,6 +24,8 @@
 	bolt_wording = "slide"
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
+	fire_delay = 1
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	wield_delay = 0.2 SECONDS
 	spread = -2
@@ -51,6 +53,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/m1911_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	load_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/m1911_unload.ogg'
@@ -72,6 +75,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_NONE
 	load_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
@@ -107,6 +111,7 @@
 	name = "flat gun"
 	desc = "A 2 dimensional gun.. what?"
 	icon_state = "flatgun"
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
 	SHOULD_CALL_PARENT(0)
@@ -126,6 +131,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	can_suppress = FALSE
+	manufacturer = MANUFACTURER_NANOTRASEN
 	fire_sound = 'sound/weapons/gun/pistol/commander.ogg'
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
@@ -140,6 +146,7 @@
 	desc = "A handgun seized from Nanotrasen armories by deserting troopers and modified to IRMG's standards. A yellow IRMG shield is set into the grips. Chambered in 9mm."
 	icon_state = "commander-inteq"
 	item_state = "commander-inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag
 	spawnwithmagazine = FALSE
@@ -206,6 +213,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
 	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
+	manufacturer = MANUFACTURER_SOLARARMORIES
 	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
@@ -236,6 +244,10 @@
 	custom_materials = list(/datum/material/plastic=2000)
 	can_suppress = FALSE
 	var/random_icon = TRUE
+	manufacturer = MANUFACTURER_NONE
+
+	has_safety = FALSE //thing barely costs anything, why would it have a safety?
+	safety = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
 	. = ..()

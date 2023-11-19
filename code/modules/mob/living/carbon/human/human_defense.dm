@@ -97,6 +97,9 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
+	///Granted by prismwine
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE) && prob(50))
+		return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0)

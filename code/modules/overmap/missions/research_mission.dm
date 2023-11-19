@@ -129,7 +129,7 @@
 		use_power = NO_POWER_USE
 	power_change() // calls update_appearance(), makes sure we're powered
 
-/obj/machinery/mission_scanner/update_icon_state()
+/obj/machinery/mission_scanner/update_appearance(updates)
 	. = ..()
 	if(is_operational)
 		icon_state = "scanner_power"
