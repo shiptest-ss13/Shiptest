@@ -78,6 +78,7 @@
 	e_cost = 300
 	select_name = "shock"
 	projectile_type = /obj/projectile/energy/tesla_cannon
+	delay = 1
 
 /obj/item/ammo_casing/energy/shrink
 	projectile_type = /obj/projectile/beam/shrink

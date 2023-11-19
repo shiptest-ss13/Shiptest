@@ -22,7 +22,7 @@
 #define VAPOR 3	// foam, spray, blob attack
 #define PATCH 4	// patches
 #define INJECT 5	// injection
-
+#define SMOKE 6 //smoking
 
 //defines passed through to the on_reagent_change proc
 #define DEL_REAGENT 1	// reagent deleted (fully cleared)
