@@ -296,7 +296,7 @@
 	result = /obj/item/reagent_containers/food/snacks/popsicle/jumbo
 	subcategory = CAT_ICE
 
-/datum/crafting_recipe/food/licorice_creamsicle
+/datum/crafting_recipe/food/creamsicle_licorice
 	name = "Milky Way™"
 	reqs = list(
 		/obj/item/popsicle_stick = 1,
@@ -307,5 +307,5 @@
 		/datum/reagent/consumable/vanilla = 2,
 		/datum/reagent/consumable/sugar = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/popsicle/licorice_creamsicle
+	result = /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_licorice
 	subcategory = CAT_ICE
