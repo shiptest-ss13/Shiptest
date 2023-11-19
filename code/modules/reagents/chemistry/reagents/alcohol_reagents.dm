@@ -2544,14 +2544,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/kortara
 	name = "Kortara"
-	description = "A sweet, milky nut-based drink enjoyed on Tizira. Frequently mixed with fruit juices and cocoa for extra refreshment."
+	description = "A sweet, milky alcoholic drink derived from fermented Korta Nut. This Kalixcian drink is enjoyed galaxywide, and frequently mixed with fruit juices and cocoa for extra refreshment."
 	boozepwr = 25
 	color = "#EEC39A"
 	quality = DRINK_GOOD
 	taste_description = "sweet nectar"
 	glass_icon_state = "kortara_glass"
 	glass_name = "glass of kortara"
-	glass_desc = "The fermented nectar of the Korta nut, as enjoyed by lizards galaxywide."
+	glass_desc = "The fermented nectar of the Korta nut, as enjoyed by Kalixcians galaxywide."
 
 /datum/reagent/consumable/ethanol/kortara/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(M.getBruteLoss() && prob(10))
@@ -2573,16 +2573,16 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.apply_status_effect(/datum/status_effect/throat_soothed)
 	..()
 
-/datum/reagent/consumable/ethanol/white_tiziran
-	name = "White Tiziran"
-	description = "A mix of vodka and kortara. The Lizard imbibes."
+/datum/reagent/consumable/ethanol/white_gezenan
+	name = "White Gezenan"
+	description = "A potent mixture of vodka and kortara. This drink is used to commemorate Solar-Kalixcian first contact and often served at diplomatic affairs."
 	boozepwr = 65
 	color = "#A68340"
 	quality = DRINK_GOOD
-	taste_description = "strikes and gutters"
-	glass_icon_state = "white_tiziran"
-	glass_name = "White Tiziran"
-	glass_desc = "I had a rough night and I hate the fucking humans, man."
+	taste_description = "grain alcohol and nuts"
+	glass_icon_state = "white_gezenan"
+	glass_name = "White Gezenan"
+	glass_desc = "A potent mixture of vodka and kortara."
 
 /datum/reagent/consumable/ethanol/drunken_espatier
 	name = "Drunken Espatier"
@@ -2631,21 +2631,16 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of mushi kombucha"
 	glass_desc = "A glass of (slightly alcoholic) fermented sweetened mushroom tea. Refreshing, if a little strange."
 
-/datum/reagent/consumable/ethanol/triumphal_arch
-	name = "Triumphal Arch"
-	description = "A drink celebrating the Lizard Empire and its military victories. It's popular at bars on Unification Day."
+/datum/reagent/consumable/ethanol/dragons_fang
+	name = "Dragon's Fang"
+	description = "A famous old Zohilian drink re-imagined with modern ingredients. Traditional Kalixcian mushroom brew is blended with Solarian ingredients to produce this tangy dessert cocktail."
 	boozepwr = 60
 	color = "#FFD700"
 	quality = DRINK_FANTASTIC
-	taste_description = "victory"
-	glass_icon_state = "triumphal_arch"
-	glass_name = "Triumphal Arch"
-	glass_desc = "A toast to the Empire, long may it stand."
-
-/datum/reagent/consumable/ethanol/triumphal_arch/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	if(islizard(M))
-		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "triumph", /datum/mood_event/memories_of_home, name)
-	..()
+	taste_description = "sweet, tangy, and bitter alcohol"
+	glass_icon_state = "dragons_fang"
+	glass_name = "Dragon's Fang"
+	glass_desc = "A famous old Zohilian drink re-imagined with modern ingredients.""
 
 //Moth Drinks
 /datum/reagent/consumable/ethanol/curacao

@@ -154,7 +154,7 @@
 /obj/structure/flora/ash/seraka
 	icon_state = "seraka_mushroom"
 	name = "seraka mushrooms"
-	desc = "A small cluster of seraka mushrooms. These must have come with the ashlizards."
+	desc = "A small cluster of Kalixcian seraka mushrooms. Often found near Ashwalker dwellings in the Frontier."
 	needs_sharp_harvest = FALSE
 	harvested_name = "harvested seraka mushrooms"
 	harvested_desc = "A couple of small seraka mushrooms, with the larger ones clearly having been recently removed. They'll grow back... eventually."
@@ -307,7 +307,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/seraka
 	name = "seraka cap"
-	desc = "Small, deeply flavourful mushrooms originally native to Tizira."
+	desc = "Small, deeply flavourful mushrooms originally native to Kalixcis."
 	icon_state = "seraka_cap"
 	seed = /obj/item/seeds/lavaland/seraka
 	wine_power = 40
@@ -458,8 +458,7 @@
 
 //So this really should have /datum/reagent/medicine/coagulant/seraka_extract = 0.02 but that's not in the codebase yet. I think we have to port a bunch of wound stuff from tg
 /obj/item/seeds/lavaland/seraka
-	name = "pack of seraka mycelium"
-	desc = "This mycelium grows into seraka mushrooms, a species of savoury mushrooms originally native to Tizira used in food and traditional medicine."
+	desc = "This mycelium grows into seraka mushrooms, a species of savoury mushrooms originally native to Kalixcis. Seraka mushrooms are used in both Kalixcian food and traditional medicine."
 	icon_state = "mycelium-seraka"
 	species = "seraka"
 	plantname = "Seraka Mushrooms"

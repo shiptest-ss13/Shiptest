@@ -1,7 +1,7 @@
 //Korta Nut
 /obj/item/seeds/korta_nut
 	name = "pack of korta nut seeds"
-	desc = "These seeds grow into korta nut bushes, native to Tizira."
+	desc = "These seeds grow into korta nut bushes, native to Kalixcis."
 	icon_state = "seed-korta"
 	species = "kortanut"
 	plantname = "Korta Nut Bush"
@@ -17,9 +17,9 @@
 	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/korta_nut
-	seed = /obj/item/seeds/korta_nut
-	name = "korta nut"
-	desc = "A little nut of great importance. Has a peppery shell which can be ground into flour and a soft, pulpy interior that produces a milky fluid when juiced. Or you can eat them whole, as a quick snack."
+	seed = /obj/item/seeds/korta_nut/sweet
+	name = "sweet korta nut"
+	desc = "A sweet Kalixcian treat originally from the Antechannel League."
 	icon_state = "korta_nut"
 	foodtype = NUTS
 	grind_results = list(/datum/reagent/consumable/korta_flour = 0)
@@ -30,7 +30,7 @@
 //Sweet Korta Nut
 /obj/item/seeds/korta_nut/sweet
 	name = "pack of sweet korta nut seeds"
-	desc = "These seeds grow into sweet korta nuts, a mutation of the original species that produces a thick syrup that Tizirans use for desserts."
+	desc = "These seeds grow into sweet korta nuts, an Antechannel League cultivar of korta that produces a thick syrup that Kalixcians use for desserts."
 	icon_state = "seed-sweetkorta"
 	species = "kortanut"
 	plantname = "Sweet Korta Nut Bush"
