@@ -758,11 +758,6 @@
 	},
 /area/ship/storage)
 "sC" = (
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 2
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -777,6 +772,12 @@
 	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
+	},
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	preferred_direction = 4;
+	port_direction = 2
 	},
 /obj/machinery/door/poddoor/shutters{
 	dir = 8;
