@@ -2291,7 +2291,8 @@
 /area/ship/crew)
 "Pz" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
-	piping_layer = 2
+	piping_layer = 2;
+	dir = 8
 	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/machinery/light/small/directional/east,
