@@ -1164,9 +1164,23 @@
 
 /datum/crafting_recipe/breakawayflask
 	name = "Breakaway Flask"
-	result = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	result = /obj/item/reagent_containers/food/drinks/breakawayflask
 	time = 5 SECONDS
 	reqs = list(/obj/item/stack/sheet/glass = 5,
 				/obj/item/stack/sheet/mineral/plasma = 1)
 	tools = list(TOOL_WELDER)
-	category = CAT_MISC
+	category = CAT_DRINK
+
+/datum/crafting_recipe/fermenting_barrel
+	name = "Wooden Barrel"
+	result = /obj/structure/fermenting_barrel
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8)
+	time = 50
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/distiller
+	name = "Distiller"
+	result = /obj/structure/fermenting_barrel/distiller
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /obj/item/stack/sheet/metal = 5, /datum/reagent/srm_bacteria = 30)
+	time = 50
+	category = CAT_PRIMAL

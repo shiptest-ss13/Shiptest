@@ -117,3 +117,14 @@
 /obj/item/ammo_box/magazine/swiss/update_icon_state()
 	. = ..()
 	icon_state = "swissmag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/e40
+	name = "E-40 magazine (.229 Eoehoma caseless)"
+	icon_state = "e40_mag"
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+	caliber = ".299 caseless"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/e40/update_icon_state()
+	. = ..()
+	icon_state = "e40_mag-[!!ammo_count()]"

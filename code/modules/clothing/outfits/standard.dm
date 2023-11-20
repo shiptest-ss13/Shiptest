@@ -389,7 +389,7 @@
 
 	id = /obj/item/card/id/silver
 	head = /obj/item/clothing/head/beret/lt
-	uniform = /obj/item/clothing/under/rank/command/lieutenant
+	uniform = /obj/item/clothing/under/rank/command
 	alt_uniform = /obj/item/clothing/under/rank/command
 	suit = /obj/item/clothing/suit/toggle/lieutenant
 	alt_suit = /obj/item/clothing/suit/armor/lieutenant_trenchcoat

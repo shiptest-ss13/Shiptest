@@ -2,12 +2,12 @@
 	var/too_spooky = TRUE //will it spawn a new instrument?
 
 /datum/component/spooky/Initialize()
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/spectral_attack)
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(spectral_attack))
 
 /datum/component/spooky/proc/spectral_attack(datum/source, mob/living/carbon/C, mob/user)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, .proc/spectral_attack_async, source, C, user)
+	INVOKE_ASYNC(src, PROC_REF(spectral_attack_async), source, C, user)
 
 /datum/component/spooky/proc/spectral_attack_async(datum/source, mob/living/carbon/C, mob/user)
 

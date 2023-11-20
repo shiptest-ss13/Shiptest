@@ -634,19 +634,37 @@
 	mix_sound = 'sound/effects/clockcult_gateway_closing.ogg'
 
 /datum/chemical_reaction/ash_wine
-	results = list(/datum/reagent/consumable/ethanol/ash_wine = 5)
+	results = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
-	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/weather/ashstorm/inside/weak_end.ogg'
 
 /datum/chemical_reaction/ice_wine
-	results = list(/datum/reagent/consumable/ethanol/ice_wine = 5)
+	results = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/sake = 3, /datum/reagent/polar_bear_fur = 1, /datum/reagent/consumable/frostoil = 1)
-	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/effects/glassbr3.ogg'
 
 /datum/chemical_reaction/shock_wine
-	results = list(/datum/reagent/consumable/ethanol/shock_wine = 5)
+	results = list(/datum/reagent/consumable/ethanol/trickwine/shock_wine = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/lemonjuice = 1)
-	required_container = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/machines/defib_zap.ogg'
+
+/datum/chemical_reaction/hearth_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/hearth_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/hcider = 3, /datum/reagent/consumable/pyre_elementum = 1, /datum/reagent/fuel = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/items/welder.ogg'
+
+/datum/chemical_reaction/force_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/spacemountainwind = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/magic/forcewall.ogg'
+
+/datum/chemical_reaction/prism_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/weapons/laser.ogg'
