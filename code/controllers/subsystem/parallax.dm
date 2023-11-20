@@ -12,7 +12,7 @@ SUBSYSTEM_DEF(parallax)
 //These are cached per client so needs to be done asap so people joining at roundstart do not miss these.
 /datum/controller/subsystem/parallax/PreInit()
 	. = ..()
-	if(prob(100))	//30% chance to pick a special extra layer, in this case just asteroids, no space dirt
+	if(prob(20))	//20% chance to pick a special extra layer, in this case just asteroids, no space dirt
 		random_layer = /atom/movable/screen/parallax_layer/random/asteroids
 	planet_y_offset = rand(100, 160)
 	planet_x_offset = rand(100, 160)
