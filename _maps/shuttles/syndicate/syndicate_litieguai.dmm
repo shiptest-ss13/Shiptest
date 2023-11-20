@@ -78,23 +78,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "cs" = (
-/obj/structure/closet/crate/medical,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/roller,
-/obj/item/tank/internals/anesthetic,
-/obj/item/clothing/mask/breath/medical,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/item/storage/box/bodybags,
-/obj/item/storage/box/gloves,
-/obj/item/storage/box/masks,
-/obj/item/storage/box/bodybags,
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/machinery/airalarm/directional/south,
 /obj/machinery/firealarm/directional/west,
@@ -103,6 +86,16 @@
 	pixel_x = -21;
 	pixel_y = 10
 	},
+/obj/structure/closet/secure_closet/personal/patient,
+/obj/item/clothing/under/rank/medical/gown/pink,
+/obj/item/clothing/under/rank/medical/gown/green,
+/obj/item/clothing/under/rank/medical/gown/blue,
+/obj/item/clothing/under/rank/medical/gown,
+/obj/item/clothing/under/rank/medical/gown,
+/obj/item/clothing/shoes/sandal/slippers,
+/obj/item/clothing/shoes/sandal/slippers,
+/obj/item/clothing/shoes/sandal/slippers,
+/obj/item/clothing/shoes/sandal/slippers,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "cI" = (
@@ -167,17 +160,13 @@
 	dir = 8
 	},
 /obj/machinery/computer/cryopod/directional/south,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plasteel/tech,
 /area/ship/crew)
 "eJ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew)
 "eM" = (
-/obj/structure/chair/office/light{
-	dir = 1
-	},
-/obj/effect/landmark/start/chemist,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
@@ -224,7 +213,7 @@
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
 /obj/machinery/newscaster/directional/south,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "fe" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -646,7 +635,7 @@
 /obj/structure/frame/computer{
 	dir = 1
 	},
-/obj/effect/turf_decal/industrial/hatch/red,
+/obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "oH" = (
@@ -654,6 +643,12 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical{
@@ -816,7 +811,7 @@
 	},
 /obj/machinery/door/airlock/medical{
 	dir = 4;
-	name = "Chemistry"
+	name = "Storage Room"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/medical)
@@ -825,7 +820,7 @@
 	pixel_y = 32
 	},
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/chem_master,
+/obj/structure/closet/crate/freezer/surplus_limbs/organs,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "rM" = (
@@ -925,7 +920,7 @@
 	dir = 9
 	},
 /obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "tE" = (
 /obj/structure/chair/comfy/shuttle{
@@ -960,7 +955,7 @@
 /obj/item/clothing/under/syndicate/medic/skirt,
 /obj/item/clothing/under/syndicate/medic/skirt,
 /obj/item/clothing/under/syndicate/medic/skirt,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "tT" = (
 /obj/structure/closet/secure_closet/personal/patient,
@@ -977,29 +972,23 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "tW" = (
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/box/pillbottles,
-/obj/item/storage/box/medigels,
-/obj/item/storage/box/medigels,
-/obj/item/reagent_containers/dropper,
-/obj/item/reagent_containers/dropper,
-/obj/item/clothing/suit/toggle/labcoat/chemist/side,
-/obj/item/clothing/glasses/science,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/item/reagent_containers/glass/beaker/large,
-/obj/structure/closet/wall/white/chem{
-	dir = 1;
-	name = "Chemistry Locker";
-	pixel_y = -28
-	},
-/obj/item/clothing/head/beret/chem,
 /obj/structure/table,
 /obj/machinery/button/door{
 	dir = 8;
-	id = "traumachem";
-	name = "Chemistry Shutter Control";
+	id = "traumastore";
+	name = "Storage Shutter Control";
 	pixel_x = 22;
 	pixel_y = 7
+	},
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/bodybags,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/pillbottles,
+/obj/structure/closet/wall/white/chem{
+	dir = 1;
+	name = "Medical Supplies Locker";
+	pixel_y = -28
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
@@ -1172,30 +1161,12 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "wp" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 4
-	},
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/structure/closet/secure_closet{
-	icon_state = "med";
-	name = "medicine locker"
-	},
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/box/medipens,
-/obj/item/storage/box/syringes,
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/firstaid/regular,
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "wD" = (
 /obj/machinery/light/directional/east,
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = 12
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 1
 	},
@@ -1487,6 +1458,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"DX" = (
+/obj/structure/closet/crate/medical,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/roller,
+/obj/item/clothing/mask/breath/medical,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/effect/turf_decal/industrial/outline/red,
+/turf/open/floor/plasteel/tech,
+/area/ship/medical)
 "Ev" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/crew)
@@ -1664,11 +1651,8 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Ki" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/smartfridge/chemistry,
+/obj/machinery/vending/medical,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Ko" = (
@@ -1776,18 +1760,12 @@
 "Lu" = (
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/machinery/reagentgrinder{
-	pixel_y = 10
-	},
-/obj/structure/table,
-/obj/item/lighter{
-	pixel_x = -8
-	},
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 20;
 	pixel_y = -11
 	},
+/obj/structure/closet/crate/freezer/surplus_limbs,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Ml" = (
@@ -1841,7 +1819,10 @@
 "MK" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/structure/railing/corner,
-/obj/machinery/vending/medical,
+/obj/structure/rack,
+/obj/item/flashlight,
+/obj/item/flashlight,
+/obj/item/flashlight,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "MN" = (
@@ -2045,6 +2026,7 @@
 /obj/machinery/rnd/production/techfab/department/medical,
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/machinery/firealarm/directional/south,
+/obj/effect/turf_decal/industrial/outline/red,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "QP" = (
@@ -2177,7 +2159,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "Sx" = (
 /obj/structure/cable{
@@ -2206,7 +2188,19 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/storage)
 "Sy" = (
-/obj/structure/frame/machine,
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/closet/secure_closet{
+	icon_state = "med";
+	name = "medicine locker"
+	},
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/box/medipens,
+/obj/item/storage/box/syringes,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "SH" = (
@@ -2348,7 +2342,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "Uc" = (
 /turf/closed/wall/mineral/titanium,
@@ -2401,7 +2395,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "UX" = (
 /obj/structure/chair{
@@ -2416,7 +2410,7 @@
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile/shuttle,
 /obj/machinery/door/poddoor/preopen{
-	id = "traumachem";
+	id = "traumastore";
 	name = "Window Blast Door"
 	},
 /turf/open/floor/plating,
@@ -2449,9 +2443,9 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/medical)
 "Vu" = (
-/obj/structure/closet/crate/freezer/surplus_limbs/organs,
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "VM" = (
@@ -2585,7 +2579,7 @@
 /obj/item/radio/intercom/directional/south,
 /obj/item/paper_bin,
 /obj/item/pen,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "XW" = (
 /obj/structure/bed,
@@ -2641,7 +2635,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel/grimy,
+/turf/open/floor/wood/ebony,
 /area/ship/crew)
 "Yn" = (
 /obj/structure/curtain/cloth{
@@ -3195,7 +3189,7 @@ XS
 Ev
 rJ
 eM
-Sy
+DX
 Vg
 Qp
 HP
