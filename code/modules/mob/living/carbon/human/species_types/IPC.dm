@@ -49,6 +49,7 @@
 	/// The last screen used when the IPC died.
 	var/saved_screen
 	var/datum/action/innate/change_screen/change_screen
+	var/has_screen = TRUE //do we have a screen. Used to determine if we mess with the screen or not
 
 /datum/species/ipc/random_name(unique)
 	var/ipc_name = "[pick(GLOB.posibrain_names)]-[rand(100, 999)]"
@@ -83,6 +84,8 @@
 	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
+	if(!has_screen)
+		return
 	saved_screen = C.dna.features["ipc_screen"]
 	C.dna.features["ipc_screen"] = "BSOD"
 	C.update_body()
@@ -90,6 +93,8 @@
 
 /datum/species/ipc/proc/post_death(mob/living/carbon/C)
 	if(C.stat < DEAD)
+		return
+	if(!has_screen)
 		return
 	C.dna.features["ipc_screen"] = null // Turns off their monitor on death.
 	C.update_body()
@@ -231,9 +236,21 @@
 
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
 
+	if(!chassis_of_choice.has_screen)
+		has_screen = FALSE
+		change_screen.Remove()
+		qdel(change_screen)
+		C.dna.features["ipc_screen"] = null
+		C.update_body()
+
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
 		if(BP.limb_id=="synth")
 			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
+			if(chassis_of_choice.icon)
+				BP.static_icon = chassis_of_choice.icon
+				BP.icon = chassis_of_choice.icon
+			if(chassis_of_choice.is_digi)
+				BP.bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE //i hate this so much
 			if(BP.uses_mutcolor)
 				BP.should_draw_greyscale = TRUE
 				BP.species_color = C.dna?.features["mcolor"]

@@ -232,6 +232,10 @@
 	name = "Right Angle"
 	icon_state = "rangle"
 
+/datum/sprite_accessory/ipc_antennas/sprinter
+	name = "Sprinter Tail"
+	icon_state = "sprinter"
+
 // Start chassis - the worst thing ever please rework this
 
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
@@ -239,6 +243,7 @@
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
 	var/has_screen = TRUE //do we have a screen to toggle
+	var/is_digi = FALSE //does this chasis use digigrade
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics (Custom)"
@@ -286,22 +291,18 @@
 	limbs_id = "zhpipc"
 
 /datum/sprite_accessory/ipc_chassis/pgfmechanicsplantigrade
-	name = "PGF MECHANICS-plantigrade"
+	name = "PGF MECHANICS TYPE-P"
 	limbs_id = "pgfipc-p"
 	has_screen = FALSE
+	color_src = MUTCOLORS
 
 /datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
-	name = "PGF MECHANICS-digigrade"
+	name = "PGF MECHANICS TYPE-D"
 	limbs_id = "pgfipc-d"
 	has_screen = FALSE
+	color_src = MUTCOLORS
 
-/datum/sprite_accessory/ipc_chassis/inteqphase
-	name = "Inteq Mothership 'Phase'"
-	limbs_id = "inteqphase"
+/datum/sprite_accessory/ipc_chassis/inteqsprinter
+	name = "Inteq Mothership 'Sprinter'"
+	limbs_id = "inteqsprinter"
 	has_screen = FALSE
-
-/datum/sprite_accessory/ipc_chassis/inteqphasetailless
-	name = "Inteq Mothership 'Phase' Tailless"
-	limbs_id = "inteqphasetailless"
-	has_screen = FALSE
-
