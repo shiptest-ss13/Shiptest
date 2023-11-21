@@ -239,21 +239,28 @@
 	if(!chassis_of_choice.has_screen)
 		has_screen = FALSE
 		change_screen.Remove()
-		qdel(change_screen)
 		C.dna.features["ipc_screen"] = null
 		C.update_body()
 
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
 		if(BP.limb_id=="synth")
 			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
+
 			if(chassis_of_choice.icon)
 				BP.static_icon = chassis_of_choice.icon
 				BP.icon = chassis_of_choice.icon
+
+			if(chassis_of_choice.has_overlay)
+				BP.overlay_icon_state = TRUE
+
 			if(chassis_of_choice.is_digi)
 				BP.bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE //i hate this so much
+				digitigrade_customization = DIGITIGRADE_FORCED
+
 			if(BP.uses_mutcolor)
 				BP.should_draw_greyscale = TRUE
 				BP.species_color = C.dna?.features["mcolor"]
+				BP.species_secondary_color = C.dna?.features["mcolor2"]
 
 			BP.limb_id = chassis_of_choice.limbs_id
 			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"

@@ -1910,6 +1910,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ipc_antenna)
 						features["ipc_antenna"] = new_ipc_antenna
 
+				if("ipc_tail")
+					var/new_ipc_tail
+
+					new_ipc_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.ipc_tail_list
+
+					if(new_ipc_tail)
+						features["ipc_tail"] = new_ipc_tail
+
 				if("ipc_chassis")
 					var/new_ipc_chassis
 

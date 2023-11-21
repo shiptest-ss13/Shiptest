@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///This is used for children, it will determine their default limb ID for use of examine. See examine.dm.
 	var/examine_limb_id
 	///Never, Optional, or Forced digi legs?
-	var/digitigrade_customization = DIGITIGRADE_NEVER
+	var/digitigrade_customization = DIGITIGRADE_FORCED
 
 	///The gradient style used for the mob's hair.
 	var/grad_style
@@ -970,6 +970,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.ipc_screens_list[H.dna.features["ipc_screen"]]
 				if("ipc_antenna")
 					S = GLOB.ipc_antennas_list[H.dna.features["ipc_antenna"]]
+				if("ipc_tail")
+					S = GLOB.ipc_tail_list[H.dna.features["ipc_tail"]]
 				if("ipc_chassis")
 					S = GLOB.ipc_chassis_list[H.dna.features["ipc_chassis"]]
 				if("ipc_brain")

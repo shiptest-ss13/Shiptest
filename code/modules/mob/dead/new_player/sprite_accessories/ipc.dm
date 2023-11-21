@@ -236,6 +236,28 @@
 	name = "Sprinter Tail"
 	icon_state = "sprinter"
 
+/datum/sprite_accessory/ipc_antennas/simple
+	name = "Synth Simple"
+	icon_state = "simple_synth"
+
+/datum/sprite_accessory/ipc_antennas/short
+	name = "Synth Short"
+	icon_state = "short_synth"
+
+/datum/sprite_accessory/ipc_antennas/curled
+	name = "Synth Curled"
+	icon_state = "curled_synth"
+
+/datum/sprite_accessory/ipc_antennas/ram //remade
+	name = "Synth Ram"
+	icon_state = "ram_synth"
+
+/datum/sprite_accessory/ipc_tails
+	icon = 'icons/mob/ipc_accessories.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/ipc_tails
+	name = "placeholder"
 // Start chassis - the worst thing ever please rework this
 
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
@@ -243,6 +265,7 @@
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
 	var/has_screen = TRUE //do we have a screen to toggle
+	var/has_overlay = FALSE //does this chasis have a overlay icon?
 	var/is_digi = FALSE //does this chasis use digigrade
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
@@ -295,12 +318,14 @@
 	limbs_id = "pgfipc-p"
 	has_screen = FALSE
 	color_src = MUTCOLORS
+	has_overlay = TRUE
 
 /datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
 	name = "PGF MECHANICS TYPE-D"
 	limbs_id = "pgfipc-d"
 	has_screen = FALSE
 	color_src = MUTCOLORS
+	has_overlay = TRUE
 
 /datum/sprite_accessory/ipc_chassis/inteqsprinter
 	name = "Inteq Mothership 'Sprinter'"
