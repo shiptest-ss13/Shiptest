@@ -237,9 +237,8 @@
 	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
 
 	if(chassis_of_choice.use_eyes)
-		var/obj/item/organ/eyes/robotic/new_eyes = new()
-		new_eyes.Insert(C, drop_if_replaced = FALSE)
 		LAZYREMOVE(species_traits, NOEYESPRITES)
+		LAZYADD(species_traits, EYECOLOR)
 		C.update_body()
 
 	if(!chassis_of_choice.has_screen)

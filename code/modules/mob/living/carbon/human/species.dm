@@ -40,7 +40,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///This is used for children, it will determine their default limb ID for use of examine. See examine.dm.
 	var/examine_limb_id
 	///Never, Optional, or Forced digi legs?
-	var/digitigrade_customization = DIGITIGRADE_FORCED
+	var/digitigrade_customization = DIGITIGRADE_NEVER
 
 	///The gradient style used for the mob's hair.
 	var/grad_style

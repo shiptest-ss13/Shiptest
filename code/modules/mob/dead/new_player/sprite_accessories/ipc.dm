@@ -272,7 +272,7 @@
 
 /datum/sprite_accessory/ipc_tail/plug
 	name = "Tail Plug"
-	icon_state = "tail_plug"
+	icon_state = "plug"
 	secondary_color = TRUE
 
 // Start chassis - the worst thing ever please rework this
