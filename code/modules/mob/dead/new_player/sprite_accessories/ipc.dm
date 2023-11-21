@@ -271,7 +271,7 @@
 	icon_state = "large"
 
 /datum/sprite_accessory/ipc_tail/plug
-	name = "Tail Plug"
+	name = "Power Plug"
 	icon_state = "plug"
 	secondary_color = TRUE
 
