@@ -252,18 +252,36 @@
 	name = "Synth Ram"
 	icon_state = "ram_synth"
 
-/datum/sprite_accessory/ipc_tails
+// Start tails
+
+/datum/sprite_accessory/ipc_tail
 	icon = 'icons/mob/ipc_accessories.dmi'
 	color_src = MUTCOLORS
 
-/datum/sprite_accessory/ipc_tails
-	name = "placeholder"
+/datum/sprite_accessory/ipc_tail/none
+	name = "None"
+	icon_state = "none"
+
+/datum/sprite_accessory/ipc_tail/lizard
+	name = "Synthetic Sarathi"
+	icon_state = "synth"
+
+/datum/sprite_accessory/ipc_tail/lizard_big
+	name = "Synthetic Sarathi Large"
+	icon_state = "large"
+
+/datum/sprite_accessory/ipc_tail/plug
+	name = "Tail Plug"
+	icon_state = "tail_plug"
+	secondary_color = TRUE
+
 // Start chassis - the worst thing ever please rework this
 
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
 	icon = null
 	icon_state = "who cares fuck you" // In order to pull the chassis correctly, we need AN icon_state(see line 36-39). It doesn't have to be useful, because it isn't used.
 	color_src = 0
+	var/use_eyes = FALSE //do we use normal robotic eyes? used when we dont want a screen but still want visible eyes
 	var/has_screen = TRUE //do we have a screen to toggle
 	var/has_overlay = FALSE //does this chasis have a overlay icon?
 	var/is_digi = FALSE //does this chasis use digigrade
@@ -319,6 +337,7 @@
 	has_screen = FALSE
 	color_src = MUTCOLORS
 	has_overlay = TRUE
+	use_eyes = TRUE
 
 /datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
 	name = "PGF MECHANICS TYPE-D"
@@ -326,6 +345,7 @@
 	has_screen = FALSE
 	color_src = MUTCOLORS
 	has_overlay = TRUE
+	use_eyes = TRUE
 
 /datum/sprite_accessory/ipc_chassis/inteqsprinter
 	name = "Inteq Mothership 'Sprinter'"
