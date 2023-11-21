@@ -180,10 +180,6 @@
 	item_state = "firstaid-toxin"
 	damagetype_healed = TOX
 
-/obj/item/storage/firstaid/radiation/Initialize(mapload)
-	. = ..()
-	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
-
 /obj/item/storage/firstaid/radiation/PopulateContents()
 	if(empty)
 		return
