@@ -135,10 +135,6 @@
 		playsound(src, load_sound, sound_volume, load_sound_vary)
 		cell.forceMove(drop_location())
 		var/obj/item/stock_parts/cell/gun/old_cell = cell
-		/*if(insert_cell(user, tac_load))
-			to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
-		else
-			to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")*/
 		cell = null
 		user.put_in_hands(old_cell)
 		old_cell.update_appearance()
@@ -232,8 +228,6 @@
 	. = ..()
 	if(!automatic_charge_overlays || QDELETED(src))
 		return
-	if(cell)
-		. += "[icon_state]_cell"
 	// Every time I see code this "flexible", a kitten fucking dies //it got worse
 	//todo: refactor this a bit to allow showing of charge on a gun's cell
 	var/overlay_icon_state = "[icon_state]_charge"
