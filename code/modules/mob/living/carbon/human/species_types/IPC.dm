@@ -115,6 +115,11 @@
 	if(!ishuman(owner))
 		return
 	var/mob/living/carbon/human/H = owner
+	var/datum/species/ipc/species_datum = H.dna.species
+	if(!species_datum)
+		return
+	if(!species_datum.has_screen)
+		return
 	H.dna.features["ipc_screen"] = screen_choice
 	H.eye_color = sanitize_hexcolor(color_choice)
 	H.update_body()
@@ -220,13 +225,16 @@
 
 
 /datum/species/ipc/spec_revival(mob/living/carbon/human/H)
-	H.dna.features["ipc_screen"] = "BSOD"
-	H.update_body()
+	if(has_screen)
+		H.dna.features["ipc_screen"] = "BSOD"
+		H.update_body()
 	H.say("Reactivating [pick("core systems", "central subroutines", "key functions")]...")
 	addtimer(CALLBACK(src, PROC_REF(post_revival), H), 6 SECONDS)
 
 /datum/species/ipc/proc/post_revival(mob/living/carbon/human/H)
 	if(H.stat == DEAD)
+		return
+	if(!has_screen)
 		return
 	H.dna.features["ipc_screen"] = saved_screen
 	H.update_body()
@@ -238,7 +246,7 @@
 
 	if(chassis_of_choice.use_eyes)
 		LAZYREMOVE(species_traits, NOEYESPRITES)
-		LAZYADD(species_traits, EYECOLOR)
+		LAZYADD(species_traits, NOEYESPRITES)
 		C.update_body()
 
 	if(!chassis_of_choice.has_screen)
