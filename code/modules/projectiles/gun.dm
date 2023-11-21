@@ -547,16 +547,12 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	attachment_options = list()
-	to_chat(user, "<span class='notice'>1[src].</span>")
 	get_gun_attachments()
-	to_chat(user, "<span class='notice'>2 [src].</span>")
 	if(LAZYLEN(attachment_options) == 1)
 		remove_gun_attachments(user, I, attachment_options[1])
 	else if (LAZYLEN(attachment_options))
-		to_chat(user, "<span class='notice'>3 [src].</span>")
 		var/picked_option = show_radial_menu(user, src, attachment_options, radius = 38, require_near = TRUE)
 		remove_gun_attachments(user, I, picked_option)
-		to_chat(user, "<span class='notice'>4 [src].</span>")
 
 /obj/item/gun/proc/get_gun_attachments()
 	if(can_flashlight && gun_light)
