@@ -246,7 +246,7 @@
 
 	if(chassis_of_choice.use_eyes)
 		LAZYREMOVE(species_traits, NOEYESPRITES)
-		LAZYADD(species_traits, NOEYESPRITES)
+		LAZYADD(species_traits, EYECOLOR)
 		C.update_body()
 
 	if(!chassis_of_choice.has_screen)
