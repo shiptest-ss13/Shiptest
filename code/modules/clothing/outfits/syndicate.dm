@@ -501,6 +501,7 @@
 	uniform = /obj/item/clothing/under/syndicate/medic
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/jackboots
+	suit = NULL
 
 /datum/outfit/job/syndicate/doctor/gorlex
 	name = "Medical Doctor (Gorlex)"
