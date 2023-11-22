@@ -90,7 +90,7 @@
 		if(WEATHER_ALERT_CLEAR)
 			light.set_light_color(LIGHT_COLOR_GREEN)
 		if(WEATHER_ALERT_INCOMING)
-			light.set_light_color(LIGHT_COLOR_DIM_YELLOW)
+			light.set_light_color(LIGHT_COLOR_YELLOW)
 		if(WEATHER_ALERT_IMMINENT_OR_ACTIVE)
 			light.set_light_color(LIGHT_COLOR_INTENSE_RED)
 	light.update_light()
@@ -109,12 +109,14 @@
 	return "Error in meteorological calculation. Please report this deviation to a trained programmer."
 
 /datum/component/weather_announcer/proc/time_till_storm()
-	var/list/mining_z_levels = SSmapping.levels_by_trait(ZTRAIT_MINING)
-	if(!length(mining_z_levels))
-		return // No problems if there are no mining z levels
+	//var/list/mining_z_levels = SSmapping.levels_by_trait(ZTRAIT_MINING)
+	//if(!length(mining_z_levels))
+	//	return // No problems if there are no mining z levels
+	var/turf/
+	var/datum/weather_controller/local_weather_controller = SSmapping.get_map_zone_weather_controller
 
 
-	for(var/datum/weather/check_weather as anything in SSweather.processing)
+	for(var/datum/weather/check_weather as anything in local_weather_controller.current_weathers)
 		if(!check_weather.barometer_predictable || check_weather.stage == WIND_DOWN_STAGE || check_weather.stage == END_STAGE)
 			continue
 		for (var/mining_level in mining_z_levels)
