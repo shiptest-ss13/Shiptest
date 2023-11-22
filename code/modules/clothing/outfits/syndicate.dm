@@ -489,7 +489,6 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
-	suit_store = /obj/item/flashlight/pen
 
 /datum/outfit/job/syndicate/doctor/suns
 	name = "Medical Doctor (SUNS)"
