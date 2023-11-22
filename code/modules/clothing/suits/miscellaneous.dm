@@ -343,6 +343,12 @@
  * Misc
  */
 
+/obj/item/clothing/suit/cybersun_suit
+	name = "cybersun suit"
+	desc = "A plain white suit commonly used by Cybersun's officers."
+	icon_state = "cybersun_suit"
+	item_state = "cybersun_suit"
+
 /obj/item/clothing/suit/straight_jacket
 	name = "straight jacket"
 	desc = "A suit that completely restrains the wearer. Manufactured by Antyphun Corp." //Straight jacket is antifun

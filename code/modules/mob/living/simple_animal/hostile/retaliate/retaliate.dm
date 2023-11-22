@@ -46,12 +46,12 @@
 		Retaliate()
 
 /mob/living/simple_animal/hostile/retaliate/proc/add_enemy(new_enemy)
-	RegisterSignal(new_enemy, COMSIG_PARENT_QDELETING, .proc/remove_enemy, override = TRUE)
+	RegisterSignal(new_enemy, COMSIG_PARENT_QDELETING, PROC_REF(remove_enemy), override = TRUE)
 	enemies |= new_enemy
 
 /mob/living/simple_animal/hostile/retaliate/proc/add_enemies(new_enemies)
 	for(var/new_enemy in new_enemies)
-		RegisterSignal(new_enemy, COMSIG_PARENT_QDELETING, .proc/remove_enemy, override = TRUE)
+		RegisterSignal(new_enemy, COMSIG_PARENT_QDELETING, PROC_REF(remove_enemy), override = TRUE)
 		enemies |= new_enemy
 
 /mob/living/simple_animal/hostile/retaliate/proc/clear_enemies()

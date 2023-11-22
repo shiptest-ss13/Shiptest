@@ -583,15 +583,6 @@
 	build_path = /obj/item/circuitboard/machine/paystand
 	category = list ("Misc. Machinery")
 
-
-/datum/design/board/fat_sucker
-	name = "Machine Design (Lipid Extractor)"
-	desc = "The circuit board for a lipid extractor."
-	id = "fat_sucker"
-	build_path = /obj/item/circuitboard/machine/fat_sucker
-	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/stasis
 	name = "Machine Design (Lifeform Stasis Unit)"
 	desc = "The circuit board for a stasis unit."

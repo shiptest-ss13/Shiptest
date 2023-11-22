@@ -38,6 +38,10 @@
 			cross.icon_state = "holylight"
 			font_color = "blue"
 			prayer_type = "SPIRITUAL PRAYER"
+	else if((usr.faction && ("roumain" in usr.faction)))
+		font_color = "purple"
+		prayer_type = "SRM PRAYER"
+		deity = "Ashen Hunter"
 
 	var/msg_tmp = msg
 	GLOB.requests.pray(usr.client, msg, usr.job == "Chaplain")
