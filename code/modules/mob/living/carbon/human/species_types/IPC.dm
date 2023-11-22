@@ -255,6 +255,10 @@
 		C.dna.features["ipc_screen"] = null
 		C.update_body()
 
+	if(chassis_of_choice.is_digi)
+		digitigrade_customization = DIGITIGRADE_FORCED
+		bodytype = BODYTYPE_DIGITIGRADE
+
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
 		if(BP.limb_id=="synth")
 			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
@@ -267,8 +271,8 @@
 				BP.overlay_icon_state = TRUE
 
 			if(chassis_of_choice.is_digi)
-				BP.bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE //i hate this so much
-				digitigrade_customization = DIGITIGRADE_FORCED
+				if(istype(BP,/obj/item/bodypart/leg))
+					BP.bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE //i hate this so much
 
 			if(BP.uses_mutcolor)
 				BP.should_draw_greyscale = TRUE

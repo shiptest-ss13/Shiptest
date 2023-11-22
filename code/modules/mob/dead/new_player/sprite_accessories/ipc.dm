@@ -346,6 +346,7 @@
 	color_src = MUTCOLORS
 	has_overlay = TRUE
 	use_eyes = TRUE
+	is_digi = TRUE
 
 /datum/sprite_accessory/ipc_chassis/inteqsprinter
 	name = "Inteq Mothership 'Sprinter'"
