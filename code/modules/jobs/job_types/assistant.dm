@@ -78,7 +78,6 @@ Assistant
 
 /datum/outfit/job/assistant/inteq
 	name = "IRMG Recruit (Inteq)"
-
 	uniform = /obj/item/clothing/under/syndicate/inteq
 
 /datum/outfit/job/assistant/intern
@@ -121,60 +120,6 @@ Assistant
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/toggle/lawyer/black
 
-/datum/outfit/job/assistant/syndicate
-	name = "Junior Agent (Assistant)"
-
-	id = /obj/item/card/id/syndicate_command/crew_id
-	uniform = /obj/item/clothing/under/syndicate
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/jackboots
-
-/datum/outfit/job/assistant/syndicate/gorlex
-	name = "Junior Agent (Gorlex Marauders)"
-
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	alt_uniform = /obj/item/clothing/under/syndicate
-
-/datum/outfit/job/assistant/syndicate/gec
-	name = "Deckhand (GEC)"
-
-	id = /obj/item/card/id/syndicate_command/crew_id
-	uniform = /obj/item/clothing/under/syndicate
-	suit = /obj/item/clothing/suit/toggle/hazard
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/safety_helmet
-
-/datum/outfit/job/assistant/syndicate/sbc
-	name = "Deck Assistant (Twinkleshine)"
-
-	uniform = /obj/item/clothing/under/syndicate
-	alt_uniform = /obj/item/clothing/under/syndicate/intern
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	ears = /obj/item/radio/headset/syndicate/alt
-	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	back = /obj/item/storage/backpack
-	implants = list(/obj/item/implant/weapons_auth)
-	id = /obj/item/card/id/syndicate_command/crew_id
-
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
-	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
-
-/datum/outfit/job/assistant/syndicate/sbc/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("PlayerSyndicate")
-
-	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(1, 4)) // squidquest real
-	I.assignment = "Deck Assistant"
-	I.access |= list(ACCESS_SYNDICATE)
-	I.update_label()
-
 /datum/outfit/job/assistant/independent/crewmatefancy
 	name = "Crewmate (Independent)"
 
@@ -208,10 +153,6 @@ Assistant
 	gloves = /obj/item/clothing/gloves/color/white
 	accessory = /obj/item/clothing/neck/scarf/darkblue
 
-/datum/outfit/job/assistant/waiter/syndicate
-	name = "Assistant (Syndicate Waiter)"
-	uniform = /obj/item/clothing/under/suit/waiter/syndicate
-
 /datum/outfit/job/assistant/roumain
 	name = "Shadow (Saint-Roumain Militia)"
 
@@ -222,13 +163,8 @@ Assistant
 
 	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
 
-/datum/outfit/job/assistant/syndicate/cyberagent
-	name = "Junior Agent (Cybersun)"
-
-	uniform = /obj/item/clothing/under/syndicate
-	shoes = /obj/item/clothing/shoes/jackboots
-	r_pocket = /obj/item/radio
-	head = /obj/item/clothing/head/soft/black
+/datum/outfit/job/assistant/roumain/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("roumain")
 
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"

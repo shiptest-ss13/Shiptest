@@ -4,4 +4,4 @@
 #define INVOKE_ASYNC world.ImmediateInvokeAsync
 /// like CALLBACK but specifically for verb callbacks
 #define VERB_CALLBACK new /datum/callback/verb_callback
-#define CALLBACK_NEW(typepath, args) CALLBACK(GLOBAL_PROC, /proc/___callbacknew, typepath, args)
+#define CALLBACK_NEW(typepath, args) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___callbacknew), typepath, args)

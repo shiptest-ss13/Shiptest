@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\jungleruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/jungle
 	prefix = "_maps/RandomRuins/JungleRuins/"
@@ -65,12 +65,6 @@
 	id = "hangar"
 	description = "An abandoned hangar containing exosuits."
 	suffix = "jungle_hangar.dmm"
-
-/datum/map_template/ruin/jungle/spider
-	name = "Jungle Spiders"
-	id = "spiderjungle"
-	description = "A genetic experiment gone wrong."
-	suffix = "jungle_spider.dmm"
 
 /datum/map_template/ruin/jungle/pirate
 	name = "Jungle Pirates"

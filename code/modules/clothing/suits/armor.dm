@@ -56,6 +56,11 @@
 	name = "large tactical armor vest"
 	icon_state = "marine_heavy"
 
+/obj/item/clothing/suit/armor/vest/marine/trauma
+	name = "cybersun trauma team armor vest"
+	icon_state = "traumavest"
+	desc = "A set of stamped plasteel armor plates decorated with a medical cross and colors associated with the medical division of Cybersun."
+
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
 	desc = "Older generation Type 1 armored vest. Due to degradation over time the vest is far less maneuverable to move in."
@@ -143,11 +148,22 @@
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking syndicate officer."
 	icon_state = "carapace_syndie"
 
+/obj/item/clothing/suit/armor/vest/capcarapace/cybersun
+	name = "cybersun captain's haori"
+	desc = "An extraordinarily fashionable haori, utilized by cybersun captains. Weaved with armored fabric to protect the user from gunshots."
+	icon_state = "cybersunhaori"
+
 /obj/item/clothing/suit/armor/vest/capcarapace/alt
 	name = "captain's parade jacket"
 	desc = "For when an armoured vest isn't fashionable enough."
 	icon_state = "carapace_ntformal"
 	item_state = "capspacesuit"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/captunic
+	name = "captain's parade coat"
+	desc = "Worn by a Captain to show their class."
+	icon_state = "carapace_formal"
+	item_state = "bio_suit"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
 	name = "colonial minutemen general coat"
