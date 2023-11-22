@@ -9,6 +9,7 @@
 	density = TRUE
 	anchored = FALSE
 	var/obj/item/work_piece = FALSE
+	var/obj/item/blueprint/blueprint = FALSE
 	var/steps_left = 0
 	//Whether there is an active job on the table
 	var/in_progress = FALSE
@@ -31,28 +32,59 @@
 	if(in_progress)
 		to_chat(user, "The lathe is currently in use.")
 		return
+	remove_part(user)
+
+/obj/structure/lathe/attack_hand(mob/living/carbon/human/user)
+	if(!mode)
+		var/list/choose_options = list()
+		if(istype(work_piece, /obj/item))
+			choose_options += list("Deconstruct" = image(icon = 'icons/obj/tools.dmi', icon_state = "welder"))
+			choose_options += list("Research" = image(icon = 'icons/obj/tools.dmi', icon_state = "analyzer"))
+		if(blueprint)
+			choose_options += list("Fabricate" = image(icon = 'icons/obj/tools.dmi', icon_state = "wrench"))
+		mode = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+	if(mode && !working)
+		if(mode == "Deconstruct")
+			deconstruct_part(user)
+		if(mode == "Research")
+			research_part(user)
+		if(mode == "Fabricate")
+			fabricate_part(user)
+
+/obj/structure/lathe/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/blueprint))
+		if(blueprint)
+			to_chat(user, "You cant add another blueprint to the lathe.")
+			return
+		I.forceMove(src)
+		blueprint = I
+		return
+	if(work_piece)
+		to_chat(user, "You cant add another item to the lathe.")
+		return
+	if(istype(I, /obj/item))
+		I.forceMove(src)
+		work_piece = I
+		work_piece.vis_flags |= VIS_INHERIT_ID
+		vis_contents += work_piece
+
+/obj/structure/lathe/proc/remove_part(mob/user)
 	if(work_piece)
 		vis_contents -= work_piece
 		work_piece.forceMove(drop_location())
 		if(Adjacent(user) && !issilicon(user))
 			user.put_in_hands(work_piece)
 		work_piece = FALSE
+		in_progress = FALSE
+		mode = FALSE
 
-/obj/structure/lathe/attack_hand(mob/living/carbon/human/user)
-	if(istype(work_piece, /obj/item) && !mode)
-		var/list/choose_options = list()
-		choose_options += list("Deconstruct" = image(icon = 'icons/obj/tools.dmi', icon_state = "welder"))
-		mode = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
-	if(mode && !working)
-		if(mode == "Deconstruct")
-			deconstruct_part(user)
-
-/obj/structure/lathe/attackby(obj/item/I, mob/user)
-	if(!work_piece && istype(I, /obj/item))
-		I.forceMove(src)
-		work_piece = I
-		work_piece.vis_flags |= VIS_INHERIT_ID
-		vis_contents += work_piece
+/obj/structure/lathe/proc/destroy_part(mob/user)
+	if(work_piece)
+		vis_contents -= work_piece
+		qdel(work_piece)
+		work_piece = FALSE
+		in_progress = FALSE
+		mode = FALSE
 
 /////////////////
 // DECONSTRUCT //
@@ -66,6 +98,7 @@
 	if(do_after(user, 20, work_piece))
 		if(steps_left > 1)
 			steps_left--
+			playsound(src,'sound/items/welder2.ogg',50,TRUE)
 			to_chat(user, "You have [steps_left] steps left.")
 			user.adjustStaminaLoss(DECONSTRUCT_STAMINA_USE)
 			deconstruct_part(user)
@@ -75,22 +108,58 @@
 
 /obj/structure/lathe/proc/scrap_item(mob/user)
 	to_chat(user, "The [work_piece.name] is broken down into parts.")
+	playsound(src,'sound/items/welder.ogg',50,TRUE)
 	if(istype (work_piece, /obj/item/gun))
-		deconstruct_gun()
+		var/obj/item/new_part = new /obj/item/gun_part
+		new_part.forceMove(drop_location())
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/material_amount = materials.get_item_material_amount(work_piece)
 	if(material_amount)
 		materials.insert_item(work_piece)
 		materials.retrieve_all()
-	vis_contents -= work_piece
-	qdel(work_piece)
-	work_piece = FALSE
-	in_progress = FALSE
-	mode = FALSE
+	destroy_part(user)
 
-/obj/structure/lathe/proc/deconstruct_gun()
-	var/obj/item/new_part = new /obj/item/gun_part
-	new_part.forceMove(drop_location())
+//////////////
+// RESEARCH //
+//////////////
+
+/obj/structure/lathe/proc/research_part(mob/living/carbon/human/user)
+	if(!in_progress)
+		in_progress = TRUE
+		steps_left = 3
+	working = TRUE
+	if(do_after(user, 20, work_piece))
+		if(steps_left > 1)
+			steps_left--
+			playsound(src,'sound/items/welder2.ogg',50,TRUE)
+			to_chat(user, "You have [steps_left] steps left.")
+			user.adjustStaminaLoss(DECONSTRUCT_STAMINA_USE)
+			research_part(user)
+		else
+			var/obj/item/blueprint/blueprint = new /obj/item/blueprint
+			blueprint.desc += "\nA blueprint on [work_piece.name]."
+			blueprint.design = work_piece
+			blueprint.forceMove(drop_location())
+			if(Adjacent(user) && !issilicon(user))
+				user.put_in_hands(blueprint)
+			remove_part(user)
+	working = FALSE
+
+///////////////
+// FABRICATE //
+///////////////
+
+/obj/structure/lathe/proc/fabricate_part(mob/living/carbon/human/user)
+	if(blueprint)
+		var/obj/item/new_part = new blueprint.design(loc)
+		new_part.forceMove(drop_location())
+		if(Adjacent(user) && !issilicon(user))
+			user.put_in_hands(new_part)
+
+
+///////////
+// ITEMS //
+///////////
 
 /obj/item/gun_part
 	name = "Gun Part"
@@ -99,3 +168,14 @@
 	icon_state = "work_piece"
 
 /obj/item/mod_gun/frame
+
+/obj/item/blueprint
+	name = "Blueprint"
+	desc = "This could be used to make a gun."
+	icon = 'icons/obj/guncrafting.dmi'
+	icon_state = "blueprint"
+	var/design = FALSE
+
+/obj/item/blueprint/gun
+	name = "Gun Blueprint"
+	design = /obj/item/gun/ballistic/shotgun/winchester/mk1
