@@ -487,7 +487,6 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/pda/medical
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	suit =  /obj/item/clothing/suit/toggle/labcoat
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen
@@ -501,7 +500,6 @@
 	uniform = /obj/item/clothing/under/syndicate/medic
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit = NULL
 
 /datum/outfit/job/syndicate/doctor/gorlex
 	name = "Medical Doctor (Gorlex)"
