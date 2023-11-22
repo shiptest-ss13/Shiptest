@@ -317,6 +317,22 @@
 	},
 /turf/open/floor/carpet/cyan,
 /area/ship/crew)
+"ih" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "traumaenginel"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "in" = (
 /obj/structure/bed{
 	dir = 8
@@ -1302,6 +1318,10 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "zL" = (
@@ -1944,6 +1964,12 @@
 	dir = 8;
 	id = "traumaenginel"
 	},
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "JA" = (
@@ -2459,6 +2485,9 @@
 /obj/machinery/door/poddoor{
 	dir = 8;
 	id = "traumaenginer"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -3030,7 +3059,7 @@ UG
 "}
 (4,1,1) = {"
 fp
-Jw
+ih
 Kk
 ZC
 UG
