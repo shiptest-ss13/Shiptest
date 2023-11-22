@@ -18,23 +18,11 @@
 	suffix = "whitesands_surface_starfurycrash.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/whitesands/golem_hijack
-	name = "Crashed Golem Ship"
-	id = "golemcrash"
-	description = "The remains of a mysterious ship, inhabited by strange lizardpeople and golems of some sort. Who knows what happened here."
-	suffix = "whitesands_surface_golemhijack.dmm"
-
 /datum/map_template/ruin/whitesands/medipen_plant
 	name = "Abandoned Medipen Factory"
 	id = "medipenplant"
 	description = "A once prosperous autoinjector manufacturing plant."
 	suffix = "whitesands_surface_medipen_plant.dmm"
-
-/datum/map_template/ruin/whitesands/youreinsane
-	name = "Lost Engine"
-	id = "ws-youreinsane"
-	description = "Nanotrasen would like to remind all employees that the Pi\[REDACTED\]er is not real."
-	suffix = "whitesands_surface_youreinsane.dmm"
 
 /datum/map_template/ruin/whitesands/assaultpodcrash
 	name = "Crashed Syndicate Assault Drop Pod"
@@ -71,6 +59,7 @@
 	name = "Hermit Saloon"
 	id = "ws-saloon"
 	description = "A western style saloon, most popular spot for the hermits to gather planetside"
+	suffix = "whitesands_surface_camp_saloon.dmm"
 
 /datum/map_template/ruin/whitesands/survivors/combination //combined extra large ruin of several other whitesands survivor ruins (excludes the drugstore)
 	name = "Wasteland Survivor Village"
