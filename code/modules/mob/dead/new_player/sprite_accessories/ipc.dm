@@ -275,6 +275,18 @@
 	icon_state = "plug"
 	secondary_color = TRUE
 
+/datum/sprite_accessory/ipc_tail/cat
+	name = "Pawsitrons Cat"
+	icon_state = "cat"
+
+/datum/sprite_accessory/ipc_tail/fox
+	name = "Pawsitrons Fox"
+	icon_state = "fox"
+
+/datum/sprite_accessory/ipc_tail/fox_alt
+	name = "Pawsitrons Fox 2"
+	icon_state = "fox2"
+
 // Start chassis - the worst thing ever please rework this
 
 /datum/sprite_accessory/ipc_chassis // Used for changing limb icons, doesn't need to hold the actual icon. That's handled in ipc.dm
