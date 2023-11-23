@@ -110,8 +110,10 @@
 
 /datum/component/weather_announcer/proc/time_till_storm()
 	var/datum/weather_controller/local_weather_controller = SSmapping.get_map_zone_weather_controller(parent)
-
-	for(var/datum/weather/check_weather as anything in local_weather_controller.current_weathers)
+	if(!local_weather_controller.next_weather)
+		return null
+	for(var/type_index in local_weather_controller.current_weathers)
+		var/datum/weather/check_weather = local_weather_controller.current_weathers[type_index]
 		if(!check_weather.barometer_predictable || check_weather.stage == WIND_DOWN_STAGE || check_weather.stage == END_STAGE)
 			continue
 		warning_level = WEATHER_ALERT_IMMINENT_OR_ACTIVE
@@ -140,7 +142,8 @@
 	warning_level = WEATHER_ALERT_IMMINENT_OR_ACTIVE
 
 	var/datum/weather_controller/local_weather_controller = SSmapping.get_map_zone_weather_controller(parent)
-	for(var/datum/weather/check_weather as anything in local_weather_controller.current_weathers)
+	for(var/type_index in local_weather_controller.current_weathers)
+		var/datum/weather/check_weather = local_weather_controller.current_weathers[type_index]
 		if(!check_weather.barometer_predictable || check_weather.stage == WIND_DOWN_STAGE || check_weather.stage == END_STAGE)
 			continue
 		is_weather_dangerous = !check_weather.aesthetic
