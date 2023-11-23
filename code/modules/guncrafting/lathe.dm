@@ -168,13 +168,42 @@
 // ITEMS //
 ///////////
 
-/obj/item/gun_part
+/obj/item/stack/gun_part
 	name = "Gun Part"
 	desc = "This could fabcricate metal parts."
 	icon = 'icons/obj/guncrafting.dmi'
 	icon_state = "work_piece"
+	max_amount = 10
 
-/obj/item/mod_gun/frame
+/obj/item/part/gun
+	name = "gun part"
+	desc = "Spare part of gun."
+
+/obj/item/part/gun/frame
+	name = "gun frame"
+	desc = "a generic gun frame. consider debug"
+	var/result = /obj/item/gun/ballistic
+
+	// Currently installed grip
+	var/obj/item/part/gun/modular/grip/InstalledGrip
+	// Which grips does the frame accept?
+	var/list/gripvars = list(/obj/item/part/gun/modular/grip/wood, /obj/item/part/gun/modular/grip/black)
+	
+	// What are the results (in order relative to gripvars)?
+	//var/list/resultvars = list(/obj/item/gun/ballistic, /obj/item/gun/energy)
+
+	// Currently installed mechanism
+	var/obj/item/part/gun/modular/grip/InstalledMechanism
+	// Which mechanism the frame accepts?
+	var/list/mechanismvar = /obj/item/part/gun/modular/mechanism
+
+	// Currently installed barrel
+	var/obj/item/part/gun/modular/barrel/InstalledBarrel
+	// Which barrels does the frame accept?
+	var/list/barrelvars = list(/obj/item/part/gun/modular/barrel)
+
+	// Bonuses from forging/type or maluses from printing
+	var/cheap = FALSE // Set this to true for cheap variants
 
 /obj/item/blueprint
 	name = "Blueprint"
@@ -191,7 +220,7 @@
 
 /obj/item/blueprint/gun_frame
 	name = "Gun Frame Blueprint"
-	design = /obj/item/mod_gun/frame
+	design = /obj/item/part/gun/frame
 	blueprint = /datum/design/gun_frame
 
 
