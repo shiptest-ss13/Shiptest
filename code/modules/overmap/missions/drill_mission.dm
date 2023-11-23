@@ -8,7 +8,7 @@
 	weight = 8
 
 	var/obj/machinery/drill/mission/sampler
-	var/num_wanted = 8
+	var/num_wanted = 5
 	var/class_wanted = 1
 
 /datum/mission/drill/New(...)
@@ -54,7 +54,7 @@
 	value = 3500
 	weight = 6
 	class_wanted = 2
-	num_wanted = 10
+	num_wanted = 7
 
 /datum/mission/drill/classthree
 	name = "Class 3 core sample mission"
@@ -62,7 +62,7 @@
 	weight = 4
 	duration = 100 MINUTES
 	class_wanted = 3
-	num_wanted = 12
+	num_wanted = 9
 
 /*
 		Core sampling drill

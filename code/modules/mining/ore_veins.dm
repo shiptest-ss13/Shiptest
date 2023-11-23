@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/max_mobs = 6
 	var/spawn_time = 150 //15 seconds
 	var/mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast = 60,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 60,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 20,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		)
@@ -112,6 +112,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	max_mobs = 6
 	spawn_time = 100
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf = 5,
+		)
 
 /obj/structure/vein/classthree
 	mining_charges = 10
@@ -128,6 +135,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	max_mobs = 6 //Best not to go past 6 due to balance and lag reasons
 	spawn_time = 80
+	mob_types = list(
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 60,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 30,
+		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf = 10,
+		)
 
 /obj/structure/vein/ice
 	mob_types = list(
