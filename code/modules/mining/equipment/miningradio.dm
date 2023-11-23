@@ -4,7 +4,7 @@
 	name = "mining weather radio"
 	icon_state = "miningradio"
 	desc = "A weather radio designed for use in inhospitable environments. Gives audible warnings when storms approach. Has access to cargo channel."
-	freqlock = RADIO_FREQENCY_LOCKED
+	freqlock = TRUE
 	luminosity = 1
 	light_power = 1
 	light_range = 1.6
@@ -21,4 +21,4 @@
 		state_warning = "urgentwarning", \
 		state_danger = "direwarning", \
 	)
-	set_frequency(FREQ_SUPPLY)
+	set_frequency(FREQ_COMMON)

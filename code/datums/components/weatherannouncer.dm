@@ -109,26 +109,18 @@
 	return "Error in meteorological calculation. Please report this deviation to a trained programmer."
 
 /datum/component/weather_announcer/proc/time_till_storm()
-	//var/list/mining_z_levels = SSmapping.levels_by_trait(ZTRAIT_MINING)
-	//if(!length(mining_z_levels))
-	//	return // No problems if there are no mining z levels
-	var/turf/
-	var/datum/weather_controller/local_weather_controller = SSmapping.get_map_zone_weather_controller
-
+	var/datum/weather_controller/local_weather_controller = SSmapping.get_map_zone_weather_controller(parent)
 
 	for(var/datum/weather/check_weather as anything in local_weather_controller.current_weathers)
 		if(!check_weather.barometer_predictable || check_weather.stage == WIND_DOWN_STAGE || check_weather.stage == END_STAGE)
 			continue
-		for (var/mining_level in mining_z_levels)
-			if(mining_level in check_weather.impacted_z_levels)
-				warning_level = WEATHER_ALERT_IMMINENT_OR_ACTIVE
-				return 0
+		warning_level = WEATHER_ALERT_IMMINENT_OR_ACTIVE
+		return 0
 
 	var/time_until_next = INFINITY
-	for(var/mining_level in mining_z_levels)
-		var/next_time = timeleft(SSweather.next_hit_by_zlevel["[mining_level ]"]) || INFINITY
-		if (next_time && next_time < time_until_next)
-			time_until_next = next_time
+	var/next_time = local_weather_controller.next_weather - world.time || INFINITY
+	if (next_time && next_time < time_until_next)
+		time_until_next = next_time
 	return time_until_next
 
 /// Polls existing weather for what kind of warnings we should be displaying.
@@ -147,14 +139,12 @@
 	// Weather is here, now we need to figure out if it is dangerous
 	warning_level = WEATHER_ALERT_IMMINENT_OR_ACTIVE
 
-	for(var/datum/weather/check_weather as anything in SSweather.processing)
+	var/datum/weather_controller/local_weather_controller = SSmapping.get_map_zone_weather_controller(parent)
+	for(var/datum/weather/check_weather as anything in local_weather_controller.current_weathers)
 		if(!check_weather.barometer_predictable || check_weather.stage == WIND_DOWN_STAGE || check_weather.stage == END_STAGE)
 			continue
-		var/list/mining_z_levels = SSmapping.levels_by_trait(ZTRAIT_MINING)
-		for(var/mining_level in mining_z_levels)
-			if(mining_level in check_weather.impacted_z_levels)
-				is_weather_dangerous = !check_weather.aesthetic
-				return
+		is_weather_dangerous = !check_weather.aesthetic
+		return
 
 /datum/component/weather_announcer/proc/on_examine(atom/radio, mob/examiner, list/examine_texts)
 	var/time_until_next = time_till_storm()
@@ -166,11 +156,11 @@
 		examine_texts += span_notice("The next storm is inbound in [DisplayTimeText(time_until_next)].")
 
 /datum/component/weather_announcer/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 
 /datum/component/weather_announcer/UnregisterFromParent()
 	.=..()
-	UnregisterSignal(parent, COMSIG_ATOM_EXAMINE)
+	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE)
 
 #undef WEATHER_ALERT_CLEAR
 #undef WEATHER_ALERT_INCOMING
