@@ -37,18 +37,25 @@
 /obj/structure/lathe/attack_hand(mob/living/carbon/human/user)
 	if(!mode)
 		var/list/choose_options = list()
-		if(istype(work_piece, /obj/item))
-			choose_options += list("Deconstruct" = image(icon = 'icons/obj/tools.dmi', icon_state = "welder"))
-			choose_options += list("Research" = image(icon = 'icons/obj/tools.dmi', icon_state = "analyzer"))
-		if(blueprint)
-			choose_options += list("Fabricate" = image(icon = 'icons/obj/tools.dmi', icon_state = "wrench"))
+		choose_options += list("Deconstruct" = image(icon = 'icons/obj/tools.dmi', icon_state = "welder"))
+		choose_options += list("Research" = image(icon = 'icons/obj/tools.dmi', icon_state = "analyzer"))
+		choose_options += list("Fabricate" = image(icon = 'icons/obj/tools.dmi', icon_state = "wrench"))
 		mode = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
 	if(mode && !working)
 		if(mode == "Deconstruct")
+			if(!work_piece)
+				to_chat(user, "There is no item on the lathe.")
+				return
 			deconstruct_part(user)
 		if(mode == "Research")
+			if(!work_piece)
+				to_chat(user, "There is no item on the lathe.")
+				return
 			research_part(user)
 		if(mode == "Fabricate")
+			if(!blueprint)
+				to_chat(user, "There is no blueprint on the lathe.")
+				return
 			fabricate_part(user)
 
 /obj/structure/lathe/attackby(obj/item/I, mob/user)
@@ -175,7 +182,16 @@
 	icon = 'icons/obj/guncrafting.dmi'
 	icon_state = "blueprint"
 	var/design = FALSE
+	var/blueprint = FALSE
 
-/obj/item/blueprint/gun
-	name = "Gun Blueprint"
-	design = /obj/item/gun/ballistic/shotgun/winchester/mk1
+/obj/item/blueprint/winchester
+	name = "Winchester Blueprint"
+	design = /obj/item/gun/ballistic/shotgun/winchester/mk2
+	blueprint = /datum/design/winchestermk2
+
+/obj/item/blueprint/gun_frame
+	name = "Gun Frame Blueprint"
+	design = /obj/item/mod_gun/frame
+	blueprint = /datum/design/gun_frame
+
+
