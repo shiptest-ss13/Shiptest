@@ -171,7 +171,7 @@
 	icon_state = "tv"
 
 /datum/sprite_accessory/ipc_screens/badapple
-	name = "Bad Apple"
+	name = "Old Animation"
 	icon_state = "bad_apple"
 
 // Start antennas
