@@ -1328,10 +1328,6 @@
 /obj/structure/table/reinforced,
 /obj/item/folder/blue,
 /obj/item/pen/fourcolor,
-/obj/item/stamp/captain{
-	pixel_x = -7;
-	pixel_y = -1
-	},
 /obj/machinery/button/door{
 	dir = 8;
 	id = "traumawindows";
@@ -1345,6 +1341,10 @@
 	name = "Bridge Window Shutters";
 	pixel_x = -5;
 	pixel_y = 7
+	},
+/obj/item/stamp/syndicate{
+	pixel_x = -7;
+	pixel_y = -1
 	},
 /turf/open/floor/carpet/cyan,
 /area/ship/bridge)
