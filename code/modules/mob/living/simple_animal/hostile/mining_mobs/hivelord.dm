@@ -832,32 +832,33 @@
 			ears = /obj/item/radio/headset
 			if(prob(25))
 				glasses = /obj/item/clothing/glasses/regular/circle
-			mask = new /obj/item/clothing/mask/infiltrator
+			mask = /obj/item/clothing/mask/infiltrator
+			id = /obj/item/card/id/syndicate
 			back = /obj/item/storage/backpack/satchel/leather
 			backpack_contents = list()
 			for(var/i = 1 to 3)
 				if(prob(50))
 					backpack_contents += pickweight(list(
-						/obj/item/shadowcloak = 1,
-						/obj/item/reagent_containers/syringe/mulligan = 2,
-						/obj/item/clothing/head/chameleon/broken = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/grenade/smokebomb = 3,
-						/obj/item/grenade/flashbang = 3
+
+						/obj/item/pen/sleepy = 3,
+						/obj/item/pen/edagger = 3,
+						/obj/item/reagent_containers/syringe/mulligan = 3,
+						/obj/item/suppressor = 5,
+						/obj/item/clothing/head/chameleon/broken = 5,
+						/obj/item/grenade/smokebomb = 5,
+						/obj/item/grenade/flashbang = 5
 						)
 					)
 			if(prob(25))
 				r_pocket = pickweight(list(
-					/obj/item/chameleon,
+					/obj/item/chameleon = 1,
 					/obj/item/dnainjector/chameleonmut = 1,
-					/obj/item/flashlight/flashdark = 1
 					)
 				)
 			if(prob(25))
 				l_pocket = pickweight(list(
-					/obj/item/chameleon,
+					/obj/item/chameleon = 1,
 					/obj/item/dnainjector/chameleonmut = 1,
-					/obj/item/flashlight/flashdark = 1
 					)
 				)
 
