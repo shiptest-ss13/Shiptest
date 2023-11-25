@@ -647,63 +647,26 @@
 			if(prob(85))
 				back = /obj/item/storage/backpack
 				backpack_contents = list()
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1,
-						/obj/item/storage/firstaid/tactical = 1,
-						/obj/item/gun/ballistic/automatic/pistol/solgov = 1,
-						/obj/item/gps = 1,
-						/obj/item/stock_parts/cell/gun/upgraded = 2,
-						/obj/item/ammo_box/magazine/pistol556mm = 3,
-						/obj/item/desk_flag/solgov = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/detective_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/kitchen/knife/combat = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/ammo_casing/shotgun = 3,
-						/obj/item/binoculars = 3,
-						/obj/item/clipboard = 3
+				for(var/i = 1 to 3)
+					if(prob(75))
+						backpack_contents += pickweight(list(
+							/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1,
+							/obj/item/storage/firstaid/tactical = 1,
+							/obj/item/gun/ballistic/automatic/pistol/solgov = 1,
+							/obj/item/gps = 1,
+							/obj/item/stock_parts/cell/gun/upgraded = 2,
+							/obj/item/ammo_box/magazine/pistol556mm = 3,
+							/obj/item/desk_flag/solgov = 3,
+							/obj/item/stack/marker_beacon/ten = 3,
+							/obj/item/detective_scanner = 2,
+							/obj/item/extinguisher/mini = 3,
+							/obj/item/kitchen/knife/combat = 3,
+							/obj/item/flashlight/seclite=3,
+							/obj/item/ammo_casing/shotgun = 3,
+							/obj/item/binoculars = 3,
+							/obj/item/clipboard = 3
+							)
 						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1,
-						/obj/item/storage/firstaid/tactical = 1,
-						/obj/item/gun/ballistic/automatic/pistol/solgov = 1,
-						/obj/item/gps = 1,
-						/obj/item/stock_parts/cell/gun/upgraded = 2,
-						/obj/item/ammo_box/magazine/pistol556mm = 3,
-						/obj/item/desk_flag/solgov = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/detective_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/kitchen/knife/combat = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/ammo_casing/shotgun = 3,
-						/obj/item/binoculars = 3,
-						/obj/item/clipboard = 3
-						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1,
-						/obj/item/storage/firstaid/tactical = 1,
-						/obj/item/gun/ballistic/automatic/pistol/solgov = 1,
-						/obj/item/gps = 1,
-						/obj/item/stock_parts/cell/gun/upgraded = 2,
-						/obj/item/ammo_box/magazine/pistol556mm = 3,
-						/obj/item/desk_flag/solgov = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/detective_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/kitchen/knife/combat = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/ammo_casing/shotgun = 3,
-						/obj/item/binoculars = 3,
-						/obj/item/clipboard = 3
-						)
-					)
 			else
 				back = pickweight(list(
 					/obj/item/energyhalberd = 5,
@@ -714,15 +677,6 @@
 				belt = /obj/item/storage/belt/military
 			if(prob(50))
 				r_pocket = pickweight(list(
-					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
-					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
-					/obj/item/grenade/syndieminibomb/concussion = 1,
-					/obj/item/melee/transforming/energy/ctf/solgov = 1
-					)
-				)
-			if(prob(50))
-				l_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
 					/obj/item/kitchen/knife/letter_opener = 3,
 					/obj/item/radio/off = 3,
@@ -774,60 +728,25 @@
 			if(prob(70))
 				back = /obj/item/storage/backpack
 				backpack_contents = list()
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
+				for(var/i = 1 to 3)
+					if(prob(75))
+						backpack_contents += pickweight(list(
+							/obj/item/slime_extract/grey = 1,
+							/obj/item/slime_scanner = 1,
+							/obj/item/resonator/upgraded = 1,
+							/obj/item/gps = 1,
+							/obj/item/fulton_core = 2,
+							/obj/item/extraction_pack = 3,
+							/obj/item/stack/sheet/mineral/plasma/twenty = 3,
+							/obj/item/stack/marker_beacon/ten = 3,
+							/obj/item/mining_scanner = 2,
+							/obj/item/extinguisher/mini = 3,
+							/obj/item/flashlight/seclite=3,
+							/obj/item/research_notes/loot/medium = 3,
+							/obj/item/stack/sheet/metal/fifty = 3,
+							/obj/item/research_notes/loot/big = 1
+							)
 						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
 				if(prob(3))
 					backpack_contents += list(
 					/obj/item/storage/box/rndboards
@@ -900,45 +819,17 @@
 			mask = new /obj/item/clothing/mask/infiltrator
 			back = /obj/item/storage/backpack/satchel/leather
 			backpack_contents = list()
-			if(prob(50))
-				backpack_contents += pickweight(list(
-					/obj/item/shadowcloak = 1,
-					/obj/item/reagent_containers/syringe/mulligan = 2,
-					/obj/item/clothing/head/chameleon/broken = 3,
-					/obj/item/stack/marker_beacon/ten = 3,
-					/obj/item/grenade/smokebomb = 3,
-					/obj/item/grenade/flashbang = 3
+			for(var/i = 1 to 3)
+				if(prob(50))
+					backpack_contents += pickweight(list(
+						/obj/item/shadowcloak = 1,
+						/obj/item/reagent_containers/syringe/mulligan = 2,
+						/obj/item/clothing/head/chameleon/broken = 3,
+						/obj/item/stack/marker_beacon/ten = 3,
+						/obj/item/grenade/smokebomb = 3,
+						/obj/item/grenade/flashbang = 3
+						)
 					)
-				)
-			if(prob(50))
-				backpack_contents += pickweight(list(
-					/obj/item/book/granter/spell/knock = 1,
-					/obj/item/book/granter/spell/blind = 1,
-					/obj/item/shadowcloak = 1,
-					/obj/item/book/granter/spell/smoke = 2,
-					/obj/item/reagent_containers/syringe/mulligan = 2,
-					/obj/item/dice/d20/fate/stealth/one_use = 1,
-					/obj/item/dice/d20 = 3,
-					/obj/item/clothing/head/chameleon/broken = 3,
-					/obj/item/stack/marker_beacon/ten = 3,
-					/obj/item/grenade/smokebomb = 3,
-					/obj/item/grenade/flashbang = 3
-					)
-				)
-			if(prob(50))
-				backpack_contents += pickweight(list(
-					/obj/item/book/granter/spell/knock = 1,
-					/obj/item/book/granter/spell/blind = 1,
-					/obj/item/shadowcloak = 1,
-					/obj/item/book/granter/spell/smoke = 2,
-					/obj/item/reagent_containers/syringe/mulligan = 2,
-					/obj/item/dice/d20/fate/stealth/one_use = 1,
-					/obj/item/clothing/head/chameleon/broken = 3,
-					/obj/item/stack/marker_beacon/ten = 3,
-					/obj/item/grenade/smokebomb = 3,
-					/obj/item/grenade/flashbang = 3
-					)
-				)
 			if(prob(25))
 				r_pocket = pickweight(list(
 					/obj/item/chameleon,
