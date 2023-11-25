@@ -830,7 +830,8 @@
 			head = /obj/item/clothing/head/helmet/infiltrator
 			shoes = /obj/item/clothing/shoes/combat/sneakboots
 			ears = /obj/item/radio/headset
-			glasses = /obj/item/clothing/glasses/regular/circle
+			if(prob(25))
+				glasses = /obj/item/clothing/glasses/regular/circle
 			mask = new /obj/item/clothing/mask/infiltrator
 			back = /obj/item/storage/backpack/satchel/leather
 			backpack_contents = list()
