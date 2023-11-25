@@ -832,7 +832,6 @@
 			if(prob(70))
 				glasses = pickweight(list(
 					/obj/item/clothing/glasses/regular/circle = 1,
-					/obj/item/clothing/glasses/thermal/syndi = 2,
 					/obj/item/clothing/glasses/night = 2,
 					/obj/item/clothing/glasses/sunglasses = 3
 					)
