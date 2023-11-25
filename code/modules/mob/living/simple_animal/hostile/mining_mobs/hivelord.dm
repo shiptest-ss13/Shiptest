@@ -897,7 +897,7 @@
 				mask = /obj/item/clothing/mask/gas/syndicate
 				back = /obj/item/tank/jetpack/oxygen
 			if else(prob(25))
-				suit = /obj/item/clothing/head/helmet/space/hardsuit/syndi
+				suit = /obj/item/clothing/suit/space/hardsuit/syndi
 				mask = /obj/item/clothing/mask/gas/syndicate
 				back = /obj/item/tank/jetpack/oxygen
 			else
