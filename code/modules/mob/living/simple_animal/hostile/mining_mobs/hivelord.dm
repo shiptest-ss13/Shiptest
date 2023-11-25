@@ -830,8 +830,14 @@
 			head = /obj/item/clothing/head/helmet/infiltrator
 			shoes = /obj/item/clothing/shoes/combat/sneakboots
 			ears = /obj/item/radio/headset
-			if(prob(25))
-				glasses = /obj/item/clothing/glasses/regular/circle
+			if(prob(70))
+				glasses = pickweight(list(
+					/obj/item/clothing/glasses/regular/circle = 1,
+					/obj/item/clothing/glasses/sunglasses = 3,
+					/obj/item/clothing/glasses/thermal/syndi = 2,
+					/obj/item/clothing/glasses/night = 2
+					)
+				)
 			mask = /obj/item/clothing/mask/infiltrator
 			id = /obj/item/card/id/syndicate
 			back = /obj/item/storage/backpack/satchel/leather
