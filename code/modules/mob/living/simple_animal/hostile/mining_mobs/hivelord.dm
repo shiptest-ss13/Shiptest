@@ -411,7 +411,7 @@
 	)
 	var/type = pickweight(list(
 		"Miner" = 44,
-		"Waldo" = 3,
+		"Infiltrator" = 3,
 		"Ashwalker" = 7,
 		"Soldier" = 3,
 		"Oldminer" = 8,
@@ -558,63 +558,26 @@
 			if(prob(85))
 				back = /obj/item/storage/backpack/explorer //someone could totally make these backpacks a subtype and just have them be there. It'd cut down this file size a bit.
 				backpack_contents = list()
-				if(prob(70))
-					backpack_contents += pickweight(list(
-						/obj/item/borg/upgrade/modkit/damage = 1,
-						/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-						/obj/item/soap/nanotrasen = 1,
-						/obj/item/wormhole_jaunter = 1,
-						/obj/item/fulton_core = 1,
-						/obj/item/extraction_pack = 2,
-						/obj/item/stack/sheet/animalhide/goliath_hide = 3,
-						/obj/item/hivelordstabilizer = 2,
-						/obj/item/stack/marker_beacon/ten = 2,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/stack/sheet/sinew = 3,
-						/obj/item/stack/sheet/bone = 3
+				for(var/i = 1 to 3)
+					if(prob(70))
+						backpack_contents += pickweight(list(
+							/obj/item/borg/upgrade/modkit/damage = 1,
+							/obj/item/borg/upgrade/modkit/trigger_guard = 1,
+							/obj/item/soap/nanotrasen = 1,
+							/obj/item/wormhole_jaunter = 1,
+							/obj/item/fulton_core = 1,
+							/obj/item/extraction_pack = 2,
+							/obj/item/stack/sheet/animalhide/goliath_hide = 3,
+							/obj/item/hivelordstabilizer = 2,
+							/obj/item/stack/marker_beacon/ten = 2,
+							/obj/item/mining_scanner = 2,
+							/obj/item/extinguisher/mini = 2,
+							/obj/item/kitchen/knife/combat/survival = 3,
+							/obj/item/flashlight/seclite=3,
+							/obj/item/stack/sheet/sinew = 3,
+							/obj/item/stack/sheet/bone = 3
+							)
 						)
-					)
-				if(prob(70))
-					backpack_contents += pickweight(list(
-						/obj/item/borg/upgrade/modkit/damage = 1,
-						/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-						/obj/item/soap/nanotrasen = 1,
-						/obj/item/wormhole_jaunter = 1,
-						/obj/item/fulton_core = 1,
-						/obj/item/extraction_pack = 2,
-						/obj/item/stack/sheet/animalhide/goliath_hide = 3,
-						/obj/item/hivelordstabilizer = 2,
-						/obj/item/stack/marker_beacon/ten = 2,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/stack/sheet/sinew = 3,
-						/obj/item/stack/sheet/bone = 3
-						)
-					)
-				if(prob(70))
-					backpack_contents += pickweight(list(
-						/obj/item/borg/upgrade/modkit/damage = 1,
-						/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-						/obj/item/soap/nanotrasen = 1,
-						/obj/item/wormhole_jaunter = 1,
-						/obj/item/fulton_core = 1,
-						/obj/item/extraction_pack = 2,
-						/obj/item/stack/sheet/animalhide/goliath_hide = 3,
-						/obj/item/hivelordstabilizer = 2,
-						/obj/item/stack/marker_beacon/ten = 2,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/stack/sheet/sinew = 3,
-						/obj/item/stack/sheet/bone = 3
-						)
-					)
 				if(prob(30))
 					backpack_contents += list(
 						/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list(
@@ -926,25 +889,21 @@
 				outfit = /datum/outfit/syndicatestormtroopercorpse
 			else
 				outfit = /datum/outfit/syndicatecommandocorpse
-		if("Waldo")//WE FINALLY FOUND HIM
-			name = "Waldo"
-			uniform = /obj/item/clothing/under/pants/jeans
-			suit = /obj/item/clothing/suit/striped_sweater
-			head = /obj/item/clothing/head/beanie/waldo
-			shoes = /obj/item/clothing/shoes/sneakers/brown
+		if("Infiltrator")//WE FINALLY FOUND HIM
+			uniform = /obj/item/clothing/under/syndicate/bloodred
+			gloves = /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
+			suit = /obj/item/clothing/suit/armor/vest/infiltrator
+			head = /obj/item/clothing/head/helmet/infiltrator
+			shoes = /obj/item/clothing/shoes/combat/sneakboots
 			ears = /obj/item/radio/headset
 			glasses = /obj/item/clothing/glasses/regular/circle
+			mask = new /obj/item/clothing/mask/infiltrator
 			back = /obj/item/storage/backpack/satchel/leather
 			backpack_contents = list()
 			if(prob(50))
 				backpack_contents += pickweight(list(
-					/obj/item/book/granter/spell/knock = 1,
-					/obj/item/book/granter/spell/blind = 1,
 					/obj/item/shadowcloak = 1,
-					/obj/item/book/granter/spell/smoke = 2,
 					/obj/item/reagent_containers/syringe/mulligan = 2,
-					/obj/item/dice/d20 = 3,
-					/obj/item/dice/d20/fate/stealth/one_use = 1,
 					/obj/item/clothing/head/chameleon/broken = 3,
 					/obj/item/stack/marker_beacon/ten = 3,
 					/obj/item/grenade/smokebomb = 3,
