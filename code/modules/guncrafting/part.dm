@@ -16,6 +16,8 @@
 	name = "modular gun part"
 	desc = "You dont think this should exist."
 	generic = FALSE
+	var/list/attached_mods = list()
+	var/list/legal_mods = list()
 
 /obj/item/part/gun/modular/grip/wood
 	name = "wood grip"
