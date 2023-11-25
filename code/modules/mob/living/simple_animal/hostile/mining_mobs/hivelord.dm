@@ -781,14 +781,13 @@
 					if(prob(75))
 						backpack_contents += pickweight(list(
 							/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1,
-							/obj/item/storage/firstaid/tactical = 1,
+							/obj/item/storage/firstaid/advanced = 1,
 							/obj/item/gun/ballistic/automatic/pistol/solgov = 1,
 							/obj/item/gps = 1,
 							/obj/item/stock_parts/cell/gun/upgraded = 2,
 							/obj/item/ammo_box/magazine/pistol556mm = 3,
 							/obj/item/desk_flag/solgov = 3,
 							/obj/item/stack/marker_beacon/ten = 3,
-							/obj/item/detective_scanner = 2,
 							/obj/item/extinguisher/mini = 3,
 							/obj/item/kitchen/knife/combat = 3,
 							/obj/item/flashlight/seclite=3,
@@ -829,18 +828,18 @@
 			suit = /obj/item/clothing/suit/armor/vest/infiltrator
 			head = /obj/item/clothing/head/helmet/infiltrator
 			shoes = /obj/item/clothing/shoes/combat/sneakboots
-			ears = /obj/item/radio/headset
+			ears = /obj/item/radio/headset/syndicate
 			if(prob(70))
 				glasses = pickweight(list(
 					/obj/item/clothing/glasses/regular/circle = 1,
-					/obj/item/clothing/glasses/sunglasses = 3,
 					/obj/item/clothing/glasses/thermal/syndi = 2,
-					/obj/item/clothing/glasses/night = 2
+					/obj/item/clothing/glasses/night = 2,
+					/obj/item/clothing/glasses/sunglasses = 3
 					)
 				)
 			mask = /obj/item/clothing/mask/infiltrator
 			id = /obj/item/card/id/syndicate
-			back = /obj/item/storage/backpack/satchel/leather
+			back = /obj/item/storage/backpack
 			backpack_contents = list()
 			for(var/i = 1 to 3)
 				if(prob(50))
@@ -887,10 +886,27 @@
 
 		if("Operative")
 			id_job = "Operative"
-			if(prob(15))
-				outfit = /datum/outfit/syndicatestormtroopercorpse
+			uniform = /obj/item/clothing/under/syndicate
+			shoes = /obj/item/clothing/shoes/combat
+			ears = /obj/item/radio/headset/syndicate
+			id = /obj/item/card/id/syndicate
+			r_pocket = /obj/item/tank/internals/emergency_oxygen
+			if(prob(25))
+				suit = /obj/item/clothing/suit/space/hardsuit/syndi/scarlet
+				gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+				mask = /obj/item/clothing/mask/gas/syndicate
+				back = /obj/item/tank/jetpack/oxygen
+			if else(prob(25))
+				suit = /obj/item/clothing/head/helmet/space/hardsuit/syndi
+				gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+				mask = /obj/item/clothing/mask/gas/syndicate
+				back = /obj/item/tank/jetpack/oxygen
 			else
-				outfit = /datum/outfit/syndicatecommandocorpse
+				suit = /obj/item/clothing/suit/armor/vest
+				gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+				mask = /obj/item/clothing/mask/gas
+				head = /obj/item/clothing/head/helmet/swat
+				back = /obj/item/storage/backpack
 
 		if("Shadow")
 			mob_species = /datum/species/shadow
