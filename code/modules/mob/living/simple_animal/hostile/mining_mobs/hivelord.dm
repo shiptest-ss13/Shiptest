@@ -411,14 +411,14 @@
 	)
 	var/type = pickweight(list(
 		"Miner" = 44,
-		"Infiltrator" = 3,
-		"Ashwalker" = 7,
-		"Soldier" = 3,
-		"Oldminer" = 8,
-		"Kobold" = 5,
-		"Golem" = 6,
 		"SRM" = 10,
-		pick("Shadow", "YeOlde", "Operative", "Cultist") = 4
+		"Oldminer" = 8,
+		"Ashwalker" = 7,
+		"Golem" = 6,
+		"Kobold" = 5,
+		"Soldier" = 3,
+		"Infiltrator" = 3,
+		pick("YeOlde", "Operative", "Shadow", "Cultist") = 4
 		)
 	)
 	switch(type)
@@ -545,6 +545,33 @@
 					)
 			else
 				back = /obj/item/kinetic_crusher
+
+		if("SRM")
+			uniform = /obj/item/clothing/under/suit/roumain
+			shoes = /obj/item/clothing/shoes/workboots/mining
+			if(prob(50))
+				suit = /obj/item/clothing/suit/armor/roumain/shadow
+				head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
+			else
+				suit = /obj/item/clothing/suit/armor/roumain
+				head = /obj/item/clothing/head/cowboy/sec/roumain
+			if(prob(25))
+				suit_store = /obj/item/gun/ballistic/shotgun/winchester
+			r_pocket = /obj/item/book/manual/trickwines_4_brewers
+			belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
+			back = /obj/item/storage/backpack/cultpack
+			backpack_contents = list()
+			if(prob(75))
+				backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
+			if(prob(75))
+				backpack_contents += list(pick(
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine,) = 2)
+
 		if("Oldminer")
 			suit = /obj/item/clothing/suit/hooded/explorer/old
 			mask = /obj/item/clothing/mask/gas/explorer/old
@@ -606,6 +633,7 @@
 					/obj/item/borg/upgrade/modkit/cooldown = 1
 					)
 				)
+
 		if("Ashwalker")
 			mob_species = /datum/species/lizard/ashwalker
 			uniform = /obj/item/clothing/under/costume/gladiator/ash_walker
@@ -627,92 +655,7 @@
 				r_pocket = /obj/item/restraints/legcuffs/bola/watcher
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
-		if("Soldier")
-			mob_species = /datum/species/human
-			if(prob(90))
-				uniform = /obj/item/clothing/under/solgov
-				suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-				shoes = /obj/item/clothing/shoes/jackboots
-				gloves = /obj/item/clothing/gloves/color/black
-				mask = /obj/item/clothing/mask/gas/sechailer
-				head = /obj/item/clothing/head/solgov/sonnensoldner
-				id = /obj/item/card/id/solgov
-			else
-				uniform = /obj/item/clothing/under/solgov
-				suit = /obj/item/clothing/suit/space/hardsuit/solgov
-				shoes = /obj/item/clothing/shoes/combat
-				gloves = /obj/item/clothing/gloves/combat
-				mask = /obj/item/clothing/mask/gas/sechailer/swat
-				id = /obj/item/card/id/solgov
-			if(prob(85))
-				back = /obj/item/storage/backpack
-				backpack_contents = list()
-				for(var/i = 1 to 3)
-					if(prob(75))
-						backpack_contents += pickweight(list(
-							/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1,
-							/obj/item/storage/firstaid/tactical = 1,
-							/obj/item/gun/ballistic/automatic/pistol/solgov = 1,
-							/obj/item/gps = 1,
-							/obj/item/stock_parts/cell/gun/upgraded = 2,
-							/obj/item/ammo_box/magazine/pistol556mm = 3,
-							/obj/item/desk_flag/solgov = 3,
-							/obj/item/stack/marker_beacon/ten = 3,
-							/obj/item/detective_scanner = 2,
-							/obj/item/extinguisher/mini = 3,
-							/obj/item/kitchen/knife/combat = 3,
-							/obj/item/flashlight/seclite=3,
-							/obj/item/ammo_casing/shotgun = 3,
-							/obj/item/binoculars = 3,
-							/obj/item/clipboard = 3
-							)
-						)
-			else
-				back = pickweight(list(
-					/obj/item/energyhalberd = 5,
-					/obj/item/gun/ballistic/rocketlauncher/unrestricted = 5
-					)
-				)
-			if(prob(25))
-				belt = /obj/item/storage/belt/military
-			if(prob(50))
-				r_pocket = pickweight(list(
-					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
-					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
-					/obj/item/grenade/syndieminibomb/concussion = 1,
-					/obj/item/melee/transforming/energy/ctf/solgov = 1
-					)
-				)
-			if(prob(70))
-				glasses = pickweight(list(
-					/obj/item/clothing/glasses/sunglasses = 3,
-					/obj/item/clothing/glasses/hud/health = 3,
-					/obj/item/clothing/glasses/hud/health/night = 1,
-					/obj/item/clothing/glasses/night = 2
-					)
-				)
-		if("Kobold")
-			mob_species = /datum/species/lizard/ashwalker/kobold
-			uniform = /obj/item/clothing/under/costume/gladiator/ash_walker
-			if(prob(95))
-				head = /obj/item/clothing/head/helmet/gladiator
-			else
-				head = /obj/item/clothing/head/helmet/skull
-				suit = /obj/item/clothing/suit/armor/bone
-				gloves = /obj/item/clothing/gloves/bracer
-			if(prob(5))
-				back = pickweight(list(
-					/obj/item/spear/bonespear = 3,
-					/obj/item/fireaxe/boneaxe = 2
-					)
-				)
-			if(prob(10))
-				belt = /obj/item/storage/belt/mining/primitive
-			if(prob(30))
-				r_pocket = /obj/item/kitchen/knife/combat/bone
-			if(prob(30))
-				l_pocket = /obj/item/kitchen/knife/combat/bone
+
 		if("Golem")
 			mob_species = pickweight(list(
 				/datum/species/golem/adamantine = 5,
@@ -791,23 +734,95 @@
 					/obj/item/weldingtool/experimental
 					)
 				)
-		if("YeOlde")
-			mob_gender = FEMALE
-			uniform = /obj/item/clothing/under/costume/maid
-			gloves = /obj/item/clothing/gloves/color/white
-			shoes = /obj/item/clothing/shoes/laceup
-			head = /obj/item/clothing/head/helmet/knight
-			suit = /obj/item/clothing/suit/armor/riot/knight
-			back = /obj/item/shield/riot/buckler
-			belt = /obj/item/nullrod/claymore
-			r_pocket = /obj/item/tank/internals/emergency_oxygen
-			mask = /obj/item/clothing/mask/breath
-		if("Operative")
-			id_job = "Operative"
-			if(prob(15))
-				outfit = /datum/outfit/syndicatestormtroopercorpse
+
+		if("Kobold")
+			mob_species = /datum/species/lizard/ashwalker/kobold
+			uniform = /obj/item/clothing/under/costume/gladiator/ash_walker
+			if(prob(95))
+				head = /obj/item/clothing/head/helmet/gladiator
 			else
-				outfit = /datum/outfit/syndicatecommandocorpse
+				head = /obj/item/clothing/head/helmet/skull
+				suit = /obj/item/clothing/suit/armor/bone
+				gloves = /obj/item/clothing/gloves/bracer
+			if(prob(5))
+				back = pickweight(list(
+					/obj/item/spear/bonespear = 3,
+					/obj/item/fireaxe/boneaxe = 2
+					)
+				)
+			if(prob(10))
+				belt = /obj/item/storage/belt/mining/primitive
+			if(prob(30))
+				r_pocket = /obj/item/kitchen/knife/combat/bone
+			if(prob(30))
+				l_pocket = /obj/item/kitchen/knife/combat/bone
+
+		if("Soldier")
+			mob_species = /datum/species/human
+			if(prob(90))
+				uniform = /obj/item/clothing/under/solgov
+				suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
+				shoes = /obj/item/clothing/shoes/jackboots
+				gloves = /obj/item/clothing/gloves/color/black
+				mask = /obj/item/clothing/mask/gas/sechailer
+				head = /obj/item/clothing/head/solgov/sonnensoldner
+				id = /obj/item/card/id/solgov
+			else
+				uniform = /obj/item/clothing/under/solgov
+				suit = /obj/item/clothing/suit/space/hardsuit/solgov
+				shoes = /obj/item/clothing/shoes/combat
+				gloves = /obj/item/clothing/gloves/combat
+				mask = /obj/item/clothing/mask/gas/sechailer/swat
+				id = /obj/item/card/id/solgov
+			if(prob(85))
+				back = /obj/item/storage/backpack
+				backpack_contents = list()
+				for(var/i = 1 to 3)
+					if(prob(75))
+						backpack_contents += pickweight(list(
+							/obj/item/reagent_containers/hypospray/medipen/stimpack/traitor = 1,
+							/obj/item/storage/firstaid/tactical = 1,
+							/obj/item/gun/ballistic/automatic/pistol/solgov = 1,
+							/obj/item/gps = 1,
+							/obj/item/stock_parts/cell/gun/upgraded = 2,
+							/obj/item/ammo_box/magazine/pistol556mm = 3,
+							/obj/item/desk_flag/solgov = 3,
+							/obj/item/stack/marker_beacon/ten = 3,
+							/obj/item/detective_scanner = 2,
+							/obj/item/extinguisher/mini = 3,
+							/obj/item/kitchen/knife/combat = 3,
+							/obj/item/flashlight/seclite=3,
+							/obj/item/ammo_casing/shotgun = 3,
+							/obj/item/binoculars = 3,
+							/obj/item/clipboard = 3
+							)
+						)
+			else
+				back = pickweight(list(
+					/obj/item/energyhalberd = 5,
+					/obj/item/gun/ballistic/rocketlauncher/unrestricted = 5
+					)
+				)
+			if(prob(25))
+				belt = /obj/item/storage/belt/military
+			if(prob(50))
+				r_pocket = pickweight(list(
+					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
+					/obj/item/kitchen/knife/letter_opener = 3,
+					/obj/item/radio/off = 3,
+					/obj/item/grenade/syndieminibomb/concussion = 1,
+					/obj/item/melee/transforming/energy/ctf/solgov = 1
+					)
+				)
+			if(prob(70))
+				glasses = pickweight(list(
+					/obj/item/clothing/glasses/sunglasses = 3,
+					/obj/item/clothing/glasses/hud/health = 3,
+					/obj/item/clothing/glasses/hud/health/night = 1,
+					/obj/item/clothing/glasses/night = 2
+					)
+				)
+
 		if("Infiltrator")//WE FINALLY FOUND HIM
 			uniform = /obj/item/clothing/under/syndicate/bloodred
 			gloves = /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
@@ -844,6 +859,26 @@
 					/obj/item/flashlight/flashdark = 1
 					)
 				)
+
+		if("YeOlde")
+			mob_gender = FEMALE
+			uniform = /obj/item/clothing/under/costume/maid
+			gloves = /obj/item/clothing/gloves/color/white
+			shoes = /obj/item/clothing/shoes/laceup
+			head = /obj/item/clothing/head/helmet/knight
+			suit = /obj/item/clothing/suit/armor/riot/knight
+			back = /obj/item/shield/riot/buckler
+			belt = /obj/item/nullrod/claymore
+			r_pocket = /obj/item/tank/internals/emergency_oxygen
+			mask = /obj/item/clothing/mask/breath
+
+		if("Operative")
+			id_job = "Operative"
+			if(prob(15))
+				outfit = /datum/outfit/syndicatestormtroopercorpse
+			else
+				outfit = /datum/outfit/syndicatecommandocorpse
+
 		if("Shadow")
 			mob_species = /datum/species/shadow
 			r_pocket = /obj/item/reagent_containers/pill/shadowtoxin
@@ -854,6 +889,7 @@
 			glasses = /obj/item/clothing/glasses/blindfold
 			back = /obj/item/tank/internals/oxygen
 			mask = /obj/item/clothing/mask/breath
+
 		if("Cultist")
 			uniform = /obj/item/clothing/under/costume/roman
 			suit = /obj/item/clothing/suit/hooded/cultrobes
@@ -868,29 +904,4 @@
 				/obj/item/flashlight/flare/culttorch = 1,
 				/obj/item/stack/sheet/runed_metal = 15
 			)
-		if("SRM")
-			uniform = /obj/item/clothing/under/suit/roumain
-			shoes = /obj/item/clothing/shoes/workboots/mining
-			if(prob(50))
-				suit = /obj/item/clothing/suit/armor/roumain/shadow
-				head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
-			else
-				suit = /obj/item/clothing/suit/armor/roumain
-				head = /obj/item/clothing/head/cowboy/sec/roumain
-			if(prob(25))
-				suit_store = /obj/item/gun/ballistic/shotgun/winchester
-			r_pocket = /obj/item/book/manual/trickwines_4_brewers
-			belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
-			back = /obj/item/storage/backpack/cultpack
-			backpack_contents = list()
-			if(prob(75))
-				backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
-			if(prob(75))
-				backpack_contents += list(pick(
-					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
-					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
-					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
-					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
-					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
-					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine,) = 2)
 	. = ..()
