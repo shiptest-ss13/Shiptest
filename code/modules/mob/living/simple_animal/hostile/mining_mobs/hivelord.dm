@@ -891,19 +891,17 @@
 			ears = /obj/item/radio/headset/syndicate
 			id = /obj/item/card/id/syndicate
 			r_pocket = /obj/item/tank/internals/emergency_oxygen
+			gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 			if(prob(25))
 				suit = /obj/item/clothing/suit/space/hardsuit/syndi/scarlet
-				gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 				mask = /obj/item/clothing/mask/gas/syndicate
 				back = /obj/item/tank/jetpack/oxygen
 			if else(prob(25))
 				suit = /obj/item/clothing/head/helmet/space/hardsuit/syndi
-				gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 				mask = /obj/item/clothing/mask/gas/syndicate
 				back = /obj/item/tank/jetpack/oxygen
 			else
 				suit = /obj/item/clothing/suit/armor/vest
-				gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 				mask = /obj/item/clothing/mask/gas
 				head = /obj/item/clothing/head/helmet/swat
 				back = /obj/item/storage/backpack
