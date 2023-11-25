@@ -839,12 +839,11 @@
 			for(var/i = 1 to 3)
 				if(prob(50))
 					backpack_contents += pickweight(list(
-
 						/obj/item/pen/sleepy = 3,
 						/obj/item/pen/edagger = 3,
 						/obj/item/reagent_containers/syringe/mulligan = 3,
 						/obj/item/suppressor = 5,
-						/obj/item/clothing/head/chameleon/broken = 5,
+						/obj/item/storage/box/syndie_kit/chameleon = 5,
 						/obj/item/grenade/smokebomb = 5,
 						/obj/item/grenade/flashbang = 5
 						)
