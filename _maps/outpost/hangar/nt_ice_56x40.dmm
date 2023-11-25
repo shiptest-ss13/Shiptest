@@ -150,7 +150,7 @@
 /turf/closed/indestructible/reinforced,
 /area/hangar)
 "aI" = (
-/turf/closed/mineral/random/snow,
+/turf/closed/indestructible/rock/schist,
 /area/hangar)
 "aK" = (
 /obj/effect/turf_decal/borderfloor{
@@ -863,10 +863,6 @@
 /area/hangar)
 "El" = (
 /obj/effect/turf_decal/borderfloor/full,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned{
 	planetary_atmos = 1
@@ -1127,6 +1123,9 @@
 /obj/effect/turf_decal/siding/white,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged{
 	planetary_atmos = 1
 	},
@@ -1189,6 +1188,9 @@
 "Qi" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/patterned/ridged{
 	planetary_atmos = 1
 	},
