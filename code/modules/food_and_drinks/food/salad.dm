@@ -134,3 +134,60 @@
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/nutriment = 5)
 	tastes = list("building heat" = 2, "savory meat and vegtables" = 1)
 	foodtype = GRAIN | MEAT | VEGETABLES
+
+//Salads: the bread and butter of Solar cuisine
+/obj/item/reagent_containers/food/snacks/caprese_salad
+	name = "caprese salad"
+	desc = " A classic Solarian salad, \
+		due to how simple it is to prepare yet how tasty it is. In Sol Common, it's known as zaileskenknusksolt: \
+		two tone salad, in GalCom." //zail = two, esken = colour/tone, knuskolt = salad
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "caprese_salad"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 8,
+	)
+	tastes = list("mozzarella" = 1, "tomato" = 1, "balsamic" = 1)
+	foodtype = DAIRY | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/salad/fleet_salad
+	name = "wingman's salad" //lörton = fleet, knusksolt = salad (knusk = crisp, solt = bowl)
+	desc = "Wingman's salad is commonly seen at the snack bars and canteens of Solar Company mercenary vessels. \
+		The grilled cheese makes it particularly filling, while the croutons provide a crunchy kick."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "fleet_salad"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 12,
+	)
+	tastes = list("cheese" = 1, "salad" = 1, "bread" = 1)
+	foodtype = DAIRY | VEGETABLES | GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/salad/cotton_salad
+	name = "cotton ball salad"
+	desc = "A salad with added cotton and a basic dressing. A contribution to Solarian food culture from soon after the emergence of the moth conclaves."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "cotton_salad"
+	list_reagents = list(,
+		/datum/reagent/consumable/nutriment = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 14,
+	)
+	tastes = list("cheese" = 1, "salad" = 1, "bread" = 1)
+	foodtype = VEGETABLES | CLOTH
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/salad/moth_kachumbari
+	name = "Kenyan salad"
+	desc = "Originally a Kenyan recipe - \
+		though some ingredients have been necessarily changed."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "moth_kachumbari"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 18,
+	)
+	tastes = list("onion" = 1, "tomato" = 1, "corn" = 1, "chili" = 1, "cilantro" = 1)
+	foodtype = VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL

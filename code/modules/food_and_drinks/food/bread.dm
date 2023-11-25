@@ -301,3 +301,23 @@
 /obj/item/reagent_containers/food/snacks/butterdog/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/slippery, 80)
+
+/obj/item/reagent_containers/food/snacks/bread/corn
+	name = "cornbread"
+	desc = "Some good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw cornbread."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "cornbread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 18)
+	tastes = list("cornbread" = 10)
+	foodtype = GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/corn
+	slices_num = 6
+
+/obj/item/reagent_containers/food/snacks/breadslice/corn
+	name = "cornbread slice"
+	desc = "A chunk of crispy, cowboy-style cornbread. Consume contentedly."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "cornbread_slice"
+	foodtype = GRAIN
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)

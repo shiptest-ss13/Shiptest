@@ -280,3 +280,196 @@
 	tastes = list("creamy peas"= 2, "parsnip" = 1)
 	filling_color = "#9dc530"
 	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/soup/moth_cotton_soup
+	name = "cotton ball soup"
+	desc = "A soup made from raw cotton in a flavourful vegetable broth, originating from one of the largest Solarian moth-dominated conclaves from when they were first discovered. Enjoyed only by moths and the criminally tasteless."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "moth_cotton_soup"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 12,
+		/datum/reagent/water = 5,
+	)
+	tastes = list("cotton" = 1, "broth" = 1)
+	foodtype = VEGETABLES | CLOTH
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/moth_cheese_soup
+	name = "cheese melt soup"
+	desc = "A simple and filling soup made from homemade cheese and sweet potato. \
+		The curds provide texture while the whey provides volume- and they both provide deliciousness!"
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "moth_cheese_soup"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 12,
+		/datum/reagent/consumable/nutriment/vitamin = 4,
+		/datum/reagent/consumable/nutriment = 4,
+	)
+	tastes = list("cheese" = 1, "cream" = 1, "sweet potato" = 1)
+	foodtype = DAIRY | GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/moth_seed_soup
+	name = "seedy soup"
+	desc = "A seed based soup, made by germinating seeds and then boiling them. \
+		Produces a particularly bitter broth which is usually balanced by the addition of vinegar."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "moth_seed_soup"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 12,
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/water = 5,
+	)
+	tastes = list("bitterness" = 1, "sourness" = 1)
+	foodtype = VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/vegetarian_chili
+	name = "chili sin carne"
+	desc = "For the hombres who don't want carne."
+	icon_state = "hotchili"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/cooking_oil = 4,
+		/datum/reagent/consumable/capsaicin = 3,
+		/datum/reagent/consumable/tomatojuice = 4,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+	)
+	tastes = list("bitterness" = 1, "sourness" = 1)
+	foodtype = VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/moth_bean_stew
+	name = "pickled bean stew"
+	desc = "A spicy bean stew with lots of veggies, commonly served in Solarian homes as a filling and satisfying meal with rice or bread."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "moth_bean_stew"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 14,
+		/datum/reagent/consumable/nutriment = 4,
+	)
+	tastes = list("beans" = 1, "cabbage" = 1, "spicy sauce" = 1)
+	foodtype = VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/moth_oat_stew
+	name = "oat stew"
+	desc = "A hearty oat stew, prepared with oats, sweet potatoes, and various winter vegetables."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "moth_oat_stew"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 14,
+		/datum/reagent/consumable/nutriment = 8,
+	)
+	tastes = list("oats" = 1, "sweet potato" = 1, "carrot" = 1, "parsnip" = 1, "pumpkin" = 1)
+	foodtype = VEGETABLES | GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/moth_fire_soup
+	name = "fireball soup"
+	desc = "Fireball soup, or heartburn soup, is a cold soup dish that originated amongst the South American elements of SolGov, \
+		and is named for two things- its rosy pink colour, and its scorchingly hot chili heat."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "moth_fire_soup"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+	)
+	tastes = list("love" = 1, "hate" = 1)
+	foodtype = VEGETABLES | DAIRY
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/rice_porridge
+	name = "rice porridge"
+	desc = "A plate of rice porridge. It's mostly flavourless, but it does fill a spot. \
+		Solarians favor it on winter mornings when in a rush."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "rice_porridge"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 8,
+	)
+	tastes = list("nothing" = 1)
+	foodtype = GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/hua_mulan_congee
+	name = "\improper Hua Mulan congee"
+	desc = "Nobody is quite sure why this smiley bowl of rice porridge with eggs and bacon is named after a mythological Chinese figure - \
+		it's just sorta what it's always been called."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "hua_mulan_congee"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+		/datum/reagent/consumable/cooking_oil = 6,
+	)
+	tastes = list("bacon" = 1, "eggs" = 1)
+	foodtype = MEAT | GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/toechtauese_rice_porridge
+	name = "töchtaüse rice porridge"
+	desc = "Commonly served in Solarian homes, rice porridge with töchtaüse syrup is more palatable than the regular stuff, if even just because it's spicier than normal."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "toechtauese_rice_porridge"
+	list_reagents = list(/datum/reagent/consumable/cooking_oil = 6, /datum/reagent/consumable/nutriment/vitamin = 12)
+	tastes = list("sugar" = 1, "spice" = 1)
+	foodtype = GRAIN | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge
+	name = "cornmeal porridge"
+	desc = "A plate of cornmeal porridge. It's more flavourful than most porridges, and makes a good base for other flavours, too."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "cornmeal_porridge"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 4,
+	)
+	tastes = list("cornmeal" = 1)
+	foodtype = GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/cheesy_porridge //milk, polenta, firm cheese, curd cheese, butter
+	name = "cheesy porridge"
+	desc = "A rich and creamy bowl of cheesy cornmeal porridge."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "cheesy_porridge"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 4,
+		/datum/reagent/consumable/nutriment = 8,
+	)
+	tastes = list("cornmeal" = 1, "cheese" = 1, "more cheese" = 1, "lots of cheese" = 1)
+	foodtype = DAIRY | GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/fried_eggplant_polenta
+	name = "fried eggplant and polenta"
+	desc = "Polenta loaded with cheese, served with a few discs of fried eggplant and some tomato sauce. Lække!"
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "fried_eggplant_polenta"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 12,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+		/datum/reagent/consumable/nutriment = 10,
+	)
+	tastes = list("cornmeal" = 1, "cheese" = 1, "eggplant" = 1, "tomato sauce" = 1)
+	foodtype = DAIRY | GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/red_porridge
+	name = "eltsløsk ül a priktæolk" //eltsløsk = red porridge, ül a = with, prikt = sour, æolk = cream
+	desc = "Red porridge with yoghurt. The name and vegetable ingredients obscure the sweet nature of the dish, which is commonly served as a dessert aboard the fleet."
+	icon = 'icons/obj/food/moth.dmi'
+	icon_state = "red_porridge"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 8,
+		/datum/reagent/consumable/cooking_oil = 8,
+		/datum/reagent/consumable/sugar = 8,
+	)
+	tastes = list("sweet beets" = 1, "sugar" = 1, "sweetened yoghurt" = 1)
+	foodtype = VEGETABLES | SUGAR | DAIRY

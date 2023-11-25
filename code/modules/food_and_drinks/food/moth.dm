@@ -1,11 +1,7 @@
-//Moth Foods, the three C's: cheese, coleslaw, and cotton
-//A large emphasis has been put on sharing and multiple portion dishes
-//Additionally, where a mothic name is given, a short breakdown of what exactly it means is provided, for the curious on the internal workings of mothic: it's very onomatopoeic, and makes heavy use of combined words and accents
-
 //Base ingredients and miscellany, generally not served on their own
 /obj/item/reagent_containers/food/snacks/herby_cheese
 	name = "herby cheese"
-	desc = "As a staple of mothic cuisine, cheese is often augmented with various flavours to keep variety in their diet. \
+	desc = "As a staple of spacer cuisine, cheese is often augmented with various flavours to keep variety in their diet whilst traveling without reliable access to refrigeration. \
 		Herbs are one such addition, and are particularly beloved."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "herby_cheese"
@@ -16,8 +12,7 @@
 
 /obj/item/reagent_containers/food/snacks/grilled_cheese
 	name = "grilled cheese"
-	desc = "As prescribed by Lord Alton, blessed be his name, 99.997% of the world's recipes for grilled cheese flat out lie: \
-		never once is the cheese grilled, it is merely a griddled sandwich containing melted cheese. This, on the other hand, is truly grilled cheese, grillmarks and all."
+	desc = "A staple sandwich, the classic grilled cheese consists simply of griddled bread and cheese. Anything else, *and it's a melt*."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "grilled_cheese"
 	list_reagents = list(
@@ -29,7 +24,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/mothic_salad
-	name = "mothic salad"
+	name = "basic salad"
 	desc = "A basic salad of cabbage, red onion and tomato. Can serve as a perfect base for a million different salads."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mothic_salad"
@@ -40,7 +35,7 @@
 
 /obj/item/reagent_containers/food/snacks/toasted_seeds
 	name = "toasted seeds"
-	desc = "While they're far from filling, toasted seeds are a popular snack amongst the moths. \
+	desc = "While they're far from filling, toasted seeds are a popular snack amongst travelers. \
 		Salt, sugar, or even some more exotic flavours may be added for some extra pep."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "toasted_seeds"
@@ -50,8 +45,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/engine_fodder
-	name = "engine fodder"
-	desc = "A common snack for engineers on the mothic fleet, made of seeds, nuts, chocolate, popcorn, and potato chips- \
+	name = "comet trail"
+	desc = "A common snack for engineers on modern military vessels, made of seeds, nuts, chocolate, popcorn, and potato chips- \
 		designed to be dense with calories and easy to snack on when an extra boost is needed."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "engine_fodder"
@@ -66,7 +61,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/mothic_pizza_dough
-	name = "mothic pizza dough"
+	name = "Solar pizza dough"
 	desc = "A strong, glutenous dough, made with cornmeal and flour, designed to hold up to cheese and sauce."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mothic_pizza_dough"
@@ -77,9 +72,9 @@
 
 //Entrees: categorising food that is 90% cheese and salad is not easy
 /obj/item/reagent_containers/food/snacks/squeaking_stir_fry
-	name = "skeklitmischtpoppl" //skeklit = squeaking, mischt = stir, poppl = fry
-	desc = "A mothic classic made with cheese curds and tofu (amongst other things). \
-		Translated literally the name means 'squeaking stir fry', a name given due to the distinctive squeak of the proteins."
+	name = "squeaking stir fry"
+	desc = "A Solarian classic made with cheese curds and tofu (amongst other things). \
+		It gets its name from the distinctive squeak of the proteins."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "squeaking_stir_fry"
 	list_reagents = list(
@@ -105,7 +100,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/loaded_curds
-	name = "ozlsettitæloskekllön ede pommes" //ozlsettit = overflowing (ozl = over, sett = flow, it = ing), ælo = cheese, skekllön = curds (skeklit = squeaking, llön = pieces/bits), ede = and, pommes = fries (hey, France!)
+	name = "chili poutine"
 	desc = "What's better than cheese curds? Deep fried cheese curds! What's better than deep fried cheese curds? \
 		Deep fried cheese curds with chili (and more cheese) on top! And what's better than that? Putting it on fries!"
 	icon = 'icons/obj/food/moth.dmi'
@@ -135,9 +130,9 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/baked_cheese_platter
-	name = "stanntkraktælo" //stannt = oven, krakt = baked, ælo = cheese
-	desc = "A baked cheese wheel: a mothic favourite for sharing. Usually served with crispy bread slices for dipping, \
-		because the only thing better than good cheese is good cheese on bread."
+	name = "oven-baked cheese"
+	desc = "A baked cheese wheel: a Solarian favourite for sharing. Usually served with crispy bread slices for dipping, \
+		because the only thing better than good cheese is good cheese on bread. A popular fixture at SolGov office parties."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "baked_cheese_platter"
 	list_reagents = list(
@@ -208,8 +203,8 @@
 
 /obj/item/reagent_containers/food/snacks/big_baked_rice
 	name = "big baked rice"
-	desc = "A mothic favourite, baked rice can be filled with a variety of vegetable fillings to make a delicious meal to share. \
-		Potatoes are also often layered on the bottom of the cooking vessel to create a flavourful crust which is hotly contested amongst diners."
+	desc = "A Solarian favourite, baked rice can be filled with a variety of vegetable fillings to make a delicious meal to share. \
+		Potatoes are also often layered on the bottom of the cooking vessel to create a flavourful crust which is hotly contested amongst diners. Originates from the flotillas formed in Polynesia after the Night of Fire."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "big_baked_rice"
 	list_reagents = list(
@@ -279,7 +274,7 @@
 
 /obj/item/reagent_containers/food/snacks/raw_ratatouille
 	name = "raw ratatouille" //rawtatouille?
-	desc = "Sliced vegetables with a roasted pepper sauce. Delicious, for a peasant food."
+	desc = "Sliced vegetables with a roasted pepper sauce. Delicious, for such a simple food."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "raw_ratatouille"
 	list_reagents = list(
@@ -320,7 +315,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/raw_stuffed_peppers
-	name = "raw voltölpaprik" //voltöl = stuffed (vol = full, töl = push), paprik (from German paprika) = bell pepper
+	name = "raw stuffed pepper"
 	desc = "A pepper with the top removed and a herby cheese and onion mix stuffed inside. Probably shouldn't be eaten raw."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "raw_stuffed_pepper"
@@ -334,7 +329,7 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/stuffed_peppers
 
 /obj/item/reagent_containers/food/snacks/stuffed_peppers
-	name = "voltölpaprik"
+	name = "baked stuffed pepper"
 	desc = "A soft yet still crisp bell pepper, with a wonderful melty cheesy interior."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "stuffed_pepper"
@@ -347,10 +342,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/fueljacks_lunch
-	name = "\improper Fueljack's lunch"
-	desc = "A dish made from fried vegetables, popular amongst fueljacks- the brave moths who operate the fuel skimmers to keep the fleet running. \
-		Given the constant need for fuel, and the limited windows in which the stars align for harvesting (literally), \
-		they'll often take packed meals to save on trips to the mess, which they heat using the fresh canisters."
+	name = "Astrengi's lunch"
+	desc = "A dish made from fried vegetables, popular amongst astrengis - the brave technicans who repair damaged hulls from asteroid impacts or ship-to-ship weapons whilst in transit. \
+		Given the constant need for repair during protracted conflict, and the limited windows in which a lull in the fields or fire provides time for patching, \
+		they'll often take packed meals to save on trips to the mess, which they heat using their welding torches."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "fueljacks_lunch"
 	list_reagents = list(
@@ -364,7 +359,7 @@
 /obj/item/reagent_containers/food/snacks/mac_balls
 	name = "macheronirölen"
 	desc = "Fried balls of macaroni cheese dipped in corn batter, served with tomato sauce. \
-		A popular snack across the galaxy, and especially on the Mothic Fleet- where they tend to use Ready-Donk as the base."
+		A popular snack across the galaxy, and especially on ex-Syndicate-majority Inteq vessels - where they tend to use Ready-Donk as the base, as a holdover from their ICW days."
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mac_balls"
 	list_reagents = list(
@@ -375,501 +370,10 @@
 	foodtype = DAIRY | VEGETABLES | FRIED | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 
-//Soups
-/obj/item/reagent_containers/food/snacks/soup/moth_cotton_soup
-	name = "flöfrölenmæsch" //flöf = cotton, rölen = ball, mæsch = soup
-	desc = "A soup made from raw cotton in a flavourful vegetable broth. Enjoyed only by moths and the criminally tasteless."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "moth_cotton_soup"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 12,
-		/datum/reagent/water = 5,
-	)
-	tastes = list("cotton" = 1, "broth" = 1)
-	foodtype = VEGETABLES | CLOTH
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/moth_cheese_soup
-	name = "ælosterrmæsch" //ælo = cheese, sterr = melt, mæsch = soup
-	desc = "A simple and filling soup made from homemade cheese and sweet potato. \
-		The curds provide texture while the whey provides volume- and they both provide deliciousness!"
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "moth_cheese_soup"
-	list_reagents = list(
-		/datum/reagent/consumable/cooking_oil = 12,
-		/datum/reagent/consumable/nutriment/vitamin = 4,
-		/datum/reagent/consumable/nutriment = 4,
-	)
-	tastes = list("cheese" = 1, "cream" = 1, "sweet potato" = 1)
-	foodtype = DAIRY | GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/moth_seed_soup
-	name = "misklmæsch" //miskl = seed, mæsch = soup
-	desc = "A seed based soup, made by germinating seeds and then boiling them. \
-		Produces a particularly bitter broth which is usually balanced by the addition of vinegar."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "moth_seed_soup"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment/vitamin = 12,
-		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/water = 5,
-	)
-	tastes = list("bitterness" = 1, "sourness" = 1)
-	foodtype = VEGETABLES
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/vegetarian_chili
-	name = "chili sin carne"
-	desc = "For the hombres who don't want carne."
-	icon_state = "hotchili"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/cooking_oil = 4,
-		/datum/reagent/consumable/capsaicin = 3,
-		/datum/reagent/consumable/tomatojuice = 4,
-		/datum/reagent/consumable/nutriment/vitamin = 6,
-	)
-	tastes = list("bitterness" = 1, "sourness" = 1)
-	foodtype = VEGETABLES
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/moth_bean_stew
-	name = "prickeldröndolhaskl" //prickeld = spicy, röndol = bean, haskl = stew
-	desc = "A spicy bean stew with lots of veggies, commonly served aboard the fleet as a filling and satisfying meal with rice or bread."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "moth_bean_stew"
-	list_reagents = list(
-		/datum/reagent/consumable/cooking_oil = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 14,
-		/datum/reagent/consumable/nutriment = 4,
-	)
-	tastes = list("beans" = 1, "cabbage" = 1, "spicy sauce" = 1)
-	foodtype = VEGETABLES
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/moth_oat_stew
-	name = "häfmisklhaskl" //häfmiskl = oat (häf from German hafer meaning oat, miskl meaning seed), haskl = stew
-	desc = "A hearty oat stew, prepared with oats, sweet potatoes, and various winter vegetables."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "moth_oat_stew"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment/vitamin = 14,
-		/datum/reagent/consumable/nutriment = 8,
-	)
-	tastes = list("oats" = 1, "sweet potato" = 1, "carrot" = 1, "parsnip" = 1, "pumpkin" = 1)
-	foodtype = VEGETABLES | GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/moth_fire_soup
-	name = "tömpröttkrakklmæsch" //tömprött = heart (tömp = thump, rött = muscle), krakkl = fire, mæsch = soup
-	desc = "Tömpröttkrakklmæsch, or heartburn soup, is a cold soup dish that originated amongst the jungle moths, \
-		and is named for two things- its rosy pink colour, and its scorchingly hot chili heat."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "moth_fire_soup"
-	list_reagents = list(
-		/datum/reagent/consumable/cooking_oil = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 10,
-	)
-	tastes = list("love" = 1, "hate" = 1)
-	foodtype = VEGETABLES | DAIRY
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/rice_porridge
-	name = "rice porridge"
-	desc = "A plate of rice porridge. It's mostly flavourless, but it does fill a spot. \
-		To the Chinese it's congee, and moths call it höllflöfmisklsløsk." //höllflöfmiskl = rice (höllflöf = cloud, miskl = seed), sløsk = porridge
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "rice_porridge"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 8,
-	)
-	tastes = list("nothing" = 1)
-	foodtype = GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/hua_mulan_congee
-	name = "\improper Hua Mulan congee"
-	desc = "Nobody is quite sure why this smiley bowl of rice porridge with eggs and bacon is named after a mythological Chinese figure- \
-		it's just sorta what it's always been called."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "hua_mulan_congee"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 10,
-		/datum/reagent/consumable/cooking_oil = 6,
-	)
-	tastes = list("bacon" = 1, "eggs" = 1)
-	foodtype = MEAT | GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/toechtauese_rice_porridge
-	name = "töchtaüse rice porridge"
-	desc = "Commonly served aboard the mothic fleet, rice porridge with töchtaüse syrup is more palatable than the regular stuff, if even just because it's spicier than normal."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "toechtauese_rice_porridge"
-	list_reagents = list(/datum/reagent/consumable/cooking_oil = 6, /datum/reagent/consumable/nutriment/vitamin = 12)
-	tastes = list("sugar" = 1, "spice" = 1)
-	foodtype = GRAIN | VEGETABLES
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge
-	name = "cornmeal porridge"
-	desc = "A plate of cornmeal porridge. It's more flavourful than most porridges, and makes a good base for other flavours, too."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "cornmeal_porridge"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 8,
-		/datum/reagent/consumable/nutriment/vitamin = 4,
-	)
-	tastes = list("cornmeal" = 1)
-	foodtype = GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/cheesy_porridge //milk, polenta, firm cheese, curd cheese, butter
-	name = "cheesy porridge"
-	desc = "A rich and creamy bowl of cheesy cornmeal porridge."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "cheesy_porridge"
-	list_reagents = list(
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/nutriment/vitamin = 4,
-		/datum/reagent/consumable/nutriment = 8,
-	)
-	tastes = list("cornmeal" = 1, "cheese" = 1, "more cheese" = 1, "lots of cheese" = 1)
-	foodtype = DAIRY | GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/soup/fried_eggplant_polenta
-	name = "fried eggplant and polenta"
-	desc = "Polenta loaded with cheese, served with a few discs of fried eggplant and some tomato sauce. Lække!"
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "fried_eggplant_polenta"
-	list_reagents = list(
-		/datum/reagent/consumable/cooking_oil = 12,
-		/datum/reagent/consumable/nutriment/vitamin = 6,
-		/datum/reagent/consumable/nutriment = 10,
-	)
-	tastes = list("cornmeal" = 1, "cheese" = 1, "eggplant" = 1, "tomato sauce" = 1)
-	foodtype = DAIRY | GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-//Salads: the bread and butter of mothic cuisine
-/obj/item/reagent_containers/food/snacks/caprese_salad
-	name = "caprese salad"
-	desc = "While it's far from an original creation of the moths, caprese salad has become a favourite aboard the Fleet \
-		due to how simple it is to prepare yet how tasty it is. To the moths it's known as zaileskenknusksolt: \
-		two tone salad, in GalCom." //zail = two, esken = colour/tone, knuskolt = salad
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "caprese_salad"
-	list_reagents = list(
-		/datum/reagent/consumable/cooking_oil = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 8,
-	)
-	tastes = list("mozzarella" = 1, "tomato" = 1, "balsamic" = 1)
-	foodtype = DAIRY | VEGETABLES
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/salad/fleet_salad
-	name = "lörtonknusksolt" //lörton = fleet, knusksolt = salad (knusk = crisp, solt = bowl)
-	desc = "Lörtonknusksolt, or Fleet Salad in GalCom, is commonly seen at the snack bars and canteens aboard the Fleet. \
-		The grilled cheese makes it particularly filling, while the croutons provide a crunchy kick."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "fleet_salad"
-	list_reagents = list(
-		/datum/reagent/consumable/cooking_oil = 10,
-		/datum/reagent/consumable/nutriment/vitamin = 12,
-	)
-	tastes = list("cheese" = 1, "salad" = 1, "bread" = 1)
-	foodtype = DAIRY | VEGETABLES | GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/salad/cotton_salad
-	name = "flöfrölenknusksolt"
-	desc = "A salad with added cotton and a basic dressing. Presumably either moths are around, or the South's risen again."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "cotton_salad"
-	list_reagents = list(,
-		/datum/reagent/consumable/nutriment = 8,
-		/datum/reagent/consumable/nutriment/vitamin = 14,
-	)
-	tastes = list("cheese" = 1, "salad" = 1, "bread" = 1)
-	foodtype = VEGETABLES | CLOTH
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/salad/moth_kachumbari
-	name = "\improper Kæniatknusksolt" //Kæniat = Kenyan, knusksolt = salad
-	desc = "Originally a Kenyan recipe, kachumbari is yet another cross-cultural favourite from humanity that has been adopted by the moths- \
-		though some ingredients have been necessarily changed."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "moth_kachumbari"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 18,
-	)
-	tastes = list("onion" = 1, "tomato" = 1, "corn" = 1, "chili" = 1, "cilantro" = 1)
-	foodtype = VEGETABLES
-	w_class = WEIGHT_CLASS_SMALL
-
-//Pizza
-/obj/item/reagent_containers/food/snacks/raw_mothic_margherita
-	name = "raw mothic margherita pizza"
-	desc = "Another human classic adopted by the moths, mothic pizza is characterised by the use of fresh ingredients, \
-		particularly fresh mozzarella, and the use of strong flour to produce a glutenous dough."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "raw_margherita_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 15,
-		/datum/reagent/consumable/cooking_oil = 5,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-	)
-	tastes = list("dough" = 1, "tomato" = 1, "cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | RAW
-	cooked_type = /obj/item/reagent_containers/food/snacks/pizza/mothic_margherita
-
-/obj/item/reagent_containers/food/snacks/pizza/mothic_margherita
-	name = "mothic margherita pizza"
-	desc = "A key characteristic of mothic pizza is that it's sold by weight- single slices are available for discretionary credits, while a meal ticket can buy a whole pie."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "margherita_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 25,
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-	)
-	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_margherita
-
-/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_margherita
-	name = "mothic margherita slice"
-	desc = "A slice of mothic margherita pizza, the most humble of pizzas."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "margherita_slice"
-	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-
-/obj/item/reagent_containers/food/snacks/raw_mothic_firecracker
-	name = "raw mothic firecracker pizza"
-	desc = "A favourite amongst the more adventurous moths, firecracker pizza is HOT HOT HOT!"
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "raw_firecracker_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 15,
-		/datum/reagent/consumable/cooking_oil = 5,
-		/datum/reagent/consumable/bbqsauce = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-		/datum/reagent/consumable/capsaicin = 10,
-	)
-	tastes = list("dough" = 1, "chili" = 1, "corn" = 1, "cheese" = 1, "bbq sauce" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | RAW
-	cooked_type = /obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker
-
-/obj/item/reagent_containers/food/snacks/pizza/mothic_firecracker
-	name = "mothic firecracker pizza"
-	desc = "They're not kidding when they call this a hot pizza pie."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "firecracker_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 25,
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/bbqsauce = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/capsaicin = 10,
-	)
-	tastes = list("crust" = 1, "chili" = 1, "corn" = 1, "cheese" = 1, "bbq sauce" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_firecracker
-
-/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_firecracker
-	name = "mothic firecracker slice"
-	desc = "A spicy slice of something quite nice."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "firecracker_slice"
-	tastes = list("crust" = 1, "chili" = 1, "corn" = 1, "cheese" = 1, "bbq sauce" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-
-/obj/item/reagent_containers/food/snacks/raw_mothic_five_cheese
-	name = "raw mothic five-cheese pizza"
-	desc = "For centuries, scholars have asked: how much cheese is too much cheese?"
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "raw_five_cheese_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 15,
-		/datum/reagent/consumable/cooking_oil = 5,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-	)
-	tastes = list("dough" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | RAW
-	cooked_type = /obj/item/reagent_containers/food/snacks/pizza/mothic_five_cheese
-
-/obj/item/reagent_containers/food/snacks/pizza/mothic_five_cheese
-	name = "mothic five-cheese pizza"
-	desc = "A favourite amongst mice, rats, and English inventors."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "five_cheese_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 25,
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-	)
-	tastes = list("crust" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_five_cheese
-
-/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_five_cheese
-	name = "mothic five-cheese slice"
-	desc = "It's the cheesiest slice in the galaxy!"
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "five_cheese_slice"
-	tastes = list("crust" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-
-/obj/item/reagent_containers/food/snacks/raw_mothic_white_pie
-	name = "raw mothic white-pie pizza"
-	desc = "A pizza made for the tomato haters."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "raw_white_pie_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 15,
-		/datum/reagent/consumable/cooking_oil = 5,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-	)
-	tastes = list("dough" = 1, "cheese" = 1, "herbs" = 1, "garlic" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | RAW
-	cooked_type = /obj/item/reagent_containers/food/snacks/pizza/mothic_white_pie
-
-/obj/item/reagent_containers/food/snacks/pizza/mothic_white_pie
-	name = "mothic white-pie pizza"
-	desc = "You say to-may-to, I say to-mah-to, and we put neither on this pizza."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "white_pie_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 25,
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-	)
-	tastes = list("crust" = 1, "cheese" = 1, "herbs" = 1, "garlic" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_white_pie
-
-/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_white_pie
-	name = "mothic white-pie slice"
-	desc = "Cheesy, garlicky, herby, delicious!"
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "white_pie_slice"
-	tastes = list("crust" = 1, "cheese" = 1, "more cheese" = 1, "excessive amounts of cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY
-
-/obj/item/reagent_containers/food/snacks/raw_mothic_pesto
-	name = "raw mothic pesto pizza"
-	desc = "Pesto is a popular pizza topping for moths, quite possibly because it exemplifies their favourite flavours: cheese, herbs, and veggies."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "raw_pesto_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 15,
-		/datum/reagent/consumable/cooking_oil = 5,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-	)
-	tastes = list("dough" = 1, "pesto" = 1, "cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | NUTS | RAW
-	cooked_type = /obj/item/reagent_containers/food/snacks/pizza/mothic_pesto
-
-/obj/item/reagent_containers/food/snacks/pizza/mothic_pesto
-	name = "mothic pesto pizza"
-	desc = "Green as the grass in the garden. Not that there's many of those on mothic ships."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "pesto_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 25,
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-	)
-	tastes = list("crust" = 1, "pesto" = 1, "cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | NUTS | RAW
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_pesto
-
-/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_pesto
-	name = "mothic pesto slice"
-	desc = "A slice of presto pesto pizza."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "pesto_slice"
-	tastes = list("crust" = 1, "pesto" = 1, "cheese" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | NUTS
-
-/obj/item/reagent_containers/food/snacks/raw_mothic_garlic
-	name = "raw mothic garlic pizzabread"
-	desc = "Ahh, garlic. A universally loved ingredient, except possibly by vampires."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "raw_garlic_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 15,
-		/datum/reagent/consumable/cooking_oil = 5,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 3,
-	)
-	tastes = list("dough" = 1, "garlic" = 1, "butter" = 1)
-	foodtype = GRAIN | VEGETABLES | RAW
-	cooked_type = /obj/item/reagent_containers/food/snacks/pizza/mothic_garlic
-
-/obj/item/reagent_containers/food/snacks/pizza/mothic_garlic
-	name = "mothic garlic pizzabread"
-	desc = "The best food in the galaxy, hands down."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "garlic_pizza"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 25,
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/tomatojuice = 6,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-	)
-	tastes = list("crust" = 1, "garlic" = 1, "butter" = 1)
-	foodtype = GRAIN | VEGETABLES | DAIRY | NUTS
-	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/mothic_garlic
-
-/obj/item/reagent_containers/food/snacks/pizzaslice/mothic_garlic
-	name = "mothic garlic pizzabread slice"
-	desc = "The best combination of oily, garlicky, and crusty known to mothkind."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "garlic_slice"
-	tastes = list("dough" = 1, "garlic" = 1, "butter" = 1)
-	foodtype = GRAIN | VEGETABLES
-
-//Bread
-/obj/item/reagent_containers/food/snacks/bread/corn
-	name = "cornbread"
-	desc = "Some good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw cornbread."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "cornbread"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 18)
-	tastes = list("cornbread" = 10)
-	foodtype = GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/corn
-	slices_num = 6
-
-/obj/item/reagent_containers/food/snacks/breadslice/corn
-	name = "cornbread slice"
-	desc = "A chunk of crispy, cowboy-style cornbread. Consume contentedly."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "cornbread_slice"
-	foodtype = GRAIN
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-
 //Sweets
 /obj/item/reagent_containers/food/snacks/moth_cheese_cakes
 	name = "\improper ælorölen" //ælo = cheese, rölen = balls
-	desc = "Ælorölen (cheese balls) are a traditional mothic dessert, made of soft cheese, powdered sugar and flour, rolled into balls, battered and then deep fried. They're often served with either chocolate sauce or honey, or sometimes both!"
+	desc = "Ælorölen (cheese balls) are a traditional Solar dessert, made of soft cheese, powdered sugar and flour, rolled into balls, battered and then deep fried. They're often served with either chocolate sauce or honey, or sometimes both!"
 	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_cheese_cakes"
 	list_reagents = list(
@@ -880,49 +384,10 @@
 	foodtype = SUGAR | FRIED | DAIRY | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/reagent_containers/food/snacks/cake/mothmallow
-	name = "mothmallow tray"
-	desc = "A light and fluffy vegan marshmallow flavoured with vanilla and rum and topped with soft chocolate. These are known to the moths as höllflöfstarkken: cloud squares." //höllflöf = cloud (höll = wind, flöf = cotton), starkken = squares
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "mothmallow_tray"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 20,
-		/datum/reagent/consumable/sugar = 20,
-	)
-	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
-	foodtype = VEGETABLES | SUGAR
-	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
-	slices_num = 6
-
-/obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
-	name = "mothmallow"
-	desc = "Fluffy little clouds of joy- in a strangely moth-like colour."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "mothmallow_slice"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment = 4,
-		/datum/reagent/consumable/sugar = 4,
-	)
-	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
-	foodtype = VEGETABLES | SUGAR
-
-/obj/item/reagent_containers/food/snacks/soup/red_porridge
-	name = "eltsløsk ül a priktæolk" //eltsløsk = red porridge, ül a = with, prikt = sour, æolk = cream
-	desc = "Red porridge with yoghurt. The name and vegetable ingredients obscure the sweet nature of the dish, which is commonly served as a dessert aboard the fleet."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "red_porridge"
-	list_reagents = list(
-		/datum/reagent/consumable/nutriment/vitamin = 8,
-		/datum/reagent/consumable/cooking_oil = 8,
-		/datum/reagent/consumable/sugar = 8,
-	)
-	tastes = list("sweet beets" = 1, "sugar" = 1, "sweetened yoghurt" = 1)
-	foodtype = VEGETABLES | SUGAR | DAIRY
-
 //misc food
 /obj/item/reagent_containers/food/snacks/bubblegum/wake_up
 	name = "wake-up gum"
-	desc = "A rubbery strip of gum. It's stamped with the emblem of the Mothic Nomad Fleet."
+	desc = "A rubbery strip of gum. It's stamped with the emblem of the Solar Fleet."
 	list_reagents = list(
 		/datum/reagent/consumable/sugar = 13,
 		/datum/reagent/drug/methamphetamine = 2,
@@ -932,8 +397,8 @@
 
 /obj/item/storage/box/gum/wake_up
 	name = "\improper Activin 12 Hour medicated gum packet"
-	desc = "Stay awake during long shifts in the maintenance tunnels with Activin! The approval seal of the Mothic Nomad Fleet \
-		is emblazoned on the packaging, alongside a litany of health and safety disclaimers in both Mothic and Galactic Common."
+	desc = "Stay awake during long shifts in the maintenance tunnels with Activin! The approval seal of the Solar Fleet \
+		is emblazoned on the packaging, alongside a litany of health and safety disclaimers in both Solar and Galactic Common."
 	icon_state = "bubblegum_wake_up"
 	custom_premium_price = 50 * 1.5
 
