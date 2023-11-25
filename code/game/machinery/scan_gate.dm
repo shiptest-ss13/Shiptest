@@ -5,7 +5,6 @@
 #define SCANGATE_GUNS "Guns"
 #define SCANGATE_WANTED "Wanted"
 #define SCANGATE_SPECIES "Species"
-#define SCANGATE_NUTRITION "Nutrition"
 
 #define SCANGATE_HUMAN "human"
 #define SCANGATE_LIZARD "lizard"
@@ -39,7 +38,6 @@
 	var/nanite_cloud = 1
 	var/detect_species = SCANGATE_HUMAN
 	var/reverse = FALSE //If true, signals if the scan returns false
-	var/detect_nutrition = NUTRITION_LEVEL_FAT
 
 /obj/machinery/scanner_gate/Initialize()
 	. = ..()
@@ -165,13 +163,6 @@
 				if(istype(I, /obj/item/gun))
 					beep = TRUE
 					break
-		if(SCANGATE_NUTRITION)
-			if(ishuman(M))
-				var/mob/living/carbon/human/H = M
-				if(H.nutrition <= detect_nutrition && detect_nutrition == NUTRITION_LEVEL_STARVING)
-					beep = TRUE
-				if(H.nutrition >= detect_nutrition && detect_nutrition == NUTRITION_LEVEL_FAT)
-					beep = TRUE
 
 	if(reverse)
 		beep = !beep
@@ -207,7 +198,6 @@
 	data["nanite_cloud"] = nanite_cloud
 	data["disease_threshold"] = disease_threshold
 	data["target_species"] = detect_species
-	data["target_nutrition"] = detect_nutrition
 	return data
 
 /obj/machinery/scanner_gate/ui_act(action, params)
@@ -240,19 +230,6 @@
 			var/new_species = params["new_species"]
 			detect_species = new_species
 			. = TRUE
-		if("set_target_nutrition")
-			var/new_nutrition = params["new_nutrition"]
-			var/nutrition_list = list(
-				"Starving",
-				"Obese"
-			)
-			if(new_nutrition && (new_nutrition in nutrition_list))
-				switch(new_nutrition)
-					if("Starving")
-						detect_nutrition = NUTRITION_LEVEL_STARVING
-					if("Obese")
-						detect_nutrition = NUTRITION_LEVEL_FAT
-			. = TRUE
 
 #undef SCANGATE_NONE
 #undef SCANGATE_MINDSHIELD
@@ -261,7 +238,6 @@
 #undef SCANGATE_GUNS
 #undef SCANGATE_WANTED
 #undef SCANGATE_SPECIES
-#undef SCANGATE_NUTRITION
 
 #undef SCANGATE_HUMAN
 #undef SCANGATE_LIZARD

@@ -176,13 +176,9 @@
 /obj/item/storage/firstaid/radiation
 	name = "radiation treatment kit"
 	desc = "Used to treat severe radiation poisoning."
-	icon_state = "antitoxin"
-	item_state = "firstaid-toxin"
+	icon_state = "radiation"
+	item_state = "firstaid-ointment" //its yellow
 	damagetype_healed = TOX
-
-/obj/item/storage/firstaid/radiation/Initialize(mapload)
-	. = ..()
-	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
 
 /obj/item/storage/firstaid/radiation/PopulateContents()
 	if(empty)
