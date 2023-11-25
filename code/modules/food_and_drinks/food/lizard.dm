@@ -19,7 +19,7 @@
 
 /obj/item/reagent_containers/food/snacks/kalixcian_sausage
 	name = "\improper Kalixcian blood sausage"
-	desc = "A coarse dry-cured blood sausage, traditionally made by farmers in the farmlands around Zagoskeld. Similar in texture to old-Earth Spanish chorizo."
+	desc = "A coarse dry-cured blood sausage, traditionally made by farmers in the farmlands of the Central Plateau region in former Switzerland. Similar in texture to chorizo."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_sausage"
 	list_reagents = list(
@@ -32,7 +32,7 @@
 
 /obj/item/reagent_containers/food/snacks/raw_headcheese
 	name = "raw headcheese block"
-	desc = "A common food on Kalixcis, headcheese is traditionally made of an animal's head, with the organs removed, boiled until it falls apart, at which point it is collected, strained of moisture, salted heavily, packed into blocks, and left to dry and age for several months. The resulting hard block tastes similar to cheese."
+	desc = "A common staple in Zalish food culture, headcheese is traditionally made of an animal’s head, with the organs removed, boiled until it falls apart, at which point it is collected, strained of moisture, salted heavily, packed into blocks, and left to dry and age for several months. The resulting hard block tastes similar to cheese."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "raw_lizard_cheese"
 	list_reagents = list(
@@ -61,7 +61,7 @@
 
 /obj/item/reagent_containers/food/snacks/headcheese_slice
 	name = "headcheese slice"
-	desc = "A slice of headcheese, useful for making sandwiches and snacks. Or surviving the cold Kalixcian winters."
+	desc = "A slice of headcheese, useful for making sandwiches and snacks. Or surviving the cold Kalixcis' winters."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_cheese_slice"
 	list_reagents = list(
@@ -87,8 +87,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/tsatsikh
-	name = "tsatsikh"
-	desc = "A Kalixcian dish consisting of spiced ground offal, stuffed into a stomach and boiled. Pretty foul to anyone who's not used to the taste."
+	name = "stlakis"
+	desc = "A Kalixcian dish consisting of spiced ground offal, stuffed into a stomach and boiled. Pretty foul to anyone who's not used to the taste"
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "tsatsikh"
 	list_reagents = list(/datum/reagent/consumable/cooking_oil = 10)
@@ -134,7 +134,7 @@
 
 /obj/item/reagent_containers/food/snacks/lizard_escargot
 	name = "desert snail cocleas"
-	desc = "Another example of cultural crossover between lizards and humans, desert snail escargot is closer to the Roman dish cocleas than the contemporary French escargot. It's a common street food in the desert cities."
+	desc = "Another example of cultural crossover between Sarathi and humans, desert snail escargot is closer to the Roman dish cocleas than the contemporary escargot. It's a common street food in arid cities."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_escargot"
 	list_reagents = list(
@@ -148,7 +148,7 @@
 
 /obj/item/reagent_containers/food/snacks/fried_blood_sausage
 	name = "fried blood sausage"
-	desc = "A blood sausage, battered and deep fried. Commonly served with fries as a quick and simple snack on the streets of Zagoskeld."
+	desc = "A blood sausage, battered and deep fried. Commonly served with fries as a quick and simple snack as street food."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "fried_blood_sausage"
 	list_reagents = list(
@@ -164,7 +164,7 @@
 //Why does like, every language on the planet besides English call them pommes? Who knows, who cares- the lizards call them it too, because funny.
 /obj/item/reagent_containers/food/snacks/lizard_fries
 	name = "loaded poms-franzisks"
-	desc = "One of the many human foods to make its way to the lizards was french fries, which are called poms-franzisks in Draconic. When topped with barbecued meat and sauce, they make a hearty meal."
+	desc = "One of the many human foods to make its way to Kalixcis shortly after first contact was french fries, which are called pommes-embreis in Kalixcian Common. When topped with barbecued meat and sauce, they make a hearty meal."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_fries"
 	list_reagents = list(
@@ -192,7 +192,7 @@
 
 /obj/item/reagent_containers/food/snacks/crispy_headcheese
 	name = "crispy breaded headcheese"
-	desc = "A delicious snack from the streets of Zagoskeld, consisting of headcheese coated in rootbread breadcrumbs. Commonly served with fries."
+	desc = "A delicious snack from the streets of Fenistrad in the Antechannel League, consisting of headcheese coated in rootbread breadcrumbs. Commonly served with fries."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "crispy_headcheese"
 	list_reagents = list(
@@ -205,8 +205,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/kebab/picoss_skewers
-	name = "picoss skewer"
-	desc = "A popular Kalixcian streetfood consisting of vinegar-marinated armorfish on a skewer with onion and chillis."
+	name = "armada skewer"
+	desc = "A popular Ring streetfood consisting of vinegar-marinated armorfish on a skewer with onion and chillis."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "picoss_skewer"
 	list_reagents = list(
@@ -275,8 +275,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/lizard_surf_n_turf
-	name = "\improper Zagosk surf 'n' turf smorgasbord"
-	desc = "A massive platter of Kalixcis's finest meat and seafood, typically shared by groups at the beach. Of course, nothing's stopping you eating it on your own... fatass."
+	name = "\improper Channeler surf 'n' turf smorgasbord"
+	desc = "A massive platter of Kalixcis' finest meat and seafood, typically shared by groups on the river beaches. Of course, nothing's stopping you eating it on your own…"
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "surf_n_turf"
 	list_reagents = list(
@@ -291,7 +291,7 @@
 //Spaghetti Dishes
 
 /obj/item/reagent_containers/food/snacks/spaghetti/nizaya
-	name = "nizaya pasta"
+	name = "rustic pasta"
 	desc = "A form of root and nut pasta originally native to the oceanside regions of Kalixcis. It's similar in texture and appearance to gnocchi."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "nizaya"
@@ -303,8 +303,8 @@
 	foodtype = VEGETABLES | NUTS
 
 /obj/item/reagent_containers/food/snacks/spaghetti/snail_nizaya
-	name = "desert snail nizaya"
-	desc = "A high class pasta dish from Kalixcis's vineyard region of Valyngia. Traditionally made with only the finest Kalixcian wine... but the human swill will do, in a pinch."
+	name = "desert snail rustic pasta"
+	desc = "A high class pasta dish adopted by Solarian chefs based on Kalixcian pasta traditions. Traditionally made with only the finest Solarian wine… but box will do, in a pinch."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "snail_nizaya"
 	list_reagents = list(
@@ -451,7 +451,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizza/flatbread/rustic
 	name = "rustic flatbread"
-	desc = "A simple Kalixcian country dish, popular as a side to meat or fish dishes. Topped with herbs and oil."
+	desc = "A simple Zohilian country dish, popular as a side to meat or fish dishes. Topped with herbs and oil"
 	icon_state = "rustic_flatbread"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 15,
@@ -462,8 +462,8 @@
 	foodtype = VEGETABLES | NUTS
 
 /obj/item/reagent_containers/food/snacks/pizza/flatbread/italic
-	name = "\improper Italic flatbread"
-	desc = "The introduction of human foods to Kalixcis led to an advancement in lizard cooking- the Italic flatbread is now a common sight on the menus of takeout stores on the planet."
+	name = "\improper Mediterranean flatbread"
+	desc = "The introduction of Solarian foods to Kalixcis led to an advancement in Sarathi cooking - the Mediterranean flatbread is now a common sight on the menus of takeout stores on the planet"
 	icon_state = "italic_flatbread"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 15,
@@ -474,8 +474,8 @@
 	foodtype = VEGETABLES | NUTS | MEAT
 
 /obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial
-	name = "\improper Imperial flatbread"
-	desc = "A flatbread topped with pate, pickled vegetables, and cubed headcheese. Not very suited to anyone's tastes but the lizards."
+	name = "\improper Royal flatbread"
+	desc = "A flatbread topped with pate, pickled vegetables, and cubed headcheese, named in honor of the Zalish royals. Not very suited to anyone's tastes but the Sarathi."
 	icon_state = "imperial_flatbread"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 15,
@@ -487,7 +487,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizza/flatbread/rawmeat
 	name = "meatlovers flatbread"
-	desc = "Oddly enough, this Kalixcian dish is actually a favorite of some health-minded humans."
+	desc = "Oddly enough, this Pan-Genezan dish is actually a favorite of some health-minded humans."
 	icon_state = "rawmeat_flatbread"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 15,
@@ -509,8 +509,8 @@
 	foodtype = BUGS | NUTS | SEAFOOD | GORE
 
 /obj/item/reagent_containers/food/snacks/pizza/flatbread/zmorgast  // Name is based off of the Swedish dish Smörgåstårta
-	name = "\improper Zmorgast flatbread"
-	desc = "A Kalixcian spin on the original Swedish sandwich cake, the Zmorgast is a common dish at family gatherings."
+	name = "\improper Swedish flatbread"
+	desc = "A Pan-Genezan spin on the original Swedish sandwich cake inherited by the Solarians, the 'swedeflat' is a common dish at family gatherings."
 	icon_state = "zmorgast_flatbread"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 16,
@@ -522,7 +522,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizza/flatbread/fish
 	name = "\improper BBQ fish flatbread"
-	desc = "Superengine delamination, clown ops, too cold outside, I just want to grill for Kalixcis's sake!"
+	desc = "Superengine delamination, nuclear operatives, too cold outside, I just want to grill for Fangs' sake!"
 	icon_state = "fish_flatbread"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -554,7 +554,7 @@
 //Sandwiches/Toast Dishes
 /obj/item/reagent_containers/food/snacks/emperor_roll
 	name = "emperor roll"
-	desc = "A popular sandwich on Kalixcis, named in honour of the Imperial family."
+	desc = "A popular sandwich on Kalixcis, named in honour of the Zale families."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "emperor_roll"
 	list_reagents = list(
@@ -582,8 +582,8 @@
 
 //Soup Dishes
 /obj/item/reagent_containers/food/snacks/soup/atrakor_dumplings
-	name = "\improper Atrakor dumpling soup"
-	desc = "A bowl of rich, meaty dumpling soup, traditionally served during the festival of Atrakor's Might on Kalixcis. The dumplings are shaped like the Night Sky Lord himself."
+	name = "\improper Meat dumpling soup"
+	desc = "A bowl of rich, meaty dumpling soup. Pleasant and hearty fare for holidays, especially during the winter"
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "atrakor_dumplings"
 	list_reagents = list(
@@ -650,7 +650,7 @@
 //Egg Dishes
 /obj/item/reagent_containers/food/snacks/black_eggs
 	name = "black scrambled eggs"
-	desc = "A country dish from rural Kalixcis. Made with eggs, blood, and foraged greens. Traditionally eaten with rootbread and a spicy sauce."
+	desc = "A country dish from rural Kalixcis. Made with eggs, animal blood, and foraged greens. Traditionally eaten with rootbread and a spicy sauce."
 	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "black_eggs"
 	list_reagents = list(
@@ -784,7 +784,7 @@
 
 /obj/item/reagent_containers/food/snacks/canned/desert_snails
 	name = "canned desert snails"
-	desc = "Giant snails from the Kalixcian desert, packaged in brine. Shells included. Probably best not eaten raw, unless you're a lizard."
+	desc = "Giant snails from the Kalixcis' oceanic environment, packaged in brine. Shells included. Probably best not eaten raw, unless you're a Kalixcian."
 	icon_state = "snails"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
