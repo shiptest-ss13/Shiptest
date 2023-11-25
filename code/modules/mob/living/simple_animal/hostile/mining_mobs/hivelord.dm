@@ -848,6 +848,12 @@
 						/obj/item/grenade/flashbang = 5
 						)
 					)
+			if(prob(70))
+				backpack_contents += (list(
+					/obj/item/gun/ballistic/automatic/pistol/APS,
+					/obj/item/ammo_box/magazine/pistolm9mm
+					)
+				)
 			if(prob(25))
 				r_pocket = pickweight(list(
 					/obj/item/chameleon = 1,
