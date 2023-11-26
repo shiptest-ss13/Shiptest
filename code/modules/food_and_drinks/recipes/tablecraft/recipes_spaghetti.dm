@@ -68,3 +68,49 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/spaghetti/butternoodles
 	subcategory = CAT_SPAGHETTI
+
+/datum/crafting_recipe/food/snail_nizaya
+	name = "Desert snail nizaya"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/canned/desert_snails = 1,
+		/obj/item/reagent_containers/food/snacks/spaghetti/nizaya = 1,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/datum/reagent/consumable/ethanol/wine = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/spaghetti/snail_nizaya
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/garlic_nizaya
+	name = "Garlic nizaya"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/spaghetti/nizaya = 1,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/datum/reagent/consumable/quality_oil = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/spaghetti/garlic_nizaya
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/demit_nizaya
+	name = "Demit nizaya"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/spaghetti/nizaya = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/datum/reagent/consumable/korta_milk = 5,
+		/datum/reagent/consumable/korta_nectar = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/spaghetti/demit_nizaya
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/mushroom_nizaya
+	name = "Mushroom nizaya"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/spaghetti/nizaya = 1,
+		/obj/item/reagent_containers/food/snacks/steeped_mushrooms = 1,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/datum/reagent/consumable/quality_oil = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/spaghetti/mushroom_nizaya
+	category = CAT_LIZARD

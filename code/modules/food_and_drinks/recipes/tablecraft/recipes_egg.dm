@@ -61,3 +61,24 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/eggrolls
 	subcategory = CAT_EGG
+
+/datum/crafting_recipe/food/black_eggs
+	name = "Black scrambled eggs"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/egg = 2,
+		/datum/reagent/blood = 5,
+		/datum/reagent/consumable/vinegar = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/black_eggs
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/patzikula
+	name = "Patzikula"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 2,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/egg = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/patzikula
+	category = CAT_LIZARD

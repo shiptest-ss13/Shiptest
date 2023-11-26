@@ -459,3 +459,67 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/red_porridge
 	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/atrakor_dumplings
+	name = "Atrakor dumpling soup"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/meat/rawcutlet = 2,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/obj/item/reagent_containers/food/snacks/lizard_dumplings = 1,
+		/datum/reagent/consumable/soysauce = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/atrakor_dumplings
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/meatball_noodles
+	name = "Meatball noodle soup"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/meat/rawcutlet = 2,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/obj/item/reagent_containers/food/snacks/spaghetti/nizaya = 1,
+		/obj/item/reagent_containers/food/snacks/meatball = 2,
+		/obj/item/reagent_containers/food/snacks/grown/korta_nut = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/meatball_noodles
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/black_broth
+	name = "Kalixcian black broth"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/kalixcian_sausage = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/datum/reagent/consumable/vinegar = 5,
+		/datum/reagent/blood = 5,
+		/datum/reagent/consumable/ice = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/black_broth
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/jellyfish_stew
+	name = "Jellyfish stew"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/canned/jellyfish = 1,
+		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1,
+		/obj/item/reagent_containers/food/snacks/grown/redbeet = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/jellyfish
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/rootbread_soup
+	name = "Rootbread soup"
+	reqs = list(
+		/obj/item/reagent_containers/glass/bowl = 1,
+		/obj/item/reagent_containers/food/snacks/breadslice/root = 2,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/egg = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/rootbread_soup
+	category = CAT_LIZARD

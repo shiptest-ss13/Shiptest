@@ -252,6 +252,17 @@
 	result = /obj/item/reagent_containers/food/snacks/snowcones/rainbow
 	subcategory = CAT_ICE
 
+/datum/crafting_recipe/food/korta_ice
+	name = "Korta ice"
+	reqs = list(
+		/obj/item/paper = 1,
+		/datum/reagent/consumable/ice = 15,
+		/datum/reagent/consumable/korta_nectar = 5,
+		/obj/item/reagent_containers/food/snacks/grown/berries = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/snowcones/korta_ice
+	category = CAT_LIZARD
+
 //////////////////////////POPSICLES///////////////////////
 
 // This section includes any frozen treat served on a stick.

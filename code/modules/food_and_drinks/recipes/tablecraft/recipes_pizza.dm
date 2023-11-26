@@ -174,3 +174,98 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_mothic_garlic
 	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/rustic_flatbread
+	name = "Rustic flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/datum/reagent/consumable/lemonjuice = 2,
+		/datum/reagent/consumable/quality_oil = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/rustic
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/italic_flatbread
+	name = "Italic flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/meatball = 2,
+		/datum/reagent/consumable/quality_oil = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/italic
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/imperial_flatbread
+	name = "Imperial flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/liver_pate = 1,
+		/obj/item/reagent_containers/food/snacks/sauerkraut = 1,
+		/obj/item/reagent_containers/food/snacks/headcheese = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/rawmeat_flatbread
+	name = "Meatlovers flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/meat/slab = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/rawmeat
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/stinging_flatbread
+	name = "Stinging flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/canned/larvae = 1,
+		/obj/item/reagent_containers/food/snacks/canned/jellyfish = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/stinging
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/zmorgast_flatbread
+	name = "Zmorgast flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 2,
+		/obj/item/reagent_containers/food/snacks/egg = 1,
+		/obj/item/organ/liver = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/zmorgast
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/fish_flatbread
+	name = "BBQ fish flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/fishmeat = 2,
+		/datum/reagent/consumable/bbqsauce = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/fish
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/mushroom_flatbread
+	name = "Mushroom and tomato flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mushroom = 3,
+		/datum/reagent/consumable/quality_oil = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/mushroom
+	category = CAT_LIZARD
+
+/datum/crafting_recipe/food/nutty_flatbread
+	name = "Nut paste flatbread"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/root_flatbread = 1,
+		/datum/reagent/consumable/korta_flour = 5,
+		/datum/reagent/consumable/korta_milk = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/nutty
+	category = CAT_LIZARD
