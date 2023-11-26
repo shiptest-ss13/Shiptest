@@ -62,7 +62,6 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
-#include "missing_icons.dm"
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
@@ -75,6 +74,7 @@
 #include "emoting.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
+#include "missing_icons.dm"
 #include "open_air.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
@@ -105,6 +105,7 @@
 #include "teleporters.dm"
 #include "timer_sanity.dm"
 #include "unit_test.dm"
+#include "worn_icons.dm"
 
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
 #include "find_reference_sanity.dm"
