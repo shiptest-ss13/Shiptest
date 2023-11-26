@@ -213,6 +213,20 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/laughter = 25)
 	tastes = list("ice" = 1, "water" = 1, "sunlight" = 5, "light" = 5, "slime" = 5, "paint" = 3, "clouds" = 3)
 
+/obj/item/reagent_containers/food/snacks/snowcones/korta_ice
+	name = "korta ice"
+	desc = "Shaved ice, korta nectar and berries. A sweet treat to eat to beat summer heat!"
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "korta_ice"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment/vitamin = 8,
+		/datum/reagent/consumable/ice = 4,
+		/datum/reagent/consumable/berryjuice = 6,
+	)
+	tastes = list("peppery sweet" = 1, "berry" = 1)
+	foodtype = NUTS | SUGAR | FRUIT
+
+
 /////////////
 //POPSICLES//
 /////////////

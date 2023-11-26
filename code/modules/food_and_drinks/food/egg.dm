@@ -164,3 +164,31 @@
 	filling_color = "#d3ceba"
 	tastes = list("rice" = 1, "dried seaweed" = 1, "eggs" = 1)
 	foodtype = BREAKFAST | FRIED
+
+/obj/item/reagent_containers/food/snacks/black_eggs
+	name = "black scrambled eggs"
+	desc = "A country dish from rural Kalixcis. Made with eggs, animal blood, and foraged greens. Traditionally eaten with rootbread and a spicy sauce."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "black_eggs"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+	)
+	tastes = list("eggs" = 1, "greens" = 1, "blood" = 1)
+	foodtype = MEAT | BREAKFAST | GORE
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/patzikula
+	name = "patzikula"
+	desc = "A smooth and spicy tomato-based sauce topped with eggs and baked. Delicious."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "patzikula"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/cooking_oil = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 8,
+		/datum/reagent/consumable/capsaicin = 2,
+	)
+	tastes = list("eggs" = 1, "tomato" = 1, "heat" = 1)
+	foodtype = VEGETABLES | MEAT | BREAKFAST
+	w_class = WEIGHT_CLASS_SMALL

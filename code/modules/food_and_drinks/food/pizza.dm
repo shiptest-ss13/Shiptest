@@ -458,3 +458,109 @@
 	icon_state = "garlic_slice"
 	tastes = list("dough" = 1, "garlic" = 1, "butter" = 1)
 	foodtype = GRAIN | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread
+	icon = 'icons/obj/food/lizard.dmi'
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/rustic
+	name = "rustic flatbread"
+	desc = "A simple Zohilian country dish, popular as a side to meat or fish dishes. Topped with herbs and oil"
+	icon_state = "rustic_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/nutriment/vitamin = 15,
+		/datum/reagent/consumable/garlic = 2,
+	)
+	tastes = list("bread" = 1, "herb" = 1, "oil" = 1, "garlic" = 1)
+	foodtype = VEGETABLES | NUTS
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/italic
+	name = "\improper Mediterranean flatbread"
+	desc = "The introduction of Solarian foods to Kalixcis led to an advancement in Sarathi cooking - the Mediterranean flatbread is now a common sight on the menus of takeout stores on the planet"
+	icon_state = "italic_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/cooking_oil = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 15,
+	)
+	tastes = list("bread" = 1, "herb" = 1, "oil" = 1, "garlic" = 1, "tomato" = 1, "meat" = 1)
+	foodtype = VEGETABLES | NUTS | MEAT
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial
+	name = "\improper Royal flatbread"
+	desc = "A flatbread topped with pate, pickled vegetables, and cubed headcheese, named in honor of the Zalish royals. Not very suited to anyone's tastes but the Sarathi."
+	icon_state = "imperial_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/cooking_oil = 15,
+		/datum/reagent/consumable/nutriment/vitamin = 10,
+	)
+	tastes = list("bread" = 1, "herb" = 1, "oil" = 1, "garlic" = 1, "tomato" = 1, "meat" = 1)
+	foodtype = VEGETABLES | MEAT | NUTS | GORE
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/rawmeat
+	name = "meatlovers flatbread"
+	desc = "Oddly enough, this Pan-Genezan dish is actually a favorite of some health-minded humans."
+	icon_state = "rawmeat_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/cooking_oil = 10,
+	)
+	tastes = list("bread" = 1, "meat" = 1)
+	foodtype = MEAT | NUTS | RAW | GORE
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/stinging
+	name = "\improper Stinging flatbread"
+	desc = "The electric mix of jellyfish and bee larva makes for a flavor sensation that leaves you asking for more!"
+	icon_state = "stinging_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/cooking_oil = 20,
+		/datum/reagent/consumable/honey = 2,
+	)
+	tastes = list("bread" = 1, "sweetness" = 1, "stinging" = 1, "slime" = 1)
+	foodtype = BUGS | NUTS | SEAFOOD | GORE
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/zmorgast  // Name is based off of the Swedish dish Smörgåstårta
+	name = "\improper Swedish flatbread"
+	desc = "A Pan-Genezan spin on the original Swedish sandwich cake inherited by the Solarians, the 'swedeflat' is a common dish at family gatherings."
+	icon_state = "zmorgast_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 16,
+		/datum/reagent/consumable/cooking_oil = 6,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+	)
+	tastes = list("bread" = 1, "liver" = 1, "family" = 1)
+	foodtype = VEGETABLES | NUTS | MEAT
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/fish
+	name = "\improper BBQ fish flatbread"
+	desc = "Superengine delamination, nuclear operatives, too cold outside, I just want to grill for Fangs' sake!"
+	icon_state = "fish_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 20,
+		/datum/reagent/consumable/cooking_oil = 15,
+		/datum/reagent/consumable/bbqsauce = 2,
+	)
+	tastes = list("bread" = 1, "fish" = 1)
+	foodtype = SEAFOOD | NUTS
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/mushroom
+	name = "mushroom and tomato flatbread"
+	desc = "A simple alternative to the Italic flatbread, for when you've already filled up on meat elsewhere."
+	icon_state = "mushroom_flatbread"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 18,
+		/datum/reagent/consumable/nutriment/vitamin = 5,
+	)
+	tastes =  list("bread" = 1, "mushroom" = 1, "tomatoes" = 1)
+	foodtype = VEGETABLES | NUTS
+
+/obj/item/reagent_containers/food/snacks/pizza/flatbread/nutty
+	name = "nut paste flatbread"
+	desc = "Modern advances in cuisine now allow for a double helping of the delicious taste of korta nuts, both as the base and as a topping on this flatbread."
+	icon_state = "nutty_flatbread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
+	tastes =  list("bread" = 1, "nuts" = 2)
+	foodtype = NUTS

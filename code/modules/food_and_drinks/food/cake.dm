@@ -455,3 +455,30 @@
 	)
 	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
 	foodtype = VEGETABLES | SUGAR
+
+/obj/item/reagent_containers/food/snacks/cake/korta_brittle
+	name = "korta brittle slab"
+	desc = "A big slab of korta nut brittle. So sugary it should be a crime!"
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "korta_brittle"
+	list_reagents = list(
+		/datum/reagent/consumable/sugar = 20,
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/korta_nectar = 15,
+	)
+	tastes = list("peppery heat" = 1, "sweetness" = 1)
+	foodtype = NUTS | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/korta_brittle
+
+/obj/item/reagent_containers/food/snacks/cakeslice/korta_brittle
+	name = "korta brittle slice"
+	desc = "A little slice of korta nut brittle. A diabetic's worst enemy."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "korta_brittle_slice"
+	list_reagents = list(
+		/datum/reagent/consumable/sugar = 4,
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/korta_nectar = 3,
+	)
+	tastes = list("peppery heat" = 1, "sweetness" = 1)
+	foodtype = NUTS | SUGAR

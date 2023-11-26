@@ -321,3 +321,47 @@
 	icon_state = "cornbread_slice"
 	foodtype = GRAIN
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+
+/obj/item/reagent_containers/food/snacks/rootdough
+	name = "root dough"
+	desc = "A root based dough, made with nuts and tubers. Used in a wide range of Kalixcian cooking."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "rootdough"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
+	w_class = WEIGHT_CLASS_SMALL
+	tastes = list("potato" = 1, "earthy heat" = 1)
+	foodtype = VEGETABLES | NUTS
+	cooked_type = /obj/item/reagent_containers/food/snacks/bread/root
+
+/obj/item/reagent_containers/food/snacks/rootdough/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/kitchen/rollingpin))
+		if(isturf(loc))
+			new /obj/item/reagent_containers/food/snacks/flatrootdough(loc)
+			to_chat(user, "<span class='notice'>You flatten [src].</span>")
+			qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a surface to roll it out!</span>")
+	else
+		..()
+
+/obj/item/reagent_containers/food/snacks/bread/root
+	name = "rootbread"
+	desc = "The lizard equivalent to bread, made from tubers like potatoes and yams mixed with ground nuts and seeds. Noticably denser than regular bread."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "lizard_bread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
+	tastes = list("bread" = 8, "nuts" = 2)
+	foodtype = VEGETABLES | NUTS
+	w_class = WEIGHT_CLASS_SMALL
+	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/root
+	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/bread
+
+/obj/item/reagent_containers/food/snacks/breadslice/root
+	name = "rootbread slice"
+	desc = "A slice of dense, chewy rootbread."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "lizard_breadslice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	tastes = list("bread" = 8, "nuts" = 2)
+	foodtype = VEGETABLES | NUTS
+	customfoodfilling = 1

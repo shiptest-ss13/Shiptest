@@ -473,3 +473,69 @@
 	)
 	tastes = list("sweet beets" = 1, "sugar" = 1, "sweetened yoghurt" = 1)
 	foodtype = VEGETABLES | SUGAR | DAIRY
+
+/obj/item/reagent_containers/food/snacks/soup/atrakor_dumplings
+	name = "\improper Meat dumpling soup"
+	desc = "A bowl of rich, meaty dumpling soup. Pleasant and hearty fare for holidays, especially during the winter"
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "atrakor_dumplings"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/cooking_oil = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 4,
+		/datum/reagent/water = 5,
+	)
+	tastes = list("bone broth" = 1, "onion" = 1, "potato" = 1)
+	foodtype = MEAT | VEGETABLES | NUTS
+
+/obj/item/reagent_containers/food/snacks/soup/meatball_noodles //No growable peanuts. No recipe. No food.
+	name = "meatball noodle soup"
+	desc = "A hearty noodle soup made from meatballs and nizaya in a rich broth. Commonly topped with a handful of chopped nuts."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "meatball_noodles"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/cooking_oil = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+		/datum/reagent/water = 5,
+	)
+	tastes = list("bone broth" = 1, "meat" = 1, "gnocchi" = 1, "peanuts" = 1)
+	foodtype = MEAT | VEGETABLES | NUTS
+
+/obj/item/reagent_containers/food/snacks/soup/black_broth
+	name = "\improper Kalixcian black broth"
+	desc = "A bowl of sausage, onion, blood and vinegar, served ice cold. Every bit as rough as it sounds."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "black_broth"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 10,
+		/datum/reagent/blood = 8,
+		/datum/reagent/liquidgibs = 2,
+	)
+	tastes = list("vinegar" = 1, "metal" = 1)
+	foodtype = MEAT | VEGETABLES | GORE
+
+/obj/item/reagent_containers/food/snacks/soup/jellyfish
+	name = "jellyfish stew"
+	desc = "A slimy bowl of jellyfish stew. It jiggles if you shake it."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "jellyfish_stew"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 10,
+		/datum/reagent/consumable/nutriment = 6,
+	)
+	tastes = list("slime" = 1)
+	foodtype = MEAT | VEGETABLES | GORE
+
+/obj/item/reagent_containers/food/snacks/soup/rootbread_soup
+	name = "rootbread soup"
+	desc = "A big bowl of spicy, savoury soup made with rootbread. Heavily seasoned, and very tasty."
+	icon = 'icons/obj/food/lizard.dmi'
+	icon_state = "rootbread_soup"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 6,
+		/datum/reagent/consumable/nutriment = 10,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+	)
+	tastes = list("bread" = 1, "egg" = 1, "chili" = 1, "garlic" = 1)
+	foodtype = MEAT | VEGETABLES
