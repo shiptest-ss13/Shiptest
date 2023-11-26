@@ -822,7 +822,7 @@
 					)
 				)
 
-		if("Infiltrator")//WE FINALLY FOUND HIM
+		if("Infiltrator")
 			uniform = /obj/item/clothing/under/syndicate/bloodred
 			gloves = /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 			suit = /obj/item/clothing/suit/armor/vest/infiltrator
