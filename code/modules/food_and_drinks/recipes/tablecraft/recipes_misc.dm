@@ -408,3 +408,201 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/onigiri
 	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/herby_cheese
+	name = "Herby cheese"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/curd_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 4
+	)
+	result = /obj/item/reagent_containers/food/snacks/herby_cheese
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/mothic_salad
+	name = "Mothic salad"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/onion_slice/red = 2,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/mothic_salad
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/toasted_seeds
+	name = "Toasted seeds"
+	reqs = list(
+		/obj/item/seeds/sunflower = 1,
+		/obj/item/seeds/pumpkin = 1,
+		/obj/item/seeds/poppy = 1,
+		/datum/reagent/consumable/quality_oil = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/toasted_seeds
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/engine_fodder
+	name = "Engine fodder"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/toasted_seeds = 1,
+		/obj/item/reagent_containers/food/snacks/cnds = 1,
+		/obj/item/reagent_containers/food/snacks/popcorn = 1,
+		/obj/item/reagent_containers/food/snacks/peanuts = 1,
+		/obj/item/reagent_containers/food/snacks/chips = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/engine_fodder
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/squeaking_stir_fry
+	name = "Skeklitmischtpoppl (Squeaking stir fry)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/cheese_curds = 1,
+		/obj/item/reagent_containers/food/snacks/tofu = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/onion_slice = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/squeaking_stir_fry
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/sweet_chili_cabbage_wrap
+	name = "Sweet chili cabbage wrap"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grilled_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/mothic_salad = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/datum/reagent/consumable/honey = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/sweet_chili_cabbage_wrap
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/loaded_curds
+	name = "Ozlsettitæloskekllön ede pommes (Loaded curds and fries)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/cheese_curds = 1,
+		/obj/item/reagent_containers/food/snacks/soup/vegetarian_chili = 1,
+		/obj/item/reagent_containers/food/snacks/onion_slice = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/fries = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/loaded_curds
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/baked_cheese_platter
+	name = "Stanntkraktælo (Baked cheese platter)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/baked_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/griddle_toast = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/baked_cheese_platter
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/raw_green_lasagne
+	name = "Green lasagne al forno"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pesto = 1,
+		/obj/item/reagent_containers/food/snacks/spaghetti = 2,
+		/obj/item/reagent_containers/food/snacks/bechamel_sauce = 1,
+		/obj/item/reagent_containers/food/snacks/firm_cheese = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/raw_green_lasagne
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/raw_baked_rice
+	name = "Big baked rice"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 2,
+		/obj/item/reagent_containers/food/snacks/soup/vegetable = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 2,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/raw_baked_rice
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/buttered_baked_corn
+	name = "Buttered baked corn"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/oven_baked_corn = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/buttered_baked_corn
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/fiesta_corn_skillet
+	name = "Fiesta corn skillet"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/oven_baked_corn = 1,
+		/obj/item/reagent_containers/food/snacks/cornchips = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 2,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/onion_slice = 2,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/fiesta_corn_skillet
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/ratatouille
+	name = "Ratatouille"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion/red = 1,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/obj/item/reagent_containers/food/snacks/roasted_bell_pepper = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/raw_ratatouille
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/mozzarella_sticks
+	name = "Mozzarella sticks"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/mozzarella = 1,
+		/obj/item/reagent_containers/food/snacks/breadslice = 2,
+		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/mozzarella_sticks
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/raw_stuffed_peppers
+	name = "Voltölpapriken (Stuffed peppers)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/bell_pepper = 1,
+		/obj/item/reagent_containers/food/snacks/herby_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/onion_slice = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/raw_stuffed_peppers
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/fueljacks_lunch
+	name = "Fueljack's lunch"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
+		/obj/item/reagent_containers/food/snacks/onion_slice = 2,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/firm_cheese_slice = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/fueljacks_lunch
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/mac_balls
+	name = "Macheronirölen (Mac balls)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/ready_donk/warm/mac_n_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1,
+		/datum/reagent/consumable/cornmeal_batter = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/mac_balls
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/moth_cheese_cakes
+	name = "Ælorölen (Cheesecake balls)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/curd_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/datum/reagent/consumable/flour = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/datum/reagent/consumable/honey = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/moth_cheese_cakes
+	subcategory = CAT_MOTH

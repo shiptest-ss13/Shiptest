@@ -206,3 +206,14 @@
 	)
 	result = /mob/living/simple_animal/pet/cat/cak
 	subcategory = CAT_CAKE //Cat! Haha, get it? CAT? GET IT? We get it - Love Felines
+
+/datum/crafting_recipe/food/mothmallow
+	name = "Mothmallows"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1,
+		/datum/reagent/consumable/vanilla = 5,
+		/datum/reagent/consumable/sugar = 15,
+		/datum/reagent/consumable/ethanol/rum = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/cake/mothmallow
+	subcategory = CAT_MOTH

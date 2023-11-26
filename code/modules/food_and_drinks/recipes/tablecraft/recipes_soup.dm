@@ -304,3 +304,158 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/peasoup
 	subcategory = CAT_SOUP
+
+/datum/crafting_recipe/food/moth_cotton_soup
+	name = "Flöfrölenmæsch (Cottonball soup)"
+	reqs = list(
+		/obj/item/grown/cotton = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/obj/item/reagent_containers/food/snacks/oven_baked_corn = 1,
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/moth_cotton_soup
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/moth_cheese_soup
+	name = "Ælosterrmæsch (Cheese soup)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 2,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 1,
+		/datum/reagent/consumable/flour = 5,
+		/datum/reagent/consumable/milk = 5,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/moth_cheese_soup
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/moth_seed_soup
+	name = "Misklmæsch (Seed soup)"
+	reqs = list(
+		/obj/item/seeds/sunflower = 1,
+		/obj/item/seeds/poppy/lily = 1,
+		/obj/item/seeds/ambrosia = 1,
+		/datum/reagent/water = 10,
+		/datum/reagent/consumable/vinegar = 5,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/moth_seed_soup
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/moth_bean_stew
+	name = "Prickeldröndolhaskl (Spicy bean stew)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/canned/beans = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/oven_baked_corn = 1,
+		/datum/reagent/water = 5,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/moth_bean_stew
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/moth_oat_stew
+	name = "Häfmisklhaskl (Oat stew)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/oat = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato/sweet = 1,
+		/obj/item/reagent_containers/food/snacks/grown/parsnip = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/datum/reagent/water = 5,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/moth_oat_stew
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/moth_fire_soup
+	name = "Tömpröttkrakklmæsch (Heartburn soup)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/ghost_chili = 1,
+		/obj/item/reagent_containers/food/snacks/tofu = 1,
+		/datum/reagent/consumable/yoghurt = 10,
+		/datum/reagent/consumable/vinegar = 2,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/moth_fire_soup
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/rice_porridge
+	name = "Rice porridge"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/salad/ricebowl = 1,
+		/datum/reagent/water = 10,
+		/datum/reagent/consumable/sodiumchloride = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/rice_porridge
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/hua_mulan_congee
+	name = "Hua Mulan congee"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/soup/rice_porridge = 1,
+		/obj/item/reagent_containers/food/snacks/meat/bacon = 1,
+		/obj/item/reagent_containers/food/snacks/friedegg = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/hua_mulan_congee
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/toechtauese_rice_porridge
+	name = "Töchtaüse rice porridge"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/soup/rice_porridge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/datum/reagent/consumable/toechtauese_syrup = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/toechtauese_rice_porridge
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/cornmeal_porridge
+	name = "Cornmeal porridge"
+	reqs = list(
+		/datum/reagent/consumable/cornmeal = 10,
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/cheesy_porridge
+	name = "Cheesy porridge"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge = 1,
+		/datum/reagent/consumable/milk = 5,
+		/obj/item/reagent_containers/food/snacks/firm_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/curd_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/cheesy_porridge
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/fried_eggplant_polenta
+	name = "Fried eggplant and polenta"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/soup/cheesy_porridge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/obj/item/reagent_containers/food/snacks/breadslice = 2,
+		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1,
+		/obj/item/reagent_containers/food/snacks/mozzarella = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/fried_eggplant_polenta
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/red_porridge
+	name = "Eltsløsk ül a priktæolk (Red Porridge and Yoghurt)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/redbeet = 1,
+		/datum/reagent/consumable/vanilla = 5,
+		/datum/reagent/consumable/yoghurt = 10,
+		/datum/reagent/consumable/sugar = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/red_porridge
+	subcategory = CAT_MOTH

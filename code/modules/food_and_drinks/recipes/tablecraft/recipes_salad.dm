@@ -106,3 +106,53 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/edensalad
 	subcategory = CAT_SALAD
+
+/datum/crafting_recipe/food/caprese_salad
+	name = "Caprese salad"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/mozzarella = 1,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 1,
+		/datum/reagent/consumable/quality_oil = 2,
+		/datum/reagent/consumable/vinegar = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/caprese_salad
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/fleet_salad
+	name = "Lörtonknusksolt (Fleet salad)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/mothic_salad = 1,
+		/obj/item/reagent_containers/food/snacks/grilled_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/breadslice = 1,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/datum/reagent/consumable/quality_oil = 2,
+		/datum/reagent/consumable/vinegar = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/fleet_salad
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/cotton_salad
+	name = "Flöfrölenknusksolt (Cotton salad)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/mothic_salad = 1,
+		/obj/item/grown/cotton = 2,
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/datum/reagent/consumable/quality_oil = 2,
+		/datum/reagent/consumable/vinegar = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/fleet_salad
+	subcategory = CAT_MOTH
+
+/datum/crafting_recipe/food/moth_kachumbari
+	name = "Kæniatknusksolt (Kenyan salad)"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/oven_baked_corn = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion/red = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 1,
+		/datum/reagent/consumable/limejuice = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/salad/moth_kachumbari
+	subcategory = CAT_MOTH
