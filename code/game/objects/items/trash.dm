@@ -69,6 +69,25 @@
 	name = "semki pack"
 	icon_state = "semki_pack"
 
+/obj/item/trash/peanuts
+	name = "\improper Gallery peanuts packet"
+	desc = "This thread is trash!"
+	icon_state = "peanuts"
+
+/obj/item/trash/cnds
+	name = "\improper C&Ds packet"
+	icon_state = "cnds"
+
+/obj/item/trash/spacers_sidekick
+	name = "\improper Spacer's Sidekick packet"
+	icon_state = "spacers_sidekick"
+
+/obj/item/trash/ready_donk
+	name = "empty Ready-donk"
+	desc = "It's been Donk-decimated."
+	icon_state = "ready_donk"
+	icon = 'icons/obj/food/donk.dmi'
+
 /obj/item/trash/tray
 	name = "tray"
 	icon_state = "tray"
@@ -79,15 +98,26 @@
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle4"
 
+/obj/item/trash/can/Initialize()
+	. = ..()
+	pixel_x = rand(-4,4)
+	pixel_y = rand(-4,4)
+
+/obj/item/trash/attack(mob/M, mob/living/user)
+	return
+
 /obj/item/trash/can
 	name = "crushed can"
 	icon_state = "cola"
 	resistance_flags = NONE
 	grind_results = list(/datum/reagent/aluminium = 10)
 
+/obj/item/trash/can/food
+	name = "canned peaches"
+	icon_state = "peachcan_empty"
+	icon = 'icons/obj/food/canned.dmi'
 /obj/item/trash/can/food/peaches
 	name = "canned peaches"
-	icon = 'icons/obj/food/food.dmi'
 	icon_state = "peachcan_empty"
 
 /obj/item/trash/can/food/peaches/maint
@@ -98,23 +128,6 @@
 	name = "tin of beans"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "beans_empty"
-
-/obj/item/trash/can/Initialize()
-	. = ..()
-	pixel_x = rand(-4,4)
-	pixel_y = rand(-4,4)
-
-/obj/item/trash/attack(mob/M, mob/living/user)
-	return
-
-/obj/item/trash/peanuts
-	name = "\improper Gallery peanuts packet"
-	desc = "This thread is trash!"
-	icon_state = "peanuts"
-
-/obj/item/trash/cnds
-	name = "\improper C&Ds packet"
-	icon_state = "cnds"
 
 /obj/item/trash/can/food/tomatoes
 	name = "canned San Marzano tomatoes"
@@ -135,12 +148,3 @@
 /obj/item/trash/can/food/larvae
 	name = "canned bee larva"
 	icon_state = "larvae_empty"
-
-/obj/item/trash/spacers_sidekick
-	name = "\improper Spacer's Sidekick packet"
-	icon_state = "spacers_sidekick"
-
-/obj/item/trash/ready_donk
-	name = "empty Ready-donk"
-	desc = "It's been Donk-decimated."
-	icon_state = "ready_donk"

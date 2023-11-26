@@ -923,6 +923,7 @@
 	name = "\improper Ready-Donk: Bachelor Chow"
 	desc = "A quick Donk-dinner: now with flavour!"
 	icon_state = "ready_donk"
+	icon = 'icons/obj/food/donk.dmi'
 	trash = /obj/item/trash/ready_donk
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/ready_donk/warm
