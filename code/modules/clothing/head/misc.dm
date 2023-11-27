@@ -313,11 +313,6 @@
 	desc = "Welcome to the rice fields, motherfucker."
 	icon_state = "rice_hat"
 
-/obj/item/clothing/head/lizard
-	name = "lizardskin cloche hat"
-	desc = "How many lizards died to make this hat? Not enough."
-	icon_state = "lizard"
-
 /obj/item/clothing/head/papersack
 	name = "paper sack hat"
 	desc = "A paper sack with crude holes cut out for eyes. Useful for hiding one's identity or ugliness."
@@ -422,11 +417,6 @@
 	name = "kippah"
 	desc = "Signals that you follow the Jewish Halakha. Keeps the head covered and the soul extra-Orthodox."
 	icon_state = "kippah"
-
-/obj/item/clothing/head/medievaljewhat
-	name = "medieval Jewish hat"
-	desc = "A silly looking hat, intended to be placed on the heads of oppressed religious minorities."
-	icon_state = "medievaljewhat"
 
 /obj/item/clothing/head/taqiyahwhite
 	name = "white taqiyah"
