@@ -433,7 +433,6 @@
 /obj/item/reagent_containers/food/snacks/cake/mothmallow
 	name = "mothmallow tray"
 	desc = "A light and fluffy vegan marshmallow flavoured with vanilla and rum and topped with soft chocolate. These are known to the moths as höllflöfstarkken: cloud squares." //höllflöf = cloud (höll = wind, flöf = cotton), starkken = squares
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mothmallow_tray"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -447,7 +446,6 @@
 /obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
 	name = "mothmallow"
 	desc = "Fluffy little clouds of joy- in a strangely moth-like colour."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mothmallow_slice"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -459,7 +457,6 @@
 /obj/item/reagent_containers/food/snacks/cake/korta_brittle
 	name = "korta brittle slab"
 	desc = "A big slab of korta nut brittle. So sugary it should be a crime!"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "korta_brittle"
 	list_reagents = list(
 		/datum/reagent/consumable/sugar = 20,
@@ -473,7 +470,6 @@
 /obj/item/reagent_containers/food/snacks/cakeslice/korta_brittle
 	name = "korta brittle slice"
 	desc = "A little slice of korta nut brittle. A diabetic's worst enemy."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "korta_brittle_slice"
 	list_reagents = list(
 		/datum/reagent/consumable/sugar = 4,

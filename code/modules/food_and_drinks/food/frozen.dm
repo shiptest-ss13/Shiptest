@@ -216,7 +216,6 @@
 /obj/item/reagent_containers/food/snacks/snowcones/korta_ice
 	name = "korta ice"
 	desc = "Shaved ice, korta nectar and berries. A sweet treat to eat to beat summer heat!"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "korta_ice"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 8,
