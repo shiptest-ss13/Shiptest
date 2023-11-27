@@ -193,16 +193,6 @@
 	filling_color = "#800000"
 	foodtype = TOXIC | SUGAR
 
-/obj/item/reagent_containers/food/snacks/eggwrap
-	name = "egg wrap"
-	desc = "The precursor to Pigs in a Blanket."
-	icon_state = "eggwrap"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	filling_color = "#F0E68C"
-	tastes = list("egg" = 1)
-	foodtype = MEAT | GRAIN
-
 /obj/item/reagent_containers/food/snacks/spidereggs
 	name = "spider eggs"
 	desc = "A cluster of juicy spider eggs. A great side dish for when you care not for your health."
@@ -872,15 +862,6 @@
 	list_reagents = list(/datum/reagent/consumable/cooking_oil = 3)
 	tastes = list("mozzarella" = 1)
 	foodtype = DAIRY
-	w_class = WEIGHT_CLASS_SMALL
-
-/obj/item/reagent_containers/food/snacks/griddle_toast
-	name = "griddle toast"
-	desc = "Thick cut bread, griddled to perfection."
-	icon_state = "griddle_toast"
-	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 3)
-	tastes = list("toast" = 1)
-	foodtype = GRAIN
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/reagent_containers/food/snacks/pesto

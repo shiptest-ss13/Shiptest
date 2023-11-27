@@ -19,6 +19,7 @@
 	name = "fish fillet"
 	desc = "A fillet of fish meat."
 	icon_state = "fishfillet"
+	icon = 'icons/obj/food/meat.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
@@ -85,7 +86,7 @@
 /obj/item/reagent_containers/food/snacks/vegetariansushiroll
 	name = "vegetarian sushi roll"
 	desc = "A roll of simple vegetarian sushi with rice, carrots, and potatoes. Sliceable into pieces!"
-	icon_state = "vegan-sushi-roll"
+	icon_state = "vegan_sushi_roll"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#7daa70"
@@ -97,7 +98,7 @@
 /obj/item/reagent_containers/food/snacks/vegetariansushislice
 	name = "vegetarian sushi slice"
 	desc = "A slice of simple vegetarian sushi with rice, carrots, and potatoes."
-	icon_state = "vegan-sushi-slice"
+	icon_state = "vegan_sushi_slice"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#7daa70"
@@ -107,7 +108,7 @@
 /obj/item/reagent_containers/food/snacks/spicyfiletsushiroll
 	name = "spicy filet sushi roll"
 	desc = "A roll of tasty, spicy sushi made with fish and vegetables. Sliceable into pieces!"
-	icon_state = "spicy-sushi-roll"
+	icon_state = "spicy_sushi_roll"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
 	filling_color = "#d8b02c"
@@ -119,7 +120,7 @@
 /obj/item/reagent_containers/food/snacks/spicyfiletsushislice
 	name = "spicy filet sushi slice"
 	desc = "A slice of tasty, spicy sushi made with fish and vegetables. Don't eat it too fast!."
-	icon_state = "spicy-sushi-slice"
+	icon_state = "spicy_sushi_slice"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#d8b02c"
@@ -137,9 +138,9 @@
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/fishi
-	name = "Fi-shi roll"
+	name = "Fi_shi roll"
 	desc = "An entire fish, surrounded by a thick layer of seaweed. is this... edible?"
-	icon_state = "fi-shi"
+	icon_state = "fi_shi"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8)
 	filling_color = "#eac57b"

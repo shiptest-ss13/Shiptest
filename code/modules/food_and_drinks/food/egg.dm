@@ -165,6 +165,17 @@
 	tastes = list("rice" = 1, "dried seaweed" = 1, "eggs" = 1)
 	foodtype = BREAKFAST | FRIED
 
+/obj/item/reagent_containers/food/snacks/eggwrap
+	name = "egg wrap"
+	desc = "The precursor to Pigs in a Blanket."
+	icon = 'icons/obj/food/egg.dmi'
+	icon_state = "eggwrap"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F0E68C"
+	tastes = list("egg" = 1)
+	foodtype = MEAT | GRAIN
+
 /obj/item/reagent_containers/food/snacks/black_eggs
 	name = "black scrambled eggs"
 	desc = "A country dish from rural Kalixcis. Made with eggs, animal blood, and foraged greens. Traditionally eaten with rootbread and a spicy sauce."
