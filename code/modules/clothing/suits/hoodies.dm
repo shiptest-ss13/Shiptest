@@ -76,14 +76,14 @@
 	item_state = "hoodie_gray"
 
 /obj/item/clothing/suit/hooded/hoodie/fbp
-	name = "FBP kepori hoodie"
+	name = "\improper FBP kepori hoodie"
 	desc = "A hoodie themed to look like a kepori in a Full Body Prosthetic. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
 	hoodtype = /obj/item/clothing/head/hooded/hood/fbp
 
 /obj/item/clothing/head/hooded/hood/fbp
-	name = "FBP kepori hood"
+	name = "\improper FBP kepori hood"
 	desc = "A hood for your fbp hoodie."
 	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"

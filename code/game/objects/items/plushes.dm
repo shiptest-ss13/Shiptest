@@ -802,13 +802,13 @@
 
 /obj/item/toy/plush/mora
 	name = "RILENA:LMR Mora plushie"
-	desc = "A plushie of insert mora lore here from the popular webseries RILENA."
+	desc = "A plushie of Mora from the popular webseries RILENA."
 	icon_state = "rilena_mora"
 	gender = FEMALE
 
 /obj/item/toy/plush/kari
 	name = "knockoff RILENA plushie"
-	desc = "A plushie of a FBP kepori. The tag calls it 'Kari' and claims it to be from 'RAYALA: RUNNING FROM EVIL'. The cannon arm does not function."
+	desc = "A plushie of a FBP Kepori. The tag calls it 'Kari' and claims it to be from 'RAYALA: RUNNING FROM EVIL'. The cannon arm does not function."
 	icon_state = "fbplush"
 	gender = FEMALE
 
