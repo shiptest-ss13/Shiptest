@@ -112,7 +112,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_mothic_margherita
-	subcategory = CAT_MOTH
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/raw_mothic_firecracker
 	name = "Mothic firecracker pizza"
@@ -124,7 +124,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/ghost_chili = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_mothic_firecracker
-	subcategory = CAT_MOTH
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/raw_mothic_five_cheese
 	name = "Mothic five cheese pizza"
@@ -138,7 +138,7 @@
 		/obj/item/reagent_containers/food/snacks/cheese_curds = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_mothic_five_cheese
-	subcategory = CAT_MOTH
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/raw_mothic_white_pie
 	name = "Mothic white pie pizza"
@@ -151,7 +151,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_mothic_white_pie
-	subcategory = CAT_MOTH
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/raw_mothic_pesto
 	name = "Mothic pesto pizza"
@@ -162,7 +162,7 @@
 		/obj/item/reagent_containers/food/snacks/mozzarella = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_mothic_pesto
-	subcategory = CAT_MOTH
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/raw_mothic_garlic
 	name = "Mothic garlic pizzabread"
@@ -173,7 +173,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_mothic_garlic
-	subcategory = CAT_MOTH
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/rustic_flatbread
 	name = "Rustic flatbread"
@@ -184,7 +184,7 @@
 		/datum/reagent/consumable/quality_oil = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/rustic
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/italic_flatbread
 	name = "Italic flatbread"
@@ -196,7 +196,7 @@
 		/datum/reagent/consumable/quality_oil = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/italic
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/imperial_flatbread
 	name = "Imperial flatbread"
@@ -207,7 +207,7 @@
 		/obj/item/reagent_containers/food/snacks/headcheese = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/imperial
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/rawmeat_flatbread
 	name = "Meatlovers flatbread"
@@ -216,7 +216,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/slab = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/rawmeat
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/stinging_flatbread
 	name = "Stinging flatbread"
@@ -226,7 +226,7 @@
 		/obj/item/reagent_containers/food/snacks/canned/jellyfish = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/stinging
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/zmorgast_flatbread
 	name = "Zmorgast flatbread"
@@ -237,7 +237,7 @@
 		/obj/item/organ/liver = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/zmorgast
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/fish_flatbread
 	name = "BBQ fish flatbread"
@@ -247,7 +247,7 @@
 		/datum/reagent/consumable/bbqsauce = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/fish
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/mushroom_flatbread
 	name = "Mushroom and tomato flatbread"
@@ -258,7 +258,7 @@
 		/datum/reagent/consumable/quality_oil = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/mushroom
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA
 
 /datum/crafting_recipe/food/nutty_flatbread
 	name = "Nut paste flatbread"
@@ -268,4 +268,4 @@
 		/datum/reagent/consumable/korta_milk = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/pizza/flatbread/nutty
-	category = CAT_LIZARD
+	subcategory = CAT_PIZZA

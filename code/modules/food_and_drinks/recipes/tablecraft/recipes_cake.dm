@@ -216,4 +216,4 @@
 		/datum/reagent/consumable/ethanol/rum = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/cake/mothmallow
-	subcategory = CAT_MOTH
+	subcategory = CAT_CAKE

@@ -117,7 +117,7 @@
 		/datum/reagent/consumable/vinegar = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/caprese_salad
-	subcategory = CAT_MOTH
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/fleet_salad
 	name = "Lörtonknusksolt (Fleet salad)"
@@ -130,7 +130,7 @@
 		/datum/reagent/consumable/vinegar = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/fleet_salad
-	subcategory = CAT_MOTH
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/cotton_salad
 	name = "Flöfrölenknusksolt (Cotton salad)"
@@ -142,7 +142,7 @@
 		/datum/reagent/consumable/vinegar = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/fleet_salad
-	subcategory = CAT_MOTH
+	subcategory = CAT_SALAD
 
 /datum/crafting_recipe/food/moth_kachumbari
 	name = "Kæniatknusksolt (Kenyan salad)"
@@ -155,4 +155,4 @@
 		/datum/reagent/consumable/limejuice = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/salad/moth_kachumbari
-	subcategory = CAT_MOTH
+	subcategory = CAT_SALAD

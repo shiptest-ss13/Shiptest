@@ -317,7 +317,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/moth_cotton_soup
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/moth_cheese_soup
 	name = "Ælosterrmæsch (Cheese soup)"
@@ -330,7 +330,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/moth_cheese_soup
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/moth_seed_soup
 	name = "Misklmæsch (Seed soup)"
@@ -343,7 +343,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/moth_seed_soup
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/moth_bean_stew
 	name = "Prickeldröndolhaskl (Spicy bean stew)"
@@ -358,7 +358,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/moth_bean_stew
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/moth_oat_stew
 	name = "Häfmisklhaskl (Oat stew)"
@@ -371,7 +371,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/moth_oat_stew
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/moth_fire_soup
 	name = "Tömpröttkrakklmæsch (Heartburn soup)"
@@ -383,7 +383,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/moth_fire_soup
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/rice_porridge
 	name = "Rice porridge"
@@ -393,7 +393,7 @@
 		/datum/reagent/consumable/sodiumchloride = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/rice_porridge
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/hua_mulan_congee
 	name = "Hua Mulan congee"
@@ -403,7 +403,7 @@
 		/obj/item/reagent_containers/food/snacks/friedegg = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/hua_mulan_congee
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/toechtauese_rice_porridge
 	name = "Töchtaüse rice porridge"
@@ -413,7 +413,7 @@
 		/datum/reagent/consumable/toechtauese_syrup = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/toechtauese_rice_porridge
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/cornmeal_porridge
 	name = "Cornmeal porridge"
@@ -423,7 +423,7 @@
 		/obj/item/reagent_containers/glass/bowl = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/cheesy_porridge
 	name = "Cheesy porridge"
@@ -435,7 +435,7 @@
 		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/cheesy_porridge
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/fried_eggplant_polenta
 	name = "Fried eggplant and polenta"
@@ -447,7 +447,7 @@
 		/obj/item/reagent_containers/food/snacks/mozzarella = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/fried_eggplant_polenta
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/red_porridge
 	name = "Eltsløsk ül a priktæolk (Red Porridge and Yoghurt)"
@@ -458,7 +458,7 @@
 		/datum/reagent/consumable/sugar = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/red_porridge
-	subcategory = CAT_MOTH
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/atrakor_dumplings
 	name = "Atrakor dumpling soup"
@@ -471,7 +471,7 @@
 		/datum/reagent/consumable/soysauce = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/atrakor_dumplings
-	category = CAT_LIZARD
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/meatball_noodles
 	name = "Meatball noodle soup"
@@ -485,7 +485,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/korta_nut = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/meatball_noodles
-	category = CAT_LIZARD
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/black_broth
 	name = "Kalixcian black broth"
@@ -498,7 +498,7 @@
 		/datum/reagent/consumable/ice = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/black_broth
-	category = CAT_LIZARD
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/jellyfish_stew
 	name = "Jellyfish stew"
@@ -510,7 +510,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/potato = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/jellyfish
-	category = CAT_LIZARD
+	subcategory = CAT_SOUP
 
 /datum/crafting_recipe/food/rootbread_soup
 	name = "Rootbread soup"
@@ -522,4 +522,4 @@
 		/obj/item/reagent_containers/food/snacks/egg = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/rootbread_soup
-	category = CAT_LIZARD
+	subcategory = CAT_SOUP

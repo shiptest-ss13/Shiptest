@@ -70,7 +70,7 @@
 		/datum/reagent/consumable/vinegar = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/black_eggs
-	category = CAT_LIZARD
+	subcategory = CAT_EGG
 
 /datum/crafting_recipe/food/patzikula
 	name = "Patzikula"
@@ -81,4 +81,4 @@
 		/obj/item/reagent_containers/food/snacks/egg = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/patzikula
-	category = CAT_LIZARD
+	subcategory = CAT_EGG

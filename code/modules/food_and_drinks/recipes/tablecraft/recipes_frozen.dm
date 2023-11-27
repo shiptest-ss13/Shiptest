@@ -261,7 +261,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/berries = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/snowcones/korta_ice
-	category = CAT_LIZARD
+	subcategory = CAT_ICE
 
 //////////////////////////POPSICLES///////////////////////
 

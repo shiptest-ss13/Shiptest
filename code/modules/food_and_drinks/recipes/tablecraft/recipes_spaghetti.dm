@@ -78,7 +78,7 @@
 		/datum/reagent/consumable/ethanol/wine = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/spaghetti/snail_nizaya
-	category = CAT_LIZARD
+	subcategory = CAT_SPAGHETTI
 
 /datum/crafting_recipe/food/garlic_nizaya
 	name = "Garlic nizaya"
@@ -89,7 +89,7 @@
 		/datum/reagent/consumable/quality_oil = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/spaghetti/garlic_nizaya
-	category = CAT_LIZARD
+	subcategory = CAT_SPAGHETTI
 
 /datum/crafting_recipe/food/demit_nizaya
 	name = "Demit nizaya"
@@ -102,7 +102,7 @@
 		/datum/reagent/consumable/korta_nectar = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/spaghetti/demit_nizaya
-	category = CAT_LIZARD
+	subcategory = CAT_SPAGHETTI
 
 /datum/crafting_recipe/food/mushroom_nizaya
 	name = "Mushroom nizaya"
@@ -113,4 +113,4 @@
 		/datum/reagent/consumable/quality_oil = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/spaghetti/mushroom_nizaya
-	category = CAT_LIZARD
+	subcategory = CAT_SPAGHETTI

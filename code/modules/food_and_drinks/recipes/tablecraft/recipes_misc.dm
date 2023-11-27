@@ -416,7 +416,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 4
 	)
 	result = /obj/item/reagent_containers/food/snacks/herby_cheese
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/mothic_salad
 	name = "Mothic salad"
@@ -426,7 +426,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/mothic_salad
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/toasted_seeds
 	name = "Toasted seeds"
@@ -437,7 +437,7 @@
 		/datum/reagent/consumable/quality_oil = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/toasted_seeds
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/engine_fodder
 	name = "Engine fodder"
@@ -449,7 +449,7 @@
 		/obj/item/reagent_containers/food/snacks/chips = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/engine_fodder
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/squeaking_stir_fry
 	name = "Skeklitmischtpoppl (Squeaking stir fry)"
@@ -462,7 +462,7 @@
 		/obj/item/reagent_containers/food/snacks/onion_slice = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/squeaking_stir_fry
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sweet_chili_cabbage_wrap
 	name = "Sweet chili cabbage wrap"
@@ -474,7 +474,7 @@
 		/datum/reagent/consumable/honey = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/sweet_chili_cabbage_wrap
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/loaded_curds
 	name = "Ozlsettitæloskekllön ede pommes (Loaded curds and fries)"
@@ -486,7 +486,7 @@
 		/obj/item/reagent_containers/food/snacks/fries = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/loaded_curds
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/baked_cheese_platter
 	name = "Stanntkraktælo (Baked cheese platter)"
@@ -495,7 +495,7 @@
 		/obj/item/reagent_containers/food/snacks/griddle_toast = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/baked_cheese_platter
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/raw_green_lasagne
 	name = "Green lasagne al forno"
@@ -506,7 +506,7 @@
 		/obj/item/reagent_containers/food/snacks/firm_cheese = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_green_lasagne
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/raw_baked_rice
 	name = "Big baked rice"
@@ -518,7 +518,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_baked_rice
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/buttered_baked_corn
 	name = "Buttered baked corn"
@@ -527,7 +527,7 @@
 		/obj/item/reagent_containers/food/snacks/butter = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/buttered_baked_corn
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/fiesta_corn_skillet
 	name = "Fiesta corn skillet"
@@ -540,7 +540,7 @@
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fiesta_corn_skillet
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/ratatouille
 	name = "Ratatouille"
@@ -551,7 +551,7 @@
 		/obj/item/reagent_containers/food/snacks/roasted_bell_pepper = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_ratatouille
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/mozzarella_sticks
 	name = "Mozzarella sticks"
@@ -561,7 +561,7 @@
 		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/mozzarella_sticks
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/raw_stuffed_peppers
 	name = "Voltölpapriken (Stuffed peppers)"
@@ -571,7 +571,7 @@
 		/obj/item/reagent_containers/food/snacks/onion_slice = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_stuffed_peppers
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/fueljacks_lunch
 	name = "Fueljack's lunch"
@@ -583,7 +583,7 @@
 		/obj/item/reagent_containers/food/snacks/firm_cheese_slice = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fueljacks_lunch
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/mac_balls
 	name = "Macheronirölen (Mac balls)"
@@ -593,7 +593,7 @@
 		/datum/reagent/consumable/cornmeal_batter = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/mac_balls
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/moth_cheese_cakes
 	name = "Ælorölen (Cheesecake balls)"
@@ -605,7 +605,7 @@
 		/datum/reagent/consumable/honey = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/moth_cheese_cakes
-	subcategory = CAT_MOTH
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/kalixcian_sausage
 	name = "Raw Kalixcian blood sausage"
@@ -616,7 +616,7 @@
 		/datum/reagent/consumable/sodiumchloride = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_kalixcian_sausage
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/headcheese
 	name = "Raw headcheese"
@@ -626,7 +626,7 @@
 		/datum/reagent/consumable/blackpepper = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/raw_headcheese
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/shredded_lungs
 	name = "Crispy shredded lung stirfry"
@@ -637,7 +637,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/chili = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/shredded_lungs
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/tsatsikh
 	name = "Tsatsikh"
@@ -650,7 +650,7 @@
 		/datum/reagent/consumable/blackpepper = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/tsatsikh
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/liver_pate
 	name = "Liver pate"
@@ -660,7 +660,7 @@
 		/obj/item/reagent_containers/food/snacks/grown/onion = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/liver_pate
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/moonfish_caviar
 	name = "Moonfish caviar paste"
@@ -669,7 +669,7 @@
 		/datum/reagent/consumable/sodiumchloride = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/moonfish_caviar
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/lizard_escargot
 	name = "Desert snail cocleas"
@@ -681,7 +681,7 @@
 		/datum/reagent/consumable/quality_oil = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/lizard_escargot
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/fried_blood_sausage
 	name = "Fried blood sausage"
@@ -691,7 +691,7 @@
 		/datum/reagent/water = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/fried_blood_sausage
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/lizard_fries
 	name = "Loaded poms-franzisks"
@@ -701,7 +701,7 @@
 		/datum/reagent/consumable/bbqsauce = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/lizard_fries
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/brain_pate
 	name = "Eyeball-and-brain pate"
@@ -712,7 +712,7 @@
 		/datum/reagent/consumable/sodiumchloride = 3
 	)
 	result = /obj/item/reagent_containers/food/snacks/brain_pate
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/crispy_headcheese
 	name = "Crispy breaded headcheese"
@@ -721,7 +721,7 @@
 		/obj/item/reagent_containers/food/snacks/breadslice/root = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/crispy_headcheese
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/picoss_skewers
 	name = "Picoss skewers"
@@ -733,7 +733,7 @@
 		/datum/reagent/consumable/vinegar = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/kebab/picoss_skewers
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/nectar_larvae
 	name = "Nectar larvae"
@@ -744,7 +744,7 @@
 		/datum/reagent/consumable/korta_nectar = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/nectar_larvae
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/mushroomy_stirfry
 	name = "Mushroomy Stirfry"
@@ -755,7 +755,7 @@
 		/datum/reagent/consumable/quality_oil = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/mushroomy_stirfry
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/moonfish_demiglace
 	name = "Moonfish demiglace"
@@ -767,7 +767,7 @@
 		/datum/reagent/consumable/ethanol/wine = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/moonfish_demiglace
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/lizard_surf_n_turf
 	name = "Zagosk surf n turf smorgasbord"
@@ -778,7 +778,7 @@
 		/obj/item/reagent_containers/food/snacks/bbqribs = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/lizard_surf_n_turf
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/rootdough
 	name = "Rootdough"
@@ -789,7 +789,7 @@
 		/datum/reagent/water = 10
 	)
 	result = /obj/item/reagent_containers/food/snacks/rootdough
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/emperor_roll
 	name = "Emperor roll"
@@ -800,7 +800,7 @@
 		/obj/item/reagent_containers/food/snacks/moonfish_caviar = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/emperor_roll
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/honey_sweetroll
 	name = "Honey sweetroll"
@@ -811,7 +811,7 @@
 		/datum/reagent/consumable/honey = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/honey_roll
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/korta_brittle
 	name = "Korta brittle slab"
@@ -823,7 +823,7 @@
 		/datum/reagent/consumable/sodiumchloride = 2
 	)
 	result = /obj/item/reagent_containers/food/snacks/cake/korta_brittle
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/candied_mushrooms
 	name = "Candied mushrooms"
@@ -834,7 +834,7 @@
 		/datum/reagent/consumable/sodiumchloride = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/kebab/candied_mushrooms
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sauerkraut
 	name = "Sauerkraut"
@@ -843,7 +843,7 @@
 		/datum/reagent/consumable/sodiumchloride = 10
 	)
 	result = /obj/item/reagent_containers/food/snacks/sauerkraut
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/lizard_dumplings
 	name = "Kalixcian dumplings"
@@ -852,7 +852,7 @@
 		/datum/reagent/consumable/korta_flour = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/lizard_dumplings
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/steeped_mushrooms
 	name = "Steeped mushrooms"
@@ -861,4 +861,4 @@
 		/datum/reagent/lye = 5
 	)
 	result = /obj/item/reagent_containers/food/snacks/steeped_mushrooms
-	category = CAT_LIZARD
+	subcategory = CAT_MISCFOOD
