@@ -316,7 +316,6 @@
 /obj/item/reagent_containers/food/snacks/bread/corn
 	name = "cornbread"
 	desc = "Some good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw cornbread."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "cornbread"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 18)
 	tastes = list("cornbread" = 10)
@@ -328,7 +327,6 @@
 /obj/item/reagent_containers/food/snacks/breadslice/corn
 	name = "cornbread slice"
 	desc = "A chunk of crispy, cowboy-style cornbread. Consume contentedly."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "cornbread_slice"
 	foodtype = GRAIN
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
@@ -347,7 +345,6 @@
 /obj/item/reagent_containers/food/snacks/bread/root
 	name = "rootbread"
 	desc = "The lizard equivalent to bread, made from tubers like potatoes and yams mixed with ground nuts and seeds. Noticably denser than regular bread."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_bread"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
 	tastes = list("bread" = 8, "nuts" = 2)
@@ -359,7 +356,6 @@
 /obj/item/reagent_containers/food/snacks/breadslice/root
 	name = "rootbread slice"
 	desc = "A slice of dense, chewy rootbread."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_breadslice"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("bread" = 8, "nuts" = 2)

@@ -116,7 +116,6 @@
 /obj/item/reagent_containers/food/snacks/spaghetti/nizaya
 	name = "rustic pasta"
 	desc = "A form of root and nut pasta originally native to the oceanside regions of Kalixcis. It's similar in texture and appearance to gnocchi."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "nizaya"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 2,
@@ -128,7 +127,6 @@
 /obj/item/reagent_containers/food/snacks/spaghetti/snail_nizaya
 	name = "desert snail rustic pasta"
 	desc = "A high class pasta dish adopted by Solarian chefs based on Kalixcian pasta traditions. Traditionally made with only the finest Solarian wine… but box will do, in a pinch."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "snail_nizaya"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -141,7 +139,6 @@
 /obj/item/reagent_containers/food/snacks/spaghetti/garlic_nizaya
 	name = "garlic-and-oil nizaya"
 	desc = "A lizard adaptation of the Italian pasta dish, aglio e olio, made with nizaya pasta."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "garlic_nizaya"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -153,7 +150,6 @@
 /obj/item/reagent_containers/food/snacks/spaghetti/demit_nizaya
 	name = "demit nizaya"
 	desc = "A sweet, creamy nizaya pasta dish made with korta milk and nectar."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "demit_nizaya"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -166,7 +162,6 @@
 /obj/item/reagent_containers/food/snacks/spaghetti/mushroom_nizaya
 	name = "mushroom nizaya"
 	desc = "A nizaya pasta dish made with seraka mushrooms and quality oil. Has a pronounced nutty flavour."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "mushroom_nizaya"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
