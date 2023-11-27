@@ -243,7 +243,7 @@
 
 /datum/chemical_reaction/shotinthedark
 	results = list(/datum/reagent/consumable/ethanol/shotinthedark = 10)
-	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/consumable/ethanol/vodka = 5, /datum/reagent/gold = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/consumable/ethanol/tequila = 5, /datum/reagent/gold = 3)
 
 /datum/chemical_reaction/homesick
 	results = list(/datum/reagent/consumable/ethanol/homesick = 15)
