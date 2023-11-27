@@ -62,6 +62,7 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
+#include "missing_icons.dm"
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
