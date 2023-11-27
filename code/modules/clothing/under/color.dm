@@ -233,10 +233,3 @@
 	icon_state = "rainbow_skirt"
 	item_state = "rainbow"
 	can_adjust = FALSE
-
-/obj/item/clothing/under/color/rilena
-	name = "RILENA t-shirt"
-	desc = "A t-shirt with the character T4L1 from RILENA: LMR on it."
-	icon_state = "rilena_shirt"
-	item_state = "rilena_shirt"
-	supports_variations = KEPORI_VARIATION
