@@ -430,7 +430,6 @@
 	tastes = list("tofu" = 3, "metal" = 1)
 	foodtype = VEGETABLES
 
-
 /obj/item/reagent_containers/food/snacks/kebab/tail
 	name = "lizard-tail kebab"
 	desc = "Severed lizard tail on a stick."
