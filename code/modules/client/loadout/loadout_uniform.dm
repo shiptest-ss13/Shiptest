@@ -57,6 +57,10 @@
 	display_name = "jumpsuit, rainbow"
 	path = /obj/item/clothing/under/color/rainbow
 
+/datum/gear/uniform/color/rilena
+	display_name = "jumpsuit, t4l1"
+	path = /obj/item/clothing/under/color/rilena
+
 //Shorts
 
 /datum/gear/uniform/athshortsred
@@ -232,6 +236,10 @@
 /datum/gear/uniform/suit/dress_suit/skirt
 	display_name = "dress-suitskirt, navy"
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
+
+/datum/gear/uniform/dress/rilena
+	display_name = "red dress, Ri cosplay"
+	path = /obj/item/clothing/under/dress/rilena
 
 //Premium
 /datum/gear/uniform/tacticool
