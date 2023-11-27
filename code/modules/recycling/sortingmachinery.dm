@@ -1,7 +1,7 @@
 /obj/structure/bigDelivery
 	name = "large parcel"
 	desc = "A large delivery parcel."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "deliverycloset"
 	density = TRUE
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
@@ -165,7 +165,7 @@
 /obj/item/smallDelivery
 	name = "parcel"
 	desc = "A brown paper delivery parcel."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "deliverypackage3"
 	item_state = "deliverypackage"
 	var/giftwrapped = 0

@@ -679,7 +679,7 @@
 /obj/item/storage/bottles
 	name = "bottle crate"
 	desc = "A small crate for storing bottles"
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "bottlecrate"
 	item_state = "deliverypackage"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
