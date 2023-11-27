@@ -2,7 +2,7 @@
 /// Font used by regular pens
 #define PEN_FONT "Verdana"
 /// Font used by fancy pens
-#define FOUNTAIN_PEN_FONT "Segoe Script"
+#define FOUNTAIN_PEN_FONT "Adobe Garamond"
 /// Font used by crayons
 #define CRAYON_FONT "Comic Sans MS"
 /// Font used by printers
