@@ -57,10 +57,6 @@
 	display_name = "jumpsuit, rainbow"
 	path = /obj/item/clothing/under/color/rainbow
 
-/datum/gear/uniform/color/rilena
-	display_name = "jumpsuit, t4l1"
-	path = /obj/item/clothing/under/color/rilena
-
 //Shorts
 
 /datum/gear/uniform/athshortsred
