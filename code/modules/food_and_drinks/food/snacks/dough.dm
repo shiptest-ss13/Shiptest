@@ -162,7 +162,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	tastes = list("potato" = 1, "earthy heat" = 1)
 	foodtype = VEGETABLES | NUTS
-	cooked_type = /obj/item/reagent_containers/food/snacks/bread/root
+	cooked_type = /obj/item/reagent_containers/food/snacks/store/bread/root
 
 /obj/item/reagent_containers/food/snacks/flatrootdough
 	name = "flat rootdough"

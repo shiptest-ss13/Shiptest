@@ -215,5 +215,17 @@
 		/datum/reagent/consumable/sugar = 15,
 		/datum/reagent/consumable/ethanol/rum = 5
 	)
-	result = /obj/item/reagent_containers/food/snacks/cake/mothmallow
+	result = /obj/item/reagent_containers/food/snacks/store/cake/mothmallow
+	subcategory = CAT_CAKE
+
+/datum/crafting_recipe/food/korta_brittle
+	name = "Korta brittle slab"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/korta_nut = 2,
+		/obj/item/reagent_containers/food/snacks/butter = 1,
+		/datum/reagent/consumable/korta_nectar = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/datum/reagent/consumable/sodiumchloride = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/store/cake/korta_brittle
 	subcategory = CAT_CAKE

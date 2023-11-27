@@ -180,4 +180,4 @@
 /datum/chemical_reaction/food/cornbread/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/bread/corn(location)
+		new /obj/item/reagent_containers/food/snacks/store/bread/corn(location)

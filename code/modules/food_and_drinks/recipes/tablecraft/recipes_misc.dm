@@ -813,18 +813,6 @@
 	result = /obj/item/reagent_containers/food/snacks/honey_roll
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/korta_brittle
-	name = "Korta brittle slab"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/grown/korta_nut = 2,
-		/obj/item/reagent_containers/food/snacks/butter = 1,
-		/datum/reagent/consumable/korta_nectar = 5,
-		/datum/reagent/consumable/sugar = 5,
-		/datum/reagent/consumable/sodiumchloride = 2
-	)
-	result = /obj/item/reagent_containers/food/snacks/cake/korta_brittle
-	subcategory = CAT_MISCFOOD
-
 /datum/crafting_recipe/food/candied_mushrooms
 	name = "Candied mushrooms"
 	reqs = list(
