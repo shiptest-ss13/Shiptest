@@ -78,7 +78,7 @@
 	name = "Field Commander (Colonial Minutemen) (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/loaded
+	belt = /obj/item/storage/belt/military/minutemen/p16
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
 

@@ -303,7 +303,7 @@
 	name = "Minutemen Leader"
 	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/minutemen/leader
-	role = "Sargent"
+	role = "Sergeant"
 
 /datum/antagonist/ert/minutemen/bard
 	name = "BARD Infantry"
@@ -314,7 +314,7 @@
 	name = "BARD Leader"
 	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/minutemen/bard/leader
-	role = "Sargent"
+	role = "Sergeant"
 
 /datum/antagonist/ert/minutemen/riot
 	name = "Riot Officer"
@@ -322,10 +322,10 @@
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/riot/leader
-	name = "Riot Sargent"
+	name = "Riot Sergeant"
 	leader = TRUE
 	outfit = /datum/outfit/centcom/ert/minutemen/riot/leader
-	role = "Sargent"
+	role = "Sergeant"
 
 /datum/antagonist/ert/official/minutemen
 	name = "GOLD Inspector"

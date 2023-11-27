@@ -56,6 +56,7 @@
 	name = "ERT - Syndicate Gorlex Loyalist Medic"
 
 	head = /obj/item/clothing/head/soft/black
+	mask = null
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
@@ -64,7 +65,7 @@
 
 	l_pocket = /obj/item/radio
 
-	backpack_contents = list(/obj/item/ammo_box/magazine/m10mm=2, /obj/item/storage/firstaid/tactical=1)
+	backpack_contents = list(/obj/item/ammo_box/magazine/m10mm=2, /obj/item/storage/firstaid/medical=1, /obj/item/defibrillator/compact/combat/loaded=1)
 
 	id_role = "Medic"
 

@@ -455,9 +455,17 @@
 	icon_state = "cmmwebbing"
 	item_state = "cmmwebbing"
 
-/obj/item/storage/belt/military/minutemen/loaded/PopulateContents()
-	for(var/i in 1 to 7)
+/obj/item/storage/belt/military/minutemen/p16/PopulateContents()
+	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
+
+/obj/item/storage/belt/military/minutemen/gal/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/gal(src)
+
+/obj/item/storage/belt/military/minutemen/cm5/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm9mm(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"

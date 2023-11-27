@@ -10,15 +10,15 @@
 	// determines what role goes on the ID of an ert member. cheap workaround for implementing it into the ert datum
 	var/id_role = "Emergency Response Officer"
 
-/datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/human, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.registered_name = H.real_name
-		W.assignment = id_role
-		W.update_label()
+	var/obj/item/card/id/id = human.wear_id
+	if(id)
+		id.registered_name = human.real_name
+		id.assignment = id_role
+		id.update_label()
 	..()
 
 /datum/outfit/centcom/ert/commander
@@ -404,7 +404,8 @@
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt
 	id = /obj/item/card/id/lpsec
-	belt = /obj/item/gun/energy/laser/scatter/shotty
+	suit_store = /obj/item/gun/energy/laser/scatter/shotty
+	belt = /obj/item/storage/belt/security/full
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/sec
@@ -416,7 +417,7 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/kitchen/knife/combat
 
-	backpack_contents = list(/obj/item/radio=1)
+	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
 
 	id_role = "Security Specialist"
 
