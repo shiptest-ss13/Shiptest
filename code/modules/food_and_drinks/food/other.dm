@@ -950,7 +950,6 @@
 	name = "herby cheese"
 	desc = "As a staple of spacer cuisine, cheese is often augmented with various flavours to keep variety in their diet whilst traveling without reliable access to refrigeration. \
 		Herbs are one such addition, and are particularly beloved."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "herby_cheese"
 	list_reagents = list(/datum/reagent/consumable/cooking_oil = 6)
 	tastes = list("cheese" = 1, "herbs" = 1)
@@ -960,7 +959,6 @@
 /obj/item/reagent_containers/food/snacks/grilled_cheese
 	name = "grilled cheese"
 	desc = "A staple sandwich, the classic grilled cheese consists simply of griddled bread and cheese. Anything else, *and it's a melt*."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "grilled_cheese"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -973,7 +971,6 @@
 /obj/item/reagent_containers/food/snacks/mothic_salad
 	name = "basic salad"
 	desc = "A basic salad of cabbage, red onion and tomato. Can serve as a perfect base for a million different salads."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mothic_salad"
 	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("salad" = 1)
@@ -984,7 +981,6 @@
 	name = "toasted seeds"
 	desc = "While they're far from filling, toasted seeds are a popular snack amongst travelers. \
 		Salt, sugar, or even some more exotic flavours may be added for some extra pep."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "toasted_seeds"
 	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("seeds" = 1)
@@ -995,7 +991,6 @@
 	name = "comet trail"
 	desc = "A common snack for engineers on modern military vessels, made of seeds, nuts, chocolate, popcorn, and potato chips- \
 		designed to be dense with calories and easy to snack on when an extra boost is needed."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "engine_fodder"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 6,
@@ -1012,7 +1007,6 @@
 	name = "squeaking stir fry"
 	desc = "A Solarian classic made with cheese curds and tofu (amongst other things). \
 		It gets its name from the distinctive squeak of the proteins."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "squeaking_stir_fry"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -1025,7 +1019,6 @@
 /obj/item/reagent_containers/food/snacks/sweet_chili_cabbage_wrap
 	name = "sweet chili cabbage wrap"
 	desc = "Grilled cheese and salad in a cabbage wrap, topped with delicious sweet chili sauce."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "sweet_chili_cabbage_wrap"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -1040,7 +1033,6 @@
 	name = "chili poutine"
 	desc = "What's better than cheese curds? Deep fried cheese curds! What's better than deep fried cheese curds? \
 		Deep fried cheese curds with chili (and more cheese) on top! And what's better than that? Putting it on fries!"
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "loaded_curds"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -1055,7 +1047,6 @@
 /obj/item/reagent_containers/food/snacks/baked_cheese
 	name = "baked cheese wheel"
 	desc = "A baked cheese wheel, melty and delicious."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "baked_cheese"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 10,
@@ -1070,7 +1061,6 @@
 	name = "oven-baked cheese"
 	desc = "A baked cheese wheel: a Solarian favourite for sharing. Usually served with crispy bread slices for dipping, \
 		because the only thing better than good cheese is good cheese on bread. A popular fixture at SolGov office parties."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "baked_cheese_platter"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 12,
@@ -1085,7 +1075,6 @@
 /obj/item/reagent_containers/food/snacks/raw_green_lasagne
 	name = "raw green lasagne al forno"
 	desc = "A fine lasagne made with pesto and a herby white sauce, ready to bake. Good for multiple servings."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "raw_green_lasagne"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
@@ -1099,7 +1088,6 @@
 /obj/item/reagent_containers/food/snacks/green_lasagne
 	name = "green lasagne al forno"
 	desc = "A fine lasagne made with pesto and a herby white sauce. Good for multiple servings."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "green_lasagne"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 24,
@@ -1114,7 +1102,6 @@
 /obj/item/reagent_containers/food/snacks/green_lasagne_slice
 	name = "green lasagne al forno slice"
 	desc = "A slice of herby, pesto-y lasagne."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "green_lasagne_slice"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 4,
@@ -1127,7 +1114,6 @@
 /obj/item/reagent_containers/food/snacks/raw_baked_rice
 	name = "big rice pan"
 	desc = "A big pan of layered potatoes topped with rice and vegetable stock, ready to be baked into a delicious sharing meal."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "raw_baked_rice"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 4,
@@ -1142,7 +1128,6 @@
 	name = "big baked rice"
 	desc = "A Solarian favourite, baked rice can be filled with a variety of vegetable fillings to make a delicious meal to share. \
 		Potatoes are also often layered on the bottom of the cooking vessel to create a flavourful crust which is hotly contested amongst diners. Originates from the flotillas formed in Polynesia after the Night of Fire."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "big_baked_rice"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 18,
@@ -1157,7 +1142,6 @@
 /obj/item/reagent_containers/food/snacks/lil_baked_rice
 	name = "lil baked rice"
 	desc = "A single portion of baked rice, perfect as a side dish, or even as a full meal."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "lil_baked_rice"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 3,
@@ -1171,7 +1155,6 @@
 	name = "oven-baked corn"
 	desc = "A cob of corn, baked in the roasting heat of an oven until it blisters and blackens. \
 		Beloved as a quick yet flavourful and filling component for dishes on the Fleet."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "oven_baked_corn"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 6,
@@ -1184,7 +1167,6 @@
 /obj/item/reagent_containers/food/snacks/buttered_baked_corn
 	name = "buttered baked corn"
 	desc = "What's better than baked corn? Baked corn with butter!"
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "buttered_baked_corn"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 4,
@@ -1198,7 +1180,6 @@
 /obj/item/reagent_containers/food/snacks/fiesta_corn_skillet
 	name = "fiesta corn skillet"
 	desc = "Sweet, spicy, saucy, and all kinds of corny."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "fiesta_corn_skillet"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 5,
@@ -1212,7 +1193,6 @@
 /obj/item/reagent_containers/food/snacks/raw_ratatouille
 	name = "raw ratatouille" //rawtatouille?
 	desc = "Sliced vegetables with a roasted pepper sauce. Delicious, for such a simple food."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "raw_ratatouille"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -1227,7 +1207,6 @@
 /obj/item/reagent_containers/food/snacks/ratatouille
 	name = "ratatouille"
 	desc = "The perfect dish to save your restaurant from a vindictive food critic. Bonus points if you've got a rat in your hat."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "ratatouille"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -1241,7 +1220,6 @@
 /obj/item/reagent_containers/food/snacks/mozzarella_sticks
 	name = "mozzarella sticks"
 	desc = "Little sticks of mozzarella, breaded and fried."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mozzarella_sticks"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -1254,7 +1232,6 @@
 /obj/item/reagent_containers/food/snacks/raw_stuffed_peppers
 	name = "raw stuffed pepper"
 	desc = "A pepper with the top removed and a herby cheese and onion mix stuffed inside. Probably shouldn't be eaten raw."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "raw_stuffed_pepper"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -1268,7 +1245,6 @@
 /obj/item/reagent_containers/food/snacks/stuffed_peppers
 	name = "baked stuffed pepper"
 	desc = "A soft yet still crisp bell pepper, with a wonderful melty cheesy interior."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "stuffed_pepper"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -1283,7 +1259,6 @@
 	desc = "A dish made from fried vegetables, popular amongst astrengis - the brave technicans who repair damaged hulls from asteroid impacts or ship-to-ship weapons whilst in transit. \
 		Given the constant need for repair during protracted conflict, and the limited windows in which a lull in the fields or fire provides time for patching, \
 		they'll often take packed meals to save on trips to the mess, which they heat using their welding torches."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "fueljacks_lunch"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -1297,7 +1272,6 @@
 	name = "macheronirölen"
 	desc = "Fried balls of macaroni cheese dipped in corn batter, served with tomato sauce. \
 		A popular snack across the galaxy, and especially on ex-Syndicate-majority Inteq vessels - where they tend to use Ready-Donk as the base, as a holdover from their ICW days."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "mac_balls"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -1311,7 +1285,6 @@
 /obj/item/reagent_containers/food/snacks/moth_cheese_cakes
 	name = "\improper ælorölen" //ælo = cheese, rölen = balls
 	desc = "Ælorölen (cheese balls) are a traditional Solar dessert, made of soft cheese, powdered sugar and flour, rolled into balls, battered and then deep fried. They're often served with either chocolate sauce or honey, or sometimes both!"
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_cheese_cakes"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -1374,7 +1347,6 @@
 /obj/item/reagent_containers/food/snacks/raw_kalixcian_sausage
 	name = "raw Kalixcian blood sausage"
 	desc = "A raw Kalixcian blood sausage, ready to be cured on a drying rack."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "raw_lizard_sausage"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 5,
@@ -1389,7 +1361,6 @@
 /obj/item/reagent_containers/food/snacks/kalixcian_sausage
 	name = "\improper Kalixcian blood sausage"
 	desc = "A coarse dry-cured blood sausage, traditionally made by farmers in the farmlands of the Central Plateau region in former Switzerland. Similar in texture to chorizo."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_sausage"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
@@ -1402,7 +1373,6 @@
 /obj/item/reagent_containers/food/snacks/raw_headcheese
 	name = "raw headcheese block"
 	desc = "A common staple in Zalish food culture, headcheese is traditionally made of an animal’s head, with the organs removed, boiled until it falls apart, at which point it is collected, strained of moisture, salted heavily, packed into blocks, and left to dry and age for several months. The resulting hard block tastes similar to cheese."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "raw_lizard_cheese"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 15,
@@ -1416,7 +1386,6 @@
 /obj/item/reagent_containers/food/snacks/headcheese
 	name = "headcheese block"
 	desc = "A cured block of headcheese. Delicious, if you're a lizard."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_cheese"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 15,
@@ -1431,7 +1400,6 @@
 /obj/item/reagent_containers/food/snacks/headcheese_slice
 	name = "headcheese slice"
 	desc = "A slice of headcheese, useful for making sandwiches and snacks. Or surviving the cold Kalixcis' winters."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_cheese_slice"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 3,
@@ -1444,7 +1412,6 @@
 /obj/item/reagent_containers/food/snacks/shredded_lungs
 	name = "crispy shredded lung stirfry"
 	desc = "Crispy lung strips, with veggies and a spicy sauce. Delicious, if you like lungs."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lung_stirfry"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
@@ -1458,7 +1425,6 @@
 /obj/item/reagent_containers/food/snacks/tsatsikh
 	name = "stlakis"
 	desc = "A Kalixcian dish consisting of spiced ground offal, stuffed into a stomach and boiled. Pretty foul to anyone who's not used to the taste"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "tsatsikh"
 	list_reagents = list(/datum/reagent/consumable/cooking_oil = 10)
 	tastes = list("assorted minced organs" = 1)
@@ -1468,7 +1434,6 @@
 /obj/item/reagent_containers/food/snacks/liver_pate
 	name = "liver pate"
 	desc = "A rich, meaty paste made from liver, meat, and a few additions for extra flavour."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "pate"
 	list_reagents = list(/datum/reagent/consumable/cooking_oil = 5)
 	tastes = list("liver" = 1)
@@ -1478,7 +1443,6 @@
 /obj/item/reagent_containers/food/snacks/moonfish_eggs
 	name = "moonfish eggs"
 	desc = "The moonfish lays large, transparent white eggs which are prized in lizard cooking. Their flavour is similar to caviar, but generally is described as deeper and more complex."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "moonfish_eggs"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 5,
@@ -1491,7 +1455,6 @@
 /obj/item/reagent_containers/food/snacks/moonfish_caviar
 	name = "moonfish caviar paste"
 	desc = "A rich paste made from moonfish eggs. Generally the only way most lizards can get them, and used fairly heavily in coastal cooking."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "moonfish_caviar"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
@@ -1504,7 +1467,6 @@
 /obj/item/reagent_containers/food/snacks/lizard_escargot
 	name = "desert snail cocleas"
 	desc = "Another example of cultural crossover between Sarathi and humans, desert snail escargot is closer to the Roman dish cocleas than the contemporary escargot. It's a common street food in arid cities."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_escargot"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
@@ -1518,7 +1480,6 @@
 /obj/item/reagent_containers/food/snacks/fried_blood_sausage
 	name = "fried blood sausage"
 	desc = "A blood sausage, battered and deep fried. Commonly served with fries as a quick and simple snack as street food."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "fried_blood_sausage"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
@@ -1534,7 +1495,6 @@
 /obj/item/reagent_containers/food/snacks/lizard_fries
 	name = "loaded poms-franzisks"
 	desc = "One of the many human foods to make its way to Kalixcis shortly after first contact was french fries, which are called pommes-embreis in Kalixcian Common. When topped with barbecued meat and sauce, they make a hearty meal."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_fries"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -1549,7 +1509,6 @@
 /obj/item/reagent_containers/food/snacks/brain_pate
 	name = "eyeball-and-brain pate"
 	desc = "A thick pink puree made from finely chopped poached eyeballs and brains, fried onions, and fat. Lizards swear it's delicious!"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "brain_pate"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -1562,7 +1521,6 @@
 /obj/item/reagent_containers/food/snacks/crispy_headcheese
 	name = "crispy breaded headcheese"
 	desc = "A delicious snack from the streets of Fenistrad in the Antechannel League, consisting of headcheese coated in rootbread breadcrumbs. Commonly served with fries."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "crispy_headcheese"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 5,
@@ -1576,7 +1534,6 @@
 /obj/item/reagent_containers/food/snacks/kebab/picoss_skewers
 	name = "armada skewer"
 	desc = "A popular Ring streetfood consisting of vinegar-marinated armorfish on a skewer with onion and chillis."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "picoss_skewer"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -1591,7 +1548,6 @@
 /obj/item/reagent_containers/food/snacks/nectar_larvae
 	name = "nectar larvae"
 	desc = "Little crispy larvae in a korta nectar based sweet and spicy sauce. Bugtastic!"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "nectar_larvae"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 7,
@@ -1605,7 +1561,6 @@
 /obj/item/reagent_containers/food/snacks/mushroomy_stirfry
 	name = "mushroomy stirfry"
 	desc = "A medley of mushrooms, made to meet your monstrous munchies. Marvelous!"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "mushroomy_stirfry"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -1618,7 +1573,6 @@
 /obj/item/reagent_containers/food/snacks/grilled_moonfish
 	name = "grilled moonfish"
 	desc = "A slab of grilled moonfish. Traditionally served over scalloped roots with a wine-based sauce."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "grilled_moonfish"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -1631,7 +1585,6 @@
 /obj/item/reagent_containers/food/snacks/moonfish_demiglace
 	name = "moonfish demiglace"
 	desc = "A slab of beautifully seared moonfish on a bed of potatoes and carrots, with a wine and demiglace reduction on top. Simply marvelous."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "moonfish_demiglace"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -1645,7 +1598,6 @@
 /obj/item/reagent_containers/food/snacks/lizard_surf_n_turf
 	name = "\improper Channeler surf 'n' turf smorgasbord"
 	desc = "A massive platter of Kalixcis' finest meat and seafood, typically shared by groups on the river beaches. Of course, nothing's stopping you eating it on your own…"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "surf_n_turf"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 15,
@@ -1659,7 +1611,6 @@
 /obj/item/reagent_containers/food/snacks/rootroll
 	name = "rootroll"
 	desc = "A dense, chewy roll, made from roots. A nice companion to a bowl of soup."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "rootroll"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	w_class = WEIGHT_CLASS_SMALL
@@ -1669,7 +1620,6 @@
 /obj/item/reagent_containers/food/snacks/emperor_roll
 	name = "emperor roll"
 	desc = "A popular sandwich on Kalixcis, named in honour of the Zale families."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "emperor_roll"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -1683,7 +1633,6 @@
 /obj/item/reagent_containers/food/snacks/honey_roll
 	name = "honey sweetroll"
 	desc = "A sweetened rootroll with sliced fruit, enjoyed as a seasonal dessert on Kalixcis."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "honey_roll"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -1697,7 +1646,6 @@
 /obj/item/reagent_containers/food/snacks/kebab/candied_mushrooms
 	name = "candied mushrooms"
 	desc = "A slightly bizarre dish from Kalixcis, consisting of seraka mushrooms coated with caramel on a skewer. Carries a pronounced 'sweet and savoury' kick."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "candied_mushrooms"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -1711,7 +1659,6 @@
 /obj/item/reagent_containers/food/snacks/sauerkraut
 	name = "sauerkraut"
 	desc = "Pickled cabbage, as made famous by Germans, and which has become common in lizard cooking, where it is known as Zauerkrat."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "sauerkraut"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	tastes = list("cabbage" = 1, "acid" = 1)
@@ -1721,7 +1668,6 @@
 /obj/item/reagent_containers/food/snacks/lizard_dumplings
 	name = "\improper Kalixcian dumplings"
 	desc = "Mashed root vegetables, mixed with korta flour and boiled to produce a large, round and slightly spicy dumpling. Commonly eaten in soup."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "lizard_dumplings"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -1734,7 +1680,6 @@
 /obj/item/reagent_containers/food/snacks/steeped_mushrooms
 	name = "steeped seraka mushrooms"
 	desc = "Seraka mushrooms that have been steeped in alkaline water to remove the extract, thereby making them completely safe to consume."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "steeped_mushrooms"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
