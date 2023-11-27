@@ -284,7 +284,6 @@
 /obj/item/reagent_containers/food/snacks/soup/moth_cotton_soup
 	name = "cotton ball soup"
 	desc = "A soup made from raw cotton in a flavourful vegetable broth, originating from one of the largest Solarian moth-dominated conclaves from when they were first discovered. Enjoyed only by moths and the criminally tasteless."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_cotton_soup"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -299,7 +298,6 @@
 	name = "cheese melt soup"
 	desc = "A simple and filling soup made from homemade cheese and sweet potato. \
 		The curds provide texture while the whey provides volume- and they both provide deliciousness!"
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_cheese_soup"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 12,
@@ -314,7 +312,6 @@
 	name = "seedy soup"
 	desc = "A seed based soup, made by germinating seeds and then boiling them. \
 		Produces a particularly bitter broth which is usually balanced by the addition of vinegar."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_seed_soup"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 12,
@@ -343,7 +340,6 @@
 /obj/item/reagent_containers/food/snacks/soup/moth_bean_stew
 	name = "pickled bean stew"
 	desc = "A spicy bean stew with lots of veggies, commonly served in Solarian homes as a filling and satisfying meal with rice or bread."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_bean_stew"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
@@ -357,7 +353,6 @@
 /obj/item/reagent_containers/food/snacks/soup/moth_oat_stew
 	name = "oat stew"
 	desc = "A hearty oat stew, prepared with oats, sweet potatoes, and various winter vegetables."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_oat_stew"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 14,
@@ -371,7 +366,6 @@
 	name = "fireball soup"
 	desc = "Fireball soup, or heartburn soup, is a cold soup dish that originated amongst the South American elements of SolGov, \
 		and is named for two things- its rosy pink colour, and its scorchingly hot chili heat."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "moth_fire_soup"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 10,
@@ -385,7 +379,6 @@
 	name = "rice porridge"
 	desc = "A plate of rice porridge. It's mostly flavourless, but it does fill a spot. \
 		Solarians favor it on winter mornings when in a rush."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "rice_porridge"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -399,7 +392,6 @@
 	name = "\improper Hua Mulan congee"
 	desc = "Nobody is quite sure why this smiley bowl of rice porridge with eggs and bacon is named after a mythological Chinese figure - \
 		it's just sorta what it's always been called."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "hua_mulan_congee"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -413,7 +405,6 @@
 /obj/item/reagent_containers/food/snacks/soup/toechtauese_rice_porridge
 	name = "töchtaüse rice porridge"
 	desc = "Commonly served in Solarian homes, rice porridge with töchtaüse syrup is more palatable than the regular stuff, if even just because it's spicier than normal."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "toechtauese_rice_porridge"
 	list_reagents = list(/datum/reagent/consumable/cooking_oil = 6, /datum/reagent/consumable/nutriment/vitamin = 12)
 	tastes = list("sugar" = 1, "spice" = 1)
@@ -423,7 +414,6 @@
 /obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge
 	name = "cornmeal porridge"
 	desc = "A plate of cornmeal porridge. It's more flavourful than most porridges, and makes a good base for other flavours, too."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "cornmeal_porridge"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
@@ -436,7 +426,6 @@
 /obj/item/reagent_containers/food/snacks/soup/cheesy_porridge //milk, polenta, firm cheese, curd cheese, butter
 	name = "cheesy porridge"
 	desc = "A rich and creamy bowl of cheesy cornmeal porridge."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "cheesy_porridge"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -450,7 +439,6 @@
 /obj/item/reagent_containers/food/snacks/soup/fried_eggplant_polenta
 	name = "fried eggplant and polenta"
 	desc = "Polenta loaded with cheese, served with a few discs of fried eggplant and some tomato sauce. Lække!"
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "fried_eggplant_polenta"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 12,
@@ -464,7 +452,6 @@
 /obj/item/reagent_containers/food/snacks/soup/red_porridge
 	name = "eltsløsk ül a priktæolk" //eltsløsk = red porridge, ül a = with, prikt = sour, æolk = cream
 	desc = "Red porridge with yoghurt. The name and vegetable ingredients obscure the sweet nature of the dish, which is commonly served as a dessert aboard the fleet."
-	icon = 'icons/obj/food/moth.dmi'
 	icon_state = "red_porridge"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment/vitamin = 8,
@@ -477,7 +464,6 @@
 /obj/item/reagent_containers/food/snacks/soup/atrakor_dumplings
 	name = "\improper Meat dumpling soup"
 	desc = "A bowl of rich, meaty dumpling soup. Pleasant and hearty fare for holidays, especially during the winter"
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "atrakor_dumplings"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -491,7 +477,6 @@
 /obj/item/reagent_containers/food/snacks/soup/meatball_noodles //No growable peanuts. No recipe. No food.
 	name = "meatball noodle soup"
 	desc = "A hearty noodle soup made from meatballs and nizaya in a rich broth. Commonly topped with a handful of chopped nuts."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "meatball_noodles"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -505,7 +490,6 @@
 /obj/item/reagent_containers/food/snacks/soup/black_broth
 	name = "\improper Kalixcian black broth"
 	desc = "A bowl of sausage, onion, blood and vinegar, served ice cold. Every bit as rough as it sounds."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "black_broth"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 10,
@@ -518,7 +502,6 @@
 /obj/item/reagent_containers/food/snacks/soup/jellyfish
 	name = "jellyfish stew"
 	desc = "A slimy bowl of jellyfish stew. It jiggles if you shake it."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "jellyfish_stew"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 10,
@@ -530,7 +513,6 @@
 /obj/item/reagent_containers/food/snacks/soup/rootbread_soup
 	name = "rootbread soup"
 	desc = "A big bowl of spicy, savoury soup made with rootbread. Heavily seasoned, and very tasty."
-	icon = 'icons/obj/food/lizard.dmi'
 	icon_state = "rootbread_soup"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
