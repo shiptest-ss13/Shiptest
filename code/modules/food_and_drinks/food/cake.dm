@@ -430,7 +430,7 @@
 	tastes = list("cake" = 4, "violets" = 2, "jam" = 2)
 	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/cake/mothmallow
+/obj/item/reagent_containers/food/snacks/store/cake/mothmallow
 	name = "mothmallow tray"
 	desc = "A light and fluffy vegan marshmallow flavoured with vanilla and rum and topped with soft chocolate. These are known to the moths as höllflöfstarkken: cloud squares." //höllflöf = cloud (höll = wind, flöf = cotton), starkken = squares
 	icon_state = "mothmallow_tray"
@@ -454,7 +454,7 @@
 	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
 	foodtype = VEGETABLES | SUGAR
 
-/obj/item/reagent_containers/food/snacks/cake/korta_brittle
+/obj/item/reagent_containers/food/snacks/store/cake/korta_brittle
 	name = "korta brittle slab"
 	desc = "A big slab of korta nut brittle. So sugary it should be a crime!"
 	icon_state = "korta_brittle"

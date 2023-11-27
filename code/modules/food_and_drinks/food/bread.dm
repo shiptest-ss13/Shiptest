@@ -313,7 +313,7 @@
 	. = ..()
 	AddComponent(/datum/component/slippery, 80)
 
-/obj/item/reagent_containers/food/snacks/bread/corn
+/obj/item/reagent_containers/food/snacks/store/bread/corn
 	name = "cornbread"
 	desc = "Some good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw cornbread."
 	icon_state = "cornbread"
@@ -342,7 +342,7 @@
 	else
 		..()
 
-/obj/item/reagent_containers/food/snacks/bread/root
+/obj/item/reagent_containers/food/snacks/store/bread/root
 	name = "rootbread"
 	desc = "The lizard equivalent to bread, made from tubers like potatoes and yams mixed with ground nuts and seeds. Noticably denser than regular bread."
 	icon_state = "lizard_bread"

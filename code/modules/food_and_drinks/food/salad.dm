@@ -141,6 +141,7 @@
 		due to how simple it is to prepare yet how tasty it is. In Sol Common, it's known as zaileskenknusksolt: \
 		two tone salad, in GalCom." //zail = two, esken = colour/tone, knuskolt = salad
 	icon_state = "caprese_salad"
+	icon = 'icons/obj/food/soupsalad.dmi'
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 6,
 		/datum/reagent/consumable/nutriment/vitamin = 8,
