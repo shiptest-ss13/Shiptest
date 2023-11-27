@@ -212,14 +212,14 @@
 	icon_state = "mayonnaise"
 	list_reagents = list(/datum/reagent/consumable/mayonnaise = 50)
 
-/obj/item/reagent_containers/condiment/peanut_butter
+/obj/item/reagent_containers/food/condiment/peanut_butter
 	name = "peanut butter"
 	desc = "Tasty, fattening processed peanuts in a jar."
 	icon_state = "peanutbutter"
 	list_reagents = list(/datum/reagent/consumable/peanut_butter = 50)
 	fill_icon_thresholds = null
 
-/obj/item/reagent_containers/condiment/vinegar
+/obj/item/reagent_containers/food/condiment/vinegar
 	name = "vinegar"
 	desc = "Perfect for chips, if you're feeling Space British."
 	icon_state = "vinegar"
