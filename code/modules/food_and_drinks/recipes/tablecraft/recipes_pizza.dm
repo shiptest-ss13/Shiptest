@@ -105,7 +105,7 @@
 /datum/crafting_recipe/food/raw_mothic_margherita
 	name = "Mothic margherita pizza"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/mothic_pizza_dough = 1,
+		/obj/item/reagent_containers/food/snacks/solar_pizza_dough = 1,
 		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1,
 		/obj/item/reagent_containers/food/snacks/mozzarella = 1,
 		/obj/item/reagent_containers/food/snacks/firm_cheese = 1,
@@ -117,7 +117,7 @@
 /datum/crafting_recipe/food/raw_mothic_firecracker
 	name = "Mothic firecracker pizza"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/mothic_pizza_dough = 1,
+		/obj/item/reagent_containers/food/snacks/solar_pizza_dough = 1,
 		/datum/reagent/consumable/bbqsauce = 10,
 		/obj/item/reagent_containers/food/snacks/firm_cheese = 1,
 		/obj/item/reagent_containers/food/snacks/oven_baked_corn = 1,
@@ -129,7 +129,7 @@
 /datum/crafting_recipe/food/raw_mothic_five_cheese
 	name = "Mothic five cheese pizza"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/mothic_pizza_dough = 1,
+		/obj/item/reagent_containers/food/snacks/solar_pizza_dough = 1,
 		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1,
 		/obj/item/reagent_containers/food/snacks/firm_cheese = 1,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
@@ -143,7 +143,7 @@
 /datum/crafting_recipe/food/raw_mothic_white_pie
 	name = "Mothic white pie pizza"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/mothic_pizza_dough = 1,
+		/obj/item/reagent_containers/food/snacks/solar_pizza_dough = 1,
 		/obj/item/reagent_containers/food/snacks/bechamel_sauce = 1,
 		/obj/item/reagent_containers/food/snacks/firm_cheese = 1,
 		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
@@ -156,7 +156,7 @@
 /datum/crafting_recipe/food/raw_mothic_pesto
 	name = "Mothic pesto pizza"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/mothic_pizza_dough = 1,
+		/obj/item/reagent_containers/food/snacks/solar_pizza_dough = 1,
 		/obj/item/reagent_containers/food/snacks/pesto = 1,
 		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
 		/obj/item/reagent_containers/food/snacks/mozzarella = 1
@@ -167,7 +167,7 @@
 /datum/crafting_recipe/food/raw_mothic_garlic
 	name = "Mothic garlic pizzabread"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/mothic_pizza_dough = 1,
+		/obj/item/reagent_containers/food/snacks/solar_pizza_dough = 1,
 		/obj/item/reagent_containers/food/snacks/butter = 1,
 		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 1

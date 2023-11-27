@@ -179,7 +179,7 @@
 /obj/item/reagent_containers/food/snacks/black_eggs
 	name = "black scrambled eggs"
 	desc = "A country dish from rural Kalixcis. Made with eggs, animal blood, and foraged greens. Traditionally eaten with rootbread and a spicy sauce."
-	icon = 'icons/obj/food/lizard.dmi'
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "black_eggs"
 	list_reagents = list(
 		/datum/reagent/consumable/cooking_oil = 8,
@@ -192,7 +192,7 @@
 /obj/item/reagent_containers/food/snacks/patzikula
 	name = "patzikula"
 	desc = "A smooth and spicy tomato-based sauce topped with eggs and baked. Delicious."
-	icon = 'icons/obj/food/lizard.dmi'
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "patzikula"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,

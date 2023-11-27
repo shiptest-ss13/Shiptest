@@ -333,17 +333,6 @@
 	foodtype = GRAIN
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 
-/obj/item/reagent_containers/food/snacks/rootdough
-	name = "root dough"
-	desc = "A root based dough, made with nuts and tubers. Used in a wide range of Kalixcian cooking."
-	icon = 'icons/obj/food/lizard.dmi'
-	icon_state = "rootdough"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
-	w_class = WEIGHT_CLASS_SMALL
-	tastes = list("potato" = 1, "earthy heat" = 1)
-	foodtype = VEGETABLES | NUTS
-	cooked_type = /obj/item/reagent_containers/food/snacks/bread/root
-
 /obj/item/reagent_containers/food/snacks/rootdough/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc))

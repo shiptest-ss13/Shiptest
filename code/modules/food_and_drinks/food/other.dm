@@ -262,16 +262,6 @@
 	tastes = list("eggplant" = 3, "cheese" = 1)
 	foodtype = VEGETABLES | DAIRY
 
-/obj/item/reagent_containers/food/snacks/tortilla
-	name = "tortilla"
-	desc = "The base for all your burritos."
-	icon = 'icons/obj/food/food_ingredients.dmi'
-	icon_state = "tortilla"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
-	filling_color = "#FFEFD5"
-	tastes = list("tortilla" = 1)
-	foodtype = GRAIN
-
 /obj/item/reagent_containers/food/snacks/burrito
 	name = "burrito"
 	desc = "Tortilla wrapped goodness."
@@ -1017,16 +1007,6 @@
 	foodtype = GRAIN | NUTS | VEGETABLES | SUGAR
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/reagent_containers/food/snacks/mothic_pizza_dough
-	name = "Solar pizza dough"
-	desc = "A strong, glutenous dough, made with cornmeal and flour, designed to hold up to cheese and sauce."
-	icon = 'icons/obj/food/moth.dmi'
-	icon_state = "mothic_pizza_dough"
-	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
-	tastes = list("raw flour" = 1)
-	foodtype = GRAIN
-	w_class = WEIGHT_CLASS_SMALL
-
 //Entrees: categorising food that is 90% cheese and salad is not easy
 /obj/item/reagent_containers/food/snacks/squeaking_stir_fry
 	name = "squeaking stir fry"
@@ -1675,40 +1655,6 @@
 	tastes = list("surf" = 1, "turf" = 1)
 	foodtype = MEAT | SEAFOOD | VEGETABLES
 	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/reagent_containers/food/snacks/flatrootdough
-	name = "flat rootdough"
-	desc = "Flattened rootdough, ready to be made into a flatbread, or cut into segments."
-	icon = 'icons/obj/food/lizard.dmi'
-	icon_state = "flat_rootdough"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 6)
-	tastes = list("potato" = 1, "earthy heat" = 1)
-	foodtype = VEGETABLES | NUTS
-	cooked_type = /obj/item/reagent_containers/food/snacks/root_flatbread
-	slice_path = /obj/item/reagent_containers/food/snacks/rootdoughslice
-	slices_num = 3
-
-/obj/item/reagent_containers/food/snacks/rootdoughslice
-	name = "rootdough ball"
-	desc = "A ball of root dough. Perfect for making pasta or rolls."
-	icon = 'icons/obj/food/lizard.dmi'
-	icon_state = "rootdough_slice"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	w_class = WEIGHT_CLASS_SMALL
-	tastes = list("potato" = 1, "earthy heat" = 1)
-	foodtype = VEGETABLES | NUTS
-	slice_path = /obj/item/reagent_containers/food/snacks/spaghetti/nizaya
-	slices_num = 1
-	cooked_type = /obj/item/reagent_containers/food/snacks/rootroll
-
-/obj/item/reagent_containers/food/snacks/root_flatbread
-	name = "root flatbread"
-	desc = "A plain grilled root flatbread. Can be topped with a variety of foods that lizards like to eat."
-	icon = 'icons/obj/food/lizard.dmi'
-	icon_state = "root_flatbread"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
-	tastes = list("bread" = 1, "earthy heat" = 1)
-	foodtype = VEGETABLES | NUTS
 
 /obj/item/reagent_containers/food/snacks/rootroll
 	name = "rootroll"

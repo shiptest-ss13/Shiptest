@@ -137,14 +137,14 @@
 	results = list(/datum/reagent/consumable/bbqsauce = 5)
 	required_reagents = list(/datum/reagent/ash = 1, /datum/reagent/consumable/tomatojuice = 1, /datum/reagent/medicine/salglu_solution = 3, /datum/reagent/consumable/blackpepper = 1)
 
-/datum/chemical_reaction/food/mothic_pizza_dough
+/datum/chemical_reaction/food/solar_pizza_dough
 	required_reagents = list(/datum/reagent/consumable/milk = 5, /datum/reagent/consumable/quality_oil = 2, /datum/reagent/medicine/salglu_solution = 5, /datum/reagent/consumable/cornmeal = 10, /datum/reagent/consumable/flour = 5)
 	mix_message = "The ingredients form a pizza dough."
 
-/datum/chemical_reaction/food/mothic_pizza_dough/on_reaction(datum/reagents/holder, created_volume)
+/datum/chemical_reaction/food/solar_pizza_dough/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= created_volume, i++)
-		new /obj/item/reagent_containers/food/snacks/mothic_pizza_dough(location)
+		new /obj/item/reagent_containers/food/snacks/solar_pizza_dough(location)
 
 /datum/chemical_reaction/food/curd_cheese
 	required_reagents = list(/datum/reagent/consumable/milk = 15, /datum/reagent/consumable/vinegar = 5, /datum/reagent/consumable/cream = 5)
