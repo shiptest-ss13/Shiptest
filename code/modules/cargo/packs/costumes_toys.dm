@@ -217,7 +217,7 @@
 /datum/supply_pack/costumes_toys/rilena_merch
 	name = "RILENA Merchandise Crate"
 	desc = "A crate full of all the RILENA merch you could ever want. Except the offbrand stuff. That's not in here."
-	cost = 2000 //lots of loot
+	cost = 1000 //lots of loot
 	contains = list(/obj/item/toy/figure/tali,
 					/obj/item/toy/plush/rilena,
 					/obj/item/toy/plush/tali,
