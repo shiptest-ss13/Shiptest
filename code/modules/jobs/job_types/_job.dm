@@ -172,7 +172,7 @@
 	return max(0, minimal_player_age - C.player_age)
 
 /datum/job/proc/radio_help_message(mob/M)
-	to_chat(M, "<b>Prefix your message with :h to speak on your department's radio. To see other prefixes, look closely at your headset.</b>")
+	to_chat(M, "<b>Your ship most likely does not have telecomms. Prefix your message with :L or :R, depending on the hand you're holding the radio with, to speak with a handheld radio. Otherwise, you can speak with your headset by prefixing your message with :h.</b>")
 
 /datum/outfit/job
 	name = "Standard Gear"
