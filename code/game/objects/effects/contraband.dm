@@ -1022,10 +1022,14 @@
 
 //RILENA poster pool. There are only five of these, so try not to go overboard with the random posters, okay? Expect not to see these mapped onto ships except in rolled up form, since they're supposed to be bought in the RILENA merch crate.
 
-/obj/structure/sign/poster/rilena/
+/obj/structure/sign/poster/rilena
 	poster_item_name = "rilena poster"
 	poster_item_desc = "A poster with a vibrant purple backing, indicating it is for the popular webseries RILENA: LMR. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_rilena"
+
+/obj/structure/sign/poster/rilena/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/component/art/rilena, GOOD_ART)
 
 /obj/structure/sign/poster/rilena/random
 	name = "random rilena poster"

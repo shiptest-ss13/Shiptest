@@ -84,7 +84,7 @@
 
 /obj/item/clothing/head/hooded/hood/fbp
 	name = "\improper FBP kepori hood"
-	desc = "A hood for your fbp hoodie."
+	desc = "A hood for your FBP hoodie."
 	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
 

@@ -87,8 +87,8 @@
 	desc = "You are a major fan of the popular webseries RILENA: LMR. You get a mood boost from plushies of your favorite characters, and wearing your Xader pin."
 	value = 1
 	mob_traits = list(TRAIT_FAN_RILENA)
-	gain_text = "<span class='notice'>You are a huge fan of RILENA: LMR.</span>"
-	gain_text = "<span class='danger'>Suddenly, RILENA doesn't seem all that interesting anymore...</span>"
+	gain_text = "<span class='notice'>You are a huge fan of a certain combination webcomic and bullet hell game.</span>"
+	gain_text = "<span class='danger'>Suddenly, bullet hell games and webcomics don't seem all that interesting anymore...</span>"
 	medical_record_text = "Patient reports being a huge fan of RILENA."
 
 /datum/quirk/fan_rilena/on_spawn()

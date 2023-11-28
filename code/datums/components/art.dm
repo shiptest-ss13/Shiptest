@@ -51,3 +51,20 @@
 	if(!do_after(M, 20, target = parent))
 		return
 	on_obj_examine(source, M)
+
+/datum/component/art/rilena
+
+/datum/component/art/rilena/apply_moodlet(atom/source, mob/living/user, impress)
+	SIGNAL_HANDLER
+
+	var/msg
+	if(HAS_TRAIT(user, TRAIT_RILENA_FAN))
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
+		msg = "You love this franchise!"
+	else
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "artok", /datum/mood_event/artok)
+		msg = "You don't get it. At least it's not ugly."
+	M.visible_message(
+		"<span class='notice'>[M] stops and looks intently at [parent].</span>",
+		"<span class='notice'>You stop to take in [parent]. [msg]</span>"
+	)
