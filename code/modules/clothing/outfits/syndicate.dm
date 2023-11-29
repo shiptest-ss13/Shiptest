@@ -67,10 +67,10 @@
 /datum/outfit/job/syndicate/assistant/cybersun
 	name = "Junior Agent (Cybersun)"
 
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/syndicate/cybersun
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_pocket = /obj/item/radio
-	head = /obj/item/clothing/head/soft/black
+	head = /obj/item/clothing/head/soft/cybersun
 
 /datum/outfit/job/syndicate/assistant/twink
 	name = "Deck Assistant (Twinkleshine)"
@@ -261,10 +261,10 @@
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Captain (Cybersun)"
 
-	uniform = /obj/item/clothing/under/suit/black_really
-	head = /obj/item/clothing/head/HoS/syndicate
+	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
+	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 
 
 //cargo tech
@@ -405,9 +405,10 @@
 	name = "Intelligence Officer (Cybersun)"
 
 	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/suit/charcoal
+	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
+	suit = /obj/item/clothing/suit/cybersun_suit
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS/syndicate
+	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/kitchen/knife/combat/survival
@@ -421,19 +422,16 @@
 
 	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/combat
-	head = /obj/item/clothing/head/warden
+	head = /obj/item/clothing/head/HoS/syndicate
 	suit = /obj/item/clothing/suit/armor/vest/syndie
 	id = /obj/item/card/id/syndicate_command/crew_id
 	belt = /obj/item/pda/heads/hos
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = /obj/item/gun/energy/e_gun
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
-
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
 /datum/outfit/job/syndicate/hos/gorlex
 	name = "Sergeant (Syndicate)"
@@ -488,7 +486,7 @@
 /datum/outfit/job/syndicate/doctor/cybersun
 	name = "Medical Doctor (Cybersun)"
 
-	uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/syndicate/medic
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/jackboots
 
@@ -518,7 +516,7 @@
 	head = /obj/item/clothing/head/soft/paramedic
 	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
 	alt_suit = /obj/item/clothing/suit/apron/surgical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
 	l_pocket = /obj/item/pda/medical
@@ -533,7 +531,7 @@
 	name = "Field Medic (Cybersun Industries)"
 
 	uniform = /obj/item/clothing/under/syndicate/medic
-	head = /obj/item/clothing/head/soft/cybersun
+	head = /obj/item/clothing/head/soft/cybersun/medical
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 
@@ -541,7 +539,7 @@
 	name = "Medic (Twinkleshine)"
 
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	alt_uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/syndicate/medic
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/storage/belt/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
@@ -734,9 +732,9 @@
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	ears = /obj/item/radio/headset
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/syndicate/cybersun
 	accessory = /obj/item/clothing/accessory/armband/cargo
-	head = /obj/item/clothing/head/soft/black
+	head = /obj/item/clothing/head/soft/cybersun
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/syndicate/miner/gec
@@ -818,8 +816,8 @@
 /datum/outfit/job/syndicate/engineer/cybersun
 	name = "Engineer (Cybersun)"
 
-	uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/syndicate/cybersun/research
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/radio
-	head = /obj/item/clothing/head/beanie/black
+	head = /obj/item/clothing/head/soft/cybersun
 	accessory = /obj/item/clothing/accessory/armband/engine
