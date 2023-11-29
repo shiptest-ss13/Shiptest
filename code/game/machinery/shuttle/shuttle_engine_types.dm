@@ -131,7 +131,7 @@
 
 
 /obj/machinery/power/shuttle/engine/fire/burn_engine(percentage = 100, deltatime)
-	..()
+	. = ..()
 	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
 	if(!resolved_heater)
 		return
