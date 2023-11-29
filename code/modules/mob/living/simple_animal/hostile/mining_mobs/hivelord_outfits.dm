@@ -118,6 +118,15 @@
 			/obj/item/clothing/mask/breath = 1,
 			)
 		)
+	if (prob(5))
+		belt = pickweight(list(
+			/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
+			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
+			/obj/item/gun/ballistic/automatic/pistol = 1,
+			/obj/item/gun/ballistic/revolver = 1,
+			/obj/item/gun/ballistic/revolver/pepperbox = 1,
+			)
+		)
 	back = pickweight(list(
 		/obj/item/storage/backpack = 1,
 		/obj/item/storage/backpack/satchel = 1,
