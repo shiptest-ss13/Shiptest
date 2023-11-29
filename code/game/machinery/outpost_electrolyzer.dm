@@ -107,7 +107,7 @@
 
 	if(iscarbon(L))
 		if(L.stat == CONSCIOUS)
-			L.say("YOUWCH!!!!", forced="recycler grinding")
+			L.emote("scream")
 
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Unconscious(100)
