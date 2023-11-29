@@ -25,10 +25,12 @@
 /datum/sprite_accessory/tails
 	icon = 'icons/mob/species/lizard/tails.dmi'
 	body_zone = BODY_ZONE_CHEST
+	secondary_color = TRUE
 	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated
 	icon = 'icons/mob/species/lizard/tails.dmi'
+	secondary_color = TRUE
 	body_zone = BODY_ZONE_CHEST
 
 /datum/sprite_accessory/tails/lizard/smooth
@@ -38,30 +40,6 @@
 /datum/sprite_accessory/tails_animated/lizard/smooth
 	name = "Smooth"
 	icon_state = "smooth"
-
-/datum/sprite_accessory/tails/lizard/dtiger
-	name = "Dark Tiger"
-	icon_state = "dtiger"
-
-/datum/sprite_accessory/tails_animated/lizard/dtiger
-	name = "Dark Tiger"
-	icon_state = "dtiger"
-
-/datum/sprite_accessory/tails/lizard/ltiger
-	name = "Light Tiger"
-	icon_state = "ltiger"
-
-/datum/sprite_accessory/tails_animated/lizard/ltiger
-	name = "Light Tiger"
-	icon_state = "ltiger"
-
-/datum/sprite_accessory/tails/lizard/spikes
-	name = "Spikes"
-	icon_state = "spikes"
-
-/datum/sprite_accessory/tails_animated/lizard/spikes
-	name = "Spikes"
-	icon_state = "spikes"
 
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
@@ -106,6 +84,10 @@
 /datum/sprite_accessory/face_markings/eye
 	name = "Alligator Skink"
 	icon_state = "eye"
+
+/datum/sprite_accessory/face_markings/dome
+	name = "Dome"
+	icon_state = "dome"
 
 //Start Horns
 
@@ -164,35 +146,31 @@
 
 /datum/sprite_accessory/frills
 	icon = 'icons/mob/species/lizard/frills.dmi'
+	secondary_color = TRUE
 
 /datum/sprite_accessory/frills/none
 	name = "None"
 	icon_state = "none"
-//Ears are here because having frills+ears would overlap and be weird.
-/datum/sprite_accessory/frills/ears
-	name = "Normal ears"
-	icon_state = "ears"
-	secondary_color = TRUE
-//End ears
-/datum/sprite_accessory/frills/simple
-	name = "Simple"
-	icon_state = "simple"
 
-/datum/sprite_accessory/frills/short
-	name = "Short"
-	icon_state = "short"
+//Ears are here because having frills+ears would overlap and be weird.
 
 /datum/sprite_accessory/frills/aquatic
 	name = "Aquatic"
 	icon_state = "aqua"
 
-/datum/sprite_accessory/frills/frillhawk
-	name = "Frillhawk"
-	icon_state = "frillhawk"
-
 /datum/sprite_accessory/frills/droopy
 	name = "Droopy"
 	icon_state = "droopy"
+
+/datum/sprite_accessory/frills/ears
+	name = "Normal ears"
+	icon_state = "ears"
+
+//End ears
+
+/datum/sprite_accessory/frills/frillhawk
+	name = "Frillhawk"
+	icon_state = "frillhawk"
 
 /datum/sprite_accessory/frills/neck
 	name = "Neck"
@@ -201,6 +179,14 @@
 /datum/sprite_accessory/frills/neckbig
 	name = "Frilled Dragon"
 	icon_state = "neckbig"
+
+/datum/sprite_accessory/frills/short
+	name = "Short"
+	icon_state = "short"
+
+/datum/sprite_accessory/frills/simple
+	name = "Simple"
+	icon_state = "simple"
 
 //Start Spines
 
