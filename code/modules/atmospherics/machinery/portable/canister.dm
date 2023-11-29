@@ -161,7 +161,7 @@
 /obj/machinery/portable_atmospherics/canister/fuel_test
 	name = "test canister"
 	desc = "Hydrogen. Used in thruster fuel"
-	icon_state = "nob"
+	icon_state = "orangewshaz"
 
 /obj/machinery/portable_atmospherics/canister/fuel_test/create_gas()
 	air_contents.set_moles(GAS_O2,500)
