@@ -4,7 +4,6 @@
 	icon_state = "boxing"
 	item_state = "boxing"
 	equip_delay_other = 60
-	species_exception = list(/datum/species/golem) // now you too can be a golem boxing champion
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/gloves/boxing/green
