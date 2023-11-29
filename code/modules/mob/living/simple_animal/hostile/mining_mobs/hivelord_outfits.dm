@@ -1,8 +1,8 @@
 /datum/outfit/generic/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	uniform = pickweight(list(
-		/obj/item/clothing/under/utility = 1,
-		/obj/item/clothing/under/utility/skirt = 1,
+		/obj/item/clothing/under/utility = 5,
+		/obj/item/clothing/under/utility/skirt = 5,
 		/obj/item/clothing/under/color/black = 1,
 		/obj/item/clothing/under/color/white = 1,
 		/obj/item/clothing/under/color/random = 1,
@@ -189,17 +189,23 @@
 		glasses = /obj/item/clothing/glasses/welding
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/engine
-	if(prob(25))
-		mask = /obj/item/clothing/mask/breath
-		suit = /obj/item/clothing/suit/space/engineer
-		head = /obj/item/clothing/head/helmet/space/light/engineer
-		suit_store = /obj/item/tank/internals/oxygen
-		head = null
-		internals_slot = ITEM_SLOT_SUITSTORE
 	if(prob(10))
 		back = /obj/item/fireaxe
 
 /datum/outfit/generic/engineer
+
+/datum/outfit/generic/engineer/inteq/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/syndicate/inteq/artificer, /obj/item/clothing/under/syndicate/inteq)
+	if(prob(75))
+		head = pick(/obj/item/clothing/head/hardhat/white, /obj/item/clothing/head/soft/inteq)
+	if(prob(75))
+		shoes = /obj/item/clothing/shoes/combat
+	if(prob(75))
+		back = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/generic/engineer/inteq
 
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

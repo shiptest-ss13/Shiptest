@@ -411,8 +411,9 @@
 	)
 	var/type = pickweight(list(
 		//independent
-		"Plain" = 40,
 		"Miner" = 40,
+		"Engi" = 20
+		"Generic" = 20,
 		"Oldminer" = 10,
 		pick(
 			//solgov
@@ -422,6 +423,7 @@
 			pick("Infiltrator", "Operative"),
 			//nanotrasen
 			//inteq
+			"Inteq Engi",
 			//srm
 			"SRM",
 			) = 10
@@ -430,7 +432,9 @@
 	switch(type)
 		if("Miner")
 			outfit = /datum/outfit/generic/miner
-		if("Plain")
+		if("Engi")
+			outfit = /datum/outfit/generic/engineer/
+		if("Generic")
 			outfit = /datum/outfit/generic
 		if("Oldminer")
 			outfit = /datum/outfit/generic/oldminer
@@ -440,6 +444,8 @@
 			outfit = /datum/outfit/generic/syndicate/infiltrator
 		if("Operative")
 			outfit = /datum/outfit/generic/syndicate/operative
+		if("Inteq Engi")
+			outfit = /datum/outfit/generic/engineer/inteq
 		if("SRM")
 			outfit = /datum/outfit/generic/srm/hunter
 	. = ..()
