@@ -50,6 +50,30 @@
 		/obj/item/clothing/suit/ianshirt = 1
 		)
 	)
+	back = pickweight(list(
+		/obj/item/storage/backpack = 1,
+		/obj/item/storage/backpack/satchel = 1,
+		/obj/item/storage/backpack/duffelbag = 1,
+		/obj/item/storage/backpack/messenger = 1,
+		/obj/item/storage/backpack/satchel/leather = 1
+		)
+	)
+	if (prob(25))
+		belt = pickweight(list(
+			/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
+			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
+			/obj/item/gun/ballistic/automatic/pistol = 1,
+			/obj/item/gun/ballistic/revolver = 1,
+			/obj/item/gun/ballistic/revolver/pepperbox = 1,
+			)
+		)
+	if(prob(50))
+		gloves = pickweight(list(
+			/obj/item/clothing/gloves/color/black = 1,
+			/obj/item/clothing/gloves/fingerless = 1,
+			/obj/item/clothing/gloves/color/white = 1,
+			)
+		)
 	shoes = pickweight(list(
 		/obj/item/clothing/shoes/laceup = 1,
 		/obj/item/clothing/shoes/sandal = 1,
@@ -79,24 +103,11 @@
 			)
 		)
 	if(prob(50))
-		glasses = pickweight(list(
-			/obj/item/clothing/glasses/regular = 1,
-			/obj/item/clothing/glasses/regular/circle = 1,
-			/obj/item/clothing/glasses/regular/jamjar = 1,
-			/obj/item/clothing/glasses/eyepatch = 1,
-			/obj/item/clothing/glasses/cheapsuns = 1,
-			/obj/item/clothing/glasses/regular/hipster = 1,
-			/obj/item/clothing/glasses/cold = 1,
-			/obj/item/clothing/glasses/heat = 1,
-			/obj/item/clothing/glasses/orange = 1,
-			/obj/item/clothing/glasses/red = 1
-			)
-		)
-	if(prob(50))
-		gloves = pickweight(list(
-			/obj/item/clothing/gloves/color/black = 1,
-			/obj/item/clothing/gloves/fingerless = 1,
-			/obj/item/clothing/gloves/color/white = 1,
+		mask = pickweight(list(
+			/obj/item/clothing/mask/balaclava = 1,
+			/obj/item/clothing/mask/bandana/red = 1,
+			/obj/item/clothing/mask/gas = 1,
+			/obj/item/clothing/mask/breath = 1,
 			)
 		)
 	if(prob(50))
@@ -111,59 +122,45 @@
 			)
 		)
 	if(prob(50))
-		mask = pickweight(list(
-			/obj/item/clothing/mask/balaclava = 1,
-			/obj/item/clothing/mask/bandana/red = 1,
-			/obj/item/clothing/mask/gas = 1,
-			/obj/item/clothing/mask/breath = 1,
+		glasses = pickweight(list(
+			/obj/item/clothing/glasses/regular = 1,
+			/obj/item/clothing/glasses/regular/circle = 1,
+			/obj/item/clothing/glasses/regular/jamjar = 1,
+			/obj/item/clothing/glasses/eyepatch = 1,
+			/obj/item/clothing/glasses/cheapsuns = 1,
+			/obj/item/clothing/glasses/regular/hipster = 1,
+			/obj/item/clothing/glasses/cold = 1,
+			/obj/item/clothing/glasses/heat = 1,
+			/obj/item/clothing/glasses/orange = 1,
+			/obj/item/clothing/glasses/red = 1
 			)
 		)
-	if (prob(5))
-		belt = pickweight(list(
-			/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
-			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
-			/obj/item/gun/ballistic/automatic/pistol = 1,
-			/obj/item/gun/ballistic/revolver = 1,
-			/obj/item/gun/ballistic/revolver/pepperbox = 1,
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+	l_pocket = /obj/item/radio
+	id = /obj/item/card/id
+	for(var/count in 1 to 3)
+		backpack_contents += pickweight(list(
+			/obj/item/dice/d20 = 1,
+			/obj/item/lipstick = 1,
+			/obj/item/clothing/mask/vape = 1,
+			/obj/item/clothing/mask/vape/cigar = 1,
+			/obj/item/reagent_containers/food/drinks/flask = 1,
+			/obj/item/lighter = 1,
+			/obj/item/toy/cards/deck = 1,
+			/obj/item/toy/eightball = 1,
+			/obj/item/storage/wallet = 1,
+			/obj/item/paicard = 1,
+			/obj/item/pen/fourcolor = 1,
+			/obj/item/paper_bin = 1,
+			/obj/item/cane = 1,
+			/obj/item/radio = 1,
+			/obj/item/dyespray = 1,
+			/obj/item/table_bell/brass = 1,
+			/obj/item/flashlight = 1,
+			/obj/item/crowbar/red = 1
 			)
 		)
-	back = pickweight(list(
-		/obj/item/storage/backpack = 1,
-		/obj/item/storage/backpack/satchel = 1,
-		/obj/item/storage/backpack/duffelbag = 1,
-		/obj/item/storage/backpack/messenger = 1,
-		/obj/item/storage/backpack/satchel/leather = 1
-		)
-	)
-	backpack_contents += pick(
-		/obj/item/dice/d20,
-		/obj/item/lipstick,
-		/obj/item/clothing/mask/vape,
-		/obj/item/clothing/mask/vape/cigar,
-		/obj/item/reagent_containers/food/drinks/flask,
-		/obj/item/lighter,
-		/obj/item/toy/cards/deck,
-		/obj/item/toy/eightball,
-		/obj/item/storage/wallet,
-		/obj/item/paicard,
-		/obj/item/pen/fourcolor,
-		/obj/item/paper_bin,
-		/obj/item/cane,
-		/obj/item/radio,
-		pick(
-			/obj/item/toy/plush/lizardplushie,
-			/obj/item/toy/plush/snakeplushie,
-			/obj/item/toy/plush/moth,
-			/obj/item/toy/plush/hornet,
-			/obj/item/toy/plush/hornet/gay,
-			/obj/item/toy/plush/knight,
-			/obj/item/toy/plush/among,
-			),
-		/obj/item/dyespray,
-		/obj/item/table_bell/brass,
-		/obj/item/flashlight,
-		/obj/item/crowbar/red,
-		)
+	box = /obj/item/storage/box/survival
 
 /datum/outfit/generic
 	name = "Generic (Legion)"
@@ -484,6 +481,7 @@
 	name = "Infiltrator"
 
 /datum/outfit/generic/syndicate/operative/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/syndicate
