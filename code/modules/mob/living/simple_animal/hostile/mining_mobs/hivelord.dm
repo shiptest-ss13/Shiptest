@@ -416,7 +416,7 @@
 		"Oldminer" = 10,
 		pick(
 			//solgov
-			"Solgov",
+			"Soldier",
 			//cmm
 			//syndi
 			pick("Infiltrator", "Operative"),
