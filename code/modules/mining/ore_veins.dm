@@ -25,9 +25,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		)
 	//The post initialize list of all possible drops from the vein
 	//Meant to be player facing in the form of mining scanners
+	//Contents won't be randomized if the list isn't empty on initialize
 	var/list/vein_contents = list()
-	//Allows subtyped drills to determine how long it takes to mine one mining charge
+	//Allows subtyped veins to determine how long it takes to mine one mining charge
 	var/mine_time_multiplier = 1
+	//Allows subtyped veins to determine how much loot is dropped per drop_ore call
+	var/drop_rate_amount_min = 15
+	var/drop_rate_amount_max = 20
 	//Mob spawning variables
 	var/spawning_started = FALSE
 	var/max_mobs = 6
@@ -52,20 +56,21 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	. = ..()
 	var/ore_type_amount
 	mining_charges = rand(round(mining_charges - 2),mining_charges + 2)
-	switch(vein_class)
-		if(1)
-			ore_type_amount = rand(1,3)
-		if(2)
-			ore_type_amount = rand(3,5)
-		if(3)
-			ore_type_amount = rand(4,6)
-		else
-			ore_type_amount = 1
-	for(ore_type_amount, ore_type_amount>0, ore_type_amount--)
-		var/picked
-		picked = pickweight(ore_list)
-		vein_contents.Add(picked)
-		ore_list.Remove(picked)
+	if(!LAZYLEN(vein_contents))
+		switch(vein_class)
+			if(1)
+				ore_type_amount = rand(1,3)
+			if(2)
+				ore_type_amount = rand(3,5)
+			if(3)
+				ore_type_amount = rand(4,6)
+			else
+				ore_type_amount = 1
+		for(ore_type_amount, ore_type_amount>0, ore_type_amount--)
+			var/picked
+			picked = pickweight(ore_list)
+			vein_contents.Add(picked)
+			ore_list.Remove(picked)
 	GLOB.ore_veins += src
 
 /obj/structure/vein/Destroy()
@@ -86,7 +91,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	for(class, class>0, class--)
 		var/picked
 		picked = pick(vein_contents)
-		new picked(pick(get_adjacent_open_turfs(current)),round(rand(15,20)*multiplier))
+		new picked(pick(get_adjacent_open_turfs(current)),round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
