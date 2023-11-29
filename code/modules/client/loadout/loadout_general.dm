@@ -182,4 +182,4 @@
 
 /datum/gear/rilena_poster
 	display_name = "poster, rilena"
-	path = /obj/structure/sign/poster/rilena/random
+	path = /obj/item/poster/random_rilena
