@@ -168,7 +168,7 @@
 		)
 
 /datum/outfit/generic
-	name = "Generic"
+	name = "Generic (Legion)"
 
 /datum/outfit/generic/engineer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -181,15 +181,23 @@
 	if(prob(75))
 		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
 	if(prob(50))
-		head = /obj/item/clothimg/head/welding
+		head = /obj/item/clothing/head/welding
 	else if(prob(50))
 		glasses = /obj/item/clothing/glasses/welding
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/engine
+	if(prob(75))
+		back = pick(
+			/obj/item/storage/backpack/industrial,
+			/obj/item/storage/backpack/satchel/eng,
+			/obj/item/storage/backpack/duffelbag/engineering,
+			/obj/item/storage/backpack/messenger/engi
+			)
 	if(prob(10))
 		back = /obj/item/fireaxe
 
 /datum/outfit/generic/engineer
+	name = "Mechanic (Legion)"
 
 /datum/outfit/generic/engineer/inteq/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -203,7 +211,17 @@
 		back = /obj/item/storage/backpack/messenger/inteq
 
 /datum/outfit/generic/engineer/inteq
-	name = "Artificer"
+	name = "Artificer (Legion)"
+
+
+/datum/outfit/generic/doctor/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/rank/medical/doctor, /obj/item/clothing/under/rank/medical/doctor/blue)
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/medblue
+/datum/outfit/generic/doctor
+	name = "Medical Doctor (Legion)"
 
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -252,7 +270,6 @@
 		)
 	if(prob(95))
 		back = /obj/item/storage/backpack/explorer
-		backpack_contents = list(/obj/item/radio)
 		for(var/count in 1 to 3)
 			if(prob(70))
 				backpack_contents += pickweight(list(
@@ -287,7 +304,7 @@
 		backpack_contents = list()
 
 /datum/outfit/generic/miner
-	name = "Miner"
+	name = "Miner (Legion)"
 
 /datum/outfit/generic/oldminer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -302,7 +319,6 @@
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland/old
 	if(prob(85))
 		back = /obj/item/storage/backpack/explorer
-		backpack_contents = list()
 		for(var/count in 1 to 3)
 			if(prob(70))
 				backpack_contents += pickweight(list(
@@ -352,7 +368,7 @@
 			)
 		)
 /datum/outfit/generic/oldminer
-	name = "Old Miner"
+	name = "Old Miner (Legion)"
 
 /datum/outfit/generic/solgov/soldier/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

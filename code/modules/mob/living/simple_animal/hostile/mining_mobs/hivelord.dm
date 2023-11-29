@@ -410,21 +410,30 @@
 		)
 	)
 	var/type = pickweight(list(
-		//independent
+		//independent//
 		"Miner" = 40,
-		"Engi" = 20,
-		"Generic" = 20,
-		"Oldminer" = 10,
+		//"Security" = 10
+		"Assistant" = 10,
+		"Engineer" = 5,
+		//"Doctor" = 5,
+		//"Scientist" = 5,
+		//"Cargo" = 5,
+		//I dont like this guy,
+		"Oldminer" = 10
+
 		pick(
-			//solgov
+			/*I think imma each faction have a minor and major outfit
+			10% chance for the major
+			Both should reflect the factions strengths if convinent*/
+			//solgov//
 			"Soldier",
-			//cmm
-			//syndi
+			//cmm//
+			//syndi//
 			pick("Infiltrator", "Operative"),
-			//nanotrasen
-			//inteq
+			//nanotrasen//
+			//inteq//
 			"Artificer",
-			//srm
+			//srm//
 			"SRM",
 			) = 10
 		)
@@ -432,9 +441,9 @@
 	switch(type)
 		if("Miner")
 			outfit = /datum/outfit/generic/miner
-		if("Engi")
+		if("Engineer")
 			outfit = /datum/outfit/generic/engineer/
-		if("Generic")
+		if("Assistant")
 			outfit = /datum/outfit/generic
 		if("Oldminer")
 			outfit = /datum/outfit/generic/oldminer
