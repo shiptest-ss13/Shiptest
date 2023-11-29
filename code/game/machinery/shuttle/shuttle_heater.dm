@@ -192,7 +192,6 @@
 	use_tank = TRUE
 
 //combustion heater
-
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater
 	name = "combustion engine heater"
 	desc = "Directs fuel mix into an attached combustion thruster."
@@ -235,16 +234,16 @@
 	var/datum/gas_mixture/air_contents = airs[1]
 	var/pressure = air_contents.return_pressure()
 	if(pressure > PRESSURE_LIMIT)
-		pressure_damage += pressure/PRESSURE_LIMIT //always more than 1
-		if(rand(1,48) == 48) //process_atmos() calls around twice a second, so this'll go off on average every 24 seconds.
-			playsound(loc,"hull_creaking", 60, TRUE, 20, pressure_affected = FALSE) // the ship is Not happy
+		pressure_damage += pressure / PRESSURE_LIMIT //always more than 1
+		if(rand(1, 48) == 48) //process_atmos() calls around twice a second, so this'll go off on average every 24 seconds.
+			playsound(loc, "hull_creaking", 60, TRUE, 20, pressure_affected = FALSE) // the ship is Not happy
 		if(pressure_damage >= PRESSURE_DAMAGE_MAX)
 			damage_state += 1 //damage state starts at 0, 1 causes temp leak, 2 causes gas leak, 3 causes explosion
 			pressure_damage = 0 // reset our counter here
-			playsound(loc,'sound/effects/bang.ogg', 240, TRUE, 5)
+			playsound(loc, 'sound/effects/bang.ogg', 240, TRUE, 5)
 	if(damage_state >= DAMAGE_LOW)
 		var/loc_air = loc.return_air()
-		air_contents.temperature_share(loc_air,0.4) //equalizes temp with its turf
+		air_contents.temperature_share(loc_air, 0.4) //equalizes temp with its turf
 		if(damage_state >= DAMAGE_MED)
 			assume_air_ratio(air_contents, 0.01) //leaks a bit of its tank
 			if(damage_state >= DAMAGE_HIGH)
@@ -285,8 +284,8 @@
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/examine(mob/user)
 	. = ..()
-	. += "The engine heater's gas dial reads [return_gas()] kpa."
-	. += "A lightly burnt hazard sticker reports a safe pressure of [PRESSURE_LIMIT] kpa. "
+	. += "The engine heater's gas dial reads [return_gas()] kPa."
+	. += "A lightly burnt hazard sticker reports a safe pressure of [PRESSURE_LIMIT] kPa. "
 	if(damage_state == DAMAGE_MED && metal_repair == FALSE)
 		. += "The engine heater's plating could be repaired with <b>metal</b>."
 	if(damage_state == DAMAGE_MED && metal_repair == TRUE)
@@ -356,7 +355,7 @@
 					var/combined_heat_capacity = heat_capacity + air_heat_capacity
 					if(combined_heat_capacity > 0)
 						var/combined_energy = heat_capacity * NITROUS_COOLING_MIN + air_heat_capacity * air_contents.return_temperature()
-						air_contents.set_temperature(combined_energy/combined_heat_capacity)
+						air_contents.set_temperature(combined_energy / combined_heat_capacity)
 			// adds each fuel gas's power to the fuel max (air.get_fuel_amount is busted, and trit should be Better anyways.)
 				if(GAS_PLASMA)
 					fuel_power += PLASMA_THRUSTER_VALUE * gas_amount
@@ -366,22 +365,22 @@
 					fuel_power += HYDROGEN_THRUSTER_VALUE * gas_amount
 
 			air_contents.adjust_moles(id, -gas_amount)
-		thrust_power = min(oxidation_power,fuel_power) * efficiency_multiplier //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
-		return(thrust_power)
+		thrust_power = min(oxidation_power, fuel_power) * efficiency_multiplier //"simulates" how much possible thrust either oxidizer or fuel could make, and takes the min
+		return thrust_power
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/attackby(obj/item/I, mob/living/user, params)
 	update_adjacent_engines()
-	if(damage_state == DAMAGE_MED && istype(I,/obj/item/stack/sheet/metal) && metal_repair == FALSE) //fix med damage with metal
+	if(damage_state == DAMAGE_MED && istype(I, /obj/item/stack/sheet/metal) && metal_repair == FALSE) //fix med damage with metal
 		var/obj/item/stack/sheet/metal/S = I
 		if(S.get_amount() < 2)
 			to_chat(user, "<span class='warning'>You need at least 2 metal sheets to repair [src].</span>")
 			return
-		to_chat(user,"<span class='notice'>You start adding new plating.</span>")
+		to_chat(user, "<span class='notice'>You start adding new plating.</span>")
 		if(do_after(user, 40, TRUE, src))
 			if(!I.use(2))
 				return
 			to_chat(user, "<span class='notice'>You add new plating.</span>")
-			I.use(1,FALSE,TRUE)
+			I.use(1, FALSE, TRUE)
 			metal_repair = TRUE
 			pressure_damage = 0 //lets be nice and not let them explode while fixing this
 			playsound(loc, 'sound/items/deconstruct.ogg', 50)
@@ -437,14 +436,14 @@
 	name = "paper- 'Combustion Thruster Safety Instructions'"
 	default_raw_text = {"<h1>Combustion Thruster Basics</h1>
 	<p>Firstly, combustion thrusters are delicate machines due to their unique function, and therefore come with certain limits to said function.
-	The specific limit to remember is 1000kpa, above which your warranty will expire and the combustion heater will begin to take damage, with catastrophic falure inevitable after periods of high pressure.
+	The specific limit to remember is 1000 kPa, above which your warranty will expire and the combustion heater will begin to take damage, with catastrophic failure inevitable after long periods of high pressure.
 	The second thing to keep in mind is the fuel mix you are using. If you put in the wrong ratio, the thruster will waste the excess and you'll get less thrust.
-	The most notable ratios are 2:1 of Hydrogen and Oxygen, and 1:1 of Plasma and Oyxgen.
-	Additionally, N2O has been known to provide beneficial properties while being a potent oxidizer.</p>
+	The most notable mixes are a 2:1 ratio of hydrogen to oxygen and a 1:1 ratio of plasma to oxygen.
+	Additionally, nitrous oxide has been known to provide beneficial properties on top of being a potent oxidizer.</p>
 	<br>
-	<h3>Its making scary noises and leaking!</h3>
-	<p>Set your internals, pull a fire alarm, grab a fire suit, and continue with the following steps. <b>Ensure you disable all sources of ignition</b></p><ol>
-	<li>Place two sheets of metal over the leak in the heater</li>
-	<li>Wrench the new sheets of metal into place, to stop the leak</li>
-	<li>Crowbar back in the insulation layer to stop the heat transfer</li>
-	<li>For small damages, tighten loosened screws.</li></ol>"}
+	<h3>It's making scary noises and leaking!</h3>
+	<p>Set your internals, pull a fire alarm, grab a fire suit, and continue with the following steps. <b>Ensure you disable all sources of ignition!</b></p><ol>
+	<li>Place two metal sheets over the leak in the heater.</li>
+	<li>Wrench the new sheets of metal into place to stop the leak.</li>
+	<li>Pry the insulation layer into place with a crowbar to stop the heat transfer.</li>
+	<li>For minor damages, tighten loosened screws.</li></ol>"}

@@ -149,7 +149,7 @@
 
 /obj/machinery/portable_atmospherics/canister/hydrogen
 	name = "hydrogen canister"
-	desc = "Hydrogen. Used in thruster fuel"
+	desc = "Hydrogen. Used in thruster fuel."
 	icon_state = "orangews"
 	gas_type = GAS_HYDROGEN
 
@@ -160,7 +160,7 @@
 
 /obj/machinery/portable_atmospherics/canister/fuel_test
 	name = "test canister"
-	desc = "Hydrogen. Used in thruster fuel"
+	desc = "Hydrogen. Used in thruster fuel."
 	icon_state = "orangewshaz"
 
 /obj/machinery/portable_atmospherics/canister/fuel_test/create_gas()
