@@ -411,14 +411,13 @@
 	)
 	var/type = pickweight(list(
 		"Miner" = 44,
-		"SRM" = 10,
+		"SRM" = 12,
 		"Oldminer" = 8,
 		"Ashwalker" = 7,
 		"Golem" = 6,
 		"Kobold" = 5,
 		"Soldier" = 3,
-		"Infiltrator" = 3,
-		pick("YeOlde", "Operative", "Shadow", "Cultist") = 4
+		pick("Infiltrator", "YeOlde", "Operative", "Shadow", "Cultist") = 5
 		)
 	)
 	switch(type)
