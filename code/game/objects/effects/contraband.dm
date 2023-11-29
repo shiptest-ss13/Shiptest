@@ -1027,9 +1027,9 @@
 	poster_item_desc = "A poster with a vibrant purple backing, indicating it is for the popular webseries RILENA: LMR. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_rilena"
 
-/obj/structure/sign/poster/rilena/Initialize(mapload)
+/obj/structure/sign/poster/rilena/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
 	. = ..()
-	AddElement(/datum/component/art/rilena, GOOD_ART)
+	AddComponent(/datum/component/art/rilena, GOOD_ART)
 
 /obj/structure/sign/poster/rilena/random
 	name = "random rilena poster"
