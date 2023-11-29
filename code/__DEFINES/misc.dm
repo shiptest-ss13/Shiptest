@@ -149,12 +149,8 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 //subtypesof(), typesof() without the parent path
 #define subtypesof(typepath) (typesof(typepath) - typepath)
 
-/// Takes a datum as input, returns its ref string, or a cached version of it
-/// This allows us to cache \ref creation, which ensures it'll only ever happen once per datum, saving string tree time
-/// It is slightly less optimal then a []'d datum, but the cost is massively outweighed by the potential savings
-/// It will only work for datums mind, for datum reasons
-/// : because of the embedded typecheck
-#define text_ref(datum) (isdatum(datum) ? (datum:cached_ref ||= "\ref[datum]") : ("\ref[datum]"))
+/// Takes a datum as input, returns its ref string
+#define text_ref(datum) ref(datum)
 
 //Gets the turf this atom inhabits
 #define get_turf(A) (get_step(A, 0))

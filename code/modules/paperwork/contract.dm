@@ -245,7 +245,7 @@
 			H.fakefire()
 			fulfillContract(H, TRUE)//Revival contracts are always signed in blood
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, fakefireextinguish)), 5, TIMER_UNIQUE)
-		addtimer(CALLBACK(src, "resetcooldown"), 300, TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(resetcooldown)), 300, TIMER_UNIQUE)
 	else
 		..()
 
