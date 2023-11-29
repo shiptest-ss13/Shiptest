@@ -410,11 +410,21 @@
 		)
 	)
 	var/type = pickweight(list(
+		//independent
 		"Plain" = 40,
 		"Miner" = 40,
 		"Oldminer" = 10,
-		//faction stuff
-		pick("Infiltrator", "Operative", "Soldier", "SRM") = 10
+		pick(
+			//solgov
+			"Solgov",
+			//cmm
+			//syndi
+			pick("Infiltrator", "Operative"),
+			//nanotrasen
+			//inteq
+			//srm
+			"SRM",
+			) = 10
 		)
 	)
 	switch(type)
