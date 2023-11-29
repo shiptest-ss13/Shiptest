@@ -585,7 +585,7 @@
 			if(prob(85))
 				back = /obj/item/storage/backpack/explorer //someone could totally make these backpacks a subtype and just have them be there. It'd cut down this file size a bit.
 				backpack_contents = list()
-				for(var/i = 1 to 3)
+				for(var/count in 1 to 3)
 					if(prob(70))
 						backpack_contents += pickweight(list(
 							/obj/item/borg/upgrade/modkit/damage = 1,
@@ -671,7 +671,7 @@
 			if(prob(70))
 				back = /obj/item/storage/backpack
 				backpack_contents = list()
-				for(var/i = 1 to 3)
+				for(var/count in 1 to 3)
 					if(prob(75))
 						backpack_contents += pickweight(list(
 							/obj/item/slime_extract/grey = 1,
