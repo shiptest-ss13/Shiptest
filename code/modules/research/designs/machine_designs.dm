@@ -692,7 +692,7 @@
 	desc = "The circuit board for an combustion engine heater."
 	id = "engine_fire_heater"
 	build_path = /obj/item/circuitboard/machine/shuttle/fire_heater
-	category = list ("Shuttle Machinery")
+	category = list("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/shuttle/engine/smes
