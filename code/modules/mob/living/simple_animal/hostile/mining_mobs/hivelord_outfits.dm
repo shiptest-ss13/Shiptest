@@ -168,6 +168,7 @@
 		)
 
 /datum/outfit/generic
+	name = "Generic"
 
 /datum/outfit/generic/engineer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -202,6 +203,7 @@
 		back = /obj/item/storage/backpack/messenger/inteq
 
 /datum/outfit/generic/engineer/inteq
+	name = "Artificer"
 
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -285,6 +287,7 @@
 		backpack_contents = list()
 
 /datum/outfit/generic/miner
+	name = "Miner"
 
 /datum/outfit/generic/oldminer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -349,6 +352,7 @@
 			)
 		)
 /datum/outfit/generic/oldminer
+	name = "Old Miner"
 
 /datum/outfit/generic/solgov/soldier/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -416,6 +420,7 @@
 		)
 
 /datum/outfit/generic/solgov/soldier
+	name = "Soldier"
 
 /datum/outfit/generic/syndicate/infiltrator/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -468,6 +473,7 @@
 		)
 
 /datum/outfit/generic/syndicate/infiltrator
+	name = "Infiltrator"
 
 /datum/outfit/generic/syndicate/operative/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	uniform = /obj/item/clothing/under/syndicate
@@ -491,22 +497,34 @@
 		back = /obj/item/storage/backpack
 
 /datum/outfit/generic/syndicate/operative
+	name = "Operative"
 
-/datum/outfit/generic/srm/hunter/pre_equip(mob/living/carbon/human/H, visualsOnly)
+/datum/outfit/generic/srm/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	uniform = /obj/item/clothing/under/suit/roumain
 	shoes = /obj/item/clothing/shoes/workboots/mining
-	if(prob(50))
-		suit = /obj/item/clothing/suit/armor/roumain/shadow
-		head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
-	else
-		suit = /obj/item/clothing/suit/armor/roumain
-		head = /obj/item/clothing/head/cowboy/sec/roumain
-	if(prob(25))
-		suit_store = /obj/item/gun/ballistic/shotgun/winchester
+	if(prob(75))
+		back = /obj/item/storage/backpack/cultpack
+	if(prob(75))
+		belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
+
+/datum/outfit/generic/srm
+
+/datum/outfit/generic/srm/shadow/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	suit = /obj/item/clothing/suit/armor/roumain/shadow
+	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
+
+/datum/outfit/generic/srm/shadow
+	name = "Shadow"
+
+/datum/outfit/generic/srm/hunter/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	suit = /obj/item/clothing/suit/armor/roumain
+	head = /obj/item/clothing/head/cowboy/sec/roumain
+	if(prob(75))
+		suit_store = pickweight(list(/obj/item/gun/ballistic/shotgun/winchester = 9, /obj/item/gun/ballistic/shotgun/winchester = 1))
 	r_pocket = /obj/item/book/manual/trickwines_4_brewers
-	belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
-	back = /obj/item/storage/backpack/cultpack
 	backpack_contents = list()
 	if(prob(75))
 		backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
