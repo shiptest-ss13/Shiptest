@@ -423,7 +423,7 @@
 			pick("Infiltrator", "Operative"),
 			//nanotrasen
 			//inteq
-			"Inteq Engi",
+			"Artificer",
 			//srm
 			"SRM",
 			) = 10
@@ -444,7 +444,7 @@
 			outfit = /datum/outfit/generic/syndicate/infiltrator
 		if("Operative")
 			outfit = /datum/outfit/generic/syndicate/operative
-		if("Inteq Engi")
+		if("Artificer")
 			outfit = /datum/outfit/generic/engineer/inteq
 		if("SRM")
 			outfit = /datum/outfit/generic/srm/hunter
