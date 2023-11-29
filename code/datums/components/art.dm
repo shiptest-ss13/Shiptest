@@ -55,8 +55,6 @@
 /datum/component/art/rilena
 
 /datum/component/art/rilena/apply_moodlet(mob/living/user, impress)
-	SIGNAL_HANDLER
-
 	var/msg
 	if(HAS_TRAIT(user, TRAIT_FAN_RILENA))
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
