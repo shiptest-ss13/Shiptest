@@ -115,7 +115,7 @@
 
 /obj/machinery/atmospherics/components/binary/electrolyzer_out
 	name = "electrolyzing chamber"
-	desc = "breaks down ice into hydrogen and oxygen."
+	desc = "Breaks down ice into hydrogen and oxygen."
 	icon = 'icons/obj/shuttle.dmi'
 	icon_state = "heater_pipe"
 
