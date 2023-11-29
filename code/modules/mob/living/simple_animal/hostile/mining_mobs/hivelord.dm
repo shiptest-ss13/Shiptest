@@ -410,17 +410,14 @@
 		)
 	)
 	var/type = pickweight(list(
-		//independent//
 		"Miner" = 40,
-		//"Security" = 10
 		"Assistant" = 10,
 		"Engineer" = 5,
 		//"Doctor" = 5,
 		//"Scientist" = 5,
 		//"Cargo" = 5,
 		//I dont like this guy,
-		"Oldminer" = 10
-
+		"Oldminer" = 10,
 		pick(
 			/*I think imma each faction have a minor and major outfit
 			10% chance for the major
@@ -438,11 +435,12 @@
 			) = 10
 		)
 	)
+
 	switch(type)
 		if("Miner")
 			outfit = /datum/outfit/generic/miner
 		if("Engineer")
-			outfit = /datum/outfit/generic/engineer/
+			outfit = /datum/outfit/generic/engineer
 		if("Assistant")
 			outfit = /datum/outfit/generic
 		if("Oldminer")

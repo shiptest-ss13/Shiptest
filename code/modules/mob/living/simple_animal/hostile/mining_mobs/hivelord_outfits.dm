@@ -146,8 +146,6 @@
 		/obj/item/toy/eightball,
 		/obj/item/storage/wallet,
 		/obj/item/paicard,
-		/obj/item/modular_computer/tablet/preset/cheap,
-		/obj/item/modular_computer/laptop/preset/civilian,
 		/obj/item/pen/fourcolor,
 		/obj/item/paper_bin,
 		/obj/item/cane,
@@ -187,12 +185,7 @@
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/engine
 	if(prob(75))
-		back = pick(
-			/obj/item/storage/backpack/industrial,
-			/obj/item/storage/backpack/satchel/eng,
-			/obj/item/storage/backpack/duffelbag/engineering,
-			/obj/item/storage/backpack/messenger/engi
-			)
+		back = pick(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/duffelbag/engineering, /obj/item/storage/backpack/messenger/engi)
 	if(prob(10))
 		back = /obj/item/fireaxe
 
@@ -212,7 +205,6 @@
 
 /datum/outfit/generic/engineer/inteq
 	name = "Artificer (Legion)"
-
 
 /datum/outfit/generic/doctor/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
