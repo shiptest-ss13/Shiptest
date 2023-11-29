@@ -652,7 +652,7 @@
 	desc = "The circuit board for a combustion thruster."
 	id = "engine_fire"
 	build_path = /obj/item/circuitboard/machine/shuttle/engine/fire
-	category = list ("Shuttle Machinery")
+	category = list("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/shuttle/engine/electric
