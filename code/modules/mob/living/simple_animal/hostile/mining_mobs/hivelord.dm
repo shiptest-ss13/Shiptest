@@ -412,7 +412,7 @@
 	var/type = pickweight(list(
 		//independent
 		"Miner" = 40,
-		"Engi" = 20
+		"Engi" = 20,
 		"Generic" = 20,
 		"Oldminer" = 10,
 		pick(
