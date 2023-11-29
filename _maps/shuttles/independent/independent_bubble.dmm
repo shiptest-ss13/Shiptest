@@ -650,13 +650,14 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
 "AR" = (
-/obj/machinery/door/airlock/external,
-/obj/docking_port/mobile{
-	launch_status = 0;
-	port_direction = 4
+/obj/docking_port/stationary{
+	width = 30;
+	height = 15;
+	dwidth = 15;
+	dir = 2
 	},
-/turf/open/floor/plating,
-/area/ship/engineering)
+/turf/template_noop,
+/area/space)
 "AU" = (
 /obj/machinery/cryopod{
 	dir = 4
@@ -955,6 +956,18 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
+"Nf" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/obj/docking_port/mobile{
+	launch_status = 0;
+	port_direction = 8;
+	preferred_direction = 4;
+	dir = 2
+	},
+/turf/open/floor/plating,
+/area/ship/external)
 "NN" = (
 /obj/structure/frame/computer{
 	dir = 4
@@ -1278,6 +1291,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (2,1,1) = {"
 VB
@@ -1293,6 +1307,7 @@ GD
 Ob
 wH
 Ob
+VB
 VB
 VB
 VB
@@ -1316,6 +1331,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (4,1,1) = {"
 VB
@@ -1332,6 +1348,7 @@ MW
 VA
 Ob
 Ob
+VB
 VB
 VB
 VB
@@ -1354,6 +1371,7 @@ Ob
 VB
 VB
 VB
+VB
 "}
 (6,1,1) = {"
 VB
@@ -1371,6 +1389,7 @@ nH
 nH
 nH
 nH
+VB
 VB
 VB
 "}
@@ -1392,6 +1411,7 @@ KG
 nH
 VB
 VB
+VB
 "}
 (8,1,1) = {"
 VB
@@ -1409,6 +1429,7 @@ Cc
 ZM
 eT
 nH
+VB
 VB
 VB
 "}
@@ -1430,6 +1451,7 @@ fs
 vR
 xX
 VB
+VB
 "}
 (10,1,1) = {"
 VB
@@ -1448,6 +1470,7 @@ KQ
 kW
 nH
 NX
+VB
 VB
 "}
 (11,1,1) = {"
@@ -1468,9 +1491,10 @@ IL
 Vt
 Rk
 MJ
+VB
 "}
 (12,1,1) = {"
-gl
+Nf
 Gl
 ec
 nS
@@ -1486,6 +1510,7 @@ cH
 Ls
 ZQ
 cG
+ZQ
 AR
 "}
 (13,1,1) = {"
@@ -1506,6 +1531,7 @@ UC
 Vt
 mY
 MJ
+VB
 "}
 (14,1,1) = {"
 VB
@@ -1525,6 +1551,7 @@ MJ
 MJ
 VB
 VB
+VB
 "}
 (15,1,1) = {"
 VB
@@ -1541,6 +1568,7 @@ CP
 bb
 Ul
 zy
+VB
 VB
 VB
 VB
@@ -1563,6 +1591,7 @@ zy
 VB
 VB
 VB
+VB
 "}
 (17,1,1) = {"
 VB
@@ -1582,6 +1611,7 @@ VB
 VB
 VB
 VB
+VB
 "}
 (18,1,1) = {"
 VB
@@ -1595,6 +1625,27 @@ hh
 hh
 hh
 CP
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+"}
+(19,1,1) = {"
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
+VB
 VB
 VB
 VB

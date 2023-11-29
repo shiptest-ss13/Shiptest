@@ -46,7 +46,7 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/marine/medium
 	name = "medium tactical armor vest"
@@ -55,6 +55,11 @@
 /obj/item/clothing/suit/armor/vest/marine/heavy
 	name = "large tactical armor vest"
 	icon_state = "marine_heavy"
+
+/obj/item/clothing/suit/armor/vest/marine/trauma
+	name = "cybersun trauma team armor vest"
+	icon_state = "traumavest"
+	desc = "A set of stamped plasteel armor plates decorated with a medical cross and colors associated with the medical division of Cybersun."
 
 /obj/item/clothing/suit/armor/vest/old
 	name = "degrading armor vest"
@@ -142,6 +147,11 @@
 	name = "syndicate captain's vest"
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking syndicate officer."
 	icon_state = "carapace_syndie"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/cybersun
+	name = "cybersun captain's haori"
+	desc = "An extraordinarily fashionable haori, utilized by cybersun captains. Weaved with armored fabric to protect the user from gunshots."
+	icon_state = "cybersunhaori"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/alt
 	name = "captain's parade jacket"
