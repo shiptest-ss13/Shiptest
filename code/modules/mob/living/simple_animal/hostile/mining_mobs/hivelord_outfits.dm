@@ -137,16 +137,10 @@
 	)
 	backpack_contents += pick(
 		/obj/item/dice/d20,
-		/obj/item/lipstick/black,
 		/obj/item/lipstick,
-		/obj/item/clothing/mask/balaclava,
 		/obj/item/clothing/mask/vape,
 		/obj/item/clothing/mask/vape/cigar,
-		/obj/item/clothing/mask/bandana/red,
-		/obj/item/storage/book/bible,
 		/obj/item/reagent_containers/food/drinks/flask,
-		/obj/item/reagent_containers/food/drinks/britcup,
-		/obj/item/lighter/greyscale,
 		/obj/item/lighter,
 		/obj/item/toy/cards/deck,
 		/obj/item/toy/eightball,
@@ -154,18 +148,19 @@
 		/obj/item/paicard,
 		/obj/item/modular_computer/tablet/preset/cheap,
 		/obj/item/modular_computer/laptop/preset/civilian,
-		/obj/item/pen,
 		/obj/item/pen/fourcolor,
 		/obj/item/paper_bin,
 		/obj/item/cane,
 		/obj/item/radio,
-		/obj/item/toy/plush/lizardplushie,
-		/obj/item/toy/plush/snakeplushie,
-		/obj/item/toy/plush/moth,
-		/obj/item/toy/plush/hornet,
-		/obj/item/toy/plush/hornet/gay,
-		/obj/item/toy/plush/knight,
-		/obj/item/toy/plush/among,
+		pick(
+			/obj/item/toy/plush/lizardplushie,
+			/obj/item/toy/plush/snakeplushie,
+			/obj/item/toy/plush/moth,
+			/obj/item/toy/plush/hornet,
+			/obj/item/toy/plush/hornet/gay,
+			/obj/item/toy/plush/knight,
+			/obj/item/toy/plush/among,
+			),
 		/obj/item/dyespray,
 		/obj/item/table_bell/brass,
 		/obj/item/flashlight,
@@ -185,6 +180,8 @@
 	if(prob(75))
 		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
 	if(prob(50))
+		head = /obj/item/clothimg/head/welding
+	else if(prob(50))
 		glasses = /obj/item/clothing/glasses/welding
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/engine
