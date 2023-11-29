@@ -138,10 +138,10 @@
 	var/datum/gas_mixture/air2 = airs[2] //oxygen out
 	var/obj/item/stack/ore/ice/S = I
 	var/molestomake = S.get_amount()
-	air1.adjust_moles (GAS_HYDROGEN, molestomake)
-	air1.set_temperature (T20C) //sets temp, otherwise the gas spawns at lowest possible temp
-	air2.adjust_moles (GAS_O2, molestomake / 2)
-	air2.set_temperature (T20C)
+	air1.adjust_moles(GAS_HYDROGEN, molestomake)
+	air1.set_temperature(T20C) //sets temp, otherwise the gas spawns at lowest possible temp
+	air2.adjust_moles(GAS_O2, molestomake / 2)
+	air2.set_temperature(T20C)
 	update_parents()
 	
 #undef MOLS_PER_ICE
