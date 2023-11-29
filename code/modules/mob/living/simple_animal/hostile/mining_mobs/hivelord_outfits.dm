@@ -135,7 +135,7 @@
 		/obj/item/storage/backpack/satchel/leather = 1
 		)
 	)
-	backpack_contents += pickweight(list(
+	backpack_contents += pick(
 		/obj/item/dice/d20,
 		/obj/item/lipstick/black,
 		/obj/item/lipstick,
@@ -171,7 +171,6 @@
 		/obj/item/flashlight,
 		/obj/item/crowbar/red,
 		)
-	)
 
 /datum/outfit/generic
 
