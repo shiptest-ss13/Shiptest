@@ -43,10 +43,6 @@
 		/obj/item/clothing/suit/jacket/miljacket = 1,
 		/obj/item/clothing/suit/jacket/puffer = 1,
 		/obj/item/clothing/suit/gothcoat = 1,
-		/obj/item/clothing/suit/jacket/hoodie/black = 1,
-		/obj/item/clothing/suit/jacket/hoodie/red = 1,
-		/obj/item/clothing/suit/jacket/hoodie/blue = 1,
-		/obj/item/clothing/suit/jacket/hoodie/gray = 1,
 		/obj/item/clothing/suit/toggle/industrial = 1,
 		/obj/item/clothing/suit/toggle/hazard = 1,
 		/obj/item/clothing/suit/poncho/green = 1,
@@ -66,19 +62,36 @@
 		/obj/item/clothing/shoes/sneakers/white = 1
 		)
 	)
-	glasses = pickweight(list(
-		/obj/item/clothing/glasses/regular = 1,
-		/obj/item/clothing/glasses/regular/circle = 1,
-		/obj/item/clothing/glasses/regular/jamjar = 1,
-		/obj/item/clothing/glasses/eyepatch = 1,
-		/obj/item/clothing/glasses/cheapsuns = 1,
-		/obj/item/clothing/glasses/regular/hipster = 1,
-		/obj/item/clothing/glasses/cold = 1,
-		/obj/item/clothing/glasses/heat = 1,
-		/obj/item/clothing/glasses/orange = 1,
-		/obj/item/clothing/glasses/red = 1
+	if(prob(50))
+		hat = pickweight(list(
+			/obj/item/clothing/head/hardhat = 1,
+			/obj/item/clothing/head/hardhat/orange = 1,
+			/obj/item/clothing/head/hardhat/dblue = 1,
+			/obj/item/clothing/head/beret = 1,
+			/obj/item/clothing/head/beret/grey = 1,
+			/obj/item/clothing/head/beret/ce = 1,
+			/obj/item/clothing/head/flatcap = 1,
+			/obj/item/clothing/head/beanie = 1,
+			/obj/item/clothing/head/foilhat = 1,
+			/obj/item/clothing/head/cowboy = 1,
+			/obj/item/clothing/head/pirate = 1,
+			/obj/item/clothing/head/trapper = 1
+			)
 		)
-	)
+	if(prob(50))
+		glasses = pickweight(list(
+			/obj/item/clothing/glasses/regular = 1,
+			/obj/item/clothing/glasses/regular/circle = 1,
+			/obj/item/clothing/glasses/regular/jamjar = 1,
+			/obj/item/clothing/glasses/eyepatch = 1,
+			/obj/item/clothing/glasses/cheapsuns = 1,
+			/obj/item/clothing/glasses/regular/hipster = 1,
+			/obj/item/clothing/glasses/cold = 1,
+			/obj/item/clothing/glasses/heat = 1,
+			/obj/item/clothing/glasses/orange = 1,
+			/obj/item/clothing/glasses/red = 1
+			)
+		)
 	if(prob(50))
 		gloves = pickweight(list(
 			/obj/item/clothing/gloves/color/black = 1,
@@ -97,6 +110,14 @@
 			/obj/item/clothing/neck/stripedbluescarf = 1
 			)
 		)
+	back = pickweight(list(
+		/obj/item/storage/backpack = 1,
+		/obj/item/storage/backpack/satchel = 1,
+		/obj/item/storage/backpack/duffelbag = 1,
+		/obj/item/storage/backpack/messenger = 1,
+		/obj/item/storage/backpack/satchel/leather = 1
+		)
+	)
 
 /datum/outfit/generic
 	name "Generic"
