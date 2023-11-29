@@ -430,7 +430,7 @@
 	else if((findtext(message, helpintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, a_intent_change), INTENT_HELP), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_HELP), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
@@ -438,7 +438,7 @@
 	else if((findtext(message, disarmintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, a_intent_change), INTENT_DISARM), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_DISARM), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
@@ -446,7 +446,7 @@
 	else if((findtext(message, grabintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, a_intent_change), INTENT_GRAB), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_GRAB), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
@@ -454,7 +454,7 @@
 	else if((findtext(message, harmintent_words)))
 		cooldown = COOLDOWN_MEME
 		for(var/mob/living/carbon/human/H in listeners)
-			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, a_intent_change), INTENT_HARM), i * 2)
+			addtimer(CALLBACK(H, TYPE_VERB_REF(/mob, a_intent_change), INTENT_HARM), i * 2)
 			addtimer(CALLBACK(H, TYPE_PROC_REF(/mob, click_random_mob)), i * 2)
 			i++
 
