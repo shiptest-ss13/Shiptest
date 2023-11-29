@@ -22,7 +22,7 @@
 
 /obj/machinery/mineral/electrolyzer
 	name = "ice crusher"
-	desc = "breaks down ice into hydrogen and oxygen."
+	desc = "Breaks down ice into hydrogen and oxygen."
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "grinder-o1"
 	input_dir = WEST
