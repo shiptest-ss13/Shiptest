@@ -35,7 +35,10 @@
 	return . && (sampler.num_current >= num_wanted) && (scanner_port?.current_ship == servant)
 
 /datum/mission/drill/get_progress_string()
-	return //"[sampler.num_current]/[num_wanted]"
+	if(!sampler)
+		return "0/[num_wanted]"
+	else
+		return "[sampler.num_current]/[num_wanted]"
 
 /datum/mission/drill/Destroy()
 	sampler = null
