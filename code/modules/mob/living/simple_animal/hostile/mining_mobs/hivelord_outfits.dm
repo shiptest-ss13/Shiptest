@@ -168,11 +168,6 @@
 
 /datum/outfit/generric/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
-	if(prob(2))
-		mob_species = /datum/species/plasmaman
-		uniform = /obj/item/clothing/under/plasmaman
-		head = /obj/item/clothing/head/helmet/space/plasmaman
-		belt = /obj/item/tank/internals/plasmaman/belt
 	else
 		uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
 		if (prob(4))
@@ -192,8 +187,6 @@
 			)
 		else
 			belt = /obj/item/tank/internals/emergency_oxygen/engi
-	if(mob_species != /datum/species/lizard)
-		shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/color/black
 	mask = /obj/item/clothing/mask/gas/explorer
 	if(prob(45))
@@ -306,7 +299,7 @@
 	gloves = /obj/item/clothing/gloves/explorer/old
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland/old
 	if(prob(85))
-		back = /obj/item/storage/backpack/explorer //someone could totally make these backpacks a subtype and just have them be there. It'd cut down this file size a bit.
+		back = /obj/item/storage/backpack/explorer
 		backpack_contents = list()
 		for(var/count in 1 to 3)
 			if(prob(70))
@@ -478,7 +471,6 @@
 /datum/outfit/generic/syndicate/infiltrator
 
 /datum/outfit/generic/syndicate/operative/pre_equip(mob/living/carbon/human/H, visualsOnly)
-	id_job = "Operative"
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/syndicate
