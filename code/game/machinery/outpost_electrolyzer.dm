@@ -143,3 +143,5 @@
 	air2.adjust_moles (GAS_O2, molestomake / 2)
 	air2.set_temperature (T20C)
 	update_parents()
+	
+#undef MOLS_PER_ICE
