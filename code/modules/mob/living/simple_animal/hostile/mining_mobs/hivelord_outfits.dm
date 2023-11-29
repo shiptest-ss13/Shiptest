@@ -175,6 +175,32 @@
 
 /datum/outfit/generic
 
+/datum/outfit/generic/engineer/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/rank/engineering/engineer, /obj/item/clothing/under/rank/engineering/engineer/hazard, /obj/item/clothing/under/rank/security/officer/military/eng)
+	if(prob(75))
+		suit = pick(/obj/item/clothing/suit/toggle/hazard, /obj/item/clothing/suit/hazardvest, /obj/item/clothing/suit/hooded/wintercoat/engineering)
+	if(prob(75))
+		gloves = pick(/obj/item/clothing/gloves/color/yellow, /obj/item/clothing/gloves/color/fyellow, /obj/item/clothing/gloves/color/fyellow/old)
+	if(prob(75))
+		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
+	if(prob(50))
+		glasses = /obj/item/clothing/glasses/welding
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/engine
+	if(prob(25))
+		mask = /obj/item/clothing/mask/breath
+		suit = /obj/item/clothing/suit/space/engineer
+		head = /obj/item/clothing/head/helmet/space/light/engineer
+		suit_store = /obj/item/tank/internals/oxygen
+		head = null
+		internals_slot = ITEM_SLOT_SUITSTORE
+	if(prob(10))
+		back = /obj/item/fireaxe
+
+/datum/outfit/generic/engineer
+
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
@@ -223,63 +249,26 @@
 	if(prob(95))
 		back = /obj/item/storage/backpack/explorer
 		backpack_contents = list(/obj/item/radio)
-		if(prob(70))
-			backpack_contents += pickweight(list(
-				/obj/item/borg/upgrade/modkit/damage = 1,
-				/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-				/obj/item/soap/nanotrasen = 1,
-				/obj/item/wormhole_jaunter = 1,
-				/obj/item/fulton_core = 1,
-				/obj/item/extraction_pack = 2,
-				/obj/item/stack/sheet/animalhide/goliath_hide = 3,
-				/obj/item/hivelordstabilizer = 2,
-				/obj/item/stack/marker_beacon/ten = 2,
-				/obj/item/mining_scanner = 2,
-				/obj/item/extinguisher/mini = 2,
-				/obj/item/kitchen/knife/combat/survival = 3,
-				/obj/item/flashlight/seclite=3,
-				/obj/item/stack/sheet/sinew = 3,
-				/obj/item/stack/sheet/bone = 3
+		for(var/count in 1 to 3)
+			if(prob(70))
+				backpack_contents += pickweight(list(
+					/obj/item/borg/upgrade/modkit/damage = 1,
+					/obj/item/borg/upgrade/modkit/trigger_guard = 1,
+					/obj/item/soap/nanotrasen = 1,
+					/obj/item/wormhole_jaunter = 1,
+					/obj/item/fulton_core = 1,
+					/obj/item/extraction_pack = 2,
+					/obj/item/stack/sheet/animalhide/goliath_hide = 3,
+					/obj/item/hivelordstabilizer = 2,
+					/obj/item/stack/marker_beacon/ten = 2,
+					/obj/item/mining_scanner = 2,
+					/obj/item/extinguisher/mini = 2,
+					/obj/item/kitchen/knife/combat/survival = 3,
+					/obj/item/flashlight/seclite = 3,
+					/obj/item/stack/sheet/sinew = 3,
+					/obj/item/stack/sheet/bone = 3
+					)
 				)
-			)
-		if(prob(70))
-			backpack_contents += pickweight(list(
-				/obj/item/borg/upgrade/modkit/damage = 1,
-				/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-				/obj/item/soap/nanotrasen = 1,
-				/obj/item/wormhole_jaunter = 1,
-				/obj/item/fulton_core = 1,
-				/obj/item/extraction_pack = 2,
-				/obj/item/stack/sheet/animalhide/goliath_hide = 3,
-				/obj/item/hivelordstabilizer = 2,
-				/obj/item/stack/marker_beacon/ten = 2,
-				/obj/item/mining_scanner = 2,
-				/obj/item/extinguisher/mini = 2,
-				/obj/item/kitchen/knife/combat/survival = 3,
-				/obj/item/flashlight/seclite = 3,
-				/obj/item/stack/sheet/sinew = 3,
-				/obj/item/stack/sheet/bone = 3
-				)
-			)
-		if(prob(70))
-			backpack_contents += pickweight(list(
-				/obj/item/borg/upgrade/modkit/damage = 1,
-				/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-				/obj/item/soap/nanotrasen = 1,
-				/obj/item/wormhole_jaunter = 1,
-				/obj/item/fulton_core = 1,
-				/obj/item/extraction_pack = 2,
-				/obj/item/stack/sheet/animalhide/goliath_hide = 3,
-				/obj/item/hivelordstabilizer = 2,
-				/obj/item/stack/marker_beacon/ten = 2,
-				/obj/item/mining_scanner = 2,
-				/obj/item/extinguisher/mini = 2,
-				/obj/item/kitchen/knife/combat/survival = 3,
-				/obj/item/flashlight/seclite = 3,
-				/obj/item/stack/sheet/sinew = 3,
-				/obj/item/stack/sheet/bone = 3
-				)
-			)
 		if(prob(30))
 			backpack_contents += list(
 				/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list(
