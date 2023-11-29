@@ -32,7 +32,6 @@
 		/obj/item/clothing/under/dress/striped = 1,
 		/obj/item/clothing/under/dress/skirt/blue = 1,
 		/obj/item/clothing/under/syndicate/tacticool = 1,
-		/obj/item/clothing/under/costume/maid = 1
 		)
 	)
 	suit = pickweight(list(
@@ -67,6 +66,37 @@
 		/obj/item/clothing/shoes/sneakers/white = 1
 		)
 	)
+	glasses = pickweight(list(
+		/obj/item/clothing/glasses/regular = 1,
+		/obj/item/clothing/glasses/regular/circle = 1,
+		/obj/item/clothing/glasses/regular/jamjar = 1,
+		/obj/item/clothing/glasses/eyepatch = 1,
+		/obj/item/clothing/glasses/cheapsuns = 1,
+		/obj/item/clothing/glasses/regular/hipster = 1,
+		/obj/item/clothing/glasses/cold = 1,
+		/obj/item/clothing/glasses/heat = 1,
+		/obj/item/clothing/glasses/orange = 1,
+		/obj/item/clothing/glasses/red = 1
+		)
+	)
+	if(prob(50))
+		gloves = pickweight(list(
+			/obj/item/clothing/gloves/color/black = 1,
+			/obj/item/clothing/gloves/color/white = 1,
+			/obj/item/clothing/gloves/color/evening = 1,
+			)
+		)
+	if(prob(50))
+		neck = pickweight(list(
+			/obj/item/clothing/neck/scarf/red = 1,
+			/obj/item/clothing/neck/scarf/green = 1,
+			/obj/item/clothing/neck/scarf/darkblue = 1,
+			/obj/item/clothing/neck/shemagh = 1,
+			/obj/item/clothing/neck/stripedredscarf = 1,
+			/obj/item/clothing/neck/stripedgreenscarf = 1,
+			/obj/item/clothing/neck/stripedbluescarf = 1
+			)
+		)
 
 /datum/outfit/generic
 	name "Generic"
