@@ -455,17 +455,18 @@
 	name = "Lieutenant (Twinkleshine, 2nd Battlegroup)"
 
 	uniform = /obj/item/clothing/under/syndicate/aclf
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
+	id = /obj/item/card/id/syndicate_command/lieutenant
 	head = null
 	ears = null
-	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	gloves = null
 	l_pocket = null
 	r_pocket = null
 	belt = null
 	shoes = null
 	suit = null
+	suit_store = null
 	alt_suit = null
-	id = /obj/item/card/id/syndicate_command/lieutenant
 	implants = list(/obj/item/implant/weapons_auth)
 
 	backpack_contents = null
