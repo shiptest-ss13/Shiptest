@@ -105,7 +105,6 @@
 				/obj/item/paper/fluff/jobs/prisoner/letter = 1,
 				/obj/item/grenade/smokebomb = 1,
 				/obj/item/flashlight/seclite = 1,
-				/obj/item/tailclub = 1, //want to buy makeshift wooden club sprite
 				/obj/item/kitchen/knife/shiv = 4,
 				/obj/item/kitchen/knife/shiv/carrot = 1,
 				/obj/item/kitchen/knife = 1,
