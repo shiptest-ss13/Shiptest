@@ -321,6 +321,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 /turf/proc/AfterChange(flags) //called after a turf has been replaced in ChangeTurf()
 	levelupdate()
 
+	ImmediateCalculateAdjacentTurfs()
+
 	//update firedoor adjacency
 	var/list/turfs_to_check = get_adjacent_open_turfs(src) | src
 	for(var/I in turfs_to_check)

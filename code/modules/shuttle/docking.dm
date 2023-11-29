@@ -96,11 +96,9 @@
 /obj/docking_port/mobile/proc/kill_atmos_infos(list/old_turfs, list/new_turfs)
 	for(var/turf/oldT as anything in old_turfs)
 		oldT.blocks_air = TRUE
-		oldT.set_sleeping(TRUE)
 		oldT.air_update_turf(TRUE)
 	for(var/turf/newT as anything in new_turfs)
 		newT.blocks_air = TRUE
-		newT.set_sleeping(TRUE)
 		newT.air_update_turf(TRUE)
 
 /obj/docking_port/mobile/proc/throw_exception(exception/e)

@@ -99,8 +99,6 @@
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
 	__update_auxtools_turf_adjacency_info()
 
-/turf/proc/set_sleeping(should_sleep)
-
 /**
  * Returns a list of adjacent turfs that can share air with this one.
  * alldir includes adjacent diagonal tiles that can share
