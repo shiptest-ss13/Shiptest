@@ -583,15 +583,6 @@
 	build_path = /obj/item/circuitboard/machine/paystand
 	category = list ("Misc. Machinery")
 
-
-/datum/design/board/fat_sucker
-	name = "Machine Design (Lipid Extractor)"
-	desc = "The circuit board for a lipid extractor."
-	id = "fat_sucker"
-	build_path = /obj/item/circuitboard/machine/fat_sucker
-	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/stasis
 	name = "Machine Design (Lifeform Stasis Unit)"
 	desc = "The circuit board for a stasis unit."
@@ -661,7 +652,7 @@
 	desc = "The circuit board for a combustion thruster."
 	id = "engine_fire"
 	build_path = /obj/item/circuitboard/machine/shuttle/engine/fire
-	category = list ("Shuttle Machinery")
+	category = list("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/shuttle/engine/electric
@@ -698,10 +689,10 @@
 
 /datum/design/board/shuttle/engine/fire_heater
 	name = "Machine Design (Combustion Engine Heater Board)"
-	desc = "The circuit board for an combustion engine heater."
+	desc = "The circuit board for a combustion engine heater."
 	id = "engine_fire_heater"
 	build_path = /obj/item/circuitboard/machine/shuttle/fire_heater
-	category = list ("Shuttle Machinery")
+	category = list("Shuttle Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/board/shuttle/engine/smes
