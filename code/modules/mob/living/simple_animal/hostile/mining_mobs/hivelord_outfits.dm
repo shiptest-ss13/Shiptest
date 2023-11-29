@@ -166,27 +166,26 @@
 
 /datum/outfit/generic
 
-/datum/outfit/generric/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
+/datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
+	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
+	if (prob(4))
+		belt = pickweight(list(
+			/obj/item/storage/belt/mining = 2,
+			/obj/item/storage/belt/mining/alt = 2
+			)
+		)
+	else if(prob(10))
+		belt = pickweight(list(
+			/obj/item/pickaxe = 8,
+			/obj/item/pickaxe/mini = 4,
+			/obj/item/pickaxe/silver = 2,
+			/obj/item/pickaxe/diamond = 1,
+			/obj/item/gun/energy/kinetic_accelerator = 1
+			)
+		)
 	else
-		uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
-		if (prob(4))
-			belt = pickweight(list(
-				/obj/item/storage/belt/mining = 2,
-				/obj/item/storage/belt/mining/alt = 2
-				)
-			)
-		else if(prob(10))
-			belt = pickweight(list(
-				/obj/item/pickaxe = 8,
-				/obj/item/pickaxe/mini = 4,
-				/obj/item/pickaxe/silver = 2,
-				/obj/item/pickaxe/diamond = 1,
-				/obj/item/gun/energy/kinetic_accelerator = 1
-				)
-			)
-		else
-			belt = /obj/item/tank/internals/emergency_oxygen/engi
+		belt = /obj/item/tank/internals/emergency_oxygen/engi
 	gloves = /obj/item/clothing/gloves/color/black
 	mask = /obj/item/clothing/mask/gas/explorer
 	if(prob(45))
