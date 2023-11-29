@@ -689,7 +689,7 @@
 
 /datum/design/board/shuttle/engine/fire_heater
 	name = "Machine Design (Combustion Engine Heater Board)"
-	desc = "The circuit board for an combustion engine heater."
+	desc = "The circuit board for a combustion engine heater."
 	id = "engine_fire_heater"
 	build_path = /obj/item/circuitboard/machine/shuttle/fire_heater
 	category = list("Shuttle Machinery")
