@@ -63,7 +63,7 @@
 		)
 	)
 	if(prob(50))
-		hat = pickweight(list(
+		head = pickweight(list(
 			/obj/item/clothing/head/hardhat = 1,
 			/obj/item/clothing/head/hardhat/orange = 1,
 			/obj/item/clothing/head/hardhat/dblue = 1,
@@ -96,7 +96,6 @@
 		gloves = pickweight(list(
 			/obj/item/clothing/gloves/color/black = 1,
 			/obj/item/clothing/gloves/color/white = 1,
-			/obj/item/clothing/gloves/color/evening = 1,
 			)
 		)
 	if(prob(50))
@@ -110,6 +109,13 @@
 			/obj/item/clothing/neck/stripedbluescarf = 1
 			)
 		)
+	if(prob(50))
+		mask = pickweight(list(
+			/obj/item/clothing/mask/balaclava = 1,
+			/obj/item/clothing/mask/bandana/red = 1,
+
+			)
+		)
 	back = pickweight(list(
 		/obj/item/storage/backpack = 1,
 		/obj/item/storage/backpack/satchel = 1,
@@ -120,4 +126,3 @@
 	)
 
 /datum/outfit/generic
-	name "Generic"
