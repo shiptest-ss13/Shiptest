@@ -2337,12 +2337,13 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /obj/machinery/light_switch{
 	pixel_x = -13;
 	pixel_y = 22
 	},
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
+/obj/item/clothing/mask/breath,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "vT" = (
@@ -3146,9 +3147,6 @@
 	},
 /obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/under/syndicate/aclf,
-/obj/item/clothing/suit/armor/vest/security/hos{
-	name = "Syndicate jacket"
-	},
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
 /obj/item/clothing/shoes/jackboots,
@@ -3810,8 +3808,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/suit_storage_unit/inherit,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "JH" = (
@@ -4381,8 +4380,9 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "PK" = (
