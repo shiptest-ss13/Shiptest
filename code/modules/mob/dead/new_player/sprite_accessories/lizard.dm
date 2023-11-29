@@ -191,10 +191,10 @@
 //Start Spines
 
 /datum/sprite_accessory/spines
-	icon = 'icons/mob/species/lizard/tails.dmi'
+	icon = 'icons/mob/species/lizard/spines.dmi'
 
 /datum/sprite_accessory/spines_animated
-	icon = 'icons/mob/species/lizard/tails.dmi'
+	icon = 'icons/mob/species/lizard/spines.dmi'
 
 /datum/sprite_accessory/spines/none
 	name = "None"
