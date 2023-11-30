@@ -780,7 +780,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 //FIXME TODO REMOVE THIS
 /client/proc/report_sgt()
 	set name = "SGT Report"
-	set category = "000_PANIC BUTTON"
+	set category = "Debug"
 	set desc = "Report a Slimegirl Trafficking Incident"
 	if(!holder)
 		return
