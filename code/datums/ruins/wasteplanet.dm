@@ -68,7 +68,7 @@
 	id = "abandoned_mechbay"
 	suffix = "wasteplanet_abandoned_mechbay.dmm"
 
-/datum/map_templaet/ruin/wasteplanet/crash_catfish
+/datum/map_template/ruin/wasteplanet/crash_catfish
 	name = "Crashed Catfish"
 	description = "The remains of a very, very old ship."
 	id = "wasteplanet_catfish"
