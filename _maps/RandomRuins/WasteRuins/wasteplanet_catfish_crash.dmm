@@ -286,7 +286,7 @@
 /obj/machinery/light/broken/directional/north,
 /obj/structure/sink/chem{
 	dir = 4;
-	step_y = 4
+	
 	},
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_shuttle/main)
@@ -296,10 +296,7 @@
 /area/ruin/wasteplanet/wasteplanet_shuttle/main)
 "bg" = (
 /obj/structure/table,
-/obj/machinery/microwave{
-	step_x = 0;
-	step_y = 12
-	},
+/obj/machinery/microwave,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_shuttle/main)
 "bh" = (
