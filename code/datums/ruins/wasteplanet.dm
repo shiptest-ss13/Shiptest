@@ -67,3 +67,9 @@
 	description = "A military base formerly used for staging 4 mechs and crew. God knows what's in it now."
 	id = "abandoned_mechbay"
 	suffix = "wasteplanet_abandoned_mechbay.dmm"
+
+/datum/map_templaet/ruin/wasteplanet/crash_catfish
+	name = "Crashed Catfish"
+	description = "The remains of a very, very old ship."
+	id = "wasteplanet_catfish"
+	suffix= "wasteplanet_catfish_crash.dmm"

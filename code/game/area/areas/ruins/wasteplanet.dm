@@ -43,3 +43,21 @@
 /area/ruin/wasteplanet/wasteplanet_radiation/containment
 	name = "Abandoned Waste Containment Vault"
 	icon_state = "disposal"
+
+//Crashed Catfish Shuttle
+
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering
+	name = "Catfish Engineering"
+	icon_state = "engine"
+
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo
+	name = "Catfish Cargo"
+	icon_state = "cargo_bay"
+
+/area/ruin/wasteplanet/wasteplanet_shuttle/main
+	name = "Catfish Hall"
+	icon_state = "green"
+
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge
+	name = "Catfish Bridge"
+	icon_state = "bridge"
