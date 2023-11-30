@@ -121,6 +121,7 @@
 			/obj/item/clothing/neck/stripedbluescarf = 1
 			)
 		)
+	ears = pick(/obj/item/radio/headset, /obj/item/radio/headset/alt)
 	if(prob(50))
 		glasses = pickweight(list(
 			/obj/item/clothing/glasses/regular = 1,
@@ -138,6 +139,7 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 	l_pocket = /obj/item/radio
 	id = /obj/item/card/id
+	backpack_contents = list()
 	for(var/count in 1 to 3)
 		backpack_contents += pickweight(list(
 			/obj/item/dice/d20 = 1,
