@@ -119,7 +119,7 @@
 
 /datum/mood_event/rilena_super_fan
 	description = "<span class='nicegreen'>I love my RILENA hoodie!</span>\n"
-	mood_change = 3
+	mood_change = 1
 
 /datum/mood_event/goodmusic
 	description = "<span class='nicegreen'>There is something soothing about this music.</span>\n"
