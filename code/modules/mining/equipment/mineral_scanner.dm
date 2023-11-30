@@ -166,7 +166,7 @@
 /obj/item/pinpointer/mineral/process()
 	switch(scanmode)
 		if(SCANMODE_SUBSURFACE)
-			if(active && target.loc == null)
+			if(active && target && target.loc == null)
 				target = null
 				toggle_on()
 			. = ..() //returns pinpointer code if its scanning for deepcore spots
