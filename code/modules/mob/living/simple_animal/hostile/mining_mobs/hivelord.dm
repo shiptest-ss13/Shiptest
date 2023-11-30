@@ -175,6 +175,9 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril
 	fromtendril = TRUE
 
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/tendril
+	fromtendril = TRUE
+
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
 	move_resist = MOVE_RESIST_DEFAULT

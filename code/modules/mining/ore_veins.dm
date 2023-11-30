@@ -122,7 +122,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 5,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf = 5,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/tendril = 5,
 		)
 
 /obj/structure/vein/classthree
@@ -145,7 +145,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 30,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 10,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf = 10,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf/tendril = 10,
 		)
 
 /obj/structure/vein/ice
