@@ -1,229 +1,2480 @@
-"aa" = (/turf/template_noop,/area/template_noop)
-"ab" = (/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ac" = (/obj/structure/toilet{dir = 1},/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ad" = (/turf/open/floor/plasteel/tech/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ae" = (/turf/closed/mineral/random/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"af" = (/obj/structure/flora/ash/glowshroom,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ag" = (/turf/open/floor/plasteel/tech/techmaint/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ah" = (/obj/machinery/satellite,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ai" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/floor/plating,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aj" = (/turf/closed/wall/mineral/titanium/nodiagonal,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"ak" = (/turf/open/floor/plating/wasteplanet/rust,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"al" = (/turf/closed/wall/mineral/titanium,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"am" = (/turf/closed/wall/mineral/titanium/nodiagonal,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"an" = (/turf/closed/wall/mineral/titanium,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"ao" = (/obj/structure/filingcabinet/double,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"ap" = (/obj/structure/closet/crate/wooden,/obj/item/spacecash/bundle/mediumrand,/obj/item/spacecash/bundle/mediumrand,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aq" = (/obj/machinery/power/shuttle/engine/electric{dir = 4},/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"ar" = (/obj/item/target/alien/anchored,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"as" = (/obj/structure/safe,/obj/item/pickaxe/drill/diamonddrill,/obj/item/reagent_containers/food/drinks/flask/gold,/obj/item/stack/sheet/mineral/adamantine,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"at" = (/obj/item/stack/ore/salvage/scrapmetal{amount = 23},/obj/item/stack/ore/salvage/scrapuranium{amount = 11},/obj/item/stack/ore/salvage/scrapgold{amount = 12},/obj/item/stack/ore/salvage/scraptitanium{amount = 2},/obj/effect/spawner/lootdrop/salvage/titanium,/obj/machinery/airalarm/directional/north,/obj/structure/closet/crate,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"au" = (/obj/machinery/power/apc/auto_name/directional/north,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"av" = (/obj/structure/salvageable/autolathe,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aw" = (/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"ax" = (/obj/machinery/power/smes/shuttle/precharged{dir = 4},/obj/structure/cable{icon_state = "0-8"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"ay" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"az" = (/obj/structure/closet/crate,/obj/item/virgin_mary,/obj/item/wendigo_blood,/obj/item/dragons_blood,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aA" = (/obj/machinery/light/dim/directional/north,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aB" = (/obj/item/storage/firstaid/tactical,/turf/open/floor/plasteel/tech/techmaint/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aC" = (/obj/structure/closet/crate,/obj/item/toy/eightball/haunted,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aD" = (/obj/structure/AIcore/deactivated{desc = "A very old casing to what appears to be an AI device."; icon_state = "ai-heartline_dead"; name = "broken AI screen"},/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aE" = (/obj/structure/closet/crate/hydroponics,/obj/item/reagent_containers/food/snacks/grown/berries/death,/obj/item/reagent_containers/food/snacks/grown/cannabis/death,/obj/item/reagent_containers/food/snacks/grown/cannabis/death,/obj/item/reagent_containers/food/snacks/grown/cannabis/death,/obj/item/reagent_containers/food/snacks/grown/berries/death,/obj/item/reagent_containers/glass/bottle/killer/weedkiller,/obj/item/reagent_containers/glass/bottle/nutrient/ez,/obj/machinery/light/dim/directional/north,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aF" = (/turf/closed/wall/mineral/titanium/nodiagonal,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aG" = (/obj/structure/salvageable/safe_server,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aH" = (/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aI" = (/turf/open/floor/plasteel/patterned/grid,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aJ" = (/obj/structure/cable,/turf/open/floor/plasteel/patterned/grid,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aK" = (/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"aL" = (/obj/machinery/power/shuttle/engine/electric{dir = 4},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plating,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"aM" = (/obj/structure/cable{icon_state = "2-8"},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"aN" = (/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"aO" = (/obj/structure/cable,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"aP" = (/obj/structure/lattice,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"aQ" = (/obj/structure/closet/crate,/obj/item/wrench/cyborg,/obj/item/surgicaldrill/advanced,/obj/item/weldingtool/hugetank/empty,/obj/item/cautery,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aR" = (/turf/closed/wall/mineral/titanium/nodiagonal,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"aS" = (/obj/item/roller,/turf/open/floor/plasteel/tech/techmaint/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aT" = (/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aU" = (/obj/structure/ore_box,/obj/item/stack/ore/titanium,/obj/item/stack/ore/gold,/turf/open/floor/plasteel/tech/techmaint/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aV" = (/obj/machinery/jukebox,/turf/open/floor/plasteel/tech/techmaint/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aW" = (/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plasteel/patterned/grid,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aX" = (/obj/item/stack/ore/salvage/scraptitanium,/turf/open/floor/plasteel/tech/techmaint/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"aY" = (/obj/structure/lattice,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"aZ" = (/obj/machinery/vending/cola/random,/turf/open/floor/plasteel/tech/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ba" = (/obj/structure/closet/wardrobe/engineering_yellow,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bb" = (/turf/closed/wall/mineral/titanium/nodiagonal,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bc" = (/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bd" = (/obj/structure/table,/obj/item/storage/firstaid/tactical,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"be" = (/obj/structure/table,/obj/machinery/light/broken/directional/north,/obj/structure/sink/chem{dir = 4; step_y = 4},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"bf" = (/obj/structure/table,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"bg" = (/obj/structure/table,/obj/machinery/microwave{step_x = 0; step_y = 12},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"bh" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"bi" = (/obj/machinery/light/broken/directional/west,/obj/machinery/blackbox_recorder,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bj" = (/obj/effect/decal/cleanable/glass,/turf/open/floor/plating/wasteplanet/rust,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bk" = (/obj/machinery/computer/helm/viewscreen/directional/north,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bl" = (/obj/structure/chair/comfy/shuttle/bronze,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bm" = (/obj/structure/salvageable/computer{dir = 8},/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bn" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/floor/plating,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bo" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"bp" = (/obj/machinery/atmospherics/components/unary/vent_pump/layer4,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bq" = (/obj/structure/grille/broken,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"br" = (/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bs" = (/turf/open/floor/plating/wasteplanet/rust,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bt" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"bu" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4{dir = 1},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"bv" = (/obj/structure/closet/crate/radiation,/obj/item/stack/sheet/mineral/uranium/five,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bw" = (/obj/item/shard,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bx" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer2{dir = 1},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"by" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/door/airlock/glass{dir = 4},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"bz" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"bA" = (/obj/machinery/power/apc/auto_name/directional/north,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bB" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer2{dir = 1},/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"bC" = (/obj/structure/radioactive/waste,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bD" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4{dir = 1},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"bE" = (/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plating/wasteplanet/rust,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bF" = (/obj/structure/lattice,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bG" = (/obj/machinery/atmospherics/components/unary/portables_connector/layer4,/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bH" = (/obj/machinery/atmospherics/components/unary/tank/air,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bI" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bJ" = (/obj/structure/cable{icon_state = "0-8"},/obj/machinery/power/port_gen/pacman/super{anchored = 1},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bK" = (/obj/item/stack/ore/salvage/scraptitanium,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"bL" = (/obj/structure/cable{icon_state = "0-8"},/obj/structure/lattice,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"bM" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bN" = (/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bO" = (/obj/machinery/portable_atmospherics/canister/toxins{filled = 0.25},/obj/machinery/atmospherics/components/unary/portables_connector{dir = 4},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bP" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/orange/hidden{dir = 10},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bQ" = (/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 5},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2,/turf/open/floor/plating/catwalk_floor,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bR" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bS" = (/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4{dir = 4},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bT" = (/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 10},/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"bU" = (/obj/machinery/power/smes{charge = 500000},/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bV" = (/obj/item/stack/cable_coil/random/five,/obj/machinery/power/terminal{dir = 8},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bW" = (/obj/structure/fluff/broken_flooring,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bX" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/components/binary/pump{dir = 2; name = "Plasma to Engines"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bY" = (/obj/machinery/atmospherics/components/binary/volume_pump/layer2{dir = 1},/turf/open/floor/plating/catwalk_floor,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"bZ" = (/obj/machinery/atmospherics/components/binary/pump/on/layer4,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"ca" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cb" = (/obj/machinery/atmospherics/components/unary/vent_pump/layer4,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cc" = (/obj/machinery/power/shuttle/engine/fueled/plasma{dir = 4},/turf/open/floor/plating,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cd" = (/obj/machinery/atmospherics/components/unary/vent_pump/layer4{dir = 8},/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"ce" = (/obj/machinery/atmospherics/components/unary/shuttle/heater{dir = 4},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cf" = (/obj/machinery/atmospherics/pipe/simple/orange/hidden{dir = 8},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cg" = (/obj/structure/lattice,/obj/effect/decal/cleanable/glass,/turf/open/floor/plating,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"ch" = (/obj/machinery/computer/helm/retro{dir = 8},/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"ci" = (/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cj" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"ck" = (/obj/machinery/atmospherics/components/unary/vent_pump/layer4{dir = 1},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cl" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{dir = 1},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cm" = (/obj/machinery/power/apc/auto_name/directional/south,/obj/structure/cable,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cn" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{dir = 1},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"co" = (/obj/machinery/atmospherics/components/unary/vent_pump/layer4{dir = 1},/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cp" = (/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cq" = (/obj/machinery/light/dim/directional/west,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"cr" = (/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{dir = 1},/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"cs" = (/obj/effect/decal/cleanable/ash,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"ct" = (/obj/structure/tank_dispenser/oxygen{oxygentanks = 3},/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cu" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/patterned/grid,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cv" = (/obj/structure/lattice,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cw" = (/obj/machinery/door/airlock/glass{dir = 4},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cx" = (/obj/structure/cable{icon_state = "4-8"},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cy" = (/obj/effect/decal/cleanable/garbage,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cz" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cA" = (/obj/structure/cable{icon_state = "2-4"},/obj/structure/cable{icon_state = "1-4"},/obj/machinery/atmospherics/pipe/simple/orange/hidden{dir = 9},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cB" = (/obj/structure/table/glass,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cC" = (/obj/structure/chair/sofa/right{dir = 8},/obj/machinery/airalarm/directional/east,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cD" = (/obj/structure/cable{icon_state = "1-10"},/obj/structure/cable{icon_state = "1-6"},/turf/open/floor/plasteel/patterned/grid,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cE" = (/obj/structure/chair/comfy/shuttle,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cF" = (/obj/structure/fluff/empty_cryostasis_sleeper,/turf/open/floor/wood/bamboo,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cG" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 5},/turf/open/floor/plating/catwalk_floor,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cH" = (/obj/item/stack/ore/slag,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"cI" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 5},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plating/catwalk_floor,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cJ" = (/obj/structure/cable{icon_state = "1-8"},/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cK" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer2,/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cL" = (/obj/effect/spawner/lootdrop/salvage/titanium,/turf/open/floor/plating/asteroid/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"cM" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4,/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cN" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cO" = (/obj/structure/cable{icon_state = "4-8"},/obj/structure/cable{icon_state = "1-8"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cP" = (/obj/structure/bed/double/maint,/obj/structure/curtain/cloth,/turf/open/floor/wood/bamboo,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cQ" = (/obj/structure/lattice,/obj/structure/closet/wardrobe/white/wall,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cR" = (/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/wood/bamboo,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cS" = (/obj/effect/decal/remains/robot,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cT" = (/obj/effect/decal/cleanable/blood/gibs/old,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cU" = (/obj/structure/cable{icon_state = "0-4"},/obj/effect/decal/cleanable/ash,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"cV" = (/obj/structure/chair/sofa/left{dir = 8},/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"cW" = (/obj/machinery/button/door{dir = 4; id = "ano_cargo_bottom"; name = "Blast Door Control"; pixel_x = -21},/obj/machinery/button/shieldwallgen{dir = 4; id = "ano_airshield_bottom"; pixel_x = -20; pixel_y = 10},/obj/structure/cable{icon_state = "2-5"},/turf/open/floor/plasteel/stairs/left,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cX" = (/turf/open/floor/plasteel/stairs/medium,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"cY" = (/obj/item/stack/ore/salvage/scraptitanium,/turf/open/floor/plating/wasteplanet/rust,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"cZ" = (/obj/structure/cable{icon_state = "4-9"},/turf/open/floor/plasteel/stairs/medium,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"da" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/door/airlock/engineering{dir = 4; name = "Engine Room"},/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{dir = 8},/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{dir = 4},/turf/open/floor/plasteel/patterned,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"db" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/airalarm/directional/west,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dc" = (/turf/open/floor/plating/catwalk_floor,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dd" = (/obj/structure/closet/radiation,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"de" = (/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"df" = (/obj/structure/closet/toolcloset,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dg" = (/obj/structure/reagent_dispensers/fueltank{pull_force = 329},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dh" = (/obj/structure/cable{icon_state = "1-8"},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"di" = (/obj/structure/cable{icon_state = "1-8"},/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dj" = (/obj/structure/cable{icon_state = "2-8"},/turf/open/floor/plasteel/stairs/right,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"dk" = (/obj/structure/railing{dir = 8},/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"dl" = (/obj/structure/lattice,/obj/machinery/airalarm/directional/south,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dm" = (/obj/effect/decal/remains/human,/turf/open/floor/plasteel/tech/techmaint/airless,/area/ruin/wasteplanet/wasteplanet_shuttle)
-"dn" = (/obj/machinery/power/apc/auto_name/directional/south,/obj/structure/cable,/turf/open/floor/wood/bamboo,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"do" = (/obj/effect/spawner/structure/window/shuttle,/turf/open/floor/plating,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dp" = (/obj/machinery/power/shieldwallgen/atmos/roundstart{dir = 4; id = "ano_airshield_bottom"},/obj/machinery/door/poddoor{id = "ano_cargo_bottom"},/obj/structure/cable,/turf/open/floor/engine,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"dq" = (/obj/machinery/door/poddoor{id = "ano_cargo_bottom"},/turf/open/floor/engine,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"dr" = (/obj/machinery/power/shieldwallgen/atmos/roundstart{dir = 8; id = "ano_airshield_bottom"},/obj/machinery/door/poddoor{id = "ano_cargo_bottom"},/obj/structure/cable,/turf/open/floor/engine,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"ds" = (/obj/effect/decal/cleanable/generic,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"dt" = (/obj/effect/decal/cleanable/oil,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"du" = (/obj/effect/decal/remains/human,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dv" = (/obj/structure/cable{icon_state = "1-2"},/obj/effect/decal/cleanable/ash/large,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dw" = (/obj/structure/closet/secure_closet/freezer/fridge/open,/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,/obj/effect/decal/cleanable/blood/gibs/old,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dx" = (/obj/machinery/power/apc/auto_name/directional/north,/obj/structure/cable{icon_state = "0-2"},/obj/effect/decal/cleanable/glass,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"dy" = (/obj/effect/decal/remains/human,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"dz" = (/obj/effect/decal/cleanable/plastic,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dA" = (/obj/effect/decal/cleanable/xenoblood/xgibs,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dB" = (/obj/machinery/airalarm/directional/south,/obj/effect/decal/cleanable/vomit/old,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"dC" = (/obj/effect/decal/cleanable/glass,/obj/item/shard,/turf/open/floor/carpet/nanoweave,/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
-"dD" = (/obj/effect/decal/cleanable/robot_debris/gib,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dE" = (/obj/structure/cable{icon_state = "1-8"},/obj/effect/decal/remains/xeno/larva,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dF" = (/obj/effect/decal/cleanable/blood/old,/obj/effect/decal/remains/human,/obj/effect/decal/cleanable/shreds,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dG" = (/obj/machinery/light/broken/directional/west,/obj/effect/decal/cleanable/food/egg_smudge,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dH" = (/obj/structure/table_frame,/obj/item/shard,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dI" = (/obj/item/shard,/obj/effect/decal/cleanable/glass,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dJ" = (/obj/effect/decal/remains/human,/turf/open/floor/plasteel/patterned/cargo_one,/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
-"dK" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/plasteel,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dL" = (/obj/effect/decal/remains/human,/turf/open/floor/plating/wasteplanet,/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
-"dM" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/wood/bamboo,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
-"dN" = (/obj/effect/decal/cleanable/blood/gibs/old,/obj/effect/decal/cleanable/ash/large,/turf/open/floor/wood/bamboo,/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ab" = (
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ac" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ad" = (
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ae" = (
+/turf/closed/mineral/random/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"af" = (
+/obj/structure/flora/ash/glowshroom,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ag" = (
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ah" = (
+/obj/machinery/satellite,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ai" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aj" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"ak" = (
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"al" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"am" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"an" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"ao" = (
+/obj/structure/filingcabinet/double,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"ap" = (
+/obj/structure/closet/crate/wooden,
+/obj/item/spacecash/bundle/mediumrand,
+/obj/item/spacecash/bundle/mediumrand,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aq" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"ar" = (
+/obj/item/target/alien/anchored,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"as" = (
+/obj/structure/safe,
+/obj/item/pickaxe/drill/diamonddrill,
+/obj/item/reagent_containers/food/drinks/flask/gold,
+/obj/item/stack/sheet/mineral/adamantine,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"at" = (
+/obj/item/stack/ore/salvage/scrapmetal{
+	amount = 23
+	},
+/obj/item/stack/ore/salvage/scrapuranium{
+	amount = 11
+	},
+/obj/item/stack/ore/salvage/scrapgold{
+	amount = 12
+	},
+/obj/item/stack/ore/salvage/scraptitanium{
+	amount = 2
+	},
+/obj/effect/spawner/lootdrop/salvage/titanium,
+/obj/machinery/airalarm/directional/north,
+/obj/structure/closet/crate,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"au" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"av" = (
+/obj/structure/salvageable/autolathe,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aw" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"ax" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"ay" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"az" = (
+/obj/structure/closet/crate,
+/obj/item/virgin_mary,
+/obj/item/wendigo_blood,
+/obj/item/dragons_blood,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aA" = (
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aB" = (
+/obj/item/storage/firstaid/tactical,
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aC" = (
+/obj/structure/closet/crate,
+/obj/item/toy/eightball/haunted,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aD" = (
+/obj/structure/AIcore/deactivated{
+	desc = "A very old casing to what appears to be an AI device.";
+	icon_state = "ai-heartline_dead";
+	name = "broken AI screen"
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aE" = (
+/obj/structure/closet/crate/hydroponics,
+/obj/item/reagent_containers/food/snacks/grown/berries/death,
+/obj/item/reagent_containers/food/snacks/grown/cannabis/death,
+/obj/item/reagent_containers/food/snacks/grown/cannabis/death,
+/obj/item/reagent_containers/food/snacks/grown/cannabis/death,
+/obj/item/reagent_containers/food/snacks/grown/berries/death,
+/obj/item/reagent_containers/glass/bottle/killer/weedkiller,
+/obj/item/reagent_containers/glass/bottle/nutrient/ez,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aF" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aG" = (
+/obj/structure/salvageable/safe_server,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aH" = (
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aI" = (
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aJ" = (
+/obj/structure/cable,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aK" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"aL" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"aM" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"aN" = (
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"aO" = (
+/obj/structure/cable,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"aP" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"aQ" = (
+/obj/structure/closet/crate,
+/obj/item/wrench/cyborg,
+/obj/item/surgicaldrill/advanced,
+/obj/item/weldingtool/hugetank/empty,
+/obj/item/cautery,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aR" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"aS" = (
+/obj/item/roller,
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aT" = (
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aU" = (
+/obj/structure/ore_box,
+/obj/item/stack/ore/titanium,
+/obj/item/stack/ore/gold,
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aV" = (
+/obj/machinery/jukebox,
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aW" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aX" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"aY" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"aZ" = (
+/obj/machinery/vending/cola/random,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ba" = (
+/obj/structure/closet/wardrobe/engineering_yellow,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bb" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bc" = (
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bd" = (
+/obj/structure/table,
+/obj/item/storage/firstaid/tactical,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"be" = (
+/obj/structure/table,
+/obj/machinery/light/broken/directional/north,
+/obj/structure/sink/chem{
+	dir = 4;
+	step_y = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"bf" = (
+/obj/structure/table,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"bg" = (
+/obj/structure/table,
+/obj/machinery/microwave{
+	step_x = 0;
+	step_y = 12
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"bh" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"bi" = (
+/obj/machinery/light/broken/directional/west,
+/obj/machinery/blackbox_recorder,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bj" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bk" = (
+/obj/machinery/computer/helm/viewscreen/directional/north,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bl" = (
+/obj/structure/chair/comfy/shuttle/bronze,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bm" = (
+/obj/structure/salvageable/computer{
+	dir = 8
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bn" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bo" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"bp" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer4,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bq" = (
+/obj/structure/grille/broken,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"br" = (
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bs" = (
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bt" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"bu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"bv" = (
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/uranium/five,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bw" = (
+/obj/item/shard,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bx" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"by" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/glass{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"bz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"bA" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bB" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"bC" = (
+/obj/structure/radioactive/waste,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"bE" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bF" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bG" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/layer4,
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bH" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bJ" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bK" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"bL" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/lattice,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"bM" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bN" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bO" = (
+/obj/machinery/portable_atmospherics/canister/toxins{
+	filled = 0.25
+	},
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 4
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bP" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 10
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bQ" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2,
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bR" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bS" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bT" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 10
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"bU" = (
+/obj/machinery/power/smes{
+	charge = 500000
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bV" = (
+/obj/item/stack/cable_coil/random/five,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bW" = (
+/obj/structure/fluff/broken_flooring,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 2;
+	name = "Plasma to Engines"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bY" = (
+/obj/machinery/atmospherics/components/binary/volume_pump/layer2{
+	dir = 1
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"bZ" = (
+/obj/machinery/atmospherics/components/binary/pump/on/layer4,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"ca" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer4,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cc" = (
+/obj/machinery/power/shuttle/engine/fueled/plasma{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cd" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer4{
+	dir = 8
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"ce" = (
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 4
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cf" = (
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cg" = (
+/obj/structure/lattice,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"ch" = (
+/obj/machinery/computer/helm/retro{
+	dir = 8
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"ci" = (
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cj" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"ck" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cl" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cm" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cn" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"co" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/layer4{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cp" = (
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cq" = (
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"cr" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
+	},
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"cs" = (
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"ct" = (
+/obj/structure/tank_dispenser/oxygen{
+	oxygentanks = 3
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cu" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cv" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cw" = (
+/obj/machinery/door/airlock/glass{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cx" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cy" = (
+/obj/effect/decal/cleanable/garbage,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cz" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cA" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 9
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cB" = (
+/obj/structure/table/glass,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cC" = (
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cD" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cE" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cF" = (
+/obj/structure/fluff/empty_cryostasis_sleeper,
+/turf/open/floor/wood/bamboo,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cG" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 5
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cH" = (
+/obj/item/stack/ore/slag,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"cI" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cJ" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cK" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer2,
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cL" = (
+/obj/effect/spawner/lootdrop/salvage/titanium,
+/turf/open/floor/plating/asteroid/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"cM" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cN" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cP" = (
+/obj/structure/bed/double/maint,
+/obj/structure/curtain/cloth,
+/turf/open/floor/wood/bamboo,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cQ" = (
+/obj/structure/lattice,
+/obj/structure/closet/wardrobe/white/wall,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cR" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/wood/bamboo,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cS" = (
+/obj/effect/decal/remains/robot,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cT" = (
+/obj/effect/decal/cleanable/blood/gibs/old,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cU" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"cV" = (
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"cW" = (
+/obj/machinery/button/door{
+	dir = 4;
+	id = "ano_cargo_bottom";
+	name = "Blast Door Control";
+	pixel_x = -21
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	id = "ano_airshield_bottom";
+	pixel_x = -20;
+	pixel_y = 10
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/turf/open/floor/plasteel/stairs/left,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cX" = (
+/turf/open/floor/plasteel/stairs/medium,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"cY" = (
+/obj/item/stack/ore/salvage/scraptitanium,
+/turf/open/floor/plating/wasteplanet/rust,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"cZ" = (
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plasteel/stairs/medium,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"da" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/engineering{
+	dir = 4;
+	name = "Engine Room"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer2{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"db" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dc" = (
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dd" = (
+/obj/structure/closet/radiation,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"de" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"df" = (
+/obj/structure/closet/toolcloset,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dg" = (
+/obj/structure/reagent_dispensers/fueltank{
+	pull_force = 329
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dh" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"di" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dj" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/stairs/right,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"dk" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"dl" = (
+/obj/structure/lattice,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dm" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"dn" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/turf/open/floor/wood/bamboo,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"do" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dp" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 4;
+	id = "ano_airshield_bottom"
+	},
+/obj/machinery/door/poddoor{
+	id = "ano_cargo_bottom"
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"dq" = (
+/obj/machinery/door/poddoor{
+	id = "ano_cargo_bottom"
+	},
+/turf/open/floor/engine,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"dr" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	dir = 8;
+	id = "ano_airshield_bottom"
+	},
+/obj/machinery/door/poddoor{
+	id = "ano_cargo_bottom"
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"ds" = (
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"dt" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"du" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dv" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/ash/large,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dw" = (
+/obj/structure/closet/secure_closet/freezer/fridge/open,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
+/obj/effect/decal/cleanable/blood/gibs/old,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dx" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"dy" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"dz" = (
+/obj/effect/decal/cleanable/plastic,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dA" = (
+/obj/effect/decal/cleanable/xenoblood/xgibs,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dB" = (
+/obj/machinery/airalarm/directional/south,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"dC" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
+"dD" = (
+/obj/effect/decal/cleanable/robot_debris/gib,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dE" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/remains/xeno/larva,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dF" = (
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/shreds,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dG" = (
+/obj/machinery/light/broken/directional/west,
+/obj/effect/decal/cleanable/food/egg_smudge,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dH" = (
+/obj/structure/table_frame,
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dI" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dJ" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"dK" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dL" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"dM" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood/bamboo,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"dN" = (
+/obj/effect/decal/cleanable/blood/gibs/old,
+/obj/effect/decal/cleanable/ash/large,
+/turf/open/floor/wood/bamboo,
+/area/ruin/wasteplanet/wasteplanet_shuttle/main)
 
 (1,1,1) = {"
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaabababababababababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaababababababacadadadadaeaeaeababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaabababababababafababagdmadadaeaeaeaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaababaeaeaeaeababbcahakagaBagadadaeaeaeabababababaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaajajajajalaeaeaeaFababaGakagagagaSadadaeaeabababaeaeaeaeaeaaaaaaaaaaaaaaaaaa
-aaaqawaxayaKajalaeaeaeabaTabakakaUbjakaVaXaZaeaeababafabadaeaeaeaeaeabaaaaaaaaaa
-aaaaaLaxayaMaNajajaebabpabaFababakakbqakbwaeaeababababaeaeagadaeaeaeaeaaaaaaaaaa
-aaaaajajajaOaNaPbrbCbFakabakakbKababbwbjakaiamamamamamamamamaiamanaeaeaaaaaaaaaa
-aaaaababbKabaeaeabbKakbFaPajajajamaicgcHbjaoaparasatauavazaAaCaDamanaeaeaaaaaaaa
-aaaaababakabakcHcLakbsbrcsbvbAajaEcyaHcYabakaHczcSaIaJaHaHaHaHcTaQamanaeabaaaaaa
-aaaaabababajawbEbGbHbrcUbIbJbMajdsaHdtaeakakcHabakakakakbCcHakakbKaeaeaeabaaaaaa
-aaaaabababajbObPbQbSbUbVbWdudvajaRaRaRaRaRaRaHaIaWaYabafbbbbbbbbbbbbbbaeaeaaaaaa
-aaaaaaabajajajbXbYbZdvcacbbrbMajdwbdbebfbgaRaHaHbhaHakcHbbbidxbkblbmbnaeaeaaaaaa
-aaaaaaabcccecfcAcGcIcJcKcMcNcOdabobtbubxbtbybzbBbDbLaeakbNbRbTcddychbnaeaeaaaaaa
-aaaaaaabajajajdbdcaNdzbsdKbrbsajdAcjckclcmaRaHcncocpaeakbbcqcrdBdCbmbnaeaeaaaaaa
-aaaaaaababajdddedcaPaeabbFafcHaRaRcjdDciaRaRctcuaIaHaeaebbbbbbbbbbbbbbaeabaaaaaa
-aaaaaaabakajdfdeaNbsajcvaRaRaRcwcxdEcBdFcCaRaHcDaYaHcpcEcEcEcEamanaeaeaeabaaaaaa
-aaaaababajajajdedLdgajcFcPcQcRaRdGcidHdIcVaRcWcXcZdjdkdJaHdJamanaeaeaeabaaaaaaaa
-aaaaababaLaxaydhaNajajdldMdNdnaRaRdododoaRaRdpdqdqdramamaiamanaeaeaeababaaaaaaaa
-aaaaababaLaxaydiajalajaRdodoaRaeaeababababababababakakagadadaeaeaeababaaaaaaaaaa
-aaaaababajajajajalaeaeaeaeaeabababakakabakaeaeaeaeabadadadabababababaaaaaaaaaaaa
-aaaaababababaeaeaeaeaeaeaeababagagagagagagadadaeabababababababababaaaaaaaaaaaaaa
-aaaaaaabakababaeaeaeaeaeabakagagagagagadadadaeabababakababababaaaaaaaaaaaaaaaaaa
-aaaaaaaaababababababababakbFagagagadadaeaeababakabababaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaabababababakakaTakagagaeaeaeaeaeababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaabababababababadadadadaeaeababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaabababababaeaeaeaeaeabababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaababaeaeaeabababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aq
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aj
+aw
+aL
+aj
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+ab
+ab
+aj
+ax
+ax
+aj
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(5,1,1) = {"
+aa
+aa
+aa
+ab
+ab
+aj
+ay
+ay
+aj
+bK
+ak
+ab
+ab
+aj
+cc
+aj
+ab
+ak
+aj
+aL
+aL
+aj
+ab
+ak
+ab
+ab
+aa
+aa
+aa
+aa
+"}
+(6,1,1) = {"
+aa
+aa
+ab
+ab
+ae
+aj
+aK
+aM
+aO
+ab
+ab
+aj
+aj
+aj
+ce
+aj
+aj
+aj
+aj
+ax
+ax
+aj
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+"}
+(7,1,1) = {"
+aa
+aa
+ab
+ab
+ae
+al
+aj
+aN
+aN
+ae
+ak
+aw
+bO
+aj
+cf
+aj
+dd
+df
+aj
+ay
+ay
+aj
+ae
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+"}
+(8,1,1) = {"
+aa
+ab
+ab
+ab
+ae
+ae
+al
+aj
+aP
+ae
+cH
+bE
+bP
+bX
+cA
+db
+de
+de
+de
+dh
+di
+aj
+ae
+ae
+ab
+ab
+ab
+ab
+aa
+aa
+"}
+(9,1,1) = {"
+aa
+ab
+ab
+ab
+ae
+ae
+ae
+aj
+br
+ab
+cL
+bG
+bQ
+bY
+cG
+dc
+dc
+aN
+dL
+aN
+aj
+al
+ae
+ae
+ab
+ab
+ab
+ab
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+ab
+ab
+ab
+ab
+ae
+ae
+ae
+bC
+bK
+ak
+bH
+bS
+bZ
+cI
+aN
+aP
+bs
+dg
+aj
+al
+ae
+ae
+ae
+ab
+ak
+ab
+ab
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+ab
+ab
+af
+ab
+aF
+ae
+ba
+bF
+ak
+bs
+br
+bU
+dv
+cJ
+dz
+ae
+aj
+aj
+aj
+aj
+ae
+ae
+ae
+ab
+ak
+ab
+ab
+ab
+aa
+"}
+(12,1,1) = {"
+aa
+ab
+ac
+ab
+bc
+ab
+ab
+bp
+ak
+bF
+br
+cU
+bV
+ca
+cK
+bs
+ab
+cv
+cF
+dl
+aR
+ae
+ae
+ae
+ab
+aT
+ab
+ae
+ab
+aa
+"}
+(13,1,1) = {"
+aa
+ab
+ad
+ab
+ah
+ab
+aT
+ab
+ab
+aP
+cs
+bI
+bW
+cb
+cM
+dK
+bF
+aR
+cP
+dM
+do
+ae
+ae
+ab
+ak
+ak
+ad
+ae
+ae
+aa
+"}
+(14,1,1) = {"
+aa
+ab
+ad
+ag
+ak
+aG
+ab
+aF
+ak
+aj
+bv
+bJ
+du
+br
+cN
+br
+af
+aR
+cQ
+dN
+do
+ae
+ab
+ak
+bF
+ag
+ad
+ae
+ae
+aa
+"}
+(15,1,1) = {"
+aa
+ab
+ad
+dm
+ag
+ak
+ak
+ab
+ak
+aj
+bA
+bM
+dv
+bM
+cO
+bs
+cH
+aR
+cR
+dn
+aR
+ab
+ab
+ag
+ag
+ag
+ad
+ae
+ae
+aa
+"}
+(16,1,1) = {"
+aa
+ab
+ad
+ad
+aB
+ag
+ak
+ab
+bK
+aj
+aj
+aj
+aj
+aj
+da
+aj
+aR
+cw
+aR
+aR
+ae
+ab
+ag
+ag
+ag
+ae
+ad
+ae
+ab
+aa
+"}
+(17,1,1) = {"
+aa
+ab
+ae
+ad
+ag
+ag
+aU
+ak
+ab
+am
+aE
+ds
+aR
+dw
+bo
+dA
+aR
+cx
+dG
+aR
+ae
+ab
+ag
+ag
+ag
+ae
+ae
+ab
+ab
+aa
+"}
+(18,1,1) = {"
+aa
+ab
+ae
+ae
+ad
+ag
+bj
+ak
+ab
+ai
+cy
+aH
+aR
+bd
+bt
+cj
+cj
+dE
+ci
+do
+ab
+ak
+ag
+ag
+ad
+ae
+ae
+ab
+ab
+aa
+"}
+(19,1,1) = {"
+aa
+ab
+ae
+ae
+ad
+aS
+ak
+bq
+bw
+cg
+aH
+dt
+aR
+be
+bu
+ck
+dD
+cB
+dH
+do
+ab
+ak
+ag
+ag
+ad
+ae
+ab
+ab
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+ab
+ab
+ae
+ae
+ad
+aV
+ak
+bj
+cH
+cY
+ae
+aR
+bf
+bx
+cl
+ci
+dF
+dI
+do
+ab
+ab
+ag
+ad
+ae
+ae
+ab
+ab
+aa
+aa
+"}
+(21,1,1) = {"
+aa
+aa
+ab
+ae
+ae
+ad
+aX
+bw
+ak
+bj
+ab
+ak
+aR
+bg
+bt
+cm
+aR
+cC
+cV
+aR
+ab
+ak
+ag
+ad
+ae
+ab
+ab
+ab
+aa
+aa
+"}
+(22,1,1) = {"
+aa
+aa
+aa
+aa
+ae
+ae
+aZ
+ae
+ai
+ao
+ak
+ak
+aR
+aR
+by
+aR
+aR
+aR
+aR
+aR
+ab
+ae
+ad
+ad
+ab
+ab
+ab
+aa
+aa
+aa
+"}
+(23,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ae
+ae
+ae
+am
+ap
+aH
+cH
+aH
+aH
+bz
+aH
+ct
+aH
+cW
+dp
+ab
+ae
+ad
+ae
+ab
+ab
+aa
+aa
+aa
+aa
+"}
+(24,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ab
+ae
+ab
+am
+ar
+cz
+ab
+aI
+aH
+bB
+cn
+cu
+cD
+cX
+dq
+ab
+ae
+ae
+ab
+ak
+ab
+aa
+aa
+aa
+aa
+"}
+(25,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+am
+as
+cS
+ak
+aW
+bh
+bD
+co
+aI
+aY
+cZ
+dq
+ab
+ae
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+"}
+(26,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+am
+at
+aI
+ak
+aY
+aH
+bL
+cp
+aH
+aH
+dj
+dr
+ak
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+"}
+(27,1,1) = {"
+aa
+aa
+aa
+aa
+ab
+ae
+af
+ab
+am
+au
+aJ
+ak
+ab
+ak
+ae
+ae
+ae
+cp
+dk
+am
+ak
+ad
+ab
+ak
+ab
+aa
+aa
+aa
+aa
+aa
+"}
+(28,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+ae
+ab
+ae
+am
+av
+aH
+ak
+af
+cH
+ak
+ak
+ae
+cE
+dJ
+am
+ag
+ad
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(29,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+ae
+ad
+ae
+am
+az
+aH
+bC
+bb
+bb
+bN
+bb
+bb
+cE
+aH
+ai
+ad
+ad
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(30,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ag
+am
+aA
+aH
+cH
+bb
+bi
+bR
+cq
+bb
+cE
+dJ
+am
+ad
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(31,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ad
+ai
+aC
+aH
+ak
+bb
+dx
+bT
+cr
+bb
+cE
+am
+an
+ae
+ab
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(32,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+am
+aD
+cT
+ak
+bb
+bk
+cd
+dB
+bb
+am
+an
+ae
+ae
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(33,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+an
+am
+aQ
+bK
+bb
+bl
+dy
+dC
+bb
+an
+ae
+ae
+ae
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(34,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ae
+an
+am
+ae
+bb
+bm
+ch
+bm
+bb
+ae
+ae
+ae
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(35,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ae
+ae
+ae
+an
+ae
+bb
+bn
+bn
+bn
+bb
+ae
+ae
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(36,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ae
+ae
+ae
+ae
+ae
+ae
+ae
+ae
+ae
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(37,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ae
+ae
+ae
+ae
+ab
+ab
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(38,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(39,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(40,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 "}
