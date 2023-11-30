@@ -6,19 +6,6 @@
 		/obj/item/clothing/under/color/black = 1,
 		/obj/item/clothing/under/color/white = 1,
 		/obj/item/clothing/under/color/random = 1,
-		/obj/item/clothing/under/shorts/black = 1,
-		/obj/item/clothing/under/shorts/grey = 1,
-		/obj/item/clothing/under/shorts/blue = 1,
-		/obj/item/clothing/under/shorts/green = 1,
-		/obj/item/clothing/under/pants/jeans = 1,
-		/obj/item/clothing/under/pants/khaki = 1,
-		/obj/item/clothing/under/pants/tan = 1,
-		/obj/item/clothing/under/pants/white = 1,
-		/obj/item/clothing/under/pants/red = 1,
-		/obj/item/clothing/under/pants/track = 1,
-		/obj/item/clothing/under/pants/blackjeans = 1,
-		/obj/item/clothing/under/pants/black = 1,
-		/obj/item/clothing/under/pants/camo = 1,
 		/obj/item/clothing/under/suit/white = 1,
 		/obj/item/clothing/under/suit/tan = 1,
 		/obj/item/clothing/under/suit/black_really = 1,
@@ -46,8 +33,6 @@
 		/obj/item/clothing/suit/toggle/industrial = 1,
 		/obj/item/clothing/suit/toggle/hazard = 1,
 		/obj/item/clothing/suit/poncho/green = 1,
-		/obj/item/clothing/suit/apron/overalls = 1,
-		/obj/item/clothing/suit/ianshirt = 1
 		)
 	)
 	back = pickweight(list(
@@ -140,32 +125,31 @@
 	l_pocket = /obj/item/radio
 	id = /obj/item/card/id
 	backpack_contents = list()
-	for(var/count in 1 to 3)
-		backpack_contents += pickweight(list(
-			/obj/item/dice/d20 = 1,
-			/obj/item/lipstick = 1,
-			/obj/item/clothing/mask/vape = 1,
-			/obj/item/clothing/mask/vape/cigar = 1,
-			/obj/item/reagent_containers/food/drinks/flask = 1,
-			/obj/item/lighter = 1,
-			/obj/item/toy/cards/deck = 1,
-			/obj/item/toy/eightball = 1,
-			/obj/item/storage/wallet = 1,
-			/obj/item/paicard = 1,
-			/obj/item/pen/fourcolor = 1,
-			/obj/item/paper_bin = 1,
-			/obj/item/cane = 1,
-			/obj/item/radio = 1,
-			/obj/item/dyespray = 1,
-			/obj/item/table_bell/brass = 1,
-			/obj/item/flashlight = 1,
-			/obj/item/crowbar/red = 1
-			)
+	backpack_contents += pickweight(list(
+		/obj/item/dice/d20 = 1,
+		/obj/item/lipstick = 1,
+		/obj/item/clothing/mask/vape = 1,
+		/obj/item/clothing/mask/vape/cigar = 1,
+		/obj/item/reagent_containers/food/drinks/flask = 1,
+		/obj/item/lighter = 1,
+		/obj/item/toy/cards/deck = 1,
+		/obj/item/toy/eightball = 1,
+		/obj/item/storage/wallet = 1,
+		/obj/item/paicard = 1,
+		/obj/item/pen/fourcolor = 1,
+		/obj/item/paper_bin = 1,
+		/obj/item/cane = 1,
+		/obj/item/radio = 1,
+		/obj/item/dyespray = 1,
+		/obj/item/table_bell/brass = 1,
+		/obj/item/flashlight = 1,
+		/obj/item/crowbar/red = 1
 		)
-	box = /obj/item/storage/box/survival
+	)
 
 /datum/outfit/generic
 	name = "Generic (Legion)"
+	box = /obj/item/storage/box/survival
 
 /datum/outfit/generic/engineer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -190,6 +174,7 @@
 
 /datum/outfit/generic/engineer
 	name = "Mechanic (Legion)"
+	box = /obj/item/storage/box/survival/engineer
 
 /datum/outfit/generic/engineer/inteq/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -532,7 +517,6 @@
 	head = /obj/item/clothing/head/cowboy/sec/roumain
 	if(prob(75))
 		suit_store = pickweight(list(/obj/item/gun/ballistic/shotgun/winchester = 9, /obj/item/gun/ballistic/shotgun/winchester = 1))
-	r_pocket = /obj/item/book/manual/trickwines_4_brewers
 	backpack_contents = list()
 	if(prob(75))
 		backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
