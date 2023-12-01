@@ -15,7 +15,7 @@ fi
 git fetch origin --depth=1 $AUXMOS_VERSION
 git reset --hard FETCH_HEAD
 
-sudo apt install g++-multilib -y
+sudo apt-get install g++-multilib -y
 rustup target add i686-unknown-linux-gnu
 
 cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
