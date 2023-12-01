@@ -1,6 +1,6 @@
 // just fluff for the ship
 
-obj/item/paper/fluff/ruins/catfish_wreck/cargo_manifest
+/obj/item/paper/fluff/ruins/catfish_wreck/cargo_manifest
 	name = "Cargo Manifest"
 
 /obj/item/paper/fluff/ruins/catfish_wreck/cargo_manifest/Initialize(mapload)
