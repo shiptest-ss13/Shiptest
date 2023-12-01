@@ -68,13 +68,9 @@ jobs:
 
       - name: Annotate Lints
         uses: yogstation13/DreamAnnotate@v2
-        if: always()
         with:
           outputFile: output-annotations.txt
 
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
       - name: Run Check Regex
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
@@ -129,6 +125,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Restore Yarn cache
         uses: actions/cache@v3
         with:
@@ -138,14 +135,17 @@ jobs:
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:
           DM_EXE: "C:\\byond\\bin\\dm.exe"
+
       - name: Create artifact
         run: |
           md deploy
           bash tools/deploy.sh ./deploy
+
       - name: Deploy artifact
         uses: actions/upload-artifact@v3
         with:
