@@ -140,7 +140,7 @@
 				S = GLOB.ipc_marker_list["Angry"]
 			if(INTENT_GRAB)
 				S = GLOB.ipc_marker_list["Evil"]
-		user.visible_message("<span class='warning'>[user] is drawing a face on [C]'s screen!", "<span class='notice'>You start drawing an face on [C]'s screen.</span>")
+		user.visible_message("<span class='warning'>[user] is drawing a face on [C]'s screen!", "<span class='notice'>You start drawing a face on [C]'s screen.</span>")
 		if(do_after(user,10,target = C))
 			var/mutable_appearance/pen_overlay = mutable_appearance(S.icon, S.icon_state, BODY_LAYER)
 			C.add_overlay(pen_overlay)
