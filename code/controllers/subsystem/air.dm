@@ -10,6 +10,7 @@ SUBSYSTEM_DEF(air)
 	var/cost_groups = 0
 	var/cost_highpressure = 0
 	var/cost_hotspots = 0
+	var/cost_post_process = 0
 	var/cost_superconductivity = 0
 	var/cost_pipenets = 0
 	var/cost_rebuilds = 0
@@ -91,13 +92,14 @@ SUBSYSTEM_DEF(air)
 	msg += "HE:[round(heat_process_time(),1)]|"
 	msg += "SC:[round(cost_superconductivity,1)]|"
 	msg += "PN:[round(cost_pipenets,1)]|"
-	msg += "AM:[round(cost_atmos_machinery,1)]"
+	msg += "AM:[round(cost_atmos_machinery,1)]|"
 	msg += "AA:[round(cost_atmos_machinery_air,1)]"
 	msg += "} "
 	msg += "TC:{"
 	msg += "AT:[round(cost_turfs,1)]|"
 	msg += "EG:[round(cost_groups,1)]|"
 	msg += "EQ:[round(cost_equalize,1)]|"
+	msg += "PO:[round(cost_post_process,1)]"
 	msg += "}"
 	msg += "TH:[round(thread_wait_ticks,1)]|"
 	msg += "HS:[length(hotspots)]|"
