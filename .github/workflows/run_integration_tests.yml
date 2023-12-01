@@ -29,9 +29,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('Dockerfile') }}
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
       - name: Install BYOND
-        if: steps.cache-byond.outputs.cache-hit != 'true'
         run: bash tools/ci/install_byond.sh
 
       - name: Setup auxmos cache
@@ -39,7 +38,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/auxmos
-          key: ${{ runner.os }}-auxmos-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('Dockerfile') }}
+          key: ${{ runner.os }}-auxmos-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
       - name: Install auxmos
         run: bash tools/ci/build_auxmos.sh
 
