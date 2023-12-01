@@ -776,13 +776,3 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	src << link("?debug=profile&type=sendmaps&window=test")
 #endif
-
-//FIXME TODO REMOVE THIS
-/client/proc/report_sgt()
-	set name = "SGT Report"
-	set category = "Debug"
-	set desc = "Report a Slimegirl Trafficking Incident"
-	if(!holder)
-		return
-	log_shuttle("CRITICAL: !!INCIDENT REPORTED!!")
-	message_debug("[key_name_admin(usr)]: Shuttle Incident Reported.")
