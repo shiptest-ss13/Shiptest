@@ -53,8 +53,7 @@
 /area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
 "ap" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/spacecash/bundle/mediumrand,
-/obj/item/spacecash/bundle/mediumrand,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
 "aq" = (
@@ -71,7 +70,11 @@
 /obj/structure/safe,
 /obj/item/pickaxe/drill/diamonddrill,
 /obj/item/reagent_containers/food/drinks/flask/gold,
-/obj/item/stack/sheet/mineral/adamantine,
+/obj/item/stack/sheet/mineral/adamantine{
+	amount = 2
+	},
+/obj/item/spacecash/bundle/mediumrand,
+/obj/item/gun/ballistic/revolver/golden,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
 "at" = (
@@ -130,8 +133,6 @@
 "az" = (
 /obj/structure/closet/crate,
 /obj/item/virgin_mary,
-/obj/item/wendigo_blood,
-/obj/item/dragons_blood,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
 "aA" = (
@@ -144,7 +145,12 @@
 /area/ruin/wasteplanet/wasteplanet_shuttle)
 "aC" = (
 /obj/structure/closet/crate,
-/obj/item/toy/eightball/haunted,
+/obj/item/camera{
+	desc = "A polaroid camera. Seems to be quite old.";
+	name = "ancient camera"
+	},
+/obj/item/camera_film,
+/obj/item/camera_film,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
 "aD" = (
@@ -221,7 +227,6 @@
 /area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
 "aQ" = (
 /obj/structure/closet/crate,
-/obj/item/wrench/cyborg,
 /obj/item/surgicaldrill/advanced,
 /obj/item/weldingtool/hugetank/empty,
 /obj/item/cautery,
@@ -239,8 +244,12 @@
 /area/ruin/wasteplanet/wasteplanet_shuttle)
 "aU" = (
 /obj/structure/ore_box,
-/obj/item/stack/ore/titanium,
-/obj/item/stack/ore/gold,
+/obj/item/stack/ore/titanium{
+	amount = 11
+	},
+/obj/item/stack/ore/gold{
+	amount = 9
+	},
 /turf/open/floor/plasteel/tech/techmaint/airless,
 /area/ruin/wasteplanet/wasteplanet_shuttle)
 "aV" = (
@@ -276,17 +285,11 @@
 /mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/ruin/wasteplanet/wasteplanet_shuttle)
-"bd" = (
-/obj/structure/table,
-/obj/item/storage/firstaid/tactical,
-/turf/open/floor/plasteel,
-/area/ruin/wasteplanet/wasteplanet_shuttle/main)
 "be" = (
 /obj/structure/table,
 /obj/machinery/light/broken/directional/north,
 /obj/structure/sink/chem{
-	dir = 4;
-	
+	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_shuttle/main)
@@ -316,6 +319,7 @@
 /area/ruin/wasteplanet/wasteplanet_shuttle)
 "bk" = (
 /obj/machinery/computer/helm/viewscreen/directional/north,
+/obj/item/paper/fluff/ruins/catfish_wreck/cargo_manifest,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
 "bl" = (
@@ -528,6 +532,9 @@
 "bN" = (
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/airlock/command{
+	dir = 4
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/wasteplanet/wasteplanet_shuttle/bridge)
@@ -780,6 +787,7 @@
 /area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
 "cB" = (
 /obj/structure/table/glass,
+/obj/item/laser_pointer/green,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_shuttle/main)
 "cC" = (
@@ -1108,6 +1116,9 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
 /obj/effect/decal/cleanable/blood/gibs/old,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
+/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie,
 /turf/open/floor/plasteel,
 /area/ruin/wasteplanet/wasteplanet_shuttle/main)
 "dx" = (
@@ -1194,6 +1205,26 @@
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/wood/bamboo,
 /area/ruin/wasteplanet/wasteplanet_shuttle/main)
+"ho" = (
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"tS" = (
+/obj/item/extinguisher/advanced,
+/turf/open/floor/plasteel/tech/techmaint/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
+"Vm" = (
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged,
+/turf/open/floor/plasteel/patterned/cargo_one,
+/area/ruin/wasteplanet/wasteplanet_shuttle/cargo)
+"Wx" = (
+/mob/living/simple_animal/hostile/hivebot/wasteplanet/ranged/rapid,
+/turf/open/floor/plating/wasteplanet,
+/area/ruin/wasteplanet/wasteplanet_shuttle/engineering)
+"Yc" = (
+/obj/item/fireaxe,
+/turf/open/floor/plasteel/tech/airless,
+/area/ruin/wasteplanet/wasteplanet_shuttle)
 
 (1,1,1) = {"
 aa
@@ -1471,7 +1502,7 @@ dc
 dc
 aN
 dL
-aN
+Wx
 aj
 al
 ae
@@ -1713,7 +1744,7 @@ ab
 ae
 ad
 ag
-ag
+tS
 aU
 ak
 ab
@@ -1744,7 +1775,7 @@ aa
 ab
 ae
 ae
-ad
+Yc
 ag
 bj
 ak
@@ -1753,7 +1784,7 @@ ai
 cy
 aH
 aR
-bd
+bf
 bt
 cj
 cj
@@ -2013,7 +2044,7 @@ aH
 bL
 cp
 aH
-aH
+Vm
 dj
 dr
 ak
@@ -2134,7 +2165,7 @@ ae
 ag
 am
 aA
-aH
+ho
 cH
 bb
 bi
