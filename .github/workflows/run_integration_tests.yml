@@ -23,12 +23,27 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
-      - name: Setup cache
+
+      - name: Setup BYOND cache
         id: cache-byond
         uses: actions/cache@v3
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-cache-${{ hashFiles('Dockerfile') }}
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('Dockerfile') }}
+      - name: Install BYOND
+        if: steps.cache-byond.outputs.cache-hit != 'true'
+        run: bash tools/ci/install_byond.sh
+
+      - name: Setup auxmos cache
+        id: cache-auxmos
+        uses: actions/cache@v3
+        with:
+          path: ~/auxmos
+          key: ${{ runner.os }}-auxmos-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('Dockerfile') }}
+      - name: Build auxmos
+        if: steps.cache-auxmos.outputs.cache-hit != 'true'
+        run: bash tools/ci/build_auxmos.sh
+
       - name: Setup database
         run: |
           sudo systemctl start mysql
@@ -42,19 +57,18 @@ jobs:
           sudo apt update || true
           sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
           bash tools/ci/install_rust_g.sh
-      - name: Install auxmos
-        run: |
-          bash tools/ci/install_auxmos.sh
+
       - name: Configure version
         if: ${{ inputs.major }}
         run: |
           echo "BYOND_MAJOR=${{ inputs.major }}" >> $GITHUB_ENV
           echo "BYOND_MINOR=${{ inputs.minor }}" >> $GITHUB_ENV
+
       - name: Compile Tests
         run: |
-          bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
+
       - name: Run Tests
         run: |
           source $HOME/BYOND/byond/bin/byondsetup

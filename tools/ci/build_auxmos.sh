@@ -1,0 +1,19 @@
+#!/bin/bash
+set -euo pipefail
+
+source dependencies.sh
+
+cd $HOME/auxmos
+
+if [ ! -d .git ]
+then
+	git init
+	git remote add origin https://github.com/Putnam3145/auxmos.git
+fi
+
+git fetch origin --depth=1 $AUXMOS_VERSION
+git reset --hard FETCH_HEAD
+
+cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
+cp target/release/libauxmos.so ~
+ldd ~/libauxmos.so
