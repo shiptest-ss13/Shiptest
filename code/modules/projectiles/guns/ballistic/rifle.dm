@@ -73,6 +73,7 @@
 	knife_x_offset = 27
 	knife_y_offset = 13
 	can_be_sawn_off = TRUE
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/rifle/boltaction/sawoff(mob/user)
 	. = ..()
@@ -96,6 +97,11 @@
 	fire_sound = 'sound/weapons/gun/rifle/ssg669c.ogg'
 	can_be_sawn_off = FALSE
 
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
+
+	manufacturer = MANUFACTURER_SOLARARMORIES
 	spread = -5
 	spread_unwielded = 20
 	recoil = 0
@@ -111,12 +117,15 @@
 	item_state = "roma"
 	can_be_sawn_off = FALSE
 
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
 /obj/item/gun/ballistic/rifle/boltaction/enchanted
 	name = "enchanted bolt-action rifle"
 	desc = "Careful not to lose your head."
 	var/guns_left = 30
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
 	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/rifle/boltaction/enchanted/arcane_barrage
 	name = "arcane barrage"
@@ -172,3 +181,4 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/polymer
 	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_NONE
