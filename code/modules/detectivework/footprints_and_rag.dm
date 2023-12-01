@@ -20,7 +20,13 @@
 	. = ..()
 	if(!proximity)
 		return
-	if(iscarbon(target) && target.reagents && reagents.total_volume)
+	if(isipc(target) && src in user && user.a_intent != INTENT_HARM)
+		var/mob/living/carbon/C = target
+		user.visible_message("<span class='notice'>[user] starts to wipe the marker off of [target]'s face with [src]!</span>", "<span class='notice'>You start to wipe the marker off of [target]'s face with [src]...</span>")
+		if(do_after(user,30, target = target))
+			user.visible_message("<span class='notice'>[user] wipes [target]'s face clean!</span>", "<span class='notice'>You wipe [target]'s face clean.</span>")
+			target.clean_marker()
+	else if(iscarbon(target) && target.reagents && reagents.total_volume)
 		var/mob/living/carbon/C = target
 		var/reagentlist = pretty_string_from_reagent_list(reagents)
 		var/log_object = "containing [reagentlist]"

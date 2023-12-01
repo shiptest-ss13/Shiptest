@@ -164,6 +164,24 @@
 			O.desc = input
 			to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
 
+	var/mob/living/carbon/human/humie = O
+	if(isipc(humie) && proximity)
+		var/datum/sprite_accessory/S
+		switch(user.a_intent)
+			if(INTENT_HELP)
+				S = GLOB.marker_faces_ipc["Happy"]
+			if(INTENT_DISARM)
+				S = GLOB.marker_faces_ipc["Sad"]
+			if(INTENT_HARM)
+				S = GLOB.marker_faces_ipc["Angry"]
+			if(INTENT_GRAB)
+				S = GLOB.marker_faces_ipc["Evil"]
+		var/mutable_appearance/pen_overlay = mutable_appearance(S.icon, S.icon_state, layer = BODY_ADJ_LAYER)
+		pen_overlay.alpha = S.image_alpha
+		humie.apply_overlay(BODY_ADJ_LAYER)
+
+
+
 /obj/item/pen/get_writing_implement_details()
 	return list(
 		interaction_mode = MODE_WRITING,
