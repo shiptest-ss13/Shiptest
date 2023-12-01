@@ -408,7 +408,7 @@
 		for(var/iter in 1 to 5 * power_multiplier)
 			for(var/V in listeners)
 				var/mob/living/L = V
-				addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(_step), L, direction? direction : pick(GLOB.cardinals)), 10 * (iter - 1))
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step), L, direction? direction : pick(GLOB.cardinals)), 10 * (iter - 1))
 
 	//WALK
 	else if((findtext(message, walk_words)))
