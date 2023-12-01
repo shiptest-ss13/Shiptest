@@ -24,16 +24,6 @@
 	else
 		. += " AM"
 
-/proc/station_time_debug(force_set)
-	if(isnum(force_set))
-		SSticker.gametime_offset = force_set
-		return
-	SSticker.gametime_offset = rand(0, 864000)		//hours in day * minutes in hour * seconds in minute * deciseconds in second
-	if(prob(50))
-		SSticker.gametime_offset = FLOOR(SSticker.gametime_offset, 3600)
-	else
-		SSticker.gametime_offset = CEILING(SSticker.gametime_offset, 3600)
-
 //returns timestamp in a sql and a not-quite-compliant ISO 8601 friendly format
 /proc/SQLtime(timevar)
 	return time2text(timevar || world.timeofday, "YYYY-MM-DD hh:mm:ss")
