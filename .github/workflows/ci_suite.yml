@@ -71,6 +71,9 @@ jobs:
         with:
           outputFile: output-annotations.txt
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
       - name: Run Check Regex
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
