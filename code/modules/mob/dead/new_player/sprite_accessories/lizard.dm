@@ -26,7 +26,6 @@
 	icon = 'icons/mob/species/lizard/tails.dmi'
 	body_zone = BODY_ZONE_CHEST
 	secondary_color = TRUE
-	synthetic_icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated
 	icon = 'icons/mob/species/lizard/tails.dmi'
@@ -34,8 +33,25 @@
 	body_zone = BODY_ZONE_CHEST
 
 /datum/sprite_accessory/tails/lizard/smooth
-	name = "Smooth"
+	name = "Smooth (Two color)"
 	icon_state = "smooth"
+
+/datum/sprite_accessory/tails/lizard/smooth_onecolor
+	name = "Smooth (One color)"
+	icon_state = "smooth2"
+	secondary_color = FALSE
+
+/datum/sprite_accessory/tails_animated/lizard/smooth_onecolor
+	name = "Smooth (One color)"
+	icon_state = "smooth2"
+
+/datum/sprite_accessory/tails/lizard/prosthetic
+	name = "Prosthetic"
+	icon_state = "synth"
+
+/datum/sprite_accessory/tails_animated/lizard/prosthetic
+	name = "Prosthetic"
+	icon_state = "synth"
 
 /datum/sprite_accessory/tails_animated/lizard/smooth
 	name = "Smooth"
@@ -44,22 +60,18 @@
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
 	icon_state = "large"
-	synthetic_icon_state = "large" //fight me
 
 /datum/sprite_accessory/tails_animated/lizard/large
 	name = "Large"
 	icon_state = "large"
-	synthetic_icon_state = "large"
 
 /datum/sprite_accessory/tails/lizard/small
 	name = "Small"
 	icon_state = "small"
-	synthetic_icon_state = "none"
 
 /datum/sprite_accessory/tails_animated/lizard/small
 	name = "Small"
 	icon_state = "small"
-	synthetic_icon_state = "none"
 
 //Start Face markings
 
