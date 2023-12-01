@@ -1140,6 +1140,13 @@
 		update_inv_wear_mask()
 		. = TRUE
 
+	//no longer fucking sucks (thank you mark xoxo)
+	if(isipc(src)&& !is_eyes_covered() && !is_mouth_covered())
+		for(var/name in GLOB.ipc_marker_list)
+	    	var/datum/sprite_accessory/marker = GLOB.ipc_marker_list[name]
+			var/mutable_appearance/pen_overlay = mutable_appearance(marker.icon, marker.icon_state, layer = BODY_LAYER)
+			src.cut_overlay(pen_overlay)
+
 	if(ears && !(ITEM_SLOT_EARS in obscured) && ears.wash(clean_types))
 		update_inv_ears()
 		. = TRUE

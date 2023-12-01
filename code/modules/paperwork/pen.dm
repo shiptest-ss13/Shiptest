@@ -125,8 +125,28 @@
 /obj/item/pen/attack(mob/living/M, mob/user,stealth)
 	if(!istype(M))
 		return
+	if(isipc(M))
+		if(M.is_eyes_covered() || M.is_mouth_covered())
+			to_chat(user, "<span class='warning'>[M]'s screen is covered! You can't draw on them!</span>")
+			return
+		var/mob/living/carbon/C = M
+		var/datum/sprite_accessory/S
+		switch(user.a_intent)
+			if(INTENT_HELP)
+				S = GLOB.ipc_marker_list["Happy"]
+			if(INTENT_DISARM)
+				S = GLOB.ipc_marker_list["Sad"]
+			if(INTENT_HARM)
+				S = GLOB.ipc_marker_list["Angry"]
+			if(INTENT_GRAB)
+				S = GLOB.ipc_marker_list["Evil"]
+			user.visible_message("<span class='warning'>[user] is drawing a face on [C]'s screen!", "<span class='notice'>You start drawing an face on [C]'s screen.</span>")
+		if(do_after(user,10,target = C))
+			var/mutable_appearance/pen_overlay = mutable_appearance(S.icon, S.icon_state, BODY_LAYER)
+			C.add_overlay(pen_overlay)
+			user.visible_message("<span class='warning'>[C]'s screen now sports an inked on face!", "<span class='notice'>You think [C] looks much better like this.</span>")
 
-	if(!force)
+	else if(!force)
 		if(M.can_inject(user, 1))
 			to_chat(user, "<span class='warning'>You stab [M] with the pen.</span>")
 			if(!stealth)
@@ -163,24 +183,6 @@
 				return
 			O.desc = input
 			to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
-
-	var/mob/living/carbon/human/humie = O
-	if(isipc(humie) && proximity)
-		var/datum/sprite_accessory/S
-		switch(user.a_intent)
-			if(INTENT_HELP)
-				S = GLOB.marker_faces_ipc["Happy"]
-			if(INTENT_DISARM)
-				S = GLOB.marker_faces_ipc["Sad"]
-			if(INTENT_HARM)
-				S = GLOB.marker_faces_ipc["Angry"]
-			if(INTENT_GRAB)
-				S = GLOB.marker_faces_ipc["Evil"]
-		var/mutable_appearance/pen_overlay = mutable_appearance(S.icon, S.icon_state, layer = BODY_ADJ_LAYER)
-		pen_overlay.alpha = S.image_alpha
-		humie.apply_overlay(BODY_ADJ_LAYER)
-
-
 
 /obj/item/pen/get_writing_implement_details()
 	return list(
