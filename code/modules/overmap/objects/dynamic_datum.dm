@@ -90,7 +90,7 @@
 	if(planet_name)
 		for(var/mob/Mob as anything in GLOB.player_list)
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
-				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp("hh:mm")]")
 				playsound(Mob, landing_sound, 50)
 
 

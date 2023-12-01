@@ -2,7 +2,7 @@
 /proc/worldtime2text()
 	return gameTimestamp("hh:mm:ss", world.time)
 
-/proc/time_stamp(format = "hh:mm:ss", show_ds)
+/proc/time_stamp(format = "YYYY-MM-DD hh:mm:ss", show_ds)
 	var/time_string = time2text(world.timeofday, format)
 	return show_ds ? "[time_string]:[world.timeofday % 10]" : time_string
 
@@ -23,6 +23,15 @@
 		. += " PM"
 	else
 		. += " AM"
+
+/proc/sector_year()
+	return GLOB.year_integer - 1519
+
+/proc/sector_datestamp(time_format = "hh:mm:ss", world_time = world.time)
+	return "[sector_year()]FSC-[time2text(wtime, "MMM-DD")] [station_time_timestamp(time_format, world_time)]"
+
+/proc/sector_date(world_time = world.time)
+	return "[time2text(world_time, "MMM DD")], FSC [GLOB.year_integer-1519]"
 
 //returns timestamp in a sql and a not-quite-compliant ISO 8601 friendly format
 /proc/SQLtime(timevar)

@@ -339,7 +339,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		var/list/frozen_details = list()
 		frozen_details["name"] = "[mob_occupant.real_name]"
 		frozen_details["rank"] = announce_rank || "[mob_occupant.job]"
-		frozen_details["time"] = gameTimestamp()
+		frozen_details["time"] = station_time_timestamp()
 
 		control_computer_obj.frozen_crew += list(frozen_details)
 
