@@ -37,8 +37,10 @@ SUBSYSTEM_DEF(ticker)
 
 	var/timeLeft						//pregame timer
 
-	var/gametime_offset = 9 HOURS		//Deciseconds to add to world.time for station time.
-	var/station_time_rate_multiplier = 1		//factor of station time progressal vs real time.
+	/// The "start" of the round in station time, for example, 9 HOURS = 9:00 AM
+	var/gametime_offset = 9 HOURS
+	/// Factor of station time progressal vs real time.
+	var/station_time_rate_multiplier = 1
 
 	var/totalPlayers = 0					//used for pregame stats on statpanel
 	var/totalPlayersReady = 0				//used for pregame stats on statpanel
