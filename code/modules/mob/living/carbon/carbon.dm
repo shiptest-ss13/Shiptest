@@ -1143,7 +1143,7 @@
 	//no longer fucking sucks (thank you mark xoxo)
 	if(isipc(src)&& !is_eyes_covered() && !is_mouth_covered())
 		for(var/name in GLOB.ipc_marker_list)
-	    	var/datum/sprite_accessory/marker = GLOB.ipc_marker_list[name]
+			var/datum/sprite_accessory/marker = GLOB.ipc_marker_list[name]
 			var/mutable_appearance/pen_overlay = mutable_appearance(marker.icon, marker.icon_state, layer = BODY_LAYER)
 			src.cut_overlay(pen_overlay)
 
