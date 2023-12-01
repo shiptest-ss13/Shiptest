@@ -3,7 +3,8 @@ set -euo pipefail
 
 source dependencies.sh
 
-cd $HOME/SpacemanDMM
+mkdir -p "$HOME/SpacemanDMM"
+cd "$HOME/SpacemanDMM"
 
 if [ ! -d .git ]
 then

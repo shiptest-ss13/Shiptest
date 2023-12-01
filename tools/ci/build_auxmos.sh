@@ -3,7 +3,8 @@ set -euo pipefail
 
 source dependencies.sh
 
-cd $HOME/auxmos
+mkdir -p "$HOME/auxmos"
+cd "$HOME/auxmos"
 
 if [ ! -d .git ]
 then
