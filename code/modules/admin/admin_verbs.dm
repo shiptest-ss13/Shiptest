@@ -26,8 +26,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/resetasaycolor,
 	/client/proc/fix_air,				/*resets air in designated radius to its default atmos composition*/
 	/client/proc/addbunkerbypass,
-	/client/proc/revokebunkerbypass,
-	/client/proc/report_sgt //TEMP
+	/client/proc/revokebunkerbypass
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
