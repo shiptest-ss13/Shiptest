@@ -19,5 +19,4 @@ sudo apt install g++-multilib -y
 rustup target add i686-unknown-linux-gnu
 
 cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
-cp target/i686-unknown-linux-gnu/release/libauxmos.so ~
-ldd ~/libauxmos.so
+cp target/i686-unknown-linux-gnu/release/libauxmos.so ~/BYOND/byond/bin/libbyond.so

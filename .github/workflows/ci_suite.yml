@@ -24,7 +24,6 @@ jobs:
           path: ~/dreamchecker
           key: ${{ runner.os }}-spacemandmm-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
       - name: Build SpacemanDMM
-        if: steps.cache-spacemandmm.outputs.cache-hit != 'true'
         run: bash tools/ci/build_spaceman_dmm.sh dreamchecker
 
       - name: Restore BYOND cache

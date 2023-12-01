@@ -40,8 +40,7 @@ jobs:
         with:
           path: ~/auxmos
           key: ${{ runner.os }}-auxmos-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('Dockerfile') }}
-      - name: Build auxmos
-        if: steps.cache-auxmos.outputs.cache-hit != 'true'
+      - name: Install auxmos
         run: bash tools/ci/build_auxmos.sh
 
       - name: Setup database
@@ -51,6 +50,7 @@ jobs:
           mysql -u root -proot tg_ci < SQL/tgstation_schema.sql
           mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
           mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
+
       - name: Install rust-g
         run: |
           sudo dpkg --add-architecture i386
