@@ -2,6 +2,9 @@
 	Map templates
 */
 
+/datum/map_template/outpost
+	should_place_on_top = FALSE
+
 /datum/map_template/outpost/New()
 	. = ..(path = "_maps/outpost/[name].dmm")
 
@@ -10,9 +13,11 @@
 	var/dock_height
 
 /datum/map_template/outpost/elevator_test
+	should_place_on_top = TRUE
 	name = "elevator_test"
 
 /datum/map_template/outpost/elevator_indie
+	should_place_on_top = TRUE
 	name = "elevator_indie"
 
 
@@ -106,7 +111,21 @@
 	elevator_template = /datum/map_template/outpost/elevator_test
 	// Uses "test" hangars.
 
-/datum/overmap/outpost/indie_space
+
+/* prison event */
+/datum/map_template/outpost/event_prison
+	name = "event_prison"
+
+/datum/overmap/outpost/outpost_prison
 	token_icon_state = "station_1"
 	main_template = /datum/map_template/outpost/event_prison
 	elevator_template = /datum/map_template/outpost/elevator_indie
+	main_level_ztraits = list(
+		ZTRAIT_STATION = TRUE,
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/dirt/jungle
+	)
+	hangar_ztraits = list(
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_BASETURF = /turf/open/floor/plating/dirt/jungle
+	)
