@@ -105,3 +105,8 @@
 	main_template = null
 	elevator_template = /datum/map_template/outpost/elevator_test
 	// Uses "test" hangars.
+
+/datum/overmap/outpost/indie_space
+	token_icon_state = "station_1"
+	main_template = /datum/map_template/outpost/event_prison
+	elevator_template = /datum/map_template/outpost/elevator_indie
