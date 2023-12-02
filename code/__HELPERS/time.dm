@@ -28,7 +28,7 @@
 	return GLOB.year_integer - 1519
 
 /proc/sector_datestamp(time_format = "hh:mm:ss", world_time = world.time)
-	return "[sector_year()]FSC-[time2text(wtime, "MMM-DD")] [station_time_timestamp(time_format, world_time)]"
+	return "[sector_year()]FSC-[time2text(world_time, "MMM-DD")] [station_time_timestamp(time_format, world_time)]"
 
 /proc/sector_date(world_time = world.time)
 	return "[time2text(world_time, "MMM DD")], FSC [GLOB.year_integer-1519]"
