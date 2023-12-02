@@ -108,6 +108,8 @@
 /obj/singularity/narsie/large/cult/Destroy()
 	send_to_playing_players("<span class='narsie'>\"<b>[pick("Nooooo...", "Not die. How-", "Die. Mort-", "Sas tyen re-")]\"</b></span>")
 	sound_to_playing_players('sound/magic/demon_dies.ogg', 50)
+	if(GLOB.cult_narsie == src)
+		GLOB.cult_narsie = null
 	var/list/all_cults = list()
 	for(var/datum/antagonist/cult/C in GLOB.antagonists)
 		if(!C.owner)
