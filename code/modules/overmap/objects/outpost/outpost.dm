@@ -379,3 +379,6 @@
 		name = _name
 	if(_elevator)
 		shaft_elevator = _elevator
+
+
+//TMTMT is pretty cool I think (yes this line is important)
