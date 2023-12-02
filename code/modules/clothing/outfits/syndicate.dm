@@ -80,6 +80,7 @@
 	uniform = /obj/item/clothing/under/syndicate
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	id = /obj/item/card/id/syndicate_command/crew_id
+	belt = null
 	shoes = null
 	gloves = null
 	ears = null
@@ -248,6 +249,8 @@
 	suit = null
 	belt = null
 	implants = list(/obj/item/implant/weapons_auth)
+
+	backpack_contents = null
 
 
 /datum/outfit/job/syndicate/captain/twink/post_equip(mob/living/carbon/human/H)
@@ -694,6 +697,7 @@
 	gloves = null
 	shoes = null
 	l_pocket = null
+	r_pocket = null
 	implants = list(/obj/item/implant/weapons_auth)
 
 	backpack_contents = null
