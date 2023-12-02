@@ -146,16 +146,36 @@
 	log_game("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
 	log_shuttle("[src] [REF(src)] OUTPOST MAP LEVEL INIT")
 
+	// by default, outposts get a standard quadrant-sized reserve (same as planets). these are the necessary settings.
+	// changing any one of these will result in a buggy-ass reservation
+	var/vl_width = QUADRANT_MAP_SIZE
+	var/vl_height = QUADRANT_MAP_SIZE
+	var/vl_type = ALLOCATION_QUADRANT
+	var/vl_alloc_jump = QUADRANT_MAP_SIZE
+
+	// this var is here so that it can be changed / determination can be made more nuanced
+	// i don't want QUADRANT_SIZE_BORDER sitting there as a magic number, even if it has a useful name
+	var/vl_border_size = QUADRANT_SIZE_BORDER
+	var/quadrant_effective_size = QUADRANT_MAP_SIZE - 2*vl_border_size
+
+	if(main_template.width > quadrant_effective_size || main_template.height > quadrant_effective_size)
+		if(main_template.width > (world.maxx - 2*vl_border_size) || main_template.height > (world.maxy - 2*vl_border_size))
+			CRASH("[type] attempted to reserve [main_template], which is too big for the current world size!")
+		vl_width = main_template.width + 2*vl_border_size
+		vl_height = main_template.height + 2*vl_border_size
+		vl_type = ALLOCATION_FREE
+		vl_alloc_jump = DEFAULT_ALLOC_JUMP
+
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		name,
 		main_level_ztraits,
 		mapzone,
-		QUADRANT_MAP_SIZE,
-		QUADRANT_MAP_SIZE,
-		ALLOCATION_QUADRANT,
-		QUADRANT_MAP_SIZE
+		vl_width,
+		vl_height,
+		vl_type,
+		vl_alloc_jump
 	)
-	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+	vlevel.reserve_margin(vl_border_size)
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
 
@@ -379,6 +399,3 @@
 		name = _name
 	if(_elevator)
 		shaft_elevator = _elevator
-
-
-//TMTMT is pretty cool I think (yes this line is important)
