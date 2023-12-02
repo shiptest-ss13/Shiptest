@@ -36,6 +36,10 @@
 	name = "Smooth (Two color)"
 	icon_state = "smooth"
 
+/datum/sprite_accessory/tails_animated/lizard/smooth
+	name = "Smooth (Two color)"
+	icon_state = "smooth"
+
 /datum/sprite_accessory/tails/lizard/smooth_onecolor
 	name = "Smooth (One color)"
 	icon_state = "smooth2"
@@ -52,10 +56,6 @@
 /datum/sprite_accessory/tails_animated/lizard/prosthetic
 	name = "Prosthetic"
 	icon_state = "synth"
-
-/datum/sprite_accessory/tails_animated/lizard/smooth
-	name = "Smooth"
-	icon_state = "smooth"
 
 /datum/sprite_accessory/tails/lizard/large
 	name = "Large"
