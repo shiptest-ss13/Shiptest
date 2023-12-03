@@ -719,7 +719,9 @@
 /area/outpost/exterior)
 "fC" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/displaycase/forsale,
+/obj/structure/displaycase/forsale{
+	density = 1
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "fE" = (
@@ -3536,9 +3538,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/fore)
-"zT" = (
-/turf/closed/indestructible/rock/schist,
-/area/outpost/crew/bar)
 "zU" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/south{
@@ -6373,9 +6372,6 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/outpost/maintenance/port)
-"Vp" = (
-/turf/open/floor/plating/asteroid/icerock/temperate,
-/area/outpost/crew/bar)
 "Vw" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -6982,7 +6978,9 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/cargo/smeltery)
 "Zi" = (
-/obj/structure/displaycase/forsale,
+/obj/structure/displaycase/forsale{
+	density = 1
+	},
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/effect/decal/cleanable/wrapping,
 /obj/structure/sign/poster/official/random{
@@ -10688,11 +10686,11 @@ Hd
 Hd
 cC
 cC
-zT
-zT
-zT
-zT
-zT
+cC
+cC
+cC
+cC
+cC
 cC
 YT
 nS
@@ -10772,11 +10770,11 @@ Hd
 Hd
 cC
 cC
-zT
-zT
-zT
-zT
-zT
+cC
+cC
+cC
+cC
+cC
 sh
 EH
 Tm
@@ -10856,11 +10854,11 @@ Hd
 Hd
 Hd
 Jb
-zT
-zT
-zT
-zT
-zT
+cC
+cC
+cC
+cC
+cC
 cC
 Rn
 mz
@@ -10940,11 +10938,11 @@ Hd
 Hd
 Hd
 cC
-zT
-zT
-zT
-zT
-zT
+cC
+cC
+cC
+cC
+cC
 cC
 cC
 cC
@@ -11024,10 +11022,10 @@ Hd
 Hd
 Hd
 cC
-zT
-zT
-zT
-zT
+cC
+cC
+cC
+cC
 yR
 yR
 yR
@@ -11108,8 +11106,8 @@ Hd
 Hd
 Hd
 Hd
-Vp
-zT
+Jb
+cC
 yR
 yR
 yR
