@@ -324,7 +324,6 @@
 /area/ruin/space/has_grav/syndicircle/winter)
 "iR" = (
 /obj/effect/mine/shrapnel,
-/obj/effect/turf_decal/weather/snow/corner,
 /obj/item/stack/tile/mineral/snow,
 /obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -794,6 +793,12 @@
 /area/ruin/space/has_grav/syndicircle/research)
 "vQ" = (
 /obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"vT" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "wa" = (
@@ -3365,7 +3370,7 @@ AV
 Dm
 Bj
 IY
-ap
+vT
 ap
 OE
 am

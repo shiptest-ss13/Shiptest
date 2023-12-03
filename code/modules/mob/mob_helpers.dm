@@ -221,22 +221,36 @@
 	return sanitize(.)
 
 ///Shake the camera of the person viewing the mob SO REAL!
-/proc/shake_camera(mob/M, duration, strength=1)
-	if(!M || !M.client || duration < 1)
+/proc/shake_camera(mob/recoilster, duration, strength=1)
+	if(!recoilster || !recoilster.client || duration < 1)
 		return
-	var/client/C = M.client
-	var/oldx = C.pixel_x
-	var/oldy = C.pixel_y
+	var/client/client_to_shake = recoilster.client
+	var/oldx = client_to_shake.pixel_x
+	var/oldy = client_to_shake.pixel_y
 	var/max = strength*world.icon_size
 	var/min = -(strength*world.icon_size)
 
 	for(var/i in 0 to duration-1)
 		if (i == 0)
-			animate(C, pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
+			animate(client_to_shake, pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 		else
 			animate(pixel_x=rand(min,max), pixel_y=rand(min,max), time=1)
 	animate(pixel_x=oldx, pixel_y=oldy, time=1)
 
+
+/proc/recoil_camera(mob/recoilster, duration, backtime_duration, strength, angle)
+	if(!recoilster || !recoilster.client)
+		return
+	strength *= world.icon_size
+	var/client/client_to_shake = recoilster.client
+	var/oldx = client_to_shake.pixel_x
+	var/oldy = client_to_shake.pixel_y
+
+	//get pixels to move the camera in an angle
+	var/mpx = sin(angle) * strength
+	var/mpy = cos(angle) * strength
+	animate(client_to_shake, pixel_x = oldx+mpx, pixel_y = oldy+mpy, time = duration, flags = ANIMATION_RELATIVE)
+	animate(pixel_x = oldx, pixel_y = oldy, time = backtime_duration, easing = BACK_EASING)
 
 ///Find if the message has the real name of any user mob in the mob_list
 /proc/findname(msg)

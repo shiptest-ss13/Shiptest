@@ -213,7 +213,7 @@
 
 /datum/biome/waste/tar_bed/total
 	open_turf_types = list(
-		/turf/open/water/tar/waste/lit
+		/turf/open/water/tar/waste/lit = 1
 	)
 	flora_spawn_chance = 0
 
@@ -340,7 +340,7 @@
 
 /datum/biome/cave/waste/tar_bed/full
 	open_turf_types = list(
-		/turf/open/water/tar/waste
+		/turf/open/water/tar/waste = 1
 	)
 	flora_spawn_chance = 0
 

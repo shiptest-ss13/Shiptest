@@ -122,7 +122,7 @@
 
 /obj/item/clothing/head/rabbitears
 	name = "rabbit ears"
-	desc = "Wearing these makes you look useless, and only good for your sex appeal."
+	desc = "A headband with a pair of faux rabbit ears."
 	icon_state = "bunny"
 	dynamic_hair_suffix = ""
 
@@ -261,6 +261,12 @@
 	icon_state = "flat_cap"
 	item_state = "detective"
 
+/obj/item/clothing/head/flatcap/solgov
+	name = "solarian flat cap"
+	desc = "A working solarian's hat, commonly used by Logistics Deck Officers."
+	icon_state = "flatcap_solgov"
+	item_state = "detective"
+
 /obj/item/clothing/head/hunter
 	name = "bounty hunting hat"
 	desc = "Ain't nobody gonna cheat the hangman in my town."
@@ -306,11 +312,6 @@
 	name = "rice hat"
 	desc = "Welcome to the rice fields, motherfucker."
 	icon_state = "rice_hat"
-
-/obj/item/clothing/head/lizard
-	name = "lizardskin cloche hat"
-	desc = "How many lizards died to make this hat? Not enough."
-	icon_state = "lizard"
 
 /obj/item/clothing/head/papersack
 	name = "paper sack hat"
@@ -380,7 +381,7 @@
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
 	if (slot == ITEM_SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 
@@ -416,11 +417,6 @@
 	name = "kippah"
 	desc = "Signals that you follow the Jewish Halakha. Keeps the head covered and the soul extra-Orthodox."
 	icon_state = "kippah"
-
-/obj/item/clothing/head/medievaljewhat
-	name = "medieval Jewish hat"
-	desc = "A silly looking hat, intended to be placed on the heads of oppressed religious minorities."
-	icon_state = "medievaljewhat"
 
 /obj/item/clothing/head/taqiyahwhite
 	name = "white taqiyah"

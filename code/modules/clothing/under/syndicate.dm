@@ -70,14 +70,6 @@
 	item_state = "g_suit"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/syndicate/soviet
-	name = "Ratnik 5 tracksuit"
-	desc = "Badly translated labels tell you to clean this in Vodka. Great for squatting in."
-	icon_state = "trackpants"
-	can_adjust = FALSE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	resistance_flags = NONE
-
 /obj/item/clothing/under/syndicate/combat
 	name = "combat uniform"
 	desc = "With a suit lined with this many pockets, you are ready to operate."
@@ -123,6 +115,12 @@
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/cybersun
+	name = "cybersun jumpsuit"
+	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive half-black-half-white aesthetic."
+	icon_state = "cybersun_agent"
+	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/syndicate/cybersun/research
 	name = "Cybersun coveralls"
 	desc = "Nomex coveralls worn by workers and research personnel employed by Cybersun industries."
 	icon_state = "cybersun"
@@ -130,12 +128,20 @@
 	alt_covers_chest = TRUE
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
 
+/obj/item/clothing/under/syndicate/cybersun/officer
+	name = "cybersun officer's suit"
+	desc = "A crimson-red suit used by the officers employed by Cybersun."
+	icon_state = "cybersun_officer"
+	alt_covers_chest = TRUE
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/under/syndicate/medic
 	name = "Cybersun medical jumpsuit"
 	desc = "Sterile coveralls worn by Cybersun Industries field medics for protection against biological hazards."
 	icon_state = "cybersun_med"
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/medic/skirt
 	name = "Cybersun medical jumpskirt"

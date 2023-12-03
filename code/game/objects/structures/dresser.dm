@@ -6,6 +6,8 @@
 	density = TRUE
 	anchored = TRUE
 
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
+
 /obj/structure/dresser/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WRENCH)
 		to_chat(user, "<span class='notice'>You begin to [anchored ? "unwrench" : "wrench"] [src].</span>")

@@ -156,6 +156,7 @@
 	name = "Operations"
 	icon_state = "bridge"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+	area_flags = NOTELEPORT
 	// medbay values
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"

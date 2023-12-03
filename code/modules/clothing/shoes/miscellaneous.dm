@@ -362,25 +362,17 @@
 	active = TRUE
 	set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 	set_light_on(active)
-	addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(lightUp)), 0.5 SECONDS)
 
 /obj/item/clothing/shoes/kindleKicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
 		set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 		lightCycle++
-		addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(lightUp)), 0.5 SECONDS)
 	else
 		lightCycle = 0
 		active = FALSE
 		set_light_on(active)
-
-/obj/item/clothing/shoes/russian
-	name = "russian boots"
-	desc = "Comfy shoes."
-	icon_state = "rus_shoes"
-	item_state = "rus_shoes"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	lace_time = 8 SECONDS
 
 /obj/item/clothing/shoes/cowboy
 	name = "cowboy boots"
@@ -445,26 +437,6 @@
 	desc = "A pair of authentic haute couture boots from Japanifornia. You doubt they have ever been close to cattle."
 	icon_state = "cowboy_fancy"
 	permeability_coefficient = 0.08
-
-/obj/item/clothing/shoes/cowboy/lizard
-	name = "lizard skin boots"
-	desc = "You can hear a faint hissing from inside the boots; you hope it is just a mournful ghost."
-	icon_state = "lizardboots_green"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 0) //lizards like to stay warm
-
-/obj/item/clothing/shoes/cowboy/lizard/masterwork
-	name = "\improper Hugs-The-Feet lizard skin boots"
-	desc = "A pair of masterfully crafted lizard skin boots. Finally a good application for the sector's most bothersome inhabitants."//:c
-	icon_state = "lizardboots_blue"
-
-/obj/effect/spawner/lootdrop/lizardboots
-	name = "random lizard boot quality"
-	desc = "Which ever gets picked, the lizard race loses"
-	icon = 'icons/obj/clothing/shoes.dmi'
-	icon_state = "lizardboots_green"
-	loot = list(
-		/obj/item/clothing/shoes/cowboy/lizard = 7,
-		/obj/item/clothing/shoes/cowboy/lizard/masterwork = 1)
 
 /obj/item/clothing/shoes/cookflops
 	desc = "All this talk of antags, greytiding, and griefing... I just wanna grill for god's sake!"
