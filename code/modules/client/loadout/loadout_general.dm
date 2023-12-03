@@ -183,3 +183,4 @@
 /datum/gear/rilena_poster
 	display_name = "poster, rilena"
 	path = /obj/item/poster/random_rilena
+	description = "A random poster of the RILENA series."

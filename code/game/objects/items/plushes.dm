@@ -773,7 +773,7 @@
 	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
 
 /obj/item/toy/plush/rilena
-	name = "RILENA:LMR Ri plushie"
+	name = "Ri plushie"
 	desc = "A plush of the protagonist of the popular combination video game series and webcomic RILENA."// Makes the iconic hurt sound from the game!" //sadly does not :pensive:
 	icon_state = "rilenaplush_ri"
 	attack_verb = list("blasted", "shot", "shmupped")
@@ -781,27 +781,27 @@
 	gender = FEMALE
 
 /obj/item/toy/plush/tali
-	name = "RILENA:LMR T4L1 plushie"
+	name = "T4L1 plushie"
 	desc = "A surprisingly soft plushie of a recurring miniboss from the popular combination video game series and webcomic RILENA. The cannon arm does not function."
 	icon_state = "rilenaplush_t4l1"
 	attack_verb = list("blasted", "shot", "cannoned")
 	gender = FEMALE
 
 /obj/item/toy/plush/sharai
-	name = "RILENA:LMR Sharai plushie"
+	name = "Sharai plushie"
 	desc = "A plushie of the four winged kepori boss from the popular combination video game series and webcomic RILENA."
 	icon_state = "rilenaplush_sharai"
 	attack_verb = list("blasted", "shot", "radial bursted")
 	gender = FEMALE
 
 /obj/item/toy/plush/xader
-	name = "RILENA:LMR Xader plushie"
+	name = "Xader plushie"
 	desc = "A plushie of the recurring transdimensional transgender shopkeep from the popular webseries RILENA."
 	icon_state = "rilenaplush_xader"
 	gender = FEMALE
 
 /obj/item/toy/plush/mora
-	name = "RILENA:LMR Mora plushie"
+	name = "Mora plushie"
 	desc = "A plushie of Mora from the popular webseries RILENA."
 	icon_state = "rilenaplush_mora"
 	gender = FEMALE

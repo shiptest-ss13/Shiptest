@@ -89,7 +89,7 @@
 	item_state = "hoodie_fbp"
 
 /obj/item/clothing/suit/hooded/hoodie/rilena
-	name = "RILENA:LMR K4L1 hoodie"
+	name = "K4L1 hoodie"
 	desc = "A hoodie themed to look like K4L1 from the popular webseries RILENA. It has a comfy pocket for keeping your hands warm."
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"

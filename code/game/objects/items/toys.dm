@@ -1371,7 +1371,7 @@
 	toysay = "I'm too old for this shit."
 
 /obj/item/toy/figure/tali
-	name = "RILENA:LMR T4L1 action figure"
+	name = "T4L1 action figure"
 	desc = "An action figure modeled after a recurring miniboss from the popular combination webcomic and video game RILENA. Unfortunately, the gun arm does not function."
 	icon_state = "tali"
 	toysay = "I'll take you down this time!"
