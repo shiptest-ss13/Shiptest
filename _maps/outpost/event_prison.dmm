@@ -3865,13 +3865,6 @@
 /obj/structure/spacevine,
 /turf/open/floor/pod/dark,
 /area/space)
-"lH" = (
-/obj/machinery/turretid{
-	pixel_y = 25;
-	id = "TurrentIDAICORE"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
 "lI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/stalkybush,
@@ -4321,11 +4314,6 @@
 	dir = 8;
 	name = "AI Core Lockdown";
 	pixel_x = 36
-	},
-/obj/machinery/turretid{
-	pixel_y = 25;
-	id = "TurrentIDAICORE";
-	name = "AI Core Remote Turret Panel"
 	},
 /obj/machinery/button/door{
 	id = "SecurityPrisonGates";
@@ -14617,12 +14605,6 @@
 	overlays_file = 'icons/obj/doors/airlocks/station/overlays.dmi';
 	assemblytype = /obj/structure/door_assembly/door_assembly_sec;
 	req_one_access_txt = "109"
-	},
-/turf/open/floor/concrete/slab_1,
-/area/space)
-"Sj" = (
-/obj/machinery/porta_turret/ai{
-	id = "TurrentIDAICORE"
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
@@ -46293,9 +46275,9 @@ iq
 iq
 iq
 iq
-Sj
 iq
-Sj
+iq
+iq
 iq
 iq
 RR
@@ -47138,7 +47120,7 @@ jm
 IJ
 iq
 iq
-lH
+IJ
 iq
 IJ
 uR
@@ -47565,9 +47547,9 @@ iq
 iq
 iq
 iq
-Sj
 iq
-Sj
+iq
+iq
 iq
 iq
 RR
