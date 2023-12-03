@@ -15,6 +15,9 @@
 /datum/map_template/outpost/elevator_indie
 	name = "elevator_indie"
 
+/datum/map_template/outpost/elevator_ice
+	name = "elevator_ice"
+
 
 /*
 	Independent Space Outpost //creative name!
@@ -135,7 +138,7 @@
 /datum/overmap/outpost/nanotrasen_ice
 	token_icon_state = "station_asteroid_0"
 	main_template = /datum/map_template/outpost/nanotrasen_ice
-	elevator_template = /datum/map_template/outpost/elevator_indie
+	elevator_template = /datum/map_template/outpost/elevator_ice
 	hangar_templates = list(
 		/datum/map_template/outpost/hangar/nt_ice_20x20,
 		/datum/map_template/outpost/hangar/nt_ice_40x20,
