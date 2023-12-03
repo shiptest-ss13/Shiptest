@@ -1,6 +1,21 @@
 
-#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
+#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 #define FIRING_PIN_REMOVAL_DELAY 50
+
+#define MANUFACTURER_NONE null
+#define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
+#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
+#define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
+#define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
+#define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
+#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
+#define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
+#define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
+#define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
+#define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
+#define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
+#define MANUFACTURER_DONKCO "the Donk! Co. logo"
+#define MANUFACTURER_PGF "the Etherbor Industries emblem"
 
 /obj/item/gun
 	name = "gun"
@@ -20,6 +35,9 @@
 	attack_verb = list("struck", "hit", "bashed")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
+
+	/// The manufacturer of this weapon. For flavor mostly. If none, this will not show.
+	var/manufacturer = MANUFACTURER_NONE
 
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
@@ -206,6 +224,10 @@
 
 	if(has_safety)
 		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
+
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()

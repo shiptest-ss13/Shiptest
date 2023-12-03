@@ -447,19 +447,9 @@
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
 	Mob.pixel_y += 2
 	.=..()
-	if(iscarbon(Mob))
-		INVOKE_ASYNC(src, PROC_REF(snap_check), Mob)
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
 	Mob.pixel_y -= 2
-
-/obj/structure/chair/plastic/proc/snap_check(mob/living/carbon/Mob)
-	if (Mob.nutrition >= NUTRITION_LEVEL_FAT)
-		to_chat(Mob, "<span class='warning'>The chair begins to pop and crack, you're too heavy!</span>")
-		if(do_after(Mob, 60, 1, Mob, 0))
-			Mob.visible_message("<span class='notice'>The plastic chair snaps under [Mob]'s weight!</span>")
-			new /obj/effect/decal/cleanable/plastic(loc)
-			qdel(src)
 
 /obj/item/chair/plastic
 	name = "folding plastic chair"

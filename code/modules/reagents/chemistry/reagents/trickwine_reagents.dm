@@ -5,7 +5,7 @@
 /datum/reagent/consumable/ethanol/trickwine/ash_wine
 	name = "Ashwine"
 	description = "A traditional sacrament for members of the Saint-Roumain Militia. Known to grant visions, and is used both for ritual and entertainment purposes aboard Saint-Roumain vessels."
-	color = "#293D25"
+	color = "#6CC66C"
 	boozepwr = 80
 	quality = DRINK_VERYGOOD
 	taste_description = "devotional energy and a hint of high-potency hallucinogens"
@@ -41,7 +41,7 @@
 /datum/reagent/consumable/ethanol/trickwine/ice_wine
 	name = "Icewine"
 	description = "A specialized brew utilized by members of the Saint-Roumain Militia, designed to assist in temperature regulation while working in hot environments. Known to give one the cold shoulder when thrown."
-	color = "#21EFEB"
+	color = "#C0F1EE"
 	boozepwr = 70
 	taste_description = "a cold night on the hunt"
 	glass_name = "Icewine"
@@ -74,7 +74,7 @@
 /datum/reagent/consumable/ethanol/trickwine/shock_wine
 	name = "Shockwine"
 	description = "A stimulating brew utilized by members of the Saint-Roumain Militia, created to allow trackers to keep up with highly mobile prey. Known to have a shocking effect when thrown"
-	color = "#00008b"
+	color = "#FEFEB8"
 	boozepwr = 70
 	taste_description = "the adrenaline of the chase"
 	glass_name = "Shockwine"
@@ -104,7 +104,7 @@
 /datum/reagent/consumable/ethanol/trickwine/hearth_wine
 	name = "Hearthwine"
 	description = "A fiery brew utilized by members of the Saint-Roumain Militia, engineered to cauterize wounds in the field. Goes out in a blaze of glory when thrown."
-	color = "#ff8c00"
+	color = "#FEE185"
 	boozepwr = 70
 	taste_description = "the heat of battle"
 	glass_name = "Hearthwine"
@@ -136,7 +136,7 @@
 /datum/reagent/consumable/ethanol/trickwine/force_wine
 	name = "Forcewine"
 	description = "A fortifying brew utilized by members of the Saint-Roumain Militia, created to protect against the esoteric. Known to act defensively when thrown."
-	color = "#8b009b"
+	color = "#709AAF"
 	boozepwr = 70
 	taste_description = "the strength of your convictions"
 	glass_name = "Forcewine"
@@ -170,7 +170,7 @@
 /datum/reagent/consumable/ethanol/trickwine/prism_wine
 	name = "Prismwine"
 	description = "A glittering brew utilized by members of the Saint-Roumain Militia, mixed to provide defense against the blasts and burns of foes and fauna alike. Softens targets against your own burns when thrown."
-	color = "#add8e6"
+	color = "#F0F0F0"
 	boozepwr = 70
 	taste_description = "the reflective quality of meditation"
 	glass_name = "Prismwine"
@@ -179,14 +179,18 @@
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_metabolize(mob/living/carbon/human/M)
 	..()
+	ADD_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
 	if(M.physiology.burn_mod <= initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 0.5
-		M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
+	M.add_filter("prism-wine", 2, list("type"="outline", "color"="#8FD7DF", "size"=1))
+	M.visible_message("<span class='warning'>[M] seems to shimmer with power!</span>")
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/on_mob_end_metabolize(mob/living/carbon/human/M)
+	REMOVE_TRAIT(M, TRAIT_REFLECTIVE, "trickwine")
 	if(M.physiology.burn_mod > initial(M.physiology.burn_mod))
 		M.physiology.burn_mod *= 2
-		M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
+	M.remove_filter("prism-wine")
+	M.visible_message("<span class='warning'>[M] has returned to normal!</span>")
 	..()
 
 /datum/reagent/consumable/ethanol/trickwine/prism_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)

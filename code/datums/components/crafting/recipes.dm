@@ -1169,7 +1169,7 @@
 	reqs = list(/obj/item/stack/sheet/glass = 5,
 				/obj/item/stack/sheet/mineral/plasma = 1)
 	tools = list(TOOL_WELDER)
-	category = CAT_MISC
+	category = CAT_DRINK
 
 /datum/crafting_recipe/fermenting_barrel
 	name = "Wooden Barrel"
