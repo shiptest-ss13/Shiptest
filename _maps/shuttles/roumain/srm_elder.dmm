@@ -417,6 +417,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/machinery/button{
+	dir = 2;
+	pixel_y = 21;
+	pixel_x = 9;
+	name = "Engine Shutters";
+	id = "elderengineshuts"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "eU" = (
@@ -3281,6 +3288,13 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/machinery/button{
+	dir = 1;
+	pixel_y = -23;
+	pixel_x = 9;
+	name = "Engine Shutters";
+	id = "elderengineshuts"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Tx" = (
@@ -3723,6 +3737,117 @@ sH
 sH
 sH
 sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+"}
+(2,1,1) = {"
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+"}
+(3,1,1) = {"
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+"}
+(4,1,1) = {"
+sH
+sH
+sH
+sH
+sH
+sH
 oY
 Mj
 Mj
@@ -3753,7 +3878,7 @@ sH
 sH
 sH
 "}
-(2,1,1) = {"
+(5,1,1) = {"
 sH
 sH
 sH
@@ -3790,7 +3915,7 @@ sH
 sH
 sH
 "}
-(3,1,1) = {"
+(6,1,1) = {"
 sH
 sH
 sH
@@ -3827,7 +3952,7 @@ sH
 sH
 sH
 "}
-(4,1,1) = {"
+(7,1,1) = {"
 sH
 sH
 sH
@@ -3864,7 +3989,7 @@ sH
 sH
 sH
 "}
-(5,1,1) = {"
+(8,1,1) = {"
 sH
 sH
 sH
@@ -3901,7 +4026,7 @@ lM
 sH
 sH
 "}
-(6,1,1) = {"
+(9,1,1) = {"
 sH
 sH
 sH
@@ -3938,7 +4063,7 @@ lM
 sH
 sH
 "}
-(7,1,1) = {"
+(10,1,1) = {"
 sH
 sH
 sH
@@ -3975,7 +4100,7 @@ lM
 sH
 sH
 "}
-(8,1,1) = {"
+(11,1,1) = {"
 sH
 sH
 sH
@@ -4012,7 +4137,7 @@ lM
 lM
 sH
 "}
-(9,1,1) = {"
+(12,1,1) = {"
 sH
 sH
 bW
@@ -4049,7 +4174,7 @@ BA
 BA
 sH
 "}
-(10,1,1) = {"
+(13,1,1) = {"
 sH
 sH
 bW
@@ -4086,7 +4211,7 @@ uY
 BA
 sH
 "}
-(11,1,1) = {"
+(14,1,1) = {"
 sH
 sH
 bW
@@ -4123,7 +4248,7 @@ uY
 BA
 sH
 "}
-(12,1,1) = {"
+(15,1,1) = {"
 sm
 sH
 bW
@@ -4160,7 +4285,7 @@ uY
 BA
 sH
 "}
-(13,1,1) = {"
+(16,1,1) = {"
 sH
 sH
 sH
@@ -4197,7 +4322,7 @@ sc
 BA
 bW
 "}
-(14,1,1) = {"
+(17,1,1) = {"
 sH
 sH
 sH
@@ -4234,7 +4359,7 @@ vn
 hV
 bW
 "}
-(15,1,1) = {"
+(18,1,1) = {"
 sH
 sH
 sH
@@ -4271,7 +4396,7 @@ iY
 bO
 bW
 "}
-(16,1,1) = {"
+(19,1,1) = {"
 sH
 sH
 sH
@@ -4308,7 +4433,7 @@ OV
 VQ
 bW
 "}
-(17,1,1) = {"
+(20,1,1) = {"
 sH
 sH
 sH
@@ -4345,7 +4470,7 @@ BA
 BA
 Uu
 "}
-(18,1,1) = {"
+(21,1,1) = {"
 sH
 sH
 sH
@@ -4382,7 +4507,7 @@ BA
 sH
 sH
 "}
-(19,1,1) = {"
+(22,1,1) = {"
 sH
 sH
 sH
@@ -4419,7 +4544,7 @@ BA
 sH
 sH
 "}
-(20,1,1) = {"
+(23,1,1) = {"
 sH
 sH
 sH
@@ -4456,7 +4581,7 @@ BA
 sH
 sH
 "}
-(21,1,1) = {"
+(24,1,1) = {"
 sH
 sH
 sH
@@ -4493,7 +4618,7 @@ BA
 sH
 sH
 "}
-(22,1,1) = {"
+(25,1,1) = {"
 sH
 sH
 sH
@@ -4530,7 +4655,7 @@ fi
 sH
 sH
 "}
-(23,1,1) = {"
+(26,1,1) = {"
 sH
 sH
 sH
@@ -4567,7 +4692,7 @@ fi
 sH
 sH
 "}
-(24,1,1) = {"
+(27,1,1) = {"
 sH
 sH
 sH
@@ -4604,7 +4729,7 @@ fi
 sH
 sH
 "}
-(25,1,1) = {"
+(28,1,1) = {"
 sH
 sH
 sH
@@ -4641,7 +4766,7 @@ fi
 sH
 sH
 "}
-(26,1,1) = {"
+(29,1,1) = {"
 sH
 sH
 sH
@@ -4678,7 +4803,7 @@ sH
 sH
 sH
 "}
-(27,1,1) = {"
+(30,1,1) = {"
 sH
 sH
 sH
@@ -4715,7 +4840,7 @@ sH
 sH
 sH
 "}
-(28,1,1) = {"
+(31,1,1) = {"
 sH
 sH
 sH
@@ -4752,7 +4877,7 @@ sH
 sH
 sH
 "}
-(29,1,1) = {"
+(32,1,1) = {"
 sH
 sH
 sH
@@ -4789,7 +4914,7 @@ sH
 sH
 sH
 "}
-(30,1,1) = {"
+(33,1,1) = {"
 sH
 sH
 sH
@@ -4814,6 +4939,117 @@ jV
 jV
 jV
 mr
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+"}
+(34,1,1) = {"
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+"}
+(35,1,1) = {"
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+"}
+(36,1,1) = {"
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
 sH
 sH
 sH
