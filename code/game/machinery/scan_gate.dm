@@ -17,7 +17,6 @@
 #define SCANGATE_ZOMBIE "zombie"
 #define SCANGATE_SPIDER "rachnid"
 #define SCANGATE_IPC "ipc"
-#define SCANGATE_SQUID "squid"
 #define SCANGATE_ETHEREAL "ethereal"
 #define SCANGATE_KEPORI "kepori"
 
@@ -250,6 +249,5 @@
 #undef SCANGATE_ZOMBIE
 #undef SCANGATE_SPIDER
 #undef SCANGATE_IPC
-#undef SCANGATE_SQUID
 #undef SCANGATE_ETHEREAL
 #undef SCANGATE_KEPORI

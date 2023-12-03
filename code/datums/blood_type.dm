@@ -48,7 +48,7 @@
 	compatible_types = list(/datum/blood_type/animal)
 
 /datum/blood_type/lizard
-	name = "L"
+	name = "S"
 	color = "#009696"
 	compatible_types = list(/datum/blood_type/lizard)
 

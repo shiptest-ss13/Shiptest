@@ -60,16 +60,13 @@
 	blood_type = "O-"
 
 /obj/item/reagent_containers/blood/lizard
-	blood_type = "L"
+	blood_type = "S"
 
 /obj/item/reagent_containers/blood/elzuose
 	blood_type = "E"
 
 /obj/item/reagent_containers/blood/synthetic
 	blood_type = "Coolant"
-
-/obj/item/reagent_containers/blood/squid
-	blood_type = "S"
 
 /obj/item/reagent_containers/blood/universal
 	blood_type = "U"

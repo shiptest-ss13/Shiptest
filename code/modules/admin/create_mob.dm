@@ -38,7 +38,6 @@
 	H.dna.features["moth_fluff"] = pick(GLOB.moth_fluff_list)
 	H.dna.features["spider_legs"] = pick(GLOB.spider_legs_list)
 	H.dna.features["spider_spinneret"] = pick(GLOB.spider_spinneret_list)
-	H.dna.features["squid_face"] = pick(GLOB.squid_face_list)
 	H.dna.features["kepori_feathers"] = pick(GLOB.kepori_feathers_list)
 	H.dna.features["kepori_body_feathers"] = pick(GLOB.kepori_body_feathers_list)
 	H.dna.features["vox_head_quills"] = pick(GLOB.vox_head_quills_list)
