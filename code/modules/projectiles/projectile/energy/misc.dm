@@ -17,3 +17,9 @@
 	damage_type = TOX
 	paralyze = 100
 	range = 7
+
+/obj/projectile/energy/buster
+	name = "buster blast"
+	icon_state = "pulse1"
+	damage = 0
+	damage_type = BURN

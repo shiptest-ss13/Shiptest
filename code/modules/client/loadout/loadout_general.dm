@@ -42,6 +42,10 @@
 	display_name = "coffee mug"
 	path = /obj/item/reagent_containers/food/drinks/britcup
 
+/datum/gear/rilena_mug
+	display_name = "coffee mug, rilena"
+	path = /obj/item/reagent_containers/food/drinks/rilenacup
+
 /datum/gear/lighter
 	display_name = "cheap lighter"
 	path = /obj/item/lighter/greyscale
@@ -77,6 +81,10 @@
 /datum/gear/laptop
 	display_name = "laptop computer"
 	path = /obj/item/modular_computer/laptop/preset/civilian
+
+/datum/gear/rilena_laptop
+	display_name = "rilena laptop computer"
+	path = /obj/item/modular_computer/laptop/preset/civilian/rilena
 
 /datum/gear/pen
 	display_name = "pen, black"
@@ -123,6 +131,14 @@
 	display_name = "toy, marketable knight plushie"
 	path = /obj/item/toy/plush/knight
 
+/datum/gear/ri
+	display_name = "toy, rilena ri plushie"
+	path = /obj/item/toy/plush/rilena
+
+/datum/gear/tali
+	display_name = "toy, rilena tali plushie"
+	path = /obj/item/toy/plush/tali
+
 // Shiptest edit
 /datum/gear/amongus
 	display_name = "toy, suspicious pill plushie"
@@ -163,3 +179,8 @@
 /datum/gear/surgical_mask
 	display_name = "surgical mask"
 	path = /obj/item/clothing/mask/surgical
+
+/datum/gear/rilena_poster
+	display_name = "poster, rilena"
+	path = /obj/item/poster/random_rilena
+	description = "A random poster of the RILENA series."
