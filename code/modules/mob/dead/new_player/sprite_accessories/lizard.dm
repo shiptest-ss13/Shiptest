@@ -20,6 +20,10 @@
 	name = "Light Belly"
 	icon_state = "lbelly"
 
+/datum/sprite_accessory/body_markings/cracks
+	name = "Cracks"
+	icon_state = "cracks"
+
 //Start tails
 
 /datum/sprite_accessory/tails
