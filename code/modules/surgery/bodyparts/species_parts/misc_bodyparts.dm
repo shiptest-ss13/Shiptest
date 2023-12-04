@@ -217,27 +217,6 @@
 	limb_id = "skeleton"
 	should_draw_greyscale = FALSE
 
-///MUSHROOM
-/obj/item/bodypart/head/mushroom
-	limb_id = "mush"
-	is_dimorphic = FALSE
-
-/obj/item/bodypart/chest/mushroom
-	limb_id = "mush"
-	is_dimorphic = FALSE
-
-/obj/item/bodypart/l_arm/mushroom
-	limb_id = "mush"
-
-/obj/item/bodypart/r_arm/mushroom
-	limb_id = "mush"
-
-/obj/item/bodypart/leg/left/mushroom
-	limb_id = "mush"
-
-/obj/item/bodypart/leg/right/mushroom
-	limb_id = "mush"
-
 ///GOLEMS (i hate xenobio)
 /obj/item/bodypart/head/golem
 	limb_id = "golem"

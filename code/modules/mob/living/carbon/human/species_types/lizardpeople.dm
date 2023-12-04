@@ -17,7 +17,7 @@
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
 	skinned_type = /obj/item/stack/sheet/animalhide/lizard
-	exotic_bloodtype = "L"
+	exotic_bloodtype = "S"
 	disliked_food = GRAIN | DAIRY | CLOTH | GROSS
 	liked_food = GORE | MEAT
 	inert_mutation = FIREBREATH
