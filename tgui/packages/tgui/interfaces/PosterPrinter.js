@@ -4,8 +4,6 @@ import {
   Box,
   Button,
   Dropdown,
-  Flex,
-  NumberInput,
   ProgressBar,
   Section,
 } from '../components';
@@ -13,7 +11,7 @@ import { Window } from '../layouts';
 
 export const PosterPrinter = (props, context) => {
   const { data } = useBackend(context);
-  const { has_toner, has_paper } = data;
+  const { has_paper, has_toner } = data;
 
   return (
     <Window title="PosterPrinter" width={320} height={512}>
@@ -73,10 +71,33 @@ const Toner = (props, context) => {
 
 const Options = (props, context) => {
   const { act, data } = useBackend(context);
-  const { has_toner, has_paper, poster_type } = data;
+  const { has_toner, poster_type } = data;
+
+  const posterTypes = ['poster_syndicate', 'poster_nanotrasen', 'poster_nanotrasen_old', 'poster_rilena', 'poster_solgov']
+  const selectedType = poster_type ?? posterTypes[0]
 
   return (
     <Section title="Options">
+      <Dropdown
+        width="100%"
+        options={posterTypes}
+        selected={selectedType}
+        onSelected={(value) =>
+          act('choose_type', {
+            poster_type: value,
+          })
+        }
+      />
+      <Button
+        disabled={!has_toner}
+        fluid
+        icon="images"
+        textAlign="center"
+        onClick={() => act('print')}
+      >
+        Print poster
+      </Button>
+      ))
       <Button
         mt={0.5}
         textAlign="center"

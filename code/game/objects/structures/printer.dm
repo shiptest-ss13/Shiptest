@@ -11,6 +11,7 @@
 	var/datum/weakref/loaded_item_ref
 	var/datum/weakref/printed_poster
 	var/obj/item/toner/toner_cartridge
+	var/poster_type
 
 /obj/machinery/printer/Initialize()
 	. = ..()
@@ -35,6 +36,8 @@
 
 /obj/machinery/printer/Destroy()
 	QDEL_NULL(toner_cartridge)
+	QDEL_NULL(loaded_item_ref)
+	QDEL_NULL(printed_poster)
 
 /obj/machinery/printer/attackby(obj/item/item, mob/user, params)
 	if(panel_open)
@@ -102,7 +105,10 @@
 			loaded_item_ref = null
 			update_icon()
 			return TRUE
-		if("print_solgov")
+		if("choose_type")
+			poster_type = params["poster_type"]
+			return TRUE
+		if("print")
 			if(busy)
 				to_chat(usr, span_warning("[src] is currently busy printing a poster. Please wait until it is finished."))
 				return FALSE
@@ -115,58 +121,7 @@
 			if(poster)
 				remove_poster()
 				to_chat(usr, span_warning("[src] ejects its current poster before printing a new one."))
-		if("print_rilena")
-			if(busy)
-				to_chat(usr, span_warning("[src] is currently busy printing a poster. Please wait until it is finished."))
-				return FALSE
-			if(toner_cartridge.charges - 1 < 0)
-				to_chat(usr, span_warning("There is not enough toner in [src] to print the poster, please replace the cartridge."))
-				return FALSE
-			if(!loaded)
-				to_chat(usr, span_warning("[src] has no paper in it! Please insert a sheet of paper."))
-				return FALSE
-			if(poster)
-				remove_poster()
-				to_chat(usr, span_warning("[src] ejects its current poster before printing a new one."))
-		if("print_syndicate")
-			if(busy)
-				to_chat(usr, span_warning("[src] is currently busy printing a poster. Please wait until it is finished."))
-				return FALSE
-			if(toner_cartridge.charges - 1 < 0)
-				to_chat(usr, span_warning("There is not enough toner in [src] to print the poster, please replace the cartridge."))
-				return FALSE
-			if(!loaded)
-				to_chat(usr, span_warning("[src] has no paper in it! Please insert a sheet of paper."))
-				return FALSE
-			if(poster)
-				remove_poster()
-				to_chat(usr, span_warning("[src] ejects its current poster before printing a new one."))
-		if("print_nanotrasen")
-			if(busy)
-				to_chat(usr, span_warning("[src] is currently busy printing a poster. Please wait until it is finished."))
-				return FALSE
-			if(toner_cartridge.charges - 1 < 0)
-				to_chat(usr, span_warning("There is not enough toner in [src] to print the poster, please replace the cartridge."))
-				return FALSE
-			if(!loaded)
-				to_chat(usr, span_warning("[src] has no paper in it! Please insert a sheet of paper."))
-				return FALSE
-			if(poster)
-				remove_poster()
-				to_chat(usr, span_warning("[src] ejects its current poster before printing a new one."))
-		if("print_nanotrasen_old")
-			if(busy)
-				to_chat(usr, span_warning("[src] is currently busy printing a poster. Please wait until it is finished."))
-				return FALSE
-			if(toner_cartridge.charges - 1 < 0)
-				to_chat(usr, span_warning("There is not enough toner in [src] to print the poster, please replace the cartridge."))
-				return FALSE
-			if(!loaded)
-				to_chat(usr, span_warning("[src] has no paper in it! Please insert a sheet of paper."))
-				return FALSE
-			if(poster)
-				remove_poster()
-				to_chat(usr, span_warning("[src] ejects its current poster before printing a new one."))
+			print_poster()
 		if("remove_toner")
 			if(issilicon(usr) || (ishuman(usr) && !usr.put_in_hands(toner_cartridge)))
 				toner_cartridge.forceMove(drop_location())
@@ -182,5 +137,37 @@
 		poster.forceMove(drop_location())
 	to_chat(user, "<span class='notice'>You take [poster] out of [src]. [busy ? "The [src] comes to a halt." : ""]</span>")
 
-/obj/machinery/printer/proc/print_poster(var/poster_type, mob/user)
+/obj/machinery/printer/proc/print_poster()
 	busy = TRUE
+	loaded_item_ref = null
+	update_icon()
+	playsound(src, 'sound/items/poster_being_created.ogg', 20, FALSE)
+	INVOKE_ASYNC(src, PROC_REF(animate_print))
+	switch(poster_type)
+		if("poster_syndicate")
+			var/obj/item/poster/random_contraband/poster = new /obj/item/poster/random_contraband()
+			printed_poster = WEAKREF(poster)
+		if("poster_solgov")
+			var/obj/item/poster/random_solgov/poster = new /obj/item/poster/random_solgov()
+			printed_poster = WEAKREF(poster)
+		if("poster_nanotrasen")
+			var/obj/item/poster/random_official/poster = new /obj/item/poster/random_official()
+			printed_poster = WEAKREF(poster)
+		if("poster_rilena")
+			var/obj/item/poster/random_rilena/poster = new /obj/item/poster/random_rilena()
+			printed_poster = WEAKREF(poster)
+		if("poster_nanotrasen_old")
+			var/obj/item/poster/random_retro/poster = new /obj/item/poster/random_retro()
+			printed_poster = WEAKREF(poster)
+	update_icon()
+
+/obj/machinery/printer/proc/animate_print()
+	icon_state = "print"
+	var/overlay_state = "print_poster"
+	var/mutable_appearance/overlay = mutable_appearance(icon, overlay_state)
+	overlays += overlay
+	addtimer(CALLBACK(src, PROC_REF(print_complete), overlay), 3.4 SECONDS)
+
+/obj/machinery/printer/proc/print_complete(mutable_appearance/remove_overlay)
+	icon_state = "printer"
+	overlays -= remove_overlay
