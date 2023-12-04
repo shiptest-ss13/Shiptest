@@ -220,7 +220,7 @@ export const Autolathe = (props, context) => {
                           maxValue={design.maxmult}
                           disabled={design.buildable}
                           backgroundColor={
-                            design.buildable ? '#0000000' : 'default'
+                            design.buildable ? '#00000000' : 'default'
                           }
                           onCommit={(e, value) =>
                             act('make', {
