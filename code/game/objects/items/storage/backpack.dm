@@ -80,7 +80,7 @@
 	STR.max_combined_w_class = 60
 
 /obj/item/storage/backpack/santabag/proc/regenerate_presents()
-	addtimer(CALLBACK(src, .proc/regenerate_presents), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(regenerate_presents)), 30 SECONDS)
 
 	var/mob/M = get(loc, /mob)
 	if(!istype(M))
@@ -336,7 +336,6 @@
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe,
 		/obj/item/clothing/under/syndicate/tacticool,
 		/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-		/obj/item/storage/fancy/cigarettes/cigpack_shadyjims,
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/clothing/neck/necklace/dope,
 		/obj/item/vending_refill/donksoft)

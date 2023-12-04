@@ -9,7 +9,40 @@
 	var/docking_error
 
 /datum/docking_ticket/New(_target_port, _issuer, _target, _docking_error)
-	target_port = _target_port
-	issuer = _issuer
-	target = _target
 	docking_error = _docking_error
+	if(docking_error)
+		return
+
+	if(!_target_port)
+		docking_error = "No target port specified!"
+		return
+	target_port = _target_port
+	if(target_port.current_docking_ticket)
+		docking_error = "[target_port] is already being docked to!"
+		return
+	target_port.current_docking_ticket = src
+
+	if(!_issuer)
+		docking_error = "No issuer overmap datum specified!"
+		return
+	issuer = _issuer
+
+	if(!_target)
+		docking_error = "No target overmap datum specified!"
+		return
+	target = _target
+	if(target.current_docking_ticket)
+		docking_error = "[target] is already docking!"
+		return
+	target.current_docking_ticket = src
+
+
+/datum/docking_ticket/Destroy(force, ...)
+	if(target)
+		target.current_docking_ticket = null
+		target = null
+	if(target_port)
+		target_port.current_docking_ticket = null
+		target_port = null
+
+	return ..()

@@ -120,7 +120,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		base.layer = NOT_HIGH_OBJ_LAYER
 		underlays += base
 	if(!has_cover)
-		INVOKE_ASYNC(src, .proc/popUp)
+		INVOKE_ASYNC(src, PROC_REF(popUp))
 
 /obj/machinery/porta_turret/proc/toggle_on(set_to)
 	var/current = on
@@ -369,7 +369,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	toggle_on(FALSE) //turns off the turret temporarily
 	update_appearance()
 	//6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
-	addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 6 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(toggle_on), TRUE), 6 SECONDS)
 	//turns it back on. The cover popUp() popDown() are automatically called in process(), no need to define it here
 
 /obj/machinery/porta_turret/emp_act(severity)
@@ -389,7 +389,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		toggle_on(FALSE)
 		remove_control()
 
-		addtimer(CALLBACK(src, .proc/toggle_on, TRUE), rand(60,600))
+		addtimer(CALLBACK(src, PROC_REF(toggle_on), TRUE), rand(60,600))
 
 /obj/machinery/porta_turret/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
@@ -398,7 +398,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			spark_system.start()
 		if(on && !(turret_flags & TURRET_FLAG_SHOOT_ALL_REACT) && !(obj_flags & EMAGGED))
 			turret_flags |= TURRET_FLAG_SHOOT_ALL_REACT
-			addtimer(CALLBACK(src, .proc/reset_attacked), 60)
+			addtimer(CALLBACK(src, PROC_REF(reset_attacked)), 60)
 
 /obj/machinery/porta_turret/proc/reset_attacked()
 	turret_flags &= ~TURRET_FLAG_SHOOT_ALL_REACT
@@ -778,9 +778,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(target)
 		setDir(get_dir(base, target))//even if you can't shoot, follow the target
 		shootAt(target)
-		addtimer(CALLBACK(src, .proc/shootAt, target), 5)
-		addtimer(CALLBACK(src, .proc/shootAt, target), 10)
-		addtimer(CALLBACK(src, .proc/shootAt, target), 15)
+		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 5)
+		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 10)
+		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 15)
 		return TRUE
 
 /obj/machinery/porta_turret/ai
@@ -838,6 +838,27 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/ship/solgov
 	faction = list("playerSolgov", "turret")
+
+/obj/machinery/porta_turret/ship/syndicate
+	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+/obj/machinery/porta_turret/ship/syndicate/weak
+	name = "Light Laser Turret"
+	desc = "A low powered turret designed by the Gorlex Maurauders during the ICW. Effectively weaponizes mining equipment."
+	stun_projectile = /obj/projectile/beam/disabler/weak
+	lethal_projectile = /obj/projectile/beam/weak/penetrator
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+
+/obj/machinery/porta_turret/ship/syndicate/heavy
+	name = "Heavy Laser Turret"
+	desc = "Produced by Cybersun, this turret is a duel mount of a propietary heavy laser, and crowd control taser system."
+	stun_projectile = /obj/projectile/energy/electrode
+	stun_projectile_sound = 'sound/weapons/taser.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/heavylaser
+	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
 
 ////////////////////////
 //Turret Control Panel//

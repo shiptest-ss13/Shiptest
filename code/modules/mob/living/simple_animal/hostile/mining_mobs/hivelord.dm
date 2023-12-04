@@ -94,7 +94,7 @@
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize(_source)
 	. = ..()
 	source = source
-	addtimer(CALLBACK(src, .proc/death), 100)
+	addtimer(CALLBACK(src, PROC_REF(death)), 100)
 	AddComponent(/datum/component/swarming)
 
 //Legion
@@ -222,7 +222,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), 50)
+	addtimer(CALLBACK(src, PROC_REF(death)), 50)
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
@@ -413,12 +413,13 @@
 		"Miner" = 44,
 		"Waldo" = 3,
 		"Ashwalker" = 7,
-		"Soldier" = 3,
+		"Soldier" = 5,
 		"Oldminer" = 8,
 		"Kobold" = 5,
 		"Golem" = 6,
 		"SRM" = 10,
-		pick("Shadow", "YeOlde", "Operative", "Cultist") = 4
+		"Operative" = 5,
+		pick("Shadow", "YeOlde") = 4
 		)
 	)
 	switch(type)
@@ -922,10 +923,12 @@
 			mask = /obj/item/clothing/mask/breath
 		if("Operative")
 			id_job = "Operative"
-			if(prob(15))
+			if(prob(40))
+				outfit = /datum/outfit/syndicatecommandocorpse
+			else if(prob(5))
 				outfit = /datum/outfit/syndicatestormtroopercorpse
 			else
-				outfit = /datum/outfit/syndicatecommandocorpse
+				outfit = /datum/outfit/syndicateramzicorpse
 		if("Waldo")//WE FINALLY FOUND HIM
 			name = "Waldo"
 			uniform = /obj/item/clothing/under/pants/jeans
@@ -1004,20 +1007,6 @@
 			glasses = /obj/item/clothing/glasses/blindfold
 			back = /obj/item/tank/internals/oxygen
 			mask = /obj/item/clothing/mask/breath
-		if("Cultist")
-			uniform = /obj/item/clothing/under/costume/roman
-			suit = /obj/item/clothing/suit/hooded/cultrobes
-			suit_store = /obj/item/tome
-			r_pocket = /obj/item/restraints/legcuffs/bola/cult
-			l_pocket = /obj/item/melee/cultblade/dagger
-			glasses =  /obj/item/clothing/glasses/hud/health/night/cultblind
-			back = /obj/item/storage/backpack/cultpack
-			backpack_contents = list(
-				/obj/item/reagent_containers/glass/beaker/unholywater = 1,
-				/obj/item/cult_shift = 1,
-				/obj/item/flashlight/flare/culttorch = 1,
-				/obj/item/stack/sheet/runed_metal = 15
-			)
 		if("SRM")
 			uniform = /obj/item/clothing/under/suit/roumain
 			shoes = /obj/item/clothing/shoes/workboots/mining
@@ -1036,5 +1025,11 @@
 			if(prob(75))
 				backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
 			if(prob(75))
-				backpack_contents += list(pick(/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock) = 1)
+				backpack_contents += list(pick(
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine,) = 2)
 	. = ..()

@@ -28,7 +28,7 @@
 	var/allow_switch_interact = TRUE
 
 	var/projectile_type = /obj/projectile/beam/emitter/hitscan //WS - Hitscan emitters
-	var/projectile_sound = 'sound/weapons/emitter.ogg'
+	var/projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	var/datum/effect_system/spark_spread/sparks
 
 	var/obj/item/gun/energy/gun
@@ -113,7 +113,7 @@
 
 /obj/machinery/power/emitter/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, PROC_REF(can_be_rotated)))
 
 /obj/machinery/power/emitter/proc/can_be_rotated(mob/user,rotation_type)
 	if (anchored)

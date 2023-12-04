@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\spaceruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/space
 	prefix = "_maps/RandomRuins/SpaceRuins/"
@@ -24,12 +24,6 @@
 	name = "Derelict Tradepost"
 	description = "A once-bustling tradestation that handled imports and exports from nearby stations now lays eerily dormant. \
 	The last received message was a distress call from one of the on-board officers, but we had no success in making contact again."
-
-/datum/map_template/ruin/space/mech_transport
-	id = "mech-transport"
-	suffix = "mechtransport.dmm"
-	name = "CF Corsair"
-	description = "Well, when is it getting here? I have bills to pay; very well-armed clients who want their shipments as soon as possible! I don't care, just find it!"
 
 /datum/map_template/ruin/space/onehalf
 	id = "onehalf"
@@ -65,12 +59,6 @@
 	name = "Aesthetic Outpost"
 	description = "Pause and remember-- You are unique.You are special. Every mistake, trial, and hardship has helped to sculpt your real beauty. \
 	Stop hating yourself and start appreciating and loving yourself!"
-
-/datum/map_template/ruin/space/gondoland
-	id = "gondolaasteroid"
-	suffix = "gondolaasteroid.dmm"
-	name = "Gondoland"
-	description = "Just an ordinary rock- wait, what's that thing?"
 
 /datum/map_template/ruin/space/clericden
 	id = "clericden"
@@ -115,12 +103,6 @@
 	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
 	You will have to power areas to raise the bolts on the doors. look out for secrets."
 
-/datum/map_template/ruin/space/spacegym
-	id = "Space_Gym"
-	suffix = "spacegym.dmm"
-	name = "Space Gym"
-	description = "A gym, lost in space, where many grunts and moaning could be heard."
-
 /datum/map_template/ruin/space/oldshuttle
 	id = "oldcode-nukeops"
 	suffix = "oldcodeops.dmm"
@@ -138,12 +120,6 @@
 	suffix = "fueldepot.dmm"
 	name = "Fuel Depot"
 	description = "An orbital refueling station with the remains of a ship lodged among the debris."
-
-/datum/map_template/ruin/space/nuclear_dump
-	id = "radioactivedump"
-	suffix = "nuclear_dump.dmm"
-	name = "Nuclear Waste Dump"
-	description = "An abandoned nuclear waste disposal zone, a relic of old-age spaceflight and a death sentence to any who dare enter..."
 
 /datum/map_template/ruin/space/ntfacility
 	id = "ntfacility"

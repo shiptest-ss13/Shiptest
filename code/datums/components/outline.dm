@@ -7,9 +7,9 @@
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	src.permanent = perm
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/OnExamine)
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/OnAttackBy)
-	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/OnClean)
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(OnExamine))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
+	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(OnClean))
 
 	var/atom/movable/A = parent
 	A.add_filter("sprite-bane", 2, list("type"="outline", "color"="#000000", "size"=1))
@@ -50,3 +50,4 @@
 		playsound(A, 'sound/effects/slosh.ogg', 50, TRUE)
 		A.visible_message("<span class='notice'>The outline around [A] is washed away!")
 		qdel(src)
+
