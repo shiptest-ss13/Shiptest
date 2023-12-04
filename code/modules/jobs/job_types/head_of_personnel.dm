@@ -123,4 +123,4 @@
 	suit = /obj/item/clothing/suit/jacket/leather/duster
 	glasses = /obj/item/clothing/glasses/hud/spacecop
 	accessory = /obj/item/clothing/accessory/holster
-	head = /obj/item/clothing/head/beret/lt
+	head = /obj/item/clothing/head/beret/command
