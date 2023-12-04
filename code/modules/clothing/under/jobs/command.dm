@@ -111,35 +111,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
-//Lieutenant
-
-/obj/item/clothing/under/rank/command
-	desc = "A standard command jumpsuit in the colours of the Lieutenant."
-	name = "\improper lieutenant jumpsuit"
-	icon_state = "lt"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/rank/command/skirt
-	desc = "A command jumpskirt in the colours of the Lieutenant."
-	name = "\improper lieutenant jumpskirt"
-	icon_state = "lt_skirt"
-	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
-/obj/item/clothing/under/rank/command/nt
-	desc = "A standard command jumpsuit in the colours of the Lieutenant."
-	name = "\improper lieutenant blue jumpsuit"
-	icon_state = "lt_nt"
-	item_state = "b_suit"
-
-/obj/item/clothing/under/rank/command/nt/skirt
-	desc = "A command jumpskirt in the colours of the Lieutenant."
-	name = "\improper lieutenant blue jumpskirt"
-	icon_state = "lt_nt_skirt"
-	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
+//Minuteman
 /obj/item/clothing/under/rank/command/minutemen
 	name = "colonial minutemen officer uniform"
 	desc = "A uniform used by officers of the Colonial Minutemen."

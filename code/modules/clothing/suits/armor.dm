@@ -397,12 +397,6 @@
 	icon_state = "armor_rouma_montagne"
 	item_state = "rouma_montagne_coat"
 
-/obj/item/clothing/suit/armor/vest/lieutenant
-	name = "lieutenant's armor"
-	desc = "An armored vest with a lieutenant's insignia imprinted on it."
-	icon_state = "armor_blueshield"
-	item_state = "blueshield"
-
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	name = "\improper Sonnensoldner gambison"
 	desc = "A standard armor vest fielded for SolGov's Sonnensoldners."

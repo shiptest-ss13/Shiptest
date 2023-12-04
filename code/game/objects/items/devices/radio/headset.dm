@@ -411,20 +411,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "A headset allowing the wearer to communicate with medbay and service."
 	icon_state = "med_headset"
 
-/obj/item/radio/headset/heads/lieutenant
-	name = "lieutenant's headset"
-	desc = "A lieutenant's headset."
-	icon_state = "com_headset"
-
-/obj/item/radio/headset/heads/lieutenant/alt
-	name = "lieutenant's bowman headset"
-	desc = "A lieutenant's headset. Protects ears from flashbangs."
-	icon_state = "com_headset_alt"
-
-/obj/item/radio/headset/heads/lieutenant/alt/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
-
 /obj/item/radio/headset/heads/rd
 	name = "\proper the research director's headset"
 	desc = "Headset of the fellow who keeps society marching towards technological singularity."
