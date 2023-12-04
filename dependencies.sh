@@ -27,4 +27,4 @@ export PYTHON_VERSION=3.7.9
 export AUXMOS_REPO=https://github.com/Putnam3145/auxmos
 
 #auxmos version
-export AUXMOS_VERSION=fa49dcf2405fcf860b42552512ee167a1b509357
+export AUXMOS_VERSION=434ed4ca7a0bf072f9861bd6e54552af8fb9e27f
