@@ -200,23 +200,23 @@
 			H.update_mutations_overlay() // no hulk lizard
 
 		if("gender")
-			if(!(H.gender in list("male", "female"))) //blame the patriarchy
+			if(!(H.gender in list("male", "female")))
 				return
 			if(H.gender == "male")
-				if(alert(H, "Become a Witch?", "Confirmation", "Yes", "No") == "Yes")
+				if(alert(H, "Become a Woman?", "Confirmation", "Yes", "No") == "Yes")
 					if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 						return
 					H.gender = "female"
-					to_chat(H, "<span class='notice'>Man, you feel like a woman!</span>")
+					to_chat(H, "<span class='notice'>You trans your gender. You're now a woman.</span>")
 				else
 					return
 
 			else
-				if(alert(H, "Become a Warlock?", "Confirmation", "Yes", "No") == "Yes")
+				if(alert(H, "Become a Man?", "Confirmation", "Yes", "No") == "Yes")
 					if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 						return
 					H.gender = "male"
-					to_chat(H, "<span class='notice'>Whoa man, you feel like a man!</span>")
+					to_chat(H, "<span class='notice'>You trans your gender. You're now a man.</span>")
 				else
 					return
 			H.dna.update_ui_block(DNA_GENDER_BLOCK)
