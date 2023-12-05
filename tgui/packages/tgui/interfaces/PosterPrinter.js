@@ -1,4 +1,3 @@
-import { sortBy } from 'common/collections';
 import { useBackend } from '../backend';
 import {
   Box,
@@ -30,7 +29,7 @@ export const PosterPrinter = (props, context) => {
             <Box color="average">No inserted paper.</Box>
           </Section>
         )}
-        {has_poster ?  (
+        {has_poster ? (
         <Section title="Remove Poster">
           <Button
             mt={0.5}
@@ -87,8 +86,8 @@ const Options = (props, context) => {
   const { act, data } = useBackend(context);
   const { has_toner, poster_type } = data;
 
-  const posterTypes = ['Syndicate', 'Nanotrasen', 'Nanotrasen (Retro)', 'RILENA', 'SolGov']
-  const selectedType = poster_type ?? 'No Poster Selected'
+  const posterTypes = ['Syndicate', 'Nanotrasen', 'Nanotrasen (Retro)', 'RILENA', 'SolGov'];
+  const selectedType = poster_type ?? 'No Poster Selected';
 
   return (
     <Section title="Options">
