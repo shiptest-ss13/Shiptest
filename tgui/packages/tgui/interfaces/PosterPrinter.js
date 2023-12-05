@@ -10,8 +10,8 @@ import {
 import { Window } from '../layouts';
 
 export const PosterPrinter = (props, context) => {
-  const { data } = useBackend(context);
-  const { has_paper, has_toner } = data;
+  const { act, data } = useBackend(context);
+  const { has_paper, has_toner, has_poster } = data;
 
   return (
     <Window title="PosterPrinter" width={320} height={512}>
@@ -27,9 +27,23 @@ export const PosterPrinter = (props, context) => {
           <Options />
         ) : (
           <Section title="Options">
-            <Box color="average">No inserted item.</Box>
+            <Box color="average">No inserted paper.</Box>
           </Section>
         )}
+        {has_poster ?  (
+        <Section title="Remove Poster">
+          <Button
+            mt={0.5}
+            textAlign="center"
+            icon="reply"
+            onClick={() => act('remove_poster')}
+          >
+            Remove poster
+          </Button>
+        </Section>) : (
+        <Section title="Remove Poster">
+          <Box color="average">No poster printed!</Box>
+        </Section>)}
       </Window.Content>
     </Window>
   );
@@ -73,8 +87,8 @@ const Options = (props, context) => {
   const { act, data } = useBackend(context);
   const { has_toner, poster_type } = data;
 
-  const posterTypes = ['poster_syndicate', 'poster_nanotrasen', 'poster_nanotrasen_old', 'poster_rilena', 'poster_solgov']
-  const selectedType = poster_type ?? posterTypes[0]
+  const posterTypes = ['Syndicate', 'Nanotrasen', 'Nanotrasen (Retro)', 'RILENA', 'SolGov']
+  const selectedType = poster_type ?? 'No Poster Selected'
 
   return (
     <Section title="Options">
@@ -97,7 +111,6 @@ const Options = (props, context) => {
       >
         Print poster
       </Button>
-      ))
       <Button
         mt={0.5}
         textAlign="center"
@@ -105,7 +118,7 @@ const Options = (props, context) => {
         fluid
         onClick={() => act('remove')}
       >
-        Remove item
+        Remove paper
       </Button>
     </Section>
   );
