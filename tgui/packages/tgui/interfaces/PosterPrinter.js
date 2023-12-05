@@ -1,11 +1,5 @@
 import { useBackend } from '../backend';
-import {
-  Box,
-  Button,
-  Dropdown,
-  ProgressBar,
-  Section,
-} from '../components';
+import { Box, Button, Dropdown, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
 export const PosterPrinter = (props, context) => {
@@ -30,19 +24,21 @@ export const PosterPrinter = (props, context) => {
           </Section>
         )}
         {has_poster ? (
-        <Section title="Remove Poster">
-          <Button
-            mt={0.5}
-            textAlign="center"
-            icon="reply"
-            onClick={() => act('remove_poster')}
-          >
-            Remove poster
-          </Button>
-        </Section>) : (
-        <Section title="Remove Poster">
-          <Box color="average">No poster printed!</Box>
-        </Section>)}
+          <Section title="Remove Poster">
+            <Button
+              mt={0.5}
+              textAlign="center"
+              icon="reply"
+              onClick={() => act('remove_poster')}
+            >
+              Remove poster
+            </Button>
+          </Section>
+        ) : (
+          <Section title="Remove Poster">
+            <Box color="average">No poster printed!</Box>
+          </Section>
+        )}
       </Window.Content>
     </Window>
   );
@@ -86,7 +82,13 @@ const Options = (props, context) => {
   const { act, data } = useBackend(context);
   const { has_toner, poster_type } = data;
 
-  const posterTypes = ['Syndicate', 'Nanotrasen', 'Nanotrasen (Retro)', 'RILENA', 'SolGov'];
+  const posterTypes = [
+    'Syndicate',
+    'Nanotrasen',
+    'Nanotrasen (Retro)',
+    'RILENA',
+    'SolGov',
+  ];
   const selectedType = poster_type ?? 'No Poster Selected';
 
   return (
