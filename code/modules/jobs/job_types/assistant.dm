@@ -163,6 +163,12 @@ Assistant
 
 	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
 
+/datum/outfit/job/assistant/roumain/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.faction |= list("roumain")
+
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"
 

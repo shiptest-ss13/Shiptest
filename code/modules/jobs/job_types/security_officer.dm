@@ -287,6 +287,12 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = null
 
+/datum/outfit/job/security/roumain/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
+	H.faction |= list("roumain")
+
 /datum/outfit/job/security/aipirate
 	name = "Nodesman (Security)"
 
