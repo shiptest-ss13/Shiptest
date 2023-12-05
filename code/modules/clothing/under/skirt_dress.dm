@@ -87,3 +87,10 @@
 	desc = "A preppy green skirt with a white blouse."
 	icon_state = "plaid_green"
 	item_state = "plaid_green"
+
+/obj/item/clothing/under/dress/rilena
+	name = "RILENA: LMR Ri cosplay"
+	desc = "A pretty red dress with big pink ribbons attached. Intended to be worn by Kepori cosplayers, but also fits other species."
+	icon_state = "rilena_dress"
+	item_state = "rilena_dress"
+	supports_variations = KEPORI_VARIATION
