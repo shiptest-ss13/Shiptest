@@ -39,6 +39,7 @@
 	QDEL_NULL(toner_cartridge)
 	QDEL_NULL(loaded_item_ref)
 	QDEL_NULL(printed_poster)
+	return ..()
 
 /obj/machinery/printer/attackby(obj/item/item, mob/user, params)
 	if(panel_open)
