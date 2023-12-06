@@ -326,14 +326,16 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/structure/barricade/wooden/crude,
-/obj/structure/barricade/wooden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 1;
+	id = "ice_shop1_window"
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
@@ -594,6 +596,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "ice_shop2_window"
+	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/vacant_rooms/shop)
 "ez" = (
@@ -814,6 +819,7 @@
 	dir = 1
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/structure/chair/office,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "gB" = (
@@ -990,6 +996,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/turf_decal/siding/white,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "ig" = (
@@ -1172,6 +1179,10 @@
 	dir = 5
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/item/storage/secure/safe{
+	dir = 4;
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "jI" = (
@@ -2336,6 +2347,8 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/firecloset,
 /obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/light/small/directional/north,
+/obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plating,
 /area/outpost/vacant_rooms/shop)
 "re" = (
@@ -2877,6 +2890,7 @@
 	dir = 1
 	},
 /obj/machinery/light/broken/directional/north,
+/obj/structure/chair/office,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "uE" = (
@@ -3794,7 +3808,7 @@
 	},
 /obj/machinery/button/door{
 	id = "ice_shop2_window";
-	name = "Window Shutters";
+	name = "Shop Shutters";
 	dir = 1;
 	pixel_y = 3;
 	pixel_x = 3
@@ -3908,10 +3922,10 @@
 "Cf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/raisins,
-/obj/effect/turf_decal/siding/white{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/siding/white{
+	dir = 9
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
 "Ch" = (
@@ -4645,6 +4659,9 @@
 /obj/effect/decal/cleanable/confetti,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 1
+	},
+/obj/effect/turf_decal/siding/white{
+	dir = 10
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/vacant_rooms/shop)
@@ -5630,6 +5647,10 @@
 	dir = 9
 	},
 /obj/item/radio/intercom/directional/north,
+/obj/item/storage/secure/safe{
+	dir = 8;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/vacant_rooms/shop)
 "PK" = (
@@ -6950,7 +6971,7 @@
 /obj/structure/window/reinforced,
 /obj/machinery/button/door{
 	id = "ice_shop1_window";
-	name = "Window Shutters";
+	name = "Shop Shutters";
 	dir = 1;
 	pixel_y = 3;
 	pixel_x = 3
