@@ -62,6 +62,12 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
+#include "icons/drink_icons.dm"
+#include "icons/greyscale_config.dm"
+#include "icons/inhands.dm"
+#include "icons/missing_icons.dm"
+#include "icons/spritesheets.dm"
+#include "icons/worn_icons.dm"
 #include "anchored_mobs.dm"
 #include "autowiki.dm"
 #include "bespoke_id.dm"
@@ -70,14 +76,10 @@
 #include "component_tests.dm"
 #include "connect_loc.dm"
 #include "create_and_destroy.dm"
-#include "drink_icons.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
-#include "greyscale_config.dm"
-#include "inhands.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
-#include "missing_icons.dm"
 #include "open_air.dm"
 #include "outfit_sanity.dm"
 #include "overmap.dm"
@@ -101,7 +103,6 @@
 #include "spawn_humans.dm"
 #include "species_unique_id.dm"
 #include "species_whitelists.dm"
-#include "spritesheets.dm"
 #include "stack_singular_name.dm"
 #include "subsystem_init.dm"
 #include "subsystem_metric_sanity.dm"
@@ -109,7 +110,6 @@
 #include "teleporters.dm"
 #include "timer_sanity.dm"
 #include "unit_test.dm"
-#include "worn_icons.dm"
 
 #ifdef REFERENCE_TRACKING_DEBUG //Don't try and parse this file if ref tracking isn't turned on. IE: don't parse ref tracking please mr linter
 #include "find_reference_sanity.dm"
