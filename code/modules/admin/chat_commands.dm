@@ -24,7 +24,11 @@
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Join Server"
 	embed.url = "byond://[world.internet_address]:[world.port]"
-	return new /datum/tgs_message_content()
+
+	var/datum/tgs_message_content/join = new()
+	join.embed = embed
+
+	return join
 
 /datum/tgs_chat_command/tgsstatus
 	name = "status"
@@ -42,6 +46,7 @@
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Server Status"
 	embed.url = "byond://[world.internet_address]:[world.port]"
+	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Admins", "(Active: [english_list(adm["present"])] AFK: [english_list(adm["afk"])] Stealth: [english_list(adm["stealth"])] Skipped: [english_list(adm["noflags"])])")
 	embed.fields += new /datum/tgs_chat_embed/field("Players", "(Active: [get_active_player_count(0,1,0)])")
@@ -71,6 +76,7 @@
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Server Status"
 	embed.url = "byond://[world.internet_address]:[world.port]"
+	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Players", length(GLOB.player_list))
 	embed.fields += new /datum/tgs_chat_embed/field("Admins", length(GLOB.admins))
@@ -164,6 +170,7 @@ GLOBAL_LIST(round_end_notifiees)
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "SDQL Query Results"
 	embed.description = text_res.Join("\n")
+	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Refs", refs ? refs.Join("\n") : "None")
 
 	var/datum/tgs_message_content/sdql = new()
@@ -198,6 +205,7 @@ GLOBAL_LIST(round_end_notifiees)
 	if(!length(manifest))
 		embed.description = "No crew manifest available."
 	else
+		embed.fields = list()
 		for(var/ship in manifest)
 			var/list/members = manifest[ship]
 			var/datum/tgs_chat_embed/field/ship_field = new(ship, members.Join("\n"))
@@ -215,10 +223,14 @@ GLOBAL_LIST(round_end_notifiees)
 
 /datum/tgs_chat_command/who/Run(datum/tgs_chat_user/sender, params)
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "__Players:__"
 
-	for(var/client/player as anything in GLOB.clients)
-		embed.description += "[player.ckey]\n"
+	if(!length(GLOB.clients))
+		embed.title = "__Players:__"
+		embed.description = "No players online."
+	else
+		embed.title = "__Players ([length(GLOB.clients)]):__"
+		for(var/client/player as anything in GLOB.clients)
+			embed.description += "[player.ckey]\n"
 
 	var/datum/tgs_message_content/who = new()
 	who.embed = embed
