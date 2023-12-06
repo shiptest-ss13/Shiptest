@@ -1,7 +1,7 @@
 /obj/item/implant
 	name = "implant"
 	icon = 'icons/obj/implants.dmi'
-	icon_state = "generic" //Shows up as the action button icon
+	icon_state = "lighting_bolt" //Idk seemes liek the best option, Needs a generic icon but this works
 	actions_types = list(/datum/action/item_action/hands_free/activate)
 	var/activated = TRUE //1 for implant types that can be activated, 0 for ones that are "always on" like mindshield implants
 	var/mob/living/imp_in = null

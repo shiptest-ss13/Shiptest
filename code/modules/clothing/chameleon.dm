@@ -353,7 +353,7 @@
 /obj/item/clothing/glasses/chameleon
 	name = "Optical Meson Scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting condition."
-	icon_state = "meson"
+	icon_state = "mesongoggles"
 	item_state = "meson"
 	resistance_flags = NONE
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
