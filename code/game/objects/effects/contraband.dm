@@ -60,6 +60,11 @@
 	poster_type = /obj/structure/sign/poster/minutemen/random
 	icon_state = "rolled_legit"
 
+/obj/item/poster/random_rilena
+	name = "random rilena poster"
+	poster_type = /obj/structure/sign/poster/rilena/random
+	icon_state = "rolled_rilena"
+
 // The poster sign/structure
 
 /obj/structure/sign/poster
@@ -1014,6 +1019,51 @@
 	/obj/structure/sign/poster/contraband/gec,
 	/obj/structure/sign/poster/contraband/d_day_promo,
 		)
+
+//RILENA poster pool. There are only five of these, so try not to go overboard with the random posters, okay? Expect not to see these mapped onto ships except in rolled up form, since they're supposed to be bought in the RILENA merch crate.
+
+/obj/structure/sign/poster/rilena
+	poster_item_name = "rilena poster"
+	poster_item_desc = "A poster with a vibrant purple backing, indicating it is for the popular webseries RILENA: LMR. It comes with adhesive backing, for easy pinning to any vertical surface."
+	poster_item_icon_state = "rolled_rilena"
+
+/obj/structure/sign/poster/rilena/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
+	. = ..()
+	AddComponent(/datum/component/art/rilena, GOOD_ART)
+
+/obj/structure/sign/poster/rilena/random
+	name = "random rilena poster"
+	icon_state = "random_rilena"
+	never_random = TRUE
+	random_basetype = /obj/structure/sign/poster/rilena
+	random_type = POSTER_SUBTYPES
+
+/obj/structure/sign/poster/rilena/rilena
+	name = "RILENA"
+	desc = "A RILENA: LMR poster featuring two of the more fan favorite characters, Ri and T4L1."
+	icon_state = "poster-rilena_rilena"
+
+/obj/structure/sign/poster/rilena/ri
+	name = "Ri"
+	desc = "A RILENA: LMR poster featuring Ri on her own."
+	icon_state = "poster-rilena_ri"
+
+/obj/structure/sign/poster/rilena/tali
+	name = "T4L1"
+	desc = "A RILENA: LMR poster featuring a fan favorite miniboss, T4L1."
+	icon_state = "poster-rilena_tali"
+
+/obj/structure/sign/poster/rilena/run
+	name = "Lenelasa Me Refi"
+	desc = "A RILENA: LMR poster featuring Ri running, a core mechanic of the series."
+	icon_state = "poster-rilena_run"
+
+/obj/structure/sign/poster/rilena/timeline
+	name = "Timeline"
+	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
+	icon_state = "poster-rilena_timeline"
+
+
 
 #undef PLACE_SPEED
 #undef POSTER_SUBTYPES
