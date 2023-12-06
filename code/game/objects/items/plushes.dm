@@ -772,6 +772,8 @@
 	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi' //todo: sort the god damn plushie inhands
 	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
 
+//RILENA PLSUHESH//
+
 /obj/item/toy/plush/rilena
 	name = "Ri plushie"
 	desc = "A plush of the protagonist of the popular combination video game series and webcomic RILENA."// Makes the iconic hurt sound from the game!" //sadly does not :pensive:
@@ -806,11 +808,64 @@
 	icon_state = "rilenaplush_mora"
 	gender = FEMALE
 
+/obj/item/toy/plush/kisime
+	name = "Kisime plushie"
+	desc = "A plushie of the iconic 'dollmaker' from the popular webseries RILENA."
+	icon_state = "rilenaplush_kisime"
+	gender = FEMALE
+
+/obj/item/toy/plush/qitirii
+	name = "Qi-Tirii plushie"
+	desc = "A plushie of the eccentric wizard inventor from the popular webseries RILENA."
+	icon_state = "rilenaplush_qitirii"
+	gender = FEMALE
+
+/obj/item/toy/plush/toki
+	name = "Toki plushie"
+	desc = "A plushie of the dollmaker's robotic minions. Hails from RILENA, a popular webseries."
+	icon_state = "rilenaplush_toki"
+	gender = FEMALE
+	var/random_toki = TRUE //if the toki chosen is random
+	var/rare_toki = 10 //chance for a rare style
+
+	var/static/list/toki_styles = list(\
+		"toki_leader",
+		"toki_comrade",
+		"toki_soldier",
+	)
+	var/static/list/toki_styles_rare = list(\
+		"toki_ri",
+		"toki_tali",
+	)
+
+/obj/item/toy/plush/toki/Initialize(mapload)
+	. = ..()
+	pick_random_toki(rare_toki)
+
+/obj/item/toy/plush/toki/proc/pick_random_toki(rare_toki)
+	if(random_toki)
+		var/toki_type
+		if(prob(rare_toki))
+			toki_type = pick(toki_styles_rare)
+		else
+			among_color = pick(toki_styles)
+		icon_state = "rilenaplush_" + toki_type
+
+//maybe figure this out later
+
+///mob/living/simple_animal/bot/toki
+//	name = "Toki plushie"
+//	desc = "A strangely heavy plushie of the dollmaker's robotic minions. Hails from RILENA, a popular webseries."
+//	icon_state = "rilenaplush_toki"
+//	gender = FEMALE
+
 /obj/item/toy/plush/kari
 	name = "knockoff RILENA plushie"
 	desc = "A plushie of a FBP Kepori. The tag calls it 'Kari' and claims it to be from 'RAYALA: RUNNING FROM EVIL'. The cannon arm does not function."
 	icon_state = "fbplush"
 	gender = FEMALE
+
+//RILENA end//
 
 /obj/item/toy/plush/among
 	name = "amoung pequeño"
