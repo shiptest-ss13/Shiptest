@@ -2,7 +2,7 @@
 /obj/item/bodypart/chest
 	name = BODY_ZONE_CHEST
 	desc = "It's impolite to stare at a person's chest."
-	icon_state = "human_chest"
+	icon_state = "human_chest_m"
 	max_damage = 200
 	body_zone = BODY_ZONE_CHEST
 	body_part = CHEST
