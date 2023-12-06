@@ -50,8 +50,12 @@
 
 	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
-	embed.fields += new /datum/tgs_chat_embed/field("Admins", "Active: [english_list(adm["present"], "None")]\nAFK: [english_list(adm["afk"], "None")]\nStealth: [english_list(adm["stealth"], "None")]\nSkipped: [english_list(adm["noflags"], "None")])")
+	embed.fields += new /datum/tgs_chat_embed/field("Admins", tgsadminwho())
 	embed.fields += new /datum/tgs_chat_embed/field("Players", "Total: [length(GLOB.clients)]\nActive: [get_active_player_count(FALSE, TRUE, FALSE)]\nAlive: [get_active_player_count(TRUE, TRUE, TRUE)]")
+
+	embed.fields += new /datum/tgs_chat_embed/field("Tickets", "Active: [length(GLOB.ahelp_tickets.active_tickets)]\nResolved: [length(GLOB.ahelp_tickets.resolved_tickets)]\nClosed: [length(GLOB.ahelp_tickets.closed_tickets)]")
+	embed.fields += new /datum/tgs_chat_embed/field("Interviews", "Open: [length(GLOB.interviews.open_interviews) - length(GLOB.interviews.interview_queue)]\nSubmitted: [length(GLOB.interviews.interview_queue)]\nClosed: [length(GLOB.interviews.closed_interviews)]")
+
 	embed.fields += new /datum/tgs_chat_embed/field("Mode", "[SSticker.mode ? SSticker.mode.name : "Not started"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME)
 	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[round(SStime_track.time_dilation_current, 0.1)]% ([round(SStime_track.time_dilation_avg, 0.1)]% avg)")
@@ -63,6 +67,37 @@
 	status.embed = embed
 
 	return status
+
+/datum/tgs_chat_command/subsystems
+	name = "subsystems"
+	help_text = "Gets the status of the server subsystems"
+	admin_only = TRUE
+	var/last_tgs_subsystems = 0
+
+/datum/tgs_chat_command/subsystems/Run(datum/tgs_chat_user/sender, params)
+	var/rtod = REALTIMEOFDAY
+	if(rtod - last_tgs_subsystems < TGS_STATUS_THROTTLE)
+		return new /datum/tgs_message_content("Please wait a few seconds before using this command again.")
+	last_tgs_subsystems = rtod
+
+	var/datum/tgs_chat_embed/structure/embed = new()
+	embed.title = "Server Subsystems"
+	embed.colour = COLOR_DARK_CYAN
+
+	embed.description = Master.stat_entry()
+
+	embed.fields = list()
+	for(var/datum/controller/subsystem/sub_system as anything in Master.subsystems)
+		if(params && !findtext(params, sub_system.name))
+			continue
+		var/datum/tgs_chat_embed/field/sub_system_entry = new ("\[[sub_system.state_letter()]] [sub_system.name]", sub_system.stat_entry())
+		sub_system_entry.is_inline = TRUE
+		embed.fields += sub_system_entry
+
+	var/datum/tgs_message_content/subsystems = new()
+	subsystems.embed = embed
+
+	return subsystems
 
 /datum/tgs_chat_command/tgscheck
 	name = "check"
@@ -84,7 +119,7 @@
 	embed.fields += new /datum/tgs_chat_embed/field("Players", "[length(GLOB.player_list) || "No players"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Admins", "[length(GLOB.admins) || "No admins"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME)
-	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[SStime_track.time_dilation_current]% ([SStime_track.time_dilation_avg]% avg)")
+	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[round(SStime_track.time_dilation_current, 0.1)]% ([round(SStime_track.time_dilation_avg, 0.1)]% avg)")
 
 	for(var/datum/tgs_chat_embed/field/field as anything in embed.fields)
 		field.is_inline = TRUE
@@ -127,7 +162,7 @@
 		return new /datum/tgs_message_content("Please specify a target.")
 	log_admin("Chat Name Check: [sender.friendly_name] on [params]")
 	message_admins("Name checking [params] from [sender.friendly_name]")
-	return new /datum/tgs_message_content(keywords_lookup(params, 1))
+	return new /datum/tgs_message_content(keywords_lookup(params, TRUE))
 
 /datum/tgs_chat_command/adminwho
 	name = "adminwho"
