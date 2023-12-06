@@ -163,14 +163,28 @@
 		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
 	if(prob(50))
 		head = /obj/item/clothing/head/welding
+	if(prob(75))
+		ears = /obj/item/radio/headset/headset_eng
 	else if(prob(50))
 		glasses = /obj/item/clothing/glasses/welding
-	if(prob(75))
-		accessory = /obj/item/clothing/accessory/armband/engine
 	if(prob(75))
 		back = pick(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/duffelbag/engineering, /obj/item/storage/backpack/messenger/engi)
 	if(prob(10))
 		back = /obj/item/fireaxe
+	for(var/i = 1 to 3)
+		if(prob(75))
+			backpack_contents += pickweight(list(
+				/obj/item/stack/tape/industrial/electrical = 1,
+				/obj/item/electronics/apc = 1,
+				/obj/item/multitool = 1,
+				/obj/item/pipe_dispenser = 1,
+				/obj/item/tank/internals/emergency_oxygen/engi = 1,
+				/obj/item/holosign_creator/engineering = 1,
+				/obj/item/extinguisher/advanced = 1,
+				)
+			)
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/engine
 
 /datum/outfit/generic/engineer
 	name = "Mechanic (Legion)"
@@ -195,9 +209,39 @@
 	if(prob(75))
 		uniform = pick(/obj/item/clothing/under/rank/medical/doctor, /obj/item/clothing/under/rank/medical/doctor/blue)
 	if(prob(75))
+		suit = pick(/obj/item/clothing/suit/toggle/labcoat, /obj/item/clothing/suit/apron/surgical ,/obj/item/clothing/suit/hooded/wintercoat/medical)
+	if(prob(75))
+		back = pick(/obj/item/storage/backpack/medic, /obj/item/storage/backpack/satchel/med, /obj/item/storage/backpack/duffelbag/med, /obj/item/storage/backpack/messenger/med)
+	if(prob(75))
+		gloves = /obj/item/clothing/gloves/color/white
+	if(prob(75))
+		mask = /obj/item/clothing/mask/surgical
+	if(prob(75))
+		shoes = /obj/item/clothing/shoes/sneakers/white
+	if(prob(75))
+		ears = /obj/item/radio/headset/headset_med
+	for(var/i = 1 to 3)
+		if(prob(75))
+			backpack_contents += pickweight(list(
+				/obj/item/storage/firstaid/medical = 1,
+				/obj/item/flashlight/pen = 1,
+				/obj/item/reagent_containers/glass/beaker = 2,
+				/obj/item/reagent_containers/dropper = 2,
+				/obj/item/storage/belt/medical = 1,
+				/obj/item/storage/box/syringes = 1,
+				/obj/item/reagent_containers/glass/bottle/toxin = 1,
+				/obj/item/reagent_containers/glass/bottle/morphine = 2,
+				/obj/item/reagent_containers/glass/bottle/epinephrine= 3,
+				/obj/item/reagent_containers/glass/bottle/charcoal = 3,
+				/obj/item/storage/box/rxglasses = 1
+				)
+			)
+	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/medblue
+
 /datum/outfit/generic/doctor
 	name = "Medical Doctor (Legion)"
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
