@@ -222,7 +222,7 @@
 	if(!istype(dock_target))
 		CRASH("Overmap datum [src] tried to dock to an invalid overmap datum.")
 	if(docked_to)
-		CRASH("Overmap datum [src] tried to dock to [docked_to] when it is already docked to another overmap datum.")
+		CRASH("Overmap datum [src] tried to dock to [dock_target] when it is already docked to another overmap datum ([docked_to])!.")
 
 	if(docking || current_docking_ticket)
 		return "Already docking!"
