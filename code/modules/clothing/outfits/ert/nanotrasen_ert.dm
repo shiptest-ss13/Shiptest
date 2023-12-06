@@ -82,12 +82,11 @@
 /datum/outfit/centcom/ert/security/alert
 	name = "ERT Security - High Alert"
 
+	suit_store = /obj/item/gun/energy/pulse/carbine/loyalpin
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/melee/baton/loaded=1)
-		suit_store = /obj/item/gun/energy/pulse/carbine/loyalpin
-
 
 /datum/outfit/centcom/ert/medic
 	name = "ERT Medic"
