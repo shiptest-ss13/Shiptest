@@ -208,6 +208,7 @@
 /obj/structure/fluff/clockwork
 	name = "Clockwork Fluff"
 	icon = 'icons/obj/clockwork_objects.dmi'
+	icon_state = "rare_pepe" //This should never be seen and i just found out that its in this file for some reason
 	deconstructible = FALSE
 
 /obj/structure/fluff/clockwork/alloy_shards

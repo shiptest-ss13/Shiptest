@@ -72,6 +72,7 @@
 	var/original_name
 	desc = "A large piece of space-resistant printed paper."
 	icon = 'icons/obj/contraband.dmi'
+	icon_state = "poster_ripped"
 	anchored = TRUE
 	var/ruined = FALSE
 	/// how do we want to handle the random poster pool? POSTER_SUBTYPES chooses randomly from subtypes, AKA how it was handled before
