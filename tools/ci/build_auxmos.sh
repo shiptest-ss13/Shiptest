@@ -18,6 +18,6 @@ git reset --hard FETCH_HEAD
 sudo apt-get install g++-multilib -y
 rustup target add i686-unknown-linux-gnu
 
-cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
+env PKG_CONFIG_ALLOW_CROSS=1 cargo rustc --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
 cp target/i686-unknown-linux-gnu/release/libauxmos.so  $GITHUB_WORKSPACE/libauxmos.so
 ldd $GITHUB_WORKSPACE/libauxmos.so
