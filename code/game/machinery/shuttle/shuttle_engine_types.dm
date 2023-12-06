@@ -159,10 +159,9 @@
 	. = ..()
 	if(!.)
 		return
-	if(!attached_heater)
-		if(!set_heater())
-			thruster_active = FALSE
-			return FALSE
+	if(!attached_heater && !set_heater())
+		thruster_active = FALSE
+		return FALSE
 
 /obj/machinery/power/shuttle/engine/fire/proc/set_heater()
 	for(var/direction in GLOB.cardinals)
