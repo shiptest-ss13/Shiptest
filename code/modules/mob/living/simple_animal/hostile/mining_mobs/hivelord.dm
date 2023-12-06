@@ -416,8 +416,7 @@
 		"Soldier" = 5,
 		"Oldminer" = 8,
 		"Kobold" = 5,
-		"Golem" = 6,
-		"SRM" = 10,
+		"SRM" = 6,
 		"Operative" = 5,
 		pick("Shadow", "YeOlde") = 4
 		)
@@ -797,119 +796,6 @@
 				r_pocket = /obj/item/kitchen/knife/combat/bone
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
-		if("Golem")
-			mob_species = pickweight(list(
-				/datum/species/golem/adamantine = 5,
-				/datum/species/golem/plasma = 10,
-				/datum/species/golem/diamond = 10,
-				/datum/species/golem/gold = 10,
-				/datum/species/golem/silver = 10,
-				/datum/species/golem/plasteel = 10,
-				/datum/species/golem/titanium = 10,
-				/datum/species/golem/plastitanium = 10
-				)
-			)
-			if(prob(70))
-				back = /obj/item/storage/backpack
-				backpack_contents = list()
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
-				if(prob(3))
-					backpack_contents += list(
-					/obj/item/storage/box/rndboards
-					)
-				if(prob(20))
-					backpack_contents += pickweight(list(
-						/obj/item/storage/box/stockparts/basic = 4,
-						/obj/item/storage/box/stockparts/t2 = 3,
-						/obj/item/storage/box/stockparts/t3 = 2,
-						/obj/item/storage/box/stockparts/deluxe = 1
-						)
-					)
-			if(prob(30))
-				glasses = pickweight(list(
-					/obj/item/clothing/glasses/meson = 2,
-					/obj/item/clothing/glasses/hud/health = 2,
-					/obj/item/clothing/glasses/hud/diagnostic =2,
-					/obj/item/clothing/glasses/science = 2,
-					/obj/item/clothing/glasses/welding = 2,
-					/obj/item/clothing/glasses/night = 1
-				)
-				)
-			if(prob(10))
-				belt = pickweight(list(
-					/obj/item/storage/belt/mining/vendor,
-					/obj/item/storage/belt/utility/full
-					)
-				)
-			if(prob(50))
-				neck = /obj/item/bedsheet/rd/royal_cape
-			if(prob(10))
-				l_pocket = pickweight(list(
-					/obj/item/crowbar/power,
-					/obj/item/screwdriver/power,
-					/obj/item/weldingtool/experimental
-					)
-				)
-			if(prob(10))
-				r_pocket = pickweight(list(
-					/obj/item/crowbar/power,
-					/obj/item/screwdriver/power,
-					/obj/item/weldingtool/experimental
-					)
-				)
 		if("YeOlde")
 			mob_gender = FEMALE
 			uniform = /obj/item/clothing/under/costume/maid

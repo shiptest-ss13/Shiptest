@@ -60,7 +60,7 @@
 		if(H?.dna?.species)
 			if(isabductor(H))
 				cost = (BASE_HUMAN_REWARD*24)
-			else if(isgolem(H) || iszombie(H) || isshadow(H) || isandroid(H))
+			else if(iszombie(H) || isshadow(H) || isandroid(H))
 				cost = (BASE_HUMAN_REWARD*20)
 			else if(isjellyperson(H) || ispodperson(H) || isalien(H))
 				cost = (BASE_HUMAN_REWARD*14)
