@@ -29,15 +29,6 @@
 	result = /obj/item/reagent_containers/food/snacks/kebab/tofu
 	subcategory = CAT_MEAT
 
-/datum/crafting_recipe/food/tailkebab
-	name = "lizard tail kebab"
-	reqs = list(
-		/obj/item/stack/rods = 1,
-		/obj/item/organ/tail/lizard = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/kebab/tail
-	subcategory = CAT_MEAT
-
 /datum/crafting_recipe/food/fiestaskewer
 	name = "Fiesta Skewer"
 	reqs = list(

@@ -438,26 +438,6 @@
 	icon_state = "cowboy_fancy"
 	permeability_coefficient = 0.08
 
-/obj/item/clothing/shoes/cowboy/lizard
-	name = "lizard skin boots"
-	desc = "You can hear a faint hissing from inside the boots; you hope it is just a mournful ghost."
-	icon_state = "lizardboots_green"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 0) //lizards like to stay warm
-
-/obj/item/clothing/shoes/cowboy/lizard/masterwork
-	name = "\improper Hugs-The-Feet lizard skin boots"
-	desc = "A pair of masterfully crafted lizard skin boots. Finally a good application for the sector's most bothersome inhabitants."//:c
-	icon_state = "lizardboots_blue"
-
-/obj/effect/spawner/lootdrop/lizardboots
-	name = "random lizard boot quality"
-	desc = "Which ever gets picked, the lizard race loses"
-	icon = 'icons/obj/clothing/shoes.dmi'
-	icon_state = "lizardboots_green"
-	loot = list(
-		/obj/item/clothing/shoes/cowboy/lizard = 7,
-		/obj/item/clothing/shoes/cowboy/lizard/masterwork = 1)
-
 /obj/item/clothing/shoes/cookflops
 	desc = "All this talk of antags, greytiding, and griefing... I just wanna grill for god's sake!"
 	name = "grilling sandals"

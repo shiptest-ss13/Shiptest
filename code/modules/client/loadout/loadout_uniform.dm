@@ -233,6 +233,10 @@
 	display_name = "dress-suitskirt, navy"
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
 
+/datum/gear/uniform/dress/rilena
+	display_name = "red dress, Ri cosplay"
+	path = /obj/item/clothing/under/dress/rilena
+
 //Premium
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
