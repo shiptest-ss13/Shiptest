@@ -31,9 +31,6 @@
 			if(initial(item_path.item_flags) & ABSTRACT)
 				continue
 
-		if(initial(obj_path.greyscale_colors) && initial(obj_path.greyscale_config)) //GAGS has its own unit test.
-			continue
-
 		var/icon = initial(obj_path.icon)
 		if(isnull(icon))
 			continue

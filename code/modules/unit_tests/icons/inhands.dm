@@ -32,11 +32,6 @@
 
 		var/skip_left
 		var/skip_right
-		if(initial(item_path.greyscale_colors)) //greyscale stuff has it's own unit test.
-			skip_left = initial(item_path.greyscale_config_inhand_left)
-			skip_right = initial(item_path.greyscale_config_inhand_right)
-			if(skip_left && skip_right)
-				continue
 
 		var/lefthand_file = initial(item_path.lefthand_file)
 		var/righthand_file = initial(item_path.righthand_file)

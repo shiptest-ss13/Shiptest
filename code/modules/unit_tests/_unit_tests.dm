@@ -63,7 +63,6 @@
 #endif
 
 #include "icons/drink_icons.dm"
-#include "icons/greyscale_config.dm"
 #include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
 #include "icons/spritesheets.dm"
