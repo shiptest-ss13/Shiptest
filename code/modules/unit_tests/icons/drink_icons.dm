@@ -2,8 +2,8 @@
 /datum/unit_test/glass_style_icons
 	/// The generic commonplace DMI for all normal drink sprites
 	var/generic_drink_loc = 'icons/obj/drinks/drinks.dmi'
-	/// The generic commonplace DMI for all mixed drink sprites
-	var/generic_mixed_drink_loc = 'icons/obj/drinks/mixed_drinks.dmi'
+	/// SHOULD BE The generic commonplace DMI for all mixed drink sprites
+	/// var/generic_mixed_drink_loc = 'icons/obj/drinks/mixed_drinks.dmi'
 
 /datum/unit_test/glass_style_icons/Run()
 	for(var/container_type in GLOB.glass_style_singletons)
@@ -25,8 +25,10 @@
 			// to see if it's just misplaced and the user needs to just correct it
 			if(style_icon != generic_mixed_drink_loc && icon_exists(generic_mixed_drink_loc, style_icon_state))
 				was_actually_in = "The icon was found in the mixed drinks dmi."
+			/*
 			else if(style_icon != generic_drink_loc && icon_exists(generic_drink_loc, style_icon_state))
 				was_actually_in = "The icon was found in the standard drinks dmi."
+			*/
 			// If it wasn't found in either of the generic spots it could be absent or otherwise in another file
 			else
 				was_actually_in = "The icon may be located in another dmi or is missing."
