@@ -687,7 +687,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /proc/send2tgs(msg,msg2)
 	msg = format_text(msg)
 	msg2 = format_text(msg2)
-	world.TgsTargetedChatBroadcast("[msg] | [msg2]", TRUE)
+	world.TgsTargetedChatBroadcast(new /datum/tgs_message_content("[msg] | [msg2]"), TRUE)
 
 /**
  * Sends a message to a set of cross-communications-enabled servers using world topic calls

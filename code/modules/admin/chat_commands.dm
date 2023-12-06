@@ -23,10 +23,9 @@
 /datum/tgs_chat_command/join/Run(datum/tgs_chat_user/sender, params)
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Join Server"
-	embed.url = "byond://[world.internet_address]:[world.port]"
-	embed.description = "Click the link above to join the server."
+	embed.description = "Enter this URL into the BYOND pager to join the server: byond://[world.internet_address]:[world.port]"
 
-	var/datum/tgs_message_content/join = new()
+	var/datum/tgs_message_content/join = new("Enter this URL into the BYOND pager to join the server: byond://[world.internet_address]:[world.port]")
 	join.embed = embed
 
 	return join
@@ -46,8 +45,7 @@
 
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Server Status"
-	embed.url = "byond://[world.internet_address]:[world.port]"
-	embed.description = REALTIMEOFDAY
+
 	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Admins", "(Active: [english_list(adm["present"])] AFK: [english_list(adm["afk"])] Stealth: [english_list(adm["stealth"])] Skipped: [english_list(adm["noflags"])])")
@@ -77,8 +75,7 @@
 
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Server Status"
-	embed.url = "byond://[world.internet_address]:[world.port]"
-	embed.description = REALTIMEOFDAY
+
 	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Players", "[length(GLOB.player_list) || "No players"]")
@@ -204,13 +201,19 @@ GLOBAL_LIST(round_end_notifiees)
 
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "__Crew Manifest:__"
-	embed.description = "No crew manifest available."
 
-	if(length(manifest))
+	if(!length(manifest))
+		embed.description = "No crew manifest available."
+	else
 		embed.fields = list()
 		for(var/ship in manifest)
-			var/list/members = manifest[ship]
-			var/datum/tgs_chat_embed/field/ship_field = new(ship, members.Join("\n"))
+			var/list/entries = manifest[department]
+			var/list/ship_entries = list()
+			for(var/entry in entries)
+				var/list/entry_list = entry
+				ship_entries += "[entry_list["name"]]: [entry_list["rank"]]"
+
+			var/datum/tgs_chat_embed/field/ship_field = new(ship, ship_entries.Join("\n"))
 			ship_field.is_inline = TRUE
 			embed.fields += ship_field
 
