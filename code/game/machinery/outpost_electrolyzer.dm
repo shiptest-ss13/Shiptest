@@ -105,9 +105,8 @@
 	else
 		playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
 
-	if(iscarbon(L))
-		if(L.stat == CONSCIOUS)
-			L.emote("scream")
+	if(iscarbon(L) && L.stat == CONSCIOUS)
+		L.emote("scream")
 
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Unconscious(100)
