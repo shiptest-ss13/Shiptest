@@ -23,9 +23,10 @@
 /datum/tgs_chat_command/join/Run(datum/tgs_chat_user/sender, params)
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Join Server"
+	embed.colour = COLOR_DARK_CYAN
 	embed.description = "Enter this URL into the BYOND pager to join the server: byond://[world.internet_address]:[world.port]"
 
-	var/datum/tgs_message_content/join = new("Enter this URL into the BYOND pager to join the server: byond://[world.internet_address]:[world.port]")
+	var/datum/tgs_message_content/join = new()
 	join.embed = embed
 
 	return join
@@ -44,15 +45,16 @@
 	var/list/adm = get_admin_counts()
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "Server Status"
+	embed.title = "Server Admin Status"
+	embed.colour = COLOR_DARK_CYAN
 
 	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
-	embed.fields += new /datum/tgs_chat_embed/field("Admins", "(Active: [english_list(adm["present"])] AFK: [english_list(adm["afk"])] Stealth: [english_list(adm["stealth"])] Skipped: [english_list(adm["noflags"])])")
-	embed.fields += new /datum/tgs_chat_embed/field("Players", "(Active: [get_active_player_count(0,1,0)])")
+	embed.fields += new /datum/tgs_chat_embed/field("Admins", "Active: [english_list(adm["present"], "None")]\nAFK: [english_list(adm["afk"], "None")]\nStealth: [english_list(adm["stealth"], "None")]\nSkipped: [english_list(adm["noflags"], "None")])")
+	embed.fields += new /datum/tgs_chat_embed/field("Players", "Total: [length(GLOB.clients)]\nActive: [get_active_player_count(FALSE, TRUE, FALSE)]\nAlive: [get_active_player_count(TRUE, TRUE, TRUE)]")
 	embed.fields += new /datum/tgs_chat_embed/field("Mode", "[SSticker.mode ? SSticker.mode.name : "Not started"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME)
-	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[SStime_track.time_dilation_current]% ([SStime_track.time_dilation_avg]% avg)")
+	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[round(SStime_track.time_dilation_current, 0.1)]% ([round(SStime_track.time_dilation_avg, 0.1)]% avg)")
 
 	for(var/datum/tgs_chat_embed/field/field as anything in embed.fields)
 		field.is_inline = TRUE
@@ -75,6 +77,7 @@
 
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Server Status"
+	embed.colour = COLOR_DARK_CYAN
 
 	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
@@ -82,6 +85,9 @@
 	embed.fields += new /datum/tgs_chat_embed/field("Admins", "[length(GLOB.admins) || "No admins"]")
 	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME)
 	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[SStime_track.time_dilation_current]% ([SStime_track.time_dilation_avg]% avg)")
+
+	for(var/datum/tgs_chat_embed/field/field as anything in embed.fields)
+		field.is_inline = TRUE
 
 	var/datum/tgs_message_content/status = new()
 	status.embed = embed
@@ -131,6 +137,7 @@
 /datum/tgs_chat_command/adminwho/Run(datum/tgs_chat_user/sender, params)
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Admins"
+	embed.colour = COLOR_DARK_CYAN
 	embed.description = tgsadminwho()
 
 	var/datum/tgs_message_content/adminwho = new()
@@ -169,6 +176,7 @@ GLOBAL_LIST(round_end_notifiees)
 
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "SDQL Query Results"
+	embed.colour = COLOR_DARK_CYAN
 	embed.description = text_res.Join("\n") || "No results."
 	embed.fields = list()
 	embed.fields += new /datum/tgs_chat_embed/field("Refs", refs ? refs.Join("\n") : "None")
@@ -201,6 +209,7 @@ GLOBAL_LIST(round_end_notifiees)
 
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "__Crew Manifest:__"
+	embed.colour = COLOR_DARK_CYAN
 
 	if(!length(manifest))
 		embed.description = "No crew manifest available."
@@ -228,6 +237,7 @@ GLOBAL_LIST(round_end_notifiees)
 
 /datum/tgs_chat_command/who/Run(datum/tgs_chat_user/sender, params)
 	var/datum/tgs_chat_embed/structure/embed = new()
+	embed.colour = COLOR_DARK_CYAN
 
 	if(!length(GLOB.clients))
 		embed.title = "__Players:__"
