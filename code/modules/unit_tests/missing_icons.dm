@@ -30,10 +30,9 @@
 			var/obj/item/item_path = obj_path
 			if(initial(item_path.item_flags) & ABSTRACT)
 				continue
-		/*
+
 		if(initial(obj_path.greyscale_colors) && initial(obj_path.greyscale_config)) //GAGS has its own unit test.
 			continue
-		*/
 
 		var/icon = initial(obj_path.icon)
 		if(isnull(icon))
@@ -54,7 +53,5 @@
 		if(icon_state in possible_icon_states)
 			for(var/file_place in possible_icon_states[icon_state])
 				match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
-		//log should be swapped to test fail once the master branch doesn't have any missing icons.
-		log_world("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
-		//TEST_FAIL("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
+		TEST_FAIL("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
 
