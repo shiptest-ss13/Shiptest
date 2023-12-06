@@ -368,6 +368,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 
 /obj/machinery/power/apc/update_icon_state()
+	update_appearance()
 	if(!update_state)
 		icon_state = "apc0"
 		return ..()
