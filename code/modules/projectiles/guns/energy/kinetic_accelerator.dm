@@ -49,11 +49,17 @@
 
 /obj/item/gun/energy/kinetic_accelerator/crowbar_act(mob/living/user, obj/item/I)
 	. = TRUE
-	if(modkits.len)
-		to_chat(user, "<span class='notice'>You pry the modifications out.</span>")
-		I.play_tool_sound(src, 100)
+	if(LAZYLEN(modkits))
+		var/list/choose_options = list()
 		for(var/obj/item/borg/upgrade/modkit/M in modkits)
-			M.uninstall(src)
+			choose_options += list(M.name = image(icon = M.icon, icon_state = M.icon_state))
+		var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+		if(picked_option)
+			to_chat(user, "<span class='notice'>You remove [picked_option].</span>")
+			I.play_tool_sound(src, 100)
+			for(var/obj/item/borg/upgrade/modkit/M in modkits)
+				if(M.name == picked_option)
+					M.uninstall(src)
 	else
 		to_chat(user, "<span class='notice'>There are no modifications currently installed.</span>")
 
