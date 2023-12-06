@@ -367,12 +367,6 @@
 	name = "Engineering Wing"
 	icon_state = "yellow"
 
-//Space Gym
-
-/area/ruin/space/has_grav/spacegym
-	name = "Space Gym"
-	icon_state = "firingrange"
-
 //scav_mining
 
 /area/ruin/space/has_grav/scav_mining/entrance
