@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Meta-class Freighter",
-	"prefix": "ISV",
+	"prefix": "NTSV",
 	"map_short_name": "Meta-class",
 	"description": "The Meta-class is a small freight vessel, and even before the ICW was a common sight on the Frontier as a tramp freighter, running independent contracts between the myriad outposts of the area (with, occasionally, some smuggling or mining on the side). Since the collapse of Nanotrasen’s logistics network in the Frontier region, Meta-classes operating in this capacity have exploded in popularity, and are likely to remain a very common sight wherever larger corporations such as Donk! Co. have yet to establish market dominance.",
 	"tags": [
@@ -11,9 +11,11 @@
 	"namelists": [
 		"GENERAL",
 		"SPACE",
+		"NANOTRASEN",
 		"HISTORICAL"
 	],
-	"map_path": "_maps/shuttles/independent/independent_meta.dmm",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_meta.dmm",
+	"starting_funds": 5000,
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/captain",
@@ -27,7 +29,7 @@
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
 		},
-		"Station Engineer": {
+		"Ship Engineer": {
 			"outfit": "/datum/outfit/job/engineer",
 			"slots": 1
 		},
@@ -35,9 +37,13 @@
 			"outfit": "/datum/outfit/job/miner",
 			"slots": 1
 		},
+		"Cargo Technician": {
+			"outfit": "/datum/outfit/job/cargo_tech",
+			"slots": 1
+		},
 		"Assistant": {
 			"outfit": "/datum/outfit/job/assistant",
-			"slots": 3
+			"slots": 2
 		}
 	},
 	"enabled": true
