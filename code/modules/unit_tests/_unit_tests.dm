@@ -72,6 +72,7 @@
 #include "create_and_destroy.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
+#include "inhands.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "missing_icons.dm"
