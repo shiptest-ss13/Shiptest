@@ -299,16 +299,11 @@
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/return_gas()
 	var/datum/gas_mixture/air_contents = airs[1]
-	if(!air_contents)
-		return
-	else
-		return air_contents.return_pressure()
+	return air_contents?.return_pressure()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/return_gas_capacity()
 	var/datum/gas_mixture/air_contents = airs[1]
-	if(!air_contents)
-		return
-	return air_contents.return_volume()
+	return air_contents?.return_volume()
 
 /obj/machinery/atmospherics/components/unary/shuttle/fire_heater/proc/update_gas_stats()
 	var/datum/gas_mixture/air_contents = airs[1]

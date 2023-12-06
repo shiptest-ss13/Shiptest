@@ -132,7 +132,6 @@
 	initial_gas_mix = ATMOS_TANK_FUEL
 
 /turf/open/floor/engine/hydrogen
-	article = "an"
 	name = "\improper hydrogen floor"
 	initial_gas_mix = ATMOS_TANK_HYDROGEN
 
