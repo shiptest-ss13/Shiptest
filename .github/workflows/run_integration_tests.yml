@@ -71,5 +71,6 @@ jobs:
 
       - name: Run Tests
         run: |
+          ldd libauxmos.so
           source $HOME/BYOND/byond/bin/byondsetup
           bash tools/ci/run_server.sh
