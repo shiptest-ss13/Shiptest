@@ -190,6 +190,7 @@
 			var/obj/item/stock_parts/cell/battery = tool
 			if(cell)
 				to_chat(user, "<span class='warning'>[src] already has a cell!</span>")
+				return
 			else //This should literally never be tripped unless someone tries to put a watch battery in it or something, but just in case
 				if(battery.maxcharge < power_cost)
 					to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")

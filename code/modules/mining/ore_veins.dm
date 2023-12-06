@@ -17,8 +17,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//The design process is that class 1 veins have a small chance of generating with class 2 ores and so on
 	//As higher class veins will be increasingly harder to mine
 	var/list/ore_list = list(
-		/obj/item/stack/ore/iron = 6,
-		/obj/item/stack/ore/plasma = 2,
+		/obj/item/stack/ore/iron = 7,
+		/obj/item/stack/ore/plasma = 3,
 		/obj/item/stack/ore/silver = 2,
 		/obj/item/stack/ore/uranium = 1,
 		/obj/item/stack/ore/titanium = 2,
@@ -45,6 +45,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/faction = list("hostile","mining")
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
+	var/spawner
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
 	var/wave_length = 2 MINUTES
@@ -82,7 +83,10 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	return..()
 
 /obj/structure/vein/proc/begin_spawning()
-	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
+	spawner = AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
+
+/obj/structure/vein/proc/toggle_spawning()
+
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
@@ -106,8 +110,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/iron = 6,
-		/obj/item/stack/ore/plasma = 2,
+		/obj/item/stack/ore/iron = 8,
+		/obj/item/stack/ore/plasma = 3,
 		/obj/item/stack/ore/silver = 4,
 		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 5,
@@ -129,8 +133,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/iron = 7,
-		/obj/item/stack/ore/plasma = 2,
+		/obj/item/stack/ore/iron = 9,
+		/obj/item/stack/ore/plasma = 3,
 		/obj/item/stack/ore/silver = 5,
 		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 6,
@@ -160,8 +164,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	//Ice planets earn a slightly higher rare ore chance on account of them being notably harder
 	//Alongside being a much more reliable source of plasma
 	ore_list = list(
-		/obj/item/stack/ore/iron = 5,
-		/obj/item/stack/ore/plasma = 6,
+		/obj/item/stack/ore/iron = 7,
+		/obj/item/stack/ore/plasma = 7,
 		/obj/item/stack/ore/silver = 3,
 		/obj/item/stack/ore/uranium = 1,
 		/obj/item/stack/ore/titanium = 2,
@@ -174,8 +178,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 8
 	vein_class = 2
 	ore_list = list(
-		/obj/item/stack/ore/iron = 6,
-		/obj/item/stack/ore/plasma = 8,
+		/obj/item/stack/ore/iron = 8,
+		/obj/item/stack/ore/plasma = 9,
 		/obj/item/stack/ore/silver = 5,
 		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 6,
@@ -190,8 +194,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	mining_charges = 10
 	vein_class = 3
 	ore_list = list(
-		/obj/item/stack/ore/iron = 5,
-		/obj/item/stack/ore/plasma = 8,
+		/obj/item/stack/ore/iron = 8,
+		/obj/item/stack/ore/plasma = 9,
 		/obj/item/stack/ore/silver = 6,
 		/obj/item/stack/ore/uranium = 2,
 		/obj/item/stack/ore/titanium = 6,
