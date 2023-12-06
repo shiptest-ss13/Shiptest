@@ -138,7 +138,7 @@
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Admins"
 	embed.colour = COLOR_DARK_CYAN
-	embed.description = tgsadminwho()
+	embed.description = tgsadminwho() || "No admins online."
 
 	var/datum/tgs_message_content/adminwho = new()
 	adminwho.embed = embed
