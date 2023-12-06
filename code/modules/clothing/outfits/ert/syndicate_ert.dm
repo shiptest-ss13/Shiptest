@@ -90,7 +90,7 @@
 /datum/outfit/centcom/ert/syndicate/gorlex/leader
 	name = "ERT - Syndicate Gorlex Loyalist Sergeant"
 
-	uniform = /obj/item/clothing/under/syndicate/aclf // lol
+	uniform = /obj/item/clothing/under/syndicate/gorlex
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	back = /obj/item/storage/backpack/satchel/sec
 	mask = /obj/item/clothing/mask/gas/sechailer
