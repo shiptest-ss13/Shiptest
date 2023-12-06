@@ -30,11 +30,6 @@
 		var/turf/other = (O.loc == src ? T : src)
 		if(!(vertical? (CANVERTICALATMOSPASS(O, other)) : (CANATMOSPASS(O, other))))
 			. = FALSE
-		if(O.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
-			conductivity_blocked_directions |= dir
-			T.conductivity_blocked_directions |= opp
-			if(!.)
-				return .
 
 /turf/proc/update_conductivity(turf/T)
 	var/dir = get_dir_multiz(src, T)
