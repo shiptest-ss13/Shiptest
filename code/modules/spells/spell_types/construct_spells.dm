@@ -291,11 +291,6 @@
 		return FALSE
 	return TRUE
 
-/obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift/golem
-	charge_max = 800
-	jaunt_in_type = /obj/effect/temp_visual/dir_setting/cult/phase
-	jaunt_out_type = /obj/effect/temp_visual/dir_setting/cult/phase/out
-
 /obj/effect/proc_holder/spell/targeted/projectile/dumbfire/juggernaut
 	name = "Gauntlet Echo"
 	desc = "Channels energy into your gauntlet - firing its essence forward in a slow moving, yet devastating, attack."
