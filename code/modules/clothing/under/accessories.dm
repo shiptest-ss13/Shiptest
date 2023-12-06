@@ -478,8 +478,6 @@
 /obj/item/clothing/accessory/holster/nukie
 	name = "operative holster"
 	desc = "A deep shoulder holster capable of holding almost any form of ballistic weaponry."
-	icon_state = "syndicate_holster"
-	item_state = "syndicate_holster"
 	w_class = WEIGHT_CLASS_BULKY
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/nukie
 
