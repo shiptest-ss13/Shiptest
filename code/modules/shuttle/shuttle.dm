@@ -598,7 +598,7 @@
 		all_shuttle_areas += M.shuttle_areas
 
 	for(var/turf/oldT as anything in old_turfs)
-		if(!(oldT?.loc in all_shuttle_areas))
+		if(!oldT || !(oldT.loc in all_shuttle_areas))
 			continue
 		var/area/old_area = oldT.loc
 		for(var/obj/docking_port/mobile/bottom_shuttle in all_towed_shuttles)

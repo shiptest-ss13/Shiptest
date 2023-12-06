@@ -404,3 +404,11 @@
 /obj/item/gun/energy/tesla_cannon/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+
+/obj/item/gun/energy/buster
+	name = "replica buster cannon"
+	icon_state = "buster"
+	item_state = "buster"
+	desc = "A replica of T4L1's buster cannon from the popular webseries RILENA. Fires a harmless energy pellet at the target."
+	ammo_type = list(/obj/item/ammo_casing/energy/buster)
+	weapon_weight = WEAPON_LIGHT
