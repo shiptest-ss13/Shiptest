@@ -54,8 +54,8 @@
 	embed.fields += new /datum/tgs_chat_embed/field("Round Time", ROUND_TIME)
 	embed.fields += new /datum/tgs_chat_embed/field("Time Dilation", "[SStime_track.time_dilation_current]% ([SStime_track.time_dilation_avg]% avg)")
 
-	for(var/datum/tgs_chat_embed/field/f as anything in embed.fields)
-		f.is_inline = TRUE
+	for(var/datum/tgs_chat_embed/field/field as anything in embed.fields)
+		field.is_inline = TRUE
 
 	var/datum/tgs_message_content/status = new()
 	status.embed = embed
@@ -207,7 +207,7 @@ GLOBAL_LIST(round_end_notifiees)
 	else
 		embed.fields = list()
 		for(var/ship in manifest)
-			var/list/entries = manifest[department]
+			var/list/entries = manifest[ship]
 			var/list/ship_entries = list()
 			for(var/entry in entries)
 				var/list/entry_list = entry
