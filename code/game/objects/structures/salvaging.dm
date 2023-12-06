@@ -368,6 +368,8 @@
 /obj/item/stack/ore/salvage
 	name = "salvage"
 	icon = 'icons/obj/salvage_structure.dmi'
+	icon_state = "smetal"
+	item_state = "smetal"
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
@@ -376,8 +378,6 @@
 /obj/item/stack/ore/salvage/scrapmetal
 	name = "scrap metal"
 	desc = "A collection of metal parts and pieces."
-	icon_state = "smetal"
-	item_state = "smetal"
 	points = 1
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)

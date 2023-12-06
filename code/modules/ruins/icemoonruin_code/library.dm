@@ -21,12 +21,3 @@
 /obj/item/paper/crumpled/fluff/stations/lavaland/library/diary2
 	name = "diary entry 18"
 	default_raw_text = "I've lost track of time. I lack the strength to even pick up books off the shelves. To think, after all this time spent searching for the library, I will die before I can so much as graze the depths of its knowledge."
-
-/obj/item/feather
-	name = "feather"
-	desc = "A dark, wilting feather. It seems as old as time."
-	icon = 'icons/obj/objects.dmi'
-	icon_state = "feather"
-	force = 0
-	throwforce = 0
-	w_class = WEIGHT_CLASS_TINY

@@ -74,6 +74,7 @@
 /obj/structure/fluff/bus
 	name = "bus"
 	desc = "GO TO SCHOOL. READ A BOOK."
+	icon_state = "backseat"
 	icon = 'icons/obj/bus.dmi'
 	density = TRUE
 	anchored = TRUE
@@ -126,6 +127,7 @@
 
 /obj/structure/fluff/divine
 	name = "Miracle"
+	icon_state = "trap_rand"
 	icon = 'icons/obj/hand_of_god_structures.dmi'
 	anchored = TRUE
 	density = TRUE
@@ -177,15 +179,6 @@
 	layer = ABOVE_OBJ_LAYER
 	anchored = TRUE
 	density = TRUE
-	deconstructible = FALSE
-
-/obj/structure/fluff/beach_towel
-	name = "beach towel"
-	desc = "A towel decorated in various beach-themed designs."
-	icon = 'icons/obj/fluff.dmi'
-	icon_state = "railing"
-	density = FALSE
-	anchored = TRUE
 	deconstructible = FALSE
 
 /obj/structure/fluff/beach_umbrella

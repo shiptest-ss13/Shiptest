@@ -28,8 +28,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/structure/spawner/ice_moon
 	name = "cave entrance"
 	desc = "A hole in the ground, filled with monsters ready to defend it."
-	icon = 'icons/mob/nest.dmi'
-	icon_state = "hole"
 	faction = list("mining")
 	max_mobs = 3
 	max_integrity = 250
