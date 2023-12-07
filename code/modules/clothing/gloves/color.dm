@@ -65,6 +65,7 @@
 	desc = "This is a totally safe idea."
 	icon_state = "yellowtape"
 	item_state = "ygloves"
+	mob_overlay_state = "sprayon"
 	shocks_remaining = 3
 
 /obj/item/clothing/gloves/color/yellow/sprayon/tape/Initialize()

@@ -325,6 +325,7 @@
 	name = "armor"
 	desc = "A slim armored vest that protects against most types of damage."
 	icon = 'icons/obj/clothing/suits/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
 	icon_state = "armor"
 	item_state = "armor"
 	blood_overlay_type = "armor"
