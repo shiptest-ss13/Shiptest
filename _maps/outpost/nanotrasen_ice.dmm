@@ -548,7 +548,6 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/vacant_rooms/shop)
 "dJ" = (
-/obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -994,6 +993,9 @@
 	color = "#543C30"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/camera{
+	dir = 8
+	},
 /turf/open/floor/concrete/tiles,
 /area/outpost/crew/lounge)
 "hz" = (
@@ -4095,6 +4097,10 @@
 	light_range = 2
 	},
 /area/outpost/exterior)
+"Bh" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/outpost/maintenance/fore)
 "Bj" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -6280,6 +6286,7 @@
 	pixel_y = -6;
 	bulb_power = 0.4
 	},
+/obj/machinery/camera,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/external)
 "QV" = (
@@ -6631,7 +6638,7 @@
 	},
 /area/outpost/exterior)
 "SY" = (
-/obj/effect/spawner/structure/window/reinforced/indestructable,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/outpost/crew/lounge)
 "Tb" = (
@@ -13950,7 +13957,7 @@ Hd
 Eh
 sq
 QC
-NA
+Bh
 MW
 zQ
 Dl
