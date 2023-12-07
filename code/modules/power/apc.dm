@@ -362,7 +362,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 	else if(update_state & UPSTATE_BLUESCREEN)
 		set_light_color(LIGHT_COLOR_BLUE)
 		set_light(lon_range)
-		return
 
 /obj/machinery/power/apc/update_icon_state()
 	if(!update_state)
