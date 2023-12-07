@@ -43,7 +43,7 @@
 	// Should ideally have multiple drinking glass datums associated (to check the correct one is seletced)
 	// As well as a value set from every var (name, description, icon, and icon state)
 	var/tested_reagent_type = /datum/reagent/consumable/ethanol/jack_rose
-	var/obj/item/reagent_containers/cup/glass/drinkingglass/glass = allocate(/obj/item/reagent_containers/cup/glass/drinkingglass)
+	var/obj/item/reagent_containers/food/drinks/drinkingglass/glass = allocate(/obj/item/reagent_containers/food/drinks/drinkingglass)
 	var/datum/glass_style/expected_glass_type = GLOB.glass_style_singletons[glass.type][tested_reagent_type]
 	TEST_ASSERT_NOTNULL(expected_glass_type, "Glass style datum for the tested reagent ([tested_reagent_type]) and container ([glass.type]) was not found.")
 
@@ -64,7 +64,7 @@
 /datum/unit_test/drink_icons
 
 /datum/unit_test/drink_icons/Run()
-	for(var/obj/item/reagent_containers/cup/glass/glass_subtypes as anything in subtypesof(/obj/item/reagent_containers/cup))
+	for(var/obj/item/reagent_containers/food/drinks/glass_subtypes as anything in subtypesof(/obj/item/reagent_containers/food/drinks))
 		var/glass_icon = initial(glass_subtypes.icon)
 		var/glass_icon_state = initial(glass_subtypes.icon_state)
 		if(!glass_icon_state)
