@@ -38,7 +38,6 @@
 	desc = "How're you gonna get 'em off, nerd?"
 	name = "spray-on insulated gloves"
 	icon_state = "sprayon"
-	item_state = "sprayon"
 	permeability_coefficient = 0
 	resistance_flags = ACID_PROOF
 	var/shocks_remaining = 10
@@ -64,7 +63,6 @@
 	name = "taped-on insulated gloves"
 	desc = "This is a totally safe idea."
 	icon_state = "yellowtape"
-	item_state = "ygloves"
 	mob_overlay_state = "sprayon"
 	shocks_remaining = 3
 
@@ -110,7 +108,6 @@
 	desc = "These gloves are fire-resistant."
 	name = "black gloves"
 	icon_state = "black"
-	item_state = "blackgloves"
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -131,14 +128,11 @@
 	name = "orange gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "orange"
-	item_state = "orangegloves"
 
 /obj/item/clothing/gloves/color/red
 	name = "red gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "red"
-	item_state = "redgloves"
-
 
 /obj/item/clothing/gloves/color/red/insulated
 	name = "insulated gloves"
@@ -151,49 +145,41 @@
 	name = "rainbow gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "rainbow"
-	item_state = "rainbowgloves"
 
 /obj/item/clothing/gloves/color/blue
 	name = "blue gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "blue"
-	item_state = "bluegloves"
 
 /obj/item/clothing/gloves/color/purple
 	name = "purple gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "purple"
-	item_state = "purplegloves"
 
 /obj/item/clothing/gloves/color/green
 	name = "green gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "green"
-	item_state = "greengloves"
 
 /obj/item/clothing/gloves/color/grey
 	name = "grey gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "gray"
-	item_state = "graygloves"
 
 /obj/item/clothing/gloves/color/light_brown
 	name = "light brown gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "lightbrown"
-	item_state = "lightbrowngloves"
 
 /obj/item/clothing/gloves/color/brown
 	name = "brown gloves"
 	desc = "A pair of gloves, they don't look special in any way."
 	icon_state = "brown"
-	item_state = "browngloves"
 
 /obj/item/clothing/gloves/color/captain
 	desc = "Regal white gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
 	name = "captain's gloves"
 	icon_state = "captain"
-	item_state = "egloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	cold_protection = HANDS
@@ -207,13 +193,12 @@
 	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
 	name = "captain's gloves"
 	icon_state = "captainnt"
-	item_state = "egloves"
 
 /obj/item/clothing/gloves/color/latex
 	name = "latex gloves"
 	desc = "Cheap sterile gloves made from latex. Transfers minor paramedic knowledge to the user via budget nanochips."
 	icon_state = "latex"
-	item_state = "latex"
+	item_state = "lgloves"
 	siemens_coefficient = 0.3
 	permeability_coefficient = 0.01
 	transfer_prints = TRUE
@@ -270,14 +255,14 @@
 	name = "white gloves"
 	desc = "These look pretty fancy."
 	icon_state = "white"
-	item_state = "wgloves"
+	item_state = "lgloves"
 	custom_price = 200
 
 /obj/item/clothing/gloves/color/evening
 	name = "evening gloves"
 	desc = "White satin gloves that rise up to the elbows. Excessively fancy."
 	icon_state = "evening_gloves"
-	item_state = "evening_gloves"
+	item_state = "lgloves"
 	custom_price = 200
 
 /obj/effect/spawner/lootdrop/gloves
@@ -301,3 +286,4 @@
 	name = "maid arm covers"
 	desc = "Cylindrical looking tubes that go over your arm, weird."
 	icon_state = "maid_arms"
+	item_state = "lgloves"

@@ -2,7 +2,7 @@
 	icon = 'icons/obj/radio.dmi'
 	name = "shortwave radio"
 	icon_state = "walkietalkie"
-	item_state = "walkietalkie"
+	item_state = "radio"
 	desc = "A basic handheld radio that communicates with local telecommunication networks."
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
