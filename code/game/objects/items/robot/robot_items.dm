@@ -692,7 +692,7 @@
 
 /obj/item/borg/sight/xray
 	name = "\proper X-ray vision"
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "securearea"
 	sight_mode = BORGXRAY
 

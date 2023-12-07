@@ -3,7 +3,7 @@
 /obj/item/wallframe/picture
 	name = "picture frame"
 	desc = "The perfect showcase for your favorite deathtrap memories."
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.5)
 	flags_1 = 0
 	icon_state = "frame-empty"
@@ -62,7 +62,7 @@
 /obj/structure/sign/picture_frame
 	name = "picture frame"
 	desc = "Every time you look it makes you laugh."
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "frame-empty"
 	var/obj/item/photo/framed
 	var/persistence_id
