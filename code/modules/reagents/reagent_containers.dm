@@ -140,6 +140,7 @@
 /obj/item/reagent_containers/AltClick(mob/user)
 	if(!can_interact(user))
 		return
+	. = ..()
 	if(can_have_cap)
 		if(cap_lost)
 			to_chat(user, "<span class='warning'>The cap seems to be missing! Where did it go?</span>")
