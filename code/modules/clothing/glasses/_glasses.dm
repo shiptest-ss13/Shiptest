@@ -158,7 +158,6 @@
 	name = "monocle"
 	desc = "Such a dapper eyepiece!"
 	icon_state = "monocle"
-	item_state = "headset" // lol
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/glasses/material

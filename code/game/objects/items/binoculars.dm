@@ -3,8 +3,6 @@
 	desc = "Used for long-distance surveillance."
 	item_state = "binoculars"
 	icon_state = "binoculars"
-	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	var/mob/listeningTo
