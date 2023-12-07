@@ -62,7 +62,6 @@
 #define TEST_OUTPUT_GREEN(text) (text)
 #endif
 
-#include "icons/drink_icons.dm"
 #include "icons/inhands.dm"
 #include "icons/missing_icons.dm"
 #include "icons/spritesheets.dm"
