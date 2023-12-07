@@ -18,7 +18,6 @@
 
 /turf/open/CanAtmosPass(turf/T, vertical = FALSE)
 	var/dir = vertical? get_dir_multiz(src, T) : get_dir(src, T)
-	var/opp = REVERSE_DIR(dir)
 	. = TRUE
 	if(vertical && !(zAirOut(dir, T) && T.zAirIn(dir, src)))
 		. = FALSE
