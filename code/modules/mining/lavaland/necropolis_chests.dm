@@ -667,7 +667,6 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "paradox_bag"
 	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
-	mob_overlay_state = "paradoxbag"
 	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = INDESTRUCTIBLE
 
