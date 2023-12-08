@@ -163,6 +163,11 @@
 	light_power = 0.6
 	},
 /area/ruin/rockplanet/shippingdock)
+"bO" = (
+/obj/effect/turf_decal/road,
+/obj/item/toy/snappop,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "bT" = (
 /obj/effect/turf_decal/weather/rock{
 	dir = 6
@@ -314,6 +319,7 @@
 	icon_state = "2-5"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/shard,
 /turf/open/floor/concrete{
 	light_range = 2;
 	light_power = 0.6
@@ -412,6 +418,13 @@
 	light_power = 0.6;
 	light_range = 2
 	},
+/area/ruin/rockplanet/shippingdock)
+"ee" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/shippingdock)
 "en" = (
 /turf/closed/wall/r_wall,
@@ -614,6 +627,19 @@
 /obj/item/reagent_containers/food/snacks/donut/choco,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/rockplanet/shippingdockoffice)
+"gb" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "gc" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -640,6 +666,14 @@
 	},
 /obj/machinery/power/tracker,
 /turf/open/floor/concrete/reinforced,
+/area/ruin/rockplanet/shippingdock)
+"gr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/toy/snappop,
+/turf/open/floor/concrete/slab_4{
+	light_power = 0.6;
+	light_range = 2
+	},
 /area/ruin/rockplanet/shippingdock)
 "gv" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
@@ -704,6 +738,20 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
+"hb" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/shard,
 /turf/open/floor/concrete{
 	light_range = 2;
 	light_power = 0.6
@@ -847,12 +895,8 @@
 /turf/open/floor/wood,
 /area/ruin/rockplanet/shippingdockoffice)
 "ib" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/obj/structure/closet/crate/large,
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/shippingdockwarehouse)
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ic" = (
 /obj/structure/fence{
 	dir = 1
@@ -884,6 +928,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockcustoms)
+"im" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-5"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/shard,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "ir" = (
 /obj/effect/turf_decal/weather/rock/corner{
 	dir = 8
@@ -892,6 +950,10 @@
 	light_range = 2;
 	light_power = 0.6
 	},
+/area/ruin/rockplanet/shippingdock)
+"iv" = (
+/obj/structure/fluff/fokoff_sign,
+/turf/open/floor/plating/asteroid/snow/lit/rockplanet,
 /area/ruin/rockplanet/shippingdock)
 "iB" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
@@ -918,6 +980,19 @@
 	icon_state = "1-2"
 	},
 /obj/structure/barricade/sandbags,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
+"iL" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "iQ" = (
@@ -1008,6 +1083,7 @@
 /area/ruin/rockplanet/shippingdock)
 "jZ" = (
 /obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "kb" = (
@@ -1015,6 +1091,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
+"kf" = (
+/obj/effect/turf_decal/road/line/edge/opaque/yellow{
+	dir = 1
+	},
+/obj/item/toy/snappop,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "km" = (
@@ -1041,6 +1124,13 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"kp" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/rockplanet/shippingdock)
 "ku" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1066,7 +1156,6 @@
 	dir = 4
 	},
 /obj/item/key,
-/obj/item/key,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "ky" = (
@@ -1084,6 +1173,15 @@
 	light_power = 0.6
 	},
 /area/ruin/rockplanet/shippingdock)
+"kI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "kJ" = (
 /obj/effect/turf_decal/industrial/loading{
 	dir = 8
@@ -1093,6 +1191,20 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/shippingdockwarehouse)
+"kV" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-9"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/rockplanet/shippingdock)
+"kW" = (
+/obj/item/ammo_box/magazine/zip_ammo_9mm{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "kX" = (
 /obj/structure/window/reinforced,
@@ -1159,6 +1271,19 @@
 	},
 /obj/effect/turf_decal/weather/rock{
 	dir = 5
+	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
+"lr" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/grille,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
 	},
 /turf/open/floor/concrete{
 	light_range = 2;
@@ -1288,6 +1413,10 @@
 "ml" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/large,
+/obj/item/bot_assembly/floorbot,
+/obj/item/bot_assembly/floorbot,
+/obj/item/bot_assembly/firebot,
+/obj/item/bot_assembly/firebot,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "mr" = (
@@ -1317,6 +1446,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/shippingdockoffice)
+"mC" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "mE" = (
 /obj/effect/turf_decal/road/edge{
 	dir = 1
@@ -1437,6 +1577,10 @@
 "nK" = (
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
@@ -1574,6 +1718,10 @@
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/closet/crate/solarpanel_small,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/gloves/color/fyellow,
+/obj/item/clothing/gloves/color/fyellow,
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/clothing/gloves/color/fyellow/old,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "oC" = (
@@ -1591,6 +1739,10 @@
 	light_power = 0.6
 	},
 /area/ruin/rockplanet/shippingdock)
+"pi" = (
+/obj/structure/flora/grass/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "pl" = (
 /obj/effect/turf_decal/industrial/stand_clear/white,
 /turf/open/floor/plasteel/tech,
@@ -1678,6 +1830,10 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/shippingdocksecure)
+"pS" = (
+/obj/structure/flora/grass/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "pT" = (
 /obj/item/trash/can,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1735,6 +1891,22 @@
 "qn" = (
 /turf/closed/wall/rust,
 /area/ruin/rockplanet/shippingdockoffice)
+"qo" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/rockplanet/shippingdock)
+"qB" = (
+/obj/effect/turf_decal/road/line/opaque/yellow{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/item/toy/snappop,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "qG" = (
 /obj/structure/table,
 /obj/machinery/door/window/brigdoor/eastright{
@@ -1754,16 +1926,12 @@
 	},
 /area/ruin/rockplanet/shippingdock)
 "qM" = (
-/obj/structure/rack,
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/item/clothing/neck/stethoscope,
-/obj/effect/spawner/lootdrop/maintenance/eight,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/rockplanet/shippingdockwarehouse)
+/obj/structure/flora/rock/rockplanet,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "qN" = (
 /obj/structure/closet/cardboard,
+/obj/item/stack/circuit_stack/full,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "qU" = (
@@ -1833,6 +2001,12 @@
 /obj/effect/turf_decal/industrial/hatch/red,
 /obj/structure/closet/crate/large,
 /obj/item/organ/cyberimp/arm/gun/taser,
+/obj/item/gun/energy/laser{
+	pin = null
+	},
+/obj/item/gun/energy/laser{
+	pin = null
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdocksecure)
 "rK" = (
@@ -1896,7 +2070,7 @@
 "sa" = (
 /obj/effect/turf_decal/rechargefloor,
 /obj/effect/turf_decal/industrial/warning/dust,
-/obj/mecha/working/ripley/cargo,
+/obj/effect/spawner/lootdrop/whiteship_cere_ripley,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "sc" = (
@@ -2182,6 +2356,27 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockoffice)
+"ue" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/shard,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
+"ui" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "ul" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -2286,6 +2481,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/shippingdock)
+"uZ" = (
+/obj/effect/turf_decal/road/line/opaque/yellow{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/grille,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "va" = (
 /turf/open/floor/concrete{
 	light_range = 2;
@@ -2321,6 +2529,8 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/concrete{
 	light_range = 2;
 	light_power = 0.6
@@ -2418,6 +2628,13 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdockcustoms)
+"wo" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/large,
+/obj/item/bot_assembly/secbot,
+/obj/item/bot_assembly/secbot,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "wp" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/weather/rock{
@@ -2519,6 +2736,7 @@
 	},
 /obj/item/solar_assembly,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/shippingdock)
 "wP" = (
@@ -2539,6 +2757,17 @@
 /area/ruin/rockplanet/shippingdock)
 "wY" = (
 /obj/effect/decal/remains/human,
+/obj/item/ammo_casing/spent{
+	pixel_x = 10;
+	pixel_y = 12
+	},
+/obj/item/ammo_casing/spent{
+	pixel_x = -14;
+	pixel_y = 1
+	},
+/obj/item/clothing/head/safety_helmet{
+	pixel_y = 7
+	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "xc" = (
@@ -2590,6 +2819,11 @@
 	light_range = 2
 	},
 /area/ruin/rockplanet/shippingdock)
+"xl" = (
+/obj/effect/turf_decal/industrial/stand_clear/red,
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/shippingdocksecure)
 "xn" = (
 /obj/effect/turf_decal/road,
 /turf/open/floor/concrete/pavement,
@@ -2731,6 +2965,10 @@
 	light_range = 2
 	},
 /area/ruin/rockplanet/shippingdock)
+"yx" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/turf/open/floor/plasteel/tech,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "yH" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /obj/structure/reagent_dispensers/watertank/high,
@@ -2752,6 +2990,10 @@
 "yJ" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/closet/cardboard,
+/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/modular_computer/laptop/preset/civilian,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "yN" = (
@@ -2874,6 +3116,20 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdock)
+"zL" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "zM" = (
 /turf/closed/wall/rust,
 /area/ruin/rockplanet/shippingdockcustoms)
@@ -2883,8 +3139,18 @@
 	},
 /obj/item/solar_assembly,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/shippingdock)
+"zS" = (
+/obj/effect/turf_decal/industrial/outline,
+/obj/structure/closet/cardboard,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/mask/gas/atmos,
+/obj/item/clothing/mask/gas/atmos,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "zT" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -2916,6 +3182,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/shippingdockoffice)
+"zX" = (
+/obj/structure/flora/tree/cactus,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ai" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2931,6 +3201,16 @@
 	light_power = 0.6
 	},
 /area/ruin/rockplanet/shippingdock)
+"Av" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/grille,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "AE" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -2976,6 +3256,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/toy/snappop,
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
@@ -2991,6 +3272,16 @@
 "AW" = (
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdock)
+"Bi" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/obj/item/toy/snappop,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/ruin/rockplanet/shippingdock)
 "Bl" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/pavement,
@@ -2999,7 +3290,6 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
-/obj/structure/closet/cardboard,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "Br" = (
@@ -3077,6 +3367,14 @@
 	light_power = 0.6;
 	light_range = 2
 	},
+/area/ruin/rockplanet/shippingdock)
+"BO" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-10"
+	},
+/obj/item/solar_assembly,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/shippingdock)
 "BX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -3412,6 +3710,14 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"ER" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/shard,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "EZ" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
 	dir = 1
@@ -3422,6 +3728,14 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"Fb" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-6"
+	},
+/obj/item/solar_assembly,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/rockplanet/shippingdock)
 "Fc" = (
 /obj/effect/turf_decal/industrial/outline,
 /obj/structure/closet/crate/large,
@@ -3538,7 +3852,7 @@
 "FV" = (
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/shippingdock)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "FX" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -3576,7 +3890,6 @@
 /obj/structure/safe,
 /obj/item/spacecash/bundle/pocketchange,
 /obj/item/spacecash/bundle/c10,
-/obj/item/storage/box/firingpins,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ruin/rockplanet/shippingdocksecure)
 "Gk" = (
@@ -3891,11 +4204,32 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/shippingdock)
+"IZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-10"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/rockplanet/shippingdock)
 "Jd" = (
 /obj/structure/railing,
 /obj/structure/table,
 /obj/item/radio,
 /turf/open/floor/plating,
+/area/ruin/rockplanet/shippingdock)
+"Ju" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
 /area/ruin/rockplanet/shippingdock)
 "Jz" = (
 /obj/machinery/light/dim/directional/north,
@@ -3914,7 +4248,11 @@
 "JD" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/shippingdock)
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"JE" = (
+/obj/structure/punji_sticks,
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "JF" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -3988,6 +4326,13 @@
 	light_power = 0.6
 	},
 /area/ruin/rockplanet/shippingdock)
+"Km" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/item/toy/snappop,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "Kq" = (
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/asteroid/snow/lit/rockplanet,
@@ -4046,6 +4391,16 @@
 /obj/effect/turf_decal/weather/rock{
 	dir = 8
 	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
+"KJ" = (
+/obj/effect/turf_decal/weather/rock{
+	dir = 8
+	},
+/obj/item/shard,
 /turf/open/floor/concrete{
 	light_range = 2;
 	light_power = 0.6
@@ -4202,7 +4557,6 @@
 /obj/item/clothing/head/helmet/blueshirt{
 	pixel_y = 9
 	},
-/obj/item/melee/classic_baton,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockcustoms)
@@ -4382,6 +4736,10 @@
 	light_power = 0.6
 	},
 /area/ruin/rockplanet/shippingdock)
+"Ns" = (
+/obj/machinery/power/solar,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ny" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4405,6 +4763,20 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/weather/rock/corner,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
+"NH" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/shard,
 /turf/open/floor/concrete{
 	light_range = 2;
 	light_power = 0.6
@@ -4444,9 +4816,26 @@
 /mob/living/simple_animal/crab/kreb,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"NU" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/ruin/rockplanet/shippingdock)
 "NY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/large,
+/obj/item/bot_assembly/ed209,
+/obj/item/bot_assembly/ed209,
+/obj/item/bot_assembly/ed209,
+/obj/item/bot_assembly/ed209,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "Oa" = (
@@ -4501,6 +4890,16 @@
 /obj/effect/turf_decal/weather/rock{
 	dir = 8
 	},
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/ruin/rockplanet/shippingdock)
+"Ov" = (
+/obj/effect/turf_decal/road/line/opaque/yellow{
+	dir = 4
+	},
+/obj/item/toy/snappop,
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
@@ -4645,6 +5044,13 @@
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
+	},
+/area/ruin/rockplanet/shippingdock)
+"Pr" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
 	},
 /area/ruin/rockplanet/shippingdock)
 "Ps" = (
@@ -4904,6 +5310,8 @@
 	},
 /obj/item/solar_assembly,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/shippingdock)
 "RW" = (
@@ -5131,6 +5539,7 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/warning{
 	dir = 10
 	},
+/obj/item/toy/snappop,
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
@@ -5157,6 +5566,12 @@
 	light_power = 0.6;
 	light_range = 2
 	},
+/area/ruin/rockplanet/shippingdock)
+"TK" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-9"
+	},
+/turf/open/floor/concrete/reinforced,
 /area/ruin/rockplanet/shippingdock)
 "TW" = (
 /obj/structure/cable{
@@ -5426,6 +5841,16 @@
 	light_range = 2
 	},
 /area/ruin/rockplanet/shippingdock)
+"VJ" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/obj/item/toy/snappop,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/ruin/rockplanet/shippingdock)
 "VK" = (
 /obj/effect/turf_decal/road,
 /obj/effect/decal/cleanable/plastic,
@@ -5510,6 +5935,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"Wn" = (
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Wp" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -5590,9 +6018,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/ash/large,
-/obj/effect/turf_decal/weather/rock{
-	dir = 9
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "Xe" = (
@@ -5713,6 +6138,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/light/small/directional/east,
+/obj/item/toy/snappop,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockcustoms)
 "XI" = (
@@ -5837,6 +6263,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/cardboard,
+/obj/item/bot_assembly/hygienebot,
+/obj/item/bot_assembly/hygienebot,
+/obj/item/bot_assembly/cleanbot,
+/obj/item/bot_assembly/cleanbot,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "Yx" = (
@@ -5860,6 +6290,7 @@
 /obj/effect/turf_decal/weather/rock{
 	dir = 5
 	},
+/obj/item/toy/snappop,
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
@@ -5993,17 +6424,17 @@
 /area/ruin/rockplanet/shippingdocksecure)
 "Zs" = (
 /obj/effect/turf_decal/industrial/outline/red,
-/obj/structure/closet/crate/secure/owned{
-	req_one_access_txt = "53"
-	},
 /obj/item/stack/sheet/mineral/diamond/five,
 /obj/item/stack/sheet/mineral/gold/five,
+/obj/structure/closet/crate/secure/loot,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdocksecure)
 "Zz" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
 	},
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard,
 /turf/open/floor/concrete{
 	light_range = 2;
 	light_power = 0.6
@@ -6036,7 +6467,7 @@
 "ZF" = (
 /obj/structure/flora/ash/garden/arid,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/ruin/rockplanet/shippingdock)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ZJ" = (
 /obj/effect/turf_decal/road,
 /obj/effect/turf_decal/weather/rock/corner{
@@ -6102,12 +6533,12 @@
 /area/ruin/rockplanet/shippingdock)
 
 (1,1,1) = {"
-Rp
+ib
 FV
-Rp
+ib
 ZF
-Rp
-Rp
+ib
+ib
 GP
 GP
 GP
@@ -6117,15 +6548,15 @@ GP
 GP
 GP
 GP
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
+ib
 GP
 GP
 GP
@@ -6138,48 +6569,48 @@ GP
 GP
 GP
 FV
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
+ib
 GP
 GP
 GP
 GP
 "}
 (2,1,1) = {"
-Rp
-Rp
-Rp
-Rp
-Ho
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+zX
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
 FV
 GP
 GP
@@ -6188,136 +6619,136 @@ GP
 GP
 GP
 GP
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Ho
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+zX
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
 GP
 "}
 (3,1,1) = {"
-Rp
-NR
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
+ib
+pi
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
+ib
 FV
-Rp
-Rp
-Rp
-Ho
-Rp
+ib
+ib
+ib
+zX
+ib
 ZF
-Rp
-sq
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
-Rp
+ib
+qM
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
+ib
+ib
 GP
 "}
 (4,1,1) = {"
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+Ns
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
 FV
-Rp
+ib
 GP
 "}
 (5,1,1) = {"
-Rp
-Rp
-sq
-Rp
+ib
+ib
+qM
+ib
 xR
 ic
 ic
@@ -6361,16 +6792,16 @@ ic
 ic
 ic
 jk
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (6,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 Mm
 Mm
@@ -6394,7 +6825,7 @@ va
 va
 Mm
 OI
-TW
+Ju
 TW
 TW
 RC
@@ -6414,16 +6845,16 @@ TW
 TW
 pe
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (7,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 Mm
 xd
@@ -6464,19 +6895,19 @@ va
 vM
 Mm
 ct
-Mm
+ER
 Cu
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (8,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 Mm
 PZ
@@ -6512,24 +6943,24 @@ dI
 ns
 YV
 AG
-ct
+ee
 fx
 ct
 fx
 qW
-fx
+mC
 XB
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (9,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 Mm
 PZ
@@ -6564,25 +6995,25 @@ um
 um
 qn
 qn
-JF
+lr
 ct
 aP
 ct
 eR
-vM
+qo
 tR
-XB
+gb
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 FV
 "}
 (10,1,1) = {"
 GP
 GP
-Rp
-Rp
+ib
+ib
 XI
 Mm
 Hd
@@ -6619,23 +7050,23 @@ bH
 qn
 qf
 ct
-eR
+ue
 wO
 tR
 vM
 tR
 XB
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (11,1,1) = {"
 GP
 GP
-Rp
-Rp
+ib
+ib
 XI
 va
 XD
@@ -6649,7 +7080,7 @@ ch
 CH
 Lh
 IV
-IV
+iv
 IV
 IV
 IV
@@ -6672,23 +7103,23 @@ Nc
 qn
 JF
 vM
-eR
-vM
-tR
+NU
+qo
+NH
 ct
 tR
 XB
 tQ
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (12,1,1) = {"
 GP
 GP
-Rp
-sq
+ib
+qM
 XI
 va
 Hd
@@ -6733,15 +7164,15 @@ wy
 XB
 Iv
 wp
-Rp
-Rp
-Rp
+ib
+ib
+ib
 "}
 (13,1,1) = {"
 GP
 GP
-Rp
-Rp
+ib
+ib
 XI
 va
 XD
@@ -6787,14 +7218,14 @@ XB
 uP
 aA
 Nh
-Rp
-Rp
+ib
+ib
 "}
 (14,1,1) = {"
 GP
 GP
-Rp
-NR
+ib
+pi
 XI
 va
 PZ
@@ -6840,14 +7271,14 @@ fT
 Ei
 Mm
 Gy
-Rp
-NR
+ib
+pi
 "}
 (15,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 XI
 va
 PZ
@@ -6893,14 +7324,14 @@ MO
 Ei
 Mm
 Gy
-Rp
-Rp
+ib
+ib
 "}
 (16,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 XI
 va
 CO
@@ -6947,13 +7378,13 @@ uP
 Px
 bT
 JD
-Rp
+ib
 "}
 (17,1,1) = {"
 GP
-Rp
-Rp
-NR
+ib
+ib
+pi
 MX
 va
 PZ
@@ -6998,15 +7429,15 @@ va
 cn
 tQ
 CV
-Rp
-Rp
-Rp
+ib
+ib
+ib
 "}
 (18,1,1) = {"
 GP
-Rp
-Ho
-Rp
+ib
+zX
+ib
 lp
 Qr
 se
@@ -7045,21 +7476,21 @@ jK
 TY
 cn
 bY
-EP
+gr
 EP
 zf
 cn
 Iv
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (19,1,1) = {"
 GP
-Rp
-Rp
-oi
+ib
+ib
+pS
 NR
 JI
 So
@@ -7103,16 +7534,16 @@ IK
 cn
 va
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (20,1,1) = {"
 GP
-NR
-Rp
-FM
+pi
+ib
+JE
 Sq
 NR
 Oe
@@ -7156,16 +7587,16 @@ CH
 zf
 va
 uP
-Rp
-Rp
+ib
+ib
 FV
 GP
 "}
 (21,1,1) = {"
 GP
-Rp
-sq
-NR
+ib
+qM
+pi
 FM
 oi
 JI
@@ -7188,7 +7619,7 @@ ob
 ob
 ob
 VX
-ZR
+zL
 va
 um
 iQ
@@ -7209,16 +7640,16 @@ EP
 cn
 va
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (22,1,1) = {"
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 Xr
 Rp
 oi
@@ -7262,16 +7693,16 @@ gc
 CH
 jK
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (23,1,1) = {"
-Rp
-NR
-Rp
-Rp
+ib
+pi
+ib
+ib
 Mt
 bj
 Sq
@@ -7315,16 +7746,16 @@ xT
 Mm
 TY
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (24,1,1) = {"
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 MX
 AI
 KG
@@ -7368,16 +7799,16 @@ xT
 Mm
 cn
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (25,1,1) = {"
 ZF
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 va
 va
@@ -7421,15 +7852,15 @@ xT
 Mm
 va
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (26,1,1) = {"
-Rp
-Rp
-Rp
+ib
+ib
+ib
 FV
 MX
 Mm
@@ -7474,16 +7905,16 @@ EP
 Mm
 va
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (27,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 cf
 lS
@@ -7527,16 +7958,16 @@ Xm
 VO
 va
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (28,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 if
 IY
@@ -7580,16 +8011,16 @@ sX
 va
 Mm
 uP
-Rp
-Ho
-Rp
+ib
+zX
+ib
 ZF
 "}
 (29,1,1) = {"
 GP
-Rp
-Rp
-NR
+ib
+ib
+pi
 MX
 AI
 wp
@@ -7625,7 +8056,7 @@ Ri
 Sq
 dv
 WJ
-JL
+Ov
 Xh
 Xk
 SM
@@ -7633,16 +8064,16 @@ md
 sX
 Mm
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (30,1,1) = {"
 GP
-sq
-Rp
-Rp
+qM
+ib
+ib
 XI
 va
 aA
@@ -7686,16 +8117,16 @@ Ti
 ch
 Mm
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (31,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 XI
 va
 cf
@@ -7719,7 +8150,7 @@ ob
 lQ
 ob
 ob
-ob
+VJ
 ob
 ob
 rV
@@ -7736,19 +8167,19 @@ Dz
 XZ
 Ti
 Ti
-ch
+Bi
 Mm
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (32,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 XI
 sl
 CV
@@ -7792,16 +8223,16 @@ pD
 ch
 xF
 uP
-Rp
-Rp
-NR
-Rp
+ib
+ib
+pi
+ib
 "}
 (33,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 NE
 bT
 IY
@@ -7845,16 +8276,16 @@ fz
 hN
 Mm
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (34,1,1) = {"
 GP
-Rp
-Ho
-Rp
+ib
+zX
+ib
 Ys
 Sq
 IY
@@ -7898,16 +8329,16 @@ zd
 ch
 cv
 HN
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (35,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 hm
 Sq
 IY
@@ -7951,16 +8382,16 @@ yT
 Ro
 Qr
 GO
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (36,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 hm
 Rp
 uT
@@ -8004,16 +8435,16 @@ po
 ca
 IY
 hT
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (37,1,1) = {"
 FV
-Rp
-Rp
-Rp
+ib
+ib
+ib
 Mt
 KG
 UA
@@ -8028,7 +8459,7 @@ PP
 ZB
 hG
 AQ
-II
+yx
 II
 Ks
 nJ
@@ -8037,7 +8468,7 @@ SJ
 Ui
 Nb
 pY
-qM
+XP
 nJ
 fk
 ul
@@ -8057,15 +8488,15 @@ wE
 IY
 wE
 ce
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (38,1,1) = {"
-Rp
-Rp
-Rp
+ib
+ib
+ib
 ZF
 MX
 Mm
@@ -8110,16 +8541,16 @@ Yc
 Rp
 jD
 Vf
-Rp
-Rp
+ib
+ib
 FV
 GP
 "}
 (39,1,1) = {"
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 MX
 Mm
 sU
@@ -8163,16 +8594,16 @@ Rp
 Rp
 Sq
 ce
-Rp
-Rp
+ib
+ib
 GP
 GP
 "}
 (40,1,1) = {"
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 MX
 cf
 Qr
@@ -8216,16 +8647,16 @@ Rp
 Sq
 By
 xf
-Rp
-Rp
+ib
+ib
 GP
 GP
 "}
 (41,1,1) = {"
-Rp
-sq
-Rp
-Rp
+ib
+qM
+ib
+ib
 MX
 Gy
 wE
@@ -8269,16 +8700,16 @@ gv
 fM
 UA
 uP
-Rp
-Rp
+ib
+ib
 GP
 GP
 "}
 (42,1,1) = {"
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 Hx
 CV
 wE
@@ -8289,7 +8720,7 @@ Ls
 Ej
 FN
 Th
-xn
+bO
 xn
 yf
 xn
@@ -8322,16 +8753,16 @@ ve
 ch
 va
 uP
-Rp
-Rp
+ib
+ib
 GP
 GP
 "}
 (43,1,1) = {"
 GP
-Rp
-NR
-Rp
+ib
+pi
+ib
 hm
 IY
 NR
@@ -8345,7 +8776,7 @@ BJ
 FD
 wu
 kb
-tC
+uZ
 Ew
 wu
 EQ
@@ -8358,9 +8789,9 @@ hL
 Ob
 wu
 wu
-wu
+Av
 kb
-tC
+qB
 iK
 wu
 wu
@@ -8375,16 +8806,16 @@ uq
 ZA
 Qr
 wH
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (44,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 Mt
 wp
 Rp
@@ -8399,11 +8830,11 @@ lZ
 lZ
 wM
 bZ
-KQ
+kf
 lZ
 Bl
 wY
-lZ
+kW
 wM
 bZ
 KQ
@@ -8428,16 +8859,16 @@ Ur
 Sq
 Rp
 fS
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (45,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 Gy
 Ur
@@ -8453,7 +8884,7 @@ DF
 oC
 oC
 oC
-ib
+oC
 gF
 oC
 oC
@@ -8463,13 +8894,13 @@ oC
 Io
 FX
 FX
-FX
+iL
 FX
 FX
 Zh
 gF
 oC
-oC
+Km
 ko
 EO
 ob
@@ -8481,19 +8912,19 @@ Or
 bj
 Sq
 nS
-Rp
-Sq
-Rp
+ib
+Wn
+ib
 GP
 "}
 (46,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 aA
-KG
+KJ
 UA
 tp
 va
@@ -8510,7 +8941,7 @@ IS
 IS
 IS
 IS
-qN
+LS
 LS
 MA
 bV
@@ -8535,21 +8966,21 @@ AI
 bj
 Sq
 FV
-Rp
-Rp
+ib
+ib
 GP
 "}
 (47,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 Mm
 ct
-qW
+Fb
 vM
-vM
+qo
 ct
 vM
 JF
@@ -8582,21 +9013,21 @@ Lb
 Lb
 Lb
 UW
-UW
+kp
 UW
 RV
 AI
 fd
-Rp
-Rp
-Rp
+ib
+ib
+ib
 GP
 "}
 (48,1,1) = {"
 GP
-Rp
-Rp
-Ho
+ib
+ib
+zX
 MX
 va
 Mm
@@ -8613,7 +9044,7 @@ mu
 NT
 UT
 Bm
-yJ
+zS
 BH
 hE
 nV
@@ -8623,7 +9054,7 @@ vP
 Mg
 Rd
 Mg
-Rd
+xl
 Mg
 Rd
 Eg
@@ -8637,26 +9068,26 @@ gR
 Td
 Td
 WO
-va
+Pr
 Mm
 ZS
-Rp
-NR
-Rp
-Rp
+ib
+pi
+ib
+ib
 "}
 (49,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 va
 Xj
 Xj
 mi
 mi
-bo
+BO
 Xj
 JF
 en
@@ -8685,7 +9116,7 @@ PT
 XG
 JF
 DA
-DA
+TK
 DA
 lc
 lc
@@ -8693,16 +9124,16 @@ FZ
 DA
 Mm
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (50,1,1) = {"
 GP
 FV
-Rp
-Rp
+ib
+ib
 MX
 va
 va
@@ -8710,12 +9141,12 @@ cT
 Xg
 km
 km
-Xg
+im
 Yx
 PP
 PP
 yH
-NY
+wo
 oz
 Yu
 Tv
@@ -8739,28 +9170,28 @@ bV
 CM
 Nq
 Nq
-vt
+hb
 Nq
 vt
 Zz
 va
 Mm
 uP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 ZF
 "}
 (51,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 va
 mi
-bo
-Xj
+BO
+IZ
 Xj
 mi
 bo
@@ -8795,29 +9226,29 @@ lc
 zP
 DA
 DA
-lc
+kV
 gm
 Mm
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (52,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 MX
 va
 va
 va
 va
 va
-Mm
-Mm
-Xm
+ER
+ui
+kI
 Xm
 Mm
 Mm
@@ -8844,7 +9275,7 @@ va
 va
 Mm
 Mm
-Mm
+ui
 va
 va
 va
@@ -8852,16 +9283,16 @@ Mm
 Mm
 Mm
 uP
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
 "}
 (53,1,1) = {"
 GP
-Rp
-Rp
-Rp
+ib
+ib
+ib
 KT
 sc
 aV
@@ -8905,129 +9336,129 @@ sc
 aV
 sc
 YI
-Rp
-Rp
+ib
+ib
 FV
-Rp
+ib
 "}
 (54,1,1) = {"
-Rp
-Ho
-Rp
-Rp
-Rp
-Rp
+ib
+zX
+ib
+ib
+ib
+ib
 ZF
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
 "}
 (55,1,1) = {"
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Ho
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+zX
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
 FV
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
 ZF
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+pi
+ib
+ib
+ib
+ib
 FV
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-sq
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+qM
+ib
+ib
+ib
+ib
+ib
+ib
+ib
 "}
 (56,1,1) = {"
-Rp
-Rp
-Rp
-NR
-sq
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+pi
+qM
+ib
+ib
+ib
+ib
+ib
+ib
 GP
 GP
 GP
@@ -9036,47 +9467,47 @@ GP
 GP
 GP
 GP
-Rp
-Rp
-Rp
-Rp
-Rp
-sq
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+qM
+ib
+ib
+ib
+ib
+ib
 FV
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-NR
-Rp
-Rp
-Rp
-Rp
-Ho
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+pi
+ib
+ib
+ib
+ib
+zX
+ib
+ib
+ib
+ib
 "}
 (57,1,1) = {"
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+ib
 GP
 GP
 GP
@@ -9093,32 +9524,32 @@ GP
 GP
 GP
 GP
-Rp
-Rp
-NR
-Rp
-Rp
-Ho
-Rp
-Rp
-Rp
+ib
+ib
+pi
+ib
+ib
+zX
+ib
+ib
+ib
 GP
 GP
 GP
 GP
 GP
 GP
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
-Rp
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
+ib
 "}
