@@ -217,7 +217,7 @@
 
 	id = /obj/item/card/id/syndicate_command/captain_id
 	ears = /obj/item/radio/headset/syndicate/alt/captain
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS/syndicate
 	gloves = /obj/item/clothing/gloves/combat
@@ -240,7 +240,7 @@
 /datum/outfit/job/syndicate/captain/twink
 	name = "Commodore (Twinkleshine, ACLF)"
 
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 	head = null
 	gloves = null
 	shoes = null
@@ -249,7 +249,6 @@
 	suit = null
 	belt = null
 	implants = list(/obj/item/implant/weapons_auth)
-
 	backpack_contents = null
 
 
@@ -260,10 +259,10 @@
 
 /datum/outfit/job/syndicate/captain/gorlex
 	name = "Captain (Gorlex Marauders)"
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 
-	head = /obj/item/clothing/head/aclfcap
-	suit = /obj/item/clothing/suit/aclf
+	head = /obj/item/clothing/head/gorlexcap
+	suit = /obj/item/clothing/suit/gorlex
 
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Captain (Cybersun)"
@@ -377,8 +376,23 @@
 //Chief Medical Officer
 
 /datum/outfit/job/syndicate/cmo
-	name = "Chief Medical Officer (Syndicate)"
+	name = "Medical Director (Cybersun)"
 	jobtype = /datum/job/cmo
+
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	ears = /obj/item/radio/headset/syndicate/alt/captain
+	id = /obj/item/card/id/syndicate_command/captain_id
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/pda/heads/cmo
+	l_pocket = /obj/item/pinpointer/crew
+	head = /obj/item/clothing/head/beret/cmo/cybersun
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	l_hand = /obj/item/storage/firstaid/medical
+	suit_store = /obj/item/flashlight/pen
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+/datum/outfit/job/syndicate/cmo/suns
+	name = "Medical Director (SUNS)"
 
 	uniform = /obj/item/clothing/under/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/captain
@@ -457,7 +471,7 @@
 /datum/outfit/job/syndicate/hos/twink
 	name = "Lieutenant (Twinkleshine, 2nd Battlegroup)"
 
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	id = /obj/item/card/id/syndicate_command/lieutenant
 	head = null
@@ -496,10 +510,8 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/pda/medical
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	suit =  /obj/item/clothing/suit/toggle/labcoat
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
-	suit_store = /obj/item/flashlight/pen
 
 	job_icon = "medicaldoctor"
 
