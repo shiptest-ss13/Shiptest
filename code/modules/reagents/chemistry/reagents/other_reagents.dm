@@ -18,7 +18,7 @@
 			if((D.spread_flags & DISEASE_SPREAD_SPECIAL) || (D.spread_flags & DISEASE_SPREAD_NON_CONTAGIOUS))
 				continue
 
-			if((method == TOUCH || method == VAPOR) && (D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS))
+			if(((method == TOUCH || method == SMOKE) || method == VAPOR) && (D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS))
 				L.ContactContractDisease(D)
 			else //ingest, patch or inject
 				L.ForceContractDisease(D)
@@ -198,7 +198,7 @@
 /datum/reagent/water/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with water can help put them out!
 	if(!istype(M))
 		return
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		M.adjust_fire_stacks(-(reac_volume / 10))
 		M.ExtinguishMob()
 	..()
@@ -330,7 +330,7 @@
 /datum/reagent/hydrogen_peroxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with h2o2 can burn them !
 	if(!istype(M))
 		return
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		M.adjustFireLoss(2, 0) // burns
 	..()
 
@@ -340,7 +340,7 @@
 	taste_description = "suffering"
 
 /datum/reagent/fuel/unholywater/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.reagents.add_reagent(type,reac_volume/4)
 		return
 	return ..()
@@ -637,14 +637,6 @@
 		return TRUE
 	return ..()
 
-/datum/reagent/mutationtoxin/golem
-	name = "Golem Mutation Toxin"
-	description = "A crystal toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/golem/random
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "rocks"
-
 /datum/reagent/mutationtoxin/abductor
 	name = "Abductor Mutation Toxin"
 	description = "An alien toxin."
@@ -750,7 +742,7 @@
 	taste_description = "slime"
 
 /datum/reagent/aslimetoxin/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	if(method != TOUCH)
+	if(method != TOUCH && method != SMOKE)
 		L.ForceContractDisease(new /datum/disease/transformation/slime(), FALSE, TRUE)
 
 /datum/reagent/gluttonytoxin
@@ -998,7 +990,7 @@
 	taste_description = "bitterness"
 
 /datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
-	if(method in list(TOUCH, VAPOR, PATCH))
+	if(method in list(TOUCH, VAPOR, PATCH, SMOKE))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
 			S.speed_modifier = max(0.2, S.speed_modifier)
@@ -1119,7 +1111,7 @@
 	//WS End
 
 /datum/reagent/bluespace/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		do_teleport(M, get_turf(M), (reac_volume / 5), asoundin = 'sound/effects/phasein.ogg', channel = TELEPORT_CHANNEL_BLUESPACE) //4 tiles per crystal
 	..()
 
@@ -1179,7 +1171,7 @@
 	accelerant_quality = 10
 
 /datum/reagent/fuel/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 10)
 		return
 	..()
@@ -1212,7 +1204,7 @@
 			M.adjustToxLoss(rand(5,10))
 
 /datum/reagent/space_cleaner/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.wash(clean_types)
 
 /datum/reagent/space_cleaner/ez_clean
@@ -1229,7 +1221,7 @@
 
 /datum/reagent/space_cleaner/ez_clean/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
-	if((method == TOUCH || method == VAPOR) && !issilicon(M))
+	if(((method == TOUCH || method == SMOKE) || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1.5)
 		M.adjustFireLoss(1.5)
 
@@ -1870,7 +1862,7 @@
 /datum/reagent/acetone_oxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people kills people!
 	if(!istype(M))
 		return
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		M.adjustFireLoss(2, FALSE) // burns,
 		M.adjust_fire_stacks((reac_volume / 10))
 	..()
@@ -1950,7 +1942,7 @@
 	color = pick(potential_colors)
 
 /datum/reagent/hair_dye/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.hair_color = pick(potential_colors)
@@ -1965,7 +1957,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/barbers_aid/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
 			var/datum/sprite_accessory/hair/picked_hair = pick(GLOB.hairstyles_list)
@@ -1983,7 +1975,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/concentrated_barbers_aid/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
 			to_chat(H, "<span class='notice'>Your hair starts growing at an incredible speed!</span>")
@@ -1999,7 +1991,7 @@
 	taste_description = "bitterness"
 
 /datum/reagent/baldium/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
 			to_chat(H, "<span class='danger'>Your hair is falling out in clumps!</span>")
@@ -2786,3 +2778,9 @@
 	description = "Fur obtained from griding up a polar bears hide"
 	reagent_state = SOLID
 	color = "#eeeeee" // rgb: 238, 238, 238
+
+/datum/reagent/srm_bacteria
+	name = "Illestren Bacteria"
+	description = "Bacteria native to the Saint-Roumain Militia home planet."
+	color = "#5a4f42"
+	taste_description = "sour"

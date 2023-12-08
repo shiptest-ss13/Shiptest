@@ -208,26 +208,30 @@
 			to_chat(target, "<span class='userdanger'>[user] lands an expert tackle on you, knocking you down hard and maintaining a passive grab!</span>")
 
 			user.SetKnockdown(0)
+			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 			target.adjustStaminaLoss(40)
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
 				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				S.setGrabState(GRAB_PASSIVE)
+				if(S.pulling == T)
+					S.setGrabState(GRAB_PASSIVE)
 
 		if(5 to INFINITY) // absolutely BODIED
 			user.visible_message("<span class='warning'>[user] lands a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", "<span class='userdanger'>You land a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", target)
 			to_chat(target, "<span class='userdanger'>[user] lands a monster tackle on you, knocking you senseless and aggressively pinning you!</span>")
 
 			user.SetKnockdown(0)
+			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 			target.adjustStaminaLoss(40)
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
 				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
-				S.setGrabState(GRAB_AGGRESSIVE)
+				if(S.pulling == T)
+					S.setGrabState(GRAB_AGGRESSIVE)
 
 
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
@@ -255,8 +259,6 @@
 		defense_mod -= 1
 	if(HAS_TRAIT(target, TRAIT_CLUMSY))
 		defense_mod -= 2
-	if(HAS_TRAIT(target, TRAIT_FAT)) // chonkers are harder to knock over
-		defense_mod += 1
 	if(HAS_TRAIT(target, TRAIT_GRABWEAKNESS))
 		defense_mod -= 2
 	if(HAS_TRAIT(target, TRAIT_DWARF))

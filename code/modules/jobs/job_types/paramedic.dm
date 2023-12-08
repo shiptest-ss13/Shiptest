@@ -45,30 +45,6 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/paramedic/traumateam
-	name = "Paramedic (Trauma Team Technician)"
-
-	uniform = /obj/item/clothing/under/rank/security/brig_phys
-	shoes = /obj/item/clothing/shoes/combat
-	backpack = /obj/item/storage/backpack/ert/medical
-	belt = /obj/item/storage/belt/medical/webbing/paramedic
-
-/datum/outfit/job/paramedic/syndicate/gorlex
-	name = "Paramedic (Gorlex)"
-
-	id = /obj/item/card/id/syndicate_command/crew_id
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/jackboots
-
-/datum/outfit/job/paramedic/syndicate
-	name = "Field Medic (Cybersun Industries)"
-
-	uniform = /obj/item/clothing/under/syndicate/medic
-	head = /obj/item/clothing/head/soft/cybersun
-	shoes = /obj/item/clothing/shoes/combat
-	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
-
 /datum/outfit/job/paramedic/inteq
 	name = "IRMG Corpsman (Inteq)"
 

@@ -12,12 +12,6 @@
 	description = "something dangerous"
 	suffix = "rockplanet_heirophant.dmm"
 
-/datum/map_template/ruin/rockplanet/clock
-	name = "Clockcult base"
-	id = "clockcultrock"
-	description = "the last remnants of a clockcult base on rockplanet."
-	suffix = "rockplanet_clock.dmm"
-
 /datum/map_template/ruin/rockplanet/cult
 	name = "Cult base"
 	id = "rockcult"
@@ -83,7 +77,7 @@
 	suffix = "rockplanet_saloon.dmm"
 
 /datum/map_template/ruin/rockplanet/harmfactory
-	name = "Harm factory"
+	name = "Harm Factory"
 	description = "A factory made for HARM and AGONY."
 	id = "rockplanet_harmfactory"
 	suffix = "rockplanet_harmfactory.dmm"
