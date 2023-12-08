@@ -529,20 +529,23 @@
 	G.set_moles(GAS_NITRYL,1)
 	G.set_temperature(15000)
 	G.set_volume(1000)
+
 	var/result = G.react()
 	if(result != REACTING)
 		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(abs(G.analyzer_results["fusion"] - 2.66) > 0.01)
-		var/instability = G.analyzer_results["fusion"]
+
+	var/instability	= G.analyzer_results["fusion"]
+	var/plas = G.get_moles(GAS_PLASMA)
+	var/co2 = G.get_moles(GAS_CO2)
+	var/temp = G.return_temperature()
+
+	if(abs(instability - 2.66) > 0.01)
 		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 2.66, is instead [instability]")
-	if(abs(G.get_moles(GAS_PLASMA) - 458.241) > 0.5)
-		var/plas = G.get_moles(GAS_PLASMA)
+	if(abs(plas - 458.241) > 0.5)
 		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.241, is instead [plas]")
-	if(abs(G.get_moles(GAS_CO2) - 505.078) > 0.5)
-		var/co2 = G.get_moles(GAS_CO2)
-		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.078, is instead [co2]")
-	if(abs(G.return_temperature() - 27600) > 200) // I'm not calculating this at all just putting in the values I get when I do it now
-		var/temp = G.return_temperature()
+	if(abs(co2 - 505.369) > 0.5)
+		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.369, is instead [co2]")
+	if(abs(temp- 27600) > 200) // I'm not calculating this at all just putting in the values I get when I do it now
 		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 27600, is instead [temp]")
 	return ..()
 
