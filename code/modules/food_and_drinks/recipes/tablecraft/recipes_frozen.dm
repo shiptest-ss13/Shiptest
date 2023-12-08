@@ -309,3 +309,15 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/popsicle/nogga_black
 	subcategory = CAT_ICE
+
+/datum/crafting_recipe/food/rilena_gumball
+	name = "RILENA gumball popsicle"
+	reqs = list(
+		/obj/item/popsicle_stick = 1,
+		/obj/item/reagent_containers/food/snacks/gumball = 3, //bit pricey
+		/datum/reagent/consumable/berryjuice = 4,
+		/datum/reagent/consumable/ice = 4,
+		/datum/reagent/consumable/cream = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/popsicle/rilena_gumball
+	subcategory = CAT_ICE

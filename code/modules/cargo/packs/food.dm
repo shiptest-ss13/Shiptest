@@ -248,7 +248,7 @@
 
 /datum/supply_pack/food/ration
 	name = "Ration Crate"
-	desc = "6 standerd issue rations."
+	desc = "6 standard issue rations."
 	cost = 2000
 	contains = list(/obj/effect/spawner/lootdrop/ration,
 					/obj/effect/spawner/lootdrop/ration,
