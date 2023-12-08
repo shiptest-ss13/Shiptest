@@ -1063,6 +1063,30 @@
 	desc = "A RILENA: LMR poster split in two to represent the series' disregard for conventional timeline aspects."
 	icon_state = "poster-rilena_timeline"
 
+/obj/structure/sign/poster/rilena/dollmaker
+	name = "Dollmaker"
+	desc = "A RILENA: LMR poster portraying a well known character from the games, Kisime."
+	icon_state = "poster-rilena_dollmaker"
+
+/obj/structure/sign/poster/rilena/dollmarch
+	name = "Army of Dolls"
+	desc = "A RILENA: LMR poster featuring Kisime and her minions, the Toki."
+	icon_state = "poster-rilena_dollmarch"
+
+/obj/structure/sign/poster/rilena/hanging_out
+	name = "Hanging Out"
+	desc = "A RILENA: LMR poster featuring Qi-Tirii, an eccentric inventor who claims to be a wizard."
+	icon_state = "poster-rilena_hanging_out"
+
+/obj/structure/sign/poster/rilena/moonlight
+	name = "Moons and Starlight"
+	desc = "A RILENA: LMR poster showing Qi-Tirii sitting on her staff under RILENA's two moons."
+	icon_state = "poster-rilena_moonlight"
+
+/obj/structure/sign/poster/rilena/shopkeep
+	name = "Lekera Kalila Sharati"
+	desc = "A RILENA: LMR poster featuring the iconic shopkeeper, Xader. The name of the poster roughly translates to \"Buy something or die.\""
+	icon_state = "poster-rilena_shopkeep"
 
 
 #undef PLACE_SPEED

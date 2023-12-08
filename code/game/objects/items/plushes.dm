@@ -834,9 +834,9 @@
 		"toki_commander",
 	)
 	var/static/list/toki_styles_rare = list(\
-		"toki_ri" = "This one feels almost... mocking.",
-		"toki_tali" = "This one's smug look bothers you.",
-		"toki_kisime" = "This one feels like overkill.",
+		"toki_ri" = " This one feels almost... mocking.",
+		"toki_tali" = " This one's smug look bothers you.",
+		"toki_kisime" = " This one feels like overkill.",
 	)
 
 /obj/item/toy/plush/toki/Initialize(mapload)
