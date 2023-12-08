@@ -3,18 +3,28 @@
 /obj/item/clothing/suit/hooded/wintercoat
 	name = "winter coat"
 	desc = "A heavy jacket made from 'synthetic' animal furs."
+	icon = 'icons/obj/clothing/suits/wintercoat.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/wintercoat.dmi'
 	icon_state = "coatwinter"
 	item_state = "coatwinter"
 	body_parts_covered = CHEST|GROIN|ARMS
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
+	allowed = list(	/obj/item/flashlight,
+					/obj/item/tank/internals/emergency_oxygen,
+					/obj/item/tank/internals/plasmaman,
+					/obj/item/toy,
+					/obj/item/storage/fancy/cigarettes,
+					/obj/item/lighter,
+					)
 
 /obj/item/clothing/head/hooded/winterhood
 	name = "winter hood"
 	desc = "A hood attached to a heavy winter jacket."
-	icon_state = "winterhood"
+	icon = 'icons/obj/clothing/head/winterhood.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/head/winterhood.dmi'
+	icon_state = "hood_winter"
 	body_parts_covered = HEAD
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -33,7 +43,7 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/captain
-	icon_state = "winterhood_captain"
+	icon_state = "hood_captain"
 	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 
 /obj/item/clothing/suit/hooded/wintercoat/security
@@ -48,7 +58,7 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/security
-	icon_state = "winterhood_security"
+	icon_state = "hood_security"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
 
 /obj/item/clothing/suit/hooded/wintercoat/medical
@@ -60,7 +70,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical
 
 /obj/item/clothing/head/hooded/winterhood/medical
-	icon_state = "winterhood_medical"
+	icon_state = "hood_medical"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 0, "acid" = 45)
 
 /obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
@@ -70,7 +80,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical/paramedic
 
 /obj/item/clothing/head/hooded/winterhood/medical/paramedic
-	icon_state = "winterhood_paramedic"
+	icon_state = "hood_paramedic"
 
 /obj/item/clothing/suit/hooded/wintercoat/science
 	name = "science winter coat"
@@ -81,7 +91,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/science
 
 /obj/item/clothing/head/hooded/winterhood/science
-	icon_state = "winterhood_science"
+	icon_state = "hood_science"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering
@@ -93,7 +103,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/engineering
 
 /obj/item/clothing/head/hooded/winterhood/engineering
-	icon_state = "winterhood_engineer"
+	icon_state = "hood_engineer"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
@@ -103,7 +113,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/engineering/atmos
 
 /obj/item/clothing/head/hooded/winterhood/engineering/atmos
-	icon_state = "winterhood_atmos"
+	icon_state = "hood_atmos"
 
 /obj/item/clothing/suit/hooded/wintercoat/hydro
 	name = "hydroponics winter coat"
@@ -113,7 +123,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/hydro
 
 /obj/item/clothing/head/hooded/winterhood/hydro
-	icon_state = "winterhood_hydro"
+	icon_state = "hood_hydro"
 
 /obj/item/clothing/suit/hooded/wintercoat/cargo
 	name = "cargo winter coat"
@@ -122,7 +132,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/cargo
 
 /obj/item/clothing/head/hooded/winterhood/cargo
-	icon_state = "winterhood_cargo"
+	icon_state = "hood_cargo"
 
 /obj/item/clothing/suit/hooded/wintercoat/miner
 	name = "mining winter coat"
@@ -133,7 +143,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/miner
 
 /obj/item/clothing/head/hooded/winterhood/miner
-	icon_state = "winterhood_miner"
+	icon_state = "hood_miner"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // Inteq
@@ -147,27 +157,23 @@
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/hooded/winterhood/security/inteq
-	icon_state = "winterhood_inteq"
+	icon_state = "hood_inteq"
 	supports_variations = KEPORI_VARIATION
 
-/obj/item/clothing/suit/hooded/coat/inteq
+/obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
 	name = "inteq hooded coat"
 	desc = "A hooded coat with a fur trim around the hood, comfy! It has a small 'IRMG' embroidered onto the shoulder."
-	icon_state = "hoodieinteq"
-	item_state = "hoodieinteq"
+	icon_state = "coatinteq_alt"
+	item_state = "coatinteq_alt"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
-	hoodtype = /obj/item/clothing/head/hooded/coat/inteq
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq/alt
 
-/obj/item/clothing/head/hooded/coat/inteq
+/obj/item/clothing/head/hooded/winterhood/security/inteq/alt
 	name = "inteq hood"
 	desc = "A comfortable looking brown hood."
-	icon_state = "hoodinteq"
-	item_state = "hoodinteq"
+	icon_state = "hood_inteq_alt"
+	item_state = "hood_inteq_alt"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
-
-/obj/item/clothing/suit/hooded/coat/inteq/Initialize()
-	. = ..()
-	allowed = GLOB.security_wintercoat_allowed
 
 // CentCom
 /obj/item/clothing/suit/hooded/wintercoat/centcom
@@ -183,7 +189,7 @@
 	allowed += GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/centcom
-	icon_state = "winterhood_centcom"
+	icon_state = "hood_centcom"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
 
 // SolGov
@@ -197,5 +203,5 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/solgov
 
 /obj/item/clothing/head/hooded/winterhood/solgov
-	icon_state = "winterhood_solgov"
+	icon_state = "hood_solgov"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
