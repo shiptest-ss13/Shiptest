@@ -280,3 +280,12 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 2)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 4, /datum/reagent/consumable/sugar = 1)
 	foodtype = DAIRY | SUGAR
+
+/obj/item/reagent_containers/food/snacks/popsicle/rilena_gumball
+	name = "gumball popsicle"
+	desc = "An admittedly kinda flavorless ice cream treat shaped like T4L1's head. The gumballs have the most flavor in them, but can you, in good conscience, eat them?"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/cream = 2, datum/reagent/consumable/berryjuice = 2, /datum/reagent/consumable/sugar = 6)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/cream = 2, datum/reagent/consumable/berryjuice = 2, /datum/reagent/consumable/sugar = 6)
+	tastes = list("gumballs", "offbrand ice cream")
+	overlay_state = "rilena_gumball"
+	foodtype = FRUIT | DAIRY | SUGAR

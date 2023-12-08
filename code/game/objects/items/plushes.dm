@@ -810,7 +810,7 @@
 
 /obj/item/toy/plush/kisime
 	name = "Kisime plushie"
-	desc = "A plushie of the iconic 'dollmaker' from the popular webseries RILENA."
+	desc = "A plushie of the iconic 'dollmaker' from the popular webseries RILENA. Somewhat ironic, considering her current situation."
 	icon_state = "rilenaplush_kisime"
 	gender = FEMALE
 
@@ -823,19 +823,20 @@
 /obj/item/toy/plush/toki
 	name = "Toki plushie"
 	desc = "A plushie of the dollmaker's robotic minions. Hails from RILENA, a popular webseries."
-	icon_state = "rilenaplush_toki"
+	icon_state = "rilenaplush_toki_assistant"
 	gender = FEMALE
 	var/random_toki = TRUE //if the toki chosen is random
 	var/rare_toki = 10 //chance for a rare style
 
 	var/static/list/toki_styles = list(\
-		"toki_leader",
-		"toki_comrade",
-		"toki_soldier",
+		"toki_assistant",
+		"toki_agent",
+		"toki_commander",
 	)
 	var/static/list/toki_styles_rare = list(\
-		"toki_ri",
-		"toki_tali",
+		"toki_ri" = "This one feels almost... mocking.",
+		"toki_tali" = "This one's smug look bothers you.",
+		"toki_kisime" = "This one feels like overkill.",
 	)
 
 /obj/item/toy/plush/toki/Initialize(mapload)
@@ -847,6 +848,7 @@
 		var/toki_type
 		if(prob(rare_toki))
 			toki_type = pick(toki_styles_rare)
+			desc += toki_styles_rare[toki_type]
 		else
 			among_color = pick(toki_styles)
 		icon_state = "rilenaplush_" + toki_type

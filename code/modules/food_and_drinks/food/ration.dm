@@ -285,6 +285,14 @@
 	tastes = list("cheese" = 1, "pizza" = 1)
 	foodtype = GRAIN | DAIRY
 
+/obj/item/reagent_containers/food/snacks/ration/entree/cereal
+	name = "/improper RILENA flavored cereal"
+	desc = "A crunchy brick of compressed cereal. Milk comes in another package."
+	filling_color = "#a0679d"
+	tastes = list("sugar" = 20, "video games" = 1) //pure sugar.
+	foodtype = SUGAR | JUNKFOOD | GRAIN | BREAKFAST //technically contains grain. Technically.
+	cookable = FALSE //probably shouldn't cook cereal
+
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers
 	name = "vegetable 'crackers'"
 	desc = "Delicious vegetable-based crackers that are the perfect crunchy and nutritious snack."
@@ -497,6 +505,14 @@
 	filling_color = "#ff9900"
 	tastes = list("applesauce" = 1, "mango" = 1, "peach" = 1)
 	foodtype = FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/ration/side/potato_brick
+	name = "potato"
+	description = "A solid block of potato. Honestly, you can't tell if this has been cooked or not. The label says it also contains cheese, but you can't see any."
+	filling_color = "#f3d690"
+	tastes = list("potato" = 1, "cheese" = 1)
+	foodtype = DAIRY | GRAIN
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers
 	name = "pepperoni pizza cheese filled crackers"
@@ -813,3 +829,8 @@
 /obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_hazelnut
 	name = "freeze-dried coffee flavored with hazelnut pack"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
+
+/obj/item/reagent_containers/food/snacks/ration/pack/milk
+	name = "dehydrated milk pack"
+	desc = "Would go well with cereal, if it wasn't just powder."
+	list_reagents = list(/datum/reagent/consumable/milk = 10)

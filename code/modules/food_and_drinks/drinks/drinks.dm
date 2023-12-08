@@ -271,6 +271,24 @@
 	isGlass = FALSE
 	custom_price = 95
 
+/obj/item/reagent_containers/food/drinks/macaroni_dry
+	name = "bowl of instant macaroni and cheese"
+	icon_state = "macaroni_dry"
+	desc = "Just add 5 units of water! Hot or not, this is what you got. Do not eat raw." //note: does nothing when eaten raw, it's perfectly fine to eat raw lmao
+	list_reagents = list(/datum/reagent/consumable/macaroni = 15, /datum/reagent/consumable/cheese_spread = 5)
+	foodtype = GRAIN | DAIRY
+	isGlass = FALSE
+	custom_price = 100
+
+/obj/item/reagent_containers/food/drinks/macaroni_curry
+	name = "bowl of RILENA themed instant macaroni and curry"
+	icon_state = "macaroni_curry"
+	desc = "You're not sure if this crossover is even legal, but the taste is something to be experienced. Just add 5 units of water."
+	list_reagents = list(/datum/reagent/consumable/macaroni = 15, /datum/reagent/consumable/curry_powder = 5)
+	foodtype = GRAIN | DAIRY
+	isGlass = FALSE
+	custom_price = 120
+
 /obj/item/reagent_containers/food/drinks/waterbottle
 	name = "bottle of water"
 	desc = "A bottle of water filled at an old Earth bottling facility."

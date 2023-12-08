@@ -136,3 +136,11 @@
 /datum/chemical_reaction/bbqsauce
 	results = list(/datum/reagent/consumable/bbqsauce = 5)
 	required_reagents = list(/datum/reagent/ash = 1, /datum/reagent/consumable/tomatojuice = 1, /datum/reagent/medicine/salglu_solution = 3, /datum/reagent/consumable/blackpepper = 1)
+
+/datum/chemical_reaction/mac_cheese
+	results = list(/datum/reagent/consumable/mac_cheese = 3)
+	required_reagents = list(/datum/reagent/consumable/macaroni = 3, /datum/reagent/consumable/cheese_spread = 1, /datum/reagent/water = 1)
+
+/datum/chemical_reaction/curry_mac
+	results = list(/datum/reagent/consumable/curry_mac = 3)
+	required_reagents = list(/datum/reagent/consumable/macaroni = 3, /datum/reagent/consumable/curry_powder = 1, /datum/reagent/water = 1)

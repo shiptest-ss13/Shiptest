@@ -863,3 +863,38 @@
 	nutriment_factor = 1 * REAGENTS_METABOLISM
 	taste_description = "peanut"
 	reagent_state = SOLID
+
+/datum/reagent/consumable/macaroni
+	name = "Macaroni"
+	description = "A key ingredient in the iconic recipe \"Macaroni and Cheese\"."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "raw noodles"
+	color = "#302000" // rgb: 48, 32, 0
+	reagent_state = SOLID
+
+/datum/reagent/consumable/curry_powder
+	name = "Black Curry Powder"
+	description = "A gross looking curry powder with blue and white flecks mixed in."
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	taste_mult = 2
+	taste_description = "video games and despair"
+	color = "#000000"
+
+/datum/reagent/consumable/mac_cheese
+	name = "Macaroni and Cheese"
+	description = "A successful attempt at an ancient and iconic recipe."
+	nutriment_factor = 6 * REAGENTS_METABOLISM
+	taste_description = "noodles and cheese"
+	color = "#FBDB65"
+
+/datum/reagent/consumable/curry_mac
+	name = "Blackaroni and Curry"
+	description = "Why is it black. What did you do."
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "video games, despair, and noodles"
+	color = "#000000"
+	reagent_state = SOLID
+
+/datum/reagent/consumable/rilena_mac/on_mob_life(mob/living/carbon/M) //heats you up like ramen
+	M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
+	..()

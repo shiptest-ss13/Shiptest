@@ -381,3 +381,19 @@
 		/obj/item/toy/crayon/white = 1
 	)
 	generate_items_inside(items_inside, src)
+
+/obj/item/storage/ration/rilena
+	name = "/improper RILENA themed ration"
+	desc = "Contains dubiously labeled food. You're not sure what these flavors are, but at least it contains a toy."
+	icon_state = "ration_package_rilena"
+
+/obj/item/storage/ration/rilena/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/reagent_containers/food/snacks/ration/entree/cereal = 2,
+		/obj/item/reagent_containers/food/snacks/ration/side/potato_brick = 1,
+		/obj/item/reagent_containers/food/snacks/egg = 1, //a single perfectly preserved raw egg. not even a ration, just an actual egg
+		/obj/item/reagent_containers/food/snacks/ration/pack/milk = 2,
+		/obj/item/ration_heater = 1, //heats up your potato brick :)
+		/obj/item/toy/figure/tali = 1 //free toy :pog:
+		)
+	generate_items_inside(items_inside, src)
