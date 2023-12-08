@@ -297,7 +297,7 @@
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/nogga_black
-	name = "Nogga black"
+	name = "Black licorice"
 	reqs = list(
 		/obj/item/popsicle_stick = 1,
 		/datum/reagent/consumable/blumpkinjuice = 4, //natural source of ammonium chloride
@@ -307,5 +307,5 @@
 		/datum/reagent/consumable/vanilla = 2,
 		/datum/reagent/consumable/sugar = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/popsicle/nogga_black
+	result = /obj/item/reagent_containers/food/snacks/popsicle/black_licorice
 	subcategory = CAT_ICE
