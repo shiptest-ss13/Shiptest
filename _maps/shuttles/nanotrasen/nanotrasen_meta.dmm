@@ -1802,7 +1802,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "lH" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/rice,
@@ -1819,6 +1818,14 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/secure_closet/freezer{
+	name = "fridge";
+	anchored = 1
+	},
+/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/soymilk,
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "lK" = (
