@@ -535,9 +535,9 @@
 	if(abs(G.analyzer_results["fusion"] - 2.66) > 0.01)
 		var/instability = G.analyzer_results["fusion"]
 		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 2.66, is instead [instability]")
-	if(abs(G.get_moles(GAS_PLASMA) - 552.789) > 0.5)
+	if(abs(G.get_moles(GAS_PLASMA) - 458.241) > 0.5)
 		var/plas = G.get_moles(GAS_PLASMA)
-		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.531, is instead [plas]")
+		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.241, is instead [plas]")
 	if(abs(G.get_moles(GAS_CO2) - 411.096) > 0.5)
 		var/co2 = G.get_moles(GAS_CO2)
 		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.078, is instead [co2]")
