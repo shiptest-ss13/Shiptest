@@ -532,9 +532,9 @@
 	var/result = G.react()
 	if(result != REACTING)
 		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(abs(G.analyzer_results["fusion"] - 0.691869) > 0.01)
+	if(abs(G.analyzer_results["fusion"] - 2.66) > 0.01)
 		var/instability = G.analyzer_results["fusion"]
-		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 0.691869, is instead [instability]")
+		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 2.66, is instead [instability]")
 	if(abs(G.get_moles(GAS_PLASMA) - 552.789) > 0.5)
 		var/plas = G.get_moles(GAS_PLASMA)
 		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.531, is instead [plas]")

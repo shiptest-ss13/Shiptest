@@ -125,7 +125,7 @@
 		QDEL_NULL(ship_account)
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
-	QDEL_LIST(manifest)
+	manifest.Cut()
 	job_slots.Cut()
 	for(var/a_key in applications)
 		if(isnull(applications[a_key]))
