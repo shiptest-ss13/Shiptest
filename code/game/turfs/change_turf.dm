@@ -170,7 +170,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	if(!SSair.initialized)
 		. = ..()
 		return
-	if ((flags & CHANGETURF_INHERIT_AIR) && ispath(path, /turf/open))
+	if ((flags & CHANGETURF_INHERIT_AIR) && ispath(path, /turf/open) && air)
 		var/datum/gas_mixture/stashed_air = new()
 		stashed_air.copy_from(air)
 		. = ..()
