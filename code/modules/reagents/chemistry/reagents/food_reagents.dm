@@ -895,6 +895,6 @@
 	color = "#000000"
 	reagent_state = SOLID
 
-/datum/reagent/consumable/rilena_mac/on_mob_life(mob/living/carbon/M) //heats you up like ramen
+/datum/reagent/consumable/curry_mac/on_mob_life(mob/living/carbon/M) //heats you up like ramen
 	M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
 	..()
