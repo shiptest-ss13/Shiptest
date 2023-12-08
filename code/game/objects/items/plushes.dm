@@ -850,7 +850,7 @@
 			toki_type = pick(toki_styles_rare)
 			desc += toki_styles_rare[toki_type]
 		else
-			among_color = pick(toki_styles)
+			toki_type = pick(toki_styles)
 		icon_state = "rilenaplush_" + toki_type
 
 //maybe figure this out later

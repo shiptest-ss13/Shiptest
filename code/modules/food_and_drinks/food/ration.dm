@@ -508,7 +508,7 @@
 
 /obj/item/reagent_containers/food/snacks/ration/side/potato_brick
 	name = "potato"
-	description = "A solid block of potato. Honestly, you can't tell if this has been cooked or not. The label says it also contains cheese, but you can't see any."
+	desc = "A solid block of potato. Honestly, you can't tell if this has been cooked or not. The label says it also contains cheese, but you can't see any."
 	filling_color = "#f3d690"
 	tastes = list("potato" = 1, "cheese" = 1)
 	foodtype = DAIRY | GRAIN
