@@ -35,6 +35,12 @@ jobs:
         if: steps.cache-byond.outputs.cache-hit != 'true'
         run: bash tools/ci/install_byond.sh
 
+      - name: Install runtime dependencies
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt update || true
+          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
+
       - name: Setup dependencies cache
         id: cache-deps
         uses: actions/cache@v3
@@ -42,20 +48,19 @@ jobs:
           path: ~/.byond/bin
           key: ${{ runner.os }}-deps-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
 
-      - name: Build auxmos
+      - name: Install build dependencies
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
-          sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false g++-multilib
-          bash tools/ci/build_auxmos.sh
+          sudo apt install -o APT::Immediate-Configure=false libgcc-s1:i386 g++-multilib zlib1g-dev:i386
+          rustup target add i686-unknown-linux-gnu
+
+      - name: Build auxmos
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+        run: bash tools/ci/build_auxmos.sh
 
       - name: Build rust-g
         if: steps.cache-deps.outputs.cache-hit != 'true'
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386 libgcc-s1:i386 g++-multilib zlib1g-dev:i386
-          bash tools/ci/build_rust_g.sh
+        run: bash tools/ci/build_rust_g.sh
 
       - name: Setup database
         run: |
