@@ -186,12 +186,6 @@
 		ear_owner.dna.species.mutant_bodyparts -= "ears"
 		ear_owner.update_body()
 
-/obj/item/organ/ears/bronze
-	name = "tin ears"
-	desc = "The robust ears of a bronze golem. "
-	damage_multiplier = 0.1 //STRONK
-	bang_protect = 1 //Fear me weaklings.
-
 /obj/item/organ/ears/cybernetic
 	name = "cybernetic ears"
 	icon_state = "ears-c"
