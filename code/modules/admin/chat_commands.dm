@@ -88,7 +88,7 @@
 
 	embed.fields = list()
 	for(var/datum/controller/subsystem/sub_system as anything in Master.subsystems)
-		if(params && !findtext(params, sub_system.name))
+		if(params && !findtext(sub_system.name, params))
 			continue
 		var/datum/tgs_chat_embed/field/sub_system_entry = new ("\[[sub_system.state_letter()]] [sub_system.name]", sub_system.stat_entry())
 		sub_system_entry.is_inline = TRUE
