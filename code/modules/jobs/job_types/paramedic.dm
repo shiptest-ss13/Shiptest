@@ -45,14 +45,6 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/paramedic/traumateam
-	name = "Paramedic (Trauma Team Technician)"
-
-	uniform = /obj/item/clothing/under/rank/security/brig_phys
-	shoes = /obj/item/clothing/shoes/combat
-	backpack = /obj/item/storage/backpack/ert/medical
-	belt = /obj/item/storage/belt/medical/webbing/paramedic
-
 /datum/outfit/job/paramedic/inteq
 	name = "IRMG Corpsman (Inteq)"
 
