@@ -13,6 +13,11 @@
 	. = ..()
 	credits = amount
 	update_appearance()
+	SSeconomy.physical_money += amount
+
+/obj/item/holochip/Destroy()
+	SSeconomy.physical_money -= credits
+	return ..()
 
 /obj/item/holochip/examine(mob/user)
 	. = ..()
