@@ -248,7 +248,6 @@
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	suit = null
 	belt = null
-	implants = list(/obj/item/implant/weapons_auth)
 	backpack_contents = null
 
 
