@@ -17,7 +17,7 @@ git reset --hard FETCH_HEAD
 
 sudo dpkg --add-architecture i386
 sudo apt-get update
-sudo apt-get install libstdc++6:i386 gcc-multilib g++-7 g++-7-multilib zlib1g:i386 libssl1.1 libssl1.1:i386 -y
+sudo apt install libstdc++6:i386 gcc-multilib g++-7 g++-7-multilib zlib1g:i386 libssl1.1 libssl1.1:i386
 rustup target add i686-unknown-linux-gnu
 
 env PKG_CONFIG_ALLOW_CROSS=1 cargo rustc --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
