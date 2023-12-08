@@ -237,6 +237,18 @@
 	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/ethanol/irish_cream = 3, /datum/reagent/consumable/ethanol/beer = 2)
 	required_catalysts = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 1)
 
+/datum/chemical_reaction/bullet_hell
+	results = list(/datum/reagent/consumable/ethanol/bullethell = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/fuel = 2, /datum/reagent/consumable/ethanol/absinthe = 3)
+
+/datum/chemical_reaction/shotinthedark
+	results = list(/datum/reagent/consumable/ethanol/shotinthedark = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/consumable/ethanol/tequila = 5, /datum/reagent/gold = 3)
+
+/datum/chemical_reaction/homesick
+	results = list(/datum/reagent/consumable/ethanol/homesick = 15)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/ethanol/creme_de_menthe = 5)
+
 ////DRINKS THAT REQUIRED IMPROVED SPRITES BELOW:: -Agouri/////
 
 /datum/chemical_reaction/sbiten

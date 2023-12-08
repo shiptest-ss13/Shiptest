@@ -73,6 +73,14 @@
 	display_name = "hoodie, gray"
 	path = /obj/item/clothing/suit/hooded/hoodie/gray
 
+/datum/gear/suit/jacket/hoodie_fbp
+	display_name = "hoodie, fbp kepori"
+	path = /obj/item/clothing/suit/hooded/hoodie/fbp
+
+/datum/gear/suit/jacket/hoodie_rilena
+	display_name = "hoodie, T4L1"
+	path = /obj/item/clothing/suit/hooded/hoodie/rilena
+
 /datum/gear/suit/jacket/highvis
 	display_name = "industrial jacket"
 	path = /obj/item/clothing/suit/toggle/industrial
