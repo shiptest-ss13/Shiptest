@@ -6,6 +6,11 @@
 	caliber = ".357"
 	projectile_type = /obj/projectile/bullet/a357
 
+/obj/item/ammo_casing/a357/surplus
+	name = ".357 surplus bullet casing"
+	desc = "A .357 surplus bullet casing."
+	projectile_type = /obj/projectile/bullet/a357/surplus
+
 /obj/item/ammo_casing/a357/match
 	name = ".357 match bullet casing"
 	desc = "A .357 match bullet casing."

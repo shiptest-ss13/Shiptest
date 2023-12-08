@@ -273,7 +273,6 @@
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
 "cN" = (
@@ -312,28 +311,12 @@
 "cY" = (
 /obj/structure/rack,
 /obj/item/ammo_box/c38_box{
-	pixel_x = 5;
-	pixel_y = -3
-	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = 5;
-	pixel_y = 0
-	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = 5;
-	pixel_y = 3
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/item/ammo_box/c38_box{
 	pixel_x = -4;
-	pixel_y = -3
-	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = -4;
-	pixel_y = 0
-	},
-/obj/item/ammo_box/c38_box{
-	pixel_x = -4;
-	pixel_y = 3
+	pixel_y = 2
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -818,17 +801,25 @@
 /area/ship/hallway/port)
 "jk" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/breakawayflask{
-	pixel_x = 6;
-	pixel_y = 14
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = -14;
+	pixel_x = -6
 	},
-/obj/item/reagent_containers/food/drinks/breakawayflask{
-	pixel_x = -7;
-	pixel_y = 11
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = -9;
+	pixel_x = 8
 	},
-/obj/item/reagent_containers/food/drinks/breakawayflask{
-	pixel_x = 1;
-	pixel_y = 6
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = -3;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = 2;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = 7;
+	pixel_x = -3
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
@@ -951,7 +942,6 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/hallway/central)
 "lg" = (
-/obj/structure/table/wood,
 /obj/item/book/manual/srmlore{
 	pixel_y = 13;
 	pixel_x = 2
@@ -983,6 +973,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
 	},
+/obj/structure/table/wood/fancy,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "li" = (
@@ -1032,12 +1023,6 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
-"mm" = (
-/obj/item/fishing_hook,
-/obj/item/fishing_hook,
-/obj/item/fishing_hook,
-/turf/open/floor/ship/dirt/dark,
-/area/ship/roumain)
 "mr" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -1202,7 +1187,6 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/hallway/central)
 "ox" = (
-/obj/structure/guncase/shotgun,
 /obj/item/gun/ballistic/shotgun/winchester/mk1{
 	pixel_x = -7;
 	pixel_y = -7
@@ -1215,10 +1199,7 @@
 	pixel_x = -7;
 	pixel_y = 1
 	},
-/obj/item/gun/ballistic/shotgun/winchester/mk1{
-	pixel_x = -7;
-	pixel_y = 4
-	},
+/obj/structure/guncase,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "oC" = (
@@ -1493,10 +1474,6 @@
 /obj/structure/rack,
 /obj/item/t_scanner/adv_mining_scanner/lesser{
 	pixel_x = 6;
-	pixel_y = -6
-	},
-/obj/item/t_scanner/adv_mining_scanner/lesser{
-	pixel_x = 6;
 	pixel_y = -2
 	},
 /obj/item/t_scanner/adv_mining_scanner/lesser{
@@ -1507,37 +1484,21 @@
 	pixel_x = 6;
 	pixel_y = 6
 	},
-/obj/item/gps/mining{
-	pixel_y = -6;
-	pixel_x = -1
-	},
-/obj/item/gps/mining{
-	pixel_y = -2;
-	pixel_x = -1
-	},
-/obj/item/gps/mining{
-	pixel_y = 2;
-	pixel_x = -1
-	},
-/obj/item/gps/mining{
-	pixel_y = 6;
-	pixel_x = -1
+/obj/item/stack/marker_beacon/thirty{
+	pixel_x = -6;
+	pixel_y = -3
 	},
 /obj/item/stack/marker_beacon/thirty{
-	pixel_x = -10;
-	pixel_y = -6
+	pixel_x = -6;
+	pixel_y = 1
 	},
 /obj/item/stack/marker_beacon/thirty{
-	pixel_x = -10;
-	pixel_y = -2
+	pixel_x = -6;
+	pixel_y = 5
 	},
 /obj/item/stack/marker_beacon/thirty{
-	pixel_x = -10;
-	pixel_y = 2
-	},
-/obj/item/stack/marker_beacon/thirty{
-	pixel_x = -10;
-	pixel_y = 6
+	pixel_x = -6;
+	pixel_y = 9
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
@@ -1822,8 +1783,8 @@
 /turf/open/floor/wood/maple,
 /area/ship/hallway/central)
 "wD" = (
-/obj/structure/destructible/tribal_torch,
 /obj/structure/flora/grass/jungle/b,
+/obj/structure/destructible/tribal_torch,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/bridge)
 "wE" = (
@@ -1841,7 +1802,9 @@
 /obj/effect/turf_decal/siding/brown{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
 "xC" = (
@@ -1849,9 +1812,9 @@
 /turf/open/floor/ship/dirt/dark,
 /area/ship/bridge)
 "xD" = (
-/obj/item/fishing_line,
-/obj/item/fishing_line,
-/obj/item/fishing_line,
+/mob/living/simple_animal/cow{
+	name = "Gascoigne"
+	},
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "xN" = (
@@ -1964,6 +1927,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
+/obj/item/ammo_box/a357_box,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "zH" = (
@@ -2094,7 +2058,6 @@
 /turf/open/floor/wood/maple,
 /area/ship/hallway/starboard)
 "AX" = (
-/obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/bridge)
@@ -2105,8 +2068,12 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/port)
 "AZ" = (
@@ -2122,22 +2089,25 @@
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
 "Bi" = (
-/obj/item/gun/ballistic/derringer{
-	pixel_y = -3;
-	pixel_x = -6
-	},
 /obj/structure/rack,
-/obj/item/gun/ballistic/derringer{
-	pixel_y = 5;
+/obj/item/gun/ballistic/rifle/boltaction/roumain{
+	pixel_y = 7;
 	pixel_x = -6
 	},
 /obj/item/gun/ballistic/derringer{
 	pixel_y = -3;
-	pixel_x = 5
+	pixel_x = 12
 	},
 /obj/item/gun/ballistic/derringer{
-	pixel_y = 5;
-	pixel_x = 5
+	pixel_y = -3;
+	pixel_x = 6
+	},
+/obj/item/gun/ballistic/derringer{
+	pixel_y = -3
+	},
+/obj/item/gun/ballistic/derringer{
+	pixel_y = -3;
+	pixel_x = -6
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -2197,9 +2167,29 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "BJ" = (
-/obj/structure/flora/grass/jungle,
-/turf/open/floor/ship/dirt/dark,
-/area/ship/bridge)
+/obj/structure/crate_shelf,
+/obj/structure/closet/crate{
+	name = "Ammo Crate"
+	},
+/obj/item/ammo_box/aac_300blk_stripper{
+	pixel_x = 4
+	},
+/obj/item/ammo_box/aac_300blk_stripper{
+	pixel_y = -6
+	},
+/obj/item/ammo_box/aac_300blk_stripper{
+	pixel_y = -2;
+	pixel_x = -7
+	},
+/obj/item/ammo_box/aac_300blk_stripper{
+	pixel_y = 0
+	},
+/obj/item/disk/design_disk/ammo_357_surplus{
+	pixel_x = -4;
+	pixel_y = 0
+	},
+/turf/open/floor/wood/ebony,
+/area/ship/storage)
 "BK" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -2327,7 +2317,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/siding/brown,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/wood/ebony,
 /area/ship/hallway/port)
 "DL" = (
@@ -2439,7 +2428,53 @@
 /area/ship/hallway/port)
 "Fr" = (
 /obj/structure/crate_shelf,
-/obj/structure/closet/crate,
+/obj/structure/closet/crate{
+	name = "Fishing Crate"
+	},
+/obj/item/storage/toolbox/fishing{
+	pixel_x = -3;
+	pixel_y = -6
+	},
+/obj/item/storage/toolbox/fishing{
+	pixel_x = 3;
+	pixel_y = -6
+	},
+/obj/item/storage/toolbox/fishing{
+	pixel_y = 0
+	},
+/obj/item/fishing_rod{
+	pixel_x = -6
+	},
+/obj/item/fishing_rod{
+	pixel_x = 2
+	},
+/obj/item/fishing_rod{
+	pixel_x = 10
+	},
+/obj/item/fishing_line{
+	pixel_x = 5;
+	pixel_y = -2
+	},
+/obj/item/fishing_line{
+	pixel_x = -4;
+	pixel_y = -2
+	},
+/obj/item/fishing_line{
+	pixel_x = 3;
+	pixel_y = 2
+	},
+/obj/item/fishing_hook{
+	pixel_x = 6;
+	pixel_y = -4
+	},
+/obj/item/fishing_hook{
+	pixel_x = -4;
+	pixel_y = -4
+	},
+/obj/item/fishing_hook{
+	pixel_x = 1;
+	pixel_y = -2
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "Fu" = (
@@ -2646,7 +2681,6 @@
 /turf/open/floor/wood/maple,
 /area/ship/storage)
 "IM" = (
-/obj/structure/table/wood,
 /obj/item/candle/infinite{
 	pixel_y = 11;
 	pixel_x = 9
@@ -2678,6 +2712,7 @@
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 9
 	},
+/obj/structure/table/wood/fancy,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "IZ" = (
@@ -3421,12 +3456,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"RU" = (
-/obj/item/fishing_rod,
-/obj/item/fishing_rod,
-/obj/item/fishing_rod,
-/turf/open/floor/ship/dirt/dark,
-/area/ship/roumain)
 "RW" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -3442,12 +3471,6 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
-"Sl" = (
-/obj/item/storage/toolbox/fishing,
-/obj/item/storage/toolbox/fishing,
-/obj/item/storage/toolbox/fishing,
-/turf/open/floor/ship/dirt/dark,
-/area/ship/roumain)
 "Sz" = (
 /obj/structure/cable{
 	icon_state = "5-8"
@@ -3517,7 +3540,6 @@
 /area/ship/hallway/port)
 "TO" = (
 /obj/machinery/autolathe,
-/obj/item/disk/design_disk/ammo_n762,
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "TX" = (
@@ -3587,7 +3609,7 @@
 	dir = 8
 	},
 /obj/structure/flora/grass/jungle/b,
-/obj/item/toy/plush/spider,
+/obj/item/toy/plush/moth/royal,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/hallway/central)
 "Vn" = (
@@ -3826,12 +3848,6 @@
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"XZ" = (
-/mob/living/simple_animal/hostile/retaliate/goat{
-	name = "Gascoigne"
-	},
-/turf/open/floor/grass/ship/jungle,
-/area/ship/roumain)
 "Yu" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -3922,11 +3938,19 @@
 /turf/open/floor/wood/maple,
 /area/ship/hallway/starboard)
 "Zl" = (
-/obj/machinery/computer/crew{
-	dir = 1
-	},
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 6
+	},
+/obj/structure/table/wood,
+/obj/item/paper/natural{
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = 8;
+	pixel_y = 4
+	},
+/obj/item/pen/charcoal{
+	pixel_x = -5
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
@@ -4384,7 +4408,7 @@ MZ
 wD
 xC
 re
-BJ
+xC
 wD
 BK
 aP
@@ -4828,7 +4852,7 @@ aO
 Ri
 uW
 uV
-Sl
+NL
 ei
 ei
 uW
@@ -4865,7 +4889,7 @@ aO
 aO
 NL
 YX
-RU
+NL
 NC
 lk
 lk
@@ -4890,7 +4914,7 @@ sH
 LN
 SR
 Ui
-Fr
+BJ
 IF
 KQ
 mW
@@ -4901,7 +4925,7 @@ Aq
 uW
 dR
 NL
-xD
+NL
 Xt
 UD
 gR
@@ -4937,7 +4961,7 @@ Aq
 Aq
 uW
 uW
-mm
+NL
 Xt
 Zx
 Xt
@@ -5083,7 +5107,7 @@ Yu
 mW
 kN
 YX
-XZ
+uW
 uV
 ei
 ei
@@ -5123,7 +5147,7 @@ NL
 NL
 Xt
 Xt
-NL
+xD
 yV
 Jn
 Ma
