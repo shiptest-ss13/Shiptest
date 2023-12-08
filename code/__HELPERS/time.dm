@@ -24,14 +24,49 @@
 	else
 		. += " AM"
 
-/proc/sector_year()
-	return GLOB.year_integer - 1519
+/proc/sector_datestamp(realtime = world.realtime, shortened = FALSE)
+	//International Fixed Calendar format (https://en.wikipedia.org/wiki/International_Fixed_Calendar)
+	var/days_since = round(realtime / (24 HOURS))
+	var/year = round(days_since / 365) + 481
+	var/day_of_year = days_since % 365 + 1
+	var/month = round(day_of_year / 28)
+	var/day_of_month = day_of_year % 28 + 1
 
-/proc/sector_datestamp(time_format = "hh:mm:ss", world_time = world.time)
-	return "[sector_year()]FSC-[time2text(world_time, "MMM-DD")] [station_time_timestamp(time_format, world_time)]"
+	if(shortened)
+		return "[year]-[month]-[day_of_month]FSC"
 
-/proc/sector_date(world_time = world.time)
-	return "[time2text(world_time, "MMM DD")], FSC [GLOB.year_integer-1519]"
+	var/monthname
+	switch(month)
+		if(1)
+			monthname = "January"
+		if(2)
+			monthname = "February"
+		if(3)
+			monthname = "March"
+		if(4)
+			monthname = "April"
+		if(5)
+			monthname = "May"
+		if(6)
+			monthname = "June"
+		if(7)
+			monthname = "Sol"
+		if(8)
+			monthname = "July"
+		if(9)
+			monthname = "August"
+		if(10)
+			monthname = "September"
+		if(11)
+			monthname = "October"
+		if(12)
+			monthname = "November"
+		if(13)
+			monthname = "December"
+		if(14)
+			return "Year Day, [year] FSC"
+
+	return "[monthname] [day_of_month], [year] FSC"
 
 //returns timestamp in a sql and a not-quite-compliant ISO 8601 friendly format
 /proc/SQLtime(timevar)
