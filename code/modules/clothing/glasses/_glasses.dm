@@ -148,11 +148,11 @@
 	. = ..()
 	if(istype(I, /obj/item/clothing/glasses/eyepatch))
 		var/obj/item/clothing/glasses/eyepatch/old_patch = I
-		var/obj/item/clothing/glasses/blindfold/eyepatch/double_patch = new/obj/item/clothing/glasses/blindfold/eyepatch
-		double_patch.forceMove(user.drop_location())
+		var/obj/item/clothing/glasses/blindfold/eyepatch/double_patch = new()
 		to_chat(user, "<span class='notice'>You combine the eyepatches with a knot.</span>")
-		old_patch.Destroy()
-		Destroy()
+		qdel(old_patch)
+		qdel(src)
+		user.put_in_hands(double_patch)
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
