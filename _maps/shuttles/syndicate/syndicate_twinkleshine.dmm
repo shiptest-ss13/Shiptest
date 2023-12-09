@@ -531,7 +531,10 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 6
 	},
-/obj/structure/filingcabinet/double,
+/obj/machinery/suit_storage_unit/syndicate{
+	suit_type = /obj/item/clothing/suit/space/hardsuit/syndi/sbg;
+	name = "lieutenant's suit storage unit"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "dz" = (
@@ -564,6 +567,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "dL" = (
@@ -583,7 +587,6 @@
 /obj/structure/sign/poster/contraband/tools{
 	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/modular_computer/console/preset/engineering,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -620,10 +623,6 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
 "ea" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -633,6 +632,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "ec" = (
@@ -831,7 +831,7 @@
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
 	},
-/obj/item/radio/headset/syndicate/alt,
+/obj/item/radio/headset/alt,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/color/black,
 /obj/machinery/light/directional/east,
@@ -1063,21 +1063,9 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "gW" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/aft)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/security)
 "gX" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Custodial Closet";
@@ -1091,6 +1079,12 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/janitor)
@@ -1214,6 +1208,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "hS" = (
@@ -1331,18 +1331,19 @@
 	icon_state = "tac";
 	populate = 0
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/storage/belt/medical,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/clothing/under/syndicate/medic,
-/obj/item/clothing/under/syndicate/medic/skirt,
 /obj/item/clothing/under/rank/medical/doctor/red,
 /obj/item/clothing/suit/longcoat/roboblack{
 	name = "syndicate medic's black longcoat"
 	},
+/obj/item/clothing/under/syndicate/medic/skirt,
+/obj/item/clothing/under/syndicate/medic,
 /obj/item/clothing/head/helmet/medical,
 /obj/item/clothing/suit/armor/vest/marine/trauma,
+/obj/item/storage/belt/medical,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/clothing/shoes/sneakers/white,
+/obj/item/radio/headset,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "im" = (
@@ -1427,7 +1428,6 @@
 	},
 /area/ship/crew/canteen)
 "iI" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "iJ" = (
@@ -1739,27 +1739,28 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "kl" = (
+/obj/machinery/light/directional/north,
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	icon_state = "hos";
 	name = "Captain's Locker";
 	req_access = list(150, 20)
 	},
-/obj/item/areaeditor/shuttle,
-/obj/item/clothing/under/syndicate/officer,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
-/obj/item/shield/riot/tele,
-/obj/item/storage/lockbox/medal,
-/obj/machinery/light/directional/north,
 /obj/item/card/id/syndicate_command/captain_id,
+/obj/item/storage/lockbox/medal,
 /obj/item/codespeak_manual{
 	charges = 2
 	},
-/obj/item/radio/headset/syndicate/captain,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/gloves/combat,
+/obj/item/megaphone/sec{
+	name = "syndicate megaphone"
+	},
 /obj/item/book/granter/martial/cqc,
+/obj/item/radio/headset/syndicate/captain,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
+/obj/item/clothing/under/syndicate/officer,
+/obj/item/clothing/head/HoS/syndicate,
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormtwo)
 "ky" = (
@@ -1797,7 +1798,7 @@
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
 	},
-/obj/item/radio/headset/syndicate/alt,
+/obj/item/radio/headset/alt,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/color/black,
 /obj/structure/closet/secure_closet/security{
@@ -2497,14 +2498,11 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "oX" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/aft)
 "pc" = (
@@ -2517,7 +2515,6 @@
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
 "ph" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/modular_computer/tablet/preset/advanced{
 	pixel_x = 8
@@ -2668,15 +2665,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "pF" = (
@@ -2724,7 +2716,7 @@
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
 	},
-/obj/item/radio/headset/syndicate/alt,
+/obj/item/radio/headset/alt,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/color/black,
 /obj/machinery/light/directional/west,
@@ -2939,7 +2931,6 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light_switch{
 	pixel_y = 22;
 	pixel_x = -12
@@ -3064,16 +3055,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "sd" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/aft)
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "sf" = (
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
@@ -3159,17 +3144,6 @@
 /obj/effect/turf_decal/trimline/opaque/syndiered/corner,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
-"sz" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
 "sC" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/machinery/computer/atmos_control/tank/toxin_tank{
@@ -3434,6 +3408,12 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/red,
@@ -4108,9 +4088,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/structure/sign/warning/radiation{
-	pixel_x = -32
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "yI" = (
@@ -4156,6 +4133,10 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "yP" = (
@@ -4556,7 +4537,7 @@
 	name = "syndicate webbing";
 	desc = "Unique and versatile chest rig, can hold syndicate gear."
 	},
-/obj/item/radio/headset/syndicate/alt,
+/obj/item/radio/headset/alt,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/gloves/color/black,
 /obj/machinery/light/directional/east,
@@ -4626,21 +4607,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "BK" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hallway/central)
+/obj/structure/bed,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/security)
 "BL" = (
 /obj/structure/sign/poster/contraband/c20r{
 	pixel_y = 32
@@ -4657,6 +4627,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "BM" = (
@@ -4920,19 +4891,20 @@
 	icon_state = "tac";
 	populate = 0
 	},
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/storage/belt/medical,
-/obj/item/storage/belt/medical/webbing,
-/obj/item/clothing/under/syndicate/medic,
-/obj/item/clothing/under/syndicate/medic/skirt,
+/obj/machinery/light/directional/north,
 /obj/item/clothing/under/rank/medical/doctor/red,
 /obj/item/clothing/suit/longcoat/roboblack{
 	name = "syndicate medic's black longcoat"
 	},
-/obj/machinery/light/directional/north,
+/obj/item/clothing/under/syndicate/medic/skirt,
+/obj/item/clothing/under/syndicate/medic,
 /obj/item/clothing/head/helmet/medical,
 /obj/item/clothing/suit/armor/vest/marine/trauma,
+/obj/item/storage/belt/medical,
+/obj/item/storage/belt/medical/webbing,
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
 /obj/item/clothing/shoes/sneakers/white,
+/obj/item/radio/headset,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "Dk" = (
@@ -5012,6 +4984,7 @@
 /area/ship/crew/office)
 "DB" = (
 /obj/effect/turf_decal/steeldecal/steel_decals8,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security)
 "DF" = (
@@ -5356,6 +5329,10 @@
 	pixel_x = -4;
 	pixel_y = 2
 	},
+/obj/item/storage/toolbox/ammo/shotgun{
+	pixel_x = 4;
+	pixel_y = -2
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Fs" = (
@@ -5371,15 +5348,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
 "Ft" = (
@@ -5562,7 +5534,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Gx" = (
-/obj/item/trash/sosjerky,
+/obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "Gy" = (
@@ -5591,6 +5563,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "GE" = (
@@ -5629,15 +5602,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /obj/structure/sign/poster/contraband/space_up{
 	pixel_y = -32
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "GN" = (
@@ -5765,7 +5733,6 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
@@ -5805,7 +5772,6 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "HL" = (
@@ -5940,6 +5906,11 @@
 	icon_state = "0-8"
 	},
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 10;
+	pixel_y = -20
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "IB" = (
@@ -5976,7 +5947,9 @@
 /obj/item/clothing/suit/gorlex,
 /obj/item/clothing/head/gorlexcap,
 /obj/item/clothing/shoes/combat,
-/obj/item/megaphone/sec,
+/obj/item/megaphone/sec{
+	name = "syndicate megaphone"
+	},
 /obj/item/gun/ballistic/automatic/pistol/no_mag,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/radio/headset/syndicate/alt/leader,
@@ -6026,10 +5999,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "IT" = (
@@ -6127,9 +6097,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
-	},
-/obj/structure/sign/warning/radiation{
-	pixel_y = 32
 	},
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/orange/filled/warning{
@@ -6712,6 +6679,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "No" = (
@@ -6872,7 +6840,6 @@
 /area/ship/engineering/engine)
 "Oz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
@@ -7058,6 +7025,12 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/airlock/abandoned,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "PE" = (
@@ -7544,6 +7517,8 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/item/clothing/glasses/hud/security/night,
+/obj/item/clothing/glasses/hud/security/night,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Si" = (
@@ -7565,18 +7540,14 @@
 	pixel_y = 11;
 	pixel_x = -6
 	},
-/obj/item/clothing/glasses/hud/security/night{
-	pixel_x = 7;
-	pixel_y = 10
-	},
-/obj/item/clothing/glasses/hud/security/night{
-	pixel_x = 6;
-	pixel_y = 5
-	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "Sj" = (
 /obj/machinery/door/airlock/grunge,
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "Sk" = (
@@ -7694,7 +7665,7 @@
 	name = "Secret Box Moth";
 	real_name = "Box Moth";
 	gender = "female";
-	faction = list("neutral","PlayerSyndicate")
+	faction = list("neutral","playerSyndicate")
 	},
 /obj/item/reagent_containers/food/snacks/spacetwinkie{
 	pixel_y = 12;
@@ -7800,7 +7771,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "Tq" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table,
 /obj/item/paper_bin/construction,
 /obj/item/pen,
@@ -7995,7 +7965,6 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "UB" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
@@ -8431,15 +8400,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
 /obj/structure/sign/poster/contraband/space_cola{
 	pixel_y = 32
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/starboard)
 "Xj" = (
@@ -8870,15 +8834,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ZQ" = (
@@ -8907,7 +8868,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 
@@ -9571,7 +9531,7 @@ Si
 Sg
 PL
 Fu
-EG
+sd
 yN
 nr
 Bj
@@ -9608,7 +9568,7 @@ cD
 sr
 Eo
 Tt
-EG
+sd
 ET
 ET
 Bj
@@ -9627,7 +9587,7 @@ qP
 ma
 VH
 yF
-sd
+oX
 Sk
 xa
 Ru
@@ -9645,7 +9605,7 @@ ji
 wg
 gk
 mO
-EG
+sd
 ET
 fK
 Bj
@@ -9664,7 +9624,7 @@ qP
 ml
 Yl
 DW
-gW
+ea
 Nh
 ag
 Ax
@@ -9682,7 +9642,7 @@ jx
 TC
 on
 ep
-EG
+sd
 da
 kH
 Bj
@@ -9719,7 +9679,7 @@ Fr
 Up
 PL
 Tt
-EG
+sd
 Bj
 Bj
 Bj
@@ -9867,7 +9827,7 @@ ow
 dq
 Bj
 Tt
-EG
+sd
 da
 fJ
 Bj
@@ -9904,7 +9864,7 @@ HY
 Bj
 Bj
 Dp
-EG
+sd
 Bj
 Bj
 Bj
@@ -9941,7 +9901,7 @@ Gk
 HH
 Pa
 At
-EG
+sd
 da
 pN
 Bj
@@ -9978,7 +9938,7 @@ Bj
 Ey
 Ey
 kf
-EG
+sd
 ET
 fK
 Bj
@@ -9997,7 +9957,7 @@ Bw
 pD
 Yz
 hr
-BK
+ZO
 pR
 Xs
 Id
@@ -10043,7 +10003,7 @@ yX
 KM
 kM
 XE
-sz
+IN
 SM
 ak
 Pe
@@ -10126,7 +10086,7 @@ Bj
 wx
 ET
 DB
-ET
+gW
 Yv
 qL
 Bj
@@ -10161,7 +10121,7 @@ ak
 Pe
 Bj
 QR
-OY
+BK
 OY
 cd
 Bj
