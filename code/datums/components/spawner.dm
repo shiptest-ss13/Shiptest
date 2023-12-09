@@ -13,6 +13,7 @@
 	var/wave_downtime //Average time until spawning starts again
 	var/wave_timer
 	var/downtime_timer
+	var/current_timerid
 
 
 /datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime)
@@ -50,10 +51,17 @@
 	SIGNAL_HANDLER
 
 	STOP_PROCESSING(SSprocessing, src)
+	deltimer(current_timerid)
 	for(var/mob/living/simple_animal/L in spawned_mobs)
 		if(L.nest == src)
 			L.nest = null
 	spawned_mobs = null
+
+//Different from stop_spawning() as it doesn't untether all mobs from it and is meant for temporarily stopping spawning
+/datum/component/spawner/proc/pause_spawning()
+	STOP_PROCESSING(SSprocessing, src)
+	deltimer(current_timerid) //Otherwise if spawning is paused while the wave timer is loose it'll just unpause on its own
+	COOLDOWN_RESET(src, wave_timer)
 
 /datum/component/spawner/proc/unpause_spawning()
 	START_PROCESSING(SSprocessing, src)
@@ -69,7 +77,7 @@
 		if(wave_timer && COOLDOWN_FINISHED(src, wave_timer))
 			COOLDOWN_RESET(src, wave_timer)
 			STOP_PROCESSING(SSprocessing, src)
-			addtimer(CALLBACK(src, PROC_REF(unpause_spawning)), wave_downtime)
+			current_timerid = addtimer(CALLBACK(src, PROC_REF(unpause_spawning)), wave_downtime, TIMER_STOPPABLE)
 			return
 	////////////////////////////////
 	if(length(spawned_mobs) >= max_mobs)

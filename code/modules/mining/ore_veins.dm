@@ -45,7 +45,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/faction = list("hostile","mining")
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
-	var/spawner
+	var/datum/component/spawner/spawner
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
 	var/wave_length = 2 MINUTES

@@ -31,6 +31,7 @@
 	var/power_cost = 100
 	var/metal_attached
 	var/missing_part //I hate this but it's better than most the ideas I've had
+	var/current_timerid
 
 /obj/machinery/drill/examine(mob/user)
 	. = ..()
@@ -56,6 +57,7 @@
 			. += "<span class='notice'>Replacement plating has been secured to [src], but still needs to be <b>welded</b> into place.</span>"
 	if(machine_stat & BROKEN && !metal_attached)
 		. += "<span class='notice'>[src]'s structure has been totaled, the <b>plasteel</b> plating needs to be replaced."
+	. += "<span class='notice'>The manual shutoff switch can be pulled with <b>Alt Click</b>.</span>"
 
 /obj/machinery/drill/Initialize()
 	. = ..()
@@ -143,6 +145,9 @@
 			to_chat(user, "<span class='notice'>You unsecure the [src] from the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
+			if(mining.spawner)
+				STOP_PROCESSING(SSprocessing, mining.spawner)
+				mining.spawning_started = FALSE
 			mining = null
 			update_icon_state()
 			return
@@ -209,6 +214,24 @@
 			update_appearance()
 			return
 	return ..()
+
+/obj/machinery/drill/AltClick(mob/user)
+	if(active)
+		to_chat(user, "<span class='notice'>You begin the manual shutoff process.</span>")
+		if(do_after(user,10))
+			active = FALSE
+			soundloop.stop()
+			deltimer(current_timerid)
+			//STOP_PROCESSING(SSprocessing, mining.spawner)
+			mining.spawner.pause_spawning()
+			mining.spawning_started = FALSE
+			playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
+			say("Manual shutoff engaged, ceasing mining operations.")
+			update_icon_state()
+			update_overlays()
+		else
+			to_chat(user, "<span class='notice'>You cancel the manual shutoff process.</span>")
+			return
 
 //Can we even turn the damn thing on?
 /obj/machinery/drill/interact(mob/user, special_state)
@@ -283,14 +306,17 @@
 		var/mine_time
 		active = TRUE
 		soundloop.start()
-		if(!mining.spawning_started)
+		if(!mining.spawner)
 			mining.begin_spawning()
+			mining.spawning_started = TRUE
+		else if(!mining.spawning_started)
+			START_PROCESSING(SSprocessing, mining.spawner)
 			mining.spawning_started = TRUE
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
 			mine_time = round((300/sqrt(laser.rating))*mining.mine_time_multiplier)
 		eta = mine_time*mining.mining_charges
 		cell.use(power_use)
-		addtimer(CALLBACK(src, PROC_REF(mine)), mine_time)
+		current_timerid = addtimer(CALLBACK(src, PROC_REF(mine)), mine_time, TIMER_STOPPABLE)
 		say("Estimated time until vein depletion: [time2text(eta,"mm:ss")].")
 		update_icon_state()
 		update_overlays()
