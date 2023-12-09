@@ -95,8 +95,7 @@
 			)
 		)
 	for(var/turf/affected_turf as anything in template_and_bordering_turfs)
-		affected_turf.blocks_air = initial(affected_turf.blocks_air)
-		affected_turf.air_update_turf(TRUE)
+		affected_turf.ImmediateCalculateAdjacentTurfs()
 		affected_turf.levelupdate()
 		// placing ruins in after planet generation was causing mis-smooths. maybe there's a better fix? not sure
 		QUEUE_SMOOTH(affected_turf)
@@ -147,8 +146,7 @@
 							locate(min(T.x+width+1, world.maxx),	min(T.y+height+1, world.maxy), T.z))
 
 	for(var/turf/turf_to_disable as anything in border)
-		turf_to_disable.blocks_air = TRUE
-		turf_to_disable.air_update_turf(TRUE)
+		turf_to_disable.clear_adjacencies()
 
 	// Accept cached maps, but don't save them automatically - we don't want
 	// ruins clogging up memory for the whole round.
