@@ -71,6 +71,9 @@
 				return
 
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
+			if(SSovermap.ship_spawning)
+				to_chat(spawnee, "<span class='danger'>A ship is currently spawning. Try again in a little while.</span>")
+				return
 			if(!SSovermap.player_ship_spawn_allowed())
 				to_chat(spawnee, "<span class='danger'>No more ships may be spawned at this time!</span>")
 				return
@@ -111,6 +114,7 @@
 	. = list()
 	.["ships"] = list()
 	.["shipSpawnAllowed"] = SSovermap.player_ship_spawn_allowed()
+	.["shipSpawning"] = SSovermap.ship_spawning
 	.["purchaseBanned"] = is_banned_from(user.ckey, "Ship Purchasing")
 	// if the player has a client which is not eligible for playtime restriction (for admin + player DB flag playtime exemption), they "auto meet" playtime requirements
 	.["autoMeet"] = user.client && !user.client.is_playtime_restriction_eligible()
