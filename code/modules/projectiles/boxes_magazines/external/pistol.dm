@@ -28,7 +28,7 @@
 /obj/item/ammo_box/magazine/m10mm/rubber
 	name = "pistol magazine (10mm rubber)"
 	desc = "An 8-round handgun magazine for the stechkin pistol. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
-	icon_state = "9x19pR"
+	icon_state = "9x19p"
 	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
 /obj/item/ammo_box/magazine/m45
