@@ -112,6 +112,8 @@
 	.["ships"] = list()
 	.["shipSpawnAllowed"] = SSovermap.player_ship_spawn_allowed()
 	.["purchaseBanned"] = is_banned_from(user.ckey, "Ship Purchasing")
+	// if the player has a client which is not eligible for playtime restriction (for admin + player DB flag playtime exemption), they "auto meet" playtime requirements
+	.["autoMeet"] = user.client && !user.client.is_playtime_restriction_eligible()
 	.["playMin"] = user.client ? user.client.get_exp_living(TRUE) : 0
 
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)

@@ -92,10 +92,10 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/syndicate/aclf
-	name = "2nd Battlegroup uniform"
-	desc = "A black uniform worn by the officers of the Gorlex Marauders 2nd Battlegroup."
-	icon_state = "aclf"
+/obj/item/clothing/under/syndicate/officer
+	name = "syndicate officer uniform"
+	desc = "A black uniform worn by officers of many branches of the Syndicate."
+	icon_state = "officer"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 

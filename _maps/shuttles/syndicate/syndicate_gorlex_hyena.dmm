@@ -1705,12 +1705,12 @@
 	name = "captain's suit storage unit";
 	req_access = list(20)
 	},
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/sbg,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "Ck" = (
@@ -2256,8 +2256,9 @@
 	req_access = list(56)
 	},
 /obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "KX" = (
