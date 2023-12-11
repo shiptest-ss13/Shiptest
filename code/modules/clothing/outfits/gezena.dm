@@ -6,7 +6,7 @@
 		return
 	H.faction |= list("playerGezena")
 
-/datum/outfit/job/gezena 
+/datum/outfit/job/gezena
 	name = "Deckhand (PGF)"
 	jobtype = /datum/job/assistant
 
