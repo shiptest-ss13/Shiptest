@@ -30,24 +30,6 @@
 		if(!(vertical? (CANVERTICALATMOSPASS(O, other)) : (CANATMOSPASS(O, other))))
 			. = FALSE
 
-/turf/proc/update_conductivity(turf/T)
-	var/dir = get_dir_multiz(src, T)
-	var/opp = REVERSE_DIR(dir)
-
-	if(T == src)
-		return
-
-	//all these must be above zero for auxmos to even consider them
-	if(!thermal_conductivity || !heat_capacity || !T.thermal_conductivity || !T.heat_capacity)
-		conductivity_blocked_directions |= dir
-		T.conductivity_blocked_directions |= opp
-		return
-
-	for(var/obj/O in contents+T.contents)
-		if(O.BlockThermalConductivity(opp)) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
-			conductivity_blocked_directions |= dir
-			T.conductivity_blocked_directions |= opp
-
 /turf/proc/block_all_conductivity()
 	conductivity_blocked_directions |= NORTH | SOUTH | EAST | WEST | UP | DOWN
 
@@ -64,48 +46,51 @@
 	if(locate(/obj/machinery/door/firedoor) in src)
 		src_contains_firelock |= 2
 
+	LAZYINITLIST(src.atmos_adjacent_turfs)
+	var/list/atmos_adjacent_turfs = src.atmos_adjacent_turfs
+
 	for(var/direction in GLOB.cardinals_multiz)
-		var/turf/T = get_step_multiz(src, direction)
-		if(!istype(T))
+		var/turf/current_turf = get_step_multiz(src, direction)
+		if(!isopenturf(current_turf))
 			conductivity_blocked_directions |= direction
 			continue
 
 		var/other_contains_firelock = 1
-		if(locate(/obj/machinery/door/firedoor) in T)
+		if(locate(/obj/machinery/door/firedoor) in current_turf)
 			other_contains_firelock |= 2
 
-		update_conductivity(T)
-
-		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))))
-			LAZYINITLIST(atmos_adjacent_turfs)
-			LAZYINITLIST(T.atmos_adjacent_turfs)
-			atmos_adjacent_turfs[T] = other_contains_firelock | src_contains_firelock
-			T.atmos_adjacent_turfs[src] = src_contains_firelock
+		//Conductivity Update
+		var/opp = REVERSE_DIR(direction)
+		//all these must be above zero for auxmos to even consider them
+		if(!thermal_conductivity || !heat_capacity || !current_turf.thermal_conductivity || !current_turf.heat_capacity)
+			conductivity_blocked_directions |= direction
+			current_turf.conductivity_blocked_directions |= opp
 		else
-			if (atmos_adjacent_turfs)
-				atmos_adjacent_turfs -= T
-			if (T.atmos_adjacent_turfs)
-				T.atmos_adjacent_turfs -= src
-			UNSETEMPTY(T.atmos_adjacent_turfs)
+			for(var/obj/O in contents + current_turf.contents)
+				if(O.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
+					conductivity_blocked_directions |= direction
+					current_turf.conductivity_blocked_directions |= opp
+					break
+		//End Conductivity Update
 
-		T.__update_auxtools_turf_adjacency_info()
+		if(!(blocks_air || current_turf.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(current_turf, src)) : (canpass && CANATMOSPASS(current_turf, src))))
+			atmos_adjacent_turfs[current_turf] = other_contains_firelock | src_contains_firelock
+			LAZYSET(current_turf.atmos_adjacent_turfs, src, src_contains_firelock)
+		else
+			atmos_adjacent_turfs -= current_turf
+			LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
+
+		current_turf.__update_auxtools_turf_adjacency_info()
 	UNSETEMPTY(atmos_adjacent_turfs)
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
 	__update_auxtools_turf_adjacency_info()
 
 /turf/proc/clear_adjacencies()
 	block_all_conductivity()
-	for(var/direction in GLOB.cardinals_multiz)
-		var/turf/T = get_step_multiz(src, direction)
-		if(!T)
-			continue
-		if (atmos_adjacent_turfs)
-			atmos_adjacent_turfs -= T
-		if (T.atmos_adjacent_turfs)
-			T.atmos_adjacent_turfs -= src
-		UNSETEMPTY(T.atmos_adjacent_turfs)
+	for(var/turf/current_turf as anything in atmos_adjacent_turfs)
+		LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
+		current_turf.__update_auxtools_turf_adjacency_info()
 
-		T.__update_auxtools_turf_adjacency_info()
 	LAZYNULL(atmos_adjacent_turfs)
 	__update_auxtools_turf_adjacency_info()
 
