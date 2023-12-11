@@ -12,7 +12,7 @@
 /obj/structure/sign/map/right
 	icon_state = "map-right"
 
-/obj/structure/dign/directions
+/obj/structure/sign/directions
 	name = "You shouldn't see this"
 	icon_state = "direction"
 	icon = 'icons/obj/structures/signs/directions.dmi'
