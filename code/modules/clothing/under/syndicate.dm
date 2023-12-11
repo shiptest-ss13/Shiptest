@@ -89,6 +89,7 @@
 	name = "red polo and khaki pants"
 	desc = "A non-descript and slightly suspicious looking polo paired with a respectable yet also suspicious pair of khaki pants."
 	icon_state = "jake"
+	can_adjust = FALSE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
@@ -96,6 +97,7 @@
 	name = "syndicate officer uniform"
 	desc = "A black uniform worn by officers of many branches of the Syndicate."
 	icon_state = "officer"
+	can_adjust = FALSE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
@@ -103,6 +105,7 @@
 	name = "ACLF uniform"
 	desc = "A button-up in a tasteful shade of gray with red pants, used as the uniform of the Anti-Corporate Liberation front on the rim."
 	icon_state = "aclfgrunt"
+	can_adjust = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
@@ -110,6 +113,7 @@
 	name = "Gorlex Marauder uniform"
 	desc = "Originally worn by the miners of the Gorlex VII colony, it is now donned by veteran Gorlex Marauders."
 	icon_state = "gorlex"
+	can_adjust = FALSE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 	supports_variations = DIGITIGRADE_VARIATION | KEPORI_VARIATION
@@ -118,6 +122,7 @@
 	name = "cybersun jumpsuit"
 	desc = "The standard jumpsuit used by the agents employed by Cybersun, in its distinctive half-black-half-white aesthetic."
 	icon_state = "cybersun_agent"
+	can_adjust = FALSE
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/syndicate/cybersun/research
@@ -155,6 +160,7 @@
 	name = "Donk! Co. employee uniform"
 	desc = "The standard employee uniform of Donk Co. Smells like minimum wage."
 	icon_state = "donk_cargo"
+	can_adjust = FALSE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	body_parts_covered = CHEST|GROIN|ARMS
 	alt_covers_chest = TRUE
@@ -181,6 +187,7 @@
 	name = "GEC engineer jumpsuit"
 	desc = "A jumpsuit worn by GEC engineers. This one is worn by low ranking engineers."
 	icon_state = "gec_engineer"
+	can_adjust = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 60, "acid" = 20)
 	resistance_flags = NONE
 
