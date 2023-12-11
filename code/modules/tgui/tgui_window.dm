@@ -19,8 +19,11 @@
 	var/sent_assets = list()
 	// Vars passed to initialize proc (and saved for later)
 	var/initial_strict_mode
-	var/inline_assets
-	var/fancy
+	var/initial_fancy
+	var/initial_assets
+	var/initial_inline_html
+	var/initial_inline_js
+	var/initial_inline_css
 	var/mouse_event_macro_set = FALSE
 
 /**
@@ -46,7 +49,7 @@
  * state. You can begin sending messages right after initializing. Messages
  * will be put into the queue until the window finishes loading.
  *
- * optional inline_strict_mode bool - Enables strict error handling and BSOD.
+ * optional strict_mode bool - Enables strict error handling and BSOD.
  * optional fancy bool - If TRUE and if this is NOT a panel, will hide the window titlebar.
  * optional assets list - List of assets to load during initialization.
  * optional inline_html string - Custom HTML to inject.
@@ -55,16 +58,21 @@
  */
 /datum/tgui_window/proc/initialize(
 		strict_mode = FALSE,
-		inline_assets = list(),
+		fancy = FALSE,
+		assets = list(),
 		inline_html = "",
-		fancy = FALSE)
+		inline_js = "",
+		inline_css = "")
 	log_tgui(client,
 		context = "[id]/initialize",
 		window = src)
 	if(!client)
 		return
-	src.inline_assets = inline_assets
-	src.fancy = fancy
+	src.initial_fancy = fancy
+	src.initial_assets = assets
+	src.initial_inline_html = inline_html
+	src.initial_inline_js = inline_js
+	src.initial_inline_css = inline_css
 	status = TGUI_WINDOW_LOADING
 	fatally_errored = FALSE
 	// Build window options
@@ -78,9 +86,9 @@
 	var/html = SStgui.basehtml
 	html = replacetextEx(html, "\[tgui:windowId]", id)
 	html = replacetextEx(html, "\[tgui:strictMode]", strict_mode)
-	// Inject inline assets
+	// Inject assets
 	var/inline_assets_str = ""
-	for(var/datum/asset/asset in inline_assets)
+	for(var/datum/asset/asset in assets)
 		var/mappings = asset.get_url_mappings()
 		for(var/name in mappings)
 			var/url = mappings[name]
@@ -93,8 +101,17 @@
 	if(length(inline_assets_str))
 		inline_assets_str = "<script>\n" + inline_assets_str + "</script>\n"
 	html = replacetextEx(html, "<!-- tgui:assets -->\n", inline_assets_str)
-	// Inject custom HTML
-	html = replacetextEx(html, "<!-- tgui:html -->\n", inline_html)
+	// Inject inline HTML
+	if (inline_html)
+		html = replacetextEx(html, "<!-- tgui:inline-html -->", inline_html)
+	// Inject inline JS
+	if (inline_js)
+		inline_js = "<script>\n[inline_js]\n</script>"
+		html = replacetextEx(html, "<!-- tgui:inline-js -->", inline_js)
+	// Inject inline CSS
+	if (inline_css)
+		inline_css = "<style>\n[inline_css]\n</style>"
+		html = replacetextEx(html, "<!-- tgui:inline-css -->", inline_css)
 	// Open the window
 	client << browse(html, "window=[id];[options]")
 	// Detect whether the control is a browser

@@ -94,7 +94,7 @@
 		window.initialize(
 			strict_mode = TRUE,
 			fancy = user.client.prefs.tgui_fancy,
-			inline_assets = list(
+			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui_common),
 				get_asset_datum(/datum/asset/simple/tgui),
 			))
