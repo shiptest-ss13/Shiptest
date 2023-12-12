@@ -3,7 +3,6 @@
 	desc = "A blank billboard, with space for all kinds of advertising."
 	icon = 'icons/obj/billboard.dmi'
 	icon_state = "billboard_blank"
-	plane = ABOVE_GAME_PLANE
 	max_integrity = 1000
 	bound_width = 96
 	bound_height = 32
@@ -12,8 +11,6 @@
 
 /obj/structure/billboard/Initialize(mapload)
 	. = ..()
-
-	AddComponent(/datum/component/seethrough, SEE_THROUGH_MAP_BILLBOARD)
 
 /obj/structure/billboard/donk_n_go
 	name = "\improper Donk-n-Go billboard"
