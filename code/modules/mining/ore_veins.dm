@@ -84,9 +84,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/proc/begin_spawning()
 	spawner = AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
 
-/obj/structure/vein/proc/toggle_spawning()
-
-
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
 	var/class
