@@ -42,14 +42,13 @@
 	if(rtod - last_tgs_status < TGS_STATUS_THROTTLE)
 		return new /datum/tgs_message_content("Please wait a few seconds before using this command again.")
 	last_tgs_status = rtod
-	var/list/adm = get_admin_counts()
 
 	var/datum/tgs_chat_embed/structure/embed = new()
 	embed.title = "Server Admin Status"
 	embed.colour = COLOR_DARK_CYAN
 
 	embed.fields = list()
-	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]")
+	embed.fields += new /datum/tgs_chat_embed/field("Round", "[GLOB.round_id ? "Round #[GLOB.round_id]" : "Not started"]\n[station_name()]\n[length(SSovermap.controlled_ships)] ships")
 	embed.fields += new /datum/tgs_chat_embed/field("Admins", tgsadminwho())
 	embed.fields += new /datum/tgs_chat_embed/field("Players", "Total: [length(GLOB.clients)]\nActive: [get_active_player_count(FALSE, TRUE, FALSE)]\nAlive: [get_active_player_count(TRUE, TRUE, TRUE)]")
 
