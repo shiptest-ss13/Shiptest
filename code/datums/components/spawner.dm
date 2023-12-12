@@ -43,7 +43,7 @@
 
 /datum/component/spawner/process()
 	if(!parent) //Sanity check for instances where the spawner may be sleeping while the parent is destroyed
-		Destroy(TRUE,FALSE)
+		qdel(src)
 		return
 	try_spawn_mob()
 
@@ -100,12 +100,12 @@
 			player_count++
 		if(player_count > 3)
 			spawn_multiplier = round(player_count/2)
-	spawn_multiplier = clamp(spawn_multiplier, 1, max_mobs - spawned_mobs.len)
-	for(spawn_multiplier, spawn_multiplier > 0, spawn_multiplier--)
+	spawn_multiplier = clamp(spawn_multiplier, 1, max_mobs - length(spawned_mobs))
+	for(var/mob_index in 1 to spawn_multiplier)
 		if(spawn_distance_max > 1)
 			var/origin = spot
 			var/list/peel = turf_peel(spawn_distance_max, spawn_distance_min, origin, view_based = TRUE)
-			if(peel.len>0)
+			if(length(peel))
 				spot = pick(peel)
 			else
 				spot = pick(circleviewturfs(origin, spawn_distance_max))
