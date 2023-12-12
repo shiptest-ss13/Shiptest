@@ -67,16 +67,15 @@ GLOBAL_LIST_EMPTY(ore_veins)
 				ore_type_amount = rand(4,6)
 			else
 				ore_type_amount = 1
-		for(ore_type_amount, ore_type_amount>0, ore_type_amount--)
-			var/picked
-			picked = pickweight(ore_list)
+		for(var/ore_count in 1 to ore_type_amount)
+			var/picked = pickweight(ore_list)
 			vein_contents.Add(picked)
 			ore_list.Remove(picked)
 	GLOB.ore_veins += src
 
 /obj/structure/vein/Destroy()
-	. = ..()
 	GLOB.ore_veins -= src
+	return ..()
 
 /obj/structure/vein/deconstruct(disassembled)
 	destroy_effect()
@@ -92,9 +91,8 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
 	var/class
 	class = vein_class
-	for(class, class>0, class--)
-		var/picked
-		picked = pick(vein_contents)
+	for(var/vein_content_count in 1 to class)
+		var/picked = pick(vein_contents)
 		new picked(pick(get_adjacent_open_turfs(current)),round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier))
 
 /obj/structure/vein/proc/destroy_effect()
