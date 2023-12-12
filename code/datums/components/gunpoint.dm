@@ -36,8 +36,8 @@
 	shooter.apply_status_effect(/datum/status_effect/holdup, shooter)
 	target.apply_status_effect(/datum/status_effect/grouped/heldup, shooter)
 
-	if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher) && weapon.chambered)
-		if(target.stat == CONSCIOUS && IS_NUKE_OP(shooter) && !IS_NUKE_OP(target) && (locate(/obj/item/disk/nuclear) in target.get_contents()) && shooter.client)
+	if(target.job == "Captain" && target.stat == CONSCIOUS && is_nuclear_operative(shooter))
+		if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher) && weapon.chambered)
 			shooter.client.give_award(/datum/award/achievement/misc/rocket_holdup, shooter)
 
 	target.do_alert_animation(target)
@@ -116,8 +116,6 @@
 	if(point_of_no_return)
 		return
 	point_of_no_return = TRUE
-
-	var/mob/living/shooter = parent
 
 	if(!weapon.can_shoot() || !weapon.can_trigger_gun(shooter) || (weapon.weapon_weight == WEAPON_HEAVY && shooter.get_inactive_held_item()))
 		shooter.visible_message("<span class='danger'>[shooter] fumbles [weapon]!</span>", \

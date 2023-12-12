@@ -32,7 +32,7 @@
 		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")		//WS edit begin - Whitesands
 
 	. = ..()
-	apply_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+	apply_status_effect(/datum/status_effect/crusher_damage)
 
 /mob/living/simple_animal/hostile/asteroid/Aggro()
 	..()
