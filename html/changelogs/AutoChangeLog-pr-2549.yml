@@ -1,0 +1,8 @@
+author: MarkSuckerberg
+changes:
+  - {tweak: Round end now shows the ship you spawned on when possible instead of just
+      the sector name}
+  - {tweak: Slightly moves around the statpanel info to emphasise LST}
+  - {bugfix: Round time should no longer act strange when midnight passes}
+  - {bugfix: Respawns should no longer be delayed 24h when done over midnight}
+delete-after: true
