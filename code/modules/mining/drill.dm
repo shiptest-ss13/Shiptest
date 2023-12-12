@@ -141,7 +141,7 @@
 			anchored = TRUE
 			update_icon_state()
 			return
-		else if(tool.use_tool(src, user, 30, volume=50))
+		if(tool.use_tool(src, user, 30, volume=50))
 			to_chat(user, "<span class='notice'>You unsecure the [src] from the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
