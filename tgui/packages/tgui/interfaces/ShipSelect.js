@@ -67,7 +67,9 @@ export const ShipSelect = (props, context) => {
                     (data.purchaseBanned &&
                       'You are banned from purchasing ships.') ||
                     (!data.shipSpawnAllowed &&
-                      'No more ships may be spawned at this time.')
+                      'No more ships may be spawned at this time.') ||
+                    (data.shipSpawning &&
+                      'A ship is currently spawning. Please wait.')
                   }
                   disabled={data.purchaseBanned}
                   onClick={() => {
@@ -254,10 +256,13 @@ export const ShipSelect = (props, context) => {
                         'There are too many ships of this type.') ||
                       (!data.autoMeet &&
                         data.playMin < template.minTime &&
-                        'You do not have enough playtime to buy this ship.')
+                        'You do not have enough playtime to buy this ship.') ||
+                      (data.shipSpawning &&
+                        'A ship is currently spawning. Please wait.')
                     }
                     disabled={
                       !data.shipSpawnAllowed ||
+                      data.shipSpawning ||
                       template.curNum >= template.limit ||
                       (!data.autoMeet && data.playMin < template.minTime)
                     }
