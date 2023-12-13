@@ -113,7 +113,7 @@
 	deltimer(expression_timer)
 	add_overlay(type)
 	if(duration)
-		expression_timer = addtimer(CALLBACK(src, .proc/set_expression, "neutral"), duration, TIMER_STOPPABLE)
+		expression_timer = addtimer(CALLBACK(src, PROC_REF(set_expression), "neutral"), duration, TIMER_STOPPABLE)
 
 /obj/machinery/pinpointer_dispenser/proc/pointat(atom)
 	visible_message("<span class='name'>[src]</span> points at [atom].")

@@ -54,7 +54,7 @@
 		if (!isturf(S.loc) || !S.virtual_z() == T.virtual_z())
 			continue
 		supermatters.Add(S)
-		RegisterSignal(S, COMSIG_PARENT_QDELETING, .proc/react_to_del)
+		RegisterSignal(S, COMSIG_PARENT_QDELETING, PROC_REF(react_to_del))
 
 /datum/computer_file/program/supermatter_monitor/proc/get_status()
 	. = SUPERMATTER_INACTIVE
@@ -70,8 +70,8 @@
  */
 /datum/computer_file/program/supermatter_monitor/proc/set_signals()
 	if(active)
-		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_ALARM, .proc/send_alert, override = TRUE)
-		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_START_ALARM, .proc/send_start_alert, override = TRUE)
+		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_ALARM, PROC_REF(send_alert), override = TRUE)
+		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_START_ALARM, PROC_REF(send_start_alert), override = TRUE)
 
 /**
  * Removes the signal listener for Supermatter delaminations from the selected supermatter.

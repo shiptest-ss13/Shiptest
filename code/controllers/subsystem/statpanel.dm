@@ -11,18 +11,17 @@ SUBSYSTEM_DEF(statpanels)
 
 /datum/controller/subsystem/statpanels/fire(resumed = FALSE)
 	if (!resumed)
-		var/actual_round_time = world.timeofday - SSticker.round_start_timeofday
-		var/game_round_time = world.time - SSticker.round_start_time
 		var/list/global_data = list(
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Local Time: [station_time_timestamp()]",
 			"\n",
-			"Internal Round Timer: [SSticker.round_start_time ? time2text(game_round_time, "hh:mm:ss", 0) : "The round hasn't started yet!"]",
-			"Actual Round Timer: [SSticker.round_start_timeofday ? time2text(actual_round_time, "hh:mm:ss", 0) : "The round hasn't started yet!"]",
+			"Local Sector Time: [SSticker.round_start_timeofday ? "[station_time_timestamp()] [sector_datestamp()]" : "The round hasn't started yet!"]",
 			"\n",
-			"Playing/Connected: [get_active_player_count()]/[GLOB.clients.len]"
+			"Internal Round Timer: [SSticker.round_start_timeofday ? ROUND_TIME : "The round hasn't started yet!"]",
+			"Actual Round Timer: [SSticker.round_start_timeofday ? ROUND_REALTIMEOFDAY : "The round hasn't started yet!"]",
+			"\n",
+			"Playing/Connected: [get_active_player_count()]/[length(GLOB.clients)]"
 		)
 
 		if(SSshuttle.jump_mode != BS_JUMP_IDLE)
@@ -133,7 +132,7 @@ SUBSYSTEM_DEF(statpanels)
 						if(length(turfitems) < 30) // only create images for the first 30 items on the turf, for performance reasons
 							if(!(REF(turf_content) in cached_images))
 								cached_images += REF(turf_content)
-								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, /atom/.proc/remove_from_cache) // we reset cache if anything in it gets deleted
+								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/atom, remove_from_cache)) // we reset cache if anything in it gets deleted
 								if(ismob(turf_content) || length(turf_content.overlays) > 2)
 									turfitems[++turfitems.len] = list("[turf_content.name]", REF(turf_content), costly_icon2html(turf_content, target, sourceonly=TRUE))
 								else

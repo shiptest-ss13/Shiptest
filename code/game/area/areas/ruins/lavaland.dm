@@ -60,42 +60,6 @@
 	name = "Cult Altar"
 	ambientsounds = SPOOKY
 
-//Syndicate lavaland base
-
-/area/ruin/unpowered/syndicate_lava_base/engineering
-	name = "Syndicate Lavaland Engineering"
-
-/area/ruin/unpowered/syndicate_lava_base/medbay
-	name = "Syndicate Lavaland Medbay"
-
-/area/ruin/unpowered/syndicate_lava_base/arrivals
-	name = "Syndicate Lavaland Arrivals"
-
-/area/ruin/unpowered/syndicate_lava_base/bar
-	name = "Syndicate Lavaland Bar"
-
-/area/ruin/unpowered/syndicate_lava_base/main
-	name = "Syndicate Lavaland Primary Hallway"
-	area_flags = HIDDEN_AREA | BLOBS_ALLOWED | UNIQUE_AREA // WS edit - Fix various startup runtimes
-
-/area/ruin/unpowered/syndicate_lava_base/cargo
-	name = "Syndicate Lavaland Cargo Bay"
-
-/area/ruin/unpowered/syndicate_lava_base/chemistry
-	name = "Syndicate Lavaland Chemistry"
-
-/area/ruin/unpowered/syndicate_lava_base/virology
-	name = "Syndicate Lavaland Virology"
-
-/area/ruin/unpowered/syndicate_lava_base/testlab
-	name = "Syndicate Lavaland Experimentation Lab"
-
-/area/ruin/unpowered/syndicate_lava_base/dormitories
-	name = "Syndicate Lavaland Dormitories"
-
-/area/ruin/unpowered/syndicate_lava_base/telecomms
-	name = "Syndicate Lavaland Telecommunications"
-
 //Xeno Nest
 
 /area/ruin/unpowered/xenonest

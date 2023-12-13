@@ -213,3 +213,21 @@
 	for(var/i in 1 to 3)
 		var/item = pick_n_take(L)
 		new item(C)
+
+/datum/supply_pack/costumes_toys/rilena_merch
+	name = "RILENA Merchandise Crate"
+	desc = "A crate full of all the RILENA merch you could ever want. Except the offbrand stuff. That's not in here."
+	cost = 1000 //lots of loot
+	contains = list(/obj/item/toy/figure/tali,
+					/obj/item/toy/plush/rilena,
+					/obj/item/toy/plush/tali,
+					/obj/item/toy/plush/sharai,
+					/obj/item/toy/plush/xader,
+					/obj/item/toy/plush/mora,
+					/obj/item/poster/random_rilena,
+					/obj/item/poster/random_rilena,
+					/obj/item/poster/random_rilena,
+					/obj/item/clothing/suit/hooded/hoodie/rilena,
+					/obj/item/clothing/under/dress/rilena,
+					/obj/item/gun/energy/buster)
+	crate_name = "collectable merchandise crate"

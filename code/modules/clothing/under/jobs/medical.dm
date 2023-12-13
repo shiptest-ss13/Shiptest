@@ -11,6 +11,16 @@
 	permeability_coefficient = 0.5
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	desc = "It's a jumpsuit worn by those with the experience to be a \"Medical Director\" for Cybersun. It provides minor biological protection."
+	name = "medical director's jumpsuit"
+	icon_state = "cybersun_md"
+	item_state = "w_suit"
+	icon = 'icons/obj/clothing/under/syndicate.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
+	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/under/rank/medical/chief_medical_officer/skirt
 	name = "chief medical officer's jumpskirt"
 	desc = "It's a jumpskirt worn by those with the experience to be \"Chief Medical Officer\". It provides minor biological protection."

@@ -43,7 +43,6 @@ GLOBAL_LIST_EMPTY(ipc_chassis_list)
 GLOBAL_LIST_INIT(ipc_brain_list, list("Posibrain", "Man-Machine Interface"))
 GLOBAL_LIST_EMPTY(spider_legs_list)
 GLOBAL_LIST_EMPTY(spider_spinneret_list)
-GLOBAL_LIST_EMPTY(spider_mandibles_list)
 GLOBAL_LIST_EMPTY(kepori_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_body_feathers_list)
 GLOBAL_LIST_EMPTY(kepori_tail_feathers_list)
@@ -128,7 +127,7 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sortList(list(
 	"Helios",
 	"House",
 	"Inverted",
-	"Lamp",	//WS edit, moff ai display
+	"Lamp",
 	"Matrix",
 	"Monochrome",
 	"Murica",

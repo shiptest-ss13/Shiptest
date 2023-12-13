@@ -2,6 +2,13 @@
 	Map templates
 */
 
+/datum/map_template/outpost
+	// Necessary to stop planetary outposts from having space underneath all their turfs.
+	// They were being "placed on top", so instead of their baseturf, there was just space underneath.
+	// (Interestingly, this is much less of a problem for ruins: PlaceOnTop ignores the top closed turf in the baseturfs stack
+	// of the new tile, meaning that placing plating on top of a wall doesn't result in a wall underneath the plating.)
+	should_place_on_top = FALSE
+
 /datum/map_template/outpost/New()
 	. = ..(path = "_maps/outpost/[name].dmm")
 
@@ -11,6 +18,10 @@
 
 /datum/map_template/outpost/elevator_test
 	name = "elevator_test"
+
+/datum/map_template/outpost/elevator_indie
+	name = "elevator_indie"
+
 
 /*
 	Independent Space Outpost //creative name!
@@ -81,8 +92,8 @@
 /datum/overmap/outpost/indie_space
 	token_icon_state = "station_1"
 	main_template = /datum/map_template/outpost/indie_space
-	elevator_template = /datum/map_template/outpost/elevator_test
-	// Uses "test" hangars.
+	elevator_template = /datum/map_template/outpost/elevator_indie
+	// Uses "default" hangars (indie_space).
 
 /datum/overmap/outpost/nanotrasen_asteroid
 	token_icon_state = "station_asteroid_0"

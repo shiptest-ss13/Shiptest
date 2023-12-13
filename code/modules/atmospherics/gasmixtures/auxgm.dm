@@ -138,7 +138,7 @@ GLOBAL_DATUM_INIT(gas_data, /datum/auxgm, new)
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	anchored = TRUE  // should only appear in vis_contents, but to be safe
 	layer = FLY_LAYER
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | RESET_COLOR
 	vis_flags = NONE
 
 /obj/effect/overlay/gas/New(state)

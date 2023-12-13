@@ -4,6 +4,12 @@
 	desc = "A basic energy-based gun."
 	icon = 'icons/obj/guns/energy.dmi'
 
+	muzzleflash_iconstate = "muzzle_flash_laser"
+	muzzle_flash_color = COLOR_SOFT_RED
+
+	has_safety = TRUE
+	safety = TRUE
+
 	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
 	var/cell_type = /obj/item/stock_parts/cell/gun
 	var/modifystate = 0
@@ -93,7 +99,7 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
-/obj/item/gun/energy/attack_self(mob/living/user as mob)
+/obj/item/gun/energy/unique_action(mob/living/user)
 	if(ammo_type.len > 1)
 		select_fire(user)
 		update_appearance()
@@ -122,29 +128,33 @@
 		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
-/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
-	playsound(src, load_sound, sound_volume, load_sound_vary)
-	cell.forceMove(drop_location())
-	var/obj/item/stock_parts/cell/gun/old_cell = cell
-	/*if(insert_cell(user, tac_load))
-		to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
-	else
-		to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")*/
-	cell = null
-	user.put_in_hands(old_cell)
-	old_cell.update_appearance()
-	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
-	update_appearance()
+/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/I)
+	to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
+	if(I.use_tool(src, user, unscrewing_time, volume=100))
+		to_chat(user, "<span class='notice'>You remove the power cell.</span>")
+		playsound(src, load_sound, sound_volume, load_sound_vary)
+		cell.forceMove(drop_location())
+		var/obj/item/stock_parts/cell/gun/old_cell = cell
+		cell = null
+		user.put_in_hands(old_cell)
+		old_cell.update_appearance()
+		to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+		update_appearance()
 
-/obj/item/gun/energy/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))
-		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
-		if(I.use_tool(src, user, unscrewing_time, volume=100))
-			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
-			eject_cell(user)
-	return ..()
+/obj/item/gun/energy/get_gun_attachments()
+	if(cell && !internal_cell)
+		attachment_options += list("Cell" = image(icon = cell.icon, icon_state = cell.icon_state))
+	..()
 
-/obj/item/gun/energy/can_shoot()
+/obj/item/gun/energy/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
+	if(picked_option == "Cell")
+		eject_cell(user, I)
+		return TRUE
+	..()
+
+/obj/item/gun/energy/can_shoot(visuals)
+	if(safety && !visuals)
+		return FALSE
 	var/obj/item/ammo_casing/energy/shot = ammo_type[select]
 	return !QDELETED(cell) ? (cell.charge >= shot.e_cost) : FALSE
 
@@ -196,6 +206,7 @@
 	if (shot.select_name)
 		to_chat(user, "<span class='notice'>[src] is now set to [shot.select_name].</span>")
 	chambered = null
+	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 	recharge_newshot(TRUE)
 	update_appearance()
 	return
@@ -217,10 +228,15 @@
 	. = ..()
 	if(!automatic_charge_overlays || QDELETED(src))
 		return
-	// Every time I see code this "flexible", a kitten fucking dies
+	// Every time I see code this "flexible", a kitten fucking dies //it got worse
+	//todo: refactor this a bit to allow showing of charge on a gun's cell
 	var/overlay_icon_state = "[icon_state]_charge"
 	var/obj/item/ammo_casing/energy/shot = ammo_type[modifystate ? select : 1]
 	var/ratio = get_charge_ratio()
+	if(cell)
+		. += "[icon_state]_cell"
+		if(ratio == 0)
+			. += "[icon_state]_cellempty"
 	if(ratio == 0)
 		if(modifystate)
 			. += "[icon_state]_[shot.select_name]"
@@ -243,7 +259,7 @@
 
 ///Used by update_icon_state() and update_overlays()
 /obj/item/gun/energy/proc/get_charge_ratio()
-	return can_shoot() ? CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1) : 0
+	return can_shoot(visuals = TRUE) ? CEILING(clamp(cell.charge / cell.maxcharge, 0, 1) * charge_sections, 1) : 0
 	// Sets the ratio to 0 if the gun doesn't have enough charge to fire, or if its power cell is removed.
 
 /obj/item/gun/energy/vv_edit_var(var_name, var_value)
@@ -268,18 +284,18 @@
 		else if(BB.nodamage || !BB.damage || BB.damage_type == STAMINA)
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, TRUE)
-			playsound(user, BB.hitsound, 50, TRUE)
+			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"

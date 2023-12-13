@@ -64,3 +64,13 @@
 /// Flags for the pod_flags var on /obj/structure/closet/supplypod
 
 #define FIRST_SOUNDS (1<<0) // If it shouldn't play sounds the first time it lands, used for reverse mode
+
+
+// Bullet hit sounds
+#define PROJECTILE_HITSOUND_FLESH (1<<0)
+#define PROJECTILE_HITSOUND_NON_LIVING (1<<1)
+#define PROJECTILE_HITSOUND_GLASS (1<<2)
+#define PROJECTILE_HITSOUND_STONE (1<<3)
+#define PROJECTILE_HITSOUND_METAL (1<<4)
+#define PROJECTILE_HITSOUND_WOOD (1<<5)
+#define PROJECTILE_HITSOUND_SNOW (1<<6)

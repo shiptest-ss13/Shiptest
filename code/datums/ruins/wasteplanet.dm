@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\wasteruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/wasteplanet
 	prefix = "_maps/RandomRuins/WasteRuins/"

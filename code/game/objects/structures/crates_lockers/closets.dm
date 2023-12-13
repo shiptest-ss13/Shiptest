@@ -52,7 +52,7 @@
 	if(populate)
 		PopulateContents()
 
-	RegisterSignal(src, COMSIG_ATOM_CANREACH, .proc/canreach_react)
+	RegisterSignal(src, COMSIG_ATOM_CANREACH, PROC_REF(canreach_react))
 
 /obj/structure/closet/LateInitialize()
 	take_contents(src)

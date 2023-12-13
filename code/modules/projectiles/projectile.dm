@@ -13,7 +13,17 @@
 	generic_canpass = FALSE
 	//The sound this plays on impact.
 	var/hitsound = 'sound/weapons/pierce.ogg'
-	var/hitsound_wall = ""
+	var/hitsound_non_living = ""
+	var/hitsound_glass
+	var/hitsound_stone
+	var/hitsound_metal
+	var/hitsound_wood
+	var/hitsound_snow
+
+	var/near_miss_sound = ""
+	var/ricochet_sound = ""
+
+
 
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/def_zone = ""	//Aiming at
@@ -158,7 +168,7 @@
 	var/can_hit_turfs = FALSE
 
 	var/static/list/projectile_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /obj/projectile/Initialize()
@@ -223,11 +233,6 @@
 	if(!isliving(target))
 		if(impact_effect_type && !hitscan)
 			new impact_effect_type(target_loca, hitx, hity)
-		if(isturf(target) && hitsound_wall)
-			var/volume = clamp(vol_by_damage() + 20, 0, 100)
-			if(suppressed)
-				volume = 5
-			playsound(loc, hitsound_wall, volume, TRUE, -1)
 		return BULLET_ACT_HIT
 
 	var/mob/living/L = target
@@ -264,8 +269,7 @@
 			to_chat(L, "<span class='userdanger'>You're shot by \a [src][organ_hit_text]!</span>")
 		else
 			if(hitsound)
-				var/volume = vol_by_damage()
-				playsound(src, hitsound, volume, TRUE, -1)
+				playsound(get_turf(L), hitsound, 100, TRUE, -1)
 			L.visible_message("<span class='danger'>[L] is hit by \a [src][organ_hit_text]!</span>", \
 					"<span class='userdanger'>You're hit by \a [src][organ_hit_text]!</span>", null, COMBAT_MESSAGE_RANGE)
 		L.on_hit(src)
@@ -350,6 +354,8 @@
 			range = decayedRange
 			if(hitscan)
 				store_hitscan_collision(pcache)
+			if(ricochet_sound)
+				playsound(get_turf(src), ricochet_sound, 120, TRUE, 2) //make it loud, we want to make it known when a ricochet happens. for aesthetic reasons mostly
 			return TRUE
 
 	var/distance = get_dist(T, starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.
@@ -521,6 +527,16 @@
 			if(can_hit_target(M, M == original, TRUE))
 				Impact(M)
 				break
+		if(!near_miss_sound)
+			return FALSE
+		if(decayedRange <= range+2)
+			return FALSE
+		for(var/mob/misser in range(1,src))
+			if(!(misser.stat <= SOFT_CRIT))
+				continue
+			misser.playsound_local(get_turf(src), near_miss_sound, 100, FALSE)
+			misser.shake_animation(damage)
+
 
 /**
  * Projectile crossed: When something enters a projectile's tile, make sure the projectile hits it if it should be hitting it.
