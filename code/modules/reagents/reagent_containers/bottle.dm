@@ -452,11 +452,6 @@
 	desc = "A pump bottle containing mexican coffee-flavoured liqueur syrup. In production since 1936, HONK."
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 50)
 
-/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/korta_nectar
-	name = "bottle of korta syrup"
-	desc = "A pump bottle containing korta syrup. A sweet, sugary substance made from crushed sweet korta nuts."
-	list_reagents = list(/datum/reagent/consumable/korta_nectar = 50)
-
 //Coffeepots: for reference, a standard cup is 30u, to allow 20u for sugar/sweetener/milk/creamer
 /obj/item/reagent_containers/food/drinks/bottle/coffeepot
 	icon = 'icons/obj/food/containers.dmi'

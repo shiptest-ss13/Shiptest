@@ -266,7 +266,6 @@
 	contains = list(
 		/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/caramel,
 		/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/liqueur,
-		/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/korta_nectar,
 	)
 	crate_name = "coffee syrups box"
 	crate_type = /obj/structure/closet/crate
