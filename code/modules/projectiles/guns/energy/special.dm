@@ -12,6 +12,7 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
+	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
 /obj/item/gun/energy/ionrifle/emp_act(severity)
 	return
@@ -103,6 +104,7 @@
 	unique_frequency = TRUE
 	can_flashlight = FALSE
 	max_mod_capacity = 0
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
 	name = "candy corn crossbow"
@@ -120,6 +122,7 @@
 	suppressed = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	pin = null
+	manufacturer = MANUFACTURER_NONE
 
 
 /obj/item/gun/energy/plasmacutter
@@ -260,7 +263,7 @@
 
 /obj/item/gun/energy/wormhole_projector/proc/create_portal(obj/projectile/beam/wormhole/W, turf/target)
 	var/obj/effect/portal/P = new /obj/effect/portal(target, 300, null, FALSE, null, atmos_link)
-	RegisterSignal(P, COMSIG_PARENT_QDELETING, .proc/on_portal_destroy)
+	RegisterSignal(P, COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy))
 	if(istype(W, /obj/projectile/beam/wormhole/orange))
 		qdel(p_orange)
 		p_orange = P
@@ -384,7 +387,7 @@
 		return
 	return ..()
 
-/obj/item/gun/energy/gravity_gun/can_shoot()
+/obj/item/gun/energy/gravity_gun/can_shoot(visuals)
 	if(!firing_core)
 		return FALSE
 	return ..()
@@ -401,3 +404,11 @@
 /obj/item/gun/energy/tesla_cannon/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+
+/obj/item/gun/energy/buster
+	name = "replica buster cannon"
+	icon_state = "buster"
+	item_state = "buster"
+	desc = "A replica of T4L1's buster cannon from the popular webseries RILENA. Fires a harmless energy pellet at the target."
+	ammo_type = list(/obj/item/ammo_casing/energy/buster)
+	weapon_weight = WEAPON_LIGHT

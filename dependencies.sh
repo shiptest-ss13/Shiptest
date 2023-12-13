@@ -8,10 +8,10 @@ export BYOND_MAJOR=514
 export BYOND_MINOR=1588
 
 #rust version
-export RUST_VERSION=1.67.0
+export RUST_VERSION=1.67.1
 
 #rust_g git tag
-export RUST_G_VERSION=1.2.0
+export RUST_G_VERSION=3.0.0
 
 #node version
 export NODE_VERSION=16
@@ -27,4 +27,4 @@ export PYTHON_VERSION=3.7.9
 export AUXMOS_REPO=https://github.com/shiptest-ss13/auxmos
 
 #auxmos version
-export AUXMOS_VERSION=v1.1.0
+export AUXMOS_VERSION=v1.2.6

@@ -360,6 +360,7 @@
 	name = "Falcon Dropship"
 	prefix = "NTSV"
 
+
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
 	name = "Crux Dropship"
@@ -375,3 +376,5 @@
 	file_name = "frontiersmen_gut"
 	name = "Gut Combat Freighter"
 	prefix = "ISV"
+
+

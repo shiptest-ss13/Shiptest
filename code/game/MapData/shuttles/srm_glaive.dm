@@ -91,10 +91,6 @@
 	)
 	generate_items_inside(items_inside, src)
 
-/obj/structure/flora/tree/chapel/srm
-	name = "Montagne's Oak"
-	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
-
 /obj/item/book/manual/srmlore
 	name = "Notes on the SRM"
 	icon_state = "book5"

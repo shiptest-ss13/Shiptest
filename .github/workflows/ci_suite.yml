@@ -11,8 +11,9 @@ on:
       - master
 jobs:
   run_linters:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Run Linters
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -66,8 +67,9 @@ jobs:
           cat check_regex_output.txt
 
   compile_all_maps:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Compile Maps
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Python setup
@@ -90,54 +92,34 @@ jobs:
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
   run_all_tests:
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
-    runs-on: ubuntu-20.04
     strategy:
-      fail-fast: false
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup cache
-        id: cache-byond
-        uses: actions/cache@v3
-        with:
-          path: ~/BYOND
-          key: ${{ runner.os }}-byond-cache-${{ hashFiles('Dockerfile') }}
-      - name: Install BYOND
-        if: steps.cache-byond.outputs.cache-hit != 'true'
-        run: bash tools/ci/install_byond.sh
-      - name: Setup database
-        run: |
-          sudo systemctl start mysql
-          mysql -u root -proot -e 'CREATE DATABASE tg_ci;'
-          mysql -u root -proot tg_ci < SQL/tgstation_schema.sql
-          mysql -u root -proot -e 'CREATE DATABASE tg_ci_prefixed;'
-          mysql -u root -proot tg_ci_prefixed < SQL/tgstation_schema_prefixed.sql
-      - name: Install rust-g
-        run: |
-          sudo dpkg --add-architecture i386
-          sudo apt update || true
-          sudo apt install -o APT::Immediate-Configure=false libssl1.1:i386
-          bash tools/ci/install_rust_g.sh
-      - name: Install auxmos
-        run: |
-          bash tools/ci/install_auxmos.sh
-      - name: Compile Tests
-        run: |
-          bash tools/ci/install_byond.sh
-          source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
-      - name: Run Tests
-        run: |
-          source $HOME/BYOND/byond/bin/byondsetup
-          bash tools/ci/run_server.sh
+      fail-fast: true
+      matrix:
+        arg: [
+          "BASIC_TESTS",
+          "CREATE_AND_DESTROY_TEST",
+          "PLANET_GEN_TEST",
+          "RUIN_PLACEMENT_TEST",
+          "SHIP_PLACEMENT_TEST"
+        ]
+    uses: ./.github/workflows/run_integration_tests.yml
+    with:
+      arg: ${{ matrix.arg }}
+
+#  run_alternate_tests:
+#    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+#    name: Alternate Tests
+#    strategy:
+#      fail-fast: false
+#      matrix:
+#        major: [515]
+#        minor: [1614]
+#    uses: ./.github/workflows/run_integration_tests.yml
+#    with:
+#      major: ${{ matrix.major }}
+#      minor: ${{ matrix.minor }}
 
   test_windows:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"

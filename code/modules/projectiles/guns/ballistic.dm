@@ -6,6 +6,9 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 
+	has_safety = TRUE
+	safety = TRUE
+
 	///sound when inserting magazine
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
 	///sound when inserting an empty magazine
@@ -88,7 +91,7 @@
 	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
 	var/tac_reloads = TRUE //Snowflake mechanic no more.
 	///If we have the 'snowflake mechanic,' how long should it take to reload?
-	var/tactical_reload_delay  = 1.2 SECONDS
+	var/tactical_reload_delay  = 1 SECONDS
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -242,6 +245,8 @@
 	update_appearance()
 
 /obj/item/gun/ballistic/can_shoot()
+	if(safety)
+		return FALSE
 	return chambered
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)

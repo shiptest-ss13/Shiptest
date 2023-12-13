@@ -53,7 +53,7 @@
 	name = harvested_name
 	desc = harvested_desc
 	harvested = TRUE
-	addtimer(CALLBACK(src, .proc/regrow), rand(regrowth_time_low, regrowth_time_high))
+	addtimer(CALLBACK(src, PROC_REF(regrow)), rand(regrowth_time_low, regrowth_time_high))
 	return 1
 
 /obj/structure/flora/ash/proc/regrow()
@@ -458,18 +458,7 @@
 	desc = "A bowl made out of mushrooms. Not food, though it might have contained some at some point."
 	icon = 'icons/obj/lavaland/ash_flora.dmi'
 	icon_state = "mushroom_bowl"
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_overlays()
-	. = ..()
-	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/lavaland/ash_flora.dmi', "fullbowl")
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		. += filling
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/update_icon_state()
-	if(!reagents || !reagents.total_volume)
-		icon_state = "mushroom_bowl"
-	return ..()
+	fill_icon = 'icons/obj/lavaland/ash_flora.dmi'
 
 /obj/item/reagent_containers/glass/bowl/mushroom_bowl/attackby(obj/item/I,mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
@@ -496,7 +485,7 @@
 	name = harvested_name
 	desc = harvested_desc
 	harvested = TRUE
-	addtimer(CALLBACK(src, .proc/regrow), rand(regrowth_time_low, regrowth_time_high))
+	addtimer(CALLBACK(src, PROC_REF(regrow)), rand(regrowth_time_low, regrowth_time_high))
 	return 1
 
 /obj/structure/flora/ash/glowshroom

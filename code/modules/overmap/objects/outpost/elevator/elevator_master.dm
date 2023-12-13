@@ -174,7 +174,7 @@
 
 	if(next_move != NONE)
 		// sets in motion a chain of procs that will, after a bit, call check_move() again.
-		addtimer(CALLBACK(src, .proc/move_elevator, next_move), floor_move_time)
+		addtimer(CALLBACK(src, PROC_REF(move_elevator), next_move), floor_move_time)
 		return
 
 	// This is the only way the elevator may become idle: if it does not find anywhere to go on check_move().
@@ -255,10 +255,10 @@
 	cur_floor.calls &= ~seeking_dir
 	cur_floor.button?.update_icon()
 
-	addtimer(CALLBACK(src, .proc/open_doors, cur_floor), door_open_time)
-	addtimer(CALLBACK(src, .proc/close_doors, cur_floor), door_open_time+floor_idle_time)
+	addtimer(CALLBACK(src, PROC_REF(open_doors), cur_floor), door_open_time)
+	addtimer(CALLBACK(src, PROC_REF(close_doors), cur_floor), door_open_time+floor_idle_time)
 	// Continue the check_move() chain.
-	addtimer(CALLBACK(src, .proc/check_move), door_open_time+floor_idle_time+(1 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(check_move)), door_open_time+floor_idle_time+(1 SECONDS))
 
 /datum/elevator_master/proc/open_doors(datum/floor/d_floor)
 	for(var/obj/machinery/door/fl_door as anything in d_floor.doors)
@@ -267,13 +267,13 @@
 		if(!fl_door.wires.is_cut(WIRE_BOLTS))
 			fl_door.unlock()
 		fl_door.autoclose = FALSE
-		INVOKE_ASYNC(fl_door, /obj/machinery/door.proc/open)
+		INVOKE_ASYNC(fl_door, TYPE_PROC_REF(/obj/machinery/door, open))
 
 /datum/elevator_master/proc/close_doors(datum/floor/d_floor)
 	for(var/obj/machinery/door/fl_door as anything in d_floor.doors)
 		// respect the cut wire
 		fl_door.autoclose = fl_door.wires.is_cut(WIRE_TIMING)
-		INVOKE_ASYNC(fl_door, /obj/machinery/door.proc/close)
+		INVOKE_ASYNC(fl_door, TYPE_PROC_REF(/obj/machinery/door, close))
 		// bolts can be lowered without power, or a cut wire (since if wire is cut they're automatically down)
 		fl_door.lock()
 
@@ -350,7 +350,7 @@
 		// you can always lower the bolts; doors are locked on floor creation to ensure no entry into shaft
 		fl_door.lock()
 		// don't want door refs hanging around
-		RegisterSignal(fl_door, COMSIG_PARENT_QDELETING, .proc/door_qdelete)
+		RegisterSignal(fl_door, COMSIG_PARENT_QDELETING, PROC_REF(door_qdelete))
 
 // Deletion via means other than /datum/elevator_master/remove_floor() are likely to cause nasty elevator desyncs.
 /datum/floor/Destroy()

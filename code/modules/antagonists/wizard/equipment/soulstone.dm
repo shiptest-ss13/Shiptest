@@ -224,7 +224,7 @@
 					"Wraith" = image(icon = 'icons/mob/cult.dmi', icon_state = "wraith"),
 					"Artificer" = image(icon = 'icons/mob/cult.dmi', icon_state = "artificer")
 					)
-				var/construct_class = show_radial_menu(user, src, constructs, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+				var/construct_class = show_radial_menu(user, src, constructs, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 				if(!T || !T.loc)
 					return
 				switch(construct_class)

@@ -97,6 +97,9 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
+	///Granted by prismwine
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE) && prob(50))
+		return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0)
@@ -692,14 +695,7 @@
 		return
 
 	if(src == M)
-		if(has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
-			to_chat(src, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-			if(do_after(src, 35, null, src))
-				to_chat(src, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
-				remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
-			return
 		check_self_for_injuries()
-
 
 	else
 		if(wear_suit)
@@ -708,7 +704,6 @@
 			w_uniform.add_fingerprint(M)
 
 		..()
-
 
 /mob/living/carbon/human/check_self_for_injuries()
 	if(stat >= UNCONSCIOUS)
