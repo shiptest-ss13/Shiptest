@@ -133,13 +133,11 @@
 		. += "coffeemaker_cartidge"
 	return .
 
-/obj/machinery/coffeemaker/proc/replace_pot(mob/living/user, /obj/item/reagent_containers/food/drinks/bottle/coffeepot/new_coffeepot)
+/obj/machinery/coffeemaker/proc/replace_pot(mob/living/user, /obj/item/reagent_containers/food/drinks/bottle/coffeepot)
 	if(!user)
 		return FALSE
 	if(coffeepot)
 		try_put_in_hand(coffeepot, user)
-	if(new_coffeepot)
-		coffeepot = new_coffeepot
 	balloon_alert(user, "replaced pot")
 	update_appearance(UPDATE_OVERLAYS)
 	return TRUE
