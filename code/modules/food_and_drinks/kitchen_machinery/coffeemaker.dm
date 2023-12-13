@@ -547,16 +547,16 @@
 
 /obj/machinery/coffeemaker/impressa/try_brew(mob/living/user)
 	if(coffee_amount <= 0)
-		balloon_alert(user,"no coffee beans added!")
+		balloon_alert(user, "no coffee beans added!")
 		return FALSE
 	if(!coffeepot)
-		balloon_alert(user,"no coffeepot inside!")
+		balloon_alert(user, "no coffeepot inside!")
 		return FALSE
 	if(machine_stat & (NOPOWER|BROKEN))
-		balloon_alert(user,"machine unpowered!")
+		balloon_alert(user, "machine unpowered!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
-		balloon_alert(user,"the coffeepot is already full!")
+		balloon_alert(user, "the coffeepot is already full!")
 		return FALSE
 	return TRUE
 
