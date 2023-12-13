@@ -22,8 +22,6 @@ SUBSYSTEM_DEF(statpanels)
 /datum/controller/subsystem/statpanels/fire(resumed = FALSE)
 	if (!resumed)
 		num_fires++
-		var/actual_round_time = world.timeofday - SSticker.round_start_timeofday
-		var/game_round_time = world.time - SSticker.round_start_time
 		global_data = list(
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
