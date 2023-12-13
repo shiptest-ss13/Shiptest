@@ -2455,3 +2455,47 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.clockcultslurring = min(M.clockcultslurring + 3, 3)
 	M.stuttering = min(M.stuttering + 3, 3)
 	..()
+
+/datum/reagent/consumable/ethanol/shotinthedark
+	name = "Shot in the Dark"
+	description = "A coconut elixir with a golden tinge."
+	color = "#bbebff"
+	boozepwr = 40
+	quality = DRINK_VERYGOOD
+	taste_description = "an incoming bullet"
+	glass_icon_state = "shotinthedark"
+	glass_name = "Shot in the Dark"
+	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Contains traces of gold from the real bullet inside."
+
+/datum/reagent/consumable/ethanol/bullethell
+	name = "Bullet Hell"
+	description = "An incredibly potent combination drink and fire hazard, typically served in a brass shell casing. May spontaneously combust."
+	color = "#c33206"
+	boozepwr = 80
+	quality = DRINK_VERYGOOD
+	taste_description = "being shot in the head several times and then set on fire"
+	glass_icon_state = "bullethell"
+	glass_name = "Bullet Hell"
+	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Served in an oversized brass shell casing, since glass would probably melt from how intense it is."
+	accelerant_quality = 20
+
+/datum/reagent/consumable/ethanol/bullethell/on_mob_life(mob/living/carbon/M) //rarely sets you on fire
+	if (prob(5))
+		M.adjust_fire_stacks(1)
+		M.IgniteMob()
+	..()
+
+/datum/reagent/consumable/ethanol/homesick
+	name = "Homesick"
+	description = "A soft, creamy drink that tastes like home, and hurts just as much."
+	color = "#a9c6e5"
+	boozepwr = 10
+	quality = DRINK_GOOD
+	taste_description = "home, in a way that hurts"
+	glass_icon_state = "homesick"
+	glass_name = "Homesick"
+	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Ri's mother's favorite drink."
+
+/datum/reagent/consumable/ethanol/homesick/on_mob_metabolize(mob/living/M)
+	var/drink_message = pick("You think of what you've left behind...", "You think of the people who miss you...", "You think of where you're from...")
+	to_chat(M, "<span class='notice'>[drink_message]</span>")

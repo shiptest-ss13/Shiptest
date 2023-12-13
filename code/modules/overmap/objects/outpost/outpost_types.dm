@@ -2,6 +2,13 @@
 	Map templates
 */
 
+/datum/map_template/outpost
+	// Necessary to stop planetary outposts from having space underneath all their turfs.
+	// They were being "placed on top", so instead of their baseturf, there was just space underneath.
+	// (Interestingly, this is much less of a problem for ruins: PlaceOnTop ignores the top closed turf in the baseturfs stack
+	// of the new tile, meaning that placing plating on top of a wall doesn't result in a wall underneath the plating.)
+	should_place_on_top = FALSE
+
 /datum/map_template/outpost/New()
 	. = ..(path = "_maps/outpost/[name].dmm")
 
