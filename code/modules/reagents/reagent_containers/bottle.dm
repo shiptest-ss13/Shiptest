@@ -439,3 +439,53 @@
 
 /obj/item/reagent_containers/glass/bottle/morphine/sleeper
 	cap_on = FALSE
+
+//types of syrups
+
+/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/caramel
+	name = "bottle of caramel syrup"
+	desc = "A pump bottle containing caramalized sugar, also known as caramel. Do not lick."
+	list_reagents = list(/datum/reagent/consumable/caramel = 50)
+
+/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/liqueur
+	name = "bottle of coffee liqueur syrup"
+	desc = "A pump bottle containing mexican coffee-flavoured liqueur syrup. In production since 1936, HONK."
+	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 50)
+
+/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/korta_nectar
+	name = "bottle of korta syrup"
+	desc = "A pump bottle containing korta syrup. A sweet, sugary substance made from crushed sweet korta nuts."
+	list_reagents = list(/datum/reagent/consumable/korta_nectar = 50)
+
+//Coffeepots: for reference, a standard cup is 30u, to allow 20u for sugar/sweetener/milk/creamer
+/obj/item/reagent_containers/food/drinks/bottle/coffeepot
+	icon = 'icons/obj/food/containers.dmi'
+	name = "coffeepot"
+	desc = "A large pot for dispensing that ambrosia of corporate life known to mortals only as coffee. Contains 4 standard cups."
+	volume = 120
+	icon_state = "coffeepot"
+	fill_icon_state = "coffeepot"
+	fill_icon_thresholds = list(0, 1, 30, 60, 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/coffeepot/bluespace
+	icon = 'icons/obj/food/containers.dmi'
+	name = "bluespace coffeepot"
+	desc = "The most advanced coffeepot the eggheads could cook up: sleek design; graduated lines; connection to a pocket dimension for coffee containment; yep, it's got it all. Contains 8 standard cups."
+	volume = 240
+	icon_state = "coffeepot_bluespace"
+	fill_icon_thresholds = list(0)
+
+
+/obj/item/reagent_containers/glass/coffee_cup
+	name = "coffee cup"
+	desc = "A heat-formed plastic coffee cup. Can theoretically be used for other hot drinks, if you're feeling adventurous."
+	icon = 'icons/obj/machines/coffeemaker.dmi'
+	icon_state = "coffee_cup_e"
+	base_icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+
+/obj/item/reagent_containers/glass/coffee_cup/update_icon_state()
+	icon_state = reagents.total_volume ? base_icon_state : "[base_icon_state]_e"
+	return ..()
