@@ -552,7 +552,7 @@
 	if(!coffeepot)
 		balloon_alert_to_viewers("no coffeepot inside!")
 		return FALSE
-	if(machine_stat & (NOPOWER|BROKEN) )
+	if(machine_stat & (NOPOWER|BROKEN))
 		balloon_alert_to_viewers("machine unpowered!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
@@ -581,7 +581,7 @@
 
 	if (istype(attack_item, /obj/item/reagent_containers/glass/coffee_cup) && !(attack_item.item_flags & ABSTRACT) && attack_item.is_open_container())
 		var/obj/item/reagent_containers/glass/coffee_cup/new_cup = attack_item //different type of cup
-		if(new_cup.reagents.total_volume > 0 )
+		if(new_cup.reagents.total_volume > 0)
 			balloon_alert(user, "the cup must be empty!")
 			return
 		if(coffee_cups >= max_coffee_cups)
