@@ -31,27 +31,6 @@
 	playsound(src, 'sound/lavaland/cursed_slot_machine.ogg', 50, FALSE)
 	addtimer(CALLBACK(src, PROC_REF(determine_victor), user), 50)
 
-/obj/effect/gluttony //Gluttony's wall: Used in the Gluttony ruin. Only lets the overweight through.
-	name = "gluttony's wall"
-	desc = "Only those who truly indulge may pass."
-	anchored = TRUE
-	density = TRUE
-	icon_state = "blob"
-	icon = 'icons/mob/blob.dmi'
-	color = rgb(145, 150, 0)
-
-/obj/effect/gluttony/CanAllowThrough(atom/movable/mover, border_dir)//So bullets will fly over and stuff.
-	. = ..()
-	if(ishuman(mover))
-		var/mob/living/carbon/human/H = mover
-		if(H.nutrition >= NUTRITION_LEVEL_FAT)
-			H.visible_message("<span class='warning'>[H] pushes through [src]!</span>", "<span class='notice'>You've seen and eaten worse than this.</span>")
-			return TRUE
-		else
-			to_chat(H, "<span class='warning'>You're repulsed by even looking at [src]. Only a pig could force themselves to go through it.</span>")
-	if(istype(mover, /mob/living/simple_animal/hostile/morph))
-		return TRUE
-
 /obj/structure/mirror/magic/pride //Pride's mirror: Used in the Pride ruin.
 	name = "pride's mirror"
 	desc = "Pride cometh before the..."
