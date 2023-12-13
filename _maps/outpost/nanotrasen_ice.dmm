@@ -32,16 +32,6 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/outpost/crew/bathroom)
-"aq" = (
-/obj/effect/decal/fakelattice{
-	layer = 2.010
-	},
-/obj/machinery/light/small/directional/west{
-	pixel_y = 6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/outpost/maintenance/port)
 "au" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 8
@@ -1433,9 +1423,6 @@
 /area/outpost/engineering/atmospherics)
 "lc" = (
 /obj/effect/turf_decal/siding/white,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
 	},
@@ -1451,6 +1438,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/cryo)
@@ -1493,9 +1483,12 @@
 /obj/effect/turf_decal/siding/white/end{
 	dir = 8
 	},
-/obj/machinery/newscaster/directional/south,
 /obj/machinery/firealarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/cryo)
 "lp" = (
@@ -1832,7 +1825,7 @@
 	dir = 4;
 	id = "smelter1"
 	},
-/obj/structure/sign/poster/official/random{
+/obj/structure/sign/poster/official/miners{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
@@ -3110,7 +3103,6 @@
 	dir = 4
 	},
 /obj/machinery/light/small/directional/west{
-	pixel_y = -6;
 	bulb_power = 0.55
 	},
 /turf/open/floor/plasteel/patterned/brushed{
@@ -3644,7 +3636,7 @@
 	anchored = 1
 	},
 /obj/item/radio/intercom/directional/south,
-/obj/structure/sign/poster/retro/random{
+/obj/structure/sign/poster/retro/we_watch{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/tech,
@@ -3678,14 +3670,11 @@
 	},
 /area/outpost/exterior)
 "xM" = (
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/turf_decal/siding/white/end{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/machinery/computer/cryopod/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/cryo)
 "xN" = (
@@ -3768,9 +3757,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/cryo)
 "yw" = (
@@ -3803,7 +3789,7 @@
 	layer = 4.1
 	},
 /obj/effect/turf_decal/industrial/warning,
-/obj/structure/sign/poster/official/random{
+/obj/structure/sign/poster/official/work_for_a_future{
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/patterned,
@@ -5467,15 +5453,11 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/patterned,
 /area/outpost/crew/cryo)
@@ -7004,9 +6986,6 @@
 	},
 /obj/effect/landmark/outpost/elevator{
 	shaft = "1"
-	},
-/obj/machinery/light/small/directional/west{
-	pixel_y = -6
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/elevatorshaft,
@@ -12496,7 +12475,7 @@ Ja
 dk
 Ja
 vW
-aq
+Td
 Vm
 UQ
 tS
