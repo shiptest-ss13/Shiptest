@@ -10,6 +10,10 @@ on:
       minor:
         required: false
         type: string
+      arg:
+        required: false
+        default: ALL_TESTS
+        type: string
 jobs:
   run_integration_tests:
     runs-on: ubuntu-latest
@@ -79,8 +83,7 @@ jobs:
       - name: Compile Tests
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
-
+          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS -D${{ inputs.arg }}
       - name: Run Tests
         run: |
           source $HOME/BYOND/byond/bin/byondsetup
