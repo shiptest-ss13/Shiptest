@@ -63,3 +63,25 @@
   - rscadd: Sarathi tails now use secondary colors.
   - rscadd: Added "Cracks" body marking for Sarathi
   - rscdel: Removed dark tiger, light tiger, and spike Sarathi tails.
+2023-12-13:
+  MarkSuckerberg:
+  - tweak: Round end now shows the ship you spawned on when possible instead of just
+      the sector name
+  - tweak: Slightly moves around the statpanel info to emphasise LST
+  - bugfix: Round time should no longer act strange when midnight passes
+  - bugfix: Respawns should no longer be delayed 24h when done over midnight
+  Zonespace27, Ryll-Ryll, MeeMOfCourse:
+  - tweak: Admins can now spawn an unarmed horde of interns in addition to the old
+      armed horde
+  - tweak: Admins can toggle name randomization for ERT's, as well as if they'd like
+      to be spawned in the briefing room at the time of creation
+  - tweak: Admins can now force ERT's to pick the leader role from the most experienced
+      candidates in terms of playtime
+  - tweak: Menus like Create Response Team and Create Portal Storm now toggle boolean
+      options when clicked, rather than open a popup window to select one of the two
+      options
+  - refactor: Centcom Officials are now a full subtype of ERT, rather than being a
+      separate antagonist type with duplicated functionality
+  - admin: ERTs can now have a custom shuttle that they can spawn on, on a toggle
+      while creating said ERT.
+  - admin: Shiptest-Specific ERTs, and respective files.
