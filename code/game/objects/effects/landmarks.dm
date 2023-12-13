@@ -344,13 +344,30 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/ert_spawn
-	name = "Emergencyresponseteam"
+	name = "Emergency response team spawn"
 	icon_state = "ert_spawn"
 
 /obj/effect/landmark/ert_spawn/Initialize(mapload)
 	..()
 	GLOB.emergencyresponseteamspawn += loc
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/ert_outpost_spawn
+	name = "Emergency response team outpost spawn"
+	icon_state = "ert_spawn"
+
+/obj/effect/landmark/ert_outpost_spawn/Initialize(mapload)
+	..()
+	GLOB.emergencyresponseteam_outpostspawn += loc
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/ert_shuttle_spawn
+	name = "Emergency response team shuttle spawn"
+	icon_state = "ert_spawn"
+
+/obj/effect/landmark/ert_shuttle_brief_spawn
+	name = "Emergency response team briefing officer spawn"
+	icon_state = "ert_brief_spawn"
 
 //ninja energy nets teleport victims here
 /obj/effect/landmark/holding_facility
