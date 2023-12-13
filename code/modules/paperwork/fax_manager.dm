@@ -121,7 +121,7 @@ GLOBAL_DATUM_INIT(fax_manager, /datum/fax_manager, new)
 	var/list/request = list()
 	var/obj/item/paper/request/message = new()
 	request["id_message"] = requests.len
-	request["time"] = gameTimestamp()
+	request["time"] = game_timestamp()
 	request["sender"] = sender
 	request["sender_fax_id"] = sender_fax.fax_id
 	request["sender_fax_name"] = sender_fax.fax_name

@@ -2333,12 +2333,12 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /obj/machinery/light_switch{
 	pixel_x = -13;
 	pixel_y = 22
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "vT" = (
@@ -3141,7 +3141,7 @@
 	req_access_txt = "20"
 	},
 /obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/aclf,
+/obj/item/clothing/under/syndicate/officer,
 /obj/item/clothing/suit/armor/vest/security/hos{
 	name = "Syndicate jacket"
 	},
@@ -3151,13 +3151,13 @@
 /obj/item/clothing/glasses/thermal/eyepatch,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/clothing/head/HoS/syndicate,
-/obj/item/clothing/head/aclfcap{
+/obj/item/clothing/head/gorlexcap{
 	pixel_x = 5;
 	pixel_y = -4
 	},
 /obj/item/gun/ballistic/derringer/traitor,
 /obj/item/clothing/under/syndicate/sniper,
-/obj/item/clothing/suit/aclf,
+/obj/item/clothing/suit/gorlex,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
 /obj/item/radio/headset/syndicate/alt/leader,
@@ -3806,8 +3806,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
+/obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "JH" = (
@@ -4377,8 +4377,8 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
+/obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "PK" = (
