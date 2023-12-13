@@ -935,65 +935,6 @@
 			ears = /obj/item/radio/headset
 			glasses = /obj/item/clothing/glasses/regular/circle
 			back = /obj/item/storage/backpack/satchel/leather
-			backpack_contents = list()
-			if(prob(50))
-				backpack_contents += pickweight(list(
-					/obj/item/book/granter/spell/knock = 1,
-					/obj/item/book/granter/spell/blind = 1,
-					/obj/item/shadowcloak = 1,
-					/obj/item/book/granter/spell/smoke = 2,
-					/obj/item/reagent_containers/syringe/mulligan = 2,
-					/obj/item/dice/d20 = 3,
-					/obj/item/dice/d20/fate/stealth/one_use = 1,
-					/obj/item/clothing/head/chameleon/broken = 3,
-					/obj/item/stack/marker_beacon/ten = 3,
-					/obj/item/grenade/smokebomb = 3,
-					/obj/item/grenade/flashbang = 3
-					)
-				)
-			if(prob(50))
-				backpack_contents += pickweight(list(
-					/obj/item/book/granter/spell/knock = 1,
-					/obj/item/book/granter/spell/blind = 1,
-					/obj/item/shadowcloak = 1,
-					/obj/item/book/granter/spell/smoke = 2,
-					/obj/item/reagent_containers/syringe/mulligan = 2,
-					/obj/item/dice/d20/fate/stealth/one_use = 1,
-					/obj/item/dice/d20 = 3,
-					/obj/item/clothing/head/chameleon/broken = 3,
-					/obj/item/stack/marker_beacon/ten = 3,
-					/obj/item/grenade/smokebomb = 3,
-					/obj/item/grenade/flashbang = 3
-					)
-				)
-			if(prob(50))
-				backpack_contents += pickweight(list(
-					/obj/item/book/granter/spell/knock = 1,
-					/obj/item/book/granter/spell/blind = 1,
-					/obj/item/shadowcloak = 1,
-					/obj/item/book/granter/spell/smoke = 2,
-					/obj/item/reagent_containers/syringe/mulligan = 2,
-					/obj/item/dice/d20/fate/stealth/one_use = 1,
-					/obj/item/clothing/head/chameleon/broken = 3,
-					/obj/item/stack/marker_beacon/ten = 3,
-					/obj/item/grenade/smokebomb = 3,
-					/obj/item/grenade/flashbang = 3
-					)
-				)
-			if(prob(25))
-				r_pocket = pickweight(list(
-					/obj/item/chameleon,
-					/obj/item/dnainjector/chameleonmut = 1,
-					/obj/item/flashlight/flashdark = 1
-					)
-				)
-			if(prob(25))
-				l_pocket = pickweight(list(
-					/obj/item/chameleon,
-					/obj/item/dnainjector/chameleonmut = 1,
-					/obj/item/flashlight/flashdark = 1
-					)
-				)
 		if("Shadow")
 			mob_species = /datum/species/shadow
 			r_pocket = /obj/item/reagent_containers/pill/shadowtoxin

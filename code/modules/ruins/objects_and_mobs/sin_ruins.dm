@@ -31,51 +31,6 @@
 	playsound(src, 'sound/lavaland/cursed_slot_machine.ogg', 50, FALSE)
 	addtimer(CALLBACK(src, .proc/determine_victor, user), 50)
 
-/obj/structure/cursed_slot_machine/proc/determine_victor(mob/living/user)
-	icon_state = "slots1"
-	obj_flags &= ~IN_USE
-	if(prob(win_prob))
-		playsound(src, 'sound/lavaland/cursed_slot_machine_jackpot.ogg', 50, FALSE)
-		new/obj/structure/cursed_money(get_turf(src))
-		if(user)
-			to_chat(user, "<span class='boldwarning'>You've hit jackpot. Laughter echoes around you as your reward appears in the machine's place.</span>")
-		qdel(src)
-	else
-		if(user)
-			to_chat(user, "<span class='boldwarning'>Fucking machine! Must be rigged. Still... one more try couldn't hurt, right?</span>")
-
-
-/obj/structure/cursed_money
-	name = "bag of money"
-	desc = "RICH! YES! YOU KNEW IT WAS WORTH IT! YOU'RE RICH! RICH! RICH!"
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "moneybag"
-	anchored = FALSE
-	density = TRUE
-
-/obj/structure/cursed_money/Initialize()
-	. = ..()
-	addtimer(CALLBACK(src, .proc/collapse), 600)
-
-/obj/structure/cursed_money/proc/collapse()
-	visible_message("<span class='warning'>[src] falls in on itself, \
-		canvas rotting away and contents vanishing.</span>")
-	qdel(src)
-
-/obj/structure/cursed_money/attack_hand(mob/living/user)
-	. = ..()
-	if(.)
-		return
-	user.visible_message("<span class='warning'>[user] opens the bag and \
-		and removes a die. The bag then vanishes.</span>",
-		"<span class='boldwarning'>You open the bag...!</span>\n\
-		<span class='danger'>And see a bag full of dice. Confused, \
-		you take one... and the bag vanishes.</span>")
-	var/turf/T = get_turf(user)
-	var/obj/item/dice/d20/fate/one_use/critical_fail = new(T)
-	user.put_in_hands(critical_fail)
-	qdel(src)
-
 /obj/effect/gluttony //Gluttony's wall: Used in the Gluttony ruin. Only lets the overweight through.
 	name = "gluttony's wall"
 	desc = "Only those who truly indulge may pass."
