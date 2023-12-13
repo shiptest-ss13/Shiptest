@@ -25,13 +25,15 @@
 /obj/machinery/power/compressor
 	name = "compressor"
 	desc = "The compressor stage of a gas turbine generator."
-	icon = 'icons/obj/atmospherics/pipes/simple.dmi'
+	icon = 'icons/obj/atmospherics/components/turbine.dmi'
 	icon_state = "compressor"
 	density = TRUE
 	resistance_flags = FIRE_PROOF
 	CanAtmosPass = ATMOS_PASS_DENSITY
+	use_power = NO_POWER_USE // powered by gas flow
+	interacts_with_air = TRUE
 	circuit = /obj/item/circuitboard/machine/power_compressor
-	var/obj/machinery/power/turbine/turbine
+	var/obj/machinery/power/shuttle/engine/turbine/turbine
 	var/datum/gas_mixture/gas_contained
 	var/turf/inturf
 	var/starter = 0
@@ -40,33 +42,45 @@
 	var/capacity = 1e6
 	var/comp_id = 0
 	var/efficiency
+	var/intake_ratio = 0.1 // might add a way to adjust this in-game later
 
-/obj/machinery/power/turbine/lavaland
+/obj/machinery/power/shuttle/engine/turbine/lavaland
 	destroy_output = TRUE
 
 /obj/machinery/power/compressor/Destroy()
+	SSair.stop_processing_machine(src)
 	if (turbine && turbine.compressor == src)
 		turbine.compressor = null
+	if(isopenturf(loc))
+		loc.assume_air(gas_contained)
+		loc.air_update_turf()
 	turbine = null
 	return ..()
 
-/obj/machinery/power/turbine
+/obj/machinery/power/shuttle/engine/turbine
 	name = "gas turbine generator"
 	desc = "A gas turbine used for backup power generation."
-	icon = 'icons/obj/atmospherics/pipes/simple.dmi'
+	icon = 'icons/obj/atmospherics/components/turbine.dmi'
 	icon_state = "turbine"
 	density = TRUE
 	resistance_flags = FIRE_PROOF
 	CanAtmosPass = ATMOS_PASS_DENSITY
+	use_power = NO_POWER_USE // powered by gas flow
+	interacts_with_air = TRUE
 	circuit = /obj/item/circuitboard/machine/power_turbine
+	thrust = 0 // no thrust by default
+	icon_state_closed = "turbine"
+	icon_state_open = "turbine"
+	icon_state_off = "turbine"
 	var/opened = 0
 	var/obj/machinery/power/compressor/compressor
 	var/turf/outturf
-	var/lastgen
+	var/lastgen = 0
 	var/productivity = 1
 	var/destroy_output = FALSE //Destroy the output gas instead of actually outputting it. Used on lavaland to prevent cooking the zlevel
 
-/obj/machinery/power/turbine/Destroy()
+/obj/machinery/power/shuttle/engine/turbine/Destroy()
+	SSair.stop_processing_machine(src)
 	if (compressor && compressor.turbine == src)
 		compressor.turbine = null
 	compressor = null
@@ -74,11 +88,14 @@
 
 // the inlet stage of the gas turbine electricity generator
 
-/obj/machinery/power/compressor/Initialize()
+/obj/machinery/power/compressor/Initialize(mapload)
 	. = ..()
 	// The inlet of the compressor is the direction it faces
 	gas_contained = new
 	inturf = get_step(src, dir)
+	inturf.air_update_turf()
+	loc.air_update_turf() //update once to prevent weird issues like gas flowing onto the turbine's tiles
+	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!turbine)
 		obj_break()
@@ -121,36 +138,40 @@
 
 	default_deconstruction_crowbar(I)
 
-/obj/machinery/power/compressor/process()
-	if(!starter)
-		return
+/obj/machinery/power/compressor/process(delta_time)
+	return
+
+/obj/machinery/power/compressor/process_atmos(delta_time)
+	// RPM function to include compression friction - be advised that too low/high of a compfriction value can make things screwy
+	rpm -= 1
+	rpm = (0.9 * rpm) + (0.1 * rpmtarget)
+	rpm = min(rpm, (COMPFRICTION*efficiency)/2)
+	rpm = max(0, rpm - (rpm**2)/(COMPFRICTION*efficiency))
+
+	update_overlays()
+
 	if(!turbine || (turbine.machine_stat & BROKEN))
 		starter = FALSE
+
 	if(machine_stat & BROKEN || panel_open)
 		starter = FALSE
+
+	if(!starter)
+		rpmtarget = 0
 		return
-	cut_overlays()
 
-	rpm = 0.9* rpm + 0.1 * rpmtarget
+	var/datum/gas_mixture/environment = inturf.return_air()
+	var/external_pressure = environment.return_pressure()
+	var/pressure_delta = external_pressure - gas_contained.return_pressure()
 
-	// It's a simplified version taking only 1/10 of the moles from the turf nearby. It should be later changed into a better version
-	// above todo 7 years and counting
+	// Equalize the gas between the environment and the internal gas mix
+	if(pressure_delta > 0)
+		var/datum/gas_mixture/removed = environment.remove_ratio((1 - ((1 - intake_ratio)**delta_time)) * pressure_delta / (external_pressure * 2)) // silly math to keep it consistent with delta_time
+		gas_contained.merge(removed)
+		inturf.air_update_turf()
 
-	inturf.transfer_air_ratio(gas_contained, 0.1)
-
-// RPM function to include compression friction - be advised that too low/high of a compfriction value can make things screwy
-
-	rpm = min(rpm, (COMPFRICTION*efficiency)/2)
-	rpm = max(0, rpm - (rpm*rpm)/(COMPFRICTION*efficiency))
-
-	if(starter && !(machine_stat & NOPOWER))
-		use_power(2800)
-		if(rpm<1000)
-			rpmtarget = 1000
-	else
-		if(rpm<1000)
-			rpmtarget = 0
-
+/obj/machinery/power/compressor/update_overlays()
+	. = ..()
 	if(rpm>50000)
 		add_overlay(mutable_appearance(icon, "comp-o4", FLY_LAYER))
 	else if(rpm>10000)
@@ -159,81 +180,122 @@
 		add_overlay(mutable_appearance(icon, "comp-o2", FLY_LAYER))
 	else if(rpm>500)
 		add_overlay(mutable_appearance(icon, "comp-o1", FLY_LAYER))
-	//TODO: DEFERRED
 
 // These are crucial to working of a turbine - the stats modify the power output. TurbGenQ modifies how much raw energy can you get from
 // rpms, TurbGenG modifies the shape of the curve - the lower the value the less straight the curve is.
 
 #define TURBGENQ 100000
 #define TURBGENG 0.5
+#define POWER_TO_THRUST 0.001 // power production to thrust ratio
 
-/obj/machinery/power/turbine/Initialize()
+/obj/machinery/power/shuttle/engine/turbine/Initialize(mapload)
 	. = ..()
 // The outlet is pointed at the direction of the turbine component
 	outturf = get_step(src, dir)
+	outturf.air_update_turf()
+	loc.air_update_turf() //update once to prevent weird issues like gas flowing onto the turbine's tiles
+	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!compressor)
 		obj_break()
 	connect_to_network()
 
-/obj/machinery/power/turbine/RefreshParts()
+/obj/machinery/power/shuttle/engine/turbine/RefreshParts()
 	var/P = 0
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		P += C.rating
 	productivity = P / 6
 
-/obj/machinery/power/turbine/examine(mob/user)
+/obj/machinery/power/shuttle/engine/turbine/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.</span>"
 
-/obj/machinery/power/turbine/locate_machinery()
+/obj/machinery/power/shuttle/engine/turbine/locate_machinery()
 	if(compressor)
 		return
 	compressor = locate() in get_step(src, get_dir(outturf, src))
 	if(compressor)
 		compressor.locate_machinery()
 
-/obj/machinery/power/turbine/process()
+/obj/machinery/power/shuttle/engine/turbine/process(delta_time)
+	add_avail(lastgen) // add power in process() so it doesn't update power output separately from the rest of the powernet (bad)
+	update_overlays()
 
+/obj/machinery/power/shuttle/engine/turbine/process_atmos(delta_time)
 	if(!compressor)
 		set_machine_stat(BROKEN)
 
 	if((machine_stat & BROKEN) || panel_open)
 		return
-	if(!compressor.starter)
-		return
-	cut_overlays()
 
 	// This is the power generation function. If anything is needed it's good to plot it in EXCEL before modifying
 	// the TURBGENQ and TURBGENG values
 
 	lastgen = ((compressor.rpm / TURBGENQ)**TURBGENG) * TURBGENQ * productivity
+	thrust = lastgen * POWER_TO_THRUST // second law
 
-	add_avail(lastgen)
+	var/output_blocked = TRUE
+	if(!isclosedturf(outturf))
+		output_blocked = FALSE
+		for(var/atom/A in outturf)
+			if(!CANATMOSPASS(A, outturf))
+				output_blocked = TRUE
+				break
 
-	// Weird function but it works. Should be something else...
+	if(output_blocked)
+		compressor.rpmtarget = 0
+		return
 
-	var/newrpm = ((compressor.gas_contained.return_temperature()) * compressor.gas_contained.total_moles())/4
+	// Move gas from the compressor to the outlet
+	var/datum/gas_mixture/environment = outturf.return_air()
+	var/internal_pressure = compressor.gas_contained.return_pressure()
+	var/pressure_delta = internal_pressure - environment.return_pressure()
 
-	newrpm = max(0, newrpm)
+	// Now set the compressor's RPM target based on how much gas is flowing through
+	compressor.rpmtarget = max(0, pressure_delta * compressor.gas_contained.return_volume() / (R_IDEAL_GAS_EQUATION * 4))
 
-	if(!compressor.starter || newrpm > 1000)
-		compressor.rpmtarget = newrpm
-
-	if(compressor.gas_contained.total_moles()>0)
-		var/oamount = min(compressor.gas_contained.total_moles(), (compressor.rpm+100)/35000*compressor.capacity)
+	// Equalize the gas between the internal gas mix and the environment
+	if(pressure_delta > 0)
+		var/datum/gas_mixture/removed = compressor.gas_contained.remove_ratio(pressure_delta / (internal_pressure * 2))
 		if(destroy_output)
-			compressor.gas_contained.set_moles(compressor.gas_contained.get_moles() - oamount)
-		else
-			outturf.assume_air_moles(compressor.gas_contained, oamount)
+			qdel(removed)
+			return
+		outturf.assume_air(removed)
+		outturf.air_update_turf()
+
+// Return the current thrust amount
+/obj/machinery/power/shuttle/engine/turbine/burn_engine(percentage, deltatime)
+	return thrust * deltatime * (percentage / 100)
+
+// Return the current power output
+/obj/machinery/power/shuttle/engine/turbine/return_fuel()
+	return lastgen
+
+// Return the maximum power output
+/obj/machinery/power/shuttle/engine/turbine/return_fuel_cap()
+	return ((COMPFRICTION*(compressor ? compressor.efficiency : 1) / (TURBGENQ*4))**TURBGENG) * TURBGENQ * productivity
+
+// Return the maximum power output
+/obj/machinery/power/shuttle/engine/turbine/update_engine()
+	if(!(flags_1 & INITIALIZED_1))
+		return FALSE
+	thruster_active = TRUE
+	if(panel_open)
+		thruster_active = FALSE
+		return FALSE
+	if(!compressor)
+		thruster_active = FALSE
+		return FALSE
+	return TRUE
 
 // If it works, put an overlay that it works!
-
+/obj/machinery/power/shuttle/engine/turbine/update_overlays()
+	. = ..()
 	if(lastgen > 100)
 		add_overlay(mutable_appearance(icon, "turb-o", FLY_LAYER))
 
-/obj/machinery/power/turbine/attackby(obj/item/I, mob/user, params)
+/obj/machinery/power/shuttle/engine/turbine/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, initial(icon_state), initial(icon_state), I))
 		return
 
@@ -251,13 +313,13 @@
 
 	default_deconstruction_crowbar(I)
 
-/obj/machinery/power/turbine/ui_interact(mob/user, datum/tgui/ui)
+/obj/machinery/power/shuttle/engine/turbine/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "TurbineComputer", name)
 		ui.open()
 
-/obj/machinery/power/turbine/ui_data(mob/user)
+/obj/machinery/power/shuttle/engine/turbine/ui_data(mob/user)
 	var/list/data = list()
 	data["compressor"] = compressor ? TRUE : FALSE
 	data["compressor_broke"] = (!compressor || (compressor.machine_stat & BROKEN)) ? TRUE : FALSE
@@ -269,7 +331,7 @@
 	data["temp"] = compressor?.gas_contained.return_temperature()
 	return data
 
-/obj/machinery/power/turbine/ui_act(action, params)
+/obj/machinery/power/shuttle/engine/turbine/ui_act(action, params)
 	. = ..()
 	if(.)
 		return
@@ -329,6 +391,7 @@
 	data["power"] = DisplayPower(compressor?.turbine?.lastgen)
 	data["rpm"] = compressor?.rpm
 	data["temp"] = compressor?.gas_contained.return_temperature()
+	data["pressure"] = compressor?.gas_contained.return_pressure()
 	return data
 
 /obj/machinery/computer/turbine_computer/ui_act(action, params)
@@ -345,6 +408,7 @@
 			locate_machinery()
 			. = TRUE
 
+#undef POWER_TO_THRUST
 #undef COMPFRICTION
 #undef TURBGENQ
 #undef TURBGENG
