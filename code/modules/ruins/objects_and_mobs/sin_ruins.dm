@@ -1,36 +1,5 @@
 //These objects are used in the cardinal sin-themed ruins (i.e. Gluttony, Pride...)
 
-/obj/structure/cursed_slot_machine //Greed's slot machine: Used in the Greed ruin. Deals clone damage on each use, with a successful use giving a d20 of fate.
-	name = "greed's slot machine"
-	desc = "High stakes, high rewards."
-	icon = 'icons/obj/economy.dmi'
-	icon_state = "slots1"
-	anchored = TRUE
-	density = TRUE
-	var/win_prob = 5
-
-/obj/structure/cursed_slot_machine/interact(mob/living/carbon/human/user)
-	if(!istype(user))
-		return
-	if(obj_flags & IN_USE)
-		return
-	if(isipc(user))
-		user.visible_message("<span class='warning'> As [user] tries to pull \the [src]'s lever, the machine seems to hesitate a bit.</span>", "<span class='warning'>You feel as if you are trying to put at stake something you don't even have...\ You suddenly feel your mind... Suboptimal?</span>")
-		user.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	else
-		user.adjustCloneLoss(20)
-	obj_flags |= IN_USE
-
-	if(user.stat)
-		to_chat(user, "<span class='userdanger'>No... just one more try...</span>")
-		user.gib()
-	else
-		user.visible_message("<span class='warning'>[user] pulls [src]'s lever with a glint in [user.p_their()] eyes!</span>", "<span class='warning'>You feel a draining as you pull the lever, but you \
-		know it'll be worth it.</span>")
-	icon_state = "slots2"
-	playsound(src, 'sound/lavaland/cursed_slot_machine.ogg', 50, FALSE)
-	addtimer(CALLBACK(src, PROC_REF(determine_victor), user), 50)
-
 /obj/structure/mirror/magic/pride //Pride's mirror: Used in the Pride ruin.
 	name = "pride's mirror"
 	desc = "Pride cometh before the..."
