@@ -35,7 +35,6 @@
 	circuit = /obj/item/circuitboard/machine/power_compressor
 	var/obj/machinery/power/shuttle/engine/turbine/turbine
 	var/datum/gas_mixture/gas_contained
-	var/turf/inturf
 	var/starter = 0
 	var/rpm = 0
 	var/rpmtarget = 0
@@ -74,7 +73,6 @@
 	icon_state_off = "turbine"
 	var/opened = 0
 	var/obj/machinery/power/compressor/compressor
-	var/turf/outturf
 	var/lastgen = 0
 	var/productivity = 1
 	var/destroy_output = FALSE //Destroy the output gas instead of actually outputting it. Used on lavaland to prevent cooking the zlevel
@@ -92,9 +90,6 @@
 	. = ..()
 	// The inlet of the compressor is the direction it faces
 	gas_contained = new
-	inturf = get_step(src, dir)
-	inturf.air_update_turf()
-	loc.air_update_turf() //update once to prevent weird issues like gas flowing onto the turbine's tiles
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!turbine)
@@ -105,9 +100,13 @@
 /obj/machinery/power/compressor/locate_machinery()
 	if(turbine)
 		return
-	turbine = locate() in get_step(src, get_dir(inturf, src))
+	turbine = locate() in get_step(src, turn(dir, 180))
 	if(turbine)
+		set_machine_stat(machine_stat & ~BROKEN)
 		turbine.locate_machinery()
+	else
+		turbine = null
+		obj_break()
 
 /obj/machinery/power/compressor/RefreshParts()
 	var/E = 0
@@ -125,18 +124,23 @@
 		return
 
 	if(default_change_direction_wrench(user, I))
-		turbine = null
-		inturf = get_step(src, dir)
-		locate_machinery()
 		if(turbine)
 			to_chat(user, "<span class='notice'>Turbine connected.</span>")
 			set_machine_stat(machine_stat & ~BROKEN)
 		else
 			to_chat(user, "<span class='alert'>Turbine not connected.</span>")
-			obj_break()
 		return
 
 	default_deconstruction_crowbar(I)
+
+//update when moved or changing direction
+/obj/machinery/power/compressor/setDir(newdir)
+	. = ..()
+	locate_machinery()
+
+/obj/machinery/power/compressor/Move(atom/newloc, direct, glide_size_override)
+	. = ..()
+	locate_machinery()
 
 /obj/machinery/power/compressor/process(delta_time)
 	return
@@ -151,15 +155,13 @@
 	update_overlays()
 
 	if(!turbine || (turbine.machine_stat & BROKEN))
-		starter = FALSE
+		locate_machinery() // try to find the other part if we somehow got disconnected
 
-	if(machine_stat & BROKEN || panel_open)
-		starter = FALSE
-
-	if(!starter)
+	if((machine_stat & BROKEN) || panel_open || !starter) // if we didn't find it...
 		rpmtarget = 0
 		return
 
+	var/turf/inturf = get_step(src, dir)
 	var/datum/gas_mixture/environment = inturf.return_air()
 	var/external_pressure = environment.return_pressure()
 	var/pressure_delta = external_pressure - gas_contained.return_pressure()
@@ -190,10 +192,6 @@
 
 /obj/machinery/power/shuttle/engine/turbine/Initialize(mapload)
 	. = ..()
-// The outlet is pointed at the direction of the turbine component
-	outturf = get_step(src, dir)
-	outturf.air_update_turf()
-	loc.air_update_turf() //update once to prevent weird issues like gas flowing onto the turbine's tiles
 	SSair.start_processing_machine(src, mapload)
 	locate_machinery()
 	if(!compressor)
@@ -214,9 +212,13 @@
 /obj/machinery/power/shuttle/engine/turbine/locate_machinery()
 	if(compressor)
 		return
-	compressor = locate() in get_step(src, get_dir(outturf, src))
+	compressor = locate() in get_step(src, turn(dir, 180))
 	if(compressor)
+		set_machine_stat(machine_stat & ~BROKEN)
 		compressor.locate_machinery()
+	else
+		compressor = null
+		obj_break()
 
 /obj/machinery/power/shuttle/engine/turbine/process(delta_time)
 	add_avail(lastgen) // add power in process() so it doesn't update power output separately from the rest of the powernet (bad)
@@ -225,8 +227,9 @@
 /obj/machinery/power/shuttle/engine/turbine/process_atmos(delta_time)
 	if(!compressor)
 		set_machine_stat(BROKEN)
+		locate_machinery() // try to find the missing piece
 
-	if((machine_stat & BROKEN) || panel_open)
+	if((machine_stat & BROKEN) || panel_open) // we're only running half a turbine, don't continue
 		return
 
 	// This is the power generation function. If anything is needed it's good to plot it in EXCEL before modifying
@@ -235,6 +238,7 @@
 	lastgen = ((compressor.rpm / TURBGENQ)**TURBGENG) * TURBGENQ * productivity
 	thrust = lastgen * POWER_TO_THRUST // second law
 
+	var/turf/outturf = get_step(src, dir)
 	var/output_blocked = TRUE
 	if(!isclosedturf(outturf))
 		output_blocked = FALSE
@@ -300,18 +304,23 @@
 		return
 
 	if(default_change_direction_wrench(user, I))
-		compressor = null
-		outturf = get_step(src, dir)
-		locate_machinery()
 		if(compressor)
 			to_chat(user, "<span class='notice'>Compressor connected.</span>")
-			set_machine_stat(machine_stat & ~BROKEN)
 		else
 			to_chat(user, "<span class='alert'>Compressor not connected.</span>")
 			obj_break()
 		return
 
 	default_deconstruction_crowbar(I)
+
+// update if it moves or changes direction
+/obj/machinery/power/shuttle/engine/turbine/setDir(newdir)
+	. = ..()
+	locate_machinery()
+
+/obj/machinery/power/shuttle/engine/turbine/Move(atom/newloc, direct, glide_size_override)
+	. = ..()
+	locate_machinery()
 
 /obj/machinery/power/shuttle/engine/turbine/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -329,6 +338,7 @@
 	data["power"] = DisplayPower(compressor?.turbine?.lastgen)
 	data["rpm"] = compressor?.rpm
 	data["temp"] = compressor?.gas_contained.return_temperature()
+	data["pressure"] = compressor?.gas_contained.return_pressure()
 	return data
 
 /obj/machinery/power/shuttle/engine/turbine/ui_act(action, params)
