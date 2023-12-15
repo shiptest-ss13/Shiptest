@@ -211,12 +211,6 @@
 	required_count = 5
 	wanted_types = list(/obj/item/toy/figure)
 
-/datum/bounty/item/assistant/tail_whip
-	name = "Nine Tails whip"
-	description = "Commander Jackson is looking for a fine addition to her exotic weapons collection. She will reward you handsomely for either a Cat or Liz o' Nine Tails."
-	reward = 4000
-	wanted_types = list(/obj/item/melee/chainofcommand/tailwhip)
-
 /datum/bounty/item/assistant/dead_mice
 	name = "Dead Mice"
 	description = "Station 14 ran out of freeze-dried mice. Ship some fresh ones so their janitor doesn't go on strike."

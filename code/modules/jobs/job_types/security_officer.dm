@@ -166,6 +166,12 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	l_pocket = null
 	r_pocket = null
 
+/datum/outfit/job/security/minutemen/armed
+	name = "Minuteman (Colonial Minutemen) (Armed)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+	belt = /obj/item/storage/belt/military/minutemen/p16
+
 /datum/outfit/job/security/minutemen/mechpilot
 	name = "Mech Pilot  (Colonial Minutemen)"
 

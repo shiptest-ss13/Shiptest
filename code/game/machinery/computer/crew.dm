@@ -44,6 +44,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		ui = new(user, src, "CrewConsole")
 		ui.open()
 
+/datum/crewmonitor/ui_close(mob/user)
+	ui_sources -= user
+	return ..()
+
 /datum/crewmonitor/proc/show(mob/M, source)
 	ui_sources[M] = source
 	ui_interact(M)
