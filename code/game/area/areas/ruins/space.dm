@@ -56,19 +56,6 @@
 	name = "Derelict Outpost Docked Ship"
 	icon_state = "red"
 
-//Ruin of mech transport
-
-/area/ruin/space/has_grav/powered/mechtransport
-	name = "Mech Transport"
-	icon_state = "green"
-
-
-//Ruin of gas the lizard
-
-/area/ruin/space/has_grav/gasthelizard
-	name = "Gas the lizard"
-
-
 //Ruin of Deep Storage
 
 /area/ruin/space/has_grav/deepstorage
@@ -366,16 +353,6 @@
 	name = "Mac Space Restaurant"
 	icon_state = "yellow"
 
-//NUCLEAR DUMP -- this ruin uses an area from power puzzle, for whatever reason. added new areas, for now.
-
-/area/ruin/space/has_grav/nucleardump
-	name = "Hallway"
-	icon_state = "hallC"
-
-/area/ruin/space/has_grav/nucleardump/supermatter
-	name = "Supermatter Chamber"
-	icon_state = "red"
-
 //POWER PUZZLE
 
 /area/ruin/space/has_grav/powerpuzzle
@@ -389,12 +366,6 @@
 /area/ruin/space/has_grav/powerpuzzle/engineering
 	name = "Engineering Wing"
 	icon_state = "yellow"
-
-//Space Gym
-
-/area/ruin/space/has_grav/spacegym
-	name = "Space Gym"
-	icon_state = "firingrange"
 
 //scav_mining
 

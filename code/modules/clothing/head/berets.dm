@@ -162,6 +162,11 @@
 	icon_state = "beret_cmo"
 	armor = list("bio" = 30, "acid" = 20)
 
+/obj/item/clothing/head/beret/cmo/cybersun
+	name = "medical director beret"
+	desc = "A burgundy-red beret with a silver cross. It smells very sterile."
+	icon_state = "meddirectorberet"
+
 //Command
 /obj/item/clothing/head/beret/captain
 	name = "captain beret"

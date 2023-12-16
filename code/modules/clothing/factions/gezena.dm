@@ -123,8 +123,8 @@
 //Hats
 
 /obj/item/clothing/head/gezena
-	name = "navywear cap"
-	desc = "PH"
+	name = "\improper PGFN Cap"
+	desc = "The standard cap of the PGF military, in Navy colors."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -134,44 +134,44 @@
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/gezena/flap
-	name = "navywear flap-hat"
-	desc = "PH"
+	name = "\improper PGFN Betzu-il cap"
+	desc = "The standard cap of the PGF military, in Navy colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "navalflap"
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/gezena/marine
-	name = "\improper Gezenan marine cap"
-	desc = "PH"
+	name = "\improper PGFMC Cap"
+	desc = "The standard cap of the PGF military, in Marine Corps colors."
 	icon_state = "marinehat"
 	item_state = "marinecloth"
 
 /obj/item/clothing/head/gezena/marine/flap
-	name = "\improper Gezenan marine flap-hat"
-	desc = "PH"
+	name = "\improper PGFMC Betzu-il cap"
+	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects."
 	icon_state = "marineflap"
 	item_state = "marinecloth"
 
 /obj/item/clothing/head/gezena/medic
-	name = "PGF medic hat"
-	desc = "PH"
+	name = "\improper PGF medic cap"
+	desc = "The standard cap of the PGF military. The coloring indicates the wearer as a medical officer."
 	icon_state = "medichat"
 	item_state = "whitecloth"
 
 /obj/item/clothing/head/gezena/medic/flap
-	name = "PGF navy flap hat"
-	desc = "PH"
+	name = "\improper PGF medic Betzu-il cap"
+	desc = "The standard cap of the PGF military. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The coloring indicates the wearer as a medical officer."
 	icon_state = "medicflap"
 	item_state = "whitecloth"
 
 /obj/item/clothing/head/gezena/captain // no captain flap yet(?)
-	name = "captain's navywear cap"
-	desc = "PH"
+	name = "\improper PGFN captain's cap"
+	desc = "The standard cap of the PGF military, in Navy colors. The decoration indicates the wearer as a ship's Captain."
 	icon_state = "captainhat"
 	item_state = "bluecloth"
 
 /obj/item/clothing/head/helmet/gezena
 	name = "\improper Raksha-helm"
-	desc = "PH"
+	desc = "Far more practical for combat than either type of cap, but not nearly as traditional or comfortable. Features small sections of removable plating to make space for the horns of horned races."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -182,8 +182,8 @@
 //Gloves
 
 /obj/item/clothing/gloves/gezena
-	name = "navywear gloves"
-	desc = "PH"
+	name = "\improper PGFN Ihuz-irra Gloves"
+	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments."
 	icon = 'icons/obj/clothing/faction/gezena/hands.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/hands.dmi'
 	icon_state = "navalgloves"
@@ -193,22 +193,22 @@
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/marine
-	name = "gezenan infantry gloves"
-	desc = "PH"
+	name = "\improper PGFMC Ihuz-irra Gloves"
+	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Carries extra tactile grip on the fingertips for easy use of firearms."
 	icon_state = "marinegloves"
 	item_state = "marinegloves"
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/engi
-	name = "gezenan engineering gloves"
-	desc = "PH"
+	name = "\improper PGFN Engineering Ihuz-irra Gloves"
+	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Comes with anti-conductive microfibers interwoven to supply the useer with electrical insulation."
 	icon_state = "engigloves"
 	item_state = "engigloves"
 	siemens_coefficient = 0
 
 /obj/item/clothing/gloves/gezena/captain
-	name = "captain's navywear gloves"
-	desc = "PH"
+	name = "\improper PGFN Captain's Ihuz-irra Gloves"
+	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Bears the silver standard of a Gezenan captain."
 	icon_state = "captaingloves"
 	item_state = "captaingloves"
 	siemens_coefficient = 0
@@ -216,8 +216,8 @@
 //Boots
 
 /obj/item/clothing/shoes/combat/gezena
-	name = "gezenan steel-boots"
-	desc = "PH"
+	name = "\improper PGF Uhro-sez Boots"
+	desc = "The word “uhro-sez” translates to “steel-foot”, in reference to the steel toe protection provided by these boots. Standard issue to all members of all branches of the PGF military."
 	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'
 	//mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi' todo: find out why digi breaks here
 	icon_state = "pgfboots"
@@ -226,8 +226,8 @@
 //Belt
 
 /obj/item/storage/belt/military/gezena
-	name = "infantry pouches"
-	desc = "PH"
+	name = "\improper PGF Iho-Usks"
+	desc = "The “iho-usks”, translating to “gear-holder”, is a lightweight harness covered in pouches, supplied to the ground troops of the PGF. This variant is designed for carrying ammunition."
 	icon = 'icons/obj/clothing/faction/gezena/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -236,8 +236,8 @@
 	item_state = "bluecloth"
 
 /obj/item/storage/belt/medical/gezena
-	name = "infantry medical pouches"
-	desc = "PH"
+	name = "\improper PGF Medical Iho-Usks"
+	desc = "The “iho-usks”, translating to “gear-holder”, is a lightweight harness covered in pouches, supplied to the ground troops of the PGF. This variant is designed for carrying medical supplies."
 	icon = 'icons/obj/clothing/faction/gezena/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/belt.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -248,8 +248,8 @@
 //Capes
 
 /obj/item/clothing/neck/cloak/gezena
-	name = "gezenan half-cape"
-	desc = "PH."
+	name = "\improper Aziulhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a standard non-officer soldier or crewperson."
 	icon = 'icons/obj/clothing/faction/gezena/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/neck.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
@@ -258,19 +258,19 @@
 	item_state = "blackcloth"
 
 /obj/item/clothing/neck/cloak/gezena/engi
-	name = "gezenan engineer's half-cape"
-	desc = "PH."
+	name = "engineering Aziulhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as an officer with an engineering specialization."
 	icon_state = "engicape"
 	item_state = "blackcloth"
 
 /obj/item/clothing/neck/cloak/gezena/med
-	name = "gezenan medic's half-cape"
-	desc = "PH."
+	name = "medical Aziulhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as an officer with a medical specialization."
 	icon_state = "medcape"
 	item_state = "blackcloth"
 
 /obj/item/clothing/neck/cloak/gezena/captain
-	name = "gezenan captain's half-cape"
-	desc = "PH."
+	name = "captain's Azuilhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a high ranking officer."
 	icon_state = "captaincape"
 	item_state = "blackcloth"

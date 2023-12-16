@@ -50,3 +50,4 @@
 		playsound(A, 'sound/effects/slosh.ogg', 50, TRUE)
 		A.visible_message("<span class='notice'>The outline around [A] is washed away!")
 		qdel(src)
+

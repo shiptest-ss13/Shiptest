@@ -10,6 +10,7 @@
 	var/mouse_parameters
 	var/autofire_shot_delay = 0.3 SECONDS //Time between individual shots.
 	var/mouse_status = AUTOFIRE_MOUSEUP //This seems hacky but there can be two MouseDown() without a MouseUp() in between if the user holds click and uses alt+tab, printscreen or similar.
+	var/enabled = TRUE
 
 	COOLDOWN_DECLARE(next_shot_cd)
 
@@ -19,6 +20,8 @@
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/gun = parent
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
+	RegisterSignal(parent, COMSIG_GUN_DISABLE_AUTOFIRE, PROC_REF(disable_autofire))
+	RegisterSignal(parent, COMSIG_GUN_ENABLE_AUTOFIRE, PROC_REF(enable_autofire))
 	if(_autofire_shot_delay)
 		autofire_shot_delay = _autofire_shot_delay
 	if(autofire_stat == AUTOFIRE_STAT_IDLE && ismob(gun.loc))
@@ -101,6 +104,8 @@
 	SIGNAL_HANDLER
 	var/list/modifiers = params2list(params) //If they're shift+clicking, for example, let's not have them accidentally shoot.
 
+	if(!enabled)
+		return
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		return
 	if(LAZYACCESS(modifiers, CTRL_CLICK))
@@ -277,6 +282,12 @@
 			bonus_spread = dual_wield_spread
 			addtimer(CALLBACK(akimbo_gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, shooter, TRUE, params, null, bonus_spread), 1)
 	process_fire(target, shooter, TRUE, params, null, bonus_spread)
+
+/datum/component/automatic_fire/proc/disable_autofire()
+	enabled = FALSE
+
+/datum/component/automatic_fire/proc/enable_autofire()
+	enabled = TRUE
 
 #undef AUTOFIRE_MOUSEUP
 #undef AUTOFIRE_MOUSEDOWN

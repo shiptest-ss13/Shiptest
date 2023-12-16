@@ -77,7 +77,9 @@
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
-		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
+		if(shuttle_port?.virtual_z() == null)
+			return TRUE
+		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port?.virtual_z())
 	return TRUE
 
 /**
@@ -103,7 +105,7 @@
 		ship_account = new(name, source_template.starting_funds)
 
 #ifdef UNIT_TESTS
-	Rename("[source_template]")
+	Rename("[source_template]", TRUE)
 #else
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
@@ -114,6 +116,7 @@
 	. = ..()
 	SSovermap.controlled_ships -= src
 	helms.Cut()
+	QDEL_LIST(missions)
 	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null
