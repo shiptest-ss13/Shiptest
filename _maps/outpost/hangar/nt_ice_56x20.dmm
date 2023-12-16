@@ -21,7 +21,8 @@
 "af" = (
 /obj/effect/landmark/outpost/hangar_dock,
 /turf/open/floor/plating{
-	planetary_atmos = 1
+	light_color = "#1B1D2E";
+	light_range = 2
 	},
 /area/hangar)
 "ag" = (
@@ -73,14 +74,14 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
-	light_range = 2;
-	planetary_atmos = 1
+	light_range = 2
 	},
 /area/hangar)
 "ax" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plating{
-	planetary_atmos = 1
+	light_color = "#1B1D2E";
+	light_range = 2
 	},
 /area/hangar)
 "ay" = (
@@ -140,7 +141,8 @@
 /area/hangar)
 "aN" = (
 /turf/open/floor/plating{
-	planetary_atmos = 1
+	light_color = "#1B1D2E";
+	light_range = 2
 	},
 /area/hangar)
 "aW" = (
@@ -341,8 +343,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
-	light_range = 2;
-	planetary_atmos = 1
+	light_range = 2
 	},
 /area/hangar)
 "pC" = (
@@ -591,6 +592,15 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"Cs" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
+	},
+/area/hangar)
 "Cv" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/industrial/outline/yellow,
@@ -616,6 +626,14 @@
 	light_color = "#1B1D2E";
 	light_range = 2;
 	planetary_atmos = 1
+	},
+/area/hangar)
+"Dn" = (
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2
 	},
 /area/hangar)
 "Eg" = (
@@ -1079,8 +1097,7 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
-	light_range = 2;
-	planetary_atmos = 1
+	light_range = 2
 	},
 /area/hangar)
 "YT" = (
@@ -1091,8 +1108,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	light_color = "#1B1D2E";
-	light_range = 2;
-	planetary_atmos = 1
+	light_range = 2
 	},
 /area/hangar)
 "ZK" = (
@@ -1722,7 +1738,7 @@ aG
 NE
 aG
 Dk
-Mx
+Cs
 gQ
 aN
 aN
@@ -1745,7 +1761,7 @@ ax
 aN
 af
 VX
-Mx
+Cs
 ay
 aG
 ap
@@ -1764,7 +1780,7 @@ aG
 ap
 aG
 UJ
-Mx
+Cs
 Rs
 aN
 aN
@@ -1787,7 +1803,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 zG
 ap
 aG
@@ -1806,7 +1822,7 @@ aG
 aG
 NE
 UJ
-Mx
+Cs
 aX
 ax
 aN
@@ -1829,7 +1845,7 @@ aN
 aN
 ax
 SC
-Mx
+Cs
 zG
 aG
 NE
@@ -1848,7 +1864,7 @@ NE
 aG
 KH
 UJ
-Mx
+Cs
 OZ
 aN
 aN
@@ -1890,7 +1906,7 @@ KH
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -1913,7 +1929,7 @@ aN
 aN
 aN
 vM
-Mx
+Cs
 ay
 aG
 aG
@@ -1932,7 +1948,7 @@ aG
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -1974,7 +1990,7 @@ aG
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -2016,7 +2032,7 @@ aG
 NE
 KH
 UJ
-Rl
+Dn
 OZ
 ax
 aN
@@ -2058,7 +2074,7 @@ KH
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -2100,7 +2116,7 @@ aG
 KH
 aG
 Dk
-Rl
+Dn
 OZ
 aN
 aN
@@ -2142,7 +2158,7 @@ NE
 aG
 aG
 Dk
-Rl
+Dn
 OZ
 aN
 aN
@@ -2249,7 +2265,7 @@ aN
 aN
 ax
 SC
-Mx
+Cs
 zG
 aG
 KH
@@ -2291,7 +2307,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 aG
@@ -2333,7 +2349,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 KH
 aG
@@ -2375,7 +2391,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 zG
 aG
 aG
@@ -2417,7 +2433,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 aG
@@ -2436,7 +2452,7 @@ aG
 NE
 aG
 UJ
-Mx
+Cs
 Rs
 ax
 aN
@@ -2459,7 +2475,7 @@ aN
 aN
 ax
 SC
-Rl
+Dn
 zG
 aG
 aG
@@ -2478,7 +2494,7 @@ aG
 ap
 aG
 UJ
-Mx
+Cs
 aX
 aN
 aN
@@ -2501,7 +2517,7 @@ aN
 aN
 aN
 SC
-Mx
+Cs
 zG
 ap
 aG
@@ -2520,7 +2536,7 @@ KH
 aG
 ap
 UJ
-Mx
+Cs
 OZ
 aN
 aN
@@ -2562,7 +2578,7 @@ aG
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -2585,7 +2601,7 @@ aN
 aN
 aN
 vM
-Mx
+Cs
 ay
 aG
 aG
@@ -2604,7 +2620,7 @@ al
 aG
 ap
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -2646,7 +2662,7 @@ ae
 NE
 aG
 UJ
-Rl
+Dn
 OZ
 ax
 aN
@@ -2688,7 +2704,7 @@ al
 aG
 KH
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -2730,7 +2746,7 @@ al
 ap
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -2772,7 +2788,7 @@ al
 Fs
 aG
 Dk
-Rl
+Dn
 OZ
 aN
 aN
@@ -2814,7 +2830,7 @@ al
 al
 aG
 Dk
-Rl
+Dn
 OZ
 aN
 aN
@@ -2921,7 +2937,7 @@ aN
 aN
 aN
 SC
-Mx
+Cs
 zG
 aG
 aG
@@ -2963,7 +2979,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 NE
@@ -3005,7 +3021,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 aG
@@ -3047,7 +3063,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 zG
 aG
 KH
@@ -3089,7 +3105,7 @@ aN
 aN
 ax
 SC
-Rl
+Dn
 ay
 aG
 aG
@@ -3108,7 +3124,7 @@ al
 aG
 aG
 UJ
-Rl
+Dn
 Rs
 aN
 aN
@@ -3131,7 +3147,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 aG
@@ -3150,7 +3166,7 @@ ae
 ap
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -3173,7 +3189,7 @@ aN
 aN
 aN
 ZZ
-Mx
+Cs
 ay
 aG
 aG
@@ -3192,7 +3208,7 @@ aG
 aG
 KH
 SC
-Rl
+Dn
 OZ
 aN
 aN
@@ -3215,7 +3231,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 OZ
 aG
 aG
@@ -3234,7 +3250,7 @@ aG
 NE
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -3257,7 +3273,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 KH
 aG
@@ -3276,7 +3292,7 @@ aG
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 ax
 aN
@@ -3341,7 +3357,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 aG
@@ -3383,7 +3399,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 zG
 aG
 aG
@@ -3402,7 +3418,7 @@ aG
 ap
 aG
 Dk
-Rl
+Dn
 OZ
 aN
 aN
@@ -3425,7 +3441,7 @@ aN
 aN
 aN
 vM
-Rl
+Dn
 ay
 KH
 aG
@@ -3444,7 +3460,7 @@ aG
 NE
 ap
 UJ
-Mx
+Cs
 OZ
 aN
 aN
@@ -3467,7 +3483,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 NE
@@ -3509,7 +3525,7 @@ aN
 aN
 ax
 SC
-Mx
+Cs
 ay
 aG
 aG
@@ -3551,7 +3567,7 @@ aN
 aN
 aN
 SC
-Mx
+Cs
 ay
 aG
 KH
@@ -3570,7 +3586,7 @@ aG
 aG
 KH
 UJ
-Mx
+Cs
 Rs
 aN
 aN
@@ -3593,7 +3609,7 @@ aN
 aN
 aN
 SC
-Mx
+Cs
 ay
 aG
 al
@@ -3612,7 +3628,7 @@ NE
 aG
 aG
 UJ
-Mx
+Cs
 Rs
 aN
 aN
@@ -3635,7 +3651,7 @@ aN
 aN
 aN
 SC
-Mx
+Cs
 zG
 ap
 al
@@ -3654,7 +3670,7 @@ aG
 aG
 NE
 Dk
-Rl
+Dn
 Rs
 aN
 aN
@@ -3677,7 +3693,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 OC
 aG
 al
@@ -3696,7 +3712,7 @@ KH
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 ax
 aN
@@ -3719,7 +3735,7 @@ aN
 aN
 ax
 SC
-Mx
+Cs
 OC
 KH
 aG
@@ -3738,7 +3754,7 @@ aG
 aG
 aG
 UJ
-Rl
+Dn
 OZ
 aN
 aN
@@ -3803,7 +3819,7 @@ aN
 aN
 aN
 vM
-Rl
+Dn
 ay
 aG
 aG
@@ -3845,7 +3861,7 @@ aN
 aN
 aN
 vM
-Rl
+Dn
 ay
 aG
 KH
@@ -3887,7 +3903,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 NE
@@ -3929,7 +3945,7 @@ aN
 aN
 aN
 SC
-Mx
+Cs
 ay
 aG
 aG
@@ -3948,7 +3964,7 @@ aG
 aG
 aG
 UJ
-Rl
+Dn
 Rs
 ax
 aN
@@ -3971,7 +3987,7 @@ aN
 aN
 ax
 SC
-Mx
+Cs
 ay
 KH
 Fs
@@ -3990,7 +4006,7 @@ aG
 KH
 aG
 Dk
-Rl
+Dn
 Rs
 aN
 aN
@@ -4013,7 +4029,7 @@ aN
 aN
 aN
 SC
-Rl
+Dn
 ay
 aG
 al
@@ -4118,25 +4134,25 @@ aG
 UJ
 aE
 as
-Mx
-Rl
-Rl
-Rl
+Cs
+Dn
+Dn
+Dn
 as
-Mx
-Mx
-Rl
-Rl
+Cs
+Cs
+Dn
+Dn
 as
 pM
 as
-Rl
+Dn
 as
 as
 as
-Mx
-Mx
-Rl
+Cs
+Cs
+Dn
 as
 as
 pM

@@ -5,6 +5,8 @@
 "ad" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -61,12 +63,15 @@
 "az" = (
 /obj/effect/spawner/structure/window/reinforced/indestructable,
 /turf/open/floor/plating{
-	planetary_atmos = 1
+	light_color = "#1B1D2E";
+	light_range = 2
 	},
 /area/hangar)
 "aB" = (
 /obj/effect/landmark/outpost/hangar_dock,
 /turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -86,6 +91,8 @@
 /area/hangar)
 "aJ" = (
 /turf/open/floor/plating{
+	light_color = "#1B1D2E";
+	light_range = 2;
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -101,8 +108,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/brushed{
-	light_color = "#1B1D2E";
-	light_range = 2;
 	planetary_atmos = 1
 	},
 /area/hangar)
@@ -436,8 +441,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned/brushed{
-	light_color = "#1B1D2E";
-	light_range = 2;
 	planetary_atmos = 1
 	},
 /area/hangar)
