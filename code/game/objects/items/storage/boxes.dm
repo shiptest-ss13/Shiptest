@@ -1361,8 +1361,8 @@
 
 // because i have no idea where the fuck to put this
 /obj/item/storage/box/maid
-	name = "Maid box"
-	desc = "Contains a maid outfit"
+	name = "Maid outfit"
+	desc = "Contains a normal maid outfit."
 
 /obj/item/storage/box/maid/PopulateContents()
 	var/static/items_inside = list(

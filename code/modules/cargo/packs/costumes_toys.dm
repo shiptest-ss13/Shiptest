@@ -231,3 +231,12 @@
 					/obj/item/clothing/under/dress/rilena,
 					/obj/item/gun/energy/buster)
 	crate_name = "collectable merchandise crate"
+
+/datum/supply_pack/costumes_toys/maid_variety
+	name = "Maid Outfit Variety Pack"
+	desc = "Surplus maid outfits from various factions. Supposedly, they're 'tactical,' whatever that means for a maid outfit."
+	cost = 2500 //The tactical maid gloves are insulated, and an insuls crate costs 1500 credits
+	contains = list(/obj/item/storage/box/maid,
+					/obj/item/storage/box/syndimaid,
+					/obj/item/storage/box/inteqmaid)
+	crate_name = "maid outfit crate"
