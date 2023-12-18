@@ -32,7 +32,6 @@
 		/obj/item/clothing/suit/gothcoat = 1,
 		/obj/item/clothing/suit/toggle/industrial = 1,
 		/obj/item/clothing/suit/toggle/hazard = 1,
-		/obj/item/clothing/suit/poncho/green = 1,
 		)
 	)
 	back = pickweight(list(
@@ -63,7 +62,6 @@
 		/obj/item/clothing/shoes/laceup = 1,
 		/obj/item/clothing/shoes/sandal = 1,
 		/obj/item/clothing/shoes/winterboots = 1,
-		/obj/item/clothing/shoes/jackboots = 1,
 		/obj/item/clothing/shoes/workboots/mining = 1,
 		/obj/item/clothing/shoes/workboots = 1,
 		/obj/item/clothing/shoes/sneakers/black = 1,
@@ -73,29 +71,28 @@
 	)
 	if(prob(50))
 		head = pickweight(list(
-			/obj/item/clothing/head/hardhat = 1,
-			/obj/item/clothing/head/hardhat/orange = 1,
-			/obj/item/clothing/head/hardhat/dblue = 1,
-			/obj/item/clothing/head/beret = 1,
-			/obj/item/clothing/head/beret/grey = 1,
-			/obj/item/clothing/head/beret/ce = 1,
-			/obj/item/clothing/head/flatcap = 1,
-			/obj/item/clothing/head/beanie = 1,
-			/obj/item/clothing/head/foilhat = 1,
-			/obj/item/clothing/head/cowboy = 1,
+			/obj/item/clothing/head/beret = 3,
+			/obj/item/clothing/head/beret/grey = 3,
+			/obj/item/clothing/head/flatcap = 3,
+			/obj/item/clothing/head/beanie = 3,
+			/obj/item/clothing/head/cowboy = 3,
+			/obj/item/clothing/head/trapper = 2,
+			/obj/item/clothing/head/hardhat = 2,
+			/obj/item/clothing/head/hardhat/orange = 2,
+			/obj/item/clothing/head/hardhat/dblue = 2,
 			/obj/item/clothing/head/pirate = 1,
-			/obj/item/clothing/head/trapper = 1
+			/obj/item/clothing/head/foilhat = 1
 			)
 		)
 	if(prob(50))
 		mask = pickweight(list(
 			/obj/item/clothing/mask/balaclava = 1,
 			/obj/item/clothing/mask/bandana/red = 1,
-			/obj/item/clothing/mask/gas = 1,
-			/obj/item/clothing/mask/breath = 1,
+			/obj/item/clothing/mask/gas = 3,
+			/obj/item/clothing/mask/breath = 3,
 			)
 		)
-	if(prob(50))
+	if(prob(25))
 		neck = pickweight(list(
 			/obj/item/clothing/neck/scarf/red = 1,
 			/obj/item/clothing/neck/scarf/green = 1,
@@ -118,11 +115,12 @@
 			/obj/item/clothing/glasses/cold = 1,
 			/obj/item/clothing/glasses/heat = 1,
 			/obj/item/clothing/glasses/orange = 1,
-			/obj/item/clothing/glasses/red = 1
 			)
 		)
-	r_pocket = /obj/item/tank/internals/emergency_oxygen
-	l_pocket = /obj/item/radio
+	if(prob(75))
+		r_pocket = /obj/item/tank/internals/emergency_oxygen
+	if(prob(75))
+		l_pocket = pick(/obj/item/radio, /obj/item/flashlight)
 	id = /obj/item/card/id
 	backpack_contents = list()
 	backpack_contents += pickweight(list(
@@ -286,7 +284,7 @@
 	if(prob(75))
 		back = pick(/obj/item/storage/backpack/medic, /obj/item/storage/backpack/satchel/med, /obj/item/storage/backpack/duffelbag/med, /obj/item/storage/backpack/messenger/med, /obj/item/defibrillator/loaded)
 	if(prob(75))
-		belt = pick(/obj/item/storage/belt/medical, /obj/item/defibrillator/compact/loaded)
+		belt = pickweight(list(/obj/item/storage/belt/medical = 5, /obj/item/defibrillator/compact/loaded = 1))
 	if(prob(75))
 		gloves = /obj/item/clothing/gloves/color/white
 	if(prob(75))
@@ -302,13 +300,13 @@
 	for(var/i = 1 to 3)
 		if(prob(75))
 			backpack_contents += pickweight(list(
-				/obj/item/storage/firstaid/medical = 1,
-				/obj/item/flashlight/pen = 1,
+				/obj/item/storage/firstaid/medical = 3,
 				/obj/item/reagent_containers/glass/beaker = 2,
 				/obj/item/reagent_containers/dropper = 2,
-				/obj/item/storage/box/hypospray = 1,
+				/obj/item/flashlight/pen = 1,
+				/obj/item/hypospray/mkii = 1,
 				/obj/item/storage/bag/medical = 1,
-				/obj/item/healthanalyzer/advanced = 1,
+				/obj/item/healthanalyzer = 1,
 			)
 		)
 	if(prob(75))
@@ -333,7 +331,9 @@
 	if(prob(75))
 		head = /obj/item/clothing/head/beret/sci
 	if(prob(75))
-		ear = /obj/item/radio/headset/headset_sci
+		ears = /obj/item/radio/headset/headset_sci
+	if(prob(75))
+		glasses = pick(/obj/item/clothing/glasses/hud/diagnostic, /obj/item/clothing/glasses/science)
 	if(prob(1))
 		neck = /obj/item/clothing/neck/tie/horrible
 	if(prob(75))
@@ -357,12 +357,21 @@
 		head = /obj/item/clothing/head/soft
 	if(prob(75))
 		ears = /obj/item/radio/headset/headset_cargo
-	if(prob(75))
-		backpack_contents += pick(list(/obj/item/export_scanner, /obj/item/modular_computer/tablet/preset/cargo, /obj/item/spacecash/bundle/mediumrand ))
+	for(var/i = 1 to 3)
+		if(prob(75))
+			backpack_contents += pickweight(list(
+				/obj/item/export_scanner = 1,
+				/obj/item/modular_computer/tablet/preset/cargo = 1,
+				/obj/item/spacecash/bundle/mediumrand = 2,
+				/obj/item/ammo_box/a762 = 2,
+				/obj/item/grenade/frag = 1
+				)
+			)
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/cargo
 	if(prob(25))
-		back = /obj/item/gun/ballistic/rifle/boltaction //An attempt to refrence gun cargo
+		suit = /obj/item/clothing/suit/armor/vest/scrap_armor
+		suit_store = /obj/item/gun/ballistic/rifle/boltaction //An attempt to refrence gun cargo
 
 /datum/outfit/generic/cargo
 	name = "Cargo Technician (Legion)"
@@ -372,27 +381,41 @@
 	if(prob(75))
 		uniform = /obj/item/clothing/under/rank/security/officer
 	if(prob(75))
-		suit = pick(/obj/item/clothing/suit/armor/vest, /obj/item/clothing/suit/armor/vest/security/officer, /obj/item/clothing/suit/armor/vest/bulletproof)
+		suit = pick(/obj/item/clothing/suit/armor/vest, /obj/item/clothing/suit/armor/vest/security/officer, /obj/item/clothing/suit/armor/vest/bulletproof, /obj/item/clothing/suit/armor/vest/blueshirt)
 	if(prob(75))
 		back = pick(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec, /obj/item/storage/backpack/duffelbag/sec, /obj/item/storage/backpack/messenger/sec)
 	if(prob(75))
 		belt = pick(/obj/item/storage/belt/security, /obj/item/storage/belt/security/webbing)
 	if(prob(75))
-		gloves = /obj/item/clothing/gloves/color/black
+		gloves = pick(/obj/item/clothing/gloves/color/black, /obj/item/clothing/gloves/tackler)
 	if(prob(75))
 		shoes = /obj/item/clothing/shoes/jackboots
 	if(prob(75))
-		head = /obj/item/clothing/head/helmet/sec
+		head = pick(/obj/item/clothing/head/helmet/sec, /obj/item/clothing/head/helmet/blueshirt, /obj/item/clothing/head/helmet/bulletproof)
 	if(prob(75))
 		mask = /obj/item/clothing/mask/gas/sechailer
 	if(prob(75))
 		ears = /obj/item/radio/headset/headset_sec
 	if(prob(75))
-		glasses = pick(/obj/item/clothing/glasses/hud/security)
+		glasses = pick(/obj/item/clothing/glasses/hud/security, /obj/item/clothing/glasses/sunglasses)
 	if(prob(75))
-		l_pocket = /obj/item/restraints/handcuffs
-	if(prob(75))
-		r_pocket = /obj/item/assembly/flash/handheld
+		r_pocket = pick(/obj/item/flashlight/seclite, /obj/item/assembly/flash/handheld, /obj/item/restraints/handcuffs)
+	if(prob(50))
+		suit_store = pick(/obj/item/gun/energy/e_gun, /obj/item/gun/energy/e_gun/smg, /obj/item/gun/energy/e_gun/iot)
+	for(var/i = 1 to 3)
+		if(prob(75))
+			backpack_contents += pickweight(list(
+			/obj/item/restraints/handcuffs = 8,
+			/obj/item/assembly/flash/handheld = 5,
+			/obj/item/storage/box/evidence = 6,
+			/obj/item/flashlight/seclite = 4,
+			/obj/item/ammo_box/c9mm/rubbershot = 3,
+			/obj/item/ammo_box/c9mm = 1,
+			/obj/item/stock_parts/cell/gun = 3,
+			/obj/item/coin/antagtoken = 1,
+			/obj/item/grenade/stingbang = 1
+			)
+		)
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/deputy
 
