@@ -20,7 +20,6 @@
 
 /datum/unit_test/outfit_sanity/Run()
 	var/mob/living/carbon/human/H = allocate(/mob/living/carbon/human)
-	var/list created_items = list()
 
 	for (var/outfit_type in subtypesof(/datum/outfit))
 		// Only make one human and keep undressing it because it's much faster
@@ -59,12 +58,5 @@
 				for (var/_ in 1 to number)
 					if (!H.equip_to_slot_or_del(new path(H), ITEM_SLOT_BACKPACK, TRUE))
 						TEST_FAIL("[outfit.name]'s backpack_contents are invalid! Couldn't add [path] to backpack.")
-		// Check if the created outfit is of subtype /datum/outfit/generic
-		if (isoutfit(outfit, /datum/outfit/generic))
-			for (var/obj/item/I in H.get_equipped_items(include_pockets = TRUE))
-				list/append(created_items, I.path)
-		for (var/item in created_items)
-			world.log << "Created Item: [item.name] ([item.path])"
-
 
 #undef CHECK_OUTFIT_SLOT
