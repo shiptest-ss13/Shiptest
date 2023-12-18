@@ -452,7 +452,6 @@
 	icon_state = "hardsuit1-sbg"
 	item_state = "hardsuit1-sbg"
 	hardsuit_type = "sbg"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/sbg
 	name = "beige-red hardsuit"
@@ -464,9 +463,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
 	lightweight = 1
 	jetpack = null
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
-	combat_slowdown = 0
-	jetpack = null
 
 
 //Hardliner Syndie suit
@@ -477,7 +473,6 @@
 	icon_state = "hardsuit1-hl"
 	item_state = "hardsuit1-hl"
 	hardsuit_type = "hl"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/hl
 	name = "white-red hardsuit"
@@ -488,9 +483,6 @@
 	hardsuit_type = "hl"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	lightweight = 1
-	jetpack = null
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
-	combat_slowdown = 0
 	jetpack = null
 
 
