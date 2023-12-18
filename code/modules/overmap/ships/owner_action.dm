@@ -139,7 +139,7 @@
 			))
 			// stripped_multiline_input returns an empty string if people press Cancel, but
 			// we don't want to delete the current memo if people press Cancel unwittingly.
-			if(memo_result && length(memo_result))`632
+			if(memo_result && length(memo_result))
 				parent_ship.memo = memo_result
 				check_blinking()
 			return TRUE
