@@ -154,8 +154,16 @@
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(prob(75))
-		uniform = pick(/obj/item/clothing/under/rank/cargo/miner/lavaland, /obj/item/clothing/under/rank/cargo/miner, /obj/item/clothing/under/rank/cargo/miner/lavaland/old)
-	if(prob(50))
+		uniform = pick(/obj/item/clothing/under/rank/cargo/miner/lavaland, /obj/item/clothing/under/rank/cargo/miner)
+	if(prob(25))
+		suit = pickweight(list(
+			/obj/item/clothing/suit/hooded/explorer = 18,
+			/obj/item/clothing/suit/hooded/cloak/goliath = 2
+			)
+		)
+	if(prob(75))
+		back = /obj/item/storage/backpack/explorer
+	if(prob(75))
 		belt = pickweight(list(
 			/obj/item/storage/belt/mining = 2,
 			/obj/item/storage/belt/mining/alt = 2
@@ -173,16 +181,12 @@
 	if(prob(75))
 		gloves = /obj/item/clothing/gloves/color/black
 	if(prob(75))
+		shoes = /obj/item/clothing/shoes/workboots/mining
+	if(prob(75))
 		mask = /obj/item/clothing/mask/gas/explorer
-	if(prob(45))
+	if(prob(50))
 		glasses = /obj/item/clothing/glasses/meson
-	if(prob(20))
-		suit = pickweight(list(
-			/obj/item/clothing/suit/hooded/explorer = 18,
-			/obj/item/clothing/suit/hooded/cloak/goliath = 2
-			)
-		)
-	if(prob(30))
+	if(prob(50))
 		r_pocket = pickweight(list(
 			/obj/item/stack/marker_beacon = 20,
 			/obj/item/spacecash/bundle/mediumrand = 7,
@@ -190,15 +194,14 @@
 			/obj/item/borg/upgrade/modkit/damage = 1
 			)
 		)
-	if(prob(10))
+	if(prob(25))
 		l_pocket = pickweight(list(
-			/obj/item/spacecash/bundle/mediumrand = 7,
+			/obj/item/spacecash/bundle/mediumrand = 5,
 			/obj/item/reagent_containers/hypospray/medipen/survival = 2,
 			/obj/item/borg/upgrade/modkit/cooldown = 1
 			)
 		)
-	if(prob(95))
-		back = /obj/item/storage/backpack/explorer
+	if(prob(75))
 		for(var/count in 1 to 3)
 			if(prob(70))
 				backpack_contents += pickweight(list(
@@ -228,7 +231,7 @@
 					)
 				)
 			)
-	else
+	else if (prob(75))
 		back = /obj/item/kinetic_crusher
 		backpack_contents = list()
 
