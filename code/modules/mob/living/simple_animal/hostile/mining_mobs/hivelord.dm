@@ -435,8 +435,4 @@
 			outfit = /datum/outfit/generic/cargo
 		if("Security")
 			outfit = /datum/outfit/generic/security
-		/*
-		if("Oldminer")
-			outfit = /datum/outfit/generic/oldminer
-		*/
 	. = ..()

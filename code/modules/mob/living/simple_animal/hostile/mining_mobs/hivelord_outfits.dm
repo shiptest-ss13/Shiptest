@@ -152,11 +152,17 @@
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(prob(75))
-		uniform = pick(/obj/item/clothing/under/rank/cargo/miner/lavaland, /obj/item/clothing/under/rank/cargo/miner)
+		uniform = pickweight(list(
+			/obj/item/clothing/under/rank/cargo/miner/lavaland = 5,
+			/obj/item/clothing/under/rank/cargo/miner = 4,
+			/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 1,
+			)
+		)
 	if(prob(25))
 		suit = pickweight(list(
 			/obj/item/clothing/suit/hooded/explorer = 18,
-			/obj/item/clothing/suit/hooded/cloak/goliath = 2
+			/obj/item/clothing/suit/hooded/explorer/old = 1,
+			/obj/item/clothing/suit/hooded/cloak/goliath = 1
 			)
 		)
 	if(prob(75))
@@ -169,19 +175,26 @@
 		)
 	else if(prob(75))
 		belt = pickweight(list(
-			/obj/item/pickaxe = 8,
-			/obj/item/pickaxe/mini = 4,
-			/obj/item/pickaxe/silver = 2,
-			/obj/item/pickaxe/diamond = 1,
-			/obj/item/gun/energy/kinetic_accelerator = 1
+			/obj/item/pickaxe = 16,
+			/obj/item/pickaxe/mini = 8,
+			/obj/item/pickaxe/silver = 4,
+			/obj/item/pickaxe/diamond = 2,
+			/obj/item/gun/energy/kinetic_accelerator = 2,
+			/obj/item/kinetic_crusher/old = 1
 			)
 		)
 	if(prob(75))
-		gloves = /obj/item/clothing/gloves/color/black
+		gloves = pickweight(list(
+			/obj/item/clothing/gloves/color/black = 9,
+			/obj/item/clothing/gloves/explorer/old = 1
 	if(prob(75))
 		shoes = /obj/item/clothing/shoes/workboots/mining
 	if(prob(75))
-		mask = /obj/item/clothing/mask/gas/explorer
+		mask = pickweight(list(
+			/obj/item/clothing/mask/gas/explorer = 9,
+			/obj/item/clothing/mask/gas/explorer/old = 1
+			)
+		)
 	if(prob(50))
 		glasses = /obj/item/clothing/glasses/meson
 	if(prob(50))
@@ -230,8 +243,12 @@
 				)
 			)
 	else if (prob(75))
-		back = /obj/item/kinetic_crusher
 		backpack_contents = list()
+		back = pickweight(list(
+			/obj/item/kinetic_crusher = 9,
+			/obj/item/kinetic_crusher/old = 1
+			)
+		)
 
 /datum/outfit/generic/miner
 	name = "Miner (Legion)"
@@ -425,69 +442,3 @@
 	name = "Security Officer (Legion)"
 	box = /obj/item/storage/box/survival/security
 
-/*
-/datum/outfit/generic/oldminer/pre_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	suit = /obj/item/clothing/suit/hooded/explorer/old
-	mask = /obj/item/clothing/mask/gas/explorer/old
-	if(prob(95))
-		glasses = /obj/item/clothing/glasses/meson
-	else
-		glasses = /obj/item/clothing/glasses/meson/night
-	suit_store = /obj/item/tank/internals/oxygen
-	gloves = /obj/item/clothing/gloves/explorer/old
-	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland/old
-	if(prob(85))
-		back = /obj/item/storage/backpack/explorer
-		for(var/count in 1 to 3)
-			if(prob(70))
-				backpack_contents += pickweight(list(
-					/obj/item/borg/upgrade/modkit/damage = 1,
-					/obj/item/borg/upgrade/modkit/trigger_guard = 1,
-					/obj/item/soap/nanotrasen = 1,
-					/obj/item/wormhole_jaunter = 1,
-					/obj/item/fulton_core = 1,
-					/obj/item/extraction_pack = 2,
-					/obj/item/stack/sheet/animalhide/goliath_hide = 3,
-					/obj/item/hivelordstabilizer = 2,
-					/obj/item/stack/marker_beacon/ten = 2,
-					/obj/item/mining_scanner = 2,
-					/obj/item/extinguisher/mini = 2,
-					/obj/item/kitchen/knife/combat/survival = 3,
-					/obj/item/flashlight/seclite=3,
-					/obj/item/stack/sheet/sinew = 3,
-					/obj/item/stack/sheet/bone = 3
-					)
-				)
-		if(prob(30))
-			backpack_contents += list(
-				/obj/item/reagent_containers/hypospray/medipen/survival = pickweight(list(
-					1 = 3,
-					2 = 2,
-					3 = 1
-					)
-				)
-			)
-	else
-		back = /obj/item/kinetic_crusher/old
-	if(prob(30))
-		belt = /obj/item/gun/energy/kinetic_accelerator/old
-	if(prob(30))
-		r_pocket = pickweight(list(
-			/obj/item/stack/marker_beacon = 20,
-			/obj/item/spacecash/bundle/mediumrand = 7,
-			/obj/item/reagent_containers/hypospray/medipen/survival = 2,
-			/obj/item/borg/upgrade/modkit/damage = 1
-			)
-		)
-	if(prob(30))
-		l_pocket = pickweight(list(
-			/obj/item/spacecash/bundle/mediumrand = 5,
-			/obj/item/reagent_containers/hypospray/medipen/survival = 2,
-			/obj/item/borg/upgrade/modkit/cooldown = 1
-			)
-		)
-
-/datum/outfit/generic/oldminer
-	name = "Old Miner (Legion)"
-*/
