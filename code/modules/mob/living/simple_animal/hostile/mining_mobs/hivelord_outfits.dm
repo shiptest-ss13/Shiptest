@@ -151,111 +151,17 @@
 	name = "Generic (Legion)"
 	box = /obj/item/storage/box/survival
 
-/datum/outfit/generic/engineer/pre_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(prob(75))
-		uniform = pick(/obj/item/clothing/under/rank/engineering/engineer, /obj/item/clothing/under/rank/engineering/engineer/hazard, /obj/item/clothing/under/rank/security/officer/military/eng)
-	if(prob(75))
-		suit = pick(/obj/item/clothing/suit/toggle/hazard, /obj/item/clothing/suit/hazardvest, /obj/item/clothing/suit/hooded/wintercoat/engineering)
-	if(prob(75))
-		gloves = pick(/obj/item/clothing/gloves/color/yellow, /obj/item/clothing/gloves/color/fyellow, /obj/item/clothing/gloves/color/fyellow/old)
-	if(prob(75))
-		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
-	if(prob(50))
-		head = /obj/item/clothing/head/welding
-	if(prob(75))
-		ears = /obj/item/radio/headset/headset_eng
-	else if(prob(50))
-		glasses = /obj/item/clothing/glasses/welding
-	if(prob(75))
-		back = pick(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/duffelbag/engineering, /obj/item/storage/backpack/messenger/engi)
-	if(prob(10))
-		back = /obj/item/fireaxe
-	for(var/i = 1 to 3)
-		if(prob(75))
-			backpack_contents += pickweight(list(
-				/obj/item/stack/tape/industrial/electrical = 1,
-				/obj/item/electronics/apc = 1,
-				/obj/item/multitool = 1,
-				/obj/item/pipe_dispenser = 1,
-				/obj/item/tank/internals/emergency_oxygen/engi = 1,
-				/obj/item/holosign_creator/engineering = 1,
-				/obj/item/extinguisher/advanced = 1,
-				)
-			)
-	if(prob(75))
-		accessory = /obj/item/clothing/accessory/armband/engine
-
-/datum/outfit/generic/engineer
-	name = "Mechanic (Legion)"
-	box = /obj/item/storage/box/survival/engineer
-
-/datum/outfit/generic/engineer/inteq/pre_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(prob(75))
-		uniform = pick(/obj/item/clothing/under/syndicate/inteq/artificer, /obj/item/clothing/under/syndicate/inteq)
-	if(prob(75))
-		head = pick(/obj/item/clothing/head/hardhat/white, /obj/item/clothing/head/soft/inteq)
-	if(prob(75))
-		shoes = /obj/item/clothing/shoes/combat
-	if(prob(75))
-		back = /obj/item/storage/backpack/messenger/inteq
-
-/datum/outfit/generic/engineer/inteq
-	name = "Artificer (Legion)"
-
-/datum/outfit/generic/doctor/pre_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(prob(75))
-		uniform = pick(/obj/item/clothing/under/rank/medical/doctor, /obj/item/clothing/under/rank/medical/doctor/blue)
-	if(prob(75))
-		suit = pick(/obj/item/clothing/suit/toggle/labcoat, /obj/item/clothing/suit/apron/surgical ,/obj/item/clothing/suit/hooded/wintercoat/medical)
-	if(prob(75))
-		back = pick(/obj/item/storage/backpack/medic, /obj/item/storage/backpack/satchel/med, /obj/item/storage/backpack/duffelbag/med, /obj/item/storage/backpack/messenger/med, /obj/item/defibrillator/loaded)
-	if(prob(75))
-		belt = pick(/obj/item/storage/belt/medical, /obj/item/defibrillator/compact/loaded)
-	if(prob(75))
-		gloves = /obj/item/clothing/gloves/color/white
-	if(prob(75))
-		mask = /obj/item/clothing/mask/surgical
-	if(prob(75))
-		shoes = pick(/obj/item/clothing/shoes/sneakers/white, /obj/item/clothing/gloves/color/latex/nitrile)
-	if(prob(75))
-		head = /obj/item/clothing/head/beret/med
-	if(prob(75))
-		ears = /obj/item/radio/headset/headset_med
-	if(prob(75))
-		glasses = pick(/obj/item/clothing/glasses/hud/health, /obj/item/clothing/glasses/hud/health/prescription)
-	for(var/i = 1 to 3)
-		if(prob(75))
-			backpack_contents += pickweight(list(
-				/obj/item/storage/firstaid/medical = 1,
-				/obj/item/flashlight/pen = 1,
-				/obj/item/reagent_containers/glass/beaker = 2,
-				/obj/item/reagent_containers/dropper = 2,
-				/obj/item/storage/box/hypospray = 1,
-				/obj/item/storage/bag/medical = 1,
-				/obj/item/healthanalyzer/advanced = 1,
-			)
-		)
-	if(prob(75))
-		accessory = /obj/item/clothing/accessory/armband/medblue
-
-/datum/outfit/generic/doctor
-	name = "Medical Doctor (Legion)"
-	box = /obj/item/storage/box/survival/medical
-
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(prob(75))
-		uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
+		uniform = pick(/obj/item/clothing/under/rank/cargo/miner/lavaland, /obj/item/clothing/under/rank/cargo/miner, /obj/item/clothing/under/rank/cargo/miner/lavaland/old)
 	if(prob(50))
 		belt = pickweight(list(
 			/obj/item/storage/belt/mining = 2,
 			/obj/item/storage/belt/mining/alt = 2
 			)
 		)
-	else if(prob(50))
+	else if(prob(75))
 		belt = pickweight(list(
 			/obj/item/pickaxe = 8,
 			/obj/item/pickaxe/mini = 4,
@@ -329,6 +235,86 @@
 /datum/outfit/generic/miner
 	name = "Miner (Legion)"
 
+/datum/outfit/generic/engineer/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/rank/engineering/engineer, /obj/item/clothing/under/rank/engineering/engineer/hazard, /obj/item/clothing/under/rank/security/officer/military/eng)
+	if(prob(75))
+		suit = pick(/obj/item/clothing/suit/toggle/hazard, /obj/item/clothing/suit/hazardvest, /obj/item/clothing/suit/hooded/wintercoat/engineering)
+	if(prob(75))
+		gloves = pick(/obj/item/clothing/gloves/color/yellow, /obj/item/clothing/gloves/color/fyellow, /obj/item/clothing/gloves/color/fyellow/old)
+	if(prob(75))
+		belt = pick(/obj/item/storage/belt/utility/full, /obj/item/storage/belt/utility)
+	if(prob(50))
+		head = /obj/item/clothing/head/welding
+	if(prob(75))
+		ears = /obj/item/radio/headset/headset_eng
+	else if(prob(50))
+		glasses = /obj/item/clothing/glasses/welding
+	if(prob(75))
+		back = pick(/obj/item/storage/backpack/industrial, /obj/item/storage/backpack/satchel/eng, /obj/item/storage/backpack/duffelbag/engineering, /obj/item/storage/backpack/messenger/engi)
+	if(prob(10))
+		back = /obj/item/fireaxe
+	for(var/i = 1 to 3)
+		if(prob(75))
+			backpack_contents += pickweight(list(
+				/obj/item/stack/tape/industrial/electrical = 1,
+				/obj/item/electronics/apc = 1,
+				/obj/item/multitool = 1,
+				/obj/item/pipe_dispenser = 1,
+				/obj/item/tank/internals/emergency_oxygen/engi = 1,
+				/obj/item/holosign_creator/engineering = 1,
+				/obj/item/extinguisher/advanced = 1,
+				)
+			)
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/engine
+
+/datum/outfit/generic/engineer
+	name = "Mechanic (Legion)"
+	box = /obj/item/storage/box/survival/engineer
+
+/datum/outfit/generic/doctor/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/rank/medical/doctor, /obj/item/clothing/under/rank/medical/doctor/blue)
+	if(prob(75))
+		suit = pick(/obj/item/clothing/suit/toggle/labcoat, /obj/item/clothing/suit/apron/surgical ,/obj/item/clothing/suit/hooded/wintercoat/medical)
+	if(prob(75))
+		back = pick(/obj/item/storage/backpack/medic, /obj/item/storage/backpack/satchel/med, /obj/item/storage/backpack/duffelbag/med, /obj/item/storage/backpack/messenger/med, /obj/item/defibrillator/loaded)
+	if(prob(75))
+		belt = pick(/obj/item/storage/belt/medical, /obj/item/defibrillator/compact/loaded)
+	if(prob(75))
+		gloves = /obj/item/clothing/gloves/color/white
+	if(prob(75))
+		mask = /obj/item/clothing/mask/surgical
+	if(prob(75))
+		shoes = pick(/obj/item/clothing/shoes/sneakers/white, /obj/item/clothing/gloves/color/latex/nitrile)
+	if(prob(75))
+		head = /obj/item/clothing/head/beret/med
+	if(prob(75))
+		ears = /obj/item/radio/headset/headset_med
+	if(prob(75))
+		glasses = pick(/obj/item/clothing/glasses/hud/health, /obj/item/clothing/glasses/hud/health/prescription)
+	for(var/i = 1 to 3)
+		if(prob(75))
+			backpack_contents += pickweight(list(
+				/obj/item/storage/firstaid/medical = 1,
+				/obj/item/flashlight/pen = 1,
+				/obj/item/reagent_containers/glass/beaker = 2,
+				/obj/item/reagent_containers/dropper = 2,
+				/obj/item/storage/box/hypospray = 1,
+				/obj/item/storage/bag/medical = 1,
+				/obj/item/healthanalyzer/advanced = 1,
+			)
+		)
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/medblue
+
+/datum/outfit/generic/doctor
+	name = "Medical Doctor (Legion)"
+	box = /obj/item/storage/box/survival/medical
+
 /datum/outfit/generic/oldminer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	suit = /obj/item/clothing/suit/hooded/explorer/old
@@ -392,6 +378,20 @@
 		)
 /datum/outfit/generic/oldminer
 	name = "Old Miner (Legion)"
+
+/datum/outfit/generic/engineer/inteq/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/syndicate/inteq/artificer, /obj/item/clothing/under/syndicate/inteq)
+	if(prob(75))
+		head = pick(/obj/item/clothing/head/hardhat/white, /obj/item/clothing/head/soft/inteq)
+	if(prob(75))
+		shoes = /obj/item/clothing/shoes/combat
+	if(prob(75))
+		back = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/generic/engineer/inteq
+	name = "Artificer (Legion)"
 
 /datum/outfit/generic/solgov/soldier/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -457,7 +457,7 @@
 		)
 
 /datum/outfit/generic/solgov/soldier
-	name = "Soldier"
+	name = "Soldier (Legion)"
 
 /datum/outfit/generic/syndicate/infiltrator/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -510,7 +510,7 @@
 		)
 
 /datum/outfit/generic/syndicate/infiltrator
-	name = "Infiltrator"
+	name = "Infiltrator (Legion)"
 
 /datum/outfit/generic/syndicate/operative/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -535,7 +535,7 @@
 		back = /obj/item/storage/backpack
 
 /datum/outfit/generic/syndicate/operative
-	name = "Operative"
+	name = "Operative (Legion)"
 
 /datum/outfit/generic/srm/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -547,6 +547,7 @@
 		belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
 
 /datum/outfit/generic/srm
+	name = "SRM (Legion)"
 
 /datum/outfit/generic/srm/shadow/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -554,7 +555,7 @@
 	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
 
 /datum/outfit/generic/srm/shadow
-	name = "Shadow"
+	name = "Shadow (Legion)"
 
 /datum/outfit/generic/srm/hunter/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -575,3 +576,4 @@
 			/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine,) = 2)
 
 /datum/outfit/generic/srm/hunter
+	name = "Hunter (Legion)"

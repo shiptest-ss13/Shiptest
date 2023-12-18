@@ -413,10 +413,12 @@
 		"Miner" = 40,
 		"Assistant" = 10,
 		"Engineer" = 5,
-		//"Doctor" = 5,
+		"Doctor" = 5,
 		//"Scientist" = 5,
 		//"Cargo" = 5,
+		//"Security" = 5,
 		//I dont like this guy,
+		/*
 		"Oldminer" = 10,
 		pick(
 			/*I think imma each faction have a minor and major outfit
@@ -433,16 +435,21 @@
 			//srm//
 			"SRM",
 			) = 10
+		*/\
 		)
 	)
 
 	switch(type)
 		if("Miner")
 			outfit = /datum/outfit/generic/miner
-		if("Engineer")
-			outfit = /datum/outfit/generic/engineer
 		if("Assistant")
 			outfit = /datum/outfit/generic
+		if("Engineer")
+			outfit = /datum/outfit/generic/engineer
+		if("Doctor")
+			outfit = /datum/outfit/generic/doctor
+
+		/*
 		if("Oldminer")
 			outfit = /datum/outfit/generic/oldminer
 		if("Soldier")
@@ -455,4 +462,5 @@
 			outfit = /datum/outfit/generic/engineer/inteq
 		if("SRM")
 			outfit = /datum/outfit/generic/srm/hunter
+		*/
 	. = ..()
