@@ -417,25 +417,6 @@
 		"Scientist" = 5,
 		"Cargo" = 5,
 		"Security" = 5,
-		//I dont like this guy,
-		/*
-		"Oldminer" = 10,
-		pick(
-			/*I think imma each faction have a minor and major outfit
-			10% chance for the major
-			Both should reflect the factions strengths if convinent*/
-			//solgov//
-			"Soldier",
-			//cmm//
-			//syndi//
-			pick("Infiltrator", "Operative"),
-			//nanotrasen//
-			//inteq//
-			"Artificer",
-			//srm//
-			"SRM",
-			) = 10
-		*/\
 		)
 	)
 
@@ -457,15 +438,5 @@
 		/*
 		if("Oldminer")
 			outfit = /datum/outfit/generic/oldminer
-		if("Soldier")
-			outfit = /datum/outfit/generic/solgov/soldier
-		if("Infiltrator")
-			outfit = /datum/outfit/generic/syndicate/infiltrator
-		if("Operative")
-			outfit = /datum/outfit/generic/syndicate/operative
-		if("Artificer")
-			outfit = /datum/outfit/generic/engineer/inteq
-		if("SRM")
-			outfit = /datum/outfit/generic/srm/hunter
 		*/
 	. = ..()
