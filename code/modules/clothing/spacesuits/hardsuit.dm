@@ -452,7 +452,6 @@
 	icon_state = "hardsuit1-sbg"
 	item_state = "hardsuit1-sbg"
 	hardsuit_type = "sbg"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/sbg
 	name = "beige-red hardsuit"
@@ -464,10 +463,6 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
 	lightweight = 1
 	jetpack = null
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
-	combat_slowdown = 0
-	jetpack = null
-
 
 //Hardliner Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
@@ -477,7 +472,6 @@
 	icon_state = "hardsuit1-hl"
 	item_state = "hardsuit1-hl"
 	hardsuit_type = "hl"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/hl
 	name = "white-red hardsuit"
@@ -488,9 +482,6 @@
 	hardsuit_type = "hl"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
 	lightweight = 1
-	jetpack = null
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
-	combat_slowdown = 0
 	jetpack = null
 
 
@@ -529,28 +520,6 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/debug
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/debug
-
-//The Owl Hardsuit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
-	name = "owl hardsuit helmet"
-	desc = "A dual-mode advanced helmet designed for any crime-fighting situation. It is in travel mode."
-	alt_desc = "A dual-mode advanced helmet designed for any crime-fighting situation. It is in combat mode."
-	icon_state = "hardsuit0-owl"
-	item_state = "s_helmet"
-	hardsuit_type = "owl"
-	visor_flags_inv = 0
-	visor_flags = 0
-	on = FALSE
-	full_retraction = TRUE
-
-/obj/item/clothing/suit/space/hardsuit/syndi/owl
-	name = "owl hardsuit"
-	desc = "A dual-mode advanced hardsuit designed for any crime-fighting situation. It is in travel mode."
-	alt_desc = "A dual-mode advanced hardsuit designed for any crime-fighting situation. It is in combat mode."
-	icon_state = "hardsuit1-owl"
-	item_state = "s_suit"
-	hardsuit_type = "owl"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
 
 //Cybersun Hardsuit
 /obj/item/clothing/suit/space/hardsuit/syndi/cybersun
