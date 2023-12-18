@@ -256,7 +256,6 @@
 
 /obj/item/gun/ballistic/automatic/assault/e40/attackby(obj/item/attack_obj, mob/user, params)
 	if(istype(attack_obj, /obj/item/stock_parts/cell/gun) || istype(attack_obj, /obj/item/screwdriver))
-		secondary.attack_self()
 		secondary.attackby(attack_obj, user, params)
 	else
 		..()
@@ -302,6 +301,12 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_icon()
 	return
+
+
+
+/obj/item/gun/ballistic/automatic/assault/e40/toggle_safety(mob/user, silent=FALSE)
+	. = ..()
+	secondary.toggle_safety(user, silent=TRUE)
 
 //laser
 
