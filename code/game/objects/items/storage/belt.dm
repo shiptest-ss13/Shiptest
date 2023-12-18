@@ -303,6 +303,11 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
+/obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/m12g(src)
+
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
 	desc = "A versatile chest rig, cherished by miners and hunters alike."
@@ -434,22 +439,40 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/storage/belt/military/c20r/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm45(src)
+
+/obj/item/storage/belt/military/assault/m90/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556(src)
+
 /obj/item/storage/belt/military/minutemen
 	name = "minutemen tactical webbing"
 	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."
 	icon_state = "cmmwebbing"
 	item_state = "cmmwebbing"
 
-/obj/item/storage/belt/military/minutemen/loaded/PopulateContents()
-	for(var/i in 1 to 7)
+/obj/item/storage/belt/military/minutemen/p16/PopulateContents()
+	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
+
+/obj/item/storage/belt/military/minutemen/gal/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/gal(src)
+
+/obj/item/storage/belt/military/minutemen/cm5/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm9mm(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
 
 /obj/item/storage/belt/military/snack/Initialize()
 	. = ..()
-	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
+	var/sponsor = pick("Donk! Co.", "CyberSun")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
 /obj/item/storage/belt/military/snack/ComponentInitialize()
@@ -825,6 +848,11 @@
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
 	supports_variations = VOX_VARIATION
+
+/obj/item/storage/belt/security/webbing/inteq/ak47/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_box/magazine/ak47(src)
 
 /obj/item/storage/belt/security/webbing/inteq/alt
 	name = "inteq drop pouch harness"
