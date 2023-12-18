@@ -8,4 +8,4 @@
 		for (var/obj/item/I in SpawnEffect.loc.get_contents())
 			total_items_created += 1
 
-	world.log << "Total items created from mob_spawn: [total_items_created]"
+	TEST_FAIL("Total items created from mob_spawn: [total_items_created]")
