@@ -315,6 +315,35 @@
 	name = "Medical Doctor (Legion)"
 	box = /obj/item/storage/box/survival/medical
 
+/datum/outfit/generic/science/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/rank/rnd/scientist, /obj/item/clothing/under/rank/rnd/roboticist)
+	if(prob(75))
+		suit = pick(/obj/item/clothing/suit/toggle/labcoat/science, /obj/item/clothing/suit/toggle/suspenders/blue, /obj/item/clothing/suit/hooded/wintercoat/science)
+	if(prob(75))
+		back = pick(/obj/item/storage/backpack/science, /obj/item/storage/backpack/satchel/tox, /obj/item/storage/backpack/messenger/tox)
+	if(prob(75))
+		shoes = /obj/item/clothing/shoes/sneakers/white
+	if(prob(75))
+		gloves = /obj/item/clothing/gloves/color/white
+	if(prob(75))
+		head = /obj/item/clothing/head/beret/sci
+	if(prob(75))
+		ear = /obj/item/radio/headset/headset_sci
+	if(prob(1))
+		neck = /obj/item/clothing/neck/tie/horrible
+
+
+/datum/outfit/generic/science
+	name = "Scientist (Legion)"
+
+/datum/outfit/generic/cargo
+	name = "Cargo Technician (Legion)"
+
+/datum/outfit/generic/security
+	name = "Security Officer (Legion)"
+/*
 /datum/outfit/generic/oldminer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	suit = /obj/item/clothing/suit/hooded/explorer/old
@@ -376,6 +405,7 @@
 			/obj/item/borg/upgrade/modkit/cooldown = 1
 			)
 		)
+
 /datum/outfit/generic/oldminer
 	name = "Old Miner (Legion)"
 
@@ -577,3 +607,5 @@
 
 /datum/outfit/generic/srm/hunter
 	name = "Hunter (Legion)"
+
+*/
