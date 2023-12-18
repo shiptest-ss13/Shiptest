@@ -3,9 +3,6 @@
 */
 
 /datum/map_template/outpost
-	// ! TODO: change build_coordinate so that placeOnTop == FALSE passes new turf's baseturfs to ChangeTurf.
-	// ! this would cause maploading a should_place_on_top == FALSE template to reset the baseturfs to those of the turf instead of
-	// ! causing it to CLEAR the turf's baseturfs. this will require a holodeck removal, as they're the main thing that uses should_place_on_top == FALSE
 	// Necessary to stop planetary outposts from having space underneath all their turfs.
 	// They were being "placed on top", so instead of their baseturf, there was just space underneath.
 	// (Interestingly, this is much less of a problem for ruins: PlaceOnTop ignores the top closed turf in the baseturfs stack
