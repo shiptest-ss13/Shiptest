@@ -414,9 +414,9 @@
 		"Assistant" = 10,
 		"Engineer" = 5,
 		"Doctor" = 5,
-		//"Scientist" = 5,
-		//"Cargo" = 5,
-		//"Security" = 5,
+		"Scientist" = 5,
+		"Cargo" = 5,
+		"Security" = 5,
 		//I dont like this guy,
 		/*
 		"Oldminer" = 10,
@@ -448,7 +448,12 @@
 			outfit = /datum/outfit/generic/engineer
 		if("Doctor")
 			outfit = /datum/outfit/generic/doctor
-
+		if("Scientist")
+			outfit = /datum/outfit/generic/science
+		if("Cargo")
+			outfit = /datum/outfit/generic/cargo
+		if("Security")
+			outfit = /datum/outfit/generic/security
 		/*
 		if("Oldminer")
 			outfit = /datum/outfit/generic/oldminer

@@ -93,12 +93,13 @@
 /obj/effect/mob_spawn/human/corpse/damaged/whitesands/Initialize() //everything here should equal out to 100 for the sake of my sanity.
 
 	mob_species = pickweight(list(
-			/datum/species/human = 50,
-			/datum/species/lizard = 25,
-			/datum/species/ethereal = 10,
-			/datum/species/moth = 10,
-			/datum/species/spider = 3,
-			/datum/species/fly = 2
+			/datum/species/human = 31,
+			/datum/species/lizard = 26,
+			/datum/species/ethereal = 24,
+			/datum/species/spider = 7,
+			/datum/species/ipc = 7,
+			/datum/species/jelly = 4,
+			/datum/species/fly = 1
 			)
 		)
 	//to-do: learn how to make mobsprites for other survivors
