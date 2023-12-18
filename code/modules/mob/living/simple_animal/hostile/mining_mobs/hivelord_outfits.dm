@@ -320,7 +320,7 @@
 	if(prob(75))
 		uniform = pick(/obj/item/clothing/under/rank/rnd/scientist, /obj/item/clothing/under/rank/rnd/roboticist)
 	if(prob(75))
-		suit = pick(/obj/item/clothing/suit/toggle/labcoat/science, /obj/item/clothing/suit/toggle/suspenders/blue, /obj/item/clothing/suit/hooded/wintercoat/science)
+		suit = pick(/obj/item/clothing/suit/toggle/labcoat/science, /obj/item/clothing/suit/hooded/wintercoat/science)
 	if(prob(75))
 		back = pick(/obj/item/storage/backpack/science, /obj/item/storage/backpack/satchel/tox, /obj/item/storage/backpack/messenger/tox)
 	if(prob(75))
@@ -333,16 +333,67 @@
 		ear = /obj/item/radio/headset/headset_sci
 	if(prob(1))
 		neck = /obj/item/clothing/neck/tie/horrible
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/science
 
 
 /datum/outfit/generic/science
 	name = "Scientist (Legion)"
 
+/datum/outfit/generic/cargo/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = pick(/obj/item/clothing/under/rank/cargo/tech, /obj/item/clothing/under/shorts/grey)
+	if(prob(75))
+		suit = pick(/obj/item/clothing/suit/hazardvest, /obj/item/clothing/suit/hooded/wintercoat/cargo)
+	if(prob(75))
+		gloves = /obj/item/clothing/gloves/fingerless
+	if(prob(75))
+		shoes = /obj/item/clothing/shoes/sneakers/black
+	if(prob(75))
+		head = /obj/item/clothing/head/soft
+	if(prob(75))
+		ears = /obj/item/radio/headset/headset_cargo
+	if(prob(75))
+		backpack_contents += pick(list(/obj/item/export_scanner, /obj/item/modular_computer/tablet/preset/cargo))
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/cargo
+
 /datum/outfit/generic/cargo
 	name = "Cargo Technician (Legion)"
 
+/datum/outfit/generic/security/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(prob(75))
+		uniform = /obj/item/clothing/under/rank/security/officer
+	if(prob(75))
+		suit = pick(/obj/item/clothing/suit/armor/vest, /obj/item/clothing/suit/armor/vest/security/officer)
+	if(prob(75))
+		back = pick(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec, /obj/item/storage/backpack/duffelbag/sec, /obj/item/storage/backpack/messenger/sec)
+	if(prob(75))
+		belt = pick(/obj/item/storage/belt/security, /obj/item/storage/belt/security/webbing)
+	if(prob(75))
+		gloves = /obj/item/clothing/gloves/color/black
+	if(prob(75))
+		shoes = /obj/item/clothing/shoes/jackboots
+	if(prob(75))
+		head = /obj/item/clothing/head/helmet/sec
+	if(prob(75))
+		mask = /obj/item/clothing/mask/gas/sechailer
+	if(prob(75))
+		ears = /obj/item/radio/headset/headset_sec
+	if(prob(75))
+		glasses = pick(/obj/item/clothing/glasses/hud/security)
+	if(prob(75))
+		l_pocket = /obj/item/restraints/handcuffs
+	if(prob(75))
+		r_pocket = /obj/item/assembly/flash/handheld
+	if(prob(75))
+		accessory = /obj/item/clothing/accessory/armband/deputy
+
 /datum/outfit/generic/security
 	name = "Security Officer (Legion)"
+	box = /obj/item/storage/box/survival/security
 /*
 /datum/outfit/generic/oldminer/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
