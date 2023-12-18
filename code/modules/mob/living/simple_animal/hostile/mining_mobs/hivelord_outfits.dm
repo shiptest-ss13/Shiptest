@@ -187,6 +187,8 @@
 		gloves = pickweight(list(
 			/obj/item/clothing/gloves/color/black = 9,
 			/obj/item/clothing/gloves/explorer/old = 1
+			)
+		)
 	if(prob(75))
 		shoes = /obj/item/clothing/shoes/workboots/mining
 	if(prob(75))

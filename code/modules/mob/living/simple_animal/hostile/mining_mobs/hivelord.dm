@@ -416,7 +416,7 @@
 		"Doctor" = 5,
 		"Scientist" = 5,
 		"Cargo" = 5,
-		"Security" = 5,
+		"Security" = 5
 		)
 	)
 
