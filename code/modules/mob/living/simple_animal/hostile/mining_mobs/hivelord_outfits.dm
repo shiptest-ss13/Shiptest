@@ -358,9 +358,11 @@
 	if(prob(75))
 		ears = /obj/item/radio/headset/headset_cargo
 	if(prob(75))
-		backpack_contents += pick(list(/obj/item/export_scanner, /obj/item/modular_computer/tablet/preset/cargo))
+		backpack_contents += pick(list(/obj/item/export_scanner, /obj/item/modular_computer/tablet/preset/cargo, /obj/item/spacecash/bundle/mediumrand ))
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/cargo
+	if(prob(25))
+		back = /obj/item/gun/ballistic/rifle/boltaction //An attempt to refrence gun cargo
 
 /datum/outfit/generic/cargo
 	name = "Cargo Technician (Legion)"
@@ -370,7 +372,7 @@
 	if(prob(75))
 		uniform = /obj/item/clothing/under/rank/security/officer
 	if(prob(75))
-		suit = pick(/obj/item/clothing/suit/armor/vest, /obj/item/clothing/suit/armor/vest/security/officer)
+		suit = pick(/obj/item/clothing/suit/armor/vest, /obj/item/clothing/suit/armor/vest/security/officer, /obj/item/clothing/suit/armor/vest/bulletproof)
 	if(prob(75))
 		back = pick(/obj/item/storage/backpack/security, /obj/item/storage/backpack/satchel/sec, /obj/item/storage/backpack/duffelbag/sec, /obj/item/storage/backpack/messenger/sec)
 	if(prob(75))
