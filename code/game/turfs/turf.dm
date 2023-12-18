@@ -73,9 +73,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
 	var/rad_fullblocker = FALSE
 
-	///the holodeck can load onto this turf if TRUE
-	var/holodeck_compatible = FALSE
-
 	hitsound_volume = 90
 
 /turf/vv_edit_var(var_name, new_value)
