@@ -73,6 +73,7 @@
 #include "connect_loc.dm"
 #include "biome_lists.dm"
 #include "emoting.dm"
+#include "hivelord_count.dm"
 #include "keybinding_init.dm"
 #include "machine_disassembly.dm"
 #include "open_air.dm"
