@@ -495,7 +495,7 @@
 /obj/item/clothing/suit/armor/vest/security/hos
 	name = "head of security's jacket"
 	desc = "This piece of clothing was specifically designed for asserting superior authority."
-	icon_state = "hosjacket"
+	icon_state = "armor_hosjacket"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/vest/security/brig_phys
