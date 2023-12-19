@@ -1,3 +1,6 @@
+/datum/outfit/centcom
+	name = "CentCom"
+
 /datum/outfit/centcom/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return

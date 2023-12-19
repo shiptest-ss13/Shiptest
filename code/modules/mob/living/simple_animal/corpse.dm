@@ -167,9 +167,9 @@
 	back = /obj/item/minigunpack
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
-	outfit = /datum/outfit/russiancorpse/trooper/heavy/gunless
+	outfit = /datum/outfit/frontier/trooper/heavy/gunless
 
-/datum/outfit/russiancorpse/trooper/heavy/gunless
+/datum/outfit/frontier/trooper/heavy/gunless
 	back = null
 
 /obj/effect/mob_spawn/human/corpse/wizard
@@ -251,6 +251,8 @@
 	outfit = /datum/outfit/solgov/sonnensoldner
 	id_access_list = list(ACCESS_SOLGOV)
 
+/datum/outfit/solgov
+	name = "SolGov"
 /datum/outfit/solgov/sonnensoldner
 	name = "SolGov Sonnensoldner"
 	uniform = /obj/item/clothing/under/solgov
