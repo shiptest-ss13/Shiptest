@@ -144,13 +144,13 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	name = "syndicate captain's vest"
-	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking syndicate officer."
+	name = "Syndicate captain's vest"
+	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking Syndicate officer."
 	icon_state = "carapace_syndie"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
-	name = "cybersun captain's haori"
-	desc = "An extraordinarily fashionable haori, utilized by cybersun captains. Weaved with armored fabric to protect the user from gunshots."
+	name = "Cybersun captain's haori"
+	desc = "An extraordinarily fashionable haori, utilized by Cybersun captains. Weaved with armored fabric to protect the user from gunshots."
 	icon_state = "cybersunhaori"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/alt
@@ -161,12 +161,12 @@
 
 /obj/item/clothing/suit/armor/vest/capcarapace/captunic
 	name = "captain's parade coat"
-	desc = "Worn by a Captain to show their class."
+	desc = "Worn by a captain to show their class."
 	icon_state = "carapace_formal"
 	item_state = "bio_suit"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
-	name = "colonial minutemen general coat"
+	name = "Colonial Minutemen general coat"
 	desc = "A very fancy coat used by generals of the Colonial Minutemen."
 	icon_state = "carapace_minutemen"
 	item_state = "carapace_minutemen"
