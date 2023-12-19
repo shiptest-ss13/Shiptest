@@ -103,7 +103,6 @@
 /obj/item/clothing/suit/armor/vest/security/warden
 	name = "warden's jacket"
 	desc = "A black armored jacket with silver shoulder designations and '/Warden/' stitched into one of the chest pockets."
-
 	icon_state = "armor_warden"
 	item_state = "armor"
 	body_parts_covered = CHEST|GROIN|ARMS
