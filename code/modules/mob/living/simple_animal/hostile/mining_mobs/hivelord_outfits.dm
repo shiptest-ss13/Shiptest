@@ -355,6 +355,27 @@
 		glasses = pick(/obj/item/clothing/glasses/hud/diagnostic, /obj/item/clothing/glasses/science)
 	if(prob(1))
 		neck = /obj/item/clothing/neck/tie/horrible
+	for(var/i = 1 to 3)
+		if(prob(75))
+			backpack_contents += pickweight(list(
+			/obj/item/research_notes/loot/tiny = 3,
+			/obj/item/research_notes/loot/small = 3,
+			/obj/item/reagent_scanner = 3,
+			/obj/item/assembly/flash/handheld = 3,
+			/obj/item/stock_parts/capacitor/adv = 2,
+			/obj/item/stock_parts/scanning_module/adv = 2,
+			/obj/item/stock_parts/manipulator/nano = 2,
+			/obj/item/stock_parts/micro_laser/high = 2,
+			/obj/item/stock_parts/matter_bin/adv = 2,
+			/obj/item/survey_handheld = 1,
+			/obj/item/weldingtool/experimental = 1,
+			/obj/item/fishing_rod/tech = 1,
+			/obj/item/mmi/posibrain = 1,
+			/obj/item/reagent_containers/glass/beaker/plastic = 1,
+			/obj/item/organ/eyes/robotic/shield = 1,
+			/obj/item/organ/eyes/robotic/glow = 1,
+			)
+		)
 	if(prob(75))
 		accessory = /obj/item/clothing/accessory/armband/science
 
@@ -368,6 +389,8 @@
 		uniform = pick(/obj/item/clothing/under/rank/cargo/tech, /obj/item/clothing/under/shorts/grey)
 	if(prob(75))
 		suit = pick(/obj/item/clothing/suit/hazardvest, /obj/item/clothing/suit/hooded/wintercoat/cargo)
+	if(prob(25))
+		belt = /obj/item/gun/ballistic/automatic/zip_pistol
 	if(prob(75))
 		gloves = /obj/item/clothing/gloves/fingerless
 	if(prob(75))
@@ -381,6 +404,7 @@
 			backpack_contents += pickweight(list(
 				/obj/item/spacecash/bundle/mediumrand = 5,
 				/obj/item/ammo_box/a762 = 5,
+				/obj/item/ammo_box/magazine/zip_ammo_9mm = 5,
 				/obj/item/modular_computer/tablet/preset/cargo = 3,
 				/obj/item/stack/tape = 3,
 				/obj/item/stack/tape/industrial = 3,
