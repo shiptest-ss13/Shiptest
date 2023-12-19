@@ -1,5 +1,7 @@
 /obj/item/clothing/gloves
 	name = "gloves"
+	lefthand_file = 'icons/mob/inhands/clothing/gloves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/gloves_righthand.dmi'
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/obj/clothing/gloves.dmi'

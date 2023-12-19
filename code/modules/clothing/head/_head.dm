@@ -1,6 +1,8 @@
 /obj/item/clothing/head
 	name = BODY_ZONE_HEAD
 	icon = 'icons/obj/clothing/hats.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing/hats_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/hats_righthand.dmi'
 	icon_state = "tophat"
 	item_state = "that"
 	body_parts_covered = HEAD
