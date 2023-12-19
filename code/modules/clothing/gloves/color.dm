@@ -218,7 +218,6 @@
 	name = "nitrile gloves"
 	desc = "Pricy sterile gloves that are thicker than latex. Transfers intimate paramedic knowledge into the user via nanochips."
 	icon_state = "nitrile"
-	item_state = "nitrilegloves"
 	transfer_prints = FALSE
 	carrytrait = TRAIT_QUICKER_CARRY
 	supports_variations = KEPORI_VARIATION
@@ -227,13 +226,11 @@
 	name = "red nitrile gloves"
 	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers combat medic knowledge into the user via nanochips."
 	icon_state = "nitrile_evil"
-	item_state = "nitrile_evil"
 
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "infiltrator gloves"
 	desc = "Specialized combat gloves for carrying people around. Transfers tactical kidnapping knowledge into the user via nanochips."
 	icon_state = "infiltrator"
-	item_state = "infiltrator"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.3
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -243,7 +240,6 @@
 	desc = "Overdesigned engineering gloves that have automated construction subrutines dialed in, allowing for faster construction while worn."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_gauntlets"
-	item_state = "clockwork_gauntlets"
 	siemens_coefficient = 0				//WS Station eddit 	"Tinkers Gloves Insuls"
 	permeability_coefficient = 0.05		//WS Station eddit 	"Tinkers Gloves Insuls"
 	//siemens_coefficient = 0.8			WS Station eddit	"Tinkers Gloves Insuls"
