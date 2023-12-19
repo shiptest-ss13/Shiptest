@@ -307,6 +307,9 @@
 	outfit = /datum/outfit/job/assistant
 	icon_state = "corpsegreytider"
 
+/obj/effect/mob_spawn/human/corpse/assistant/husked
+	husk = TRUE
+
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
 
@@ -326,6 +329,8 @@
 	outfit = /datum/outfit/job/cook
 	icon_state = "corpsecook"
 
+/obj/effect/mob_spawn/human/cook/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
@@ -391,6 +396,9 @@
 	outfit = /datum/outfit/job/botanist
 	icon_state = "corpsehuman"
 
+/obj/effect/mob_spawn/human/botanist/husked
+	husk = TRUE
+
 /obj/effect/mob_spawn/human/sec
 	outfit = /datum/outfit/job/security
 	icon_state = "corpsehuman"
@@ -405,9 +413,13 @@
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"
+	icon_state = "corpsebartender"
 	id_job = "Bartender"
 	id_access_list = list(ACCESS_BAR)
 	outfit = /datum/outfit/spacebartender
+
+/obj/effect/mob_spawn/human/bartender/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/bartender/alive
 	death = FALSE
