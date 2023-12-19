@@ -3,7 +3,6 @@
 	name = "fingerless gloves"
 	desc = "Plain black gloves without fingertips for the hard working."
 	icon_state = "fingerless"
-	item_state = "fingerless"
 	transfer_prints = TRUE
 	strip_delay = 40
 	equip_delay_other = 20
@@ -30,7 +29,6 @@
 	name = "combat gloves"
 	desc = "These tactical gloves are fireproof and electrically insulated."
 	icon_state = "combat"
-	item_state = "combat"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_delay = 80
@@ -46,19 +44,16 @@
 	name = "combat maid sleeves"
 	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
 	icon_state = "syndimaid_arms"
-	item_state = "syndimaid_arms"
 
 /obj/item/clothing/gloves/combat/maid/inteq
 	name = "inteq combat maid sleeves"
 	desc = "Tacticute and comfy, along with being both fireproof and electrically insulated."
 	icon_state = "inteqmaid_arms"
-	item_state = "inteqmaid_arms"
 
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
 	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."
 	icon_state = "bracers"
-	item_state = "bracers"
 	transfer_prints = TRUE
 	strip_delay = 40
 	equip_delay_other = 20
@@ -73,7 +68,6 @@
 	name = "Gloves of the North Star"
 	desc = "Just looking at these fills you with an urge to beat the shit out of people."
 	icon_state = "rapid"
-	item_state = "rapid"
 	transfer_prints = TRUE
 	cuttable = FALSE
 
@@ -86,7 +80,6 @@
 	desc = "Covers up those scandalous boney hands."
 	name = "plasma envirogloves"
 	icon_state = "plasmaman"
-	item_state = "plasmaman"
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
