@@ -44,6 +44,9 @@
 		if(icon_exists(icon, icon_state))
 			continue
 
+		if(icon_state == "nothing")
+			continue
+
 		bad_list[icon] += list(icon_state)
 
 		var/match_message
