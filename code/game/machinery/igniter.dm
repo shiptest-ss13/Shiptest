@@ -20,6 +20,9 @@
 /obj/machinery/igniter/incinerator_atmos
 	id = INCINERATOR_ATMOS_IGNITER
 
+/obj/machinery/igniter/incinerator_syndicatelava
+	id = INCINERATOR_SYNDICATELAVA_IGNITER
+
 /obj/machinery/igniter/on
 	on = TRUE
 	icon_state = "igniter1"

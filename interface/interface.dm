@@ -14,17 +14,17 @@
 		to_chat(src, "<span class='danger'>The wiki URL is not set in the server configuration.</span>")
 	return
 
-/client/verb/lore()
-	set name = "lore"
-	set desc = "View the lore landing page."
+/client/verb/forum()
+	set name = "forum"
+	set desc = "Visit the forum."
 	set hidden = TRUE
-	var/loreurl = CONFIG_GET(string/loreurl)
-	if(loreurl)
-		if(alert("This will open the lore page in your browser. Are you sure?",,"Yes","No")!="Yes")
+	var/forumurl = CONFIG_GET(string/forumurl)
+	if(forumurl)
+		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")!="Yes")
 			return
-		src << link(loreurl)
+		src << link(forumurl)
 	else
-		to_chat(src, "<span class='danger'>The lore page URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
 	return
 
 /client/verb/rules()

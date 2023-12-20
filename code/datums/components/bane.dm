@@ -20,9 +20,9 @@
 
 /datum/component/bane/RegisterWithParent()
 	if(speciestype)
-		RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, PROC_REF(speciesCheck))
+		RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, .proc/speciesCheck)
 	else
-		RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, PROC_REF(mobCheck))
+		RegisterSignal(parent, COMSIG_ITEM_AFTERATTACK, .proc/mobCheck)
 
 /datum/component/bane/UnregisterFromParent()
 	UnregisterSignal(parent, COMSIG_ITEM_AFTERATTACK)

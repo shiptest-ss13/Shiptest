@@ -112,11 +112,6 @@
 	icon_state = "tank_fire"
 	use_static = TRUE
 
-/datum/sprite_accessory/undershirt/rilena
-	name = "T-Shirt (RILENA)"
-	icon_state = "rilena"
-	use_static = TRUE
-
 // Pride shirts
 
 /datum/sprite_accessory/undershirt/tank_les

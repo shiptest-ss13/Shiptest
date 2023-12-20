@@ -1,3 +1,6 @@
+/datum/movespeed_modifier/obesity
+	multiplicative_slowdown = 1.5
+
 /datum/movespeed_modifier/monkey_reagent_speedmod
 	variable = TRUE
 

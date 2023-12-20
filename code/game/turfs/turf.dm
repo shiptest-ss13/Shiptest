@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
 
-	var/list/bullet_bounce_sound = list('sound/weapons/gun/general/bulletcasing_bounce1.ogg', 'sound/weapons/gun/general/bulletcasing_bounce2.ogg', 'sound/weapons/gun/general/bulletcasing_bounce3.ogg')
+	var/bullet_bounce_sound = 'sound/weapons/gun/general/mag_bullet_remove.ogg' //sound played when a shell casing is ejected ontop of the turf.
 	var/bullet_sizzle = FALSE //used by ammo_casing/bounce_away() to determine if the shell casing should make a sizzle sound when it's ejected over the turf
 							//IE if the turf is supposed to be water, set TRUE.
 
@@ -75,8 +75,6 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 	///the holodeck can load onto this turf if TRUE
 	var/holodeck_compatible = FALSE
-
-	hitsound_volume = 90
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -465,7 +463,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
-	while (do_after(usr, 10, TRUE, src, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage, mass_remove_from_storage), src, things, progress)))
+	while (do_after(usr, 10, TRUE, src, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, progress)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -671,7 +669,3 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"
 		first = FALSE
 	return
-
-/turf/bullet_act(obj/projectile/hitting_projectile)
-	. = ..()
-	bullet_hit_sfx(hitting_projectile)

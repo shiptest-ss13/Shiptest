@@ -1,67 +1,49 @@
 Admin:
-  - any-glob-to-any-file:
-    - "code/modules/admin/**"
+  - "code/modules/admin/**"
 
 # Any file within the config subfolder
 Config:
-- changed-files:
-  - any-glob-to-any-file:
-    - "config/**"
+  - "config/**"
 
 Dependencies:
-- changed-files:
-  - any-glob-to-any-file:
-    - "**/package.json"
-    - "**/package-lock.json"
-    - "**/yarn.lock"
+  - "**/package.json"
+  - "**/package-lock.json"
+  - "**/yarn.lock"
 
 # When the .DME is changed
 DME Edit:
-- changed-files:
-  - any-glob-to-any-file:
-    - "./*.dme"
-    - "**/*.dme"
+  - "./*.dme"
+  - "**/*.dme"
 
 # Any .dmi changes
 Sprites:
-- changed-files:
-  - any-glob-to-any-file:
-    - "**/*.dmi"
+  - "**/*.dmi"
 
 # Changes to a .dm or anything in the code subfolder
 Code Change:
-- changed-files:
-  - any-glob-to-any-file:
-    - "**/*.dm"
-    - "code/**"
+  - "**/*.dm"
+  - "code/**"
 
 # Changes to a .dmm or anything in the _map subfolder
 Map Change:
-- changed-files:
-  - any-glob-to-any-file:
-    - "**/*.dmm"
-    - "_maps/**"
+  - "**/*.dmm"
+  - "_maps/**"
 
 # Any changes to .ogg files are marked as sound
 Sound:
-- changed-files:
-  - any-glob-to-any-file:
-    - "**/*.ogg"
+  - "**/*.ogg"
 
 # Changes to the SQL subfolder
 SQL:
-- changed-files:
-  - any-glob-to-any-file:
-    - "SQL/**"
+  - "SQL/**"
 
 # Changes to the tgui subfolder
 tgui:
-- changed-files:
-  - any-glob-to-any-file:
-    - "tgui/**"
+  - "tgui/**"
 
 # Changes to the .Github subfolder
 Github:
-- changed-files:
-  - any-glob-to-any-file:
-    - ".github/**"
+  - ".github/**"
+
+Deprecated Modularization:
+  - "whitesands/**"

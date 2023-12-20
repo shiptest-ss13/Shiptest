@@ -198,6 +198,10 @@
 	name = "Crewcut"
 	icon_state = "hair_crewcut"
 
+/datum/sprite_accessory/hair/curls
+	name = "Curls"
+	icon_state = "hair_curls"
+
 /datum/sprite_accessory/hair/cut
 	name = "Cut Hair"
 	icon_state = "hair_c"
@@ -326,6 +330,10 @@
 	name = "Hime Cut"
 	icon_state = "hair_himecut"
 
+/datum/sprite_accessory/hair/himecut2
+	name = "Hime Cut 2"
+	icon_state = "hair_himecut2"
+
 /datum/sprite_accessory/hair/shorthime
 	name = "Hime Cut (Short)"
 	icon_state = "hair_shorthime"
@@ -369,6 +377,10 @@
 /datum/sprite_accessory/hair/long2
 	name = "Long Hair 2"
 	icon_state = "hair_long2"
+
+/datum/sprite_accessory/hair/long3
+	name = "Long Hair 3"
+	icon_state = "hair_long3"
 
 /datum/sprite_accessory/hair/long_over_eye
 	name = "Long Over Eye"

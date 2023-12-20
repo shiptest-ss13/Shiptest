@@ -83,7 +83,6 @@
 "bb" = (
 /obj/structure/cable/green,
 /obj/effect/turf_decal/industrial/radiation/full,
-/obj/machinery/power/grounding_rod,
 /turf/open/floor/plating,
 /area/ship/storage)
 "be" = (
@@ -902,19 +901,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
-"hX" = (
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 4
-	},
-/obj/machinery/power/grounding_rod,
-/turf/open/floor/mineral/titanium,
-/area/ship/storage)
 "hZ" = (
 /obj/machinery/door/airlock/hatch{
 	dir = 4
@@ -4464,14 +4450,7 @@
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "Sw" = (
-/obj/structure/frame/machine,
-/obj/item/circuitboard/machine/thermomachine/freezer,
-/obj/item/stock_parts/micro_laser,
-/obj/item/stock_parts/micro_laser,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stock_parts/matter_bin,
-/obj/item/stack/cable_coil/cut,
-/obj/item/stack/sheet/glass,
+/obj/machinery/atmospherics/components/unary/thermomachine,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Sx" = (
@@ -7084,9 +7063,9 @@ Zy
 mV
 bB
 SY
-hX
-hX
-hX
+SY
+SY
+SY
 bb
 zy
 wg

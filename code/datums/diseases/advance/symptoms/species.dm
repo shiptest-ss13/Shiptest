@@ -27,7 +27,7 @@
 	severity = 0
 
 /datum/symptom/inorganic_adaptation/OnAdd(datum/disease/advance/A)
-	A.infectable_biotypes |= MOB_MINERAL //Mineral covers plasmamen
+	A.infectable_biotypes |= MOB_MINERAL //Mineral covers plasmamen and golems.
 
 /datum/symptom/inorganic_adaptation/OnRemove(datum/disease/advance/A)
 	A.infectable_biotypes &= ~MOB_MINERAL

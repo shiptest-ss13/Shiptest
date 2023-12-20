@@ -61,8 +61,3 @@
 /area/ruin/powered/slimelab/cafe
 	name = "Slime Lab Cafe"
 	icon_state = "green"
-
-// Crashed Holemaker
-/area/ruin/unpowered/crashed_holemaker
-	name = "NTSV Holemaker II" // In honor of the kugelblitz shenanigan of all time
-	icon_state = "green"

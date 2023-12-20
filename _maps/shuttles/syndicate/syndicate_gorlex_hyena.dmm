@@ -481,12 +481,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/storage)
-"jv" = (
-/obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "jB" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
@@ -620,12 +614,6 @@
 /obj/structure/window/reinforced/tinted/frosted,
 /obj/effect/landmark/start/captain,
 /turf/open/floor/carpet/black,
-/area/ship/bridge)
-"mi" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 4
-	},
-/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "mL" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -1711,12 +1699,12 @@
 	name = "captain's suit storage unit";
 	req_access = list(20)
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20
 	},
-/obj/item/clothing/suit/space/hardsuit/syndi/sbg,
-/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "Ck" = (
@@ -2080,12 +2068,6 @@
 /obj/effect/decal/cleanable/food/egg_smudge,
 /turf/open/floor/plasteel,
 /area/ship/crew)
-"IR" = (
-/obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "Jf" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -2268,9 +2250,8 @@
 	req_access = list(56)
 	},
 /obj/item/clothing/shoes/magboots/syndie,
+/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/suit/space/syndicate,
-/obj/item/clothing/head/helmet/space/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "KX" = (
@@ -2519,9 +2500,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "Qz" = (
-/obj/machinery/porta_turret/ship/syndicate{
-	dir = 6
-	},
+/obj/machinery/porta_turret/ship/ballistic,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "QW" = (
@@ -3012,10 +2991,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"Wu" = (
-/obj/machinery/porta_turret/ship/syndicate,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ship/bridge)
 "WN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -3076,7 +3051,7 @@
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral","playerSyndicate");
+	faction = list("neutral");
 	mob_size = 2;
 	move_force = 1000;
 	move_resist = 1000;
@@ -3336,7 +3311,7 @@ sE
 "}
 (2,1,1) = {"
 nn
-jv
+BG
 ir
 PL
 SP
@@ -3353,7 +3328,7 @@ sE
 nX
 dU
 pi
-Wu
+BG
 "}
 (3,1,1) = {"
 nn
@@ -3603,13 +3578,13 @@ UX
 GV
 GV
 GV
-Wu
+BG
 nn
 Zb
 "}
 (15,1,1) = {"
 nn
-IR
+Qz
 cs
 cs
 XU
@@ -3861,13 +3836,13 @@ mL
 "}
 (27,1,1) = {"
 nn
-mi
+Qz
 Ap
 Jv
 oQ
 VC
 Ap
-mi
+Qz
 nn
 nn
 nn

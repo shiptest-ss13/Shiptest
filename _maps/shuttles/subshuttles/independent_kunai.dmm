@@ -99,7 +99,6 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "al" = (
@@ -166,7 +165,6 @@
 /area/ship/storage)
 "bY" = (
 /obj/structure/chair/comfy/shuttle,
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "cF" = (
@@ -393,19 +391,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
-/area/ship/storage)
-"CE" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/landmark/ert_shuttle_brief_spawn,
-/turf/open/floor/plasteel/dark,
 /area/ship/storage)
 "DP" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -507,7 +493,6 @@
 "SE" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light/small/directional/north,
-/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "Wx" = (
@@ -587,7 +572,7 @@ gs
 Pq
 hJ
 bG
-CE
+RO
 bG
 hJ
 Pq

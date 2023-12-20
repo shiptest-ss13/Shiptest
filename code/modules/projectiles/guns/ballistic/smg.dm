@@ -1,16 +1,6 @@
 /obj/item/gun/ballistic/automatic/smg
 	burst_size = 1
 	actions_types = list()
-	fire_delay = 1
-	spread = 4
-	spread_unwielded = 10
-	wield_slowdown = 0.35
-	recoil_unwielded = 0.5
-
-	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
-	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/proto
 	name = "\improper Nanotrasen Saber SMG"
@@ -21,11 +11,10 @@
 	pin = null
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/proto/unrestricted
 	pin = /obj/item/firing_pin
@@ -43,11 +32,10 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
 	pin = /obj/item/firing_pin
@@ -68,7 +56,6 @@
 	desc = "An extreme modification of an obsolete assault rifle, converted into a compact submachine gun by IRMG. Chambered in 10mm."
 	icon_state = "inteqsmg"
 	item_state = "inteqsmg"
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
 	can_bayonet = FALSE
 	can_flashlight = TRUE
@@ -76,11 +63,10 @@
 	flight_y_offset = 13
 	can_suppress = TRUE
 	mag_display = TRUE
-	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -98,52 +84,38 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
 	desc = "A lightweight submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	burst_size = 2
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE
-
-	fire_sound = 'sound/weapons/gun/smg/uzi.ogg'
-	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
-
-	load_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/smg/uzi_reload.ogg'
-	eject_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
-
-	spread = 4
-	spread_unwielded = 8
-	wield_slowdown = 0.25
-	wield_delay = 0.2 SECONDS
+	rack_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/vector
 	name = "\improper Vector carbine"
 	desc = "A police carbine based on a pre-Night of Fire SMG design. Most of the complex workings have been removed for reliability. Chambered in 9mm."
 	icon_state = "vector"
 	item_state = "vector"
-	mag_type = /obj/item/ammo_box/magazine/smgm9mm //you guys remember when the autorifle was chambered in 9mm
+	mag_type = /obj/item/ammo_box/magazine/smgm9mm/rubber //you guys remember when the autorifle was chambered in 9mm
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/vector/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/m90
 	name = "\improper M-90gl Carbine"
@@ -160,11 +132,6 @@
 	mag_display = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
-	manufacturer = MANUFACTURER_SCARBOROUGH
-
-	spread = 1
-	spread_unwielded = 8
-	wield_slowdown = 0.4
 
 /obj/item/gun/ballistic/automatic/smg/m90/Initialize()
 	. = ..()
@@ -219,7 +186,7 @@
 			burst_size = 1
 			fire_delay = 0
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_appearance()
 	return
 
@@ -236,11 +203,10 @@
 	actions_types = list()
 	fire_delay = 1
 	bolt_type = BOLT_TYPE_OPEN
-	wield_slowdown = 0.4
 
 /obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/thompson/drum
 	name = "\improper Chicago Typewriter"
@@ -254,15 +220,11 @@
 	item_state = "cm5"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
-	manufacturer = MANUFACTURER_MINUTEMAN
+	fire_sound = 'sound/weapons/gun/smg/smg_light.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/cm5/no_mag
-	spawnwithmagazine = FALSE
+	AddComponent(/datum/component/automatic_fire, 0.25 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/aks74u
 	name = "\improper AKS-74U"

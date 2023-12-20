@@ -1,4 +1,4 @@
-// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
+// Hey! Listen! Update \config\rockruinblacklist.txt with your new ruins!
 
 /datum/map_template/ruin/rockplanet
 	prefix = "_maps/RandomRuins/RockRuins/"
@@ -11,6 +11,12 @@
 	id = "rockheiro"
 	description = "something dangerous"
 	suffix = "rockplanet_heirophant.dmm"
+
+/datum/map_template/ruin/rockplanet/clock
+	name = "Clockcult base"
+	id = "clockcultrock"
+	description = "the last remnants of a clockcult base on rockplanet."
+	suffix = "rockplanet_clock.dmm"
 
 /datum/map_template/ruin/rockplanet/cult
 	name = "Cult base"
@@ -77,7 +83,7 @@
 	suffix = "rockplanet_saloon.dmm"
 
 /datum/map_template/ruin/rockplanet/harmfactory
-	name = "Harm Factory"
+	name = "Harm factory"
 	description = "A factory made for HARM and AGONY."
 	id = "rockplanet_harmfactory"
 	suffix = "rockplanet_harmfactory.dmm"
@@ -87,9 +93,3 @@
 	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
 	id = "rockplanet_budgetcuts"
 	suffix = "rockplanet_budgetcuts.dmm"
-
-/datum/map_template/ruin/rockplanet/nomadcrash
-	name = "Nomad Crash"
-	description = "A Crashed Arrow & Axe Interceptor. A long forgotten Crew. They tried their best to survive..."
-	id = "rockplanet_nomadcrash"
-	suffix = "rockplanet_nomadcrash.dmm"

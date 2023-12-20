@@ -14,19 +14,19 @@
 	var/wall_type = /obj/effect/forcefield/wizard
 
 /obj/effect/proc_holder/spell/targeted/forcewall/cast(list/targets,mob/user = usr)
-	new wall_type(get_turf(user), null, user)
+	new wall_type(get_turf(user),user)
 	if(user.dir == SOUTH || user.dir == NORTH)
-		new wall_type(get_step(user, EAST), null, user)
-		new wall_type(get_step(user, WEST), null, user)
+		new wall_type(get_step(user, EAST),user)
+		new wall_type(get_step(user, WEST),user)
 	else
-		new wall_type(get_step(user, NORTH), null, user)
-		new wall_type(get_step(user, SOUTH), null, user)
+		new wall_type(get_step(user, NORTH),user)
+		new wall_type(get_step(user, SOUTH),user)
 
 
 /obj/effect/forcefield/wizard
 	var/mob/wizard
 
-/obj/effect/forcefield/wizard/Initialize(mapload, new_timeleft, mob/summoner)
+/obj/effect/forcefield/wizard/Initialize(mapload, mob/summoner)
 	. = ..()
 	wizard = summoner
 
