@@ -26,6 +26,15 @@
 	pickup_sound =  'sound/items/handling/shotgun_pickup.ogg'
 	fire_delay = 7
 	pb_knockback = 2
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	wield_slowdown = 0.45
+	wield_delay = 0.6 SECONDS //Shotguns are really easy to put up to fire, since they are designed for CQC (at least compared to a rifle)
+
+	spread = 4
+	spread_unwielded = 10
+	recoil = 2
+	recoil_unwielded = 4
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
 	. = 0
@@ -41,13 +50,37 @@
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
 	name = "riot shotgun"
 	desc = "A sturdy shotgun with a six-shell tube and a fixed wooden stock designed for non-lethal riot control."
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off  = TRUE
+	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
+	fire_delay = 1
+
+/obj/item/gun/ballistic/shotgun/riot/sawoff(mob/user)
+	. = ..()
+	if(.)
+		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = 0.25
+		wield_delay = 0.3 SECONDS //OP? maybe
+
+		spread = 8
+		spread_unwielded = 15
+		recoil = 3 //or not
+		recoil_unwielded = 5
 
 // Automatic Shotguns//
+/obj/item/gun/ballistic/shotgun/automatic
+	spread = 4
+	spread_unwielded = 16
+	recoil = 1
+	recoil_unwielded = 4
+	wield_delay = 0.65 SECONDS
+
+/obj/item/gun/ballistic/shotgun/automatic
+	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
 	..()
@@ -145,6 +178,14 @@
 	internal_magazine = FALSE
 	tac_reloads = TRUE
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	spread = 4
+	spread_unwielded = 16
+	recoil = 1
+	recoil_unwielded = 4
+	wield_slowdown = 0.6
+	wield_delay = 0.65 SECONDS
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
@@ -156,6 +197,7 @@
 	item_state = "bulldog-inteq"
 	mag_type = /obj/item/ammo_box/magazine/m12g
 	pin = /obj/item/firing_pin
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/shotgun/bulldog/minutemen
 	name = "\improper CM-15"
@@ -168,6 +210,7 @@
 	empty_alarm = FALSE
 	empty_indicator = FALSE
 	special_mags = FALSE
+	manufacturer = MANUFACTURER_MINUTEMAN
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -198,6 +241,7 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3 // it's a super shotgun!
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
@@ -208,6 +252,13 @@
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = 0.25
+		wield_delay = 0.3 SECONDS //OP? maybe
+
+		spread = 8
+		spread_unwielded = 15
+		recoil = 3 //or not
+		recoil_unwielded = 5
 
 // IMPROVISED SHOTGUN //
 
@@ -372,6 +423,7 @@
 	attack_verb = list("bludgeoned", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
+	fire_delay = 0.1
 	pb_knockback = 12
 	unique_reskin = null
 	recoil = 10
@@ -382,6 +434,7 @@
 	fire_sound_volume = 50
 	rack_sound_volume = 50
 	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_BRAZIL
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(prob(0 + (magazine.ammo_count() * 10)))
@@ -420,9 +473,20 @@
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
-	rack_sound = 'sound/weapons/gun/rifle/winchester_cocked.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
+
+	spread = -5
+	spread_unwielded = 7
+	recoil = 0
+	recoil_unwielded = 2
+	wield_slowdown = 0.5
+
+/obj/item/gun/ballistic/shotgun/winchester/rack(mob/user = null)
+	. = ..()
+	if(!wielded)
+		SpinAnimation(7,1)
 
 /obj/item/gun/ballistic/shotgun/winchester/mk1
 	name = "Winchester MK.1"
@@ -455,6 +519,7 @@
 	can_be_sawn_off = FALSE
 	fire_sound_volume = 80
 	rack_sound_volume = 50
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/contender
@@ -469,7 +534,7 @@
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/contender
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	can_be_sawn_off=TRUE
 	sawn_desc= "A single-shot pistol. It's hard to aim without a front sight."
 	w_class = WEIGHT_CLASS_BULKY
@@ -483,9 +548,22 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3
+	wield_slowdown = 0.7
+	spread_unwielded = 15
+	spread = 0
+	recoil = 0
+	recoil_unwielded = 5
+
 
 
 /obj/item/gun/ballistic/shotgun/contender/sawoff(mob/user)
 	. = ..()
 	if(.)
 		item_state = "contender_sawn"
+		wield_slowdown = 0.5
+		wield_delay = 0.5 SECONDS
+
+		spread_unwielded = 5 //mostly the hunting revolver stats
+		spread = 2
+		recoil = 2
+		recoil_unwielded = 3

@@ -204,6 +204,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/security/armory)
+"bF" = (
+/obj/machinery/porta_turret/ship/syndicate/heavy{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "bI" = (
 /obj/effect/spawner/lootdrop/salvage_manipulator,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1858,7 +1864,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "rS" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/machinery/porta_turret/ship/syndicate/heavy{
 	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -1964,8 +1970,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"ta" = (
+/obj/machinery/porta_turret/ship/syndicate/heavy{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "td" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/machinery/porta_turret/ship/syndicate/heavy{
 	dir = 9
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -2325,12 +2337,12 @@
 	dir = 4
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /obj/machinery/light_switch{
 	pixel_x = -13;
 	pixel_y = 22
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "vT" = (
@@ -2898,6 +2910,12 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/engineering)
+"Cz" = (
+/obj/machinery/porta_turret/ship/syndicate{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "CA" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -3127,7 +3145,7 @@
 	req_access_txt = "20"
 	},
 /obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/aclf,
+/obj/item/clothing/under/syndicate/officer,
 /obj/item/clothing/suit/armor/vest/security/hos{
 	name = "Syndicate jacket"
 	},
@@ -3137,13 +3155,13 @@
 /obj/item/clothing/glasses/thermal/eyepatch,
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/item/clothing/head/HoS/syndicate,
-/obj/item/clothing/head/aclfcap{
+/obj/item/clothing/head/gorlexcap{
 	pixel_x = 5;
 	pixel_y = -4
 	},
 /obj/item/gun/ballistic/derringer/traitor,
 /obj/item/clothing/under/syndicate/sniper,
-/obj/item/clothing/suit/aclf,
+/obj/item/clothing/suit/gorlex,
 /obj/item/ammo_box/a357,
 /obj/item/ammo_box/a357,
 /obj/item/radio/headset/syndicate/alt/leader,
@@ -3321,7 +3339,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "FY" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/machinery/porta_turret/ship/syndicate{
 	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -3792,8 +3810,8 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
+/obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "JH" = (
@@ -4231,7 +4249,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "OP" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/machinery/porta_turret/ship/syndicate{
 	dir = 10
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -4363,8 +4381,8 @@
 /obj/machinery/camera/autoname{
 	dir = 8
 	},
-/obj/item/clothing/mask/breath,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
+/obj/item/clothing/suit/space/hardsuit/syndi/hl,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "PK" = (
@@ -4440,7 +4458,7 @@
 /turf/open/floor/pod/dark,
 /area/ship/medical)
 "Rp" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/machinery/porta_turret/ship/syndicate{
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -5174,7 +5192,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/medical)
 "XE" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/machinery/porta_turret/ship/syndicate/heavy{
 	dir = 8
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -5431,7 +5449,7 @@ gN
 gN
 gN
 gN
-OP
+ta
 CM
 CM
 CM
@@ -5484,7 +5502,7 @@ Aj
 Aj
 ti
 ti
-XE
+Cz
 lu
 lu
 Ep
@@ -6135,7 +6153,7 @@ OQ
 OQ
 OQ
 OQ
-Rp
+bF
 CM
 CM
 CM

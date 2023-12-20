@@ -252,7 +252,7 @@
 	for(var/i in 1 to dash_num)
 		new /obj/effect/temp_visual/dragon_swoop/legionnaire(T)
 		T = get_step(T, dir_to_target)
-	addtimer(CALLBACK(src, .proc/blood_dash_2, dir_to_target, 0), (5 * dash_mod))
+	addtimer(CALLBACK(src, PROC_REF(blood_dash_2), dir_to_target, 0), (5 * dash_mod))
 	playsound(src,'sound/effects/meteorimpact.ogg', 200, 1)
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/proc/blood_dash_2(move_dir, times_ran)
@@ -283,7 +283,7 @@
 			shake_camera(L, 4, 3)
 			L.adjustBruteLoss(30)
 			playsound(L,"sound/misc/desceration-[pick(1,2,3)].ogg", 200, 1)
-	addtimer(CALLBACK(src, .proc/blood_dash_2, move_dir, (times_ran + 1)), (1.5 * dash_mod))
+	addtimer(CALLBACK(src, PROC_REF(blood_dash_2), move_dir, (times_ran + 1)), (1.5 * dash_mod))
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/proc/teleport_b(target)
 	if(charging || teleport_cooldown > world.time)

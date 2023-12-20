@@ -36,7 +36,7 @@
 
 /datum/martial_art/plasma_fist/proc/Tornado(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	A.say("TORNADO SWEEP!", forced="plasma fist")
-	dance_rotate(A, CALLBACK(GLOBAL_PROC, .proc/playsound, A.loc, 'sound/weapons/punch1.ogg', 15, TRUE, -1))
+	dance_rotate(A, CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), A.loc, 'sound/weapons/punch1.ogg', 15, TRUE, -1))
 	var/obj/effect/proc_holder/spell/aoe_turf/repulse/R = new(null)
 	var/list/turfs = list()
 	for(var/turf/T in range(1,A))
@@ -107,7 +107,7 @@
 
 	A.apply_damage(rand(50,70), BRUTE)
 
-	addtimer(CALLBACK(src,.proc/Apotheosis_end, A), 6 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(Apotheosis_end), A), 6 SECONDS)
 	playsound(boomspot, 'sound/weapons/punch1.ogg', 50, TRUE, -1)
 	explosion(boomspot,plasma_power,plasma_power*2,plasma_power*4,ignorecap = TRUE)
 	plasma_power = 1 //just in case there is any clever way to cause it to happen again

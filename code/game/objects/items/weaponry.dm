@@ -515,36 +515,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/statuebust/Initialize()
 	. = ..()
 	AddComponent(/datum/component/art, impressiveness)
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 1000)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, 1000)), 0)
 
 /obj/item/statuebust/hippocratic
 	name = "hippocrates bust"
 	desc = "A bust of the famous Greek physician Hippocrates of Kos, often referred to as the father of western medicine."
 	icon_state = "hippocratic"
 	impressiveness = 50
-
-/obj/item/tailclub
-	name = "tail club"
-	desc = "For the beating to death of lizards with their own tails."
-	icon_state = "tailclub"
-	force = 14
-	throwforce = 1 // why are you throwing a club do you even weapon
-	throw_speed = 1
-	throw_range = 1
-	attack_verb = list("clubbed", "bludgeoned")
-
-/obj/item/melee/chainofcommand/tailwhip
-	name = "liz o' nine tails"
-	desc = "A whip fashioned from the severed tails of lizards."
-	icon_state = "tailwhip"
-	item_state = "tailwhip"
-	item_flags = NONE
-
-/obj/item/melee/chainofcommand/tailwhip/kitty
-	name = "cat o' nine tails"
-	desc = "A whip fashioned from the severed tails of cats."
-	icon_state = "catwhip"
-	item_state = "catwhip"
 
 /obj/item/melee/skateboard
 	name = "improvised skateboard"
@@ -760,8 +737,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/vibro_weapon/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/vibro_weapon/ComponentInitialize()
 	. = ..()

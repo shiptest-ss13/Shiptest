@@ -62,7 +62,7 @@
 	update_gland_hud()
 	var/atom/movable/screen/alert/mind_control/mind_alert = owner.throw_alert("mind_control", /atom/movable/screen/alert/mind_control)
 	mind_alert.command = command
-	addtimer(CALLBACK(src, .proc/clear_mind_control), mind_control_duration)
+	addtimer(CALLBACK(src, PROC_REF(clear_mind_control)), mind_control_duration)
 	return TRUE
 
 /obj/item/organ/heart/gland/proc/clear_mind_control()

@@ -60,8 +60,8 @@
 	on = TRUE
 	icon_state = "[initial(icon_state)]-on"
 	ion_trail.start()
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/move_react)
-	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, .proc/pre_move_react)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(move_react))
+	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(pre_move_react))
 	if(full_speed)
 		user.add_movespeed_modifier(/datum/movespeed_modifier/jetpack/fullspeed)
 

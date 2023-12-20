@@ -28,7 +28,7 @@
 	var/allow_switch_interact = TRUE
 
 	var/projectile_type = /obj/projectile/beam/emitter/hitscan //WS - Hitscan emitters
-	var/projectile_sound = 'sound/weapons/emitter.ogg'
+	var/projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	var/datum/effect_system/spark_spread/sparks
 
 	var/obj/item/gun/energy/gun
@@ -40,20 +40,6 @@
 	var/charge = 0
 	var/last_projectile_params
 
-
-/obj/machinery/power/emitter/welded/Initialize()
-	welded = TRUE
-	return ..()
-
-/obj/machinery/power/emitter/ctf
-	name = "Energy Cannon"
-	active = TRUE
-	active_power_usage = FALSE
-	idle_power_usage = FALSE
-	locked = TRUE
-	req_access_txt = "100"
-	welded = TRUE
-	use_power = FALSE
 
 /obj/machinery/power/emitter/Initialize()
 	. = ..()
@@ -113,7 +99,7 @@
 
 /obj/machinery/power/emitter/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, PROC_REF(can_be_rotated)))
 
 /obj/machinery/power/emitter/proc/can_be_rotated(mob/user,rotation_type)
 	if (anchored)
@@ -371,6 +357,26 @@
 	if(user)
 		user.visible_message("<span class='warning'>[user.name] emags [src].</span>", "<span class='notice'>You short out the lock.</span>")
 
+/obj/machinery/power/emitter/ctf
+	name = "Energy Cannon"
+	active = TRUE
+	active_power_usage = FALSE
+	idle_power_usage = FALSE
+	locked = TRUE
+	req_access_txt = "100"
+	welded = TRUE
+	use_power = FALSE
+
+/obj/machinery/power/emitter/welded/Initialize()
+	welded = TRUE
+	return ..()
+
+/obj/machinery/power/emitter/welded/upgraded/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/micro_laser/quadultra(null)
+	component_parts += new /obj/item/stock_parts/manipulator/femto(null)
+	RefreshParts()
 
 /obj/machinery/power/emitter/prototype
 	name = "Prototype Emitter"

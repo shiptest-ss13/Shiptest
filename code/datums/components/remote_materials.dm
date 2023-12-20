@@ -23,8 +23,8 @@ handles linking back and forth.
 	src.category = category
 	src.allow_standalone = allow_standalone
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/OnAttackBy)
-	RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, .proc/OnMultitool)
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
+	RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, PROC_REF(OnMultitool))
 
 	if (allow_standalone)
 		_MakeLocal()

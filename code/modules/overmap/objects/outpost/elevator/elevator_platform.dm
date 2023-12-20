@@ -30,9 +30,9 @@
 	. = ..()
 
 	var/static/list/connections = list(
-		COMSIG_ATOM_ENTERED = .proc/AddItemOnPlat,
-		COMSIG_ATOM_CREATED = .proc/AddItemOnPlat,
-		COMSIG_ATOM_EXITED = .proc/RemoveItemFromPlat
+		COMSIG_ATOM_ENTERED = PROC_REF(AddItemOnPlat),
+		COMSIG_ATOM_CREATED = PROC_REF(AddItemOnPlat),
+		COMSIG_ATOM_EXITED = PROC_REF(RemoveItemFromPlat)
 	)
 	AddElement(/datum/element/connect_loc, connections)
 
@@ -62,7 +62,7 @@
 	if(AM in lift_load)
 		return
 	LAZYADD(lift_load, AM)
-	RegisterSignal(AM, COMSIG_PARENT_QDELETING, .proc/RemoveItemFromPlat)
+	RegisterSignal(AM, COMSIG_PARENT_QDELETING, PROC_REF(RemoveItemFromPlat))
 
 /obj/structure/elevator_platform/proc/RemoveItemFromPlat(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER

@@ -100,8 +100,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
-//Shiptest outfits begin
-
 /datum/outfit/job/security/pirate
 	name = "Buccaneer (Pirate)"
 
@@ -166,7 +164,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	name = "Minuteman (Colonial Minutemen) (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/loaded
+	belt = /obj/item/storage/belt/military/minutemen/p16
 
 /datum/outfit/job/security/minutemen/mechpilot
 	name = "Mech Pilot  (Colonial Minutemen)"
@@ -289,46 +287,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = null
 
-/datum/outfit/job/security/syndicate/gorlex
-	name = "Syndicate Battlecruiser Assault Operative"
-	uniform = /obj/item/clothing/under/syndicate
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military
-	back = /obj/item/storage/backpack
-	suit = /obj/item/clothing/suit/armor/vest
-	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
-
-/datum/outfit/job/security/syndicate/sbc
-	name = "Operative (Twinkleshine)"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	ears = /obj/item/radio/headset/syndicate/alt
-	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
-	gloves = /obj/item/clothing/gloves/combat
-	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military/assault
-	id = /obj/item/card/id/syndicate_command/crew_id
-	implants = list(/obj/item/implant/weapons_auth)
-	backpack_contents = list(/obj/item/gun_voucher/syndicate=1)
-
-	head = null
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
-	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
-
-/datum/outfit/job/security/syndicate/sbc/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("PlayerSyndicate")
-
-	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(4, 8)) // squidquest real
-	I.assignment = "Operative"
-	I.access |= list(ACCESS_SYNDICATE)
-	I.update_label()
+/datum/outfit/job/security/roumain/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("roumain")
 
 /datum/outfit/job/security/aipirate
 	name = "Nodesman (Security)"
@@ -358,7 +318,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-
 
 /datum/outfit/job/security/lp
 	name = "LP Security Specialist"

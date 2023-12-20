@@ -580,15 +580,12 @@
 	pixel_y = -3
 	},
 /obj/item/toy/plush/beeplushie,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 5
-	},
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 6
-	},
 /obj/item/reagent_containers/food/drinks/mug/tea{
 	pixel_y = -14;
 	pixel_x = -4
+	},
+/obj/effect/turf_decal/weather/snow/surround{
+	dir = 4
 	},
 /turf/open/floor/plating/asteroid/snow/under/lit,
 /area/outpost/external)
@@ -871,6 +868,7 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_x = -3
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "dv" = (
@@ -998,7 +996,7 @@
 /area/outpost/maintenance/fore)
 "dO" = (
 /obj/effect/turf_decal/snow,
-/obj/effect/turf_decal/weather/snow/corner{
+/obj/effect/turf_decal/weather/snow{
 	dir = 8
 	},
 /turf/open/floor/concrete/reinforced,
@@ -1726,6 +1724,7 @@
 /obj/effect/turf_decal/industrial/caution{
 	pixel_x = 17
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "gx" = (
@@ -2097,6 +2096,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "hW" = (
@@ -3253,7 +3253,7 @@
 	pixel_y = 3;
 	pixel_x = -1
 	},
-/obj/effect/turf_decal/weather/snow/corner{
+/obj/effect/turf_decal/weather/snow{
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/snow/under/lit,
@@ -3514,6 +3514,7 @@
 	req_access_txt = "101";
 	pixel_x = -3
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "mP" = (
@@ -3669,6 +3670,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "nz" = (
@@ -6619,7 +6621,7 @@
 /area/outpost/hallway/central)
 "xk" = (
 /obj/structure/bonfire/prelit,
-/obj/effect/turf_decal/weather/snow/corner{
+/obj/effect/turf_decal/weather/snow{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/under/lit,
@@ -9282,7 +9284,7 @@
 	pixel_y = 5;
 	pixel_x = 1
 	},
-/obj/effect/turf_decal/weather/snow/corner{
+/obj/effect/turf_decal/weather/snow{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/snow/under/lit,
@@ -10241,6 +10243,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "JK" = (
@@ -10712,6 +10715,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "Lv" = (
@@ -11618,12 +11622,12 @@
 /turf/open/floor/concrete/slab_3,
 /area/outpost/hallway/central)
 "Os" = (
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 6
-	},
 /obj/item/shovel,
 /obj/item/flashlight/lantern{
 	pixel_x = 7
+	},
+/obj/effect/turf_decal/weather/snow{
+	dir = 6
 	},
 /turf/open/floor/plating/asteroid/snow/under/lit,
 /area/outpost/external)
@@ -12929,7 +12933,6 @@
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance/two,
-/obj/effect/spawner/lootdrop/lizardboots,
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
 /obj/structure/grille/broken,
 /obj/effect/turf_decal/box/white,

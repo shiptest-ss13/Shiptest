@@ -20,7 +20,7 @@
 
 	if(C.stat <= SOFT_CRIT)//No more screaming while unconsious
 		if(IS_ORGANIC_LIMB(affecting))//Chest is a good indicator for if a carbon is robotic in nature or not.
-			INVOKE_ASYNC(C, /mob.proc/emote, "scream")
+			INVOKE_ASYNC(C, TYPE_PROC_REF(/mob, emote), "scream")
 
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
 

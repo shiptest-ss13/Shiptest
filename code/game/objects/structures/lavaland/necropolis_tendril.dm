@@ -15,6 +15,8 @@
 	anchored = TRUE
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 
+	hitsound_type = PROJECTILE_HITSOUND_FLESH
+
 	var/gps = null
 	var/obj/effect/light_emitter/tendril/emitted_light
 
@@ -71,7 +73,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 	visible_message("<span class='boldannounce'>The tendril writhes in fury as the earth around it begins to crack and break apart! Get back!</span>")
 	visible_message("<span class='warning'>Something falls free of the tendril!</span>")
 	playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, FALSE, 50, TRUE, TRUE)
-	addtimer(CALLBACK(src, .proc/collapse), 50)
+	addtimer(CALLBACK(src, PROC_REF(collapse)), 50)
 
 /obj/effect/collapse/Destroy()
 	QDEL_NULL(emitted_light)

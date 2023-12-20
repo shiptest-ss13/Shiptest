@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   autowiki:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: "Check for AUTOWIKI_USERNAME"
       id: secrets_set
