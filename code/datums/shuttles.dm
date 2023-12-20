@@ -66,7 +66,7 @@
 
 	// Finding the dir of the mobile port
 	var/dpos = cached_map.find_next_delimiter_position(model_text, start_pos, ",","{","}")
-	var/cache_text = cached_map.trim_text(copytext(model_text, start_pos, dpos))
+	var/cache_text = trim_reduced(copytext(model_text, start_pos, dpos))
 	var/variables_start = findtext(cache_text, "{")
 	port_dir = NORTH // Incase something went wrong with variables from the cache
 	if(variables_start)
@@ -108,6 +108,8 @@
 			continue
 
 		for(var/obj/docking_port/mobile/port in place)
+			if(my_port)
+				CRASH("[src] loaded with multiple docking ports!")
 			my_port = port
 			if(register)
 				port.register()
@@ -134,6 +136,9 @@
 					port.height = width
 					port.dwidth = port_y_offset - 1
 					port.dheight = width - port_x_offset
+
+	if(!my_port)
+		CRASH("Shuttle template loaded without a mobile port!")
 
 	for(var/turf/shuttle_turf in turfs)
 		//Set up underlying_turf_area and update relevent towed_shuttles
@@ -310,75 +315,22 @@
 /datum/map_template/shuttle/shiptest
 	category = "shiptest"
 
-/datum/map_template/shuttle/custom
-	job_slots = list(new /datum/job/assistant = 5) // There will already be a captain, probably!
-	file_name = "custom_shuttle" // Dummy
-
-/// Syndicate Infiltrator variants
-/datum/map_template/shuttle/infiltrator
-	category = "misc"
-
-/datum/map_template/shuttle/infiltrator/advanced
-	file_name = "infiltrator_advanced"
-	name = "advanced syndicate infiltrator"
-
-/// Pirate ship templates
-/datum/map_template/shuttle/pirate
-	category = "misc"
-
-/datum/map_template/shuttle/pirate/default
-	file_name = "pirate_default"
-	name = "pirate ship (Default)"
-
-/// Fugitive hunter ship templates
-/datum/map_template/shuttle/hunter
-	category = "misc"
-
-/datum/map_template/shuttle/hunter/russian
-	file_name = "hunter_russian"
-	name = "Russian Cargo Ship"
-
-/datum/map_template/shuttle/hunter/bounty
-	file_name = "hunter_bounty"
-	name = "Bounty Hunter Ship"
-
 /// Shuttles to be loaded in ruins
 /datum/map_template/shuttle/ruin
 	category = "ruin"
 	starting_funds = 0
-
-/datum/map_template/shuttle/ruin/caravan_victim
-	file_name = "ruin_caravan_victim"
-	name = "Small Freighter"
-
-/datum/map_template/shuttle/ruin/pirate_cutter
-	file_name = "ruin_pirate_cutter"
-	name = "Pirate Cutter"
-
-/datum/map_template/shuttle/ruin/syndicate_dropship
-	file_name = "ruin_syndicate_dropship"
-	name = "Syndicate Dropship"
-
-/datum/map_template/shuttle/ruin/syndicate_fighter_shiv
-	file_name = "ruin_syndicate_fighter_shiv"
-	name = "Syndicate Fighter"
-
-/datum/map_template/shuttle/ruin/solgov_exploration_pod
-	file_name = "ruin_solgov_exploration_pod"
-	name = "SolGov Exploration Pod"
-
-/datum/map_template/shuttle/ruin/syndicate_interceptor
-	file_name = "ruin_syndicate_interceptor"
-	name = "Syndicate Interceptor"
-	prefix = "SSV"
-	name_categories = list("WEAPONS")
-	short_name = "Dartbird"
 
 //Subshuttles
 
 /datum/map_template/shuttle/subshuttles
 	category = "subshuttles"
 	starting_funds = 0
+
+
+/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
+	file_name = "frontiersmen_gut"
+	name = "Gut Combat Freighter"
+	prefix = "ISV"
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
@@ -397,7 +349,6 @@
 	name = "Superpill-Class Experimental Engineering Platform"
 	prefix = "Pill"
 	name_categories = list("PILLS")
-//your subshuttle here
 
 /datum/map_template/shuttle/subshuttles/kunai
 	file_name = "independent_kunai"
@@ -408,3 +359,9 @@
 	file_name = "independent_sugarcube"
 	name = "Sugarcube Transport"
 	prefix = "ISV"
+
+//your subshuttle here
+/datum/map_template/shuttle/subshuttles/heron
+	file_name = "nanotrasen_falcon"
+	name = "Falcon Dropship"
+	prefix = "NTSV"

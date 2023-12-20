@@ -1,8 +1,6 @@
 /datum/job/officer
 	name = "Security Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	minimal_player_age = 7
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
 
@@ -89,7 +87,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1) //WS edit - security rearming
+	backpack_contents = null //WS edit - security rearming // SHIPTEST EDIT - security re-disarming. certified whitesands moment.
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -101,8 +99,6 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
-
-//Shiptest outfits begin
 
 /datum/outfit/job/security/pirate
 	name = "Buccaneer (Pirate)"
@@ -140,7 +136,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 
-	belt = /obj/item/storage/belt/military
+	belt = /obj/item/storage/belt/military/minutemen
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
@@ -167,8 +163,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 /datum/outfit/job/security/minutemen/armed
 	name = "Minuteman (Colonial Minutemen) (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+	belt = /obj/item/storage/belt/military/minutemen/p16
 
 /datum/outfit/job/security/minutemen/mechpilot
 	name = "Mech Pilot  (Colonial Minutemen)"
@@ -177,7 +173,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/restraints/handcuffs=1)
 
 /datum/outfit/job/security/inteq
 	name = "IRMG Enforcer (Inteq)"
@@ -192,8 +188,10 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	gloves = /obj/item/clothing/gloves/combat
 
+	backpack = /obj/item/storage/backpack/messenger/inteq
+	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security)
+	backpack_contents = list(/obj/item/pda/security)
 
 /datum/outfit/job/security/inteq/beluga
 	name = "IRMG Enforcer (Beluga)"
@@ -208,6 +206,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	glasses = null
 	gloves = /obj/item/clothing/gloves/color/evening
 
+	backpack = /obj/item/storage/backpack/messenger/inteq
+	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/pda/security)
 
@@ -224,6 +224,52 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	alt_uniform = null
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+
+/datum/outfit/job/security/nanotrasen/ert
+	name = "ERT Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = null
+	backpack = /obj/item/storage/backpack/ert/security
+	belt = /obj/item/storage/belt/military
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+
+/datum/outfit/job/security/nanotrasen/ert/engi
+	name = "ERT Engineering Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = null
+	backpack = /obj/item/storage/backpack/ert/engineer
+	belt = /obj/item/storage/belt/utility/full/ert
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+	accessory = /obj/item/clothing/accessory/armband/engine
+	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
+
+/datum/outfit/job/security/nanotrasen/ert/med
+	name = "ERT Medical Officer (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/camo
+	head = /obj/item/clothing/head/beret/med
+	backpack = /obj/item/storage/backpack/ert/medical
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	id = /obj/item/card/id/ert/security
+	r_pocket = /obj/item/kitchen/knife/combat/survival
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+	accessory = /obj/item/clothing/accessory/armband/med
+	glasses = /obj/item/clothing/glasses/hud/health/night
+
+/datum/outfit/job/security/nanotrasen/mech_pilot
+	name = "Mech Pilot (Nanotrasen)"
+
+	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
+	head = /obj/item/clothing/head/beret/sec/officer
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
+	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
 
 /datum/outfit/job/security/roumain
 	name = "Hunter (Saint-Roumain Militia)"
@@ -241,46 +287,8 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	courierbag = /obj/item/storage/backpack/messenger
 	backpack_contents = null
 
-/datum/outfit/job/security/syndicate/gorlex
-	name = "Syndicate Battlecruiser Assault Operative"
-	uniform = /obj/item/clothing/under/syndicate
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military
-	back = /obj/item/storage/backpack
-	suit = /obj/item/clothing/suit/armor/vest
-	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
-
-/datum/outfit/job/security/syndicate/sbc
-	name = "Operative (Twinkleshine)"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	ears = /obj/item/radio/headset/syndicate/alt
-	mask = /obj/item/clothing/mask/chameleon
-	gloves = /obj/item/clothing/gloves/combat
-	shoes = /obj/item/clothing/shoes/combat
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military/assault
-	id = /obj/item/card/id/syndicate_command/crew_id
-	implants = list(/obj/item/implant/weapons_auth)
-	backpack_contents = list(/obj/item/gun_voucher/syndicate=1)
-
-	head = null
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
-	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
-
-/datum/outfit/job/security/syndicate/sbc/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("PlayerSyndicate")
-
-	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(4, 8)) // squidquest real
-	I.assignment = "Operative"
-	I.access |= list(ACCESS_SYNDICATE)
-	I.update_label()
+/datum/outfit/job/security/roumain/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("roumain")
 
 /datum/outfit/job/security/aipirate
 	name = "Nodesman (Security)"
@@ -310,5 +318,23 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+
+/datum/outfit/job/security/lp
+	name = "LP Security Specialist"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lpsec
+	belt = /obj/item/pda/security
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
+	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/sec
+
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
 
 //Shiptest outfits end

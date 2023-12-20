@@ -55,7 +55,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 			playsound(loc, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 			obj_flags |= EMAGGED
 			locked = FALSE
-			update_icon()
+			update_appearance()
 
 
 
@@ -112,7 +112,7 @@ They *could* go in their appropriate files, but this is supposed to be modular
 				S.cell.give(charge)
 			charge = 0
 			corrupt()
-			update_icon()
+			update_appearance()
 
 /obj/machinery/proc/AI_notify_hack()
 	var/alertstr = "<span class='userdanger'>Network Alert: Hacking attempt detected[get_area(src)?" in [get_area_name(src, TRUE)]":". Unable to pinpoint location"].</span>"

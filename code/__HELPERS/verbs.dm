@@ -69,6 +69,8 @@
 	var/list/verbs_list = list()
 	if(!islist(verb_or_list_to_remove))
 		verbs_list += verb_or_list_to_remove
+		if(verb_or_list_to_remove in GLOB.client_verbs_required)
+			CRASH("attempted to remove verb ([verb_or_list_to_remove]) that is required for the client to function")
 	else
 		var/list/verb_listref = verb_or_list_to_remove
 		var/list/elements_to_process = verb_listref.Copy()
@@ -78,6 +80,9 @@
 			if(islist(element_or_list))
 				elements_to_process += element_or_list //list/a += list/b adds the contents of b into a, not the reference to the list itself
 			else
+				if(element_or_list in GLOB.client_verbs_required)
+					stack_trace("attempted to remove a verb ([element_or_list]) that is required for the client to function")
+					continue
 				verbs_list += element_or_list
 
 	if(mob_target)

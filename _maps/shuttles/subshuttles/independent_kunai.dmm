@@ -5,7 +5,7 @@
 	network = "KunaiComms"
 	},
 /obj/item/paper/crumpled{
-	info = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
+	default_raw_text = "USE THE MULTITOOL TO FILTER YOUR RADIO FREQUENCY"
 	},
 /obj/item/multitool,
 /obj/effect/turf_decal/techfloor{
@@ -99,6 +99,7 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "al" = (
@@ -165,6 +166,7 @@
 /area/ship/storage)
 "bY" = (
 /obj/structure/chair/comfy/shuttle,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "cF" = (
@@ -315,6 +317,9 @@
 /obj/machinery/power/smes/engineering,
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/east,
+/obj/machinery/light_switch{
+	pixel_y = 22
+	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "nP" = (
@@ -330,12 +335,28 @@
 /obj/structure/grille,
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external)
+"pk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
+/turf/open/floor/plasteel/dark,
+/area/ship/storage)
 "qn" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable,
 /obj/item/radio/intercom/wideband/directional/west,
 /obj/effect/turf_decal/techfloor{
 	dir = 10
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -22;
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -383,6 +404,7 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/south,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "DP" = (
@@ -485,6 +507,7 @@
 "SE" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light/small/directional/north,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
 "Wx" = (
@@ -564,7 +587,7 @@ gs
 Pq
 hJ
 bG
-RO
+pk
 bG
 hJ
 Pq

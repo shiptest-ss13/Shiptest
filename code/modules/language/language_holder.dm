@@ -53,7 +53,9 @@ Key procs
 	var/atom/owner
 
 /// Initializes, and copies in the languages from the current atom if available.
-/datum/language_holder/New(_owner)
+/datum/language_holder/New(atom/_owner)
+	if(_owner && QDELETED(_owner))
+		CRASH("Langauge holder added to a qdeleting thing, what the fuck [text_ref(_owner)]")
 	owner = _owner
 	if(istype(owner, /datum/mind))
 		var/datum/mind/M = owner
@@ -338,28 +340,6 @@ Key procs
 								/datum/language/draconic = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 							/datum/language/draconic = list(LANGUAGE_ATOM))
-
-/datum/language_holder/golem
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-								/datum/language/terrum = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/terrum = list(LANGUAGE_ATOM))
-
-/datum/language_holder/golem/bone
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-								/datum/language/terrum = list(LANGUAGE_ATOM),
-								/datum/language/calcic = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/terrum = list(LANGUAGE_ATOM),
-							/datum/language/calcic = list(LANGUAGE_ATOM))
-
-/datum/language_holder/golem/runic
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-								/datum/language/terrum = list(LANGUAGE_ATOM),
-								/datum/language/narsie = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/terrum = list(LANGUAGE_ATOM),
-							/datum/language/narsie = list(LANGUAGE_ATOM))
 
 /datum/language_holder/fly
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),

@@ -27,7 +27,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 		opened = TRUE
 	else
 		stored_extinguisher = new /obj/item/extinguisher(src)
-	update_icon()
+	update_appearance()
 
 /obj/structure/extinguisher_cabinet/examine(mob/user)
 	. = ..()
@@ -52,7 +52,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 /obj/structure/extinguisher_cabinet/handle_atom_del(atom/A)
 	if(A == stored_extinguisher)
 		stored_extinguisher = null
-		update_icon()
+		update_appearance()
 
 /obj/structure/extinguisher_cabinet/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WRENCH && !stored_extinguisher)
@@ -72,7 +72,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 				return
 			stored_extinguisher = I
 			to_chat(user, "<span class='notice'>You place [I] in [src].</span>")
-			update_icon()
+			update_appearance()
 			return TRUE
 		else
 			toggle_cabinet(user)
@@ -95,7 +95,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 		if(!opened)
 			opened = 1
 			playsound(loc, 'sound/machines/click.ogg', 15, TRUE, -3)
-		update_icon()
+		update_appearance()
 	else
 		toggle_cabinet(user)
 
@@ -107,7 +107,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 		stored_extinguisher = null
 		opened = 1
 		playsound(loc, 'sound/machines/click.ogg', 15, TRUE, -3)
-		update_icon()
+		update_appearance()
 	else
 		toggle_cabinet(user)
 
@@ -126,7 +126,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 	else
 		playsound(loc, 'sound/machines/click.ogg', 15, TRUE, -3)
 		opened = !opened
-		update_icon()
+		update_appearance()
 
 /obj/structure/extinguisher_cabinet/update_overlays()
 	. = ..()
@@ -147,7 +147,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/extinguisher_cabinet, 28)
 		if(stored_extinguisher)
 			stored_extinguisher.forceMove(loc)
 			stored_extinguisher = null
-		update_icon()
+		update_appearance()
 
 
 /obj/structure/extinguisher_cabinet/deconstruct(disassembled = TRUE)

@@ -236,13 +236,3 @@
 	reqs = list(/obj/item/stack/sheet/leather = 2)
 	time = 45
 	category = CAT_CLOTHING
-
-/datum/crafting_recipe/lizardboots
-	name = "lizard Skin Boots"
-	result = /obj/effect/spawner/lootdrop/lizardboots
-	reqs = list(
-		/obj/item/stack/sheet/animalhide/lizard = 1,
-		/obj/item/stack/sheet/leather = 1
-	)
-	time = 60
-	category = CAT_CLOTHING

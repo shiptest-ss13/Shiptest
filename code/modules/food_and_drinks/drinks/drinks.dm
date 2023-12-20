@@ -79,7 +79,7 @@
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
 			var/mob/living/silicon/robot/bro = user
 			bro.cell.use(30)
-			addtimer(CALLBACK(reagents, /datum/reagents.proc/add_reagent, refill, trans), 600)
+			addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, add_reagent), refill, trans), 600)
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if (!is_refillable())
@@ -123,7 +123,7 @@
 /obj/item/reagent_containers/food/drinks/proc/smash(atom/target, mob/thrower, ranged = FALSE)
 	if(!isGlass)
 		return
-	if(QDELING(src) || !target)		//Invalid loc
+	if(QDELING(src) || !target || !(flags_1 & INITIALIZED_1))	//Invalid loc
 		return
 	if(bartender_check(target) && ranged)
 		return
@@ -344,7 +344,7 @@
 	list_reagents = list(random_reagent.type = 50)
 	. = ..()
 	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
-	update_icon()
+	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
 	name = "space beer"
@@ -512,6 +512,13 @@
 	name = "cup"
 	desc = "A cup with the british flag emblazoned on it."
 	icon_state = "britcup"
+	volume = 30
+	spillable = TRUE
+
+/obj/item/reagent_containers/food/drinks/rilenacup
+	name = "RILENA mug"
+	desc = "A mug with RILENA: LMR protagonist Ri's face on it."
+	icon_state = "rilenacup"
 	volume = 30
 	spillable = TRUE
 
@@ -738,3 +745,40 @@
 	desc = "A dangerous fusion of flavors!"
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
+
+/obj/item/reagent_containers/food/drinks/ration
+	name = "empty ration pouch"
+	desc = "If you ever wondered where air came from..."
+	list_reagents = list(/datum/reagent/oxygen = 6, /datum/reagent/nitrogen = 24)
+	icon = 'icons/obj/food/ration.dmi'
+	icon_state = "ration_package"
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
+	in_container = TRUE
+	reagent_flags = NONE
+	spillable = FALSE
+	w_class = WEIGHT_CLASS_SMALL
+	volume = 50
+
+/obj/item/reagent_containers/food/drinks/ration/proc/open_ration(mob/user)
+	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
+	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
+	reagents.flags |= OPENCONTAINER
+	spillable = TRUE
+
+/obj/item/reagent_containers/food/drinks/ration/attack_self(mob/user)
+	if(!is_drainable())
+		open_ration(user)
+		icon_state = "[icon_state]_open"
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/ration/attack(mob/living/M, mob/user, def_zone)
+	if (!is_drainable())
+		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
+		return 0
+	return ..()
+
+/obj/item/reagent_containers/food/drinks/ration/pan_genezan_vodka
+	name = "Pan-Genezan vodka"
+	desc = "Vodka made from the finest potatoes."
+	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 15)

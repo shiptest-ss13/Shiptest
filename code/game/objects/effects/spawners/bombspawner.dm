@@ -35,9 +35,7 @@
 		V.attached_device = A
 		A.holder = V
 
-	V.update_icon()
-
-	return INITIALIZE_HINT_QDEL
+	V.update_appearance()
 
 /obj/effect/spawner/newbomb/timer/syndicate/Initialize()
 	temp_p = (OPTIMAL_TEMP_K_PLA_BURN_SCALE(pressure_p, pressure_o, temp_o)/2 + OPTIMAL_TEMP_K_PLA_BURN_RATIO(pressure_p, pressure_o, temp_o)/2) - T0C

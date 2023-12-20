@@ -84,7 +84,7 @@
 	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	weather_immunities = list("snow")
 
-/mob/living/simple_animal/hostile/bear/russian
+/mob/living/simple_animal/hostile/bear/frontier
 	name = "combat bear"
 	desc = "A ferocious brown bear decked out in armor plating, a red star with yellow outlining details the shoulder plating."
 	icon_state = "combatbear"
@@ -114,7 +114,7 @@
 /obj/item/bear_armor
 	name = "pile of bear armor"
 	desc = "A scattered pile of various shaped armor pieces fitted for a bear, some duct tape, and a nail filer. Crude instructions \
-		are written on the back of one of the plates in russian. This seems like an awful idea."
+		are written on the back of one of the plates. This seems like an awful idea."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "bear_armor_upgrade"
 
@@ -141,7 +141,7 @@
 	icon_living = "butterbear"
 	icon_dead = "butterbear_dead"
 	desc = "I can't believe its not a bear!"
-	faction = list("neutral", "russian")
+	faction = list("neutral", "frontiersmen")
 	obj_damage = 11
 	melee_damage_lower = 1
 	melee_damage_upper = 1

@@ -256,22 +256,6 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
-/datum/design/board/protolathe
-	name = "Machine Design (Protolathe Board)"
-	desc = "The circuit board for a protolathe."
-	id = "protolathe"
-	build_path = /obj/item/circuitboard/machine/protolathe
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/circuit_imprinter
-	name = "Machine Design (Circuit Imprinter Board)"
-	desc = "The circuit board for a circuit imprinter."
-	id = "circuit_imprinter"
-	build_path = /obj/item/circuitboard/machine/circuit_imprinter
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/rdserver
 	name = "Machine Design (R&D Server Board)"
 	desc = "The circuit board for an R&D Server."
@@ -599,15 +583,6 @@
 	build_path = /obj/item/circuitboard/machine/paystand
 	category = list ("Misc. Machinery")
 
-
-/datum/design/board/fat_sucker
-	name = "Machine Design (Lipid Extractor)"
-	desc = "The circuit board for a lipid extractor."
-	id = "fat_sucker"
-	build_path = /obj/item/circuitboard/machine/fat_sucker
-	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/stasis
 	name = "Machine Design (Lifeform Stasis Unit)"
 	desc = "The circuit board for a stasis unit."
@@ -652,6 +627,14 @@
 	id = "shieldwallgen_atmos"
 	build_path = /obj/item/circuitboard/machine/shieldwallgen/atmos
 	category = list("Misc. Machinery")
+
+/datum/design/board/fax
+	name = "Machine Design (Fax Machine)"
+	desc = "The circuit board for a fax machine."
+	id = "fax"
+	build_path = /obj/item/circuitboard/machine/fax
+	category = list ("Misc. Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SERVICE
 
 ///////////////////////////////////////////
 //////////////Shuttle Boards///////////////

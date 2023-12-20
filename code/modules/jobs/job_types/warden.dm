@@ -1,8 +1,6 @@
 /datum/job/warden
 	name = "Warden"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
@@ -38,8 +36,8 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	suit_store = /obj/item/gun/energy/e_gun/advtaser		//WS edit - Readds tasers
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
+	suit_store = null		//WS edit - Readds tasers //SHIPTEST EDIT - removes tasers
+	backpack_contents = list(/obj/item/melee/classic_baton) //WS edit - free lethals // SHIPTEST EDIT - nope
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -66,7 +64,7 @@
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	belt = /obj/item/storage/belt/military
+	belt = /obj/item/storage/belt/military/minutemen
 	shoes = /obj/item/clothing/shoes/combat
 
 	l_pocket = /obj/item/flashlight/seclite
@@ -79,8 +77,8 @@
 /datum/outfit/job/warden/minutemen/armed
 	name = "Field Commander (Colonial Minutemen) (Armed)"
 
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+	belt = /obj/item/storage/belt/military/minutemen/p16
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
 
@@ -97,10 +95,10 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
-	suit_store = /obj/item/gun/energy/disabler
+	suit_store = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/pda/warden)
+	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/pda/warden)
 
 /datum/outfit/job/warden/nanotrasen
 	name = "Warden (Nanotrasen)"
@@ -111,35 +109,3 @@
 	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
 	alt_uniform = null
 	alt_suit = null
-
-/datum/outfit/job/warden/syndicate/sbc
-	name = "Lieutenant (Twinkleshine)"
-	uniform = /obj/item/clothing/under/syndicate/aclf
-	head = /obj/item/clothing/head/HoS/beret/syndicate
-	ears = /obj/item/radio/headset/syndicate/alt
-	mask = /obj/item/clothing/mask/chameleon
-	gloves = /obj/item/clothing/gloves/combat
-	l_pocket = /obj/item/gun/ballistic/automatic/pistol
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military/assault
-	shoes = /obj/item/clothing/shoes/combat
-	suit = /obj/item/clothing/suit/armor/vest
-	alt_suit = /obj/item/clothing/suit/aclf
-	id = /obj/item/card/id/syndicate_command/lieutenant
-	implants = list(/obj/item/implant/weapons_auth)
-	backpack_contents = list(/obj/item/melee/baton)
-
-	backpack = /obj/item/storage/backpack/security
-	satchel = /obj/item/storage/backpack/satchel/sec
-	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
-	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
-
-/datum/outfit/job/warden/syndicate/sbc/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("PlayerSyndicate")
-
-	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(8, 10)) // squidquest real
-	I.access |= list(ACCESS_SYNDICATE)
-	I.update_label()

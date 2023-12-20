@@ -15,8 +15,8 @@
 
 /datum/component/storage/concrete/Initialize()
 	. = ..()
-	RegisterSignal(parent, COMSIG_ATOM_CONTENTS_DEL, .proc/on_contents_del)
-	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT, .proc/on_deconstruct)
+	RegisterSignal(parent, COMSIG_ATOM_CONTENTS_DEL, PROC_REF(on_contents_del))
+	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT, PROC_REF(on_deconstruct))
 
 /datum/component/storage/concrete/Destroy()
 	var/atom/real_location = real_location()
@@ -141,7 +141,7 @@
 	refresh_mob_views()
 	if(isobj(parent))
 		var/obj/O = parent
-		O.update_icon()
+		O.update_appearance()
 	return TRUE
 
 /datum/component/storage/concrete/proc/slave_can_insert_object(datum/component/storage/slave, obj/item/I, stop_messages = FALSE, mob/M)
@@ -197,7 +197,7 @@
 /datum/component/storage/concrete/update_icon()
 	if(isobj(parent))
 		var/obj/O = parent
-		O.update_icon()
+		O.update_appearance()
 	for(var/i in slaves)
 		var/datum/component/storage/slave = i
 		slave.update_icon()

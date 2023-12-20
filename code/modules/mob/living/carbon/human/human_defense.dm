@@ -97,13 +97,16 @@
 	for(var/obj/item/I in held_items)
 		if(I.IsReflect(def_zone))
 			return TRUE
+	///Granted by prismwine
+	if(HAS_TRAIT(src, TRAIT_REFLECTIVE) && prob(50))
+		return TRUE
 	return FALSE
 
 /mob/living/carbon/human/proc/check_shields(atom/AM, damage, attack_text = "the attack", attack_type = MELEE_ATTACK, armour_penetration = 0)
 	var/block_chance_modifier = round(damage / -3)
 
 	for(var/obj/item/I in held_items)
-		if(!istype(I, /obj/item/clothing))
+		if(!istype(I, /obj/item/clothing) || I == get_active_held_item() || istype(I ,/obj/item/shield))
 			var/final_block_chance = I.block_chance - (clamp((armour_penetration-I.armour_penetration)/2,0,100)) + block_chance_modifier //So armour piercing blades can still be parried by other blades, for example
 			if(I.hit_reaction(src, AM, attack_text, final_block_chance, damage, attack_type))
 				return TRUE
@@ -141,7 +144,7 @@
 	if(istype(AM, /obj/item))
 		I = AM
 		throwpower = I.throwforce
-		if(I.thrownby == src) //No throwing stuff at yourself to trigger hit reactions
+		if(I.thrownby == WEAKREF(src)) //No throwing stuff at yourself to trigger hit reactions
 			return ..()
 	if(check_shields(AM, throwpower, "\the [AM.name]", THROWN_PROJECTILE_ATTACK))
 		hitpush = FALSE
@@ -692,14 +695,7 @@
 		return
 
 	if(src == M)
-		if(has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
-			to_chat(src, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-			if(do_after(src, 35, null, src))
-				to_chat(src, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
-				remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
-			return
 		check_self_for_injuries()
-
 
 	else
 		if(wear_suit)
@@ -708,7 +704,6 @@
 			w_uniform.add_fingerprint(M)
 
 		..()
-
 
 /mob/living/carbon/human/check_self_for_injuries()
 	if(stat >= UNCONSCIOUS)

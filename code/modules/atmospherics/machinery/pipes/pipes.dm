@@ -79,8 +79,10 @@
 /obj/machinery/atmospherics/pipe/returnPipenet()
 	return parent
 
-/obj/machinery/atmospherics/pipe/setPipenet(datum/pipeline/P)
-	parent = P
+/obj/machinery/atmospherics/pipe/setPipenet(datum/pipeline/reference, obj/machinery/atmospherics/connection)
+	if(!QDELETED(parent))
+		qdel(parent)
+	parent = reference
 
 /obj/machinery/atmospherics/pipe/Destroy()
 	QDEL_NULL(parent)
@@ -94,6 +96,10 @@
 			meter.transfer_fingerprints_to(PM)
 			qdel(meter)
 	. = ..()
+
+/obj/machinery/atmospherics/pipe/update_icon()
+	. = ..()
+	update_layer()
 
 /obj/machinery/atmospherics/pipe/proc/update_node_icon()
 	for(var/i in 1 to device_type)

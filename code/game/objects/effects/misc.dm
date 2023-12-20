@@ -21,6 +21,23 @@
 /obj/effect/spawner
 	name = "object spawner"
 
+// Brief explanation:
+// Rather then setting up and then deleting spawners, we block all atomlike setup
+// and do the absolute bare minimum
+// This is with the intent of optimizing mapload
+/obj/effect/spawner/Initialize(mapload)
+	SHOULD_CALL_PARENT(FALSE)
+	if(flags_1 & INITIALIZED_1)
+		stack_trace("Warning: [src]([type]) initialized multiple times!")
+	flags_1 |= INITIALIZED_1
+
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/spawner/Destroy(force)
+	SHOULD_CALL_PARENT(FALSE)
+	moveToNullspace()
+	return QDEL_HINT_QUEUE
+
 /obj/effect/list_container
 	name = "list container"
 
@@ -38,10 +55,6 @@
 	anchored = TRUE
 	opacity = TRUE
 	density = TRUE
-	layer = FLY_LAYER
-
-/obj/effect/supplypod_selector
-	icon_state = "supplypod_selector"
 	layer = FLY_LAYER
 
 //Makes a tile fully lit no matter what
@@ -100,5 +113,6 @@
 		return INITIALIZE_HINT_QDEL
 
 /obj/effect/abstract/directional_lighting
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	vis_flags = VIS_HIDE

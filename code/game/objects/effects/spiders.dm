@@ -36,7 +36,7 @@
 		icon_state = "stickyweb2"
 	. = ..()
 
-/obj/structure/spider/stickyweb/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/spider/stickyweb/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(genetic)
 		return
@@ -53,18 +53,19 @@
 
 /obj/structure/spider/stickyweb/genetic //for the spider genes in genetics
 	genetic = TRUE
-	var/mob/living/allowed_mob
+	//Reference to the mob that created this
+	var/allowed_mob_reference
 
 /obj/structure/spider/stickyweb/genetic/Initialize(mapload, allowedmob)
-	allowed_mob = allowedmob
+	allowed_mob_reference = REF(allowedmob)
 	. = ..()
 
-/obj/structure/spider/stickyweb/genetic/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/spider/stickyweb/genetic/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..() //this is the normal spider web return aka a spider would make this TRUE
-	if(mover == allowed_mob)
+	if(REF(mover) == allowed_mob_reference)
 		return TRUE
 	else if(isliving(mover)) //we change the spider to not be able to go through here
-		if(mover.pulledby == allowed_mob)
+		if(REF(mover.pulledby) == allowed_mob_reference)
 			return TRUE
 		if(prob(50))
 			to_chat(mover, "<span class='danger'>You get stuck in \the [src] for a moment.</span>")
@@ -118,6 +119,7 @@
 
 /obj/structure/spider/spiderling/Destroy()
 	new/obj/item/reagent_containers/food/snacks/spiderling(get_turf(src))
+	walk(src, 0) //Clean up reference for pathing
 	. = ..()
 
 /obj/structure/spider/spiderling/Initialize()
@@ -159,7 +161,7 @@
 
 	forceMove(exit_vent)
 	var/travel_time = round(get_dist(loc, exit_vent.loc) / 2)
-	addtimer(CALLBACK(src, .proc/do_vent_move, exit_vent, travel_time), travel_time)
+	addtimer(CALLBACK(src, PROC_REF(do_vent_move), exit_vent, travel_time), travel_time)
 
 /obj/structure/spider/spiderling/proc/do_vent_move(obj/machinery/atmospherics/components/unary/vent_pump/exit_vent, travel_time)
 	if(QDELETED(exit_vent) || exit_vent.welded)
@@ -169,7 +171,7 @@
 	if(prob(50))
 		audible_message("<span class='hear'>You hear something scampering through the ventilation ducts.</span>")
 
-	addtimer(CALLBACK(src, .proc/finish_vent_move, exit_vent), travel_time)
+	addtimer(CALLBACK(src, PROC_REF(finish_vent_move), exit_vent), travel_time)
 
 /obj/structure/spider/spiderling/proc/finish_vent_move(obj/machinery/atmospherics/components/unary/vent_pump/exit_vent)
 	if(QDELETED(exit_vent) || exit_vent.welded)
@@ -197,7 +199,7 @@
 				visible_message("<B>[src] scrambles into the ventilation ducts!</B>", \
 								"<span class='hear'>You hear something scampering through the ventilation ducts.</span>")
 
-			addtimer(CALLBACK(src, .proc/vent_move, exit_vent), rand(20,60))
+			addtimer(CALLBACK(src, PROC_REF(vent_move), exit_vent), rand(20,60))
 
 	//=================
 

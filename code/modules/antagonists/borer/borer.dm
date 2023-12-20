@@ -43,7 +43,7 @@
 	to_chat(B.victim, "<span class='danger'>You feel the captive mind of [src] begin to resist your control.</span>")
 
 	var/delay = rand(150,250) + B.victim.getOrganLoss(ORGAN_SLOT_BRAIN)
-	addtimer(CALLBACK(src, .proc/return_control, src.loc), delay)
+	addtimer(CALLBACK(src, PROC_REF(return_control), src.loc), delay)
 
 /mob/living/captive_brain/proc/return_control(mob/living/simple_animal/borer/B)
 	if(!B || !B.controlling)
@@ -136,7 +136,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	. = ..()
 	generation = gen
 	if(is_team_borer)
-		notify_ghosts("A cortical borer has been created in [get_area(src)]!", enter_link = "<a href=?src=\ref[src];ghostjoin=1>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK)
+		notify_ghosts("A cortical borer has been created in [get_area(src)]!", enter_link = "<a href=?src=[text_ref(src)];ghostjoin=1>(Click to enter)</a>", source = src, action = NOTIFY_ATTACK)
 	var/numeral = rand(1000, 9999)
 	real_name = "Cortical Borer [numeral]"
 	truename = "[borer_names[min(generation, borer_names.len)]] [numeral]"
@@ -200,7 +200,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		chemicals -= C.chemuse
 		log_game("[src]/([src.ckey]) has injected [C.chemname] ([C.chem]) into their host [victim]/([victim.ckey])")
 
-		src << output(chemicals, "ViewBorer\ref[src]Chems.browser:update_chemicals")
+		src << output(chemicals, "ViewBorer[text_ref(src)]Chems.browser:update_chemicals")
 
 	..()
 
@@ -235,7 +235,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	if(statpanel("Status"))
 		stat(null, "Chemicals: [chemicals]")
 
-	src << output(chemicals, "ViewBorer\ref[src]Chems.browser:update_chemicals")
+	src << output(chemicals, "ViewBorer[text_ref(src)]Chems.browser:update_chemicals")
 
 /mob/living/simple_animal/borer/verb/Communicate()
 	set category = "Borer"
@@ -484,13 +484,13 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	for(var/datum in typesof(/datum/borer_chem))
 		var/datum/borer_chem/C = new datum()
 		if(C.chem)
-			content += "<tr><td><a class='chem-select' href='?_src_=\ref[src];src=\ref[src];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
+			content += "<tr><td><a class='chem-select' href='?_src_=[text_ref(src)];src=[text_ref(src)];borer_use_chem=[C.chemname]'>[C.chemname] ([C.quantity]u, takes [C.chemuse] chemical)</a><p>[C.chem_desc]</p></td></tr>"
 	content += "</table>"
 
 	var/html = get_html_template(content)
 
-	usr << browse(null, "window=ViewBorer\ref[src]Chems;size=600x800")
-	usr << browse(html, "window=ViewBorer\ref[src]Chems;size=600x800")
+	usr << browse(null, "window=ViewBorer[text_ref(src)]Chems;size=600x800")
+	usr << browse(html, "window=ViewBorer[text_ref(src)]Chems;size=600x800")
 
 	return
 
@@ -540,7 +540,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 	leaving = TRUE
 
-	addtimer(CALLBACK(src, .proc/release_host), 100)
+	addtimer(CALLBACK(src, PROC_REF(release_host)), 100)
 
 /mob/living/simple_animal/borer/proc/release_host()
 	if(!victim || !src || QDELETED(victim) || QDELETED(src))
@@ -673,7 +673,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	bonding = TRUE
 
 	var/delay = 200+(victim.getOrganLoss(ORGAN_SLOT_BRAIN)*5)
-	addtimer(CALLBACK(src, .proc/assume_control), delay)
+	addtimer(CALLBACK(src, PROC_REF(assume_control)), delay)
 
 /mob/living/simple_animal/borer/proc/assume_control()
 	if(!victim || !src || controlling || victim.stat == DEAD)
@@ -864,7 +864,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		if(hiding)
 			src.hide()
 		leaping = TRUE
-		throw_at(A, MAX_BORER_LEAP_DIST, 1, src, FALSE, TRUE, callback = CALLBACK(src, .proc/leap_end))
+		throw_at(A, MAX_BORER_LEAP_DIST, 1, src, FALSE, TRUE, callback = CALLBACK(src, PROC_REF(leap_end)))
 
 /mob/living/simple_animal/borer/proc/leap_end()
 	leaping = FALSE
@@ -893,7 +893,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 				step_towards(src,L)
 				if(iscarbon(hit_atom))
 					var/mob/living/carbon/C = hit_atom
-					addtimer(CALLBACK(src, .proc/infect_victim, C), 15)
+					addtimer(CALLBACK(src, PROC_REF(infect_victim), C), 15)
 			else
 				Paralyze(40, 1, 1)
 

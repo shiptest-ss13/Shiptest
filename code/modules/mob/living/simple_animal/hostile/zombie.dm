@@ -26,14 +26,14 @@
 
 /mob/living/simple_animal/hostile/zombie/Initialize(mapload)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/setup_visuals)
+	INVOKE_ASYNC(src, PROC_REF(setup_visuals))
 
 /mob/living/simple_animal/hostile/zombie/proc/setup_visuals()
 	var/datum/preferences/dummy_prefs = new
 	dummy_prefs.pref_species = new /datum/species/zombie
 	dummy_prefs.randomise[RANDOM_BODY] = TRUE
 	if(zombiejob)
-		var/datum/job/J = SSjob.GetJob(zombiejob)
+		var/datum/job/J = GLOB.name_occupations[zombiejob]
 		var/datum/outfit/O
 		if(J.outfit)
 			O = new J.outfit
@@ -57,17 +57,6 @@
 	. = ..()
 	corpse.forceMove(drop_location())
 	corpse.create()
-
-/mob/living/simple_animal/hostile/zombie/leatherman
-	name = "Leatherman"
-	desc = "Fuck you!"
-	icon = 'icons/mob/simple_human.dmi'
-	icon_state = "zombie_leather"
-	icon_living = "zombie_leather"
-	maxHealth = 60
-	health = 60
-	melee_damage_lower = 11
-	melee_damage_upper = 11
 
 /mob/living/simple_animal/hostile/zombie/kudzu
 	name = "shambling bramble"

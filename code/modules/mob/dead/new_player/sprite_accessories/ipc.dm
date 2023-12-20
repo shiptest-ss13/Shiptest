@@ -170,6 +170,10 @@
 	name = "Color Test"
 	icon_state = "tv"
 
+/datum/sprite_accessory/ipc_screens/badapple
+	name = "Old Animation"
+	icon_state = "bad_apple"
+
 // Start antennas
 
 /datum/sprite_accessory/ipc_antennas

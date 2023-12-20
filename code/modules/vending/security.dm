@@ -109,7 +109,7 @@
 	contraband = list()
 	premium = list()
 	voucher_items = list(
-		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/stun,
+		"Tactical Energy Gun" = /obj/item/gun/energy/e_gun/hades,
 		"Combat Shotgun" = /obj/item/gun/ballistic/shotgun/automatic/combat,
 		"Type U3 Uzi" = /obj/item/gun/ballistic/automatic/smg/mini_uzi)
 
@@ -161,7 +161,7 @@
 		)
 
 	voucher_items = list(
-		"NT-AK" = /obj/item/gun/ballistic/automatic/assualt/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
+		"NT-AK" = /obj/item/gun/ballistic/automatic/assault/ak47/nt) //if im being honest, theres no point in addiing other options when this is clearly the best
 
 /obj/item/gun_voucher
 	name = "security weapon voucher"

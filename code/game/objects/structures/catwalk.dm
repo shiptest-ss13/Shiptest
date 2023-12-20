@@ -20,7 +20,7 @@
 
 /obj/structure/catwalk/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/structure/catwalk/over
 	layer = CATWALK_LAYER //over pipes, duh
@@ -38,7 +38,7 @@
 	plated_tile = /obj/item/stack/tile/plasteel/white
 	icon_state = "catwalk_platedwhite"
 
-/obj/structure/catwalk/update_icon()
+/obj/structure/catwalk/update_appearance()
 	..()
 	cut_overlays()
 	icon_state = hatch_open ? "open" : "catwalk"
@@ -69,7 +69,7 @@
 		else
 			playsound(src, 'sound/items/Deconstruct.ogg', 100, 2)
 			to_chat(user, "<span class='notice'>You shut \the [src]'s maintenance hatch.</span>")
-		update_icon()
+		update_appearance()
 		return
 	if(istype(C, /obj/item/stack/tile) && !plated_tile)
 		var/obj/item/stack/tile/plasteel/ST = C
@@ -80,7 +80,7 @@
 			src.add_fingerprint(user)
 			if(ST.use(1))
 				plated_tile = ST.type
-				update_icon()
+				update_appearance()
 		return
 	return ..()
 

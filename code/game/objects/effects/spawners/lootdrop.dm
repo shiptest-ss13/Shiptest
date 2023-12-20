@@ -8,7 +8,7 @@
 	var/fan_out_items = FALSE //Whether the items should be distributed to offsets 0,1,-1,2,-2,3,-3.. This overrides pixel_x/y on the spawner itself
 
 /obj/effect/spawner/lootdrop/Initialize(mapload)
-	..()
+	. = ..()
 	if(loot && loot.len)
 		var/loot_spawned = 0
 		while((lootcount-loot_spawned) && loot.len)
@@ -31,7 +31,6 @@
 			else
 				break // WS edit - Support spawn weights of 0 in loot tables and ruins
 			loot_spawned++
-	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/lootdrop/donkpockets
 	name = "donk pocket box spawner"
@@ -106,7 +105,6 @@
 				/obj/item/paper/fluff/jobs/prisoner/letter = 1,
 				/obj/item/grenade/smokebomb = 1,
 				/obj/item/flashlight/seclite = 1,
-				/obj/item/tailclub = 1, //want to buy makeshift wooden club sprite
 				/obj/item/kitchen/knife/shiv = 4,
 				/obj/item/kitchen/knife/shiv/carrot = 1,
 				/obj/item/kitchen/knife = 1,
@@ -566,28 +564,10 @@
 				/obj/item/stack/sheet/mineral/wood/fifty,
 				/obj/item/stack/sheet/mineral/diamond/twenty,
 				/obj/item/stack/sheet/mineral/gold/fifty,
-				/obj/item/stack/sheet/mineral/adamantine/ten,
+
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
-
-/obj/effect/spawner/lootdrop/spacegym
-	name = "spacegym loot spawner"
-	lootdoubles = FALSE
-
-	loot = list(
-			/obj/item/dnainjector/hulkmut = 1,
-			/obj/item/dnainjector/dwarf = 1,
-			/obj/item/dnainjector/gigantism = 1,
-			/obj/item/reagent_containers/food/snacks/meat/cutlet/chicken = 1,
-			/obj/item/clothing/under/shorts/black = 1,
-			/obj/item/clothing/under/shorts/blue = 1,
-			/obj/item/clothing/under/shorts/red = 1,
-			/obj/item/restraints/handcuffs = 1,
-			/obj/item/storage/pill_bottle/stimulant = 1,
-			/obj/item/storage/firstaid/regular = 1,
-			/obj/item/storage/box/handcuffs = 1,
-		)
 
 /obj/effect/spawner/lootdrop/singularitygen
 	name = "Tesla or Singulo spawner"
@@ -646,7 +626,6 @@
 				/obj/item/stack/sheet/mineral/wood/fifty,
 				/obj/item/stack/sheet/mineral/diamond/twenty,
 				/obj/item/stack/sheet/mineral/gold/fifty,
-				/obj/item/stack/sheet/mineral/adamantine/ten,
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
@@ -948,10 +927,8 @@
 /obj/effect/spawner/lootdrop/anomaly/rock/cave
 	loot = list(
 		/obj/effect/anomaly/flux/planetary,
-		/obj/effect/anomaly/grav/planetary,
 		/obj/effect/anomaly/hallucination/planetary,
 		/obj/effect/anomaly/pyro/planetary,
-		/obj/effect/anomaly/grav/high/planetary,
 		/obj/effect/anomaly/heartbeat/planetary,
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/veins/planetary,
@@ -1252,3 +1229,64 @@
 		4
 	))
 	return ..()
+
+
+//random RND imprinter/protolathe board spawners. Do not use on maps without a good reason
+/obj/effect/spawner/lootdrop/randomprotolathe
+	name = "random departmental protolathe"
+	loot = list(
+		/obj/item/circuitboard/machine/protolathe/department/cargo,
+		/obj/item/circuitboard/machine/protolathe/department/engineering,
+		/obj/item/circuitboard/machine/protolathe/department/service,
+		/obj/item/circuitboard/machine/protolathe/department/medical,
+		/obj/item/circuitboard/machine/protolathe/department/science,
+		/obj/item/circuitboard/machine/protolathe/department/security
+	)
+
+/obj/effect/spawner/lootdrop/randomimprinter
+	name = "random departmental circuit imprinter"
+	loot = list(
+		/obj/item/circuitboard/machine/circuit_imprinter/department/cargo,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/engi,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/civ,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/med,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/science,
+		/obj/item/circuitboard/machine/circuit_imprinter/department/sec
+	)
+
+/obj/effect/spawner/lootdrop/randomtechfab
+	name = "random departmental techfab"
+	loot = list(
+		/obj/item/circuitboard/machine/techfab/department/service,
+		/obj/item/circuitboard/machine/techfab/department/cargo,
+		/obj/item/circuitboard/machine/techfab/department/engineering,
+		/obj/item/circuitboard/machine/techfab/department/service,
+		/obj/item/circuitboard/machine/techfab/department/medical,
+		/obj/item/circuitboard/machine/techfab/department/science,
+		/obj/item/circuitboard/machine/techfab/department/security
+	)
+
+/obj/effect/spawner/lootdrop/ration
+	loot = list (
+	/obj/item/storage/ration/vegan_chili = 5,
+	/obj/item/storage/ration/shredded_beef = 5,
+	/obj/item/storage/ration/pork_spaghetti = 5,
+	/obj/item/storage/ration/fried_fish = 5,
+	/obj/item/storage/ration/beef_strips = 5,
+	/obj/item/storage/ration/chili_macaroni = 5,
+	/obj/item/storage/ration/chicken_wings_hot_sauce = 5,
+	/obj/item/storage/ration/fish_stew = 5,
+	/obj/item/storage/ration/lemon_pepper_chicken = 5,
+	/obj/item/storage/ration/sausage_peppers_onions = 5,
+	/obj/item/storage/ration/pork_dumplings_chili_sauce = 5,
+	/obj/item/storage/ration/battered_fish_sticks = 5,
+	/obj/item/storage/ration/assorted_salted_offal = 5,
+	/obj/item/storage/ration/maple_pork_sausage_patty = 5,
+	/obj/item/storage/ration/pepper_jack_beef_patty = 5,
+	/obj/item/storage/ration/beef_goulash = 5,
+	/obj/item/storage/ration/pepperoni_pizza_slice = 5,
+	/obj/item/storage/ration/blackened_calamari = 5,
+	/obj/item/storage/ration/elbow_macaroni = 5,
+	/obj/item/storage/ration/cheese_pizza_slice = 5,
+	/obj/item/storage/ration/crayons = 2 // :)
+	)

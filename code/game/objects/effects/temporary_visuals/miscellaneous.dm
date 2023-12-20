@@ -57,6 +57,10 @@
 /obj/effect/temp_visual/dir_setting/firing_effect
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "firing_effect"
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.4
+	light_color = COLOR_VERY_SOFT_YELLOW
 	duration = 2
 
 /obj/effect/temp_visual/dir_setting/firing_effect/setDir(newdir)
@@ -75,7 +79,15 @@
 
 /obj/effect/temp_visual/dir_setting/firing_effect/energy
 	icon_state = "firing_effect_energy"
+	light_color = COLOR_RED_LIGHT
 	duration = 3
+
+/obj/effect/temp_visual/dir_setting/firing_effect/gauss
+//gauss doesn't have a muzzle flash
+	light_system = null
+	light_range = 0
+	light_power = 0
+	light_color = null
 
 /obj/effect/temp_visual/dir_setting/firing_effect/magic
 	icon_state = "shieldsparkles"
@@ -502,29 +514,46 @@
 	status = rcd_status
 	delay = rcd_delay
 	if (status == RCD_DECONSTRUCT)
-		addtimer(CALLBACK(src, /atom/.proc/update_icon), 11)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_appearance)), 1.1 SECONDS)
 		delay -= 11
 		icon_state = "rcd_end_reverse"
 	else
-		update_icon()
+		update_appearance()
 
 /obj/effect/constructing_effect/update_icon_state()
 	icon_state = "rcd"
-	if (delay < 10)
+	if(delay < 10)
 		icon_state += "_shortest"
-	else if (delay < 20)
+		return ..()
+	if (delay < 20)
 		icon_state += "_shorter"
-	else if (delay < 37)
+		return ..()
+	if (delay < 37)
 		icon_state += "_short"
-	if (status == RCD_DECONSTRUCT)
+		return ..()
+	if(status == RCD_DECONSTRUCT)
 		icon_state += "_reverse"
+	return ..()
 
 /obj/effect/constructing_effect/proc/end_animation()
 	if (status == RCD_DECONSTRUCT)
 		qdel(src)
 	else
 		icon_state = "rcd_end"
-		addtimer(CALLBACK(src, .proc/end), 15)
+		addtimer(CALLBACK(src, PROC_REF(end)), 15)
 
 /obj/effect/constructing_effect/proc/end()
 	qdel(src)
+
+/obj/effect/muzzle_flash
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "muzzle_flash"
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE
+	appearance_flags = KEEP_APART|TILE_BOUND
+	var/applied = FALSE
+
+/obj/effect/muzzle_flash/Initialize(mapload, new_icon_state)
+	. = ..()
+	if(new_icon_state)
+		icon_state = new_icon_state

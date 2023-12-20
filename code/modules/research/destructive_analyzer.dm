@@ -11,6 +11,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 	name = "destructive analyzer"
 	desc = "Learn science by destroying things!"
 	icon_state = "d_analyzer"
+	base_icon_state = "d_analyzer"
 	circuit = /obj/item/circuitboard/machine/destructive_analyzer
 	var/decon_mod = 0
 
@@ -43,19 +44,17 @@ Note: Must be placed within 3 tiles of the R&D Console
 		loaded_item = O
 		to_chat(user, "<span class='notice'>You add the [O.name] to the [src.name]!</span>")
 		flick("d_analyzer_la", src)
-		addtimer(CALLBACK(src, .proc/finish_loading), 10)
+		addtimer(CALLBACK(src, PROC_REF(finish_loading)), 10)
 		if (linked_console)
 			linked_console.updateUsrDialog()
 
 /obj/machinery/rnd/destructive_analyzer/proc/finish_loading()
-	update_icon()
+	update_appearance()
 	reset_busy()
 
 /obj/machinery/rnd/destructive_analyzer/update_icon_state()
-	if(loaded_item)
-		icon_state = "d_analyzer_l"
-	else
-		icon_state = initial(icon_state)
+	icon_state = "[base_icon_state][loaded_item ? "_l" : null]"
+	return ..()
 
 /obj/machinery/rnd/destructive_analyzer/proc/reclaim_materials_from(obj/item/thing)
 	. = 0
@@ -83,7 +82,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 	if(!innermode)
 		flick("d_analyzer_process", src)
 		busy = TRUE
-		addtimer(CALLBACK(src, .proc/reset_busy), 24)
+		addtimer(CALLBACK(src, PROC_REF(reset_busy)), 24)
 		use_power(250)
 		if(thing == loaded_item)
 			loaded_item = null
@@ -105,7 +104,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 		qdel(thing)
 		loaded_item = null
 	if (!innermode)
-		update_icon()
+		update_appearance()
 	return TRUE
 
 /obj/machinery/rnd/destructive_analyzer/proc/user_try_decon_id(id, mob/user)
@@ -162,5 +161,5 @@ Note: Must be placed within 3 tiles of the R&D Console
 		return FALSE
 	loaded_item.forceMove(get_turf(src))
 	loaded_item = null
-	update_icon()
+	update_appearance()
 	return TRUE

@@ -26,8 +26,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/resetasaycolor,
 	/client/proc/fix_air,				/*resets air in designated radius to its default atmos composition*/
 	/client/proc/addbunkerbypass,
-	/client/proc/revokebunkerbypass,
-	/client/proc/report_sgt //TEMP
+	/client/proc/revokebunkerbypass
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -36,6 +35,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/invisimin,				/*allows our mob to go invisible/visible*/
 //	/datum/admins/proc/show_traitor_panel,	/*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags)*/
+	/datum/admins/proc/show_lag_switch_panel,
 	/datum/verbs/menu/Admin/verb/playerpanel,
 	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
 	/client/proc/check_ai_laws,			/*shows AI and borg laws*/
@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/polymorph_all,
 	/client/proc/show_tip,
 	/client/proc/smite,
-	/client/proc/fax_panel,
+	/client/proc/fax_manager,
 	/client/proc/spawn_ruin,
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
@@ -283,7 +283,7 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_display_del_log,
 	/client/proc/toggle_combo_hud,
 	/client/proc/debug_huds,
-	/client/proc/fax_panel
+	/client/proc/fax_manager
 	))
 GLOBAL_PROTECT(admin_verbs_hideable)
 
@@ -775,13 +775,3 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	src << link("?debug=profile&type=sendmaps&window=test")
 #endif
-
-//FIXME TODO REMOVE THIS
-/client/proc/report_sgt()
-	set name = "SGT Report"
-	set category = "000_PANIC BUTTON"
-	set desc = "Report a Slimegirl Trafficking Incident"
-	if(!holder)
-		return
-	log_shuttle("CRITICAL: !!INCIDENT REPORTED!!")
-	message_debug("[key_name_admin(usr)]: Shuttle Incident Reported.")

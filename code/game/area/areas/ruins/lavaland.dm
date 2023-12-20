@@ -60,42 +60,6 @@
 	name = "Cult Altar"
 	ambientsounds = SPOOKY
 
-//Syndicate lavaland base
-
-/area/ruin/unpowered/syndicate_lava_base/engineering
-	name = "Syndicate Lavaland Engineering"
-
-/area/ruin/unpowered/syndicate_lava_base/medbay
-	name = "Syndicate Lavaland Medbay"
-
-/area/ruin/unpowered/syndicate_lava_base/arrivals
-	name = "Syndicate Lavaland Arrivals"
-
-/area/ruin/unpowered/syndicate_lava_base/bar
-	name = "Syndicate Lavaland Bar"
-
-/area/ruin/unpowered/syndicate_lava_base/main
-	name = "Syndicate Lavaland Primary Hallway"
-	area_flags = HIDDEN_AREA | BLOBS_ALLOWED | UNIQUE_AREA // WS edit - Fix various startup runtimes
-
-/area/ruin/unpowered/syndicate_lava_base/cargo
-	name = "Syndicate Lavaland Cargo Bay"
-
-/area/ruin/unpowered/syndicate_lava_base/chemistry
-	name = "Syndicate Lavaland Chemistry"
-
-/area/ruin/unpowered/syndicate_lava_base/virology
-	name = "Syndicate Lavaland Virology"
-
-/area/ruin/unpowered/syndicate_lava_base/testlab
-	name = "Syndicate Lavaland Experimentation Lab"
-
-/area/ruin/unpowered/syndicate_lava_base/dormitories
-	name = "Syndicate Lavaland Dormitories"
-
-/area/ruin/unpowered/syndicate_lava_base/telecomms
-	name = "Syndicate Lavaland Telecommunications"
-
 //Xeno Nest
 
 /area/ruin/unpowered/xenonest
@@ -116,3 +80,30 @@
 	name = "Pinnace Wreckage"
 	icon_state = "dk_yellow"
 	always_unpowered = TRUE
+
+/area/ruin/unpowered/codelab
+	name = "Nanotrasen Genetic Research Facility"
+	icon_state = "bluenew"
+
+/area/ruin/unpowered/codelab/exterior
+	name = "Nanotrasen Genetic Research Facility Exterior"
+
+/area/ruin/unpowered/codelab/reception
+	name = "Nanotrasen Genetic Research Reception"
+	icon_state = "green"
+
+/area/ruin/unpowered/codelab/subjectrooms
+	name = "Nanotrasen Genetic Research Test Subject Storage"
+	icon_state = "Sleep"
+
+/area/ruin/unpowered/codelab/storage
+	name = "Nanotrasen Genetic Research Storage"
+	icon_state = "cargo_bay"
+
+/area/ruin/unpowered/codelab/laboratory
+	name = "Nanotrasen Genetic Research Laboratory"
+	icon_state = "bridge"
+
+/area/ruin/unpowered/codelab/maintenance
+	name = "Nanotrasen Genetic Research Maintenance"
+	icon_state = "dk_yellow"

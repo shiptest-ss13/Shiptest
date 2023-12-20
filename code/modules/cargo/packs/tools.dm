@@ -15,15 +15,6 @@
 	crate_name = "ATV crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/tools/ripley
-	name = "Surplus APLU MK-I"
-	desc = "A worn cargo loader that has aged out of active use. Comes with an attachable drill."
-	cost = 3000
-	contains = list(/obj/mecha/working/ripley/cargo,
-					/obj/item/mecha_parts/mecha_equipment/drill)
-	crate_name= "APLU MK-I crate"
-	crate_type = /obj/structure/closet/crate/large
-
 /*
 		Actual tools
 */
@@ -68,6 +59,17 @@
 		/obj/item/mining_scanner
 	)
 	crate_name = "basic mining crate"
+
+/datum/supply_pack/tools/jackhammers
+	name = "Jackhammer Crate"
+	desc = "Contains two jackhammers, ideal for breaking rocks and breaking hull."
+	cost = 3500
+	contains = list(
+		/obj/item/pickaxe/drill/jackhammer,
+		/obj/item/pickaxe/drill/jackhammer,
+	)
+	crate_name = "jackhammer crate"
+
 
 /datum/supply_pack/tools/metalfoam
 	name = "Metal Foam Grenade Crate"
@@ -114,24 +116,24 @@
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/watertank
-	name = "Water Tank Crate"
+	name = "Fresh Water Supply Crate"
 	desc = "Contains a tank of dihydrogen monoxide. Sounds dangerous."
-	cost = 600
+	cost = 500
 	contains = list(/obj/structure/reagent_dispensers/watertank)
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/hightank
-	name = "Large Water Tank Crate"
+	name = "Large Fresh Water Supply Crate"
 	desc = "Contains a high-capacity water tank. Useful for botany or other service jobs."
-	cost = 1200
+	cost = 1500
 	contains = list(/obj/structure/reagent_dispensers/watertank/high)
 	crate_name = "high-capacity water tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
 /datum/supply_pack/tools/foamtank
 	name = "Firefighting Foam Tank Crate"
-	desc = "Contains a tank of firefighting foam. Also known as \"plasmaman's bane\"."
+	desc = "Contains a tank of firefighting foam. Also known as \"Phorid's Bane\"."
 	cost = 1500
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
 	crate_name = "foam tank crate"

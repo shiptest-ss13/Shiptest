@@ -74,8 +74,11 @@
 			var/mob/living/L = M.pulledby
 			L.reset_pull_offsets(M, TRUE)
 
-	if(!check_loc && M.loc != loc)
-		M.forceMove(loc)
+	if (CanPass(M, get_dir(loc, M)))
+		M.Move(loc)
+	else
+		if (!check_loc && M.loc != loc)
+			M.forceMove(loc)
 
 	M.buckling = null
 	M.set_buckled(src)

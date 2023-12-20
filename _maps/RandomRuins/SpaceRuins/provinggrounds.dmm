@@ -17,7 +17,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "aW" = (
-/turf/closed/indestructible/rock/snow/ice/ore,
+/turf/closed/indestructible/rock/snow,
 /area/ruin/space/has_grav/syndicircle/winter)
 "ba" = (
 /obj/structure/filingcabinet/chestdrawer,
@@ -324,7 +324,6 @@
 /area/ruin/space/has_grav/syndicircle/winter)
 "iR" = (
 /obj/effect/mine/shrapnel,
-/obj/effect/turf_decal/weather/snow/corner,
 /obj/item/stack/tile/mineral/snow,
 /obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -796,6 +795,12 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
+"vT" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "wa" = (
 /obj/machinery/modular_computer/console/preset{
 	dir = 1
@@ -994,7 +999,7 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "Bc" = (
 /obj/machinery/light/directional/west,
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "Bj" = (
 /obj/structure/cable{
@@ -1556,7 +1561,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "OH" = (
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "OW" = (
 /turf/closed/wall/mineral/titanium,
@@ -3365,7 +3370,7 @@ AV
 Dm
 Bj
 IY
-ap
+vT
 ap
 OE
 am

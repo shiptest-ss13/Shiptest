@@ -15,7 +15,7 @@
 	//AAAAAAAAAAAAAAAAAAAAAAAAAA
 	dna.features["ethcolor"] = GLOB.color_list_ethereal[GLOB.color_list_ethereal[seed % length(GLOB.color_list_ethereal) + 1]]
 	dna.features["tail_lizard"] = GLOB.tails_list_lizard[seed % length(GLOB.tails_list_lizard) + 1]
-	dna.features["snout"] = GLOB.snouts_list[seed % length(GLOB.snouts_list) + 1]
+	dna.features["face_markings"] = GLOB.face_markings_list[seed % length(GLOB.face_markings_list) + 1]
 	dna.features["horns"] = GLOB.horns_list[seed % length(GLOB.horns_list) + 1]
 	dna.features["frills"] = GLOB.frills_list[seed % length(GLOB.frills_list) + 1]
 	dna.features["spines"] = GLOB.spines_list[seed % length(GLOB.spines_list) + 1]
@@ -24,7 +24,6 @@
 	dna.features["moth_fluff"] = GLOB.moth_fluff_list[seed % length(GLOB.moth_fluff_list) + 1]
 	dna.features["spider_legs"] = GLOB.spider_legs_list[seed % length(GLOB.spider_legs_list) + 1]
 	dna.features["spider_spinneret"] = GLOB.spider_spinneret_list[seed % length(GLOB.spider_spinneret_list) + 1]
-	dna.features["spider_mandibles"] = GLOB.spider_mandibles_list[seed % length(GLOB.spider_mandibles_list) + 1]
 	dna.features["squid_face"] = GLOB.squid_face_list[seed % length(GLOB.squid_face_list) + 1]
 	dna.features["kepori_feathers"] = GLOB.kepori_feathers_list[seed % length(GLOB.kepori_feathers_list) + 1]
 	dna.features["kepori_body_feathers"] = GLOB.kepori_body_feathers_list[seed % length(GLOB.kepori_body_feathers_list) + 1]

@@ -1,7 +1,5 @@
 /datum/job/engineer
 	name = "Station Engineer"
-	total_positions = 5
-	spawn_positions = 5
 	wiki_page = "Station_Engineer" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/engineer
@@ -55,62 +53,6 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
 	head = /obj/item/clothing/head/hardhat
 
-/datum/outfit/job/engineer/electrician
-	name = "Station Engineer (Electrician)"
-
-	l_hand = /obj/item/storage/toolbox/electrical
-	gloves = /obj/item/clothing/gloves/color/grey
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/electrician
-	alt_uniform = null
-	head = /obj/item/clothing/head/hardhat/orange
-
-/datum/outfit/job/engineer/enginetechnician
-	name = "Station Engineer (Engine Technician)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
-	r_pocket = /obj/item/geiger_counter
-
-/datum/outfit/job/engineer/maintenancetechnician
-	name = "Station Engineer (Maintenance Technician)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/hazardvest
-	accessory = /obj/item/clothing/accessory/armband/engine
-	r_pocket = /obj/item/stack/cable_coil
-
-/datum/outfit/job/engineer/juniorengineer
-	name = "Station Engineer (Junior Engineer)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/junior
-	alt_uniform = null
-	head = /obj/item/clothing/head/hardhat/orange
-
-/datum/outfit/job/engineer/seniorengineer
-	name = "Station Engineer (Senior Engineer)"
-
-	belt = null
-	uniform = /obj/item/clothing/under/suit/senior_engineer
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/orange
-	alt_suit = /obj/item/clothing/suit/hazardvest
-	dcoat = null
-	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/hardhat
-	neck = /obj/item/clothing/neck/tie/orange
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
-
-/datum/outfit/job/engineer/telecomsspecialist
-	name = "Station Engineer (Telecommunications Specialist)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/telecomm_specialist
-	alt_uniform = null
-	head = /obj/item/clothing/head/hardhat/dblue
-
-//WS Edit End - Alt-Job Titles
-
-//Shiptest Outfits
-
 /datum/outfit/job/engineer/minutemen
 	name = "Mechanic (Colonial Minutemen)"
 
@@ -133,13 +75,6 @@
 	head = /obj/item/clothing/head/bandana
 	shoes = /obj/item/clothing/shoes/jackboots
 
-/datum/outfit/job/engineer/corporate
-	name = "Ship's Engineer (Corporate)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/maintenance_tech
-	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/jackboots
-
 /datum/outfit/job/engineer/hazard
 	name = "Ship's Engineer (Hazard)"
 
@@ -148,61 +83,6 @@
 	head = /obj/item/clothing/head/hardhat
 	suit = /obj/item/clothing/suit/toggle/hazard
 	alt_suit = /obj/item/clothing/suit/hazardvest
-
-/datum/outfit/job/engineer/syndicate
-	name = "Ship Technician (Engineer)"
-
-	id = /obj/item/card/id/syndicate_command/crew_id
-	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
-	accessory = /obj/item/clothing/accessory/armband/engine
-	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/jackboots
-
-/datum/outfit/job/engineer/gec
-	name = "Station Engineer (GEC)"
-
-	uniform = /obj/item/clothing/under/syndicate/gec
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat
-	id = /obj/item/card/id/syndicate_command/crew_id
-
-/datum/outfit/job/engineer/syndicate/gorlex
-	name = "Mechanic (Gorlex Marauders)"
-
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	shoes = /obj/item/clothing/shoes/workboots
-	alt_uniform = null
-	glasses = null
-
-/datum/outfit/job/engineer/syndicate/sbc
-	name = "Ship Engineer (Twinkleshine)"
-
-	uniform = /obj/item/clothing/under/syndicate/gec
-	accessory = null
-	glasses = /obj/item/clothing/glasses/meson/night
-	head = /obj/item/clothing/head/hardhat/orange
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	ears = /obj/item/radio/headset/syndicate
-	mask = /obj/item/clothing/mask/chameleon
-	back = /obj/item/storage/backpack/industrial
-	belt = /obj/item/storage/belt/utility/syndicate
-	shoes = /obj/item/clothing/shoes/combat
-	suit = /obj/item/clothing/suit/hazardvest
-	alt_suit = /obj/item/clothing/suit/toggle/hazard
-	implants = list(/obj/item/implant/weapons_auth)
-	id = /obj/item/card/id/syndicate_command/crew_id/engi
-	backpack_contents = list(/obj/item/construction/rcd/combat, /obj/item/rcd_ammo/large)
-
-	box = /obj/item/storage/box/survival/syndie
-
-/datum/outfit/job/engineer/syndicate/sbc/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("PlayerSyndicate")
-
-	var/obj/item/card/id/I = H.wear_id
-	I.registered_name = pick(GLOB.twinkle_names) + "-" + num2text(rand(6, 8)) // squidquest real
-	I.assignment = "Engineer"
-	I.access |= list(ACCESS_SYNDICATE)
-	I.update_label()
 
 /datum/outfit/job/engineer/independent/ship_engineer
 	name = "Ship Engineer (Independent)"
@@ -214,21 +94,17 @@
 
 	head = null
 	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel/
+	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
 	glasses = /obj/item/clothing/glasses/welding
 
-/datum/outfit/job/engineer/syndicate/cybersun
-	name = "Engineer (Cybersun)"
-
-	uniform = /obj/item/clothing/under/syndicate/cybersun
-	shoes = /obj/item/clothing/shoes/workboots
-	r_pocket = /obj/item/radio
-	head = /obj/item/clothing/head/beanie/black
-	accessory = /obj/item/clothing/accessory/armband/engine
+/datum/outfit/job/engineer/independent/ship_engineer/salvage
+	belt = null
+	r_pocket = null
+	glasses = null
 
 /datum/outfit/job/engineer/aipirate
 	name = "Nodesman (Engineer)"
@@ -253,3 +129,21 @@
 
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
+
+/datum/outfit/job/engineer/lp
+	name = "LP Engineering Specialist"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lpengie
+	belt = /obj/item/pda/engineering
+	gloves = /obj/item/clothing/gloves/color/yellow
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/eng
+
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi

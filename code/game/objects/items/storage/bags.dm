@@ -60,6 +60,7 @@
 			icon_state = "[initial(icon_state)]1"
 		else
 			icon_state = "[initial(icon_state)]"
+	return ..()
 
 /obj/item/storage/bag/trash/cyborg
 	insertable = FALSE
@@ -68,7 +69,7 @@
 	if(insertable)
 		J.put_in_cart(src, user)
 		J.mybag=src
-		J.update_icon()
+		J.update_appearance()
 	else
 		to_chat(user, "<span class='warning'>You are unable to fit your [name] into the [J.name].</span>")
 		return
@@ -118,7 +119,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_ores)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(Pickup_ores))
 	listeningTo = user
 
 /obj/item/storage/bag/ore/dropped()
@@ -334,7 +335,7 @@
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_QUICK_EMPTY)
 	// Make each item scatter a bit
 	for(var/obj/item/I in oldContents)
-		INVOKE_ASYNC(src, .proc/do_scatter, I)
+		INVOKE_ASYNC(src, PROC_REF(do_scatter), I)
 
 	if(prob(50))
 		playsound(M, 'sound/items/trayhit1.ogg', 50, TRUE)
@@ -344,7 +345,7 @@
 	if(ishuman(M) || ismonkey(M))
 		if(prob(10))
 			M.Paralyze(40)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bag/tray/proc/do_scatter(obj/item/I)
 	for(var/i in 1 to rand(1,2))
@@ -362,11 +363,11 @@
 
 /obj/item/storage/bag/tray/Entered()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bag/tray/Exited()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bag/tray/cafeteria
 	name = "cafeteria tray"

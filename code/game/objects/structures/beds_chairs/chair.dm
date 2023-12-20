@@ -23,7 +23,7 @@
 
 /obj/structure/chair/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE, CALLBACK(src, .proc/can_user_rotate),CALLBACK(src, .proc/can_be_rotated),null)
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE, CALLBACK(src, PROC_REF(can_user_rotate)),CALLBACK(src, PROC_REF(can_be_rotated)),null)
 
 /obj/structure/chair/proc/can_be_rotated(mob/user)
 	return TRUE
@@ -306,9 +306,6 @@
 		new /obj/item/stack/rods(get_turf(loc), 2)
 	qdel(src)
 
-
-
-
 /obj/item/chair/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == UNARMED_ATTACK && prob(hit_reaction_chance))
 		owner.visible_message("<span class='danger'>[owner] fends off [attack_text] with [src]!</span>")
@@ -326,6 +323,12 @@
 			if(C.health < C.maxHealth*0.5)
 				C.Paralyze(20)
 		smash(user)
+
+/obj/structure/chair/join_player_here(mob/M)
+	// Placing a mob in a chair will attempt to buckle it, or else fall back to default.
+	if (isliving(M) && buckle_mob(M, FALSE, FALSE))
+		return
+	..()
 
 /obj/item/chair/greyscale
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
@@ -444,19 +447,9 @@
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
 	Mob.pixel_y += 2
 	.=..()
-	if(iscarbon(Mob))
-		INVOKE_ASYNC(src, .proc/snap_check, Mob)
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
 	Mob.pixel_y -= 2
-
-/obj/structure/chair/plastic/proc/snap_check(mob/living/carbon/Mob)
-	if (Mob.nutrition >= NUTRITION_LEVEL_FAT)
-		to_chat(Mob, "<span class='warning'>The chair begins to pop and crack, you're too heavy!</span>")
-		if(do_after(Mob, 60, 1, Mob, 0))
-			Mob.visible_message("<span class='notice'>The plastic chair snaps under [Mob]'s weight!</span>")
-			new /obj/effect/decal/cleanable/plastic(loc)
-			qdel(src)
 
 /obj/item/chair/plastic
 	name = "folding plastic chair"

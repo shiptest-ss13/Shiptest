@@ -68,13 +68,13 @@
 		if(3)
 			take_damage(rand(10, 90), BRUTE, "bomb", 0)
 
-/obj/bullet_act(obj/projectile/P)
+/obj/bullet_act(obj/projectile/hitting_projectile)
 	. = ..()
-	playsound(src, P.hitsound, 50, TRUE)
-	if(P.suppressed != SUPPRESSED_VERY)
-		visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+	bullet_hit_sfx(hitting_projectile)
+	if(hitting_projectile.suppressed != SUPPRESSED_VERY)
+		visible_message("<span class='danger'>[src] is hit by \a [hitting_projectile]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
-		take_damage(P.damage, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armour_penetration)
+		take_damage(hitting_projectile.damage, hitting_projectile.damage_type, hitting_projectile.flag, 0, turn(hitting_projectile.dir, 180), hitting_projectile.armour_penetration)
 
 ///Called to get the damage that hulks will deal to the obj.
 /obj/proc/hulk_damage()
@@ -175,7 +175,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 		if(!acid_level)
 			SSacid.processing[src] = src
-			update_icon()
+			update_appearance()
 		var/acid_cap = acidpwr * 300 //so we cannot use huge amounts of weak acids to do as well as strong acids.
 		if(acid_level < acid_cap)
 			acid_level = min(acid_level + acidpwr * acid_volume, acid_cap)
@@ -211,7 +211,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(!(resistance_flags & ON_FIRE) && (resistance_flags & FLAMMABLE) && !(resistance_flags & FIRE_PROOF))
 		resistance_flags |= ON_FIRE
 		SSfire_burning.processing[src] = src
-		update_icon()
+		update_appearance()
 		return 1
 	return ..()
 
@@ -225,7 +225,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 /obj/proc/extinguish()
 	if(resistance_flags & ON_FIRE)
 		resistance_flags &= ~ON_FIRE
-		update_icon()
+		update_appearance()
 		SSfire_burning.processing -= src
 
 ///Called when the obj is hit by a tesla bolt.
@@ -233,7 +233,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(QDELETED(src))
 		return 0
 	obj_flags |= BEING_SHOCKED
-	addtimer(CALLBACK(src, .proc/reset_shocked), 10)
+	addtimer(CALLBACK(src, PROC_REF(reset_shocked)), 10)
 	return power / 2
 
 //The surgeon general warns that being buckled to certain objects receiving powerful shocks is greatly hazardous to your health

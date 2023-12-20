@@ -31,6 +31,13 @@
 	item_state = "formal_solgov"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/solgov/formal/skirt
+	name = "\improper SolGov formal suitskirt"
+	desc = "A formal SolGov uniform, commonly used by representatives and officials."
+	icon_state = "formal_solgov_skirt"
+	item_state = "formal_solgov_skirt"
+	can_adjust = FALSE
+
 /obj/item/clothing/under/solgov/formal/terragov
 	name = "\improper TerraGov formal uniform"
 	desc = "A formal SolGov uniform, for special occasions. This one is colored in original TerraGov green."

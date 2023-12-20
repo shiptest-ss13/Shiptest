@@ -113,7 +113,7 @@
 	deltimer(expression_timer)
 	add_overlay(type)
 	if(duration)
-		expression_timer = addtimer(CALLBACK(src, .proc/set_expression, "neutral"), duration, TIMER_STOPPABLE)
+		expression_timer = addtimer(CALLBACK(src, PROC_REF(set_expression), "neutral"), duration, TIMER_STOPPABLE)
 
 /obj/machinery/pinpointer_dispenser/proc/pointat(atom)
 	visible_message("<span class='name'>[src]</span> points at [atom].")
@@ -126,7 +126,6 @@
 	icon_state = "pinpointer_way"
 	resistance_flags = NONE
 	var/owner = null
-	var/list/beacons = list()
 	var/roundstart = FALSE
 
 /obj/item/pinpointer/wayfinding/attack_self(mob/living/user)
@@ -138,8 +137,7 @@
 	if (!owner)
 		owner = user.real_name
 
-	if(beacons.len)
-		beacons.Cut()
+	var/list/beacons = list()
 	for(var/obj/machinery/navbeacon/B in GLOB.wayfindingbeacons)
 		beacons[B.codes["wayfinding"]] = B
 

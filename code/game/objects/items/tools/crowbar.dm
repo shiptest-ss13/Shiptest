@@ -68,11 +68,36 @@
 		to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
 		usesound = 'sound/items/jaws_cut.ogg'
 		icon_state = "jaws_cutter"
+		update_appearance()
 	else
 		tool_behaviour = TOOL_CROWBAR
 		to_chat(user, "<span class='notice'>You attach the prying jaws to [src].</span>")
 		usesound = 'sound/items/jaws_pry.ogg'
 		icon_state = "jaws_pry"
+		update_appearance()
+
+/obj/item/crowbar/power/attack_hand(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/crowbar/power/pickup(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/crowbar/power/dropped(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/crowbar/power/update_overlays()
+	. = ..()
+	if(ismob(loc))
+		var/mode_ovelay
+		switch(tool_behaviour)
+			if (TOOL_CROWBAR)
+				mode_ovelay = "jaw_pry"
+			if (TOOL_WIRECUTTER)
+				mode_ovelay = "jaw_cut"
+		. += mode_ovelay
 
 /obj/item/crowbar/power/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && tool_behaviour == TOOL_WIRECUTTER)

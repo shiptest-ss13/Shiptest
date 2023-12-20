@@ -16,7 +16,7 @@
 
 /datum/component/mirv/RegisterWithParent()
 	if(ismachinery(parent) || isstructure(parent) || isgun(parent)) // turrets, etc
-		RegisterSignal(parent, COMSIG_PROJECTILE_ON_HIT, .proc/projectile_hit)
+		RegisterSignal(parent, COMSIG_PROJECTILE_ON_HIT, PROC_REF(projectile_hit))
 
 /datum/component/mirv/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_PROJECTILE_ON_HIT))
@@ -24,7 +24,7 @@
 /datum/component/mirv/proc/projectile_hit(atom/fired_from, atom/movable/firer, atom/target, Angle)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, .proc/do_shrapnel, firer, target)
+	INVOKE_ASYNC(src, PROC_REF(do_shrapnel), firer, target)
 
 /datum/component/mirv/proc/do_shrapnel(mob/firer, atom/target)
 	if(radius < 1)
@@ -39,5 +39,5 @@
 			P.range = override_projectile_range
 		P.preparePixelProjectile(shootat_turf, target)
 		P.firer = firer // don't hit ourself that would be really annoying
-		P.impacted = list(target = TRUE) // don't hit the target we hit already with the flak
+		LAZYSET(P.impacted, target, TRUE) // don't hit the target we hit already with the flak
 		P.fire()

@@ -53,7 +53,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_CHANGELING = /datum/game_mode/changeling,
 	ROLE_WIZARD = /datum/game_mode/wizard,
 	ROLE_MALF,
-	ROLE_REV = /datum/game_mode/revolution,
 	ROLE_ALIEN,
 	ROLE_PAI,
 	ROLE_CULTIST = /datum/game_mode/cult,
@@ -61,13 +60,11 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_NINJA,
 	ROLE_OBSESSED,
 	ROLE_SPACE_DRAGON,
-	ROLE_MONKEY = /datum/game_mode/monkey,
 	ROLE_REVENANT,
 	ROLE_ABDUCTOR,
 	ROLE_DEVIL = /datum/game_mode/devil,
 	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
 	ROLE_SENTIENCE,
-	ROLE_FAMILIES = /datum/game_mode/gang,
 	ROLE_BORER
 ))
 

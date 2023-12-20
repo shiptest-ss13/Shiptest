@@ -2,6 +2,7 @@
 	name = "singularity hammer"
 	desc = "The pinnacle of close combat technology, the hammer harnesses the power of a miniaturized singularity to deal crushing blows."
 	icon_state = "singularity0"
+	base_icon_state = "singularity_hammer"
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -18,13 +19,13 @@
 
 /obj/item/singularityhammer/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	START_PROCESSING(SSobj, src)
 
 /obj/item/singularityhammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_multiplier=4, icon_wielded="singularity1")
+	AddComponent(/datum/component/two_handed, force_multiplier=4, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
 /obj/item/singularityhammer/proc/on_wield(obj/item/source, mob/user)
@@ -39,7 +40,8 @@
 	wielded = FALSE
 
 /obj/item/singularityhammer/update_icon_state()
-	icon_state = "singularity0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/singularityhammer/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -88,6 +90,7 @@
 	name = "Mjolnir"
 	desc = "A weapon worthy of a god, able to strike with the force of a lightning bolt. It crackles with barely contained energy."
 	icon_state = "mjollnir0"
+	base_icon_state = "mjollnir"
 	lefthand_file = 'icons/mob/inhands/weapons/hammers_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/hammers_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -100,12 +103,12 @@
 
 /obj/item/mjollnir/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/mjollnir/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_multiplier=5, icon_wielded="mjollnir1", attacksound="sparks")
+	AddComponent(/datum/component/two_handed, force_multiplier=5, icon_wielded="[base_icon_state]1", attacksound="sparks")
 
 /// triggered on wield of two handed item
 /obj/item/mjollnir/proc/on_wield(obj/item/source, mob/user)
@@ -116,7 +119,8 @@
 	wielded = FALSE
 
 /obj/item/mjollnir/update_icon_state()
-	icon_state = "mjollnir0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/mjollnir/proc/shock(mob/living/target)
 	target.Stun(60)

@@ -46,6 +46,25 @@
 	r_pocket = /obj/item/tank/internals/emergency_oxygen
 	id = /obj/item/card/id/syndicate
 
+/obj/effect/mob_spawn/human/corpse/syndicateramzi
+	name = "Ramzi's Clique Commando"
+	id_job = "Cutthroat"
+	hairstyle = "Bald"
+	facial_hairstyle = "Shaved"
+	outfit = /datum/outfit/syndicateramzicorpse
+
+/datum/outfit/syndicateramzicorpse
+	name = "Ramzi's Clique Commando Corpse"
+	uniform = /obj/item/clothing/under/syndicate/gorlex
+	suit = /obj/item/clothing/suit/space/hardsuit/syndi/ramzi
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	ears = /obj/item/radio/headset
+	mask = /obj/item/clothing/mask/gas/syndicate
+	back = /obj/item/tank/jetpack/oxygen
+	r_pocket = /obj/item/tank/internals/emergency_oxygen
+	id = /obj/item/card/id/syndicate
+
 
 /obj/effect/mob_spawn/human/corpse/syndicatestormtrooper
 	name = "Syndicate Stormtrooper"
@@ -100,11 +119,11 @@
 
 /obj/effect/mob_spawn/human/corpse/frontier
 	name = "Frontiersman"
-	outfit = /datum/outfit/russiancorpse
+	outfit = /datum/outfit/frontier
 	hairstyle = "Bald"
 	facial_hairstyle = "Shaved"
 
-/datum/outfit/russiancorpse
+/datum/outfit/frontier
 	name = "Frontiersman Corpse"
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -112,12 +131,12 @@
 	gloves = /obj/item/clothing/gloves/color/black
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged
-	outfit = /datum/outfit/russiancorpse
+	outfit = /datum/outfit/frontier
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper
-	outfit = /datum/outfit/russiancorpse/trooper
+	outfit = /datum/outfit/frontier/trooper
 
-/datum/outfit/russiancorpse/trooper
+/datum/outfit/frontier/trooper
 	name = "Frontiersman Armored Corpse"
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	shoes = /obj/item/clothing/shoes/combat
@@ -128,10 +147,10 @@
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/officer
 	name = "Frontiersman Officer"
-	outfit = /datum/outfit/russiancorpse/officer
+	outfit = /datum/outfit/frontier/officer
 
-/datum/outfit/russiancorpse/officer
-	name = "Frontiersman officer Corpse"
+/datum/outfit/frontier/officer
+	name = "Frontiersman Officer Corpse"
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
 	suit = /obj/item/clothing/suit/armor/frontier
 	shoes = /obj/item/clothing/shoes/combat
@@ -139,14 +158,19 @@
 	head = /obj/item/clothing/head/caphat/frontier
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy
-	outfit = /datum/outfit/russiancorpse/trooper/heavy
+	outfit = /datum/outfit/frontier/trooper/heavy
 
-/datum/outfit/russiancorpse/trooper/heavy
+/datum/outfit/frontier/trooper/heavy
 	name = "Frontiersman Heavy Corpse"
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	back = /obj/item/minigunpack
 
+/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
+	outfit = /datum/outfit/russiancorpse/trooper/heavy/gunless
+
+/datum/outfit/russiancorpse/trooper/heavy/gunless
+	back = null
 
 /obj/effect/mob_spawn/human/corpse/wizard
 	name = "Space Wizard Corpse"

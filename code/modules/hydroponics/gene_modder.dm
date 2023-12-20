@@ -58,6 +58,7 @@
 		icon_state = "dnamod-off"
 	else
 		icon_state = "dnamod"
+	return ..()
 
 /obj/machinery/plantgenes/update_overlays()
 	. = ..()
@@ -68,7 +69,7 @@
 
 /obj/machinery/plantgenes/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "dnamod", "dnamod", I))
-		update_icon()
+		update_appearance()
 		return
 	if(default_deconstruction_crowbar(I))
 		return
@@ -327,7 +328,7 @@
 						disk.update_disk_name()
 						qdel(seed)
 						seed = null
-						update_icon()
+						update_appearance()
 				if("replace")
 					if(disk && disk.gene && istype(disk.gene, G.type) && istype(G, /datum/plant_gene/core))
 						seed.genes -= G
@@ -359,7 +360,7 @@
 	S.forceMove(src)
 	seed = S
 	update_genes()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/plantgenes/proc/eject_disk()
 	if (disk && !operation)

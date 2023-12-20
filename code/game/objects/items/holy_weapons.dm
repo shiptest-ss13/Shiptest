@@ -230,7 +230,7 @@
 			nullrod_icons += list(initial(rodtype.name) = image(icon = initial(rodtype.icon), icon_state = initial(rodtype.icon_state)))
 
 	nullrod_icons = sortList(nullrod_icons)
-	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, .proc/check_menu, M), radius = 42, require_near = TRUE)
+	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), M), radius = 42, require_near = TRUE)
 	if(!choice || !check_menu(M))
 		return
 
@@ -287,7 +287,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	force = 5
 	slot_flags = ITEM_SLOT_BACK
-	block_chance = 50
+	block_chance = 40
 	var/shield_icon = "shield-red"
 
 /obj/item/nullrod/staff/worn_overlays(isinhands)

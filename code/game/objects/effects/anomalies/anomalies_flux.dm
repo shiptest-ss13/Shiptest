@@ -35,6 +35,9 @@
 
 /obj/effect/anomaly/flux/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
+	//the countdown effect, lmao
+	if(iseffect(AM))
+		return
 	mobShock(AM)
 	tesla_zap(src, zap_range, zap_power, zap_flags)
 	new /obj/effect/particle_effect/sparks(loc)

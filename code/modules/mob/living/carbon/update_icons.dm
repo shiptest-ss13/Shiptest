@@ -120,7 +120,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_MASK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_MASK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(wear_mask)
 		if(!(ITEM_SLOT_MASK in check_obscured_slots()))
@@ -134,7 +134,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_NECK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(wear_neck)
 		if(!(ITEM_SLOT_NECK in check_obscured_slots()))
@@ -148,7 +148,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(back)
 		overlays_standing[BACK_LAYER] = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi', mob_species = dna?.species)
@@ -164,7 +164,7 @@
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_BACK) + 1])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_HEAD) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 	if(head)
 		overlays_standing[HEAD_LAYER] = head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = 'icons/mob/clothing/head.dmi', mob_species = dna?.species)
@@ -188,7 +188,7 @@
 		for(var/hand in hud_used.hand_slots)
 			var/atom/movable/screen/inventory/hand/H = hud_used.hand_slots[hand]
 			if(H)
-				H.update_icon()
+				H.update_appearance()
 
 //update whether our head item appears on our hud.
 /mob/living/carbon/proc/update_hud_head(obj/item/I)
@@ -343,7 +343,7 @@ GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
 /mob/living/carbon/proc/update_hands_on_rotate() //Required for unconventionally placed hands on species
 	SIGNAL_HANDLER
 	if(!layered_hands) //Defined in human_defines.dm
-		RegisterSignal(src, COMSIG_ATOM_DIR_CHANGE, .proc/special_update_hands)
+		RegisterSignal(src, COMSIG_ATOM_DIR_CHANGE, PROC_REF(special_update_hands))
 		layered_hands = TRUE
 
 /mob/living/carbon/proc/stop_updating_hands()

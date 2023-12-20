@@ -297,6 +297,16 @@
 	icon = "goose"
 	desc = "Drink till you puke and/or break the laws of reality!"
 
+/datum/barsign/dustydunesaloon
+	name = "Dusty Dune Saloon"
+	icon = "saloon"
+	desc = "The perfect place to get trashed then get killed in a shootout"
+
+/datum/barsign/birdsnest
+	name = "Bird's Nest ♡"
+	icon = "birdsnest"
+	desc = "It is NOT what you're thinking it is."
+
 /datum/barsign/hiddensigns
 	hidden = TRUE
 

@@ -15,7 +15,7 @@
 	///Damage under this value will be completely ignored
 	var/damage_deflection = 0
 
-	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF
+	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 
 	var/acid_level = 0 //how much acid is on that obj
 
@@ -219,7 +219,7 @@
 	if(machine)
 		unset_machine()
 	machine = O
-	RegisterSignal(O, COMSIG_PARENT_QDELETING, .proc/unset_machine)
+	RegisterSignal(O, COMSIG_PARENT_QDELETING, PROC_REF(unset_machine))
 	if(istype(O))
 		O.obj_flags |= IN_USE
 
@@ -352,7 +352,7 @@
 		items += list("[reskin_option]" = item_image)
 	sortList(items)
 
-	var/pick = show_radial_menu(M, src, items, custom_check = CALLBACK(src, .proc/check_reskin_menu, M), radius = 38, require_near = TRUE)
+	var/pick = show_radial_menu(M, src, items, custom_check = CALLBACK(src, PROC_REF(check_reskin_menu), M), radius = 38, require_near = TRUE)
 	if(!pick)
 		return
 	if(!unique_reskin[pick])

@@ -32,11 +32,6 @@
 		else if (light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD) //heal in the dark
 			H.heal_overall_damage(1,1, 0, BODYTYPE_ORGANIC)
 
-/datum/species/shadow/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return ..()
-
 /datum/species/shadow/nightmare
 	name = "Nightmare"
 	id = "nightmare"
@@ -218,7 +213,7 @@
 		var/obj/item/pda/PDA = O
 		PDA.set_light_on(FALSE)
 		PDA.set_light_range(0) //It won't be turning on again.
-		PDA.update_icon()
+		PDA.update_appearance()
 		visible_message("<span class='danger'>The light in [PDA] shorts out!</span>")
 	else
 		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")

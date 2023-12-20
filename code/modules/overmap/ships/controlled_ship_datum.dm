@@ -59,7 +59,7 @@
 	/// Short memo of the ship shown to new joins
 	var/memo = null
 	///Assoc list of remaining open job slots (job = remaining slots)
-	var/list/job_slots = list(new /datum/job/captain() = 1, new /datum/job/assistant() = 5)
+	var/list/job_slots
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
@@ -77,7 +77,9 @@
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
-		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
+		if(shuttle_port?.virtual_z() == null)
+			return TRUE
+		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port?.virtual_z())
 	return TRUE
 
 /**
@@ -103,32 +105,47 @@
 		ship_account = new(name, source_template.starting_funds)
 
 #ifdef UNIT_TESTS
-	Rename("[source_template]")
+	Rename("[source_template]", TRUE)
 #else
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
 	SSovermap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
+	//SHOULD be called first
+	. = ..()
 	SSovermap.controlled_ships -= src
+	helms.Cut()
+	QDEL_LIST(missions)
+	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
-		shuttle_port.intoTheSunset()
+		shuttle_port.current_ship = null
+		qdel(shuttle_port, TRUE)
+		shuttle_port = null
 	if(!QDELETED(ship_account))
 		QDEL_NULL(ship_account)
+	if(!QDELETED(shipkey))
+		QDEL_NULL(shipkey)
+	QDEL_LIST(manifest)
+	job_slots.Cut()
 	for(var/a_key in applications)
+		if(isnull(applications[a_key]))
+			continue
 		// it handles removal itself
 		qdel(applications[a_key])
+	LAZYCLEARLIST(applications)
 	// set ourselves to ownerless to unregister signals
 	set_owner_mob(null)
-	return ..()
 
 /datum/overmap/ship/controlled/get_jump_to_turf()
 	return get_turf(shuttle_port)
 
 /datum/overmap/ship/controlled/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	if(ticket.target != src || ticket.issuer != to_dock)
+		ticket.docking_error = "Invalid target."
 		return FALSE
 	if(!shuttle_port.check_dock(ticket.target_port))
+		ticket.docking_error = "Targeted docking port invalid."
 		return FALSE
 	return TRUE
 
@@ -187,10 +204,10 @@
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn
 	refresh_engines()
 	calculate_avg_fuel()
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		if(!E.enabled)
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(!real_engine.enabled)
 			continue
-		thrust_used += E.burn_engine(percentage, deltatime)
+		thrust_used += real_engine.burn_engine(percentage, deltatime)
 
 	thrust_used = thrust_used / (shuttle_port.turf_count * 100)
 	est_thrust = thrust_used / percentage * 100 //cheeky way of rechecking the thrust, check it every time it's used
@@ -202,10 +219,10 @@
  */
 /datum/overmap/ship/controlled/proc/refresh_engines()
 	var/calculated_thrust
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		E.update_engine()
-		if(E.enabled)
-			calculated_thrust += E.thrust
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		real_engine.update_engine()
+		if(real_engine.enabled)
+			calculated_thrust += real_engine.thrust
 	est_thrust = calculated_thrust / (shuttle_port.turf_count * 100)
 
 /**
@@ -214,10 +231,10 @@
 /datum/overmap/ship/controlled/proc/calculate_avg_fuel()
 	var/fuel_avg = 0
 	var/engine_amnt = 0
-	for(var/obj/machinery/power/shuttle/engine/E as anything in shuttle_port.engine_list)
-		if(!E.enabled)
+	for(var/obj/machinery/power/shuttle/engine/real_engine as anything in shuttle_port.get_engines())
+		if(!real_engine.enabled)
 			continue
-		fuel_avg += E.return_fuel() / E.return_fuel_cap()
+		fuel_avg += real_engine.return_fuel() / real_engine.return_fuel_cap()
 		engine_amnt++
 	if(!engine_amnt || !fuel_avg)
 		avg_fuel_amnt = 0
@@ -272,7 +289,8 @@
 		eligible = TRUE
 	)
 	LAZYSET(owner_candidates, H.mind, mind_info)
-	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, .proc/crew_mind_deleting)
+	H.mind.original_ship = WEAKREF(src)
+	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, PROC_REF(crew_mind_deleting))
 	if(!owner_mob)
 		set_owner_mob(H)
 
@@ -299,7 +317,7 @@
 		// turns out that timers don't get added to active_timers if the datum is getting qdeleted.
 		// so this timer was sitting around after deletion and clogging up runtime logs. thus, the QDELING() check. oops!
 		if(!owner_check_timer_id && !QDELING(src))
-			owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+			owner_check_timer_id = addtimer(CALLBACK(src, PROC_REF(check_owner)), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 		return
 
 	owner_mob = new_owner
@@ -313,8 +331,8 @@
 	if(!(owner_mind in owner_candidates))
 		stack_trace("[src] tried to set ship owner to [new_owner] despite its mind [new_owner.mind] not being in owner_candidates!")
 
-	RegisterSignal(owner_mob, COMSIG_MOB_LOGOUT, .proc/owner_mob_logout)
-	RegisterSignal(owner_mob, COMSIG_MOB_GO_INACTIVE, .proc/owner_mob_afk)
+	RegisterSignal(owner_mob, COMSIG_MOB_LOGOUT, PROC_REF(owner_mob_logout))
+	RegisterSignal(owner_mob, COMSIG_MOB_GO_INACTIVE, PROC_REF(owner_mob_afk))
 	if(!owner_act)
 		owner_act = new(src)
 	owner_act.Grant(owner_mob)
@@ -413,7 +431,7 @@
 		icon_state = "shipkey_plasticbod"
 		var/our_color = pick(key_colors)
 		add_atom_colour(key_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+		update_appearance()
 	name = "ship key ([master_ship.name])"
 
 /obj/item/key/ship/update_overlays()

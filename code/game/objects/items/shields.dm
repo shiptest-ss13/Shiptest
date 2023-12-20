@@ -2,6 +2,7 @@
 	name = "shield"
 	icon = 'icons/obj/shields.dmi'
 	block_chance = 50
+	block_cooldown_time = 0 SECONDS
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 	var/transparent = FALSE	// makes beam projectiles pass through the shield
 
@@ -110,7 +111,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
 	resistance_flags = FLAMMABLE
-	block_chance = 30
+	block_chance = 25
 	transparent = FALSE
 	max_integrity = 55
 	w_class = WEIGHT_CLASS_NORMAL
@@ -136,17 +137,17 @@
 
 /obj/item/shield/riot/flash/attack(mob/living/M, mob/user)
 	. =  embedded_flash.attack(M, user)
-	update_icon()
+	update_appearance()
 
 /obj/item/shield/riot/flash/attack_self(mob/living/carbon/user)
 	. = embedded_flash.attack_self(user)
-	update_icon()
+	update_appearance()
 
 /obj/item/shield/riot/flash/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	. = ..()
 	if (. && !embedded_flash.burnt_out)
 		embedded_flash.activate()
-		update_icon()
+		update_appearance()
 
 
 /obj/item/shield/riot/flash/attackby(obj/item/W, mob/user)
@@ -164,14 +165,14 @@
 				qdel(embedded_flash)
 				embedded_flash = flash
 				flash.forceMove(src)
-				update_icon()
+				update_appearance()
 				return
 	..()
 
 /obj/item/shield/riot/flash/emp_act(severity)
 	. = ..()
 	embedded_flash.emp_act(severity)
-	update_icon()
+	update_appearance()
 
 /obj/item/shield/riot/flash/update_icon_state()
 	if(!embedded_flash || embedded_flash.burnt_out)
@@ -180,6 +181,7 @@
 	else
 		icon_state = "flashshield"
 		item_state = "flashshield"
+	return ..()
 
 /obj/item/shield/riot/flash/examine(mob/user)
 	. = ..()

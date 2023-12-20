@@ -134,13 +134,6 @@ LINEN BINS
 	item_state = "sheetrd"
 	dream_messages = list("authority", "a silvery ID", "a bomb", "a mech", "a facehugger", "maniacal laughter", "the research director")
 
-// for Free Golems.
-/obj/item/bedsheet/rd/royal_cape
-	name = "Royal Cape of the Liberator"
-	desc = "Majestic."
-	dream_messages = list("mining", "stone", "a golem", "freedom", "doing whatever")
-	custom_price = 500
-
 /obj/item/bedsheet/medical
 	name = "medical blanket"
 	desc = "It's a sterilized* blanket commonly used in the Medbay.  *Sterilization is voided if a virologist is present within a 10 LY radius*."
@@ -266,8 +259,8 @@ LINEN BINS
 	dying_key = DYE_REGISTRY_DOUBLE_BEDSHEET
 
 /obj/item/bedsheet/double/Initialize()
-	..()
-	desc += " This one is double."
+	. = ..()
+	desc += " This one is double-sized."
 
 /obj/item/bedsheet/double/blue
 	icon_state = "double_sheetblue"
@@ -455,11 +448,12 @@ LINEN BINS
 			icon_state = "linenbin-half"
 		else
 			icon_state = "linenbin-full"
+	return ..()
 
 /obj/structure/bedsheetbin/fire_act(exposed_temperature, exposed_volume)
 	if(amount)
 		amount = 0
-		update_icon()
+		update_appearance()
 	..()
 
 /obj/structure/bedsheetbin/attackby(obj/item/I, mob/user, params)
@@ -469,7 +463,7 @@ LINEN BINS
 		sheets.Add(I)
 		amount++
 		to_chat(user, "<span class='notice'>You put [I] in [src].</span>")
-		update_icon()
+		update_appearance()
 
 	else if(default_unfasten_wrench(user, I, 5))
 		return
@@ -518,7 +512,7 @@ LINEN BINS
 		B.forceMove(drop_location())
 		user.put_in_hands(B)
 		to_chat(user, "<span class='notice'>You take [B] out of [src].</span>")
-		update_icon()
+		update_appearance()
 
 		if(hidden)
 			hidden.forceMove(drop_location())
@@ -541,7 +535,7 @@ LINEN BINS
 
 		B.forceMove(drop_location())
 		to_chat(user, "<span class='notice'>You telekinetically remove [B] from [src].</span>")
-		update_icon()
+		update_appearance()
 
 		if(hidden)
 			hidden.forceMove(drop_location())

@@ -76,6 +76,10 @@
 	name = "Turtleneck (Greyscale)"
 	icon_state = "turtle"
 
+/datum/sprite_accessory/undershirt/turtle_crop
+	name = "Cropped Turtleneck (Greyscale)"
+	icon_state = "turtle_crop"
+
 /datum/sprite_accessory/undershirt/turtle_sleeveless
 	name = "Sleeveless Turtleneck (Greyscale)"
 	icon_state = "turtle_sleeveless"
@@ -106,6 +110,11 @@
 /datum/sprite_accessory/undershirt/tankfire
 	name = "Tank Top (Fire)"
 	icon_state = "tank_fire"
+	use_static = TRUE
+
+/datum/sprite_accessory/undershirt/rilena
+	name = "T-Shirt (RILENA)"
+	icon_state = "rilena"
 	use_static = TRUE
 
 // Pride shirts

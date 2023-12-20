@@ -47,7 +47,7 @@
 							"<span class='userdanger'>[user] forces you to [apply_method] [src].</span>")
 
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), M, "<span class='notice'>[pick(strings(REDPILL_FILE, "redpill_questions"))]</span>"), 50)
 
 	if(reagents.total_volume)
 		reagents.trans_to(M, reagents.total_volume, transfered_by = user, method = apply_type)
@@ -270,11 +270,11 @@
 
 /*WS Begin - No Cobbychem
 
-/obj/item/reagent_containers/pill/C2/probital
+/obj/item/reagent_containers/pill/c2/probital
 	name = "Probital pill"
 	desc = "Used to treat brute damage of minor and moderate severity.The carving in the pill says 'Eat before ingesting'. Causes fatigue and diluted with granibitaluri."
 	icon_state = "pill12"
-	list_reagents = list(/datum/reagent/medicine/C2/probital = 5, /datum/reagent/medicine/granibitaluri = 10)
+	list_reagents = list(/datum/reagent/medicine/c2/probital = 5, /datum/reagent/medicine/granibitaluri = 10)
 	rename_with_volume = TRUE
 
 WS End */

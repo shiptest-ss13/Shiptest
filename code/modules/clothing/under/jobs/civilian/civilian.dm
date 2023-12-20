@@ -23,7 +23,6 @@
 	icon_state = "barman_skirt"
 	item_state = "bar_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/civilian/chaplain
@@ -53,7 +52,6 @@
 	desc = "A skirt which is given only to the most <b>hardcore</b> cooks in space."
 	icon_state = "chef_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/command/head_of_personnel
@@ -210,7 +208,6 @@
 	icon_state = "lawyer_purp_skirt"
 	item_state = "p_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
 /obj/item/clothing/under/rank/civilian/lawyer/galaxy
@@ -243,30 +240,3 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
-/obj/item/clothing/under/rank/civilian/janitor/custodian
-	name = "custodian's jumpsuit"
-	desc = "All the cleaning, none of the praise for custodians that wear this. It has minor protection from biohazards."
-
-	icon_state = "custodian"
-
-/obj/item/clothing/under/rank/civilian/janitor/custodian/skirt
-	name = "custodian's jumpskirt"
-	icon_state = "custodian_skirt"
-	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-
-/obj/item/clothing/under/rank/civilian/janitor/sanitation_tech
-	name = "sanitation technician's jumpsuit"
-	desc = "Worn by freelance Sanitation Technicians, forever fighting a noble war against the endless filth of the frontier. It has minor protection from biohazards."
-
-	icon_state = "sanitation_technician"
-
-/obj/item/clothing/under/rank/civilian/janitor/sanitation_tech/skirt
-	name = "sanitation technician's jumpskirt"
-	icon_state = "sanitation_technician_skirt"
-	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
-

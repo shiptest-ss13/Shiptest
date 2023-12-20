@@ -83,14 +83,6 @@
 	req_access = list(ACCESS_SYNDICATE)
 	has_hatch = FALSE
 
-/obj/machinery/door/airlock/glass/incinerator/syndicatelava_interior
-	name = "Turbine Interior Airlock"
-	id_tag = INCINERATOR_SYNDICATELAVA_AIRLOCK_INTERIOR
-
-/obj/machinery/door/airlock/glass/incinerator/syndicatelava_exterior
-	name = "Turbine Exterior Airlock"
-	id_tag = INCINERATOR_SYNDICATELAVA_AIRLOCK_EXTERIOR
-
 /obj/machinery/door/airlock/command/glass
 	opacity = FALSE
 	glass = TRUE
@@ -253,7 +245,7 @@
 		DA.glass = TRUE
 	if(heat_proof)
 		DA.heat_proof_finished = TRUE
-	DA.update_icon()
+	DA.update_appearance()
 	DA.update_name()
 	qdel(src)
 
@@ -539,7 +531,7 @@
 	name = "airlock"
 	desc = "It opens and closes."
 	stealthy = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/door/airlock/cult/proc/reveal()
 	icon = initial(icon)
@@ -547,7 +539,7 @@
 	name = initial(name)
 	desc = initial(desc)
 	stealthy = initial(stealthy)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/door/airlock/cult/narsie_act()
 	return
@@ -605,3 +597,23 @@
 
 /obj/machinery/door/airlock/glass_large/narsie_act()
 	return
+
+//////////////////////////////////
+/*
+	Outpost Airlocks
+*/
+
+/obj/machinery/door/airlock/outpost //secure anti-tiding airlock
+	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
+	overlays_file = 'icons/obj/doors/airlocks/centcom/overlays.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_centcom //all of the above needs to be changed if editing the icon
+	desc = "It opens and closes. Effectively impervious to conventional methods of destruction."
+	normal_integrity = INFINITY
+	explosion_block = INFINITY
+	has_hatch = FALSE
+	req_one_access_txt = "101" //109 for command areas
+
+/obj/machinery/door/airlock/outpost/attackby(obj/item/C, mob/user, params) //maintenance panel cannot be opened
+	if(C.tool_behaviour == TOOL_SCREWDRIVER)
+		return
+	..()

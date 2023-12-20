@@ -395,6 +395,6 @@
 	name = "medical spray (hercuri)"
 	desc = "A medical spray bottle.This one contains hercuri, a medicine used to negate the effects of dangerous high-temperature environments. Careful not to freeze the patient!"
 	icon_state = "sprayer_large"
-	list_reagents = list(/datum/reagent/medicine/C2/hercuri = 100)
+	list_reagents = list(/datum/reagent/medicine/c2/hercuri = 100)
 
 WS End */

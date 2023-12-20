@@ -4,6 +4,7 @@
 	desc = "A flying cleaning robot, he'll chase down people who can't shower properly!"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "drone"
+	base_icon_state = "hygienebot"
 	density = FALSE
 	anchored = FALSE
 	health = 100
@@ -31,7 +32,7 @@
 
 /mob/living/simple_animal/bot/hygienebot/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 	var/datum/job/janitor/J = new/datum/job/janitor
 	access_card.access += J.get_access()
 	prev_access = access_card.access
@@ -174,13 +175,13 @@
 	frustration = 0
 	last_found = world.time
 	stop_washing()
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 
 /mob/living/simple_animal/bot/hygienebot/proc/back_to_hunt()
 	frustration = 0
 	mode = BOT_HUNT
 	stop_washing()
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 
 /mob/living/simple_animal/bot/hygienebot/proc/look_for_lowhygiene()
 	for (var/mob/living/carbon/human/H in view(7,src)) //Find the NEET
@@ -193,18 +194,18 @@
 			playsound(loc, 'sound/effects/hygienebot_happy.ogg', 60, 1)
 			visible_message("<b>[src]</b> points at [H.name]!")
 			mode = BOT_HUNT
-			INVOKE_ASYNC(src, .proc/handle_automated_action)
+			INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 			break
 		else
 			continue
 
 /mob/living/simple_animal/bot/hygienebot/proc/start_washing()
 	washing = TRUE
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/hygienebot/proc/stop_washing()
 	washing = FALSE
-	update_icon()
+	update_appearance()
 
 
 

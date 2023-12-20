@@ -680,7 +680,7 @@
 "alS" = (
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/holofloor/hyperspace,
-/area/centcom/supplypod/flyMeToTheMoon)
+/area/centcom/supplypod/supplypod_temp_holding)
 "alW" = (
 /obj/structure/chair{
 	dir = 8
@@ -4244,7 +4244,7 @@
 /area/centcom/ferry)
 "aNE" = (
 /turf/open/floor/plasteel,
-/area/centcom/supplypod/podStorage)
+/area/centcom/supplypod/pod_storage)
 "aNF" = (
 /obj/machinery/computer/communications{
 	dir = 1
@@ -8951,7 +8951,7 @@
 "hra" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/lockbox/loyalty,
-/obj/item/gun/ballistic/automatic/assualt/ar,
+/obj/item/gun/ballistic/automatic/assault/ar,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
@@ -9186,8 +9186,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "hYc" = (
-/obj/structure/destructible/cult/tome,
-/obj/item/book/codex_gigas,
 /obj/machinery/airalarm/directional/east,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -9199,6 +9197,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 8
 	},
+/obj/machinery/vending/wardrobe/cent_wardrobe,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "hZs" = (

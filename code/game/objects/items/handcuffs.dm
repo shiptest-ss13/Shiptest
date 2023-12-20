@@ -122,9 +122,9 @@
 	cable_color = param_color || cable_color || pick(cable_colors)
 	if(cable_colors[cable_color])
 		cable_color = cable_colors[cable_color]
-	update_icon()
+	update_appearance()
 
-/obj/item/restraints/handcuffs/cable/update_icon()
+/obj/item/restraints/handcuffs/cable/update_appearance()
 	color = null
 	add_atom_colour(cable_color, FIXED_COLOUR_PRIORITY)
 */
@@ -217,7 +217,7 @@
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
 	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "handcuff"
+	icon_state = "legcuff"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -235,29 +235,41 @@
 	var/armed = 0
 	var/trap_damage = 20
 
+/obj/item/restraints/legcuffs/beartrap/goliath
+	name = "tentacle mass"
+	desc = "Ew."
+	icon_state = "goliathtrap"
+	flags_1 = NONE
+	slowdown = 10
+	breakouttime = 5 SECONDS
+	item_flags = DROPDEL
+	armed = 1
+	trap_damage = 0
+
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/restraints/legcuffs/beartrap/update_icon_state()
 	icon_state = "[initial(icon_state)][armed]"
+	return ..()
 
 /obj/item/restraints/legcuffs/beartrap/attack_self(mob/user)
 	. = ..()
 	if(!ishuman(user) || user.stat != CONSCIOUS || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED))
 		return
 	armed = !armed
-	update_icon()
+	update_appearance()
 	to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
 
 /obj/item/restraints/legcuffs/beartrap/proc/close_trap()
 	armed = FALSE
-	update_icon()
+	update_appearance()
 	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 
 /obj/item/restraints/legcuffs/beartrap/proc/on_entered(datum/source, AM as mob|obj)
@@ -293,8 +305,8 @@
 					snap = FALSE
 			if(snap)
 				close_trap()
-				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
-						"<span class='userdanger'>You trigger \the [src]!</span>")
+				L.visible_message("<span class='danger'>[L] gets caught by \the [src]!</span>", \
+						"<span class='userdanger'>You get caught by \the [src]!</span>")
 				L.apply_damage(trap_damage, BRUTE, def_zone)
 
 /obj/item/restraints/legcuffs/beartrap/energy
@@ -308,7 +320,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/energy/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/dissipate), 100)
+	addtimer(CALLBACK(src, PROC_REF(dissipate)), 100)
 
 /obj/item/restraints/legcuffs/beartrap/energy/proc/dissipate()
 	if(!ismob(loc))

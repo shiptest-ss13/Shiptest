@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\jungleruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/jungle
 	prefix = "_maps/RandomRuins/JungleRuins/"
@@ -66,12 +66,6 @@
 	description = "An abandoned hangar containing exosuits."
 	suffix = "jungle_hangar.dmm"
 
-/datum/map_template/ruin/jungle/spider
-	name = "Jungle Spiders"
-	id = "spiderjungle"
-	description = "A genetic experiment gone wrong."
-	suffix = "jungle_spider.dmm"
-
 /datum/map_template/ruin/jungle/pirate
 	name = "Jungle Pirates"
 	id = "piratejungle"
@@ -131,6 +125,12 @@
 	id = "medtech-facility"
 	description = "A MedTech pharmaceutical manufacturing plant where something went terribly wrong."
 	suffix = "jungle_medtech_outbreak.dmm"
+
+/datum/map_template/ruin/jungle/cavecrew
+	name = "Frontiersmen Cave"
+	id = "cavecrew"
+	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
+	suffix = "jungle_cavecrew.dmm"
 
 /datum/map_template/ruin/jungle/library
 	name = "Abandoned Library"

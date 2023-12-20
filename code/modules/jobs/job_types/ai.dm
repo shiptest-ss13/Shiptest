@@ -1,8 +1,6 @@
 /datum/job/ai
 	name = "AI"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SILICON
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 30
 	display_order = JOB_DISPLAY_ORDER_AI
 	var/do_special_check = TRUE

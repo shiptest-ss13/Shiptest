@@ -118,7 +118,7 @@
 /turf/closed/wall/concrete/proc/update_stats()
 	// explosion block is diminished on a damaged / soft wall
 	explosion_block = (health / max_health) * harden_lvl * initial(explosion_block)
-	update_icon()
+	update_appearance()
 
 /turf/closed/wall/concrete/proc/alter_health(delta)
 	// 8x as vulnerable when unhardened

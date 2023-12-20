@@ -257,8 +257,8 @@ CHECK_RANDOMIZER
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 # SERVER ss13.example.com:2506
 
-## forum address
-# FORUMURL https://shiptest.net/discord
+## Lore address
+# LOREURL https://shiptest.net/wiki/Lore_Primer
 
 ## Wiki address
 # WIKIURL https://shiptest.net/wiki/
@@ -337,6 +337,9 @@ TICKLAG 0.5
 NOTE_FRESH_DAYS 91.31055
 ## Notes older then this will be completely faded out.
 NOTE_STALE_DAYS 365.2422
+
+## Uncomment to allow drastic performence enhancemet measures to turn on automatically once there are equal or more clients than the configured amount (will also prompt admin for veto)
+#AUTO_LAG_SWITCH_POP 75
 
 ##Note: all population caps can be used with each other if desired.
 

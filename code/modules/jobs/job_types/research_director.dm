@@ -1,8 +1,6 @@
 /datum/job/rd
 	name = "Research Director"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Research_Director" //WS Edit - Wikilinks/Warning

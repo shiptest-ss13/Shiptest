@@ -149,53 +149,6 @@
 		W.registered_name = H.real_name
 		W.update_label()
 
-/datum/outfit/tunnel_clown
-	name = "Tunnel Clown"
-
-	uniform = /obj/item/clothing/under/rank/civilian/clown
-	shoes = /obj/item/clothing/shoes/clown_shoes
-	gloves = /obj/item/clothing/gloves/color/black
-	mask = /obj/item/clothing/mask/gas/clown_hat
-	ears = /obj/item/radio/headset
-	glasses = /obj/item/clothing/glasses/thermal/monocle
-	suit = /obj/item/clothing/suit/hooded/chaplain_hoodie
-	l_pocket = /obj/item/reagent_containers/food/snacks/grown/banana
-	r_pocket = /obj/item/bikehorn
-	id = /obj/item/card/id
-	r_hand = /obj/item/fireaxe
-
-/datum/outfit/tunnel_clown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	W.access = get_all_accesses()
-	W.assignment = "Tunnel Clown!"
-	W.registered_name = H.real_name
-	W.update_label()
-
-/datum/outfit/psycho
-	name = "Masked Killer"
-
-	uniform = /obj/item/clothing/under/misc/overalls
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	gloves = /obj/item/clothing/gloves/color/latex
-	mask = /obj/item/clothing/mask/surgical
-	head = /obj/item/clothing/head/welding
-	ears = /obj/item/radio/headset
-	glasses = /obj/item/clothing/glasses/thermal/monocle
-	suit = /obj/item/clothing/suit/apron
-	l_pocket = /obj/item/kitchen/knife
-	r_pocket = /obj/item/scalpel
-	r_hand = /obj/item/fireaxe
-
-/datum/outfit/psycho/post_equip(mob/living/carbon/human/H)
-	for(var/obj/item/carried_item in H.get_equipped_items(TRUE))
-		carried_item.add_mob_blood(H)//Oh yes, there will be blood...
-	for(var/obj/item/I in H.held_items)
-		I.add_mob_blood(H)
-	H.regenerate_icons()
-
 /datum/outfit/assassin
 	name = "Assassin"
 
@@ -248,7 +201,7 @@
 	ears = /obj/item/radio/headset/headset_cent/commander
 	glasses = /obj/item/clothing/glasses/eyepatch
 	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
-	head = /obj/item/clothing/head/centhat
+	head = /obj/item/clothing/head/centcom_cap
 	belt = /obj/item/gun/ballistic/revolver/mateba
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/ammo_box/a357
@@ -315,33 +268,6 @@
 	suit = /obj/item/clothing/suit/wizrobe/marisa
 	shoes = /obj/item/clothing/shoes/sandal/marisa
 	head = /obj/item/clothing/head/wizard/marisa
-
-/datum/outfit/centcom/soviet
-	name = "Soviet Admiral"
-
-	uniform = /obj/item/clothing/under/costume/soviet
-	head = /obj/item/clothing/head/pirate/captain
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	ears = /obj/item/radio/headset/headset_cent
-	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	suit = /obj/item/clothing/suit/pirate/captain
-	back = /obj/item/storage/backpack/satchel/leather
-	belt = /obj/item/gun/ballistic/revolver/mateba
-
-	id = /obj/item/card/id/centcom
-
-/datum/outfit/centcom/soviet/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	W.access = get_all_accesses()
-	W.access += get_centcom_access("Admiral")
-	W.assignment = "Admiral"
-	W.registered_name = H.real_name
-	W.update_label()
-	..()
 
 /datum/outfit/mobster
 	name = "Mobster"
@@ -463,7 +389,7 @@
 
 	id = /obj/item/card/id/silver
 	head = /obj/item/clothing/head/beret/lt
-	uniform = /obj/item/clothing/under/rank/command/lieutenant
+	uniform = /obj/item/clothing/under/rank/command
 	alt_uniform = /obj/item/clothing/under/rank/command
 	suit = /obj/item/clothing/suit/toggle/lieutenant
 	alt_suit = /obj/item/clothing/suit/armor/lieutenant_trenchcoat
@@ -484,3 +410,26 @@
 	backpack_contents = list(
 		/obj/item/gun/energy/e_gun/adv_stopping = 1
 		)
+
+/datum/outfit/job/hos/inteq_honorable
+	name = "Inteq Honorable vanguard"
+	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
+	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
+	suit = /obj/item/clothing/suit/armor/hos/inteq/honorable
+	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	gloves = /obj/item/clothing/gloves/combat
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset/inteq/alt
+	belt = /obj/item/storage/belt/military/assault
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+
+/datum/outfit/job/hos/inteq_honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.access = get_all_accesses()
+	W.assignment = "Honorable Vanguard"
+	W.registered_name = H.real_name
+	W.update_label()
+	..()

@@ -24,7 +24,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 
 /obj/machinery/keycard_auth/Initialize()
 	. = ..()
-	ev = GLOB.keycard_events.addEvent("triggerEvent", CALLBACK(src, .proc/triggerEvent))
+	ev = GLOB.keycard_events.addEvent("triggerEvent", CALLBACK(src, PROC_REF(triggerEvent)))
 
 /obj/machinery/keycard_auth/Destroy()
 	GLOB.keycard_events.clearEvent("triggerEvent", ev)
@@ -86,7 +86,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 	event = event_type
 	waiting = 1
 	GLOB.keycard_events.fireEvent("triggerEvent", src)
-	addtimer(CALLBACK(src, .proc/eventSent), 20)
+	addtimer(CALLBACK(src, PROC_REF(eventSent)), 20)
 
 /obj/machinery/keycard_auth/proc/eventSent()
 	triggerer = null
@@ -96,7 +96,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 /obj/machinery/keycard_auth/proc/triggerEvent(source)
 	icon_state = "auth_on"
 	event_source = source
-	addtimer(CALLBACK(src, .proc/eventTriggered), 20)
+	addtimer(CALLBACK(src, PROC_REF(eventTriggered)), 20)
 
 /obj/machinery/keycard_auth/proc/eventTriggered()
 	icon_state = "auth_off"
@@ -124,7 +124,7 @@ GLOBAL_VAR_INIT(emergency_access, FALSE)
 	for(var/area/ship/maintenance/A in world)
 		for(var/obj/machinery/door/airlock/D in A)
 			D.emergency = TRUE
-			D.update_icon(0)
+			D.update_icon(ALL, 0)
 	minor_announce("Access restrictions on maintenance and external airlocks have been lifted.", "Attention! Sector-wide emergency declared!",1)
 	GLOB.emergency_access = TRUE
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("emergency maintenance access", "enabled"))
@@ -133,7 +133,7 @@ GLOBAL_VAR_INIT(emergency_access, FALSE)
 	for(var/area/ship/maintenance/A in world)
 		for(var/obj/machinery/door/airlock/D in A)
 			D.emergency = FALSE
-			D.update_icon(0)
+			D.update_icon(ALL, 0)
 	minor_announce("Access restrictions in maintenance areas have been restored.", "Attention! Sector-wide emergency rescinded:")
 	GLOB.emergency_access = FALSE
 	SSblackbox.record_feedback("nested tally", "keycard_auths", 1, list("emergency maintenance access", "disabled"))

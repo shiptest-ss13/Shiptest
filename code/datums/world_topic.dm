@@ -152,8 +152,7 @@
 	.["version"] = GLOB.game_version
 	.["mode"] = GLOB.master_mode
 	.["respawn"] = config ? !CONFIG_GET(flag/norespawn) : FALSE
-	.["enter"] = GLOB.enter_allowed
-	.["vote"] = CONFIG_GET(flag/allow_vote_mode)
+	.["enter"] = !LAZYACCESS(SSlag_switch.measures, DISABLE_NON_OBSJOBS)
 	.["ai"] = CONFIG_GET(flag/allow_ai)
 	.["host"] = world.host ? world.host : null
 	.["round_id"] = GLOB.round_id
@@ -269,7 +268,7 @@
 
 /datum/world_topic/manifest/Run(list/input)
 	. = list()
-	var/list/manifest = SSjob.get_manifest()
+	var/list/manifest = SSovermap.get_manifest()
 	for(var/department in manifest)
 		var/list/entries = manifest[department]
 		var/list/dept_entries = list()

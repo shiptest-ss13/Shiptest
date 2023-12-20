@@ -1,7 +1,5 @@
 /datum/job/hydro
 	name = "Botanist"
-	total_positions = 3
-	spawn_positions = 2
 	wiki_page = "Guide_to_Botany" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/botanist
@@ -28,17 +26,6 @@
 	backpack = /obj/item/storage/backpack/botany
 	satchel = /obj/item/storage/backpack/satchel/hyd
 	courierbag = /obj/item/storage/backpack/messenger/hyd
-
-//shiptest!!!!!!!!!!
-/datum/outfit/job/botanist/syndicate/nsv
-	name = "Botanist-Chemist (NSV-M)"
-
-	uniform = /obj/item/clothing/under/syndicate
-	id = /obj/item/card/id/syndicate_command/crew_id
-	shoes = /obj/item/clothing/shoes/jackboots
-	glasses = /obj/item/clothing/glasses/science
-	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
-	suit_store = null
 
 /datum/outfit/job/botanist/pharma
 	name = "Herbalist"

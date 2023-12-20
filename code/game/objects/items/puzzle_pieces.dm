@@ -150,8 +150,10 @@
 /obj/machinery/door/keycard/gates/update_icon_state()
 	if(density)
 		icon_state = "closed"
+		return ..()
 	else
 		icon_state = "open"
+		return ..()
 
 /obj/machinery/door/keycard/gates/drakelair
 	puzzle_id = "drakelairkey"
@@ -223,7 +225,7 @@
 	AddElement(/datum/element/undertile, tile_overlay = tile_overlay) //we remove use_anchor here, so it ALWAYS stays anchored
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

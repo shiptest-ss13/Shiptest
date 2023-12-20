@@ -4,7 +4,7 @@
 	speech_verb = "squeaks"
 	ask_verb = "squeaks"
 	exclaim_verb = "squeaks"
-	key = "m"
+	key = "l"
 	flags = NO_STUTTER | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD
 
 /datum/language/mouse/scramble(input)

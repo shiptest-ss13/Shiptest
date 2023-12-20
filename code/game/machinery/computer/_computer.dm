@@ -21,6 +21,8 @@
 	///Does this computer have a unique icon_state? Prevents the changing of icons from alternative computer construction
 	var/unique_icon = FALSE
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/machinery/computer/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
 	power_change()
@@ -29,10 +31,6 @@
 		circuit = C
 		C.moveToNullspace()
 
-/obj/machinery/computer/Destroy()
-	QDEL_NULL(circuit)
-	return ..()
-
 /obj/machinery/computer/process()
 	if(machine_stat & (NOPOWER|BROKEN))
 		return 0
@@ -40,8 +38,6 @@
 
 /obj/machinery/computer/update_overlays()
 	. = ..()
-
-	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	if(machine_stat & BROKEN)
 		SSvis_overlays.add_vis_overlay(src, icon, "[icon_state]_broken", layer, plane, dir)
 		return
@@ -118,7 +114,7 @@
 					to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
 				newframe.state = 4
 			circuit = null
-			newframe.update_icon()
+			newframe.update_appearance()
 		for(var/obj/internal_objects in src)
 			internal_objects.forceMove(loc)
 	qdel(src)

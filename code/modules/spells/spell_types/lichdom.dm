@@ -92,6 +92,9 @@
 
 /obj/item/phylactery/Initialize(mapload, datum/mind/newmind)
 	. = ..()
+	if(!mind)
+		stack_trace("A phylactery was created with no target mind")
+		return INITIALIZE_HINT_QDEL
 	mind = newmind
 	name = "phylactery of [mind.name]"
 
@@ -115,7 +118,7 @@
 		return
 
 	if(!mind.current || (mind.current && mind.current.stat == DEAD))
-		addtimer(CALLBACK(src, .proc/rise), respawn_time, TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(rise)), respawn_time, TIMER_UNIQUE)
 
 /obj/item/phylactery/proc/rise()
 	if(mind.current && mind.current.stat != DEAD)

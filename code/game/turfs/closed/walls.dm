@@ -52,7 +52,7 @@
 	var/turf/closed/wall/wall_copy = T
 	if(LAZYLEN(dent_decals))
 		wall_copy.dent_decals = dent_decals.Copy()
-		wall_copy.update_icon()
+		wall_copy.update_appearance()
 
 /turf/closed/wall/update_overlays()
 	. = ..()
@@ -213,7 +213,7 @@
 			if(iswallturf(src) && LAZYLEN(dent_decals))
 				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
 				dent_decals = null
-				update_icon()
+				update_appearance()
 			return TRUE
 
 	return FALSE
@@ -316,6 +316,6 @@
 	decal.pixel_x = x
 	decal.pixel_y = y
 	LAZYADD(dent_decals, decal)
-	update_icon()
+	update_appearance()
 
 #undef MAX_DENT_DECALS

@@ -184,7 +184,9 @@
 
 /turf/proc/process_cell(fire_count)
 /turf/open/proc/equalize_pressure_in_zone(cyclenum)
-/turf/open/proc/consider_firelocks(turf/T2)
+
+/turf/proc/consider_firelocks(turf/T2) //TODO: Find out why this sometimes gets called. Possibly to do with atmos adjacency not being updated in auxmos?
+/turf/open/consider_firelocks(turf/T2)
 	if(blocks_air)
 		return
 	for(var/obj/machinery/airalarm/alarm in src)

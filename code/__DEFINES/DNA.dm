@@ -134,6 +134,7 @@
 #define NOSOCKS 24 // You cannot wear sock
 #define NO_BONES 25 //! You don't have any bones for breaking
 #define MUTCOLORS_SECONDARY 26 //! A second mutant colour for other things
+#define SKINCOLORS 27 //Human skintones
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
@@ -153,7 +154,6 @@
 #define ORGAN_SLOT_LIVER "liver"
 #define ORGAN_SLOT_TONGUE "tongue"
 #define ORGAN_SLOT_VOICE "vocal_cords"
-#define ORGAN_SLOT_ADAMANTINE_RESONATOR "adamantine_resonator"
 #define ORGAN_SLOT_HEART_AID "heartdrive"
 #define ORGAN_SLOT_BRAIN_ANTIDROP "brain_antidrop"
 #define ORGAN_SLOT_BRAIN_ANTISTUN "brain_antistun"

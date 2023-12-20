@@ -24,6 +24,9 @@
 
 	COOLDOWN_START(src, pulse_secondary_cooldown, pulse_delay*4)
 	var/turf/spot = locate(rand(src.x-effectrange, src.x+effectrange), rand(src.y-effectrange, src.y+effectrange), src.z)
+	if(!spot)
+		return
+
 	playsound(spot, 'sound/health/slowbeat2.ogg', 100)
 	radiation_pulse(spot, 200, effectrange)
 	for(var/mob/living/carbon/nearby in range(effectrange, spot))

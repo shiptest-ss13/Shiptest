@@ -1146,10 +1146,6 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/derelict/bridge/access)
 "fw" = (
-/obj/effect/mob_spawn/drone/derelict,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/derelict/bridge/access)
-"fx" = (
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/derelict/bridge/access)
 "fy" = (
@@ -1836,10 +1832,6 @@
 /area/ruin/space/derelict/medical)
 "im" = (
 /obj/item/storage/box/lights/mixed,
-/turf/open/floor/plating/airless,
-/area/ruin/space/derelict/singularity_engine)
-"in" = (
-/obj/effect/mob_spawn/drone/derelict,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/singularity_engine)
 "io" = (
@@ -4396,7 +4388,6 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/effect/mob_spawn/drone/derelict,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -8599,7 +8590,7 @@ dO
 dP
 dX
 dW
-in
+dW
 dr
 iP
 ay
@@ -10394,7 +10385,7 @@ aa
 cs
 fv
 fF
-fx
+fw
 cs
 ga
 yb
@@ -10506,8 +10497,8 @@ aa
 dk
 cs
 fw
-fx
-fx
+fw
+fw
 fR
 eR
 gm
@@ -10618,9 +10609,9 @@ aa
 aa
 aa
 cs
-fx
-fx
-fx
+fw
+fw
+fw
 cs
 eR
 gn
@@ -10732,8 +10723,8 @@ aa
 aa
 cs
 fy
-fx
-fx
+fw
+fw
 fS
 MI
 go
@@ -10845,8 +10836,8 @@ aa
 ZB
 cs
 fz
-fx
-fx
+fw
+fw
 fS
 MI
 go
@@ -10958,8 +10949,8 @@ ZB
 ZB
 cs
 fA
-fx
-fx
+fw
+fw
 fS
 MI
 go
@@ -11071,8 +11062,8 @@ ZB
 ZB
 cs
 fB
-fx
-fx
+fw
+fw
 fS
 MI
 gp
@@ -11299,10 +11290,10 @@ cs
 cs
 cs
 cs
-fx
+fw
 py
 gq
-fx
+fw
 fZ
 gO
 fZ
@@ -11412,10 +11403,10 @@ cx
 cx
 cx
 cs
-fx
+fw
 py
-fx
-fx
+fw
+fw
 fZ
 gL
 aa
@@ -11638,10 +11629,10 @@ cs
 cs
 cs
 cs
-fx
-fx
-fx
-fx
+fw
+fw
+fw
+fw
 cs
 cs
 ZB
@@ -11751,10 +11742,10 @@ cs
 fC
 fC
 cs
-fx
+fw
 gg
-fx
-fx
+fw
+fw
 cs
 aa
 ay

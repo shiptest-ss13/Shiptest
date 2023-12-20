@@ -71,6 +71,10 @@
 	var/obj/item/clothing/mask/facehugger_item/hugger_item = BecomeItem()
 	user.put_in_hands(hugger_item)
 
+/mob/living/simple_animal/hostile/facehugger/Destroy()
+	mask_facehugger?.facehugger_mob = null
+	return ..()
+
 /**
  * Attempts to have the facehugger couple with the given target.  Checks all possibilities and plays them out accordingly.
  *
@@ -202,7 +206,7 @@
 	if(!facehugger_mob.sterile)
 		target.take_bodypart_damage(brute = facehugger_mob.melee_damage_upper)
 		target.Unconscious(facehugger_mob.pregnation_time)
-		addtimer(CALLBACK(src, .proc/Impregnate, target), facehugger_mob.pregnation_time)
+		addtimer(CALLBACK(src, PROC_REF(Impregnate), target), facehugger_mob.pregnation_time)
 	COOLDOWN_START(facehugger_mob, coupling_cooldown, facehugger_mob.couple_retry_time)
 
 /**

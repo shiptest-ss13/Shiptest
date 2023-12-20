@@ -4,7 +4,6 @@
 #define ALL (~0) //For convenience.
 #define NONE 0
 
-
 GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768))
 
 /* Directions */
@@ -139,6 +138,10 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define INDESTRUCTIBLE (1<<6)
 /// can't be frozen
 #define FREEZE_PROOF (1<<7)
+/// Should this object not be destroyed when a shuttle lands on it?
+#define LANDING_PROOF (1<<8)
+/// Should this object be able to be in hyperspace without being deleted?
+#define HYPERSPACE_PROOF (1<<9)
 
 //tesla_zap
 #define ZAP_MACHINE_EXPLOSIVE (1<<0)

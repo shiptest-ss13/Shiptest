@@ -44,8 +44,8 @@ Borg Hypospray
 
 /obj/item/reagent_containers/borghypo/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	QDEL_LIST(reagent_list)
 	return ..()
-
 
 /obj/item/reagent_containers/borghypo/process() //Every [recharge_time] seconds, recharge some reagents for the cyborg
 	charge_tick++
@@ -53,7 +53,7 @@ Borg Hypospray
 		regenerate_reagents()
 		charge_tick = 0
 
-	//update_icon()
+	//update_appearance()
 	return 1
 
 // Use this to add more chemicals for the borghypo to produce.

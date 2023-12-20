@@ -32,6 +32,7 @@
 		icon_state = "holopad1"
 	else
 		icon_state = "holopad3"
+	return ..()
 
 /obj/machinery/holopad/emergency/attack_ghost(mob/dead/observer/user)
 	if(!SSticker.HasRoundStarted() || !loc || !em_starting || em)
@@ -98,7 +99,7 @@
 				em_starting = TRUE
 				icon_state = "holopad_ringing"
 				calling = TRUE
-				addtimer(CALLBACK(src, .proc/stop_starting), 300)
+				addtimer(CALLBACK(src, PROC_REF(stop_starting)), 300)
 			else
 				QDEL_NULL(em)
 				em_cooldown = TRUE

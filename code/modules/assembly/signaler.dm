@@ -31,10 +31,9 @@
 	signal()
 	return TRUE
 
-/obj/item/assembly/signaler/update_icon()
-	if(holder)
-		holder.update_icon()
-	return
+/obj/item/assembly/signaler/update_appearance()
+	. = ..()
+	holder?.update_appearance()
 
 /obj/item/assembly/signaler/ui_status(mob/user)
 	if(is_secured(user))
@@ -62,7 +61,7 @@
 
 	switch(action)
 		if("signal")
-			INVOKE_ASYNC(src, .proc/signal)
+			INVOKE_ASYNC(src, PROC_REF(signal))
 			. = TRUE
 		if("freq")
 			frequency = unformat_frequency(params["freq"])
@@ -80,7 +79,7 @@
 				code = initial(code)
 			. = TRUE
 
-	update_icon()
+	update_appearance()
 
 /obj/item/assembly/signaler/attackby(obj/item/W, mob/user, params)
 	if(issignaler(W))
@@ -254,6 +253,13 @@
 /obj/item/assembly/signaler/anomaly/tvstatic
 	name = "\improper static anomaly core"
 	desc = "The neutralized core of a static anomaly. Your head hurts just staring at it"
+
+/obj/item/assembly/signaler/anomaly/melter
+	name = "\improper melter anomaly core"
+	desc = "The neutralized core of a melter anomaly. It sizzles and crackles. It'd probably be valuable for research."
+	icon_state = "pyro core"
+
+
 
 /obj/item/assembly/signaler/anomaly/attack_self()
 	return

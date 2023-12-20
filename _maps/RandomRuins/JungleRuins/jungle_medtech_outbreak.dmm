@@ -7,7 +7,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ap" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -17,7 +17,7 @@
 /area/ship/science)
 "ar" = (
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "aF" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
@@ -35,7 +35,7 @@
 "bk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "bm" = (
 /obj/structure/railing{
 	dir = 9
@@ -92,7 +92,7 @@
 	dir = 10
 	},
 /obj/item/paper/pamphlet{
-	info = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
+	default_raw_text = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
 	name = "MedTech flyer";
 	pixel_x = 6;
 	pixel_y = 3
@@ -138,7 +138,7 @@
 "dO" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "dR" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 4
@@ -171,7 +171,7 @@
 /area/ship/crew/office)
 "ek" = (
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "eo" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
@@ -275,12 +275,12 @@
 "fC" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "fG" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gj" = (
 /obj/structure/railing,
 /turf/open/floor/plasteel/stairs/right{
@@ -334,7 +334,7 @@
 	dir = 9
 	},
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gQ" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
@@ -344,7 +344,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "gY" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/decal/cleanable/blood/bubblegum,
@@ -357,29 +357,29 @@
 	pixel_y = -5
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/crumpled/bloody{
 	desc = "written hastly on a blood stained peace of paper.";
-	info = "They breached all the doors, I am the last one, its over for me..";
+	default_raw_text = "They breached all the doors, I am the last one, its over for me..";
 	name = "MedTech chmist's last note";
 	pixel_x = 15;
 	pixel_y = 1
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hB" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "hF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper{
-	info = "<h1>Export expectations</h1><p>By the end of the month facility No.475-24 is expected to provide the following amounts of medicine to be ready for export:</p><ol><li>300u of Perfluorodecalin</li><li>270u of Thializid</li><li>50 Burnpatches</li><li>65 Synthflesh patches</li><li>275u of atropine</li></ol><p>Production is to be proceeded with imidiately.</p>";
+	default_raw_text = "<h1>Export expectations</h1><p>By the end of the month facility No.475-24 is expected to provide the following amounts of medicine to be ready for export:</p><ol><li>300u of Perfluorodecalin</li><li>270u of Thializid</li><li>50 Burnpatches</li><li>65 Synthflesh patches</li><li>275u of atropine</li></ol><p>Production is to be proceeded with imidiately.</p>";
 	name = "Export orders";
 	pixel_x = 4;
 	pixel_y = 5
@@ -534,7 +534,7 @@
 /obj/effect/turf_decal/box/corners,
 /obj/machinery/light/floor,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "jI" = (
 /obj/effect/decal/cleanable/blood/bubblegum,
 /turf/open/floor/plasteel/white,
@@ -568,7 +568,7 @@
 "jS" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "kp" = (
 /obj/structure/chair/office/light,
 /obj/effect/decal/cleanable/blood/gibs/core,
@@ -655,7 +655,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "kM" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 9
@@ -681,7 +681,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "kT" = (
 /obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/blood/bubblegum,
@@ -749,7 +749,7 @@
 	pixel_y = -13
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "mf" = (
 /obj/effect/decal/cleanable/blood/bubblegum,
 /obj/effect/decal/fakelattice,
@@ -864,7 +864,7 @@
 "nr" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nx" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
@@ -891,7 +891,7 @@
 "nQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "nS" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
@@ -975,7 +975,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/shovel,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "oR" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 10
@@ -1037,7 +1037,7 @@
 "pQ" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "pT" = (
 /obj/structure/sign/poster/contraband/mothpill,
 /turf/closed/wall/r_wall,
@@ -1133,7 +1133,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "rJ" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
@@ -1167,7 +1167,7 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "sE" = (
 /obj/machinery/light/broken/directional/north,
 /obj/effect/gibspawner/generic,
@@ -1304,7 +1304,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "vo" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 10
@@ -1405,7 +1405,7 @@
 "wU" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xa" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1442,7 +1442,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xw" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -1459,7 +1459,7 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xG" = (
 /obj/item/ammo_casing{
 	dir = 8;
@@ -1468,12 +1468,12 @@
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xN" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "xO" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
 /turf/open/floor/plasteel/tech,
@@ -1482,7 +1482,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ya" = (
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
@@ -1502,7 +1502,7 @@
 /obj/effect/decal/cleanable/blood/bubblegum,
 /obj/item/paper/crumpled/fluff{
 	desc = "Written as with a dying hand..";
-	info = "I bolted down my door to keep them out for w while, one of them got me in the arm. I hope the response unit will arrive soon...";
+	default_raw_text = "I bolted down my door to keep them out for w while, one of them got me in the arm. I hope the response unit will arrive soon...";
 	name = "Hastly scribbled note"
 	},
 /turf/open/floor/wood,
@@ -1532,11 +1532,11 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "yW" = (
 /obj/structure/closet/crate/grave/loot,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "yZ" = (
 /obj/effect/decal/cleanable/blood/bubblegum,
 /turf/open/floor/plating/catwalk_floor,
@@ -1552,7 +1552,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "zm" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/flashlight/lamp/green{
@@ -1650,13 +1650,13 @@
 "Ba" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Bb" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Bc" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -1676,7 +1676,7 @@
 	},
 /obj/item/paper/crumpled/bloody{
 	desc = "written hastly on a blood stained peace of paper.";
-	info = "Hilbert welded himself in maintainance from the inside. Perhaps a death from starvation is better than the fate that awaits us when the doors bust...";
+	default_raw_text = "Hilbert welded himself in maintainance from the inside. Perhaps a death from starvation is better than the fate that awaits us when the doors bust...";
 	name = "Office clerks last note";
 	pixel_x = -13;
 	pixel_y = -6
@@ -1701,14 +1701,14 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "BJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "BO" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer{
@@ -1778,7 +1778,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Cz" = (
 /turf/closed/wall/r_wall,
 /area/ship/medical)
@@ -1821,7 +1821,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/item/ammo_casing,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Dq" = (
 /obj/effect/turf_decal/trimline/opaque/blue/filled/line{
 	dir = 8
@@ -1901,7 +1901,7 @@
 	dir = 6
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Ei" = (
 /obj/machinery/door/airlock/research{
 	name = "Chemical Factory";
@@ -1916,7 +1916,7 @@
 	},
 /obj/machinery/light/floor,
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Er" = (
 /turf/closed/wall/r_wall,
 /area/ship/science)
@@ -1951,7 +1951,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "FB" = (
 /turf/closed/wall,
 /area/ship/medical)
@@ -1981,7 +1981,7 @@
 	},
 /obj/item/ammo_box/magazine/m45/ap,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "FX" = (
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/box,
@@ -2274,7 +2274,7 @@
 	dir = 8
 	},
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Kl" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -2293,7 +2293,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Kn" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2445,7 +2445,7 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/item/weldingtool/experimental,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "MF" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 9
@@ -2514,7 +2514,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "NK" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 9
@@ -2579,7 +2579,7 @@
 /area/ship/science/storage)
 "Oy" = (
 /turf/open/floor/plating/dirt/jungle,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "OX" = (
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/warning{
 	dir = 4
@@ -2686,7 +2686,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Qc" = (
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
@@ -2820,7 +2820,7 @@
 	},
 /obj/effect/decal/cleanable/blood/bubblegum,
 /turf/open/floor/plating/dirt/jungle/wasteland/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Rr" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 5
@@ -2832,7 +2832,7 @@
 /area/ship/hallway)
 "RC" = (
 /turf/open/floor/plating/dirt/jungle/dark,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "RF" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 10
@@ -2860,7 +2860,7 @@
 /obj/effect/decal/cleanable/blood/bubblegum,
 /obj/item/paper/crumpled/bloody{
 	desc = "This is probably a document you were not supposed to see";
-	info = "<center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center><h2 align='center'>Pricing reqest</h2><p>The Syndicate is interested to place an order for several hundred units of a chemical known as romerol. Hereby a request is placed to set a pricetag for such an order.</p><p>A small sample of the regent in question has been attached for testing purposes.</p><p>The contents of this document is to be treated highly confidential, any suspicion that informatin cantained in this letter has been forwarded will be met with recogninzing MedTech Ltd. as a enemy side of the conflict by The Syndicate.</p></p>We are lookig forward for a reply that will ensure our long-term cooperation.</p><br></p>Death to Nanotrasen!</p><p style = 'font-family:serif'><i><b>The Syndicate</b></i></p><center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center>";
+	default_raw_text = "<center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center><h2 align='center'>Pricing reqest</h2><p>The Syndicate is interested to place an order for several hundred units of a chemical known as romerol. Hereby a request is placed to set a pricetag for such an order.</p><p>A small sample of the regent in question has been attached for testing purposes.</p><p>The contents of this document is to be treated highly confidential, any suspicion that informatin cantained in this letter has been forwarded will be met with recogninzing MedTech Ltd. as a enemy side of the conflict by The Syndicate.</p></p>We are lookig forward for a reply that will ensure our long-term cooperation.</p><br></p>Death to Nanotrasen!</p><p style = 'font-family:serif'><i><b>The Syndicate</b></i></p><center><h1 style='background-color:red;'>TOP SECRET - EYES ONLY!</h1></center>";
 	name = "Top Secret Syndicate Romerol price request"
 	},
 /turf/open/floor/carpet/blue,
@@ -2868,7 +2868,7 @@
 "Sh" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Sj" = (
 /obj/effect/turf_decal/industrial/warning/dust{
 	dir = 4
@@ -2923,7 +2923,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "SN" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 6
@@ -2942,15 +2942,15 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "SQ" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "SU" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "SV" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 5
@@ -3093,7 +3093,7 @@
 	dir = 10
 	},
 /obj/item/paper/pamphlet{
-	info = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
+	default_raw_text = "<center><h1> Welcome at MedTech Ltd.!</h1></center><hr><p>MedTech is a professional chemical and pharmaceutical manufacturing company with a leading position in the galactinc market.</p><p>Our goal is to provide all relevant medical and industrial chemicals to every customer in the galaxy within a short time, and at a affordable price. We achieve this goal by diversifying our manufacturing sites across the all frontiers and by sourcing all raw materials locally.</p><center><p><b>Special orders are avalible now!</b></p><p>Buy our products or visit one of our manufacturing plants today!</p></center><hr></p><sub>MedTech Ltd. takes no liability for any misuse or side effects of their products including diarrhea, dizziness, heart issues (palpitations, irregular heartbeats), death, and all other forms of possible pre- and post-mortem agony.</sub></p>";
 	name = "MedTech flyer";
 	pixel_x = -5;
 	pixel_y = 3
@@ -3112,7 +3112,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Vt" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 9
@@ -3181,7 +3181,7 @@
 "VM" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "VY" = (
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 5
@@ -3197,7 +3197,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Wo" = (
 /obj/machinery/door/airlock/research{
 	name = "Administrative office";
@@ -3215,7 +3215,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Wx" = (
 /obj/effect/turf_decal/trimline/opaque/mauve/filled/warning,
 /obj/effect/turf_decal/siding/wideplating/dark/corner{
@@ -3327,10 +3327,10 @@
 "Yd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Yj" = (
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Yn" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
@@ -3349,7 +3349,7 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Yu" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 5
@@ -3396,7 +3396,7 @@
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle/small,
 /turf/open/floor/plating/grass/jungle/lit,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "Zc" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 9
@@ -3462,7 +3462,7 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/grass,
-/area/ruin/jungle)
+/area/overmap_encounter/planetoid/jungle/explored)
 "ZU" = (
 /turf/closed/wall/r_wall,
 /area/ship/bridge)

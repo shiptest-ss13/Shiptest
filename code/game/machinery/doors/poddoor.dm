@@ -63,7 +63,7 @@
 		assembly.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 		assembly.created_name = name
 		assembly.update_name()
-		assembly.update_icon()
+		assembly.update_appearance()
 		assembly.welded = TRUE
 		assembly.dir = dir
 		new /obj/item/electronics/airlock(loc)
@@ -90,9 +90,9 @@
 /obj/machinery/door/poddoor/shuttledock/proc/check()
 	var/turf/T = get_step(src, checkdir)
 	if(!istype(T, turftype))
-		INVOKE_ASYNC(src, .proc/open)
+		INVOKE_ASYNC(src, PROC_REF(open))
 	else
-		INVOKE_ASYNC(src, .proc/close)
+		INVOKE_ASYNC(src, PROC_REF(close))
 
 /obj/machinery/door/poddoor/incinerator_toxmix
 	name = "Combustion Chamber Vent"
@@ -106,13 +106,6 @@
 	name = "Combustion Chamber Vent"
 	id = INCINERATOR_ATMOS_AUXVENT
 
-/obj/machinery/door/poddoor/incinerator_syndicatelava_main
-	name = "turbine vent"
-	id = INCINERATOR_SYNDICATELAVA_MAINVENT
-
-/obj/machinery/door/poddoor/incinerator_syndicatelava_aux
-	name = "Combustion Chamber Vent"
-	id = INCINERATOR_SYNDICATELAVA_AUXVENT
 
 /obj/machinery/door/poddoor/Bumped(atom/movable/AM)
 	if(density)
@@ -136,10 +129,8 @@
 			playsound(src, close_sound, 30, FALSE)
 
 /obj/machinery/door/poddoor/update_icon_state()
-	if(density)
-		icon_state = "closed"
-	else
-		icon_state = "open"
+	. = ..()
+	icon_state = density ? "closed" : "open"
 
 /obj/machinery/door/poddoor/try_to_activate_door(mob/user)
 	return

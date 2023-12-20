@@ -45,6 +45,7 @@ GLOBAL_PROTECT(exp_to_update)
 		return FALSE
 	if(CONFIG_GET(flag/use_exp_restrictions_admin_bypass) && check_rights_for(src, R_ADMIN))
 		return FALSE // if admin exemption is enabled, and client is an admin, let them through
+	return TRUE
 
 /client/proc/get_exp_living(pure_numeric = FALSE)
 	if(!prefs.exp)
@@ -92,7 +93,7 @@ GLOBAL_PROTECT(exp_to_update)
 		play_records[exp_read.item[1]] = text2num(exp_read.item[2])
 	qdel(exp_read)
 
-	for(var/rtype in SSjob.name_occupations)
+	for(var/rtype in GLOB.name_occupations)
 		if(!play_records[rtype])
 			play_records[rtype] = 0
 	for(var/rtype in GLOB.exp_specialmap)
@@ -143,7 +144,7 @@ GLOBAL_PROTECT(exp_to_update)
 			if(announce_changes)
 				to_chat(src,"<span class='notice'>You got: [minutes] Living EXP!</span>")
 			if(mob.mind.assigned_role)
-				for(var/job in SSjob.name_occupations)
+				for(var/job in GLOB.name_occupations)
 					if(mob.mind.assigned_role == job)
 						rolefound = TRUE
 						play_records[job] += minutes
@@ -191,7 +192,7 @@ GLOBAL_PROTECT(exp_to_update)
 			"ckey" = ckey,
 			"minutes" = jvalue)))
 		prefs.exp[jtype] += jvalue
-	addtimer(CALLBACK(SSblackbox,/datum/controller/subsystem/blackbox/proc/update_exp_db),20,TIMER_OVERRIDE|TIMER_UNIQUE)
+	addtimer(CALLBACK(SSblackbox, TYPE_PROC_REF(/datum/controller/subsystem/blackbox, update_exp_db)),20,TIMER_OVERRIDE|TIMER_UNIQUE)
 
 
 //ALWAYS call this at beginning to any proc touching player flags, or your database admin will probably be mad

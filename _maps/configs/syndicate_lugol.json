@@ -12,35 +12,35 @@
 		"GEC",
 		"SPACE"
 	],
-	"map_path": "_maps/shuttles/shiptest/syndicate_gec_lugol.dmm",
+	"map_path": "_maps/shuttles/syndicate/syndicate_gec_lugol.dmm",
 	"map_id": "gec_lugol",
 	"limit": 2,
 	"job_slots": {
 		"Project Overseer": {
-			"outfit": "/datum/outfit/job/ce/gec",
+			"outfit": "/datum/outfit/job/syndicate/ce/gec",
 			"slots": 1,
 			"officer": true
 		},
-		"GEC Engineer": {
-			"outfit": "/datum/outfit/job/engineer/gec",
+		"GEC Engineering": {
+			"outfit": "/datum/outfit/job/syndicate/engineer/gec",
 			"slots": 3
 		},
-		"Atmospheric Technician": {
-			"outfit": "/datum/outfit/job/atmos/gec",
+		"GEC Atmospherics": {
+			"outfit": "/datum/outfit/job/syndicate/atmos/gec",
 			"slots": 3
 		},
 		"Beverage Specialist": {
-			"outfit": "/datum/outfit/job/bartender/syndicate",
+			"outfit": "/datum/outfit/job/syndicate/bartender",
 			"slots": 1
 		},
-		"Shaft Miner": {
-			"outfit": "/datum/outfit/job/miner/syndicate/gec",
+		"GEC Miner": {
+			"outfit": "/datum/outfit/job/syndicate/miner/gec",
 			"slots": 1
 		},
 		"GEC Apprentice": {
-			"outfit": "/datum/outfit/job/assistant/syndicate/gec",
+			"outfit": "/datum/outfit/job/syndicate/assistant/gec",
 			"slots": 2
 		}
 	},
-"enabled": true
+"enabled": false
 }

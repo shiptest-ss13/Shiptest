@@ -7,11 +7,10 @@
 	var/list/items
 
 /obj/effect/spawner/bundle/Initialize(mapload)
-	..()
+	. = ..()
 	if(items && items.len)
 		for(var/path in items)
 			new path(loc)
-	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/bundle/costume/chicken
 	name = "chicken costume spawner"
@@ -94,14 +93,6 @@
 		/obj/item/clothing/under/costume/owl,
 		/obj/item/clothing/mask/gas/owl_mask)
 
-/obj/effect/spawner/bundle/costume/griffin
-	name = "griffin costume spawner"
-	items = list(
-		/obj/item/clothing/suit/toggle/owlwings/griffinwings,
-		/obj/item/clothing/shoes/griffin,
-		/obj/item/clothing/under/costume/griffin,
-		/obj/item/clothing/head/griffin)
-
 /obj/effect/spawner/bundle/costume/waiter
 	name = "waiter costume spawner"
 	items = list(
@@ -116,12 +107,6 @@
 		/obj/item/clothing/suit/pirate,
 		/obj/effect/spawner/lootdrop/minor/pirate_or_bandana,
 		/obj/item/clothing/glasses/eyepatch)
-
-/obj/effect/spawner/bundle/costume/commie
-	name = "commie costume spawner"
-	items = list(
-		/obj/item/clothing/under/costume/soviet,
-		/obj/item/clothing/head/trapper)
 
 /obj/effect/spawner/bundle/costume/imperium_monk
 	name = "imperium monk costume spawner"

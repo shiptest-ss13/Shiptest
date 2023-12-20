@@ -68,7 +68,7 @@
 			A.reagents.trans_to(src, 10, transfered_by = user)
 			to_chat(user, "<span class='notice'>You fill the balloon with the contents of [A].</span>")
 			desc = "A translucent balloon with some form of liquid sloshing around in it."
-			update_icon()
+			update_appearance()
 
 /obj/item/toy/waterballoon/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/glass))
@@ -81,7 +81,7 @@
 				desc = "A translucent balloon with some form of liquid sloshing around in it."
 				to_chat(user, "<span class='notice'>You fill the balloon with the contents of [I].</span>")
 				I.reagents.trans_to(src, 10, transfered_by = user)
-				update_icon()
+				update_appearance()
 	else if(I.get_sharpness())
 		balloon_burst()
 	else
@@ -106,13 +106,13 @@
 		qdel(src)
 
 /obj/item/toy/waterballoon/update_icon_state()
-	if(src.reagents.total_volume >= 1)
+	if(reagents.total_volume >= 1)
 		icon_state = "waterballoon"
 		item_state = "balloon"
 	else
 		icon_state = "waterballoon-e"
 		item_state = "balloon-empty"
-
+	return ..()
 #define BALLOON_COLORS list("red", "blue", "green", "yellow")
 
 /obj/item/toy/balloon
@@ -217,7 +217,7 @@
 			to_chat(user, text("<span class='notice'>You reload [] cap\s.</span>", 7 - src.bullets))
 			A.amount_left -= 7 - src.bullets
 			src.bullets = 7
-		A.update_icon()
+		A.update_appearance()
 		return 1
 	else
 		return ..()
@@ -253,6 +253,7 @@
 
 /obj/item/toy/ammo/gun/update_icon_state()
 	icon_state = "357OLD-[amount_left]"
+	return ..()
 
 /obj/item/toy/ammo/gun/examine(mob/user)
 	. = ..()
@@ -358,7 +359,7 @@
 		active = TRUE
 		playsound(src, 'sound/effects/pope_entry.ogg', 100)
 		Rumble()
-		addtimer(CALLBACK(src, .proc/stopRumble), 600)
+		addtimer(CALLBACK(src, PROC_REF(stopRumble)), 600)
 	else
 		to_chat(user, "<span class='warning'>[src] is already active!</span>")
 
@@ -435,7 +436,7 @@
 /obj/item/toy/snappop/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -474,7 +475,7 @@
 
 /obj/effect/decal/cleanable/ash/snappop_phoenix/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/respawn), respawn_time)
+	addtimer(CALLBACK(src, PROC_REF(respawn)), respawn_time)
 
 /obj/effect/decal/cleanable/ash/snappop_phoenix/proc/respawn()
 	new /obj/item/toy/snappop/phoenix(get_turf(src))
@@ -503,7 +504,7 @@
 		activation_message(user)
 		playsound(loc, 'sound/machines/click.ogg', 20, TRUE)
 
-		INVOKE_ASYNC(src, .proc/do_toy_talk, user)
+		INVOKE_ASYNC(src, PROC_REF(do_toy_talk), user)
 
 		cooldown = TRUE
 		addtimer(VARSET_CALLBACK(src, cooldown, FALSE), recharge_time)
@@ -659,7 +660,7 @@
 	H.pickup(user)
 	user.put_in_hands(H)
 	user.visible_message("<span class='notice'>[user] draws a card from the deck.</span>", "<span class='notice'>You draw a card from the deck.</span>")
-	update_icon()
+	update_appearance()
 	return H
 
 /obj/item/toy/cards/deck/update_icon_state()
@@ -672,6 +673,7 @@
 			icon_state = "deck_[deckstyle]_low"
 		else
 			icon_state = "deck_[deckstyle]_empty"
+	return ..()
 
 /obj/item/toy/cards/deck/attack_self(mob/user)
 	if(cooldown < world.time - 50)
@@ -692,7 +694,7 @@
 			qdel(SC)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
-		update_icon()
+		update_appearance()
 	else if(istype(I, /obj/item/toy/cards/cardhand))
 		var/obj/item/toy/cards/cardhand/CH = I
 		if(CH.parentdeck == src)
@@ -704,7 +706,7 @@
 			qdel(CH)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
-		update_icon()
+		update_appearance()
 	else
 		return ..()
 
@@ -1029,7 +1031,7 @@
 			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
 				// Short delay to match up with the explosion sound
 				// Shakes player camera 2 squares for 1 second.
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/shake_camera, M, 2, 1), 0.8 SECONDS)
+				addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(shake_camera), M, 2, 1), 0.8 SECONDS)
 
 	else
 		to_chat(user, "<span class='alert'>Nothing happens.</span>")
@@ -1368,6 +1370,18 @@
 	icon_state = "vanguard"
 	toysay = "I'm too old for this shit."
 
+/obj/item/toy/figure/tali
+	name = "T4L1 action figure"
+	desc = "An action figure modeled after a recurring miniboss from the popular combination webcomic and video game RILENA. Unfortunately, the gun arm does not function."
+	icon_state = "tali"
+	toysay = "I'll take you down this time!"
+
+/obj/item/toy/figure/kari
+	name = "knockoff RILENA action figure"
+	desc = "An action figure that seems to be labeled as 'Kari' from RAYALA: RUNNING FROM EVIL. Unfortunately, the gun arm does not function."
+	icon_state = "kari"
+	toysay = "I will defeat you for good!"
+
 /obj/item/toy/dummy
 	name = "ventriloquist dummy"
 	desc = "It's a dummy, dummy."
@@ -1423,7 +1437,7 @@
 	if(cooldown <= world.time)
 		cooldown = (world.time + 300)
 		user.visible_message("<span class='notice'>[user] adjusts the dial on [src].</span>")
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/items/radiostatic.ogg', 50, FALSE), 0.5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/items/radiostatic.ogg', 50, FALSE), 0.5 SECONDS)
 	else
 		to_chat(user, "<span class='warning'>The dial on [src] jams up</span>")
 		return
@@ -1438,4 +1452,4 @@
 /obj/item/toy/braintoy/attack_self(mob/user)
 	if(cooldown <= world.time)
 		cooldown = (world.time + 10)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/effects/blobattack.ogg', 50, FALSE), 0.5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/effects/blobattack.ogg', 50, FALSE), 0.5 SECONDS)

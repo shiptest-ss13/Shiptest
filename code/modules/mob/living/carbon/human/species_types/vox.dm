@@ -139,7 +139,7 @@
 
 /datum/action/innate/tail_hold/Grant(mob/M)
 	. = ..()
-	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, .proc/handle_sprite_magic, override = TRUE)
+	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(handle_sprite_magic), override = TRUE)
 
 /datum/action/innate/tail_hold/Trigger()
 	var/mob/living/carbon/human/H = owner
@@ -156,7 +156,7 @@
 			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
 				held_item = I
 				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
-				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/on_examine)
+				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 				handle_sprite_magic(force = TRUE)
 				return
 

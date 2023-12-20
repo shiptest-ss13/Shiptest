@@ -40,7 +40,7 @@
 		icon_state = "screwdriver"
 		var/our_color = pick(screwdriver_colors)
 		add_atom_colour(screwdriver_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+		update_appearance()
 	if(prob(75))
 		pixel_y = rand(0, 16)
 
@@ -109,10 +109,35 @@
 		tool_behaviour = TOOL_WRENCH
 		to_chat(user, "<span class='notice'>You attach the bolt bit to [src].</span>")
 		icon_state = "drill_bolt"
+		update_appearance()
 	else
 		tool_behaviour = TOOL_SCREWDRIVER
 		to_chat(user, "<span class='notice'>You attach the screw bit to [src].</span>")
 		icon_state = "drill_screw"
+		update_appearance()
+
+/obj/item/screwdriver/power/attack_hand(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/screwdriver/power/pickup(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/screwdriver/power/dropped(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/screwdriver/power/update_overlays()
+	. = ..()
+	if(ismob(loc))
+		var/mode_ovelay
+		switch(tool_behaviour)
+			if (TOOL_SCREWDRIVER)
+				mode_ovelay = "bit_screw"
+			if (TOOL_WRENCH)
+				mode_ovelay = "bit_bolt"
+		. += mode_ovelay
 
 /obj/item/screwdriver/cyborg
 	name = "automated screwdriver"

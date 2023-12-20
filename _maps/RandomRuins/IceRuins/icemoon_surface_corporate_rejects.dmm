@@ -83,9 +83,6 @@
 /area/ruin/unpowered/corprejectengineering)
 "cN" = (
 /obj/structure/safe/floor,
-/obj/item/stack/sheet/capitalisium{
-	amount = 10
-	},
 /obj/item/hand_tele,
 /obj/item/stack/sheet/mineral/adamantine,
 /obj/item/stack/sheet/mineral/adamantine,
@@ -1703,7 +1700,7 @@
 "Md" = (
 /obj/structure/rack,
 /obj/item/ammo_box/magazine/smgm9mm/ap,
-/obj/item/ammo_box/magazine/smgm9mm/fire,
+/obj/item/ammo_box/magazine/smgm9mm/inc,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
@@ -2055,7 +2052,7 @@
 /obj/structure/table/glass,
 /obj/item/paper{
 	desc = "Standard Nanotrasen typeface for important documents.";
-	info = "Welcome to the NNTVS 'Not Nanotrasen Vault Station'! We are never happier to have people on board than when we get new arrivals ready to betray and renounce their allegiance to the coporate egregory known as Nanotrasen! ";
+	default_raw_text = "Welcome to the NNTVS 'Not Nanotrasen Vault Station'! We are never happier to have people on board than when we get new arrivals ready to betray and renounce their allegiance to the coporate egregory known as Nanotrasen! ";
 	name = "Corporate Desertion and You!"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{

@@ -46,7 +46,7 @@
 				to_chat(user, "<span class='notice'>You place [P] inside the frame.</span>")
 				circuit = P
 				circuit.add_fingerprint(user)
-				update_icon()
+				update_appearance()
 				return
 
 			else if(istype(P, /obj/item/circuitboard) && !circuit)
@@ -56,7 +56,7 @@
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You screw [circuit] into place.</span>")
 				state = 2
-				update_icon()
+				update_appearance()
 				return
 			if(P.tool_behaviour == TOOL_CROWBAR && circuit)
 				P.play_tool_sound(src)
@@ -65,14 +65,14 @@
 				circuit.forceMove(drop_location())
 				circuit.add_fingerprint(user)
 				circuit = null
-				update_icon()
+				update_appearance()
 				return
 		if(2)
 			if(P.tool_behaviour == TOOL_SCREWDRIVER && circuit)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You unfasten the circuit board.</span>")
 				state = 1
-				update_icon()
+				update_appearance()
 				return
 			if(istype(P, /obj/item/stack/cable_coil))
 				if(!P.tool_start_check(user, amount=5))
@@ -83,14 +83,14 @@
 						return
 					to_chat(user, "<span class='notice'>You add cables to the frame.</span>")
 					state = 3
-					update_icon()
+					update_appearance()
 				return
 		if(3)
 			if(P.tool_behaviour == TOOL_WIRECUTTER)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove the cables.</span>")
 				state = 2
-				update_icon()
+				update_appearance()
 				var/obj/item/stack/cable_coil/A = new (drop_location(), 5)
 				A.add_fingerprint(user)
 				return
@@ -105,14 +105,14 @@
 						return
 					to_chat(user, "<span class='notice'>You put in the glass panel.</span>")
 					state = 4
-					update_icon()
+					update_appearance()
 				return
 		if(4)
 			if(P.tool_behaviour == TOOL_CROWBAR)
 				P.play_tool_sound(src)
 				to_chat(user, "<span class='notice'>You remove the glass panel.</span>")
 				state = 3
-				update_icon()
+				update_appearance()
 				var/obj/item/stack/sheet/glass/G = new(drop_location(), 2)
 				G.add_fingerprint(user)
 				return
@@ -126,7 +126,7 @@
 					built_comp.icon = built_icon
 					built_comp.icon_state = built_icon_state
 				built_comp.deconpath = deconpath
-				built_comp.update_icon()
+				built_comp.update_appearance()
 				qdel(src)
 				return
 	if(user.a_intent == INTENT_HARM)

@@ -129,7 +129,7 @@
 	icon_state = "wasteplanet_sand"
 	item_state = "wasteplanet_sand"
 	singular_name = "rocky dust"
-	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/lithium = 2, /datum/reagent/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/lithium = 2, /datum/reagent/uranium/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
 
 /obj/item/stack/ore/glass/beach
 	name = "beige sand pile"
@@ -332,7 +332,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		else
 			user.visible_message("<span class='warning'>[user] strikes \the [src], causing a chain reaction!</span>", "<span class='danger'>You strike \the [src], causing a chain reaction.</span>")
 			log_bomber(user, "has primed a", src, "for detonation", notify_admins)
-		det_timer = addtimer(CALLBACK(src, .proc/detonate, notify_admins), det_time, TIMER_STOPPABLE)
+		det_timer = addtimer(CALLBACK(src, PROC_REF(detonate), notify_admins), det_time, TIMER_STOPPABLE)
 
 /obj/item/gibtonite/proc/detonate(notify_admins)
 	if(primed)

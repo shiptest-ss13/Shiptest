@@ -510,6 +510,7 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 					B.dat = content
 					B.icon_state = "book[rand(1,8)]"
 					visible_message("<span class='notice'>[src]'s printer hums as it produces a completely bound book. How did it do that?</span>")
+					log_paper("[key_name(usr)] has printed \"[title]\" (id: [id]) by [author] from a book management console.")
 				break
 			qdel(query_library_print)
 	if(href_list["printbible"])
@@ -625,7 +626,7 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 		if(!machine_stat)
 			visible_message("<span class='notice'>[src] whirs as it prints and binds a new book.</span>")
 			var/obj/item/book/B = new(src.loc)
-			B.dat = P.info
+			B.dat = P.get_raw_text()
 			B.name = "Print Job #" + "[rand(100, 999)]"
 			B.icon_state = "book[rand(1,7)]"
 			qdel(P)

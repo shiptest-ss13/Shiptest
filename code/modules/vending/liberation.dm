@@ -17,7 +17,7 @@
 		/obj/item/gun/ballistic/shotgun/automatic/combat = 2,
 		/obj/item/gun/ballistic/automatic/gyropistol = 1,
 		/obj/item/gun/ballistic/shotgun = 2,
-		/obj/item/gun/ballistic/automatic/assualt/ar = 2)
+		/obj/item/gun/ballistic/automatic/assault/ar = 2)
 	premium = list(
 		/obj/item/ammo_box/magazine/smgm9mm = 2,
 		/obj/item/ammo_box/magazine/m50 = 4,

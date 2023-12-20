@@ -77,6 +77,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffe1c1"
 	area_limited_icon_smoothing = TRUE
 	sound_environment = SOUND_ENVIRONMENT_ROOM
+	lightswitch = FALSE
 	/// The mobile port attached to this area
 	var/obj/docking_port/mobile/mobile_port
 
@@ -327,6 +328,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Armory"
 	icon_state = "armory"
 
+/area/ship/security/dock
+	name = "Shuttle Dock"
+	icon_state = "security"
+
 /// Cargo Bay ///
 /area/ship/cargo
 	name = "Cargo Bay"
@@ -442,3 +447,4 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 	ambientsounds = SPACE
 	sound_environment = SOUND_AREA_SPACE
+	lightswitch = TRUE

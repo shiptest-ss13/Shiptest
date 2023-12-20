@@ -38,7 +38,7 @@
 /obj/structure/windoor_assembly/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 
 	AddElement(/datum/element/connect_loc, loc_connections)
@@ -55,10 +55,12 @@
 
 /obj/structure/windoor_assembly/update_icon_state()
 	icon_state = "[facing]_[secure ? "secure_" : ""]windoor_assembly[state]"
+	return ..()
 
-/obj/structure/windoor_assembly/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/windoor_assembly/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
-	if(get_dir(loc, target) == dir) //Make sure looking at appropriate border
+
+	if(border_dir == dir)
 		return
 
 	if(istype(mover, /obj/structure/window))
@@ -317,14 +319,14 @@
 				return ..()
 
 	//Update to reflect changes(if applicable)
-	update_icon()
+	update_appearance()
 
 
 
 /obj/structure/windoor_assembly/ComponentInitialize()
 	. = ..()
 	var/static/rotation_flags = ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS
-	AddComponent(/datum/component/simple_rotation, rotation_flags, can_be_rotated=CALLBACK(src, .proc/can_be_rotated), after_rotation=CALLBACK(src,.proc/after_rotation))
+	AddComponent(/datum/component/simple_rotation, rotation_flags, can_be_rotated=CALLBACK(src, PROC_REF(can_be_rotated)), after_rotation=CALLBACK(src, PROC_REF(after_rotation)))
 
 /obj/structure/windoor_assembly/proc/can_be_rotated(mob/user,rotation_type)
 	if(anchored)
@@ -338,7 +340,7 @@
 	return TRUE
 
 /obj/structure/windoor_assembly/proc/after_rotation(mob/user)
-	update_icon()
+	update_appearance()
 
 //Flips the windoor assembly, determines whather the door opens to the left or the right
 /obj/structure/windoor_assembly/verb/flip()
@@ -360,5 +362,5 @@
 		facing = "l"
 		to_chat(usr, "<span class='notice'>The windoor will now slide to the left.</span>")
 
-	update_icon()
+	update_appearance()
 	return

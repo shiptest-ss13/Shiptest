@@ -1,7 +1,5 @@
 /datum/job/cook
 	name = "Cook"
-	total_positions = 2
-	spawn_positions = 1
 	wiki_page = "Food" //WS Edit - Wikilinks/Warning
 	var/cooks = 0 //Counts cooks amount
 

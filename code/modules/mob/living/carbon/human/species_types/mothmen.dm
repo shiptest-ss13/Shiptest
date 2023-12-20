@@ -11,9 +11,9 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/moth
-	liked_food = FRUIT | SUGAR
+	liked_food = FRUIT | SUGAR | CLOTH
 	disliked_food = GROSS
-	toxic_food = MEAT | RAW
+	toxic_food = MEAT | RAW | GORE
 	mutanteyes = /obj/item/organ/eyes/compound 	//WS Edit - Compound eyes
 	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT

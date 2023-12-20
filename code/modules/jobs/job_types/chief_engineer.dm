@@ -1,8 +1,6 @@
 /datum/job/chief_engineer
 	name = "Chief Engineer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Chief_Engineer" //WS Edit - Wikilinks/Warning
@@ -74,35 +72,6 @@
 	neck = /obj/item/clothing/neck/tie/green
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/clothing/gloves/color/black=1)
 
-/datum/outfit/job/ce/gec
-	name = "Chief Engineer (GEC)"
-
-	uniform = /obj/item/clothing/under/syndicate/gec/chief_engineer
-	suit = /obj/item/clothing/suit/toggle/hazard
-	head = /obj/item/clothing/head/hardhat/white
-	shoes =/obj/item/clothing/shoes/laceup
-	ears = /obj/item/radio/headset/syndicate/alt/captain
-	id = /obj/item/card/id/syndicate_command/captain_id
-	gloves = /obj/item/clothing/gloves/combat
-
-/datum/outfit/job/ce/syndicate
-	name = "Chief Engineer (Syndicate Generic)"
-
-	id = /obj/item/card/id/syndicate_command/crew_id
-	ears = /obj/item/radio/headset/syndicate/alt
-	glasses = /obj/item/clothing/glasses/sunglasses
-
-/datum/outfit/job/ce/syndicate/gorlex
-	name = "Foreman (Gorlex Marauders)"
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/gorlex
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/hazard
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/combat
-
 /datum/outfit/job/ce/inteq
 	name = "IRMG Artificer Class II (Inteq)"
 
@@ -116,6 +85,13 @@
 	belt = /obj/item/storage/belt/utility/full
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
+
+/datum/outfit/job/ce/nt
+	name = "Chief Engineer (NT)"
+
+	head = /obj/item/clothing/head/beret/ce
+	belt = /obj/item/storage/belt/utility/full
+	suit = /obj/item/clothing/suit/hazardvest
 
 /datum/outfit/job/ce/frontiersmen
 	name = "Head Carpenter (Frontiersmen)"

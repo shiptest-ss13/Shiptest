@@ -82,7 +82,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 	if(!choice || choice == icon_state)
 		return
 	icon_state = choice
-	update_icon()
+	update_appearance()
 
 //if the object is a garnish, with a valid garnish_state, and there isnt already a garnish of the same type, add it to the list at the index of its layer
 /obj/item/reagent_containers/food/drinks/modglass/attackby(obj/item/garnish/garnish, mob/user, params)
@@ -94,13 +94,13 @@ GLOBAL_LIST_EMPTY(glass_variants)
 		to_chat(user, "<span class='notice'>Theres already something on this part of the glass!</span>")
 		return ..()
 	garnishes["[garnish.garnish_layer]"] = garnish.garnish_state
-	update_icon()
+	update_appearance()
 	qdel(garnish)
 
 //clear garnishes on wash
 /obj/item/reagent_containers/food/drinks/modglass/wash(clean_types)
 	garnishes = list()
-	update_icon()
+	update_appearance()
 
 /**
  * for each layer a garnish can be on, if there is a garnish in that layers index, apply a mutable appearance of its type and our rim size

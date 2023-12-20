@@ -18,6 +18,10 @@
 	internal_cell = TRUE
 	custom_price = 750
 	w_class = WEIGHT_CLASS_BULKY
+
+	muzzleflash_iconstate = "muzzle_flash_light"
+	muzzle_flash_color = COLOR_WHITE
+
 	var/overheat_time = 16
 	var/holds_charge = FALSE
 	var/unique_frequency = FALSE // modified by KA modkits
@@ -45,11 +49,17 @@
 
 /obj/item/gun/energy/kinetic_accelerator/crowbar_act(mob/living/user, obj/item/I)
 	. = TRUE
-	if(modkits.len)
-		to_chat(user, "<span class='notice'>You pry the modifications out.</span>")
-		I.play_tool_sound(src, 100)
+	if(LAZYLEN(modkits))
+		var/list/choose_options = list()
 		for(var/obj/item/borg/upgrade/modkit/M in modkits)
-			M.uninstall(src)
+			choose_options += list(M.name = image(icon = M.icon, icon_state = M.icon_state))
+		var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+		if(picked_option)
+			to_chat(user, "<span class='notice'>You remove [picked_option].</span>")
+			I.play_tool_sound(src, 100)
+			for(var/obj/item/borg/upgrade/modkit/M in modkits)
+				if(M.name == picked_option)
+					M.uninstall(src)
 	else
 		to_chat(user, "<span class='notice'>There are no modifications currently installed.</span>")
 
@@ -113,7 +123,7 @@
 	if(!QDELING(src) && !holds_charge)
 		// Put it on a delay because moving item from slot to hand
 		// calls dropped().
-		addtimer(CALLBACK(src, .proc/empty_if_not_held), 2)
+		addtimer(CALLBACK(src, PROC_REF(empty_if_not_held)), 2)
 
 /obj/item/gun/energy/kinetic_accelerator/proc/empty_if_not_held()
 	if(!ismob(loc))
@@ -122,7 +132,7 @@
 /obj/item/gun/energy/kinetic_accelerator/proc/empty()
 	if(cell)
 		cell.use(cell.charge)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/energy/kinetic_accelerator/proc/attempt_reload(recharge_time)
 	if(!cell)
@@ -144,7 +154,7 @@
 		carried = 1
 
 	deltimer(recharge_timerid)
-	recharge_timerid = addtimer(CALLBACK(src, .proc/reload), recharge_time * carried, TIMER_STOPPABLE)
+	recharge_timerid = addtimer(CALLBACK(src, PROC_REF(reload)), recharge_time * carried, TIMER_STOPPABLE)
 
 /obj/item/gun/energy/kinetic_accelerator/emp_act(severity)
 	return
@@ -155,7 +165,7 @@
 		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)
 	else
 		to_chat(loc, "<span class='warning'>[src] silently charges up.</span>")
-	update_icon()
+	update_appearance()
 	overheat = FALSE
 
 /obj/item/gun/energy/kinetic_accelerator/update_overlays()

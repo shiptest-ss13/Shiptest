@@ -1,8 +1,6 @@
 /datum/job/cmo
 	name = "Chief Medical Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
 	officer = TRUE
 	wiki_page = "Chief_Medical_Officer"
@@ -77,14 +75,6 @@
 	suit_store = null
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/firstaid/medical=1, /obj/item/flashlight/pen=1)
 
-//Shiptest!
-/datum/outfit/job/cmo/syndicate/nsv
-	name = "Medical Director (NSV-M)"
-
-	uniform = /obj/item/clothing/under/syndicate
-	ears = /obj/item/radio/headset/syndicate/alt/captain
-	id = /obj/item/card/id/syndicate_command/captain_id
-	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/job/cmo/pharma
 	name = "Chief Pharmacist"

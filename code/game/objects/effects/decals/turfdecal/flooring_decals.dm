@@ -1092,3 +1092,17 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/hardline_big/seven
 	icon_state = "hardline_big-7"
+
+//ARROW & AXE DOCKYARDS
+
+/obj/effect/turf_decal/arrowaxe_small
+	name = "small arrow & axe logo"
+
+/obj/effect/turf_decal/arrowaxe_small/left
+	icon_state = "arrowaxe-left"
+
+/obj/effect/turf_decal/arrowaxe_small/center
+	icon_state = "arrowaxe-center"
+
+/obj/effect/turf_decal/arrowaxe_small/right
+	icon_state = "arrowaxe-right"

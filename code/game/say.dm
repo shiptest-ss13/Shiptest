@@ -18,6 +18,8 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_CTF_BLUE]" = "blueteamradio"
 	))
 
+GLOBAL_LIST_INIT(freqcolor, list())
+
 /atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(!can_speak())
 		return
@@ -43,7 +45,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 /atom/movable/proc/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), face_name = FALSE)
 	//This proc uses text() because it is faster than appending strings. Thanks BYOND.
 	//Basic span
-	var/spanpart1 = "<span class='[radio_freq ? get_radio_span(radio_freq) : "game say"]'>"
+	var/spanpart1 = "<span [get_radio_span(radio_freq)]>"
 	//Start name span.
 	var/spanpart2 = "<span class='name'>"
 	//Radio freq/name display
@@ -134,16 +136,27 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		return "makes a strange sound."
 
 /proc/get_radio_span(freq)
+	if(!freq) // If there's no freq attached to the message, then it's not for a radio.
+		return "class='game say'"
 	var/returntext = GLOB.freqtospan["[freq]"]
-	if(returntext)
-		return returntext
-	return "radio"
+	if(returntext) // If we find a pre-defined span for the freq, use that instead.
+		return "class='[returntext]'"
+	else if(freq != FREQ_COMMON) // We don't want to change the color of Common.
+		var/returncolor = GLOB.freqcolor["[freq]"]
+		if(returncolor) // If we've already picked a color for this channel, don't do it again.
+			return "style='color:[returncolor]' class='radio'"
+		else // If we haven't picked a color for this channel, pick one now.
+			returncolor = colorize_string("[freq]", 1, 0.85)
+			GLOB.freqcolor["[freq]"] = returncolor
+			return "style='color:[returncolor]' class='radio'"
+	else // This should only handle Common.
+		return "class='radio'"
 
 /proc/get_radio_name(freq)
 	var/returntext = GLOB.reverseradiochannels["[freq]"]
 	if(returntext)
 		return returntext
-	return "[copytext_char("[freq]", 1, 4)].[copytext_char("[freq]", 4, 5)]"
+	return "Custom"
 
 /proc/attach_spans(input, list/spans)
 	return "[message_spans_start(spans)][input]</span>"

@@ -198,7 +198,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	maxHealth = 30
 	health = maxHealth
 	to_chat(src, "<span class='userdanger'>You ate cheese! You are now stronger, bigger and faster!</span>")
-	addtimer(CALLBACK(src, .proc/cheese_down), 3 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(cheese_down)), 3 MINUTES)
 
 /mob/living/simple_animal/mouse/proc/cheese_down()
 	cheesed = FALSE
@@ -274,7 +274,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	bitesize = 3
 	eatverb = "devour"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
-	foodtype = GROSS | MEAT | RAW
+	foodtype = GORE | MEAT | RAW
 	grind_results = list(/datum/reagent/blood = 20, /datum/reagent/liquidgibs = 5)
 
 /obj/item/reagent_containers/food/snacks/deadmouse/examine(mob/user)

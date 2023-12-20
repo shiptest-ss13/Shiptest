@@ -9,4 +9,4 @@
 			value += rep.total_value[thing]
 
 		if(value >= pack.cost)
-			Fail("[pack] ([pack_type]) was resold for [value], [value - pack.cost] greater than the buy price of [pack.cost]!")
+			TEST_FAIL("[pack] ([pack_type]) was resold for [value], [value - pack.cost] greater than the buy price of [pack.cost]!")

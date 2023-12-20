@@ -65,14 +65,12 @@
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/solgov/sonnensoldner
-	r_pocket = /obj/item/gun/ballistic/automatic/pistol/solgov
-	l_pocket = /obj/item/ammo_box/magazine/pistol556mm
+	r_pocket = null
+	l_pocket = null
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
 	box = /obj/item/storage/box/survival
-	backpack_contents = list(/obj/item/crowbar/power,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/ammo_box/magazine/pistol556mm=2)
+	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
 	name = "Solarian Representative (SolGov)"
@@ -126,7 +124,7 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/soft/solgov
+	head = /obj/item/clothing/head/solgov_surgery
 	suit =  /obj/item/clothing/suit/solgov/jacket
 	l_hand = /obj/item/storage/firstaid/medical
 
@@ -153,13 +151,39 @@
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
-		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	box = /obj/item/storage/box/survival/mining
+
+/datum/outfit/job/solgov/psychologist
+	name = "Psychologist (SolGov)"
+	jobtype = /datum/job/psychologist
+
+	head = /obj/item/clothing/head/fedora/solgov
+	suit = /obj/item/clothing/suit/solgov/suit
+	ears = /obj/item/radio/headset/headset_srvmed
+	uniform = /obj/item/clothing/under/solgov/formal
+	shoes = /obj/item/clothing/shoes/laceup
+	id = /obj/item/card/id
+	belt = /obj/item/pda/medical
+	pda_slot = ITEM_SLOT_BELT
+	l_hand = /obj/item/clipboard
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+
+/datum/outfit/job/solgov/patient
+	name = "Attentive Care Patient (SolGov)"
+	jobtype = /datum/job/prisoner
+
+	id = /obj/item/card/id/patient
+	uniform = /obj/item/clothing/under/rank/medical/gown
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/sandal/slippers
 
 /datum/outfit/job/solgov/engineer
 	name = "Ship Engineer (SolGov)"
@@ -183,3 +207,18 @@
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
+
+/datum/outfit/job/solgov/quartermaster
+	name = "Logistics Deck Officer (SolGov)"
+	job_icon = "quartermaster"
+	jobtype = /datum/job/qm
+
+	belt = /obj/item/pda/quartermaster
+	ears = /obj/item/radio/headset/solgov/captain
+	uniform = /obj/item/clothing/under/solgov/formal
+	suit = /obj/item/clothing/suit/solgov/overcoat
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/flatcap/solgov
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_hand = /obj/item/clipboard
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)

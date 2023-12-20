@@ -5,6 +5,7 @@
 
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "navbeacon0-f"
+	base_icon_state = "navbeacon"
 	name = "navigation beacon"
 	desc = "A radio beacon used for bot navigation and crew wayfinding."
 	plane = FLOOR_PLANE
@@ -45,8 +46,10 @@
 	return ..()
 
 /obj/machinery/navbeacon/on_virtual_z_change(new_virtual_z, previous_virtual_z)
-	LAZYADDASSOC(GLOB.navbeacons, "[new_virtual_z]", src)
-	LAZYREMOVEASSOC(GLOB.navbeacons, "[previous_virtual_z]", src)
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(GLOB.navbeacons, "[previous_virtual_z]", src)
+	if(new_virtual_z)
+		LAZYADDASSOC(GLOB.navbeacons, "[new_virtual_z]", src)
 	..()
 
 // set the transponder codes assoc list from codes_txt
@@ -68,8 +71,7 @@
 			codes[e] = "1"
 
 /obj/machinery/navbeacon/proc/glob_lists_deregister()
-	if (GLOB.navbeacons["[z]"])
-		GLOB.navbeacons["[z]"] -= src //Remove from beacon list, if in one.
+	LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
 	GLOB.deliverybeacons -= src
 	GLOB.deliverybeacontags -= location
 	GLOB.wayfindingbeacons -= src
@@ -77,10 +79,10 @@
 /obj/machinery/navbeacon/proc/glob_lists_register(init=FALSE)
 	if(!init)
 		glob_lists_deregister()
+	if(!codes)
+		return
 	if(codes["patrol"])
-		if(!GLOB.navbeacons["[z]"])
-			GLOB.navbeacons["[z]"] = list()
-		GLOB.navbeacons["[z]"] += src //Register with the patrol list!
+		LAZYADD(GLOB.navbeacons["[virtual_z()]"], src)
 	if(codes["delivery"])
 		GLOB.deliverybeacons += src
 		GLOB.deliverybeacontags += location
@@ -89,7 +91,8 @@
 
 // update the icon_state
 /obj/machinery/navbeacon/update_icon_state()
-	icon_state = "navbeacon[open]"
+	icon_state = "[base_icon_state][open]"
+	return ..()
 
 /obj/machinery/navbeacon/attackby(obj/item/I, mob/user, params)
 	var/turf/T = loc
@@ -101,7 +104,7 @@
 
 		user.visible_message("<span class='notice'>[user] [open ? "opens" : "closes"] the beacon's cover.</span>", "<span class='notice'>You [open ? "open" : "close"] the beacon's cover.</span>")
 
-		update_icon()
+		update_appearance()
 
 	else if (istype(I, /obj/item/card/id)||istype(I, /obj/item/pda))
 		if(open)

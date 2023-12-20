@@ -69,13 +69,15 @@
 /obj/item/energyhalberd/update_icon_state()
 	if(wielded)
 		icon_state = "halberd[halberd_color]"
+		return ..()
 	else
 		icon_state = "halberd"
+		return ..()
 
 /obj/item/energyhalberd/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_halberdwield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_halberdunwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_halberdwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_halberdunwield))
 	if(LAZYLEN(possible_colors))
 		halberd_color = pick(possible_colors)
 		switch(halberd_color)
@@ -165,7 +167,7 @@
 			hacked = TRUE
 			to_chat(user, "<span class='warning'>HLBRDRNBW_ENGAGE</span>")
 			halberd_color = "rainbow"
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>It's starting to look like a triple rainbow - no, nevermind.</span>")
 	else

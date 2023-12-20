@@ -12,6 +12,7 @@ GLOBAL_LIST_EMPTY(stealthminID)						//reference list with IDs that store ckeys,
 //This is for procs to replace all the goddamn 'in world's that are chilling around the code
 
 GLOBAL_LIST_EMPTY(player_list)				//all mobs **with clients attached**.
+GLOBAL_LIST_EMPTY(keyloop_list) //as above but can be limited to boost performance
 GLOBAL_LIST_EMPTY(mob_list)					//all mobs, including clientless
 GLOBAL_LIST_EMPTY(mob_directory)			//mob_id -> mob
 GLOBAL_LIST_EMPTY(alive_mob_list)			//all alive mobs, including clientless. Excludes /mob/dead/new_player
@@ -33,6 +34,8 @@ GLOBAL_LIST_EMPTY(bots_list)
 GLOBAL_LIST_EMPTY(aiEyes)
 ///underages who have been reported to security for trying to buy things they shouldn't, so they can't spam
 GLOBAL_LIST_EMPTY(narcd_underages)
+
+GLOBAL_LIST_EMPTY(real_names_joined)
 
 GLOBAL_LIST_EMPTY(language_datum_instances)
 GLOBAL_LIST_EMPTY(all_languages)

@@ -60,7 +60,7 @@
 		if(dongle.translate_binary)
 			return TRUE
 
-/mob/living/carbon/human/radio(message, list/message_mods = list(), list/spans, language) //Poly has a copy of this, lazy bastard
+/mob/living/carbon/human/radio(message, list/message_mods = list(), list/spans, language) //Polly has a copy of this, lazy bastard
 	. = ..()
 	if(. != FALSE)
 		return .

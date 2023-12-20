@@ -49,9 +49,9 @@
 	var/datum/supply_pack/SP = new pack_type
 	var/obj/structure/closet/crate/crate = SP.generate(null)
 	crate.locked = FALSE //Unlock secure crates
-	crate.update_icon()
+	crate.update_appearance()
 	var/obj/structure/closet/supplypod/pod = make_pod()
-	new /obj/effect/DPtarget(LZ, pod, crate)
+	new /obj/effect/pod_landingzone(LZ, pod, crate)
 
 ///Handles the creation of the pod, in case it needs to be modified beforehand
 /datum/round_event/stray_cargo/proc/make_pod()

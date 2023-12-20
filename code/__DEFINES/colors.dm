@@ -26,11 +26,14 @@
 //EndWS
 
 #define COLOR_WHITE "#FFFFFF"
+#define COLOR_OFF_WHITE "#FFF5ED"
 #define COLOR_VERY_LIGHT_GRAY "#EEEEEE"
 #define COLOR_SILVER "#C0C0C0"
 #define COLOR_GRAY "#808080"
 #define COLOR_FLOORTILE_GRAY "#a3a2a0"
+#define COLOR_WEBSAFE_DARK_GRAY "#484848"
 #define COLOR_ALMOST_BLACK "#333333"
+#define COLOR_FULL_TONER_BLACK "#101010"
 #define COLOR_BLACK "#000000"
 #define COLOR_HALF_TRANSPARENT_BLACK "#0000007A"
 
@@ -70,12 +73,14 @@
 #define COLOR_PINK "#FFC0CB"
 #define COLOR_MOSTLY_PURE_PINK "#E4005B"
 #define COLOR_BLUSH_PINK "#D84C59"
+#define COLOR_FADED_PINK "#ff80d5"
 #define COLOR_BLUSH_TEAL "#009696"
 #define COLOR_MAGENTA "#FF00FF"
 #define COLOR_STRONG_MAGENTA "#B800B8"
 #define COLOR_PURPLE "#800080"
 #define COLOR_VIOLET "#B900F7"
 #define COLOR_STRONG_VIOLET "#6927c5"
+#define COLOR_DARK_PURPLE "#551A8B"
 
 #define COLOR_ORANGE "#FF9900"
 #define COLOR_TAN_ORANGE "#FF7B00"
@@ -159,6 +164,8 @@
 #define LIGHT_COLOR_LAVA "#C48A18"
 /// Bright, non-saturated red. Leaning slightly towards pink for visibility. rgb(250, 100, 75)
 #define LIGHT_COLOR_FLARE "#FA644B"
+/// Vivid red. Leans a bit darker to accentuate red colors and leave other channels a bit dry.  rgb(200, 25, 25)
+#define LIGHT_COLOR_INTENSE_RED "#C81919"
 /// Weird color, between yellow and green, very slimy. rgb(175, 200, 75)
 #define LIGHT_COLOR_SLIME_LAMP "#AFC84B"
 /// Extremely diluted yellow, close to skin color (for some reason). rgb(250, 225, 175)

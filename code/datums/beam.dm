@@ -69,8 +69,8 @@
 	visuals.emissive = emissive
 	visuals.update_appearance()
 	Draw()
-	RegisterSignal(origin, COMSIG_MOVABLE_MOVED, .proc/redrawing)
-	RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/redrawing)
+	RegisterSignal(origin, COMSIG_MOVABLE_MOVED, PROC_REF(redrawing))
+	RegisterSignal(target, COMSIG_MOVABLE_MOVED, PROC_REF(redrawing))
 
 /**
  * Triggered by signals set up when the beam is set up. If it's still sane to create a beam, it removes the old beam, creates a new one. Otherwise it kills the beam.
@@ -84,13 +84,14 @@
 	SIGNAL_HANDLER
 	if(origin && target && get_dist(origin,target)<max_distance && origin.z == target.z)
 		QDEL_LIST(elements)
-		INVOKE_ASYNC(src, .proc/Draw)
+		INVOKE_ASYNC(src, PROC_REF(Draw))
 	else
 		qdel(src)
 
 /datum/beam/Destroy()
 	QDEL_LIST(elements)
-	QDEL_NULL(visuals)
+	if(visuals)
+		QDEL_NULL(visuals)
 	UnregisterSignal(origin, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(target, COMSIG_MOVABLE_MOVED)
 	target = null
@@ -162,6 +163,9 @@
 
 		segment.pixel_x = origin_px + Pixel_x
 		segment.pixel_y = origin_py + Pixel_y
+		//This var might hold onto references, and we might be qdeleted during the check_tick... so yeah.
+		//It doesn't really matter, because this whole proc counts as a ref for src, but still.
+		segment = null
 		CHECK_TICK
 
 /obj/effect/ebeam
@@ -201,7 +205,7 @@
  */
 /atom/proc/Beam(atom/BeamTarget,icon_state="b_beam",icon='icons/effects/beam.dmi',time=INFINITY,maxdistance=INFINITY,beam_type=/obj/effect/ebeam, beam_color = null, emissive = TRUE, override_origin_pixel_x = null, override_origin_pixel_y = null, override_target_pixel_x = null, override_target_pixel_y = null)
 	var/datum/beam/newbeam = new(src,BeamTarget,icon,icon_state,time,maxdistance,beam_type, beam_color, emissive, override_origin_pixel_x, override_origin_pixel_y, override_target_pixel_x, override_target_pixel_y)
-	INVOKE_ASYNC(newbeam, /datum/beam/.proc/Start)
+	INVOKE_ASYNC(newbeam, TYPE_PROC_REF(/datum/beam, Start))
 	return newbeam
 
 

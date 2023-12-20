@@ -31,6 +31,10 @@ check_regex.py - Run regex expression tests on all DM code inside current
         modification, or removal. Good if you want to track down errors
         caused by commit or PR changes.
 
+    --github-actions
+        An output option to format the output in a way that Github Actions
+        can parse and show as annotations in the PR.
+
 Copyright 2021 Martin Lyrå
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -99,6 +103,12 @@ options.add_argument(
     dest="log_changes_only",
     default=False,
     action="store_true")
+options.add_argument(
+    "--github-actions",
+    dest="github_actions",
+    default=False,
+    action="store_true"
+)
 
 args = options.parse_args()
 
@@ -790,9 +800,25 @@ if __name__ == "__main__":
                     show_items.append("Current (%4i): %s" % (len(matches), matches))
                 if len(adds):
                     show_items.append("+++++++ (%4i): %s" % (len(adds), adds))
+                    #Github actions annotations
+                    if args.github_actions and matching != RESULT_OK:
+                        for line_no in adds:
+                            output_write("::error file=%s,line=%i,title=Check Regex::%s added to here, remove or update check_regex.yml" % (
+                                f,
+                                line_no,
+                                standard.message
+                            ), to_stdout=True, to_file=False)
                     inner_prefix = prefix
                 if len(removes):
                     show_items.append("------- (%4i): %s" % (len(removes), removes))
+                    #Github actions annotations
+                    if args.github_actions and matching != RESULT_OK:
+                        for line_no in removes:
+                            output_write("::error file=%s,line=%i,title=Check Regex::%s removed from here, update check_regex.yml" % (
+                                f,
+                                line_no,
+                                standard.message
+                            ), to_stdout=True, to_file=False)
                     inner_prefix = prefix
 
                 lines.append("%2s %s" % ("\u2500\u252C", f))

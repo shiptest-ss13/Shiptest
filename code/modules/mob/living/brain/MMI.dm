@@ -3,6 +3,7 @@
 	desc = "The Warrior's bland acronym, MMI, obscures the true horror of this monstrosity. Circuit board to brain."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "mmi_off"
+	base_icon_state = "mmi"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/braintype = "Cyborg"
 	var/obj/item/radio/radio = null //Let's give it a radio.
@@ -33,11 +34,12 @@
 
 /obj/item/mmi/update_icon_state()
 	if(!brain)
-		icon_state = "mmi_off"
+		icon_state = "[base_icon_state]_off"
 	else if(istype(brain, /obj/item/organ/brain/alien))
-		icon_state = "mmi_brain_alien"
+		icon_state = "[base_icon_state]_brain_alien"
 	else
-		icon_state = "mmi_brain"
+		icon_state = "[base_icon_state]_brain"
+	return ..()
 
 /obj/item/mmi/update_overlays()
 	. = ..()
@@ -87,7 +89,7 @@
 		brain.organ_flags |= ORGAN_FROZEN
 
 		name = "[initial(name)]: [brainmob.real_name]"
-		update_icon()
+		update_appearance()
 		if(istype(brain, /obj/item/organ/brain/alien))
 			braintype = "Xenoborg" //HISS....Beep.
 		else
@@ -108,7 +110,7 @@
 		to_chat(user, "<span class='notice'>You toggle [src]'s radio system [radio.on==1 ? "on" : "off"].</span>")
 	else
 		eject_brain(user)
-		update_icon()
+		update_appearance()
 		name = initial(name)
 		to_chat(user, "<span class='notice'>You unlock and upend [src], spilling the brain onto the floor.</span>")
 
@@ -153,7 +155,7 @@
 	brain.organ_flags |= ORGAN_FROZEN
 
 	name = "[initial(name)]: [brainmob.real_name]"
-	update_icon()
+	update_appearance()
 	if(istype(brain, /obj/item/organ/brain/alien))
 		braintype = "Xenoborg" //HISS....Beep.
 	else

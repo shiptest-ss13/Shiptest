@@ -1,8 +1,6 @@
 /datum/job/hos
 	name = "Head of Security"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD|DEADMIN_POSITION_SECURITY
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 14
 	officer = TRUE
 	wiki_page = "Head_of_Security" //WS Edit - Wikilinks/Warning
@@ -40,10 +38,10 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/HoS
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	suit_store = /obj/item/gun/energy/e_gun
+	suit_store = null
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/melee/classic_baton=1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -62,16 +60,6 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/security/hos
 	suit_store = /obj/item/tank/internals/oxygen
 	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/e_gun=1, /obj/item/ammo_box/magazine/co9mm=1) //WS edit - free lethals
-
-/datum/outfit/job/hos/syndicate
-	name = "Sergeant (Syndicate)"
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/combat
-	head = /obj/item/clothing/head/warden
-	suit = /obj/item/clothing/suit/armor/vest/syndie
-	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
 
 /datum/outfit/job/hos/nanotrasen
 	name = "Head of Security (Nanotrasen)"
@@ -123,6 +111,9 @@
 		/obj/item/stamp/chap = 1,
 		/obj/item/melee/classic_baton/telescopic=1
 		)
+
+/datum/outfit/job/hos/roumain/post_equip(mob/living/carbon/human/H)
+	H.faction |= list("roumain")
 
 /datum/job/hos/roumain
 	outfit = /datum/outfit/job/hos/roumain

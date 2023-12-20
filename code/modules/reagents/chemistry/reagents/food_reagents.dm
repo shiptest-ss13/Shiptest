@@ -118,18 +118,18 @@
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
-/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, method = SMOKE, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(M))
 		return
 	var/boiling = FALSE
 	if(holder && holder.chem_temp >= fry_temperature)
 		boiling = TRUE
-	if(method != VAPOR && method != TOUCH) //Directly coats the mob, and doesn't go into their bloodstream
+	if(method != VAPOR && method != TOUCH && method != SMOKE) //Directly coats the mob, and doesn't go into their bloodstream
 		return ..()
 	if(!boiling)
 		return TRUE
 	var/oil_damage = ((holder.chem_temp / fry_temperature) * 0.33) //Damage taken per unit
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		oil_damage *= 1 - M.get_permeability_protection()
 	var/FryLoss = round(min(38, oil_damage * reac_volume))
 	if(!HAS_TRAIT(M, TRAIT_OIL_FRIED))
@@ -139,7 +139,7 @@
 			M.emote("scream")
 		playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 		ADD_TRAIT(M, TRAIT_OIL_FRIED, "cooking_oil_react")
-		addtimer(CALLBACK(M, /mob/living/proc/unfry_mob), 3)
+		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, unfry_mob)), 3)
 	if(FryLoss)
 		M.adjustFireLoss(FryLoss)
 	return TRUE
@@ -287,7 +287,7 @@
 		return
 
 	var/mob/living/carbon/victim = M
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		var/pepper_proof = victim.is_pepper_proof()
 
 		//check for protection
@@ -300,7 +300,7 @@
 			victim.confused = max(M.confused, 5) // 10 seconds
 			victim.Knockdown(3 SECONDS)
 			victim.add_movespeed_modifier(/datum/movespeed_modifier/reagent/pepperspray)
-			addtimer(CALLBACK(victim, /mob.proc/remove_movespeed_modifier, /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
+			addtimer(CALLBACK(victim, TYPE_PROC_REF(/mob, remove_movespeed_modifier), /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
 		victim.update_damage_hud()
 	if(method == INGEST)
 		if(!holder.has_reagent(/datum/reagent/consumable/milk))
@@ -561,7 +561,7 @@
 	..()
 
 /datum/reagent/consumable/honey/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH)))
+	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH, SMOKE)))
 		var/mob/living/carbon/C = M
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
@@ -673,7 +673,7 @@
 /datum/reagent/consumable/tinlux/proc/add_reagent_light(mob/living/living_holder)
 	var/obj/effect/dummy/lighting_obj/moblight/mob_light_obj = living_holder.mob_light(2)
 	LAZYSET(mobs_affected, living_holder, mob_light_obj)
-	RegisterSignal(living_holder, COMSIG_PARENT_QDELETING, .proc/on_living_holder_deletion)
+	RegisterSignal(living_holder, COMSIG_PARENT_QDELETING, PROC_REF(on_living_holder_deletion))
 
 /datum/reagent/consumable/tinlux/proc/remove_reagent_light(mob/living/living_holder)
 	UnregisterSignal(living_holder, COMSIG_PARENT_QDELETING)
@@ -821,7 +821,7 @@
 		ingested = TRUE
 		return
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "pyre_elementum", /datum/mood_event/irritate, name)		// Applied if not eaten
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()
@@ -849,3 +849,17 @@
 		M.adjustFireLoss(-2*REM, 0)
 	M.adjustStaminaLoss(-5*REM, 0)
 	..()
+
+/datum/reagent/consumable/cheese_spread
+	name = "Cheese Spread"
+	description = "I cant believe its not cheese!"
+	color = "#FBDB65"
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	taste_mult = 2
+	taste_description = "cheese"
+
+/datum/reagent/consumable/peanut_butter
+	name = "Peanut Butter"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "peanut"
+	reagent_state = SOLID

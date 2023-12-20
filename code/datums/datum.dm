@@ -40,12 +40,21 @@
 	/// Datum level flags
 	var/datum_flags = NONE
 
+	/// A cached version of our \ref
+	/// The brunt of \ref costs are in creating entries in the string tree (a tree of immutable strings)
+	/// This avoids doing that more then once per datum by ensuring ref strings always have a reference to them after they're first pulled
+	var/cached_ref
+
 	/// A weak reference to another datum
 	var/datum/weakref/weak_reference
 
-#ifdef TESTING
+#ifdef REFERENCE_TRACKING
 	var/running_find_references
 	var/last_find_references = 0
+	#ifdef REFERENCE_TRACKING_DEBUG
+	///Stores info about where refs are found, used for sanity checks and testing
+	var/list/found_refs
+	#endif
 #endif
 
 #ifdef DATUMVAR_DEBUGGING_MODE
@@ -83,16 +92,21 @@
 	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
 	weak_reference = null //ensure prompt GCing of weakref.
 
-	var/list/timers = active_timers
-	active_timers = null
-	for(var/thing as anything in timers)
-		var/datum/timedevent/timer = thing
-		if (timer.spent && !(timer.flags & TIMER_DELETE_ME))
-			continue
-		qdel(timer)
+	if(active_timers)
+		var/list/timers = active_timers
+		active_timers = null
+		for(var/datum/timedevent/timer as anything in timers)
+			if (timer.spent && !(timer.flags & TIMER_DELETE_ME))
+				continue
+			qdel(timer)
+
+	#ifdef REFERENCE_TRACKING
+	#ifdef REFERENCE_TRACKING_DEBUG
+	found_refs = null
+	#endif
+	#endif
 
 	//BEGIN: ECS SHIT
-
 	var/list/dc = datum_components
 	if(dc)
 		var/all_components = dc[/datum/component]

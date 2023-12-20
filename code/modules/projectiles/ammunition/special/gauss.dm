@@ -5,6 +5,7 @@
 	icon_state = "gauss-pellet"
 	projectile_type = /obj/projectile/bullet/gauss
 	auto_rotate = FALSE
+	firing_effect_type = /obj/effect/temp_visual/dir_setting/firing_effect/gauss
 	var/energy_cost = 100
 
 /obj/item/ammo_casing/caseless/gauss/lance

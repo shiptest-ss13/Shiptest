@@ -13,6 +13,7 @@
 					/obj/item/radio,
 					)
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/hooded/hood/
 	name = "hood"
@@ -20,6 +21,7 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/suit/hooded/hoodie/black
 	name = "black hoodie"
@@ -72,3 +74,43 @@
 	desc = "A gray hood for your gray hoodie."
 	icon_state = "hoodie_gray"
 	item_state = "hoodie_gray"
+
+/obj/item/clothing/suit/hooded/hoodie/fbp
+	name = "\improper FBP kepori hoodie"
+	desc = "A hoodie themed to look like a kepori in a Full Body Prosthetic. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodie_fbp"
+	item_state = "hoodie_fbp"
+	hoodtype = /obj/item/clothing/head/hooded/hood/fbp
+
+/obj/item/clothing/head/hooded/hood/fbp
+	name = "\improper FBP kepori hood"
+	desc = "A hood for your FBP hoodie."
+	icon_state = "hoodie_fbp"
+	item_state = "hoodie_fbp"
+
+/obj/item/clothing/suit/hooded/hoodie/rilena
+	name = "K4L1 hoodie"
+	desc = "A hoodie themed to look like K4L1 from the popular webseries RILENA. It has a comfy pocket for keeping your hands warm."
+	icon_state = "hoodie_rilena"
+	item_state = "hoodie_rilena"
+	hoodtype = /obj/item/clothing/head/hooded/hood/rilena
+
+/obj/item/clothing/suit/hooded/hoodie/rilena/equipped(mob/user, slot)
+	. = ..()
+	if(slot != ITEM_SLOT_OCLOTHING)
+		return
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "hoodie_rilena", /datum/mood_event/rilena_super_fan)
+
+/obj/item/clothing/suit/hooded/hoodie/rilena/dropped(mob/user)
+	. = ..()
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "hoodie_rilena")
+
+/obj/item/clothing/head/hooded/hood/rilena
+	name = "RILENA: LMR K4L1 hood"
+	desc = "A hood for your RILENA themed hoodie."
+	icon_state = "hoodie_rilena"
+	item_state = "hoodie_rilena"

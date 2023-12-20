@@ -91,10 +91,6 @@
 	display_name = "jeans"
 	path = /obj/item/clothing/under/pants/jeans
 
-/datum/gear/uniform/pants/classicjeans
-	display_name = "classic jeans"
-	path = /obj/item/clothing/under/pants/classicjeans
-
 /datum/gear/uniform/pants/khaki
 	display_name = "khaki pants"
 	path = /obj/item/clothing/under/pants/khaki
@@ -118,10 +114,6 @@
 /datum/gear/uniform/pants/blackjeans
 	display_name = "black jeans"
 	path = /obj/item/clothing/under/pants/blackjeans
-
-/datum/gear/uniform/pants/mustangjeans
-	display_name = "Must Hang jeans"
-	path = /obj/item/clothing/under/pants/mustangjeans
 
 /datum/gear/uniform/pants/black
 	display_name = "black pants"
@@ -241,52 +233,15 @@
 	display_name = "dress-suitskirt, navy"
 	path = /obj/item/clothing/under/suit/dresssuit/skirt
 
+/datum/gear/uniform/dress/rilena
+	display_name = "red dress, Ri cosplay"
+	path = /obj/item/clothing/under/dress/rilena
+
 //Premium
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
 
-/datum/gear/uniform/psychedelic
-	display_name = "psychedelic suit"
-	path = /obj/item/clothing/under/misc/psyche
-
 /datum/gear/uniform/maid
 	display_name = "maid dress"
 	path = 	/obj/item/clothing/under/costume/maid
-
-//Trek uniforms
-/datum/gear/uniform/trek_tog_command
-	display_name = "original series command uniform"
-	path = /obj/item/clothing/under/trek/command
-
-/datum/gear/uniform/trek_tog_engsec
-	display_name = "original series engineering/security uniform"
-	path = /obj/item/clothing/under/trek/engsec
-
-/datum/gear/uniform/trek_tog_medsci
-	display_name = "original series medical/science uniform"
-	path = /obj/item/clothing/under/trek/medsci
-
-/datum/gear/uniform/trek_tng_command
-	display_name = "next generation command uniform"
-	path = /obj/item/clothing/under/trek/command/next
-
-/datum/gear/uniform/trek_tng_engsec
-	display_name = "next generation engineering/security uniform"
-	path = /obj/item/clothing/under/trek/engsec/next
-
-/datum/gear/uniform/trek_tng_medsci
-	display_name = "next generation medical/science uniform"
-	path = /obj/item/clothing/under/trek/medsci/next
-
-/datum/gear/uniform/trek_ent_command
-	display_name = "enterprise command uniform"
-	path = /obj/item/clothing/under/trek/command/ent
-
-/datum/gear/uniform/trek_ent_engsec
-	display_name = "enterprise engineering/security uniform"
-	path = /obj/item/clothing/under/trek/engsec/ent
-
-/datum/gear/uniform/trek_ent_medsci
-	display_name = "enterprise medical/science uniform"
-	path = /obj/item/clothing/under/trek/medsci/ent

@@ -146,7 +146,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MUTE "mute"
 #define TRAIT_EMOTEMUTE "emotemute"
 #define TRAIT_NEARSIGHT "nearsighted"
-#define TRAIT_FAT "fat"
 #define TRAIT_HUSK "husk"
 #define TRAIT_BADDNA "baddna"
 #define TRAIT_CLUMSY "clumsy"
@@ -216,6 +215,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NOMOBSWAP "no-mob-swap"
 #define TRAIT_XRAY_VISION "xray_vision"
 #define TRAIT_THERMAL_VISION "thermal_vision"
+/// We have some form of forced gravity acting on us
+#define TRAIT_FORCED_GRAVITY "forced_gravity"
 #define TRAIT_ABDUCTOR_TRAINING "abductor-training"
 #define TRAIT_ABDUCTOR_SCIENTIST_TRAINING "abductor-scientist-training"
 #define TRAIT_SURGEON "surgeon"
@@ -263,6 +264,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SCOOPABLE "scoopable"
 //your smooches actually deal damage to their target
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
+/// This mob overrides certian SSlag_switch measures with this special trait
+#define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
@@ -286,6 +289,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SPIRITUAL "spiritual"
 #define TRAIT_FAN_CLOWN "fan_clown"
 #define TRAIT_FAN_MIME "fan_mime"
+#define TRAIT_FAN_RILENA "fan_rilena"
 #define TRAIT_VORACIOUS "voracious"
 #define TRAIT_SELF_AWARE "self_aware"
 #define TRAIT_FREERUNNING "freerunning"
@@ -318,7 +322,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define UNCONSCIOUS_TRAIT "unconscious"
 #define EYE_DAMAGE "eye_damage"
 #define GENETIC_MUTATION "genetic"
-#define OBESITY "obesity"
 #define MAGIC_TRAIT "magic"
 #define TRAUMA_TRAIT "trauma"
 #define DISEASE_TRAIT "disease"
@@ -421,3 +424,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FISH_SAFE_STORAGE "fish_case"
 /// Stuff that can go inside fish cases
 #define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
+/// Granted by prismwine
+#define TRAIT_REFLECTIVE "reflective"
+
+/// Trait granted by [mob/living/silicon/ai]
+/// Applied when the ai anchors itself
+#define AI_ANCHOR_TRAIT "ai_anchor"

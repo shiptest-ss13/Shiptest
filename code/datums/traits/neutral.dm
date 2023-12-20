@@ -185,8 +185,8 @@
 	old_hair = H.hairstyle
 	H.hairstyle = "Bald"
 	H.update_hair()
-	RegisterSignal(H, COMSIG_CARBON_EQUIP_HAT, .proc/equip_hat)
-	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, .proc/unequip_hat)
+	RegisterSignal(H, COMSIG_CARBON_EQUIP_HAT, PROC_REF(equip_hat))
+	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, PROC_REF(unequip_hat))
 
 /datum/quirk/bald/remove()
 	if(quirk_holder)
@@ -203,7 +203,7 @@
 		W.hairstyle = pick(GLOB.hairstyles_list - "Bald")
 	else
 		W.hairstyle = old_hair
-	W.update_icon()
+	W.update_appearance()
 	var/list/slots = list (
 		"head" = ITEM_SLOT_HEAD,
 		"backpack" = ITEM_SLOT_BACKPACK,

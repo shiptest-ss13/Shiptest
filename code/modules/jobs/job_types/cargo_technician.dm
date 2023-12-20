@@ -1,7 +1,5 @@
 /datum/job/cargo_tech
 	name = "Cargo Technician"
-	total_positions = 3
-	spawn_positions = 2
 	wiki_page = "Cargo_technician" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/cargo_tech
@@ -25,21 +23,6 @@
 	l_hand = /obj/item/export_scanner
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
-/datum/outfit/job/cargo_tech/mailroomtechnician
-	name = "Cargo Technician (Mailroom Technician)"
-
-	uniform = /obj/item/clothing/under/rank/cargo/tech/mailroom_technician
-	alt_uniform = null
-
-/datum/outfit/job/cargo_tech/deliveriesofficer
-	name = "Cargo Technician (Deliveries Officer)"
-
-	uniform = /obj/item/clothing/under/suit/cargo_tech
-	alt_uniform = null
-	l_hand = null
-	head = /obj/item/clothing/head/deliveries_officer
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/export_scanner=1)
-
 //Shiptest outfits
 
 /datum/outfit/job/cargo_tech/pilot
@@ -52,24 +35,6 @@
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 
-/datum/outfit/job/cargo_tech/donk
-	name = "Customer Associate (Donk! Co.)"
-	id = /obj/item/card/id/syndicate_command/crew_id
-	uniform = /obj/item/clothing/under/syndicate/donk
-	suit = /obj/item/clothing/suit/hazardvest/donk
-
-/datum/outfit/job/cargo_tech/stockboy
-	name = "Cargo Technician (Stock Boy)"
-
-	uniform = /obj/item/clothing/under/suit/cargo_tech
-	suit = /obj/item/clothing/suit/jacket/leather
-	alt_uniform = null
-	l_hand = null
-	backpack_contents = list(
-		/obj/item/modular_computer/tablet/preset/cargo = 1,
-		/obj/item/export_scanner = 1,
-		/obj/item/kitchen/knife/hunting = 1
-	)
 
 /datum/outfit/job/cargo_tech/frontiersmen
 	name = "Cargo Tech (frontiersmen)"

@@ -98,3 +98,18 @@
 	id = "tumblr-sexyman"
 	description = "After a logging incident gone wrong, the Syndicate invade this factory to stop the beast."
 	suffix = "jungle_surface_tumblr_sexyman.dmm"
+
+/datum/map_template/ruin/lavaland/biodome/beach
+	name = "Biodome Beach"
+	id = "biodome-beach"
+	description = "Seemingly plucked from a tropical destination, this beach is calm and cool, with the salty waves roaring softly in the background. \
+	Comes with a rustic wooden bar and suicidal bartender."
+	suffix = "lavaland_biodome_beach.dmm"
+
+/datum/map_template/ruin/lavaland/syndicate_base
+	name = "Syndicate Lava Base"
+	id = "lava-base"
+	description = "A secret base researching illegal bioweapons, it is closely guarded by an elite team of syndicate agents."
+	suffix = "lavaland_surface_syndicate_base1.dmm"
+	cost = 20
+	allow_duplicates = FALSE

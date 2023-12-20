@@ -85,22 +85,22 @@
 /obj/item/instrument/piano_synth/headphones/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	RegisterSignal(src, COMSIG_SONG_START, .proc/start_playing)
-	RegisterSignal(src, COMSIG_SONG_END, .proc/stop_playing)
+	RegisterSignal(src, COMSIG_SONG_START, PROC_REF(start_playing))
+	RegisterSignal(src, COMSIG_SONG_END, PROC_REF(stop_playing))
 
 /**
  * Called by a component signal when our song starts playing.
  */
 /obj/item/instrument/piano_synth/headphones/proc/start_playing()
 	icon_state = "[initial(icon_state)]_on"
-	update_icon()
+	update_appearance()
 
 /**
  * Called by a component signal when our song stops playing.
  */
 /obj/item/instrument/piano_synth/headphones/proc/stop_playing()
 	icon_state = "[initial(icon_state)]"
-	update_icon()
+	update_appearance()
 
 /obj/item/instrument/piano_synth/headphones/spacepods
 	name = "\improper Nanotrasen space pods"
@@ -249,7 +249,7 @@
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)
 	. = ..()
-	RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+	RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
 /obj/item/instrument/harmonica/dropped(mob/M)
 	. = ..()

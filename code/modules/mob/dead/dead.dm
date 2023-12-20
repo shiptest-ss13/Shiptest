@@ -99,6 +99,10 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 /mob/dead/auto_deadmin_on_login()
 	return
 
+/mob/dead/Destroy()
+	LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+	return ..()
+
 /mob/dead/Login()
 	. = ..()
 	if(!client)

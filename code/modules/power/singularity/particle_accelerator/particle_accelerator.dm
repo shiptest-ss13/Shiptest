@@ -65,7 +65,7 @@
 		return
 	construction_state = anchorvalue ? PA_CONSTRUCTION_UNWIRED : PA_CONSTRUCTION_UNSECURED
 	update_state()
-	update_icon()
+	update_appearance()
 
 /obj/structure/particle_accelerator/attackby(obj/item/W, mob/user, params)
 	var/did_something = FALSE
@@ -115,7 +115,7 @@
 	if(did_something)
 		user.changeNext_move(CLICK_CD_MELEE)
 		update_state()
-		update_icon()
+		update_appearance()
 		return
 
 	return ..()
@@ -144,6 +144,7 @@
 				icon_state="[reference]p[strength]"
 			else
 				icon_state="[reference]c"
+	return ..()
 
 /obj/structure/particle_accelerator/proc/update_state()
 	if(master)

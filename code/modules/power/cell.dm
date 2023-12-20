@@ -37,7 +37,7 @@
 	charge = maxcharge
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -203,7 +203,7 @@
 /obj/item/stock_parts/cell/crap/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/upgraded
 	name = "upgraded power cell"
@@ -225,7 +225,7 @@
 /obj/item/stock_parts/cell/secborg/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/mini_egun
 	name = "miniature energy gun power cell"
@@ -271,7 +271,7 @@
 /obj/item/stock_parts/cell/high/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/super
 	name = "super-capacity power cell"
@@ -284,7 +284,7 @@
 /obj/item/stock_parts/cell/super/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/hyper
 	name = "hyper-capacity power cell"
@@ -297,7 +297,7 @@
 /obj/item/stock_parts/cell/hyper/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/bluespace
 	name = "bluespace power cell"
@@ -311,7 +311,7 @@
 /obj/item/stock_parts/cell/bluespace/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/infinite
 	name = "infinite-capacity power cell!"
@@ -367,7 +367,7 @@
 /obj/item/stock_parts/cell/emproof/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/emproof/empty/ComponentInitialize()
 	. = ..()
@@ -412,14 +412,14 @@
 	maxcharge = 10000
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
-	rating = 0 //gun batteries now incompatible with RPED WS edit
+	rating = 0 //Makes it incompatible with RPED
 
 /obj/item/stock_parts/cell/gun/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
-/obj/item/stock_parts/cell/gun/update_icon()
+/obj/item/stock_parts/cell/gun/update_appearance()
 	cut_overlays()
 	if(grown_battery)
 		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
@@ -433,6 +433,7 @@
 		add_overlay("[initial(icon_state)]-o2")
 	else
 		add_overlay("[initial(icon_state)]-o1")
+	return ..()
 
 /obj/item/stock_parts/cell/gun/upgraded
 	name = "upgraded weapon power cell"
@@ -444,7 +445,7 @@
 /obj/item/stock_parts/cell/gun/upgraded/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/gun/mini
 	name = "miniature weapon power cell"
@@ -456,7 +457,7 @@
 /obj/item/stock_parts/cell/gun/mini/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/stock_parts/cell/gun/solgov
 	name = "SolGov power cell"
@@ -473,8 +474,21 @@
 /obj/item/stock_parts/cell/gun/large/empty/Initialize()
 	. = ..()
 	charge = 0
-	update_icon()
+	update_appearance()
 
+/obj/item/stock_parts/cell/gun/kalix
+	name = "Etherbor EWC-5"
+	desc = "Brought to you by Etherbor Industries, proudly based within the PGF, is the EWC-5, an energy cell compatible with any Etherbor Industries energy weapons."
+	icon_state = "kalix-cell"
+	maxcharge = 12750 // 15 shots at 850 energy per
+	chargerate = 1750
+
+/obj/item/stock_parts/cell/gun/pgf
+	name = "Etherbor EWC-6m"
+	desc = "Exclusive only to the PGF military, the EWC-6m is an Etherbor energy weapon cell designed for military-grade use, including expanded capacity and output."
+	icon_state = "pgf-cell"
+	maxcharge = 20000 // 20 shots at 1000 energy per
+	chargerate = 2000
 
 #undef CELL_DRAIN_TIME
 #undef CELL_POWER_GAIN
