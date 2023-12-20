@@ -213,7 +213,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
-			addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
+			addtimer(CALLBACK(src, PROC_REF(try_despawn_occupant), mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
 	if(close_sound)
 		playsound(src, close_sound, 40)
@@ -254,7 +254,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 		despawn_occupant()
 	else
-		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), time_till_despawn) //try again with normal delay
+		addtimer(CALLBACK(src, PROC_REF(try_despawn_occupant), mob_occupant), time_till_despawn) //try again with normal delay
 
 /obj/machinery/cryopod/proc/handle_objectives()
 	var/mob/living/mob_occupant = occupant
@@ -339,7 +339,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		var/list/frozen_details = list()
 		frozen_details["name"] = "[mob_occupant.real_name]"
 		frozen_details["rank"] = announce_rank || "[mob_occupant.job]"
-		frozen_details["time"] = gameTimestamp()
+		frozen_details["time"] = station_time_timestamp()
 
 		control_computer_obj.frozen_crew += list(frozen_details)
 

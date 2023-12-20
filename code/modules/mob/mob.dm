@@ -453,7 +453,7 @@
 	set name = "Examine"
 	set category = "IC"
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/run_examinate, examinify))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(run_examinate), examinify))
 
 /mob/proc/run_examinate(atom/examinify)
 
@@ -472,8 +472,8 @@
 		if(isnull(client.recent_examines[examinify]) || client.recent_examines[examinify] < world.time)
 			result = examinify.examine(src)
 			client.recent_examines[examinify] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(examinify, COMSIG_PARENT_QDELETING, .proc/clear_from_recent_examines, override=TRUE) // to flush the value if deleted early
-			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, examinify), EXAMINE_MORE_TIME)
+			RegisterSignal(examinify, COMSIG_PARENT_QDELETING, PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
+			addtimer(CALLBACK(src, PROC_REF(clear_from_recent_examines), examinify), EXAMINE_MORE_TIME)
 			handle_eye_contact(examinify)
 		else
 			result = examinify.examine_more(src)
@@ -559,11 +559,11 @@
 	// check to see if their face is blocked or, if not, a signal blocks it
 	if(examined_mob.is_face_visible() && SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>You make eye contact with [examined_mob].</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	if(is_face_visible() && SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
+		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), examined_mob, msg), 3)
 
 
 ///Can this mob resist (default FALSE)
@@ -608,7 +608,7 @@
 	set category = "Object"
 	set src = usr
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/execute_mode))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_mode)))
 
 ///proc version to finish /mob/verb/mode() execution. used in case the proc needs to be queued for the tick after its first called
 /mob/proc/execute_mode()
@@ -621,6 +621,22 @@
 	var/obj/item/I = get_active_held_item()
 	if(I)
 		I.attack_self(src)
+		update_inv_hands()
+
+/mob/verb/do_unique_action()
+	set name = "Do Unique Action"
+	set category = "Object"
+	set src = usr
+
+	if(ismecha(loc))
+		return
+
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		I.unique_action(src)
 		update_inv_hands()
 
 /**
@@ -689,7 +705,7 @@
 		log_game("[key_name(usr)] AM failed due to disconnect.")
 
 	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
-		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - world.timeofday
+		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - REALTIMEOFDAY
 		if(time_left > 0)
 			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
 			return
@@ -1079,6 +1095,14 @@
 		return LAZYLEN(match_list)
 	return FALSE
 
+/mob/proc/update_joined_player_list(newname, oldname)
+	if(newname == oldname)
+		return
+	if(oldname)
+		GLOB.joined_player_list -= oldname
+	if(newname)
+		GLOB.joined_player_list[newname] = TRUE
+
 
 /**
  * Fully update the name of a mob
@@ -1093,6 +1117,9 @@
 		return 0
 
 	log_played_names(ckey,newname)
+
+	if(GLOB.joined_player_list[oldname])
+		update_joined_player_list(newname, oldname)
 
 	real_name = newname
 	name = newname
@@ -1179,6 +1206,11 @@
 	if(client.mouse_override_icon)
 		client.mouse_pointer_icon = client.mouse_override_icon
 
+/mob/proc/update_names_joined_list(new_name, old_name)
+	if(old_name)
+		GLOB.real_names_joined -= old_name
+	if(new_name)
+		GLOB.real_names_joined[new_name] = TRUE
 
 ///This mob is abile to read books
 /mob/proc/is_literate()
@@ -1403,7 +1435,7 @@
 		UnregisterSignal(active_storage, COMSIG_PARENT_QDELETING)
 	active_storage = new_active_storage
 	if(active_storage)
-		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, .proc/active_storage_deleted)
+		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, PROC_REF(active_storage_deleted))
 
 /mob/proc/active_storage_deleted(datum/source)
 	SIGNAL_HANDLER

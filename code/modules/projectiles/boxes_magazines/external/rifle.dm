@@ -27,7 +27,7 @@
 	base_icon_state = "47x33mm"
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
 	caliber = "4.73x33mm caseless"
-	max_ammo = 50 //brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+	max_ammo = 100 //brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/rifle47x33mm/update_icon_state()
@@ -64,7 +64,7 @@
 	icon_state = "ak47_mag"
 	ammo_type = /obj/item/ammo_casing/a762_39
 	caliber = "7.62x39mm"
-	max_ammo = 20
+	max_ammo = 30
 
 /obj/item/ammo_box/magazine/ak47/update_icon_state()
 	. = ..()
@@ -117,3 +117,14 @@
 /obj/item/ammo_box/magazine/swiss/update_icon_state()
 	. = ..()
 	icon_state = "swissmag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/e40
+	name = "E-40 magazine (.229 Eoehoma caseless)"
+	icon_state = "e40_mag"
+	ammo_type = /obj/item/ammo_casing/caseless/c299
+	caliber = ".299 caseless"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/e40/update_icon_state()
+	. = ..()
+	icon_state = "e40_mag-[!!ammo_count()]"

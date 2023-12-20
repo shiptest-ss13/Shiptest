@@ -120,3 +120,13 @@
 	build_path = /obj/item/borg/upgrade/modkit/aoe/turfs
 	category = list("Mining Designs", "Cyborg Upgrade Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+/datum/design/weather_monitor
+	name = "Weather Radio"
+	desc = "A weather radio designed for use in inhospitable environments. Gives audible warnings when storms approach."
+	id = "weatherradio"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron=75, /datum/material/glass=25)
+	build_path = /obj/item/radio/weather_monitor
+	category = list("Mining Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO

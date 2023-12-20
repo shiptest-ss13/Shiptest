@@ -37,7 +37,7 @@
 	riot = new /datum/action/cooldown/riot
 	coffer.Grant(src)
 	riot.Grant(src)
-	INVOKE_ASYNC(src, .proc/get_player)
+	INVOKE_ASYNC(src, PROC_REF(get_player))
 
 /mob/living/simple_animal/hostile/regalrat/Destroy()
 	coffer.Remove(src)

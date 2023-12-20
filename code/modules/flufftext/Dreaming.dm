@@ -64,7 +64,7 @@
 	dream_fragments.Cut(1,2)
 	to_chat(src, "<span class='notice'><i>... [next_message] ...</i></span>")
 	if(LAZYLEN(dream_fragments))
-		dream_timer = addtimer(CALLBACK(src, .proc/dream_sequence, dream_fragments), rand(1, 3) SECONDS, TIMER_STOPPABLE)
+		dream_timer = addtimer(CALLBACK(src, PROC_REF(dream_sequence), dream_fragments), rand(1, 3) SECONDS, TIMER_STOPPABLE)
 	else
 		stop_dreaming()
 

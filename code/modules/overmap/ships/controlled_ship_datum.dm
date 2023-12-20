@@ -77,7 +77,9 @@
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
-		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port.virtual_z())
+		if(shuttle_port?.virtual_z() == null)
+			return TRUE
+		priority_announce("The [oldname] has been renamed to the [new_name].", "Docking Announcement", sender_override = new_name, zlevel = shuttle_port?.virtual_z())
 	return TRUE
 
 /**
@@ -103,7 +105,7 @@
 		ship_account = new(name, source_template.starting_funds)
 
 #ifdef UNIT_TESTS
-	Rename("[source_template]")
+	Rename("[source_template]", TRUE)
 #else
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
@@ -114,6 +116,7 @@
 	. = ..()
 	SSovermap.controlled_ships -= src
 	helms.Cut()
+	QDEL_LIST(missions)
 	LAZYCLEARLIST(owner_candidates)
 	if(!QDELETED(shuttle_port))
 		shuttle_port.current_ship = null
@@ -139,8 +142,10 @@
 
 /datum/overmap/ship/controlled/pre_dock(datum/overmap/to_dock, datum/docking_ticket/ticket)
 	if(ticket.target != src || ticket.issuer != to_dock)
+		ticket.docking_error = "Invalid target."
 		return FALSE
 	if(!shuttle_port.check_dock(ticket.target_port))
+		ticket.docking_error = "Targeted docking port invalid."
 		return FALSE
 	return TRUE
 
@@ -285,7 +290,7 @@
 	)
 	LAZYSET(owner_candidates, H.mind, mind_info)
 	H.mind.original_ship = WEAKREF(src)
-	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, .proc/crew_mind_deleting)
+	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, PROC_REF(crew_mind_deleting))
 	if(!owner_mob)
 		set_owner_mob(H)
 
@@ -312,7 +317,7 @@
 		// turns out that timers don't get added to active_timers if the datum is getting qdeleted.
 		// so this timer was sitting around after deletion and clogging up runtime logs. thus, the QDELING() check. oops!
 		if(!owner_check_timer_id && !QDELING(src))
-			owner_check_timer_id = addtimer(CALLBACK(src, .proc/check_owner), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+			owner_check_timer_id = addtimer(CALLBACK(src, PROC_REF(check_owner)), 5 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 		return
 
 	owner_mob = new_owner
@@ -326,8 +331,8 @@
 	if(!(owner_mind in owner_candidates))
 		stack_trace("[src] tried to set ship owner to [new_owner] despite its mind [new_owner.mind] not being in owner_candidates!")
 
-	RegisterSignal(owner_mob, COMSIG_MOB_LOGOUT, .proc/owner_mob_logout)
-	RegisterSignal(owner_mob, COMSIG_MOB_GO_INACTIVE, .proc/owner_mob_afk)
+	RegisterSignal(owner_mob, COMSIG_MOB_LOGOUT, PROC_REF(owner_mob_logout))
+	RegisterSignal(owner_mob, COMSIG_MOB_GO_INACTIVE, PROC_REF(owner_mob_afk))
 	if(!owner_act)
 		owner_act = new(src)
 	owner_act.Grant(owner_mob)

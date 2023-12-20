@@ -156,6 +156,10 @@
 	///Default Y pixel offset
 	var/base_pixel_y
 
+	///Wanted sound when hit by a projectile
+	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+	///volume wanted for being hit
+	var/hitsound_volume = 50
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
@@ -587,6 +591,33 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, P, def_zone)
 	. = P.on_hit(src, 0, def_zone, piercing_hit)
 
+/atom/proc/bullet_hit_sfx(obj/projectile/hitting_projectile)
+	var/selected_sound = ""
+
+	if(!hitsound_volume)
+		return FALSE
+	if(!hitsound_volume)
+		return FALSE
+
+	switch(hitsound_type)
+		if(PROJECTILE_HITSOUND_FLESH)
+			selected_sound = hitting_projectile.hitsound
+		if(PROJECTILE_HITSOUND_NON_LIVING)
+			selected_sound = hitting_projectile.hitsound_non_living
+		if(PROJECTILE_HITSOUND_GLASS)
+			selected_sound = hitting_projectile.hitsound_glass
+		if(PROJECTILE_HITSOUND_STONE)
+			selected_sound = hitting_projectile.hitsound_stone
+		if(PROJECTILE_HITSOUND_METAL)
+			selected_sound = hitting_projectile.hitsound_metal
+		if(PROJECTILE_HITSOUND_WOOD)
+			selected_sound = hitting_projectile.hitsound_wood
+		if(PROJECTILE_HITSOUND_SNOW)
+			selected_sound = hitting_projectile.hitsound_snow
+
+	playsound(src, selected_sound, hitsound_volume, TRUE)
+	return TRUE
+
 ///Return true if we're inside the passed in atom
 /atom/proc/in_contents_of(container)//can take class or object instance as argument
 	if(ispath(container))
@@ -780,7 +811,7 @@
  */
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
-		addtimer(CALLBACK(src, .proc/hitby_react, AM), 2)
+		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
 
 /**
  * We have have actually hit the passed in atom
@@ -944,7 +975,7 @@
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, progress)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, TYPE_PROC_REF(/datum/component/storage, handle_mass_item_insertion), things, src_object, user, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(user, "<span class='notice'>You dump as much of [src_object.parent]'s contents [STR.insert_preposition]to [src] as you can.</span>")

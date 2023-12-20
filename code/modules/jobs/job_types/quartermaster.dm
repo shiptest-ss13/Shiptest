@@ -36,16 +36,6 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
 
-/datum/outfit/job/quartermaster/donk
-	name = "Manager (Donk! Co.)"
-	id = /obj/item/card/id/syndicate_command/captain_id
-
-	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/syndicate/donk/qm
-	suit = /obj/item/clothing/suit/hazardvest/donk/qm
-	ears = /obj/item/radio/headset/syndicate/alt
-	shoes = /obj/item/clothing/shoes/laceup
-
 /datum/outfit/job/quartermaster/requisitionsofficer
 	name = "Requisitions Officer"
 	suit = /obj/item/clothing/suit/jacket/miljacket

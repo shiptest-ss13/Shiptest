@@ -217,7 +217,7 @@
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
 	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "handcuff"
+	icon_state = "legcuff"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -235,12 +235,23 @@
 	var/armed = 0
 	var/trap_damage = 20
 
+/obj/item/restraints/legcuffs/beartrap/goliath
+	name = "tentacle mass"
+	desc = "Ew."
+	icon_state = "goliathtrap"
+	flags_1 = NONE
+	slowdown = 10
+	breakouttime = 5 SECONDS
+	item_flags = DROPDEL
+	armed = 1
+	trap_damage = 0
+
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()
 	update_appearance()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -294,8 +305,8 @@
 					snap = FALSE
 			if(snap)
 				close_trap()
-				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
-						"<span class='userdanger'>You trigger \the [src]!</span>")
+				L.visible_message("<span class='danger'>[L] gets caught by \the [src]!</span>", \
+						"<span class='userdanger'>You get caught by \the [src]!</span>")
 				L.apply_damage(trap_damage, BRUTE, def_zone)
 
 /obj/item/restraints/legcuffs/beartrap/energy
@@ -309,7 +320,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/energy/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/dissipate), 100)
+	addtimer(CALLBACK(src, PROC_REF(dissipate)), 100)
 
 /obj/item/restraints/legcuffs/beartrap/energy/proc/dissipate()
 	if(!ismob(loc))

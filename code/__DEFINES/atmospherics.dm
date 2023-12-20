@@ -292,16 +292,6 @@
 #define INCINERATOR_ATMOS_AIRLOCK_INTERIOR "atmos_incinerator_airlock_interior"
 #define INCINERATOR_ATMOS_AIRLOCK_EXTERIOR "atmos_incinerator_airlock_exterior"
 
-//Syndicate lavaland base incinerator (lavaland_surface_syndicate_base1.dmm)
-#define INCINERATOR_SYNDICATELAVA_IGNITER "syndicatelava_igniter"
-#define INCINERATOR_SYNDICATELAVA_MAINVENT "syndicatelava_mainvent"
-#define INCINERATOR_SYNDICATELAVA_AUXVENT "syndicatelava_auxvent"
-#define INCINERATOR_SYNDICATELAVA_DP_VENTPUMP "syndicatelava_airlock_pump"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_SENSOR "syndicatelava_airlock_sensor"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_CONTROLLER "syndicatelava_airlock_controller"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_INTERIOR "syndicatelava_airlock_interior"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_EXTERIOR "syndicatelava_airlock_exterior"
-
 //MULTIPIPES
 //IF YOU EVER CHANGE THESE CHANGE SPRITES TO MATCH.
 #define PIPING_LAYER_MIN 1
@@ -358,17 +348,6 @@
 #define PIPING_LAYER_DOUBLE_SHIFT(T, PipingLayer) \
 	T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X; \
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
-
-GLOBAL_VAR(atmos_extools_initialized) // this must be an uninitialized (null) one or init_monstermos will be called twice because reasons
-#define ATMOS_EXTOOLS_CHECK if(!GLOB.atmos_extools_initialized){ \
-	GLOB.atmos_extools_initialized=TRUE; \
-	if(fexists(world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")){ \
-		var/result = call((world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so"),"init_monstermos")(); \
-		if(result != "ok") {CRASH(result);} \
-	} else { \
-		CRASH("byond-extools.dll does not exist!"); \
-	} \
-}
 
 GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"amethyst" = rgb(130,43,255), //supplymain
