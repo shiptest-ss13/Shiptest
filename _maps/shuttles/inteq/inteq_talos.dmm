@@ -2808,7 +2808,10 @@
 /obj/item/target/alien{
 	pixel_x = 5
 	},
-/obj/item/target,
+/obj/item/target/clown{
+	pixel_x = -5;
+	pixel_y = 10
+	},
 /obj/item/target{
 	pixel_y = 5
 	},

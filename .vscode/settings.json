@@ -17,14 +17,14 @@
 		"**/.pnp.*": true
 	},
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit"
+		"source.fixAll.eslint": true
 	},
 	"files.insertFinalNewline": true,
 	"gitlens.advanced.blame.customArguments": ["-w"],
 	"tgstationTestExplorer.project.resultsType": "json",
 	"[python]": {
 		"gitlens.codeLens.symbolScopes": ["!Module"],
-		"editor.wordBasedSuggestions": "off",
+		"editor.wordBasedSuggestions": false,
 		"editor.insertSpaces": true,
 		"editor.tabSize": 4
 	},

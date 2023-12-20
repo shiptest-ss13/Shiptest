@@ -112,6 +112,20 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 6)
 	foodtype = GRAIN | MEAT
 
+/obj/item/reagent_containers/food/snacks/burger/clown
+	name = "clown burger"
+	desc = "This tastes funny..."
+	icon_state = "clownburger"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/consumable/banana = 6)
+	foodtype = GRAIN | FRUIT
+
+/obj/item/reagent_containers/food/snacks/burger/mime
+	name = "mime burger"
+	desc = "Its taste defies language."
+	icon_state = "mimeburger"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/consumable/nothing = 6)
+	foodtype = GRAIN
+
 /obj/item/reagent_containers/food/snacks/burger/brain
 	name = "brainburger"
 	desc = "A strange looking burger. It looks almost sentient."

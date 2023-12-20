@@ -1613,7 +1613,7 @@
 /area/ruin/unpowered/corprejectengineering)
 "Kk" = (
 /obj/structure/bed,
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/effect/mob_spawn/human/clown/corpse,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
 "Kn" = (
@@ -1732,7 +1732,9 @@
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/stack/sheet/bluespace_crystal/five,
-/obj/item/stack/sheet/metal,
+/obj/item/stack/sheet/mineral/bananium{
+	amount = 15
+	},
 /obj/item/stack/sheet/mineral/gold/twenty,
 /obj/item/stack/sheet/mineral/runite/ten,
 /obj/item/toy/figure/captain,

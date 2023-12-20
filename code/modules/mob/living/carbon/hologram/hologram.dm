@@ -313,6 +313,10 @@
 	job_type = new /datum/job/qm
 	dex_item = /obj/item/export_scanner
 
+/mob/living/simple_animal/hologram/clown
+	job_type = new /datum/job/clown
+	dex_item = /obj/item/reagent_containers/spray/waterflower/lube
+
 /mob/living/simple_animal/hologram/detective
 	job_type = new /datum/job/detective
 	dex_item = /obj/item/detective_scanner

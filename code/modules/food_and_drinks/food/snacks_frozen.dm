@@ -46,6 +46,17 @@
 	tastes = list("ice cream" = 1, "banana" = 1)
 	foodtype = FRUIT | DAIRY | SUGAR
 
+/obj/item/reagent_containers/food/snacks/honkdae
+	name = "honkdae"
+	desc = "The clown's favorite dessert."
+	icon = 'icons/obj/food/frozen_treats.dmi'
+	icon_state = "honkdae"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 10, /datum/reagent/consumable/nutriment/vitamin = 4)
+	filling_color = "#FFFACD"
+	tastes = list("ice cream" = 1, "banana" = 1, "a bad joke" = 1)
+	foodtype = FRUIT | DAIRY | SUGAR
+
 /////////////
 //SNOWCONES//
 /////////////
@@ -141,6 +152,20 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/pineapplejuice = 5)
 	tastes = list("ice" = 1, "water" = 1, "pineapples" = 5)
 	foodtype = PINEAPPLE //Pineapple to allow all that like pineapple to enjoy
+
+/obj/item/reagent_containers/food/snacks/snowcones/mime
+	name = "mime snowcone"
+	desc = "..."
+	icon_state = "mime_sc"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nothing = 5)
+	tastes = list("ice" = 1, "water" = 1, "nothing" = 5)
+
+/obj/item/reagent_containers/food/snacks/snowcones/clown
+	name = "clown snowcone"
+	desc = "Laughter drizzled over a snowball in a paper cup."
+	icon_state = "clown_sc"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/laughter = 5)
+	tastes = list("ice" = 1, "water" = 1, "jokes" = 5, "brainfreeze" = 5, "joy" = 5)
 
 /obj/item/reagent_containers/food/snacks/snowcones/soda
 	name = "space cola snowcone"

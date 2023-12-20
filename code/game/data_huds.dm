@@ -216,11 +216,10 @@ Medical HUD! Basic mode needs suit sensors on.
 				holder.icon_state = "hudhealthy"
 
 
-
 /***********************************************
 FAN HUDs! For identifying other fans on-sight.
 ************************************************/
-/*
+
 //HOOKS
 
 /mob/living/carbon/human/proc/fan_hud_set_fandom()
@@ -234,7 +233,6 @@ FAN HUDs! For identifying other fans on-sight.
 			holder.icon_state = "fan_mime_pin"
 		else if(istype(U.attached_accessory, /obj/item/clothing/accessory/fan_clown_pin))
 			holder.icon_state = "fan_clown_pin"
-*/ //this should be used for the RILENA fan trait. remove the references to the mime pin and clown pin before integrating that. -je
 
 /***********************************************
 Security HUDs! Basic mode shows only the job.

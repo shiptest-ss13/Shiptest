@@ -42,6 +42,7 @@
 		/datum/reagent/consumable/ethanol/andalusia,\
 		/datum/reagent/consumable/tea/arnold_palmer,\
 		/datum/reagent/consumable/ethanol/b52,\
+		/datum/reagent/consumable/ethanol/bananahonk,\
 		/datum/reagent/consumable/ethanol/beepsky_smash,\
 		/datum/reagent/consumable/ethanol/between_the_sheets,\
 		/datum/reagent/consumable/ethanol/bilk,\

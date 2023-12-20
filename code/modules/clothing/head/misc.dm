@@ -408,6 +408,11 @@
 			message += pick(" Honh honh honh!"," Honh!"," Zut Alors!")
 	speech_args[SPEECH_MESSAGE] = trim(message)
 
+/obj/item/clothing/head/clownmitre
+	name = "Hat of the Honkmother"
+	desc = "It's hard for parishoners to see a banana peel on the floor when they're looking up at your glorious chapeau."
+	icon_state = "clownmitre"
+
 /obj/item/clothing/head/kippah
 	name = "kippah"
 	desc = "Signals that you follow the Jewish Halakha. Keeps the head covered and the soul extra-Orthodox."

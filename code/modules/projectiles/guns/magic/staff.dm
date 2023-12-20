@@ -62,6 +62,16 @@
 	recharge_rate = 2
 	no_den_usage = 1
 
+/obj/item/gun/magic/staff/honk
+	name = "staff of the honkmother"
+	desc = "Honk."
+	fire_sound = 'sound/items/airhorn.ogg'
+	ammo_type = /obj/item/ammo_casing/magic/honk
+	icon_state = "honker"
+	item_state = "honker"
+	max_charges = 4
+	recharge_rate = 8
+
 /obj/item/gun/magic/staff/spellblade
 	name = "spellblade"
 	desc = "A deadly combination of laziness and boodlust, this blade allows the user to dismember their enemies without all the hard work of actually swinging the sword."

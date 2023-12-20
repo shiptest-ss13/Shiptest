@@ -248,8 +248,10 @@
 /area/ruin/unpowered)
 "LZ" = (
 /obj/structure/rack,
-/obj/item/clothing/mask/gas,
-/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas/clown_hat{
+	pixel_y = 6
+	},
+/obj/item/clothing/mask/gas/clown_hat,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered)
 "Mu" = (

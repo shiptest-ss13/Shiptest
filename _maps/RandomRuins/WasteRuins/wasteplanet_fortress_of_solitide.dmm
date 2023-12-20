@@ -330,6 +330,7 @@
 /area/ruin/powered)
 "cS" = (
 /obj/structure/table/wood/fancy/orange,
+/obj/item/reagent_containers/food/snacks/store/cake/clown_cake,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "cU" = (
@@ -337,6 +338,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating/rust,
+/area/ruin/powered)
+"cX" = (
+/obj/structure/statue/bananium/clown,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "dg" = (
 /obj/structure/sign/poster/contraband/eat,
@@ -424,7 +430,7 @@
 /area/ruin/powered)
 "ed" = (
 /obj/item/trash/cheesie,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "ee" = (
 /obj/machinery/photocopier,
@@ -552,6 +558,9 @@
 /area/ruin/powered)
 "ff" = (
 /obj/structure/closet/crate/bin,
+/obj/item/clothing/mask/gas/mime,
+/obj/item/clothing/under/rank/civilian/mime,
+/obj/item/clothing/head/frenchberet,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "fh" = (
@@ -569,10 +578,12 @@
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "fk" = (
-/obj/machinery/door/airlock/maintenance{
+/obj/machinery/door/airlock/bananium{
+	name = "Clown Embassy";
 	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/item/grown/bananapeel,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "fn" = (
 /obj/effect/gibspawner/human,
@@ -684,7 +695,7 @@
 /area/ruin/powered)
 "go" = (
 /obj/machinery/light/small/directional/west,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "gp" = (
 /mob/living/simple_animal/hostile/rat,
@@ -723,6 +734,9 @@
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ruin/powered)
+"gL" = (
+/turf/open/floor/mineral/bananium,
+/area/ruin/powered)
 "gM" = (
 /obj/structure/rack,
 /obj/item/clothing/gloves/color/fyellow,
@@ -745,6 +759,10 @@
 /obj/item/spacecash/bundle/c100,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
+/area/ruin/powered)
+"hd" = (
+/obj/item/reagent_containers/food/snacks/cakeslice/clown_slice,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "he" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -928,6 +946,12 @@
 /obj/item/broken_bottle,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
+"jn" = (
+/mob/living/simple_animal/hostile/retaliate/clown/mutant/blob,
+/obj/effect/gibspawner/human,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/ruin/powered)
 "jr" = (
 /obj/structure/table/reinforced,
 /obj/item/slime_cookie/green,
@@ -947,6 +971,11 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"jz" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/clown/corpse,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "jA" = (
@@ -1092,9 +1121,21 @@
 /obj/structure/sign/poster/contraband/xenofauna_parasite,
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
+"kK" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/clown/corpse,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/bananium,
+/area/ruin/powered)
 "kO" = (
 /obj/item/trash/chips,
 /turf/open/floor/plating/rust,
+/area/ruin/powered)
+"kR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "kS" = (
 /obj/effect/decal/cleanable/blood,
@@ -1179,7 +1220,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "lv" = (
-/obj/item/flashlight/lamp/green,
+/obj/item/flashlight/lamp/bananalamp,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "lz" = (
@@ -1408,7 +1449,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "nw" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/effect/mob_spawn/human/clown/corpse,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
@@ -1465,8 +1506,10 @@
 /area/ruin/powered)
 "nJ" = (
 /obj/structure/rack,
+/obj/item/pneumatic_cannon/pie,
+/obj/item/reagent_containers/spray/waterflower/lube,
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "nK" = (
 /obj/structure/table,
@@ -2336,11 +2379,11 @@
 /area/ruin/powered)
 "vW" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/item/bedsheet/clown,
 /obj/effect/decal/cleanable/blood,
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/effect/mob_spawn/human/clown/corpse,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "vX" = (
 /obj/item/ammo_casing,
@@ -2487,6 +2530,11 @@
 "xC" = (
 /obj/structure/sign/poster/contraband/ntos,
 /turf/closed/wall/rust,
+/area/ruin/powered)
+"xI" = (
+/obj/structure/table/wood/fancy/orange,
+/obj/item/reagent_containers/food/snacks/pie/cream,
+/turf/open/floor/plating,
 /area/ruin/powered)
 "xL" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2733,7 +2781,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/generic,
 /obj/item/trash/cheesie,
-/turf/open/floor/plating,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "Aa" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2902,7 +2950,7 @@
 /area/ruin/powered)
 "Bp" = (
 /obj/structure/table/wood,
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/effect/mob_spawn/human/clown/corpse,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -3073,6 +3121,8 @@
 /area/ruin/powered)
 "Cy" = (
 /obj/structure/closet/cardboard,
+/obj/item/coin/bananium,
+/obj/item/reagent_containers/food/snacks/soup/clownstears,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "CE" = (
@@ -3442,6 +3492,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Gq" = (
+/mob/living/simple_animal/hostile/retaliate/clown/fleshclown,
 /obj/effect/gibspawner/human,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
@@ -3479,7 +3530,7 @@
 /area/ruin/powered)
 "Gz" = (
 /obj/structure/table/wood/fancy/orange,
-/obj/item/toy/figure/syndie,
+/obj/item/toy/figure/clown,
 /obj/item/trash/candle,
 /turf/open/floor/plating,
 /area/ruin/powered)
@@ -3557,6 +3608,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating/rust,
+/area/ruin/powered)
+"HD" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/clown/corpse,
+/mob/living/simple_animal/hostile/rat,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "HH" = (
@@ -3847,6 +3904,13 @@
 /area/ruin/powered)
 "Ke" = (
 /obj/structure/table,
+/obj/item/bikehorn/golden{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/item/clothing/shoes/clown_shoes/banana_shoes/combat{
+	pixel_y = 5
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
@@ -4109,7 +4173,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Nr" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/obj/effect/mob_spawn/human/clown/corpse,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -4276,6 +4340,11 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
+"Ow" = (
+/obj/structure/table/wood/fancy/orange,
+/obj/item/clothing/under/rank/civilian/clown/rainbow,
+/turf/open/floor/mineral/bananium,
+/area/ruin/powered)
 "Ox" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4360,6 +4429,10 @@
 /obj/structure/curtain/cloth/fancy,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
+/area/ruin/powered)
+"Pr" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/bananium,
 /area/ruin/powered)
 "Px" = (
 /mob/living/simple_animal/hostile/rat,
@@ -4671,7 +4744,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "SD" = (
-/obj/item/target,
+/obj/item/target/clown,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "SF" = (
@@ -5170,6 +5243,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/powered)
+"WN" = (
+/mob/living/simple_animal/hostile/retaliate/clown/fleshclown,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rust,
+/area/ruin/powered)
 "WO" = (
 /obj/structure/sign/poster/contraband/twelve_gauge,
 /turf/closed/wall/r_wall/rust,
@@ -5513,6 +5592,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered)
 "ZL" = (
+/mob/living/simple_animal/hostile/retaliate/clown/fleshclown,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
@@ -5742,11 +5822,11 @@ ik
 HL
 xx
 ZL
-Hp
+hd
 Gq
 Xe
 av
-ki
+HD
 ff
 bC
 Qu
@@ -5785,12 +5865,12 @@ ub
 Jj
 vh
 bG
-Gq
+jn
 KR
-KR
+WN
 bC
 Ru
-Hp
+gL
 Cy
 xx
 vD
@@ -5921,9 +6001,9 @@ xx
 ed
 eL
 zW
-dC
+Pr
 yd
-Hp
+gL
 bC
 KC
 bG
@@ -5962,12 +6042,12 @@ av
 LU
 mG
 xx
-Xt
-Hp
-Hp
+jz
+gL
+gL
 wk
 dM
-zh
+kK
 Xe
 hW
 xx
@@ -6006,11 +6086,11 @@ NN
 Ab
 uJ
 xx
-cS
+xI
 Gz
+Ow
 cS
-cS
-qr
+kR
 aM
 Xe
 Ei
@@ -6050,11 +6130,11 @@ Fb
 zy
 Jc
 xx
-Ru
+cX
 we
 VK
 nt
-dC
+Pr
 nJ
 xx
 zV

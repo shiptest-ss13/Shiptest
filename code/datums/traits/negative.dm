@@ -102,6 +102,10 @@
 	else
 		switch(quirk_holder.mind.assigned_role)
 			//Service jobs
+			if("Clown")
+				heirloom_type = /obj/item/bikehorn/golden
+			if("Mime")
+				heirloom_type = /obj/item/reagent_containers/food/snacks/baguette
 			if("Janitor")
 				heirloom_type = pick(/obj/item/mop, /obj/item/clothing/suit/caution, /obj/item/reagent_containers/glass/bucket, /obj/item/paper/fluff/stations/soap)
 			if("Cook")

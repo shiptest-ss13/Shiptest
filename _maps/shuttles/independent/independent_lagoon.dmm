@@ -1186,7 +1186,7 @@
 /area/ship/hallway/fore)
 "hT" = (
 /obj/structure/table/wood,
-/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas/clown_hat,
 /obj/item/bikehorn,
 /obj/item/clothing/shoes/clown_shoes,
 /obj/item/megaphone/clown,
@@ -4516,7 +4516,7 @@
 /area/ship/hallway/aft)
 "Ee" = (
 /obj/structure/bed,
-/obj/item/bedsheet/dorms,
+/obj/item/bedsheet/clown,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ship/crew/canteen)
 "Ef" = (
@@ -5694,6 +5694,11 @@
 	},
 /turf/open/floor/carpet/black,
 /area/ship/crew/dorm)
+"MV" = (
+/obj/structure/bed,
+/obj/item/bedsheet/mime,
+/turf/open/floor/carpet/nanoweave/purple,
+/area/ship/crew/canteen)
 "MY" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
@@ -8283,7 +8288,7 @@ ZK
 Qt
 ss
 XW
-Ee
+MV
 hW
 Qt
 ue

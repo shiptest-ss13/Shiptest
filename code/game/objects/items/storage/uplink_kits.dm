@@ -44,6 +44,7 @@
 			new /obj/item/card/emag(src)
 			new /obj/item/grenade/c4(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
+			new /obj/item/clothing/mask/gas/clown_hat(src)
 			new /obj/item/clothing/under/suit/black_really(src)
 
 		if("screwed")
@@ -102,6 +103,7 @@
 			new /obj/item/ammo_box/magazine/sniper_rounds/penetrator(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 			new /obj/item/clothing/gloves/color/latex/nitrile(src)
+			new /obj/item/clothing/mask/gas/clown_hat(src)
 			new /obj/item/clothing/under/suit/black_really(src)
 
 		if("metaops")
@@ -367,6 +369,13 @@
 /obj/item/storage/box/syndie_kit/bioterror/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/syringe/bioterror(src)
+
+/obj/item/storage/box/syndie_kit/clownpins
+	name = "ultra hilarious firing pin box"
+
+/obj/item/storage/box/syndie_kit/clownpins/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/firing_pin/clown/ultra(src)
 
 /obj/item/storage/box/syndie_kit/imp_adrenal
 	name = "adrenal implant box"

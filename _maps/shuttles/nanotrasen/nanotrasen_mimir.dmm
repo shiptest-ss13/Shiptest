@@ -3295,7 +3295,9 @@
 /area/ship/maintenance/port)
 "sR" = (
 /obj/structure/table/wood/poker,
-/obj/item/flashlight/lamp/green,
+/obj/item/flashlight/lamp/bananalamp{
+	pixel_y = 7
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/dorm/dormfive)
 "sT" = (

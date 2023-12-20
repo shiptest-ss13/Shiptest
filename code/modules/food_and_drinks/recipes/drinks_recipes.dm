@@ -328,6 +328,10 @@
 	results = list(/datum/reagent/consumable/ethanol/hippies_delight = 2)
 	required_reagents = list(/datum/reagent/drug/mushroomhallucinogen = 1, /datum/reagent/consumable/ethanol/gargle_blaster = 1)
 
+/datum/chemical_reaction/bananahonk
+	results = list(/datum/reagent/consumable/ethanol/bananahonk = 2)
+	required_reagents = list(/datum/reagent/consumable/laughter = 1, /datum/reagent/consumable/cream = 1)
+
 /datum/chemical_reaction/silencer
 	results = list(/datum/reagent/consumable/ethanol/silencer = 3)
 	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/consumable/sugar = 1)
@@ -454,6 +458,12 @@
 /datum/chemical_reaction/stinger
 	results = list(/datum/reagent/consumable/ethanol/stinger = 15)
 	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 10, /datum/reagent/consumable/ethanol/creme_de_menthe = 5)
+
+/datum/chemical_reaction/quintuplesec
+	results = list(/datum/reagent/consumable/ethanol/quintuple_sec = 15)
+	required_reagents = list(/datum/reagent/consumable/ethanol/quadruple_sec = 5, /datum/reagent/consumable/clownstears = 5, /datum/reagent/consumable/ethanol/syndicatebomb = 5)
+	mix_message = "Judgement is upon you."
+	mix_sound = 'sound/items/airhorn2.ogg'
 
 /datum/chemical_reaction/bastion_bourbon
 	results = list(/datum/reagent/consumable/ethanol/bastion_bourbon = 2)

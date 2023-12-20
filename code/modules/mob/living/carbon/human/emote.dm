@@ -278,3 +278,29 @@
 /datum/emote/living/carbon/human/robot_tongue/ping/run_emote(mob/user, params)
 	if(..())
 		playsound(user.loc, 'sound/machines/ping.ogg', 50)
+
+// Clown Robotic Tongue ONLY. Henk.
+
+/datum/emote/living/carbon/human/robot_tongue/clown/can_run_emote(mob/user, status_check = TRUE , intentional)
+	if(!..())
+		return FALSE
+	if(user.mind.assigned_role == "Clown")
+		return TRUE
+
+/datum/emote/living/carbon/human/robot_tongue/clown/honk
+	key = "honk"
+	key_third_person = "honks"
+	message = "honks."
+
+/datum/emote/living/carbon/human/robot_tongue/clown/honk/run_emote(mob/user, params)
+	if(..())
+		playsound(user.loc, 'sound/items/bikehorn.ogg', 50)
+
+/datum/emote/living/carbon/human/robot_tongue/clown/sad
+	key = "sad"
+	key_third_person = "plays a sad trombone..."
+	message = "plays a sad trombone..."
+
+/datum/emote/living/carbon/human/robot_tongue/clown/sad/run_emote(mob/user, params)
+	if(..())
+		playsound(user.loc, 'sound/misc/sadtrombone.ogg', 50)

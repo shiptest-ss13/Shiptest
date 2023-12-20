@@ -117,6 +117,57 @@
 	icon_state = "firing_pin_pindi"
 	req_implant = /obj/item/implant/weapons_auth
 
+
+
+// Honk pin, clown's joke item.
+// Can replace other pins. Replace a pin in cap's laser for extra fun!
+/obj/item/firing_pin/clown
+	name = "hilarious firing pin"
+	desc = "Advanced clowntech that can convert any firearm into a far more useful object."
+	color = "#FFFF00"
+	fail_message = "<span class='warning'>HONK!</span>"
+	force_replace = TRUE
+
+/obj/item/firing_pin/clown/pin_auth(mob/living/user)
+	playsound(src, 'sound/items/bikehorn.ogg', 50, TRUE)
+	return FALSE
+
+// Ultra-honk pin, clown's deadly joke item.
+// A gun with ultra-honk pin is useful for clown and useless for everyone else.
+/obj/item/firing_pin/clown/ultra
+	name = "ultra hilarious firing pin"
+
+/obj/item/firing_pin/clown/ultra/pin_auth(mob/living/user)
+	playsound(src.loc, 'sound/items/bikehorn.ogg', 50, TRUE)
+	if(QDELETED(user))  //how the hell...?
+		stack_trace("/obj/item/firing_pin/clown/ultra/pin_auth called with a [isnull(user) ? "null" : "invalid"] user.")
+		return TRUE
+	if(HAS_TRAIT(user, TRAIT_CLUMSY)) //clumsy
+		return TRUE
+	if(user.mind)
+		if(user.mind.assigned_role == "Clown") //traitor clowns can use this, even though they're technically not clumsy
+			return TRUE
+		if(user.mind.has_antag_datum(/datum/antagonist/nukeop/clownop)) //clown ops aren't clumsy by default and technically don't have an assigned role of "Clown", but come on, they're basically clowns
+			return TRUE
+		if(user.mind.has_antag_datum(/datum/antagonist/nukeop/leader/clownop)) //Wanna hear a funny joke?
+			return TRUE //The clown op leader antag datum isn't a subtype of the normal clown op antag datum.
+	return FALSE
+
+/obj/item/firing_pin/clown/ultra/gun_insert(mob/living/user, obj/item/gun/G)
+	..()
+	G.clumsy_check = FALSE
+
+/obj/item/firing_pin/clown/ultra/gun_remove(mob/living/user)
+	gun.clumsy_check = initial(gun.clumsy_check)
+	..()
+
+// Now two times deadlier!
+/obj/item/firing_pin/clown/ultra/selfdestruct
+	name = "super ultra hilarious firing pin"
+	desc = "Advanced clowntech that can convert any firearm into a far more useful object. It has a small nitrobananium charge on it."
+	selfdestruct = TRUE
+
+
 // DNA-keyed pin.
 // When you want to keep your toys for yourself.
 /obj/item/firing_pin/dna

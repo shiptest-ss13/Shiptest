@@ -52,6 +52,12 @@
 	description = "An ancient ship, said to be among the first discovered derelicts near Space Station 13 that was still in working order. \
 	Aged and deprecated by time, this relic of a vessel is now broken beyond repair."
 
+/datum/map_template/ruin/lavaland/biodome/clown
+	name = "Biodome Clown Planet"
+	id = "biodome-clown"
+	description = "WELCOME TO CLOWN PLANET! HONK HONK HONK etc.!"
+	suffix = "lavaland_biodome_clown_planet.dmm"
+
 /datum/map_template/ruin/lavaland/ratvar
 	name = "Dead God"
 	id = "ratvar"

@@ -170,6 +170,16 @@
 	time = 40
 	category = CAT_ROBOT
 
+/datum/crafting_recipe/honkbot
+	name = "Honkbot"
+	result = /mob/living/simple_animal/bot/honkbot
+	reqs = list(/obj/item/storage/box/clown = 1,
+				/obj/item/bodypart/r_arm/robot = 1,
+				/obj/item/assembly/prox_sensor = 1,
+				/obj/item/bikehorn/ = 1)
+	time = 40
+	category = CAT_ROBOT
+
 /datum/crafting_recipe/Firebot
 	name = "Firebot"
 	result = /mob/living/simple_animal/bot/firebot
@@ -558,6 +568,14 @@
 	time = 100 //Long construction time. Making fire is hard work.
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2)
 	category = CAT_PRIMAL
+
+/datum/crafting_recipe/gold_horn
+	name = "Golden Bike Horn"
+	result = /obj/item/bikehorn/golden
+	time = 20
+	reqs = list(/obj/item/stack/sheet/mineral/bananium = 5,
+				/obj/item/bikehorn = 1)
+	category = CAT_MISC
 
 /datum/crafting_recipe/bonedagger
 	name = "Bone Dagger"

@@ -143,10 +143,10 @@ Charged extracts:
 
 /obj/item/slimecross/charged/pyrite
 	colour = "pyrite"
-	effect_desc = "Creates bananas. Oh no."
+	effect_desc = "Creates bananium. Oh no."
 
 /obj/item/slimecross/charged/pyrite/do_effect(mob/user)
-	new /obj/item/reagent_containers/food/snacks/grown/banana(get_turf(user), 5)
+	new /obj/item/stack/sheet/mineral/bananium(get_turf(user), 10)
 	user.visible_message("<span class='warning'>[src] solidifies with a horrifying banana stench!</span>")
 	..()
 

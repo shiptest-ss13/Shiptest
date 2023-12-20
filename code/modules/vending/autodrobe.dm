@@ -65,6 +65,8 @@
 		/obj/item/clothing/suit/wizrobe/fake = 1,
 		/obj/item/clothing/head/wizard/fake = 1,
 		/obj/item/staff = 3,
+		/obj/item/clothing/under/rank/civilian/mime/sexy = 1,
+		/obj/item/clothing/under/rank/civilian/mime/skirt = 1,
 		/obj/item/clothing/mask/rat/bat = 1,
 		/obj/item/clothing/mask/rat/bee = 1,
 		/obj/item/clothing/mask/rat/bear = 1,
@@ -111,6 +113,8 @@
 	contraband = list(
 		/obj/item/clothing/suit/judgerobe = 1,
 		/obj/item/clothing/head/powdered_wig = 1,
+		/obj/item/clothing/accessory/fan_mime_pin = 1,
+		/obj/item/clothing/accessory/fan_clown_pin = 1,
 		/obj/item/gun/magic/wand/nothing = 2,
 		/obj/item/clothing/glasses/sunglasses/garb = 2,
 		/obj/item/clothing/glasses/blindfold = 1,

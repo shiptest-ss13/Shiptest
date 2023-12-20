@@ -232,7 +232,9 @@
 "gm" = (
 /obj/structure/table/wood,
 /obj/structure/curtain/cloth,
-/obj/item/flashlight/lamp/green,
+/obj/item/flashlight/lamp/bananalamp{
+	pixel_y = 5
+	},
 /turf/open/floor/wood{
 	light_range = 2
 	},
