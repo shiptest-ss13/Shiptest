@@ -4,7 +4,6 @@
 /obj/item/borg
 	icon = 'icons/mob/robot_items.dmi'
 
-
 /obj/item/borg/stun
 	name = "electrically-charged arm"
 	icon_state = "elecarm"
@@ -570,7 +569,7 @@
 	. = ..()
 	projectile_effect = image('icons/effects/fields.dmi', "projectile_dampen_effect")
 	tracked = list()
-	icon_state = "shield0"
+	icon_state = "shield"
 	START_PROCESSING(SSfastprocess, src)
 	host = loc
 
@@ -710,7 +709,7 @@
 /obj/item/borg/sight/material
 	name = "\proper material vision"
 	sight_mode = BORGMATERIAL
-	icon_state = "material"
+	icon_state = "meson"
 
 /obj/item/borg/sight/hud
 	name = "hud"
