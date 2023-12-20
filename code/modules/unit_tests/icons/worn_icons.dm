@@ -52,7 +52,7 @@
 		var/fail_reasons
 		var/spacer
 
-		/*
+
 		if(cached_slot_flags & ITEM_SLOT_BACK)
 			icon_file = 'icons/mob/clothing/back.dmi'
 
@@ -60,7 +60,6 @@
 				already_warned_icons += icon_state
 				fail_reasons += "[item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in '[icon_file]'[match_message]"
 				spacer = "\n\t"
-		*/
 
 		/*
 		if(cached_slot_flags & ITEM_SLOT_ID)
@@ -106,14 +105,12 @@
 				fail_reasons += "[spacer][item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in '[icon_file]'[match_message]"
 				spacer = "\n\t"
 
-		/*
 		if(cached_slot_flags & ITEM_SLOT_BELT)
 			icon_file = 'icons/mob/clothing/belt.dmi'
 			if(!(icon_state in icon_states(icon_file, 1)))
 				already_warned_icons += icon_state
 				fail_reasons += "[spacer][item_path] using invalid [mob_overlay_state ? "mob_overlay_state" : "icon_state"], \"[icon_state]\" in '[icon_file]'[match_message]"
 				spacer = "\n\t"
-		*/
 
 		if(fail_reasons)
 			TEST_FAIL(fail_reasons)
