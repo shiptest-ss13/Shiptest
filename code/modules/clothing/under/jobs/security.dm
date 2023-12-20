@@ -99,13 +99,13 @@
 /obj/item/clothing/under/rank/security/brig_phys/nt
 	name = "security medic's uniform"
 	desc = "A lightly armored uniform worn by medics ensuring the health of prisoners."
-	icon_state = "rbrig_phys"
+	icon_state = "security_medic"
 	item_state = "r_suit"
 
 /obj/item/clothing/under/rank/security/brig_phys/nt/skirt
 	name = "security medic's uniform"
 	desc = "A lightly armored uniform, with a skirt, worn by medics ensuring the health of prisoners."
-	icon_state = "rbrig_phys_skirt"
+	icon_state = "security_medic_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
