@@ -680,15 +680,6 @@ update_label()
 	access = get_all_accesses()
 	. = ..()
 
-/obj/item/card/id/ert/clown
-	registered_name = "Entertainment Response Officer"
-	assignment = "Entertainment Response Officer"
-	icon_state = "ert_clown"
-
-/obj/item/card/id/ert/clown/Initialize()
-	access = get_all_accesses()
-	. = ..()
-
 /obj/item/card/id/ert/deathsquad
 	name = "\improper Death Squad ID"
 	desc = "A Death Squad ID card."

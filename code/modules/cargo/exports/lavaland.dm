@@ -22,8 +22,6 @@
 						/obj/item/dragons_blood,
 						/obj/item/lava_staff,
 						/obj/item/ship_in_a_bottle,
-						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
-						/obj/item/gun/magic/staff/honk,
 						/obj/item/kitchen/knife/envy,
 						/obj/item/gun/ballistic/revolver/russian/soul,
 						/obj/item/veilrender/vealrender,

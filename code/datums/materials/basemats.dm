@@ -46,7 +46,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	name = "gold"
 	id = "gold"
 	desc = "Gold"
-	color = "#fff032" //gold is shiny, but not as bright as bananium
+	color = "#fff032" //gold is shiny, but not as bright as REDACTED
 	strength_modifier = 1.2
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/gold
@@ -126,31 +126,6 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	sheet_type = /obj/item/stack/sheet/bluespace_crystal
 	ore_type = /obj/item/stack/ore/bluespace_crystal
 	value_per_unit = 0.15
-
-///Honks and slips
-/datum/material/bananium
-	name = "bananium"
-	id = "bananium"
-	desc = "Material with hilarious properties"
-	color = "#ffff00" //obnoxiously bright yellow
-	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
-	sheet_type = /obj/item/stack/sheet/mineral/bananium
-	ore_type = /obj/item/stack/ore/bananium
-	value_per_unit = 0.5
-	beauty_modifier = 0.5
-	armor_modifiers = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 100, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0) //Clowns cant be blown away.
-
-/datum/material/bananium/on_applied(atom/source, amount, material_flags)
-	. = ..()
-	source.LoadComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50, falloff_exponent = 20)
-	source.AddComponent(/datum/component/slippery, min(amount / 10, 80))
-
-
-/datum/material/bananium/on_removed(atom/source, amount, material_flags)
-	. = ..()
-	qdel(source.GetComponent(/datum/component/slippery))
-	qdel(source.GetComponent(/datum/component/squeak))
-
 
 ///Mediocre force increase
 /datum/material/titanium

@@ -175,6 +175,7 @@
 	outfit = /datum/outfit/centcom/centcom_intern/leader
 	role = "Head Intern"
 
+
 /datum/antagonist/ert/intern/unarmed
 	outfit = /datum/outfit/centcom/centcom_intern/unarmed
 
@@ -182,6 +183,38 @@
 	outfit = /datum/outfit/centcom/centcom_intern/leader/unarmed
 
 // Marine
+
+/datum/antagonist/ert/create_team(datum/team/ert/new_team)
+	if(istype(new_team))
+		ert_team = new_team
+
+/datum/antagonist/ert/proc/forge_objectives()
+	if(ert_team)
+		objectives |= ert_team.objectives
+
+/datum/antagonist/ert/proc/equipERT()
+	var/mob/living/carbon/human/H = owner.current
+	if(!istype(H))
+		return
+	H.equipOutfit(outfit)
+
+/datum/antagonist/ert/greet()
+	if(!ert_team)
+		return
+
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+
+	var/missiondesc = "Your squad is being sent on a mission to [station_name()] by Nanotrasen's Security Division."
+	if(leader) //If Squad Leader
+		missiondesc += " Lead your squad to ensure the completion of the mission. Board the shuttle when your team is ready."
+	else
+		missiondesc += " Follow orders given to you by your squad leader."
+	if(!rip_and_tear)
+		missiondesc += "Avoid civilian casualties when possible."
+
+	missiondesc += "<BR><B>Your Mission</B> : [ert_team.mission.explanation_text]"
+	to_chat(owner,missiondesc)
+
 
 /datum/antagonist/ert/marine
 	name = "Marine Commander"

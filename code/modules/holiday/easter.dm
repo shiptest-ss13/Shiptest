@@ -118,7 +118,7 @@
 
 /obj/item/reagent_containers/food/snacks/egg/loaded/Initialize()
 	. = ..()
-	var/eggcolor = pick("blue","green","mime","orange","purple","rainbow","red","yellow")
+	var/eggcolor = pick("blue","green","orange","purple","rainbow","red","yellow")
 	icon_state = "egg-[eggcolor]"
 
 /obj/item/reagent_containers/food/snacks/egg/proc/dispensePrize(turf/where)
@@ -147,7 +147,6 @@
 	/obj/item/toy/prize/odysseus,
 	/obj/item/toy/prize/phazon,
 	/obj/item/toy/prize/reticence,
-	/obj/item/toy/prize/honk,
 	/obj/item/toy/plush/carpplushie,
 	/obj/item/toy/plush/spider,
 	/obj/item/toy/redbutton,

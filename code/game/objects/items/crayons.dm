@@ -525,15 +525,6 @@
 	reagent_contents = list(/datum/reagent/consumable/nutriment = 0.5,  /datum/reagent/colorful_reagent/powder/white/crayon = 1.5)
 	dye_color = DYE_WHITE
 
-/obj/item/toy/crayon/mime
-	icon_state = "crayonmime"
-	desc = "A very sad-looking crayon."
-	paint_color = "#FFFFFF"
-	crayon_color = "mime"
-	reagent_contents = list(/datum/reagent/consumable/nutriment = 0.5, /datum/reagent/colorful_reagent/powder/invisible = 1.5)
-	charges = -1
-	dye_color = DYE_MIME
-
 /obj/item/toy/crayon/rainbow
 	icon_state = "crayonrainbow"
 	paint_color = "#FFF000"

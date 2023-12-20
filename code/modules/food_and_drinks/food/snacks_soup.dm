@@ -66,15 +66,6 @@
 	tastes = list("soy" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/soup/clownstears
-	name = "clown's tears"
-	desc = "Not very funny."
-	icon_state = "clownstears"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/clownstears = 10)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/banana = 5, /datum/reagent/water = 5, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/consumable/clownstears = 10)
-	tastes = list("a bad joke" = 1)
-	foodtype = FRUIT | SUGAR
-
 /obj/item/reagent_containers/food/snacks/soup/vegetable
 	name = "vegetable soup"
 	desc = "A true vegan meal."
@@ -122,15 +113,6 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/frostoil = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("tomato" = 1, "mint" = 1)
-	foodtype = VEGETABLES | MEAT
-
-/obj/item/reagent_containers/food/snacks/soup/clownchili
-	name = "chili con carnival"
-	desc = "A delicious stew of meat, chiles, and salty, salty clown tears."
-	icon_state = "clownchili"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/laughter = 1)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/tomatojuice = 2, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/banana = 1)
-	tastes = list("tomato" = 1, "hot peppers" = 2, "clown feet" = 2, "kind of funny" = 2, "someone's parents" = 2)
 	foodtype = VEGETABLES | MEAT
 
 /obj/item/reagent_containers/food/snacks/soup/monkeysdelight

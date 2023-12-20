@@ -119,15 +119,15 @@
 
 /datum/reagent/consumable/banana
 	name = "Banana Juice"
-	description = "The raw essence of a banana. HONK"
+	description = "The raw essence of a banana."
 	color = "#e6d283"
 	taste_description = "banana"
 	glass_icon_state = "banana"
 	glass_name = "glass of banana juice"
-	glass_desc = "The raw essence of a banana. HONK."
+	glass_desc = "The raw essence of a banana."
 
 /datum/reagent/consumable/banana/on_mob_life(mob/living/carbon/M)
-	if((ishuman(M) && M.job == "Clown") || ismonkey(M))
+	if(ismonkey(M))
 		M.heal_bodypart_damage(1,1, 0)
 		. = 1
 	..()

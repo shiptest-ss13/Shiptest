@@ -514,15 +514,6 @@
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, emote), "clap"), 5 * i)
 			i++
 
-	//HONK
-	else if((findtext(message, honk_words)))
-		cooldown = COOLDOWN_MEME
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), get_turf(user), 'sound/items/bikehorn.ogg', 300, 1), 25)
-		if(user.mind && user.mind.assigned_role == "Clown")
-			for(var/mob/living/carbon/C in listeners)
-				C.slip(140 * power_multiplier)
-			cooldown = COOLDOWN_MEME
-
 	//RIGHT ROUND
 	else if((findtext(message, multispin_words)))
 		cooldown = COOLDOWN_MEME

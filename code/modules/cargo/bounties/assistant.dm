@@ -50,12 +50,6 @@
 	reward = 2000
 	wanted_types = list(/obj/structure/statue)
 
-/datum/bounty/item/assistant/clown_box
-	name = "Clown Box"
-	description = "The universe needs laughter. Stamp cardboard with a clown stamp and ship it out."
-	reward = 1500
-	wanted_types = list(/obj/item/storage/box/clown)
-
 /datum/bounty/item/assistant/cheesiehonkers
 	name = "Cheesie Honkers"
 	description = "Apparently the company that makes Cheesie Honkers is going out of business soon. CentCom wants to stock up before it happens!"

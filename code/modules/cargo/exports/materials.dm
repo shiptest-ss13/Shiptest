@@ -26,11 +26,6 @@
 
 // Materials. Prices have been heavily nerfed from the original values; mining is boring, so it shouldn't be a good way to make money.
 
-/datum/export/material/bananium
-	cost = 250
-	material_id = /datum/material/bananium
-	message = "cm3 of bananium"
-
 /datum/export/material/diamond
 	cost = 125
 	material_id = /datum/material/diamond

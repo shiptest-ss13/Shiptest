@@ -217,17 +217,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	mine_experience = 10
 	scan_state = "rock_Diamond"
 
-/obj/item/stack/ore/bananium
-	name = "bananium ore"
-	icon_state = "Bananium ore"
-	item_state = "Bananium ore"
-	singular_name = "bananium ore chunk"
-	points = 60
-	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-	refined_type = /obj/item/stack/sheet/mineral/bananium
-	mine_experience = 15
-	scan_state = "rock_Bananium"
-
 /obj/item/stack/ore/titanium
 	name = "titanium ore"
 	icon_state = "Titanium ore"
@@ -457,9 +446,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/coin/titanium
 	custom_materials = list(/datum/material/titanium = 400)
-
-/obj/item/coin/bananium
-	custom_materials = list(/datum/material/bananium = 400)
 
 /obj/item/coin/adamantine
 	custom_materials = list(/datum/material/adamantine = 400)

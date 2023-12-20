@@ -52,13 +52,6 @@
 /datum/mood_event/pet_animal/add_effects(mob/animal)
 	description = "<span class='nicegreen'>\The [animal.name] is adorable! I can't stop petting [animal.p_them()]!</span>\n"
 
-/datum/mood_event/honk
-	description = "<span class='nicegreen'>I've been honked!</span>\n"
-	mood_change = 2
-	timeout = 4 MINUTES
-	special_screen_obj = "honked_nose"
-	special_screen_replace = FALSE
-
 /datum/mood_event/perform_cpr
 	description = "<span class='nicegreen'>It feels good to save a life.</span>\n"
 	mood_change = 6
@@ -105,14 +98,6 @@
 	description = "<span class='nicegreen'>My family heirloom is safe with me.</span>\n"
 	mood_change = 1
 
-/datum/mood_event/fan_clown_pin
-	description = "<span class='nicegreen'>I love showing off my clown pin!</span>\n"
-	mood_change = 1
-
-/datum/mood_event/fan_mime_pin
-	description = "<span class='nicegreen'>I love showing off my mime pin!</span>\n"
-	mood_change = 1
-
 /datum/mood_event/rilena_fan
 	description = "<span class='nicegreen'>I love my RILENA merch!</span>\n"
 	mood_change = 1
@@ -144,10 +129,6 @@
 	description = "<span class='nicegreen'>You are comforted by the presence of a holy person.</span>\n"
 	mood_change = 3
 	timeout = 5 MINUTES
-
-/datum/mood_event/clownshoes
-	description = "<span class='nicegreen'>The shoes are a clown's legacy, I never want to take them off!</span>\n"
-	mood_change = 5
 
 /datum/mood_event/sacrifice_good
 	description ="<span class='nicegreen'>The gods are pleased with this offering!</span>\n"

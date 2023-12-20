@@ -1,7 +1,7 @@
 // Banana
 /obj/item/seeds/banana
 	name = "pack of banana seeds"
-	desc = "They're seeds that grow into banana trees. When grown, keep away from clown."
+	desc = "They're seeds that grow into banana trees."
 	icon_state = "seed-banana"
 	species = "banana"
 	plantname = "Banana Tree"
@@ -17,7 +17,7 @@
 /obj/item/reagent_containers/food/snacks/grown/banana
 	seed = /obj/item/seeds/banana
 	name = "banana"
-	desc = "It's an excellent prop for a clown."
+	desc = "A tasty banana. An excellent prop for practical jokes, once eaten."
 	icon_state = "banana"
 	item_state = "banana"
 	trash = /obj/item/grown/bananapeel
@@ -25,7 +25,6 @@
 	bitesize = 5
 	foodtype = FRUIT
 	juice_results = list(/datum/reagent/consumable/banana = 0)
-	distill_reagent = /datum/reagent/consumable/ethanol/bananahonk
 
 //Banana Peel
 /obj/item/grown/bananapeel
@@ -82,7 +81,7 @@
 // Bluespace Banana
 /obj/item/seeds/banana/bluespace
 	name = "pack of bluespace banana seeds"
-	desc = "They're seeds that grow into bluespace banana trees. When grown, keep away from bluespace clown."
+	desc = "They're seeds that grow into bluespace banana trees."
 	icon_state = "seed-banana-blue"
 	species = "bluespacebanana"
 	icon_grow = "banana-grow"

@@ -44,6 +44,11 @@
 /obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
 
+//Say_mod-Only Tongues
+/obj/item/organ/tongue/golem_base
+	name = "golem tongue"
+	say_mod = "rumbles"
+
 /obj/item/organ/tongue/toma
 	name = "mutated tongue"
 	say_mod = "mumbles"

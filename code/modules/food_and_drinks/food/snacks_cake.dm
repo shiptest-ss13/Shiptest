@@ -395,23 +395,6 @@
 	tastes = list("cake" = 1, "sugar" = 1, "vanilla" = 10)
 	foodtype = GRAIN | SUGAR | DAIRY
 
-/obj/item/reagent_containers/food/snacks/store/cake/clown_cake
-	name = "clown cake"
-	desc = "A funny cake with a clown face on it."
-	icon_state = "clowncake"
-	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/clown_slice
-	bonus_reagents = list(/datum/reagent/consumable/sugar = 15)
-	tastes = list("cake" = 1, "sugar" = 1, "joy" = 10)
-	foodtype = GRAIN | SUGAR | DAIRY
-
-/obj/item/reagent_containers/food/snacks/cakeslice/clown_slice
-	name = "clown cake slice"
-	desc = "A slice of bad jokes, and silly props."
-	icon_state = "clowncake_slice"
-	filling_color = "#00FFFF"
-	tastes = list("cake" = 1, "sugar" = 1, "joy" = 10)
-	foodtype = GRAIN | SUGAR | DAIRY
-
 /obj/item/reagent_containers/food/snacks/store/cake/trumpet
 	name = "spaceman's cake"
 	desc = "A spaceman's trumpet frosted cake."

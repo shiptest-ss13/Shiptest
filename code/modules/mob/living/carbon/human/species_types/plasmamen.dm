@@ -160,12 +160,6 @@
 		if("Head of Personnel")
 			O = new /datum/outfit/plasmaman/hop
 
-		if("Mime")
-			O = new /datum/outfit/plasmaman/mime
-
-		if("Clown")
-			O = new /datum/outfit/plasmaman/clown
-
 		if("Lieutenant")	//WS edit plasmaman customization
 			O = new /datum/outfit/plasmaman/lieutenant	//WS edit plasmaman customization
 

@@ -558,16 +558,6 @@
 	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
 	AddComponent(/datum/component/butchering, 30, 100, 0, hitsound)
 
-/obj/item/nullrod/clown
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "clownrender"
-	item_state = "render"
-	name = "clown dagger"
-	desc = "Used for absolutely hilarious sacrifices."
-	hitsound = 'sound/items/bikehorn.ogg'
-	sharpness = IS_SHARP
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-
 /obj/item/nullrod/pride_hammer
 	icon_state = "pride"
 	name = "Pride-struck Hammer"

@@ -200,15 +200,6 @@
 	desc = "A foppish dress jacket."
 	icon_state = "suitjacket_light_blue"
 
-//Mime
-/obj/item/clothing/suit/toggle/suspenders
-	name = "suspenders"
-	desc = "They suspend the illusion of the mime's play."
-	icon = 'icons/obj/clothing/belts.dmi'
-	icon_state = "suspenders"
-	blood_overlay_type = "armor" //it's the less thing that I can put here
-	togglename = "straps"
-
 //Surgeon
 /obj/item/clothing/suit/apron/surgical
 	name = "surgical apron"
