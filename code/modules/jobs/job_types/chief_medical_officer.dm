@@ -103,7 +103,7 @@
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
 	alt_uniform = /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
 	shoes = /obj/item/clothing/shoes/combat
-	suit = /obj/item/clothing/suit/hooded/coat/inteq
+	suit = /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
 	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman
 	dcoat = /obj/item/clothing/suit/armor/hos/inteq
 	r_pocket = /obj/item/pda/medical
