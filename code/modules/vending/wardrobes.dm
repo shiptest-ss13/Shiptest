@@ -305,7 +305,7 @@
 					/obj/item/clothing/under/rank/civilian/chef/skirt = 2,
 					///obj/item/clothing/under/rank/chef = 3,//WS edit - Better security jumpsuit sprites
 					/obj/item/clothing/head/chefhat = 1,
-					/obj/item/clothing/under/rank/civilian/cookjorts = 2,
+					/obj/item/clothing/under/shorts/cookjorts = 2,
 					/obj/item/clothing/shoes/cookflops = 2,
 					/obj/item/reagent_containers/glass/rag = 1,
 					/obj/item/clothing/accessory/armband/med = 4,

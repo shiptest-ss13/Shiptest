@@ -315,7 +315,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(loc)
 				new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 			else
-				new /obj/item/clothing/neck/necklace/memento_mori(loc)
+				new /obj/item/clothing/neck/memento_mori(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 			if(prob(35))
