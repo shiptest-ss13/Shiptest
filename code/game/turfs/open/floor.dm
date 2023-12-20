@@ -281,8 +281,6 @@
 	name = "floor"
 	icon_state = "materialfloor"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/turf/floors/tiles.dmi'
-	icon_state = "tiled"
 
 /turf/open/floor/material/spawn_tile()
 	for(var/i in custom_materials)
