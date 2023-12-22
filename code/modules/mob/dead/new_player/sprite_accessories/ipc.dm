@@ -300,7 +300,7 @@
 	var/use_eyes = FALSE //do we use normal robotic eyes? used when we dont want a screen but still want visible eyes
 	var/has_screen = TRUE //do we have a screen to toggle
 	var/has_overlay = FALSE //does this chasis have a overlay icon?
-	var/is_digi = FALSE //does this chasis use digigrade
+	var/is_digi = FALSE //does this chasis use digitigrade
 
 /datum/sprite_accessory/ipc_chassis/mcgreyscale
 	name = "Morpheus Cyberkinetics (Custom)"

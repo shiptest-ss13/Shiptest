@@ -56,7 +56,7 @@
 	return ipc_name
 
 /datum/species/ipc/New()
-	. = ..()
+
 	// This is in new because "[HEAD_LAYER]" etc. is NOT a constant compile-time value. For some reason.
 	// Why not just use HEAD_LAYER? Well, because HEAD_LAYER is a number, and if you try to use numbers as indexes,
 	// BYOND will try to make it an ordered list. So, we have to use a string. This is annoying, but it's the only way to do it smoothly.
@@ -65,17 +65,19 @@
 	)
 
 /datum/species/ipc/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load) // Let's make that IPC actually robotic.
+	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		if(!change_screen)
-			change_screen = new
-			change_screen.Grant(H)
+			var/datum/species/ipc/species_datum = H.dna.species
+			if(species_datum?.has_screen)
+				change_screen = new
+				change_screen.Grant(H)
 		if(H.dna.features["ipc_brain"] == "Man-Machine Interface")
 			mutantbrain = /obj/item/organ/brain/mmi_holder
 		else
 			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
-	return ..()
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
 	. = ..()
@@ -251,7 +253,6 @@
 
 	if(!chassis_of_choice.has_screen)
 		has_screen = FALSE
-		change_screen.Remove()
 		C.dna.features["ipc_screen"] = null
 		C.update_body()
 
