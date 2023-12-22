@@ -1370,6 +1370,18 @@
 	icon_state = "vanguard"
 	toysay = "I'm too old for this shit."
 
+/obj/item/toy/figure/tali
+	name = "T4L1 action figure"
+	desc = "An action figure modeled after a recurring miniboss from the popular combination webcomic and video game RILENA. Unfortunately, the gun arm does not function."
+	icon_state = "tali"
+	toysay = "I'll take you down this time!"
+
+/obj/item/toy/figure/kari
+	name = "knockoff RILENA action figure"
+	desc = "An action figure that seems to be labeled as 'Kari' from RAYALA: RUNNING FROM EVIL. Unfortunately, the gun arm does not function."
+	icon_state = "kari"
+	toysay = "I will defeat you for good!"
+
 /obj/item/toy/dummy
 	name = "ventriloquist dummy"
 	desc = "It's a dummy, dummy."

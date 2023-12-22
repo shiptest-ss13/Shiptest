@@ -430,14 +430,6 @@
 	tastes = list("tofu" = 3, "metal" = 1)
 	foodtype = VEGETABLES
 
-
-/obj/item/reagent_containers/food/snacks/kebab/tail
-	name = "lizard-tail kebab"
-	desc = "Severed lizard tail on a stick."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("meat" = 8, "metal" = 4, "scales" = 1)
-	foodtype = MEAT // NOT GORE, tastes delicious!
-
 /obj/item/reagent_containers/food/snacks/kebab/rat
 	name = "rat-kebab"
 	desc = "Not so delicious rat meat, on a stick."
