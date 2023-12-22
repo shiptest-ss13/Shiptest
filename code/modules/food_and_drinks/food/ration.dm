@@ -59,10 +59,10 @@
 		var/cooking_efficiency = 1
 		if(istype(Heater))
 			cooking_efficiency = Heater.efficiency
-		if(bonus_reagents && bonus_reagents.len)
+		if(length(bonus_reagents))
 			for(var/r_id in bonus_reagents)
 				var/amount = bonus_reagents[r_id] * cooking_efficiency
-				if(r_id == /datum/reagent/consumable/nutriment || r_id == /datum/reagent/consumable/nutriment/vitamin)
+				if(ispath(r_id, /datum/reagent/consumable/nutriment))
 					reagents.add_reagent(r_id, amount, tastes)
 				else
 					reagents.add_reagent(r_id, amount)
