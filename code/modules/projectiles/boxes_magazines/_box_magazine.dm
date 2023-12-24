@@ -94,14 +94,14 @@
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/AM = A
 		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			if(!((instant_load && AM.instant_load) || do_after_mob(user, list(AM), 1 SECONDS,)))
+			if(!((instant_load && AM.instant_load) || (stored_ammo.len >= max_ammo) || do_after_mob(user, list(AM), 1 SECONDS,)))
 				break
 			var/did_load = give_round(AC, replace_spent)
 			if(!did_load)
 				break
 			AM.stored_ammo -= AC
 			if(!silent)
-				playsound(AM, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use AM
+				playsound(get_turf(AM), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use AM
 			num_loaded++
 			A.update_appearance()
 			update_appearance()

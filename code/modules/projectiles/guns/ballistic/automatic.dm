@@ -128,7 +128,7 @@
 
 /obj/item/gun/ballistic/automatic/ebr
 	name = "\improper M514 EBR"
-	desc = "A reliable, high-powered battle rifle often found in the hands of Syndicate personnel and remnants, chambered in .308 Winchester. Effective against personnel and armor alike."
+	desc = "A reliable, high-powered battle rifle often found in the hands of Syndicate personnel and remnants, chambered in .308. Effective against personnel and armor alike."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
@@ -182,3 +182,39 @@
 	can_bayonet = FALSE
 	mag_display = TRUE
 	weapon_weight = WEAPON_LIGHT
+
+/obj/item/gun/ballistic/automatic/vickland
+	name = "\improper Vickland"
+	desc = "The pride of the Saint-Roumain Militia, the Vickland is a semi-automatic battle rifle primarly used by the SRM when more firepower is needed. While it is produced by Hunter's Pride, it is not sold outside SRM circles. Chambered in .308."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
+	icon_state = "vickland"
+	item_state = "vickland"
+	empty_autoeject = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/vickland_a308
+	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
+	burst_size = 0
+	actions_types = list()
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
+	eject_sound_vary = FALSE
+
+	spread_unwielded = 25
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 0.75
+
+
+/obj/item/ammo_box/magazine/vickland_a308 //this is a magazine codewise do nothing breaks
+	name = "en bloc clip (.308)"
+	desc = "A 8-round en bloc clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
+	icon_state = "enbloc_303"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 8
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY

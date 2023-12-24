@@ -52,8 +52,8 @@
 
 //.308 WIN (M514 & GAL DMRs)
 
-/obj/projectile/bullet/win308
-	name = ".308 Winchester"
+/obj/projectile/bullet/a308
+	name = ".308"
 	speed = 0.3
 	damage = 30
 	armour_penetration = 40

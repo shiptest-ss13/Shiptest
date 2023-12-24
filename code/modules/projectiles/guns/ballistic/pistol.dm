@@ -257,7 +257,7 @@
 			return
 		icon_state = "disposable_[picked]"
 
-/obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user)
+/obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user, display_message = TRUE)
 	to_chat(user, "<span class='warning'>Theres no magazine to eject!</span>")
 	return
 

@@ -78,14 +78,14 @@
 	caliber = ".300 BLK"
 	projectile_type = /obj/projectile/bullet/aac_300blk
 
-//.308 Winchester (M514 EBR & CM-GAL-S)
+//.308 (M514 EBR & CM-GAL-S)
 
-/obj/item/ammo_casing/win308
-	name = ".308 Winchester bullet casing"
-	desc = "A .308 Winchester bullet casing."
+/obj/item/ammo_casing/a308
+	name = ".308 bullet casing"
+	desc = "A .308 bullet casing."
 	icon_state = "rifle-steel"
-	caliber = ".308 Winchester"
-	projectile_type = /obj/projectile/bullet/win308
+	caliber = ".308"
+	projectile_type = /obj/projectile/bullet/a308
 
 /obj/item/ammo_casing/caseless/c299
 	name = ".229 Eoehoma caseless bullet casing"

@@ -126,6 +126,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/a858
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	instant_load = TRUE
 
 // .300 Blackout Stripper Clip (Polymer Survivor Rifle)
 
@@ -352,8 +353,11 @@
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"
 	icon_state = "a308box"
-	ammo_type = /obj/item/ammo_casing/win308
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 30
+
+/obj/item/ammo_box/a308/hunterspride //just an alternative graphic for srm ships
+	icon_state = "a308box-HP"
 
 /obj/item/ammo_box/foambox
 	name = "ammo box (Foam Darts)"

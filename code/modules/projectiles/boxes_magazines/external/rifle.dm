@@ -71,11 +71,11 @@
 	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/ebr
-	name = "battle rifle magazine (.308 Winchester)"
+	name = "battle rifle magazine (.308)"
 	desc = "A small, 10-round steel magazine for the M514 EBR. These rounds do good damage with significant armor penetration."
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/win308
-	caliber = ".308 Winchester"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/ebr/update_icon_state()
@@ -83,11 +83,11 @@
 	icon_state = "ebr_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/gal
-	name = "\improper GAL Magazine (.308 Winchester)"
+	name = "\improper GAL Magazine (.308)"
 	desc = "A standard 10-round magazine for GAL platform DMRs. These rounds do good damage with significant armor penetration."
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/win308
-	caliber = ".308 Winchester"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/gal/update_icon_state()
