@@ -10,6 +10,7 @@
 	allow_dense = TRUE
 	dense_when_open = TRUE
 	climbable = TRUE
+	mouse_drag_pointer = TRUE
 	climb_time = 10 //real fast, because let's be honest stepping into or onto a crate is easy
 	delivery_icon = "deliverycrate"
 	open_sound = 'sound/machines/crate_open.ogg'
