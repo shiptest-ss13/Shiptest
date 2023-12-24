@@ -64,7 +64,7 @@ Assistant
 	uniform = /obj/item/clothing/under/color/white
 	accessory = /obj/item/clothing/accessory/armband/science
 
-/datum/outfit/job/assistant/engineeringspecialist
+/datum/outfit/job/assistant/deckhand
 	name = "Assistant (Deckhand)"
 	accessory = /obj/item/clothing/accessory/armband/cargo
 
