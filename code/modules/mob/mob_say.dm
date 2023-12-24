@@ -1,11 +1,12 @@
 //Speech verbs.
 
 ///Say verb
-/mob/verb/say_verb(message as text)
+/mob/verb/say_verb()
 	set name = "Say"
 	set category = "IC"
 	set instant = TRUE
-	if(typing_indicator)
+	var/message = input(usr, null, "Say") as text|null
+	if(typing_indicator || !message)
 		set_typing_indicator(FALSE)
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
