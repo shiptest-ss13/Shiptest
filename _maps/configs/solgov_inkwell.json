@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Inkwell-class Supply Freighter",
+	"prefix": "SGSV",
+	"namelists": [
+		"SOLGOV",
+		"SPACE",
+		"BRITISH_NAVY",
+		"NATURAL"
+	],
+	"map_short_name": "Inkwell-class",
+	"map_path": "_maps/shuttles/solgov/solgov_inkwell.dmm",
+	"description": "One of the few Sol-designed hulls used outside of official contexts by non-Confederation parties, the Inkwell is a freighter respected for its engineering and loved for its lavish crew accommodations. \n The Inkwell-class seen in numerous contexts, perhaps most notably among the Verwaltungskompanien, where they are essential in solving the logistic concerns of any proper military-administration-for-hire. Additionally, they are often commissioned and sold to non-Solarian parties for use in interstellar shipping. \n The usage of the Inkwell-class to move illicit or untracked cargo is known by any seasoned (or even half-cooked) port authority; \"...such regrettable actions by an outlier minority are mere part-and-parcel of the realities of interstellar shipping,\" goes the official reply.",
+	"tags": ["RP Focus", "Combat", "Cargo", "Mining"],
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/solgov/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Logistics Deck Officer": {
+			"outfit": "/datum/outfit/job/solgov/quartermaster",
+			"officer": true,
+			"slots": 1
+		},
+		"Sonnensöldner": {
+			"outfit": "/datum/outfit/job/solgov/sonnensoldner",
+			"slots": 3
+		},
+		"Ship Engineer": {
+			"outfit": "/datum/outfit/job/solgov/engineer",
+			"slots": 2
+		},
+		"Field Engineer": {
+			"outfit": "/datum/outfit/job/solgov/miner",
+			"slots": 3
+		},
+		"Bureaucrat": {
+			"outfit": "/datum/outfit/job/solgov/bureaucrat",
+			"slots": 2
+		},
+		"Scribe": {
+			"outfit": "/datum/outfit/job/solgov/assistant",
+			"slots" : 6
+		}
+	},
+	"enabled": true
+}

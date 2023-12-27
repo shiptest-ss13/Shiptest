@@ -8,11 +8,11 @@
 		rename_mob(target)
 		target.RemoveElement(/datum/element/rename_on_login)
 	else
-		RegisterSignal(target, COMSIG_MOB_LOGIN, .proc/on_mob_login)
+		RegisterSignal(target, COMSIG_MOB_LOGIN, PROC_REF(on_mob_login))
 
 /datum/element/rename_on_login/proc/on_mob_login(mob/source)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/rename_mob, source)
+	INVOKE_ASYNC(src, PROC_REF(rename_mob), source)
 	UnregisterSignal(source, COMSIG_MOB_LOGIN)
 	source.RemoveElement(/datum/element/rename_on_login)
 

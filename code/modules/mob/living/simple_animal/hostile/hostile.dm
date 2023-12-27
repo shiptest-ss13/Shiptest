@@ -104,7 +104,7 @@
 /mob/living/simple_animal/hostile/handle_automated_movement()
 	. = ..()
 	if(dodging && target && in_melee && isturf(loc) && isturf(target.loc))
-		var/datum/cb = CALLBACK(src,.proc/sidestep)
+		var/datum/cb = CALLBACK(src, PROC_REF(sidestep))
 		if(sidestep_per_cycle > 1) //For more than one just spread them equally - this could changed to some sensible distribution later
 			var/sidestep_delay = SSnpcpool.wait / sidestep_per_cycle
 			for(var/i in 1 to sidestep_per_cycle)
@@ -263,7 +263,7 @@
 //What we do after closing in
 /mob/living/simple_animal/hostile/proc/MeleeAction(patience = TRUE)
 	if(rapid_melee > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/CheckAndAttack)
+		var/datum/callback/cb = CALLBACK(src, PROC_REF(CheckAndAttack))
 		var/delay = SSnpcpool.wait / rapid_melee
 		for(var/i in 1 to rapid_melee)
 			addtimer(cb, (i - 1)*delay)
@@ -408,7 +408,7 @@
 
 
 	if(rapid > 1)
-		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
+		var/datum/callback/cb = CALLBACK(src, PROC_REF(Shoot), A)
 		for(var/i in 1 to rapid)
 			addtimer(cb, (i - 1)*rapid_fire_delay)
 	else
@@ -546,7 +546,7 @@
 /mob/living/simple_animal/hostile/proc/GainPatience()
 	if(lose_patience_timeout)
 		LosePatience()
-		lose_patience_timer_id = addtimer(CALLBACK(src, .proc/LoseTarget), lose_patience_timeout, TIMER_STOPPABLE)
+		lose_patience_timer_id = addtimer(CALLBACK(src, PROC_REF(LoseTarget)), lose_patience_timeout, TIMER_STOPPABLE)
 
 
 /mob/living/simple_animal/hostile/proc/LosePatience()
@@ -557,7 +557,7 @@
 /mob/living/simple_animal/hostile/proc/LoseSearchObjects()
 	search_objects = 0
 	deltimer(search_objects_timer_id)
-	search_objects_timer_id = addtimer(CALLBACK(src, .proc/RegainSearchObjects), search_objects_regain_time, TIMER_STOPPABLE)
+	search_objects_timer_id = addtimer(CALLBACK(src, PROC_REF(RegainSearchObjects)), search_objects_regain_time, TIMER_STOPPABLE)
 
 
 /mob/living/simple_animal/hostile/proc/RegainSearchObjects(value)
@@ -610,7 +610,7 @@
 	var/obj/effect/temp_visual/decoy/new_decoy = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(new_decoy, alpha = 0, color = "#5a5858", transform = matrix()*2, time = 3)
 	target.visible_message("<span class='danger'>[src] prepares to pounce!</span>")
-	addtimer(CALLBACK(src, .proc/handle_charge_target, target), 1.5 SECONDS, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(handle_charge_target), target), 1.5 SECONDS, TIMER_STOPPABLE)
 
 /**
  * Proc that checks if the mob can charge attack.
@@ -627,7 +627,7 @@
 	if(!can_charge_target(target))
 		return FALSE
 	charge_state = TRUE
-	throw_at(target, charge_distance, 1, src, FALSE, TRUE, callback = CALLBACK(src, .proc/charge_end))
+	throw_at(target, charge_distance, 1, src, FALSE, TRUE, callback = CALLBACK(src, PROC_REF(charge_end)))
 	COOLDOWN_START(src, charge_cooldown, charge_frequency)
 	return TRUE
 
@@ -683,7 +683,7 @@
 		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	target = new_target
 	if(target)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del, TRUE)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(handle_target_del), TRUE)
 
 /mob/living/simple_animal/hostile/proc/set_camp_faction(tag)
 	src.faction = list()

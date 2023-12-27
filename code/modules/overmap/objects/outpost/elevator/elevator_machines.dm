@@ -50,7 +50,7 @@
 		var/down_arrow = my_floor.calls & DOWN ? "green_arrow" : "red_arrow"
 		opts["Down"] = image(icon = 'icons/misc/arrows.dmi', icon_state = down_arrow, dir = SOUTH)
 
-	var/result = show_radial_menu(user, src, opts, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = !(issilicon(user) || isAdminGhostAI(user)), tooltips = TRUE)
+	var/result = show_radial_menu(user, src, opts, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = !(issilicon(user) || isAdminGhostAI(user)), tooltips = TRUE)
 	if(!result || !my_floor || !my_floor.master)
 		return
 	switch(result)

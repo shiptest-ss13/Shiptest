@@ -56,3 +56,7 @@
 	desc = "A direction sign, pointing out which way the station's AI Upload is."
 	icon_state = "direction_upload"
 
+/obj/structure/sign/directions/service
+	name = "service sign"
+	desc = "A directional sign, pointing which way the station's Service department is in"
+	icon_state = "direction_srv"

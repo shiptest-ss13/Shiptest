@@ -70,7 +70,7 @@
 ///LOOT
 /obj/effect/spawner/clawloot/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/spawn_loot), 5 SECONDS) //this is because it dies violently exploding, so we dont want to destroy the goodies, you know?
+	addtimer(CALLBACK(src, PROC_REF(spawn_loot)), 5 SECONDS) //this is because it dies violently exploding, so we dont want to destroy the goodies, you know?
 
 /obj/effect/spawner/clawloot/proc/spawn_loot()
 	new /obj/item/gun/energy/pulse/pistol(get_turf(src))
@@ -127,7 +127,7 @@
 /mob/living/simple_animal/hostile/megafauna/claw/phase2/Initialize()
 	. = ..()
 	flick("claw-phase2_transform",src) //plays the transforming animation
-	addtimer(CALLBACK(src, .proc/unlock_phase2), 4.4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(unlock_phase2)), 4.4 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/Move()
 	if(shouldnt_move)
@@ -200,7 +200,7 @@
 	for(var/i in 1 to distance)
 		new /obj/effect/temp_visual/cult/sparks(next_turf)
 		next_turf = get_step(next_turf, dir_to_target)
-	addtimer(CALLBACK(src, .proc/swift_dash2, dir_to_target, 0, distance), wait_time)
+	addtimer(CALLBACK(src, PROC_REF(swift_dash2), dir_to_target, 0, distance), wait_time)
 	playsound(src, 'sound/creatures/claw_prepare.ogg', 100, 1)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/swift_dash2(move_dir, times_ran, distance_run)
@@ -214,7 +214,7 @@
 	for(var/mob/living/hit_mob in next_turf.contents - src)
 		hit_mob.Knockdown(15)
 		hit_mob.attack_animal(src)
-	addtimer(CALLBACK(src, .proc/swift_dash2, move_dir, (times_ran + 1), distance_run), 0.7)
+	addtimer(CALLBACK(src, PROC_REF(swift_dash2), move_dir, (times_ran + 1), distance_run), 0.7)
 /////DASH ATTACK END
 
 /////DISSONANT SHREK
@@ -222,7 +222,7 @@
 	shake_animation(0.5)
 	visible_message("<span class='danger'>[src] stops and shudders for a moment... </span>")
 	shouldnt_move = TRUE
-	addtimer(CALLBACK(src, .proc/emp_pulse2), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(emp_pulse2)), 1 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/emp_pulse2()
 	shake_animation(2)
@@ -247,7 +247,7 @@
 	flick("claw-phase2_sting_attack_transform", src)
 	projectiletype = /obj/projectile/claw_projectille
 	projectilesound = 'sound/effects/splat.ogg'
-	addtimer(CALLBACK(src, .proc/sting_attack2, target), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(sting_attack2), target), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/sting_attack2(target)
 	visible_message("<span class='danger'>[src] shoots all the spikes!</span>")
@@ -274,7 +274,7 @@
 	shake_animation(20)
 	visible_message("<span class='danger'>[src] shudders violently and starts to split a flesh spider from it's body!</span>")
 	shouldnt_move = TRUE
-	addtimer(CALLBACK(src, .proc/summon_creatures2), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(summon_creatures2)), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/summon_creatures2()
 	shake_animation(5)
@@ -291,13 +291,13 @@
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/on_death()
 	flick("claw-phase1_transform",src) //woho you won... or did you?
-	addtimer(CALLBACK(src, .proc/create_phase2), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(create_phase2)), 30 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/claw/phase2/on_death()
 	icon_state = "claw-phase2_dying"
 	flick("claw-phase2_to_dying_anim",src)
 	playsound(src, 'sound/voice/vox/vox_scream_1.ogg', 300, 1, 8, 8)
-	addtimer(CALLBACK(src, .proc/phase2_dramatic, src), 3 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(phase2_dramatic), src), 3 SECONDS)
 	return
 
 /mob/living/simple_animal/hostile/megafauna/claw/proc/create_phase2() //this only exists so the timer can callback to this proc

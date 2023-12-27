@@ -282,7 +282,7 @@
 /obj/item/hardened_spike/Initialize(mapload, firedby)
 	. = ..()
 	fired_by = firedby
-	addtimer(CALLBACK(src, .proc/checkembedded), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(checkembedded)), 5 SECONDS)
 
 /obj/item/hardened_spike/proc/checkembedded()
 	if(ishuman(loc))

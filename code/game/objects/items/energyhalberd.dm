@@ -76,8 +76,8 @@
 
 /obj/item/energyhalberd/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_halberdwield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_halberdunwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_halberdwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_halberdunwield))
 	if(LAZYLEN(possible_colors))
 		halberd_color = pick(possible_colors)
 		switch(halberd_color)

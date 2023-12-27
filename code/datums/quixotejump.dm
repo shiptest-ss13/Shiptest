@@ -49,4 +49,4 @@
 	playsound(T, dash_sound, 25, TRUE)
 	charges--
 	holder.update_action_buttons_icon()
-	addtimer(CALLBACK(src, .proc/charge), charge_rate)
+	addtimer(CALLBACK(src, PROC_REF(charge)), charge_rate)

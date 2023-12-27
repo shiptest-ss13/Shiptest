@@ -160,7 +160,7 @@
 	glasses = new /obj/item/clothing/glasses/regular(src)
 	grant_all_languages()
 	update_overlays()
-	INVOKE_ASYNC(src, .proc/update_phrases)
+	INVOKE_ASYNC(src, PROC_REF(update_phrases))
 	. = ..()
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake/bookworm/proc/update_phrases()

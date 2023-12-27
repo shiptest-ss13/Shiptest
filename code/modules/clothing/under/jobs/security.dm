@@ -276,6 +276,7 @@
 	icon_state = "minuteman"
 	item_state = "b_suit"
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/rank/security/officer/camo
 	name = "fatigues"

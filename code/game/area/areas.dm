@@ -318,7 +318,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				if(D.operating)
 					D.nextstate = opening ? FIREDOOR_OPEN : FIREDOOR_CLOSED
 				else if(!(D.density ^ opening) && !D.is_holding_pressure())
-					INVOKE_ASYNC(D, (opening ? /obj/machinery/door/firedoor.proc/open : /obj/machinery/door/firedoor.proc/close))
+					INVOKE_ASYNC(D, (opening ? TYPE_PROC_REF(/obj/machinery/door/firedoor, open) : TYPE_PROC_REF(/obj/machinery/door/firedoor, close)))
 
 /**
  * Generate an firealarm alert for this area
@@ -435,7 +435,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		var/mob/living/silicon/SILICON = i
 		if(SILICON.triggerAlarm("Burglar", src, cameras, trigger))
 			//Cancel silicon alert after 1 minute
-			addtimer(CALLBACK(SILICON, /mob/living/silicon.proc/cancelAlarm,"Burglar",src,trigger), 600)
+			addtimer(CALLBACK(SILICON, TYPE_PROC_REF(/mob/living/silicon, cancelAlarm),"Burglar",src,trigger), 600)
 
 /**
  * Trigger the fire alarm visual affects in an area

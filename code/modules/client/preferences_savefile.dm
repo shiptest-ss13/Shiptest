@@ -122,7 +122,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(!addedbind)
 			notadded += kb
 	if(length(notadded))
-		addtimer(CALLBACK(src, .proc/announce_conflict, notadded), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(announce_conflict), notadded), 5 SECONDS)
 
 /datum/preferences/proc/announce_conflict(list/notadded)
 	to_chat(parent, "<span class='userdanger'>KEYBINDING CONFLICT!!!\n\
@@ -161,6 +161,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//general preferences
 	READ_FILE(S["asaycolor"], asaycolor)
+	READ_FILE(S["brief_outfit"], brief_outfit)
 	READ_FILE(S["ooccolor"], ooccolor)
 	READ_FILE(S["screentip_color"], screentip_color)
 	READ_FILE(S["lastchangelog"], lastchangelog)
@@ -265,6 +266,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ghost_others	= sanitize_inlist(ghost_others, GLOB.ghost_others_options, GHOST_OTHERS_DEFAULT_OPTION)
 	menuoptions		= SANITIZE_LIST(menuoptions)
 	be_special		= SANITIZE_LIST(be_special)
+	brief_outfit	= sanitize_inlist(brief_outfit, subtypesof(/datum/outfit), null)
 	show_credits		= sanitize_integer(show_credits, 0, 1, initial(show_credits))
 	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
 	pda_color		= sanitize_hexcolor(pda_color, 6, TRUE, initial(pda_color))
@@ -304,6 +306,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//general preferences
 	WRITE_FILE(S["asaycolor"], asaycolor)
+	WRITE_FILE(S["brief_outfit"], brief_outfit)
 	WRITE_FILE(S["ooccolor"], ooccolor)
 	WRITE_FILE(S["screentip_color"], screentip_color)
 	WRITE_FILE(S["lastchangelog"], lastchangelog)

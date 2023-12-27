@@ -18,7 +18,7 @@
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw
 	name = "\improper L6 SAW"
-	desc = "An HMG designated 'L6 SAW'. Has 'Aussec Armoury - 490 FS' engraved on the receiver below the designation. Chambered in 7.12x82mm."
+	desc = "A heavy machine gun, designated 'L6 SAW'. Chambered in 7.12x82mm."
 	icon_state = "l6"
 	item_state = "l6closedmag"
 	base_icon_state = "l6"
@@ -32,6 +32,7 @@
 	fire_sound = 'sound/weapons/gun/l6/shot.ogg'
 	rack_sound = 'sound/weapons/gun/l6/l6_rack.ogg'
 	suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
+	manufacturer = MANUFACTURER_SCARBOROUGH
 	var/cover_open = FALSE
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw/ComponentInitialize()
@@ -90,6 +91,7 @@
 	can_bayonet = FALSE
 	mag_display = TRUE
 	w_class = WEIGHT_CLASS_BULKY
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/hmg/solar/ComponentInitialize()
 	. = ..()

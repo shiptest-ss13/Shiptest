@@ -33,8 +33,8 @@
 
 /obj/item/kinetic_crusher/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/kinetic_crusher/ComponentInitialize()
 	. = ..()
@@ -64,11 +64,16 @@
 /obj/item/kinetic_crusher/attackby(obj/item/I, mob/living/user)
 	if(I.tool_behaviour == TOOL_CROWBAR)
 		if(LAZYLEN(trophies))
-			to_chat(user, "<span class='notice'>You remove [src]'s trophies.</span>")
-			I.play_tool_sound(src)
-			for(var/t in trophies)
-				var/obj/item/crusher_trophy/T = t
-				T.remove_from(src, user)
+			var/list/choose_options = list()
+			for(var/obj/item/crusher_trophy/T in trophies)
+				choose_options += list(T.name = image(icon = T.icon, icon_state = T.icon_state))
+			var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+			if(picked_option)
+				to_chat(user, "<span class='notice'>You remove [picked_option].</span>")
+				I.play_tool_sound(src)
+				for(var/obj/item/crusher_trophy/T in trophies)
+					if(T.name == picked_option)
+						T.remove_from(src, user)
 		else
 			to_chat(user, "<span class='warning'>There are no trophies on [src].</span>")
 	else if(istype(I, /obj/item/crusher_trophy))
@@ -111,7 +116,7 @@
 		D.fire()
 		charged = FALSE
 		update_appearance()
-		addtimer(CALLBACK(src, .proc/Recharge), charge_time)
+		addtimer(CALLBACK(src, PROC_REF(Recharge)), charge_time)
 		return
 	if(proximity_flag && isliving(target))
 		var/mob/living/L = target
@@ -352,7 +357,7 @@
 
 /obj/item/crusher_trophy/magma_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	deadly_shot = TRUE
-	addtimer(CALLBACK(src, .proc/reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(reset_deadly_shot)), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/item/crusher_trophy/magma_wing/proc/reset_deadly_shot()
 	deadly_shot = FALSE
@@ -405,7 +410,7 @@
 
 /obj/item/crusher_trophy/watcher_wing_forgotten/on_mark_detonation(mob/living/target, mob/living/user)
 	deadly_shot = TRUE
-	addtimer(CALLBACK(src, .proc/reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(reset_deadly_shot)), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/item/crusher_trophy/watcher_wing_forgotten/proc/reset_deadly_shot()
 	deadly_shot = FALSE
@@ -538,7 +543,7 @@
 			continue
 		playsound(L, 'sound/magic/fireball.ogg', 20, TRUE)
 		new /obj/effect/temp_visual/fire(L.loc)
-		addtimer(CALLBACK(src, .proc/pushback, L, user), 1) //no free backstabs, we push AFTER module stuff is done
+		addtimer(CALLBACK(src, PROC_REF(pushback), L, user), 1) //no free backstabs, we push AFTER module stuff is done
 		L.adjustFireLoss(bonus_value, forced = TRUE)
 
 /obj/item/crusher_trophy/tail_spike/proc/pushback(mob/living/target, mob/living/user)
@@ -572,7 +577,7 @@
 			continue
 		playsound(L, 'sound/magic/fireball.ogg', 20, TRUE)
 		new /obj/effect/temp_visual/fire(L.loc)
-		addtimer(CALLBACK(src, .proc/pushback, L, user), 1) //no free backstabs, we push AFTER module stuff is done
+		addtimer(CALLBACK(src, PROC_REF(pushback), L, user), 1) //no free backstabs, we push AFTER module stuff is done
 		L.adjustFireLoss(bonus_value, forced = TRUE)
 
 /obj/item/crusher_trophy/ash_spike/proc/pushback(mob/living/target, mob/living/user)
@@ -640,7 +645,7 @@
 
 /obj/item/crusher_trophy/blaster_tubes/on_mark_detonation(mob/living/target, mob/living/user)
 	deadly_shot = TRUE
-	addtimer(CALLBACK(src, .proc/reset_deadly_shot), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(reset_deadly_shot)), 300, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /obj/item/crusher_trophy/blaster_tubes/proc/reset_deadly_shot()
 	deadly_shot = FALSE

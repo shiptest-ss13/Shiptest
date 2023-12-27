@@ -187,7 +187,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		(Press ALT+CLICK or MMB on the target to start wrapping.)</span>")
 		H.adjust_nutrition(E.spinner_rate * -0.5)
 		addtimer(VARSET_CALLBACK(E, web_ready, TRUE), E.web_cooldown)
-		RegisterSignal(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), .proc/cocoonAtom)
+		RegisterSignal(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(cocoonAtom))
 		return
 	else
 		to_chat(H, "<span class='warning'>You're too hungry to spin web right now, eat something first!</span>")
