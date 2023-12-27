@@ -68,8 +68,6 @@
 		owner.adjustToxLoss(-50)
 		if(owner.dna.species.id != SPECIES_IPC)
 			owner.adjustCloneLoss(10) //dont abuse it or take cloneloss (organic only)
-		else
-			owner.adjustCloneLoss(0)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()
