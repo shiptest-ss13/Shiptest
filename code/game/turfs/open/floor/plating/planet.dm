@@ -59,6 +59,11 @@
 	if(prob(floor_variance))
 		icon_state = "[initial(icon_state)][rand(0,12)]"
 
+/turf/open/floor/plating/dirt/icemoon
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+	baseturfs = /turf/open/floor/plating/dirt/icemoon
+	planetary_atmos = TRUE
+
 /turf/open/floor/plating/grass/jungle
 	name = "jungle grass"
 	planetary_atmos = TRUE
