@@ -243,7 +243,7 @@
 		balloon_alert(usr, "no coffee cartidge inserted!")
 		return FALSE
 	if(cartridge.charges < 1)
-		balloon_alert(usr, "coffee cartidge empty!")
+		balloon_alert(usr, "coffee cartridge empty!")
 		return FALSE
 	if(!coffeepot)
 		balloon_alert(usr, "no coffeepot inside!")
