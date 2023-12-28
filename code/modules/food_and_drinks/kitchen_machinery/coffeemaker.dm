@@ -62,10 +62,6 @@
 	if(gone == cartridge)
 		cartridge = null
 		update_appearance(UPDATE_OVERLAYS)
-
-/obj/machinery/coffeemaker/RefreshParts()
-	. = ..()
-
 /obj/machinery/coffeemaker/examine(mob/user)
 	. = ..()
 	if(!in_range(user, src) && !issilicon(user) && !isobserver(user))
