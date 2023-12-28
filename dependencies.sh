@@ -5,7 +5,7 @@
 
 # byond version
 export BYOND_MAJOR=515
-export BYOND_MINOR=1620
+export BYOND_MINOR=1623
 
 #rust version
 export RUST_VERSION=1.73.0
@@ -27,4 +27,4 @@ export PYTHON_VERSION=3.7.9
 export AUXMOS_REPO=https://github.com/Putnam3145/auxmos
 
 #auxmos version
-export AUXMOS_VERSION=fdbc1751cb76a31299c5d3cd0988c85e8c070f9b
+export AUXMOS_VERSION=b7df056b5eb7a8d56837d92a6c224c6367198bb8
