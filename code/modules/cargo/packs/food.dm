@@ -290,7 +290,9 @@
 	name = "Impressa Coffeemaker Crate"
 	desc = "An assembled Impressa model coffeemaker."
 	cost = 500
-	contains = list(/obj/machinery/coffeemaker/impressa,
-	/obj/item/reagent_containers/food/drinks/bottle/coffeepot,)
+	contains = list(
+		/obj/machinery/coffeemaker/impressa,
+		/obj/item/reagent_containers/food/drinks/bottle/coffeepot,
+	)
 	crate_name = "coffeemaker crate"
 	crate_type = /obj/structure/closet/crate
