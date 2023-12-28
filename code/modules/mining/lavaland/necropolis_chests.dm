@@ -486,7 +486,7 @@
 	name = "meat hook"
 	desc = "A light hooked blade, attached by the handle to a long chain. Can be used to make quick strikes in hand, or thrown at enemies, magically dragging them to the user. <b>Get over here!</b>"
 	ammo_type = /obj/item/ammo_casing/magic/hook
-	icon_state = "arrow"
+	icon_state = "hook"
 	item_state = "hook"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'

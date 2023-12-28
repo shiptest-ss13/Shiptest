@@ -157,7 +157,7 @@
 	fades = TRUE
 
 /obj/effect/temp_visual/dir_setting/curse/hand
-	icon_state = "cursehand"
+	icon_state = "cursehand0"
 
 /obj/effect/temp_visual/dir_setting/space_wind
 	icon = 'icons/effects/atmospherics.dmi'
