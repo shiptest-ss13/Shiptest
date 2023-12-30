@@ -120,7 +120,7 @@ SUBSYSTEM_DEF(vote)
 		text += "<b>Vote Result: Inconclusive - No Votes!</b>"
 	log_vote(text)
 	remove_action_buttons()
-	to_chat(world, "\n<font color='purple'>[text]</font>")
+	to_chat(world, span_purple(examine_block(text)))
 	return .
 
 /datum/controller/subsystem/vote/proc/result()
@@ -218,10 +218,10 @@ SUBSYSTEM_DEF(vote)
 		log_vote(text)
 
 		var/vp = CONFIG_GET(number/vote_period)
-		var/vote_message =  "\n<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>"
+		var/vote_message = "<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>"
 		if(observer_vote_allowed)
-			to_chat(world, vote_message)
-			SEND_SOUND(world, sound('sound/misc/vinethud.ogg'))
+			to_chat(world, examine_block(vote_message))
+			SEND_SOUND(world, sound('sound/misc/compiler-stage2.ogg'))
 			time_remaining = round(vp/10)
 			for(var/c in GLOB.clients)
 				var/client/C = c
@@ -240,8 +240,8 @@ SUBSYSTEM_DEF(vote)
 					valid_clients -= C
 			for(var/c in valid_clients)
 				var/client/C = c
-				SEND_SOUND(C, sound('sound/misc/vinethud.ogg'))
-				to_chat(C.mob, vote_message)
+				SEND_SOUND(C, sound('sound/misc/compiler-stage2.ogg'))
+				to_chat(C.mob, examine_block(vote_message))
 				var/datum/action/vote/V = new
 				if(question)
 					V.name = "Vote: [question]"

@@ -302,7 +302,7 @@
 		var/statspage = CONFIG_GET(string/roundstatsurl)
 		var/info = statspage ? "<a href='?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id
 		parts += "[FOURSPACES]Round ID: <b>[info]</b>"
-	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(world.timeofday - SSticker.round_start_timeofday)]</B>"
+	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(REALTIMEOFDAY - SSticker.round_start_timeofday)]</B>"
 	parts += "[FOURSPACES]Station Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
 	var/total_players = GLOB.joined_player_list.len
 	if(total_players)
@@ -379,13 +379,15 @@
 	var/list/parts = list()
 	var/mob/M = C.mob
 	if(M.mind && !isnewplayer(M))
+		var/datum/overmap/ship/controlled/original_ship = M.mind.original_ship?.resolve()
+		var/location = original_ship ? "aboard [original_ship]" : "in [station_name()]"
 		if(M.stat != DEAD && !isbrain(M))
 			parts += "<div class='panel greenborder'>"
-			parts += "<span class='greentext'>You managed to survive the events in [station_name()] as [M.real_name].</span>"
+			parts += "<span class='greentext'>You managed to survive the events [location] as [M.real_name].</span>"
 
 		else
 			parts += "<div class='panel redborder'>"
-			parts += "<span class='redtext'>You did not survive the events in [station_name()]...</span>"
+			parts += "<span class='redtext'>You did not survive the events [location]...</span>"
 
 	else
 		parts += "<div class='panel stationborder'>"
