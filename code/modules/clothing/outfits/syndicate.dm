@@ -176,7 +176,6 @@
 	shoes = null
 	gloves = null
 	ears = null
-	implants = list(/obj/item/implant/weapons_auth)
 
 
 	backpack = /obj/item/storage/backpack/security
@@ -249,6 +248,7 @@
 	suit = null
 	belt = null
 	backpack_contents = null
+	implants = list(/obj/item/implant/weapons_auth)
 
 
 /datum/outfit/job/syndicate/captain/twink/post_equip(mob/living/carbon/human/H)
