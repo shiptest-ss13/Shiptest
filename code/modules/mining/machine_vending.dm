@@ -108,47 +108,8 @@
 	icon_state = "mining_voucher"
 	w_class = WEIGHT_CLASS_TINY
 
-/**********************Mining Point Card**********************/
-
-/obj/item/card/mining_point_card
-	name = "mining points card"
-	desc = "A small card preloaded with mining points. Swipe your ID card over it to transfer the points, then discard."
-	icon_state = "data_1"
-	custom_price = 500
-	var/points = 500
-
-/obj/item/card/mining_point_card/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/card/id))
-		if(points)
-			var/obj/item/card/id/C = I
-			C.mining_points += points
-			to_chat(user, "<span class='info'>You transfer [points] points to [C].</span>")
-			points = 0
-		else
-			to_chat(user, "<span class='alert'>There's no points left on [src].</span>")
-	..()
-
-/obj/item/card/mining_point_card/examine(mob/user)
-	. = ..()
-	. += "<span class='alert'>There's [points] point\s on the card.</span>"
 
 ///Conscript kit
-/obj/item/card/mining_access_card
-	name = "mining access card"
-	desc = "A small card, that when used on any ID, will add mining access."
-	icon_state = "data_1"
-
-/obj/item/card/mining_access_card/afterattack(atom/movable/AM, mob/user, proximity)
-	. = ..()
-	if(istype(AM, /obj/item/card/id) && proximity)
-		var/obj/item/card/id/I = AM
-		I.access |=	ACCESS_MINING
-		I.access |= ACCESS_MINING_STATION
-		I.access |= ACCESS_MECH_MINING
-		I.access |= ACCESS_MINERAL_STOREROOM
-		I.access |= ACCESS_CARGO
-		to_chat(user, "<span class='notice'>You upgrade [I] with mining access.</span>")
-		qdel(src)
 
 /obj/item/storage/backpack/duffelbag/mining_conscript
 	name = "EXOCOM rapid deployment kit"
@@ -161,7 +122,6 @@
 	new /obj/item/storage/bag/ore(src)
 	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
-	new /obj/item/card/mining_access_card(src)
 	new /obj/item/gun/energy/kinetic_accelerator(src)
 	new /obj/item/kitchen/knife/combat/survival(src)
 	new /obj/item/flashlight/seclite(src)
