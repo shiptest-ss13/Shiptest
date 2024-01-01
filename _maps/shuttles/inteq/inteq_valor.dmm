@@ -445,8 +445,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/turf/open/floor/plasteel/stairs/left{
-	dir = 4
+/turf/open/floor/plasteel/stairs/right{
+	dir = 8
 	},
 /area/ship/cargo)
 "dQ" = (
@@ -1765,7 +1765,6 @@
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_y = 32
 	},
-/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "pj" = (
@@ -3057,8 +3056,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plasteel/stairs/right{
-	dir = 4
+/turf/open/floor/plasteel/stairs/left{
+	dir = 8
 	},
 /area/ship/cargo)
 "AO" = (
@@ -3286,6 +3285,8 @@
 /obj/structure/cable/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/east,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Dx" = (
@@ -3594,9 +3595,7 @@
 /area/ship/crew/canteen)
 "FY" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
+/turf/open/floor/plasteel/stairs,
 /area/ship/cargo)
 "FZ" = (
 /obj/effect/turf_decal/siding/thinplating{
@@ -4233,7 +4232,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/stairs{
-	dir = 4
+	dir = 8
 	},
 /area/ship/cargo)
 "Mn" = (
@@ -4428,7 +4427,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/stairs/medium{
-	dir = 4
+	dir = 8
 	},
 /area/ship/cargo)
 "NI" = (
@@ -4436,6 +4435,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/thinplating/dark/corner,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "NM" = (
@@ -4692,7 +4692,6 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "PS" = (
@@ -5351,9 +5350,7 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/structure/sign/poster/official/moth/smokey{
-	pixel_x = -32
-	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "WQ" = (
@@ -5364,6 +5361,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "WX" = (
