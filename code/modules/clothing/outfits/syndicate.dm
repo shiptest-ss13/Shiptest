@@ -67,10 +67,10 @@
 /datum/outfit/job/syndicate/assistant/cybersun
 	name = "Junior Agent (Cybersun)"
 
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/syndicate/cybersun
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_pocket = /obj/item/radio
-	head = /obj/item/clothing/head/soft/black
+	head = /obj/item/clothing/head/soft/cybersun
 
 /datum/outfit/job/syndicate/assistant/twink
 	name = "Deck Assistant (Twinkleshine)"
@@ -211,7 +211,7 @@
 
 	id = /obj/item/card/id/syndicate_command/captain_id
 	ears = /obj/item/radio/headset/syndicate/alt/captain
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/HoS/syndicate
 	gloves = /obj/item/clothing/gloves/combat
@@ -232,7 +232,7 @@
 /datum/outfit/job/syndicate/captain/twink
 	name = "Captain (Twinkleshine)"
 
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/syndicate/alt/captain
@@ -253,18 +253,18 @@
 
 /datum/outfit/job/syndicate/captain/gorlex
 	name = "Captain (Gorlex Marauders)"
-	uniform = /obj/item/clothing/under/syndicate/aclf
+	uniform = /obj/item/clothing/under/syndicate/officer
 
-	head = /obj/item/clothing/head/aclfcap
-	suit = /obj/item/clothing/suit/aclf
+	head = /obj/item/clothing/head/gorlexcap
+	suit = /obj/item/clothing/suit/gorlex
 
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Captain (Cybersun)"
 
-	uniform = /obj/item/clothing/under/suit/black_really
-	head = /obj/item/clothing/head/HoS/syndicate
+	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/cybersun
+	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 
 
 //cargo tech
@@ -365,8 +365,23 @@
 //Chief Medical Officer
 
 /datum/outfit/job/syndicate/cmo
-	name = "Chief Medical Officer (Syndicate)"
+	name = "Medical Director (Cybersun)"
 	jobtype = /datum/job/cmo
+
+	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
+	ears = /obj/item/radio/headset/syndicate/alt/captain
+	id = /obj/item/card/id/syndicate_command/captain_id
+	shoes = /obj/item/clothing/shoes/jackboots
+	belt = /obj/item/pda/heads/cmo
+	l_pocket = /obj/item/pinpointer/crew
+	head = /obj/item/clothing/head/beret/cmo/cybersun
+	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
+	l_hand = /obj/item/storage/firstaid/medical
+	suit_store = /obj/item/flashlight/pen
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+
+/datum/outfit/job/syndicate/cmo/suns
+	name = "Medical Director (SUNS)"
 
 	uniform = /obj/item/clothing/under/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt/captain
@@ -379,9 +394,6 @@
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-
-/datum/outfit/job/syndicate/cmo/suns
-	name = "Medical Director (SUNS)"
 
 //"Head Of Personnel"
 
@@ -405,9 +417,10 @@
 	name = "Intelligence Officer (Cybersun)"
 
 	ears = /obj/item/radio/headset/syndicate/alt
-	uniform = /obj/item/clothing/under/suit/charcoal
+	uniform = /obj/item/clothing/under/syndicate/cybersun/officer
+	suit = /obj/item/clothing/suit/cybersun_suit
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS/syndicate
+	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/kitchen/knife/combat/survival
@@ -421,26 +434,24 @@
 
 	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/combat
-	head = /obj/item/clothing/head/warden
+	head = /obj/item/clothing/head/HoS/syndicate
 	suit = /obj/item/clothing/suit/armor/vest/syndie
 	id = /obj/item/card/id/syndicate_command/crew_id
 	belt = /obj/item/pda/heads/hos
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/HoS
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = /obj/item/gun/energy/e_gun
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/storage/box/survival/syndie=1)
-
 /datum/outfit/job/syndicate/hos/gorlex
 	name = "Sergeant (Syndicate)"
 
 /datum/outfit/job/syndicate/hos/twink
 	name = "Lieutenant (Twinkleshine)"
-	uniform = /obj/item/clothing/under/syndicate/aclf
+
+	uniform = /obj/item/clothing/under/syndicate/officer
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt
 	mask = /obj/item/clothing/mask/chameleon
@@ -450,7 +461,7 @@
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
-	alt_suit = /obj/item/clothing/suit/aclf
+	alt_suit = /obj/item/clothing/suit/gorlex
 	id = /obj/item/card/id/syndicate_command/lieutenant
 	implants = list(/obj/item/implant/weapons_auth)
 	backpack_contents = list(/obj/item/melee/baton)
@@ -477,10 +488,8 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	belt = /obj/item/pda/medical
 	shoes = /obj/item/clothing/shoes/sneakers/white
-	suit =  /obj/item/clothing/suit/toggle/labcoat
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
-	suit_store = /obj/item/flashlight/pen
 
 /datum/outfit/job/syndicate/doctor/suns
 	name = "Medical Doctor (SUNS)"
@@ -488,7 +497,7 @@
 /datum/outfit/job/syndicate/doctor/cybersun
 	name = "Medical Doctor (Cybersun)"
 
-	uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/syndicate/medic
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/jackboots
 
@@ -518,7 +527,7 @@
 	head = /obj/item/clothing/head/soft/paramedic
 	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
 	alt_suit = /obj/item/clothing/suit/apron/surgical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
 	l_pocket = /obj/item/pda/medical
@@ -533,7 +542,7 @@
 	name = "Field Medic (Cybersun Industries)"
 
 	uniform = /obj/item/clothing/under/syndicate/medic
-	head = /obj/item/clothing/head/soft/cybersun
+	head = /obj/item/clothing/head/soft/cybersun/medical
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 
@@ -541,7 +550,7 @@
 	name = "Medic (Twinkleshine)"
 
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
-	alt_uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/syndicate/medic
 	glasses = /obj/item/clothing/glasses/hud/health
 	belt = /obj/item/storage/belt/medical
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
@@ -734,9 +743,9 @@
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	ears = /obj/item/radio/headset
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/syndicate/cybersun
 	accessory = /obj/item/clothing/accessory/armband/cargo
-	head = /obj/item/clothing/head/soft/black
+	head = /obj/item/clothing/head/soft/cybersun
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/syndicate/miner/gec
@@ -818,8 +827,8 @@
 /datum/outfit/job/syndicate/engineer/cybersun
 	name = "Engineer (Cybersun)"
 
-	uniform = /obj/item/clothing/under/syndicate/cybersun
+	uniform = /obj/item/clothing/under/syndicate/cybersun/research
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/radio
-	head = /obj/item/clothing/head/beanie/black
+	head = /obj/item/clothing/head/soft/cybersun
 	accessory = /obj/item/clothing/accessory/armband/engine

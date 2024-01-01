@@ -87,10 +87,8 @@
 #define SPECIES_LIZARD "lizard"
 #define SPECIES_ASHWALKER "ashwalker"
 #define SPECIES_KOBOLD "kobold"
-#define SPECIES_GOLEM "golem"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
-#define SPECIES_MUSH "mush"
 #define SPECIES_PLASMAMAN "plasmaman"
 #define SPECIES_POD "pod"
 #define SPECIES_SHADOW "shadow"
@@ -226,7 +224,6 @@
 #define SANITY_INSANE 0
 
 //Nutrition levels for humans
-#define NUTRITION_LEVEL_FAT 600
 #define NUTRITION_LEVEL_FULL 550
 #define NUTRITION_LEVEL_WELL_FED 450
 #define NUTRITION_LEVEL_FED 350

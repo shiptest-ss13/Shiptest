@@ -55,6 +55,7 @@
 			var/obj/machinery/rnd/server/server = multi.buffer
 			linked_techweb = server.stored_research
 			visible_message("Linked to [server]!")
+			return TRUE
 	if(is_refillable() && O.is_drainable())
 		return FALSE //inserting reagents into the machine
 	if(Insert_Item(O, user))

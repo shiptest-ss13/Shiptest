@@ -62,7 +62,12 @@
 	if(inert)
 		to_chat(owner, "<span class='notice'>[src] breaks down as it tries to activate.</span>")
 	else
-		owner.revive(full_heal = TRUE, admin_revive = FALSE)
+		owner.adjustBruteLoss(-100) //previously heal proc
+		owner.adjustFireLoss(-100)
+		owner.adjustOxyLoss(-50)
+		owner.adjustToxLoss(-50)
+		if(owner.dna.species.id != SPECIES_IPC)
+			owner.adjustCloneLoss(10) //dont abuse it or take cloneloss (organic only)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()

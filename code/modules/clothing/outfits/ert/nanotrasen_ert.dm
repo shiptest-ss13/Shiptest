@@ -1,3 +1,4 @@
+// this is where the base ERT outfit goes
 /datum/outfit/centcom/ert
 	name = "ERT Common"
 
@@ -6,19 +7,18 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/headset_cent/alt
+	// determines what role goes on the ID of an ert member. cheap workaround for implementing it into the ert datum
+	var/id_role = "Emergency Response Officer"
 
-/datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/human, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
-	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CENTCOM)
-	R.freqlock = TRUE
-
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.registered_name = H.real_name
-		W.update_label()
+	var/obj/item/card/id/id = human.wear_id
+	if(id)
+		id.registered_name = human.real_name
+		id.assignment = id_role
+		id.update_label()
 	..()
 
 /datum/outfit/centcom/ert/commander
@@ -26,13 +26,15 @@
 
 	id = /obj/item/card/id/ert
 	suit = /obj/item/clothing/suit/space/hardsuit/ert
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/ert
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/e_gun=1)
+		/obj/item/melee/baton/loaded=1)
 	l_pocket = /obj/item/switchblade
+
+	id_role = "Emergency Response Team Commander"
 
 /datum/outfit/centcom/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -58,13 +60,13 @@
 
 	id = /obj/item/card/id/ert/security
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	back = /obj/item/storage/backpack/ert/security
 	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/handcuffs=1,\
-		/obj/item/gun/energy/e_gun/stun=1,\
+		/obj/item/storage/box/handcuffs=1,
 		/obj/item/melee/baton/loaded=1)
 
 /datum/outfit/centcom/ert/security/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -80,27 +82,28 @@
 /datum/outfit/centcom/ert/security/alert
 	name = "ERT Security - High Alert"
 
+	suit_store = /obj/item/gun/energy/pulse/carbine/loyalpin
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/storage/box/handcuffs=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/pulse/carbine/loyalpin=1)
-
+		/obj/item/melee/baton/loaded=1)
 
 /datum/outfit/centcom/ert/medic
 	name = "ERT Medic"
 
 	id = /obj/item/card/id/ert/medical
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/med
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/storage/backpack/ert/medical
 	belt = /obj/item/storage/belt/medical
 	r_hand = /obj/item/storage/firstaid/regular
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/e_gun=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1)
+
+	id_role = "Medical Response Officer"
 
 /datum/outfit/centcom/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -127,6 +130,7 @@
 
 	id = /obj/item/card/id/ert/engineer
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/engi
+	suit_store = /obj/item/gun/energy/e_gun/hades
 	glasses =  /obj/item/clothing/glasses/meson/engine
 	back = /obj/item/storage/backpack/ert/engineer
 	belt = /obj/item/storage/belt/utility/full
@@ -134,8 +138,9 @@
 	r_hand = /obj/item/storage/firstaid/regular
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/e_gun=1,\
 		/obj/item/construction/rcd/loaded=1)
+
+	id_role = "Engineering Response Officer"
 
 /datum/outfit/centcom/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -156,6 +161,7 @@
 		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
 		/obj/item/construction/rcd/combat=1)
 
+// official
 
 /datum/outfit/centcom/centcom_official
 	name = "CentCom Official"
@@ -190,67 +196,6 @@
 	W.update_label()
 	..()
 
-/datum/outfit/centcom/ert/commander/inquisitor
-	name = "Inquisition Commander"
-	r_hand = /obj/item/nullrod/scythe/talking/chainsword
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/gun/energy/e_gun=1)
-
-/datum/outfit/centcom/ert/security/inquisitor
-	name = "Inquisition Security"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/storage/box/handcuffs=1,
-		/obj/item/gun/energy/e_gun/stun=1,
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/construction/rcd/loaded=1)
-
-/datum/outfit/centcom/ert/medic/inquisitor
-	name = "Inquisition Medic"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/gun/energy/e_gun=1,
-		/obj/item/reagent_containers/hypospray/combat=1,
-		/obj/item/reagent_containers/hypospray/combat/heresypurge=1,
-		/obj/item/gun/medbeam=1)
-
-/datum/outfit/centcom/ert/chaplain
-	name = "ERT Chaplain"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor // Chap role always gets this suit
-	id = /obj/item/card/id/ert/chaplain
-	glasses = /obj/item/clothing/glasses/hud/health
-	back = /obj/item/storage/backpack/cultpack
-	belt = /obj/item/storage/belt/soulstone
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/nullrod=1,
-		/obj/item/gun/energy/e_gun=1,
-		)
-
-/datum/outfit/centcom/ert/chaplain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/headset_com
-	R.recalculateChannels()
-
-/datum/outfit/centcom/ert/chaplain/inquisitor
-	name = "Inquisition Chaplain"
-
-	belt = /obj/item/storage/belt/soulstone/full/chappy
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-		/obj/item/grenade/chem_grenade/holy=1,
-		/obj/item/nullrod=1,
-		/obj/item/gun/energy/e_gun=1,
-		)
-
 /datum/outfit/centcom/ert/janitor
 	name = "ERT Janitor"
 
@@ -268,6 +213,8 @@
 		/obj/item/mop/advanced=1,\
 		/obj/item/reagent_containers/glass/bucket=1,\
 		/obj/item/grenade/clusterbuster/cleaner=1)
+
+	id_role = "Janitorial Response Officer"
 
 /datum/outfit/centcom/ert/janitor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -289,35 +236,6 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/grenade/clusterbuster/cleaner=3)
 
-/datum/outfit/centcom/ert/clown
-	name = "ERT Clown"
-
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/clown
-	mask = /obj/item/clothing/mask/gas/clown_hat
-	id = /obj/item/card/id/ert/clown
-	glasses = /obj/item/clothing/glasses/godeye
-	back = /obj/item/storage/backpack/ert/clown
-	belt = /obj/item/storage/belt/champion
-	shoes = /obj/item/clothing/shoes/clown_shoes/combat
-	r_pocket = /obj/item/bikehorn/golden
-	l_pocket = /obj/item/reagent_containers/food/snacks/grown/banana
-	backpack_contents = list(/obj/item/storage/box/hug/survival=1,\
-		/obj/item/melee/transforming/energy/sword/bananium=1,\
-		/obj/item/shield/energy/bananium=1,\
-		/obj/item/gun/ballistic/revolver/reverse=1)
-
-/datum/outfit/centcom/ert/clown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/headset_com
-	R.recalculateChannels()
-	ADD_TRAIT(H, TRAIT_NAIVE, INNATE_TRAIT)
-	H.dna.add_mutation(CLOWNMUT)
-	for(var/datum/mutation/human/clumsy/M in H.dna.mutations)
-		M.mutadone_proof = TRUE
-
 /datum/outfit/centcom/centcom_intern
 	name = "CentCom Intern"
 
@@ -333,6 +251,12 @@
 	r_pocket = /obj/item/ammo_box/a762
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
+/datum/outfit/centcom/centcom_intern/unarmed
+	name = "CentCom Intern (Unarmed)"
+	belt = null
+	l_hand = null
+	l_pocket = null
+	r_pocket = null
 
 /datum/outfit/centcom/centcom_intern/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -353,6 +277,14 @@
 	r_hand = /obj/item/megaphone
 	head = /obj/item/clothing/head/intern
 
+/datum/outfit/centcom/centcom_intern/leader/unarmed // i'll be nice and let the leader keep their baton and vest
+	name = "CentCom Head Intern (Unarmed)"
+	suit_store = null
+	l_pocket = null
+	r_pocket = null
+
+// Marine
+
 /datum/outfit/centcom/ert/marine
 	name = "Marine Commander"
 
@@ -371,6 +303,8 @@
 	accessory = /obj/item/clothing/accessory/holster/marine
 	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/marine
+
+	id_role = "Emergency Response Team Commander"
 
 /datum/outfit/centcom/ert/marine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -419,6 +353,8 @@
 	belt = /obj/item/storage/belt/medical/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 
+	id_role = "Medical Response Officer"
+
 /datum/outfit/centcom/ert/marine/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -446,6 +382,8 @@
 	belt = /obj/item/storage/belt/utility/full/ert
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
+	id_role = "Engineering Response Officer"
+
 /datum/outfit/centcom/ert/marine/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -455,3 +393,88 @@
 	var/obj/item/radio/headset = H.ears
 	headset.keyslot = new /obj/item/encryptionkey/headset_com
 	headset.recalculateChannels()
+
+// Loss Prevention
+
+/datum/outfit/centcom/ert/lp
+	name = "ERT - Loss Prevention Security Specialist"
+
+	head = null
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt
+	id = /obj/item/card/id/lpsec
+	suit_store = /obj/item/gun/energy/laser/scatter/shotty
+	belt = /obj/item/storage/belt/security/full
+	glasses = /obj/item/clothing/glasses/sunglasses
+	gloves = /obj/item/clothing/gloves/tackler/combat
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/sec
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
+	shoes = /obj/item/clothing/shoes/jackboots
+	back = /obj/item/storage/backpack/ert/security
+
+	box = /obj/item/storage/box/survival/security
+	l_pocket = /obj/item/restraints/handcuffs
+	r_pocket = /obj/item/kitchen/knife/combat
+
+	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
+
+	id_role = "Security Specialist"
+
+/datum/outfit/centcom/ert/lp/medic
+	name = "ERT - Loss Prevention Medical Specialist"
+
+	head = null
+	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/med
+	id = /obj/item/card/id/lpmed
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	back = /obj/item/storage/backpack/ert/medical
+	belt = /obj/item/storage/belt/medical/surgery
+
+	box = /obj/item/storage/box/survival/medical
+	l_pocket = /obj/item/healthanalyzer
+	r_pocket = /obj/item/reagent_containers/hypospray/medipen/atropine
+
+	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/radio=1)
+
+	id_role = "Medical Specialist"
+
+/datum/outfit/centcom/ert/lp/engineer
+	name = "ERT - Loss Prevention Engineering Specialist"
+
+	head = null
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp/engi
+	id = /obj/item/card/id/lpengie
+	belt = /obj/item/storage/belt/utility/full
+	gloves = /obj/item/clothing/gloves/combat
+	glasses = /obj/item/clothing/glasses/welding
+	back = /obj/item/storage/backpack/ert/engineer
+
+	box = /obj/item/storage/box/survival/engineer
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/wrench/combat
+
+	id_role = "Engineering Specialist"
+
+	backpack_contents = list(/obj/item/stack/sheet/metal/fifty=1, /obj/item/stack/sheet/glass/fifty=1, /obj/item/radio=1)
+
+/datum/outfit/centcom/ert/lp/lieutenant
+	name = "ERT - Loss Prevention Lieutenant"
+
+	head = null
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lplieu
+	belt = /obj/item/storage/belt/military/army
+	gloves = /obj/item/clothing/gloves/color/black
+	uniform = /obj/item/clothing/under/rank/security/warden/lp
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/lp
+	shoes = /obj/item/clothing/shoes/combat
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	back = /obj/item/storage/backpack/ert
+
+	box = /obj/item/storage/box/survival/radio
+	l_pocket = /obj/item/megaphone/command
+	r_pocket = /obj/item/binoculars
+
+	id_role = "Lieutenant"

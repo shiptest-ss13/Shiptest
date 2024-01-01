@@ -78,8 +78,16 @@
 	e_cost = 300
 	select_name = "shock"
 	projectile_type = /obj/projectile/energy/tesla_cannon
+	delay = 1
 
 /obj/item/ammo_casing/energy/shrink
 	projectile_type = /obj/projectile/beam/shrink
 	select_name = "shrink ray"
 	e_cost = 2000
+
+/obj/item/ammo_casing/energy/buster
+	projectile_type = /obj/projectile/energy/buster
+	select_name = "T4L1 buster replica"
+	e_cost = 100 //should have a lot of energy
+	fire_sound = 'sound/effects/empulse.ogg'
+	delay = 3 SECONDS
