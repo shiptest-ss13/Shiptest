@@ -237,7 +237,7 @@
 
 
 /datum/outfit/job/syndicate/captain/twink
-	name = "Commodore (Twinkleshine, ACLF)"
+	name = "Flotilla Admiral (Twinkleshine, ACLF)"
 
 	uniform = /obj/item/clothing/under/syndicate/officer
 	head = null
