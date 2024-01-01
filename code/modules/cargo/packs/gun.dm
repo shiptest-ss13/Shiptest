@@ -49,8 +49,8 @@
 	name = "Cattleman Revolver crate"
 	desc = "Contains two concealable Cattleman revolvers, chambered in .45 ACP."
 	cost = 2500
-	contains = list(/obj/item/gun/ballistic/revolver/cattleman,
-					/obj/item/gun/ballistic/revolver/cattleman)
+	contains = list(/obj/item/gun/ballistic/revolver/shadow,
+					/obj/item/gun/ballistic/revolver/shadow)
 
 
 /*
@@ -90,8 +90,8 @@
 	name = "Riot Shotguns Crate"
 	desc = "For when the greytide gets out of hand. Contains 2 pump shotguns, each with a 4-round magazine."
 	cost = 2500
-	contains = list(/obj/item/gun/ballistic/shotgun/lethal,
-					/obj/item/gun/ballistic/shotgun/lethal)
+	contains = list(/obj/item/gun/ballistic/shotgun/brimstone,
+					/obj/item/gun/ballistic/shotgun/brimstone)
 	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/ballistic

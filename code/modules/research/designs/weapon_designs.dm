@@ -734,7 +734,7 @@
 	id = "srmrevolver"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 9000, /datum/material/glass = 1000, /datum/material/silver = 1000, /datum/material/uranium = 1000)
-	build_path = /obj/item/gun/ballistic/revolver/srm
+	build_path = /obj/item/gun/ballistic/revolver/firebrand
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -744,7 +744,7 @@
 	id = "pepperbox"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 7000, /datum/material/glass = 1000)
-	build_path = /obj/item/gun/ballistic/revolver/pepperbox
+	build_path = /obj/item/gun/ballistic/revolver/firebrand
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -754,7 +754,7 @@
 	id = "nagantrevolver"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 90000, /datum/material/glass = 1500, /datum/material/silver = 1500)
-	build_path = /obj/item/gun/ballistic/revolver/nagant
+	build_path = /obj/item/gun/ballistic/revolver/montagne
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 

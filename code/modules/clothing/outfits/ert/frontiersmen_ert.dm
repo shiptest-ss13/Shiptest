@@ -26,7 +26,7 @@
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	suit = /obj/item/clothing/suit/armor/frontier
-	suit_store = /obj/item/gun/ballistic/revolver/nagant
+	suit_store = /obj/item/gun/ballistic/revolver/montagne
 	belt = /obj/item/storage/belt/military/assault
 
 	backpack_contents = list(/obj/item/ammo_box/n762_clip=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)

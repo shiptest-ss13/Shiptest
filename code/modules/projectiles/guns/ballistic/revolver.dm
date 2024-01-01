@@ -117,16 +117,13 @@
 		. += "It can be spun with <b>alt+click</b>"
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "\improper Hunter's Pride Detective Special"
-	desc = "A compact and ridiculously old-fashioned law enforcement firearm. Uses .38 special rounds."
+	name = "\improper HP Detective Special"
+	desc = "A ridiculously old-fashioned law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independents outside Nanotrasen. Uses .38 special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
-		"Fitz Special" = "detective_fitz",
-		"Police Positive Special" = "detective_police",
-		"Blued Steel" = "detective_blued",
 		"Stainless Steel" = "detective_stainless",
 		"Gold Trim" = "detective_gold",
 		"Leopard Spots" = "detective_leopard",
@@ -200,8 +197,8 @@
 	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_NONE
 
-/obj/item/gun/ballistic/revolver/nagant
-	name = "\improper Nagant revolver"
+/obj/item/gun/ballistic/revolver/montagne
+	name = "\improper HP Montagne"
 	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. Uniquely able to be suppressed."
 	icon_state = "nagant"
 	can_suppress = TRUE
@@ -213,8 +210,8 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
 
 
-/obj/item/gun/ballistic/revolver/hunting
-	name = "hunting revolver"
+/obj/item/gun/ballistic/revolver/ashhand
+	name = "HP Ashhand"
 	desc = "A massive, long-barreled revolver designed for the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
 	icon_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
@@ -329,13 +326,8 @@
 		user.drop_all_held_items()
 		user.Paralyze(80)
 
-/obj/item/gun/ballistic/revolver/srm
-	name = "SRM Standard Issue .357 Revolver" //should have used the pepperbox...
-	desc = "A sturdy, powerful, and reliable revolver utilized by the Saint-Roumain Militia."
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
-
-/obj/item/gun/ballistic/revolver/pepperbox
-	name = "\improper pepperbox pistol"
+/obj/item/gun/ballistic/revolver/firebrand
+	name = "\improper HP Firebrand"
 	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
@@ -345,9 +337,9 @@
 	fire_delay = 0
 	semi_auto = TRUE
 
-/obj/item/gun/ballistic/revolver/cattleman
-	name = "\improper Cattleman"
-	desc = "A strangely ancient revolver. Despite the age, it is a favorite of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small colonial police units. Uses .45 ACP."
+/obj/item/gun/ballistic/revolver/shadow
+	name = "\improper HP Shadow"
+	desc = "A strangely ancient revolver. Despite the age, it is a favorite of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small police units. Uses .45."
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "cattleman"

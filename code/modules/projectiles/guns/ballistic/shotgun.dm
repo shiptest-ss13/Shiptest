@@ -1,7 +1,5 @@
 /obj/item/gun/ballistic/shotgun
 	name = "shotgun"
-	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath."
-	icon_state = "shotgun"
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	item_state = "shotgun"
@@ -29,11 +27,11 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	wield_slowdown = 0.45
-	wield_delay = 0.6 SECONDS //Shotguns are really easy to put up to fire, since they are designed for CQC (at least compared to a rifle)
+	wield_delay = 0.8 SECONDS
 
 	spread = 4
 	spread_unwielded = 10
-	recoil = 2
+	recoil = 1
 	recoil_unwielded = 4
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
@@ -42,14 +40,43 @@
 		process_fire(user, user, FALSE)
 		. = 1
 
-/obj/item/gun/ballistic/shotgun/lethal
+/obj/item/gun/ballistic/shotgun/brimstone
+	name = "HP Brimstone"
+	desc = "An 5 round slamfire shotgun. Chambered in 12g."
+	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "brimstone"
+	item_state = "shotgun"
+
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+	fire_delay = 1
+
+	can_be_sawn_off  = TRUE
+
+	sawn_desc = "A sawed off slamfire shotgun, why would you ever saw this off... it's not even a good sidearm!"
+
+/obj/item/gun/ballistic/shotgun/brimstone/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+
+/obj/item/gun/ballistic/shotgun/brimstone/sawoff(mob/user)
+	. = ..()
+	if(.)
+		weapon_weight = WEAPON_MEDIUM
+		wield_slowdown = 0.25
+		wield_delay = 0.3 SECONDS //OP? maybe
+
+		spread = 18
+		spread_unwielded = 25
+		recoil = 5 //your punishment for sawing off an short shotgun
+		recoil_unwielded = 8
 
 // RIOT SHOTGUN //
 
-/obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
-	name = "riot shotgun"
-	desc = "A sturdy shotgun with a six-shell tube and a fixed wooden stock designed for non-lethal riot control."
+/obj/item/gun/ballistic/shotgun/hellfire
+	name = "HP Hellfire"
+	desc = "A sturdy shotgun with a six-shell tube. Chambered in 12g."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "riotshotgun"
 	item_state = "shotgun"
@@ -59,7 +86,7 @@
 	rack_sound = 'sound/weapons/gun/shotgun/rack_alt.ogg'
 	fire_delay = 1
 
-/obj/item/gun/ballistic/shotgun/riot/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/hellfire/sawoff(mob/user)
 	. = ..()
 	if(.)
 		weapon_weight = WEAPON_MEDIUM
@@ -85,6 +112,8 @@
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)
 	..()
 	rack()
+
+//im not sure what to do with the combat shotgun, as it's functionally the same as the semi auto shotguns except it automattically racks instead of being semi-auto
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "combat shotgun"
@@ -168,7 +197,7 @@
 	burst_size = 1
 	fire_delay = 0
 	pin = /obj/item/firing_pin/implant/pindicate
-	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
+	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	actions_types = list()
 	mag_display = TRUE
 	empty_indicator = TRUE
@@ -218,34 +247,73 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel
 	name = "double-barreled shotgun"
-	desc = "A true classic. Both barrels can be fired in quick succession."
+	desc = "A classic break action shotgun. Both barrels can be fired in quick succession or at once (todo) due to it's design. Chambered in 12g."
+	sawn_desc = "A sawed off break action shotgun. While it's techinically worse due to it's smaller size, it actually makes for a pretty good sidearm because of it. Chambered in 12g."
+	base_icon_state = "dshotgun"
 	icon_state = "dshotgun"
-	item_state = "shotgun_db"
+	item_state = "dshotgun"
+
+	rack_sound = 'sound/weapons/gun/shotgun/dbshotgun_break.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/shotgun/dbshotgun_close.ogg'
+
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
-	sawn_desc = "Omar's coming!"
+
 	obj_flags = UNIQUE_RENAME
 	rack_sound_volume = 0
 	unique_reskin = list("Default" = "dshotgun",
-						"Dark Red Finish" = "dshotgun_d",
-						"Ash" = "dshotgun_f",
-						"Faded Grey" = "dshotgun_g",
-						"Maple" = "dshotgun_l",
-						"Rosewood" = "dshotgun_p"
+						"Stainless Steel" = "dshotgun_white",
+						"Stained Green" = "dshotgun_green"
 						)
 	semi_auto = TRUE
-	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3 // it's a super shotgun!
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
+	bolt_wording = "barrel"
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/rack(mob/user = null)
+	if (bolt_locked == FALSE)
+		to_chat(user, "<span class='notice'>You snap open the [bolt_wording] of \the [src].</span>")
+		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+		process_chamber(FALSE, FALSE, FALSE)
+		bolt_locked = TRUE
+		update_appearance()
+		return
+	drop_bolt(user)
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/drop_bolt(mob/user = null)
+	playsound(src, bolt_drop_sound, bolt_drop_sound_volume, FALSE)
+	if (user)
+		to_chat(user, "<span class='notice'>You snap the [bolt_wording] of \the [src] closed.</span>")
+	chamber_round()
+	bolt_locked = FALSE
+	update_appearance()
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/can_shoot()
+	if (bolt_locked)
+		return FALSE
+	return ..()
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/attackby(obj/item/A, mob/user, params)
+	if (!bolt_locked)
+		to_chat(user, "<span class='notice'>The [bolt_wording] is shut closed!</span>")
+		return
+	return ..()
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/update_icon_state()
+	if(current_skin)
+		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
+	else
+		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
+	return ..()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
-	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY) && (!bolt_locked))
 		reskin_obj(user)
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/sawoff(mob/user)
@@ -522,9 +590,10 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 //Break-Action Rifle
-/obj/item/gun/ballistic/shotgun/contender
+/obj/item/gun/ballistic/shotgun/doublebarrel/contender
 	name = "Contender"
 	desc = "A single-shot break-action rifle made by Hunter's Pride. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	base_icon_state = "contender"
 	icon_state = "contender"
 	item_state = "contender"
 	icon = 'icons/obj/guns/48x32guns.dmi'

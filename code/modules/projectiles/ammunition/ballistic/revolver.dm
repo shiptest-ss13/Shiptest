@@ -4,6 +4,7 @@
 	name = ".357 bullet casing"
 	desc = "A .357 bullet casing."
 	caliber = ".357"
+	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a357
 
 /obj/item/ammo_casing/a357/match
@@ -15,6 +16,8 @@
 /obj/item/ammo_casing/a357/hp
 	name = ".357 hollow point bullet casing"
 	desc = "A .357 hollow point bullet casing."
+	icon_state = "magnum-brass"
+	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a357/hp
 
 // .45-70 (Hunting Revolver, Contender)
@@ -23,6 +26,7 @@
 	name = ".45-70 bullet casing"
 	desc = "A .45-70 bullet casing."
 	caliber = ".45-70"
+	icon_state = "magnum-brass"
 	projectile_type = /obj/projectile/bullet/a4570
 
 /obj/item/ammo_casing/a4570/match

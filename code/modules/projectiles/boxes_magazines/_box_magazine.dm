@@ -173,6 +173,11 @@
 	if(!(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))
 		. += "Alt-click on [src] while it in a pocket or your off-hand to take out a round while it is there."
 
+/obj/item/ammo_box/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	for(var/obj/item/ammo_casing/bullet2pop in stored_ammo)
+		bullet2pop.fire_act()
+
 /obj/item/ammo_box/magazine
 	w_class = WEIGHT_CLASS_SMALL //Default magazine weight, only differs for tiny mags and drums
 
@@ -201,3 +206,4 @@
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A
 	update_ammo_count()
+

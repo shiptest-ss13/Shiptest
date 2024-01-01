@@ -58,9 +58,9 @@
 ///////////////////////
 
 /obj/item/gun/ballistic/rifle/boltaction
-	name = "\improper Illestren Hunting Rifle"
+	name = "\improper HP Illestren"
 	desc = "One of Hunter's Pride most successful firearms. The bolt-action is popular among colonists, pirates, snipers, and countless more. Chambered in 7.62x54."
-	sawn_desc = "An extremely sawn-off Illestren, generally known as an \"obrez\". There was probably a reason it wasn't made this short to begin with."
+	sawn_desc = "An extremely sawn-off Illestren. There was probably a reason it wasn't made this short to begin with, however, it maKes a surpisingly okay sidearm."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -110,7 +110,7 @@
 	wield_delay = 1.3 SECONDS
 
 /obj/item/gun/ballistic/rifle/boltaction/roumain
-	name = "standard-issue 'Smile' rifle"
+	name = "HP Scout"
 	desc = "A bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
 	icon_state = "roma"
