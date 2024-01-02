@@ -15,8 +15,8 @@
 	cost = 1500
 
 /datum/supply_pack/ammo/m45_mag
-	name = ".45 ACP M1911 Magazine Crate"
-	desc = "Contains three .45 ACP magazines for the M1911 pistol, each containing eight rounds."
+	name = ".45 ACP Candor Magazine Crate"
+	desc = "Contains three .45 ACP magazines for the Candor pistol, each containing eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m45,
 					/obj/item/ammo_box/magazine/m45,
 					/obj/item/ammo_box/magazine/m45)
@@ -181,10 +181,10 @@
 	cost = 2000
 
 /datum/supply_pack/ammo/a762_ammo
-	name = "7.62x54mm Stripper Clip Crate"
-	desc = "Contains four 7.62x54mm stripper clips for rifles like the illestren rifle, each containing five rounds."
-	contains = list(/obj/item/ammo_box/a762,
-					/obj/item/ammo_box/a762,
-					/obj/item/ammo_box/a762,
-					/obj/item/ammo_box/a762)
+	name = "8x50mmR Stripper Clip Crate"
+	desc = "Contains four 8x50mmR stripper clips for rifles like the illestren rifle, each containing five rounds."
+	contains = list(/obj/item/ammo_box/a850r,
+					/obj/item/ammo_box/a850r,
+					/obj/item/ammo_box/a850r,
+					/obj/item/ammo_box/a850r)
 	cost = 1000

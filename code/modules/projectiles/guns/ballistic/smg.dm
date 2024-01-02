@@ -5,7 +5,7 @@
 	spread = 4
 	spread_unwielded = 10
 	wield_slowdown = 0.35
-	recoil_unwielded = 0.5
+	recoil_unwielded = 4
 
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
@@ -25,7 +25,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/proto/unrestricted
 	pin = /obj/item/firing_pin
@@ -47,7 +47,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
 	pin = /obj/item/firing_pin
@@ -80,7 +80,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -88,7 +88,6 @@
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
@@ -103,7 +102,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
@@ -143,7 +142,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/vector/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/m90
 	name = "\improper M-90gl Carbine"
@@ -224,23 +223,25 @@
 	return
 
 /obj/item/gun/ballistic/automatic/smg/thompson
-	name = "\improper Thompson"
-	desc = "A old submachinegun design. Chambered in .45."
-	icon_state = "tommygun"
-	item_state = "tommygun"
+	name = "HP Firestorm"
+	desc = "The SRM's SMG. Chambered in .45."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	slot_flags = 0
+	icon_state = "firestorm"
+	item_state = "firestorm"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
 	fire_delay = 1
-	bolt_type = BOLT_TYPE_OPEN
+	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
+	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
+
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = 0.4
 
 /obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/thompson/drum
 	name = "\improper Chicago Typewriter"
@@ -259,7 +260,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
 	spawnwithmagazine = FALSE
@@ -278,4 +279,4 @@
 
 /obj/item/gun/ballistic/automatic/smg/aks74u/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS) //last autofire system made the fire rate REALLY fucking fast, but because of how poor it was, it was normal speed.
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS) //last autofire system made the fire rate REALLY fucking fast, but because of how poor it was, it was normal speed.

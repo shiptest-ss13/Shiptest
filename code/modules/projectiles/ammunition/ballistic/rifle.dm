@@ -1,11 +1,11 @@
-// 7.62x54mmR (Illestren Hunting Rifle)
+// 8x50mmR (Illestren Hunting Rifle)
 
-/obj/item/ammo_casing/a762_54
-	name = "7.62x54mmR bullet casing"
-	desc = "A 7.62x54mmR bullet casing."
+/obj/item/ammo_casing/a8_50r
+	name = "8x50mmR bullet casing"
+	desc = "A 8x50mmR bullet casing."
 	icon_state = "rifle-brass"
-	caliber = "7.62x54mmR"
-	projectile_type = /obj/projectile/bullet/a762_54
+	caliber = "8x50mmR"
+	projectile_type = /obj/projectile/bullet/a8_50r
 
 // 8x58mm Caseless (SSG-669C)
 
@@ -21,7 +21,7 @@
 /obj/item/ammo_casing/a300
 	name = ".300 Magnum bullet casing"
 	desc = "A .300 Magnum bullet casing."
-	icon_state = "rifle-brass"
+	icon_state = "rifle-steel"
 	caliber = "a300"
 	projectile_type = /obj/projectile/bullet/a300
 
@@ -83,7 +83,7 @@
 /obj/item/ammo_casing/a308
 	name = ".308 bullet casing"
 	desc = "A .308 bullet casing."
-	icon_state = "rifle-steel"
+	icon_state = "rifle-brass"
 	caliber = ".308"
 	projectile_type = /obj/projectile/bullet/a308
 

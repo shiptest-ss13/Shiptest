@@ -280,7 +280,7 @@
 
 /datum/design/commanderammo
 	name = "Commander magazine (9mm)"
-	desc = "A single stack M1911 reproduction magazine, modified to chamber 9mm and fit into Commander sidearms."
+	desc = "A single stack Candor reproduction magazine, modified to chamber 9mm and fit into Commander sidearms."
 	id = "commanderammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
@@ -298,10 +298,10 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/m1911ammo
-	name = "M1911 magazine (.45)"
-	desc = "A single stack M1911 magazine, faithfully designed to chamber .45 and fit into the popular M1911 sidearms."
-	id = "m1911ammo"
+/datum/design/candorammo
+	name = "Candor magazine (.45)"
+	desc = "A single stack Candor magazine, faithfully designed to chamber .45 and fit into the popular Candor sidearms."
+	id = "candorammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/magazine/m45
@@ -698,13 +698,13 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
-/datum/design/m1911
-	name = "M1911 Pistol"
+/datum/design/Candor
+	name = "Candor Pistol"
 	desc = "A classic pistol."
-	id = "m1911"
+	id = "candor"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 8000, /datum/material/silver = 3000, /datum/material/titanium = 2000)
-	build_path = /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
+	build_path = /obj/item/gun/ballistic/automatic/pistol/candor/factory/no_mag
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -719,22 +719,12 @@
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/winchestermk2
-	name = "Winchester Mk2 Rifle"
-	desc = "A newer model of Winchester Rifle, sturdy and lever action."
+	name = "Flaming Arrow Lever-action Rifle"
+	desc = "A Flaming Arrow, sturdy and lever action."
 	id = "winchmk2"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 3000, /datum/material/silver = 4000, /datum/material/gold = 500)
-	build_path = /obj/item/gun/ballistic/shotgun/winchester
-	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
-
-/datum/design/srmrevolver
-	name = "SRM Standard Issue .357 Revolver"
-	desc = "A trusty revolver common amongst hunters and Montagnes."
-	id = "srmrevolver"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 9000, /datum/material/glass = 1000, /datum/material/silver = 1000, /datum/material/uranium = 1000)
-	build_path = /obj/item/gun/ballistic/revolver/firebrand
+	build_path = /obj/item/gun/ballistic/shotgun/flamingarrow
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -748,10 +738,10 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
-/datum/design/nagantrevolver
-	name = "Nagant Revolver"
-	desc = "An old model of revolver. Uses 7.62."
-	id = "nagantrevolver"
+/datum/design/montagne
+	name = "Montagne Revolver"
+	desc = "The revolver of choice of Hunger Montagnes all over. Uses .38."
+	id = "montagne"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 90000, /datum/material/glass = 1500, /datum/material/silver = 1500)
 	build_path = /obj/item/gun/ballistic/revolver/montagne
@@ -759,12 +749,12 @@
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
 /datum/design/stripper762
-	name = "7.62x54mm Stripperclip"
-	desc = "A stripperclip of 7.62x54mm."
+	name = "8x50mmR Stripperclip"
+	desc = "A stripperclip of 8x50mmR."
 	id = "stripper762"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000)
-	build_path = /obj/item/ammo_box/a762
+	build_path = /obj/item/ammo_box/a850r
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -778,10 +768,10 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
-/datum/design/nagantrifle
-	name = "Nagant Rifle"
-	desc = "An old model of rifle. Uses 7.62."
-	id = "nagantrifle"
+/datum/design/illestren
+	name = "Illestren Rifle"
+	desc = "The pride of Hunter's Pride. Uses 8x50mmR."
+	id = "illestren"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 85000, /datum/material/glass = 1500, /datum/material/silver = 1500)
 	build_path = /obj/item/gun/ballistic/rifle/boltaction

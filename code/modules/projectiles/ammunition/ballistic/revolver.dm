@@ -20,7 +20,7 @@
 	bullet_skin = "hollow"
 	projectile_type = /obj/projectile/bullet/a357/hp
 
-// .45-70 (Hunting Revolver, Contender)
+// .45-70 (Hunting Revolver, Beacon)
 
 /obj/item/ammo_casing/a4570
 	name = ".45-70 bullet casing"

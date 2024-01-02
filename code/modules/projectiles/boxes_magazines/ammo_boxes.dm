@@ -105,13 +105,13 @@
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These iceblox bullets contain a cryogenic payload that chills targets."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
-// 7.62x54mmR Stripper Clip (Illestren Hunting Rifle)
+// 8x50mmR Stripper Clip (Illestren Hunting Rifle)
 
-/obj/item/ammo_box/a762
-	name = "stripper clip (7.62x54mmR)"
+/obj/item/ammo_box/a850r
+	name = "stripper clip (8x50mmR)"
 	desc = "A 5-round stripper clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "762"
-	ammo_type = /obj/item/ammo_casing/a762_54
+	icon_state = "858"
+	ammo_type = /obj/item/ammo_casing/a8_50r
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY
@@ -122,10 +122,20 @@
 /obj/item/ammo_box/a858
 	name = "stripper clip (8x58mm)"
 	desc = "A 5-round stripper clip for the SSG-669C rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "762"
+	icon_state = "858"
 	ammo_type = /obj/item/ammo_casing/caseless/a858
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	instant_load = TRUE
+
+/obj/item/ammo_box/a300
+	name = "stripper clip (.300 Magnum)"
+	desc = "A 5-round stripper clip for the Scout Rifle. These rounds do great damage with significant armor penetration."
+	icon_state = "300m"
+	ammo_type = /obj/item/ammo_casing/a300
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
 // .300 Blackout Stripper Clip (Polymer Survivor Rifle)

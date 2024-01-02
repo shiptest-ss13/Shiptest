@@ -49,7 +49,7 @@
 	icon_living = "frontiersmanrangedrifle"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
 				/obj/item/gun/ballistic/rifle/boltaction)
-	casingtype = /obj/item/ammo_casing/a762_54
+	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
 /mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered
@@ -87,7 +87,7 @@
 
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
 				/obj/item/gun/ballistic/rifle/boltaction)
-	casingtype = /obj/item/ammo_casing/a762_54
+	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle/neutered

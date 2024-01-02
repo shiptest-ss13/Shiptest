@@ -14,7 +14,7 @@
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack_contents = list(/obj/item/ammo_box/a762=5, /obj/item/grenade/frag=1)
+	backpack_contents = list(/obj/item/ammo_box/a850r=5, /obj/item/grenade/frag=1)
 
 	id_role = "Grunt"
 

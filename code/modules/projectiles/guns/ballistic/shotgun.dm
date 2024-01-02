@@ -1,10 +1,6 @@
 /obj/item/gun/ballistic/shotgun
 	name = "shotgun"
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	item_state = "shotgun"
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
@@ -46,7 +42,7 @@
 	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "brimstone"
-	item_state = "shotgun"
+	item_state = "brimstone"
 
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -76,10 +72,10 @@
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
-	desc = "A sturdy shotgun with a six-shell tube. Chambered in 12g."
+	desc = "A sturdy shotgun with a seven-shell tube. Chambered in 12g."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	icon_state = "riotshotgun"
-	item_state = "shotgun"
+	icon_state = "hellfire"
+	item_state = "hellfire"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	can_be_sawn_off  = TRUE
@@ -249,7 +245,11 @@
 	name = "double-barreled shotgun"
 	desc = "A classic break action shotgun. Both barrels can be fired in quick succession or at once (todo) due to it's design. Chambered in 12g."
 	sawn_desc = "A sawed off break action shotgun. While it's techinically worse due to it's smaller size, it actually makes for a pretty good sidearm because of it. Chambered in 12g."
+
+
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	base_icon_state = "dshotgun"
+
 	icon_state = "dshotgun"
 	item_state = "dshotgun"
 
@@ -264,22 +264,31 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 
 	obj_flags = UNIQUE_RENAME
-	rack_sound_volume = 0
 	unique_reskin = list("Default" = "dshotgun",
 						"Stainless Steel" = "dshotgun_white",
 						"Stained Green" = "dshotgun_green"
 						)
 	semi_auto = TRUE
 	can_be_sawn_off  = TRUE
+	bolt_type = BOLT_TYPE_NO_BOLT
 	pb_knockback = 3 // it's a super shotgun!
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	bolt_wording = "barrel"
 
-/obj/item/gun/ballistic/shotgun/doublebarrel/rack(mob/user = null)
+/obj/item/gun/ballistic/shotgun/doublebarrel/unique_action(mob/living/user)
 	if (bolt_locked == FALSE)
 		to_chat(user, "<span class='notice'>You snap open the [bolt_wording] of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-		process_chamber(FALSE, FALSE, FALSE)
+		chambered = null
+		var/num_unloaded = 0
+		for(var/obj/item/ammo_casing/casing_bullet in get_ammo_list(FALSE, TRUE))
+			casing_bullet.forceMove(drop_location())
+			casing_bullet.bounce_away(FALSE, NONE)
+			num_unloaded++
+			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_bullet.name)
+		if (num_unloaded)
+			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			update_appearance()
 		bolt_locked = TRUE
 		update_appearance()
 		return
@@ -305,11 +314,12 @@
 	return ..()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/update_icon_state()
+	. = ..()
 	if(current_skin)
 		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
 	else
 		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
-	return ..()
+
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/AltClick(mob/user)
 	. = ..()
@@ -328,11 +338,19 @@
 		recoil = 3 //or not
 		recoil_unwielded = 5
 
+/obj/item/gun/ballistic/shotgun/doublebarrel/roumain
+	name = "HP antique double-barreled shotgun"
+	desc = "A special version of the double-barreled used in the SRM. The wood is more carefully taken care of and carefuly constructed brass adorns it. Otherwise, it's functionally identical. Chambered in 12g."
+	base_icon_state = "dshotgun_srm"
+	icon_state = "dshotgun_srm"
+	unique_reskin = null
+
 // IMPROVISED SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
+	base_icon_state = "ishotgun"
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
 	w_class = WEIGHT_CLASS_BULKY
@@ -481,6 +499,7 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil
 	name = "six-barreled \"TRABUCO\" shotgun"
 	desc = "Dear fucking god, what the fuck even is this!? The recoil caused by the sheer act of firing this thing would probably kill you, if the gun itself doesn't explode in your face first! Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
+	base_icon_state = "shotgun_brazil"
 	icon_state = "shotgun_brazil"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
@@ -491,10 +510,11 @@
 	attack_verb = list("bludgeoned", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/sex
 	burst_size = 6
-	fire_delay = 0.1
+	fire_delay = 0.8
 	pb_knockback = 12
 	unique_reskin = null
 	recoil = 10
+	recoil_unwielded = 30
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/shotgun/quadfire.ogg'
 	rack_sound = 'sound/weapons/gun/shotgun/quadrack.ogg'
@@ -520,19 +540,22 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/brazil/death
 	name = "Force of Nature"
 	desc = "So you have chosen death."
+	base_icon_state = "shotgun_e"
 	icon_state = "shotgun_e"
 	burst_size = 100
+	fire_delay = 0.1
 	pb_knockback = 40
 	recoil = 100
+	recoil_unwielded = 200
 	fire_sound_volume = 100
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/hundred
 
 //Lever-Action Rifles
-/obj/item/gun/ballistic/shotgun/winchester
-	name = "Winchester MK.2"
-	desc = "A sturdy lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. Modern and sleek."
-	icon_state = "winchester"
-	item_state = "winchester"
+/obj/item/gun/ballistic/shotgun/flamingarrow
+	name = "HP Flaming Arrow"
+	desc = "A sturdy lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. Chambered in .38."
+	icon_state = "flamingarrow"
+	item_state = "flamingarrow"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
@@ -540,7 +563,7 @@
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/flamingarrow.ogg'
 	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
@@ -551,28 +574,36 @@
 	recoil_unwielded = 2
 	wield_slowdown = 0.5
 
-/obj/item/gun/ballistic/shotgun/winchester/rack(mob/user = null)
+/obj/item/gun/ballistic/shotgun/flamingarrow/rack(mob/user = null)
 	. = ..()
 	if(!wielded)
 		SpinAnimation(7,1)
 
-/obj/item/gun/ballistic/shotgun/winchester/mk1
-	name = "Winchester MK.1"
-	desc = "A sturdy lever-action rifle. This antique pattern appears to be in excellent condition despite its age."
-	icon_state = "winchestermk1"
-	item_state = "winchestermk1"
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory
+	desc = "A sturdy lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. The wood looks extremely fresh. Chambered in .38."
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/update_overlays()
+	. = ..()
+	. += "[initial(icon_state)]_factory"
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/bolt
+	name = "HP Flaming Bolt"
+	desc = "A sturdy lever-action rifle. This antique pattern appears to be in excellent condition despite its age. Chambered in .38"
+	icon_state = "flamingbolt"
+	item_state = "flamingbolt"
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
-	name = "two-bore rifle"
+	name = "HP Huntsman"
 	desc = "Take this, elephant! If you want an intact trophy, don't aim for the head. Chambered in two-bore."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
-	icon_state = "twobore"
-	item_state = "twobore"
+	base_icon_state = "huntsman"
+	icon_state = "huntsman"
+	item_state = "huntsman"
 	unique_reskin = null
 	attack_verb = list("bludgeoned", "smashed")
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/twobore
@@ -590,19 +621,17 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 //Break-Action Rifle
-/obj/item/gun/ballistic/shotgun/doublebarrel/contender
-	name = "Contender"
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon
+	name = "HP Beacon"
 	desc = "A single-shot break-action rifle made by Hunter's Pride. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
-	base_icon_state = "contender"
-	icon_state = "contender"
-	item_state = "contender"
+	base_icon_state = "beacon"
+	icon_state = "beacon"
+	item_state = "beacon"
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	inhand_x_dimension = 32
 	inhand_y_dimension = 32
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/contender
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/beacon
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	can_be_sawn_off=TRUE
 	sawn_desc= "A single-shot pistol. It's hard to aim without a front sight."
@@ -612,9 +641,7 @@
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	obj_flags = UNIQUE_RENAME
-	rack_sound_volume = 0
 	semi_auto = TRUE
-	bolt_type = BOLT_TYPE_NO_BOLT
 	can_be_sawn_off  = TRUE
 	pb_knockback = 3
 	wield_slowdown = 0.7
@@ -623,12 +650,10 @@
 	recoil = 0
 	recoil_unwielded = 5
 
-
-
-/obj/item/gun/ballistic/shotgun/contender/sawoff(mob/user)
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/sawoff(mob/user)
 	. = ..()
 	if(.)
-		item_state = "contender_sawn"
+		item_state = "beacon_sawn"
 		wield_slowdown = 0.5
 		wield_delay = 0.5 SECONDS
 

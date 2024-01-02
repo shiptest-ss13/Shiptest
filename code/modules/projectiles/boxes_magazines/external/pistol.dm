@@ -33,7 +33,7 @@
 
 /obj/item/ammo_box/magazine/m45
 	name = "pistol magazine (.45)"
-	desc = "An 8-round single-stack magazine for the M1911 pistol. These rounds do moderate damage, but struggle against armor."
+	desc = "An 8-round single-stack magazine for the Candor pistol. These rounds do moderate damage, but struggle against armor."
 	icon_state = "45-8"
 	base_icon_state = "45"
 	ammo_type = /obj/item/ammo_casing/c45
@@ -42,22 +42,22 @@
 
 /obj/item/ammo_box/magazine/m45/inc
 	name = "pistol magazine (.45 incendiary)"
-	desc = "An 8-round single-stack magazine for the M1911 pistol. These incendiary rounds deal mediocre damage, but leave flaming trails which set targets ablaze."
+	desc = "An 8-round single-stack magazine for the Candor pistol. These incendiary rounds deal mediocre damage, but leave flaming trails which set targets ablaze."
 	ammo_type = /obj/item/ammo_casing/c45/inc
 
 /obj/item/ammo_box/magazine/m45/hp
 	name = "pistol magazine (.45 HP)"
-	desc= "An 8-round single-stack magazine for the M1911 pistol. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
+	desc= "An 8-round single-stack magazine for the Candor pistol. These hollow point rounds do incredible damage against soft targets, but are nearly ineffective against armored ones."
 	ammo_type = /obj/item/ammo_casing/c45/hp
 
 /obj/item/ammo_box/magazine/m45/ap
 	name = "pistol magazine (.45 AP)"
-	desc= "An 8-round single-stack magazine for the M1911 pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
+	desc= "An 8-round single-stack magazine for the Candor pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power."
 	ammo_type = /obj/item/ammo_casing/c45/ap
 
 /obj/item/ammo_box/magazine/m45/rubber
 	name = "pistol magazine (.45 rubber)"
-	desc = "An 8-round single-stack magazine for the M1911 pistol. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
+	desc = "An 8-round single-stack magazine for the Candor pistol. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 
 /obj/item/ammo_box/magazine/m45/update_icon_state()
@@ -123,9 +123,9 @@
 	name = "part of a disposable gun"
 	desc = "You ripped out part of the gun, somehow, rendering it unusuable. I hope you're happy."
 	icon_state = "45-8"
-	ammo_type = /obj/item/ammo_casing/c38
-	caliber = ".38"
-	max_ammo = 3
+	ammo_type = /obj/item/ammo_casing/c22lr
+	caliber = ".22lr"
+	max_ammo = 10
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/zip_ammo_9mm

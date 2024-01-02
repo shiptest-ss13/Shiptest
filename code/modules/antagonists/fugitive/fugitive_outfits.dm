@@ -65,7 +65,7 @@
 	name = "Spacepol Officer"
 	uniform = /obj/item/clothing/under/rank/security/officer/beatcop
 	suit = /obj/item/clothing/suit/armor/vest/blueshirt
-	belt = /obj/item/gun/ballistic/automatic/pistol/m1911
+	belt = /obj/item/gun/ballistic/automatic/pistol/candor
 	head = /obj/item/clothing/head/helmet/police
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	shoes = /obj/item/clothing/shoes/jackboots

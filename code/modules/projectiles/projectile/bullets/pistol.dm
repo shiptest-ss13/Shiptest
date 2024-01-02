@@ -64,7 +64,7 @@
 	stamina = 38
 	armour_penetration = -40
 
-// .45 (M1911, C20r, Thompson)
+// .45 (Candor, C20r, Thompson)
 
 /obj/projectile/bullet/c45
 	name = ".45 bullet"

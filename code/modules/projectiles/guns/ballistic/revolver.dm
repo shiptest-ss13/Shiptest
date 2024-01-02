@@ -200,20 +200,22 @@
 /obj/item/gun/ballistic/revolver/montagne
 	name = "\improper HP Montagne"
 	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. Uniquely able to be suppressed."
-	icon_state = "nagant"
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "montagne"
 	can_suppress = TRUE
 	manufacturer = MANUFACTURER_NONE
 	spread_unwielded = 12
 	recoil = 0
 	recoil_unwielded = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38/big
 
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
 	desc = "A massive, long-barreled revolver designed for the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
-	icon_state = "hunting"
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "ashhand"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	wield_slowdown = 0.5
@@ -330,6 +332,7 @@
 	name = "\improper HP Firebrand"
 	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
 	icon_state = "pepperbox"
+	item_state = "hp_generic_fresh"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/pepperbox
 	spread = 20
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -342,12 +345,12 @@
 	desc = "A strangely ancient revolver. Despite the age, it is a favorite of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small police units. Uses .45."
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	icon_state = "cattleman"
+	icon_state = "shadow"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("Default" = "cattleman",
-		"Army" = "cattleman_army",
-		"General" = "cattleman_general"
+	unique_reskin = list("Default" = "shadow",
+		"Army" = "shadow_army",
+		"General" = "shadow_general"
 		)
 
 	recoil = 0 //weaker than normal revovler, no recoil

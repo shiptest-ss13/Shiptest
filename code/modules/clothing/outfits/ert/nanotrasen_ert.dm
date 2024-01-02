@@ -247,8 +247,8 @@
 	belt = /obj/item/melee/classic_baton
 	r_hand = /obj/item/gun/ballistic/rifle/boltaction
 	back = /obj/item/storage/backpack/satchel
-	l_pocket = /obj/item/ammo_box/a762
-	r_pocket = /obj/item/ammo_box/a762
+	l_pocket = /obj/item/ammo_box/a850r
+	r_pocket = /obj/item/ammo_box/a850r
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
 /datum/outfit/centcom/centcom_intern/unarmed

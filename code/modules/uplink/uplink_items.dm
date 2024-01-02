@@ -948,7 +948,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/ammo/bolt_action
 	name = "Surplus Rifle Clip"
 	desc = "A stripper clip used to quickly load bolt action rifles. Contains 5 rounds."
-	item = 	/obj/item/ammo_box/a762
+	item = 	/obj/item/ammo_box/a850r
 	cost = 1
 	include_modes = list(/datum/game_mode/nuclear)
 
