@@ -36,4 +36,8 @@
 
 /mob/living/simple_animal/hostile/statue/coilhead/sir_coils_your_brains
 	name = "Sir Coils-Your-Brains"
-	desc = "Excuse me, my fellow employee, but it appears that your head seems rather spherical. Allow me to fix this for you, lad. Become coiled."
+	melee_damage_upper = 1000
+	melee_damage_lower = 1000
+	icon_state = "sir"
+	icon_living = "sir"
+	icon_dead = "sir"
