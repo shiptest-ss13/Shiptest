@@ -47,9 +47,10 @@
 
 /mob/living/simple_animal/hostile/statue/coilhead/sir_coils_your_brains
 	name = "Sir Coils-Your-Brains"
-	desc = "A withered humanoid statue of concrete, lacking arms and sporting a neck made of a single big loud coil. Multiple nails are puncturing into the statue. For some unknown reason, this one seems to don fancy attire and there's some yorkshire tea dribbling out of the mouth"
+	desc = "A withered humanoid statue of concrete, lacking arms and sporting a neck made of a single big loud coil. Multiple nails are puncturing into the statue. For some unknown reason, this one seems to don fancy attire, and there's some yorkshire tea dribbling out of the mouth"
 	melee_damage_upper = 1000
 	melee_damage_lower = 1000
 	icon_state = "sir"
 	icon_living = "sir"
 	icon_dead = "sir"
+
