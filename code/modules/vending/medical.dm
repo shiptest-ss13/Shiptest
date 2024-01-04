@@ -7,6 +7,7 @@
 	req_access = list(ACCESS_MEDICAL)
 	products = list(
 		/obj/item/stack/medical/gauze = 5,
+		/obj/item/stack/medical/splint = 5,
 		/obj/item/reagent_containers/syringe = 5,
 		/obj/item/reagent_containers/dropper = 2,
 		/obj/item/healthanalyzer = 2,
@@ -25,8 +26,7 @@
 		/obj/item/reagent_containers/medigel/synthflesh = 1,
 		/obj/item/reagent_containers/medigel/sterilizine = 1,
 		/obj/item/sensor_device = 1,
-		/obj/item/pinpointer/crew = 1,
-		/obj/item/stack/medical/splint = 5)
+		/obj/item/pinpointer/crew = 1)
 	contraband = list(
 		/obj/item/reagent_containers/pill/tox = 2,
 		/obj/item/reagent_containers/pill/morphine = 2,
