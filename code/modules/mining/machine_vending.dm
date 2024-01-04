@@ -20,23 +20,23 @@
 	// Mining products are handled differently, because I am too lazy to convert this list stolen from the old vendor.
 	products = list( //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 		/obj/item/stack/marker_beacon/thirty = 3,
+		/obj/item/mining_scanner = 2,
+		/obj/item/t_scanner/adv_mining_scanner = 2,
 		/obj/item/hivelordstabilizer = 3,
-		/obj/item/survivalcapsule = 2,
+		/obj/item/clothing/glasses/meson/gar = 2,
 		/obj/item/kinetic_crusher = 1,
 		/obj/item/gun/energy/kinetic_accelerator = 2,
-		/obj/item/mining_scanner = 2,
-		/obj/item/lazarus_injector = 1,
 		/obj/item/pickaxe/silver = 1,
-		/obj/item/survivalcapsule/luxury = 1,
 		/obj/item/borg/upgrade/modkit/range = 2,
 		/obj/item/borg/upgrade/modkit/damage = 2,
 		/obj/item/borg/upgrade/modkit/cooldown = 2,
 		/obj/item/borg/upgrade/modkit/aoe/mobs = 1
 	)
 	premium = list(
-		/mob/living/simple_animal/hostile/facehugger/toy = 1,
-		/obj/item/clothing/glasses/meson/gar = 2,
-		/obj/item/survivalcapsule/luxuryelite = 1,
+		/obj/item/lazarus_injector = 1,
+		/obj/item/survivalcapsule = 2,
+		/obj/item/survivalcapsule/luxury = 1,
+		/obj/item/survivalcapsule/luxuryelite = 1
 	)
 
 	var/voucher_items = list(
