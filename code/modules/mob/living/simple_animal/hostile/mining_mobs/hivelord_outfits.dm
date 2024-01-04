@@ -285,6 +285,7 @@
 				/obj/item/tank/internals/emergency_oxygen/engi = 1,
 				/obj/item/holosign_creator/engineering = 1,
 				/obj/item/extinguisher/advanced = 1,
+				/obj/item/stack/sheet/metal/twenty = 1
 				)
 			)
 	if(prob(75))
@@ -305,11 +306,11 @@
 	if(prob(75))
 		belt = pickweight(list(/obj/item/storage/belt/medical = 5, /obj/item/defibrillator/compact/loaded = 1))
 	if(prob(75))
-		gloves = /obj/item/clothing/gloves/color/white
+		gloves = pick(/obj/item/clothing/gloves/color/white, /obj/item/clothing/gloves/color/latex/nitrile)
 	if(prob(75))
 		mask = /obj/item/clothing/mask/surgical
 	if(prob(75))
-		shoes = pick(/obj/item/clothing/shoes/sneakers/white, /obj/item/clothing/gloves/color/latex/nitrile)
+		shoes = /obj/item/clothing/shoes/sneakers/white
 	if(prob(75))
 		head = /obj/item/clothing/head/beret/med
 	if(prob(75))
