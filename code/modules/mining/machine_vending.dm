@@ -30,15 +30,13 @@
 		/obj/item/borg/upgrade/modkit/range = 2,
 		/obj/item/borg/upgrade/modkit/damage = 2,
 		/obj/item/borg/upgrade/modkit/cooldown = 2,
-		/obj/item/borg/upgrade/modkit/aoe/mobs = 1
+		/obj/item/borg/upgrade/modkit/aoe/mobs = 1,
 		/obj/item/lazarus_injector = 1,
 		/obj/item/survivalcapsule = 2,
 		/obj/item/survivalcapsule/luxury = 1,
 		/obj/item/survivalcapsule/luxuryelite = 1
 	)
-	premium = list(
 
-	)
 
 	var/voucher_items = list(
 		"Survival Capsule and Explorer's Webbing" = /obj/item/storage/belt/mining/vendor,
