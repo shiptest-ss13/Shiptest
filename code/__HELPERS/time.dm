@@ -23,7 +23,7 @@
 	var/days_since = round(realtime / (24 HOURS))
 	var/year = round(days_since / 365) + 481
 	var/day_of_year = days_since % 365 + 1
-	var/month = round(day_of_year / 28)
+	var/month = round(day_of_year / 28) + 1
 	var/day_of_month = day_of_year % 28 + 1
 
 	if(shortened)
