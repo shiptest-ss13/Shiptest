@@ -85,12 +85,12 @@
 // Brig Physician //
 /obj/item/clothing/under/rank/security/brig_phys
 	name = "brig physician jumpsuit"
-	desc = "A lightly armored jumpsuit worn by Nanotrasen's Asset Protection Medical Corps."
+	desc = "A lightly armored jumpsuit."
 	icon_state = "brig_phys"
 
 /obj/item/clothing/under/rank/security/brig_phys/skirt
 	name = "brig physician jumpskirt"
-	desc = "A lightly armored jumpsuit worn by Nanotrasen's Asset Protection Medical Corps."
+	desc = "A lightly armored jumpskirt."
 	icon_state = "brig_phys_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
@@ -98,13 +98,13 @@
 
 /obj/item/clothing/under/rank/security/brig_phys/nt
 	name = "security medic's uniform"
-	desc = "A lightly armored uniform worn by medics ensuring the health of prisoners."
+	desc = "A lightly armored uniform worn by Nanotrasen's Asset Protection Medical Corps."
 	icon_state = "rbrig_phys"
 	item_state = "r_suit"
 
 /obj/item/clothing/under/rank/security/brig_phys/nt/skirt
 	name = "security medic's uniform"
-	desc = "A lightly armored uniform, with a skirt, worn by medics ensuring the health of prisoners."
+	desc = "A lightly armored uniform, with a skirt, worn by Nanotrasen's Asset Protection Medical Corps."
 	icon_state = "rbrig_phys_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -129,29 +129,18 @@
 
 /obj/item/clothing/under/rank/security/warden/nt
 	name = "warden's red security suit"
-	desc = "A formal security suit for officers complete with Nanotrasen belt buckle."
+	desc = "A formal security suit for wardens complete with Nanotrasen belt buckle."
 	icon_state = "rwarden"
 	item_state = "r_suit"
 
 /obj/item/clothing/under/rank/security/warden/nt/skirt
 	name = "warden's red suitskirt"
-	desc = "A formal security suitskirt for officers complete with Nanotrasen belt buckle."
+	desc = "A formal security suitskirt for wardens complete with Nanotrasen belt buckle."
 	icon_state = "rwarden_skirt"
 	item_state = "r_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
-/obj/item/clothing/under/rank/security/head_of_security/nt
-	name = "red head of security's jumpsuit"
-	icon_state = "rhos"
-	item_state = "r_suit"
-
-/obj/item/clothing/under/rank/security/head_of_security/nt/skirt
-	name = "head of security's red jumpskirt"
-	desc = "A security jumpskirt decorated for those few with the dedication to achieve the position of Head of Security."
-	icon_state = "rhos_skirt"
-	body_parts_covered = CHEST|GROIN|ARMS
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 // Head of Security //
 /obj/item/clothing/under/rank/security/head_of_security
@@ -170,6 +159,18 @@
 	icon_state = "hos_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	can_adjust = FALSE
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/under/rank/security/head_of_security/nt
+	name = "red head of security's jumpsuit"
+	icon_state = "rhos"
+	item_state = "r_suit"
+
+/obj/item/clothing/under/rank/security/head_of_security/nt/skirt
+	name = "head of security's red jumpskirt"
+	desc = "A security jumpskirt decorated for those few with the dedication to achieve the position of Head of Security."
+	icon_state = "rhos_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/under/rank/security/head_of_security/alt
@@ -201,7 +202,7 @@
 // Prisoner //
 /obj/item/clothing/under/rank/prisoner
 	name = "prison jumpsuit"
-	desc = "It's standardised Nanotrasen prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "It's standardised prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
 	icon = 'icons/obj/clothing/under/security.dmi'
 	icon_state = "prisoner"
 	item_state = "o_suit"
@@ -212,7 +213,7 @@
 
 /obj/item/clothing/under/rank/prisoner/skirt
 	name = "prison jumpskirt"
-	desc = "It's standardised Nanotrasen prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "It's standardised prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
 	icon_state = "prisoner_skirt"
 	item_state = "o_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -221,12 +222,12 @@
 
 /obj/item/clothing/under/rank/prisoner/protected_custody
 	name = "protected custody jumpsuit"
-	desc = "It's standardised Nanotrasen prisoner-wear worn by those in protected custody. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "It's standardised prisoner-wear worn by those in protected custody. Its suit sensors are stuck in the \"Fully On\" position."
 	icon_state = "protected_custody"
 
 /obj/item/clothing/under/rank/prisoner/protected_custody/skirt
 	name = "protected custody jumpskirt"
-	desc = "It's standardised Nanotrasen prisoner-wear worn by those in protected custody. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "It's standardised prisoner-wear worn by those in protected custody. Its suit sensors are stuck in the \"Fully On\" position."
 	icon_state = "protected_custody_skirt"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
