@@ -261,6 +261,13 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 
+/turf/closed/indestructible/rock/schist
+	name = "schist"
+	desc = "Extremely densely-packed layers of schist. Say it ten times fast."
+	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	icon_state = "rockwall_icemoon-0"
+	base_icon_state = "rockwall_icemoon"
+
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
 	desc = "A wall layered with impenetrable sheets of paper."
