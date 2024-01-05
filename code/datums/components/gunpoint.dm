@@ -33,8 +33,8 @@
 		"<span class='danger'>You aim [weapon] point blank at [target]!</span>", target)
 	to_chat(target, "<span class='userdanger'>[shooter] aims [weapon] point blank at you!</span>")
 
-	shooter.apply_status_effect(STATUS_EFFECT_HOLDUP)
-	target.apply_status_effect(STATUS_EFFECT_HELDUP)
+	shooter.apply_status_effect(/datum/status_effect/holdup, shooter)
+	target.apply_status_effect(/datum/status_effect/grouped/heldup, shooter)
 
 	if(target.job == "Captain" && target.stat == CONSCIOUS && is_nuclear_operative(shooter))
 		if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher) && weapon.chambered)
@@ -48,8 +48,9 @@
 
 /datum/component/gunpoint/Destroy(force, silent)
 	var/mob/living/shooter = parent
-	shooter.remove_status_effect(STATUS_EFFECT_HOLDUP)
-	target.remove_status_effect(STATUS_EFFECT_HELDUP)
+	shooter.remove_status_effect(/datum/status_effect/holdup)
+	target.remove_status_effect(/datum/status_effect/grouped/heldup, shooter)
+	SEND_SIGNAL(target, COMSIG_CLEAR_MOOD_EVENT, "gunpoint")
 	return ..()
 
 /datum/component/gunpoint/RegisterWithParent()
@@ -108,13 +109,13 @@
 	INVOKE_ASYNC(src, PROC_REF(async_trigger_reaction))
 
 /datum/component/gunpoint/proc/async_trigger_reaction()
-
+	var/mob/living/shooter = parent
+	shooter.remove_status_effect(/datum/status_effect/holdup) // try doing these before the trigger gets pulled since the target (or shooter even) may not exist after pulling the trigger, dig?
+	target.remove_status_effect(/datum/status_effect/grouped/heldup, shooter)
 	SEND_SIGNAL(target, COMSIG_CLEAR_MOOD_EVENT, "gunpoint")
 	if(point_of_no_return)
 		return
 	point_of_no_return = TRUE
-
-	var/mob/living/shooter = parent
 
 	if(!weapon.can_shoot() || !weapon.can_trigger_gun(shooter) || (weapon.weapon_weight == WEAPON_HEAVY && shooter.get_inactive_held_item()))
 		shooter.visible_message("<span class='danger'>[shooter] fumbles [weapon]!</span>", \
