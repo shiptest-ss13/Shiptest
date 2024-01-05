@@ -219,18 +219,6 @@
 	desc = "Your biological functions have halted. You could live forever this way, but it's pretty boring."
 	icon_state = "stasis"
 
-/datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
-	if(isnum(set_duration))
-		duration = set_duration
-	. = ..()
-
-/datum/status_effect/pacify/on_apply()
-	ADD_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
-	return ..()
-
-/datum/status_effect/pacify/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
-
 //OTHER DEBUFFS
 /datum/status_effect/pacify
 	id = "pacify"
@@ -340,11 +328,11 @@
 		H.emote(pick("gasp", "gag", "choke"))
 
 /mob/living/proc/apply_necropolis_curse(set_curse)
-	var/datum/status_effect/necropolis_curse/C = has_status_effect(STATUS_EFFECT_NECROPOLIS_CURSE)
+	var/datum/status_effect/necropolis_curse/C = has_status_effect(/datum/status_effect/necropolis_curse)
 	if(!set_curse)
 		set_curse = pick(CURSE_BLINDING, CURSE_SPAWNING, CURSE_WASTING, CURSE_GRASPING)
 	if(QDELETED(C))
-		apply_status_effect(STATUS_EFFECT_NECROPOLIS_CURSE, set_curse)
+		apply_status_effect(/datum/status_effect/necropolis_curse, set_curse)
 	else
 		C.apply_curse(set_curse)
 		C.duration += 3000 //time added by additional curses
@@ -434,7 +422,7 @@
 	deltimer(timerid)
 
 
-/datum/status_effect/gonbolaPacify
+/datum/status_effect/gonbola_pacify
 	id = "gonbolaPacify"
 	status_type = STATUS_EFFECT_MULTIPLE
 	tick_interval = -1

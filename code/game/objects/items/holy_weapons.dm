@@ -521,9 +521,9 @@
 
 /obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
 	..()
-	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
+	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(/datum/status_effect/stacking/saw_bleed)
 	if(!B)
-		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
+		target.apply_status_effect(/datum/status_effect/stacking/saw_bleed,bleed_stacks_per_hit)
 	else
 		B.add_stacks(bleed_stacks_per_hit)
 
