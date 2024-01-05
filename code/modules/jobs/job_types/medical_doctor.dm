@@ -91,50 +91,11 @@
 
 //Shiptest outfits
 
-/datum/outfit/job/doctor/minutemen
-	name = "Field Medic (Colonial Minutemen)"
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	accessory = /obj/item/clothing/accessory/armband/medblue
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/med
-	suit = null
-	suit_store = null
-
 /datum/outfit/job/doctor/pirate
 	name = "Ship's Doctor (Pirate)"
 
 	uniform = /obj/item/clothing/under/costume/sailor
 	shoes = /obj/item/clothing/shoes/jackboots
-
-
-/datum/outfit/job/doctor/roumain
-	name = "Hunter Doctor (Saint-Roumain Militia)"
-
-	uniform = /obj/item/clothing/under/suit/roumain
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/toggle/labcoat/roumain_med
-
-	head = /obj/item/clothing/head/cowboy/sec/roumain/med
-	mask = /obj/item/clothing/mask/gas/plaguedoctor
-	gloves = null
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-	backpack_contents = list(/obj/item/storage/firstaid/roumain=1)
-
-/datum/outfit/job/doctor/roumain/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("roumain")
-
-/datum/outfit/job/doctor/frontiersmen
-	name = "Surgeon (frontiersmen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	glasses = /obj/item/clothing/glasses/hud/health/prescription
-	ears = /obj/item/radio/headset/pirate
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	backpack_contents = list(/obj/item/storage/firstaid/medical,)
 
 /datum/outfit/job/doctor/lp
 	name = "LP Medical specialist"

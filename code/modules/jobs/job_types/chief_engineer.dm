@@ -72,51 +72,9 @@
 	neck = /obj/item/clothing/neck/tie/green
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/clothing/gloves/color/black=1)
 
-/datum/outfit/job/ce/inteq
-	name = "IRMG Artificer Class II (Inteq)"
-
-	ears = /obj/item/radio/headset/inteq
-	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
-	head = /obj/item/clothing/head/hardhat/white
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/storage/belt/utility/full
-
-	courierbag = /obj/item/storage/backpack/messenger/inteq
-
 /datum/outfit/job/ce/nt
 	name = "Chief Engineer (NT)"
 
 	head = /obj/item/clothing/head/beret/ce
 	belt = /obj/item/storage/belt/utility/full
 	suit = /obj/item/clothing/suit/hazardvest
-
-/datum/outfit/job/ce/frontiersmen
-	name = "Head Carpenter (Frontiersmen)"
-
-	ears = /obj/item/radio/headset/pirate
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
-	head = /obj/item/clothing/head/hardhat/white
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/storage/belt/utility/full
-
-/datum/outfit/job/ce/minutemen
-	name = "Foreman (Colonial Minutemen)"
-
-	ears = /obj/item/radio/headset/minutemen/alt
-	uniform = /obj/item/clothing/under/rank/command/minutemen
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
-	alt_suit = null
-	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/storage/belt/utility/full
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
-	backpack = /obj/item/storage/backpack
-	backpack_contents = list(
-		/obj/item/melee/classic_baton/telescopic=1,
-		/obj/item/modular_computer/tablet/preset/advanced = 1
-	)

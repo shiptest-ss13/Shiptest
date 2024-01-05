@@ -4,10 +4,10 @@
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list("playergezena")
+	H.faction |= list(FACTION_PLAYER_GEZENA)
 
 /datum/outfit/job/gezena/assistant
-	name = "Deckhand (PGF)"
+	name = "PGF - Deckhand"
 	jobtype = /datum/job/assistant
 
 	head = /obj/item/clothing/head/gezena

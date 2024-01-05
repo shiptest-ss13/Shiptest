@@ -55,7 +55,7 @@
 
 /obj/item/clothing/head/caphat/frontier/admiral
 	name = "\improper Frontiersmen admiral's cap"
-	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersman pirate fleet."
+	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
 
 //Head of Personnel

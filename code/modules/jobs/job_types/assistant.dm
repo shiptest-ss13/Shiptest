@@ -70,16 +70,6 @@ Assistant
 
 //Shiptest outfits
 
-/datum/outfit/job/assistant/minutemen
-	name = "Volunteer (Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	backpack = /obj/item/storage/backpack/security/cmm
-
-/datum/outfit/job/assistant/inteq
-	name = "IRMG Recruit (Inteq)"
-	uniform = /obj/item/clothing/under/syndicate/inteq
-
 /datum/outfit/job/assistant/intern
 	name = "Assistant (Intern)"
 	uniform = /obj/item/clothing/under/suit/black
@@ -153,19 +143,6 @@ Assistant
 	gloves = /obj/item/clothing/gloves/color/white
 	accessory = /obj/item/clothing/neck/scarf/darkblue
 
-/datum/outfit/job/assistant/roumain
-	name = "Shadow (Saint-Roumain Militia)"
-
-	uniform = /obj/item/clothing/under/suit/roumain
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/armor/roumain/shadow
-
-	head = /obj/item/clothing/head/cowboy/sec/roumain/shadow
-
-/datum/outfit/job/assistant/roumain/post_equip(mob/living/carbon/human/H)
-	H.faction |= list("roumain")
-
 /datum/outfit/job/assistant/pharma
 	name = "Pharmacology Student"
 
@@ -186,12 +163,3 @@ Assistant
 	l_pocket = /obj/item/kitchen/knife/combat/survival
 	gloves = /obj/item/clothing/gloves/combat
 	implants = list(/obj/item/implant/radio)
-
-/datum/outfit/job/assistant/frontiersmen
-	name = "Deckhand (frontiersmen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	shoes = /obj/item/clothing/shoes/jackboots
-	r_pocket = /obj/item/radio
-	head = /obj/item/clothing/head/beret/sec/frontier
-	ears = /obj/item/radio/headset/pirate

@@ -91,7 +91,7 @@
 
 //Holocalls
 /datum/preset_holoimage/commissioner
-	outfit_type = /datum/outfit/job/captain/nt/lp_lieutenant
+	outfit_type = /datum/outfit/job/nanotrasen/captain/lp
 
 //hardsuits
 /obj/item/clothing/suit/space/hardsuit/ert/lp

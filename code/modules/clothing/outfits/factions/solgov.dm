@@ -1,10 +1,11 @@
 /datum/outfit/job/solgov
+	name = "SolGov Base Outfit"
 
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list("playerSolgov")
+	H.faction |= list(FACTION_PLAYER_SOLGOV)
 
 /datum/outfit/job/solgov/assistant
 	name = "Scribe (SolGov)"

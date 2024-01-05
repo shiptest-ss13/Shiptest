@@ -42,22 +42,3 @@
 	name = "Paramedic (Emergency Medical Technician)"
 
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
-
-//Shiptest outfits
-
-/datum/outfit/job/paramedic/inteq
-	name = "IRMG Corpsman (Inteq)"
-
-	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
-	head = /obj/item/clothing/head/soft/inteq/corpsman
-	suit = /obj/item/clothing/suit/armor/inteq/corpsman
-	shoes = /obj/item/clothing/shoes/combat
-	belt = /obj/item/storage/belt/medical/webbing/paramedic
-	ears = /obj/item/radio/headset/headset_medsec/alt
-
-/datum/outfit/job/paramedic/minutemen
-	name = "BARD Combat Medic (Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
-	head = /obj/item/clothing/head/soft/paramedic
-	suit = /obj/item/clothing/suit/armor/

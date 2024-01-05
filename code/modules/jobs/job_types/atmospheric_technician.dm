@@ -40,11 +40,4 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	internals_slot = ITEM_SLOT_SUITSTORE
 
-/datum/outfit/job/atmos/frontiersmen
-	name = "Atmospheric Technician (Frontiersmen)"
 
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	suit = /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
-	head = /obj/item/clothing/head/hardhat
-	ears = /obj/item/radio/headset/pirate
-	mask = /obj/item/clothing/mask/gas/atmos

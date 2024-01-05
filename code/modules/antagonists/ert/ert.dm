@@ -232,7 +232,7 @@
 
 /datum/antagonist/ert/inteq
 	name = "Inteq Mercenary"
-	outfit = /datum/outfit/job/security/inteq
+	outfit = /datum/outfit/job/inteq/security
 	random_names = TRUE
 	role = "Enforcer"
 
@@ -252,7 +252,7 @@
 
 /datum/antagonist/ert/inteq/leader
 	name = "Inteq Mercenary Leader"
-	outfit = /datum/outfit/job/captain/inteq
+	outfit = /datum/outfit/job/inteq/captain
 	role = "Vanguard"
 
 // ********************************************************************
