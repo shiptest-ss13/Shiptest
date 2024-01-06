@@ -404,18 +404,18 @@
 	item_state = "bola_r"
 	breakouttime = 300
 	slowdown = 0
-	var/datum/status_effect/gonbolaPacify/effectReference
+	var/datum/status_effect/gonbola_pacify/effect_reference
 
 /obj/item/restraints/legcuffs/bola/gonbola/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(iscarbon(hit_atom))
 		var/mob/living/carbon/C = hit_atom
-		effectReference = C.apply_status_effect(STATUS_EFFECT_GONBOLAPACIFY)
+		effect_reference = C.apply_status_effect(/datum/status_effect/gonbola_pacify)
 
 /obj/item/restraints/legcuffs/bola/gonbola/dropped(mob/user)
 	. = ..()
-	if(effectReference)
-		QDEL_NULL(effectReference)
+	if(effect_reference)
+		QDEL_NULL(effect_reference)
 
 /obj/item/restraints/legcuffs/bola/watcher //tribal bola for tribal lizards
 	name = "watcher Bola"
