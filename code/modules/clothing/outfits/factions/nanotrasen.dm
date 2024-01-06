@@ -229,6 +229,9 @@
 
 /datum/outfit/job/nanotrasen/engineer
 	name = "Nanotrasen - Engineer"
+	job_icon = "stationengineer"
+	jobtype = /datum/job/engineer
+
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
 	head = /obj/item/clothing/head/hardhat
 
