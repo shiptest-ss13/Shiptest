@@ -96,21 +96,3 @@
 	gloves = /obj/item/clothing/gloves/combat
 
 	implants = list(/obj/item/implant/radio)
-
-/datum/outfit/job/engineer/lp
-	name = "LP Engineering Specialist"
-
-	implants = list(/obj/item/implant/mindshield)
-	ears = /obj/item/radio/headset/nanotrasen/alt/captain
-	id = /obj/item/card/id/lpengie
-	belt = /obj/item/pda/engineering
-	gloves = /obj/item/clothing/gloves/color/yellow
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
-	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/beret/eng
-
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
-	courierbag = /obj/item/storage/backpack/messenger/engi

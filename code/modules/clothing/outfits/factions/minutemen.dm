@@ -1,10 +1,12 @@
 //top outfit of everything Minuteman. Touch at own risk.
 
-/datum/outfit/job/minuteman
+/datum/outfit/job/minutemen
 	name = "Minutemen - Base Outfit"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	alt_uniform = null
+
+	faction_icon = "minutemen"
 
 	backpack = /obj/item/storage/backpack/security/cmm
 	satchel = /obj/item/storage/backpack/satchel/sec/cmm
@@ -13,7 +15,7 @@
 
 	box = /obj/item/storage/box/survival
 
-/datum/outfit/job/minuteman/post_equip(mob/living/carbon/human/H, visualsOnly)
+/datum/outfit/job/minutemen/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
@@ -21,8 +23,9 @@
 
 ///assistant
 
-/datum/outfit/job/minuteman/assistant
+/datum/outfit/job/minutemen/assistant
 	name = "Minutemen - Volunteer"
+	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 
 	r_pocket = /obj/item/radio
@@ -30,8 +33,9 @@
 
 ///captains
 
-/datum/outfit/job/minuteman/captain
+/datum/outfit/job/minutemen/captain
 	name = "Minutemen - Captain"
+	job_icon = "captain"
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/gold
@@ -59,7 +63,7 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
-/datum/outfit/job/minuteman/captain/general
+/datum/outfit/job/minutemen/captain/general
 	name = "Minutemen - General"
 
 	head = /obj/item/clothing/head/caphat/minutemen
@@ -74,8 +78,9 @@
 
 ///chemist
 
-/datum/outfit/job/minuteman/chemist
+/datum/outfit/job/minutemen/chemist
 	name = "Minutemen - Chemical Scientist"
+	job_icon = "chemist"
 	jobtype = /datum/job/chemist
 
 	glasses = /obj/item/clothing/glasses/science
@@ -93,8 +98,9 @@
 
 ///Chief Engineer
 
-/datum/outfit/job/minuteman/ce
+/datum/outfit/job/minutemen/ce
 	name = "Minutemen - Foreman"
+	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver
@@ -128,8 +134,9 @@
 
 /// Head Of Personnel
 
-/datum/outfit/job/minuteman/head_of_personnel
+/datum/outfit/job/minutemen/head_of_personnel
 	name = "Minutemen - Bridge Officer"
+	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
@@ -155,8 +162,9 @@
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /// Medical Doctor
-/datum/outfit/job/minuteman/doctor
+/datum/outfit/job/minutemen/doctor
 	name = "Minutemen - Field Medic"
+	job_icon = "medicaldoctor"
 	jobtype = /datum/outfit/job/doctor
 
 	belt = /obj/item/pda/medical
@@ -179,8 +187,9 @@
 	suit_store = null
 
 ///paramedic
-/datum/outfit/job/minuteman/paramedic
+/datum/outfit/job/minutemen/paramedic
 	name = "Minutemen - BARD Combat Medic"
+	job_icon = "paramedic"
 	jobtype = /datum/outfit/job/paramedic
 
 	shoes = /obj/item/clothing/shoes/sneakers/blue
@@ -206,8 +215,9 @@
 	alt_suit = null
 
 ///roboticist
-/datum/outfit/job/minuteman/roboticist
+/datum/outfit/job/minutemen/roboticist
 	name = "Minutemen - Mech Technician"
+	job_icon = "roboticist"
 	jobtype = /datum/outfit/job/roboticist
 
 	belt = /obj/item/storage/belt/utility/full
@@ -225,8 +235,9 @@
 	alt_suit = /obj/item/clothing/suit/toggle/suspenders/gray
 
 ///scientist
-/datum/outfit/job/minuteman/scientist
+/datum/outfit/job/minutemen/scientist
 	name = "Minutemen - Scientist"
+	job_icon = "scientist"
 	jobtype = /datum/job/scientist
 
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
@@ -243,8 +254,9 @@
 
 //security officers
 
-/datum/outfit/job/minuteman/security
+/datum/outfit/job/minutemen/security
 	name = "Minutemen - Minuteman"
+	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
 
 	head = /obj/item/clothing/head/helmet/bulletproof/minutemen
@@ -264,13 +276,13 @@
 	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = null
 
-/datum/outfit/job/minuteman/security/armed
+/datum/outfit/job/minutemen/security/armed
 	name = "Minutemen - Minuteman (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/minutemen/p16
 
-/datum/outfit/job/minuteman/security/mech_pilot
+/datum/outfit/job/minutemen/security/mech_pilot
 	name = "Minutemen - Mech Pilot"
 
 	suit = /obj/item/clothing/suit/armor/vest/alt
@@ -279,8 +291,9 @@
 
 ///miners
 
-/datum/outfit/job/minuteman/miner
+/datum/outfit/job/minutemen/miner
 	name = "Minutemen - Industrial Miner"
+	job_icon = "shaftminer"
 	jobtype = /datum/job/mining
 
 	belt = /obj/item/pda/shaftminer
@@ -299,8 +312,9 @@
 
 ///engineers
 
-/datum/outfit/job/minuteman/engineer
+/datum/outfit/job/minutemen/engineer
 	name = "Minutemen - Mechanic"
+	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
@@ -325,8 +339,9 @@
 
 ///warden
 
-/datum/outfit/job/minuteman/warden
+/datum/outfit/job/minutemen/warden
 	name = "Minutemen - Field Commander"
+	job_icon = "warden"
 	jobtype = /datum/job/warden
 
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -345,7 +360,7 @@
 	backpack = /obj/item/storage/backpack
 	backpack_contents = null
 
-/datum/outfit/job/minuteman/warden/armed
+/datum/outfit/job/minutemen/warden/armed
 	name = "Minutemen - Field Commander (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen

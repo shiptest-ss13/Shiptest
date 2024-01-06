@@ -1,5 +1,6 @@
 /datum/outfit/job/nanotrasen
-	name = "Nanotrasen Base Outfit"
+	name = "Nanotrasen - Base Outfit"
+	// faction_icon = "nanotrasen"
 
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
@@ -10,6 +11,17 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_NANOTRASEN)
+
+// Assistant
+
+/datum/outfit/job/nanotrasen/assistant
+	name = "Nanotrasen - Assistant"
+	jobtype = /datum/job/assistant
+	job_icon = "assistant"
+
+	uniform = /obj/item/clothing/under/color/grey
+	shoes = /obj/item/clothing/shoes/sneakers/black
+	belt = /obj/item/pda
 
 // Captain
 
@@ -143,6 +155,8 @@
 
 /datum/outfit/job/nanotrasen/security
 	name = "Nanotrasen - Security Officer"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
 	alt_uniform = null
@@ -194,7 +208,7 @@
 	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
 
 /datum/outfit/job/nanotrasen/security/lp
-	name = "Nanotrasen - Loss Prevention Security Specialist"
+	name = "Nanotrasen - LP Security Specialist"
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
@@ -218,6 +232,24 @@
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
 	head = /obj/item/clothing/head/hardhat
 
+/datum/outfit/job/nanotrasen/engineer/lp
+	name = "Nanotrasen - LP Engineering Specialist"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lpengie
+	belt = /obj/item/pda/engineering
+	gloves = /obj/item/clothing/gloves/color/yellow
+	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
+	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/beret/eng
+
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+
 // Warden
 
 /datum/outfit/job/nanotrasen/warden
@@ -229,3 +261,162 @@
 	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
 	alt_uniform = null
 	alt_suit = null
+
+// Chief Engineer
+
+/datum/outfit/job/nanotrasen/ce
+	name = "Nanotrasen - Chief Engineer"
+
+	head = /obj/item/clothing/head/beret/ce
+	belt = /obj/item/storage/belt/utility/full
+	suit = /obj/item/clothing/suit/hazardvest
+
+// Medical Doctor
+
+/datum/outfit/job/nanotrasen/doctor
+	name = "Nanotrasen - Medical Doctor"
+	job_icon = "medicaldoctor"
+	jobtype = /datum/job/doctor
+
+	ears = /obj/item/radio/headset/headset_med
+	uniform = /obj/item/clothing/under/rank/medical/doctor
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	suit =  /obj/item/clothing/suit/toggle/labcoat
+	alt_suit = /obj/item/clothing/suit/apron/surgical
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/med
+	box = /obj/item/storage/box/survival/medical
+
+/datum/outfit/job/nanotrasen/doctor/lp
+	name = "Nanotrasen - LP Medical Specialist"
+
+	implants = list(/obj/item/implant/mindshield)
+	ears = /obj/item/radio/headset/nanotrasen/alt/captain
+	id = /obj/item/card/id/lpmed
+	belt = /obj/item/pda/medical
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
+	alt_uniform = /obj/item/clothing/under/rank/medical/paramedic/skirt/lp
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	head = /obj/item/clothing/head/beret/med
+
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/med
+	box = /obj/item/storage/box/survival/medical
+
+// Cargo Tech
+
+/datum/outfit/job/nanotrasen/cargo_tech
+	name = "Nanotrasen - Cargo Tech"
+	jobtype = /datum/job/cargo_tech
+	job_icon = "cargotechnician"
+
+	belt = /obj/item/pda/cargo
+	ears = /obj/item/radio/headset/headset_cargo
+	uniform = /obj/item/clothing/under/rank/cargo/tech
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
+// Atmos Tech
+
+/datum/outfit/job/nanotrasen/atmos
+	name = "Nanotrasen - Atmos Tech"
+	jobtype = /datum/job/atmos
+	job_icon = "atmospherictechnician"
+
+	belt = /obj/item/storage/belt/utility/atmostech
+	ears = /obj/item/radio/headset/headset_eng
+	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician
+	alt_suit = /obj/item/clothing/suit/hazardvest
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+	box = /obj/item/storage/box/survival/engineer
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
+
+// Scientist
+
+/datum/outfit/job/nanotrasen/scientist
+	name = "Nanotrasen - Scientist"
+	jobtype = /datum/job/scientist
+	job_icon = "scientist"
+
+	ears = /obj/item/radio/headset/headset_sci
+	uniform = /obj/item/clothing/under/rank/rnd/scientist
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	suit = /obj/item/clothing/suit/toggle/labcoat/science
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/science
+
+	backpack = /obj/item/storage/backpack/science
+	satchel = /obj/item/storage/backpack/satchel/tox
+	courierbag = /obj/item/storage/backpack/messenger/tox
+
+// Brig Physician
+
+/datum/outfit/job/nanotrasen/brig_phys
+	name = "Nanotrasen - Brig Physician"
+	jobtype = /datum/job/brig_phys
+	job_icon = "brig_phys"
+
+	ears = /obj/item/radio/headset/headset_medsec/alt
+	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt
+	shoes = /obj/item/clothing/shoes/jackboots
+	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
+	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	head = /obj/item/clothing/head/soft/sec/brig_phys
+	implants = list(/obj/item/implant/mindshield)
+
+// Paramedic
+
+/datum/outfit/job/nanotrasen/paramedic
+	name = "Nanotrasen - Paramedic"
+	jobtype = /datum/job/paramedic
+	job_icon = "paramedic"
+
+	ears = /obj/item/radio/headset/headset_med
+	uniform = /obj/item/clothing/under/rank/medical/paramedic
+	head = /obj/item/clothing/head/soft/paramedic
+	shoes = /obj/item/clothing/shoes/sneakers/blue
+	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical/paramedic
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile
+	id = /obj/item/card/id
+	backpack_contents = list(/obj/item/roller=1)
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/para
+	box = /obj/item/storage/box/survival/medical
+
+	chameleon_extras = /obj/item/gun/syringe
+
+// Quartermaster
+
+/datum/outfit/job/nanotrasen/quartermaster
+	name = "Nanotrasen - Quartermaster"
+	jobtype = /datum/job/qm
+	job_icon = "quartermaster"
+
+	ears = /obj/item/radio/headset/headset_cargo
+	uniform = /obj/item/clothing/under/rank/cargo/qm
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/cargo
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_hand = /obj/item/clipboard
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
+
+/datum/outfit/job/nanotrasen/miner
+	name = "Nanotrasen - Miner"
+	jobtype = /datum/job/mining
+	job_icon = "shaftminer"

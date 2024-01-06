@@ -1,6 +1,8 @@
 /datum/outfit/job/frontiersmen
 	name = "Frontiersmen - Base Outfit"
 
+	// faction_icon = "frontiersmen"
+
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	r_pocket = /obj/item/radio
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -35,7 +37,7 @@
 	job_icon = "atmospherictechnician"
 	jobtype = /datum/job/atmos
 
-	suit = /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
+	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat
 	ears = /obj/item/radio/headset/pirate
 	mask = /obj/item/clothing/mask/gas/atmos
@@ -44,8 +46,10 @@
 
 /datum/outfit/job/frontiersmen/cargo_tech
 	name = "Frontiersmen - Cargo Tech"
+	job_icon = "cargotechnician"
+	jobtype = /datum/job/cargo_tech
 
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
+	accessory = /obj/item/clothing/accessory/armband/cargo
 	suit = /obj/item/clothing/suit/hazardvest
 	ears = /obj/item/radio/headset/pirate
 	shoes = /obj/item/clothing/shoes/workboots
@@ -56,6 +60,8 @@
 
 /datum/outfit/job/frontiersmen/captain
 	name = "Frontiersmen - Captain"
+	job_icon = "captain"
+	jobtype = /datum/job/captain
 
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
@@ -74,14 +80,22 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/admiral
 	head = /obj/item/clothing/head/caphat/frontier/admiral
 	shoes = /obj/item/clothing/shoes/cowboy/white
+	ears = /obj/item/radio/headset/pirate/captain
+	gloves = /obj/item/clothing/gloves/color/evening
+	suit = null
+	mask = null
+	glasses = null
 
 // Chief Engineer
 /datum/outfit/job/frontiersmen/ce
 	name = "Frontiersmen - Senior Sapper"
+	job_icon = "chiefengineer"
+	jobtype = /datum/job/chief_engineer
 
+	accessory = /obj/item/clothing/accessory/armband/engine
 	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
-	head = /obj/item/clothing/head/hardhat/white
+	head = /obj/item/clothing/head/hardhat/weldhat/white
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
 	belt = /obj/item/storage/belt/utility/full
@@ -89,12 +103,15 @@
 // Engineer
 /datum/outfit/job/frontiersmen/engineer
 	name = "Frontiersmen - Sapper"
+	job_icon = "stationengineer"
+	jobtype = /datum/job/engineer
 
+	accessory = /obj/item/clothing/accessory/armband/engine
 	belt = /obj/item/storage/belt/utility/full/engi
 	suit = /obj/item/clothing/suit/toggle/industrial
 	shoes = /obj/item/clothing/shoes/workboots
 	glasses = /obj/item/clothing/glasses/welding
-	head = /obj/item/clothing/head/helmet/space/pirate/bandana
+	head = /obj/item/clothing/head/beret/sec/frontier
 
 	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
@@ -103,6 +120,8 @@
 
 /datum/outfit/job/frontiersmen/cook
 	name = "Frontiersmen - Steward"
+	job_icon = "cook"
+	jobtype = /datum/job/cook
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	ears = /obj/item/radio/headset/pirate
@@ -113,6 +132,8 @@
 
 /datum/outfit/job/frontiersmen/hop
 	name = "Frontiersmen - Helmsman"
+	job_icon = "headofpersonnel"
+	jobtype = /datum/job/head_of_personnel
 
 	ears = /obj/item/radio/headset/pirate/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
@@ -120,16 +141,17 @@
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	gloves = /obj/item/clothing/gloves/combat
 	r_pocket = /obj/item/kitchen/knife/combat/survival
-	glasses = /obj/item/clothing/glasses/sunglasses
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 
 // Head of Security
 /datum/outfit/job/frontiersmen/hos
 	name = "Frontiersmen - Shipswain"
+	job_icon = "headofsecurity"
+	jobtype = /datum/job/hos
 
+	accessory = /obj/item/clothing/accessory/armband
 	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
-	head = /obj/item/clothing/head/caphat/frontier
+	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	gloves = /obj/item/clothing/gloves/combat
@@ -139,8 +161,11 @@
 // Security Officer
 
 /datum/outfit/job/frontiersmen/security
-	name = "Frontiersmen - Grunt"
+	name = "Frontiersmen - Boarder"
+	job_icon = "securityofficer"
+	jobtype = /datum/job/officer
 
+	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/beret/sec/frontier
 	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
 	suit = null
@@ -156,7 +181,10 @@
 
 /datum/outfit/job/frontiersmen/doctor
 	name = "Frontiersmen - Aidman"
+	job_icon = "medicaldoctor"
+	jobtype = /datum/job/doctor
 
+	accessory = /obj/item/clothing/accessory/armband/med
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
 	ears = /obj/item/radio/headset/pirate

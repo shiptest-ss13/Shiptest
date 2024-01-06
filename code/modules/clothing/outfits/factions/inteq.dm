@@ -1,5 +1,6 @@
 /datum/outfit/job/inteq
 	name = "IRMG - Base Outfit"
+	faction_icon = "inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	box = /obj/item/storage/box/survival
@@ -20,6 +21,8 @@
 /datum/outfit/job/inteq/assistant
 	name = "IRMG - Recruit"
 	jobtype = /datum/job/assistant
+	job_icon = "assistant"
+
 	r_pocket = /obj/item/radio
 	belt = /obj/item/pda
 
@@ -29,13 +32,13 @@
 	name = "IRMG - Vanguard (Naked)"
 	jobtype = /datum/job/captain
 	job_icon = "captain"
+
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	shoes = /obj/item/clothing/shoes/combat
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 	jobtype = /datum/job/captain
 	id = /obj/item/card/id/gold
-
 
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
 
@@ -53,6 +56,7 @@
 
 /datum/outfit/job/inteq/captain/honorable
 	name = "IRMG - Honorable Vanguard"
+
 	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
 	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
 	suit = /obj/item/clothing/suit/armor/hos/inteq/honorable
@@ -62,7 +66,7 @@
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 
-/datum/outfit/job/hos/inteq_honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/inteq/captain/honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
@@ -75,6 +79,7 @@
 
 /datum/outfit/job/inteq/ce
 	name = "IRMG - Artificer Class II"
+	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
 	ears = /obj/item/radio/headset/inteq
@@ -98,6 +103,7 @@
 
 /datum/outfit/job/inteq/paramedic
 	name = "IRMG - Corpsman"
+	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
@@ -117,6 +123,7 @@
 /datum/outfit/job/inteq/security
 	name = "IRMG - Enforcer"
 	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
 
 	head = /obj/item/clothing/head/helmet/inteq
 	suit = /obj/item/clothing/suit/armor/vest/alt
@@ -137,16 +144,18 @@
 	name = "IRMG - Enforcer (Beluga)"
 
 	head = /obj/item/clothing/head/beret/sec/inteq
+	accessory = /obj/item/clothing/accessory/waistcoat
 	suit = null
 	belt = null
 	mask = null
-	shoes = /obj/item/clothing/shoes/sneakers/black
+	shoes = /obj/item/clothing/shoes/laceup
 	glasses = null
 	gloves = /obj/item/clothing/gloves/color/evening
 
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
+
 	backpack_contents = list(/obj/item/pda/security)
 
 /datum/outfit/job/inteq/security/empty
@@ -161,6 +170,7 @@
 
 /datum/outfit/job/inteq/engineer
 	name = "IRMG - Artificer"
+	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/artificer
@@ -174,6 +184,8 @@
 
 /datum/outfit/job/inteq/warden
 	name = "IRMG - Master At Arms"
+	jobtype = /datum/job/warden
+	job_icon = "warden"
 
 	ears = /obj/item/radio/headset/inteq/alt
 	uniform = /obj/item/clothing/under/syndicate/inteq

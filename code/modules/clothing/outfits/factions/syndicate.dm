@@ -7,6 +7,8 @@
 	box = /obj/item/storage/box/survival/syndie
 	id = /obj/item/card/id/syndicate_command/crew_id
 
+	faction_icon = "syndicate"
+
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie

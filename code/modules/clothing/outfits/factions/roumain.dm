@@ -1,8 +1,9 @@
 /datum/outfit/job/roumain
-	name = "Roumain Militia Base Outfit"
+	name = "Saint-Roumain Militia - Base Outfit"
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	id = /obj/item/card/id
+	faction_icon = "srm"
 
 	box = null
 
@@ -16,6 +17,8 @@
 
 /datum/outfit/job/roumain/assistant
 	name = "Saint-Roumain Militia - Shadow"
+	jobtype = /datum/job/assistant
+	job_icon = "assistant"
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	alt_uniform = null
@@ -51,35 +54,39 @@
 
 /datum/outfit/job/roumain/security
 	name = "Saint-Roumain Militia - Hunter"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/armor/roumain
-
 	head = /obj/item/clothing/head/cowboy/sec/roumain
 	gloves = null
+
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
+
 	backpack_contents = null
 
 // Medical Doctor
 
 /datum/outfit/job/roumain/doctor
 	name = "Saint-Roumain Militia - Hunter Doctor"
+	job_icon = "medicaldoctor"
+	jobtype = /datum/job/doctor
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/toggle/labcoat/roumain_med
-
 	head = /obj/item/clothing/head/cowboy/sec/roumain/med
 	mask = /obj/item/clothing/mask/gas/plaguedoctor
 	gloves = null
+
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
-	backpack_contents = list(/obj/item/storage/firstaid/roumain=1)

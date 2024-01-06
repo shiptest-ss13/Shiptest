@@ -96,22 +96,3 @@
 
 	uniform = /obj/item/clothing/under/costume/sailor
 	shoes = /obj/item/clothing/shoes/jackboots
-
-/datum/outfit/job/doctor/lp
-	name = "LP Medical specialist"
-
-	implants = list(/obj/item/implant/mindshield)
-	ears = /obj/item/radio/headset/nanotrasen/alt/captain
-	id = /obj/item/card/id/lpmed
-	belt = /obj/item/pda/medical
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
-	alt_uniform = /obj/item/clothing/under/rank/medical/paramedic/skirt/lp
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/medical
-	shoes = /obj/item/clothing/shoes/sneakers/white
-	head = /obj/item/clothing/head/beret/med
-
-	satchel = /obj/item/storage/backpack/satchel/med
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/med
-	box = /obj/item/storage/box/survival/medical

@@ -161,6 +161,7 @@
 	var/icon/cached_flat_icon
 	var/registered_age = 13 // default age for ss13 players
 	var/job_icon
+	var/faction_icon
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
