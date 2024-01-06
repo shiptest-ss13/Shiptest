@@ -32,6 +32,7 @@
 /datum/outfit/job/syndicate/assistant
 	name = "Syndicate - Junior Agent"
 	jobtype = /datum/job/assistant
+	job_icon = "assistant"
 
 	uniform = /obj/item/clothing/under/syndicate/intern
 	alt_uniform = null
@@ -106,6 +107,7 @@
 /datum/outfit/job/syndicate/atmos
 	name = "Syndicate - Atmospheric Technician"
 	jobtype = /datum/job/atmos
+	job_icon = "atmospherictechnician"
 
 	belt = /obj/item/storage/belt/utility/atmostech
 
@@ -141,6 +143,7 @@
 /datum/outfit/job/syndicate/bartender
 	name = "Syndicate - Bartender"
 	jobtype = /datum/job/bartender
+	job_icon = "bartender"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	head = /obj/item/clothing/head/HoS/beret/syndicate
@@ -190,6 +193,8 @@
 /datum/outfit/job/syndicate/botanist
 	name = "Syndicate - Botanist"
 	jobtype = /datum/job/hydro
+	job_icon = "botanist"
+
 	belt = /obj/item/pda/botanist
 	suit = /obj/item/clothing/suit/apron
 	alt_suit = /obj/item/clothing/suit/apron/overalls
@@ -210,6 +215,7 @@
 /datum/outfit/job/syndicate/captain
 	name = "Syndicate - Captain"
 	jobtype = /datum/job/captain
+	job_icon = "captain"
 
 	id = /obj/item/card/id/syndicate_command/captain_id
 	ears = /obj/item/radio/headset/syndicate/alt/captain
@@ -230,7 +236,6 @@
 /datum/outfit/job/syndicate/captain/aclf
 	name = "Syndicate - Captain (ACLF)"
 
-
 /datum/outfit/job/syndicate/captain/twink
 	name = "Syndicate - Captain (Twinkleshine)"
 
@@ -248,7 +253,7 @@
 	implants = list(/obj/item/implant/weapons_auth)
 
 
-/datum/outfit/job/syndicate/captain/sbc/post_equip(mob/living/carbon/human/H)
+/datum/outfit/job/syndicate/captain/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	assign_codename(H)
 
@@ -274,6 +279,7 @@
 /datum/outfit/job/syndicate/cargo_tech
 	name = "Syndicate - Cargo Tech"
 	jobtype = /datum/job/cargo_tech
+	job_icon = "cargotechnician"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/syndicate/donk
@@ -293,6 +299,7 @@
 /datum/outfit/job/syndicate/chemist
 	name = "Syndicate - Chemist"
 	jobtype = /datum/job/chemist
+	job_icon = "chemist"
 
 	uniform = /obj/item/clothing/under/syndicate/intern
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -320,6 +327,7 @@
 /datum/outfit/job/syndicate/ce
 	name = "Syndicate - Chief Engineer"
 	jobtype = /datum/job/chief_engineer
+	job_icon = "chiefengineer"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	ears = /obj/item/radio/headset/syndicate/alt
@@ -369,6 +377,7 @@
 /datum/outfit/job/syndicate/cmo
 	name = "Syndicate - Medical Director (Cybersun)"
 	jobtype = /datum/job/cmo
+	job_icon = "chiefmedicalofficer"
 
 	uniform = /obj/item/clothing/under/rank/medical/chief_medical_officer/cybersun
 	ears = /obj/item/radio/headset/syndicate/alt/captain
@@ -402,6 +411,7 @@
 /datum/outfit/job/syndicate/head_of_personnel
 	name = "Syndicate - Bridge Officer"
 	jobtype = /datum/job/head_of_personnel
+	job_icon = "headofpersonnel"
 
 	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
@@ -433,6 +443,7 @@
 /datum/outfit/job/syndicate/hos
 	name = "Syndicate - Head Of Security"
 	jobtype = /datum/job/hos
+	job_icon = "headofsecurity"
 
 	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/syndicate/combat
@@ -484,6 +495,7 @@
 /datum/outfit/job/syndicate/doctor
 	name = "Syndicate - Medical Doctor"
 	jobtype = /datum/job/doctor
+	job_icon = "medicaldoctor"
 
 	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -519,7 +531,7 @@
 /datum/outfit/job/syndicate/paramedic
 	name = "Syndicate - Paramedic"
 	jobtype = /datum/job/paramedic
-
+	job_icon = "paramedic"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/syndicate/gorlex
@@ -582,6 +594,7 @@
 /datum/outfit/job/syndicate/psychologist
 	name = "Syndicate - Psychologist"
 	jobtype = /datum/job/psychologist
+	job_icon = "psychologist"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/rank/medical/psychiatrist
@@ -600,6 +613,7 @@
 /datum/outfit/job/syndicate/patient
 	name = "Syndicate - Long Term Patient"
 	jobtype = /datum/job/prisoner
+	job_icon = "assistant"
 
 	id = /obj/item/card/id/patient
 	uniform = /obj/item/clothing/under/rank/medical/gown
@@ -611,6 +625,7 @@
 /datum/outfit/job/syndicate/quartermaster
 	name = "Syndicate - Quartermaster"
 	jobtype = /datum/job/qm
+	job_icon = "quartermaster"
 
 	id = /obj/item/card/id/syndicate_command/captain_id
 
@@ -639,7 +654,7 @@
 /datum/outfit/job/syndicate/security
 	name = "Syndicate - Operative"
 	jobtype = /datum/job/officer
-
+	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/syndicate
 	r_pocket = /obj/item/kitchen/knife/combat/survival
@@ -694,6 +709,7 @@
 /datum/outfit/job/syndicate/miner
 	name = "Syndicate - Miner"
 	jobtype = /datum/job/mining
+	job_icon = "shaftminer"
 
 	belt = /obj/item/pda/shaftminer
 	ears = /obj/item/radio/headset/headset_cargo/mining
@@ -769,6 +785,7 @@
 /datum/outfit/job/syndicate/engineer
 	name = "Syndicate - Ship Technician"
 	jobtype = /datum/job/engineer
+	job_icon = "stationengineer"
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt

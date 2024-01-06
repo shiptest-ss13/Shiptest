@@ -80,6 +80,8 @@
 
 /datum/outfit/job/nanotrasen/hop
 	name = "Nanotrasen - First Officer"
+	job_icon = "headofpersonnel"
+	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
 	ears = /obj/item/radio/headset/nanotrasen
@@ -132,6 +134,8 @@
 
 /datum/outfit/job/nanotrasen/roboticist
 	name = "Nanotrasen - Mech Technician"
+	job_icon = "roboticist"
+	jobtype = /datum/job/roboticist
 
 	uniform = /obj/item/clothing/under/rank/rnd/roboticist
 	suit = /obj/item/clothing/suit/longcoat/robowhite
@@ -215,8 +219,8 @@
 	id = /obj/item/card/id/lpsec
 	belt = /obj/item/pda/security
 	gloves = /obj/item/clothing/gloves/color/black
-	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
-	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
+	uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/lp
+	alt_uniform = /obj/item/clothing/under/rank/security/head_of_security/nt/skirt/lp
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/beret/sec
@@ -257,6 +261,8 @@
 
 /datum/outfit/job/nanotrasen/warden
 	name = "Nanotrasen - Warden"
+	job_icon = "warden"
+	jobtype = /datum/job/warden
 
 	ears = /obj/item/radio/headset/nanotrasen/alt
 	head = /obj/item/clothing/head/warden/red
@@ -269,6 +275,8 @@
 
 /datum/outfit/job/nanotrasen/ce
 	name = "Nanotrasen - Chief Engineer"
+	jobtype = /datum/job/chief_engineer
+	job_icon = "chiefengineer"
 
 	head = /obj/item/clothing/head/beret/ce
 	belt = /obj/item/storage/belt/utility/full
@@ -368,7 +376,7 @@
 /datum/outfit/job/nanotrasen/brig_phys
 	name = "Nanotrasen - Brig Physician"
 	jobtype = /datum/job/brig_phys
-	job_icon = "brig_phys"
+	job_icon = "brigphysician"
 
 	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt

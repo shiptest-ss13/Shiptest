@@ -165,7 +165,7 @@
 /datum/outfit/job/minutemen/doctor
 	name = "Minutemen - Field Medic"
 	job_icon = "medicaldoctor"
-	jobtype = /datum/outfit/job/doctor
+	jobtype = /datum/job/doctor
 
 	belt = /obj/item/pda/medical
 	l_hand = /obj/item/storage/firstaid/medical
@@ -190,35 +190,31 @@
 /datum/outfit/job/minutemen/paramedic
 	name = "Minutemen - BARD Combat Medic"
 	job_icon = "paramedic"
-	jobtype = /datum/outfit/job/paramedic
+	jobtype = /datum/job/paramedic
 
+
+	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
+	head = /obj/item/clothing/head/soft/paramedic
+	suit = /obj/item/clothing/suit/armor/vest
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	belt = /obj/item/storage/belt/medical/paramedic
 	l_pocket = /obj/item/pda/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
-	pda_slot = ITEM_SLOT_LPOCKET
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/para
+
 	box = /obj/item/storage/box/survival/medical
-
-	chameleon_extras = /obj/item/gun/syringe
-
-	uniform = /obj/item/clothing/under/rank/medical/paramedic/emt
-	alt_uniform = null
-	head = /obj/item/clothing/head/soft/paramedic
-	suit = /obj/item/clothing/suit/armor/vest
-	alt_suit = null
 
 ///roboticist
 /datum/outfit/job/minutemen/roboticist
 	name = "Minutemen - Mech Technician"
 	job_icon = "roboticist"
-	jobtype = /datum/outfit/job/roboticist
+	jobtype = /datum/job/roboticist
 
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/pda/roboticist
