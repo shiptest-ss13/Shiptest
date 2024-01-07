@@ -64,11 +64,16 @@
 /obj/item/kinetic_crusher/attackby(obj/item/I, mob/living/user)
 	if(I.tool_behaviour == TOOL_CROWBAR)
 		if(LAZYLEN(trophies))
-			to_chat(user, "<span class='notice'>You remove [src]'s trophies.</span>")
-			I.play_tool_sound(src)
-			for(var/t in trophies)
-				var/obj/item/crusher_trophy/T = t
-				T.remove_from(src, user)
+			var/list/choose_options = list()
+			for(var/obj/item/crusher_trophy/T in trophies)
+				choose_options += list(T.name = image(icon = T.icon, icon_state = T.icon_state))
+			var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+			if(picked_option)
+				to_chat(user, "<span class='notice'>You remove [picked_option].</span>")
+				I.play_tool_sound(src)
+				for(var/obj/item/crusher_trophy/T in trophies)
+					if(T.name == picked_option)
+						T.remove_from(src, user)
 		else
 			to_chat(user, "<span class='warning'>There are no trophies on [src].</span>")
 	else if(istype(I, /obj/item/crusher_trophy))
@@ -82,7 +87,9 @@
 		to_chat(user, "<span class='warning'>[src] is too heavy to use with one hand! You fumble and drop everything.</span>")
 		user.drop_all_held_items()
 		return
-	var/datum/status_effect/crusher_damage/C = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+	var/datum/status_effect/crusher_damage/C = target.has_status_effect(/datum/status_effect/crusher_damage)
+	if(!C)
+		C = target.apply_status_effect(/datum/status_effect/crusher_damage)
 	var/target_health = target.health
 	..()
 	for(var/t in trophies)
@@ -115,10 +122,12 @@
 		return
 	if(proximity_flag && isliving(target))
 		var/mob/living/L = target
-		var/datum/status_effect/crusher_mark/CM = L.has_status_effect(STATUS_EFFECT_CRUSHERMARK)
-		if(!CM || CM.hammer_synced != src || !L.remove_status_effect(STATUS_EFFECT_CRUSHERMARK))
+		var/datum/status_effect/crusher_mark/CM = L.has_status_effect(/datum/status_effect/crusher_mark)
+		if(!CM || CM.hammer_synced != src || !L.remove_status_effect(/datum/status_effect/crusher_mark))
 			return
-		var/datum/status_effect/crusher_damage/C = L.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+		var/datum/status_effect/crusher_damage/C = L.has_status_effect(/datum/status_effect/crusher_damage)
+		if(!C)
+			C = L.apply_status_effect(/datum/status_effect/crusher_damage)
 		var/target_health = L.health
 		for(var/t in trophies)
 			var/obj/item/crusher_trophy/T = t
@@ -181,8 +190,8 @@
 /obj/projectile/destabilizer/on_hit(atom/target, blocked = FALSE)
 	if(isliving(target))
 		var/mob/living/L = target
-		var/had_effect = (L.has_status_effect(STATUS_EFFECT_CRUSHERMARK)) //used as a boolean
-		var/datum/status_effect/crusher_mark/CM = L.apply_status_effect(STATUS_EFFECT_CRUSHERMARK, hammer_synced)
+		var/had_effect = (L.has_status_effect(/datum/status_effect/crusher_mark)) //used as a boolean
+		var/datum/status_effect/crusher_mark/CM = L.apply_status_effect(/datum/status_effect/crusher_mark, hammer_synced)
 		if(hammer_synced)
 			for(var/t in hammer_synced.trophies)
 				var/obj/item/crusher_trophy/T = t
@@ -515,7 +524,7 @@
 	return "waveform collapse to grant stun immunity and <b>90%</b> damage reduction for <b>1</b> second"
 
 /obj/item/crusher_trophy/miner_eye/on_mark_detonation(mob/living/target, mob/living/user)
-	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
+	user.apply_status_effect(/datum/status_effect/blooddrunk)
 
 //whelp
 /obj/item/crusher_trophy/tail_spike

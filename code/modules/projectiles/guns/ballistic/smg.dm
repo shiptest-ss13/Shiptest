@@ -261,6 +261,9 @@
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
 
+/obj/item/gun/ballistic/automatic/smg/cm5/no_mag
+	spawnwithmagazine = FALSE
+
 /obj/item/gun/ballistic/automatic/smg/aks74u
 	name = "\improper AKS-74U"
 	desc = "A pre-FTL era carbine, known to be incredibly cheap. Its extreme fire rate make it perfect for bandits, pirates and colonists on a budget."

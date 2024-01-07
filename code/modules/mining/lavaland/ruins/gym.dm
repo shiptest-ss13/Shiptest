@@ -17,7 +17,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)
-		L.apply_status_effect(STATUS_EFFECT_EXERCISED)
+		L.apply_status_effect(/datum/status_effect/exercised)
 
 /obj/structure/weightmachine
 	name = "weight machine"
@@ -63,7 +63,7 @@
 		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)
 		to_chat(user, finishmessage)
-		user.apply_status_effect(STATUS_EFFECT_EXERCISED)
+		user.apply_status_effect(/datum/status_effect/exercised)
 
 /obj/structure/weightmachine/stacklifter
 	name = "chest press machine"
