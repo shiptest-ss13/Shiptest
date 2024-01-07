@@ -229,9 +229,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(id)
 					dat += text("ID: <A href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]   <a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
 
-				dat += "[worldtime2text()]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
-				dat += "[time2text(world.realtime, "MMM DD")] 504 FS"
-				dat += "<br><br>"
+				dat += "[station_time_timestamp()]<br>"
+				dat += "[sector_datestamp()]<br>"
+				dat += "<br>"
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)] Notekeeper</a></li>"
@@ -1097,7 +1097,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			AM.emp_act(severity)
 	if (!(. & EMP_PROTECT_SELF))
 		emped++
-		addtimer(CALLBACK(src, .proc/emp_end), 200 * severity)
+		addtimer(CALLBACK(src, PROC_REF(emp_end)), 200 * severity)
 
 /obj/item/pda/proc/emp_end()
 	emped--

@@ -12,9 +12,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 1
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/syndiered{
-	dir = 2
-	},
+/obj/effect/turf_decal/spline/fancy/opaque/syndiered,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "ah" = (
@@ -494,7 +492,6 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "lP" = (
@@ -892,11 +889,24 @@
 /obj/effect/landmark/observer_start,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
+"tV" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 4;
+	pixel_x = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "uq" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"uR" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "vk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -1125,6 +1135,12 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"Ah" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/bridge)
 "AM" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning,
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/warning{
@@ -1176,7 +1192,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "CR" = (
-/obj/machinery/porta_turret/ship,
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 10
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "CU" = (
@@ -1293,7 +1311,11 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "GV" = (
-/obj/machinery/porta_turret/ship/weak,
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 4;
+	pixel_x = 8;
+	pixel_y = 4
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "Hd" = (
@@ -1395,6 +1417,12 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
+/area/ship/bridge)
+"KA" = (
+/obj/machinery/porta_turret/ship/syndicate/weak{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "KP" = (
 /obj/structure/closet/wall{
@@ -1966,7 +1994,7 @@
 /area/ship/engineering)
 
 (1,1,1) = {"
-CR
+uR
 YQ
 YQ
 ru
@@ -2069,7 +2097,7 @@ nO
 "}
 (7,1,1) = {"
 YQ
-CR
+KA
 kM
 kM
 kM
@@ -2081,7 +2109,7 @@ cZ
 jj
 jj
 jj
-CR
+Ah
 YQ
 "}
 (8,1,1) = {"
@@ -2276,7 +2304,7 @@ YQ
 YQ
 YQ
 YQ
-GV
+tV
 bO
 bO
 dA

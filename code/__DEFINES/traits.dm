@@ -146,7 +146,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MUTE "mute"
 #define TRAIT_EMOTEMUTE "emotemute"
 #define TRAIT_NEARSIGHT "nearsighted"
-#define TRAIT_FAT "fat"
 #define TRAIT_HUSK "husk"
 #define TRAIT_BADDNA "baddna"
 #define TRAIT_CLUMSY "clumsy"
@@ -290,6 +289,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SPIRITUAL "spiritual"
 #define TRAIT_FAN_CLOWN "fan_clown"
 #define TRAIT_FAN_MIME "fan_mime"
+#define TRAIT_FAN_RILENA "fan_rilena"
 #define TRAIT_VORACIOUS "voracious"
 #define TRAIT_SELF_AWARE "self_aware"
 #define TRAIT_FREERUNNING "freerunning"
@@ -322,7 +322,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define UNCONSCIOUS_TRAIT "unconscious"
 #define EYE_DAMAGE "eye_damage"
 #define GENETIC_MUTATION "genetic"
-#define OBESITY "obesity"
 #define MAGIC_TRAIT "magic"
 #define TRAUMA_TRAIT "trauma"
 #define DISEASE_TRAIT "disease"
@@ -425,6 +424,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FISH_SAFE_STORAGE "fish_case"
 /// Stuff that can go inside fish cases
 #define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
+/// Granted by prismwine
+#define TRAIT_REFLECTIVE "reflective"
 
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself

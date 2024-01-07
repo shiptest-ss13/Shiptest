@@ -35,7 +35,7 @@
 
 /obj/item/organ/regenerative_core/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/inert_check), 2400)
+	addtimer(CALLBACK(src, PROC_REF(inert_check)), 2400)
 
 /obj/item/organ/regenerative_core/proc/inert_check()
 	if(!preserved)
@@ -62,7 +62,12 @@
 	if(inert)
 		to_chat(owner, "<span class='notice'>[src] breaks down as it tries to activate.</span>")
 	else
-		owner.revive(full_heal = TRUE, admin_revive = FALSE)
+		owner.adjustBruteLoss(-100) //previously heal proc
+		owner.adjustFireLoss(-100)
+		owner.adjustOxyLoss(-50)
+		owner.adjustToxLoss(-50)
+		if(owner.dna.species.id != SPECIES_IPC)
+			owner.adjustCloneLoss(10) //dont abuse it or take cloneloss (organic only)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()
@@ -87,7 +92,7 @@
 			else
 				to_chat(user, "<span class='notice'>You start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?</span>")
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
-			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
+			H.apply_status_effect(/datum/status_effect/regenerative_core)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
 			qdel(src)
 
@@ -186,7 +191,7 @@
 			else
 				to_chat(user, "<span class='notice'>You start to apply [src] on yourself. Cancer like crystals hold you together and add something to you to keep yourself moving, but for how long?</span>")
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
-			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
+			H.apply_status_effect(/datum/status_effect/regenerative_core)
 			H.reagents.add_reagent(/datum/reagent/determination, 4)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
 			qdel(src)

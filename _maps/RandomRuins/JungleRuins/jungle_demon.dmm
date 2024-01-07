@@ -157,7 +157,7 @@
 /area/ruin/powered)
 "pm" = (
 /obj/structure/table/reinforced,
-/obj/item/upgradescroll,
+/obj/item/paper,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "pE" = (
@@ -220,9 +220,27 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "tR" = (
-/obj/structure/closet/gimmick/tacticool,
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/under/syndicate,
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old,
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/head/helmet/operator,
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/suit/armor/vest/syndie,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/gloves/combat,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "uj" = (
@@ -494,8 +512,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "PA" = (
-/obj/machinery/suit_storage_unit/syndicate,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
 "QI" = (

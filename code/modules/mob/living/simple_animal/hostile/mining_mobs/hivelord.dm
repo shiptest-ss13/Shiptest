@@ -94,7 +94,7 @@
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/Initialize(_source)
 	. = ..()
 	source = source
-	addtimer(CALLBACK(src, .proc/death), 100)
+	addtimer(CALLBACK(src, PROC_REF(death)), 100)
 	AddComponent(/datum/component/swarming)
 
 //Legion
@@ -222,7 +222,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), 50)
+	addtimer(CALLBACK(src, PROC_REF(death)), 50)
 	AddComponent(/datum/component/swarming)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
@@ -413,12 +413,12 @@
 		"Miner" = 44,
 		"Waldo" = 3,
 		"Ashwalker" = 7,
-		"Soldier" = 3,
+		"Soldier" = 5,
 		"Oldminer" = 8,
 		"Kobold" = 5,
-		"Golem" = 6,
-		"SRM" = 10,
-		pick("Shadow", "YeOlde", "Operative", "Cultist") = 4
+		"SRM" = 6,
+		"Operative" = 5,
+		pick("Shadow", "YeOlde") = 4
 		)
 	)
 	switch(type)
@@ -796,119 +796,6 @@
 				r_pocket = /obj/item/kitchen/knife/combat/bone
 			if(prob(30))
 				l_pocket = /obj/item/kitchen/knife/combat/bone
-		if("Golem")
-			mob_species = pickweight(list(
-				/datum/species/golem/adamantine = 5,
-				/datum/species/golem/plasma = 10,
-				/datum/species/golem/diamond = 10,
-				/datum/species/golem/gold = 10,
-				/datum/species/golem/silver = 10,
-				/datum/species/golem/plasteel = 10,
-				/datum/species/golem/titanium = 10,
-				/datum/species/golem/plastitanium = 10
-				)
-			)
-			if(prob(70))
-				back = /obj/item/storage/backpack
-				backpack_contents = list()
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
-				if(prob(75))
-					backpack_contents += pickweight(list(
-						/obj/item/slime_extract/grey = 1,
-						/obj/item/slime_scanner = 1,
-						/obj/item/resonator/upgraded = 1,
-						/obj/item/gps = 1,
-						/obj/item/fulton_core = 2,
-						/obj/item/extraction_pack = 3,
-						/obj/item/stack/sheet/mineral/plasma/twenty = 3,
-						/obj/item/stack/marker_beacon/ten = 3,
-						/obj/item/mining_scanner = 2,
-						/obj/item/extinguisher/mini = 3,
-						/obj/item/flashlight/seclite=3,
-						/obj/item/research_notes/loot/medium = 3,
-						/obj/item/stack/sheet/metal/fifty = 3,
-						/obj/item/research_notes/loot/big = 1
-						)
-					)
-				if(prob(3))
-					backpack_contents += list(
-					/obj/item/storage/box/rndboards
-					)
-				if(prob(20))
-					backpack_contents += pickweight(list(
-						/obj/item/storage/box/stockparts/basic = 4,
-						/obj/item/storage/box/stockparts/t2 = 3,
-						/obj/item/storage/box/stockparts/t3 = 2,
-						/obj/item/storage/box/stockparts/deluxe = 1
-						)
-					)
-			if(prob(30))
-				glasses = pickweight(list(
-					/obj/item/clothing/glasses/meson = 2,
-					/obj/item/clothing/glasses/hud/health = 2,
-					/obj/item/clothing/glasses/hud/diagnostic =2,
-					/obj/item/clothing/glasses/science = 2,
-					/obj/item/clothing/glasses/welding = 2,
-					/obj/item/clothing/glasses/night = 1
-				)
-				)
-			if(prob(10))
-				belt = pickweight(list(
-					/obj/item/storage/belt/mining/vendor,
-					/obj/item/storage/belt/utility/full
-					)
-				)
-			if(prob(50))
-				neck = /obj/item/bedsheet/rd/royal_cape
-			if(prob(10))
-				l_pocket = pickweight(list(
-					/obj/item/crowbar/power,
-					/obj/item/screwdriver/power,
-					/obj/item/weldingtool/experimental
-					)
-				)
-			if(prob(10))
-				r_pocket = pickweight(list(
-					/obj/item/crowbar/power,
-					/obj/item/screwdriver/power,
-					/obj/item/weldingtool/experimental
-					)
-				)
 		if("YeOlde")
 			mob_gender = FEMALE
 			uniform = /obj/item/clothing/under/costume/maid
@@ -922,10 +809,12 @@
 			mask = /obj/item/clothing/mask/breath
 		if("Operative")
 			id_job = "Operative"
-			if(prob(15))
+			if(prob(40))
+				outfit = /datum/outfit/syndicatecommandocorpse
+			else if(prob(5))
 				outfit = /datum/outfit/syndicatestormtroopercorpse
 			else
-				outfit = /datum/outfit/syndicatecommandocorpse
+				outfit = /datum/outfit/syndicateramzicorpse
 		if("Waldo")//WE FINALLY FOUND HIM
 			name = "Waldo"
 			uniform = /obj/item/clothing/under/pants/jeans
@@ -1004,20 +893,6 @@
 			glasses = /obj/item/clothing/glasses/blindfold
 			back = /obj/item/tank/internals/oxygen
 			mask = /obj/item/clothing/mask/breath
-		if("Cultist")
-			uniform = /obj/item/clothing/under/costume/roman
-			suit = /obj/item/clothing/suit/hooded/cultrobes
-			suit_store = /obj/item/tome
-			r_pocket = /obj/item/restraints/legcuffs/bola/cult
-			l_pocket = /obj/item/melee/cultblade/dagger
-			glasses =  /obj/item/clothing/glasses/hud/health/night/cultblind
-			back = /obj/item/storage/backpack/cultpack
-			backpack_contents = list(
-				/obj/item/reagent_containers/glass/beaker/unholywater = 1,
-				/obj/item/cult_shift = 1,
-				/obj/item/flashlight/flare/culttorch = 1,
-				/obj/item/stack/sheet/runed_metal = 15
-			)
 		if("SRM")
 			uniform = /obj/item/clothing/under/suit/roumain
 			shoes = /obj/item/clothing/shoes/workboots/mining
@@ -1036,5 +911,11 @@
 			if(prob(75))
 				backpack_contents += list(/obj/item/ammo_box/c38_box = 1)
 			if(prob(75))
-				backpack_contents += list(pick(/obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageash, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageice, /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask/vintageshock) = 1)
+				backpack_contents += list(pick(
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/ashwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/shockwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/hearthwine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/forcewine,
+					/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/prismwine,) = 2)
 	. = ..()

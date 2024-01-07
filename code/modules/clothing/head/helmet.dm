@@ -145,7 +145,7 @@
 	attached_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the helmet light [attached_light.on ? "on":"off"].</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, attached_light.on ? attached_light.toggle_on_sound : attached_light.toggle_off_sound, 100, TRUE)
 	update_helmlight()
 
 /obj/item/clothing/head/helmet/proc/update_helmlight()
@@ -559,10 +559,16 @@
 	item_state = "solgov_envirohelm"
 
 /obj/item/clothing/head/helmet/operator
-	name = "\improper Operator helmet"
+	name = "\improper operator helmet"
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
+
+/obj/item/clothing/head/helmet/medical
+	name = "\improper trauma team helmet"
+	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
+	icon_state = "traumahelm"
+	item_state = "traumahelm"
 
 /obj/item/clothing/head/helmet/bulletproof/m10
 	name = "\improper M10 pattern Helmet"

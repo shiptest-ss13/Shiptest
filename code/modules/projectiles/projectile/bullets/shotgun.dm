@@ -1,6 +1,7 @@
 /obj/projectile/bullet/slug
 	name = "12g shotgun slug"
 	damage = 40
+	armour_penetration = -10
 	speed = 0.5
 
 /obj/projectile/bullet/slug/beanbag
@@ -11,7 +12,8 @@
 
 /obj/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
-	damage = 20
+	damage = 25
+	armour_penetration = -10
 	speed = 0.5
 
 /obj/projectile/bullet/incendiary/shotgun/dragonsbreath
@@ -65,12 +67,14 @@
 	///How much stamina damage is subtracted per tile?
 	var/tile_dropoff_stamina = 1.5 //As above
 
+	icon_state = "pellet"
 	armour_penetration = -35
 	speed = 0.5
 
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
-	damage = 10
+	damage = 20
+	armour_penetration = -10
 
 /obj/projectile/bullet/pellet/rubbershot
 	name = "rubbershot pellet"

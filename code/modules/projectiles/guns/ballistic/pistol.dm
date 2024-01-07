@@ -1,21 +1,21 @@
 /obj/item/gun/ballistic/automatic/pistol
-	name = "stechkin pistol"
+	name = "Stechkin"
 	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. Has a threaded barrel for suppressors."
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	can_suppress = TRUE
 	burst_size = 1
-	fire_delay = 0
+	fire_delay = 0 //spam it as fast as you can
 	actions_types = list()
 	bolt_type = BOLT_TYPE_LOCKING
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
 	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
-	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release_alt.ogg'
 	vary_fire_sound = FALSE
 	rack_sound = 'sound/weapons/gun/pistol/rack_small.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/lock_small.ogg'
@@ -25,6 +25,14 @@
 	weapon_weight = WEAPON_LIGHT
 	pickup_sound =  'sound/items/handling/gun_pickup.ogg'
 	fire_delay = 1
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	wield_delay = 0.2 SECONDS
+	spread = -2
+	spread_unwielded = 4
+	wield_slowdown = 0.15
+
+	muzzleflash_iconstate = "muzzle_flash_light"
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -35,16 +43,22 @@
 	install_suppressor(S)
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	name = "\improper M1911"
+	name = "\improper M1911A8"
 	desc = "A classic .45 handgun. An engraving on the slide marks it as a product of Hunter's Pride."
 	icon_state = "m1911"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = FALSE
-	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
+	fire_sound = 'sound/weapons/gun/pistol/m1911.ogg'
+	rack_sound = 'sound/weapons/gun/pistol/m1911_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+	load_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/m1911_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/m1911_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/m1911_unload.ogg'
+	recoil = -2
 
 /obj/item/gun/ballistic/automatic/pistol/m1911/no_mag
 	spawnwithmagazine = FALSE
@@ -57,10 +71,20 @@
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
 	mag_display = TRUE
-	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
+	fire_sound = 'sound/weapons/gun/pistol/deagle.ogg'
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	manufacturer = MANUFACTURER_NONE
+	load_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/deagle_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/deagle_unload.ogg'
+	fire_delay = 0.7 SECONDS
+	recoil = 1
+	recoil_unwielded = 2
+	spread = 4
+	spread_unwielded = 7
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/gold
 	desc = "A gold-plated Desert Eagle folded over a million times by superior Martian gunsmiths. Uses .50 AE ammo."
@@ -87,6 +111,7 @@
 	name = "flat gun"
 	desc = "A 2 dimensional gun.. what?"
 	icon_state = "flatgun"
+	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
 	SHOULD_CALL_PARENT(0)
@@ -106,6 +131,12 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/co9mm
 	can_suppress = FALSE
+	manufacturer = MANUFACTURER_NANOTRASEN
+	fire_sound = 'sound/weapons/gun/pistol/commander.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/commander/no_mag
 	spawnwithmagazine = FALSE
@@ -115,6 +146,7 @@
 	desc = "A handgun seized from Nanotrasen armories by deserting troopers and modified to IRMG's standards. A yellow IRMG shield is set into the grips. Chambered in 9mm."
 	icon_state = "commander-inteq"
 	item_state = "commander-inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/pistol/commander/inteq/no_mag
 	spawnwithmagazine = FALSE
@@ -128,6 +160,10 @@
 	can_suppress = FALSE
 	var/funnysounds = TRUE
 	var/cooldown = 0
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/commissar/equipped(mob/living/user, slot)
 	..()
@@ -177,6 +213,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistol556mm
 	fire_sound = 'sound/weapons/gun/pistol/pistolec.ogg'
+	manufacturer = MANUFACTURER_SOLARARMORIES
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/solgov/old
 	icon_state = "pistole-c-old"
@@ -189,6 +230,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/tec9
 	mag_display = TRUE
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/disposable
 	name = "disposable gun"
@@ -199,6 +244,10 @@
 	custom_materials = list(/datum/material/plastic=2000)
 	can_suppress = FALSE
 	var/random_icon = TRUE
+	manufacturer = MANUFACTURER_NONE
+
+	has_safety = FALSE //thing barely costs anything, why would it have a safety?
+	safety = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
 	. = ..()
@@ -265,3 +314,17 @@
 	desc = "The golden sheen is somewhat counter-intuitive on a holdout weapon, but it looks cool. Uses .357 ammo."
 	icon_state = "derringer_gold"
 	mag_type = /obj/item/ammo_box/magazine/internal/derr357
+
+/obj/item/gun/ballistic/automatic/pistol/himehabu
+	name = "\improper Himehabu"
+	desc = "A very small .22 LR pistol. The long awaited successor to the Stechkin; It has become a favorite among syndicate spies. Chambered in .22 LR."
+	icon_state = "himehabu"
+	w_class = WEIGHT_CLASS_TINY
+	mag_type = /obj/item/ammo_box/magazine/m22lr
+	can_suppress = FALSE
+	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
+
+	recoil = -2
+	recoil_unwielded = -2
+	spread_unwielded = 0
+	wield_slowdown = 0

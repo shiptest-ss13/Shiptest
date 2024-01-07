@@ -17,7 +17,7 @@
 		return FALSE
 
 	emittersemicd = TRUE
-	addtimer(CALLBACK(src, .proc/emittercool), emittercd)
+	addtimer(CALLBACK(src, PROC_REF(emittercool)), emittercd)
 	REMOVE_TRAIT(src, TRAIT_IMMOBILIZED, PAI_FOLDED)
 	REMOVE_TRAIT(src, TRAIT_HANDS_BLOCKED, PAI_FOLDED)
 	density = TRUE
@@ -47,9 +47,9 @@
 /mob/living/silicon/pai/proc/fold_in(force = FALSE)
 	emittersemicd = TRUE
 	if(!force)
-		addtimer(CALLBACK(src, .proc/emittercool), emittercd)
+		addtimer(CALLBACK(src, PROC_REF(emittercool)), emittercd)
 	else
-		addtimer(CALLBACK(src, .proc/emittercool), emitteroverloadcd)
+		addtimer(CALLBACK(src, PROC_REF(emittercool)), emitteroverloadcd)
 	icon_state = "[chassis]"
 	if(!holoform)
 		. = fold_out(force)

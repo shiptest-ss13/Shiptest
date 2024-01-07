@@ -139,12 +139,6 @@
 	wanted_types = list(/obj/item/reagent_containers/food/snacks/grown/poppy)
 	include_subtypes = FALSE
 
-/datum/bounty/item/assistant/shadyjims
-	name = "Shady Jim's"
-	description = "There's an irate officer at CentCom demanding that he receive a box of Shady Jim's cigarettes. Please ship one. He's starting to make threats."
-	reward = 500
-	wanted_types = list(/obj/item/storage/fancy/cigarettes/cigpack_shadyjims)
-
 /datum/bounty/item/assistant/potted_plants
 	name = "Potted Plants"
 	description = "Central Command is looking to commission a new BirdBoat-class station. You've been ordered to supply the potted plants."
@@ -216,12 +210,6 @@
 	reward = 4000
 	required_count = 5
 	wanted_types = list(/obj/item/toy/figure)
-
-/datum/bounty/item/assistant/tail_whip
-	name = "Nine Tails whip"
-	description = "Commander Jackson is looking for a fine addition to her exotic weapons collection. She will reward you handsomely for either a Cat or Liz o' Nine Tails."
-	reward = 4000
-	wanted_types = list(/obj/item/melee/chainofcommand/tailwhip)
 
 /datum/bounty/item/assistant/dead_mice
 	name = "Dead Mice"

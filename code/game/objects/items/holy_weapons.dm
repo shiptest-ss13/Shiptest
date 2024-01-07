@@ -230,7 +230,7 @@
 			nullrod_icons += list(initial(rodtype.name) = image(icon = initial(rodtype.icon), icon_state = initial(rodtype.icon_state)))
 
 	nullrod_icons = sortList(nullrod_icons)
-	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, .proc/check_menu, M), radius = 42, require_near = TRUE)
+	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), M), radius = 42, require_near = TRUE)
 	if(!choice || !check_menu(M))
 		return
 
@@ -521,9 +521,9 @@
 
 /obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
 	..()
-	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
+	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(/datum/status_effect/stacking/saw_bleed)
 	if(!B)
-		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
+		target.apply_status_effect(/datum/status_effect/stacking/saw_bleed,bleed_stacks_per_hit)
 	else
 		B.add_stacks(bleed_stacks_per_hit)
 

@@ -11,5 +11,9 @@
 /datum/movespeed_modifier/die_of_fate
 	multiplicative_slowdown = 1
 
+/datum/movespeed_modifier/gun
+	multiplicative_slowdown = 1
+	variable = TRUE
+
 /datum/movespeed_modifier/berserk
 	multiplicative_slowdown = -0.2

@@ -8,7 +8,7 @@
 
 	///given to connect_loc to listen for something moving over target
 	var/static/list/crossed_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /datum/component/caltrop/Initialize(_min_damage = 0, _max_damage = 0, _probability = 100, _flags = NONE)
@@ -24,7 +24,7 @@
 	if(ismovable(parent))
 		AddComponent(/datum/component/connect_loc_behalf, parent, crossed_connections)
 	else
-		RegisterSignal(get_turf(parent), COMSIG_ATOM_ENTERED, .proc/on_entered)
+		RegisterSignal(get_turf(parent), COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
 
 // Inherit the new values passed to the component
 /datum/component/caltrop/InheritComponent(datum/component/caltrop/new_comp, original, min_damage, max_damage, probability, flags, soundfile)

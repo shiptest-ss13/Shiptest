@@ -255,7 +255,7 @@
 				if(-INFINITY to 0)
 					message = "<span class='boldwarning'>You can feel your DNA exploding, we need to do something fast!</span>"
 		if(stability <= 0)
-			holder.apply_status_effect(STATUS_EFFECT_DNA_MELT)
+			holder.apply_status_effect(/datum/status_effect/dna_melt)
 		if(message)
 			to_chat(holder, message)
 
@@ -645,7 +645,7 @@
 				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
 				reagents.add_reagent(/datum/reagent/aslimetoxin, 10)
 			if(6)
-				apply_status_effect(STATUS_EFFECT_GO_AWAY)
+				apply_status_effect(/datum/status_effect/go_away)
 			if(7)
 				to_chat(src, "<span class='notice'>Oh, I actually feel quite alright!</span>")
 				ForceContractDisease(new/datum/disease/decloning()) //slow acting, non-viral clone damage based GBS
@@ -688,12 +688,12 @@
 				spawn_gibs()
 				set_species(/datum/species/skeleton)
 				if(prob(90))
-					addtimer(CALLBACK(src, .proc/death), 30)
+					addtimer(CALLBACK(src, PROC_REF(death)), 30)
 					if(mind)
 						mind.hasSoul = FALSE
 			if(5)
 				to_chat(src, "<span class='phobia'>LOOK UP!</span>")
-				addtimer(CALLBACK(src, .proc/something_horrible_mindmelt), 30)
+				addtimer(CALLBACK(src, PROC_REF(something_horrible_mindmelt)), 30)
 
 
 /mob/living/carbon/human/proc/something_horrible_mindmelt()
@@ -704,4 +704,4 @@
 		eyes.Remove(src)
 		qdel(eyes)
 		visible_message("<span class='notice'>[src] looks up and their eyes melt away!</span>", "<span class>='userdanger'>I understand now.</span>")
-		addtimer(CALLBACK(src, .proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 20)
+		addtimer(CALLBACK(src, PROC_REF(adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 20)

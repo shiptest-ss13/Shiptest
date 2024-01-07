@@ -1934,7 +1934,7 @@
 /obj/structure/railing,
 /obj/machinery/computer/atmos_control/incinerator{
 	dir = 4;
-	sensors = list("gecko_burn_sensor"="Combustion Chamber")
+	sensors = list("gecko_burn_sensor"="Combustion    Chamber")
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
@@ -3391,14 +3391,12 @@
 /obj/item/clothing/under/rank/command/captain/nt,
 /obj/item/clothing/head/caphat/nt,
 /obj/item/clothing/shoes/laceup,
-/obj/item/clothing/suit/toggle/lieutenant{
-	desc = "Threadbare and uncharacteristically casual for Nanotrasen. Probably rebadged surplus from some colonial militia.";
-	name = "tattered captain's jacket"
-	},
 /obj/item/clothing/glasses/sunglasses,
 /obj/effect/turf_decal/borderfloor{
 	dir = 1
 	},
+/obj/item/clothing/head/caphat/parade,
+/obj/item/clothing/suit/armor/vest/capcarapace,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ij" = (

@@ -2,15 +2,36 @@
 	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 
+/obj/item/ammo_casing/energy/laser/eoehoma
+	projectile_type = /obj/projectile/beam/laser/eoehoma
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
+/obj/item/ammo_casing/energy/laser/assault
+	projectile_type = /obj/projectile/beam/laser/assault
+	fire_sound = 'sound/weapons/gun/laser/e40_las.ogg'
+	delay = 2
+	e_cost = 666 //30 per upgraded cell
+
+/obj/item/ammo_casing/energy/laser/eoehoma/e50
+	projectile_type = /obj/projectile/beam/emitter/hitscan
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 12500
+	delay = 1 SECONDS
+
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/projectile/beam/laser
 	e_cost = 830
 	select_name = "kill"
 
-/obj/item/ammo_casing/energy/laser/smg //WS edit: fun
+/obj/item/ammo_casing/energy/lasergun/eoehoma
+	projectile_type = /obj/projectile/beam/laser/eoehoma
+	fire_sound = 'sound/weapons/gun/laser/e-fire.ogg'
+
+/obj/item/ammo_casing/energy/laser/smg
 	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
+	delay = 0.2 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
@@ -50,7 +71,7 @@
 	projectile_type = /obj/projectile/beam/pulse
 	e_cost = 2000
 	select_name = "DESTROY"
-	fire_sound = 'sound/weapons/pulse.ogg'
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 
 /obj/item/ammo_casing/energy/laser/bluetag
 	projectile_type = /obj/projectile/beam/lasertag/bluetag
@@ -151,4 +172,5 @@
 	select_name = "kill"
 	projectile_type = /obj/projectile/beam/weak/penetrator
 	variance = 0.8
+	delay = 0.5
 	fire_sound = 'sound/weapons/laser4.ogg'
