@@ -466,11 +466,11 @@
 	icon_state = "JackFrostHat"
 	item_state = "JackFrostHat"
 
-/obj/item/clothing/head/aclfcap
+/obj/item/clothing/head/gorlexcap
 	name = "2nd Battlegroup peaked cap"
-	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup, or as they say, the ACLF."
-	icon_state = "aclfcap"
-	item_state = "aclfcap"
+	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup."
+	icon_state = "gorlexcap"
+	item_state = "gorlexcap"
 	flags_inv = 0
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60

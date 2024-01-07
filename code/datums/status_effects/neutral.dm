@@ -158,12 +158,12 @@
 	desc = "Making any sudden moves would probably be a bad idea!"
 	icon_state = "aimed"
 
-/datum/status_effect/heldup/on_apply()
-	owner.apply_status_effect(STATUS_EFFECT_SURRENDER)
+/datum/status_effect/grouped/heldup/on_apply()
+	owner.apply_status_effect(/datum/status_effect/surrender, src)
 	return ..()
 
-/datum/status_effect/heldup/on_remove()
-	owner.remove_status_effect(STATUS_EFFECT_SURRENDER)
+/datum/status_effect/grouped/heldup/on_remove()
+	owner.remove_status_effect(/datum/status_effect/surrender, src)
 	return ..()
 
 // holdup is for the person aiming

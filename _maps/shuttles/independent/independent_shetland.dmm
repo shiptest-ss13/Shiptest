@@ -64,7 +64,6 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/obj/effect/landmark/start/lieutenant,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "aG" = (
@@ -1240,18 +1239,21 @@
 /obj/machinery/button/door{
 	id = "amogusdoors";
 	name = "Blast Door Control";
-	pixel_x = 5;
-	pixel_y = 5
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	id = "amoguswindows";
 	name = "Window Lockdown";
-	pixel_x = -5;
-	pixel_y = -5
+	pixel_x = -7;
+	pixel_y = 7
 	},
 /obj/effect/turf_decal/corner/opaque/neutral/half,
 /obj/item/radio/intercom/directional/north,
+/obj/item/phone{
+	pixel_y = -4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mG" = (
@@ -1395,16 +1397,22 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "oB" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
-	dir = 4
-	},
-/obj/item/phone,
-/obj/item/megaphone/command{
-	pixel_x = 10
-	},
 /obj/machinery/airalarm/directional/south,
-/turf/open/floor/plasteel/dark,
+/obj/structure/closet/secure_closet{
+	icon_state = "hop";
+	name = "\proper first officer's locker";
+	req_access_txt = "57"
+	},
+/obj/item/clothing/under/rank/command/head_of_personnel,
+/obj/item/clothing/under/rank/command/head_of_personnel/skirt,
+/obj/item/clothing/suit/armor/vest/hop,
+/obj/item/clothing/head/beret/hop,
+/obj/item/gun/energy/e_gun/mini,
+/obj/item/clothing/shoes/laceup,
+/obj/item/radio/headset/headset_com/alt,
+/obj/item/storage/box/ids,
+/obj/item/storage/briefcase,
+/turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "oC" = (
 /obj/structure/cable{
@@ -1615,15 +1623,18 @@
 "qE" = (
 /obj/machinery/light/small/directional/south,
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/corner/opaque/neutral/half{
-	dir = 1
-	},
 /obj/item/paper_bin,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
+/obj/item/megaphone/command{
+	pixel_x = 10
+	},
+/obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "qJ" = (
@@ -3621,11 +3632,22 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/closet/secure_closet/true_lieutenant,
 /obj/machinery/light_switch{
 	pixel_x = 11;
 	pixel_y = 23
 	},
+/obj/structure/closet/secure_closet{
+	icon_state = "cap";
+	name = "\proper captain's locker";
+	req_access_txt = "20"
+	},
+/obj/item/clothing/under/rank/command/captain/suit,
+/obj/item/clothing/under/rank/command/captain/skirt,
+/obj/item/storage/backpack/captain,
+/obj/item/radio/headset/heads/captain/alt,
+/obj/item/clothing/gloves/color/captain,
+/obj/item/gun/energy/e_gun,
+/obj/item/clothing/shoes/laceup,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "KN" = (
@@ -4063,12 +4085,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ship/medical)
-"OD" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "OE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -6769,9 +6785,9 @@ dl
 LL
 TY
 Ft
-OD
+aw
 Lr
-OD
+aw
 xq
 TY
 LL
