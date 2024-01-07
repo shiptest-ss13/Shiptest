@@ -61,7 +61,7 @@ class BannedNeighbor:
         expect(isinstance(self.identical, bool), "identical must be a boolean.")
 
         if "matching_vars" in data:
-            self.same_dir = data.pop("matching_vars")
+            self.matching_vars = data.pop("matching_vars")
         expect(isinstance(self.matching_vars, list), "matching_vars must be a list of variables.")
 
         if "pattern" in data:
@@ -71,11 +71,11 @@ class BannedNeighbor:
 
     def matches(self, identified: Content, neighbor: Content):
         if len(self.matching_vars) > 0:
-            if not self.typepath.matches_path(neighbor.path):
+            if self.typepath is not None and not self.typepath.matches_path(neighbor.path):
                 return False
 
             for variable in self.matching_vars:
-                if identified.var_edits[variable] != neighbor.var_edits[variable]:
+                if identified.var_edits.get(variable) != neighbor.var_edits.get(variable):
                     return False
 
             return True
