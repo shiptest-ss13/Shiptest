@@ -2,4 +2,4 @@ help: "Duplicated/overlapping cables detected."
 /obj/structure/cable:
   banned_neighbors:
     /obj/structure/cable:
-      matching_vars: [icon_state]
+      identical: true

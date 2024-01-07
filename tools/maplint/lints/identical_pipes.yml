@@ -2,4 +2,4 @@ help: "Duplicated/overlapping pipes detected."
 /obj/machinery/atmospherics/pipe:
   banned_neighbors:
     /obj/machinery/atmospherics/pipe:
-      matching_vars: [dir, piping_layer]
+      identical: true
