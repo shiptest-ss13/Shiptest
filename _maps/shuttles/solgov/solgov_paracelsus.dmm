@@ -1010,10 +1010,13 @@
 	},
 /obj/item/reagent_containers/food/drinks/mug/coco{
 	pixel_x = 7;
-	pixel_y = 5
+	pixel_y = 12
 	},
 /obj/item/pen/fountain/solgov{
 	pixel_x = -5
+	},
+/obj/machinery/recharger{
+	pixel_x = 7
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -1856,15 +1859,11 @@
 	dir = 10
 	},
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/mug/coco{
-	pixel_x = -7;
-	pixel_y = -2
-	},
-/obj/machinery/recharger,
 /obj/item/spacecash/bundle/loadsamoney{
-	pixel_x = 5;
-	pixel_y = 8
+	pixel_x = 8;
+	pixel_y = 12
 	},
+/obj/machinery/fax,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "sp" = (
@@ -3069,7 +3068,7 @@
 /area/ship/crew/canteen)
 "Eh" = (
 /obj/item/bedsheet/double/solgov{
-	dir = 8
+	dir = 4
 	},
 /obj/structure/bed/double{
 	dir = 1
