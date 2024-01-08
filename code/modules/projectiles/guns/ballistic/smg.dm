@@ -222,13 +222,13 @@
 	update_appearance()
 	return
 
-/obj/item/gun/ballistic/automatic/smg/thompson
+/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designer: @Apogee-dev
 	name = "HP Firestorm"
-	desc = "The SRM's SMG. Chambered in .45."
+	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "firestorm"
 	item_state = "firestorm"
-	mag_type = /obj/item/ammo_box/magazine/smgm45
+	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
@@ -239,14 +239,17 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = 0.4
 
-/obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
+/obj/item/gun/ballistic/automatic/smg/firestorm/Initialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
-/obj/item/gun/ballistic/automatic/smg/thompson/drum
-	name = "\improper Chicago Typewriter"
-	desc = "A gun for good fellas. Chambered in .45."
-	mag_type = /obj/item/ammo_box/magazine/smgm45/drum
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/c45_firestorm_mag/pan(src)
+	chamber_round()
 
 /obj/item/gun/ballistic/automatic/smg/cm5
 	name = "\improper CM-5"

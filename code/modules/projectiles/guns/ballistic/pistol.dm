@@ -28,8 +28,8 @@
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	wield_delay = 0.2 SECONDS
-	spread = -2
-	spread_unwielded = 4
+	spread = 2
+	spread_unwielded = 5
 	wield_slowdown = 0.15
 
 	muzzleflash_iconstate = "muzzle_flash_light"
@@ -44,7 +44,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"
-	desc = "A classic handgun. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45"
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."
 	icon_state = "candor"
 	item_state = "hp_generic"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -65,7 +65,7 @@
 	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory //also give this to the srm, their candors should probably look factory fresh from how well taken care of they are
-	desc = "A classic handgun. An engraving on the slide marks it as a product of Hunter's Pride. The wood looks extremely fresh. Chambered in .45"
+	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in .45."
 	item_state = "hp_generic_fresh"
 
 /obj/item/gun/ballistic/automatic/pistol/candor/factory/update_overlays()

@@ -26,10 +26,10 @@
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	suit = /obj/item/clothing/suit/armor/frontier
-	suit_store = /obj/item/gun/ballistic/revolver/montagne
+	suit_store = /obj/item/gun/ballistic/revolver
 	belt = /obj/item/storage/belt/military/assault
 
-	backpack_contents = list(/obj/item/ammo_box/n762_clip=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/ammo_box/a357=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
 
 	id_role = "Officer"
 

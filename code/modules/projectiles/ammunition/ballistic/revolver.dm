@@ -46,15 +46,6 @@
 	desc = "A .45-70 explosive bullet casing."
 	projectile_type = /obj/projectile/bullet/a4570/explosive
 
-// 7.62x38mmR (Nagant Revolver)
-
-/obj/item/ammo_casing/n762_38
-	name = "7.62x38mmR bullet casing"
-	desc = "A 7.62x38mmR bullet casing."
-	caliber = "7.62x38mmR"
-	projectile_type = /obj/projectile/bullet/n762
-
-
 // .38 Special (Colt Detective Special & Winchester)
 
 /obj/item/ammo_casing/c38

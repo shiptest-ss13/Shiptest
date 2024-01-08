@@ -59,8 +59,8 @@
 
 /obj/item/gun/ballistic/rifle/boltaction
 	name = "\improper HP Illestren"
-	desc = "One of Hunter's Pride most successful firearms. The bolt-action is popular among colonists, pirates, snipers, and countless more. Chambered in 8x50mmR."
-	sawn_desc = "An extremely sawn-off Illestren. There was probably a reason it wasn't made this short to begin with, however, it makes a surpisingly okay sidearm."
+	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, the Illestren is popular among colonists, pirates, snipers, and countless others. Chambered in 8x50mmR."
+	sawn_desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -79,6 +79,7 @@
 	. = ..()
 	if(.)
 		spread = 36
+		spread_unwielded = 108
 		can_bayonet = FALSE
 		item_state = "hunting_sawn"
 
@@ -111,7 +112,7 @@
 
 /obj/item/gun/ballistic/rifle/boltaction/scout
 	name = "HP Scout"
-	desc = "A bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
+	desc = "A powerful bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia, equally suited for taking down big game or two-legged game. Chambered in .300 Magnum."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
 	fire_sound = 'sound/weapons/gun/rifle/scout.ogg'
 

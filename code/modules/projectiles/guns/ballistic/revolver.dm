@@ -118,7 +118,7 @@
 
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
-	desc = "A ridiculously old-fashioned law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independents outside Nanotrasen. Uses .38 special rounds."
+	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."
 	fire_sound = 'sound/weapons/gun/revolver/shot_light.ogg'
 	icon_state = "detective"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
@@ -199,25 +199,24 @@
 
 /obj/item/gun/ballistic/revolver/montagne
 	name = "\improper HP Montagne"
-	desc = "An ancient model of revolver with notoriously poor ergonomics, chambered in 7.62x38mmR. Uniquely able to be suppressed."
+	desc = "An ornate break-open revolver issued to high-ranking members of the Saint-Roumain Militia. Chambered in .38 Special."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "montagne"
-	can_suppress = TRUE
-	manufacturer = MANUFACTURER_NONE
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	spread_unwielded = 12
 	recoil = 0
-	recoil_unwielded = 0
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38/big
 
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
-	desc = "A massive, long-barreled revolver designed for the most dangerous game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
+	desc = "A massive, long-barreled revolver often used by the Saint-Roumain Militia as protection against big game. Can only be reloaded one cartridge at a time due to its reinforced frame. Uses .45-70 ammo."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "ashhand"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = 0.5
 	spread_unwielded = 5
 	spread = 2
@@ -342,11 +341,12 @@
 
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
-	desc = "A strangely ancient revolver. Despite the age, it is a favorite of fast drawing spacers and officers in various militaries, but sometimes very rarely used in small police units. Uses .45."
+	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .45."
 	fire_sound = 'sound/weapons/gun/revolver/cattleman.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "shadow"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "shadow",
 		"Army" = "shadow_army",

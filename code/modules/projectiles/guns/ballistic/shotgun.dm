@@ -31,14 +31,20 @@
 	recoil_unwielded = 4
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
-	. = 0
 	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
-		. = 1
+		return TRUE
+	for(var/obj/item/ammo_casing/ammo in magazine.stored_ammo)
+		if(ammo.BB)
+			process_chamber(FALSE, FALSE)
+			process_fire(user, user, FALSE)
+			return TRUE
+	return FALSE
 
 /obj/item/gun/ballistic/shotgun/brimstone
 	name = "HP Brimstone"
-	desc = "An 5 round slamfire shotgun. Chambered in 12g."
+	desc = "A simple and sturdy pump-action shotgun sporting a 5-round capacity, manufactured by Hunter's Pride. Found widely throughout the Frontier in the hands of hunters, pirates, police, and countless others. Chambered in 12g."
+	sawn_desc = "A stockless and shortened pump-action shotgun. The worsened recoil and accuracy make it a poor sidearm anywhere beyond punching distance."
 	fire_sound = 'sound/weapons/gun/shotgun/brimstone.ogg'
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "brimstone"
@@ -50,7 +56,6 @@
 
 	can_be_sawn_off  = TRUE
 
-	sawn_desc = "A sawed off slamfire shotgun, why would you ever saw this off... it's not even a good sidearm!"
 
 /obj/item/gun/ballistic/shotgun/brimstone/ComponentInitialize()
 	. = ..()
@@ -72,7 +77,7 @@
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
-	desc = "A sturdy shotgun with a seven-shell tube. Chambered in 12g."
+	desc = "A hefty pump-action riot shotgun with a seven-round tube, manufactured by Hunter's Pride. Especially popular among the Frontier's police forces. Chambered in 12g."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "hellfire"
 	item_state = "hellfire"
@@ -85,6 +90,9 @@
 /obj/item/gun/ballistic/shotgun/hellfire/sawoff(mob/user)
 	. = ..()
 	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 5 //this makes the gun so much worse
+
 		weapon_weight = WEAPON_MEDIUM
 		wield_slowdown = 0.25
 		wield_delay = 0.3 SECONDS //OP? maybe
@@ -243,8 +251,8 @@
 
 /obj/item/gun/ballistic/shotgun/doublebarrel
 	name = "double-barreled shotgun"
-	desc = "A classic break action shotgun. Both barrels can be fired in quick succession or at once (todo) due to it's design. Chambered in 12g."
-	sawn_desc = "A sawed off break action shotgun. While it's techinically worse due to it's smaller size, it actually makes for a pretty good sidearm because of it. Chambered in 12g."
+	desc = "A classic break action shotgun, hand-made in a Hunter's Pride workshop. Both barrels can be fired in quick succession or even simultaneously. Guns like this have been popular with hunters, sporters, and criminals for millennia. Chambered in 12g."
+	sawn_desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
 
 
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -337,10 +345,12 @@
 		spread_unwielded = 15
 		recoil = 3 //or not
 		recoil_unwielded = 5
+		item_state = "dshotgun_sawn"
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain
 	name = "HP antique double-barreled shotgun"
-	desc = "A special version of the double-barreled used in the SRM. The wood is more carefully taken care of and carefuly constructed brass adorns it. Otherwise, it's functionally identical. Chambered in 12g."
+	desc = "A special-edition shotgun hand-made by Hunter's Pride with a high-quality walnut stock inlaid with brass scrollwork. Shotguns like this are very rare outside of the Saint-Roumain Militia's ranks. Otherwise functionally identical to a common double-barreled shotgun. Chambered in 12g."
+	sawn_desc = "A special-edition Hunter's Pride shotgun, cut down to the size of a sidearm by some barbarian. The brass inlay on the stock and engravings on the barrel have been obliterated in the process, destroying any value beyond its use as a crude sidearm."
 	base_icon_state = "dshotgun_srm"
 	icon_state = "dshotgun_srm"
 	unique_reskin = null
@@ -553,7 +563,9 @@
 //Lever-Action Rifles
 /obj/item/gun/ballistic/shotgun/flamingarrow
 	name = "HP Flaming Arrow"
-	desc = "A sturdy lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. Chambered in .38."
+	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. A popular choice among Frontier homesteaders for hunting small game and rudimentary self-defense. Chambered in .38."
+	sawn_desc = "A lever-action rifle that has been sawed down and modified for extra portability. While surprisingly effective as a sidearm, the more important benefit is how much cooler it looks."
+	base_icon_state = "flamingarrow"
 	icon_state = "flamingarrow"
 	item_state = "flamingarrow"
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -567,6 +579,7 @@
 	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
+	can_be_sawn_off  = TRUE
 
 	spread = -5
 	spread_unwielded = 7
@@ -579,23 +592,49 @@
 	if(!wielded)
 		SpinAnimation(7,1)
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/factory
-	desc = "A sturdy lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. The wood looks extremely fresh. Chambered in .38."
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/factory/update_overlays()
+/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
 	. = ..()
-	. += "[initial(icon_state)]_factory"
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 7
+
+		item_state = "flamingarrow_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
+
+		spread = 4
+		spread_unwielded = 12
+		recoil = 1
+		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
+	. = ..()
+	if(current_skin)
+		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
+	else
+		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
+
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory
+	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .38."
+	icon_state = "flamingarrow_factory"
+	base_icon_state = "flamingarrow_factory"
+	item_state = "flamingarrow_factory"
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
-	desc = "A sturdy lever-action rifle. This antique pattern appears to be in excellent condition despite its age. Chambered in .38"
+	desc = "A sturdy, excellently-made lever-action rifle. This one appears to be a genuine antique, kept in incredibly good condition despite its advanced age. Chambered in .38."
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
 	name = "HP Huntsman"
-	desc = "Take this, elephant! If you want an intact trophy, don't aim for the head. Chambered in two-bore."
+	desc = "A comically huge double-barreled rifle replete with brass inlays depicting flames and naturalistic scenes, clearly meant for the nastiest monsters the Frontier has to offer. If you want an intact trophy, don't aim for the head. Chambered in two-bore."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -623,7 +662,8 @@
 //Break-Action Rifle
 /obj/item/gun/ballistic/shotgun/doublebarrel/beacon
 	name = "HP Beacon"
-	desc = "A single-shot break-action rifle made by Hunter's Pride. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. Boasts excellent accuracy and stopping power. Uses .45-70 ammo."
+	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
 	base_icon_state = "beacon"
 	icon_state = "beacon"
 	item_state = "beacon"
@@ -634,7 +674,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/beacon
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	can_be_sawn_off=TRUE
-	sawn_desc= "A single-shot pistol. It's hard to aim without a front sight."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
@@ -654,6 +693,7 @@
 	. = ..()
 	if(.)
 		item_state = "beacon_sawn"
+		mob_overlay_state = item_state
 		wield_slowdown = 0.5
 		wield_delay = 0.5 SECONDS
 
@@ -661,3 +701,16 @@
 		spread = 2
 		recoil = 2
 		recoil_unwielded = 3
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory
+	desc = "A single-shot break-action rifle made by Hunter's Pride and sold to civilian hunters. This example has been kept in excellent shape and may as well be fresh out of the workshop. Uses .45-70 ammo."
+	sawn_desc= "A single-shot break-action pistol chambered in .45-70. A bit difficult to aim."
+	base_icon_state = "beacon_factory"
+	icon_state = "beacon_factory"
+	item_state = "beacon_factory"
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/beacon/factory/sawoff(mob/user)
+	. = ..()
+	if(.)
+		item_state = "beacon_factory_sawn"
+		mob_overlay_state = item_state

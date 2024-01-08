@@ -24,43 +24,29 @@
 // .45-70 Ammo Holders (Hunting Revolver)
 
 /obj/item/ammo_box/a4570
-	name = "ammo holder (.45-70)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These rounds do significant damage with average performance against armor."
+	name = "ammo box (.45-70)"
+	desc = "A box of top grade .45-70 ammo. These rounds do significant damage with average performance against armor."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/a4570
-	max_ammo = 6
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	item_flags = NO_MAT_REDEMPTION
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
+	max_ammo = 12
 
 /obj/item/ammo_box/a4570/match
 	name = "ammo holder (.45-70 match)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	icon_state = "4570-match"
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
 /obj/item/ammo_box/a4570/hp
 	name = "ammo holder (.45-70 hollow point)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
+	icon_state = "4570-hp"
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
+	icon_state = "4570-explosive"
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
-
-// 7.62x38mmR Ammo Holders (Nagant Revolver)
-
-/obj/item/ammo_box/n762_clip
-	name = "ammo holder (7.62x38mmR)"
-	desc = "A 7-round ammo holder for the Nagant revolver. These rounds do good damage, but struggle against armor."
-	icon_state = "n762"
-	ammo_type = /obj/item/ammo_casing/n762_38
-	max_ammo = 7
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	item_flags = NO_MAT_REDEMPTION
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
 
 // .38 special Speed Loaders (Colt Detective Special)
 
@@ -346,13 +332,6 @@
 	max_ammo = 4
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/ammo_box/n762
-	name = "ammo box (7.62x38mmR)"
-	icon_state = "n762box"
-	desc = "A box of unusual revolver ammunition with the bullet seated below the mouth of the cartridge."
-	ammo_type = /obj/item/ammo_casing/n762_38
-	max_ammo = 28
 
 /obj/item/ammo_box/a762_39
 	name = "ammo box (7.62x39mm)"

@@ -34,12 +34,12 @@
 	icon_state = "frontiersmanranged"
 	icon_living = "frontiersmanranged"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/gun/ballistic/revolver/montagne)
+				/obj/item/gun/ballistic/revolver)
 	ranged = 1
 	retreat_distance = 5
 	minimum_distance = 5
 	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
-	casingtype = /obj/item/ammo_casing/n762_38
+	casingtype = /obj/item/ammo_casing/a357
 
 /mob/living/simple_animal/hostile/frontier/ranged/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)

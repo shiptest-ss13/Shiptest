@@ -128,3 +128,12 @@
 /obj/item/ammo_box/magazine/e40/update_icon_state()
 	. = ..()
 	icon_state = "e40_mag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/vickland_a308 //this is a magazine codewise do nothing breaks
+	name = "en bloc clip (.308)"
+	desc = "A 8-round en bloc clip for the Vickland Battle Rifle. These rounds do good damage with significant armor penetration."
+	icon_state = "enbloc_303"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 8
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
