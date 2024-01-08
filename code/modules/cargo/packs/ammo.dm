@@ -77,8 +77,8 @@
 	name = "Buckshot Crate"
 	desc = "Contains two boxes of buckshot for use in lethal persuasion."
 	cost = 2000
-	contains = list(/obj/item/storage/box/lethalshot,
-					/obj/item/storage/box/lethalshot)
+	contains = list(/obj/item/ammo_box/a12g,
+					/obj/item/ammo_box/a12g)
 
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
