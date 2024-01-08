@@ -2,17 +2,60 @@
 set -euo pipefail
 
 #nb: must be bash to support shopt globstar
-shopt -s globstar
+shopt -s globstar extglob
+
+#ANSI Escape Codes for colors to increase contrast of errors
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+BLUE="\033[0;34m"
+NC="\033[0m" # No Color
 
 st=0
 
-echo "Checking for map issues"
-if grep -El '^\".+\" = \(.+\)' _maps/**/*.dmm;	then
-    echo "ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!"
+# check for ripgrep
+if command -v rg >/dev/null 2>&1; then
+	grep=rg
+	pcre2_support=1
+	if [ ! rg -P '' >/dev/null 2>&1 ] ; then
+		pcre2_support=0
+	fi
+	code_files="code/**/**.dm"
+	map_files="_maps/**/**.dmm"
+	code_x_515="code/**/!(__byond_version_compat).dm"
+else
+	pcre2_support=0
+	grep=grep
+	code_files="-r --include=code/**/**.dm"
+	map_files="-r --include=_maps/**/**.dmm"
+	code_x_515="-r --include=code/**/!(__byond_version_compat).dm"
+fi
+
+echo -e "${BLUE}Using grep provider at $(which $grep)${NC}"
+
+part=0
+section() {
+	echo -e "${BLUE}Checking for $1${NC}..."
+	part=0
+}
+
+part() {
+	part=$((part+1))
+	padded=$(printf "%02d" $part)
+	echo -e "${GREEN} $padded- $1${NC}"
+}
+
+section "map issues"
+
+part "TGM"
+if $grep -U '^".+" = \(.+\)' $map_files;	then
+	echo
+    echo -e "${RED}ERROR: Non-TGM formatted map detected. Please convert it using Map Merger!${NC}"
     st=1
 fi;
-if grep -P '//' _maps/**/*.dmm | grep -v '//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE' | grep -Ev 'name|desc'; then
-	echo "ERROR: Unexpected commented out line detected in this map file. Please remove it."
+part "comments"
+if $grep '//' $map_files | $grep -v '//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE' | $grep -v 'name|desc'; then
+	echo
+	echo -e "${RED}ERROR: Unexpected commented out line detected in this map file. Please remove it.${NC}"
 	st=1
 fi;
 part "iconstate tags"
@@ -24,8 +67,8 @@ fi;
 part "invalid map procs"
 if $grep '(new|newlist|icon|matrix|sound)\(.+\)' $map_files;	then
 	echo
-    echo -e "${RED}ERROR: Invalid proc usage detected in maps, please remove them.${NC}"
-    st=1
+	echo -e "${RED}ERROR: Using unsupported procs in variables in a map file! Please remove all instances of this.${NC}"
+	st=1
 fi;
 part "common spelling mistakes"
 if $grep -i 'nanotransen' $map_files; then
@@ -62,20 +105,50 @@ if $grep 'allocate\(/mob/living/carbon/human[,\)]' code/modules/unit_tests/**/**
 	echo -e "${RED}ERROR: Usage of mob/living/carbon/human detected in a unit test, please use mob/living/carbon/human/consistent.${NC}"
 	st=1
 fi;
-if grep -i 'centcomm' code/**/*.dm; then
-    echo "ERROR: Misspelling(s) of CENTCOM detected in code, please remove the extra M(s)."
+
+section "common mistakes"
+part "global vars"
+if $grep '^/*var/' $code_files; then
+	echo
+    echo -e "${RED}ERROR: Unmanaged global var use detected in code, please use the helpers.${NC}"
     st=1
 fi;
-if grep -i 'centcomm' _maps/**/*.dmm; then
-    echo "ERROR: Misspelling(s) of CENTCOM detected in maps, please remove the extra M(s)."
+part "proc args with var/"
+if $grep '^/[\w/]\S+\(.*(var/|, ?var/.*).*\)' $code_files; then
+	echo
+    echo -e "${RED}ERROR: Changed files contains a proc argument starting with 'var'.${NC}"
     st=1
 fi;
-if grep -ni 'Nanotransen' code/**/*.dm; then
-    echo "Misspelling(s) of nanotrasen detected in code, please remove the extra N(s)."
+
+part "balloon_alert sanity"
+if $grep 'balloon_alert\(".*"\)' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Found a balloon alert with improper arguments.${NC}"
+	st=1
+fi;
+
+if $grep 'balloon_alert(.*span_)' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Balloon alerts should never contain spans.${NC}"
+	st=1
+fi;
+
+part "balloon_alert idiomatic usage"
+if $grep 'balloon_alert\(.*?, ?"[A-Z]' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Balloon alerts should not start with capital letters. This includes text like 'AI'. If this is a false positive, wrap the text in UNLINT().${NC}"
+	st=1
+fi;
+
+part "common spelling mistakes"
+if $grep -i 'centcomm' $code_files; then
+	echo
+    echo -e "${RED}ERROR: Misspelling(s) of CentCom detected in code, please remove the extra M(s).${NC}"
     st=1
 fi;
-if grep -ni 'Nanotransen' _maps/**/*.dmm; then
-    echo "Misspelling(s) of nanotrasen detected in maps, please remove the extra N(s)."
+if $grep -ni 'nanotransen' $code_files; then
+	echo
+    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in code, please remove the extra N(s).${NC}"
     st=1
 fi;
 
@@ -87,7 +160,8 @@ do
         filename="_maps/$map_path/$map_file"
         if [ ! -f $filename ]
         then
-            echo "found invalid file reference to $filename in _maps/$json"
+			echo
+            echo -e "${RED}ERROR: Found an invalid file reference to $filename in _maps/$json ${NC}"
             st=1
         fi
     done < <(jq -r '[.map_file] | flatten | .[]' $json)
