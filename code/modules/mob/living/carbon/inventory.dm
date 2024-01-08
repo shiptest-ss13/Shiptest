@@ -174,7 +174,7 @@
 		to_chat(src, "<span class='warning'>You're not holding anything to give!</span>")
 		return
 
-	if(has_status_effect(/datum/status_effect/offering))
+	if(has_status_effect(STATUS_EFFECT_OFFERING))
 		to_chat(src, span_warning("You're already offering up something!"))
 		return
 
@@ -184,7 +184,7 @@
 	//WS End
 	visible_message(span_notice("[src] is offering [offered_item]."), \
 					span_notice("You offer [offered_item]."), null, 2)
-	apply_status_effect(/datum/status_effect/offering, offered_item)
+	apply_status_effect(STATUS_EFFECT_OFFERING, offered_item)
 
 /**
  * Proc called when the player clicks the give alert

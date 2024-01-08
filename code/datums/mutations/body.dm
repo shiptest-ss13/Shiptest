@@ -376,12 +376,12 @@
 /datum/mutation/human/spastic/on_acquiring()
 	if(..())
 		return
-	owner.apply_status_effect(/datum/status_effect/spasms)
+	owner.apply_status_effect(STATUS_EFFECT_SPASMS)
 
 /datum/mutation/human/spastic/on_losing()
 	if(..())
 		return
-	owner.remove_status_effect(/datum/status_effect/spasms)
+	owner.remove_status_effect(STATUS_EFFECT_SPASMS)
 
 /datum/mutation/human/extrastun
 	name = "Two Left Feet"
