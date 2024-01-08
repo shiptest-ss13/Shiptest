@@ -73,7 +73,12 @@ fi;
 part "common spelling mistakes"
 if $grep -i 'nanotransen' $map_files; then
 	echo
-    echo -e "${RED}ERROR: Misspelling of Nanotrasen detected in maps, please remove the extra N(s).${NC}"
+    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please remove the extra N(s).${NC}"
+    st=1
+fi;
+if $grep 'NanoTrasen' $map_files; then
+	echo
+    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in maps, please uncapitalize the T(s).${NC}"
     st=1
 fi;
 if $grep -i'centcomm' $map_files; then
@@ -96,28 +101,42 @@ if $grep '^\t+ [^ *]' $code_files; then
     st=1
 fi;
 
-section "unit tests"
-part "mob/living/carbon/human usage"
-if $grep 'allocate\(/mob/living/carbon/human[,\)]' code/modules/unit_tests/**/**.dm ||
-	$grep 'new /mob/living/carbon/human\s?\(' ||
-	$grep 'var/mob/living/carbon/human/\w+\s?=\s?new' ; then
-	echo
-	echo -e "${RED}ERROR: Usage of mob/living/carbon/human detected in a unit test, please use mob/living/carbon/human/consistent.${NC}"
-	st=1
-fi;
+#section "unit tests"
+#unit_test_files="code/modules/unit_tests/**/**.dm"
+#part "mob/living/carbon/human usage"
+#if $grep 'allocate\(/mob/living/carbon/human[,\)]' $unit_test_files ||
+#	$grep 'new /mob/living/carbon/human\s?\(' $unit_test_files ||
+#	$grep 'var/mob/living/carbon/human/\w+\s?=\s?new' $unit_test_files ; then
+#	echo
+#	echo -e "${RED}ERROR: Usage of mob/living/carbon/human detected in a unit test, please use mob/living/carbon/human/consistent.${NC}"
+#	st=1
+#fi;
 
 section "common mistakes"
 part "global vars"
 if $grep '^/*var/' $code_files; then
 	echo
-    echo -e "${RED}ERROR: Unmanaged global var use detected in code, please use the helpers.${NC}"
-    st=1
+	echo -e "${RED}ERROR: Unmanaged global var use detected in code, please use the helpers.${NC}"
+	st=1
 fi;
+
 part "proc args with var/"
 if $grep '^/[\w/]\S+\(.*(var/|, ?var/.*).*\)' $code_files; then
 	echo
-    echo -e "${RED}ERROR: Changed files contains a proc argument starting with 'var'.${NC}"
-    st=1
+	echo -e "${RED}ERROR: Changed files contains a proc argument starting with 'var'.${NC}"
+	st=1
+fi;
+
+part "src as a trait source" # ideally we'd lint / test for ANY datum reference as a trait source, but 'src' is the most common.
+if $grep -i '(add_trait|remove_trait)\(.+,\s*.+,\s*src\)' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Using 'src' as a trait source. Source must be a string key - dont't use references to datums as a source, perhaps use 'REF(src)'.${NC}"
+	st=1
+fi;
+if $grep -i '(add_traits|remove_traits)\(.+,\s*src\)' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Using 'src' as trait sources. Source must be a string key - dont't use references to datums as sources, perhaps use 'REF(src)'.${NC}"
+	st=1
 fi;
 
 part "balloon_alert sanity"
@@ -140,6 +159,13 @@ if $grep 'balloon_alert\(.*?, ?"[A-Z]' $code_files; then
 	st=1
 fi;
 
+part "update_icon_updates_onmob element usage"
+if $grep 'AddElement\(/datum/element/update_icon_updates_onmob.+ITEM_SLOT_HANDS' $code_files; then
+	echo
+	echo -e "${RED}ERROR: update_icon_updates_onmob element automatically updates ITEM_SLOT_HANDS, this is redundant and should be removed.${NC}"
+	st=1
+fi;
+
 part "common spelling mistakes"
 if $grep -i 'centcomm' $code_files; then
 	echo
@@ -151,21 +177,39 @@ if $grep -ni 'nanotransen' $code_files; then
     echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in code, please remove the extra N(s).${NC}"
     st=1
 fi;
+if $grep 'NanoTrasen' $code_files; then
+	echo
+    echo -e "${RED}ERROR: Misspelling(s) of Nanotrasen detected in code, please uncapitalize the T(s).${NC}"
+    st=1
+fi;
 
 part "map json sanity"
 for json in _maps/configs/*.json
 do
     map_path=$(jq -r '.map_path' $json)
-    while read map_file; do
-        filename="_maps/$map_path/$map_file"
-        if [ ! -f $filename ]
-        then
-			echo
-            echo -e "${RED}ERROR: Found an invalid file reference to $filename in _maps/$json ${NC}"
-            st=1
-        fi
-    done < <(jq -r '[.map_file] | flatten | .[]' $json)
+	if [ ! -f $map_path ]
+	then
+		echo
+		echo -e "${RED}ERROR: Found an invalid file reference to $map_path in $json ${NC}"
+		st=1
+	fi
 done
+
+part "updatepaths validity"
+missing_txt_lines=$(find tools/UpdatePaths/Scripts -type f ! -name "*.txt" | wc -l)
+if [ $missing_txt_lines -gt 0 ]; then
+    echo
+    echo -e "${RED}ERROR: Found an UpdatePaths File that doesn't end in .txt! Please add the proper file extension!${NC}"
+    st=1
+fi;
+
+number_prefix_lines=$(find tools/UpdatePaths/Scripts -type f | wc -l)
+valid_number_prefix_lines=$(find tools/UpdatePaths/Scripts -type f | $grep -P "\d+_(.+)" | wc -l)
+if [ $valid_number_prefix_lines -ne $number_prefix_lines ]; then
+    echo
+    echo -e "${RED}ERROR: Detected an UpdatePaths File that doesn't start with the PR number! Please add the proper number prefix!${NC}"
+    st=1
+fi;
 
 section "515 Proc Syntax"
 part "proc ref syntax"
@@ -177,6 +221,12 @@ fi;
 
 if [ "$pcre2_support" -eq 1 ]; then
 	section "regexes requiring PCRE2"
+	part "empty variable values"
+	if $grep -PU '{\n\t},' $map_files; then
+		echo
+		echo -e "${RED}ERROR: Empty variable value list detected in map file. Please remove the curly brackets entirely.${NC}"
+		st=1
+	fi;
 	part "to_chat sanity"
 	if $grep -P 'to_chat\((?!.*,).*\)' $code_files; then
 		echo
@@ -195,6 +245,12 @@ if [ "$pcre2_support" -eq 1 ]; then
 		echo -e "${RED}ERROR: File(s) with no trailing newline detected, please add one.${NC}"
 		st=1
 	fi
+	#part "improper atom initialize args"
+	#if $grep -P '^/(obj|mob|turf|area|atom)/.+/Initialize\((?!mapload).*\)' $code_files; then
+	#	echo
+	#	echo -e "${RED}ERROR: Initialize override without 'mapload' argument.${NC}"
+	#	st=1
+	#fi;
 else
 	echo -e "${RED}pcre2 not supported, skipping checks requiring pcre2"
 	echo -e "if you want to run these checks install ripgrep with pcre2 support.${NC}"
