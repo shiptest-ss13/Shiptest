@@ -1305,10 +1305,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/conveyor/inverted{
-	id = "retrieval";
-	dir = 1
-	},
+/obj/machinery/conveyor,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "hx" = (
@@ -4674,11 +4671,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/conveyor/inverted{
-	id = "prison_scrap";
-	dir = 8
-	},
 /obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/conveyor{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -4864,10 +4860,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/conveyor/inverted{
-	id = "retrieval";
-	dir = 1
-	},
+/obj/machinery/conveyor,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "CP" = (
