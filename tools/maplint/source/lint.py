@@ -45,6 +45,7 @@ class BannedNeighbor:
     identical: bool = False
     typepath: Optional[TypepathExtra] = None
     pattern: Optional[re.Pattern] = None
+    matching_vars: list[str] = []
 
     def __init__(self, typepath, data = {}):
         if typepath.upper() != typepath:
@@ -59,12 +60,26 @@ class BannedNeighbor:
             self.identical = data.pop("identical")
         expect(isinstance(self.identical, bool), "identical must be a boolean.")
 
+        if "matching_vars" in data:
+            self.matching_vars = data.pop("matching_vars")
+        expect(isinstance(self.matching_vars, list), "matching_vars must be a list of variables.")
+
         if "pattern" in data:
             self.pattern = re.compile(data.pop("pattern"))
 
         expect(len(data) == 0, f"Unknown key in banned neighbor: {', '.join(data.keys())}.")
 
     def matches(self, identified: Content, neighbor: Content):
+        if len(self.matching_vars) > 0:
+            if self.typepath is not None and not self.typepath.matches_path(neighbor.path):
+                return False
+
+            for variable in self.matching_vars:
+                if identified.var_edits.get(variable) != neighbor.var_edits.get(variable):
+                    return False
+
+            return True
+
         if self.identical:
             if identified.path != neighbor.path:
                 return False
