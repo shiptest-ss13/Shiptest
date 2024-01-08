@@ -8,7 +8,7 @@
 /datum/round_event/heart_attack/start()
 	var/list/heart_attack_contestants = list()
 	for(var/mob/living/carbon/human/victim as anything in shuffle(GLOB.human_list))
-		if(!victim.client || victim.stat == DEAD || HAS_TRAIT(victim, TRAIT_CRITICAL_CONDITION) || !victim.can_heartattack() || victim.has_status_effect(/datum/status_effect/exercised) || (/datum/disease/heart_failure in victim.diseases) || victim.undergoing_cardiac_arrest())
+		if(!victim.client || victim.stat == DEAD || HAS_TRAIT(victim, TRAIT_CRITICAL_CONDITION) || !victim.can_heartattack() || victim.has_status_effect(STATUS_EFFECT_EXERCISED) || (/datum/disease/heart_failure in victim.diseases) || victim.undergoing_cardiac_arrest())
 			continue
 		if(victim.mind.assigned_role in GLOB.nonhuman_positions)
 			continue
