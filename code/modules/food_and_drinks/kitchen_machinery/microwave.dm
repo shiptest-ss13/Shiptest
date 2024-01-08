@@ -8,8 +8,8 @@
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 5
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	circuit = /obj/item/circuitboard/machine/microwave
 	pass_flags = PASSTABLE
 	light_color = LIGHT_COLOR_YELLOW

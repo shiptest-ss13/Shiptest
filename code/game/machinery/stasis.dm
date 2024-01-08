@@ -9,8 +9,8 @@
 	can_buckle = TRUE
 	buckle_lying = 90
 	circuit = /obj/item/circuitboard/machine/stasis
-	idle_power_usage = 40
-	active_power_usage = 340
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_HIGH
 	var/stasis_enabled = TRUE
 	var/last_stasis_sound = FALSE
 	var/stasis_can_toggle = 0

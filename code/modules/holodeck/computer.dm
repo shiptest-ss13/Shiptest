@@ -32,8 +32,8 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 	name = "holodeck control console"
 	desc = "A computer used to control a nearby holodeck."
 	icon_screen = "holocontrol"
-	idle_power_usage = 10
-	active_power_usage = 50
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 
 	//new vars
 	///what access type this holodeck has, used to specify programs for another holodeck that others cant load.
@@ -325,7 +325,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 	for(var/_effect in effects)
 		var/obj/effect/holodeck_effect/holo_effect = _effect
 		holo_effect.tick()
-	active_power_usage = 50 + spawned.len * 3 + effects.len * 5
+	active_power_usage = 50 + spawned.len * 3 + effects.len * 5 //FIXLATER
 
 /obj/machinery/computer/holodeck/proc/toggle_power(toggleOn = FALSE)
 	if(active == toggleOn)

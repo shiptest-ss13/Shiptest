@@ -218,8 +218,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	layer = WALL_OBJ_LAYER
 	max_integrity = 100
 	use_power = ACTIVE_POWER_USE
-	idle_power_usage = 2
-	active_power_usage = 20
+	idle_power_usage = 0
+	active_power_usage = LIGHT_DRAW * 2 //seemingly unused? //FIXLATER
 	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
@@ -431,11 +431,11 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		set_light(0)
 	update_appearance()
 
-	active_power_usage = (brightness * 10)
+	active_power_usage = (brightness * LIGHT_DRAW)
 	if(on != on_gs)
 		on_gs = on
 		if(on)
-			static_power_used = brightness * 20 //20W per unit luminosity
+			static_power_used = brightness * LIGHT_DRAW * 2 //defined in power defines
 			addStaticPower(static_power_used, AREA_USAGE_STATIC_LIGHT)
 		else
 			removeStaticPower(static_power_used, AREA_USAGE_STATIC_LIGHT)

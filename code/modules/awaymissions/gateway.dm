@@ -157,8 +157,8 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	density = TRUE
 
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 100
-	active_power_usage = 5000
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_EXTREME
 
 	var/calibrated = TRUE
 	/// Type of instanced gateway destination, needs to be subtype of /datum/gateway_destination/gateway

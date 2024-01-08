@@ -9,8 +9,8 @@
 	icon_state = "autolathe"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 100
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = IDLE_DRAW_MEDIUM
 	circuit = /obj/item/circuitboard/machine/autolathe
 	layer = BELOW_OBJ_LAYER
 

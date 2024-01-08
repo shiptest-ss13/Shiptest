@@ -6,7 +6,7 @@
 	icon_state = "portal_off"
 
 	idle_power_usage = 0
-	active_power_usage = 2000
+	active_power_usage = ACTIVE_DRAW_HIGH
 
 	anchored = FALSE
 	density = TRUE

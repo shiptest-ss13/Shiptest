@@ -17,7 +17,7 @@
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	use_power = IDLE_POWER_USE
-	active_power_usage = 1500
+	active_power_usage = ACTIVE_DRAW_HIGH
 	circuit = /obj/item/circuitboard/machine/bepis
 
 	var/banking_amount = 100

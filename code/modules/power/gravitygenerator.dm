@@ -116,7 +116,7 @@
 /obj/machinery/gravity_generator/main
 	icon_state = "on_8"
 	idle_power_usage = 0
-	active_power_usage = 3000
+	active_power_usage = ACTIVE_DRAW_EXTREME
 	power_channel = AREA_USAGE_ENVIRON
 	sprite_number = 8
 	use_power = IDLE_POWER_USE

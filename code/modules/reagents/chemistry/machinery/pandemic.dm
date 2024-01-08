@@ -9,7 +9,7 @@
 	icon_state = "pandemic0"
 	base_icon_state = "pandemic"
 	use_power = TRUE
-	idle_power_usage = 20
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	resistance_flags = ACID_PROOF
 	circuit = /obj/item/circuitboard/computer/pandemic
 	unique_icon = TRUE

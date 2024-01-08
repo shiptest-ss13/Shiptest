@@ -4,8 +4,8 @@
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "lpad-idle"
 	use_power = TRUE
-	idle_power_usage = 200
-	active_power_usage = 2500
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_EXTREME
 	hud_possible = list(DIAG_LAUNCHPAD_HUD)
 	circuit = /obj/item/circuitboard/machine/launchpad
 	var/icon_teleport = "lpad-beam"

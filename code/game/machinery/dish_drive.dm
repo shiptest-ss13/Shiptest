@@ -5,7 +5,7 @@
 	Or you can just drop your plates on the floor, like civilized folk."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "synthesizer"
-	idle_power_usage = 8 //5 with default parts
+	idle_power_usage = 8 //5 with default parts FIXLATER
 	active_power_usage = 13 //10 with default parts
 	density = FALSE
 	circuit = /obj/item/circuitboard/machine/dish_drive
