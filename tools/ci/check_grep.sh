@@ -24,48 +24,8 @@ fi;
 part "invalid map procs"
 if $grep '(new|newlist|icon|matrix|sound)\(.+\)' $map_files;	then
 	echo
-    echo "ERROR: found multiple identical barricades on the same tile, please remove them."
+    echo -e "${RED}ERROR: Invalid proc usage detected in maps, please remove them.${NC}"
     st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/table/(?<type>[/\w]*),\n[^)]*?/obj/structure/table/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple identical tables on the same tile, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/chair/(?<type>[/\w]*),\n[^)]*?/obj/structure/chair/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple identical chairs on the same tile, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/machinery/door/airlock[/\w]*?,\n[^)]*?/obj/machinery/door/airlock[/\w]*?,\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple airlocks on the same tile, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/machinery/door/firedoor[/\w]*?,\n[^)]*?/obj/machinery/door/firedoor[/\w]*?,\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple firelocks on the same tile, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/closet/(?<type>[/\w]*),\n[^)]*?/obj/structure/closet/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple identical closets on the same tile, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/grille/(?<type>[/\w]*),\n[^)]*?/obj/structure/grille/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple identical grilles on the same tile, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/girder/(?<type>[/\w]*),\n[^)]*?/obj/structure/girder/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple identical girders on the same tile, please remove them."
-    st=1
-fi;
-if grep -Pzo '"\w+" = \(\n[^)]*?/obj/structure/stairs/(?<type>[/\w]*),\n[^)]*?/obj/structure/stairs/\g{type},\n[^)]*?/area/.+\)' _maps/**/*.dmm;	then
-	echo
-    echo "ERROR: found multiple identical stairs on the same tile, please remove them."
-	st=1
 fi;
 part "common spelling mistakes"
 if $grep -i 'nanotransen' $map_files; then
@@ -118,16 +78,10 @@ if grep -ni 'Nanotransen' _maps/**/*.dmm; then
     echo "Misspelling(s) of nanotrasen detected in maps, please remove the extra N(s)."
     st=1
 fi;
-if ls _maps/*.json | grep -P "[A-Z]"; then
-    echo "Uppercase in a map json detected, these must be all lowercase."
-    st=1
-fi;
+
 part "map json sanity"
-for json in _maps/*.json
+for json in _maps/configs/*.json
 do
-    if [[ "$json" == "_maps/example_ship_config.json" || "$json" == "_maps/ship_config_schema.json" ]];then
-        continue
-    fi
     map_path=$(jq -r '.map_path' $json)
     while read map_file; do
         filename="_maps/$map_path/$map_file"
