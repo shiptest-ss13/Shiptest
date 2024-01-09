@@ -319,15 +319,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/gamble)
-"fP" = (
-/obj/structure/grille,
-/obj/structure/grille,
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor{
-	id = 32
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/crazylab/gamble)
 "fY" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/crazylab/gamble)
@@ -508,7 +499,6 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/space/has_grav/crazylab/crew)
 "jl" = (
-/obj/machinery/door/airlock/hatch,
 /obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
@@ -652,16 +642,6 @@
 "mm" = (
 /obj/machinery/smartfridge/chemistry,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/space/has_grav/crazylab/chem)
-"mt" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/obj/structure/grille,
-/obj/machinery/door/poddoor{
-	id = 98;
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/crazylab/chem)
 "mu" = (
 /obj/effect/turf_decal/techfloor/corner{
@@ -2328,6 +2308,14 @@
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_y = 8
 	},
+/obj/item/clothing/head/hopcap{
+	desc = "It's good to be the king.";
+	icon = 'icons/obj/clothing/hats.dmi';
+	mob_overlay_icon = 'icons/mob/clothing/head.dmi';
+	name = "captains's cap";
+	pixel_x = 5;
+	pixel_y = -4
+	},
 /turf/open/floor/carpet/red,
 /area/ruin/space/has_grav/crazylab/bar)
 "GS" = (
@@ -3253,16 +3241,6 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/cable{
 	icon_state = "1-4"
-	},
-/turf/open/space,
-/area/ruin/space/has_grav/crazylab/bomb)
-"Sa" = (
-/obj/structure/lattice,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /turf/open/space,
 /area/ruin/space/has_grav/crazylab/bomb)
@@ -4376,7 +4354,7 @@ GV
 GV
 GV
 bQ
-fP
+fK
 ih
 ky
 mT
@@ -5328,7 +5306,7 @@ GV
 GV
 ao
 ao
-mt
+cE
 cE
 cE
 cE
@@ -5798,7 +5776,7 @@ at
 GV
 GV
 ao
-Sa
+Ow
 ao
 GV
 GV
