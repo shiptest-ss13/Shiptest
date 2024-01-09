@@ -113,7 +113,7 @@
 	name = "huge air scrubber"
 	icon_state = "scrubber:0"
 	anchored = TRUE
-	idle_power_usage = ACTIVE_DRAW_MINIMAL
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_MEDIUM
 
 	overpressure_m = 200

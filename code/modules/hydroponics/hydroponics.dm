@@ -6,7 +6,7 @@
 	pixel_z = 1
 	obj_flags = CAN_BE_HIT | UNIQUE_RENAME
 	circuit = /obj/item/circuitboard/machine/hydroponics
-	idle_power_usage = 0 //FIXLATER
+	idle_power_usage = 0
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
 	var/nutridrain = 1      // How many units of nutrient will be drained in the tray

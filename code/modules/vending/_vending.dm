@@ -47,6 +47,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	icon_state = "generic"
 	layer = BELOW_OBJ_LAYER
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"

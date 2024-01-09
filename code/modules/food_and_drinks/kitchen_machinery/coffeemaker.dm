@@ -6,6 +6,7 @@
 	icon = 'icons/obj/machines/coffeemaker.dmi'
 	icon_state = "coffeemaker_nopot_nocart"
 	base_icon_state = "coffeemaker"
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/coffeemaker
 	var/obj/item/reagent_containers/food/drinks/bottle/coffeepot/coffeepot = null

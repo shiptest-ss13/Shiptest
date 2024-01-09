@@ -403,6 +403,7 @@
 		uv = TRUE
 		locked = TRUE
 		update_appearance()
+		use_power(100)
 		if(occupant)
 			if(uv_super)
 				mob_occupant.adjustFireLoss(rand(20, 36))

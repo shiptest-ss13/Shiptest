@@ -7,6 +7,8 @@
 	icon = 'icons/obj/machines/orm.dmi' // WS Edit - Directional ORM Sprites
 	icon_state = "ore_redemption"
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_MEDIUM
 	input_dir = NORTH
 	output_dir = SOUTH
 	layer = BELOW_OBJ_LAYER
