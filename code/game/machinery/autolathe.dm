@@ -10,7 +10,7 @@
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_LOW
-	active_power_usage = IDLE_DRAW_MEDIUM
+	active_power_usage = ACTIVE_DRAW_HIGH
 	circuit = /obj/item/circuitboard/machine/autolathe
 	layer = BELOW_OBJ_LAYER
 
@@ -223,7 +223,7 @@
 			for(var/MAT in being_built.materials)
 				total_amount += being_built.materials[MAT]
 
-			var/power = max(active_power_usage, (total_amount)*multiplier/5) //Change this to use all materials
+			var/power = max(active_power_usage, total_amount) //Change this to use all materials
 
 			var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 
@@ -326,7 +326,7 @@
 	else
 		flick("autolathe_o", src) //plays metal insertion animation
 
-		use_power(min(1000, amount_inserted / 100))
+		use_power(min(active_power_usage, amount_inserted))
 
 /obj/machinery/autolathe/proc/make_item(power, list/materials_used, list/picked_materials, multiplier, coeff, is_stack, mob/user)
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)

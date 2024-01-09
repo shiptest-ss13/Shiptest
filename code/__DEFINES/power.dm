@@ -17,11 +17,11 @@
 
 #define IDLE_DRAW_MINIMAL 50 // 20x = 1kw, used for small things and computers on stand-by
 #define IDLE_DRAW_LOW 200 //5x = 1kw, used for always-active computers
-#define IDLE_DRAW_MEDIUM 500 //2x = 1kq
+#define IDLE_DRAW_MEDIUM 500 //2x = 1kw
 #define IDLE_DRAW_HIGH 1000 //1kw
 
 #define ACTIVE_DRAW_MINIMAL 200 //5x = 1kw
 #define ACTIVE_DRAW_LOW 500 //2x = 1kw
-#define ACTIVE_DRAW_MEDIUM 1000 //microwaves and lathes currently use this
+#define ACTIVE_DRAW_MEDIUM 1000 //microwaves use this
 #define ACTIVE_DRAW_HIGH 2000
 #define ACTIVE_DRAW_EXTREME 5000 //highest this value should be in most cases
