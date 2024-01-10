@@ -84,8 +84,8 @@
 	name = "Shotgun Slug Crate"
 	desc = "Contains two boxes of slug shells for use in lethal persuasion."
 	cost = 2000
-	contains = list(/obj/item/storage/box/slugshot,
-					/obj/item/storage/box/slugshot)
+	contains = list(/obj/item/ammo_box/a12g/slug,
+					/obj/item/ammo_box/a12g/slug)
 
 /*
 		.38 ammo

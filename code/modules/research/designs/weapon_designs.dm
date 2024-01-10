@@ -766,6 +766,6 @@
 	id = "illestren"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 85000, /datum/material/glass = 1500, /datum/material/silver = 1500)
-	build_path = /obj/item/gun/ballistic/rifle/illestren
+	build_path = /obj/item/gun/ballistic/rifle/illestren/factory
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
