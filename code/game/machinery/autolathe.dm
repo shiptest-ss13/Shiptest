@@ -11,6 +11,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_LOW
 	active_power_usage = ACTIVE_DRAW_HIGH
+	power_channel = AREA_USAGE_EQUIP
 	circuit = /obj/item/circuitboard/machine/autolathe
 	layer = BELOW_OBJ_LAYER
 
