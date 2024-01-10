@@ -5614,7 +5614,7 @@
 /area/ship/security/armory)
 "By" = (
 /obj/structure/guncase,
-/obj/item/gun/ballistic/automatic/smg/thompson{
+/obj/item/gun/ballistic/automatic/smg/mini_uzi{
 	pixel_y = -3
 	},
 /obj/effect/turf_decal/techfloor{
@@ -8998,11 +8998,10 @@
 /obj/item/storage/box/lethalshot{
 	pixel_y = 2;
 	pixel_x = -4
-	},
-/obj/item/ammo_box/magazine/smgm45/drum{
+	}{
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/uzim9mm,
 /obj/item/ammo_box/a357{
 	pixel_y = -3
 	},
@@ -9010,9 +9009,9 @@
 	pixel_y = -5;
 	pixel_x = -1
 	},
-/obj/item/ammo_box/a762,
-/obj/item/ammo_box/a762,
-/obj/item/storage/toolbox/ammo/a762{
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/storage/toolbox/ammo/a850r{
 	pixel_y = -6;
 	pixel_x = 5
 	},
