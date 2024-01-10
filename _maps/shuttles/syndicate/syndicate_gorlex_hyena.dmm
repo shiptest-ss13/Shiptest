@@ -899,12 +899,6 @@
 	},
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/industrial/outline,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
 /obj/item/clothing/shoes/workboots/mining,
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/gloves/explorer,
@@ -914,8 +908,6 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/soft/grey,
-/obj/machinery/light/small/directional/north,
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "pu" = (
@@ -2376,9 +2368,7 @@
 	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dheight = 4;
 	dir = 8;
-	height = 18;
 	launch_status = 0;
 	name = "mining ship";
 	preferred_direction = 4
