@@ -82,6 +82,7 @@
 	internal_magazine = FALSE
 	mag_type = /obj/item/ammo_box/magazine/illestren_a850r
 	empty_autoeject = TRUE
+	eject_sound_vary = FALSE
 	can_be_sawn_off = TRUE
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 

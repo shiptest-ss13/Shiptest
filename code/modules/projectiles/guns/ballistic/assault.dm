@@ -316,7 +316,6 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
-	eject_sound_vary = FALSE
 
 	spread_unwielded = 25
 	recoil = 0
