@@ -91,18 +91,6 @@
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These iceblox bullets contain a cryogenic payload that chills targets."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
-// 8x50mmR Stripper Clip (Illestren Hunting Rifle)
-
-/obj/item/ammo_box/a850r
-	name = "stripper clip (8x50mmR)"
-	desc = "A 5-round stripper clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "858"
-	ammo_type = /obj/item/ammo_casing/a8_50r
-	max_ammo = 5
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
-
 // 8x58mm Stripper Clip (SSG-669C)
 
 /obj/item/ammo_box/a858
@@ -113,6 +101,21 @@
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	instant_load = TRUE
+
+// .308 Stripper Clip (Vickland)
+
+/obj/item/ammo_box/vickland_a308
+	name = "stripper clip  (.308)"
+	desc = "A 5-round stripper clip for the Vickland Battle Rifle. The Vickland itself has a 10 round capacity, so keep in mind two of these are needed to fully reload it. These rounds do good damage with significant armor penetration."
+	icon_state = "308"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE
+
+
+// .300 Magnum Stripper Clip (Scout)
 
 /obj/item/ammo_box/a300
 	name = "stripper clip (.300 Magnum)"

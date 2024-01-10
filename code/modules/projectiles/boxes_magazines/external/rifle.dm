@@ -129,11 +129,13 @@
 	. = ..()
 	icon_state = "e40_mag-[!!ammo_count()]"
 
-/obj/item/ammo_box/magazine/vickland_a308 //this is a magazine codewise do nothing breaks
-	name = "en bloc clip (.308)"
-	desc = "A 8-round en bloc clip for the Vickland Battle Rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "enbloc_303"
-	ammo_type = /obj/item/ammo_casing/a308
-	max_ammo = 8
+// 8x50mmR En Bloc Clip (Illestren Hunting Rifle)
+
+/obj/item/ammo_box/magazine/illestren_a850r //this is a magazine codewise do nothing breaks
+	name = "en bloc clip (8x50mmR)"
+	desc = "A 5-round en bloc clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
+	icon_state = "enbloc_858"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY

@@ -299,25 +299,23 @@
 
 //techinically a battle rifle, i'm putting it here for organisation sake
 
-/obj/item/gun/ballistic/automatic/vickland
+/obj/item/gun/ballistic/automatic/vickland //weapon designed by Apogee-dev
 	name = "\improper Vickland"
 	desc = "The pride of the Saint-Roumain Militia, the Vickland is a semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. Its higher cost makes it uncommon even in SRM service. Chambered in .308."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
-	icon_state = "vickland" //weapon designer: @Apogee-dev
+	icon_state = "vickland"
 	item_state = "vickland"
-	empty_autoeject = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/vickland_a308
+	internal_magazine = TRUE
+	mag_type = /obj/item/ammo_box/magazine/internal/vickland
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 	burst_size = 0
 	actions_types = list()
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
 	eject_sound_vary = FALSE
 
 	spread_unwielded = 25

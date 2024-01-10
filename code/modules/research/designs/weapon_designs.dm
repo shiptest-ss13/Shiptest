@@ -746,7 +746,7 @@
 	id = "stripper762"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000)
-	build_path = /obj/item/ammo_box/a850r
+	build_path = /obj/item/ammo_box/magazine/illestren_a850r
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
@@ -766,6 +766,6 @@
 	id = "illestren"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 85000, /datum/material/glass = 1500, /datum/material/silver = 1500)
-	build_path = /obj/item/gun/ballistic/rifle/boltaction
+	build_path = /obj/item/gun/ballistic/rifle/illestren
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS

@@ -92,7 +92,7 @@
 */
 
 /datum/supply_pack/ammo/winchester_ammo
-	name = "Winchester and Detective Special .38 Ammo Boxes"
+	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
 	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
 	cost = 1000
 	contains = list(/obj/item/ammo_box/c38_box,
@@ -183,8 +183,8 @@
 /datum/supply_pack/ammo/a762_ammo
 	name = "8x50mmR Stripper Clip Crate"
 	desc = "Contains four 8x50mmR stripper clips for rifles like the illestren rifle, each containing five rounds."
-	contains = list(/obj/item/ammo_box/a850r,
-					/obj/item/ammo_box/a850r,
-					/obj/item/ammo_box/a850r,
-					/obj/item/ammo_box/a850r)
+	contains = list(/obj/item/ammo_box/magazine/illestren_a850r,
+					/obj/item/ammo_box/magazine/illestren_a850r,
+					/obj/item/ammo_box/magazine/illestren_a850r,
+					/obj/item/ammo_box/magazine/illestren_a850r)
 	cost = 1000

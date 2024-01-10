@@ -32,3 +32,10 @@
 	ammo_type = /obj/item/ammo_casing/aac_300blk
 	caliber = ".300 BLK"
 	max_ammo = 5
+
+/obj/item/ammo_box/magazine/internal/vickland
+	name = "Vickland battle rifle internal magazine"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 10
+	instant_load = TRUE

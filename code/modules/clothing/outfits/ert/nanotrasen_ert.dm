@@ -245,10 +245,10 @@
 	ears = /obj/item/radio/headset/headset_cent
 	glasses = /obj/item/clothing/glasses/sunglasses
 	belt = /obj/item/melee/classic_baton
-	r_hand = /obj/item/gun/ballistic/rifle/boltaction
+	r_hand = /obj/item/gun/ballistic/rifle/illestren
 	back = /obj/item/storage/backpack/satchel
-	l_pocket = /obj/item/ammo_box/a850r
-	r_pocket = /obj/item/ammo_box/a850r
+	l_pocket = /obj/item/ammo_box/magazine/illestren_a850r
+	r_pocket = /obj/item/ammo_box/magazine/illestren_a850r
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
 /datum/outfit/centcom/centcom_intern/unarmed
@@ -273,7 +273,7 @@
 	name = "CentCom Head Intern"
 	belt = /obj/item/melee/baton/loaded
 	suit = /obj/item/clothing/suit/armor/vest
-	suit_store = /obj/item/gun/ballistic/rifle/boltaction
+	suit_store = /obj/item/gun/ballistic/rifle/illestren
 	r_hand = /obj/item/megaphone
 	head = /obj/item/clothing/head/intern
 

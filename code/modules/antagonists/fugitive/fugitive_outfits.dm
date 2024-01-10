@@ -87,7 +87,7 @@
 /datum/outfit/frontier/hunter
 	name = "Frontiersman Corpse (Hunter)"
 	ears = /obj/item/radio/headset
-	r_hand = /obj/item/gun/ballistic/rifle/boltaction
+	r_hand = /obj/item/gun/ballistic/rifle/illestren
 
 /datum/outfit/frontier/hunter/pre_equip(mob/living/carbon/human/H)
 	if(prob(50))

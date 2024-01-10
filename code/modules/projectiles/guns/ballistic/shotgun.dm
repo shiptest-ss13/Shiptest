@@ -583,9 +583,12 @@
 
 	spread = -5
 	spread_unwielded = 7
+
 	recoil = 0
 	recoil_unwielded = 2
+
 	wield_slowdown = 0.5
+	wield_delay = 0.65 SECONDS
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/rack(mob/user = null)
 	. = ..()

@@ -4,7 +4,7 @@
 	head = /obj/item/clothing/head/beret/sec/frontier
 	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
-	suit_store = /obj/item/gun/ballistic/rifle/boltaction
+	suit_store = /obj/item/gun/ballistic/rifle/illestren
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
@@ -14,7 +14,7 @@
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack_contents = list(/obj/item/ammo_box/a850r=5, /obj/item/grenade/frag=1)
+	backpack_contents = list(/obj/item/ammo_box/magazine/illestren_a850r=5, /obj/item/grenade/frag=1)
 
 	id_role = "Grunt"
 

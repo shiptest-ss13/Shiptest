@@ -222,7 +222,7 @@
 	update_appearance()
 	return
 
-/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designer: @Apogee-dev
+/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
 	name = "HP Firestorm"
 	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
 	icon = 'icons/obj/guns/48x32guns.dmi'

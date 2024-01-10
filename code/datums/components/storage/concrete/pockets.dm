@@ -86,7 +86,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/vodka,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov,
 		/obj/item/reagent_containers/food/drinks/drinkingglass,
-		/obj/item/ammo_box/a850r
+		/obj/item/ammo_box/magazine/illestren_a850r
 	))
 
 /datum/component/storage/concrete/pockets/holster
