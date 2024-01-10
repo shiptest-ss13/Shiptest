@@ -301,7 +301,7 @@
 
 /obj/item/gun/ballistic/automatic/vickland //weapon designed by Apogee-dev
 	name = "\improper Vickland"
-	desc = "The pride of the Saint-Roumain Militia, the Vickland is a semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. Its higher cost makes it uncommon even in SRM service. Chambered in .308."
+	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 	icon_state = "vickland"

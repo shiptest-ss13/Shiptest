@@ -256,20 +256,9 @@
 	mag_type = /obj/item/ammo_box/magazine/disposable
 	custom_materials = list(/datum/material/plastic=2000)
 	can_suppress = FALSE
-	var/random_icon = TRUE
 	manufacturer = MANUFACTURER_NONE
-
 	has_safety = FALSE //thing barely costs anything, why would it have a safety?
 	safety = FALSE
-
-/obj/item/gun/ballistic/automatic/pistol/disposable/Initialize()
-	. = ..()
-	var/picked = pick("none","red","purple","yellow","green","dark")
-	if(random_icon)
-		if(picked == "none")
-			return
-		icon_state = "disposable_[picked]"
-		current_skin = "disposable_[picked]"
 
 /obj/item/gun/ballistic/automatic/pistol/disposable/eject_magazine(mob/user, display_message = TRUE)
 	to_chat(user, "<span class='warning'>Theres no magazine to eject!</span>")
@@ -283,7 +272,6 @@
 	name = "pizza disposable gun"
 	desc = "How horrible. Whoever you point at with this won't be very cheesed to meet you." //this is a warcrime against italians // IF YOU'RE GOING TO DO US DIRTY SPELL IT RIGHT
 	icon_state = "disposable_pizza"
-	random_icon = FALSE
 	custom_materials = list(/datum/material/pizza=2000)
 
 //not technically a pistol but whatever
