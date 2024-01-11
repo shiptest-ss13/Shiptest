@@ -2867,9 +2867,6 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /obj/effect/turf_decal/siding/wood,
@@ -4372,13 +4369,10 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
-	dwidth = 12;
-	height = 17;
 	launch_status = 0;
 	name = "chapel ship";
 	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
+	preferred_direction = 4
 	},
 /turf/open/floor/plating,
 /area/ship/crew/canteen)
@@ -5658,9 +5652,6 @@
 /turf/open/floor/wood,
 /area/ship/hallway/fore)
 "Xg" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},

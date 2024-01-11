@@ -67,7 +67,7 @@
 		if(back_storage)
 			back_storage.handle_item_insertion(loadout_dumper, TRUE)
 		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
-			to_chat("Unable to place loadout box.")
+			to_chat(spawnee, "Unable to place loadout box.")
 
 /datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
 	return FALSE
