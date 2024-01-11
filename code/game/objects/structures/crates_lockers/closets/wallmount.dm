@@ -80,6 +80,7 @@
 	density = TRUE
 	can_be_unanchored = FALSE
 	icon = 'icons/obj/wallcloset.dmi'
+	icon_state = "generic_wall"
 	icon_door = "white_wall"
 
 /obj/structure/closet/wardrobe/pjs/wall
