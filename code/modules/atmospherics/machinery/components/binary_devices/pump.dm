@@ -18,6 +18,10 @@
 	can_unwrench = TRUE
 	shift_underlay_only = FALSE
 
+	use_power = IDLE_POWER_USE
+	idle_power_usage = 0
+	active_power_usage = ACTIVE_DRAW_MINIMAL
+
 	var/target_pressure = ONE_ATMOSPHERE
 
 	var/frequency = 0
@@ -30,6 +34,7 @@
 /obj/machinery/atmospherics/components/binary/pump/CtrlClick(mob/user)
 	if(can_interact(user))
 		on = !on
+		use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 		update_appearance()
 	return ..()
@@ -110,6 +115,7 @@
 	switch(action)
 		if("power")
 			on = !on
+			use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("pressure")

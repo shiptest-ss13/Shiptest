@@ -9,7 +9,7 @@
 	layer = BELOW_OBJ_LAYER
 	use_power = IDLE_POWER_USE
 	idle_power_usage = IDLE_DRAW_MINIMAL
-	active_power_usage = ACTIVE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	circuit = /obj/item/circuitboard/machine/reagentgrinder
 	pass_flags = PASSTABLE
 	resistance_flags = ACID_PROOF
@@ -265,6 +265,7 @@
 		return
 	use_power = ACTIVE_POWER_USE
 	operate_for(50, juicing = TRUE)
+	use_power = IDLE_POWER_USE
 	for(var/obj/item/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 			break
@@ -272,7 +273,6 @@
 		check_trash(I)
 		if(I.juice_results)
 			juice_item(I)
-	use_power = IDLE_POWER_USE
 
 /obj/machinery/reagentgrinder/proc/juice_item(obj/item/I) //Juicing results can be found in respective object definitions
 	if(I.on_juice(src) == -1)
@@ -286,6 +286,7 @@
 		return
 	use_power = ACTIVE_POWER_USE
 	operate_for(60)
+	use_power = IDLE_POWER_USE
 	for(var/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 			break
@@ -293,7 +294,6 @@
 		check_trash(I)
 		if(I.grind_results)
 			grind_item(i, user)
-	use_power = IDLE_POWER_USE
 
 /obj/machinery/reagentgrinder/proc/grind_item(obj/item/I, mob/user) //Grind results can be found in respective object definitions
 	if(I.on_grind(src) == -1) //Call on_grind() to change amount as needed, and stop grinding the item if it returns -1
@@ -316,8 +316,8 @@
 		return
 	use_power = ACTIVE_POWER_USE
 	operate_for(50, juicing = TRUE)
-	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/reagentgrinder, mix_complete)), 50)
 	use_power = IDLE_POWER_USE
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/reagentgrinder, mix_complete)), 50)
 
 /obj/machinery/reagentgrinder/proc/mix_complete()
 	if(beaker?.reagents.total_volume)
