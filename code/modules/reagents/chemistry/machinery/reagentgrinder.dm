@@ -261,9 +261,9 @@
 	operating = FALSE
 
 /obj/machinery/reagentgrinder/proc/juice()
-	power_change()
 	if(!beaker || machine_stat & (NOPOWER|BROKEN) || beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 		return
+	use_power = ACTIVE_POWER_USE
 	operate_for(50, juicing = TRUE)
 	for(var/obj/item/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
@@ -272,6 +272,7 @@
 		check_trash(I)
 		if(I.juice_results)
 			juice_item(I)
+	use_power = IDLE_POWER_USE
 
 /obj/machinery/reagentgrinder/proc/juice_item(obj/item/I) //Juicing results can be found in respective object definitions
 	if(I.on_juice(src) == -1)
@@ -281,9 +282,9 @@
 	remove_object(I)
 
 /obj/machinery/reagentgrinder/proc/grind(mob/user)
-	power_change()
 	if(!beaker || machine_stat & (NOPOWER|BROKEN) || beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 		return
+	use_power = ACTIVE_POWER_USE
 	operate_for(60)
 	for(var/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
@@ -292,6 +293,7 @@
 		check_trash(I)
 		if(I.grind_results)
 			grind_item(i, user)
+	use_power = IDLE_POWER_USE
 
 /obj/machinery/reagentgrinder/proc/grind_item(obj/item/I, mob/user) //Grind results can be found in respective object definitions
 	if(I.on_grind(src) == -1) //Call on_grind() to change amount as needed, and stop grinding the item if it returns -1
@@ -310,11 +312,12 @@
 
 /obj/machinery/reagentgrinder/proc/mix(mob/user)
 	//For butter and other things that would change upon shaking or mixing
-	power_change()
 	if(!beaker || machine_stat & (NOPOWER|BROKEN))
 		return
+	use_power = ACTIVE_POWER_USE
 	operate_for(50, juicing = TRUE)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/reagentgrinder, mix_complete)), 50)
+	use_power = IDLE_POWER_USE
 
 /obj/machinery/reagentgrinder/proc/mix_complete()
 	if(beaker?.reagents.total_volume)
