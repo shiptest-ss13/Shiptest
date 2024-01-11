@@ -21,7 +21,7 @@ Class Variables:
 	power_channel (num)
 		What channel to draw from when drawing power for power mode
 		Possible Values:
-			AREA_USAGE_EQUIP:0 -- Equipment Channel
+			AREA_USAGE_EQUIP:1 -- Equipment Channel
 			AREA_USAGE_LIGHT:2 -- Lighting Channel
 			AREA_USAGE_ENVIRON:3 -- Environment Channel
 
@@ -180,8 +180,10 @@ Class Procs:
 /obj/machinery/proc/locate_machinery()
 	return
 
-/obj/machinery/process()//If you dont use process or power why are you here
-	return PROCESS_KILL
+/obj/machinery/process()
+	if(!use_power) //machines without process() set would bug and not draw idle, this checks if they draw power
+		return PROCESS_KILL
+	return
 
 /obj/machinery/proc/process_atmos()//If you dont use process why are you here
 	return PROCESS_KILL
