@@ -5,6 +5,7 @@
 /obj/machinery/autolathe
 	name = "autolathe"
 	desc = "It produces items using metal and glass and maybe other materials, can take design disks."
+	icon = 'icons/obj/machines/autolathe.dmi'
 	icon_state = "autolathe"
 	density = TRUE
 	use_power = IDLE_POWER_USE
