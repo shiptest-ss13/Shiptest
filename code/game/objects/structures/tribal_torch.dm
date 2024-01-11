@@ -24,7 +24,7 @@
 	if(!burning)
 		user.visible_message("<span class='notice'>[user] starts to pull [src] free from the ground....</span>", "<span class='notice'>You start to pull [src] free from the ground...</span>")
 		if(do_after(user, 20, progress = 1, target = src))
-			to_chat("<span class='notice'>You pull [src] free from the ground.</span>")
+			to_chat(user, "<span class='notice'>You pull [src] free from the ground.</span>")
 			var/torch = new /obj/item/candle/tribal_torch
 			user.put_in_hands(torch)
 			qdel(src)
