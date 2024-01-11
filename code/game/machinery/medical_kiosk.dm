@@ -18,6 +18,8 @@
 	base_icon_state = "kiosk"
 	layer = ABOVE_MOB_LAYER
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	circuit = /obj/item/circuitboard/machine/medical_kiosk
 	var/obj/item/scanner_wand
 	var/default_price = 15          //I'm defaulting to a low price on this, but in the future I wouldn't have an issue making it more or less expensive.

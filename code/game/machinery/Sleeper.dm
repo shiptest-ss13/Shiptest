@@ -11,6 +11,8 @@
 	icon_state = "sleeper"
 	base_icon_state = "sleeper"
 	density = FALSE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	state_open = TRUE
 	circuit = /obj/item/circuitboard/machine/sleeper
 	clicksound = 'sound/machines/pda_button1.ogg'

@@ -2,6 +2,8 @@
 	name = "organ harvester"
 	desc = "An advanced machine used for harvesting organs and limbs from the deceased."
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	icon = 'icons/obj/machines/harvester.dmi'
 	icon_state = "harvester"
 	base_icon_state = "harvester"
