@@ -148,6 +148,7 @@
 /datum/outfit/generic
 	name = "Generic (Legion)"
 	box = /obj/item/storage/box/survival
+	random = TRUE
 
 /datum/outfit/generic/miner/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
