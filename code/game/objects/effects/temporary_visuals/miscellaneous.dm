@@ -115,17 +115,14 @@
 /obj/effect/temp_visual/dir_setting/wraith
 	name = "shadow"
 	icon = 'icons/mob/mob.dmi'
-	icon_state = "phase_shift2"
+	icon_state = "revenant_idle"
 	duration = 6
 
 /obj/effect/temp_visual/dir_setting/wraith/angelic
-	icon_state = "phase_shift2_angelic"
 
 /obj/effect/temp_visual/dir_setting/wraith/out
-	icon_state = "phase_shift"
 
 /obj/effect/temp_visual/dir_setting/wraith/out/angelic
-	icon_state = "phase_shift_angelic"
 
 /obj/effect/temp_visual/dir_setting/tailsweep
 	icon_state = "tailsweep"
@@ -174,7 +171,7 @@
 	name = "\improper Bluespace energy wave"
 	desc = "A massive, rippling wave of bluepace energy, all rapidly exhausting itself the moment it leaves the concentrated beam of light."
 	icon = 'icons/effects/beam_splash.dmi'
-	icon_state = "beam_splash_l"
+	icon_state = "beam_splash_e"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_y = -16
 	duration = 50
