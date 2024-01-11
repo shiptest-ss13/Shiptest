@@ -180,10 +180,8 @@ Class Procs:
 /obj/machinery/proc/locate_machinery()
 	return
 
-/obj/machinery/process()
-	if(!use_power) //machines without process() set would bug and not draw idle, this checks if they draw power
-		return PROCESS_KILL
-	return
+/obj/machinery/process()//If you dont use process or power why are you here
+	return PROCESS_KILL
 
 /obj/machinery/proc/process_atmos()//If you dont use process why are you here
 	return PROCESS_KILL
