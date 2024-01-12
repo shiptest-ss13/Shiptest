@@ -153,7 +153,10 @@
 	switch(action)
 		if("power")
 			on = !on
-			use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
+			if(on)
+				set_active_power()
+			else
+				set_idle_power()
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 		if("target")
@@ -183,6 +186,10 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE))
 		return
 	on = !on
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_appearance()
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)

@@ -137,8 +137,10 @@
 	if((!anchored && !movable) || !is_operational)
 		on = FALSE
 		update_appearance()
-	use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
-	if(!on)
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 		return
 
 	..()

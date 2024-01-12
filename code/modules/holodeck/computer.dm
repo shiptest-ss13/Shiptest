@@ -205,7 +205,10 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 
 	spawning_simulation = TRUE
 	active = (map_id != offline_program)
-	use_power = active + IDLE_POWER_USE
+	if(active)
+		set_active_power()
+	else
+		set_idle_power()
 	program = map_id
 
 	//clear the items from the previous program

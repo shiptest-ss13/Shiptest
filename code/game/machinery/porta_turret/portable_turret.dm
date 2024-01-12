@@ -794,7 +794,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	installation = null
 	max_integrity = 300
 	always_up = 1
-	set_active_power()
+	use_power = ACTIVE_POWER_USE
 	active_power_usage = 300
 	has_cover = 0
 	scan_range = 9

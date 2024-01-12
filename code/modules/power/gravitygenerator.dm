@@ -287,7 +287,10 @@
 /obj/machinery/gravity_generator/main/proc/set_state(new_state)
 	charging_state = POWER_IDLE
 	on = new_state
-	use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
+	if(on)
+		set_active_power()
+	else
+		set_idle_power()
 	// Sound the alert if gravity was just enabled or disabled.
 	var/alert = FALSE
 	if(SSticker.IsRoundInProgress())
