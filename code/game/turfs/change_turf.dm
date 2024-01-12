@@ -168,8 +168,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 /turf/open/ChangeTurf(path, list/new_baseturfs, flags) //Resist the temptation to make this default to keeping air.
 	//don't
 	if(!SSair.initialized)
-		. = ..()
-		return
+		return ..()
 	if ((flags & CHANGETURF_INHERIT_AIR) && ispath(path, /turf/open) && air)
 		var/datum/gas_mixture/stashed_air = new()
 		stashed_air.copy_from(air)
@@ -178,25 +177,23 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(stashed_air)
 			return
 		var/turf/open/newTurf = .
-		var/turf_fire_ref
 		if(turf_fire)
 			if(isgroundlessturf(newTurf))
 				QDEL_NULL(turf_fire)
 			else
-				turf_fire_ref = turf_fire
-		newTurf.turf_fire = turf_fire_ref
+				newTurf.turf_fire = turf_fire
 		newTurf.air.copy_from(stashed_air)
-		update_air_ref(planetary_atmos ? 1 : 2)
+		update_air_ref(planetary_atmos ? AIR_REF_PLANETARY_TURF : AIR_REF_OPEN_TURF)
 		QDEL_NULL(stashed_air)
 	else
 		if(turf_fire)
 			QDEL_NULL(turf_fire)
 		if(ispath(path, /turf/open))
 			. = ..()
-			if(!istype(air,/datum/gas_mixture))
+			if(!istype(air, /datum/gas_mixture))
 				Initalize_Atmos(0)
 		else
-			update_air_ref(-1)
+			update_air_ref(AIR_REF_CLOSED_TURF)
 			. = ..()
 
 
