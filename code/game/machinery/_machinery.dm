@@ -102,6 +102,7 @@ Class Procs:
 		//0 = dont run the auto
 		//1 = run auto, use idle
 		//2 = run auto, use active
+	var/use_static_power = NO_POWER_USE
 	var/idle_power_usage = 0
 	var/active_power_usage = 0
 	var/power_channel = AREA_USAGE_EQUIP
@@ -151,7 +152,11 @@ Class Procs:
 
 	if(occupant_typecache)
 		occupant_typecache = typecacheof(occupant_typecache)
-
+	switch(use_power)
+		if(IDLE_POWER_USE)
+			set_idle_power()
+		if(ACTIVE_POWER_USE)
+			set_active_power()
 	return INITIALIZE_HINT_LATELOAD
 
 /// Helper proc for telling a machine to start processing with the subsystem type that is located in its `subsystem_type` var.
@@ -175,6 +180,7 @@ Class Procs:
 	dropContents()
 	QDEL_NULL(circuit)
 	QDEL_LIST(component_parts)
+	set_no_power()
 	return ..()
 
 /obj/machinery/proc/locate_machinery()
@@ -616,6 +622,7 @@ Class Procs:
 
 //called on deconstruction before the final deletion
 /obj/machinery/proc/on_deconstruction()
+	set_no_power()
 	return
 
 /obj/machinery/proc/can_be_overridden()
@@ -651,3 +658,24 @@ Class Procs:
 		else if(clicksound)
 			playsound(src, clicksound, clickvol)
 	return
+
+/obj/machinery/powertest
+	name = "powertest"
+	desc = "test."
+	icon = 'icons/obj/machines/autolathe.dmi'
+	icon_state = "autolathe"
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_HIGH
+	power_channel = AREA_USAGE_EQUIP
+	var/on = FALSE
+
+/obj/machinery/powertest/CtrlClick(mob/user)
+	if(can_interact(user))
+		on = !on
+		to_chat(usr, "<span class=\"alert\">[src] has changed setting!</span>")
+		if(on)
+			set_active_power()
+		else
+			set_idle_power()
+	return ..()

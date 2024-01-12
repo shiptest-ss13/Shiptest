@@ -122,7 +122,7 @@
 	if(anchorvalue)
 		set_is_operational(TRUE)
 		START_PROCESSING(SSmachines, src)
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 	else
 		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)

@@ -753,14 +753,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 		visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
 		playsound(src, 'sound/machines/terminal_off.ogg', 40)
 		heating_current_mode = "Idle"
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		return
 
 	if(wanted_mode == "Heat" & heating_current_mode == "Idle")
 		visible_message("<span class='notice'>The air alarm makes a quiet click as it starts heating the area</span>")
 		playsound(src, 'sound/machines/terminal_on.ogg', 40)
 		heating_current_mode = "Heat"
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 
 	if(heating_current_mode == "Heat")
 		var/temperature = environment.return_temperature()

@@ -50,11 +50,11 @@
 	if (new_charging)
 		START_PROCESSING(SSmachines, src)
 		finished_recharging = FALSE
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 		using_power = TRUE
 		update_appearance()
 	else
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		using_power = FALSE
 		update_appearance()
 

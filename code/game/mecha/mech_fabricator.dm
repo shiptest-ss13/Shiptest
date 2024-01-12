@@ -196,10 +196,10 @@
 	rmat.silo_log(src, "built", -1, "[D.name]", res_coef)
 
 	add_overlay("fab-active")
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	updateUsrDialog()
 	sleep(get_construction_time_w_coeff(D))
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	cut_overlay("fab-active")
 	desc = initial(desc)
 

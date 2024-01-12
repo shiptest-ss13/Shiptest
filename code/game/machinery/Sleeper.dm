@@ -102,7 +102,7 @@
 	playsound(src, 'sound/machines/synth_yes.ogg', 50, TRUE, frequency = rand(5120, 8800))
 	target.apply_status_effect(STATUS_EFFECT_STASIS, STASIS_MACHINE_EFFECT)
 	target.ExtinguishMob()
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 
 /obj/machinery/sleeper/proc/thaw_them(mob/living/target)
 	if(IS_IN_STASIS(target))
@@ -111,7 +111,7 @@
 
 /obj/machinery/sleeper/process()
 	if(!occupant || !isliving(occupant))
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		return
 	var/mob/living/L_occupant = occupant
 	if(stasis_running())

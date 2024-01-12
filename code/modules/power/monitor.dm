@@ -49,10 +49,10 @@
 
 /obj/machinery/computer/monitor/process()
 	if(!get_powernet())
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		search()
 	else
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 		record()
 
 /obj/machinery/computer/monitor/proc/search() //keep in sync with /datum/computer_file/program/power_monitor's version

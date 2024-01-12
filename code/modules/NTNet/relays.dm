@@ -64,9 +64,9 @@
 
 /obj/machinery/ntnet_relay/process()
 	if(is_operational)
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 	else
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 
 	update_appearance()
 

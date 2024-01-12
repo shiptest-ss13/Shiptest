@@ -53,7 +53,7 @@
 		connected_parts.Cut()
 		return
 	if(!part_scan())
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		active = FALSE
 		connected_parts.Cut()
 
@@ -106,7 +106,7 @@
 		active = FALSE
 		use_power = NO_POWER_USE
 	else if(!machine_stat && construction_state == PA_CONSTRUCTION_COMPLETE)
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 
 /obj/machinery/particle_accelerator/control_box/process()
 	if(active)
@@ -175,14 +175,14 @@
 	message_admins("PA Control Computer turned [active ?"ON":"OFF"] by [usr ? ADMIN_LOOKUPFLW(usr) : "outside forces"] in [ADMIN_VERBOSEJMP(src)]")
 	log_game("PA Control Computer turned [active ?"ON":"OFF"] by [usr ? "[key_name(usr)]" : "outside forces"] at [AREACOORD(src)]")
 	if(active)
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 		for(var/CP in connected_parts)
 			var/obj/structure/particle_accelerator/part = CP
 			part.strength = strength
 			part.powered = TRUE
 			part.update_appearance()
 	else
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		for(var/CP in connected_parts)
 			var/obj/structure/particle_accelerator/part = CP
 			part.strength = null

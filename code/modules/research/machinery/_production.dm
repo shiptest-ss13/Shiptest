@@ -100,7 +100,7 @@
 	if(notify_admins)
 		investigate_log("[key_name(usr)] built [amount] of [path] at [src]([type]).", INVESTIGATE_RESEARCH)
 		message_admins("[ADMIN_LOOKUPFLW(usr)] has built [amount] of [path] at \a [src]([type]).")
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	for(var/i in 1 to amount)
 		var/obj/item/I = new path(get_turf(src))
 		if(efficient_with(I.type))
@@ -173,7 +173,7 @@
 		flick(production_animation, src)
 	var/timecoeff = D.lathe_time_factor / efficiency_coeff
 	addtimer(CALLBACK(src, PROC_REF(reset_busy)), (30 * timecoeff * amount) ** 0.5)
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	addtimer(CALLBACK(src, PROC_REF(do_print), D.build_path, amount, efficient_mats, D.dangerous_construction), (32 * timecoeff * amount) ** 0.8)
 	return TRUE
 

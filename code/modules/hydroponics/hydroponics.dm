@@ -123,7 +123,7 @@
 
 	if(!powered() && self_sustaining)
 		visible_message("<span class='warning'>[name]'s auto-grow functionality shuts off!</span>")
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 		self_sustaining = FALSE
 		update_appearance()
 
@@ -685,9 +685,9 @@
 		return
 	self_sustaining = !self_sustaining
 	if(self_sustaining)
-		use_power = ACTIVE_POWER_USE
+		set_active_power()
 	else
-		use_power = IDLE_POWER_USE
+		set_idle_power()
 	to_chat(user, "<span class='notice'>You [self_sustaining ? "activate" : "deactivated"] [src]'s autogrow function[self_sustaining ? ", maintaining the tray's health while using high amounts of power" : ""].")
 	update_appearance()
 
@@ -718,7 +718,7 @@
 		desc = initial(desc)
 		TRAY_NAME_UPDATE
 		if(self_sustaining) //No reason to pay for an empty tray.
-			use_power = IDLE_POWER_USE
+			set_idle_power()
 			self_sustaining = FALSE
 	update_appearance()
 

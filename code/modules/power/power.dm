@@ -19,6 +19,7 @@
 
 /obj/machinery/power/Destroy()
 	disconnect_from_network()
+	set_no_power()
 	return ..()
 
 ///////////////////////////////
@@ -104,6 +105,24 @@
 
 /obj/machinery/proc/removeStaticPower(value, powerchannel)
 	addStaticPower(-value, powerchannel)
+
+/obj/machinery/proc/set_idle_power()
+	set_no_power()
+	use_static_power = IDLE_POWER_USE
+	addStaticPower(idle_power_usage, power_channel + 3)
+
+/obj/machinery/proc/set_active_power()
+	set_no_power()
+	use_static_power = ACTIVE_POWER_USE
+	addStaticPower(active_power_usage, power_channel + 3)
+
+/obj/machinery/proc/set_no_power()
+	switch(use_static_power)
+		if(IDLE_POWER_USE)
+			removeStaticPower(idle_power_usage, power_channel + 3)
+		if(ACTIVE_POWER_USE)
+			removeStaticPower(active_power_usage, power_channel + 3)
+	use_static_power = NO_POWER_USE
 
 /**
  * Called whenever the power settings of the containing area change

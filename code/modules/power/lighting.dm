@@ -420,7 +420,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 				if(trigger)
 					burn_out()
 			else
-				use_power = ACTIVE_POWER_USE
+				set_active_power()
 				set_light(BR, PO, CO)
 	else if(has_emergency_power(LIGHT_EMERGENCY_POWER_USE) && !turned_off())
 		use_power = IDLE_POWER_USE

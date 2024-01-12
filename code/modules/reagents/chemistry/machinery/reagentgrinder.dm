@@ -263,9 +263,9 @@
 /obj/machinery/reagentgrinder/proc/juice()
 	if(!beaker || machine_stat & (NOPOWER|BROKEN) || beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 		return
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	operate_for(50, juicing = TRUE)
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	for(var/obj/item/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 			break
@@ -284,9 +284,9 @@
 /obj/machinery/reagentgrinder/proc/grind(mob/user)
 	if(!beaker || machine_stat & (NOPOWER|BROKEN) || beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 		return
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	operate_for(60)
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	for(var/i in holdingitems)
 		if(beaker.reagents.total_volume >= beaker.reagents.maximum_volume)
 			break
@@ -314,9 +314,9 @@
 	//For butter and other things that would change upon shaking or mixing
 	if(!beaker || machine_stat & (NOPOWER|BROKEN))
 		return
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	operate_for(50, juicing = TRUE)
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/machinery/reagentgrinder, mix_complete)), 50)
 
 /obj/machinery/reagentgrinder/proc/mix_complete()

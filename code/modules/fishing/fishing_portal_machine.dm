@@ -35,12 +35,12 @@
 
 /obj/machinery/fishing_portal_generator/proc/activate()
 	active = AddComponent(/datum/component/fishing_spot, fishing_source)
-	use_power = ACTIVE_POWER_USE
+	set_active_power()
 	update_appearance()
 
 /obj/machinery/fishing_portal_generator/proc/deactivate()
 	QDEL_NULL(active)
-	use_power = IDLE_POWER_USE
+	set_idle_power()
 	update_appearance()
 
 /obj/machinery/fishing_portal_generator/on_set_is_operational(old_value)
