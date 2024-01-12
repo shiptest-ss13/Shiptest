@@ -6,28 +6,24 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/space)
 "f" = (
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "haste_holo";
-	anchored = 1
-	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "haste_door"
 	},
 /obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-10"
 	},
 /obj/docking_port/mobile{
 	dir = 8;
 	name = "ambulance dock";
 	port_direction = 4;
 	preferred_direction = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
@@ -49,21 +45,27 @@
 /turf/open/floor/engine/hull/interior,
 /area/space)
 "B" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "D" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -84,19 +86,21 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "I" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "J" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "haste_door"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "haste_holo";
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
@@ -110,15 +114,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "5-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "O" = (
@@ -154,9 +150,7 @@
 	dir = 8;
 	id = "haste_door"
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "S" = (
@@ -206,11 +200,11 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -219,6 +213,12 @@
 	dir = 1
 	},
 /obj/machinery/light/floor,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 
