@@ -2,6 +2,9 @@
 "a" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
+"e" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/space)
 "f" = (
 /obj/machinery/power/shieldwallgen/atmos{
 	id = "haste_holo";
@@ -26,7 +29,7 @@
 	port_direction = 4;
 	preferred_direction = 8
 	},
-/turf/open/floor/engine/hull,
+/turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "s" = (
 /obj/structure/chair/comfy/shuttle{
@@ -36,37 +39,31 @@
 /obj/item/radio/intercom/wideband/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"t" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/space)
 "B" = (
-/obj/structure/rack,
-/obj/item/storage/firstaid/medical{
-	pixel_x = -4;
-	pixel_y = 6
-	},
-/obj/item/storage/firstaid/regular{
-	pixel_x = 4;
-	pixel_y = 2
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
-/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/defibrillator/loaded{
-	pixel_x = -4
-	},
+/obj/machinery/power/smes,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "D" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -87,15 +84,21 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "I" = (
-/obj/structure/bed/roller,
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 1
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
 /turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"J" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "haste_door"
+	},
+/turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "K" = (
 /obj/structure/grille,
@@ -103,9 +106,6 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "M" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black/corner{
-	dir = 1
-	},
 /obj/machinery/power/terminal,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 4
@@ -157,18 +157,9 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/turf/open/floor/engine/hull,
-/area/ship/bridge)
-"T" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
-"Y" = (
+"S" = (
 /obj/structure/window/reinforced{
 	dir = 1
 	},
@@ -183,34 +174,85 @@
 	},
 /obj/machinery/power/smes/shuttle/precharged,
 /turf/open/floor/plasteel/tech,
+/area/space)
+"T" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/bridge)
+"X" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/structure/rack,
+/obj/item/storage/firstaid/regular{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/item/storage/firstaid/medical{
+	pixel_x = -4;
+	pixel_y = 6
+	},
+/obj/item/defibrillator/loaded{
+	pixel_x = -4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Y" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"Z" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 1
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 
 (1,1,1) = {"
-a
+e
+K
 K
 K
 a
 "}
 (2,1,1) = {"
-a
+e
 O
+X
 B
 a
 "}
 (3,1,1) = {"
-a
+e
 s
+Z
 I
 a
 "}
 (4,1,1) = {"
+S
 Y
 D
 M
 F
 "}
 (5,1,1) = {"
-T
+t
+J
 f
 R
 T
