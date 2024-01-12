@@ -687,7 +687,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 /proc/send2tgs(msg,msg2)
 	msg = format_text(msg)
 	msg2 = format_text(msg2)
-	world.TgsTargetedChatBroadcast("[msg] | [msg2]", TRUE)
+	world.TgsTargetedChatBroadcast(new /datum/tgs_message_content("[msg] | [msg2]"), TRUE)
 
 /**
  * Sends a message to a set of cross-communications-enabled servers using world topic calls
@@ -735,19 +735,11 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 
 
 /proc/tgsadminwho()
-	var/list/message = list("Admins: ")
 	var/list/admin_keys = list()
-	for(var/adm in GLOB.admins)
-		var/client/C = adm
-		admin_keys += "[C][C.holder.fakekey ? "(Stealth)" : ""][C.is_afk() ? "(AFK)" : ""]"
+	for(var/client/admin as anything in GLOB.admins)
+		admin_keys += "[admin][admin.holder.fakekey ? "(Stealth)" : ""][admin.is_afk() ? "(AFK)" : ""]"
 
-	for(var/admin in admin_keys)
-		if(LAZYLEN(message) > 1)
-			message += ", [admin]"
-		else
-			message += "[admin]"
-
-	return jointext(message, "")
+	return jointext(admin_keys, "\n")
 
 /proc/keywords_lookup(msg,external)
 

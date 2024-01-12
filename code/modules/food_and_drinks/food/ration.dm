@@ -3,6 +3,7 @@
 	desc = "standard issue ration"
 	filling_color = "#664330"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	icon = 'icons/obj/food/ration.dmi'
 	icon_state = "ration_side"
 	in_container = TRUE
@@ -55,7 +56,16 @@
 		..()
 	else
 		name = "warm [initial(name)]"
-		bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+		var/cooking_efficiency = 1
+		if(istype(Heater))
+			cooking_efficiency = Heater.efficiency
+		if(length(bonus_reagents))
+			for(var/r_id in bonus_reagents)
+				var/amount = bonus_reagents[r_id] * cooking_efficiency
+				if(ispath(r_id, /datum/reagent/consumable/nutriment))
+					reagents.add_reagent(r_id, amount, tastes)
+				else
+					reagents.add_reagent(r_id, amount)
 		cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/examine(mob/user)

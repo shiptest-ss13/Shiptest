@@ -474,3 +474,7 @@ GLOBAL_LIST_INIT(ghost_others_options, list(GHOST_OTHERS_SIMPLE, GHOST_OTHERS_DE
 #define CUSTOM_HOLODECK_ONE (1<<1)
 #define CUSTOM_HOLODECK_TWO (1<<2)
 #define HOLODECK_DEBUG (1<<3)//you should never see this
+
+#define ROUND_END_NOT_DELAYED 0
+#define ROUND_END_DELAYED 1
+#define ROUND_END_TGS 2
