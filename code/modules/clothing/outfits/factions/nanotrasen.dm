@@ -1,6 +1,6 @@
 /datum/outfit/job/nanotrasen
 	name = "Nanotrasen - Base Outfit"
-	// faction_icon = "nanotrasen"
+	faction_icon = "bg_nanotrasen"
 
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
@@ -35,8 +35,8 @@
 	gloves = /obj/item/clothing/gloves/color/captain/nt
 	ears = /obj/item/radio/headset/nanotrasen/captain
 	uniform = /obj/item/clothing/under/rank/command/captain/nt
-	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade //WS Edit - Alt Uniforms
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain //WS Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/command/captain/parade
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat/nt
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
@@ -74,27 +74,31 @@
 	uniform = /obj/item/clothing/under/rank/centcom/officer
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/centhat
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 
 // Head of Personnel
 
 /datum/outfit/job/nanotrasen/hop
-	name = "Nanotrasen - First Officer"
+	name = "Nanotrasen - Head of Personnel"
 	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
 
+	belt = /obj/item/pda/heads/head_of_personnel
 	id = /obj/item/card/id/silver
-	ears = /obj/item/radio/headset/nanotrasen
+	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/nt
-	alt_uniform = null
-	alt_suit = null
+	alt_suit = /obj/item/clothing/suit/ianshirt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/hopcap/nt
+	backpack_contents = list(/obj/item/storage/box/ids=1,\
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
+
+	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
 
 // Head of Security
 
@@ -111,7 +115,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/hos/trenchcoat
 	alt_suit = /obj/item/clothing/suit/armor/vest/security/hos
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security //WS Edit - Alt Uniforms
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/beret/sec/hos
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
@@ -155,6 +159,34 @@
 	accessory = /obj/item/clothing/accessory/holster
 	head = /obj/item/clothing/head/beret/command
 
+// Lawyer
+
+/datum/outfit/job/nanotrasen/lawyer
+	name = "Nanotrasen - Lawyer"
+	job_icon = "lawyer"
+	jobtype = /datum/job/lawyer
+
+	ears = /obj/item/radio/headset/headset_srvsec
+	uniform = /obj/item/clothing/under/suit/navy
+	suit = /obj/item/clothing/suit/toggle/lawyer/navy
+	shoes = /obj/item/clothing/shoes/laceup
+	l_hand = /obj/item/storage/briefcase/lawyer
+	l_pocket = /obj/item/laser_pointer
+	r_pocket = /obj/item/clothing/accessory/lawyers_badge
+
+	chameleon_extras = /obj/item/stamp/law
+
+/datum/outfit/job/nanotrasen/lawyer/corporaterepresentative
+	name = "Nanotrasen - Lawyer (Corporate Representative)"
+	job_icon = "nanotrasen"
+
+
+	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit
+	suit = null
+	ears = /obj/item/radio/headset/headset_cent
+	l_hand = /obj/item/clipboard
+	r_pocket = /obj/item/pen/fountain
+
 // Security Officer
 
 /datum/outfit/job/nanotrasen/security
@@ -162,9 +194,26 @@
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
+	ears = /obj/item/radio/headset/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/nt
-	alt_uniform = null
-	backpack_contents = list(/obj/item/radio, /obj/item/flashlight/seclite)
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/helmet/sec
+	suit = /obj/item/clothing/suit/armor/vest
+	alt_suit = /obj/item/clothing/suit/armor/vest/security/officer
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	shoes = /obj/item/clothing/shoes/jackboots
+	l_pocket = /obj/item/restraints/handcuffs
+	r_pocket = /obj/item/assembly/flash/handheld
+	backpack_contents = null
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/security
+
+	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
+	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
 /datum/outfit/job/nanotrasen/security/ert
 	name = "Nanotrasen - ERT Officer"
@@ -236,8 +285,22 @@
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
+	belt = /obj/item/storage/belt/utility/full/engi
+	l_pocket = /obj/item/pda/engineering
+	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
+	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat
+	r_pocket = /obj/item/t_scanner
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+
+	box = /obj/item/storage/box/survival/engineer
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/nanotrasen/engineer/lp
 	name = "Nanotrasen - LP Engineering Specialist"
@@ -245,7 +308,6 @@
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
 	id = /obj/item/card/id/lpengie
-	belt = /obj/item/pda/engineering
 	gloves = /obj/item/clothing/gloves/color/yellow
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/skirt/lp
@@ -264,12 +326,26 @@
 	job_icon = "warden"
 	jobtype = /datum/job/warden
 
-	ears = /obj/item/radio/headset/nanotrasen/alt
-	head = /obj/item/clothing/head/warden/red
+	ears = /obj/item/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/rank/security/warden/nt
+	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/security/warden/alt/nt
-	alt_uniform = null
-	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/warden/red
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	r_pocket = /obj/item/assembly/flash/handheld
+	l_pocket = /obj/item/restraints/handcuffs
+	suit_store = null
+	backpack_contents = list(/obj/item/melee/classic_baton)
+
+	backpack = /obj/item/storage/backpack/security
+	satchel = /obj/item/storage/backpack/satchel/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag/sec
+	courierbag = /obj/item/storage/backpack/messenger/sec
+	box = /obj/item/storage/box/survival/security
+
+	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 
 // Chief Engineer
 
@@ -278,9 +354,24 @@
 	jobtype = /datum/job/chief_engineer
 	job_icon = "chiefengineer"
 
-	head = /obj/item/clothing/head/beret/ce
-	belt = /obj/item/storage/belt/utility/full
-	suit = /obj/item/clothing/suit/hazardvest
+	id = /obj/item/card/id/silver
+	belt = /obj/item/storage/belt/utility/chief/full
+	l_pocket = /obj/item/storage/wallet
+	ears = /obj/item/radio/headset/headset_com
+	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	head = /obj/item/clothing/head/hardhat/white
+	gloves = /obj/item/clothing/gloves/color/black
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1)
+
+	backpack = /obj/item/storage/backpack/industrial
+	satchel = /obj/item/storage/backpack/satchel/eng
+	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	courierbag = /obj/item/storage/backpack/messenger/engi
+
+	box = /obj/item/storage/box/survival/engineer
+	chameleon_extras = /obj/item/stamp/ce
 
 // Medical Doctor
 
@@ -427,7 +518,29 @@
 	l_hand = /obj/item/clipboard
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
+	chameleon_extras = /obj/item/stamp/qm
+
 /datum/outfit/job/nanotrasen/miner
 	name = "Nanotrasen - Miner"
 	jobtype = /datum/job/mining
 	job_icon = "shaftminer"
+
+	ears = /obj/item/radio/headset/headset_cargo/mining
+	shoes = /obj/item/clothing/shoes/workboots/mining
+	gloves = /obj/item/clothing/gloves/explorer
+	uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
+	suit = /obj/item/clothing/suit/hazardvest
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/miner
+	r_pocket = /obj/item/storage/bag/ore
+	backpack_contents = list(
+		/obj/item/flashlight/seclite=1,\
+		/obj/item/kitchen/knife/combat/survival=1,\
+		/obj/item/stack/marker_beacon/ten=1,\
+		/obj/item/radio/weather_monitor=1)
+
+	backpack = /obj/item/storage/backpack/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	box = /obj/item/storage/box/survival/mining
+
+	chameleon_extras = /obj/item/gun/energy/kinetic_accelerator

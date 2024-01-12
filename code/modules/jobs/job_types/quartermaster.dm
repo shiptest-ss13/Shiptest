@@ -27,11 +27,3 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 	chameleon_extras = /obj/item/stamp/qm
-
-/datum/outfit/job/quartermaster/western
-	name = "Independent - Foreman (Western)"
-	uniform = /obj/item/clothing/under/rank/cargo/qm
-	suit = /obj/item/clothing/suit/toggle/hazard
-	shoes = /obj/item/clothing/shoes/workboots
-	glasses = /obj/item/clothing/glasses/sunglasses
-	head = /obj/item/clothing/head/cowboy/sec

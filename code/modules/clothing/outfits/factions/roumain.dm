@@ -3,7 +3,7 @@
 
 	uniform = /obj/item/clothing/under/suit/roumain
 	id = /obj/item/card/id
-	faction_icon = "srm"
+	faction_icon = "bg_srm"
 
 	box = null
 

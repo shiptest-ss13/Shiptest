@@ -1,6 +1,6 @@
 /datum/outfit/job/inteq
 	name = "IRMG - Base Outfit"
-	faction_icon = "inteq"
+	faction_icon = "bg_inteq"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	box = /obj/item/storage/box/survival
@@ -24,7 +24,6 @@
 	job_icon = "assistant"
 
 	r_pocket = /obj/item/radio
-	belt = /obj/item/pda
 
 ///captains
 
@@ -40,7 +39,7 @@
 	jobtype = /datum/job/captain
 	id = /obj/item/card/id/gold
 
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 /datum/outfit/job/inteq/captain/geared
 	name = "IRMG - Vanguard"
@@ -93,7 +92,6 @@
 
 	id = /obj/item/card/id/silver
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/pda/heads/ce
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 
@@ -113,10 +111,8 @@
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/headset_medsec/alt
 
-	l_pocket = /obj/item/pda/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
-	pda_slot = ITEM_SLOT_LPOCKET
 
 ///Security Officers
 
@@ -138,7 +134,6 @@
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/pda/security)
 
 /datum/outfit/job/inteq/security/beluga
 	name = "IRMG - Enforcer (Beluga)"
@@ -155,8 +150,6 @@
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-
-	backpack_contents = list(/obj/item/pda/security)
 
 /datum/outfit/job/inteq/security/empty
 	name = "IRMG - Enforcer (Naked)"
@@ -177,7 +170,6 @@
 	head = /obj/item/clothing/head/soft/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/engineering
 	r_pocket = /obj/item/t_scanner
 
 //wardens
@@ -200,4 +192,4 @@
 	suit_store = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/pda/warden)
+	backpack_contents = list(/obj/item/melee/classic_baton=1)

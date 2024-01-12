@@ -6,7 +6,7 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	alt_uniform = null
 
-	faction_icon = "minutemen"
+	faction_icon = "bg_minutemen"
 
 	backpack = /obj/item/storage/backpack/security/cmm
 	satchel = /obj/item/storage/backpack/satchel/sec/cmm
@@ -29,7 +29,6 @@
 	jobtype = /datum/job/assistant
 
 	r_pocket = /obj/item/radio
-	belt = /obj/item/pda
 
 ///captains
 
@@ -39,7 +38,6 @@
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/gold
-	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/color/captain
 
 
@@ -84,7 +82,6 @@
 	jobtype = /datum/job/chemist
 
 	glasses = /obj/item/clothing/glasses/science
-	belt = /obj/item/pda/chemist
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 
@@ -111,8 +108,6 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	box = /obj/item/storage/box/survival/engineer
-	pda_slot = ITEM_SLOT_LPOCKET
-	l_pocket = /obj/item/pda/heads/ce
 
 	chameleon_extras = /obj/item/stamp/ce
 
@@ -140,7 +135,6 @@
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/pda/heads/head_of_personnel
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -167,7 +161,6 @@
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
-	belt = /obj/item/pda/medical
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen
 
@@ -199,7 +192,6 @@
 	shoes = /obj/item/clothing/shoes/sneakers/blue
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	belt = /obj/item/storage/belt/medical/paramedic
-	l_pocket = /obj/item/pda/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
 
@@ -217,7 +209,6 @@
 	jobtype = /datum/job/roboticist
 
 	belt = /obj/item/storage/belt/utility/full
-	l_pocket = /obj/item/pda/roboticist
 
 	backpack = /obj/item/storage/backpack/science
 	satchel = /obj/item/storage/backpack/satchel/tox
@@ -239,7 +230,6 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
 	backpack = /obj/item/storage/backpack/security/cmm
 
-	belt = /obj/item/pda/toxins
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 	alt_suit = /obj/item/clothing/suit/toggle/suspenders/blue
@@ -292,7 +282,6 @@
 	job_icon = "shaftminer"
 	jobtype = /datum/job/mining
 
-	belt = /obj/item/pda/shaftminer
 	l_pocket = /obj/item/reagent_containers/hypospray/medipen/survival
 	uniform = /obj/item/clothing/under/rank/cargo/miner/hazard
 	alt_uniform = null
@@ -314,7 +303,6 @@
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/engineering
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/t_scanner
 
@@ -329,7 +317,6 @@
 	suit =  /obj/item/clothing/suit/hazardvest
 
 	box = /obj/item/storage/box/survival/engineer
-	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 

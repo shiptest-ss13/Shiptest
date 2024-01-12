@@ -1,5 +1,6 @@
-/datum/outfit/centcom/ert/solgov
+/datum/outfit/job/solgov/ert
 	name = "ERT - SolGov Sonnensöldner"
+	jobtype = /datum/job/officer
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
@@ -14,10 +15,10 @@
 	box = /obj/item/storage/box/survival
 	l_hand = /obj/item/energyhalberd
 
-	id_role = "Sonnensöldner"
 
-/datum/outfit/centcom/ert/solgov/inspector
+/datum/outfit/job/solgov/ert/inspector
 	name = "ERT - SolGov Inspector"
+	jobtype = /datum/job/head_of_personnel
 
 	uniform = /obj/item/clothing/under/solgov/formal
 	belt = /obj/item/clipboard
@@ -34,5 +35,3 @@
 	l_hand = null
 
 	backpack_contents = list(/obj/item/stamp/solgov=1)
-
-	id_role = "Inspector"

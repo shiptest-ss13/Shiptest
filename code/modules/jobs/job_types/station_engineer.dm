@@ -12,7 +12,7 @@
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
 
 /datum/outfit/job/engineer
-	name = "Mechanic"
+	name = "Engineer"
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
@@ -34,65 +34,3 @@
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
-
-/datum/outfit/job/engineer/gloved
-	name = "Mechanic (Gloves)"
-	gloves = /obj/item/clothing/gloves/color/yellow
-
-/datum/outfit/job/engineer/gloved/rig
-	name = "Mechanic (Space suit)"
-	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/engineer
-	head = /obj/item/clothing/head/helmet/space/light/engineer
-	suit_store = /obj/item/tank/internals/oxygen
-	head = null
-	internals_slot = ITEM_SLOT_SUITSTORE
-
-/datum/outfit/job/engineer/pirate
-	name = "Ship's Engineer (Pirate)"
-
-	uniform = /obj/item/clothing/under/costume/sailor
-	head = /obj/item/clothing/head/bandana
-	shoes = /obj/item/clothing/shoes/jackboots
-
-/datum/outfit/job/engineer/hazard
-	name = "Ship's Engineer (Hazard)"
-
-	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
-	alt_uniform = null
-	head = /obj/item/clothing/head/hardhat
-	suit = /obj/item/clothing/suit/toggle/hazard
-	alt_suit = /obj/item/clothing/suit/hazardvest
-
-/datum/outfit/job/engineer/independent/ship_engineer
-	name = "Ship Engineer (Independent)"
-
-	belt = /obj/item/storage/belt/utility/full/engi
-	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
-	suit = /obj/item/clothing/suit/toggle/hazard
-	shoes = /obj/item/clothing/shoes/workboots
-
-	head = null
-	backpack = /obj/item/storage/backpack
-	satchel = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-	l_pocket = /obj/item/radio
-	r_pocket = /obj/item/analyzer
-	glasses = /obj/item/clothing/glasses/welding
-
-/datum/outfit/job/engineer/independent/ship_engineer/salvage
-	belt = null
-	r_pocket = null
-	glasses = null
-
-/datum/outfit/job/engineer/aipirate
-	name = "Nodesman (Engineer)"
-
-	uniform = /obj/item/clothing/under/utility
-	head = /obj/item/clothing/head/soft/black
-	shoes = /obj/item/clothing/shoes/combat
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	gloves = /obj/item/clothing/gloves/combat
-
-	implants = list(/obj/item/implant/radio)

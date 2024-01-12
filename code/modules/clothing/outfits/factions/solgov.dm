@@ -1,7 +1,7 @@
 /datum/outfit/job/solgov
 	name = "SolGov Base Outfit"
 
-	faction_icon = "solgov"
+	faction_icon = "bg_solgov"
 
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
@@ -28,7 +28,6 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/solgov/bureaucrat
-	belt = /obj/item/pda/curator
 	l_hand = /obj/item/storage/bag/books
 	r_pocket = /obj/item/key/displaycase
 	l_pocket = /obj/item/laser_pointer
@@ -43,7 +42,6 @@
 	job_icon = "solgovrepresentative" // idk
 
 	id = /obj/item/card/id/gold
-	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/solgov/alt/captain
 	uniform =  /obj/item/clothing/under/solgov/formal/captain
@@ -96,7 +94,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/solgov/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
-	belt = /obj/item/pda/solgov
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -110,7 +107,6 @@
 	job_icon = "headofpersonnel"
 
 	id = /obj/item/card/id/solgov
-	belt = /obj/item/pda/heads/head_of_personnel
 	ears = /obj/item/radio/headset/solgov/captain
 	uniform = /obj/item/clothing/under/solgov/formal
 	head = /obj/item/clothing/head/solgov
@@ -128,7 +124,6 @@
 	jobtype = /datum/job/doctor
 	job_icon = "medicaldoctor"
 
-	belt = /obj/item/pda/medical
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/medblue
@@ -148,7 +143,6 @@
 	jobtype = /datum/job/mining
 	job_icon = "shaftminer"
 
-	belt = /obj/item/pda/shaftminer
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/explorer
@@ -179,8 +173,6 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id
-	belt = /obj/item/pda/medical
-	pda_slot = ITEM_SLOT_BELT
 	l_hand = /obj/item/clipboard
 
 	backpack = /obj/item/storage/backpack/medic
@@ -203,7 +195,6 @@
 	job_icon = "stationengineer"
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/engineering
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/engine
@@ -218,7 +209,6 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	box = /obj/item/storage/box/survival/engineer
-	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/solgov/quartermaster
@@ -226,7 +216,6 @@
 	job_icon = "quartermaster"
 	jobtype = /datum/job/qm
 
-	belt = /obj/item/pda/quartermaster
 	ears = /obj/item/radio/headset/solgov/captain
 	uniform = /obj/item/clothing/under/solgov/formal
 	suit = /obj/item/clothing/suit/solgov/overcoat

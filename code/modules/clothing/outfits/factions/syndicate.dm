@@ -3,11 +3,11 @@
 /datum/outfit/job/syndicate
 	name = "Syndicate - Base Outfit"
 
-	uniform = /obj/item/clothing/under/syndicate
+	uniform = /obj/item/clothing/under/color/black
 	box = /obj/item/storage/box/survival/syndie
 	id = /obj/item/card/id/syndicate_command/crew_id
 
-	faction_icon = "syndicate"
+	faction_icon = "bg_syndicate"
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -44,7 +44,6 @@
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/radio
-	belt = /obj/item/pda
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -117,7 +116,6 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 
 	r_pocket = /obj/item/analyzer
-	l_pocket = /obj/item/pda/atmos
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
@@ -148,7 +146,6 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
-	belt = /obj/item/pda/bar
 	uniform = /obj/item/clothing/under/rank/civilian/bartender
 	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple
 	alt_suit = /obj/item/clothing/suit/apron/purple_bartender
@@ -195,7 +192,6 @@
 	jobtype = /datum/job/hydro
 	job_icon = "botanist"
 
-	belt = /obj/item/pda/botanist
 	suit = /obj/item/clothing/suit/apron
 	alt_suit = /obj/item/clothing/suit/apron/overalls
 	gloves  =/obj/item/clothing/gloves/botanic_leather
@@ -224,7 +220,7 @@
 	head = /obj/item/clothing/head/HoS/syndicate
 	gloves = /obj/item/clothing/gloves/combat
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/pda/captain)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -285,7 +281,6 @@
 	uniform = /obj/item/clothing/under/syndicate/donk
 	suit = /obj/item/clothing/suit/hazardvest/donk
 
-	belt = /obj/item/pda/cargo
 	alt_suit = /obj/item/clothing/suit/hazardvest
 	l_hand = /obj/item/export_scanner
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
@@ -301,12 +296,10 @@
 	jobtype = /datum/job/chemist
 	job_icon = "chemist"
 
-	uniform = /obj/item/clothing/under/syndicate/intern
+	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
-	l_pocket =/obj/item/pda/chemist
 
 	glasses = /obj/item/clothing/glasses/science
-	belt = /obj/item/pda/chemist
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 
@@ -320,7 +313,6 @@
 	head = /obj/item/clothing/head/hardhat
 	belt = /obj/item/storage/belt/utility/full/engi
 	id = /obj/item/card/id/syndicate_command/crew_id
-	l_pocket =/obj/item/pda/chemist
 
 //Chief Engineer
 
@@ -334,7 +326,6 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 	belt = /obj/item/storage/belt/utility/chief/full
-	l_pocket = /obj/item/pda/heads/ce
 	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hardhat/white
@@ -383,7 +374,6 @@
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/pda/heads/cmo
 	l_pocket = /obj/item/pinpointer/crew
 	head = /obj/item/clothing/head/beret/cmo/cybersun
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
@@ -398,7 +388,6 @@
 	ears = /obj/item/radio/headset/syndicate/alt/captain
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/pda/heads/cmo
 	l_pocket = /obj/item/pinpointer/crew
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	suit = /obj/item/clothing/suit/toggle/labcoat/cmo
@@ -421,7 +410,6 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	glasses = /obj/item/clothing/glasses/hud/health
-	belt = /obj/item/pda/heads/head_of_personnel
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
@@ -450,7 +438,6 @@
 	head = /obj/item/clothing/head/HoS/syndicate
 	suit = /obj/item/clothing/suit/armor/vest/syndie
 	id = /obj/item/card/id/syndicate_command/crew_id
-	belt = /obj/item/pda/heads/hos
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = /obj/item/gun/energy/e_gun
@@ -500,7 +487,6 @@
 	uniform = /obj/item/clothing/under/syndicate
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/jackboots
-	belt = /obj/item/pda/medical
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
@@ -544,7 +530,6 @@
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	belt = /obj/item/storage/belt/medical/paramedic
 	id = /obj/item/card/id
-	l_pocket = /obj/item/pda/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
 	pda_slot = ITEM_SLOT_LPOCKET
@@ -576,7 +561,6 @@
 	mask = /obj/item/clothing/mask/chameleon
 	id = /obj/item/card/id/syndicate_command/crew_id/med
 	implants = list(/obj/item/implant/weapons_auth)
-	backpack_contents = list(/obj/item/pda/brig_phys)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -602,7 +586,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	alt_uniform = null
 	l_hand = /obj/item/clipboard
-	belt = /obj/item/pda/medical
 	pda_slot = ITEM_SLOT_BELT
 
 /datum/outfit/job/syndicate/psychologist/suns
@@ -634,7 +617,6 @@
 	suit = /obj/item/clothing/suit/hazardvest/donk/qm
 	ears = /obj/item/radio/headset/syndicate/alt
 	shoes = /obj/item/clothing/shoes/laceup
-	belt = /obj/item/pda/quartermaster
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
@@ -711,7 +693,6 @@
 	jobtype = /datum/job/mining
 	job_icon = "shaftminer"
 
-	belt = /obj/item/pda/shaftminer
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/explorer
@@ -794,7 +775,6 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/engineering
 	head = /obj/item/clothing/head/hardhat/dblue
 	r_pocket = /obj/item/t_scanner
 

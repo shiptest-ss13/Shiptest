@@ -1,6 +1,6 @@
 /datum/outfit/job/gezena
 	name = "PGF - Base Outfit"
-	// faction_icon = "pgf"
+	// faction_icon = "bg_pgf"
 
 /datum/outfit/job/gezena/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

@@ -224,6 +224,12 @@
 	spawn_at_outpost = FALSE
 	ert_template = /datum/map_template/shuttle/subshuttles/sugarcube
 
+/datum/ert/frontier/random
+	teamsize = 8
+	leader_role = /datum/antagonist/ert/frontier/random
+	roles = list(/datum/antagonist/ert/frontier/random)
+	rename_team = "Randomly Equipped Frontiersmen Team"
+
 /datum/ert/frontier/assault
 	leader_role = /datum/antagonist/ert/frontier/leader
 	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)

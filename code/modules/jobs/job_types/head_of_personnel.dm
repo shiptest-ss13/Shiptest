@@ -49,33 +49,3 @@
 	courierbag = /obj/item/storage/backpack/messenger/com
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
-
-/datum/outfit/job/head_of_personnel/pre_equip(mob/living/carbon/human/H)
-	..()
-
-/datum/outfit/job/head_of_personnel/pirate
-	name = "First Mate (Pirate)"
-	ears = /obj/item/radio/headset/pirate
-	uniform = /obj/item/clothing/under/costume/pirate
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/pirate
-	suit = /obj/item/clothing/suit/pirate
-
-/datum/outfit/job/head_of_personnel/western
-	name = "First Mate (Western)"
-	uniform = /obj/item/clothing/under/rank/security/detective/grey
-	alt_uniform = null
-	suit = null
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/cowboy/black
-	accessory = /obj/item/clothing/accessory/waistcoat
-	head = /obj/item/clothing/head/HoS/cowboy
-
-/datum/outfit/job/head_of_personnel/beluga
-
-	uniform = /obj/item/clothing/under/rank/command/head_of_personnel
-	glasses = /obj/item/clothing/glasses/sunglasses/big
-	shoes = /obj/item/clothing/shoes/cowboy/fancy
-	head = /obj/item/clothing/head/beret/hop
-	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)

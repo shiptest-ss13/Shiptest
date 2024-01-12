@@ -1,11 +1,12 @@
 /datum/outfit/job/frontiersmen
 	name = "Frontiersmen - Base Outfit"
 
-	// faction_icon = "frontiersmen"
+	// faction_icon = "bg_frontiersmen"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	r_pocket = /obj/item/radio
 	shoes = /obj/item/clothing/shoes/jackboots
+	ears = /obj/item/radio/headset/pirate
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
 
@@ -28,7 +29,6 @@
 	jobtype = /datum/job/assistant
 
 	head = /obj/item/clothing/head/beret/sec/frontier
-	ears = /obj/item/radio/headset/pirate
 
 // Atmospheric Technician
 
@@ -39,8 +39,6 @@
 
 	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat
-	ears = /obj/item/radio/headset/pirate
-	mask = /obj/item/clothing/mask/gas/atmos
 
 // Cargo Technician
 
@@ -51,7 +49,6 @@
 
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	suit = /obj/item/clothing/suit/hazardvest
-	ears = /obj/item/radio/headset/pirate
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/soft
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo)
@@ -72,8 +69,6 @@
 	gloves = /obj/item/clothing/gloves/combat
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
-	backpack_contents = list(/obj/item/pda/captain)
-
 /datum/outfit/job/frontiersmen/captain/admiral
 	name = "Frontiersmen - Admiral"
 
@@ -93,7 +88,7 @@
 	jobtype = /datum/job/chief_engineer
 
 	accessory = /obj/item/clothing/accessory/armband/engine
-	ears = /obj/item/radio/headset/pirate
+	ears = /obj/item/radio/headset/pirate/captain
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
 	head = /obj/item/clothing/head/hardhat/weldhat/white
 	shoes = /obj/item/clothing/shoes/combat
@@ -124,7 +119,6 @@
 	jobtype = /datum/job/cook
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	ears = /obj/item/radio/headset/pirate
 	head  = /obj/item/clothing/head/chefhat
 	suit = /obj/item/clothing/suit/apron/chef
 
@@ -149,7 +143,6 @@
 	jobtype = /datum/job/hos
 
 	accessory = /obj/item/clothing/accessory/armband
-	ears = /obj/item/radio/headset/syndicate/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
@@ -187,6 +180,5 @@
 	accessory = /obj/item/clothing/accessory/armband/med
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
-	ears = /obj/item/radio/headset/pirate
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	backpack_contents = list(/obj/item/storage/firstaid/medical)

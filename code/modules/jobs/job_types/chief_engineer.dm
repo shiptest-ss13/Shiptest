@@ -45,29 +45,3 @@
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	chameleon_extras = /obj/item/stamp/ce
-
-/datum/outfit/job/ce/rig
-	name = "Chief Engineer (Hardsuit)"
-
-	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/hardsuit/engine/elite
-	shoes = /obj/item/clothing/shoes/magboots/advance
-	suit_store = /obj/item/tank/internals/oxygen
-	glasses = /obj/item/clothing/glasses/meson/engine
-	gloves = /obj/item/clothing/gloves/color/yellow
-	head = null
-	internals_slot = ITEM_SLOT_SUITSTORE
-
-/datum/outfit/job/ce/engineeringcoordinator
-	name = "Chief Engineer (Engineering Coordinator)"
-
-	belt = null
-	uniform = /obj/item/clothing/under/rank/engineering/chief_engineer
-	alt_uniform = null
-	alt_suit = /obj/item/clothing/suit/hazardvest
-	dcoat = null
-	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/hardhat/white
-	gloves = null
-	neck = /obj/item/clothing/neck/tie/green
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/clothing/gloves/color/black=1)
