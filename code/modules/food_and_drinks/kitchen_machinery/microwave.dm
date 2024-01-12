@@ -280,6 +280,7 @@
 
 /obj/machinery/microwave/proc/start()
 	wzhzhzh()
+	set_active_power()
 	loop(MICROWAVE_NORMAL, 10)
 
 /obj/machinery/microwave/proc/start_can_fail()
@@ -308,11 +309,11 @@
 				pre_success()
 		return
 	time--
-	use_power(500)
 	addtimer(CALLBACK(src, PROC_REF(loop), type, time, wait), wait)
 
 /obj/machinery/microwave/proc/loop_finish()
 	operating = FALSE
+	set_idle_power()
 
 	var/metal = 0
 	for(var/obj/item/O in ingredients)
@@ -335,6 +336,7 @@
 /obj/machinery/microwave/proc/pre_fail()
 	broken = 2
 	operating = FALSE
+	set_idle_power()
 	spark()
 	after_finish_loop()
 
@@ -343,6 +345,7 @@
 
 /obj/machinery/microwave/proc/muck_finish()
 	visible_message("<span class='warning'>\The [src] gets covered in muck!</span>")
+	set_idle_power()
 
 	dirty = 100
 	dirty_anim_playing = FALSE
