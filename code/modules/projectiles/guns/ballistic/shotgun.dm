@@ -612,7 +612,7 @@
 		spread = 4
 		spread_unwielded = 12
 		recoil = 1
-		recoil_unwielded = 3
+		recoil_unwielded = 2
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
@@ -628,11 +628,21 @@
 	base_icon_state = "flamingarrow_factory"
 	item_state = "flamingarrow_factory"
 
+/obj/item/gun/ballistic/shotgun/flamingarrow/factory/sawoff(mob/user)
+	. = ..()
+	if(.)
+		item_state = "flamingarrow_factory_sawn"
+
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
 	desc = "A sturdy, excellently-made lever-action rifle. This one appears to be a genuine antique, kept in incredibly good condition despite its advanced age. Chambered in .38."
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(mob/user)
+	. = ..()
+	if(.)
+		item_state = "flamingbolt_sawn"
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
