@@ -260,7 +260,7 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 		"CMSV",
 		"CMGSV",
 	),
-	"NanoTrasen" = list(
+	"Nanotrasen" = list(
 		"NTSV",
 	),
 ))

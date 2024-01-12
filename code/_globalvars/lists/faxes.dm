@@ -10,7 +10,7 @@
  * * button_color - The color of this fax button in the list of all faxes.
  */
 GLOBAL_LIST_INIT(additional_faxes_list, list(
-	list("fax_name" = "NanoTrasen Central Command", "button_color" = "#46B946"),
+	list("fax_name" = "Nanotrasen Central Command", "button_color" = "#46B946"),
 	list("fax_name" = "Inteq Management Field Command", "button_color" = "#FACE65"),
 	list("fax_name" = "Colonial Minutemen Headquarters", "button_color" = "#538ACF"),
 	list("fax_name" = "Saint-Roumain Council of Huntsmen", "button_color" = "#6B443D"),

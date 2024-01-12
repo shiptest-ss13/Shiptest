@@ -92,7 +92,7 @@
 			else
 				to_chat(user, "<span class='notice'>You start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?</span>")
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
-			H.apply_status_effect(/datum/status_effect/regenerative_core)
+			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
 			qdel(src)
 
@@ -191,7 +191,7 @@
 			else
 				to_chat(user, "<span class='notice'>You start to apply [src] on yourself. Cancer like crystals hold you together and add something to you to keep yourself moving, but for how long?</span>")
 				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
-			H.apply_status_effect(/datum/status_effect/regenerative_core)
+			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
 			H.reagents.add_reagent(/datum/reagent/determination, 4)
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
 			qdel(src)
