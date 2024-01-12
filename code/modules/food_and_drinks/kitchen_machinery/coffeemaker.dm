@@ -6,6 +6,7 @@
 	icon = 'icons/obj/machines/coffeemaker.dmi'
 	icon_state = "coffeemaker_nopot_nocart"
 	base_icon_state = "coffeemaker"
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/coffeemaker
@@ -376,11 +377,12 @@
 	if(!silent)
 		playsound(src, 'sound/machines/coffeemaker_brew.ogg', 20, vary = TRUE)
 	toggle_steam()
-	use_power(active_power_usage * time * 0.1) // .1 needed here to convert time (in deciseconds) to seconds such that watts * seconds = joules //FIXLATER
+	set_active_power()
 	addtimer(CALLBACK(src, PROC_REF(stop_operating)), time / speed)
 
 /obj/machinery/coffeemaker/proc/stop_operating()
 	brewing = FALSE
+	set_idle_power()
 	toggle_steam()
 
 /obj/machinery/coffeemaker/proc/brew()

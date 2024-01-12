@@ -219,7 +219,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/light_construct/small, 28)
 	max_integrity = 100
 	use_power = ACTIVE_POWER_USE
 	idle_power_usage = 0
-	active_power_usage = LIGHT_DRAW * 2 //seemingly unused? //FIXLATER
+	active_power_usage = LIGHT_DRAW * 2
 	power_channel = AREA_USAGE_LIGHT //Lights are calc'd via area so they dont need to be in the machine list
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
