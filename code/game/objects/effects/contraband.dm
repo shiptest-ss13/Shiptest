@@ -721,11 +721,6 @@
 	desc = "This informational poster teaches the viewer what carbon dioxide is."
 	icon_state = "poster_co2"
 
-/obj/structure/sign/poster/official/sgt
-	name = "Sapient Trafficking Awareness"
-	desc = "A poster calling for an end to sapient trafficking. Over sixty percent of victims are jellywomen."
-	icon_state = "poster_sgt" // Maybe this will be what finally fixes it.
-
 /obj/structure/sign/poster/official/focus
 	name = "Focus! Motivational Poster"
 	desc = "\"Focus! Let your energy be pinpointed!\""
