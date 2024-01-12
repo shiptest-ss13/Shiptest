@@ -102,7 +102,7 @@
 	leader_role = /datum/antagonist/ert/lp/lieutenant
 	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic, /datum/antagonist/ert/lp/engineer)
 	rename_team = "Loss Prevention Team"
-	polldesc = "a NanoTrasen loss prevention team"
+	polldesc = "a Nanotrasen loss prevention team"
 
 // Inteq
 

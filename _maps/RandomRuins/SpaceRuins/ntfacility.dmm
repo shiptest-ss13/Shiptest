@@ -314,9 +314,6 @@
 /area/ruin/powered)
 "gL" = (
 /obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
 	icon_state = "medium"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -325,16 +322,10 @@
 	id = "rd3";
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "rd3";
-	dir = 8
-	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "gP" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
 /obj/item/shard,
 /obj/item/shard{
 	icon_state = "small"
@@ -345,6 +336,7 @@
 	id = "rd3";
 	dir = 8
 	},
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "gY" = (
@@ -590,11 +582,9 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "nc" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/closed/wall/r_wall/rust,
 /area/ruin/powered)
 "ng" = (
@@ -615,15 +605,13 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "nV" = (
-/obj/item/shard{
-	icon_state = "tiny"
-	},
 /obj/item/shard,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "rd3"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "os" = (
@@ -1229,9 +1217,6 @@
 /area/ruin/powered)
 "Ea" = (
 /obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
 	icon_state = "medium"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -1239,6 +1224,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "Ee" = (
@@ -2076,9 +2062,6 @@
 /area/ruin/powered)
 "Wl" = (
 /obj/item/shard{
-	icon_state = "tiny"
-	},
-/obj/item/shard{
 	icon_state = "medium"
 	},
 /obj/item/shard{
@@ -2092,6 +2075,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/powered)
 "WU" = (
