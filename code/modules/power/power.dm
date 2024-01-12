@@ -108,14 +108,14 @@
 
 /obj/machinery/proc/set_idle_power()
 	set_no_power()
-	if(use_power = NO_POWER_USE)
+	if(use_power == NO_POWER_USE)
 		return
 	use_static_power = IDLE_POWER_USE
 	addStaticPower(idle_power_usage, power_channel + 3)
 
 /obj/machinery/proc/set_active_power()
 	set_no_power()
-	if(use_power = NO_POWER_USE)
+	if(use_power == NO_POWER_USE)
 		return
 	use_static_power = ACTIVE_POWER_USE
 	addStaticPower(active_power_usage, power_channel + 3)

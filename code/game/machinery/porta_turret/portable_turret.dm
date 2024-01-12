@@ -795,7 +795,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	max_integrity = 300
 	always_up = 1
 	use_power = ACTIVE_POWER_USE
-	active_power_usage = 300
+	active_power_usage = ACTIVE_DRAW_MINIMAL
 	has_cover = 0
 	scan_range = 9
 	stun_projectile = /obj/projectile/beam/disabler
