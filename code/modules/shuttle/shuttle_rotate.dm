@@ -46,7 +46,6 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 
 /************************************Structure rotate procs************************************/
 
-//WS Edit Begin - Smartwire Revert Do not TG MARG this
 /obj/structure/cable/shuttleRotate(rotation, params)
 	params &= ~ROTATE_DIR
 	. = ..()
@@ -61,7 +60,6 @@ If ever any of these procs are useful for non-shuttles, rename it to proc/rotate
 		d1 = d2
 		d2 = temp
 	update_appearance()
-//WS Edit End - Smartwire Revert Do not TG MARG this
 
 //Fixes dpdir on shuttle rotation
 /obj/structure/disposalpipe/shuttleRotate(rotation, params)

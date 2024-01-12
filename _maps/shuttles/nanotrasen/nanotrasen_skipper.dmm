@@ -2201,19 +2201,6 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
-"rb" = (
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "rc" = (
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/vending/cigarette,
@@ -2653,10 +2640,6 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
 /obj/machinery/door/poddoor{
 	id = "amogusdoors";
 	name = "Cargo Bay Blast Door"
@@ -6384,7 +6367,7 @@ hz
 sh
 Kv
 jv
-rb
+Ym
 fW
 "}
 (11,1,1) = {"
