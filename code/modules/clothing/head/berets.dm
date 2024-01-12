@@ -97,7 +97,7 @@
 	icon_state = "beret_officer"
 
 /obj/item/clothing/head/beret/sec/brig_phys
-	desc = "A beret made out of black reinforced fabric with  lue cross emblazoned on it. Denotes security's personal medic."
+	desc = "A beret made out of black reinforced fabric with a lue cross emblazoned on it. Denotes security's personal medic."
 	icon_state = "beret_brigphys"
 
 //Engineering

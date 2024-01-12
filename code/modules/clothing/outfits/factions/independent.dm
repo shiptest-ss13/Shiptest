@@ -2,8 +2,11 @@
 	name = "Independent - Base Outfit"
 	faction_icon = "bg_independent"
 
+	uniform = /obj/item/clothing/under/utility
 	box = /obj/item/storage/box/survival
 	id = /obj/item/card/id
+
+	r_pocket = /obj/item/storage/wallet
 
 // Assistant
 
@@ -12,9 +15,7 @@
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
-	uniform = /obj/item/clothing/under/utility
 	shoes = /obj/item/clothing/shoes/sneakers/black
-	belt = /obj/item/storage/wallet
 
 /datum/outfit/job/independent/assistant/waiter
 	name = "Independent - Assistant (Waiter)"
@@ -61,7 +62,7 @@
 	uniform = /obj/item/clothing/under/rank/medical/chemist
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	accessory = /obj/item/clothing/neck/scarf/orange
-	r_pocket = /obj/item/reagent_containers/pill/floorpill
+	l_pocket = /obj/item/reagent_containers/pill/floorpill
 	belt = /obj/item/reagent_scanner
 	backpack_contents = list(/obj/item/book/manual/wiki/chemistry=1)
 
@@ -145,6 +146,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap
+
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
@@ -191,7 +193,6 @@
 	head = /obj/item/clothing/head/beret/sec/hos
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	suit_store = null
-	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 	backpack_contents = list(/obj/item/melee/classic_baton=1)
 
@@ -236,7 +237,6 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/assembly/flash/handheld
 	backpack_contents = null
 
 	backpack = /obj/item/storage/backpack/security
@@ -255,7 +255,6 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/cowboy/sec
-
 
 /datum/outfit/job/independent/security/pirate
 	name = "Independent - Security Officer (Pirate)"
@@ -286,13 +285,14 @@
 
 	belt = /obj/item/storage/belt/utility/full/engi
 	l_pocket = /obj/item/storage/wallet
+	gloves = /obj/item/clothing/gloves/color/yellow
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	alt_uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat/dblue
-	r_pocket = /obj/item/t_scanner
+	l_pocket = /obj/item/t_scanner
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
@@ -306,7 +306,7 @@
 	name = "Independent - Engineer (Salvager)"
 
 	belt = null
-	r_pocket = null
+	l_pocket = null
 
 /datum/outfit/job/independent/engineer/pirate
 	name = "Independent - Engineer (Pirate)"
@@ -315,14 +315,13 @@
 	head = /obj/item/clothing/head/bandana
 	shoes = /obj/item/clothing/shoes/jackboots
 
-
 /datum/outfit/job/independent/engineer/pirate/jupiter
 	name = "Independent - Engineer (Nodesman)" // technically, this is part of SEC, but we have jackshit for SEC
 
 	uniform = /obj/item/clothing/under/utility
 	head = /obj/item/clothing/head/soft/black
 	shoes = /obj/item/clothing/shoes/combat
-	r_pocket = /obj/item/kitchen/knife/combat/survival
+	l_pocket = /obj/item/kitchen/knife/combat/survival
 	gloves = /obj/item/clothing/gloves/combat
 
 	implants = list(/obj/item/implant/radio)
@@ -342,7 +341,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden
 	glasses = /obj/item/clothing/glasses/hud/security
-	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
 	suit_store = null
 	backpack_contents = list(/obj/item/melee/classic_baton)
@@ -428,7 +426,7 @@
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/hazard
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/engineering
-	r_pocket = /obj/item/analyzer
+	l_pocket = /obj/item/analyzer
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
@@ -536,7 +534,7 @@
 	uniform = /obj/item/clothing/under/rank/cargo/miner
 	suit = /obj/item/clothing/suit/hazardvest
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/miner
-	r_pocket = /obj/item/storage/bag/ore
+	l_pocket = /obj/item/storage/bag/ore
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
 		/obj/item/kitchen/knife/combat/survival=1,\
@@ -616,7 +614,7 @@
 	backpack_contents = list(/obj/item/storage/box/syringes=1, /obj/item/storage/box/drinkingglasses = 1)
 	ears = /obj/item/radio/headset/headset_med
 	suit = /obj/item/clothing/suit/toggle/labcoat
-	r_pocket = /obj/item/reagent_containers/food/drinks/shaker
+	l_pocket = /obj/item/reagent_containers/food/drinks/shaker
 	belt = /obj/item/storage/belt
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	uniform = /obj/item/clothing/under/suit/black
@@ -633,8 +631,7 @@
 	suit = /obj/item/clothing/suit/toggle/lawyer
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/storage/briefcase/lawyer
-	l_pocket = /obj/item/laser_pointer
-	r_pocket = /obj/item/clothing/accessory/lawyers_badge
+	l_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	chameleon_extras = /obj/item/stamp/law
 
@@ -649,8 +646,7 @@
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/curator
 	l_hand = /obj/item/storage/bag/books
-	r_pocket = /obj/item/key/displaycase
-	l_pocket = /obj/item/laser_pointer
+	l_pocket = /obj/item/key/displaycase
 	accessory = /obj/item/clothing/accessory/pocketprotector/full
 	backpack_contents = list(
 		/obj/item/choice_beacon/hero = 1,
@@ -789,7 +785,6 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/fedora/det_hat
 	l_pocket = /obj/item/toy/crayon/white
-	r_pocket = /obj/item/lighter
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
 		/obj/item/melee/classic_baton=1)

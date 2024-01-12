@@ -156,9 +156,8 @@
 
 /obj/item/clothing/head/cowboy/sec/minutemen
 	name = "colonial minutmen officer's slouch hat"
-	desc = "A commanding slouch hat adorned with a offier's badge, used by the Colonial Minutemen."
+	desc = "A commanding slouch hat adorned with a officer's badge, used by the Colonial Minutemen."
 	icon_state = "minuteman_officer_hat"
-
 
 /obj/item/clothing/head/cowboy/sec/roumain
 	name = "hunter's hat"

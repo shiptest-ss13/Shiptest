@@ -20,6 +20,7 @@
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/sec/cmm
+	head = /obj/item/clothing/head/beret/command
 
 /datum/outfit/job/minutemen/ert/bard
 	name = "ERT - Minuteman (BARD)"
@@ -80,12 +81,13 @@
 /datum/outfit/job/minutemen/ert/inspector
 	name = "ERT - Inspector (Minutemen GOLD)"
 
-	head = null
+	head = /obj/item/clothing/head/cowboy/sec/minutemen
 	mask = null
 	belt = /obj/item/clipboard
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	suit_store = null
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id/silver
@@ -98,8 +100,7 @@
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/p16
-	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+
 /datum/outfit/job/minutemen/ert/pirate_hunter/leader
 	name = "ERT - Minutemen Sergeant (Pirate Hunter)"
 
@@ -107,4 +108,5 @@
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	belt = /obj/item/storage/belt/military/minutemen/gal
 	suit_store = /obj/item/gun/ballistic/automatic/gal
+
 	backpack_contents = list(/obj/item/ammo_box/magazine/gal=4)
