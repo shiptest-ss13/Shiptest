@@ -278,7 +278,7 @@ Class Procs:
 	updateUsrDialog()
 	update_appearance()
 
-/*/obj/machinery/proc/auto_use_power() //obsolete, tick controller doesn't call this anymore because machines use addStaticPower now.
+/obj/machinery/proc/auto_use_power() //obsolete, tick controller doesn't call this anymore because machines use addStaticPower now.
 	if(!powered(power_channel))
 		return 0
 	if(use_power == 1)
@@ -286,7 +286,7 @@ Class Procs:
 	else if(use_power >= 2)
 		use_power(active_power_usage,power_channel)
 	return 1
-*/
+
 
 ///Called when we want to change the value of the `is_operational` variable. Boolean.
 /obj/machinery/proc/set_is_operational(new_value)

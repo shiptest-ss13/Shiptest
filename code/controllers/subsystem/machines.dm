@@ -48,8 +48,8 @@ SUBSYSTEM_DEF(machines)
 		var/obj/machinery/thing = currentrun[currentrun.len]
 		currentrun.len--
 		if(!QDELETED(thing) && thing.process(seconds) != PROCESS_KILL)
-			//if(thing.use_power)
-				//thing.auto_use_power() //add back the power state //need help deciding what to do here other than commenting this out. if still it it doubles a lot of idle machine draws.
+			if(thing.use_power)
+				thing.auto_use_power() //add back the power state //need help deciding what to do here other than commenting this out. if still it it doubles a lot of idle machine draws.
 		else
 			processing -= thing
 			if (!QDELETED(thing))
