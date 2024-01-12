@@ -1,6 +1,7 @@
 /datum/outfit/job/solgov/ert
 	name = "ERT - SolGov Sonnensöldner"
 	jobtype = /datum/job/officer
+	job_icon = "sonnensoldner"
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov

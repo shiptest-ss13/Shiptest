@@ -12,7 +12,7 @@
 /datum/outfit/job/solgov/assistant
 	name = "SolGov - Scribe"
 	jobtype = /datum/job/assistant
-	job_icon = "assistant"
+	job_icon = "scribe"
 
 	head = /obj/item/clothing/head/beret/solgov/plain
 	uniform = /obj/item/clothing/under/solgov/formal
@@ -62,7 +62,7 @@
 /datum/outfit/job/solgov/sonnensoldner
 	name = "SolGov - Sonnensöldner"
 	jobtype = /datum/job/officer
-	job_icon = "securityofficer"
+	job_icon = "sonnensoldner"
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
