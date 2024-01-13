@@ -3026,6 +3026,7 @@
 /obj/item/cutting_board,
 /obj/item/kitchen/knife,
 /obj/machinery/light/directional/north,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "DL" = (
@@ -3205,6 +3206,9 @@
 /obj/item/reagent_containers/food/drinks/mug/coco{
 	pixel_x = -6;
 	pixel_y = 2
+	},
+/obj/item/toy/cards/deck{
+	pixel_x = 3
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/canteen)
@@ -3966,7 +3970,6 @@
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/office)
 "ML" = (
-/obj/structure/closet/secure_closet/freezer/fridge,
 /obj/structure/railing/wood,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
@@ -3979,6 +3982,13 @@
 /obj/item/reagent_containers/food/condiment/soymilk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/reagent_containers/food/condiment/enzyme,
+/obj/structure/closet/secure_closet/freezer{
+	anchored = 1
+	},
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/storage/box/ingredients/vegetarian,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "MO" = (
@@ -4434,6 +4444,7 @@
 /obj/item/clothing/suit/solgov/suit,
 /obj/item/clothing/suit/hooded/wintercoat/solgov,
 /obj/item/clothing/suit/hooded/wintercoat/solgov,
+/obj/item/toy/plush/blahaj,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/dorm)
 "QQ" = (
