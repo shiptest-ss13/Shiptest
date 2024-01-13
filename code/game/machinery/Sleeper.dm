@@ -111,7 +111,8 @@
 
 /obj/machinery/sleeper/process()
 	if(!occupant || !isliving(occupant))
-		set_idle_power()
+		if(use_static_power != IDLE_POWER_USE)
+			set_idle_power()
 		return
 	var/mob/living/L_occupant = occupant
 	if(stasis_running())
