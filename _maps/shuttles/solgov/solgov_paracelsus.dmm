@@ -1890,7 +1890,8 @@
 	},
 /obj/structure/closet/secure_closet/wall{
 	pixel_y = 28;
-	name = "navigational supplies"
+	name = "navigational supplies";
+	req_access_txt = "19"
 	},
 /obj/item/gps,
 /obj/item/binoculars,
@@ -2855,18 +2856,19 @@
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/obj/structure/closet/wall/red{
+/obj/item/gun/ballistic/automatic/pistol/solgov,
+/obj/item/gun/ballistic/automatic/pistol/solgov,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/item/ammo_box/magazine/pistol556mm,
+/obj/structure/closet/secure_closet/wall{
 	dir = 1;
+	icon_state = "sec_wall";
+	name = "firearms locker";
 	pixel_y = -28;
-	req_one_access_txt = "19";
-	name = "firearm locker"
+	req_access_txt = "19"
 	},
-/obj/item/gun/ballistic/automatic/pistol/solgov,
-/obj/item/gun/ballistic/automatic/pistol/solgov,
-/obj/item/ammo_box/magazine/pistol556mm,
-/obj/item/ammo_box/magazine/pistol556mm,
-/obj/item/ammo_box/magazine/pistol556mm,
-/obj/item/ammo_box/magazine/pistol556mm,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "BU" = (
