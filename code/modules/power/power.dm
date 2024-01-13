@@ -128,6 +128,15 @@
 			removeStaticPower(active_power_usage, power_channel + 3)
 	use_static_power = NO_POWER_USE
 
+/obj/machinery/proc/set_static_power()//used to set the actual draw to the value of use_static_power
+	switch(use_power)
+		if(NO_POWER_USE)
+			set_no_power()
+		if(IDLE_POWER_USE)
+			set_idle_power()
+		if(ACTIVE_POWER_USE)
+			set_active_power()
+
 /**
  * Called whenever the power settings of the containing area change
  *
@@ -138,10 +147,12 @@
 /obj/machinery/proc/power_change()
 	SIGNAL_HANDLER
 	SHOULD_CALL_PARENT(1)
+	set_no_power()
 
 	if(machine_stat & BROKEN)
 		return
 	if(powered(power_channel))
+		set_static_power()
 		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
 			. = TRUE
