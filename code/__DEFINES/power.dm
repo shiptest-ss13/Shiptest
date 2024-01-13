@@ -13,7 +13,7 @@
 #define TESLA_DEFAULT_POWER 1738260
 #define TESLA_MINI_POWER 869130
 
-#define LIGHT_DRAW 5 // mulitplied by brightness, typically 4-8
+#define LIGHT_DRAW 10 // mulitplied by brightness, typically 4-8
 
 #define IDLE_DRAW_MINIMAL 50 // 20x = 1kw, used for small things and computers on stand-by
 #define IDLE_DRAW_LOW 200 //5x = 1kw, used for always-active computers
