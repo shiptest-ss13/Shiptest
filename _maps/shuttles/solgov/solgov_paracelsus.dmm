@@ -1889,7 +1889,8 @@
 	dir = 8
 	},
 /obj/structure/closet/secure_closet/wall{
-	pixel_y = 28
+	pixel_y = 28;
+	name = "navigational supplies"
 	},
 /obj/item/gps,
 /obj/item/binoculars,
@@ -2858,7 +2859,7 @@
 	dir = 1;
 	pixel_y = -28;
 	req_one_access_txt = "19";
-	name = "Weapons"
+	name = "firearm locker"
 	},
 /obj/item/gun/ballistic/automatic/pistol/solgov,
 /obj/item/gun/ballistic/automatic/pistol/solgov,
