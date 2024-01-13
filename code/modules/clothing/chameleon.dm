@@ -100,9 +100,9 @@
 	var/outfit_type = outfit_options[selected]
 	if(!outfit_type)
 		return FALSE
-	var/datum/outfit/job/O = new outfit_type()
-	var/list/outfit_types = O.get_chameleon_disguise_info()
-	var/datum/job/job_datum = GLOB.type_occupations[O.jobtype]
+	var/datum/outfit/job/outfit = new outfit_type()
+	var/list/outfit_types = outfit.get_chameleon_disguise_info()
+	var/datum/job/job_datum = GLOB.type_occupations[outfit.jobtype]
 
 	for(var/V in user.chameleon_item_actions)
 		var/datum/action/item_action/chameleon/change/A = V
@@ -119,22 +119,38 @@
 				break
 
 	//hardsuit helmets/suit hoods
-	if(O.toggle_helmet && (ispath(O.suit, /obj/item/clothing/suit/space/hardsuit) || ispath(O.suit, /obj/item/clothing/suit/hooded)) && ishuman(user))
+	if(outfit.toggle_helmet && (ispath(outfit.suit, /obj/item/clothing/suit/space/hardsuit) || ispath(outfit.suit, /obj/item/clothing/suit/hooded)) && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		//make sure they are actually wearing the suit, not just holding it, and that they have a chameleon hat
 		if(istype(H.wear_suit, /obj/item/clothing/suit/chameleon) && istype(H.head, /obj/item/clothing/head/chameleon))
 			var/helmet_type
-			if(ispath(O.suit, /obj/item/clothing/suit/space/hardsuit))
-				var/obj/item/clothing/suit/space/hardsuit/hardsuit = O.suit
+			if(ispath(outfit.suit, /obj/item/clothing/suit/space/hardsuit))
+				var/obj/item/clothing/suit/space/hardsuit/hardsuit = outfit.suit
 				helmet_type = initial(hardsuit.helmettype)
 			else
-				var/obj/item/clothing/suit/hooded/hooded = O.suit
+				var/obj/item/clothing/suit/hooded/hooded = outfit.suit
 				helmet_type = initial(hooded.hoodtype)
 
 			if(helmet_type)
 				var/obj/item/clothing/head/chameleon/hat = H.head
 				hat.chameleon_action.update_look(user, helmet_type)
-	qdel(O)
+
+	// ID card sechud
+	if(outfit.job_icon)
+		if(!ishuman(user))
+			return
+		var/mob/living/carbon/human/H = user
+		var/obj/item/card/id/card = H.wear_id
+		var/datum/job/J = GLOB.type_occupations[outfit.jobtype] // i really hope your outfit/job has a jobtype
+		if(!card)
+			return
+		card.job_icon = outfit.job_icon
+		card.faction_icon = outfit.faction_icon
+		card.assignment = J.name
+		H.sec_hud_set_ID()
+		card.update_label()
+
+	qdel(outfit)
 	return TRUE
 
 

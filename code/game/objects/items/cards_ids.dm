@@ -521,6 +521,8 @@ update_label()
 		else if (popup_input == "Forge/Reset" && forged)
 			registered_name = initial(registered_name)
 			assignment = initial(assignment)
+			faction_icon = initial(faction_icon)
+			job_icon = initial(job_icon)
 			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
 			update_label()
 			forged = FALSE
