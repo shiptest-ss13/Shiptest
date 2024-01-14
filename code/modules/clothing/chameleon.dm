@@ -144,11 +144,13 @@
 		var/datum/job/J = GLOB.type_occupations[outfit.jobtype] // i really hope your outfit/job has a jobtype
 		if(!card)
 			return
+		var/old_assignment = card.assignment
 		card.job_icon = outfit.job_icon
 		card.faction_icon = outfit.faction_icon
 		card.assignment = J.name
-		H.sec_hud_set_ID()
 		card.update_label()
+		card.name = "[!card.registered_name ? initial(card.name) : "[card.registered_name]'s ID Card"][" ([old_assignment])"]" // this is terrible, but whatever
+		H.sec_hud_set_ID()
 
 	qdel(outfit)
 	return TRUE
@@ -338,8 +340,10 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/suit/chameleon
-	name = "armor"
-	desc = "A slim armored vest that protects against most types of damage."
+	name = "armor vest"
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage."
+	icon = 'icons/obj/clothing/suits/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
 	icon_state = "armor"
 	item_state = "armor"
 	blood_overlay_type = "armor"
@@ -367,9 +371,9 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/glasses/chameleon
-	name = "Optical Meson Scanner"
+	name = "optical meson scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting condition."
-	icon_state = "meson"
+	icon_state = "mesongoggles"
 	item_state = "meson"
 	resistance_flags = NONE
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -504,7 +508,6 @@
 /obj/item/clothing/mask/chameleon/attack_self(mob/user)
 	voice_change = !voice_change
 	to_chat(user, "<span class='notice'>The voice changer is now [voice_change ? "on" : "off"]!</span>")
-
 
 /obj/item/clothing/mask/chameleon/drone
 	//Same as the drone chameleon hat, undroppable and no protection

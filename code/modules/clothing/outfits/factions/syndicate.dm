@@ -102,7 +102,6 @@
 
 //atmos techs
 
-//Shiptest
 /datum/outfit/job/syndicate/atmos
 	name = "Syndicate - Atmospheric Technician"
 	jobtype = /datum/job/atmos

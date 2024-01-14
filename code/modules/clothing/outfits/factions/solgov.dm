@@ -79,8 +79,8 @@
 
 /datum/outfit/job/solgov/representative
 	name = "SolGov - Solarian Representative"
-	job_icon = "solgovrepresentative"
 	jobtype = /datum/job/solgov
+	job_icon = "solgovrepresentative"
 
 	id = /obj/item/card/id/solgov
 	head = /obj/item/clothing/head/solgov
@@ -213,8 +213,8 @@
 
 /datum/outfit/job/solgov/quartermaster
 	name = "SolGov - Logistics Deck Officer"
-	job_icon = "quartermaster"
 	jobtype = /datum/job/qm
+	job_icon = "quartermaster"
 
 	ears = /obj/item/radio/headset/solgov/captain
 	uniform = /obj/item/clothing/under/solgov/formal
