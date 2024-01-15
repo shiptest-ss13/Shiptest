@@ -41,10 +41,10 @@ jobs:
       run: |
         sudo dpkg --add-architecture i386
         sudo apt update || true
-        sudo apt install -o APT::Immediate-Configure=false libssl-dev:i386
-
-    - name: Setup dependencies cache
-      id: cache-deps
+        sudo apt install -o APT::Immediate-configure=false libssl-dev:i386
+        bash tools/ci/install_rust_g.sh
+        
+    - name: Cache dependencies
       if: steps.secrets_set.outputs.SECRETS_ENABLED
       uses: actions/cache@v3
       with:

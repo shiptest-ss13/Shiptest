@@ -52,7 +52,7 @@ standards:
               '\(([\t ]+([^)"\n\\]*)|([^("\n]+)[\t ]+)\)',
           ]
 
-    - exactly: [2, "Old-style proc references", '\.proc/(\w+)']
+    - exactly: [1, "Old-style proc references", '\.proc/(\w+)']
     - exactly: [0, "Old-style typed proc references", '([\w/]+?)/?\.proc/(\w+)']
 
     - no_more:

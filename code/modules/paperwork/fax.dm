@@ -107,7 +107,7 @@
  */
 /obj/machinery/fax/emag_act(mob/user)
 	if(!panel_open && !allow_exotic_faxes)
-		balloon_alert(user, "Open the panel first!")
+		balloon_alert(user, "open panel first!")
 		return TRUE
 	if(!(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
