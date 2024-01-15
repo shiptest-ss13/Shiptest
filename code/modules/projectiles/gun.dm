@@ -526,17 +526,22 @@
 	if(!has_safety)
 		return
 
-	if(src == !user.get_active_held_item())
+	if(src != user.get_active_held_item())
 		return
 
-	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+	if(isliving(user) && in_range(src, user))
+		toggle_safety(user)
+
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
 	safety = !safety
 
-	user.visible_message(
-		span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-		span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-		vision_distance = COMBAT_MESSAGE_RANGE
-	)
+	if(!silent)
+		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+		user.visible_message(
+			span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+		)
+
 	update_appearance()
 
 
