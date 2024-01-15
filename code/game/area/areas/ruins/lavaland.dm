@@ -107,3 +107,7 @@
 /area/ruin/unpowered/codelab/maintenance
 	name = "Nanotrasen Genetic Research Maintenance"
 	icon_state = "dk_yellow"
+
+/area/ruin/unpowered/scorched_hut
+	name = "Scorched Hut"
+	icon_state = "red"
