@@ -4347,9 +4347,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/door/firedoor/border_only/closed,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -4598,18 +4595,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
-"mU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
 "mV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
@@ -6023,16 +6008,6 @@
 "qs" = (
 /obj/item/solar_assembly,
 /obj/structure/cable/yellow,
-/turf/open/floor/plating/airless,
-/area/space/nearstation)
-"qt" = (
-/obj/machinery/power/solar,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "qu" = (
@@ -9108,7 +9083,7 @@ iT
 gr
 lZ
 mp
-mU
+nq
 nq
 nG
 ox
@@ -10208,7 +10183,7 @@ qm
 qq
 bf
 aa
-qt
+qm
 qM
 qr
 aa
