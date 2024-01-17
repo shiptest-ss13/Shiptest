@@ -1,7 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
 	"map_name": "Riggs-class Sloop",
-	"prefix": "SV",
+	"prefix": "ISV",
 	"namelists": [
 		"GENERAL",
 		"SPACE",
@@ -21,37 +21,37 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain/western",
+			"outfit": "/datum/outfit/job/independent/captain/western",
 			"officer": true,
 			"slots": 1
 		},
 		"First Mate": {
-			"outfit": "/datum/outfit/job/head_of_personnel/western",
+			"outfit": "/datum/outfit/job/independent/hop/western",
 			"officer": true,
 			"slots": 1
 		},
 		"Ship's Doctor": {
-			"outfit": "/datum/outfit/job/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor",
 			"slots": 1
 		},
 		"Machinist's Mate": {
-			"outfit": "/datum/outfit/job/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer",
 			"slots": 2
 		},
 		"Asteroid Miner": {
-			"outfit": "/datum/outfit/job/miner/hazard",
+			"outfit": "/datum/outfit/job/independent/miner",
 			"slots": 2
 		},
 		"Mech Technician": {
-			"outfit": "/datum/outfit/job/roboticist/technician",
+			"outfit": "/datum/outfit/job/independent/roboticist",
 			"slots": 1
 		},
 		"Security Detail": {
-			"outfit": "/datum/outfit/job/security/western",
+			"outfit": "/datum/outfit/job/independent/security/western",
 			"slots": 1
 		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/assistant",
+			"outfit": "/datum/outfit/job/independent/assistant",
 			"slots": 4
 		}
 	},

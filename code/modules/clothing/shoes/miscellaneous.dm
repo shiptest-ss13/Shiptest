@@ -145,7 +145,7 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "Ankle-high combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -434,7 +434,7 @@
 
 /obj/item/clothing/shoes/cowboy/fancy
 	name = "bilton wrangler boots"
-	desc = "A pair of authentic haute couture boots from Japanifornia. You doubt they have ever been close to cattle."
+	desc = "A pair of authentic haute couture boots. You doubt they have ever been close to cattle."
 	icon_state = "cowboy_fancy"
 	permeability_coefficient = 0.08
 

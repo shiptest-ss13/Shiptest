@@ -296,6 +296,9 @@
 		QDEL_NULL(sparkler)
 	return ..()
 
+/obj/item/melee/baton/cattleprod/loaded
+	preload_cell_type = /obj/item/stock_parts/cell/high
+
 /obj/item/melee/baton/boomerang
 	name = "\improper OZtek Boomerang"
 	desc = "A device invented in 2486 for the great Space Emu War by the confederacy of Australicus, these high-tech boomerangs also work exceptionally well at stunning crewmembers. Just be careful to catch it when thrown!"
