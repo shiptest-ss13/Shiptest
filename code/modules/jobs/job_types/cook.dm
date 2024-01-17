@@ -35,23 +35,3 @@
 	H.equip_to_slot_or_del(I,ITEM_SLOT_BACKPACK)
 	var/datum/martial_art/cqc/under_siege/justacook = new
 	justacook.teach(H)
-
-//WS Edit Start - Alt-Job Titles
-/datum/outfit/job/cook/grillmaster
-	uniform = /obj/item/clothing/under/rank/civilian/cookjorts
-	suit = null
-	head = null
-	mask = null
-	r_hand = /obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
-	l_pocket = /obj/item/stack/sheet/mineral/coal
-//WS Edit End - Alt-Job Titles
-
-//shiptest outfits
-
-/datum/outfit/job/cook/frontiersmen
-	name = "Steward (frontiersmen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	ears = /obj/item/radio/headset/pirate
-	head  = /obj/item/clothing/head/flatcap
-	suit = /obj/item/clothing/suit/apron/chef

@@ -5,7 +5,7 @@
 
 /obj/item/clothing/under/rank/security/head_of_security/nt/lp
 	name = "LP Security Specialist's Jumpsuit"
-	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Lieutenant."
+	desc = "The ERT ran out of outfits to give to the LP, so they gave them station spares. This one belongs to the LP Security Specialist."
 
 /obj/item/clothing/under/rank/security/head_of_security/alt/lp
 	name = "LP Lieutentant's 'Dramatic' Jumpsuit"
@@ -91,7 +91,7 @@
 
 //Holocalls
 /datum/preset_holoimage/commissioner
-	outfit_type = /datum/outfit/job/captain/nt/lp_lieutenant
+	outfit_type = /datum/outfit/job/nanotrasen/captain/lp
 
 //hardsuits
 /obj/item/clothing/suit/space/hardsuit/ert/lp
