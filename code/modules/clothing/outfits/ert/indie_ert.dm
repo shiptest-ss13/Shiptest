@@ -1,4 +1,4 @@
-/datum/outfit/centcom/ert/independent
+/datum/outfit/job/independent/ert
 	name = "ERT - Independent Security Officer"
 
 	head = /obj/item/clothing/head/helmet/sec
@@ -12,9 +12,7 @@
 	belt = /obj/item/storage/belt/security/full
 	id = /obj/item/card/id
 
-	id_role = "Security Officer"
-
-/datum/outfit/centcom/ert/independent/emt
+/datum/outfit/job/independent/ert/emt
 	name = "ERT - Independent Paramedic"
 
 	head = /obj/item/clothing/head/soft/paramedic
@@ -27,9 +25,7 @@
 	back = /obj/item/storage/backpack/medic
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 
-	id_role = "Emergency Medical Technician"
-
-/datum/outfit/centcom/ert/independent/firefighter
+/datum/outfit/job/independent/ert/firefighter
 	name = "ERT - Independent Firefighter (Standard)"
 
 	head = /obj/item/clothing/head/hardhat/red
@@ -45,9 +41,7 @@
 	l_pocket = /obj/item/crowbar/red
 	r_pocket = /obj/item/radio
 
-	id_role = "Firefighter"
-
-/datum/outfit/centcom/ert/independent/firefighter/medic
+/datum/outfit/job/independent/ert/firefighter/medic
 	name = "ERT - Independent Firefighter (Medic)"
 
 	mask = /obj/item/clothing/mask/breath/medical
@@ -60,9 +54,7 @@
 
 	backpack_contents = list(/obj/item/storage/firstaid/fire=1, /obj/item/storage/firstaid/o2=1, /obj/item/radio=1)
 
-	id_role = "Emergency Medical Technician"
-
-/datum/outfit/centcom/ert/independent/firefighter/leader
+/datum/outfit/job/independent/ert/firefighter/leader
 	name = "ERT - Independent Firefighter (Group Captain)"
 
 	back = /obj/item/fireaxe
@@ -72,12 +64,11 @@
 	belt = /obj/item/storage/belt/utility/atmostech
 	gloves = /obj/item/clothing/gloves/color/yellow
 
-	id_role = "Group Captain"
-
-/datum/outfit/centcom/ert/independent/technician
+/datum/outfit/job/independent/ert/technician
 	name = "ERT - Independent Technician"
 
 	head = /obj/item/clothing/head/hardhat
+	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	belt = /obj/item/storage/belt/utility/full/engi
 	suit = /obj/item/clothing/suit/toggle/hazard
 	shoes = /obj/item/clothing/shoes/workboots

@@ -1,6 +1,6 @@
 {
 	"map_name": "Shetland-class Multipurpose Frigate",
-	"prefix": "ISV",
+	"prefix": "SV",
 	"namelists": [
 		"GENERAL",
 		"SPACE",
@@ -18,49 +18,49 @@
 	"roundstart": true,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/captain",
+			"outfit": "/datum/outfit/job/independent/captain",
 			"officer": true,
 			"slots": 1
 		},
 		"First Mate": {
-			"outfit": "/datum/outfit/job/head_of_personnel",
+			"outfit": "/datum/outfit/job/independent/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Medical Doctor": {
-			"outfit": "/datum/outfit/job/doctor",
+			"outfit": "/datum/outfit/job/independent/doctor",
 			"slots": 1
 		},
 		"Paramedic": {
-			"outfit": "/datum/outfit/job/paramedic",
+			"outfit": "/datum/outfit/job/independent/paramedic",
 			"slots": 1
 		},
 		"Ship's Engineer": {
-			"outfit": "/datum/outfit/job/engineer",
+			"outfit": "/datum/outfit/job/independent/engineer",
 			"slots": 1
 		},
 		"Atmospheric Technician": {
-			"outfit": "/datum/outfit/job/atmos",
+			"outfit": "/datum/outfit/job/independent/atmos",
 			"slots": 1
 		},
 		"Asteroid Miner": {
-			"outfit": "/datum/outfit/job/miner/hazard",
+			"outfit": "/datum/outfit/job/independent",
 			"slots": 2
 		},
 		"Security Detail": {
-			"outfit": "/datum/outfit/job/security",
+			"outfit": "/datum/outfit/job/independent/security",
 			"slots": 1
 		},
 		"Detective": {
-			"outfit": "/datum/outfit/job/detective",
+			"outfit": "/datum/outfit/job/independent/detective",
 			"slots": 1
 		},
 		"Janitor": {
-			"outfit": "/datum/outfit/job/janitor",
+			"outfit": "/datum/outfit/job/independent/janitor",
 			"slots": 1
 		},
 		"Deckhand": {
-			"outfit": "/datum/outfit/job/assistant",
+			"outfit": "/datum/outfit/job/independent/assistant",
 			"slots": 5
 		}
 	},
