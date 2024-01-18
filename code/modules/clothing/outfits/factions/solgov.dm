@@ -1,14 +1,18 @@
 /datum/outfit/job/solgov
+	name = "SolGov Base Outfit"
+
+	faction_icon = "bg_solgov"
 
 /datum/outfit/job/solgov/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list("playerSolgov")
+	H.faction |= list(FACTION_PLAYER_SOLGOV)
 
 /datum/outfit/job/solgov/assistant
-	name = "Scribe (SolGov)"
+	name = "SolGov - Scribe"
 	jobtype = /datum/job/assistant
+	job_icon = "scribe"
 
 	head = /obj/item/clothing/head/beret/solgov/plain
 	uniform = /obj/item/clothing/under/solgov/formal
@@ -16,14 +20,14 @@
 	suit = /obj/item/clothing/suit/solgov
 
 /datum/outfit/job/solgov/bureaucrat
-	name = "Bureaucrat (SolGov)"
+	name = "SolGov - Bureaucrat"
 	jobtype = /datum/job/curator
+	job_icon = "curator"
 
 	head = /obj/item/clothing/head/beret/solgov
 	uniform = /obj/item/clothing/under/solgov/formal
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/solgov/bureaucrat
-	belt = /obj/item/pda/curator
 	l_hand = /obj/item/storage/bag/books
 	r_pocket = /obj/item/key/displaycase
 	l_pocket = /obj/item/laser_pointer
@@ -33,11 +37,11 @@
 	)
 
 /datum/outfit/job/solgov/captain
-	name = "Captain (SolGov)"
+	name = "SolGov - Captain"
 	jobtype = /datum/job/captain
+	job_icon = "solgovrepresentative" // idk
 
 	id = /obj/item/card/id/gold
-	belt = /obj/item/pda/captain
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/solgov/alt/captain
 	uniform =  /obj/item/clothing/under/solgov/formal/captain
@@ -56,8 +60,9 @@
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
 /datum/outfit/job/solgov/sonnensoldner
-	name = "Sonnensöldner (SolGov)"
+	name = "SolGov - Sonnensöldner"
 	jobtype = /datum/job/officer
+	job_icon = "sonnensoldner"
 
 	id = /obj/item/card/id/solgov
 	uniform = /obj/item/clothing/under/solgov
@@ -73,9 +78,9 @@
 	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
-	name = "Solarian Representative (SolGov)"
-	job_icon = "solgovrepresentative"
+	name = "SolGov - Solarian Representative"
 	jobtype = /datum/job/solgov
+	job_icon = "solgovrepresentative"
 
 	id = /obj/item/card/id/solgov
 	head = /obj/item/clothing/head/solgov
@@ -89,7 +94,6 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	ears = /obj/item/radio/headset/solgov/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
-	belt = /obj/item/pda/solgov
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -98,11 +102,11 @@
 	)
 
 /datum/outfit/job/solgov/overseer
-	name = "Overseer (SolGov)"
+	name = "SolGov - Overseer"
 	jobtype = /datum/job/head_of_personnel
+	job_icon = "headofpersonnel"
 
 	id = /obj/item/card/id/solgov
-	belt = /obj/item/pda/heads/head_of_personnel
 	ears = /obj/item/radio/headset/solgov/captain
 	uniform = /obj/item/clothing/under/solgov/formal
 	head = /obj/item/clothing/head/solgov
@@ -116,10 +120,10 @@
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
 
 /datum/outfit/job/solgov/doctor
-	name = "Medical Doctor (SolGov)"
+	name = "SolGov - Medical Doctor"
 	jobtype = /datum/job/doctor
+	job_icon = "medicaldoctor"
 
-	belt = /obj/item/pda/medical
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/medblue
@@ -135,10 +139,10 @@
 	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/solgov/miner
-	name = "Field Engineer (SolGov)"
+	name = "SolGov - Field Engineer"
 	jobtype = /datum/job/mining
+	job_icon = "shaftminer"
 
-	belt = /obj/item/pda/shaftminer
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/explorer
@@ -159,8 +163,9 @@
 	box = /obj/item/storage/box/survival/mining
 
 /datum/outfit/job/solgov/psychologist
-	name = "Psychologist (SolGov)"
+	name = "SolGov - Psychologist"
 	jobtype = /datum/job/psychologist
+	job_icon = "psychologist"
 
 	head = /obj/item/clothing/head/fedora/solgov
 	suit = /obj/item/clothing/suit/solgov/suit
@@ -168,8 +173,6 @@
 	uniform = /obj/item/clothing/under/solgov/formal
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id
-	belt = /obj/item/pda/medical
-	pda_slot = ITEM_SLOT_BELT
 	l_hand = /obj/item/clipboard
 
 	backpack = /obj/item/storage/backpack/medic
@@ -177,8 +180,9 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 
 /datum/outfit/job/solgov/patient
-	name = "Attentive Care Patient (SolGov)"
+	name = "SolGov - Attentive Care Patient"
 	jobtype = /datum/job/prisoner
+	job_icon = "assistant" // todo: bug rye for patient icon
 
 	id = /obj/item/card/id/patient
 	uniform = /obj/item/clothing/under/rank/medical/gown
@@ -186,11 +190,11 @@
 	shoes = /obj/item/clothing/shoes/sandal/slippers
 
 /datum/outfit/job/solgov/engineer
-	name = "Ship Engineer (SolGov)"
+	name = "SolGov - Ship Engineer"
 	jobtype = /datum/job/engineer
+	job_icon = "stationengineer"
 
 	belt = /obj/item/storage/belt/utility/full/engi
-	l_pocket = /obj/item/pda/engineering
 	ears = /obj/item/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/engine
@@ -205,15 +209,13 @@
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
 	box = /obj/item/storage/box/survival/engineer
-	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
 /datum/outfit/job/solgov/quartermaster
-	name = "Logistics Deck Officer (SolGov)"
-	job_icon = "quartermaster"
+	name = "SolGov - Logistics Deck Officer"
 	jobtype = /datum/job/qm
+	job_icon = "quartermaster"
 
-	belt = /obj/item/pda/quartermaster
 	ears = /obj/item/radio/headset/solgov/captain
 	uniform = /obj/item/clothing/under/solgov/formal
 	suit = /obj/item/clothing/suit/solgov/overcoat

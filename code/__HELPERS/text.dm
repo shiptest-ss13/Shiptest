@@ -350,22 +350,32 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 /proc/random_short_color()
 	return num2text(rand(0, 4095), 3, 16)
 
-/proc/short_color_from_seed(seed)
-	return num2text(seed % 4095, 3, 16)
+/proc/color_from_seed(seed)
+	seed = md5(seed)
+
+	var/red = num2text(hex2num(copytext(seed, 1, 3)), 2, 16)
+	var/green = num2text(hex2num(copytext(seed, 3, 5)), 2, 16)
+	var/blue = num2text(hex2num(copytext(seed, 5, 7)), 2, 16)
+
+	return red + green + blue
 
 /proc/random_color()
 	return num2text(rand(0, 16777215), 6, 16)
 
 /proc/random_color_natural()	//For use in natural haircolors.
-	var red = num2text(rand(0,255), 2, 16)
-	var green = num2text(rand(0,128), 2, 16)	//Conversion to hex
-	var blue = "00"
+	var/red = num2text(rand(0,255), 2, 16)
+	var/green = num2text(rand(0,128), 2, 16)	//Conversion to hex
+	var/blue = "00"
+
 	return red + green + blue
 
 /proc/color_natural_from_seed(seed)
-	var red = num2text(seed % 255, 2, 16)
-	var green = num2text(seed % 128, 2, 16)	//Conversion to hex
-	var blue = "00"
+	seed = md5(seed)
+
+	var/red = num2text(hex2num(copytext(seed, 1, 3)), 2, 16)
+	var/green = num2text(hex2num(copytext(seed, 3, 5)) / 2, 2, 16)
+	var/blue = "00"
+
 	return red + green + blue
 
 //merges non-null characters (3rd argument) from "from" into "into". Returns result

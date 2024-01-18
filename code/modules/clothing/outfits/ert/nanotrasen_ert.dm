@@ -7,8 +7,6 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/headset_cent/alt
-	// determines what role goes on the ID of an ert member. cheap workaround for implementing it into the ert datum
-	var/id_role = "Emergency Response Officer"
 
 /datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/human, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -17,7 +15,6 @@
 	var/obj/item/card/id/id = human.wear_id
 	if(id)
 		id.registered_name = human.real_name
-		id.assignment = id_role
 		id.update_label()
 	..()
 
@@ -33,8 +30,6 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1)
 	l_pocket = /obj/item/switchblade
-
-	id_role = "Emergency Response Team Commander"
 
 /datum/outfit/centcom/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -103,8 +98,6 @@
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1)
 
-	id_role = "Medical Response Officer"
-
 /datum/outfit/centcom/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -140,7 +133,6 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/construction/rcd/loaded=1)
 
-	id_role = "Engineering Response Officer"
 
 /datum/outfit/centcom/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -213,8 +205,6 @@
 		/obj/item/mop/advanced=1,\
 		/obj/item/reagent_containers/glass/bucket=1,\
 		/obj/item/grenade/clusterbuster/cleaner=1)
-
-	id_role = "Janitorial Response Officer"
 
 /datum/outfit/centcom/ert/janitor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -304,8 +294,6 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/marine
 
-	id_role = "Emergency Response Team Commander"
-
 /datum/outfit/centcom/ert/marine/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -353,8 +341,6 @@
 	belt = /obj/item/storage/belt/medical/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 
-	id_role = "Medical Response Officer"
-
 /datum/outfit/centcom/ert/marine/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -382,8 +368,6 @@
 	belt = /obj/item/storage/belt/utility/full/ert
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
-	id_role = "Engineering Response Officer"
-
 /datum/outfit/centcom/ert/marine/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
@@ -395,9 +379,9 @@
 	headset.recalculateChannels()
 
 // Loss Prevention
-
-/datum/outfit/centcom/ert/lp
+/datum/outfit/job/nanotrasen/ert/lp
 	name = "ERT - Loss Prevention Security Specialist"
+	jobtype = /datum/job/officer
 
 	head = null
 	implants = list(/obj/item/implant/mindshield)
@@ -418,10 +402,10 @@
 
 	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
 
-	id_role = "Security Specialist"
 
-/datum/outfit/centcom/ert/lp/medic
+/datum/outfit/job/nanotrasen/ert/lp/medic
 	name = "ERT - Loss Prevention Medical Specialist"
+	jobtype = /datum/job/doctor
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
@@ -437,10 +421,10 @@
 
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/radio=1)
 
-	id_role = "Medical Specialist"
 
-/datum/outfit/centcom/ert/lp/engineer
+/datum/outfit/job/nanotrasen/ert/lp/engineer
 	name = "ERT - Loss Prevention Engineering Specialist"
+	jobtype = /datum/job/engineer
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
@@ -455,12 +439,11 @@
 	l_pocket = /obj/item/extinguisher/mini
 	r_pocket = /obj/item/wrench/combat
 
-	id_role = "Engineering Specialist"
-
 	backpack_contents = list(/obj/item/stack/sheet/metal/fifty=1, /obj/item/stack/sheet/glass/fifty=1, /obj/item/radio=1)
 
-/datum/outfit/centcom/ert/lp/lieutenant
+/datum/outfit/job/nanotrasen/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"
+	jobtype = /datum/job/captain
 
 	head = null
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
@@ -476,5 +459,3 @@
 	box = /obj/item/storage/box/survival/radio
 	l_pocket = /obj/item/megaphone/command
 	r_pocket = /obj/item/binoculars
-
-	id_role = "Lieutenant"
