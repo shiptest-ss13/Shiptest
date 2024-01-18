@@ -15,7 +15,7 @@
 
 	id = null // lol
 
-	backpack_contents = list(/obj/item/ammo_box/a762=5, /obj/item/grenade/frag=1)
+	backpack_contents = list(/obj/item/ammo_box/magazine/illestren_a850r=5, /obj/item/grenade/frag=1)
 
 /datum/outfit/job/frontiersmen/ert/random
 	name = "ERT - Frontiersman Randomized"
@@ -88,22 +88,22 @@
 	var/weapon = pick(list("Bolt-Action", "Pistol", "Melee"))
 	switch(weapon)
 		if("Bolt-Action")
-			r_hand = /obj/item/gun/ballistic/rifle/boltaction
+			r_hand = /obj/item/gun/ballistic/rifle/illestren
 			if(prob(70) && istype(back, /obj/item/storage/backpack))
-				backpack_contents += list(/obj/item/ammo_box/a762 = rand(1,4))
+				backpack_contents += list(/obj/item/ammo_box/magazine/illestren_a850r = rand(1,4))
 			if(prob(55))
-				l_pocket = /obj/item/ammo_box/a762
+				l_pocket = /obj/item/ammo_box/magazine/illestren_a850r
 		if("Pistol")
 			r_hand = pick(list(
 			/obj/item/gun/ballistic/automatic/pistol/disposable,
 			/obj/item/gun/ballistic/automatic/pistol,
-			/obj/item/gun/ballistic/revolver/pepperbox,
+			/obj/item/gun/ballistic/revolver/firebrand,
 			/obj/item/gun/energy/e_gun/mini))
 			if(prob(30))
 				l_hand = pick(list(
 				/obj/item/gun/ballistic/automatic/pistol/disposable,
 				/obj/item/gun/ballistic/automatic/pistol,
-				/obj/item/gun/ballistic/revolver/pepperbox,
+				/obj/item/gun/ballistic/revolver/firebrand,
 				/obj/item/gun/energy/e_gun/mini))
 		if("Melee")
 			r_hand = pickweight(list(
