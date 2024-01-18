@@ -494,14 +494,15 @@ GLOBAL_LIST_EMPTY(map_model_default)
 		if(members_attributes[index] != default_list)
 			world.preloader_setup(members_attributes[index], members[index])
 
+		var/turf/new_turf_type = members[index]
 		// Note: we make the assertion that the last path WILL be a turf. if it isn't, this will fail.
 		var/old_virtual_z = crds.virtual_z
 		if(placeOnTop)
-			instance = crds.PlaceOnTop(null, members[index], CHANGETURF_DEFER_CHANGE | (no_changeturf ? CHANGETURF_SKIP : NONE))
+			instance = crds.PlaceOnTop(null, new_turf_type, CHANGETURF_DEFER_CHANGE | (no_changeturf ? CHANGETURF_SKIP : NONE))
 		else if(!no_changeturf)
-			instance = crds.ChangeTurf(members[index], null, CHANGETURF_DEFER_CHANGE)
+			instance = crds.ChangeTurf(new_turf_type, initial(new_turf_type.baseturfs), CHANGETURF_DEFER_CHANGE)
 		else
-			instance = create_turf(members[index], crds , old_virtual_z)//first preloader pass
+			instance = create_turf(new_turf_type, crds , old_virtual_z)//first preloader pass
 		var/turf/new_turf = instance
 		new_turf.virtual_z = old_virtual_z //UNDER NO CIRCUMSTANCES LOOSE THIS VARIABLE
 
