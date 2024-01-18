@@ -110,9 +110,6 @@ Class Procs:
 	///A combination of factors such as having power, not being broken and so on. Boolean.
 	var/is_operational = TRUE
 	var/wire_compatible = FALSE
-	var/newarea
-	var/oldarea
-	var/dummy
 
 	var/list/component_parts = null //list of all the parts used to build it, if made from certain kinds of frames.
 	var/panel_open = FALSE
@@ -180,12 +177,10 @@ Class Procs:
 
 /obj/machinery/proc/enter_area(datum/source, area/A)
 	SIGNAL_HANDLER
-	newarea = A
 	power_change(A)
 
 /obj/machinery/proc/exit_area(datum/source, area/A)
 	SIGNAL_HANDLER
-	oldarea = A
 	set_no_power(A)
 
 /obj/machinery/Destroy()
