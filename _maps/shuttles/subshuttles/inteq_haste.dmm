@@ -2,30 +2,6 @@
 "a" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
-"e" = (
-/obj/machinery/power/shieldwallgen/atmos{
-	dir = 1;
-	id = "haste_holo";
-	anchored = 1
-	},
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 8;
-	id = "haste_door"
-	},
-/obj/docking_port/mobile{
-	dir = 8;
-	name = "ambulance dock";
-	port_direction = 8;
-	preferred_direction = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/bridge)
 "f" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -36,7 +12,27 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
 /turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"s" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 8;
+	id = "haste_door"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "haste_holo";
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "B" = (
 /obj/machinery/power/smes/engineering{
@@ -48,12 +44,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-5"
 	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "D" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-10"
 	},
@@ -63,6 +57,12 @@
 /obj/machinery/light_switch{
 	pixel_y = 22;
 	pixel_x = 10
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -106,6 +106,7 @@
 	icon_state = "0-5"
 	},
 /obj/machinery/light/directional/south,
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "J" = (
@@ -139,22 +140,29 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "O" = (
+/obj/machinery/power/shieldwallgen/atmos{
+	dir = 1;
+	id = "haste_holo";
+	anchored = 1
+	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 8;
 	id = "haste_door"
 	},
-/obj/machinery/power/shieldwallgen/atmos{
-	id = "haste_holo";
-	anchored = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/docking_port/mobile{
+	dir = 8;
+	name = "ambulance dock";
+	preferred_direction = 4
 	},
 /obj/structure/cable/yellow{
-	icon_state = "0-2"
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
@@ -169,6 +177,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "T" = (
@@ -211,7 +220,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-10"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 
 (1,1,1) = {"
@@ -246,7 +255,7 @@ F
 "}
 (6,1,1) = {"
 T
+s
 O
-e
 T
 "}
