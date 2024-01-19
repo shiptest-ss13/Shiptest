@@ -64,6 +64,9 @@
 /obj/structure/flora/stump,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/geoplant/exterior)
+"dn" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/geoplant/garage)
 "dw" = (
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plating,
@@ -266,6 +269,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant)
+"lt" = (
+/turf/template_noop,
+/area/template_noop)
 "lu" = (
 /obj/structure/window/reinforced/spawner,
 /obj/effect/turf_decal/siding,
@@ -384,22 +390,11 @@
 /obj/structure/flora/tree/dead/tall/grey,
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/geoplant/exterior)
-"pC" = (
-/obj/structure/sign/poster/retro,
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant)
-"pE" = (
-/obj/structure/sign/nanotrasen,
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant/generator)
 "pT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/geoplant/garage)
-"pY" = (
-/turf/template_noop,
-/area/template_noop)
 "rb" = (
 /obj/machinery/door/airlock/mining{
 	dir = 4
@@ -568,9 +563,6 @@
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/geoplant/exterior)
-"wR" = (
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant/lobby)
 "xc" = (
 /obj/machinery/power/smes,
 /obj/structure/cable{
@@ -603,9 +595,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/exterior)
-"yg" = (
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant)
 "yw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -723,7 +712,7 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant)
 "Df" = (
-/obj/machinery/suit_storage_unit/independent/engineering,
+/obj/machinery/suit_storage_unit/mining/eva,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/geoplant)
 "Dn" = (
@@ -786,9 +775,6 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
-"Eu" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/unpowered/geoplant/garage)
 "EQ" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
 /turf/open/floor/plasteel/dark,
@@ -890,6 +876,9 @@
 /obj/item/storage/box/papersack/meat,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/geoplant/lobby)
+"GK" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/geoplant/lobby)
 "GP" = (
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /turf/open/floor/plating/moss,
@@ -948,6 +937,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/lava/smooth/lava_land_surface,
 /area/ruin/unpowered/geoplant/exterior)
+"Ja" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/geoplant)
 "Jh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1004,9 +996,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
-"Kj" = (
-/turf/open/floor/plating,
-/area/ruin/unpowered/geoplant/generator)
 "Kz" = (
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plating,
@@ -1029,9 +1018,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/generator)
-"Lh" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/unpowered/geoplant)
 "Ll" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1068,13 +1054,23 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/unpowered/geoplant/lobby)
+"LF" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/geoplant/exterior)
 "Mb" = (
 /turf/open/floor/plating,
-/area/ruin/unpowered/geoplant/exterior)
+/area/ruin/unpowered/geoplant/generator)
+"Mf" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/geoplant/dorm)
 "Mj" = (
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/tech/grid,
+/area/ruin/unpowered/geoplant/garage)
+"Mo" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/unpowered/geoplant/garage)
 "Mq" = (
 /obj/structure/closet/secure_closet/engineering_personal,
@@ -1145,7 +1141,7 @@
 /area/ruin/unpowered/geoplant/garage)
 "NE" = (
 /turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant/garage)
+/area/ruin/unpowered/geoplant/generator)
 "NI" = (
 /obj/structure/railing/corner,
 /obj/structure/marker_beacon,
@@ -1270,9 +1266,6 @@
 /obj/structure/marker_beacon,
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/exterior)
-"Sk" = (
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant/dorm)
 "SB" = (
 /obj/structure/lattice,
 /obj/structure/lattice/catwalk,
@@ -1289,9 +1282,6 @@
 /obj/item/clothing/mask/breath/medical,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/geoplant)
-"SO" = (
-/turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant/generator)
 "SS" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1326,6 +1316,9 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/exterior)
+"Tr" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/geoplant/dorm)
 "Ty" = (
 /obj/item/clothing/head/welding,
 /obj/effect/decal/cleanable/dirt,
@@ -1336,9 +1329,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/exterior)
-"TU" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/unpowered/geoplant/lobby)
 "Un" = (
 /obj/effect/turf_decal/borderfloorwhite/cee{
 	dir = 1
@@ -1389,6 +1379,10 @@
 /obj/structure/sign/warning/electricshock,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
+"VH" = (
+/obj/structure/sign/poster/retro,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/geoplant)
 "VX" = (
 /obj/effect/turf_decal/rechargefloor,
 /obj/mecha/working/ripley/firefighter,
@@ -1419,10 +1413,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
+"WP" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/geoplant/lobby)
 "WW" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium,
-/area/ruin/unpowered/geoplant/exterior)
+/area/ruin/unpowered/geoplant/generator)
 "XE" = (
 /obj/effect/turf_decal/borderfloorwhite/full,
 /obj/machinery/advanced_airlock_controller{
@@ -1438,9 +1435,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
-"XM" = (
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/unpowered/geoplant/dorm)
+"XL" = (
+/turf/open/floor/plating,
+/area/ruin/unpowered/geoplant/exterior)
 "XY" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -1521,18 +1518,21 @@
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
+"ZP" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/ruin/unpowered/geoplant)
 
 (1,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -1570,16 +1570,16 @@ UL
 UL
 "}
 (2,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -1617,16 +1617,16 @@ Gs
 UL
 "}
 (3,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -1664,16 +1664,16 @@ UL
 UL
 "}
 (4,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -1711,16 +1711,16 @@ UL
 UL
 "}
 (5,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 Fq
@@ -1758,16 +1758,16 @@ UL
 UL
 "}
 (6,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 Fq
@@ -1805,16 +1805,16 @@ UL
 UL
 "}
 (7,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 RF
@@ -1852,16 +1852,16 @@ UL
 UL
 "}
 (8,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -1899,16 +1899,16 @@ UL
 UL
 "}
 (9,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -1946,11 +1946,11 @@ UL
 UL
 "}
 (10,1,1) = {"
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -1961,11 +1961,11 @@ UL
 UL
 UL
 UL
-Mb
+XL
 UL
 UL
 UL
-Mb
+XL
 UL
 UL
 UL
@@ -1977,10 +1977,10 @@ UL
 UL
 UL
 SV
-SO
-SO
-SO
-SO
+NE
+NE
+NE
+NE
 SV
 xI
 UL
@@ -1993,11 +1993,11 @@ UL
 UL
 "}
 (11,1,1) = {"
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 RF
@@ -2006,14 +2006,14 @@ UL
 UL
 UL
 TH
-Mb
-Eu
-NE
-NE
-NE
+XL
+Mo
+dn
+dn
+dn
 RM
-NE
-Eu
+dn
+Mo
 Ej
 UL
 xk
@@ -2023,8 +2023,8 @@ UL
 xk
 UL
 UL
-SO
-Kj
+NE
+Mb
 rQ
 lg
 lg
@@ -2040,11 +2040,11 @@ wP
 Bk
 "}
 (12,1,1) = {"
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 ti
@@ -2054,7 +2054,7 @@ UL
 UL
 wN
 UL
-NE
+dn
 kd
 sW
 pT
@@ -2070,8 +2070,8 @@ ju
 ju
 ju
 rz
-pE
-Kj
+WW
+Mb
 Mw
 Bq
 wJ
@@ -2087,9 +2087,9 @@ UL
 UL
 "}
 (13,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2101,7 +2101,7 @@ UL
 UL
 wN
 UL
-NE
+dn
 mg
 aZ
 mg
@@ -2122,7 +2122,7 @@ yw
 xc
 JJ
 sq
-Kj
+Mb
 kG
 jk
 jk
@@ -2134,9 +2134,9 @@ UL
 UL
 "}
 (14,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2148,7 +2148,7 @@ UL
 UL
 wN
 UL
-NE
+dn
 Ty
 VX
 YC
@@ -2181,9 +2181,9 @@ UL
 UL
 "}
 (15,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 Fq
@@ -2194,14 +2194,14 @@ UL
 UL
 TH
 TH
-Mb
+XL
 Ng
 Uw
 Uw
 pd
 Ls
 cg
-NE
+dn
 DF
 UL
 UL
@@ -2211,7 +2211,7 @@ ju
 UL
 UL
 UL
-SO
+NE
 tF
 MB
 lg
@@ -2228,9 +2228,9 @@ wP
 Bk
 "}
 (16,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 Fq
@@ -2239,16 +2239,16 @@ RF
 UL
 UL
 UL
-Mb
+XL
 UL
 UL
-NE
+dn
 uh
 Fv
 gt
 Ll
 Mq
-NE
+dn
 UL
 UL
 UL
@@ -2259,10 +2259,10 @@ UL
 UL
 UL
 SV
-SO
-SO
-SO
-SO
+NE
+NE
+NE
+NE
 SV
 cd
 Gs
@@ -2275,9 +2275,9 @@ UL
 UL
 "}
 (17,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 fi
@@ -2286,16 +2286,16 @@ RF
 RF
 UL
 UL
-XM
+Tr
 kg
-Sk
-XM
-NE
-NE
-NE
+Mf
+Tr
+dn
+dn
+dn
 rb
-NE
-Eu
+dn
+Mo
 UL
 UL
 xk
@@ -2322,9 +2322,9 @@ UL
 UL
 "}
 (18,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 Fq
 fi
@@ -2332,17 +2332,17 @@ fi
 RF
 RF
 TH
-Mb
-Sk
+XL
+Mf
 sK
 Zn
 sM
-wR
+GK
 Tf
 lu
 Bl
 kw
-wR
+GK
 UL
 UL
 UL
@@ -2369,9 +2369,9 @@ UL
 UL
 "}
 (19,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 Fq
 Fq
@@ -2380,16 +2380,16 @@ NS
 RF
 wN
 UL
-Sk
+Mf
 mE
 nA
 PL
-wR
+GK
 IM
 Lv
 JW
 YO
-wR
+GK
 UL
 UL
 UL
@@ -2413,12 +2413,12 @@ UL
 UL
 YQ
 UL
-WW
+LF
 "}
 (20,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 Fq
 Fq
@@ -2427,16 +2427,16 @@ RF
 UL
 wN
 UL
-Sk
+Mf
 tv
 fg
 tL
-wR
+GK
 bV
 jz
 JW
 Fx
-wR
+GK
 UL
 UL
 xk
@@ -2463,9 +2463,9 @@ GP
 UL
 "}
 (21,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 fi
@@ -2474,16 +2474,16 @@ RF
 UL
 wN
 UL
-Sk
-Sk
+Mf
+Mf
 mC
 AR
-wR
+GK
 WG
 eK
 Bb
 rL
-wR
+GK
 QM
 UL
 UL
@@ -2510,9 +2510,9 @@ UL
 UL
 "}
 (22,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 ti
@@ -2521,7 +2521,7 @@ UL
 UL
 wN
 UL
-wR
+GK
 Oe
 Jp
 MA
@@ -2530,9 +2530,9 @@ cu
 Ge
 Pj
 kI
-TU
+WP
 Jm
-wR
+GK
 Ej
 ju
 op
@@ -2557,9 +2557,9 @@ UL
 GP
 "}
 (23,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 RF
@@ -2567,8 +2567,8 @@ UL
 UL
 UL
 TH
-Mb
-wR
+XL
+GK
 gW
 IL
 ZH
@@ -2604,9 +2604,9 @@ UL
 UL
 "}
 (24,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2615,18 +2615,18 @@ UL
 UL
 UL
 UL
-Lh
-yg
+ZP
+Ja
 lm
-yg
-pC
-Lh
+Ja
+VH
+ZP
 ES
 EW
 OF
-TU
-wR
-wR
+WP
+GK
+GK
 DF
 ju
 op
@@ -2648,12 +2648,12 @@ UL
 UL
 UL
 UL
-WW
+LF
 "}
 (25,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2662,16 +2662,16 @@ UL
 UL
 UL
 UL
-yg
+Ja
 CR
 ae
 aM
 Ar
-yg
+Ja
 GB
 EW
 fj
-wR
+GK
 UL
 UL
 UL
@@ -2698,9 +2698,9 @@ UL
 UL
 "}
 (26,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2709,16 +2709,16 @@ UL
 UL
 UL
 UL
-Lh
+ZP
 Df
 SH
 yO
 EQ
-yg
-wR
+Ja
+GK
 SS
-wR
-TU
+GK
+WP
 UL
 UL
 UL
@@ -2745,9 +2745,9 @@ UL
 UL
 "}
 (27,1,1) = {"
-pY
-pY
-pY
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2756,12 +2756,12 @@ UL
 UL
 UL
 UL
-yg
-yg
-yg
-yg
-yg
-Lh
+Ja
+Ja
+Ja
+Ja
+Ja
+ZP
 UL
 UL
 UL
@@ -2792,7 +2792,7 @@ UL
 UL
 "}
 (28,1,1) = {"
-pY
+lt
 UL
 UL
 UL
@@ -2821,10 +2821,10 @@ Tm
 ju
 UL
 SV
-SO
-SO
-SO
-SO
+NE
+NE
+NE
+NE
 SV
 xI
 Gs
@@ -2835,8 +2835,8 @@ UL
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (29,1,1) = {"
 UL
@@ -2867,8 +2867,8 @@ ju
 op
 ju
 UL
-SO
-Kj
+NE
+Mb
 rQ
 lg
 lg
@@ -2882,8 +2882,8 @@ af
 wP
 Bk
 UL
-pY
-pY
+lt
+lt
 "}
 (30,1,1) = {"
 UL
@@ -2915,7 +2915,7 @@ op
 ju
 rz
 zd
-Kj
+Mb
 Mw
 Bq
 wJ
@@ -2929,8 +2929,8 @@ UL
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (31,1,1) = {"
 Fq
@@ -2966,7 +2966,7 @@ yw
 pr
 JJ
 sq
-Kj
+Mb
 kG
 jk
 jk
@@ -2976,8 +2976,8 @@ UL
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (32,1,1) = {"
 UL
@@ -3008,7 +3008,7 @@ ju
 ju
 ju
 rz
-pE
+WW
 fW
 XZ
 AG
@@ -3023,11 +3023,11 @@ UL
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (33,1,1) = {"
-pY
+lt
 UL
 UL
 UL
@@ -3055,7 +3055,7 @@ UL
 UL
 UL
 UL
-SO
+NE
 tF
 MB
 lg
@@ -3070,12 +3070,12 @@ af
 wP
 Bk
 UL
-pY
-pY
+lt
+lt
 "}
 (34,1,1) = {"
-pY
-pY
+lt
+lt
 UL
 UL
 UL
@@ -3103,11 +3103,11 @@ UL
 UL
 UL
 SV
-SO
-SO
-SO
-SO
-SO
+NE
+NE
+NE
+NE
+NE
 cd
 UL
 Gs
@@ -3117,19 +3117,19 @@ UL
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (35,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 ti
@@ -3164,19 +3164,19 @@ Gs
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (36,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 ti
@@ -3211,19 +3211,19 @@ Gs
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (37,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 RF
@@ -3258,19 +3258,19 @@ UL
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (38,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3305,19 +3305,19 @@ UL
 Gs
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (39,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3352,20 +3352,20 @@ UL
 Gs
 UL
 UL
-pY
-pY
+lt
+lt
 "}
 (40,1,1) = {"
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
-pY
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3399,6 +3399,6 @@ UL
 UL
 UL
 UL
-pY
-pY
+lt
+lt
 "}
