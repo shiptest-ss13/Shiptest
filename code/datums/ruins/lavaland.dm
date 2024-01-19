@@ -9,10 +9,10 @@
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/biodome/winter
-	name = "Biodome Winter"
+	name = "Solarian Winter Biodome"
 	id = "biodome-winter"
-	description = "For those getaways where you want to get back to nature, but you don't want to leave the fortified military compound where you spend your days. \
-	Includes a unique(*) laser pistol display case, and the recently introduced I.C.E(tm)."
+	description = "A Solarian frontier research facility created by the Pionierskompanien \
+	This one seems to simulate the wintery climate of the northern provinces, includes a sauna!"
 	suffix = "lavaland_surface_biodome_winter.dmm"
 
 /datum/map_template/ruin/lavaland/free_golem
