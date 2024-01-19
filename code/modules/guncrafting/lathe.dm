@@ -1,5 +1,5 @@
 #define DECONSTRUCT_STAMINA_MINIMUM 50
-#define DECONSTRUCT_STAMINA_USE 40
+#define DECONSTRUCT_STAMINA_USE 20
 
 /obj/structure/lathe
 	name = "Machine Lathe"
@@ -9,7 +9,6 @@
 	density = TRUE
 	anchored = FALSE
 	var/obj/item/work_piece = FALSE
-	var/obj/item/blueprint/blueprint = FALSE
 	var/steps_left = 0
 	//Whether there is an active job on the table
 	var/in_progress = FALSE
@@ -38,7 +37,6 @@
 	if(!mode)
 		var/list/choose_options = list()
 		choose_options += list("Deconstruct" = image(icon = 'icons/obj/tools.dmi', icon_state = "welder"))
-		choose_options += list("Research" = image(icon = 'icons/obj/tools.dmi', icon_state = "analyzer"))
 		choose_options += list("Fabricate" = image(icon = 'icons/obj/tools.dmi', icon_state = "wrench"))
 		mode = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
 	if(mode && !working)
@@ -47,25 +45,10 @@
 				to_chat(user, "There is no item on the lathe.")
 				return
 			deconstruct_part(user)
-		if(mode == "Research")
-			if(!work_piece)
-				to_chat(user, "There is no item on the lathe.")
-				return
-			research_part(user)
 		if(mode == "Fabricate")
-			if(!blueprint)
-				to_chat(user, "There is no blueprint on the lathe.")
-				return
 			fabricate_part(user)
 
 /obj/structure/lathe/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/blueprint))
-		if(blueprint)
-			to_chat(user, "You cant add another blueprint to the lathe.")
-			return
-		I.forceMove(src)
-		blueprint = I
-		return
 	if(work_piece)
 		to_chat(user, "You cant add another item to the lathe.")
 		return
@@ -101,6 +84,9 @@
 	if(!in_progress)
 		in_progress = TRUE
 		steps_left = 3
+	if(user.getStaminaLoss() > DECONSTRUCT_STAMINA_MINIMUM)
+		balloon_alert(user, "too tired")
+		return
 	working = TRUE
 	if(do_after(user, 20, work_piece))
 		if(steps_left > 1)
@@ -116,9 +102,13 @@
 /obj/structure/lathe/proc/scrap_item(mob/user)
 	to_chat(user, "The [work_piece.name] is broken down into parts.")
 	playsound(src,'sound/items/welder.ogg',50,TRUE)
-	if(istype (work_piece, /obj/item/modgun))
+	if(istype (work_piece, /obj/item/gun))
+		var/obj/item/gun/gun_work_piece = work_piece
 		var/obj/item/new_part = new /obj/item/part/gun
 		new_part.forceMove(drop_location())
+		if(gun_work_piece.frame)
+			var/obj/item/frame = gun_work_piece.frame
+			frame.forceMove(drop_location())
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/material_amount = materials.get_item_material_amount(work_piece)
 	if(material_amount)
@@ -126,43 +116,12 @@
 		materials.retrieve_all()
 	destroy_part(user)
 
-//////////////
-// RESEARCH //
-//////////////
-
-/obj/structure/lathe/proc/research_part(mob/living/carbon/human/user)
-	if(!in_progress)
-		in_progress = TRUE
-		steps_left = 3
-	working = TRUE
-	if(do_after(user, 20, work_piece))
-		if(steps_left > 1)
-			steps_left--
-			playsound(src,'sound/items/welder2.ogg',50,TRUE)
-			to_chat(user, "You have [steps_left] steps left.")
-			user.adjustStaminaLoss(DECONSTRUCT_STAMINA_USE)
-			research_part(user)
-		else
-			var/obj/item/blueprint/blueprint = new /obj/item/blueprint
-			blueprint.desc += "\nA blueprint on [work_piece.name]."
-			blueprint.design = work_piece
-			blueprint.forceMove(drop_location())
-			if(Adjacent(user) && !issilicon(user))
-				user.put_in_hands(blueprint)
-			remove_part(user)
-	working = FALSE
-
 ///////////////
 // FABRICATE //
 ///////////////
 
 /obj/structure/lathe/proc/fabricate_part(mob/living/carbon/human/user)
-	if(blueprint)
-		var/obj/item/new_part = new blueprint.design(loc)
-		new_part.forceMove(drop_location())
-		if(Adjacent(user) && !issilicon(user))
-			user.put_in_hands(new_part)
-
+	return
 
 ///////////
 // ITEMS //

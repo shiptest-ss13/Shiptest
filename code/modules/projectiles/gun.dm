@@ -133,6 +133,9 @@
 	///If the saftey on? If so, we can't fire the weapon
 	var/safety = FALSE
 
+	// Used when deconstructing
+	var/frame = FALSE
+
 /obj/item/gun/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))

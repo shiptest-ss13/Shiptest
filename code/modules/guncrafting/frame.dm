@@ -3,20 +3,17 @@
 	desc = "a generic gun frame. consider debug"
 	icon_state = "frame_olivaw"
 	generic = FALSE
-	var/result = /obj/item/modgun
+	var/result = /obj/item/gun
 
 	// Currently installed grip
 	var/obj/item/part/gun/modular/grip/InstalledGrip
 	// Which grips does the frame accept?
 	var/list/gripvars = list(/obj/item/part/gun/modular/grip/wood, /obj/item/part/gun/modular/grip/black)
 
-	// What are the results (in order relative to gripvars)?
-	var/list/resultvars = list(/obj/item/modgun, /obj/item/modgun)
-
 	// Currently installed mechanism
 	var/obj/item/part/gun/modular/grip/InstalledMechanism
 	// Which mechanism the frame accepts?
-	//var/list/mechanismvar = /obj/item/part/gun/modular/mechanism
+	var/list/mechanismvar = /obj/item/part/gun/modular/mechanism
 
 	// Currently installed barrel
 	var/obj/item/part/gun/modular/barrel/InstalledBarrel
@@ -32,15 +29,10 @@
 
 /obj/item/part/gun/frame/New(loc)
 	..()
-	var/spawn_with_preinstalled_parts = FALSE
+	var/spawn_with_preinstalled_parts = TRUE
 
 	if(spawn_with_preinstalled_parts)
 		var/list/parts_list = list("mechanism", "barrel", "grip")
-
-		pick_n_take(parts_list)
-		if(prob(50))
-			pick_n_take(parts_list)
-
 		for(var/part in parts_list)
 			switch(part)
 				if("mechanism")
@@ -51,10 +43,6 @@
 				if("grip")
 					var/select = pick(gripvars)
 					InstalledGrip = new select(src)
-					/*
-					var/variantnum = gripvars.Find(select)
-					result = resultvars[variantnum]
-					*/
 
 /obj/item/part/gun/frame/proc/eject_item(obj/item/I, mob/living/user)
 	if(!I || !user.IsAdvancedToolUser() || user.stat || !user.Adjacent(I))
@@ -184,14 +172,17 @@
 	. = ..()
 	if(.)
 		if(InstalledGrip)
-			to_chat(user, span_notice("\the [src] has \a [InstalledGrip] installed."))
+			. += "<span class='notice'>\the [src] has \a [InstalledGrip] installed.</span>"
 		else
-			to_chat(user, span_notice("\the [src] does not have a grip installed."))
+			. += "<span class='notice'>\the [src] does not have a grip installed.</span>"
 		if(InstalledMechanism)
-			to_chat(user, span_notice("\the [src] has \a [InstalledMechanism] installed."))
+			. += "<span class='notice'>\the [src] has \a [InstalledMechanism] installed.</span>"
 		else
-			to_chat(user, span_notice("\the [src] does not have a mechanism installed."))
+			. += "<span class='notice'>\the [src] does not have a mechanism installed.</span>"
 		if(InstalledBarrel)
-			to_chat(user, span_notice("\the [src] has \a [InstalledBarrel] installed."))
+			. += "<span class='notice'>\the [src] has \a [InstalledBarrel] installed.</span>"
 		else
-			to_chat(user, span_notice("\the [src] does not have a barrel installed."))
+			. += "<span class='notice'>\the [src] does not have a barrel installed.</span>"
+
+/obj/item/part/gun/frame/mk1
+	result = /obj/item/gun/ballistic/shotgun/winchester/mk1
