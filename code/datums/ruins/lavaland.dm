@@ -4,10 +4,6 @@
 	prefix = "_maps/RandomRuins/LavaRuins/"
 	ruin_type = RUINTYPE_LAVA
 
-/datum/map_template/ruin/lavaland/biodome
-	cost = 5
-	allow_duplicates = FALSE
-
 /datum/map_template/ruin/lavaland/biodome/winter
 	name = "Solarian Winter Biodome"
 	id = "biodome-winter"
