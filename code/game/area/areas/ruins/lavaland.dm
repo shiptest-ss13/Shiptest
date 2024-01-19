@@ -107,3 +107,21 @@
 /area/ruin/unpowered/codelab/maintenance
 	name = "Nanotrasen Genetic Research Maintenance"
 	icon_state = "dk_yellow"
+
+/area/ruin/unpowered/geoplant
+	name = "Nanotrasen Geothermal Plant"
+	icon_state = "dk_yellow"
+/area/ruin/unpowered/geoplant/garage
+	name = "Nanotrasen Geothermal Plant Garage"
+	icon_state = "cargo_bay"
+/area/ruin/unpowered/geoplant/dorm
+	name = "Nanotrasen Geothermal Plant Dorm"
+	icon_state = "Sleep"
+/area/ruin/unpowered/geoplant/lobby
+	name = "Nanotrasen Geothermal Plant Lobby"
+	icon_state = "green"
+/area/ruin/unpowered/geoplant/exterior
+	name = "Nanotrasen Geothermal Plant Exterior"
+/area/ruin/unpowered/geoplant/generator
+	name = "Nanotrasen Geothermal Plant Generators"
+	icon_state = "engine"
