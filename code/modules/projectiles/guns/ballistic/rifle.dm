@@ -1,6 +1,8 @@
 /obj/item/gun/ballistic/rifle
 	name = "Bolt Rifle"
 	desc = "Some kind of bolt-action rifle. You get the feeling you shouldn't have this."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	icon_state = "hunting"
 	item_state = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
@@ -73,8 +75,6 @@
 	name = "\improper HP Illestren"
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, the Illestren is popular among colonists, pirates, snipers, and countless others. Chambered in 8x50mmR."
 	sawn_desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	eject_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
 	icon_state = "illestren"
