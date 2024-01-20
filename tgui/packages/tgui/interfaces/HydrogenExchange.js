@@ -11,12 +11,12 @@ export const HydrogenExchange = (props, context) => {
       title="Hydrogen Exchange"
       theme="ntos_terminal"
       width={400}
-      height={250}
+      height={300}
     >
       <Window.Content>
         <Section
           title={
-            'Current credits: ' + credits + ', conversion rate is ' + credit_tax
+            'Current credits: ' + credits + ', tax rate is ' + credit_tax + '%.'
           }
         />
         <Section

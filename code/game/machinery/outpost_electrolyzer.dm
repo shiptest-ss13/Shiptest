@@ -2,10 +2,11 @@
 #define MOLS_PER_ICE 50 //1 ice = 50 mols
 #define MOLS_PER_MERIT 10 //10 mols = 1 merit
 #define MERITS_PER_ICE MOLS_PER_ICE / MOLS_PER_MERIT //1 ice = 5 merits
-#define MERITS_USED_PER_TICK 1
+#define MERITS_USED_PER_TICK 2
 #define H2_PUMP_SHUTOFF_PRESSURE 4000
-#define CREDITS_TO_MERITS 4 // currently 1:2 credits to mols hydrogen. # of credits per merit
-#define CREDIT_TAX 0.8 // gross credits * tax = net payout in merits
+#define CREDITS_TO_MERITS 4 // currently 2:5 credits to mols hydrogen. # of credits per merit
+#define OUTPOST_HYDROGEN_CUT 0.8
+#define HYDROGEN_IDEAL 45000 //used for high and low end of merit multiplier
 #define MERIT_EXPONENT 0.95 //used for diminishing returns, values closer to 1 increase returns, lower decrease.
 
 /obj/machinery/mineral/electrolyzer_unloader
@@ -31,7 +32,7 @@
 
 /obj/machinery/computer/electrolyzer_console
 	name = "electrolyzer console"
-	desc = "deposits hydrogen merits"
+	desc = "Deposits hydrogen merits, with 20% going to outpost upkeep."
 	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "console"
 
@@ -49,7 +50,8 @@
 
 /obj/machinery/computer/electrolyzer_console/proc/electrolyze_item(obj/item/I)
 	var/obj/item/stack/ore/ice/S = I
-	var/meritval = S.get_amount() * MERITS_PER_ICE
+	var/meritval = round(S.get_amount() * MERITS_PER_ICE * OUTPOST_HYDROGEN_CUT,1) // causes a bit of surplus in the "outpost" supply, even if they use all of these merits for hydrogen.
+	GLOB.hydrogen_stored +=  S.get_amount() * MOLS_PER_ICE
 	new /obj/item/merit/bundle(drop_location(), meritval)
 	playsound(src, 'sound/items/poster_being_created.ogg', 20, FALSE)
 
@@ -181,6 +183,7 @@
 		merit = NONE
 		on = FALSE
 	air.adjust_moles(GAS_HYDROGEN, meritused * MOLS_PER_MERIT)
+	GLOB.hydrogen_stored -= meritused * MOLS_PER_MERIT
 	air.set_temperature(T20C) //hydrogen from adjust_mols takes the temp of the container, and if the container is empty it defaults to 0K. this works for now
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/attackby(obj/item/I, mob/user)
@@ -243,6 +246,11 @@
 		return
 	return ..()
 
+/obj/machinery/computer/hydrogen_exchange/proc/meritmultiplier()
+	var/extra = clamp(((GLOB.hydrogen_stored / HYDROGEN_IDEAL) + 1), 0, 2) * 0.3 //results in a number between 0 and .6
+	var/actual = round((0.4 + extra), 0.01) //.4 on low end, 1 on high end
+	return actual
+
 /obj/machinery/computer/hydrogen_exchange/proc/dispense_funds()
 	var/makenoise
 	if(merits)
@@ -274,7 +282,7 @@
 /obj/machinery/computer/hydrogen_exchange/proc/convert_to_merits()
 	if(credits)
 		playsound(src, 'sound/machines/pda_button1.ogg', 20, FALSE)
-		merits += round(credits * CREDIT_TAX / CREDITS_TO_MERITS, 1)
+		merits += round(credits * meritmultiplier() / CREDITS_TO_MERITS, 1)
 		credits = NONE
 	else
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20, FALSE)
@@ -301,7 +309,7 @@
 	data["merits"] = merits
 	data["next_merit_rate"] = next_merit_rate
 	data["credits_to_merits"] = CREDITS_TO_MERITS
-	data["credit_tax"] = CREDIT_TAX
+	data["credit_tax"] = (1 - meritmultiplier()) * 100
 	return data
 
 /obj/machinery/computer/hydrogen_exchange/ui_act(action, params)
@@ -526,5 +534,4 @@
 #undef MERITS_USED_PER_TICK
 #undef H2_PUMP_SHUTOFF_PRESSURE
 #undef CREDITS_TO_MERITS
-#undef CREDIT_TAX
 #undef MERIT_EXPONENT
