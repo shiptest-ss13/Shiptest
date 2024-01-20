@@ -34,6 +34,9 @@
 	remove_part(user)
 
 /obj/structure/lathe/attack_hand(mob/living/carbon/human/user)
+	if(!work_piece)
+		to_chat(user, "There is no item on the lathe.")
+		return
 	if(!mode)
 		var/list/choose_options = list()
 		choose_options += list("Deconstruct" = image(icon = 'icons/obj/tools.dmi', icon_state = "welder"))
@@ -41,9 +44,6 @@
 		mode = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
 	if(mode && !working)
 		if(mode == "Deconstruct")
-			if(!work_piece)
-				to_chat(user, "There is no item on the lathe.")
-				return
 			deconstruct_part(user)
 		if(mode == "Fabricate")
 			fabricate_part(user)
@@ -121,7 +121,28 @@
 ///////////////
 
 /obj/structure/lathe/proc/fabricate_part(mob/living/carbon/human/user)
-	return
+	if(istype (work_piece, /obj/item/gun))
+		var/obj/item/gun/gun_work_piece = work_piece
+		var/list/choose_options = list()
+		choose_options += list("Grip" = image(icon ='icons/obj/crafts.dmi', icon_state = "grip_wood"))
+		choose_options += list("Mechanism" = image(icon ='icons/obj/crafts.dmi', icon_state = "mechanism_pistol"))
+		choose_options += list("Barrel" = image(icon ='icons/obj/crafts.dmi', icon_state = "barrel_35"))
+		if(gun_work_piece.frame)
+			choose_options += list("Frame" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.icon_state))
+		var/choosen_part = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+		if(choosen_part)
+			var/obj/part_to_build
+			switch(choosen_part)
+				if("Grip")
+					part_to_build = new /obj/item/part/gun/modular/grip/wood
+				if("Mechanism")
+					part_to_build = new /obj/item/part/gun/modular/mechanism
+				if("Barrel")
+					part_to_build = new /obj/item/part/gun/modular/barrel
+				if("Frame")
+					part_to_build = new /obj/item/part/gun/frame
+			part_to_build.forceMove(drop_location())
+	mode = FALSE
 
 ///////////
 // ITEMS //

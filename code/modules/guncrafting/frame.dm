@@ -23,10 +23,6 @@
 	// Bonuses from forging/type or maluses from printing
 	var/cheap = FALSE // Set this to true for cheap variants
 
-/obj/item/part/gun/frame/New(loc, ...)
-	. = ..()
-	var/obj/item/modgun/G = new result(null)
-
 /obj/item/part/gun/frame/New(loc)
 	..()
 	var/spawn_with_preinstalled_parts = TRUE

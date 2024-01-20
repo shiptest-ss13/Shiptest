@@ -134,10 +134,12 @@
 	var/safety = FALSE
 
 	// Used when deconstructing
-	var/frame = FALSE
+	var/obj/item/part/gun/frame/frame
 
 /obj/item/gun/Initialize()
 	. = ..()
+	if(!frame)
+		frame = new(src)
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	if(pin)
