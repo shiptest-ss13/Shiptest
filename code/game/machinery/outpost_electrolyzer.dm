@@ -192,13 +192,15 @@
 		return
 	return ..()
 
-/obj/machinery/atmospherics/components/unary/hydrogen_pump/CtrlClick(mob/user)
+/obj/machinery/atmospherics/components/unary/hydrogen_pump/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
 	on = !on
 	playsound(src, 'sound/machines/switch3.ogg', 10, FALSE)
 	to_chat(user, "<span class='notice'>You toggle the pump [on ? "on" : "off"].</span>")
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_appearance()
-	return ..()
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/AltClick(mob/user)
 	if(merit)
