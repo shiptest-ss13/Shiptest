@@ -4,8 +4,9 @@
 #define MERITS_PER_ICE MOLS_PER_ICE / MOLS_PER_MERIT //1 ice = 5 merits
 #define MERITS_USED_PER_TICK 1
 #define H2_PUMP_SHUTOFF_PRESSURE 4000
-#define CREDITS_TO_MERITS 10 // currently 1:1 credits to mols hydrogen. # of credits per merit
+#define CREDITS_TO_MERITS 4 // currently 1:2 credits to mols hydrogen. # of credits per merit
 #define CREDIT_TAX 0.8 // gross credits * tax = net payout in merits
+#define MERIT_EXPONENT 0.95 //used for diminishing returns, values closer to 1 increase returns, lower decrease.
 
 /obj/machinery/mineral/electrolyzer_unloader
 	name = "ice unloading machine"
@@ -181,7 +182,7 @@
 	if(istype(I, /obj/item/merit/bundle))
 		var/obj/item/merit/bundle/C = I
 		merit += C.value
-		to_chat(user, "<span class='notice'>You deposit [I], for a total of [merit] merits.</span>")
+		to_chat(user, "<span class='notice'>You deposit [I]s, for a total of [merit] merits.</span>")
 		qdel(I)
 		return
 	return ..()
@@ -209,7 +210,7 @@
 	icon_screen = "vault"
 	icon_keyboard = "security_key"
 
-	//merit_exchange_rate is a global var used here
+	//GLOB.total_merits_exchanged starts at 0
 	var/merits = NONE
 	var/credits = NONE
 
@@ -247,10 +248,17 @@
 	if(makenoise)
 		playsound(src, 'sound/machines/coindrop.ogg', 20, FALSE)
 
+/obj/machinery/computer/hydrogen_exchange/proc/resetmerits() //debug proc
+	GLOB.total_merits_exchanged = 0
+
 /obj/machinery/computer/hydrogen_exchange/proc/convert_to_credits()
 	if(merits)
 		playsound(src, 'sound/machines/pda_button1.ogg', 20, FALSE)
-		credits += round(merits * GLOB.merit_exchange_rate * CREDITS_TO_MERITS, 1)
+		var/oldtotal = GLOB.total_merits_exchanged ** MERIT_EXPONENT
+		var/newtotal = (GLOB.total_merits_exchanged + merits) ** MERIT_EXPONENT
+		var/reducedmerits = newtotal - oldtotal
+		GLOB.total_merits_exchanged += merits
+		credits += round(reducedmerits * CREDITS_TO_MERITS, 1)
 		merits = NONE
 	else
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20, FALSE)
@@ -275,10 +283,15 @@
 		ui.open()
 
 /obj/machinery/computer/hydrogen_exchange/ui_data(mob/user)
+	var/next_merit_rate
+	if(GLOB.total_merits_exchanged)
+		next_merit_rate = round((GLOB.total_merits_exchanged ** MERIT_EXPONENT) / GLOB.total_merits_exchanged * CREDITS_TO_MERITS, 0.01)
+	else
+		next_merit_rate = CREDITS_TO_MERITS
 	var/list/data = list()
 	data["credits"] = credits
 	data["merits"] = merits
-	data["exchange_rate"] = GLOB.merit_exchange_rate
+	data["next_merit_rate"] = next_merit_rate
 	data["credits_to_merits"] = CREDITS_TO_MERITS
 	data["credit_tax"] = CREDIT_TAX
 	return data
@@ -338,7 +351,7 @@
 			H.dropItemToGround(src)
 			H.dropItemToGround(bundle)
 			H.put_in_hands(bundle)
-		to_chat(user, "<span class='notice'>You add [value] credits worth of money to the bundle.<br>It now holds [bundle.value] credits.</span>")
+		to_chat(user, "<span class='notice'>You add [value] merits worth of money to the bundle.<br>It now holds [bundle.value] merits.</span>")
 		qdel(src)
 
 /obj/item/merit/Destroy()
@@ -346,7 +359,7 @@
 	value = 0 // Prevents money from be duplicated anytime.//I'll trust eris on this one
 
 /obj/item/merit/bundle
-	icon_state = "credit20"
+	icon_state = "merit16"
 
 /obj/item/merit/bundle/Initialize()
 	. = ..()
@@ -410,7 +423,7 @@
 	return ..()
 
 /obj/item/merit/bundle/attack_self()
-	var/cashamount = input(usr, "How many credits do you want to take? (0 to [value])", "Take Money", 20) as num
+	var/cashamount = input(usr, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
 		return
@@ -431,7 +444,7 @@
 	update_appearance()
 
 /obj/item/merit/bundle/AltClick(mob/living/user)
-	var/cashamount = input(usr, "How many credits do you want to take? (0 to [value])", "Take Money", 20) as num
+	var/cashamount = input(usr, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
 		return
@@ -466,12 +479,38 @@
 /obj/item/proc/get_item_merit_value()
 	return
 
-/obj/item/merit/bundle/get_item_merit_value()//used for vendors and ids.
+/obj/item/merit/bundle/get_item_merit_value()//used for hydrogen exchange and pumps
 	return value
 
-/obj/item/merit/bundle/s32
-	value = 32
-	icon_state = "merit32"
+//bundles for mapping + testing
+
+/obj/item/merit/bundle/m1
+	value = 1
+	icon_state = "merit1"
+
+/obj/item/merit/bundle/m4
+	value = 4
+	icon_state = "merit4"
+
+/obj/item/merit/bundle/m16
+	value = 16
+	icon_state = "merit16"
+
+/obj/item/merit/bundle/m64
+	value = 64
+	icon_state = "merit64"
+
+/obj/item/merit/bundle/m256
+	value = 256
+	icon_state = "merit256"
+
+/obj/item/merit/bundle/m1024
+	value = 1024
+	icon_state = "merit1024"
+
+/obj/item/merit/bundle/m4096
+	value = 4096
+	icon_state = "merit4096"
 
 #undef MOLS_PER_ICE
 #undef MOLS_PER_MERIT
@@ -479,3 +518,5 @@
 #undef MERITS_USED_PER_TICK
 #undef H2_PUMP_SHUTOFF_PRESSURE
 #undef CREDITS_TO_MERITS
+#undef CREDIT_TAX
+#undef MERIT_EXPONENT

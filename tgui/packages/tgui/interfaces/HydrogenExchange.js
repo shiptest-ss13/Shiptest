@@ -4,10 +4,15 @@ import { Window } from '../layouts';
 
 export const HydrogenExchange = (props, context) => {
   const { act, data } = useBackend(context);
-  const { credits, merits, exchange_rate, credits_to_merits, credit_tax } =
+  const { credits, merits, next_merit_rate, credits_to_merits, credit_tax } =
     data;
   return (
-    <Window width={400} height={250}>
+    <Window
+      title="Hydrogen Exchange"
+      theme="ntos_terminal"
+      width={400}
+      height={250}
+    >
       <Window.Content>
         <Section
           title={
@@ -18,8 +23,9 @@ export const HydrogenExchange = (props, context) => {
           title={
             'Current merits: ' +
             merits +
-            ', conversion rate is at ' +
-            exchange_rate
+            ', the next merit rate is ' +
+            next_merit_rate +
+            'cr'
           }
         />
         <Section

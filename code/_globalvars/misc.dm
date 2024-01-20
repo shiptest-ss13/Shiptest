@@ -11,7 +11,7 @@ GLOBAL_DATUM_INIT(data_core, /datum/datacore, new)
 GLOBAL_VAR_INIT(CELLRATE, 0.002)  // conversion ratio between a watt-tick and kilojoule
 GLOBAL_VAR_INIT(CHARGELEVEL, 0.001) // Cap for how fast cells charge, as a percentage-per-tick (.001 means cellcharge is capped to 1% per second)
 
-GLOBAL_VAR_INIT(merit_exchange_rate, 0.5)
+GLOBAL_VAR_INIT(total_merits_exchanged, 0)
 
 GLOBAL_LIST_EMPTY(powernets)
 
