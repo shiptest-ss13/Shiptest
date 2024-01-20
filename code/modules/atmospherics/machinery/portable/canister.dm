@@ -52,7 +52,9 @@
 		"stimulum" = /obj/machinery/portable_atmospherics/canister/stimulum,
 		"pluoxium" = /obj/machinery/portable_atmospherics/canister/pluoxium,
 		"caution" = /obj/machinery/portable_atmospherics/canister,
-		"freon" = /obj/machinery/portable_atmospherics/canister/freon
+		"freon" = /obj/machinery/portable_atmospherics/canister/freon,
+		"hydrogen" = /obj/machinery/portable_atmospherics/canister/hydrogen,
+		"fuel mix" = /obj/machinery/portable_atmospherics/canister/fuel
 	)
 
 /obj/machinery/portable_atmospherics/canister/interact(mob/user)
