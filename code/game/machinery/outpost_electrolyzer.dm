@@ -139,8 +139,8 @@
 /obj/machinery/atmospherics/components/unary/hydrogen_pump
 	name = "hydrogen pump"
 	desc = "Use merits to buy hydrogen."
-	icon = 'icons/obj/shuttle.dmi'
-	icon_state = "heater_pipe"
+	icon = 'icons/obj/atmos.dmi'
+	icon_state = "hydrogen_pump"
 
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 50
