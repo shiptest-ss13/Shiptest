@@ -53,7 +53,7 @@ export const HydrogenExchange = (props, context) => {
               }
             />
             <LabeledList.Item
-              label="Dispense Merits and Credits"
+              label="Dispense merits and credits"
               buttons={
                 <Button
                   icon="sync"

@@ -160,12 +160,17 @@
 		. += "<span class='notice'>Has [merit] merits, equaling [merit * MOLS_PER_MERIT] mols of hydrogen.</span>"
 	else
 		. += "<span class='notice'>Has no merits, get some from the electrolyzer or buy them to get hydrogen!</span>"
-	. += "<span class='notice'>[src] is currently [on ? "on" : "off"] </span>"
+	. += "<span class='notice'>[src] is currently [on ? "on" : "off"], and shuts off above [H2_PUMP_SHUTOFF_PRESSURE]kPa.</span>"
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/process_atmos()
 	update_parents()
 	var/datum/gas_mixture/air = airs[1] //hydrogen out
-	if(!merit || air.return_pressure() > H2_PUMP_SHUTOFF_PRESSURE || !on)
+	if(!on)
+		return
+	if(!merit || air.return_pressure() > H2_PUMP_SHUTOFF_PRESSURE)
+		on = FALSE
+		visible_message("<span class='danger'>The [src.name] shuts off!</span>")
+		playsound(src, 'sound/machines/switch2.ogg', 10, FALSE)
 		return
 	var/meritused
 	if(merit >= MERITS_USED_PER_TICK)
@@ -182,13 +187,14 @@
 	if(istype(I, /obj/item/merit/bundle))
 		var/obj/item/merit/bundle/C = I
 		merit += C.value
-		to_chat(user, "<span class='notice'>You deposit [I]s, for a total of [merit] merits.</span>")
+		to_chat(user, "<span class='notice'>You deposit [I], for a total of [merit] merits.</span>")
 		qdel(I)
 		return
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/CtrlClick(mob/user)
 	on = !on
+	playsound(src, 'sound/machines/switch3.ogg', 10, FALSE)
 	to_chat(user, "<span class='notice'>You toggle the pump [on ? "on" : "off"].</span>")
 	investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
 	update_appearance()
