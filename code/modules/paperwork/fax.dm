@@ -74,7 +74,7 @@
 	GLOB.fax_machines += src
 	if(!fax_id)
 		fax_id = SSnetworks.make_address()
-	if(fax_name == initial(fax_name))
+	if(!fax_name)
 		fax_name = "[get_area_name(src)] Fax Machine"
 	wires = new /datum/wires/fax(src)
 
