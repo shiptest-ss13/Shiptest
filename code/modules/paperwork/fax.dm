@@ -64,7 +64,7 @@
 		list(fax_name = "Roumain Council of Huntsmen", fax_id = "roumain", color = "brown", emag_needed = FALSE),
 		list(fax_name = "Colonial League Leadership", fax_id = "minutemen", color = "navy", emag_needed = FALSE),
 		list(fax_name = "Syndicate Coalition Coordination Center", fax_id = "syndicate", color = "red", emag_needed = FALSE),
-		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black")
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
 	)
 	// should we make our message be important and be recieved in admin faxes
 	var/admin_fax_id
@@ -96,14 +96,10 @@
 
 /obj/machinery/fax/ruin
 	visible_to_network = FALSE
+
+/obj/machinery/fax/ruin/Initialize(mapload)
+	. = ..()
 	fax_name = "Unregistered Fax Machine " + fax_id
-
-/obj/machinery/fax/hacked
-	set_obj_flags = "EMAGGED"
-	allow_exotic_faxes = TRUE
-
-/obj/machinery/fax/frontiersmen
-	frontier_network = TRUE
 
 /obj/machinery/fax/Destroy()
 	GLOB.fax_machines -= src
@@ -509,12 +505,21 @@
 	var/check_range = TRUE
 	return electrocute_mob(user, get_area(src), src, 0.7, check_range)
 
+/obj/machinery/fax/frontiersmen
+	frontier_network = TRUE
+	visible_to_network = FALSE
+
 /obj/machinery/fax/admin
 	name = "Central Command Fax Machine"
 	fax_name = "Central Command"
 	radio_channel = RADIO_CHANNEL_CENTCOM
 	visible_to_network = FALSE
 	admin_fax_id = "nanotrasen"
+
+/obj/machinery/fax/admin/solgov
+	name = "SolGov Frontier Affairs Fax Machine"
+	fax_name = "Solarian Confederation Frontier Affairs"
+	admin_fax_id = "solgov"
 
 /obj/machinery/fax/admin/syndicate
 	name = "Syndicate Coordination Fax Machine"
@@ -540,3 +545,4 @@
 	name = "old fax machine"
 	fax_name = "Frontiersmen Communications Quartermaster"
 	admin_fax_id = "frontiersmen"
+	frontier_network = TRUE
