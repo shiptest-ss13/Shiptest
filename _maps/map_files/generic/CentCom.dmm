@@ -6230,9 +6230,10 @@
 /area/centcom/control)
 "bbf" = (
 /obj/machinery/door/airlock/command{
-	dir = 4
+	dir = 4;
+	req_access_txt = "109"
 	},
-/turf/closed/indestructible/riveted,
+/turf/open/floor/plasteel,
 /area/centcom)
 "bbL" = (
 /obj/structure/table/wood,
@@ -8060,6 +8061,13 @@
 	heat_capacity = 1e+006
 	},
 /area/tdome/tdomeobserve)
+"eLy" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	req_access = "109"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/centcom)
 "eSx" = (
 /obj/structure/noticeboard{
 	dir = 8;
@@ -8610,7 +8618,7 @@
 /area/centcom)
 "fUc" = (
 /obj/machinery/door/airlock/security,
-/turf/closed/indestructible/syndicate,
+/turf/open/floor/mineral/plastitanium/red,
 /area/centcom)
 "fUK" = (
 /obj/machinery/light/directional/west,
@@ -9987,8 +9995,10 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/centcom)
 "iSo" = (
-/obj/machinery/door/airlock/solgov,
-/turf/closed/indestructible/reinforced,
+/obj/machinery/door/airlock/solgov{
+	req_access_txt = "109"
+	},
+/turf/open/floor/wood/walnut,
 /area/centcom)
 "iWI" = (
 /obj/effect/turf_decal/minutemen/middle,
@@ -11694,9 +11704,10 @@
 /area/centcom)
 "mpi" = (
 /obj/machinery/door/airlock/hatch{
-	dir = 4
+	dir = 4;
+	req_access_txt = "109"
 	},
-/turf/closed/indestructible/riveted,
+/turf/open/floor/plasteel/patterned/grid,
 /area/centcom)
 "mpw" = (
 /obj/effect/landmark/prisonwarp,
@@ -12738,8 +12749,10 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "ouD" = (
-/obj/machinery/door/airlock/grunge,
-/turf/closed/indestructible/reinforced,
+/obj/machinery/door/airlock/grunge{
+	req_access = "109"
+	},
+/turf/open/floor/plasteel,
 /area/centcom)
 "ouO" = (
 /obj/effect/turf_decal/corner/opaque/green,
@@ -16904,8 +16917,11 @@
 	},
 /area/centcom/supply)
 "yhk" = (
-/obj/structure/mineral_door/wood,
-/turf/closed/indestructible/wood,
+/obj/machinery/door/airlock/wood{
+	dir = 4;
+	req_access = "109"
+	},
+/turf/open/floor/wood/mahogany,
 /area/centcom)
 "yhL" = (
 /obj/effect/turf_decal/corner/opaque/red{
@@ -29998,7 +30014,7 @@ aaa
 hzJ
 hzJ
 hzJ
-mpi
+eLy
 hzJ
 hzJ
 hzJ
