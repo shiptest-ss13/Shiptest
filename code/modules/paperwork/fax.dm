@@ -83,15 +83,6 @@
 	radio.canhear_range = 0
 	// Override in subtypes // no
 	radio.on = TRUE
-	// mapping error check
-	if(!mapload)
-		return
-	for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
-		if(fax == src) // skip self
-			continue
-		if(fax.fax_name == fax_name)
-			fax_name = "Unregistered Fax Machine " + fax_id
-			CRASH("Duplicate fax_name [fax.fax_name] detected! Loc 1 [AREACOORD(src)]; Loc 2 [AREACOORD(fax)]; Falling back on random names.")
 
 /obj/machinery/fax/ruin
 	visible_to_network = FALSE
@@ -510,7 +501,7 @@
 
 /obj/machinery/fax/admin
 	name = "Central Command Fax Machine"
-	fax_name = "Central Command"
+	fax_name = "Nanotrasen Central Command"
 	radio_channel = RADIO_CHANNEL_CENTCOM
 	visible_to_network = FALSE
 	admin_fax_id = "nanotrasen"
