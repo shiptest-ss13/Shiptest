@@ -1,14 +1,17 @@
 /datum/outfit/job/gezena
+	name = "PGF - Base Outfit"
+	// faction_icon = "bg_pgf"
 
 /datum/outfit/job/gezena/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
-	H.faction |= list("playergezena")
+	H.faction |= list(FACTION_PLAYER_GEZENA)
 
 /datum/outfit/job/gezena/assistant
-	name = "Deckhand (PGF)"
+	name = "PGF - Deckhand"
 	jobtype = /datum/job/assistant
+	job_icon = "assistant"
 
 	head = /obj/item/clothing/head/gezena
 	uniform = /obj/item/clothing/under/gezena
