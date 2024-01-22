@@ -9,7 +9,7 @@ type FaxData = {
   fax_name: string;
   visible: boolean;
   has_paper: string;
-  syndicate_network: boolean;
+  frontier_network: boolean;
   fax_history: FaxHistory[];
   special_faxes: FaxSpecial[];
 };
@@ -19,7 +19,7 @@ type FaxInfo = {
   fax_id: string;
   visible: boolean;
   has_paper: boolean;
-  syndicate_network: boolean;
+  frontier_network: boolean;
 };
 
 type FaxHistory = {
@@ -40,11 +40,11 @@ export const Fax = (props, context) => {
   const { data } = useBackend<FaxData>(context);
   const faxes = data.faxes
     ? sortBy((sortFax: FaxInfo) => sortFax.fax_name)(
-        data.syndicate_network
+        data.frontier_network
           ? data.faxes.filter((filterFax: FaxInfo) => filterFax.visible)
           : data.faxes.filter(
               (filterFax: FaxInfo) =>
-                filterFax.visible && !filterFax.syndicate_network
+                filterFax.visible && !filterFax.frontier_network
             )
       )
     : [];
@@ -82,7 +82,7 @@ export const Fax = (props, context) => {
         <Section title="Send">
           {faxes.length !== 0 ? (
             <Box mt={0.4}>
-              {(data.syndicate_network
+              {(data.frontier_network
                 ? data.special_faxes
                 : data.special_faxes.filter(
                     (fax: FaxSpecial) => !fax.emag_needed
@@ -108,7 +108,7 @@ export const Fax = (props, context) => {
                   key={fax.fax_id}
                   title={fax.fax_name}
                   disabled={!data.has_paper}
-                  color={fax.syndicate_network ? 'red' : 'blue'}
+                  color={fax.frontier_network ? 'red' : 'blue'}
                   onClick={() =>
                     act('send', {
                       id: fax.fax_id,

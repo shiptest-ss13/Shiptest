@@ -69,12 +69,12 @@
 	// should we make our message be important and be recieved in admin faxes
 	var/admin_fax_id
 
-/obj/machinery/fax/LateInitialize()
+/obj/machinery/fax/Initialize(mapload)
 	. = ..()
 	GLOB.fax_machines += src
 	if(!fax_id)
 		fax_id = SSnetworks.make_address()
-	if(!fax_name)
+	if(fax_name == initial(fax_name))
 		fax_name = "[get_area_name(src)] Fax Machine"
 	wires = new /datum/wires/fax(src)
 
@@ -84,6 +84,8 @@
 	// Override in subtypes // no
 	radio.on = TRUE
 	// mapping error check
+	if(!mapload)
+		return
 	for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 		if(fax == src) // skip self
 			continue
