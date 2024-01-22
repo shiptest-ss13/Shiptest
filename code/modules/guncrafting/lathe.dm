@@ -124,9 +124,12 @@
 	if(istype (work_piece, /obj/item/gun))
 		var/obj/item/gun/gun_work_piece = work_piece
 		var/list/choose_options = list()
-		choose_options += list("Grip" = image(icon ='icons/obj/crafts.dmi', icon_state = "grip_wood"))
-		choose_options += list("Mechanism" = image(icon ='icons/obj/crafts.dmi', icon_state = "mechanism_pistol"))
-		choose_options += list("Barrel" = image(icon ='icons/obj/crafts.dmi', icon_state = "barrel_35"))
+		if(gun_work_piece.frame.InstalledGrip)
+			choose_options += list("Grip" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.InstalledGrip.icon_state))
+		if(gun_work_piece.frame.InstalledMechanism)
+			choose_options += list("Mechanism" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.InstalledMechanism.icon_state))
+		if(gun_work_piece.frame.InstalledBarrel)
+			choose_options += list("Barrel" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.InstalledBarrel.icon_state))
 		if(gun_work_piece.frame)
 			choose_options += list("Frame" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.icon_state))
 		var/choosen_part = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
@@ -134,13 +137,13 @@
 			var/obj/part_to_build
 			switch(choosen_part)
 				if("Grip")
-					part_to_build = new /obj/item/part/gun/modular/grip/wood
+					part_to_build = new gun_work_piece.frame.InstalledGrip.type
 				if("Mechanism")
-					part_to_build = new /obj/item/part/gun/modular/mechanism
+					part_to_build = new gun_work_piece.frame.InstalledMechanism.type
 				if("Barrel")
-					part_to_build = new /obj/item/part/gun/modular/barrel
+					part_to_build = new gun_work_piece.frame.InstalledBarrel.type
 				if("Frame")
-					part_to_build = new /obj/item/part/gun/frame
+					part_to_build = new gun_work_piece.frame.type
 			part_to_build.forceMove(drop_location())
 	mode = FALSE
 
