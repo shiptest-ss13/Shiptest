@@ -165,8 +165,8 @@
 	cost = 2000
 
 /datum/supply_pack/ammo/ak47_ammo
-	name = "AKM 7.62x39mm FMJ Magazine Crate"
-	desc = "Contains two 7.62x39mm FMJ magazines for the AKM rifle, each containing twenty rounds."
+	name = "SVG 7.62x39mm FMJ Magazine Crate"
+	desc = "Contains two 7.62x39mm FMJ magazines for the SVG rifle, each containing thirty rounds."
 	contains = list(/obj/item/ammo_box/magazine/ak47,
 					/obj/item/ammo_box/magazine/ak47)
 	cost = 2000
@@ -193,43 +193,30 @@
 	contains = list(/obj/item/ammo_box/a762_39)
 	cost = 1000
 
-/datum/supply_pack/ammo/n762_ammo_box
-	name = "7.62x38mm Ammo Box Crate"
-	desc = "Contains a 7.62x39mm box for pistols like the Nagant Revolver,contains 28 rounds."
-	contains = list(/obj/item/ammo_box/n762)
-	cost = 1000
-
 /datum/supply_pack/ammo/c556mmHITP_ammo_box
 	name = "5.56 Caseless Ammo Box Crate"
 	desc = "Contains two 5.56mm caseless boxes for SolGov sidearms like the Pistole C,contains 100 rounds total."
 	contains = list(/obj/item/ammo_box/c556mmHITP,
 					/obj/item/ammo_box/c556mmHITP)
-	cost = 1000
+	cost = 1500
 
 /datum/supply_pack/ammo/c45_ammo_box
 	name = ".45 Ammo Box Crate"
 	desc = "Contains two .45 boxes for pistols and SMGs like the M1911,contains 100 rounds total."
 	contains = list(/obj/item/ammo_box/c45,
 					/obj/item/ammo_box/c45)
-	cost = 1000
-
-/datum/supply_pack/ammo/c10mm_ammo_box
-	name = "10mm Ammo Box Crate"
-	desc = "Contains two 10mm boxes for pistols like the Stechkin,contains 100 rounds total."
-	contains = list(/obj/item/ammo_casing/c10mm,
-					/obj/item/ammo_casing/c10mm)
-	cost = 1000
+	cost = 1500
 
 /datum/supply_pack/ammo/c10mm_ammo_box
 	name = "10mm Ammo Box Crate"
 	desc = "Contains two 10mm boxes for pistols like the Stechkin,contains 100 rounds total."
 	contains = list(/obj/item/ammo_box/c10mm,
 					/obj/item/ammo_box/c10mm)
-	cost = 1000
+	cost = 1500
 
 /datum/supply_pack/ammo/c9mm_ammo_box
 	name = "9mm Ammo Box Crate"
 	desc = "Contains two 9mm boxes for pistols like the Commander or Commisioner,contains 100 rounds total."
 	contains = list(/obj/item/ammo_box/c9mm,
 					/obj/item/ammo_box/c9mm)
-	cost = 1000
+	cost = 1500

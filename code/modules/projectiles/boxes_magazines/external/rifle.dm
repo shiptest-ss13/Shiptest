@@ -60,7 +60,7 @@
 
 /obj/item/ammo_box/magazine/ak47
 	name = "assault rifle magazine (7.62x39mm)"
-	desc = "A sharply-curved, 20-round magazine for 7.62x39mm assault rifles. These rounds do good damage with good armor penetration."
+	desc = "A sharply-curved, 30-round magazine for 7.62x39mm assault rifles. These rounds do good damage with good armor penetration."
 	icon_state = "ak47_mag"
 	ammo_type = /obj/item/ammo_casing/a762_39
 	caliber = "7.62x39mm"
