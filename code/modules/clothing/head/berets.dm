@@ -1,7 +1,7 @@
 //Mime
 /obj/item/clothing/head/beret
 	name = "beret"
-	desc = "A beret, a mime's favorite headwear."
+	desc = "A red beret."
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 	dynamic_hair_suffix = "+generic"
@@ -15,13 +15,13 @@
 
 /obj/item/clothing/head/beret/archaic
 	name = "archaic beret"
-	desc = "An absolutely ancient beret, allegedly worn by the first mime to ever step foot on a Nanotrasen station."
+	desc = "An absolutely ancient beret."
 	icon_state = "archaicberet"
 	dog_fashion = null
 
 /obj/item/clothing/head/beret/black
 	name = "black beret"
-	desc = "A black beret, perfect for war veterans and dark, brooding, anti-hero mimes."
+	desc = "A black beret."
 	icon_state = "beret_black"
 
 /obj/item/clothing/head/beret/highlander
@@ -97,7 +97,7 @@
 	icon_state = "beret_officer"
 
 /obj/item/clothing/head/beret/sec/brig_phys
-	desc = "A beret made out of black reinforced fabric with  lue cross emblazoned on it. Denotes security's personal medic."
+	desc = "A beret made out of black reinforced fabric with a lue cross emblazoned on it. Denotes security's personal medic."
 	icon_state = "beret_brigphys"
 
 //Engineering

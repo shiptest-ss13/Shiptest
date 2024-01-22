@@ -124,8 +124,3 @@
 	satchel = /obj/item/storage/backpack/cultpack
 
 	chameleon_extras = /obj/item/stamp/chap
-
-/datum/outfit/job/chaplain/monk
-	name = "Chaplain (Monk)"
-	suit = /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit
-	l_hand = /obj/item/storage/book/bible
