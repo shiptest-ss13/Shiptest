@@ -212,10 +212,10 @@
 /mob/living/carbon/proc/disarm(mob/living/carbon/target)
 	do_attack_animation(target, ATTACK_EFFECT_DISARM)
 	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
-	var/is_human_target = ishuman(target) // to simplify future boolean checks
+	var/is_human_target = ishuman(target) // different logic for humans
+	var/mob/living/carbon/human/human_target = target // only used if the target is actually human
 
 	if (is_human_target)
-		var/mob/living/carbon/human/human_target = target
 		human_target.w_uniform?.add_fingerprint(src)
 
 	SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, src, zone_selected)
@@ -225,6 +225,7 @@
 	var/turf/target_shove_turf = get_step(target.loc, shove_dir)
 	var/mob/living/carbon/target_collateral_carbon
 	var/shove_blocked = FALSE //Used to check if a shove is blocked, so that if it is, disarm logic can be applied
+	var/target_held_item = target.get_active_held_item() // what the target is currently holding, if anything
 
 	//Thank you based whoneedsspace
 	target_collateral_carbon = locate(/mob/living/carbon) in target_shove_turf.contents
@@ -238,13 +239,12 @@
 		shove_blocked = TRUE
 	else
 		target.Move(target_shove_turf, shove_dir)
-		if(get_turf(target) != target_oldturf)
+		if(get_turf(target) == target_oldturf)
 			shove_blocked = TRUE
 
 	if(target.IsKnockdown() && !target.IsParalyzed())
-		if(is_human_target)
-			var/mob/living/carbon/human/human_target = target // groans loudly at needing to redeclare this
-			var/obj/item/bodypart/human_chest = human_target.get_bodypart(BODY_ZONE_CHEST) // checking chest armor for fall reduction
+		if(is_human_target) // humans get to be paralyzed for less long if they're armored when shoved and prone
+			var/obj/item/bodypart/human_chest = human_target.get_bodypart(BODY_ZONE_CHEST)
 			var/armor_block = human_target.run_armor_check(human_chest, "melee", "Your armor prevents your fall!", "Your armor softens your fall!")
 			human_target.apply_effect(SHOVE_CHAIN_PARALYZE, EFFECT_PARALYZE, armor_block)
 			var/reset_timer = SHOVE_CHAIN_PARALYZE * (100-armor_block)/100
@@ -271,8 +271,8 @@
 						directional_blocked = TRUE
 						break
 		if(!bothstanding || directional_blocked) // if shoved into something, drop active item
-			var/obj/item/held_item = target.get_active_held_item()
-			if(target.dropItemToGround(held_item))
+			if(target_held_item) // doesn't care if it's not mentioned on the list
+				target.dropItemToGround(target_held_item)
 				target.visible_message("<span class='danger'>[name] shoves [target.name], disarming [target.p_them()]!</span>",
 					"<span class='userdanger'>You're disarmed from a shove by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
 				to_chat(src, "<span class='danger'>You shove [target.name], disarming [target.p_them()]!</span>")
@@ -289,28 +289,30 @@
 		target.visible_message("<span class='danger'>[name] shoves [target.name]!</span>",
 						"<span class='userdanger'>You're shoved by [name]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, src)
 		to_chat(src, "<span class='danger'>You shove [target.name]!</span>")
-		var/target_held_item = target.get_active_held_item()
-		var/knocked_item = FALSE
-		if(!is_type_in_typecache(target_held_item, GLOB.shove_disarming_types))
-			target_held_item = null
-		if(!target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
-			target.add_movespeed_modifier(/datum/movespeed_modifier/shove)
+		if(!target.is_shove_knockdown_blocked())
+			var/knocked_item = FALSE
+			if(!is_type_in_typecache(target_held_item, GLOB.shove_disarming_types))
+				target_held_item = null
+			if(!target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
+				target.add_movespeed_modifier(/datum/movespeed_modifier/shove)
+				if(target_held_item)
+					target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
+						"<span class='danger'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
+				addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
+			else if(target_held_item)
+				target.dropItemToGround(target_held_item)
+				knocked_item = TRUE
+				target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!</span>",
+					"<span class='danger'>You drop \the [target_held_item]!</span>", null, COMBAT_MESSAGE_RANGE)
+			var/append_message = ""
 			if(target_held_item)
-				target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
-					"<span class='danger'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
-			addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
-		else if(target_held_item)
-			target.dropItemToGround(target_held_item)
-			knocked_item = TRUE
-			target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!</span>",
-				"<span class='danger'>You drop \the [target_held_item]!</span>", null, COMBAT_MESSAGE_RANGE)
-		var/append_message = ""
-		if(target_held_item)
-			if(knocked_item)
-				append_message = "causing [target.p_them()] to drop [target_held_item]"
-			else
-				append_message = "loosening [target.p_their()] grip on [target_held_item]"
-		log_combat(src, target, "shoved", append_message)
+				if(knocked_item)
+					append_message = "causing [target.p_them()] to drop [target_held_item]"
+				else
+					append_message = "loosening [target.p_their()] grip on [target_held_item]"
+			log_combat(src, target, "shoved", append_message)
+		else
+			log_combat(src, target, "shoved")
 
 /mob/living/carbon/proc/is_shove_knockdown_blocked() //If you want to add more things that block shove knockdown, extend this
 	for (var/obj/item/clothing/clothing in get_equipped_items())
