@@ -244,10 +244,22 @@ Security HUDs! Basic mode shows only the job.
 	var/image/holder = hud_list[ID_HUD]
 	var/icon/I = icon(icon, icon_state, dir)
 	holder.pixel_y = I.Height() - world.icon_size
-	holder.icon_state = "hudno_id"
+	holder.icon_state = "hudno_job"
 	var/obj/item/card/id/worn_id = wear_id?.GetID()
 	if(worn_id && worn_id.job_icon)
 		holder.icon_state = "hud[worn_id.job_icon]"
+
+	var/underlay_icon_state = "hudunknown"
+	if(worn_id && worn_id.faction_icon)
+		underlay_icon_state = "hud[worn_id.faction_icon]"
+
+	var/mutable_appearance/faction_background = mutable_appearance(
+	icon = holder.icon,
+	icon_state = underlay_icon_state
+	)
+	holder.underlays.Cut()
+	holder.underlays += faction_background
+
 	sec_hud_set_security_status()
 
 /mob/living/proc/sec_hud_set_implants()

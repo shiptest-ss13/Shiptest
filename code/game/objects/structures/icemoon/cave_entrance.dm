@@ -726,7 +726,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient(loc)
-			new /obj/effect/mob_spawn/human/miner/old(loc)
+			new /obj/effect/mob_spawn/human/miner(loc)
 			new /turf/open/floor/plating/asteroid/basalt(loc)
 		if(12)//sailing the ocean blue
 			visible_message("<span class='userdanger'>Water pours out of the portal, followed by a strange vessel. It's occupied.</span>")
