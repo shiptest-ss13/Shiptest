@@ -69,7 +69,7 @@
 	// should we make our message be important and be recieved in admin faxes
 	var/admin_fax_id
 
-/obj/machinery/fax/Initialize(mapload)
+/obj/machinery/fax/LateInitialize()
 	. = ..()
 	GLOB.fax_machines += src
 	if(!fax_id)
@@ -83,10 +83,7 @@
 	radio.canhear_range = 0
 	// Override in subtypes // no
 	radio.on = TRUE
-
-	// Mapping Error checking
-	if(!mapload)
-		return
+	// mapping error check
 	for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 		if(fax == src) // skip self
 			continue
