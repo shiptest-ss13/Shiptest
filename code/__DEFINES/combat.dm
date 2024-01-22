@@ -109,7 +109,7 @@
 #define SHOVE_SLOWDOWN_STRENGTH 0.85 //multiplier
 //Shove disarming item list
 GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
-	/obj/item/gun)))
+	/obj/item/gun, /obj/item/kitchen/knife)))
 
 //Combat object defines
 //Embedded objects
