@@ -209,7 +209,7 @@
 
 /datum/supply_pack/ammo/c10mm_ammo_box
 	name = "10mm Ammo Box Crate"
-	desc = "Contains two 10mm boxes for pistols like the Stechkin,contains 100 rounds total."
+	desc = "Contains two fifty-round 10mm boxes for pistols and SMGs like the Stechkin or the SkM-44(k), for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c10mm,
 					/obj/item/ammo_box/c10mm)
 	cost = 1500
