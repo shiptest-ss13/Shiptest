@@ -143,7 +143,7 @@
 	description = "A Nanotrasen genetic research facility, abandoned and ripe for looting. Whats that goo over there?"
 	suffix = "lavaland_surface_codelab.dmm"
 
-/datum/map_template/ruin/lavaland/codelab
+/datum/map_template/ruin/lavaland/geoplant
 	name = "Nanotrasen Geothermal Power Plant"
 	id = "geoplant"
 	description = "A decommissioned Nanotrasen Geothermal Power Plant, previously used to recharge ships. I wonder if that garage has anything inside?"
