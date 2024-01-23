@@ -675,11 +675,11 @@
 /area/ruin/unpowered/geoplant/generator)
 "AQ" = (
 /obj/machinery/door/poddoor/shutters{
-	id = geoplant
+	id = "geoplant"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 8;
-	id = geoplantholofield;
+	id = "geoplantholofield";
 	anchored = 1
 	},
 /obj/structure/cable{
@@ -863,13 +863,13 @@
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -21;
-	id = geoplant
+	id = "geoplant"
 	},
 /obj/machinery/button/shieldwallgen{
 	dir = 4;
 	pixel_y = 8;
 	pixel_x = -19;
-	id = geoplantholofield
+	id = "geoplantholofield"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -960,11 +960,11 @@
 /area/ruin/unpowered/geoplant/exterior)
 "IB" = (
 /obj/machinery/door/poddoor/shutters{
-	id = geoplant
+	id = "geoplant"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	dir = 4;
-	id = geoplantholofield;
+	id = "geoplantholofield";
 	anchored = 1
 	},
 /obj/structure/cable{
@@ -1070,7 +1070,7 @@
 /area/ruin/unpowered/geoplant/lobby)
 "Kz" = (
 /obj/machinery/door/poddoor/shutters{
-	id = geoplant
+	id = "geoplant"
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/garage)
