@@ -75,7 +75,7 @@
 
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
-	desc = "Contains a box of buckshot for use in lethal persuasion,contains 25 shells."
+	desc = "Contains a box of twenty-five buckshot shells for use in lethal persuasion."
 	cost = 2000
 	contains = list(/obj/item/ammo_box/a12g)
 
