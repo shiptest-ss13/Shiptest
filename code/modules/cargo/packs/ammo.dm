@@ -216,7 +216,7 @@
 
 /datum/supply_pack/ammo/c9mm_ammo_box
 	name = "9mm Ammo Box Crate"
-	desc = "Contains two 9mm boxes for pistols like the Commander or Commisioner,contains 100 rounds total."
+	desc = "Contains two fifty-round 9mm boxes for pistols and SMGs such as the Commander or Saber, for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c9mm,
 					/obj/item/ammo_box/c9mm)
 	cost = 1500
