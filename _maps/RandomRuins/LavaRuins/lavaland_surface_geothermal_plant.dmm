@@ -10,25 +10,9 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant)
 "af" = (
-/obj/structure/lattice,
-/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/flora/rock/pile/lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
-"ax" = (
-/obj/effect/turf_decal/borderfloorwhite/full,
-/obj/machinery/advanced_airlock_controller{
-	pixel_x = 28
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer2,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/geoplant/lobby)
 "aM" = (
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 1;
@@ -82,40 +66,33 @@
 "dn" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/geoplant/garage)
-"ds" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/unpowered/geoplant/exterior)
-"dw" = (
-/obj/item/stack/cable_coil/cut/red,
-/turf/open/floor/plating/airless,
-/area/ruin/unpowered/geoplant/exterior)
 "dZ" = (
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /obj/structure/flora/tree/dead/tall/grey,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/geoplant/exterior)
 "er" = (
-/obj/structure/railing{
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/borderfloorwhite/full,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/geoplant/lobby)
+"eK" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/bordercee{
 	dir = 4
 	},
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/airless,
-/area/ruin/unpowered/geoplant/exterior)
-"eK" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4;
-	req_one_access_txt = "101"
-	},
+/obj/effect/turf_decal/ntspaceworks_small/left,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/unpowered/geoplant/garage)
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/geoplant/lobby)
 "fg" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -158,15 +135,6 @@
 /obj/structure/flora/firebush,
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/geoplant/exterior)
-"gn" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/geoplant/garage)
 "gt" = (
 /obj/structure/rack,
 /obj/item/mecha_parts/mecha_equipment/cable_layer,
@@ -188,11 +156,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
 "hF" = (
-/obj/structure/lattice,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange{
 	dir = 9
 	},
+/obj/structure/lattice,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/exterior)
 "jk" = (
@@ -206,6 +174,10 @@
 	dir = 8
 	},
 /turf/open/lava/smooth,
+/area/ruin/unpowered/geoplant/exterior)
+"jn" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
 "ju" = (
 /turf/open/floor/concrete/slab_1,
@@ -221,8 +193,8 @@
 /area/ruin/unpowered/geoplant/lobby)
 "kd" = (
 /obj/structure/rack,
-/obj/item/weldingtool,
 /obj/item/storage/toolbox/mechanical,
+/obj/item/weldingtool/largetank/empty,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/geoplant/garage)
 "kg" = (
@@ -267,6 +239,7 @@
 /area/ruin/unpowered/geoplant/lobby)
 "kG" = (
 /obj/structure/lattice,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
 "kI" = (
@@ -297,21 +270,11 @@
 /obj/structure/window/reinforced/spawner,
 /obj/effect/turf_decal/siding,
 /obj/structure/table,
-/obj/item/flashlight/lamp{
-	pixel_y = 7;
-	pixel_x = -5
+/obj/machinery/fax{
+	pixel_y = 4
 	},
-/obj/item/cigbutt{
-	pixel_x = 3;
-	pixel_y = 13
-	},
-/obj/item/cigbutt{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/obj/item/cigbutt{
-	pixel_y = 3;
-	pixel_x = 6
+/obj/item/paper/geopowerplant{
+	pixel_y = -3
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/unpowered/geoplant/lobby)
@@ -374,13 +337,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
-"nd" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/structure/marker_beacon,
-/turf/open/floor/plating/airless,
-/area/ruin/unpowered/geoplant/exterior)
 "nA" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -445,10 +401,11 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/garage)
 "rf" = (
-/obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction,
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction/layer2,
 /obj/machinery/atmospherics/pipe/heat_exchanging/junction/layer4,
+/obj/structure/lattice,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
 "rz" = (
@@ -566,38 +523,41 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/garage)
 "vb" = (
-/obj/effect/turf_decal/corner/transparent/ntblue/bordercee{
-	dir = 8
+/obj/structure/railing{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/turf_decal/ntspaceworks_small/right,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/geoplant/lobby)
+/obj/structure/marker_beacon,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/geoplant/exterior)
 "vD" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
-"wi" = (
-/turf/open/floor/concrete/slab_1{
-	initial_gas_mix = "LAVALAND_ATMOS"
+"vP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 5
 	},
-/area/ruin/unpowered/geoplant/exterior)
-"ww" = (
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "2-4"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/borderfloorwhite/full,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel/white,
-/area/ruin/unpowered/geoplant/lobby)
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/geoplant/garage)
+"ww" = (
+/obj/effect/turf_decal/corner/opaque/black/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4;
+	req_one_access_txt = "101"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/unpowered/geoplant/garage)
 "wJ" = (
 /obj/machinery/atmospherics/components/binary/circulator{
 	dir = 4
@@ -627,11 +587,11 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/exterior)
 "xn" = (
-/obj/structure/lattice,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/structure/lattice,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/geoplant/exterior)
 "xI" = (
@@ -649,6 +609,19 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/exterior)
+"yo" = (
+/obj/effect/turf_decal/corner/transparent/ntblue/bordercee{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/ntspaceworks_small/right,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/geoplant/lobby)
 "yw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -671,6 +644,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/geoplant)
+"zb" = (
+/obj/effect/turf_decal/industrial/caution,
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/geoplant/garage)
 "zd" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/mineral/titanium,
@@ -807,7 +788,9 @@
 	},
 /area/ruin/unpowered/geoplant/exterior)
 "Ea" = (
-/obj/machinery/power/smes,
+/obj/machinery/power/smes{
+	input_level = 0
+	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -872,6 +855,26 @@
 "Fq" = (
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/geoplant/exterior)
+"Fu" = (
+/obj/effect/turf_decal/industrial/caution,
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_x = -21;
+	id = geoplant
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 4;
+	pixel_y = 8;
+	pixel_x = -19;
+	id = geoplantholofield
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/geoplant/garage)
 "Fv" = (
 /obj/structure/rack,
 /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp,
@@ -897,22 +900,23 @@
 	},
 /turf/open/lava/smooth,
 /area/ruin/unpowered/geoplant/exterior)
+"FA" = (
+/turf/template_noop,
+/area/ruin/unpowered/geoplant/exterior)
 "Ge" = (
-/obj/effect/turf_decal/corner/opaque/black/half{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4;
-	req_one_access_txt = "101"
-	},
+/obj/effect/turf_decal/borderfloorwhite/full,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/patterned,
-/area/ruin/unpowered/geoplant/garage)
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/geoplant/lobby)
 "Gj" = (
 /obj/structure/fence/corner,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -995,11 +999,11 @@
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/unpowered/geoplant/lobby)
 "IS" = (
-/obj/structure/lattice,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/structure/lattice,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/lava/smooth,
 /area/ruin/unpowered/geoplant/exterior)
 "Ja" = (
@@ -1014,13 +1018,14 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/exterior)
 "Jm" = (
-/obj/effect/turf_decal/industrial/caution,
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/effect/turf_decal/corner/transparent/ntblue/border{
+	dir = 1
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/geoplant/garage)
+/obj/effect/turf_decal/corner/transparent/ntblue/border,
+/obj/effect/turf_decal/ntspaceworks_small,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/geoplant/lobby)
 "Jp" = (
 /obj/effect/turf_decal/corner/transparent/ntblue/border{
 	dir = 8
@@ -1086,31 +1091,13 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/generator)
-"KM" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4;
-	req_one_access_txt = "101"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/geoplant/garage)
 "Ll" = (
-/obj/effect/turf_decal/corner/transparent/ntblue/bordercee{
-	dir = 4
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/ntspaceworks_small/left,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/geoplant/lobby)
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/geoplant/exterior)
 "Ls" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -1206,26 +1193,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
-"MX" = (
-/obj/effect/turf_decal/industrial/caution,
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/button/door{
-	dir = 4;
-	pixel_x = -21;
-	id = geoplant
-	},
-/obj/machinery/button/shieldwallgen{
-	dir = 4;
-	pixel_y = 8;
-	pixel_x = -19;
-	id = geoplantholofield
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/geoplant/garage)
 "MY" = (
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /obj/structure/flora/tree/dead/tall/grey,
@@ -1236,14 +1203,16 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/geoplant/garage)
 "Nn" = (
-/obj/effect/turf_decal/corner/transparent/ntblue/border{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4;
+	req_one_access_txt = "101"
 	},
-/obj/effect/turf_decal/corner/transparent/ntblue/border,
-/obj/effect/turf_decal/ntspaceworks_small,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/geoplant/lobby)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/unpowered/geoplant/garage)
 "NE" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/geoplant/generator)
@@ -1339,7 +1308,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/geoplant/lobby)
 "QM" = (
-/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+/obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -1350,13 +1319,16 @@
 /turf/open/floor/plating/grass/lava/purple,
 /area/ruin/unpowered/geoplant/exterior)
 "Rc" = (
-/obj/structure/lattice,
 /obj/structure/lattice/catwalk,
 /obj/structure/lattice/catwalk,
 /obj/structure/holosign/barrier/engineering/infinite,
 /obj/machinery/atmospherics/pipe/simple/orange,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/generator)
+"Rk" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/geoplant/exterior)
 "RF" = (
 /turf/open/floor/plating/grass/lava/orange,
 /area/ruin/unpowered/geoplant/exterior)
@@ -1372,11 +1344,11 @@
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/generator)
 "SB" = (
-/obj/structure/lattice,
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/simple/orange{
 	dir = 5
 	},
+/obj/structure/lattice,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/unpowered/geoplant/exterior)
 "SH" = (
@@ -1397,11 +1369,21 @@
 "Tf" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/paper/geopowerplant{
-	pixel_y = -3
+/obj/item/cigbutt{
+	pixel_x = 8;
+	pixel_y = 6
 	},
-/obj/machinery/fax{
-	pixel_y = 4
+/obj/item/cigbutt{
+	pixel_x = 3;
+	pixel_y = 13
+	},
+/obj/item/cigbutt{
+	pixel_y = 3;
+	pixel_x = 6
+	},
+/obj/item/flashlight/lamp{
+	pixel_y = 7;
+	pixel_x = -5
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ruin/unpowered/geoplant/lobby)
@@ -1476,7 +1458,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/ruin/unpowered/geoplant/exterior)
 "Vn" = (
-/obj/structure/lattice,
 /obj/structure/lattice/catwalk,
 /obj/structure/holosign/barrier/engineering/infinite,
 /obj/machinery/atmospherics/pipe/simple/orange,
@@ -1498,9 +1479,6 @@
 /obj/mecha/working/ripley/firefighter,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/unpowered/geoplant/garage)
-"Wn" = (
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/ruin/unpowered/geoplant)
 "WE" = (
 /obj/machinery/power/terminal{
 	dir = 4
@@ -1530,8 +1508,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/borderfloorwhite/full,
-/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/geoplant/lobby)
 "XL" = (
@@ -1543,14 +1524,23 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/generator)
-"Ym" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+"Yp" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ruin/unpowered/geoplant/lobby)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4;
+	req_one_access_txt = "101"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/geoplant/garage)
 "YC" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
@@ -1573,6 +1563,18 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/geoplant/exterior)
+"YY" = (
+/turf/open/floor/concrete/slab_1{
+	initial_gas_mix = "LAVALAND_ATMOS"
+	},
+/area/ruin/unpowered/geoplant/exterior)
+"Zb" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/marker_beacon,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/geoplant/exterior)
 "Zd" = (
@@ -1606,6 +1608,14 @@
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/wood/cold,
 /area/ruin/unpowered/geoplant/dorm)
+"Zq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4{
+	dir = 8
+	},
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ruin/unpowered/geoplant/lobby)
 "ZH" = (
 /obj/effect/turf_decal/corner/transparent/ntblue/border{
 	dir = 4
@@ -1636,43 +1646,43 @@ lt
 lt
 lt
 lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
 "}
 (2,1,1) = {"
 lt
@@ -1685,43 +1695,43 @@ lt
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-Gs
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 Gs
 UL
+lt
+lt
+lt
 "}
 (3,1,1) = {"
 lt
@@ -1734,43 +1744,43 @@ lt
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 Fq
 Fq
 RF
 RF
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 Fq
 Fq
 Fq
 Fq
-UL
-UL
-UL
+lt
+lt
+FA
 UL
 UL
 Gs
 UL
-UL
-UL
-UL
+lt
+lt
+lt
 "}
 (4,1,1) = {"
 lt
@@ -1783,9 +1793,9 @@ lt
 lt
 lt
 lt
-UL
-UL
-UL
+lt
+lt
+lt
 Fq
 Fq
 Fq
@@ -1797,14 +1807,14 @@ Fq
 RF
 RF
 RF
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 Fq
 Fq
 Fq
@@ -1818,8 +1828,8 @@ UL
 UL
 UL
 UL
-UL
-UL
+lt
+lt
 "}
 (5,1,1) = {"
 lt
@@ -1832,8 +1842,8 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 Fq
 fi
 fi
@@ -1846,14 +1856,14 @@ pv
 RF
 RF
 RF
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 Fq
 Fq
 Fq
@@ -1867,8 +1877,8 @@ UL
 UL
 Gs
 UL
-UL
-UL
+lt
+lt
 "}
 (6,1,1) = {"
 lt
@@ -1881,8 +1891,8 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 Fq
 RF
 ti
@@ -1895,13 +1905,13 @@ RF
 Fq
 RF
 RF
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 Fq
 Fq
 fi
@@ -1916,8 +1926,8 @@ Gs
 UL
 Gs
 UL
-UL
-UL
+lt
+lt
 "}
 (7,1,1) = {"
 lt
@@ -1930,15 +1940,15 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 RF
 RF
 ti
 RF
 RF
 UL
-UL
+jn
 UL
 fi
 fi
@@ -1948,8 +1958,8 @@ UL
 UL
 UL
 UL
-UL
-UL
+lt
+lt
 Fq
 Fq
 fi
@@ -1965,8 +1975,8 @@ Gs
 Gs
 Gs
 UL
-UL
-UL
+lt
+lt
 "}
 (8,1,1) = {"
 lt
@@ -1979,6 +1989,8 @@ lt
 lt
 lt
 lt
+lt
+lt
 UL
 UL
 UL
@@ -1993,9 +2005,7 @@ UL
 UL
 UL
 UL
-UL
-UL
-UL
+jn
 UL
 UL
 Fq
@@ -2014,8 +2024,8 @@ Gs
 Gs
 Gs
 UL
-UL
-UL
+lt
+lt
 "}
 (9,1,1) = {"
 lt
@@ -2028,8 +2038,8 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 UL
 UL
 UL
@@ -2041,7 +2051,7 @@ TH
 UL
 UL
 UL
-UL
+jn
 UL
 UL
 UL
@@ -2062,9 +2072,9 @@ UL
 Gs
 Gs
 UL
+af
 UL
-UL
-UL
+lt
 "}
 (10,1,1) = {"
 lt
@@ -2072,17 +2082,13 @@ lt
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-XL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2090,11 +2096,15 @@ XL
 UL
 UL
 UL
+XL
 UL
 UL
 UL
 UL
 UL
+UL
+UL
+Rk
 UL
 UL
 UL
@@ -2121,12 +2131,12 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 RF
 RF
-UL
-UL
+lt
+lt
 UL
 TH
 XL
@@ -2137,7 +2147,7 @@ dn
 RM
 dn
 Mo
-er
+vb
 UL
 UL
 UL
@@ -2155,12 +2165,12 @@ lg
 lg
 Vn
 hF
-af
+kG
 Zd
 Zd
 Zd
 Zd
-af
+kG
 wP
 Bk
 "}
@@ -2170,12 +2180,12 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 ti
 ti
 UL
-UL
+Rk
 UL
 wN
 UL
@@ -2183,8 +2193,8 @@ dn
 kd
 sW
 pT
-gn
-MX
+vP
+Fu
 IB
 xM
 ju
@@ -2217,9 +2227,9 @@ UL
 lt
 lt
 lt
-UL
-UL
-UL
+lt
+lt
+lt
 RF
 fi
 RF
@@ -2232,7 +2242,7 @@ dn
 mg
 aZ
 mg
-eK
+Nn
 Mj
 Kz
 xM
@@ -2266,9 +2276,9 @@ UL
 lt
 lt
 lt
-UL
-UL
-UL
+lt
+lt
+lt
 ti
 fi
 RF
@@ -2282,7 +2292,7 @@ Ty
 VX
 YC
 Ls
-Jm
+zb
 AQ
 xM
 ju
@@ -2315,8 +2325,8 @@ UL
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 Fq
 NS
 RF
@@ -2330,10 +2340,10 @@ Ng
 Uw
 Uw
 pd
-Ge
+ww
 cg
 dn
-nd
+Zb
 UL
 UL
 UL
@@ -2356,7 +2366,7 @@ Zd
 Zd
 Zd
 Zd
-af
+kG
 wP
 Bk
 "}
@@ -2364,8 +2374,8 @@ Bk
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 Fq
 RF
 RF
@@ -2379,12 +2389,12 @@ dn
 uh
 Fv
 gt
-KM
+Yp
 Mq
 dn
 UL
 UL
-UL
+jn
 UL
 UL
 ju
@@ -2406,15 +2416,15 @@ Gs
 Gs
 UL
 UL
-UL
-UL
+lt
+lt
 "}
 (17,1,1) = {"
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 fi
 zB
 RF
@@ -2425,8 +2435,8 @@ Tr
 kg
 Mf
 Tr
-GK
-GK
+dn
+dn
 dn
 rb
 dn
@@ -2455,14 +2465,14 @@ Gs
 Gs
 UL
 UL
-UL
-UL
+lt
+lt
 "}
 (18,1,1) = {"
 lt
 lt
 lt
-UL
+lt
 Fq
 fi
 fi
@@ -2484,19 +2494,19 @@ UL
 UL
 UL
 UL
-UL
+Rk
 ju
 op
 ju
 UL
 UL
+jn
 UL
 UL
 UL
 UL
 UL
-UL
-UL
+af
 UL
 Gs
 Gs
@@ -2511,7 +2521,7 @@ UL
 lt
 lt
 lt
-UL
+lt
 Fq
 Fq
 fi
@@ -2531,7 +2541,7 @@ YO
 GK
 UL
 UL
-UL
+jn
 UL
 UL
 ju
@@ -2560,7 +2570,7 @@ LF
 lt
 lt
 lt
-UL
+lt
 Fq
 Fq
 ti
@@ -2609,8 +2619,8 @@ UL
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 fi
 RF
 RF
@@ -2623,7 +2633,7 @@ mC
 AR
 WP
 WG
-Ll
+eK
 Bb
 rL
 GK
@@ -2658,8 +2668,8 @@ UL
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 ti
 RF
 UL
@@ -2672,16 +2682,16 @@ Jp
 MA
 sO
 cu
-Nn
+Jm
 Pj
 kI
 WP
 GK
-Ym
+Zq
 GK
 GK
 Ej
-wi
+YY
 op
 ju
 ju
@@ -2707,8 +2717,8 @@ GP
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 RF
 UL
 UL
@@ -2721,12 +2731,12 @@ IL
 ZH
 mI
 MI
-vb
+yo
 Qc
 sd
 Un
-ww
-ax
+er
+Ge
 XE
 Up
 Tj
@@ -2756,11 +2766,11 @@ UL
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -2805,12 +2815,12 @@ LF
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 Ja
@@ -2846,21 +2856,21 @@ Gs
 UL
 UL
 UL
-UL
-UL
-UL
+lt
+lt
+lt
 "}
 (26,1,1) = {"
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 ZP
 Df
@@ -2895,21 +2905,21 @@ Gs
 Gs
 UL
 UL
-UL
-UL
-UL
+lt
+lt
+lt
 "}
 (27,1,1) = {"
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 ZP
 Ja
@@ -2917,8 +2927,8 @@ Ja
 Ja
 Ja
 ZP
-Wn
-Wn
+UL
+UL
 UL
 VC
 UL
@@ -2944,21 +2954,21 @@ Gs
 Gs
 UL
 UL
-UL
-UL
-UL
+lt
+lt
+lt
 "}
 (28,1,1) = {"
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 lF
 UL
@@ -2972,8 +2982,8 @@ xk
 yD
 xk
 xk
-ds
-ds
+Ll
+Ll
 xk
 xk
 Tm
@@ -2998,14 +3008,14 @@ lt
 lt
 "}
 (29,1,1) = {"
+lt
 UL
 UL
 UL
-UL
-dw
-UL
+XL
 UL
 UL
+lt
 UL
 UL
 UL
@@ -3039,7 +3049,7 @@ Zd
 Zd
 Zd
 Zd
-af
+kG
 wP
 Bk
 UL
@@ -3069,7 +3079,7 @@ UL
 UL
 lF
 UL
-UL
+jn
 UL
 UL
 UL
@@ -3102,7 +3112,7 @@ fi
 fi
 Fq
 Fq
-dw
+XL
 UL
 xS
 kj
@@ -3147,7 +3157,7 @@ lt
 (32,1,1) = {"
 UL
 UL
-dw
+XL
 Fq
 Fq
 UL
@@ -3167,8 +3177,8 @@ gJ
 Uz
 Gj
 UL
-UL
-UL
+lt
+lt
 UL
 NI
 ju
@@ -3201,6 +3211,8 @@ UL
 UL
 UL
 UL
+lt
+lt
 UL
 UL
 UL
@@ -3209,15 +3221,13 @@ UL
 UL
 UL
 UL
+Rk
 UL
 UL
 UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3234,8 +3244,8 @@ SB
 Zd
 Zd
 Zd
-af
-af
+kG
+kG
 wP
 Bk
 UL
@@ -3246,30 +3256,30 @@ lt
 lt
 lt
 UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 Fq
 Fq
 RF
 RF
 UL
+jn
 UL
 UL
 UL
 UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3301,8 +3311,8 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 ti
 Fq
 RF
@@ -3312,14 +3322,14 @@ Fq
 Fq
 Fq
 Fq
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3336,7 +3346,7 @@ Gs
 Gs
 UL
 UL
-UL
+lt
 lt
 lt
 "}
@@ -3350,8 +3360,8 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 ti
 ti
 ti
@@ -3363,12 +3373,12 @@ fX
 Fq
 Fq
 Fq
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 Fq
@@ -3385,7 +3395,7 @@ Gs
 Gs
 UL
 UL
-UL
+lt
 lt
 lt
 "}
@@ -3399,8 +3409,8 @@ lt
 lt
 lt
 lt
-UL
-UL
+lt
+lt
 RF
 RF
 ti
@@ -3412,12 +3422,12 @@ Fq
 fi
 fi
 Fq
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 Fq
 fi
@@ -3434,7 +3444,7 @@ Gs
 UL
 UL
 UL
-UL
+lt
 lt
 lt
 "}
@@ -3448,9 +3458,9 @@ lt
 lt
 lt
 lt
-UL
-UL
-UL
+lt
+lt
+lt
 RF
 RF
 RF
@@ -3461,12 +3471,12 @@ ti
 ti
 ti
 RF
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 Fq
 fX
@@ -3477,13 +3487,13 @@ UL
 UL
 UL
 UL
-UL
+af
 Gs
 Gs
 UL
 Gs
 UL
-UL
+lt
 lt
 lt
 "}
@@ -3497,25 +3507,25 @@ lt
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 RF
 RF
 ti
 RF
 RF
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3532,7 +3542,7 @@ Gs
 UL
 Gs
 UL
-UL
+lt
 lt
 lt
 "}
@@ -3547,25 +3557,25 @@ lt
 lt
 lt
 lt
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
-UL
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
+lt
 UL
 UL
 UL
@@ -3580,8 +3590,8 @@ UL
 Gs
 UL
 UL
-UL
-UL
+lt
+lt
 lt
 lt
 "}
