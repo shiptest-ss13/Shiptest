@@ -81,7 +81,7 @@
 
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
-	desc = "Contains a box of slug shells for use in lethal persuasion,contains 25 shells."
+	desc = "Contains a box of twenty-five slug shells for use in lethal persuasion."
 	cost = 2000
 	contains = list(/obj/item/ammo_box/a12g/slug)
 
