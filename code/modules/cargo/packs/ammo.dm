@@ -195,7 +195,7 @@
 
 /datum/supply_pack/ammo/c556mmHITP_ammo_box
 	name = "5.56 Caseless Ammo Box Crate"
-	desc = "Contains two 5.56mm caseless boxes for SolGov sidearms like the Pistole C,contains 100 rounds total."
+	desc = "Contains two fifty-round 5.56mm caseless boxes for SolGov sidearms like the Pistole C, for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c556mmHITP,
 					/obj/item/ammo_box/c556mmHITP)
 	cost = 1500
