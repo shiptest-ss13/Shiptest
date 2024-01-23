@@ -202,7 +202,7 @@
 
 /datum/supply_pack/ammo/c45_ammo_box
 	name = ".45 Ammo Box Crate"
-	desc = "Contains two .45 boxes for pistols and SMGs like the M1911,contains 100 rounds total."
+	desc = "Contains two fifty-round .45 boxes for pistols and SMGs like the M1911 or the C-20r, for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c45,
 					/obj/item/ammo_box/c45)
 	cost = 1500
