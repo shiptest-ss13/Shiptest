@@ -74,7 +74,7 @@
 /obj/projectile/bullet/pellet/buckshot
 	name = "buckshot pellet"
 	damage = 20
-	armour_penetration = -35
+	armour_penetration = -10
 
 /obj/projectile/bullet/pellet/rubbershot
 	name = "rubbershot pellet"
@@ -101,6 +101,7 @@
 
 /obj/projectile/bullet/pellet/improvised
 	damage = 6
+	armour_penetration = -35
 	tile_dropoff = 0.6
 
 // Mech Scattershot
