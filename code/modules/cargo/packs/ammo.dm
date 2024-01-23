@@ -189,7 +189,7 @@
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x39mm Ammo Box Crate"
-	desc = "Contains a 7.62x39mm box for rifles like the SVG-67,contains 60 rounds."
+	desc = "Contains a sixty-round 7.62x39mm box for rifles like the SVG-67."
 	contains = list(/obj/item/ammo_box/a762_39)
 	cost = 1750
 
