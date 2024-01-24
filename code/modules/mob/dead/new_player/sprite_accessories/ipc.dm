@@ -357,7 +357,7 @@
 
 /datum/sprite_accessory/ipc_chassis/pgfmechanicsdigigrade
 	name = "PGF MECHANICS TYPE-D"
-	limbs_id = "pgfipc-d"
+	limbs_id = "pgfipc-p" //the digigrade var makes it so we use digi leg variant instead
 	has_screen = FALSE
 	color_src = MUTCOLORS
 	has_overlay = TRUE
