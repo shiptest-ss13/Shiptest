@@ -157,20 +157,3 @@
 	icon = 'icons/obj/guncrafting.dmi'
 	icon_state = "work_piece"
 	max_amount = 10
-
-/obj/item/modgun
-	name = "gun"
-	desc = "A gun."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "detective"
-	item_state = "gun"
-	var/caliber = 357
-	var/gun_parts = list()
-
-/obj/item/blueprint
-	name = "Blueprint"
-	desc = "This could be used to make a gun."
-	icon = 'icons/obj/guncrafting.dmi'
-	icon_state = "blueprint"
-	var/design = FALSE
-	var/blueprint = FALSE

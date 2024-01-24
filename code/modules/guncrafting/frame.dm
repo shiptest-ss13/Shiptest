@@ -13,15 +13,14 @@
 	// Currently installed mechanism
 	var/obj/item/part/gun/modular/grip/InstalledMechanism
 	// Which mechanism the frame accepts?
-	var/list/validMechanism = /obj/item/part/gun/modular/mechanism
+	var/list/validMechanisms = list(/obj/item/part/gun/modular/mechanism)
 
 	// Currently installed barrel
 	var/obj/item/part/gun/modular/barrel/InstalledBarrel
 	// Which barrels does the frame accept?
-	var/list/barrelvars = list(/obj/item/part/gun/modular/barrel)
+	var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
 
-	// Bonuses from forging/type or maluses from printing
-	var/cheap = FALSE // Set this to true for cheap variants
+	var/quality = 4
 
 /obj/item/part/gun/frame/New(loc)
 	..()
@@ -32,9 +31,10 @@
 		for(var/part in parts_list)
 			switch(part)
 				if("mechanism")
-					InstalledMechanism = new validMechanism(src)
+					var/select = pick(validMechanisms)
+					InstalledMechanism = new select(src)
 				if("barrel")
-					var/select = pick(barrelvars)
+					var/select = pick(validBarrels)
 					InstalledBarrel = new select(src)
 				if("grip")
 					var/select = pick(validGrips)
@@ -78,21 +78,21 @@
 			to_chat(user, span_warning("[src] already has a grip attached!"))
 			return
 		else
-			handle_gripvar(I, user)
+			handle_grip(I, user)
 
 	if(istype(I, /obj/item/part/gun/modular/mechanism))
 		if(InstalledMechanism)
 			to_chat(user, span_warning("[src] already has a mechanism attached!"))
 			return
 		else
-			handle_validMechanism(I, user)
+			handle_mechanism(I, user)
 
 	if(istype(I, /obj/item/part/gun/modular/barrel))
 		if(InstalledBarrel)
 			to_chat(user, span_warning("[src] already has a barrel attached!"))
 			return
 		else
-			handle_barrelvar(I, user)
+			handle_barrel(I, user)
 
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		var/list/possibles = contents.Copy()
@@ -110,13 +110,9 @@
 
 	return ..()
 
-/obj/item/part/gun/frame/proc/handle_gripvar(obj/item/I, mob/living/user)
+/obj/item/part/gun/frame/proc/handle_grip(obj/item/I, mob/living/user)
 	if(I.type in validGrips)
 		if(insert_item(I, user))
-			/*
-			var/variantnum = validGrips.Find(I.type)
-			result = resultvars[variantnum]
-			*/
 			InstalledGrip = I
 			to_chat(user, span_notice("You have attached the grip to \the [src]."))
 			return
@@ -124,8 +120,8 @@
 		to_chat(user, span_warning("This grip does not fit!"))
 		return
 
-/obj/item/part/gun/frame/proc/handle_validMechanism(obj/item/I, mob/living/user)
-	if(I.type == validMechanism)
+/obj/item/part/gun/frame/proc/handle_mechanism(obj/item/I, mob/living/user)
+	if(I.type == validMechanisms)
 		if(insert_item(I, user))
 			InstalledMechanism = I
 			to_chat(user, span_notice("You have attached the mechanism to \the [src]."))
@@ -134,8 +130,8 @@
 		to_chat(user, span_warning("This mechanism does not fit!"))
 		return
 
-/obj/item/part/gun/frame/proc/handle_barrelvar(obj/item/I, mob/living/user)
-	if(I.type in barrelvars)
+/obj/item/part/gun/frame/proc/handle_barrel(obj/item/I, mob/living/user)
+	if(I.type in validBarrels)
 		if(insert_item(I, user))
 			InstalledBarrel = I
 			to_chat(user, span_notice("You have attached the barrel to \the [src]."))
