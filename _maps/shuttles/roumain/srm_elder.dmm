@@ -184,7 +184,7 @@
 /area/ship/hallway/starboard)
 "bW" = (
 /turf/open/floor/engine/hull,
-/area/ship/external)
+/area/ship/external/dark)
 "bY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/window/reinforced/fulltile,
@@ -426,12 +426,11 @@
 	dir = 4
 	},
 /obj/structure/flora/grass/jungle/b,
-/obj/item/toy/plush/moth/snow,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/hallway/central)
 "ef" = (
 /obj/effect/turf_decal/siding/brown,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
 /turf/open/floor/wood/ebony,
@@ -794,7 +793,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/siding/brown,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
 /turf/open/floor/wood/ebony,
@@ -1027,7 +1026,6 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/item/toy/plush/moth/deadhead,
 /turf/open/floor/wood/maple,
 /area/ship/hallway/starboard)
 "lk" = (
@@ -1082,8 +1080,6 @@
 /area/ship/roumain)
 "mw" = (
 /obj/structure/closet/crate/hydroponics,
-/obj/item/seeds/tower,
-/obj/item/seeds/tower,
 /obj/item/seeds/cotton,
 /obj/item/seeds/cotton,
 /obj/item/seeds/lavaland/ember,
@@ -1096,8 +1092,6 @@
 /obj/item/seeds/lavaland/porcini,
 /obj/item/seeds/lavaland/cactus,
 /obj/item/seeds/lavaland/cactus,
-/obj/item/seeds/sunflower/moonflower,
-/obj/item/seeds/sunflower/moonflower,
 /obj/item/seeds/wheat,
 /obj/item/seeds/wheat,
 /obj/item/seeds/carrot,
@@ -1106,8 +1100,6 @@
 /obj/item/seeds/lavaland/puce,
 /obj/item/seeds/tobacco,
 /obj/item/seeds/tobacco,
-/obj/item/seeds/tower,
-/obj/item/seeds/tower,
 /obj/item/seeds/tea,
 /obj/item/seeds/tea,
 /obj/item/seeds/coffee,
@@ -1653,6 +1645,7 @@
 "tF" = (
 /obj/structure/table/optable,
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
+/obj/item/toy/plush/mora,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "uc" = (
@@ -1814,6 +1807,18 @@
 	dir = 4
 	},
 /turf/open/floor/wood/mahogany,
+/area/ship/hallway/starboard)
+"vI" = (
+/obj/effect/turf_decal/siding/brown{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/turf/open/floor/wood/ebony,
 /area/ship/hallway/starboard)
 "vX" = (
 /obj/structure/railing{
@@ -1982,7 +1987,6 @@
 /area/ship/hallway/central)
 "zv" = (
 /obj/structure/closet/secure_closet/montagnes,
-/obj/item/book/manual/srmlore,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
@@ -1990,8 +1994,6 @@
 /obj/item/clothing/under/suit/roumain,
 /obj/item/clothing/suit/armor/hos/roumain/montagne,
 /obj/item/clothing/head/HoS/cowboy/montagne,
-/obj/item/clothing/suit/armor/riot/chaplain/ancient,
-/obj/item/clothing/head/helmet/chaplain/ancient,
 /obj/item/flashlight/lantern,
 /obj/item/storage/fancy/candle_box{
 	pixel_y = 3;
@@ -2002,14 +2004,14 @@
 	pixel_y = 2
 	},
 /obj/item/kitchen/knife/combat,
-/obj/item/ammo_box/n762,
-/obj/item/ammo_box/n762,
 /obj/item/gun/ballistic/revolver/srm,
-/obj/item/disk/holodisk/roumain,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
 /obj/item/ammo_box/a357_box,
+/obj/item/gps{
+	pixel_x = -7
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "zH" = (
@@ -2062,10 +2064,10 @@
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
 /turf/open/floor/wood/ebony,
@@ -2300,54 +2302,57 @@
 /area/ship/roumain)
 "Cx" = (
 /obj/structure/table/wood,
-/obj/item/gps{
-	pixel_x = -7
+/obj/item/lighter{
+	pixel_y = 5;
+	pixel_x = -6
 	},
-/obj/item/gps{
-	pixel_x = -7
+/obj/item/book/manual/srmlore{
+	pixel_x = 5;
+	pixel_y = 3
 	},
-/obj/item/gps{
-	pixel_x = -7
+/obj/item/book/manual/srmlore{
+	pixel_x = 5;
+	pixel_y = 3
 	},
-/obj/item/gps{
-	pixel_x = -7
+/obj/item/book/manual/srmlore{
+	pixel_x = 5;
+	pixel_y = 3
 	},
-/obj/item/gps{
-	pixel_x = -7
+/obj/item/book/manual/srmlore{
+	pixel_x = 5;
+	pixel_y = 3
 	},
-/obj/item/gps{
-	pixel_x = -7
+/obj/item/book/manual/srmlore{
+	pixel_x = 5;
+	pixel_y = 3
 	},
-/obj/item/gps{
-	pixel_x = -7
+/obj/item/book/manual/srmlore{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/obj/item/book/manual/srmlore{
+	pixel_x = 5;
+	pixel_y = 3
 	},
 /obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = 5;
+	pixel_x = -6
 	},
 /obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = 5;
+	pixel_x = -6
 	},
 /obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = 5;
+	pixel_x = -6
 	},
 /obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = 5;
+	pixel_x = -6
 	},
 /obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -2
-	},
-/obj/item/lighter{
-	pixel_x = 6;
-	pixel_y = -2
+	pixel_y = 5;
+	pixel_x = -6
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/cryo)
@@ -2653,12 +2658,13 @@
 /obj/item/flashlight/lantern,
 /obj/structure/closet/secure_closet/hunter,
 /obj/item/lighter,
-/obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/combat,
-/obj/item/book/manual/srmlore,
 /obj/item/kitchen/knife/combat/survival,
+/obj/item/gps{
+	pixel_x = -7
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "HB" = (
@@ -2916,8 +2922,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/item/reagent_containers/food/drinks/mug/tea{
-	pixel_x = 4
+/obj/item/toy/plush/sharai{
+	pixel_y = 8;
+	pixel_x = 2
 	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/port)
@@ -3311,7 +3318,6 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/obj/item/toy/plush/goatplushie,
 /turf/open/floor/wood/maple,
 /area/ship/hallway/starboard)
 "OV" = (
@@ -3470,6 +3476,7 @@
 /area/ship/hallway/central)
 "QX" = (
 /obj/structure/bonfire/dense,
+/obj/item/toy/plush/moth/punished,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Ra" = (
@@ -3613,12 +3620,13 @@
 /obj/item/flashlight/lantern,
 /obj/structure/closet/secure_closet/shadow,
 /obj/item/lighter,
-/obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/shoes/combat,
-/obj/item/book/manual/srmlore,
 /obj/item/kitchen/knife/hunting,
+/obj/item/gps{
+	pixel_x = -7
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
 "Tc" = (
@@ -3694,7 +3702,7 @@
 	port_direction = 8
 	},
 /turf/open/floor/engine/hull,
-/area/ship/external)
+/area/ship/external/dark)
 "UD" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/ship/water,
@@ -3719,7 +3727,6 @@
 	dir = 8
 	},
 /obj/structure/flora/grass/jungle/b,
-/obj/item/toy/plush/moth/royal,
 /turf/open/floor/grass/ship/jungle,
 /area/ship/hallway/central)
 "Vc" = (
@@ -3730,6 +3737,10 @@
 /obj/item/storage/fancy/cigarettes/cigpack_midori{
 	pixel_y = 6;
 	pixel_x = -3
+	},
+/obj/item/reagent_containers/food/drinks/mug/tea{
+	pixel_x = 6;
+	pixel_y = 6
 	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/port)
@@ -4699,7 +4710,7 @@ HO
 Zl
 aP
 AS
-hc
+vI
 iP
 yq
 Hx
