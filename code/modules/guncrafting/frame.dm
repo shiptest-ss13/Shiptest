@@ -146,7 +146,6 @@
 
 /obj/item/part/gun/frame/attack_self(mob/user)
 	. = ..()
-	var/turf/T = get_turf(src)
 	if(!InstalledGrip)
 		to_chat(user, span_warning("\the [src] does not have a grip!"))
 		return
@@ -156,12 +155,10 @@
 	if(!InstalledBarrel)
 		to_chat(user, span_warning("\the [src] does not have a barrel!"))
 		return
-	var/obj/item/modgun/G = new result(T)
-	if(barrelvars.len > 1 && istype(G, /obj/item/modgun))
-		var/obj/item/modgun/P = G
-		P.caliber = InstalledBarrel.caliber
-		G.gun_parts = list(src.type = 1, InstalledGrip.type = 1, InstalledMechanism.type = 1, InstalledBarrel.type = 1)
-	qdel(src)
+	var/turf/T = get_turf(src)
+	var/obj/item/gun/newGun = new result(T)
+	newGun.frame = src
+	src.forceMove(newGun)
 	return
 
 /obj/item/part/gun/frame/examine(user, distance)

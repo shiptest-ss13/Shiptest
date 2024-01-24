@@ -133,13 +133,17 @@
 	///If the saftey on? If so, we can't fire the weapon
 	var/safety = FALSE
 
-	// Used when deconstructing
+	// Guncrafting
 	var/obj/item/part/gun/frame/frame
+	// 0 means no frame 1-5 are diffrent quality parts
+	var/quality = 3
+
 
 /obj/item/gun/Initialize()
 	. = ..()
-	if(!frame)
-		frame = new(src)
+	if(quality != 0)
+		if(!frame)
+			frame = new(src)
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	if(pin)
