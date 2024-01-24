@@ -83,10 +83,12 @@
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine/on_mob_metabolize(mob/living/M)
 	..()
+	ADD_TRAIT(M, TRAIT_SHOCKIMMUNE, "trickwine")
 	M.add_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 	to_chat(M, "<span class='notice'>You feel faster the lightning!</span>")
 
 /datum/reagent/consumable/ethanol/trickwine/shock_wine/on_mob_end_metabolize(mob/living/M)
+	REMOVE_TRAIT(M, TRAIT_SHOCKIMMUNE, "trickwine")
 	M.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/shock_wine)
 	to_chat(M, "<span class='notice'>You slow to a crawl...</span>")
 	..()
@@ -150,9 +152,9 @@
 	M.visible_message("<span class='warning'>[M] glows a dim grey aura</span>")
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine/on_mob_end_metabolize(mob/living/M)
-	M.visible_message("<span class='warning'>[M]'s aura fades away </span>")
 	REMOVE_TRAIT(M, TRAIT_ANTIMAGIC, "trickwine")
 	REMOVE_TRAIT(M, TRAIT_MINDSHIELD, "trickwine")
+	M.visible_message("<span class='warning'>[M]'s aura fades away </span>")
 	..()
 
 /datum/reagent/consumable/ethanol/trickwine/force_wine/expose_mob(mob/living/M, method=TOUCH, reac_volume)
