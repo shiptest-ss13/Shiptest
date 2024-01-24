@@ -76,7 +76,7 @@
 /obj/vehicle/ridden/scooter/skateboard/Destroy()
 	if(sparks)
 		QDEL_NULL(sparks)
-	. = ..()
+	return ..()
 
 /obj/vehicle/ridden/scooter/skateboard/relaymove(mob/living/user, direction)
 	if (grinding || world.time < next_crash)

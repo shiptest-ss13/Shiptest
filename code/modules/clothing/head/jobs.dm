@@ -55,7 +55,7 @@
 
 /obj/item/clothing/head/caphat/frontier/admiral
 	name = "\improper Frontiersmen admiral's cap"
-	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersman pirate fleet."
+	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
 
 //Head of Personnel
@@ -156,9 +156,8 @@
 
 /obj/item/clothing/head/cowboy/sec/minutemen
 	name = "colonial minutmen officer's slouch hat"
-	desc = "A commanding slouch hat adorned with a offier's badge, used by the Colonial Minutemen."
+	desc = "A commanding slouch hat adorned with a officer's badge, used by the Colonial Minutemen."
 	icon_state = "minuteman_officer_hat"
-
 
 /obj/item/clothing/head/cowboy/sec/roumain
 	name = "hunter's hat"

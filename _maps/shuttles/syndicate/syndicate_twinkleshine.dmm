@@ -514,7 +514,7 @@
 	req_access = list(151)
 	},
 /obj/item/areaeditor/shuttle,
-/obj/item/clothing/under/syndicate/aclf,
+/obj/item/clothing/under/syndicate/officer,
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/head/HoS/syndicate,
 /obj/item/codespeak_manual/unlimited,
@@ -3413,12 +3413,6 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/corner/opaque/syndiered/full,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "uY" = (
@@ -5349,9 +5343,9 @@
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 5
 	},
-/obj/item/clothing/head/aclfcap,
-/obj/item/clothing/suit/aclf,
-/obj/item/clothing/under/syndicate/aclf,
+/obj/item/clothing/head/gorlexcap,
+/obj/item/clothing/suit/gorlex,
+/obj/item/clothing/under/syndicate/officer,
 /obj/structure/closet/secure_closet{
 	anchored = 1;
 	icon_state = "syndicate";
@@ -5842,9 +5836,6 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/hatch{
 	name = "Security"

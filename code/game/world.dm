@@ -310,14 +310,23 @@ GLOBAL_VAR(restart_counter)
 			features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
+	var/discord_url
+	var/github_url
+	if(isnull(config))
+		discord_url = "https://shiptest.net/discord"
+		github_url = "https://github.com/shiptest-ss13/Shiptest"
+	else
+		discord_url = CONFIG_GET(string/discordurl)
+		github_url = CONFIG_GET(string/githuburl)
+
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://shiptest.net/discord\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
 	s += " ("
-	s += "<a href=\"https://github.com/shiptest-ss13/Shiptest\">"
+	s += "<a href=\"[github_url]\">"
 	s += "Github"
 	s += "</a>"
 	s += ")"

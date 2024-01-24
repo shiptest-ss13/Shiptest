@@ -37,7 +37,7 @@ export const Autolathe = (props, context) => {
     (material) => material.mineral_amount > 0
   );
   return (
-    <Window title="Autolathe" width={600} height={600}>
+    <Window title="Autolathe" theme="ntos_terminal" width={600} height={700}>
       <Window.Content scrollable>
         <Section
           title="Total Materials"
@@ -220,7 +220,7 @@ export const Autolathe = (props, context) => {
                           maxValue={design.maxmult}
                           disabled={design.buildable}
                           backgroundColor={
-                            design.buildable ? '#999999' : 'default'
+                            design.buildable ? '#00000000' : 'default'
                           }
                           onCommit={(e, value) =>
                             act('make', {

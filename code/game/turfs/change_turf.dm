@@ -255,10 +255,12 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		if(flags_1 & INITIALIZED_1)
 			stack_trace("CHANGETURF_SKIP was used in a PlaceOnTop call for a turf that's initialized. This is a mistake. [src]([type])")
 		assemble_baseturfs()
+
+	if(!length(baseturfs))
+		baseturfs = list(baseturfs)
+
 	if(fake_turf_type)
 		if(!new_baseturfs) // If no baseturfs list then we want to create one from the turf type
-			if(!length(baseturfs))
-				baseturfs = list(baseturfs)
 			var/list/old_baseturfs = baseturfs.Copy()
 			if(!istype(src, /turf/closed))
 				old_baseturfs += type
@@ -269,25 +271,23 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			// The old baseturfs are put underneath, and we sort out the unwanted ones
 			newT.baseturfs = baseturfs_string_list(old_baseturfs + (newT.baseturfs - GLOB.blacklisted_automated_baseturfs), newT)
 			return newT
-		if(!length(baseturfs))
-			baseturfs = list(baseturfs)
-		if(!istype(src, /turf/closed))
-			new_baseturfs = list(type) + new_baseturfs
-		baseturfs = baseturfs_string_list(baseturfs + new_baseturfs, src)
-		return ChangeTurf(fake_turf_type, null, flags)
-	if(!length(baseturfs))
-		baseturfs = list(baseturfs)
-	if(!istype(src, /turf/closed))
-		baseturfs = baseturfs_string_list(baseturfs + type, src)
-	var/turf/change_type
-	if(length(new_baseturfs))
-		change_type = new_baseturfs[new_baseturfs.len]
-		new_baseturfs.len--
-		if(new_baseturfs.len)
+		else
+			if(!istype(src, /turf/closed))
+				new_baseturfs = list(type) + new_baseturfs
 			baseturfs = baseturfs_string_list(baseturfs + new_baseturfs, src)
+			return ChangeTurf(fake_turf_type, null, flags)
 	else
-		change_type = new_baseturfs
-	return ChangeTurf(change_type, null, flags)
+		if(!istype(src, /turf/closed))
+			baseturfs = baseturfs_string_list(baseturfs + type, src)
+		var/turf/change_type
+		if(length(new_baseturfs))
+			change_type = new_baseturfs[new_baseturfs.len]
+			new_baseturfs.len--
+			if(new_baseturfs.len)
+				baseturfs = baseturfs_string_list(baseturfs + new_baseturfs, src)
+		else
+			change_type = new_baseturfs
+		return ChangeTurf(change_type, null, flags)
 
 // Copy an existing turf and put it on top
 // Returns the new turf

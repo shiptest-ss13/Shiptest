@@ -134,7 +134,7 @@
 
 		if("memo")
 			var/memo_result = sanitize(stripped_multiline_input(
-				user, "Enter a message for prospective players joining your ship. Playstyle and RP level information is encouraged.",
+				user, "Enter a message for prospective players joining your ship. This information could include your goals for the outing, or details about the way your ship may play.",
 				"Ship Memo", parent_ship.memo
 			))
 			// stripped_multiline_input returns an empty string if people press Cancel, but
