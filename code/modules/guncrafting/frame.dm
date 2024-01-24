@@ -8,12 +8,12 @@
 	// Currently installed grip
 	var/obj/item/part/gun/modular/grip/InstalledGrip
 	// Which grips does the frame accept?
-	var/list/gripvars = list(/obj/item/part/gun/modular/grip/wood, /obj/item/part/gun/modular/grip/black)
+	var/list/validGrips = list(/obj/item/part/gun/modular/grip/wood, /obj/item/part/gun/modular/grip/black)
 
 	// Currently installed mechanism
 	var/obj/item/part/gun/modular/grip/InstalledMechanism
 	// Which mechanism the frame accepts?
-	var/list/mechanismvar = /obj/item/part/gun/modular/mechanism
+	var/list/validMechanism = /obj/item/part/gun/modular/mechanism
 
 	// Currently installed barrel
 	var/obj/item/part/gun/modular/barrel/InstalledBarrel
@@ -32,12 +32,12 @@
 		for(var/part in parts_list)
 			switch(part)
 				if("mechanism")
-					InstalledMechanism = new mechanismvar(src)
+					InstalledMechanism = new validMechanism(src)
 				if("barrel")
 					var/select = pick(barrelvars)
 					InstalledBarrel = new select(src)
 				if("grip")
-					var/select = pick(gripvars)
+					var/select = pick(validGrips)
 					InstalledGrip = new select(src)
 
 /obj/item/part/gun/frame/proc/eject_item(obj/item/I, mob/living/user)
@@ -85,7 +85,7 @@
 			to_chat(user, span_warning("[src] already has a mechanism attached!"))
 			return
 		else
-			handle_mechanismvar(I, user)
+			handle_validMechanism(I, user)
 
 	if(istype(I, /obj/item/part/gun/modular/barrel))
 		if(InstalledBarrel)
@@ -111,10 +111,10 @@
 	return ..()
 
 /obj/item/part/gun/frame/proc/handle_gripvar(obj/item/I, mob/living/user)
-	if(I.type in gripvars)
+	if(I.type in validGrips)
 		if(insert_item(I, user))
 			/*
-			var/variantnum = gripvars.Find(I.type)
+			var/variantnum = validGrips.Find(I.type)
 			result = resultvars[variantnum]
 			*/
 			InstalledGrip = I
@@ -124,8 +124,8 @@
 		to_chat(user, span_warning("This grip does not fit!"))
 		return
 
-/obj/item/part/gun/frame/proc/handle_mechanismvar(obj/item/I, mob/living/user)
-	if(I.type == mechanismvar)
+/obj/item/part/gun/frame/proc/handle_validMechanism(obj/item/I, mob/living/user)
+	if(I.type == validMechanism)
 		if(insert_item(I, user))
 			InstalledMechanism = I
 			to_chat(user, span_notice("You have attached the mechanism to \the [src]."))
@@ -156,7 +156,9 @@
 		to_chat(user, span_warning("\the [src] does not have a barrel!"))
 		return
 	var/turf/T = get_turf(src)
-	var/obj/item/gun/newGun = new result(T)
+	var/obj/item/gun/newGun = result
+	newGun.quality = 0
+	new newGun(T)
 	newGun.frame = src
 	src.forceMove(newGun)
 	return
