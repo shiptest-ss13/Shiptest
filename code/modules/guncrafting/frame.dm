@@ -1,9 +1,9 @@
 /obj/item/part/gun/frame
 	name = "gun frame"
-	desc = "a generic gun frame. consider debug"
+	desc = "a generic gun frame."
 	icon_state = "frame_olivaw"
 	generic = FALSE
-	var/result = /obj/item/gun
+	var/obj/item/gun/result = /obj/item/gun
 
 	// Currently installed grip
 	var/obj/item/part/gun/modular/grip/InstalledGrip
@@ -20,9 +20,7 @@
 	// Which barrels does the frame accept?
 	var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
 
-	var/quality = 4
-
-/obj/item/part/gun/frame/New(loc)
+/obj/item/part/gun/frame/Initialize(mapload)
 	..()
 	var/spawn_with_preinstalled_parts = TRUE
 
@@ -152,9 +150,7 @@
 		to_chat(user, span_warning("\the [src] does not have a barrel!"))
 		return
 	var/turf/T = get_turf(src)
-	var/obj/item/gun/newGun = result
-	newGun.quality = 0
-	new newGun(T)
+	var/obj/item/gun/newGun = new result(T, 0)
 	newGun.frame = src
 	src.forceMove(newGun)
 	return
@@ -176,4 +172,9 @@
 			. += "<span class='notice'>\the [src] does not have a barrel installed.</span>"
 
 /obj/item/part/gun/frame/mk1
+	name = "wellmade gun frame"
+	icon_state = "frame_shotgun"
 	result = /obj/item/gun/ballistic/shotgun/winchester/mk1
+	validGrips = list(/obj/item/part/gun/modular/grip/wood)
+	validMechanisms = list(/obj/item/part/gun/modular/mechanism/shotgun)
+	validBarrels = list(/obj/item/part/gun/modular/barrel/shotgun)

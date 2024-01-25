@@ -34,8 +34,17 @@
 	desc = "All the bits that makes the bullet go bang."
 	icon_state = "mechanism_pistol"
 
+/obj/item/part/gun/modular/mechanism/shotgun
+	name = "generic shotgun mechanism"
+	desc = "All the bits that makes the bullet go bang."
+	icon_state = "mechanism_shotgun"
+
 /obj/item/part/gun/modular/barrel
 	name = "generic barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction."
 	icon_state = "barrel_35"
-	var/caliber = 357
+
+/obj/item/part/gun/modular/barrel/shotgun
+	name = "generic shotgun barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction."
+	icon_state = "barrel_30"

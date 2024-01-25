@@ -139,8 +139,10 @@
 	var/quality = 3
 
 
-/obj/item/gun/Initialize()
+/obj/item/gun/Initialize(mapload, proviedQuality)
 	. = ..()
+	if(proviedQuality)
+		quality = proviedQuality
 	if(quality != 0)
 		if(!frame)
 			frame = new(src)
