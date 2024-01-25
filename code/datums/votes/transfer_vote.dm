@@ -1,6 +1,9 @@
 #define CHOICE_TRANSFER "Initiate Bluespace Jump"
 #define CHOICE_CONTINUE "Continue Playing"
 
+/// The fraction of non-voters that will be added to the transfer option when the vote is finalized.
+#define TRANSFER_FACTOR max(0, (world.time / (1 MINUTES) - 120) / 120)
+
 /datum/vote/transfer_vote
 	name = "Transfer"
 	default_choices = list(
@@ -36,21 +39,15 @@
 	return TRUE
 
 /datum/vote/transfer_vote/get_vote_result(list/non_voters)
-	var/factor = 1
-	switch(world.time / (1 HOURS))
-		if(0 to 1)
-			factor = 0.5
-		if(1 to 2)
-			factor = 0.8
-		if(2 to 3)
-			factor = 1
-		if(3 to 4)
-			factor = 1.5
-		else
-			factor = 2
-	choices[CHOICE_TRANSFER] += round(length(non_voters) * factor)
+	choices[CHOICE_TRANSFER] += round(length(non_voters) * TRANSFER_FACTOR)
 
 	return ..()
+
+/datum/vote/transfer_vote/get_winner_text(list/all_winners, real_winner, list/non_voters)
+	. = ..()
+	. += "\n"
+	if(TRANSFER_FACTOR)
+		. += "Transfer option was boosted by [round(length(non_voters) * TRANSFER_FACTOR)] non-voters."
 
 /datum/vote/transfer_vote/finalize_vote(winning_option)
 	if(winning_option == CHOICE_CONTINUE)

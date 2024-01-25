@@ -65,7 +65,7 @@ SUBSYSTEM_DEF(vote)
 	// Remove AFK or clientless non-voters.
 	for(var/non_voter_ckey in non_voters)
 		var/client/non_voter_client = non_voters[non_voter_ckey]
-		if(!non_voter_client || non_voter_client.is_afk())
+		if(!non_voter_client || non_voter_client.is_afk() || (CONFIG_GET(flag/no_dead_vote) && non_voter_client.mob.stat == DEAD && !non_voter_client.holder))
 			non_voters -= non_voter_ckey
 
 	// Now get the result of the vote.
