@@ -47,7 +47,7 @@
 	. = ..()
 	. += "\n"
 	if(TRANSFER_FACTOR)
-		. += "Transfer option was boosted by [round(length(non_voters) * TRANSFER_FACTOR)] non-voters."
+		. += "Transfer option was boosted by [round(length(non_voters) * TRANSFER_FACTOR)] non-voters due to round length."
 
 /datum/vote/transfer_vote/finalize_vote(winning_option)
 	if(winning_option == CHOICE_CONTINUE)
