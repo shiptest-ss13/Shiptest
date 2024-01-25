@@ -102,7 +102,7 @@
 	leader_role = /datum/antagonist/ert/lp/lieutenant
 	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic, /datum/antagonist/ert/lp/engineer)
 	rename_team = "Loss Prevention Team"
-	polldesc = "a NanoTrasen loss prevention team"
+	polldesc = "a Nanotrasen loss prevention team"
 
 // Inteq
 
@@ -223,6 +223,12 @@
 	leader_experience = FALSE
 	spawn_at_outpost = FALSE
 	ert_template = /datum/map_template/shuttle/subshuttles/sugarcube
+
+/datum/ert/frontier/random
+	teamsize = 8
+	leader_role = /datum/antagonist/ert/frontier/random
+	roles = list(/datum/antagonist/ert/frontier/random)
+	rename_team = "Randomly Equipped Frontiersmen Team"
 
 /datum/ert/frontier/assault
 	leader_role = /datum/antagonist/ert/frontier/leader

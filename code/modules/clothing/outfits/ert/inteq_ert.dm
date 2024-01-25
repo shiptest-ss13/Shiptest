@@ -1,4 +1,4 @@
-/datum/outfit/centcom/ert/inteq
+/datum/outfit/job/inteq/ert
 	name = "ERT - Inteq Rifleman"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
@@ -17,9 +17,8 @@
 
 	backpack_contents = list(/obj/item/radio=1)
 
-	id_role = "Enforcer"
 
-/datum/outfit/centcom/ert/inteq/shotgun
+/datum/outfit/job/inteq/ert/shotgun
 	name = "ERT - Inteq Shotgunner"
 
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
@@ -27,9 +26,7 @@
 
 	backpack_contents = list(/obj/item/storage/box/lethalshot=2, /obj/item/radio=1)
 
-	id_role = "Enforcer"
-
-/datum/outfit/centcom/ert/inteq/medic
+/datum/outfit/job/inteq/ert/medic
 	name = "ERT - Inteq Corpsman"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
@@ -38,16 +35,12 @@
 
 	l_pocket = /obj/item/healthanalyzer
 
-	id_role = "Corpsman"
-
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/radio=1)
 
-/datum/outfit/centcom/ert/inteq/leader
+/datum/outfit/job/inteq/ert/leader
 	name = "ERT - Inteq Vanguard"
 
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	back = /obj/item/storage/backpack/messenger/inteq
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/commander/inteq
 	id = /obj/item/card/id/silver
-
-	id_role = "Vanguard"
