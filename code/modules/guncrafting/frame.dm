@@ -19,6 +19,8 @@
 	var/obj/item/part/gun/modular/barrel/InstalledBarrel
 	// Which barrels does the frame accept?
 	var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
+	
+	gun_part_type = FRAME
 
 /obj/item/part/gun/frame/Initialize(mapload)
 	..()
