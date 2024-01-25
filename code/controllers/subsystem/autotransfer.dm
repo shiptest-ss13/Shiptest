@@ -11,6 +11,9 @@ SUBSYSTEM_DEF(autotransfer)
 
 /datum/controller/subsystem/autotransfer/fire()
 	if(COOLDOWN_FINISHED(src, next_vote))
+		//Delay the vote if there's already a vote in progress
+		if(SSvote.current_vote)
+			COOLDOWN_START(src, next_vote, SSvote.current_vote.time_remaining + 10 SECONDS)
 		SSvote.initiate_vote(/datum/vote/transfer_vote, "The Server", forced = TRUE)
 		COOLDOWN_START(src, next_vote, CONFIG_GET(number/vote_autotransfer_interval))
 

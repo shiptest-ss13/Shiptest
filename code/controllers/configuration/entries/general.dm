@@ -102,9 +102,9 @@
 
 /datum/config_entry/flag/allow_admin_asaycolor //Allows admins with relevant permissions to have a personalized asay color
 
-/datum/config_entry/flag/allow_vote_restart	// allow votes to restart
+/datum/config_entry/flag/allow_vote_restart	// allow player votes to restart
 
-/datum/config_entry/flag/allow_vote_mode	// allow votes to change mode
+/datum/config_entry/flag/allow_vote_transfer	// allow player votes to initiate a transfer
 
 /datum/config_entry/flag/auth_only // server can only be used for authentication
 

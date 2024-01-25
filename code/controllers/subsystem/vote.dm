@@ -85,11 +85,13 @@ SUBSYSTEM_DEF(vote)
 	// Announce the results of the vote to the world.
 	var/to_display = current_vote.get_result_text(winners, final_winner, non_voters)
 
-	log_vote(to_display)
+	var/log_string = replacetext(to_display, "\n", "\\n") // 'keep' the newlines, but dont actually print them as newlines
+	log_vote(log_string)
 	to_chat(world, span_infoplain(vote_font("\n[to_display]")))
 
 	// Finally, doing any effects on vote completion
-	current_vote.finalize_vote(final_winner)
+	if (final_winner) // if no one voted, or the vote cannot be won, final_winner will be null
+		current_vote.finalize_vote(final_winner)
 
 /**
  * One selection per person, and the selection with the most votes wins.

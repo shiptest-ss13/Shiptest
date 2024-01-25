@@ -45,9 +45,9 @@
 		if(2 to 3)
 			factor = 1
 		if(3 to 4)
-			factor = 1.2
+			factor = 1.5
 		else
-			factor = 1.4
+			factor = 2
 	choices[CHOICE_TRANSFER] += round(length(non_voters) * factor)
 
 	return ..()
