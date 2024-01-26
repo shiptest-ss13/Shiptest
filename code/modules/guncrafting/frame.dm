@@ -2,7 +2,6 @@
 	name = "gun frame"
 	desc = "a generic gun frame."
 	icon_state = "frame_olivaw"
-	generic = FALSE
 	var/obj/item/gun/result = /obj/item/gun
 
 	// Currently installed grip
@@ -20,14 +19,11 @@
 	// Which barrels does the frame accept?
 	var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
 
-	gun_part_type = FRAME
-
-/obj/item/part/gun/frame/Initialize(mapload)
-	..()
-	var/spawn_with_preinstalled_parts = TRUE
+	gun_part_type = GUN_PART_FRAME
 
 /obj/item/part/gun/frame/Initialize(mapload, dont_spawn_with_parts)
 	..()
+	var/spawn_with_preinstalled_parts = TRUE
 	if(dont_spawn_with_parts)
 		spawn_with_preinstalled_parts = FALSE
 

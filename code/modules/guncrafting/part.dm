@@ -7,11 +7,6 @@
 	icon_state = "gun_part_1"
 	var/gun_part_type = NONE
 
-/obj/item/part/gun/Initialize()
-	. = ..()
-	if(generic)
-		icon_state = "gun_part_[rand(1,6)]"
-
 /obj/item/part/gun/modular
 	name = "modular gun part"
 	desc = "You dont think this should exist."
@@ -20,7 +15,7 @@
 	name = "generic grip"
 	desc = "A firearm grip, unattached from a firearm."
 	icon_state = "grip_wood"
-	gun_part_type = GRIP
+	gun_part_type = GUN_PART_GRIP
 
 /obj/item/part/gun/modular/grip/wood
 	name = "wood grip"
@@ -36,7 +31,7 @@
 	name = "generic mechanism"
 	desc = "All the bits that makes the bullet go bang."
 	icon_state = "mechanism_pistol"
-	gun_part_type = MECHANISM
+	gun_part_type = GUN_PART_MECHANISM
 
 /obj/item/part/gun/modular/mechanism/shotgun
 	name = "generic shotgun mechanism"
@@ -47,7 +42,7 @@
 	name = "generic barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction."
 	icon_state = "barrel_35"
-	gun_part_type = BARREL
+	gun_part_type = GUN_PART_BARREL
 
 /obj/item/part/gun/modular/barrel/shotgun
 	name = "generic shotgun barrel"
