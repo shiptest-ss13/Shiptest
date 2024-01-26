@@ -196,6 +196,12 @@
 //	new /obj/item/book/manual/wiki/research_and_development(src)
 //	update_appearance()
 
+/obj/structure/bookcase/manuals/chemistry
+	name = "chemistry manuals bookcase"
+
+/obj/structure/bookcase/manuals/chemistry/Initialize()
+	new /obj/item/book/manual/wiki/chemistry(src)
+	new /obj/item/book/manual/wiki/ghetto_chemistry(src)
 
 /*
  * Book
