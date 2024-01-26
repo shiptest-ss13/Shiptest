@@ -169,7 +169,11 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	gloves = /obj/item/clothing/gloves/color/white
 	suit = /obj/item/clothing/suit/armor/hos
+	l_pocket = null
+	r_pocket = null
 	suit_store = null
+
+	backpack_contents = list(/obj/item/stamp/syndicate)
 
 /datum/outfit/job/syndicate/ert/inspector/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
