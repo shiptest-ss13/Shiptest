@@ -191,15 +191,16 @@
 /turf/open/water/beach/deep,
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "jz" = (
-/obj/item/toy/plush/carpplushie/dehy_carp,
-/obj/item/toy/plush/carpplushie/dehy_carp,
-/obj/item/toy/plush/carpplushie/dehy_carp,
-/obj/item/toy/plush/carpplushie/dehy_carp,
 /obj/structure/closet/crate/wooden{
 	name = "freeze dried carp"
 	},
 /obj/effect/turf_decal/corner/opaque/pink/diagonal,
 /obj/machinery/light/dim/directional/south,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 /turf/open/floor/plastic,
 /area/ruin/beach)
 "kg" = (
@@ -302,10 +303,12 @@
 "mD" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small/directional/north,
-/obj/item/gun/ballistic/shotgun/winchester,
+/obj/item/gun/ballistic/shotgun/winchester{
+	pixel_x = -4
+	},
 /obj/item/gun/ballistic/shotgun/winchester{
 	pixel_y = 7;
-	pixel_x = -6
+	pixel_x = -12
 	},
 /turf/open/floor/wood,
 /area/ruin/beach)
@@ -1174,6 +1177,7 @@
 "Ty" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/item/gun/ballistic/shotgun/winchester/mk1,
 /turf/open/floor/wood,
 /area/ruin/beach)
 "TM" = (
