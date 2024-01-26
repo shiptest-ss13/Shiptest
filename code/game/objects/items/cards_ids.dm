@@ -161,6 +161,7 @@
 	var/icon/cached_flat_icon
 	var/registered_age = 13 // default age for ss13 players
 	var/job_icon
+	var/faction_icon
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
@@ -435,11 +436,6 @@ update_label()
 	registered_name = "Emergency Command Hologram"
 	access = list(ACCESS_CHANGE_IDS)
 
-/obj/item/card/id/silver/reaper
-	access = list(ACCESS_MAINT_TUNNELS)
-	assignment = "Reaper"
-	registered_name = "Thirteen"
-
 /obj/item/card/id/gold
 	name = "gold identification card"
 	desc = "A golden card which shows power and might."
@@ -525,6 +521,8 @@ update_label()
 		else if (popup_input == "Forge/Reset" && forged)
 			registered_name = initial(registered_name)
 			assignment = initial(assignment)
+			faction_icon = initial(faction_icon)
+			job_icon = initial(job_icon)
 			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
 			update_label()
 			forged = FALSE

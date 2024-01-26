@@ -20,7 +20,8 @@
 		"description": {
 			"title": "Class Description",
 			"type": "string",
-			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future."
+			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future.",
+			"minLength": 250
 		},
 		"tags": {
 			"title": "Ship Tags",
