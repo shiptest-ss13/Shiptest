@@ -542,7 +542,7 @@
 		return
 	if (is_type_in_typecache(target, ovens))
 		if (held_sausage && held_sausage.roasted)
-			to_chat("<span class='warning'>Your [held_sausage] has already been cooked!</span>")
+			to_chat(src, "<span class='warning'>Your [held_sausage] has already been cooked!</span>")
 			return
 		if (istype(target, /obj/singularity) && get_dist(user, target) < 10)
 			to_chat(user, "<span class='notice'>You send [held_sausage] towards [target].</span>")
@@ -763,11 +763,11 @@
 /obj/item/storage/belt/weebstick/afterattack(atom/A, mob/living/user, proximity_flag, params)
 	. = ..()
 	if(primed && length(contents))
+		if(!(A in view(user.client.view, user)))
+			return
 		var/obj/item/I = contents[1]
 		if(!user.put_in_inactive_hand(I))
 			to_chat(user, "<span class='warning'>You need a free hand!</span>")
-			return
-		if(!(A in view(user.client.view, user)))
 			return
 		var/datum/component/storage/CP = GetComponent(/datum/component/storage)
 		CP.locked = FALSE

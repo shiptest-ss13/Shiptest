@@ -28,21 +28,3 @@
 
 	pda_slot = ITEM_SLOT_LPOCKET
 
-/datum/outfit/job/roboticist/technician/minutemen
-	name = "Mech Technician (Minutemen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	shoes = /obj/item/clothing/shoes/combat
-	ears = /obj/item/radio/headset/minutemen
-	suit = /obj/item/clothing/suit/toggle/labcoat/science
-
-/datum/outfit/job/roboticist/heron
-	name = "Mech Technician (Nanotrasen)"
-
-	uniform = /obj/item/clothing/under/rank/rnd/roboticist
-	suit = /obj/item/clothing/suit/longcoat/robowhite
-	ears = /obj/item/radio/headset/nanotrasen
-	glasses = /obj/item/clothing/glasses/welding
-
-	backpack_contents = list(/obj/item/weldingtool/hugetank)
-

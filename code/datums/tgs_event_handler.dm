@@ -1,5 +1,6 @@
 /datum/tgs_event_handler/impl
 	var/datum/timedevent/reattach_timer
+	var/datum/timedevent/delay_end_timer
 
 /datum/tgs_event_handler/impl/HandleEvent(event_code, ...)
 	switch(event_code)
@@ -14,28 +15,44 @@
 			message_admins("TGS: Instance renamed to from [world.TgsInstanceName()] to [args[2]]")
 		if(TGS_EVENT_COMPILE_START)
 			message_admins("TGS: Deployment started, new game version incoming...")
+			SSticker.delay_end = ROUND_END_TGS
+			SSticker.admin_delay_notice = "TGS Deployment in progress, please wait..."
+			delay_end_timer = addtimer(CALLBACK(src, PROC_REF(end_delay)), 5 MINUTES, TIMER_STOPPABLE)
 		if(TGS_EVENT_COMPILE_CANCELLED)
 			message_admins("TGS: Deployment cancelled!")
+			end_delay()
 		if(TGS_EVENT_COMPILE_FAILURE)
 			message_admins("TGS: Deployment failed!")
+			end_delay()
 		if(TGS_EVENT_DEPLOYMENT_COMPLETE)
 			message_admins("TGS: Deployment complete!")
-			to_chat(world, "<span class='boldannounce'>Server updated, changes will be applied on the next round...</span>")
+			to_chat(world, span_boldannounce("Server updated, changes will be applied on the next round..."))
+			end_delay()
 		if(TGS_EVENT_WATCHDOG_DETACH)
 			message_admins("TGS restarting...")
-			reattach_timer = addtimer(CALLBACK(src, PROC_REF(LateOnReattach)), 1 MINUTES)
+			reattach_timer = addtimer(CALLBACK(src, PROC_REF(LateOnReattach)), 1 MINUTES, TIMER_STOPPABLE)
 		if(TGS_EVENT_WATCHDOG_REATTACH)
 			var/datum/tgs_version/old_version = world.TgsVersion()
 			var/datum/tgs_version/new_version = args[2]
 			if(!old_version.Equals(new_version))
-				to_chat(world, "<span class='boldannounce'>TGS updated to v[new_version.deprefixed_parameter]</span>")
+				to_chat(world, span_boldannounce("TGS updated to v[new_version.deprefixed_parameter]"))
 			else
 				message_admins("TGS: Back online")
 			if(reattach_timer)
 				deltimer(reattach_timer)
 				reattach_timer = null
 		if(TGS_EVENT_WATCHDOG_SHUTDOWN)
-			to_chat_immediate(world, "<span class='boldannounce'>Server is shutting down!</span>")
+			to_chat_immediate(world, span_boldannounce("Server is shutting down!"))
 
 /datum/tgs_event_handler/impl/proc/LateOnReattach()
 	message_admins("Warning: TGS hasn't notified us of it coming back for a full minute! Is there a problem?")
+
+/datum/tgs_event_handler/impl/proc/end_delay()
+	if(SSticker.delay_end == ROUND_END_TGS)
+		SSticker.delay_end = ROUND_END_NOT_DELAYED
+		SSticker.admin_delay_notice = null
+		if(delay_end_timer)
+			deltimer(delay_end_timer)
+			delay_end_timer = null
+		if(SSticker.ready_for_reboot && !SSticker.delay_end) //we undelayed after standard reboot would occur
+			SSticker.standard_reboot()
