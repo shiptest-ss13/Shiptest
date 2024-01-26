@@ -143,7 +143,7 @@
 				if("Barrel")
 					part_to_build = new gun_work_piece.frame.InstalledBarrel.type
 				if("Frame")
-					part_to_build = new gun_work_piece.frame.type
+					part_to_build = new gun_work_piece.frame.type(src, TRUE)
 			part_to_build.forceMove(drop_location())
 	mode = FALSE
 

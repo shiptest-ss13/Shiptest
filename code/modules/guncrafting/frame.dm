@@ -19,12 +19,17 @@
 	var/obj/item/part/gun/modular/barrel/InstalledBarrel
 	// Which barrels does the frame accept?
 	var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
-	
+
 	gun_part_type = FRAME
 
 /obj/item/part/gun/frame/Initialize(mapload)
 	..()
 	var/spawn_with_preinstalled_parts = TRUE
+
+/obj/item/part/gun/frame/Initialize(mapload, dont_spawn_with_parts)
+	..()
+	if(dont_spawn_with_parts)
+		spawn_with_preinstalled_parts = FALSE
 
 	if(spawn_with_preinstalled_parts)
 		var/list/parts_list = list("mechanism", "barrel", "grip")
@@ -121,7 +126,7 @@
 		return
 
 /obj/item/part/gun/frame/proc/handle_mechanism(obj/item/I, mob/living/user)
-	if(I.type == validMechanisms)
+	if(I.type in validMechanisms)
 		if(insert_item(I, user))
 			InstalledMechanism = I
 			to_chat(user, span_notice("You have attached the mechanism to \the [src]."))
