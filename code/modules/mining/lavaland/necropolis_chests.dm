@@ -161,6 +161,7 @@
 				new /obj/item/clothing/suit/armor/ascetic(src)
 			if(29)
 				new /obj/item/kitchen/knife/envy(src)
+
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
 	name = "KA Mod Disk"
