@@ -166,7 +166,7 @@
 
 /datum/supply_pack/ammo/ak47_ammo
 	name = "SVG 7.62x39mm FMJ Magazine Crate"
-	desc = "Contains two 7.62x39mm FMJ magazines for the SVG rifle, each containing thirty rounds."
+	desc = "Contains two 7.62x39mm FMJ magazines for the SVG rifle, each containing twenty rounds."
 	contains = list(/obj/item/ammo_box/magazine/ak47,
 					/obj/item/ammo_box/magazine/ak47)
 	cost = 2000
