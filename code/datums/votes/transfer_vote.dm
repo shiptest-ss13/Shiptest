@@ -2,7 +2,7 @@
 #define CHOICE_CONTINUE "Continue Playing"
 
 /// The fraction of non-voters that will be added to the transfer option when the vote is finalized.
-#define TRANSFER_FACTOR max(0, (world.time / (1 MINUTES) - 120) / 120)
+#define TRANSFER_FACTOR clamp((world.time / (1 MINUTES) - 120) / 240, 0, 1)
 
 /datum/vote/transfer_vote
 	name = "Transfer"
@@ -48,7 +48,7 @@
 	var/boost = round(length(non_voters) * TRANSFER_FACTOR)
 	if(boost)
 		. += "\n"
-		. += "Transfer option was boosted by [boost] non-voters due to round length."
+		. += span_bold("Transfer option was boosted by [boost] non-voters ([round(TRANSFER_FACTOR, 0.1)]%) due to round length.")
 
 /datum/vote/transfer_vote/finalize_vote(winning_option)
 	if(winning_option == CHOICE_CONTINUE)
