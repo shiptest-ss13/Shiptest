@@ -3985,6 +3985,8 @@
 /obj/item/robot_suit,
 /obj/structure/closet/crate/engineering,
 /obj/effect/turf_decal/industrial/hatch/orange,
+/obj/item/assembly/flash,
+/obj/item/assembly/flash,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Qu" = (
@@ -4157,6 +4159,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
+"TW" = (
+/obj/item/radio/intercom/wideband/directional/north,
+/turf/closed/wall/r_wall,
+/area/ship/bridge)
 "TZ" = (
 /obj/effect/turf_decal/trimline/opaque/orange/arrow_ccw{
 	dir = 4
@@ -4183,6 +4189,10 @@
 /obj/item/pen/fountain{
 	pixel_x = -4
 	},
+/obj/machinery/recharger{
+	pixel_x = -5
+	},
+/obj/item/stamp/captain,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ur" = (
@@ -5941,7 +5951,7 @@ Lk
 mn
 cv
 lW
-Lk
+TW
 VQ
 zW
 zW
