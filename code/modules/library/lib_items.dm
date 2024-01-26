@@ -200,6 +200,7 @@
 	name = "chemistry manuals bookcase"
 
 /obj/structure/bookcase/manuals/chemistry/Initialize()
+	. = ..()
 	new /obj/item/book/manual/wiki/chemistry(src)
 	new /obj/item/book/manual/wiki/ghetto_chemistry(src)
 
