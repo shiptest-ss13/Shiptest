@@ -7447,6 +7447,7 @@
 	pixel_y = 28
 	},
 /obj/machinery/light/directional/east,
+/obj/item/reagent_containers/food/snacks/pancakes/blueberry,
 /turf/open/floor/plasteel,
 /area/centcom)
 "dMa" = (
@@ -9116,8 +9117,17 @@
 /turf/open/floor/plasteel,
 /area/centcom/supply)
 "hba" = (
-/obj/machinery/fax/admin/minutemen,
 /obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 5
+	},
+/obj/item/clothing/head/cowboy/sec/minutemen{
+	pixel_y = 8;
+	pixel_x = -4
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 5
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "hbh" = (
@@ -9538,7 +9548,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fluff/paper/stack{
 	dir = 5;
-	pixel_y = 25
+	pixel_y = 25;
+	layer = 2.89
 	},
 /obj/structure/fluff/paper/stack{
 	dir = 4;
@@ -9623,6 +9634,10 @@
 	pixel_y = 11
 	},
 /obj/machinery/light/directional/east,
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = -9;
+	pixel_y = 3
+	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "igW" = (
@@ -10688,10 +10703,7 @@
 /obj/structure/sign/poster/minutemen/gold{
 	pixel_y = 32
 	},
-/obj/item/clothing/head/cowboy/sec/minutemen{
-	pixel_y = 8;
-	pixel_x = -4
-	},
+/obj/machinery/fax/admin/minutemen,
 /turf/open/floor/plasteel,
 /area/centcom)
 "kkV" = (
@@ -11449,15 +11461,9 @@
 /area/tdome/arena_source)
 "lQr" = (
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 5
-	},
-/obj/item/pen/fourcolor{
-	pixel_x = 5
-	},
 /obj/item/flashlight/lamp{
-	pixel_x = -8;
-	pixel_y = 13
+	pixel_x = 8;
+	pixel_y = 3
 	},
 /obj/structure/sign/minutemen{
 	pixel_y = 28
@@ -11864,6 +11870,10 @@
 	},
 /obj/effect/turf_decal/corner_steel_grid/diagonal,
 /obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/garbage{
+	pixel_x = 5;
+	pixel_y = -5
+	},
 /turf/open/floor/plasteel/elevatorshaft{
 	color = "#808080"
 	},
@@ -15173,6 +15183,10 @@
 	},
 /obj/effect/turf_decal/corner_steel_grid/full{
 	dir = 8
+	},
+/obj/item/trash/can{
+	pixel_x = -6;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/elevatorshaft{
 	color = "#808080"
