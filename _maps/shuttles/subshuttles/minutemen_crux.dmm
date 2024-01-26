@@ -42,6 +42,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "f" = (
@@ -52,13 +53,13 @@
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "g" = (
 /obj/docking_port/mobile{
 	dir = 8;
 	name = "crux dock";
-	port_direction = 2;
 	preferred_direction = 8
 	},
 /obj/machinery/door/poddoor{
@@ -73,12 +74,16 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/structure/chair/comfy/shuttle,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "i" = (
 /obj/effect/turf_decal/steeldecal/steel_decals10,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -132,6 +137,7 @@
 	pixel_x = -4;
 	dir = 1
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "u" = (
@@ -141,6 +147,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "v" = (
@@ -152,6 +159,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "5-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -174,6 +184,12 @@
 /obj/effect/turf_decal/industrial/caution{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "z" = (
@@ -186,6 +202,7 @@
 	},
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/turf_decal/steeldecal/steel_decals6,
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "B" = (
@@ -229,6 +246,9 @@
 	},
 /obj/structure/sign/minutemen{
 	pixel_y = 28
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
@@ -299,6 +319,9 @@
 /obj/effect/turf_decal/steeldecal/steel_decals9{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Q" = (
@@ -343,6 +366,9 @@
 /obj/structure/sign/minutemen{
 	pixel_y = -32
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "X" = (
@@ -367,6 +393,7 @@
 /obj/machinery/firealarm/directional/south{
 	pixel_x = 7
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 

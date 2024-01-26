@@ -23,6 +23,9 @@
 /obj/machinery/door/airlock/external{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "dw" = (
@@ -30,10 +33,12 @@
 	dir = 4
 	},
 /obj/docking_port/mobile{
-	dir = 4;
+	dir = 8;
 	name = "ancon dock";
-	port_direction = 2;
 	preferred_direction = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -42,6 +47,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/thinplating/light,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "jj" = (
@@ -74,6 +82,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/corner/opaque/green/half{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "nV" = (
@@ -86,6 +97,7 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 4
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "pk" = (
@@ -98,15 +110,19 @@
 /obj/structure/cable{
 	icon_state = "1-5"
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "te" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal,
 /obj/effect/turf_decal/siding/thinplating/light,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "tk" = (
-/turf/open/space/basic,
+/turf/template_noop,
 /area/template_noop)
 "ty" = (
 /obj/effect/turf_decal/corner/opaque/green/diagonal{
@@ -114,6 +130,16 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 6
+	},
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/light_switch{
+	pixel_x = 12;
+	pixel_y = -19;
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -179,7 +205,7 @@
 /area/ship/bridge)
 "yp" = (
 /obj/structure/grille,
-/obj/structure/window/fulltile,
+/obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "zI" = (
@@ -221,6 +247,7 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 8
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "DF" = (
@@ -230,6 +257,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
+/obj/effect/turf_decal/corner/opaque/green/half,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Fz" = (
@@ -246,6 +274,8 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 5
 	},
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "IJ" = (
@@ -276,10 +306,10 @@
 /turf/open/floor/wood,
 /area/ship/bridge)
 "LE" = (
-/turf/closed/wall,
+/turf/closed/wall/mineral/titanium,
 /area/template_noop)
 "LV" = (
-/turf/closed/wall,
+/turf/closed/wall/mineral/titanium,
 /area/ship/bridge)
 "MW" = (
 /obj/structure/chair/office/light{
@@ -291,6 +321,7 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 8
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Nk" = (
@@ -300,11 +331,18 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Om" = (
 /obj/machinery/door/airlock/external/glass{
 	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -321,6 +359,7 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 4
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Rz" = (
@@ -343,6 +382,7 @@
 /obj/structure/chair/comfy{
 	dir = 4
 	},
+/obj/effect/landmark/ert_shuttle_spawn,
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "Th" = (
@@ -363,6 +403,9 @@
 	},
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
@@ -385,6 +428,7 @@
 /obj/effect/turf_decal/siding/thinplating/light{
 	dir = 1
 	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
 /turf/open/floor/plasteel/white,
 /area/ship/bridge)
 "Zr" = (

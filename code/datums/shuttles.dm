@@ -360,7 +360,6 @@
 	name = "Falcon Dropship"
 	prefix = "NTSV"
 
-
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
 	name = "Crux Dropship"
@@ -368,7 +367,7 @@
 
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
-	name = "NanoTrasen Ancon-Class Command Ship"
+	name = "Nanotrasen Ancon-Class Command Ship"
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
 
@@ -377,4 +376,15 @@
 	name = "Gut Combat Freighter"
 	prefix = "ISV"
 
+/datum/map_template/shuttle/subshuttles/anvil
+	file_name = "inteq_anvil"
+	name = "Anvil-Class Dropship"
+	prefix = "IRMV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/runner
+	file_name = "syndicate_runner"
+	name = "Runner-Class Ambulance"
+	prefix = "CSSV"
+	name_categories = list("GENERAL", "SPACE")
 
