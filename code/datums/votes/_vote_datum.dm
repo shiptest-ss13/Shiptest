@@ -207,6 +207,8 @@
 			percentage_text = "    0%"
 		returned_text += "[percentage_text] | [span_bold(option)]: [choices[option]]"
 
+	returned_text += "\n    [span_bold("Non-Voters")]: [length(non_voters)]"
+
 	if(!real_winner) // vote has no winner or cannot be won, but still had votes
 		return returned_text
 
