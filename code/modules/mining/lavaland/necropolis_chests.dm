@@ -13,7 +13,7 @@
 	desc = "It's watching you suspiciously."
 
 /obj/structure/closet/crate/necropolis/tendril/PopulateContents()
-	var/loot = rand(1,29)
+	var/loot = rand(1,30)
 	switch(loot)
 		if(1)
 			new /obj/item/shared_storage/red(src)
@@ -84,13 +84,15 @@
 			new /obj/item/clothing/suit/armor/ascetic(src)
 		if(29)
 			new /obj/item/kitchen/knife/envy(src)
+		if(30)
+			new /mob/living/simple_animal/hostile/poison/bees(src)
 
 /obj/structure/closet/crate/necropolis/tendril/greater
 	desc = "It's watching you wearily. It seems terribly bloated."
 
 /obj/structure/closet/crate/necropolis/tendril/greater/PopulateContents()
 	for(var/i in 1 to 3)
-		var/loot = rand(1,29)
+		var/loot = rand(1,30)
 		switch(loot)
 			if(1)
 				new /obj/item/shared_storage/red(src)
@@ -161,6 +163,9 @@
 				new /obj/item/clothing/suit/armor/ascetic(src)
 			if(29)
 				new /obj/item/kitchen/knife/envy(src)
+			if(30)
+				new /mob/living/simple_animal/hostile/poison/bees/toxin(src)
+			// :3c
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
