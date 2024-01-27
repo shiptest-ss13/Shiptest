@@ -22,7 +22,7 @@
 	//International Fixed Calendar format (https://en.wikipedia.org/wiki/International_Fixed_Calendar)
 	var/days_since = round(realtime / (24 HOURS))
 	var/year = round(days_since / 365) + 481
-	var/day_of_year = days_since % 365 + 1
+	var/day_of_year = days_since % 365
 	var/month = round(day_of_year / 28)
 	var/day_of_month = day_of_year % 28 + 1
 
@@ -31,33 +31,33 @@
 
 	var/monthname
 	switch(month)
-		if(1)
+		if(0)
 			monthname = "January"
-		if(2)
+		if(1)
 			monthname = "February"
-		if(3)
+		if(2)
 			monthname = "March"
-		if(4)
+		if(3)
 			monthname = "April"
-		if(5)
+		if(4)
 			monthname = "May"
-		if(6)
+		if(5)
 			monthname = "June"
-		if(7)
+		if(6)
 			monthname = "Sol"
-		if(8)
+		if(7)
 			monthname = "July"
-		if(9)
+		if(8)
 			monthname = "August"
-		if(10)
+		if(9)
 			monthname = "September"
-		if(11)
+		if(10)
 			monthname = "October"
-		if(12)
+		if(11)
 			monthname = "November"
-		if(13)
+		if(12)
 			monthname = "December"
-		if(14)
+		if(13)
 			return "Year Day, [year] FSC"
 
 	return "[monthname] [day_of_month], [year] FSC"

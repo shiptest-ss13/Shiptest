@@ -90,7 +90,7 @@
 	icon_state = "combatbear"
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
-	faction = list("frontiersman")
+	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
 	melee_damage_upper = 35
@@ -141,7 +141,7 @@
 	icon_living = "butterbear"
 	icon_dead = "butterbear_dead"
 	desc = "I can't believe its not a bear!"
-	faction = list("neutral", "frontiersmen")
+	faction = list("neutral", FACTION_ANTAG_FRONTIERSMEN)
 	obj_damage = 11
 	melee_damage_lower = 1
 	melee_damage_upper = 1
