@@ -19,16 +19,16 @@
 	"starting_funds": 1500,
 	"job_slots": {
 		"Salvage Leader": {
-			"outfit": "/datum/outfit/job/captain",
+			"outfit": "/datum/outfit/job/independent/captain",
 			"officer": true,
 			"slots": 1
 		},
-		"Salvagee": {
-			"outfit": "/datum/outfit/job/engineer/independent/ship_engineer/salvage",
+		"Salvager": {
+			"outfit": "/datum/outfit/job/independent/engineer/salvage",
 			"slots": 2
 		},
 		"Salvage Technician": {
-			"outfit": "/datum/outfit/job/engineer/gloved",
+			"outfit": "/datum/outfit/job/independent/engineer",
 			"slots": 1
 		}
 	},

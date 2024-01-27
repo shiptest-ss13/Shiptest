@@ -553,7 +553,7 @@
 	flavour_text = "You were mining peacefully, then a ash drake suddenly attacked, then you have died... or so you thought?\
 	You have no idea where you now, but you are glad to be alive."
 	assignedrole = "Lost Shaft Miner"
-	outfit = /datum/outfit/job/miner/equipped
+	outfit = /datum/outfit/job/miner
 
 /obj/effect/mob_spawn/human/lost/ashwalker_heir
 	icon = 'icons/obj/machines/sleeper.dmi'
