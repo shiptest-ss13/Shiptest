@@ -207,23 +207,23 @@
 
 /datum/antagonist/ert/lp
 	name = "Loss Prevention Security Specialist"
-	outfit = /datum/outfit/centcom/ert/lp
+	outfit = /datum/outfit/job/nanotrasen/ert/lp
 	role = "Security Specialist"
 
 /datum/antagonist/ert/lp/medic
 	name = "Loss Prevention Medical Specialist"
-	outfit = /datum/outfit/centcom/ert/lp/medic
+	outfit = /datum/outfit/job/nanotrasen/ert/lp/medic
 	role = "Medical Specialist"
 
 /datum/antagonist/ert/lp/engineer
 	name = "Loss Prevention Engineering Specialist"
-	outfit = /datum/outfit/centcom/ert/lp/engineer
+	outfit = /datum/outfit/job/nanotrasen/ert/lp/engineer
 	role = "Engineering Specialist"
 
 /datum/antagonist/ert/lp/lieutenant
 	name = "Loss Prevention Lieutenant"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/lp/lieutenant
+	outfit = /datum/outfit/job/nanotrasen/ert/lp/lieutenant
 	role = "Lieutenant"
 
 // ********************************************************************
@@ -232,7 +232,7 @@
 
 /datum/antagonist/ert/inteq
 	name = "Inteq Mercenary"
-	outfit = /datum/outfit/job/security/inteq
+	outfit = /datum/outfit/job/inteq/security
 	random_names = TRUE
 	role = "Enforcer"
 
@@ -252,7 +252,7 @@
 
 /datum/antagonist/ert/inteq/leader
 	name = "Inteq Mercenary Leader"
-	outfit = /datum/outfit/job/captain/inteq
+	outfit = /datum/outfit/job/inteq/captain
 	role = "Vanguard"
 
 // ********************************************************************
@@ -260,13 +260,13 @@
 // ********************************************************************
 /datum/antagonist/ert/solgov
 	name = "SolGov Sonnensöldner"
-	outfit = /datum/outfit/centcom/ert/solgov
+	outfit = /datum/outfit/job/solgov/ert
 	random_names = FALSE
 	role = "Sonnensöldner"
 
 /datum/antagonist/ert/official/solgov
 	name = "SolGov Inspector"
-	outfit = /datum/outfit/centcom/ert/solgov/inspector
+	outfit = /datum/outfit/job/solgov/ert/inspector
 	role = "Solarian Inspector"
 
 /datum/antagonist/ert/official/solgov/greet()
@@ -283,7 +283,7 @@
 
 /datum/antagonist/ert/minutemen
 	name = "Minutemen Infantry"
-	outfit = /datum/outfit/centcom/ert/minutemen
+	outfit = /datum/outfit/job/minutemen/ert
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/greet()
@@ -302,52 +302,52 @@
 /datum/antagonist/ert/minutemen/leader
 	name = "Minutemen Leader"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/minutemen/leader
+	outfit = /datum/outfit/job/minutemen/ert/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/minutemen/bard
 	name = "BARD Infantry"
-	outfit = /datum/outfit/centcom/ert/minutemen/bard
+	outfit = /datum/outfit/job/minutemen/ert/bard
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/bard/leader
-	name = "BARD Leader"
+	name = "BARD Sergeant"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/minutemen/bard/leader
+	outfit = /datum/outfit/job/minutemen/ert/bard/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/minutemen/riot
 	name = "Riot Officer"
-	outfit = /datum/outfit/centcom/ert/minutemen/riot
+	outfit = /datum/outfit/job/minutemen/ert/riot
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/riot/leader
 	name = "Riot Sergeant"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/minutemen/riot/leader
+	outfit = /datum/outfit/job/minutemen/ert/riot/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/official/minutemen
 	name = "GOLD Inspector"
-	outfit = /datum/outfit/centcom/ert/minutemen/inspector
+	outfit = /datum/outfit/job/minutemen/ert/inspector
 	role = "Lieutenant"
 
 /datum/antagonist/ert/official/minutemen/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the GOLD Inspector.</font></B>")
 	if (ert_team)
-		to_chat(owner, "The Galactic Optimum Labor Division is sending you to [station_name()] with the task: [ert_team.mission.explanation_text]")
+		to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the Colonial League. Your task: [ert_team.mission.explanation_text]")
 	else
-		to_chat(owner, "The Galactic Optimum Labor Division is sending you to [station_name()] with the task: [mission.explanation_text]")
+		to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the Colonial League. Your task: [ert_team.mission.explanation_text]")
 
 /datum/antagonist/ert/minutemen/piratehunters
 	name = "Pirate Hunter"
-	outfit = /datum/outfit/centcom/ert/minutemen/piratehunters
+	outfit = /datum/outfit/job/minutemen/ert/pirate_hunter
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/piratehunters/leader
 	name = "Pirate Hunter Leader"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/minutemen/piratehunters/leader
+	outfit = /datum/outfit/job/minutemen/ert/pirate_hunter/leader
 	role = "Sergeant"
 
 // ********************************************************************
@@ -356,7 +356,7 @@
 
 /datum/antagonist/ert/syndicate
 	name = "Syndicate Infantry"
-	outfit = /datum/outfit/centcom/ert/syndicate
+	outfit = /datum/outfit/job/syndicate/ert
 	role = "Squaddie"
 
 /datum/antagonist/ert/syndicate/greet()
@@ -375,12 +375,12 @@
 /datum/antagonist/ert/syndicate/leader
 	name = "Syndicate Sergeant"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/syndicate/leader
+	outfit = /datum/outfit/job/syndicate/ert/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/syndicate/gorlex
 	name = "2nd Battlegroup Trooper"
-	outfit = /datum/outfit/centcom/ert/syndicate/gorlex
+	outfit = /datum/outfit/job/syndicate/ert/gorlex
 	role = "Trooper"
 
 /datum/antagonist/ert/syndicate/gorlex/greet()
@@ -396,28 +396,28 @@
 
 /datum/antagonist/ert/syndicate/gorlex/pointman
 	name = "2nd Battlegroup Shotgunner"
-	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/pointman
+	outfit = /datum/outfit/job/syndicate/ert/gorlex/pointman
 	role = "Pointman"
 
 /datum/antagonist/ert/syndicate/gorlex/medic
 	name = "2nd Battlegroup Medic"
-	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/medic
+	outfit = /datum/outfit/job/syndicate/ert/gorlex/medic
 	role = "Medic"
 
 /datum/antagonist/ert/syndicate/gorlex/sniper
 	name = "2nd Battlegroup Sniper"
-	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/sniper
+	outfit = /datum/outfit/job/syndicate/ert/gorlex/sniper
 	role = "Marksman"
 
 /datum/antagonist/ert/syndicate/gorlex/leader
 	name = "2nd Battlegroup Sergeant"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/syndicate/gorlex/leader
+	outfit = /datum/outfit/job/syndicate/ert/gorlex/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/syndicate/cybersun
 	name = "Cybersun Commando"
-	outfit = /datum/outfit/centcom/ert/syndicate/cybersun
+	outfit = /datum/outfit/job/syndicate/ert/cybersun
 	role = "Operative"
 
 /datum/antagonist/ert/syndicate/cybersun/greet()
@@ -436,12 +436,12 @@
 /datum/antagonist/ert/syndicate/cybersun/leader
 	name = "Cybersun Commando Leader"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/leader
+	outfit = /datum/outfit/job/syndicate/ert/cybersun/leader
 	role = "Lead Operative"
 
 /datum/antagonist/ert/syndicate/cybersun/medic
 	name = "Cybersun Paramedic"
-	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/medic
+	outfit = /datum/outfit/job/syndicate/ert/cybersun/medic
 	role = "Medical Technician"
 
 /datum/antagonist/ert/syndicate/cybersun/medic/greet()
@@ -458,7 +458,7 @@
 /datum/antagonist/ert/syndicate/cybersun/medic/leader
 	name = "Cybersun Lead Paramedic"
 	leader = TRUE
-	outfit = /datum/outfit/centcom/ert/syndicate/cybersun/medic/leader
+	outfit = /datum/outfit/job/syndicate/ert/cybersun/medic/leader
 	role = "Lead Medical Technician"
 
 // ********************************************************************
@@ -467,7 +467,7 @@
 
 /datum/antagonist/ert/frontier
 	name = "Frontiersmen Pirate"
-	outfit = /datum/outfit/centcom/ert/frontiersmen
+	outfit = /datum/outfit/job/frontiersmen/ert
 	role = "Grunt"
 
 /datum/antagonist/ert/frontier/greet()
@@ -481,19 +481,22 @@
 	missiondesc += "<BR><B>Your Mission</B>: [ert_team.mission.explanation_text]"
 	to_chat(owner,missiondesc)
 
+/datum/antagonist/ert/frontier/random
+	outfit = /datum/outfit/job/frontiersmen/ert/random
+
 /datum/antagonist/ert/frontier/leader
 	name = "Frontiersmen Officer"
-	outfit = /datum/outfit/centcom/ert/frontiersmen/leader
+	outfit = /datum/outfit/job/frontiersmen/ert/leader
 	role = "Officer"
 
 /datum/antagonist/ert/frontier/medic
 	name = "Frontiersmen Medic"
-	outfit = /datum/outfit/centcom/ert/frontiersmen/medic
+	outfit = /datum/outfit/job/frontiersmen/ert/medic
 	role = "Stretcher-Bearer"
 
 /datum/antagonist/ert/frontier/engineer
 	name = "Frontiersmen Engineer"
-	outfit = /datum/outfit/centcom/ert/frontiersmen/engineer
+	outfit = /datum/outfit/job/frontiersmen/ert/engineer
 	role = "Sapper"
 
 // ********************************************************************
@@ -502,7 +505,7 @@
 
 /datum/antagonist/ert/independent
 	name = "Independent Security Officer"
-	outfit = /datum/outfit/centcom/ert/independent
+	outfit = /datum/outfit/job/independent/ert
 	role = "Security Officer"
 
 /datum/antagonist/ert/independent/greet()
@@ -518,25 +521,25 @@
 
 /datum/antagonist/ert/independent/emt
 	name = "Independent Medical Technician"
-	outfit = /datum/outfit/centcom/ert/independent/emt
+	outfit = /datum/outfit/job/independent/ert/emt
 	role = "Paramedic"
 
 /datum/antagonist/ert/independent/firefighter
 	name = "Independent Firefighter"
-	outfit = /datum/outfit/centcom/ert/independent/firefighter
+	outfit = /datum/outfit/job/independent/ert/firefighter
 	role = "Firefighter"
 
 /datum/antagonist/ert/independent/firefighter/medic
 	name = "Independent Firefighter Paramedic"
-	outfit = /datum/outfit/centcom/ert/independent/firefighter/medic
+	outfit = /datum/outfit/job/independent/ert/firefighter/medic
 	role = "Paramedic"
 
 /datum/antagonist/ert/independent/firefighter/leader
 	name = "Independent Firefighter Group Captain"
-	outfit = /datum/outfit/centcom/ert/independent/firefighter/leader
+	outfit = /datum/outfit/job/independent/ert/firefighter/leader
 	role = "Group Captain"
 
 /datum/antagonist/ert/independent/technician
 	name = "Independent Technician"
-	outfit = /datum/outfit/centcom/ert/independent/technician
+	outfit = /datum/outfit/job/independent/ert/technician
 	role = "Technician"
