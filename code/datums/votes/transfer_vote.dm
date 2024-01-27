@@ -48,7 +48,7 @@
 	var/boost = round(length(non_voters) * TRANSFER_FACTOR)
 	if(boost)
 		. += "\n"
-		. += span_bold("Transfer option was boosted by [boost] non-voters ([round(TRANSFER_FACTOR, 0.1)]%) due to round length.")
+		. += span_bold("Transfer option was boosted by [boost] non-voters ([round(TRANSFER_FACTOR * 100, 0.1)]%) due to round length.")
 
 /datum/vote/transfer_vote/finalize_vote(winning_option)
 	if(winning_option == CHOICE_CONTINUE)
