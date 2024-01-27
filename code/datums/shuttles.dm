@@ -17,7 +17,10 @@
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
+	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The full name of the ship's faction.
+	var/faction_name = "Independent"
 	var/unique_ship_access = FALSE
 	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
 	/// will be in the middle of space, instead of at an outpost.
@@ -42,6 +45,9 @@
 	else
 		mappath = "_maps/shuttles/[category]/[file_name].dmm"
 	. = ..()
+
+/datum/map_template/shuttle/proc/load_from_json(json)
+	
 
 /datum/map_template/shuttle/preload_size(path, cache)
 	. = ..(path, TRUE) // Done this way because we still want to know if someone actualy wanted to cache the map
