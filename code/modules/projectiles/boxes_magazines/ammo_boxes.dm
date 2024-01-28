@@ -132,7 +132,7 @@
 /obj/item/ammo_box/aac_300blk_stripper
 	name = "stripper clip (.300 BLK)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "762"
+	icon_state = "300m"
 	ammo_type = /obj/item/ammo_casing/aac_300blk
 	caliber = ".300 BLK"
 	max_ammo = 5

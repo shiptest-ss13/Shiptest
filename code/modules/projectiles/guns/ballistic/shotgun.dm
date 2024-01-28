@@ -41,6 +41,8 @@
 			return TRUE
 	return FALSE
 
+// BRIMSTONE SHOTGUN //
+
 /obj/item/gun/ballistic/shotgun/brimstone
 	name = "HP Brimstone"
 	desc = "A simple and sturdy pump-action shotgun sporting a 5-round capacity, manufactured by Hunter's Pride. Found widely throughout the Frontier in the hands of hunters, pirates, police, and countless others. Chambered in 12g."
@@ -72,8 +74,10 @@
 		spread_unwielded = 25
 		recoil = 5 //your punishment for sawing off an short shotgun
 		recoil_unwielded = 8
+		item_state = "illestren_factory_sawn" // i couldnt care about making another sprite, looks close enough
+		mob_overlay_state = item_state
 
-// RIOT SHOTGUN //
+// HELLFIRE SHOTGUN //
 
 /obj/item/gun/ballistic/shotgun/hellfire
 	name = "HP Hellfire"
@@ -101,6 +105,8 @@
 		spread_unwielded = 15
 		recoil = 3 //or not
 		recoil_unwielded = 5
+		item_state = "dshotgun_sawn" // ditto
+		mob_overlay_state = item_state
 
 // Automatic Shotguns//
 /obj/item/gun/ballistic/shotgun/automatic
@@ -346,6 +352,7 @@
 		recoil = 3 //or not
 		recoil_unwielded = 5
 		item_state = "dshotgun_sawn"
+		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain
 	name = "HP antique double-barreled shotgun"
@@ -353,7 +360,13 @@
 	sawn_desc = "A special-edition Hunter's Pride shotgun, cut down to the size of a sidearm by some barbarian. The brass inlay on the stock and engravings on the barrel have been obliterated in the process, destroying any value beyond its use as a crude sidearm."
 	base_icon_state = "dshotgun_srm"
 	icon_state = "dshotgun_srm"
+	item = "dshotgun_srm"
 	unique_reskin = null
+
+/obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(mob/user)
+	. = ..()
+	if(.)
+		item_state = "dshotgun_srm_sawn"
 
 // IMPROVISED SHOTGUN //
 
@@ -581,38 +594,26 @@
 	cartridge_wording = "bullet"
 	can_be_sawn_off  = TRUE
 
+	wield_slowdown = 0.5
+	wield_delay = 0.65 SECONDS
+
 	spread = -5
 	spread_unwielded = 7
 
 	recoil = 0
 	recoil_unwielded = 2
 
-	wield_slowdown = 0.5
-	wield_delay = 0.65 SECONDS
+//sawn off
+	weapon_weight = WEAPON_MEDIUM
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/rack(mob/user = null)
-	. = ..()
-	if(!wielded)
-		SpinAnimation(7,1)
+	wield_slowdown = 0.25
+	wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
 
+	spread = 4
+	spread_unwielded = 12
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
-	. = ..()
-	if(.)
-		var/obj/item/ammo_box/magazine/internal/tube = magazine
-		tube.max_ammo = 7
-
-		item_state = "flamingarrow_sawn"
-		mob_overlay_state = item_state
-		weapon_weight = WEAPON_MEDIUM
-
-		wield_slowdown = 0.25
-		wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
-
-		spread = 4
-		spread_unwielded = 12
-		recoil = 1
-		recoil_unwielded = 2
+	recoil = 1
+	recoil_unwielded = 2
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
