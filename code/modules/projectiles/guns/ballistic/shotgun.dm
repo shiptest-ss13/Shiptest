@@ -360,7 +360,7 @@
 	sawn_desc = "A special-edition Hunter's Pride shotgun, cut down to the size of a sidearm by some barbarian. The brass inlay on the stock and engravings on the barrel have been obliterated in the process, destroying any value beyond its use as a crude sidearm."
 	base_icon_state = "dshotgun_srm"
 	icon_state = "dshotgun_srm"
-	item = "dshotgun_srm"
+	item_state = "dshotgun_srm"
 	unique_reskin = null
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/roumain/sawoff(mob/user)
