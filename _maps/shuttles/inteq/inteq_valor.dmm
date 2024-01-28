@@ -123,7 +123,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/structure/closet/secure_closet{
 	icon_state = "med_secure";
-	name = "corpsman's locker"
+	name = "corpsman's locker";
+	req_access = list(5)
 	},
 /obj/item/clothing/under/syndicate/inteq/corpsman,
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman,
@@ -133,6 +134,7 @@
 /obj/item/storage/backpack/medic,
 /obj/item/pinpointer/crew,
 /obj/item/storage/belt/medical/webbing,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "bx" = (
@@ -667,7 +669,8 @@
 "fO" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "med_secure";
-	name = "corpsman's locker"
+	name = "corpsman's locker";
+	req_access = list(5)
 	},
 /obj/item/clothing/under/syndicate/inteq/corpsman,
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman,
@@ -678,6 +681,7 @@
 /obj/item/storage/backpack/medic,
 /obj/item/pinpointer/crew,
 /obj/item/storage/belt/medical/webbing,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "fQ" = (
@@ -1256,16 +1260,15 @@
 	pixel_y = -32
 	},
 /obj/item/cigbutt/cigarbutt{
-	pixel_x = 6;
-	pixel_y = -7
-	},
-/obj/item/cigbutt{
-	pixel_x = -4;
-	pixel_y = 8
-	},
-/obj/item/cigbutt{
-	pixel_x = -8;
+	pixel_x = -7;
 	pixel_y = 3
+	},
+/obj/machinery/telecomms/relay/preset/mining{
+	autolinkers = list("relay","hub");
+	freq_listening = list(1347);
+	id = "IRMG Relay";
+	name = "IRMG Relay";
+	network = "irmg_commnet"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1439,7 +1442,8 @@
 "mG" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "med_secure";
-	name = "corpsman's locker"
+	name = "corpsman's locker";
+	req_access = list(5)
 	},
 /obj/item/clothing/under/syndicate/inteq/corpsman,
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman,
@@ -1458,6 +1462,7 @@
 /obj/item/storage/backpack/medic,
 /obj/item/pinpointer/crew,
 /obj/item/storage/belt/medical/webbing,
+/obj/item/storage/firstaid/regular,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/crew/office)
 "mH" = (
