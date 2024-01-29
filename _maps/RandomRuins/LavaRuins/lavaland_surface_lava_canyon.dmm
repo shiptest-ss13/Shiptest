@@ -1,6 +1,10 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aj" = (
 /obj/effect/gibspawner/human,
+/obj/item/ammo_casing/caseless/arrow/bone{
+	pixel_x = -4;
+	pixel_y = -5
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/scorched_hut)
 "ax" = (
@@ -37,8 +41,8 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = -4;
+/obj/item/stack/ore/iron{
+	pixel_x = 7;
 	pixel_y = -6
 	},
 /turf/open/floor/plating/ashplanet/ash,
@@ -60,6 +64,13 @@
 "cI" = (
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
+"cL" = (
+/obj/item/melee/baseball_bat/bone{
+	pixel_y = 2;
+	pixel_x = -7
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "cW" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/open/floor/plating/ashplanet/ash,
@@ -70,6 +81,16 @@
 	},
 /obj/item/stack/sheet/animalhide/goliath_hide,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"dq" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 5
+	},
+/obj/item/strange_crystal{
+	pixel_y = -8;
+	pixel_x = -8
+	},
+/turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "dH" = (
 /obj/item/stack/sheet/sandblock,
@@ -102,6 +123,22 @@
 /obj/effect/decal/cleanable/ash{
 	pixel_x = -3;
 	pixel_y = 4
+	},
+/obj/item/stack/sheet/bone{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/ammo_casing/caseless/arrow/bone{
+	pixel_x = 9;
+	pixel_y = 10
+	},
+/obj/item/ammo_casing/caseless/arrow/bone{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/ammo_casing/caseless/arrow/bone{
+	pixel_x = 11;
+	pixel_y = -7
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -142,10 +179,28 @@
 /mob/living/simple_animal/hostile/big_legion,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"fp" = (
+/obj/structure/stone_tile/slab/burnt,
+/obj/item/strange_crystal{
+	pixel_x = -8;
+	pixel_y = 5
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
+"ft" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
+	},
+/obj/item/stack/sheet/mineral/gold{
+	pixel_y = -7;
+	pixel_x = -9
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "fv" = (
-/obj/item/stack/ore/salvage/scraptitanium{
-	pixel_x = 3;
-	pixel_y = -7
+/obj/item/stack/ore/titanium{
+	pixel_x = 10;
+	pixel_y = -3
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -164,7 +219,9 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "ga" = (
-/obj/structure/barricade/wooden,
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/lizard/ashwalker
+	},
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
 "gf" = (
@@ -183,21 +240,24 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "gu" = (
-/obj/item/melee/baseball_bat/bone{
-	pixel_y = 2;
-	pixel_x = -7
+/obj/structure/stone_tile/block/cracked{
+	dir = 6
 	},
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/obj/item/stack/sheet/mineral/diamond{
+	pixel_x = -5;
+	pixel_y = -4
+	},
+/turf/open/indestructible/necropolis,
 /area/overmap_encounter/planetoid/cave/explored)
 "gv" = (
-/obj/item/ammo_casing/caseless/arrow/bone{
-	pixel_x = -2;
-	pixel_y = -2
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 4
 	},
-/obj/item/ammo_casing/caseless/arrow/bone{
-	pixel_x = 11;
-	pixel_y = -7
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/lizard/ashwalker
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -205,8 +265,22 @@
 /obj/item/stack/sheet/sandblock,
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
+"gL" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 5
+	},
+/obj/item/stack/sheet/mineral/silver{
+	pixel_x = -7
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "hm" = (
-/obj/structure/closet/crate/necropolis/tendril,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "hB" = (
@@ -239,6 +313,13 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"im" = (
+/obj/structure/stone_tile/slab/burnt{
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/block,
+/turf/open/lava/smooth/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "iv" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -267,6 +348,20 @@
 	initial_gas_mix = "LAVALAND_ATMOS"
 	},
 /area/overmap_encounter/planetoid/cave/explored)
+"jy" = (
+/obj/effect/decal/cleanable/ash{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/lizard/ashwalker
+	},
+/obj/item/spear/bonespear{
+	pixel_x = 10;
+	pixel_y = -2
+	},
+/turf/open/floor/plating/ashplanet/rocky,
+/area/ruin/unpowered/scorched_hut)
 "jR" = (
 /obj/effect/decal/cleanable/ash/large{
 	pixel_x = -5;
@@ -284,6 +379,15 @@
 	},
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
+"jY" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 6
+	},
+/obj/item/stack/sheet/mineral/silver/twenty{
+	pixel_x = -6
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "ki" = (
 /turf/closed/indestructible/riveted/boss,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -294,6 +398,12 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"ku" = (
+/obj/structure/stone_tile/block/burnt{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "kx" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 10
@@ -306,6 +416,7 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/blood/old,
+/obj/effect/mob_spawn/human/corpse/damaged/legioninfested,
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "kG" = (
@@ -325,6 +436,41 @@
 	pixel_y = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"lc" = (
+/obj/item/stack/sheet/sinew{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"ld" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 9
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
+"lr" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 8
+	},
+/obj/machinery/door/keycard/gates/lavacanyon{
+	color = "#423429"
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
+"lB" = (
+/obj/structure/stone_tile/surrounding{
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/center{
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4;
+	pixel_y = 16
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/cave/explored)
 "lC" = (
 /obj/structure/stone_tile/slab/cracked{
@@ -349,13 +495,14 @@
 	pixel_y = -7
 	},
 /obj/item/ammo_casing/caseless/arrow/bone{
-	pixel_x = -4;
-	pixel_y = -5
+	pixel_x = 6;
+	pixel_y = 4
 	},
 /obj/item/ammo_casing/caseless/arrow/bone{
-	pixel_x = 15;
-	pixel_y = 7
+	pixel_x = 9;
+	pixel_y = 10
 	},
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/scorched_hut)
 "mJ" = (
@@ -434,9 +581,9 @@
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "oJ" = (
-/obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = -8;
-	pixel_y = -4
+/obj/item/stack/ore/iron{
+	pixel_x = -11;
+	pixel_y = 5
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -491,6 +638,10 @@
 	},
 /obj/item/stack/sheet/animalhide/goliath_hide,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"qm" = (
+/obj/structure/stone_tile/surrounding,
+/turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "qu" = (
 /obj/effect/decal/cleanable/ash{
@@ -564,9 +715,9 @@
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
 "tj" = (
-/obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = -8;
-	pixel_y = -4
+/obj/item/stack/ore/iron{
+	pixel_x = -9;
+	pixel_y = -8
 	},
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
@@ -607,12 +758,12 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "vu" = (
-/obj/item/spear/bonespear{
-	pixel_x = 8;
-	pixel_y = 14
+/obj/structure/stone_tile/slab/cracked{
+	pixel_y = -16
 	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/structure/stone_tile/block/burnt,
+/turf/open/lava/smooth/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "vZ" = (
 /obj/item/stack/sheet/cotton/cloth/five,
 /turf/open/floor/plating/grass/lava/purple,
@@ -668,15 +819,20 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
 "xV" = (
-/obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = -8;
-	pixel_y = -4
+/obj/item/stack/ore/iron{
+	pixel_x = -3;
+	pixel_y = 7
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "xX" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 8
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 5;
+	pixel_y = -16
+	},
+/obj/structure/stone_tile/center{
+	pixel_y = -16
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -684,17 +840,15 @@
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
 	},
+/obj/structure/table_frame/wood,
+/obj/item/ammo_casing/caseless/arrow/bone,
+/obj/item/ammo_casing/caseless/arrow/bone{
+	pixel_x = 15;
+	pixel_y = 7
+	},
 /obj/item/ammo_casing/caseless/arrow/bone{
 	pixel_x = -4;
 	pixel_y = -4
-	},
-/obj/item/ammo_casing/caseless/arrow/bone{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/ammo_casing/caseless/arrow/bone{
-	pixel_x = 13;
-	pixel_y = -12
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -743,7 +897,9 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "zb" = (
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner,
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
+	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon)
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
 "zc" = (
@@ -760,15 +916,15 @@
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "zz" = (
-/obj/item/melee/baseball_bat/bone{
-	pixel_y = -11;
-	pixel_x = -7
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/scorched_hut)
-"zT" = (
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/cave/explored)
+"zT" = (
+/obj/effect/mob_spawn/human/corpse/charredskeleton,
+/turf/open/floor/plating/grass/lava/purple,
+/area/overmap_encounter/planetoid/lava/explored)
 "Ae" = (
 /obj/effect/decal/cleanable/ash/large{
 	pixel_x = -4;
@@ -836,6 +992,16 @@
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
+"CE" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 6
+	},
+/obj/item/strange_crystal{
+	pixel_y = 4;
+	pixel_x = 4
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "CY" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 9
@@ -847,10 +1013,6 @@
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
 "Dt" = (
-/obj/item/spear/bonespear{
-	pixel_x = 10;
-	pixel_y = -2
-	},
 /obj/effect/decal/cleanable/ash/large{
 	pixel_x = 5;
 	pixel_y = 4
@@ -885,6 +1047,9 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
+"Fc" = (
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "Fg" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/plating/moss,
@@ -905,11 +1070,11 @@
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "FN" = (
-/obj/item/kitchen/knife/combat/bone{
-	pixel_x = 10;
-	pixel_y = 4
+/obj/item/ammo_casing/caseless/arrow/bone{
+	pixel_x = 13;
+	pixel_y = -12
 	},
-/turf/open/floor/plating/ashplanet/ash,
+/turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
 "FO" = (
 /obj/structure/stone_tile/block/cracked,
@@ -940,6 +1105,23 @@
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
+"FX" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/lizard/ashwalker
+	},
+/obj/item/melee/baseball_bat/bone{
+	pixel_y = -11;
+	pixel_x = -7
+	},
+/obj/item/kitchen/knife/combat/bone{
+	pixel_x = 10;
+	pixel_y = -10
+	},
+/turf/open/floor/plating/ashplanet/rocky,
+/area/ruin/unpowered/scorched_hut)
 "Ga" = (
 /obj/item/stack/sheet/bone{
 	pixel_x = -5;
@@ -947,6 +1129,13 @@
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"Gk" = (
+/obj/item/stack/sheet/sinew{
+	pixel_y = 9;
+	pixel_x = -10
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "Gs" = (
 /obj/structure/stone_tile/slab,
 /turf/open/lava/smooth/lava_land_surface,
@@ -965,9 +1154,31 @@
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
+"GQ" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "Hf" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
+"Hi" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/obj/item/stack/sheet/mineral/gold/twenty{
+	pixel_y = 2;
+	pixel_x = -10
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
+"Hm" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 6
+	},
+/turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "Hw" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -996,6 +1207,22 @@
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
+"Is" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 8
+	},
+/turf/open/indestructible/necropolis,
+/area/overmap_encounter/planetoid/cave/explored)
+"Iz" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 10
+	},
+/obj/item/stack/sheet/mineral/silver/twenty{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "IR" = (
 /obj/effect/gibspawner/human,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -1012,6 +1239,14 @@
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
+"Jt" = (
+/obj/structure/stone_tile/surrounding/burnt,
+/obj/item/stack/sheet/mineral/diamond{
+	pixel_x = 11;
+	pixel_y = 5
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ju" = (
 /obj/item/chair/wood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -1044,13 +1279,23 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
+"Kj" = (
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/machinery/door/keycard/gates/lavacanyon{
+	color = "#423429"
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "Kp" = (
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/unpowered/scorched_hut)
 "Kt" = (
-/obj/effect/mob_spawn/human/corpse/charredskeleton,
-/turf/open/floor/plating/ashplanet/ash,
-/area/ruin/unpowered/scorched_hut)
+/obj/item/stack/sheet/mineral/gold{
+	pixel_x = 7;
+	pixel_y = 5
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "Kz" = (
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -1067,19 +1312,23 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "KQ" = (
-/obj/item/gun/ballistic/bow/ashen{
-	pixel_x = -14;
+/obj/structure/stone_tile/center/cracked,
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/item/stack/sheet/mineral/silver{
+	pixel_x = 3;
 	pixel_y = 2
 	},
-/turf/open/floor/plating/ashplanet/rocky,
-/area/ruin/unpowered/scorched_hut)
+/turf/open/indestructible/necropolis,
+/area/overmap_encounter/planetoid/cave/explored)
 "KY" = (
 /obj/structure/flora/tree/dead/barren,
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "La" = (
-/turf/closed/wall/mineral/wood/nonmetal,
-/area/ruin/unpowered/scorched_hut)
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/obj/structure/stone_tile/center/burnt,
+/turf/open/indestructible/necropolis,
+/area/overmap_encounter/planetoid/cave/explored)
 "Lf" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
@@ -1166,7 +1415,6 @@
 /area/ruin/unpowered/scorched_hut)
 "MW" = (
 /obj/structure/stone_tile/center,
-/obj/effect/mob_spawn/human/corpse/damaged/legioninfested,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1178,10 +1426,6 @@
 /obj/effect/decal/cleanable/ash{
 	pixel_x = -2;
 	pixel_y = 1
-	},
-/obj/item/storage/bag/quiver/empty{
-	pixel_x = 13;
-	pixel_y = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/scorched_hut)
@@ -1195,10 +1439,6 @@
 "NE" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 1
-	},
-/obj/item/ammo_casing/caseless/arrow/bone{
-	pixel_x = 9;
-	pixel_y = 10
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -1229,6 +1469,20 @@
 	dir = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"PL" = (
+/obj/structure/stone_tile/surrounding_tile/burnt{
+	dir = 1
+	},
+/obj/item/stack/sheet/mineral/gold{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/stack/sheet/mineral/silver{
+	pixel_y = 1;
+	pixel_x = -8
+	},
+/turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "PN" = (
 /obj/item/statuebust,
@@ -1279,6 +1533,13 @@
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"RF" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8;
+	pixel_y = -16
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "RW" = (
 /obj/item/stack/sheet/bone{
 	pixel_x = -4;
@@ -1296,6 +1557,16 @@
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
+"So" = (
+/obj/structure/closet/crate/necropolis/tendril/greater,
+/turf/open/indestructible/necropolis,
+/area/overmap_encounter/planetoid/cave/explored)
+"Sy" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "SK" = (
 /obj/structure/stone_tile/surrounding{
 	pixel_y = -16
@@ -1339,6 +1610,16 @@
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
+"Ts" = (
+/obj/structure/stone_tile/surrounding/cracked{
+	dir = 4
+	},
+/obj/item/gem/bloodstone{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/turf/open/indestructible/necropolis,
+/area/overmap_encounter/planetoid/cave/explored)
 "TE" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1358,9 +1639,14 @@
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
-/obj/item/stack/sheet/bone{
-	pixel_x = 2;
+/obj/structure/table/wood,
+/obj/item/gun/ballistic/bow/ashen{
+	pixel_x = -14;
 	pixel_y = 2
+	},
+/obj/item/storage/bag/quiver/empty{
+	pixel_x = 13;
+	pixel_y = 6
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -1370,6 +1656,9 @@
 	},
 /obj/structure/stone_tile/block/cracked{
 	dir = 6
+	},
+/obj/effect/mob_spawn/human/corpse{
+	mob_species = /datum/species/lizard/ashwalker
 	},
 /turf/open/floor/plating/ashplanet/rocky,
 /area/ruin/unpowered/scorched_hut)
@@ -1432,12 +1721,16 @@
 	pixel_x = -2;
 	pixel_y = 1
 	},
+/obj/item/spear/bonespear{
+	pixel_x = 8;
+	pixel_y = 14
+	},
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
 "WE" = (
-/obj/item/guardiancreator/miner{
-	pixel_x = 8;
-	pixel_y = 14
+/obj/item/shield/riot/buckler{
+	pixel_x = 6;
+	pixel_y = 16
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1453,9 +1746,9 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Xd" = (
-/obj/item/stack/ore/salvage/scrapmetal{
-	pixel_x = -4;
-	pixel_y = -6
+/obj/item/stack/ore/iron{
+	pixel_x = -7;
+	pixel_y = 4
 	},
 /turf/open/floor/plating/ashplanet/ash,
 /area/ruin/unpowered/scorched_hut)
@@ -1463,10 +1756,29 @@
 /obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/cave/explored)
+"XH" = (
+/obj/effect/gibspawner/human,
+/obj/item/reagent_containers/food/snacks/meat/slab/goliath{
+	pixel_x = 7;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/food/snacks/meat/slab/goliath{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "XT" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"XU" = (
+/obj/item/strange_crystal{
+	pixel_x = -7;
+	pixel_y = -10
+	},
+/turf/open/indestructible/cult,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ya" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -1555,6 +1867,20 @@
 "Zs" = (
 /obj/item/stack/sheet/bone,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
+"ZI" = (
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 9
+	},
+/obj/structure/stone_tile/surrounding_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile/surrounding_tile/burnt,
+/obj/item/stack/sheet/mineral/gold{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/turf/open/indestructible/necropolis,
 /area/overmap_encounter/planetoid/cave/explored)
 "ZL" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -1987,8 +2313,8 @@ Mc
 Zh
 Mc
 bx
-La
-La
+Kp
+Kp
 uo
 Mc
 TE
@@ -2116,7 +2442,7 @@ Mc
 Mc
 Mc
 Mc
-La
+Kp
 Me
 Cj
 Eq
@@ -2245,12 +2571,12 @@ Aj
 Aj
 IX
 Mc
-La
+Kp
 En
 wJ
 rD
 Yd
-ga
+ez
 Mc
 TE
 TE
@@ -2310,7 +2636,7 @@ gf
 uD
 Mc
 Mc
-La
+Kp
 xd
 Eq
 Za
@@ -2378,7 +2704,7 @@ Mc
 Kp
 Oe
 pk
-La
+Kp
 uV
 Mc
 TE
@@ -2441,7 +2767,7 @@ Zg
 uD
 Mc
 Kp
-ga
+ez
 UW
 Kp
 Mc
@@ -2454,7 +2780,7 @@ Mc
 Mc
 Kp
 Kp
-ga
+ez
 Mc
 bx
 Kp
@@ -2522,7 +2848,7 @@ hB
 UA
 Oe
 FG
-La
+Kp
 Mc
 Aj
 Aj
@@ -2587,7 +2913,7 @@ ez
 pb
 FV
 Kp
-La
+Kp
 Mc
 Ja
 Aj
@@ -2712,8 +3038,8 @@ TE
 Mc
 Mc
 Mc
-La
-ga
+Kp
+ez
 ez
 gn
 bx
@@ -3681,7 +4007,7 @@ TE
 TE
 Mc
 Mc
-La
+Kp
 Kp
 Kp
 bx
@@ -3751,7 +4077,7 @@ nx
 BC
 VH
 Mc
-mS
+Mc
 Mc
 Aj
 Aj
@@ -3944,7 +4270,7 @@ ez
 dZ
 ZL
 YW
-La
+Kp
 VH
 Ja
 IY
@@ -4071,8 +4397,8 @@ TE
 Mc
 Mc
 Mc
-ga
-La
+ez
+Kp
 Kp
 Kp
 Mc
@@ -4107,7 +4433,7 @@ Aj
 Aj
 Aj
 Aj
-Aj
+QE
 Aj
 Aj
 Aj
@@ -4170,19 +4496,19 @@ eI
 Aj
 Aj
 Aj
+QE
+QE
+QE
+QE
 Aj
-Aj
-Aj
-Aj
-Aj
-Aj
+QE
 Aj
 Ja
 Mc
 Mc
 Ja
-La
-La
+Kp
+Kp
 te
 Kp
 Kp
@@ -4234,13 +4560,13 @@ eI
 eI
 Aj
 Aj
-Aj
-Aj
-Aj
-Aj
-Aj
-Aj
-Aj
+QE
+QE
+Jt
+PL
+QE
+QE
+QE
 Aj
 Aj
 Mc
@@ -4298,15 +4624,15 @@ eI
 eI
 eI
 Aj
-Aj
-Aj
-Aj
-Aj
-Aj
-Aj
-Aj
-Aj
-Aj
+QE
+QE
+Iz
+La
+Ts
+XU
+jY
+QE
+QE
 Aj
 Mc
 Mc
@@ -4364,14 +4690,14 @@ eI
 Aj
 Aj
 Aj
-Aj
-Aj
-Aj
-Aj
-Aj
-rq
-Aj
-Aj
+QE
+dq
+ZI
+So
+gu
+Kt
+Hm
+QE
 Aj
 Aj
 Mc
@@ -4379,7 +4705,7 @@ Mc
 Th
 Ae
 AZ
-Cj
+gv
 ez
 Kp
 TE
@@ -4429,22 +4755,22 @@ eI
 eI
 Aj
 Aj
-Aj
-Aj
-rq
-Aj
-Aj
-Aj
-Aj
-Aj
-rq
+QE
+ld
+Fc
+Is
+KQ
+CE
+Hi
+QE
+QE
 Aj
 Mc
 Mc
 cW
 Kp
-La
-La
+Kp
+Kp
 Zk
 Kp
 TE
@@ -4493,15 +4819,15 @@ eI
 eI
 eI
 Aj
-Aj
-Aj
-Aj
-sj
-sj
-Aj
-Aj
-Aj
-Aj
+QE
+QE
+QE
+fp
+gL
+ft
+qm
+QE
+QE
 Aj
 Aj
 Mc
@@ -4560,12 +4886,12 @@ eI
 Aj
 Aj
 Aj
-Aj
-sj
-rq
-Aj
-Aj
-Aj
+QE
+QE
+lr
+Kj
+QE
+QE
 Aj
 Aj
 Aj
@@ -4627,8 +4953,8 @@ Aj
 Aj
 Aj
 Aj
-Aj
-Aj
+GQ
+Sy
 Aj
 Aj
 Tf
@@ -4691,10 +5017,10 @@ Aj
 sj
 sj
 Aj
-Aj
-Aj
-Aj
-Aj
+QE
+lB
+RF
+QE
 Aj
 sj
 sj
@@ -4757,9 +5083,9 @@ Aj
 Aj
 Aj
 Aj
+vu
+Pp
 sj
-sj
-zT
 QE
 QE
 sj
@@ -4815,15 +5141,15 @@ eI
 eI
 "}
 (51,1,1) = {"
-eI
-eI
+Aj
+Aj
 Aj
 QE
 QE
 sj
 sj
-sj
-sj
+im
+ku
 sj
 sj
 QE
@@ -4831,7 +5157,7 @@ Aj
 Aj
 Aj
 Aj
-mS
+Mc
 Mc
 Mc
 Mc
@@ -4880,18 +5206,18 @@ eI
 eI
 "}
 (52,1,1) = {"
-eI
+Aj
 Aj
 Aj
 QE
 sj
 sj
-KC
+QE
 xX
-rq
+zz
+QE
 sj
 sj
-zT
 Aj
 Aj
 Aj
@@ -4945,9 +5271,9 @@ eI
 eI
 "}
 (53,1,1) = {"
-eI
 Aj
-Aj
+QE
+sj
 sj
 sj
 rq
@@ -4957,8 +5283,8 @@ ES
 rq
 sj
 sj
-Aj
-Aj
+sj
+QE
 Aj
 Aj
 Mc
@@ -5011,8 +5337,8 @@ eI
 "}
 (54,1,1) = {"
 Aj
-Aj
-Aj
+QE
+sj
 sj
 sj
 CY
@@ -5021,9 +5347,9 @@ zb
 rq
 vh
 sj
-Aj
-Aj
-Aj
+sj
+sj
+QE
 Aj
 Aj
 PZ
@@ -5076,8 +5402,8 @@ eI
 "}
 (55,1,1) = {"
 Aj
-Aj
-zT
+QE
+sj
 sj
 sj
 rq
@@ -5086,9 +5412,9 @@ KC
 aP
 rq
 sj
-Aj
 sj
-Aj
+sj
+QE
 Aj
 Aj
 Mc
@@ -5151,8 +5477,8 @@ FT
 Zp
 sj
 sj
-Aj
 sj
+Aj
 Aj
 Aj
 Kp
@@ -5290,7 +5616,7 @@ rD
 Dt
 Nv
 Kp
-KJ
+Rf
 Mc
 TE
 TE
@@ -5349,12 +5675,12 @@ Aj
 Aj
 Aj
 Eq
-gv
+FN
 Nt
 Qj
 ez
 Eq
-pb
+jy
 Mc
 Mc
 TE
@@ -5413,13 +5739,13 @@ Aj
 Aj
 Aj
 Aj
-La
-KQ
+Kp
+En
 NE
 nG
-Kt
+ez
 Eq
-ga
+ez
 Mc
 Mc
 TE
@@ -5470,7 +5796,7 @@ Aj
 QE
 FA
 OU
-rq
+WK
 qg
 gm
 jm
@@ -5534,22 +5860,22 @@ Aj
 Aj
 QE
 Zp
+cL
 oV
-WK
-rq
-gu
+Gk
+KC
 jm
 Aj
 Aj
 rq
 Aj
-La
-La
+Kp
+Kp
 LF
 sI
 Kp
 Kp
-La
+Kp
 Mc
 Mc
 Mc
@@ -5664,8 +5990,8 @@ Aj
 Aj
 Aj
 kK
-rq
-IR
+lc
+XH
 Zp
 QE
 Aj
@@ -5737,7 +6063,7 @@ Aj
 Aj
 Aj
 Aj
-cI
+zT
 cI
 nW
 Mc
@@ -5803,7 +6129,7 @@ Aj
 Aj
 Kp
 Kp
-La
+Kp
 dW
 Kp
 Mc
@@ -5869,7 +6195,7 @@ cy
 Kp
 kA
 Eq
-FN
+ez
 Kp
 uV
 kl
@@ -5925,7 +6251,7 @@ Aj
 QE
 QE
 jm
-cy
+rq
 cy
 FB
 KC
@@ -5935,7 +6261,7 @@ Eq
 En
 Sm
 EH
-zz
+Eq
 Mc
 Mc
 ax
@@ -5998,11 +6324,11 @@ cy
 Ja
 Kp
 dZ
-Za
+FX
 Jv
 ez
 LR
-mS
+Mc
 Rf
 Mc
 Mc
@@ -6063,7 +6389,7 @@ QE
 IY
 Kp
 Vy
-La
+Kp
 Kp
 Kp
 Hw
@@ -6197,7 +6523,7 @@ IY
 Mc
 bx
 LR
-vu
+Mc
 Mc
 Mc
 Mc
@@ -6258,8 +6584,8 @@ Ds
 IY
 Ja
 Mc
-La
-La
+Kp
+Kp
 AM
 Wt
 Kp
@@ -6387,7 +6713,7 @@ Ja
 IY
 Mc
 Mc
-La
+Kp
 Kp
 FO
 ot
@@ -6458,7 +6784,7 @@ fv
 AZ
 Eq
 qL
-ga
+ez
 Mc
 TE
 TE
@@ -6468,7 +6794,7 @@ Kp
 Eq
 dW
 LF
-ga
+ez
 yV
 Mc
 Aj
@@ -6518,10 +6844,10 @@ Mc
 VH
 Mc
 Kp
-La
+Kp
 Eq
 ez
-ez
+ga
 Kp
 Kp
 Mc
@@ -6581,13 +6907,13 @@ Aj
 Mc
 Rv
 Mc
-pX
+Mc
 Wk
 uV
 Mc
 LR
 Rf
-mS
+Mc
 Mc
 TE
 TE
@@ -6598,7 +6924,7 @@ Eq
 je
 SS
 YB
-La
+Kp
 Mc
 Mc
 gf
@@ -6660,10 +6986,10 @@ TE
 TE
 Mc
 ga
-La
+Kp
 Kp
 ie
-La
+Kp
 Mc
 Mc
 HC
@@ -6774,7 +7100,7 @@ Aj
 Aj
 Aj
 Mc
-Mc
+pX
 Xb
 Mc
 Mc
@@ -6854,7 +7180,7 @@ TE
 Mc
 Mc
 Mc
-mS
+Mc
 Mc
 Mc
 Mc

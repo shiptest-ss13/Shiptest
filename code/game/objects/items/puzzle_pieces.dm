@@ -65,6 +65,10 @@
 	desc = "A key belonging to a once peaceful scholar, brought to death and ruin through means of violence by savage outsider."
 	puzzle_id = "priestkey"
 
+/obj/item/keycard/gatedrop/lavacanyon
+	name = "Vault Key"
+	desc = "A dusty key, smudged with dried blood."
+	puzzle_id = "lavacanyonkey"
 
 //***************
 //*****Doors*****
@@ -187,6 +191,9 @@
 	name = "The Priest's Treasury"
 	desc = "Gates holding The Priest's eternal hoarde. Drakeborn, incapable of avoiding the grand desire to collect and learn."
 	puzzle_id = "priestkey"
+
+/obj/machinery/door/keycard/gates/lavacanyon
+	puzzle_id = "lavacanyonkey"
 
 //*************************
 //***Box Pushing Puzzles***
