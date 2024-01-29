@@ -68,7 +68,7 @@
 	var/tile_dropoff_stamina = 1.5 //As above
 
 	icon_state = "pellet"
-	armour_penetration = -35
+	armour_penetration = -40
 	speed = 0.5
 
 /obj/projectile/bullet/pellet/buckshot
