@@ -66,9 +66,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/disliked_food = GROSS
 	///Bitfield for food types that the species absolutely hates, giving them even more disgust than disliked food. Meat is "toxic" to moths, for example.
 	var/toxic_food = TOXIC
-	///Inventory slots the race can't equip stuff to. Golems cannot wear jumpsuits, for example.
+	///Inventory slots the race can't equip stuff to.
 	var/list/no_equip = list()
-	/// Allows the species to equip items that normally require a jumpsuit without having one equipped. Used by golems.
+	/// Allows the species to equip items that normally require a jumpsuit without having one equipped.
 	var/nojumpsuit = FALSE
 	///What languages this species can understand and say. Use a [language holder datum][/datum/language_holder] in this var.
 	var/species_language_holder = /datum/language_holder

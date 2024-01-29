@@ -6,7 +6,7 @@
 	"tags": [
 		"Generalist"
 	],
-	"prefix": "ISV",
+	"prefix": "SV",
 	"namelists": [
 		"MYTHOLOGICAL",
 		"NATURAL"
@@ -14,16 +14,16 @@
 	"map_path": "_maps/shuttles/independent/independent_masinyane.dmm",
 	"job_slots": {
 		"Private Ship Owner": {
-			"outfit": "/datum/outfit/job/captain/independent/owner",
+			"outfit": "/datum/outfit/job/independent/captain/masinyane",
 			"officer": true,
 			"slots": 1
 		},
 		"Ship Engineer": {
-			"outfit": "/datum/outfit/job/engineer/independent/ship_engineer",
+			"outfit": "/datum/outfit/job/independent/engineer",
 			"slots": 1
 		},
 		"Crewmate": {
-			"outfit": "/datum/outfit/job/assistant/independent/crewmatefancy",
+			"outfit": "/datum/outfit/job/independent/assistant/fancy",
 			"slots": 1
 		}
 	}

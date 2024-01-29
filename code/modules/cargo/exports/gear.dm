@@ -15,7 +15,6 @@
 	unit_name = "riot shield"
 	export_types = list(/obj/item/shield/riot)
 
-
 /datum/export/gear/mask/breath
 	cost = 2
 	unit_name = "breath mask"
@@ -26,7 +25,6 @@
 	unit_name = "gas mask"
 	export_types = list(/obj/item/clothing/mask/gas)
 	include_subtypes = FALSE
-
 
 /datum/export/gear/space/helmet
 	cost = 75
@@ -50,7 +48,6 @@
 	cost = 300
 	unit_name = "Syndicate space suit"
 	export_types = list(/obj/item/clothing/suit/space/syndicate)
-
 
 /datum/export/gear/radhelmet
 	cost = 50
@@ -81,17 +78,6 @@
 	cost = 100
 	unit_name = "bomb suit"
 	export_types = list(/obj/item/clothing/suit/bomb_suit)
-
-/datum/export/gear/lizardboots
-	cost = 350
-	unit_name = "lizard skin boots"
-	export_types = list(/obj/item/clothing/shoes/cowboy/lizard)
-	include_subtypes = FALSE
-
-/datum/export/gear/lizardmasterwork
-	cost = 1000
-	unit_name = "Hugs-the-Feet lizard boots"
-	export_types = list(/obj/item/clothing/shoes/cowboy/lizard/masterwork)
 
 /datum/export/gear/bilton
 	cost = 2500

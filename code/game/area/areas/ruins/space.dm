@@ -174,6 +174,7 @@
 /area/solar/ancientstation
 	name = "Charlie Station Solar Array"
 	icon_state = "panelsP"
+	has_gravity = STANDARD_GRAVITY
 
 //DERELICT
 
@@ -366,12 +367,6 @@
 /area/ruin/space/has_grav/powerpuzzle/engineering
 	name = "Engineering Wing"
 	icon_state = "yellow"
-
-//Space Gym
-
-/area/ruin/space/has_grav/spacegym
-	name = "Space Gym"
-	icon_state = "firingrange"
 
 //scav_mining
 

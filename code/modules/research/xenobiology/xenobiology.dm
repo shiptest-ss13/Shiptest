@@ -497,14 +497,6 @@
 			addtimer(CALLBACK(src, PROC_REF(reset_armor), species), 1200)
 			return 450
 
-		if(SLIME_ACTIVATE_MAJOR)
-			to_chat(user, "<span class='warning'>You feel your body rapidly crystallizing...</span>")
-			if(do_after(user, 120, target = user))
-				to_chat(user, "<span class='warning'>You feel solid.</span>")
-				user.set_species(pick(/datum/species/golem/adamantine))
-				return
-			to_chat(user, "<span class='notice'>You stop feeding [src], and your body returns to its slimelike state.</span>")
-
 /obj/item/slime_extract/adamantine/proc/reset_armor(datum/species/jelly/luminescent/species)
 	if(istype(species))
 		species.armor -= 25
