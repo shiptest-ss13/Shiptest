@@ -242,13 +242,6 @@
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/train_station/train)
-"oQ" = (
-/obj/effect/turf_decal/corner/opaque/blue/border{
-	dir = 10
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine,
-/area/ruin/unpowered/train_station/cargo)
 "pe" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
@@ -343,12 +336,6 @@
 "ub" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 10
-	},
-/turf/open/floor/plating,
-/area/ruin/unpowered/train_station/cargo)
-"ue" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
@@ -612,6 +599,13 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
+"La" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
 "Lb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -701,6 +695,12 @@
 /area/ruin/unpowered/train_station/train)
 "QL" = (
 /obj/effect/turf_decal/industrial/traffic,
+/turf/open/floor/plating,
+/area/ruin/unpowered/train_station/cargo)
+"QZ" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
 "Rm" = (
@@ -866,7 +866,7 @@ bW
 aL
 sJ
 hi
-oQ
+La
 ub
 gv
 EX
@@ -880,7 +880,7 @@ up
 aL
 hi
 hi
-oQ
+La
 gv
 "}
 (4,1,1) = {"
@@ -899,7 +899,7 @@ Dw
 bv
 EX
 gv
-ue
+QZ
 Ai
 Vu
 Vu
@@ -922,7 +922,7 @@ Ry
 Ry
 Ve
 dV
-ue
+QZ
 Ai
 Fv
 jO
@@ -945,7 +945,7 @@ XL
 cA
 TV
 gv
-ue
+QZ
 Ai
 Nu
 jO
@@ -968,7 +968,7 @@ EX
 EX
 EX
 gv
-ue
+QZ
 gS
 CL
 Nu
@@ -991,7 +991,7 @@ if
 gv
 sD
 gv
-ue
+QZ
 fZ
 Nu
 Nu
@@ -1014,7 +1014,7 @@ EX
 EX
 EX
 gv
-ue
+QZ
 gS
 Nu
 Nu
@@ -1037,7 +1037,7 @@ vq
 Si
 qP
 gv
-ue
+QZ
 Ai
 Nu
 nK
@@ -1060,7 +1060,7 @@ oC
 dL
 qP
 gv
-ue
+QZ
 Ai
 ky
 jO
@@ -1083,7 +1083,7 @@ gP
 zj
 Uy
 gv
-ue
+QZ
 Ai
 ky
 jO
@@ -1106,7 +1106,7 @@ EX
 EX
 EX
 gv
-ue
+QZ
 Ai
 xK
 Vu
@@ -1129,7 +1129,7 @@ if
 gv
 sD
 gv
-ue
+QZ
 Ai
 Nu
 Vu
@@ -1152,7 +1152,7 @@ EX
 EX
 EX
 gv
-ue
+QZ
 NU
 Nu
 Vu
@@ -1175,7 +1175,7 @@ pX
 xj
 yz
 gv
-ue
+QZ
 Ai
 nK
 Nu
@@ -1198,7 +1198,7 @@ fb
 Jq
 yz
 gv
-ue
+QZ
 Ju
 Nu
 jO
@@ -1221,7 +1221,7 @@ JY
 Zk
 yz
 gv
-ue
+QZ
 Ai
 mK
 jO
@@ -1244,7 +1244,7 @@ EX
 EX
 EX
 gv
-ue
+QZ
 Ai
 Nu
 ap
@@ -1267,7 +1267,7 @@ if
 zi
 sD
 gv
-ue
+QZ
 Ai
 Vu
 Fv
@@ -1290,7 +1290,7 @@ EX
 EX
 EX
 gv
-ue
+QZ
 Ai
 Vu
 Fv
@@ -1313,7 +1313,7 @@ VM
 jy
 jj
 gv
-ue
+QZ
 Ai
 Vu
 Nu
@@ -1336,7 +1336,7 @@ Bj
 Oe
 EX
 zp
-ue
+QZ
 Ai
 Lb
 jO
@@ -1359,7 +1359,7 @@ yS
 Lg
 EX
 YX
-ue
+QZ
 Ai
 Nu
 jO
@@ -1382,7 +1382,7 @@ st
 Nk
 EX
 Ni
-ue
+QZ
 Ai
 Nu
 ap
