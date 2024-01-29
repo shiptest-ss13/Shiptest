@@ -289,16 +289,6 @@
 						SSevents.toggleWizardmode()
 						SSevents.resetFrequency()
 						SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Disable"))
-		if("eagles")
-			if(!is_funmin)
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Egalitarian Station"))
-			for(var/obj/machinery/door/airlock/W in GLOB.machines)
-				var/area/airlock_area = get_area(W)
-				if(istype(airlock_area, /area/ship) && !istype(airlock_area, /area/ship/bridge) && !istype(airlock_area, /area/ship/crew) && !istype(airlock_area, /area/ship/security/prison))
-					W.req_access = list()
-			message_admins("[key_name_admin(holder)] activated Egalitarian Station mode")
-			priority_announce("CentCom airlock control override activated. Please take this time to get acquainted with your coworkers.", null, 'sound/ai/commandreport.ogg')
 		if("blackout")
 			if(!is_funmin)
 				return
