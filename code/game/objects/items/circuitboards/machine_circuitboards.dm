@@ -1496,6 +1496,15 @@
 		/obj/item/stock_parts/capacitor = 2
 	)
 
+/obj/item/circuitboard/machine/printer
+	name = "Poster Printer (Machine Board)"
+	build_path = /obj/machinery/printer
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 2,
+	)
+
 /obj/item/circuitboard/machine/coffeemaker
 	name = "Modello 3 Coffeemaker"
 	build_path = /obj/machinery/coffeemaker
