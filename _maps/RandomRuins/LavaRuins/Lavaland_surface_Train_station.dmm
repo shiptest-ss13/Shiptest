@@ -144,13 +144,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
-"hi" = (
-/obj/effect/turf_decal/corner/opaque/blue/border{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine,
-/area/ruin/unpowered/train_station/cargo)
 "ic" = (
 /obj/structure/railing/modern/corner{
 	dir = 8
@@ -277,6 +270,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"rI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
 "rM" = (
 /obj/structure/closet/crate/engineering/electrical,
 /obj/item/stack/cable_coil/red,
@@ -307,12 +305,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
-"sD" = (
-/obj/structure/railing/modern{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
 "sJ" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
@@ -336,6 +328,12 @@
 "ub" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/unpowered/train_station/cargo)
+"ue" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
@@ -524,6 +522,13 @@
 "EX" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
+"EZ" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
 "Fv" = (
 /obj/structure/closet/crate/large,
 /obj/machinery/portable_atmospherics/scrubber/huge/movable/cargo,
@@ -535,6 +540,12 @@
 /area/ruin/unpowered/train_station/train)
 "Hb" = (
 /obj/structure/railing/modern,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
+"Ih" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava)
 "It" = (
@@ -667,10 +678,6 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
-"Nu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine,
-/area/ruin/unpowered/train_station/cargo)
 "NU" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
@@ -695,12 +702,6 @@
 /area/ruin/unpowered/train_station/train)
 "QL" = (
 /obj/effect/turf_decal/industrial/traffic,
-/turf/open/floor/plating,
-/area/ruin/unpowered/train_station/cargo)
-"QZ" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
 "Rm" = (
@@ -736,6 +737,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
+"Ug" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
 "Uy" = (
 /obj/machinery/door/poddoor/shutters/preopen,
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
@@ -756,11 +761,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
-"Vu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine,
-/area/ruin/unpowered/train_station/cargo)
 "VM" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -851,7 +851,7 @@ gv
 gv
 gv
 gv
-sD
+Ih
 gv
 gv
 gv
@@ -865,7 +865,7 @@ cb
 bW
 aL
 sJ
-hi
+EZ
 La
 ub
 gv
@@ -878,8 +878,8 @@ EX
 IR
 up
 aL
-hi
-hi
+EZ
+EZ
 La
 gv
 "}
@@ -887,7 +887,7 @@ gv
 cb
 bW
 Ai
-Vu
+rI
 td
 gl
 QL
@@ -899,10 +899,10 @@ Dw
 bv
 EX
 gv
-QZ
+ue
 Ai
-Vu
-Vu
+rI
+rI
 EW
 gv
 "}
@@ -911,7 +911,7 @@ cb
 bW
 Ai
 jO
-Nu
+Ug
 DE
 QL
 gv
@@ -922,7 +922,7 @@ Ry
 Ry
 Ve
 dV
-QZ
+ue
 Ai
 Fv
 jO
@@ -934,7 +934,7 @@ gv
 bW
 Nt
 jO
-Nu
+Ug
 gl
 RN
 gv
@@ -945,9 +945,9 @@ XL
 cA
 TV
 gv
-QZ
+ue
 Ai
-Nu
+Ug
 jO
 WZ
 gv
@@ -957,7 +957,7 @@ gv
 bW
 UG
 gU
-Vu
+rI
 gl
 RN
 gv
@@ -968,10 +968,10 @@ EX
 EX
 EX
 gv
-QZ
+ue
 gS
 CL
-Nu
+Ug
 EW
 gv
 "}
@@ -980,7 +980,7 @@ gv
 bW
 UG
 LU
-Vu
+rI
 gl
 RN
 gv
@@ -989,12 +989,12 @@ gv
 To
 if
 gv
-sD
+Ih
 gv
-QZ
+ue
 fZ
-Nu
-Nu
+Ug
+Ug
 EW
 gv
 "}
@@ -1003,7 +1003,7 @@ gv
 bW
 UG
 Jf
-Vu
+rI
 EW
 QL
 gv
@@ -1014,10 +1014,10 @@ EX
 EX
 EX
 gv
-QZ
+ue
 gS
-Nu
-Nu
+Ug
+Ug
 EW
 gv
 "}
@@ -1025,8 +1025,8 @@ gv
 gv
 bW
 UG
-Vu
-Vu
+rI
+rI
 gl
 RN
 bW
@@ -1037,9 +1037,9 @@ vq
 Si
 qP
 gv
-QZ
+ue
 Ai
-Nu
+Ug
 nK
 EW
 gv
@@ -1049,7 +1049,7 @@ gv
 bW
 Ai
 jO
-Nu
+Ug
 EW
 QL
 gv
@@ -1060,7 +1060,7 @@ oC
 dL
 qP
 gv
-QZ
+ue
 Ai
 ky
 jO
@@ -1072,7 +1072,7 @@ gv
 bW
 Ai
 jO
-Nu
+Ug
 gl
 RN
 gv
@@ -1083,7 +1083,7 @@ gP
 zj
 Uy
 gv
-QZ
+ue
 Ai
 ky
 jO
@@ -1094,8 +1094,8 @@ gv
 gv
 Mx
 UG
-Nu
-Nu
+Ug
+Ug
 xg
 KQ
 gv
@@ -1106,10 +1106,10 @@ EX
 EX
 EX
 gv
-QZ
+ue
 Ai
 xK
-Vu
+rI
 EW
 gv
 "}
@@ -1117,8 +1117,8 @@ gv
 gv
 bW
 Ai
-Nu
-Nu
+Ug
+Ug
 gl
 RN
 gv
@@ -1127,12 +1127,12 @@ gv
 To
 if
 gv
-sD
+Ih
 gv
-QZ
+ue
 Ai
-Nu
-Vu
+Ug
+rI
 EW
 gv
 "}
@@ -1141,7 +1141,7 @@ gv
 bW
 Ai
 jq
-Nu
+Ug
 gl
 RN
 gv
@@ -1152,10 +1152,10 @@ EX
 EX
 EX
 gv
-QZ
+ue
 NU
-Nu
-Vu
+Ug
+rI
 EW
 gv
 "}
@@ -1163,8 +1163,8 @@ gv
 gv
 bW
 Ai
-Nu
-Nu
+Ug
+Ug
 gl
 RN
 gv
@@ -1175,10 +1175,10 @@ pX
 xj
 yz
 gv
-QZ
+ue
 Ai
 nK
-Nu
+Ug
 EW
 gv
 "}
@@ -1187,7 +1187,7 @@ gv
 gv
 DC
 jO
-Nu
+Ug
 gl
 RN
 gv
@@ -1198,9 +1198,9 @@ fb
 Jq
 yz
 gv
-QZ
+ue
 Ju
-Nu
+Ug
 jO
 Rm
 gv
@@ -1210,7 +1210,7 @@ gv
 gv
 gS
 jO
-Nu
+Ug
 xg
 RN
 gv
@@ -1221,7 +1221,7 @@ JY
 Zk
 yz
 gv
-QZ
+ue
 Ai
 mK
 jO
@@ -1232,7 +1232,7 @@ bW
 gv
 bW
 UG
-Nu
+Ug
 CL
 qX
 RN
@@ -1244,9 +1244,9 @@ EX
 EX
 EX
 gv
-QZ
+ue
 Ai
-Nu
+Ug
 ap
 gl
 bW
@@ -1255,8 +1255,8 @@ bW
 gv
 bW
 UG
-Nu
-Vu
+Ug
+rI
 Aw
 RN
 gv
@@ -1265,11 +1265,11 @@ gv
 To
 if
 zi
-sD
+Ih
 gv
-QZ
+ue
 Ai
-Vu
+rI
 Fv
 EW
 bW
@@ -1278,8 +1278,8 @@ bW
 gv
 bW
 UG
-Nu
-Vu
+Ug
+rI
 qX
 RN
 gv
@@ -1290,9 +1290,9 @@ EX
 EX
 EX
 gv
-QZ
+ue
 Ai
-Vu
+rI
 Fv
 EW
 bW
@@ -1302,7 +1302,7 @@ gv
 bW
 UG
 bV
-Vu
+rI
 qX
 RN
 gv
@@ -1313,10 +1313,10 @@ VM
 jy
 jj
 gv
-QZ
+ue
 Ai
-Vu
-Nu
+rI
+Ug
 gl
 bW
 "}
@@ -1336,7 +1336,7 @@ Bj
 Oe
 EX
 zp
-QZ
+ue
 Ai
 Lb
 jO
@@ -1359,9 +1359,9 @@ yS
 Lg
 EX
 YX
-QZ
+ue
 Ai
-Nu
+Ug
 jO
 Rm
 gv
@@ -1382,9 +1382,9 @@ st
 Nk
 EX
 Ni
-QZ
+ue
 Ai
-Nu
+Ug
 ap
 Rm
 cb
@@ -1449,7 +1449,7 @@ gv
 dV
 gv
 gv
-sD
+Ih
 gv
 gv
 ac
@@ -1495,7 +1495,7 @@ gv
 gv
 gv
 gv
-sD
+Ih
 gv
 gv
 gv
