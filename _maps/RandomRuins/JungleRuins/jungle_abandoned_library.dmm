@@ -1564,7 +1564,7 @@
 /obj/effect/mob_spawn/human/corpse/assistant{
 	oxy_damage = 200;
 	name = "Dungeon Master";
-	outfit = /datum/outfit/job/curator/dungeonmaster;
+	outfit = /datum/outfit/job/curator;
 	backpack_contents = null
 	},
 /obj/effect/decal/cleanable/blood,
@@ -3387,7 +3387,7 @@
 "Zw" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
-/obj/structure/sign/poster/official/sgt{
+/obj/structure/sign/poster/rilena/random{
 	pixel_y = 32
 	},
 /obj/structure/spider/stickyweb,

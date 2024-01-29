@@ -67,6 +67,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
+	var/list/attachment_options = list()	//This.. works for now.. gun refactor soon
 	var/obj/item/firing_pin/pin = /obj/item/firing_pin //standard firing pin for most guns
 
 	var/can_flashlight = FALSE //if a flashlight can be added or removed if it already has one.
@@ -525,17 +526,22 @@
 	if(!has_safety)
 		return
 
-	if(src == !user.get_active_held_item())
+	if(src != user.get_active_held_item())
 		return
 
-	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+	if(isliving(user) && in_range(src, user))
+		toggle_safety(user)
+
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
 	safety = !safety
 
-	user.visible_message(
-		span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-		span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-		vision_distance = COMBAT_MESSAGE_RANGE
-	)
+	if(!silent)
+		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+		user.visible_message(
+			span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+		)
+
 	update_appearance()
 
 
@@ -545,32 +551,25 @@
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	if((can_flashlight && gun_light) && (can_bayonet && bayonet)) //give them a choice instead of removing both
-		var/list/possible_items = list(gun_light, bayonet)
-		var/obj/item/item_to_remove = input(user, "Select an attachment to remove", "Attachment Removal") as null|obj in sortNames(possible_items)
-		if(!item_to_remove || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-			return
-		return remove_gun_attachment(user, I, item_to_remove)
+	attachment_options = list()
+	get_gun_attachments()
+	if(LAZYLEN(attachment_options) == 1)
+		remove_gun_attachments(user, I, attachment_options[1])
+	else if (LAZYLEN(attachment_options))
+		var/picked_option = show_radial_menu(user, src, attachment_options, radius = 38, require_near = TRUE)
+		remove_gun_attachments(user, I, picked_option)
 
-	else if(gun_light && can_flashlight) //if it has a gun_light and can_flashlight is false, the flashlight is permanently attached.
+/obj/item/gun/proc/get_gun_attachments()
+	if(can_flashlight && gun_light)
+		attachment_options += list("Light" = image(icon = gun_light.icon, icon_state = gun_light.icon_state))
+	if(can_bayonet && bayonet)
+		attachment_options += list("Knife" = image(icon = bayonet.icon, icon_state = bayonet.icon_state))
+
+/obj/item/gun/proc/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
+	if(picked_option == "Light")
 		return remove_gun_attachment(user, I, gun_light, "unscrewed")
-
-	else if(bayonet && can_bayonet) //if it has a bayonet, and the bayonet can be removed
+	else if(picked_option == "Knife")
 		return remove_gun_attachment(user, I, bayonet, "unfix")
-
-	/*WS Edit - Fixes Pin Removal
-	else if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is pried out of [src] by [user], destroying the pin in the process.</span>",
-								"<span class='warning'>You pry [pin] out with [I], destroying the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
-	WS End */
-
 
 /obj/item/gun/welder_act(mob/living/user, obj/item/I)
 	. = ..()

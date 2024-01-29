@@ -31,6 +31,9 @@ SUBSYSTEM_DEF(overmap)
 	///The two-dimensional list that contains every single tile in the overmap as a sublist.
 	var/list/list/overmap_container
 
+	///Whether or not a ship is currently being spawned. Used to prevent multiple ships from being spawned at once.
+	var/ship_spawning //TODO: Make a proper queue for this
+
 /datum/controller/subsystem/overmap/get_metrics()
 	. = ..()
 	var/list/cust = list()
@@ -227,13 +230,18 @@ SUBSYSTEM_DEF(overmap)
  * Inteded for ship purchases, etc.
  */
 /datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template)
+	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.
+	UNTIL(!ship_spawning)
+
 	var/ship_loc
 	if(template.space_spawn)
 		ship_loc = null
 	else
 		ship_loc = SSovermap.outposts[1]
 
-	return new /datum/overmap/ship/controlled(ship_loc, template)
+	ship_spawning = TRUE
+	. = new /datum/overmap/ship/controlled(ship_loc, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
+	ship_spawning = FALSE
 
 /**
  * Creates an overmap object for each ruin level, making them accessible.

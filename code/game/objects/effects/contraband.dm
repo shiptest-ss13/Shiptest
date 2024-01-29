@@ -721,11 +721,6 @@
 	desc = "This informational poster teaches the viewer what carbon dioxide is."
 	icon_state = "poster_co2"
 
-/obj/structure/sign/poster/official/sgt
-	name = "Sapient Trafficking Awareness"
-	desc = "A poster calling for an end to sapient trafficking. Over sixty percent of victims are jellywomen."
-	icon_state = "poster_sgt" // Maybe this will be what finally fixes it.
-
 /obj/structure/sign/poster/official/focus
 	name = "Focus! Motivational Poster"
 	desc = "\"Focus! Let your energy be pinpointed!\""
@@ -963,13 +958,13 @@
 	icon_state = "poster-cmm_enlist"
 
 /obj/structure/sign/poster/minutemen/bard
-	name = "CMM BARD"
-	desc = "A poster that was made by soldiers that attemps to recruit people in the BARD depecting a \"Sargent Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Somethinng tells you that service is a lot less intresting than this."
+	name = "CMM-BARD"
+	desc = "A poster made by soldiers to recruit people into the BARD, depecting a \"Sergeant Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Something tells you that service is a lot less interesting than this."
 	icon_state = "poster-cmm_bard"
 
 /obj/structure/sign/poster/minutemen/gold
-	name = "CMM GOLD"
-	desc = "A poster listing job positions open in CMM GOLD and asking for applications, listing important but unintresting benifits like health insurance and such."
+	name = "CMM-GOLD"
+	desc = "A poster listing job positions open in the CMM GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
 	icon_state = "poster-cmm_gold"
 
 /obj/structure/sign/poster/minutemen/lunatown

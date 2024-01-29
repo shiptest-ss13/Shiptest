@@ -174,6 +174,7 @@
 /area/solar/ancientstation
 	name = "Charlie Station Solar Array"
 	icon_state = "panelsP"
+	has_gravity = STANDARD_GRAVITY
 
 //DERELICT
 

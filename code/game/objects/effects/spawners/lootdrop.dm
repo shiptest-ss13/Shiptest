@@ -564,7 +564,7 @@
 				/obj/item/stack/sheet/mineral/wood/fifty,
 				/obj/item/stack/sheet/mineral/diamond/twenty,
 				/obj/item/stack/sheet/mineral/gold/fifty,
-				/obj/item/stack/sheet/mineral/adamantine/ten,
+
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
@@ -626,7 +626,6 @@
 				/obj/item/stack/sheet/mineral/wood/fifty,
 				/obj/item/stack/sheet/mineral/diamond/twenty,
 				/obj/item/stack/sheet/mineral/gold/fifty,
-				/obj/item/stack/sheet/mineral/adamantine/ten,
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
