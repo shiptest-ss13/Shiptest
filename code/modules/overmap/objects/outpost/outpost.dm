@@ -15,11 +15,11 @@
 	/// and tall hangars (with a greater height than width) in the list is discouraged; it is possible that a large hangar will "hide" a
 	/// smaller one by appearing earlier in the sorted list.
 	var/list/datum/map_template/outpost/hangar/hangar_templates = list(
-		/datum/map_template/outpost/hangar/test_20x20,
-		/datum/map_template/outpost/hangar/test_40x20,
-		/datum/map_template/outpost/hangar/test_40x40,
-		/datum/map_template/outpost/hangar/test_56x20,
-		/datum/map_template/outpost/hangar/test_56x40
+		/datum/map_template/outpost/hangar/indie_space_20x20,
+		/datum/map_template/outpost/hangar/indie_space_40x20,
+		/datum/map_template/outpost/hangar/indie_space_40x40,
+		/datum/map_template/outpost/hangar/indie_space_56x20,
+		/datum/map_template/outpost/hangar/indie_space_56x40
 	)
 	// NOTE: "planetary" outposts should use baseturf specification and possibly different ztrait sun type, for both hangars and main level.
 	var/list/main_level_ztraits = list(
@@ -33,9 +33,6 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
-	/// A list keeping track of the docks that're currently being landed at. Helps to prevent SGTs,
-	/// as at time of writing there's no protection against a ship docking with a port that's already being docked to.
-	var/list/landing_in_progress_docks = list() // TODO: generalize this approach to prevent simultaneous-dock ship-overlap SGTs
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
@@ -65,7 +62,7 @@
 	Rename(gen_outpost_name())
 
 	fill_missions()
-	addtimer(CALLBACK(src, .proc/fill_missions), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
+	addtimer(CALLBACK(src, PROC_REF(fill_missions)), 10 MINUTES, TIMER_STOPPABLE|TIMER_LOOP|TIMER_DELETE_ME)
 
 /datum/overmap/outpost/Destroy(...)
 	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
@@ -214,17 +211,13 @@
 		)
 		return FALSE
 
-	landing_in_progress_docks += h_dock
 	adjust_dock_to_shuttle(h_dock, dock_requester.shuttle_port)
 	return new /datum/docking_ticket(h_dock, src, dock_requester)
 
 /datum/overmap/outpost/post_docked(datum/overmap/ship/controlled/dock_requester)
-	// removes the stationary dock from the list, so that we don't have to worry about it causing merge SGTs
-	landing_in_progress_docks -= dock_requester.shuttle_port.docked
-
 	for(var/mob/M as anything in GLOB.player_list)
 		if(dock_requester.shuttle_port.is_in_shuttle_bounds(M))
-			M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+			M.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[name]</u></span><br>[station_time_timestamp("hh:mm")]")
 
 	// Instance the virtual speaker for use in radio messages. It needs an atom to trace things back to; we use the token.
 	// You might think "but wait, can't we just keep one speaker around instead of instancing it for each fucking radio message?"
@@ -288,7 +281,7 @@
 			// a dock/undock cycle may leave the stationary port w/ flipped width and height,
 			// due to adjust_dock_to_shuttle(). so we need to check both orderings of the list.
 			if( \
-				!(h_dock in landing_in_progress_docks) && !h_dock.docked && \
+				!h_dock.current_docking_ticket && !h_dock.docked && \
 				( \
 					(h_dock.width == h_template.dock_width && h_dock.height == h_template.dock_height) || \
 					(h_dock.width == h_template.dock_height && h_dock.height == h_template.dock_width) \

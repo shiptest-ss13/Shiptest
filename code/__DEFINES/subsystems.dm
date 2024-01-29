@@ -187,6 +187,7 @@
 #define FIRE_PRIORITY_SOUND_LOOPS 800
 #define FIRE_PRIORITY_OVERMAP_MOVEMENT 850
 #define FIRE_PRIORITY_SPEECH_CONTROLLER 900
+#define FIRE_PRIORITY_DELAYED_VERBS 950
 #define FIRE_PRIORITY_INPUT 1000 // This must always always be the max highest priority. Player input must never be lost.
 
 //Pipeline rebuild helper defines, these suck but it'll do for now

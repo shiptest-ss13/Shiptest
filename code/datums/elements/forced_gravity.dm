@@ -16,9 +16,9 @@
 	src.gravity = gravity
 	src.ignore_space = ignore_space
 
-	RegisterSignal(target, COMSIG_ATOM_HAS_GRAVITY, .proc/gravity_check)
+	RegisterSignal(target, COMSIG_ATOM_HAS_GRAVITY, PROC_REF(gravity_check))
 	if(isturf(target))
-		RegisterSignal(target, COMSIG_TURF_HAS_GRAVITY, .proc/turf_gravity_check)
+		RegisterSignal(target, COMSIG_TURF_HAS_GRAVITY, PROC_REF(turf_gravity_check))
 
 	ADD_TRAIT(target, TRAIT_FORCED_GRAVITY, our_ref)
 

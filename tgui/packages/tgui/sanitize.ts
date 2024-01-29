@@ -48,7 +48,7 @@ const defTag = [
 // Advanced HTML tags that we can trust admins (but not players) with
 const advTag = ['img'];
 
-const defAttr = ['class', 'style'];
+const defAttr = ['class', 'style', 'background'];
 
 /**
  * Feed it a string and it should spit out a sanitized version.

@@ -227,7 +227,7 @@
 
 /obj/item/reagent_containers/food/snacks/sausage/Initialize()
 	. = ..()
-	eatverb = pick("bite","chew","nibble","deep throat","gobble","chomp")
+	eatverb = pick("bite","chew","nibble","gobble","chomp")
 
 /obj/item/reagent_containers/food/snacks/salami
 	name = "salami"
@@ -321,7 +321,7 @@
 
 /obj/item/reagent_containers/food/snacks/boiledspiderleg
 	name = "boiled spider leg"
-	desc = "A giant spider's leg that's still twitching after being cooked. Gross!"
+	desc = "A giant spider's leg that's still twitching after being cooked. Yum!" //Its cooked and not GORE, so it shouldnt imply that its gross to eat
 	icon_state = "spiderlegcooked"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -414,7 +414,7 @@
 	desc = "A human meat, on a stick."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("tender meat" = 3, "metal" = 1)
-	foodtype = MEAT | GROSS
+	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/kebab/monkey
 	name = "meat-kebab"
@@ -430,14 +430,6 @@
 	tastes = list("tofu" = 3, "metal" = 1)
 	foodtype = VEGETABLES
 
-
-/obj/item/reagent_containers/food/snacks/kebab/tail
-	name = "lizard-tail kebab"
-	desc = "Severed lizard tail on a stick."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("meat" = 8, "metal" = 4, "scales" = 1)
-	foodtype = MEAT
-
 /obj/item/reagent_containers/food/snacks/kebab/rat
 	name = "rat-kebab"
 	desc = "Not so delicious rat meat, on a stick."
@@ -445,7 +437,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("rat meat" = 1, "metal" = 1)
-	foodtype = MEAT | GROSS
+	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/kebab/rat/double
 	name = "double rat-kebab"

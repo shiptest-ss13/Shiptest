@@ -111,22 +111,22 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 
 /datum/game_mode/dynamic/admin_panel()
 	var/list/dat = list("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Game Mode Panel</title></head><body><h1><B>Game Mode Panel</B></h1>")
-	dat += "Dynamic Mode <a href='?_src_=vars;[HrefToken()];Vars=[REF(src)]'>\[VV\]</A><a href='?src=\ref[src];[HrefToken()]'>\[Refresh\]</A><BR>"
+	dat += "Dynamic Mode <a href='?_src_=vars;[HrefToken()];Vars=[REF(src)]'>\[VV\]</A><a href='?src=[text_ref(src)];[HrefToken()]'>\[Refresh\]</A><BR>"
 	dat += "Threat Level: <b>[threat_level]</b><br/>"
 
-	dat += "Threat to Spend: <b>[threat]</b> <a href='?src=\ref[src];[HrefToken()];adjustthreat=1'>\[Adjust\]</A> <a href='?src=\ref[src];[HrefToken()];threatlog=1'>\[View Log\]</a><br/>"
+	dat += "Threat to Spend: <b>[threat]</b> <a href='?src=[text_ref(src)];[HrefToken()];adjustthreat=1'>\[Adjust\]</A> <a href='?src=[text_ref(src)];[HrefToken()];threatlog=1'>\[View Log\]</a><br/>"
 	dat += "<br/>"
 	dat += "Parameters: centre = [GLOB.dynamic_curve_centre] ; width = [GLOB.dynamic_curve_width].<br/>"
 	dat += "<i>On average, <b>[peaceful_percentage]</b>% of the rounds are more peaceful.</i><br/>"
-	dat += "Forced extended: <a href='?src=\ref[src];[HrefToken()];forced_extended=1'><b>[GLOB.dynamic_forced_extended ? "On" : "Off"]</b></a><br/>"
-	dat += "Classic secret (only autotraitor): <a href='?src=\ref[src];[HrefToken()];classic_secret=1'><b>[GLOB.dynamic_classic_secret ? "On" : "Off"]</b></a><br/>"
-	dat += "No stacking (only one round-ender): <a href='?src=\ref[src];[HrefToken()];no_stacking=1'><b>[GLOB.dynamic_no_stacking ? "On" : "Off"]</b></a><br/>"
-	dat += "Stacking limit: [GLOB.dynamic_stacking_limit] <a href='?src=\ref[src];[HrefToken()];stacking_limit=1'>\[Adjust\]</A>"
+	dat += "Forced extended: <a href='?src=[text_ref(src)];[HrefToken()];forced_extended=1'><b>[GLOB.dynamic_forced_extended ? "On" : "Off"]</b></a><br/>"
+	dat += "Classic secret (only autotraitor): <a href='?src=[text_ref(src)];[HrefToken()];classic_secret=1'><b>[GLOB.dynamic_classic_secret ? "On" : "Off"]</b></a><br/>"
+	dat += "No stacking (only one round-ender): <a href='?src=[text_ref(src)];[HrefToken()];no_stacking=1'><b>[GLOB.dynamic_no_stacking ? "On" : "Off"]</b></a><br/>"
+	dat += "Stacking limit: [GLOB.dynamic_stacking_limit] <a href='?src=[text_ref(src)];[HrefToken()];stacking_limit=1'>\[Adjust\]</A>"
 	dat += "<br/>"
-	dat += "<A href='?src=\ref[src];[HrefToken()];force_latejoin_rule=1'>\[Force Next Latejoin Ruleset\]</A><br>"
+	dat += "<A href='?src=[text_ref(src)];[HrefToken()];force_latejoin_rule=1'>\[Force Next Latejoin Ruleset\]</A><br>"
 	if (forced_latejoin_rule)
-		dat += {"<A href='?src=\ref[src];[HrefToken()];clear_forced_latejoin=1'>-> [forced_latejoin_rule.name] <-</A><br>"}
-	dat += "<A href='?src=\ref[src];[HrefToken()];force_midround_rule=1'>\[Execute Midround Ruleset\]</A><br>"
+		dat += {"<A href='?src=[text_ref(src)];[HrefToken()];clear_forced_latejoin=1'>-> [forced_latejoin_rule.name] <-</A><br>"}
+	dat += "<A href='?src=[text_ref(src)];[HrefToken()];force_midround_rule=1'>\[Execute Midround Ruleset\]</A><br>"
 	dat += "<br />"
 	dat += "Executed rulesets: "
 	if (executed_rules.len > 0)
@@ -136,8 +136,8 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	else
 		dat += "none.<br>"
 	dat += "<br>Injection Timers: (<b>[get_injection_chance(TRUE)]%</b> chance)<BR>"
-	dat += "Latejoin: [(latejoin_injection_cooldown-world.time)>60*10 ? "[round((latejoin_injection_cooldown-world.time)/60/10,0.1)] minutes" : "[(latejoin_injection_cooldown-world.time)] seconds"] <a href='?src=\ref[src];[HrefToken()];injectlate=1'>\[Now!\]</a><BR>"
-	dat += "Midround: [(midround_injection_cooldown-world.time)>60*10 ? "[round((midround_injection_cooldown-world.time)/60/10,0.1)] minutes" : "[(midround_injection_cooldown-world.time)] seconds"] <a href='?src=\ref[src];[HrefToken()];injectmid=1'>\[Now!\]</a><BR>"
+	dat += "Latejoin: [(latejoin_injection_cooldown-world.time)>60*10 ? "[round((latejoin_injection_cooldown-world.time)/60/10,0.1)] minutes" : "[(latejoin_injection_cooldown-world.time)] seconds"] <a href='?src=[text_ref(src)];[HrefToken()];injectlate=1'>\[Now!\]</a><BR>"
+	dat += "Midround: [(midround_injection_cooldown-world.time)>60*10 ? "[round((midround_injection_cooldown-world.time)/60/10,0.1)] minutes" : "[(midround_injection_cooldown-world.time)] seconds"] <a href='?src=[text_ref(src)];[HrefToken()];injectmid=1'>\[Now!\]</a><BR>"
 	usr << browse(dat.Join(), "window=gamemode_panel;size=500x500")
 
 /datum/game_mode/dynamic/Topic(href, href_list)
@@ -159,10 +159,10 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 			return
 		if(threatadd > 0)
 			create_threat(threatadd)
-			threat_log += "[worldtime2text()]: [key_name(usr)] increased threat by [threatadd] threat."
+			threat_log += "[game_timestamp()]: [key_name(usr)] increased threat by [threatadd] threat."
 		else
 			spend_threat(-threatadd)
-			threat_log += "[worldtime2text()]: [key_name(usr)] decreased threat by [-threatadd] threat."
+			threat_log += "[game_timestamp()]: [key_name(usr)] decreased threat by [-threatadd] threat."
 	else if (href_list["injectlate"])
 		latejoin_injection_cooldown = 0
 		forced_injection = TRUE
@@ -367,7 +367,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 /datum/game_mode/dynamic/post_setup(report)
 	for(var/datum/dynamic_ruleset/roundstart/rule in executed_rules)
 		rule.candidates.Cut() // The rule should not use candidates at this point as they all are null.
-		addtimer(CALLBACK(src, /datum/game_mode/dynamic/.proc/execute_roundstart_rule, rule), rule.delay)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/game_mode/dynamic, execute_roundstart_rule), rule), rule.delay)
 	..()
 
 /// A simple roundstart proc used when dynamic_forced_roundstart_ruleset has rules in it.
@@ -478,7 +478,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 	var/added_threat = starting_rule.scale_up(extra_rulesets_amount, threat)
 	if(starting_rule.pre_execute())
 		spend_threat(starting_rule.cost + added_threat)
-		threat_log += "[worldtime2text()]: Roundstart [starting_rule.name] spent [starting_rule.cost + added_threat]. [starting_rule.scaling_cost ? "Scaled up[starting_rule.scaled_times]/3 times." : ""]"
+		threat_log += "[game_timestamp()]: Roundstart [starting_rule.name] spent [starting_rule.cost + added_threat]. [starting_rule.scaling_cost ? "Scaled up[starting_rule.scaled_times]/3 times." : ""]"
 		if(starting_rule.flags & HIGHLANDER_RULESET)
 			highlander_executed = TRUE
 		else if(starting_rule.flags & ONLY_RULESET)
@@ -540,7 +540,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		else if(rule.ruletype == "Midround")
 			midround_rules = remove_from_list(midround_rules, rule.type)
 
-	addtimer(CALLBACK(src, /datum/game_mode/dynamic/.proc/execute_midround_latejoin_rule, rule), rule.delay)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/game_mode/dynamic, execute_midround_latejoin_rule), rule), rule.delay)
 	return TRUE
 
 /// An experimental proc to allow admins to call rules on the fly or have rules call other rules.
@@ -572,7 +572,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 		new_rule.trim_candidates()
 		if (new_rule.ready(forced))
 			spend_threat(new_rule.cost)
-			threat_log += "[worldtime2text()]: Forced rule [new_rule.name] spent [new_rule.cost]"
+			threat_log += "[game_timestamp()]: Forced rule [new_rule.name] spent [new_rule.cost]"
 			if (new_rule.execute()) // This should never fail since ready() returned 1
 				if(new_rule.flags & HIGHLANDER_RULESET)
 					highlander_executed = TRUE
@@ -591,7 +591,7 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 /datum/game_mode/dynamic/proc/execute_midround_latejoin_rule(sent_rule)
 	var/datum/dynamic_ruleset/rule = sent_rule
 	spend_threat(rule.cost)
-	threat_log += "[worldtime2text()]: [rule.ruletype] [rule.name] spent [rule.cost]"
+	threat_log += "[game_timestamp()]: [rule.ruletype] [rule.name] spent [rule.cost]"
 	rule.pre_execute()
 	if (rule.execute())
 		log_game("DYNAMIC: Injected a [rule.ruletype == "latejoin" ? "latejoin" : "midround"] ruleset [rule.name].")

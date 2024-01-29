@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	// In class definition like here it should always be a single type.
 	// A list will be created in initialization that figures out the baseturf's baseturf etc.
 	// In the case of a list it is sorted from bottom layer to top.
-	// This shouldn't be modified directly, use the helper procs.
+	// This shouldn't be modified directly; use the helper procs, as many baseturf lists are shared between turfs.
 	var/list/baseturfs = /turf/baseturf_bottom
 
 	/// How hot the turf is, in kelvin
@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
 
-	var/bullet_bounce_sound = 'sound/weapons/gun/general/mag_bullet_remove.ogg' //sound played when a shell casing is ejected ontop of the turf.
+	var/list/bullet_bounce_sound = list('sound/weapons/gun/general/bulletcasing_bounce1.ogg', 'sound/weapons/gun/general/bulletcasing_bounce2.ogg', 'sound/weapons/gun/general/bulletcasing_bounce3.ogg')
 	var/bullet_sizzle = FALSE //used by ammo_casing/bounce_away() to determine if the shell casing should make a sizzle sound when it's ejected over the turf
 							//IE if the turf is supposed to be water, set TRUE.
 
@@ -73,8 +73,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
 	var/rad_fullblocker = FALSE
 
-	///the holodeck can load onto this turf if TRUE
-	var/holodeck_compatible = FALSE
+	hitsound_volume = 90
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -342,7 +341,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	return FALSE
 
 //There's a lot of QDELETED() calls here if someone can figure out how to optimize this but not runtime when something gets deleted by a Bump/CanPass/Cross call, lemme know or go ahead and fix this mess - kevinz000
-/turf/Enter(atom/movable/mover, atom/oldloc)
+// Test if a movable can enter this turf. Send no_side_effects = TRUE to prevent bumping.
+/turf/Enter(atom/movable/mover, atom/oldloc, no_side_effects = FALSE)
 	// Do not call ..()
 	// Byond's default turf/Enter() doesn't have the behaviour we want with Bump()
 	// By default byond will call Bump() on the first dense object in contents
@@ -356,6 +356,8 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 			if(thing == mover || thing == mover.loc) // Multi tile objects and moving out of other objects
 				continue
 			if(!thing.Cross(mover))
+				if(no_side_effects)
+					return FALSE
 				if(QDELETED(mover))		//Mover deleted from Cross/CanPass, do not proceed.
 					return FALSE
 				if((mover.movement_type & PHASING))
@@ -383,7 +385,11 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	if(!AM.zfalling)
 		zFall(AM)
 
-// A proc in case it needs to be recreated or badmins want to change the baseturfs
+// Initializes the baseturfs list, given an optional "fake_baseturf_type".
+// If "fake_baseturf_type" is a list, then this turf's baseturfs are set to that list.
+// Otherwise, if "fake_baseturf_type" is non-null, it is used as the top of the baseturf stack.
+// If no fake_baseturf_type is passed, and the current turf's baseturfs variable is not a list,
+// baseturfs are initialized using the intial baseturfs variable as the top of the baseturf stack.
 /turf/proc/assemble_baseturfs(turf/fake_baseturf_type)
 	var/turf/current_target
 	if(fake_baseturf_type)
@@ -460,7 +466,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
-	while (do_after(usr, 10, TRUE, src, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, progress)))
+	while (do_after(usr, 10, TRUE, src, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage, mass_remove_from_storage), src, things, progress)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -666,3 +672,7 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 		. += "[/obj/effect/turf_decal]{\n\ticon = '[decal.pic.icon]';\n\ticon_state = \"[decal.pic.icon_state]\";\n\tdir = [decal.pic.dir];\n\tcolor = \"[decal.pic.color]\"\n\t}"
 		first = FALSE
 	return
+
+/turf/bullet_act(obj/projectile/hitting_projectile)
+	. = ..()
+	bullet_hit_sfx(hitting_projectile)

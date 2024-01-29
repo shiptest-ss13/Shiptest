@@ -21,7 +21,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar
 	))
 
@@ -34,25 +33,16 @@
 /obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if (modifies_speech)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	M.UnregisterSignal(M, COMSIG_MOB_SAY)
 
 /obj/item/organ/tongue/Remove(mob/living/carbon/M, special = 0)
 	..()
-	UnregisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
-	M.RegisterSignal(M, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
+	UnregisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+	M.RegisterSignal(M, COMSIG_MOB_SAY, TYPE_PROC_REF(/mob/living/carbon, handle_tongueless_speech))
 
 /obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
-
-//Say_mod-Only Tongues
-/obj/item/organ/tongue/golem_base
-	name = "golem tongue"
-	say_mod = "rumbles"
-
-/obj/item/organ/tongue/golem_honk
-	name = "bananium tongue"
-	say_mod = "honks"
 
 /obj/item/organ/tongue/toma
 	name = "mutated tongue"
@@ -108,7 +98,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/buzzwords,
 		/datum/language/ratvar
 	))
@@ -245,7 +234,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/calcic,
 		/datum/language/ratvar
 	))
@@ -328,7 +316,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar,
 	))
 
@@ -353,7 +340,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar,
 		/datum/language/slime
 	))
@@ -378,7 +364,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/buzzwords
 	))
 
@@ -420,7 +405,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/teceti_unified
 	))
 
@@ -444,7 +428,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/vox_pidgin
 	))
 

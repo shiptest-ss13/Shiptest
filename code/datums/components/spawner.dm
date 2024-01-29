@@ -23,7 +23,7 @@
 	if(_spawn_sound)
 		spawn_sound=_spawn_sound
 
-	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), .proc/stop_spawning)
+	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process()

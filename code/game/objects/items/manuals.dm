@@ -242,7 +242,7 @@
 /obj/item/book/manual/trickwines_4_brewers
 	name = "Trickwines for brewers"
 	icon_state = "book2"
-	author = "Baxter Baxter"
+	author = "Bridget Saint-Baskett"
 	title = "Trickwines for brewers"
 	dat = {"<html>
 			<head>
@@ -262,7 +262,16 @@
 			<h2> Breakaway flasks</h2>
 			Honestly, I love these things. I'm not a scientist so I cant exactly explain how it works but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
 			The simplest way I have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
-			I should note: trickwines don't seem to form without flasks. I think it's something to do with the plasma reacting with the mixture.<br>
+
+			<h2> Bacteria </h2>
+			A speical speices of bacteria native to Illestren is what allows Trickwines form.<br>
+			Now we use a special distiller that keeps just enough bacertia alive to ferment without turning the batch sour.<br>
+			Now you should still have one on board but if you dont its fine.<br>
+			It just so happens we have trees on board our ships host to the Bacteria.<br>
+			To get enough Bacteria your going to need to feed it anything that would help a plant.<br>
+			Water, Fertilizer, Ashwine are all good options.<br>
+			Soon it will drops some apples and you can grind them for the bacteria.<br>
+			Once you have enough you can fabricate it the same way you would a normal barrel.<br>
 
 			<h2> Ashwine </h2>
 			It's kind of our trademark, and it's one of the simplest trickwines to make. The Montagnes love using this stuff in ceremonies as well so it should get you some good boy points.<br>
@@ -285,11 +294,30 @@
 			It's a nice upper. Great if you're trying to run away.<br>
 			This one's really flashy. Expect some severe burns on your target<br>
 
-				<br>Baxter Baxter, Senior Brewer<br>
-				P.S.: please stop asking how the uranium got into those flasks.
+			<h2> Hearthwine </h2>
+			I once threw back a flask of this stuff in the heat of a really bad battle and it sealed my wounds within seconds its honestly increadible.<br>
+			It also acts like the inverse of Icewine heating you up more then a fever.<br>
+			Last time I threw it at someone though i almost burnt down the forest I was in.<br>
+			Its made out of ground up fireblossems with some nice hard cider and a bit of welding fuel with of course a ratio of 3:1:1.<br>
 
-				</body>
-				</html>"}
+			<h2> Forcewine </h2>
+			I once had a duel with a wizard and and I was able to completly ignore a few of his spells! Its like they just fizzled out when they hit me.<br>
+			Would recomend for any esoteric senarios even though I have only been in a few of those.<br>
+			You can also use it to entrap Fauna inside of a forcefield like bubble, Gives you time to breath and laugh at them.<br>
+			3:1:1 Tequila, Space Montain Wind, and I know its strange but hollow water, Its that stuff you can extract from geysers<br>
+
+			<h2> Prismwine </h2>
+			Gives you a nice shiny layer of armour, fire seems to have alot harder time sticking to me when i tested it.<br>
+			Throwing it seeems to do the reverse acting like a magnifying glass to burns and lasers<br>
+			Made 3:1:1 with good ol Gin, then add plasma and tinea luxor which is found from mushroom stems<br>
+
+			Some of these can be a bit situatinal but its always nice to have a few in your bag for emergecys.<br>
+			As a bonus, most of the other factions have no clue how to make these so you can sell them for a fair chunk of cash.<br>
+
+			<br>Bridget Saint-Baskett, Senior Brewer<br>
+
+			</body>
+			</html>"}
 
 // Wiki books that are linked to the configured wiki link.
 

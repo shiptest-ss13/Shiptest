@@ -49,14 +49,12 @@
 	var/festive_tree = /obj/structure/flora/tree/pine/xmas
 	var/christmas_tree = /obj/structure/flora/tree/pine/xmas/presents
 
-/obj/effect/spawner/xmastree/Initialize()
-	..()
+/obj/effect/spawner/xmastree/Initialize(mapload)
+	. = ..()
 	if((CHRISTMAS in SSevents.holidays) && christmas_tree)
 		new christmas_tree(get_turf(src))
 	else if((FESTIVE_SEASON in SSevents.holidays) && festive_tree)
 		new festive_tree(get_turf(src))
-
-	return INITIALIZE_HINT_QDEL
 
 /obj/effect/spawner/xmastree/rdrod
 	name = "festivus pole spawner"

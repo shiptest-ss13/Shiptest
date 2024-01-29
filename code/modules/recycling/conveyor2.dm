@@ -146,7 +146,7 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 		affecting.Add(item)
 
 	conveying = TRUE
-	addtimer(CALLBACK(src, .proc/convey, affecting), 1)
+	addtimer(CALLBACK(src, PROC_REF(convey), affecting), 1)
 
 /obj/machinery/conveyor/proc/convey(list/affecting)
 	for(var/atom/movable/A in affecting)

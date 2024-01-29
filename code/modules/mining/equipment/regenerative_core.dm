@@ -35,7 +35,7 @@
 
 /obj/item/organ/regenerative_core/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/inert_check), 2400)
+	addtimer(CALLBACK(src, PROC_REF(inert_check)), 2400)
 
 /obj/item/organ/regenerative_core/proc/inert_check()
 	if(!preserved)
@@ -62,7 +62,12 @@
 	if(inert)
 		to_chat(owner, "<span class='notice'>[src] breaks down as it tries to activate.</span>")
 	else
-		owner.revive(full_heal = TRUE, admin_revive = FALSE)
+		owner.adjustBruteLoss(-100) //previously heal proc
+		owner.adjustFireLoss(-100)
+		owner.adjustOxyLoss(-50)
+		owner.adjustToxLoss(-50)
+		if(owner.dna.species.id != SPECIES_IPC)
+			owner.adjustCloneLoss(10) //dont abuse it or take cloneloss (organic only)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()
@@ -142,7 +147,7 @@
 	update_appearance()
 
 /obj/item/organ/regenerative_core/update_icon_state()
-	icon_state = inert ? "legion_soul_inert" : "legion_soul"
+	icon_state = inert ? "[icon_state]_inert" : "[icon_state]"
 	return ..()
 
 /obj/item/organ/regenerative_core/update_overlays()
@@ -162,6 +167,7 @@
 /obj/item/organ/regenerative_core/legion/crystal
 	name = "crystal heart"
 	desc = "A strange rock in the shape of a heart symbol. Applying will repair your body with crystals, but may have additional side effects. It seems it can't survive for very long outside a host."
+	icon_state = "crystal_heart"
 	crackle_animation = FALSE
 
 /obj/item/organ/regenerative_core/legion/crystal/Initialize()
@@ -191,7 +197,6 @@
 			qdel(src)
 
 /obj/item/organ/regenerative_core/legion/crystal/update_icon_state()
-	icon_state = inert ? "crystal_heart_inert" : "crystal_heart"
 	if(preserved)
 		icon_state = "crystal_heart_preserved"
 	return ..()

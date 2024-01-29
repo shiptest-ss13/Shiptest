@@ -128,7 +128,20 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 	name = "eyepatch HUD"
 	desc = "A heads-up display that connects directly to the optical nerve of the user, replacing the need for that useless eyeball."
-	icon_state = "hudpatch"
+	icon_state = "hudpatch-0"
+	var/flipped = FALSE
+
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/AltClick(mob/user)
+	. = ..()
+	flipped = !flipped
+	to_chat(user, "<span class='notice'>You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	icon_state = "hudpatch-[flipped]"
+	item_state = "hudpatch-[flipped]"
+	update_appearance()
+
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/examine(mob/user)
+	. = ..()
+	. += "It is currently aligned to the [flipped == 0 ? "right" : "left"] side."
 
 /obj/item/clothing/glasses/hud/security/sunglasses
 	name = "security HUDSunglasses"

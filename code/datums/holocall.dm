@@ -241,7 +241,7 @@
 /obj/item/disk/holodisk/Initialize(mapload)
 	. = ..()
 	if(preset_record_text)
-		INVOKE_ASYNC(src, .proc/build_record)
+		INVOKE_ASYNC(src, PROC_REF(build_record))
 
 /obj/item/disk/holodisk/Destroy()
 	QDEL_NULL(record)
@@ -349,20 +349,11 @@
 /datum/preset_holoimage/engineer
 	outfit_type = /datum/outfit/job/engineer
 
-/datum/preset_holoimage/engineer/rig
-	outfit_type = /datum/outfit/job/engineer/gloved/rig
-
 /datum/preset_holoimage/engineer/ce
 	outfit_type = /datum/outfit/job/ce
 
-/datum/preset_holoimage/engineer/ce/rig
-	outfit_type = /datum/outfit/job/engineer/gloved/rig
-
 /datum/preset_holoimage/engineer/atmos
 	outfit_type = /datum/outfit/job/atmos
-
-/datum/preset_holoimage/engineer/atmos/rig
-	outfit_type = /datum/outfit/job/engineer/gloved/rig
 
 /datum/preset_holoimage/researcher
 	outfit_type = /datum/outfit/job/scientist

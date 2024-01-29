@@ -19,7 +19,7 @@
 
 /obj/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, -1, 1, 3, 1, 0, flame_range = 4)
+	explosion(target, 1, 1, 2, 1, 0, flame_range = 4)
 
 	if(ismecha(target))
 		var/obj/mecha/M = target
@@ -69,7 +69,7 @@
 	..()
 	for(var/i in sturdy)
 		if(istype(target, i))
-			explosion(target, 0, 1, 1, 2)
+			explosion(target, 1, 1, 1, 2)
 			return BULLET_ACT_HIT
 	//if(istype(target, /turf/closed) || ismecha(target))
 	new /obj/item/broken_missile(get_turf(src), 1)

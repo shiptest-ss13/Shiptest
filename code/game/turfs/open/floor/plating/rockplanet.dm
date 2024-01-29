@@ -33,6 +33,9 @@
 	icon_state = "wet_soft0"
 	base_icon_state = "wet_soft"
 
+/turf/open/floor/plating/asteroid/rockplanet/wet/atmos
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit
 	light_range = 2
 	light_power = 0.6
@@ -46,3 +49,37 @@
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/floor/plating/asteroid/rockplanet/grass
+	name = "dry grass"
+	desc = "A patch of dry grass."
+	icon_state = "grass0"
+
+/turf/open/floor/plating/asteroid/rockplanet/mud
+	name = "mud"
+	icon_state = "greenerdirt"
+
+/turf/open/floor/plating/asteroid/rockplanet/pond
+	name = "pond"
+	icon_state = "riverwater"
+
+/turf/open/floor/plating/asteroid/rockplanet/plating
+	name = "exterior plating"
+	icon_state = "plating"
+
+/turf/open/floor/plating/asteroid/rockplanet/plating/scorched
+	name = "exterior plating"
+	icon_state = "panelscorched"
+
+/turf/open/floor/plating/asteroid/rockplanet/stairs
+	name = "exterior stairs"
+	icon_state = "stairs"
+
+/turf/open/floor/plating/asteroid/rockplanet/hull_plating
+	name = "exterior hull plating"
+	icon_state = "regular_hull"
+
+/turf/open/floor/plating/asteroid/rockplanet/plasteel
+	name = "exterior floor"
+	icon_state = "tiled_gray"
+	icon = 'icons/turf/floors/tiles.dmi'

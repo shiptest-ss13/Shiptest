@@ -71,7 +71,7 @@ SUBSYSTEM_DEF(shuttle)
 /// Requests a bluespace jump, which, after jump_request_time deciseconds, will initiate a bluespace jump.
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
-	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), jump_request_time * modifier, TIMER_STOPPABLE)
+	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
 	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.

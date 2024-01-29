@@ -35,7 +35,6 @@
 		icon_state = "[icon_state]_open"
 	return ..()
 
-
 /obj/item/storage/ration/vegan_chili
 	name = "vegan chili with beans ration"
 	desc = "A complete meal package containing a hearty vegan chili with beans, complemented by vegetable crackers, savory cornbread, flavorful pizza crackers, and more. A perfect choice for plant-based nourishment."
@@ -47,7 +46,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/cornbread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/pizza_crackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/grape_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside,src)
@@ -63,7 +62,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/fruit_puree = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/cinnamon_bun = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/hot_cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/chocolate_protein_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/chocolate_protein_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside,src)
@@ -79,7 +78,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/dried_raisins = 1,
 		/obj/item/reagent_containers/food/snacks/ration/side/bread_sticks = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/lemonade_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/lemonade_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside,src)
@@ -96,7 +95,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/corn_kernels = 1,
 		/obj/item/reagent_containers/food/snacks/ration/bar/energy_bar = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/fruit_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/fruit_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside,src)
@@ -113,11 +112,10 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/blackberry_preserves = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/candy_rings = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/peanut_butter = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/fruit_smoothie_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/fruit_smoothie_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside,src)
-
 
 /obj/item/storage/ration/chili_macaroni
 	name = "chili and macaroni ration"
@@ -131,7 +129,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/lemon_pound_cake = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/cherry_snackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/hot_cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -147,7 +145,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/strawberry_preserves = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/mint_chocolate_snack_cake = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/peanut_butter = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/cherry_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/cherry_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -164,7 +162,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/wheat_bread = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/sour_gummy_worms = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/garlic_cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_orange = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_orange = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -180,7 +178,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/pretzel_sticks_honey_mustard = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/blue_raspberry_candies = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/peanut_cranberry_mix = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_chocolate = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_chocolate = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -212,7 +210,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/pretzel_sticks_honey_mustard = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/pick_me_up_energy_gum = 1,
 		/obj/item/reagent_containers/food/snacks/ration/bar/rationers_guild_chocolate_bar = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_hazelnut = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_hazelnut = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -228,7 +226,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/fried_potato_curls = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/chocolate_orange_snack_cake = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/apple_slices = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/pineapple_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/pineapple_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -236,7 +234,6 @@
 /obj/item/storage/ration/assorted_salted_offal
 	name = "assorted salted offal ration"
 	desc = "An adventurous choice, this ration offers an assortment of salted offal, providing a unique culinary experience."
-
 
 /obj/item/storage/ration/assorted_salted_offal/PopulateContents()
 	var/static/items_inside = list(
@@ -262,7 +259,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/maple_muffin = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/smoked_almonds = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/maple_syrup = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/grape_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -279,7 +276,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/chocolate_chunk_oatmeal_cookie = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/peanut_candies = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/bacon_cheddar_cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage_sugar_free = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage_sugar_free = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -296,7 +293,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/strawberry_preserves = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/patriotic_sugar_cookies = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/chunky_peanut_butter = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -312,7 +309,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/oatmeal_cookie = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/hot_cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/lemonade_beverage_suger_free = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/lemonade_beverage_suger_free = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -329,7 +326,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/dried_cranberries = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/dry_roasted_peanuts = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage_sugar_free = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage_sugar_free = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -346,7 +343,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/side/white_bread_mini_loaf = 1,
 		/obj/item/reagent_containers/food/snacks/ration/snack/strawberry_preserves = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/peanut_butter = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/chocolate_protein_beverage = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/chocolate_protein_beverage = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)
@@ -363,7 +360,7 @@
 		/obj/item/reagent_containers/food/snacks/ration/snack/jalapeno_cashews = 1,
 		/obj/item/reagent_containers/food/snacks/ration/bar/quik_energy_bar_chocolate = 1,
 		/obj/item/reagent_containers/food/snacks/ration/condiment/chunky_peanut_butter = 1,
-		/obj/item/reagent_containers/food/snacks/ration/condiment/grape_beverage_sugar_free = 1,
+		/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage_sugar_free = 1,
 		/obj/item/ration_heater = 1
 		)
 	generate_items_inside(items_inside, src)

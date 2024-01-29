@@ -6,6 +6,9 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 
+	has_safety = TRUE
+	safety = TRUE
+
 	///sound when inserting magazine
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
 	///sound when inserting an empty magazine
@@ -81,11 +84,14 @@
 	var/rack_delay = 5
 	///time of the most recent rack, used for cooldown purposes
 	var/recent_rack = 0
-	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
-	var/tac_reloads = TRUE //Snowflake mechanic no more.
 	///Whether the gun can be sawn off by sawing tools
 	var/can_be_sawn_off  = FALSE
 	var/flip_cooldown = 0
+
+	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
+	var/tac_reloads = TRUE //Snowflake mechanic no more.
+	///If we have the 'snowflake mechanic,' how long should it take to reload?
+	var/tactical_reload_delay  = 1 SECONDS
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -95,7 +101,7 @@
 		return
 	if (!magazine)
 		magazine = new mag_type(src)
-	chamber_round(TRUE)
+	chamber_round()
 	update_appearance()
 
 /obj/item/gun/ballistic/update_icon_state()
@@ -220,21 +226,27 @@
 		playsound(src, eject_empty_sound, eject_sound_volume, eject_sound_vary)
 	magazine.forceMove(drop_location())
 	var/obj/item/ammo_box/magazine/old_mag = magazine
-	if (tac_load)
-		if (insert_magazine(user, tac_load, FALSE))
-			to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
-		else
-			to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
-			magazine = null
-	else
-		magazine = null
-	user.put_in_hands(old_mag)
 	old_mag.update_appearance()
+	magazine = null
 	if (display_message)
 		to_chat(user, "<span class='notice'>You pull the [magazine_wording] out of \the [src].</span>")
 	update_appearance()
+	if (tac_load)
+		if(do_after(user, tactical_reload_delay, TRUE, src))
+			if (insert_magazine(user, tac_load, FALSE))
+				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+			else
+				to_chat(user, "<span class='warning'>You dropped the old [magazine_wording], but the new one doesn't fit. How embarassing.</span>")
+		else
+			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
+			return
+
+	user.put_in_hands(old_mag)
+	update_appearance()
 
 /obj/item/gun/ballistic/can_shoot()
+	if(safety)
+		return FALSE
 	return chambered
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
@@ -342,7 +354,7 @@
 		return
 	return ..()
 
-/obj/item/gun/ballistic/attack_self(mob/living/user)
+/obj/item/gun/ballistic/unique_action(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_GUNFLIP))
 		if(flip_cooldown <= world.time)
 			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
@@ -352,12 +364,9 @@
 				user.dropItemToGround(src, TRUE)
 				return
 			flip_cooldown = (world.time + 30)
+			SpinAnimation(7,1)
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
-			return
-	if(!internal_magazine && magazine)
-		if(!magazine.ammo_count())
-			eject_magazine(user)
 			return
 	if(bolt_type == BOLT_TYPE_NO_BOLT)
 		chambered = null

@@ -32,3 +32,9 @@
 
 /obj/effect/projectile/muzzle/wormhole
 	icon_state = "wormhole_g"
+
+/obj/effect/projectile/muzzle/pgf
+	icon_state = "muzzle_pgf"
+
+/obj/effect/projectile/muzzle/kalix
+	icon_state = "muzzle_kalix"

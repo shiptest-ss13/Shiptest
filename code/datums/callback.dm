@@ -37,14 +37,14 @@
  * `CALLBACK(src, .some_proc_here)`
  *
  * ### when the above doesn't apply:
- *.proc/procname
+ * PROC_REF(procname)
  *
- * `CALLBACK(src, .proc/some_proc_here)`
+ * `CALLBACK(src, PROC_REF(some_proc_here))`
  *
  *
  * proc defined on a parent of a some type
  *
- * `/some/type/.proc/some_proc_here`
+ * `TYPE_PROC_REF(/some/type, some_proc_here)`
  *
  * Otherwise you must always provide the full typepath of the proc (/type/of/thing/proc/procname)
  */
@@ -111,11 +111,17 @@
 			var/mob/M = W.resolve()
 			if(M)
 				if (length(args))
-					return world.PushUsr(arglist(list(M, src) + args))
-				return world.PushUsr(M, src)
+					return world.push_usr(arglist(list(M, src) + args))
+				return world.push_usr(M, src)
 
 	if (!object)
 		return
+
+#if DM_VERSION <= 514
+	if(istext(object) && object != GLOBAL_PROC)
+		to_chat(usr, "[object] may be an external library. Calling external libraries is disallowed.", confidential = TRUE)
+		return
+#endif
 
 	var/list/calling_arguments = arguments
 	if (length(args))
@@ -146,11 +152,17 @@
 			var/mob/M = W.resolve()
 			if(M)
 				if (length(args))
-					return world.PushUsr(arglist(list(M, src) + args))
-				return world.PushUsr(M, src)
+					return world.push_usr(arglist(list(M, src) + args))
+				return world.push_usr(M, src)
 
 	if (!object)
 		return
+
+#if DM_VERSION <= 514
+	if(istext(object) && object != GLOBAL_PROC)
+		to_chat(usr, "[object] may be an external library. Calling external libraries is disallowed.", confidential = TRUE)
+		return
+#endif
 
 	var/list/calling_arguments = arguments
 	if (length(args))

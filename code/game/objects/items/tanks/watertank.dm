@@ -305,7 +305,7 @@
 			var/obj/effect/particle_effect/foam/metal/resin/F = new (get_turf(target))
 			F.amount = 0
 			metal_synthesis_cooldown++
-			addtimer(CALLBACK(src, .proc/reduce_metal_synth_cooldown), 10 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(reduce_metal_synth_cooldown)), 10 SECONDS)
 		else
 			to_chat(user, "<span class='warning'>Resin foam mix is still being synthesized...</span>")
 			return
@@ -426,7 +426,7 @@
 //Operator backpack spray
 /obj/item/watertank/op
 	name = "backpack water tank"
-	desc = "A New Russian backpack spray for systematic cleansing of carbon lifeforms."
+	desc = "A backpack spray for systematic cleansing of carbon lifeforms."
 	icon_state = "waterbackpackop"
 	item_state = "waterbackpackop"
 	w_class = WEIGHT_CLASS_NORMAL

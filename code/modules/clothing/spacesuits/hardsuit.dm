@@ -319,8 +319,8 @@
 	//Syndicate hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi
 	name = "blood-red hardsuit helmet"
-	desc = "A dual-mode advanced helmet designed for work in special operations. It is in EVA mode. Property of Gorlex Marauders."
-	alt_desc = "A dual-mode advanced helmet designed for work in special operations. It is in combat mode. Property of Gorlex Marauders."
+	desc = "A dual-mode advanced hardsuit designed for special combat operations. It is in EVA mode. Produced by the Gorlex Marauders."
+	alt_desc = "A dual-mode advanced hardsuit designed for special combat operations. It is in combat mode. Produced by the Gorlex Marauders."
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	hardsuit_type = "syndi"
@@ -407,12 +407,11 @@
 
 /obj/item/clothing/suit/space/hardsuit/syndi
 	name = "blood-red hardsuit"
-	desc = "A dual-mode advanced hardsuit designed for work in special operations. It is in EVA mode. Property of Gorlex Marauders."
-	alt_desc = "A dual-mode advanced hardsuit designed for work in special operations. It is in combat mode. Property of Gorlex Marauders."
+	desc = "A dual-mode advanced hardsuit designed for special combat operations. It is in EVA mode. Produced by the Gorlex Marauders."
+	alt_desc = "A dual-mode advanced hardsuit designed for special combat operations. It is in combat mode. Produced by the Gorlex Marauders."
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_hardsuit"
 	hardsuit_type = "syndi"
-	w_class = WEIGHT_CLASS_NORMAL
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
 	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
@@ -421,28 +420,79 @@
 	var/combat_slowdown = 0 //slowdown when in combat mode
 	var/lightweight = 0 //used for flags when toggling
 
-//Scarlet Syndie suit
-/obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
-	name = "scarlet hardsuit helmet"
-	desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in EVA mode. Manufactured by Donk Co."
-	alt_desc = "A standardized dual-mode helmet derived from more advanced special operations helmets. It is in combat mode. Manufactured by Donk Co."
-	icon_state = "hardsuit1-scarlet"
-	item_state = "scarlet_helm"
-	hardsuit_type = "scarlet"
+//Ramzi Syndie suit
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
+	name = "rusted-red hardsuit helmet"
+	desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Gorlex Marauders."
+	alt_desc = "A beat-up standardized dual-mode helmet derived from more advanced special operations helmets, its red rusted into a dirty brown. It is in combat mode. Manufactured by Gorlex Marauders."
+	icon_state = "hardsuit1-ramzi"
+	item_state = "hardsuit1-ramzi"
+	hardsuit_type = "ramzi"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet
-	name = "scarlet hardsuit"
-	desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in EVA mode. Manufactured by Donk Co."
-	alt_desc = "A standardized dual-mode hardsuit derived from more advanced special operations hardsuits. It is in combat mode. Manufactured by Donk Co."
-	icon_state = "hardsuit1-scarlet"
-	item_state = "scarlet_hardsuit"
-	hardsuit_type = "scarlet"
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/scarlet
+/obj/item/clothing/suit/space/hardsuit/syndi/ramzi
+	name = "rusted-red hardsuit"
+	desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in EVA mode. Manufactured by Gorlex Marauders."
+	alt_desc = "A beat-up standardized dual-mode hardsuit derived from more advanced special operations hardsuits, its red rusted into a dirty brown. It is in combat mode. Manufactured by Gorlex Marauders."
+	icon_state = "hardsuit1-ramzi"
+	item_state = "hardsuit1-ramzi"
+	hardsuit_type = "ramzi"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 	lightweight = 1
 	jetpack = null
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 20,"energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	combat_slowdown = 0.5
+	jetpack = null
+
+//2nd Battlegroup Syndie suit
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
+	name = "beige-red hardsuit helmet"
+	desc = "A standardized dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by beige. It is in EVA mode. Manufactured by Second Battlegroup."
+	alt_desc = "A standardized dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by beige. It is in combat mode. Manufactured by Second Battlegroup."
+	icon_state = "hardsuit1-sbg"
+	item_state = "hardsuit1-sbg"
+	hardsuit_type = "sbg"
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/sbg
+	name = "beige-red hardsuit"
+	desc = "A standardized dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by beige. It is in EVA mode. Manufactured by Second Battlegroup."
+	alt_desc = "A standardized dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by beige. It is in combat mode. Manufactured by the Second Battlegroup."
+	icon_state = "hardsuit1-sbg"
+	item_state = "hardsuit1-sbg"
+	hardsuit_type = "sbg"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/sbg
+	lightweight = 1
+	jetpack = null
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
+	combat_slowdown = 0
+	jetpack = null
+
+
+//Hardliner Syndie suit
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
+	name = "white-red hardsuit helmet"
+	desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in EVA mode. Manufactured by Second Battlegroup."
+	alt_desc = "An advanced dual-mode helmet derived from ICW-era advanced special operations helmets, its red partly replaced by white. It is in combat mode. Manufactured by Second Battlegroup."
+	icon_state = "hardsuit1-hl"
+	item_state = "hardsuit1-hl"
+	hardsuit_type = "hl"
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
+
+/obj/item/clothing/suit/space/hardsuit/syndi/hl
+	name = "white-red hardsuit"
+	desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in EVA mode. Manufactured by Second Battlegroup."
+	alt_desc = "An advanced dual-mode hardsuit derived from ICW-era advanced special operations hardsuits, its red partly replaced by white. It is in combat mode. Manufactured by the Second Battlegroup."
+	icon_state = "hardsuit1-hl"
+	item_state = "hardsuit1-hl"
+	hardsuit_type = "hl"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/hl
+	lightweight = 1
+	jetpack = null
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 90)
+	combat_slowdown = 0
+	jetpack = null
+
 
 //Elite Syndie suit
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite
@@ -502,6 +552,64 @@
 	hardsuit_type = "owl"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/owl
 
+//Cybersun Hardsuit
+/obj/item/clothing/suit/space/hardsuit/syndi/cybersun
+	name = "neutron-star combat hardsuit"
+	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in combat mode. Produced by Cybersun Industries."
+	icon_state = "hardsuit1-cybersun"
+	hardsuit_type = "cybersun"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
+	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun
+	name = "neutron-star combat hardsuit helmet"
+	desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "Designed with fighting Nanotrasen weapons in mind, the Cybersun combat hardsuit trades ballistic and blunt protection for top grade laser protection. It is in combat mode. Produced by Cybersun Industries."
+	icon_state = "hardsuit1-cybersun"
+	hardsuit_type = "cybersun"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 100, "rad" = 60, "fire" = 60, "acid" = 60)
+
+//Cybersun Medical Techinician Hardsuit
+/obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed
+	name = "cybersun medical technician hardsuit"
+	desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in combat mode. Produced by Cybersun Industries."
+	icon_state = "hardsuit1-cyberparamed"
+	hardsuit_type = "cyberparamed"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
+	supports_variations = VOX_VARIATION
+	combat_slowdown = 0.4
+	jetpack = null
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/cybersun/paramed
+	name = "cybersun medical technician hardsuit helmet"
+	desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in EVA mode. Produced by Cybersun Industries."
+	alt_desc = "A stripped down version of the neutron-star hardsuit for use by medical technicians. It is in combat mode. Produced by Cybersun Industries"
+	icon_state = "hardsuit1-cyberparamed"
+	hardsuit_type = "cyberparamed"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 40, "bomb" = 10, "bio" = 100, "rad" = 65, "fire" = 75, "acid" = 40)
+
+//Pointman Hardsuit
+/obj/item/clothing/suit/space/hardsuit/syndi/inteq
+	name = "pointman hardsuit"
+	desc = "One of Inteq's strudiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
+	alt_desc = "One of Inteq's strudiest and finest combat armors. It is in combat mode. Retrofitted by the IRMG."
+	icon_state = "hardsuit1-pointman"
+	hardsuit_type = "pointman"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
+	supports_variations = VOX_VARIATION
+
+
+/obj/item/clothing/head/helmet/space/hardsuit/syndi/inteq
+	name = "pointman hardsuit helmet"
+	desc = "One of Inteq's strudiest and finest combat armors. It is in EVA mode. Retrofitted by the IRMG."
+	alt_desc = "One of Inteq's strudiest and finest combat armors. It is in combat mode. Retrofitted by the IRMG."
+	icon_state = "hardsuit1-pointman"
+	hardsuit_type = "pointman"
+	full_retraction = TRUE
 
 	//Wizard hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/wizard
@@ -579,7 +687,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/rd/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, .proc/sense_explosion)
+	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(sense_explosion))
 
 /obj/item/clothing/head/helmet/space/hardsuit/rd/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -762,7 +870,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_mob_move)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	listeningTo = user
 
 /obj/item/clothing/suit/space/hardsuit/ancient/dropped()

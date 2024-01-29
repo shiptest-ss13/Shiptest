@@ -1,0 +1,815 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"aF" = (
+/obj/effect/turf_decal/techfloor,
+/obj/structure/closet/crate,
+/obj/item/clothing/suit/space/nasavoid/old,
+/obj/item/clothing/head/helmet/space/nasavoid/old,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/mask/gas,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"bD" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"bY" = (
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"ci" = (
+/obj/machinery/door/window/brigdoor/southright{
+	dir = 4
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"cA" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"dJ" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/storage)
+"eo" = (
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"fh" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "gut_holo";
+	dir = 1
+	},
+/obj/machinery/button/shieldwallgen{
+	dir = 1;
+	id = "gut_holo";
+	pixel_x = 8;
+	pixel_y = -21
+	},
+/obj/machinery/button/door{
+	id = "gut_cargo";
+	name = "Cargo Door Control";
+	pixel_y = -22;
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "gut_cargo";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"gz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"gH" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"hl" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "gut_engines";
+	name = "Thruster Blast Door"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/storage)
+"hu" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack,
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/carbine,
+/obj/structure/closet/crate/secure/weapon,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"ii" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
+"ju" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"li" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/wrapping,
+/obj/structure/cable{
+	icon_state = "6-8"
+	},
+/obj/machinery/power/terminal,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/item/storage/toolbox/syndicate{
+	pixel_y = 5;
+	pixel_x = 11
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"mj" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"nj" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/secure/gear,
+/obj/item/gun/ballistic/automatic/smg/aks74u{
+	pixel_y = -6
+	},
+/obj/item/gun/ballistic/automatic/zip_pistol,
+/obj/item/gun/ballistic/automatic/zip_pistol,
+/obj/item/gun/ballistic/automatic/zip_pistol,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"nA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"ov" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "gut_holo"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "gut_cargo";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"oX" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#808080"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"qh" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"qu" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/storage)
+"qE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"qI" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/machinery/power/terminal,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/stack/cable_coil/red{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"rn" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"rv" = (
+/turf/template_noop,
+/area/template_noop)
+"sj" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 9
+	},
+/obj/machinery/computer/helm,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"sk" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ship/storage)
+"sP" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-5"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"tj" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#808080"
+	},
+/obj/effect/decal/cleanable/vomit/old{
+	pixel_y = 6
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"ue" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/machinery/computer/crew,
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = -10
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"uh" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"uA" = (
+/obj/machinery/power/port_gen/pacman/super,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/button/door{
+	id = "gut_engines";
+	name = "Engine Shutters";
+	pixel_y = -22;
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"vg" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/grenade/chem_grenade/metalfoam{
+	pixel_x = 2
+	},
+/obj/item/grenade/chem_grenade/metalfoam{
+	pixel_x = 6
+	},
+/obj/item/grenade/empgrenade{
+	pixel_x = -4
+	},
+/obj/item/grenade/frag,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"vJ" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/storage)
+"xU" = (
+/obj/machinery/power/smes{
+	charge = 5e+006
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"yz" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "gut_cargo";
+	name = "Blast Shutters";
+	dir = 4
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"Bl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"Dr" = (
+/turf/open/floor/plasteel/stairs{
+	icon = 'icons/obj/stairs.dmi';
+	dir = 1
+	},
+/area/ship/storage)
+"Ds" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "gut_launchdoor"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/storage)
+"Dz" = (
+/obj/structure/cable/yellow{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"EP" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"GH" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/button/massdriver{
+	id = "gut_launchdoor";
+	name = "Cannon Button";
+	pixel_x = 21;
+	pixel_y = 8;
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"GQ" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
+"HT" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "gut_launchdoor"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/storage)
+"Ih" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"IE" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"JX" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/oil{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"Ls" = (
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"MF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"MG" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/storage)
+"Ny" = (
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/storage)
+"QL" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"Rx" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#808080"
+	},
+/obj/machinery/light/directional/east,
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"RY" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
+"SO" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"Tq" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"Uc" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/plastic,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/terminal,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"Ui" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8;
+	color = "#808080"
+	},
+/obj/effect/landmark/ert_shuttle_spawn,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"UA" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/industrial/loading{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"UB" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"Xf" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/storage)
+"Xr" = (
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"XD" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor{
+	id = "gut_engines";
+	name = "Thruster Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"Yn" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ship/storage)
+"ZR" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "tactical chair"
+	},
+/obj/effect/landmark/ert_shuttle_brief_spawn,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+
+(1,1,1) = {"
+vJ
+ov
+yz
+fh
+Xf
+rv
+rv
+RY
+MG
+MG
+MG
+Xf
+Xf
+ii
+rv
+"}
+(2,1,1) = {"
+Xf
+Tq
+gz
+aF
+Xf
+Xf
+Xf
+Xf
+sj
+ZR
+Dr
+SO
+xU
+Xf
+Xf
+"}
+(3,1,1) = {"
+Xf
+EP
+nA
+UA
+Ls
+nj
+hu
+Xf
+ue
+uh
+Dr
+Dz
+li
+ju
+hl
+"}
+(4,1,1) = {"
+Xf
+rn
+MF
+gH
+mj
+IE
+cA
+Yn
+Xr
+eo
+bY
+sP
+qI
+JX
+XD
+"}
+(5,1,1) = {"
+Xf
+vg
+qh
+ci
+GH
+ab
+bD
+sk
+UB
+Ih
+qE
+Bl
+Uc
+QL
+XD
+"}
+(6,1,1) = {"
+Ds
+qu
+Ny
+HT
+Xf
+Xf
+Xf
+Xf
+tj
+oX
+Ui
+Rx
+uA
+Xf
+Xf
+"}
+(7,1,1) = {"
+dJ
+Xf
+Xf
+Xf
+Xf
+rv
+rv
+GQ
+Xf
+Xf
+Xf
+Xf
+Xf
+ii
+rv
+"}

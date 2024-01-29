@@ -100,9 +100,9 @@
 	var/outfit_type = outfit_options[selected]
 	if(!outfit_type)
 		return FALSE
-	var/datum/outfit/job/O = new outfit_type()
-	var/list/outfit_types = O.get_chameleon_disguise_info()
-	var/datum/job/job_datum = GLOB.type_occupations[O.jobtype]
+	var/datum/outfit/job/outfit = new outfit_type()
+	var/list/outfit_types = outfit.get_chameleon_disguise_info()
+	var/datum/job/job_datum = GLOB.type_occupations[outfit.jobtype]
 
 	for(var/V in user.chameleon_item_actions)
 		var/datum/action/item_action/chameleon/change/A = V
@@ -119,22 +119,40 @@
 				break
 
 	//hardsuit helmets/suit hoods
-	if(O.toggle_helmet && (ispath(O.suit, /obj/item/clothing/suit/space/hardsuit) || ispath(O.suit, /obj/item/clothing/suit/hooded)) && ishuman(user))
+	if(outfit.toggle_helmet && (ispath(outfit.suit, /obj/item/clothing/suit/space/hardsuit) || ispath(outfit.suit, /obj/item/clothing/suit/hooded)) && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		//make sure they are actually wearing the suit, not just holding it, and that they have a chameleon hat
 		if(istype(H.wear_suit, /obj/item/clothing/suit/chameleon) && istype(H.head, /obj/item/clothing/head/chameleon))
 			var/helmet_type
-			if(ispath(O.suit, /obj/item/clothing/suit/space/hardsuit))
-				var/obj/item/clothing/suit/space/hardsuit/hardsuit = O.suit
+			if(ispath(outfit.suit, /obj/item/clothing/suit/space/hardsuit))
+				var/obj/item/clothing/suit/space/hardsuit/hardsuit = outfit.suit
 				helmet_type = initial(hardsuit.helmettype)
 			else
-				var/obj/item/clothing/suit/hooded/hooded = O.suit
+				var/obj/item/clothing/suit/hooded/hooded = outfit.suit
 				helmet_type = initial(hooded.hoodtype)
 
 			if(helmet_type)
 				var/obj/item/clothing/head/chameleon/hat = H.head
 				hat.chameleon_action.update_look(user, helmet_type)
-	qdel(O)
+
+	// ID card sechud
+	if(outfit.job_icon)
+		if(!ishuman(user))
+			return
+		var/mob/living/carbon/human/H = user
+		var/obj/item/card/id/card = H.wear_id
+		var/datum/job/J = GLOB.type_occupations[outfit.jobtype] // i really hope your outfit/job has a jobtype
+		if(!card)
+			return
+		var/old_assignment = card.assignment
+		card.job_icon = outfit.job_icon
+		card.faction_icon = outfit.faction_icon
+		card.assignment = J.name
+		card.update_label()
+		card.name = "[!card.registered_name ? initial(card.name) : "[card.registered_name]'s ID Card"][" ([old_assignment])"]" // this is terrible, but whatever
+		H.sec_hud_set_ID()
+
+	qdel(outfit)
 	return TRUE
 
 
@@ -322,8 +340,10 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/suit/chameleon
-	name = "armor"
-	desc = "A slim armored vest that protects against most types of damage."
+	name = "armor vest"
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage."
+	icon = 'icons/obj/clothing/suits/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
 	icon_state = "armor"
 	item_state = "armor"
 	blood_overlay_type = "armor"
@@ -351,9 +371,9 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/glasses/chameleon
-	name = "Optical Meson Scanner"
+	name = "optical meson scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting condition."
-	icon_state = "meson"
+	icon_state = "mesongoggles"
 	item_state = "meson"
 	resistance_flags = NONE
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -488,7 +508,6 @@
 /obj/item/clothing/mask/chameleon/attack_self(mob/user)
 	voice_change = !voice_change
 	to_chat(user, "<span class='notice'>The voice changer is now [voice_change ? "on" : "off"]!</span>")
-
 
 /obj/item/clothing/mask/chameleon/drone
 	//Same as the drone chameleon hat, undroppable and no protection
