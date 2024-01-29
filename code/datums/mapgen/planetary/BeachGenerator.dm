@@ -119,7 +119,7 @@
 
 		/mob/living/simple_animal/butterfly = 4,
 		/mob/living/simple_animal/hostile/retaliate/poison/snake = 5,
-		/mob/living/simple_animal/hostile/poison/bees/toxin = 3,
+		/mob/living/simple_animal/hostile/poison/bees = 3,
 	)
 	mob_spawn_chance = 2
 	feature_spawn_chance = 0.1
