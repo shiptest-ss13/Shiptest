@@ -117,3 +117,43 @@
   - spellcheck: Assualt is gone.
   - code_imp: Repaths/renames most ballistic ammo pathing to maintain consistency
       or take advantage of inherits, when possible.
+2023-09-20:
+  RKz, Jacquerel:
+  - rscadd: New foodtype, GORE. Split from GROSS, GORE foodtype will be replacing
+      it where the food in particular resembles a corpse or organ. GROSS should only
+      apply to inedible or rotting foods. (baseball burgers)
+  - balance: All butchered player species are considered to be gore, only preferred
+      by Lizards, Arachnids, Kepori, Slimepeople and Flies. If you like the taste
+      of your fellow(or rival) crew, prepare accordingly.
+  - balance: Moved food preferences around to make more sense with the current system.
+      Nothing drastic, but species liked foods should be much more immersive in general.
+  Skrem7:
+  - rscadd: Adds the double eyepatch, a blindfold made by adding a normal eyepatch
+      to another
+  - tweak: Eyepatches can now swap sides with ALT+CLICK
+  - balance: Cybernetic organs can no longer require replacement due to EMPs (they
+      do not suffer permanent damage)
+  spockye:
+  - bugfix: temp fixed the jukebox(with subtypes) so they appear in the mapmaker
+2023-09-23:
+  Apogee-dev:
+  - tweak: Removed RnD from the Colossus and updated its looks
+2023-09-25:
+  retlaw34, Ebin-Halcyon, triplezeta:
+  - rscadd: IRMG Pointman hardsuit, admin only at the moment
+  - rscadd: Resprites and reworks the Cybersun hardsuit a little
+  - rscadd: Cybersun Medical technician hardsuit
+  - rscdel: Old cybersun hardsuit, It was unused anyways
+  - tweak: Extremely minor Blood red hardsuit sprite tweaks
+2023-09-26:
+  MarkSuckerberg:
+  - tweak: Firebots now extinguish turf fires.
+2023-09-27:
+  Zevotech:
+  - rscadd: Remaps the Skipper Heavy Cruiser
+  - rscadd: Adds an Atmos Tech, Cargo Tech and Cook job slot to the skipper
+  - rscdel: Removes two engineer slots from the skipper.
+2023-09-28:
+  PositiveEntropy:
+  - rscadd: New SolGov outfits now exist, including a winter coat!
+  - rscadd: The Logistics Deck Officer is now a possible job for SolGov ships!

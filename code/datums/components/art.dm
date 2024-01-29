@@ -4,13 +4,13 @@
 /datum/component/art/Initialize(impress)
 	impressiveness = impress
 	if(isobj(parent))
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_obj_examine)
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_obj_examine))
 	else
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/on_other_examine)
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(on_other_examine))
 	if(isstructure(parent))
-		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/on_attack_hand)
+		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/apply_moodlet)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(apply_moodlet))
 
 /datum/component/art/proc/apply_moodlet(mob/M, impress)
 	SIGNAL_HANDLER
@@ -43,7 +43,7 @@
 
 /datum/component/art/proc/on_attack_hand(datum/source, mob/M)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/examine, source, M)
+	INVOKE_ASYNC(src, PROC_REF(examine), source, M)
 
 /datum/component/art/proc/examine(datum/source, mob/M)
 
@@ -51,3 +51,17 @@
 	if(!do_after(M, 20, target = parent))
 		return
 	on_obj_examine(source, M)
+
+/datum/component/art/rilena
+
+/datum/component/art/rilena/apply_moodlet(mob/living/user, impress)
+	var/msg
+	if(HAS_TRAIT(user, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)
+		msg = "You love this franchise!"
+	else
+		msg = "You don't get it. At least it's not ugly."
+	user.visible_message(
+		"<span class='notice'>[user] stops and looks intently at [parent].</span>",
+		"<span class='notice'>You stop to take in [parent]. [msg]</span>"
+	)

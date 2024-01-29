@@ -514,7 +514,7 @@
 	status = rcd_status
 	delay = rcd_delay
 	if (status == RCD_DECONSTRUCT)
-		addtimer(CALLBACK(src, /atom/.proc/update_appearance), 1.1 SECONDS)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_appearance)), 1.1 SECONDS)
 		delay -= 11
 		icon_state = "rcd_end_reverse"
 	else
@@ -540,7 +540,20 @@
 		qdel(src)
 	else
 		icon_state = "rcd_end"
-		addtimer(CALLBACK(src, .proc/end), 15)
+		addtimer(CALLBACK(src, PROC_REF(end)), 15)
 
 /obj/effect/constructing_effect/proc/end()
 	qdel(src)
+
+/obj/effect/muzzle_flash
+	icon = 'icons/obj/projectiles.dmi'
+	icon_state = "muzzle_flash"
+	layer = ABOVE_MOB_LAYER
+	plane = GAME_PLANE
+	appearance_flags = KEEP_APART|TILE_BOUND
+	var/applied = FALSE
+
+/obj/effect/muzzle_flash/Initialize(mapload, new_icon_state)
+	. = ..()
+	if(new_icon_state)
+		icon_state = new_icon_state

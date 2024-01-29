@@ -12,21 +12,21 @@
 	"tags": [
 		"Combat"
 	],
-	"map_path": "_maps/shuttles/shiptest/inteq_hound.dmm",
+	"map_path": "_maps/shuttles/inteq/inteq_hound.dmm",
 	"map_id": "inteq_hound",
 	"limit": 2,
 	"job_slots": {
 		"Vanguard": {
-			"outfit": "/datum/outfit/job/captain/inteq/naked",
+			"outfit": "/datum/outfit/job/inteq/captain",
 			"officer": true,
 			"slots": 1
 		},
 		"Enforcer": {
-			"outfit": "/datum/outfit/job/security/inteq",
+			"outfit": "/datum/outfit/job/inteq/security",
 			"slots": 3
 		},
 		"Recruit": {
-			"outfit": "/datum/outfit/job/assistant/inteq",
+			"outfit": "/datum/outfit/job/inteq/assistant",
 			"slots": 3
 		}
 	},

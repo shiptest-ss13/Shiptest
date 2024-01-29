@@ -326,7 +326,7 @@
 //bomb scanner for RD helmet
 /obj/item/clothing/head/helmet/space/plasmaman/rd/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, .proc/sense_explosion)
+	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(sense_explosion))
 
 /obj/item/clothing/head/helmet/space/plasmaman/rd/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -360,9 +360,3 @@
 	desc = "An envirosuit helmet made for the sanctioned plasmaman."
 	icon_state = "secmed_envirohelm"
 	item_state = "secmed_envirohelm"
-
-/obj/item/clothing/head/helmet/space/plasmaman/security/lieutenant //WS edit plasmaman customization
-	name = "lieutenants envirosuit helmet"
-	desc = "an envirosuit helmet made for the sentinel plasmaman."
-	icon_state = "lt_envirohelm"
-	item_state = "lt_envirohelm"

@@ -6,7 +6,7 @@
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/ruin)
 "ac" = (
-/obj/effect/mob_spawn/human/engineer/rig,
+/obj/effect/mob_spawn/human/engineer,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/overmap_encounter/planetoid/ice/explored)
 "ad" = (
@@ -203,18 +203,6 @@
 "aM" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plating/airless,
-/area/ruin)
-"aN" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/simple/general/visible,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
@@ -1211,7 +1199,7 @@
 /turf/open/floor/plating/ice/icemoon,
 /area/overmap_encounter/planetoid/ice/explored)
 "cU" = (
-/obj/effect/mob_spawn/human/engineer/rig,
+/obj/effect/mob_spawn/human/engineer,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1384,7 +1372,6 @@
 "dr" = (
 /obj/machinery/power/floodlight,
 /obj/structure/cable,
-/obj/structure/cable,
 /turf/open/floor/plating/icemoon,
 /area/overmap_encounter/planetoid/ice/explored)
 "ds" = (
@@ -1456,11 +1443,11 @@
 /area/ruin)
 "dA" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/line,
-/obj/effect/turf_decal/weather/snow/corner{
-	dir = 10
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
+	},
+/obj/effect/turf_decal/weather/snow{
+	dir = 10
 	},
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -1468,19 +1455,21 @@
 /area/ruin)
 "dB" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/line,
-/obj/effect/turf_decal/weather/snow/corner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/effect/turf_decal/weather/snow,
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin)
 "dC" = (
 /obj/effect/turf_decal/trimline/transparent/neutral/filled/line,
-/obj/effect/turf_decal/weather/snow/corner,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
+	},
+/obj/effect/turf_decal/weather/snow{
+	dir = 6
 	},
 /turf/open/floor/plasteel/dark{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -2590,7 +2579,7 @@ av
 va
 ay
 aE
-aN
+wA
 aW
 bv
 bN

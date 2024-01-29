@@ -3,6 +3,7 @@
 	desc = "standard issue ration"
 	filling_color = "#664330"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	icon = 'icons/obj/food/ration.dmi'
 	icon_state = "ration_side"
 	in_container = TRUE
@@ -33,7 +34,6 @@
 	to_chat(user, "<span class='notice'>You tear open \the [src].</span>")
 	playsound(user.loc, 'sound/effects/rip3.ogg', 50)
 	reagents.flags |= OPENCONTAINER
-	spillable = TRUE
 	desc += "\nIt's been opened."
 	update_overlays()
 
@@ -52,15 +52,26 @@
 /obj/item/reagent_containers/food/snacks/ration/microwave_act(obj/machinery/microwave/Heater)
 	if (cookable == FALSE)
 		..()
+	else if (cooked == TRUE)
+		..()
 	else
 		name = "warm [initial(name)]"
-		bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+		var/cooking_efficiency = 1
+		if(istype(Heater))
+			cooking_efficiency = Heater.efficiency
+		if(length(bonus_reagents))
+			for(var/r_id in bonus_reagents)
+				var/amount = bonus_reagents[r_id] * cooking_efficiency
+				if(ispath(r_id, /datum/reagent/consumable/nutriment))
+					reagents.add_reagent(r_id, amount, tastes)
+				else
+					reagents.add_reagent(r_id, amount)
 		cooked = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/examine(mob/user)
 	. = ..()
 	if(cookable && !cooked)
-		. += "It can be cooked in a microwave or warmed using a flameless ration heater.\n"
+		. += "<span class='notice'>It can be cooked in a microwave or warmed using a flameless ration heater.</span>"
 
 /obj/item/reagent_containers/food/snacks/ration/entree
 	icon_state = "ration_main"
@@ -78,6 +89,71 @@
 /obj/item/reagent_containers/food/snacks/ration/bar
 	icon_state = "ration_bar"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/sugar = 2)
+
+/obj/item/reagent_containers/food/snacks/ration/condiment
+	name = "condiment pack"
+	desc = "Just your average condiment pacl."
+	icon_state = "ration_condi"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list()
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/attack(mob/living/M, mob/user, def_zone)
+	if (!is_drainable())
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
+		return 0
+	else
+		to_chat(user, "<span class='warning'>[src] cant be eaten like that!</span>")
+		return 0
+
+/obj/item/reagent_containers/food/snacks/ration/condiment/afterattack(obj/target, mob/user , proximity)
+	. = ..()
+	if(!is_drainable())
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
+		return
+	if(!proximity)
+		return
+	//You can tear the bag open above food to put the condiments on it, obviously.
+	if(istype(target, /obj/item/reagent_containers/food/snacks))
+		if(target.reagents.total_volume >= target.reagents.maximum_volume)
+			to_chat(user, "<span class='warning'>[target] is too full!</span>" )
+			return
+		else
+			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
+			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
+			qdel(src)
+
+/obj/item/reagent_containers/food/snacks/ration/pack
+	name = "powder pack"
+	desc = "Mix into a bottle of water and shake."
+	icon_state = "ration_condi"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list()
+
+/obj/item/reagent_containers/food/snacks/ration/pack/attack(mob/living/M, mob/user, def_zone)
+	if (!is_drainable())
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
+		return 0
+	else
+		to_chat(user, "<span class='warning'>[src] cant be eaten like that!</span>")
+		return 0
+
+/obj/item/reagent_containers/food/snacks/ration/pack/afterattack(obj/target, mob/user , proximity)
+	. = ..()
+	if(!is_drainable())
+		to_chat(user, "<span class='warning'>[src] is sealed shut!</span>")
+		return
+	if(!proximity)
+		return
+	if(istype(target, /obj/item/reagent_containers))
+		if(target.reagents.total_volume >= target.reagents.maximum_volume)
+			to_chat(user, "<span class='warning'>[target] is too full!</span>" )
+			return
+		else
+			to_chat(user, "<span class='notice'>You pour the [src] into [target] and shake.</span>")
+			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
+			qdel(src)
 
 /obj/item/reagent_containers/food/snacks/ration/entree/vegan_chili
 	name = "vegan chili with beans"
@@ -168,7 +244,7 @@
 	desc = "A mix of various salted offal, providing a unique and flavorful snack for those with adventurous tastes."
 	filling_color = "#cc3300"
 	tastes = list("assorted offal" = 1)
-	foodtype = MEAT
+	foodtype = MEAT | GORE //its literally entrails
 
 /obj/item/reagent_containers/food/snacks/ration/entree/maple_pork_sausage_patty
 	name = "maple pork sausage patty"
@@ -218,6 +294,7 @@
 	filling_color = "#ffcc00"
 	tastes = list("cheese" = 1, "pizza" = 1)
 	foodtype = GRAIN | DAIRY
+
 /obj/item/reagent_containers/food/snacks/ration/side/vegan_crackers
 	name = "vegetable 'crackers'"
 	desc = "Delicious vegetable-based crackers that are the perfect crunchy and nutritious snack."
@@ -277,6 +354,7 @@
 	filling_color = "#e6e600"
 	tastes = list("garlic" = 1, "potatoes" = 1)
 	foodtype = GRAIN | VEGETABLES
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/soup_crackers
 	name = "soup crackers"
@@ -291,6 +369,7 @@
 	filling_color = "#b82121"
 	tastes = list("mushrooms" = 1, "chili" = 1)
 	foodtype = VEGETABLES | MEAT
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/white_sandwich_bread
 	name = "white sandwich bread"
@@ -319,13 +398,15 @@
 	filling_color = "#99cc00"
 	tastes = list("asparagus" = 1, "butter" = 1)
 	foodtype = VEGETABLES
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/broth_tuna_rice
-	name = "broth with tuna and rice"
+	name = "bone broth with tuna and rice"
 	desc = "A warm and comforting broth with tender tuna and rice, offering a nourishing and satisfying meal."
 	filling_color = "#669999"
 	tastes = list("broth" = 1, "tuna" = 1, "rice" = 1)
 	foodtype = MEAT | GRAIN
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/trail_crackers
 	name = "trail crackers"
@@ -335,11 +416,12 @@
 	foodtype = GRAIN | FRUIT
 
 /obj/item/reagent_containers/food/snacks/ration/side/hash_brown_bacon
-	name = "hash brown with bacon"
+	name = "hash brown potatoes with bacon, peppers and onions"
 	desc = "Crispy hash brown paired with savory bacon, creating a satisfying and indulgent snack option."
 	filling_color = "#ffcc00"
 	tastes = list("hash brown" = 1, "bacon" = 1)
 	foodtype = GRAIN | MEAT
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/granola_milk_blueberries
 	name = "granola with milk and blueberries"
@@ -361,6 +443,7 @@
 	filling_color = "#ffcc00"
 	tastes = list("au gratin potatoes" = 1)
 	foodtype = GRAIN | DAIRY | VEGETABLES
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/side/applesauce_carb_enhanced
 	name = "carb-enhanced applesauce"
@@ -410,6 +493,7 @@
 	filling_color = "#663300"
 	tastes = list("crackers" = 1)
 	foodtype = GRAIN
+
 /obj/item/reagent_containers/food/snacks/ration/side/barbecue_fried_pork_rinds
 	name = "barbecue fried pork rinds"
 	desc = "Crispy and flavorful fried pork rinds coated in a savory barbecue seasoning, creating a satisfying snack option."
@@ -451,6 +535,7 @@
 	filling_color = "#e2a054"
 	tastes = list("chocolate" = 1, "pastry" = 1, "sweet" = 1)
 	foodtype = SUGAR | GRAIN | JUNKFOOD | BREAKFAST
+	cookable = TRUE
 
 /obj/item/reagent_containers/food/snacks/ration/snack/dried_raisins
 	name = "dried raisins"
@@ -655,33 +740,6 @@
 	tastes = list("chocolate" = 1)
 	foodtype = SUGAR
 
-/obj/item/reagent_containers/food/snacks/ration/condiment
-	name = "condiment bottle"
-	desc = "Just your average condiment bottle."
-	icon_state = "ration_condi"
-	volume = 10
-	amount_per_transfer_from_this = 10
-	possible_transfer_amounts = list()
-
-/obj/item/reagent_containers/food/snacks/ration/condiment/afterattack(obj/target, mob/user , proximity)
-	. = ..()
-	if(!is_drainable())
-		to_chat(user, "<span class='warning'>The [src] is sealed shut!</span>")
-		return
-	if(!proximity)
-		return
-
-	//You can tear the bag open above food to put the condiments on it, obviously.
-	if(istype(target, /obj/item/reagent_containers/food/snacks))
-		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, "<span class='warning'>You tear open [src], but [target] is stacked so high that it just drips off!</span>" )
-			qdel(src)
-			return
-		else
-			to_chat(user, "<span class='notice'>You tear open [src] above [target] and the condiments drip onto it.</span>")
-			src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
-			qdel(src)
-
 /obj/item/reagent_containers/food/snacks/ration/condiment/cheese_spread
 	name = "cheese spread pack"
 	list_reagents = list(/datum/reagent/consumable/cheese_spread = 8)
@@ -710,58 +768,58 @@
 	name = "maple syrup pack"
 	list_reagents = list(/datum/reagent/consumable/sugar = 10)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/chocolate_protein_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/chocolate_protein_beverage
 	name = "chocolate hazelnut protein drink powder pack"
 	list_reagents = list(/datum/reagent/consumable/coco = 5, /datum/reagent/consumable/eggyolk = 5)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/fruit_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/fruit_beverage
 	name = "fruit punch beverage powder, carb-electrolyte pack"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/applejuice = 2, /datum/reagent/consumable/orangejuice = 2)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/fruit_smoothie_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/fruit_smoothie_beverage
 	name = "tropical blend fruit and vegetable smoothie powder pack"
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/orangejuice = 3, /datum/reagent/consumable/eggyolk = 3)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/grape_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage
 	name = "grape beverage powder, carb-fortified pack"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/grapejuice = 5)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/grape_beverage_sugar_free
+/obj/item/reagent_containers/food/snacks/ration/pack/grape_beverage_sugar_free
 	name = "sugar-free grape beverage base powder"
 	list_reagents = list(/datum/reagent/consumable/grapejuice = 10)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/lemonade_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/lemonade_beverage
 	name = "lemonade drink powder pack"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/lemonjuice = 5)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/lemonade_beverage_suger_free
+/obj/item/reagent_containers/food/snacks/ration/pack/lemonade_beverage_suger_free
 	name = "lemonade sugar-free beverage base pack"
 	list_reagents = list(/datum/reagent/consumable/lemonjuice = 10)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage
 	name = "orange beverage powder, carb-fortified pack"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/orangejuice = 5)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/orange_beverage_sugar_free
+/obj/item/reagent_containers/food/snacks/ration/pack/orange_beverage_sugar_free
 	name = "orange beverage base, sugar-free pack"
 	list_reagents = list(/datum/reagent/consumable/orangejuice = 10)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/cherry_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/cherry_beverage
 	name = "cherry high-energy beverage powder pack"
 	list_reagents = list(/datum/reagent/consumable/sugar = 5, /datum/reagent/consumable/cherryjelly = 5)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/pineapple_beverage
+/obj/item/reagent_containers/food/snacks/ration/pack/pineapple_beverage
 	name = "pinapple fruit beverage base pack"
 	list_reagents = list(/datum/reagent/consumable/pineapplejuice = 10)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_orange
+/obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_orange
 	name = "freeze-dried coffee flavored with orange pack"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/orangejuice = 3)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_chocolate
+/obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_chocolate
 	name = "freeze-dried coffee flavored with chocolate pack"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)
 
-/obj/item/reagent_containers/food/snacks/ration/condiment/freeze_dried_coffee_hazelnut
+/obj/item/reagent_containers/food/snacks/ration/pack/freeze_dried_coffee_hazelnut
 	name = "freeze-dried coffee flavored with hazelnut pack"
 	list_reagents = list(/datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/coco = 3)

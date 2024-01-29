@@ -1,4 +1,4 @@
-// Hey! Listen! Update \config\iceruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/icemoon
 	prefix = "_maps/RandomRuins/IceRuins/"
@@ -77,3 +77,9 @@
 	id = "slimelab"
 	description = "An underground research facility devoted to researching the uncommon slime lifeform"
 	suffix = "icemoon_underground_slimelab.dmm"
+
+/datum/map_template/ruin/icemoon/crashed_holemaker
+	name = "Crashed Holemaker"
+	id = "crashed_holemaker"
+	description = "Safety records for early Nanotrasen Spaceworks vessels were, and always have been, top of their class. Absolutely no multi-billion credit projects have been painstakingly erased from history. (Citation Needed)"
+	suffix = "icemoon_crashed_holemaker.dmm"

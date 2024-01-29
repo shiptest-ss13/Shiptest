@@ -134,8 +134,11 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 #define EMBED_POINTY_SUPERIOR list("embed_chance" = 100, "ignore_throwspeed_threshold" = TRUE)
 
 //Gun weapon weight
+/// Allows you to dual wield this gun and your offhand gun
 #define WEAPON_LIGHT 1
+/// Does not allow you to dual wield with this gun and your offhand gun
 #define WEAPON_MEDIUM 2
+/// You must wield the gun to fire this gun
 #define WEAPON_HEAVY 3
 //Gun trigger guards
 #define TRIGGER_GUARD_ALLOW_ALL -1

@@ -197,9 +197,8 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/bundles_TC/firestarter
 	name = "Spetsnaz Pyro bundle"
-	desc = "For systematic suppression of carbon lifeforms in close quarters: Contains a lethal New Russian backpack spray, Elite hardsuit, \
-			Stechkin APS pistol, two magazines, a minibomb and a stimulant syringe. \
-			Order NOW and comrade Boris will throw in an extra tracksuit."
+	desc = "For systematic suppression of carbon lifeforms in close quarters: Contains a lethal backpack spray, Elite hardsuit, \
+			Stechkin APS pistol, two magazines, a minibomb and a stimulant syringe."
 	item = /obj/item/storage/backpack/duffelbag/syndie/firestarter
 	cost = 30
 	include_modes = list(/datum/game_mode/nuclear)

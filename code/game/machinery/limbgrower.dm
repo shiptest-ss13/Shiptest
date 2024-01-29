@@ -196,7 +196,7 @@
 			flick("limbgrower_fill",src)
 			icon_state = "limbgrower_idleon"
 			selected_category = params["active_tab"]
-			addtimer(CALLBACK(src, .proc/build_item, consumed_reagents_list), production_speed * production_coefficient)
+			addtimer(CALLBACK(src, PROC_REF(build_item), consumed_reagents_list), production_speed * production_coefficient)
 			. = TRUE
 
 	return
@@ -251,16 +251,16 @@
 
 ///Returns a valid limb typepath based on the selected option
 /obj/machinery/limbgrower/proc/create_buildpath()
-	var/part_type = being_built.id //their ids match bodypart typepaths
 	var/species = selected_category
 	var/path
 	if(species == SPECIES_HUMAN) //Humans use the parent type.
-		path = "/obj/item/bodypart/[part_type]"
+		path = being_built.build_path
+		return path
 	else if(istype(being_built,/datum/design/digitigrade))
 		path = being_built.build_path
 		return path
 	else
-		path = "/obj/item/bodypart/[part_type]/[species]"
+		path = "[being_built.build_path]/[species]"
 	return text2path(path)
 
 /obj/machinery/limbgrower/RefreshParts()

@@ -14,7 +14,7 @@
 	damage_overlay_type = ""
 	var/datum/action/innate/regenerate_limbs/regenerate_limbs
 	var/datum/action/innate/humanoid_customization/humanoid_customization
-	liked_food = MEAT
+	liked_food = MEAT | GORE // Spliced with humans, they still never lost their carnivorous drive
 	disliked_food = NONE
 	toxic_food = NONE
 	coldmod = 6   // = 3x cold damage
@@ -750,8 +750,8 @@
 	var/datum/action/innate/linked_speech/action = new(src)
 	linked_actions.Add(action)
 	action.Grant(M)
-	RegisterSignal(M, COMSIG_MOB_DEATH , .proc/unlink_mob)
-	RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/unlink_mob)
+	RegisterSignal(M, COMSIG_MOB_DEATH , PROC_REF(unlink_mob))
+	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(unlink_mob))
 	return TRUE
 
 /datum/species/jelly/stargazer/proc/unlink_mob(mob/living/M)

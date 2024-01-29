@@ -291,6 +291,12 @@
 	if(auth_check)
 		return
 
+	if(!client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
+		var/name = client.prefs.real_name
+		if(GLOB.real_names_joined.Find(name)) // is there someone who spawned with the same name
+			to_chat(usr, "<span class='warning'>Someone has spawned with this name already.")
+			return FALSE
+
 	var/error = IsJobUnavailable(job, ship, check_playtime)
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, job))
@@ -398,6 +404,7 @@
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/H = new(loc)
+	GLOB.joined_player_list += ckey
 
 	var/frn = CONFIG_GET(flag/force_random_names)
 	var/admin_anon_names = SSticker.anonymousnames
@@ -418,6 +425,7 @@
 		is_antag = TRUE
 
 	client.prefs.copy_to(H, antagonist = is_antag)
+	update_names_joined_list(H.real_name)
 	H.dna.update_dna_identity()
 	if(mind)
 		if(transfer_after)

@@ -48,7 +48,7 @@
 	icon_state = "Sleep"
 
 /datum/preset_holoimage/montagne
-	outfit_type = /datum/outfit/job/hos/roumain
+	outfit_type = /datum/outfit/job/roumain/captain
 
 /obj/item/disk/holodisk/roumain
 	name = "Grand Ideology Sermon"
@@ -90,10 +90,6 @@
 		/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf = 3,
 	)
 	generate_items_inside(items_inside, src)
-
-/obj/structure/flora/tree/chapel/srm
-	name = "Montagne's Oak"
-	desc = "A sturdy oak tree imported directly from the homeworld of the Montagne who runs the ship it resides on. It is planted in soil from the same place."
 
 /obj/item/book/manual/srmlore
 	name = "Notes on the SRM"

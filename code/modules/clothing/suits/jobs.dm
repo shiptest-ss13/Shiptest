@@ -22,16 +22,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS
 	permeability_coefficient = 0.5
 
-//Captain
-/obj/item/clothing/suit/captunic
-	name = "captain's parade tunic"
-	desc = "Worn by a Captain to show their class."
-	icon_state = "captunic"
-	item_state = "bio_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	flags_inv = HIDEJUMPSUIT
-	allowed = list(/obj/item/disk, /obj/item/stamp, /obj/item/reagent_containers/food/drinks/flask, /obj/item/melee, /obj/item/storage/lockbox/medal, /obj/item/assembly/flash/handheld, /obj/item/storage/box/matches, /obj/item/lighter, /obj/item/clothing/mask/cigarette, /obj/item/storage/fancy/cigarettes, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
-
 //Chef
 /obj/item/clothing/suit/toggle/chef
 	name = "chef's apron"
@@ -244,27 +234,6 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS
 
-//Lieutenant
-/obj/item/clothing/suit/armor/lieutenant_trenchcoat
-	name = "lieutenant's trenchcoat"
-	desc = "A design taken from a war over 500 years ago. Makes you look like a badass."
-	icon_state = "armor_blueshield_trenchcoat"
-	item_state = "trenchcoat_blueshield"
-	blood_overlay_type = "coat"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
-
-/obj/item/clothing/suit/toggle/lieutenant
-	name = "lieutenant's coat"
-	desc = "Surplus from some military. You finally have your own coat."
-	icon_state = "blueshield_coat"
-	item_state = "blueshield_coat"
-	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-
 //SolGov suits
 
 /obj/item/clothing/suit/solgov
@@ -294,6 +263,14 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "solgov_bureaucrat_robe"
 	item_state = "solgov_bureaucrat_robe"
+
+/obj/item/clothing/suit/solgov/overcoat
+	name = "SolGov overcoat"
+	desc = "A traditional solarian overcoat, used by cilivians and ship crews alike."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_overcoat"
+	item_state = "solgov_overcoat"
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/solgov/jacket
 	name = "SolGov jacket"

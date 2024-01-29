@@ -802,13 +802,6 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 4)
 
-/obj/item/circuitboard/machine/fat_sucker
-	name = "Lipid Extractor (Machine Board)"
-	icon_state = "medical"
-	build_path = /obj/machinery/fat_sucker
-	req_components = list(/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/kitchen/fork = 1)
-
 /obj/item/circuitboard/machine/harvester
 	name = "Harvester (Machine Board)"
 	icon_state = "medical"
@@ -1501,4 +1494,24 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
 		/obj/item/stock_parts/capacitor = 2
+	)
+
+/obj/item/circuitboard/machine/coffeemaker
+	name = "Modello 3 Coffeemaker"
+	build_path = /obj/machinery/coffeemaker
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/micro_laser = 2,
+	)
+
+/obj/item/circuitboard/machine/coffeemaker/impressa
+	name = "Impressa Coffeemaker"
+	build_path = /obj/machinery/coffeemaker/impressa
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/micro_laser = 2,
 	)

@@ -18,28 +18,28 @@
 		"Generalist"
 	],
 	"starting_funds": 4000,
-	"map_path": "_maps/shuttles/shiptest/nanotrasen_ranger.dmm",
+	"map_path": "_maps/shuttles/nanotrasen/nanotrasen_ranger.dmm",
 	"limit": 1,
 	"job_slots": {
 		"LP Lieutenant": {
-			"outfit": "/datum/outfit/job/captain/nt/lp_lieutenant",
+			"outfit": "/datum/outfit/job/nanotrasen/captain/lp",
 			"officer": true,
 			"slots": 1
 		},
 		"LP Engineering Specialist": {
-			"outfit": "/datum/outfit/job/engineer/lp",
+			"outfit": "/datum/outfit/job/nanotrasen/engineer/lp",
 			"slots": 1
 		},
 		"LP Security Specialist": {
-			"outfit": "/datum/outfit/job/security/lp",
+			"outfit": "/datum/outfit/job/nanotrasen/security/lp",
 			"slots": 1
 		},
 		"LP Medical Specialist": {
-			"outfit": "/datum/outfit/job/doctor/lp",
+			"outfit": "/datum/outfit/job/nanotrasen/doctor/lp",
 			"slots": 1
 		},
 		"Intern": {
-			"outfit": "/datum/outfit/job/assistant",
+			"outfit": "/datum/outfit/job/nanotrasen/assistant",
 			"slots": 1
 		}
 	},

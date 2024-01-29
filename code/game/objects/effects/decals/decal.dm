@@ -46,15 +46,24 @@
 	var/detail_overlay
 	var/detail_color
 
-/obj/effect/turf_decal/Initialize()
-	..()
-	return INITIALIZE_HINT_QDEL
+// This is with the intent of optimizing mapload
+// See spawners for more details since we use the same pattern
+// Basically rather then creating and deleting ourselves, why not just do the bare minimum?
+/obj/effect/turf_decal/Initialize(mapload)
+	SHOULD_CALL_PARENT(FALSE)
+	if(flags_1 & INITIALIZED_1)
+		stack_trace("Warning: [src]([type]) initialized multiple times!")
+	flags_1 |= INITIALIZED_1
 
-/obj/effect/turf_decal/ComponentInitialize()
-	. = ..()
 	var/turf/T = loc
 	if(!istype(T)) //you know this will happen somehow
 		CRASH("Turf decal initialized in an object/nullspace")
 	T.AddElement(/datum/element/decal, icon, icon_state, dir, FALSE, color, null, null, alpha, FALSE)
 	if(detail_overlay)
 		T.AddElement(/datum/element/decal, icon, detail_overlay, dir, FALSE, detail_color, null, null, alpha, appearance_flags)
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/turf_decal/Destroy(force)
+	SHOULD_CALL_PARENT(FALSE)
+	moveToNullspace()
+	return QDEL_HINT_QUEUE

@@ -145,7 +145,7 @@
 	attached_light.update_brightness()
 	to_chat(user, "<span class='notice'>You toggle the helmet light [attached_light.on ? "on":"off"].</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
+	playsound(user, attached_light.on ? attached_light.toggle_on_sound : attached_light.toggle_off_sound, 100, TRUE)
 	update_helmlight()
 
 /obj/item/clothing/head/helmet/proc/update_helmlight()
@@ -475,17 +475,9 @@
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 	strip_delay = 60
 
-/obj/item/clothing/head/helmet/rus_helmet
-	name = "russian helmet"
-	desc = "It can hold a bottle of vodka."
-	icon_state = "rus_helmet"
-	item_state = "rus_helmet"
-	armor = list("melee" = 25, "bullet" = 30, "laser" = 0, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 50)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
-
 /obj/item/clothing/head/helmet/r_trapper
 	name = "reinforced trapper hat"
-	desc = "An occasional sight on the heads of soldiers stationed on cold worlds. 200% bear."
+	desc = "An occasional sight on the heads of Frontiersmen stationed on cold worlds. 200% bear."
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
@@ -567,10 +559,16 @@
 	item_state = "solgov_envirohelm"
 
 /obj/item/clothing/head/helmet/operator
-	name = "\improper Operator helmet"
+	name = "\improper operator helmet"
 	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
 	icon_state = "operator"
 	item_state = "operator"
+
+/obj/item/clothing/head/helmet/medical
+	name = "\improper trauma team helmet"
+	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
+	icon_state = "traumahelm"
+	item_state = "traumahelm"
 
 /obj/item/clothing/head/helmet/bulletproof/m10
 	name = "\improper M10 pattern Helmet"

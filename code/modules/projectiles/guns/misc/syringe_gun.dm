@@ -38,7 +38,7 @@
 	. = ..()
 	. += "Can hold [max_syringes] syringe\s. Has [syringes.len] syringe\s remaining."
 
-/obj/item/gun/syringe/attack_self(mob/living/user)
+/obj/item/gun/syringe/unique_action(mob/living/user)
 	if(!syringes.len)
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return 0

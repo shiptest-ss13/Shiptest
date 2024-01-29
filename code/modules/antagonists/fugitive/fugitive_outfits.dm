@@ -84,12 +84,12 @@
 	W.registered_name = H.real_name
 	W.update_label()
 
-/datum/outfit/russiancorpse/hunter
+/datum/outfit/frontier/hunter
 	name = "Frontiersman Corpse (Hunter)"
 	ears = /obj/item/radio/headset
 	r_hand = /obj/item/gun/ballistic/rifle/boltaction
 
-/datum/outfit/russiancorpse/hunter/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/frontier/hunter/pre_equip(mob/living/carbon/human/H)
 	if(prob(50))
 		head = /obj/item/clothing/head/trapper
 
@@ -152,7 +152,3 @@
 	ears = /obj/item/radio/headset
 	id = /obj/item/card/id
 	r_hand = /obj/item/storage/firstaid/regular
-
-	backpack_contents = list(
-		/obj/item/bountytrap = 4
-		)

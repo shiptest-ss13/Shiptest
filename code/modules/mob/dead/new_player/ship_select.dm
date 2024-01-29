@@ -71,6 +71,9 @@
 				return
 
 			var/datum/map_template/shuttle/template = SSmapping.ship_purchase_list[params["name"]]
+			if(SSovermap.ship_spawning)
+				to_chat(spawnee, "<span class='danger'>A ship is currently spawning. Try again in a little while.</span>")
+				return
 			if(!SSovermap.player_ship_spawn_allowed())
 				to_chat(spawnee, "<span class='danger'>No more ships may be spawned at this time!</span>")
 				return
@@ -104,6 +107,10 @@
 				to_chat(spawnee, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
 				spawnee.new_player_panel()
 
+/datum/ship_select/ui_data(mob/user)
+	. = list()
+	.["shipSpawning"] = SSovermap.ship_spawning
+
 /datum/ship_select/ui_static_data(mob/user)
 	// tracks the number of existing ships of each template type so that their unavailability for purchase can be communicated to the user
 	var/list/template_num_lookup = list()
@@ -112,6 +119,8 @@
 	.["ships"] = list()
 	.["shipSpawnAllowed"] = SSovermap.player_ship_spawn_allowed()
 	.["purchaseBanned"] = is_banned_from(user.ckey, "Ship Purchasing")
+	// if the player has a client which is not eligible for playtime restriction (for admin + player DB flag playtime exemption), they "auto meet" playtime requirements
+	.["autoMeet"] = user.client && !user.client.is_playtime_restriction_eligible()
 	.["playMin"] = user.client ? user.client.get_exp_living(TRUE) : 0
 
 	for(var/datum/overmap/ship/controlled/S as anything in SSovermap.controlled_ships)

@@ -11,12 +11,12 @@
 
 	///what we give to connect_loc by default, makes slippable mobs moving over us slip
 	var/static/list/default_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/Slip,
+		COMSIG_ATOM_ENTERED = PROC_REF(Slip),
 	)
 
 	///what we give to connect_loc if we're an item and get equipped by a mob. makes slippable mobs moving over our holder slip
 	var/static/list/holder_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/Slip_on_wearer,
+		COMSIG_ATOM_ENTERED = PROC_REF(Slip_on_wearer),
 	)
 
 	/// The connect_loc_behalf component for the holder_connections list.
@@ -32,10 +32,10 @@
 
 	if(ismovable(parent))
 		if(isitem(parent))
-			RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, .proc/on_equip)
-			RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/on_drop)
+			RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
+			RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
 	else
-		RegisterSignal(parent, COMSIG_ATOM_ENTERED, .proc/Slip)
+		RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(Slip))
 
 /datum/component/slippery/proc/add_connect_loc_behalf_to_parent()
 	if(ismovable(parent))
@@ -73,7 +73,7 @@
 		holder = equipper
 		qdel(GetComponent(/datum/component/connect_loc_behalf))
 		AddComponent(/datum/component/connect_loc_behalf, holder, holder_connections)
-		RegisterSignal(holder, COMSIG_PARENT_PREQDELETED, .proc/holder_deleted)
+		RegisterSignal(holder, COMSIG_PARENT_PREQDELETED, PROC_REF(holder_deleted))
 
 /datum/component/slippery/proc/holder_deleted(datum/source, datum/possible_holder)
 	SIGNAL_HANDLER

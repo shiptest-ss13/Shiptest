@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 	playsound(U, 'sound/effects/sparks1.ogg', 10, TRUE)
 
 	if (phase < NINJA_COMPLETE_PHASE)
-		addtimer(CALLBACK(src, .proc/ninitialize, delay, U, phase + 1), delay)
+		addtimer(CALLBACK(src, PROC_REF(ninitialize), delay, U, phase + 1), delay)
 
 /**
  * Deinitializes the ninja suit
@@ -110,7 +110,7 @@ GLOBAL_LIST_INIT(ninja_deinitialize_messages, list(
 	playsound(U, 'sound/items/deconstruct.ogg', 10, TRUE)
 
 	if (phase < NINJA_COMPLETE_PHASE)
-		addtimer(CALLBACK(src, .proc/deinitialize, delay, U, phase + 1), delay)
+		addtimer(CALLBACK(src, PROC_REF(deinitialize), delay, U, phase + 1), delay)
 	else
 		unlock_suit()
 		U.regenerate_icons()

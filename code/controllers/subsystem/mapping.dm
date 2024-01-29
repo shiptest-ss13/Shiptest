@@ -22,7 +22,6 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
-	var/list/holodeck_templates = list()
 	// List mapping TYPES of outpost map templates to instances of their singletons.
 	var/list/outpost_templates = list()
 
@@ -91,13 +90,11 @@ SUBSYSTEM_DEF(mapping)
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	holodeck_templates = SSmapping.holodeck_templates
 
 	outpost_templates = SSmapping.outpost_templates
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	holodeck_templates = SSmapping.holodeck_templates
 
 	areas_in_z = SSmapping.areas_in_z
 	map_zones = SSmapping.map_zones
@@ -127,23 +124,11 @@ SUBSYSTEM_DEF(mapping)
 	preloadShuttleTemplates()
 	load_ship_templates()
 	preloadShelterTemplates()
-	preloadHolodeckTemplates()
 	preloadOutpostTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	for(var/datum/planet_type/type as anything in subtypesof(/datum/planet_type))
 		planet_types[initial(type.planet)] = new type
-
-	// Still supporting bans by filename
-	// I hate this so much. I want to kill it because I don't think ANYONE uses this
-	// Couldn't you just remove it on a fork or something??? come onnnnnnnnnnnn stop EXISTING already
-	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/wasteruinblacklist.txt")
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
@@ -151,9 +136,6 @@ SUBSYSTEM_DEF(mapping)
 		if(!initial(ruin_type.id))
 			continue
 		var/datum/map_template/ruin/R = new ruin_type()
-
-		if(R.mappath in banned)
-			continue
 
 		map_templates[R.name] = R
 		ruins_templates[R.name] = R
@@ -292,16 +274,6 @@ SUBSYSTEM_DEF(mapping)
 	CHECK_TICK
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
 	CHECK_TICK
-
-/datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
-	for(var/item in subtypesof(/datum/map_template/holodeck))
-		var/datum/map_template/holodeck/holodeck_type = item
-		if(!(initial(holodeck_type.mappath)))
-			continue
-		var/datum/map_template/holodeck/holo_template = new holodeck_type()
-
-		holodeck_templates[holo_template.template_id] = holo_template
-		map_templates[holo_template.template_id] = holo_template
 
 /datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
 	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))
