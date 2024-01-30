@@ -223,7 +223,7 @@ export const FaxMainPanel = (props, context) => {
               })
             }
           >
-            Send Fax
+            Send
           </Button>
           <Button
             icon="save"
@@ -243,7 +243,7 @@ export const FaxMainPanel = (props, context) => {
               });
             }}
           >
-            Save Changes
+            Save
           </Button>
           <Button
             disabled={!saved}
