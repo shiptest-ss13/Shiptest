@@ -425,11 +425,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"im" = (
-/obj/structure/girder,
-/obj/structure/girder,
-/turf/open/floor/plating,
-/area/ship/external)
 "iw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -680,13 +675,13 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "mO" = (
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/window/plasma/reinforced/spawner,
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/toxin_output{
 	dir = 4
 	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "mQ" = (
@@ -1174,7 +1169,7 @@
 	dir = 4
 	},
 /obj/machinery/igniter/incinerator_atmos,
-/turf/open/floor/engine,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
 "vG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -1432,7 +1427,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
 	dir = 4
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
 "AV" = (
 /obj/structure/closet/radiation,
@@ -1889,11 +1884,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Ix" = (
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/window/plasma/reinforced/spawner{
+/obj/effect/turf_decal/atmos/plasma,
+/obj/structure/window/plasma/reinforced,
+/obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
-/obj/effect/turf_decal/atmos/plasma,
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
 "IJ" = (
@@ -2372,17 +2367,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
 "Ri" = (
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 8
-	},
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 8
-	},
 /obj/machinery/air_sensor/atmos/toxin_tank{
 	id_tag = "nemo_tox_sensor"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 8
 	},
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
@@ -2781,7 +2773,7 @@
 /obj/machinery/air_sensor/atmos/incinerator_tank{
 	id_tag = "nemo_incinerator_sensor"
 	},
-/turf/open/floor/engine,
+/turf/open/floor/engine/airless,
 /area/ship/engineering/atmospherics)
 "Ys" = (
 /obj/machinery/power/terminal{
@@ -2859,14 +2851,14 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "Zy" = (
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced/spawner{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4{
 	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
 	},
 /turf/open/floor/engine/plasma,
 /area/ship/engineering/atmospherics)
@@ -3355,7 +3347,7 @@ bZ
 (21,1,1) = {"
 bZ
 bZ
-im
+NB
 WK
 WK
 WK
