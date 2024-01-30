@@ -396,7 +396,7 @@
 		var/obj/item/clothing/mask/cigarette/ourcig = M.wear_mask
 		if(istype(ourcig) && istype(theircig))
 			if(ourcig.lit && !theircig.lit)
-				theircig.light(span_notice("[M] leans towards [src], lighting [p_their()] [theircig.name] with [M.p_their()] [ourcig.name]."))
+				theircig.light(span_notice("[M] leans towards [src], lighting [p_their()] [theircig.name] with [M.p_their()] own."))
 				return
 
 	if(body_position == LYING_DOWN)
