@@ -183,6 +183,12 @@
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
 
+/obj/item/clothing/head/HoS/syndicate/suns //remind me to make this something to buy
+	name = "peacekeeper cap"
+	desc = "A black cap worn by the more eccentric peacekeepers."
+	icon_state = "suns_pkcap"
+	item_state = "suns_pkcap"
+
 /obj/item/clothing/head/HoS/cybersun
 	name = "cybersun hat"
 	desc = "A crimson-red hat fit for a high ranking cybersun officer."

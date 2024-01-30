@@ -114,3 +114,19 @@
 	desc = "A hood for your RILENA themed hoodie."
 	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
+
+/obj/item/clothing/suit/hooded/hoodie/suns
+	name = "\improper SUNS labcoat"
+	desc = "An academic labcoat designed to protect the wearer from chemical and non chemical spills."
+	icon_state = "suns_labcoat"
+	item_state = "suns_labcoat"
+	hoodtype = /obj/item/clothing/head/hooded/hood/suns
+	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)
+
+/obj/item/clothing/head/hooded/hood/suns
+	name = "\improper SUNS labcoat hood"
+	desc = "A hood to protect you from chemical spills."
+	icon_state = "suns_labcoathood"
+	item_state = "suns_labcoathood"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 0, "fire" = 50, "acid" = 50)

@@ -273,3 +273,9 @@
 	item_state = "hunter"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flags_inv = HIDEFACIALHAIR|HIDEFACE|HIDEEYES|HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/mask/gas/suns //someone mentioned they were interested in using this sprite as the regular gasmask re-sprite, I forgor who so we'll deal with that when I PR this
+	name = "black gas mask"
+	desc = "A black face covering that allows the user to connect to a personal gas supply. Suprisingly not great at preventing gas inhalation."
+	icon_state = "suns_gasmask"
+	item_state = "suns_gasmask"

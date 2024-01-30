@@ -99,6 +99,13 @@
 	custom_price = 250
 	supports_variations = VOX_VARIATION
 
+/obj/item/clothing/glasses/science/suns //This needs a sprite/lense in the eye of the mask to show its science goggles
+	name = "eye mask science goggles"
+	desc = "A fancy looking mask to help against chemical spills. Fitted with an analyzer for scanning items and reagents."
+	icon_state = "suns_sciencemask"
+	item_state = "suns_sciencemask"
+	glass_colour_type = /datum/client_colour/glass_colour/purple
+
 /obj/item/clothing/glasses/science/item_action_slot_check(slot)
 	if(slot == ITEM_SLOT_EYES)
 		return 1

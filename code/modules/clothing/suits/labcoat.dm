@@ -126,3 +126,9 @@ You're pretty sure this is just a raincoat.
 	name = "roboticist's white labcoat"
 	desc = "A long labcoat with a black stripe and sleves. Perfect for creating mechanical exosuit weapons while laughing like a cartoon villian."
 	icon_state = "labcoat_robowhite_long"
+
+/obj/item/clothing/suit/toggle/labcoat/sunscmo
+	name = "medical instructor coat"
+	desc = "A labcoat often worn by the more eccentric medical instructors."
+	icon_state = "suns_cmocoat"
+	item_state = "suns_cmocoat"

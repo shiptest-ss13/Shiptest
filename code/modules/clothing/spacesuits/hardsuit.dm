@@ -1355,3 +1355,45 @@
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 40, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	desc = "The Quixote metaspacial mobility suit is the magnum opus of dimensional navigation equipment, combining durable composite armor with high mobility thrusters and defensive plating rated for all manner of exotic particles."
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/quixote/dimensional
+
+//Suns hardsuits
+/obj/item/clothing/head/helmet/space/hardsuit/security/suns
+	name = "\improper SUNS peacekeeper hardsuit helmet"
+	icon_state = "hardsuit0-suns_pk"
+	item_state = "hardsuit0-suns_pk"
+	hardsuit_type = "suns_pk"
+
+/obj/item/clothing/suit/space/hardsuit/security/suns
+	name = "\improper SUNS peacekeeper hardsuit"
+	icon_state = "suns_pkhardsuit"
+	item_state = "suns_pkhardsuit"
+	hardsuit_type = "suns_pk"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/suns
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/suns
+	name = "\improper SUNS industrial hardsuit helmet"
+	icon_state = "hardsuit0-suns_mining"
+	item_state = "hardsuit0-suns_mining"
+	hardsuit_type = "suns_mining"
+
+/obj/item/clothing/suit/space/hardsuit/mining/suns
+	name = "\improper SUNS industrial hardsuit"
+	icon_state = "suns_miningsuit"
+	item_state = "suns_miningsuit"
+	hardsuit_type = "suns_mining"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/suns
+
+/obj/item/clothing/head/helmet/space/hardsuit/solgov/suns
+	name = "\improper SUNS captain's hardsuit helmet"
+	icon_state = "hardsuit0-suns_solgov"
+	item_state = "hardsuit0-suns_solgov"
+	hardsuit_type = "suns_solgov"
+	desc = "An armored spaceproof helmet, the white glass on the side signifies a captain level rank."
+
+/obj/item/clothing/suit/space/hardsuit/solgov/suns
+	name = "\improper SUNS captain's hardsuit"
+	desc = "A well decorated space proof suit. The design was co-created by SolGov and SUNS academics."
+	icon_state = "suns_commandsuit"
+	item_state = "suns_commandsuit"
+	hardsuit_type = "suns_solgov"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov/suns

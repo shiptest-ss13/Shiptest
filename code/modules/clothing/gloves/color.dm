@@ -13,6 +13,12 @@
 	custom_price = 1200
 	custom_premium_price = 1200
 
+	/obj/item/clothing/gloves/color/yellow/suns
+	desc = "Padded academic gloves that hopefully keep students out of the nurses office."
+	name = "insulated gloves"
+	icon_state = "suns_insulated"
+	item_state = "suns_insulated"
+
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
 	desc = "What is the number one problem facing our society today?"
@@ -202,6 +208,24 @@
 	strip_delay = 60
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
+/obj/item/clothing/gloves/color/captain/suns
+	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
+	name = "\improper SUNS captain's gloves"
+	icon_state = "suns_captaingloves"
+	item_state = "suns_captaingloves"
+
+/obj/item/clothing/gloves/color/sunsxo
+	name = "academic staff gloves"
+	desc = "White gloves that offer a good grip with writing utensils."
+	icon_state = "suns_xogloves"
+	item_state = "suns_xogloves"
+
+/obj/item/clothing/gloves/fingerless/suns
+	desc = "These gloves offer style, purely and plainly."
+	name = "stitched fingerless gloves"
+	icon_state = "suns_glovesfingerless"
+	item_state = "suns_glovesfingerless"
+
 /obj/item/clothing/gloves/color/captain/nt
 	desc = "Regal blue gloves, with a nice gold trim, a diamond anti-shock coating, and an integrated thermal barrier, and armoured bracers. Swanky."
 	name = "captain's gloves"
@@ -242,6 +266,12 @@
 	desc = "Thick sterile gloves that reach up to the elbows, in exactly the same color as fresh blood. Transfers combat medic knowledge into the user via nanochips."
 	icon_state = "nitrile_evil"
 	item_state = "nitrile_evil"
+
+/obj/item/clothing/gloves/color/latex/nitrile/evil/suns
+	name = "white nitrile gloves"
+	desc = "Thick sterile white gloves that reach up to the elbows. The nanochips that transfer basic paramedic knowledge are disabled during finals week."
+	icon_state = "suns_latexgloves"
+	item_state = "suns_latexgloves"
 
 /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 	name = "infiltrator gloves"

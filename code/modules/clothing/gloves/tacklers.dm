@@ -52,6 +52,12 @@
 	min_distance = 2
 	skill_mod = -2
 
+/obj/item/clothing/gloves/tackler/dolphin/suns
+	name = "peacekeeper tackle gloves"
+	desc = "Sleek tackle gloves that allows the user to sail through the air. The main cause of accidents during finals week."
+	icon_state = "suns_longglovesblack"
+	item_state = "suns_longglovesblack"
+
 /obj/item/clothing/gloves/tackler/combat
 	name = "gorilla gloves"
 	desc = "Premium quality combative gloves, heavily reinforced to give the user an edge in close combat tackles, though they are more taxing to use than normal gripper gloves. Fireproof to boot!"

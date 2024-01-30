@@ -62,6 +62,21 @@
 	desc = "Worn by SolGov captains. It smells faintly of bureaucracy."
 	icon_state = "solgov_cap_cloak"
 
+/obj/item/clothing/neck/cloak/suns
+	name = "\improper SUNS short cloak"
+	desc = "Worn by both the young and old alike. You can almost feel the academic pride."
+	icon_state = "suns_shouldercape"
+
+/obj/item/clothing/neck/cloak/sunsxo
+	name = "\improper SUNS academic staff cloak"
+	desc = "Worn by SUNS staff, you can almost smell all of the failing grades this cloak has given."
+	icon_state = "suns_xocape"
+
+/obj/item/clothing/neck/cloak/sunscap
+	name = "\improper SUNS captain's cloak"
+	desc = "Worn by SUNS captains. This cloak has a very imposing aura to it."
+	icon_state = "suns_captaincloak"
+
 /obj/item/clothing/neck/cloak/trans
 	name = "vampire cloak"
 	desc = "Worn by high ranking vampires of the transylvanian society of vampires."
