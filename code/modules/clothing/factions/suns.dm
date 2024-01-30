@@ -466,3 +466,4 @@
 	icon = 'icons/obj/clothing/faction/suns/neck.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/neck.dmi'
 
+
