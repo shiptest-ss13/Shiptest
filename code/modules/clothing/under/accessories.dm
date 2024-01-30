@@ -521,7 +521,7 @@
 	desc = "A standard issue waistcoat in solgov colors."
 	icon_state = "solgov_waistcoat"
 
-	/obj/item/clothing/accessory/waistcoat/suns
+/obj/item/clothing/accessory/waistcoat/suns
 	name = "\improper SUNS waistcoat"
 	desc = "An academic issued run of the mill waistcoat."
 	icon_state = "suns_waistcoat"
