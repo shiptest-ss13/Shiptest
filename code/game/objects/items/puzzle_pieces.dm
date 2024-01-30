@@ -152,12 +152,8 @@
 			playsound(src, close_sound, 30, FALSE)
 
 /obj/machinery/door/keycard/gates/update_icon_state()
-	if(density)
-		icon_state = "closed"
-		return ..()
-	else
-		icon_state = "open"
-		return ..()
+	. = ..()
+	icon_state = density ? "closed" : "open"
 
 /obj/machinery/door/keycard/gates/drakelair
 	puzzle_id = "drakelairkey"
