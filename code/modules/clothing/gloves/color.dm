@@ -13,7 +13,7 @@
 	custom_price = 1200
 	custom_premium_price = 1200
 
-	/obj/item/clothing/gloves/color/yellow/suns
+/obj/item/clothing/gloves/color/yellow/suns
 	desc = "Padded academic gloves that hopefully keep students out of the nurses office."
 	name = "insulated gloves"
 	icon_state = "suns_insulated"
