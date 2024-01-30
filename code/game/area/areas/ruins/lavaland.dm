@@ -113,3 +113,4 @@
 /area/ruin/unpowered/train_station/cargo
 	name = "Train platform"
 	icon_state = "Cargo_bay"
+
