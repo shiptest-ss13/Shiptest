@@ -50,7 +50,7 @@
 
 /obj/item/clothing/glasses/hud/health/suns //I need to figure out a way to make the masks toggleable for #style points.
 	name = "eye mask health scanner HUD"
-	desc = "A peculiar looking mask commnly seen at academic functions. This one has a health hud lense in it."
+	desc = "A peculiar looking mask commonly seen at academic functions. This one has a health HUD lense in it."
 	icon_state = "suns_doctormask"
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
 
