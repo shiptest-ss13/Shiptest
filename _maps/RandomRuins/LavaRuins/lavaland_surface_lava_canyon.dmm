@@ -86,10 +86,6 @@
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 5
 	},
-/obj/item/strange_crystal{
-	pixel_y = -8;
-	pixel_x = -8
-	},
 /turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "dH" = (
@@ -181,10 +177,6 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "fp" = (
 /obj/structure/stone_tile/slab/burnt,
-/obj/item/strange_crystal{
-	pixel_x = -8;
-	pixel_y = 5
-	},
 /turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
 "ft" = (
@@ -898,7 +890,8 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "zb" = (
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner{
-	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon)
+	loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/keycard/gatedrop/lavacanyon);
+	crusher_loot = list(/obj/item/melee/transforming/cleaving_saw,/obj/item/gun/energy/kinetic_accelerator,/obj/item/crusher_trophy/miner_eye,/obj/item/keycard/gatedrop/lavacanyon)
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -995,10 +988,6 @@
 "CE" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 6
-	},
-/obj/item/strange_crystal{
-	pixel_y = 4;
-	pixel_x = 4
 	},
 /turf/open/indestructible/cult,
 /area/overmap_encounter/planetoid/cave/explored)
@@ -1772,13 +1761,6 @@
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
-"XU" = (
-/obj/item/strange_crystal{
-	pixel_x = -7;
-	pixel_y = -10
-	},
-/turf/open/indestructible/cult,
-/area/overmap_encounter/planetoid/cave/explored)
 "Ya" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1
@@ -4629,7 +4611,7 @@ QE
 Iz
 La
 Ts
-XU
+Fc
 jY
 QE
 QE
