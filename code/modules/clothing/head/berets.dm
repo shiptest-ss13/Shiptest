@@ -175,11 +175,6 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 90
 
-/obj/item/clothing/head/beret/hop/suns
-	name = "academic staff beret"
-	desc = "A soft beret sporting a discontinued inkwell quill feather. If only it could hold ink once more."
-	icon_state = "suns_xoberet"
-
 /obj/item/clothing/head/beret/hop
 	name = "head of personnel beret"
 	desc = "A lovely blue Head of Personnel's beret with a silver and white insignia. It smells faintly of paper and dogs."

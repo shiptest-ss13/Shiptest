@@ -48,12 +48,6 @@
 	hud_trait = TRAIT_MEDICAL_HUD
 	glass_colour_type = /datum/client_colour/glass_colour/lightblue
 
-/obj/item/clothing/glasses/hud/health/suns //I need to figure out a way to make the masks toggleable for #style points.
-	name = "eye mask health scanner HUD"
-	desc = "A peculiar looking mask commonly seen at academic functions. This one has a health HUD lense in it."
-	icon_state = "suns_doctormask"
-	glass_colour_type = /datum/client_colour/glass_colour/lightblue
-
 /obj/item/clothing/glasses/hud/health/night
 	name = "night vision health scanner HUD"
 	desc = "An advanced medical head-up display that allows doctors to find patients in complete darkness."
@@ -105,12 +99,6 @@
 	icon_state = "securityhud"
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	hud_trait = TRAIT_SECURITY_HUD
-	glass_colour_type = /datum/client_colour/glass_colour/red
-
-/obj/item/clothing/glasses/hud/security/suns
-	name = "eye mask security HUD"
-	desc = "A peculiar looking mask commonly seen at academic functions. This one gives a heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records."
-	icon_state = "suns_pkmask"
 	glass_colour_type = /datum/client_colour/glass_colour/red
 
 /obj/item/clothing/glasses/hud/security/chameleon

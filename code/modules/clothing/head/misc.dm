@@ -54,12 +54,6 @@
 	icon_state = "plaguedoctor"
 	permeability_coefficient = 0.01
 
-/obj/item/clothing/head/sunscmo //I was told I get one plauge doctor outfit and I'm using it
-	name = "medical instructor hat"
-	desc = "A hat worn by the more eccentric medical staff."
-	icon_state = "suns_doctorhat"
-	permeability_coefficient = 0.01
-
 /obj/item/clothing/head/hasturhood
 	name = "hastur's hood"
 	desc = "It's <i>unspeakably</i> stylish."
@@ -527,7 +521,3 @@
 	desc = "It's a surgery cap utilized by solarian doctors."
 	icon_state = "solgov_surgery"
 
-/obj/item/clothing/head/suns_surgery
-	name = "\improper SUNS surgery cap"
-	desc = "A surgery cap used by academic students and profesionals alike."
-	icon_state = "suns_doctorcap"

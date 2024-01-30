@@ -313,21 +313,3 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
 
-//SUNS suits
-/obj/item/clothing/suit/toggle/suns
-	name = "\improper SUNS jacket"
-	desc = "A plain purple SUNS jacket, used fairly often on the frontier."
-	icon_state = "suns_jacket"
-	item_state = "suns_jacket"
-
-/obj/item/clothing/suit/toggle/suns/alt
-	name = "black school jacket"
-	desc = "A plain black jacket with gold detailing. Found in universities all over the galaxy."
-	icon_state = "suns_schooljacket"
-	item_state = "suns_schooljacket"
-
-/obj/item/clothing/suit/toggle/suns/pkcoat
-	name = "peacekeeper coat"
-	desc = "An armored coat used during special occasions. This one is used in academic security."
-	icon_state = "suns_pkjacket"
-	item_state = "suns_pkjacket"

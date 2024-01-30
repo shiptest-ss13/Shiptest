@@ -5,12 +5,6 @@
 	name = "mime shoes"
 	icon_state = "mime"
 
-/obj/item/clothing/shoes/sneakers/suns
-	name = "white clogs"
-	desc = "Comfortable clogs for general use."
-	icon_state = "suns_doctorclogs"
-	item_state = "suns_doctorclogs" //I know what the state says, I'm not fixing it.
-
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
 	name = "combat boots"
 	desc = "High speed, low drag combat boots."
@@ -25,12 +19,6 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 12 SECONDS
 	greyscale_icon_state = "boots"
-
-/obj/item/clothing/shoes/combat/suns
-	name = "fancy combat boots"
-	desc = "Decent traction combat boots worn by high ranking academic staff."
-	icon_state = "suns_captainboots"
-	item_state = "suns_captainboots"
 
 /obj/item/clothing/shoes/combat/sneakboots
 	name = "sneakboots"
@@ -170,18 +158,6 @@
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
 
-/obj/item/clothing/shoes/jackboots/suns
-	name = "work safe jackboots"
-	desc = "Academic issued steel toed boots. For those with physically demanding majors."
-	icon_state = "suns_jackboots"
-	item_state = "suns_jackboots"
-
-/obj/item/clothing/shoes/jackboots/sunslong
-	name = "peacekeeper longboots"
-	desc = "Longboots worn by academic security staff and trainees."
-	icon_state = "suns_longboots"
-	item_state = "suns_longboots"
-
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
 
@@ -259,11 +235,6 @@
 	desc = "The height of fashion, and they're pre-polished!"
 	icon_state = "laceups"
 	equip_delay_other = 50
-
-/obj/item/clothing/shoes/laceup/suns
-	name = "academy laceup shoes"
-	desc = "Standard issue laceups from the syndicates resident academy."
-	icon_state = "suns_laceups"
 
 /obj/item/clothing/shoes/roman
 	name = "roman sandals"

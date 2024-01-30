@@ -552,15 +552,6 @@
 	dog_fashion = null
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
-/obj/item/clothing/head/sunscaptain
-	name = "\improper SUNS bicorne hat"
-	desc = "A unique bicorne hat given to SUNS Captains to display academic seniority."
-	icon_state = "suns_captainbicorne"
-	item_state = "suns_captainbicorne"
-	worn_y_offset = 2
-	dog_fashion = null
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
-
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	name = "\improper SolGov envirosuit helmet"
 	desc = "A generic white envirohelmet with a secondary blue."

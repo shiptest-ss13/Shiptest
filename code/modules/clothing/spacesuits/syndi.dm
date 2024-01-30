@@ -111,19 +111,6 @@
 	item_state = "syndicate-black"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/tank/internals, /obj/item/storage/firstaid, /obj/item/healthanalyzer, /obj/item/stack/medical)
 
-//Suns space suit and helmet
-/obj/item/clothing/head/helmet/space/syndicate/suns
-	name = "SUNS space helmet"
-	icon_state = "suns_vachelm"
-	item_state = "suns_vachelm"
-	desc = "An academic standard spacesuit helmet. Normally reserved for low budget tasks in space."
-
-/obj/item/clothing/suit/space/syndicate/suns
-	name = "SUNS spacesuit"
-	icon_state = "suns_vacsuit"
-	item_state = "suns_vacsuit"
-	desc = "An academic standard spacesuit. Normally reserved for low budget tasks in space."
-
 //Black-orange syndicate space suit
 /obj/item/clothing/head/helmet/space/syndicate/black/orange
 	name = "black space helmet"
