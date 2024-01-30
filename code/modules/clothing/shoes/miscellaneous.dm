@@ -170,7 +170,7 @@
 	can_be_tied = FALSE
 	greyscale_icon_state = "boots"
 
-	/obj/item/clothing/shoes/jackboots/suns
+/obj/item/clothing/shoes/jackboots/suns
 	name = "work safe jackboots"
 	desc = "Academic issued steel toed boots. For those with physically demanding majors."
 	icon_state = "suns_jackboots"
