@@ -75,7 +75,7 @@
 
 /datum/autowiki/ship/proc/get_dummy_image(datum/job/to_equip, filename)
 	//Controlled randomisation
-	wiki_dummy.seeded_randomization(filename)
+	wiki_dummy.seeded_randomization(filename, list(/datum/species/ethereal, /datum/species/human, /datum/species/ipc, /datum/species/lizard, /datum/species/moth, /datum/species/spider))
 	//Delete all the old stuff they had
 	wiki_dummy.wipe_state()
 
