@@ -203,10 +203,16 @@
 		part_types |= part.gun_part_type
 	return part_types
 
-/*
 /obj/item/part/gun/frame/examine(user, distance)
 	. = ..()
 	if(.)
+		for (var/obj/item/part/gun/part in installedParts)
+			. += "<span class='notice'>\the [src] has \a [part] [icon2html(part, user)] installed.</span>"
+		for(var/datum/lathe_recipe/gun/recipe in get_current_recipes())
+			for(var/obj/item/part in recipe.validParts)
+				. += "<span class='notice'>\the [src] could hold \a [part] [icon2html(part, user)].</span>"
+
+/*
 		if(InstalledGrip)
 			. += "<span class='notice'>\the [src] has \a [InstalledGrip] installed.</span>"
 		else
@@ -224,18 +230,11 @@
 /obj/item/part/gun/frame/winchester
 	name = "Winchester Gun Frame"
 	icon_state = "frame_shotgun"
-	//result = /obj/item/gun/ballistic/shotgun/winchester
-	//validGrips = list(/obj/item/part/gun/modular/grip/wood)
-	//validMechanisms = list(/obj/item/part/gun/modular/mechanism/shotgun)
-	//validBarrels = list(/obj/item/part/gun/modular/barrel/shotgun)
 
 /obj/item/part/gun/frame/winchester/mk1
-	//result = /obj/item/gun/ballistic/shotgun/winchester/mk1
 
 /obj/item/part/gun/frame/m1911
-	//result = /obj/item/gun/ballistic/automatic/pistol/m1911
 
 /obj/item/part/gun/frame/commander
-	//result = /obj/item/gun/ballistic/automatic/pistol/commander
 
 /obj/item/part/gun/frame/boltaction
