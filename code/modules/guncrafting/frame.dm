@@ -164,10 +164,10 @@
 	var/list/filtered_recipes = list()
 
 	for(var/datum/lathe_recipe/gun/recipe in gun_recipes)
-		if(istype(src.type))
+		if(istype(recipe, src.type))
 			filtered_recipes += recipe
 		for(var/obj/item/part/gun/installed_part in installedParts)
-			if(istype(part, installed_part))
+			if(istype(recipe, installed_part.type))
 				filtered_recipes += recipe
 
 	return filtered_recipes
@@ -175,9 +175,8 @@
 /obj/item/part/gun/frame/attack_self(obj/item/I, mob/user)
 	. = ..()
 	for(var/datum/lathe_recipe/gun/recipe in get_current_recipes())
-		if(src.type in recipe.validParts)
-			if(I.type in recipe.validParts)
-				handle_part(I, user)
+		if(I.type in recipe.validParts)
+			handle_part(I, user)
 	/*
 	if(!InstalledGrip)
 		to_chat(user, span_warning("\the [src] does not have a grip!"))
