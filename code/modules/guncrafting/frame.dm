@@ -23,6 +23,7 @@
 
 /obj/item/part/gun/frame/Initialize(mapload, dont_spawn_with_parts)
 	..()
+	/*
 	var/spawn_with_preinstalled_parts = TRUE
 	if(dont_spawn_with_parts)
 		spawn_with_preinstalled_parts = FALSE
@@ -40,6 +41,7 @@
 				if("grip")
 					var/select = pick(validGrips)
 					InstalledGrip = new select(src)
+	*/
 
 /obj/item/part/gun/frame/proc/eject_item(obj/item/I, mob/living/user)
 	if(!I || !user.IsAdvancedToolUser() || user.stat || !user.Adjacent(I))
@@ -102,15 +104,17 @@
 			return
 		if(I.use_tool(src, user, 40, volume=50))
 			eject_item(toremove, user)
+			/*
 			if(istype(toremove, /obj/item/part/gun/modular/grip))
 				InstalledGrip = null
 			else if(istype(toremove, /obj/item/part/gun/modular/barrel))
 				InstalledBarrel = FALSE
 			else if(istype(toremove, /obj/item/part/gun/modular/mechanism))
 				InstalledMechanism = FALSE
+			*/
 
 	return ..()
-
+/*
 /obj/item/part/gun/frame/proc/handle_grip(obj/item/I, mob/living/user)
 	if(I.type in validGrips)
 		if(insert_item(I, user))
@@ -140,9 +144,21 @@
 	else
 		to_chat(user, span_warning("This barrel does not fit!"))
 		return
+*/
+
+/obj/item/part/gun/frame/proc/handle_part(obj/item/I, mob/living/user)
+	/obj/item/part/gun/frame/proc/handle_part(obj/item/I, mob/living/user)
+	if(I.type in /datum/lathe_recipe/gun/m1911/validParts)
+		if(insert_item(I, user))
+			to_chat(user, span_notice("You have attached the part to \the [src]."))
+			return
+	else
+		to_chat(user, span_warning("This part does not fit!"))
+		return
 
 /obj/item/part/gun/frame/attack_self(mob/user)
 	. = ..()
+	/*
 	if(!InstalledGrip)
 		to_chat(user, span_warning("\the [src] does not have a grip!"))
 		return
@@ -152,6 +168,8 @@
 	if(!InstalledBarrel)
 		to_chat(user, span_warning("\the [src] does not have a barrel!"))
 		return
+	*/
+	for each(I in )
 	var/turf/T = get_turf(src)
 	var/obj/item/gun/newGun = new result(T, 0)
 	newGun.frame = src
@@ -174,10 +192,19 @@
 		else
 			. += "<span class='notice'>\the [src] does not have a barrel installed.</span>"
 
-/obj/item/part/gun/frame/mk1
-	name = "wellmade gun frame"
+/obj/item/part/gun/frame/winchester
+	name = "Winchester Gun Frame
 	icon_state = "frame_shotgun"
-	result = /obj/item/gun/ballistic/shotgun/winchester/mk1
+	result = /obj/item/gun/ballistic/shotgun/winchester
 	validGrips = list(/obj/item/part/gun/modular/grip/wood)
 	validMechanisms = list(/obj/item/part/gun/modular/mechanism/shotgun)
 	validBarrels = list(/obj/item/part/gun/modular/barrel/shotgun)
+
+/obj/item/part/gun/frame/winchester/mk1
+	result = /obj/item/gun/ballistic/shotgun/winchester/mk1
+
+/obj/item/part/gun/frame/m1911
+	result = /obj/item/gun/ballistic/automatic/pistol/m1911
+
+/obj/item/part/gun/frame/commander
+	result = /obj/item/gun/ballistic/automatic/pistol/commander
