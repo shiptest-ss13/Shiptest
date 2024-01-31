@@ -41,5 +41,5 @@
 	if(!species_list)
 		species_list = GLOB.species_list
 
-	var/species = species_list[hex2num(copytext(seed, 3, 4)) % length(GLOB.species_list) + 1]
+	var/species = species_list[hex2num(copytext(seed, 3, 4)) % length(species_list) + 1]
 	set_species(species)
