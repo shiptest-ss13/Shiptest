@@ -118,18 +118,20 @@
 	base_icon_state = "wheelchair_folded"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	force = 8 //Force is same as a chair
-	custom_materials = list(/datum/material/iron = 10000)
 	var/unfolded_type = /obj/vehicle/ridden/wheelchair
 
 /obj/vehicle/ridden/wheelchair/MouseDrop(over_object, src_location, over_location)  //Lets you collapse wheelchair
 	. = ..()
 	if(over_object != usr || !Adjacent(usr) || !foldabletype)
 		return FALSE
-	if(!ishuman(usr) || !usr.canUseTopic(src, BE_CLOSE))
+	if(!ishuman(usr))
 		return FALSE
 	if(has_buckled_mobs())
+		return FALSE
+	usr.visible_message("<span class='notice'>[usr] begins to collapse [src].</span>", "<span class='notice'>You begin to collapse [src].</span>")
+	if(!do_after(usr, 3 SECONDS, target = src))
 		return FALSE
 	usr.visible_message("<span class='notice'>[usr] collapses [src].</span>", "<span class='notice'>You collapse [src].</span>")
 	var/obj/vehicle/ridden/wheelchair/wheelchair_folded = new foldabletype(get_turf(src))
@@ -140,6 +142,10 @@
 	deploy_wheelchair(user, user.loc)
 
 /obj/item/wheelchair/proc/deploy_wheelchair(mob/user, atom/location)
+	usr.visible_message("<span class='notice'>[usr] begins to unfold [src].</span>", "<span class='notice'>You begin to unfold [src].</span>")
+	if(!do_after(usr, 3 SECONDS, target = src))
+		return FALSE
+	usr.visible_message("<span class='notice'>[usr] deploys [src].</span>", "<span class='notice'>You deploy [src].</span>")
 	var/obj/vehicle/ridden/wheelchair/wheelchair_unfolded = new unfolded_type(location)
 	wheelchair_unfolded.add_fingerprint(user)
 	qdel(src)
