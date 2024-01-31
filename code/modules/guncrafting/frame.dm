@@ -22,9 +22,9 @@
 
 	gun_part_type = GUN_PART_FRAME
 
+/*
 /obj/item/part/gun/frame/Initialize(mapload, dont_spawn_with_parts)
 	..()
-	/*
 	var/spawn_with_preinstalled_parts = TRUE
 	if(dont_spawn_with_parts)
 		spawn_with_preinstalled_parts = FALSE
