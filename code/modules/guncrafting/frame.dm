@@ -165,14 +165,14 @@
 
 	for(var/datum/lathe_recipe/gun/recipe in gun_recipes)
 		if(istype(src.type))
-			filtered_recipes += recipe_type
+			filtered_recipes += recipe
 		for(var/obj/item/part/gun/installed_part in installedParts)
 			if(istype(part, installed_part))
-				filtered_recipes += recipe_type
+				filtered_recipes += recipe
 
 	return filtered_recipes
 
-/obj/item/part/gun/frame/attack_self(mob/user)
+/obj/item/part/gun/frame/attack_self(obj/item/I, mob/user)
 	. = ..()
 	for(var/datum/lathe_recipe/gun/recipe in get_current_recipes())
 		if(src.type in recipe.validParts)
@@ -201,7 +201,7 @@
 	var/part_types = NONE
 	part_types |= gun_part_type
 	for(var/obj/item/part/gun/part in installedParts)
-		part_types |= part.gin_part_type
+		part_types |= part.gun_part_type
 	return part_types
 
 /*
