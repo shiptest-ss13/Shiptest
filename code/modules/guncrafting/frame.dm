@@ -2,22 +2,23 @@
 	name = "gun frame"
 	desc = "a generic gun frame."
 	icon_state = "frame_olivaw"
-	var/obj/item/gun/result = /obj/item/gun
+	//var/obj/item/gun/result = /obj/item/gun
+	var/list/installedParts = list()
 
 	// Currently installed grip
-	var/obj/item/part/gun/modular/grip/InstalledGrip
+	//var/obj/item/part/gun/modular/grip/InstalledGrip
 	// Which grips does the frame accept?
-	var/list/validGrips = list(/obj/item/part/gun/modular/grip/wood, /obj/item/part/gun/modular/grip/black)
+	//var/list/validGrips = list(/obj/item/part/gun/modular/grip/wood, /obj/item/part/gun/modular/grip/black)
 
 	// Currently installed mechanism
-	var/obj/item/part/gun/modular/grip/InstalledMechanism
+	//var/obj/item/part/gun/modular/grip/InstalledMechanism
 	// Which mechanism the frame accepts?
-	var/list/validMechanisms = list(/obj/item/part/gun/modular/mechanism)
+	//var/list/validMechanisms = list(/obj/item/part/gun/modular/mechanism)
 
 	// Currently installed barrel
-	var/obj/item/part/gun/modular/barrel/InstalledBarrel
+	//var/obj/item/part/gun/modular/barrel/InstalledBarrel
 	// Which barrels does the frame accept?
-	var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
+	//var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
 
 	gun_part_type = GUN_PART_FRAME
 
@@ -76,6 +77,7 @@
 	return TRUE
 
 /obj/item/part/gun/frame/attackby(obj/item/I, mob/living/user, params)
+	/*
 	if(istype(I, /obj/item/part/gun/modular/grip))
 		if(InstalledGrip)
 			to_chat(user, span_warning("[src] already has a grip attached!"))
@@ -96,6 +98,7 @@
 			return
 		else
 			handle_barrel(I, user)
+		*/
 
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		var/list/possibles = contents.Copy()
@@ -147,15 +150,14 @@
 */
 
 /obj/item/part/gun/frame/proc/handle_part(obj/item/I, mob/living/user)
-	/obj/item/part/gun/frame/proc/handle_part(obj/item/I, mob/living/user)
-	if(I.type in /datum/lathe_recipe/gun/m1911/validParts)
-		if(insert_item(I, user))
-			to_chat(user, span_notice("You have attached the part to \the [src]."))
-			return
+	//if(I.type in /datum/lathe_recipe/gun/m1911.validParts)
+	if(insert_item(I, user))
+		to_chat(user, span_notice("You have attached the part to \the [src]."))
+		return
 	else
 		to_chat(user, span_warning("This part does not fit!"))
 		return
-
+/*
 /obj/item/part/gun/frame/attack_self(mob/user)
 	. = ..()
 	/*
@@ -175,7 +177,9 @@
 	newGun.frame = src
 	src.forceMove(newGun)
 	return
+*/
 
+/*
 /obj/item/part/gun/frame/examine(user, distance)
 	. = ..()
 	if(.)
@@ -191,20 +195,23 @@
 			. += "<span class='notice'>\the [src] has \a [InstalledBarrel] installed.</span>"
 		else
 			. += "<span class='notice'>\the [src] does not have a barrel installed.</span>"
+*/
 
 /obj/item/part/gun/frame/winchester
-	name = "Winchester Gun Frame
+	name = "Winchester Gun Frame"
 	icon_state = "frame_shotgun"
-	result = /obj/item/gun/ballistic/shotgun/winchester
-	validGrips = list(/obj/item/part/gun/modular/grip/wood)
-	validMechanisms = list(/obj/item/part/gun/modular/mechanism/shotgun)
-	validBarrels = list(/obj/item/part/gun/modular/barrel/shotgun)
+	//result = /obj/item/gun/ballistic/shotgun/winchester
+	//validGrips = list(/obj/item/part/gun/modular/grip/wood)
+	//validMechanisms = list(/obj/item/part/gun/modular/mechanism/shotgun)
+	//validBarrels = list(/obj/item/part/gun/modular/barrel/shotgun)
 
 /obj/item/part/gun/frame/winchester/mk1
-	result = /obj/item/gun/ballistic/shotgun/winchester/mk1
+	//result = /obj/item/gun/ballistic/shotgun/winchester/mk1
 
 /obj/item/part/gun/frame/m1911
-	result = /obj/item/gun/ballistic/automatic/pistol/m1911
+	//result = /obj/item/gun/ballistic/automatic/pistol/m1911
 
 /obj/item/part/gun/frame/commander
-	result = /obj/item/gun/ballistic/automatic/pistol/commander
+	//result = /obj/item/gun/ballistic/automatic/pistol/commander
+
+/obj/item/part/gun/frame/boltaction

@@ -121,6 +121,7 @@
 ///////////////
 
 /obj/structure/lathe/proc/fabricate_part(mob/living/carbon/human/user)
+	/*
 	if(istype (work_piece, /obj/item/gun))
 		var/obj/item/gun/gun_work_piece = work_piece
 		var/list/choose_options = list()
@@ -145,6 +146,7 @@
 				if("Frame")
 					part_to_build = new gun_work_piece.frame.type(src, TRUE)
 			part_to_build.forceMove(drop_location())
+	*/
 	mode = FALSE
 
 ///////////

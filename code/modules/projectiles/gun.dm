@@ -3,6 +3,7 @@
 #define FIRING_PIN_REMOVAL_DELAY 50
 
 #define MANUFACTURER_NONE null
+#define MANUFACTURER_KYBER "the simple, handmade marking of an unknown gunsmith"
 #define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
 #define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
 #define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"

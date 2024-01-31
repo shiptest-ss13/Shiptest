@@ -28,15 +28,17 @@
 	validParts = list(
 		/obj/item/part/gun/frame/m1911,
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/pistol,
-		/obj/item/part/gun/modular/barrel/pistolm1911
+		/obj/item/part/gun/modular/mechanism,
+		/obj/item/part/gun/modular/barrel
 		)
 
 /datum/lathe_recipe/gun/tec9
 	result = /obj/item/gun/ballistic/automatic/pistol/tec9
 	validParts = list(
-		/obj/item/part/gun/frame/tec9,
-		/obj/item/part/gun/modular/grip/plastic,
-		/obj/item/part/gun/modular/mechanism/pistol,
-		/obj/item/part/gun/modular/barrel/pistol
+		/obj/item/part/gun/frame,
+		/obj/item/part/gun/modular/grip,
+		/obj/item/part/gun/modular/mechanism,
+		/obj/item/part/gun/modular/barrel
 		)
+/datum/lathe_recipe/gun/boltaction
+	result	= /obj/item/gun/ballistic/rifle/boltaction
