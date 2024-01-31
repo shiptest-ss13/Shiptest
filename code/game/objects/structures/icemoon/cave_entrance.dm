@@ -210,7 +210,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
  */
 /obj/effect/collapsing_demonic_portal/proc/drop_loot()
 	visible_message("<span class='warning'>Something slips out of [src]!</span>")
-	var/loot = rand(1, 24)
+	var/loot = rand(1, 23)
 	switch(loot)
 		if(1)//Clown hell. God help you if you roll this.
 			visible_message("<span class='userdanger'>You can hear screaming and joyful honking.</span>")//now THIS is what we call a critical failure
@@ -965,19 +965,19 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /obj/effect/mob_spawn/human/scientist(loc)
 			new /turf/open/floor/mineral/titanium/purple(loc)
 			new /mob/living/simple_animal/slime/random(loc)
-		if(20)//hey, free elite tumor!
+		if(19)//hey, free elite tumor!
 			visible_message("<span class='userdanger'>A large, pulsating structure falls through the portal and crashes to the floor.</span>")
 			playsound(loc,'sound/effects/break_stone.ogg', 100, FALSE, 50, TRUE, TRUE)
 			new /obj/structure/elite_tumor(loc)
 			new /turf/open/floor/plating/asteroid/basalt(loc)
-		if(21)//*you flush the toilet.*
+		if(20)//*you flush the toilet.*
 			visible_message("<span class='userdanger'>You hear the faint noise of a long flush.</span>")
 			new /obj/structure/toilet(loc)
 			new /obj/effect/decal/remains(loc)
 			new /obj/item/newspaper(loc)
 			new /turf/open/floor/plastic(loc)
 			new /obj/item/clothing/head/papersack/smiley(loc) //welcome to the bathroom
-		if(22)//Research & Zombies
+		if(21)//Research & Zombies
 			visible_message("<span class='userdanger'>Flashing lights and quarantine alarms echo through the portal. You smell rotting flesh and plasma.</span>")
 			playsound(loc,'sound/misc/bloblarm.ogg', 120, FALSE, 50, TRUE, TRUE)
 			if(prob(35))
@@ -1022,7 +1022,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/research_notes/loot/small(loc)
 			new/turf/open/floor/mineral/titanium/purple(loc)
 			new /mob/living/simple_animal/hostile/zombie(loc)
-		if(23)//Silverback's locker room
+		if(22)//Silverback's locker room
 			visible_message("<span class='userdanger'>You catch a glimpse of verdant green. Smells like a locker room.</span>")
 			playsound(loc,'sound/creatures/gorilla.ogg', 75, FALSE, 50, TRUE, TRUE)
 			new /mob/living/simple_animal/hostile/gorilla(loc)
