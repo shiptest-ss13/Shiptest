@@ -52,6 +52,7 @@
 	user.visible_message(
 		"[user] removes [I] from [src].",
 		span_notice("You remove [I] from [src].")
+		installedParts -= I
 	)
 	return TRUE
 
@@ -244,7 +245,7 @@
 	installedParts = list(
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism,
-		/obj/item/part/gun/modular/barrel/shotgun
+		/obj/item/part/gun/modular/barrel
 		)
 
 /obj/item/part/gun/frame/commander
