@@ -1,11 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/obj/structure/railing/modern,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
 "ap" = (
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"ax" = (
+/obj/structure/closet/crate/engineering/electrical,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "aL" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 9
@@ -33,15 +39,26 @@
 /obj/item/stack/sheet/mineral/sandstone/thirty,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"bD" = (
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/turf/open/floor/plating,
+/area/template_noop)
 "bV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "bW" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
 "cb" = (
 /turf/template_noop,
 /area/template_noop)
@@ -57,6 +74,15 @@
 /obj/item/reagent_containers/food/snacks/rationpack,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"cZ" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating,
+/area/template_noop)
 "dE" = (
 /obj/item/crowbar/large,
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
@@ -68,10 +94,28 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"dO" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/obj/structure/bed,
+/obj/item/bedsheet/grey,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"dS" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "dV" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "eb" = (
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -79,11 +123,15 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
 "ee" = (
-/obj/structure/railing/modern/corner{
-	dir = 4
+/obj/structure/flora/tree/dead/hell,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
+"et" = (
+/obj/machinery/recharger{
+	pixel_y = 22
 	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "eJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -101,16 +149,15 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "fC" = (
-/obj/machinery/power/terminal{
+/obj/structure/fence/cut,
+/turf/open/floor/plating,
+/area/template_noop)
+"fV" = (
+/obj/structure/chair/comfy/brown{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/unpowered/train_station/train)
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "fZ" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
@@ -124,9 +171,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"gu" = (
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "gv" = (
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/area/template_noop)
 "gP" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/titanium/fifty,
@@ -144,18 +196,64 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
-"ic" = (
-/obj/structure/railing/modern/corner{
+"hq" = (
+/obj/structure/chair/comfy/brown{
 	dir = 8
 	},
-/obj/structure/railing/modern,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"hs" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "Barrack Apc";
+	pixel_x = 25;
+	start_charge = 0
+	},
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"hH" = (
+/obj/structure/flora/ausbushes/ywflowers/hell,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
+"hQ" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
+"ic" = (
+/turf/closed/mineral/volcanic/lava_land_surface,
+/area/overmap_encounter/planetoid/cave/explored)
 "if" = (
 /obj/structure/railing{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/train_station/train)
+"im" = (
+/obj/structure/railing/modern/corner{
+	dir = 8
+	},
+/obj/structure/railing/modern,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
+"iK" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/smes,
+/turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "jj" = (
 /obj/machinery/door/airlock/freezer{
@@ -167,10 +265,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "jq" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine,
-/area/ruin/unpowered/train_station/cargo)
+/obj/structure/railing/modern,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
 "jy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -185,6 +282,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"kz" = (
+/obj/machinery/power/port_gen/pacman,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/turf/open/floor/plating,
+/area/template_noop)
+"kB" = (
+/obj/structure/railing/modern/corner,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/train_station/train)
 "kG" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -200,17 +308,54 @@
 /obj/item/mecha_parts/part/durand_left_leg,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"lM" = (
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"mC" = (
+/obj/structure/fluff/broken_flooring,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
 "mJ" = (
 /obj/structure/closet/wardrobe/cargotech,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "mK" = (
-/obj/mecha/working/ripley/cargo,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/engine,
-/area/ruin/unpowered/train_station/cargo)
+/obj/machinery/door/poddoor/shutters{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "mM" = (
 /obj/structure/salvageable/machine,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"na" = (
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/train_station/train)
+"nt" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
+"nx" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "nK" = (
@@ -218,6 +363,9 @@
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"nP" = (
+/turf/closed/wall,
+/area/template_noop)
 "nS" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/gold/fifty,
@@ -225,16 +373,27 @@
 /area/ruin/unpowered/train_station/train)
 "oj" = (
 /obj/structure/cable{
-	icon_state = "1-4"
+	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "oC" = (
-/obj/structure/lattice,
-/obj/item/stack/ore/salvage/scraptitanium,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/unpowered/train_station/train)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/template_noop)
+"oO" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/template_noop)
+"oV" = (
+/turf/open/floor/plating{
+	icon_state = "wall_thermite";
+	name = "melted wall"
+	},
+/area/template_noop)
 "pe" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
@@ -243,11 +402,28 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
-"pI" = (
-/obj/structure/lattice,
-/obj/item/stack/ore/salvage/scrapmetal,
+"po" = (
+/obj/effect/radiation,
+/obj/item/clothing/suit/radiation/space,
+/obj/item/clothing/head/radiation/space,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
+"pC" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating,
 /area/ruin/unpowered/train_station/train)
+"pI" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/beret/black,
+/obj/item/clothing/under/syndicate/tacticool,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"pT" = (
+/obj/structure/fluff/clockwork/alloy_shards,
+/turf/open/floor/plating,
+/area/template_noop)
 "pX" = (
 /obj/structure/closet/crate/large,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
@@ -256,6 +432,28 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"qe" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"qq" = (
+/obj/item/pen,
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"qy" = (
+/obj/item/flashlight/lamp/green{
+	pixel_y = 12
+	},
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"qB" = (
+/obj/structure/fence/corner,
+/turf/open/floor/plating,
+/area/template_noop)
 "qP" = (
 /obj/machinery/door/poddoor/shutters/preopen,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -270,6 +468,23 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"re" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
+"rn" = (
+/obj/structure/fence{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/template_noop)
+"rF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "rI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -292,10 +507,11 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "sj" = (
-/obj/structure/railing/modern/corner,
-/obj/structure/railing/modern,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/obj/machinery/door/airlock/public{
+	dir = 8
+	},
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "st" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -313,6 +529,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"ta" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plating,
+/area/template_noop)
 "tc" = (
 /obj/machinery/door/airlock/freezer{
 	name = "Airlock"
@@ -343,8 +568,41 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
+"uG" = (
+/obj/structure/fluff/clockwork/alloy_shards/small{
+	pixel_x = 7
+	},
+/turf/open/floor/plating{
+	heat_capacity = 1e+006;
+	icon_state = "platingdmg1"
+	},
+/area/template_noop)
+"uP" = (
+/obj/machinery/door/poddoor/shutters/preopen,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "uQ" = (
 /obj/item/toy/prize/durand,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"uR" = (
+/obj/item/flashlight/lamp/green{
+	pixel_y = 12;
+	pixel_x = 5
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"uU" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/terminal{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "uZ" = (
@@ -364,6 +622,12 @@
 /obj/item/stack/sheet/mineral/silver/fifty,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"vt" = (
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma/five,
+/turf/open/floor/plating,
+/area/template_noop)
 "vN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -376,12 +640,41 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"wn" = (
+/obj/structure/flora/ausbushes/genericbush/hell,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
 "wq" = (
 /obj/structure/salvageable/computer{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"wP" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"wR" = (
+/obj/structure/fluff/clockwork/alloy_shards/large{
+	pixel_y = 9;
+	pixel_x = 8
+	},
+/obj/structure/fluff/clockwork/alloy_shards/large{
+	pixel_y = -9;
+	pixel_x = -5
+	},
+/obj/structure/fluff/clockwork/alloy_shards/medium,
+/turf/open/floor/plating,
+/area/template_noop)
+"wS" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "xg" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -395,14 +688,50 @@
 /obj/item/mecha_parts/part/durand_right_leg,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"xG" = (
+/obj/structure/rack,
+/obj/item/mop/advanced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"xJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "xK" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"xT" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
+"xX" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/template_noop)
+"ya" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "yz" = (
 /obj/machinery/door/poddoor/shutters,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"yJ" = (
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
+/obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "yS" = (
@@ -410,9 +739,19 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"yW" = (
+/obj/structure/fluff/clockwork/alloy_shards/small{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "wall_thermite";
+	name = "melted wall"
+	},
+/area/template_noop)
 "zi" = (
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "zj" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/plasma/fifty,
@@ -462,21 +801,40 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"AL" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/mecha/working/ripley/cargo,
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
+"AZ" = (
+/obj/structure/fluff/clockwork/alloy_shards/medium,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/template_noop)
 "Ba" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/unpowered/train_station/train)
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
 "Bj" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/unpowered/train_station/train)
+/obj/structure/closet/crate/radiation,
+/obj/item/stack/sheet/mineral/plasma/five,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plating,
+/area/template_noop)
+"Bo" = (
+/obj/structure/bed,
+/obj/item/bedsheet/grey,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Cg" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Ci" = (
+/obj/structure/flora/rock,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
 "CL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -495,20 +853,38 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Dz" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"DB" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
 "DC" = (
-/obj/effect/turf_decal/corner/opaque/blue/border{
-	dir = 1
-	},
-/obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/scrubber/huge/movable/cargo,
-/turf/open/floor/engine,
-/area/ruin/unpowered/train_station/cargo)
+/turf/open/floor/plating,
+/area/template_noop)
 "DE" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"Ee" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/scrubber/huge/movable/cargo,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/engine,
+/area/ruin/unpowered/train_station/cargo)
+"El" = (
+/obj/structure/sign/warning/radiation,
+/turf/closed/wall,
+/area/template_noop)
 "EB" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -534,30 +910,81 @@
 /obj/machinery/portable_atmospherics/scrubber/huge/movable/cargo,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"Fw" = (
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/template_noop)
 "FP" = (
 /obj/structure/salvageable/safe_server,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
-"Hb" = (
-/obj/structure/railing/modern,
+"FV" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
+"Gi" = (
+/obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/area/ruin/unpowered/train_station/train)
+"Gm" = (
+/turf/closed/wall/concrete/reinforced,
+/area/space)
+"GE" = (
+/obj/structure/fluff/clockwork/alloy_shards,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
+"Hb" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
+"HL" = (
+/obj/structure/sink/kitchen{
+	pixel_y = 25
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "Ih" = (
 /obj/structure/railing/modern{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/area/template_noop)
 "It" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 5
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
+"Ix" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external,
+/turf/open/floor/concrete/reinforced,
+/area/template_noop)
+"IK" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"IO" = (
+/obj/machinery/power/smes,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/item/pen,
+/turf/open/floor/plating,
+/area/template_noop)
 "IR" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
 "Jf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -604,11 +1031,29 @@
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Kd" = (
+/obj/machinery/door/airlock/public,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Kj" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
 "KQ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plating,
+/area/ruin/unpowered/train_station/cargo)
+"KT" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "La" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
@@ -622,6 +1067,10 @@
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"Lf" = (
+/obj/structure/flora/ash/fireblossom,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
 "Lg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -633,6 +1082,10 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Li" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "Lp" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 5
@@ -641,17 +1094,21 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "LU" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/ausbushes/fernybush/hell,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
+"Mw" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "Mx" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/turf/closed/wall/concrete/reinforced,
+/area/template_noop)
 "MM" = (
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plasteel/mono/white,
@@ -670,6 +1127,10 @@
 /obj/item/radio/intercom/table,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Ns" = (
+/obj/structure/window/reinforced/tinted,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "Nt" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
@@ -687,12 +1148,34 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "Oe" = (
-/obj/machinery/power/smes,
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/structure/rack,
+/obj/item/gun/energy/e_gun/mini{
+	pixel_y = 8
 	},
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/unpowered/train_station/train)
+/obj/item/gun/energy/e_gun/mini{
+	pixel_y = -3
+	},
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"Oz" = (
+/obj/machinery/door/airlock/external,
+/turf/open/floor/concrete/reinforced,
+/area/template_noop)
+"OD" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava,
+/area/template_noop)
+"OG" = (
+/obj/structure/fluff/clockwork/alloy_shards/small,
+/turf/open/floor/plating{
+	icon_state = "wall_thermite";
+	name = "melted wall"
+	},
+/area/template_noop)
+"Qe" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
 "Qg" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -700,6 +1183,15 @@
 /obj/structure/cable,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
+"QH" = (
+/obj/structure/railing/modern/corner{
+	dir = 1
+	},
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
 "QL" = (
 /obj/effect/turf_decal/industrial/traffic,
 /turf/open/floor/plating,
@@ -712,6 +1204,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"RD" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
+"RE" = (
+/obj/structure/fluff/paper/stack{
+	dir = 9
+	},
+/obj/item/pen,
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "RN" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -724,26 +1228,69 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
+"RP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "Train APC";
+	pixel_x = -25;
+	start_charge = 0
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "Si" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"SF" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 4
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"SY" = (
+/obj/structure/fence/door,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating,
+/area/template_noop)
 "To" = (
 /obj/structure/railing,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/train_station/train)
+"Tv" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/template_noop)
 "TV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
+"TY" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/template_noop)
 "Ug" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "Uy" = (
-/obj/machinery/door/poddoor/shutters/preopen,
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/obj/structure/chair,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"UD" = (
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "UG" = (
@@ -767,6 +1314,29 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"VW" = (
+/turf/closed/wall/rust,
+/area/template_noop)
+"Wa" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
+"Wu" = (
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
+/obj/structure/table/wood/reinforced,
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"WJ" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/unpowered/train_station/train)
 "WP" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 6
@@ -774,20 +1344,27 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"WS" = (
+/obj/structure/rack,
+/obj/item/gun/energy,
+/turf/open/floor/concrete/reinforced,
+/area/space)
 "WZ" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "Xo" = (
-/obj/structure/railing/modern/corner{
+/obj/structure/window/reinforced/tinted,
+/obj/structure/chair{
 	dir = 1
 	},
-/obj/structure/railing/modern{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/turf/open/floor/concrete/reinforced,
+/area/space)
+"XD" = (
+/obj/structure/sign/warning/radiation,
+/turf/closed/wall/rust,
+/area/template_noop)
 "XL" = (
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/oxygen,
@@ -796,6 +1373,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Yj" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating,
+/area/template_noop)
 "YX" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -813,25 +1394,42 @@
 /obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"ZW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/template_noop)
 
 (1,1,1) = {"
 cb
 cb
 cb
-gv
-gv
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
 IR
-gv
-gv
-sj
-gv
-gv
-gv
-gv
+IR
+IR
+IR
+IR
+OD
+IR
+IR
+hH
+IR
 ee
-gv
-gv
-gv
+IR
+IR
+IR
+IR
+cb
 cb
 cb
 cb
@@ -840,500 +1438,974 @@ cb
 (2,1,1) = {"
 cb
 cb
-gv
-bW
-bW
-bW
-gv
-gv
-Hb
-gv
-gv
-gv
-gv
-Ih
-gv
-gv
-gv
-gv
-gv
-gv
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+ee
+IR
+IR
+xT
+IR
+IR
+IR
+IR
+DB
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+cb
+cb
 cb
 "}
 (3,1,1) = {"
 cb
-bW
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+Hb
+Hb
+Hb
+Hb
+Hb
+Ih
+IR
+IR
+IR
+IR
+cb
+cb
+cb
+"}
+(4,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+OD
+hH
+Lf
+IR
+IR
+IR
+EX
+EX
+EX
+SF
+EX
+EX
+WJ
+Hb
+IR
+IR
+IR
+IR
+IR
+OD
+"}
+(5,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+ee
+IR
+IR
+IR
+IR
+LU
+IR
+EX
+uU
+jy
+jy
+wP
+lM
+EX
+Hb
+IR
+ee
+IR
+IR
+xT
+IR
+"}
+(6,1,1) = {"
+cb
+cb
+cb
+ic
+ic
+ic
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+IR
+IR
+IR
+IR
+Hb
+Hb
+EX
+iK
+rF
+dS
+ax
+yJ
+EX
+Hb
+IR
+IR
+IR
+IR
+IR
+IR
+"}
+(7,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+ic
+ic
+IR
+IR
+IR
+IR
+OD
+IR
+IR
+IR
+IR
+IR
+Ba
+Hb
+EX
+kB
+EX
+SF
+EX
+EX
+EX
+Hb
+OD
+hH
+Lf
+IR
+IR
+IR
+"}
+(8,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+ic
+ic
+IR
+OD
+IR
+IR
+IR
+IR
+IR
+IR
+LU
+IR
+ZW
+Hb
+Hb
+jq
+To
+oj
+if
+Hb
+Ih
+Hb
+IR
+IR
+IR
+IR
+LU
+IR
+"}
+(9,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+ic
+IR
+IR
+IR
+hH
+IR
+IR
+Hb
 aL
 sJ
 EZ
 La
 ub
-gv
+Hb
 EX
 EX
 EX
+mK
 EX
 EX
 EX
-IR
+Ba
 up
 aL
 EZ
 EZ
 La
-gv
+Hb
 "}
-(4,1,1) = {"
+(10,1,1) = {"
 cb
-bW
+cb
+ic
+ic
+ic
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Mx
 Ai
 rI
 td
 gl
 QL
-gv
+Hb
 EX
 Jw
 Az
+oj
 Dw
 bv
 EX
-gv
+Hb
 ue
 Ai
 rI
 rI
 EW
-gv
+Hb
 "}
-(5,1,1) = {"
+(11,1,1) = {"
 cb
-bW
+cb
+ic
+ic
+ic
+Gm
+zi
+zi
+Ns
+pI
+zi
+pI
+Mx
 Ai
 jO
 Ug
 DE
 QL
-gv
+Hb
 tc
 Ry
 EB
+oj
 Ry
 Ry
 Ve
-dV
+Hb
 ue
 Ai
 Fv
 jO
 Rm
-gv
+Hb
 "}
-(6,1,1) = {"
-gv
-bW
+(12,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+Gm
+Uy
+Cg
+Xo
+Bo
+Dz
+Bo
+Mx
 Nt
 jO
 Ug
 gl
 RN
-gv
+Hb
 EX
 rM
 ZE
+oj
 XL
 cA
 TV
-gv
+Hb
 ue
 Ai
 Ug
 jO
 WZ
-gv
+Hb
 "}
-(7,1,1) = {"
-gv
-bW
+(13,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+Gm
+Uy
+Cg
+Xo
+pI
+zi
+pI
+Mx
 UG
 gU
 rI
 gl
 RN
-gv
+Hb
 EX
 EX
 EX
+mK
 EX
 EX
 EX
-gv
+Hb
 ue
 gS
 CL
 Ug
 EW
-gv
+Hb
 "}
-(8,1,1) = {"
-gv
-bW
+(14,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+Gm
+Uy
+Cg
+Xo
+Bo
+zi
+Bo
+Mx
 UG
-LU
+gU
 rI
 gl
 RN
-gv
 Hb
-gv
+jq
+Hb
 To
+oj
 if
-gv
+Hb
 Ih
-gv
+Hb
 ue
 fZ
 Ug
 Ug
 EW
-gv
+Hb
 "}
-(9,1,1) = {"
-gv
-bW
+(15,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+Gm
+zi
+Dz
+Ns
+pI
+zi
+pI
+Mx
 UG
 Jf
 rI
 EW
 QL
-gv
+Hb
 EX
 EX
 EX
+mK
 EX
 EX
 EX
-gv
+Hb
 ue
 gS
 Ug
 Ug
 EW
-gv
+Hb
 "}
-(10,1,1) = {"
-gv
-bW
+(16,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+zi
+Ns
+Bo
+zi
+Bo
+Mx
 UG
 rI
 rI
 gl
 RN
-bW
+gv
 yz
 nS
-pI
+na
+oj
 vq
 Si
 qP
-gv
+Hb
 ue
 Ai
 Ug
 nK
 EW
-gv
+Hb
 "}
-(11,1,1) = {"
-gv
-bW
+(17,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+Li
+Ns
+zi
+zi
+pI
+Mx
 Ai
 jO
 Ug
 EW
 QL
-gv
+Hb
 yz
 Dn
 ci
-oC
+oj
+Gi
 dL
 qP
-gv
+Hb
 ue
 Ai
 ky
 jO
 Rm
-gv
+Hb
 "}
-(12,1,1) = {"
-gv
-bW
+(18,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+zi
+zi
+zi
+zi
+dO
+Mx
 Ai
 jO
 Ug
 gl
 RN
-gv
+Hb
 yz
 JR
-pI
+na
+oj
 gP
 zj
-Uy
-gv
+uP
+Hb
 ue
 Ai
 ky
 jO
 Rm
-gv
+Hb
 "}
-(13,1,1) = {"
-gv
+(19,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+Gm
+sj
+Gm
+Gm
+Gm
+Gm
 Mx
 UG
 Ug
 Ug
 xg
 KQ
-gv
+Hb
 EX
 EX
 EX
+mK
 EX
 EX
 EX
-gv
+Hb
 ue
 Ai
 xK
 rI
 EW
-gv
+Hb
 "}
-(14,1,1) = {"
-gv
-bW
+(20,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+zi
+zi
+wS
+zi
+zi
+Oz
 Ai
 Ug
 Ug
 gl
 RN
-gv
 Hb
-gv
+jq
+Hb
 To
+oj
 if
-gv
+Hb
 Ih
-gv
+Hb
 ue
 Ai
 Ug
 rI
 EW
-gv
+Hb
 "}
-(15,1,1) = {"
-gv
-bW
-Ai
-jq
+(21,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+zi
+hs
+xJ
+xJ
+xJ
+Ix
+nt
+Ug
 Ug
 gl
 RN
-gv
+Hb
 EX
 EX
 EX
+mK
 EX
 EX
 EX
-gv
+Hb
 ue
 NU
 Ug
 rI
 EW
-gv
+Hb
 "}
-(16,1,1) = {"
-gv
+(22,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+Gm
+Gm
+Gm
+Gm
+Gm
+Mx
 bW
-Ai
 Ug
 Ug
 gl
 RN
-gv
+Hb
 yz
 uQ
 Zk
+oj
 pX
 xj
 yz
-gv
+Hb
 ue
 Ai
 nK
 Ug
 EW
-gv
+Hb
 "}
-(17,1,1) = {"
-gv
-gv
-DC
+(23,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+Gm
+zi
+zi
+qq
+fV
+Mx
+Ee
 jO
-Ug
+AL
 gl
 RN
-gv
+Hb
 yz
 dE
 Ry
+oj
 fb
 Jq
 yz
-gv
+Hb
 ue
 Ju
 Ug
 jO
 Rm
-gv
+Hb
 "}
-(18,1,1) = {"
-gv
-gv
-gS
+(24,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+Kd
+zi
+zi
+uR
+zi
+Mx
+Mw
 jO
 Ug
 xg
 RN
-gv
+Hb
 yz
 lI
 MM
+oj
 JY
 Zk
 yz
-gv
+Hb
 ue
 Ai
-mK
+Ug
 jO
 EW
-bW
-"}
-(19,1,1) = {"
 gv
-bW
-UG
+"}
+(25,1,1) = {"
+cb
+ic
+ic
+ic
+ic
+Gm
+zi
+Gm
+zi
+zi
+Dz
+zi
+Mx
+hQ
 Ug
 CL
 qX
 RN
-gv
+Hb
 EX
 EX
 EX
+mK
 EX
 EX
 EX
-gv
+Hb
 ue
 Ai
 Ug
 ap
 gl
-bW
-"}
-(20,1,1) = {"
 gv
-bW
-UG
+"}
+(26,1,1) = {"
+ic
+ic
+ic
+Gm
+Gm
+Gm
+zi
+Gm
+qy
+RE
+Wu
+zi
+Mx
+hQ
 Ug
 rI
 Aw
 RN
-gv
 Hb
-gv
+jq
+Hb
 To
+oj
 if
-zi
+Hb
 Ih
-gv
+Hb
 ue
 Ai
 rI
 Fv
 EW
-bW
-"}
-(21,1,1) = {"
 gv
-bW
-UG
+"}
+(27,1,1) = {"
+ic
+ic
+ic
+Gm
+gu
+Kd
+zi
+Gm
+Dz
+hq
+zi
+zi
+Mx
+hQ
 Ug
 rI
 qX
 RN
-gv
+Hb
 EX
 EX
 EX
+IK
 EX
 EX
 EX
-gv
+Hb
 ue
 Ai
 rI
 Fv
 EW
-bW
-"}
-(22,1,1) = {"
 gv
-bW
-UG
+"}
+(28,1,1) = {"
+ic
+ic
+ic
+Gm
+HL
+Gm
+zi
+Gm
+Gm
+Gm
+Gm
+sj
+Mx
+hQ
 bV
 rI
 qX
 RN
-gv
+Hb
+tc
+Ry
+RP
+dV
+UD
+UD
 jj
-Ba
-oj
-VM
-jy
-jj
-gv
+Hb
 ue
 Ai
 rI
 Ug
 gl
-bW
-"}
-(23,1,1) = {"
 gv
+"}
+(29,1,1) = {"
+ic
+ic
+ic
+Gm
+xG
+Gm
+zi
+Gm
+WS
+WS
+Oe
+zi
+Mx
 bW
-Ai
 jO
 ky
 gl
 RN
 zp
 EX
-Oe
-fC
-Bj
-Oe
+VM
+nx
+ya
+Wa
+qe
 EX
 zp
 ue
@@ -1341,12 +2413,23 @@ Ai
 Lb
 jO
 WZ
-gv
+Hb
 "}
-(24,1,1) = {"
-cb
-gv
-gS
+(30,1,1) = {"
+ic
+ic
+ic
+Gm
+Gm
+Gm
+zi
+Gm
+et
+zi
+zi
+zi
+Mx
+Mw
 jO
 mJ
 DE
@@ -1355,6 +2438,7 @@ YX
 EX
 vN
 Ry
+UD
 yS
 Lg
 EX
@@ -1364,12 +2448,23 @@ Ai
 Ug
 jO
 Rm
-gv
+Hb
 "}
-(25,1,1) = {"
-cb
-gv
-gS
+(31,1,1) = {"
+ic
+ic
+ic
+ic
+ic
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
+Mx
+Mw
 ap
 ap
 EW
@@ -1378,6 +2473,7 @@ Ni
 EX
 uZ
 Ac
+UD
 st
 Nk
 EX
@@ -1389,10 +2485,21 @@ ap
 Rm
 cb
 "}
-(26,1,1) = {"
+(32,1,1) = {"
 cb
-gv
-Lp
+ic
+ic
+ic
+ic
+ic
+DC
+IO
+oC
+oC
+oC
+oC
+SY
+KT
 eT
 eT
 WP
@@ -1401,6 +2508,7 @@ kG
 eb
 mM
 wq
+UD
 wq
 FP
 aZ
@@ -1412,114 +2520,1679 @@ eT
 WP
 cb
 "}
-(27,1,1) = {"
+(33,1,1) = {"
 cb
-gv
-bW
-bW
-bW
-gv
-gv
-gv
-EX
-EX
-eJ
-eJ
-EX
-EX
-gv
-gv
-gv
-gv
-gv
-gv
 cb
-"}
-(28,1,1) = {"
-cb
-gv
-gv
-gv
-IR
+ic
+ic
+ic
+ic
+DC
+cZ
+DC
+DC
+DC
+Bj
+rn
+Hb
 gv
 gv
 gv
 Hb
-gv
-dV
-gv
-gv
-Ih
-gv
-gv
-ac
-gv
-gv
-gv
+Hb
+EX
+EX
+pC
+pC
+eJ
+EX
+EX
+Hb
+Hb
+IR
+IR
+IR
+IR
 cb
 "}
-(29,1,1) = {"
+(34,1,1) = {"
 cb
 cb
-gv
-ac
-gv
-gv
-gv
-gv
 ic
-gv
-gv
-gv
-gv
-Xo
-gv
-gv
-gv
-gv
-gv
-cb
-cb
-"}
-(30,1,1) = {"
-cb
-cb
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
+ic
+ic
+ic
+DC
+Tv
+DC
+bD
+DC
+DC
+rn
+Hb
+Hb
+Hb
+Ba
+Hb
+Hb
+Hb
+jq
+Hb
+RD
+Hb
+Hb
 Ih
-gv
-gv
-gv
-gv
+Hb
+Hb
+Ci
+IR
+Lf
+IR
+cb
+"}
+(35,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+ic
+DC
+ta
+TY
+Yj
+DC
+DC
+rn
+Hb
+IR
+Ci
+Hb
+Hb
+Hb
+Hb
+im
+Hb
+Hb
+Hb
+Hb
+QH
+Hb
+IR
+hH
+xT
+IR
+cb
+cb
+"}
+(36,1,1) = {"
+cb
+cb
+ic
+ic
+ic
+ic
+DC
+kz
+kz
+DC
+DC
+vt
+rn
+IR
+hH
+IR
+IR
+IR
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Ih
+Hb
+IR
+ee
+IR
 cb
 cb
 cb
 "}
-(31,1,1) = {"
+(37,1,1) = {"
 cb
 cb
 cb
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
-gv
+ic
+ic
+ic
+fC
+fC
+fC
+fC
+fC
+fC
+qB
+IR
+IR
+wn
+IR
+IR
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+IR
+IR
+cb
+cb
+cb
+cb
+"}
+(38,1,1) = {"
+cb
+cb
+cb
+ic
+ic
+ic
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+OD
+IR
+IR
+IR
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Ih
+Hb
+OD
+IR
+cb
+cb
+cb
+cb
+"}
+(39,1,1) = {"
+cb
+cb
+cb
+cb
+ic
+ic
+cb
+IR
+IR
+IR
+ee
+IR
+IR
+xT
+IR
+IR
+IR
+Kj
+Hb
+Hb
+jq
+Hb
+Hb
+Hb
+Hb
+Ih
+IR
+IR
+IR
+cb
+cb
+cb
+cb
+"}
+(40,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+xT
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+Hb
+jq
+Hb
+Hb
+Hb
+Hb
+Ih
+hH
+LU
+IR
+cb
+cb
+cb
+cb
+"}
+(41,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+OD
+hH
+Lf
+IR
+IR
+IR
+ee
+IR
+IR
+IR
+IR
+jq
+Hb
+Hb
+Hb
+Hb
+Hb
+IR
+IR
+IR
+cb
+cb
+cb
+cb
+"}
+(42,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+IR
+IR
+LU
+IR
+IR
+IR
+IR
+IR
+xT
+ac
+Hb
+Hb
+Hb
+IR
+IR
+ee
+IR
+cb
+cb
+cb
+cb
+cb
+"}
+(43,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+IR
+IR
+hH
+IR
+OD
+IR
+IR
+IR
+IR
+IR
+IR
+FV
+IR
+IR
+cb
+cb
+cb
+cb
+cb
+"}
+(44,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+IR
+IR
+IR
+IR
+xT
+IR
+IR
+IR
+FV
+OD
+IR
+cb
+cb
+cb
+cb
+cb
+"}
+(45,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+Ci
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+cb
+cb
+cb
+cb
+cb
+"}
+(46,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+hH
+IR
+IR
+IR
+IR
+LU
+IR
+IR
+IR
+IR
+wn
+cb
+cb
+cb
+cb
+cb
+"}
+(47,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+IR
+FV
+IR
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(48,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+OD
+IR
+IR
+ac
+ee
+IR
+IR
+IR
+hH
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(49,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+IR
+IR
+ac
+IR
+IR
+xT
+IR
+IR
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(50,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+IR
+LU
+IR
+IR
+IR
+wn
+IR
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(51,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(52,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(53,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(54,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(55,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(56,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(57,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(58,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(59,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(60,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(61,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(62,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(63,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(64,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(65,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+jq
+Hb
+Hb
+Hb
+Hb
+Hb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(66,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+jq
+Hb
+Hb
+re
+Hb
+Ih
+Hb
+Hb
+cb
+cb
+cb
+cb
+cb
+"}
+(67,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Ih
+Hb
+Ba
+cb
+cb
+cb
+cb
+cb
+"}
+(68,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Ba
+nP
+VW
+VW
+El
+yW
+oO
+oV
+Hb
+Hb
+cb
+cb
+cb
+cb
+cb
+"}
+(69,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+oV
+xX
+wR
+DC
+pT
+Fw
+VW
+Hb
+Hb
+Hb
+cb
+cb
+cb
+cb
+"}
+(70,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+RD
+Hb
+nP
+DC
+VW
+nP
+Qe
+AZ
+VW
+Hb
+Hb
+Hb
+cb
+cb
+cb
+cb
+"}
+(71,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+Hb
+VW
+xX
+oO
+Qe
+Ba
+oV
+nP
+Hb
+Hb
+Hb
+Hb
+cb
+cb
+cb
+"}
+(72,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+Hb
+OG
+DC
+Qe
+GE
+po
+Hb
+VW
+Hb
+Hb
+Hb
+re
+cb
+cb
+cb
+"}
+(73,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+Hb
+nP
+pT
+Qe
+Hb
+mC
+Qe
+VW
+Hb
+RD
+Hb
+Hb
+cb
+cb
+cb
+"}
+(74,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+Hb
+VW
+uG
+oO
+DC
+DC
+oO
+OG
+Hb
+Hb
+Hb
+cb
+cb
+cb
+cb
+"}
+(75,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+Hb
+XD
+Fw
+VW
+OG
+nP
+VW
+XD
+Hb
+Hb
+Hb
+cb
+cb
+cb
+cb
+"}
+(76,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+re
+Hb
+Hb
+Hb
+Hb
+Hb
+Ba
+Hb
+Hb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(77,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+Hb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(78,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(79,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+"}
+(80,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
 cb
 cb
 cb

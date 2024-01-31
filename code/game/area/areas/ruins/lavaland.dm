@@ -107,10 +107,15 @@
 /area/ruin/unpowered/codelab/maintenance
 	name = "Nanotrasen Genetic Research Maintenance"
 	icon_state = "dk_yellow"
+
 /area/ruin/unpowered/train_station/train
 	name = "Train"
 	icon_state = "bridge"
+
 /area/ruin/unpowered/train_station/cargo
 	name = "Train platform"
 	icon_state = "Cargo_bay"
 
+/area/ruin/unpowered/train_station/Barracks
+	name = "Barracks"
+	icon_state = "Sleep"
