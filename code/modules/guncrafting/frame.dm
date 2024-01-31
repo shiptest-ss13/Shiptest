@@ -232,10 +232,20 @@
 /obj/item/part/gun/frame/winchester
 	name = "Winchester Gun Frame"
 	icon_state = "frame_shotgun"
+	installedParts = list(
+		/obj/item/part/gun/modular/grip/wood,
+		/obj/item/part/gun/modular/mechanism/shotgun,
+		/obj/item/part/gun/modular/barrel/shotgun
+		)
 
 /obj/item/part/gun/frame/winchester/mk1
 
 /obj/item/part/gun/frame/m1911
+	installedParts = list(
+		/obj/item/part/gun/modular/grip/wood,
+		/obj/item/part/gun/modular/mechanism,
+		/obj/item/part/gun/modular/barrel
+		)
 
 /obj/item/part/gun/frame/commander
 
