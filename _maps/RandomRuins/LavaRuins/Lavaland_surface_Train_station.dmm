@@ -430,8 +430,6 @@
 "pX" = (
 /obj/structure/closet/crate/large,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
-/obj/item/mecha_parts/mecha_equipment/repair_droid,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy,
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
@@ -505,9 +503,9 @@
 /obj/item/stock_parts/cell/gun/mini,
 /obj/item/stock_parts/cell/gun/mini,
 /obj/item/stock_parts/cell/gun/mini,
-/obj/item/stock_parts/cell/bluespace,
-/obj/item/stock_parts/cell/bluespace,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/cell/high/empty,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "sj" = (
@@ -620,6 +618,7 @@
 	default_raw_text = "Contents by Car @#$&*"
 	},
 /obj/machinery/light/directional/north,
+/obj/item/stock_parts/cell/high/empty,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "vq" = (
@@ -933,6 +932,13 @@
 	},
 /turf/open/floor/plating/grass/lava,
 /area/template_noop)
+"Gg" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/stock_parts/cell/high/empty,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "Gi" = (
 /obj/item/stack/ore/salvage/scraptitanium,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -1006,13 +1012,10 @@
 /area/ruin/unpowered/train_station/cargo)
 "Jq" = (
 /obj/structure/closet/crate,
-/obj/item/circuitboard/mecha/durand/main,
-/obj/item/circuitboard/mecha/durand/peripherals,
-/obj/item/circuitboard/mecha/durand/targeting,
 /obj/item/stack/cable_coil/red,
-/obj/item/stock_parts/scanning_module/triphasic,
-/obj/item/stock_parts/capacitor/quadratic,
-/obj/item/stock_parts/cell/bluespace,
+/obj/item/stock_parts/cell/high/empty,
+/obj/item/stock_parts/capacitor/adv,
+/obj/item/stock_parts/scanning_module/adv,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "Ju" = (
@@ -2315,7 +2318,7 @@ Hb
 jq
 Hb
 To
-oj
+Gg
 if
 Hb
 Ih
