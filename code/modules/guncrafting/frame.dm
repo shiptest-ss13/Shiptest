@@ -150,13 +150,15 @@
 */
 
 /obj/item/part/gun/frame/proc/handle_part(obj/item/part/gun/I, mob/living/user)
-	if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
-		if(insert_item(I, user))
-			to_chat(user, span_notice("You have attached the part to \the [src]."))
-			return
-	else
-		to_chat(user, span_warning("This part does not fit!"))
-		return
+	for(var/datum/lathe_recipe/gun/recipe in get_current_recipes())
+		if(I.type in recipe.validParts)
+			if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
+				if(insert_item(I, user))
+					to_chat(user, span_notice("You have attached the part to \the [src]."))
+					return
+			else
+				to_chat(user, span_warning("This part does not fit!"))
+				return
 
 //Finds all recipes that match the current parts
 /obj/item/part/gun/frame/proc/get_current_recipes()
@@ -174,9 +176,8 @@
 
 /obj/item/part/gun/frame/attack_self(obj/item/I, mob/user)
 	. = ..()
-	for(var/datum/lathe_recipe/gun/recipe in get_current_recipes())
-		if(I.type in recipe.validParts)
-			handle_part(I, user)
+	if(istype(I, obj/item/part/gun))
+		handle_part(I, user)
 	/*
 	if(!InstalledGrip)
 		to_chat(user, span_warning("\the [src] does not have a grip!"))
