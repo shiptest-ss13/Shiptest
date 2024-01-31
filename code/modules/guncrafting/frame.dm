@@ -150,16 +150,19 @@
 */
 
 /obj/item/part/gun/frame/proc/handle_part(obj/item/I, mob/living/user)
-	//if(I.type in /datum/lathe_recipe/gun/m1911.validParts)
 	if(insert_item(I, user))
 		to_chat(user, span_notice("You have attached the part to \the [src]."))
 		return
 	else
 		to_chat(user, span_warning("This part does not fit!"))
 		return
-/*
+
 /obj/item/part/gun/frame/attack_self(mob/user)
 	. = ..()
+	for(var/datum/lathe_recipe/gun/recipe in /datum/lathe_recipe/gun)
+		if(src.type in recipe.validParts)
+			if(I.type in recipe.validParts)
+				handle_part(I, user)
 	/*
 	if(!InstalledGrip)
 		to_chat(user, span_warning("\the [src] does not have a grip!"))
@@ -171,7 +174,7 @@
 		to_chat(user, span_warning("\the [src] does not have a barrel!"))
 		return
 	*/
-	for each(I in )
+/*
 	var/turf/T = get_turf(src)
 	var/obj/item/gun/newGun = new result(T, 0)
 	newGun.frame = src
