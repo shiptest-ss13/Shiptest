@@ -10,6 +10,7 @@
 /obj/structure/closet/crate/engineering/electrical,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "aL" = (
@@ -99,7 +100,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/grey,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "dS" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -131,7 +132,7 @@
 	pixel_y = 22
 	},
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "eJ" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -156,8 +157,9 @@
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "fZ" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
@@ -173,8 +175,9 @@
 /area/ruin/unpowered/train_station/cargo)
 "gu" = (
 /obj/item/reagent_containers/glass/bucket,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "gv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -196,12 +199,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"gZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "hq" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "hs" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -216,7 +225,7 @@
 	start_charge = 0
 	},
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "hH" = (
 /obj/structure/flora/ausbushes/ywflowers/hell,
 /turf/open/floor/plating/grass/lava,
@@ -419,7 +428,7 @@
 /obj/item/clothing/head/beret/black,
 /obj/item/clothing/under/syndicate/tacticool,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "pT" = (
 /obj/structure/fluff/clockwork/alloy_shards,
 /turf/open/floor/plating,
@@ -442,14 +451,14 @@
 /obj/item/pen,
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "qy" = (
 /obj/item/flashlight/lamp/green{
 	pixel_y = 12
 	},
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "qB" = (
 /obj/structure/fence/corner,
 /turf/open/floor/plating,
@@ -483,6 +492,7 @@
 	icon_state = "1-2"
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "rI" = (
@@ -511,7 +521,7 @@
 	dir = 8
 	},
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "st" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -595,7 +605,7 @@
 	},
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "uU" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -615,6 +625,7 @@
 	desc = "a old sheet of paper that supposdly contained a list of carried goods its unreadable now";
 	default_raw_text = "Contents by Car @#$&*"
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "vq" = (
@@ -674,7 +685,7 @@
 "wS" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "xg" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -692,13 +703,14 @@
 /obj/structure/rack,
 /obj/item/mop/advanced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "xJ" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "xK" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -750,8 +762,9 @@
 	},
 /area/template_noop)
 "zi" = (
+/obj/machinery/light/directional/north,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "zj" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/plasma/fifty,
@@ -826,11 +839,11 @@
 /obj/structure/bed,
 /obj/item/bedsheet/grey,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "Cg" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "Ci" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/grass/lava,
@@ -856,7 +869,7 @@
 "Dz" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "DB" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/plating/grass/lava,
@@ -885,6 +898,10 @@
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall,
 /area/template_noop)
+"Ew" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/Barracks)
 "EB" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -931,11 +948,17 @@
 /area/ruin/unpowered/train_station/train)
 "Gm" = (
 /turf/closed/wall/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "GE" = (
 /obj/structure/fluff/clockwork/alloy_shards,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/template_noop)
+"GJ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/Barracks)
 "Hb" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/template_noop)
@@ -945,7 +968,7 @@
 	},
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "Ih" = (
 /obj/structure/railing/modern{
 	dir = 1
@@ -964,7 +987,7 @@
 	},
 /obj/machinery/door/airlock/external,
 /turf/open/floor/concrete/reinforced,
-/area/template_noop)
+/area/ruin/unpowered/train_station/Barracks)
 "IK" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -979,7 +1002,6 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/item/pen,
 /turf/open/floor/plating,
 /area/template_noop)
 "IR" = (
@@ -1022,6 +1044,10 @@
 /obj/item/clothing/gloves/color/latex/nitrile/evil,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Jy" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/unpowered/train_station/train)
 "JR" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/plastitanium/fifty,
@@ -1034,11 +1060,21 @@
 "Kd" = (
 /obj/machinery/door/airlock/public,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
+"Kf" = (
+/obj/structure/bed,
+/obj/item/bedsheet/grey,
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/Barracks)
 "Kj" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/grass/lava,
 /area/template_noop)
+"Kp" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/Barracks)
 "KQ" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1085,7 +1121,7 @@
 "Li" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/advanced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "Lp" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 5
@@ -1107,8 +1143,8 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "Mx" = (
-/turf/closed/wall/concrete/reinforced,
-/area/template_noop)
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/Barracks)
 "MM" = (
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plasteel/mono/white,
@@ -1125,12 +1161,13 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/table,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "Ns" = (
 /obj/structure/window/reinforced/tinted,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "Nt" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
@@ -1156,11 +1193,11 @@
 	pixel_y = -3
 	},
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "Oz" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/concrete/reinforced,
-/area/template_noop)
+/area/ruin/unpowered/train_station/Barracks)
 "OD" = (
 /obj/structure/flora/ausbushes/fullgrass/hell,
 /turf/open/floor/plating/grass/lava,
@@ -1215,7 +1252,11 @@
 /obj/item/pen,
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
+"RM" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/Barracks)
 "RN" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1289,7 +1330,7 @@
 "Uy" = (
 /obj/structure/chair,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "UD" = (
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
@@ -1330,7 +1371,7 @@
 	},
 /obj/structure/table/wood/reinforced,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "WJ" = (
 /obj/structure/railing/modern{
 	dir = 1
@@ -1348,7 +1389,7 @@
 /obj/structure/rack,
 /obj/item/gun/energy,
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "WZ" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
@@ -1360,7 +1401,7 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/reinforced,
-/area/space)
+/area/ruin/unpowered/train_station/Barracks)
 "XD" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall/rust,
@@ -1377,6 +1418,11 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/plating,
 /area/template_noop)
+"YA" = (
+/obj/structure/chair,
+/obj/machinery/light/directional/north,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/Barracks)
 "YX" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -1728,7 +1774,7 @@ Gm
 Gm
 Gm
 Gm
-Mx
+Gm
 Ai
 rI
 td
@@ -1757,13 +1803,13 @@ ic
 ic
 ic
 Gm
-zi
-zi
+Mx
+Ew
 Ns
 pI
-zi
-pI
 Mx
+pI
+Gm
 Ai
 jO
 Ug
@@ -1792,13 +1838,13 @@ ic
 ic
 ic
 Gm
-Uy
+YA
 Cg
 Xo
 Bo
 Dz
-Bo
-Mx
+Kf
+Gm
 Nt
 jO
 Ug
@@ -1831,9 +1877,9 @@ Uy
 Cg
 Xo
 pI
-zi
-pI
 Mx
+pI
+Gm
 UG
 gU
 rI
@@ -1866,9 +1912,9 @@ Uy
 Cg
 Xo
 Bo
-zi
-Bo
 Mx
+Bo
+Gm
 UG
 gU
 rI
@@ -1897,13 +1943,13 @@ ic
 ic
 ic
 Gm
-zi
+Mx
 Dz
 Ns
 pI
-zi
-pI
 Mx
+pI
+Gm
 UG
 Jf
 rI
@@ -1933,12 +1979,12 @@ ic
 ic
 Gm
 zi
-zi
+Mx
 Ns
 Bo
-zi
-Bo
 Mx
+Kf
+Gm
 UG
 rI
 rI
@@ -1967,13 +2013,13 @@ ic
 ic
 ic
 Gm
-zi
+Mx
 Li
 Ns
-zi
-zi
-pI
 Mx
+Mx
+pI
+Gm
 Ai
 jO
 Ug
@@ -2002,13 +2048,13 @@ ic
 ic
 ic
 Gm
-zi
-zi
-zi
-zi
-zi
-dO
 Mx
+Mx
+Mx
+Mx
+RM
+dO
+Gm
 Ai
 jO
 Ug
@@ -2043,7 +2089,7 @@ Gm
 Gm
 Gm
 Gm
-Mx
+Gm
 UG
 Ug
 Ug
@@ -2072,12 +2118,12 @@ ic
 ic
 ic
 Gm
-zi
-zi
-zi
+Mx
+Mx
+Mx
 wS
-zi
-zi
+Ew
+Mx
 Oz
 Ai
 Ug
@@ -2108,11 +2154,11 @@ ic
 ic
 Gm
 zi
-zi
+Mx
 hs
+GJ
 xJ
-xJ
-xJ
+GJ
 Ix
 nt
 Ug
@@ -2142,13 +2188,13 @@ ic
 ic
 ic
 Gm
-zi
-Gm
-Gm
-Gm
-Gm
-Gm
 Mx
+Gm
+Gm
+Gm
+Gm
+Gm
+Gm
 bW
 Ug
 Ug
@@ -2177,13 +2223,13 @@ ic
 ic
 ic
 Gm
-zi
+Mx
 Gm
 zi
-zi
+Mx
 qq
 fV
-Mx
+Gm
 Ee
 jO
 AL
@@ -2212,13 +2258,13 @@ ic
 ic
 ic
 Gm
-zi
-Kd
-zi
-zi
-uR
-zi
 Mx
+Kd
+Mx
+Mx
+uR
+Mx
+Gm
 Mw
 jO
 Ug
@@ -2249,11 +2295,11 @@ ic
 Gm
 zi
 Gm
-zi
-zi
-Dz
-zi
 Mx
+Mx
+Dz
+Mx
+Gm
 hQ
 Ug
 CL
@@ -2282,13 +2328,13 @@ ic
 Gm
 Gm
 Gm
-zi
+Mx
 Gm
 qy
 RE
 Wu
-zi
 Mx
+Gm
 hQ
 Ug
 rI
@@ -2317,13 +2363,13 @@ ic
 Gm
 gu
 Kd
-zi
+Mx
 Gm
 Dz
 hq
-zi
-zi
 Mx
+Mx
+Gm
 hQ
 Ug
 rI
@@ -2352,13 +2398,13 @@ ic
 Gm
 HL
 Gm
-zi
+Mx
 Gm
 Gm
 Gm
 Gm
 sj
-Mx
+Gm
 hQ
 bV
 rI
@@ -2366,11 +2412,11 @@ qX
 RN
 Hb
 tc
-Ry
+gZ
 RP
 dV
 UD
-UD
+Jy
 jj
 Hb
 ue
@@ -2392,8 +2438,8 @@ Gm
 WS
 WS
 Oe
-zi
 Mx
+Gm
 bW
 jO
 ky
@@ -2422,13 +2468,13 @@ ic
 Gm
 Gm
 Gm
-zi
+Mx
 Gm
 et
-zi
-zi
-zi
+RM
 Mx
+Kp
+Gm
 Mw
 jO
 mJ
@@ -2463,7 +2509,7 @@ Gm
 Gm
 Gm
 Gm
-Mx
+Gm
 Mw
 ap
 ap
