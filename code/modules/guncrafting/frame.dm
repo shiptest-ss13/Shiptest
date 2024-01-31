@@ -149,17 +149,32 @@
 		return
 */
 
-/obj/item/part/gun/frame/proc/handle_part(obj/item/I, mob/living/user)
-	if(insert_item(I, user))
-		to_chat(user, span_notice("You have attached the part to \the [src]."))
-		return
+/obj/item/part/gun/frame/proc/handle_part(obj/item/part/gun/I, mob/living/user)
+	if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
+		if(insert_item(I, user))
+			to_chat(user, span_notice("You have attached the part to \the [src]."))
+			return
 	else
 		to_chat(user, span_warning("This part does not fit!"))
 		return
 
+//Finds all recipes that match the current parts
+/obj/item/part/gun/frame/proc/get_current_recipes()
+	var/list/gun_recipes = subtypesof(/datum/lathe_recipe/gun)
+	var/list/filtered_recipes = list()
+
+	for(var/datum/lathe_recipe/gun/recipe in gun_recipes)
+		if(istype(src.type))
+			filtered_recipes += recipe_type
+		for(var/obj/item/part/gun/installed_part in installedParts)
+			if(istype(part, installed_part))
+				filtered_recipes += recipe_type
+
+	return filtered_recipes
+
 /obj/item/part/gun/frame/attack_self(mob/user)
 	. = ..()
-	for(var/datum/lathe_recipe/gun/recipe in /datum/lathe_recipe/gun)
+	for(var/datum/lathe_recipe/gun/recipe in get_current_recipes())
 		if(src.type in recipe.validParts)
 			if(I.type in recipe.validParts)
 				handle_part(I, user)
@@ -181,6 +196,13 @@
 	src.forceMove(newGun)
 	return
 */
+
+/obj/item/part/gun/frame/proc/get_part_types()
+	var/part_types = NONE
+	part_types |= gun_part_type
+	for(var/obj/item/part/gun/part in installedParts)
+		part_types |= part.gin_part_type
+	return part_types
 
 /*
 /obj/item/part/gun/frame/examine(user, distance)
