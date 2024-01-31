@@ -154,7 +154,8 @@
 ///////////
 
 /obj/item/stack/gun_part
-	name = "Gun Part"
+	name = "Gun Parts"
+	singular_name = "Gun Part"
 	desc = "This could fabcricate metal parts."
 	icon = 'icons/obj/guncrafting.dmi'
 	icon_state = "work_piece"

@@ -155,6 +155,7 @@
 			if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
 				if(insert_item(I, user))
 					to_chat(user, span_notice("You have attached the part to \the [src]."))
+					installedParts += I
 					return
 			else
 				to_chat(user, span_warning("This part does not fit!"))
@@ -176,7 +177,7 @@
 
 /obj/item/part/gun/frame/attack_self(obj/item/I, mob/user)
 	. = ..()
-	if(istype(I, obj/item/part/gun))
+	if(istype(I, /obj/item/part/gun))
 		handle_part(I, user)
 	/*
 	if(!InstalledGrip)
