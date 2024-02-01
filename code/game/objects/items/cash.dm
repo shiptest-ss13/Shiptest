@@ -28,6 +28,18 @@
 	SSeconomy.physical_money += amount
 	update_appearance()
 
+/obj/item/spacecash/proc/transfer_value(amount, obj/item/spacecash/target)
+	amount = clamp(amount, 0, value)
+	value -= amount
+	target.value += amount
+	target.update_appearance()
+
+	if(value == 0)
+		qdel(src)
+		return
+
+	update_appearance()
+
 /obj/item/spacecash/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/spacecash))
 		var/obj/item/spacecash/bundle/bundle
@@ -41,15 +53,13 @@
 			user.dropItemToGround(cash)
 			qdel(cash)
 
-		bundle.value += value
-		bundle.update_appearance()
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.dropItemToGround(src)
 			H.dropItemToGround(bundle)
 			H.put_in_hands(bundle)
 		to_chat(user, "<span class='notice'>You add [value] credits worth of money to the bundle.<br>It now holds [bundle.value] credits.</span>")
-		qdel(src)
+		bundle.transfer_value(bundle.value, src)
 
 /obj/item/spacecash/Destroy()
 	SSeconomy.physical_money -= value
@@ -126,13 +136,8 @@
 		to_chat(usr, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
-	value -= cashamount
-	SSeconomy.physical_money -= cashamount
-	if(!value)
-		usr.dropItemToGround(src)
-		qdel(src)
-
-	var/obj/item/spacecash/bundle/bundle = new(usr.loc, cashamount)
+	var/obj/item/spacecash/bundle/bundle = new(usr.loc)
+	transfer_value(cashamount, bundle)
 	usr.put_in_hands(bundle)
 	update_appearance()
 
