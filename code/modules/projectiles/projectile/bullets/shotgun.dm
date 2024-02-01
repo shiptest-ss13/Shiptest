@@ -1,7 +1,7 @@
 /obj/projectile/bullet/slug
 	name = "12g shotgun slug"
 	damage = 40
-	armour_penetration = -35
+	armour_penetration = -10
 	speed = 0.5
 
 /obj/projectile/bullet/slug/beanbag
