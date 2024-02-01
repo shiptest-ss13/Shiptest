@@ -82,6 +82,7 @@
 /obj/item/holochip/proc/spend(amount, pay_anyway = FALSE)
 	if(credits >= amount)
 		credits -= amount
+		SSeconomy.physical_money -= amount
 		if(credits == 0)
 			qdel(src)
 		update_appearance()
@@ -97,6 +98,7 @@
 	if(istype(I, /obj/item/holochip))
 		var/obj/item/holochip/H = I
 		credits += H.credits
+		SSeconomy.physical_money += H.credits
 		to_chat(user, "<span class='notice'>You insert the credits into [src].</span>")
 		update_appearance()
 		qdel(H)

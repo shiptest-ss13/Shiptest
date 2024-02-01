@@ -37,6 +37,7 @@
 			var/obj/item/spacecash/cash = W
 			bundle = new (loc)
 			bundle.value = cash.value
+			cash.value = 0
 			user.dropItemToGround(cash)
 			qdel(cash)
 
@@ -57,10 +58,6 @@
 
 /obj/item/spacecash/bundle
 	icon_state = "credit20"
-
-/obj/item/spacecash/bundle/Initialize()
-	. = ..()
-	update_appearance()
 
 /obj/item/spacecash/bundle/update_appearance()
 	icon_state = "nothing"
@@ -130,13 +127,12 @@
 		return
 
 	value -= cashamount
+	SSeconomy.physical_money -= cashamount
 	if(!value)
 		usr.dropItemToGround(src)
 		qdel(src)
 
-	var/obj/item/spacecash/bundle/bundle = new (usr.loc)
-	bundle.value = cashamount
-	bundle.update_appearance()
+	var/obj/item/spacecash/bundle/bundle = new(usr.loc, cashamount)
 	usr.put_in_hands(bundle)
 	update_appearance()
 

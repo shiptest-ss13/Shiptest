@@ -16,6 +16,7 @@
 		SSeconomy.bank_accounts -= src
 	for(var/obj/item/card/id/id_card as anything in bank_cards)
 		id_card.registered_account = null
+	SSeconomy.bank_money -= account_balance
 	return ..()
 
 /datum/bank_account/proc/_adjust_money(amt)
