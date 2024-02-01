@@ -145,6 +145,6 @@
 /datum/map_template/ruin/lavaland/codelab
 	name = "Train station"
 	id = "train_station"
-	description = "A Old and overun train station who built it and what were they moving?"
+	description = "An old and abandoned train station. Who built it, and what were they moving?"
 	suffix = "lavaland_surface_train_station.dmm"
 
