@@ -173,4 +173,4 @@ other types of metals and chemistry for reagents).
 
 /obj/item/disk/design_disk/ammo_c9mm/Initialize()
 	. = ..()
-	blueprints[1] = new /datum/design/c9mm()
+	blueprints[1] = new /datum/design/c9mmautolathe()

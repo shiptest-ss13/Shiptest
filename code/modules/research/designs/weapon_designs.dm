@@ -788,10 +788,10 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_BALLISTICS
 
-/datum/design/c9mmm_disk
+/datum/design/c9mmautolathe
 	name = "Ammo Box (9mm)"
-	id = "c9mm_disk"
+	id = "c9mmautolathe"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c9mm
-	category = list("Imported")
+	category = list("Ammo")
