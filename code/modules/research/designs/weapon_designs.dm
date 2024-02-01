@@ -794,4 +794,4 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c9mm
-	category = list("Ammo")
+	category = list("Imported")
