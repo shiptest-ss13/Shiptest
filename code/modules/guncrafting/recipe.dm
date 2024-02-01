@@ -14,7 +14,7 @@
 		/obj/item/part/gun/modular/barrel/shotgun
 		)
 
-/datum/lathe_recipe/gun/winchester
+/datum/lathe_recipe/gun/winchester/mk1
 	result = /obj/item/gun/ballistic/shotgun/winchester/mk1
 	validParts = list(
 		/obj/item/part/gun/frame/winchester/mk1,
