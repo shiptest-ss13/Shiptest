@@ -10,6 +10,7 @@
 
 	user << browse(create_panel_helper(create_mob_html), "window=create_mob;size=425x475")
 
+// ! yet another fucking randomization proc. jesus h christ
 /proc/randomize_human(mob/living/carbon/human/H)
 	H.gender = pick(MALE, FEMALE)
 	H.real_name = random_unique_name(H.gender)

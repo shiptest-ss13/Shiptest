@@ -1,70 +1,36 @@
+
+#warn relocate, maybe remove MAX_SAVE_SLOTS
+#define BASE_SAVE_SLOTS 20
+#define MEMBER_EXTRA_SAVE_SLOTS 30
+#define MAX_SAVE_SLOTS max(BASE_SAVE_SLOTS, MEMBER_EXTRA_SAVE_SLOTS)
+
+// used by attempt_cache_write_pref_data to determine how errors should be handled
+#define PREF_ERROR_MODE_FORCE 1
+#define PREF_ERROR_MODE_CANCEL 2
+
+#warn rename this; too much overlap with pref_datums
 GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences
 	var/client/parent
 	//doohickeys for savefiles
 	var/path
-	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
 	var/max_save_slots = 20
 
-	//non-preference stuff
-	var/muted = 0
-	var/last_ip
-	var/last_id
+	// ! make global tbh
+	var/list/friendlyGenders = list(
+							"Male" = "male",
+							"Female" = "female",
+							"Other" = "plural"
+						)
 
-	//game-preferences
-	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
-	var/ooccolor = "#c43b23"
-	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
-	var/enable_tips = TRUE
-	var/tip_delay = 500 //tip delay in milliseconds
+	/*
+		IC:
 
-	//Antag preferences
-	var/list/be_special = list()		//Special role selection
-	var/tmp/old_be_special = 0			//Bitflag version of be_special, used to update old savefiles and nothing more
-										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
-										//autocorrected this round, not that you'd need to check that.
-
-	var/UI_style = null
-	var/outline_enabled = TRUE
-	var/outline_color = COLOR_BLUE_GRAY
-	var/buttons_locked = FALSE
-	var/hotkeys = TRUE
-
-	///Runechat preference. If true, certain messages will be displayed on the map, not ust on the chat area. Boolean.
-	var/chat_on_map = TRUE
-	///Limit preference on the size of the message. Requires chat_on_map to have effect.
-	var/max_chat_length = CHAT_MESSAGE_MAX_LENGTH
-	///Whether non-mob messages will be displayed, such as machine vendor announcements. Requires chat_on_map to have effect. Boolean.
-	var/see_chat_non_mob = TRUE
-	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
-	var/see_rc_emotes = TRUE
-
-	// Custom Keybindings
-	var/list/key_bindings = list()
-
-	var/tgui_fancy = TRUE
-	var/tgui_lock = FALSE
-	var/windowflashing = TRUE
-	var/crew_objectives = TRUE
-	var/toggles = TOGGLES_DEFAULT
-	var/db_flags
-	var/chat_toggles = TOGGLES_DEFAULT_CHAT
-	var/ghost_form = "ghost"
-	var/ghost_orbit = GHOST_ORBIT_CIRCLE
-	var/ghost_accs = GHOST_ACCS_DEFAULT_OPTION
-	var/ghost_others = GHOST_OTHERS_DEFAULT_OPTION
-	var/ghost_hud = 1
-	var/inquisitive_ghost = 1
-	var/allow_midround_antag = 1
-	var/pda_style = MONO
-	var/pda_color = "#808000"
-	var/show_credits = TRUE
-
-	var/uses_glasses_colour = 0
+	*/
+	// ! oooagh write a description
 
 	//character preferences
-	var/slot_randomized					//keeps track of round-to-round randomization of the character slot, prevents overwriting
 	var/real_name						//our character's name
 	var/gender = MALE					//gender of character (well duh)
 	var/age = 30						//age of character
@@ -84,7 +50,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
-	var/species_looking_at = "human"	 //used as a helper to keep track of in the species select thingy
+	// ! this is hell
 	var/list/features = list(
 							"mcolor" = "FFF",
 							"mcolor2" = "FFF",
@@ -93,36 +59,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ethcolor" = "9c3030",
 							"tail_lizard" = "Smooth",
 							"tail_human" = "None",
-							"face_markings" = "None",
+							// "face_markings" = "None",
 							"horns" = "None",
 							"ears" = "None",
 							"wings" = "None",
 							"frills" = "None",
 							"spines" = "None",
-							"body_markings" = "None",
+							// "body_markings" = "None",
 							"legs" = "Normal Legs",
 							"moth_wings" = "Plain",
-							"moth_fluff" = "Plain",
-							"moth_markings" = "None",
-							"spider_legs" = "Plain",
-							"spider_spinneret" = "Plain",
-							"spider_mandibles" = "Plain",
-							"squid_face" = "Squidward",
+							// "moth_fluff" = "Plain",
+							// "moth_markings" = "None",
+							// "spider_legs" = "Plain",
+							// "spider_spinneret" = "Plain",
+							// "spider_mandibles" = "Plain",
+							// "squid_face" = "Squidward",
 							"ipc_screen" = "Blue",
-							"ipc_antenna" = "None",
+							// "ipc_antenna" = "None",
 							"ipc_chassis" = "Morpheus Cyberkinetics (Custom)",
 							"ipc_brain" = "Posibrain",
-							"kepori_feathers" = "Plain",
-							"kepori_body_feathers" = "Plain",
-							"kepori_tail_feathers" = "Fan",
-							"vox_head_quills" = "Plain",
-							"vox_neck_quills" = "Plain",
-							"elzu_horns" = "None",
+							// "kepori_feathers" = "Plain",
+							// "kepori_body_feathers" = "Plain",
+							// "kepori_tail_feathers" = "Fan",
+							// "vox_head_quills" = "Plain",
+							// "vox_neck_quills" = "Plain",
+							// "elzu_horns" = "None",
 							"elzu_tail" = "None",
 							"flavor_text" = "",
 							"body_size" = "Normal"
 						)
-	var/list/randomise = list(
+	var/list/randomise = list( // ! handled by "toggle_random" href. maybe improperly sanitized. annoying
 							RANDOM_UNDERWEAR = TRUE,
 							RANDOM_UNDERWEAR_COLOR = TRUE,
 							RANDOM_UNDERSHIRT = TRUE,
@@ -139,11 +105,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							RANDOM_SKIN_TONE = TRUE,
 							RANDOM_EYE_COLOR = TRUE,
 						)
-	var/list/friendlyGenders = list(
-							"Male" = "male",
-							"Female" = "female",
-							"Other" = "plural"
-						)
 	var/list/prosthetic_limbs = list(
 							BODY_ZONE_L_ARM = PROSTHETIC_NORMAL,
 							BODY_ZONE_R_ARM = PROSTHETIC_NORMAL,
@@ -152,36 +113,40 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						)
 	var/fbp = FALSE
 	var/phobia = "spiders"
-	var/list/alt_titles_preferences = list()
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
 	var/prefered_security_department = SEC_DEPT_RANDOM
+	var/uplink_spawn_loc = UPLINK_PDA
 
 	//Quirk list
 	var/list/all_quirks = list()
 
-	//Job preferences 2.0 - indexed by job title , no key or value implies never
-	var/list/job_preferences = list()
+	///The outfit we currently want to preview on our character
+	var/datum/outfit/job/selected_outfit
+	///Gear the character has equipped
+	var/list/equipped_gear = list() // ! loadout?
 
-	// 0 = character settings, 1 = game preferences
-	var/current_tab = 0
+	/*
+		OOC:
 
-	var/show_gear = TRUE
-	var/show_loadout = TRUE
+	*/
+	// ! oooagh write a description
 
-	var/unlock_content = FALSE
-	var/custom_ooc = FALSE
+	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
 
-	var/list/ignoring = list()
+	var/ooccolor = "#c43b23"
+	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones. // ! what?
+
+	///If we want to broadcast deadchat connect/disconnect messages
+	var/broadcast_login_logout = TRUE
+
+	/// The UI sprite set used for the player's hands, inventory, throw button, etc..
+	var/UI_style = null
+	var/buttons_locked = FALSE // ! not 100% sure what this is
+	var/hotkeys = TRUE // ! hotkey mode, i think? something like that?
 
 	var/clientfps = 60 //WS Edit - Client FPS Tweak
-
 	var/parallax
-	///Do we show screentips, if so, how big?
-	var/screentip_pref = TRUE
-	///Color of screentips at top of screen
-	var/screentip_color = "#ffd391"
-
 	var/ambientocclusion = TRUE
 	///Should we automatically fit the viewport?
 	var/auto_fit_viewport = TRUE
@@ -191,57 +156,438 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pixel_size = 0
 	///What scaling method should we use?
 	var/scaling_method = "distort"
-	var/uplink_spawn_loc = UPLINK_PDA
 
-	var/list/exp = list()
-	var/list/menuoptions
+	///Do we show screentips, if so, how big?
+	var/screentip_pref = TRUE
+	///Color of screentips at top of screen
+	var/screentip_color = "#ffd391" // ! cannot be configured
 
-	///Gear the character has equipped
-	var/list/equipped_gear = list()
-	///Gear tab currently being viewed
-	var/gear_tab = "General"
+	var/outline_enabled = TRUE
+	var/outline_color = COLOR_BLUE_GRAY
 
-	var/action_buttons_screen_locs = list()
-	///If we want to broadcast deadchat connect/disconnect messages
-	var/broadcast_login_logout = TRUE
-	///What outfit typepaths we've favorited in the SelectEquipment menu
+	///Runechat preference. If true, certain messages will be displayed on the map, not ust on the chat area. Boolean.
+	var/chat_on_map = TRUE
+	///Limit preference on the size of the message. Requires chat_on_map to have effect.
+	var/max_chat_length = CHAT_MESSAGE_MAX_LENGTH
+	///Whether non-mob messages will be displayed, such as machine vendor announcements. Requires chat_on_map to have effect. Boolean.
+	var/see_chat_non_mob = TRUE
+	///Whether emotes will be displayed on runechat. Requires chat_on_map to have effect. Boolean.
+	var/see_rc_emotes = TRUE
+
+	//Antag preferences
+	var/list/be_special = list()		//Special role selection
+
+	// Custom Keybindings
+	var/list/key_bindings = list()
+
+	var/tgui_fancy = TRUE
+	var/tgui_lock = FALSE
+	var/windowflashing = TRUE
+	var/toggles = TOGGLES_DEFAULT // ! ugh
+	var/chat_toggles = TOGGLES_DEFAULT_CHAT // ! ugh
+	var/ghost_form = "ghost"
+	var/ghost_orbit = GHOST_ORBIT_CIRCLE
+	var/ghost_accs = GHOST_ACCS_DEFAULT_OPTION
+	var/ghost_others = GHOST_OTHERS_DEFAULT_OPTION
+	var/ghost_hud = 1
+	var/inquisitive_ghost = 1
+
+	var/pda_style = MONO
+	var/pda_color = "#808000"
+
+	var/show_credits = TRUE
+
+	/*
+		External OOC:
+			These are OOC preferences which are not controlled through
+			the preferences menu at all; many are controlled by verbs. However, they are
+			saved along with the rest of the OOC preferences.
+	*/
+	/// A list of keys (not ckeys!) whose OOC and LOOC messages the player has decided to block. Verb-controlled.
+	var/list/ignoring = list()
+
+	var/whois_visible = TRUE // ! what does this do? i thought it had to do with the BYOND player list, but it adds ckeys, so that can't be what world_topic does.
+
+	/// What outfit typepaths the player has favorited in the (admin-only) SelectEquipment menu.
 	var/list/favorite_outfits = list()
-	var/whois_visible = TRUE
 
-	///The outfit we currently want to preview on our character
-	var/datum/outfit/job/selected_outfit
+	var/uses_glasses_colour = 0
+	var/list/menuoptions = list() // ! what the fuck is this?
+
+	/// The hash of the changelog available when the player last connected. Used to detect if there has been an update since last connection.
+	var/lastchangelog = ""
+
+	var/enable_tips = TRUE
+	var/tip_delay = 500 //tip delay in milliseconds
+
+	/*
+		Miscellaneous:
+			A grab-bag of variables stored on the preferences datum which are not
+			saved or are saved unconventionally, and which have a non-UI primary purpose.
+	*/
+	/// An associative list matching strings representing types of play (job, living/observer, etc.)
+	/// to playtime amounts in minutes. Although this is stored on the preferences datum,
+	/// it is actually loaded from the database on player login, and saved to the DB periodically if it is active.
+	var/list/exp = list()
+	var/db_flags // ! saved to and loaded from the DB, but what does it do? looks like it's mainly (solely?) used for job-exemption.
+	// ! 2 problems: the proc that uses it is written incorrectly, making it worthless, AND the information of bypass (DB or admin) isn't communicated to the web UI
+	/// A set of bitflags representing the player's current mute types.
+	/// Set by admins to shut the player up in a specific channel for the round; it isn't saved.
+	/// Types include MUTE_IC, MUTE_OOC, MUTE_PRAY, MUTE_ADMINHELP, MUTE_DEADCHAT, and MUTE_MENTORHELP.
+	var/muted = 0
+	/// Whether the player is a BYOND member, checked on preferences datum initialization.
+	/// Used to unlock a few extremely specific bonuses.
+	var/unlock_content = FALSE
+
+	var/action_buttons_screen_locs = list() // ! not sure what this is for -- stores altered action button screen locations as "X,Y" strings? isn't saved
+
+	/*
+		UI State:
+			These variables are used purely to store the state of
+			various preferences datum-based UIs, and ARE NOT SAVED.
+	*/
+	/// Gear tab currently being viewed
+	var/gear_tab = "General"
+	/// The tab of the preferences menu which is currently being viewed.
+	var/current_tab = 0
+
+	var/species_looking_at = "human"	 //used as a helper to keep track of in the species select thingy
+
+	var/show_loadout = TRUE // ! not 100% sure what this does, or show_gear
+	var/show_gear = TRUE
+
+	var/slot_randomized //keeps track of round-to-round randomization of the character slot, prevents overwriting // ! not sure what this is or does
+
+	/*
+		Deprecated:
+			Delete these.
+	*/
+	// ! delete these
+	var/tmp/old_be_special = 0			//Bitflag version of be_special, used to update old savefiles and nothing more
+										//If it's 0, that's good, if it's anything but 0, the owner of this prefs file's antag choices were,
+										//autocorrected this round, not that you'd need to check that.
+	// these just seem totally unused??? they're set once, but never saved and never used
+	var/last_ip
+	var/last_id
+	// checked in a few places, but never set
+	var/custom_ooc = FALSE
+	//Job preferences 2.0 - indexed by job title , no key or value implies never
+	var/list/job_preferences = list()
+	var/list/alt_titles_preferences = list()
+	var/allow_midround_antag = 1 // ! overlaps with "MIDROUND_ANTAG" flag on toggles var
+	var/crew_objectives = TRUE // ! there's a var on the mind with the same name
+
+	/*
+		Prefdev vars:
+			These will be sorted once I'm done with them.
+	*/
+
+	VAR_PRIVATE/list/pref_cache = list()
+
+	#warn needs to initialize. make sure it's a list of TYPES to entries, not OBJECTS to ENTRIES.
+	VAR_PRIVATE/list/pref_values = list()
+	VAR_PRIVATE/datum/save_backend/save
+
 
 /datum/preferences/New(client/C)
 	parent = C
 
+	// default value-setting
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)
-
 	UI_style = GLOB.available_ui_styles[1]
+
 	if(istype(C))
 		if(!IsGuestKey(C.key))
+			// sets the path to look for the savefile at
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
 				max_save_slots = 30
+
+	var/backend_type = get_save_backend_type(C)
+	save = new backend_type(C.ckey)
+	save.prepare_save()
+
+	populate_pref_values()
+
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
 			species_looking_at = pref_species.id
 			return
-	//we couldn't load character data so just randomize the character appearance + name
-	random_character()		//let's create a random character then - rather than a fat, bald and naked man.
+
+	// randomization; saves defaults in case of a failure loading prefs or character
+	// let's create a random character then - rather than a fat, bald and naked man.
+	random_character()
 	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
 	C?.set_macros()
 	real_name = pref_species.random_name(gender,1)
 	if(!loaded_preferences_successfully)
 		save_preferences()
 	save_character()		//let's save this new random character so it doesn't keep generating new ones.
-	menuoptions = list()
+
 	return
+
+/datum/preferences/proc/get_save_backend_type(client/C)
+	RETURN_TYPE(/datum/save_backend)
+	if(istype(C) && !IsGuestKey(C.key))
+		// ! obviously this needs to change. the default case is also questionable: guests just abort all save/load requests.
+		// ! also note that, if somebody disconnects mid-connection, we still want to load their prefs, not reset them entirely.
+		// ! since this datum sticks around, it's important it not get forced into an invalid state. might want to brush up on the order of operations there
+		return /datum/save_backend/guest
+	return /datum/save_backend/guest
+
+#warn should be split into multiple procs? there's no reason to load game prefs when changing character, and people change character a lot.
+#warn regardless it's important this proc ensures that the prefs datum has a valid state afterwards. this establishes the foundation that future changes modify
+/datum/preferences/proc/populate_pref_values()
+	var/list/errors = list()
+
+	for(var/datum/preference/pref as anything in GLOB.pref_topo_order)
+		var/list/dep_values = assemble_pref_dep_list(pref)
+		if(!pref.is_available(dep_values))
+			pref_values[pref.type] = PREFERENCE_ENTRY_UNAVAILABLE
+			// if the preference is unavailable, no reason to continue with deserialization, as deserializing any value in the file would overwrite its unavailability.
+			continue
+		else
+			pref_values[pref.type] = pref.default_value
+
+		var/pref_str_data
+		switch(pref.pref_type)
+			if(PREFERENCE_ACCOUNT)
+				pref_str_data = save.get_value(PREFERENCE_ACCOUNT, key=pref.external_key)
+			if(PREFERENCE_CHARACTER)
+				// i'm 80% sure default_slot is the current character slot
+				pref_str_data = save.get_value(PREFERENCE_CHARACTER, default_slot, key=pref.external_key)
+
+		#warn ensure that "null" from get_value() means "no data found"
+		if(!isnull(pref_str_data))
+			var/list/pref_errors = list()
+			var/pref_deserial_data = pref.deserialize_validate(pref_str_data, dep_values, pref_errors)
+			if(length(pref_errors))
+				#warn do something with the errors; once handled, resave if necessary?
+				errors += pref_errors
+				continue
+			// only overwrite the default value if we successfully deserialized
+			pref_values[pref.type] = pref_deserial_data
+
+	// ! error handling goes here
+	if(length(errors))
+		return
+
+#warn note that this cannot "fail": if it does not return PREFERENCE_ENTRY_UNAVAILABLE, then the pref is assumed to be available and the entry is assumed to be valid
+/datum/preferences/proc/get_pref_data(pref_type)
+	// ! not super efficient
+	if(pref_type in pref_cache)
+		return pref_cache[pref_type]
+	return pref_values[pref_type]
+
+/datum/preferences/proc/assemble_pref_dep_list(datum/preference/pref)
+	if(!pref.dependencies)
+		return null
+	var/dep_list = list()
+
+	for(var/datum/preference/dep_type as anything in pref.dependencies)
+		var/dep_data = get_pref_data(dep_type)
+
+		#warn should note an explicit guarantee in _preference.dm about this list: it will ONLY contain dependencies, and does NOT contain unavailable dependencies.
+		if(dep_data != PREFERENCE_ENTRY_UNAVAILABLE)
+			dep_list[dep_type] = dep_data
+
+	return dep_list
+
+#warn this proc isn't necessarily supposed to stay -- it should be moved into attempt_cache_write_pref_data. it's just here so that i can more easily keep it in line with the above
+/datum/preferences/proc/splice_pref_dep_list(datum/preference/source_pref, list/splice_list)
+	var/list/base_list = assemble_pref_dep_list(source_pref)
+
+	// note that we have to check against dependencies, not the base list, since some prefs might be absent from it due to unavailability
+	var/list/overlap = source_pref.dependencies & splice_list
+	for(var/splice_type in overlap)
+		if(splice_list[splice_type] == PREFERENCE_ENTRY_UNAVAILABLE && (splice_type in base_list))
+			base_list -= splice_type
+		else
+			base_list[splice_type] = splice_list[splice_type]
+
+	return base_list
+
+// ! comment doesn't discuss the fact this proc changes prefs from unavailable to available if this would not cause errors. it should also explain what an error IS:
+// ! it is, chiefly, about clobbering people's work, as preferences becoming unavailable is consider an "error" IN ADDITION to prefs being rendered invalid.
+// returns a list containing the encountered errors. if in PREF_ERROR_MODE_CANCEL, this will be the first error; if the list is empty, the change was successful and committed.
+// if in PREF_ERROR_MODE_FORCE, the change will always be committed; the list will contain ALL errors encountered in this process.
+/datum/preferences/proc/attempt_cache_write_pref_data(pref_type, new_data, error_mode = PREF_ERROR_MODE_FORCE)
+	SHOULD_NOT_SLEEP(TRUE)
+
+	var/pref_data = get_pref_data(pref_type)
+
+	if(new_data == PREFERENCE_ENTRY_UNAVAILABLE || pref_data == PREFERENCE_ENTRY_UNAVAILABLE)
+		#warn attempting to write a value for an unavailable preference is illegal, and shouldn't happen. make that clear!
+		#warn additionally, attempting to make a preference unavailable through this proc is illegal. that's not how availability works: it's a DERIVED property.
+		#warn i need to explain this.
+		#warn this should probably throw a runtime
+		return "f"
+
+	// let's also check if the change being attempted is, itself, valid.
+	var/datum/preference/pref = GLOB.pref_type_lookup[pref_type]
+	var/list/dep_data = assemble_pref_dep_list(pref)
+	if(pref.is_invalid(new_data, dep_data))
+		#warn throw some kind of wicked runtime, probably
+		return "f"
+
+	// the first thing to note is that a single change can cascade into multiple.
+	// this is because child preferences may become newly available, and those must be populated with default values at the same time as the change is written.
+	// thus, we need to descend downwards from the changing preference until we are certain that the change keeps the graph valid.
+	// it is also possible that a change will render a different pref "invalid" -- consider something like a species-locked quirk. quirks use a single pref, but
+	// changes to e.g. species might render a set of quirks invalid. if a preference's current value will become invalid, this creates an error.
+	// additionally, errors can also be created when a preference which is set to a non-default value becomes unavailable due to a change.
+
+	// depending on the error_mode, the detection of errors may abort the attempt to write the change. if the change is not aborted, then
+	// the error is resolved: if the erroring preference became invalid, its entry is reset to the default value. if the erroring preference
+	// became unavailable, its entry is reset to PREFERENCE_ENTRY_UNAVAILABLE. then, validation will continue.
+
+	// note that, although validation MAY have to traverse the entire graph, this is not guaranteed. if, when a preference is checked, it does not
+	// change its availability or become invalid, its children do not need to be added to the validation stack, because those children may not have a parent
+	// which is being altered by the attempted changes. if they do have such a parent, they would be added elsewhere, by a preference other than the invariant.
+
+	// the list of errors, which serves as our return value.
+	var/list/error_list = list()
+
+	// list of preference datums for which the change will need to be validated, sorted in topological order. maintained via binary insertions
+	var/list/datum/preference/validation_stack = list()
+
+	// list of preference types to data which should be considered changed while we are validating the attempt
+	var/list/temp_data_changes = list()
+	temp_data_changes[pref_type] = new_data
+
+	// initialize the validation stack with the children of the changing preference
+	for(var/datum/preference/child_pref as anything in pref.dep_children)
+		// ! how's BINARY_INSERT work with "duplicate" entries again? i forget.
+		BINARY_INSERT(child_pref, validation_stack, /datum/preference, child_pref, topo_index, COMPARE_KEY)
+
+	while(length(validation_stack))
+		// the "top" preference: the one we picked off the validation stack, NOT necessarily the first preference which was being changed.
+		var/datum/preference/top_pref = validation_stack[1]
+		validation_stack.Cut(1, 2)
+
+		var/top_pref_data = get_pref_data(top_pref.type)
+		var/list/top_pref_dep_data = splice_pref_dep_list(top_pref, temp_data_changes)
+
+		// whether we need to make a change to the top pref's data this step, and the new data in question.
+		var/made_top_data_change = FALSE
+		var/new_top_data
+
+		// check whether the top pref will be available after the change is made.
+		var/will_be_avail = top_pref.is_available(top_pref_dep_data)
+		if(top_pref_data != PREFERENCE_ENTRY_UNAVAILABLE)
+			if(will_be_avail)
+				// the top pref remains available, so we just need to check if its value became invalid
+				var/will_be_invalid = top_pref.is_invalid(top_pref_data, top_pref_dep_data)
+				if(will_be_invalid)
+					// there's an error. we expect is_invalid to return the error string, so add it to the list
+					error_list += will_be_invalid
+					if(error_mode == PREF_ERROR_MODE_CANCEL)
+						return error_list
+					made_top_data_change = TRUE
+					new_top_data = top_pref.default_value
+			else
+				// the top pref is becoming unavailable, so we need to change its entry to "unavailable".
+				made_top_data_change = TRUE
+				new_top_data = PREFERENCE_ENTRY_UNAVAILABLE
+				if(top_pref_data != top_pref.default_value)
+					// only changes that would alter non-default values are considered "errors"
+					error_list += "a pref with a non-default value became unavailable" // ! write a better error string
+					if(error_mode == PREF_ERROR_MODE_CANCEL)
+						return error_list
+		else if(will_be_avail)
+			// the top pref is unavailable, but will BECOME available. this change must be added to the list
+			// and thus its children should be checked. however, it is not an error.
+			made_top_data_change = TRUE
+			new_top_data = top_pref.default_value
+
+		if(made_top_data_change)
+			temp_data_changes[top_pref.type] = new_top_data
+			for(var/datum/preference/top_child_pref as anything in top_pref.dep_children)
+				BINARY_INSERT(top_child_pref, validation_stack, /datum/preference, top_child_pref, topo_index, COMPARE_KEY)
+
+	// now, we commit all the changes we accrued over the course of the validation.
+	for(var/changing_pref_type in temp_data_changes)
+		direct_cache_write_pref_data(changing_pref_type, temp_data_changes[changing_pref_type])
+
+	return error_list
+
+// do not fucking call this. it maintains ZERO guarantees about the internal consistency of preference data.
+// i only have it so that it's clear that this is the underlying operation being taken: it's clear that this is what the attempt proc is building up to
+/datum/preferences/proc/direct_cache_write_pref_data(pref_type, new_data)
+	PRIVATE_PROC(TRUE)
+
+	pref_cache[pref_type] = new_data
+
 
 #define APPEARANCE_CATEGORY_COLUMN "<td valign='top' width='14%'>"
 #define MAX_MUTANT_ROWS 4
+
+#warn Complete (with the pref able to return a button), and move below or into the ShowChoices proc. Also move the defines, maybe?
+/datum/preferences/proc/get_datum_pref_options()
+	var/dat = list()
+
+	var/row_id = 0
+	// ! the order of iteration here might be odd. reading off GLOB prefs feels a little strange?
+	for(var/datum/preference/pref as anything in GLOB.pref_datums)
+		var/p_data = get_pref_data(pref.type)
+		if(p_data == PREFERENCE_ENTRY_UNAVAILABLE)
+			continue
+		if(row_id == 0)
+			dat += APPEARANCE_CATEGORY_COLUMN
+
+		dat += "<h3>[pref.name]</h3>"
+		dat += "<a href='?_src_=prefs;preference=pref_datum;id=[pref.external_key]'>[p_data]</a><BR>"
+
+		row_id++
+		if(row_id >= MAX_MUTANT_ROWS)
+			dat += "</td>"
+			row_id = 0
+
+	if(row_id)
+		dat += "</td>"
+
+	return dat
+
+
+// ! move this proc into the right place, potentially splitting it up or into process_link? unsure
+/datum/preferences/proc/handle_pref_click(mob/user, list/href_list)
+	var/pref_ext_key = href_list["id"]
+	var/datum/preference/pref = GLOB.pref_ext_key_lookup[pref_ext_key]
+	if(!pref)
+		return
+
+	var/pref_data = get_pref_data(pref.type)
+	if(pref_data == PREFERENCE_ENTRY_UNAVAILABLE)
+		return
+
+	#warn need to use the "hints" somehow -- figure it out!!!
+	var/list/dep_values = assemble_pref_dep_list(pref)
+	var/list/hint_list = list()
+
+	// getting the "new" data from the action.
+	var/returned_data = pref.button_action(user, pref_data, dep_values, href_list, hint_list)
+	if(returned_data == pref_data)
+		return
+
+	// we attempt to commit the change.
+	var/list/attempt_write_result = attempt_cache_write_pref_data(pref.type, returned_data)
+
+	if(length(attempt_write_result))
+		// ! need to save a variable that allows the next change to force itself through. might also spawn a pop-up?
+		// ! be fucking careful!!
+		to_chat(user, "<span class='danger'>we made a fucky wucky: [attempt_write_result.Join("!!")]</span>")
+
+	#warn hint-checking goes here. should involve the return value of this proc, as process_link always calls ShowChoices() again, which regenerates EVERYTHING. sigh. but it's not CURRENTLY necessary
+
+/datum/preferences/proc/apply_all_prefs_to_character(mob/living/carbon/human/character)
+	for(var/datum/preference/pref as anything in GLOB.pref_application_order)
+		var/pref_data = get_pref_data(pref.type)
+		if(pref_data == PREFERENCE_ENTRY_UNAVAILABLE)
+			continue
+		pref.apply_to_human(character, pref_data)
 
 /datum/preferences/proc/ShowChoices(mob/user)
 	show_loadout = (current_tab != 1) ? show_loadout : FALSE
@@ -471,6 +817,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br></td>"
 
+			dat += get_datum_pref_options()
+
 			//Mutant stuff
 			var/mutant_category = 0
 
@@ -487,6 +835,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			/* REMOVE
 			if("face_markings" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -499,6 +848,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
 			if("horns" in pref_species.default_features)
 				if(!mutant_category)
@@ -541,6 +891,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			/* REMOVE
 			if("body_markings" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -553,6 +904,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
 			if("legs" in pref_species.default_features)
 				if(!mutant_category)
@@ -580,6 +932,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			/* REMOVE
 			if("moth_fluff" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -592,7 +945,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("moth_markings" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -605,7 +960,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("spider_legs" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -617,7 +974,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("spider_spinneret" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -629,7 +988,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("spider_mandibles" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -641,7 +1002,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("squid_face" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -654,6 +1017,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
 			if("ipc_screen" in pref_species.default_features)
 				if(!mutant_category)
@@ -670,6 +1034,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			/* REMOVE
 			if("ipc_antenna" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -684,6 +1049,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
 			if("ipc_chassis" in pref_species.default_features)
 				if(!mutant_category)
@@ -710,6 +1076,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			/* REMOVE
 			if("kepori_feathers" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -723,7 +1090,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("kepori_body_feathers" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -736,7 +1105,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("kepori_tail_feathers" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -749,7 +1120,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("vox_head_quills" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -763,7 +1136,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
+			/* REMOVE
 			if("vox_neck_quills" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -777,6 +1152,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
 			if("tail_human" in pref_species.default_features)
 				if(!mutant_category)
@@ -804,6 +1180,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</td>"
 					mutant_category = 0
 
+			/* REMOVE
 			if("elzu_horns" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -816,6 +1193,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+			*/
 
 			if("tail_elzu" in pref_species.default_features)
 				if(!mutant_category)
@@ -1333,7 +1711,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
-
+// ! should be part of sanitization in preferences_savefile?
 /**
  * Proc called to track what quirks conflict with someone's preferences, returns a list with all quirks that conflict.
  *
@@ -1470,6 +1848,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		SetChoices(user)
 		ShowChoices(user)
 		return TRUE
+	if(href_list["preference"] == "pref_datum")
+		handle_pref_click(user, href_list)
+
 
 	if(href_list["preference"] == "species")
 		switch(href_list["task"])
@@ -1830,11 +2211,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_tail)
 						features["tail_human"] = new_tail
 
+				/* REMOVE
 				if("face_markings")
 					var/new_face_markings
 					new_face_markings = input(user, "Choose your character's face markings:", "Character Preference") as null|anything in GLOB.face_markings_list
 					if(new_face_markings)
 						features["face_markings"] = new_face_markings
+				*/
 
 				if("horns")
 					var/new_horns
@@ -1866,11 +2249,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_spines)
 						features["spines"] = new_spines
 
+				/* REMOVE
 				if("body_markings")
 					var/new_body_markings
 					new_body_markings = input(user, "Choose your character's body markings:", "Character Preference") as null|anything in GLOB.body_markings_list
 					if(new_body_markings)
 						features["body_markings"] = new_body_markings
+				*/
 
 				if("legs")
 					var/new_legs
@@ -1884,41 +2269,53 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_moth_wings)
 						features["moth_wings"] = new_moth_wings
 
+				/* REMOVE
 				if("moth_fluff")
 					var/new_moth_fluff
 					new_moth_fluff = input(user, "Choose your character's fluff:", "Character Preference") as null|anything in GLOB.moth_fluff_list
 					if(new_moth_fluff)
 						features["moth_fluff"] = new_moth_fluff
+				*/
 
+				/* REMOVE
 				if("moth_markings")
 					var/new_moth_markings
 					new_moth_markings = input(user, "Choose your character's markings:", "Character Preference") as null|anything in GLOB.moth_markings_list
 					if(new_moth_markings)
 						features["moth_markings"] = new_moth_markings
+				*/
 
+				/* REMOVE
 				if("spider_legs")
 					var/new_spider_legs
 					new_spider_legs = input(user, "Choose your character's variant of spider legs:", "Character Preference") as null|anything in GLOB.spider_legs_list
 					if(new_spider_legs)
 						features["spider_legs"] = new_spider_legs
+				*/
 
+				/* REMOVE
 				if("spider_spinneret")
 					var/new_spider_spinneret
 					new_spider_spinneret = input(user, "Choose your character's spinneret markings:", "Character Preference") as null|anything in GLOB.spider_spinneret_list
 					if(new_spider_spinneret)
 						features["spider_spinneret"] = new_spider_spinneret
+				*/
 
+				/* REMOVE
 				if("spider_mandibles")
 					var/new_spider_mandibles
 					new_spider_mandibles = input(user, "Choose your character's variant of mandibles:", "Character Preference") as null|anything in GLOB.spider_mandibles_list
 					if (new_spider_mandibles)
 						features["spider_mandibles"] = new_spider_mandibles
+				*/
 
+				/* REMOVE
 				if("squid_face")
 					var/new_squid_face
 					new_squid_face = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.squid_face_list
 					if (new_squid_face)
 						features["squid_face"] = new_squid_face
+				*/
 
 				if("ipc_screen")
 					var/new_ipc_screen
@@ -1928,6 +2325,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ipc_screen)
 						features["ipc_screen"] = new_ipc_screen
 
+				/* REMOVE
 				if("ipc_antenna")
 					var/new_ipc_antenna
 
@@ -1935,6 +2333,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					if(new_ipc_antenna)
 						features["ipc_antenna"] = new_ipc_antenna
+				*/
 
 				if("ipc_chassis")
 					var/new_ipc_chassis
@@ -1950,41 +2349,53 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ipc_brain)
 						features["ipc_brain"] = new_ipc_brain
 
+				/* REMOVE
 				if("kepori_feathers")
 					var/new_kepori_feathers
 					new_kepori_feathers = input(user, "Choose your character's plumage type:", "Character Preference") as null|anything in GLOB.kepori_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_feathers"] = new_kepori_feathers
+				*/
 
+				/* REMOVE
 				if("kepori_body_feathers")
 					var/new_kepori_feathers
 					new_kepori_feathers = input(user, "Choose your character's body feathers:", "Character Preference") as null|anything in GLOB.kepori_body_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_body_feathers"] = new_kepori_feathers
+				*/
 
+				/* REMOVE
 				if("kepori_tail_feathers")
 					var/new_kepori_feathers
 					new_kepori_feathers = input(user, "Choose your character's tail feathers:", "Character Preference") as null|anything in GLOB.kepori_tail_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_tail_feathers"] = new_kepori_feathers
+				*/
 
+				/* REMOVE
 				if("vox_head_quills")
 					var/new_vox_head_quills
 					new_vox_head_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_head_quills_list
 					if (new_vox_head_quills)
 						features["vox_head_quills"] = new_vox_head_quills
+				*/
 
+				/* REMOVE
 				if("vox_neck_quills")
 					var/new_vox_neck_quills
 					new_vox_neck_quills = input(user, "Choose your character's face type:", "Character Preference") as null|anything in GLOB.vox_neck_quills_list
 					if (new_vox_neck_quills)
 						features["vox_neck_quills"] = new_vox_neck_quills
+				*/
 
+				/* REMOVE
 				if("elzu_horns")
 					var/new_elzu_horns
 					new_elzu_horns = input(user, "Choose your character's horns:", "Character Preference") as null|anything in GLOB.elzu_horns_list
 					if(new_elzu_horns)
 						features["elzu_horns"] = new_elzu_horns
+				*/
 
 				if("tail_elzu")
 					var/new_tail
@@ -2457,7 +2868,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if(pref_species.id == "ipc") // If triggered, vox and kepori arms do not spawn in but ipcs sprites break without it as the code for setting the right prosthetics for them is in set_species().
 		character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
+
+	// fuck off
 	//Because of how set_species replaces all bodyparts with new ones, hair needs to be set AFTER species.
+
 	character.dna.real_name = character.real_name
 	character.hair_color = hair_color
 	character.facial_hair_color = facial_hair_color
@@ -2469,6 +2883,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
+
+	// ! this should replace everything else here
+	apply_all_prefs_to_character(character)
 
 	if(icon_updates)
 		character.update_body()

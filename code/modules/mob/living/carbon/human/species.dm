@@ -804,6 +804,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.apply_overlay(BODY_LAYER)
 	handle_mutant_bodyparts(H)
 
+// ! this... sigh. this really does have to go. i don't want to do it, but this really really does have to go
 /**
  * Handles the mutant bodyparts of a human
  *
@@ -826,6 +827,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		return
 
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
+
+	// ! several are missing here. this should be way more exhaustive
 
 	if("tail_human" in mutant_bodyparts)
 		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))

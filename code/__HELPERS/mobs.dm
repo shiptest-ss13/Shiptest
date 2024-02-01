@@ -39,7 +39,9 @@
 /proc/random_backpack()
 	return pick(GLOB.backpacklist)
 
+#warn note that this is used for randomized prefs (via random_character); we need to be careful about features overlapping with our prefs, before we remove the former
 /proc/random_features()
+	// ! this is so fucking stupid
 	if(!GLOB.tails_list_human.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
 	if(!GLOB.tails_list_lizard.len)

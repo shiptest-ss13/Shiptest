@@ -2,6 +2,7 @@
 	create_dna()
 	return //No randomisation
 
+// ! YET ANOTHER FUCKING RANDOMIZATION PROC (though TBF i'm pretty sure this is a wiki thing)
 /mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0)
 	gender = list(MALE, FEMALE)[seed % 2 + 1]
 	skin_tone = GLOB.skin_tones[seed % length(GLOB.skin_tones) + 1]

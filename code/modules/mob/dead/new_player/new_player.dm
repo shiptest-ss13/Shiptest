@@ -193,6 +193,7 @@
 	if(href_list["manifest"])
 		ViewManifest()
 
+	// ! why is this here? is this not handled in Client/Topic()?
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
