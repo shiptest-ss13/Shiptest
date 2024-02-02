@@ -1,6 +1,6 @@
 /datum/outfit/job/independent
 	name = "Independent - Base Outfit"
-	faction_icon = "bg_independent"
+	faction_icon = "bg_indie"
 
 	uniform = /obj/item/clothing/under/utility
 	box = /obj/item/storage/box/survival

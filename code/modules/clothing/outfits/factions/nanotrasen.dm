@@ -380,6 +380,7 @@
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 
+	belt = /obj/item/pda/medical
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/doctor
 	shoes = /obj/item/clothing/shoes/sneakers/white

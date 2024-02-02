@@ -382,6 +382,7 @@
 /datum/outfit/job/nanotrasen/ert/lp
 	name = "ERT - Loss Prevention Security Specialist"
 	jobtype = /datum/job/officer
+	job_icon = "securityresponseofficer"
 
 	head = null
 	implants = list(/obj/item/implant/mindshield)
@@ -406,6 +407,7 @@
 /datum/outfit/job/nanotrasen/ert/lp/medic
 	name = "ERT - Loss Prevention Medical Specialist"
 	jobtype = /datum/job/doctor
+	job_icon = "medicalresponseofficer"
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
@@ -425,6 +427,7 @@
 /datum/outfit/job/nanotrasen/ert/lp/engineer
 	name = "ERT - Loss Prevention Engineering Specialist"
 	jobtype = /datum/job/engineer
+	job_icon = "engineeringresponseofficer"
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
@@ -444,6 +447,7 @@
 /datum/outfit/job/nanotrasen/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"
 	jobtype = /datum/job/captain
+	job_icon = "emergencyresponseteamcommander"
 
 	head = null
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
