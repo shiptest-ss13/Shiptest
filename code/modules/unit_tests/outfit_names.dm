@@ -1,7 +1,7 @@
 /datum/unit_test/outfit_names/Run()
 	var/list/outfit_names = list()
 
-	for(var/outfit_type in subtypesof(/datum/outfit))
+	for(var/datum/outfit/outfit_type as anything in subtypesof(/datum/outfit))
 		var/name = initial(outfit_type.name)
 
 		if(name in outfit_names)
