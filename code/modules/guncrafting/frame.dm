@@ -29,6 +29,7 @@
 	..()
 	for (var/partType in preinstalledParts)
 		installedParts += new partType(src)
+	get_current_recipes()
 	/*
 	var/spawn_with_preinstalled_parts = TRUE
 	if(dont_spawn_with_parts)
@@ -159,40 +160,36 @@
 */
 
 /obj/item/part/gun/frame/proc/handle_part(obj/item/part/gun/I, mob/living/user)
-	get_current_recipes()
-	var/list/valid_recipes = filtered_recipes
-	to_chat(user, span_warning("Recipes [valid_recipes]"))
-	for(var/datum/lathe_recipe/gun/recipe in valid_recipes)
+	for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
 		if(I.type in recipe.validParts)
-			to_chat(user, span_warning("Recipe [recipe]"))
-			to_chat(user, span_warning("Part [I]"))
-			to_chat(user, span_warning("Part type [recipe.validParts]"))
 			if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
 				if(insert_item(I, user))
 					to_chat(user, span_notice("You have attached the part to \the [src]."))
 					installedParts += I
+					get_current_recipes()
 					return
 			else
 				to_chat(user, span_warning("This part does not fit!"))
 				return
-			to_chat(user, span_warning("Weird!"))
 
 
 //Finds all recipes that match the current parts
 /obj/item/part/gun/frame/proc/get_current_recipes()
-	var/list/datum/gun_recipes = subtypesof(/datum/lathe_recipe/gun)
 	filtered_recipes = list()
-	filtered_recipes += /datum/lathe_recipe/gun/winchester
-
-	for(var/datum/lathe_recipe/gun/recipe in gun_recipes)
-		if(istype(recipe, src.type))
+	for(var/datum/lathe_recipe/gun/recipe in GLOB.gun_recipe_list)
+		if(is_recipe_valid(recipe))
 			filtered_recipes += recipe
-		for(var/obj/item/part/gun/installed_part in installedParts)
-			if(istype(recipe, installed_part.type))
-				filtered_recipes += recipe
-
 	return filtered_recipes
 
+
+//Should return false if
+/obj/item/part/gun/frame/proc/is_recipe_valid(datum/lathe_recipe/gun/recipe)
+	if(!(src.type in recipe.validParts))
+		return FALSE
+	for(var/obj/item/part/gun/installed_part in installedParts)
+		if(!(installed_part.type in recipe.validParts))
+			return FALSE
+	return TRUE
 ///obj/item/part/gun/frame/attack_self(obj/item/I, mob/user)
 
 	/*
@@ -214,6 +211,8 @@
 	return
 */
 
+/obj/item/part/gun/frame/proc/can_be_installed()
+
 /obj/item/part/gun/frame/proc/get_part_types()
 	var/part_types = NONE
 	part_types |= gun_part_type
@@ -225,12 +224,11 @@
 	. = ..()
 	if(.)
 		for (var/obj/item/part/gun/part in installedParts)
-			. += "<span class='notice'>\the [src] has \a [part] [icon2html(part, user)] installed.</span>"
-		get_current_recipes()
-		var/list/datum/valid_recipes = filtered_recipes
-		for(var/datum/lathe_recipe/gun/recipe in valid_recipes)
-			for(var/part in recipe.validParts)
-				. += "<span class='notice'>\the [src] could hold \a [part] [icon2html(part, user)].</span>"
+			. += "<span class='notice'>[src] has \a [part] [icon2html(part, user)] installed.</span>"
+		for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
+			for(var/obj/part as anything in recipe.validParts)
+				. += "<span class='notice'>[src] could hold \a [initial(part.name)].</span>"
+		. += "<span class='notice'>[src] could hold \a [get_part_types()].</span>"
 
 /*
 		if(InstalledGrip)
@@ -248,7 +246,7 @@
 */
 
 /obj/item/part/gun/frame/winchester
-	name = "Winchester Gun Frame"
+	name = "winchester gun frame"
 	icon_state = "frame_shotgun"
 	preinstalledParts = list(
 		/obj/item/part/gun/modular/grip/wood,
@@ -257,8 +255,10 @@
 		)
 
 /obj/item/part/gun/frame/winchester/mk1
+	name = "winchester mk1 gun frame"
 
 /obj/item/part/gun/frame/m1911
+	name = "m1911 gun frame"
 	preinstalledParts = list(
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism,
@@ -266,5 +266,7 @@
 		)
 
 /obj/item/part/gun/frame/commander
+	name = "commander gun frame"
 
 /obj/item/part/gun/frame/boltaction
+	name = "bolt action gun frame"

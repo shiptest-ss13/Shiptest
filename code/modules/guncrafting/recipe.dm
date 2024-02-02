@@ -63,5 +63,6 @@
 		/obj/item/part/gun/modular/mechanism,
 		/obj/item/part/gun/modular/barrel
 		)
+
 /datum/lathe_recipe/gun/boltaction
 	result	= /obj/item/gun/ballistic/rifle/boltaction
