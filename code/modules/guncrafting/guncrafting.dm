@@ -1,5 +1,3 @@
-//Gun crafting parts til they can be moved elsewhere
-
 // PARTS //
 
 /obj/item/weaponcrafting/receiver
@@ -20,3 +18,11 @@
 	desc = "A long piece of Silk that looks like a cable coil."
 	icon = 'icons/obj/improvised.dmi'
 	icon_state = "silkstring"
+
+/obj/item/stack/gun_part
+	name = "Gun Parts"
+	singular_name = "Gun Part"
+	desc = "This could fabcricate metal parts."
+	icon = 'icons/obj/guncrafting.dmi'
+	icon_state = "work_piece"
+	max_amount = 10

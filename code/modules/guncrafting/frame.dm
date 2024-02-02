@@ -26,7 +26,7 @@
 
 
 /obj/item/part/gun/frame/Initialize()
-	..()
+	. = ..()
 	for (var/partType in preinstalledParts)
 		installedParts += new partType(src)
 	get_current_recipes()
@@ -162,15 +162,18 @@
 /obj/item/part/gun/frame/proc/handle_part(obj/item/part/gun/I, mob/living/user)
 	for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
 		if(I.type in recipe.validParts)
-			if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
-				if(insert_item(I, user))
-					to_chat(user, span_notice("You have attached the part to \the [src]."))
-					installedParts += I
-					get_current_recipes()
-					return
+			//if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
+			if(insert_item(I, user))
+				to_chat(user, span_notice("You have attached the part to \the [src]."))
+				installedParts += I
+				get_current_recipes()
+				return
 			else
 				to_chat(user, span_warning("This part does not fit!"))
 				return
+		else
+			to_chat(user, span_warning("This part cannot be installed on this [src]!"))
+			return
 
 
 //Finds all recipes that match the current parts
