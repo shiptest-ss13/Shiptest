@@ -76,13 +76,13 @@
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
 	desc = "Contains a box of twenty-five buckshot shells for use in lethal persuasion."
-	cost = 2000
+	cost = 1250
 	contains = list(/obj/item/ammo_box/a12g)
 
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
 	desc = "Contains a box of twenty-five slug shells for use in lethal persuasion."
-	cost = 2000
+	cost = 1250
 	contains = list(/obj/item/ammo_box/a12g/slug)
 
 /*
@@ -92,7 +92,7 @@
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Winchester and Detective Special .38 Ammo Boxes"
 	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
-	cost = 1000
+	cost = 750
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
 	crate_name = "ammo crate"
@@ -191,32 +191,32 @@
 	name = "7.62x39mm Ammo Box Crate"
 	desc = "Contains a sixty-round 7.62x39mm box for rifles like the SVG-67."
 	contains = list(/obj/item/ammo_box/a762_39)
-	cost = 1750
+	cost = 1250
 
 /datum/supply_pack/ammo/c556mmHITP_ammo_box
 	name = "5.56 Caseless Ammo Box Crate"
 	desc = "Contains two fifty-round 5.56mm caseless boxes for SolGov sidearms like the Pistole C, for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c556mmHITP,
 					/obj/item/ammo_box/c556mmHITP)
-	cost = 1500
+	cost = 1000
 
 /datum/supply_pack/ammo/c45_ammo_box
 	name = ".45 Ammo Box Crate"
 	desc = "Contains two fifty-round .45 boxes for pistols and SMGs like the M1911 or the C-20r, for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c45,
 					/obj/item/ammo_box/c45)
-	cost = 1500
+	cost = 1000
 
 /datum/supply_pack/ammo/c10mm_ammo_box
 	name = "10mm Ammo Box Crate"
 	desc = "Contains two fifty-round 10mm boxes for pistols and SMGs like the Stechkin or the SkM-44(k), for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c10mm,
 					/obj/item/ammo_box/c10mm)
-	cost = 1500
+	cost = 1000
 
 /datum/supply_pack/ammo/c9mm_ammo_box
 	name = "9mm Ammo Box Crate"
 	desc = "Contains two fifty-round 9mm boxes for pistols and SMGs such as the Commander or Saber, for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c9mm,
 					/obj/item/ammo_box/c9mm)
-	cost = 1500
+	cost = 1000
