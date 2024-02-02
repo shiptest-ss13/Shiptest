@@ -678,7 +678,7 @@
 	advanced_html = _advanced_html
 
 /datum/paper_input/proc/make_copy()
-	return new /datum/paper_input(raw_text, font, colour, bold);
+	return new /datum/paper_input(raw_text, font, colour, bold, advanced_html);
 
 /datum/paper_input/proc/to_list()
 	return list(
