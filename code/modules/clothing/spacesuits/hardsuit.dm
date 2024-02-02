@@ -1369,6 +1369,8 @@
 	item_state = "suns_pkhardsuit"
 	hardsuit_type = "suns_pk"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/suns
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/suns
 	name = "\improper SUNS industrial hardsuit helmet"
@@ -1382,6 +1384,8 @@
 	item_state = "suns_miningsuit"
 	hardsuit_type = "suns_mining"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/suns
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov/suns
 	name = "\improper SUNS captain's hardsuit helmet"
@@ -1397,3 +1401,5 @@
 	item_state = "suns_commandsuit"
 	hardsuit_type = "suns_solgov"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov/suns
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
