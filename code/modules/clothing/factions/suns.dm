@@ -403,8 +403,8 @@
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/mask/breath/suns
-	desc = "A close-fitting mask that covers JUST enough to connect an air supply."
 	name = "\improper SUNS half face mask"
+	desc = "A close-fitting mask that covers JUST enough to connect an air supply."
 	icon_state = "suns_captainmask"
 	item_state = "suns_captainmask"
 	icon = 'icons/obj/clothing/faction/suns/mask.dmi'
@@ -419,8 +419,8 @@
 
 
 /obj/item/clothing/gloves/color/captain/suns
-	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
 	name = "\improper SUNS captain's gloves"
+	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
 	icon_state = "suns_captaingloves"
 	item_state = "suns_blackgloves"
 	icon = 'icons/obj/clothing/faction/suns/hands.dmi'
@@ -439,8 +439,8 @@
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/gloves/fingerless/suns
-	desc = "These gloves offer style, purely and plainly."
 	name = "stitched fingerless gloves"
+	desc = "These gloves offer style, purely and plainly."
 	icon_state = "suns_glovesfingerless"
 	item_state = "suns_blackgloves"
 	icon = 'icons/obj/clothing/faction/suns/hands.dmi'
@@ -449,8 +449,8 @@
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/gloves/color/yellow/suns
-	desc = "Padded academic gloves that hopefully keep students out of the nurses office."
 	name = "insulated gloves"
+	desc = "Padded academic gloves that hopefully keep students out of the nurses office."
 	icon_state = "suns_insulated"
 	item_state = "suns_blackgloves"
 	icon = 'icons/obj/clothing/faction/suns/hands.dmi'
