@@ -10,7 +10,7 @@
 /obj/projectile/bullet/a762_54
 	name = "7.62x54mmR bullet"
 	speed = 0.3
-	damage = 30
+	damage = 50
 	armour_penetration = 40
 
 // .300 Magnum (Smile Rifle)
