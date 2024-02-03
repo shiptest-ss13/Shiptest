@@ -26,12 +26,3 @@
 	backpack = /obj/item/storage/backpack/botany
 	satchel = /obj/item/storage/backpack/satchel/hyd
 	courierbag = /obj/item/storage/backpack/messenger/hyd
-
-/datum/outfit/job/botanist/pharma
-	name = "Herbalist"
-
-	ears = /obj/item/radio/headset/headset_med
-	belt = /obj/item/storage/bag/plants
-	l_pocket = /obj/item/pda/botanist
-	suit = /obj/item/clothing/suit/apron/overalls
-	uniform = /obj/item/clothing/under/utility
