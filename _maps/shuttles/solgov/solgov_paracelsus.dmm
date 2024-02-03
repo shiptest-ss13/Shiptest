@@ -1782,8 +1782,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/door/airlock/medical{
 	name = "Chemistry";
-	req_one_access = list(5,45);
+	req_one_access = list(5,10,45);
 	id_tag = "sg_par_chem_bolt"
+	},
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
