@@ -102,7 +102,7 @@
 	leader_role = /datum/antagonist/ert/lp/lieutenant
 	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic, /datum/antagonist/ert/lp/engineer)
 	rename_team = "Loss Prevention Team"
-	polldesc = "a NanoTrasen loss prevention team"
+	polldesc = "a Nanotrasen loss prevention team"
 
 // Inteq
 
@@ -210,6 +210,17 @@
 	rename_team = "Cybersun Medical Intervention Team"
 	polldesc = "a Cybersun paramedic team"
 
+/datum/ert/syndicate/inspector
+	teamsize = 1
+	leader_role = /datum/antagonist/ert/official/syndicate
+	roles = list(/datum/antagonist/ert/official/syndicate)
+	rename_team = "Syndicate Inspector"
+	polldesc = "a syndicate inspector"
+	spawn_at_outpost = FALSE
+
+/datum/ert/syndicate/inspector/New()
+	mission = "Conduct a routine review on [station_name()]'s vessels."
+
 // Frontiersmen
 /datum/ert/frontier
 	teamsize = 4
@@ -223,6 +234,12 @@
 	leader_experience = FALSE
 	spawn_at_outpost = FALSE
 	ert_template = /datum/map_template/shuttle/subshuttles/sugarcube
+
+/datum/ert/frontier/random
+	teamsize = 8
+	leader_role = /datum/antagonist/ert/frontier/random
+	roles = list(/datum/antagonist/ert/frontier/random)
+	rename_team = "Randomly Equipped Frontiersmen Team"
 
 /datum/ert/frontier/assault
 	leader_role = /datum/antagonist/ert/frontier/leader

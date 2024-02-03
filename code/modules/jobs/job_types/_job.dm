@@ -67,7 +67,7 @@
 		if(back_storage)
 			back_storage.handle_item_insertion(loadout_dumper, TRUE)
 		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
-			to_chat("Unable to place loadout box.")
+			to_chat(spawnee, "Unable to place loadout box.")
 
 /datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
 	return FALSE
@@ -192,6 +192,8 @@
 
 	///The icon this outfit's ID will have when shown on a sechud and ID cards. See [icons\mob\hud.dmi] for a list of icons. Leave null for default.
 	var/job_icon
+	// the background of the job icon
+	var/faction_icon
 
 	var/alt_uniform
 
@@ -277,6 +279,7 @@
 		if(H.age)
 			C.registered_age = H.age
 		C.job_icon = job_icon
+		C.faction_icon = faction_icon
 		C.update_label()
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A
