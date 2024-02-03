@@ -65,7 +65,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 	animate(thealert, transform = matrix(), time = 2.5, easing = CUBIC_EASING)
 
 	if(thealert.timeout)
-		addtimer(CALLBACK(src, .proc/alert_timeout, thealert, category), thealert.timeout)
+		addtimer(CALLBACK(src, PROC_REF(alert_timeout), thealert, category), thealert.timeout)
 		thealert.timeout = world.time + thealert.timeout - world.tick_lag
 	return thealert
 
@@ -163,11 +163,6 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 //End gas alerts
 
-
-/atom/movable/screen/alert/fat
-	name = "Fat"
-	desc = "You ate too much food, lardass. Run around and lose some weight."
-	icon_state = "fat"
 
 /atom/movable/screen/alert/hungry
 	name = "Hungry"
@@ -313,7 +308,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	add_overlay(receiving)
 	src.receiving = receiving
 	src.offerer = offerer
-	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, .proc/check_in_range, override = TRUE) //Override to prevent runtimes when people offer a item multiple times
+	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, PROC_REF(check_in_range), override = TRUE) //Override to prevent runtimes when people offer a item multiple times
 
 /atom/movable/screen/alert/give/proc/removeAlert()
 	to_chat(owner, "<span class='warning'>You moved out of range of [offerer]!</span>")
@@ -341,7 +336,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	. = ..()
 	name = "[offerer] is offering a high-five!"
 	desc = "[offerer] is offering a high-five! Click this alert to slap it."
-	RegisterSignal(offerer, COMSIG_PARENT_EXAMINE_MORE, .proc/check_fake_out)
+	RegisterSignal(offerer, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(check_fake_out))
 
 /atom/movable/screen/alert/give/highfive/handle_transfer()
 	var/mob/living/carbon/taker = owner
@@ -359,7 +354,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 	offerer.visible_message(span_notice("[rube] rushes in to high-five [offerer], but-"), span_nicegreen("[rube] falls for your trick just as planned, lunging for a high-five that no longer exists! Classic!"), ignored_mobs=rube)
 	to_chat(rube, span_nicegreen("You go in for [offerer]'s high-five, but-"))
-	addtimer(CALLBACK(src, .proc/too_slow_p2, offerer, rube), 0.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(too_slow_p2), offerer, rube), 0.5 SECONDS)
 
 /// Part two of the ultimate prank
 /atom/movable/screen/alert/give/highfive/proc/too_slow_p2()

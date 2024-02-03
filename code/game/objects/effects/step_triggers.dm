@@ -10,7 +10,7 @@
 /obj/effect/step_trigger/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -26,7 +26,7 @@
 		return
 	if(!ismob(H) && mobs_only)
 		return
-	INVOKE_ASYNC(src, .proc/Trigger, H)
+	INVOKE_ASYNC(src, PROC_REF(Trigger), H)
 
 
 /obj/effect/step_trigger/singularity_act()
@@ -70,7 +70,7 @@
 			return
 
 	if(immobilize)
-		ADD_TRAIT(AM, TRAIT_IMMOBILIZED, src)
+		ADD_TRAIT(AM, TRAIT_IMMOBILIZED, REF(src))
 
 	affecting.Add(AM)
 	while(AM && !stopthrow)
@@ -104,7 +104,7 @@
 
 	affecting.Remove(AM)
 
-	REMOVE_TRAIT(AM, TRAIT_IMMOBILIZED, src)
+	REMOVE_TRAIT(AM, TRAIT_IMMOBILIZED, REF(src))
 
 
 /* Stops things thrown by a thrower, doesn't do anything */

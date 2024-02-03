@@ -35,6 +35,8 @@ GLOBAL_LIST_EMPTY(aiEyes)
 ///underages who have been reported to security for trying to buy things they shouldn't, so they can't spam
 GLOBAL_LIST_EMPTY(narcd_underages)
 
+GLOBAL_LIST_EMPTY(real_names_joined)
+
 GLOBAL_LIST_EMPTY(language_datum_instances)
 GLOBAL_LIST_EMPTY(all_languages)
 

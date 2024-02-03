@@ -17,6 +17,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	charge_sections = 4
 	ammo_x_offset = 2
+	manufacturer = MANUFACTURER_NANOTRASEN
 
 	spread = 0
 	spread_unwielded = 25
@@ -39,6 +40,7 @@
 	fire_delay = 0 //pistol
 	mag_display = FALSE
 	empty_indicator = FALSE
+	manufacturer = MANUFACTURER_SOLARARMORIES
 	recoil = 1
 	recoil_unwielded = 2
 	spread = 3
@@ -61,6 +63,7 @@
 	casing_ejector = FALSE
 	mag_display = FALSE
 	empty_indicator = FALSE
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Assault Rifle"
@@ -76,6 +79,7 @@
 	fire_delay = 2
 	actions_types = list()
 	empty_indicator = FALSE
+	manufacturer = MANUFACTURER_SOLARARMORIES
 
 	wield_delay = 0.7 SECONDS
 	fire_delay = 1

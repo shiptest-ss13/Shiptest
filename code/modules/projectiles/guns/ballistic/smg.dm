@@ -21,6 +21,7 @@
 	pin = null
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
@@ -42,6 +43,7 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
@@ -74,6 +76,7 @@
 	flight_y_offset = 13
 	can_suppress = TRUE
 	mag_display = TRUE
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
 	. = ..()
@@ -95,6 +98,7 @@
 	mag_display = TRUE
 	mag_display_ammo = TRUE
 	empty_indicator = TRUE
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
@@ -156,6 +160,7 @@
 	mag_display = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	spread = 1
 	spread_unwielded = 8
@@ -250,10 +255,14 @@
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
 	weapon_weight = WEAPON_LIGHT
 	fire_sound = 'sound/weapons/gun/smg/smg_heavy.ogg'
+	manufacturer = MANUFACTURER_MINUTEMAN
 
 /obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+
+/obj/item/gun/ballistic/automatic/smg/cm5/no_mag
+	spawnwithmagazine = FALSE
 
 /obj/item/gun/ballistic/automatic/smg/aks74u
 	name = "\improper AKS-74U"

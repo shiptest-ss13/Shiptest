@@ -101,7 +101,7 @@
 			D.adjust_money(min(power_produced, 1))
 		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH) && can_generate_research)
 			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 3)) // x4 coils = 12 points a shock for RND, if they even bothered to link the server.
-		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
+		addtimer(CALLBACK(src, PROC_REF(reset_shocked)), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		return power_produced
@@ -140,7 +140,7 @@
 			D.adjust_money(min(power_produced, 12))
 		if(istype(linked_techweb) && (zap_flags & ZAP_GIVES_RESEARCH))
 			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, min(power_produced, 25)) // x4 coils = 100 points per shock, which is a good reward for building a research tesla or electrical storm harvest ship
-		addtimer(CALLBACK(src, .proc/reset_shocked), 10)
+		addtimer(CALLBACK(src, PROC_REF(reset_shocked)), 10)
 		zap_buckle_check(power)
 		playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		return power_produced

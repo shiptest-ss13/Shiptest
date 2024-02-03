@@ -1,7 +1,7 @@
 //Mime
 /obj/item/clothing/head/beret
 	name = "beret"
-	desc = "A beret, a mime's favorite headwear."
+	desc = "A red beret."
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
 	dynamic_hair_suffix = "+generic"
@@ -15,13 +15,13 @@
 
 /obj/item/clothing/head/beret/archaic
 	name = "archaic beret"
-	desc = "An absolutely ancient beret, allegedly worn by the first mime to ever step foot on a NanoTrasen station."
+	desc = "An absolutely ancient beret."
 	icon_state = "archaicberet"
 	dog_fashion = null
 
 /obj/item/clothing/head/beret/black
 	name = "black beret"
-	desc = "A black beret, perfect for war veterans and dark, brooding, anti-hero mimes."
+	desc = "A black beret."
 	icon_state = "beret_black"
 
 /obj/item/clothing/head/beret/highlander
@@ -97,7 +97,7 @@
 	icon_state = "beret_officer"
 
 /obj/item/clothing/head/beret/sec/brig_phys
-	desc = "A beret made out of black reinforced fabric with  lue cross emblazoned on it. Denotes security's personal medic."
+	desc = "A beret made out of black reinforced fabric with a lue cross emblazoned on it. Denotes security's personal medic."
 	icon_state = "beret_brigphys"
 
 //Engineering
@@ -162,6 +162,11 @@
 	icon_state = "beret_cmo"
 	armor = list("bio" = 30, "acid" = 20)
 
+/obj/item/clothing/head/beret/cmo/cybersun
+	name = "medical director beret"
+	desc = "A burgundy-red beret with a silver cross. It smells very sterile."
+	icon_state = "meddirectorberet"
+
 //Command
 /obj/item/clothing/head/beret/captain
 	name = "captain beret"
@@ -183,12 +188,6 @@
 	icon_state = "beret_com"
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	strip_delay = 90
-
-/obj/item/clothing/head/beret/lt
-	name = "officer beret"
-	desc = "A showy lieutenants's beret. Smells of spilled coffee and crushed dreams."
-	icon_state = "beret_com"
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 10, "energy" = 10, "rad" = 10, "bio" = 5, "rad" = 5, "fire" = 5, "rad" = 30)
 
 // SolGov
 

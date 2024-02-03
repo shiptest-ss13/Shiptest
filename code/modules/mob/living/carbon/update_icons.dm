@@ -343,7 +343,7 @@ GLOBAL_LIST_EMPTY(masked_leg_icons_cache)
 /mob/living/carbon/proc/update_hands_on_rotate() //Required for unconventionally placed hands on species
 	SIGNAL_HANDLER
 	if(!layered_hands) //Defined in human_defines.dm
-		RegisterSignal(src, COMSIG_ATOM_DIR_CHANGE, .proc/special_update_hands)
+		RegisterSignal(src, COMSIG_ATOM_DIR_CHANGE, PROC_REF(special_update_hands))
 		layered_hands = TRUE
 
 /mob/living/carbon/proc/stop_updating_hands()

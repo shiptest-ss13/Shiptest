@@ -1,11 +1,9 @@
-//lavaland_surface_syndicate_base1.dmm
-
 /obj/machinery/vending/syndichem
 	name = "\improper SyndiChem"
 	desc = "A vending machine full of grenades and grenade accessories. Sponsored by DonkCo(tm)."
 	req_access = list(ACCESS_SYNDICATE)
 	products = list(
-		/obj/item/stack/cable_coil/random = 5, //WS Edit - Random added from Smartwire Revert
+		/obj/item/stack/cable_coil/random = 5,
 		/obj/item/assembly/igniter = 20,
 		/obj/item/assembly/prox_sensor = 5,
 		/obj/item/assembly/signaler = 5,

@@ -70,3 +70,9 @@
 
 /obj/effect/projectile/tracer/wormhole
 	icon_state = "wormhole_g"
+
+/obj/effect/projectile/tracer/pgf
+	icon_state = "beam_pgf"
+
+/obj/effect/projectile/tracer/kalix
+	icon_state = "beam_kalix"

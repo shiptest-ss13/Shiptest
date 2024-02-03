@@ -431,7 +431,7 @@
 	set name = "quick-equip"
 	set hidden = TRUE
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/execute_quick_equip))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_quick_equip)))
 
 ///proc extender of [/mob/verb/quick_equip] used to make the verb queuable if the server is overloaded
 /mob/proc/execute_quick_equip()
@@ -443,7 +443,7 @@
 	set name = "equipment-swap"
 	set hidden = TRUE
 
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, .proc/execute_equipment_swap))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_equipment_swap)))
 
 /mob/proc/execute_equipment_swap()
 	var/obj/item/I = get_active_held_item()

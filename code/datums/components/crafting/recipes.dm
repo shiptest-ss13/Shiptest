@@ -113,35 +113,6 @@
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/tailclub
-	name = "Tail Club"
-	result = /obj/item/tailclub
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-				/obj/item/stack/sheet/metal = 1)
-	blacklist = list(/obj/item/organ/tail/lizard/fake)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/tailwhip
-	name = "Liz O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-				/obj/item/stack/cable_coil = 1)
-	blacklist = list(/obj/item/organ/tail/lizard/fake)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/catwhip
-	name = "Cat O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip/kitty
-	reqs = list(/obj/item/organ/tail/cat = 1,
-				/obj/item/stack/cable_coil = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/ed209
 	name = "ED209"
 	result = /mob/living/simple_animal/bot/secbot/ed209
@@ -371,28 +342,6 @@
 				/datum/reagent/water/holywater = 10)
 	parts = list(/obj/item/camera = 1)
 	category = CAT_MISC
-
-/datum/crafting_recipe/lizardhat
-	name = "lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/organ/tail/lizard = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/lizardhat_alternate
-	name = "lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/stack/sheet/animalhide/lizard = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/kittyears
-	name = "Kitty Ears"
-	result = /obj/item/clothing/head/kitty/genuine
-	time = 10
-	reqs = list(/obj/item/organ/tail/cat = 1,
-				/obj/item/organ/ears/cat = 1)
-	category = CAT_CLOTHING
 
 /datum/crafting_recipe/skateboard
 	name = "Skateboard"
@@ -1164,9 +1113,23 @@
 
 /datum/crafting_recipe/breakawayflask
 	name = "Breakaway Flask"
-	result = /obj/item/reagent_containers/food/drinks/drinkingglass/breakawayflask
+	result = /obj/item/reagent_containers/food/drinks/breakawayflask
 	time = 5 SECONDS
 	reqs = list(/obj/item/stack/sheet/glass = 5,
 				/obj/item/stack/sheet/mineral/plasma = 1)
 	tools = list(TOOL_WELDER)
-	category = CAT_MISC
+	category = CAT_DRINK
+
+/datum/crafting_recipe/fermenting_barrel
+	name = "Wooden Barrel"
+	result = /obj/structure/fermenting_barrel
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8)
+	time = 50
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/distiller
+	name = "Distiller"
+	result = /obj/structure/fermenting_barrel/distiller
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /obj/item/stack/sheet/metal = 5, /datum/reagent/srm_bacteria = 30)
+	time = 50
+	category = CAT_PRIMAL

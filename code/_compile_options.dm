@@ -42,6 +42,7 @@
 #endif // REFERENCE_DOING_IT_LIVE
 
 //#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
+//#define ALL_TESTS //Enables all tests, including the ones that take a long time to run
 
 #ifndef PRELOAD_RSC				//set to:
 #define PRELOAD_RSC 2			//	0 to allow using external resources or on-demand behaviour;
@@ -52,23 +53,6 @@
 /// Prefer the autowiki build target instead.
 // #define AUTOWIKI
 
-//Update this whenever you need to take advantage of more recent byond features
-#define MIN_COMPILER_VERSION 513
-#define MIN_COMPILER_BUILD 1514
-#if DM_VERSION < MIN_COMPILER_VERSION || DM_BUILD < MIN_COMPILER_BUILD
-//Don't forget to update this part
-#error Your version of BYOND is too out-of-date to compile this project. Go to https://secure.byond.com/download and update.
-#error You need version 513.1514 or higher
-#endif
-
-//Update this whenever the byond version is stable so people stop updating to hilariously broken versions
-//#define MAX_COMPILER_VERSION 514
-//#define MAX_COMPILER_BUILD 1571
-#ifdef MAX_COMPILER_VERSION
-#if DM_VERSION > MAX_COMPILER_VERSION || DM_BUILD > MAX_COMPILER_BUILD
-#warn WARNING: Your BYOND version is over the recommended version (514.1571)! Stability is not guaranteed.
-#endif
-#endif
 //Log the full sendmaps profile on 514.1556+, any earlier and we get bugs or it not existing
 #if DM_VERSION >= 514 && DM_BUILD >= 1556
 #define SENDMAPS_PROFILE
@@ -93,6 +77,14 @@
 #define REFERENCE_TRACKING_DEBUG
 #define FIND_REF_NO_CHECK_TICK
 #define GC_FAILURE_HARD_LOOKUP
+#endif
+
+#ifdef ALL_TESTS
+#define BASIC_TESTS
+#define CREATE_AND_DESTROY_TEST
+#define PLANET_GEN_TEST
+#define RUIN_PLACEMENT_TEST
+#define SHIP_PLACEMENT_TEST
 #endif
 
 // A reasonable number of maximum overlays an object needs

@@ -198,7 +198,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	maxHealth = 30
 	health = maxHealth
 	to_chat(src, "<span class='userdanger'>You ate cheese! You are now stronger, bigger and faster!</span>")
-	addtimer(CALLBACK(src, .proc/cheese_down), 3 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(cheese_down)), 3 MINUTES)
 
 /mob/living/simple_animal/mouse/proc/cheese_down()
 	cheesed = FALSE

@@ -306,7 +306,7 @@
 		var/turf/closed/mineral/M = loc
 		M.gets_drilled()
 	deltimer(timerid)
-	timerid = addtimer(CALLBACK(src, .proc/tripanim), 7, TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(tripanim)), 7, TIMER_STOPPABLE)
 	if(!recursive)
 		return
 	var/list/directions = get_directions()
@@ -321,26 +321,27 @@
 
 /obj/effect/temp_visual/goliath_tentacle/proc/tripanim()
 	deltimer(timerid)
-	timerid = addtimer(CALLBACK(src, .proc/trip), 3, TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(trip)), 3, TIMER_STOPPABLE)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/trip()
 	var/latched = FALSE
 	for(var/mob/living/L in loc)
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
-		visible_message("<span class='danger'>[src] grabs hold of [L]!</span>")
+		visible_message("<span class='danger'>[src] wraps a mass of tentacles around [L]!</span>")
 		on_hit(L)
 		latched = TRUE
 	if(!latched)
 		retract()
 	else
 		deltimer(timerid)
-		timerid = addtimer(CALLBACK(src, .proc/retract), 10, TIMER_STOPPABLE)
+		timerid = addtimer(CALLBACK(src, PROC_REF(retract)), 10, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/L)
-	L.Stun(100)
-	L.adjustBruteLoss(rand(10,15))
-
+/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/target)
+	target.apply_damage(rand(20,30), BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	if(iscarbon(target))
+		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
+		B.on_entered(src, target)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"
@@ -392,13 +393,13 @@
 	shake_animation(20)
 	visible_message("<span class='warning'>[src] convulses violently!! Get back!!</span>")
 	playsound(loc, 'sound/effects/magic.ogg', 100, TRUE)
-	addtimer(CALLBACK(src, .proc/open_fire_2), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(open_fire_2)), 1 SECONDS)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/open_fire_2()
 	if(prob(20) && !(spiral_attack_inprogress))
 		visible_message("<span class='warning'>[src] sprays crystalline shards in a circle!</span>")
 		playsound(loc, 'sound/magic/charge.ogg', 100, TRUE)
-		INVOKE_ASYNC(src,.proc/spray_of_crystals)
+		INVOKE_ASYNC(src, PROC_REF(spray_of_crystals))
 	else
 		visible_message("<span class='warning'>[src] expels it's matter, releasing a spray of crystalline shards!</span>")
 		playsound(loc, 'sound/effects/bamf.ogg', 100, TRUE)

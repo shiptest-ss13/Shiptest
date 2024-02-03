@@ -108,7 +108,7 @@
 			UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
 		mouseObject = over_object
 		// register signal to new mouseObject
-		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, .proc/clear_mouseObject)
+		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, PROC_REF(clear_mouseObject))
 	mouseControlObject = over_control
 	if(selected_target[1] && over_object && over_object.IsAutoclickable())
 		selected_target[1] = over_object

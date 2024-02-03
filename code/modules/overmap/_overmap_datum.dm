@@ -38,6 +38,9 @@
 	/// The icon state the token will be set to on init.
 	var/token_icon_state = "object"
 
+	/// The current docking ticket of this object, if any
+	var/datum/docking_ticket/current_docking_ticket
+
 /datum/overmap/New(position, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
 	if(!position)
@@ -64,6 +67,8 @@
 
 /datum/overmap/Destroy(force, ...)
 	SSovermap.overmap_objects -= src
+	if(current_docking_ticket)
+		QDEL_NULL(current_docking_ticket)
 	if(docked_to)
 		docked_to.post_undocked()
 		docked_to.contents -= src
@@ -217,24 +222,27 @@
 	if(!istype(dock_target))
 		CRASH("Overmap datum [src] tried to dock to an invalid overmap datum.")
 	if(docked_to)
-		CRASH("Overmap datum [src] tried to dock to [docked_to] when it is already docked to another overmap datum.")
+		CRASH("Overmap datum [src] tried to dock to [dock_target] when it is already docked to another overmap datum ([docked_to])!.")
 
-	if(docking)
-		return
+	if(docking || current_docking_ticket)
+		return "Already docking!"
 	docking = TRUE
 
 	var/datum/docking_ticket/ticket = dock_target.pre_docked(src)
-	if(!ticket || ticket.docking_error)
+	var/ticket_error = ticket?.docking_error
+	if(!ticket || ticket_error)
+		qdel(ticket)
 		docking = FALSE
-		return ticket?.docking_error || "Unknown docking error!"
+		return ticket_error || "Unknown docking error!"
 	if(!pre_dock(dock_target, ticket))
+		qdel(ticket)
 		docking = FALSE
-		return
+		return ticket_error
 
 	start_dock(dock_target, ticket)
 
 	if(dock_time && !force)
-		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_dock, dock_target, ticket), dock_time)
+		dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_dock), dock_target, ticket), dock_time)
 	else
 		complete_dock(dock_target, ticket)
 
@@ -289,6 +297,9 @@
 	dock_target.post_docked(src)
 	docking = FALSE
 
+	//Clears the docking ticket from both sides
+	qdel(current_docking_ticket)
+
 	SEND_SIGNAL(src, COMSIG_OVERMAP_DOCK, dock_target)
 
 /**
@@ -312,7 +323,7 @@
 	docking = TRUE
 
 	if(dock_time && !force)
-		dock_timer_id = addtimer(CALLBACK(src, .proc/complete_undock), dock_time)
+		dock_timer_id = addtimer(CALLBACK(src, PROC_REF(complete_undock)), dock_time)
 	else
 		complete_undock()
 
@@ -332,7 +343,7 @@
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
 	token.forceMove(OVERMAP_TOKEN_TURF(x, y))
-	INVOKE_ASYNC(old_docked_to, .proc/post_undocked, src)
+	INVOKE_ASYNC(old_docked_to, PROC_REF(post_undocked), src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
 
