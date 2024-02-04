@@ -310,7 +310,7 @@
 	uniform = /obj/item/clothing/under/syndicate/suns/captain
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/suns/captain
-	gloves = /obj/item/clothing/gloves/color/captain/suns
+	gloves = /obj/item/clothing/gloves/captain/suns
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
 	mask = /obj/item/clothing/mask/breath/suns
 	neck = /obj/item/clothing/neck/cloak/suns/cap
@@ -443,7 +443,7 @@
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
+	gloves = /obj/item/clothing/gloves/latex/nitrile/suns
 	glasses = /obj/item/clothing/glasses/hud/health/suns
 	head = /obj/item/clothing/head/suns/cmo
 
@@ -591,7 +591,7 @@
 	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
 	shoes = /obj/item/clothing/shoes/sneakers/suns
 	suit = /obj/item/clothing/suit/toggle/labcoat/suns/doctorlabcoat
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
+	gloves = /obj/item/clothing/gloves/latex/nitrile/suns
 	head = /obj/item/clothing/head/suns/surgery
 	glasses = /obj/item/clothing/glasses/hud/health/suns
 	mask = /obj/item/clothing/mask/surgical/suns
@@ -996,7 +996,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/suns/workerjumpsuit
 	suit = /obj/item/clothing/suit/toggle/suns/workervest
-	gloves = /obj/item/clothing/gloves/color/yellow/suns
+	gloves = /obj/item/clothing/gloves/yellow/suns
 	shoes = /obj/item/clothing/shoes/jackboots/suns
 	head = /obj/item/clothing/head/safety_helmet/suns
 	accessory = null

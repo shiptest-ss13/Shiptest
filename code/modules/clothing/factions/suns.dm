@@ -457,8 +457,9 @@
 //Gloves//
 //////////
 
-
-/obj/item/clothing/gloves/color/captain/suns
+// The following employ a slapjob fix to remove the /color subtype, as per maintainer request.
+// These should be addressed in any future glove refactor, as that is out of the scope of this PR.
+/obj/item/clothing/gloves/captain/suns
 	name = "\improper SUNS captain's gloves"
 	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
 	icon_state = "suns_captaingloves"
@@ -467,6 +468,13 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 50)
 
 /obj/item/clothing/gloves/suns/xo
 	name = "academic staff gloves"
@@ -488,7 +496,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/gloves/color/yellow/suns
+/obj/item/clothing/gloves/yellow/suns
 	name = "insulated gloves"
 	desc = "Padded academic gloves that hopefully keep students out of the nurses office."
 	icon_state = "suns_insulated"
@@ -497,8 +505,10 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
 
-/obj/item/clothing/gloves/color/latex/nitrile/suns
+/obj/item/clothing/gloves/latex/nitrile/suns
 	name = "white nitrile gloves"
 	desc = "Thick sterile white gloves that reach up to the elbows. The nanochips that transfer basic paramedic knowledge are disabled during finals week."
 	icon_state = "suns_latexgloves"
@@ -507,6 +517,19 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+	siemens_coefficient = 0.3
+	permeability_coefficient = 0.01
+	transfer_prints = FALSE
+	var/carrytrait = TRAIT_QUICKER_CARRY
+
+/obj/item/clothing/gloves/latex/nitrile/suns/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_GLOVES)
+		ADD_TRAIT(user, carrytrait, CLOTHING_TRAIT)
+
+/obj/item/clothing/gloves/latex/nitrile/suns/dropped(mob/user)
+	..()
+	REMOVE_TRAIT(user, carrytrait, CLOTHING_TRAIT)
 
 /obj/item/clothing/gloves/tackler/dolphin/suns
 	name = "peacekeeper tackle gloves"
@@ -603,8 +626,9 @@
 	item_state = "suns_captaincloak"
 
 
-// Accessories //
-
+///////////////
+//Accessories//
+///////////////
 
 /obj/item/clothing/accessory/waistcoat/suns
 	name = "\improper SUNS waistcoat"
