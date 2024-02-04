@@ -220,15 +220,6 @@
 	id = INCINERATOR_ATMOS_AUXVENT
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
-/obj/machinery/button/door/incinerator_vent_syndicatelava_main
-	name = "turbine vent control"
-	id = INCINERATOR_SYNDICATELAVA_MAINVENT
-	req_access = list(ACCESS_SYNDICATE)
-
-/obj/machinery/button/door/incinerator_vent_syndicatelava_aux
-	name = "Combustion Chamber Vent control"
-	id = INCINERATOR_SYNDICATELAVA_AUXVENT
-	req_access = list(ACCESS_SYNDICATE)
 
 /obj/machinery/button/massdriver
 	name = "mass driver button"
@@ -259,9 +250,6 @@
 
 /obj/machinery/button/ignition/incinerator/atmos
 	id = INCINERATOR_ATMOS_IGNITER
-
-/obj/machinery/button/ignition/incinerator/syndicatelava
-	id = INCINERATOR_SYNDICATELAVA_IGNITER
 
 /obj/machinery/button/flasher
 	name = "flasher button"

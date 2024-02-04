@@ -118,18 +118,18 @@
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
-/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, method = SMOKE, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(M))
 		return
 	var/boiling = FALSE
 	if(holder && holder.chem_temp >= fry_temperature)
 		boiling = TRUE
-	if(method != VAPOR && method != TOUCH) //Directly coats the mob, and doesn't go into their bloodstream
+	if(method != VAPOR && method != TOUCH && method != SMOKE) //Directly coats the mob, and doesn't go into their bloodstream
 		return ..()
 	if(!boiling)
 		return TRUE
 	var/oil_damage = ((holder.chem_temp / fry_temperature) * 0.33) //Damage taken per unit
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		oil_damage *= 1 - M.get_permeability_protection()
 	var/FryLoss = round(min(38, oil_damage * reac_volume))
 	if(!HAS_TRAIT(M, TRAIT_OIL_FRIED))
@@ -287,7 +287,7 @@
 		return
 
 	var/mob/living/carbon/victim = M
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		var/pepper_proof = victim.is_pepper_proof()
 
 		//check for protection
@@ -561,7 +561,7 @@
 	..()
 
 /datum/reagent/consumable/honey/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH)))
+	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH, SMOKE)))
 		var/mob/living/carbon/C = M
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
@@ -821,7 +821,7 @@
 		ingested = TRUE
 		return
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "pyre_elementum", /datum/mood_event/irritate, name)		// Applied if not eaten
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()

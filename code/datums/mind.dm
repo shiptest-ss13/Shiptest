@@ -57,7 +57,7 @@
 	var/hasSoul = TRUE // If false, renders the character unable to sell their soul.
 	var/holy_role = NONE //is this person a chaplain or admin role allowed to use bibles, Any rank besides 'NONE' allows for this.
 
-	var/mob/living/enslaved_to //If this mind's master is another mob (i.e. adamantine golems)
+	var/mob/living/enslaved_to //If this mind's master is another mob
 	var/datum/language_holder/language_holder
 	var/unconvertable = FALSE
 	var/late_joiner = FALSE

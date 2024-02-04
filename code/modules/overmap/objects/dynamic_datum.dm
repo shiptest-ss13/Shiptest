@@ -27,6 +27,8 @@
 	var/ruin_type
 	/// list of ruins and their target turf, indexed by name
 	var/list/ruin_turfs
+	/// Whether or not the level is currently loading.
+	var/loading = FALSE
 
 	/// The mapgenerator itself. SHOULD NOT BE NULL if the datum ever creates an encounter
 	var/datum/map_generator/mapgen = /datum/map_generator/single_turf/space
@@ -68,6 +70,8 @@
 		return get_turf(pick(reserve_docks))
 
 /datum/overmap/dynamic/pre_docked(datum/overmap/ship/controlled/dock_requester)
+	if(loading)
+		return new /datum/docking_ticket(_docking_error = "[src] is currently being scanned for suitable docking locations by another ship. Please wait.")
 	if(!load_level())
 		return new /datum/docking_ticket(_docking_error = "[src] cannot be docked to.")
 	else
@@ -86,7 +90,7 @@
 	if(planet_name)
 		for(var/mob/Mob as anything in GLOB.player_list)
 			if(dock_requester.shuttle_port.is_in_shuttle_bounds(Mob))
-				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp_fancy("hh:mm")]")
+				Mob.play_screen_text("<span class='maptext' style=font-size:24pt;text-align:center valign='top'><u>[planet_name]</u></span><br>[station_time_timestamp("hh:mm")]")
 				playsound(Mob, landing_sound, 50)
 
 
@@ -177,15 +181,21 @@
 		return FALSE
 	if(mapzone)
 		return TRUE
+
+	loading = TRUE
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
+
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
 	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
 	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
+
 	mapzone = dynamic_encounter_values[1]
 	reserve_docks = dynamic_encounter_values[2]
 	ruin_turfs = dynamic_encounter_values[3]
+
+	loading = FALSE
 	return TRUE
 
 /datum/overmap/dynamic/empty

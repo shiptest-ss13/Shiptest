@@ -1,6 +1,21 @@
 
-#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
+#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
 #define FIRING_PIN_REMOVAL_DELAY 50
+
+#define MANUFACTURER_NONE null
+#define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
+#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
+#define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
+#define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
+#define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
+#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
+#define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
+#define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
+#define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
+#define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
+#define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
+#define MANUFACTURER_DONKCO "the Donk! Co. logo"
+#define MANUFACTURER_PGF "the Etherbor Industries emblem"
 
 /obj/item/gun
 	name = "gun"
@@ -21,11 +36,14 @@
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
 
+	/// The manufacturer of this weapon. For flavor mostly. If none, this will not show.
+	var/manufacturer = MANUFACTURER_NONE
+
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
-	var/dry_fire_text = "click"				//change this on non-gun things		WS Edit - Dry firing
+	var/dry_fire_text = "click"				//change this on non-gun things
 	var/suppressed = null					//whether or not a message is displayed when fired
 	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
@@ -34,21 +52,22 @@
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
-	var/sawn_desc = null				//description change if weapon is sawn-off
+	var/sawn_desc = null					//description change if weapon is sawn-off
 	var/sawn_off = FALSE
-	var/burst_size = 1					//how large a burst is
-	var/fire_delay = 0					//rate of fire for burst firing and semi auto
-	var/firing_burst = 0				//Prevent the weapon from firing again while already firing
-	var/semicd = 0						//cooldown handler
+	var/burst_size = 1						//how large a burst is
+	var/fire_delay = 0						//rate of fire for burst firing and semi auto
+	var/firing_burst = 0					//Prevent the weapon from firing again while already firing
+	var/semicd = 0							//cooldown handler
 	var/weapon_weight = WEAPON_LIGHT
 	var/dual_wield_spread = 24			//additional spread when dual wielding
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 
-	var/projectile_damage_multiplier = 1 //Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
+	var/projectile_damage_multiplier = 1	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
+	var/list/attachment_options = list()	//This.. works for now.. gun refactor soon
 	var/obj/item/firing_pin/pin = /obj/item/firing_pin //standard firing pin for most guns
 
 	var/can_flashlight = FALSE //if a flashlight can be added or removed if it already has one.
@@ -108,6 +127,12 @@
 	var/muzzle_flash_lum = 3
 	///Color of the muzzle flash effect.
 	var/muzzle_flash_color = COLOR_VERY_SOFT_YELLOW
+
+	//gun saftey
+	///Does this gun have a saftey and thus can toggle it?
+	var/has_safety = FALSE
+	///If the saftey on? If so, we can't fire the weapon
+	var/safety = FALSE
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -198,6 +223,13 @@
 	else if(can_bayonet)
 		. += "It has a <b>bayonet</b> lug on it."
 
+	if(has_safety)
+		. += "The safety is [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]. Ctrl-Click to toggle the safety."
+
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+
+
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
 	if(zoomed && user.get_active_held_item() != src)
@@ -210,11 +242,16 @@
 //check if there's enough ammo/energy/whatever to shoot one time
 //i.e if clicking would make it shoot
 /obj/item/gun/proc/can_shoot()
+	if(safety)
+		return FALSE
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")		//WS Edit - Dry firing
-	playsound(src, dry_fire_sound, 30, TRUE)
+	if(!safety)
+		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
+		playsound(src, dry_fire_sound, 30, TRUE)
+		return
+	to_chat(user, "<span class='danger'>Safeties are active on the [src]! Turn them off to fire!</span>")
 
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = 0, atom/pbtarget = null, message = 1)
@@ -484,38 +521,55 @@
 	else
 		return ..()
 
+/obj/item/gun/CtrlClick(mob/user)
+	. = ..()
+	if(!has_safety)
+		return
+
+	if(src != user.get_active_held_item())
+		return
+
+	if(isliving(user) && in_range(src, user))
+		toggle_safety(user)
+
+/obj/item/gun/proc/toggle_safety(mob/user, silent=FALSE)
+	safety = !safety
+
+	if(!silent)
+		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+		user.visible_message(
+			span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+		)
+
+	update_appearance()
+
+
 /obj/item/gun/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(.)
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
-	if((can_flashlight && gun_light) && (can_bayonet && bayonet)) //give them a choice instead of removing both
-		var/list/possible_items = list(gun_light, bayonet)
-		var/obj/item/item_to_remove = input(user, "Select an attachment to remove", "Attachment Removal") as null|obj in sortNames(possible_items)
-		if(!item_to_remove || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-			return
-		return remove_gun_attachment(user, I, item_to_remove)
+	attachment_options = list()
+	get_gun_attachments()
+	if(LAZYLEN(attachment_options) == 1)
+		remove_gun_attachments(user, I, attachment_options[1])
+	else if (LAZYLEN(attachment_options))
+		var/picked_option = show_radial_menu(user, src, attachment_options, radius = 38, require_near = TRUE)
+		remove_gun_attachments(user, I, picked_option)
 
-	else if(gun_light && can_flashlight) //if it has a gun_light and can_flashlight is false, the flashlight is permanently attached.
+/obj/item/gun/proc/get_gun_attachments()
+	if(can_flashlight && gun_light)
+		attachment_options += list("Light" = image(icon = gun_light.icon, icon_state = gun_light.icon_state))
+	if(can_bayonet && bayonet)
+		attachment_options += list("Knife" = image(icon = bayonet.icon, icon_state = bayonet.icon_state))
+
+/obj/item/gun/proc/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
+	if(picked_option == "Light")
 		return remove_gun_attachment(user, I, gun_light, "unscrewed")
-
-	else if(bayonet && can_bayonet) //if it has a bayonet, and the bayonet can be removed
+	else if(picked_option == "Knife")
 		return remove_gun_attachment(user, I, bayonet, "unfix")
-
-	/*WS Edit - Fixes Pin Removal
-	else if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is pried out of [src] by [user], destroying the pin in the process.</span>",
-								"<span class='warning'>You pry [pin] out with [I], destroying the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
-	WS End */
-
 
 /obj/item/gun/welder_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -634,13 +688,19 @@
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
+/obj/item/gun/attack_hand(mob/user)
+	. = ..()
+	update_appearance()
+
 /obj/item/gun/pickup(mob/user)
-	..()
+	. = ..()
+	update_appearance()
 	if(azoom)
 		azoom.Grant(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
+	update_appearance()
 	if(azoom)
 		azoom.Remove(user)
 	if(zoomed)
@@ -668,6 +728,15 @@
 		knife_overlay.pixel_x = knife_x_offset
 		knife_overlay.pixel_y = knife_y_offset
 		. += knife_overlay
+
+	if(ismob(loc) && has_safety)
+		var/mutable_appearance/safety_overlay
+		safety_overlay = mutable_appearance('icons/obj/guns/safety.dmi')
+		if(safety)
+			safety_overlay.icon_state = "safety-on"
+		else
+			safety_overlay.icon_state = "safety-off"
+		. += safety_overlay
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))

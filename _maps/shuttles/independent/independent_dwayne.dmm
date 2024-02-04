@@ -95,13 +95,10 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
-	dwidth = 12;
-	height = 17;
 	launch_status = 0;
 	name = "mining ship";
 	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
+	preferred_direction = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
@@ -1552,8 +1549,9 @@
 /obj/effect/turf_decal/corner/opaque/blue/half{
 	dir = 1
 	},
-/obj/item/clothing/head/caphat/cowboy,
 /obj/item/radio/intercom/wideband/directional/east,
+/obj/item/clothing/suit/armor/vest/capcarapace/duster,
+/obj/item/clothing/head/caphat/cowboy,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Ka" = (

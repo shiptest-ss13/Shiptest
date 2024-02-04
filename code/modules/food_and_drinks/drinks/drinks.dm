@@ -515,6 +515,13 @@
 	volume = 30
 	spillable = TRUE
 
+/obj/item/reagent_containers/food/drinks/rilenacup
+	name = "RILENA mug"
+	desc = "A mug with RILENA: LMR protagonist Ri's face on it."
+	icon_state = "rilenacup"
+	volume = 30
+	spillable = TRUE
+
 //////////////////////////soda_cans//
 //These are in their own group to be used as IED's in /obj/item/grenade/ghettobomb.dm
 

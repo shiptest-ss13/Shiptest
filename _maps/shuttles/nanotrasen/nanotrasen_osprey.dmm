@@ -1035,7 +1035,6 @@
 /obj/item/clothing/under/rank/command/captain/nt/skirt,
 /obj/item/clothing/under/rank/command/captain/nt,
 /obj/item/clothing/suit/armor/vest/capcarapace/alt,
-/obj/item/clothing/gloves/color/captain,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/caphat/nt,
 /obj/item/storage/belt/sabre,
@@ -1044,6 +1043,9 @@
 	desc = "An ICW-era self-destruct authorization disk. The codes on this are long past obsolete, but it's still a flagrant violation of company policy.";
 	name = "outdated nuclear authentication disk"
 	},
+/obj/item/clothing/head/caphat/parade,
+/obj/item/clothing/suit/armor/vest/capcarapace,
+/obj/item/clothing/gloves/color/captain/nt,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "hv" = (
@@ -1475,7 +1477,6 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/machinery/light/small/directional/north,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew/janitor)
@@ -7847,7 +7848,7 @@
 /obj/effect/turf_decal/corner/opaque/mauve{
 	dir = 8
 	},
-/obj/structure/sign/poster/official/sgt{
+/obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
 /obj/machinery/firealarm/directional/north,

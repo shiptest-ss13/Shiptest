@@ -705,7 +705,7 @@
 		log_game("[key_name(usr)] AM failed due to disconnect.")
 
 	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
-		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - world.timeofday
+		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - REALTIMEOFDAY
 		if(time_left > 0)
 			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
 			return
@@ -1095,6 +1095,14 @@
 		return LAZYLEN(match_list)
 	return FALSE
 
+/mob/proc/update_joined_player_list(newname, oldname)
+	if(newname == oldname)
+		return
+	if(oldname)
+		GLOB.joined_player_list -= oldname
+	if(newname)
+		GLOB.joined_player_list[newname] = TRUE
+
 
 /**
  * Fully update the name of a mob
@@ -1109,6 +1117,9 @@
 		return 0
 
 	log_played_names(ckey,newname)
+
+	if(GLOB.joined_player_list[oldname])
+		update_joined_player_list(newname, oldname)
 
 	real_name = newname
 	name = newname
@@ -1195,6 +1206,11 @@
 	if(client.mouse_override_icon)
 		client.mouse_pointer_icon = client.mouse_override_icon
 
+/mob/proc/update_names_joined_list(new_name, old_name)
+	if(old_name)
+		GLOB.real_names_joined -= old_name
+	if(new_name)
+		GLOB.real_names_joined[new_name] = TRUE
 
 ///This mob is abile to read books
 /mob/proc/is_literate()

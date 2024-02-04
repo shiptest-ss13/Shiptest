@@ -83,14 +83,6 @@
 	req_access = list(ACCESS_SYNDICATE)
 	has_hatch = FALSE
 
-/obj/machinery/door/airlock/glass/incinerator/syndicatelava_interior
-	name = "Turbine Interior Airlock"
-	id_tag = INCINERATOR_SYNDICATELAVA_AIRLOCK_INTERIOR
-
-/obj/machinery/door/airlock/glass/incinerator/syndicatelava_exterior
-	name = "Turbine Exterior Airlock"
-	id_tag = INCINERATOR_SYNDICATELAVA_AIRLOCK_EXTERIOR
-
 /obj/machinery/door/airlock/command/glass
 	opacity = FALSE
 	glass = TRUE

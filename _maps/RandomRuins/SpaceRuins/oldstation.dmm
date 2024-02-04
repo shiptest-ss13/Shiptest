@@ -283,6 +283,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/comm)
+"aS" = (
+/obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
 "aT" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/ancientstation)
@@ -4339,9 +4347,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/machinery/door/firedoor/border_only/closed,
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -4590,18 +4595,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/ruin/space/has_grav/ancientstation/betastorage)
-"mU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
 "mV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/airless,
@@ -6017,16 +6010,6 @@
 /obj/structure/cable/yellow,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
-"qt" = (
-/obj/machinery/power/solar,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating/airless,
-/area/space/nearstation)
 "qu" = (
 /obj/structure/catwalk,
 /obj/structure/cable/yellow{
@@ -6184,95 +6167,68 @@
 /mob/living/simple_animal/hostile/alien,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
-"ra" = (
+"re" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ancientstation/betastorage)
+"rH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/atmo)
-"rd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning/corner{
-	dir = 1
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"rv" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/sec)
-"rB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/sec)
-"rE" = (
-/obj/machinery/door/airlock/science{
-	pixel_y = 0;
+/obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"sa" = (
+"rN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"se" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 9
-	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"sg" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/obj/item/broken_bottle,
+/obj/item/soap/nanotrasen,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/rnd)
+"si" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/engi)
-"sk" = (
-/obj/structure/table,
-/obj/item/crowbar,
-/obj/item/flashlight/glowstick,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"su" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/engi)
 "sy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -6281,51 +6237,94 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
+"sz" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/item/paper/fluff/ruins/oldstation,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
 "sC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock,
 /turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation)
+"sD" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/alien/weeds,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
+"sH" = (
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/atmo)
+"sO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
+	},
+/obj/machinery/light_switch{
+	pixel_x = 26
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/engi)
+"sV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/obj/machinery/airalarm/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
 "sY" = (
 /obj/structure/lattice,
 /obj/item/stack/rods,
 /turf/template_noop,
 /area/space/nearstation)
+"sZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/effect/decal/cleanable/oil,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/engi)
+"tb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/south,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
 "td" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/particle_accelerator/particle_emitter/center,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"te" = (
-/obj/machinery/light/directional/west,
-/obj/structure/table/reinforced,
-/obj/item/paper/fluff/ruins/oldstation/protohealth,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"tg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/airlock/command{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
 "tn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair,
@@ -6337,62 +6336,37 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/kitchen)
-"to" = (
+"tq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/obj/machinery/airalarm/directional/west,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"tK" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Engineering";
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 8
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/engi)
-"tL" = (
+"tN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/rack,
-/obj/item/gun/energy/laser/retro/old{
-	pixel_x = -2;
-	pixel_y = -2
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/machinery/light_switch{
+	pixel_x = 0;
+	pixel_y = -26
 	},
-/obj/item/gun/energy/laser/retro/old{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/red,
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 8
-	},
-/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/sec)
+/area/ruin/space/has_grav/ancientstation/hydroponics)
 "tT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/particle_accelerator/end_cap,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"ud" = (
+"ur" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"uB" = (
 /obj/item/shard{
 	icon_state = "medium"
 	},
@@ -6402,43 +6376,129 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/space/has_grav/ancientstation/betacorridor)
-"uD" = (
-/obj/machinery/door/airlock/highsecurity,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/structure/alien/weeds,
-/obj/effect/decal/cleanable/xenoblood/xtracks,
-/obj/effect/decal/cleanable/blood/tracks,
-/obj/structure/cable{
-	icon_state = "1-2"
+"uE" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
 	},
-/obj/machinery/door/firedoor/border_only,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/border_only{
-	dir = 1
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"uM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"uN" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/structure/alien/weeds,
+/obj/effect/gibspawner/human,
+/turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "uT" = (
 /turf/open/floor/engine/n2,
 /area/ruin/space/has_grav/ancientstation/atmo)
+"uW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"uX" = (
+/obj/machinery/door/airlock/medical/glass{
+	dir = 4;
+	name = "Chemical Storage";
+	req_access_txt = "200"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/rnd)
 "uY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/sec)
-"vb" = (
-/obj/machinery/light/small/directional/south,
-/obj/structure/closet/firecloset/full,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"vk" = (
+"vd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/corner/opaque/yellow{
+/obj/item/kirbyplants{
+	icon_state = "plant-25"
+	},
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/green{
 	dir = 4
 	},
-/obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/engi)
+/area/ruin/space/has_grav/ancientstation/hydroponics)
+"vh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/kitchen)
+"vj" = (
+/obj/machinery/door/airlock/security{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "ancient"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/sec)
+"vr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 8
+	},
+/obj/item/reagent_containers/spray/weedspray,
+/obj/item/reagent_containers/spray/pestspray,
+/obj/structure/closet/crate/hydroponics,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/hydroponics)
 "vu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -6454,22 +6514,235 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/kitchen)
-"vw" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/obj/structure/alien/weeds,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/ancientstation/deltaai)
 "vK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair{
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
+"wh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/west{
-	brightness = 3
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"wq" = (
+/obj/machinery/door/window/eastleft,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "proto"
 	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"wu" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 8;
+	name = "Engineering Storage"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"wz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"wC" = (
+/obj/structure/particle_accelerator/power_box,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"wE" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/rnd)
+"wF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"wJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
+/obj/machinery/airalarm/directional/south,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/hydroponics)
+"wL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/engi)
+"wP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"xl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation)
+"xB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/engi)
+"xS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
+"yb" = (
+/obj/structure/table,
+/obj/item/crowbar,
+/obj/item/flashlight/glowstick,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"yg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/rnd)
+"yk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation)
+"yp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"yq" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "proto"
+	},
+/obj/machinery/door/window/westright,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"yx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"yC" = (
+/obj/machinery/door/airlock/medical/glass{
+	dir = 4;
+	name = "Medical Bay"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/medbay)
+"yD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"yE" = (
+/obj/structure/closet/crate,
+/obj/item/cautery{
+	pixel_x = 4
+	},
+/obj/item/hemostat,
+/obj/item/circular_saw,
+/obj/item/scalpel{
+	pixel_y = 12
+	},
+/obj/item/retractor,
+/obj/machinery/light/small/broken/directional/west{
+	icon_state = "bulb-broken"
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/ancientstation/medbay)
+"yI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4;
+	name = "Dining Area"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /obj/effect/turf_decal/corner/opaque/white{
 	dir = 1
 	},
@@ -6478,16 +6751,32 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/kitchen)
-"vO" = (
-/obj/structure/table,
+"yL" = (
+/obj/machinery/airalarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/west,
-/obj/item/broken_bottle,
-/obj/item/soap/nanotrasen,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/rnd)
-"vP" = (
+/area/ruin/space/has_grav/ancientstation)
+"yY" = (
+/obj/machinery/door/window/westleft,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "proto"
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"zb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/sec)
+"zk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/corner/opaque/green,
@@ -6508,230 +6797,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/hydroponics)
-"wc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"wd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"wx" = (
-/obj/machinery/door/window/eastleft,
-/obj/machinery/door/poddoor{
-	id = "proto";
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"wz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"wC" = (
-/obj/structure/particle_accelerator/power_box,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"wJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"wL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/engi)
-"wM" = (
-/obj/machinery/door/airlock/science{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"wX" = (
-/obj/machinery/door/airlock/science{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 4;
-	icon_state = "tracks"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"xc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"xk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"xl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation)
-"xt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/south,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"xG" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Backup Generator Room";
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/engi)
-"xL" = (
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 8
-	},
-/obj/machinery/airalarm/directional/west,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/ancientstation/medbay)
-"xP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"ya" = (
-/obj/machinery/light/directional/west,
-/obj/structure/table/reinforced,
-/obj/item/paper/fluff/ruins/oldstation/protosuit,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"yk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation)
-"yx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"yA" = (
-/obj/machinery/door/airlock/science{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"yM" = (
-/obj/machinery/door/airlock/science{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"yZ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/item/shard{
-	icon_state = "small"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/light/broken/directional/west{
-	icon_state = "tube-broken"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"zb" = (
-/obj/machinery/light/small/directional/east,
-/obj/machinery/airalarm/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
 "zm" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 8;
@@ -6746,43 +6811,14 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"zq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/obj/effect/decal/cleanable/oil,
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
+"zD" = (
+/obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/engi)
-"zz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"zB" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/item/paper/fluff/ruins/oldstation,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"zF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
 "zG" = (
@@ -6816,7 +6852,7 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Ae" = (
+"Al" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -6834,12 +6870,45 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/atmos/glass{
-	name = "Station Atmospherics";
-	dir = 4
+	dir = 4;
+	name = "Station Atmospherics"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Ax" = (
+"Ap" = (
+/obj/effect/spawner/structure/window/hollow/reinforced,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "ancient"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/engi)
+"As" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"AE" = (
 /obj/structure/window/reinforced{
 	dir = 8
 	},
@@ -6847,79 +6916,111 @@
 	dir = 8;
 	icon_state = "inje_map-2"
 	},
-/obj/machinery/light/small/directional/south,
-/turf/open/floor/engine/n2,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "AF" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"AP" = (
-/obj/machinery/door/airlock/command{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"AQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Bi" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/airalarm/directional/south,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"Bl" = (
-/obj/machinery/light/small/broken/directional/north{
-	icon_state = "bulb-broken"
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ancientstation/atmo)
-"Bo" = (
-/obj/structure/closet,
-/obj/item/tank/jetpack/void,
-/obj/item/clothing/head/helmet/space/nasavoid/old,
-/obj/item/clothing/suit/space/nasavoid,
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/mining)
 "Bs" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/ancientstation/atmo)
+"Bz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/comm)
+"BB" = (
+/obj/machinery/airalarm/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "BH" = (
 /obj/structure/particle_accelerator/particle_emitter/left,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
+"BQ" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/structure/alien/weeds,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
+"BV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4;
+	name = "Engineering External Access"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/engi)
+"Cf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/supply/visible{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/atmo)
+"Cg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 4
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/sec)
+"Ci" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/machinery/firealarm/directional/west,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/kitchen)
 "Cr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
@@ -6934,57 +7035,69 @@
 /area/ruin/space/has_grav/ancientstation/kitchen)
 "Cu" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/light/directional/north,
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = 26
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"Cz" = (
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/south,
-/obj/structure/table,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"Da" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/public/glass{
-	name = "Dining Area";
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 2
-	},
+/obj/item/storage/backpack/old,
+/obj/structure/closet,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/kitchen)
-"De" = (
+/area/ruin/space/has_grav/ancientstation)
+"CG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/kirbyplants{
-	icon_state = "plant-25"
-	},
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 1
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/mining)
+"CM" = (
+/obj/structure/table,
+/obj/item/reagent_containers/glass/bottle/iodine{
+	pixel_y = 8
 	},
-/obj/effect/turf_decal/corner/opaque/green,
-/obj/effect/turf_decal/corner/opaque/green{
+/obj/item/reagent_containers/glass/bottle/iron{
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/glass/bottle/lithium{
+	pixel_x = -6
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/hydroponics)
+/area/ruin/space/has_grav/ancientstation/rnd)
+"CR" = (
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"CU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/east,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"CX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
 "Dm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
@@ -6992,19 +7105,10 @@
 /area/ruin/space/has_grav/ancientstation/sec)
 "Dn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/light/directional/west,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 8
-	},
+/obj/machinery/airalarm/directional/east,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/atmo)
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Dp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7035,13 +7139,35 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/rnd)
-"DO" = (
+"DM" = (
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"DQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/purple,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation)
+/area/ruin/space/has_grav/ancientstation/rnd)
 "DT" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -7052,9 +7178,44 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"DX" = (
+"DY" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/north,
+/obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/alien/drone,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"Eh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/gun/energy/laser/retro{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/gun/energy/laser/retro{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/sec)
+"ED" = (
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -7062,50 +7223,16 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Ex" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"EB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"EH" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-25"
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4;
+	icon_state = "tracks"
 	},
-/obj/effect/decal/cleanable/cobweb,
-/obj/machinery/light/small/broken/directional/west{
-	icon_state = "bulb-broken"
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/ancientstation/medbay)
-"EI" = (
-/obj/machinery/light/small/directional/east,
-/obj/structure/alien/weeds,
-/obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/ancientstation/deltaai)
-"EN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump{
+/obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "EP" = (
@@ -7127,22 +7254,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"EY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"Fn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"FD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/rnd)
 "FH" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -7158,93 +7269,53 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"FJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"FR" = (
-/obj/machinery/door/airlock/science{
+"Gh" = (
+/obj/machinery/door/airlock/maintenance_hatch{
 	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"Gp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/command{
+	dir = 4;
+	name = "Delta Station Access"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"FT" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/xenoblood/xgibs/up,
-/obj/machinery/firealarm/directional/west,
+/area/ruin/space/has_grav/ancientstation)
+"GE" = (
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Gp" = (
-/obj/machinery/light/small/directional/east,
-/obj/structure/alien/weeds,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/ancientstation/deltaai)
-"Gq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/machinery/door/airlock/external{
-	name = "Engineering External Access";
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/engi)
-"Gs" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/door/airlock/external{
-	name = "Engineering External Access";
-	dir = 8
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/engi)
+/area/ruin/space/has_grav/ancientstation/betacorridor)
 "GG" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"GJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
 "GP" = (
 /obj/machinery/pipedispenser/disposal,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -7252,6 +7323,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
+"GX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Hn" = (
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/ancientstation/atmo)
@@ -7263,99 +7340,16 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"HL" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Engineering Storage";
+"HI" = (
+/obj/structure/window/reinforced{
 	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"HV" = (
-/obj/structure/closet/firecloset,
-/obj/machinery/light_switch{
-	pixel_x = 26
-	},
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ancientstation/betastorage)
-"HZ" = (
-/obj/machinery/light/small/directional/west,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"Ig" = (
-/obj/effect/spawner/structure/window/hollow/reinforced,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 8
+	dir = 4;
+	id = "proto"
 	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/engi)
-"Ii" = (
-/obj/machinery/light/small/directional/west,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"Im" = (
-/obj/structure/closet/crate,
-/obj/item/cautery{
-	pixel_x = 4
-	},
-/obj/item/hemostat,
-/obj/item/circular_saw,
-/obj/item/scalpel{
-	pixel_y = 12
-	},
-/obj/item/retractor,
-/obj/machinery/light/small/broken/directional/west{
-	icon_state = "bulb-broken"
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue,
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/ancientstation/medbay)
-"Ir" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/kitchen)
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
 "It" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sink{
@@ -7368,19 +7362,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation)
-"IH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/south,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "IM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -7401,20 +7382,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Jd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/rnd)
-"Ji" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
 "Jo" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 9
@@ -7429,120 +7396,111 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"JI" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
+"Jq" = (
+/obj/machinery/light/small/directional/east,
 /obj/structure/alien/weeds,
-/obj/effect/gibspawner/human,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/ancientstation/deltaai)
+"Js" = (
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"JE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/rnd)
+"JG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden,
+/obj/machinery/door/airlock/command{
+	dir = 4;
+	name = "Charlie Station Access";
+	req_access_txt = "200"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"JK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/backpack/old,
+/obj/structure/closet,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
 "JT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"JW" = (
-/obj/machinery/light/directional/east,
-/obj/structure/table/reinforced,
-/obj/item/paper/fluff/ruins/oldstation/protogun,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"Ko" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
-	},
+"JZ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
+/obj/machinery/light/small/directional/north,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"Km" = (
+/obj/structure/closet/firecloset,
+/obj/machinery/light_switch{
+	pixel_x = 26
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ancientstation/betastorage)
+"Ko" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/minor/beret_or_rabbitears,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation)
+"Kq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
 "Ku" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/particle_accelerator/control_box,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"KD" = (
-/obj/machinery/door/airlock/maintenance_hatch{
+"KE" = (
+/obj/structure/window/reinforced{
 	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"KL" = (
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"KQ" = (
-/obj/machinery/door/airlock/command{
-	name = "Beta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 4
+	dir = 4;
+	id = "proto"
 	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"Le" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"Lg" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation)
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Lh" = (
 /obj/structure/window/reinforced,
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Li" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/obj/structure/cable,
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/engi)
 "Ll" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/particle_accelerator/particle_emitter/right,
@@ -7560,42 +7518,24 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"LF" = (
+"Lq" = (
+/obj/machinery/light/directional/west,
+/obj/structure/table/reinforced,
+/obj/item/paper/fluff/ruins/oldstation/protosuit,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"Ls" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/east,
-/mob/living/simple_animal/hostile/alien/drone,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"LI" = (
+"LR" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/red,
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 4
-	},
-/obj/machinery/firealarm/directional/east,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/sec)
-"LS" = (
-/obj/structure/table,
-/obj/item/reagent_containers/glass/bottle/iodine{
-	pixel_y = 8
-	},
-/obj/item/reagent_containers/glass/bottle/iron{
-	pixel_x = 6
-	},
-/obj/item/reagent_containers/glass/bottle/lithium{
-	pixel_x = -6
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/rnd)
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "LY" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 8;
@@ -7603,73 +7543,60 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Ma" = (
-/obj/machinery/door/window/westleft,
-/obj/machinery/door/poddoor{
-	id = "proto";
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"Mg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"Mo" = (
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/shreds,
-/obj/structure/alien/weeds/node,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/ancientstation/deltaai)
-"Mr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/command{
-	name = "Delta Station Access";
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 4
+"Mh" = (
+/obj/machinery/door/airlock/engineering{
+	dir = 4;
+	name = "Engineering"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "ancient"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
+/area/ruin/space/has_grav/ancientstation/engi)
+"Mq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "Charlie Station Kitchen APC";
+	pixel_y = 25;
+	start_charge = 0
+	},
+/obj/machinery/light/small/directional/north,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/kitchen)
 "Mt" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"ME" = (
+"Mw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/kirbyplants{
-	icon_state = "plant-25"
+/obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1;
+	icon_state = "tracks"
 	},
-/obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/west,
+/obj/machinery/firealarm/directional/east,
+/mob/living/simple_animal/hostile/alien,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/hydroponics)
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "MG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
@@ -7683,102 +7610,55 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/kitchen)
-"MP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/storage/box/firingpins,
-/obj/structure/closet/crate/secure/weapon{
-	req_access_txt = "203"
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"MQ" = (
-/obj/machinery/door/airlock/science{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"MR" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
+"MK" = (
 /obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/machinery/door/firedoor/border_only{
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only{
-	dir = 8
+	dir = 4
 	},
-/turf/open/floor/plasteel/airless,
-/area/ruin/space/has_grav/ancientstation/betastorage)
-"MT" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ancientstation/betastorage)
-"MV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
-"Na" = (
-/obj/machinery/light/small/directional/east,
-/obj/structure/alien/weeds,
-/obj/effect/decal/cleanable/blood/tracks,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/ancientstation/deltaai)
-"Nf" = (
+"No" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/corner/opaque/green{
+/obj/effect/decal/cleanable/xenoblood/xgibs/up,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"Nx" = (
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/green{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
-/obj/item/reagent_containers/spray/weedspray,
-/obj/item/reagent_containers/spray/pestspray,
-/obj/structure/closet/crate/hydroponics,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/hydroponics)
-"Nz" = (
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/ancientstation/medbay)
+"Ny" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
+/obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"ND" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/south,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/backpack/old,
-/obj/structure/closet,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"NF" = (
+/obj/machinery/light/small/directional/east,
+/obj/structure/alien/weeds/node,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
 "NQ" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -7793,26 +7673,42 @@
 	},
 /turf/open/floor/engine/o2,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Om" = (
+"NZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/corner/opaque/purple,
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/purple{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/rnd)
+"Oi" = (
+/obj/machinery/light/small/directional/west,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"Ok" = (
 /obj/machinery/door/window/eastright,
 /obj/machinery/door/poddoor{
-	id = "proto";
-	dir = 4
+	dir = 4;
+	id = "proto"
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/proto)
-"Ov" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/opaque/green{
-	dir = 8
-	},
-/obj/structure/closet/crate/bin,
-/obj/machinery/airalarm/directional/south,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/hydroponics)
+"Oo" = (
+/obj/machinery/light/small/directional/east,
+/obj/effect/decal/cleanable/shreds,
+/obj/structure/alien/weeds/node,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
 "OA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -7823,34 +7719,35 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/rnd)
+"OB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/red,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/sec)
 "OC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation)
-"OE" = (
+"OD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/chair{
-	dir = 1
+/obj/machinery/door/airlock/public/glass{
+	dir = 4;
+	name = "Hydroponics"
 	},
-/obj/machinery/airalarm/directional/east,
-/obj/machinery/light/directional/east,
-/obj/effect/turf_decal/corner/opaque/blue,
-/obj/effect/turf_decal/corner/opaque/blue{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/comm)
-"OF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/north,
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 2
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/kitchen)
+/area/ruin/space/has_grav/ancientstation/hydroponics)
 "OU" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel,
@@ -7862,38 +7759,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/sec)
-"OW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/south,
-/obj/effect/turf_decal/corner/opaque/green,
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = -26
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/hydroponics)
-"Pg" = (
-/obj/machinery/door/airlock/security{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
+"OY" = (
+/obj/machinery/door/airlock/command{
+	name = "Beta Station Access"
 	},
 /obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/sec)
-"Pk" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	dir = 4
+	dir = 4;
+	id = "ancient"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -7903,8 +7783,29 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"Pe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"Pj" = (
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Pn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/red{
@@ -7925,6 +7826,30 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
+"Pr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/airlock/command{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
 "Px" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7932,13 +7857,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Py" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation)
 "PC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7947,25 +7865,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/comm)
-"PQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/betacorridor)
-"PR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/south,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/alien/drone,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "PV" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-25"
@@ -7977,56 +7876,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"Qc" = (
-/obj/machinery/door/airlock/command{
-	name = "Beta Station Access"
-	},
-/obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 4
-	},
+"Qo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"Qd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/obj/effect/turf_decal/corner/opaque/purple,
-/obj/effect/turf_decal/corner/opaque/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/purple{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/rnd)
-"Qi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/rnd)
-"Qk" = (
-/obj/structure/rack,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/mining_scanner,
-/obj/item/mining_scanner,
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
+/obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/west,
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/mining)
+/area/ruin/space/has_grav/ancientstation/rnd)
 "Qp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/window/westright,
@@ -8035,30 +7898,37 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation)
+"Qr" = (
+/obj/machinery/door/airlock/command{
+	name = "Beta Station Access"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "ancient"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
 "Qz" = (
-/obj/machinery/light/directional/east,
-/obj/structure/table/reinforced,
-/obj/item/paper/fluff/ruins/oldstation/protosing,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
-"QC" = (
-/obj/machinery/airalarm/directional/west,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"QH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/west,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"QM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/mining)
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
+"QA" = (
+/obj/machinery/light/small/directional/south,
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "QQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8067,100 +7937,81 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/hydroponics)
-"QT" = (
-/obj/machinery/airalarm/directional/east,
+"QY" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/obj/structure/cable,
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/engi)
+"Rc" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/light_switch{
+	pixel_x = 0;
+	pixel_y = 26
+	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"QV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/engi)
-"Ra" = (
-/obj/machinery/light/small/directional/west{
-	brightness = 3
-	},
-/obj/structure/alien/weeds,
-/mob/living/simple_animal/hostile/alien,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/ancientstation/deltaai)
 "Re" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Ri" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/command{
-	name = "Delta Station Access";
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"Rn" = (
-/obj/machinery/door/airlock/atmos/glass{
-	name = "Station Atmospherics";
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/atmo)
-"Rx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/machinery/light/directional/west,
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/comm)
-"RL" = (
+"Rf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/rnd)
+"Rn" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"RO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
+/area/ruin/space/has_grav/ancientstation/sec)
+"Ru" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/reinforced,
+/obj/item/paper/fluff/ruins/oldstation/protogun,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"RG" = (
+/obj/machinery/door/airlock/engineering{
+	dir = 4;
+	name = "Backup Generator Room"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/engi)
+"RH" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
 "RP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8169,6 +8020,26 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/comm)
+"RU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"RZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/atmo)
 "Se" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8184,16 +8055,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Sh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
 "Sn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8202,16 +8063,37 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation)
-"Sp" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/door/poddoor{
-	id = "proto";
+"Sr" = (
+/obj/machinery/door/airlock/maintenance_hatch{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation)
+"St" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/kirbyplants{
+	icon_state = "plant-25"
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/green,
+/obj/effect/turf_decal/corner/opaque/green{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/hydroponics)
 "Su" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light_switch{
@@ -8226,6 +8108,23 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/kitchen)
+"Sv" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"SA" = (
+/obj/effect/decal/cleanable/oil,
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/structure/alien/weeds,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
 "SP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mirror{
@@ -8245,44 +8144,77 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
+"SW" = (
+/obj/effect/spawner/structure/window/hollow/reinforced,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor{
+	dir = 8;
+	id = "ancient"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/sec)
+"Tb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/obj/machinery/door/airlock/external{
+	dir = 8;
+	name = "Engineering External Access"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/engi)
 "Td" = (
 /obj/item/stack/rods,
 /obj/structure/lattice,
 /turf/template_noop,
 /area/space/nearstation)
-"Tg" = (
-/obj/machinery/door/poddoor{
-	id = "proto";
-	dir = 4
-	},
-/obj/machinery/door/window/westright,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
 "Tk" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/end{
 	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Ts" = (
+"Tz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/command{
-	name = "Charlie Station Access";
-	req_access_txt = "200";
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
+/obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 8
 	},
-/obj/machinery/door/firedoor/border_only{
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"TF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
@@ -8298,71 +8230,7 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"TW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"TZ" = (
-/obj/machinery/door/airlock/medical/glass{
-	name = "Medical Bay";
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/medbay)
-"Ug" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/atmo)
-"UL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/blue,
-/obj/effect/turf_decal/corner/opaque/blue{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/comm)
-"UM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/west,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"UP" = (
+"TU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/food/egg_smudge,
@@ -8377,6 +8245,108 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/kitchen)
+"TZ" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 8;
+	icon_state = "inje_map-2"
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/engine/n2,
+/area/ruin/space/has_grav/ancientstation/atmo)
+"Ua" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/light/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = 0;
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"Ug" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/atmo)
+"Ut" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/maintenance_hatch{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/ancientstation/betastorage)
+"Uw" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/structure/alien/weeds,
+/mob/living/simple_animal/hostile/alien,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/deltaai)
+"UB" = (
+/obj/machinery/door/airlock/command{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
+"UC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/comm)
+"UJ" = (
+/obj/machinery/door/airlock/atmos/glass{
+	dir = 4;
+	name = "Station Atmospherics"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/atmo)
 "UV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -8392,75 +8362,45 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Vd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/backpack/old,
-/obj/structure/closet,
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
 "Ve" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
+"Vj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
+"Vr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ancientstation/betastorage)
 "VH" = (
 /obj/structure/sign/poster/retro/nanotrasen_logo_80s,
 /turf/closed/wall,
 /area/ruin/space/has_grav/ancientstation/comm)
-"VI" = (
+"VW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/public/glass{
-	name = "Hydroponics";
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/hydroponics)
-"Wc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/west,
-/obj/effect/turf_decal/corner/opaque/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/purple,
-/obj/effect/turf_decal/corner/opaque/purple{
-	dir = 8
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation/rnd)
-"Wm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/manifold/supply/visible{
-	dir = 4
-	},
+"Wb" = (
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/machinery/airalarm/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/atmo)
-"Wn" = (
-/obj/machinery/portable_atmospherics/canister/toxins,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
-	dir = 8
+/area/ruin/space/has_grav/ancientstation)
+"Wi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west{
+	brightness = 3
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/atmo)
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation)
 "Wp" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
@@ -8468,22 +8408,64 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"WG" = (
+"Wu" = (
+/obj/structure/closet,
+/obj/item/tank/jetpack/void,
+/obj/item/clothing/head/helmet/space/nasavoid/old,
+/obj/item/clothing/suit/space/nasavoid,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/mining)
+"WF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/red,
-/obj/effect/turf_decal/corner/opaque/red{
-	dir = 4
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/storage/box/firingpins,
+/obj/structure/closet/crate/secure/weapon{
+	req_access_txt = "203"
 	},
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/sec)
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "WP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/firealarm/directional/west,
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/light/directional/east,
+/obj/effect/turf_decal/corner/opaque/blue,
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
+/area/ruin/space/has_grav/ancientstation/comm)
+"WQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/command{
+	dir = 4;
+	name = "Delta Station Access"
+	},
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "ancient"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation)
 "WT" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -8501,52 +8483,28 @@
 	},
 /turf/open/floor/engine/n2,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"WY" = (
-/obj/effect/decal/cleanable/oil,
-/obj/machinery/light/small/directional/west{
-	brightness = 3
+"Xb" = (
+/obj/structure/rack,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
 	},
-/obj/structure/alien/weeds,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/ancientstation/deltaai)
-"WZ" = (
-/obj/machinery/light/small/directional/west,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"Xc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "Charlie Station Kitchen APC";
-	pixel_y = 25;
-	start_charge = 0
-	},
-/obj/machinery/light/small/directional/north,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/effect/turf_decal/corner/opaque/white{
+/obj/effect/turf_decal/corner/opaque/brown{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/white{
-	dir = 2
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/kitchen)
-"Xg" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
+/area/ruin/space/has_grav/ancientstation/mining)
+"Xd" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/reinforced,
+/obj/item/paper/fluff/ruins/oldstation/protosing,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
 "Xh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -8559,53 +8517,59 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/rnd)
 "Xo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
-/obj/machinery/light/small/directional/east,
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 4
-	},
-/obj/machinery/light_switch{
-	pixel_x = 26
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/engi)
+/obj/machinery/light/directional/west,
+/obj/structure/table/reinforced,
+/obj/item/paper/fluff/ruins/oldstation/protohealth,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
 "Xr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/hydroponics)
-"Xz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/east,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 1;
-	icon_state = "tracks"
-	},
-/obj/machinery/firealarm/directional/east,
-/mob/living/simple_animal/hostile/alien,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"XE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/rnd)
-"XF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/west,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/ancientstation/betastorage)
 "XJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/engi)
-"Ya" = (
+"XK" = (
+/obj/machinery/door/airlock/science{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"XO" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/item/shard{
+	icon_state = "small"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/light/broken/directional/west{
+	icon_state = "tube-broken"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
+"XY" = (
 /obj/machinery/door/airlock/science{
 	dir = 8
 	},
@@ -8637,6 +8601,34 @@
 /obj/item/soap/nanotrasen,
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation)
+"Yn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/obj/structure/table,
+/turf/open/floor/plasteel/white,
+/area/ruin/space/has_grav/ancientstation/proto)
+"Yo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/command{
+	dir = 4;
+	name = "Charlie Station Access";
+	req_access_txt = "200"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Yr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -8652,60 +8644,72 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
-"YB" = (
+"YF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden,
-/obj/machinery/door/airlock/command{
-	name = "Charlie Station Access";
-	req_access_txt = "200";
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"YH" = (
-/obj/machinery/light/small/directional/east,
-/obj/structure/alien/weeds/node,
-/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
+"YJ" = (
+/obj/machinery/door/airlock/highsecurity,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/structure/alien/weeds,
+/obj/effect/decal/cleanable/xenoblood/xtracks,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltaai)
 "YN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/airalarm/directional/east,
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/airalarm/directional/west,
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/rnd)
-"YR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/directional/north,
+/area/ruin/space/has_grav/ancientstation/atmo)
+"YT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/deltacorridor)
-"Zd" = (
-/obj/structure/window/reinforced{
-	dir = 4
+/area/ruin/space/has_grav/ancientstation/betacorridor)
+"YU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 8
 	},
-/obj/machinery/door/poddoor{
-	id = "proto";
-	dir = 4
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 1
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/ancientstation/proto)
+/obj/effect/turf_decal/corner/opaque/white{
+	dir = 2
+	},
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/kitchen)
 "Ze" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/engine/n2,
@@ -8717,78 +8721,51 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/atmo)
-"Zm" = (
-/obj/machinery/door/airlock/medical/glass{
-	name = "Chemical Storage";
-	req_access_txt = "200";
-	dir = 4
+"Zj" = (
+/obj/item/kirbyplants{
+	icon_state = "plant-25"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/rnd)
-"Zs" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 8;
-	icon_state = "inje_map-2"
-	},
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/engine/o2,
-/area/ruin/space/has_grav/ancientstation/atmo)
-"ZO" = (
-/obj/effect/spawner/structure/window/hollow/reinforced,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor{
-	id = "ancient";
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/ancientstation/sec)
-"ZV" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/directional/west,
-/obj/machinery/light_switch{
-	pixel_x = 0;
-	pixel_y = 26
+/obj/machinery/light/small/broken/directional/west{
+	icon_state = "bulb-broken"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation)
-"ZY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/corner/opaque/yellow{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
 	},
-/obj/effect/turf_decal/corner/opaque/yellow{
+/obj/effect/turf_decal/corner/opaque/blue{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 1
+/obj/effect/turf_decal/corner/opaque/blue{
+	dir = 4
 	},
-/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/airless,
+/area/ruin/space/has_grav/ancientstation/medbay)
+"Zp" = (
+/obj/machinery/light/small/broken/directional/north{
+	icon_state = "bulb-broken"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ancientstation/atmo)
+"Zv" = (
+/obj/machinery/door/airlock/science{
+	dir = 4;
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
-/area/ruin/space/has_grav/ancientstation/rnd)
+/area/ruin/space/has_grav/ancientstation/deltacorridor)
+"ZH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel,
+/area/ruin/space/has_grav/ancientstation/betacorridor)
 
 (1,1,1) = {"
 aa
@@ -8906,11 +8883,11 @@ ee
 et
 ee
 gi
-EH
-xL
+Zj
+Nx
 mq
 mF
-Im
+yE
 gu
 gK
 aa
@@ -8925,8 +8902,8 @@ nt
 kK
 Ln
 ny
-ra
-Dn
+RZ
+YN
 nB
 nK
 EV
@@ -8971,7 +8948,7 @@ lh
 nk
 nm
 pP
-Wm
+Cf
 qe
 Ab
 nA
@@ -9001,7 +8978,7 @@ de
 dx
 ec
 eg
-GJ
+xS
 eT
 gu
 hm
@@ -9018,8 +8995,8 @@ gK
 lh
 lh
 nk
-Rn
-Ae
+UJ
+Al
 mH
 mH
 kX
@@ -9055,7 +9032,7 @@ gt
 gi
 jU
 mg
-TZ
+yC
 mg
 gu
 mW
@@ -9067,7 +9044,7 @@ qy
 qD
 qD
 kQ
-Bl
+Zp
 pR
 gf
 mH
@@ -9106,12 +9083,12 @@ iT
 gr
 lZ
 mp
-mU
+nq
 nq
 nG
 ox
 oY
-yZ
+XO
 qA
 qE
 qH
@@ -9120,11 +9097,11 @@ oM
 pS
 pf
 kQ
-Zs
+AE
 NQ
 zm
 WT
-Ax
+TZ
 kQ
 cD
 lh
@@ -9150,8 +9127,8 @@ de
 ec
 eT
 gx
-Mg
-PQ
+YF
+vK
 eT
 eT
 mM
@@ -9162,7 +9139,7 @@ oA
 pq
 ee
 qB
-ud
+uB
 qJ
 oz
 pd
@@ -9197,8 +9174,8 @@ az
 fU
 fU
 ec
-AP
-tg
+UB
+Pr
 ec
 jC
 jQ
@@ -9206,7 +9183,7 @@ jQ
 jQ
 jQ
 jQ
-MR
+Ut
 jC
 jC
 qx
@@ -9220,7 +9197,7 @@ kQ
 kQ
 Bs
 Lh
-Wn
+sH
 pv
 Ze
 mH
@@ -9254,7 +9231,7 @@ jR
 md
 mS
 mX
-XF
+Vr
 or
 oB
 qv
@@ -9349,12 +9326,12 @@ hd
 eg
 jJ
 lz
-MT
+re
 mT
 mf
 nD
-MT
-HV
+re
+Km
 jQ
 dF
 dF
@@ -9393,7 +9370,7 @@ dF
 aa
 gK
 eg
-EB
+ZH
 hd
 eg
 jC
@@ -9442,7 +9419,7 @@ dF
 aa
 gK
 eg
-KL
+GE
 hn
 eg
 gK
@@ -9634,8 +9611,8 @@ aa
 gK
 bI
 cf
-Qk
-Bo
+Xb
+Wu
 fA
 ce
 eW
@@ -9831,7 +9808,7 @@ aM
 cc
 cy
 cI
-QM
+CG
 ga
 dj
 eT
@@ -9933,7 +9910,7 @@ fy
 gg
 ce
 eT
-Bi
+YT
 eg
 gK
 aa
@@ -9941,7 +9918,7 @@ aa
 aa
 gK
 fB
-Gs
+Tb
 fB
 gK
 aa
@@ -10079,7 +10056,7 @@ aa
 aa
 gK
 eg
-EB
+ZH
 hd
 ec
 gK
@@ -10088,7 +10065,7 @@ eI
 eI
 fb
 fD
-Gq
+BV
 gV
 hk
 eI
@@ -10134,13 +10111,13 @@ ec
 gK
 eI
 bv
-QV
+su
 id
 ji
 kg
 mr
 mZ
-zq
+sZ
 nO
 eI
 gK
@@ -10206,7 +10183,7 @@ qm
 qq
 bf
 aa
-qt
+qm
 qM
 qr
 aa
@@ -10244,7 +10221,7 @@ sy
 hv
 eI
 oS
-Li
+QY
 gH
 eI
 gK
@@ -10330,13 +10307,13 @@ eg
 lJ
 ju
 en
-Xo
-vk
+sO
+tq
 el
 kH
 my
 nb
-sa
+xB
 nP
 oc
 ix
@@ -10373,17 +10350,17 @@ aT
 aG
 aG
 aG
-Qc
-KQ
+Qr
+OY
 aG
 eI
 eI
 dl
 dl
 eI
-tK
-Ig
-tK
+Mh
+Ap
+Mh
 gX
 eI
 eI
@@ -10391,7 +10368,7 @@ dl
 eI
 eI
 iX
-xG
+RG
 eI
 aG
 aT
@@ -10425,9 +10402,9 @@ aG
 fm
 fc
 gp
-to
+sV
 jF
-TW
+si
 mt
 ij
 ne
@@ -10436,8 +10413,8 @@ jF
 nd
 mt
 pu
-TW
-to
+si
+sV
 gp
 jF
 px
@@ -10479,9 +10456,9 @@ UV
 UV
 eP
 is
-Sh
+uW
 oJ
-Xg
+wF
 is
 UV
 UV
@@ -10525,15 +10502,15 @@ cn
 cQ
 ey
 dP
-VI
+OD
 dP
 cQ
 ey
-Lg
+MK
 gI
 gY
 hR
-Da
+yI
 hR
 gI
 gI
@@ -10564,19 +10541,19 @@ as
 as
 bl
 aP
-Rx
+Bz
 aP
-UL
+UC
 ak
 ak
 dN
 fh
 cQ
-ME
+vd
 dQ
 dQ
 eQ
-Nf
+vr
 ey
 oO
 gI
@@ -10584,15 +10561,15 @@ hr
 ht
 ht
 ht
-vK
+Ci
 gI
 oX
 dS
 aG
 aT
-Vd
+JK
 gZ
-sk
+yb
 kD
 mz
 aT
@@ -10618,7 +10595,7 @@ ba
 bk
 bs
 by
-Ji
+rN
 cn
 cR
 do
@@ -10636,15 +10613,15 @@ tn
 iI
 iY
 cn
-xc
+Kq
 aG
-ZV
+Rc
 bN
 bN
 bN
 pi
 pk
-ND
+Cu
 aG
 dw
 cD
@@ -10678,7 +10655,7 @@ dp
 ey
 oO
 gI
-OF
+vh
 ht
 EP
 ly
@@ -10723,7 +10700,7 @@ dp
 gE
 ep
 eR
-OW
+tN
 ey
 oO
 gY
@@ -10821,11 +10798,11 @@ dp
 gE
 er
 mD
-Ov
+wJ
 cQ
 oQ
 gY
-UP
+TU
 hV
 pM
 ht
@@ -10874,7 +10851,7 @@ iO
 ey
 oQ
 gY
-Xc
+Mq
 ht
 MG
 ht
@@ -10912,7 +10889,7 @@ aQ
 bm
 bM
 VH
-EY
+JZ
 fQ
 cT
 dr
@@ -10930,7 +10907,7 @@ tn
 iM
 ja
 cn
-MV
+tb
 aT
 ph
 bN
@@ -10938,7 +10915,7 @@ bN
 bN
 bN
 bN
-ND
+Cu
 aG
 gK
 aa
@@ -10956,7 +10933,7 @@ as
 as
 fP
 aR
-OE
+WP
 aR
 bn
 ak
@@ -10964,11 +10941,11 @@ ak
 dS
 dS
 ey
-De
+St
 dR
 dQ
 mL
-vP
+zk
 ey
 oQ
 gY
@@ -10976,7 +10953,7 @@ hy
 ly
 ly
 ly
-Ir
+YU
 gY
 oZ
 pV
@@ -10984,7 +10961,7 @@ aG
 aT
 qU
 bN
-zB
+sz
 kF
 jP
 aG
@@ -11015,15 +10992,15 @@ cq
 ey
 cQ
 dP
-VI
+OD
 dP
 cQ
 cQ
-Pk
+Sr
 gI
 gI
 hR
-Da
+yI
 hR
 gY
 gY
@@ -11053,11 +11030,11 @@ aa
 gK
 gK
 aT
-DO
+Ko
 OC
 sC
 SP
-Py
+Wi
 dg
 cq
 cq
@@ -11067,15 +11044,15 @@ dt
 dt
 dt
 iV
-WZ
+Oi
 oT
-Ii
+aS
 np
 mb
 mb
 ml
 Po
-HZ
+zD
 hN
 cq
 qb
@@ -11111,19 +11088,19 @@ aG
 PV
 bN
 cV
-zb
+Wb
 bN
-zF
+Vj
 bN
 jc
 Sn
 ld
 cq
 nu
-Ex
+ur
 cq
 bN
-QT
+yL
 cV
 pa
 bW
@@ -11158,23 +11135,23 @@ aT
 aT
 aT
 bX
-Ri
+WQ
 bX
 eJ
 eJ
 eJ
 dv
 fp
-Pg
-ZO
-Pg
+vj
+SW
+vj
 eJ
 eJ
 eJ
 eJ
 eJ
 hM
-Mr
+Gp
 bX
 aG
 aG
@@ -11208,21 +11185,21 @@ az
 cK
 cK
 bN
-Nz
+uM
 eJ
 gL
 hp
-rv
+Rn
 hp
 js
 lm
 ha
 Pn
-rB
+zb
 hz
-tL
+Eh
 eJ
-Nz
+uM
 pa
 bN
 aG
@@ -11409,11 +11386,11 @@ gK
 eJ
 ex
 eV
-WG
+Cg
 fO
 lv
 fO
-LI
+OB
 hX
 im
 eJ
@@ -11755,7 +11732,7 @@ gK
 bD
 he
 lV
-vb
+QA
 bE
 gK
 dF
@@ -11796,7 +11773,7 @@ gK
 bE
 Re
 cx
-xP
+se
 bE
 gK
 gK
@@ -11810,7 +11787,7 @@ gK
 dF
 gK
 bD
-Fn
+LR
 pE
 lw
 bE
@@ -11844,7 +11821,7 @@ aa
 gK
 bE
 ct
-YB
+JG
 cb
 bE
 bE
@@ -11852,7 +11829,7 @@ bD
 bD
 bD
 bD
-xk
+As
 bE
 bE
 bE
@@ -11860,7 +11837,7 @@ bE
 bE
 bE
 cb
-Ts
+Yo
 cb
 bD
 gK
@@ -11895,19 +11872,19 @@ gK
 bE
 ft
 fE
-RO
-UM
-WP
+Sv
+wP
+Le
 hQ
-QH
+Ny
 jv
 ma
 Re
-QH
+Ny
 nH
-FT
-QC
-RO
+No
+BB
+Sv
 Re
 pE
 od
@@ -11991,8 +11968,8 @@ ac
 gK
 gK
 bE
-rE
-FR
+Zv
+CR
 eY
 eY
 eY
@@ -12007,8 +11984,8 @@ dy
 eY
 dy
 dy
-wM
-yM
+XK
+Pj
 jA
 jA
 jA
@@ -12044,15 +12021,15 @@ Re
 ge
 eY
 di
-FD
-Jd
+JE
+wE
 dZ
-Wc
+DQ
 eb
 hf
 zG
 hY
-vO
+sg
 iD
 iP
 eY
@@ -12060,9 +12037,9 @@ pI
 Re
 jA
 kd
-ya
+Lq
 jA
-te
+Xo
 kZ
 jA
 gK
@@ -12079,11 +12056,11 @@ gK
 ac
 ad
 ae
-YH
+NF
 ae
 ae
 ae
-Mo
+Oo
 cM
 jD
 ac
@@ -12108,11 +12085,11 @@ eY
 pJ
 lw
 jA
-wx
-Zd
+wq
+KE
 jA
-Zd
-Om
+KE
+Ok
 jA
 dF
 aa
@@ -12139,7 +12116,7 @@ ac
 df
 bE
 Re
-IH
+yp
 eY
 gW
 fa
@@ -12154,12 +12131,12 @@ mk
 ls
 mn
 dy
-YR
+TF
 Re
 jA
-Cu
+Ua
 kv
-rd
+RH
 kv
 kv
 jA
@@ -12210,7 +12187,7 @@ qf
 lF
 kw
 lF
-Cz
+Yn
 jA
 dF
 aa
@@ -12226,14 +12203,14 @@ gK
 ac
 ae
 aj
-Gp
+Jq
 be
 ah
 bG
-Na
+Qz
 cO
 dI
-uD
+YJ
 dm
 dW
 fL
@@ -12296,7 +12273,7 @@ jL
 oh
 mR
 hi
-YN
+yg
 ir
 lT
 hi
@@ -12324,11 +12301,11 @@ gK
 ac
 af
 ah
-vw
+BQ
 bg
 ae
 ag
-JI
+uN
 ao
 bh
 ac
@@ -12346,18 +12323,18 @@ eB
 eY
 eY
 eY
-Zm
+uX
 dy
 dy
 dy
 ST
 Re
 jA
-FJ
+CX
 lF
 lF
 kw
-Cz
+Yn
 jA
 dF
 aa
@@ -12384,7 +12361,7 @@ ac
 gK
 bE
 oq
-PR
+DY
 dy
 dZ
 fu
@@ -12396,13 +12373,13 @@ dy
 hF
 lM
 OA
-ZY
+Qo
 iQ
 eY
-DX
-xt
+rH
+GX
 jA
-wJ
+wh
 lG
 qV
 kx
@@ -12451,11 +12428,11 @@ dy
 IV
 Re
 jA
-Tg
-Sp
+yq
+HI
 jA
-Sp
-Ma
+HI
+yY
 jA
 dF
 aa
@@ -12485,15 +12462,15 @@ Re
 dc
 dy
 eD
-Qi
-XE
+Rf
+VW
 dZ
-Qd
+NZ
 eb
 dy
 hH
 hZ
-LS
+CM
 iG
 iS
 dy
@@ -12501,9 +12478,9 @@ Yr
 Re
 jA
 kl
-Qz
+Xd
 jA
-JW
+Ru
 lc
 jA
 gK
@@ -12530,8 +12507,8 @@ ag
 ac
 gK
 bE
-Ya
-MQ
+XY
+DM
 dy
 eY
 dy
@@ -12546,8 +12523,8 @@ dy
 dy
 dy
 eY
-wX
-yA
+ED
+Js
 jA
 jA
 jA
@@ -12569,11 +12546,11 @@ gK
 ac
 ah
 ae
-Gp
+Jq
 bh
 ae
 ag
-EI
+sD
 ae
 bg
 ac
@@ -12630,19 +12607,19 @@ gK
 bE
 ou
 Re
-EN
-wd
-LF
+Tz
+Dn
+CU
 ib
-AQ
+Ls
 DB
 oN
 lw
-RL
+RU
 nL
 Se
-zz
-Xz
+Pe
+Mw
 nY
 Yh
 od
@@ -12667,17 +12644,17 @@ gK
 gK
 ac
 ap
-WY
+SA
 bV
 ae
 bQ
-Ra
+Uw
 dd
 ac
 gK
 bE
 bE
-KD
+uE
 bD
 bD
 bE
@@ -12685,7 +12662,7 @@ bE
 bD
 bD
 bD
-HL
+wu
 bE
 bE
 bE
@@ -12693,7 +12670,7 @@ bE
 bE
 bE
 bD
-Ko
+Gh
 bE
 bE
 gK
@@ -12775,7 +12752,7 @@ dK
 gK
 bE
 he
-wc
+yD
 jf
 AF
 qO
@@ -12791,7 +12768,7 @@ Ll
 Sf
 bE
 jg
-MP
+WF
 yx
 bE
 dF

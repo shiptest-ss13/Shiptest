@@ -839,6 +839,27 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/ship/solgov
 	faction = list("playerSolgov", "turret")
 
+/obj/machinery/porta_turret/ship/syndicate
+	faction = list(FACTION_PLAYER_SYNDICATE, "turret")
+	icon_state = "standard_lethal"
+	base_icon_state = "standard"
+
+/obj/machinery/porta_turret/ship/syndicate/weak
+	name = "Light Laser Turret"
+	desc = "A low powered turret designed by the Gorlex Maurauders during the ICW. Effectively weaponizes mining equipment."
+	stun_projectile = /obj/projectile/beam/disabler/weak
+	lethal_projectile = /obj/projectile/beam/weak/penetrator
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+
+/obj/machinery/porta_turret/ship/syndicate/heavy
+	name = "Heavy Laser Turret"
+	desc = "Produced by Cybersun, this turret is a duel mount of a propietary heavy laser, and crowd control taser system."
+	stun_projectile = /obj/projectile/energy/electrode
+	stun_projectile_sound = 'sound/weapons/taser.ogg'
+	lethal_projectile = /obj/projectile/beam/laser/heavylaser
+	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
+
 ////////////////////////
 //Turret Control Panel//
 ////////////////////////

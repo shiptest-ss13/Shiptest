@@ -292,16 +292,6 @@
 #define INCINERATOR_ATMOS_AIRLOCK_INTERIOR "atmos_incinerator_airlock_interior"
 #define INCINERATOR_ATMOS_AIRLOCK_EXTERIOR "atmos_incinerator_airlock_exterior"
 
-//Syndicate lavaland base incinerator (lavaland_surface_syndicate_base1.dmm)
-#define INCINERATOR_SYNDICATELAVA_IGNITER "syndicatelava_igniter"
-#define INCINERATOR_SYNDICATELAVA_MAINVENT "syndicatelava_mainvent"
-#define INCINERATOR_SYNDICATELAVA_AUXVENT "syndicatelava_auxvent"
-#define INCINERATOR_SYNDICATELAVA_DP_VENTPUMP "syndicatelava_airlock_pump"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_SENSOR "syndicatelava_airlock_sensor"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_CONTROLLER "syndicatelava_airlock_controller"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_INTERIOR "syndicatelava_airlock_interior"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_EXTERIOR "syndicatelava_airlock_exterior"
-
 //MULTIPIPES
 //IF YOU EVER CHANGE THESE CHANGE SPRITES TO MATCH.
 #define PIPING_LAYER_MIN 1

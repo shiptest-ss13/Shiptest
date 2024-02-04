@@ -307,6 +307,9 @@
 	outfit = /datum/outfit/job/assistant
 	icon_state = "corpsegreytider"
 
+/obj/effect/mob_spawn/human/corpse/assistant/husked
+	husk = TRUE
+
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
 
@@ -326,6 +329,8 @@
 	outfit = /datum/outfit/job/cook
 	icon_state = "corpsecook"
 
+/obj/effect/mob_spawn/human/cook/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
@@ -353,11 +358,8 @@
 
 /obj/effect/mob_spawn/human/engineer
 	name = "Engineer"
-	outfit = /datum/outfit/job/engineer/gloved
+	outfit = /datum/outfit/job/engineer
 	icon_state = "corpseengineer"
-
-/obj/effect/mob_spawn/human/engineer/rig
-	outfit = /datum/outfit/job/engineer/gloved/rig
 
 /obj/effect/mob_spawn/human/clown
 	name = "Clown"
@@ -374,15 +376,6 @@
 	outfit = /datum/outfit/job/miner
 	icon_state = "corpseminer"
 
-/obj/effect/mob_spawn/human/miner/rig
-	outfit = /datum/outfit/job/miner/equipped/hardsuit
-
-/obj/effect/mob_spawn/human/miner/explorer
-	outfit = /datum/outfit/job/miner/equipped
-
-/obj/effect/mob_spawn/human/miner/old
-	outfit = /datum/outfit/job/miner/old
-
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
 	outfit = /datum/outfit/plasmaman
@@ -390,6 +383,9 @@
 /obj/effect/mob_spawn/human/botanist
 	outfit = /datum/outfit/job/botanist
 	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/botanist/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/sec
 	outfit = /datum/outfit/job/security
@@ -405,9 +401,13 @@
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"
+	icon_state = "corpsebartender"
 	id_job = "Bartender"
 	id_access_list = list(ACCESS_BAR)
 	outfit = /datum/outfit/spacebartender
+
+/obj/effect/mob_spawn/human/bartender/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/bartender/alive
 	death = FALSE
@@ -465,8 +465,8 @@
 	name = "Beach Bum"
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/storage/wallet/random
-	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank;
-	uniform = /obj/item/clothing/under/pants/youngfolksjeans
+	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank
+	uniform = /obj/item/clothing/under/pants/jeans
 	id = /obj/item/card/id
 
 /datum/outfit/beachbum/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

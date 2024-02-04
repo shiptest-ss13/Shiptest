@@ -756,3 +756,7 @@
 
 /// generally called before temporary non-parallel animate()s on the atom (animation_duration)
 #define COMSIG_ATOM_TEMPORARY_ANIMATION_START "atom_temp_animate_start"
+
+/// send when enabling/diabling an autofire component
+#define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
+#define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"

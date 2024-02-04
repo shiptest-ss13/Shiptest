@@ -18,7 +18,7 @@
 			if((D.spread_flags & DISEASE_SPREAD_SPECIAL) || (D.spread_flags & DISEASE_SPREAD_NON_CONTAGIOUS))
 				continue
 
-			if((method == TOUCH || method == VAPOR) && (D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS))
+			if(((method == TOUCH || method == SMOKE) || method == VAPOR) && (D.spread_flags & DISEASE_SPREAD_CONTACT_FLUIDS))
 				L.ContactContractDisease(D)
 			else //ingest, patch or inject
 				L.ForceContractDisease(D)
@@ -198,7 +198,7 @@
 /datum/reagent/water/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with water can help put them out!
 	if(!istype(M))
 		return
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		M.adjust_fire_stacks(-(reac_volume / 10))
 		M.ExtinguishMob()
 	..()
@@ -330,7 +330,7 @@
 /datum/reagent/hydrogen_peroxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with h2o2 can burn them !
 	if(!istype(M))
 		return
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		M.adjustFireLoss(2, 0) // burns
 	..()
 
@@ -340,7 +340,7 @@
 	taste_description = "suffering"
 
 /datum/reagent/fuel/unholywater/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.reagents.add_reagent(type,reac_volume/4)
 		return
 	return ..()
@@ -505,229 +505,6 @@
 	..()
 	return
 
-#define MUT_MSG_IMMEDIATE 1
-#define MUT_MSG_EXTENDED 2
-#define MUT_MSG_ABOUT2TURN 3
-
-/datum/reagent/mutationtoxin
-	name = "Stable Mutation Toxin"
-	description = "A humanizing toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	metabolization_rate = 0.2 //metabolizes to prevent micro-dosage
-	taste_description = "slime"
-	var/race = /datum/species/human
-	var/list/mutationtexts = list( "You don't feel very well." = MUT_MSG_IMMEDIATE,
-									"Your skin feels a bit abnormal." = MUT_MSG_IMMEDIATE,
-									"Your limbs begin to take on a different shape." = MUT_MSG_EXTENDED,
-									"Your appendages begin morphing." = MUT_MSG_EXTENDED,
-									"You feel as though you're about to change at any moment!" = MUT_MSG_ABOUT2TURN)
-	var/cycles_to_turn = 20 //the current_cycle threshold / iterations needed before one can transform
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-
-/datum/reagent/mutationtoxin/on_mob_life(mob/living/carbon/human/H)
-	. = TRUE
-	if(!istype(H))
-		return
-	if(!(H.dna?.species) || !(H.mob_biotypes & MOB_ORGANIC))
-		return
-	var/datum/species/mutation = pick(race)			//I honestly feel extremely uncomfortable. I do not like the fact that this works.
-	var/current_species = H.dna.species.type
-	if(mutation && mutation != current_species)
-		H.set_species(mutation)
-	else
-		to_chat(H, "<span class='danger'>The pain vanishes suddenly. You feel no different.</span>")
-	H.reagents.del_reagent(type)
-
-	if(prob(10))
-		var/list/pick_ur_fav = list()
-		var/filter = NONE
-		if(current_cycle <= (cycles_to_turn*0.3))
-			filter = MUT_MSG_IMMEDIATE
-		else if(current_cycle <= (cycles_to_turn*0.8))
-			filter = MUT_MSG_EXTENDED
-		else
-			filter = MUT_MSG_ABOUT2TURN
-
-		for(var/i in mutationtexts)
-			if(mutationtexts[i] == filter)
-				pick_ur_fav += i
-		to_chat(H, "<span class='warning'>[pick(pick_ur_fav)]</span>")
-
-	if(current_cycle >= cycles_to_turn)
-		var/datum/species/species_type = race
-		H.set_species(species_type)
-		H.reagents.del_reagent(type)
-		to_chat(H, "<span class='warning'>You've become \a [lowertext(initial(species_type.name))]!</span>")
-	..()
-
-/datum/reagent/mutationtoxin/classic //The one from plasma on green slimes
-	name = "Mutation Toxin"
-	description = "A corruptive toxin."
-	color = "#13BC5E" // rgb: 19, 188, 94
-	race = /datum/species/jelly/slime
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-
-/datum/reagent/mutationtoxin/unstable
-	name = "Unstable Mutation Toxin"
-	description = "A mostly safe mutation toxin."
-	color = "#13BC5E" // rgb: 19, 188, 94
-	race = list(/datum/species/jelly/slime,
-						/datum/species/human,
-						/datum/species/lizard,
-						/datum/species/fly,
-						/datum/species/moth,
-						/datum/species/pod,
-						/datum/species/jelly,
-						/datum/species/abductor
-	)
-	process_flags = ORGANIC | SYNTHETIC
-
-/datum/reagent/mutationtoxin/lizard
-	name = "Sarathi Mutation Toxin"
-	description = "A lizarding toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/lizard
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "dragon's breath but not as cool"
-
-/datum/reagent/mutationtoxin/fly
-	name = "Fly Mutation Toxin"
-	description = "An insectifying toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/fly
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "trash"
-
-/datum/reagent/mutationtoxin/moth
-	name = "Moth Mutation Toxin"
-	description = "A glowing toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/moth
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "clothing"
-
-/datum/reagent/mutationtoxin/pod
-	name = "Podperson Mutation Toxin"
-	description = "A vegetalizing toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/pod
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "flowers"
-
-/datum/reagent/mutationtoxin/jelly
-	name = "Imperfect Mutation Toxin"
-	description = "A jellyfying toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/jelly
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "grandma's gelatin"
-
-/datum/reagent/mutationtoxin/jelly/on_mob_life(mob/living/carbon/human/H)
-	if(isjellyperson(H))
-		to_chat(H, "<span class='warning'>Your jelly shifts and morphs, turning you into another subspecies!</span>")
-		var/species_type = pick(subtypesof(/datum/species/jelly))
-		H.set_species(species_type)
-		H.reagents.del_reagent(type)
-		return TRUE
-	if(current_cycle >= cycles_to_turn) //overwrite since we want subtypes of jelly
-		var/datum/species/species_type = pick(subtypesof(race))
-		H.set_species(species_type)
-		H.reagents.del_reagent(type)
-		to_chat(H, "<span class='warning'>You've become \a [initial(species_type.name)]!</span>")
-		return TRUE
-	return ..()
-
-/datum/reagent/mutationtoxin/golem
-	name = "Golem Mutation Toxin"
-	description = "A crystal toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/golem/random
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "rocks"
-
-/datum/reagent/mutationtoxin/abductor
-	name = "Abductor Mutation Toxin"
-	description = "An alien toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/abductor
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "something out of this world... no, universe!"
-
-/datum/reagent/mutationtoxin/android
-	name = "Android Mutation Toxin"
-	description = "A robotic toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/android
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "circuitry and steel"
-
-/datum/reagent/mutationtoxin/ipc
-	name = "IPC Mutation Toxin"
-	description = "An integrated positronic toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/ipc
-	process_flags = ORGANIC | SYNTHETIC
-
-/datum/reagent/mutationtoxin/kepi //crying
-	name = "Kepori Mutation Toxin"
-	description = "A feathery toxin."
-	race = /datum/species/kepori
-	process_flags = ORGANIC | SYNTHETIC
-	taste_description = "a familiar white meat"
-
-//BLACKLISTED RACES
-/datum/reagent/mutationtoxin/skeleton
-	name = "Skeleton Mutation Toxin"
-	description = "A scary toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/skeleton
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "milk... and lots of it"
-
-/datum/reagent/mutationtoxin/zombie
-	name = "Zombie Mutation Toxin"
-	description = "An undead toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/zombie //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "brai...nothing in particular"
-
-/datum/reagent/mutationtoxin/goofzombie
-	name = "Krokodil Zombie Mutation Toxin"
-	description = "An undead toxin... kinda..."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/human/krokodil_addict //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
-	process_flags = ORGANIC | SYNTHETIC
-
-/datum/reagent/mutationtoxin/ash
-	name = "Ash Mutation Toxin"
-	description = "An ashen toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/lizard/ashwalker
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "savagery"
-
-//DANGEROUS RACES
-/datum/reagent/mutationtoxin/shadow
-	name = "Shadow Mutation Toxin"
-	description = "A dark toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/shadow
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "the night"
-
-/datum/reagent/mutationtoxin/plasma
-	name = "Plasma Mutation Toxin"
-	description = "A plasma-based toxin."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/plasmaman
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "plasma"
-
-#undef MUT_MSG_IMMEDIATE
-#undef MUT_MSG_EXTENDED
-#undef MUT_MSG_ABOUT2TURN
-
 /datum/reagent/mulligan
 	name = "Mulligan Toxin"
 	description = "This toxin will rapidly change the DNA of human beings. Commonly used by Syndicate spies and assassins in need of an emergency ID change."
@@ -750,7 +527,7 @@
 	taste_description = "slime"
 
 /datum/reagent/aslimetoxin/expose_mob(mob/living/L, method=TOUCH, reac_volume)
-	if(method != TOUCH)
+	if(method != TOUCH && method != SMOKE)
 		L.ForceContractDisease(new /datum/disease/transformation/slime(), FALSE, TRUE)
 
 /datum/reagent/gluttonytoxin
@@ -998,7 +775,7 @@
 	taste_description = "bitterness"
 
 /datum/reagent/space_cleaner/sterilizine/expose_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
-	if(method in list(TOUCH, VAPOR, PATCH))
+	if(method in list(TOUCH, VAPOR, PATCH, SMOKE))
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
 			S.speed_modifier = max(0.2, S.speed_modifier)
@@ -1119,7 +896,7 @@
 	//WS End
 
 /datum/reagent/bluespace/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		do_teleport(M, get_turf(M), (reac_volume / 5), asoundin = 'sound/effects/phasein.ogg', channel = TELEPORT_CHANNEL_BLUESPACE) //4 tiles per crystal
 	..()
 
@@ -1179,7 +956,7 @@
 	accelerant_quality = 10
 
 /datum/reagent/fuel/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 10)
 		return
 	..()
@@ -1212,7 +989,7 @@
 			M.adjustToxLoss(rand(5,10))
 
 /datum/reagent/space_cleaner/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.wash(clean_types)
 
 /datum/reagent/space_cleaner/ez_clean
@@ -1229,7 +1006,7 @@
 
 /datum/reagent/space_cleaner/ez_clean/expose_mob(mob/living/M, method=TOUCH, reac_volume)
 	..()
-	if((method == TOUCH || method == VAPOR) && !issilicon(M))
+	if(((method == TOUCH || method == SMOKE) || method == VAPOR) && !issilicon(M))
 		M.adjustBruteLoss(1.5)
 		M.adjustFireLoss(1.5)
 
@@ -1870,7 +1647,7 @@
 /datum/reagent/acetone_oxide/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people kills people!
 	if(!istype(M))
 		return
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		M.adjustFireLoss(2, FALSE) // burns,
 		M.adjust_fire_stacks((reac_volume / 10))
 	..()
@@ -1950,7 +1727,7 @@
 	color = pick(potential_colors)
 
 /datum/reagent/hair_dye/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.hair_color = pick(potential_colors)
@@ -1965,7 +1742,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/barbers_aid/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
 			var/datum/sprite_accessory/hair/picked_hair = pick(GLOB.hairstyles_list)
@@ -1983,7 +1760,7 @@
 	taste_description = "sourness"
 
 /datum/reagent/concentrated_barbers_aid/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M) && !HAS_TRAIT(M, TRAIT_BALD))
 			var/mob/living/carbon/human/H = M
 			to_chat(H, "<span class='notice'>Your hair starts growing at an incredible speed!</span>")
@@ -1999,7 +1776,7 @@
 	taste_description = "bitterness"
 
 /datum/reagent/baldium/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE)  || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
 			to_chat(H, "<span class='danger'>Your hair is falling out in clumps!</span>")
@@ -2773,16 +2550,14 @@
 	if(prob(min(current_cycle/4, 10)))
 		M.adjustOrganLoss(ORGAN_SLOT_STOMACH,3*REM)
 
-/datum/reagent/mutationtoxin/kobold
-	name = "Kobold Mutation Toxin"
-	description = "An ashen toxin. Something about this seems lesser."
-	color = "#5EFF3B" //RGB: 94, 255, 59
-	race = /datum/species/lizard/ashwalker/kobold
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	taste_description = "short savagery"
-
 /datum/reagent/polar_bear_fur //used for icewine crafting
 	name = "Polar Bear Fur"
 	description = "Fur obtained from griding up a polar bears hide"
 	reagent_state = SOLID
 	color = "#eeeeee" // rgb: 238, 238, 238
+
+/datum/reagent/srm_bacteria
+	name = "Illestren Bacteria"
+	description = "Bacteria native to the Saint-Roumain Militia home planet."
+	color = "#5a4f42"
+	taste_description = "sour"

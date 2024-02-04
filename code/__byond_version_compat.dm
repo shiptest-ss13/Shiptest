@@ -16,8 +16,8 @@
 #endif
 
 #if (DM_VERSION == 514 && DM_BUILD == 1589)
-#error Warning! Byond 514.1589 has been known to be unstable. Use at your own risk.
-#error Please consider using 514.1588.
+#warn Warning! Byond 514.1589 has been known to be unstable. Use at your own risk.
+#warn Please consider using 514.1588.
 #endif
 
 // Keep savefile compatibilty at minimum supported level

@@ -617,7 +617,6 @@
 	icon_state = "deck_nanotrasen_full"
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
-	var/obj/machinery/computer/holodeck/holo = null // Holodeck cards should not be infinite
 	var/list/cards = list()
 
 /obj/item/toy/cards/deck/Initialize()
@@ -649,8 +648,6 @@
 		to_chat(user, "<span class='warning'>There are no more cards to draw!</span>")
 		return
 	var/obj/item/toy/cards/singlecard/H = new/obj/item/toy/cards/singlecard(user.loc)
-	if(holo)
-		holo.spawned += H // track them leaving the holodeck
 	choice = cards[1]
 	H.cardname = choice
 	H.parentdeck = src
@@ -1369,6 +1366,18 @@
 	name = "Vanguard action figure"
 	icon_state = "vanguard"
 	toysay = "I'm too old for this shit."
+
+/obj/item/toy/figure/tali
+	name = "T4L1 action figure"
+	desc = "An action figure modeled after a recurring miniboss from the popular combination webcomic and video game RILENA. Unfortunately, the gun arm does not function."
+	icon_state = "tali"
+	toysay = "I'll take you down this time!"
+
+/obj/item/toy/figure/kari
+	name = "knockoff RILENA action figure"
+	desc = "An action figure that seems to be labeled as 'Kari' from RAYALA: RUNNING FROM EVIL. Unfortunately, the gun arm does not function."
+	icon_state = "kari"
+	toysay = "I will defeat you for good!"
 
 /obj/item/toy/dummy
 	name = "ventriloquist dummy"
