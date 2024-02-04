@@ -221,8 +221,8 @@
 					/obj/item/ammo_box/c9mm)
 	cost = 500
 
-/datum/supply_pack/ammo/308_ammo_box
+/datum/supply_pack/ammo/a308_ammo_box
 	name = "308 Ammo Box Crate"
-	desc = "Contains one thirty-round 9mm box for DMRs such as the SsG-04 and CM-GAL-S."
+	desc = "Contains one thirty-round .308 box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/ammo_box/a308)
 	cost = 500
