@@ -232,7 +232,7 @@
 	id = /obj/item/card/id/syndicate_command/crew_id
 	shoes = /obj/item/clothing/shoes/sneakers/suns
 	glasses = /obj/item/clothing/glasses/science/suns
-	suit =  /obj/item/clothing/suit/hooded/hoodie/suns
+	suit =  /obj/item/clothing/suit/hooded/suns
 	suit_store = null
 	neck = /obj/item/clothing/neck/cloak/suns
 
@@ -309,11 +309,11 @@
 
 	uniform = /obj/item/clothing/under/syndicate/suns/captain
 	shoes = /obj/item/clothing/shoes/combat/suns
-	head = /obj/item/clothing/head/sunscaptain
+	head = /obj/item/clothing/head/suns/captain
 	gloves = /obj/item/clothing/gloves/color/captain/suns
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
 	mask = /obj/item/clothing/mask/breath/suns
-	neck = /obj/item/clothing/neck/cloak/sunscap
+	neck = /obj/item/clothing/neck/cloak/suns/cap
 
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
@@ -439,13 +439,13 @@
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/combat/suns
 	l_pocket = /obj/item/pinpointer/crew
-	suit = /obj/item/clothing/suit/toggle/labcoat/sunscmo
+	suit = /obj/item/clothing/suit/toggle/labcoat/suns/cmo
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil/suns
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
 	glasses = /obj/item/clothing/glasses/hud/health/suns
-	head = /obj/item/clothing/head/sunscmo
+	head = /obj/item/clothing/head/suns/cmo
 
 	backpack = /obj/item/storage/backpack
 	satchel  = /obj/item/storage/backpack/satchel
@@ -490,8 +490,8 @@
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/beret/hop/suns
-	gloves = /obj/item/clothing/gloves/color/sunsxo
-	neck = /obj/item/clothing/neck/cloak/sunsxo
+	gloves = /obj/item/clothing/gloves/suns/xo
+	neck = /obj/item/clothing/neck/cloak/suns/xo
 	r_pocket = null
 	glasses = /obj/item/clothing/glasses/science/suns
 
@@ -554,7 +554,7 @@
 /datum/outfit/job/syndicate/hos/suns/
 	name = "Syndicate - Senior Peacekeeper (SUNS)"
 	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/sunshos
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/hos
 	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/welding/suns/hos
@@ -568,7 +568,7 @@
 
 /datum/outfit/job/syndicate/hos/suns/alt
 	name = "Syndicate - Senior Peacekeeper Alt (SUNS)"
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/sunsehos
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/ehos
 	head = /obj/item/clothing/head/HoS/syndicate/suns
 
 //medical doctors (assorted)
@@ -590,9 +590,9 @@
 
 	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
 	shoes = /obj/item/clothing/shoes/sneakers/suns
-	suit = /obj/item/clothing/suit/toggle/labocoat/doctorlabcoat
-	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil/suns
-	head = /obj/item/clothing/head/suns_surgery
+	suit = /obj/item/clothing/suit/toggle/labcoat/suns/doctorlabcoat
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
+	head = /obj/item/clothing/head/suns/surgery
 	glasses = /obj/item/clothing/glasses/hud/health/suns
 	mask = /obj/item/clothing/mask/surgical/suns
 
@@ -764,7 +764,7 @@
 	name = "Syndicate - Scientist (SUNS)"
 //more futureproofing than anything, the Aegis currently uses /datum/outfit/job/syndicate/botanist/suns for a similar role
 	uniform = /obj/item/clothing/under/syndicate/suns/sciencejumpsuit
-	suit = /obj/item/clothing/suit/hooded/hoodie/suns
+	suit = /obj/item/clothing/suit/hooded/suns
 	shoes = /obj/item/clothing/shoes/sneakers/suns
 	glasses = /obj/item/clothing/glasses/science/suns
 	neck = /obj/item/clothing/neck/cloak/suns

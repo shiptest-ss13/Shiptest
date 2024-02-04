@@ -1,6 +1,3 @@
-//See hardsuits.dm and accessories.dm for SUNS hardsuits and accessories respectively
-//Your girl is NOT trying to fuck with making those behaviors work in this .dm
-
 
 
 //////////////
@@ -117,7 +114,7 @@
 	icon_state = "suns_workervest"
 	item_state = "suns_overblack"
 
-/obj/item/clothing/suit/toggle/labcoat/sunscmo
+/obj/item/clothing/suit/toggle/labcoat/suns/cmo
 	name = "medical instructor coat"
 	desc = "A labcoat often worn by the more eccentric medical instructors."
 	icon_state = "suns_cmocoat"
@@ -127,7 +124,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/suit/toggle/labocoat/doctorlabcoat
+/obj/item/clothing/suit/toggle/labcoat/suns/doctorlabcoat
 	name = "SUNS work vest"
 	desc = "A stylized white labcoat frequently worn by SUNS medical staff."
 	icon_state = "suns_doctorlabcoat"
@@ -137,7 +134,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/suit/hooded/hoodie/suns
+/obj/item/clothing/suit/hooded/suns
 	name = "\improper SUNS labcoat"
 	desc = "An academic labcoat designed to protect the wearer from chemical and non chemical spills."
 	icon_state = "suns_labcoat"
@@ -165,16 +162,6 @@
 /////////////////
 
 
-/obj/item/clothing/suit/armor/vest/bulletproof/sunsehos //remind me to make this something to buy
-	name = "peacekeeper greatcoat"
-	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
-	icon_state = "suns_greatcoat"
-	item_state = "suns_greatcoat"
-	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
-
 /obj/item/clothing/suit/armor/vest/bulletproof/suns
 	name = "peacekeeper plating"
 	desc = "A standard issue set of plate assigned to peacekeepers, both durable and stylish."
@@ -185,15 +172,17 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/suit/armor/vest/bulletproof/sunshos
+/obj/item/clothing/suit/armor/vest/bulletproof/suns/hos
 	name = "gilded peacekeeper plating"
 	desc = "A set of plate assigned to peacekeepers, both durable and stylish. This one has a gold lining to indicate rank."
 	icon_state = "suns_lpkarmor"
 	item_state = "suns_pkarmor"
-	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+/obj/item/clothing/suit/armor/vest/bulletproof/suns/ehos //remind me to make this something to buy
+	name = "peacekeeper greatcoat"
+	desc = "A funky armored coat worn by eccentric peacekeepers. Closing the coat is socially improper."
+	icon_state = "suns_greatcoat"
+	item_state = "suns_greatcoat"
 
 /obj/item/clothing/suit/toggle/suns/pkcoat
 	name = "peacekeeper coat"
@@ -209,20 +198,12 @@
 	desc = "An armored coat intended for SUNS captains on the frontier. Go forth, and spread the message of the academy."
 	icon_state = "suns_captaincoat"
 	item_state = "suns_overblack"
-	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
 	name = "academic staff coat"
 	desc = "A white coat used by SUNS academic staff. It designates the second in command on the ship."
 	icon_state = "suns_xojacket"
 	item_state = "suns_overwhite"
-	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 
 ///////////////
@@ -247,6 +228,65 @@
 	desc = "An academic standard spacesuit. Normally reserved for low budget tasks in space."
 	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+/obj/item/clothing/head/helmet/space/hardsuit/security/suns
+	name = "\improper SUNS peacekeeper hardsuit helmet"
+	icon_state = "hardsuit0-suns_pk"
+	item_state = "hardsuit0-suns_pk"
+	icon = 'icons/obj/clothing/faction/suns/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
+	hardsuit_type = "suns_pk"
+
+/obj/item/clothing/suit/space/hardsuit/security/suns
+	name = "\improper SUNS peacekeeper hardsuit"
+	icon_state = "suns_pkhardsuit"
+	item_state = "suns_pkhardsuit"
+	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
+	hardsuit_type = "suns_pk"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/suns
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+/obj/item/clothing/head/helmet/space/hardsuit/mining/suns
+	name = "\improper SUNS industrial hardsuit helmet"
+	icon_state = "hardsuit0-suns_mining"
+	item_state = "hardsuit0-suns_mining"
+	icon = 'icons/obj/clothing/faction/suns/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
+	hardsuit_type = "suns_mining"
+
+/obj/item/clothing/suit/space/hardsuit/mining/suns
+	name = "\improper SUNS industrial hardsuit"
+	icon_state = "suns_miningsuit"
+	item_state = "suns_miningsuit"
+	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
+	hardsuit_type = "suns_mining"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/mining/suns
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+/obj/item/clothing/head/helmet/space/hardsuit/solgov/suns
+	name = "\improper SUNS captain's hardsuit helmet"
+	icon_state = "hardsuit0-suns_solgov"
+	item_state = "hardsuit0-suns_solgov"
+	icon = 'icons/obj/clothing/faction/suns/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
+	hardsuit_type = "suns_solgov"
+	desc = "An armored spaceproof helmet, the white glass on the side signifies a captain level rank."
+
+/obj/item/clothing/suit/space/hardsuit/solgov/suns
+	name = "\improper SUNS captain's hardsuit"
+	desc = "A well decorated spaceworthy suit. The design was co-created by SolGov and SUNS academics."
+	icon_state = "suns_commandsuit"
+	item_state = "suns_commandsuit"
+	icon = 'icons/obj/clothing/faction/suns/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/suits.dmi'
+	hardsuit_type = "suns_solgov"
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/solgov/suns
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
@@ -285,7 +325,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/head/suns_surgery
+/obj/item/clothing/head/suns/surgery
 	name = "\improper SUNS surgery cap"
 	desc = "A surgery cap used by academic students and profesionals alike."
 	icon_state = "suns_doctorcap"
@@ -297,7 +337,7 @@
 
 /obj/item/clothing/head/welding/suns
 	name = "peacekeeper visor"
-	desc = "A head-mounted helmet designed to protect those on the field from bright lights, while also allowing a life support connection. The warnings on this helmet suggest it is not space proof."
+	desc = "A head-mounted helmet designed to protect those on the field from bright lights, while also allowing a life support connection. The warnings on this helmet suggest it is not spaceworthy."
 	icon_state = "sunsvisor"
 	item_state = "suns_pkhelmet"
 	tint = 0
@@ -309,11 +349,11 @@
 
 /obj/item/clothing/head/welding/suns/hos
 	name = "gilded peacekeeper visor"
-	desc = "A head-mounted helmet designed to protect those on the field, this one has a gold lining to indicate rank. The warnings on this helmet suggest it is not space proof."
+	desc = "A head-mounted helmet designed to protect those on the field, this one has a gold lining to indicate rank. The warnings on this helmet suggest it is not spaceworthy."
 	icon_state = "sunslpkvisor"
 	item_state = "suns_pkhelmet"
 
-/obj/item/clothing/head/sunscaptain
+/obj/item/clothing/head/suns/captain
 	name = "\improper SUNS bicorne hat"
 	desc = "A unique bicorne hat given to SUNS Captains to display academic seniority."
 	icon_state = "suns_captainbicorne"
@@ -326,16 +366,16 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/head/sunscmo //I was told I get one plauge doctor outfit and I'm using it
+/obj/item/clothing/head/suns/cmo //I was told I get one plague doctor outfit and I'm using it
 	name = "medical instructor hat"
 	desc = "A hat worn by the more eccentric medical staff."
 	icon_state = "suns_doctorhat"
 	item_state = "suns_doctorhat"
-	permeability_coefficient = 0.01
 	icon = 'icons/obj/clothing/faction/suns/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+	permeability_coefficient = 0.01
 
 
 ////////////
@@ -428,7 +468,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/gloves/color/sunsxo
+/obj/item/clothing/gloves/suns/xo
 	name = "academic staff gloves"
 	desc = "White gloves that offer a good grip with writing utensils."
 	icon_state = "suns_xogloves"
@@ -458,7 +498,7 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/gloves/color/latex/nitrile/evil/suns
+/obj/item/clothing/gloves/color/latex/nitrile/suns
 	name = "white nitrile gloves"
 	desc = "Thick sterile white gloves that reach up to the elbows. The nanochips that transfer basic paramedic knowledge are disabled during finals week."
 	icon_state = "suns_latexgloves"
@@ -550,23 +590,42 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/neck/cloak/sunsxo
+/obj/item/clothing/neck/cloak/suns/xo
 	name = "\improper SUNS academic staff cloak"
 	desc = "Worn by SUNS staff, you can almost smell all of the failing grades this cloak has given."
 	icon_state = "suns_xocape"
 	item_state = "suns_xocape"
-	icon = 'icons/obj/clothing/faction/suns/neck.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/neck.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/neck/cloak/sunscap
+/obj/item/clothing/neck/cloak/suns/cap
 	name = "\improper SUNS captain's cloak"
 	desc = "Worn by SUNS captains. This cloak has a very imposing aura to it."
 	icon_state = "suns_captaincloak"
 	item_state = "suns_captaincloak"
-	icon = 'icons/obj/clothing/faction/suns/neck.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/neck.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
+
+// Accessories //
+
+
+/obj/item/clothing/accessory/waistcoat/suns
+	name = "\improper SUNS waistcoat"
+	desc = "An academic issued run of the mill waistcoat."
+	icon_state = "suns_waistcoat"
+	icon = 'icons/obj/clothing/faction/suns/accessory.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/accessory.dmi'
+	minimize_when_attached = TRUE
+
+
+/obj/item/clothing/accessory/waistcoat/suns/ribbon
+	name = "\improper SUNS ribbon"
+	desc = "An academic issued bow, for when you want to feel pretty."
+	icon_state = "suns_ribbon"
+
+/obj/item/clothing/accessory/waistcoat/suns/gembow
+	name = "\improper SUNS gem bow"
+	desc = "An academic issued bow, for when you want to feel REALLY pretty."
+	icon_state = "suns_gembow"
+
+/obj/item/clothing/accessory/waistcoat/suns/poof
+	name = "\improper SUNS chest poof"
+	desc = "An academic issued bow, for when you want to feel sophisticated."
+	icon_state = "suns_poof"
