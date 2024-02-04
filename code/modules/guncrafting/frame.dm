@@ -2,25 +2,9 @@
 	name = "gun frame"
 	desc = "a generic gun frame."
 	icon_state = "frame_olivaw"
-	//var/obj/item/gun/result = /obj/item/gun
 	var/list/preinstalledParts = list()
 	var/list/installedParts = list()
 	var/list/filtered_recipes = list()
-
-	// Currently installed grip
-	//var/obj/item/part/gun/modular/grip/InstalledGrip
-	// Which grips does the frame accept?
-	//var/list/validGrips = list(/obj/item/part/gun/modular/grip/wood, /obj/item/part/gun/modular/grip/black)
-
-	// Currently installed mechanism
-	//var/obj/item/part/gun/modular/grip/InstalledMechanism
-	// Which mechanism the frame accepts?
-	//var/list/validMechanisms = list(/obj/item/part/gun/modular/mechanism)
-
-	// Currently installed barrel
-	//var/obj/item/part/gun/modular/barrel/InstalledBarrel
-	// Which barrels does the frame accept?
-	//var/list/validBarrels = list(/obj/item/part/gun/modular/barrel)
 
 	gun_part_type = GUN_PART_FRAME
 
@@ -87,29 +71,6 @@
 	. = ..()
 	if(istype(I, /obj/item/part/gun))
 		handle_part(I, user)
-	/*
-	if(istype(I, /obj/item/part/gun/modular/grip))
-		if(InstalledGrip)
-			to_chat(user, span_warning("[src] already has a grip attached!"))
-			return
-		else
-			handle_grip(I, user)
-
-	if(istype(I, /obj/item/part/gun/modular/mechanism))
-		if(InstalledMechanism)
-			to_chat(user, span_warning("[src] already has a mechanism attached!"))
-			return
-		else
-			handle_mechanism(I, user)
-
-	if(istype(I, /obj/item/part/gun/modular/barrel))
-		if(InstalledBarrel)
-			to_chat(user, span_warning("[src] already has a barrel attached!"))
-			return
-		else
-			handle_barrel(I, user)
-		*/
-
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		var/list/possibles = contents.Copy()
 		var/obj/item/part/gun/toremove = input("Which part would you like to remove?","Removing parts") in possibles
@@ -117,63 +78,23 @@
 			return
 		if(I.use_tool(src, user, 40, volume=50))
 			eject_item(toremove, user)
-			/*
-			if(istype(toremove, /obj/item/part/gun/modular/grip))
-				InstalledGrip = null
-			else if(istype(toremove, /obj/item/part/gun/modular/barrel))
-				InstalledBarrel = FALSE
-			else if(istype(toremove, /obj/item/part/gun/modular/mechanism))
-				InstalledMechanism = FALSE
-			*/
-
 	return ..()
-/*
-/obj/item/part/gun/frame/proc/handle_grip(obj/item/I, mob/living/user)
-	if(I.type in validGrips)
-		if(insert_item(I, user))
-			InstalledGrip = I
-			to_chat(user, span_notice("You have attached the grip to \the [src]."))
-			return
-	else
-		to_chat(user, span_warning("This grip does not fit!"))
-		return
-
-/obj/item/part/gun/frame/proc/handle_mechanism(obj/item/I, mob/living/user)
-	if(I.type in validMechanisms)
-		if(insert_item(I, user))
-			InstalledMechanism = I
-			to_chat(user, span_notice("You have attached the mechanism to \the [src]."))
-			return
-	else
-		to_chat(user, span_warning("This mechanism does not fit!"))
-		return
-
-/obj/item/part/gun/frame/proc/handle_barrel(obj/item/I, mob/living/user)
-	if(I.type in validBarrels)
-		if(insert_item(I, user))
-			InstalledBarrel = I
-			to_chat(user, span_notice("You have attached the barrel to \the [src]."))
-			return
-	else
-		to_chat(user, span_warning("This barrel does not fit!"))
-		return
-*/
 
 /obj/item/part/gun/frame/proc/handle_part(obj/item/part/gun/I, mob/living/user)
 	for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
 		if(I.type in recipe.validParts)
-			//if(I.gun_part_type && !(I.gun_part_type & get_part_types()))
-			if(insert_item(I, user))
-				to_chat(user, span_notice("You have attached the part to \the [src]."))
-				installedParts += I
-				get_current_recipes()
-				return
+			if(I.gun_part_type && !(I.gun_part_type in get_part_types()))
+				if(insert_item(I, user))
+					to_chat(user, span_notice("You have attached the part to \the [src]."))
+					installedParts += I
+					get_current_recipes()
+					return
+				else
+					to_chat(user, span_warning("This part does not fit!"))
 			else
-				to_chat(user, span_warning("This part does not fit!"))
-				return
+				to_chat(user, span_warning("This type of part is already installed!"))
 		else
 			to_chat(user, span_warning("This part cannot be installed on this [src]!"))
-			return
 
 
 //Finds all recipes that match the current parts
@@ -193,31 +114,40 @@
 		if(!(installed_part.type in recipe.validParts))
 			return FALSE
 	return TRUE
-///obj/item/part/gun/frame/attack_self(obj/item/I, mob/user)
 
-	/*
-	if(!InstalledGrip)
-		to_chat(user, span_warning("\the [src] does not have a grip!"))
+/obj/item/part/gun/frame/attack_self(mob/user)
+	var/list/choose_options = list()
+	var/list/option_results = list()
+	for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
+		var/obj/recipe_result = recipe.result
+		var/list/parts_for_craft = list()
+		for(var/obj/item/part/gun/part as anything in recipe.validParts)
+			var/part_type = initial(part.gun_part_type)
+			var/list/installed_types = get_part_types()
+			if(!(part_type in installed_types))
+				parts_for_craft += "	\a [initial(part.name)]"
+		if(length(parts_for_craft) != 0)
+			to_chat(user, span_warning("Parts needed for a [initial(recipe_result.name)]:"))
+			for(var/part in parts_for_craft)
+				to_chat(user, span_warning(part))
+		else
+			to_chat(user, span_notice("You can craft a [initial(recipe_result.name)] with the parts installed."))
+			choose_options += list("Craft [initial(recipe_result.name)]" = image(icon = initial(recipe_result.icon), icon_state = initial(recipe_result.icon_state)))
+			option_results["Craft [initial(recipe_result.name)]"] = recipe_result
+	if(length(choose_options) == 0)
+		to_chat(user, span_warning("No recipes can be crafted with the parts installed."))
 		return
-	if(!InstalledMechanism)
-		to_chat(user, span_warning("\the [src] does not have a mechanism!"))
+	var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+	if(!picked_option)
 		return
-	if(!InstalledBarrel)
-		to_chat(user, span_warning("\the [src] does not have a barrel!"))
-		return
-	*/
-/*
 	var/turf/T = get_turf(src)
-	var/obj/item/gun/newGun = new result(T, 0)
+	var/obj/item/gun/ballistic/pickedGun = option_results[picked_option]
+	var/obj/item/gun/newGun = new pickedGun(T, TRUE)
 	newGun.frame = src
 	src.forceMove(newGun)
-	return
-*/
-
-/obj/item/part/gun/frame/proc/can_be_installed()
 
 /obj/item/part/gun/frame/proc/get_part_types()
-	var/part_types = NONE
+	var/list/part_types = list()
 	part_types |= gun_part_type
 	for(var/obj/item/part/gun/part in installedParts)
 		part_types |= part.gun_part_type
@@ -226,26 +156,28 @@
 /obj/item/part/gun/frame/examine(user, distance)
 	. = ..()
 	if(.)
-		for (var/obj/item/part/gun/part in installedParts)
+		for(var/obj/item/part/gun/part in installedParts)
 			. += "<span class='notice'>[src] has \a [part] [icon2html(part, user)] installed.</span>"
 		for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
-			for(var/obj/part as anything in recipe.validParts)
-				. += "<span class='notice'>[src] could hold \a [initial(part.name)].</span>"
-		. += "<span class='notice'>[src] could hold \a [get_part_types()].</span>"
-
+			var/obj/recipe_result = recipe.result
+			var/list/parts_for_craft = list()
+			for(var/obj/item/part/gun/part as anything in recipe.validParts)
+				var/part_type = initial(part.gun_part_type)
+				var/list/installed_types = get_part_types()
+				if(!(part_type in installed_types))
+					parts_for_craft += "	\a [initial(part.name)]"
+			if(length(parts_for_craft) != 0)
+				. += "<span class='notice'>Parts needed for a [initial(recipe_result.name)]:</span>"
+				for(var/part in parts_for_craft)
+					. += part
+			else
+				. += "<span class='notice'>You can craft a [initial(recipe_result.name)] with the parts installed.</span>"
 /*
-		if(InstalledGrip)
-			. += "<span class='notice'>\the [src] has \a [InstalledGrip] installed.</span>"
-		else
-			. += "<span class='notice'>\the [src] does not have a grip installed.</span>"
-		if(InstalledMechanism)
-			. += "<span class='notice'>\the [src] has \a [InstalledMechanism] installed.</span>"
-		else
-			. += "<span class='notice'>\the [src] does not have a mechanism installed.</span>"
-		if(InstalledBarrel)
-			. += "<span class='notice'>\the [src] has \a [InstalledBarrel] installed.</span>"
-		else
-			. += "<span class='notice'>\the [src] does not have a barrel installed.</span>"
+		var/part_type_message = ""
+		for(var/part_type in get_part_types())
+			part_type_message += "\a [part_type], "
+		if(part_type_message)
+			. += "<span class='notice'>[src] has " + part_type_message + ".</span>"
 */
 
 /obj/item/part/gun/frame/winchester
@@ -253,8 +185,8 @@
 	icon_state = "frame_shotgun"
 	preinstalledParts = list(
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/shotgun,
-		/obj/item/part/gun/modular/barrel/shotgun
+		/obj/item/part/gun/modular/mechanism/rifle,
+		/obj/item/part/gun/modular/barrel/rifle
 		)
 
 /obj/item/part/gun/frame/winchester/mk1
@@ -264,8 +196,8 @@
 	name = "m1911 gun frame"
 	preinstalledParts = list(
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism,
-		/obj/item/part/gun/modular/barrel
+		/obj/item/part/gun/modular/mechanism/pistol,
+		/obj/item/part/gun/modular/barrel/pistol
 		)
 
 /obj/item/part/gun/frame/commander
@@ -273,3 +205,9 @@
 
 /obj/item/part/gun/frame/boltaction
 	name = "bolt action gun frame"
+
+/obj/item/part/gun/frame/revolver
+
+/obj/item/part/gun/frame/tec9
+
+/obj/item/part/gun/frame/shotgun

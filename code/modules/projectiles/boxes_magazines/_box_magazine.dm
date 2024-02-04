@@ -34,8 +34,10 @@
 	///cost of the materials in the magazine/box itself
 	var/list/base_cost
 
-/obj/item/ammo_box/Initialize()
+/obj/item/ammo_box/Initialize(mapload, should_start_empty)
 	. = ..()
+	if(should_start_empty)
+		start_empty = TRUE
 	if (!bullet_cost)
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]

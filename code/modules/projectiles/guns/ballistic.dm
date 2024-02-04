@@ -93,14 +93,20 @@
 	///If we have the 'snowflake mechanic,' how long should it take to reload?
 	var/tactical_reload_delay  = 1 SECONDS
 
-/obj/item/gun/ballistic/Initialize()
+/obj/item/gun/ballistic/Initialize(mapload, dontspawnwithmag)
 	. = ..()
+	var/no_mag_ammo = FALSE
+	if(dontspawnwithmag)
+		spawnwithmagazine = FALSE
 	if (!spawnwithmagazine)
-		bolt_locked = TRUE
-		update_appearance()
-		return
+		if(internal_magazine)
+			no_mag_ammo = TRUE
+		else
+			bolt_locked = TRUE
+			update_appearance()
+			return
 	if (!magazine)
-		magazine = new mag_type(src)
+		magazine = new mag_type(src, no_mag_ammo)
 	chamber_round(TRUE)
 	update_appearance()
 

@@ -26,3 +26,26 @@
 	icon = 'icons/obj/guncrafting.dmi'
 	icon_state = "work_piece"
 	max_amount = 10
+
+/obj/item/storage/box/parts
+	name = "gunmakers box"
+	desc = "A set of tools and parts to assemble your first weapon"
+
+/obj/item/storage/box/parts/PopulateContents()
+	new /obj/item/tool/hammer(src)
+	new /obj/item/tool/file(src)
+	new /obj/item/tool/saw(src)
+	new /obj/item/part/gun/frame/winchester(src)
+	new /obj/item/part/gun/modular/grip/wood(src)
+	new /obj/item/part/gun/modular/mechanism/shotgun(src)
+	new /obj/item/part/gun/modular/barrel/shotgun(src)
+	new /obj/item/part/gun/frame/winchester(src)
+	new /obj/item/part/gun/modular/grip/wood(src)
+	new /obj/item/part/gun/modular/mechanism/shotgun(src)
+	new /obj/item/part/gun/modular/barrel/shotgun(src)
+	new /obj/item/part/gun/frame(src)
+	new /obj/item/part/gun/frame/m1911(src)
+	new /obj/item/part/gun/modular/grip/wood(src)
+	new /obj/item/part/gun/modular/mechanism(src)
+	new /obj/item/part/gun/modular/barrel(src)
+

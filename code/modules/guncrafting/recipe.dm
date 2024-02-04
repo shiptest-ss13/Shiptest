@@ -33,8 +33,8 @@
 	validParts = list(
 		/obj/item/part/gun/frame/winchester,
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/shotgun,
-		/obj/item/part/gun/modular/barrel/shotgun
+		/obj/item/part/gun/modular/mechanism/rifle,
+		/obj/item/part/gun/modular/barrel/rifle
 		)
 
 /datum/lathe_recipe/gun/winchester/mk1
@@ -42,8 +42,8 @@
 	validParts = list(
 		/obj/item/part/gun/frame/winchester/mk1,
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/shotgun,
-		/obj/item/part/gun/modular/barrel/shotgun
+		/obj/item/part/gun/modular/mechanism/rifle,
+		/obj/item/part/gun/modular/barrel/rifle
 		)
 
 /datum/lathe_recipe/gun/m1911
@@ -51,26 +51,32 @@
 	validParts = list(
 		/obj/item/part/gun/frame/m1911,
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism,
-		/obj/item/part/gun/modular/barrel
+		/obj/item/part/gun/modular/mechanism/pistol,
+		/obj/item/part/gun/modular/barrel/pistol
 		)
 
 /datum/lathe_recipe/gun/tec9
 	result = /obj/item/gun/ballistic/automatic/pistol/tec9
 	validParts = list(
-		/obj/item/part/gun/frame,
-		/obj/item/part/gun/modular/grip,
-		/obj/item/part/gun/modular/mechanism,
-		/obj/item/part/gun/modular/barrel
+		/obj/item/part/gun/frame/tec9,
+		/obj/item/part/gun/modular/grip/black,
+		/obj/item/part/gun/modular/mechanism/pistol,
+		/obj/item/part/gun/modular/barrel/pistol
 		)
 
 /datum/lathe_recipe/gun/boltaction
 	result	= /obj/item/gun/ballistic/rifle/boltaction
+	validParts = list(
+		/obj/item/part/gun/frame/boltaction,
+		/obj/item/part/gun/modular/grip/wood,
+		/obj/item/part/gun/modular/mechanism/rifle,
+		/obj/item/part/gun/modular/barrel/rifle
+		)
 
 /datum/lathe_recipe/gun/doublebarrel
 	result = /obj/item/gun/ballistic/shotgun/doublebarrel
 	validParts = list(
-		/obj/item/part/gun/frame/doublebarrel,
+		/obj/item/part/gun/frame/shotgun,
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism/shotgun,
 		/obj/item/part/gun/modular/barrel/shotgun
@@ -79,43 +85,43 @@
 /datum/lathe_recipe/gun/derringer
 	result = /obj/item/gun/ballistic/derringer
 	validParts = list(
-		/obj/item/part/gun/frame/derringer,
+		/obj/item/part/gun/frame/revolver,
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism,
-		/obj/item/part/gun/modular/barrel
+		/obj/item/part/gun/modular/mechanism/revolver,
+		/obj/item/part/gun/modular/barrel/revolver
 		)
 
 /datum/lathe_recipe/gun/srmrevolver
 	result = /obj/item/gun/ballistic/revolver/srm
 	validParts = list(
-		/obj/item/part/gun/frame/srmrevolver,
+		/obj/item/part/gun/frame/revolver,
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism,
-		/obj/item/part/gun/modular/barrel
+		/obj/item/part/gun/modular/mechanism/revolver,
+		/obj/item/part/gun/modular/barrel/revolver
 		)
 
 /datum/lathe_recipe/gun/pepperbox
 	result = /obj/item/gun/ballistic/revolver/pepperbox
 	validParts = list(
-		/obj/item/part/gun/frame/pepperbox,
+		/obj/item/part/gun/frame/revolver,
 		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism,
-		/obj/item/part/gun/modular/barrel
+		/obj/item/part/gun/modular/mechanism/revolver,
+		/obj/item/part/gun/modular/barrel/revolver
 		)
 
 /datum/lathe_recipe/gun/nagantrevolver
 	result = /obj/item/gun/ballistic/revolver/nagant
 	validParts = list(
-		/obj/item/part/gun/frame/nagantrevolver,
+		/obj/item/part/gun/frame,
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism,
 		/obj/item/part/gun/modular/barrel
 		)
 
 /datum/lathe_recipe/gun/nagantrifle
-	result = /obj/item/gun/ballistic/rifle/boltaction/nagantrifle
+	result = /obj/item/gun/ballistic/rifle/boltaction
 	validParts = list(
-		/obj/item/part/gun/frame/nagantrifle,
+		/obj/item/part/gun/frame,
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism,
 		/obj/item/part/gun/modular/barrel
