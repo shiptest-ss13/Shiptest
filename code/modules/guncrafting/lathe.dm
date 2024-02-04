@@ -102,7 +102,7 @@
 /obj/structure/lathe/proc/scrap_item(mob/user)
 	to_chat(user, "The [work_piece.name] is broken down into parts.")
 	playsound(src,'sound/items/welder.ogg',50,TRUE)
-	if(istype (work_piece, /obj/item/gun))
+	if(istype(work_piece, /obj/item/gun))
 		var/obj/item/gun/gun_work_piece = work_piece
 		var/obj/item/new_part = new /obj/item/part/gun
 		new_part.forceMove(drop_location())
@@ -121,10 +121,10 @@
 ///////////////
 
 /obj/structure/lathe/proc/fabricate_part(mob/living/carbon/human/user)
-	/*
 	if(istype (work_piece, /obj/item/gun))
 		var/obj/item/gun/gun_work_piece = work_piece
 		var/list/choose_options = list()
+		/*
 		if(gun_work_piece.frame.InstalledGrip)
 			choose_options += list("Grip" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.InstalledGrip.icon_state))
 		if(gun_work_piece.frame.InstalledMechanism)
@@ -146,5 +146,5 @@
 				if("Frame")
 					part_to_build = new gun_work_piece.frame.type(src, TRUE)
 			part_to_build.forceMove(drop_location())
-	*/
+		*/
 	mode = FALSE

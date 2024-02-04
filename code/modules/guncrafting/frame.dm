@@ -142,7 +142,7 @@
 		return
 	var/turf/T = get_turf(src)
 	var/obj/item/gun/ballistic/pickedGun = option_results[picked_option]
-	var/obj/item/gun/newGun = new pickedGun(T, TRUE)
+	var/obj/item/gun/newGun = new pickedGun(T, FALSE, FALSE)
 	newGun.frame = src
 	src.forceMove(newGun)
 
