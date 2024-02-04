@@ -124,11 +124,7 @@
 
 /obj/vehicle/ridden/wheelchair/MouseDrop(over_object, src_location, over_location)  //Lets you collapse wheelchair
 	. = ..()
-	if(over_object != usr || !Adjacent(usr) || !foldabletype)
-		return FALSE
-	if(!ishuman(usr))
-		return FALSE
-	if(has_buckled_mobs())
+	if(over_object != usr || !Adjacent(usr) || !foldabletype || !ishuman(usr) || has_buckled_mobs())
 		return FALSE
 	usr.visible_message("<span class='notice'>[usr] begins to collapse [src].</span>", "<span class='notice'>You begin to collapse [src].</span>")
 	if(!do_after(usr, 3 SECONDS, target = src))
