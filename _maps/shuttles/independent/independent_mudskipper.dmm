@@ -171,6 +171,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/neutral,
+/obj/machinery/light_switch{
+	pixel_y = 23;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "dQ" = (
@@ -970,7 +974,7 @@
 "uW" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Bridge";
-	req_one_access_txt = "7"
+	req_one_access_txt = "20"
 	},
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/industrial/warning{
@@ -1058,6 +1062,11 @@
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light_switch{
+	dir = 8;
+	pixel_x = 22;
+	pixel_y = -6
+	},
 /turf/open/floor/wood/walnut{
 	icon_state = "wood-broken7"
 	},

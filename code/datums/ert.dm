@@ -215,6 +215,17 @@
 	polldesc = "a Cybersun paramedic team"
 	ert_template = /datum/map_template/shuttle/subshuttles/runner
 
+/datum/ert/syndicate/inspector
+	teamsize = 1
+	leader_role = /datum/antagonist/ert/official/syndicate
+	roles = list(/datum/antagonist/ert/official/syndicate)
+	rename_team = "Syndicate Inspector"
+	polldesc = "a syndicate inspector"
+	spawn_at_outpost = FALSE
+
+/datum/ert/syndicate/inspector/New()
+	mission = "Conduct a routine review on [station_name()]'s vessels."
+
 // Frontiersmen
 /datum/ert/frontier
 	teamsize = 4

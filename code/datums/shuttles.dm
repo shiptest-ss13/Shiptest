@@ -388,3 +388,9 @@
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
 
+/datum/map_template/shuttle/subshuttles/haste
+	file_name = "inteq_haste"
+	name = "Haste-class Ambulance"
+	prefix = "IRMV"
+
+
