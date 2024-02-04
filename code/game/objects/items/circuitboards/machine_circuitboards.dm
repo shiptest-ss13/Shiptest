@@ -687,7 +687,6 @@
 	name = "Fax Machine"
 	build_path = /obj/machinery/fax
 	req_components = list(
-		/obj/item/stock_parts/subspace/crystal = 1,
 		/obj/item/stock_parts/scanning_module = 1,
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stock_parts/manipulator = 1,)
@@ -1494,6 +1493,15 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
 		/obj/item/stock_parts/capacitor = 2
+	)
+
+/obj/item/circuitboard/machine/printer
+	name = "Poster Printer (Machine Board)"
+	build_path = /obj/machinery/printer
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 2,
 	)
 
 /obj/item/circuitboard/machine/coffeemaker

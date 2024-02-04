@@ -18,8 +18,9 @@
 
 
 /datum/outfit/job/solgov/ert/inspector
-	name = "ERT - SolGov Inspector"
+	name = "ERT - Inspector (SolGov)"
 	jobtype = /datum/job/head_of_personnel
+	job_icon = "solgovrepresentative"
 
 	uniform = /obj/item/clothing/under/solgov/formal
 	belt = /obj/item/clipboard
