@@ -638,7 +638,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/accessory.dmi'
 	minimize_when_attached = TRUE
 
-
 /obj/item/clothing/accessory/waistcoat/suns/ribbon
 	name = "\improper SUNS ribbon"
 	desc = "An academic issued bow, for when you want to feel pretty."
