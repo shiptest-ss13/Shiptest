@@ -1,8 +1,8 @@
 /obj/item/ammo_box/magazine/internal/boltaction
 	name = "bolt action rifle internal magazine"
 	desc = "Oh god, this shouldn't be here"
-	ammo_type = /obj/item/ammo_casing/a762_54
-	caliber = "7.62x54mmR"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	caliber = "8x50mmR"
 	max_ammo = 5
 	instant_load = TRUE
 
@@ -25,3 +25,10 @@
 	ammo_type = /obj/item/ammo_casing/aac_300blk
 	caliber = ".300 BLK"
 	max_ammo = 5
+
+/obj/item/ammo_box/magazine/internal/vickland
+	name = "Vickland battle rifle internal magazine"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 10
+	instant_load = TRUE

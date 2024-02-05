@@ -1,3 +1,6 @@
+/datum/outfit/families_police
+	name = "Families: Police Officer"
+
 /datum/outfit/families_police/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
@@ -21,7 +24,7 @@
 	ears = /obj/item/radio/headset/headset_sec
 	mask = null
 	head = /obj/item/clothing/head/spacepolice
-	belt = /obj/item/gun/ballistic/automatic/pistol/m1911
+	belt = /obj/item/gun/ballistic/automatic/pistol/candor
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/restraints/handcuffs
 	id = /obj/item/card/id

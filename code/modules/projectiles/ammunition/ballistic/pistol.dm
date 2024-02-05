@@ -76,7 +76,7 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/c9mm/rubber
 
-// .45 (M1911 + C20r)
+// .45 (Candor + C20r)
 
 /obj/item/ammo_casing/c45
 	name = ".45 bullet casing"

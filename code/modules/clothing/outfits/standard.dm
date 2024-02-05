@@ -1,3 +1,6 @@
+/datum/outfit/centcom
+	name = "CentCom Base"
+
 /datum/outfit/centcom/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
@@ -37,6 +40,8 @@
 	glasses = /obj/item/clothing/glasses/eyepatch
 
 /datum/outfit/pirate/space
+	name = "Space Pirate (EVA)"
+
 	suit = /obj/item/clothing/suit/space/pirate
 	head = /obj/item/clothing/head/helmet/space/pirate/bandana
 	mask = /obj/item/clothing/mask/breath
@@ -45,6 +50,8 @@
 	id = /obj/item/card/id
 
 /datum/outfit/pirate/space/captain
+	name = "Space Pirate Captain"
+
 	head = /obj/item/clothing/head/helmet/space/pirate
 
 /datum/outfit/pirate/post_equip(mob/living/carbon/human/H)
