@@ -107,23 +107,6 @@
 	fire_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
-/obj/item/gun/ballistic/automatic/pistol/stickman
-	name = "flat gun"
-	desc = "A 2 dimensional gun.. what?"
-	icon_state = "flatgun"
-	manufacturer = MANUFACTURER_NONE
-
-/obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
-	SHOULD_CALL_PARENT(0)
-	to_chat(user, "<span class='notice'>As you try to pick up [src], it slips out of your grip..</span>")
-	if(prob(50))
-		to_chat(user, "<span class='notice'>..and vanishes from your vision! Where the hell did it go?</span>")
-		qdel(src)
-		user.update_icons()
-	else
-		to_chat(user, "<span class='notice'>..and falls into view. Whew, that was a close one.</span>")
-		user.dropItemToGround(src)
-
 /obj/item/gun/ballistic/automatic/pistol/commander
 	name = "\improper Commander"
 	desc = "A classic handgun in a tasteful black and stainless steel color scheme. An enamel Nanotrasen logo is set into the grips. Chambered in 9mm."
@@ -264,13 +247,6 @@
 /obj/item/gun/ballistic/automatic/pistol/disposable/insert_magazine(mob/user)
 	to_chat(user, "<span class='warning'>Theres no magazine to replace!</span>")
 	return
-
-/obj/item/gun/ballistic/automatic/pistol/disposable/pizza
-	name = "pizza disposable gun"
-	desc = "How horrible. Whoever you point at with this won't be very cheesed to meet you." //this is a warcrime against italians // IF YOU'RE GOING TO DO US DIRTY SPELL IT RIGHT
-	icon_state = "disposable_pizza"
-	random_icon = FALSE
-	custom_materials = list(/datum/material/pizza=2000)
 
 //not technically a pistol but whatever
 /obj/item/gun/ballistic/derringer

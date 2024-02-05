@@ -25,7 +25,6 @@
 						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
 						/obj/item/gun/magic/staff/honk,
 						/obj/item/kitchen/knife/envy,
-						/obj/item/gun/ballistic/revolver/russian/soul,
 						/obj/item/veilrender/vealrender,
 						/obj/item/nullrod/scythe/talking/necro,
 						/obj/item/clothing/suit/armor/ascetic)
