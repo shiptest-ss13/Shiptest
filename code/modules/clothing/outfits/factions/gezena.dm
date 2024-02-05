@@ -38,7 +38,7 @@
 
 /datum/outfit/job/gezena/security
 	name = "PGF - Marine"
-	jobtype = /datum/job/security
+	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/gezena/marine
@@ -104,7 +104,7 @@
 
 /datum/outfit/job/gezena/security/geared
 	name = "PGF - Marine - Equipped"
-	jobtype = /datum/job/security
+	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/gezena/marine
