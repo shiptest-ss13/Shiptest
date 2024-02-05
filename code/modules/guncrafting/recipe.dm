@@ -28,10 +28,10 @@
 	var/list/valid_parts = list()
 	var/required_part_types = ALL
 
-/datum/lathe_recipe/gun/m1911
-	result = /obj/item/gun/ballistic/automatic/pistol/m1911
+/datum/lathe_recipe/gun/candor
+	result = /obj/item/gun/ballistic/automatic/pistol/candor
 	valid_parts = list(
-		/obj/item/part/gun/frame/m1911,
+		/obj/item/part/gun/frame/candor,
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism/pistol,
 		/obj/item/part/gun/modular/barrel/pistol

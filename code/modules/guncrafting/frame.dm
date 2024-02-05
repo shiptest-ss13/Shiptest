@@ -192,8 +192,8 @@
 /obj/item/part/gun/frame/winchester/mk1
 	name = "winchester mk1 gun frame"
 
-/obj/item/part/gun/frame/m1911
-	name = "m1911 gun frame"
+/obj/item/part/gun/frame/candor
+	name = "candor gun frame"
 	preinstalled_parts = list(
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism/pistol,
