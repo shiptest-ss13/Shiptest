@@ -20,9 +20,6 @@
 	. = ..()
 	. += "[icon_state]_toy"
 
-/obj/item/gun/ballistic/automatic/toy/unrestricted
-	pin = /obj/item/firing_pin
-
 /obj/item/gun/ballistic/automatic/toy/pistol
 	name = "foam force pistol"
 	desc = "A small, easily concealable toy handgun. Ages 8 and up."
@@ -44,12 +41,6 @@
 /obj/item/gun/ballistic/automatic/toy/pistol/riot/Initialize()
 	magazine = new /obj/item/ammo_box/magazine/toy/pistol/riot(src)
 	return ..()
-
-/obj/item/gun/ballistic/automatic/toy/pistol/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/toy/pistol/riot/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/shotgun/toy
 	name = "foam force shotgun"
@@ -74,9 +65,6 @@
 	..()
 	if(chambered && !chambered.BB)
 		qdel(chambered)
-
-/obj/item/gun/ballistic/shotgun/toy/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/shotgun/toy/crossbow
 	name = "foam force crossbow"
@@ -105,13 +93,6 @@
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
-/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted //Use this for actual toys
-	pin = /obj/item/firing_pin
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
-
-/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
-
 /obj/item/gun/ballistic/automatic/smg/c20r/toy/update_overlays()
 	. = ..()
 	. += "[icon_state]_toy"
@@ -129,11 +110,7 @@
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted //Use this for actual toys
-	pin = /obj/item/firing_pin
-	mag_type = /obj/item/ammo_box/magazine/toy/m762
-
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted/riot
+/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/riot
 	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 
 /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/update_overlays()

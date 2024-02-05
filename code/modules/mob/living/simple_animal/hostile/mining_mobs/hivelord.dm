@@ -744,7 +744,7 @@
 			else
 				back = pickweight(list(
 					/obj/item/energyhalberd = 5,
-					/obj/item/gun/ballistic/rocketlauncher/unrestricted = 5
+					/obj/item/gun/ballistic/rocketlauncher = 5
 					)
 				)
 			if(prob(25))

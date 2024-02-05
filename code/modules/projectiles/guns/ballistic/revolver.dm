@@ -197,7 +197,6 @@
 	icon_state = "goldrevolver"
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
-	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/nagant

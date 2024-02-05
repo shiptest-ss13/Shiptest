@@ -607,35 +607,6 @@
 	for(var/i in 1 to 6)
 		new /obj/item/cartridge/security(src)
 
-/obj/item/storage/box/firingpins
-	name = "box of standard firing pins"
-	desc = "A box full of standard firing pins, to allow newly-developed firearms to operate."
-	icon_state = "secbox"
-	illustration = "firingpin"
-
-/obj/item/storage/box/firingpins/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/firing_pin(src)
-
-/obj/item/storage/box/firingpins/paywall
-	name = "box of paywall firing pins"
-	desc = "A box full of paywall firing pins, to allow newly-developed firearms to operate behind a custom-set paywall."
-	illustration = "firingpin"
-
-/obj/item/storage/box/firingpins/paywall/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/firing_pin/paywall(src)
-
-/obj/item/storage/box/lasertagpins
-	name = "box of laser tag firing pins"
-	desc = "A box full of laser tag firing pins, to allow newly-developed firearms to require wearing brightly coloured plastic armor before being able to be used."
-	illustration = "firingpin"
-
-/obj/item/storage/box/lasertagpins/PopulateContents()
-	for(var/i in 1 to 3)
-		new /obj/item/firing_pin/tag/red(src)
-		new /obj/item/firing_pin/tag/blue(src)
-
 /obj/item/storage/box/handcuffs
 	name = "box of spare handcuffs"
 	desc = "A box full of handcuffs."

@@ -115,9 +115,6 @@
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 	semi_auto = TRUE
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/mindshield
-	pin = /obj/item/firing_pin/implant/mindshield
-
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click to pump it.</span>"
@@ -167,7 +164,6 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	actions_types = list()
 	mag_display = TRUE
@@ -188,16 +184,12 @@
 	wield_slowdown = 0.6
 	wield_delay = 0.65 SECONDS
 
-/obj/item/gun/ballistic/shotgun/bulldog/unrestricted
-	pin = /obj/item/firing_pin
-
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
 	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
 	icon_state = "bulldog-inteq"
 	item_state = "bulldog-inteq"
 	mag_type = /obj/item/ammo_box/magazine/m12g
-	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/shotgun/bulldog/minutemen
@@ -207,7 +199,6 @@
 	mag_type = /obj/item/ammo_box/magazine/cm15_mag
 	icon_state = "cm15"
 	item_state = "cm15"
-	pin = /obj/item/firing_pin
 	empty_alarm = FALSE
 	empty_indicator = FALSE
 	special_mags = FALSE

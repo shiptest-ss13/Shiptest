@@ -44,10 +44,6 @@
 	if(!QDELETED(cell) && (cell.charge > shot.e_cost))
 		. += "decloner_spin"
 
-/obj/item/gun/energy/decloner/unrestricted
-	pin = /obj/item/firing_pin
-	ammo_type = list(/obj/item/ammo_casing/energy/declone/weak)
-
 /obj/item/gun/energy/floragun
 	name = "floral somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
@@ -341,7 +337,6 @@
 /obj/item/gun/energy/temperature/security
 	name = "security temperature gun"
 	desc = "A weapon that can only be used to its full potential by the truly robust."
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/laser/instakill
 	name = "instakill rifle"

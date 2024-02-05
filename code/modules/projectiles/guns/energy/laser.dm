@@ -75,7 +75,6 @@
 	item_state = "shotgun"
 	desc = "A combat shotgun gutted and refitted with an internal laser system. Can switch between taser and scattered disabler shots."
 	shaded_charge = 0
-	pin = /obj/item/firing_pin/implant/mindshield
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter, /obj/item/ammo_casing/energy/electrode)
 	manufacturer = MANUFACTURER_NONE
 
@@ -96,9 +95,6 @@
 	pin = null
 	ammo_x_offset = 3
 	manufacturer = MANUFACTURER_SHARPLITE
-
-/obj/item/gun/energy/lasercannon/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/projectile/beam/laser/accelerator
@@ -135,7 +131,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag)
 	item_flags = NONE
 	clumsy_check = FALSE
-	pin = /obj/item/firing_pin/tag/blue
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
@@ -150,7 +145,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag)
 	item_flags = NONE
 	clumsy_check = FALSE
-	pin = /obj/item/firing_pin/tag/red
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
