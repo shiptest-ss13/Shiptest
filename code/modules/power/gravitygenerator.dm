@@ -1,26 +1,84 @@
-/obj/machinery/ship_gravity
+/obj/machinery/power/ship_gravity
 	name = "gravitational generator"
 	desc = "A device which produces a graviton field when set up."
 	icon = 'icons/obj/machines/gravity_generator.dmi'
-	icon_state = "activated"
+	icon_state = "shipgrav"
+	base_icon_state = "shipgrav"
 	density = TRUE
-	var/on = FALSE
+	idle_power_usage = 10
+	active_power_usage = 5000
+	circuit = /obj/item/circuitboard/machine/gravgen
+	var/active = FALSE
+	var/backup_power = 3
 
-/*obj/machinery/ship_gravity/power_change()
+/obj/machinery/power/ship_gravity/Initialize()
 	. = ..()
-	investigate_log("has [machine_stat & NOPOWER ? "lost" : "regained"] power.", INVESTIGATE_GRAVITY)
-	var/area/ship/A = get_area(src)
-	if(!istype(A))
-		return
-	var/obj/docking_port/mobile/shuttle = A.mobile_port
-	for(var/area/ship/shuttle_area in shuttle.shuttle_areas)
-		shuttle_area.has_gravity = !(machine_stat & NOPOWER)*/
+	if(anchored)
+		connect_to_network()
 
-/obj/machinery/ship_gravity/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+/obj/machinery/power/ship_gravity/process()
+	if(active)
+		if(!active_power_usage || surplus() >= active_power_usage)
+			add_load(active_power_usage)
+			backup_power = min(3, backup_power+1)
+		else
+			if(backup_power) //small amount of leeway, so we don't suddenly lose gravity on i.e. changing z-levels
+				backup_power--
+				return
+			visible_message("<span class='danger'>The [src.name] shuts down due to lack of power!</span>", \
+				"If this message is ever seen, something is wrong.",
+				"<span class='hear'>You hear heavy droning fade out.</span>")
+			active = FALSE
+			update_appearance()
+			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]", INVESTIGATE_GRAVITY)
+
+/obj/machinery/power/ship_gravity/update_icon_state()
+	if(panel_open)
+		return
+	icon_state = "[base_icon_state]"
+	if(active)
+		icon_state += "_a"
+		return
+
+/obj/machinery/power/ship_gravity/screwdriver_act(mob/living/user, obj/item/I)
+	..()
+	if(active)
+		to_chat(user, span_notice("You cannot open the maintenance panel on [src] while it is active!"))
+		return TRUE
+	default_deconstruction_screwdriver(user, "shipgrav_o", "shipgrav", I)
+	return TRUE
+
+/obj/machinery/power/ship_gravity/wrench_act(mob/living/user, obj/item/I)
+	..()
+	if(default_unfasten_wrench(user, I))
+		if(anchored)
+			connect_to_network()
+		else
+			disconnect_from_network()
+	return TRUE
+
+/obj/machinery/power/ship_gravity/crowbar_act(mob/living/user, obj/item/I)
+	. = ..()
+	return default_deconstruction_crowbar(I) || .
+
+/obj/machinery/power/ship_gravity/default_unfasten_wrench(mob/user, obj/item/I, time = 20)
+	. = ..()
+	if(. == SUCCESSFUL_UNFASTEN)
+		if(anchored)
+			connect_to_network()
+		else
+			disconnect_from_network()
+
+/obj/machinery/power/ship_gravity/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
 	port.gravgen_list |= WEAKREF(src)
 
-
+/obj/machinery/power/ship_gravity/interact(mob/user)
+	if(!powernet)
+		to_chat(user, span_notice("[src] isn't connected to a wire!"))
+		return
+	active = !active
+	update_appearance()
 
 
 //
