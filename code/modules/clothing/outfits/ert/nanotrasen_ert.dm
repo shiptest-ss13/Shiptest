@@ -379,7 +379,7 @@
 	headset.recalculateChannels()
 
 // Loss Prevention
-/datum/outfit/job/nanotrasen/ert/lp
+/datum/outfit/job/nanotrasen/security/ert/lp
 	name = "ERT - Loss Prevention Security Specialist"
 	jobtype = /datum/job/officer
 	job_icon = "securityresponseofficer"
@@ -404,7 +404,7 @@
 	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
 
 
-/datum/outfit/job/nanotrasen/ert/lp/medic
+/datum/outfit/job/nanotrasen/security/ert/lp/medic
 	name = "ERT - Loss Prevention Medical Specialist"
 	jobtype = /datum/job/doctor
 	job_icon = "medicalresponseofficer"
@@ -424,7 +424,7 @@
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/radio=1)
 
 
-/datum/outfit/job/nanotrasen/ert/lp/engineer
+/datum/outfit/job/nanotrasen/security/ert/lp/engineer
 	name = "ERT - Loss Prevention Engineering Specialist"
 	jobtype = /datum/job/engineer
 	job_icon = "engineeringresponseofficer"
@@ -444,7 +444,7 @@
 
 	backpack_contents = list(/obj/item/stack/sheet/metal/fifty=1, /obj/item/stack/sheet/glass/fifty=1, /obj/item/radio=1)
 
-/datum/outfit/job/nanotrasen/ert/lp/lieutenant
+/datum/outfit/job/nanotrasen/security/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"
 	jobtype = /datum/job/captain
 	job_icon = "emergencyresponseteamcommander"
