@@ -176,6 +176,7 @@
 	special_mags = TRUE
 	semi_auto = TRUE
 	internal_magazine = FALSE
+	casing_ejector = TRUE
 	tac_reloads = TRUE
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 	manufacturer = MANUFACTURER_SCARBOROUGH

@@ -101,6 +101,7 @@
 		return
 	if (!magazine)
 		magazine = new mag_type(src, init_spawn_with_ammo)
+		magazine = new mag_type(src)
 	chamber_round()
 	update_appearance()
 

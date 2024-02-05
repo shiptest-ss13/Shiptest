@@ -105,7 +105,6 @@
 				/obj/item/paper/fluff/jobs/prisoner/letter = 1,
 				/obj/item/grenade/smokebomb = 1,
 				/obj/item/flashlight/seclite = 1,
-				/obj/item/tailclub = 1, //want to buy makeshift wooden club sprite
 				/obj/item/kitchen/knife/shiv = 4,
 				/obj/item/kitchen/knife/shiv/carrot = 1,
 				/obj/item/kitchen/knife = 1,
@@ -565,28 +564,10 @@
 				/obj/item/stack/sheet/mineral/wood/fifty,
 				/obj/item/stack/sheet/mineral/diamond/twenty,
 				/obj/item/stack/sheet/mineral/gold/fifty,
-				/obj/item/stack/sheet/mineral/adamantine/ten,
+
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)
-
-/obj/effect/spawner/lootdrop/spacegym
-	name = "spacegym loot spawner"
-	lootdoubles = FALSE
-
-	loot = list(
-			/obj/item/dnainjector/hulkmut = 1,
-			/obj/item/dnainjector/dwarf = 1,
-			/obj/item/dnainjector/gigantism = 1,
-			/obj/item/reagent_containers/food/snacks/meat/cutlet/chicken = 1,
-			/obj/item/clothing/under/shorts/black = 1,
-			/obj/item/clothing/under/shorts/blue = 1,
-			/obj/item/clothing/under/shorts/red = 1,
-			/obj/item/restraints/handcuffs = 1,
-			/obj/item/storage/pill_bottle/stimulant = 1,
-			/obj/item/storage/firstaid/regular = 1,
-			/obj/item/storage/box/handcuffs = 1,
-		)
 
 /obj/effect/spawner/lootdrop/singularitygen
 	name = "Tesla or Singulo spawner"
@@ -645,7 +626,6 @@
 				/obj/item/stack/sheet/mineral/wood/fifty,
 				/obj/item/stack/sheet/mineral/diamond/twenty,
 				/obj/item/stack/sheet/mineral/gold/fifty,
-				/obj/item/stack/sheet/mineral/adamantine/ten,
 				/obj/item/stack/cable_coil/red,
 				/obj/item/stack/rods/fifty
 				)

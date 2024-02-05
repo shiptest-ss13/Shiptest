@@ -68,20 +68,6 @@
 	tastes = list("slime" = 1, "jelly" = 1)
 	foodtype = MEAT | RAW | TOXIC
 
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/golem
-	icon_state = "golemmeat"
-	desc = "Edible rocks, welcome to the future."
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/iron = 3)
-	filling_color = "#A9A9A9"
-	tastes = list("rock" = 1)
-	foodtype = MEAT | RAW | GROSS
-
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/golem/adamantine
-	icon_state = "agolemmeat"
-	desc = "From the slime pen to the rune to the kitchen, science."
-	filling_color = "#66CDAA"
-	foodtype = MEAT | RAW | GROSS
-
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/lizard
 	icon_state = "lizardmeat"
 	desc = "Delicious dino damage."

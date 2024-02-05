@@ -868,6 +868,7 @@
 /obj/item/radio/intercom/directional/north{
 	pixel_x = -3
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "dv" = (
@@ -1723,6 +1724,7 @@
 /obj/effect/turf_decal/industrial/caution{
 	pixel_x = 17
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "gx" = (
@@ -2094,6 +2096,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "hW" = (
@@ -3511,6 +3514,7 @@
 	req_access_txt = "101";
 	pixel_x = -3
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "mP" = (
@@ -3554,7 +3558,7 @@
 /area/outpost/crew/library)
 "mZ" = (
 /obj/structure/table/wood,
-/obj/machinery/fax,
+/obj/machinery/fax/ruin,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
 "na" = (
@@ -3666,6 +3670,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/security/armory)
 "nz" = (
@@ -6549,7 +6554,6 @@
 	},
 /area/outpost/engineering)
 "wZ" = (
-/obj/structure/table/wood/reinforced,
 /obj/item/paper_bin{
 	pixel_x = -7;
 	pixel_y = 4
@@ -10238,6 +10242,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "JK" = (
@@ -10709,6 +10714,7 @@
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "Lv" = (
@@ -12926,7 +12932,6 @@
 /obj/structure/closet/crate/trashcart/laundry,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/maintenance/two,
-/obj/effect/spawner/lootdrop/lizardboots,
 /obj/effect/spawner/lootdrop/minor/kittyears_or_rabbitears,
 /obj/structure/grille/broken,
 /obj/effect/turf_decal/box/white,
@@ -14149,7 +14154,7 @@
 	pixel_y = 19;
 	pixel_x = 15
 	},
-/obj/structure/sign/poster/official/sgt{
+/obj/structure/sign/poster/retro/random{
 	pixel_x = 32
 	},
 /turf/open/floor/wood,

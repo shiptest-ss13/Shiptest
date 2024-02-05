@@ -230,7 +230,7 @@
 /turf/closed/indestructible/fakedoor
 	name = "CentCom Access"
 	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
-	icon_state = "fake_door"
+	icon_state = "fakedoor"
 
 /turf/closed/indestructible/rock
 	name = "dense rock"
@@ -260,6 +260,13 @@
 	pixel_y = -4
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
+
+/turf/closed/indestructible/rock/schist
+	name = "schist"
+	desc = "Extremely densely-packed layers of schist. Say it ten times fast."
+	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	icon_state = "rockwall_icemoon-0"
+	base_icon_state = "rockwall_icemoon"
 
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
