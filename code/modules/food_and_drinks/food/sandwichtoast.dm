@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/food/snacks/sandwich
 	name = "sandwich"
 	desc = "A grand creation of meat, cheese, bread, and several leaves of lettuce! Arthur Dent would be proud."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "sandwich"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -13,7 +13,7 @@
 /obj/item/reagent_containers/food/snacks/toastedsandwich
 	name = "toasted sandwich"
 	desc = "Now if you only had a pepper bar."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "toastedsandwich"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/carbon = 2)
@@ -24,7 +24,7 @@
 /obj/item/reagent_containers/food/snacks/grilledcheese
 	name = "cheese sandwich"
 	desc = "Goes great with Tomato soup!"
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "toastedsandwich"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -35,7 +35,7 @@
 /obj/item/reagent_containers/food/snacks/jellysandwich
 	name = "jelly sandwich"
 	desc = "You wish you had some peanut butter to go with this..."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "jellysandwich"
 	trash = /obj/item/trash/plate
 	bitesize = 3
@@ -55,7 +55,7 @@
 /obj/item/reagent_containers/food/snacks/notasandwich
 	name = "not-a-sandwich"
 	desc = "Something seems to be wrong with this, you can't quite figure what. Maybe it's his moustache."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "notasandwich"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
@@ -66,7 +66,7 @@
 /obj/item/reagent_containers/food/snacks/jelliedtoast
 	name = "jellied toast"
 	desc = "A slice of toast covered with delicious jam."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "jellytoast"
 	trash = /obj/item/trash/plate
 	bitesize = 3
@@ -98,7 +98,7 @@
 /obj/item/reagent_containers/food/snacks/twobread
 	name = "two bread"
 	desc = "This seems awfully bitter."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "twobread"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -108,7 +108,7 @@
 /obj/item/reagent_containers/food/snacks/blt
 	name = "BLT"
 	desc = "A classic bacon, lettuce, and tomato sandwich."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "blt"
 	bitesize = 4
 	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/nutriment/vitamin = 3)

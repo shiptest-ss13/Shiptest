@@ -1,5 +1,5 @@
 /obj/item/reagent_containers/food/snacks/store/cake
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/cake.dmi'
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/plain
 	slices_num = 5
 	bitesize = 3
@@ -9,7 +9,7 @@
 	foodtype = GRAIN | DAIRY
 
 /obj/item/reagent_containers/food/snacks/cakeslice
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/cake.dmi'
 	trash = /obj/item/trash/plate
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 1)
 	customfoodfilling = 0 //to avoid infinite cake-ception
@@ -429,3 +429,52 @@
 	filling_color = "#7A3D80"
 	tastes = list("cake" = 4, "violets" = 2, "jam" = 2)
 	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/mothmallow
+	name = "mothmallow tray"
+	desc = "A light and fluffy vegan marshmallow flavoured with vanilla and rum and topped with soft chocolate. These are known to the moths as höllflöfstarkken: cloud squares." //höllflöf = cloud (höll = wind, flöf = cotton), starkken = squares
+	icon_state = "mothmallow_tray"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 20,
+		/datum/reagent/consumable/sugar = 20,
+	)
+	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
+	foodtype = VEGETABLES | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
+	slices_num = 6
+
+/obj/item/reagent_containers/food/snacks/cakeslice/mothmallow
+	name = "mothmallow"
+	desc = "Fluffy little clouds of joy- in a strangely moth-like colour."
+	icon_state = "mothmallow_slice"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 4,
+		/datum/reagent/consumable/sugar = 4,
+	)
+	tastes = list("vanilla" = 1, "clouds" = 1, "chocolate" = 1)
+	foodtype = VEGETABLES | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/korta_brittle
+	name = "korta brittle slab"
+	desc = "A big slab of korta nut brittle. So sugary it should be a crime!"
+	icon_state = "korta_brittle"
+	list_reagents = list(
+		/datum/reagent/consumable/sugar = 20,
+		/datum/reagent/consumable/nutriment = 15,
+		/datum/reagent/consumable/korta_nectar = 15,
+	)
+	tastes = list("peppery heat" = 1, "sweetness" = 1)
+	foodtype = NUTS | SUGAR
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/korta_brittle
+
+/obj/item/reagent_containers/food/snacks/cakeslice/korta_brittle
+	name = "korta brittle slice"
+	desc = "A little slice of korta nut brittle. A diabetic's worst enemy."
+	icon_state = "korta_brittle_slice"
+	list_reagents = list(
+		/datum/reagent/consumable/sugar = 4,
+		/datum/reagent/consumable/nutriment = 3,
+		/datum/reagent/consumable/korta_nectar = 3,
+	)
+	tastes = list("peppery heat" = 1, "sweetness" = 1)
+	foodtype = NUTS | SUGAR

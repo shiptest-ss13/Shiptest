@@ -14,11 +14,10 @@
 #define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
 #define GRILLED (1<<15)
-/*#define NUTS (1<<16)
+#define NUTS (1<<16)
 #define SEAFOOD (1<<17)
-#define ORANGES (1<<18)
-#define BUGS (1<<19)*/
-#define GORE (1<<20)
+#define BUGS (1<<18)
+#define GORE (1<<19)
 
 /// IC meaning (more or less) for food flags
 #define FOOD_FLAGS_IC list( \
@@ -39,7 +38,6 @@
 	"Clothing", \
 	"Nuts", \
 	"Seafood", \
-	"Oranges", \
 	"Bugs", \
 )
 

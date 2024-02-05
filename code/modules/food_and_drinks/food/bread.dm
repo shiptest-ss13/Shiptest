@@ -1,6 +1,6 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	volume = 80
 	slices_num = 5
 	tastes = list("bread" = 10)
@@ -11,7 +11,7 @@
 	AddElement(/datum/element/dunkable, 10)
 
 /obj/item/reagent_containers/food/snacks/breadslice
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	bitesize = 2
 	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/sandwich
 	filling_color = "#FFA500"
@@ -41,6 +41,7 @@
 	icon_state = "breadslice"
 	customfoodfilling = 1
 	foodtype = GRAIN
+	cooked_type = /obj/item/reagent_containers/food/snacks/griddle_toast
 
 /obj/item/reagent_containers/food/snacks/breadslice/moldy
 	name = "moldy bread slice"
@@ -185,7 +186,7 @@
 /obj/item/reagent_containers/food/snacks/baguette
 	name = "baguette"
 	desc = "Bon appetit!"
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "baguette"
 	item_state = "baguette"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -197,10 +198,21 @@
 	tastes = list("bread" = 1)
 	foodtype = GRAIN
 
+/obj/item/reagent_containers/food/snacks/griddle_toast
+	name = "griddle toast"
+	desc = "Thick cut bread, griddled to perfection."
+	icon = 'icons/obj/food/bread.dmi'
+	icon_state = "griddle_toast"
+	item_state = "garlicbread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("toast" = 1)
+	foodtype = GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
 /obj/item/reagent_containers/food/snacks/garlicbread
 	name = "garlic bread"
 	desc = "Alas, it is limited."
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "garlicbread"
 	item_state = "garlicbread"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -300,3 +312,52 @@
 /obj/item/reagent_containers/food/snacks/butterdog/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/slippery, 80)
+
+/obj/item/reagent_containers/food/snacks/store/bread/corn
+	name = "cornbread"
+	desc = "Some good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw cornbread."
+	icon_state = "cornbread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 18)
+	tastes = list("cornbread" = 10)
+	foodtype = GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/corn
+	slices_num = 6
+
+/obj/item/reagent_containers/food/snacks/breadslice/corn
+	name = "cornbread slice"
+	desc = "A chunk of crispy, cowboy-style cornbread. Consume contentedly."
+	icon_state = "cornbread_slice"
+	foodtype = GRAIN
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+
+/obj/item/reagent_containers/food/snacks/rootdough/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/kitchen/rollingpin))
+		if(isturf(loc))
+			new /obj/item/reagent_containers/food/snacks/flatrootdough(loc)
+			to_chat(user, "<span class='notice'>You flatten [src].</span>")
+			qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You need to put [src] on a surface to roll it out!</span>")
+	else
+		..()
+
+/obj/item/reagent_containers/food/snacks/store/bread/root
+	name = "rootbread"
+	desc = "The lizard equivalent to bread, made from tubers like potatoes and yams mixed with ground nuts and seeds. Noticably denser than regular bread."
+	icon_state = "lizard_bread"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
+	tastes = list("bread" = 8, "nuts" = 2)
+	foodtype = VEGETABLES | NUTS
+	w_class = WEIGHT_CLASS_SMALL
+	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/root
+	custom_food_type = /obj/item/reagent_containers/food/snacks/customizable/bread
+
+/obj/item/reagent_containers/food/snacks/breadslice/root
+	name = "rootbread slice"
+	desc = "A slice of dense, chewy rootbread."
+	icon_state = "lizard_breadslice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
+	tastes = list("bread" = 8, "nuts" = 2)
+	foodtype = VEGETABLES | NUTS
+	customfoodfilling = 1

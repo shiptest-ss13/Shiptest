@@ -157,7 +157,7 @@
 	name = "burger"
 	desc = "A timeless classic."
 	ingredients_placement = INGREDIENTS_STACKPLUSTOP
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/burger.dmi'
 	icon_state = "custburg"
 	foodtype = GRAIN
 
@@ -167,7 +167,7 @@
 	ingMax = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/custom
 	slices_num = 5
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "tofubread"
 	foodtype = GRAIN
 
@@ -177,7 +177,7 @@
 	ingMax = 6
 	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/custom
 	slices_num = 5
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/cake.dmi'
 	icon_state = "plaincake"
 	foodtype = GRAIN | DAIRY
 
@@ -196,7 +196,7 @@
 	desc = "Noodles. With stuff. Delicious."
 	ingredients_placement = INGREDIENTS_SCATTER
 	ingMax = 6
-	icon = 'icons/obj/food/pizzaspaghetti.dmi'
+	icon = 'icons/obj/food/spaghetti.dmi'
 	icon_state = "spaghettiboiled"
 	foodtype = GRAIN
 
@@ -204,7 +204,7 @@
 /obj/item/reagent_containers/food/snacks/customizable/pie
 	name = "pie"
 	ingMax = 6
-	icon = 'icons/obj/food/piecake.dmi'
+	icon = 'icons/obj/food/pie.dmi'
 	icon_state = "pie"
 	foodtype = GRAIN | DAIRY
 
@@ -216,7 +216,7 @@
 	ingMax = 8
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/custom
 	slices_num = 6
-	icon = 'icons/obj/food/pizzaspaghetti.dmi'
+	icon = 'icons/obj/food/pizza.dmi'
 	icon_state = "pizzamargherita"
 	foodtype = GRAIN | DAIRY
 
@@ -234,7 +234,7 @@
 	name = "toast"
 	desc = "A timeless classic."
 	ingredients_placement = INGREDIENTS_STACK
-	icon = 'icons/obj/food/burgerbread.dmi'
+	icon = 'icons/obj/food/bread.dmi'
 	icon_state = "breadslice"
 	var/finished = 0
 	foodtype = GRAIN

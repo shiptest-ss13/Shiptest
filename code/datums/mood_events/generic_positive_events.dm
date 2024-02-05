@@ -239,3 +239,8 @@
 	description = "Fishing is relaxing"
 	mood_change = 5
 	timeout = 3 MINUTES
+
+/datum/mood_event/memories_of_home
+	description = "<span class='nicegreen'>This taste seems oddly nostalgic...</span>\n"
+	mood_change = 3
+	timeout = 5 MINUTES

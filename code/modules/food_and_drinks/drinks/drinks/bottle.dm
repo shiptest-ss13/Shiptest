@@ -360,6 +360,25 @@
 	icon_state = "fernetbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/fernet = 100)
 
+/obj/item/reagent_containers/food/drinks/bottle/bitters
+	name = "Andromeda Bitters"
+	desc = "An aromatic addition to any drink. Made in New Trinidad, now and forever."
+	icon_state = "bitters_bottle"
+	volume = 30
+	list_reagents = list(/datum/reagent/consumable/ethanol/bitters = 30)
+
+/obj/item/reagent_containers/food/drinks/bottle/curacao
+	name = "Beekhof Blauw Curaçao"
+	desc = "Still produced on the island of Curaçao, after all these years."
+	icon_state = "curacao_bottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/curacao = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/navy_rum
+	name = "Pride of the Union Navy-Strength Rum"
+	desc = "Ironically named, given it's made in Bermuda."
+	icon_state = "navy_rum_bottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/navy_rum = 100)
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
@@ -493,6 +512,14 @@
 	icon_state = "coconutbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
 	isGlass = TRUE
+
+/obj/item/reagent_containers/food/drinks/bottle/mushroom_kombucha
+	name = "Miner’s Might Mushroom Kombucha"
+	desc = "Best drunk over ice to savor the mushroomy flavor. Some refer to it as ‘shroombucha’."
+	icon_state = "shroomy_bottle"
+	volume = 30
+	list_reagents = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 30)
+	isGlass = FALSE
 
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/bottle/molotov
@@ -652,7 +679,7 @@
 /obj/item/storage/bottles
 	name = "bottle crate"
 	desc = "A small crate for storing bottles"
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "bottlecrate"
 	item_state = "deliverypackage"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'

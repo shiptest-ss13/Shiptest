@@ -680,3 +680,71 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/weapons/laser.ogg'
+
+/datum/chemical_reaction/drink/mushroom_tea
+	results = list(/datum/reagent/consumable/mushroom_tea = 5)
+	required_reagents = list(/datum/reagent/toxin/mushroom_powder = 1, /datum/reagent/water = 5)
+
+/datum/chemical_reaction/drink/mushi_kombucha
+	results = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 5)
+	required_reagents = list(/datum/reagent/consumable/mushroom_tea = 3, /datum/reagent/consumable/korta_nectar = 2)
+	required_catalysts = list(/datum/reagent/consumable/enzyme = 1)
+
+/datum/chemical_reaction/drink/sea_breeze
+	results = list(/datum/reagent/consumable/ethanol/sea_breeze = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/kortara = 3, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/ethanol/creme_de_cacao = 1)
+
+/datum/chemical_reaction/drink/white_gezenan
+	results = list(/datum/reagent/consumable/ethanol/white_gezenan = 8)
+	required_reagents = list(/datum/reagent/consumable/ethanol/black_russian = 5, /datum/reagent/consumable/ethanol/kortara = 3)
+
+/datum/chemical_reaction/drink/drunken_espatier
+	results = list(/datum/reagent/consumable/ethanol/drunken_espatier = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 2, /datum/reagent/consumable/ethanol/moonshine = 2, /datum/reagent/consumable/berryjuice = 1)
+	mix_message = "The drink seems to let out a grim sigh..."
+
+/datum/chemical_reaction/drink/protein_blend
+	results = list(/datum/reagent/consumable/ethanol/protein_blend = 5)
+	required_reagents = list(/datum/reagent/yuck = 1, /datum/reagent/consumable/korta_flour = 1, /datum/reagent/blood = 1, /datum/reagent/consumable/ethanol = 2)
+
+/datum/chemical_reaction/drink/dragons_fang
+	results = list(/datum/reagent/consumable/ethanol/dragons_fang = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 5, /datum/reagent/consumable/ethanol/grappa = 2, /datum/reagent/consumable/lemonjuice = 2, /datum/reagent/gold = 1)
+	mix_message = "The mixture turns a deep golden hue."
+
+/datum/chemical_reaction/drink/admiralty
+	results = list(/datum/reagent/consumable/ethanol/admiralty = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/navy_rum = 3, /datum/reagent/consumable/ethanol/vermouth = 1, /datum/reagent/consumable/ethanol/fernet = 1)
+
+/datum/chemical_reaction/drink/long_haul
+	results = list(/datum/reagent/consumable/ethanol/long_haul = 25)
+	required_reagents = list(/datum/reagent/consumable/ethanol/navy_rum = 4, /datum/reagent/consumable/ethanol/curacao = 3, /datum/reagent/consumable/sugar= 2, /datum/reagent/consumable/ethanol/bitters = 1, /datum/reagent/consumable/sodawater = 15)
+
+/datum/chemical_reaction/drink/long_john_silver
+	results = list(/datum/reagent/consumable/ethanol/long_john_silver = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/navy_rum = 4, /datum/reagent/consumable/ethanol/bitters = 1, /datum/reagent/consumable/lemonade = 5)
+
+/datum/chemical_reaction/drink/tropical_storm
+	results = list(/datum/reagent/consumable/ethanol/tropical_storm = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 2, /datum/reagent/consumable/ethanol/curacao = 2, /datum/reagent/consumable/triple_citrus = 4, /datum/reagent/consumable/pineapplejuice = 2)
+
+/datum/chemical_reaction/drink/dark_n_stormy
+	results = list(/datum/reagent/consumable/ethanol/dark_and_stormy = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 3, /datum/reagent/consumable/sol_dry = 7)
+
+/datum/chemical_reaction/drink/salt_and_swell
+	results = list(/datum/reagent/consumable/ethanol/salt_and_swell = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/navy_rum = 4, /datum/reagent/consumable/toechtauese_syrup = 3, /datum/reagent/consumable/eggyolk = 2, /datum/reagent/medicine/salglu_solution = 1)
+
+/datum/chemical_reaction/drink/tiltaellen
+	results = list(/datum/reagent/consumable/ethanol/tiltaellen = 10)
+	required_reagents = list(/datum/reagent/consumable/yoghurt = 8, /datum/reagent/consumable/vinegar = 1, /datum/reagent/consumable/sodiumchloride = 1)
+	mix_message = "The mixture curdles and thickens."
+
+/datum/chemical_reaction/drink/tich_toch
+	results = list(/datum/reagent/consumable/ethanol/tich_toch = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/tiltaellen = 6, /datum/reagent/consumable/toechtauese_syrup = 2, /datum/reagent/consumable/ethanol/vodka = 2)
+
+/datum/chemical_reaction/drink/toechtauese_syrup
+	results = list(/datum/reagent/consumable/toechtauese_syrup = 10)
+	required_reagents = list(/datum/reagent/consumable/toechtauese_juice = 6, /datum/reagent/consumable/sugar = 4)

@@ -520,6 +520,7 @@
 		/datum/reagent/consumable/ethanol/vodka,
 		/datum/reagent/consumable/ethanol/gin,
 		/datum/reagent/consumable/ethanol/rum,
+		/datum/reagent/consumable/ethanol/navy_rum,
 		/datum/reagent/consumable/ethanol/tequila,
 		/datum/reagent/consumable/ethanol/vermouth,
 		/datum/reagent/consumable/ethanol/cognac,
@@ -530,6 +531,7 @@
 		/datum/reagent/consumable/ethanol/creme_de_cacao,
 		/datum/reagent/consumable/ethanol/creme_de_coconut,
 		/datum/reagent/consumable/ethanol/triple_sec,
+		/datum/reagent/consumable/ethanol/curacao,
 		/datum/reagent/consumable/ethanol/sake,
 		/datum/reagent/consumable/ethanol/applejack
 	)

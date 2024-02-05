@@ -151,6 +151,22 @@
 	// min dmg 3, max dmg 6, prob(70)
 	AddComponent(/datum/component/caltrop, 3, 6, 70)
 
+/obj/structure/flora/ash/seraka
+	icon_state = "seraka_mushroom"
+	name = "seraka mushrooms"
+	desc = "A small cluster of Kalixcian seraka mushrooms. Often found near Ashwalker dwellings in the Frontier."
+	needs_sharp_harvest = FALSE
+	harvested_name = "harvested seraka mushrooms"
+	harvested_desc = "A couple of small seraka mushrooms, with the larger ones clearly having been recently removed. They'll grow back... eventually."
+	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/seraka
+	harvest_amount_high = 6
+	harvest_time = 25
+	harvest_message_low = "You pluck a few choice tasty mushrooms."
+	harvest_message_med = "You grab a good haul of mushrooms."
+	harvest_message_high = "You hit the mushroom motherlode and make off with a bunch of tasty mushrooms."
+	regrowth_time_low = 3000
+	regrowth_time_high = 5400
+
 ///Snow flora to exist on icebox.
 /obj/structure/flora/ash/chilly
 	icon_state = "chilly_pepper"
@@ -234,6 +250,7 @@
 	pixel_y = rand(-4, 4)
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings //So we can't craft bowls from everything.
+	grind_results = list(/datum/reagent/toxin/mushroom_powder = 5)
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf
 	name = "mushroom leaf"
@@ -287,6 +304,13 @@
 
 /obj/item/reagent_containers/food/snacks/grown/ash_flora/puce/canconsume(mob/eater, mob/user)
 	return FALSE
+
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/seraka
+	name = "seraka cap"
+	desc = "Small, deeply flavourful mushrooms originally native to Kalixcis."
+	icon_state = "seraka_cap"
+	seed = /obj/item/seeds/lavaland/seraka
+	wine_power = 40
 
 //SEEDS
 
@@ -431,6 +455,17 @@
 	if(give_to_user)
 		user.put_in_hands(result)
 	to_chat(user, "<span class='notice'>You finish breaking [src]</span>")
+
+//So this really should have /datum/reagent/medicine/coagulant/seraka_extract = 0.02 but that's not in the codebase yet. I think we have to port a bunch of wound stuff from tg
+/obj/item/seeds/lavaland/seraka
+	desc = "This mycelium grows into seraka mushrooms, a species of savoury mushrooms originally native to Kalixcis. Seraka mushrooms are used in both Kalixcian food and traditional medicine."
+	icon_state = "mycelium-seraka"
+	species = "seraka"
+	plantname = "Seraka Mushrooms"
+	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/seraka
+	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/fire_resistance)
+	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
+	reagents_add = list(/datum/reagent/toxin/mushroom_powder = 0.1)
 
 //CRAFTING
 

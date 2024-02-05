@@ -20,7 +20,7 @@
 	desc = "A wall mounted safe containing space suits. Will only open in emergencies."
 	anchored = TRUE
 	density = FALSE
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "safe"
 	var/unlocked = FALSE
 
@@ -70,7 +70,7 @@
 /obj/item/storage/overmap_ship
 	name = "emergency space suits"
 	desc = "A wall mounted safe containing space suits. Will only open in emergencies."
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "safe"
 	anchored = TRUE
 	var/unlocked = FALSE

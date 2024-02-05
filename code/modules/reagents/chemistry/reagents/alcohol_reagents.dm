@@ -2456,6 +2456,227 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.stuttering = min(M.stuttering + 3, 3)
 	..()
 
+/datum/reagent/consumable/ethanol/kortara
+	name = "Kortara"
+	description = "A sweet, milky alcoholic drink derived from fermented Korta Nut. This Kalixcian drink is enjoyed galaxywide, and frequently mixed with fruit juices and cocoa for extra refreshment."
+	boozepwr = 25
+	color = "#EEC39A"
+	quality = DRINK_GOOD
+	taste_description = "sweet nectar"
+	glass_icon_state = "kortara_glass"
+	glass_name = "glass of kortara"
+	glass_desc = "The fermented nectar of the Korta nut, as enjoyed by Kalixcians galaxywide."
+
+/datum/reagent/consumable/ethanol/kortara/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(M.getBruteLoss() && prob(10))
+		M.heal_bodypart_damage(1,0, 0)
+		. = TRUE
+
+/datum/reagent/consumable/ethanol/sea_breeze
+	name = "Sea Breeze"
+	description = "Light and refreshing with a mint and cocoa hit- like mint choc chip ice cream you can drink!"
+	boozepwr = 15
+	color = "#CFFFE5"
+	quality = DRINK_VERYGOOD
+	taste_description = "mint choc chip"
+	glass_icon_state = "sea_breeze"
+	glass_name = "Sea Breeze"
+	glass_desc = "Minty, chocolatey, and creamy. It's like drinkable mint chocolate chip!"
+
+/datum/reagent/consumable/ethanol/sea_breeze/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.apply_status_effect(/datum/status_effect/throat_soothed)
+	..()
+
+/datum/reagent/consumable/ethanol/white_gezenan
+	name = "White Gezenan"
+	description = "A potent mixture of vodka and kortara. This drink is used to commemorate Solar-Kalixcian first contact and often served at diplomatic affairs."
+	boozepwr = 65
+	color = "#A68340"
+	quality = DRINK_GOOD
+	taste_description = "grain alcohol and nuts"
+	glass_icon_state = "white_gezenan"
+	glass_name = "White Gezenan"
+	glass_desc = "A potent mixture of vodka and kortara."
+
+/datum/reagent/consumable/ethanol/drunken_espatier
+	name = "Drunken Espatier"
+	description = "Look, if you had to get into a shootout in the cold vacuum of space, you'd want to be drunk too."
+	boozepwr = 65
+	color = "#A68340"
+	quality = DRINK_GOOD
+	taste_description = "sorrow"
+	glass_icon_state = "drunken_espatier"
+	glass_name = "Drunken Espatier"
+	glass_desc = "A drink to make facing death easier."
+
+/datum/reagent/consumable/ethanol/drunken_espatier/on_mob_life(mob/living/carbon/C, delta_time, times_fired)
+	C.hal_screwyhud = SCREWYHUD_HEALTHY //almost makes you forget how much it hurts
+	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "numb", /datum/mood_event/narcotic_medium, name) //comfortably numb
+	..()
+
+/datum/reagent/consumable/ethanol/protein_blend
+	name = "Protein Blend"
+	description = "A vile blend of protein, pure grain alcohol, korta flour, and blood. Useful for bulking up, if you can keep it down."
+	boozepwr = 65
+	color = "#FF5B69"
+	quality = DRINK_NICE
+	taste_description = "regret"
+	glass_icon_state = "protein_blend"
+	glass_name = "Protein Blend"
+	glass_desc = "Vile, even by lizard standards."
+	nutriment_factor = 3 * REAGENTS_METABOLISM
+
+/datum/reagent/consumable/ethanol/protein_blend/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.adjust_nutrition(2 * REM * delta_time)
+	if(!islizard(M))
+		M.adjust_disgust(5 * REM * delta_time)
+	else
+		M.adjust_disgust(2 * REM * delta_time)
+	..()
+
+/datum/reagent/consumable/ethanol/mushi_kombucha
+	name = "Mushi Kombucha"
+	description = "A popular summer beverage on Kalixcis, made from sweetened mushroom tea."
+	boozepwr = 10
+	color = "#C46400"
+	quality = DRINK_VERYGOOD
+	taste_description = "sweet 'shrooms"
+	glass_icon_state = "glass_orange"
+	glass_name = "glass of mushi kombucha"
+	glass_desc = "A glass of (slightly alcoholic) fermented sweetened mushroom tea. Refreshing, if a little strange."
+
+/datum/reagent/consumable/ethanol/dragons_fang
+	name = "Dragon's Fang"
+	description = "A famous old Zohilian drink re-imagined with modern ingredients. Traditional Kalixcian mushroom brew is blended with Solarian ingredients to produce this tangy dessert cocktail."
+	boozepwr = 60
+	color = "#FFD700"
+	quality = DRINK_FANTASTIC
+	taste_description = "sweet, tangy, and bitter alcohol"
+	glass_icon_state = "dragons_fang"
+	glass_name = "Dragon's Fang"
+	glass_desc = "A famous old Zohilian drink re-imagined with modern ingredients."
+
+//Moth Drinks
+/datum/reagent/consumable/ethanol/curacao
+	name = "Curaçao"
+	description = "Made with laraha oranges, for an aromatic finish."
+	boozepwr = 30
+	color = "#1a5fa1"
+	quality = DRINK_NICE
+	taste_description = "blue orange"
+	glass_icon_state = "curacao"
+	glass_name = "glass of curaçao"
+	glass_desc = "It's blue, da ba dee."
+
+/datum/reagent/consumable/ethanol/navy_rum //IN THE NAVY
+	name = "Navy Rum"
+	description = "Rum as the finest sailors drink."
+	boozepwr = 90 //the finest sailors are often drunk
+	color = "#d8e8f0"
+	quality = DRINK_NICE
+	taste_description = "a life on the waves"
+	glass_icon_state = "ginvodkaglass"
+	glass_name = "glass of navy rum"
+	glass_desc = "Splice the mainbrace, and God save the King."
+
+/datum/reagent/consumable/ethanol/bitters //why do they call them bitters, anyway? they're more spicy than anything else
+	name = "Andromeda Bitters"
+	description = "A bartender's best friend, often used to lend a delicate spiciness to any drink. Produced in New Trinidad, now and forever."
+	boozepwr = 70
+	color = "#1c0000"
+	quality = DRINK_NICE
+	taste_description = "spiced alcohol"
+	glass_icon_state = "bitters"
+	glass_name = "glass of bitters"
+	glass_desc = "Typically you'd want to mix this with something- but you do you."
+
+/datum/reagent/consumable/ethanol/admiralty //navy rum, vermouth, fernet
+	name = "Admiralty"
+	description = "A refined, bitter drink made with navy rum, vermouth and fernet."
+	boozepwr = 100
+	color = "#1F0001"
+	quality = DRINK_VERYGOOD
+	taste_description = "haughty arrogance"
+	glass_icon_state = "admiralty"
+	glass_name = "Admiralty"
+	glass_desc = "Hail to the Admiral, for he brings fair tidings, and rum too."
+
+/datum/reagent/consumable/ethanol/long_haul //Rum, Curacao, Sugar, dash of bitters, lengthened with soda water
+	name = "Long Haul"
+	description = "A favourite amongst freighter pilots, unscrupulous smugglers, and nerf herders."
+	boozepwr = 35
+	color = "#003153"
+	quality = DRINK_VERYGOOD
+	taste_description = "companionship"
+	glass_icon_state = "long_haul"
+	glass_name = "Long Haul"
+	glass_desc = "A perfect companion for a lonely long haul flight."
+
+/datum/reagent/consumable/ethanol/long_john_silver //navy rum, bitters, lemonade
+	name = "Long John Silver"
+	description = "A long drink of navy rum, bitters, and lemonade. Particularly popular aboard the Mothic Fleet as it's light on ration credits and heavy on flavour."
+	boozepwr = 50
+	color = "#c4b35c"
+	quality = DRINK_VERYGOOD
+	taste_description = "rum and spices"
+	glass_icon_state = "long_john_silver"
+	glass_name = "Long John Silver"
+	glass_desc = "Named for a famous pirate, who may or may not have been fictional. But hey, why let the truth get in the way of a good yarn?" //Chopper Reid says "How the fuck are ya?"
+
+/datum/reagent/consumable/ethanol/tropical_storm //dark rum, pineapple juice, triple citrus, curacao
+	name = "Tropical Storm"
+	description = "A taste of the Caribbean in one glass."
+	boozepwr = 40
+	color = "#00bfa3"
+	quality = DRINK_VERYGOOD
+	taste_description = "the tropics"
+	glass_icon_state = "tropical_storm"
+	glass_name = "Tropical Storm"
+	glass_desc = "Less destructive than the real thing."
+
+/datum/reagent/consumable/ethanol/dark_and_stormy //rum and ginger beer- simple and classic
+	name = "Dark and Stormy"
+	description = "A classic drink arriving to thunderous applause." //thank you, thank you, I'll be here forever
+	boozepwr = 50
+	color = "#8c5046"
+	quality = DRINK_GOOD
+	taste_description = "ginger and rum"
+	glass_icon_state = "dark_and_stormy"
+	glass_name = "Dark and Stormy"
+	glass_desc = "Thunder and lightning, very very frightening."
+
+/datum/reagent/consumable/ethanol/salt_and_swell //navy rum, tochtause syrup, egg whites, dash of saline-glucose solution
+	name = "Salt and Swell"
+	description = "A bracing sour with an interesting salty taste."
+	boozepwr = 60
+	color = "#b4abd0"
+	quality = DRINK_FANTASTIC
+	taste_description = "salt and spice"
+	glass_icon_state = "salt_and_swell"
+	glass_name = "Salt and Swell"
+	glass_desc = "Ah, I do like to be beside the seaside."
+
+/datum/reagent/consumable/ethanol/tiltaellen //yoghurt, salt, vinegar. This cant taste good
+	name = "Tiltällen"
+	description = "A lightly fermented yoghurt drink with salt and a light dash of vinegar. Has a distinct sour cheesy flavour."
+	boozepwr = 10
+	color = "#F4EFE2"
+	quality = DRINK_NICE
+	taste_description = "sour cheesy yoghurt"
+	glass_icon_state = "tiltaellen"
+	glass_name = "glass of tiltällen"
+	glass_desc = "Eww... it's curdled."
+
+/datum/reagent/consumable/ethanol/tich_toch
+	name = "Tich Toch"
+	description = "A mix of Tiltällen, Töchtaüse Syrup, and vodka. It's not exactly to everyones' tastes."
+	boozepwr = 75
+	color = "#b4abd0"
+	quality = DRINK_VERYGOOD
+	taste_description = "spicy sour cheesy yoghurt"
+	glass_icon_state = "tich_toch"
+	glass_name = "Tich Toch"
+	glass_desc = "Oh god."
 /datum/reagent/consumable/ethanol/shotinthedark
 	name = "Shot in the Dark"
 	description = "A coconut elixir with a golden tinge."

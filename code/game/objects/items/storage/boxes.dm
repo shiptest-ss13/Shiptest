@@ -254,7 +254,7 @@
 
 /obj/item/storage/box/hypospray
 	name = "hypospray mk. II kit"
-	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "medbriefcase"
 	illustration = null
 
@@ -465,6 +465,7 @@
 	name = "box of donk-pockets"
 	desc = "<B>Instructions:</B> <I>Heat in microwave. Product will cool if not eaten within seven minutes.</I>"
 	icon_state = "donkpocketbox"
+	icon = 'icons/obj/storage/donk.dmi'
 	illustration=null
 	var/donktype = /obj/item/reagent_containers/food/snacks/donkpocket
 
@@ -736,7 +737,7 @@
 
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	illustration = "light"
 	desc = "This box is shaped on the inside so that only light tubes and bulbs fit."
 	item_state = "syringe_kit"
@@ -886,7 +887,7 @@
 /obj/item/storage/box/slugshot
 	name = "box of 12-gauge slug shotgun shells"
 	desc = "a box full of slug shots, designed for riot shotguns"
-	icon = 'icons/obj/storage.dmi'
+	icon = 'icons/obj/storage/storage.dmi'
 	icon_state = "slugshot_box"
 	illustration = null
 
@@ -1478,6 +1479,7 @@
 	name = "bubblegum packet"
 	desc = "The packaging is entirely in japanese, apparently. You can't make out a single word of it."
 	icon_state = "bubblegum_generic"
+	icon = 'icons/obj/storage/gum.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	illustration = null
 	foldable = null

@@ -14,6 +14,7 @@
 /obj/item/reagent_containers/food/snacks/egg
 	name = "egg"
 	desc = "An egg!"
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "egg"
 	list_reagents = list(/datum/reagent/consumable/eggyolk = 5)
 	cooked_type = /obj/item/reagent_containers/food/snacks/boiledegg
@@ -89,6 +90,7 @@
 /obj/item/reagent_containers/food/snacks/friedegg
 	name = "fried egg"
 	desc = "A fried egg, with a touch of salt and pepper."
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "friedegg"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	bitesize = 1
@@ -100,6 +102,7 @@
 /obj/item/reagent_containers/food/snacks/boiledegg
 	name = "boiled egg"
 	desc = "A hard boiled egg."
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "egg"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	filling_color = "#FFFFF0"
@@ -110,6 +113,7 @@
 /obj/item/reagent_containers/food/snacks/omelette	//FUCK THIS
 	name = "omelette du fromage"
 	desc = "That's all you can say!"
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "omelette"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -140,6 +144,7 @@
 /obj/item/reagent_containers/food/snacks/benedict
 	name = "eggs benedict"
 	desc = "There is only one egg on this, how rude."
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "benedict"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 4)
 	trash = /obj/item/trash/plate
@@ -152,9 +157,49 @@
 /obj/item/reagent_containers/food/snacks/eggrolls
 	name = "eggrolls"
 	desc = "A core of fried eggs, packed into rice with a layer of seaweed protecting the inner sweetness"
+	icon = 'icons/obj/food/egg.dmi'
 	icon_state = "eggroll"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 5)
 	filling_color = "#d3ceba"
 	tastes = list("rice" = 1, "dried seaweed" = 1, "eggs" = 1)
 	foodtype = BREAKFAST | FRIED
+
+/obj/item/reagent_containers/food/snacks/eggwrap
+	name = "egg wrap"
+	desc = "The precursor to Pigs in a Blanket."
+	icon = 'icons/obj/food/egg.dmi'
+	icon_state = "eggwrap"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
+	filling_color = "#F0E68C"
+	tastes = list("egg" = 1)
+	foodtype = MEAT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/black_eggs
+	name = "black scrambled eggs"
+	desc = "A country dish from rural Kalixcis. Made with eggs, animal blood, and foraged greens. Traditionally eaten with rootbread and a spicy sauce."
+	icon = 'icons/obj/food/egg.dmi'
+	icon_state = "black_eggs"
+	list_reagents = list(
+		/datum/reagent/consumable/cooking_oil = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 6,
+	)
+	tastes = list("eggs" = 1, "greens" = 1, "blood" = 1)
+	foodtype = MEAT | BREAKFAST | GORE
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/patzikula
+	name = "patzikula"
+	desc = "A smooth and spicy tomato-based sauce topped with eggs and baked. Delicious."
+	icon = 'icons/obj/food/egg.dmi'
+	icon_state = "patzikula"
+	list_reagents = list(
+		/datum/reagent/consumable/nutriment = 6,
+		/datum/reagent/consumable/cooking_oil = 8,
+		/datum/reagent/consumable/nutriment/vitamin = 8,
+		/datum/reagent/consumable/capsaicin = 2,
+	)
+	tastes = list("eggs" = 1, "tomato" = 1, "heat" = 1)
+	foodtype = VEGETABLES | MEAT | BREAKFAST
+	w_class = WEIGHT_CLASS_SMALL

@@ -252,6 +252,17 @@
 	result = /obj/item/reagent_containers/food/snacks/snowcones/rainbow
 	subcategory = CAT_ICE
 
+/datum/crafting_recipe/food/korta_ice
+	name = "Korta ice"
+	reqs = list(
+		/obj/item/paper = 1,
+		/datum/reagent/consumable/ice = 15,
+		/datum/reagent/consumable/korta_nectar = 5,
+		/obj/item/reagent_containers/food/snacks/grown/berries = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/snowcones/korta_ice
+	subcategory = CAT_ICE
+
 //////////////////////////POPSICLES///////////////////////
 
 // This section includes any frozen treat served on a stick.
@@ -296,8 +307,8 @@
 	result = /obj/item/reagent_containers/food/snacks/popsicle/jumbo
 	subcategory = CAT_ICE
 
-/datum/crafting_recipe/food/licorice
-	name = "Licorice icecream"
+/datum/crafting_recipe/food/creamsicle_licorice
+	name = "Milky Way™"
 	reqs = list(
 		/obj/item/popsicle_stick = 1,
 		/datum/reagent/consumable/blumpkinjuice = 4, //natural source of ammonium chloride
@@ -307,5 +318,5 @@
 		/datum/reagent/consumable/vanilla = 2,
 		/datum/reagent/consumable/sugar = 2
 	)
-	result = /obj/item/reagent_containers/food/snacks/popsicle/licorice
+	result = /obj/item/reagent_containers/food/snacks/popsicle/creamsicle_licorice
 	subcategory = CAT_ICE

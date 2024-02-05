@@ -76,4 +76,5 @@
 	open_sound_volume = 35
 	close_sound_volume = 50
 	material_drop = /obj/item/stack/sheet/plasteel
+
 #undef SNAKE_SPAM_TICKS
