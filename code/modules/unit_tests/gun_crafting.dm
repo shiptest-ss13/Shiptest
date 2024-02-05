@@ -1,9 +1,9 @@
 //Makes sure preinstalled frame parts can be removed an reinstalled
 /datum/unit_test/gun_crafting/Run()
-	var/list/guns = typesof(/obj/item/gun)
+	var/list/guns = typesof(/obj/item/gun/ballistic)
 	for(var/gunType in guns)
-		var/obj/item/gun/G = new gunType  // Create an instance of the gun
-		if(G.magazine)  // If the gun has a magazine
+		var/obj/item/gun/ballistic/G = new gunType
+		if(G.magazine)
 			TEST_FAIL("Gun: [G.type], Magazine: [G.magazine.type], Caliber: [G.magazine.caliber]")
 /*
 	var/mob/living/carbon/human/human = allocate(/mob/living/carbon/human)
