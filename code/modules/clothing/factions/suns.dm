@@ -296,7 +296,7 @@
 ////////
 
 
-/obj/item/clothing/head/beret/hop/suns
+/obj/item/clothing/head/suns
 	name = "academic staff beret"
 	desc = "A soft beret sporting a discontinued inkwell quill feather. If only it could hold ink once more."
 	icon_state = "suns_xoberet"
@@ -330,10 +330,6 @@
 	desc = "A surgery cap used by academic students and profesionals alike."
 	icon_state = "suns_doctorcap"
 	item_state = "suns_doctorcap"
-	icon = 'icons/obj/clothing/faction/suns/head.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/head/welding/suns
 	name = "peacekeeper visor"
@@ -360,21 +356,12 @@
 	item_state = "suns_captainbicorne"
 	worn_y_offset = 2
 	dog_fashion = null
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
-	icon = 'icons/obj/clothing/faction/suns/head.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/head/suns/cmo //I was told I get one plague doctor outfit and I'm using it
 	name = "medical instructor hat"
 	desc = "A hat worn by the more eccentric medical staff."
 	icon_state = "suns_doctorhat"
 	item_state = "suns_doctorhat"
-	icon = 'icons/obj/clothing/faction/suns/head.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 	permeability_coefficient = 0.01
 
 
@@ -459,15 +446,21 @@
 
 // The following employ a slapjob fix to remove the /color subtype, as per maintainer request.
 // These should be addressed in any future glove refactor, as that is out of the scope of this PR.
-/obj/item/clothing/gloves/captain/suns
-	name = "\improper SUNS captain's gloves"
-	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
-	icon_state = "suns_captaingloves"
+/obj/item/clothing/gloves/suns
+	name = "stitched fingerless gloves"
+	desc = "These gloves offer style, purely and plainly."
+	icon_state = "suns_glovesfingerless"
 	item_state = "suns_blackgloves"
 	icon = 'icons/obj/clothing/faction/suns/hands.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+/obj/item/clothing/gloves/suns/captain
+	name = "\improper SUNS captain's gloves"
+	desc = "Fancy black gloves for trusted SUNS members. Sports a complex lining that prevents the wearer from being shocked."
+	icon_state = "suns_captaingloves"
+	item_state = "suns_blackgloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	cold_protection = HANDS
@@ -481,34 +474,16 @@
 	desc = "White gloves that offer a good grip with writing utensils."
 	icon_state = "suns_xogloves"
 	item_state = "suns_whitegloves"
-	icon = 'icons/obj/clothing/faction/suns/hands.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/gloves/fingerless/suns
-	name = "stitched fingerless gloves"
-	desc = "These gloves offer style, purely and plainly."
-	icon_state = "suns_glovesfingerless"
-	item_state = "suns_blackgloves"
-	icon = 'icons/obj/clothing/faction/suns/hands.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
-
-/obj/item/clothing/gloves/yellow/suns
+/obj/item/clothing/gloves/suns/yellow
 	name = "insulated gloves"
 	desc = "Padded academic gloves that hopefully keep students out of the nurses office."
 	icon_state = "suns_insulated"
 	item_state = "suns_blackgloves"
-	icon = 'icons/obj/clothing/faction/suns/hands.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 
-/obj/item/clothing/gloves/latex/nitrile/suns
+/obj/item/clothing/gloves/color/latex/nitrile/suns
 	name = "white nitrile gloves"
 	desc = "Thick sterile white gloves that reach up to the elbows. The nanochips that transfer basic paramedic knowledge are disabled during finals week."
 	icon_state = "suns_latexgloves"
@@ -517,19 +492,6 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/hands.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
-	siemens_coefficient = 0.3
-	permeability_coefficient = 0.01
-	transfer_prints = FALSE
-	var/carrytrait = TRAIT_QUICKER_CARRY
-
-/obj/item/clothing/gloves/latex/nitrile/suns/equipped(mob/user, slot)
-	..()
-	if(slot == ITEM_SLOT_GLOVES)
-		ADD_TRAIT(user, carrytrait, CLOTHING_TRAIT)
-
-/obj/item/clothing/gloves/latex/nitrile/suns/dropped(mob/user)
-	..()
-	REMOVE_TRAIT(user, carrytrait, CLOTHING_TRAIT)
 
 /obj/item/clothing/gloves/tackler/dolphin/suns
 	name = "peacekeeper tackle gloves"
@@ -577,15 +539,11 @@
 	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
-/obj/item/clothing/shoes/jackboots/sunslong
+/obj/item/clothing/shoes/jackboots/suns/long
 	name = "peacekeeper longboots"
 	desc = "Longboots worn by academic security staff and trainees."
 	icon_state = "suns_longboots"
 	item_state = "suns_blackboots"
-	icon = 'icons/obj/clothing/faction/suns/feet.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/feet.dmi'
-	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
 
 /obj/item/clothing/shoes/laceup/suns
 	name = "academy laceup shoes"
@@ -630,12 +588,15 @@
 //Accessories//
 ///////////////
 
+//These are stored in clothing/accessories.dmi instead of a factional variant due to accessory code being dogwater
+//Please transfer them over to a factional file if accessory code is ever fixed
+
 /obj/item/clothing/accessory/waistcoat/suns
 	name = "\improper SUNS waistcoat"
 	desc = "An academic issued run of the mill waistcoat."
 	icon_state = "suns_waistcoat"
-	icon = 'icons/obj/clothing/faction/suns/accessory.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/suns/accessory.dmi'
+	icon = 'icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'
 	minimize_when_attached = TRUE
 
 /obj/item/clothing/accessory/waistcoat/suns/ribbon

@@ -310,7 +310,7 @@
 	uniform = /obj/item/clothing/under/syndicate/suns/captain
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/suns/captain
-	gloves = /obj/item/clothing/gloves/captain/suns
+	gloves = /obj/item/clothing/gloves/suns/captain
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/captain
 	mask = /obj/item/clothing/mask/breath/suns
 	neck = /obj/item/clothing/neck/cloak/suns/cap
@@ -443,7 +443,7 @@
 	l_hand = /obj/item/storage/firstaid/medical
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
-	gloves = /obj/item/clothing/gloves/latex/nitrile/suns
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
 	glasses = /obj/item/clothing/glasses/hud/health/suns
 	head = /obj/item/clothing/head/suns/cmo
 
@@ -489,7 +489,7 @@
 	uniform = /obj/item/clothing/under/syndicate/suns/xo
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/xo
 	shoes = /obj/item/clothing/shoes/combat/suns
-	head = /obj/item/clothing/head/beret/hop/suns
+	head = /obj/item/clothing/head/suns
 	gloves = /obj/item/clothing/gloves/suns/xo
 	neck = /obj/item/clothing/neck/cloak/suns/xo
 	r_pocket = null
@@ -591,7 +591,7 @@
 	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
 	shoes = /obj/item/clothing/shoes/sneakers/suns
 	suit = /obj/item/clothing/suit/toggle/labcoat/suns/doctorlabcoat
-	gloves = /obj/item/clothing/gloves/latex/nitrile/suns
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
 	head = /obj/item/clothing/head/suns/surgery
 	glasses = /obj/item/clothing/glasses/hud/health/suns
 	mask = /obj/item/clothing/mask/surgical/suns
@@ -836,7 +836,7 @@
 	alt_suit = /obj/item/clothing/suit/toggle/suns/pkcoat
 	belt = null
 	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
-	shoes = /obj/item/clothing/shoes/jackboots/sunslong
+	shoes = /obj/item/clothing/shoes/jackboots/suns/long
 	head = /obj/item/clothing/head/welding/suns
 	glasses = /obj/item/clothing/glasses/hud/security/suns
 
@@ -996,7 +996,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/suns/workerjumpsuit
 	suit = /obj/item/clothing/suit/toggle/suns/workervest
-	gloves = /obj/item/clothing/gloves/yellow/suns
+	gloves = /obj/item/clothing/gloves/suns/yellow
 	shoes = /obj/item/clothing/shoes/jackboots/suns
 	head = /obj/item/clothing/head/safety_helmet/suns
 	accessory = null
