@@ -1587,11 +1587,20 @@
 	else
 		// See if there's a gravity generator on our map zone
 		var/datum/map_zone/mapzone = T.get_map_zone()
+		var/max_grav = T.virtual_level_trait(ZTRAIT_GRAVITY)
 		if(mapzone?.gravity_generators.len)
-			var/max_grav = 0
 			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
-			return max_grav
+		var/area/ship/ship = A
+		if(istype(ship))
+			var/obj/docking_port/mobile/shuttle = ship.mobile_port
+			if(shuttle)
+				for(var/datum/weakref/weakref in shuttle.gravgen_list)
+					var/obj/machinery/ship_gravity/SG = weakref.resolve()
+					if(!SG)
+						shuttle.gravgen_list -= weakref
+						continue
+					max_grav = max(SG.on,max_grav)
 	return T.virtual_level_trait(ZTRAIT_GRAVITY)
 
 /**

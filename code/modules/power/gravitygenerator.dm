@@ -1,3 +1,27 @@
+/obj/machinery/ship_gravity
+	name = "gravitational generator"
+	desc = "A device which produces a graviton field when set up."
+	icon = 'icons/obj/machines/gravity_generator.dmi'
+	icon_state = "activated"
+	density = TRUE
+	var/on = FALSE
+
+/*obj/machinery/ship_gravity/power_change()
+	. = ..()
+	investigate_log("has [machine_stat & NOPOWER ? "lost" : "regained"] power.", INVESTIGATE_GRAVITY)
+	var/area/ship/A = get_area(src)
+	if(!istype(A))
+		return
+	var/obj/docking_port/mobile/shuttle = A.mobile_port
+	for(var/area/ship/shuttle_area in shuttle.shuttle_areas)
+		shuttle_area.has_gravity = !(machine_stat & NOPOWER)*/
+
+/obj/machinery/ship_gravity/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
+	. = ..()
+	port.gravgen_list |= WEAKREF(src)
+
+
+
 
 //
 // Gravity Generator

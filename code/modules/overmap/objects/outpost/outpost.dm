@@ -24,10 +24,12 @@
 	// NOTE: "planetary" outposts should use baseturf specification and possibly different ztrait sun type, for both hangars and main level.
 	var/list/main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
-		ZTRAIT_SUN_TYPE = AZIMUTH
+		ZTRAIT_SUN_TYPE = AZIMUTH,
+		ZTRAIT_GRAVITY = 1
 	)
 	var/list/hangar_ztraits = list(
-		ZTRAIT_SUN_TYPE = STATIC_EXPOSED
+		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
+		ZTRAIT_GRAVITY = 1
 	)
 
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
