@@ -2,8 +2,8 @@
 	name = "gun frame"
 	desc = "a generic gun frame."
 	icon_state = "frame_olivaw"
-	var/list/preinstalledParts = list()
-	var/list/installedParts = list()
+	var/list/preinstalled_parts = list()
+	var/list/installed_parts = list()
 	var/list/filtered_recipes = list()
 
 	gun_part_type = GUN_PART_FRAME
@@ -11,8 +11,8 @@
 
 /obj/item/part/gun/frame/Initialize()
 	. = ..()
-	for (var/partType in preinstalledParts)
-		installedParts += new partType(src)
+	for (var/part_type in preinstalled_parts)
+		installed_parts += new part_type(src)
 	get_current_recipes()
 	/*
 	var/spawn_with_preinstalled_parts = TRUE
@@ -43,7 +43,7 @@
 		"[user] removes [I] from [src].",
 		span_notice("You remove [I] from [src].")
 	)
-	installedParts -= I
+	installed_parts -= I
 	return TRUE
 
 /obj/item/part/gun/frame/proc/insert_item(obj/item/I, mob/living/user)
@@ -82,11 +82,11 @@
 
 /obj/item/part/gun/frame/proc/handle_part(obj/item/part/gun/I, mob/living/user)
 	for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
-		if(I.type in recipe.validParts)
+		if(I.type in recipe.valid_parts)
 			if(I.gun_part_type && !(I.gun_part_type in get_part_types()))
 				if(insert_item(I, user))
 					to_chat(user, span_notice("You have attached the part to \the [src]."))
-					installedParts += I
+					installed_parts += I
 					get_current_recipes()
 					return
 				else
@@ -108,10 +108,10 @@
 
 //Should return false if
 /obj/item/part/gun/frame/proc/is_recipe_valid(datum/lathe_recipe/gun/recipe)
-	if(!(src.type in recipe.validParts))
+	if(!(src.type in recipe.valid_parts))
 		return FALSE
-	for(var/obj/item/part/gun/installed_part in installedParts)
-		if(!(installed_part.type in recipe.validParts))
+	for(var/obj/item/part/gun/installed_part in installed_parts)
+		if(!(installed_part.type in recipe.valid_parts))
 			return FALSE
 	return TRUE
 
@@ -121,7 +121,7 @@
 	for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
 		var/obj/recipe_result = recipe.result
 		var/list/parts_for_craft = list()
-		for(var/obj/item/part/gun/part as anything in recipe.validParts)
+		for(var/obj/item/part/gun/part as anything in recipe.valid_parts)
 			var/part_type = initial(part.gun_part_type)
 			var/list/installed_types = get_part_types()
 			if(!(part_type in installed_types))
@@ -141,27 +141,27 @@
 	if(!picked_option)
 		return
 	var/turf/T = get_turf(src)
-	var/obj/item/gun/ballistic/pickedGun = option_results[picked_option]
-	var/obj/item/gun/newGun = new pickedGun(T, FALSE, FALSE)
-	newGun.frame = src
-	src.forceMove(newGun)
+	var/obj/item/gun/ballistic/picked_gun = option_results[picked_option]
+	var/obj/item/gun/new_gun = new picked_gun(T, FALSE, FALSE)
+	new_gun.frame = src
+	src.forceMove(new_gun)
 
 /obj/item/part/gun/frame/proc/get_part_types()
 	var/list/part_types = list()
 	part_types |= gun_part_type
-	for(var/obj/item/part/gun/part in installedParts)
+	for(var/obj/item/part/gun/part in installed_parts)
 		part_types |= part.gun_part_type
 	return part_types
 
 /obj/item/part/gun/frame/examine(user, distance)
 	. = ..()
 	if(.)
-		for(var/obj/item/part/gun/part in installedParts)
+		for(var/obj/item/part/gun/part in installed_parts)
 			. += "<span class='notice'>[src] has \a [part] [icon2html(part, user)] installed.</span>"
 		for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
 			var/obj/recipe_result = recipe.result
 			var/list/parts_for_craft = list()
-			for(var/obj/item/part/gun/part as anything in recipe.validParts)
+			for(var/obj/item/part/gun/part as anything in recipe.valid_parts)
 				var/part_type = initial(part.gun_part_type)
 				var/list/installed_types = get_part_types()
 				if(!(part_type in installed_types))
@@ -183,7 +183,7 @@
 /obj/item/part/gun/frame/winchester
 	name = "winchester gun frame"
 	icon_state = "frame_shotgun"
-	preinstalledParts = list(
+	preinstalled_parts = list(
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism/rifle,
 		/obj/item/part/gun/modular/barrel/rifle
@@ -194,7 +194,7 @@
 
 /obj/item/part/gun/frame/m1911
 	name = "m1911 gun frame"
-	preinstalledParts = list(
+	preinstalled_parts = list(
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism/pistol,
 		/obj/item/part/gun/modular/barrel/pistol

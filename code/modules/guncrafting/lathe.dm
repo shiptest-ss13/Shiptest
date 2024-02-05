@@ -124,27 +124,18 @@
 	if(istype (work_piece, /obj/item/gun))
 		var/obj/item/gun/gun_work_piece = work_piece
 		var/list/choose_options = list()
-		/*
-		if(gun_work_piece.frame.InstalledGrip)
-			choose_options += list("Grip" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.InstalledGrip.icon_state))
-		if(gun_work_piece.frame.InstalledMechanism)
-			choose_options += list("Mechanism" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.InstalledMechanism.icon_state))
-		if(gun_work_piece.frame.InstalledBarrel)
-			choose_options += list("Barrel" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.InstalledBarrel.icon_state))
+		var/list/option_results = list()
 		if(gun_work_piece.frame)
-			choose_options += list("Frame" = image(icon ='icons/obj/crafts.dmi', icon_state = gun_work_piece.frame.icon_state))
+			choose_options += list("Craft [gun_work_piece.frame.name]" = image(icon = gun_work_piece.frame.icon , icon_state = gun_work_piece.frame.icon_state))
+			option_results["Craft [gun_work_piece.frame.name]"] = gun_work_piece.frame.type
+			for(var/obj/item/part/gun/gun_part in gun_work_piece.frame.installed_parts)
+				choose_options += list("Craft [gun_part.name]" = image(icon = gun_part.icon, icon_state = gun_part.icon_state))
+				option_results["Craft [gun_part.name]"] = gun_part.type
 		var/choosen_part = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
-		if(choosen_part)
-			var/obj/part_to_build
-			switch(choosen_part)
-				if("Grip")
-					part_to_build = new gun_work_piece.frame.InstalledGrip.type
-				if("Mechanism")
-					part_to_build = new gun_work_piece.frame.InstalledMechanism.type
-				if("Barrel")
-					part_to_build = new gun_work_piece.frame.InstalledBarrel.type
-				if("Frame")
-					part_to_build = new gun_work_piece.frame.type(src, TRUE)
-			part_to_build.forceMove(drop_location())
-		*/
+		if(!choosen_part)
+			return
+		var/turf/T = get_turf(src)
+		var/obj/item/part/gun/picked_part = option_results[choosen_part]
+		var/obj/item/part/gun/new_part = new picked_part(T)
+		new_part.forceMove(drop_location())
 	mode = FALSE
