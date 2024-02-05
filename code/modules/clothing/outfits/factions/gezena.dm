@@ -9,7 +9,7 @@
 	H.faction |= list(FACTION_PLAYER_GEZENA)
 
 //Playable Roles (put in ships):
-/datum/outfit/job/gezena/assistant/shipspawn
+/datum/outfit/job/gezena/assistant
 	name = "PGF - Crewman"
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
@@ -18,7 +18,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 
-/datum/outfit/job/gezena/engineer/shipspawn
+/datum/outfit/job/gezena/engineer
 	name = "PGF - Navy Engineer"
 	jobtype = /datum/job/engineer
 	job_icon = "stationengineer"
@@ -27,7 +27,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
 
-/datum/outfit/job/gezena/doctor/shipspawn
+/datum/outfit/job/gezena/doctor
 	name = "PGF - Navy Doctor"
 	jobtype = /datum/job/doctor
 	job_icon = "medicaldoctor"
@@ -36,7 +36,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 
-/datum/outfit/job/gezena/security/shipspawn
+/datum/outfit/job/gezena/security
 	name = "PGF - Marine"
 	jobtype = /datum/job/assistant
 	job_icon = "securityofficer"
@@ -45,7 +45,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 
-/datum/outfit/job/gezena/hos/shipspawn
+/datum/outfit/job/gezena/hos
 	name = "PGF - Marine Sergeant"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
@@ -54,7 +54,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
 
-/datum/outfit/job/gezena/captain/shipspawn
+/datum/outfit/job/gezena/captain
 	name = "PGF - Captain"
 	jobtype = /datum/job/captain
 	job_icon = "captain"
@@ -130,7 +130,7 @@
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
 	r_hand = /obj/item/gun/energy/kalix/pgf
 
-/datum/outfit/job/gezena/paramedic/geared
+/datum/outfit/job/gezena/paramedic
 	name = "PGF - Marine Medic - Equipped"
 	jobtype = /datum/job/paramedic
 	job_icon = "paramedic"
