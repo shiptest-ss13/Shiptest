@@ -44,13 +44,13 @@
 
 //Green
 /datum/chemical_reaction/slime/slimemutate
-	results = list(/datum/reagent/mutationtoxin/jelly = 1)
+	results = list(/datum/reagent/consumable/berryjuice = 1) // Removal of mutation toxins. This used to be jellyperson toxin, but is now just jelly.
 	required_reagents = list(/datum/reagent/toxin/plasma = 1)
 	required_other = TRUE
 	required_container = /obj/item/slime_extract/green
 
 /datum/chemical_reaction/slime/unstabletoxin
-	results = list(/datum/reagent/mutationtoxin/unstable = 1)
+	results = list(/datum/reagent/toxin/mutagen = 1) // Removal of mutation toxins. This used to be unstable toxin, but is now unstable mutagen.
 	required_reagents = list(/datum/reagent/uranium/radium = 1)
 	required_other = TRUE
 	required_container = /obj/item/slime_extract/green

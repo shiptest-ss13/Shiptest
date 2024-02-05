@@ -35,8 +35,8 @@
 
 /obj/item/ammo_box/magazine/internal/shot/riot
 	name = "riot shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
-	max_ammo = 6
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	max_ammo = 7
 
 /obj/item/ammo_box/magazine/internal/shot/bounty
 	name = "triple-barrel shotgun internal magazine"
@@ -47,13 +47,10 @@
 	name = "winchester internal magazine"
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"
-	max_ammo = 7
+	max_ammo = 12
 
-/obj/item/ammo_box/magazine/internal/shot/winchester/lethal
-	ammo_type = /obj/item/ammo_casing/c38
-
-/obj/item/ammo_box/magazine/internal/shot/contender
-	name = "contender internal magazine"
+/obj/item/ammo_box/magazine/internal/shot/beacon
+	name = "beacon internal magazine"
 	ammo_type = /obj/item/ammo_casing/a4570
 	caliber = ".45-70"
 	max_ammo = 1
