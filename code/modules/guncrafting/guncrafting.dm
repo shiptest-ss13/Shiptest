@@ -44,7 +44,7 @@
 	new /obj/item/part/gun/modular/mechanism/shotgun(src)
 	new /obj/item/part/gun/modular/barrel/shotgun(src)
 	new /obj/item/part/gun/frame(src)
-	new /obj/item/part/gun/frame/m1911(src)
+	new /obj/item/part/gun/frame/candor(src)
 	new /obj/item/part/gun/modular/grip/wood(src)
 	new /obj/item/part/gun/modular/mechanism(src)
 	new /obj/item/part/gun/modular/barrel(src)
