@@ -5,10 +5,10 @@
 	damage = 25
 	armour_penetration = 20
 
-// 7.62x54mmR (Illestren Rifle)
+// 8x50mmR (Illestren Rifle)
 
-/obj/projectile/bullet/a762_54
-	name = "7.62x54mmR bullet"
+/obj/projectile/bullet/a8_50r
+	name = "8x50mmR bullet"
 	speed = 0.3
 	damage = 30
 	armour_penetration = 40
@@ -25,7 +25,7 @@
 // Bloat evil wizard stupid shit
 
 /obj/projectile/bullet/a762_enchanted
-	name = "enchanted 7.62x54mmR bullet"
+	name = "enchanted 8x50mmR bullet"
 	damage = 20
 	stamina = 80
 
@@ -52,8 +52,8 @@
 
 //.308 WIN (M514 & GAL DMRs)
 
-/obj/projectile/bullet/win308
-	name = ".308 Winchester"
+/obj/projectile/bullet/a308
+	name = ".308"
 	speed = 0.3
 	damage = 30
 	armour_penetration = 40
