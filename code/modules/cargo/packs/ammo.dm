@@ -137,7 +137,7 @@
 /datum/supply_pack/ammo/smgm45ammo
 	name = ".45 Cobra Ammo Crate"
 	desc = "Contains two .45 magazines for the Cobra-20, each containing 24 rounds."
-	cost = 2500
+	cost = 1500
 	contains = list(/obj/item/ammo_box/magazine/smgm45,
 					/obj/item/ammo_box/magazine/smgm45)
 
