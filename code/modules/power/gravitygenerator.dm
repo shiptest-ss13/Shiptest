@@ -421,8 +421,9 @@
 	idle_power_usage = 10
 	active_power_usage = 5000
 	circuit = /obj/item/circuitboard/machine/gravgen
+	var/charging = FALSE
 	var/active = FALSE
-	var/backup_power = TRUE
+	var/charge = 0
 
 /obj/machinery/power/ship_gravity/unanchored
 	anchored = FALSE
@@ -433,45 +434,72 @@
 		connect_to_network()
 
 /obj/machinery/power/ship_gravity/process()
-	if(active)
+	if(charging)
 		if(!active_power_usage || surplus() >= active_power_usage)
 			add_load(active_power_usage)
-			backup_power = TRUE
+			charge = min(charge+1, 10)
+			if(charge >= 10)
+				set_state(TRUE)
 		else
-			if(backup_power) //small amount of leeway, so we don't suddenly lose gravity on changing z-levels
-				backup_power = FALSE
+			if(charge)
+				charge--
 				return
-			visible_message("<span class='danger'>The [src.name] shuts down due to lack of power!</span>", \
-				"If this message is ever seen, something is wrong.",
-				"<span class='hear'>You hear heavy droning fade out.</span>")
-			active = FALSE
-			update_appearance()
-			log_game("[src] deactivated due to lack of power at [AREACOORD(src)]", INVESTIGATE_GRAVITY)
+			set_state(FALSE)
+
+/obj/machinery/power/ship_gravity/proc/set_state(var/toggle)
+	if(toggle == active)
+		return
+	if(toggle)
+		active = TRUE
+		playsound(src.loc, 'sound/effects/empulse.ogg', 100, TRUE)
+		visible_message(span_warning("The [src.name] finishes charging!"), blind_message = span_hear("You hear a low hum fade in."))
+	else
+		visible_message(span_danger("The [src.name] shuts down due to lack of power!"), blind_message = span_hear("You hear a low hum fade out."))
+		active = FALSE
+		charging = FALSE
+		log_game("[src] deactivated due to lack of power at [AREACOORD(src)]", INVESTIGATE_GRAVITY)
+	update_appearance()
 
 /obj/machinery/power/ship_gravity/update_icon_state()
 	if(panel_open)
 		return
 	icon_state = "[base_icon_state]"
-	if(active)
+	if(charging)
 		icon_state += "_a"
 		return
 
+/obj/machinery/power/ship_gravity/examine(mob/user)
+	. = ..()
+	if(anchored)
+		. += span_info("It's secured to the floor, you can unsecure it with a <b>wrench</b>.")
+	else
+		. += span_info("It's currently unsecured, you can secure it with a <b>wrench</b>.")
+	if(in_range(user, src) || isobserver(user))
+		if(!charging && !charge)
+			. += span_info("Its status display is currently turned off.")
+		else
+			. += span_info("Its status display reads: Current charge at <b>[charge*10]%</b>.")
+
 /obj/machinery/power/ship_gravity/screwdriver_act(mob/living/user, obj/item/I)
 	..()
-	if(active)
+	if(charging)
 		to_chat(user, span_notice("You cannot open the maintenance panel on [src] while it is active!"))
 		return TRUE
 	default_deconstruction_screwdriver(user, "shipgrav_o", "shipgrav", I)
 	return TRUE
 
 /obj/machinery/power/ship_gravity/wrench_act(mob/living/user, obj/item/I)
-	..()
+	. =..()
+	if(charging)
+		to_chat(user, span_notice("You cannot unsecure [src] while it is active!"))
+		return TRUE
 	default_unfasten_wrench(user, I)
 	return TRUE
 
 /obj/machinery/power/ship_gravity/crowbar_act(mob/living/user, obj/item/I)
 	. = ..()
-	return default_deconstruction_crowbar(I) || .
+	default_deconstruction_crowbar(I)
+	return TRUE
 
 /obj/machinery/power/ship_gravity/default_unfasten_wrench(mob/user, obj/item/I, time = 20)
 	. = ..()
@@ -480,6 +508,10 @@
 			connect_to_network()
 		else
 			disconnect_from_network()
+			charge = 0
+			charging = FALSE
+			set_state(FALSE)
+			update_appearance()
 
 /obj/machinery/power/ship_gravity/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	. = ..()
@@ -489,5 +521,10 @@
 	if(!powernet)
 		to_chat(user, span_notice("[src] isn't connected to a wire!"))
 		return
-	active = !active
+	if(panel_open)
+		return
+	charging = !charging
+	if(!charging)
+		charge = 0
+		set_state(FALSE)
 	update_appearance()
