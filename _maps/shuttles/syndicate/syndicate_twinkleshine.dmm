@@ -77,11 +77,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
-"aC" = (
-/obj/machinery/light/directional/west,
-/obj/structure/table/reinforced,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
 "aD" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
@@ -173,6 +168,13 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"br" = (
+/obj/effect/turf_decal/syndicateemblem/middle/middle,
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
 "bv" = (
 /obj/structure/dresser,
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
@@ -580,7 +582,7 @@
 /area/ship/security)
 "dL" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
@@ -1029,20 +1031,19 @@
 	req_access = list(150, 48);
 	populate = 0
 	},
-/obj/item/shovel,
 /obj/item/storage/bag/ore,
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
 /obj/item/pickaxe/mini,
 /obj/item/storage/belt/mining/alt,
 /obj/item/flashlight/seclite,
-/obj/item/stack/sheet/mineral/sandbags,
-/obj/item/clothing/shoes/workboots/mining,
-/obj/item/clothing/gloves/explorer,
-/obj/item/clothing/mask/gas/explorer,
 /obj/item/radio/headset/syndicate{
 	keyslot = null
 	},
+/obj/item/clothing/under/syndicate/suns/workerjumpsuit,
+/obj/item/clothing/head/safety_helmet/suns,
+/obj/item/clothing/suit/toggle/suns/workervest,
+/obj/item/clothing/gloves/suns,
 /turf/open/floor/pod/dark,
 /area/ship/cargo)
 "gI" = (
@@ -1632,6 +1633,22 @@
 /obj/item/bedsheet/medical,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
+"jO" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/syndicate/red{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/folder/syndicate/blue{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/item/folder/red{
+	pixel_x = -4
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "jT" = (
 /obj/structure/sign/syndicate,
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
@@ -1708,15 +1725,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"kh" = (
-/obj/effect/turf_decal/syndicateemblem/middle/middle{
-	dir = 1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/bridge)
 "kl" = (
 /obj/machinery/light/directional/north,
 /obj/structure/closet/secure_closet{
@@ -3223,11 +3231,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
-"sV" = (
-/obj/item/clothing/suit/space/hardsuit/security/suns,
-/obj/machinery/suit_storage_unit/inherit,
-/turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
 "sW" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -4555,6 +4558,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
+"Bi" = (
+/obj/effect/turf_decal/syndicateemblem/middle/middle{
+	dir = 1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
 "Bj" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal{
 	rad_insulation = 0
@@ -5241,12 +5253,6 @@
 /obj/effect/turf_decal/radiation,
 /turf/open/floor/engine,
 /area/ship/engineering/engine)
-"EW" = (
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ship/bridge)
 "EX" = (
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 8
@@ -5833,19 +5839,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Hx" = (
-/obj/structure/table/reinforced,
-/obj/item/folder/syndicate/red{
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/item/folder/syndicate/blue{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/item/folder/red{
-	pixel_x = -4
-	},
 /obj/machinery/light/directional/west,
+/obj/structure/table/reinforced,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "HF" = (
@@ -6567,6 +6562,11 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/office)
+"Lw" = (
+/obj/item/clothing/suit/space/hardsuit/security/suns,
+/obj/machinery/suit_storage_unit/inherit,
+/turf/open/floor/mineral/plastitanium,
+/area/ship/bridge)
 "LF" = (
 /obj/effect/turf_decal/atmos/air{
 	dir = 8
@@ -7135,7 +7135,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
@@ -7939,6 +7939,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"Tv" = (
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ship/bridge)
 "TC" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 6
@@ -8824,13 +8830,6 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ship/bridge)
-"YI" = (
-/obj/effect/turf_decal/syndicateemblem/middle/middle,
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium/red,
 /area/ship/bridge)
 "YJ" = (
 /obj/effect/turf_decal/trimline/opaque/syndiered/filled/line,
@@ -10566,15 +10565,15 @@ wL
 nb
 Pv
 jv
-Hx
+jO
 ox
 Xb
 vL
 cI
 bL
-aC
+Hx
 Qt
-sV
+Lw
 nb
 MP
 Oj
@@ -10602,14 +10601,14 @@ Gv
 RA
 nb
 lq
-YI
-EW
+br
+dL
 zy
 xg
 pI
 Zk
 bd
-PA
+Bi
 kE
 wr
 nb
@@ -10677,13 +10676,13 @@ nb
 nb
 YW
 Tl
-kh
+PA
 OK
 FS
 kV
 mx
 WZ
-dL
+Tv
 HL
 tZ
 nb

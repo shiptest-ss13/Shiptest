@@ -189,7 +189,7 @@
 		to_chat(H, "<span class='notice'>You're not technically old enough to access or serve alcohol, but your ID has been discreetly modified to display your age as [AGE_MINOR]. Try to keep that a secret!</span>")
 
 /datum/outfit/job/syndicate/bartender/twink
-	name = "Syndicate - Bartender (Twinkleshine)"
+	name = "Syndicate - Bartender (Twinkleshine, Donk)"
 
 	uniform = /obj/item/clothing/under/syndicate/donk
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -521,7 +521,7 @@
 	name = "Syndicate - Sergeant (Gorlex)"
 
 /datum/outfit/job/syndicate/hos/twink
-	name = "Syndicate - Lieutenant (Twinkleshine)"
+	name = "Syndicate - Lieutenant (Twinkleshine, NGR)"
 	job_icon = "lieutenant"
 
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
@@ -573,7 +573,7 @@
 	head = /obj/item/clothing/head/HoS/syndicate/suns
 
 /datum/outfit/job/syndicate/hos/suns/twink
-	name = "Syndicate - Redshield Officer (SUNS)"
+	name = "Syndicate - Redshield Officer (Twinkleshine, SUNS)"
 
 	suit = null
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
@@ -668,7 +668,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/raincoat
 
 /datum/outfit/job/syndicate/paramedic/twink
-	name = "Syndicate - Medic (Twinkleshine)"
+	name = "Syndicate - Medic (Twinkleshine, Cybersun)"
 
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	uniform = /obj/item/clothing/under/rank/medical/doctor/red
@@ -893,19 +893,18 @@
 	ears = /obj/item/radio/headset/alt
 
 /datum/outfit/job/syndicate/miner/twink
-	name = "Syndicate - Miner (Twinkleshine)"
+	name = "Syndicate - Miner (Twinkleshine, SUNS)"
 
-	uniform = /obj/item/clothing/under/syndicate/coldres
+	uniform = /obj/item/clothing/under/syndicate/suns/workerjumpsuit
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	id = /obj/item/card/id/syndicate_command/crew_id
-	shoes = /obj/item/clothing/shoes/workboots
+	shoes = /obj/item/clothing/shoes/jackboots/suns
 	glasses = null
 	gloves = null
 	ears = null
 	r_pocket = null
 	l_pocket = null
 	belt = null
-	implants = list(/obj/item/implant/weapons_auth)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
