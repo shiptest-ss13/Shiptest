@@ -462,15 +462,16 @@
 	update_appearance()
 
 /obj/machinery/power/ship_gravity/update_icon_state()
+	. = ..()
 	if(panel_open)
-		return
+		return .
 	icon_state = "[base_icon_state]"
 	if(active)
 		icon_state += "_a"
-		return
+		return .
 	if(charging)
 		icon_state += "_[charge]"
-		return
+		return .
 
 /obj/machinery/power/ship_gravity/examine(mob/user)
 	. = ..()
