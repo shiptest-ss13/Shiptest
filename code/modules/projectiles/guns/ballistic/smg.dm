@@ -18,7 +18,6 @@
 	icon_state = "saber"
 	actions_types = list()
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	pin = null
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD

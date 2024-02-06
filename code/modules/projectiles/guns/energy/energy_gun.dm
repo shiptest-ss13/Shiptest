@@ -128,7 +128,6 @@
 	icon_state = "nucgun"
 	item_state = "nucgun"
 	charge_delay = 5
-	pin = null
 	can_charge = FALSE
 	internal_cell = TRUE
 	ammo_x_offset = 2

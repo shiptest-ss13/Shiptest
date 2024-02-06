@@ -88,12 +88,6 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		prizes *= 2
 	for(var/i = 0, i < prizes, i++)
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "arcade", /datum/mood_event/arcade)
-		if(prob(0.0001)) //1 in a million
-			new /obj/item/gun/energy/pulse/prize(src)
-			visible_message("<span class='notice'>[src] dispenses.. woah, a gun! Way past cool.</span>", "<span class='notice'>You hear a chime and a shot.</span>")
-			user.client.give_award(/datum/award/achievement/misc/pulse, user)
-			return
-
 		var/prizeselect
 		if(prize_override)
 			prizeselect = pickweight(prize_override)

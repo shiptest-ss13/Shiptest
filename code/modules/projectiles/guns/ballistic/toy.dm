@@ -9,7 +9,6 @@
 	throwforce = 0
 	burst_size = 3
 	can_suppress = TRUE
-	clumsy_check = 0
 	item_flags = NONE
 	casing_ejector = FALSE
 	manufacturer = MANUFACTURER_NANOTRASEN
@@ -49,7 +48,6 @@
 	throwforce = 0
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy
 	fire_sound = 'sound/items/syringeproj.ogg'
-	clumsy_check = FALSE
 	item_flags = NONE
 	casing_ejector = FALSE
 	can_suppress = FALSE
@@ -88,7 +86,6 @@
 	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
 	fire_sound = 'sound/items/syringeproj.ogg'
 	casing_ejector = FALSE
-	clumsy_check = FALSE
 	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
@@ -105,7 +102,6 @@
 	item_flags = NONE
 	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 	casing_ejector = FALSE
-	clumsy_check = FALSE
 	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
