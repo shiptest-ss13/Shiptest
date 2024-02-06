@@ -256,14 +256,6 @@
 		Additional engine machines
 */
 
-/datum/supply_pack/machinery/gravgen
-	name = "Ship-Portable Gravity Generator Crate"
-	desc = "For those tired of their tools floating away from them. Contains a single gravity generator."
-	cost = 3000
-	contains = list(/obj/machinery/power/ship_gravity/unanchored)
-	crate_name = "gravity generator crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
-
 /datum/supply_pack/machinery/emitter
 	name = "Emitter Crate"
 	desc = "Useful for powering forcefield generators while destroying locked crates and intruders alike. Contains two high-powered energy emitters."
