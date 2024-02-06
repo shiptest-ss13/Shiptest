@@ -97,16 +97,29 @@
 	. = ..()
 	icon_state = "c20r45-[round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/smgm45/drum
-	name = "drum magazine (.45)"
-	desc = "A bulky, 50-round drum magazine for .45 submachine guns. These rounds do moderate damage, but struggle against armor."
-	icon_state = "drum45"
+/obj/item/ammo_box/magazine/c45_firestorm_mag
+	name = "stick magazine (.45)"
+	desc = "A 28-round stick magazine for the toploading Firestorm submachine gun. These rounds do moderate damage, but struggle against armor."
+	icon_state = "firestorm_mag"
+	base_icon_state = "firestorm_mag"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	max_ammo = 28
+
+/obj/item/ammo_box/magazine/c45_firestorm_mag/update_icon_state()
+	. = ..()
+	icon_state = "firestorm_mag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/c45_firestorm_mag/pan
+	name = "pan magazine (.45)"
+	desc = "A bulky, 50-round pan magazine for the toploading Firestorm submachine gun. These rounds struggle against armor, but with this many you could cut anyone down regardless."
+	icon_state = "firestorm_pan"
 	max_ammo = 50
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/smgm45/drum/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
+/obj/item/ammo_box/magazine/c45_firestorm_mag/pan/update_icon_state() //Causes the mag to NOT inherit the parent's update_icon oooh the misery
 	. = ..()
-	icon_state = "drum45"
+	icon_state = "firestorm_pan"
 
 /obj/item/ammo_box/magazine/pistol556mm
 	name = "handgun magazine (5.56mm HITP caseless)"

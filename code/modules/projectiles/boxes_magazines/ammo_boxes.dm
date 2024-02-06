@@ -24,43 +24,29 @@
 // .45-70 Ammo Holders (Hunting Revolver)
 
 /obj/item/ammo_box/a4570
-	name = "ammo holder (.45-70)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These rounds do significant damage with average performance against armor."
+	name = "ammo box (.45-70)"
+	desc = "A box of top grade .45-70 ammo. These rounds do significant damage with average performance against armor."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/a4570
-	max_ammo = 6
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	item_flags = NO_MAT_REDEMPTION
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
+	max_ammo = 12
 
 /obj/item/ammo_box/a4570/match
 	name = "ammo holder (.45-70 match)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	icon_state = "4570-match"
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
 /obj/item/ammo_box/a4570/hp
 	name = "ammo holder (.45-70 hollow point)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
+	icon_state = "4570-hp"
 	ammo_type = /obj/item/ammo_casing/a357/hp
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
+	icon_state = "4570-explosive"
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
-
-// 7.62x38mmR Ammo Holders (Nagant Revolver)
-
-/obj/item/ammo_box/n762_clip
-	name = "ammo holder (7.62x38mmR)"
-	desc = "A 7-round ammo holder for the Nagant revolver. These rounds do good damage, but struggle against armor."
-	icon_state = "n762"
-	ammo_type = /obj/item/ammo_casing/n762_38
-	max_ammo = 7
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	item_flags = NO_MAT_REDEMPTION
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
 
 // .38 special Speed Loaders (Colt Detective Special)
 
@@ -105,34 +91,48 @@
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These iceblox bullets contain a cryogenic payload that chills targets."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
-// 7.62x54mmR Stripper Clip (Illestren Hunting Rifle)
-
-/obj/item/ammo_box/a762
-	name = "stripper clip (7.62x54mmR)"
-	desc = "A 5-round stripper clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "762"
-	ammo_type = /obj/item/ammo_casing/a762_54
-	max_ammo = 5
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
-
 // 8x58mm Stripper Clip (SSG-669C)
 
 /obj/item/ammo_box/a858
 	name = "stripper clip (8x58mm)"
 	desc = "A 5-round stripper clip for the SSG-669C rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "762"
+	icon_state = "858"
 	ammo_type = /obj/item/ammo_casing/caseless/a858
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	instant_load = TRUE
+
+// .308 Stripper Clip (Vickland)
+
+/obj/item/ammo_box/vickland_a308
+	name = "stripper clip  (.308)"
+	desc = "A 5-round stripper clip for the Vickland Battle Rifle. The Vickland itself has a 10 round capacity, so keep in mind two of these are needed to fully reload it. These rounds do good damage with significant armor penetration."
+	icon_state = "308"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE
+
+
+// .300 Magnum Stripper Clip (Scout)
+
+/obj/item/ammo_box/a300
+	name = "stripper clip (.300 Magnum)"
+	desc = "A 5-round stripper clip for the Scout Rifle. These rounds do great damage with significant armor penetration."
+	icon_state = "300m"
+	ammo_type = /obj/item/ammo_casing/a300
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE
 
 // .300 Blackout Stripper Clip (Polymer Survivor Rifle)
 
 /obj/item/ammo_box/aac_300blk_stripper
 	name = "stripper clip (.300 BLK)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "762"
+	icon_state = "300m"
 	ammo_type = /obj/item/ammo_casing/aac_300blk
 	caliber = ".300 BLK"
 	max_ammo = 5
@@ -336,13 +336,6 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/n762
-	name = "ammo box (7.62x38mmR)"
-	icon_state = "n762box"
-	desc = "A box of unusual revolver ammunition with the bullet seated below the mouth of the cartridge."
-	ammo_type = /obj/item/ammo_casing/n762_38
-	max_ammo = 28
-
 /obj/item/ammo_box/a762_39
 	name = "ammo box (7.62x39mm)"
 	icon_state = "a762_39box"
@@ -352,8 +345,11 @@
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"
 	icon_state = "a308box"
-	ammo_type = /obj/item/ammo_casing/win308
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 30
+
+/obj/item/ammo_box/a308/hunterspride //just an alternative graphic for srm ships
+	icon_state = "a308box-HP"
 
 /obj/item/ammo_box/foambox
 	name = "ammo box (Foam Darts)"
