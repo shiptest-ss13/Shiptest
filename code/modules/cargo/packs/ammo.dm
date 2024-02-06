@@ -15,8 +15,8 @@
 	cost = 1500
 
 /datum/supply_pack/ammo/m45_mag
-	name = ".45 ACP M1911 Magazine Crate"
-	desc = "Contains three .45 ACP magazines for the M1911 pistol, each containing eight rounds."
+	name = ".45 ACP Candor Magazine Crate"
+	desc = "Contains three .45 ACP magazines for the Candor pistol, each containing eight rounds."
 	contains = list(/obj/item/ammo_box/magazine/m45,
 					/obj/item/ammo_box/magazine/m45,
 					/obj/item/ammo_box/magazine/m45)
@@ -77,22 +77,22 @@
 	name = "Buckshot Crate"
 	desc = "Contains two boxes of buckshot for use in lethal persuasion."
 	cost = 2000
-	contains = list(/obj/item/storage/box/lethalshot,
-					/obj/item/storage/box/lethalshot)
+	contains = list(/obj/item/ammo_box/a12g,
+					/obj/item/ammo_box/a12g)
 
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
 	desc = "Contains two boxes of slug shells for use in lethal persuasion."
 	cost = 2000
-	contains = list(/obj/item/storage/box/slugshot,
-					/obj/item/storage/box/slugshot)
+	contains = list(/obj/item/ammo_box/a12g/slug,
+					/obj/item/ammo_box/a12g/slug)
 
 /*
 		.38 ammo
 */
 
 /datum/supply_pack/ammo/winchester_ammo
-	name = "Winchester and Detective Special .38 Ammo Boxes"
+	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
 	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
 	cost = 1000
 	contains = list(/obj/item/ammo_box/c38_box,
@@ -181,10 +181,10 @@
 	cost = 2000
 
 /datum/supply_pack/ammo/a762_ammo
-	name = "7.62x54mm Stripper Clip Crate"
-	desc = "Contains four 7.62x54mm stripper clips for rifles like the illestren rifle, each containing five rounds."
-	contains = list(/obj/item/ammo_box/a762,
-					/obj/item/ammo_box/a762,
-					/obj/item/ammo_box/a762,
-					/obj/item/ammo_box/a762)
+	name = "8x50mmR Stripper Clip Crate"
+	desc = "Contains four 8x50mmR stripper clips for rifles like the illestren rifle, each containing five rounds."
+	contains = list(/obj/item/ammo_box/magazine/illestren_a850r,
+					/obj/item/ammo_box/magazine/illestren_a850r,
+					/obj/item/ammo_box/magazine/illestren_a850r,
+					/obj/item/ammo_box/magazine/illestren_a850r)
 	cost = 1000

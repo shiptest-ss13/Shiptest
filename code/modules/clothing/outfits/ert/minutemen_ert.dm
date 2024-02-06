@@ -1,5 +1,7 @@
 /datum/outfit/job/minutemen/ert
 	name = "ERT - Minuteman"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficerOld"
 
 	head = /obj/item/clothing/head/helmet/bulletproof/minutemen
 	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
@@ -17,6 +19,7 @@
 
 /datum/outfit/job/minutemen/ert/leader
 	name = "ERT - Minuteman Sergeant"
+	job_icon = "lieutenant"
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/sec/cmm
@@ -24,6 +27,7 @@
 
 /datum/outfit/job/minutemen/ert/bard
 	name = "ERT - Minuteman (BARD)"
+	job_icon = "securityofficerOld"
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/medium
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
@@ -43,6 +47,7 @@
 
 /datum/outfit/job/minutemen/ert/bard/leader
 	name = "ERT - Minuteman Sergeant (BARD)"
+	job_icon = "lieutenant"
 
 	belt = /obj/item/storage/belt/military/assault/minutemen
 	uniform = /obj/item/clothing/under/rank/command/minutemen
@@ -60,6 +65,7 @@
 
 /datum/outfit/job/minutemen/ert/riot
 	name = "ERT - Minuteman (Riot Officer)"
+	job_icon = "securityofficerOld"
 
 	suit = /obj/item/clothing/suit/armor/riot/minutemen
 	head = /obj/item/clothing/head/helmet/riot/minutemen
@@ -74,12 +80,15 @@
 
 /datum/outfit/job/minutemen/ert/riot/leader
 	name = "ERT - Minutemen Sergeant (Riot Officer)"
+	job_icon = "lieutenant"
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/shield/riot/flash
 
 /datum/outfit/job/minutemen/ert/inspector
 	name = "ERT - Inspector (Minutemen GOLD)"
+	jobtype = /datum/job/head_of_personnel
+	job_icon = "minutemen"
 
 	head = /obj/item/clothing/head/cowboy/sec/minutemen
 	mask = null
@@ -97,12 +106,14 @@
 
 /datum/outfit/job/minutemen/ert/pirate_hunter
 	name = "ERT - Minuteman (Pirate Hunter)"
+	job_icon = "securityofficerOld"
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
 
 /datum/outfit/job/minutemen/ert/pirate_hunter/leader
 	name = "ERT - Minutemen Sergeant (Pirate Hunter)"
+	job_icon = "lieutenant"
 
 	uniform = /obj/item/clothing/under/rank/command/minutemen
 	ears = /obj/item/radio/headset/minutemen/alt/captain
