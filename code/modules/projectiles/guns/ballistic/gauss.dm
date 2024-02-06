@@ -42,9 +42,9 @@
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 	recoil = 1
-	recoil_unwielded = 2
+	recoil_unwielded = 4
 	spread = 3
-	spread_unwielded = 6
+	spread_unwielded = 12
 
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris
@@ -66,8 +66,8 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
-	name = "Solar 'GAR' Assault Rifle"
-	desc = "A Solarian assault rifle, unusually modern for its producers. Launches ferromagnetic lances at alarming speeds."
+	name = "Solar 'GAR' Carbine"
+	desc = "A Solarian carbine, unusually modern for its producers. Launches ferromagnetic lances at alarming speeds."
 	mag_type = /obj/item/ammo_box/magazine/gar
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "gar"
@@ -76,14 +76,13 @@
 	load_sound = 'sound/weapons/gun/gauss/rifle_reload.ogg'
 	cell_type = /obj/item/stock_parts/cell/gun/solgov
 	burst_size = 2
-	fire_delay = 2
+	fire_delay = 1
 	actions_types = list()
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
 	wield_delay = 0.7 SECONDS
-	fire_delay = 1
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS) //setiting this to 0.1 breaks auotfire, not sure why, so we use the standard fire rate but in 2 shot bursts to shoot 'faster'
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)

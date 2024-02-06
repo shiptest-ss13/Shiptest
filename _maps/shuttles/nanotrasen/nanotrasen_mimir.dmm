@@ -70,16 +70,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/port)
-"aC" = (
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/machinery/conveyor{
-	id = "prison_scrap";
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "aE" = (
 /obj/structure/table,
 /obj/machinery/door/window,
@@ -1696,7 +1686,7 @@
 /area/ship/engineering/electrical)
 "jC" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/brimstone,
 /obj/item/storage/box/lethalshot,
 /obj/effect/turf_decal/siding/red{
 	dir = 10
@@ -3721,6 +3711,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
+"vT" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	id = "prison_scrap";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "wa" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
@@ -5775,7 +5775,7 @@
 /area/ship/maintenance/port)
 "Ht" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/hellfire,
 /obj/item/storage/box/rubbershot,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/shield/riot,
@@ -9127,7 +9127,7 @@ yz
 tY
 jS
 TO
-aC
+vT
 Kk
 wm
 Jy
