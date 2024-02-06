@@ -686,11 +686,11 @@
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
 
-/obj/item/clothing/suit/gorlex
+/obj/item/clothing/suit/ngr_captain
 	name = "\improper 2nd Battlegroup jacket"
-	desc = "An armored jacket worn by the 2nd Battlegroup."
+	desc = "An armored jacket worn by the New Gorlex Republic's 2nd Battlegroup."
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	icon_state = "gorlexjacket"
-	item_state = "gorlexjacket"
+	icon_state = "ngr_captain"
+	item_state = "ngr_captain"
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)

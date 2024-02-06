@@ -468,7 +468,7 @@
 
 /obj/item/clothing/head/gorlexcap
 	name = "2nd Battlegroup peaked cap"
-	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup."
+	desc = "A cap worn by officers of the New Gorlex Republic's 2nd Battlegroup."
 	icon_state = "gorlexcap"
 	item_state = "gorlexcap"
 	flags_inv = 0
