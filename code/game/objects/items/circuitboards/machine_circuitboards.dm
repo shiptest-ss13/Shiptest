@@ -398,6 +398,7 @@
 		/obj/item/stack/sheet/bluespace_crystal = 1,
 		/obj/item/stock_parts/micro_laser = 4
 		)
+	needs_anchored = FALSE
 
 #undef PATH_FREEZER
 #undef PATH_HEATER
