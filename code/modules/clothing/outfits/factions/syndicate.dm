@@ -294,7 +294,7 @@
 	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 
 	head = /obj/item/clothing/head/ngrcap
-	suit = /obj/item/clothing/suit/ngr_captain
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/ngr_captain
 
 /datum/outfit/job/syndicate/captain/cybersun
 	name = "Syndicate - Captain (Cybersun)"
@@ -535,7 +535,7 @@
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/armor/vest
-	alt_suit = /obj/item/clothing/suit/ngr_captain
+	alt_suit = /obj/item/clothing/suit/armor/vest/capcarapace/ngr_captain
 	id = /obj/item/card/id/syndicate_command/lieutenant
 	implants = list(/obj/item/implant/weapons_auth)
 	backpack_contents = list(/obj/item/melee/baton)
