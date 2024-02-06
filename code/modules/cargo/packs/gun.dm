@@ -119,9 +119,8 @@
 	name = "Cobra-20 SMG Crate"
 	desc = "Contains two .45 submachine guns, manufactured by Scaraborough Arms and chambered in .45"
 	cost = 2500
-	contains = list(/obj/item/gun/ballistic/smg/c20r/cobra,
-					/obj/item/gun/ballistic/smg/c20r/cobra,
-					/obj/item/gun/ballistic/smg/c20r/cobra)
+	contains = list(/obj/item/gun/ballistic/automatic/smg/c20r/cobra,
+					/obj/item/gun/ballistic/automatic/smg/c20r/cobra)
 	crate_name = "SMG crate"
 
 /datum/supply_pack/gun/illestren
