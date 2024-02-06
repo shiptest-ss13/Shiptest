@@ -413,14 +413,14 @@
 
 /obj/machinery/power/ship_gravity
 	name = "gravitational generator"
-	desc = "A device which produces a graviton field when set up."
+	desc = "A ship-portable gravity generator, capable of providing gravity throughout the vessel it is installed on."
 	icon = 'icons/obj/machines/gravity_generator.dmi'
 	icon_state = "shipgrav"
 	base_icon_state = "shipgrav"
 	density = TRUE
 	idle_power_usage = 10
 	active_power_usage = 5000
-	circuit = /obj/item/circuitboard/machine/gravgen
+	circuit = /obj/item/circuitboard/machine/ship_gravity
 	var/charging = FALSE
 	var/active = FALSE
 	var/charge = 0

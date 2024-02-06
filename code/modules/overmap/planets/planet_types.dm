@@ -21,7 +21,7 @@
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lavaland
 	ruin_type = RUINTYPE_LAVA
 	landing_sound = 'sound/effects/planet_landing_2.ogg'
@@ -35,7 +35,7 @@
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/snow_planet
 	ruin_type = RUINTYPE_ICE
 	landing_sound = 'sound/effects/planet_landing_2.ogg'
@@ -48,7 +48,7 @@
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
 	default_baseturf = /turf/open/floor/plating/dirt/jungle
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_JUNGLE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
@@ -61,7 +61,7 @@
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
 	default_baseturf = /turf/open/floor/plating/asteroid
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/rockplanet
 	ruin_type = RUINTYPE_ROCK
 	landing_sound = 'sound/effects/planet_landing_2.ogg'
@@ -74,7 +74,7 @@
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/desert
 	ruin_type = RUINTYPE_SAND
 	landing_sound = 'sound/effects/planet_landing_2.ogg'
@@ -87,7 +87,7 @@
 	color = "#c6b597"
 	mapgen = /datum/map_generator/planet_generator/beach
 	default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/lush
 	ruin_type = RUINTYPE_BEACH
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
@@ -99,7 +99,7 @@
 	icon_state = "wormhole"
 	color = COLOR_YELLOW
 	mapgen = /datum/map_generator/single_biome/reebe
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	default_baseturf = /turf/open/chasm/reebe_void
 	weather_controller_type = null
 	weight = 0
@@ -139,7 +139,7 @@
 	color = "#a9883e"
 	mapgen = /datum/map_generator/planet_generator/waste
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
-	gravity = 1
+	gravity = STANDARD_GRAVITY
 	weather_controller_type = /datum/weather_controller/chlorine
 	ruin_type = RUINTYPE_WASTE
 	landing_sound = 'sound/effects/planet_landing_2.ogg'
@@ -151,7 +151,7 @@
 	icon_state = "globe"
 	color = COLOR_DARK_MODERATE_ORANGE
 	mapgen = /datum/map_generator/single_biome/gas_giant
-	gravity = 2
+	gravity = GAS_GIANT_GRAVITY
 	default_baseturf = /turf/open/chasm/gas_giant
 	weather_controller_type = null
 	ruin_type = null //it's a Gas Giant. Not Cloud fuckin City
@@ -165,6 +165,7 @@
 	planet = DYNAMIC_WORLD_PLASMA_GIANT
 	color = COLOR_PURPLE
 	mapgen = /datum/map_generator/single_biome/plasma_giant
+	gravity = GAS_GIANT_GRAVITY
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
 	weight = 0
 	icon_state = "globe"

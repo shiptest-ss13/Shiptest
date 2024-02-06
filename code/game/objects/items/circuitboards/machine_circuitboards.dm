@@ -389,7 +389,7 @@
 	name = "Freezer (Machine Board)"
 	build_path = PATH_FREEZER
 
-/obj/item/circuitboard/machine/gravgen
+/obj/item/circuitboard/machine/ship_gravity
 	name = "Gravity Generator (Machine Board)"
 	icon_state = "engineering"
 	build_path = /obj/machinery/power/ship_gravity

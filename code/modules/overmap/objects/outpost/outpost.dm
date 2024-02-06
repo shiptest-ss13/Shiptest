@@ -25,11 +25,11 @@
 	var/list/main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
 		ZTRAIT_SUN_TYPE = AZIMUTH,
-		ZTRAIT_GRAVITY = 1
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY
 	)
 	var/list/hangar_ztraits = list(
 		ZTRAIT_SUN_TYPE = STATIC_EXPOSED,
-		ZTRAIT_GRAVITY = 1
+		ZTRAIT_GRAVITY = STANDARD_GRAVITY
 	)
 
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
