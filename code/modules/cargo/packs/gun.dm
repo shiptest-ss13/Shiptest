@@ -26,7 +26,7 @@
 
 /datum/supply_pack/gun/makarovs
 	name = "Stechkin pistol crate"
-	desc = "Contains two concealable stechkin pistols, produced by the Gorlex Marauders and chambered in 10mm."
+	desc = "Contains two concealable stechkin pistols, produced by Scaraborough Arms and chambered in 10mm."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/gun/ballistic/automatic/pistol)
