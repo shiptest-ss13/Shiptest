@@ -437,8 +437,9 @@
 	if(charging)
 		if(!active_power_usage || surplus() >= active_power_usage)
 			add_load(active_power_usage)
-			charge = min(charge+1, 10)
-			if(charge >= 10)
+			charge = min(charge+1, 5)
+			update_appearance()
+			if(charge >= 5)
 				set_state(TRUE)
 		else
 			if(charge)
@@ -446,7 +447,7 @@
 				return
 			set_state(FALSE)
 
-/obj/machinery/power/ship_gravity/proc/set_state(var/toggle)
+/obj/machinery/power/ship_gravity/proc/set_state(toggle)
 	if(toggle == active)
 		return
 	if(toggle)
@@ -464,8 +465,11 @@
 	if(panel_open)
 		return
 	icon_state = "[base_icon_state]"
-	if(charging)
+	if(active)
 		icon_state += "_a"
+		return
+	if(charging)
+		icon_state += "_[charge]"
 		return
 
 /obj/machinery/power/ship_gravity/examine(mob/user)
@@ -478,7 +482,7 @@
 		if(!charging && !charge)
 			. += span_info("Its status display is currently turned off.")
 		else
-			. += span_info("Its status display reads: Current charge at <b>[charge*10]%</b>.")
+			. += span_info("Its status display reads: Current charge at <b>[charge*20]%</b>.")
 
 /obj/machinery/power/ship_gravity/screwdriver_act(mob/living/user, obj/item/I)
 	..()
