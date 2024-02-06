@@ -312,3 +312,4 @@
 	item_state = "enginseerhood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
+
