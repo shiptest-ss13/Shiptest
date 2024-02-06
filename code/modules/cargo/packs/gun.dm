@@ -115,6 +115,15 @@
 					/obj/item/gun/ballistic/shotgun/flamingarrow)
 	crate_name = "rifle crate"
 
+/datum/supply_pack/gun/cobra20
+	name = "Cobra-20 SMG Crate"
+	desc = "Contains two .45 submachine guns, manufactured by Scaraborough Arms and chambered in .45"
+	cost = 1500
+	contains = list(/obj/item/gun/ballistic/smg/c20r/cobra,
+					/obj/item/gun/ballistic/smg/c20r/cobra,
+					/obj/item/gun/ballistic/smg/c20r/cobra)
+	crate_name = "SMG crate"
+
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
 	desc = "Contains three expertly made bolt action rifles intended for hunting wildlife. Chambered in 8x50mmR rounds."
