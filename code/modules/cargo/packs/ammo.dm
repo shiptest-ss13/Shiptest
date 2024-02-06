@@ -226,3 +226,58 @@
 	desc = "Contains one thirty-round .308 box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/ammo_box/a308)
 	cost = 500
+
+/datum/supply_pack/ammo/c9mmap_ammo_box
+	name = "9mm AP Ammo Box Crate"
+	desc = "Contains two fifty-round 9mm boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c9mm/ap,
+					/obj/item/ammo_box/c9mm/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c556mmHITPap_ammo_box
+	name = "5.56 caseless AP Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56mm caseless boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c556mmHITP/ap,
+					/obj/item/ammo_box/c556mmHITP/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c45ap_ammo_box
+	name = ".45 AP Ammo Box Crate"
+	desc = "Contains two fifty-round .45 boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c45/ap,
+					/obj/item/ammo_box/c45/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c10mmap_ammo_box
+	name = "10mm AP Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c10mm/ap,
+					/obj/item/ammo_box/c10mm/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c9mmhp_ammo_box
+	name = "9mm HP Ammo Box Crate"
+	desc = "Contains two fifty-round 9mm boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c9mm/hp,
+					/obj/item/ammo_box/c9mm/hp)
+	cost = 1000
+
+/datum/supply_pack/ammo/c10mmhp_ammo_box
+	name = "10mm HP Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c10mm/hp,
+					/obj/item/ammo_box/c10mm/hp)
+	cost = 1000
+/datum/supply_pack/ammo/c45hp_ammo_box
+	name = ".45 HP Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c45/hp,
+					/obj/item/ammo_box/c45/hp)
+	cost = 1000
+
+/datum/supply_pack/ammo/c556mmhitphp_ammo_box
+	name = "5.56 caseless Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56mm caseless boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c556mmHITP/hp,
+					/obj/item/ammo_box/c556mmHITP/hp)
+	cost = 1000
