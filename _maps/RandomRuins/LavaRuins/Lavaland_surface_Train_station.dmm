@@ -1,8 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
 /obj/structure/railing/modern,
-/turf/open/floor/plating/grass/lava,
-/area/template_noop)
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "ap" = (
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
@@ -63,10 +63,19 @@
 "cb" = (
 /turf/template_noop,
 /area/template_noop)
+"ch" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/ash,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "ci" = (
 /obj/structure/spawner/mining/goliath,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/train_station/train)
+"cj" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "cA" = (
 /obj/structure/closet/crate,
 /obj/item/reagent_containers/food/snacks/rationpack,
@@ -75,6 +84,12 @@
 /obj/item/reagent_containers/food/snacks/rationpack,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"cL" = (
+/obj/structure/fluff/clockwork/alloy_shards/medium,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/overmap_encounter/planetoid/lava)
 "cZ" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -145,10 +160,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"eX" = (
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "fb" = (
 /obj/structure/mecha_wreckage/durand,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"fw" = (
+/obj/structure/fluff/broken_flooring,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "fC" = (
 /obj/structure/fence/cut,
 /turf/open/floor/plating,
@@ -179,9 +202,8 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
 "gv" = (
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "gP" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/titanium/fifty,
@@ -245,12 +267,12 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/train_station/train)
 "im" = (
-/obj/structure/railing/modern/corner{
-	dir = 8
-	},
-/obj/structure/railing/modern,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
+"iJ" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "iK" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -258,6 +280,10 @@
 /obj/machinery/power/smes,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"jg" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "jj" = (
 /obj/machinery/door/airlock/freezer{
 	name = "Airlock"
@@ -268,9 +294,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "jq" = (
-/obj/structure/railing/modern,
+/obj/structure/flora/ash/cap_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "jy" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -280,6 +306,17 @@
 "jO" = (
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/unpowered/train_station/cargo)
+"jY" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
+"kt" = (
+/obj/structure/fluff/clockwork/alloy_shards,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "ky" = (
 /obj/structure/closet/wardrobe/cargotech,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -296,6 +333,15 @@
 /obj/structure/railing/modern/corner,
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
+"kF" = (
+/obj/structure/fluff/clockwork/alloy_shards/small{
+	pixel_x = 7
+	},
+/turf/open/floor/plating{
+	heat_capacity = 1e+006;
+	icon_state = "platingdmg1"
+	},
+/area/overmap_encounter/planetoid/lava)
 "kG" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -305,6 +351,20 @@
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
+"lc" = (
+/obj/structure/railing/modern/corner{
+	dir = 8
+	},
+/obj/structure/railing/modern,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
+"lu" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "lI" = (
 /obj/structure/closet/crate/large,
 /obj/item/mecha_parts/part/durand_left_arm,
@@ -318,10 +378,15 @@
 /obj/machinery/power/port_gen/pacman,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"lV" = (
+/obj/structure/railing/modern,
+/obj/structure/flora/ausbushes/grassybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "mC" = (
-/obj/structure/fluff/broken_flooring,
+/obj/structure/lattice,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "mJ" = (
 /obj/structure/closet/wardrobe/cargotech,
 /turf/open/floor/engine,
@@ -339,10 +404,21 @@
 /obj/structure/salvageable/machine,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"mZ" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/obj/structure/flora/ash/cap_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "na" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/unpowered/train_station/train)
+"nj" = (
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "nt" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
@@ -367,8 +443,11 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "nP" = (
-/turf/closed/wall,
-/area/template_noop)
+/turf/open/floor/plating{
+	icon_state = "wall_thermite";
+	name = "melted wall"
+	},
+/area/overmap_encounter/planetoid/lava)
 "nS" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/mineral/gold/fifty,
@@ -386,17 +465,19 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/Barracks)
+"oN" = (
+/obj/structure/railing/modern,
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "oO" = (
+/turf/closed/wall/rust,
+/area/overmap_encounter/planetoid/lava)
+"oV" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
-/area/template_noop)
-"oV" = (
-/turf/open/floor/plating{
-	icon_state = "wall_thermite";
-	name = "melted wall"
-	},
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "pe" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 4
@@ -406,11 +487,9 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "po" = (
-/obj/effect/radiation,
-/obj/item/clothing/suit/radiation/space,
-/obj/item/clothing/head/radiation/space,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/obj/structure/fluff/clockwork/alloy_shards,
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/lava)
 "pC" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -424,9 +503,9 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
 "pT" = (
-/obj/structure/fluff/clockwork/alloy_shards,
-/turf/open/floor/plating,
-/area/template_noop)
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "pX" = (
 /obj/structure/closet/crate/large,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
@@ -470,9 +549,9 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "re" = (
-/obj/structure/flora/rock,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "rn" = (
 /obj/structure/fence{
 	dir = 8
@@ -508,6 +587,11 @@
 /obj/item/stock_parts/cell/high/empty,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"si" = (
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/overmap_encounter/planetoid/lava)
 "sj" = (
 /obj/machinery/door/airlock/public{
 	dir = 8
@@ -571,14 +655,10 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
 "uG" = (
-/obj/structure/fluff/clockwork/alloy_shards/small{
-	pixel_x = 7
-	},
 /turf/open/floor/plating{
-	heat_capacity = 1e+006;
-	icon_state = "platingdmg1"
+	icon_state = "platingdmg2"
 	},
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "uP" = (
 /obj/machinery/door/poddoor/shutters/preopen,
 /turf/open/floor/plasteel/mono/white,
@@ -654,6 +734,12 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"wE" = (
+/obj/effect/radiation,
+/obj/item/clothing/suit/radiation/space,
+/obj/item/clothing/head/radiation/space,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "wP" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -664,21 +750,20 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "wR" = (
-/obj/structure/fluff/clockwork/alloy_shards/large{
-	pixel_y = 9;
-	pixel_x = 8
-	},
-/obj/structure/fluff/clockwork/alloy_shards/large{
-	pixel_y = -9;
-	pixel_x = -5
-	},
-/obj/structure/fluff/clockwork/alloy_shards/medium,
-/turf/open/floor/plating,
-/area/template_noop)
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "wS" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
+"xd" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "xg" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -692,6 +777,9 @@
 /obj/item/mecha_parts/part/durand_right_leg,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"xB" = (
+/turf/open/floor/plating/grass/lava,
+/area/overmap_encounter/planetoid/lava)
 "xG" = (
 /obj/structure/rack,
 /obj/item/mop/advanced,
@@ -717,10 +805,9 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
 "xX" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
-	},
-/area/template_noop)
+/obj/structure/flora/ash/fireblossom,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "ya" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -747,15 +834,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "yW" = (
-/obj/structure/fluff/clockwork/alloy_shards/small{
-	pixel_x = 7;
-	pixel_y = 4
-	},
-/turf/open/floor/plating{
-	icon_state = "wall_thermite";
-	name = "melted wall"
-	},
-/area/template_noop)
+/obj/structure/flora/rock/lava,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "zi" = (
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
@@ -770,6 +851,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/train)
+"zQ" = (
+/obj/structure/sign/warning/radiation,
+/turf/closed/wall/rust,
+/area/overmap_encounter/planetoid/lava)
 "Ac" = (
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /obj/structure/chair/comfy/shuttle{
@@ -814,21 +899,29 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "AZ" = (
-/obj/structure/fluff/clockwork/alloy_shards/medium,
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
-	},
-/area/template_noop)
+/obj/structure/flora/ausbushes/genericbush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "Ba" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/obj/structure/fluff/clockwork/alloy_shards/small{
+	pixel_x = 7;
+	pixel_y = 4
+	},
+/turf/open/floor/plating{
+	icon_state = "wall_thermite";
+	name = "melted wall"
+	},
+/area/overmap_encounter/planetoid/lava)
 "Bj" = (
 /obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/Barracks)
+"Bn" = (
+/obj/structure/railing/modern,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "Bo" = (
 /obj/structure/bed,
 /obj/item/bedsheet/grey,
@@ -842,6 +935,18 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
+"Cp" = (
+/obj/structure/fluff/clockwork/alloy_shards/large{
+	pixel_y = 9;
+	pixel_x = 8
+	},
+/obj/structure/fluff/clockwork/alloy_shards/large{
+	pixel_y = -9;
+	pixel_x = -5
+	},
+/obj/structure/fluff/clockwork/alloy_shards/medium,
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/lava)
 "CL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -865,12 +970,13 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
 "DB" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
-/turf/open/floor/plating/grass/lava,
-/area/template_noop)
+/obj/structure/flora/ausbushes/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "DC" = (
-/turf/open/floor/plating,
-/area/template_noop)
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "DE" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
@@ -888,10 +994,17 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"Ej" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/obj/structure/flora/ash/cacti,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "El" = (
-/obj/structure/sign/warning/radiation,
-/turf/closed/wall,
-/area/template_noop)
+/obj/structure/flora/ausbushes/ywflowers/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "EB" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -918,10 +1031,9 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
 "Fw" = (
-/turf/open/floor/plating{
-	icon_state = "panelscorched"
-	},
-/area/template_noop)
+/obj/structure/flora/ash,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "FP" = (
 /obj/structure/salvageable/safe_server,
 /turf/open/floor/plasteel/mono/white,
@@ -930,8 +1042,9 @@
 /obj/structure/railing/modern{
 	dir = 1
 	},
-/turf/open/floor/plating/grass/lava,
-/area/template_noop)
+/obj/structure/flora/ausbushes/grassybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "Gg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -948,12 +1061,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "GE" = (
-/obj/structure/fluff/clockwork/alloy_shards,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/lava)
 "Hb" = (
+/obj/structure/flora/ash/fern,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "HL" = (
 /obj/structure/sink/kitchen{
 	pixel_y = 25
@@ -962,11 +1075,9 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
 "Ih" = (
-/obj/structure/railing/modern{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/obj/structure/flora/ausbushes/grassybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "It" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 5
@@ -997,8 +1108,9 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/Barracks)
 "IR" = (
-/turf/open/floor/plating/grass/lava,
-/area/template_noop)
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "IZ" = (
 /obj/machinery/light/directional/south,
 /turf/open/floor/concrete/reinforced,
@@ -1111,6 +1223,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"LB" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/obj/structure/flora/ausbushes/ywflowers/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "LU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/west,
@@ -1182,20 +1299,24 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
 "OD" = (
-/obj/structure/flora/ausbushes/fullgrass/hell,
-/turf/open/floor/plating/grass/lava,
-/area/template_noop)
+/obj/structure/railing/modern,
+/obj/structure/flora/ausbushes/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "OG" = (
-/obj/structure/fluff/clockwork/alloy_shards/small,
-/turf/open/floor/plating{
-	icon_state = "wall_thermite";
-	name = "melted wall"
+/turf/closed/wall,
+/area/overmap_encounter/planetoid/lava)
+"OR" = (
+/obj/structure/railing/modern{
+	dir = 1
 	},
-/area/template_noop)
-"Qe" = (
-/obj/structure/lattice,
+/obj/structure/flora/ash/puce,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
+"Qe" = (
+/obj/structure/sign/warning/radiation,
+/turf/closed/wall,
+/area/overmap_encounter/planetoid/lava)
 "Qg" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -1204,14 +1325,9 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/unpowered/train_station/train)
 "QH" = (
-/obj/structure/railing/modern/corner{
-	dir = 1
-	},
-/obj/structure/railing/modern{
-	dir = 1
-	},
+/obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/area/overmap_encounter/planetoid/lava)
 "QL" = (
 /obj/effect/turf_decal/industrial/traffic,
 /turf/open/floor/plating,
@@ -1225,9 +1341,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "RD" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/obj/structure/flora/ausbushes/fernybush/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "RE" = (
 /obj/structure/fluff/paper/stack{
 	dir = 9
@@ -1269,12 +1385,20 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Sw" = (
+/obj/structure/flora/rock/pile/lava,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "SF" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"SK" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 "SY" = (
 /obj/structure/fence/door,
 /obj/structure/cable{
@@ -1328,6 +1452,18 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"Vh" = (
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/obj/structure/flora/ausbushes/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
+"VA" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "VM" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1335,8 +1471,11 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "VW" = (
-/turf/closed/wall/rust,
-/area/template_noop)
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "Wa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable{
@@ -1374,6 +1513,16 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/cargo)
+"Xc" = (
+/obj/structure/railing/modern/corner{
+	dir = 1
+	},
+/obj/structure/railing/modern{
+	dir = 1
+	},
+/obj/structure/flora/ash/puce,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "Xo" = (
 /obj/structure/window/reinforced/tinted,
 /obj/structure/chair{
@@ -1382,9 +1531,12 @@
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
 "XD" = (
-/obj/structure/sign/warning/radiation,
-/turf/closed/wall/rust,
-/area/template_noop)
+/obj/structure/fluff/clockwork/alloy_shards/small,
+/turf/open/floor/plating{
+	icon_state = "wall_thermite";
+	name = "melted wall"
+	},
+/area/overmap_encounter/planetoid/lava)
 "XL" = (
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/oxygen,
@@ -1415,10 +1567,9 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "ZW" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/flora/ash/tall_shroom,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/template_noop)
+/obj/structure/flora/tree/dead/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava)
 
 (1,1,1) = {"
 cb
@@ -1434,21 +1585,21 @@ cb
 cb
 cb
 cb
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
+cb
+cb
+cb
+cb
+im
+im
+im
+im
+im
+cb
+cb
+cb
+cb
+cb
+cb
 cb
 cb
 cb
@@ -1469,23 +1620,23 @@ cb
 cb
 cb
 cb
+cb
+cb
+im
+re
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
+im
+ZW
+Ih
+pT
 DB
-IR
-IR
-IR
-IR
-IR
-IR
-IR
+AZ
+re
+im
+cb
+cb
+cb
+cb
 cb
 cb
 cb
@@ -1504,23 +1655,23 @@ cb
 cb
 cb
 cb
+cb
+im
+im
+ZW
+im
+RD
+El
+AZ
+im
+ZW
+re
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-Hb
-Hb
-Hb
-Hb
-Hb
 Ih
-IR
-IR
-IR
-IR
+im
+cb
+cb
+cb
 cb
 cb
 cb
@@ -1537,28 +1688,28 @@ cb
 cb
 cb
 cb
+cb
+cb
+im
+RD
+im
+AZ
+re
+im
+Ih
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-EX
-EX
-EX
-SF
-EX
-EX
-WJ
-Hb
-IR
-IR
-IR
-IR
-IR
-IR
+Ih
+im
+ZW
+RD
+El
+DB
+im
+cb
+cb
+cb
+cb
+cb
 "}
 (5,1,1) = {"
 cb
@@ -1572,14 +1723,119 @@ cb
 cb
 cb
 cb
+cb
+cb
+DB
+IR
+Ih
+El
+pT
+im
+ZW
+Ih
+AZ
+SK
 IR
 IR
+im
+ZW
+Ih
 IR
+El
+cb
+cb
+cb
+"}
+(6,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+Ih
+im
+xX
+ZW
+re
+DB
+im
+gv
+gv
+wR
+gv
+jq
+xd
 IR
+im
+ZW
+re
+im
+cb
+cb
+"}
+(7,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+im
+El
+re
+RD
+im
+El
 IR
-IR
-IR
-IR
+RD
+EX
+EX
+EX
+SF
+EX
+EX
+WJ
+jq
+RD
+AZ
+re
+Ih
+im
+im
+"}
+(8,1,1) = {"
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+im
+RD
+im
+im
+im
+im
+ZW
+im
 EX
 uU
 jy
@@ -1587,15 +1843,15 @@ jy
 wP
 lM
 EX
-Hb
+Fw
 IR
+Ih
+pT
 IR
-IR
-IR
-IR
-IR
+RD
+im
 "}
-(6,1,1) = {"
+(9,1,1) = {"
 cb
 cb
 cb
@@ -1607,14 +1863,14 @@ cb
 cb
 cb
 cb
+DB
 IR
+im
+ZW
 IR
-IR
-IR
-IR
-IR
-Hb
-Hb
+im
+gv
+nj
 EX
 iK
 rF
@@ -1622,15 +1878,15 @@ dS
 ax
 yJ
 EX
-Hb
+gv
+ZW
 IR
-IR
-IR
-IR
-IR
-IR
+El
+re
+Ih
+im
 "}
-(7,1,1) = {"
+(10,1,1) = {"
 cb
 cb
 ic
@@ -1638,18 +1894,18 @@ ic
 ic
 ic
 ic
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-Ba
-Hb
+re
+im
+im
+ZW
+El
+pT
+im
+LB
+im
+Ih
+DC
+wR
 EX
 kB
 EX
@@ -1657,15 +1913,15 @@ SF
 EX
 EX
 EX
-Hb
-IR
-IR
-IR
-IR
-IR
+jg
+xX
+RD
+im
+ZW
+El
 IR
 "}
-(8,1,1) = {"
+(11,1,1) = {"
 cb
 cb
 ic
@@ -1673,53 +1929,53 @@ ic
 ic
 ic
 ic
+im
 IR
-OD
+re
+re
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-ZW
+Ih
+im
+AZ
+RD
+im
+VA
+Fw
 Hb
-Hb
-jq
+oN
 To
 oj
 if
-Hb
+gv
+jY
+Fw
 Ih
-Hb
-IR
-IR
-IR
-IR
-IR
-IR
+re
+re
+Ih
+Ih
+im
 "}
-(9,1,1) = {"
+(12,1,1) = {"
 cb
 cb
 ic
 ic
 ic
 ic
-IR
-IR
-IR
-IR
-IR
-IR
-Hb
+xB
+El
+re
+DB
+re
+El
+gv
 aL
 sJ
 EZ
 La
 ub
-Hb
+gv
 EX
 EX
 EX
@@ -1727,15 +1983,15 @@ mK
 EX
 EX
 EX
-Ba
+DC
 up
 aL
 EZ
 EZ
 La
-Hb
+gv
 "}
-(10,1,1) = {"
+(13,1,1) = {"
 cb
 cb
 ic
@@ -1754,7 +2010,7 @@ rI
 td
 gl
 QL
-Hb
+QH
 EX
 Jw
 Az
@@ -1762,15 +2018,15 @@ oj
 Dw
 bv
 EX
-Hb
+nj
 ue
 Ai
 rI
 rI
 EW
-Hb
+gv
 "}
-(11,1,1) = {"
+(14,1,1) = {"
 cb
 cb
 ic
@@ -1789,7 +2045,7 @@ jO
 Ug
 DE
 QL
-Hb
+gv
 tc
 Ry
 EB
@@ -1797,15 +2053,15 @@ oj
 Ry
 Ry
 Ve
-Hb
+wR
 ue
 Ai
 Fv
 jO
 Rm
-Hb
+gv
 "}
-(12,1,1) = {"
+(15,1,1) = {"
 cb
 cb
 ic
@@ -1824,7 +2080,7 @@ jO
 Ug
 gl
 RN
-Hb
+eX
 EX
 rM
 ZE
@@ -1832,15 +2088,15 @@ oj
 XL
 cA
 TV
-Hb
+wR
 ue
 Ai
 Ug
 jO
 WZ
-Hb
+gv
 "}
-(13,1,1) = {"
+(16,1,1) = {"
 cb
 cb
 ic
@@ -1859,7 +2115,7 @@ gU
 rI
 gl
 RN
-Hb
+jq
 EX
 EX
 EX
@@ -1867,15 +2123,15 @@ mK
 EX
 EX
 EX
-Hb
+gv
 ue
 gS
 CL
 Ug
 EW
-Hb
+gv
 "}
-(14,1,1) = {"
+(17,1,1) = {"
 cb
 cb
 ic
@@ -1894,23 +2150,23 @@ gU
 rI
 gl
 RN
-Hb
-jq
-Hb
+Fw
+ac
+Fw
 To
 oj
 if
-Hb
-Ih
+gv
+lu
 Hb
 ue
 fZ
 Ug
 Ug
 EW
-Hb
+gv
 "}
-(15,1,1) = {"
+(18,1,1) = {"
 cb
 cb
 ic
@@ -1929,7 +2185,7 @@ Jf
 rI
 EW
 QL
-Hb
+gv
 EX
 EX
 EX
@@ -1937,15 +2193,15 @@ mK
 EX
 EX
 EX
-Hb
+Fw
 ue
 gS
 Ug
 Ug
 EW
-Hb
+gv
 "}
-(16,1,1) = {"
+(19,1,1) = {"
 cb
 ic
 ic
@@ -1964,7 +2220,7 @@ rI
 rI
 gl
 RN
-gv
+VA
 yz
 nS
 na
@@ -1972,15 +2228,15 @@ oj
 vq
 Si
 qP
-Hb
+gv
 ue
 Ai
 Ug
 nK
 EW
-Hb
+gv
 "}
-(17,1,1) = {"
+(20,1,1) = {"
 cb
 ic
 ic
@@ -1999,7 +2255,7 @@ jO
 Ug
 EW
 QL
-Hb
+gv
 yz
 Dn
 ci
@@ -2007,15 +2263,15 @@ oj
 Gi
 dL
 qP
-Hb
+QH
 ue
 Ai
 ky
 jO
 Rm
-Hb
+gv
 "}
-(18,1,1) = {"
+(21,1,1) = {"
 cb
 ic
 ic
@@ -2034,7 +2290,7 @@ jO
 Ug
 gl
 RN
-Hb
+gv
 yz
 JR
 na
@@ -2042,15 +2298,15 @@ oj
 gP
 zj
 uP
-Hb
+gv
 ue
 Ai
 ky
 jO
 Rm
-Hb
+gv
 "}
-(19,1,1) = {"
+(22,1,1) = {"
 cb
 ic
 ic
@@ -2069,7 +2325,7 @@ Ug
 Ug
 xg
 KQ
-Hb
+eX
 EX
 EX
 EX
@@ -2077,15 +2333,15 @@ mK
 EX
 EX
 EX
-Hb
+gv
 ue
 Ai
 xK
 rI
 EW
-Hb
+gv
 "}
-(20,1,1) = {"
+(23,1,1) = {"
 cb
 ic
 ic
@@ -2104,23 +2360,23 @@ Ug
 Ug
 gl
 RN
-Hb
-jq
-Hb
+gv
+ac
+wR
 To
 oj
 if
-Hb
-Ih
-Hb
+gv
+mZ
+eX
 ue
 Ai
 Ug
 rI
 EW
-Hb
+gv
 "}
-(21,1,1) = {"
+(24,1,1) = {"
 cb
 ic
 ic
@@ -2139,7 +2395,7 @@ Ug
 Ug
 gl
 RN
-Hb
+Fw
 EX
 EX
 EX
@@ -2147,15 +2403,15 @@ mK
 EX
 EX
 EX
-Hb
+gv
 ue
 NU
 Ug
 rI
 EW
-Hb
+gv
 "}
-(22,1,1) = {"
+(25,1,1) = {"
 cb
 ic
 ic
@@ -2174,7 +2430,7 @@ Ug
 Ug
 gl
 RN
-Hb
+gv
 yz
 uQ
 Zk
@@ -2182,15 +2438,15 @@ oj
 pX
 xj
 yz
-Hb
+gv
 ue
 Ai
 nK
 Ug
 EW
-Hb
+gv
 "}
-(23,1,1) = {"
+(26,1,1) = {"
 cb
 ic
 ic
@@ -2209,7 +2465,7 @@ jO
 AL
 gl
 RN
-Hb
+QH
 yz
 dE
 Ry
@@ -2217,15 +2473,15 @@ oj
 fb
 Jq
 yz
-Hb
+wR
 ue
 Ju
 Ug
 jO
 Rm
-Hb
+gv
 "}
-(24,1,1) = {"
+(27,1,1) = {"
 cb
 ic
 ic
@@ -2244,7 +2500,7 @@ jO
 Ug
 xg
 RN
-Hb
+jq
 yz
 lI
 MM
@@ -2252,15 +2508,15 @@ oj
 JY
 Zk
 yz
-Hb
+gv
 ue
 Ai
 Ug
 jO
 EW
-gv
+cj
 "}
-(25,1,1) = {"
+(28,1,1) = {"
 cb
 ic
 ic
@@ -2279,7 +2535,7 @@ Ug
 CL
 qX
 RN
-Hb
+gv
 EX
 EX
 EX
@@ -2287,15 +2543,15 @@ mK
 EX
 EX
 EX
-Hb
+jq
 ue
 Ai
 Ug
 ap
 gl
-gv
+cj
 "}
-(26,1,1) = {"
+(29,1,1) = {"
 ic
 ic
 ic
@@ -2314,23 +2570,23 @@ Ug
 rI
 Aw
 RN
-Hb
-jq
-Hb
+wR
+ac
+gv
 To
 Gg
 if
-Hb
-Ih
-Hb
+gv
+OR
+nj
 ue
 Ai
 rI
 Fv
 EW
-gv
+cj
 "}
-(27,1,1) = {"
+(30,1,1) = {"
 ic
 ic
 ic
@@ -2349,7 +2605,7 @@ Ug
 rI
 qX
 RN
-Hb
+gv
 EX
 EX
 EX
@@ -2357,15 +2613,15 @@ IK
 EX
 EX
 EX
-Hb
+wR
 ue
 Ai
 rI
 Fv
 EW
-gv
+cj
 "}
-(28,1,1) = {"
+(31,1,1) = {"
 ic
 ic
 ic
@@ -2384,7 +2640,7 @@ bV
 rI
 qX
 RN
-Hb
+gv
 tc
 LU
 RP
@@ -2392,15 +2648,15 @@ dV
 UD
 Gm
 jj
-Hb
+gv
 ue
 Ai
 rI
 Ug
 gl
-gv
+cj
 "}
-(29,1,1) = {"
+(32,1,1) = {"
 ic
 ic
 ic
@@ -2433,9 +2689,9 @@ Ai
 Lb
 jO
 WZ
-Hb
+gv
 "}
-(30,1,1) = {"
+(33,1,1) = {"
 ic
 ic
 ic
@@ -2468,9 +2724,9 @@ Ai
 Ug
 jO
 Rm
-Hb
+gv
 "}
-(31,1,1) = {"
+(34,1,1) = {"
 ic
 ic
 ic
@@ -2505,7 +2761,7 @@ ap
 Rm
 cb
 "}
-(32,1,1) = {"
+(35,1,1) = {"
 cb
 ic
 ic
@@ -2540,7 +2796,7 @@ eT
 WP
 cb
 "}
-(33,1,1) = {"
+(36,1,1) = {"
 cb
 cb
 ic
@@ -2554,12 +2810,12 @@ hH
 hH
 Bj
 rn
-Hb
+jg
+cj
+cj
+ch
 gv
-gv
-gv
-Hb
-Hb
+eX
 EX
 EX
 pC
@@ -2567,15 +2823,15 @@ pC
 eJ
 EX
 EX
-Hb
-Hb
-IR
-IR
-IR
+gv
+gv
+El
+El
+Ih
 IR
 cb
 "}
-(34,1,1) = {"
+(37,1,1) = {"
 cb
 cb
 ic
@@ -2589,28 +2845,28 @@ bD
 hH
 hH
 rn
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
+gv
+gv
+gv
+jg
+nj
+QH
 jq
-Hb
-RD
-Hb
-Hb
-Ih
-Hb
-Hb
-IR
-IR
-IR
-IR
+ac
+gv
+iJ
+wR
+gv
+Ej
+Fw
+gv
+DB
+ZW
+DB
+AZ
 cb
 "}
-(35,1,1) = {"
+(38,1,1) = {"
 cb
 cb
 ic
@@ -2624,28 +2880,28 @@ Yj
 hH
 hH
 rn
-Hb
-IR
-IR
-Hb
-Hb
-Hb
-Hb
-im
-Hb
-Hb
-Hb
-Hb
+gv
+re
+re
+gv
+gv
+Fw
+wR
+lc
+gv
 QH
-Hb
+gv
+gv
+Xc
+gv
+ZW
 IR
 IR
-IR
-IR
-cb
+RD
+im
 cb
 "}
-(36,1,1) = {"
+(39,1,1) = {"
 cb
 cb
 ic
@@ -2659,28 +2915,28 @@ hH
 hH
 vt
 rn
-IR
-IR
-IR
-IR
-IR
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
+im
 Ih
-Hb
+RD
+ZW
+im
+gv
+gv
+jq
+jg
+gv
+Fw
+gv
+VW
+jq
+AZ
+Ih
 IR
-IR
-IR
-cb
+DB
 cb
 cb
 "}
-(37,1,1) = {"
+(40,1,1) = {"
 cb
 cb
 cb
@@ -2694,128 +2950,23 @@ fC
 fC
 fC
 qB
+im
 IR
-IR
-IR
-IR
-IR
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-IR
-IR
-cb
-cb
-cb
-cb
-"}
-(38,1,1) = {"
-cb
-cb
-cb
-ic
-ic
-ic
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
 Ih
-Hb
-IR
-IR
-cb
-cb
-cb
-cb
-"}
-(39,1,1) = {"
-cb
-cb
-cb
-cb
-ic
-ic
-cb
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-Hb
-Hb
-jq
-Hb
-Hb
-Hb
-Hb
+DB
 Ih
-IR
-IR
-IR
-cb
-cb
-cb
-cb
-"}
-(40,1,1) = {"
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-Hb
-jq
-Hb
-Hb
-Hb
-Hb
+gv
+QH
+gv
+gv
+QH
+gv
+gv
+wR
+gv
+im
+ZW
 Ih
-IR
-IR
-IR
-cb
 cb
 cb
 cb
@@ -2824,33 +2975,33 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
+ic
+ic
+ic
+im
+Ih
+re
+Ih
+im
+DB
+AZ
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
+DB
+AZ
+RD
+im
 jq
-Hb
-Hb
-Hb
-Hb
-Hb
+Fw
+gv
+wR
+nj
+jq
+gv
+VW
+DB
 IR
-IR
-IR
-cb
+Ih
+RD
 cb
 cb
 cb
@@ -2860,32 +3011,32 @@ cb
 cb
 cb
 cb
+ic
+ic
 cb
-cb
-cb
-cb
-cb
+Ih
+ZW
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
+im
+ZW
+Ih
+Ih
+RD
+ZW
+Ih
+im
+gv
+gv
 ac
-Hb
-Hb
-Hb
+gv
+gv
+gv
+gv
+lu
+DB
+ZW
 IR
-IR
-IR
-IR
-cb
-cb
+El
 cb
 cb
 cb
@@ -2898,28 +3049,28 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
+im
 IR
 IR
+im
+im
 IR
+xX
+re
+El
+DB
 IR
+im
+wR
+ac
+Hb
+gv
+Fw
+gv
+VW
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-FV
-IR
-IR
-cb
+pT
+DB
 cb
 cb
 cb
@@ -2933,28 +3084,28 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+im
+Ih
+im
+ZW
+RD
+Ih
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-FV
-IR
-IR
-cb
+El
+RD
+re
+im
+RD
+im
+ac
+QH
+gv
+gv
+gv
+gv
+Ih
+im
+ZW
 cb
 cb
 cb
@@ -2970,26 +3121,26 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+Ih
 IR
+im
+im
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-cb
+Ih
+re
+pT
+ZW
+im
+re
+lV
+eX
+gv
+gv
+Ih
+AZ
+DB
+El
+RD
 cb
 cb
 cb
@@ -3008,23 +3159,23 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
-cb
+im
+ZW
+AZ
+RD
+im
+Ih
+im
+ZW
+Ih
+im
+Ih
+El
+DB
+Vh
+RD
+Ih
+im
 cb
 cb
 cb
@@ -3045,21 +3196,21 @@ cb
 cb
 cb
 cb
-cb
-cb
+DB
+Ih
+im
+ZW
+im
 IR
+Ih
+pT
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-IR
+RD
+El
 FV
-IR
-cb
-cb
+im
+ZW
+AZ
 cb
 cb
 cb
@@ -3082,18 +3233,18 @@ cb
 cb
 cb
 cb
-cb
+im
+IR
+AZ
 IR
 IR
+DB
+Ih
+im
+xX
+Ih
 IR
-ac
-IR
-IR
-IR
-IR
-IR
-cb
-cb
+El
 cb
 cb
 cb
@@ -3117,18 +3268,18 @@ cb
 cb
 cb
 cb
-cb
+DB
 IR
-IR
-IR
-ac
-IR
-IR
-IR
-IR
-IR
-cb
-cb
+DB
+ZW
+DB
+im
+ZW
+im
+ZW
+re
+RD
+El
 cb
 cb
 cb
@@ -3152,17 +3303,17 @@ cb
 cb
 cb
 cb
-cb
-cb
+AZ
+re
+RD
+Ih
+im
+ZW
+DB
 IR
-IR
-IR
-IR
-IR
-IR
-IR
-cb
-cb
+im
+Vh
+im
 cb
 cb
 cb
@@ -3187,16 +3338,16 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+im
+re
+pT
+im
+OD
+Ih
+IR
+im
+IR
+im
 cb
 cb
 cb
@@ -3223,15 +3374,15 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+El
+im
+AZ
+Bn
+El
+Ih
+im
+ZW
+re
 cb
 cb
 cb
@@ -3259,13 +3410,13 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+im
+ZW
+IR
+IR
+IR
+DB
+im
 cb
 cb
 cb
@@ -3294,10 +3445,10 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
+im
+DB
+IR
+im
 cb
 cb
 cb
@@ -3680,13 +3831,13 @@ cb
 cb
 cb
 cb
-Hb
-jq
-Hb
-Hb
-Hb
-Hb
-Hb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
 cb
 cb
 cb
@@ -3715,15 +3866,15 @@ cb
 cb
 cb
 cb
-Hb
-jq
-Hb
-Hb
-re
-Hb
-Ih
-Hb
-Hb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
 cb
 cb
 cb
@@ -3749,16 +3900,16 @@ cb
 cb
 cb
 cb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Ih
-Hb
-Ba
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
+cb
 cb
 cb
 cb
@@ -3783,17 +3934,17 @@ cb
 cb
 cb
 cb
-Hb
-Ba
-nP
-VW
-VW
-El
+cb
+cb
+gv
+ac
+gv
+gv
 yW
-oO
-oV
-Hb
-Hb
+gv
+gv
+cb
+cb
 cb
 cb
 cb
@@ -3818,18 +3969,18 @@ cb
 cb
 cb
 cb
-Hb
-Hb
-oV
-xX
-wR
-DC
-pT
-Fw
+cb
+cb
+gv
+ac
+gv
+Sw
+gv
+gv
 VW
-Hb
-Hb
-Hb
+gv
+gv
+cb
 cb
 cb
 cb
@@ -3852,19 +4003,19 @@ cb
 cb
 cb
 cb
-Hb
-RD
-Hb
-nP
-DC
+cb
+cb
+gv
+gv
+gv
+gv
+gv
+gv
+gv
 VW
-nP
-Qe
-AZ
-VW
-Hb
-Hb
-Hb
+gv
+Sw
+cb
 cb
 cb
 cb
@@ -3887,20 +4038,20 @@ cb
 cb
 cb
 cb
-Hb
-Hb
-Hb
-VW
-xX
+cb
+gv
+Sw
+OG
+oO
 oO
 Qe
 Ba
 oV
 nP
-Hb
-Hb
-Hb
-Hb
+gv
+gv
+cb
+cb
 cb
 cb
 cb
@@ -3922,20 +4073,20 @@ cb
 cb
 cb
 cb
-Hb
-Hb
-Hb
-OG
-DC
-Qe
+cb
+gv
+gv
+nP
+uG
+Cp
 GE
 po
-Hb
-VW
-Hb
-Hb
-Hb
-re
+si
+oO
+gv
+gv
+gv
+cb
 cb
 cb
 cb
@@ -3957,20 +4108,20 @@ cb
 cb
 cb
 cb
-Hb
-Hb
-Hb
-nP
-pT
-Qe
-Hb
+gv
+iJ
+gv
+OG
+GE
+oO
+OG
 mC
-Qe
-VW
-Hb
-RD
-Hb
-Hb
+cL
+oO
+gv
+gv
+gv
+cb
 cb
 cb
 cb
@@ -3992,20 +4143,20 @@ cb
 cb
 cb
 cb
-Hb
-Hb
-Hb
-VW
+gv
+gv
+gv
+oO
 uG
-oO
+oV
+mC
 DC
-DC
-oO
+nP
 OG
-Hb
-Hb
-Hb
-cb
+gv
+gv
+yW
+gv
 cb
 cb
 cb
@@ -4027,20 +4178,20 @@ cb
 cb
 cb
 cb
-Hb
-Hb
-Hb
+gv
+gv
+gv
 XD
-Fw
-VW
-OG
-nP
-VW
-XD
-Hb
-Hb
-Hb
-cb
+GE
+mC
+kt
+wE
+gv
+oO
+gv
+gv
+gv
+gv
 cb
 cb
 cb
@@ -4062,20 +4213,20 @@ cb
 cb
 cb
 cb
-cb
-Hb
-re
-Hb
-Hb
-Hb
-Hb
-Hb
-Ba
-Hb
-Hb
-cb
-cb
-cb
+gv
+gv
+gv
+OG
+po
+mC
+gv
+fw
+mC
+oO
+gv
+iJ
+gv
+gv
 cb
 cb
 cb
@@ -4097,19 +4248,19 @@ cb
 cb
 cb
 cb
-cb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-Hb
-cb
-cb
+gv
+yW
+gv
+oO
+kF
+oV
+GE
+GE
+oV
+XD
+gv
+gv
+gv
 cb
 cb
 cb
@@ -4132,19 +4283,19 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+gv
+gv
+gv
+zQ
+si
+oO
+XD
+OG
+oO
+zQ
+gv
+gv
+gv
 cb
 cb
 cb
@@ -4168,16 +4319,16 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+Sw
+gv
+gv
 cb
 cb
 cb
@@ -4203,16 +4354,16 @@ cb
 cb
 cb
 cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
-cb
+gv
+Sw
+gv
+gv
+gv
+gv
+gv
+gv
+gv
+yW
 cb
 cb
 cb
