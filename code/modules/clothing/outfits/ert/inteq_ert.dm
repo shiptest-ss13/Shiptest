@@ -1,5 +1,7 @@
 /datum/outfit/job/inteq/ert
 	name = "ERT - Inteq Rifleman"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
@@ -28,6 +30,8 @@
 
 /datum/outfit/job/inteq/ert/medic
 	name = "ERT - Inteq Corpsman"
+	jobtype = /datum/job/paramedic
+	job_icon = "paramedic"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
@@ -39,6 +43,8 @@
 
 /datum/outfit/job/inteq/ert/leader
 	name = "ERT - Inteq Vanguard"
+	jobtype = /datum/job/hos
+	job_icon = "headofsecurity"
 
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	back = /obj/item/storage/backpack/messenger/inteq

@@ -34,12 +34,12 @@
 	icon_state = "frontiersmanranged"
 	icon_living = "frontiersmanranged"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/gun/ballistic/revolver/nagant)
+				/obj/item/gun/ballistic/revolver)
 	ranged = 1
 	retreat_distance = 5
 	minimum_distance = 5
 	projectilesound = 'sound/weapons/gun/revolver/shot.ogg'
-	casingtype = /obj/item/ammo_casing/n762_38
+	casingtype = /obj/item/ammo_casing/a357
 
 /mob/living/simple_animal/hostile/frontier/ranged/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged)
@@ -48,8 +48,8 @@
 	icon_state = "frontiersmanrangedrifle"
 	icon_living = "frontiersmanrangedrifle"
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged,
-				/obj/item/gun/ballistic/rifle/boltaction)
-	casingtype = /obj/item/ammo_casing/a762_54
+				/obj/item/gun/ballistic/rifle/illestren)
+	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
 /mob/living/simple_animal/hostile/frontier/ranged/mosin/neutered
@@ -63,7 +63,7 @@
 	projectilesound = 'sound/weapons/gun/shotgun/shot.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
-				/obj/item/gun/ballistic/shotgun/lethal)
+				/obj/item/gun/ballistic/shotgun/brimstone)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/neutered
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
@@ -86,8 +86,8 @@
 	icon_living = "frontiersmanrangedmosin"
 
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper,
-				/obj/item/gun/ballistic/rifle/boltaction)
-	casingtype = /obj/item/ammo_casing/a762_54
+				/obj/item/gun/ballistic/rifle/illestren)
+	casingtype = /obj/item/ammo_casing/a8_50r
 	projectilesound = 'sound/weapons/gun/rifle/mosin.ogg'
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/rifle/neutered
