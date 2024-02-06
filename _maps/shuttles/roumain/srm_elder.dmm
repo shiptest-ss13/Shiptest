@@ -1382,6 +1382,10 @@
 	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/central)
+"qB" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/ebony,
+/area/ship/crew/cryo)
 "qD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
@@ -2922,10 +2926,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/item/toy/plush/sharai{
-	pixel_y = 8;
-	pixel_x = 2
-	},
 /turf/open/floor/wood/maple,
 /area/ship/hallway/port)
 "KO" = (
@@ -2933,7 +2933,11 @@
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "KP" = (
-/obj/structure/destructible/tribal_torch,
+/obj/item/flashlight/lamp/green{
+	pixel_y = 12;
+	pixel_x = 4
+	},
+/obj/structure/table/wood,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/cryo)
 "KQ" = (
@@ -3108,7 +3112,6 @@
 /turf/open/floor/plating,
 /area/ship/roumain)
 "MR" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
@@ -3406,33 +3409,23 @@
 /turf/open/floor/wood/maple,
 /area/ship/crew/cryo)
 "QA" = (
-/obj/item/melee/baton/cattleprod{
-	pixel_x = -6;
-	pixel_y = 7
-	},
-/obj/item/lighter{
-	pixel_x = -5;
-	pixel_y = 2
-	},
-/obj/item/screwdriver{
-	pixel_y = 4
-	},
-/obj/item/wirecutters{
-	pixel_y = 4;
-	pixel_x = 10
-	},
-/obj/item/kitchen/knife{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/obj/item/crowbar{
-	pixel_y = 8
-	},
-/obj/item/wrench{
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/corner/opaque/blue/diagonal,
 /obj/structure/table/wood,
+/obj/item/scalpel{
+	pixel_y = 7;
+	pixel_x = 8
+	},
+/obj/item/circular_saw{
+	pixel_x = 6
+	},
+/obj/item/cautery{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/obj/item/retractor{
+	pixel_x = -5
+	},
+/obj/item/hemostat,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "QD" = (
@@ -3476,7 +3469,6 @@
 /area/ship/hallway/central)
 "QX" = (
 /obj/structure/bonfire/dense,
-/obj/item/toy/plush/moth/punished,
 /turf/open/floor/ship/dirt/dark,
 /area/ship/roumain)
 "Ra" = (
@@ -4725,7 +4717,7 @@ sH
 sH
 sH
 yz
-KP
+qB
 Qm
 MR
 yz
