@@ -41,6 +41,12 @@
 /obj/structure/sign/poster/contraband/tools,
 /turf/closed/wall/r_wall/rust,
 /area/ruin/unpowered)
+"js" = (
+/obj/item/chair,
+/obj/effect/decal/cleanable/blood,
+/obj/item/gun/ballistic/automatic/pistol/candor,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/unpowered)
 "lg" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -162,6 +168,12 @@
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel/mono,
 /area/ruin/unpowered)
+"Cy" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/miner,
+/obj/item/pickaxe,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "CL" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall/r_wall/rust,
@@ -262,12 +274,6 @@
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/ruin/unpowered)
-"Qo" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/mob_spawn/human/miner,
-/obj/item/pickaxe,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Qr" = (
 /obj/effect/turf_decal/rechargefloor,
 /obj/structure/mecha_wreckage/ripley,
@@ -291,12 +297,6 @@
 	pixel_x = -5
 	},
 /obj/machinery/light/broken/directional/east,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/unpowered)
-"TI" = (
-/obj/item/chair,
-/obj/effect/decal/cleanable/blood,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered)
 "Uu" = (
@@ -448,7 +448,7 @@ tN
 (5,1,1) = {"
 yZ
 yZ
-Qo
+Cy
 yZ
 Vw
 YN
@@ -523,7 +523,7 @@ yZ
 tN
 yZ
 Vw
-TI
+js
 Wz
 Vw
 yZ

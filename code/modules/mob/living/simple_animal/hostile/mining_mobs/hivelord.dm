@@ -885,7 +885,6 @@
 				)
 		if("Shadow")
 			mob_species = /datum/species/shadow
-			r_pocket = /obj/item/reagent_containers/pill/shadowtoxin
 			neck = /obj/item/clothing/accessory/medal/plasma/nobel_science
 			uniform = /obj/item/clothing/under/color/black
 			shoes = /obj/item/clothing/shoes/sneakers/black
@@ -903,7 +902,7 @@
 				suit = /obj/item/clothing/suit/armor/roumain
 				head = /obj/item/clothing/head/cowboy/sec/roumain
 			if(prob(25))
-				suit_store = /obj/item/gun/ballistic/shotgun/winchester
+				suit_store = /obj/item/gun/ballistic/shotgun/flamingarrow
 			r_pocket = /obj/item/book/manual/trickwines_4_brewers
 			belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
 			back = /obj/item/storage/backpack/cultpack

@@ -704,19 +704,4 @@
 			/obj/item/crowbar/syndie = 30,
 			/obj/item/wirecutters/syndie = 30,
 			/obj/item/multitool/syndie = 30,
-
-			/obj/item/scalpel/alien = 1,
-			/obj/item/hemostat/alien = 1,
-			/obj/item/cautery/alien = 1,
-			/obj/item/retractor/alien = 1,
-			/obj/item/circular_saw/alien = 1,
-			/obj/item/surgicaldrill/alien = 1,
-
-			/obj/item/wrench/abductor = 1,
-			/obj/item/screwdriver/abductor = 1,
-			/obj/item/weldingtool/abductor = 1,
-			/obj/item/crowbar/abductor = 1,
-			/obj/item/wirecutters/abductor = 1,
-			/obj/item/multitool/abductor = 1,
-
 		)

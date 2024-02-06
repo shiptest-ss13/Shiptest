@@ -49,8 +49,8 @@
 /obj/item/ammo_box/magazine/toy/m762
 	name = "donksoft box magazine"
 	desc = "A huge toy LMG magazine designed to fit vast quantities of harmless foam darts."
-	icon_state = "a762-toy"
-	base_icon_state = "a762"
+	icon_state = "a850r-toy"
+	base_icon_state = "a850r"
 	caliber = "foam_force"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	max_ammo = 50
@@ -62,5 +62,5 @@
 
 /obj/item/ammo_box/magazine/toy/m762/riot
 	desc = "A huge toy LMG magazine designed to fit vast quantities of legally-harmless riot control darts."
-	icon_state = "a762-riot"
+	icon_state = "a850r-riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot

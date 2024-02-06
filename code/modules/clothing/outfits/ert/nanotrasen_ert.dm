@@ -235,10 +235,10 @@
 	ears = /obj/item/radio/headset/headset_cent
 	glasses = /obj/item/clothing/glasses/sunglasses
 	belt = /obj/item/melee/classic_baton
-	r_hand = /obj/item/gun/ballistic/rifle/boltaction
+	r_hand = /obj/item/gun/ballistic/rifle/illestren
 	back = /obj/item/storage/backpack/satchel
-	l_pocket = /obj/item/ammo_box/a762
-	r_pocket = /obj/item/ammo_box/a762
+	l_pocket = /obj/item/ammo_box/magazine/illestren_a850r
+	r_pocket = /obj/item/ammo_box/magazine/illestren_a850r
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
 /datum/outfit/centcom/centcom_intern/unarmed
@@ -263,7 +263,7 @@
 	name = "CentCom Head Intern"
 	belt = /obj/item/melee/baton/loaded
 	suit = /obj/item/clothing/suit/armor/vest
-	suit_store = /obj/item/gun/ballistic/rifle/boltaction
+	suit_store = /obj/item/gun/ballistic/rifle/illestren
 	r_hand = /obj/item/megaphone
 	head = /obj/item/clothing/head/intern
 
@@ -379,9 +379,10 @@
 	headset.recalculateChannels()
 
 // Loss Prevention
-/datum/outfit/job/nanotrasen/ert/lp
+/datum/outfit/job/nanotrasen/security/ert/lp
 	name = "ERT - Loss Prevention Security Specialist"
 	jobtype = /datum/job/officer
+	job_icon = "securityresponseofficer"
 
 	head = null
 	implants = list(/obj/item/implant/mindshield)
@@ -403,9 +404,10 @@
 	backpack_contents = list(/obj/item/radio=1, /obj/item/stock_parts/cell/gun/upgraded=2, /obj/item/screwdriver=1)
 
 
-/datum/outfit/job/nanotrasen/ert/lp/medic
+/datum/outfit/job/nanotrasen/security/ert/lp/medic
 	name = "ERT - Loss Prevention Medical Specialist"
 	jobtype = /datum/job/doctor
+	job_icon = "medicalresponseofficer"
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/medical/paramedic/lp
@@ -422,9 +424,10 @@
 	backpack_contents = list(/obj/item/storage/firstaid/medical=1, /obj/item/radio=1)
 
 
-/datum/outfit/job/nanotrasen/ert/lp/engineer
+/datum/outfit/job/nanotrasen/security/ert/lp/engineer
 	name = "ERT - Loss Prevention Engineering Specialist"
 	jobtype = /datum/job/engineer
+	job_icon = "engineeringresponseofficer"
 
 	head = null
 	uniform = /obj/item/clothing/under/rank/engineering/engineer/nt/lp
@@ -441,9 +444,10 @@
 
 	backpack_contents = list(/obj/item/stack/sheet/metal/fifty=1, /obj/item/stack/sheet/glass/fifty=1, /obj/item/radio=1)
 
-/datum/outfit/job/nanotrasen/ert/lp/lieutenant
+/datum/outfit/job/nanotrasen/security/ert/lp/lieutenant
 	name = "ERT - Loss Prevention Lieutenant"
 	jobtype = /datum/job/captain
+	job_icon = "emergencyresponseteamcommander"
 
 	head = null
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
