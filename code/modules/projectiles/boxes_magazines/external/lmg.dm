@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/mm712x82
 	name = "box magazine (7.12x82mm)"
 	desc = "A 50-round box magazine for the L6 SAW machine gun. These rounds do moderate damage with significant armor penetration."
-	icon_state = "a762-50"
+	icon_state = "a762-100"
 	base_icon_state = "a762"
 	ammo_type = /obj/item/ammo_casing/mm712x82
 	caliber = "7.12x82mm"
