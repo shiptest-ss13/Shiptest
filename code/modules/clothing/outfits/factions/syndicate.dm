@@ -522,6 +522,7 @@
 
 /datum/outfit/job/syndicate/hos/twink
 	name = "Syndicate - Lieutenant (Twinkleshine)"
+	job_icon = "lieutenant"
 
 	uniform = /obj/item/clothing/under/syndicate/aclfgrunt
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
@@ -551,7 +552,7 @@
 	. = ..()
 	assign_codename(H)
 
-/datum/outfit/job/syndicate/hos/suns/
+/datum/outfit/job/syndicate/hos/suns
 	name = "Syndicate - Senior Peacekeeper (SUNS)"
 	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/hos
@@ -570,6 +571,20 @@
 	name = "Syndicate - Senior Peacekeeper Alt (SUNS)"
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/ehos
 	head = /obj/item/clothing/head/HoS/syndicate/suns
+
+/datum/outfit/job/syndicate/hos/suns/twink
+	name = "Syndicate - Redshield Officer (SUNS)"
+
+	suit = null
+	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
+	ears = null
+	head = null
+	suit_store = null
+	glasses = null
+
+/datum/outfit/job/syndicate/hos/suns/twink/post_equip(mob/living/carbon/human/H)
+	. = ..()
+	assign_codename(H)
 
 //medical doctors (assorted)
 
