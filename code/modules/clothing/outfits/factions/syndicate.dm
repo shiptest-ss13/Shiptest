@@ -979,7 +979,7 @@
 	glasses = null
 
 /datum/outfit/job/syndicate/engineer/twink
-	name = "Syndicate - Ship Engineer (Twinkleshine)"
+	name = "Syndicate - Ship Engineer (Twinkleshine, GEC)"
 
 	uniform = /obj/item/clothing/under/syndicate/gec
 	id = /obj/item/card/id/syndicate_command/crew_id/engi
