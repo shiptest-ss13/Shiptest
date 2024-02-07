@@ -331,13 +331,29 @@
 /area/ship/hallway/central)
 "cY" = (
 /obj/structure/rack,
-/obj/item/ammo_box/c38_box{
-	pixel_x = 4;
-	pixel_y = 5
+/obj/item/storage/toolbox/ammo/a850r{
+	pixel_y = 14;
+	pixel_x = 5
 	},
 /obj/item/ammo_box/c38_box{
-	pixel_x = -4;
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8;
 	pixel_y = 2
+	},
+/obj/item/ammo_box/c38_box{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8;
+	pixel_y = -2
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -653,16 +669,12 @@
 "gR" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/breakawayflask{
-	pixel_x = 4;
-	pixel_y = 16
+	pixel_x = -6;
+	pixel_y = 13
 	},
 /obj/item/reagent_containers/food/drinks/breakawayflask{
-	pixel_x = -7;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/breakawayflask{
-	pixel_x = 8;
-	pixel_y = 6
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
@@ -844,25 +856,13 @@
 /area/ship/hallway/port)
 "jk" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/meat/steak{
-	pixel_y = -14;
-	pixel_x = -6
+/obj/item/reagent_containers/food/drinks/breakawayflask{
+	pixel_x = 6;
+	pixel_y = 15
 	},
-/obj/item/reagent_containers/food/snacks/meat/steak{
-	pixel_y = -9;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/snacks/meat/steak{
-	pixel_y = -3;
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/food/snacks/meat/steak{
-	pixel_y = 2;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/snacks/meat/steak{
-	pixel_y = 7;
-	pixel_x = -3
+/obj/item/reagent_containers/food/drinks/breakawayflask{
+	pixel_x = -6;
+	pixel_y = 10
 	},
 /turf/open/floor/grass/ship/jungle,
 /area/ship/roumain)
@@ -1232,21 +1232,18 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/hallway/central)
 "ox" = (
-/obj/item/gun/ballistic/shotgun/winchester/mk1{
-	pixel_x = -7;
-	pixel_y = -7
-	},
-/obj/item/gun/ballistic/shotgun/winchester/mk1{
-	pixel_x = -7;
-	pixel_y = -3
-	},
-/obj/item/gun/ballistic/shotgun/winchester/mk1{
-	pixel_x = -7;
-	pixel_y = 1
-	},
 /obj/structure/guncase,
 /obj/machinery/door/window/eastright{
 	dir = 8
+	},
+/obj/item/gun/ballistic/shotgun/flamingarrow{
+	pixel_y = -5
+	},
+/obj/item/gun/ballistic/shotgun/flamingarrow{
+	pixel_y = 0
+	},
+/obj/item/gun/ballistic/shotgun/flamingarrow/bolt{
+	pixel_y = 5
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -1996,14 +1993,15 @@
 	pixel_y = 2
 	},
 /obj/item/kitchen/knife/combat,
-/obj/item/gun/ballistic/revolver/srm,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 5
 	},
-/obj/item/ammo_box/a357_box,
 /obj/item/gps{
 	pixel_x = -7
 	},
+/obj/item/gun/ballistic/revolver/montagne,
+/obj/item/ammo_box/c38/match,
+/obj/item/ammo_box/c38/match,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "zH" = (
@@ -2171,27 +2169,20 @@
 /area/ship/hallway/port)
 "Bi" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/rifle/boltaction/roumain{
-	pixel_y = 7;
-	pixel_x = -6
-	},
-/obj/item/gun/ballistic/derringer{
-	pixel_y = -3;
-	pixel_x = 12
-	},
-/obj/item/gun/ballistic/derringer{
-	pixel_y = -3;
-	pixel_x = 6
-	},
-/obj/item/gun/ballistic/derringer{
-	pixel_y = -3
-	},
-/obj/item/gun/ballistic/derringer{
-	pixel_y = -3;
-	pixel_x = -6
-	},
 /obj/machinery/door/window{
 	dir = 8
+	},
+/obj/item/gun/ballistic/rifle/illestren{
+	pixel_x = -4;
+	pixel_y = -5
+	},
+/obj/item/gun/ballistic/rifle/illestren{
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/gun/ballistic/rifle/illestren{
+	pixel_x = -4;
+	pixel_y = 3
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -2263,12 +2254,31 @@
 /area/ship/engineering/atmospherics)
 "BJ" = (
 /obj/structure/crate_shelf,
-/obj/structure/closet/crate{
-	name = "Ammo Crate"
+/obj/structure/closet/crate,
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = 7;
+	pixel_x = -3
 	},
-/obj/item/disk/design_disk/ammo_357_surplus{
-	pixel_x = -4;
-	pixel_y = 0
+/obj/item/reagent_containers/food/snacks/meat/steak/chicken,
+/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
+	pixel_y = 6;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = 0;
+	pixel_x = -9
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak{
+	pixel_y = -6;
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
+	pixel_y = -4;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/snacks/meat/steak/chicken{
+	pixel_y = 5;
+	pixel_x = -6
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
