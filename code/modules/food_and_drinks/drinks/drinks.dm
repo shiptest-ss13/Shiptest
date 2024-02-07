@@ -212,8 +212,8 @@
 //	Formatting is the same as food.
 
 /obj/item/reagent_containers/food/drinks/coffee
-	name = "robust coffee"
-	desc = "Careful, the beverage you're about to enjoy is extremely hot."
+	name = "Solar's Best black coffee"
+	desc = "A cup of piping hot black coffee. Made from beans grown across the solar cantons for the caffeine that every spacer needs."
 	icon_state = "coffee"
 	list_reagents = list(/datum/reagent/consumable/coffee = 30)
 	spillable = TRUE
@@ -254,8 +254,8 @@
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 
 /obj/item/reagent_containers/food/drinks/mug/coco
-	name = "Dutch hot coco"
-	desc = "Made in Space South America."
+	name = "Solar's Best Hot Cocoa"
+	desc = "A cup of hot water mixed with chocolate and malted milk powder. A classic hot drink from the Solarian Confederation."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
@@ -665,18 +665,18 @@
 	list_reagents = list(/datum/reagent/consumable/space_up = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/starkist
-	name = "Star-kist"
-	desc = "The taste of a star in liquid form. And, a bit of tuna...?"
-	icon_state = "starkist"
-	list_reagents = list(/datum/reagent/consumable/space_cola = 15, /datum/reagent/consumable/orangejuice = 15)
+/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch
+	name = "Lunapunch"
+	desc = "A soda with a distinctly herbal sweetness and a bitter aftertaste, popular across the C.L.I.P. colonies. Originally marketed as a health soft-drink for members of the CMM, the herbs used in its recipe claim to have health benefits... to dubious results."
+	icon_state = "lunapunch"
+	list_reagents = list(/datum/reagent/consumable/lunapunch = 30)
 	foodtype = SUGAR | FRUIT | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind
-	name = "Space Mountain Wind"
-	desc = "Blows right through you like a space wind."
-	icon_state = "space_mountain_wind"
-	list_reagents = list(/datum/reagent/consumable/spacemountainwind = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/comet_trail
+	name = "Comet Trail"
+	desc = "A citrusy drink from the Kepori space installation known as The Ring. Known for its sharp flavor and refreshing carbonation -- best served cold."
+	icon_state = "comet_trail"
+	list_reagents = list(/datum/reagent/consumable/comet_trail = 30)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko
@@ -686,18 +686,18 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb
-	name = "Dr. Gibb"
-	desc = "A delicious mixture of 42 different flavors."
-	icon_state = "dr_gibb"
-	list_reagents = list(/datum/reagent/consumable/dr_gibb = 30)
+/obj/item/reagent_containers/food/drinks/soda_cans/tadrixx
+	name = "Tadrixx"
+	desc = "A Kalixcian drink made from a plant that tastes similar to sassafrass, which is used in root beer. A stumpy drake holding a mug of it is on the front."
+	icon_state = "tadrixx"
+	list_reagents = list(/datum/reagent/consumable/tadrixx = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game
-	name = "Pwr Game"
-	desc = "The only drink with the PWR that true gamers crave. When a gamer talks about gamerfuel, this is what they're literally referring to."
+/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel
+	name = "PAC-Fuel"
+	desc = "A carbonated energy drink themed after the purple coloration, similar to plasma. It seems to have gotten a sponsorship with the the G.E.C., with a special offer for some sort of deal on... gaming gear and industrial equipment?"
 	icon_state = "purple_can"
-	list_reagents = list(/datum/reagent/consumable/pwr_game = 30)
+	list_reagents = list(/datum/reagent/consumable/pacfuel = 30)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/shamblers
 	name = "Shambler's juice"
@@ -713,12 +713,12 @@
 	list_reagents = list(/datum/reagent/consumable/grey_bull = 20)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/monkey_energy
-	name = "Monkey Energy"
-	desc = "Unleash the ape!"
-	icon_state = "monkey_energy"
-	item_state = "monkey_energy"
-	list_reagents = list(/datum/reagent/consumable/monkey_energy = 40, /datum/reagent/consumable/electrolytes = 10)
+/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy
+	name = "Xeno-Energy"
+	desc = "A sickly green energy drink that poses itself as made from the real blood of xenomorphs. Deeply controversial among the BARD ranks."
+	icon_state = "xeno_energy"
+	item_state = "xeno_energy"
+	list_reagents = list(/datum/reagent/consumable/xeno_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/efuel

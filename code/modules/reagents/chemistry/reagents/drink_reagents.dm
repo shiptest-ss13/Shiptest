@@ -439,16 +439,16 @@
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
 
-/datum/reagent/consumable/spacemountainwind
-	name = "SM Wind"
-	description = "Blows right through you like a space wind."
+/datum/reagent/consumable/comet_trail
+	name = "Comet Trail"
+	description = "A citrusy drink from the Kepori space installation known as The Ring."
 	color = "#c4ff2d" // rgb: 16, 32, 0
 	taste_description = "sweet citrus soda"
-	glass_icon_state = "Space_mountain_wind_glass"
-	glass_name = "glass of Space Mountain Wind"
-	glass_desc = "Space Mountain Wind. As you know, there are no mountains in space, only wind."
+	glass_icon_state = "Comet_trail_glass"
+	glass_name = "glass of Comet Trail"
+	glass_desc = "A glass of Comet Trail. Taste the stars!"
 
-/datum/reagent/consumable/spacemountainwind/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/comet_trail/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-20)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -456,16 +456,16 @@
 	..()
 	. = 1
 
-/datum/reagent/consumable/dr_gibb
-	name = "Dr. Gibb"
-	description = "A delicious blend of 42 different flavours."
+/datum/reagent/consumable/tadrixx
+	name = "Tadrixx"
+	description = "A Kalixcian drink made from a plant that tastes similar to sassafrass, which is used in root beer. A stumpy drake holding a mug of it is on the front."
 	color = "#732a03"
-	taste_description = "cherry soda" // FALSE ADVERTISING
-	glass_icon_state = "dr_gibb_glass"
-	glass_name = "glass of Dr. Gibb"
-	glass_desc = "Dr. Gibb. Not as dangerous as the glass_name might imply."
+	taste_description = "root beer" // FALSE ADVERTISING
+	glass_icon_state = "tadrixx_glass"
+	glass_name = "glass of Tadrixx"
+	glass_desc = "A cup of fizzy Tadrixx. It smells sweet."
 
-/datum/reagent/consumable/dr_gibb/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/tadrixx/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-6)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
@@ -499,14 +499,14 @@
 	..()
 
 
-/datum/reagent/consumable/pwr_game
-	name = "Pwr Game"
-	description = "The only drink with the PWR that true gamers crave."
+/datum/reagent/consumable/pacfuel
+	name = "PAC-Fuel"
+	description = "A carbonated energy drink themed after the purple coloration, similar to plasma."
 	color = "#9385bf" // rgb: 58, 52, 75
 	taste_description = "sweet and salty tang"
 	glass_icon_state = "glass_red"
-	glass_name = "glass of Pwr Game"
-	glass_desc = "Goes well with a Vlad's salad."
+	glass_name = "glass of PAC-Fuel"
+	glass_desc = "A glass of PAC-Fuel energy drink. It smells vaguely like acidic cotton candy..."
 
 /datum/reagent/consumable/pwr_game/expose_mob(mob/living/C, method=TOUCH, reac_volume)
 	..()
@@ -565,17 +565,17 @@
 	..()
 	. = 1
 
-/datum/reagent/consumable/monkey_energy
-	name = "Monkey Energy"
-	description = "The only drink that will make you unleash the ape."
-	color = "#f39b03" // rgb: 243, 155, 3
+/datum/reagent/consumable/xeno_energy
+	name = "Xeno-Energy"
+	description = "An unbearably sugary, fizzy green drink."
+	color = "#88b488" // rgb: 243, 155, 3
 	overdose_threshold = 60
-	taste_description = "barbecue and nostalgia"
-	glass_icon_state = "monkey_energy_glass"
-	glass_name = "glass of Monkey Energy"
-	glass_desc = "You can unleash the ape, but without the pop of the can?"
+	taste_description = "tooth-rotting sweetness"
+	glass_icon_state = "xeno_energy_glass"
+	glass_name = "glass of Xeno Energy"
+	glass_desc = "A glass of Xeno Energy. It seems to swirl and roil outside of the can..."
 
-/datum/reagent/consumable/monkey_energy/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/xeno_energy/on_mob_life(mob/living/carbon/M)
 	M.Jitter(20)
 	M.dizziness +=1
 	M.drowsyness = 0
@@ -583,18 +583,13 @@
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
 
-/datum/reagent/consumable/monkey_energy/on_mob_metabolize(mob/living/L)
+/datum/reagent/consumable/xeno_energy/on_mob_metabolize(mob/living/L)
 	..()
 	if(ismonkey(L))
-		L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/monkey_energy)
+		L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/xeno_energy)
 
-/datum/reagent/consumable/monkey_energy/on_mob_end_metabolize(mob/living/L)
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/monkey_energy)
-	..()
-
-/datum/reagent/consumable/monkey_energy/overdose_process(mob/living/M)
-	if(prob(15))
-		M.say(pick_list_replacements(BOOMER_FILE, "boomer"), forced = /datum/reagent/consumable/monkey_energy)
+/datum/reagent/consumable/xeno_energy/on_mob_end_metabolize(mob/living/L)
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/xeno_energy)
 	..()
 
 /datum/reagent/consumable/ice
@@ -729,16 +724,16 @@
 	glass_name = "pumpkin latte"
 	glass_desc = "A mix of coffee and pumpkin juice."
 
-/datum/reagent/consumable/gibbfloats
-	name = "Gibb Floats"
-	description = "Ice cream on top of a Dr. Gibb glass."
-	color = "#B22222"
+/datum/reagent/consumable/tadrixxfloat
+	name = "Tadrixx Float"
+	description = "Ice cream on top of a glass of Tadrixx."
+	color = "#533713"
 	quality = DRINK_NICE
 	nutriment_factor = 3 * REAGENTS_METABOLISM
-	taste_description = "creamy cherry"
-	glass_icon_state = "gibbfloats"
-	glass_name = "Gibbfloat"
-	glass_desc = "Dr. Gibb with ice cream on top."
+	taste_description = "creamy root beer"
+	glass_icon_state = "tadrixxfloat"
+	glass_name = "Tadrixxfloat"
+	glass_desc = "A glass of Tadrixx with ice cream on top."
 
 /datum/reagent/consumable/pumpkinjuice
 	name = "Pumpkin Juice"
@@ -781,15 +776,21 @@
 	quality = DRINK_NICE
 	taste_description = "chocolate milk"
 
+/datum/reagent/consumable/lunapunch
+	name = "Lunapunch"
+	description = "An herbal-sweet carbonated drink with a bitter bite."
+	color = "#7D4E29"
+	quality = DRINK_NICE
+	taste_description = "sweet herbs and lingering bitterness"
 /datum/reagent/consumable/hot_coco
-	name = "Hot Coco"
-	description = "Made with love! And coco beans."
+	name = "Hot Cocoa"
+	description = "Made with love! And cocoa beans."
 	nutriment_factor = 3 * REAGENTS_METABOLISM
 	color = "#4f3a11" // rgb: 64, 48, 16
 	taste_description = "creamy chocolate"
 	glass_icon_state  = "chocolateglass"
-	glass_name = "glass of hot coco"
-	glass_desc = "A favorite winter drink to warm you up."
+	glass_name = "glass of hot cocoa."
+	glass_desc = "A favorite winter drink from the Solar Confederation. Good for warming yourself up."
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())
