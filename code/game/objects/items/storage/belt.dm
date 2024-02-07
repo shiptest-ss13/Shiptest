@@ -155,13 +155,6 @@
 	item_state = "medical"
 	supports_variations = VOX_VARIATION
 
-/obj/item/storage/belt/medical/old
-	name = "medical belt"
-	desc = "Can hold various medical equipment. Looks retro."
-	icon_state = "medical_old"
-	item_state = "medical_old"
-	supports_variations = VOX_VARIATION
-
 /obj/item/storage/belt/medical/webbing
 	name = "medical webbing"
 	desc = "Versatile chest rig, valued by field medics of all stripes for its ease of use. Can hold various medical equipment."
