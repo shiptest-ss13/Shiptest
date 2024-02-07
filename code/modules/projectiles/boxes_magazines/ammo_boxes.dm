@@ -154,18 +154,6 @@
 
 // Ammo Boxes
 
-/obj/item/ammo_box/a357_box
-	name = "ammo box (.357 Magnum)"
-	desc = "A box of ammo for .357 Magnum Revolvers."
-	icon_state = "357box"
-	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 28
-
-/obj/item/ammo_box/a357_box/surplus
-	name = "ammo box (.357 Surplus)"
-	desc = "A box of surplus ammo for .357 Magnum Revolvers."
-	ammo_type = /obj/item/ammo_casing/a357/surplus
-
 /obj/item/ammo_box/c38_box
 	name = "ammo box (.38)"
 	desc = "A box of standard .38 special ammo."

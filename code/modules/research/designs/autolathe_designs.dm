@@ -838,13 +838,6 @@
 	build_path = /obj/item/ammo_casing/a357
 	category = list("emagged", "Security")
 
-/datum/design/a357_surplus
-	name = "Ammo Box (.357 Surplus)"
-	id = "a357-surplus"
-	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/a357_box/surplus
-
 /datum/design/c10mm_surplus
 	name = "Ammo Box (10mm surplus)"
 	id = "c10mm-surplus"

@@ -93,10 +93,6 @@
 	name = ".357 bullet"
 	damage = 30 //shiptest nerf
 
-/obj/projectile/bullet/a357/surplus
-	name = ".357 surplus bullet"
-	damage = 25
-
 // admin only really, for ocelot memes
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"

@@ -138,14 +138,6 @@ other types of metals and chemistry for reagents).
 	blueprints[1] = new /datum/design/c10mm()
 
 
-/obj/item/disk/design_disk/ammo_357_surplus
-	name = "Design Disk - .357 Surplus Ammo"
-	desc = "A design disk containing the pattern for a refill box of surplus .357 ammo, used in Magnum Revolvers."
-
-/obj/item/disk/design_disk/ammo_357_surplus/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/a357_surplus()
-
 /obj/item/disk/design_disk/adv/disposable_gun
 	name = "design disk - disposable gun"
 	desc = "A design disk containing designs for a cheap and disposable gun."
