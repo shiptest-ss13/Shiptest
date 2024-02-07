@@ -47,6 +47,7 @@
 	uplink_type = /obj/item/uplink/clownop
 
 /datum/outfit/syndicate/clownop/no_crystals
+	name = "Clown Operative - No Crystals"
 	tc = 0
 
 /datum/outfit/syndicate/clownop/leader
