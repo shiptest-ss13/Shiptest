@@ -78,29 +78,32 @@
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
-/obj/item/gun/ballistic/automatic/smg/c20r/toy //This is the syndicate variant with syndicate firing pin and riot darts.
+/obj/item/gun/ballistic/automatic/smg/c20r/toy
 	name = "donksoft SMG"
 	desc = "A bullpup two-round burst toy SMG, designated 'C-20r'. Ages 8 and up."
 	can_suppress = FALSE
 	item_flags = NONE
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
+	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
 	fire_sound = 'sound/items/syringeproj.ogg'
 	casing_ejector = FALSE
 	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
 
+/obj/item/gun/ballistic/automatic/smg/c20r/toy/riot
+	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
+
 /obj/item/gun/ballistic/automatic/smg/c20r/toy/update_overlays()
 	. = ..()
 	. += "[icon_state]_toy"
 
-/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy //This is the syndicate variant with syndicate firing pin and riot darts.
+/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy
 	name = "donksoft LMG"
 	desc = "A heavily modified toy light machine gun, designated 'L6 SAW'. Ages 8 and up."
 	fire_sound = 'sound/items/syringeproj.ogg'
 	can_suppress = FALSE
 	item_flags = NONE
-	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
+	mag_type = /obj/item/ammo_box/magazine/toy/m762
 	casing_ejector = FALSE
 	manufacturer = MANUFACTURER_DONKCO
 	recoil = -10 //its a toy...
