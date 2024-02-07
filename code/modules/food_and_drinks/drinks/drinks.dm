@@ -272,8 +272,8 @@
 	custom_price = 95
 
 /obj/item/reagent_containers/food/drinks/waterbottle
-	name = "bottle of water"
-	desc = "A bottle of water filled at an old Earth bottling facility."
+	name = "Ryuunosuke Reserve" //we still have to find a way to make multiple variants as per the plan
+	desc = "Water bottled from a plant somewhere on Ryuunosuke. It has a mild, mineral-y flavor."
 	icon = 'icons/obj/drinks.dmi'
 	icon_state = "smallbottle"
 	item_state = "bottle"
@@ -347,8 +347,8 @@
 	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "space beer"
-	desc = "Beer. In space."
+	name = "Gezenan Dark Mead" //ditto the plan for bottled water, need to find a way to make multiple variants
+	desc = "A popular Gezenan drink made of fermented honey and spices."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = GRAIN | ALCOHOL
@@ -360,8 +360,8 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 
 /obj/item/reagent_containers/food/drinks/ale
-	name = "Magm-Ale"
-	desc = "A true dorf's drink of choice."
+	name = "Telh'aim Pale"
+	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. It boasts being made from coke that's used on the very same planet's industry, apparently."
 	icon_state = "alebottle"
 	item_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
@@ -621,22 +621,22 @@
 	. = ..()
 
 /obj/item/reagent_containers/food/drinks/soda_cans/cola
-	name = "Space Cola"
-	desc = "Cola. in space."
+	name = "Master Cola"
+	desc = "Originally a commission to the Rachnid culinary guilds from Solarian historical reenactors on creating an authentic cola that, at some point, dominated the globe in popularity, this soft drink comes as close to anyone might be able to taste the sodas of yore... But it's still a pretty alright drink."
 	icon_state = "cola"
 	list_reagents = list(/datum/reagent/consumable/space_cola = 30)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/drinks/soda_cans/tonic
-	name = "T-Borg's tonic water"
-	desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	name = "Sixikirtchia's Tonic"
+	desc = "A can of water mixed with quinine, which the label purportedly states that it has more health benefits for the Vox than fending off malaria. Most people use it for mixing drinks, Vox or otherwise."
 	icon_state = "tonic"
 	list_reagents = list(/datum/reagent/consumable/tonic = 50)
 	foodtype = ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sodawater
-	name = "soda water"
-	desc = "A can of soda water. Why not make a scotch and soda?"
+	name = "Stitiamix Club"
+	desc = "Mineral-flavored carbonated water, infused on some part of The Shoal. Touts being made out of minerals from embedded asteroids, apparently!"
 	icon_state = "sodawater"
 	list_reagents = list(/datum/reagent/consumable/sodawater = 50)
 
@@ -653,7 +653,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/sol_dry
 	name = "Sol Dry"
-	desc = "Maybe this will help your tummy feel better. Maybe not."
+	desc = "A can of ginger ale, known for helping those with upset stomachs. Popularized due to a widespread belief from Solarians that drinking it will alleviate the nausea from bluespace travel."
 	icon_state = "sol_dry"
 	list_reagents = list(/datum/reagent/consumable/sol_dry = 30)
 	foodtype = SUGAR
@@ -736,13 +736,13 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/molten
 	name = "Molten Bubbles"
-	desc = "A spicy cola to cool the nerves and burn the soul."
+	desc = "A spicy soft drink made from a coca-like plant from Kalixcis. Popularly served both cold -and- hot, depending on the weather."
 	icon_state = "molten"
 	list_reagents = list(/datum/reagent/medicine/molten_bubbles = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/plasma
 	name = "Plasma Fizz"
-	desc = "A dangerous fusion of flavors!"
+	desc = "A spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	icon_state = "plasma"
 	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
 

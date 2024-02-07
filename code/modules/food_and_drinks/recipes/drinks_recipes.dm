@@ -205,7 +205,7 @@
 
 /datum/chemical_reaction/demonsblood
 	results = list(/datum/reagent/consumable/ethanol/demonsblood = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/spacemountainwind = 1, /datum/reagent/blood = 1, /datum/reagent/consumable/dr_gibb = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/spacemountainwind = 1, /datum/reagent/blood = 1, /datum/reagent/consumable/tadrixx = 1)
 
 /datum/chemical_reaction/booger
 	results = list(/datum/reagent/consumable/ethanol/booger = 4)
@@ -368,9 +368,9 @@
 	results = list(/datum/reagent/consumable/pumpkin_latte = 15)
 	required_reagents = list(/datum/reagent/consumable/pumpkinjuice = 5, /datum/reagent/consumable/coffee = 5, /datum/reagent/consumable/cream = 5)
 
-/datum/chemical_reaction/gibbfloats
-	results = list(/datum/reagent/consumable/gibbfloats = 15)
-	required_reagents = list(/datum/reagent/consumable/dr_gibb = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
+/datum/chemical_reaction/tadrixxfloat
+	results = list(/datum/reagent/consumable/tadrixxfloat = 15)
+	required_reagents = list(/datum/reagent/consumable/tadrixx = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/cream = 5)
 
 /datum/chemical_reaction/triple_citrus
 	results = list(/datum/reagent/consumable/triple_citrus = 5)

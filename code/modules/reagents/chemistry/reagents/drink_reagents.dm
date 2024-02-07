@@ -484,6 +484,34 @@
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
 
+/datum/reagent/consumable/molten
+	name = "Molten Bubbles"
+	description = "A spicy soft drink made from a coca-like plant from Kalixcis. Popularly served both cold -and- hot, depending on the weather."
+	color = "#5f2010"
+	taste_description = "spiced cola"
+	glass_icon_state = "molten_glass"
+	glass_name = "glass of Molten Bubbles"
+	glass_desc = "A glass of Molten Bubbles. The spices tickle your nose."
+
+
+/datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	..()
+
+/datum/reagent/consumable/plasma_fizz
+	name = "Plasma Fizz"
+	description = "A  spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
+	color = "#5f2010"
+	taste_description = "spiced grape soda"
+	glass_icon_state = "plasma_fizz_glass"
+	glass_name = "glass of Plasma Fizz"
+	glass_desc = "A glass of Plasma Fizz. The spices (and fake grape flavoring) wrinkles your nose."
+
+
+/datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+	..()
+
 /datum/reagent/consumable/lemon_lime
 	name = "Lemon Lime"
 	description = "A tangy substance made of 0.5% natural citrus!"
@@ -512,7 +540,7 @@
 	..()
 	if(C?.mind?.get_skill_level(/datum/skill/gaming) >= SKILL_LEVEL_LEGENDARY && method==INGEST && !HAS_TRAIT(C, TRAIT_GAMERGOD))
 		ADD_TRAIT(C, TRAIT_GAMERGOD, "pwr_game")
-		to_chat(C, "<span class='nicegreen'>As you imbibe the Pwr Game, your gamer third eye opens... \
+		to_chat(C, "<span class='nicegreen'>As you imbibe the PAC-Fuel, your gamer third eye opens... \
 		You feel as though a great secret of the universe has been made known to you...</span>")
 
 /datum/reagent/consumable/pwr_game/on_mob_life(mob/living/carbon/M)
