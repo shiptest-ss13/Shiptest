@@ -63,6 +63,11 @@
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
+/obj/item/gun/ballistic/automatic/smg/c20r/suns
+	desc = "A bullpup .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp. It is painted in the colors of SUNS."
+	icon_state = "c20r_suns"
+	item_state = "c20r_suns"
+
 /obj/item/gun/ballistic/automatic/smg/inteq
 	name = "\improper SkM-44(k)"
 	desc = "An extreme modification of an obsolete assault rifle, converted into a compact submachine gun by IRMG. Chambered in 10mm."

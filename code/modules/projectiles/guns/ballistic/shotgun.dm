@@ -205,7 +205,6 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	actions_types = list()
 	mag_display = TRUE
@@ -238,7 +237,13 @@
 	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_INTEQ
 
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen
+/obj/item/gun/ballistic/shotgun/bulldog/suns
+	name = "\improper Bulldog-C Shotgun"
+	desc = "A shorter variation of the Bulldog manufactured by Scarborough Arms. A shortened variant for SUNS who require more faster wielding Bulldogs personal defence."
+	icon_state = "bulldog_suns"
+	item_state = "bulldog_suns"
+
+/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
 	name = "\improper CM-15"
 	desc = "A standard-issue shotgun of the Colonial Minutemen, most often used by boarding crews. Only compatible with specialized 8-round magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'

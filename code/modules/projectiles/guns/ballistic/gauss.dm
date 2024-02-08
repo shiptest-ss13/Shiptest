@@ -46,6 +46,11 @@
 	spread = 3
 	spread_unwielded = 12
 
+/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
+	desc = "Standard-issue pistol exported from the Solarian Confederation. Fires slow ferromagnetic slugs at a high energy cost, though they rend flesh with ease. It is painted in the colors of SUNS."
+	mag_type = /obj/item/ammo_box/magazine/modelh
+	icon_state = "model-h_suns"
+	item_state = "model-h_suns"
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris
 	name = "Claris"
@@ -64,6 +69,11 @@
 	mag_display = FALSE
 	empty_indicator = FALSE
 	manufacturer = MANUFACTURER_SOLARARMORIES
+
+/obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
+	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended, and apparently the SUNS founders as well as it appears painted in the colors of SUNS."
+	icon_state = "claris_suns"
+	item_state = "claris_suns"
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar
 	name = "Solar 'GAR' Carbine"
@@ -86,3 +96,8 @@
 /obj/item/gun/ballistic/automatic/powered/gauss/gar/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+
+/obj/item/gun/ballistic/automatic/powered/gauss/gar/suns
+	desc = "A Solarian carbine, unusually modern for its producers. However, it is just modern enough for SUNS which also painted the gun in their colors. Launches ferromagnetic lances at alarming speeds."
+	icon_state = "gar_suns"
+	item_state = "gar_suns"

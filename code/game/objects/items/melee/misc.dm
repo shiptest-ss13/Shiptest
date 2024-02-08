@@ -85,6 +85,18 @@
 	icon_state = "sabresolgov"
 	item_state = "sabresolgov"
 
+/obj/item/melee/sabre/suns
+	name = "SUNS sabre"
+	desc = "A blade of solarian origin given to SUNS followers."
+	icon_state = "suns-sabre"
+	item_state = "suns-sabre"
+
+/obj/item/melee/sabre/suns/captain
+	name = "SUNS captain sabre"
+	desc = "An elegant blade awarded to SUNS captains and officers. Despite the higher craftmanship, it appears to be just as effective as a normal sabre."
+	icon_state = "suns-capsabre"
+	item_state = "suns-capsabre"
+
 /obj/item/melee/beesword
 	name = "The Stinger"
 	desc = "Taken from a giant bee and folded over one thousand times in pure honey. Can sting through anything."
