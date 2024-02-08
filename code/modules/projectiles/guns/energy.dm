@@ -299,3 +299,9 @@
 			playsound(user, BB.hitsound_non_living, 50, TRUE)
 			cell.use(E.e_cost)
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
+
+
+/obj/item/gun/energy/examine(mob/user)
+	. = ..()
+	if(ammo_type.len > 1)
+		. += "You can switch firemodes by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"

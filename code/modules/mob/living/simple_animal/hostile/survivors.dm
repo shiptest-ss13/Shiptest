@@ -324,7 +324,7 @@
 	suit_store = null
 	if (survivor_type == "hunter")
 		if(prob(20))
-			new /obj/item/gun/ballistic/rifle/boltaction/polymer(loc)
+			new /obj/item/gun/ballistic/rifle/polymer(loc)
 		else
 			visible_message("<span class='userwarning'>The hunter's weapon shatters as they impact the ground!</span>")
 			suit_store = null

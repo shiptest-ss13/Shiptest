@@ -114,6 +114,14 @@
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
 
+/datum/outfit/job/inteq/paramedic/empty
+	name = "IRMG Corpsman (Inteq) (Naked)"
+
+	head = null
+	suit = null
+	suit_store = null
+	belt = null
+
 ///Security Officers
 
 /datum/outfit/job/inteq/security
@@ -193,3 +201,31 @@
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 	backpack_contents = list(/obj/item/melee/classic_baton=1)
+
+// cmo
+
+/datum/outfit/job/inteq/cmo
+	name = "IRMG Honorable Corpsman (Inteq)"
+	jobtype = /datum/job/cmo
+	job_icon = "chiefmedicalofficer"
+
+	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	ears = /obj/item/radio/headset/inteq/captain
+	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
+	alt_uniform = /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
+	shoes = /obj/item/clothing/shoes/combat
+	suit = /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
+	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman
+	dcoat = /obj/item/clothing/suit/armor/hos/inteq
+	r_pocket = /obj/item/pda/medical
+
+	chameleon_extras = null
+
+/datum/outfit/job/inteq/cmo/empty
+	name = "IRMG Honorable Corpsman (Inteq) (Naked)"
+	belt = null
+	suit = null
+	alt_suit = null
+	suit_store = null
+	dcoat = null
+	r_pocket = null

@@ -185,7 +185,6 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 	if (H.nutrition >= nutrition_threshold)
 		to_chat(H, "<span class='warning'>You pull out a strand from your spinneret, ready to wrap a target. <BR> \
 		(Press ALT+CLICK or MMB on the target to start wrapping.)</span>")
-		H.adjust_nutrition(E.spinner_rate * -0.5)
 		addtimer(VARSET_CALLBACK(E, web_ready, TRUE), E.web_cooldown)
 		RegisterSignal(H, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(cocoonAtom))
 		return
@@ -217,7 +216,7 @@ GLOBAL_LIST_INIT(spider_last, world.file2list("strings/names/spider_last.txt"))
 		if(!do_after(H, 10 SECONDS, 1, A))
 			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
 			return
-		H.adjust_nutrition(E.spinner_rate * -3)
+		H.adjust_nutrition(E.spinner_rate * -3.5)
 		var/obj/structure/spider_player/cocoon/C = new(A.loc)
 		if(isliving(A))
 			C.icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
