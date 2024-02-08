@@ -493,11 +493,6 @@
 	glass_name = "glass of Molten Bubbles"
 	glass_desc = "A glass of Molten Bubbles. The spices tickle your nose."
 
-
-/datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
-	..()
-
 /datum/reagent/consumable/plasma_fizz
 	name = "Plasma Fizz"
 	description = "A  spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
@@ -506,11 +501,6 @@
 	glass_icon_state = "plasma_fizz_glass"
 	glass_name = "glass of Plasma Fizz"
 	glass_desc = "A glass of Plasma Fizz. The spices (and fake grape flavoring) wrinkles your nose."
-
-
-/datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
-	..()
 
 /datum/reagent/consumable/lemon_lime
 	name = "Lemon Lime"
