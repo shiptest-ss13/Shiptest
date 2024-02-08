@@ -19,7 +19,7 @@
 	display_name = "bomber jacket"
 	path = /obj/item/clothing/suit/jacket
 
-/datum/gear/suit/jacket/fauxleatherjacketleather
+/datum/gear/suit/jacket/leather
 	display_name = "faux leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
