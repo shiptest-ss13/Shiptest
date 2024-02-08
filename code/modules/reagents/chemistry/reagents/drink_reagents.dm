@@ -536,14 +536,14 @@
 	glass_name = "glass of PAC-Fuel"
 	glass_desc = "A glass of PAC-Fuel energy drink. It smells vaguely like acidic cotton candy..."
 
-/datum/reagent/consumable/pwr_game/expose_mob(mob/living/C, method=TOUCH, reac_volume)
+/datum/reagent/consumable/pacfuel/expose_mob(mob/living/C, method=TOUCH, reac_volume)
 	..()
 	if(C?.mind?.get_skill_level(/datum/skill/gaming) >= SKILL_LEVEL_LEGENDARY && method==INGEST && !HAS_TRAIT(C, TRAIT_GAMERGOD))
 		ADD_TRAIT(C, TRAIT_GAMERGOD, "pwr_game")
 		to_chat(C, "<span class='nicegreen'>As you imbibe the PAC-Fuel, your gamer third eye opens... \
 		You feel as though a great secret of the universe has been made known to you...</span>")
 
-/datum/reagent/consumable/pwr_game/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/pacfuel/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	if(prob(10))
 		M?.mind.adjust_experience(/datum/skill/gaming, 5)

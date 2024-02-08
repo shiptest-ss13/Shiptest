@@ -205,7 +205,7 @@
 
 /datum/chemical_reaction/demonsblood
 	results = list(/datum/reagent/consumable/ethanol/demonsblood = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/spacemountainwind = 1, /datum/reagent/blood = 1, /datum/reagent/consumable/tadrixx = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/comet_trail = 1, /datum/reagent/blood = 1, /datum/reagent/consumable/tadrixx = 1)
 
 /datum/chemical_reaction/booger
 	results = list(/datum/reagent/consumable/ethanol/booger = 4)
@@ -559,7 +559,7 @@
 
 /datum/chemical_reaction/turbo
 	results = list(/datum/reagent/consumable/ethanol/turbo = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 2, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/ethanol/sugar_rush = 1, /datum/reagent/consumable/pwr_game = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 2, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/ethanol/sugar_rush = 1, /datum/reagent/consumable/pacfuel = 1)
 
 /datum/chemical_reaction/old_timer
 	results = list(/datum/reagent/consumable/ethanol/old_timer = 6)
@@ -671,7 +671,7 @@
 
 /datum/chemical_reaction/force_wine
 	results = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/spacemountainwind = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/comet_trail = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/magic/forcewall.ogg'
 
