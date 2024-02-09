@@ -87,7 +87,7 @@
 
 /obj/item/melee/sabre/suns
 	name = "SUNS sabre"
-	desc = "A blade of solarian origin given to SUNS followers."
+	desc = "A blade of Solarian origin given to SUNS followers."
 	icon_state = "suns-sabre"
 	item_state = "suns-sabre"
 
