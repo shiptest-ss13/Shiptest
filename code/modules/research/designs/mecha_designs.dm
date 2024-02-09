@@ -80,27 +80,6 @@
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/board/honker_main
-	name = "\"H.O.N.K\" Central Control module"
-	desc = "Allows for the construction of a \"H.O.N.K\" Central Control module."
-	id = "honker_main"
-	build_path = /obj/item/circuitboard/mecha/honker/main
-	category = list("Exosuit Modules")
-
-/datum/design/board/honker_peri
-	name = "\"H.O.N.K\" Peripherals Control module"
-	desc = "Allows for the construction of a \"H.O.N.K\" Peripheral Control module."
-	id = "honker_peri"
-	build_path = /obj/item/circuitboard/mecha/honker/peripherals
-	category = list("Exosuit Modules")
-
-/datum/design/board/honker_targ
-	name = "\"H.O.N.K\" Weapons & Targeting Control module"
-	desc = "Allows for the construction of a \"H.O.N.K\" Weapons & Targeting Control module."
-	id = "honker_targ"
-	build_path = /obj/item/circuitboard/mecha/honker/targeting
-	category = list("Exosuit Modules")
-
 /datum/design/board/phazon_main
 	name = "\"Phazon\" Central Control module"
 	desc = "Allows for the construction of a \"Phazon\" Central Control module."
