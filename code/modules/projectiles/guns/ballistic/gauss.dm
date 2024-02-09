@@ -98,6 +98,6 @@
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/ballistic/automatic/powered/gauss/gar/suns
-	desc = "A Solarian carbine, unusually modern for its producers. However, it is just modern enough for SUNS which also painted the gun in their colors. Launches ferromagnetic lances at alarming speeds."
+	desc = "A Solarian carbine, unusually modern for its producers. It's just modern enough for SUNS, however, who have painted the weapon in their colors. Launches ferromagnetic lances at alarming speeds."
 	icon_state = "gar_suns"
 	item_state = "gar_suns"
