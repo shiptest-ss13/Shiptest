@@ -239,7 +239,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/suns
 	name = "\improper Bulldog-C Shotgun"
-	desc = "A shorter variation of the Bulldog manufactured by Scarborough Arms. A shortened variant for SUNS who require more faster wielding Bulldogs personal defence."
+	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
 	icon_state = "bulldog_suns"
 	item_state = "bulldog_suns"
 
