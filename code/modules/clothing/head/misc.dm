@@ -272,7 +272,6 @@
 	desc = "Ain't nobody gonna cheat the hangman in my town."
 	icon_state = "hunter"
 	item_state = "hunter"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/cone
@@ -329,7 +328,6 @@
 	name = "crown"
 	desc = "A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	dynamic_hair_suffix = ""
 
@@ -452,7 +450,6 @@
 	desc = "A cap for a party coordinator, stylish!."
 	icon_state = "capcap"
 	item_state = "that"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/goatpelt
 	name = "goat pelt hat"
@@ -466,15 +463,6 @@
 	icon_state = "JackFrostHat"
 	item_state = "JackFrostHat"
 
-/obj/item/clothing/head/gorlexcap
-	name = "2nd Battlegroup peaked cap"
-	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup."
-	icon_state = "gorlexcap"
-	item_state = "gorlexcap"
-	flags_inv = 0
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 60
-
 /obj/item/clothing/head/maidheadband/syndicate
 	name = "tactical maid headband"
 	desc = "Tacticute."
@@ -486,15 +474,6 @@
 	desc = "Tacticute."
 	icon_state = "inteqheadband"
 	item_state = "inteqheadband"
-
-/obj/item/clothing/head/inteq_peaked
-	name = "inteq peaked cap"
-	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
-	icon_state = "inteq_peaked"
-	item_state = "inteq_peaked"
-	flags_inv = 0
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
-	strip_delay = 60
 
 /obj/item/clothing/head/maidheadband
 	name = "maid headband"

@@ -36,7 +36,7 @@
 	name = "durathread beret"
 	desc =  "A beret made from durathread, its resilient fibres provide some protection to the wearer."
 	icon_state = "beretdurathread"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 15, "energy" = 25, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 5)
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 5)
 
 //Civilian
 /obj/item/clothing/head/beret/grey
@@ -58,7 +58,6 @@
 	name = "quartermaster beret"
 	desc =  "A cargo beret with a faded medal haphazardly stitched into it. Worn by a true cargonian, it commands respect from everyone."
 	icon_state = "beret_qm"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5)
 
 /obj/item/clothing/head/beret/cargo
 	name = "cargo beret"
@@ -67,30 +66,25 @@
 
 /obj/item/clothing/head/beret/mining
 	name = "mining beret"
-	desc =  "A grey beret with a pickaxe insignia sewn into it. Seems to be padded and fireproofed to offer the wearer some protection."
+	desc =  "A grey beret with a pickaxe insignia sewn into it. Seems to be fireproofed to offer the wearer some protection."
 	icon_state = "beret_mining"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 30, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 
 //Sec
 /obj/item/clothing/head/beret/sec
 	name = "security beret"
 	desc = "A robust beret with the security insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
 	icon_state = "beret_sec"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 60
 	dog_fashion = null
 
 /obj/item/clothing/head/beret/sec/hos
 	name = "head of security's black beret"
 	desc = "A black beret with the Head of Security's insignia emblazoned on it. A symbol of excellence, a badge of courage, a mark of distinction."
 	icon_state = "beret_hos"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 
 /obj/item/clothing/head/beret/sec/warden
 	name = "warden's beret"
 	desc = "A beret made with black reinforced fabric with the Warden's insignia emblazoned on it. For wardens with class."
 	icon_state = "beret_warden"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/beret/sec/officer
 	desc = "A beret made out of black reinforced fabric with the security insignia emblazoned on it. For officers with class."
@@ -172,22 +166,16 @@
 	name = "captain beret"
 	desc = "A lovely blue Captain beret with a gold and white insignia. Truly fit for only the finest officers."
 	icon_state = "beret_captain"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 90
 
 /obj/item/clothing/head/beret/hop
 	name = "head of personnel beret"
 	desc = "A lovely blue Head of Personnel's beret with a silver and white insignia. It smells faintly of paper and dogs."
 	icon_state = "beret_hop"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 90
 
 /obj/item/clothing/head/beret/command
 	name = "command beret"
 	desc = "A modest blue command beret with a silver rank insignia. Smells of power and the sweat of assistants."
 	icon_state = "beret_com"
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
-	strip_delay = 90
 
 // SolGov
 
@@ -196,7 +184,6 @@
 	desc = "A beret with SolGov's emblem emblazoned on it. Colored in SolGov blue."
 	icon_state = "beret_solgov"
 	item_state = "beret_solgov"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/beret/solgov/plain
 	name = "\improper SolGov beret"

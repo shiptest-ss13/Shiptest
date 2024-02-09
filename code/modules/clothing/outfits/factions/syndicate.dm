@@ -293,7 +293,7 @@
 	name = "Syndicate - Captain (Gorlex Marauders)"
 	uniform = /obj/item/clothing/under/syndicate/officer
 
-	head = /obj/item/clothing/head/gorlexcap
+	head = /obj/item/clothing/head/caphat/gorlexcap
 	suit = /obj/item/clothing/suit/gorlex
 
 /datum/outfit/job/syndicate/captain/cybersun

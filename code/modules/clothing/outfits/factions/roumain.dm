@@ -37,7 +37,7 @@
 	ears = /obj/item/radio/headset/headset_com
 	uniform = /obj/item/clothing/under/suit/roumain
 	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/armor/hos/roumain/montagne
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/roumain/montagne
 	head = /obj/item/clothing/head/HoS/cowboy/montagne
 	id = /obj/item/card/id/silver
 

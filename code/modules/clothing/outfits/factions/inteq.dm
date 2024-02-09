@@ -48,7 +48,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
 	belt = /obj/item/storage/belt/security/webbing/inteq
-	suit = /obj/item/clothing/suit/armor/hos/inteq
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	gloves = /obj/item/clothing/gloves/combat
 	accessory = null
@@ -58,7 +58,7 @@
 
 	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
 	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
-	suit = /obj/item/clothing/suit/armor/hos/inteq/honorable
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/inteq/honorable
 	gloves = /obj/item/clothing/gloves/combat
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/inteq/alt/captain
@@ -216,7 +216,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	suit = /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt
 	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman
-	dcoat = /obj/item/clothing/suit/armor/hos/inteq
+	dcoat = /obj/item/clothing/suit/armor/vest/capcarapace/inteq
 	r_pocket = /obj/item/pda/medical
 
 	chameleon_extras = null

@@ -22,8 +22,6 @@
 	icon_state = "captain"
 	item_state = "that"
 	flags_inv = 0
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/captain
 
 //Captain: This is no longer space-worthy
@@ -58,12 +56,25 @@
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
 
+/obj/item/clothing/head/caphat/gorlexcap
+	name = "2nd Battlegroup peaked cap"
+	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup."
+	icon_state = "gorlexcap"
+	item_state = "gorlexcap"
+	flags_inv = 0
+
+/obj/item/clothing/head/caphat/inteq_peaked
+	name = "inteq peaked cap"
+	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
+	icon_state = "inteq_peaked"
+	item_state = "inteq_peaked"
+	flags_inv = 0
+
 //Head of Personnel
 /obj/item/clothing/head/hopcap
 	name = "head of personnel's cap"
 	icon_state = "hopcap"
 	desc = "The symbol of true bureaucratic micromanagement."
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	dog_fashion = /datum/dog_fashion/head/head_of_personnel
 
 /obj/item/clothing/head/hopcap/nt
@@ -98,7 +109,6 @@
 /obj/item/clothing/head/fedora/det_hat
 	name = "detective's fedora"
 	desc = "There's only one man who can sniff out the dirty stench of crime, and he's likely wearing this hat."
-	armor = list("melee" = 25, "bullet" = 5, "laser" = 25, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 50)
 	icon_state = "detective"
 	var/candy_cooldown = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/fedora/detective
@@ -136,8 +146,6 @@
 	name = "head of security cap"
 	desc = "The robust standard-issue cap of the Head of Security. For showing the officers who's in charge."
 	icon_state = "hoscap"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
-	strip_delay = 80
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/cowboy
@@ -149,10 +157,8 @@
 
 /obj/item/clothing/head/cowboy/sec
 	name = "deputy hat"
-	desc = "A robust stetson adorned with a deputy's badge. It has a reinforced lining under the imitation leather."
+	desc = "A robust stetson adorned with a deputy's badge. The imitation leather is thick and worn."
 	icon_state = "cowboysec"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 60
 
 /obj/item/clothing/head/cowboy/sec/minutemen
 	name = "colonial minutmen officer's slouch hat"
@@ -191,29 +197,25 @@
 
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"
-	desc = "A black beret with thick armor padding inside. Stylish and robust."
+	desc = "A black beret. Stylish and robust."
 	icon_state = "beret_officer"
 	item_state = "beret_officer"
 
 /obj/item/clothing/head/warden
 	name = "warden's police hat"
-	desc = "It's a special armored hat issued to the Warden of a security force. Protects the head from impacts."
+	desc = "It's a special hat issued to the Warden of a security force. Protects the head from impacts."
 	icon_state = "policehelm"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
-	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/warden
 
 /obj/item/clothing/head/warden/red
 	name = "warden's red hat"
 	desc = "A warden's red hat. Looking at it gives you the feeling of wanting to keep people in cells for as long as possible."
 	icon_state = "wardenhat"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
-	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/warden_red
 
 /obj/item/clothing/head/warden/cowboy
 	name = "jailor's hat"
-	desc = "A menacing black stetson adorned with a jailor's badge. It has a heavily reinforced lining under the imitation leather."
+	desc = "A menacing black stetson hat. The imitation leather is thick and worn."
 	icon_state = "cowboywarden"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy

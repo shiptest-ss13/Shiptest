@@ -138,7 +138,7 @@
 	icon_state = "carapace_nt"
 	item_state = "armor"
 	body_parts_covered = CHEST|GROIN
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 	dog_fashion = null
 	resistance_flags = FIRE_PROOF
 
@@ -176,6 +176,27 @@
 	icon_state = "carapace_duster"
 	item_state = "duster_captain"
 	supports_variations = VOX_VARIATION
+
+/obj/item/clothing/suit/armor/vest/capcarapace/inteq
+	name = "inteq battle coat"
+	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
+	icon_state = "armor_inteq_battlecoat"
+	item_state = "inteq_battlecoat"
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/vest/capcarapace/inteq/honorable //Basically CC higherup clothing for inteq
+	name = "honorable vanguard battlecoat"
+	desc = "A sleek black coat with snow white fur trims made to order for honorable vanguards of the IRMG. It feels even tougher than the typical battlecoat."
+	icon_state = "armor_inteq_honorable_battlecoat"
+	item_state = "inteq_honorable_battlecoat"
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
+
+/obj/item/clothing/suit/armor/vest/capcarapace/roumain/montagne
+	name = "saint-roumain montagne coat"
+	desc = "A stylish red coat to indicate that you are, in fact, a Hunter Montagne. Made of extra hard exotic leather, treated with bullet-resistant materials, and lined with the fur of some unidentifiable creature."
+	icon_state = "armor_rouma_montagne"
+	item_state = "rouma_montagne_coat"
 
 /obj/item/clothing/suit/armor/riot
 	name = "riot suit"
@@ -332,21 +353,6 @@
 	resistance_flags = FLAMMABLE
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 
-/obj/item/clothing/suit/armor/hos/inteq
-	name = "inteq battle coat"
-	desc = "A luxurious brown coat made from a crossweave of kevlar and ballistic fibre, the collar and wrist trims are made from genuine wolf fur. as protective as it is stylish."
-	icon_state = "armor_inteq_battlecoat"
-	item_state = "inteq_battlecoat"
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION | KEPORI_VARIATION
-
-/obj/item/clothing/suit/armor/hos/inteq/honorable //Basically CC higherup clothing for inteq
-	name = "honorable vanguard battlecoat"
-	desc = "A sleek black coat with snow white fur trims made to order for honorable vanguards of the IRMG. It feels even tougher than the typical battlecoat."
-	icon_state = "armor_inteq_honorable_battlecoat"
-	item_state = "inteq_honorable_battlecoat"
-	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
-	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
-
 /obj/item/clothing/suit/armor/inteq/corpsman
 	name = "inteq corpsman vest"
 	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division Corpsmen."
@@ -389,12 +395,6 @@
 	desc = "A coat made from hard leather. Its rough, barely-treated finish is typical of one of the Saint-Roumain Militia's trainees."
 	icon_state = "armor_rouma_shadow"
 	item_state = "rouma_shadow_coat"
-
-/obj/item/clothing/suit/armor/hos/roumain/montagne
-	name = "saint-roumain montagne coat"
-	desc = "A stylish red coat to indicate that you are, in fact, a Hunter Montagne. Made of extra hard exotic leather, treated with bullet-resistant materials, and lined with the fur of some unidentifiable creature."
-	icon_state = "armor_rouma_montagne"
-	item_state = "rouma_montagne_coat"
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	name = "\improper Sonnensoldner gambison"
