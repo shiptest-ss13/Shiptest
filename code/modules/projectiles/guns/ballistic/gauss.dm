@@ -71,7 +71,7 @@
 	manufacturer = MANUFACTURER_SOLARARMORIES
 
 /obj/item/gun/ballistic/automatic/powered/gauss/claris/suns
-	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended, and apparently the SUNS founders as well as it appears painted in the colors of SUNS."
+	desc = "An antiquated Solarian rifle. Chambered in ferromagnetic pellets, just as the founding Solarians intended. Evidently, SUNS' founders echo the sentiment, as it appears to be painted in their colors."
 	icon_state = "claris_suns"
 	item_state = "claris_suns"
 
