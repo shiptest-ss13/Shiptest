@@ -844,7 +844,7 @@
 
 /obj/item/storage/belt/sabre/suns
 	name = "SUNS sabre sheath"
-	desc = "A leather sheath designed to hold an blade."
+	desc = "A leather sheath designed to hold a blade."
 
 	icon = 'icons/obj/clothing/faction/suns/belt.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/belt.dmi'
