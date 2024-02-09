@@ -93,7 +93,7 @@
 
 /obj/item/melee/sabre/suns/captain
 	name = "SUNS captain sabre"
-	desc = "An elegant blade awarded to SUNS captains and officers. Despite the higher craftmanship, it appears to be just as effective as a normal sabre."
+	desc = "An elegant blade awarded to SUNS captains. Despite its higher craftmanship, it appears to be just as effective as a normal sabre."
 	icon_state = "suns-capsabre"
 	item_state = "suns-capsabre"
 
