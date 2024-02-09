@@ -32,7 +32,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
-	desc = "A bullpup .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.'"
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
@@ -64,7 +64,7 @@
 	item_state = "cobra20"
 
 /obj/item/gun/ballistic/automatic/smg/c20r/suns
-	desc = "A bullpup .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp. It is painted in the colors of SUNS."
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
 	icon_state = "c20r_suns"
 	item_state = "c20r_suns"
 

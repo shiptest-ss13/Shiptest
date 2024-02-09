@@ -437,12 +437,12 @@
 
 	uniform = /obj/item/clothing/under/syndicate/suns/doctorscrubs
 	ears = /obj/item/radio/headset/syndicate/alt/captain
-	belt = /obj/item/storage/belt/sabre/suns
 	id = /obj/item/card/id/syndicate_command/captain_id
 	shoes = /obj/item/clothing/shoes/combat/suns
 	l_pocket = /obj/item/pinpointer/crew
 	suit = /obj/item/clothing/suit/toggle/labcoat/suns/cmo
 	l_hand = /obj/item/storage/firstaid/medical
+	r_hand = /obj/item/storage/belt/sabre/suns/cmo
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/suns
@@ -558,7 +558,7 @@
 	name = "Syndicate - Senior Peacekeeper (SUNS)"
 	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns/hos
-	belt = /obj/item/storage/belt/sabre/suns
+	belt = /obj/item/melee/sabre/suns/telescopic
 	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
 	shoes = /obj/item/clothing/shoes/combat/suns
 	head = /obj/item/clothing/head/welding/suns/hos
@@ -838,7 +838,7 @@
 	uniform = /obj/item/clothing/under/syndicate/suns/pkuniform
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/suns
 	alt_suit = /obj/item/clothing/suit/toggle/suns/pkcoat
-	belt = null
+	belt = /obj/item/melee/sabre/suns/telescopic
 	gloves = /obj/item/clothing/gloves/tackler/dolphin/suns
 	shoes = /obj/item/clothing/shoes/jackboots/suns/long
 	head = /obj/item/clothing/head/welding/suns

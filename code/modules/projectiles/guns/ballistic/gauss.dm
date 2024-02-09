@@ -28,7 +28,7 @@
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh
 	name = "Model H"
-	desc = "Standard-issue pistol of the Solarian Confederation. Fires slow ferromagnetic slugs at a high energy cost, though they rend flesh with ease."
+	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor."
 	mag_type = /obj/item/ammo_box/magazine/modelh
 	icon_state = "model-h"
 	item_state = "model-h"
@@ -47,7 +47,7 @@
 	spread_unwielded = 12
 
 /obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns
-	desc = "Standard-issue pistol exported from the Solarian Confederation. Fires slow ferromagnetic slugs at a high energy cost, though they rend flesh with ease. It is painted in the colors of SUNS."
+	desc = "A standard-issue pistol exported from the Solarian Confederation. It fires slow flesh-rending ferromagnetic slugs at a high energy cost, however they are ineffective on any armor. It is painted in the colors of SUNS."
 	mag_type = /obj/item/ammo_box/magazine/modelh
 	icon_state = "model-h_suns"
 	item_state = "model-h_suns"
