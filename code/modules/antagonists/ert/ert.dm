@@ -207,23 +207,23 @@
 
 /datum/antagonist/ert/lp
 	name = "Loss Prevention Security Specialist"
-	outfit = /datum/outfit/job/nanotrasen/ert/lp
+	outfit = /datum/outfit/job/nanotrasen/security/ert/lp
 	role = "Security Specialist"
 
 /datum/antagonist/ert/lp/medic
 	name = "Loss Prevention Medical Specialist"
-	outfit = /datum/outfit/job/nanotrasen/ert/lp/medic
+	outfit = /datum/outfit/job/nanotrasen/security/ert/lp/medic
 	role = "Medical Specialist"
 
 /datum/antagonist/ert/lp/engineer
 	name = "Loss Prevention Engineering Specialist"
-	outfit = /datum/outfit/job/nanotrasen/ert/lp/engineer
+	outfit = /datum/outfit/job/nanotrasen/security/ert/lp/engineer
 	role = "Engineering Specialist"
 
 /datum/antagonist/ert/lp/lieutenant
 	name = "Loss Prevention Lieutenant"
 	leader = TRUE
-	outfit = /datum/outfit/job/nanotrasen/ert/lp/lieutenant
+	outfit = /datum/outfit/job/nanotrasen/security/ert/lp/lieutenant
 	role = "Lieutenant"
 
 // ********************************************************************
@@ -460,6 +460,18 @@
 	leader = TRUE
 	outfit = /datum/outfit/job/syndicate/ert/cybersun/medic/leader
 	role = "Lead Medical Technician"
+
+/datum/antagonist/ert/official/syndicate
+	name = "Syndicate Inspector"
+	outfit = /datum/outfit/job/syndicate/ert/inspector
+	role = "Syndicate Inspector"
+
+/datum/antagonist/ert/official/solgov/greet()
+	to_chat(owner, "<B><font size=3 color=red>You are a Syndicate Inspector.</font></B>")
+	if (ert_team)
+		to_chat(owner, "The Syndicate Coalition is sending you to [station_name()] with the task: [ert_team.mission.explanation_text]")
+	else
+		to_chat(owner, "The Syndicate Coalition is sending you to [station_name()] with the task: [mission.explanation_text]")
 
 // ********************************************************************
 // ** Frontiersmen **

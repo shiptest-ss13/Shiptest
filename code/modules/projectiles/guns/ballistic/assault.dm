@@ -128,22 +128,6 @@
 	icon_state = "cm16"
 	item_state = "cm16"
 
-/obj/item/gun/ballistic/automatic/assault/ar
-	name = "\improper NT-ARG 'Boarder'"
-	desc = "A burst-fire 5.56mm carbine occasionally found in the hands of Nanotrasen marines."
-	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
-	icon_state = "arg"
-	item_state = "arg"
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/p16
-	can_suppress = FALSE
-	burst_size = 3
-	fire_delay = 1
-
-/obj/item/gun/ballistic/automatic/assault/ar/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
-
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"
 	desc = "An ancient longarm famous for its boxy, modular design. The DMA on this unit is, sadly, broken. Uses 5.56mm ammunition for Matter mode."
@@ -319,3 +303,28 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault)
 	fire_delay = 2
+
+//techinically a battle rifle, i'm putting it here for organisation sake
+
+/obj/item/gun/ballistic/automatic/vickland //weapon designed by Apogee-dev
+	name = "\improper Vickland"
+	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
+	icon_state = "vickland"
+	item_state = "vickland"
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	internal_magazine = TRUE
+	mag_type = /obj/item/ammo_box/magazine/internal/vickland
+	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
+	burst_size = 0
+	actions_types = list()
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+
+	spread_unwielded = 25
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 0.75
