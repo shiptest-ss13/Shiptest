@@ -217,7 +217,7 @@
 
 /obj/item/gun/energy/e_gun/smg/Initialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"
