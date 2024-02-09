@@ -874,7 +874,7 @@
 
 /obj/item/storage/belt/sabre/suns/captain
 	name = "SUNS captain's sabre sheath"
-	desc = "An elegant and impressively made leather sheath designed to hold an captain's blade."
+	desc = "An elegant and impressively made leather sheath designed to hold a captain's blade."
 
 	base_icon_state = "suns-capsheath"
 	icon_state = "suns-capsheath"
