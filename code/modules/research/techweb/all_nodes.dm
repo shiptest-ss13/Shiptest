@@ -19,7 +19,7 @@
 		// Security Stuff
 		"sec_rshot", "sec_beanbag_slug", "sec_slug", "sec_Islug", "sec_dart", 	"sec_38", "buckshot_shell", "beanbag_slug", "rubber_shot",
 		//Handgun Ammo (Security)
-		"commanderammo", "stechkinammo", "m1911ammo", "m9cammo", "c9mm", "c10mm", "c45", "c556mmHITP", "rubbershot9mm", "rubbershot10mm", "rubbershot45", "rubbershot556mmHITP",
+		"commanderammo", "stechkinammo", "candorammo", "m9cammo", "c9mm", "c10mm", "c45", "c556mmHITP", "rubbershot9mm", "rubbershot10mm", "rubbershot45", "rubbershot556mmHITP",
 		// Construction Materials
 		"rglass", "plasteel", "plastitanium", "plasmaglass", "plasmareinforcedglass", "titaniumglass", "plastitaniumglass",
 		// You People Are Animals
@@ -766,7 +766,7 @@
 	display_name = "Saint-Roumain Pistols"
 	description = "Pistols normally manufactured by the Saint-Roumain Militia."
 	prereq_ids = list("adv_ballistics")
-	design_ids = list("pepperbox", "nagantrevolver", "derringer", "speedload357")
+	design_ids = list("pepperbox", "montagne", "derringer", "speedload357")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -775,7 +775,7 @@
 	display_name = "Saint-Roumain Specialty Ballistics"
 	description = "Specialty ballistics normally manufactured by the Saint-Roumain Militia."
 	prereq_ids = list("srm_ballistics", "srm_pistols")
-	design_ids = list("srmrevolver", "m1911", "stripper762", "nagantrifle")
+	design_ids = list("candor", "stripper762", "illestren")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 12000)
 	export_price = 5000
 
