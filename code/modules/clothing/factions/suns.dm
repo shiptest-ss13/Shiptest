@@ -337,6 +337,7 @@
 	icon_state = "sunsvisor"
 	item_state = "suns_pkhelmet"
 	tint = 0
+	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) // identical stats to bulletproof helmet, as chest matches bulletproof vest
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS //Why? Because I'm not giving PK's sec masks nor hud sunglasses.
 	icon = 'icons/obj/clothing/faction/suns/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/suns/head.dmi'
