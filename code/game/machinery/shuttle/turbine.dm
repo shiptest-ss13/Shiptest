@@ -40,7 +40,7 @@
 	var/rpmtarget = 0
 	var/capacity = 1e6
 	var/comp_id = 0
-	var/efficiency
+	var/efficiency = 1
 	var/intake_ratio = 0.1 // might add a way to adjust this in-game later
 
 /obj/machinery/power/shuttle/engine/turbine/lavaland
@@ -112,7 +112,7 @@
 	var/E = 0
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		E += M.rating
-	efficiency = E / 6
+	efficiency = max(E / 6, 1)
 
 /obj/machinery/power/compressor/examine(mob/user)
 	. = ..()
