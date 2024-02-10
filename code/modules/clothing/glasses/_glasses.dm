@@ -213,6 +213,11 @@
 	icon_state = "circle_glasses"
 	item_state = "circle_glasses"
 
+/obj/item/clothing/glasses/regular/thin
+	name = "thin glasses"
+	desc = "More expensive, more fragile and much less practical, but oh so fashionable."
+	icon_state = "thin_glasses"
+
 //Here lies green glasses, so ugly they died. RIP
 
 /obj/item/clothing/glasses/sunglasses
