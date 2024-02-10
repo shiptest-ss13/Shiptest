@@ -764,7 +764,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 					"stun baton","flash","syringe gun","circular saw","tank transfer valve",\
 					"ritual dagger","spellbook",\
 					"pulse rifle","hypospray","ship blueprints",\
-					"ship keys","M1911","Commander","credits","handcuffs","you",\
+					"ship keys","Candor","Commander","credits","handcuffs","you",\
 					)] into [equipped_backpack].</span>")
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")

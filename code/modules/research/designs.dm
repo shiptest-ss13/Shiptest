@@ -137,13 +137,6 @@ other types of metals and chemistry for reagents).
 	. = ..()
 	blueprints[1] = new /datum/design/c10mm()
 
-/obj/item/disk/design_disk/ammo_n762
-	name = "Design Disk - 7.62x38mmR Ammo"
-	desc = "A design disk containing the pattern for an ammo holder of 7.62x38mmR ammo, used in Nagant revolvers. It's a wonder anybody still makes these."
-
-/obj/item/disk/design_disk/ammo_n762/Initialize()
-	. = ..()
-	blueprints[1] = new /datum/design/n762()
 
 /obj/item/disk/design_disk/adv/disposable_gun
 	name = "design disk - disposable gun"
@@ -166,3 +159,11 @@ other types of metals and chemistry for reagents).
 	. = ..()
 	blueprints[1] = new /datum/design/cmm_ripley_upgrade()
 	blueprints[2] = new /datum/design/cmm_durand_upgrade()
+
+/obj/item/disk/design_disk/ammo_c9mm
+	name = "Design Disk - 9mm Ammo"
+	desc = "A design disk containing the pattern for a refill box of standard 9mm ammo, used in Commander pistols."
+
+/obj/item/disk/design_disk/ammo_c9mm/Initialize()
+	. = ..()
+	blueprints[1] = new /datum/design/c9mmautolathe()

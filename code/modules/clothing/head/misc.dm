@@ -520,3 +520,4 @@
 	name = "SolGov surgery cap"
 	desc = "It's a surgery cap utilized by solarian doctors."
 	icon_state = "solgov_surgery"
+

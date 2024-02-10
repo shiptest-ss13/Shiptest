@@ -5,7 +5,7 @@
 	spread = 4
 	spread_unwielded = 10
 	wield_slowdown = 0.35
-	recoil_unwielded = 0.5
+	recoil_unwielded = 4
 
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
@@ -25,14 +25,14 @@
 
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/proto/unrestricted
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
-	desc = "A bullpup .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.'"
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
@@ -47,7 +47,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
 	pin = /obj/item/firing_pin
@@ -62,6 +62,11 @@
 	can_bayonet = FALSE
 	icon_state = "cobra20"
 	item_state = "cobra20"
+
+/obj/item/gun/ballistic/automatic/smg/c20r/suns
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
+	icon_state = "c20r_suns"
+	item_state = "c20r_suns"
 
 /obj/item/gun/ballistic/automatic/smg/inteq
 	name = "\improper SkM-44(k)"
@@ -80,7 +85,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -88,7 +93,6 @@
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
@@ -103,7 +107,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
@@ -143,7 +147,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/vector/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/m90
 	name = "\improper M-90gl Carbine"
@@ -223,29 +227,34 @@
 	update_appearance()
 	return
 
-/obj/item/gun/ballistic/automatic/smg/thompson
-	name = "\improper Thompson"
-	desc = "A old submachinegun design. Chambered in .45."
-	icon_state = "tommygun"
-	item_state = "tommygun"
+/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
+	name = "HP Firestorm"
+	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/smgm45
+	icon_state = "firestorm"
+	item_state = "firestorm"
+	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
 	fire_delay = 1
-	bolt_type = BOLT_TYPE_OPEN
+	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
+	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
+
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = 0.4
 
-/obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
+/obj/item/gun/ballistic/automatic/smg/firestorm/Initialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
-/obj/item/gun/ballistic/automatic/smg/thompson/drum
-	name = "\improper Chicago Typewriter"
-	desc = "A gun for good fellas. Chambered in .45."
-	mag_type = /obj/item/ammo_box/magazine/smgm45/drum
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/c45_firestorm_mag/pan(src)
+	chamber_round()
 
 /obj/item/gun/ballistic/automatic/smg/cm5
 	name = "\improper CM-5"
@@ -259,7 +268,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
 	spawnwithmagazine = FALSE
@@ -278,4 +287,4 @@
 
 /obj/item/gun/ballistic/automatic/smg/aks74u/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS) //last autofire system made the fire rate REALLY fucking fast, but because of how poor it was, it was normal speed.
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS) //last autofire system made the fire rate REALLY fucking fast, but because of how poor it was, it was normal speed.
