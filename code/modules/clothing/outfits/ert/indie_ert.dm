@@ -19,9 +19,8 @@
 	if(visualsOnly)
 		return
 
-	var/I = H.wear_id
-	if(I)
-		I.access += ACCESS_CENT_GENERAL
+	var/obj/item/card/id/W = H.wear_id
+	W.access += list(ACCESS_CENT_GENERAL)
 
 /datum/outfit/job/independent/ert/emt
 	name = "ERT - Independent Paramedic"
