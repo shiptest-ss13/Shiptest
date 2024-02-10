@@ -193,7 +193,7 @@ SUBSYSTEM_DEF(mapping)
 				S.faction_name = data["faction_name"]
 			else
 				S.faction_name = ship_prefix_to_faction(S.prefix)
-				
+
 		S.category = S.faction_name
 
 		if(islist(data["namelists"]))
