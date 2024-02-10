@@ -265,10 +265,10 @@
 
 /datum/reagent/consumable/tea
 	name = "Tea"
-	description = "Tasty black tea, it has antioxidants, it's good for you!"
+	description = "Warm, dark tea."
 	color = "#5f4a05"
 	nutriment_factor = 0
-	taste_description = "tart black tea"
+	taste_description = "tart dark tea"
 	glass_icon_state = "teaglass"
 	glass_name = "glass of tea"
 	glass_desc = "Drinking it from here would not seem right."
@@ -549,26 +549,26 @@
 		M?.mind.adjust_experience(/datum/skill/gaming, 5)
 	..()
 
-/datum/reagent/consumable/shamblers
-	name = "Shambler's Juice"
-	description = "~Shake me up some of that Shambler's Juice!~"
+/datum/reagent/consumable/shoal_punch
+	name = "Shoal Punch"
+	description = "Sugary and from the Shoal."
 	color = "#f00060" // rgb: 94, 0, 38
-	taste_description = "carbonated metallic soda"
+	taste_description = "sugary fruity soda"
 	glass_icon_state = "glass_red"
-	glass_name = "glass of Shambler's juice"
-	glass_desc = "Mmm mm, shambly."
+	glass_name = "glass of Shoal Punch"
+	glass_desc = "It's hard to imagine all those fruits getting condensed into a cup like this."
 
 /datum/reagent/consumable/shamblers/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
 /datum/reagent/consumable/sodawater
 	name = "Soda Water"
-	description = "A can of club soda. Why not make a scotch and soda?"
+	description = "A can of club soda."
 	color = "#619494" // rgb: 97, 148, 148
 	taste_description = "carbonated water"
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of soda water"
-	glass_desc = "Soda water. Why not make a scotch and soda?"
+	glass_desc = "Soda water. You feel like you should add something to this..."
 
 /datum/reagent/consumable/sodawater/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
@@ -578,12 +578,12 @@
 
 /datum/reagent/consumable/tonic
 	name = "Tonic Water"
-	description = "It tastes strange but at least the quinine keeps the Space Malaria at bay."
+	description = "It tastes strange, and it's not like malaria is much of an issue anymore."
 	color = "#709fce"
 	taste_description = "tart and fresh"
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of tonic water"
-	glass_desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	glass_desc = "Quinine and carbonated water. You really should add something to this..."
 
 /datum/reagent/consumable/tonic/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-5)
