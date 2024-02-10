@@ -85,6 +85,7 @@
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
+	custom_price = 500
 
 /obj/item/clothing/glasses/science
 	name = "science goggles"
