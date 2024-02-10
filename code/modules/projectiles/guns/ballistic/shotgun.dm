@@ -637,6 +637,7 @@
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
 	desc = "A sturdy, excellently-made lever-action rifle. This one appears to be a genuine antique, kept in incredibly good condition despite its advanced age. Chambered in .38."
+	base_icon_state = "flamingbolt"
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
 
