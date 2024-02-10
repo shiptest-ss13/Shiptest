@@ -44,7 +44,9 @@
 "js" = (
 /obj/item/chair,
 /obj/effect/decal/cleanable/blood,
-/obj/item/gun/ballistic/automatic/pistol/candor,
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_y = 1
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/rockplanet/syndicate)
 "lg" = (
@@ -168,12 +170,6 @@
 /obj/machinery/vending/mining_equipment,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/syndicate)
-"Cy" = (
-/obj/effect/decal/cleanable/blood,
-/obj/effect/mob_spawn/human/miner,
-/obj/item/pickaxe,
-/turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "CL" = (
 /obj/structure/sign/poster/random,
 /turf/closed/wall/r_wall/rust,
@@ -303,12 +299,6 @@
 	pixel_x = -5
 	},
 /obj/machinery/light/broken/directional/east,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/rockplanet/syndicate)
-"TI" = (
-/obj/item/chair,
-/obj/effect/decal/cleanable/blood,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/rockplanet/syndicate)
 "Uu" = (
@@ -460,7 +450,7 @@ tN
 (5,1,1) = {"
 yZ
 yZ
-Cy
+Qo
 yZ
 Vw
 YN
