@@ -421,6 +421,10 @@
 	desc = "Remember, no plan survives the battle.";
 	pixel_y = 32
 	},
+/obj/structure/table,
+/obj/machinery/fax{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "cD" = (
@@ -2626,6 +2630,11 @@
 /obj/structure/sign/poster/contraband/ss13{
 	pixel_y = 32
 	},
+/obj/structure/table,
+/obj/item/megaphone{
+	pixel_y = 4;
+	pixel_x = 3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "pp" = (
@@ -2966,7 +2975,13 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
 	},
-/obj/structure/chair/comfy/black,
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_y = 5
+	},
+/obj/item/pen/fourcolor{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "qP" = (
@@ -5915,6 +5930,7 @@
 "Hx" = (
 /obj/machinery/light/directional/west,
 /obj/structure/table/reinforced,
+/obj/item/binoculars,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "HF" = (
