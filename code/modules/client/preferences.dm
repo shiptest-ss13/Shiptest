@@ -48,7 +48,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tgui_fancy = TRUE
 	var/tgui_lock = FALSE
 	var/windowflashing = TRUE
-	var/crew_objectives = TRUE
 	var/toggles = TOGGLES_DEFAULT
 	var/db_flags
 	var/chat_toggles = TOGGLES_DEFAULT_CHAT
@@ -1112,6 +1111,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Hide Radio Messages:</b> <a href = '?_src_=prefs;preference=toggle_radio_chatter'>[(chat_toggles & CHAT_RADIO)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Hide Prayers:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Shown":"Hidden"]</a><br>"
 				dat += "<b>Split Admin Tabs:</b> <a href = '?_src_=prefs;preference=toggle_split_admin_tabs'>[(toggles & SPLIT_ADMIN_TABS)?"Enabled":"Disabled"]</a><br>"
+				dat += "<b>Fast MC Refresh:</b> <a href = '?_src_=prefs;preference=toggle_fast_mc_refresh'>[(toggles & FAST_MC_REFRESH)?"Enabled":"Disabled"]</a><br>"
 				dat += "<b>Ignore Being Summoned as Cult Ghost:</b> <a href = '?_src_=prefs;preference=toggle_ignore_cult_ghost'>[(toggles & ADMIN_IGNORE_CULT_GHOST)?"Don't Allow Being Summoned":"Allow Being Summoned"]</a><br>"
 				dat += "<b>Briefing Officer Outfit:</b> <a href = '?_src_=prefs;preference=briefoutfit;task=input'>[brief_outfit]</a><br>"
 				if(CONFIG_GET(flag/allow_admin_asaycolor))
@@ -2215,6 +2215,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					user.client.toggle_hear_radio()
 				if("toggle_split_admin_tabs")
 					toggles ^= SPLIT_ADMIN_TABS
+				if("toggle_fast_mc_refresh")
+					toggles ^= FAST_MC_REFRESH
 				if("toggle_prayers")
 					user.client.toggleprayers()
 				if("toggle_deadmin_always")
