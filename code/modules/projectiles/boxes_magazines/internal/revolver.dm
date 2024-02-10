@@ -5,12 +5,9 @@
 	max_ammo = 6
 	instant_load = TRUE
 
-/obj/item/ammo_box/magazine/internal/cylinder/rev762
-	name = "\improper Nagant revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/n762_38
-	caliber = "7.62x38mmR"
+/obj/item/ammo_box/magazine/internal/cylinder/rev38/big
+	name = "\improper Montagne cylinder"
 	max_ammo = 7
-	instant_load = FALSE
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	name = "hunting revolver cylinder"
