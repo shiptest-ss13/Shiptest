@@ -329,12 +329,6 @@
 	category = "subshuttles"
 	starting_funds = 0
 
-
-/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
-	file_name = "frontiersmen_gut"
-	name = "Gut Combat Freighter"
-	prefix = "ISV"
-
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
 	name = "Pill-Class Torture Device"
@@ -369,6 +363,33 @@
 	name = "Falcon Dropship"
 	prefix = "NTSV"
 
+/datum/map_template/shuttle/subshuttles/crux
+	file_name = "minutemen_crux"
+	name = "Crux Dropship"
+	prefix = "CMSV"
+
+/datum/map_template/shuttle/subshuttles/ancon
+	file_name = "nanotrasen_ancon"
+	name = "Nanotrasen Ancon-Class Command Ship"
+	prefix = "NTSV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
+	file_name = "frontiersmen_gut"
+	name = "Gut Combat Freighter"
+	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/anvil
+	file_name = "inteq_anvil"
+	name = "Anvil-Class Dropship"
+	prefix = "IRMV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/runner
+	file_name = "syndicate_runner"
+	name = "Runner-Class Ambulance"
+	prefix = "CSSV"
+	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/haste
 	file_name = "inteq_haste"
