@@ -398,14 +398,14 @@
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
-/obj/item/clothing/suit/jacket/leather
-	name = "faux leather jacket"
-	desc = "An antiquated pleather jacket, less practical than it is fashionable."
-	icon_state = "fauxleatherjacket"
-	item_state = "hostrench"
-	resistance_flags = NONE
-	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
+	/obj/item/clothing/suit/jacket/leather
+		name = "leather jacket"
+		desc = "This makes you feel like the coolest guy in town!"
+		icon_state = "leatherjacket"
+		item_state = "hostrench"
+		resistance_flags = NONE
+		max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+		allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/revolver/detective, /obj/item/radio)
 
 /obj/item/clothing/suit/jacket/leather/overcoat
 	name = "leather overcoat"
@@ -694,13 +694,3 @@
 	item_state = "gorlexjacket"
 	blood_overlay_type = "coat"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
-/obj/item/clothing/suit/jacket/leather/authentic
-	name = "leather jacket"
-	desc = "This makes you feel like the coolest guy in town."
-	icon_state = "leatherjacket"
-	item_state = "leatherjacket"
-
-
-
-

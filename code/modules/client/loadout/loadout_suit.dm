@@ -20,12 +20,9 @@
 	path = /obj/item/clothing/suit/jacket
 
 /datum/gear/suit/jacket/leather
-	display_name = "faux leather jacket"
+	display_name = "leather jacket"
 	path = /obj/item/clothing/suit/jacket/leather
 
-/datum/gear/suit/jacket/leather/authentic
-    display_name = "leather jacket"
-    path = /obj/item/clothing/suit/jacket/leather/authentic
 
 
 /datum/gear/suit/jacket/leather/overcoat
