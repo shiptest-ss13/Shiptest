@@ -94,6 +94,12 @@
 	locate_machinery()
 	if(!turbine)
 		obj_break()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/machinery/power/compressor/LateInitialize()
+	. = ..()
+	var/turf/comp_turf = get_turf(src)
+	comp_turf.ImmediateCalculateAdjacentTurfs() // turbine blocks atmos so update the turf it's on or stuff breaks
 
 #define COMPFRICTION 5e5
 
@@ -133,6 +139,13 @@
 
 	default_deconstruction_crowbar(I)
 
+/obj/machinery/power/compressor/default_deconstruction_screwdriver(mob/user, icon_state_open, icon_state_closed, obj/item/I)
+	. = ..()
+	if(panel_open)
+		set_machine_stat(machine_stat | MAINT)
+	else
+		set_machine_stat(machine_stat & ~MAINT)
+
 //update when moved or changing direction
 /obj/machinery/power/compressor/setDir(newdir)
 	. = ..()
@@ -157,7 +170,7 @@
 	if(!turbine || (turbine.machine_stat & BROKEN))
 		locate_machinery() // try to find the other part if we somehow got disconnected
 
-	if((machine_stat & BROKEN) || panel_open || !starter) // if we didn't find it...
+	if((machine_stat & (BROKEN|MAINT)) || !starter) // if we didn't find it...
 		rpmtarget = 0
 		return
 
@@ -197,6 +210,12 @@
 	if(!compressor)
 		obj_break()
 	connect_to_network()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/machinery/power/shuttle/engine/turbine/LateInitialize()
+	. = ..()
+	var/turf/comp_turf = get_turf(src)
+	comp_turf.ImmediateCalculateAdjacentTurfs() // turbine blocks atmos so update the turf it's on or stuff breaks
 
 /obj/machinery/power/shuttle/engine/turbine/RefreshParts()
 	var/P = 0
@@ -229,7 +248,7 @@
 		set_machine_stat(BROKEN)
 		locate_machinery() // try to find the missing piece
 
-	if((machine_stat & BROKEN) || panel_open) // we're only running half a turbine, don't continue
+	if(machine_stat & (BROKEN|MAINT)) // we're only running half a turbine, don't continue
 		return
 
 	// This is the power generation function. If anything is needed it's good to plot it in EXCEL before modifying
@@ -276,14 +295,8 @@
 /obj/machinery/power/shuttle/engine/turbine/update_engine()
 	if(!(flags_1 & INITIALIZED_1))
 		return FALSE
-	thruster_active = TRUE
-	if(panel_open)
-		thruster_active = FALSE
-		return FALSE
-	if(!compressor)
-		thruster_active = FALSE
-		return FALSE
-	return TRUE
+	thruster_active = !panel_open && compressor
+	return thruster_active
 
 // If it works, put an overlay that it works!
 /obj/machinery/power/shuttle/engine/turbine/update_overlays()
@@ -305,6 +318,13 @@
 
 	default_deconstruction_crowbar(I)
 
+/obj/machinery/power/shuttle/engine/turbine/default_deconstruction_screwdriver(mob/user, icon_state_open, icon_state_closed, obj/item/I)
+	. = ..()
+	if(panel_open)
+		set_machine_stat(machine_stat | MAINT)
+	else
+		set_machine_stat(machine_stat & ~MAINT)
+
 // update if it moves or changes direction
 /obj/machinery/power/shuttle/engine/turbine/setDir(newdir)
 	. = ..()
@@ -323,9 +343,9 @@
 /obj/machinery/power/shuttle/engine/turbine/ui_data(mob/user)
 	var/list/data = list()
 	data["compressor"] = compressor ? TRUE : FALSE
-	data["compressor_broke"] = (!compressor || (compressor.machine_stat & BROKEN)) ? TRUE : FALSE
+	data["compressor_broke"] = (!compressor || (compressor.machine_stat & (BROKEN|MAINT))) ? TRUE : FALSE
 	data["turbine"] = compressor?.turbine ? TRUE : FALSE
-	data["turbine_broke"] = (!compressor || !compressor.turbine || (compressor.turbine.machine_stat & BROKEN)) ? TRUE : FALSE
+	data["turbine_broke"] = (!compressor || !compressor.turbine || (compressor.turbine.machine_stat & (BROKEN|MAINT))) ? TRUE : FALSE
 	data["online"] = compressor?.starter
 	data["power"] = DisplayPower(compressor?.turbine?.lastgen)
 	data["rpm"] = compressor?.rpm
@@ -370,7 +390,7 @@
 
 /obj/machinery/computer/turbine_computer/locate_machinery()
 	if(id)
-		for(var/obj/machinery/power/compressor/C in GLOB.machines)
+		for(var/obj/machinery/power/compressor/C in SSair.atmos_air_machinery)
 			if(C.comp_id == id)
 				compressor = C
 				return
@@ -386,9 +406,9 @@
 /obj/machinery/computer/turbine_computer/ui_data(mob/user)
 	var/list/data = list()
 	data["compressor"] = compressor ? TRUE : FALSE
-	data["compressor_broke"] = (!compressor || (compressor.machine_stat & BROKEN)) ? TRUE : FALSE
+	data["compressor_broke"] = (!compressor || (compressor.machine_stat & (BROKEN|MAINT))) ? TRUE : FALSE
 	data["turbine"] = compressor?.turbine ? TRUE : FALSE
-	data["turbine_broke"] = (!compressor || !compressor.turbine || (compressor.turbine.machine_stat & BROKEN)) ? TRUE : FALSE
+	data["turbine_broke"] = (!compressor || !compressor.turbine || (compressor.turbine.machine_stat & (BROKEN|MAINT))) ? TRUE : FALSE
 	data["online"] = compressor?.starter
 	data["power"] = DisplayPower(compressor?.turbine?.lastgen)
 	data["rpm"] = compressor?.rpm
