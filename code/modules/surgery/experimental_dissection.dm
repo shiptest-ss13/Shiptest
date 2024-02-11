@@ -1,4 +1,4 @@
-#define BASE_DISSECTION_REWARD 2000
+#define MAX_DISSECTION_REWARD 2000
 #define EXPDIS_FAIL_MSG "<span class='notice'>You dissect [target], but do not find anything particularly interesting.</span>"
 #define PUBLIC_TECHWEB_GAIN 0.6 //how many research points go directly into the main pool
 #define PRIVATE_TECHWEB_GAIN (1 - PUBLIC_TECHWEB_GAIN) //how many research points go directly into the main pool
@@ -55,23 +55,23 @@
 									/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 1
 									)
 	if(isalienqueen(target) || isalienroyal(target))
-		cost = (BASE_DISSECTION_REWARD*38)
+		cost = (MAX_DISSECTION_REWARD*38)
 	else if(isalienadult(target))
-		cost = (BASE_DISSECTION_REWARD*30)
+		cost = (MAX_DISSECTION_REWARD*30)
 	else if(isalien(target))
-		cost = (BASE_DISSECTION_REWARD*14)
+		cost = (MAX_DISSECTION_REWARD*14)
 	else if(ismegafauna(target))
-		cost = (BASE_DISSECTION_REWARD*30)
+		cost = (MAX_DISSECTION_REWARD*30)
 	else if(ishuman(target))
 		var/mob/living/carbon/human/H = target
 		if(H?.dna?.species)
 			if(isabductor(H))
-				cost = (BASE_DISSECTION_REWARD*24)
+				cost = (MAX_DISSECTION_REWARD*24)
 			else if(iszombie(H) || isshadow(H) || isandroid(H))
-				cost = (BASE_DISSECTION_REWARD*20)
+				cost = (MAX_DISSECTION_REWARD*20)
 	else for(var/type in mob_mult_list) // THIS. ELSE IF(). ENDS. HERE.
 		if(istype(target, type))
-			cost = (BASE_DISSECTION_REWARD*mob_mult_list[type])
+			cost = (MAX_DISSECTION_REWARD*mob_mult_list[type])
 			break
 
 	//now we do math for surgeries already done (no double dipping!).
@@ -134,7 +134,7 @@
 	replaced_by = null
 
 
-#undef BASE_DISSECTION_REWARD
+#undef MAX_DISSECTION_REWARD
 #undef EXPDIS_FAIL_MSG
 #undef PUBLIC_TECHWEB_GAIN
 #undef PRIVATE_TECHWEB_GAIN
