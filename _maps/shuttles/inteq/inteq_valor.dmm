@@ -522,8 +522,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/command{
-	name = "Bridge";
 	dir = 8;
+	name = "Bridge";
 	req_access = list(19)
 	},
 /obj/structure/cable{
@@ -686,14 +686,14 @@
 /area/ship/crew/office)
 "fQ" = (
 /obj/structure/bed/dogbed{
-	name = "Picket's bed";
 	anchored = 1;
-	desc = "A comfy-looking dog bed. Despite the name, the owner is a cat."
+	desc = "A comfy-looking dog bed. Despite the name, the owner is a cat.";
+	name = "Picket's bed"
 	},
 /mob/living/simple_animal/pet/cat{
+	desc = "Guardian of the bridge and the Honorable Corpsman's bedsheets.";
 	dir = 4;
-	name = "Picket";
-	desc = "Guardian of the bridge and the Honorable Corpsman's bedsheets."
+	name = "Picket"
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/carpet/blue,
@@ -1135,8 +1135,8 @@
 "kv" = (
 /obj/structure/bed,
 /obj/item/bedsheet/cmo{
-	name = "honorable corpsman's bedsheet";
-	desc = "It's a sterilized blanket that has a cross emblem. There's some cat fur on it, likely from Picket."
+	desc = "It's a sterilized blanket that has a cross emblem. There's some cat fur on it, likely from Picket.";
+	name = "honorable corpsman's bedsheet"
 	},
 /obj/structure/curtain/cloth,
 /obj/machinery/light/directional/west,
@@ -1370,9 +1370,9 @@
 	id = "valor_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
 	dir = 1;
-	id = "valor_holo";
-	anchored = 1
+	id = "valor_holo"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -1544,8 +1544,8 @@
 	dir = 6
 	},
 /obj/item/target{
-	pixel_y = 10;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 10
 	},
 /obj/item/target/alien{
 	pixel_x = 4;
@@ -2364,13 +2364,36 @@
 	dir = 1
 	},
 /obj/machinery/smartfridge/bloodbank/preloaded{
-	pixel_y = 32;
-	density = 0
+	density = 0;
+	pixel_y = 32
 	},
 /obj/structure/table,
 /obj/machinery/cell_charger,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/medical)
+"vJ" = (
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/backpack/messenger/inteq,
+/obj/item/megaphone/command,
+/obj/item/clothing/under/syndicate/inteq/skirt,
+/obj/item/clothing/under/syndicate/inteq,
+/obj/item/clothing/suit/armor/hos/inteq,
+/obj/item/clothing/head/beret/sec/hos/inteq,
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "vanguard's locker";
+	pixel_x = -28;
+	req_access = list(58)
+	},
+/obj/item/storage/lockbox/medal/sec,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/head/inteq_peaked,
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "vK" = (
 /obj/machinery/cryopod{
 	dir = 1
@@ -2599,10 +2622,10 @@
 "xU" = (
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
+	dir = 2;
 	name = "valor docking port";
 	port_direction = 8;
-	preferred_direction = 4;
-	dir = 2
+	preferred_direction = 4
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/port)
@@ -2683,28 +2706,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"ze" = (
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/armor/hos/inteq,
-/obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "vanguard's locker";
-	pixel_x = -28;
-	req_access = list(58)
-	},
-/obj/item/storage/lockbox/medal/sec,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "zh" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/port)
@@ -3755,16 +3756,16 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/bag/tray{
-	pixel_y = 5;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 5
 	},
 /obj/item/reagent_containers/food/drinks/soda_cans/cola{
 	pixel_x = 6;
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/snacks/burger/plain{
-	pixel_y = 3;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3825,8 +3826,8 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/jukebox/boombox{
-	pixel_y = 2;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
@@ -3946,8 +3947,8 @@
 "KC" = (
 /obj/structure/table,
 /obj/item/folder{
-	pixel_y = 4;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 4
 	},
 /obj/item/folder/blue{
 	pixel_x = 2
@@ -4171,8 +4172,8 @@
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/item/flashlight/lamp{
-	pixel_y = 10;
-	pixel_x = -13
+	pixel_x = -13;
+	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
@@ -4201,9 +4202,9 @@
 "Nu" = (
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
+	name = "honorable corpsman's locker";
 	pixel_x = -28;
-	req_access = list(19);
-	name = "honorable corpsman's locker"
+	req_access = list(19)
 	},
 /obj/item/clothing/shoes/combat,
 /obj/item/megaphone/command,
@@ -4213,9 +4214,9 @@
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq/alt,
 /obj/item/storage/backpack/messenger/med,
 /obj/item/clothing/head/beret/sec/brig_phys{
+	desc = "A beret made out of white reinforced fabric with a lue cross emblazoned on it. Smells faintly of blood and gauze.";
 	icon_state = "beret_med";
-	name = "honorable corpsman beret";
-	desc = "A beret made out of white reinforced fabric with a lue cross emblazoned on it. Smells faintly of blood and gauze."
+	name = "honorable corpsman beret"
 	},
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/item/storage/box/hypospray/CMO,
@@ -4393,18 +4394,18 @@
 	dir = 4
 	},
 /obj/machinery/button/door{
-	pixel_x = -9;
 	dir = 8;
-	pixel_y = 8;
+	id = "valor_bridge";
 	name = "Bridge Shutters";
-	id = "valor_bridge"
+	pixel_x = -9;
+	pixel_y = 8
 	},
 /obj/machinery/button/door{
-	pixel_x = -9;
 	dir = 8;
-	pixel_y = -4;
 	id = "valor_external";
-	name = "External Shutters"
+	name = "External Shutters";
+	pixel_x = -9;
+	pixel_y = -4
 	},
 /obj/item/radio/intercom/table{
 	dir = 4;
@@ -4669,8 +4670,8 @@
 /area/ship/security)
 "Rj" = (
 /obj/structure/toilet/secret{
-	secret_type = "/obj/item/toy/plush/moth";
-	dir = 8
+	dir = 8;
+	secret_type = "/obj/item/toy/plush/moth"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/crew/canteen)
@@ -4683,16 +4684,16 @@
 	},
 /obj/item/chair/plastic,
 /obj/item/chair/plastic{
-	pixel_y = 3;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 3
 	},
 /obj/item/chair/plastic{
-	pixel_y = 6;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 6
 	},
 /obj/item/chair/plastic{
-	pixel_y = 8;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 8
 	},
 /obj/structure/rack,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -4838,8 +4839,8 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/table,
 /obj/item/storage/box/cups{
-	pixel_y = 7;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 7
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
@@ -4867,8 +4868,8 @@
 	id = "valor_cargo"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
-	id = "valor_holo";
-	anchored = 1
+	anchored = 1;
+	id = "valor_holo"
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -4920,11 +4921,11 @@
 /area/ship/crew/canteen)
 "Uv" = (
 /obj/docking_port/stationary{
-	height = 15;
-	width = 15;
-	name = "valor dock";
+	dir = 8;
 	dwidth = 15;
-	dir = 8
+	height = 15;
+	name = "valor dock";
+	width = 15
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -5094,9 +5095,9 @@
 	dir = 4
 	},
 /obj/item/toy/figure/paramedic{
+	name = "Corpsman action figure";
 	pixel_x = -13;
-	pixel_y = 14;
-	name = "Corpsman action figure"
+	pixel_y = 14
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/firedoor/border_only{
@@ -5433,12 +5434,12 @@
 /obj/structure/rack,
 /obj/item/roller,
 /obj/item/roller{
-	pixel_y = 8;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 8
 	},
 /obj/item/roller{
-	pixel_y = 16;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 16
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/cargo)
@@ -6478,7 +6479,7 @@ Nn
 ni
 nk
 AG
-ze
+vJ
 ND
 Nu
 kv

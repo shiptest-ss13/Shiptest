@@ -160,7 +160,7 @@
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "syndicate"
 
-	uniform = /obj/item/clothing/under/syndicate/officer
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	mask = null
 	belt = /obj/item/clipboard
