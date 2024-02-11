@@ -64,7 +64,7 @@
 /datum/outfit/job/minutemen/captain/general
 	name = "Minutemen - General"
 
-	head = /obj/item/clothing/head/caphat/minutemen
+	head = /obj/item/clothing/head/clip/bicorne
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/clip
@@ -255,7 +255,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/alt
 
-	belt = /obj/item/storage/belt/military/minutemen
+	belt = /obj/item/storage/belt/military/clip
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
@@ -266,7 +266,7 @@
 	name = "Minutemen - Minuteman (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/p16
+	belt = /obj/item/storage/belt/military/clip/p16
 
 /datum/outfit/job/minutemen/security/mech_pilot
 	name = "Minutemen - Mech Pilot"
@@ -333,7 +333,7 @@
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/clip/slouch
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	belt = /obj/item/storage/belt/military/minutemen
+	belt = /obj/item/storage/belt/military/clip
 	shoes = /obj/item/clothing/shoes/combat
 
 	l_pocket = /obj/item/flashlight/seclite
@@ -347,6 +347,6 @@
 	name = "Minutemen - Field Commander (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen/p16
+	belt = /obj/item/storage/belt/military/clip/p16
 
 	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)

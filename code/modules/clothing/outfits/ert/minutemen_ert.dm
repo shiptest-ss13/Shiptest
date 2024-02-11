@@ -11,7 +11,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	id = /obj/item/card/id
-	belt = /obj/item/storage/belt/military/minutemen/p16
+	belt = /obj/item/storage/belt/military/clip/p16
 	r_pocket = /obj/item/kitchen/knife/combat
 	l_pocket = /obj/item/flashlight/seclite
 
@@ -32,7 +32,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/marine/medium
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 	head = /obj/item/clothing/head/helmet/riot/clip
-	belt = /obj/item/storage/belt/military/minutemen/cm5
+	belt = /obj/item/storage/belt/military/clip/cm5
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/grenade/smokebomb
 	l_pocket = /obj/item/extinguisher/mini
@@ -49,7 +49,7 @@
 	name = "ERT - Minuteman Sergeant (BARD)"
 	job_icon = "lieutenant"
 
-	belt = /obj/item/storage/belt/military/minutemen/p16
+	belt = /obj/item/storage/belt/military/clip/p16
 	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
@@ -117,7 +117,7 @@
 
 	uniform = /obj/item/clothing/under/clip/officer
 	ears = /obj/item/radio/headset/minutemen/alt/captain
-	belt = /obj/item/storage/belt/military/minutemen/gal
+	belt = /obj/item/storage/belt/military/clip/gal
 	suit_store = /obj/item/gun/ballistic/automatic/gal
 
 	backpack_contents = list(/obj/item/ammo_box/magazine/gal=4)

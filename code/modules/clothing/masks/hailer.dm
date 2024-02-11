@@ -56,7 +56,7 @@
 	if(!COOLDOWN_FINISHED(src, whistle_cooldown))
 		return
 	user.audible_message("<font color='red' size='2'><b>[user] blows on the [src]!</b></font>")
-	playsound(src, blown_sound, 30, FALSE, 4)
+	playsound(src, blown_sound, 80, FALSE, 4)
 	COOLDOWN_START(src, whistle_cooldown, 5 SECONDS)
 
 /obj/item/clothing/mask/whistle/trench

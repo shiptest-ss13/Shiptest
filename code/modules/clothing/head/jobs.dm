@@ -103,8 +103,10 @@
 	. = ..()
 	new /obj/item/reagent_containers/food/drinks/flask/det(src)
 
-/obj/item/clothing/head/fedora/det_hat/examine(mob/user)
-	. = ..()
+/obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
+	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
+		. = "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		return
 	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
