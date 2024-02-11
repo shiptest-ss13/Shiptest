@@ -137,7 +137,7 @@
 /datum/ert/solgov/inspector/New()
 	mission = "Conduct a routine review on [station_name()]'s vessels."
 
-// Minutemen
+// CLIP
 
 /datum/ert/minutemen
 	teamsize = 4
@@ -145,37 +145,37 @@
 	leader_role = /datum/antagonist/ert/minutemen/leader
 	roles = list(/datum/antagonist/ert/minutemen)
 	mission = "Keep the peace in sector affairs"
-	rename_team = "Generic Minutemen Team"
-	polldesc = "a Minutemen emergency team"
+	rename_team = "Generic CLIP Minutemen Team"
+	polldesc = "a CLIP Minutemen emergency team"
 	random_names = TRUE
 
 
 /datum/ert/minutemen/bard
 	leader_role = /datum/antagonist/ert/minutemen/bard/leader
 	roles = list(/datum/antagonist/ert/minutemen/bard)
-	rename_team = "Minutemen BARD Team"
-	polldesc = "a Minutemen biohazard removal team"
+	rename_team = "CLIP Minutemen BARD Team"
+	polldesc = "a CLIP Minutemen biohazard removal team"
 
 /datum/ert/minutemen/riot
 	teamsize = 6
 	leader_role = /datum/antagonist/ert/minutemen/riot/leader
 	roles = list(/datum/antagonist/ert/minutemen/riot)
-	rename_team = "Minutemen Riot Control Team"
-	polldesc = "a Minutemen riot control team"
+	rename_team = "CLIP Minutemen Riot Control Team"
+	polldesc = "a CLIP Minutemen riot control team"
 
 /datum/ert/minutemen/piratehunters
 	leader_role = /datum/antagonist/ert/minutemen/piratehunters/leader
 	roles = list(/datum/antagonist/ert/minutemen/piratehunters)
 	mission = "Eliminate pirate presence within the sector."
-	rename_team = "Minutemen Pirate Hunter Team"
-	polldesc = "a fireteam of Minutemen pirate hunters"
+	rename_team = "CLIP Minutemen Pirate Hunter Team"
+	polldesc = "a fireteam of CLIP Minutemen pirate hunters"
 
 /datum/ert/minutemen/inspector
 	teamsize = 1
 	leader_role = /datum/antagonist/ert/official/minutemen
 	roles = list(/datum/antagonist/ert/official/minutemen)
-	rename_team = "Minutemen GOLD Inspector"
-	polldesc = "a Minutemen inspector"
+	rename_team = "CLIP Minutemen GOLD Inspector"
+	polldesc = "a CLIP Minutemen inspector"
 
 // Syndicate
 

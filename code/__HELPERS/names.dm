@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 	"Inteq Risk Management Group" = list(
 		"IRMV",
 	),
-	"Colonial Minutemen" = list(
+	"CLIP Minutemen" = list(
 		"CMSV",
 		"CMGSV",
 	),

@@ -43,11 +43,6 @@
 	name = "captain's hat"
 	icon_state = "captain_nt"
 
-/obj/item/clothing/head/caphat/minutemen
-	name = "general's bicorne"
-	desc = "A fancy bicorne used by generals of the Colonial Minutemen."
-	icon_state = "minuteman_general_hat"
-
 /obj/item/clothing/head/caphat/frontier
 	name = "\improper Frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
@@ -153,11 +148,6 @@
 	icon_state = "cowboysec"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
-
-/obj/item/clothing/head/cowboy/sec/minutemen
-	name = "colonial minutmen officer's slouch hat"
-	desc = "A commanding slouch hat adorned with a officer's badge, used by the Colonial Minutemen."
-	icon_state = "minuteman_officer_hat"
 
 /obj/item/clothing/head/cowboy/sec/roumain
 	name = "hunter's hat"

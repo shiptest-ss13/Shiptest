@@ -3,7 +3,7 @@
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq

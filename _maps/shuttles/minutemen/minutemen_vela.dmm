@@ -84,7 +84,7 @@
 /area/ship/science/ai_chamber)
 "az" = (
 /obj/structure/table/reinforced,
-/obj/item/disk/design_disk/cmm_mechs,
+/obj/item/disk/design_disk/clip_mechs,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/port)
@@ -304,7 +304,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "cy" = (
-/obj/structure/sign/minutemen,
+/obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/atmospherics)
 "cz" = (
@@ -558,12 +558,12 @@
 	name = "captain's locker";
 	req_access_txt = "20"
 	},
-/obj/item/clothing/under/rank/command/minutemen,
+/obj/item/clothing/under/clip/officer,
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/gun/ballistic/automatic/pistol/candor,
-/obj/item/clothing/head/cowboy/sec/minutemen,
+/obj/item/clothing/head/clip/slouch,
 /obj/item/radio/headset/minutemen/alt/captain,
 /obj/item/storage/backpack,
 /obj/item/storage/backpack/satchel,
@@ -602,7 +602,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dL" = (
-/obj/structure/sign/minutemen{
+/obj/structure/sign/clip{
 	pixel_y = 36
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1347,7 +1347,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "iy" = (
-/obj/structure/sign/poster/minutemen/random{
+/obj/structure/sign/poster/clip/random{
 	pixel_y = -30
 	},
 /obj/effect/turf_decal/corner/opaque/black{
@@ -2263,7 +2263,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
 "nn" = (
-/obj/structure/sign/minutemen,
+/obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hangar/port)
 "no" = (
@@ -2556,7 +2556,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/structure/sign/poster/minutemen/random{
+/obj/structure/sign/poster/clip/random{
 	pixel_x = 28
 	},
 /turf/open/floor/wood,
@@ -2811,12 +2811,12 @@
 	pixel_x = -28;
 	pixel_y = 0
 	},
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
+/obj/item/clothing/under/clip/minutemen,
+/obj/item/clothing/under/clip/minutemen,
+/obj/item/clothing/under/clip/minutemen,
+/obj/item/clothing/under/clip/minutemen,
+/obj/item/clothing/under/clip/minutemen,
+/obj/item/clothing/under/clip/minutemen,
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
@@ -3050,9 +3050,9 @@
 	populate = 0
 	},
 /obj/item/reagent_containers/spray/pepper,
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/head/helmet/bulletproof/minutemen,
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/clothing/under/clip/minutemen,
+/obj/item/clothing/head/helmet/bulletproof/clip,
 /obj/item/storage/belt/security/full,
 /obj/item/restraints/handcuffs,
 /obj/item/ammo_box/magazine/m45/rubber,
@@ -4516,7 +4516,7 @@
 /area/ship/engineering)
 "yu" = (
 /obj/structure/rack,
-/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/cmm,
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip,
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hangar/port)
@@ -5119,7 +5119,7 @@
 /obj/machinery/camera/autoname{
 	dir = 1
 	},
-/obj/structure/sign/poster/minutemen/random{
+/obj/structure/sign/poster/clip/random{
 	pixel_x = 28;
 	pixel_y = 0
 	},
@@ -5864,8 +5864,8 @@
 	name = "foreman's locker";
 	req_access = list(56)
 	},
-/obj/item/clothing/head/cowboy/sec/minutemen,
-/obj/item/clothing/under/rank/command/minutemen,
+/obj/item/clothing/head/clip/slouch,
+/obj/item/clothing/under/clip/officer,
 /obj/item/storage/backpack,
 /obj/item/storage/backpack/satchel,
 /obj/item/clothing/glasses/sunglasses,
@@ -6135,7 +6135,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
 "Hm" = (
-/obj/structure/sign/minutemen,
+/obj/structure/sign/clip,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering/engine)
 "Ht" = (
@@ -6257,9 +6257,9 @@
 	populate = 0
 	},
 /obj/item/reagent_containers/spray/pepper,
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/under/rank/security/officer/minutemen,
-/obj/item/clothing/head/helmet/bulletproof/minutemen,
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/clothing/under/clip/minutemen,
+/obj/item/clothing/head/helmet/bulletproof/clip,
 /obj/item/storage/belt/security/full,
 /obj/item/restraints/handcuffs,
 /obj/item/ammo_box/magazine/m45/rubber,
@@ -6274,7 +6274,7 @@
 "HU" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/effect/turf_decal/rechargefloor,
-/obj/mecha/working/ripley/cmm,
+/obj/mecha/working/ripley/clip,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hangar/port)
 "HV" = (
@@ -8299,7 +8299,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/fore)
 "Tf" = (
-/obj/structure/sign/minutemen{
+/obj/structure/sign/clip{
 	pixel_y = 36
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -8830,7 +8830,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/obj/structure/sign/poster/minutemen/random{
+/obj/structure/sign/poster/clip/random{
 	pixel_x = -28
 	},
 /turf/open/floor/wood,

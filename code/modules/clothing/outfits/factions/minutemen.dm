@@ -3,14 +3,14 @@
 /datum/outfit/job/minutemen
 	name = "Minutemen - Base Outfit"
 
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	uniform = /obj/item/clothing/under/clip/minutemen
 	alt_uniform = null
 
 	faction_icon = "bg_minutemen"
 
-	backpack = /obj/item/storage/backpack/security/cmm
-	satchel = /obj/item/storage/backpack/satchel/sec/cmm
-	duffelbag = /obj/item/storage/backpack/duffelbag //to-do: bug rye for cmm duffles // rye. rye. give me 20 pound bag of ice
+	backpack = /obj/item/storage/backpack/security/clip
+	satchel = /obj/item/storage/backpack/satchel/sec/clip
+	duffelbag = /obj/item/storage/backpack/duffelbag //to-do: bug rye for clip duffles // rye. rye. give me 20 pound bag of ice
 	satchel = /obj/item/storage/backpack/messenger //and these
 
 	box = /obj/item/storage/box/survival
@@ -49,14 +49,14 @@
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
-	uniform = /obj/item/clothing/under/rank/command/minutemen
+	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 
 	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	head = /obj/item/clothing/head/clip/slouch
 	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
@@ -66,8 +66,8 @@
 
 	head = /obj/item/clothing/head/caphat/minutemen
 	ears = /obj/item/radio/headset/minutemen/alt/captain
-	uniform = /obj/item/clothing/under/rank/command/minutemen
-	suit = /obj/item/clothing/suit/armor/vest/capcarapace/minutemen
+	uniform = /obj/item/clothing/under/clip/officer
+	suit = /obj/item/clothing/suit/armor/vest/capcarapace/clip
 	shoes = /obj/item/clothing/shoes/combat
 
 	box = /obj/item/storage/box/survival/engineer/radio
@@ -113,14 +113,14 @@
 
 
 	ears = /obj/item/radio/headset/minutemen/alt
-	uniform = /obj/item/clothing/under/rank/command/minutemen
+	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
 	alt_suit = null
 	gloves = /obj/item/clothing/gloves/combat
 	belt = /obj/item/storage/belt/utility/full
 	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	head = /obj/item/clothing/head/clip/slouch
 	backpack = /obj/item/storage/backpack
 	backpack_contents = list(
 		/obj/item/melee/classic_baton/telescopic=1,
@@ -144,13 +144,13 @@
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
 
 	ears = /obj/item/radio/headset/minutemen/alt
-	uniform = /obj/item/clothing/under/rank/command/minutemen
+	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
 	alt_suit = null
 
 	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	head = /obj/item/clothing/head/clip/slouch
 	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
@@ -172,7 +172,7 @@
 
 	chameleon_extras = /obj/item/gun/syringe
 
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	uniform = /obj/item/clothing/under/clip/minutemen
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/med
@@ -215,7 +215,7 @@
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
 
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	uniform = /obj/item/clothing/under/clip/minutemen
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/minutemen
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
@@ -227,8 +227,8 @@
 	job_icon = "scientist"
 	jobtype = /datum/job/scientist
 
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	backpack = /obj/item/storage/backpack/security/cmm
+	uniform = /obj/item/clothing/under/clip/minutemen
+	backpack = /obj/item/storage/backpack/security/clip
 
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
@@ -245,11 +245,11 @@
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
 
-	head = /obj/item/clothing/head/helmet/bulletproof/minutemen
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	head = /obj/item/clothing/head/helmet/bulletproof/clip
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	alt_suit = null
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	uniform = /obj/item/clothing/under/clip/minutemen
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
@@ -311,7 +311,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
 
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	uniform = /obj/item/clothing/under/clip/minutemen
 	accessory = /obj/item/clothing/accessory/armband/engine
 	head = /obj/item/clothing/head/hardhat/dblue
 	suit =  /obj/item/clothing/suit/hazardvest
@@ -329,9 +329,9 @@
 
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/minutemen/alt
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
+	uniform = /obj/item/clothing/under/clip/minutemen
 	accessory = /obj/item/clothing/accessory/armband
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	head = /obj/item/clothing/head/clip/slouch
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	belt = /obj/item/storage/belt/military/minutemen
 	shoes = /obj/item/clothing/shoes/combat

@@ -274,12 +274,6 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	dog_fashion = null
 
-/obj/item/clothing/head/helmet/riot/minutemen
-	name = "\improper Minutemen riot helmet"
-	desc = "Designed to protect against close range attacks. Mainly used by the CM-BARD against hostile xenofauna, it also sees prolific use on some Minutemen member worlds."
-	icon_state = "riot_minutemen"
-
-
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
 	desc = "WEEEEOOO. WEEEEEOOO. WEEEEOOOO."
@@ -510,14 +504,6 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
-
-/obj/item/clothing/head/helmet/bulletproof/minutemen
-	name = "\improper Minutemen ballistic helmet"
-	desc = "A bulletproof helmet that is worn by members of the Colonial Minutemen."
-	icon_state = "antichristhelm"
-	allow_post_reskins = TRUE
-	unique_reskin = null
-	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"

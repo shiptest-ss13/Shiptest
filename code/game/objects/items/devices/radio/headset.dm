@@ -151,25 +151,25 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 //minutemen
 /obj/item/radio/headset/minutemen
 	name = "minutemen radio headset"
-	desc = "Used by militias flying the five stars of the Colonial Minutemen."
-	icon_state = "cmm_headset"
+	desc = "Used by militias flying the five stars of the CLIP Minutemen."
+	icon_state = "clip_headset"
 	keyslot = new /obj/item/encryptionkey/minutemen
 
 /obj/item/radio/headset/minutemen/captain
 	name = "minuteman officer radio headset"
-	desc = "Used by the Colonial Minutemen's enlisted officers."
+	desc = "Used by the CLIP Minutemen's enlisted officers."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
 /obj/item/radio/headset/minutemen/alt
 	name = "minutemen bowman headset"
-	desc = "Used by militias flying the five stars of the Colonial Minutemen. Protects ears from flashbangs."
-	icon_state = "cmm_headset_alt"
-	item_state = "cmm_headset_alt"
+	desc = "Used by militias flying the five stars of the CLIP Minutemen. Protects ears from flashbangs."
+	icon_state = "clip_headset_alt"
+	item_state = "clip_headset_alt"
 
 /obj/item/radio/headset/minutemen/alt/captain
 	name = "minuteman officer bowman headset"
-	desc = "Used by the Colonial Minutemen's enlisted officers. Protects ears from flashbangs."
+	desc = "Used by the CLIP Minutemen's enlisted officers. Protects ears from flashbangs."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 

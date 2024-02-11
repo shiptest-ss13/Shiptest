@@ -3,11 +3,11 @@
 	jobtype = /datum/job/officer
 	job_icon = "securityofficerOld"
 
-	head = /obj/item/clothing/head/helmet/bulletproof/minutemen
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	head = /obj/item/clothing/head/helmet/bulletproof/clip
+	uniform = /obj/item/clothing/under/clip/minutemen
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	ears = /obj/item/radio/headset/minutemen/alt
-	back = /obj/item/storage/backpack/security/cmm
+	back = /obj/item/storage/backpack/security/clip
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	id = /obj/item/card/id
@@ -22,7 +22,7 @@
 	job_icon = "lieutenant"
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
-	back = /obj/item/storage/backpack/satchel/sec/cmm
+	back = /obj/item/storage/backpack/satchel/sec/clip
 	head = /obj/item/clothing/head/beret/command
 
 /datum/outfit/job/minutemen/ert/bard
@@ -31,7 +31,7 @@
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/medium
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
-	head = /obj/item/clothing/head/helmet/riot/minutemen
+	head = /obj/item/clothing/head/helmet/riot/clip
 	belt = /obj/item/storage/belt/military/minutemen/cm5
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	r_pocket = /obj/item/grenade/smokebomb
@@ -49,8 +49,8 @@
 	name = "ERT - Minuteman Sergeant (BARD)"
 	job_icon = "lieutenant"
 
-	belt = /obj/item/storage/belt/military/assault/minutemen
-	uniform = /obj/item/clothing/under/rank/command/minutemen
+	belt = /obj/item/storage/belt/military/minutemen/p16
+	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	glasses = /obj/item/clothing/glasses/hud/security/night
@@ -67,8 +67,8 @@
 	name = "ERT - Minuteman (Riot Officer)"
 	job_icon = "securityofficerOld"
 
-	suit = /obj/item/clothing/suit/armor/riot/minutemen
-	head = /obj/item/clothing/head/helmet/riot/minutemen
+	suit = /obj/item/clothing/suit/armor/riot/clip
+	head = /obj/item/clothing/head/helmet/riot/clip
 	l_hand = /obj/item/melee/baton/loaded
 	back = /obj/item/shield/riot
 	belt = /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
@@ -90,11 +90,11 @@
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "minutemen"
 
-	head = /obj/item/clothing/head/cowboy/sec/minutemen
+	head = /obj/item/clothing/head/clip/slouch
 	mask = null
 	belt = /obj/item/clipboard
 	glasses = /obj/item/clothing/glasses/sunglasses
-	uniform = /obj/item/clothing/under/rank/command/minutemen
+	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
 	suit_store = null
 	ears = /obj/item/radio/headset/minutemen/alt/captain
@@ -109,13 +109,13 @@
 	job_icon = "securityofficerOld"
 
 	head = null
-	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/minutemen
+	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/clip
 
 /datum/outfit/job/minutemen/ert/pirate_hunter/leader
 	name = "ERT - Minutemen Sergeant (Pirate Hunter)"
 	job_icon = "lieutenant"
 
-	uniform = /obj/item/clothing/under/rank/command/minutemen
+	uniform = /obj/item/clothing/under/clip/officer
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	belt = /obj/item/storage/belt/military/minutemen/gal
 	suit_store = /obj/item/gun/ballistic/automatic/gal

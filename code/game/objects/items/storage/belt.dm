@@ -449,24 +449,6 @@
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m556(src)
 
-/obj/item/storage/belt/military/minutemen
-	name = "minutemen tactical webbing"
-	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."
-	icon_state = "cmmwebbing"
-	item_state = "cmmwebbing"
-
-/obj/item/storage/belt/military/minutemen/p16/PopulateContents()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/p16(src)
-
-/obj/item/storage/belt/military/minutemen/gal/PopulateContents()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/gal(src)
-
-/obj/item/storage/belt/military/minutemen/cm5/PopulateContents()
-	for(var/i in 1 to 4)
-		new /obj/item/ammo_box/magazine/smgm9mm(src)
-
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
 
@@ -542,10 +524,6 @@
 	icon_state = "assault"
 	item_state = "assault"
 	supports_variations = VOX_VARIATION
-
-/obj/item/storage/belt/military/assault/minutemen/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/ammo_box/magazine/p16(src)
 
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()

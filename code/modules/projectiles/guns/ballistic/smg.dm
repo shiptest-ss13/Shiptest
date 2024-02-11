@@ -253,7 +253,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5
 	name = "\improper CM-5"
-	desc = "The standard issue SMG of the CMM. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
+	desc = "The standard issue SMG of CLIP. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
 	icon_state = "cm5"
 	item_state = "cm5"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm

@@ -278,17 +278,17 @@
 
 
 // ********************************************************************
-// ** Minutemen **
+// ** CLIP Minutemen **
 // ********************************************************************
 
 /datum/antagonist/ert/minutemen
-	name = "Minutemen Infantry"
+	name = "CLIP Minutemen Infantry"
 	outfit = /datum/outfit/job/minutemen/ert
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-	var/missiondesc = "You stand shoulder to shoulder with your fellow colonists in the Colonial Minutemen within [station_name()].<BR>"
+	var/missiondesc = "You stand shoulder to shoulder with your fellow colonists in the CLIP Minutemen within [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your team to ensure the completion of your objectives."
 	else
@@ -300,7 +300,7 @@
 	to_chat(owner,missiondesc)
 
 /datum/antagonist/ert/minutemen/leader
-	name = "Minutemen Leader"
+	name = "CLIP Minutemen Leader"
 	leader = TRUE
 	outfit = /datum/outfit/job/minutemen/ert/leader
 	role = "Sergeant"
@@ -335,9 +335,9 @@
 /datum/antagonist/ert/official/minutemen/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the GOLD Inspector.</font></B>")
 	if (ert_team)
-		to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the Colonial League. Your task: [ert_team.mission.explanation_text]")
+		to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the CLIP Minutemen. Your task: [ert_team.mission.explanation_text]")
 	else
-		to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the Colonial League. Your task: [ert_team.mission.explanation_text]")
+		to_chat(owner, "You are part of The Galactic Optimum Labor Division, a division of the CLIP Minutemen. Your task: [ert_team.mission.explanation_text]")
 
 /datum/antagonist/ert/minutemen/piratehunters
 	name = "Pirate Hunter"
