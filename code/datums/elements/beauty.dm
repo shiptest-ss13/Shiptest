@@ -8,9 +8,9 @@
 	id_arg_index = 2
 	var/beauty = 0
 	/**
-	  * Assoc list of atoms as keys and number of time the same element instance has been attached to them as assoc value.
-	  * So things don't get odd with same-valued yet dissimilar beauty modifiers being added to the same atom.
-	  */
+	* Assoc list of atoms as keys and number of time the same element instance has been attached to them as assoc value.
+	* So things don't get odd with same-valued yet dissimilar beauty modifiers being added to the same atom.
+	*/
 	var/beauty_counter = list()
 
 /datum/element/beauty/Attach(datum/target, beauty)
