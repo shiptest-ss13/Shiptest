@@ -205,6 +205,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"cV" = (
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "db" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /turf/open/floor/plasteel/white,
@@ -360,13 +366,6 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
-"fi" = (
-/obj/item/radio/intercom/directional/south,
-/obj/structure/chair/plastic{
-	dir = 8
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "fl" = (
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/borderfloor,
@@ -420,12 +419,6 @@
 /obj/machinery/atmospherics/components/binary/valve/digital/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
-"ga" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable,
-/obj/machinery/firealarm/directional/east,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "gc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -459,6 +452,9 @@
 /obj/machinery/sleeper,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
+"gF" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/engineering/engine)
 "hy" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -636,6 +632,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"iB" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "iC" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
@@ -644,7 +649,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
 "iP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -871,6 +875,13 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"la" = (
+/obj/item/radio/intercom/directional/south,
+/obj/structure/chair/plastic{
+	dir = 8
+	},
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "lc" = (
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
@@ -1120,17 +1131,6 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
 /area/ship/construction)
-"oB" = (
-/obj/item/analyzer,
-/obj/machinery/atmospherics/components/binary/pump/layer2{
-	name = "Input to Air"
-	},
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "Input to Waste"
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "oO" = (
 /obj/structure/chair/office,
 /obj/effect/landmark/start/security_officer,
@@ -1166,16 +1166,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
-"pa" = (
-/obj/effect/turf_decal/corner_steel_grid,
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner_steel_grid{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/hallway/central)
 "ph" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/washing_machine,
@@ -1268,12 +1258,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
-"qs" = (
-/obj/structure/chair/plastic{
-	dir = 8
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "qu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1293,15 +1277,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
+"qw" = (
+/obj/structure/grille,
+/obj/machinery/door/poddoor/shutters{
+	id = "riggerwindows";
+	name = "Blast Shutters"
+	},
+/obj/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "qE" = (
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/chair,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
-"qF" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/engineering/engine)
 "qI" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
@@ -2175,29 +2165,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
-"zH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/door/airlock/atmos{
-	dir = 4;
-	name = "Atmospherics";
-	req_access_txt = "10"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "zS" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible{
 	dir = 10
@@ -2220,6 +2187,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
+"Ac" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable,
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Ad" = (
 /obj/effect/turf_decal/number/two{
 	dir = 8
@@ -2335,15 +2308,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
-"Bv" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
-	},
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "BG" = (
 /obj/machinery/door/airlock/external,
 /obj/docking_port/mobile{
@@ -2419,17 +2383,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew)
-"CJ" = (
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 1;
-	name = "Air to Distro"
-	},
-/obj/item/multitool,
-/obj/machinery/atmospherics/components/binary/pump/layer4{
-	name = "Distro to Waste"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "CL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2543,11 +2496,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
-"DT" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/airalarm/directional/east,
-/turf/open/floor/plating,
-/area/ship/engineering/atmospherics)
 "Ec" = (
 /obj/effect/turf_decal/kfp_small/left{
 	dir = 8
@@ -2615,6 +2563,17 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
+"EY" = (
+/obj/machinery/atmospherics/components/binary/pump/on/layer2{
+	dir = 1;
+	name = "Air to Distro"
+	},
+/obj/item/multitool,
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	name = "Distro to Waste"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "Fe" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/southleft{
@@ -2966,6 +2925,11 @@
 /obj/structure/chair,
 /turf/open/floor/plasteel/mono,
 /area/ship/medical)
+"Ix" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/machinery/airalarm/directional/east,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "IB" = (
 /obj/machinery/door/airlock/public/glass{
 	dir = 4;
@@ -3410,11 +3374,6 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"OX" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/ship/hallway/central)
 "OY" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/pilot,
@@ -3560,6 +3519,11 @@
 /obj/effect/spawner/lootdrop/maintenance/three,
 /turf/open/floor/plasteel,
 /area/ship/construction)
+"Qy" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/ship/hallway/central)
 "QB" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -4055,6 +4019,29 @@
 /obj/machinery/newscaster/security_unit/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
+"Vr" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/door/airlock/atmos{
+	dir = 4;
+	name = "Atmospherics";
+	req_access_txt = "10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "Vs" = (
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
@@ -4231,21 +4218,23 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
-"Xs" = (
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters{
-	id = "riggerwindows";
-	name = "Blast Shutters"
-	},
-/obj/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "Xv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/fore)
+"Xw" = (
+/obj/item/analyzer,
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	name = "Input to Air"
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	name = "Input to Waste"
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "XD" = (
 /obj/structure/chair/office,
 /obj/effect/landmark/start/captain,
@@ -4373,6 +4362,16 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Zo" = (
+/obj/effect/turf_decal/corner_steel_grid,
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner_steel_grid{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/hallway/central)
 "Zs" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -4777,8 +4776,8 @@ EC
 js
 Jt
 HD
-qs
-fi
+cV
+la
 uN
 jm
 uN
@@ -4852,7 +4851,7 @@ RY
 kC
 Su
 Su
-qF
+gF
 Ly
 Ly
 "}
@@ -4879,7 +4878,7 @@ uy
 qu
 UA
 Jz
-Bv
+iB
 TW
 kC
 Qm
@@ -4887,7 +4886,7 @@ vn
 Od
 GC
 Su
-qF
+gF
 Ly
 "}
 (13,1,1) = {"
@@ -4913,7 +4912,7 @@ UW
 UW
 IB
 Gz
-OX
+Qy
 UW
 kC
 wS
@@ -4922,7 +4921,7 @@ rD
 ZA
 Vn
 Su
-qF
+gF
 "}
 (14,1,1) = {"
 Ly
@@ -4990,7 +4989,7 @@ Su
 jx
 mJ
 GU
-Xs
+qw
 "}
 (16,1,1) = {"
 Ly
@@ -5049,7 +5048,7 @@ UW
 UW
 cv
 by
-pa
+Zo
 mZ
 kC
 Vh
@@ -5222,7 +5221,7 @@ sq
 oO
 EB
 kC
-zH
+Vr
 kC
 kC
 kC
@@ -5493,7 +5492,7 @@ GT
 bB
 wp
 xg
-CJ
+EY
 hE
 va
 Sh
@@ -5526,13 +5525,13 @@ lf
 Xi
 fQ
 sa
-DT
-oB
+Ix
+Xw
 dJ
 PV
 Sh
 lc
-ga
+Ac
 yy
 sS
 "}
