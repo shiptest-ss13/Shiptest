@@ -17,7 +17,10 @@
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
+	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The full name of the ship's faction.
+	var/faction_name = "Independent"
 	var/unique_ship_access = FALSE
 	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
 	/// will be in the middle of space, instead of at an outpost.
