@@ -435,6 +435,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_REFLECTIVE "reflective"
 /// Self-explainatory.
 #define BEAUTY_ELEMENT_TRAIT "beauty_element"
+#define MOOD_COMPONENT_TRAIT "mood_component"
 
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
