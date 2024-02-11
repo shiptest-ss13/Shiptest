@@ -19,15 +19,17 @@
 		CheckParts()
 
 /obj/structure/headpike/CheckParts(list/parts_list)
-	..()
 	victim = locate(/obj/item/bodypart/head) in parts_list
 	if(!victim) //likely a mapspawned one
 		victim = new(src)
 		victim.real_name = random_unique_name(prob(50))
-	update_appearance()
+
 	spear = locate(bonespear ? /obj/item/spear/bonespear : /obj/item/spear) in parts_list
 	if(!spear)
 		spear = bonespear ? new/obj/item/spear/bonespear(src) : new/obj/item/spear(src)
+
+	update_appearance()
+	return ..()
 
 /obj/structure/headpike/Destroy()
 	QDEL_NULL(victim)
@@ -39,7 +41,8 @@
 		victim = null
 	if(A == spear)
 		spear = null
-	deconstruct(TRUE)
+	if(!QDELETED(src))
+		deconstruct(TRUE)
 	return ..()
 
 /obj/structure/headpike/deconstruct(disassembled)
