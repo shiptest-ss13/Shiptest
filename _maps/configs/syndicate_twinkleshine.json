@@ -17,13 +17,18 @@
 	"map_short_name": "Twinkleshine-class",
 	"map_path": "_maps/shuttles/syndicate/syndicate_twinkleshine.dmm",
 	"job_slots": {
-		"Captain": {
+		"Flotilla Admiral": {
 			"outfit": "/datum/outfit/job/syndicate/captain/twink",
 			"officer": true,
 			"slots": 1
 		},
 		"Lieutenant": {
 			"outfit": "/datum/outfit/job/syndicate/hos/twink",
+			"officer": true,
+			"slots": 1
+		},
+		"Redshield Officer": {
+			"outfit": "/datum/outfit/job/syndicate/hos/suns/twink",
 			"officer": true,
 			"slots": 1
 		},
