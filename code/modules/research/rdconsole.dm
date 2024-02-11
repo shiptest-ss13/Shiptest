@@ -1023,6 +1023,9 @@ Nothing else in the console has ID requirements.
 				linked_imprinter.linked_console = null
 				linked_imprinter = null
 	if(ls["eject_design"]) //Eject the design disk.
+		if(QDELETED(t_disk))
+			say("No Technology Disk Inserted!")
+			return
 		eject_disk("design",usr)
 		screen = RDSCREEN_MENU
 		say("Ejecting [d_disk.name]")
