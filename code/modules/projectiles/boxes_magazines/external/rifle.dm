@@ -64,18 +64,18 @@
 	icon_state = "ak47_mag"
 	ammo_type = /obj/item/ammo_casing/a762_39
 	caliber = "7.62x39mm"
-	max_ammo = 30
+	max_ammo = 20
 
 /obj/item/ammo_box/magazine/ak47/update_icon_state()
 	. = ..()
 	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/ebr
-	name = "battle rifle magazine (.308 Winchester)"
+	name = "battle rifle magazine (.308)"
 	desc = "A small, 10-round steel magazine for the M514 EBR. These rounds do good damage with significant armor penetration."
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/win308
-	caliber = ".308 Winchester"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/ebr/update_icon_state()
@@ -83,11 +83,11 @@
 	icon_state = "ebr_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/gal
-	name = "\improper GAL Magazine (.308 Winchester)"
+	name = "\improper GAL Magazine (.308)"
 	desc = "A standard 10-round magazine for GAL platform DMRs. These rounds do good damage with significant armor penetration."
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/win308
-	caliber = ".308 Winchester"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/gal/update_icon_state()
@@ -128,3 +128,14 @@
 /obj/item/ammo_box/magazine/e40/update_icon_state()
 	. = ..()
 	icon_state = "e40_mag-[!!ammo_count()]"
+
+// 8x50mmR En Bloc Clip (Illestren Hunting Rifle)
+
+/obj/item/ammo_box/magazine/illestren_a850r //this is a magazine codewise do nothing breaks
+	name = "en bloc clip (8x50mmR)"
+	desc = "A 5-round en bloc clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
+	icon_state = "enbloc_858"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY

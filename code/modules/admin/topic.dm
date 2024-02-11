@@ -2218,10 +2218,14 @@
 			return
 		GLOB.interviews.ui_interact(usr)
 
-	else if(href_list["open_fax_manager"])
+	else if(href_list["show_paper"])
 		if(!check_rights(R_ADMIN))
 			return
-		usr.client.fax_manager()
+
+		var/obj/item/paper/paper_to_show = locate(href_list["show_paper"])
+		if(!istype(paper_to_show))
+			return
+		paper_to_show.ui_interact(usr)
 
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))

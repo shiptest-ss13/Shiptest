@@ -254,13 +254,26 @@
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 
 /obj/item/reagent_containers/food/drinks/mug/coco
-	name = "Dutch hot coco"
-	desc = "Made in Space South America."
+	name = "Pearl Hot Chocolate"
+	desc = "A rich delicacy from the humid regions of Terra."
 	list_reagents = list(/datum/reagent/consumable/hot_coco = 15, /datum/reagent/consumable/sugar = 5)
 	foodtype = SUGAR
 	resistance_flags = FREEZE_PROOF
 	custom_price = 120
 
+/obj/item/reagent_containers/food/drinks/cafelatte
+	name = "cafe latte"
+	desc = "A nice, strong and refreshing beverage while you're reading."
+	icon_state = "cafe_latte"
+	list_reagents = list(/datum/reagent/consumable/cafe_latte = 30)
+	custom_price = 200
+
+/obj/item/reagent_containers/food/drinks/soylatte
+	name = "soy latte"
+	desc = "A nice and refreshing beverage while you're reading."
+	icon_state = "soy_latte"
+	list_reagents = list(/datum/reagent/consumable/soy_latte = 30)
+	custom_price = 200
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
