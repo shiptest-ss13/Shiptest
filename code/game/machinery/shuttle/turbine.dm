@@ -239,15 +239,7 @@
 	thrust = lastgen * POWER_TO_THRUST // second law
 
 	var/turf/outturf = get_step(src, dir)
-	var/output_blocked = TRUE
-	if(!isclosedturf(outturf))
-		output_blocked = FALSE
-		for(var/atom/A in outturf)
-			if(!CANATMOSPASS(A, outturf))
-				output_blocked = TRUE
-				break
-
-	if(output_blocked)
+	if(!LAZYLEN(outturf.atmos_adjacent_turfs))
 		compressor.rpmtarget = 0
 		return
 
