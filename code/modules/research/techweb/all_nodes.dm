@@ -480,15 +480,6 @@
 	export_price = 5000
 
 ////////////////////////Medical////////////////////////
-/datum/techweb_node/genetics
-	id = "genetics"
-	display_name = "Genetic Engineering"
-	description = "The truest of mad sciences."
-	prereq_ids = list("biotech")
-	design_ids = list("dnascanner", "scan_console", "dna_disk")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
-	export_price = 1500
-
 /datum/techweb_node/cryotech
 	id = "cryotech"
 	display_name = "Cryostasis Technology"
