@@ -93,18 +93,18 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/syndicate/officer
-	name = "syndicate officer uniform"
-	desc = "A black uniform worn by officers of many branches of the Syndicate."
-	icon_state = "officer"
+/obj/item/clothing/under/syndicate/ngr/officer
+	name = "NGR officer uniform"
+	desc = "A black uniform worn by officers of the New Gorlex Republic."
+	icon_state = "ngr_officer"
 	can_adjust = FALSE
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
-/obj/item/clothing/under/syndicate/aclfgrunt
-	name = "ACLF uniform"
-	desc = "A button-up in a tasteful shade of gray with red pants, used as the uniform of the Anti-Corporate Liberation front on the rim."
-	icon_state = "aclfgrunt"
+/obj/item/clothing/under/syndicate/ngr
+	name = "NGR uniform"
+	desc = "A button-up in a tasteful shade of gray with red pants, used as the basic uniform of the New Gorlex Republic."
+	icon_state = "ngr_grunt"
 	can_adjust = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE

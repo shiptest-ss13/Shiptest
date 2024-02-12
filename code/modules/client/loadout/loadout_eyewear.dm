@@ -8,6 +8,10 @@
 	display_name = "glasses, prescription"
 	path = /obj/item/clothing/glasses/regular
 
+/datum/gear/eyewear/glasses/thin
+	display_name ="glasses, thin prescription"
+	path = /obj/item/clothing/glasses/regular/thin
+
 /datum/gear/eyewear/glasses/large
 	display_name = "glasses, large prescription"
 	path = /obj/item/clothing/glasses/regular/circle
@@ -15,6 +19,10 @@
 /datum/gear/eyewear/glasses/jamjar
 	display_name = "glasses, jamjar prescription"
 	path = /obj/item/clothing/glasses/regular/jamjar
+
+/datum/gear/eyewear/hipster_glasses
+	display_name = "glasses, hipster prescription"
+	path = /obj/item/clothing/glasses/regular/hipster
 
 //Misc
 /datum/gear/eyewear/eyepatch
@@ -38,9 +46,7 @@
 	description = "A blindfold you can still see through."
 	path = /obj/item/clothing/glasses/trickblindfold
 
-/datum/gear/eyewear/hipster_glasses
-	display_name = "Hipster Glasses"
-	path = /obj/item/clothing/glasses/regular/hipster
+
 
 /datum/gear/eyewear/glasses/cold
 	display_name = "cold goggles"

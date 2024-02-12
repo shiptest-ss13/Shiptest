@@ -65,7 +65,7 @@
 	name = "Spacepol Officer"
 	uniform = /obj/item/clothing/under/rank/security/officer/beatcop
 	suit = /obj/item/clothing/suit/armor/vest/blueshirt
-	belt = /obj/item/gun/ballistic/automatic/pistol/m1911
+	belt = /obj/item/gun/ballistic/automatic/pistol/candor
 	head = /obj/item/clothing/head/helmet/police
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -87,7 +87,7 @@
 /datum/outfit/frontier/hunter
 	name = "Frontiersman Corpse (Hunter)"
 	ears = /obj/item/radio/headset
-	r_hand = /obj/item/gun/ballistic/rifle/boltaction
+	r_hand = /obj/item/gun/ballistic/rifle/illestren
 
 /datum/outfit/frontier/hunter/pre_equip(mob/living/carbon/human/H)
 	if(prob(50))
@@ -133,7 +133,7 @@
 		/obj/item/ammo_casing/shotgun/incapacitate = 6
 		)
 
-/datum/outfit/bountygrapple/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/bountyhook/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 	var/obj/item/card/id/W = H.wear_id
