@@ -310,7 +310,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "ea" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
+/obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -387,6 +387,9 @@
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/clothing/neck/chameleon,
 /obj/item/radio/headset/syndicate,
+/obj/item/megaphone{
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "eN" = (
@@ -1090,7 +1093,7 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew/canteen)
 "kG" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
+/obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -1676,7 +1679,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "pN" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 9
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -1804,12 +1807,6 @@
 	},
 /turf/open/floor/pod/dark,
 /area/ship/medical)
-"rh" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 10
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "rm" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -1875,29 +1872,18 @@
 /area/ship/crew/canteen)
 "rN" = (
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 6
+/obj/item/toy/figure/syndie{
+	pixel_y = 5;
+	pixel_x = -8
 	},
-/obj/item/pen/red{
-	pixel_x = 5;
-	pixel_y = 1
-	},
-/obj/effect/turf_decal/techfloor,
-/obj/item/clipboard{
-	pixel_x = -5
-	},
-/obj/item/taperecorder{
-	pixel_x = -3
-	},
-/obj/item/clothing/glasses/hud/security/night{
-	pixel_x = -4;
-	pixel_y = -6
+/obj/machinery/fax{
+	pixel_y = 0
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rS" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
+/obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 5
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -2065,12 +2051,6 @@
 	pixel_x = 27
 	},
 /turf/open/floor/plasteel/dark,
-/area/ship/bridge)
-"td" = (
-/obj/machinery/porta_turret/ship/syndicate/heavy{
-	dir = 9
-	},
-/turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "tf" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -2946,12 +2926,6 @@
 /obj/item/radio/headset/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
-"AM" = (
-/obj/machinery/porta_turret/ship/syndicate{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/bridge)
 "AS" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt,
@@ -2998,7 +2972,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "Bx" = (
-/obj/machinery/porta_turret/ship/syndicate,
+/obj/machinery/porta_turret/ship/syndicate/weak,
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "BK" = (
@@ -3509,11 +3483,11 @@
 	pixel_x = -1;
 	pixel_y = -1
 	},
-/obj/item/codespeak_manual/unlimited{
+/obj/machinery/firealarm/directional/east,
+/obj/item/codespeak_manual{
 	pixel_x = 6;
 	pixel_y = 5
 	},
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/holofloor/wood,
 /area/ship/bridge)
 "Hs" = (
@@ -3721,14 +3695,6 @@
 /area/ship/hallway/aft)
 "Jt" = (
 /obj/structure/table/reinforced,
-/obj/item/camera_bug{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/megaphone{
-	pixel_x = -2;
-	pixel_y = -6
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
@@ -3737,6 +3703,12 @@
 	pixel_y = 1
 	},
 /obj/machinery/light/directional/north,
+/obj/item/clipboard{
+	pixel_x = -5
+	},
+/obj/item/taperecorder{
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "JJ" = (
@@ -3925,14 +3897,14 @@
 	pixel_x = 10
 	},
 /obj/structure/table/reinforced,
-/obj/item/bodypart/l_arm/robot{
-	pixel_x = -6
-	},
-/obj/item/bodypart/r_arm/robot{
-	pixel_x = 6
-	},
 /obj/item/hemostat,
 /obj/machinery/light/directional/west,
+/obj/effect/spawner/lootdrop/random_prosthetic{
+	pixel_x = 6
+	},
+/obj/effect/spawner/lootdrop/random_prosthetic{
+	pixel_x = -6
+	},
 /turf/open/floor/pod/dark,
 /area/ship/medical)
 "Lk" = (
@@ -4222,25 +4194,10 @@
 	},
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
-	pixel_x = 2;
-	pixel_y = 9
-	},
-/obj/item/flashlight/lantern{
-	pixel_x = -6;
-	pixel_y = 9
-	},
-/obj/item/storage/box/gum{
-	pixel_x = 2;
-	pixel_y = -3
-	},
-/obj/item/pen/edagger{
-	pixel_x = -3
-	},
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/turretid{
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Om" = (
@@ -4276,7 +4233,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "OP" = (
-/obj/machinery/porta_turret/ship/syndicate{
+/obj/machinery/porta_turret/ship/syndicate/weak{
 	dir = 10
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -5108,13 +5065,23 @@
 /area/ship/hallway/central)
 "WA" = (
 /obj/structure/table/reinforced,
-/obj/item/toy/figure/syndie{
-	pixel_x = -4;
-	pixel_y = 5
+/obj/item/paper_bin{
+	pixel_x = 6
 	},
-/obj/machinery/fax{
-	pixel_x = 4;
-	pixel_y = 0
+/obj/item/pen/red{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/item/clipboard{
+	pixel_x = -5
+	},
+/obj/item/taperecorder{
+	pixel_x = -3
+	},
+/obj/item/clothing/glasses/hud/security/night{
+	pixel_x = -4;
+	pixel_y = -6
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -5409,10 +5376,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/turretid{
-	pixel_x = -2;
-	pixel_y = 24
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Zb" = (
@@ -6022,7 +5985,7 @@ CM
 (22,1,1) = {"
 CM
 CM
-AM
+kG
 Dd
 Dd
 Dd
@@ -6201,7 +6164,7 @@ CM
 "}
 (31,1,1) = {"
 CM
-td
+pN
 gN
 nU
 iL
@@ -6217,7 +6180,7 @@ Dd
 JJ
 Hc
 OQ
-rh
+OP
 "}
 (32,1,1) = {"
 CM
