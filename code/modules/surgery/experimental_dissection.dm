@@ -52,7 +52,7 @@
 	var/list/mob_mult_list = list(/mob/living/simple_animal/hostile/asteroid/elite = 6,
 									/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 5,
 									/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 3,
-									/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 1
+									/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 2
 									)
 	if(isalienqueen(target) || isalienroyal(target))
 		cost = (MAX_DISSECTION_REWARD*38)
