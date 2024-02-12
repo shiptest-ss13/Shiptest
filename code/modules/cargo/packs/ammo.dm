@@ -283,21 +283,21 @@
 	cost = 1000
 
 /datum/supply_pack/ammo/c9mmrubber_ammo_box
-	name = "9mm rubber Ammo Box Crate"
+	name = "9mm Rubber Ammo Box Crate"
 	desc = "Contains two fifty-round 9mm boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c9mm/rubbershot,
 					/obj/item/ammo_box/c9mm/rubbershot)
 	cost = 500
 
 /datum/supply_pack/ammo/c10mmrubber_ammo_box
-	name = "10mm rubber Ammo Box Crate"
+	name = "10mm Rubber Ammo Box Crate"
 	desc = "Contains two fifty-round 10mm boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c10mm/rubbershot,
 					/obj/item/ammo_box/c10mm/rubbershot)
 	cost = 500
 
 /datum/supply_pack/ammo/c45mmrubber_ammo_box
-	name = ".45 rubber Ammo Box Crate"
+	name = ".45 Rubber Ammo Box Crate"
 	desc = "Contains two fifty-round .45 boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c45/rubbershot,
 					/obj/item/ammo_box/c45/rubbershot)
@@ -305,7 +305,7 @@
 
 
 /datum/supply_pack/ammo/c556HITPrubber_ammo_box
-	name = "5.56 Caseless rubber Ammo Box Crate"
+	name = "5.56 Caseless Rubber Ammo Box Crate"
 	desc = "Contains two fifty-round 5.56 caseless boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
 	contains = list(/obj/item/ammo_box/c556mmHITP/rubbershot,
 					/obj/item/ammo_box/c556mmHITP/rubbershot)
