@@ -212,8 +212,7 @@ Acquire: Anomaly
 	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
 
 /*
-		Acquire: Fishing
-*/
+		Acquire: Fishing //Fishing currently doesn't work at all so commenting these out until it's fixed so they don't clog the mission console.
 
 /datum/mission/acquire/aquarium
 	name = "Fish needed for my aquarium"
@@ -288,6 +287,7 @@ Acquire: Anomaly
 	var/mob/creature = target
 	if(creature.stat == DEAD)
 		return 0
+*/
 
 /*
 		Acquiry mission containers
