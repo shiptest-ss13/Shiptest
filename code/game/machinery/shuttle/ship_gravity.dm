@@ -5,7 +5,7 @@
 /obj/machinery/power/ship_gravity
 	name = "gravitational generator"
 	desc = "A ship-portable gravity generator, capable of providing gravity throughout the vessel it is installed on."
-	icon = 'icons/obj/machines/gravity_generator.dmi'
+	icon = 'icons/obj/machines/ship_gravity.dmi'
 	icon_state = "shipgrav"
 	base_icon_state = "shipgrav"
 	density = TRUE
@@ -112,6 +112,7 @@
 	if(panel_open)
 		return
 	charging = !charging
+	play_click_sound("switch")
 	user.visible_message(span_warning("[user] flips [src]'s power [charging ? "on" : "off"]!"), \
 		span_info("You flip [src]'s power lever, turning it [charging ? "on" : "off"]"), \
 		span_hear("You hear a heavy lever being pulled."))
