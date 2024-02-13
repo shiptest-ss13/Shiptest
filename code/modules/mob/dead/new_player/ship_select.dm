@@ -146,7 +146,7 @@
 
 		var/list/ship_data = list(
 			"name" = S.name,
-			"faction" = ship_prefix_to_faction(S.source_template.prefix),
+			"faction" = S.source_template.faction_name,
 			"class" = S.source_template.short_name,
 			"desc" = S.source_template.description,
 			"tags" = S.source_template.tags,

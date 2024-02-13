@@ -1,5 +1,5 @@
 /obj/structure/plaque //This is a plaque you can craft with gold, then permanently engrave a title and description on, with a fountain pen.
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "blankplaque"
 	name = "blank plaque"
 	desc = "A blank plaque, use a fancy pen to engrave it. It can be detatched from the wall with a wrench."
@@ -15,7 +15,7 @@
 	var/engraved = FALSE
 
 /obj/item/plaque //The item version of the above.
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "blankplaque"
 	name = "blank plaque"
 	desc = "A blank plaque, use a fancy pen to engrave it. It can be placed on a wall."

@@ -83,3 +83,98 @@
       is they are now chambered in 22lr, the worst caliber in the game
   - balance: Shotguns have been nerfed to not do an insane amount of damage point
       blank and in general
+2024-02-10:
+  Apogee-dev:
+  - rscdel: Removed the Luxembourg.
+  Martinpachu:
+  - rscadd: Ammo boxes to the outpost market.
+  - spellcheck: Changed AK mentions to SVG.
+  - tweak: Changed shotgun ammo boxes bought from the outpost to the ammo_box version.
+  - bugfix: Changed SVG mag size to 20.
+  - rscadd: IRMG Vanguard peaked caps to IRMVs.
+  Skies-Of-Blue:
+  - rscadd: new pair of prescription glasses, now available in loadouts!
+  - imageadd: new transparent sprites for all prescription glasses
+  - imageadd: new transparent sprites for all prescription HUDs
+  - imageadd: new transparent sprite for the orange sunglasses
+  Skrem7:
+  - balance: Peacekeeper visors have real armor now (especially against bullet)
+  - balance: SUNS armored coats now cover all body parts instead of just chest
+  SomeguyManperson:
+  - bugfix: bulletproof armor crates are no longer stated to carry one more armor
+      set than they actually do
+2024-02-11:
+  BarteG44:
+  - tweak: resprited the medical and utility belts
+  Couls, Kylerace, Magatsuchi, LemonInTheDark, Fikou, Mothblocks, Stylemistake, Mark Suckerberg:
+  - admin: Reduces MC tab update time, this can be adjusted with a preference in OOC
+      settings
+  GenericDM:
+  - code_imp: params var is now passed to mousedrop_t() from mousedrop()
+  Halcyon, retlaw34, thgvr:
+  - rscadd: Added the Sprinter IPC Chassis
+  - rscadd: Added the PGF MECHANICS IPC Chassis
+  - rscadd: Adds IPC tails
+  - tweak: Robotic eyes now use the synth eye sprite.
+  Luftkommando:
+  - bugfix: Fixed the accidental wall-window combination on the Talos-class burn chamber
+      view window.
+  Zevotech:
+  - rscadd: Reworked the paracelsus kitchen layout to be more user friendly and have
+      more ingredients to cook with.
+  - rscadd: Adds two bookcases and two extra shark plushies to the dorms.
+  - rscadd: Adds ship viewscreens to the paracelsus
+  - rscadd: Moves the autolathe on the paracelsus to the ghettochem room
+  - bugfix: The firearms locker on the paracelsus no longer lacks a lock to prevent
+      patients from accessing the firearms
+  - rscdel: Some vendors now have far less stock and a smaller variety of items to
+      compensate for being free and not on a station
+  - rscdel: Removed Magivend vendor
+  - rscdel: Removed Mining points cards and mining access cards
+  - rscdel: Removed Unused Pubbystation vendors
+  - rscdel: Removed eswords from marine vendors
+  - rscadd: NT marine vendor now gives energy guns for coupons and stocks energy gun
+      cells
+  - rscadd: Cafe and Soy Lattes are now available in the coffee vendor
+  - bugfix: Dutch Hot Coco is now Pearl Hot Chocolate to be lore compliant
+  meemofcourse:
+  - tweak: Changed the content and details of a few Wikibooks
+  - bugfix: Certain wikibooks not working
+  retlaw34:
+  - rscadd: SUNS's swords! Now you can duel over petty matters and potentially die,
+      just like your forefathers!
+  - rscadd: SUNS's guns! Now you can fight over serious matters and potentially die,
+      just like your syndicate comrades!
+2024-02-12:
+  Apogee-dev:
+  - tweak: Tweaked Syndicate Grunt/Captain clothing descriptions for lore compliance
+  - refactor: changed paths for ACLF Grunt and 2nd Battlegroup outfit parts
+  - bugfix: 2nd Battlegroup captain jacket can now hold firearms
+  MarkSuckerberg:
+  - admin: Ships should now be categorised by faction in the shuttle manipulator
+  meemofcourse:
+  - rscadd: Syndicate Cryopod.
+  - tweak: The Twinkleshine has gotten a facelift.
+  - tweak: The Syndicate has started assigning Flotilla Admirals and Redshield Officers
+      to Twinkleshines.
+  - tweak: Crew on the Twinkleshine now have to get their stuff from their lockers.
+  - tweak: Modified the starting text to reflect the lack of telecomms on most ships.
+  - bugfix: Access on the Twinkleshine.
+  - bugfix: Syndicate jobs should show up properly on SecHUDs.
+  - rscadd: Crux-Class Dropship
+  - rscadd: Ancon-Class Internship Ship
+  - rscadd: Runner-Class Ambulance
+  - rscadd: Anvil-Class Dropship
+  - bugfix: ERTs can now actually spawn at outposts
+  phoaly:
+  - rscadd: Added the Elder-class
+  - rscdel: Removed the Glaive-class
+  retlaw34:
+  - tweak: all CMM ships are aspawn now
+  - rscdel: Corvus-Class
+2024-02-13:
+  ryerice, thgvr:
+  - imageadd: 'New hair sprites, including: Tribun, Half-shave, Ruby, Sidecut, Very
+      Long Fringe, Long Hair 2, Gloomy, Gloomy (Long)'
+  thgvr:
+  - rscadd: PGF flag wall mount and item
