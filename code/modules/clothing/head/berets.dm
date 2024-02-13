@@ -4,8 +4,6 @@
 	desc = "A red beret."
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret
-	dynamic_hair_suffix = "+generic"
-	dynamic_fhair_suffix = "+generic"
 
 /obj/item/clothing/head/beret/vintage
 	name = "vintage beret"

@@ -65,7 +65,6 @@
 	name = "nurse's hat"
 	desc = "It allows quick identification of trained medical personnel."
 	icon_state = "nursehat"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/nurse
 
@@ -124,7 +123,6 @@
 	name = "rabbit ears"
 	desc = "A headband with a pair of faux rabbit ears."
 	icon_state = "bunny"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/rabbit
 
@@ -165,14 +163,12 @@
 	desc = "Yarr."
 	icon_state = "bandana"
 	item_state = "bandana"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/bowler
 	name = "bowler-hat"
 	desc = "Gentleman, elite aboard!"
 	icon_state = "bowler"
 	item_state = "bowler"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/witchwig
 	name = "witch costume wig"
@@ -287,7 +283,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("warned", "cautioned", "smashed")
 	resistance_flags = NONE
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/santa
 	name = "santa hat"
@@ -302,7 +297,6 @@
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
 	icon_state = "jester_hat"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/jester/alt
 	icon_state = "jester2"
@@ -329,7 +323,6 @@
 	desc = "A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
 	resistance_flags = FIRE_PROOF
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/crown/fancy
 	name = "magnificent crown"
@@ -374,7 +367,6 @@
 	name = "french beret"
 	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage in military conflict, for some reason."
 	icon_state = "beret"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
@@ -437,7 +429,6 @@
 	item_state = "shrine_wig"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/intern
 	name = "\improper CentCom Head Intern beancap"
@@ -484,8 +475,6 @@
 	name = "cowboy hat"
 	desc = "A classic stetson hat, made from real imitation leather! Wearing it gives you a strong urge to yeehaw."
 	icon_state = "cowboy"
-	dynamic_fhair_suffix = "+generic"
-	dynamic_fhair_suffix = "+generic"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
 
