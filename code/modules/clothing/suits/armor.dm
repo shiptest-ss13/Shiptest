@@ -201,7 +201,7 @@
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | KEPORI_VARIATION
 
-/obj/item/clothing/suit/armor/vest/capcarapace/roumain/montagne
+/obj/item/clothing/suit/armor/vest/capcarapace/roumain
 	name = "saint-roumain montagne coat"
 	desc = "A stylish red coat to indicate that you are, in fact, a Hunter Montagne. Made of extra hard exotic leather, treated with bullet-resistant materials, and lined with the fur of some unidentifiable creature."
 	icon_state = "armor_rouma_montagne"
