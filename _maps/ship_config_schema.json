@@ -34,6 +34,11 @@
 			"description": "The prefix of the ship class, appended to randomly generated names when they're first purchased.",
 			"maxLength": 5
 		},
+		"faction_name": {
+			"title": "Faction Name",
+			"type": [ "null", "string" ],
+			"description": "A custom faction name for the ship class. If exluded or left blank, the ship will use the default faction name for the faction that matches the ship's prefix."
+		},
 		"namelists": {
 			"title": "Namelists",
 			"type": "array",
