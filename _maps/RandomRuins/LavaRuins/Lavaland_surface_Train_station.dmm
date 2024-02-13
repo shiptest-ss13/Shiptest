@@ -371,6 +371,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/salvageable/computer,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "ic" = (
@@ -385,17 +386,17 @@
 "im" = (
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava)
-"iC" = (
-/obj/structure/lattice,
-/obj/effect/supplypod_rubble,
-/obj/item/stack/rods{
-	icon = 'icons/obj/items_and_weapons.dmi';
-	icon_state = "nullrod";
-	name = "Heavy rod";
-	desc = "what seems to be a blackened metal rod.... strangely heavy"
+"ip" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
 	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/unpowered/train_station/cargo)
 "iJ" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -452,12 +453,7 @@
 "kt" = (
 /obj/structure/fluff/clockwork/alloy_shards,
 /obj/effect/supplypod_rubble,
-/obj/item/stack/rods{
-	icon = 'icons/obj/items_and_weapons.dmi';
-	icon_state = "nullrod";
-	name = "Heavy rod";
-	desc = "what seems to be a blackened metal rod.... strangely heavy"
-	},
+/obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava)
 "ky" = (
@@ -729,6 +725,12 @@
 	icon_state = "platingdmg3"
 	},
 /area/overmap_encounter/planetoid/lava)
+"pe" = (
+/obj/structure/lattice,
+/obj/effect/supplypod_rubble,
+/obj/item/stack/rods,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "pn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -759,19 +761,6 @@
 /obj/structure/grille,
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/train)
-"pG" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/large,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
-/obj/effect/turf_decal/corner/opaque/blue/border{
-	dir = 1
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered/train_station/cargo)
 "pI" = (
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/head/beret/black,
@@ -818,6 +807,19 @@
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/unpowered/train_station/Barracks)
+"qv" = (
+/obj/effect/turf_decal/corner/opaque/blue/border,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/large,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
+/turf/open/floor/concrete/reinforced,
+/area/ruin/unpowered/train_station/cargo)
 "qw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1014,6 +1016,11 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/cargo)
+"ue" = (
+/obj/effect/supplypod_rubble,
+/obj/item/stack/rods,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/overmap_encounter/planetoid/lava)
 "ui" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/wood{
@@ -1209,19 +1216,6 @@
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
-"xK" = (
-/obj/effect/turf_decal/corner/opaque/blue/border,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/large,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem,
-/turf/open/floor/concrete/reinforced,
-/area/ruin/unpowered/train_station/cargo)
 "xT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1514,16 +1508,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
-"DR" = (
-/obj/effect/supplypod_rubble,
-/obj/item/stack/rods{
-	icon = 'icons/obj/items_and_weapons.dmi';
-	icon_state = "nullrod";
-	name = "Heavy rod";
-	desc = "what seems to be a blackened metal rod.... strangely heavy"
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava)
 "DX" = (
 /obj/effect/turf_decal/corner/opaque/blue/border,
 /mob/living/simple_animal/hostile/asteroid/goliath/beast,
@@ -1567,6 +1551,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
+"EE" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/unpowered/train_station/cargo)
 "EI" = (
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1670,15 +1663,13 @@
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava)
 "It" = (
-/obj/effect/turf_decal/corner/opaque/blue/border{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/salvageable/computer,
+/obj/structure/closet/crate/large,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "Ix" = (
@@ -1769,16 +1760,6 @@
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
-"Ju" = (
-/obj/effect/turf_decal/corner/opaque/blue/border{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/salvageable/safe_server,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered/train_station/cargo)
 "Jw" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/gloves/color/latex/nitrile/evil{
@@ -1994,6 +1975,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/salvageable/safe_server,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "Mx" = (
@@ -2062,6 +2044,14 @@
 	},
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/Barracks)
+"Ox" = (
+/obj/effect/turf_decal/corner/opaque/blue/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/unpowered/train_station/cargo)
 "Oz" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/concrete/reinforced,
@@ -2134,16 +2124,6 @@
 /obj/effect/turf_decal/industrial/loading{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered/train_station/cargo)
-"Rm" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/large,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_leaf,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "Ry" = (
@@ -2294,11 +2274,16 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "UG" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/large,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
+/obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap,
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "UI" = (
@@ -2978,7 +2963,7 @@ Ns
 Ns
 Ns
 Ai
-Rm
+It
 td
 gl
 BY
@@ -3117,7 +3102,7 @@ sb
 Ao
 lF
 Ns
-UG
+Ox
 gU
 Bd
 KX
@@ -3152,7 +3137,7 @@ CA
 Ao
 KJ
 Ns
-UG
+Ox
 Jf
 pn
 Cs
@@ -3187,7 +3172,7 @@ Bo
 Tk
 Ja
 Ns
-pG
+UG
 rI
 nX
 mw
@@ -3292,8 +3277,8 @@ Ns
 Ns
 Ns
 Ns
-UG
-xK
+Ox
+qv
 Ug
 Sn
 KQ
@@ -3432,7 +3417,7 @@ qc
 qq
 fV
 Ns
-Ju
+Mw
 jO
 AL
 Rb
@@ -3467,7 +3452,7 @@ kI
 uR
 WX
 Ns
-Ju
+Mw
 jO
 Ug
 xg
@@ -3502,7 +3487,7 @@ kI
 Mq
 oF
 Ns
-hQ
+ip
 Ug
 CL
 Vq
@@ -3537,7 +3522,7 @@ RE
 Wu
 oF
 Ns
-It
+hQ
 Ug
 rI
 Aw
@@ -3572,7 +3557,7 @@ hq
 ty
 ZT
 Ns
-hQ
+ip
 Ug
 rI
 vQ
@@ -3607,7 +3592,7 @@ Ns
 Ns
 CN
 Ns
-hQ
+ip
 bV
 rI
 qX
@@ -3677,7 +3662,7 @@ ee
 cl
 IZ
 Ns
-Mw
+EE
 jO
 mJ
 DE
@@ -3712,7 +3697,7 @@ Ns
 Ns
 Ns
 Ns
-Mw
+EE
 ap
 ap
 qN
@@ -4980,7 +4965,7 @@ cb
 gv
 gv
 gv
-DR
+ue
 gv
 gv
 gv
@@ -5056,7 +5041,7 @@ po
 si
 oO
 gv
-DR
+ue
 gv
 cb
 cb
@@ -5152,7 +5137,7 @@ cb
 cb
 gv
 gv
-DR
+ue
 XD
 GE
 mC
@@ -5193,7 +5178,7 @@ po
 mC
 gv
 fw
-iC
+pe
 oO
 gv
 iJ
@@ -5329,7 +5314,7 @@ cb
 gv
 Sw
 gv
-DR
+ue
 gv
 gv
 gv
