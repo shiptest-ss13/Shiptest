@@ -263,9 +263,6 @@
 	},
 /obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = -32
-	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
 "aI" = (
@@ -481,6 +478,9 @@
 /obj/item/gun/energy/e_gun/mini,
 /obj/machinery/light/small/broken/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/rilena/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "bH" = (
@@ -1098,6 +1098,9 @@
 	dir = 4;
 	pixel_x = -21;
 	pixel_y = -10
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
@@ -2146,6 +2149,9 @@
 /obj/item/seeds/random,
 /obj/item/seeds/chili,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen/kitchen)
 "tX" = (
@@ -3126,7 +3132,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Mt" = (
-/obj/machinery/firealarm/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3137,6 +3142,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "MC" = (
@@ -3364,9 +3370,6 @@
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 32
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "QJ" = (
