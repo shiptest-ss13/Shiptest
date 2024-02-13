@@ -55,11 +55,11 @@
 	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
 
-/obj/item/clothing/head/caphat/gorlexcap
+/obj/item/clothing/head/caphat/ngr
 	name = "2nd Battlegroup peaked cap"
 	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup."
-	icon_state = "gorlexcap"
-	item_state = "gorlexcap"
+	icon_state = "captain_ngr"
+	item_state = "captain_ngr"
 	flags_inv = 0
 
 /obj/item/clothing/head/caphat/inteq_peaked
@@ -145,7 +145,6 @@
 	name = "head of security cap"
 	desc = "The robust standard-issue cap of the Head of Security. For showing the officers who's in charge."
 	icon_state = "hoscap"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/cowboy
 	name = "sheriff's hat"
