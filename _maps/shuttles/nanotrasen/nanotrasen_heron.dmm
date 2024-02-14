@@ -1365,7 +1365,7 @@
 	pixel_x = 6;
 	pixel_y = -3
 	},
-/obj/item/book/manual/wiki/engineering_guide{
+/obj/item/book/manual/wiki/engineering{
 	pixel_x = -3;
 	pixel_y = -8
 	},
@@ -3506,12 +3506,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
-"mW" = (
-/obj/structure/guncase,
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo/office)
 "mX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/purple/hidden,
@@ -4314,27 +4308,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"pS" = (
-/obj/structure/closet/wall/orange{
-	name = "Pilot's Locker";
-	pixel_y = 28
-	},
-/obj/item/clothing/under/rank/security/officer/military/eng,
-/obj/item/clothing/suit/jacket/leather/duster,
-/obj/item/clothing/suit/jacket/miljacket,
-/obj/item/clothing/mask/bandana/skull,
-/obj/item/clothing/suit/armor/vest/marine,
-/obj/item/instrument/piano_synth/headphones/spacepods{
-	pixel_x = -5;
-	pixel_y = -1
-	},
-/obj/item/clothing/neck/shemagh,
-/obj/item/reagent_containers/spray/pepper{
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hangar)
 "pT" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 1
@@ -5851,6 +5824,26 @@
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/ship/science/robotics)
+"vb" = (
+/obj/structure/closet/wall/orange{
+	name = "Pilot's Locker";
+	pixel_y = 28
+	},
+/obj/item/clothing/under/rank/security/officer/military/eng,
+/obj/item/clothing/suit/jacket/leather/duster,
+/obj/item/clothing/suit/jacket/miljacket,
+/obj/item/clothing/suit/armor/vest/marine,
+/obj/item/instrument/piano_synth/headphones/spacepods{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/clothing/neck/shemagh,
+/obj/item/reagent_containers/spray/pepper{
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hangar)
 "vg" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -6508,7 +6501,7 @@
 /obj/item/survey_handheld{
 	pixel_x = -2
 	},
-/obj/item/book/manual/wiki/robotics_cyborgs{
+/obj/item/book/manual/wiki/robotics{
 	pixel_y = -1;
 	pixel_x = 5
 	},
@@ -9197,6 +9190,27 @@
 	},
 /turf/open/floor/wood,
 /area/ship/crew/dorm/dormtwo)
+"HI" = (
+/obj/structure/closet/wall/orange{
+	name = "Pilot's Locker";
+	pixel_y = 28
+	},
+/obj/item/clothing/under/rank/security/officer/military/eng,
+/obj/item/clothing/suit/jacket/leather/duster,
+/obj/item/clothing/suit/jacket/miljacket,
+/obj/item/clothing/mask/bandana/skull,
+/obj/item/clothing/suit/armor/vest/marine,
+/obj/item/instrument/piano_synth/headphones/spacepods{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/clothing/neck/shemagh,
+/obj/item/reagent_containers/spray/pepper{
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/hangar)
 "HO" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -9367,26 +9381,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
-"Io" = (
-/obj/structure/closet/wall/orange{
-	name = "Pilot's Locker";
-	pixel_y = 28
-	},
-/obj/item/clothing/under/rank/security/officer/military/eng,
-/obj/item/clothing/suit/jacket/leather/duster,
-/obj/item/clothing/suit/jacket/miljacket,
-/obj/item/clothing/suit/armor/vest/marine,
-/obj/item/instrument/piano_synth/headphones/spacepods{
-	pixel_x = -5;
-	pixel_y = -1
-	},
-/obj/item/clothing/neck/shemagh,
-/obj/item/reagent_containers/spray/pepper{
-	pixel_x = 7;
-	pixel_y = -6
-	},
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/hangar)
 "Ip" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/mint,
@@ -11619,6 +11613,12 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"Rs" = (
+/obj/structure/guncase,
+/obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo/office)
 "Ru" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -11794,10 +11794,6 @@
 /area/ship/engineering/electrical)
 "Se" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = 5;
-	pixel_y = 2
-	},
 /obj/item/cigbutt/cigarbutt{
 	pixel_x = 8;
 	pixel_y = -1
@@ -12200,10 +12196,6 @@
 /area/ship/engineering/engine)
 "TE" = (
 /obj/structure/table,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = -5;
-	pixel_y = 16
-	},
 /obj/machinery/light/directional/west{
 	light_color = "#e8eaff"
 	},
@@ -13955,10 +13947,6 @@
 /area/ship/crew/canteen)
 "ZX" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = 4;
-	pixel_y = 2
-	},
 /obj/machinery/door/window/brigdoor/southright,
 /obj/machinery/door/window/brigdoor/southright{
 	dir = 1;
@@ -15417,7 +15405,7 @@ uQ
 uQ
 uQ
 uQ
-pS
+HI
 JE
 gN
 MI
@@ -15454,9 +15442,9 @@ Ob
 Zg
 mk
 lv
-mW
+Rs
 Zg
-Io
+vb
 zC
 EO
 fv

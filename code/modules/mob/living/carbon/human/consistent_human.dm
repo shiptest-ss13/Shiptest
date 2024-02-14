@@ -2,7 +2,7 @@
 	create_dna()
 	return //No randomisation
 
-/mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0)
+/mob/living/carbon/human/dummy/consistent/proc/seeded_randomization(seed = 0, species_list = null)
 	seed = md5(seed)
 
 	gender = list(MALE, FEMALE)[hex2num(copytext(seed, 1, 2)) % 2 + 1]
@@ -38,5 +38,8 @@
 	dna.features["ipc_chassis"] = GLOB.ipc_chassis_list[hex2num(copytext(seed, 18, 19)) % length(GLOB.ipc_chassis_list) + 1]
 	dna.features["ipc_screen"] = GLOB.ipc_screens_list[hex2num(copytext(seed, 19, 20)) % length(GLOB.ipc_screens_list) + 1]
 
-	var/species_id = GLOB.roundstart_races[hex2num(copytext(seed, 3, 4)) % length(GLOB.roundstart_races) + 1]
-	set_species(GLOB.species_list[species_id])
+	if(!species_list)
+		species_list = GLOB.species_list
+
+	var/species = species_list[hex2num(copytext(seed, 3, 4)) % length(species_list) + 1]
+	set_species(species)

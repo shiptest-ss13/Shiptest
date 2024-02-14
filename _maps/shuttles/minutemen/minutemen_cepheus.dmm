@@ -189,7 +189,7 @@
 	pixel_x = -4;
 	pixel_y = 1
 	},
-/obj/item/book/manual/wiki/engineering_singulo_tesla{
+/obj/item/book/manual/wiki/engineering{
 	pixel_x = 5;
 	pixel_y = 14
 	},
@@ -431,8 +431,8 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/clothing/shoes/cowboy/white,
 /obj/item/storage/belt/sabre,
-/obj/item/gun/ballistic/revolver/nagant,
-/obj/item/ammo_box/n762_clip,
+/obj/item/gun/ballistic/revolver/shadow,
+/obj/item/ammo_box/c45_speedloader,
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
@@ -1911,21 +1911,21 @@
 	dir = 4;
 	layer = 4.1
 	},
-/obj/item/gun/ballistic/automatic/pistol/m1911{
+/obj/item/gun/ballistic/automatic/pistol/candor{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/pistol/m1911{
+/obj/item/gun/ballistic/automatic/pistol/candor{
 	pixel_y = 3
 	},
 /obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/gun/ballistic/automatic/pistol/m1911{
+/obj/item/gun/ballistic/automatic/pistol/candor{
 	pixel_y = 3
 	},
 /obj/structure/sign/poster/contraband/twelve_gauge{
 	pixel_y = 32
 	},
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/hellfire,
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "tX" = (
@@ -3036,10 +3036,6 @@
 /area/ship/engineering/atmospherics)
 "FC" = (
 /obj/structure/table,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = 9;
-	pixel_y = 4
-	},
 /obj/item/flashlight/lamp{
 	pixel_x = -7;
 	pixel_y = 1
@@ -4108,15 +4104,9 @@
 /obj/item/ammo_box/magazine/m45{
 	pixel_x = 6
 	},
-/obj/item/storage/box/rubbershot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
+/obj/item/ammo_box/a12g/rubbershot,
 /obj/item/ammo_box/magazine/cm15_mag,
-/obj/item/storage/box/rubbershot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
+/obj/item/ammo_box/a12g/rubbershot,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "RN" = (
@@ -4338,7 +4328,7 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central2{
 	pixel_y = 2
 	},
-/obj/item/book/manual/wiki/robotics_cyborgs{
+/obj/item/book/manual/wiki/robotics{
 	pixel_x = -3;
 	pixel_y = 3
 	},

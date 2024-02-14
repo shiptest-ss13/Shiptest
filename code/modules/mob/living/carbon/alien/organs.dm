@@ -83,17 +83,23 @@
 	else
 		owner.adjustPlasma(plasma_rate * 0.1)
 
-/obj/item/organ/alien/plasmavessel/Insert(mob/living/carbon/M, special = 0)
+/obj/item/organ/alien/plasmavessel/Insert(mob/living/carbon/organ_owner, special = 0)
 	..()
-	if(isalien(M))
-		var/mob/living/carbon/alien/A = M
-		A.updatePlasmaDisplay()
+	if(isalien(organ_owner))
+		var/mob/living/carbon/alien/target_alien = organ_owner
+		target_alien.updatePlasmaDisplay()
+	RegisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 
-/obj/item/organ/alien/plasmavessel/Remove(mob/living/carbon/M, special = 0)
+/obj/item/organ/alien/plasmavessel/Remove(mob/living/carbon/organ_owner, special = 0)
 	..()
-	if(isalien(M))
-		var/mob/living/carbon/alien/A = M
-		A.updatePlasmaDisplay()
+	if(isalien(organ_owner))
+		var/mob/living/carbon/alien/organ_owner_alien = organ_owner
+		organ_owner_alien.updatePlasmaDisplay()
+	UnregisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
+
+/obj/item/organ/alien/plasmavessel/proc/get_status_tab_item(mob/living/carbon/source, list/items)
+	SIGNAL_HANDLER
+	items += "Plasma Stored: [storedPlasma]/[max_plasma]"
 
 #define QUEEN_DEATH_DEBUFF_DURATION 2400
 

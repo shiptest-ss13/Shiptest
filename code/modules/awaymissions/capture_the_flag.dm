@@ -537,10 +537,14 @@
 		ADD_TRAIT(I, TRAIT_NODROP, CAPTURE_THE_FLAG_TRAIT)
 
 /datum/outfit/ctf/instagib
+	name = "CTF (Instagib)"
+
 	r_hand = /obj/item/gun/energy/laser/instakill
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
 /datum/outfit/ctf/red
+	name = "CTF (Red)"
+
 	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/red
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/red
 	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/red
@@ -548,10 +552,14 @@
 	id = /obj/item/card/id/syndicate_command //it's red
 
 /datum/outfit/ctf/red/instagib
+	name = "CTF (Red, Instagib)"
+
 	r_hand = /obj/item/gun/energy/laser/instakill/red
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
 /datum/outfit/ctf/blue
+	name = "CTF (Blue)"
+
 	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/blue
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/blue
 	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/blue
@@ -559,6 +567,8 @@
 	id = /obj/item/card/id/centcom //it's blue
 
 /datum/outfit/ctf/blue/instagib
+	name = "CTF (Blue, Instagib)"
+
 	r_hand = /obj/item/gun/energy/laser/instakill/blue
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
