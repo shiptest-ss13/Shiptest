@@ -579,15 +579,17 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  *
  * If the area has ambience, then it plays some ambience music to the ambience channel
  */
-/area/Entered(atom/movable/M, area/old_area)
+/area/Entered(atom/movable/arrived, area/old_area)
 	set waitfor = FALSE
-	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M, old_area)
-	for(var/atom/movable/recipient as anything in M.area_sensitive_contents)
+	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, arrived, old_area)
+	if(!LAZYACCESS(arrived.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE))
+		return
+	for(var/atom/movable/recipient as anything in arrived.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
 		SEND_SIGNAL(recipient, COMSIG_ENTER_AREA, src)
-	if(!isliving(M))
+	if(!isliving(arrived))
 		return
 
-	var/mob/living/L = M
+	var/mob/living/L = arrived
 	if(!L.ckey)
 		return
 
@@ -613,7 +615,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  */
 /area/Exited(atom/movable/gone, direction)
 	SEND_SIGNAL(src, COMSIG_AREA_EXITED, gone, direction)
-	for(var/atom/movable/recipient as anything in gone.area_sensitive_contents)
+	if(!LAZYACCESS(gone.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE))
+		return
+	for(var/atom/movable/recipient as anything in gone.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
 		SEND_SIGNAL(recipient, COMSIG_EXIT_AREA, src)
 
 
