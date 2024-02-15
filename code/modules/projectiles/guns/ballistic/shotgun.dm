@@ -687,6 +687,7 @@
 	base_icon_state = "beacon"
 	icon_state = "beacon"
 	item_state = "beacon"
+	unique_reskin = null
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	inhand_x_dimension = 32

@@ -40,7 +40,7 @@
 	name = "ammo holder (.45-70 hollow point)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
-	ammo_type = /obj/item/ammo_casing/a357/hp
+	ammo_type = /obj/item/ammo_casing/a4570/hp
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"

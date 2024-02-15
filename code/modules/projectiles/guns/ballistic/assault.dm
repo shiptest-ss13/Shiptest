@@ -14,6 +14,28 @@
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 	spread_unwielded = 20
 
+/obj/item/gun/ballistic/automatic/assault/skm
+	name = "\improper SKM-24"
+	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+
+	icon_state = "skm"
+	item_state = "skm"
+	mag_display = TRUE
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	mag_type = /obj/item/ammo_box/magazine/ak47
+	spread = 0
+	wield_delay = 0.7 SECONDS
+
 /obj/item/gun/ballistic/automatic/assault/ak47
 	name = "\improper SVG-67"
 	desc = "A Frontier-built assault rifle descended from a pattern of unknown provenance. Its low cost, ease of maintenance, and powerful 7.62x39mm cartridge make it a popular choice among a wide variety of outlaws."

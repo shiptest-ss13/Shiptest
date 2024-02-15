@@ -244,6 +244,7 @@
 	flight_x_offset = 20
 	flight_y_offset = 9
 	spread = 80
+	spread_unwielded = 140
 	dual_wield_spread = 140
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA
