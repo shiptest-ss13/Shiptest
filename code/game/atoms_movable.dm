@@ -34,7 +34,6 @@
 	var/moving_diagonally = 0 //0: not doing a diagonal move. 1 and 2: doing the first/second step of the diagonal move
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
 	var/list/client_mobs_in_contents // This contains all the client mobs within this container
-	var/list/area_sensitive_contents // A (nested) list of contents that need to be sent signals to when moving between areas. Can include src.
 	var/list/acted_explosions	//for explosion dodging
 	var/datum/forced_movement/force_moving = null	//handled soley by forced_movement.dm
 	///In case you have multiple types, you automatically use the most useful one. IE: Skating on ice, flippers on water, flying over chasm/space, etc. Should only be changed through setMovetype()
@@ -120,9 +119,6 @@
 		orbiting = null
 
 	. = ..()
-
-	//We add ourselves to this list, best to clear it out
-	LAZYCLEARLIST(area_sensitive_contents)
 
 	for(var/movable_content in contents)
 		qdel(movable_content)
@@ -634,32 +630,70 @@
 			return
 	A.Bumped(src)
 
-/atom/movable/Exited(atom/movable/AM, atom/newLoc)
+/atom/movable/Exited(atom/movable/gone, direction)
 	. = ..()
-	if(AM.area_sensitive_contents)
-		for(var/atom/movable/location as anything in get_nested_locs(src) + src)
-			LAZYREMOVE(location.area_sensitive_contents, AM.area_sensitive_contents)
 
-/atom/movable/Entered(atom/movable/AM, atom/oldLoc)
+	if(!LAZYLEN(gone.important_recursive_contents))
+		return
+
+	var/list/nested_locs = get_nested_locs(src) + src
+	for(var/channel in gone.important_recursive_contents)
+		for(var/atom/movable/location as anything in nested_locs)
+			var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
+			recursive_contents[channel] -= gone.important_recursive_contents[channel]
+			ASSOC_UNSETEMPTY(recursive_contents, channel)
+			UNSETEMPTY(location.important_recursive_contents)
+
+/atom/movable/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	. = ..()
-	if(AM.area_sensitive_contents)
-		for(var/atom/movable/location as anything in get_nested_locs(src) + src)
-			LAZYADD(location.area_sensitive_contents, AM.area_sensitive_contents)
+
+	if(!LAZYLEN(arrived.important_recursive_contents))
+		return
+
+	var/list/nested_locs = get_nested_locs(src) + src
+	for(var/channel in arrived.important_recursive_contents)
+		for(var/atom/movable/location as anything in nested_locs)
+			LAZYINITLIST(location.important_recursive_contents)
+			var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
+			LAZYINITLIST(recursive_contents[channel])
+			recursive_contents[channel] |= arrived.important_recursive_contents[channel]
 
 /// See traits.dm. Use this in place of ADD_TRAIT.
 /atom/movable/proc/become_area_sensitive(trait_source = TRAIT_GENERIC)
 	if(!HAS_TRAIT(src, TRAIT_AREA_SENSITIVE))
-		RegisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_AREA_SENSITIVE), PROC_REF(on_area_sensitive_trait_loss))
 		for(var/atom/movable/location as anything in get_nested_locs(src) + src)
-			LAZYADD(location.area_sensitive_contents, src)
+			LAZYADDASSOCLIST(location.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE, src)
 	ADD_TRAIT(src, TRAIT_AREA_SENSITIVE, trait_source)
 
-/atom/movable/proc/on_area_sensitive_trait_loss()
-	SIGNAL_HANDLER
+/atom/movable/proc/lose_area_sensitivity(trait_source = TRAIT_GENERIC)
+	if(!HAS_TRAIT(src, TRAIT_AREA_SENSITIVE))
+		return
+	REMOVE_TRAIT(src, TRAIT_AREA_SENSITIVE, trait_source)
+	if(HAS_TRAIT(src, TRAIT_AREA_SENSITIVE))
+		return
 
-	UnregisterSignal(src, SIGNAL_REMOVETRAIT(TRAIT_AREA_SENSITIVE))
+///allows this movable to hear and adds itself to the important_recursive_contents list of itself and every movable loc its in
+/atom/movable/proc/become_hearing_sensitive(trait_source = TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEARING_SENSITIVE, trait_source)
+	if(!HAS_TRAIT(src, TRAIT_HEARING_SENSITIVE))
+		return
+
 	for(var/atom/movable/location as anything in get_nested_locs(src) + src)
-		LAZYREMOVE(location.area_sensitive_contents, src)
+		LAZYINITLIST(location.important_recursive_contents)
+		var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
+		recursive_contents[RECURSIVE_CONTENTS_HEARING_SENSITIVE] += list(src)
+
+/atom/movable/proc/lose_hearing_sensitivity(trait_source = TRAIT_GENERIC)
+	if(!HAS_TRAIT(src, TRAIT_HEARING_SENSITIVE))
+		return
+	REMOVE_TRAIT(src, TRAIT_HEARING_SENSITIVE, trait_source)
+	if(HAS_TRAIT(src, TRAIT_HEARING_SENSITIVE))
+		return
+	for(var/atom/movable/location as anything in get_nested_locs(src) + src)
+		var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
+		recursive_contents[RECURSIVE_CONTENTS_HEARING_SENSITIVE] -= src
+		ASSOC_UNSETEMPTY(recursive_contents, RECURSIVE_CONTENTS_HEARING_SENSITIVE)
+		UNSETEMPTY(location.important_recursive_contents)
 
 ///Sets the anchored var and returns if it was sucessfully changed or not.
 /atom/movable/proc/set_anchored(anchorvalue)
@@ -1212,54 +1246,3 @@
 	animate(pickup_animation, alpha = 175, pixel_x = to_x, pixel_y = to_y, time = 3, transform = M, easing = CUBIC_EASING)
 	sleep(1)
 	animate(pickup_animation, alpha = 0, transform = matrix(), time = 1)
-
-/atom/movable/Exited(atom/movable/gone, direction)
-	. = ..()
-
-	if(!LAZYLEN(gone.important_recursive_contents))
-		return
-
-	var/list/nested_locs = get_nested_locs(src) + src
-	for(var/channel in gone.important_recursive_contents)
-		for(var/atom/movable/location as anything in nested_locs)
-			var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
-			recursive_contents[channel] -= gone.important_recursive_contents[channel]
-			ASSOC_UNSETEMPTY(recursive_contents, channel)
-			UNSETEMPTY(location.important_recursive_contents)
-
-/atom/movable/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
-	. = ..()
-
-	if(!LAZYLEN(arrived.important_recursive_contents))
-		return
-
-	var/list/nested_locs = get_nested_locs(src) + src
-	for(var/channel in arrived.important_recursive_contents)
-		for(var/atom/movable/location as anything in nested_locs)
-			LAZYINITLIST(location.important_recursive_contents)
-			var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
-			LAZYINITLIST(recursive_contents[channel])
-			recursive_contents[channel] |= arrived.important_recursive_contents[channel]
-
-///allows this movable to hear and adds itself to the important_recursive_contents list of itself and every movable loc its in
-/atom/movable/proc/become_hearing_sensitive(trait_source = TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_HEARING_SENSITIVE, trait_source)
-	if(!HAS_TRAIT(src, TRAIT_HEARING_SENSITIVE))
-		return
-
-	for(var/atom/movable/location as anything in get_nested_locs(src) + src)
-		LAZYINITLIST(location.important_recursive_contents)
-		var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
-		recursive_contents[RECURSIVE_CONTENTS_HEARING_SENSITIVE] += list(src)
-
-/atom/movable/proc/lose_hearing_sensitivity(trait_source = TRAIT_GENERIC)
-	if(!HAS_TRAIT(src, TRAIT_HEARING_SENSITIVE))
-		return
-	REMOVE_TRAIT(src, TRAIT_HEARING_SENSITIVE, trait_source)
-	if(HAS_TRAIT(src, TRAIT_HEARING_SENSITIVE))
-		return
-	for(var/atom/movable/location as anything in get_nested_locs(src) + src)
-		var/list/recursive_contents = location.important_recursive_contents // blue hedgehog velocity
-		recursive_contents[RECURSIVE_CONTENTS_HEARING_SENSITIVE] -= src
-		ASSOC_UNSETEMPTY(recursive_contents, RECURSIVE_CONTENTS_HEARING_SENSITIVE)
-		UNSETEMPTY(location.important_recursive_contents)

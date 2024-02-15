@@ -149,6 +149,10 @@
 	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(check_barstaff_godmode))
 	check_barstaff_godmode()
 
+/mob/living/simple_animal/drone/snowflake/bardrone/Destroy()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
+	return ..()
+
 /mob/living/simple_animal/hostile/alien/maid/barmaid
 	gold_core_spawnable = NO_SPAWN
 	name = "Barmaid"
@@ -172,7 +176,8 @@
 
 /mob/living/simple_animal/hostile/alien/maid/barmaid/Destroy()
 	qdel(access_card)
-	. = ..()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
+	return ..()
 
 /mob/living/simple_animal/proc/check_barstaff_godmode()
 	SIGNAL_HANDLER

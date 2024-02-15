@@ -174,6 +174,7 @@ Class Procs:
 	GLOB.machines.Remove(src)
 	end_processing()
 	dropContents()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
 	QDEL_NULL(circuit)
 	QDEL_LIST(component_parts)
 	return ..()

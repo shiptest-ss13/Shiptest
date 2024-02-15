@@ -35,8 +35,10 @@
 
 /datum/component/mood/Destroy()
 	STOP_PROCESSING(SSmood, src)
-	REMOVE_TRAIT(parent, TRAIT_AREA_SENSITIVE, MOOD_COMPONENT_TRAIT)
 	unmodify_hud()
+
+	var/mob/living/owner = parent
+	owner.lose_area_sensitivity(MOOD_COMPONENT_TRAIT)
 	return ..()
 
 /datum/component/mood/proc/register_job_signals(datum/source, job)
