@@ -731,10 +731,11 @@
 	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/green/visible,
+/obj/machinery/firealarm/directional/west,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20;
-	pixel_y = 5
+	pixel_y = 12
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -2961,6 +2962,7 @@
 	pixel_x = -20;
 	pixel_y = 12
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "Jt" = (
