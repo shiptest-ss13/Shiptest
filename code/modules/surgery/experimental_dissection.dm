@@ -49,7 +49,7 @@
 	var/multi_surgery_adjust = 0
 
 	//determine bonus applied
-	var/list/mob_mult_list = list(/mob/living/simple_animal/hostile/asteroid/elite = 6,
+	var/static/list/mob_mult_list = list(/mob/living/simple_animal/hostile/asteroid/elite = 6,
 									/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal = 5,
 									/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten = 3,
 									/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient = 2
