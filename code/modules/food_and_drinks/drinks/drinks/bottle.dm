@@ -346,7 +346,7 @@
 /obj/item/reagent_containers/food/drinks/bottle/sake/Initialize()
 	. = ..()
 	if(prob(10))
-		name = "Fluffy Tail Sake"
+		name = "Fluffy Tail"
 		desc += "This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
 		icon_state = "sakebottle_k"
 	else if(prob(10))
@@ -364,7 +364,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice
 	name = "orange juice"
-	desc = "Full of vitamins and deliciousness!"
+	desc = "Sweet and tart orange juice. Usually found fortified to make it more nutritious. Full of vitamin C!"
 	custom_price = 100
 	icon_state = "orangejuice"
 	item_state = "carton"
@@ -376,7 +376,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
 	name = "milk cream"
-	desc = "It's cream. Made from milk. What else did you think you'd find in there?"
+	desc = "Cream made from milk. It's thicker than milk, which hopefully prevents any mixups."
 	custom_price = 100
 	icon_state = "cream"
 	item_state = "carton"
@@ -388,7 +388,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
 	name = "tomato juice"
-	desc = "Well, at least it LOOKS like tomato juice. You can't tell with all that redness."
+	desc = "Juice from tomatoes and salt. You'll often find some technicians soaking in this if they've been working with plasma."
 	custom_price = 100
 	icon_state = "tomatojuice"
 	item_state = "carton"
@@ -400,7 +400,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
 	name = "lime juice"
-	desc = "Sweet-sour goodness."
+	desc = "Lime juice. You might want to mix something with this instead of drinking it straight..."
 	custom_price = 100
 	icon_state = "limejuice"
 	item_state = "carton"
@@ -412,7 +412,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/pineapplejuice
 	name = "pineapple juice"
-	desc = "Extremely tart, yellow juice."
+	desc = "Tart, sweet juice from the tropical pineapple."
 	custom_price = 100
 	icon_state = "pineapplejuice"
 	item_state = "carton"
@@ -435,8 +435,8 @@
 	list_reagents = list(/datum/reagent/consumable/menthol = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
-	name = "Jester Grenadine"
-	desc = "Contains 0% real cherries!"
+	name = "Three-Star Grenadine"
+	desc = "A commonly seen bottle of grenadine - or sweet fruit syrup. Contains real cherries, as well as some blackcurrant for color."
 	custom_price = 100
 	icon_state = "grenadine"
 	isGlass = TRUE
@@ -445,8 +445,8 @@
 
 
 /obj/item/reagent_containers/food/drinks/bottle/applejack
-	name = "Buckin' Bronco's Applejack"
-	desc = "Kicks like a horse, tastes like an apple!"
+	name = "Mars Lightning"
+	desc = "A strong brandy originating from apples, considered the older sibling to hard cider. Mars Lightning is often partnered with anti-gravity racing companies, leading to it often being served straight or for impromptu mixes."
 	custom_price = 100
 	icon_state = "applejack_bottle"
 	isGlass = TRUE
@@ -454,8 +454,8 @@
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/drinks/bottle/champagne
-	name = "Eau d' Dandy Brut Champagne"
-	desc = "Finely sourced from only the most pretentious French vineyards."
+	name = "Treu Champagne"
+	desc = "Finely sourced from entire canton planets dedicated to faithful reproduction of pre-Night Of Fire vineyards. Typically enjoyed for celebrations and the turn of new years."
 	custom_premium_price = 250
 	icon_state = "champagne_bottle"
 	isGlass = TRUE
