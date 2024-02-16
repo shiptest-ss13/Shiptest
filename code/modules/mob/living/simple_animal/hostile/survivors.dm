@@ -282,7 +282,7 @@
 
 	if(survivor_type == "gunslinger")
 		if(prob(50))
-			l_pocket = /obj/item/ammo_box/magazine/aks74u
+			l_pocket = /obj/item/ammo_box/magazine/skm_545_39
 		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 	else

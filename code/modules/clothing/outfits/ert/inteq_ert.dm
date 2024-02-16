@@ -11,7 +11,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt
 	id = /obj/item/card/id
-	belt = /obj/item/storage/belt/security/webbing/inteq/ak47
+	belt = /obj/item/storage/belt/security/webbing/inteq/skm
 	back = /obj/item/storage/backpack/fireproof
 
 	l_pocket = /obj/item/kitchen/knife/combat

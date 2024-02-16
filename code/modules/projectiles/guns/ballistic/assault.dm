@@ -18,13 +18,13 @@
 	name = "\improper SKM-24"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
 
-	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
-	load_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
 	icon_state = "skm"
 	item_state = "skm"

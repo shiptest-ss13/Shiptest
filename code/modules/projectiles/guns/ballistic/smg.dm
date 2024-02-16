@@ -266,11 +266,17 @@
 	icon_state = "skm_carbine"
 	item_state = "skm_carbine"
 
-	fire_sound = 'sound/weapons/gun/rifle/akm.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/aks74u
+	mag_type = /obj/item/ammo_box/magazine/skm_545_39
 
 	actions_types = list(/datum/action/item_action/fold_stock) //once again, ideally an attatchment in the future
 
@@ -298,7 +304,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS) //last autofire system made the fire rate REALLY fucking fast, but because of how poor it was, it was normal speed.
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 	AddElement(/datum/element/update_icon_updates_onmob)
 
 /datum/action/item_action/fold_stock

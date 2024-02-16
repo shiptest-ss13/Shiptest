@@ -34,29 +34,18 @@
 	. = ..()
 	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
 
-/obj/item/ammo_box/magazine/aks74u
-	name = "assault rifle magazine (5.45x39mm)"
-	desc = "A slightly-curved, 30-round magazine for the AKS-74U. These rounds do moderate damage with good armor penetration."
-	icon_state = "ak47_mag"
-	ammo_type = /obj/item/ammo_casing/a545_39
-	caliber = "5.45x39mm"
-	max_ammo = 30
-
-/obj/item/ammo_box/magazine/aks74u/update_icon_state()
-	. = ..()
-	icon_state = "ak47_mag-[!!ammo_count()]"
-
-/obj/item/ammo_box/magazine/aknt
+/obj/item/ammo_box/magazine/skm_545_39
 	name = "subcaliber assault rifle magazine (4.6x30mm)"
-	desc = "A cheap, 30-round polymer magazine for the NT-SVG. These rounds do okay damage with average performance against armor."
-	icon_state = "ak47_mag"
+	desc = "A slightly-curved, 30-round magazine for the SKM-24v. These rounds do okay damage with average performance against armor"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
 	max_ammo = 30
+	base_icon_state = "skm_mag"
+	icon_state = "skm_mag"
 
-/obj/item/ammo_box/magazine/aknt/update_icon_state()
+/obj/item/ammo_box/magazine/skm_545_39/update_icon_state()
 	. = ..()
-	icon_state = "ak47_mag-[!!ammo_count()]"
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/skm_762_40
 	name = "assault rifle magazine (7.62x40mm CLIP)"

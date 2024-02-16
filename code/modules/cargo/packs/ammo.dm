@@ -164,7 +164,7 @@
 					/obj/item/ammo_box/magazine/ebr)
 	cost = 2000
 
-/datum/supply_pack/ammo/ak47_ammo
+/datum/supply_pack/ammo/skm_ammo
 	name = "SKM 7.62x40mm CLIP Magazine Crate"
 	desc = "Contains two 7.62x40mm magazines for the SKM rifles, each containing twenty rounds."
 	contains = list(/obj/item/ammo_box/magazine/skm_762_40,

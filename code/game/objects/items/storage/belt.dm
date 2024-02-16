@@ -933,7 +933,7 @@
 	item_state = "inteq_webbing"
 	supports_variations = VOX_VARIATION
 
-/obj/item/storage/belt/security/webbing/inteq/ak47/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
 	. = ..()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_box/magazine/skm_762_40(src)

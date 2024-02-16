@@ -230,12 +230,12 @@
 	icon_state = "skm_lmg"
 	item_state = "skm_lmg"
 
-	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
-	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
-	load_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
 
 	mag_display = TRUE

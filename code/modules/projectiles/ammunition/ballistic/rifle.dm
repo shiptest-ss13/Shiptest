@@ -34,7 +34,7 @@
 	caliber = "5.56x45mm"
 	projectile_type = /obj/projectile/bullet/a556_45
 
-// 5.45x39mm (AKS-74U)
+// 5.45x39mm (SKM-24v)
 
 /obj/item/ammo_casing/a545_39
 	name = "5.45x39mm bullet casing"
