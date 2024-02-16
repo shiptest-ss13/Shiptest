@@ -365,9 +365,16 @@
 	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10mm."
 	icon_state = "skm_inteqsmg"
 	item_state = "skm_inteqsmg"
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+
 	mag_type = /obj/item/ammo_box/magazine/smgm10mm
 	manufacturer = MANUFACTURER_INTEQ
+
+	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
 	spread = 7
 	recoil_unwielded = 10
