@@ -156,20 +156,20 @@
 	AddComponent(/datum/component/butchering, 200, 55)
 
 /obj/item/reagent_containers/food/drinks/bottle/gin
-	name = "Griffeater gin"
-	desc = "A bottle of high quality gin, produced in the New London Space Station."
+	name = "Neue Wacholder gin"
+	desc = "A bottle of high quality gin, cultivated from juniper berries grown across the Solar cantons. Brewed in Stuteföhle."
 	icon_state = "ginbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/whiskey
-	name = "Uncle Git's special reserve"
-	desc = "A premium single-malt whiskey, gently matured inside the tunnels of a nuclear shelter. TUNNEL WHISKEY RULES."
+	name = "Kadi-Witka Reserve"
+	desc = "An equivalent to single-malt whiskey, commonly enjoyed and brewed in a brewery originally founded Zohil. While different from traditionally used wheat, it can be safely enjoyed by every species."
 	icon_state = "whiskeybottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/kong
 	name = "Kong"
-	desc = "Makes You Go Ape!&#174;"
+	desc = "Makes You Go Ape!"
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey/kong = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/candycornliquor
@@ -178,8 +178,8 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/whiskey/candycorn = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vodka
-	name = "Tunguska triple distilled"
-	desc = "Vodka, prime choice of drink and fuel."
+	name = "Triple Horned"
+	desc = "Potato-based liquor commonly known as Vodka, distilled thrice to the standards of the PGF's requirements for their rations."
 	icon_state = "vodkabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
@@ -190,8 +190,8 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/vodka = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tequila
-	name = "Caccavo guaranteed quality tequila"
-	desc = "Made from premium petroleum distillates, pure thalidomide and other fine quality ingredients!"
+	name = "Rimeki Letisa"
+	desc = "Originally made from fermented succulents growing near Teceti's equator-deserts, this brand considers itself equivalent to the original tequila."
 	icon_state = "tequilabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/tequila = 100)
 
@@ -205,19 +205,19 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequila, served in space night clubs across the galaxy."
+	desc = "Tequila laced with silver, showy enough to impress when ordered in nightclubs across the galaxy."
 	icon_state = "patronbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/patron = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/rum
-	name = "Captain Pete's Cuban spiced rum"
-	desc = "This isn't just rum, oh no. It's practically GRIFF in a bottle."
+	name = "Ahkskra Spiced"
+	desc = "Ahkskra Spiced - a spiced rum for the vox folkhero in everyone. Features a gallant-looking vox on the front of the bottle."
 	icon_state = "rumbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/rum = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/holywater
 	name = "flask of holy water"
-	desc = "A flask of the chaplain's holy water."
+	desc = "A flask of water, sanctified in some way by the supertitious."
 	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/water/holywater = 100)
 	foodtype = NONE
@@ -227,33 +227,33 @@
 	list_reagents = list(/datum/reagent/hellwater = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/vermouth
-	name = "Goldeneye vermouth"
-	desc = "Sweet, sweet dryness~"
+	name = "Whitespear Dry"
+	desc = "Dry and sweet vermouth, commonly used for mixed drinks. Some Solarians drink it as a digestive before meals."
 	icon_state = "vermouthbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/vermouth = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/kahlua
-	name = "Robert Robust's coffee liqueur"
-	desc = "A widely known, Mexican coffee-flavoured liqueur. In production since 1936, HONK."
+	name = "Keh'Lu'Tex Liqueur"
+	desc = "An adapted recipe of a caffeine-mixed liqueur originating from Reh'himl, which replaces it's original ingredient with coffee from Terra."
 	icon_state = "kahluabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 100)
 	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/drinks/bottle/goldschlager
-	name = "College Girl goldschlager"
-	desc = "Because they are the only ones who will drink 100 proof cinnamon schnapps."
+	name = "Student-Union's Gold Standard"
+	desc = "Extremely high-proof cinnamon schnapps, typically found in commemorative bottles by those in the Student-Union Association of Naturalistic Sciences. Nigh-undrinkable and with a tasteless amount of gold flakes floating within."
 	icon_state = "goldschlagerbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/goldschlager = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/cognac
-	name = "Chateau de Baton premium cognac"
-	desc = "A sweet and strongly alchoholic drink, made after numerous distillations and years of maturing. You might as well not scream 'SHITCURITY' this time."
+	name = "Geheimnis Cognac"
+	desc = "While the origins of the name 'cognac' are lost to time, this type of brandy is reserved as a high-class drink with particular methods of brewing."
 	icon_state = "cognacbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/cognac = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/wine
-	name = "Doublebeard's bearded special wine"
-	desc = "A faint aura of unease and asspainery surrounds the bottle."
+	name = "Waldstätte Sauvignon"
+	desc = "A bottle of wine, brewed from grapes specifically grown in Neue Waldstätte. You've mostly seen these in bottles sold specifically for tourists."
 	icon_state = "winebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/wine = 100)
 	foodtype = FRUIT | ALCOHOL
@@ -304,42 +304,42 @@
 
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium
-	name = "Gwyn's premium absinthe"
-	desc = "A potent alcoholic beverage, almost makes you forget the ash in your lungs."
+	name = "Chacheyi Gold"
+	desc = "A higher shelf absinthe, distributed primarily from The Shoal. Features the folkhero Chacheyi on the label, alongside their goldgrub companions."
 	icon_state = "absinthepremium"
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium/redact()
 	return
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
-	name = "bottle of 'kalixcis' wine"
-	desc = "An alcoholic beverage of sarathi origin, now so widespread that knock-offs can be found everywhere. Check the label for point of origin."
+	name = "bottle of Blueflame Pyrecask"
+	desc = "An alcoholic beverage originating from isolated vineyards on Zohil, maintained by the reclusive religious sects of the Blueflame. Now considered so popular and high quality, imitation bottles can be found everywhere. Check the label for point of origin."
 	icon_state = "lizardwine"
 	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
 	foodtype = FRUIT | ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/bottle/hcider
-	name = "Jian Hard Cider"
-	desc = "Apple juice for adults."
+	name = "Neue Hamburg Spiced"
+	desc = "One of the main exports of Neue Hamburg - hard, spiced cider. Enjoyed all across the cantons and beyond."
 	icon_state = "hcider"
 	volume = 50
 	list_reagents = list(/datum/reagent/consumable/ethanol/hcider = 50)
 
 /obj/item/reagent_containers/food/drinks/bottle/amaretto
-	name = "Luini Amaretto"
-	desc = "A gentle and syrup like drink, tastes of almonds and apricots"
+	name = "Lu'Ni'Xer'Nan Amaretto"
+	desc = "A popular Rachnid take on the recipe for Amaretto, which fell to obscurity after only being semi-rediscovered by Solarian historians. Features a semi-reconstructed depiction of a supposed origin story, with the painter Lu'Ni'Xer'Nan and her muse, an innkeeper."
 	icon_state = "disaronno"
 	list_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/grappa
-	name = "Phillipes well-aged Grappa"
-	desc = "Bottle of Grappa."
+	name = "Neue Maynila Grappamiel"
+	desc = "A bottle of Grappa, premixed with honey-based spirits. Commonly seen as a drink for recycling grapes after their use in winemaking, and commonly seen as a winter drink."
 	icon_state = "grappabottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/grappa = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/sake
-	name = "Ryo's traditional sake"
-	desc = "Sweet as can be, and burns like fire going down."
+	name = "Sakamai Sake"
+	desc = "An alcoholic drink derived from rice, rediscovered by Solarian historians and reintroduced to the best of their ability to reproduce it."
 	icon_state = "sakebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/sake = 100)
 
@@ -347,16 +347,16 @@
 	. = ..()
 	if(prob(10))
 		name = "Fluffy Tail Sake"
-		desc += " On the bottle is a picture of a kitsune with nine touchable tails."
+		desc += "This particular brand's mascot is a human with nine fox tails - which is an impressive amount of genemodding."
 		icon_state = "sakebottle_k"
 	else if(prob(10))
 		name = "Inubashiri's Home Brew"
-		desc += " Awoo."
+		desc += "This particular brand's mascot is a human with vaguely canine ears and a tail."
 		icon_state = "sakebottle_i"
 
 /obj/item/reagent_containers/food/drinks/bottle/fernet
 	name = "Fernet Bronca"
-	desc = "A bottle of pure Fernet Bronca, produced in Cordoba Space Station"
+	desc = "A bitter and aromatic drink, commonly enjoyed in the intersolar cantons due to relaxed alcoholic tariffs from being technically classified as a medicinal beverage. Commonly mixed with cola-based soft drinks."
 	icon_state = "fernetbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/fernet = 100)
 

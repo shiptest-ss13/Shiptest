@@ -249,7 +249,7 @@
 		icon_state = "tea_empty"
 
 /obj/item/reagent_containers/food/drinks/mug/tea
-	name = "Guildmaiden Pu'er tea"
+	name = "Guildmaiden's tea"
 	desc = "Dark tea, made from pressed, fermented tea leaves. Originally from Sol, it became wildly popular among the Rachnid Guilds, and has become a staple."
 	list_reagents = list(/datum/reagent/consumable/tea = 30)
 
@@ -264,7 +264,7 @@
 
 /obj/item/reagent_containers/food/drinks/dry_ramen
 	name = "cup ramen"
-	desc = "Just add 5ml of water, self heats! A taste that reminds you of your school years. Now new with salty flavour!"
+	desc = "A cup full of dried noodles, premixed with a flavor powder. Adding 5 units of water will cause the cup to self-heat, cooking it rapidly. Commonly eaten under dozens of brands, from students to eating on a budget. Always umami!"
 	icon_state = "ramen"
 	list_reagents = list(/datum/reagent/consumable/dry_ramen = 15, /datum/reagent/consumable/sodiumchloride = 3)
 	foodtype = GRAIN
@@ -347,8 +347,8 @@
 	update_appearance()
 
 /obj/item/reagent_containers/food/drinks/beer
-	name = "Gezenan Dark Mead" //ditto the plan for bottled water, need to find a way to make multiple variants
-	desc = "A popular Gezenan drink made of fermented honey and spices."
+	name = "Bizircan Brewery GDM" //ditto the plan for bottled water, need to find a way to make multiple variants
+	desc = "A popular Gezenan drink made of fermented honey and spices, known as Gezenan Dark Mead, or GDM for short."
 	icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = GRAIN | ALCOHOL
@@ -360,8 +360,8 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/light = 30)
 
 /obj/item/reagent_containers/food/drinks/ale
-	name = "Telh'aim Pale"
-	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. It boasts being made from coke that's used on the very same planet's industry, apparently."
+	name = "RHIMBASA TAP"
+	desc = "An ale that is brewed on Reh'himl, named after the planet that shields it from their sun. Telh'aim Pale Ales are shortened to TAP, with most breweries reducing their names to acronyms alongside it."
 	icon_state = "alebottle"
 	item_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
@@ -432,17 +432,17 @@
 			if(/datum/reagent/consumable/pineapplejuice)
 				icon_state = "pineapplebox"
 				name = "pineapple juice box"
-				desc = "Why would you even want this?"
+				desc = "Sweet, tart pineapple juice."
 				foodtype = FRUIT | PINEAPPLE
 			if(/datum/reagent/consumable/milk/chocolate_milk)
 				icon_state = "chocolatebox"
 				name = "carton of chocolate milk"
-				desc = "Milk for cool kids!"
+				desc = "Milk mixed with chocolate, a common childhood favorite!"
 				foodtype = SUGAR
 			if(/datum/reagent/consumable/ethanol/eggnog)
 				icon_state = "nog2"
 				name = "carton of eggnog"
-				desc = "For enjoying the most wonderful time of the year."
+				desc = "A carton of eggnog, a drink of choice for celebrating Winter Solstice."
 				foodtype = MEAT
 	else
 		icon_state = "juicebox"
@@ -489,7 +489,7 @@
 
 /obj/item/reagent_containers/food/drinks/flask
 	name = "flask"
-	desc = "Every good spaceman knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
+	desc = "Every good spacer knows it's a good idea to bring along a couple of pints of whiskey wherever they go."
 	custom_price = 200
 	icon_state = "flask"
 	custom_materials = list(/datum/material/iron=250)
@@ -696,15 +696,15 @@
 	list_reagents = list(/datum/reagent/consumable/pacfuel = 30)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch
-	name = "Shoal Punch"
+	name = "Quill Punch"
 	desc = "Carbonated fruit soda, made from a mix of dozens of fruits collected and grown on The Shoal. There's an extensive list of potential allergens on the back."
 	icon_state = "shoal_punch"
 	list_reagents = list(/datum/reagent/consumable/shoal_punch = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull
-	name = "Grey Bull"
-	desc = "Grey Bull, it gives you gloves!"
+/obj/item/reagent_containers/food/drinks/soda_cans/crosstalk
+	name = "Crosstalk"
+	desc = "Crosstalk! Share the energy with everyone! The can is a little thin to be passing it around to actually share the energy drink around, though."
 	icon_state = "energy_drink"
 	list_reagents = list(/datum/reagent/consumable/grey_bull = 20)
 	foodtype = SUGAR | JUNKFOOD
