@@ -77,7 +77,7 @@
 			var/turf/open/turf_to_check = get_step(get_turf(src),direction_to_check)
 			for(var/obj/structure/checked_struct as anything in turf_to_check.contents) //while you can fire in non-braced directions, this makes it so you have to get good positioning to fire standing up.
 				for(var/checking_allowed as anything in deployable_on_structures)
-					if(istype(checked_struct, checking_allowed)) //help if you know how to check
+					if(istype(checked_struct, checking_allowed)) //help if you know how to write this better
 						can_deploy = TRUE
 						break
 
@@ -85,8 +85,7 @@
 	if(!can_deploy)
 		to_chat(user, "<span class='warning'>You need to brace against something to deploy [src]'s bipod! Either lie on the floor or stand next to a waist high object like a table!</span>")
 		return
-
-	if(!do_after(user,deploy_time,TRUE,src))
+	if(!do_mob(user, src, deploy_time, FALSE, TRUE, CALLBACK(src, PROC_REF(is_wielded))))
 		to_chat(user, "<span class='warning'>You need to hold still to deploy [src]'s bipod!</span>")
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, TRUE)
@@ -250,7 +249,7 @@
 	spread = 7 //you can hipfire, but why?
 	spread_unwielded = 25
 
-	recoil = 1 //identical to other LMGS but with no recoil
+	recoil = 1 //identical to other LMGS
 	recoil_unwielded = 4 //same as skm
 
 	wield_slowdown = 1 //not as severe as other lmgs, but worse than the normal skm
@@ -260,5 +259,21 @@
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.14 SECONDS) //slower than other lmgs but faster than skm and most smgs
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS) //slower than other lmgs but faster than skm and most smgs
 	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended //spawns with the proper extended magazine, for erts
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/skm_762_40/extended(src)
+	chamber_round()
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag //spawns with a drum, maybe not for erts but admin enhanced ERTS? when things really go to shit
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/drum_mag/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/skm_762_40/drum(src)
+	chamber_round()
