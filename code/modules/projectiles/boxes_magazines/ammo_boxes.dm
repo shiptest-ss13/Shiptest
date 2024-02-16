@@ -336,11 +336,12 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/a762_39
-	name = "ammo box (7.62x39mm)"
-	icon_state = "a762_39box"
-	ammo_type = /obj/item/ammo_casing/a762_39
-	max_ammo = 60
+/obj/item/ammo_box/a762_40
+	name = "ammo box (7.62x40mm CLIP)"
+	icon_state = "a762_40box"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	max_ammo = 80
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"

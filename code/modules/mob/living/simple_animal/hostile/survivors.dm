@@ -330,7 +330,7 @@
 			suit_store = null
 	if(survivor_type == "gunslinger")
 		if(prob(20))
-			new /obj/item/gun/ballistic/automatic/smg/aks74u(loc)
+			new /obj/item/gun/ballistic/automatic/smg/skm_carbine(loc)
 		else
 			visible_message("<span class='userwarning'>The gunslinger's weapon shatters as they impact the ground!</span>")
 			suit_store = null

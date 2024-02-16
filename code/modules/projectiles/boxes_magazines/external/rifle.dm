@@ -58,17 +58,33 @@
 	. = ..()
 	icon_state = "ak47_mag-[!!ammo_count()]"
 
-/obj/item/ammo_box/magazine/ak47
-	name = "assault rifle magazine (7.62x39mm)"
-	desc = "A sharply-curved, 20-round magazine for 7.62x39mm assault rifles. These rounds do good damage with good armor penetration."
-	icon_state = "ak47_mag"
-	ammo_type = /obj/item/ammo_casing/a762_39
-	caliber = "7.62x39mm"
+/obj/item/ammo_box/magazine/skm_762_40
+	name = "assault rifle magazine (7.62x40mm CLIP)"
+	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "skm_mag"
+	icon_state = "skm_mag"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
 	max_ammo = 20
 
-/obj/item/ammo_box/magazine/ak47/update_icon_state()
+/obj/item/ammo_box/magazine/skm_762_40/update_icon_state()
 	. = ..()
-	icon_state = "ak47_mag-[!!ammo_count()]"
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/skm_762_40/extended
+	name = "extended assault rifle magazine (7.62x40mm CLIP)"
+	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "skm_extended_mag"
+	icon_state = "skm_extended_mag"
+	max_ammo = 40
+
+/obj/item/ammo_box/magazine/skm_762_40/drum
+	name = "assault rifle drum (7.62x40mm CLIP)"
+	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
+	base_icon_state = "skm_drum"
+	icon_state = "skm_drum"
+	max_ammo = 75
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/ebr
 	name = "battle rifle magazine (.308)"
