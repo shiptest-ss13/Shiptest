@@ -69,8 +69,8 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper)
 
 /mob/living/simple_animal/hostile/frontier/ranged/trooper/skm
-	icon_state = "frontiersmanrangedskm"
-	icon_living = "frontiersmanrangedskm"
+	icon_state = "frontiersmanrangedak47"
+	icon_living = "frontiersmanrangedak47"
 	projectilesound = 'sound/weapons/gun/rifle/skm.ogg'
 	rapid = 4
 	rapid_fire_delay = 3
