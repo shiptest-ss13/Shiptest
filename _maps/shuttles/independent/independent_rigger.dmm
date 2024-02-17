@@ -234,11 +234,16 @@
 /turf/open/floor/plasteel,
 /area/ship/maintenance/fore)
 "dx" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/closet/secure_closet/freezer/fridge{
+	populate = 0
+	},
+/obj/item/storage/cans/sixbeer,
+/obj/effect/spawner/lootdrop/ration,
+/obj/effect/spawner/lootdrop/ration,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/sugar,
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "dH" = (
@@ -265,7 +270,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/firealarm/directional/east,
+/obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "ee" = (
@@ -1095,10 +1100,9 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "nU" = (
-/obj/structure/table,
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/item/storage/cans/sixbeer,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "od" = (
@@ -1173,8 +1177,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "pv" = (
-/obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/table,
+/obj/item/kitchen/knife,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "pD" = (
@@ -3331,11 +3336,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "OK" = (
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = -32
-	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/machinery/vending/snack/random,
+/obj/structure/table,
+/obj/item/storage/box/cups,
+/obj/machinery/newscaster/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "ON" = (
@@ -3452,10 +3456,10 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/crew/canteen)
 "PA" = (
-/obj/structure/table,
-/obj/machinery/newscaster/directional/west,
-/obj/item/storage/box/cups,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "PB" = (
@@ -3473,11 +3477,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
 "PF" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/effect/landmark/start/assistant,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/table,
+/obj/item/cutting_board,
+/obj/item/kitchen/rollingpin,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "PV" = (
@@ -3617,7 +3620,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
-/obj/item/radio/intercom/directional/east,
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "Ru" = (
@@ -3895,6 +3898,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/chair,
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "TR" = (
@@ -4170,11 +4175,9 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "WO" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/effect/landmark/start/assistant,
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
+/obj/structure/chair,
+/obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "WS" = (
@@ -4403,7 +4406,13 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/item/radio/intercom/directional/south,
-/obj/structure/closet/crate/bin,
+/obj/structure/table,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = -14
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "ZE" = (
@@ -4523,12 +4532,12 @@ gc
 Fu
 vB
 aD
-db
+PF
 pv
 nU
 PA
-WO
 db
+WO
 OK
 uN
 rZ
@@ -4558,9 +4567,9 @@ bZ
 vB
 dx
 Cc
-PF
-PF
-PF
+db
+db
+db
 db
 TO
 ZB
