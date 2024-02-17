@@ -7,16 +7,9 @@
 	slot_flags = ITEM_SLOT_HEAD
 	var/blockTracking = 0 //For AI tracking
 	var/can_toggle = null
-	dynamic_hair_suffix = "+generic"
 	greyscale_icon_state = "hat"
 	greyscale_colors = list(list(16,26))
 	supports_variations = VOX_VARIATION
-
-/obj/item/clothing/head/Initialize()
-	. = ..()
-	if(ishuman(loc) && dynamic_hair_suffix)
-		var/mob/living/carbon/human/H = loc
-		H.update_hair()
 
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads/attempt to de-hat them.
 /obj/item/clothing/head/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
