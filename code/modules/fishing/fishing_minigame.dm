@@ -71,6 +71,9 @@
 		QDEL_NULL(fishing_line)
 	if(lure)
 		QDEL_NULL(lure)
+	SStgui.close_uis(src)
+	user = null
+	used_rod = null
 	. = ..()
 
 /datum/fishing_challenge/proc/start(mob/user)
@@ -105,6 +108,8 @@
 		complete(FALSE)
 
 /datum/fishing_challenge/proc/complete(win = FALSE, perfect_win = FALSE)
+	if(completed)
+		return
 	deltimer(next_phase_timer)
 	completed = TRUE
 	if(user)

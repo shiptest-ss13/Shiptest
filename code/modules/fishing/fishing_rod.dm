@@ -51,9 +51,17 @@
 /obj/item/fishing_rod/proc/fish_bonus(fish_type)
 	return 0
 
-/obj/item/fishing_rod/proc/consume_bait()
-	if(bait)
-		QDEL_NULL(bait)
+/obj/item/fishing_rod/proc/consume_bait(atom/movable/reward)
+	// catching things that aren't fish or alive mobs doesn't consume baits.
+	if(isnull(reward) || isnull(bait))
+		return
+	if(isliving(reward))
+		var/mob/living/caught_mob = reward
+		if(caught_mob.stat == DEAD)
+			return
+	else if(!isfish(reward))
+		return
+	QDEL_NULL(bait)
 		update_appearance()
 
 /obj/item/fishing_rod/attack_self(mob/user)
@@ -137,7 +145,7 @@
 	SIGNAL_HANDLER
 	. = NONE
 
-	if(!CheckToolReach(src, source.target, cast_range))
+	if(!isturf(source.origin) || !isturf(source.target) || !CheckToolReach(src, source.target, cast_range))
 		SEND_SIGNAL(source, COMSIG_FISHING_LINE_SNAPPED) //Stepped out of range or los interrupted
 		return BEAM_CANCEL_DRAW
 
