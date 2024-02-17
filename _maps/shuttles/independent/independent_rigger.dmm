@@ -2782,10 +2782,10 @@
 /turf/open/floor/plating,
 /area/ship/construction)
 "Hf" = (
-/obj/item/radio/intercom/directional/south,
 /obj/structure/chair/plastic{
 	dir = 8
 	},
+/obj/machinery/newscaster/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Hi" = (
@@ -3622,6 +3622,7 @@
 /area/ship/crew/canteen)
 "Ru" = (
 /obj/machinery/vending/coffee,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Ry" = (
@@ -3665,7 +3666,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "Sa" = (
-/obj/machinery/newscaster/directional/south,
 /obj/machinery/light/directional/south,
 /obj/structure/chair/sofa/right{
 	dir = 4
