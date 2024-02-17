@@ -117,6 +117,10 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/light_switch{
+	pixel_x = 5;
+	pixel_y = 22
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "bB" = (
@@ -1115,7 +1119,7 @@
 	},
 /obj/machinery/light_switch{
 	dir = 1;
-	pixel_x = -7;
+	pixel_x = -5;
 	pixel_y = -20
 	},
 /turf/open/floor/plasteel/patterned,
@@ -2481,6 +2485,23 @@
 	},
 /turf/open/floor/plating,
 /area/ship/construction)
+"DZ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/machinery/light_switch{
+	pixel_x = -5;
+	pixel_y = 22
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/central)
 "Ec" = (
 /obj/effect/turf_decal/number/five{
 	dir = 8
@@ -4680,7 +4701,7 @@ BZ
 fn
 Sa
 Ei
-WH
+DZ
 Ei
 Ly
 Ly
