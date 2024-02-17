@@ -125,7 +125,7 @@
 		if(reward_path != FISHING_DUD)
 			playsound(lure, 'sound/effects/bigsplash.ogg', 100)
 	else
-		user.balloon_alert(user, "it got away")
+		user.balloon_alert(user, "it got away!")
 	SEND_SIGNAL(src, COMSIG_FISHING_CHALLENGE_COMPLETED, user, win, perfect_win)
 	qdel(src)
 
