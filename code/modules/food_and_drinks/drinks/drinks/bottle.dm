@@ -436,7 +436,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/grenadine
 	name = "Three-Star Grenadine"
-	desc = "A commonly seen bottle of grenadine - or sweet fruit syrup. Contains real cherries, as well as some blackcurrant for color."
+	desc = "A commonly seen bottle of grenadine - or sweet fruit syrup. It might even contain real cherries, as well as some blackcurrant for color."
 	custom_price = 100
 	icon_state = "grenadine"
 	isGlass = TRUE
@@ -462,14 +462,14 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/champagne = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/blazaam
-	name = "Ginbad's Blazaam"
-	desc = "You feel like you should give the bottle a good rub before opening."
+	name = "Hyperspace Highball"
+	desc = "Infamously expensive, infamously contains bluespace 'flakes' for bragging rights, and infamously removed from most shelves due to accidents involving teleportation accidents upon ingestion."
 	icon_state = "blazaambottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/blazaam = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/trappist
-	name = "Mont de Requin Trappistes Bleu"
-	desc = "Brewed in space-Belgium. Fancy!"
+	name = "Roumain Trapper's"
+	desc = "Traditionally (and heavily monitored for authenticity) made beer brewed on Illestren. Trapper's beer must be brewed by Saint Roumain Hunters or Shadows, made to fit the needs of their community first, and must never be made for profit... which makes it a common sight in the Frontier."
 	custom_premium_price = 170
 	icon_state = "trappistbottle"
 	volume = 50
@@ -477,19 +477,19 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/hooch
 	name = "hooch bottle"
-	desc = "A bottle of rotgut. Its owner has applied some street wisdom to cleverly disguise it as a brown paper bag."
+	desc = "A bottle of homebrewed, low quality alcohol. The paper wrapping is covered in little signatures and messages - how many hands have passed this bottle before you came around?"
 	icon_state = "hoochbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/hooch = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/moonshine
 	name = "moonshine jug"
-	desc = "It is said that the ancient Applalacians used these stoneware jugs to capture lightning in a bottle."
+	desc = "High-proof hard liquor, most likely made in the privacy of a bootlegger's ship. Permanent marker on packaging tape is the most you'll get for a label. Remember: if it doesn't burn blue, don't drink it!"
 	icon_state = "moonshinebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/coconut
-	name = "Tali's Pure Coconut Delight"
-	desc = "Seems to be some promotional product for a Teceti video game. You're pretty certain this stuff is synthetic."
+	name = "T4l1's Pure Coconut Delight"
+	desc = "A fanmade, promotional bottle of coconut cream liquor. There's a stylized picture of a synthetic kepori on the side, along with a blurb about whoever she is. You're pretty certain this stuff is synthetic, despite Teceti growing actual coconut trees..." //if i have to recognize rilena here, I'm going to have fun with it
 	icon_state = "coconutbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 100)
 	isGlass = TRUE
@@ -497,7 +497,7 @@
 ////////////////////////// MOLOTOV ///////////////////////
 /obj/item/reagent_containers/food/drinks/bottle/molotov
 	name = "molotov cocktail"
-	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by rioters and revolutionaries. Light and toss."
+	desc = "A throwing weapon used to ignite things, typically filled with an accelerant. Recommended highly by desperate militias and revolutionaries. Light and toss."
 	icon_state = "vodkabottle"
 	list_reagents = list()
 	var/active = 0
@@ -557,7 +557,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/pruno
 	name = "pruno mix"
-	desc = "A trash bag filled with fruit, sugar, yeast, and water, pulped together into a pungent slurry to be fermented in an enclosed space, traditionally the toilet. Security would love to confiscate this, one of the many things wrong with them."
+	desc = "A trash bag filled with fruit, sugar, yeast, and water, pulped together into a pungent slurry to be fermented in an enclosed space, traditionally the toilet."
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "trashbag"
 	list_reagents = list(/datum/reagent/consumable/prunomix = 50)
@@ -601,7 +601,7 @@
 	else
 		reagents.add_reagent(/datum/reagent/consumable/ethanol/pruno, 50)
 	name = "bag of pruno"
-	desc = "Fermented prison wine made from fruit, sugar, and despair. You probably shouldn't drink this around Security."
+	desc = "Fermented prison wine made from fruit, sugar, and despair."
 	icon_state = "trashbag1" // pruno releases air as it ferments, we don't want to simulate this in atmos, but we can make it look like it did
 	for (var/mob/living/M in view(2, get_turf(src))) // letting people and/or narcs know when the pruno is done
 		to_chat(M, "<span class='info'>A pungent smell emanates from [src], like fruit puking out its guts.</span>")
@@ -609,7 +609,7 @@
 
 /obj/item/reagent_containers/food/drinks/colocup/lean
 	name = "lean"
-	desc = "A cup of that purple drank, the stuff that makes you go WHEEZY BABY."
+	desc = "Despite this mix of codeine-based cough syrup and a soft drink of choice being popular online, you're not sure anyone talking about ever tried it. First time for everything?"
 	icon_state = "lean"
 	list_reagents = list(/datum/reagent/consumable/lean = 50)
 	random_sprite = FALSE
@@ -694,7 +694,7 @@
 	. = ..()
 	if(sealed)
 		var/datum/component/storage/S = GetComponent(/datum/component/storage)
-		user.visible_message("<span class='notice'>[user] prys open \the [src].</span>", "You pry open \the [src]")
+		user.visible_message("<span class='notice'>[user] pries open \the [src].</span>", "You pry open \the [src]")
 		playsound(src, 'sound/machines/wooden_closet_close.ogg', 20, 1)
 		sealed = FALSE
 		S.locked = FALSE
@@ -704,7 +704,7 @@
 
 /obj/item/storage/bottles/sandblast
 	name = "sarsaparilla bottle crate"
-	desc = "Holds six bottles of the finest sarsaparilla this side of the sector."
+	desc = "Holds six bottles of the finest sarsaparilla this side of the Frontier."
 	sealed = TRUE
 
 /obj/item/storage/bottles/sandblast/PopulateContents()
