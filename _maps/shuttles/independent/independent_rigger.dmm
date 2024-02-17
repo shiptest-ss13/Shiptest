@@ -502,7 +502,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "hP" = (
 /obj/machinery/airalarm/directional/west,
@@ -798,7 +798,7 @@
 	pixel_y = 9
 	},
 /obj/item/multitool,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "jH" = (
 /obj/effect/landmark/start/shaft_miner,
@@ -1779,7 +1779,7 @@
 /obj/item/stock_parts/cell/high,
 /obj/item/stock_parts/cell/high,
 /obj/item/stock_parts/cell/high,
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "wp" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible/layer4,
@@ -2206,6 +2206,8 @@
 	},
 /obj/item/radio/intercom/directional/south,
 /obj/machinery/airalarm/directional/east,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ak" = (
@@ -3026,7 +3028,7 @@
 	pixel_x = 20;
 	pixel_y = 11
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
 /area/ship/engineering)
 "JG" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -3725,7 +3727,7 @@
 	dir = 4
 	},
 /obj/item/soap,
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "SE" = (
 /obj/machinery/light_switch{
@@ -4078,7 +4080,7 @@
 /obj/structure/toilet{
 	dir = 4
 	},
-/turf/open/floor/plasteel/patterned/brushed,
+/turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "VI" = (
 /obj/structure/cable{
