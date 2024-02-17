@@ -314,7 +314,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 				mob_occupant.mind.special_role = null
 
 	// Delete them from datacore.
-
 	var/announce_rank = null
 	for(var/datum/data/record/R in GLOB.data_core.medical)
 		if((R.fields["name"] == mob_occupant.real_name))
@@ -327,10 +326,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			announce_rank = G.fields["rank"]
 			qdel(G)
 
-	// Regardless of what ship you spawned in you need to be removed from it.
-	// This covers scenarios where you spawn in one ship but cryo in another.
-	for(var/datum/overmap/ship/controlled/sim_ship as anything in SSovermap.controlled_ships)
-		sim_ship.manifest -= mob_occupant.real_name
+	var/datum/overmap/ship/controlled/original_ship = mob_occupant.mind.original_ship.resolve()
+	original_ship.manifest -= mob_occupant.real_name
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
 
@@ -353,6 +350,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			continue//means we already moved whatever this thing was in
 			//I'm a professional, okay
 			//what the fuck are you on rn and can I have some
+			//who are you even talking to
 		if(is_type_in_typecache(W, preserve_items_typecache))
 			if(control_computer_obj && control_computer_obj.allow_items)
 				control_computer_obj.frozen_items += W
@@ -378,9 +376,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		else
 			mob_occupant.ghostize(TRUE)
 	handle_objectives()
-	QDEL_NULL(occupant)
 	open_machine()
-	name = initial(name)
+	qdel(mob_occupant)
+	//Just in case open_machine didn't clear it
+	occupant = null
 
 /obj/machinery/cryopod/MouseDrop_T(mob/living/target, mob/user)
 	if(!istype(target) || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || !ismob(target) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
