@@ -280,6 +280,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "cs" = (
@@ -1400,9 +1403,6 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/south,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "na" = (
@@ -1748,7 +1748,7 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
@@ -1770,6 +1770,9 @@
 	pixel_y = -20;
 	dir = 1;
 	pixel_x = -1
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
@@ -1829,6 +1832,9 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormthree)
@@ -2247,9 +2253,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2296,9 +2299,6 @@
 	pixel_x = 5;
 	pixel_y = 9
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "vh" = (
@@ -2313,9 +2313,6 @@
 /obj/machinery/recharger{
 	pixel_x = 6;
 	pixel_y = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2628,9 +2625,6 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security)
 "xk" = (
@@ -2896,9 +2890,6 @@
 "Ah" = (
 /obj/effect/turf_decal/industrial/traffic{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -3783,9 +3774,6 @@
 /obj/item/radio/intercom/wideband/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
@@ -5896,6 +5884,9 @@
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormthree)
