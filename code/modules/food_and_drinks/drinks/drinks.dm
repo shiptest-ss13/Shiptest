@@ -675,11 +675,12 @@
 	list_reagents = list(/datum/reagent/consumable/comet_trail = 30)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko
-	name = "Thirteen Loko"
-	desc = "The CMO has advised crew members that consumption of Thirteen Loko may result in seizures, blindness, drunkenness, or even death. Please Drink Responsibly."
+/obj/item/reagent_containers/food/drinks/soda_cans/vimukti
+	name = "Vimukti"
+	desc = "A liquor brewed from sweet lichen scraped off the walls of Shoal water condensers. Stamped with the thirteen-spoked wheel of enlightenment. Spiritual Vox consider it to open the mind's boundaries."
+Doctors advise not to drink it before operating heavy machinery."
 	icon_state = "thirteen_loko"
-	list_reagents = list(/datum/reagent/consumable/ethanol/thirteenloko = 30)
+	list_reagents = list(/datum/reagent/consumable/ethanol/vimukti = 30)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/tadrixx
