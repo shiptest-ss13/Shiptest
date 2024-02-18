@@ -170,10 +170,10 @@
 	colour = "#ffff66"
 
 /datum/client_colour/glass_colour/red
-	colour = "#ffbbbb"
+	colour = "#ffbfbf"
 
 /datum/client_colour/glass_colour/darkred
-	colour = "#ee9999"
+	colour = "#eeaaaa"
 
 /datum/client_colour/glass_colour/orange
 	colour = "#ffbb99"
