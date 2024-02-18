@@ -1611,7 +1611,10 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer4,
-/obj/machinery/portable_atmospherics/pump,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "DI" = (
@@ -2673,6 +2676,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"Wm" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "WK" = (
 /turf/template_noop,
 /area/ship/external)
@@ -2988,7 +3001,7 @@ OU
 kx
 OU
 fe
-Bt
+Wm
 DI
 OU
 OU

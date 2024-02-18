@@ -19,6 +19,11 @@
 /obj/machinery/power/ship_gravity/unanchored
 	anchored = FALSE
 
+/obj/machinery/power/ship_gravity/admin
+	idle_power_usage = 0
+	active_power_usage = 0
+	active = TRUE
+
 /obj/machinery/power/ship_gravity/Initialize()
 	. = ..()
 	if(anchored)
@@ -106,7 +111,7 @@
 	port.gravgen_list |= WEAKREF(src)
 
 /obj/machinery/power/ship_gravity/interact(mob/user)
-	if(!powernet)
+	if(!powernet && active_power_usage)
 		to_chat(user, span_notice("[src] isn't connected to a wire!"))
 		return
 	if(panel_open)

@@ -397,6 +397,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "ib" = (
@@ -885,10 +888,10 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
-/obj/item/storage/toolbox/mechanical,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "sT" = (
@@ -1016,6 +1019,10 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/plastic,
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "wi" = (
@@ -1647,9 +1654,6 @@
 /area/ship/hallway/aft)
 "KA" = (
 /obj/structure/window/reinforced/spawner,
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/structure/cable{
@@ -1657,6 +1661,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)

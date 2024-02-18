@@ -4690,7 +4690,6 @@
 /turf/open/floor/plasteel/stairs,
 /area/ship/cargo)
 "TN" = (
-/obj/structure/frame/machine,
 /obj/structure/grille/broken,
 /obj/structure/railing{
 	dir = 4
@@ -4701,6 +4700,10 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)

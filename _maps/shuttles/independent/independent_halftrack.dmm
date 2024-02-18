@@ -194,6 +194,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "fn" = (
@@ -1887,6 +1891,10 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "TI" = (

@@ -2542,8 +2542,11 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "wM" = (
-/obj/structure/frame/machine,
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "wQ" = (
@@ -3342,6 +3345,9 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "FU" = (
@@ -5406,6 +5412,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/effect/decal/cleanable/plasma,
+/obj/structure/frame/machine,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "ZU" = (

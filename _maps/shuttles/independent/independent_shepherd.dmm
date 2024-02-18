@@ -1328,6 +1328,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "lO" = (
@@ -5744,6 +5747,13 @@
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/hydroponics)
+"XO" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/ship_gravity,
+/turf/open/floor/plating,
+/area/ship/engineering/atmospherics)
 "XY" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/siding/wood{
@@ -6586,7 +6596,7 @@ Wf
 DC
 tA
 VN
-iH
+XO
 lM
 dM
 cZ
