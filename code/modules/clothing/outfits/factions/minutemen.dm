@@ -245,7 +245,7 @@
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
 
-	head = /obj/item/clothing/head/helmet/bulletproof/clip
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	alt_suit = null

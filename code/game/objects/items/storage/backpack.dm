@@ -131,11 +131,6 @@
 	icon_state = "securitypack"
 	item_state = "securitypack"
 
-/obj/item/storage/backpack/security/clip
-	name = "clip backpack"
-	desc = "It's a very blue backpack."
-	icon_state = "clippack"
-
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
 	desc = "It's a special backpack made exclusively for Nanotrasen officers."
@@ -284,11 +279,6 @@
 	desc = "A robust satchel for security related needs."
 	icon_state = "satchel-sec"
 	item_state = "satchel-sec"
-
-/obj/item/storage/backpack/satchel/sec/clip
-	name = "clip satchel"
-	desc = "A robust satchel for anti-piracy related needs."
-	icon_state = "satchel-clip"
 
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"

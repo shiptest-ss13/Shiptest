@@ -3,7 +3,7 @@
 	jobtype = /datum/job/officer
 	job_icon = "securityofficerOld"
 
-	head = /obj/item/clothing/head/helmet/bulletproof/clip
+	head = /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	uniform = /obj/item/clothing/under/clip/minutemen
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	ears = /obj/item/radio/headset/minutemen/alt

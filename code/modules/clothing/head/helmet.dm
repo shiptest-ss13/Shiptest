@@ -12,7 +12,7 @@
 	strip_delay = 60
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
+	//flags_inv = HIDEHAIR // nah
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
