@@ -67,17 +67,17 @@
 	var/show_char = CONFIG_GET(flag/mentors_mobname_only)
 	if(check_mentor_other(C))
 		if(check_mentor())	//both are mentors
-			to_chat(C, "<span class='notice'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0, 0)]</b>: [msg]</span>")
-			to_chat(src, "<span class='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, 0, 0)]</b>: [msg]</span>")
+			to_chat(C, "<span class='notice'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0)]</b>: [msg]</span>")
+			to_chat(src, "<span class='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, 0)]</b>: [msg]</span>")
 
 		else		//recipient is an mentor but sender is not
-			to_chat(C, "<span class='notice'>Reply PM from-<b>[key_name_mentor(src, C, 1, 0, show_char)]</b>: [msg]</span>")
+			to_chat(C, "<span class='notice'>Reply PM from-<b>[key_name_mentor(src, C, 1, show_char)]</b>: [msg]</span>")
 			to_chat(src, "<span class='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, 0, 0)]</b>: [msg]</span>")
 
 	else
 		if(check_mentor())	//sender is an mentor but recipient is not.
-			to_chat(C, "<span class='notice'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0, 0)]</b>: [msg]</span>")
-			to_chat(src, "<span class='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, 0, show_char)]</b>: [msg]</span>")
+			to_chat(C, "<span class='notice'>Mentor PM from-<b>[key_name_mentor(src, C, 1, 0)]</b>: [msg]</span>")
+			to_chat(src, "<span class='green'>Mentor PM to-<b>[key_name_mentor(C, C, 1, show_char)]</b>: [msg]</span>")
 
 	//we don't use message_Mentors here because the sender/receiver might get it too
 	for(var/client/X in GLOB.mentors)
