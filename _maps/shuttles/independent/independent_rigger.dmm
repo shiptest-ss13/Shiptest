@@ -1774,6 +1774,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"wn" = (
+/obj/structure/sign/number/random{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/maintenance/starboard)
 "wo" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -3456,8 +3462,11 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/security)
 "Pw" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/crew/canteen)
+/obj/structure/sign/number/random{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/engineering/atmospherics)
 "PA" = (
 /obj/effect/turf_decal/corner/opaque/yellow/diagonal,
 /obj/structure/sign/poster/contraband/random{
@@ -4507,7 +4516,7 @@ Ga
 Ga
 sQ
 sQ
-Pw
+Ga
 uN
 uN
 uN
@@ -5562,10 +5571,10 @@ lf
 VX
 lf
 lf
-lf
-lf
-lf
-Sh
+Pw
+Pw
+Pw
+wn
 Sh
 Sh
 qm
