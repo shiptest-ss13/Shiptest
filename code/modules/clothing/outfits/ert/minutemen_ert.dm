@@ -1,4 +1,4 @@
-/datum/outfit/job/minutemen/ert
+/datum/outfit/job/clip/ert
 	name = "ERT - Minuteman"
 	jobtype = /datum/job/officer
 	job_icon = "securityofficerOld"
@@ -17,7 +17,7 @@
 
 	box = /obj/item/storage/box/survival/security
 
-/datum/outfit/job/minutemen/ert/leader
+/datum/outfit/job/clip/ert/leader
 	name = "ERT - Minuteman Sergeant"
 	job_icon = "lieutenant"
 
@@ -25,7 +25,7 @@
 	back = /obj/item/storage/backpack/satchel/sec/clip
 	head = /obj/item/clothing/head/beret/command
 
-/datum/outfit/job/minutemen/ert/bard
+/datum/outfit/job/clip/ert/bard
 	name = "ERT - Minuteman (BARD)"
 	job_icon = "securityofficerOld"
 
@@ -45,7 +45,7 @@
 	)
 
 
-/datum/outfit/job/minutemen/ert/bard/leader
+/datum/outfit/job/clip/ert/bard/leader
 	name = "ERT - Minuteman Sergeant (BARD)"
 	job_icon = "lieutenant"
 
@@ -63,7 +63,7 @@
 	/obj/item/flashlight/seclite = 1
 	)
 
-/datum/outfit/job/minutemen/ert/riot
+/datum/outfit/job/clip/ert/riot
 	name = "ERT - Minuteman (Riot Officer)"
 	job_icon = "securityofficerOld"
 
@@ -78,14 +78,14 @@
 	backpack_contents = null
 	box = null
 
-/datum/outfit/job/minutemen/ert/riot/leader
+/datum/outfit/job/clip/ert/riot/leader
 	name = "ERT - Minutemen Sergeant (Riot Officer)"
 	job_icon = "lieutenant"
 
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/shield/riot/flash
 
-/datum/outfit/job/minutemen/ert/inspector
+/datum/outfit/job/clip/ert/inspector
 	name = "ERT - Inspector (Minutemen GOLD)"
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "minutemen"
@@ -104,14 +104,14 @@
 	l_pocket = null
 	r_pocket = null
 
-/datum/outfit/job/minutemen/ert/pirate_hunter
+/datum/outfit/job/clip/ert/pirate_hunter
 	name = "ERT - Minuteman (Pirate Hunter)"
 	job_icon = "securityofficerOld"
 
 	head = null
 	suit = /obj/item/clothing/suit/space/hardsuit/security/independent/clip
 
-/datum/outfit/job/minutemen/ert/pirate_hunter/leader
+/datum/outfit/job/clip/ert/pirate_hunter/leader
 	name = "ERT - Minutemen Sergeant (Pirate Hunter)"
 	job_icon = "lieutenant"
 

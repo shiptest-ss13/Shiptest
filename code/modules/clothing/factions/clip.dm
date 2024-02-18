@@ -269,6 +269,16 @@
 
 //gloves
 
+/obj/item/clothing/gloves/color/latex/nitrile/clip
+	name = "long white nitrile gloves"
+	desc = "Thick sterile gloves that reach up to the elbows. Transfers combat medic knowledge into the user via nanochips."
+
+	icon = 'icons/obj/clothing/faction/clip/hands.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/hands.dmi'
+
+	icon_state = "nitrile_clip"
+	item_state = "nitrile_clip"
+
 //boots
 
 //belt
@@ -281,6 +291,8 @@
 
 	icon_state = "clipwebbing"
 	item_state = "clipwebbing"
+
+	unique_reskin = null
 
 /obj/item/storage/belt/military/clip/p16/PopulateContents()
 	for(var/i in 1 to 4)

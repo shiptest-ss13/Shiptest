@@ -566,6 +566,7 @@
 		/obj/item/clothing/mask/gas/clip = 3,
 		/obj/item/storage/belt/military/clip = 3,
 		/obj/item/storage/belt/medical/webbing/clip = 3,
+		/obj/item/clothing/gloves/color/latex/nitrile/clip = 3,
 
 		/obj/item/clothing/suit/toggle/lawyer/minutemen = 3,
 		/obj/item/clothing/suit/armor/vest/capcarapace/clip = 3,

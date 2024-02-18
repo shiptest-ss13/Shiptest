@@ -170,6 +170,16 @@
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
 
+/obj/item/storage/box/survival/clip
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
+
+/obj/item/storage/box/survival/clip/PopulateContents()
+	. = ..()
+	new /obj/item/radio/off(src)
+
+/obj/item/storage/box/survival/clip/balaclava
+	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
+
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
 	desc = "Contains sterile latex gloves."

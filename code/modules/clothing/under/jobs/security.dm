@@ -283,6 +283,10 @@
 		"Snow" = "camo_snow",
 		)
 
+/obj/item/storage/belt/military/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
 /obj/item/clothing/under/rank/security/officer/frontier
 	name = "\improper Frontiersmen uniform"
 	desc = "Worn by members of the Frontiersmen pirate fleet. It's very uncomfortable to move around in."

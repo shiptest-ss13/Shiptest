@@ -283,7 +283,7 @@
 
 /datum/antagonist/ert/minutemen
 	name = "CLIP Minutemen Infantry"
-	outfit = /datum/outfit/job/minutemen/ert
+	outfit = /datum/outfit/job/clip/ert
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/greet()
@@ -302,34 +302,34 @@
 /datum/antagonist/ert/minutemen/leader
 	name = "CLIP Minutemen Leader"
 	leader = TRUE
-	outfit = /datum/outfit/job/minutemen/ert/leader
+	outfit = /datum/outfit/job/clip/ert/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/minutemen/bard
 	name = "BARD Infantry"
-	outfit = /datum/outfit/job/minutemen/ert/bard
+	outfit = /datum/outfit/job/clip/ert/bard
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/bard/leader
 	name = "BARD Sergeant"
 	leader = TRUE
-	outfit = /datum/outfit/job/minutemen/ert/bard/leader
+	outfit = /datum/outfit/job/clip/ert/bard/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/minutemen/riot
 	name = "Riot Officer"
-	outfit = /datum/outfit/job/minutemen/ert/riot
+	outfit = /datum/outfit/job/clip/ert/riot
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/riot/leader
 	name = "Riot Sergeant"
 	leader = TRUE
-	outfit = /datum/outfit/job/minutemen/ert/riot/leader
+	outfit = /datum/outfit/job/clip/ert/riot/leader
 	role = "Sergeant"
 
 /datum/antagonist/ert/official/minutemen
 	name = "GOLD Inspector"
-	outfit = /datum/outfit/job/minutemen/ert/inspector
+	outfit = /datum/outfit/job/clip/ert/inspector
 	role = "Lieutenant"
 
 /datum/antagonist/ert/official/minutemen/greet()
@@ -341,13 +341,13 @@
 
 /datum/antagonist/ert/minutemen/piratehunters
 	name = "Pirate Hunter"
-	outfit = /datum/outfit/job/minutemen/ert/pirate_hunter
+	outfit = /datum/outfit/job/clip/ert/pirate_hunter
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/piratehunters/leader
 	name = "Pirate Hunter Leader"
 	leader = TRUE
-	outfit = /datum/outfit/job/minutemen/ert/pirate_hunter/leader
+	outfit = /datum/outfit/job/clip/ert/pirate_hunter/leader
 	role = "Sergeant"
 
 // ********************************************************************

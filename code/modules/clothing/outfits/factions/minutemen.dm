@@ -1,21 +1,17 @@
 //top outfit of everything Minuteman. Touch at own risk.
 
-/datum/outfit/job/minutemen
-	name = "Minutemen - Base Outfit"
+/datum/outfit/job/clip
+	name = "CLIP - Base Outfit"
 
-	uniform = /obj/item/clothing/under/clip/minutemen
+	jobtype = /datum/job/assistant
+	uniform = /obj/item/clothing/under/clip
 	alt_uniform = null
 
 	faction_icon = "bg_minutemen"
 
-	backpack = /obj/item/storage/backpack/security/clip
-	satchel = /obj/item/storage/backpack/satchel/sec/clip
-	duffelbag = /obj/item/storage/backpack/duffelbag //to-do: bug rye for clip duffles // rye. rye. give me 20 pound bag of ice
-	satchel = /obj/item/storage/backpack/messenger //and these
+	box = /obj/item/storage/box/survival/clip
 
-	box = /obj/item/storage/box/survival
-
-/datum/outfit/job/minutemen/post_equip(mob/living/carbon/human/H, visualsOnly)
+/datum/outfit/job/clip/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
@@ -23,16 +19,27 @@
 
 ///assistant
 
-/datum/outfit/job/minutemen/assistant
-	name = "Minutemen - Volunteer"
+/datum/outfit/job/clip/assistant
+	name = "CLIP - Volunteer"
 	job_icon = "assistant"
 	jobtype = /datum/job/assistant
 
 	r_pocket = /obj/item/radio
+/*
+/datum/outfit/job/clip/assistant/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(visualsOnly)
+		return
+	var/list/selectable_alt_titles = list("Volunteer","Civillian")
+
+	var/selection = tgui_input_list(H,"Select an alternative name for the [name] role.","Select your job title!",selectable_alt_titles)
+	if(selection)
+		return
+*/
 
 ///captains
 
-/datum/outfit/job/minutemen/captain
+/datum/outfit/job/clip/captain
 	name = "Minutemen - Captain"
 	job_icon = "captain"
 	jobtype = /datum/job/captain
@@ -61,7 +68,7 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
-/datum/outfit/job/minutemen/captain/general
+/datum/outfit/job/clip/captain/general
 	name = "Minutemen - General"
 
 	head = /obj/item/clothing/head/clip/bicorne
@@ -76,7 +83,7 @@
 
 ///chemist
 
-/datum/outfit/job/minutemen/chemist
+/datum/outfit/job/clip/chemist
 	name = "Minutemen - Chemical Scientist"
 	job_icon = "chemist"
 	jobtype = /datum/job/chemist
@@ -95,7 +102,7 @@
 
 ///Chief Engineer
 
-/datum/outfit/job/minutemen/ce
+/datum/outfit/job/clip/ce
 	name = "Minutemen - Foreman"
 	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
@@ -129,7 +136,7 @@
 
 /// Head Of Personnel
 
-/datum/outfit/job/minutemen/head_of_personnel
+/datum/outfit/job/clip/head_of_personnel
 	name = "Minutemen - Bridge Officer"
 	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
@@ -156,7 +163,7 @@
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /// Medical Doctor
-/datum/outfit/job/minutemen/doctor
+/datum/outfit/job/clip/doctor
 	name = "Minutemen - Field Medic"
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
@@ -180,7 +187,7 @@
 	suit_store = null
 
 ///paramedic
-/datum/outfit/job/minutemen/paramedic
+/datum/outfit/job/clip/paramedic
 	name = "Minutemen - BARD Combat Medic"
 	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
@@ -203,7 +210,7 @@
 	box = /obj/item/storage/box/survival/medical
 
 ///roboticist
-/datum/outfit/job/minutemen/roboticist
+/datum/outfit/job/clip/roboticist
 	name = "Minutemen - Mech Technician"
 	job_icon = "roboticist"
 	jobtype = /datum/job/roboticist
@@ -222,7 +229,7 @@
 	alt_suit = /obj/item/clothing/suit/toggle/suspenders/gray
 
 ///scientist
-/datum/outfit/job/minutemen/scientist
+/datum/outfit/job/clip/scientist
 	name = "Minutemen - Scientist"
 	job_icon = "scientist"
 	jobtype = /datum/job/scientist
@@ -240,8 +247,13 @@
 
 //security officers
 
-/datum/outfit/job/minutemen/security
+/datum/outfit/job/clip/military
 	name = "Minutemen - Minuteman"
+/datum/outfit/job/minutemen
+	backpack = /obj/item/storage/backpack/security/clip
+	satchel = /obj/item/storage/backpack/satchel/sec/clip
+	duffelbag = /obj/item/storage/backpack/security/clip //to-do: bug rye for clip duffles // rye. rye. give me 20 pound bag of ice //done
+
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
 
@@ -262,13 +274,13 @@
 	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = null
 
-/datum/outfit/job/minutemen/security/armed
+/datum/outfit/job/clip/security/armed
 	name = "Minutemen - Minuteman (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/clip/p16
 
-/datum/outfit/job/minutemen/security/mech_pilot
+/datum/outfit/job/clip/security/mech_pilot
 	name = "Minutemen - Mech Pilot"
 
 	suit = /obj/item/clothing/suit/armor/vest/alt
@@ -277,7 +289,7 @@
 
 ///miners
 
-/datum/outfit/job/minutemen/miner
+/datum/outfit/job/clip/miner
 	name = "Minutemen - Industrial Miner"
 	job_icon = "shaftminer"
 	jobtype = /datum/job/mining
@@ -297,7 +309,7 @@
 
 ///engineers
 
-/datum/outfit/job/minutemen/engineer
+/datum/outfit/job/clip/engineer
 	name = "Minutemen - Mechanic"
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
@@ -322,7 +334,7 @@
 
 ///warden
 
-/datum/outfit/job/minutemen/warden
+/datum/outfit/job/clip/warden
 	name = "Minutemen - Field Commander"
 	job_icon = "warden"
 	jobtype = /datum/job/warden
@@ -343,7 +355,7 @@
 	backpack = /obj/item/storage/backpack
 	backpack_contents = null
 
-/datum/outfit/job/minutemen/warden/armed
+/datum/outfit/job/clip/warden/armed
 	name = "Minutemen - Field Commander (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen

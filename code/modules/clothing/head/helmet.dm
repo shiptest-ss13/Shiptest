@@ -207,12 +207,13 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
-	unique_reskin = list("Urban" = "helmetalt",
+	unique_reskin = list(
+		"None" = "helmetalt",
 		"Desert" = "helmetalt_desert",
 		"Woodland" = "helmetalt_woodland",
 		"Snow" = "helmetalt_snow",
+		"Urban" = "helmetalt_urban",
 		)
-
 
 /obj/item/clothing/head/helmet/marine
 	name = "tactical combat helmet"
@@ -561,10 +562,12 @@
 	icon_state = "m10helm"
 	can_flashlight = TRUE
 	dog_fashion = null
-	unique_reskin = list("Urban" = "m10helm",
+	unique_reskin = list(
+		"None" = "m10helm",
 		"Desert" = "m10helm_desert",
 		"Woodland" = "m10helm_woodland",
 		"Snow" = "m10helm_snow",
+		"Urban" = "m10helm_urban",
 		)
 
 /obj/item/clothing/head/helmet/bulletproof/x11
@@ -574,10 +577,12 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
-	unique_reskin = list("Urban" = "x11helm",
+	unique_reskin = list(
+		"None" = "x11helm",
 		"Desert" = "x11helm_desert",
 		"Woodland" = "x11helm_woodland",
 		"Snow" = "x11helm_snow",
+		"Urban" = "x11helm_urban",
 		)
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier
