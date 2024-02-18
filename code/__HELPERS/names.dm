@@ -279,6 +279,11 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 	"Saint-Roumaine Militia" = list(
 		"SRSV",
 	),
+	"Pan-Gezenan Federation" = list(
+		"PGF",
+		"PGFMC",
+		"PGFN",
+	),
 ))
 
 /proc/ship_prefix_to_faction(prefix)

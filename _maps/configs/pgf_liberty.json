@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"prefix": "PGFN",
+	"map_name": "Liberty-class Light Frigate",
+	"namelists": [
+		"NATURAL_AGGRESSIVE",
+		"WEAPONS"
+	],
+	"map_short_name": "Liberty-class",
+	"description": "A PGF light frigate smile.",
+	"tags": [
+		"Combat",
+		"Riot",
+		"Engineering",
+		"RP Focus"
+	],
+	"starting_funds": 4000,
+	"map_path": "_maps/shuttles/pgf/pgf_liberty.dmm",
+	"limit": 1,
+	"job_slots": {
+		"PGF - Captain": {
+			"outfit": "/datum/outfit/job/gezena/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"PGF - Navy Engineer": {
+			"outfit": "/datum/outfit/job/gezena/engineer",
+			"slots": 2
+		},
+		"PGF - Navy Doctor": {
+			"outfit": "/datum/outfit/job/gezena/doctor",
+			"slots": 1
+		},
+		"PGF - Crewman": {
+			"outfit": "/datum/outfit/job/gezena/assistant",
+			"slots": 3
+		},
+		"PGF - Marine Sergeant": {
+			"outfit": "/datum/outfit/job/gezena/hos",
+			"slots": 1
+		},
+		"PGF - Marine": {
+			"outfit": "/datum/outfit/job/gezena/security",
+			"slots": 3
+		}
+	},
+	"enabled": true
+}

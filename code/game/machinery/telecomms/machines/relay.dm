@@ -103,6 +103,11 @@
 	id = "Frontiersmen Relay"
 	network = "frontier_commnet"
 
+/obj/machinery/telecomms/relay/preset/pgf
+	freq_listening = list(FREQ_COMMAND, FREQ_PGF, FREQ_COMMON)
+	id = "PGF Relay"
+	network = "pgf_commnet"
+
 //Generic preset relay
 /obj/machinery/telecomms/relay/preset/auto
 	hide = TRUE
