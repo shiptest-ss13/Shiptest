@@ -562,7 +562,7 @@
 	glass_name = "glass of Shoal Punch"
 	glass_desc = "It's hard to imagine all those fruits getting condensed into a cup like this."
 
-/datum/reagent/consumable/shamblers/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/shoal_punch/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
 /datum/reagent/consumable/sodawater

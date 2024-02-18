@@ -214,7 +214,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of Vimukti"
 	glass_desc = "A spiritually-taxing drink from the Shoal. Numerous warnings about this drink tell you to not drink too much, lest you incur some sort of wrath... or an overdose of a psychoactive lichen."
 
-/datum/reagent/consumable/ethanol/thirteenloko/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/vimukti/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
@@ -222,12 +222,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		M.Jitter(5)
 	return ..()
 
-/datum/reagent/consumable/ethanol/thirteenloko/overdose_start(mob/living/M)
+/datum/reagent/consumable/ethanol/vimukti/overdose_start(mob/living/M)
 	to_chat(M, "<span class='userdanger'>Your entire body violently jitters as you start to feel queasy. You really shouldn't have drank all of that [name]!</span>")
 	M.Jitter(20)
 	M.Stun(15)
 
-/datum/reagent/consumable/ethanol/thirteenloko/overdose_process(mob/living/M)
+/datum/reagent/consumable/ethanol/vimukti/overdose_process(mob/living/M)
 	if(prob(7) && iscarbon(M))
 		var/obj/item/I = M.get_active_held_item()
 		if(I)

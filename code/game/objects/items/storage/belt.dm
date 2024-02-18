@@ -509,7 +509,7 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/lunapunch,
 		/obj/item/reagent_containers/food/drinks/soda_cans/space_up,
 		/obj/item/reagent_containers/food/drinks/soda_cans/pacfuel,
-		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
+		/obj/item/reagent_containers/food/drinks/soda_cans/orange_soda,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola
 		))
 		new rig_snacks(src)
