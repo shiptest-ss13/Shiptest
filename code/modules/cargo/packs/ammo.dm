@@ -75,17 +75,15 @@
 
 /datum/supply_pack/ammo/buckshot
 	name = "Buckshot Crate"
-	desc = "Contains two boxes of buckshot for use in lethal persuasion."
-	cost = 2000
-	contains = list(/obj/item/ammo_box/a12g,
-					/obj/item/ammo_box/a12g)
+	desc = "Contains a box of twenty-five buckshot shells for use in lethal persuasion."
+	cost = 500
+	contains = list(/obj/item/ammo_box/a12g)
 
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
-	desc = "Contains two boxes of slug shells for use in lethal persuasion."
-	cost = 2000
-	contains = list(/obj/item/ammo_box/a12g/slug,
-					/obj/item/ammo_box/a12g/slug)
+	desc = "Contains a box of twenty-five slug shells for use in lethal persuasion."
+	cost = 500
+	contains = list(/obj/item/ammo_box/a12g/slug)
 
 /*
 		.38 ammo
@@ -94,7 +92,7 @@
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
 	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
-	cost = 1000
+	cost = 500
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
 	crate_name = "ammo crate"
@@ -134,6 +132,13 @@
 	contains = list(/obj/item/ammo_box/magazine/wt550m9/ap,
 					/obj/item/ammo_box/magazine/wt550m9/inc)
 
+/datum/supply_pack/ammo/smgm45ammo
+	name = ".45 Cobra Ammo Crate"
+	desc = "Contains two .45 magazines for the Cobra-20, each containing 24 rounds."
+	cost = 1500
+	contains = list(/obj/item/ammo_box/magazine/smgm45,
+					/obj/item/ammo_box/magazine/smgm45)
+
 /*
 		Rifle ammo
 */
@@ -167,8 +172,8 @@
 	cost = 2000
 
 /datum/supply_pack/ammo/ak47_ammo
-	name = "AKM 7.62x39mm FMJ Magazine Crate"
-	desc = "Contains two 7.62x39mm FMJ magazines for the AKM rifle, each containing twenty rounds."
+	name = "SVG 7.62x39mm FMJ Magazine Crate"
+	desc = "Contains two 7.62x39mm FMJ magazines for the SVG rifle, each containing twenty rounds."
 	contains = list(/obj/item/ammo_box/magazine/ak47,
 					/obj/item/ammo_box/magazine/ak47)
 	cost = 2000
@@ -188,3 +193,135 @@
 					/obj/item/ammo_box/magazine/illestren_a850r,
 					/obj/item/ammo_box/magazine/illestren_a850r)
 	cost = 1000
+
+/datum/supply_pack/ammo/a762_ammo_box
+	name = "7.62x39mm Ammo Box Crate"
+	desc = "Contains a sixty-round 7.62x39mm box for rifles like the SVG-67."
+	contains = list(/obj/item/ammo_box/a762_39)
+	cost = 500
+
+/datum/supply_pack/ammo/c556mmHITP_ammo_box
+	name = "5.56 Caseless Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56mm caseless boxes for SolGov sidearms like the Pistole C, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c556mmHITP,
+					/obj/item/ammo_box/c556mmHITP)
+	cost = 500
+
+/datum/supply_pack/ammo/c45_ammo_box
+	name = ".45 Ammo Box Crate"
+	desc = "Contains two fifty-round .45 boxes for pistols and SMGs like the M1911 or the C-20r, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c45,
+					/obj/item/ammo_box/c45)
+	cost = 500
+
+/datum/supply_pack/ammo/c10mm_ammo_box
+	name = "10mm Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes for pistols and SMGs like the Stechkin or the SkM-44(k), for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c10mm,
+					/obj/item/ammo_box/c10mm)
+	cost = 500
+
+/datum/supply_pack/ammo/c9mm_ammo_box
+	name = "9mm Ammo Box Crate"
+	desc = "Contains two fifty-round 9mm boxes for pistols and SMGs such as the Commander or Saber, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c9mm,
+					/obj/item/ammo_box/c9mm)
+	cost = 500
+
+/datum/supply_pack/ammo/a308_ammo_box
+	name = "308 Ammo Box Crate"
+	desc = "Contains one thirty-round .308 box for DMRs such as the SsG-04 and CM-GAL-S."
+	contains = list(/obj/item/ammo_box/a308)
+	cost = 500
+
+/datum/supply_pack/ammo/c9mmap_ammo_box
+	name = "9mm AP Ammo Box Crate"
+	desc = "Contains two fifty-round 9mm boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c9mm/ap,
+					/obj/item/ammo_box/c9mm/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c556mmHITPap_ammo_box
+	name = "5.56 caseless AP Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56mm caseless boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c556mmHITP/ap,
+					/obj/item/ammo_box/c556mmHITP/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c45ap_ammo_box
+	name = ".45 AP Ammo Box Crate"
+	desc = "Contains two fifty-round .45 boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c45/ap,
+					/obj/item/ammo_box/c45/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c10mmap_ammo_box
+	name = "10mm AP Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes loaded with armor piercing ammo, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c10mm/ap,
+					/obj/item/ammo_box/c10mm/ap)
+	cost = 1000
+
+/datum/supply_pack/ammo/c9mmhp_ammo_box
+	name = "9mm HP Ammo Box Crate"
+	desc = "Contains two fifty-round 9mm boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c9mm/hp,
+					/obj/item/ammo_box/c9mm/hp)
+	cost = 1000
+
+/datum/supply_pack/ammo/c10mmhp_ammo_box
+	name = "10mm HP Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c10mm/hp,
+					/obj/item/ammo_box/c10mm/hp)
+	cost = 1000
+/datum/supply_pack/ammo/c45hp_ammo_box
+	name = ".45 HP Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c45/hp,
+					/obj/item/ammo_box/c45/hp)
+	cost = 1000
+
+/datum/supply_pack/ammo/c556mmhitphp_ammo_box
+	name = "5.56 Caseless HP Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56mm caseless boxes loaded with hollow point ammo, great against unarmored targets, for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c556mmHITP/hp,
+					/obj/item/ammo_box/c556mmHITP/hp)
+	cost = 1000
+
+/datum/supply_pack/ammo/c9mmrubber_ammo_box
+	name = "9mm Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 9mm boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c9mm/rubbershot,
+					/obj/item/ammo_box/c9mm/rubbershot)
+	cost = 500
+
+/datum/supply_pack/ammo/c10mmrubber_ammo_box
+	name = "10mm Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 10mm boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c10mm/rubbershot,
+					/obj/item/ammo_box/c10mm/rubbershot)
+	cost = 500
+
+/datum/supply_pack/ammo/c45mmrubber_ammo_box
+	name = ".45 Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round .45 boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c45/rubbershot,
+					/obj/item/ammo_box/c45/rubbershot)
+	cost = 500
+
+
+/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+	name = "5.56 Caseless Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56 caseless boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c556mmHITP/rubbershot,
+					/obj/item/ammo_box/c556mmHITP/rubbershot)
+	cost = 500
+
+/datum/supply_pack/ammo/guncell
+	name = "Weapon Cell Crate"
+	desc = "Contains three weapon cells, compatible with laser guns."
+	contains = list(/obj/item/stock_parts/cell/gun,
+					/obj/item/stock_parts/cell/gun,
+					/obj/item/stock_parts/cell/gun)
+	cost = 1500

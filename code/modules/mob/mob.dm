@@ -843,7 +843,8 @@
 
 /// Adds this list to the output to the stat browser
 /mob/proc/get_status_tab_items()
-	. = list()
+	. = list("") //we want to offset unique stuff from standard stuff
+	SEND_SIGNAL(src, COMSIG_MOB_GET_STATUS_TAB_ITEMS, .)
 
 /// Gets all relevant proc holders for the browser statpenl
 /mob/proc/get_proc_holders()
@@ -990,7 +991,7 @@
 			mob_spell_list -= S
 			qdel(S)
 	if(client)
-		client << output(null, "statbrowser:check_spells")
+		client.stat_panel.send_message("check_spells")
 
 ///Return any anti magic atom on this mob that matches the magic type
 /mob/proc/anti_magic_check(magic = TRUE, holy = FALSE, tinfoil = FALSE, chargecost = 1, self = FALSE)

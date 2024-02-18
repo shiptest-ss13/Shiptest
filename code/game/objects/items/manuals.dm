@@ -360,156 +360,177 @@
 
 /obj/item/book/manual/wiki/chemistry
 	name = "Chemistry Textbook"
-	icon_state ="chemistrybook"
-	author = "Nanotrasen"
+	icon_state = "chemistrybook"
+	author = "GREMLIN"
 	title = "Chemistry Textbook"
 	page_link = "Guide_to_Chemistry"
 
-/obj/item/book/manual/wiki/engineering_construction
-	name = "Station Repairs and Construction"
-	icon_state ="bookEngineering"
-	author = "Engineering Encyclopedia"
-	title = "Station Repairs and Construction"
-	page_link = "Guide_to_Construction"
+/obj/item/book/manual/wiki/command
+	name = "Command and Delegate"
+	icon_state = "book"
+	author = "Frontier Assistance Program"
+	title = "Command and Delegate: The Entreprising Captain's Guide"
+	page_link = "Guide_to_Command"
 
-/obj/item/book/manual/wiki/engineering_guide
-	name = "Engineering Textbook"
-	icon_state ="bookEngineering2"
-	author = "Engineering Encyclopedia"
-	title = "Engineering Textbook"
+/obj/item/book/manual/wiki/piloting
+	name = "You and Helm Consoles"
+	icon_state = "book"
+	author = "Frontier Assistance Program"
+	title = "You and Helm Consoles: The Bold Helmsman's Manual"
+	page_link = "Guide_to_the_Overmap"
+
+/obj/item/book/manual/wiki/ghetto_chemistry
+	name = "Ghetto Chemistry Textbook"
+	icon_state = "chemistrybook"
+	author = "GREMLIN"
+	title = "Less Legal Chemistry Textbook"
+	page_link = "Guide_to_Ghetto_Chemistry"
+
+/obj/item/book/manual/wiki/cooking
+	name = "Cookbook"
+	desc = "It's a cookbook!"
+	icon_state = "cooked_book"
+	author = "Frontier Assistance Program"
+	title = "To Serve Man"
+	page_link = "Guide_to_Food_and_Drinks"
+
+/obj/item/book/manual/wiki/construction
+	name = "Ship Repairs and Construction"
+	icon_state = "bookEngineering"
+	author = "Frontier Assistance Program"
+	title = "Ship Repairs and Construction"
+	page_link = "Construction"
+
+/obj/item/book/manual/wiki/engineering
+	name = "Engineering Guide"
+	icon_state = "bookEngineering2"
+	author = "Frontier Assistance Program"
+	title = "The Ship Engineer's Guide to Mechanical and Electrical Engineering"
 	page_link = "Guide_to_Engineering"
 
-/obj/item/book/manual/wiki/engineering_singulo_tesla
-	name = "Singularity and Tesla for Dummies"
-	icon_state ="bookEngineeringSingularitySafety"
-	author = "Engineering Encyclopedia"
-	title = "Singularity and Tesla for Dummies"
-	page_link = "Singularity_and_Tesla_engines"
-
-/obj/item/book/manual/wiki/security_space_law
-	name = "Space Law"
-	desc = "A set of Nanotrasen guidelines for keeping law and order on their space stations."
-	icon_state = "bookSpaceLaw"
-	author = "Nanotrasen"
-	title = "Space Law"
-	page_link = "Space_Law"
-
-/obj/item/book/manual/wiki/infections
-	name = "Infections - Making your own pandemic!"
-	icon_state = "bookInfections"
-	author = "Infections Encyclopedia"
-	title = "Infections - Making your own pandemic!"
-	page_link = "Infections"
-
-/obj/item/book/manual/wiki/telescience
-	name = "Teleportation Science - Bluespace for dummies!"
-	icon_state = "book7"
-	author = "University of Bluespace"
-	title = "Teleportation Science - Bluespace for dummies!"
-	page_link = "Guide_to_telescience"
-
-/obj/item/book/manual/wiki/engineering_hacking
+/obj/item/book/manual/wiki/hacking
 	name = "Hacking"
-	icon_state ="bookHacking"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookHacking"
+	author = "Frontier Assistance Program"
 	title = "Hacking"
 	page_link = "Hacking"
 
-/obj/item/book/manual/wiki/detective
-	name = "The Film Noir: Proper Procedures for Investigations"
-	icon_state ="bookDetective"
-	author = "Nanotrasen"
-	title = "The Film Noir: Proper Procedures for Investigations"
-	page_link = "Detective"
-
-/obj/item/book/manual/wiki/barman_recipes
+/obj/item/book/manual/wiki/drinks
 	name = "Barman Recipes: Mixing Drinks and Changing Lives"
 	icon_state = "barbook"
 	author = "Sir John Rose"
 	title = "Barman Recipes: Mixing Drinks and Changing Lives"
-	page_link = "Guide_to_food_and_drinks"
+	page_link = "Guide_to_Food_and_Drinks"
 
-/obj/item/book/manual/wiki/robotics_cyborgs
+/obj/item/book/manual/wiki/medicine
+	name = "Guide to Medical Aid"
+	icon_state = "book8"
+	author = "Frontier Assistance Program"
+	title = "The Crewman's Guide to Medical Aid"
+	page_link = "Guide_to_Medical"
+
+/obj/item/book/manual/wiki/surgery
+	name = "Guide to Surgery"
+	icon_state = "book4"
+	author = "Frontier Assistance Program"
+	title = "Guide to Surgery: Scalpel, Hemostat, Wristwatch"
+	page_link = "Guide_to_Surgery"
+
+/obj/item/book/manual/wiki/robotics
 	name = "Robotics for Dummies"
 	icon_state = "borgbook"
 	author = "XISC"
 	title = "Robotics for Dummies"
-	page_link = "Guide_to_robotics"
+	page_link = "Guide_to_Robotics"
 
-/obj/item/book/manual/wiki/research_and_development
-	name = "Research and Development 101"
-	icon_state = "rdbook"
-	author = "Dr. L. Ight"
-	title = "Research and Development 101"
-	page_link = "Guide_to_Research_and_Development"
+// /obj/item/book/manual/wiki/engineering_singulo_tesla
+//	name = "Singularity and Tesla for Dummies"
+//	icon_state ="bookEngineeringSingularitySafety"
+//	author = "Engineering Encyclopedia"
+//	title = "Singularity and Tesla for Dummies"
+//	page_link = "Singularity_and_Tesla_engines"
 
-/obj/item/book/manual/wiki/experimentor
-	name = "Mentoring your Experiments"
-	icon_state = "rdbook"
-	author = "Dr. H.P. Kritz"
-	title = "Mentoring your Experiments"
-	page_link = "E.X.P.E.R.I-MENTOR"
+// /obj/item/book/manual/wiki/security_space_law
+//	name = "Space Law"
+//	desc = "A set of Nanotrasen guidelines for keeping law and order on their space stations."
+//	icon_state = "bookSpaceLaw"
+//	author = "Nanotrasen"
+//	title = "Space Law"
+//	page_link = "Space_Law"
 
-/obj/item/book/manual/wiki/cooking_to_serve_man
-	name = "To Serve Man"
-	desc = "It's a cookbook!"
-	icon_state ="cooked_book"
-	author = "the Kanamitan Empire"
-	title = "To Serve Man"
-	page_link = "Guide_to_food_and_drinks"
+// /obj/item/book/manual/wiki/infections
+//	name = "Infections - Making your own pandemic!"
+//	icon_state = "bookInfections"
+//	author = "Infections Encyclopedia"
+//	title = "Infections - Making your own pandemic!"
+//	page_link = "Infections"
 
-/obj/item/book/manual/wiki/tcomms
-	name = "Subspace Telecommunications And You"
-	icon_state = "book3"
-	author = "Engineering Encyclopedia"
-	title = "Subspace Telecommunications And You"
-	page_link = "Guide_to_Telecommunications"
+// /obj/item/book/manual/wiki/telescience
+//	name = "Teleportation Science - Bluespace for dummies!"
+//	icon_state = "book7"
+//	author = "University of Bluespace"
+//	title = "Teleportation Science - Bluespace for dummies!"
+//	page_link = "Guide_to_telescience"
 
-/obj/item/book/manual/wiki/atmospherics
-	name = "Lexica Atmosia"
-	icon_state = "book5"
-	author = "the City-state of Atmosia"
-	title = "Lexica Atmosia"
-	page_link = "Guide_to_Atmospherics"
+// /obj/item/book/manual/wiki/detective
+//	name = "The Film Noir: Proper Procedures for Investigations"
+//	icon_state ="bookDetective"
+//	author = "Nanotrasen"
+//	title = "The Film Noir: Proper Procedures for Investigations"
+//	page_link = "Detective"
 
-/obj/item/book/manual/wiki/medicine
-	name = "Medical Space Compendium, Volume 638"
-	icon_state = "book8"
-	author = "Medical Journal"
-	title = "Medical Space Compendium, Volume 638"
-	page_link = "Guide_to_medicine"
+// /obj/item/book/manual/wiki/research_and_development
+// 	name = "Research and Development 101"
+//	icon_state = "rdbook"
+//	author = "Dr. L. Ight"
+//	title = "Research and Development 101"
+//	page_link = "Guide_to_Research_and_Development"
 
-/obj/item/book/manual/wiki/surgery
-	name = "Brain Surgery for Dummies"
-	icon_state = "book4"
-	author = "Dr. F. Fran"
-	title = "Brain Surgery for Dummies"
-	page_link = "Surgery"
+// /obj/item/book/manual/wiki/experimentor
+//	name = "Mentoring your Experiments"
+//	icon_state = "rdbook"
+//	author = "Dr. H.P. Kritz"
+//	title = "Mentoring your Experiments"
+//	page_link = "E.X.P.E.R.I-MENTOR"
 
-/obj/item/book/manual/wiki/grenades
-	name = "DIY Chemical Grenades"
-	icon_state = "book2"
-	author = "W. Powell"
-	title = "DIY Chemical Grenades"
-	page_link = "Grenade"
+// /obj/item/book/manual/wiki/tcomms
+//	name = "Subspace Telecommunications And You"
+//	icon_state = "book3"
+//	author = "Engineering Encyclopedia"
+//	title = "Subspace Telecommunications And You"
+//	page_link = "Guide_to_Telecommunications"
 
-/obj/item/book/manual/wiki/toxins
-	name = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
-	icon_state = "book6"
-	author = "Cuban Pete"
-	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
-	page_link = "Guide_to_toxins"
+// /obj/item/book/manual/wiki/atmospherics
+//	name = "Lexica Atmosia"
+//	icon_state = "book5"
+//	author = "the City-state of Atmosia"
+//	title = "Lexica Atmosia"
+//	page_link = "Guide_to_Atmospherics"
 
-/obj/item/book/manual/wiki/plumbing
-	name = "Chemical Factories Without Narcotics"
-	icon_state ="plumbingbook"
-	author = "Nanotrasen"
-	title = "Chemical Factories Without Narcotics"
-	page_link = "Guide_to_plumbing"
+// /obj/item/book/manual/wiki/grenades
+//	name = "DIY Chemical Grenades"
+//	icon_state = "book2"
+//	author = "W. Powell"
+//	title = "DIY Chemical Grenades"
+//	page_link = "Grenade"
 
-/obj/item/book/manual/wiki/medical_cloning
-	name = "Cloning techniques of the 26th century"
-	icon_state ="bookCloning"
-	author = "Medical Journal, volume 3"
-	title = "Cloning techniques of the 26th century"
-	page_link = "Guide_to_genetics#Cloning"
+// /obj/item/book/manual/wiki/toxins
+//	name = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
+//	icon_state = "book6"
+//	author = "Cuban Pete"
+//	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
+//	page_link = "Guide_to_toxins"
+
+// /obj/item/book/manual/wiki/plumbing
+//	name = "Chemical Factories Without Narcotics"
+//	icon_state ="plumbingbook"
+//	author = "Nanotrasen"
+//	title = "Chemical Factories Without Narcotics"
+//	page_link = "Guide_to_plumbing"
+
+// /obj/item/book/manual/wiki/medical_cloning
+//	name = "Cloning techniques of the 26th century"
+//	icon_state ="bookCloning"
+//	author = "Medical Journal, volume 3"
+//	title = "Cloning techniques of the 26th century"
+//	page_link = "Guide_to_genetics#Cloning"
