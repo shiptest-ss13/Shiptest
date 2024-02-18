@@ -30,6 +30,9 @@
 /obj/structure/cable{
 	icon_state = "1-10"
 	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "al" = (
@@ -901,6 +904,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
 "jr" = (
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "jv" = (
