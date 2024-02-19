@@ -249,7 +249,6 @@
 	desc = "A cybernetic implant that allows the user to project a healing beam from their hand."
 	items_to_create = list(/obj/item/gun/medbeam)
 
-
 /obj/item/organ/cyberimp/arm/flash
 	name = "integrated high-intensity photon projector" //Why not
 	desc = "An integrated projector mounted onto a user's arm that is able to be used as a powerful flash."
@@ -301,4 +300,60 @@
 	name = "power cord implant"
 	desc = "An internal power cord hooked up to a battery. Useful if you run on volts."
 	items_to_create = list(/obj/item/apc_powercord)
-	zone = "l_arm"
+	zone = BODY_ZONE_L_ARM
+
+//Weaponry
+/obj/item/organ/cyberimp/arm/monowire
+	name = "\improper Cybersun 'Viper' Slingblade"
+	desc = "Do not lick"
+	icon_state = "monowire"
+	items_to_create = list(/obj/item/melee/monowire)
+	zone = BODY_ZONE_R_ARM
+
+/obj/item/organ/cyberimp/arm/monowire/l
+	zone = BODY_ZONE_L_ARM
+
+/obj/item/melee/monowire
+	name = "monomolecular wire"
+	desc = "Do not lick"
+	icon_state = "monowire0"
+	base_icon_state = "monowire"
+	w_class = WEIGHT_CLASS_BULKY
+
+	var/wielded = FALSE
+
+	force = 10
+	sharpness = IS_SHARP
+	attack_verb = list("shredded", "lacerated", "cut", "sliced")
+
+	light_system = MOVABLE_LIGHT
+	light_range = 3
+	light_power = 1
+	light_color = LIGHT_COLOR_YELLOW
+
+/obj/item/melee/monowire/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+
+/obj/item/melee/monowire/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=20, icon_wielded="[base_icon_state]1")
+
+/// Triggered on wield of two handed item
+/obj/item/melee/monowire/proc/on_wield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	wielded = TRUE
+	reach = 2
+
+/// Triggered on unwield of two handed item
+/obj/item/melee/monowire/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
+	wielded = FALSE
+	reach = 1
+
+/obj/item/melee/monowire/update_icon_state()
+	icon_state = "[base_icon_state]0"
+	return ..()

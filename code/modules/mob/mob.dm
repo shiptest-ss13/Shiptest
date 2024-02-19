@@ -566,12 +566,12 @@
 		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(to_chat), examined_mob, msg), 3)
 
 /**
-  * Called by using Activate Held Object with an empty hand/limb
-  *
-  * Does nothing by default. The intended use is to allow limbs to call their
-  * own attack_self procs. It is up to the individual mob to override this
-  * parent and actually use it.
-  */
+ * Called by using Activate Held Object with an empty hand/limb
+ *
+ * Does nothing by default. The intended use is to allow limbs to call their
+ * own attack_self procs. It is up to the individual mob to override this
+ * parent and actually use it.
+ */
 /mob/proc/limb_attack_self()
 	return
 
