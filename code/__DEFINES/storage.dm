@@ -68,7 +68,7 @@ GLOBAL_LIST_INIT(default_weight_class_to_volume, list(
 // volume amount for items
 #define ITEM_VOLUME_DISK DEFAULT_VOLUME_TINY
 #define ITEM_VOLUME_CONTAINER_M 12 //makes nested toolboxes & toolbelts less efficient
-#define ITEM_VOLUME_MOB 40//Just over half a duffel, prevents mob stacking
+#define ITEM_VOLUME_MOB 40//prevents mob stacking
 
 // #define SAMPLE_VOLUME_AMOUNT 2
 

@@ -124,13 +124,15 @@
 	var/obj/item/I
 	// start at this pixel from screen_start_x.
 	var/current_pixel = VOLUMETRIC_STORAGE_EDGE_PADDING
-	var/row = 1
 	var/first = TRUE
+	var/row = 1
 
 	for(var/i in percentage_by_item)
 		I = i
 		var/percent = percentage_by_item[I]
 		var/atom/movable/screen/storage/volumetric_box/center/B = new /atom/movable/screen/storage/volumetric_box/center(null, src, I)
+		// SNOWFLAKE: force it to icon until we unfuck storage/click passing
+		I.mouse_opacity = MOUSE_OPACITY_ICON
 		var/pixels_to_use = overrun? MINIMUM_PIXELS_PER_ITEM : max(using_horizontal_pixels * percent, MINIMUM_PIXELS_PER_ITEM)
 		var/addrow = FALSE
 		if(CEILING(pixels_to_use, 1) >= FLOOR(horizontal_pixels - current_pixel - VOLUMETRIC_STORAGE_EDGE_PADDING, 1))
@@ -138,10 +140,10 @@
 			addrow = TRUE
 
 		// now that we have pixels_to_use, place our thing and add it to the returned list.
-
 		B.screen_loc = "[screen_start_x]:[round(current_pixel + (pixels_to_use * 0.5) + (first? 0 : VOLUMETRIC_STORAGE_ITEM_PADDING), 1)],[screen_start_y+row-1]:[screen_pixel_y]"
 		// add the used pixels to pixel after we place the object
-		current_pixel += pixels_to_use + VOLUMETRIC_STORAGE_ITEM_PADDING
+		current_pixel += pixels_to_use + (first? 0 : VOLUMETRIC_STORAGE_ITEM_PADDING)
+		first = FALSE		//apply padding to everything after this
 
 		// set various things
 		B.set_pixel_size(pixels_to_use)
@@ -153,6 +155,7 @@
 		// go up a row if needed
 		if(addrow)
 			row++
+			first = TRUE		//first in the row, don't apply between-item padding.
 			current_pixel = VOLUMETRIC_STORAGE_EDGE_PADDING
 
 	// Then, continuous section.
