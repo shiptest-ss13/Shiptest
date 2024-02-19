@@ -125,11 +125,6 @@
 	name = "medical crate"
 	icon_state = "medicalcrate"
 
-/obj/structure/closet/crate/freezer
-	desc = "A freezer."
-	name = "freezer"
-	icon_state = "freezer"
-
 //Snowflake organ freezer code
 //Order is important, since we check source, we need to do the check whenever we have all the organs in the crate
 
@@ -293,3 +288,28 @@
 		new /obj/item/clothing/mask/breath(src)
 	for(var/i in 1 to 3)
 		new /obj/item/tank/internals/oxygen(src)
+
+/obj/structure/closet/crate/red
+	name = "red crate"
+	desc = "A rectangular steel crate."
+	icon_state = "redcrate"
+/obj/structure/closet/crate/orange
+	name = "orange crate"
+	desc = "A rectangular steel crate."
+	icon_state = "orangecrate"
+/obj/structure/closet/crate/yellow
+	name = "yellow crate"
+	desc = "The colors look a little dodgy." //dyed insulated gloves easter egg
+	icon_state = "yellowcrate"
+/obj/structure/closet/crate/green
+	name = "green crate"
+	desc = "A rectangular steel crate."
+	icon_state = "greencrate"
+/obj/structure/closet/crate/blue
+	name = "blue crate"
+	desc = "A rectangular steel crate."
+	icon_state = "bluecrate"
+/obj/structure/closet/crate/purple
+	name = "purple crate"
+	desc = "A rectangular steel crate."
+	icon_state = "purplecrate"
