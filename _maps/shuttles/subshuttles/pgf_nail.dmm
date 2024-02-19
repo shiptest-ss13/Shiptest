@@ -38,9 +38,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/comfy/shuttle{
-	dir = 8
-	},
+/obj/effect/turf_decal/etherbor/left,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "i" = (
@@ -87,6 +85,9 @@
 	pixel_x = -13;
 	pixel_y = -19
 	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "p" = (
@@ -112,6 +113,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/turf_decal/etherbor/center,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "s" = (
@@ -124,6 +126,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/etherbor/right,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "v" = (
@@ -354,40 +357,40 @@ W
 c
 "}
 (6,1,1) = {"
-t
+n
 W
 U
 h
 b
 W
-n
+t
 "}
 (7,1,1) = {"
-t
+n
 O
 E
 r
 v
 R
-n
+t
 "}
 (8,1,1) = {"
-t
+n
 B
 i
 u
 i
 w
-n
+t
 "}
 (9,1,1) = {"
-W
+G
 V
 p
 N
 a
 V
-G
+W
 "}
 (10,1,1) = {"
 c

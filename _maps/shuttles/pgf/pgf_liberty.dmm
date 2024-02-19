@@ -44,9 +44,10 @@
 	},
 /obj/machinery/light_switch{
 	dir = 2;
-	pixel_x = 10;
+	pixel_x = -12;
 	pixel_y = 19
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/construction)
 "aR" = (
@@ -64,6 +65,7 @@
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/borderfloorblack,
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
 "aT" = (
@@ -662,6 +664,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gx" = (
@@ -709,6 +712,7 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "ha" = (
@@ -1026,6 +1030,7 @@
 /obj/structure/closet/crate/bin{
 	pixel_y = 4
 	},
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
 "iI" = (
@@ -1041,6 +1046,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/effect/turf_decal/etherbor/left,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "iK" = (
@@ -1294,6 +1300,7 @@
 	dir = 4
 	},
 /obj/machinery/light/directional/west,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
 "lf" = (
@@ -2090,6 +2097,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/etherbor/center,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "to" = (
@@ -2560,6 +2568,7 @@
 	dir = 2;
 	network = list("GEC")
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/crew/cryo)
 "wV" = (
@@ -2971,6 +2980,7 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "AS" = (
@@ -3091,6 +3101,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "BJ" = (
+/obj/structure/grille,
 /obj/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -3411,6 +3422,7 @@
 /obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
 	dir = 4
 	},
+/obj/item/radio/intercom/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "EC" = (
@@ -3775,6 +3787,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "GP" = (
@@ -4453,6 +4466,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/effect/turf_decal/etherbor/right,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "ML" = (
@@ -4803,8 +4817,9 @@
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Ph" = (
@@ -4975,7 +4990,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/machinery/light/directional/south,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Qa" = (
@@ -5078,9 +5093,10 @@
 	},
 /obj/machinery/light_switch{
 	dir = 2;
-	pixel_x = -11;
+	pixel_x = -12;
 	pixel_y = 19
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/mono,
 /area/ship/hangar/starboard)
 "Rg" = (
@@ -5842,6 +5858,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Xz" = (
@@ -5933,6 +5950,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
 "Yu" = (
@@ -6228,6 +6246,7 @@
 /obj/machinery/camera/autoname{
 	dir = 6
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 
