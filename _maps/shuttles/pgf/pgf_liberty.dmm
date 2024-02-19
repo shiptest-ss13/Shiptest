@@ -657,15 +657,13 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk,
-/obj/machinery/atmospherics/components/binary/pump/on/layer2{
-	dir = 4;
-	name = "distribution input pump";
-	on = 0;
-	piping_layer = 5
-	},
 /obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
+	},
+/obj/machinery/atmospherics/components/binary/pump/layer2{
+	name = "distribution output pump";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
