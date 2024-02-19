@@ -109,11 +109,6 @@ SUBSYSTEM_DEF(mapping)
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
 
-/datum/controller/subsystem/mapping/proc/mapvote()
-	SSvote.initiate_vote("map", "automatic map rotation", TRUE) //WS Edit - Ghost Voting Rework
-
-/datum/controller/subsystem/mapping/proc/changemap(datum/map_template/map)
-
 /datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
 	for(var/map in filelist)
@@ -181,20 +176,30 @@ SUBSYSTEM_DEF(mapping)
 		CHECK_LIST_EXISTS("job_slots")
 		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
 		S.file_name = data["map_path"]
-		S.category = "shiptest"
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
 		else
 			S.short_name = copytext(S.name, 1, 20)
+
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
+			if(istext(data["faction_name"]))
+				S.faction_name = data["faction_name"]
+			else
+				S.faction_name = ship_prefix_to_faction(S.prefix)
+
+		S.category = S.faction_name
+
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
-		if ( isnum( data[ "unique_ship_access" ] && data["unique_ship_access"] ) )
+
+		if(isnum(data[ "unique_ship_access" ] && data["unique_ship_access"]))
 			S.unique_ship_access = data[ "unique_ship_access" ]
+
 		if(istext(data["description"]))
 			S.description = data["description"]
+
 		if(islist(data["tags"]))
 			S.tags = data["tags"]
 
@@ -225,8 +230,10 @@ SUBSYSTEM_DEF(mapping)
 			S.job_slots[job_slot] = slots
 		if(isnum(data["limit"]))
 			S.limit = data["limit"]
+
 		if(isnum(data["spawn_time_coeff"]))
 			S.spawn_time_coeff = data["spawn_time_coeff"]
+
 		if(isnum(data["officer_time_coeff"]))
 			S.officer_time_coeff = data["officer_time_coeff"]
 
@@ -236,8 +243,10 @@ SUBSYSTEM_DEF(mapping)
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
+
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+
 		if(isnum(data["space_spawn"]) && data["space_spawn"])
 			S.space_spawn = TRUE
 

@@ -2894,7 +2894,7 @@
 	pixel_y = -4;
 	pixel_x = 3
 	},
-/obj/item/gun/ballistic/rifle/boltaction/polymer{
+/obj/item/gun/ballistic/rifle/polymer{
 	pixel_y = -8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -5596,11 +5596,11 @@
 /area/ship/engineering/incinerator)
 "Bx" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/ballistic/revolver/nagant{
+/obj/item/gun/ballistic/revolver/shadow{
 	pixel_y = 6
 	},
-/obj/item/gun/ballistic/revolver/nagant,
-/obj/item/gun/ballistic/revolver/nagant{
+/obj/item/gun/ballistic/revolver/shadow,
+/obj/item/gun/ballistic/revolver/shadow{
 	pixel_y = -5
 	},
 /obj/effect/turf_decal/techfloor{
@@ -5614,7 +5614,7 @@
 /area/ship/security/armory)
 "By" = (
 /obj/structure/guncase,
-/obj/item/gun/ballistic/automatic/smg/thompson{
+/obj/item/gun/ballistic/automatic/smg/mini_uzi{
 	pixel_y = -3
 	},
 /obj/effect/turf_decal/techfloor{
@@ -5623,7 +5623,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/gun/ballistic/rifle/boltaction{
+/obj/item/gun/ballistic/rifle/illestren{
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
@@ -8676,7 +8676,7 @@
 /obj/structure/closet/crate/trashcart,
 /obj/item/trash/candy,
 /obj/effect/decal/cleanable/vomit/old,
-/obj/item/book/manual/wiki/chemistry{
+/obj/item/book/manual/wiki/ghetto_chemistry{
 	pixel_x = 6;
 	pixel_y = -5
 	},
@@ -8985,10 +8985,10 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 8
 	},
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -3
 	},
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -1;
 	pixel_x = 1
 	},
@@ -8999,20 +8999,20 @@
 	pixel_y = 2;
 	pixel_x = -4
 	},
-/obj/item/ammo_box/magazine/smgm45/drum{
+/obj/item/ammo_box/magazine/uzim9mm{
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -3
 	},
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -5;
 	pixel_x = -1
 	},
-/obj/item/ammo_box/a762,
-/obj/item/ammo_box/a762,
-/obj/item/storage/toolbox/ammo/a762{
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/storage/toolbox/ammo/a850r{
 	pixel_y = -6;
 	pixel_x = 5
 	},
@@ -9360,7 +9360,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/book/manual/wiki/engineering_hacking{
+/obj/item/book/manual/wiki/hacking{
 	pixel_x = 5;
 	pixel_y = 4
 	},
