@@ -1456,9 +1456,6 @@
 /obj/item/stack/sheet/glass/fifty{
 	pixel_x = 6
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "lN" = (
@@ -1889,6 +1886,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "qa" = (
@@ -2515,8 +2513,11 @@
 /area/ship/engineering)
 "wM" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/machinery/power/ship_gravity,
-/obj/structure/cable/yellow,
+/obj/structure/rack,
+/obj/item/clothing/mask/gas/suns,
+/obj/item/clothing/mask/gas/suns,
+/obj/item/clothing/mask/gas/suns,
+/obj/item/holosign_creator/atmos,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "wQ" = (
@@ -3276,11 +3277,6 @@
 "FS" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/machinery/atmospherics/pipe/layer_manifold,
-/obj/item/clothing/mask/gas/suns,
-/obj/item/clothing/mask/gas/suns,
-/obj/item/clothing/mask/gas/suns,
-/obj/structure/rack,
-/obj/item/holosign_creator/atmos,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "FU" = (
@@ -3936,9 +3932,6 @@
 	},
 /obj/structure/sign/poster/official/moth/piping{
 	pixel_y = 32
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5264,7 +5257,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over,
-/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Zj" = (
