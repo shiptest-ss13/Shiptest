@@ -205,7 +205,6 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
 	fire_sound = 'sound/weapons/gun/shotgun/bulldog.ogg'
 	actions_types = list()
 	mag_display = TRUE
@@ -238,7 +237,13 @@
 	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_INTEQ
 
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen
+/obj/item/gun/ballistic/shotgun/bulldog/suns
+	name = "\improper Bulldog-C Shotgun"
+	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
+	icon_state = "bulldog_suns"
+	item_state = "bulldog_suns"
+
+/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
 	name = "\improper CM-15"
 	desc = "A standard-issue shotgun of the Colonial Minutemen, most often used by boarding crews. Only compatible with specialized 8-round magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -373,6 +378,7 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
+	icon = 'icons/obj/guns/projectile.dmi'
 	base_icon_state = "ishotgun"
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
@@ -637,6 +643,7 @@
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
 	desc = "A sturdy, excellently-made lever-action rifle. This one appears to be a genuine antique, kept in incredibly good condition despite its advanced age. Chambered in .38."
+	base_icon_state = "flamingbolt"
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
 

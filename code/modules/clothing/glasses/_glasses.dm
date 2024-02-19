@@ -85,6 +85,7 @@
 	attack_verb = list("sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
+	custom_price = 500
 
 /obj/item/clothing/glasses/science
 	name = "science goggles"
@@ -212,6 +213,11 @@
 	desc = "Why would you wear something so controversial yet so brave?"
 	icon_state = "circle_glasses"
 	item_state = "circle_glasses"
+
+/obj/item/clothing/glasses/regular/thin
+	name = "thin glasses"
+	desc = "More expensive, more fragile and much less practical, but oh so fashionable."
+	icon_state = "thin_glasses"
 
 //Here lies green glasses, so ugly they died. RIP
 

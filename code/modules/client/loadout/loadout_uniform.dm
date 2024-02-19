@@ -241,7 +241,3 @@
 /datum/gear/uniform/tacticool
 	display_name = "tacticool turtleneck"
 	path = /obj/item/clothing/under/syndicate/tacticool
-
-/datum/gear/uniform/maid
-	display_name = "maid dress"
-	path = 	/obj/item/clothing/under/costume/maid

@@ -52,13 +52,14 @@
 #define HIDESUITSTORAGE (1<<1)
 #define HIDEJUMPSUIT (1<<2)	//these first four are only used in exterior suits
 #define HIDESHOES (1<<3)
-#define HIDEMASK (1<<4)	//these last six are only used in masks and headgear.
-#define HIDEEARS (1<<5)	// (ears means headsets and such)
-#define HIDEEYES (1<<6)	// Whether eyes and glasses are hidden
-#define HIDEFACE (1<<7)	// Whether we appear as unknown.
+#define HIDEMASK (1<<4)		//these last six are only used in masks and headgear.
+#define HIDEEARS (1<<5)		// (ears means headsets and such)
+#define HIDEEYES (1<<6)		// Whether eyes and glasses are hidden
+#define HIDEFACE (1<<7)		// Whether we appear as unknown.
 #define HIDEHAIR (1<<8)
 #define HIDEFACIALHAIR (1<<9)
 #define HIDENECK (1<<10)
+#define HIDEHORNS (1<<11) 	// Used for hiding Sarathi horns.
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)
