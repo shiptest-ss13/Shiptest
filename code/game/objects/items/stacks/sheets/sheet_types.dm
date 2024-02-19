@@ -56,7 +56,14 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("engineering crate", /obj/structure/closet/crate/engineering, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
 		new/datum/stack_recipe("medical crate", /obj/structure/closet/crate/medical, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
 		new/datum/stack_recipe("science crate", /obj/structure/closet/crate/science, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
-		new/datum/stack_recipe("hydroponics crate", /obj/structure/closet/crate/hydroponics, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE)
+		new/datum/stack_recipe("hydroponics crate", /obj/structure/closet/crate/hydroponics, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("hydroponics crate", /obj/structure/closet/crate/hydroponics, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("red crate", /obj/structure/closet/crate/red, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("orange crate", /obj/structure/closet/crate/orange, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("yellow crate", /obj/structure/closet/crate/yellow, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("green crate", /obj/structure/closet/crate/green, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("blue crate", /obj/structure/closet/crate/blue, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE),
+		new/datum/stack_recipe("purple crate", /obj/structure/closet/crate/purple, 2, time = 15, one_per_turf = TRUE, on_floor = TRUE)
 		)),
 	null, \
 	new/datum/stack_recipe("canister", /obj/machinery/portable_atmospherics/canister, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
