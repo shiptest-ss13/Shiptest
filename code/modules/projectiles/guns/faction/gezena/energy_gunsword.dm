@@ -38,7 +38,7 @@
 	range = 10
 	damage_constant = 0.8
 	damage = 25
-	armour_penetration = -30
+	armour_penetration = -10
 
 /obj/item/gun/energy/kalix/pgf
 	name = "Etherbor BG-16"
