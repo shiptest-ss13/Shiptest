@@ -52,16 +52,8 @@
 	return 0
 
 /obj/item/fishing_rod/proc/consume_bait(atom/movable/reward)
-	// catching things that aren't fish or alive mobs doesn't consume baits.
-	if(isnull(reward) || isnull(bait))
-		return
-	if(isliving(reward))
-		var/mob/living/caught_mob = reward
-		if(caught_mob.stat == DEAD)
-			return
-	else if(!isfish(reward))
-		return
-	QDEL_NULL(bait)
+	if(bait)
+		QDEL_NULL(bait)
 		update_appearance()
 
 /obj/item/fishing_rod/attack_self(mob/user)
