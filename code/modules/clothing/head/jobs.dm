@@ -12,7 +12,6 @@
 	desc = "The commander in chef's head wear."
 	strip_delay = 10
 	equip_delay_other = 10
-	dynamic_hair_suffix = ""
 	dog_fashion = /datum/dog_fashion/head/chef
 
 //Captain
@@ -55,7 +54,7 @@
 
 /obj/item/clothing/head/caphat/frontier/admiral
 	name = "\improper Frontiersmen admiral's cap"
-	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersman pirate fleet."
+	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
 
 //Head of Personnel
@@ -138,7 +137,6 @@
 	icon_state = "hoscap"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 80
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/cowboy
 	name = "sheriff's hat"
@@ -156,9 +154,8 @@
 
 /obj/item/clothing/head/cowboy/sec/minutemen
 	name = "colonial minutmen officer's slouch hat"
-	desc = "A commanding slouch hat adorned with a offier's badge, used by the Colonial Minutemen."
+	desc = "A commanding slouch hat adorned with a officer's badge, used by the Colonial Minutemen."
 	icon_state = "minuteman_officer_hat"
-
 
 /obj/item/clothing/head/cowboy/sec/roumain
 	name = "hunter's hat"

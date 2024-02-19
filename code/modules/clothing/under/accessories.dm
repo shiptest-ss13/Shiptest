@@ -464,10 +464,7 @@
 	name = "detective's shoulder holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
 
-/obj/item/clothing/accessory/holster/lieutenant
-	name = "lieutenant's shoulder holster"
-	desc = "A modified shoulder holster designed to fit a small egun and power cells."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/lt
+
 
 /obj/item/clothing/accessory/holster/detective/Initialize()
 	. = ..()
@@ -515,7 +512,7 @@
 
 /obj/item/clothing/accessory/holster/marine/Initialize()
 	. = ..()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 

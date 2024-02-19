@@ -60,6 +60,8 @@
 	var/empty_indicator = FALSE
 	///Whether the gun alarms when empty or not.
 	var/empty_alarm = FALSE
+	///Do we eject the magazine upon runing out of ammo?
+	var/empty_autoeject = FALSE
 	///Whether the gun supports multiple special mag types
 	var/special_mags = FALSE
 	///The bolt type of the gun, affects quite a bit of functionality, see combat.dm defines for bolt types: BOLT_TYPE_STANDARD; BOLT_TYPE_LOCKING; BOLT_TYPE_OPEN; BOLT_TYPE_NO_BOLT
@@ -101,7 +103,7 @@
 		return
 	if (!magazine)
 		magazine = new mag_type(src)
-	chamber_round(TRUE)
+	chamber_round()
 	update_appearance()
 
 /obj/item/gun/ballistic/update_icon_state()
@@ -240,8 +242,8 @@
 		else
 			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
 			return
-
-	user.put_in_hands(old_mag)
+	if(user)
+		user.put_in_hands(old_mag)
 	update_appearance()
 
 /obj/item/gun/ballistic/can_shoot()
@@ -338,6 +340,9 @@
 		if (empty_alarm && last_shot_succeeded)
 			playsound(src, empty_alarm_sound, empty_alarm_volume, empty_alarm_vary)
 			update_appearance()
+		if (empty_autoeject && last_shot_succeeded && !internal_magazine)
+			eject_magazine(display_message = FALSE)
+			update_appearance()
 		if (last_shot_succeeded && bolt_type == BOLT_TYPE_LOCKING)
 			bolt_locked = TRUE
 			update_appearance()
@@ -403,6 +408,7 @@
 		. += "The [bolt_wording] is locked back and needs to be released before firing."
 	if (suppressed)
 		. += "It has a suppressor attached that can be removed with <b>alt+click</b>."
+	. += "You can [bolt_wording] [src] by pressing the <b>unqiue action</b> key. By default, this is <b>space</b>"
 
 ///Gets the number of bullets in the gun
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = TRUE)
