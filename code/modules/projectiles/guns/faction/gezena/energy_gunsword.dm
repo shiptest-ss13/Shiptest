@@ -14,15 +14,18 @@
 	wield_delay = 0.7 SECONDS
 	wield_slowdown = 0.35
 
-	//spread = 4
-	//spread_unwielded = 12
-
-	cell_type = /obj/item/stock_parts/cell/gun/pgf
+	cell_type = /obj/item/stock_parts/cell/gun/kalix
 	ammo_type = list(/obj/item/ammo_casing/energy/kalix, /obj/item/ammo_casing/energy/disabler/hitscan)
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
 	manufacturer = MANUFACTURER_PGF
+
+/obj/item/ammo_casing/energy/kalix
+	projectile_type = /obj/projectile/beam/hitscan/kalix
+	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
+	e_cost = 666 //30 shots per cell
+	delay = 1
 
 /obj/projectile/beam/hitscan/kalix
 	name = "concentrated energy"
@@ -35,13 +38,7 @@
 	range = 10
 	damage_constant = 0.8
 	damage = 25
-	armour_penetration = -20
-
-/obj/item/ammo_casing/energy/kalix
-	projectile_type = /obj/projectile/beam/hitscan/kalix
-	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
-	e_cost = 666 //30 shots per cell
-	delay = 1
+	armour_penetration = -30
 
 /obj/item/gun/energy/kalix/pgf
 	name = "Etherbor BG-16"
@@ -54,9 +51,9 @@
 
 /obj/item/gun/energy/kalix/pgf/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.16 SECONDS)
 
-/obj/projectile/beam/hitscan/pgf
+/obj/projectile/beam/hitscan/kalix/pgf
 	name = "concentrated energy"
 	tracer_type = /obj/effect/projectile/tracer/pgf
 	muzzle_type = /obj/effect/projectile/muzzle/pgf
@@ -66,9 +63,35 @@
 	impact_light_color_override = LIGHT_COLOR_ELECTRIC_GREEN
 
 /obj/item/ammo_casing/energy/pgf
-	projectile_type = /obj/projectile/beam/hitscan/pgf
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf
 	fire_sound = 'sound/weapons/gun/energy/kalixsmg.ogg'
 	delay = 1
+
+/obj/item/gun/energy/kalix/pistol //blue //todo: fix up belt_mirror.dmi, it's incomprehensible
+	name = "Etherbor SG-8"
+	desc = "Etherbor's current and sidearm offering. While intended for marines, it's also available for civillians"
+	icon_state = "kalixpistol"
+	item_state = "kalixpistol"
+	w_class = WEIGHT_CLASS_SMALL
+
+	modifystate = FALSE
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
+	cell_type = /obj/item/stock_parts/cell/gun/kalix
+	ammo_type = list(/obj/item/ammo_casing/energy/kalix/pistol)
+
+
+	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
+
+/obj/item/ammo_casing/energy/kalix/pistol
+	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
+	e_cost = 1250 //10 shots per cell
+	delay = 0
 
 /obj/item/gun/energy/kalix/pgf/heavy
 	name = "Etherbor HBG-7"
@@ -92,25 +115,32 @@
 
 /obj/item/gun/energy/kalix/pgf/heavy/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.19 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
-/obj/projectile/beam/hitscan/pgf/assault
+/obj/item/ammo_casing/energy/pgf/assault
+	select_name  = "AR"
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/assault
+	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
+	e_cost = 1000 //20 shots per cell
+	delay = 1
+
+/obj/projectile/beam/hitscan/kalix/pgf/assault
 	tracer_type = /obj/effect/projectile/tracer/pgf/rifle
 	muzzle_type = /obj/effect/projectile/muzzle/pgf/rifle
 	impact_type = /obj/effect/projectile/impact/pgf/rifle
 	damage = 25 //bar
 	armour_penetration = 20
 	range = 12
+	damage_constant = 0.9
 
-/obj/item/ammo_casing/energy/pgf/assault
-	select_name  = "AR"
-	projectile_type = /obj/projectile/beam/hitscan/pgf/assault
-	fire_sound = 'sound/weapons/gun/energy/kalixrifle.ogg'
-	e_cost = 1000 //20 shots per cell
-	delay = 1
+/obj/item/ammo_casing/energy/pgf/sniper
+	select_name  = "DMR"
+	projectile_type = /obj/projectile/beam/hitscan/kalix/pgf/sniper
+	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
+	e_cost = 2000 //20 shots per cell
+	delay = 6
 
-
-/obj/projectile/beam/hitscan/pgf/sniper
+/obj/projectile/beam/hitscan/kalix/pgf/sniper
 	tracer_type = /obj/effect/projectile/tracer/laser/emitter
 	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
 	impact_type = /obj/effect/projectile/impact/laser/emitter
@@ -118,13 +148,7 @@
 	damage = 35
 	armour_penetration = 40
 	range = 20
-
-/obj/item/ammo_casing/energy/pgf/sniper
-	select_name  = "DMR"
-	projectile_type = /obj/projectile/beam/hitscan/pgf/sniper
-	fire_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
-	e_cost = 2000 //20 shots per cell
-	delay = 5
+	damage_constant = 1
 
 /obj/item/gun/energy/kalix/pgf/heavy/sniper
 	name = "Etherbor HBG-7L"
