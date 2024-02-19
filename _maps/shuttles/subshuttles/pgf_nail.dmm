@@ -11,6 +11,12 @@
 	dir = 8;
 	id = "nail_door_blast"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "b" = (
@@ -32,6 +38,10 @@
 	id = "nail_window_shut"
 	},
 /obj/structure/grille,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "h" = (
@@ -101,6 +111,12 @@
 	dir = 8;
 	id = "nail_door_blast"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "r" = (
@@ -158,6 +174,20 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/tech,
+/area/ship/bridge)
+"y" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_window_shut"
+	},
+/obj/structure/grille,
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "z" = (
 /obj/machinery/power/apc/auto_name/directional/north,
@@ -233,6 +263,10 @@
 	dir = 8
 	},
 /obj/structure/grille,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "N" = (
@@ -245,6 +279,12 @@
 /obj/machinery/door/poddoor/preopen{
 	dir = 8;
 	id = "nail_door_blast"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
@@ -297,6 +337,9 @@
 /obj/structure/cable/blue{
 	icon_state = "0-8"
 	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "W" = (
@@ -334,7 +377,7 @@ c
 W
 X
 l
-d
+y
 M
 c
 "}
