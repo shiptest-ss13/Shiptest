@@ -19,6 +19,7 @@
 
 /obj/machinery/medical/Destroy()
 	STOP_PROCESSING(SSmachines, src)
+	clear_status()
 	return ..()
 
 /obj/machinery/medical/wrench_act(mob/living/user, obj/item/I)

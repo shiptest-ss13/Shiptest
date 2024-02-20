@@ -91,6 +91,11 @@
 		soundloop_flatline.stop()
 
 	switch(attached.health)
+		if(attached.stat == DEAD)
+			soundloop_flatline.start()
+			soundloop_ekg.stop()
+			soundloop_ekg_slow.stop()
+			soundloop_ekg_fast.stop()
 		if(-INFINITY to HEALTH_THRESHOLD_DEAD)
 			soundloop_flatline.start()
 			soundloop_ekg_slow.stop()
