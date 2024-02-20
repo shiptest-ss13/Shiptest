@@ -551,7 +551,9 @@ SUBSYSTEM_DEF(shuttle)
 					message_admins("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
 					log_admin("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
 				return TRUE
-			var/reason = input(user, "Provide a reason for blacklisting, which will be displayed on docking attempts", "Bar Them From The Pearly Gates", "Contact local law enforcement for more information.")
+			var/reason = input(user, "Provide a reason for blacklisting, which will be displayed on docking attempts", "Bar Them From The Pearly Gates", "Contact local law enforcement for more information.") as null|text
+			if(!reason)
+				return TRUE
 			if(please_leave in port_ship.blacklisted) //in the event two admins are blacklisting a ship at the same time
 				if(tgui_alert(user, "Ship is already blacklisted, overwrite current reason with your own?", "I call the shots here", list("Yes", "No")) != "Yes")
 					return TRUE
