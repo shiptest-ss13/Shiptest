@@ -1,6 +1,6 @@
 /obj/machinery/medical/thermal
 	name = "Thermal Stabilizer"
-	desc = "Stabilizes free plasma particles in inorganic bodies, causing them to not burn. Uses massive amounts of electricity.This model seems to be very old."
+	desc = "Stabilizes the body temperature of a connected patient."
 	icon_state = "thermal_stabilizer"
 	var/stabilization_rate = 10
 

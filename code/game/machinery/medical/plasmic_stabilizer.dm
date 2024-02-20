@@ -1,5 +1,5 @@
 /obj/machinery/medical/plasmic_stabilizer
-	name = "Automated Inorganic Lifeform Stabilizer"
+	name = "plasmic stabilizer"
 	desc = "Stabilizes free plasma particles in inorganic bodies, causing them to not burn. Uses massive amounts of electricity."
 	icon_state = "plasmic_stabilizer"
 	active_power_usage = 1500

@@ -17,6 +17,10 @@
 	. = ..()
 	START_PROCESSING(SSmachines, src)
 
+/obj/machinery/medical/Destroy()
+	STOP_PROCESSING(SSmachines, src)
+	return ..()
+
 /obj/machinery/medical/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
 	anchored = !anchored
@@ -28,7 +32,7 @@
 		return
 
 	if(attached)
-		usr.visible_message("<span class='warning'>[usr] deattaches [src] from [target].</span>", "<span class='notice'>You deattach [src] from [target].</span>")
+		usr.visible_message("<span class='warning'>[usr] detaches [src] from [target].</span>", "<span class='notice'>You detach [src] from [target].</span>")
 		clear_status()
 		attached = null
 		return
@@ -39,7 +43,7 @@
 
 	if(Adjacent(target) && usr.Adjacent(target))
 		usr.visible_message(span_warning("[usr] attaches [src] to [target]."), span_notice("You attach [src] to [target]."))
-		attached_beam = src.Beam(target, icon_state = "blood", maxdistance = 1)
+		attached_beam = src.Beam(target, icon_state = "1-full", maxdistance = 3)
 		add_fingerprint(usr)
 		attached = target
 		update_overlays()
@@ -56,7 +60,7 @@
 		clear_status()
 		return
 
-	if(!(get_dist(src, attached) <= 1 && isturf(attached.loc))) //you will most likely have multiple machines hooked up to you. Running away from them is a bad idea.
+	if(!(get_dist(src, attached) <= 2 && isturf(attached.loc))) //you will most likely have multiple machines hooked up to you. Running away from them is a bad idea.
 		to_chat(attached, "<span class='userdanger'>The [name] lines are ripped out of you!</span>")
 		attached.apply_damage(20, BRUTE, BODY_ZONE_CHEST)
 		attached.apply_damage(15, BRUTE, pick(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM))
@@ -76,5 +80,6 @@
  */
 /obj/machinery/medical/proc/clear_status()
 	update_overlays()
+	qdel(attached_beam)
 	use_power = IDLE_POWER_USE
 	return
