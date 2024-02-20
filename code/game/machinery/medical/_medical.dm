@@ -10,6 +10,8 @@
 	active_power_usage = 750
 	///Whos is attached to the life support.
 	var/mob/living/carbon/attached
+	///Active beam currently connected to attached target
+	var/datum/beam/attached_beam = null
 
 /obj/machinery/medical/Initialize()
 	. = ..()
@@ -22,7 +24,13 @@
 
 /obj/machinery/medical/MouseDrop(mob/living/target)
 	. = ..()
-	if(!ishuman(usr) || !usr.canUseTopic(src, BE_CLOSE) || !isliving(target) || attached)
+	if(!ishuman(usr) || !usr.canUseTopic(src, BE_CLOSE) || !isliving(target))
+		return
+
+	if(attached)
+		usr.visible_message("<span class='warning'>[usr] deattaches [src] from [target].</span>", "<span class='notice'>You deattach [src] from [target].</span>")
+		clear_status()
+		attached = null
 		return
 
 	if(!target.has_dna())
@@ -31,22 +39,10 @@
 
 	if(Adjacent(target) && usr.Adjacent(target))
 		usr.visible_message(span_warning("[usr] attaches [src] to [target]."), span_notice("You attach [src] to [target]."))
+		attached_beam = src.Beam(target, icon_state = "blood", maxdistance = 1)
 		add_fingerprint(usr)
 		attached = target
 		update_overlays()
-
-/obj/machinery/medical/attack_hand(mob/user)
-	. = ..()
-	if(.)
-		return
-	if(!ishuman(user))
-		return
-	if(attached)
-		visible_message(span_notice("[attached] is detached from [src]."))
-		attached = null
-		clear_status()
-		update_appearance()
-		return
 
 /obj/machinery/medical/process()
 	update_overlays()
@@ -73,11 +69,11 @@
 	return
 
 /**
-  * Properly gets rid of status effects from the attached
-  *
-  * Internal function, you shouldn't be calling this from anywhere else. Gets rid of all the status effects, traits and other shit you might have
-  * put on the attached victim. Automatically updates overlays in case you have some, and changes power to idle power use.
-  */
+ * Properly gets rid of status effects from the attached
+ *
+ * Internal function, you shouldn't be calling this from anywhere else. Gets rid of all the status effects, traits and other shit you might have
+ * put on the attached victim. Automatically updates overlays in case you have some, and changes power to idle power use.
+ */
 /obj/machinery/medical/proc/clear_status()
 	update_overlays()
 	use_power = IDLE_POWER_USE

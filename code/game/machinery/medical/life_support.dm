@@ -35,7 +35,6 @@
 			monitor_overlay= mutable_appearance(icon,"alive")
 	. += monitor_overlay
 
-
 /obj/machinery/medical/life_support/wrench_act(mob/living/user, obj/item/I)
 	. = ..()
 	active = anchored
