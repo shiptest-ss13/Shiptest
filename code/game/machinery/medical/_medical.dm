@@ -22,28 +22,35 @@
 
 /obj/machinery/medical/MouseDrop(mob/living/target)
 	. = ..()
-	if(!ishuman(usr) || !usr.canUseTopic(src, BE_CLOSE) || !isliving(target))
-		return
-
-	if(attached)
-		usr.visible_message("<span class='warning'>[usr] deattaches [src] from [target].</span>", "<span class='notice'>You deattach [src] from [target].</span>")
-		clear_status()
-		attached = null
+	if(!ishuman(usr) || !usr.canUseTopic(src, BE_CLOSE) || !isliving(target) || attached)
 		return
 
 	if(!target.has_dna())
-		to_chat(usr, "<span class='danger'>The [name] beeps: \"Warning, incompatible creature!\"</span>")
+		to_chat(usr, span_warning("The [name] beeps: 'Warning, incompatible creature!'"))
 		return
 
 	if(Adjacent(target) && usr.Adjacent(target))
-		usr.visible_message("<span class='warning'>[usr] attaches [src] to [target].</span>", "<span class='notice'>You attach [src] to [target].</span>")
+		usr.visible_message(span_warning("[usr] attaches [src] to [target]."), span_notice("You attach [src] to [target]."))
 		add_fingerprint(usr)
 		attached = target
 		update_overlays()
 
+/obj/machinery/medical/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(!ishuman(user))
+		return
+	if(attached)
+		visible_message(span_notice("[attached] is detached from [src]."))
+		attached = null
+		clear_status()
+		update_appearance()
+		return
+
 /obj/machinery/medical/process()
 	update_overlays()
-	update_icon()
+	update_appearance()
 
 	if(!attached)
 		use_power = IDLE_POWER_USE

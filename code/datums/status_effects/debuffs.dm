@@ -179,9 +179,14 @@
 	id = "life_support"
 	duration = -1
 	tick_interval = 10
-	alert_type = /obj/screen/alert/status_effect/life_support
+	alert_type = /atom/movable/screen/alert/status_effect/life_support
 	///last time the affected person was dead
 	var/last_dead_time
+
+/atom/movable/screen/alert/status_effect/life_support
+	name = "Life Support"
+	desc = "You are in a state of life suspension, and you can't die. Pray that someone doesn't pull the cord."
+	icon_state = "stasis"
 
 /**
  * Updates the time of death
@@ -202,22 +207,22 @@
 	. = ..()
 	if(.)
 		update_time_of_death()
-		ADD_TRAIT(owner,TRAIT_NOCRITDAMAGE,"life_support")
-		ADD_TRAIT(owner,TRAIT_NODEATH,"life_support")
+
+/datum/status_effect/grouped/life_support/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_NOCRITDAMAGE, TRAIT_STATUS_EFFECT(id))
+	ADD_TRAIT(owner, TRAIT_NODEATH, TRAIT_STATUS_EFFECT(id))
 
 /datum/status_effect/grouped/life_support/tick()
 	update_time_of_death()
 
 /datum/status_effect/grouped/life_support/on_remove()
-	REMOVE_TRAIT(owner,TRAIT_NOCRITDAMAGE,"life_support")
-	REMOVE_TRAIT(owner,TRAIT_NODEATH,"life_support")
+	REMOVE_TRAIT(owner,TRAIT_NOCRITDAMAGE, TRAIT_STATUS_EFFECT(id))
+	REMOVE_TRAIT(owner,TRAIT_NODEATH, TRAIT_STATUS_EFFECT(id))
 	update_time_of_death()
 	return ..()
-
-/obj/screen/alert/status_effect/life_support
-	name = "Life Support"
-	desc = "You are in a state of life suspension, and you can't die. Pray that someone doesn't pull the cord."
-	icon_state = "stasis"
 
 //STASIS
 /datum/status_effect/grouped/stasis
