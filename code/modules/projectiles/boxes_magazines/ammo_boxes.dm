@@ -338,10 +338,13 @@
 
 /obj/item/ammo_box/a762_40
 	name = "ammo box (7.62x40mm CLIP)"
-	icon_state = "a762_40box"
+	icon_state = "a762_40box_big"
 	ammo_type = /obj/item/ammo_casing/a762_40
-	max_ammo = 80
+	max_ammo = 120
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/a762_40/inteq
+	icon_state = "a762_40box_big_inteq"
 
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"
