@@ -8,6 +8,7 @@
 #define KNPC_IS_AREA_SPECIFIC 1<<3		//Does the KNPC scream out the area when calling for backup?
 #define KNPC_IS_DOOR_BASHER 1<<4		//Does the KNPC kick the door off its hinges if it doesn't have a valid ID?
 #define KNPC_IS_DOOR_HACKER 1<<5		//Does the KNPC hack the door open if it doesn't have a valid ID?
+#define KNPC_STEAL_ID 1<<5				//Do we steal IDs? used to prevent a bug
 
 //Knpc pathfinding return values
 #define KNPC_PATHFIND_SUCCESS 0 //Path successfully generated
@@ -32,6 +33,7 @@ DEFINE_BITFIELD(knpc_traits, list(
 	"KNPC_IS_AREA_SPECIFIC" = KNPC_IS_AREA_SPECIFIC,
 	"KNPC_IS_DOOR_BASHER" = KNPC_IS_DOOR_BASHER,
 	"KNPC_IS_DOOR_HACKER" = KNPC_IS_DOOR_HACKER,
+	"KNPC_STEAL_ID" = KNPC_STEAL_ID,
 ))
 
 //AI score defines
@@ -543,6 +545,8 @@ GLOBAL_LIST_EMPTY(knpcs)
 	var/list/call_lines = list("Enemy spotted!")
 	var/list/response_lines = list("On my way!")
 
+	var/shut_up = TRUE
+
 /mob/living/carbon/human/ai_boarder/Initialize(mapload)
 	. = ..()
 	randomize_human(src)
@@ -551,11 +555,17 @@ GLOBAL_LIST_EMPTY(knpcs)
 	O.equip(src)
 	AddComponent(/datum/component/knpc)
 
+/mob/living/carbon/human/ai_boarder/frontier
+	faction = list("frontier")
+	outfit = list (/datum/outfit/frontier)
+
 /mob/living/carbon/human/ai_boarder/hermit
 	faction = list("hermit")
 	taunts = list("...")
 	call_lines = list("...!!!")
 	response_lines = list("!")
+
+	knpc_traits = KNPC_IS_DODGER | KNPC_IS_MERCIFUL
 
 	outfit = list (/datum/outfit/whitesands)
 
@@ -571,9 +581,13 @@ GLOBAL_LIST_EMPTY(knpcs)
 	survivor_type = "gunslinger"
 
 /mob/living/carbon/human/ai_boarder/hermit/Initialize(mapload)
-	. = ..()
 	if(!survivor_type)
 		survivor_type = pick("survivor","hunter","gunslinger")
+	..()
+	for(var/obj/item/gun/searching as obj in contents)
+		if(istype(searching, /obj/item/gun))
+			searching.safety = FALSE
+
 	var/mob_species = pickweight(list(
 			/datum/species/human = 50,
 			/datum/species/lizard = 25,
@@ -584,6 +598,13 @@ GLOBAL_LIST_EMPTY(knpcs)
 			)
 		)
 	INVOKE_ASYNC(src, PROC_REF(set_species), mob_species)
+
+	var/obj/item/clothing/suit/hooded/survivor_hood = wear_suit
+	survivor_hood.ToggleHood()
+
+/datum/outfit/whitesands/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	var/mob/living/carbon/human/ai_boarder/hermit/hermit = H
+	var/survivor_type = hermit.survivor_type
 	var/picked
 	//to-do: learn how to make mobsprites for other survivors
 		//w_uniforms are random to show varied backgrounds, but similar goal
@@ -619,7 +640,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	else
 		picked = /obj/item/clothing/under/color/random
 
-	w_uniform = new picked(src)
+	uniform = picked
 
 	//storage is semi-randomized, giving some variety
 	if(survivor_type == "survivor")
@@ -657,10 +678,10 @@ GLOBAL_LIST_EMPTY(knpcs)
 	else
 		picked = /obj/item/storage/belt/fannypack
 
-	belt = new picked(src)
+	belt = picked
 
 	//everyone wears the same suit
-	wear_suit = new /obj/item/clothing/suit/hooded/survivor(src)
+	suit = /obj/item/clothing/suit/hooded/survivor
 
 	if (survivor_type == "gunslinger")
 		if(prob(30))
@@ -670,10 +691,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	else
 		picked = /obj/item/clothing/shoes/workboots/mining
 
-	shoes = new picked(src)
-
-
-
+	shoes = picked
 
 	//gloves are a tossup
 	picked = pickweight(list(
@@ -683,7 +701,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			)
 		)
 
-	gloves = new picked(src)
+	gloves = picked
 
 	//bags are semi-random.
 	picked = pickweight(list(
@@ -695,11 +713,11 @@ GLOBAL_LIST_EMPTY(knpcs)
 			)
 		)
 
-	back = new picked(src)
+	back = picked
 
 	//as are bag contents
 
-	var/list/backpack_contents = list()
+	backpack_contents = list()
 	if(prob(70))
 		backpack_contents += pickweight(list( //these could stand to be expanded, right now they're just mildly modified miner ones, and I don't know how to plus that up.
 			/obj/item/soap = 10,
@@ -754,40 +772,29 @@ GLOBAL_LIST_EMPTY(knpcs)
 		)
 	if(prob(30)) //some pens maybe?
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
-
-	var/obj/item/storage/backpack/current_bag = back
-	if(current_bag)
-		for(var/obj/thing as anything in backpack_contents)
-			new thing(current_bag)
+	if(prob(5))
+		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
 
 	//pockets
 	if(survivor_type == "survivor") //could also use fleshing out
 		if(prob(30))
-			l_store = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
+			l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 		else
-			l_store = /obj/item/tank/internals/emergency_oxygen/engi
-		if (prob(20))
-			r_store = /obj/item/spacecash/bundle/mediumrand
-		else
-			r_store = null
+			l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 	if(survivor_type == "hunter")
-		l_store = /obj/item/tank/internals/emergency_oxygen/engi
+		l_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 		if (prob(20))
-			r_store = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
-		else if (prob(60))
-			r_store = /obj/item/ammo_box/aac_300blk_stripper
-		else
-			r_store = null
+			l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 
 	if(survivor_type == "gunslinger")
 		if(prob(50))
-			l_store = /obj/item/ammo_box/magazine/aks74u
-		r_store = /obj/item/tank/internals/emergency_oxygen/engi
+			l_pocket = /obj/item/ammo_box/magazine/aks74u
+		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 	else
-		r_store = /obj/item/tank/internals/emergency_oxygen/engi
-		l_store = /obj/item/radio
+		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
+		l_pocket = /obj/item/radio
 
 	//masks
 	picked = pickweight(list(
@@ -798,7 +805,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 		)
 	)
 
-	picked = new picked(src)
+	mask = picked
 
 	//the eyes are the window into the soul. I don't think these things have souls but whatever.
 	if(prob(70))
@@ -809,9 +816,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 			/obj/item/clothing/glasses = 20
 			)
 		)
-		glasses = new picked(src)
+		glasses = picked
 	else
-		picked = null
+		glasses = null
 
 	//and of course, ears.
 	if(prob(1)) //oh my god they can't hear the sandstorm coming they've got airpods in
@@ -822,22 +829,24 @@ GLOBAL_LIST_EMPTY(knpcs)
 			/obj/item/radio/headset/alt = 50
 			)
 		)
-	ears = new picked(src)
+	ears = picked
 
 	//exosuit bits
-	s_store = null
-	var/spare_ammo_count = rand(1,4)
+	suit_store = null
+	var/spare_ammo_count = rand(1,2)
 
 	if (survivor_type == "hunter")
-		INVOKE_ASYNC(src, PROC_REF(put_in_hands), new /obj/item/gun/ballistic/rifle/boltaction/polymer(src))
-		spare_ammo_count = rand(2,7)
+		r_hand = /obj/item/gun/ballistic/rifle/polymer
+		spare_ammo_count = rand(2,5)
 		for(var/i in 1 to spare_ammo_count)
-			new /obj/item/ammo_box/magazine/internal/boltaction/polymer(back)
+			backpack_contents += /obj/item/ammo_box/aac_300blk_stripper
 
 	if(survivor_type == "gunslinger")
-		INVOKE_ASYNC(src, PROC_REF(put_in_hands), new /obj/item/gun/ballistic/automatic/smg/aks74u(src))
+		r_hand = /obj/item/gun/ballistic/automatic/smg/aks74u
 		for(var/i in 1 to spare_ammo_count)
-			new /obj/item/ammo_box/magazine/aks74u(back)
+			backpack_contents += /obj/item/ammo_box/magazine/aks74u
+
+	internals_slot = ITEM_SLOT_RPOCKET
 
 /datum/component/knpc/Initialize()
 	if(!iscarbon(parent))
@@ -1245,24 +1254,35 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 	if(istype(gun, /obj/item/gun/ballistic))
 		var/obj/item/gun/ballistic/B = gun
 		if(istype(B.mag_type, /obj/item/ammo_box/magazine/internal))
-			//Not dealing with this. They'll just ditch the revolver when they're done with it.
-			B.forceMove(get_turf(H))
-			return FALSE
+			if(!istype(B, /obj/item/gun/ballistic/rifle/polymer) || !istype(B, /obj/item/gun/ballistic/rifle/illestren))
+				//Not dealing with this. They'll just ditch the revolver when they're done with it.
+				B.forceMove(get_turf(H))
+				return FALSE
 		///message_admins("Issa gun")
 		var/obj/item/storage/S = H.back
 		//Okay first off, is the gun already on our person?
 		var/list/expanded_contents = H.contents
 		if(S)
 			expanded_contents = S.contents + H.contents
-		var/obj/item/ammo_box/magazine/target_mag = locate(B.mag_type) in expanded_contents
+		var/obj/item/ammo_box/target_mag = locate(B.mag_type) in expanded_contents
+		if(istype(B, /obj/item/gun/ballistic/rifle/polymer))
+			target_mag = locate(/obj/item/ammo_box/aac_300blk_stripper) in expanded_contents
+		if(istype(B, /obj/item/gun/ballistic/rifle))
+			if(!B.bolt_locked)
+				B.rack(H)
+				return TRUE
 		//message_admins("Found [target_mag]")
 		if(target_mag)
-			//Dump that old mag
-			H.put_in_inactive_hand(target_mag)
-			B?.magazine?.forceMove(get_turf(H))
-			B.attackby(target_mag, H)
-			B.rack(H) //Rack the bolt.
-			if(istype(B, /obj/item/gun/ballistic/rifle))
+			if(istype(B, /obj/item/gun/ballistic/rifle/polymer))
+				H.put_in_inactive_hand(target_mag)
+				B.attackby(target_mag, H)
+				target_mag.forceMove(get_turf(H))
+				B.rack(H) //Rack the bolt.
+			else
+				//Dump that old mag
+				H.put_in_inactive_hand(target_mag)
+				B?.magazine?.forceMove(get_turf(H))
+				B.attackby(target_mag, H)
 				B.rack(H) //Rack the bolt.
 //				addtimer(CALLBACK(B, PROC_REF(rack), H), 0.5 SECONDS, TIMER_UNIQUE)
 		else
@@ -1270,6 +1290,15 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 				gun.forceMove(get_turf(H))
 				return FALSE
 			gun.forceMove(S)
+
+/datum/ai_goal/human/engage_targets/proc/check_ammo(obj/item/gun/ballistic/B = null)
+	if(!B)
+		return FALSE
+	if(!B.magazine)
+		return FALSE
+	if(!B.magazine.stored_ammo.len)
+		return FALSE
+	return TRUE
 
 
 /datum/ai_goal/human/engage_targets/action(datum/component/knpc/HA)
@@ -1280,6 +1309,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 	var/list/enemies = get_aggressors(HA)
 	var/obj/item/A = H.get_active_held_item()
 	var/closest_dist = 1000
+	var/just_racked = FALSE
 	var/mob/living/target = null
 	for(var/mob/living/L as() in enemies)
 		var/dist = get_dist(L, H)
@@ -1298,10 +1328,18 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 	if(istype(A, /obj/item/gun/ballistic))
 		B = A
 	H.a_intent = (prob(65)) ? INTENT_HARM : INTENT_DISARM
+	G.safety = FALSE
 	if(G && dist > 0)
-		if(!G.can_shoot())
-			//We need to reload first....
-			reload(HA, G)
+		if(!G.can_shoot() || !G?.chambered.BB)
+			if(istype(B, /obj/item/gun/ballistic/rifle) && check_ammo(B))
+				B.rack(H)
+				just_racked = TRUE
+			else
+				G.safety = FALSE
+				if(!G.can_shoot() || !G?.chambered.BB) //still cant shoot?
+					//We need to reload first....
+					reload(HA, G)
+					just_racked = TRUE
 		//Fire! If they're in a ship, we don't want to scrap them directly.
 		if(!CheckFriendlyFire(H, target))
 			//Okay, we have a line of sight, shoot!
@@ -1315,14 +1353,17 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 					E.select_fire(H)
 
 			if(isobj(target.loc))
-				G.afterattack(target.loc, H)
+				if(!just_racked)
+					G.afterattack(target.loc, H)
 			else
-				G.afterattack(target, H)
-			if(istype(B, /obj/item/gun/ballistic/rifle))
-				B.rack(H) //Rack the bolt.
-				B.rack(H)
+				if(!just_racked)
+					G.afterattack(target, H)
+
+//			if(istype(B, /obj/item/gun/ballistic/rifle))
+//				B.rack(H) //Rack the bolt.
 //				addtimer(CALLBACK(G, PROC_REF(rack), H), 0.5 SECONDS, TIMER_UNIQUE)
 	//Call your friends to help :))
+	just_racked = FALSE
 	if(world.time >= HA.next_backup_call)
 		call_backup(HA)
 
@@ -1337,7 +1378,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 				//I know kung-fu.
 
 				var/obj/item/card/id/their_id = target.get_idcard()
-				if(their_id && !HA.stealing_id)
+				if(their_id && !HA.stealing_id && H.knpc_traits & KNPC_STEAL_ID)
 					H.visible_message("<span class='warning'>[H] starts to take [their_id] from [target]!</span>")
 					HA.stealing_id = TRUE
 					addtimer(CALLBACK(HA, TYPE_PROC_REF(/datum/component/knpc, steal_id), their_id), 5 SECONDS)
@@ -1392,7 +1433,8 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		support_text += text
 	else
 		support_text += pick(H.call_lines)
-	H.say(support_text)
+	if(!H.shut_up)
+		H.say(support_text)
 
 	// Call for other intelligent AIs
 	for(var/datum/component/knpc/HH as() in GLOB.knpcs - HA)
@@ -1401,6 +1443,8 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		if(other.z != H.z || !other.can_hear() || other.incapacitated())
 			continue //Yeah no. Radio is good, but not THAT good....yet
 		//They both have radios and can hear each other!
+		if(H.shut_up)
+			continue
 		if((radio?.on && other_radio?.on) || get_dist(other, H) <= HA.view_range || H.faction_check_mob(other, TRUE))
 			var/thetext = (other_radio) ? "; " : ""
 			thetext += pick(H.response_lines)
@@ -1438,6 +1482,42 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 	var/previous_id = null //id of the node that precedes this one
 	var/obj/effect/landmark/patrol_node/previous //-- This isn't actually used anywhere.. - Delta
 	var/list/next_nodes	= list() //List of possible followup nodes set by next_id. If multiple entities exist in the list, one will be chosen at random on every occasion.
+	invisibility = INVISIBILITY_OBSERVER
+
+/obj/effect/landmark/patrol_node/whitesands
+	id = "whitesands"
+	next_id = "whitesands"
+	icon_state = "x"
+
+/obj/effect/landmark/patrol_node/breach
+	name = "AI hold here node"
+	id = "hold"
+	next_id = "hold"
+	icon_state = "x4"
+
+/obj/effect/landmark/patrol_node/breach
+	name = "AI breach here node"
+	id = "breach1"
+	next_id = "breach2"
+	icon_state = "x"
+
+/obj/effect/landmark/patrol_node/breach/two
+	name = "AI after breach, go here node"
+	id = "breach2"
+	next_id = "breach3"
+	icon_state = "x2"
+
+/obj/effect/landmark/patrol_node/breach/three
+	name = "AI midway, go here node"
+	id = "breach3"
+	next_id = "breach4"
+	icon_state = "x3"
+
+/obj/effect/landmark/patrol_node/breach/four
+	name = "AI after sweeping, hold here node"
+	id = "breach4"
+	next_id = "breach4"
+	icon_state = "x4"
 
 /obj/effect/landmark/patrol_node/Initialize(mapload)
 	. = ..()
