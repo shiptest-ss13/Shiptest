@@ -8,7 +8,6 @@
 	density = FALSE
 	can_buckle = TRUE
 	buckle_lying = 90
-	circuit = /obj/item/circuitboard/machine/stasis
 	idle_power_usage = 40
 	active_power_usage = 340
 	var/stasis_enabled = TRUE
@@ -17,19 +16,6 @@
 	var/mattress_state = "stasis_on"
 	var/obj/effect/overlay/vis/mattress_on
 	var/obj/machinery/computer/operating/op_computer
-
-/obj/machinery/stasis/Initialize()
-	. = ..()
-	for(var/direction in GLOB.alldirs)
-		op_computer = locate(/obj/machinery/computer/operating) in get_step(src, direction)
-		if(op_computer)
-			op_computer.sbed = src
-			break
-
-/obj/machinery/stasis/Destroy()
-	. = ..()
-	if(op_computer && op_computer.sbed == src)
-		op_computer.sbed = null
 
 /obj/machinery/stasis/examine(mob/user)
 	. = ..()
@@ -141,7 +127,7 @@
 	if(stasis_running())
 		if(!IS_IN_STASIS(L_occupant))
 			chill_out(L_occupant)
-	else if(IS_IN_STASIS(L_occupant))
+	else if(IS_IN_STASIS(L_occupant) || L_occupant.health < HEALTH_THRESHOLD_FULLCRIT)
 		thaw_them(L_occupant)
 
 /obj/machinery/stasis/screwdriver_act(mob/living/user, obj/item/I)
