@@ -619,7 +619,7 @@
 	desc = "Sealed for a guaranteed fresh taste in every bottle."
 	icon_state = "sandbottle"
 	volume = 50
-	list_reagents = list(/datum/reagent/consumable/molten/sand = 50)
+	list_reagents = list(/datum/reagent/medicine/molten_bubbles/sand = 50)
 	reagent_flags = null //Cap's on
 
 /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla/attack_self(mob/user)
