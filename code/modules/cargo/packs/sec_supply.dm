@@ -66,7 +66,7 @@
 /datum/supply_pack/sec_supply/combatknives
 	name = "Combat Knives Crate"
 	desc = "Contains three sharpened combat knives. Each knife guaranteed to fit snugly inside any galactic-standard boot."
-	cost = 1000
+	cost = 500
 	contains = list(/obj/item/kitchen/knife/combat/survival,
 					/obj/item/kitchen/knife/combat/survival,
 					/obj/item/kitchen/knife/combat/survival)
