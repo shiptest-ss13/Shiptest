@@ -10,19 +10,19 @@
 			</head>
 			<body>
 			<head><table bgcolor="006600" width="100%" height="15%" frame ="below">
-    		<th>
-        	<div align="left"><font size="1" color="white">
-        	<h1>ETHERBOR</h1> Lahoma Shipyards
-        	</font></div>
-    		</th>
-    		<th>
-        	<div align="right"><font color="white">
-        	Pan-Gezenan Federation
-        	<br>
-        	Naval Forces<br>
-        	Marine Core <br>
-        	<br>
-    		</th>
+			<th>
+			<div align="left"><font size="1" color="white">
+			<h1>ETHERBOR</h1> Lahoma Shipyards
+			</font></div>
+			</th>
+			<th>
+			<div align="right"><font color="white">
+			Pan-Gezenan Federation
+			<br>
+			Naval Forces<br>
+			Marine Core <br>
+			<br>
+			</th>
 			</table></head>
 			<hr color="b22c20" size="3" >
 			<center><h3>Universal Colossal Battleship Spiral Weapon Mounts and You!</h3></center>
