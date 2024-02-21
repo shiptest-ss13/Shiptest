@@ -616,18 +616,31 @@
 	else
 		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
 
-/obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(mob/user)
-	//sawn off
-	weapon_weight = WEAPON_MEDIUM
 
-	wield_slowdown = 0.25
-	wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
+/obj/item/gun/ballistic/shotgun/flamingarrow/rack(mob/user = null)
+	. = ..()
+	if(!wielded)
+		SpinAnimation(7,1)
 
-	spread = 4
-	spread_unwielded = 12
 
-	recoil = 1
-	recoil_unwielded = 2
+/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 7
+
+		item_state = "flamingarrow_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .38."
@@ -639,6 +652,7 @@
 	. = ..()
 	if(.)
 		item_state = "flamingarrow_factory_sawn"
+		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
@@ -651,6 +665,7 @@
 	. = ..()
 	if(.)
 		item_state = "flamingbolt_sawn"
+		mob_overlay_state = item_state
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore
