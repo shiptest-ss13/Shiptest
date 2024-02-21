@@ -89,7 +89,7 @@
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotguns Crate"
 	desc = "For when you need to deal with 7 hooligans. Contains 2 pump shotguns, each with a 8-round capacity."
-	cost = 4500
+	cost = 4000
 	contains = list(/obj/item/gun/ballistic/shotgun/hellfire,
 					/obj/item/gun/ballistic/shotgun/hellfire)
 	crate_name = "shotguns crate"
@@ -97,7 +97,7 @@
 /datum/supply_pack/gun/brimstone_shotgun
 	name = "Brimstone Shotguns Crate"
 	desc = "For when you need to deal with 5 hooligans, and QUICKLY. Contains 2 slamfire shotguns, each with a 5-round capacity. Warranty voided if sawed off."
-	cost = 4500
+	cost = 4000
 	contains = list(/obj/item/gun/ballistic/shotgun/brimstone,
 					/obj/item/gun/ballistic/shotgun/brimstone)
 	crate_name = "shotguns crate"
@@ -118,7 +118,7 @@
 /datum/supply_pack/gun/cobra20
 	name = "Cobra-20 SMG Crate"
 	desc = "Contains two .45 submachine guns, manufactured by Scaraborough Arms and chambered in .45"
-	cost = 3000
+	cost = 6000
 	contains = list(/obj/item/gun/ballistic/automatic/smg/c20r/cobra,
 					/obj/item/gun/ballistic/automatic/smg/c20r/cobra)
 	crate_name = "SMG crate"
@@ -135,7 +135,7 @@
 /datum/supply_pack/gun/wt550
 	name = "WT-550 Auto Rifle Crate"
 	desc = "Contains two high-powered, semiautomatic rifles chambered in 4.6x30mm."
-	cost = 6000
+	cost = 8000
 	contains = list(/obj/item/gun/ballistic/automatic/smg/wt550,
 					/obj/item/gun/ballistic/automatic/smg/wt550)
 	crate_name = "auto rifle crate"
@@ -143,7 +143,7 @@
 /datum/supply_pack/gun/p16
 	name = "P16 Assault Rifle Crate"
 	desc = "Contains two high-powered, automatic rifles chambered in 5.56mm."
-	cost = 8000
+	cost = 10000
 	contains = list(/obj/item/gun/ballistic/automatic/assault/p16,
 					/obj/item/gun/ballistic/automatic/assault/p16)
 	crate_name = "auto rifle crate"
