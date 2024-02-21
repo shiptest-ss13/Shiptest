@@ -1401,10 +1401,6 @@
 	dir = 1
 	},
 /obj/machinery/light/directional/south,
-/obj/machinery/computer/bsa_control{
-	name = "HORUS - Controller Console";
-	desc = "A decommissioned controller console for a HORUS type Rail Cannon."
-	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "md" = (
@@ -2238,10 +2234,6 @@
 	dir = 4;
 	pixel_x = -19;
 	pixel_y = 9
-	},
-/obj/machinery/computer/bsa_control{
-	name = "HORUS - Controller Console";
-	desc = "A decommissioned controller console for a HORUS type Rail Cannon."
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -5189,13 +5181,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"PO" = (
-/obj/machinery/computer/bsa_control{
-	name = "HORUS - Controller Console";
-	desc = "A decommissioned controller console for a HORUS type Rail Cannon."
-	},
-/turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ship/bridge)
 "PP" = (
 /obj/item/tank/internals/emergency_oxygen{
 	pixel_x = 6
@@ -7808,7 +7793,7 @@ HH
 gG
 QK
 ty
-PO
+MF
 Sp
 KS
 Sx
@@ -7836,7 +7821,7 @@ jH
 Pb
 MS
 lZ
-PO
+MF
 PK
 Su
 Cz
