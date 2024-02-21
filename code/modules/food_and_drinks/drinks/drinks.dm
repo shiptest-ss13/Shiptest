@@ -696,7 +696,7 @@
 	list_reagents = list(/datum/reagent/consumable/pacfuel = 30)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/shoal_punch
-	name = "Quill Punch"
+	name = "Shoal Punch"
 	desc = "Carbonated fruit soda, made from a mix of dozens of fruits collected and grown on The Shoal. There's an extensive list of potential allergens on the back."
 	icon_state = "shoal_punch"
 	list_reagents = list(/datum/reagent/consumable/shoal_punch = 30)
