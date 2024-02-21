@@ -173,15 +173,11 @@
 
 /datum/chemical_reaction/hiveminderaser
 	results = list(/datum/reagent/consumable/ethanol/hiveminderaser = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol/black_russian = 2, /datum/reagent/consumable/ethanol/thirteenloko = 1, /datum/reagent/consumable/grenadine = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/black_russian = 2, /datum/reagent/consumable/ethanol/vimukti = 1, /datum/reagent/consumable/grenadine = 1)
 
 /datum/chemical_reaction/manhattan
 	results = list(/datum/reagent/consumable/ethanol/manhattan = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 2, /datum/reagent/consumable/ethanol/vermouth = 1)
-
-/datum/chemical_reaction/manhattan_proj
-	results = list(/datum/reagent/consumable/ethanol/manhattan_proj = 10)
-	required_reagents = list(/datum/reagent/consumable/ethanol/manhattan = 10, /datum/reagent/uranium = 1)
 
 /datum/chemical_reaction/vodka_tonic
 	results = list(/datum/reagent/consumable/ethanol/vodkatonic = 3)
@@ -340,8 +336,8 @@
 	results = list(/datum/reagent/consumable/ethanol/driestmartini = 2)
 	required_reagents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/ethanol/gin = 1)
 
-/datum/chemical_reaction/thirteenloko
-	results = list(/datum/reagent/consumable/ethanol/thirteenloko = 3)
+/datum/chemical_reaction/vimukti
+	results = list(/datum/reagent/consumable/ethanol/vimukti = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 1, /datum/reagent/consumable/coffee = 1, /datum/reagent/consumable/limejuice = 1)
 
 /datum/chemical_reaction/chocolatepudding
@@ -525,7 +521,6 @@
 	results = list(/datum/reagent/consumable/ethanol/fernet_cola = 2)
 	required_reagents = list(/datum/reagent/consumable/ethanol/fernet = 1, /datum/reagent/consumable/space_cola = 1)
 
-
 /datum/chemical_reaction/fanciulli
 	results = list(/datum/reagent/consumable/ethanol/fanciulli = 2)
 	required_reagents = list(/datum/reagent/consumable/ethanol/manhattan = 1, /datum/reagent/consumable/ethanol/fernet = 1)
@@ -538,13 +533,11 @@
 	results = list(/datum/reagent/consumable/ethanol/blank_paper = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/silencer = 1, /datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/nuka_cola = 1)
 
-
 /datum/chemical_reaction/wizz_fizz
 	results = list(/datum/reagent/consumable/ethanol/wizz_fizz = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 1, /datum/reagent/consumable/sodawater = 1, /datum/reagent/consumable/ethanol/champagne = 1)
 	mix_message = "The beverage starts to froth with an almost mystical zeal!"
 	mix_sound = 'sound/effects/bubbles2.ogg'
-
 
 /datum/chemical_reaction/bug_spray
 	results = list(/datum/reagent/consumable/ethanol/bug_spray = 5)
@@ -567,7 +560,7 @@
 
 /datum/chemical_reaction/rubberneck
 	results = list(/datum/reagent/consumable/ethanol/rubberneck = 10)
-	required_reagents = list(/datum/reagent/consumable/ethanol = 4, /datum/reagent/consumable/grey_bull = 5, /datum/reagent/consumable/astrotame = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol = 4, /datum/reagent/consumable/crosstalk = 5, /datum/reagent/consumable/astrotame = 1)
 
 /datum/chemical_reaction/duplex
 	results = list(/datum/reagent/consumable/ethanol/duplex = 4)
@@ -680,3 +673,18 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/weapons/laser.ogg'
+
+/datum/chemical_reaction/molten_bubbles
+	results = list(/datum/reagent/consumable/molten = 30)
+	required_reagents = list(/datum/reagent/clf3 = 10, /datum/reagent/consumable/space_cola = 20, /datum/reagent/medicine/leporazine = 1, /datum/reagent/medicine/lavaland_extract = 1)
+
+/datum/chemical_reaction/plasma_bubbles
+	results = list(/datum/reagent/consumable/molten/plasma_fizz = 3)
+	required_reagents = list(/datum/reagent/consumable/molten = 3, /datum/reagent/toxin/plasma = 2)
+
+/datum/chemical_reaction/sand_bubbles
+	results = list(/datum/reagent/consumable/molten/sand = 3)
+	required_reagents = list(/datum/reagent/consumable/molten = 3, /datum/reagent/silicon = 2)
+
+/datum/chemical_reaction/sand_bubbles/plasma			// Subbing plasma bubbles for reg
+	required_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 3, /datum/reagent/silicon = 2)

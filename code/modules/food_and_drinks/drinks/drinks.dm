@@ -706,7 +706,7 @@
 	name = "Crosstalk"
 	desc = "Crosstalk! Share the energy with everyone! The can is a little thin to be passing it around to actually share the energy drink around, though."
 	icon_state = "energy_drink"
-	list_reagents = list(/datum/reagent/consumable/grey_bull = 20)
+	list_reagents = list(/datum/reagent/consumable/crosstalk = 20)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy
@@ -734,13 +734,13 @@
 	name = "Molten Bubbles"
 	desc = "A spicy soft drink made from a coca-like plant from Kalixcis. Popularly served both cold -and- hot, depending on the weather."
 	icon_state = "molten"
-	list_reagents = list(/datum/reagent/medicine/molten_bubbles = 50)
+	list_reagents = list(/datum/reagent/consumable/molten = 50)
 
 /obj/item/reagent_containers/food/drinks/soda_cans/plasma
 	name = "Plasma Fizz"
 	desc = "A spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	icon_state = "plasma"
-	list_reagents = list(/datum/reagent/medicine/molten_bubbles/plasma = 50)
+	list_reagents = list(/datum/reagent/consumable/molten/plasma_fizz = 50)
 
 /obj/item/reagent_containers/food/drinks/ration
 	name = "empty ration pouch"

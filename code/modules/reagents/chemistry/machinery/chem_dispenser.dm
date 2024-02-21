@@ -477,7 +477,7 @@
 		/datum/reagent/consumable/sodawater,
 		/datum/reagent/consumable/lemon_lime,
 		/datum/reagent/consumable/pacfuel,
-		/datum/reagent/consumable/shamblers,
+		/datum/reagent/consumable/shoal_punch,
 		/datum/reagent/consumable/sugar,
 		/datum/reagent/consumable/pineapplejuice,
 		/datum/reagent/consumable/orangejuice,
@@ -489,7 +489,7 @@
 	)
 	upgrade_reagents = null
 	emagged_reagents = list(
-		/datum/reagent/consumable/ethanol/thirteenloko,
+		/datum/reagent/consumable/ethanol/vimukti,
 		/datum/reagent/consumable/ethanol/whiskey_cola,
 		/datum/reagent/toxin/mindbreaker,
 		/datum/reagent/toxin/staminatoxin

@@ -465,12 +465,15 @@
 	glass_name = "glass of Molten Bubbles"
 	glass_desc = "A glass of Molten Bubbles. The spices tickle your nose."
 
-
-/datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
+/datum/reagent/consumable/molten/on_mob_life(mob/living/carbon/M)
+	M.heal_bodypart_damage(1,1,0)
+	if(M.bodytemperature > M.get_body_temp_normal(apply_change=FALSE))
+		M.adjust_bodytemperature(-10 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal(apply_change=FALSE))
+	else if(M.bodytemperature < (M.get_body_temp_normal(apply_change=FALSE) + 1))
+		M.adjust_bodytemperature(10 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal(apply_change=FALSE))
 	..()
 
-/datum/reagent/consumable/plasma_fizz
+/datum/reagent/consumable/molten/plasma_fizz
 	name = "Plasma Fizz"
 	description = "A  spinoff of the popular Molten Bubbles drink from Kalixcis, made to emulate the flavor of spiced grape instead. It's... not exactly convincing or a very good mix."
 	color = "#5f2010"
@@ -479,10 +482,11 @@
 	glass_name = "glass of Plasma Fizz"
 	glass_desc = "A glass of Plasma Fizz. The spices (and fake grape flavoring) wrinkles your nose."
 
-
-/datum/reagent/consumable/space_up/on_mob_life(mob/living/carbon/M)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
-	..()
+/datum/reagent/consumable/molten/sand
+	name = "Sandblast Sarsaparilla"
+	description = "Extra refreshing for those long desert days."
+	color = "#af9938"
+	taste_description = "root-beer and asbestos"
 
 /datum/reagent/consumable/lemon_lime
 	name = "Lemon Lime"
@@ -530,7 +534,7 @@
 	glass_name = "glass of Shoal Punch"
 	glass_desc = "It's hard to imagine all those fruits getting condensed into a cup like this."
 
-/datum/reagent/consumable/shamblers/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/shoal_punch/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, M.get_body_temp_normal())
 	..()
 /datum/reagent/consumable/sodawater
