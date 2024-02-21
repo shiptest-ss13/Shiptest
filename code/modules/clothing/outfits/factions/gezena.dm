@@ -54,6 +54,15 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
 
+/datum/outfit/job/gezena/hop
+	name = "PGF - Bridge Officer"
+	jobtype = /datum/job/head_of_personnel
+	job_icon = "headofpersonnel"
+
+	uniform = /obj/item/clothing/under/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena
+	neck = /obj/item/clothing/neck/cloak/gezena
+
 /datum/outfit/job/gezena/captain
 	name = "PGF - Captain"
 	jobtype = /datum/job/captain
@@ -144,6 +153,18 @@
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 	r_hand = /obj/item/gun/energy/kalix/pgf
 
+/datum/outfit/job/gezena/hop
+	name = "PGF - Bridge Officer - Equipped"
+	jobtype = /datum/job/head_of_personnel
+	job_icon = "headofpersonnel"
+
+	uniform = /obj/item/clothing/under/gezena
+	suit = /obj/item/clothing/suit/armor/gezena
+	head = /obj/item/clothing/head/gezena
+	gloves = /obj/item/clothing/gloves/gezena
+	shoes = /obj/item/clothing/shoes/combat/gezena
+	neck = /obj/item/clothing/neck/cloak/gezena
+	r_hand = /obj/item/gun/energy/kalix/pgf
 
 /datum/outfit/job/gezena/captain/geared
 	name = "PGF - Captain - Equipped"

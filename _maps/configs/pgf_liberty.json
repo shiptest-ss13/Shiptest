@@ -10,7 +10,6 @@
 	"description": "A light frigate mass produced by the Etherbor PGFN Lahoma Navy Shipyard to carry massive spiral mounted warguns while keeping high maneuverability. The weapon mount on this ship has been decommissioned, like so many of its kind when sent out of Kalixcian space. The Liberty is a dual navy and marine vessel, carrying a subshuttle for boarding, excursions, and forward scouting. After decommissioning the primary gun, the engines were swapped out for lower power, while engineering equipment has been generously supplied.",
 	"tags": [
 		"Combat",
-		"Riot",
 		"Engineering",
 		"RP Focus"
 	],
@@ -23,6 +22,10 @@
 			"officer": true,
 			"slots": 1
 		},
+		"PGF - Naval Bridge Officer": {
+			"outfit": "/datum/outfit/job/gezena/hop",
+			"slots": 2
+		},
 		"PGF - Navy Engineer": {
 			"outfit": "/datum/outfit/job/gezena/engineer",
 			"slots": 2
@@ -33,7 +36,7 @@
 		},
 		"PGF - Crewman": {
 			"outfit": "/datum/outfit/job/gezena/assistant",
-			"slots": 3
+			"slots": 1
 		},
 		"PGF - Marine Sergeant": {
 			"outfit": "/datum/outfit/job/gezena/hos",
@@ -44,5 +47,5 @@
 			"slots": 3
 		}
 	},
-	"enabled": true
+	"enabled": false
 }

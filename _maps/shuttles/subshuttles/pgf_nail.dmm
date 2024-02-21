@@ -42,7 +42,20 @@
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
+/area/ship/bridge)
+"e" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1;
+	name = "nail supply pump"
+	},
+/turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "h" = (
 /obj/structure/cable{
@@ -55,6 +68,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "l" = (
@@ -62,6 +76,9 @@
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable{
 	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -133,8 +150,8 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "s" = (
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "t" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
@@ -143,6 +160,12 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/etherbor/right,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "v" = (
@@ -155,16 +178,17 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "w" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 8
+/obj/machinery/power/terminal{
+	dir = 4
 	},
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/obj/structure/cable/blue{
-	icon_state = "0-4"
+/obj/structure/cable{
+	icon_state = "0-8"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "x" = (
 /obj/structure/railing{
@@ -186,6 +210,9 @@
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -209,14 +236,30 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "B" = (
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 8
+/obj/machinery/power/terminal{
+	dir = 4
 	},
 /obj/structure/railing/corner{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ship/bridge)
+"D" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 8
+	},
 /obj/structure/cable/blue{
 	icon_state = "0-4"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 1
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
@@ -237,8 +280,8 @@
 	},
 /obj/machinery/power/port_gen/pacman,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/item/wrench,
 /obj/machinery/light/directional/west,
+/obj/item/wrench,
 /turf/open/floor/plating,
 /area/ship/bridge)
 "I" = (
@@ -248,14 +291,49 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "J" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	dir = 8;
+	id = "nail_door_blast"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
 /obj/docking_port/mobile{
 	dir = 8;
 	name = "nail dock";
 	preferred_direction = 8;
 	port_direction = 2
 	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/bridge)
+"L" = (
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 8
+	},
+/obj/structure/cable/blue{
+	icon_state = "0-4"
+	},
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
+/obj/structure/window/plasma/reinforced,
+/turf/open/floor/plasteel/tech,
+/area/ship/bridge)
 "M" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -270,47 +348,36 @@
 /turf/open/floor/plating,
 /area/ship/bridge)
 "N" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/machinery/door/poddoor/preopen{
+/obj/machinery/atmospherics/components/binary/pump/layer2{
 	dir = 8;
-	id = "nail_door_blast"
+	name = "supply pump"
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
+/obj/machinery/atmospherics/components/binary/pump/layer4{
+	dir = 4;
+	name = "nail exhaust pump"
 	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "O" = (
 /obj/structure/railing,
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
-	icon_state = "0-2"
+	icon_state = "2-4"
 	},
-/turf/open/floor/plasteel/tech,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "R" = (
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/machinery/power/terminal{
-	dir = 4
-	},
 /obj/structure/cable{
-	icon_state = "0-1"
+	icon_state = "1-4"
 	},
-/turf/open/floor/plasteel/tech,
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "S" = (
 /obj/machinery/holopad/emergency,
@@ -320,11 +387,14 @@
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/bridge)
 "T" = (
-/obj/machinery/porta_turret/ship/ballistic{
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/porta_turret/ship/weak{
 	dir = 8
 	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/template_noop)
 "U" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/machinery/light/directional/north,
@@ -351,6 +421,7 @@
 	},
 /obj/machinery/power/terminal,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
 /area/ship/bridge)
 
@@ -422,25 +493,25 @@ n
 B
 i
 u
-i
+e
 w
 t
 "}
 (9,1,1) = {"
 G
-V
-p
+D
+s
 N
-a
-V
+s
+L
 W
 "}
 (10,1,1) = {"
 c
-c
-s
+V
+p
 J
-s
-c
+a
+V
 c
 "}
