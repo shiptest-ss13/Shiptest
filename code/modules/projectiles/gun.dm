@@ -237,6 +237,7 @@
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
+	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 	return FALSE
 
 //check if there's enough ammo/energy/whatever to shoot one time
