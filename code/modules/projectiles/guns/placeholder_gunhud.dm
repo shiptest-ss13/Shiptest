@@ -70,6 +70,7 @@
 
 /atom/movable/screen/ammo_counter/update_overlays(list/rounds)
 	. = ..()
+	cut_overlays()
 	if(oth_o)
 		var/mutable_appearance/o_overlay = mutable_appearance(icon, oth_o)
 		o_overlay.color = backing_color
@@ -281,6 +282,17 @@
 			return the_revolver.magazine.ammo_list()
 		else
 			return FALSE
+/*
+	var/list/round_positions = list(
+		list("x" = 12,"y" = 22),
+
+		list("x" = 20,"y" = 17),
+		list("x" = 20,"y" = 7 ),
+		list("x" = 12,"y" = 2 ),
+		list("x" = 4 ,"y" = 7 ),
+		list("x" = 4 ,"y" = 17)
+	)
+*/
 
 /datum/component/ammo_hud/revolver/update_hud()
 	var/obj/item/gun/ballistic/revolver/pew = parent
@@ -291,22 +303,24 @@
 	var/list/round_positions = list(
 		list("x" = 12,"y" = 22),
 
-		list("x" = 20,"y" = 17),
-		list("x" = 20,"y" = 7 ),
-		list("x" = 12,"y" = 2 ),
+		list("x" = 4 ,"y" = 17),
 		list("x" = 4 ,"y" = 7 ),
-		list("x" = 4 ,"y" = 17)
+		list("x" = 12,"y" = 2 ),
+		list("x" = 20,"y" = 7 ),
+		list("x" = 20,"y" = 17)
+
 	)
 
 	var/bullet_count = 0
 	for(var/obj/item/ammo_casing/bullet as anything in rounds)
 		bullet_count++
-		var/image/current_bullet_image = image(icon = 'icons/hud/gun_hud.dmi', icon_state = "revolver_casing")
+		if(!bullet)
+			continue
+		var/image/current_bullet_image = image(icon = 'icons/hud/gun_hud.dmi')
 		var/list/bullet_position = round_positions[bullet_count]
 		current_bullet_image.pixel_x = bullet_position["x"]
 		current_bullet_image.pixel_y = bullet_position["y"]
 		current_bullet_image.icon_state = "revolver_casing[bullet.BB ? "_live" : ""]"
-
 		round_images += current_bullet_image
 
 	hud.update_overlays(round_images)

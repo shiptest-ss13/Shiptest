@@ -35,4 +35,4 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 	max_ammo = 6
-	instant_load = TRUE
+	instant_load = FALSE

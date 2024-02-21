@@ -609,7 +609,15 @@
 	recoil = 0
 	recoil_unwielded = 2
 
-//sawn off
+/obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
+	. = ..()
+	if(current_skin)
+		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
+	else
+		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/bolt/sawoff(mob/user)
+	//sawn off
 	weapon_weight = WEAPON_MEDIUM
 
 	wield_slowdown = 0.25
@@ -620,14 +628,6 @@
 
 	recoil = 1
 	recoil_unwielded = 2
-
-/obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
-	. = ..()
-	if(current_skin)
-		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""]"
-	else
-		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
-
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .38."
