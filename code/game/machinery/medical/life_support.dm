@@ -37,24 +37,29 @@
 	. = ..()
 	var/mutable_appearance/monitor_overlay
 	if(machine_stat && (NOPOWER|BROKEN))
-		monitor_overlay = mutable_appearance(icon,"nopower")
+		monitor_overlay = mutable_appearance(icon, "nopower")
 		. += monitor_overlay
 		return
 
 	if(!attached || !active)
-		monitor_overlay=  mutable_appearance(icon,"noone")
+		monitor_overlay =  mutable_appearance(icon,"noone")
+		. += monitor_overlay
+		return
+
+	if(attached.stat == DEAD)
+		monitor_overlay = mutable_appearance(icon, "death")
 		. += monitor_overlay
 		return
 
 	switch(attached.health)
 		if(-INFINITY to HEALTH_THRESHOLD_DEAD)
-			monitor_overlay = mutable_appearance(icon,"death")
-		if(HEALTH_THRESHOLD_DEAD+1 to HEALTH_THRESHOLD_FULLCRIT)
-			monitor_overlay = mutable_appearance(icon,"hardcrit")
-		if(HEALTH_THRESHOLD_FULLCRIT+1 to HEALTH_THRESHOLD_CRIT)
-			monitor_overlay = mutable_appearance(icon,"softcrit")
+			monitor_overlay = mutable_appearance(icon, "death")
+		if(HEALTH_THRESHOLD_DEAD + 1 to HEALTH_THRESHOLD_FULLCRIT)
+			monitor_overlay = mutable_appearance(icon, "hardcrit")
+		if(HEALTH_THRESHOLD_FULLCRIT + 1 to HEALTH_THRESHOLD_CRIT)
+			monitor_overlay = mutable_appearance(icon, "softcrit")
 		if(1 to INFINITY)
-			monitor_overlay = mutable_appearance(icon,"alive")
+			monitor_overlay = mutable_appearance(icon, "alive")
 	. += monitor_overlay
 
 /obj/machinery/medical/life_support/wrench_act(mob/living/user, obj/item/I)
@@ -90,22 +95,27 @@
 		soundloop_ekg_fast.stop()
 		soundloop_flatline.stop()
 
+	if(attached.stat == DEAD)
+		soundloop_flatline.start()
+		soundloop_ekg.stop()
+		soundloop_ekg_slow.stop()
+		soundloop_ekg_fast.stop()
+		return
+
 	switch(attached.health)
-		if(attached.stat == DEAD)
-			soundloop_flatline.start()
-			soundloop_ekg.stop()
-			soundloop_ekg_slow.stop()
-			soundloop_ekg_fast.stop()
 		if(-INFINITY to HEALTH_THRESHOLD_DEAD)
 			soundloop_flatline.start()
 			soundloop_ekg_slow.stop()
 		if(HEALTH_THRESHOLD_DEAD+1 to HEALTH_THRESHOLD_FULLCRIT)
+			soundloop_flatline.stop()
 			soundloop_ekg_slow.start()
 			soundloop_ekg_fast.stop()
 		if(HEALTH_THRESHOLD_FULLCRIT+1 to HEALTH_THRESHOLD_CRIT)
+			soundloop_flatline.stop()
 			soundloop_ekg_fast.start()
 			soundloop_ekg.stop()
 		if(1 to INFINITY)
+			soundloop_flatline.stop()
 			soundloop_ekg.start()
 
 /obj/machinery/medical/life_support/advanced
