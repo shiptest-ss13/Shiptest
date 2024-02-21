@@ -27,6 +27,10 @@
 
 	has_safety = FALSE //irl revolvers dont have safetys. i think. maybe
 	safety = FALSE
+
+	var/simulate_gunslinger = TRUE //for testing
+	var/gate_loaded = FALSE //for stupid wild west shit
+	var/gate_offset = 1 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
 /*
 if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		if(flip_cooldown <= world.time)
@@ -46,18 +50,19 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 	. = ..()
 	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
 
+
+/obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
+	return ..()
+
 /obj/item/gun/ballistic/revolver/attack_hand(mob/user)
 	if(loc == user && user.is_holding(src))
-		chambered = null
-		var/num_unloaded = 0
-		for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
-			CB.forceMove(drop_location())
-			CB.bounce_away(FALSE, NONE)
-			num_unloaded++
-			SSblackbox.record_feedback("tally", "station_mess_created", 1, CB.name)
+		var/num_unloaded = unload_all_ammo(user)
 		if (num_unloaded)
 			to_chat(user, "<span class='notice'>You unload [num_unloaded] [cartridge_wording]\s from [src].</span>")
-			playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			if(!gate_loaded)
+				playsound(user, eject_sound, eject_sound_volume, eject_sound_vary)
+			SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 			update_appearance()
 			return
 		else
@@ -65,6 +70,51 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 	else
 		return ..()
 
+/obj/item/gun/ballistic/revolver/proc/unload_all_ammo(mob/living/user)
+	var/num_unloaded = 0
+
+	if(!gate_loaded)
+		for(var/obj/item/ammo_casing/casing_to_eject in get_ammo_list(FALSE, TRUE))
+			if(!casing_to_eject)
+				continue
+			casing_to_eject.forceMove(drop_location())
+			casing_to_eject.bounce_away(FALSE, NONE)
+			num_unloaded++
+			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
+
+	for(var/obj/item/ammo_casing/casing_to_eject in num_unloaded)
+		var/doafter_time = 0.2 SECONDS
+		if(!do_mob(user,src,doafter_time))
+			break
+		if(!eject_casing())
+			doafter_time = 0 SECONDS
+		else
+			num_unloaded++
+		if(!do_mob(user,src,doafter_time))
+			break
+		chamber_round(TRUE, TRUE)
+
+	if (num_unloaded)
+		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
+		update_appearance()
+		return num_unloaded
+
+/obj/item/gun/ballistic/revolver/proc/eject_casing(mob/living/user)
+	var/list/rounds = magazine.ammo_list()
+	var/obj/item/ammo_casing/casing_to_eject = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
+	if(!casing_to_eject)
+		if(user)
+			to_chat(user, "<span class='warning'>There's nothing in the gate to eject from [src]!</span>")
+		return FALSE
+	playsound(src, eject_sound, eject_sound_volume, eject_sound_vary)
+	casing_to_eject.forceMove(drop_location())
+	casing_to_eject.bounce_away(FALSE, NONE)
+	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
+	update_appearance()
+
+	if(user)
+		to_chat(user, "<span class='notice'>You eject the [cartridge_wording] from [src].</span>")
+	return TRUE
 
 /obj/item/gun/ballistic/revolver/unique_action(mob/living/user)
 	rack(user)
@@ -76,17 +126,57 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
 	chamber_round(TRUE)
 	playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
-/obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE)
+/obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE, counter_clockwise = FALSE)
 	if(spin_cylinder)
-		chambered = magazine.get_round(TRUE)
+		chambered = magazine.get_round(TRUE, counter_clockwise)
 	else
 		chambered = magazine.stored_ammo[1]
+	playsound(src, 'sound/weapons/gun/revolver/spin_single.ogg', 100, FALSE)
+	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/ballistic/revolver/AltClick(mob/user)
-	..()
-	spin()
+	if (unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
+		return ..()
+
+	if(!simulate_gunslinger)
+		spin()
+		return
+
+	var/chamber_options = list(
+		"rotate chamber left" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_left"),
+		"rotate chamber right" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_right"),
+		"auto rotate left when loading ammo" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_left"),
+		"auto eject all bullets" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_all"),
+		"eject current bullet" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_one"),
+		"auto rotate right when loading ammo" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_right"),
+		)
+
+	var/pick = show_radial_menu(user, src, chamber_options, custom_check = CALLBACK(src, PROC_REF(can_use_radial), user), require_near = TRUE)
+	switch(pick)
+		if("rotate chamber left")
+			chamber_round(TRUE, TRUE)
+		if("rotate chamber right")
+			chamber_round(TRUE)
+		if("auto eject all bullets")
+			unload_all_ammo(user)
+			return
+		if("eject current bullet")
+			eject_casing(user)
+		if(null)
+			return
+	AltClick(user)
+
+/obj/item/gun/ballistic/revolver/proc/can_use_radial(mob/user)
+	if(QDELETED(src))
+		return FALSE
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated())
+		return FALSE
+	return TRUE
 
 /obj/item/gun/ballistic/revolver/verb/spin()
 	set name = "Spin Chamber"
@@ -363,6 +453,7 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
+	gate_loaded = TRUE
 	unique_reskin = list("Default" = "shadow",
 		"Army" = "shadow_army",
 		"General" = "shadow_general"

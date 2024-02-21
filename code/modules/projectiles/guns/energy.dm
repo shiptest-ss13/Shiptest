@@ -106,7 +106,7 @@
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/item/gun/energy/attack_hand(mob/user)
-	if(!internal_cell && loc == user && user.is_holding(src) && cell)
+	if(!internal_cell && loc == user && user.is_holding(src) && cell && tac_reloads)
 		eject_cell(user)
 		return
 	return ..()
@@ -172,8 +172,9 @@
 
 /obj/item/gun/energy/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
 	if(picked_option == "Cell")
-		eject_cell(user, I)
-		return TRUE
+		if(I.use_tool(src, user, unscrewing_time, volume=100))
+			eject_cell(user, I)
+			return TRUE
 	..()
 
 /obj/item/gun/energy/can_shoot(visuals)

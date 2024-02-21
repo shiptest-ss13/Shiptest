@@ -68,7 +68,7 @@
 
 	update_appearance()
 
-/atom/movable/screen/ammo_counter/update_overlays()
+/atom/movable/screen/ammo_counter/update_overlays(list/rounds)
 	. = ..()
 	if(oth_o)
 		var/mutable_appearance/o_overlay = mutable_appearance(icon, oth_o)
@@ -86,6 +86,11 @@
 		var/mutable_appearance/indicator_overlay = mutable_appearance(icon, indicator)
 		indicator_overlay.color = backing_color
 		. += indicator_overlay
+	if(!rounds)
+		return
+
+	for(var/image/round as anything in rounds)
+		add_overlay(round)
 
 //*////////////////////////////////////////////////////////////////////////////////////////////////////////////*
 
@@ -220,7 +225,7 @@
 			oth_t = "[prefix]t9"
 			oth_h = "[prefix]h9"
 	hud.set_hud(backing_color, oth_o, oth_t, oth_h, indicator)
-
+/*
 /datum/component/ammo_hud/laser/cybersun
 	prefix = "cybersun_"
 
@@ -259,3 +264,49 @@
 	damage = 15
 	armour_penetration = -10
 	icon_state = "red_1"
+*/
+/obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/revolver)
+
+
+/datum/component/ammo_hud/revolver
+	prefix = "revolver_"
+
+/// Returns get_ammo() with the appropriate args passed to it - some guns like the revolver and bow are special cases
+/datum/component/ammo_hud/revolver/get_accurate_ammo_count(obj/item/gun/ballistic/revolver/the_gun)
+	if(istype(the_gun, /obj/item/gun/ballistic/revolver))
+		var/obj/item/gun/ballistic/revolver/the_revolver = the_gun
+		if(the_revolver.magazine)
+			return the_revolver.magazine.ammo_list()
+		else
+			return FALSE
+
+/datum/component/ammo_hud/revolver/update_hud()
+	var/obj/item/gun/ballistic/revolver/pew = parent
+	hud.icon_state = "[prefix]backing"
+
+	var/list/rounds = get_accurate_ammo_count(pew)
+	var/list/round_images = list()
+	var/list/round_positions = list(
+		list("x" = 12,"y" = 22),
+
+		list("x" = 20,"y" = 17),
+		list("x" = 20,"y" = 7 ),
+		list("x" = 12,"y" = 2 ),
+		list("x" = 4 ,"y" = 7 ),
+		list("x" = 4 ,"y" = 17)
+	)
+
+	var/bullet_count = 0
+	for(var/obj/item/ammo_casing/bullet as anything in rounds)
+		bullet_count++
+		var/image/current_bullet_image = image(icon = 'icons/hud/gun_hud.dmi', icon_state = "revolver_casing")
+		var/list/bullet_position = round_positions[bullet_count]
+		current_bullet_image.pixel_x = bullet_position["x"]
+		current_bullet_image.pixel_y = bullet_position["y"]
+		current_bullet_image.icon_state = "revolver_casing[bullet.BB ? "_live" : ""]"
+
+		round_images += current_bullet_image
+
+	hud.update_overlays(round_images)
