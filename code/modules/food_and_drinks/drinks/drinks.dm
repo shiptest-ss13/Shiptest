@@ -717,13 +717,6 @@
 	list_reagents = list(/datum/reagent/consumable/xeno_energy = 40, /datum/reagent/consumable/electrolytes = 10)
 	foodtype = SUGAR | JUNKFOOD
 
-/obj/item/reagent_containers/food/drinks/soda_cans/xeno_energy_weedspreader
-	name = "Xeno-Energy: Weedspreader"
-	desc = "A popular alternative flavor from the Xeno-Energy brand energy drinks line, which caters towards Elzuosa for being technically beneficial for their plantlike bodies. You don't exactly see many people gardening with this, though."
-	icon_state = "xeno_energy"
-	item_state = "xeno_energy"
-	list_reagents = list(/datum/reagent/consumable/electrolytes = 50)
-
 /obj/item/reagent_containers/food/drinks/soda_cans/air
 	name = "canned air"
 	desc = "There is no air shortage. Do not drink."
