@@ -1494,7 +1494,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = "#ff3300"
 	boozepwr = 55
 	quality = DRINK_FANTASTIC
-	taste_description = "THE LAW"
+	taste_description = "drinking on duty"
 	glass_icon_state = "quintuple_sec"
 	glass_name = "Quintuple Sec"
 	glass_desc = "The logical endpoint of the Quadruple Sec. Often had in the hands of senior security staff, though you <i>really</i> should not be drinking this while on-duty."
