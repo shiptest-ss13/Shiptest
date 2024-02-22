@@ -641,7 +641,6 @@
 /obj/item/clothing/head/beret/hop,
 /obj/item/radio/headset/heads/head_of_personnel,
 /obj/item/clothing/glasses/sunglasses/big,
-/obj/item/clothing/suit/toggle/lieutenant,
 /obj/item/clothing/suit/toggle/lawyer/burgundy,
 /obj/item/clothing/suit/toggle/lawyer/navy,
 /obj/item/clothing/head/hopcap,
@@ -3343,7 +3342,6 @@
 	dir = 1
 	},
 /obj/machinery/light/small/directional/west,
-/obj/item/clothing/gloves/combat/maid/inteq,
 /obj/item/clothing/under/suit/charcoal,
 /obj/item/clothing/glasses/monocle,
 /obj/item/clothing/shoes/laceup{
@@ -3454,10 +3452,6 @@
 /obj/item/storage/box/mousetraps{
 	pixel_y = -3;
 	pixel_x = -9
-	},
-/obj/item/storage/box/maid{
-	pixel_x = -9;
-	pixel_y = 8
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
@@ -4428,7 +4422,7 @@
 /area/ship/crew/cryo)
 "QA" = (
 /obj/machinery/blackbox_recorder,
-/obj/structure/sign/poster/official/sgt{
+/obj/structure/sign/poster/official/moth/epi{
 	pixel_x = 32
 	},
 /obj/machinery/button/door{

@@ -1305,10 +1305,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/conveyor/inverted{
-	id = "retrieval";
-	dir = 1
-	},
+/obj/machinery/conveyor,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "hx" = (
@@ -1689,7 +1686,7 @@
 /area/ship/engineering/electrical)
 "jC" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/brimstone,
 /obj/item/storage/box/lethalshot,
 /obj/effect/turf_decal/siding/red{
 	dir = 10
@@ -3714,6 +3711,16 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/maintenance/starboard)
+"vT" = (
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/conveyor{
+	id = "prison_scrap";
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "wa" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
@@ -4674,11 +4681,10 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/conveyor/inverted{
-	id = "prison_scrap";
-	dir = 8
-	},
 /obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/conveyor{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -4864,10 +4870,7 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 4
 	},
-/obj/machinery/conveyor/inverted{
-	id = "retrieval";
-	dir = 1
-	},
+/obj/machinery/conveyor,
 /turf/open/floor/plating,
 /area/ship/engineering/electrical)
 "CP" = (
@@ -5772,7 +5775,7 @@
 /area/ship/maintenance/port)
 "Ht" = (
 /obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/riot,
+/obj/item/gun/ballistic/shotgun/hellfire,
 /obj/item/storage/box/rubbershot,
 /obj/item/clothing/suit/armor/riot,
 /obj/item/shield/riot,
@@ -6256,8 +6259,7 @@
 	output_dir = 1
 	},
 /obj/machinery/conveyor{
-	id = "prison_scrap";
-	dir = 1
+	id = "prison_scrap"
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -6342,16 +6344,15 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/hydroponics)
 "KI" = (
-/obj/machinery/conveyor/inverted{
-	id = "prison_scrap";
-	dir = 1
-	},
 /obj/machinery/mineral/stacking_machine{
 	output_dir = 2;
 	input_dir = 1
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
+	},
+/obj/machinery/conveyor{
+	id = "prison_scrap"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -9126,7 +9127,7 @@ yz
 tY
 jS
 TO
-TO
+vT
 Kk
 wm
 Jy

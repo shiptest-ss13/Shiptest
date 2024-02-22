@@ -450,7 +450,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		sleepyhead.apply_damage_type(15, BURN)
 	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of cryosleep set in as you awaken...")
 
-
+/obj/machinery/cryopod/syndicate
+	icon_state = "sleeper_s-open"
+	open_state = "sleeper_s-open"
+	close_state = "sleeper_s"
 
 /obj/machinery/cryopod/poor
 	name = "low quality cryogenic freezer"

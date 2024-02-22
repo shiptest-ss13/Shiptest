@@ -107,15 +107,21 @@
 	..()
 	adjust_charge(-ETHEREAL_CHARGE_FACTOR)
 
-/obj/item/organ/stomach/ethereal/Insert(mob/living/carbon/M, special = 0)
+/obj/item/organ/stomach/ethereal/Insert(mob/living/carbon/organ_owner, special = 0)
 	..()
-	RegisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
-	RegisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute))
+	RegisterSignal(organ_owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
+	RegisterSignal(organ_owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute))
+	RegisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 
-/obj/item/organ/stomach/ethereal/Remove(mob/living/carbon/M, special = 0)
-	UnregisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
-	UnregisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT)
+/obj/item/organ/stomach/ethereal/Remove(mob/living/carbon/organ_owner, special = 0)
+	UnregisterSignal(organ_owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
+	UnregisterSignal(organ_owner, COMSIG_LIVING_ELECTROCUTE_ACT)
+	UnregisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
 	..()
+
+/obj/item/organ/stomach/ethereal/proc/get_status_tab_item(mob/living/carbon/source, list/items)
+	SIGNAL_HANDLER
+	items += "Crystal Charge: [round((crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
 
 /obj/item/organ/stomach/ethereal/proc/charge(datum/source, amount, repairs)
 	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70)      //WS Edit -- Ethereal Charge Scaling

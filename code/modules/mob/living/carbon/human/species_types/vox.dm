@@ -118,6 +118,7 @@
 /datum/action/innate/tail_hold
 	name = "Tail Hold"
 	desc = "Store an item in your tail's grip."
+	button_icon_state = "tail_hold"
 	var/obj/item/held_item
 	var/mutable_appearance/held_item_overlay
 

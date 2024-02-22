@@ -2509,11 +2509,6 @@
 /obj/item/roller,
 /obj/item/tank/internals/anesthetic,
 /obj/item/clothing/mask/breath/medical,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
 /obj/item/storage/box/bodybags,
 /obj/item/storage/box/gloves,
 /obj/item/storage/box/masks,
@@ -2537,6 +2532,7 @@
 	pixel_x = 22;
 	pixel_y = 8
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "zm" = (
@@ -3756,7 +3752,7 @@
 	pixel_x = 1;
 	pixel_y = 1
 	},
-/obj/item/book/manual/wiki/engineering_guide{
+/obj/item/book/manual/wiki/engineering{
 	pixel_x = 5;
 	pixel_y = 2
 	},
@@ -4068,7 +4064,7 @@
 /obj/item/clothing/head/helmet/bulletproof/minutemen,
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
 /obj/item/storage/belt/security,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/gun/ballistic/automatic/pistol/candor,
 /obj/item/ammo_box/magazine/m45/rubber,
 /obj/item/ammo_box/magazine/m45/rubber{
 	pixel_x = 3
@@ -4224,6 +4220,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/machinery/iv_drip,
 /obj/item/poster/random_official{
 	pixel_x = 4;
 	pixel_y = 3
@@ -4327,6 +4324,7 @@
 /obj/effect/turf_decal/minutemen/corner{
 	dir = 8
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "Nh" = (
@@ -4438,13 +4436,13 @@
 /obj/item/clothing/gloves/color/latex/nitrile,
 /obj/item/healthanalyzer/advanced,
 /obj/item/clothing/neck/cloak/cmo,
-/obj/item/gun/ballistic/revolver/nagant,
-/obj/item/ammo_box/n762_clip,
-/obj/item/ammo_box/n762_clip,
+/obj/item/gun/ballistic/revolver/shadow,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/ammo_box/c45_speedloader,
 /obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
 /obj/item/reagent_containers/hypospray/CMO,
-/obj/item/ammo_box/n762,
-/obj/item/ammo_box/n762,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/ammo_box/c45_speedloader,
 /turf/open/floor/carpet/royalblue,
 /area/ship/bridge)
 "NY" = (

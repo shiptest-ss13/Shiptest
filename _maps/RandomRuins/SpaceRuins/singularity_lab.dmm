@@ -52,9 +52,6 @@
 /obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
-/obj/structure/window/plasma/reinforced{
-	dir = 1
-	},
 /obj/structure/spacevine,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
@@ -605,12 +602,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/engineering)
-"cC" = (
-/obj/machinery/door/airlock{
-	name = "Private Quarters"
-	},
-/turf/closed/mineral/random,
-/area/ruin/space/has_grav)
 "cD" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -7020,7 +7011,7 @@
 "Cb" = (
 /obj/structure/table,
 /obj/structure/spacevine,
-/obj/item/book/manual/wiki/engineering_guide,
+/obj/item/book/manual/wiki/engineering,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
 	},
@@ -11261,7 +11252,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/item/book/manual/wiki/engineering_singulo_tesla,
+/obj/item/book/manual/wiki/engineering,
 /turf/open/space/basic,
 /area/space/nearstation)
 "Rp" = (
@@ -17664,7 +17655,7 @@ Zu
 hS
 yL
 id
-cC
+id
 id
 pE
 Rs

@@ -3,6 +3,7 @@
 // 1 in 50 chance of getting something really special.
 #define SPECIALIST_MAGIC_PROB 2
 
+// todo: this probably neds to be reorganized sometime
 GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/energy/disabler,
 	/obj/item/gun/energy/e_gun,
@@ -17,9 +18,9 @@ GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/ballistic/shotgun/doublebarrel,
 	/obj/item/gun/ballistic/shotgun,
 	/obj/item/gun/ballistic/shotgun/automatic/combat,
-	/obj/item/gun/ballistic/automatic/assault/ar,
+	/obj/item/gun/ballistic/automatic/assault/p16,
 	/obj/item/gun/ballistic/revolver/mateba,
-	/obj/item/gun/ballistic/rifle/boltaction,
+	/obj/item/gun/ballistic/rifle/illestren,
 	/obj/item/pneumatic_cannon/speargun,
 	/obj/item/gun/ballistic/automatic/smg/mini_uzi,
 	/obj/item/gun/energy/lasercannon,
