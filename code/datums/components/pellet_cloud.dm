@@ -29,7 +29,7 @@
 	var/list/pellets = list()
 	/// An associated list with the atom hit as the key and how many pellets they've eaten for the value, for printing aggregate messages
 	var/list/targets_hit = list()
-	/// For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
+	/// LAZY LIST. For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
 	var/list/bodies
 	/// For grenades, tracking people who die covering a grenade for achievement purposes, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
 	var/list/purple_hearts
@@ -65,7 +65,7 @@
 	purple_hearts = null
 	pellets = null
 	targets_hit = null
-	bodies = null
+	LAZYNULL(bodies)
 	return ..()
 
 /datum/component/pellet_cloud/RegisterWithParent()
@@ -285,8 +285,8 @@
 	return TRUE
 
 /// Someone who was originally "under" the grenade has moved off the tile and is now eligible for being a martyr and "covering" it
-/datum/component/pellet_cloud/proc/on_target_qdel(atom/target)
+/datum/component/pellet_cloud/parget, bodiesroc/on_target_qdel(atom/target)
 	UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	targets_hit -= target
-	LAZYREMOVE(target, bodies)
+	LAZYREMOVE(bodies, target)
 	purple_hearts -= target
