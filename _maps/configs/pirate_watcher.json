@@ -1,0 +1,46 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Watcher-class Spaceborne Command Post",
+	"prefix": "ISV",
+	"namelists": [
+		"PIRATES",
+		"BRITISH_NAVY"
+	],
+	"map_short_name": "Watcher-class",
+	"map_path": "_maps/shuttles/pirate/pirate_dagger.dmm",
+	"description": "The Watcher class is an improvised combat vessel under the ranks of the Frontiersmen fleet. It serves a dual purpose, both as a capable ship for establishing a military enclave in a sector, and as a sturdy vessel for reconnaissance. The nimble subshuttle of the Watcher is offset by its very low overall mobility and loss of operation if the subshuttle were to be lost.",
+	"tags": [
+		"Combat",
+		"Subshuttle"
+	],
+	"limit": 1,
+	"job_slots": {
+		"Captain": {
+			"outfit": "/datum/outfit/job/frontiersmen/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Shipswain": {
+			"outfit": "/datum/outfit/job/frontiersmen/hos",
+			"officer": true,
+			"slots": 1
+		},
+		"Aidman": {
+			"outfit": "/datum/outfit/job/frontiersmen/doctor",
+			"slots": 1
+		},
+		"Sapper": {
+			"outfit": "/datum/outfit/job/frontiersmen/engineer",
+			"slots": 1
+		},
+		"Boarder": {
+			"outfit": "/datum/outfit/job/frontiersmen/security",
+			"slots": 3
+		},
+		"Rookie": {
+			"outfit": "/datum/outfit/job/frontiersmen/assistant",
+			"slots": 2
+		}
+	},
+	"enabled": false
+}
