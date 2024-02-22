@@ -405,8 +405,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 	. = list()
 	var/atom/location = atom_on_location.loc
 	var/turf/our_turf = get_turf(atom_on_location)
-	if(!our_turf) //Our loc is an area, so return nothing
-		return
 	while(location && location != our_turf)
 		. += location
 		location = location.loc
