@@ -228,7 +228,7 @@
 
 /datum/quirk/gunslinger
 	name = "Gunslinger"
-	desc = "You are one of the fastest guns in the frontier. Those new-fangled and complicated firearms don't suit you; pistols and semi-automatic rifles suit you better, but particularly revolvers. NOT RECOOMENDED FOR BEGINNERS."
+	desc = "You are one of the fastest guns in the frontier. Those new-fangled and complicated firearms don't suit you; pistols and semi-automatic rifles suit you better, but particularly revolvers. NOT RECOMENDED FOR BEGINNERS."
 	value = 0
 	gain_text = "<span class='notice'>The HP Shadow is greatest handgun ever made.</span>"
 	lose_text = "<span class='notice'>...Who the hell would use such antiquated weapons in this year?</span>"

@@ -387,7 +387,7 @@
 
 /obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	var/fan = FALSE
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item)
 		fan = TRUE
 	. = ..()
 	if(fan)
@@ -528,6 +528,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
+	gate_loaded = TRUE
 	wield_slowdown = 0.5
 	spread_unwielded = 5
 	spread = 2
