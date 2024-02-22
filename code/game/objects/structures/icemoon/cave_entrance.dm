@@ -1043,7 +1043,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/dnainjector/hulkmut(loc)
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			if(prob(35))
-				new /obj/item/dnainjector/firemut(loc)
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			if(prob(35))
 				new /obj/item/dnainjector/gigantism(loc)

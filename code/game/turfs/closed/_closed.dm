@@ -36,11 +36,6 @@
 /turf/closed/indestructible/singularity_act()
 	return
 
-/turf/closed/indestructible/oldshuttle
-	name = "strange shuttle wall"
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "block"
-
 /turf/closed/indestructible/sandstone
 	name = "sandstone wall"
 	desc = "A wall with sandstone plating. Rough."
@@ -49,9 +44,6 @@
 	base_icon_state = "sandstone_wall"
 	baseturfs = /turf/closed/indestructible/sandstone
 	smoothing_flags = SMOOTH_BITMASK
-
-/turf/closed/indestructible/oldshuttle/corner
-	icon_state = "corner"
 
 /turf/closed/indestructible/splashscreen
 	name = "Space Station 13"
