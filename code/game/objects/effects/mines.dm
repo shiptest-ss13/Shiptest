@@ -1,162 +1,310 @@
 
-/obj/effect/mine
+/obj/item/mine
 	name = "dummy mine"
-	desc = "Better stay away from that thing."
-	density = FALSE
-	anchored = TRUE
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "uglymine"
-	var/triggered = 0
+	desc = "An anti-personnel mine. This one is designed for training actions. Explodes into harmless sparks."
+	icon = 'icons/obj/device.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+	throw_speed = 3
+	throw_range = 5
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	icon_state = "mine"
+	item_state = "assembly"
+	base_icon_state = "mine"
+	/// Is our mine currently exploding?
+	var/triggered = FALSE
+	/// Is our mine live?
+	var/armed = FALSE
+	// Sets a delay for mines going live after being planted
+	var/arm_delay = 3 SECONDS
+	/// Use to set a delay after activation to trigger the explosion. WIP
+	var/blast_delay
 
-/obj/effect/mine/Initialize()
+	///armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
+	var/stealthpwr = 204
+	///Chance of a successful disarm.
+	var/disarmchance = 65
+
+	/// Who's got their foot on the mine's pressure plate
+	/// Stepping on the mine will set this to the first mob who stepped over it
+	/// The mine will not detonate via movement unless the first mob steps off of it
+	var/datum/weakref/foot_on_mine
+
+/obj/item/mine/Initialize()
 	. = ..()
+
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+		COMSIG_ATOM_EXITED = PROC_REF(on_exited),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/effect/mine/proc/mineEffect(mob/victim)
-	to_chat(victim, "<span class='danger'>*click*</span>")
+/obj/item/mine/examine(mob/user)
+	. = ..()
+	if(!armed)
+		. += "<span class='information'>It appears to be inactive...</span>"
 
-/obj/effect/mine/proc/on_entered(datum/source, atom/movable/AM)
+	var/atom/movable/unlucky_sod = foot_on_mine?.resolve()
+	if(user == unlucky_sod)
+		. += "<span class='span_bolddanger'>The pressure plate is depressed. Any movement you make will set it off now."
+	else if(!isnull(unlucky_sod))
+		. += "<span class='span_danger'>The pressure plate is depressed by [unlucky_sod]. Any move they make'll set it off now."
+
+/obj/item/mine/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state][triggered ? "_exploding" : null][!armed && anchored ? "_arming" : null][armed && anchored && !triggered ? "_armed" : null]"
+
+/// Can this mine trigger on the passed movable?
+/obj/item/mine/proc/can_trigger(atom/movable/on_who)
+	//var/badtype = typecacheof(list(/obj/effect, /obj/item/mine))
+	if(triggered || !isturf(loc) || !armed || istype(on_who, /obj/item/mine))
+		return FALSE
+	//if(on_who == badtype)//no recursive self triggering. Bad landmine
+	//	return FALSE
+	return TRUE
+
+/obj/item/mine/proc/on_entered(datum/source, atom/movable/arrived)
 	SIGNAL_HANDLER
-	if(isturf(loc))
-		if(ismob(AM))
-			var/mob/MM = AM
-			if(!(MM.movement_type & FLYING))
-				INVOKE_ASYNC(src, PROC_REF(triggermine), AM)
-		else
-			INVOKE_ASYNC(src, PROC_REF(triggermine), AM)
-
-/obj/effect/mine/proc/triggermine(mob/victim)
-	if(triggered)
+	if(!can_trigger(arrived))
 		return
-	visible_message("<span class='danger'>[victim] sets off [icon2html(src, viewers(src))] [src]!</span>")
+	// Flying = can't step on a mine
+	if(arrived.movement_type & FLYING)
+		return
+		// Someone already on it
+	if(foot_on_mine?.resolve())
+		return
+
+	foot_on_mine = WEAKREF(arrived)
+	visible_message(span_userdanger("[icon2html(src, viewers(src))] *click*"))
+	alpha = 204
+	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
+
+/obj/item/mine/proc/on_exited(datum/source, atom/movable/gone)
+	SIGNAL_HANDLER
+
+	if(!can_trigger(gone))
+		return
+	// Check that the guy who's on it is stepping off
+	if(foot_on_mine && !IS_WEAKREF_OF(gone, foot_on_mine))
+		return
+
+	INVOKE_ASYNC(src, PROC_REF(triggermine), gone)
+	foot_on_mine = null
+
+/obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
+	. = ..()
+	triggermine()
+
+/// When something sets off a mine
+/obj/item/mine/proc/triggermine(atom/movable/triggerer)
+	if(triggered) //too busy detonating to detonate again
+		return
+	if(triggerer)
+		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_userdanger("[icon2html(src, viewers(src))] \The [src] activates."))
+	else
+		visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] detonates!"))
+	triggered = TRUE
+	update_appearance(UPDATE_ICON_STATE)
+	//if(blast_delay)
+	//	light_color = "#FF0000"
+	//	light_power = 3
+	//	light_range = 2
+	//	if(COOLDOWN_FINISHED(blast_delay))
+	//	addtimer(CALLBACK(src, .proc/blast_now), blast_delay)
+
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
-	mineEffect(victim)
-	SEND_SIGNAL(src, COMSIG_MINE_TRIGGERED)
-	triggered = 1
+	if(ismob(triggerer))
+		mineEffect(triggerer)
+	SEND_SIGNAL(src, COMSIG_MINE_TRIGGERED, triggerer)
+	//triggered = TRUE
 	qdel(src)
 
+//using an unarmed mine inhand deploys it.
+/obj/item/mine/attack_self(mob/user)
+	if(!armed)
+		user.visible_message("<span class='danger'>[user] deploys the [src].</span>", "<span class='notice'>You deploy the [src].</span>")
 
-/obj/effect/mine/explosive
+		user.dropItemToGround(src)
+		anchored = TRUE
+		playsound(src, 'sound/machines/click.ogg', 60, TRUE)
+
+		if(arm_delay)
+			armed = FALSE
+			update_appearance(UPDATE_ICON_STATE)
+			addtimer(CALLBACK(src, .proc/now_armed), arm_delay)
+		else
+			armed = TRUE
+			alpha = stealthpwr
+		log_admin("[key_name(user)] has placed \a [src] at ([x],[y],[z]).")
+
+//let them know the mine's done cooking
+/obj/item/mine/proc/now_armed()
+	armed = TRUE
+	alpha = stealthpwr
+	update_appearance(UPDATE_ICON_STATE)
+	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 40, FALSE, -2)
+	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
+
+//insert your horrible fate here
+/obj/item/mine/proc/mineEffect(mob/victim)
+	return
+
+//handles disarming(and failing to disarm)
+/obj/item/mine/attackby(obj/item/I, mob/user)
+	if(armed)
+		if(I.tool_behaviour == TOOL_MULTITOOL)//multitools can disarm
+			user.visible_message(span_danger("[user] starts to carefully disarm \the [src]."), span_danger("You begin to disarm \the [src]. Careful now..."))
+			if (do_after(user, 10))
+				if(prob(disarmchance))
+					user.visible_message(span_danger("[user] has disarmed \the [src]."), span_danger("You have disarmed \the [src]! Phew."))
+					playsound(src, 'sound/machines/click.ogg', 100, TRUE)
+					anchored = FALSE
+					armed = FALSE
+					update_appearance(UPDATE_ICON_STATE)
+				else
+					if(prob(35))//yipee!!
+						user.visible_message(span_danger("[user] accidentally triggers \the [src]."), span_userdanger("[icon2html(src, viewers(src))]\The [src]'s light goes red. <b>Uh oh</b>."))
+						triggermine(user)
+					else
+						user.visible_message(span_danger("[user] fails to defuse \the [src]."), span_danger("[icon2html(src, viewers(src))]\the [src]'s light flickers ominously. Thankfully, nothing happens."))
+		else//please stop hitting the mine with a rock
+			if(user.a_intent != INTENT_HARM)//are you SURE you want to hit the mine with a rock
+				user.visible_message(user, span_notice("[user] gently pokes \the [src] with [I]. Nothing seems to happen."), span_notice("You gently prod \the [src] with [I]. Thankfully, nothing happens."))
+			else//at this point it's just natural selection
+				user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
+				triggermine(user)
+	else
+		to_chat(user, span_notice("You hit \the [src] with [I]. Thankfully, nothing happens."))
+
+/obj/item/mine/explosive
 	name = "explosive mine"
 	var/range_devastation = 0
 	var/range_heavy = 1
-	var/range_light = 2
-	var/range_flash = 3
+	var/range_light = 6
+	var/range_flash = 6
+	var/range_flame = 0
+	var/shrapnel_type = /obj/projectile/bullet/shrapnel
+	var/shrapnel_magnitude = 2
+	stealthpwr = 85
 
-/obj/effect/mine/explosive/mineEffect(mob/victim)
-	explosion(loc, range_devastation, range_heavy, range_light, range_flash)
+/obj/item/mine/explosive/heavy
+	range_heavy = 2
+	range_light = 4
 
-/obj/effect/mine/stun
+/obj/item/mine/explosive/mineEffect(mob/victim)
+	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
+	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+
+/obj/item/mine/stun
 	name = "stun mine"
 	var/stun_time = 80
 
-/obj/effect/mine/shrapnel
+/obj/item/mine/shrapnel
 	name = "shrapnel mine"
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
 	var/shrapnel_magnitude = 3
 
-/obj/effect/mine/shrapnel/mineEffect(mob/victim)
+/obj/item/mine/shrapnel/mineEffect(mob/victim)
 	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
-/obj/effect/mine/shrapnel/human_only
+/obj/item/mine/shrapnel/human_only
 	name = "sophisticated shrapnel mine"
 	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
 
-/obj/effect/mine/shrapnel/human_only/on_entered(datum/source, atom/movable/AM)
+/obj/item/mine/shrapnel/human_only/on_entered(datum/source, atom/movable/AM)
 	if(!ishuman(AM))
 		return
 	. = ..()
 
-/obj/effect/mine/shrapnel/sting
+/obj/item/mine/shrapnel/sting
 	name = "stinger mine"
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
 
-/obj/effect/mine/stun/mineEffect(mob/living/victim)
-	if(isliving(victim))
+/obj/item/mine/stun/mineEffect(mob/living/victim)
+	if(isliving(victim) && Adjacent(victim))
 		victim.Paralyze(stun_time)
 
-/obj/effect/mine/kickmine
+/obj/item/mine/kickmine
 	name = "kick mine"
 
-/obj/effect/mine/kickmine/mineEffect(mob/victim)
-	if(isliving(victim) && victim.client)
+/obj/item/mine/kickmine/mineEffect(mob/victim)
+	if(isliving(victim) && victim.client && Adjacent(victim))
 		to_chat(victim, "<span class='userdanger'>You have been kicked FOR NO REISIN!</span>")
 		qdel(victim.client)
 
 
-/obj/effect/mine/gas
+/obj/item/mine/gas
 	name = "oxygen mine"
 	var/gas_amount = 360
 	var/gas_type = "o2"
 
-/obj/effect/mine/gas/mineEffect(mob/victim)
+/obj/item/mine/gas/mineEffect(mob/victim)
 	atmos_spawn_air("[gas_type]=[gas_amount]")
 
 
-/obj/effect/mine/gas/plasma
+/obj/item/mine/gas/plasma
 	name = "plasma mine"
 	gas_type = "plasma"
 
 
-/obj/effect/mine/gas/n2o
+/obj/item/mine/gas/n2o
 	name = "\improper N2O mine"
 	gas_type = "n2o"
 
 
-/obj/effect/mine/gas/water_vapor
+/obj/item/mine/gas/water_vapor
 	name = "chilled vapor mine"
 	gas_amount = 500
 	gas_type = "water_vapor"
 
-/obj/effect/mine/sound
+/obj/item/mine/sound
 	name = "honkblaster 1000"
 	var/sound = 'sound/items/bikehorn.ogg'
+	anchored = TRUE
 
-/obj/effect/mine/sound/mineEffect(mob/victim)
+/obj/item/mine/sound/mineEffect(mob/victim)
 	playsound(loc, sound, 100, TRUE)
 
 
-/obj/effect/mine/sound/bwoink
+/obj/item/mine/sound/bwoink
 	name = "bwoink mine"
 	sound = 'sound/effects/adminhelp.ogg'
 
-/obj/effect/mine/pickup
-	name = "He"
-	desc = "He."
+/obj/item/mine/pickup
+	name = "pickup mine"
+	desc = "does nothing"
 	icon = 'icons/obj/marg.dmi'
 	icon_state = "marg"
 	density = FALSE
 	var/duration = 0
 	pixel_x = -8
 	pixel_y = 1
+	anchored = TRUE
 
-/obj/effect/mine/pickup/Initialize()
+/obj/item/mine/pickup/Initialize()
 	. = ..()
 	animate(src, time = 20, loop = -1)
 
-/obj/effect/mine/pickup/triggermine(mob/victim)
+/obj/item/mine/pickup/triggermine(mob/victim)
 	if(triggered)
 		return
-	triggered = 1
+	triggered = TRUE
 	invisibility = INVISIBILITY_ABSTRACT
 	mineEffect(victim)
 	qdel(src)
 
 
-/obj/effect/mine/pickup/bloodbath
-	name = "His Odium"
-	desc = "Embrace my righteous fury."
+/obj/item/mine/pickup/bloodbath
+	name = "bloody orb"
+	desc = "Embrace righteous fury."
 	duration = 1200 //2min
 	color = "#FF0000"
 	var/mob/living/doomslayer
 	var/obj/item/chainsaw/doomslayer/chainsaw
 
-/obj/effect/mine/pickup/bloodbath/mineEffect(mob/living/carbon/victim)
+/obj/item/mine/pickup/bloodbath/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
 	to_chat(victim, "<span class='reallybig redtext'>RIP AND TEAR</span>")
@@ -179,39 +327,39 @@
 	RegisterSignal(src, COMSIG_PARENT_QDELETING, PROC_REF(end_blood_frenzy))
 	QDEL_IN(WEAKREF(src), duration)
 
-/obj/effect/mine/pickup/bloodbath/proc/end_blood_frenzy()
+/obj/item/mine/pickup/bloodbath/proc/end_blood_frenzy()
 	if(doomslayer)
 		to_chat(doomslayer, "<span class='notice'>Your bloodlust seeps back into the bog of your subconscious and you regain self control.</span>")
 		doomslayer.log_message("exited a blood frenzy", LOG_ATTACK)
 	if(chainsaw)
 		qdel(chainsaw)
 
-/obj/effect/mine/pickup/bloodbath/proc/blood_delusion(mob/living/carbon/victim)
+/obj/item/mine/pickup/bloodbath/proc/blood_delusion(mob/living/carbon/victim)
 	new /datum/hallucination/delusion(victim, TRUE, "demon", duration, 0)
 
-/obj/effect/mine/pickup/healing
-	name = "His Benevolence"
-	desc = "Come, come. Your wounds shall be undone by my mercy."
+/obj/item/mine/pickup/healing
+	name = "healing orb"
+	desc = "Your wounds shall be undone."
 
 
-/obj/effect/mine/pickup/healing/mineEffect(mob/living/carbon/victim)
+/obj/item/mine/pickup/healing/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
 	to_chat(victim, "<span class='notice'>You feel great!</span>")
 	victim.revive(full_heal = TRUE, admin_revive = TRUE)
 
-/obj/effect/mine/pickup/speed
-	name = "His Purpose"
-	desc = "Come, let me quicken you to brilliance."
+/obj/item/mine/pickup/speed
+	name = "quick orb"
+	desc = "Quickens you."
 	duration = 300
 
-/obj/effect/mine/pickup/speed/mineEffect(mob/living/carbon/victim)
+/obj/item/mine/pickup/speed/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
 	to_chat(victim, "<span class='notice'>You feel fast!</span>")
 	victim.add_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	addtimer(CALLBACK(src, PROC_REF(finish_effect), victim), duration)
 
-/obj/effect/mine/pickup/speed/proc/finish_effect(mob/living/carbon/victim)
+/obj/item/mine/pickup/speed/proc/finish_effect(mob/living/carbon/victim)
 	victim.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	to_chat(victim, "<span class='notice'>You slow down.</span>")
