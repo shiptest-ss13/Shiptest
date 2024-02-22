@@ -174,12 +174,12 @@
 			held_item_overlay = null
 		return
 
-	newdir = normalize_dir_to_cardinals(newdir)
-
 	if(olddir == newdir && !force)
 		return
 
 	newdir ||= owner.dir
+
+	newdir = normalize_dir_to_cardinals(newdir)
 
 	owner.cut_overlay(held_item_overlay)
 	var/dirtext = dir2text(newdir)
