@@ -1,3 +1,10 @@
+#define REVOVLER_ROTATE_LEFT "rotate chamber left"
+#define REVOVLER_ROTATE_RIGHT "rotate chamber right"
+#define REVOVLER_AUTO_ROTATE_RIGHT_LOADING "auto rotate right when loading ammo"
+#define REVOVLER_AUTO_ROTATE_LEFT_LOADING "auto rotate left when loading ammo"
+#define REVOVLER_EJECT_CURRENT "eject current bullet"
+#define REVOVLER_EJECT_ALL "auto eject all bullets"
+
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
 	desc = "A weighty revolver with a Scarborough Arms logo engraved on the barrel. Uses .357 ammo." //usually used by syndicates
@@ -25,29 +32,16 @@
 	bolt_wording = "hammer"
 	wield_slowdown = 0.3
 
-	has_safety = FALSE //irl revolvers dont have safetys. i think. maybe
-	safety = FALSE
+	safety_wording = "hammer"
 
 	var/simulate_gunslinger = TRUE //for testing
 
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
-	var/gate_load_direction = "right" //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
-/*
-if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
-		if(flip_cooldown <= world.time)
-			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>While trying to flip the [src] you pull the trigger and accidently shoot yourself!</span>")
-				var/flip_mistake = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST)
-				process_fire(user, user, FALSE, flip_mistake)
-				user.dropItemToGround(src, TRUE)
-				return
-			flip_cooldown = (world.time + 30)
-			SpinAnimation(7,1)
-			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
-			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
-			return
-*/
+	var/gate_load_direction = REVOVLER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
+
+	COOLDOWN_DECLARE(flip_cooldown)
+
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
 	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
@@ -75,7 +69,7 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 /obj/item/gun/ballistic/revolver/proc/unload_all_ammo(mob/living/user)
 	var/num_unloaded = 0
 
-	if(!gate_loaded)
+	if(!gate_loaded) //"normal" revolvers
 		for(var/obj/item/ammo_casing/casing_to_eject in get_ammo_list(FALSE, TRUE))
 			if(!casing_to_eject)
 				continue
@@ -83,34 +77,35 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 			casing_to_eject.bounce_away(FALSE, NONE)
 			num_unloaded++
 			SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
+		chamber_round(FALSE)
 		return num_unloaded
+	else
+		var/num_to_unload = magazine.max_ammo
+		if(!get_ammo_list(FALSE))
+			return num_unloaded
 
-	var/num_to_unload = magazine.max_ammo
-
-	if(!get_ammo_list(FALSE))
-		return num_unloaded
-
-	for(var/i in 1 to num_to_unload)
-		var/doafter_time = 0.4 SECONDS
-		if(!do_mob(user,user,doafter_time))
-			break
-		if(!eject_casing())
-			doafter_time = 0 SECONDS
-		else
-			num_unloaded++
-		if(!do_mob(user,user,doafter_time))
-			break
-		chamber_round(TRUE, TRUE)
+		for(var/i in 1 to num_to_unload)
+			var/doafter_time = 0.4 SECONDS
+			if(!do_mob(user,user,doafter_time))
+				break
+			if(!eject_casing())
+				doafter_time = 0 SECONDS
+			else
+				num_unloaded++
+			if(!do_mob(user,user,doafter_time))
+				break
+			chamber_round(TRUE, TRUE)
 
 	if (num_unloaded)
 		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 		update_appearance()
 		return num_unloaded
 
-/obj/item/gun/ballistic/revolver/proc/eject_casing(mob/living/user)
+/obj/item/gun/ballistic/revolver/proc/eject_casing(mob/living/user, obj/item/ammo_casing/casing_to_eject, casing_index)
 	var/list/rounds = magazine.ammo_list()
-	var/obj/item/ammo_casing/casing_to_eject = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	if(!casing_to_eject)
+		casing_to_eject = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
+	if(!casing_to_eject) //if theres STILL nothing, we cancel this
 		if(user)
 			to_chat(user, "<span class='warning'>There's nothing in the gate to eject from [src]!</span>")
 		return FALSE
@@ -118,9 +113,14 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 	casing_to_eject.forceMove(drop_location())
 	casing_to_eject.bounce_away(FALSE, NONE)
 	SSblackbox.record_feedback("tally", "station_mess_created", 1, casing_to_eject.name)
-	magazine.stored_ammo[gate_offset+1] = null
+	if(!gate_loaded)
+		magazine.stored_ammo[casing_index] = null
+		chamber_round(FALSE)
+	else
+		magazine.stored_ammo[gate_offset+1] = null
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
+
 
 	if(user)
 		to_chat(user, "<span class='notice'>You eject the [cartridge_wording] from [src].</span>")
@@ -132,19 +132,36 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 	var/list/rounds = magazine.ammo_list()
 	var/obj/item/ammo_casing/slot = rounds[gate_offset+1] //byond arrays start at 1, so we add 1 to get the correct index
 	var/doafter_time = 0.4 SECONDS
-	if(slot)
-		if(!slot.BB && allow_ejection)
-			if(do_mob(user,user,doafter_time))
-				eject_casing(user)
+	if(!gate_loaded) //"normal" revolvers
+		for(var/i in 1 to magazine.stored_ammo.len)
+			var/obj/item/ammo_casing/casing_to_eject = magazine.stored_ammo[i]
+			if(casing_to_eject)
+				if(!casing_to_eject.BB && allow_ejection)
+					eject_casing(user, casing_to_eject, i)
 
-	rounds = magazine.ammo_list()
-	slot = rounds[gate_offset+1] //check again
-	if(slot)
-		to_chat(user, "<span class='warning'>There's already a casing in the gate of [src]!</span>")
-		return FALSE
+			casing_to_eject = magazine.stored_ammo[i] //check again
+			if(casing_to_eject)
+				continue
+			else
+				magazine.stored_ammo[i] = casing_to_insert
+				casing_to_insert.forceMove(magazine)
+				chamber_round(FALSE)
+				break
+	else
+		if(slot)
+			if(!slot.BB && allow_ejection)
+				if(do_mob(user,user,doafter_time))
+					eject_casing(user)
 
-	magazine.stored_ammo[gate_offset+1] = casing_to_insert
-	casing_to_insert.forceMove(magazine)
+		rounds = magazine.ammo_list()
+		slot = rounds[gate_offset+1] //check again
+		if(slot)
+			to_chat(user, "<span class='warning'>There's already a casing in the gate of [src]!</span>")
+			return FALSE
+
+		magazine.stored_ammo[gate_offset+1] = casing_to_insert
+		casing_to_insert.forceMove(magazine)
+
 	playsound(src, load_sound, load_sound_volume, load_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
@@ -155,9 +172,6 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 
 
 /obj/item/gun/ballistic/revolver/attackby(obj/item/attacking_obj, mob/user, params)
-	if(!gate_loaded)
-		return ..()
-
 	if (istype(attacking_obj, /obj/item/ammo_casing) || istype(attacking_obj, /obj/item/ammo_box))
 		if(istype(attacking_obj, /obj/item/ammo_casing))
 			insert_casing(user, attacking_obj, TRUE)
@@ -165,42 +179,62 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 			var/obj/item/ammo_box/attacking_box = attacking_obj
 			var/num_loaded = 0
 			var/num_to_load = magazine.max_ammo
-
 			var/list/ammo_list_no_empty = get_ammo_list(FALSE)
 			listclearnulls(ammo_list_no_empty)
 
 			if(ammo_list_no_empty.len >= num_to_load)
-				return num_loaded
+				to_chat(user, "<span class='warning'>There's no empty space in [src]!</span>")
+				return TRUE
 
-			var/i = 0
-			for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
-				if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
-					break
-				var/doafter_time = 0.4 SECONDS
-				if(!do_mob(user,user,doafter_time))
-					break
-				if(!insert_casing(null, casing_to_insert, FALSE))
-					doafter_time = 0 SECONDS
-				else
-					num_loaded++
-					attacking_box.update_appearance()
-					attacking_box.stored_ammo -= casing_to_insert
-				if(!do_mob(user,user,doafter_time))
-					break
-				switch(gate_load_direction)
-					if("right")
-						chamber_round(TRUE)
-					if("left")
-						chamber_round(TRUE, TRUE)
-				i++
-				if(i >= num_to_load)
-					break
+			if(!gate_loaded) //"normal" revolvers
+				var/i = 0
+				for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
+					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
+						break
+					var/doafter_time = 0.8 SECONDS
+					if(magazine.instant_load && attacking_box.instant_load)
+						doafter_time = 0 SECONDS
+					if(!do_mob(user,user,doafter_time))
+						break
+					if(!insert_casing(user, casing_to_insert, FALSE))
+						break
+					else
+						num_loaded++
+						attacking_box.update_appearance()
+						attacking_box.stored_ammo -= casing_to_insert
+					i++
+					if(i >= num_to_load)
+						break
+			else
+				var/i = 0
+				for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
+					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
+						break
+					var/doafter_time = 0.4 SECONDS
+					if(!do_mob(user,user,doafter_time))
+						break
+					if(!insert_casing(null, casing_to_insert, FALSE))
+						doafter_time = 0 SECONDS
+					else
+						num_loaded++
+						attacking_box.update_appearance()
+						attacking_box.stored_ammo -= casing_to_insert
+					if(!do_mob(user,user,doafter_time))
+						break
+					switch(gate_load_direction)
+						if(REVOVLER_AUTO_ROTATE_RIGHT_LOADING)
+							chamber_round(TRUE)
+						if(REVOVLER_AUTO_ROTATE_LEFT_LOADING)
+							chamber_round(TRUE, TRUE)
+					i++
+					if(i >= num_to_load)
+						break
 
 			if(num_loaded)
 				to_chat(user, "<span class='notice'>You load [num_loaded] [cartridge_wording]\s into [src].</span>")
 				attacking_box.update_appearance()
 				update_appearance()
-			return
+			return TRUE
 	else
 		return ..()
 
@@ -209,67 +243,76 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 	return
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
-/obj/item/gun/ballistic/revolver/rack(mob/user = null)
+/obj/item/gun/ballistic/revolver/rack(mob/user = null, toggle_hammer = TRUE)
 	if(user)
-		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
+		if(safety && toggle_hammer)
+			toggle_safety(user, FALSE, FALSE)
+		else if(toggle_hammer)
+			to_chat(user, "<span class='warning'>The [safety_wording] is already [safety ? "<span class='green'>UP</span>" : "<span class='red'>DOWN</span>"]! Use Ctrl-Click to disengage the [safety_wording]!</span>")
+			return
+	else
+		if(safety && toggle_hammer)
+			toggle_safety(null, FALSE, FALSE)
+		else if (toggle_hammer)
+			return
 	chamber_round(TRUE)
-	playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+	//playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 	update_appearance()
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE, counter_clockwise = FALSE)
 	if(spin_cylinder)
 		chambered = magazine.get_round(TRUE, counter_clockwise)
+		playsound(src, 'sound/weapons/gun/revolver/spin_single.ogg', 100, FALSE)
 	else
 		chambered = magazine.stored_ammo[1]
-	playsound(src, 'sound/weapons/gun/revolver/spin_single.ogg', 100, FALSE)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
 
 /obj/item/gun/ballistic/revolver/AltClick(mob/user)
 	if (unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return ..()
 
-	if(!simulate_gunslinger)
+	if(!HAS_TRAIT(user, TRAIT_GUNSLINGER)) //hide this complicated shit behind a quirk
 		spin()
 		return
 
 	var/chamber_options = list(
-		"rotate chamber left" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_left"),
-		"rotate chamber right" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_right"),
-		"auto rotate left when loading ammo" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_left"),
-		"auto eject all bullets" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_all"),
-		"eject current bullet" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_one"),
-		"auto rotate right when loading ammo" = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_right"),
+		REVOVLER_ROTATE_LEFT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_left"),
+		REVOVLER_ROTATE_RIGHT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_right"),
+		REVOVLER_AUTO_ROTATE_LEFT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_left"),
+		REVOVLER_EJECT_ALL = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_all"),
+		REVOVLER_EJECT_CURRENT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_one"),
+		REVOVLER_AUTO_ROTATE_RIGHT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_right"),
 		)
 
 	var/image/editing_image
-	if(gate_load_direction == "right")
-		editing_image = chamber_options["auto rotate right when loading ammo"]
+	if(gate_load_direction == REVOVLER_AUTO_ROTATE_RIGHT_LOADING)
+		editing_image = chamber_options[REVOVLER_AUTO_ROTATE_RIGHT_LOADING]
 		editing_image.icon_state = "radial_revolver_auto_right_on"
 	else
-		editing_image = chamber_options["auto rotate left when loading ammo"]
+		editing_image = chamber_options[REVOVLER_AUTO_ROTATE_LEFT_LOADING]
 		editing_image.icon_state = "radial_revolver_auto_left_on"
 
 	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
-		chamber_options -= "auto rotate left when loading ammo"
-		chamber_options -= "auto rotate right when loading ammo"
-		chamber_options -= "eject current bullet"
+		chamber_options -= REVOVLER_AUTO_ROTATE_LEFT_LOADING
+		chamber_options -= REVOVLER_AUTO_ROTATE_RIGHT_LOADING
+		chamber_options -= REVOVLER_EJECT_CURRENT
 
 
 	var/pick = show_radial_menu(user, src, chamber_options, custom_check = CALLBACK(src, PROC_REF(can_use_radial), user), require_near = TRUE)
 	switch(pick)
-		if("rotate chamber left")
+		if(REVOVLER_ROTATE_LEFT)
 			chamber_round(TRUE, TRUE)
-		if("rotate chamber right")
+		if(REVOVLER_ROTATE_RIGHT)
 			chamber_round(TRUE)
-		if("auto rotate right when loading ammo")
-			gate_load_direction = "right"
-		if("auto rotate left when loading ammo")
-			gate_load_direction = "left"
-		if("auto eject all bullets")
+		if(REVOVLER_AUTO_ROTATE_RIGHT_LOADING)
+			gate_load_direction = REVOVLER_AUTO_ROTATE_RIGHT_LOADING
+		if(REVOVLER_AUTO_ROTATE_LEFT_LOADING)
+			gate_load_direction = REVOVLER_AUTO_ROTATE_LEFT_LOADING
+		if(REVOVLER_EJECT_ALL)
 			unload_all_ammo(user)
 			return
-		if("eject current bullet")
+		if(REVOVLER_EJECT_CURRENT)
 			eject_casing(user)
 		if(null)
 			return
@@ -319,6 +362,22 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		boolets += magazine.ammo_count(countempties)
 	return boolets
 
+/obj/item/gun/ballistic/revolver/toggle_safety(mob/user, silent=FALSE, rack_gun=TRUE)
+	safety = !safety
+
+	if(!silent)
+		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+		if(user)
+			user.visible_message(
+				span_notice("[user] pulls the [safety_wording] on [src] [safety ? "<span class='green'>UP</span>" : "<span class='red'>DOWN</span>"]."),
+				span_notice("You pull the [safety_wording] on [src] [safety ? "<span class='green'>UP</span>" : "<span class='red'>DOWN</span>"]."),
+			)
+
+	update_appearance()
+
+	if(rack_gun)
+		rack(toggle_hammer= FALSE)
+
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
 	var/live_ammo = get_ammo(FALSE, FALSE)
@@ -327,11 +386,46 @@ if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
 		. += "It can be spun with <b>alt+click</b>"
 
 /obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	var/fan = FALSE
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety)
+		fan = TRUE
 	. = ..()
-	if(simulate_gunslinger && !semi_auto && !wielded && loc == user)
+	if(fan)
 		rack()
 		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
 
+/obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
+	. = ..()
+	if(!semi_auto)
+		toggle_safety(silent = TRUE, rack_gun = FALSE)
+
+/obj/item/gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
+	if(!safety)
+		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
+		playsound(src, dry_fire_sound, 30, TRUE)
+		if(!semi_auto)
+			toggle_safety(silent = TRUE, rack_gun = FALSE)
+		return
+	to_chat(user, "<span class='danger'>The hammer is up on [src]! Pull it down to fire!</span>")
+
+/obj/item/gun/ballistic/revolver/pickup(mob/user)
+	. = ..()
+	tryflip(user)
+
+/obj/item/gun/ballistic/revolver/proc/tryflip(mob/living/user)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER))
+		if(COOLDOWN_FINISHED(src, flip_cooldown))
+			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
+				to_chat(user, "<span class='userdanger'>While trying to flip the [src] you pull the trigger and accidently shoot yourself!</span>")
+				var/flip_mistake = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST)
+				process_fire(user, user, FALSE, flip_mistake)
+				user.dropItemToGround(src, TRUE)
+				return
+			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
+			SpinAnimation(10,1)
+			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
+			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
+			return
 /obj/item/gun/ballistic/revolver/detective
 	name = "\improper HP Detective Special"
 	desc = "A small law enforcement firearm. Originally commissioned by Nanotrasen for their Private Investigation division, it has become extremely popular among independent civilians as a cheap, compact sidearm. Uses .38 Special rounds."

@@ -88,7 +88,6 @@
 	var/recent_rack = 0
 	///Whether the gun can be sawn off by sawing tools
 	var/can_be_sawn_off  = FALSE
-	var/flip_cooldown = 0
 
 	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
 	var/tac_reloads = TRUE //Snowflake mechanic no more.

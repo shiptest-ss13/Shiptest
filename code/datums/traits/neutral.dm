@@ -226,3 +226,11 @@
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
 
+/datum/quirk/gunslinger
+	name = "Gunslinger"
+	desc = "You are one of the fastest guns in the frontier. Those new-fangled and complicated firearms don't suit you; pistols and semi-automatic rifles suit you better, but particularly revolvers. NOT RECOOMENDED FOR BEGINNERS."
+	value = 0
+	gain_text = "<span class='notice'>The HP Shadow is greatest handgun ever made.</span>"
+	lose_text = "<span class='notice'>...Who the hell would use such antiquated weapons in this year?</span>"
+	medical_record_text = "Patient always has their hand around their holster."
+	mob_traits = list(TRAIT_GUNSLINGER)

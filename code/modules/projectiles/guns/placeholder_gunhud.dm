@@ -1,14 +1,8 @@
-// Ammo counter
-#define ui_ammocounter "EAST-1:28,CENTER+1:25"
-
-///The gun needs to update the gun hud!
-#define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
-
-/datum/hud
-	var/atom/movable/screen/ammo_counter //SKYRAT EDIT ADDITION
-
 /*
 *	Customizable ammo hud
+*	- Adapted from SR's gun hud. Most of the bad stuff was cut out and sprites were mostly replace by some azlan did years ago.
+*	- var names and code have been cleaned up, for the most parts. There still some weirdly named stuff like the number hud (wtf does OTH even mean?)
+*	- Most of this SHOULDN'T be used yet, only instance of this being used at the moment is the revolver which has completely differnt behavior
 */
 
 /*
@@ -20,6 +14,15 @@
 *	proc/set_hud
 *	Check the gun_hud.dmi for all available icons you can use.
 */
+
+// Ammo counter
+#define ui_ammocounter "EAST-1:28,CENTER+1:25"
+
+///The gun needs to update the gun hud!
+#define COMSIG_UPDATE_AMMO_HUD "update_ammo_hud"
+
+/datum/hud
+	var/atom/movable/screen/ammo_counter
 
 /atom/movable/screen/ammo_counter
 	name = "ammo counter"
@@ -226,46 +229,10 @@
 			oth_t = "[prefix]t9"
 			oth_h = "[prefix]h9"
 	hud.set_hud(backing_color, oth_o, oth_t, oth_h, indicator)
-/*
+
 /datum/component/ammo_hud/laser/cybersun
 	prefix = "cybersun_"
 
-/obj/item/gun/energy/laser/thunder
-	name = "CS-M18 'Thunder' SLG"
-	desc = "cybersun smg yayyyy"
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	icon_state = "thunder"
-	ammo_x_offset = 2
-	charge_sections = 5
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/smg/cybersun)
-	cell_type = /obj/item/stock_parts/cell/gun/upgraded
-	vary_fire_sound = FALSE
-
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-
-	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
-	spread_unwielded = 30
-
-/obj/item/gun/energy/laser/thunder/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
-	AddComponent(/datum/component/ammo_hud/laser/cybersun)
-
-/obj/item/ammo_casing/energy/laser/smg/cybersun
-	fire_sound = 'sound/weapons/gun/laser/cs-fire.ogg'
-	projectile_type = /obj/projectile/beam/weak/cybersun
-	e_cost = 625 //32 shots
-	select_name = "kill"
-	delay = 0.15 SECONDS
-
-/obj/projectile/beam/weak/cybersun
-	damage = 15
-	armour_penetration = -10
-	icon_state = "red_1"
-*/
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
@@ -273,6 +240,17 @@
 
 /datum/component/ammo_hud/revolver
 	prefix = "revolver_"
+
+/datum/component/ammo_hud/revolver/turn_on()
+	var/obj/item/gun/ballistic/revolver/gun = parent
+	if(!HAS_TRAIT(gun.loc, TRAIT_GUNSLINGER))
+		return
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/turn_off)
+	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), .proc/update_hud)
+
+	hud.turn_on()
+	update_hud()
+
 
 /// Returns get_ammo() with the appropriate args passed to it - some guns like the revolver and bow are special cases
 /datum/component/ammo_hud/revolver/get_accurate_ammo_count(obj/item/gun/ballistic/revolver/the_gun)
@@ -282,7 +260,8 @@
 			return the_revolver.magazine.ammo_list()
 		else
 			return FALSE
-/*
+
+/* //for counter-clockwise, kept here for reference
 	var/list/round_positions = list(
 		list("x" = 12,"y" = 22),
 

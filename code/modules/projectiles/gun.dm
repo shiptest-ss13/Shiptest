@@ -737,9 +737,9 @@
 		var/mutable_appearance/safety_overlay
 		safety_overlay = mutable_appearance('icons/obj/guns/safety.dmi')
 		if(safety)
-			safety_overlay.icon_state = "safety-on"
+			safety_overlay.icon_state = "[safety_wording]-on"
 		else
-			safety_overlay.icon_state = "safety-off"
+			safety_overlay.icon_state = "[safety_wording]-off"
 		. += safety_overlay
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
