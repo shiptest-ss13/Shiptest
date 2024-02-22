@@ -718,8 +718,8 @@
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/air
-	name = "canned air"
-	desc = "There is no air shortage. Do not drink."
+	name = "Tradewind Canned"
+	desc = "Intended to be filled with air from home planets for the sake of nostalgia after it's initial failure as an emergency method of 'canning air'. Tradewind Canned - a breath from home."
 	icon_state = "air"
 	list_reagents = list(/datum/reagent/nitrogen = 24, /datum/reagent/oxygen = 6)
 
