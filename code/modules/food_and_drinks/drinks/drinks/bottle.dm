@@ -156,7 +156,7 @@
 	AddComponent(/datum/component/butchering, 200, 55)
 
 /obj/item/reagent_containers/food/drinks/bottle/gin
-	name = "Neue Wacholder gin"
+	name = "Neue Wacholder Gin"
 	desc = "A bottle of high quality gin, cultivated from juniper berries grown across the Solar cantons. Brewed in Stuteföhle."
 	icon_state = "ginbottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/gin = 100)
@@ -259,57 +259,15 @@
 	foodtype = FRUIT | ALCOHOL
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe
-	name = "extra-strong absinthe"
-	desc = "An strong alcoholic drink brewed and distributed by"
+	name = "Severtail Green"
+	desc = "Strong absinthe brewed in the Pan-Gezenan Federation, with their own transplants of Wormwood gifted to them during the first contact with humankind. If the legend (and label) means anything, the first attempt at brewing this caused some poor sarathi's tail to fall off."
 	icon_state = "absinthebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 100)
-
-/obj/item/reagent_containers/food/drinks/bottle/absinthe/Initialize()
-	. = ..()
-	redact()
-
-/obj/item/reagent_containers/food/drinks/bottle/absinthe/proc/redact()
-	// There was a large fight in the coderbus about a player reference
-	// in absinthe. Ergo, this is why the name generation is now so
-	// complicated. Judge us kindly.
-	var/shortname = pickweight(
-		list("T&T" = 1, "A&A" = 1, "Generic" = 1))
-	var/fullname
-	switch(shortname)
-		if("T&T")
-			fullname = "Teal and Tealer"
-		if("A&A")
-			fullname = "Ash and Asher"
-		if("Generic")
-			fullname = "Nanotrasen Cheap Imitations"
-	var/removals = list("\[REDACTED\]", "\[EXPLETIVE DELETED\]",
-		"\[EXPUNGED\]", "\[INFORMATION ABOVE YOUR SECURITY CLEARANCE\]",
-		"\[MOVE ALONG CITIZEN\]", "\[NOTHING TO SEE HERE\]")
-	var/chance = 50
-
-	if(prob(chance))
-		shortname = pick_n_take(removals)
-
-	var/list/final_fullname = list()
-	for(var/word in splittext(fullname, " "))
-		if(prob(chance))
-			word = pick_n_take(removals)
-		final_fullname += word
-
-	fullname = jointext(final_fullname, " ")
-
-	// Actually finally setting the new name and desc
-	name = "[shortname] [name]"
-	desc = "[desc] [fullname] Inc."
-
 
 /obj/item/reagent_containers/food/drinks/bottle/absinthe/premium
 	name = "Chacheyi Gold"
 	desc = "A higher shelf absinthe, distributed primarily from The Shoal. Features the folkhero Chacheyi on the label, alongside their goldgrub companions."
 	icon_state = "absinthepremium"
-
-/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium/redact()
-	return
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
 	name = "bottle of Blueflame Pyrecask"

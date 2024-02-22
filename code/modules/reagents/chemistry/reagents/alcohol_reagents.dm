@@ -394,7 +394,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/cognac
 	name = "Cognac"
-	description = "A sweet and strongly alcoholic drink, made after numerous distillations and years of maturing. Classy as fornication."
+	description = "A sweet and strongly alcoholic drink, made after numerous distillations and years of maturing."
 	color = "#AB3C05" // rgb: 171, 60, 5
 	boozepwr = 75
 	taste_description = "sharp and relaxing"
