@@ -65,6 +65,14 @@
 					/obj/item/gun/energy/laser)
 	crate_name = "laser crate"
 
+/datum/supply_pack/gun/laser
+	name = "Mini Energy Gun Crate"
+	desc = "Contains two small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
+	cost = 1500
+	contains = list(/obj/item/gun/energy/e_gun/mini,
+					/obj/item/gun/energy/e_gun/mini)
+	crate_name = "laser crate"
+
 /datum/supply_pack/gun/energy
 	name = "Energy Guns Crate"
 	desc = "Contains two versatile energy guns, capable of firing both nonlethal and lethal blasts of light."

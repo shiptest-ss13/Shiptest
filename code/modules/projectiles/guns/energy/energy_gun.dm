@@ -31,6 +31,12 @@
 	flight_x_offset = 19
 	flight_y_offset = 13
 
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 /obj/item/gun/energy/e_gun/mini/Initialize()
 	set_gun_light(new /obj/item/flashlight/seclite(src))
 	return ..()
@@ -193,6 +199,13 @@
 	ammo_x_offset = 2
 	charge_sections = 6
 	small_gun = TRUE
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 
