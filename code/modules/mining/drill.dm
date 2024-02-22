@@ -145,7 +145,7 @@
 			to_chat(user, "<span class='notice'>You unsecure the [src] from the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
-			if(mining.spawner)
+			if(mining?.spawner)
 				STOP_PROCESSING(SSprocessing, mining.spawner)
 				mining.spawning_started = FALSE
 			mining = null
