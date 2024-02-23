@@ -16,14 +16,20 @@
 	/// Is our mine live?
 	var/armed = FALSE
 	// Sets a delay for mines going live after being planted
-	var/arm_delay = 3 SECONDS
-	/// Use to set a delay after activation to trigger the explosion. WIP
+	var/arm_delay = 5 SECONDS
+	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 SECONDS
 
 	///armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
 	var/stealthpwr = 204
 	///Chance of a successful disarm.
 	var/disarmchance = 65
+
+	///when true, mines explode instantly on being stepped upon
+	var/hair_trigger = FALSE
+
+	///bruteforce solution. has the mine loc been entered
+	var/clicked = FALSE
 
 	/// Who's got their foot on the mine's pressure plate
 	/// Stepping on the mine will set this to the first mob who stepped over it
@@ -78,12 +84,16 @@
 
 	foot_on_mine = WEAKREF(arrived)
 	visible_message(span_userdanger("[icon2html(src, viewers(src))] *click*"))
+	if(hair_trigger && clicked)
+		triggermine(arrived)
+	clicked = TRUE
 	alpha = 204
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
 /obj/item/mine/proc/on_exited(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
-
+	if(!clicked)
+		return
 	if(!can_trigger(gone))
 		return
 	// Check that the guy who's on it is stepping off
@@ -95,7 +105,7 @@
 
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
-	if(prob(75))
+	if(prob(65))
 		triggermine()
 
 /// When something sets off a mine
@@ -162,6 +172,7 @@
 			user.visible_message(span_notice("[user] carefully disarms \the [src]."), span_notice("You carefully disarm the [src]."))
 			anchored = FALSE
 			armed = FALSE
+			clicked = FALSE
 			update_appearance(UPDATE_ICON_STATE)
 			return
 		else
@@ -172,6 +183,7 @@
 					user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
 					anchored = FALSE
 					armed = FALSE
+					clicked = FALSE
 					return
 				else
 					user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it explodes in \his hands!"), span_userdanger("You attempt to pick up \the [src] only to hear a beep as it explodes in your hands!"))
@@ -191,6 +203,7 @@
 					playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 					anchored = FALSE
 					armed = FALSE
+					clicked = FALSE
 					update_appearance(UPDATE_ICON_STATE)
 				else
 					if(prob(35))//yipee!!
@@ -207,37 +220,44 @@
 	else
 		to_chat(user, span_notice("You hit \the [src] with [I]. Thankfully, nothing happens."))
 
+
 /obj/item/mine/explosive
 	name = "landmine"
 	desc = "An anti infantry explosive produced en-masse during the corporate wars. Watch your step."
 
 	//customize explosive power
 	var/range_devastation = 0
-	var/range_heavy = 3
-	var/range_light = 4
+	var/range_heavy = 2
+	var/range_light = 3
+	var/range_flame = 1
+
 	//using this to indicate pb
 	var/range_flash = 2
-	var/range_flame = 0
 
 	//customize shrapnel. Magnitude zero prevents them from spawning
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 0.5
+	var/shrapnel_magnitude = 1
 
 	/// If TRUE, we spawn extra pellets to eviscerate the person who stepped on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
-	var/shred_triggerer = FALSE
+	var/shred_triggerer = TRUE
 
-	stealthpwr = 85
+	stealthpwr = 100
+
 
 /obj/item/mine/explosive/mineEffect(mob/victim)
 	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
-	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+	if(shrapnel_magnitude > 0)
+		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+
 
 /obj/item/mine/explosive/fire
 	name = "incendiary landmine"
 	desc = "An anti infantry explosive that ignites nearby targets. Watch your step. "
+
 	range_flame = 7
 	range_light = 3
 	range_flash = 2
+
 	shrapnel_magnitude = 0
 
 /obj/item/mine/explosive/heavy
@@ -250,7 +270,6 @@
 
 	range_heavy = 2
 	range_light = 4
-	range_flash = 2
 
 	shrapnel_magnitude = 3
 	shred_triggerer = TRUE
@@ -266,7 +285,24 @@
 
 /obj/item/mine/explosive/shrapnel/sting
 	name = "stinger mine"
+	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise anti-NT protestors. The bands of soft ballistic gel inside stick to targets and incapacitate without causing serious maiming. In Theory."
+
+	range_heavy = 0
+	range_light = 0
+	range_flash = 3
+	range_flame = 0
+
+	hair_trigger = TRUE
+	shrapnel_magnitude = 3
+	shred_triggerer = TRUE
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
+
+
+
+//UNUSED MINES//
+//varying levels of useless.
+
+
 
 /obj/item/mine/stun
 	name = "stun mine"
@@ -275,16 +311,6 @@
 /obj/item/mine/stun/mineEffect(mob/living/victim)
 	if(isliving(victim) && Adjacent(victim))
 		victim.Paralyze(stun_time)
-
-/obj/item/mine/kickmine
-	name = "kick mine"
-	blast_delay = null//funnier this way
-
-/obj/item/mine/kickmine/mineEffect(mob/victim)
-	if(isliving(victim) && victim.client && Adjacent(victim))
-		to_chat(victim, "<span class='userdanger'>You have been kicked FOR NO REISIN!</span>")
-		qdel(victim.client)
-
 
 /obj/item/mine/gas
 	name = "oxygen mine"
@@ -310,10 +336,31 @@
 	gas_amount = 500
 	gas_type = "water_vapor"
 
+
+//GIMMICK MINES//
+//pretty much exclusively for adminbus
+//use these at your own risk, I haven't tested them
+
+
+/obj/item/mine/kickmine
+	name = "kick mine"
+	blast_delay = null//funnier this way
+	hair_trigger = TRUE
+	anchored = TRUE
+	armed = TRUE
+
+/obj/item/mine/kickmine/mineEffect(mob/victim)
+	if(isliving(victim) && victim.client && Adjacent(victim))
+		to_chat(victim, "<span class='userdanger'>You have been kicked FOR NO REISIN!</span>")
+		qdel(victim.client)
+
 /obj/item/mine/sound
 	name = "honkblaster 1000"
 	var/sound = 'sound/items/bikehorn.ogg'
 	anchored = TRUE
+	armed = TRUE
+	blast_delay = null
+	hair_trigger = TRUE
 
 /obj/item/mine/sound/mineEffect(mob/victim)
 	playsound(loc, sound, 100, TRUE)
@@ -333,6 +380,9 @@
 	pixel_x = -8
 	pixel_y = 1
 	anchored = TRUE
+	armed = TRUE
+	blast_delay = null
+	hair_trigger = TRUE
 
 /obj/item/mine/pickup/Initialize()
 	. = ..()
@@ -391,7 +441,6 @@
 /obj/item/mine/pickup/healing
 	name = "healing orb"
 	desc = "Your wounds shall be undone."
-
 
 /obj/item/mine/pickup/healing/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
