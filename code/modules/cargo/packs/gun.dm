@@ -142,7 +142,7 @@
 
 /datum/supply_pack/gun/skm
 	name = "SKM-24 Rifle Crate"
-	desc = "Contains two high-powered, automatic rifles chambered in 7.62x40mm CLIP."
+	desc = "Contains a high-powered, automatic rifles chambered in 7.62x40mm CLIP."
 	cost = 5000
 	contains = list(/obj/item/gun/ballistic/automatic/assault/skm)
 	crate_name = "auto rifle crate"
