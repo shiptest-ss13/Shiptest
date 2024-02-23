@@ -122,7 +122,7 @@
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
 	if(prob(65))
-		blast_delay * 3
+		blast_delay = blast_delay * 3
 		triggermine()
 
 /// When something sets off a mine
@@ -188,7 +188,7 @@
 /obj/item/mine/attack_hand(mob/user)
 	if(armed)
 		user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
-		if(do_after(user, 5 SECONDS, target = src))
+		if(do_after(user, 5 SECONDS, target = src))//SO SO generous. You can still step back from the edge.
 			if(prob(10))
 				user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
 				anchored = FALSE
@@ -196,10 +196,12 @@
 				clicked = FALSE
 				update_appearance(UPDATE_ICON_STATE)
 			else
-				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it explodes in your hands!"))
+				anchored = FALSE
+				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hands!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
 				triggermine(user)
-				update_appearance(UPDATE_ICON_STATE)
 				return
+		else
+			user.visible_message(span_notice("[user] withdraws their hand from \the [src]."), span_notice("You decide against picking up \the [src]."))
 	. =..()
 
 //handles disarming(and failing to disarm)
