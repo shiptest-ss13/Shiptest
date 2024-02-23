@@ -8,9 +8,9 @@
 	w_class = WEIGHT_CLASS_TINY
 	item_flags = DROPDEL
 
-/obj/item/shrapnel/stingball // stingbang grenades
+/obj/item/shrapnel/stingball
 	name = "clump of ballistic gel"
-	embedding = list(embed_chance=90, fall_chance=3, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=5, jostle_pain_mult=6, rip_time=15, embed_chance_turf_mod=-100)
+	embedding = list(embed_chance=15, fall_chance=1, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=1, pain_mult=3, jostle_pain_mult=5, rip_time=15, embed_chance_turf_mod=-100)
 	icon_state = "tiny"
 
 /obj/item/shrapnel/bullet // bullets
@@ -48,7 +48,7 @@
 
 /obj/projectile/bullet/pellet/stingball
 	name = "ballistic gel clump"
-	damage = 3
+	damage = 1
 	stamina = 12
 	ricochets_max = 6
 	ricochet_chance = 66
@@ -57,7 +57,7 @@
 	ricochet_auto_aim_angle = 10
 	ricochet_auto_aim_range = 2
 	ricochet_incidence_leeway = 0
-	knockdown = 25
+	knockdown = 20
 	shrapnel_type = /obj/item/shrapnel/stingball
 
 /obj/projectile/bullet/pellet/stingball/mega

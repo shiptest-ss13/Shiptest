@@ -22,14 +22,17 @@
 
 	///armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
 	var/stealthpwr = 204
-	///Chance of a successful disarm.
-	var/disarmchance = 65
 
 	///when true, mines explode instantly on being stepped upon
 	var/hair_trigger = FALSE
 
 	///bruteforce solution. has the mine loc been entered
 	var/clicked = FALSE
+	///disables the mine without disarming it. perfect for practical jokes
+	var/clickblock = FALSE
+
+	//are the wires exposed?
+	var/open_panel = FALSE
 
 	/// Who's got their foot on the mine's pressure plate
 	/// Stepping on the mine will set this to the first mob who stepped over it
@@ -44,6 +47,7 @@
 		COMSIG_ATOM_EXITED = PROC_REF(on_exited),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	wires = new /datum/wires/mine(src)
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -86,14 +90,15 @@
 
 	if(ismob(arrived))
 		var/mob/living/fool = arrived
-		fool.Immobilize(15, TRUE)
+		fool.Immobilize(10, TRUE)
 		fool.do_alert_animation(fool)
 		to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
 
 	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
 	if(hair_trigger && clicked)
 		triggermine(arrived)
-	clicked = TRUE
+	if(clickblock == FALSE)//see wirecutting
+		clicked = TRUE
 	alpha = 204
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
@@ -125,7 +130,7 @@
 		visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] begins to flash bright red!"))
 	triggered = TRUE
 	update_appearance(UPDATE_ICON_STATE)
-	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 60, FALSE, -2)
+	playsound(src, 'sound/items/mine_activate.ogg', 60, FALSE, -2)
 	light_color = "#FF0000"
 	light_power = 3
 	light_range = 2
@@ -174,75 +179,129 @@
 
 //trying to pick up a live mine is probably up there when it comes to terrible ideas
 /obj/item/mine/attack_hand(mob/user)
-	if (armed)
-		if(disarmchance == 100)//you can just have it at this point
-			user.visible_message(span_notice("[user] carefully disarms \the [src]."), span_notice("You carefully disarm the [src]."))
-			anchored = FALSE
-			armed = FALSE
-			clicked = FALSE
-			update_appearance(UPDATE_ICON_STATE)
-			return
-		else
-			user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
-			if(do_after(user, 25, target = src))
-				var/badchance = clamp(disarmchance / 6, 1, 100)
-				if(prob(badchance))
-					user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
-					anchored = FALSE
-					armed = FALSE
-					clicked = FALSE
-					return
-				else
-					user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it explodes in \his hands!"), span_userdanger("You attempt to pick up \the [src] only to hear a beep as it explodes in your hands!"))
-					triggermine()
-					update_appearance(UPDATE_ICON_STATE)
-					return
-	. =..()
-
-//handles disarming(and failing to disarm)
-/obj/item/mine/attackby(obj/item/I, mob/user)
-	if(!armed)
-		to_chat(user, span_notice("You hit \the [src] with [I]. Thankfully, nothing happens."))
-		return
-	if(I.tool_behaviour == TOOL_MULTITOOL)//multitools can disarm
-		user.visible_message(span_danger("[user] starts to carefully disarm \the [src]."), span_danger("You begin to disarm \the [src]. Careful now..."))
-		if(do_after(user, 30))
-			if(prob(disarmchance))
-				user.visible_message(span_danger("[user] has disarmed \the [src]."), span_danger("You have disarmed \the [src]! Phew."))
-				playsound(src, 'sound/machines/click.ogg', 100, TRUE)
+	if(armed)
+		user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
+		if(do_after(user, 5 SECONDS, target = src))
+			if(prob(10))
+				user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
 				anchored = FALSE
 				armed = FALSE
 				clicked = FALSE
 				update_appearance(UPDATE_ICON_STATE)
 			else
-				if(prob(35))//yipee!!
-					user.visible_message(span_danger("[user] accidentally triggers \the [src]."), span_userdanger("[icon2html(src, viewers(src))]\The [src]'s light goes red. <b>Uh oh</b>."))
-					triggermine(user)
-				else
-					user.visible_message(span_danger("[user] fails to defuse \the [src]."), span_danger("[icon2html(src, viewers(src))]\the [src]'s light flickers ominously. Thankfully, nothing happens."))
-	else//please stop hitting the mine with a rock
-		if(user.a_intent != INTENT_HARM)//are you SURE you want to hit the mine with a rock
+				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it explodes in your hands!"))
+				triggermine()
+				update_appearance(UPDATE_ICON_STATE)
+				return
+	. =..()
+
+//handles disarming(and failing to disarm)
+/obj/item/mine/attackby(obj/item/I, mob/user)
+	if(I.tool_behaviour == TOOL_SCREWDRIVER)
+		open_panel = !open_panel
+		update_appearance(UPDATE_ICON_STATE)
+		to_chat(user, "<span class='notice'>You [open_panel ? "reveal" : "hide"] \the [src]'s wiring.</span>")
+		I.play_tool_sound(src, 50)
+	else if(is_wire_tool(I) && open_panel)
+		wires.interact(user)
+	else if(!armed)
+		to_chat(user, span_notice("You hit \the [src] with [I]. Thankfully, nothing happens."))
+		return
+	else//please stop hitting the live mine with a rock
+		if(user.a_intent != INTENT_HARM)//are you SURE you want to hit the live mine with a rock
 			user.visible_message(user, span_notice("[user] gently pokes \the [src] with [I]. Nothing seems to happen."), span_notice("You gently prod \the [src] with [I]. Thankfully, nothing happens."))
 		else//at this point it's just natural selection
 			user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
 			triggermine(user)
 
+/datum/wires/mine
+	holder_type = /obj/item/mine
+	randomize = TRUE
 
-// /datum/wires/mine
-// 	holder_type = /obj/item/mine
-// 	randomize = TRUE
+/datum/wires/mine/New(atom/holder)
+	wires = list(
+		WIRE_BOOM, WIRE_BOOM, WIRE_TIMING, WIRE_DISABLE, WIRE_DISARM
+	)
+	..()
 
-// /datum/wires/mine/New(atom/holder)
-// 	wires = list(
-// 		WIRE_BOOM, WIRE_DISABLE,
-// 		WIRE_DELAY, WIRE_DISARM
-// 	)
-// 	..()
+/datum/wires/mine/interactable(mob/user)
+	var/obj/item/mine/P = holder
+	if(P.open_panel)
+		return TRUE
 
-// /datum/wires/mine/interactable(mob/user)
-// 	var/obj/item/mine/P = holder
-// 	if(P.open_panel)
-// 		return TRUE
+//are you feelin lucky, punk?
+/datum/wires/mine/on_pulse(wire)
+	var/obj/item/mine/B = holder
+	switch(wire)
+		if(WIRE_BOOM)//oopsies
+			holder.visible_message(span_userdanger("[icon2html(B, viewers(holder))] \The [B] makes a shrill noise! It's go-"))
+			B.triggermine()
+		//scrambles det time, up to 10 seconds, down to 10 miliseconds(basically instant)
+		if(WIRE_TIMING)
+			holder.visible_message(span_danger("[icon2html(B, viewers(holder))] \The [B] buzzes ominously."))
+			playsound(B, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
+			B.blast_delay = rand(1,100)
+		//Resets the detonation pin, allowing someone to step off the mine. Minor success.
+		if(WIRE_DISABLE)
+			if(B.clicked == TRUE)
+				holder.visible_message(span_notice("[icon2html(B, viewers(holder))] You hear something inside \the [B] click softly."))
+				playsound(B, 'sound/weapons/empty.ogg', 30, TRUE)
+				B.clicked = FALSE
+			else
+				holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s detonation pad shifts slightly. Nothing happens."))
+		if(WIRE_DISARM)//Disarms the mine, allowing it to be picked up. Major success.
+			if(B.armed && B.anchored)
+				holder.visible_message(span_notice("[icon2html(B, viewers(holder))] <b> \The [B]'s arming lights fade, and the securing bolts loosen. Disarmed. </b>"))
+				playsound(B, 'sound/machines/click.ogg', 100, TRUE)
+				B.armed = FALSE
+				B.clicked = FALSE
+				B.anchored = FALSE
+				B.update_appearance(UPDATE_ICON_STATE)
+			else if(B.anchored)
+				holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s yellow arming light flickers."))
+			else
+				holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s securing bolt shifts. Nothing happens."))
+
+/datum/wires/mine/on_cut(wire, mend)
+	var/obj/item/mine/B = holder
+	switch(wire)
+		if(WIRE_BOOM)
+			if(!mend)
+				holder.visible_message(span_userdanger("[icon2html(B, viewers(holder))] \The [B] makes a shrill noise! It's go-"))
+				B.triggermine()
+		//sets det time to 3 seconds, reset back to previous time on mend.
+		if(WIRE_TIMING)
+			var/olddelay //define the olddelay here so it exists
+			if(!mend)
+				holder.visible_message(span_danger("[icon2html(B, viewers(holder))] \The [B]'s timer goes dark."))
+				olddelay = B.blast_delay//store old delay
+				B.blast_delay = 3
+			else
+				holder.visible_message(span_danger("[icon2html(B, viewers(holder))] \The [B]'s timer flickers back on."))
+				B.blast_delay = olddelay//reset to old delay
+		//Disables the detonation pin. Nothing will happen when the mine is triggered.
+		//Mine can still be exploded by cutting wires & damage.
+		if(WIRE_DISABLE)
+			if(!mend)
+				B.clickblock = TRUE
+				if(B.clicked == TRUE)
+					holder.visible_message(span_notice("[icon2html(B, viewers(holder))] You hear something inside \the [B] shift out of place."))
+					playsound(B, 'sound/weapons/empty.ogg', 30, TRUE)
+					B.clicked = FALSE
+				holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s detonation pad becomes loose."))
+		if(WIRE_DISARM)
+			if(!mend)
+				if(B.armed && B.anchored)
+					holder.visible_message(span_notice("[icon2html(B, viewers(holder))] <b> \The [B]'s arming lights fade, and the securing bolts loosen. Disarmed. </b>"))
+					playsound(B, 'sound/machines/click.ogg', 100, TRUE)
+					B.armed = FALSE
+					B.clicked = FALSE
+					B.anchored = FALSE
+					B.update_appearance(UPDATE_ICON_STATE)
+				else if(B.anchored)
+					holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s yellow arming light flickers."))
+				else
+					holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s securing bolt shifts. Nothing happens."))
 
 /obj/item/mine/explosive
 	name = "landmine"
@@ -308,7 +367,7 @@
 
 /obj/item/mine/explosive/shrapnel/sting
 	name = "stinger mine"
-	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise anti-NT protestors. The bands of soft ballistic gel inside stick to targets and incapacitate without causing serious maiming. In Theory."
+	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter protestors. The bands of soft ballistic gel inside stick to targets and incapacitate without causing serious maiming. In Theory."
 
 	range_heavy = 0
 	range_light = 0
@@ -316,7 +375,7 @@
 	range_flame = 0
 
 	hair_trigger = TRUE
-	shrapnel_magnitude = 3
+	shrapnel_magnitude = 6
 	shred_triggerer = TRUE
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
 
@@ -324,7 +383,6 @@
 
 //UNUSED MINES//
 //varying levels of useless.
-
 
 
 /obj/item/mine/stun
