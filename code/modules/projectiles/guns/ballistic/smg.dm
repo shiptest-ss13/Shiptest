@@ -6,6 +6,7 @@
 	spread_unwielded = 10
 	wield_slowdown = 0.35
 	recoil_unwielded = 4
+	w_class = WEIGHT_CLASS_BULKY
 
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
@@ -282,7 +283,6 @@
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	item_state = "aks74u"
 	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/aks74u
 
 /obj/item/gun/ballistic/automatic/smg/aks74u/ComponentInitialize()

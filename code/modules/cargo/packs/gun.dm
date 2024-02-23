@@ -61,7 +61,14 @@
 					/obj/item/gun/energy/laser)
 	crate_name = "laser crate"
 
-	/datum/supply_pack/gun/energy
+/datum/supply_pack/gun/laser
+	name = "Mini Energy Gun Crate"
+	desc = "Contains two small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
+	cost = 1500
+	contains = list(/obj/item/gun/energy/e_gun/mini)
+	crate_name = "laser crate"
+
+/datum/supply_pack/gun/energy
 	name = "Energy Guns Crate"
 	desc = "Contains a versatile energy gun, capable of firing both nonlethal and lethal blasts of light."
 	cost = 1250
@@ -136,7 +143,7 @@
 
 /datum/supply_pack/gun/ak
 	name = "SVG-67 Rifle Crate"
-	desc = "Contains a high-powered, automatic rifles chambered in 7.62x39mm."
+	desc = "Contains a high-powered, automatic rifle chambered in 7.62x39mm."
 	cost = 5000
 	contains = list(/obj/item/gun/ballistic/automatic/assault/ak47)
 	crate_name = "auto rifle crate"
