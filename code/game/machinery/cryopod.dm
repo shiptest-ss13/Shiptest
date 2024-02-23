@@ -433,9 +433,13 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 	//it always sucks a little to get up
 	sleepyhead.set_nutrition(200)
 	sleepyhead.SetSleeping(60)
+
+	var/wakeupmessage = "The cryopod shudders as the pneumatic seals separating you and the waking world let out a hiss."
 	if(prob(60))
+		wakeupmessage += "A sickly feeling along with the pangs of hunger greet you upon your awakening."
+		sleepyhead.set_nutrition(100)
 		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
-	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of cryosleep set in as you awaken...")
+	to_chat(sleepyhead, span_danger(examine_block(wakeupmessage)))
 
 /obj/machinery/cryopod/syndicate
 	icon_state = "sleeper_s-open"
