@@ -57,14 +57,13 @@
 	name = "Lasers Crate"
 	desc = "Contains a lethal, high-energy laser gun."
 	cost = 1000
-	contains = list(/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser)
+	contains = list(/obj/item/gun/energy/laserr)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/laser
 	name = "Mini Energy Gun Crate"
 	desc = "Contains two small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
-	cost = 1500
+	cost = 500
 	contains = list(/obj/item/gun/energy/e_gun/mini)
 	crate_name = "laser crate"
 
