@@ -86,7 +86,8 @@
 
 	if(ismob(arrived))
 		var/mob/living/fool = arrived
-		fool.Paralyze(15, TRUE)
+		fool.Immobilize(15, TRUE)
+		fool.do_alert_animation(fool)
 		to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
 
 	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
@@ -128,7 +129,7 @@
 	light_color = "#FF0000"
 	light_power = 3
 	light_range = 2
-	addtimer(CALLBACK(src, .proc/blast_now, triggerer), blast_delay)
+	addtimer(CALLBACK(src, PROC_REF(blast_now), triggerer), blast_delay)
 
 //NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
@@ -153,7 +154,7 @@
 		if(arm_delay)
 			armed = FALSE
 			update_appearance(UPDATE_ICON_STATE)
-			addtimer(CALLBACK(src, .proc/now_armed), arm_delay)
+			addtimer(CALLBACK(src,  now_armed)), arm_delay)
 		else
 			armed = TRUE
 			alpha = stealthpwr
@@ -226,6 +227,21 @@
 	else
 		to_chat(user, span_notice("You hit \the [src] with [I]. Thankfully, nothing happens."))
 
+// /datum/wires/mine
+// 	holder_type = /obj/item/mine
+// 	randomize = TRUE
+
+// /datum/wires/mine/New(atom/holder)
+// 	wires = list(
+// 		WIRE_BOOM, WIRE_DISABLE,
+// 		WIRE_DELAY, WIRE_DISARM
+// 	)
+// 	..()
+
+// /datum/wires/mine/interactable(mob/user)
+// 	var/obj/item/mine/P = holder
+// 	if(P.open_panel)
+// 		return TRUE
 
 /obj/item/mine/explosive
 	name = "landmine"
