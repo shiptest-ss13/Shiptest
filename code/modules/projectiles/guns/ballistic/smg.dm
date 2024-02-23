@@ -6,6 +6,7 @@
 	spread_unwielded = 10
 	wield_slowdown = 0.35
 	recoil_unwielded = 4
+	w_class = WEIGHT_CLASS_BULKY
 
 	wield_delay = 0.4 SECONDS
 

@@ -93,13 +93,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			cmd_mentor_pm(href_list["mentor_msg"],null)
 		return
 
-	// Mentor Follow
-	if(href_list["mentor_follow"])
-		var/mob/living/M = locate(href_list["mentor_follow"])
-		if(istype(M))
-			mentor_follow(M)
-		return
-
 	//byond bug ID:2256651
 	if (asset_cache_job && (asset_cache_job in completed_asset_jobs))
 		to_chat(src, "<span class='danger'>An error has been detected in how your client is receiving resources. Attempting to correct.... (If you keep seeing these messages you might want to close byond and reconnect)</span>")

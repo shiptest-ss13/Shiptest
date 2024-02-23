@@ -26,7 +26,7 @@
 
 /datum/supply_pack/gun/makarovs
 	name = "Stechkin pistol crate"
-	desc = "Contains two concealable stechkin pistols, produced by the Gorlex Marauders and chambered in 10mm."
+	desc = "Contains two concealable stechkin pistols, produced by Scarborough Arms and chambered in 10mm."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/gun/ballistic/automatic/pistol)
@@ -63,6 +63,14 @@
 	cost = 2000
 	contains = list(/obj/item/gun/energy/laser,
 					/obj/item/gun/energy/laser)
+	crate_name = "laser crate"
+
+/datum/supply_pack/gun/laser
+	name = "Mini Energy Gun Crate"
+	desc = "Contains two small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
+	cost = 1500
+	contains = list(/obj/item/gun/energy/e_gun/mini,
+					/obj/item/gun/energy/e_gun/mini)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/energy
@@ -114,6 +122,14 @@
 					/obj/item/gun/ballistic/shotgun/flamingarrow,
 					/obj/item/gun/ballistic/shotgun/flamingarrow)
 	crate_name = "rifle crate"
+
+/datum/supply_pack/gun/cobra20
+	name = "Cobra-20 SMG Crate"
+	desc = "Contains two .45 submachine guns, manufactured by Scaraborough Arms and chambered in .45"
+	cost = 3000
+	contains = list(/obj/item/gun/ballistic/automatic/smg/c20r/cobra,
+					/obj/item/gun/ballistic/automatic/smg/c20r/cobra)
+	crate_name = "SMG crate"
 
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
