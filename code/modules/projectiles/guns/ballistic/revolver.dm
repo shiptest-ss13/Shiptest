@@ -572,6 +572,10 @@
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
 
+/obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/revolver)
+
 /obj/item/gun/ballistic/revolver/russian
 	name = "\improper Russian revolver"
 	desc = "A Solarian revolver for particularly lethal drinking games. It has a mechanism requiring you to spin the chamber before each trigger pull. Uses .357 ammo."
@@ -707,6 +711,10 @@
 		)
 
 	recoil = 0 //weaker than normal revovler, no recoil
+
+/obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/revolver)
 
 /obj/item/gun/ballistic/revolver/shadow/before_firing(atom/target, mob/user)
 	. = ..()

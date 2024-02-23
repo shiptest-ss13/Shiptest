@@ -108,7 +108,7 @@
 	. = ..()
 	if(!istype(parent, /obj/item/gun) && !istype(parent, /obj/item/weldingtool))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, .proc/wake_up)
+	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
 
 /datum/component/ammo_hud/Destroy()
 	turn_off()
@@ -129,8 +129,8 @@
 /datum/component/ammo_hud/proc/turn_on()
 	SIGNAL_HANDLER
 
-	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/turn_off)
-	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), .proc/update_hud)
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(turn_off))
+	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
 
 	hud.turn_on()
 	update_hud()
@@ -233,11 +233,6 @@
 /datum/component/ammo_hud/laser/cybersun
 	prefix = "cybersun_"
 
-/obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/ammo_hud/revolver)
-
-
 /datum/component/ammo_hud/revolver
 	prefix = "revolver_"
 
@@ -245,8 +240,8 @@
 	var/obj/item/gun/ballistic/revolver/gun = parent
 	if(!HAS_TRAIT(gun.loc, TRAIT_GUNSLINGER))
 		return
-	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/turn_off)
-	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), .proc/update_hud)
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(turn_off))
+	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
 
 	hud.turn_on()
 	update_hud()
