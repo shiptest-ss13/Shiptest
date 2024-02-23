@@ -125,7 +125,7 @@
 		visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] begins to flash bright red!"))
 	triggered = TRUE
 	update_appearance(UPDATE_ICON_STATE)
-	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 40, FALSE, -2)
+	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 60, FALSE, -2)
 	light_color = "#FF0000"
 	light_power = 3
 	light_range = 2
@@ -201,31 +201,32 @@
 
 //handles disarming(and failing to disarm)
 /obj/item/mine/attackby(obj/item/I, mob/user)
-	if(armed)
-		if(I.tool_behaviour == TOOL_MULTITOOL)//multitools can disarm
-			user.visible_message(span_danger("[user] starts to carefully disarm \the [src]."), span_danger("You begin to disarm \the [src]. Careful now..."))
-			if (do_after(user, 10))
-				if(prob(disarmchance))
-					user.visible_message(span_danger("[user] has disarmed \the [src]."), span_danger("You have disarmed \the [src]! Phew."))
-					playsound(src, 'sound/machines/click.ogg', 100, TRUE)
-					anchored = FALSE
-					armed = FALSE
-					clicked = FALSE
-					update_appearance(UPDATE_ICON_STATE)
-				else
-					if(prob(35))//yipee!!
-						user.visible_message(span_danger("[user] accidentally triggers \the [src]."), span_userdanger("[icon2html(src, viewers(src))]\The [src]'s light goes red. <b>Uh oh</b>."))
-						triggermine(user)
-					else
-						user.visible_message(span_danger("[user] fails to defuse \the [src]."), span_danger("[icon2html(src, viewers(src))]\the [src]'s light flickers ominously. Thankfully, nothing happens."))
-		else//please stop hitting the mine with a rock
-			if(user.a_intent != INTENT_HARM)//are you SURE you want to hit the mine with a rock
-				user.visible_message(user, span_notice("[user] gently pokes \the [src] with [I]. Nothing seems to happen."), span_notice("You gently prod \the [src] with [I]. Thankfully, nothing happens."))
-			else//at this point it's just natural selection
-				user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
-				triggermine(user)
-	else
+	if(!armed)
 		to_chat(user, span_notice("You hit \the [src] with [I]. Thankfully, nothing happens."))
+		return
+	if(I.tool_behaviour == TOOL_MULTITOOL)//multitools can disarm
+		user.visible_message(span_danger("[user] starts to carefully disarm \the [src]."), span_danger("You begin to disarm \the [src]. Careful now..."))
+		if(do_after(user, 30))
+			if(prob(disarmchance))
+				user.visible_message(span_danger("[user] has disarmed \the [src]."), span_danger("You have disarmed \the [src]! Phew."))
+				playsound(src, 'sound/machines/click.ogg', 100, TRUE)
+				anchored = FALSE
+				armed = FALSE
+				clicked = FALSE
+				update_appearance(UPDATE_ICON_STATE)
+			else
+				if(prob(35))//yipee!!
+					user.visible_message(span_danger("[user] accidentally triggers \the [src]."), span_userdanger("[icon2html(src, viewers(src))]\The [src]'s light goes red. <b>Uh oh</b>."))
+					triggermine(user)
+				else
+					user.visible_message(span_danger("[user] fails to defuse \the [src]."), span_danger("[icon2html(src, viewers(src))]\the [src]'s light flickers ominously. Thankfully, nothing happens."))
+	else//please stop hitting the mine with a rock
+		if(user.a_intent != INTENT_HARM)//are you SURE you want to hit the mine with a rock
+			user.visible_message(user, span_notice("[user] gently pokes \the [src] with [I]. Nothing seems to happen."), span_notice("You gently prod \the [src] with [I]. Thankfully, nothing happens."))
+		else//at this point it's just natural selection
+			user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
+			triggermine(user)
+
 
 // /datum/wires/mine
 // 	holder_type = /obj/item/mine
