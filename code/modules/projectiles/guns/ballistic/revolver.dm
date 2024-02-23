@@ -572,7 +572,7 @@
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
 
-/obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
+/obj/item/gun/ballistic/revolver/ashhand/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ammo_hud/revolver)
 
