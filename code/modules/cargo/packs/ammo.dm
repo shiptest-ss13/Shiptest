@@ -171,11 +171,11 @@
 					/obj/item/ammo_box/magazine/ebr)
 	cost = 2000
 
-/datum/supply_pack/ammo/ak47_ammo
-	name = "SVG 7.62x39mm FMJ Magazine Crate"
-	desc = "Contains two 7.62x39mm FMJ magazines for the SVG rifle, each containing twenty rounds."
-	contains = list(/obj/item/ammo_box/magazine/ak47,
-					/obj/item/ammo_box/magazine/ak47)
+/datum/supply_pack/ammo/skm_ammo
+	name = "SKM 7.62x40mm CLIP Magazine Crate"
+	desc = "Contains two 7.62x40mm magazines for the SKM rifles, each containing twenty rounds."
+	contains = list(/obj/item/ammo_box/magazine/skm_762_40,
+					/obj/item/ammo_box/magazine/skm_762_40)
 	cost = 2000
 
 /datum/supply_pack/ammo/p16_ammo
@@ -185,9 +185,9 @@
 					/obj/item/ammo_box/magazine/p16)
 	cost = 2000
 
-/datum/supply_pack/ammo/a762_ammo
-	name = "8x50mmR Stripper Clip Crate"
-	desc = "Contains four 8x50mmR stripper clips for rifles like the illestren rifle, each containing five rounds."
+/datum/supply_pack/ammo/a850r_ammo
+	name = "8x50mmR En Bloc Clip Crate"
+	desc = "Contains four 8x50mmR en bloc clips for rifles like the illestren rifle, each containing five rounds."
 	contains = list(/obj/item/ammo_box/magazine/illestren_a850r,
 					/obj/item/ammo_box/magazine/illestren_a850r,
 					/obj/item/ammo_box/magazine/illestren_a850r,
@@ -195,9 +195,9 @@
 	cost = 1000
 
 /datum/supply_pack/ammo/a762_ammo_box
-	name = "7.62x39mm Ammo Box Crate"
-	desc = "Contains a sixty-round 7.62x39mm box for rifles like the SVG-67."
-	contains = list(/obj/item/ammo_box/a762_39)
+	name = "7.62x40mm CLIP Ammo Box Crate"
+	desc = "Contains a eighty-round 7.62x40mm CLIP box for the SKM rifles."
+	contains = list(/obj/item/ammo_box/a762_40)
 	cost = 500
 
 /datum/supply_pack/ammo/c556mmHITP_ammo_box
