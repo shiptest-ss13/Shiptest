@@ -1,9 +1,9 @@
-#define REVOVLER_ROTATE_LEFT "rotate chamber left"
-#define REVOVLER_ROTATE_RIGHT "rotate chamber right"
-#define REVOVLER_AUTO_ROTATE_RIGHT_LOADING "auto rotate right when loading ammo"
-#define REVOVLER_AUTO_ROTATE_LEFT_LOADING "auto rotate left when loading ammo"
-#define REVOVLER_EJECT_CURRENT "eject current bullet"
-#define REVOVLER_EJECT_ALL "auto eject all bullets"
+#define REVOLVER_ROTATE_LEFT "rotate chamber left"
+#define REVOLVER_ROTATE_RIGHT "rotate chamber right"
+#define REVOLVER_AUTO_ROTATE_RIGHT_LOADING "auto rotate right when loading ammo"
+#define REVOLVER_AUTO_ROTATE_LEFT_LOADING "auto rotate left when loading ammo"
+#define REVOLVER_EJECT_CURRENT "eject current bullet"
+#define REVOLVER_EJECT_ALL "auto eject all bullets"
 
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
@@ -38,7 +38,7 @@
 
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
-	var/gate_load_direction = REVOVLER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
+	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING //when we load ammo with a box, which direction do we rotate the cylinder? unused with normal revolvers
 
 	COOLDOWN_DECLARE(flip_cooldown)
 
@@ -231,9 +231,9 @@
 					if(!do_mob(user,user,doafter_time))
 						break
 					switch(gate_load_direction)
-						if(REVOVLER_AUTO_ROTATE_RIGHT_LOADING)
+						if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
 							chamber_round(TRUE)
-						if(REVOVLER_AUTO_ROTATE_LEFT_LOADING)
+						if(REVOLVER_AUTO_ROTATE_LEFT_LOADING)
 							chamber_round(TRUE, TRUE)
 					i++
 					if(i >= num_to_load)
@@ -290,42 +290,42 @@
 		return
 
 	var/chamber_options = list(
-		REVOVLER_ROTATE_LEFT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_left"),
-		REVOVLER_ROTATE_RIGHT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_right"),
-		REVOVLER_AUTO_ROTATE_LEFT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_left"),
-		REVOVLER_EJECT_ALL = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_all"),
-		REVOVLER_EJECT_CURRENT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_one"),
-		REVOVLER_AUTO_ROTATE_RIGHT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_right"),
+		REVOLVER_ROTATE_LEFT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_left"),
+		REVOLVER_ROTATE_RIGHT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_right"),
+		REVOLVER_AUTO_ROTATE_LEFT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_left"),
+		REVOLVER_EJECT_ALL = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_all"),
+		REVOLVER_EJECT_CURRENT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_one"),
+		REVOLVER_AUTO_ROTATE_RIGHT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_right"),
 		)
 
 	var/image/editing_image
-	if(gate_load_direction == REVOVLER_AUTO_ROTATE_RIGHT_LOADING)
-		editing_image = chamber_options[REVOVLER_AUTO_ROTATE_RIGHT_LOADING]
+	if(gate_load_direction == REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
+		editing_image = chamber_options[REVOLVER_AUTO_ROTATE_RIGHT_LOADING]
 		editing_image.icon_state = "radial_revolver_auto_right_on"
 	else
-		editing_image = chamber_options[REVOVLER_AUTO_ROTATE_LEFT_LOADING]
+		editing_image = chamber_options[REVOLVER_AUTO_ROTATE_LEFT_LOADING]
 		editing_image.icon_state = "radial_revolver_auto_left_on"
 
 	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
-		chamber_options -= REVOVLER_AUTO_ROTATE_LEFT_LOADING
-		chamber_options -= REVOVLER_AUTO_ROTATE_RIGHT_LOADING
-		chamber_options -= REVOVLER_EJECT_CURRENT
+		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING
+		chamber_options -= REVOLVER_AUTO_ROTATE_RIGHT_LOADING
+		chamber_options -= REVOLVER_EJECT_CURRENT
 
 
 	var/pick = show_radial_menu(user, src, chamber_options, custom_check = CALLBACK(src, PROC_REF(can_use_radial), user), require_near = TRUE)
 	switch(pick)
-		if(REVOVLER_ROTATE_LEFT)
+		if(REVOLVER_ROTATE_LEFT)
 			chamber_round(TRUE, TRUE)
-		if(REVOVLER_ROTATE_RIGHT)
+		if(REVOLVER_ROTATE_RIGHT)
 			chamber_round(TRUE)
-		if(REVOVLER_AUTO_ROTATE_RIGHT_LOADING)
-			gate_load_direction = REVOVLER_AUTO_ROTATE_RIGHT_LOADING
-		if(REVOVLER_AUTO_ROTATE_LEFT_LOADING)
-			gate_load_direction = REVOVLER_AUTO_ROTATE_LEFT_LOADING
-		if(REVOVLER_EJECT_ALL)
+		if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
+			gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING
+		if(REVOLVER_AUTO_ROTATE_LEFT_LOADING)
+			gate_load_direction = REVOLVER_AUTO_ROTATE_LEFT_LOADING
+		if(REVOLVER_EJECT_ALL)
 			unload_all_ammo(user)
 			return
-		if(REVOVLER_EJECT_CURRENT)
+		if(REVOLVER_EJECT_CURRENT)
 			eject_casing(user)
 		if(null)
 			return
@@ -476,7 +476,7 @@
 		)
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
-	recoil = 0 //weaker than normal revovler, no recoil
+	recoil = 0 //weaker than normal revolver, no recoil
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))
@@ -544,7 +544,7 @@
 
 /obj/item/gun/ballistic/revolver/montagne
 	name = "\improper HP Montagne"
-	desc = "An ornate break-open revolver issued to high-ranking members of the Saint-Roumain Militia. Chambered in .38 Special."
+	desc = "An ornate break-open revolver issued to high-ranking members of the Saint-Roumain Militia. Chambered in .45."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "montagne"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
@@ -710,7 +710,7 @@
 		"Cavalry Special" = "shadow_cavalry"
 		)
 
-	recoil = 0 //weaker than normal revovler, no recoil
+	recoil = 0 //weaker than normal revolver, no recoil
 
 /obj/item/gun/ballistic/revolver/shadow/ComponentInitialize()
 	. = ..()
