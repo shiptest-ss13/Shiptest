@@ -30,11 +30,11 @@
 	recoil_unwielded = 2
 	semi_auto = FALSE
 	bolt_wording = "hammer"
+	dry_fire_sound = 'sound/weapons/gun/general/bolt_drop.ogg'
+	dry_fire_text = "snap"
 	wield_slowdown = 0.3
 
 	safety_wording = "hammer"
-
-	var/simulate_gunslinger = TRUE //for testing
 
 	var/gate_loaded = FALSE //for stupid wild west shit
 	var/gate_offset = 5 //for wild west shit 2: instead of ejecting the chambered round, eject the next round if 1
@@ -45,6 +45,15 @@
 /obj/item/gun/ballistic/revolver/examine(mob/user)
 	. = ..()
 	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
+
+/obj/item/gun/ballistic/revolver/update_overlays()
+	. = ..()
+	if(semi_auto)
+		return
+	if(current_skin)
+		. += "[unique_reskin[current_skin]][safety ? "_hammer_up" : "_hammer_down"]"
+	else
+		. += "[base_icon_state || initial(icon_state)][safety ? "_hammer_up" : "_hammer_down"]"
 
 
 /obj/item/gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE)
@@ -399,6 +408,7 @@
 	if(fan)
 		rack()
 		to_chat(user, "<span class='notice'>You fan the [bolt_wording] of \the [src]!</span>")
+		user.changeNext_move(CLICK_CD_RAPID)
 
 /obj/item/gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
 	. = ..()
@@ -538,10 +548,10 @@
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "montagne"
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-	spread_unwielded = 12
+	spread_unwielded = 15
 	recoil = 0
 
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38/big
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/montagne
 
 
 /obj/item/gun/ballistic/revolver/ashhand
@@ -686,9 +696,21 @@
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	obj_flags = UNIQUE_RENAME
 	gate_loaded = TRUE
-	unique_reskin = list("Default" = "shadow",
+	unique_reskin = list("Shadow" = "shadow",
 		"Army" = "shadow_army",
-		"General" = "shadow_general"
+		"General" = "shadow_general",
+		"Frontier Scout" = "shadow_frontier",
+		"Nanotrasen Special" = "shadow_nanotrasen",
+		"Hired Gun" = "shadow_hiredgun",
+		"Buntline" = "shadow_buntline",
+		"Cavalry Special" = "shadow_cavalry"
 		)
 
 	recoil = 0 //weaker than normal revovler, no recoil
+
+/obj/item/gun/ballistic/revolver/shadow/before_firing(atom/target, mob/user)
+	. = ..()
+	// if you go through the pain of not only using this shitty gun, but also with the fucking gunslinger quirk, you deserve this bonus. not a BIG bonus, but enough as an incentive to make people actually take the quirk.
+	if(chambered.BB && (HAS_TRAIT(user, TRAIT_GUNSLINGER)))
+		chambered.BB.damage += 5
+		chambered.armour_penetration += 5
