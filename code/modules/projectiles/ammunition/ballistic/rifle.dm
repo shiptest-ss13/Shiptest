@@ -34,7 +34,7 @@
 	caliber = "5.56x45mm"
 	projectile_type = /obj/projectile/bullet/a556_45
 
-// 5.45x39mm (AKS-74U)
+// 5.45x39mm (SKM-24v)
 
 /obj/item/ammo_casing/a545_39
 	name = "5.45x39mm bullet casing"
@@ -42,7 +42,6 @@
 	icon_state = "rifle-brass"
 	caliber = "5.45x39mm"
 	randomspread = TRUE
-	variance = 2
 	projectile_type = /obj/projectile/bullet/a545_39
 
 /obj/item/ammo_casing/a545_39/recycled
@@ -50,18 +49,16 @@
 	desc = "A recycled 5.45x39mm bullet casing."
 	bullet_skin = "surplus"
 	caliber = "5.45x39mm"
-	variance = 3.5
 	projectile_type = /obj/projectile/bullet/a545_39
 
-// 7.62x39mm (SVG-67 & SkM-24)
+// 7.62x40mm CLIP (SKM Rifles)
 
-/obj/item/ammo_casing/a762_39
-	name = "7.62x39mm bullet casing"
-	desc = "A 7.62x39mm bullet casing."
+/obj/item/ammo_casing/a762_40
+	name = "7.62x40mm CLIP bullet casing"
+	desc = "A 7.62x40mm CLIP bullet casing."
 	icon_state = "rifle-brass"
-	caliber = "7.62x39mm"
-	variance = 2
-	projectile_type = /obj/projectile/bullet/a762_39
+	caliber = "7.62x40mm"
+	projectile_type = /obj/projectile/bullet/a762_40
 
 // .300 Blackout (Polymer Survivor Rifle)
 
