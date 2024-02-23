@@ -12,7 +12,6 @@
 	var/wave_length //Average time until break in spawning
 	var/wave_downtime //Average time until spawning starts again
 	var/wave_timer
-	var/downtime_timer
 	var/current_timerid
 
 

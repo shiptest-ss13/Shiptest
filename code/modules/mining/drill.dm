@@ -6,6 +6,7 @@
 #define MALF_CALIBRATE 5
 
 //For handling the repair of a completely destroyed drill
+#define METAL_ABSENT 0 //Couldn't think of a better word for this but it gets the point across
 #define METAL_PLACED 1
 #define METAL_SECURED 2
 
@@ -29,7 +30,7 @@
 	var/obj/item/stock_parts/cell/cell
 	var/preload_cell_type = /obj/item/stock_parts/cell
 	var/power_cost = 100
-	var/metal_attached
+	var/metal_attached = METAL_ABSENT
 	var/missing_part //I hate this but it's better than most the ideas I've had
 	var/current_timerid
 
@@ -40,15 +41,15 @@
 	if(cell.charge < power_cost*5)
 		. += "<spawn class='notice'>The low power light is blinking.</span>"
 	switch(malfunction)
-		if(1)
+		if(MALF_LASER)
 			. += "<span class='notice'>The [src]'s <b>laser array</b> appears to be broken and needs to be replaced.</span>"
-		if(2)
+		if(MALF_SENSOR)
 			. += "<span class='notice'>The [src]'s <b>sensors</b> appear to be broken and need to be replaced.</span>"
-		if(3)
+		if(MALF_CAPACITOR)
 			. += "<span class='notice'>The [src]'s <b>capacitor</b> appears to be broken and needs to be replaced.</span>"
-		if(4)
+		if(MALF_STRUCTURAL)
 			. += "<span class='notice'>The [src]'s structure looks like it needs to be <b>welded</b> back together.</span>"
-		if(5)
+		if(MALF_CALIBRATE)
 			. += "<span class='notice'>The [src]'s gimbal is out of alignment, it needs to be recalibrated with a <b>multitool</b>.</span>"
 	switch(metal_attached)
 		if(METAL_PLACED)
@@ -117,7 +118,7 @@
 		if(metal_attached == METAL_SECURED && tool.tool_behaviour == TOOL_WELDER)
 			if(tool.use_tool(src, user, 30, volume=50))
 				to_chat(user, "<span class='notice'>You weld the new plating onto the [src], successfully repairing it.")
-				metal_attached = null
+				metal_attached = METAL_ABSENT
 				obj_integrity = max_integrity
 				set_machine_stat(machine_stat & ~BROKEN)
 				update_icon_state()

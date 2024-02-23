@@ -40,7 +40,7 @@
 	qdel(src)
 
 /obj/item/t_scanner/adv_mining_scanner
-	desc = "A scanner that automatically checks surrounding rock for useful minerals; it can also be used to stop gibtonite detonations. This one has an extended range and a ground penetrating scanner.\nIt has a speaker that can be toggled with <b>alt+click</b>"
+	desc = "A scanner that automatically checks surrounding rock for useful minerals; it can also be used to stop gibtonite detonations.\nIt has a speaker that can be toggled with <b>alt+click</b>"
 	name = "advanced automatic mining scanner"
 	icon = 'icons/obj/device.dmi'
 	icon_state = "mining0"
