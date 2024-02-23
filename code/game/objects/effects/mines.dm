@@ -154,7 +154,7 @@
 		if(arm_delay)
 			armed = FALSE
 			update_appearance(UPDATE_ICON_STATE)
-			addtimer(CALLBACK(src,  now_armed)), arm_delay)
+			addtimer(CALLBACK(src, PROC_REF(now_armed)), arm_delay)
 		else
 			armed = TRUE
 			alpha = stealthpwr
