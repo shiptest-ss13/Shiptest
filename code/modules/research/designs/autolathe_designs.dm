@@ -1198,3 +1198,20 @@
 	materials = list(/datum/material/iron = 200, /datum/material/glass = 200)
 	build_path = /obj/item/fishing_rod
 	category = list("initial","Misc","Equipment")
+
+
+/datum/design/paper_biscuit
+	name = "Paper Biscuit"
+	id = "biscuit"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/plastic = 20)
+	build_path = /obj/item/folder/biscuit/unsealed
+	category = list("initial", "Tools", "Misc")
+
+/datum/design/paper_biscuit_confidental
+	name = "Confidental Paper Biscuit"
+	id = "confidental_biscuit"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/plastic = 30)
+	build_path = /obj/item/folder/biscuit/unsealed/confidental
+	category = list("initial", "Tools", "Misc")
