@@ -12,15 +12,15 @@
 	throw_range = 7
 	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = FLAMMABLE
-	/// The stored pen
+	// The stored pen
 	var/obj/item/pen/pen
-	/**
-	 * Weakref of the topmost piece of paper
-	 *
-	 * This is used for the paper displayed on the clipboard's icon
-	 * and it is the one attacked, when attacking the clipboard.
-	 * (As you can't organise contents directly in BYOND)
-	 */
+
+// Weakref of the topmost piece of paper
+//
+// This is used for the paper displayed on the clipboard's icon
+// and it is the one attacked, when attacking the clipboard.
+// (As you can't organise contents directly in BYOND)
+
 	var/datum/weakref/toppaper_ref
 
 /obj/item/clipboard/Initialize()

@@ -65,7 +65,7 @@
 	if(burn_paper_product_attackby_check(weapon, user))
 		return
 	if(is_type_in_typecache(weapon, folder_insertables))
-		//Add paper, photo or documents into the folder
+		/// Add paper, photo or documents into the folder
 		if(!user.transferItemToLoc(weapon, src))
 			return
 		to_chat(user, "<span class='notice'>You put [weapon] into [src].</span>")
