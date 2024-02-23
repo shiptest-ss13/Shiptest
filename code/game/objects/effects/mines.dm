@@ -18,7 +18,7 @@
 	// Sets a delay for mines going live after being planted
 	var/arm_delay = 3 SECONDS
 	/// Use to set a delay after activation to trigger the explosion. WIP
-	var/blast_delay
+	var/blast_delay = 1 SECONDS
 
 	///armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
 	var/stealthpwr = 204
@@ -43,6 +43,8 @@
 	. = ..()
 	if(!armed)
 		. += "<span class='information'>It appears to be inactive...</span>"
+	else
+		. += "<span class='information'>It looks ready to explode.</span>"
 
 	var/atom/movable/unlucky_sod = foot_on_mine?.resolve()
 	if(user == unlucky_sod)
@@ -93,32 +95,34 @@
 
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
-	triggermine()
+	if(prob(75))
+		triggermine()
 
 /// When something sets off a mine
 /obj/item/mine/proc/triggermine(atom/movable/triggerer)
 	if(triggered) //too busy detonating to detonate again
 		return
 	if(triggerer)
-		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_userdanger("[icon2html(src, viewers(src))] \The [src] activates."))
+		triggerer.visible_message(span_danger("[icon2html(src, viewers(src))] [triggerer] sets off \the [src]. It's gonna blow!"), span_danger("[icon2html(src, viewers(src))] \The [src] activates."))
 	else
-		visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] detonates!"))
+		visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] begins to flash bright red!"))
 	triggered = TRUE
 	update_appearance(UPDATE_ICON_STATE)
-	//if(blast_delay)
-	//	light_color = "#FF0000"
-	//	light_power = 3
-	//	light_range = 2
-	//	if(COOLDOWN_FINISHED(blast_delay))
-	//	addtimer(CALLBACK(src, .proc/blast_now), blast_delay)
+	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 40, FALSE, -2)
+	light_color = "#FF0000"
+	light_power = 3
+	light_range = 2
+	addtimer(CALLBACK(src, .proc/blast_now, triggerer), blast_delay)
 
+//NOW we actually blow up
+/obj/item/mine/proc/blast_now(atom/movable/triggerer)
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
 	if(ismob(triggerer))
 		mineEffect(triggerer)
+	visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] detonates!"))
 	SEND_SIGNAL(src, COMSIG_MINE_TRIGGERED, triggerer)
-	//triggered = TRUE
 	qdel(src)
 
 //using an unarmed mine inhand deploys it.
@@ -151,6 +155,31 @@
 /obj/item/mine/proc/mineEffect(mob/victim)
 	return
 
+//trying to pick up a live mine is probably up there when it comes to terrible ideas
+/obj/item/mine/attack_hand(mob/user)
+	if (armed)
+		if(disarmchance == 100)//you can just have it at this point
+			user.visible_message(span_notice("[user] carefully disarms \the [src]."), span_notice("You carefully disarm the [src]."))
+			anchored = FALSE
+			armed = FALSE
+			update_appearance(UPDATE_ICON_STATE)
+			return
+		else
+			user.visible_message(span_warning("[user] extends their hand towards \the [src]!"), span_userdanger("You extend your arms to pick up \the [src], knowing that it will likely blow up when you touch it!"))
+			if(do_after(user, 25, target = src))
+				var/badchance = clamp(disarmchance / 6, 1, 100)
+				if(prob(badchance))
+					user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
+					anchored = FALSE
+					armed = FALSE
+					return
+				else
+					user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it explodes in \his hands!"), span_userdanger("You attempt to pick up \the [src] only to hear a beep as it explodes in your hands!"))
+					triggermine()
+					update_appearance(UPDATE_ICON_STATE)
+					return
+	. =..()
+
 //handles disarming(and failing to disarm)
 /obj/item/mine/attackby(obj/item/I, mob/user)
 	if(armed)
@@ -179,48 +208,69 @@
 		to_chat(user, span_notice("You hit \the [src] with [I]. Thankfully, nothing happens."))
 
 /obj/item/mine/explosive
-	name = "explosive mine"
-	var/range_devastation = 0
-	var/range_heavy = 1
-	var/range_light = 6
-	var/range_flash = 6
-	var/range_flame = 0
-	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 2
-	stealthpwr = 85
+	name = "landmine"
+	desc = "An anti infantry explosive produced en-masse during the corporate wars. Watch your step."
 
-/obj/item/mine/explosive/heavy
-	range_heavy = 2
-	range_light = 4
+	//customize explosive power
+	var/range_devastation = 0
+	var/range_heavy = 3
+	var/range_light = 4
+	//using this to indicate pb
+	var/range_flash = 2
+	var/range_flame = 0
+
+	//customize shrapnel. Magnitude zero prevents them from spawning
+	var/shrapnel_type = /obj/projectile/bullet/shrapnel
+	var/shrapnel_magnitude = 0.5
+
+	/// If TRUE, we spawn extra pellets to eviscerate the person who stepped on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
+	var/shred_triggerer = FALSE
+
+	stealthpwr = 85
 
 /obj/item/mine/explosive/mineEffect(mob/victim)
 	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
 	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
-/obj/item/mine/stun
-	name = "stun mine"
-	var/stun_time = 80
+/obj/item/mine/explosive/fire
+	name = "incendiary landmine"
+	desc = "An anti infantry explosive that ignites nearby targets. Watch your step. "
+	range_flame = 7
+	range_light = 3
+	range_flash = 2
+	shrapnel_magnitude = 0
 
-/obj/item/mine/shrapnel
-	name = "shrapnel mine"
-	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 3
+/obj/item/mine/explosive/heavy
+	range_heavy = 2
+	range_light = 4
 
-/obj/item/mine/shrapnel/mineEffect(mob/victim)
-	AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
+/obj/item/mine/explosive/shrapnel
+	name = "fragmentation landmine"
+	desc = "An anti infantry explosive with metal banding that transforms into deadly shrapnel on detonation. "
 
-/obj/item/mine/shrapnel/human_only
+	range_heavy = 2
+	range_light = 4
+	range_flash = 2
+
+	shrapnel_magnitude = 3
+	shred_triggerer = TRUE
+
+/obj/item/mine/explosive/shrapnel/human_only
 	name = "sophisticated shrapnel mine"
 	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
 
-/obj/item/mine/shrapnel/human_only/on_entered(datum/source, atom/movable/AM)
+/obj/item/mine/explosive/shrapnel/human_only/on_entered(datum/source, atom/movable/AM)
 	if(!ishuman(AM))
 		return
 	. = ..()
 
-/obj/item/mine/shrapnel/sting
+/obj/item/mine/explosive/shrapnel/sting
 	name = "stinger mine"
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
+
+/obj/item/mine/stun
+	name = "stun mine"
+	var/stun_time = 80
 
 /obj/item/mine/stun/mineEffect(mob/living/victim)
 	if(isliving(victim) && Adjacent(victim))
@@ -228,6 +278,7 @@
 
 /obj/item/mine/kickmine
 	name = "kick mine"
+	blast_delay = null//funnier this way
 
 /obj/item/mine/kickmine/mineEffect(mob/victim)
 	if(isliving(victim) && victim.client && Adjacent(victim))
