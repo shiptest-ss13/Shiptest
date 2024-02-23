@@ -202,7 +202,7 @@
 	var/turf/here = get_turf(src)
 	var/located_dist
 	var/obj/structure/located_vein
-	for(var/obj/structure/I in GLOB.ore_veins)
+	for(var/obj/structure/vein/I in GLOB.ore_veins)
 		if(I.z == 0 || I.virtual_z() != here.virtual_z())
 			continue
 		if(located_vein)

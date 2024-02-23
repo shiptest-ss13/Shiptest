@@ -85,7 +85,7 @@
 
 /obj/machinery/drill/mission/start_mining()
 	if(mining.vein_class < mission_class && mining)
-		say("[src] requires at least a class [mission_class] vein or higher.")
+		say("Error: A vein class of [mission_class] or greater is required for operation.")
 		return
 	. = ..()
 

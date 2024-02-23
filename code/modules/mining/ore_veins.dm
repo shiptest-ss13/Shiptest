@@ -11,7 +11,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 	var/mining_charges = 6
-	//Classification of the quality of possible ores within a vein, used to determine difficulty
+	//Classification of the quality of possible ores within a vein
+	//Used to determine difficulty & ore amounts
+	//Intended to range from class one to class three
 	var/vein_class = 1
 	//A weighted list of all possible ores that can generate in a vein
 	//The design process is that class 1 veins have a small chance of generating with class 2 ores and so on
