@@ -244,17 +244,21 @@
 
 ///updates a bunch of racking related stuff and also handles the sound effects and the like
 /obj/item/gun/ballistic/revolver/rack(mob/user = null, toggle_hammer = TRUE)
-	if(user)
+	if(user && !semi_auto)
 		if(safety && toggle_hammer)
 			toggle_safety(user, FALSE, FALSE)
 		else if(toggle_hammer)
 			to_chat(user, "<span class='warning'>The [safety_wording] is already [safety ? "<span class='green'>UP</span>" : "<span class='red'>DOWN</span>"]! Use Ctrl-Click to disengage the [safety_wording]!</span>")
 			return
-	else
+	else if(!semi_auto)
 		if(safety && toggle_hammer)
 			toggle_safety(null, FALSE, FALSE)
 		else if (toggle_hammer)
 			return
+	if(user && semi_auto)
+		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
+		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
+
 	chamber_round(TRUE)
 	//playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
@@ -363,6 +367,8 @@
 	return boolets
 
 /obj/item/gun/ballistic/revolver/toggle_safety(mob/user, silent=FALSE, rack_gun=TRUE)
+	if(semi_auto)//apogee said double actions should have normal safeties, so...
+		return ..()
 	safety = !safety
 
 	if(!silent)
@@ -387,7 +393,7 @@
 
 /obj/item/gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	var/fan = FALSE
-	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER) && !semi_auto && !wielded && loc == user && !safety && !user.get_inactive_held_item())
 		fan = TRUE
 	. = ..()
 	if(fan)
@@ -422,7 +428,7 @@
 				user.dropItemToGround(src, TRUE)
 				return
 			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
-			SpinAnimation(10,1)
+			SpinAnimation(5,1)
 			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
 			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
 			return
@@ -434,6 +440,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE //double action
+	safety_wording = "safety"
 	unique_reskin = list("Default" = "detective",
 		"Stainless Steel" = "detective_stainless",
 		"Gold Trim" = "detective_gold",
@@ -496,6 +503,7 @@
 	icon_state = "mateba"
 	manufacturer = MANUFACTURER_NONE
 	semi_auto = TRUE
+	safety_wording = "safety"
 	spread = 0
 	spread_unwielded = 7
 
@@ -650,6 +658,7 @@
 	spread_unwielded = 50
 	fire_delay = 0
 	semi_auto = TRUE
+	safety_wording = "safety"
 
 /obj/item/gun/ballistic/revolver/shadow
 	name = "\improper HP Shadow"
