@@ -15,6 +15,22 @@
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
+/obj/item/gun/ballistic/automatic/smg/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = 1
+	var/total_recoil = recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_recoil += gunslinger_bonus
+		total_recoil = clamp(total_recoil,0,INFINITY)
+	return total_recoil
+
+/obj/item/gun/ballistic/automatic/smg/calculate_spread(mob/user, bonus_spread)
+	var/gunslinger_bonus = 4
+	var/total_spread = bonus_spread
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_spread += gunslinger_bonus
+		total_spread = clamp(total_spread,0,INFINITY)
+	return total_spread
+
 /obj/item/gun/ballistic/automatic/smg/proto
 	name = "\improper Nanotrasen Saber SMG"
 	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
@@ -339,17 +355,25 @@
 
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = 1
 	var/total_recoil = recoil_bonus
 	if(!stock_folded)
 		total_recoil += stock_recoil_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_recoil += gunslinger_bonus
+
+	total_recoil = clamp(total_recoil,0,INFINITY)
 	return total_recoil
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_spread(mob/user, bonus_spread)
+	var/gunslinger_bonus = 4
 	var/total_spread = bonus_spread
 	if(!stock_folded)
 		total_spread += stock_spread_bonus
-		total_spread = clamp(total_spread,0,INFINITY)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_spread += gunslinger_bonus
+
+	total_spread = clamp(total_spread,0,INFINITY)
 	return total_spread
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/update_icon_state()

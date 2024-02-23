@@ -264,9 +264,9 @@
 	if(muzzle_flash && !muzzle_flash.applied)
 		handle_muzzle_flash(user, muzzle_angle)
 
-	if(wielded_fully && recoil)
+	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
-	else if(!wielded_fully && recoil_unwielded)
+	else if(!wielded_fully)
 		simulate_recoil(user, recoil_unwielded, actual_angle)
 
 	if(suppressed)

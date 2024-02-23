@@ -1,5 +1,6 @@
 /obj/item/gun/ballistic/shotgun
 	name = "shotgun"
+	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	item_state = "shotgun"
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
@@ -40,6 +41,14 @@
 			process_fire(user, user, FALSE)
 			return TRUE
 	return FALSE
+
+/obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = -1
+	var/total_recoil = recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
+		total_recoil += gunslinger_bonus
+		total_recoil = clamp(total_recoil,0,INFINITY)
+	return total_recoil
 
 // BRIMSTONE SHOTGUN //
 

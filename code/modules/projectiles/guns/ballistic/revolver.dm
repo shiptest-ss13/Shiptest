@@ -27,7 +27,7 @@
 	fire_delay = 2
 	spread_unwielded = 15
 	recoil = 0.5
-	recoil_unwielded = 1
+	recoil_unwielded = 2
 	semi_auto = FALSE
 	bolt_wording = "hammer"
 	wield_slowdown = 0.3
@@ -414,6 +414,22 @@
 		return
 	to_chat(user, "<span class='danger'>The hammer is up on [src]! Pull it down to fire!</span>")
 
+/obj/item/gun/ballistic/revolver/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = -1
+	var/total_recoil = recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
+		total_recoil += gunslinger_bonus
+		total_recoil = clamp(total_recoil,0,INFINITY)
+	return total_recoil
+
+/obj/item/gun/ballistic/revolver/calculate_spread(mob/user, bonus_spread)
+	var/gunslinger_bonus = -4
+	var/total_spread = bonus_spread
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
+		total_spread += gunslinger_bonus
+		total_spread = clamp(total_spread,0,INFINITY)
+	return total_spread
+
 /obj/item/gun/ballistic/revolver/pickup(mob/user)
 	. = ..()
 	tryflip(user)
@@ -541,7 +557,7 @@
 	spread_unwielded = 5
 	spread = 2
 	recoil = 2
-	recoil_unwielded = 3
+	recoil_unwielded = 4
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
