@@ -65,7 +65,7 @@
 /// Can this mine trigger on the passed movable?
 /obj/item/mine/proc/can_trigger(atom/movable/on_who)
 	//var/badtype = typecacheof(list(/obj/effect, /obj/item/mine))
-	if(triggered || !isturf(loc) || !armed || istype(on_who, /obj/item/mine))
+	if(triggered || !isturf(loc) || !armed || iseffect(on_who) || istype(on_who, /obj/item/mine))
 		return FALSE
 	//if(on_who == badtype)//no recursive self triggering. Bad landmine
 	//	return FALSE
@@ -83,7 +83,13 @@
 		return
 
 	foot_on_mine = WEAKREF(arrived)
-	visible_message(span_userdanger("[icon2html(src, viewers(src))] *click*"))
+
+	if(ismob(arrived))
+		var/mob/living/fool = arrived
+		fool.Paralyze(15, TRUE)
+		to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
+
+	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
 	if(hair_trigger && clicked)
 		triggermine(arrived)
 	clicked = TRUE
