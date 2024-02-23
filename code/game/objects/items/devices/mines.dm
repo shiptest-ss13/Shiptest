@@ -76,6 +76,7 @@
 	//	return FALSE
 	return TRUE
 
+//step 1: the mistake
 /obj/item/mine/proc/on_entered(datum/source, atom/movable/arrived)
 	SIGNAL_HANDLER
 	if(!can_trigger(arrived))
@@ -103,6 +104,7 @@
 	alpha = 204
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
+//step 2: the consequences
 /obj/item/mine/proc/on_exited(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
 	if(!clicked)
@@ -116,9 +118,11 @@
 	INVOKE_ASYNC(src, PROC_REF(triggermine), gone)
 	foot_on_mine = null
 
+//mines may be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
 	if(prob(65))
+		blast_delay * 3
 		triggermine()
 
 /// When something sets off a mine
@@ -144,6 +148,8 @@
 	s.start()
 	if(ismob(triggerer))
 		mineEffect(triggerer)
+	else
+		mineEffect()
 	visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] detonates!"))
 	SEND_SIGNAL(src, COMSIG_MINE_TRIGGERED, triggerer)
 	qdel(src)
@@ -191,7 +197,7 @@
 				update_appearance(UPDATE_ICON_STATE)
 			else
 				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it explodes in your hands!"))
-				triggermine()
+				triggermine(user)
 				update_appearance(UPDATE_ICON_STATE)
 				return
 	. =..()
