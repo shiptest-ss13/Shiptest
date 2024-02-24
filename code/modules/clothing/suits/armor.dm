@@ -112,6 +112,11 @@
 	resistance_flags = FLAMMABLE
 	dog_fashion = null
 
+/obj/item/clothing/suit/armor/vest/security/warden/inteq
+	name = "master at arms' armored coat"
+	desc = "A brown armored coat with a bulletproof vest over it, usually worn by the Master At Arms of the IRMG."
+	icon_state = "maacoat"
+
 /obj/item/clothing/suit/armor/vest/security/warden/alt
 	name = "warden's armored jacket"
 	desc = "A white jacket with silver rank pips and body armor strapped on top."

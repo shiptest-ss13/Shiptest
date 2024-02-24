@@ -83,7 +83,7 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/grenade/full
 		if("Ammo Carrier")
-			backpack_contents += list(/obj/item/ammo_box/a762_39 = 1)
+			backpack_contents += list(/obj/item/ammo_box/a762_40 = 1)
 
 	var/weapon = pick(list("Bolt-Action", "Pistol", "Melee"))
 	switch(weapon)

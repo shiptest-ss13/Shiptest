@@ -1615,8 +1615,8 @@
 	},
 /obj/item/clothing/glasses/meson,
 /obj/machinery/light_switch{
-	dir = 8;
 	pixel_x = 20;
+	dir = 8;
 	pixel_y = 11
 	},
 /turf/open/floor/plasteel/tech/grid,
@@ -1898,6 +1898,38 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
+"ml" = (
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/belt/military/assault,
+/obj/item/storage/backpack/messenger/inteq,
+/obj/item/clothing/under/syndicate/inteq/skirt,
+/obj/item/clothing/under/syndicate/inteq,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "warden";
+	name = "master at arms' locker";
+	req_access_txt = "3"
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/suit/armor/vest/bulletproof,
+/obj/item/megaphone/sec,
+/obj/structure/sign/poster/contraband/eoehoma{
+	pixel_y = -32
+	},
+/obj/item/storage/belt/security/webbing/inteq/alt,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/head/warden/inteq,
+/obj/item/clothing/suit/armor/vest/security/warden/inteq,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "ms" = (
 /obj/machinery/light/directional/west,
 /obj/machinery/power/smes/engineering,
@@ -2643,8 +2675,8 @@
 	dir = 4
 	},
 /obj/machinery/light_switch{
-	dir = 8;
 	pixel_x = 19;
+	dir = 8;
 	pixel_y = 11
 	},
 /turf/open/floor/plasteel/patterned/grid,
@@ -2743,8 +2775,8 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 23
+	pixel_y = 23;
+	pixel_x = -12
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -2793,8 +2825,8 @@
 	dir = 9
 	},
 /obj/machinery/light_switch{
-	dir = 8;
 	pixel_x = 20;
+	dir = 8;
 	pixel_y = 11
 	},
 /turf/open/floor/plasteel/tech,
@@ -3548,6 +3580,37 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ship/crew/toilet)
+"vM" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "ce";
+	name = "artificer class II's locker";
+	req_access = null;
+	req_access_txt = "56"
+	},
+/obj/item/clothing/under/syndicate/inteq/artificer,
+/obj/item/clothing/under/syndicate/inteq/skirt/artificer,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/suit/toggle/industrial,
+/obj/item/clothing/head/hardhat/white,
+/obj/item/clothing/head/beret/sec/inteq,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/gloves/combat,
+/obj/item/megaphone/cargo{
+	name = "engineering megaphone"
+	},
+/obj/item/stamp/ce{
+	name = "artificer class II's rubber stamp"
+	},
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/glasses/welding,
+/obj/item/pipe_dispenser,
+/obj/item/storage/belt/utility/chief{
+	name = "\improper Artificer Class II's toolbelt"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering/communications)
 "vP" = (
 /obj/item/cigbutt,
 /turf/open/floor/plasteel/dark,
@@ -4104,40 +4167,6 @@
 /obj/effect/mapping_helpers/airlock/abandoned,
 /turf/open/floor/plating/airless,
 /area/ship/cargo/port)
-"ze" = (
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/military/assault,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "warden";
-	name = "master at arms' locker";
-	req_access_txt = "3"
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/armor/vest/bulletproof,
-/obj/item/clothing/head/warden/drill{
-	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.";
-	name = "master at arms' campaign hat"
-	},
-/obj/item/megaphone/sec,
-/obj/structure/sign/poster/contraband/eoehoma{
-	pixel_y = -32
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/item/storage/belt/security/webbing/inteq,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "zf" = (
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/storage/backpack/messenger/inteq,
@@ -4665,6 +4694,16 @@
 "CF" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
+"CJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/book/manual/srmlore,
+/obj/structure/bookcase,
+/obj/item/book/random,
+/obj/item/book/random,
+/obj/item/book/random,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "CK" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -4887,14 +4926,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"ET" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "talos_engine_shutter"
-	},
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "Fe" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 8
@@ -5969,8 +6000,8 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/light_switch{
-	pixel_x = -12;
-	pixel_y = 23
+	pixel_y = 23;
+	pixel_x = -12
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
@@ -6248,6 +6279,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
+"Pk" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "talos_engine_shutter"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/engineering/engine)
 "Pm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1;
@@ -6258,42 +6297,6 @@
 	},
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/engineering/engine)
-"Pn" = (
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/military/assault,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/armor/hos/inteq,
-/obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/item/areaeditor/shuttle,
-/obj/item/shield/riot/tele,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "cap";
-	name = "vanguard's locker";
-	req_access_txt = "20"
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/machinery/light/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 4
-	},
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/clothing/head/inteq_peaked,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "Pp" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo/port)
@@ -6733,37 +6736,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"St" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "ce";
-	name = "artificer class II's locker";
-	req_access = null;
-	req_access_txt = "56"
-	},
-/obj/item/clothing/under/syndicate/inteq/artificer,
-/obj/item/clothing/under/syndicate/inteq/skirt/artificer,
-/obj/item/storage/backpack/industrial,
-/obj/item/clothing/suit/toggle/industrial,
-/obj/item/clothing/head/hardhat/white,
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
-/obj/item/clothing/gloves/combat,
-/obj/item/megaphone/cargo{
-	name = "engineering megaphone"
-	},
-/obj/item/stamp/ce{
-	name = "artificer class II's rubber stamp"
-	},
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/glasses/welding,
-/obj/item/pipe_dispenser,
-/obj/item/storage/belt/utility/chief{
-	name = "\improper Artificer Class II's toolbelt"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering/communications)
 "Su" = (
 /obj/machinery/computer/mech_bay_power_console,
 /turf/open/floor/plasteel/tech/grid,
@@ -7254,16 +7226,6 @@
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
 /area/ship/crew)
-"VE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/book/manual/srmlore,
-/obj/structure/bookcase,
-/obj/item/book/random,
-/obj/item/book/random,
-/obj/item/book/random,
-/turf/open/floor/plating,
-/area/ship/maintenance/starboard)
 "VG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7527,6 +7489,24 @@
 "XJ" = (
 /turf/open/floor/engine/hull/reinforced,
 /area/ship/external/dark)
+"XV" = (
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/turf_decal/trimline/opaque/yellow/line,
+/obj/machinery/light/directional/south,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "sec";
+	name = "equipment locker";
+	req_access_txt = "1"
+	},
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/storage/box/handcuffs,
+/obj/item/storage/belt/security/webbing/inteq/alt,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "Ya" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/structure/cable{
@@ -7572,6 +7552,42 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"Yz" = (
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/belt/military/assault,
+/obj/item/storage/backpack/messenger/inteq,
+/obj/item/megaphone/command,
+/obj/item/clothing/under/syndicate/inteq/skirt,
+/obj/item/clothing/under/syndicate/inteq,
+/obj/item/clothing/suit/armor/hos/inteq,
+/obj/item/clothing/head/beret/sec/hos/inteq,
+/obj/item/areaeditor/shuttle,
+/obj/item/shield/riot/tele,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	can_be_unanchored = 1;
+	icon_state = "cap";
+	name = "vanguard's locker";
+	req_access_txt = "20"
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/obj/item/storage/belt/security/webbing/inteq/alt,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/head/inteq_peaked,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "YC" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp/green,
@@ -7747,24 +7763,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
-"ZH" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/opaque/yellow/line,
-/obj/machinery/light/directional/south,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	can_be_unanchored = 1;
-	icon_state = "sec";
-	name = "equipment locker";
-	req_access_txt = "1"
-	},
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/storage/box/handcuffs,
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "ZJ" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 4
@@ -8016,7 +8014,7 @@ ud
 xo
 pU
 pU
-ET
+Pk
 pU
 VL
 cz
@@ -8096,7 +8094,7 @@ te
 QD
 nE
 zt
-St
+vM
 wb
 Oi
 an
@@ -8487,7 +8485,7 @@ aM
 Bv
 mX
 no
-Pn
+Yz
 pf
 mX
 uv
@@ -8604,7 +8602,7 @@ Kz
 Hq
 ey
 Kd
-ZH
+XV
 Hq
 sw
 sw
@@ -8878,7 +8876,7 @@ kM
 Jq
 MK
 vP
-ze
+ml
 mK
 sw
 sw
@@ -8979,7 +8977,7 @@ uI
 Pt
 uI
 Ng
-VE
+CJ
 Ff
 sw
 sw

@@ -1514,6 +1514,11 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
+"arZ" = (
+/obj/structure/table/reinforced,
+/obj/item/taperecorder,
+/turf/open/floor/plasteel/grimy,
+/area/centcom/ferry)
 "asa" = (
 /obj/structure/table/wood,
 /obj/item/lighter,
@@ -4445,6 +4450,13 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
+"aOO" = (
+/obj/item/reagent_containers/food/condiment/enzyme,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/book/manual/wiki/drinks,
+/obj/structure/closet/crate,
+/turf/open/floor/plasteel,
+/area/centcom/holding)
 "aOQ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 10
@@ -6218,6 +6230,23 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom)
+"bbL" = (
+/obj/structure/table/wood,
+/obj/item/folder/red,
+/obj/item/restraints/handcuffs,
+/obj/item/assembly/flash/handheld,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/tdome/tdomeadmin)
 "bck" = (
 /obj/item/clipboard,
 /obj/item/stamp/denied{
@@ -6314,26 +6343,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/tdome/arena)
-"blk" = (
-/obj/structure/sign/clip{
-	pixel_y = -28
-	},
-/obj/structure/table/reinforced,
-/obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_x = 3;
-	pixel_y = 11
-	},
-/obj/machinery/light/directional/east,
-/obj/item/reagent_containers/food/drinks/bottle/rum{
-	pixel_x = -9;
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "bln" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
@@ -6357,6 +6366,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"bpl" = (
+/obj/structure/closet/crate/bin,
+/obj/structure/sign/clip{
+	pixel_y = 28
+	},
+/obj/machinery/light/directional/east,
+/obj/item/reagent_containers/food/snacks/pancakes/blueberry,
+/turf/open/floor/plasteel,
+/area/centcom)
 "bsD" = (
 /obj/structure/table/reinforced,
 /obj/item/folder,
@@ -6551,6 +6569,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"bRK" = (
+/obj/structure/table/reinforced,
+/obj/item/taperecorder,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/centcom/ferry)
 "bSy" = (
 /obj/structure/table/wood/fancy/blue,
 /obj/structure/sign/solgov_seal{
@@ -7339,6 +7372,20 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"dGh" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 5
+	},
+/obj/item/clothing/head/clip/slouch{
+	pixel_y = 8;
+	pixel_x = -4
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "dGq" = (
 /obj/machinery/computer/med_data{
 	dir = 8
@@ -8302,6 +8349,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supply)
+"fsQ" = (
+/obj/item/taperecorder,
+/obj/structure/table/wood,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/centcom/control)
 "fvB" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -8639,16 +8701,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
-"gfn" = (
-/obj/structure/sign/clip{
-	pixel_y = -28
-	},
-/obj/machinery/light/directional/west,
-/obj/machinery/telecomms/relay/preset/minutemen{
-	autolinkers = list("relay")
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "gfJ" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -9204,6 +9256,23 @@
 "hzJ" = (
 /turf/closed/indestructible/riveted,
 /area/centcom)
+"hzR" = (
+/obj/structure/table/wood,
+/obj/item/folder/red,
+/obj/item/restraints/handcuffs,
+/obj/item/assembly/flash/handheld,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/centcom/ferry)
 "hAC" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -9270,14 +9339,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
-"hHj" = (
-/obj/structure/table/reinforced,
-/obj/structure/sign/poster/clip/gold{
-	pixel_y = 32
-	},
-/obj/machinery/fax/admin/minutemen,
-/turf/open/floor/plasteel,
-/area/centcom)
 "hJB" = (
 /obj/structure/table/wood,
 /obj/item/storage/briefcase,
@@ -9355,26 +9416,6 @@
 	},
 /turf/open/floor/circuit/red,
 /area/ctf)
-"hTz" = (
-/obj/structure/table/wood,
-/obj/item/book/manual/wiki/drinks,
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/reagent_containers/glass/rag,
-/obj/machinery/newscaster/directional/north{
-	pixel_y = -30
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/tdome/tdomeobserve)
 "hVO" = (
 /obj/machinery/computer/security/telescreen,
 /obj/structure/table/reinforced,
@@ -9390,11 +9431,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
-"hWc" = (
-/obj/structure/table/reinforced,
-/obj/item/taperecorder,
-/turf/open/floor/plasteel/grimy,
-/area/centcom/ferry)
 "hWK" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/turf_decal/corner/opaque/red{
@@ -9877,6 +9913,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"iMC" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/structure/sign/clip{
+	pixel_y = 28
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel,
+/area/centcom)
 "iNA" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/red,
@@ -10258,22 +10306,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom)
-"jFI" = (
-/obj/structure/table/reinforced,
-/obj/item/taperecorder,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/west,
-/turf/open/floor/plasteel/dark,
-/area/centcom/control)
 "jGz" = (
 /obj/item/clipboard,
 /obj/item/folder/red,
@@ -10330,15 +10362,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/supply)
-"jPe" = (
-/obj/structure/closet/crate/bin,
-/obj/structure/sign/clip{
-	pixel_y = 28
-	},
-/obj/machinery/light/directional/east,
-/obj/item/reagent_containers/food/snacks/pancakes/blueberry,
-/turf/open/floor/plasteel,
-/area/centcom)
 "jPn" = (
 /obj/effect/turf_decal/syndicateemblem/middle/middle,
 /turf/open/floor/mineral/plastitanium/red,
@@ -10361,6 +10384,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"jRf" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
+	pixel_x = 2
+	},
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
+	pixel_x = -1;
+	pixel_y = -6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel,
+/area/centcom)
 "jTw" = (
 /obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -10490,6 +10529,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
+"kel" = (
+/obj/structure/table/reinforced,
+/obj/item/taperecorder,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/centcom/control)
 "keq" = (
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -11153,23 +11208,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
-"lyH" = (
-/obj/structure/table/wood,
-/obj/item/folder/red,
-/obj/item/restraints/handcuffs,
-/obj/item/assembly/flash/handheld,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/tdome/tdomeadmin)
 "lAs" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Shuttle Control Office";
@@ -11187,6 +11225,24 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
+"lDl" = (
+/obj/structure/table/wood,
+/obj/item/folder/red,
+/obj/item/restraints/handcuffs,
+/obj/item/assembly/flash/handheld,
+/obj/machinery/airalarm/directional/south,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/centcom/ferry)
 "lDM" = (
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
@@ -11457,6 +11513,24 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 9
 	},
+/turf/open/floor/plasteel,
+/area/centcom)
+"man" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_y = 3
+	},
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_y = -1;
+	pixel_x = -5
+	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/centcom)
 "mbm" = (
@@ -12330,21 +12404,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
-"nVj" = (
-/obj/item/taperecorder,
-/obj/structure/table/wood,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/control)
 "nWy" = (
 /obj/structure/table/reinforced,
 /obj/item/clipboard,
@@ -12496,31 +12555,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
-"odz" = (
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/book/manual/wiki/drinks,
-/obj/structure/closet/crate,
-/turf/open/floor/plasteel,
-/area/centcom/holding)
-"odH" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/assault/ak47/inteq{
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/assault/ak47/inteq{
-	pixel_y = -1;
-	pixel_x = -5
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel,
-/area/centcom)
 "odV" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -13301,6 +13335,26 @@
 /obj/item/reagent_containers/food/snacks/fishmeat/carp,
 /turf/open/floor/plasteel,
 /area/centcom/holding)
+"pDx" = (
+/obj/structure/table/wood,
+/obj/item/book/manual/wiki/drinks,
+/obj/item/reagent_containers/food/drinks/shaker,
+/obj/item/reagent_containers/glass/rag,
+/obj/machinery/newscaster/directional/north{
+	pixel_y = -30
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/tdome/tdomeobserve)
 "pFf" = (
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -13554,6 +13608,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/tdome/tdomeobserve)
+"qap" = (
+/obj/structure/table/reinforced,
+/obj/structure/sign/poster/clip/gold{
+	pixel_y = 32
+	},
+/obj/machinery/fax/admin/minutemen,
+/turf/open/floor/plasteel,
+/area/centcom)
 "qdG" = (
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -13712,6 +13774,21 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"qHN" = (
+/obj/structure/table/reinforced,
+/obj/item/taperecorder,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/transparent/neutral,
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/transparent/neutral{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/centcom/evac)
 "qJX" = (
 /obj/effect/turf_decal/corner/transparent/bar,
 /obj/effect/turf_decal/corner/transparent/bar{
@@ -14235,23 +14312,6 @@
 	},
 /turf/open/floor/plating,
 /area/ctf)
-"rCv" = (
-/obj/structure/table/wood,
-/obj/item/folder/red,
-/obj/item/restraints/handcuffs,
-/obj/item/assembly/flash/handheld,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/ferry)
 "rCM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -14297,6 +14357,28 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"rIP" = (
+/obj/structure/table/reinforced,
+/obj/structure/sign/poster/clip/bard{
+	pixel_y = -32
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/ammo_casing{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing{
+	pixel_x = 11
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "rJp" = (
 /obj/item/storage/firstaid/regular,
 /obj/structure/table,
@@ -14554,6 +14636,26 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"slo" = (
+/obj/structure/sign/clip{
+	pixel_y = -28
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/helmet/bulletproof/x11/clip{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/clip{
+	pixel_x = 3;
+	pixel_y = 11
+	},
+/obj/machinery/light/directional/east,
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "slp" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
@@ -15093,22 +15195,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
-"tvO" = (
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/inteq{
-	pixel_x = 2
-	},
-/obj/item/gun/ballistic/automatic/smg/inteq{
-	pixel_x = -1;
-	pixel_y = -6
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel,
-/area/centcom)
 "tyg" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
@@ -15171,20 +15257,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
-"tAN" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 5
-	},
-/obj/item/clothing/head/clip/slouch{
-	pixel_y = 8;
-	pixel_x = -4
-	},
-/obj/item/pen/fourcolor{
-	pixel_x = 5
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "tBa" = (
 /obj/structure/table/wood,
 /obj/item/book/manual/srmlore{
@@ -15415,24 +15487,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
-"uaG" = (
-/obj/structure/table/wood,
-/obj/item/folder/red,
-/obj/item/restraints/handcuffs,
-/obj/item/assembly/flash/handheld,
-/obj/machinery/airalarm/directional/south,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/ferry)
 "ucv" = (
 /obj/machinery/computer/prisoner/management,
 /obj/effect/turf_decal/industrial/warning,
@@ -15703,21 +15757,6 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom)
-"uPA" = (
-/obj/structure/table/reinforced,
-/obj/item/taperecorder,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/ferry)
 "uRu" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -15806,21 +15845,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ctf)
-"vbL" = (
-/obj/structure/table/reinforced,
-/obj/item/taperecorder,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/evac)
 "vcL" = (
 /obj/machinery/computer/helm,
 /obj/effect/turf_decal/corner/transparent/bar,
@@ -16218,6 +16242,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
+"wbr" = (
+/obj/structure/sign/clip{
+	pixel_y = -28
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/telecomms/relay/preset/minutemen{
+	autolinkers = list("relay")
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "wbx" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/item/weldingtool/experimental,
@@ -16256,18 +16290,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ctf)
-"wdr" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	pixel_x = 8;
-	pixel_y = 3
-	},
-/obj/structure/sign/clip{
-	pixel_y = 28
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel,
-/area/centcom)
 "weq" = (
 /obj/structure/chair/office,
 /obj/effect/turf_decal/corner/opaque/red,
@@ -16766,28 +16788,6 @@
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel,
 /area/centcom/ferry)
-"xIL" = (
-/obj/structure/table/reinforced,
-/obj/structure/sign/poster/clip/bard{
-	pixel_y = -32
-	},
-/obj/item/ammo_box/magazine/p16{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/ammo_box/magazine/p16{
-	pixel_x = 1;
-	pixel_y = 2
-	},
-/obj/item/ammo_casing{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/ammo_casing{
-	pixel_x = 11
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "xKt" = (
 /obj/structure/closet/crate/hydroponics,
 /obj/item/shovel/spade,
@@ -26673,11 +26673,11 @@ psm
 aPu
 aaa
 hzJ
-wdr
+iMC
 moE
 qVq
 qVq
-gfn
+wbr
 hzJ
 aaa
 aaa
@@ -26930,7 +26930,7 @@ eqM
 aPu
 aaa
 hzJ
-tAN
+dGh
 wad
 pTR
 gaU
@@ -27187,7 +27187,7 @@ unc
 iSo
 aaa
 hzJ
-hHj
+qap
 pvW
 iWI
 hBf
@@ -27448,7 +27448,7 @@ qVq
 tGR
 kiC
 bUH
-xIL
+rIP
 hzJ
 aaa
 aaa
@@ -27701,11 +27701,11 @@ gsx
 aPu
 aaa
 hzJ
-jPe
+bpl
 qVq
 qVq
 aIF
-blk
+slo
 hzJ
 aaa
 aaa
@@ -30781,7 +30781,7 @@ nYZ
 mGE
 rUa
 mGE
-odH
+man
 aPu
 aaa
 eAJ
@@ -31809,7 +31809,7 @@ lKP
 sQw
 rjV
 sQw
-tvO
+jRf
 aPu
 aaa
 eAJ
@@ -45397,7 +45397,7 @@ aCT
 aWO
 aBD
 auG
-odz
+aOO
 aTd
 aCT
 aYa
@@ -51286,7 +51286,7 @@ aaa
 aaa
 aaa
 aoe
-uPA
+bRK
 afh
 aYH
 jGz
@@ -53358,7 +53358,7 @@ kuk
 nXP
 pjR
 aka
-rCv
+hzR
 amD
 aaa
 aaa
@@ -53597,7 +53597,7 @@ qXd
 mbq
 myC
 vQM
-uaG
+lDl
 amD
 wPY
 vkq
@@ -54127,7 +54127,7 @@ xSR
 apg
 aAc
 arY
-hWc
+arZ
 apg
 wER
 anT
@@ -59044,7 +59044,7 @@ aJI
 aJQ
 aKa
 tzt
-lyH
+bbL
 aIR
 aKG
 aIv
@@ -59269,7 +59269,7 @@ aOk
 aio
 aiu
 aio
-jFI
+kel
 pLI
 tGF
 fpg
@@ -63143,7 +63143,7 @@ rgs
 fUQ
 vNl
 obp
-hTz
+pDx
 aEp
 aVL
 khG
@@ -67203,7 +67203,7 @@ aaa
 aaa
 aaa
 ain
-nVj
+fsQ
 akl
 akE
 lwW
@@ -67495,7 +67495,7 @@ aQK
 keb
 ckq
 ttB
-vbL
+qHN
 aYn
 nBt
 nBt

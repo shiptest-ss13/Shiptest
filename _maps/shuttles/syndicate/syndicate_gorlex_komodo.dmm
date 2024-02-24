@@ -16,6 +16,20 @@
 /obj/machinery/power/terminal,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"ah" = (
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/hallway/central)
 "am" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
@@ -985,26 +999,6 @@
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
-"jh" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 5
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/item/clothing/under/syndicate/skirt/maid,
-/obj/item/clothing/gloves/combat/maid,
-/obj/item/clothing/head/maidheadband/syndicate,
-/obj/item/clothing/accessory/maidapron/syndicate,
-/obj/structure/closet/crate/secure/loot,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "jp" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
@@ -2091,31 +2085,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"tV" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/generic{
-	pixel_x = -12;
-	pixel_y = 7
-	},
-/obj/item/clothing/under/syndicate/sniper,
-/obj/item/clothing/under/syndicate/ngr,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/suit/armor/vest/duster,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	icon_state = "sec_wall";
-	name = "Bridge officer's locker";
-	pixel_x = 29;
-	req_access_txt = "57"
-	},
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/clothing/neck/chameleon,
-/obj/item/radio/headset/syndicate,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "tY" = (
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -2821,6 +2790,22 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"BL" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/closet/crate/secure/loot,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "BP" = (
 /obj/structure/sign/syndicate,
 /turf/closed/wall/mineral/plastitanium,
@@ -2868,43 +2853,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/hallway/central)
-"BZ" = (
-/obj/effect/turf_decal/borderfloor{
-	dir = 8
-	},
-/obj/item/gun/ballistic/automatic/pistol/candor{
-	pixel_x = 1;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 3
-	},
-/obj/item/clothing/under/syndicate/ngr,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/suit/armor/vest/leather{
-	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of the Gorlex Marauders."
-	},
-/obj/item/clothing/mask/gas/sechailer/swat,
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	icon_state = "sec_wall";
-	name = "Sergeant's locker";
-	pixel_y = -29;
-	req_access_txt = "58"
-	},
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/clothing/suit/armor/vest/blueshirt,
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/accessory/holster,
-/obj/item/clothing/shoes/combat,
-/obj/item/radio/headset/syndicate,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "Ca" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3870,6 +3818,33 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
+"KG" = (
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "hos";
+	name = "captain's locker";
+	req_access_txt = "20"
+	},
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/under/syndicate/ngr/officer,
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/glasses/thermal/eyepatch,
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/clothing/head/HoS/syndicate,
+/obj/item/clothing/head/ngrcap{
+	pixel_x = 5;
+	pixel_y = -4
+	},
+/obj/item/gun/ballistic/derringer/traitor,
+/obj/item/clothing/under/syndicate/sniper,
+/obj/item/clothing/suit/armor/vest/capcarapace/ngr_captain,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/radio/headset/syndicate/alt/leader,
+/turf/open/floor/carpet/black,
+/area/ship/bridge)
 "KL" = (
 /obj/machinery/vending/custom,
 /obj/structure/railing{
@@ -3880,20 +3855,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"Lb" = (
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/effect/turf_decal/techfloor{
-	dir = 10
-	},
-/obj/item/clothing/mask/gas/sechailer/balaclava,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/structure/closet/syndicate{
-	desc = "It's a basic storage unit.";
-	name = "uniform closet"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/hallway/central)
 "Le" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -4002,6 +3963,31 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
+"Mo" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/generic{
+	pixel_x = -12;
+	pixel_y = 7
+	},
+/obj/item/clothing/under/syndicate/sniper,
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/suit/armor/vest/duster,
+/obj/structure/closet/secure_closet/wall{
+	dir = 8;
+	icon_state = "sec_wall";
+	name = "Bridge officer's locker";
+	pixel_x = 29;
+	req_access_txt = "57"
+	},
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/clothing/neck/chameleon,
+/obj/item/radio/headset/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "ME" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
@@ -4796,6 +4782,43 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
+"UJ" = (
+/obj/effect/turf_decal/borderfloor{
+	dir = 8
+	},
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_x = 1;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 3
+	},
+/obj/item/clothing/under/syndicate/ngr,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/suit/armor/vest/leather{
+	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of the Gorlex Marauders."
+	},
+/obj/item/clothing/mask/gas/sechailer/swat,
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_state = "sec_wall";
+	name = "Sergeant's locker";
+	pixel_y = -29;
+	req_access_txt = "58"
+	},
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/clothing/suit/armor/vest/blueshirt,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/accessory/holster,
+/obj/item/clothing/shoes/combat,
+/obj/item/radio/headset/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "UK" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch{
@@ -5362,33 +5385,6 @@
 	},
 /turf/open/floor/pod,
 /area/ship/cargo)
-"ZW" = (
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "hos";
-	name = "captain's locker";
-	req_access_txt = "20"
-	},
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/ngr/officer,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/glasses/thermal/eyepatch,
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
-/obj/item/clothing/head/ngrcap{
-	pixel_x = 5;
-	pixel_y = -4
-	},
-/obj/item/gun/ballistic/derringer/traitor,
-/obj/item/clothing/under/syndicate/sniper,
-/obj/item/clothing/suit/armor/vest/capcarapace/ngr_captain,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
-/obj/item/radio/headset/syndicate/alt/leader,
-/turf/open/floor/carpet/black,
-/area/ship/bridge)
 
 (1,1,1) = {"
 CM
@@ -5663,7 +5659,7 @@ Dl
 JB
 bS
 tC
-jh
+BL
 KE
 Vq
 Or
@@ -5705,7 +5701,7 @@ nQ
 pS
 ZI
 sT
-tV
+Mo
 tC
 WW
 dm
@@ -5723,7 +5719,7 @@ Dd
 RN
 Ye
 OG
-Lb
+ah
 VR
 Eg
 xP
@@ -5880,11 +5876,11 @@ ME
 WP
 WA
 TH
-BZ
+UJ
 tC
 FL
 up
-ZW
+KG
 tC
 tC
 tC
