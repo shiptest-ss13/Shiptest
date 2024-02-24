@@ -8,6 +8,11 @@
 	w_class = WEIGHT_CLASS_TINY
 	item_flags = DROPDEL
 
+/obj/item/shrapnel/hot
+	name = "molten slag"
+	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=4, embed_chance_turf_mod=-100)
+	damtype =  BURN
+
 /obj/item/shrapnel/stingball
 	name = "clump of ballistic gel"
 	embedding = list(embed_chance=15, fall_chance=1, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=1, pain_mult=3, jostle_pain_mult=5, rip_time=15, embed_chance_turf_mod=-100)
@@ -38,6 +43,13 @@
 	ricochet_incidence_leeway = 60
 	hit_stunned_targets = TRUE
 
+/obj/projectile/bullet/shrapnel/rusty
+	damage = 10
+	armour_penetration = -35
+	dismemberment = 5
+	ricochets_max = 3//duller = less likely to stick in a wall
+	ricochet_chance = 60
+
 /obj/projectile/bullet/shrapnel/mega
 	name = "flying shrapnel hunk"
 	range = 25
@@ -45,6 +57,26 @@
 	ricochets_max = 4
 	ricochet_chance = 90
 	ricochet_decay_chance = 0.9
+
+/obj/projectile/bullet/shrapnel/hot
+	name = "white-hot metal slag"
+	damage = 6//soft
+	range = 8
+	armour_penetration = -40
+	dismemberment = 4
+	ricochets_max = 1
+	ricochet_chance = 60
+	shrapnel_type = /obj/item/shrapnel/hot
+	ricochet_incidence_leeway = 60
+	hit_stunned_targets = TRUE
+	damage_type = BURN
+
+/obj/projectile/bullet/shrapnel/hot/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(8)
+		M.IgniteMob()
 
 /obj/projectile/bullet/pellet/stingball
 	name = "ballistic gel clump"

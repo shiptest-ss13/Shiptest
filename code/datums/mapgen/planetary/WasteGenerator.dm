@@ -125,7 +125,7 @@
 
 
 		//the illusive shrapnel plant
-		/obj/item/mine/explosive/shrapnel/human_only = 10
+		/obj/item/mine/explosive/shrapnel/carbon_only = 10
 	)
 
 	feature_spawn_list = list(
@@ -202,7 +202,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/four = 20,
 		/obj/structure/flora/ash/garden/waste = 300,
 		/obj/structure/flora/ash/glowshroom = 1800,
-		/obj/item/mine/explosive/shrapnel/human_only = 10
+		/obj/item/mine/explosive/shrapnel/carbon_only = 10
 	)
 
 /datum/biome/waste/tar_bed //tar colorings
@@ -308,7 +308,7 @@
 		/obj/effect/spawner/lootdrop/waste/salvageable = 400,
 		/obj/structure/flora/ash/garden/waste = 70,
 		/obj/structure/flora/ash/glowshroom = 400, //more common in caves
-		/obj/item/mine/explosive/shrapnel/human_only = 10
+		/obj/item/mine/explosive/shrapnel/carbon_only = 10
 	)
 
 	feature_spawn_list = list(

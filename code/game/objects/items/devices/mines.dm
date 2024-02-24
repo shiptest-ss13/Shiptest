@@ -12,25 +12,28 @@
 	icon_state = "mine"
 	item_state = "assembly"
 	base_icon_state = "mine"
-	/// Is our mine currently exploding?
+	// Is our mine currently exploding?
 	var/triggered = FALSE
-	/// Is our mine live?
+	// Is our mine live?
 	var/armed = FALSE
 	// Sets a delay for mines going live after being planted
 	var/arm_delay = 5 SECONDS
-	/// Use to set a delay after activation to trigger the explosion.
+	// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 SECONDS
 
-	///armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
+	//armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
 	var/stealthpwr = 204
 
-	///when true, mines explode instantly on being stepped upon
+	//when true, mines explode instantly on being stepped upon
 	var/hair_trigger = FALSE
 
-	///bruteforce solution. has the mine loc been entered
+	//bruteforce solution. has the mine loc been entered
 	var/clicked = FALSE
-	///disables the mine without disarming it. perfect for practical jokes
+	//disables the mine without disarming it. perfect for practical jokes
 	var/clickblock = FALSE
+
+	//flavour
+	var/manufacturer = MANUFACTURER_NONE
 
 	//are the wires exposed?
 	var/open_panel = FALSE
@@ -56,6 +59,9 @@
 		. += "<span class='information'>It appears to be inactive...</span>"
 	else
 		. += "<span class='information'>It looks ready to explode.</span>"
+
+	if(manufacturer)
+		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
 
 	var/atom/movable/unlucky_sod = foot_on_mine?.resolve()
 	if(user == unlucky_sod)
@@ -223,18 +229,23 @@
 			user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
 			triggermine(user)
 
+//
+//LANDMINE TYPES
+//Retlaw please help me make these more immersive
+//
+
 /obj/item/mine/explosive
-	name = "landmine"
-	desc = "An anti infantry explosive produced en-masse during the corporate wars. Watch your step."
+	name = "\improper G-80 Landmine"
+	desc = "An anti-infantry explosive produced during the corporate wars. Watch your step."
 
 	//customize explosive power
 	var/range_devastation = 0
-	var/range_heavy = 2
-	var/range_light = 3
+	var/range_heavy = 1
+	var/range_light = 5
 	var/range_flame = 1
 
 	//using this to indicate pb
-	var/range_flash = 2
+	var/range_flash = 1
 
 	//customize shrapnel. Magnitude zero prevents them from spawning
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
@@ -244,50 +255,63 @@
 	var/shred_triggerer = TRUE
 
 	stealthpwr = 100
-
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/explosive/mineEffect(mob/victim)
 	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
 	if(shrapnel_magnitude > 0)
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
+/obj/item/mine/explosive/rusty
+	name = "\improper Rusted Landmine"
+	desc = "An anti-infantry explosive, designed to go off underfoot. This one has seen better days."
+	manufacturer = MANUFACTURER_NONE
+	range_heavy = 0
+	range_light = 3
+	shrapnel_type = /obj/projectile/bullet/shrapnel/rusty
 
 /obj/item/mine/explosive/fire
-	name = "incendiary landmine"
-	desc = "An anti infantry explosive that ignites nearby targets. Watch your step. "
+	name = "\improper G-82 Incindeary"
+	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag. Watch your step. "
 
-	range_flame = 7
+	range_flame = 6
 	range_light = 3
-	range_flash = 2
+	range_flash = 3
 
-	shrapnel_magnitude = 0
+
+	shrapnel_magnitude = 2
 
 /obj/item/mine/explosive/heavy
-	range_heavy = 2
-	range_light = 4
+	name = "\improper G-81 Anti-Tank"
+	desc = "An immense anti-vehicle explosive built during the corporate wars. Someone has recklessly switched out the detonator for one that activates for lighter targets."
+	w_class = WEIGHT_CLASS_BULKY
+	range_heavy = 4
+	range_light = 8
+	shrapnel_magnitude = 4
+	blast_delay = 5//run.
 
 /obj/item/mine/explosive/shrapnel
-	name = "fragmentation landmine"
-	desc = "An anti infantry explosive with metal banding that transforms into deadly shrapnel on detonation. "
+	name = "\improper G-84 Fragmentation"
+	desc = "An anti-infantry explosive built during the corporate wars. Metal banding inside transforms into deadly shrapnel on detonation. "
 
-	range_heavy = 2
+	range_heavy = 1
 	range_light = 4
 
 	shrapnel_magnitude = 3
 	shred_triggerer = TRUE
 
-/obj/item/mine/explosive/shrapnel/human_only
-	name = "sophisticated shrapnel mine"
-	desc = "A deadly mine, this one seems to be modified to trigger for humans only?"
+/obj/item/mine/explosive/shrapnel/carbon_only
+	name = "\improper Rusted G-84 Special"
+	desc = "A deadly fragmentation mine. This one has a specially-calibrated weight sensor designed to prevent misfires"
 
-/obj/item/mine/explosive/shrapnel/human_only/on_entered(datum/source, atom/movable/AM)
-	if(!ishuman(AM))
+/obj/item/mine/explosive/shrapnel/carbon_only/on_entered(datum/source, atom/movable/AM)
+	if(!iscarbon(AM))
 		return
 	. = ..()
 
 /obj/item/mine/explosive/shrapnel/sting
-	name = "stinger mine"
-	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter protestors. The bands of soft ballistic gel inside stick to targets and incapacitate without causing serious maiming. In Theory."
+	name = "\improper'Stinger' Crowd Management Device"
+	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of soft ballistic gel inside stick to targets and incapacitate without causing serious maiming. In Theory."
 
 	range_heavy = 0
 	range_light = 0
@@ -298,8 +322,7 @@
 	shrapnel_magnitude = 6
 	shred_triggerer = TRUE
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
-
-
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
 //UNUSED MINES//
 //varying levels of useless.

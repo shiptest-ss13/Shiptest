@@ -42,7 +42,7 @@
 	)
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 1,
-		/obj/item/mine/explosive/shrapnel/human_only = 1
+		/obj/item/mine/explosive/shrapnel/carbon_only = 1
 	)
 	mob_spawn_list = list(
 		//hivebots, not too difficult
