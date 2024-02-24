@@ -601,8 +601,3 @@ Difficulty: Medium
 	return
 
 /mob/living/simple_animal/hostile/megafauna/dragon/icemoon
-
-/mob/living/simple_animal/hostile/megafauna/dragon/icemoon/death()
-	for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
-		L.create_roles()
-	..()
