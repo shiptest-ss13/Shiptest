@@ -40,7 +40,7 @@
 	name = "ammo holder (.45-70 hollow point)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
-	ammo_type = /obj/item/ammo_casing/a357/hp
+	ammo_type = /obj/item/ammo_casing/a4570/hp
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"
@@ -336,11 +336,15 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/a762_39
-	name = "ammo box (7.62x39mm)"
-	icon_state = "a762_39box"
-	ammo_type = /obj/item/ammo_casing/a762_39
-	max_ammo = 60
+/obj/item/ammo_box/a762_40
+	name = "ammo box (7.62x40mm CLIP)"
+	icon_state = "a762_40box_big"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/a762_40/inteq
+	icon_state = "a762_40box_big_inteq"
 
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"

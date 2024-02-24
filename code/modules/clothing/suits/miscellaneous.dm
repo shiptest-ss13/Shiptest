@@ -399,7 +399,7 @@
 
 /obj/item/clothing/suit/jacket/leather
 	name = "leather jacket"
-	desc = "Pompadour not included."
+	desc = "This makes you feel like the coolest guy in town!"
 	icon_state = "leatherjacket"
 	item_state = "hostrench"
 	resistance_flags = NONE
