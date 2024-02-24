@@ -2444,9 +2444,16 @@
 "vp" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/industrial/traffic/corner,
+/obj/machinery/cell_charger{
+	pixel_y = 7;
+	pixel_x = -4
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /obj/machinery/recharger{
-	pixel_x = 6;
-	pixel_y = 1
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -2981,6 +2988,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -4894,6 +4904,10 @@
 "Ny" = (
 /obj/machinery/autolathe,
 /obj/machinery/light/directional/east,
+/obj/item/stack/sheet/glass/twenty{
+	pixel_x = 6;
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Nz" = (
