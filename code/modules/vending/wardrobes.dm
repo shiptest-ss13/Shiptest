@@ -568,7 +568,7 @@
 		/obj/item/storage/belt/medical/webbing/clip = 3,
 		/obj/item/clothing/gloves/color/latex/nitrile/clip = 3,
 
-		/obj/item/clothing/suit/toggle/lawyer/minutemen = 3,
+		/obj/item/clothing/suit/toggle/lawyer/clip = 3,
 		/obj/item/clothing/suit/armor/vest/capcarapace/clip = 3,
 		/obj/item/clothing/suit/armor/clip_trenchcoat = 3,
 		/obj/item/clothing/suit/armor/vest/bulletproof = 3,
@@ -582,6 +582,7 @@
 		/obj/item/clothing/head/clip = 3,
 		/obj/item/clothing/head/clip/corpsman = 3,
 		/obj/item/clothing/head/clip/slouch = 3,
+		/obj/item/clothing/head/clip/slouch/officer = 3,
 		/obj/item/clothing/head/clip/boonie = 3,
 		/obj/item/clothing/head/fedora/det_hat/clip = 3,
 		/obj/item/clothing/head/flatcap/clip = 3,

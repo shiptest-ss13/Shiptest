@@ -17,6 +17,17 @@
 		return
 	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
 
+/datum/outfit/job/minutemen
+	name = "CLIP - Base Outfit"
+
+	jobtype = /datum/job/assistant
+	uniform = /obj/item/clothing/under/clip
+	alt_uniform = null
+
+	faction_icon = "bg_minutemen"
+
+	box = /obj/item/storage/box/survival/clip
+
 ///assistant
 
 /datum/outfit/job/clip/assistant
@@ -37,7 +48,43 @@
 		return
 */
 
+/datum/outfit/job/clip/minutemen/assistant
+	name = "CLIP - Volunteer"
+	job_icon = "assistant"
+	jobtype = /datum/job/assistant
+
+	r_pocket = /obj/item/radio
+
+
 ///captains
+
+/datum/outfit/job/clip/captain
+	name = "CLIP - Captain"
+	job_icon = "captain"
+	jobtype = /datum/job/captain
+
+	id = /obj/item/card/id/gold
+	gloves = /obj/item/clothing/gloves/color/white
+
+
+	backpack = /obj/item/storage/backpack/captain
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com
+
+//	accessory = /obj/item/clothing/accessory/medal/gold/captain
+
+//	ears = /obj/item/radio/headset/minutemen/alt/captain
+	uniform = /obj/item/clothing/under/clip/formal
+	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
+
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/clip/slouch
+	backpack_contents = list(/obj/item/storage/box/ids=1,\
+		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/captain
 	name = "Minutemen - Captain"
@@ -58,7 +105,7 @@
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 
@@ -122,7 +169,7 @@
 	ears = /obj/item/radio/headset/minutemen/alt
 	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
 	gloves = /obj/item/clothing/gloves/combat
 	belt = /obj/item/storage/belt/utility/full
@@ -153,7 +200,7 @@
 	ears = /obj/item/radio/headset/minutemen/alt
 	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	alt_suit = null
 
 	shoes = /obj/item/clothing/shoes/combat

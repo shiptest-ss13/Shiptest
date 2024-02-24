@@ -75,8 +75,7 @@
 	icon_state = "clip_officer_skirt"
 
 //suit
-
-/obj/item/clothing/suit/toggle/lawyer/minutemen
+/obj/item/clothing/suit/toggle/lawyer/clip
 	name = "CLIP Minutemen suit jacket"
 	desc = "An enterprising dress jacket used by officers of the CLIP Minutemen."
 
@@ -86,7 +85,7 @@
 	icon_state = "suitjacket_clip"
 	item_state = "suitjacket_navy"
 
-/obj/item/clothing/suit/toggle/lawyer/minutemen/Initialize()
+/obj/item/clothing/suit/toggle/lawyer/clip/Initialize()
 	. = ..()
 	if(!allowed)
 		allowed = GLOB.security_vest_allowed //it's hop-equivalent gear after all
@@ -197,6 +196,11 @@
 	item_state = "whitecloth"
 
 /obj/item/clothing/head/clip/slouch
+	name = "CLIP Minutemen slouch hat"
+	desc = "A commanding slouch hat used by the CLIP Minutemen."
+	icon_state = "clip_slouch_hat"
+
+/obj/item/clothing/head/clip/slouch/officer
 	name = "CLIP Minutemen officer's slouch hat"
 	desc = "A commanding slouch hat adorned with a officer's badge, used by the CLIP Minutemen."
 	icon_state = "clip_officer_hat"

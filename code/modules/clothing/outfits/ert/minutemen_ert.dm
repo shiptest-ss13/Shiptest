@@ -95,7 +95,7 @@
 	belt = /obj/item/clipboard
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/clip/officer
-	suit = /obj/item/clothing/suit/toggle/lawyer/minutemen
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	suit_store = null
 	ears = /obj/item/radio/headset/minutemen/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
