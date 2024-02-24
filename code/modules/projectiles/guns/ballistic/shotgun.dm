@@ -230,7 +230,13 @@
 	mag_type = /obj/item/ammo_box/magazine/m12g
 	manufacturer = MANUFACTURER_INTEQ
 
-/obj/item/gun/ballistic/shotgun/bulldog/minutemen
+/obj/item/gun/ballistic/shotgun/bulldog/suns
+	name = "\improper Bulldog-C Shotgun"
+	desc = "A variation of the Bulldog manufactured by Scarborough Arms for SUNS. Its shorter barrel is intended to provide additional maneuverability in personal defense scenarios."
+	icon_state = "bulldog_suns"
+	item_state = "bulldog_suns"
+
+/obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
 	name = "\improper CM-15"
 	desc = "A standard-issue shotgun of the Colonial Minutemen, most often used by boarding crews. Only compatible with specialized 8-round magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'
@@ -628,6 +634,7 @@
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
 	desc = "A sturdy, excellently-made lever-action rifle. This one appears to be a genuine antique, kept in incredibly good condition despite its advanced age. Chambered in .38."
+	base_icon_state = "flamingbolt"
 	icon_state = "flamingbolt"
 	item_state = "flamingbolt"
 

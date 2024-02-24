@@ -374,8 +374,8 @@
 
 /mob/living/simple_animal/get_status_tab_items()
 	. = ..()
-	. += ""
 	. += "Health: [round((health / maxHealth) * 100)]%"
+	. += "Intent: [a_intent]"
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot.len)
