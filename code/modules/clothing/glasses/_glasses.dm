@@ -39,6 +39,12 @@
 	. = ..()
 	if(. && user)
 		user.update_sight()
+		if(icon_state == "welding-g")
+			change_glass_color(user, /datum/client_colour/glass_colour/gray)
+		else if(icon_state == "bustin-g")
+			change_glass_color(user, /datum/client_colour/glass_colour/green)
+		else
+			change_glass_color(user, null)
 
 //called when thermal glasses are emped.
 /obj/item/clothing/glasses/proc/thermal_overload()
@@ -238,6 +244,7 @@
 	icon_state = "sunhudbeer"
 	desc = "A pair of sunglasses outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion."
 	clothing_flags = SCAN_REAGENTS
+	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/sunglasses/reagent/equipped(mob/user, slot)
 	. = ..()
@@ -253,6 +260,7 @@
 	icon_state = "sunhudsci"
 	desc = "A pair of tacky purple sunglasses that allow the wearer to recognize various chemical compounds with only a glance."
 	clothing_flags = SCAN_REAGENTS
+	glass_colour_type = /datum/client_colour/glass_colour/darkpurple
 
 /obj/item/clothing/glasses/sunglasses/garb
 	name = "black gar glasses"
