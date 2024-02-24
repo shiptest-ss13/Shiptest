@@ -698,12 +698,12 @@
 /area/ship/engineering)
 "gx" = (
 /obj/structure/rack,
-/obj/item/gun/energy/kalix/pgf/heavy,
 /obj/effect/turf_decal/corner/opaque/red/full,
-/obj/item/gun/energy/kalix/pgf/heavy{
-	pixel_y = 7
-	},
 /obj/machinery/light/directional/west,
+/obj/item/gun/energy/kalix/pgf/heavy/sniper{
+	pixel_x = -3;
+	pixel_y = 2
+	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "gz" = (
@@ -1083,6 +1083,14 @@
 /obj/item/trash/pistachios{
 	pixel_x = 2;
 	pixel_y = 4
+	},
+/obj/item/trash/energybar,
+/obj/item/trash/sosjerky{
+	pixel_y = 5
+	},
+/obj/item/trash/popcorn{
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -3943,6 +3951,11 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
+/obj/item/reagent_containers/food/drinks/coffee{
+	pixel_x = -4;
+	pixel_y = 13
+	},
+/obj/item/newspaper,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Gb" = (
@@ -4133,16 +4146,13 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/corner/opaque/red/full,
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = -4
+	pixel_y = 10
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 1
+	pixel_y = 5
 	},
 /obj/item/gun/energy/kalix/pgf{
-	pixel_y = 6
-	},
-/obj/item/gun/energy/kalix/pgf{
-	pixel_y = 11
+	pixel_y = 0
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
@@ -5863,6 +5873,9 @@
 	req_access = list(20);
 	name = "captain's locker"
 	},
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = -16
+	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "UH" = (
@@ -6131,6 +6144,10 @@
 	pixel_y = -1;
 	pixel_x = -18
 	},
+/obj/item/gun/energy/kalix/pistol{
+	pixel_y = -17;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
 "Wc" = (
@@ -6195,14 +6212,14 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "WH" = (
-/obj/item/storage/ration/crayons,
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
 /obj/structure/closet/secure_closet/freezer{
 	name = "fridge"
 	},
-/obj/effect/spawner/lootdrop/ration,
-/obj/effect/spawner/lootdrop/ration,
+/obj/item/storage/ration/crayons,
+/obj/item/storage/ration/vegan_chili,
+/obj/item/storage/ration/vegan_chili,
+/obj/item/storage/ration/beef_strips,
+/obj/item/storage/ration/beef_strips,
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
@@ -6839,7 +6856,7 @@ xz
 (6,1,1) = {"
 xz
 xz
-xz
+cR
 Fm
 Fm
 lc
@@ -6860,7 +6877,7 @@ TV
 TV
 At
 At
-xz
+cR
 xz
 xz
 "}
@@ -6915,7 +6932,7 @@ XC
 uq
 OY
 cI
-Ha
+GW
 uJ
 fG
 xz
@@ -6943,7 +6960,7 @@ dE
 ih
 qI
 VY
-GW
+Ha
 uJ
 uJ
 fG

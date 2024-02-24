@@ -61,7 +61,7 @@
 
 	uniform = /obj/item/clothing/under/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena
+	neck = /obj/item/clothing/neck/cloak/gezena/captain
 
 /datum/outfit/job/gezena/captain
 	name = "PGF - Captain"
