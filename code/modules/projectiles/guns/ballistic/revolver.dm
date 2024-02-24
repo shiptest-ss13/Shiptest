@@ -298,13 +298,8 @@
 		REVOLVER_AUTO_ROTATE_RIGHT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_right"),
 		)
 
-	var/image/editing_image
-	if(gate_load_direction == REVOLVER_AUTO_ROTATE_RIGHT_LOADING)
-		editing_image = chamber_options[REVOLVER_AUTO_ROTATE_RIGHT_LOADING]
-		editing_image.icon_state = "radial_revolver_auto_right_on"
-	else
-		editing_image = chamber_options[REVOLVER_AUTO_ROTATE_LEFT_LOADING]
-		editing_image.icon_state = "radial_revolver_auto_left_on"
+	var/image/editing_image = chamber_options[gate_load_direction]
+	editing_image.icon_state = "radial_revolver_auto_[gate_load_direction == REVOLVER_AUTO_ROTATE_RIGHT_LOADING ? "right":"left"]_on"
 
 	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
 		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING

@@ -24,7 +24,7 @@
 
 /datum/supply_pack/ammo/m45_speedloader
 	name = ".45 ACP Speedloader Crate"
-	desc = "Contains four .45 ACP speedloaders for revolvers, each containing six rounds."
+	desc = "Contains four .45 ACP speedloaders for the HP Montagne, each containing six rounds."
 	contains = list(/obj/item/ammo_box/c45_speedloader,
 					/obj/item/ammo_box/c45_speedloader,
 					/obj/item/ammo_box/c45_speedloader,

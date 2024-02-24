@@ -253,8 +253,6 @@
 		var/obj/item/gun/ballistic/revolver/the_revolver = the_gun
 		if(the_revolver.magazine)
 			return the_revolver.magazine.ammo_list()
-		else
-			return FALSE
 
 /* //for counter-clockwise, kept here for reference
 	var/list/round_positions = list(
