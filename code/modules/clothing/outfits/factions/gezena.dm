@@ -153,8 +153,8 @@
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 	r_hand = /obj/item/gun/energy/kalix/pgf
 
-/datum/outfit/job/gezena/hop
-	name = "PGF - Bridge Officer - Equipped"
+/datum/outfit/job/gezena/hop/geared
+	name = "PGF - Naval Bridge Officer - Equipped"
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "headofpersonnel"
 
