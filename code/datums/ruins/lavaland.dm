@@ -15,15 +15,6 @@
 	Includes a unique(*) laser pistol display case, and the recently introduced I.C.E(tm)."
 	suffix = "lavaland_surface_biodome_winter.dmm"
 
-/datum/map_template/ruin/lavaland/free_golem
-	name = "Free Golem Ship"
-	id = "golem-ship"
-	description = "Lumbering humanoids, made out of precious metals, move inside this ship. They frequently leave to mine more minerals, which they somehow turn into more of them. \
-	Seem very intent on research and individual liberty, and also geology-based naming?"
-	cost = 20
-	suffix = "lavaland_surface_golem_ship.dmm"
-	allow_duplicates = FALSE
-
 /datum/map_template/ruin/lavaland/sin
 	cost = 10
 	allow_duplicates = FALSE
@@ -71,14 +62,6 @@
 	id = "cultaltar"
 	description = "A place of vile worship, the scrawling of blood in the middle glowing eerily. A demonic laugh echoes throughout the caverns."
 	suffix = "lavaland_surface_cultaltar.dmm"
-	allow_duplicates = FALSE
-	cost = 10
-
-/datum/map_template/ruin/lavaland/hermit
-	name = "Makeshift Shelter"
-	id = "hermitcave"
-	description = "A place of shelter for a lone hermit, scraping by to live another day."
-	suffix = "lavaland_surface_hermit.dmm"
 	allow_duplicates = FALSE
 	cost = 10
 
