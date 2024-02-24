@@ -242,6 +242,15 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 		"SEV",
 		"SSV",
 	),
+	"New Gorlex Republic" = list(
+		"NGRV",
+	),
+	"CyberSun" = list(
+		"CSSV",
+	),
+	"Student-Union of Naturalistic Sciences" = list(
+		"SUNS",
+	),
 	"SolGov" = list(
 		"SGSV",
 	),
@@ -252,6 +261,7 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 		"SV",
 		"IMV",
 		"ISV",
+		"XSV",
 	),
 	"Inteq Risk Management Group" = list(
 		"IRMV",
@@ -262,6 +272,12 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 	),
 	"Nanotrasen" = list(
 		"NTSV",
+	),
+	"Frontiersmen Fleet" = list(
+		"FFV",
+	),
+	"Saint-Roumaine Militia" = list(
+		"SRSV",
 	),
 ))
 

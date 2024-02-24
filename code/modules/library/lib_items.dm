@@ -181,22 +181,28 @@
 
 /obj/structure/bookcase/manuals/engineering/Initialize()
 	. = ..()
-	new /obj/item/book/manual/wiki/engineering_construction(src)
-	new /obj/item/book/manual/wiki/engineering_hacking(src)
-	new /obj/item/book/manual/wiki/engineering_guide(src)
-	new /obj/item/book/manual/wiki/engineering_singulo_tesla(src)
-	new /obj/item/book/manual/wiki/robotics_cyborgs(src)
+	new /obj/item/book/manual/wiki/construction(src)
+	new /obj/item/book/manual/wiki/hacking(src)
+	new /obj/item/book/manual/wiki/engineering(src)
+	new /obj/item/book/manual/wiki/robotics(src)
 	update_appearance()
 
 
-/obj/structure/bookcase/manuals/research_and_development
-	name = "\improper R&D manuals bookcase"
+// /obj/structure/bookcase/manuals/research_and_development
+//	name = "\improper R&D manuals bookcase"
 
-/obj/structure/bookcase/manuals/research_and_development/Initialize()
+// /obj/structure/bookcase/manuals/research_and_development/Initialize()
+//	. = ..()
+//	new /obj/item/book/manual/wiki/research_and_development(src)
+//	update_appearance()
+
+/obj/structure/bookcase/manuals/chemistry
+	name = "chemistry manuals bookcase"
+
+/obj/structure/bookcase/manuals/chemistry/Initialize()
 	. = ..()
-	new /obj/item/book/manual/wiki/research_and_development(src)
-	update_appearance()
-
+	new /obj/item/book/manual/wiki/chemistry(src)
+	new /obj/item/book/manual/wiki/ghetto_chemistry(src)
 
 /*
  * Book
@@ -378,7 +384,8 @@
 
 /obj/structure/bookcase/manuals/medical/Initialize()
 	. = ..()
-	new /obj/item/book/manual/wiki/medical_cloning(src)
+	new /obj/item/book/manual/wiki/medicine(src)
+	new /obj/item/book/manual/wiki/surgery(src)
 	update_appearance()
 
 #undef BOOKCASE_UNANCHORED

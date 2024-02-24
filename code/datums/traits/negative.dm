@@ -123,20 +123,20 @@
 			//Security/Command
 			if("Captain")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/flask/gold
-			if("Head of Security")
-				heirloom_type = /obj/item/book/manual/wiki/security_space_law
+//			if("Head of Security")
+//				heirloom_type = /obj/item/book/manual/wiki/security_space_law
 			if("Head of Personnel")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/trophy/silver_cup
-			if("Warden")
-				heirloom_type = /obj/item/book/manual/wiki/security_space_law
+//			if("Warden")
+//				heirloom_type = /obj/item/book/manual/wiki/security_space_law
 			if("Security Officer")
-				heirloom_type = pick(/obj/item/book/manual/wiki/security_space_law, /obj/item/clothing/head/beret/sec)
+				heirloom_type = pick(/obj/item/clothing/head/beret/sec)
 			if("Detective")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/bottle/whiskey
 			if("Lawyer")
-				heirloom_type = pick(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
+				heirloom_type = pick(/obj/item/gavelhammer)
 			if("Brig Physician") //WS edit - Brig Physicians
-				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law) //WS edit - Brig Physicians
+				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller) //WS edit - Brig Physicians
 			if("Prisoner")
 				heirloom_type = /obj/item/pen/blue
 			//RnD

@@ -323,7 +323,7 @@
 		ertemplate.random_names = prefs["random_names"]["value"] == "Yes"
 		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
 		ertemplate.use_custom_shuttle = prefs["use_custom_shuttle"]["value"] == "Yes"
-		ertemplate.spawn_at_outpost = prefs["use_custom_shuttle"]["value"] == "Yes"
+		ertemplate.spawn_at_outpost = prefs["spawn_at_outpost"]["value"] == "Yes"
 
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 		var/index = 0
@@ -341,11 +341,6 @@
 			to_chat(usr, span_warning("No applicants for ERT. Aborting spawn."))
 			return FALSE
 
-		if(ertemplate.spawn_at_outpost && !ertemplate.use_custom_shuttle)
-			if(!length(GLOB.emergencyresponseteam_outpostspawn))
-				message_admins("No outpost spawns found!")
-			spawnpoints = GLOB.emergencyresponseteam_outpostspawn
-
 		if(ertemplate.use_custom_shuttle && ertemplate.ert_template)
 			to_chat(usr, span_boldnotice("Attempting to spawn ERT custom shuttle, this may take a few seconds..."))
 
@@ -356,7 +351,7 @@
 				if(length(SSovermap.outposts) > 1)
 					var/temp_loc = input(usr, "Select outpost to spawn at") as null|anything in SSovermap.outposts
 					if(!temp_loc)
-						message_admins("ERT Shuttle found no outpost to spawn at!")
+						message_admins("ERT found no outpost to spawn at!")
 						return
 					spawn_location = temp_loc
 				else
@@ -377,7 +372,7 @@
 					spawn_turfs += get_turf(spawner)
 
 				if(!brief_spawn)
-					brief_spawn = locate(/obj/effect/landmark/ert_shuttle_brief_spawn) in shuttle_turfs
+					brief_spawn = locate(/obj/effect/landmark/ert_shuttle_brief_spawn) in ship_turfs
 
 			if(!length(spawn_turfs))
 				stack_trace("ERT shuttle loaded but found no spawnpoints, placing the ERT at wherever inside the shuttle instead.")
@@ -386,9 +381,14 @@
 						continue
 					spawn_turfs += open_turf
 
+		if(!ertemplate.use_custom_shuttle && ertemplate.spawn_at_outpost)
+			if(!length(GLOB.emergencyresponseteam_outpostspawn))
+				message_admins("No outpost spawns found!")
+			spawn_turfs = GLOB.emergencyresponseteam_outpostspawn
+
 		if(ertemplate.spawn_admin)
 			if(isobserver(usr))
-				var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawn_turfs || spawnpoints[1])
+				var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawnpoints[1])
 				var/chosen_outfit = usr.client?.prefs?.brief_outfit
 				usr.client.prefs.copy_to(admin_officer)
 				admin_officer.equipOutfit(chosen_outfit)
