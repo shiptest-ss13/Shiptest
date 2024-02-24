@@ -91,9 +91,54 @@
 	icon_state = "stamp-syndicate"
 	dye_color = DYE_SYNDICATE
 
+/obj/item/stamp/donk
+	name = "Donk! Co. rubber stamp"
+	icon_state = "stamp-donk"
+	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/cybersun
+	name = "Cybersun rubber stamp"
+	icon_state = "stamp-cybersun"
+	dye_color = DYE_SYNDICATE
+
 /obj/item/stamp/solgov
 	name = "SolGov rubber stamp"
 	icon_state = "stamp-solgov"
+
+/obj/item/stamp/inteq
+	name = "Inteq rubber stamp"
+	icon_state = "stamp-inteq"
+	dye_color = DYE_QM
+
+/obj/item/stamp/vanguard
+	name = "Vanguard's rubber stamp"
+	icon_state = "stamp-vanguard"
+	dye_color = DYE_QM
+
+/obj/item/stamp/maa
+	name = "Master at Arms' rubber stamp"
+	icon_state = "stamp-maa"
+	dye_color = DYE_QM
+
+/obj/item/stamp/artificer
+	name = "Class II Artificer's rubber stamp"
+	icon_state = "stamp-artificer"
+	dye_color = DYE_QM
+
+/obj/item/stamp/cmm
+	name = "Colonial Minutemen rubber stamp"
+	icon_state = "stamp-cmm"
+	dye_color = DYE_FO
+
+/obj/item/stamp/gold
+	name = "GOLD rubber stamp"
+	icon_state = "stamp-gold"
+	dye_color = DYE_FO
+
+/obj/item/stamp/bard
+	name = "BARD rubber stamp"
+	icon_state = "stamp-bard"
+	dye_color = DYE_FO
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)
