@@ -325,12 +325,9 @@
 
 //Handles the process of withdrawing ore from the vein itself
 /obj/machinery/drill/proc/mine()
-	var/sensor_rating
-	for(var/obj/item/stock_parts/scanning_module/sensor in component_parts)
-		sensor_rating = sensor.rating
 	if(mining.mining_charges)
 		mining.mining_charges--
-		mining.drop_ore(round(sqrt(sensor_rating), 0.1),src)
+		mine_success()
 		if(mining.mining_charges < 1)
 			say("Vein depleted.")
 			active = FALSE
@@ -346,6 +343,13 @@
 		active = FALSE
 		update_icon_state()
 		update_overlays()
+
+//Called when it's time for the drill to rip that sweet ore from the earth
+/obj/machinery/drill/proc/mine_success()
+	var/sensor_rating
+	for(var/obj/item/stock_parts/scanning_module/sensor in component_parts)
+		sensor_rating = round(sqrt(sensor.rating))
+	mining.drop_ore(sensor_rating, src)
 
 //Overly long proc to handle the unique properties for each malfunction type
 /obj/machinery/drill/proc/malfunction(malfunction_type)

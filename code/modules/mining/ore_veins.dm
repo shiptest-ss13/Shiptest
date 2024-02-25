@@ -88,11 +88,13 @@ GLOBAL_LIST_EMPTY(ore_veins)
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
-	var/class
-	class = vein_class
-	for(var/vein_content_count in 1 to class)
+	var/list/adjacent_turfs = get_adjacent_open_turfs(current)
+	var/drop_location = src.loc //Backup in case we can't find an adjacent turf
+	if(adjacent_turfs.len)
+		drop_location = pick(adjacent_turfs)
+	for(var/vein_content_count in 1 to vein_class)
 		var/picked = pick(vein_contents)
-		new picked(pick(get_adjacent_open_turfs(current)),round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier))
+		new picked(drop_location,round(rand(drop_rate_amount_min,drop_rate_amount_max)*multiplier))
 
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
