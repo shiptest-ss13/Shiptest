@@ -25,10 +25,6 @@
 	results = list(/datum/reagent/consumable/hot_ice_coffee = 3)
 	required_reagents = list(/datum/reagent/toxin/hot_ice = 1, /datum/reagent/consumable/coffee = 2)
 
-/datum/chemical_reaction/nuka_cola
-	results = list(/datum/reagent/consumable/nuka_cola = 6)
-	required_reagents = list(/datum/reagent/uranium = 1, /datum/reagent/consumable/space_cola = 6)
-
 /datum/chemical_reaction/moonshine
 	results = list(/datum/reagent/consumable/ethanol/moonshine = 10)
 	required_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 5)
