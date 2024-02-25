@@ -35,6 +35,7 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/drop_rate_amount_min = 15
 	var/drop_rate_amount_max = 20
 	//Mob spawning variables
+	var/spawner_attached = FALSE //Probably a drastically less sloppy way of doing this, but it technically works
 	var/spawning_started = FALSE
 	var/max_mobs = 6
 	var/spawn_time = 150 //15 seconds
@@ -47,7 +48,6 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	var/faction = list("hostile","mining")
 	var/spawn_sound = list('sound/effects/break_stone.ogg')
 	var/spawner_type = /datum/component/spawner
-	var/datum/component/spawner/spawner
 	var/spawn_distance_min = 4
 	var/spawn_distance_max = 6
 	var/wave_length = 2 MINUTES
@@ -84,7 +84,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 	return..()
 
 /obj/structure/vein/proc/begin_spawning()
-	spawner = AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
+	AddComponent(spawner_type, mob_types, spawn_time, faction, spawn_text, max_mobs, spawn_sound, spawn_distance_min, spawn_distance_max, wave_length, wave_downtime)
+	spawner_attached = TRUE
+	spawning_started = TRUE
 
 //Pulls a random ore from the vein list per vein_class
 /obj/structure/vein/proc/drop_ore(multiplier,obj/machinery/drill/current)
@@ -99,6 +101,9 @@ GLOBAL_LIST_EMPTY(ore_veins)
 /obj/structure/vein/proc/destroy_effect()
 	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
 	visible_message("<span class='boldannounce'>[src] collapses!</span>")
+
+/obj/structure/vein/proc/toggle_spawning()
+	spawning_started = SEND_SIGNAL(src, COMSIG_SPAWNER_TOGGLE_SPAWNING, spawning_started)
 
 //
 //	Planetary and Class Subtypes

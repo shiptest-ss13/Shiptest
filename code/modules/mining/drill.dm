@@ -145,9 +145,9 @@
 			to_chat(user, "<span class='notice'>You unsecure the [src] from the ore vein.</span>")
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			anchored = FALSE
-			if(mining?.spawner)
-				STOP_PROCESSING(SSprocessing, mining.spawner)
-				mining.spawning_started = FALSE
+
+			if(mining?.spawner_attached && mining?.spawning_started)
+				mining.toggle_spawning()
 			mining = null
 			update_icon_state()
 			return
@@ -222,9 +222,7 @@
 			active = FALSE
 			soundloop.stop()
 			deltimer(current_timerid)
-			//STOP_PROCESSING(SSprocessing, mining.spawner)
-			mining.spawner.pause_spawning()
-			mining.spawning_started = FALSE
+			mining.toggle_spawning()
 			playsound(src, 'sound/machines/switch2.ogg', 50, TRUE)
 			say("Manual shutoff engaged, ceasing mining operations.")
 			update_icon_state()
@@ -303,12 +301,10 @@
 		var/mine_time
 		active = TRUE
 		soundloop.start()
-		if(!mining.spawner)
+		if(!mining.spawner_attached)
 			mining.begin_spawning()
-			mining.spawning_started = TRUE
 		else if(!mining.spawning_started)
-			START_PROCESSING(SSprocessing, mining.spawner)
-			mining.spawning_started = TRUE
+			mining.toggle_spawning()
 		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
 			mine_time = round((300/sqrt(laser.rating))*mining.mine_time_multiplier)
 		eta = mine_time*mining.mining_charges

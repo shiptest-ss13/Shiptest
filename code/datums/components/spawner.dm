@@ -38,6 +38,7 @@
 		wave_downtime = _wave_downtime
 
 	RegisterSignal(parent, list(COMSIG_PARENT_QDELETING), PROC_REF(stop_spawning))
+	RegisterSignal(parent, list(COMSIG_SPAWNER_TOGGLE_SPAWNING), PROC_REF(toggle_spawning))
 	START_PROCESSING(SSprocessing, src)
 
 /datum/component/spawner/process()
@@ -57,13 +58,17 @@
 	spawned_mobs = null
 
 //Different from stop_spawning() as it doesn't untether all mobs from it and is meant for temporarily stopping spawning
-/datum/component/spawner/proc/pause_spawning()
-	STOP_PROCESSING(SSprocessing, src)
-	deltimer(current_timerid) //Otherwise if spawning is paused while the wave timer is loose it'll just unpause on its own
-	COOLDOWN_RESET(src, wave_timer)
+/datum/component/spawner/proc/toggle_spawning(datum/source, spawning_started)
+	SIGNAL_HANDLER
 
-/datum/component/spawner/proc/unpause_spawning()
-	START_PROCESSING(SSprocessing, src)
+	if(spawning_started)
+		STOP_PROCESSING(SSprocessing, src)
+		deltimer(current_timerid) //Otherwise if spawning is paused while the wave timer is loose it'll just unpause on its own
+		COOLDOWN_RESET(src, wave_timer)
+		return FALSE
+	else
+		START_PROCESSING(SSprocessing, src)
+		return TRUE
 
 /datum/component/spawner/proc/try_spawn_mob()
 	var/atom/P = parent
@@ -76,7 +81,7 @@
 		if(wave_timer && COOLDOWN_FINISHED(src, wave_timer))
 			COOLDOWN_RESET(src, wave_timer)
 			STOP_PROCESSING(SSprocessing, src)
-			current_timerid = addtimer(CALLBACK(src, PROC_REF(unpause_spawning)), wave_downtime, TIMER_STOPPABLE)
+			current_timerid = addtimer(CALLBACK(src, PROC_REF(toggle_spawning)), wave_downtime, TIMER_STOPPABLE)
 			return
 	////////////////////////////////
 	if(length(spawned_mobs) >= max_mobs)
