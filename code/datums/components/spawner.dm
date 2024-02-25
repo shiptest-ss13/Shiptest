@@ -95,6 +95,8 @@
 	if(spawn_distance_max > 1)
 		var/player_count = 0
 		for(var/mob/player as anything in GLOB.player_list)
+			if(player.virtual_z() != spot.virtual_z())
+				continue
 			if(!isliving(player))
 				continue
 			if(player.stat != CONSCIOUS)
