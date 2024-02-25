@@ -1022,6 +1022,7 @@
 	name = "Syndicate - Ship Engineer (SUNS)"
 
 	uniform = /obj/item/clothing/under/syndicate/suns/workerjumpsuit
+	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/suns/workervest
 	gloves = /obj/item/clothing/gloves/suns/yellow
 	shoes = /obj/item/clothing/shoes/jackboots/suns
