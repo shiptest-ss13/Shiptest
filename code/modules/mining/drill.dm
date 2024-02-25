@@ -78,7 +78,6 @@
 		soundloop.stop()
 		update_overlays()
 		update_icon_state()
-		return
 
 /obj/machinery/drill/Destroy()
 	QDEL_NULL(soundloop)
@@ -232,7 +231,6 @@
 			update_overlays()
 		else
 			to_chat(user, "<span class='notice'>You cancel the manual shutoff process.</span>")
-			return
 
 //Can we even turn the damn thing on?
 /obj/machinery/drill/interact(mob/user, special_state)
@@ -250,10 +248,8 @@
 					"<span class='notice'>You hit the ignition button to activate [src].</span>", \
 					"<span class='hear'>You hear a drill churn to life.</span>")
 		start_mining()
-		return
 	else
 		to_chat(user, "<span class='notice'>[src] is currently busy, wait until it's done!</span>")
-		return
 
 /obj/machinery/drill/update_icon_state()
 	if(anchored)
@@ -321,7 +317,6 @@
 		say("Estimated time until vein depletion: [time2text(eta,"mm:ss")].")
 		update_icon_state()
 		update_overlays()
-		return
 
 //Handles the process of withdrawing ore from the vein itself
 /obj/machinery/drill/proc/mine()
@@ -359,25 +354,20 @@
 			for (var/obj/item/stock_parts/micro_laser/laser in component_parts)
 				component_parts.Remove(laser)
 			missing_part = /obj/item/stock_parts/micro_laser
-			return
 		if(MALF_SENSOR)
 			say("Malfunction: Ground penetrating scanner damaged, please replace before continuing mining operations.")
 			for (var/obj/item/stock_parts/scanning_module/sensor in component_parts)
 				component_parts.Remove(sensor)
 			missing_part = /obj/item/stock_parts/scanning_module
-			return
 		if(MALF_CAPACITOR)
 			say("Malfunction: Energy cell capacitor damaged, please replace before continuing mining operations.")
 			for (var/obj/item/stock_parts/capacitor/capacitor in component_parts)
 				component_parts.Remove(capacitor)
 			missing_part = /obj/item/stock_parts/capacitor
-			return
 		if(MALF_STRUCTURAL)
 			say("Malfunction: Drill plating damaged, provide structural repairs before continuing mining operations.")
-			return
 		if(MALF_CALIBRATE)
 			say("Malfunction: Drill laser calibrations out of alignment, please recalibrate before continuing.")
-			return
 
 /obj/item/paper/guides/drill
 	name = "Laser Mining Drill Operation Manual"
