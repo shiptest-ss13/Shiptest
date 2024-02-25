@@ -310,7 +310,6 @@
 	body_parts_covered = HEAD
 	clothing_flags = THICKMATERIAL
 	flags_inv = HIDEHAIR|HIDEEARS
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/suit/hooded/bloated_human	//OH MY GOD WHAT HAVE YOU DONE!?!?!?
 	name = "bloated human suit"
@@ -400,7 +399,7 @@
 
 /obj/item/clothing/suit/jacket/leather
 	name = "leather jacket"
-	desc = "Pompadour not included."
+	desc = "This makes you feel like the coolest guy in town!"
 	icon_state = "leatherjacket"
 	item_state = "hostrench"
 	resistance_flags = NONE
@@ -685,12 +684,3 @@
 	icon_state = "DutchJacket"
 	item_state = "DutchJacket"
 	body_parts_covered = ARMS
-
-/obj/item/clothing/suit/gorlex
-	name = "\improper 2nd Battlegroup jacket"
-	desc = "An armored jacket worn by the 2nd Battlegroup."
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	icon_state = "gorlexjacket"
-	item_state = "gorlexjacket"
-	blood_overlay_type = "coat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)

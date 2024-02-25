@@ -47,7 +47,7 @@
 /obj/item/stack/sticky_tape/super
 	name = "super sticky tape"
 	singular_name = "super sticky tape"
-	desc = "Quite possibly the most mischevious substance in the galaxy. Use with extreme lack of caution."
+	desc = "Quite possibly the most mischievous substance in the galaxy. Use with extreme lack of caution."
 	icon_state = "tape_y"
 	prefix = "super sticky"
 	conferred_embed = EMBED_HARMLESS_SUPERIOR

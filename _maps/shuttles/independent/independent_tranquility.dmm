@@ -1775,18 +1775,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
-"nO" = (
-/obj/structure/chair/sofa/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
-/obj/structure/sign/poster/rilena/random{
-	pixel_x = 32
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew)
 "nX" = (
 /obj/structure/frame/machine,
 /obj/item/stack/cable_coil/random/five,
@@ -2671,6 +2659,35 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering/engine)
+"vU" = (
+/obj/structure/table,
+/obj/item/ammo_box/magazine/m45/rubber{
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 6
+	},
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 5
+	},
+/obj/item/gun/ballistic/automatic/pistol/candor/no_mag{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_x = -6;
+	pixel_y = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/sign/poster/contraband/lusty_xenomorph{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security/armory)
 "vV" = (
 /obj/structure/table,
 /obj/effect/turf_decal/siding/wood{
@@ -3832,6 +3849,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/crewfour)
+"Fk" = (
+/obj/structure/chair/sofa/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/sign/poster/rilena/random{
+	pixel_x = 32
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew)
 "Fl" = (
 /obj/structure/table,
 /obj/item/defibrillator/loaded,
@@ -4801,7 +4830,7 @@
 	pixel_x = -6;
 	pixel_y = 26
 	},
-/obj/item/book/manual/wiki/tcomms{
+/obj/item/book/manual/wiki/engineering{
 	pixel_x = -8;
 	pixel_y = -1
 	},
@@ -5478,35 +5507,6 @@
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/engineering/engine)
-"Rk" = (
-/obj/structure/table,
-/obj/item/ammo_box/magazine/m45/rubber{
-	pixel_x = 7;
-	pixel_y = -2
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 6
-	},
-/obj/effect/turf_decal/borderfloorblack{
-	dir = 5
-	},
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag{
-	pixel_x = -2;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/glass/rag{
-	pixel_x = -6;
-	pixel_y = 1
-	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/sign/poster/contraband/lusty_xenomorph{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security/armory)
 "Rm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -6906,7 +6906,7 @@ KI
 HP
 PH
 gk
-nO
+Fk
 Ef
 wz
 xo
@@ -7658,7 +7658,7 @@ qa
 qa
 qa
 PS
-Rk
+vU
 fZ
 qq
 xI
