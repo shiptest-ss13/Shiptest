@@ -40,6 +40,9 @@
 				B.armed = FALSE
 				B.clicked = FALSE
 				B.anchored = FALSE
+				if(isopenturf(B.loc) || B.oldslow)
+					var/turf/open/locturf = B.loc
+					locturf.slowdown = B.oldslow
 				B.update_appearance(UPDATE_ICON_STATE)
 			else if(B.anchored)
 				holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s yellow arming light flickers."))
@@ -81,6 +84,9 @@
 					B.armed = FALSE
 					B.clicked = FALSE
 					B.anchored = FALSE
+					if(isopenturf(B.loc) || B.oldslow)
+						var/turf/open/locturf = B.loc
+						locturf.slowdown = B.oldslow
 					B.update_appearance(UPDATE_ICON_STATE)
 				else if(B.anchored)
 					holder.visible_message(span_notice("[icon2html(B, viewers(holder))] \The [B]'s yellow arming light flickers."))

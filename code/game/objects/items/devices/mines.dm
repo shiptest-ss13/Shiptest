@@ -1,4 +1,3 @@
-//wiring in code/datums/wires/mines
 
 /obj/item/mine
 	name = "dummy mine"
@@ -10,38 +9,41 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	icon_state = "mine"
-	item_state = "assembly"
+	item_state = "assembly"//when we get custom sprites replace this. please
 	base_icon_state = "mine"
-	// Is our mine currently exploding?
+	/// Is our mine currently exploding?
 	var/triggered = FALSE
-	// Is our mine live?
+	/// Is our mine live?
 	var/armed = FALSE
-	// Sets a delay for mines going live after being planted
+	/// Sets a delay for mines going live after being planted
 	var/arm_delay = 5 SECONDS
-	// Use to set a delay after activation to trigger the explosion.
+	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 SECONDS
 
-	//armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
+	/// armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
 	var/stealthpwr = 204
 
-	//when true, mines explode instantly on being stepped upon
+	/// when true, mines explode instantly on being stepped upon
 	var/hair_trigger = FALSE
 
-	//bruteforce solution. has the mine loc been entered
+	/// bruteforce solution. has the mine loc been entered
 	var/clicked = FALSE
-	//disables the mine without disarming it. perfect for practical jokes
+	/// disables the mine without disarming it. perfect for practical jokes
 	var/clickblock = FALSE
 
-	//flavour
+	/// flavour
 	var/manufacturer = MANUFACTURER_NONE
 
-	//are the wires exposed?
+	/// are the wires exposed?
 	var/open_panel = FALSE
 
 	/// Who's got their foot on the mine's pressure plate
 	/// Stepping on the mine will set this to the first mob who stepped over it
 	/// The mine will not detonate via movement unless the first mob steps off of it
 	var/datum/weakref/foot_on_mine
+
+	/// a surprised tool that'll help us later (handles turf slowdown manipulation)
+	var/oldslow
 
 /obj/item/mine/Initialize()
 	. = ..()
@@ -98,15 +100,21 @@
 
 	if(ismob(arrived))
 		var/mob/living/fool = arrived
-		fool.Immobilize(10, TRUE)
 		fool.do_alert_animation(fool)
-		to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
+		if(!hair_trigger)
+			fool.Immobilize(10, TRUE)
+			to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
 
 	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
-	if(hair_trigger && clicked)
-		triggermine(arrived)
 	if(clickblock == FALSE)//see wirecutting
 		clicked = TRUE
+	if(hair_trigger && clicked)
+		triggermine(arrived)
+	else
+		if(isopenturf(loc))
+			var/turf/open/locturf = loc
+			oldslow = locturf.slowdown
+			locturf.slowdown = 6
 	alpha = 204
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
@@ -152,6 +160,9 @@
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
+	if(isopenturf(loc) || oldslow)
+		var/turf/open/locturf = loc
+		locturf.slowdown = oldslow
 	if(ismob(triggerer))
 		mineEffect(triggerer)
 	else
@@ -200,10 +211,12 @@
 				anchored = FALSE
 				armed = FALSE
 				clicked = FALSE
+				if(isopenturf(loc) || oldslow)
+					var/turf/open/locturf = loc
+					locturf.slowdown = oldslow
 				update_appearance(UPDATE_ICON_STATE)
 			else
-				anchored = FALSE
-				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hands!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
+				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hand!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
 				triggermine(user)
 				return
 		else
@@ -231,7 +244,7 @@
 
 //
 //LANDMINE TYPES
-//Retlaw please help me make these more immersive
+//Rylie please help me make these more immersive
 //
 
 /obj/item/mine/explosive
@@ -249,7 +262,7 @@
 
 	//customize shrapnel. Magnitude zero prevents them from spawning
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 1
+	var/shrapnel_magnitude = 2
 
 	/// If TRUE, we spawn extra pellets to eviscerate the person who stepped on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
 	var/shred_triggerer = TRUE
@@ -272,46 +285,51 @@
 
 /obj/item/mine/explosive/fire
 	name = "\improper G-82 Incindeary"
-	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag. Watch your step. "
+	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag on detonation. Watch your step. "
 
 	range_flame = 6
 	range_light = 3
 	range_flash = 3
 
-
+	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
 	shrapnel_magnitude = 2
 
+/obj/item/mine/explosive/incindeary/mineEffect(mob/victim)
+
+	. = ..()
+
 /obj/item/mine/explosive/heavy
-	name = "\improper G-81 Anti-Tank"
+	name = "\improper G-81 Anti-Tank Mine"
 	desc = "An immense anti-vehicle explosive built during the corporate wars. Someone has recklessly switched out the detonator for one that activates for lighter targets."
 	w_class = WEIGHT_CLASS_BULKY
-	range_heavy = 4
-	range_light = 8
-	shrapnel_magnitude = 4
-	blast_delay = 5//run.
+	range_heavy = 6
+	range_light = 9
+	shrapnel_magnitude = 6
+	blast_delay = 60//run.
 
 /obj/item/mine/explosive/shrapnel
 	name = "\improper G-84 Fragmentation"
-	desc = "An anti-infantry explosive built during the corporate wars. Metal banding inside transforms into deadly shrapnel on detonation. "
+	desc = "An anti-infantry explosive built during the corporate wars. Metal banding inside creates additional deadly shrapnel on detonation. "
 
 	range_heavy = 1
 	range_light = 4
 
-	shrapnel_magnitude = 3
+	shrapnel_magnitude = 4
 	shred_triggerer = TRUE
 
 /obj/item/mine/explosive/shrapnel/carbon_only
-	name = "\improper Rusted G-84 Special"
-	desc = "A deadly fragmentation mine. This one has a specially-calibrated weight sensor designed to prevent misfires"
+	name = "\improper G-84 Special"
+	desc = "A deadly fragmentation mine. This one has a specially-calibrated weight sensor designed to prevent misfire."
 
 /obj/item/mine/explosive/shrapnel/carbon_only/on_entered(datum/source, atom/movable/AM)
 	if(!iscarbon(AM))
 		return
 	. = ..()
 
+//like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
 /obj/item/mine/explosive/shrapnel/sting
 	name = "\improper'Stinger' Crowd Management Device"
-	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of soft ballistic gel inside stick to targets and incapacitate without causing serious maiming. In Theory."
+	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
 
 	range_heavy = 0
 	range_light = 0
@@ -324,13 +342,34 @@
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
+//WIP variants
+/obj/item/mine/explosive/rad
+	name = "\improper G-85 Fission"
+	desc = "An anti-infantry explosive produced during the corporate wars. This one detonates a small microfission core, creating a bloom of deadly radiation. "
+	range_light = 4
+	range_flame = 2
+
+/obj/item/mine/explosive/plasma
+	name = "\improper Etherbor EM-3"
+	desc = "An anti-infantry explosive designed to deliver maximum impact to personnel with minimal structural damage. Incinerates anything nearby with high energy plasma."
+	range_light = 2
+	range_flame = 3
+	range_heavy = 0
+	shrapnel_magnitude = 5
+	shrapnel_type = /obj/projectile/energy/buster
+
 //UNUSED MINES//
 //varying levels of useless.
+//mainly remain to demonstrate possible mine effects.
+//
 
 
 /obj/item/mine/stun
 	name = "stun mine"
 	var/stun_time = 80
+	hair_trigger = TRUE
+	anchored = TRUE
+	armed = TRUE
 
 /obj/item/mine/stun/mineEffect(mob/living/victim)
 	if(isliving(victim) && Adjacent(victim))
@@ -340,6 +379,9 @@
 	name = "oxygen mine"
 	var/gas_amount = 360
 	var/gas_type = "o2"
+	hair_trigger = TRUE
+	anchored = TRUE
+	armed = TRUE
 
 /obj/item/mine/gas/mineEffect(mob/victim)
 	atmos_spawn_air("[gas_type]=[gas_amount]")
@@ -361,14 +403,17 @@
 	gas_type = "water_vapor"
 
 
+//
 //GIMMICK MINES//
 //pretty much exclusively for adminbus
 //use these at your own risk, I haven't tested them
+//
 
 
 /obj/item/mine/kickmine
-	name = "kick mine"
-	blast_delay = null//funnier this way
+	name = "\improper G-00 'Adminbus'"
+	desc = "An Anti-Griefer proximity expulsive. Delivers Justice."
+	blast_delay = 0//funnier this way
 	hair_trigger = TRUE
 	anchored = TRUE
 	armed = TRUE

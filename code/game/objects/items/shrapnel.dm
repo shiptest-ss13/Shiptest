@@ -15,7 +15,7 @@
 
 /obj/item/shrapnel/stingball
 	name = "clump of ballistic gel"
-	embedding = list(embed_chance=15, fall_chance=1, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=1, pain_mult=3, jostle_pain_mult=5, rip_time=15, embed_chance_turf_mod=-100)
+	embedding = list(embed_chance=15, fall_chance=1, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.8, pain_mult=3, jostle_pain_mult=5, rip_time=15, embed_chance_turf_mod=-100)
 	icon_state = "tiny"
 
 /obj/item/shrapnel/bullet // bullets
@@ -60,9 +60,9 @@
 
 /obj/projectile/bullet/shrapnel/hot
 	name = "white-hot metal slag"
-	damage = 6//soft
+	damage = 4//soft
 	range = 8
-	armour_penetration = -40
+	armour_penetration = -45
 	dismemberment = 4
 	ricochets_max = 1
 	ricochet_chance = 60
