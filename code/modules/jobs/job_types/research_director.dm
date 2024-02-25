@@ -45,12 +45,3 @@
 	courierbag = /obj/item/storage/backpack/messenger/tox
 
 	chameleon_extras = /obj/item/stamp/rd
-
-/datum/outfit/job/rd/rig
-	name = "Research Director (Hardsuit)"
-
-	l_hand = null
-	mask = /obj/item/clothing/mask/breath
-	suit = /obj/item/clothing/suit/space/hardsuit/rd
-	suit_store = /obj/item/tank/internals/oxygen
-	internals_slot = ITEM_SLOT_SUITSTORE

@@ -282,7 +282,7 @@
 
 	if(survivor_type == "gunslinger")
 		if(prob(50))
-			l_pocket = /obj/item/ammo_box/magazine/aks74u
+			l_pocket = /obj/item/ammo_box/magazine/skm_545_39
 		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 	else
@@ -324,13 +324,13 @@
 	suit_store = null
 	if (survivor_type == "hunter")
 		if(prob(20))
-			new /obj/item/gun/ballistic/rifle/boltaction/polymer(loc)
+			new /obj/item/gun/ballistic/rifle/polymer(loc)
 		else
 			visible_message("<span class='userwarning'>The hunter's weapon shatters as they impact the ground!</span>")
 			suit_store = null
 	if(survivor_type == "gunslinger")
 		if(prob(20))
-			new /obj/item/gun/ballistic/automatic/smg/aks74u(loc)
+			new /obj/item/gun/ballistic/automatic/smg/skm_carbine(loc)
 		else
 			visible_message("<span class='userwarning'>The gunslinger's weapon shatters as they impact the ground!</span>")
 			suit_store = null

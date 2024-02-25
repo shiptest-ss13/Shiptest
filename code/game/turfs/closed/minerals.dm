@@ -161,6 +161,7 @@
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
 	var/mineralChance = 13
 
+
 /turf/closed/mineral/random/Initialize(mapload, inherited_virtual_z)
 
 	mineralSpawnChanceList = typelist("mineralSpawnChanceList", mineralSpawnChanceList)

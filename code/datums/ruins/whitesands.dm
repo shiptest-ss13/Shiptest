@@ -48,6 +48,12 @@
 	description = "Some sort of survivors, brandishing old nanotrasen security gear."
 	suffix = "whitesands_surface_chokepoint.dmm"
 
+/datum/map_template/ruin/whitesands/pubbyslopcrash
+	name = "Pubby Slop Crash"
+	id = "ws-pubbyslopcrash"
+	description = "A failed attempt of the Nanotrasen nutrional replacement program"
+	suffix = "whitesands_surface_pubbyslopcrash.dmm"
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/drugstore
 	name = "Abandoned Store"
@@ -67,3 +73,4 @@
 	description = "A small encampment of nomadic survivors of the First Colony, and their descendants. By all accounts, feral and without allegance to anyone but themselves."
 	suffix = "whitesands_surface_camp_combination.dmm"
 	allow_duplicates = FALSE
+

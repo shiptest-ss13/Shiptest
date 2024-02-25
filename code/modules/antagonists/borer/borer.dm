@@ -52,7 +52,7 @@
 	B.victim.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(5, 10))
 	to_chat(src, "<span class='danger'>With an immense exertion of will, you regain control of your body!</span>")
 	to_chat(B, "<span class='danger'>You feel control of the host brain ripped from your grasp, and retract your probosci before the wild neural impulses can damage you.</span>")
-	B.detatch()
+	B.detach()
 
 GLOBAL_LIST_EMPTY(borers)
 GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
@@ -568,7 +568,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		return
 
 	if(controlling)
-		detatch()
+		detach()
 
 	if(src.mind.language_holder)
 		var/datum/language_holder/language_holder = src.mind.language_holder
@@ -721,6 +721,8 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 		victim.med_hud_set_status()
 
+		RegisterSignal(victim, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_borer_stat_panel))
+
 /mob/living/simple_animal/borer/verb/punish()
 	set category = "Borer"
 	set name = "Punish"
@@ -756,7 +758,6 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 
 
 /mob/living/carbon/proc/release_control()
-
 	set category = "Borer"
 	set name = "Release Control"
 	set desc = "Release control of your host's body."
@@ -764,8 +765,12 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	var/mob/living/simple_animal/borer/B = has_brain_worms()
 	if(B && B.host_brain)
 		to_chat(B, "<span class='danger'>You withdraw your probosci, releasing control of [B.host_brain]</span>")
+		B.detach()
 
-		B.detatch()
+/mob/living/simple_animal/borer/proc/get_borer_stat_panel(mob/living/source, list/items)
+	SIGNAL_HANDLER
+	items += "Borer Body Health: [health]"
+	items += "Chemicals: [chemicals]"
 
 //Check for brain worms in head.
 /mob/proc/has_brain_worms()
@@ -801,7 +806,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		to_chat(src, "<span class='warning'>You need 200 chemicals stored to reproduce.</span>")
 		return
 
-/mob/living/simple_animal/borer/proc/detatch()
+/mob/living/simple_animal/borer/proc/detach()
 	if(!victim || !controlling)
 		return
 
@@ -828,6 +833,8 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		victim.ckey = host_brain.ckey
 
 	log_game("[src]/([src.ckey]) released control of [victim]/([victim.ckey]")
+
+	UnregisterSignal(victim, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
 
 	qdel(host_brain)
 

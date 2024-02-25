@@ -132,7 +132,6 @@
 /obj/structure/closet/crate/freezer,
 /obj/item/organ/appendix,
 /obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/golem,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -431,7 +430,6 @@
 /obj/item/reagent_containers/food/snacks/hugemushroomslice,
 /obj/item/organ/appendix,
 /obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/golem/adamantine,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 2
 	},
@@ -1227,9 +1225,6 @@
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit.";
 	name = "power storage unit"
 	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1521,7 +1516,6 @@
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit.";
 	name = "power storage unit"
 	},
-/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Aft)

@@ -300,7 +300,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/industrial/outline,
-/obj/item/storage/box/lethalshot,
+/obj/item/ammo_box/a12g,
 /obj/item/ammo_box/c10mm,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
@@ -491,7 +491,7 @@
 	pixel_x = 32
 	},
 /obj/effect/turf_decal/industrial/outline,
-/obj/item/gun/ballistic/shotgun/lethal,
+/obj/item/gun/ballistic/shotgun/brimstone,
 /obj/machinery/button/door{
 	dir = 1;
 	id = "wreckerarmory";
@@ -899,12 +899,6 @@
 	},
 /obj/machinery/firealarm/directional/east,
 /obj/effect/turf_decal/industrial/outline,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "mining";
-	name = "wrecker's locker";
-	req_access = list(48)
-	},
 /obj/item/clothing/shoes/workboots/mining,
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/gloves/explorer,
@@ -914,8 +908,6 @@
 /obj/item/clothing/glasses/welding,
 /obj/item/clothing/head/hardhat/orange,
 /obj/item/clothing/head/soft/grey,
-/obj/machinery/light/small/directional/north,
-/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage)
 "pu" = (
@@ -1677,7 +1669,6 @@
 /obj/item/gun/ballistic/automatic/pistol,
 /obj/item/clothing/accessory/holster,
 /obj/item/grenade/chem_grenade/metalfoam,
-/obj/item/card/mining_access_card,
 /obj/machinery/airalarm/directional/west,
 /obj/item/tank/jetpack/suit,
 /turf/open/floor/carpet/red,
@@ -1705,12 +1696,12 @@
 	name = "captain's suit storage unit";
 	req_access = list(20)
 	},
-/obj/item/clothing/suit/space/hardsuit/syndi,
-/obj/item/clothing/mask/gas/syndicate,
 /obj/machinery/light_switch{
 	dir = 4;
 	pixel_x = -20
 	},
+/obj/item/clothing/suit/space/hardsuit/syndi/sbg,
+/obj/item/clothing/mask/gas/syndicate,
 /turf/open/floor/carpet/black,
 /area/ship/bridge)
 "Ck" = (
@@ -2256,8 +2247,9 @@
 	req_access = list(56)
 	},
 /obj/item/clothing/shoes/magboots/syndie,
-/obj/item/clothing/suit/space/hardsuit/syndi/scarlet,
 /obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/suit/space/syndicate,
+/obj/item/clothing/head/helmet/space/syndicate,
 /turf/open/floor/carpet/red,
 /area/ship/cargo/office)
 "KX" = (
@@ -2375,9 +2367,7 @@
 	},
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
-	dheight = 4;
 	dir = 8;
-	height = 18;
 	launch_status = 0;
 	name = "mining ship";
 	preferred_direction = 4
@@ -3075,7 +3065,7 @@
 	a_intent = "help";
 	desc = "A small goliath pup. Its tendrils have not yet fully grown. Someone, somehow, has managed to fit a large dog collar around its neck.";
 	environment_smash = 0;
-	faction = list("neutral");
+	faction = list("neutral","playerSyndicate");
 	mob_size = 2;
 	move_force = 1000;
 	move_resist = 1000;

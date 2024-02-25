@@ -1,6 +1,6 @@
 // Hair for use on mobs
 // Keep the names alphabetical, and capitalized.
-// You do not need to define _s or _l sub-states, game automatically does this for you
+// You do not need to define _s or _l sub-states, game automatically does this for you //what is this
 
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
@@ -302,6 +302,14 @@
 	name = "Gentle"
 	icon_state = "hair_gentle"
 
+/datum/sprite_accessory/hair/gloomy
+	name = "Gloomy"
+	icon_state = "hair_gloomy"
+
+/datum/sprite_accessory/hair/gloomy_long
+	name = "Gloomy (Long)"
+	icon_state = "hair_gloomylong"
+
 /datum/sprite_accessory/hair/halfbang
 	name = "Half-banged Hair"
 	icon_state = "hair_halfbang"
@@ -310,9 +318,9 @@
 	name = "Half-banged Hair 2"
 	icon_state = "hair_halfbang2"
 
-/datum/sprite_accessory/hair/halfshaved
-	name = "Half-shaved"
-	icon_state = "hair_halfshaved"
+/datum/sprite_accessory/hair/halfshave
+	name = "Half-shave"
+	icon_state = "hair_halfshave"
 
 /datum/sprite_accessory/hair/harley
 	name = "Harley"
@@ -694,6 +702,10 @@
 	name = "Tress Shoulder"
 	icon_state = "hair_tressshoulder"
 
+/datum/sprite_accessory/hair/tribun
+	name = "Tri-bun"
+	icon_state = "hair_tribun"
+
 /datum/sprite_accessory/hair/trimmed
 	name = "Trimmed"
 	icon_state = "hair_trimmed"
@@ -705,6 +717,10 @@
 /datum/sprite_accessory/hair/twintails
 	name = "Twintails"
 	icon_state = "hair_twintail"
+
+/datum/sprite_accessory/hair/ruby
+	name = "Ruby"
+	icon_state = "hair_ruby"
 
 /datum/sprite_accessory/hair/undercut
 	name = "Undercut"

@@ -28,7 +28,7 @@
 
 /datum/blood_type/ab_plus
 	name = "AB+"
-	compatible_types = list(/datum/blood_type/b_minus, /datum/blood_type/a_minus, /datum/blood_type/ab_minus, /datum/blood_type/o_minus)
+	compatible_types = list(/datum/blood_type/b_minus, /datum/blood_type/b_plus, /datum/blood_type/a_minus, /datum/blood_type/a_plus, /datum/blood_type/ab_minus, /datum/blood_type/ab_plus, /datum/blood_type/o_minus, /datum/blood_type/o_plus)
 
 /datum/blood_type/o_minus
 	name = "O-"

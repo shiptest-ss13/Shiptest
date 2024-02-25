@@ -4,7 +4,7 @@
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
 			It must be powered to collect the data. "
 	value = 3000 // base value, before adding bonus for number of things to fly through
-	duration = 30 MINUTES
+	duration = 60 MINUTES
 	weight = 8
 
 	var/datum/overmap/objective_type = /datum/overmap/event/electric

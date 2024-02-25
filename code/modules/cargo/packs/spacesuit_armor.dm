@@ -136,7 +136,7 @@
 
 /datum/supply_pack/spacesuit_armor/bullet_armor
 	name = "Bulletproof Armor Crate"
-	desc = "Contains three full sets of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
+	desc = "Contains two full sets of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
 	cost = 3500
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
 					/obj/item/clothing/suit/armor/vest/bulletproof,
