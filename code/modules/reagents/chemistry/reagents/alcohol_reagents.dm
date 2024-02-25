@@ -763,14 +763,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "You've really hit rock bottom now... your liver packed its bags and left last night."
 
 /datum/reagent/consumable/ethanol/b52
-	name = "B-52"
+	name = "AM-G"
 	description = "Coffee liquor, Zohil Cream, and cognac."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 85
 	quality = DRINK_GOOD
 	taste_description = "angry and intense"
 	glass_icon_state = "b52glass"
-	glass_name = "B-52"
+	glass_name = "AM-G"
 	glass_desc = "Coffee liquor, Zohil Cream, and cognac. Enough to make you hide before the blast."
 	shot_glass_icon_state = "b52glass"
 
@@ -908,7 +908,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	quality = DRINK_NICE
 	taste_description = "tart bitterness"
 	glass_icon_state = "vodkatonicglass"
-	glass_name = "vodka and tonic"
+	glass_name = "Vodka and Tonic"
 	glass_desc = "The stronger sibling of the Gin and Tonic."
 
 
@@ -1000,13 +1000,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/grog
 	name = "Grog"
-	description = "Watered-down rum, to really stretch out your rations."
+	description = "Watered-down rum, to really stretch out your alcohol rations. A Belter classic."
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 1 //Basically nothing
 	taste_description = "a poor excuse for alcohol"
 	glass_icon_state = "grogglass"
 	glass_name = "Grog"
-	glass_desc = "Watered-down rum, to really stretch out your alcohol rations."
+	glass_desc = "Watered-down rum, to really stretch out your alcohol rations. A Belter classic.
 
 
 /datum/reagent/consumable/ethanol/aloe
@@ -1029,7 +1029,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "lemons"
 	glass_icon_state = "andalusia"
 	glass_name = "Andalusia"
-	glass_desc = "A nice, strangely named drink. Theoretically named after a particular region on Earth, but no one's quite sure where."
+	glass_desc = "A nice, strangely named drink. Theoretically named after a particular region on Terra, but no one's quite sure where."
 
 /datum/reagent/consumable/ethanol/alliescocktail
 	name = "Canton Cocktail"
@@ -1085,24 +1085,24 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/irishcarbomb
 	name = "Lightspeed"
-	description = "A strong mix of alcohol and coffee, meant to feel like the namesake."
+	description = "A shot of Zohil cream in a pinch of ale, meant to be downed in one chug - hits you as fast as the name."
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 25
 	quality = DRINK_GOOD
 	taste_description = "the rush of hyperspace"
 	glass_icon_state = "irishcarbomb"
 	glass_name = "Lightspeed"
-	glass_desc = "A strong mix of alcohol and coffee, meant to feel like the namesake."
+	glass_desc = "A shot of Zohil cream in a pinch of ale, meant to be downed in one chug - hits you as fast as the name."
 
 /datum/reagent/consumable/ethanol/syndicatebomb
-	name = "Syndicate Bomb"
+	name = "Gorlex Surprise"
 	description = "Infamously named after the accusations of Syndicate-led bombings of space installations. It's a blast!"
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 90
 	quality = DRINK_GOOD
 	taste_description = "anti-Nanotrasen sentiments"
 	glass_icon_state = "syndicatebomb"
-	glass_name = "Syndicate Bomb"
+	glass_name = "Gorlex Surprise"
 	glass_desc = "Infamously named after the accusations of Syndicate-led bombings of space installations. It's a blast!"
 
 /datum/reagent/consumable/ethanol/syndicatebomb/on_mob_life(mob/living/carbon/M)
