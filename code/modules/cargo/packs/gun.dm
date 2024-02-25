@@ -45,7 +45,7 @@
 /datum/supply_pack/gun/shadowrevolver
 	name = "Shadow Revolver crate"
 	desc = "Contains a concealable Shadow revolver, chambered in .45 ACP."
-	cost = 1250
+	cost = 1000
 	contains = list(/obj/item/gun/ballistic/revolver/shadow)
 
 
@@ -54,7 +54,7 @@
 */
 
 /datum/supply_pack/gun/laser
-	name = "Lasers Crate"
+	name = "Laser Gun Crate"
 	desc = "Contains a lethal, high-energy laser gun."
 	cost = 1000
 	contains = list(/obj/item/gun/energy/laser)
@@ -62,13 +62,13 @@
 
 /datum/supply_pack/gun/laser
 	name = "Mini Energy Gun Crate"
-	desc = "Contains two small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
+	desc = "Contains a small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
 	cost = 500
 	contains = list(/obj/item/gun/energy/e_gun/mini)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/energy
-	name = "Energy Guns Crate"
+	name = "Energy Gun Crate"
 	desc = "Contains a versatile energy gun, capable of firing both nonlethal and lethal blasts of light."
 	cost = 1250
 	contains = list(/obj/item/gun/energy/e_gun)
@@ -88,14 +88,14 @@
 */
 
 /datum/supply_pack/gun/hellfire_shotgun
-	name = "Hellfire Shotguns Crate"
+	name = "Hellfire Shotgun Crate"
 	desc = "For when you need to deal with 7 hooligans. Contains a pump shotguns, with a 8-round capacity."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/shotgun/hellfire)
 	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/brimstone_shotgun
-	name = "Brimstone Shotguns Crate"
+	name = "Brimstone Shotgun Crate"
 	desc = "For when you need to deal with 5 hooligans, and QUICKLY. Contains a slamfire shotguns, with a 5-round capacity. Warranty voided if sawed off."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/shotgun/brimstone)
