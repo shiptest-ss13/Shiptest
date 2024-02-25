@@ -1,21 +1,40 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-9"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"c" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "brawler_starboard"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "brawler_starboard_holo";
+	dir = 8
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
 /area/ship/bridge)
 "e" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
 	},
 /obj/machinery/telecomms/relay/preset/frontiersmen,
+/obj/machinery/light_switch{
+	pixel_y = -22;
+	dir = 1
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/bridge)
 "f" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
+/obj/machinery/power/terminal,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "g" = (
@@ -34,13 +53,25 @@
 	pixel_y = -2;
 	icon_state = "streak3"
 	},
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 9;
+	pixel_x = 23;
+	id = "brawler_aft_holo";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/terminal{
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "k" = (
-/turf/open/space/basic,
+/turf/template_noop,
 /area/template_noop)
 "o" = (
 /obj/structure/grille,
@@ -64,10 +95,10 @@
 /obj/effect/turf_decal/siding/thinplating/end{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-5"
+/obj/structure/cable/yellow{
+	icon_state = "0-10"
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "0-6"
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/filled/cola{
@@ -78,11 +109,24 @@
 	pixel_y = -15;
 	pixel_x = -10
 	},
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "r" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 8
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "brawler_aft_holo";
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -106,14 +150,20 @@
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "u" = (
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-10"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "v" = (
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
@@ -133,20 +183,62 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
+"y" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 1;
+	id = "brawler_port"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "brawler_port_holo";
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/ship/bridge)
 "z" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 8
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-6"
+	},
 /obj/docking_port/mobile{
-	dir = 8;
-	port_direction = 8;
-	preferred_direction = 4;
-	name = "brawler port"
+	dir = 4;
+	name = "brawler shuttle";
+	port_direction = 2;
+	preferred_direction = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "A" = (
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 1;
+	id = "brawler_port"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "brawler_port_holo";
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/button/door{
+	pixel_x = -23;
+	pixel_y = -7;
+	id = "brawler_port";
+	dir = 4
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = 7;
+	pixel_x = -23;
+	id = "brawler_port_holo";
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "B" = (
@@ -190,10 +282,23 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
+/area/ship/bridge)
+"E" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "brawler_aft"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "brawler_aft_holo"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
 /area/ship/bridge)
 "F" = (
 /obj/machinery/door/firedoor/border_only{
@@ -202,16 +307,22 @@
 /obj/structure/table,
 /obj/item/radio/intercom/wideband/table{
 	dir = 4;
-	pixel_x = -2
+	pixel_x = 6
+	},
+/obj/machinery/button/door{
+	id = "brawler_aft";
+	pixel_x = -7;
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/bridge)
 "G" = (
 /obj/effect/decal/cleanable/wrapping{
 	pixel_y = 25
-	},
-/obj/machinery/vending/wallmed{
-	pixel_y = -28
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
@@ -225,8 +336,10 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/cable,
 /obj/machinery/power/smes/shuttle/precharged,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/bridge)
 "J" = (
@@ -239,8 +352,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /obj/item/chair/plastic,
 /obj/item/chair/plastic{
@@ -263,7 +376,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/port_gen/pacman,
-/obj/structure/cable/yellow{
+/obj/structure/cable{
 	icon_state = "0-8"
 	},
 /obj/item/stack/sheet/mineral/plasma/twenty{
@@ -274,7 +387,24 @@
 /area/ship/bridge)
 "M" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 1
+	id = "brawler_starboard"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	id = "brawler_starboard_holo";
+	dir = 4
+	},
+/obj/structure/cable/yellow,
+/obj/machinery/button/door{
+	dir = 4;
+	pixel_y = 7;
+	pixel_x = -23;
+	id = "brawler_starboard"
+	},
+/obj/machinery/button/shieldwallgen{
+	pixel_y = -7;
+	pixel_x = -23;
+	id = "brawler_starboard_holo";
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ship/bridge)
@@ -296,13 +426,28 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "P" = (
 /obj/machinery/light/directional/south,
+/obj/structure/cable/yellow{
+	icon_state = "5-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "5-9"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/bridge)
+"R" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ship/bridge)
 "W" = (
@@ -363,7 +508,7 @@
 (1,1,1) = {"
 k
 W
-r
+E
 z
 r
 W
@@ -398,11 +543,11 @@ k
 "}
 (5,1,1) = {"
 k
-A
-v
+y
+R
 L
 v
-M
+c
 k
 "}
 (6,1,1) = {"
