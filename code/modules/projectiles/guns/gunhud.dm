@@ -236,17 +236,6 @@
 /datum/component/ammo_hud/revolver
 	prefix = "revolver_"
 
-/datum/component/ammo_hud/revolver/turn_on()
-	var/obj/item/gun/ballistic/revolver/gun = parent
-	if(!HAS_TRAIT(gun.loc, TRAIT_GUNSLINGER))
-		return
-	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(turn_off))
-	RegisterSignal(parent, list(COMSIG_UPDATE_AMMO_HUD, COMSIG_GUN_CHAMBER_PROCESSED), PROC_REF(update_hud))
-
-	hud.turn_on()
-	update_hud()
-
-
 /// Returns get_ammo() with the appropriate args passed to it - some guns like the revolver and bow are special cases
 /datum/component/ammo_hud/revolver/get_accurate_ammo_count(obj/item/gun/ballistic/revolver/the_gun)
 	if(istype(the_gun, /obj/item/gun/ballistic/revolver))

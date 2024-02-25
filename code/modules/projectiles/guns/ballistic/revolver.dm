@@ -4,6 +4,7 @@
 #define REVOLVER_AUTO_ROTATE_LEFT_LOADING "auto rotate left when loading ammo"
 #define REVOLVER_EJECT_CURRENT "eject current bullet"
 #define REVOLVER_EJECT_ALL "auto eject all bullets"
+#define REVOLVER_FLIP "flip the revolver by the trigger"
 
 /obj/item/gun/ballistic/revolver
 	name = "\improper .357 revolver"
@@ -285,10 +286,6 @@
 	if (unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		return ..()
 
-	if(!HAS_TRAIT(user, TRAIT_GUNSLINGER)) //hide this complicated shit behind a quirk
-		spin()
-		return
-
 	var/chamber_options = list(
 		REVOLVER_ROTATE_LEFT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_left"),
 		REVOLVER_ROTATE_RIGHT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_right"),
@@ -296,10 +293,14 @@
 		REVOLVER_EJECT_ALL = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_all"),
 		REVOLVER_EJECT_CURRENT = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_eject_one"),
 		REVOLVER_AUTO_ROTATE_RIGHT_LOADING = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_auto_right"),
+		REVOLVER_FLIP = image(icon = 'icons/mob/radial.dmi', icon_state = "radial_revolver_flip"),
 		)
 
 	var/image/editing_image = chamber_options[gate_load_direction]
 	editing_image.icon_state = "radial_revolver_auto_[gate_load_direction == REVOLVER_AUTO_ROTATE_RIGHT_LOADING ? "right":"left"]_on"
+
+	if(!HAS_TRAIT(user, TRAIT_GUNSLINGER)) //only gunslingers are allowed to flip
+		chamber_options -= REVOLVER_FLIP
 
 	if(!gate_loaded) //these are completely redundant  if you can reload everything with a speedloader
 		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING
@@ -322,6 +323,8 @@
 			return
 		if(REVOLVER_EJECT_CURRENT)
 			eject_casing(user)
+		if(REVOLVER_FLIP)
+			tryflip(user)
 		if(null)
 			return
 	AltClick(user)
@@ -473,6 +476,10 @@
 
 	recoil = 0 //weaker than normal revolver, no recoil
 
+/obj/item/gun/ballistic/revolver/detective/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/revolver) //note that the hud at the moment only supports 6 round revolvers, 7 or 5 isn't supported rn
+
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))
 		if(prob(100 - (magazine.ammo_count() * 5)))	//minimum probability of 70, maximum of 95
@@ -548,6 +555,9 @@
 
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/montagne
 
+/obj/item/gun/ballistic/revolver/montagne/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/revolver)
 
 /obj/item/gun/ballistic/revolver/ashhand
 	name = "HP Ashhand"
