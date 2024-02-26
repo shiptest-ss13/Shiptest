@@ -425,6 +425,8 @@
 		is_antag = TRUE
 
 	client.prefs.copy_to(H, antagonist = is_antag)
+	if(client.prefs.guestbook_names)
+		mind.guestbook.known_names += client.prefs.guestbook_names
 	update_names_joined_list(H.real_name)
 	H.dna.update_dna_identity()
 	if(mind)
