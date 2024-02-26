@@ -22,7 +22,7 @@
 	/// Sets a delay for mines going live after being planted
 	var/arm_delay = 5 SECONDS
 	/// Use to set a delay after activation to trigger the explosion.
-	var/blast_delay = 8 DECISECONDS
+	var/blast_delay = 5 DECISECONDS
 
 	/// When true, mines explode instantly on being stepped upon
 	var/hair_trigger = FALSE
@@ -60,18 +60,18 @@
 /obj/item/mine/examine(mob/user)
 	. = ..()
 	if(!armed)
-		. += "<span class='information'>It appears to be inactive...</span>"
+		. += span_info("It appears to be inactive...")
 	else
-		. += "<span class='information'>It looks ready to explode.</span>"
+		. += span_info("It looks ready to explode.")
 
 	if(manufacturer)
-		. += "<span class='notice'>It has <b>[manufacturer]</b> engraved on it.</span>"
+		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
 
 	var/atom/movable/unlucky_sod = foot_on_mine?.resolve()
 	if(user == unlucky_sod)
-		. += "<span class='span_bolddanger'>The pressure plate is depressed. Any movement you make will set it off now."
+		. += span_bolddanger("The pressure plate is depressed. Any movement you make will set it off now.")
 	else if(!isnull(unlucky_sod))
-		. += "<span class='span_danger'>The pressure plate is depressed by [unlucky_sod]. Any move they make'll set it off now."
+		. += span_danger("The pressure plate is depressed by [unlucky_sod]. Any move they make'll set it off now.")
 
 /obj/item/mine/update_icon_state()
 	. = ..()
@@ -116,7 +116,7 @@
 		if(isopenturf(loc))
 			var/turf/open/locturf = loc
 			oldslow = locturf.slowdown
-			locturf.slowdown = 4
+			locturf.slowdown = 6
 	alpha = 204
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
@@ -140,6 +140,12 @@
 	if(prob(65))
 		blast_delay = blast_delay * 3
 		triggermine()
+
+/obj/item/mine/Destroy()//just in case
+	if(isopenturf(loc) || oldslow)
+		var/turf/open/locturf = loc
+		locturf.slowdown = oldslow
+	. = ..()
 
 /// When something sets off a mine
 /obj/item/mine/proc/triggermine(atom/movable/triggerer)
@@ -213,6 +219,7 @@
 				anchored = FALSE
 				armed = FALSE
 				clicked = FALSE
+				alpha = 204
 				if(isopenturf(loc) || oldslow)
 					var/turf/open/locturf = loc
 					locturf.slowdown = oldslow
