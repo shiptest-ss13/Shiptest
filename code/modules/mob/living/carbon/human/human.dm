@@ -1293,7 +1293,7 @@
 	. = ..()
 	if(!user.mind?.guestbook)
 		return
-	INVOKE_ASYNC(user.mind.guestbook, /datum/guestbook.proc/try_add_guest, user, src, FALSE)
+	INVOKE_ASYNC(user.mind.guestbook, TYPE_PROC_REF(/datum/guestbook, try_add_guest), user, src, FALSE)
 
 /mob/living/carbon/human/get_screentip_name(client/hovering_client)
 	. = ..()
