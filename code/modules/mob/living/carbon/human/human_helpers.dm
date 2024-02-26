@@ -33,26 +33,21 @@
 
 //repurposed proc. Now it combines get_id_name() and get_face_name() to determine a mob's name variable. Made into a separate proc as it'll be useful elsewhere
 /mob/living/carbon/human/get_visible_name()
-	var/face_name = get_face_name("")
-	var/id_name = get_id_name("")
 	if(name_override)
 		return name_override
-	if(face_name)
-		if(id_name && (id_name != face_name))
-			return "[face_name] (as [id_name])"
-		return face_name
+	var/id_name = get_id_name("")
 	if(id_name)
 		return id_name
-	return "Unknown"
+	return get_generic_name(lowercase = TRUE)
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when Fluacided or when updating a human's name variable
-/mob/living/carbon/human/proc/get_face_name(if_no_face="Unknown")
-	if(wear_mask && (wear_mask.flags_inv&HIDEFACE))	//Wearing a mask which hides our face, use id-name if possible
+/mob/living/carbon/human/proc/get_face_name(if_no_face = get_generic_name(lowercase = TRUE))
+	if( wear_mask && (wear_mask.flags_inv & HIDEFACE) ) //Wearing a mask which hides our face, use id-name if possible
 		return if_no_face
-	if(head && (head.flags_inv&HIDEFACE))
-		return if_no_face		//Likewise for hats
+	if( head && (head.flags_inv & HIDEFACE) )
+		return if_no_face //Likewise for hats
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_HEAD)
-	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name)	//disfigured. use id-name if possible
+	if( !O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name || HAS_TRAIT(src, TRAIT_INVISIBLE_MAN)) //disfigured. use id-name if possible
 		return if_no_face
 	return real_name
 
@@ -181,3 +176,46 @@
 	destination.socks = socks
 	destination.socks_color = socks_color
 	destination.jumpsuit_style = jumpsuit_style
+
+/mob/living/carbon/human/proc/get_gender()
+	var/visible_gender = p_they()
+	switch(visible_gender)
+		if("he")
+			visible_gender = "Man"
+		if("she")
+			visible_gender = "Woman"
+		if("they")
+			visible_gender = "Creature"
+		else
+			visible_gender = "Thing"
+	return visible_gender
+
+/mob/living/carbon/human/proc/get_age()
+	switch(age)
+		if(70 to INFINITY)
+			return "Geriatric"
+		if(60 to 70)
+			return "Elderly"
+		if(50 to 60)
+			return "Old"
+		if(40 to 50)
+			return "Middle-Aged"
+		if(24 to 40)
+			return "" //not necessary because this is basically the most common age range
+		if(18 to 24)
+			return "Young"
+		else
+			return "Puzzling"
+
+/mob/living/carbon/human/proc/get_generic_name(prefixed = FALSE, lowercase = FALSE)
+	var/visible_skin
+	if(dna.species.use_skintones)
+		visible_skin = GLOB.skin_tones[skin_tone] ? "[GLOB.skin_tones[skin_tone]] " : null
+	else
+		visible_skin = "[dna.species.name] "
+	var/visible_gender = get_gender()
+	var/visible_age = get_age()
+	var/final_string = "[visible_age ? "[visible_age] " : null][visible_skin][visible_gender]"
+	if(prefixed)
+		final_string = "\A [final_string]"
+	return lowercase ? lowertext(final_string) : final_string

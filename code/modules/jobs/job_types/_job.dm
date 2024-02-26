@@ -25,6 +25,8 @@
 
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
+	///Guestbook flags, to establish who knowns who etc
+	var/guestbook_flags = GUESTBOOK_SHIP
 
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
@@ -33,6 +35,23 @@
 	if(new_name)
 		name = new_name
 		outfit = new_outfit
+
+/* 	if(!(guestbook_flags & GUESTBOOK_FORGETMENOT)) // BIG FUCKING TODO: make this work with ship and faction
+		for(var/mob/living/carbon/human/dude as anything in GLOB.human_list)
+			if((dude == spawned) || !dude.mind?.assigned_role)
+				continue
+			var/datum/job/dudes_job = dude.mind.assigned_role
+			var/same_faction = dude.faction_check_mob(src)
+			//if we satisfy at least one condition, add us to their guestbook
+			if(dudes_job.guestbook_flags & GUESTBOOK_OMNISCIENT || \
+				((dudes_job.guestbook_flags & GUESTBOOK_SHIP) && (dude.mind.original_ship == src.mind.original_ship)) || \
+				((dudes_job.guestbook_flags & GUESTBOOK_FACTION) && same_faction))
+				dude.mind.guestbook.add_guest(dude, spawned, spawned.mind.name, spawned.mind.name, silent = TRUE)
+			//if we satisfy at least one condition, add them to our guestbook
+			if(guestbook_flags & GUESTBOOK_OMNISCIENT || \
+				((guestbook_flags & GUESTBOOK_SHIP) && (src.mind.original_ship == dude.mind.original_ship)) || \
+				((guestbook_flags & GUESTBOOK_FACTION) && same_faction))
+				spawned.mind.guestbook.add_guest(spawned, dude, dude.mind.name, dude.mind.name, silent = TRUE) */
 		register()
 
 /datum/job/proc/register()

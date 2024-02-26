@@ -55,3 +55,13 @@
 #define JOB_DISPLAY_ORDER_DEFAULT 80
 
 #define JOB_DISPLAY_ORDER_ASSISTANT 999
+
+// ~guestbook_flags variable on datum/job
+/// We will know absolutely everyone, no matter the faction or ship
+#define GUESTBOOK_OMNISCIENT (1 << 0)
+/// We will know others in our ship
+#define GUESTBOOK_SHIP (1 << 1)
+/// We will know others in our faction
+#define GUESTBOOK_FACTION (1 << 2)
+/// We will not be known by others, even if they pass checks in any way otherwise
+#define GUESTBOOK_FORGETMENOT (1 << 3)

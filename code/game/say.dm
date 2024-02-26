@@ -51,10 +51,28 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	//Radio freq/name display
 	var/freqpart = radio_freq ? "\[[get_radio_name(radio_freq)]\] " : ""
 	//Speaker name
-	var/namepart = "[speaker.GetVoice()][speaker.get_alt_name()]"
-	if(face_name && ishuman(speaker))
-		var/mob/living/carbon/human/H = speaker
-		namepart = "[H.get_face_name()]" //So "fake" speaking like in hallucinations does not give the speaker away if disguised
+
+	var/namepart = speaker.GetVoice()
+	var/atom/movable/reliable_narrator = speaker
+	if(istype(speaker, /atom/movable/virtualspeaker)) //ugh
+		var/atom/movable/virtualspeaker/fakespeaker = speaker
+		reliable_narrator = fakespeaker.source
+	if(ishuman(reliable_narrator))
+		//So "fake" speaking like in hallucinations does not give the speaker away if disguised
+		if(face_name)
+			var/mob/living/carbon/human/human_narrator = reliable_narrator
+			namepart = human_narrator.name
+		//otherwise, do guestbook handling
+		else if((src != reliable_narrator) && ismob(src))
+			var/mob/mob_source = src
+			if(mob_source.mind?.guestbook)
+				var/known_name = mob_source.mind.guestbook.get_known_name(src, reliable_narrator, namepart)
+				if(known_name)
+					namepart = "[known_name]"
+				else
+					var/mob/living/carbon/human/human_narrator = reliable_narrator
+					namepart = "[human_narrator.get_generic_name(prefixed = TRUE, lowercase = FALSE)]"
+
 	//End name span.
 	var/endspanpart = "</span>"
 
@@ -66,9 +84,9 @@ GLOBAL_LIST_INIT(freqcolor, list())
 	else
 		messagepart = lang_treat(speaker, message_language, raw_message, spans, message_mods)
 
-		var/datum/language/D = GLOB.language_datum_instances[message_language]
-		if(istype(D) && D.display_icon(src))
-			languageicon = "[D.get_icon()] "
+		var/datum/language/language = GLOB.language_datum_instances[message_language]
+		if(istype(language) && language.display_icon(src))
+			languageicon = "[language.get_icon()] "
 
 	messagepart = " <span class='message'>[say_emphasis(messagepart)]</span></span>"
 

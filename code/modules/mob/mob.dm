@@ -670,6 +670,19 @@
 	else
 		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
 
+///Shows guestbook tgui window
+/mob/verb/guestbook()
+	set name = "Guestbook"
+	set category = "IC"
+	set desc = "View your character's Guestbook."
+	if(!mind)
+		var/fail_message = "You have no mind!"
+		if(isobserver(src))
+			fail_message += " You have to be in the current round at some point to have one."
+		to_chat(src, span_warning(fail_message))
+		return
+	mind.guestbook.ui_interact(usr)
+
 /**
  * Allows you to respawn, abandoning your current mob
  *
