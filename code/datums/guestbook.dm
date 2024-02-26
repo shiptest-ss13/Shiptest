@@ -59,7 +59,7 @@
 		return FALSE
 	if(!visibility_checks(user, guest, silent))
 		return FALSE
-	var/given_name = input(user, "What name do you want to give to [guest]?")
+	var/given_name = input(user, "What name do you want to give to [guest]?", "Guestbook Name", "")
 	if(!given_name)
 		if(!silent)
 			to_chat(user, span_warning("Nevermind."))
