@@ -82,6 +82,9 @@
 					playsound(ourmine, 'sound/weapons/empty.ogg', 30, TRUE)
 					ourmine.clicked = FALSE
 					ourmine.foot_on_mine = null
+					if(isopenturf(ourmine.loc) || ourmine.oldslow)
+						var/turf/open/locturf = ourmine.loc
+						locturf.slowdown = ourmine.oldslow
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s detonation pad becomes loose."))
 			else
 				ourmine.clickblock = FALSE
