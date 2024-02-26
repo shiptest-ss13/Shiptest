@@ -157,7 +157,7 @@
 	name = "butcher's cleaver"
 	icon_state = "butch"
 	item_state = "butch"
-	desc = "A huge thing used for chopping and chopping up meat. This includes clowns and clown by-products."
+	desc = "A huge thing used for chopping and chopping up meat."
 	flags_1 = CONDUCT_1
 	force = 15
 	throwforce = 10
