@@ -42,12 +42,12 @@
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when Fluacided or when updating a human's name variable
 /mob/living/carbon/human/proc/get_face_name(if_no_face = get_generic_name(lowercase = TRUE))
-	if( wear_mask && (wear_mask.flags_inv & HIDEFACE) ) //Wearing a mask which hides our face, use id-name if possible
+	if(wear_mask && (wear_mask.flags_inv & HIDEFACE)) //Wearing a mask which hides our face, use id-name if possible
 		return if_no_face
 	if( head && (head.flags_inv & HIDEFACE) )
 		return if_no_face //Likewise for hats
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_HEAD)
-	if( !O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name || HAS_TRAIT(src, TRAIT_INVISIBLE_MAN)) //disfigured. use id-name if possible
+	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name) //disfigured. use id-name if possible
 		return if_no_face
 	return real_name
 
@@ -177,20 +177,11 @@
 	destination.socks_color = socks_color
 	destination.jumpsuit_style = jumpsuit_style
 
-/mob/living/carbon/human/proc/get_gender()
-	var/visible_gender = p_they()
-	switch(visible_gender)
-		if("he")
-			visible_gender = "Man"
-		if("she")
-			visible_gender = "Woman"
-		if("they")
-			visible_gender = "Creature"
-		else
-			visible_gender = "Thing"
-	return visible_gender
-
 /mob/living/carbon/human/proc/get_age()
+	var/obscured = check_obscured_slots()
+	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	if((obscured & ITEM_SLOT_ICLOTHING) && skipface)
+		return ""
 	switch(age)
 		if(70 to INFINITY)
 			return "Geriatric"
@@ -208,14 +199,40 @@
 			return "Puzzling"
 
 /mob/living/carbon/human/proc/get_generic_name(prefixed = FALSE, lowercase = FALSE)
+	var/obscured = check_obscured_slots()
+	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/hide_features = (obscured & ITEM_SLOT_ICLOTHING) && skipface
+	var/visible_adjective
+	if(generic_adjective && !hide_features)
+		visible_adjective = "[generic_adjective] "
+	var/visible_age = get_age()
+	if(visible_age)
+		visible_age = "[visible_age] "
 	var/visible_skin
+	//i am not quite sure how to implement a check for skin tone/species visibility so uhh, get fucked i guess?
 	if(dna.species.use_skintones)
 		visible_skin = GLOB.skin_tones[skin_tone] ? "[GLOB.skin_tones[skin_tone]] " : null
 	else
 		visible_skin = "[dna.species.name] "
 	var/visible_gender = get_gender()
-	var/visible_age = get_age()
-	var/final_string = "[visible_age ? "[visible_age] " : null][visible_skin][visible_gender]"
+	var/final_string = "[visible_adjective][visible_age][visible_skin][visible_gender]"
 	if(prefixed)
 		final_string = "\A [final_string]"
 	return lowercase ? lowertext(final_string) : final_string
+
+/mob/living/carbon/human/proc/get_gender()
+	var/visible_gender = p_they()
+	switch(visible_gender)
+		if("he")
+			visible_gender = "Man"
+		if("she")
+			visible_gender = "Woman"
+		if("they")
+			//humans are people, mutants are not
+			if(ishumanbasic(src))
+				visible_gender = "Person"
+			else
+				visible_gender = "Creature"
+		else
+			visible_gender = "Thing"
+	return visible_gender

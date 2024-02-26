@@ -594,6 +594,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["randomise"]					, randomise)
 	WRITE_FILE(S["species"]						, pref_species.id)
 	WRITE_FILE(S["phobia"]						, phobia)
+	WRITE_FILE(S["generic_adjective"]		, generic_adjective)
 	WRITE_FILE(S["body_size"]					, features["body_size"])
 	WRITE_FILE(S["prosthetic_limbs"]			, prosthetic_limbs)
 	WRITE_FILE(S["feature_mcolor"]				, features["mcolor"])
