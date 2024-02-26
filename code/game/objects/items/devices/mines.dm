@@ -24,18 +24,18 @@
 	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 5 DECISECONDS
 
-	/// When true, mines explode instantly on being stepped upon
+	/// When true, mines trigger instantly on being stepped upon
 	var/hair_trigger = FALSE
 	/// Prevents a mine from being screwdrivable (e.g. cannot be disarmed)
 	var/sealed = FALSE
 	/// Disables the mine without disarming it. perfect for practical jokes
-	var/clickblock = FALSE
+	var/dud = FALSE
 
 	/// Are the wires exposed?
 	var/open_panel = FALSE
 
 	/// Armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
-	var/stealthpwr = 204
+	var/stealthpwr = 255
 
 	var/manufacturer = MANUFACTURER_NONE
 
@@ -98,39 +98,35 @@
 	if(foot_on_mine?.resolve())
 		return
 
-	foot_on_mine = WEAKREF(arrived)
+	if(dud == FALSE)//we don't actually need this if the mine's been disabled
+		foot_on_mine = WEAKREF(arrived)
 
 	if(ismob(arrived))
 		var/mob/living/fool = arrived
 		fool.do_alert_animation(fool)
+		if(dud == FALSE)
+			fool.add_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
 		if(!hair_trigger)
 			fool.Immobilize(15 DECISECONDS, TRUE)
 			to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
-
 	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
-	if(clickblock == FALSE)//see wirecutting
+	if(dud == FALSE)//see wirecutting
 		clicked = TRUE
-	if(hair_trigger && clicked)
-		triggermine(arrived)
-	else
-		if(isopenturf(loc))
-			var/turf/open/locturf = loc
-			oldslow = locturf.slowdown
-			locturf.slowdown = 6
-	alpha = 204
+		if(hair_trigger)
+			triggermine(arrived)
+	alpha = 255
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
 //step 2: the consequences
 /obj/item/mine/proc/on_exited(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
-	if(!clicked)
+	if(!clicked )
 		return
 	if(!can_trigger(gone))
 		return
 	// Check that the guy who's on it is stepping off
 	if(foot_on_mine && !IS_WEAKREF_OF(gone, foot_on_mine))
 		return
-
 	INVOKE_ASYNC(src, PROC_REF(triggermine), gone)
 	foot_on_mine = null
 
@@ -142,9 +138,9 @@
 		triggermine()
 
 /obj/item/mine/Destroy()//just in case
-	if(isopenturf(loc) || oldslow)
-		var/turf/open/locturf = loc
-		locturf.slowdown = oldslow
+	if(foot_on_mine?.resolve())
+		var/mob/living/slowedguy = foot_on_mine.resolve()
+		slowedguy.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
 	. = ..()
 
 /// When something sets off a mine
@@ -177,6 +173,9 @@
 		mineEffect()
 	visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] detonates!"))
 	SEND_SIGNAL(src, COMSIG_MINE_TRIGGERED, triggerer)
+	if(ismob(triggerer))
+		var/mob/living/slowpoke = triggerer
+		slowpoke.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
 	qdel(src)
 
 //using an unarmed mine inhand deploys it.
@@ -219,10 +218,10 @@
 				anchored = FALSE
 				armed = FALSE
 				clicked = FALSE
-				alpha = 204
-				if(isopenturf(loc) || oldslow)
-					var/turf/open/locturf = loc
-					locturf.slowdown = oldslow
+				alpha = 255
+				var/mob/living/defuser = foot_on_mine.resolve()
+				defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
+				foot_on_mine = null
 				update_appearance(UPDATE_ICON_STATE)
 			else
 				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hand!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))

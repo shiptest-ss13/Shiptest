@@ -17,3 +17,8 @@
 
 /datum/movespeed_modifier/berserk
 	multiplicative_slowdown = -0.2
+
+/datum/movespeed_modifier/stepped_on_mine
+	multiplicative_slowdown = 6
+	movetypes = ALL
+	flags = IGNORE_NOSLOW
