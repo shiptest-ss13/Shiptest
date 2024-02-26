@@ -228,8 +228,7 @@
 		if("she")
 			visible_gender = "Woman"
 		if("they")
-			//humans are people, mutants are not
-			if(ishumanbasic(src))
+			if(ishuman(src))
 				visible_gender = "Person"
 			else
 				visible_gender = "Creature"

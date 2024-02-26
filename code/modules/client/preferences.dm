@@ -849,7 +849,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]]</a><BR>"
 
 
-				dat += "<h3>Character Adjective<h3>"
+				dat += "<h3>Character Adjective</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=generic_adjective;task=input'>[generic_adjective]</a><BR>"
 
