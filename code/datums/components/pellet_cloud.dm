@@ -129,8 +129,9 @@
 		var/obj/item/mine/explosive/triggered_mine = parent
 		if(triggered_mine.shred_triggerer && istype(punishable_triggerer)) // free shrapnel for the idiot who stepped on it if we're a mine that shreds the triggerer
 			pellet_delta += radius // so they don't count against the later total
-			for(var/i in 1 to radius)
-				pew(punishable_triggerer, TRUE)
+			if(punishable_triggerer.loc == triggered_mine.loc)
+				for(var/i in 1 to radius)
+					pew(punishable_triggerer, TRUE)
 
 	if(radius < 1)
 		return

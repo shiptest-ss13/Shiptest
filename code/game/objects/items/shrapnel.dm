@@ -61,9 +61,9 @@
 
 /obj/projectile/bullet/shrapnel/hot
 	name = "white-hot metal slag"
-	damage = 4//soft
+	damage = 10
 	range = 8
-	armour_penetration = -45
+	armour_penetration = -35
 	dismemberment = 4
 	shrapnel_type = /obj/item/shrapnel/hot
 	damage_type = BURN
@@ -72,15 +72,15 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(8)
+		M.adjust_fire_stacks(10)
 		M.IgniteMob()
 
 /obj/projectile/bullet/shrapnel/spicy
 	name = "radioactive slag"
 	damage_type = BURN
-	damage = 4
+	damage = 10
 	range = 8
-	armour_penetration = -45
+	armour_penetration = -35
 	shrapnel_type = /obj/item/shrapnel/hot
 
 /obj/projectile/bullet/shrapnel/spicy/on_hit(atom/target, blocked = FALSE)

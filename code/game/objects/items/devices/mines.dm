@@ -22,27 +22,25 @@
 	/// Sets a delay for mines going live after being planted
 	var/arm_delay = 5 SECONDS
 	/// Use to set a delay after activation to trigger the explosion.
-	var/blast_delay = 1 SECONDS
+	var/blast_delay = 8 DECISECONDS
 
 	/// When true, mines explode instantly on being stepped upon
 	var/hair_trigger = FALSE
-
+	/// Prevents a mine from being screwdrivable (e.g. cannot be disarmed)
+	var/sealed = FALSE
 	/// Disables the mine without disarming it. perfect for practical jokes
 	var/clickblock = FALSE
-
-	var/manufacturer = MANUFACTURER_NONE
 
 	/// Are the wires exposed?
 	var/open_panel = FALSE
 
-	/// A surprised tool that'll help us later (handles turf slowdown manipulation)
-	var/oldslow
-
-	/// Prevents a mine from being screwdrivable (e.g. cannot be disarmed)
-	var/sealed = FALSE
-
 	/// Armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
 	var/stealthpwr = 204
+
+	var/manufacturer = MANUFACTURER_NONE
+
+	/// A surprised tool that'll help us later (handles turf slowdown manipulation)
+	var/oldslow
 
 	/// Who's got their foot on the mine's pressure plate
 	/// Stepping on the mine will set this to the first mob who stepped over it
@@ -106,7 +104,7 @@
 		var/mob/living/fool = arrived
 		fool.do_alert_animation(fool)
 		if(!hair_trigger)
-			fool.Immobilize(20, TRUE)
+			fool.Immobilize(15 DECISECONDS, TRUE)
 			to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
 
 	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
@@ -269,9 +267,9 @@
 
 	//customize shrapnel. Magnitude zero prevents them from spawning
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 2
+	var/shrapnel_magnitude = 5
 
-	/// If TRUE, we spawn extra pellets to eviscerate the person who stepped on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
+	/// If TRUE, we spawn extra pellets to eviscerate a person still sitting on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
 	var/shred_triggerer = TRUE
 
 	stealthpwr = 100
@@ -299,7 +297,7 @@
 	range_flash = 3
 
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
-	shrapnel_magnitude = 2
+	shrapnel_magnitude = 6
 
 /obj/item/mine/explosive/fire/mineEffect(mob/victim)
 	for(var/turf/T in view(4,src))
@@ -325,7 +323,7 @@
 	range_heavy = 1
 	range_light = 4
 
-	shrapnel_magnitude = 4
+	shrapnel_magnitude = 9
 	shred_triggerer = TRUE
 
 /obj/item/mine/explosive/shrapnel/carbon_only
@@ -348,22 +346,22 @@
 	range_flame = 0
 
 	hair_trigger = TRUE
-	shrapnel_magnitude = 6
+	shrapnel_magnitude = 7
 	shred_triggerer = TRUE
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
-/obj/item/mine/explosive/
+/obj/item/mine/explosive/rad
 	name = "\improper G-85 Fission"
 	desc = "An anti-infantry explosive produced during the corporate wars. This one detonates a small microfission core, creating a bloom of deadly radiation. "
 	range_light = 4
 	range_flame = 2
-	shrapnel_magnitude = 3
+	shrapnel_magnitude = 7
 	shrapnel_type = /obj/projectile/bullet/shrapnel/spicy
-	var/radpower = 500
+	var/radpower = 750
 
 /obj/item/mine/explosive/rad/mineEffect(mob/victim)
-	radiation_pulse(src, radpower, 2)
+	radiation_pulse(src, radpower, 1)
 	. = ..()
 
 /obj/item/mine/explosive/plasma
