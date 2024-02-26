@@ -44,7 +44,7 @@
 /mob/living/carbon/human/proc/get_face_name(if_no_face = get_generic_name(lowercase = TRUE))
 	if(wear_mask && (wear_mask.flags_inv & HIDEFACE)) //Wearing a mask which hides our face, use id-name if possible
 		return if_no_face
-	if(head && (head.flags_inv & HIDEFACE) )
+	if(head && (head.flags_inv & HIDEFACE))
 		return if_no_face //Likewise for hats
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_HEAD)
 	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name) //disfigured. use id-name if possible
