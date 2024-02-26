@@ -11,39 +11,43 @@
 	icon_state = "mine"
 	item_state = "assembly"//when we get custom sprites replace this. please
 	base_icon_state = "mine"
-	/// Is our mine currently exploding?
-	var/triggered = FALSE
+
 	/// Is our mine live?
 	var/armed = FALSE
+	/// Has the mine loc been entered?
+	var/clicked = FALSE
+	/// Is our mine currently exploding?
+	var/triggered = FALSE
+
 	/// Sets a delay for mines going live after being planted
 	var/arm_delay = 5 SECONDS
 	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 SECONDS
 
-	/// armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
-	var/stealthpwr = 204
-
-	/// when true, mines explode instantly on being stepped upon
+	/// When true, mines explode instantly on being stepped upon
 	var/hair_trigger = FALSE
 
-	/// bruteforce solution. has the mine loc been entered
-	var/clicked = FALSE
-	/// disables the mine without disarming it. perfect for practical jokes
+	/// Disables the mine without disarming it. perfect for practical jokes
 	var/clickblock = FALSE
 
-	/// flavour
 	var/manufacturer = MANUFACTURER_NONE
 
-	/// are the wires exposed?
+	/// Are the wires exposed?
 	var/open_panel = FALSE
+
+	/// A surprised tool that'll help us later (handles turf slowdown manipulation)
+	var/oldslow
+
+	/// Prevents a mine from being screwdrivable (e.g. cannot be disarmed)
+	var/sealed = FALSE
+
+	/// Armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
+	var/stealthpwr = 204
 
 	/// Who's got their foot on the mine's pressure plate
 	/// Stepping on the mine will set this to the first mob who stepped over it
 	/// The mine will not detonate via movement unless the first mob steps off of it
 	var/datum/weakref/foot_on_mine
-
-	/// a surprised tool that'll help us later (handles turf slowdown manipulation)
-	var/oldslow
 
 /obj/item/mine/Initialize()
 	. = ..()
@@ -102,7 +106,7 @@
 		var/mob/living/fool = arrived
 		fool.do_alert_animation(fool)
 		if(!hair_trigger)
-			fool.Immobilize(10, TRUE)
+			fool.Immobilize(20, TRUE)
 			to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
 
 	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
@@ -114,7 +118,7 @@
 		if(isopenturf(loc))
 			var/turf/open/locturf = loc
 			oldslow = locturf.slowdown
-			locturf.slowdown = 6
+			locturf.slowdown = 4
 	alpha = 204
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
@@ -226,6 +230,9 @@
 //handles disarming(and failing to disarm)
 /obj/item/mine/attackby(obj/item/I, mob/user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
+		if(sealed)
+			to_chat(user, "<span class='notice'>You can't see any way to access \the [src]'s wiring.</span>")
+			return
 		open_panel = !open_panel
 		update_appearance(UPDATE_ICON_STATE)
 		to_chat(user, "<span class='notice'>You [open_panel ? "reveal" : "hide"] \the [src]'s wiring.</span>")
@@ -285,7 +292,7 @@
 
 /obj/item/mine/explosive/fire
 	name = "\improper G-82 Incindeary"
-	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag on detonation. Watch your step. "
+	desc = "An anti-infantry explosive produced during the corporate wars. Transforms into superheated slag and a ball of fire on detonation. "
 
 	range_flame = 6
 	range_light = 3
@@ -294,8 +301,10 @@
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
 	shrapnel_magnitude = 2
 
-/obj/item/mine/explosive/incindeary/mineEffect(mob/victim)
-
+/obj/item/mine/explosive/fire/mineEffect(mob/victim)
+	for(var/turf/T in view(4,src))
+		T.IgniteTurf(15)
+		new /obj/effect/hotspot(T)
 	. = ..()
 
 /obj/item/mine/explosive/heavy
@@ -304,8 +313,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	range_heavy = 6
 	range_light = 9
-	shrapnel_magnitude = 6
-	blast_delay = 60//run.
+	shrapnel_magnitude = 7
+	shrapnel_type = /obj/projectile/bullet/shrapnel/mega
+	blast_delay = 50//run.
+	sealed = TRUE//unless we specifically give it to people disarmed, we probably don't want them stealing this
 
 /obj/item/mine/explosive/shrapnel
 	name = "\improper G-84 Fragmentation"
@@ -342,27 +353,44 @@
 	shrapnel_type = /obj/projectile/bullet/pellet/stingball
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
 
-//WIP variants
-/obj/item/mine/explosive/rad
+/obj/item/mine/explosive/
 	name = "\improper G-85 Fission"
 	desc = "An anti-infantry explosive produced during the corporate wars. This one detonates a small microfission core, creating a bloom of deadly radiation. "
 	range_light = 4
 	range_flame = 2
+	shrapnel_magnitude = 3
+	shrapnel_type = /obj/projectile/bullet/shrapnel/spicy
+	var/radpower = 500
+
+/obj/item/mine/explosive/rad/mineEffect(mob/victim)
+	radiation_pulse(src, radpower, 2)
+	. = ..()
 
 /obj/item/mine/explosive/plasma
 	name = "\improper Etherbor EM-3"
-	desc = "An anti-infantry explosive designed to deliver maximum impact to personnel with minimal structural damage. Incinerates anything nearby with high energy plasma."
+	desc = "An anti-infantry explosive designed by the PGF for denial of territory to enemy forces. Incinerates anything nearby with high energy plasma."
 	range_light = 2
 	range_flame = 3
 	range_heavy = 0
-	shrapnel_magnitude = 5
-	shrapnel_type = /obj/projectile/energy/buster
+	shrapnel_magnitude = 8
+	shred_triggerer = FALSE //this would be ridiculous overkill
+	shrapnel_type = /obj/projectile/energy/plasmabolt
+	manufacturer = MANUFACTURER_PGF
 
+/obj/item/mine/explosive/plasma/mineEffect(mob/victim)
+	for(var/turf/T in view(3,src))
+		T.IgniteTurf(25, "green")
+	. = ..()
+
+//WIP variants(CLEAN THIS UP BEFORE UNDRAFTING)
+/obj/item/mine/spawner
+//mannhacks go here :)
+
+
+//
 //UNUSED MINES//
-//varying levels of useless.
 //mainly remain to demonstrate possible mine effects.
 //
-
 
 /obj/item/mine/stun
 	name = "stun mine"
@@ -409,9 +437,8 @@
 //use these at your own risk, I haven't tested them
 //
 
-
 /obj/item/mine/kickmine
-	name = "\improper G-00 'Adminbus'"
+	name = "\improper A-00 'Adminbus'"
 	desc = "An Anti-Griefer proximity expulsive. Delivers Justice."
 	blast_delay = 0//funnier this way
 	hair_trigger = TRUE

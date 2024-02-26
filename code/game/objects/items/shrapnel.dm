@@ -51,9 +51,10 @@
 	ricochet_chance = 60
 
 /obj/projectile/bullet/shrapnel/mega
+	damage = 17
 	name = "flying shrapnel hunk"
 	range = 25
-	dismemberment = 10
+	dismemberment = 20
 	ricochets_max = 4
 	ricochet_chance = 90
 	ricochet_decay_chance = 0.9
@@ -64,11 +65,7 @@
 	range = 8
 	armour_penetration = -45
 	dismemberment = 4
-	ricochets_max = 1
-	ricochet_chance = 60
 	shrapnel_type = /obj/item/shrapnel/hot
-	ricochet_incidence_leeway = 60
-	hit_stunned_targets = TRUE
 	damage_type = BURN
 
 /obj/projectile/bullet/shrapnel/hot/on_hit(atom/target, blocked = FALSE)
@@ -77,6 +74,20 @@
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(8)
 		M.IgniteMob()
+
+/obj/projectile/bullet/shrapnel/spicy
+	name = "radioactive slag"
+	damage_type = BURN
+	damage = 4
+	range = 8
+	armour_penetration = -45
+	shrapnel_type = /obj/item/shrapnel/hot
+
+/obj/projectile/bullet/shrapnel/spicy/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.apply_effect(150,EFFECT_IRRADIATE,0)
 
 /obj/projectile/bullet/pellet/stingball
 	name = "ballistic gel clump"
