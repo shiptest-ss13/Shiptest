@@ -142,26 +142,8 @@
 			return TRUE
 		return
 
-	if(istype(O, /obj/item/reagent_containers/spray))
-		var/obj/item/reagent_containers/spray/clean_spray = O
-		if(clean_spray.reagents.has_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this))
-			clean_spray.reagents.remove_reagent(/datum/reagent/space_cleaner, clean_spray.amount_per_transfer_from_this,1)
-			playsound(loc, 'sound/effects/spray3.ogg', 50, TRUE, -6)
-			user.visible_message("<span class='notice'>[user] cleans \the [src].</span>", "<span class='notice'>You clean \the [src].</span>")
-			dirty = 0
-			update_appearance()
-		else
-			to_chat(user, "<span class='warning'>You need more space cleaner!</span>")
-		return TRUE
-
-	if(istype(O, /obj/item/soap))
-		var/obj/item/soap/P = O
-		user.visible_message("<span class='notice'>[user] starts to clean \the [src].</span>", "<span class='notice'>You start to clean \the [src]...</span>")
-		if(do_after(user, P.cleanspeed, target = src))
-			user.visible_message("<span class='notice'>[user] cleans \the [src].</span>", "<span class='notice'>You clean \the [src].</span>")
-			dirty = 0
-			update_appearance()
-		return TRUE
+	if(istype(O, /obj/item/reagent_containers/spray) || istype(O, /obj/item/soap) || istype(O, /obj/item/reagent_containers/glass/rag))
+		return
 
 	if(dirty == 100) // The microwave is all dirty so can't be used!
 		to_chat(user, "<span class='warning'>\The [src] is dirty!</span>")
@@ -194,6 +176,13 @@
 		return
 
 	..()
+
+/obj/machinery/microwave/wash(clean_types)
+	. = ..()
+	if(dirty != 0)
+		dirty = 0
+		update_appearance()
+		return TRUE
 
 /obj/machinery/microwave/AltClick(mob/user)
 	if(user.canUseTopic(src, !issilicon(usr)))
