@@ -30,7 +30,7 @@
 			return if_no_voice
 	if(mind)
 		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
-		if(changeling?.mimicing)
+		if(changeling && changeling.mimicing)
 			return changeling.mimicing
 	var/special_voice = GetSpecialVoice()
 	if(special_voice)
