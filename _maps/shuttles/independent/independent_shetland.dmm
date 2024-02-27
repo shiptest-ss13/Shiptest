@@ -1468,6 +1468,9 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "nc" = (
@@ -1536,6 +1539,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/east,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "oc" = (
@@ -1638,9 +1644,7 @@
 	icon_state = "1-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
-	dir = 8
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
 /area/ship/hallway/central)
@@ -1786,6 +1790,9 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-10"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "pY" = (
@@ -2409,9 +2416,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-10"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
@@ -3215,6 +3219,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/cobweb,
+/obj/structure/cable{
+	icon_state = "4-6"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Cb" = (
@@ -3742,6 +3749,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/light/small/directional/east,
+/obj/structure/cable{
+	icon_state = "5-9"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Hb" = (
@@ -4777,7 +4787,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "PR" = (
-/obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -4788,6 +4797,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ship/hallway/fore)
 "PT" = (
@@ -4957,6 +4967,9 @@
 	icon_state = "6-8"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "Rp" = (
@@ -5412,9 +5425,11 @@
 /obj/structure/cable{
 	icon_state = "5-10"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 8
 	},
 /obj/structure/catwalk/over/plated_catwalk,
 /turf/open/floor/plating,
@@ -5660,6 +5675,9 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "0-9"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "XN" = (
@@ -6649,7 +6667,7 @@ Cm
 oE
 PI
 va
-ZV
+Cm
 Nl
 IS
 rr
