@@ -664,15 +664,16 @@
 	},
 /obj/item/storage/backpack/satchel/med,
 /obj/item/clothing/shoes/sneakers/white,
-/obj/item/clothing/under/rank/medical/doctor,
-/obj/item/clothing/suit/toggle/labcoat,
-/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/under/rank/medical/doctor/blue,
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
 	},
+/obj/item/clothing/under/rank/medical/doctor/green,
+/obj/item/clothing/under/rank/medical/doctor/purple,
+/obj/item/clothing/under/rank/medical/doctor/red,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "iT" = (
@@ -3778,10 +3779,6 @@
 /obj/item/ammo_box/magazine/m45,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "SW" = (
@@ -4441,6 +4438,7 @@
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = 25
 	},
+/obj/item/clothing/suit/apron/surgical,
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "ZW" = (
