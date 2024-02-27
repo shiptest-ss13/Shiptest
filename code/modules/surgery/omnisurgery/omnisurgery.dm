@@ -7,7 +7,6 @@
 	possible_locs = list(BODY_ZONE_CHEST,BODY_ZONE_HEAD,BODY_ZONE_L_ARM,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_R_LEG)
 	speed_modifier = 1									//Step speed modifier
 	var/atlayer = 0										// 0/1/2 -> skin/muscle/bone
-	var/datum/surgery_step/omni/last_step				//The last step preformed
 
 /datum/surgery/omni/next_step(mob/user, intent)
 	if(location != user.zone_selected)
@@ -25,11 +24,7 @@
 		if(L.len == 1)
 			var/datum/surgery_step/omni/val = L[1]
 			S = new val.type
-		else/*
-			if(last_step.repeatable && locate(last_step.type) in L)
-				S = new last_step.type
-			else
-			*/
+		else
 			var/P = input("Begin which procedure?", "Surgery", null, null) as null|anything in sortList(L)
 			if(P && user && user.Adjacent(target) && (tool in user))
 				var/datum/surgery_step/omni/T = locate(P) in L // Why tf does L[P] not work here.
@@ -40,7 +35,6 @@
 						return FALSE
 				S = new T.type
 		if(S.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
-			last_step = S
 			return TRUE
 		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
 			var/required_tool_type = TOOL_CAUTERY
