@@ -4,6 +4,12 @@
 	var/list/valid_locations = list(BODY_ZONE_CHEST,BODY_ZONE_HEAD,BODY_ZONE_L_ARM,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_R_LEG) //List of all places this step can be preformed
 	var/show = FALSE //if false, isn't considered a 'valid' step, and cant be preformed. Used for 'base' step
 
+	//For any additional logic needing done before we say this step is 'valid' Why not try_op? Couple reasons.
+	// One: We already are testing half of try_op before calling test_op
+	// Two: We only want if the surgery is a valid step that can be taken, we don't necissarily want to initiate it.
+/datum/surgery_step/omni/proc/test_op(mob/user,mob/living/target)
+	return TRUE
+
 /datum/surgery_step/omni/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, try_to_fail = FALSE)
 	var/success = FALSE
 	if(surgery.atlayer != required_layer)
@@ -39,10 +45,6 @@
 			else
 				to_chat(user, "<span class='warning'>You need to expose [target]'s [parse_zone(target_zone)] to perform surgery on it!</span>")
 			return TRUE	//returns TRUE so we don't stab the guy in the dick or wherever.
-
-	if(repeatable)
-		if(try_op(user, target, user.zone_selected, user.get_active_held_item(), surgery))
-			return TRUE
 	return FALSE
 
 /datum/surgery_step/omni/initiate(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
@@ -82,6 +84,8 @@
 			if(success(user, target, target_zone, tool, surgery))
 				play_success_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
+				if(repeatable)
+					return .(user, target, target_zone, tool, surgery, try_to_fail)
 		else
 			if(failure(user, target, target_zone, tool, surgery, fail_prob))
 				play_failure_sound(user, target, target_zone, tool, surgery)

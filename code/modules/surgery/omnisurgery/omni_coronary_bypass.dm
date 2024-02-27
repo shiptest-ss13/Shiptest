@@ -1,0 +1,105 @@
+/datum/surgery/omni/coronary_bypass/can_start(mob/user, mob/living/carbon/target)
+	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
+	if(H)
+		if(H.damage > 60 && !H.operated)
+			return TRUE
+	return FALSE
+
+//an incision but with greater bleed, and a 90% base success chance
+/datum/surgery_step/omni/incise_heart
+	name = "incise heart"
+	implements = list(
+		TOOL_SCALPEL = 90,
+		/obj/item/kitchen/knife = 40,
+		/obj/item/shard = 33)
+	time = 1.6 SECONDS
+	preop_sound = 'sound/surgery/scalpel1.ogg'
+	success_sound = 'sound/surgery/scalpel2.ogg'
+	failure_sound = 'sound/surgery/organ2.ogg'
+	required_layer = 2
+	priority = 3
+	show = TRUE
+	valid_locations = list(BODY_ZONE_CHEST)
+
+/datum/surgery_step/omni/incise_heart/test_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni, try_to_fail)
+	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
+	if(H)
+		if(H.damage > 60 && !H.operated)
+			return TRUE
+	return FALSE
+
+/datum/surgery_step/omni/incise_heart/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	display_results(user, target, "<span class='notice'>You begin to make an incision in [target]'s heart...</span>",
+		"<span class='notice'>[user] begins to make an incision in [target]'s heart.</span>",
+		"<span class='notice'>[user] begins to make an incision in [target]'s heart.</span>")
+
+/datum/surgery_step/omni/incise_heart/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		if (!(NOBLOOD in H.dna.species.species_traits))
+			display_results(user, target, "<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
+				"<span class='notice'>Blood pools around the incision in [H]'s heart.</span>",
+				"")
+			H.bleed_rate += 10
+			target.apply_damage(15, BRUTE, "[target_zone]")
+	return ..()
+
+/datum/surgery_step/omni/incise_heart/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		display_results(user, target, "<span class='warning'>You screw up, cutting too deeply into the heart!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest!</span>")
+		H.bleed_rate += 20
+		H.adjustOrganLoss(ORGAN_SLOT_HEART, 10)
+		target.apply_damage(15, BRUTE, "[target_zone]")
+
+//grafts a coronary bypass onto the individual's heart, success chance is 90% base again
+/datum/surgery_step/omni/coronary_bypass
+	name = "graft coronary bypass"
+	implements = list(
+		TOOL_HEMOSTAT = 90,
+		TOOL_WIRECUTTER = 40,
+		/obj/item/stack/cable_coil = 5)
+	time = 9 SECONDS
+	preop_sound = 'sound/surgery/hemostat1.ogg'
+	success_sound = 'sound/surgery/hemostat1.ogg'
+	failure_sound = 'sound/surgery/organ2.ogg'
+	experience_given = MEDICAL_SKILL_ORGAN_FIX
+	required_layer = 2
+	priority = 0
+	show = TRUE
+	valid_locations = list(BODY_ZONE_CHEST)
+
+/datum/surgery_step/omni/coronary_bypass/test_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni, try_to_fail)
+	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
+	if(H)
+		if(H.damage > 60 && !H.operated)
+			return TRUE
+	return FALSE
+
+
+/datum/surgery_step/omni/coronary_bypass/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	display_results(user, target, "<span class='notice'>You begin to graft a bypass onto [target]'s heart...</span>",
+			"<span class='notice'>[user] begins to graft something onto [target]'s heart!</span>",
+			"<span class='notice'>[user] begins to graft something onto [target]'s heart!</span>")
+
+/datum/surgery_step/omni/coronary_bypass/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
+	target.setOrganLoss(ORGAN_SLOT_HEART, 60)
+	var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
+	if(heart)	//slightly worrying if we lost our heart mid-operation, but that's life
+		heart.operated = TRUE
+	display_results(user, target, "<span class='notice'>You successfully graft a bypass onto [target]'s heart.</span>",
+			"<span class='notice'>[user] finishes grafting something onto [target]'s heart.</span>",
+			"<span class='notice'>[user] finishes grafting something onto [target]'s heart.</span>")
+	return ..()
+
+/datum/surgery_step/omni/coronary_bypass/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		display_results(user, target, "<span class='warning'>You screw up in attaching the graft, and it tears off, tearing part of the heart!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>",
+			"<span class='warning'>[user] screws up, causing blood to spurt out of [H]'s chest profusely!</span>")
+		H.adjustOrganLoss(ORGAN_SLOT_HEART, 30)
+		H.bleed_rate += 30
+	return FALSE
