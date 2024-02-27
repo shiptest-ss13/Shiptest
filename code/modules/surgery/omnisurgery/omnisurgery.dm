@@ -52,7 +52,7 @@
 			continue
 		if(S.required_layer != atlayer)
 			continue
-		if(!(S.accept_any_item || S.accept_hand) && (!S.implements.Find(tool.tool_behaviour) || !S.implements.Find(tool)))
+		if(!(S.accept_any_item || S.accept_hand) && !(S.implements.Find(tool.tool_behaviour) || S.implements.Find(tool)))
 			continue
 		if(beststep == null)
 			beststep = S
