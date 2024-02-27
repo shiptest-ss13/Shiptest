@@ -83,7 +83,6 @@
 	item_state = "cage"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	dynamic_hair_suffix = ""
 
 /obj/item/storage/box/holy/sentinel
 	name = "Stone Sentinel Kit"

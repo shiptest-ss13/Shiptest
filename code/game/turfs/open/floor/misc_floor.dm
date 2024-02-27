@@ -126,11 +126,6 @@
 /turf/open/floor/noslip/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return
 
-/turf/open/floor/oldshuttle
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "floor"
-	floor_tile = /obj/item/stack/tile/plasteel
-
 /turf/open/floor/bluespace
 	slowdown = -1
 	icon_state = "bluespace"

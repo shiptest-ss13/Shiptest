@@ -5,7 +5,10 @@
 	spread = 4
 	spread_unwielded = 10
 	wield_slowdown = 0.35
-	recoil_unwielded = 0.5
+	recoil_unwielded = 4
+	w_class = WEIGHT_CLASS_BULKY
+
+	wield_delay = 0.4 SECONDS
 
 	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
@@ -25,14 +28,14 @@
 
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/proto/unrestricted
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
-	desc = "A bullpup .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.'"
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
@@ -47,7 +50,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
 	pin = /obj/item/firing_pin
@@ -63,24 +66,10 @@
 	icon_state = "cobra20"
 	item_state = "cobra20"
 
-/obj/item/gun/ballistic/automatic/smg/inteq
-	name = "\improper SkM-44(k)"
-	desc = "An extreme modification of an obsolete assault rifle, converted into a compact submachine gun by IRMG. Chambered in 10mm."
-	icon_state = "inteqsmg"
-	item_state = "inteqsmg"
-	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
-	mag_type = /obj/item/ammo_box/magazine/smgm10mm
-	can_bayonet = FALSE
-	can_flashlight = TRUE
-	flight_x_offset = 15
-	flight_y_offset = 13
-	can_suppress = TRUE
-	mag_display = TRUE
-	manufacturer = MANUFACTURER_INTEQ
-
-/obj/item/gun/ballistic/automatic/smg/inteq/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+/obj/item/gun/ballistic/automatic/smg/c20r/suns
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.' This one is painted in SUNS' colors."
+	icon_state = "c20r_suns"
+	item_state = "c20r_suns"
 
 /obj/item/gun/ballistic/automatic/smg/wt550
 	name = "\improper WT-550 Automatic Rifle"
@@ -88,7 +77,6 @@
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
@@ -103,7 +91,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/wt550/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	name = "\improper Type U3 Uzi"
@@ -143,7 +131,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/vector/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/m90
 	name = "\improper M-90gl Carbine"
@@ -223,29 +211,35 @@
 	update_appearance()
 	return
 
-/obj/item/gun/ballistic/automatic/smg/thompson
-	name = "\improper Thompson"
-	desc = "A old submachinegun design. Chambered in .45."
-	icon_state = "tommygun"
-	item_state = "tommygun"
+/obj/item/gun/ballistic/automatic/smg/firestorm //weapon designed by Apogee-dev
+	name = "HP Firestorm"
+	desc = "An unconventional submachinegun, rarely issued to Saint-Roumain Militia mercenary hunters for outstanding situations where normal hunting weapons fall short. Chambered in .45."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/smgm45
+	icon_state = "firestorm"
+	item_state = "firestorm"
+	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
 	can_suppress = FALSE
+	special_mags = TRUE
 	burst_size = 1
 	actions_types = list()
 	fire_delay = 1
-	bolt_type = BOLT_TYPE_OPEN
+	rack_sound = 'sound/weapons/gun/smg/uzi_cocked.ogg'
+	fire_sound = 'sound/weapons/gun/smg/firestorm.ogg'
+
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 	wield_slowdown = 0.4
 
-/obj/item/gun/ballistic/automatic/smg/thompson/Initialize()
+/obj/item/gun/ballistic/automatic/smg/firestorm/Initialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
-/obj/item/gun/ballistic/automatic/smg/thompson/drum
-	name = "\improper Chicago Typewriter"
-	desc = "A gun for good fellas. Chambered in .45."
-	mag_type = /obj/item/ammo_box/magazine/smgm45/drum
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan //spawns with pan magazine, can take sticks instead of just drums, not sure where this would be used, maybe erts?
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/firestorm/pan/Initialize()
+	. = ..()
+	magazine = new /obj/item/ammo_box/magazine/c45_firestorm_mag/pan(src)
+	chamber_round()
 
 /obj/item/gun/ballistic/automatic/smg/cm5
 	name = "\improper CM-5"
@@ -259,23 +253,148 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
 	spawnwithmagazine = FALSE
 
-/obj/item/gun/ballistic/automatic/smg/aks74u
-	name = "\improper AKS-74U"
-	desc = "A pre-FTL era carbine, known to be incredibly cheap. Its extreme fire rate make it perfect for bandits, pirates and colonists on a budget."
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
-	icon_state = "aks74u"
-	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	item_state = "aks74u"
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/aks74u
+/obj/item/gun/ballistic/automatic/smg/skm_carbine
+	name = "\improper SKM-24v"
+	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."
 
-/obj/item/gun/ballistic/automatic/smg/aks74u/ComponentInitialize()
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	icon_state = "skm_carbine"
+	item_state = "skm_carbine"
+
+	fire_sound = 'sound/weapons/gun/rifle/skm_smg.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/skm_545_39
+
+	actions_types = list(/datum/action/item_action/fold_stock) //once again, ideally an attatchment in the future
+
+	recoil = 2
+	recoil_unwielded = 6
+
+	spread = 8
+	spread_unwielded = 14
+
+	wield_delay = 0.6 SECONDS
+	wield_slowdown = 0.35
+
+	///is the bipod deployed?
+	var/stock_folded = FALSE
+
+	///we add these two values to recoi/spread when we have the bipod deployed
+	var/stock_recoil_bonus = -2
+	var/stock_spread_bonus = -5
+
+	var/folded_slowdown = 0.6
+	var/folded_wield_delay = 0.6 SECONDS
+
+	var/unfolded_slowdown = 0.35
+	var/unfolded_wield_delay = 0.2 SECONDS
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS) //last autofire system made the fire rate REALLY fucking fast, but because of how poor it was, it was normal speed.
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/datum/action/item_action/fold_stock
+	name = "Fold/Unfold stock"
+	desc = "Fold or unfold the stock for easier storage."
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/ui_action_click(mob/user, action)
+	if(!istype(action, /datum/action/item_action/fold_stock))
+		return ..()
+	fold(user)
+
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/proc/fold(mob/user)
+	if(stock_folded)
+		to_chat(user, "<span class='notice'>You unfold the stock on the [src].</span>")
+		w_class = WEIGHT_CLASS_BULKY
+		wield_delay = folded_wield_delay
+		wield_slowdown = folded_slowdown
+	else
+		to_chat(user, "<span class='notice'>You fold the stock on the [src].</span>")
+		w_class = WEIGHT_CLASS_NORMAL
+		wield_delay = unfolded_wield_delay
+		wield_slowdown = unfolded_slowdown
+
+	if(wielded)
+		user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/gun, multiplicative_slowdown = wield_slowdown)
+
+	stock_folded = !stock_folded
+	playsound(src, 'sound/weapons/empty.ogg', 100, 1)
+	update_appearance()
+
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/total_recoil = recoil_bonus
+	if(!stock_folded)
+		total_recoil += stock_recoil_bonus
+		total_recoil = clamp(total_recoil,0,INFINITY)
+	return total_recoil
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_spread(mob/user, bonus_spread)
+	var/total_spread = bonus_spread
+	if(!stock_folded)
+		total_spread += stock_spread_bonus
+		total_spread = clamp(total_spread,0,INFINITY)
+	return total_spread
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/update_icon_state()
+	. = ..()
+	item_state = "[initial(item_state)][stock_folded ? "_nostock" : ""]"
+	mob_overlay_state = "[initial(item_state)][stock_folded ? "_nostock" : ""]"
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/update_overlays()
+	. = ..()
+	. += "[base_icon_state || initial(icon_state)][stock_folded ? "_nostock" : "_stock"]"
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq
+	name = "\improper SKM-44v Mongrel"
+	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10mm."
+	icon_state = "skm_inteqsmg"
+	item_state = "skm_inteqsmg"
+
+	mag_type = /obj/item/ammo_box/magazine/smgm10mm
+	manufacturer = MANUFACTURER_INTEQ
+
+	fire_sound = 'sound/weapons/gun/smg/vector_fire.ogg'
+
+	load_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/smg/smg_reload.ogg'
+	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
+
+	spread = 7
+	recoil_unwielded = 10
+
+	recoil = 0
+	recoil_unwielded = 4
+
+	stock_spread_bonus = -4
+	stock_recoil_bonus = -1
+
+	wield_delay = 0.4 SECONDS
+
+	folded_slowdown = 0.15
+	folded_wield_delay = 0.2 SECONDS
+
+	unfolded_slowdown = 0.35
+	unfolded_wield_delay = 0.4 SECONDS
+
+
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)

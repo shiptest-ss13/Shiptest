@@ -167,9 +167,10 @@
 	back = /obj/item/minigunpack
 
 /obj/effect/mob_spawn/human/corpse/frontier/ranged/trooper/heavy/gunless
-	outfit = /datum/outfit/russiancorpse/trooper/heavy/gunless
+	outfit = /datum/outfit/frontier/trooper/heavy/gunless
 
-/datum/outfit/russiancorpse/trooper/heavy/gunless
+/datum/outfit/frontier/trooper/heavy/gunless
+	name = "Frontiersman Heavy Corpse (Gunless)"
 	back = null
 
 /obj/effect/mob_spawn/human/corpse/wizard
@@ -248,18 +249,5 @@
 /obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner
 	name = "SolGov Sonnensoldner"
 	id_job = "SolGov Sonnensoldner"
-	outfit = /datum/outfit/solgov/sonnensoldner
+	outfit = /datum/outfit/job/solgov/sonnensoldner
 	id_access_list = list(ACCESS_SOLGOV)
-
-/datum/outfit/solgov/sonnensoldner
-	name = "SolGov Sonnensoldner"
-	uniform = /obj/item/clothing/under/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-	shoes = /obj/item/clothing/shoes/jackboots
-	gloves = /obj/item/clothing/gloves/color/black
-	ears = /obj/item/radio/headset
-	suit_store = null
-	head = /obj/item/clothing/head/solgov/sonnensoldner
-	back = /obj/item/storage/backpack
-	id = /obj/item/card/id/solgov
-	backpack_contents = null

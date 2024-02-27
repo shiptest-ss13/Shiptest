@@ -31,7 +31,7 @@
 	projectile_type = /obj/projectile/beam/laser/weak/negative_ap
 	e_cost = 799 //12 shots with a normal power cell, 25 with an upgraded
 	select_name = "kill"
-	delay = 0.2 SECONDS
+	delay = 0.1 SECONDS
 
 /obj/item/ammo_casing/energy/lasergun/old
 	projectile_type = /obj/projectile/beam/laser
@@ -147,6 +147,7 @@
 	icon_state = "omnilaser"
 	hitscan = TRUE
 	damage = 20
+	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'

@@ -1,15 +1,17 @@
 /datum/outfit/job/inteq/ert
 	name = "ERT - Inteq Rifleman"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
-	suit_store = /obj/item/gun/ballistic/automatic/assault/ak47/inteq
+	suit_store = /obj/item/gun/ballistic/automatic/assault/skm/inteq
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt
 	id = /obj/item/card/id
-	belt = /obj/item/storage/belt/security/webbing/inteq/ak47
+	belt = /obj/item/storage/belt/security/webbing/inteq/skm
 	back = /obj/item/storage/backpack/fireproof
 
 	l_pocket = /obj/item/kitchen/knife/combat
@@ -28,6 +30,8 @@
 
 /datum/outfit/job/inteq/ert/medic
 	name = "ERT - Inteq Corpsman"
+	jobtype = /datum/job/paramedic
+	job_icon = "paramedic"
 
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
@@ -39,6 +43,8 @@
 
 /datum/outfit/job/inteq/ert/leader
 	name = "ERT - Inteq Vanguard"
+	jobtype = /datum/job/hos
+	job_icon = "headofsecurity"
 
 	ears = /obj/item/radio/headset/inteq/alt/captain
 	back = /obj/item/storage/backpack/messenger/inteq

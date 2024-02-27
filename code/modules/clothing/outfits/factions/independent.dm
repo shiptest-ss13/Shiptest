@@ -1,6 +1,6 @@
 /datum/outfit/job/independent
 	name = "Independent - Base Outfit"
-	faction_icon = "bg_independent"
+	faction_icon = "bg_indie"
 
 	uniform = /obj/item/clothing/under/utility
 	box = /obj/item/storage/box/survival
@@ -259,6 +259,7 @@
 /datum/outfit/job/independent/security/pirate
 	name = "Independent - Security Officer (Pirate)"
 
+	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/syndicate/camo
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/bandana
@@ -311,6 +312,7 @@
 /datum/outfit/job/independent/engineer/pirate
 	name = "Independent - Engineer (Pirate)"
 
+	ears = /obj/item/radio/headset/pirate
 	uniform = /obj/item/clothing/under/costume/sailor
 	head = /obj/item/clothing/head/bandana
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -402,6 +404,10 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/independent/doctor/pirate
+	name = "Independent - Medical Doctor (Pirate)"
+
+	ears = /obj/item/radio/headset/pirate
+	uniform = /obj/item/clothing/under/costume/sailor
 
 // Cargo Tech
 
@@ -662,7 +668,17 @@
 	H.grant_all_languages(TRUE, TRUE, TRUE, LANGUAGE_CURATOR)
 
 /datum/outfit/job/independent/curator/dungeonmaster
-
+	name = "Independent - Curator (Dungeon Master)"
+	uniform = /obj/item/clothing/under/misc/pj/red
+	suit = /obj/item/clothing/suit/nerdshirt
+	backpack_contents = list(
+		/obj/item/choice_beacon/hero = 1,
+		/obj/item/tape = 1,
+		/obj/item/storage/pill_bottle/dice = 1,
+		/obj/item/toy/cards/deck/cas = 1,
+		/obj/item/toy/cards/deck/cas/black = 1,
+		/obj/item/hourglass = 1
+	)
 
 // Chaplain
 
@@ -707,6 +723,15 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/independent/chemist/pharma
+	name = "Independent - Chemist (Pharmacology Student)"
+
+	uniform = /obj/item/clothing/under/rank/medical
+	shoes = /obj/item/clothing/shoes/sneakers/white
+	accessory = /obj/item/clothing/neck/scarf/orange
+	l_pocket = /obj/item/pda/medical
+	r_pocket = /obj/item/reagent_containers/pill/floorpill
+	belt = /obj/item/reagent_scanner
+	backpack_contents = list(/obj/item/book/manual/wiki/chemistry = 1)
 
 // Janitor
 
@@ -769,6 +794,21 @@
 	chameleon_extras = list(/obj/item/gun/syringe, /obj/item/stamp/cmo)
 
 /datum/outfit/job/independent/cmo/pharma
+	name = "Independent - Chief Pharmacist"
+
+	glasses = /obj/item/clothing/glasses/science/prescription/fake //chief pharma is this kind of person
+	neck = /obj/item/clothing/neck/tie/orange //the Horrible Tie was genuinely too hard to look at
+	l_pocket = /obj/item/reagent_containers/glass/filter
+	uniform = /obj/item/clothing/under/suit/tan
+	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/green
+	shoes = /obj/item/clothing/shoes/sneakers/brown
+	suit = /obj/item/clothing/suit/toggle/suspenders/gray
+
+	l_hand = /obj/item/reagent_containers/glass/maunamug
+	backpack = /obj/item/storage/backpack/chemistry
+	satchel = /obj/item/storage/backpack/satchel/chem
+	courierbag = /obj/item/storage/backpack/messenger/chem
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/storage/bag/chemistry=1)
 
 // Detective
 

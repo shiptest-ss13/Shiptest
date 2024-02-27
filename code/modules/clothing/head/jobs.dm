@@ -12,7 +12,6 @@
 	desc = "The commander in chef's head wear."
 	strip_delay = 10
 	equip_delay_other = 10
-	dynamic_hair_suffix = ""
 	dog_fashion = /datum/dog_fashion/head/chef
 
 //Captain
@@ -138,7 +137,6 @@
 	icon_state = "hoscap"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 80
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/cowboy
 	name = "sheriff's hat"
@@ -217,6 +215,11 @@
 	icon_state = "cowboywarden"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/warden/inteq
+	name = "master at arms' campaign hat"
+	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
+	icon_state = "maahat"
 
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"
