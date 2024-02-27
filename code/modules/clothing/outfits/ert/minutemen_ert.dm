@@ -6,7 +6,7 @@
 	head = /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	uniform = /obj/item/clothing/under/clip/minutemen
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
-	ears = /obj/item/radio/headset/minutemen/alt
+	ears = /obj/item/radio/headset/clip/alt
 	back = /obj/item/storage/backpack/security/clip
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
@@ -21,7 +21,7 @@
 	name = "ERT - Minuteman Sergeant"
 	job_icon = "lieutenant"
 
-	ears = /obj/item/radio/headset/minutemen/alt/captain
+	ears = /obj/item/radio/headset/clip/alt/captain
 	back = /obj/item/storage/backpack/satchel/sec/clip
 	head = /obj/item/clothing/head/beret/command
 
@@ -82,7 +82,7 @@
 	name = "ERT - Minutemen Sergeant (Riot Officer)"
 	job_icon = "lieutenant"
 
-	ears = /obj/item/radio/headset/minutemen/alt/captain
+	ears = /obj/item/radio/headset/clip/alt/captain
 	back = /obj/item/shield/riot/flash
 
 /datum/outfit/job/clip/ert/inspector
@@ -97,7 +97,7 @@
 	uniform = /obj/item/clothing/under/clip/officer
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 	suit_store = null
-	ears = /obj/item/radio/headset/minutemen/alt/captain
+	ears = /obj/item/radio/headset/clip/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id/silver
 
@@ -116,7 +116,7 @@
 	job_icon = "lieutenant"
 
 	uniform = /obj/item/clothing/under/clip/officer
-	ears = /obj/item/radio/headset/minutemen/alt/captain
+	ears = /obj/item/radio/headset/clip/alt/captain
 	belt = /obj/item/storage/belt/military/clip/gal
 	suit_store = /obj/item/gun/ballistic/automatic/gal
 

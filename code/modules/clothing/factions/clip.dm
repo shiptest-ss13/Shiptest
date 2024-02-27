@@ -32,7 +32,7 @@
 
 /obj/item/clothing/under/clip/formal
 	name = "formal clip outfit"
-	desc = "A formal outfit containing a white shirt and navy slacks issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats, low ranking CLIP Minutemen officers."
+	desc = "A formal outfit containing a white shirt and navy slacks issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats than low ranking CLIP Minutemen officers."
 
 	icon_state = "clip_formal"
 
@@ -41,7 +41,7 @@
 
 /obj/item/clothing/under/clip/formal/alt
 	name = "formal clip outfit"
-	desc = "A formal outfit containing a white shirt and a navy skirt issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats, low ranking CLIP Minutemen officers."
+	desc = "A formal outfit containing a white shirt and a navy skirt issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats than low ranking CLIP Minutemen officers."
 
 	icon_state = "clip_formal_skirt"
 
@@ -52,7 +52,7 @@
 
 /obj/item/clothing/under/clip/formal/with_shirt/alt //because of how fucking skirt code works...
 	name = "formal clip outfit"
-	desc = "A formal outfit containing a white shirt and a navy skirt issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats, low ranking CLIP Minutemen officers."
+	desc = "A formal outfit containing a white shirt and a navy skirt issued to CLIP government workers. Commonly seen on more white collar CLIP bureaucrats than low ranking CLIP Minutemen officers."
 
 	icon_state = "clip_formal_skirt"
 
@@ -90,6 +90,13 @@
 	if(!allowed)
 		allowed = GLOB.security_vest_allowed //it's hop-equivalent gear after all
 
+/obj/item/clothing/suit/toggle/lawyer/clip/fo
+	name = "CLIP Minutemen First Officer suit jacket"
+	desc = "An enterprising dress jacket used by First Officer of CLIP Minutemen vessels."
+
+	icon_state = "suitjacket_clip_command"
+	item_state = "suitjacket_clip_command"
+
 //armor
 
 /obj/item/clothing/suit/armor/vest/capcarapace/clip
@@ -101,6 +108,13 @@
 
 	icon_state = "clip_general"
 	item_state = "clip_general"
+
+/obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral
+	name = "CLIP Minutemen admiral trenchcoat"
+	desc = "A very fancy trenchcoat used by admirals of the CLIP Minutemen."
+
+	icon_state = "clip_admiral"
+	item_state = "clip_admiral"
 
 /obj/item/clothing/suit/armor/riot/clip
 	name = "black riot suit"
@@ -120,7 +134,22 @@
 	icon_state = "clip_trenchcoat"
 	item_state = "trenchcoat_solgov"
 	body_parts_covered = CHEST|LEGS|ARMS
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	cold_protection = CHEST|LEGS|ARMS
+	heat_protection = CHEST|LEGS|ARMS
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
+
+/obj/item/clothing/suit/armor/clip_capcoat
+	name = "\improper CLIP Minutemen Captains Coat"
+	desc = "A well made coat used by CLIP Minutemen captains. It's thick padding stops some hazards for it's user. "
+
+	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
+
+	icon_state = "clip_trenchcoat"
+	item_state = "trenchcoat_solgov"
+	body_parts_covered = CHEST|LEGS|ARMS
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	cold_protection = CHEST|LEGS|ARMS
 	heat_protection = CHEST|LEGS|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -226,8 +255,23 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
 
 	icon_state = "clip_x11"
-	allow_post_reskins = TRUE
+	allow_post_reskins = FALSE
 	unique_reskin = null
+
+/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
+	name = "\improper Minutemen Vehicle Crewman M10 Helmet"
+	desc = "A light bulletproof helmet that is worn by Vehicle Crewmen of the CLIP Minutemen. The ear padding protects the ears from loud noises and the microphone automatically connects with a headset."
+
+	icon = 'icons/obj/clothing/faction/clip/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
+
+	icon_state = "clip_m10_vc"
+	allow_post_reskins = FALSE
+	unique_reskin = null
+
+/obj/item/clothing/head/helmet/bulletproof/m10/clip_vc/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_HEAD))
 
 /obj/item/clothing/head/helmet/riot/clip
 	name = "\improper Minutemen riot helmet"
@@ -263,7 +307,7 @@
 
 /obj/item/clothing/mask/gas/clip
 	name = "CM-20 gas mask"
-	desc = "A close-fitting gas mask that can be connected to an air supply. Created in 420 FS during the Xenofauna war after it was discovered that 20 year old gas masks weren't going cut it against Xenofauna."
+	desc = "A close-fitting gas mask that can be connected to an air supply. Created in 420 FS during the Xenofauna war after it was discovered that 20 year old gas masks weren't going cut it against Xenofauna. It is standard issue for every Minuteman, but is rarely used; It's mostly used as a deterrence against chemical attacks."
 
 	icon = 'icons/obj/clothing/faction/clip/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/mask.dmi'
@@ -309,6 +353,15 @@
 /obj/item/storage/belt/military/clip/cm5/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/smgm9mm(src)
+
+/obj/item/storage/belt/military/clip/engi/PopulateContents()
+	new /obj/item/screwdriver/power(src)
+	new /obj/item/crowbar/power(src)
+	new /obj/item/weldingtool/experimental(src)
+	new /obj/item/multitool(src)
+	new /obj/item/construction/rcd/combat(src)
+	new /obj/item/extinguisher/mini(src)
+	new /obj/item/stack/cable_coil(src)
 
 /obj/item/storage/belt/medical/webbing/clip
 	name = "medical webbing"

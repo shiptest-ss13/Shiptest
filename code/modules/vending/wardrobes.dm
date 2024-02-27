@@ -570,6 +570,7 @@
 
 		/obj/item/clothing/suit/toggle/lawyer/clip = 3,
 		/obj/item/clothing/suit/armor/vest/capcarapace/clip = 3,
+		/obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral = 3,
 		/obj/item/clothing/suit/armor/clip_trenchcoat = 3,
 		/obj/item/clothing/suit/armor/vest/bulletproof = 3,
 		/obj/item/clothing/suit/armor/riot/clip = 3,
