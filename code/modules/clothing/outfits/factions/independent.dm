@@ -92,6 +92,7 @@
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
 /datum/outfit/job/independent/captain/cheap //for Miskilamo ships
+	name = "Independent - Captain (Low Budget)"
 	gloves = /obj/item/clothing/gloves/color/white //poverty gloves
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 
