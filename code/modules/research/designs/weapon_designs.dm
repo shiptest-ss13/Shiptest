@@ -329,7 +329,7 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/desicn/c38
+/datum/design/c38
 	name = "Ammo Box (.38 Special)"
 	id = "c38"
 	build_type = PROTOLATHE

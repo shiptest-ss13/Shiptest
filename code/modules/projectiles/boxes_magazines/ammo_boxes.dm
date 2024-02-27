@@ -162,7 +162,7 @@
 	max_ammo = 50
 
 /obj/item/ammo_box/c38_box/surplus
-	name "ammo box (.38 surplus)"
+	name = "ammo box (.38 surplus)"
 	desc = "A box of low-quality .38 Special ammo."
 	icon_state = "38box-surplus"
 	ammo_type = /obj/item/ammo_casing/c38/surplus

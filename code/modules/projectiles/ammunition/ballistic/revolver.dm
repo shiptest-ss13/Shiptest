@@ -54,7 +54,7 @@
 	caliber = ".38"
 	projectile_type = /obj/projectile/bullet/c38
 
-/obj/item/ammo_casing/c38/
+/obj/item/ammo_casing/c38/surplus
 	name = ".38 surplus bullet casing"
 	desc = "A .38 surplus bullet casing."
 	projectile_type = /obj/projectile/bullet/c38/surplus

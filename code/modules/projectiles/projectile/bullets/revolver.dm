@@ -16,7 +16,7 @@
 	damage = 20
 	armour_penetration = -20
 
-/obj/projectile/bullet/c28/surplus
+/obj/projectile/bullet/c38/surplus
 	damage = 15
 
 /obj/projectile/bullet/c38/match
