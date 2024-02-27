@@ -16,6 +16,9 @@
 	damage = 20
 	armour_penetration = -20
 
+/obj/projectile/bullet/c28/surplus
+	damage = 15
+
 /obj/projectile/bullet/c38/match
 	name = ".38 match bullet"
 	speed = 0.3
