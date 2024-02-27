@@ -293,6 +293,25 @@
 	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, PROC_REF(crew_mind_deleting))
 	if(!owner_mob)
 		set_owner_mob(H)
+	addMobToCrewGuestbook(H)
+
+
+/**
+ * adds a mob's real name to a crew's guestbooks
+ *
+ * * H - human mob to add to the crew's guestbooks
+ */
+/datum/overmap/ship/controlled/proc/addMobToCrewGuestbook(mob/living/carbon/human/H)
+	// get the things in the manifest
+	for(var/guy in manifest)
+		// find their mob
+		var/mob/living/carbon/human/crewmember = GLOB.human_list[guy]
+		// check if they have a guestbook
+		if(!crewmember || !crewmember.mind || !crewmember.mind.guestbook || crewmember.real_name == H.real_name)
+			continue
+		// add H to the crewmember's guestbook and viceversa
+		crewmember.mind.guestbook.add_guest(crewmember, H, H.real_name, H.real_name, TRUE)
+		H.mind.guestbook.add_guest(H, crewmember, crewmember.real_name, crewmember.real_name, TRUE)
 
 /datum/overmap/ship/controlled/proc/set_owner_mob(mob/new_owner)
 	if(owner_mob)
