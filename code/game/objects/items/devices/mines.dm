@@ -481,8 +481,6 @@
 	desc = "An Anti-Griefer proximity expulsive. Delivers Justice."
 	blast_delay = 0//funnier this way
 	hair_trigger = TRUE
-	anchored = TRUE
-	armed = TRUE
 
 /obj/item/mine/kickmine/mineEffect(mob/victim)
 	if(isliving(victim) && victim.client && Adjacent(victim))
@@ -620,6 +618,8 @@ LIVE_MINE_HELPER(explosive/shrapnel)
 LIVE_MINE_HELPER(explosive/shrapnel/sting)
 LIVE_MINE_HELPER(spawner/manhack)
 LIVE_MINE_HELPER(gas/water_vapor)
+LIVE_MINE_HELPER(kickmine)
+LIVE_MINE_HELPER(stun)
 
 //
 // spawners (random mines, minefields, non-guaranteed mine)
