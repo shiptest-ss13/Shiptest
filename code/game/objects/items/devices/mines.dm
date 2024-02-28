@@ -155,7 +155,10 @@
 	light_color = "#FF0000"
 	light_power = 3
 	light_range = 2
-	addtimer(CALLBACK(src, PROC_REF(blast_now), triggerer), blast_delay)
+	if(!blast_delay)//addtimer gets mad if the delay is 0
+		blast_now(triggerer)
+	else
+		addtimer(CALLBACK(src, PROC_REF(blast_now), triggerer), blast_delay)
 
 //NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
