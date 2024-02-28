@@ -1,7 +1,7 @@
 
 /obj/item/mine
 	name = "dummy mine"
-	desc = "An anti-personnel mine. This one is designed for training actions. Explodes into harmless sparks."
+	desc = "An anti-personnel mine. This one explodes into nothing. Why can you see this? You should't be able to see this. Stop looking at this."
 	icon = 'icons/obj/device.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
@@ -247,9 +247,10 @@
 	armed = FALSE
 	clicked = FALSE
 	alpha = 255
-	var/mob/living/defuser = foot_on_mine.resolve()
-	defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
-	foot_on_mine = null
+	if(foot_on_mine?.resolve())
+		var/mob/living/defuser = foot_on_mine.resolve()
+		defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
+		foot_on_mine = null
 	update_appearance(UPDATE_ICON_STATE)
 	return
 
@@ -278,7 +279,7 @@
 	/// If TRUE, we spawn extra pellets to eviscerate a person still sitting on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
 	var/shred_triggerer = TRUE
 
-	stealthpwr = 75
+	stealthpwr = 100
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/explosive/mineEffect(mob/victim)
@@ -386,7 +387,6 @@
 		T.IgniteTurf(25, "green")
 	. = ..()
 
-//WIP variants(CLEAN THIS UP BEFORE UNDRAFTING)
 /obj/item/mine/spawner
 	name = "debug spawner mine"
 	desc = "Real no Virus. 100% free. Coders hate him!"
@@ -401,9 +401,19 @@
 
 /obj/item/mine/spawner/manhack
 	name = "\improper G-83 Lacerator"
-	desc = "An anti-infantry explosive produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
+	desc = "An anti-infantry device produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
 	spawn_type = /mob/living/simple_animal/hostile/viscerator
 	hair_trigger = TRUE//they take a second to lock on anyway
+
+//put this on military ships for disarming practice
+/obj/item/mine/training
+	name = "\improper G-MTH Defusal Trainer"
+	desc = "A mothballed anti-personnel explosive, equipped with VISCERAL DEFUSAL ACTION for training purposes. Though Scarborough was forced to mothball their stockpiles of mines as part of the ceasefire, the deployed minefields remain."
+
+/obj/item/mine/training/mineEffect(mob/living/victim)
+	src.say("BOOM! Better luck next time!")
+	src.visible_message(span_notice("The mine resets itself for another disarming attempt."))
+	new /obj/item/mine/training (loc)
 
 //
 //UNUSED MINES//
@@ -629,3 +639,7 @@ LIVE_MINE_HELPER(gas/water_vapor)
 /obj/effect/spawner/minefield/random
 	name = "random minefield spawner"
 	minetype = /obj/effect/spawner/lootdrop/mine
+
+/obj/effect/spawner/minefield/manhack
+	name = "manhack field spawner"
+	minetype = /obj/item/mine/spawner/manhack

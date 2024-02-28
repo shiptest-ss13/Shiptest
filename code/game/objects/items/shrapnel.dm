@@ -46,6 +46,7 @@
 /obj/projectile/bullet/shrapnel/rusty
 	damage = 10
 	armour_penetration = -35
+	dismemberment = 5
 	ricochets_max = 3//duller = less likely to stick in a wall
 	ricochet_chance = 60
 
