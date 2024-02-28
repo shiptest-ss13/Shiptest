@@ -172,7 +172,6 @@
 			broken = 0
 			update_appearance()
 			return TRUE
-	return
 
 /obj/machinery/microwave/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
@@ -183,11 +182,10 @@
 			broken = 1
 			update_appearance()
 			return TRUE
-	return
 
 /obj/machinery/microwave/wash(clean_types)
 	. = ..()
-	if(dirty != 0)
+	if(dirty)
 		dirty = 0
 		update_appearance()
 		return TRUE
