@@ -13,7 +13,7 @@
 	var/missinghpbonus = 0 //heals an extra point of damager per X missing damage of type (burn damage for burn healing, brute for brute). Smaller Number = More Healing!
 	show = TRUE
 	required_layer = list(1)
-
+	radial_icon = /obj/item/kinetic_crusher
 
 /datum/surgery_step/omni/heal/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/woundtype

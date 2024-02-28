@@ -2,6 +2,7 @@
 	var/list/required_layer = list(0,1,2) //What layers can this step be preformed at?
 	var/list/valid_locations = list(BODY_ZONE_CHEST,BODY_ZONE_HEAD,BODY_ZONE_L_ARM,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_R_LEG) //List of all places this step can be preformed
 	var/show = FALSE //if false, isn't considered a 'valid' step, and cant be preformed. Used for 'base' step
+	var/radial_icon = null // If not null, is the image for the radial
 
 	//For any additional logic needing done before we say this step is 'valid' Why not try_op? Couple reasons.
 	// One: We already are testing half of try_op before calling test_op

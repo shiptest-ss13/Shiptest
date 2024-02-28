@@ -26,7 +26,7 @@
 			var/datum/surgery_step/omni/val = L[1]
 			S = new val.type
 		else
-			var/P = input("Begin which procedure?", "Surgery", null, null) as null|anything in sortList(L)
+			var/P = show_radial_menu(user,target,L,require_near = TRUE)
 			if(P && user && user.Adjacent(target) && (tool in user))
 				var/datum/surgery_step/omni/T = locate(P) in L // Why tf does L[P] not work here.
 				for(var/datum/surgery/other in target.surgeries)
@@ -44,7 +44,6 @@
 /datum/surgery/omni/get_surgery_step(obj/item/tool,mob/user,mob/living/target)
 	var/list/all_steps = GLOB.omnisurgerysteps_list.Copy()
 	var/list/valid_steps = list()
-	var/datum/surgery_step/omni/firststep = null
 	for(var/datum/surgery_step/omni/S in all_steps)
 		if(!S.show)
 			continue
@@ -56,15 +55,8 @@
 			continue
 		if(!S.test_op(user,target,src))
 			continue
-		if(firststep == null)
-			firststep = S
-			valid_steps += list(S)
-		else
-			valid_steps += list(S)
-	if(firststep && valid_steps.len == 1)
-		return list(firststep)
-	else if (valid_steps.len > 1)
-		return valid_steps
-	return null
+		valid_steps[S] = S.radial_icon != null ? S.radial_icon : null
+	return valid_steps
+
 /datum/surgery/omni/get_surgery_next_step()
 	return null
