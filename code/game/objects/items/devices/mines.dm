@@ -214,7 +214,7 @@
 //mines have a small chance to be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
-	if(prob(35))
+	if(prob(35) & obj_integrity > 0)
 		blast_delay = blast_delay * 3
 		triggermine()
 
