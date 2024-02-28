@@ -38,7 +38,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_bodytemperature(150)
+		M.adjust_bodytemperature(350)
 		if(prob(35))
 			M.adjust_fire_stacks(15)
 			M.IgniteMob()

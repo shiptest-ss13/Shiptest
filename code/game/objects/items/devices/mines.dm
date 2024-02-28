@@ -159,9 +159,9 @@
 
 //NOW we actually blow up
 /obj/item/mine/proc/blast_now(atom/movable/triggerer)
-	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
-	s.set_up(3, 1, src)
-	s.start()
+	var/datum/effect_system/spark_spread/sporks = new /datum/effect_system/spark_spread
+	sporks.set_up(3, 1, src)
+	sporks.start()
 	if(ismob(triggerer))
 		mineEffect(triggerer)
 	else
@@ -377,7 +377,7 @@
 	range_flame = 3
 	range_heavy = 0
 	shrapnel_magnitude = 8
-	shred_triggerer = FALSE //this would be ridiculous overkill
+	shred_triggerer = TRUE //this would be ridiculous overkill
 	shrapnel_type = /obj/projectile/energy/plasmabolt
 	manufacturer = MANUFACTURER_PGF
 
@@ -598,6 +598,8 @@ LIVE_MINE_HELPER(explosive/heavy)
 LIVE_MINE_HELPER(explosive/shrapnel)
 LIVE_MINE_HELPER(explosive/shrapnel/sting)
 LIVE_MINE_HELPER(spawner/manhack)
+LIVE_MINE_HELPER(gas/water_vapor)
+
 //
 // spawners (random mines, minefields, non-guaranteed mine)
 //
