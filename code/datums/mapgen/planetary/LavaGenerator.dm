@@ -107,8 +107,8 @@
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
 		/obj/structure/vein/classthree = 1,
-		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
 		/obj/effect/spawner/minefield = 1,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(

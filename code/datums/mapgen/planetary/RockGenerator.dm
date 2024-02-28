@@ -91,7 +91,7 @@
 		/obj/structure/vein/classtwo = 40,
 		/obj/effect/spawner/lootdrop/anomaly/rock = 10,
 		/obj/structure/vein/classthree = 10,
-    /obj/effect/spawner/minefield = 2,
+		/obj/effect/spawner/minefield = 2,
 		/obj/effect/spawner/lootdrop/anomaly/big = 1 //get out of here stalker
 	)
 
@@ -159,9 +159,9 @@
 		/obj/structure/vein/classtwo = 2,
 		/obj/structure/elite_tumor = 1,
 		/obj/structure/vein/classthree = 1,
+		/obj/effect/spawner/minefield = 1,
 		/obj/structure/spawner/ice_moon/rockplanet = 4,
 		/obj/effect/spawner/lootdrop/anomaly/rock/cave = 1,
-    	/obj/effect/spawner/minefield = 1,
 	)
 	mob_spawn_chance = 6
 	mob_spawn_list = list(

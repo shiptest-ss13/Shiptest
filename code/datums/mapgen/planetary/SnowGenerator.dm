@@ -119,9 +119,9 @@
 		/obj/structure/spawner/ice_moon/demonic_portal/medium_threat = 50,
 		/obj/structure/spawner/ice_moon/demonic_portal/high_threat = 13,
 		/obj/structure/vein/ice = 25,
+		/obj/effect/spawner/minefield = 2,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classthree = 10,
-		/obj/effect/spawner/minefield = 2,
 	)
 
 /datum/biome/snow/lush
