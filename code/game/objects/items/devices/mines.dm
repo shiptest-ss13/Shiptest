@@ -147,6 +147,8 @@
 
 /// When something sets off a mine
 /obj/item/mine/proc/triggermine(atom/movable/triggerer)
+	if(obj_integrity <= 0)
+		return
 	if(triggered) //too busy detonating to detonate again
 		return
 	if(triggerer)
@@ -402,9 +404,10 @@
 	var/spawn_number = 6
 
 /obj/item/mine/spawner/mineEffect(mob/victim)
-	var/turf/T = get_turf(src)
-	playsound(T, 'sound/effects/phasein.ogg', 100, TRUE)
-	spawn_and_random_walk(spawn_type, T, spawn_number, walk_chance=50, admin_spawn=((flags_1 & ADMIN_SPAWNED_1) ? TRUE : FALSE))
+	if(isturf(loc))
+		var/turf/T = get_turf(src)
+		playsound(T, 'sound/effects/phasein.ogg', 100, TRUE)
+		spawn_and_random_walk(spawn_type, T, spawn_number, walk_chance=50, admin_spawn=((flags_1 & ADMIN_SPAWNED_1) ? TRUE : FALSE))
 	. = ..()
 
 /obj/item/mine/spawner/manhack
