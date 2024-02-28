@@ -7,8 +7,7 @@
 	show = TRUE
 	preop_sound = 'sound/surgery/bone1.ogg'
 	success_sound = 'sound/surgery/bone3.ogg'
-	required_layer = 2
-	priority = 15
+	required_layer = list(2)
 
 /datum/surgery_step/omni/set_bone/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(target_zone == BODY_ZONE_HEAD)

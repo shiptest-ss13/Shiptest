@@ -11,9 +11,8 @@
 	var/brutehealing = 0
 	var/burnhealing = 0
 	var/missinghpbonus = 0 //heals an extra point of damager per X missing damage of type (burn damage for burn healing, brute for brute). Smaller Number = More Healing!
-
 	show = TRUE
-	required_layer = 1
+	required_layer = list(1)
 
 
 /datum/surgery_step/omni/heal/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

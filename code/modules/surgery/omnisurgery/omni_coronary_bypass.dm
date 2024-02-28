@@ -16,12 +16,11 @@
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
-	required_layer = 2
-	priority = 3
+	required_layer = list(2)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 
-/datum/surgery_step/omni/incise_heart/test_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni, try_to_fail)
+/datum/surgery_step/omni/incise_heart/test_op(mob/user, mob/living/target,datum/surgery/omni/surgery)
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
 	if(H)
 		if(H.damage > 60 && !H.operated)
@@ -66,18 +65,18 @@
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = MEDICAL_SKILL_ORGAN_FIX
-	required_layer = 2
-	priority = 0
+	required_layer = list(2)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 
-/datum/surgery_step/omni/coronary_bypass/test_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni, try_to_fail)
+/datum/surgery_step/omni/coronary_bypass/test_op(mob/user, mob/living/target,datum/surgery/omni/surgery)
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
+	if(!istype(surgery.last_step,/datum/surgery_step/omni/incise_heart))
+		return FALSE
 	if(H)
 		if(H.damage > 60 && !H.operated)
 			return TRUE
 	return FALSE
-
 
 /datum/surgery_step/omni/coronary_bypass/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to graft a bypass onto [target]'s heart...</span>",
@@ -85,9 +84,9 @@
 			"<span class='notice'>[user] begins to graft something onto [target]'s heart!</span>")
 
 /datum/surgery_step/omni/coronary_bypass/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	target.setOrganLoss(ORGAN_SLOT_HEART, 60)
 	var/obj/item/organ/heart/heart = target.getorganslot(ORGAN_SLOT_HEART)
 	if(heart)	//slightly worrying if we lost our heart mid-operation, but that's life
+		target.setOrganLoss(ORGAN_SLOT_HEART, 60)
 		heart.operated = TRUE
 	display_results(user, target, "<span class='notice'>You successfully graft a bypass onto [target]'s heart.</span>",
 			"<span class='notice'>[user] finishes grafting something onto [target]'s heart.</span>",
