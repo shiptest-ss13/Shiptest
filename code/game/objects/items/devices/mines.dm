@@ -65,11 +65,14 @@
 	if(manufacturer)
 		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
 
-	var/atom/movable/unlucky_sod = foot_on_mine?.resolve()
-	if(user == unlucky_sod)
-		. += span_bolddanger("The pressure plate is depressed. Any movement you make will set it off now.")
-	else if(!isnull(unlucky_sod))
-		. += span_danger("The pressure plate is depressed by [unlucky_sod]. Any move they make'll set it off now.")
+	if(hair_trigger)
+		. += span_danger("It's been rigged to detonate as soon as someone steps on it.")
+	else
+		var/atom/movable/unlucky_sod = foot_on_mine?.resolve()
+		if(user == unlucky_sod)
+			. += span_bolddanger("The pressure plate is depressed. Any movement you make will set it off now.")
+		else if(!isnull(unlucky_sod))
+			. += span_danger("The pressure plate is depressed by [unlucky_sod]. Any move they make'll set it off now.")
 
 /obj/item/mine/update_icon_state()
 	. = ..()
@@ -83,6 +86,18 @@
 	//if(on_who == badtype)//no recursive self triggering. Bad landmine
 	//	return FALSE
 	return TRUE
+
+//let them know the mine's done cooking
+/obj/item/mine/proc/now_armed()
+	armed = TRUE
+	alpha = stealthpwr
+	update_appearance(UPDATE_ICON_STATE)
+	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 40, FALSE, -2)
+	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
+
+//insert your horrible fate here
+/obj/item/mine/proc/mineEffect(mob/victim)
+	return
 
 //step 1: the mistake
 /obj/item/mine/proc/on_entered(datum/source, atom/movable/arrived)
@@ -118,6 +133,8 @@
 //step 2: the consequences
 /obj/item/mine/proc/on_exited(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
+	if(hair_trigger)
+		return
 	if(!clicked)
 		return
 	if(!can_trigger(gone))
@@ -127,19 +144,6 @@
 		return
 	INVOKE_ASYNC(src, PROC_REF(triggermine), gone)
 	foot_on_mine = null
-
-//mines have a small chance to be triggered by damage, but they take longer to explode
-/obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
-	. = ..()
-	if(prob(35))
-		blast_delay = blast_delay * 3
-		triggermine()
-
-/obj/item/mine/Destroy()//just in case
-	if(foot_on_mine?.resolve())
-		var/mob/living/slowedguy = foot_on_mine.resolve()
-		slowedguy.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
-	. = ..()
 
 /// When something sets off a mine
 /obj/item/mine/proc/triggermine(atom/movable/triggerer)
@@ -176,6 +180,19 @@
 		slowpoke.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
 	qdel(src)
 
+//handles controlled deactivation (from wires/pickup success)
+/obj/item/mine/proc/disarm()
+	anchored = FALSE
+	armed = FALSE
+	clicked = FALSE
+	alpha = 255
+	if(foot_on_mine?.resolve())
+		var/mob/living/defuser = foot_on_mine.resolve()
+		defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
+		foot_on_mine = null
+	update_appearance(UPDATE_ICON_STATE)
+	return
+
 //using an unarmed mine inhand deploys it.
 /obj/item/mine/attack_self(mob/user)
 	if(!armed)
@@ -194,17 +211,18 @@
 			alpha = stealthpwr
 		log_admin("[key_name(user)] has placed \a [src] at ([x],[y],[z]).")
 
-//let them know the mine's done cooking
-/obj/item/mine/proc/now_armed()
-	armed = TRUE
-	alpha = stealthpwr
-	update_appearance(UPDATE_ICON_STATE)
-	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 40, FALSE, -2)
-	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
+//mines have a small chance to be triggered by damage, but they take longer to explode
+/obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
+	. = ..()
+	if(prob(35))
+		blast_delay = blast_delay * 3
+		triggermine()
 
-//insert your horrible fate here
-/obj/item/mine/proc/mineEffect(mob/victim)
-	return
+/obj/item/mine/Destroy()//just in case
+	if(foot_on_mine?.resolve())
+		var/mob/living/slowedguy = foot_on_mine.resolve()
+		slowedguy.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
+	. = ..()
 
 //trying to pick up a live mine is probably up there when it comes to terrible ideas
 /obj/item/mine/attack_hand(mob/user)
@@ -243,19 +261,6 @@
 		else//at this point it's just natural selection
 			user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
 			triggermine(user)
-
-//handles controlled deactivation (from wires/pickup success)
-/obj/item/mine/proc/disarm()
-	anchored = FALSE
-	armed = FALSE
-	clicked = FALSE
-	alpha = 255
-	if(foot_on_mine?.resolve())
-		var/mob/living/defuser = foot_on_mine.resolve()
-		defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
-		foot_on_mine = null
-	update_appearance(UPDATE_ICON_STATE)
-	return
 
 //
 //LANDMINE TYPES
