@@ -19,38 +19,34 @@
 
 /datum/supply_pack/gun/commanders
 	name = "Commander pistol crate"
-	desc = "Contains two modified Candor 'Commander' pistols, produced by Nanotrasen and chambered in 9mm."
-	cost = 1500
-	contains = list(/obj/item/gun/ballistic/automatic/pistol/commander,
-					/obj/item/gun/ballistic/automatic/pistol/commander)
+	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
+	cost = 750
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/commander)
 
 /datum/supply_pack/gun/makarovs
 	name = "Stechkin pistol crate"
-	desc = "Contains two concealable stechkin pistols, produced by Scarborough Arms and chambered in 10mm."
-	cost = 2000
+	desc = "Contains a concealable stechkin pistol, produced by Scarborough Arms and chambered in 10mm."
+	cost = 1000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/gun/ballistic/automatic/pistol)
 
 /datum/supply_pack/gun/revolver
 	name = "Scarbourgh Revolver crate"
-	desc = "Contains two concealable Scarbourgh revolvers, chambered in .357."
-	cost = 2500
-	contains = list(/obj/item/gun/ballistic/revolver,
-					/obj/item/gun/ballistic/revolver)
+	desc = "Contains a concealable Scarbourgh revolver, chambered in .357."
+	cost = 1250
+	contains = list(/obj/item/gun/ballistic/revolver)
 
 /datum/supply_pack/gun/detrevolver
 	name = "Hunter's Pride Detective Revolver crate"
-	desc = "Contains two concealable Solarian revolvers, chambered in .38."
-	cost = 2000
-	contains = list(/obj/item/gun/ballistic/revolver/detective,
-					/obj/item/gun/ballistic/revolver/detective)
+	desc = "Contains a concealable Solarian revolver, chambered in .38."
+	cost = 1000
+	contains = list(/obj/item/gun/ballistic/revolver/detective)
 
 /datum/supply_pack/gun/shadowrevolver
 	name = "Shadow Revolver crate"
-	desc = "Contains two concealable Shadow revolvers, chambered in .45 ACP."
-	cost = 2500
-	contains = list(/obj/item/gun/ballistic/revolver/shadow,
-					/obj/item/gun/ballistic/revolver/shadow)
+	desc = "Contains a concealable Shadow revolver, chambered in .45 ACP."
+	cost = 1000
+	contains = list(/obj/item/gun/ballistic/revolver/shadow)
 
 
 /*
@@ -58,27 +54,24 @@
 */
 
 /datum/supply_pack/gun/laser
-	name = "Lasers Crate"
-	desc = "Contains two lethal, high-energy laser guns."
-	cost = 2000
-	contains = list(/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser)
+	name = "Laser Gun Crate"
+	desc = "Contains a lethal, high-energy laser gun."
+	cost = 1000
+	contains = list(/obj/item/gun/energy/laser)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/laser
 	name = "Mini Energy Gun Crate"
-	desc = "Contains two small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
-	cost = 1500
-	contains = list(/obj/item/gun/energy/e_gun/mini,
-					/obj/item/gun/energy/e_gun/mini)
+	desc = "Contains a small, versatile energy guns, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
+	cost = 500
+	contains = list(/obj/item/gun/energy/e_gun/mini)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/energy
-	name = "Energy Guns Crate"
-	desc = "Contains two versatile energy guns, capable of firing both nonlethal and lethal blasts of light."
-	cost = 2500
-	contains = list(/obj/item/gun/energy/e_gun,
-					/obj/item/gun/energy/e_gun)
+	name = "Energy Gun Crate"
+	desc = "Contains a versatile energy gun, capable of firing both nonlethal and lethal blasts of light."
+	cost = 1250
+	contains = list(/obj/item/gun/energy/e_gun)
 	crate_name = "energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
@@ -95,19 +88,17 @@
 */
 
 /datum/supply_pack/gun/hellfire_shotgun
-	name = "Hellfire Shotguns Crate"
-	desc = "For when you need to deal with 7 hooligans. Contains 2 pump shotguns, each with a 8-round capacity."
-	cost = 4500
-	contains = list(/obj/item/gun/ballistic/shotgun/hellfire,
-					/obj/item/gun/ballistic/shotgun/hellfire)
+	name = "Hellfire Shotgun Crate"
+	desc = "For when you need to deal with 7 hooligans. Contains a pump shotguns, with a 8-round capacity."
+	cost = 2000
+	contains = list(/obj/item/gun/ballistic/shotgun/hellfire)
 	crate_name = "shotguns crate"
 
 /datum/supply_pack/gun/brimstone_shotgun
-	name = "Brimstone Shotguns Crate"
-	desc = "For when you need to deal with 5 hooligans, and QUICKLY. Contains 2 slamfire shotguns, each with a 5-round capacity. Warranty voided if sawed off."
-	cost = 4500
-	contains = list(/obj/item/gun/ballistic/shotgun/brimstone,
-					/obj/item/gun/ballistic/shotgun/brimstone)
+	name = "Brimstone Shotgun Crate"
+	desc = "For when you need to deal with 5 hooligans, and QUICKLY. Contains a slamfire shotguns, with a 5-round capacity. Warranty voided if sawed off."
+	cost = 2000
+	contains = list(/obj/item/gun/ballistic/shotgun/brimstone)
 	crate_name = "shotguns crate"
 
 /*
@@ -116,52 +107,44 @@
 
 /datum/supply_pack/gun/winchester
 	name = "Flaming Arrow Lever Action Rifle Crate"
-	desc = "Contains three antiquated lever action rifles intended for hunting wildlife. Chambered in .38 rounds."
-	cost = 1500
-	contains = list(/obj/item/gun/ballistic/shotgun/flamingarrow,
-					/obj/item/gun/ballistic/shotgun/flamingarrow,
-					/obj/item/gun/ballistic/shotgun/flamingarrow)
+	desc = "Contains a antiquated lever action rifles intended for hunting wildlife. Chambered in .38 rounds."
+	cost = 750
+	contains = list(/obj/item/gun/ballistic/shotgun/flamingarrow)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/cobra20
 	name = "Cobra-20 SMG Crate"
-	desc = "Contains two .45 submachine guns, manufactured by Scaraborough Arms and chambered in .45"
+	desc = "Contains a .45 submachine guns, manufactured by Scaraborough Arms and chambered in .45"
 	cost = 3000
-	contains = list(/obj/item/gun/ballistic/automatic/smg/c20r/cobra,
-					/obj/item/gun/ballistic/automatic/smg/c20r/cobra)
+	contains = list(/obj/item/gun/ballistic/automatic/smg/c20r/cobra)
 	crate_name = "SMG crate"
 
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
-	desc = "Contains three expertly made bolt action rifles intended for hunting wildlife. Chambered in 8x50mmR rounds."
-	cost = 4000
-	contains = list(/obj/item/gun/ballistic/rifle/illestren,
-					/obj/item/gun/ballistic/rifle/illestren,
-					/obj/item/gun/ballistic/rifle/illestren)
+	desc = "Contains a expertly made bolt action rifles intended for hunting wildlife. Chambered in 8x50mmR rounds."
+	cost = 1250
+	contains = list(/obj/item/gun/ballistic/rifle/illestren)
 	crate_name = "rifle crate"
 
 /datum/supply_pack/gun/wt550
 	name = "WT-550 Auto Rifle Crate"
-	desc = "Contains two high-powered, semiautomatic rifles chambered in 4.6x30mm."
-	cost = 6000
-	contains = list(/obj/item/gun/ballistic/automatic/smg/wt550,
-					/obj/item/gun/ballistic/automatic/smg/wt550)
+	desc = "Contains a high-powered, automatic personal defense weapon chambered in 4.6x30mm."
+	cost = 4000
+	contains = list(/obj/item/gun/ballistic/automatic/smg/wt550)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/p16
 	name = "P16 Assault Rifle Crate"
-	desc = "Contains two high-powered, automatic rifles chambered in 5.56mm."
-	cost = 8000
-	contains = list(/obj/item/gun/ballistic/automatic/assault/p16,
-					/obj/item/gun/ballistic/automatic/assault/p16)
+	desc = "Contains a high-powered, automatic rifles chambered in 5.56mm."
+	cost = 5000
+	contains = list(/obj/item/gun/ballistic/automatic/assault/p16)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/skm
 	name = "SKM-24 Rifle Crate"
-	desc = "Contains two high-powered, automatic rifles chambered in 7.62x40mm CLIP."
-	cost = 6000
-	contains = list(/obj/item/gun/ballistic/automatic/assault/skm,
-					/obj/item/gun/ballistic/automatic/assault/skm)
+	desc = "Contains a high-powered, automatic rifles chambered in 7.62x40mm CLIP."
+	cost = 5000
+	contains = list(/obj/item/gun/ballistic/automatic/assault/skm)
 	crate_name = "auto rifle crate"
 
 /*
