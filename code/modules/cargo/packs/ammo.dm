@@ -91,8 +91,8 @@
 
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
-	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
-	cost = 500
+	desc = "Contains two 50 round ammo boxes for refilling .38 weapons."
+	cost = 250
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
 	crate_name = "ammo crate"
