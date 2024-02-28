@@ -1391,6 +1391,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/borderfloorblack,
+/obj/machinery/holopad/emergency,
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/port)
 "lQ" = (
@@ -2321,9 +2322,6 @@
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "uq" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 8
 	},
@@ -3508,6 +3506,7 @@
 	pixel_x = 4;
 	pixel_y = 0
 	},
+/obj/item/hand_labeler,
 /turf/open/floor/vault,
 /area/ship/security/armory)
 "DE" = (
@@ -3978,6 +3977,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/holopad/emergency,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "Gn" = (
@@ -5120,6 +5120,10 @@
 /obj/item/storage/belt/military/gezena{
 	pixel_y = 7;
 	pixel_x = 5
+	},
+/obj/item/clothing/head/helmet/gezena{
+	pixel_y = 7;
+	pixel_x = -6
 	},
 /obj/item/clothing/head/helmet/gezena{
 	pixel_y = 7;
@@ -7304,7 +7308,7 @@ xz
 (22,1,1) = {"
 xz
 xz
-xz
+Si
 KB
 KM
 Te
@@ -7360,7 +7364,7 @@ xz
 (24,1,1) = {"
 xz
 xz
-Si
+xz
 eR
 Eu
 KP
