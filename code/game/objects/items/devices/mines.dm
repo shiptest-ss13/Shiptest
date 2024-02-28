@@ -39,9 +39,6 @@
 
 	var/manufacturer = MANUFACTURER_NONE
 
-	/// A surprised tool that'll help us later (handles turf slowdown manipulation)
-	var/oldslow
-
 	/// Who's got their foot on the mine's pressure plate
 	/// Stepping on the mine will set this to the first mob who stepped over it
 	/// The mine will not detonate via movement unless the first mob steps off of it
@@ -56,6 +53,7 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 	wires = new /datum/wires/mine(src)
+	alpha = stealthpwr
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -120,7 +118,7 @@
 //step 2: the consequences
 /obj/item/mine/proc/on_exited(datum/source, atom/movable/gone)
 	SIGNAL_HANDLER
-	if(!clicked )
+	if(!clicked)
 		return
 	if(!can_trigger(gone))
 		return
@@ -130,10 +128,10 @@
 	INVOKE_ASYNC(src, PROC_REF(triggermine), gone)
 	foot_on_mine = null
 
-//mines may be triggered by damage, but they take longer to explode
+//mines have a small chance to be triggered by damage, but they take longer to explode
 /obj/item/mine/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir)
 	. = ..()
-	if(prob(65))
+	if(prob(35))
 		blast_delay = blast_delay * 3
 		triggermine()
 
@@ -164,9 +162,6 @@
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
-	if(isopenturf(loc) || oldslow)
-		var/turf/open/locturf = loc
-		locturf.slowdown = oldslow
 	if(ismob(triggerer))
 		mineEffect(triggerer)
 	else
@@ -215,14 +210,7 @@
 		if(do_after(user, 5 SECONDS, target = src))//SO SO generous. You can still step back from the edge.
 			if(prob(10))
 				user.visible_message(span_notice("[user] picks up \the [src], which miraculously doesn't explode!"), span_notice("You pick up \the [src], which miraculously doesn't explode!"))
-				anchored = FALSE
-				armed = FALSE
-				clicked = FALSE
-				alpha = 255
-				var/mob/living/defuser = foot_on_mine.resolve()
-				defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
-				foot_on_mine = null
-				update_appearance(UPDATE_ICON_STATE)
+				disarm()
 			else
 				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hand!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
 				triggermine(user)
@@ -253,6 +241,18 @@
 			user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
 			triggermine(user)
 
+//handles controlled deactivation (from wires/pickup success)
+/obj/item/mine/proc/disarm()
+	anchored = FALSE
+	armed = FALSE
+	clicked = FALSE
+	alpha = 255
+	var/mob/living/defuser = foot_on_mine.resolve()
+	defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
+	foot_on_mine = null
+	update_appearance(UPDATE_ICON_STATE)
+	return
+
 //
 //LANDMINE TYPES
 //Rylie please help me make these more immersive
@@ -273,12 +273,12 @@
 
 	//customize shrapnel. Magnitude zero prevents them from spawning
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
-	var/shrapnel_magnitude = 5
+	var/shrapnel_magnitude = 3
 
 	/// If TRUE, we spawn extra pellets to eviscerate a person still sitting on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
 	var/shred_triggerer = TRUE
 
-	stealthpwr = 100
+	stealthpwr = 75
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/explosive/mineEffect(mob/victim)
@@ -303,7 +303,7 @@
 	range_flash = 3
 
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
-	shrapnel_magnitude = 6
+	shrapnel_magnitude = 4
 
 /obj/item/mine/explosive/fire/mineEffect(mob/victim)
 	for(var/turf/T in view(4,src))
@@ -329,7 +329,7 @@
 	range_heavy = 1
 	range_light = 4
 
-	shrapnel_magnitude = 9
+	shrapnel_magnitude = 6
 	shred_triggerer = TRUE
 
 /obj/item/mine/explosive/shrapnel/carbon_only
@@ -388,8 +388,22 @@
 
 //WIP variants(CLEAN THIS UP BEFORE UNDRAFTING)
 /obj/item/mine/spawner
-//mannhacks go here :)
+	name = "debug spawner mine"
+	desc = "Real no Virus. 100% free. Coders hate him!"
+	var/spawn_type = null //manhacks go here :)
+	var/spawn_number = 6
 
+/obj/item/mine/spawner/mineEffect(mob/victim)
+	var/turf/T = get_turf(src)
+	playsound(T, 'sound/effects/phasein.ogg', 100, TRUE)
+	spawn_and_random_walk(spawn_type, T, spawn_number, walk_chance=50, admin_spawn=((flags_1 & ADMIN_SPAWNED_1) ? TRUE : FALSE))
+	. = ..()
+
+/obj/item/mine/spawner/manhack
+	name = "\improper G-83 Lacerator"
+	desc = "An anti-infantry explosive produced during the corporate wars. The explosive payload has been swapped out for 'viscerator'-type antipersonnel drones."
+	spawn_type = /mob/living/simple_animal/hostile/viscerator
+	hair_trigger = TRUE//they take a second to lock on anyway
 
 //
 //UNUSED MINES//
@@ -563,3 +577,53 @@
 /obj/item/mine/pickup/speed/proc/finish_effect(mob/living/carbon/victim)
 	victim.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	to_chat(victim, "<span class='notice'>You slow down.</span>")
+
+//
+//mapping tool that generates "live" variants of all mine subtypes, which are anchored and ready to blow.
+//Add new mine variants you make below as a LIVE_MINE_HELPER define containing their subtyping.
+//
+
+#define LIVE_MINE_HELPER(mine_type)		\
+	/obj/item/mine/##mine_type/live {		\
+		anchored = TRUE;					\
+		armed = TRUE;						\
+	}
+
+LIVE_MINE_HELPER(explosive)
+LIVE_MINE_HELPER(explosive/fire)
+LIVE_MINE_HELPER(explosive/rusty)
+LIVE_MINE_HELPER(explosive/rad)
+LIVE_MINE_HELPER(explosive/plasma)
+LIVE_MINE_HELPER(explosive/heavy)
+LIVE_MINE_HELPER(explosive/shrapnel)
+LIVE_MINE_HELPER(explosive/shrapnel/sting)
+LIVE_MINE_HELPER(spawner/manhack)
+//
+// spawners (random mines, minefields, non-guaranteed mine)
+//
+
+/obj/effect/spawner/lootdrop/mine
+	name = "live mine spawner (random)"
+	lootcount = 1
+	fan_out_items = TRUE
+	loot = list(
+		/obj/item/mine/explosive/live = 10,
+		/obj/item/mine/explosive/shrapnel/live = 3,
+		/obj/item/mine/explosive/rad/live = 3,
+		/obj/item/mine/spawner/manhack/live = 3,
+		/obj/item/mine/explosive/fire/live = 3)
+
+/obj/effect/spawner/minefield
+	name = "minefield spawner"
+	var/minerange = 7
+	var/minetype = /obj/item/mine/explosive/rusty/live
+
+/obj/effect/spawner/minefield/Initialize(mapload)
+	. = ..()
+	for(var/turf/open/T in view(minerange,loc))
+		if(prob(10))
+			new minetype(T)
+
+/obj/effect/spawner/minefield/random
+	name = "random minefield spawner"
+	minetype = /obj/effect/spawner/lootdrop/mine

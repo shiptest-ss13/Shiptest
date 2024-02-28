@@ -40,14 +40,7 @@
 			if(ourmine.armed && ourmine.anchored)
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] <b> \The [ourmine]'s arming lights fade, and the securing bolts loosen. </b>"))
 				playsound(ourmine, 'sound/machines/click.ogg', 100, TRUE)
-				ourmine.armed = FALSE
-				ourmine.clicked = FALSE
-				ourmine.anchored = FALSE
-				ourmine.alpha = 255
-				var/mob/living/defuser = ourmine.foot_on_mine.resolve()
-				defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
-				ourmine.foot_on_mine = null
-				ourmine.update_appearance(UPDATE_ICON_STATE)
+				ourmine.disarm()
 			else if(ourmine.anchored)
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s yellow arming light flickers."))
 			else
@@ -93,14 +86,7 @@
 				if(ourmine.armed && ourmine.anchored)
 					holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] <b> \The [ourmine]'s arming lights fade, and the securing bolts loosen. Disarmed. </b>"))
 					playsound(ourmine, 'sound/machines/click.ogg', 100, TRUE)
-					ourmine.armed = FALSE
-					ourmine.clicked = FALSE
-					ourmine.anchored = FALSE
-					ourmine.alpha = 255
-					var/mob/living/defuser = ourmine.foot_on_mine.resolve()
-					defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
-					ourmine.foot_on_mine = null
-					ourmine.update_appearance(UPDATE_ICON_STATE)
+					ourmine.disarm()
 				else if(ourmine.anchored)
 					holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s yellow arming light flickers."))
 				else

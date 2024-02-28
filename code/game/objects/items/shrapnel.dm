@@ -33,10 +33,10 @@
 
 /obj/projectile/bullet/shrapnel
 	name = "flying shrapnel shard"
-	damage = 12
+	damage = 14
 	range = 10
 	armour_penetration = -20
-	dismemberment = 10
+	dismemberment = 15
 	ricochets_max = 2
 	ricochet_chance = 40
 	shrapnel_type = /obj/item/shrapnel
@@ -46,12 +46,11 @@
 /obj/projectile/bullet/shrapnel/rusty
 	damage = 10
 	armour_penetration = -35
-	dismemberment = 5
 	ricochets_max = 3//duller = less likely to stick in a wall
 	ricochet_chance = 60
 
 /obj/projectile/bullet/shrapnel/mega
-	damage = 17
+	damage = 20
 	name = "flying shrapnel hunk"
 	range = 25
 	dismemberment = 20
@@ -72,7 +71,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(10)
+		M.adjust_fire_stacks(15)
 		M.IgniteMob()
 
 /obj/projectile/bullet/shrapnel/spicy
@@ -87,7 +86,7 @@
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.apply_effect(150,EFFECT_IRRADIATE,0)
+		M.apply_effect(250,EFFECT_IRRADIATE,0)
 
 /obj/projectile/bullet/pellet/stingball
 	name = "ballistic gel clump"
