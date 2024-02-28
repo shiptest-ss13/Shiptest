@@ -84,7 +84,7 @@
 
 /datum/biome/lavaland
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1
+		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1,
 	)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(
@@ -101,7 +101,7 @@
 		/obj/structure/elite_tumor = 4,
 		/obj/structure/geyser/random = 4,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 2,
-		/obj/effect/spawner/minefield = 1
+		/obj/effect/spawner/minefield = 1,
 		/obj/structure/flora/rock/hell = 14,
 		/obj/structure/vein = 5,
 		/obj/structure/vein/classtwo = 2,
