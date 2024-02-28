@@ -121,7 +121,7 @@
 		/obj/structure/vein/ice = 25,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classthree = 10,
-    	/obj/effect/spawner/minefield = 2,
+		/obj/effect/spawner/minefield = 2,
 	)
 
 /datum/biome/snow/lush
