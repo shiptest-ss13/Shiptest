@@ -21,7 +21,7 @@
 	desc = "A bundle of basic machine parts, containing 3 of each common part type for when you're too lazy to print them yourself."
 	cost = 500
 	contains = list(/obj/item/storage/box/stockparts/basic)
-	crate_name = "\improper T2 parts crate"
+	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate
 
 /datum/supply_pack/machinery/t2
@@ -29,7 +29,7 @@
 	desc = "A bundle of advanced machine parts, containing 2 of each common part type."
 	cost = 1500
 	contains = list(/obj/item/storage/box/stockparts/t2)
-	crate_name = "\improper T2 parts crate"
+	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/science
 
 /datum/supply_pack/machinery/t3
@@ -37,7 +37,7 @@
 	desc = "A bundle of high-tech machine parts, containing 2 of each common part type."
 	cost = 3000
 	contains = list(/obj/item/storage/box/stockparts/t3)
-	crate_name = "\improper T3 parts crate"
+	crate_name = "\improper stock parts crate"
 	crate_type = /obj/structure/closet/crate/secure/science
 
 /datum/supply_pack/machinery/power
@@ -46,8 +46,8 @@
 	cost = 1000
 	contains = list(/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high,
-					/obj/item/stock_parts/cell/high
-					/obj/item/stock_parts/cell/high
+					/obj/item/stock_parts/cell/high,
+					/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high)
 	crate_name = "power cell crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
