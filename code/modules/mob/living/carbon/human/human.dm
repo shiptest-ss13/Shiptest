@@ -1291,7 +1291,7 @@
 
 /mob/living/carbon/human/CtrlShiftClick(mob/user)
 	. = ..()
-	if(!user.mind?.guestbook)
+	if(isobserver(user) || !user.mind?.guestbook)
 		return
 	INVOKE_ASYNC(user.mind.guestbook, TYPE_PROC_REF(/datum/guestbook, try_add_guest), user, src, FALSE)
 

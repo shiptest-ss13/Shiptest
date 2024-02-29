@@ -689,6 +689,10 @@
 	set name = "Guestbook"
 	set category = "IC"
 	set desc = "View your character's Guestbook."
+	// the reason why there are two observer checks in here is because the mind datum sometimes carries over to ghosts.
+	// this is something i should probably fix instead of adding a fallback check, but...
+	if(isobserver(src))
+		to_chat(src, span_warning("You have to be in the current round to do that!"))
 	if(!mind)
 		var/fail_message = "You have no mind!"
 		if(isobserver(src))
