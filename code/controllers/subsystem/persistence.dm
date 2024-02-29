@@ -89,7 +89,6 @@ SUBSYSTEM_DEF(persistence)
 	SavePaintings()
 	save_custom_outfits()
 	SavePanicBunker()
-	SaveGuestBooks()
 
 /datum/controller/subsystem/persistence/proc/GetPhotoAlbums()
 	var/album_path = file("data/photo_albums.json")
@@ -255,18 +254,6 @@ SUBSYSTEM_DEF(persistence)
 	var/json_file = file("data/paintings.json")
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(paintings))
-
-/datum/controller/subsystem/persistence/proc/SaveGuestBooks()
-	for(var/player in GLOB.joined_player_list)
-		var/mob/living/carbon/human/guy = get_mob_by_ckey(player)
-		if(!istype(guy) || !guy.mind || !guy.mind.guestbook || !guy.client)
-			continue
-
-		var/mob/living/carbon/human/guy_spawned_as = guy.mind.original_character
-		if(!(guy == guy_spawned_as))
-			return
-		guy.client.prefs.guestbook_names = guy.mind.guestbook.known_names
-		guy.client.prefs.save_character()
 
 /datum/controller/subsystem/persistence/proc/load_custom_outfits()
 	var/file = file("data/custom_outfits.json")

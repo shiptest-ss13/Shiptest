@@ -455,9 +455,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	READ_FILE(S["fbp"], fbp)
 
-	// guestbook names
-	READ_FILE(S["guestbook_names"], guestbook_names)
-
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
 		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
@@ -523,7 +520,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	exowear				= sanitize_inlist(exowear, GLOB.exowearlist, initial(exowear))
 	uplink_spawn_loc	= sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	fbp					= sanitize_integer(fbp, FALSE, TRUE, FALSE)
-	guestbook_names					= SANITIZE_LIST(guestbook_names)
 	features["grad_style"]				= sanitize_inlist(features["grad_style"], GLOB.hair_gradients_list)
 	features["grad_color"]				= sanitize_hexcolor(features["grad_color"])
 	features["body_size"]				= sanitize_inlist(features["body_size"], GLOB.body_sizes, "Normal")
@@ -637,8 +633,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_elzu_horns"]			, features["elzu_horns"])
 	WRITE_FILE(S["feature_tail_elzu"]			, features["tail_elzu"])
 	WRITE_FILE(S["fbp"]							, fbp)
-	// guestbook names
-	WRITE_FILE(S["guestbook_names"]					, guestbook_names)
 
 	//Flavor text
 	WRITE_FILE(S["feature_flavor_text"]			, features["flavor_text"])

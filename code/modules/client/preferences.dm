@@ -159,10 +159,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_ai_core_display = "Blue"
 	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/generic_adjective = "Unremarkable"
-
-	// the list of known guestbook names we have saved
-	var/list/guestbook_names = list()
-
 	//Quirk list
 	var/list/all_quirks = list()
 

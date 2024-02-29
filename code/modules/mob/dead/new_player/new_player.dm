@@ -249,8 +249,8 @@
 		observer.client.init_verbs()
 	observer.update_appearance()
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	QDEL_NULL(mind)
+	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	qdel(src)
 	return TRUE
 
@@ -329,6 +329,7 @@
 		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
+		ship.addMobToCrewGuestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
@@ -425,8 +426,6 @@
 		is_antag = TRUE
 
 	client.prefs.copy_to(H, antagonist = is_antag)
-	if(client.prefs.guestbook_names)
-		mind.guestbook.known_names += client.prefs.guestbook_names
 	update_names_joined_list(H.real_name)
 	H.dna.update_dna_identity()
 	if(mind)

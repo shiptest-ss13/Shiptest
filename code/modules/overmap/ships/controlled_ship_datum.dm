@@ -297,8 +297,6 @@
 	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, PROC_REF(crew_mind_deleting))
 	if(!owner_mob)
 		set_owner_mob(H)
-	addMobToCrewGuestbook(H)
-
 
 /**
  * adds a mob's real name to a crew's guestbooks
