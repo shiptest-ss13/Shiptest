@@ -16,7 +16,7 @@
 	. = ..()
 
 /obj/structure/radioactive/process()
-	for(var/mob/living/L in range(5, src)
+	for(var/mob/living/L in range(5, src))
 		if(L.client)
 			Nuke()
 			break
@@ -79,5 +79,4 @@
 	anchored = TRUE
 	rad_power = 1200
 	rad_range = 0.2
-	rad_delay = 20
 	pulse_delay = 0.5 SECONDS
