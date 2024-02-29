@@ -302,7 +302,7 @@
 
 //Wipe
 /mob/living/silicon/pai/verb/wipe_self()
-	var/confirm = alert("Are you sure you want to wipe your own personality?", "Confirm", "Yes", "No")
+	var/confirm = alert("Are you sure you want to wipe your own personality? This is PERMANENT.", "Confirm Wipe", "Yes", "No")
 	if(confirm == "Yes")
 		var/turf/T = get_turf(src.loc)
 		T.visible_message(
