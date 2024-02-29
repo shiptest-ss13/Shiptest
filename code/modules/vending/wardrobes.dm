@@ -545,7 +545,7 @@
 
 /obj/machinery/vending/wardrobe/clip_wardrobe
 	name = "\improper CLIPDrobe"
-	desc = "A very special vendding machine that somehow vends every piece of clothing used by the Cofederated League! Wow! You get the feeling this is meant for debugging"
+	desc = "A very special vending machine that somehow vends every piece of clothing used by the Confederated League! Wow! You get the feeling this is meant for debugging."
 	icon_state = "clipdrobe"
 	product_ads = "Coast guard in style!"
 	vend_reply = "Thank you for using the CLIPDrobe!"
