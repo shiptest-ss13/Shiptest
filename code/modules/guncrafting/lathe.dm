@@ -104,11 +104,13 @@
 	playsound(src,'sound/items/welder.ogg',50,TRUE)
 	if(istype(work_piece, /obj/item/gun))
 		var/obj/item/gun/gun_work_piece = work_piece
-		var/obj/item/new_part = new /obj/item/part/gun
+		var/obj/item/new_part = new /obj/item/stack/gun_part
 		new_part.forceMove(drop_location())
+		/* I think this should be a seperate procces for obtaining the frame
 		if(gun_work_piece.frame)
 			var/obj/item/frame = gun_work_piece.frame
 			frame.forceMove(drop_location())
+		*/
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	var/material_amount = materials.get_item_material_amount(work_piece)
 	if(material_amount)

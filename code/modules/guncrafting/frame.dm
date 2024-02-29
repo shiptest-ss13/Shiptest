@@ -118,25 +118,42 @@
 /obj/item/part/gun/frame/attack_self(mob/user)
 	var/list/choose_options = list()
 	var/list/option_results = list()
+
 	for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
 		var/obj/recipe_result = recipe.result
-		var/list/parts_for_craft = list()
-		for(var/obj/item/part/gun/part as anything in recipe.valid_parts)
-			var/part_type = initial(part.gun_part_type)
-			var/list/installed_types = get_part_types()
-			if(!(part_type in installed_types))
-				parts_for_craft += "	\a [initial(part.name)]"
-		if(length(parts_for_craft) != 0)
-			to_chat(user, span_warning("Parts needed for a [initial(recipe_result.name)]:"))
-			for(var/part in parts_for_craft)
-				to_chat(user, span_warning(part))
+		var/list/missing_parts = get_missing_parts_for_recipe(recipe)
+
+		if(length(missing_parts) != 0)
+			display_missing_parts_warning(user, recipe_result, missing_parts)
 		else
-			to_chat(user, span_notice("You can craft a [initial(recipe_result.name)] with the parts installed."))
-			choose_options += list("Craft [initial(recipe_result.name)]" = image(icon = initial(recipe_result.icon), icon_state = initial(recipe_result.icon_state)))
-			option_results["Craft [initial(recipe_result.name)]"] = recipe_result
+			add_recipe_to_options(user, recipe_result, choose_options, option_results)
+
 	if(length(choose_options) == 0)
 		to_chat(user, span_warning("No recipes can be crafted with the parts installed."))
 		return
+
+	craft_selected_option(user, choose_options, option_results)
+
+/obj/item/part/gun/frame/proc/get_missing_parts_for_recipe(datum/lathe_recipe/gun/recipe)
+	var/list/missing_parts = list()
+	for(var/obj/item/part/gun/part as anything in recipe.valid_parts)
+		var/part_type = initial(part.gun_part_type)
+		var/list/installed_types = get_part_types()
+		if(!(part_type in installed_types))
+			missing_parts += "	\a [initial(part.name)]"
+	return missing_parts
+
+/obj/item/part/gun/frame/proc/display_missing_parts_warning(mob/user, obj/recipe_result, list/missing_parts)
+	to_chat(user, span_warning("Parts needed for a [initial(recipe_result.name)]:"))
+	for(var/part in missing_parts)
+		to_chat(user, span_warning(part))
+
+/obj/item/part/gun/frame/proc/add_recipe_to_options(mob/user, obj/recipe_result, list/choose_options, list/option_results)
+	to_chat(user, span_notice("You can craft a [initial(recipe_result.name)] with the parts installed."))
+	choose_options += list("Craft [initial(recipe_result.name)]" = image(icon = initial(recipe_result.icon), icon_state = initial(recipe_result.icon_state)))
+	option_results["Craft [initial(recipe_result.name)]"] = recipe_result
+
+/obj/item/part/gun/frame/proc/craft_selected_option(mob/user, list/choose_options, list/option_results)
 	var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
 	if(!picked_option)
 		return
