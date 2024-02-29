@@ -260,7 +260,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact
 	name = "\improper CM-5c"
-	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excells at close range and is, well, compact. You also feel like this gun is unfinished somewhat. Chambered in 9mm."
+	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excels at close range and is very lightweight. You feel like this gun is mildly unfinished. Chambered in 9mm."
 	w_class = WEIGHT_CLASS_NORMAL
 	spread = 25
 	spread_unwielded = 40
