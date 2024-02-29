@@ -35,8 +35,8 @@ type Data = {
   SHEET_MATERIAL_AMOUNT: number;
 };
 
-export const ProcessingConsole = (props: any) => {
-  const { act, data } = useBackend<Data>();
+export const ProcessingConsole = (props: any, context: any) => {
+  const { act, data } = useBackend<Data>(context);
   const { state } = data;
 
   return (
@@ -78,8 +78,8 @@ export const ProcessingConsole = (props: any) => {
   );
 };
 
-const MaterialSelection = (props: any) => {
-  const { act, data } = useBackend<Data>();
+const MaterialSelection = (props: any, context: any) => {
+  const { act, data } = useBackend<Data>(context);
   const { materials, materialIcons, selectedMaterial, SHEET_MATERIAL_AMOUNT } =
     data;
 
@@ -101,8 +101,8 @@ const MaterialSelection = (props: any) => {
   );
 };
 
-const AlloySelection = (props: any) => {
-  const { act, data } = useBackend<Data>();
+const AlloySelection = (props: any, context: any) => {
+  const { act, data } = useBackend<Data>(context);
   const { alloys, alloyIcons, selectedAlloy } = data;
 
   return alloys.length > 0 ? (
