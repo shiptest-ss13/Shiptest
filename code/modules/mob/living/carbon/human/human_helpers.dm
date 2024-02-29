@@ -180,7 +180,7 @@
 /mob/living/carbon/human/proc/get_age()
 	var/obscured = check_obscured_slots()
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
-	if((obscured & ITEM_SLOT_ICLOTHING) && skipface)
+	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src))
 		return ""
 	switch(age)
 		if(70 to INFINITY)
@@ -216,6 +216,9 @@
 
 /mob/living/carbon/human/proc/get_gender()
 	var/visible_gender = p_they()
+	if(isipc(src))
+		visible_gender = "Positronic"
+		return visible_gender
 	switch(visible_gender)
 		if("he")
 			visible_gender = "Man"
