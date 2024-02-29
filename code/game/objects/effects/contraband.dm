@@ -963,8 +963,8 @@
 	icon_state = "poster-clip_bard"
 
 /obj/structure/sign/poster/clip/gold
-	name = "CMM-GOLD"
-	desc = "A poster listing job positions open in the CMM GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
+	name = "CLIP-GOLD"
+	desc = "A poster listing job positions open in the CLIP GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
 	icon_state = "poster-clip_gold"
 
 /obj/structure/sign/poster/clip/lunatown
