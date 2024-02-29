@@ -9,7 +9,8 @@
 
 //budgetcuts
 /area/ruin/rockplanet/nanotrasen
-	name = "Abandoned Mining Facility"
+	name = "Abandoned Research Facility"
+	always_unpowered = FALSE
 
 //shippingdock
 /area/ruin/rockplanet/shippingdockoffice
@@ -30,7 +31,6 @@
 
 /area/ruin/rockplanet/shippingdock
 	name = "Abandoned Shipping Dock"
-	icon_state = "green"
 
 //nomad
 /area/ruin/rockplanet/nomad

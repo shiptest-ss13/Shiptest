@@ -19,7 +19,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	/obj/item/tank/jetpack/suit = 10,
 	/obj/item/survivalcapsule = 15,
 	/obj/item/reagent_containers/hypospray/medipen/survival = 15,
-	/obj/item/card/mining_point_card = 15,
 	/obj/item/gps/mining = 10,
 	/obj/item/extraction_pack = 10,
 	/obj/item/reagent_containers/food/drinks/beer = 15,
@@ -1044,7 +1043,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/dnainjector/hulkmut(loc)
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			if(prob(35))
-				new /obj/item/dnainjector/firemut(loc)
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			if(prob(35))
 				new /obj/item/dnainjector/gigantism(loc)

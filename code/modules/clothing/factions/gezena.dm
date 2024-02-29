@@ -13,13 +13,13 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 
 /obj/item/clothing/under/gezena/captain
-	name = "gezenan captain's navywear"
+	name = "\improper Gezenan captain's navywear"
 	desc = "A refined variation of the basic navywear, sporting sleek silver trim."
 	icon_state = "captain"
 	item_state = "bluejump"
 
 /obj/item/clothing/under/gezena/marine
-	name = "gezenan marine fatigue"
+	name = "\improper Gezenan marine fatigue"
 	desc = "Rough inside and out, these fatigues have seen their fair share."
 	icon_state = "marine"
 	item_state = "marinejump"
@@ -77,7 +77,7 @@
 
 /obj/item/clothing/suit/armor/gezena/captain
 	name = "captain's navywear coat"
-	desc = "Blood resistant, with silver trim to denote status. Lined with softer material."
+	desc = "Sleek, blood-resisting silver lines the inside and out of this coat, with a luxurious, soft internal lining."
 	icon_state = "captaincoat"
 	item_state = "captaincoat"
 
@@ -245,7 +245,7 @@
 	icon_state = "medpouches"
 	item_state = "whitecloth"
 
-//Capes
+//Cloaks
 
 /obj/item/clothing/neck/cloak/gezena
 	name = "\improper Aziulhauz"
@@ -270,7 +270,7 @@
 	item_state = "blackcloth"
 
 /obj/item/clothing/neck/cloak/gezena/captain
-	name = "captain's Azuilhauz"
+	name = "officer's Azuilhauz"
 	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a high ranking officer."
 	icon_state = "captaincape"
 	item_state = "blackcloth"

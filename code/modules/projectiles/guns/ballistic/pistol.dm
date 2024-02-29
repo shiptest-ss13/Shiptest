@@ -42,6 +42,10 @@
 	var/obj/item/suppressor/S = new(src)
 	install_suppressor(S)
 
+/obj/item/gun/ballistic/automatic/pistol/suns
+	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
+	icon_state = "pistol_suns"
+
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"
 	desc = "A classic semi-automatic handgun, widely popular throughout the Frontier. An engraving on the slide marks it as a product of Hunter's Pride. Chambered in .45."

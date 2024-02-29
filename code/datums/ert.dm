@@ -67,6 +67,7 @@
 	random_names = FALSE
 	leader_experience = FALSE
 	spawn_at_outpost = FALSE
+	ert_template = /datum/map_template/shuttle/subshuttles/ancon
 
 /datum/ert/centcom_official/New()
 	mission = "Conduct a routine review of [station_name()]'s vessels."
@@ -89,6 +90,7 @@
 	rename_team = "Horde of Interns"
 	mission = "Assist in conflict resolution."
 	polldesc = "an unpaid internship opportunity with Nanotrasen"
+	ert_template = /datum/map_template/shuttle/subshuttles/ancon
 
 /datum/ert/intern/unarmed
 	roles = list(/datum/antagonist/ert/intern/unarmed)
@@ -114,6 +116,7 @@
 	mission = "Carry out your contract."
 	rename_team = "Generic Inteq Team"
 	polldesc = "an Inteq emergency team"
+	ert_template = /datum/map_template/shuttle/subshuttles/anvil
 
 // SolGov
 
@@ -148,6 +151,7 @@
 	rename_team = "Generic Minutemen Team"
 	polldesc = "a Minutemen emergency team"
 	random_names = TRUE
+	ert_template = /datum/map_template/shuttle/subshuttles/crux
 
 
 /datum/ert/minutemen/bard
@@ -209,6 +213,7 @@
 	mission = "Assist CyberSun clients."
 	rename_team = "Cybersun Medical Intervention Team"
 	polldesc = "a Cybersun paramedic team"
+	ert_template = /datum/map_template/shuttle/subshuttles/runner
 
 /datum/ert/syndicate/inspector
 	teamsize = 1
@@ -246,7 +251,6 @@
 	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
 	rename_team = "Assault Frontiersmen Team"
 	polldesc = "a well armed squad of pirates"
-	ert_template = /datum/map_template/shuttle/subshuttles/frontiersmen_gut
 
 /datum/ert/independent
 	teamsize = 3
