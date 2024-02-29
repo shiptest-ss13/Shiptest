@@ -59,7 +59,7 @@
 		return FALSE
 	if(!visibility_checks(user, guest, silent))
 		return FALSE
-	var/given_name = input(user, "What name do you want to give to [guest]?", "Guestbook Name", "")
+	var/given_name = input(user, "What name do you want to give to [guest]?", "Guestbook Name", guest.get_visible_name())
 	if(!given_name)
 		if(!silent)
 			to_chat(user, span_warning("Nevermind."))
@@ -126,7 +126,7 @@
 	return TRUE
 
 /datum/guestbook/proc/get_known_name(mob/user, mob/living/carbon/guest, real_name)
-	if(user == guest)
+	if(user == guest || isAdminObserver(user))
 		return real_name
 	return LAZYACCESS(known_names, real_name)
 
