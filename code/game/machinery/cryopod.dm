@@ -432,23 +432,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 /obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	//it always sucks a little to get up
 	sleepyhead.set_nutrition(200)
-	sleepyhead.SetSleeping(60) //if you read this comment and feel like shitting together something to adjust elzu and IPC charge on wakeup, be my guest.
-	//but it can be worse.
-	if(prob(90))
+	sleepyhead.SetSleeping(60)
+
+	var/wakeupmessage = "The cryopod shudders as the pneumatic seals separating you and the waking world let out a hiss."
+	if(prob(60))
+		wakeupmessage += "A sickly feeling along with the pangs of hunger greet you upon your awakening."
+		sleepyhead.set_nutrition(100)
 		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
-	if(prob(75))
-		sleepyhead.blur_eyes(rand(3, 6))
-	//so much worse
-	if(prob(66))
-		sleepyhead.adjust_disgust(rand(25,35))
-	if(prob(33))
-		sleepyhead.adjust_disgust(rand(20,30))
-	if(prob(16))
-		sleepyhead.adjust_disgust(rand(10, 17))
-	//maybe you should've bought high passage.
-	if(prob(30))
-		sleepyhead.apply_damage_type(15, BURN)
-	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of cryosleep set in as you awaken...")
+	to_chat(sleepyhead, span_danger(examine_block(wakeupmessage)))
 
 /obj/machinery/cryopod/syndicate
 	icon_state = "sleeper_s-open"
@@ -462,16 +453,14 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 /obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
 	sleepyhead.set_nutrition(200)
 	sleepyhead.SetSleeping(80)
-	if(prob(90))
+	if(prob(90)) //suffer
 		sleepyhead.apply_effect(rand(5,15), EFFECT_DROWSY)
 	if(prob(75))
 		sleepyhead.blur_eyes(rand(6, 10))
 	if(prob(66))
-		sleepyhead.adjust_disgust(rand(35, 45)) //rand
+		sleepyhead.adjust_disgust(rand(35, 45))
 	if(prob(40))
 		sleepyhead.adjust_disgust(rand(15, 25))
 	if(prob(20))
 		sleepyhead.adjust_disgust(rand(5,15))
-	if(prob(30))
-		sleepyhead.apply_damage_type(30, BURN)
 	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of a horrid cryosleep set in as you awaken...")
