@@ -159,6 +159,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_ai_core_display = "Blue"
 	var/prefered_security_department = SEC_DEPT_RANDOM
 	var/generic_adjective = "Unremarkable"
+	var/voice_adjective = "Plain"
 	//Quirk list
 	var/list/all_quirks = list()
 
@@ -2076,7 +2077,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						phobia = phobiaType
 
 				if("generic_adjective")
-					var/selectAdj = input(user, "In one word, how would you describe your character?", "Character Preference", generic_adjective) as null|anything in GLOB.preference_adjectives
+					var/selectAdj
+					if(istype(pref_species, /datum/species/ipc))
+						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.ipc_preference_adjectives
+					else
+						selectAdj = input(user, "In one word, how would you describe your character's appereance?", "Character Preference", generic_adjective) as null|anything in GLOB.preference_adjectives
 					if(selectAdj)
 						generic_adjective = selectAdj
 
