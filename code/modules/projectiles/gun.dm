@@ -777,13 +777,13 @@
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
 	//Sort of reimplements old suicide behavior just for guns.
-	var/obj/item/organ/brain/shotbrain = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(chambered?.BB)
-		var/turf/splat_turf = get_turf(target)
-		var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
 		chambered.BB.damage *= 4
 		process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
 		if(shotbrain && chambered.BB.damage > 0)
+			var/obj/item/organ/brain/shotbrain = target.getorganslot(ORGAN_SLOT_BRAIN)
+			var/turf/splat_turf = get_turf(target)
+			var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
 			var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, shotbrain, 1, FALSE, target)
 			shotbrain.Remove(target)
 			shotbrain.forceMove(splat_turf)
