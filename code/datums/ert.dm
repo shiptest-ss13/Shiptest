@@ -149,7 +149,7 @@
 	/// commander slot fills up first, then MM slot, corpsman, than another MM. this is to avoid the situation other erts have where its often jsut a commander, a medic, and a engi with no 'grunt' roles. I suppose this could be a marksman role? but eh, you can just give the guys different guns if needed
 	roles = list(/datum/antagonist/ert/minutemen,/datum/antagonist/ert/minutemen/corpsman,/datum/antagonist/ert/minutemen,/datum/antagonist/ert/minutemen/engi,/datum/antagonist/ert/minutemen/gunner)
 	mission = "Keep the peace in sector affairs"
-	rename_team = "Generic CLIP Minutemen Team"
+	rename_team = "CLIP Minutemen Squadron"
 	polldesc = "a CLIP Minutemen squadron"
 	ert_template = /datum/map_template/shuttle/subshuttles/crux
 
@@ -161,7 +161,6 @@
 	/// commander slot fills up first, then MM slot, corpsman, than another MM. this is to avoid the situation other erts have where its often jsut a commander, a medic, and a engi with no 'grunt' roles. I suppose this could be a marksman role? but eh, you can just give the guys different guns if needed
 	roles = list(/datum/antagonist/ert/minutemen)
 	mission = "Resolve the conflict at hand"
-	rename_team = "Quick and Simple CLIP Minutemen Team"
 	polldesc = "a CLIP Minutemen emergency team"
 	random_names = TRUE
 
@@ -169,14 +168,14 @@
 /datum/ert/minutemen/bard
 	leader_role = /datum/antagonist/ert/minutemen/bard/leader
 	roles = list(/datum/antagonist/ert/minutemen/bard)
-	rename_team = "CLIP Minutemen BARD Team"
+	rename_team = "CLIP Minutemen BARD Squadron"
 	polldesc = "a CLIP Minutemen biohazard removal team"
 
 /datum/ert/minutemen/riot
 	teamsize = 6
 	leader_role = /datum/antagonist/ert/minutemen/riot/leader
 	roles = list(/datum/antagonist/ert/minutemen/riot)
-	rename_team = "CLIP Minutemen Riot Control Team"
+	rename_team = "CLIP Minutemen Riot Control Squadron"
 	polldesc = "a CLIP Minutemen riot control team"
 
 /datum/ert/minutemen/eva
