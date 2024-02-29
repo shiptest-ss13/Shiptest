@@ -780,8 +780,8 @@
 	if(chambered?.BB)
 		chambered.BB.damage *= 4
 		process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
+		var/obj/item/organ/brain/shotbrain = target.getorganslot(ORGAN_SLOT_BRAIN)
 		if(shotbrain && chambered.BB.damage > 0)
-			var/obj/item/organ/brain/shotbrain = target.getorganslot(ORGAN_SLOT_BRAIN)
 			var/turf/splat_turf = get_turf(target)
 			var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
 			var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, shotbrain, 1, FALSE, target)
