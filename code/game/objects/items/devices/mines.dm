@@ -53,7 +53,8 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 	wires = new /datum/wires/mine(src)
-	alpha = stealthpwr
+	if(armed)
+		alpha = stealthpwr
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
