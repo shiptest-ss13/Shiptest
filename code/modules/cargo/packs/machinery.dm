@@ -154,6 +154,15 @@
 	crate_name = "shield generators crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
+/datum/supply_pack/machinery/holofield_generator
+	name = "Holofield Generator Crate"
+	desc = "Contains the electronics you need to set up a new (or replacement) holofield! Buttons not included."
+	cost = 1000
+	contains = list(/obj/item/circuitboard/machine/shieldwallgen/atmos,
+					/obj/item/circuitboard/machine/shieldwallgen/atmos)
+	crate_name = "holofield generator crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
 /datum/supply_pack/machinery/blackmarket_telepad
 	name = "Black Market LTSRBT"
 	desc = "Need a faster and better way of transporting your illegal goods from and to the sector? Fear not, the Long-To-Short-Range-Bluespace-Transceiver (LTSRBT for short) is here to help. Contains a LTSRBT circuit, two bluespace crystals, and one ansible."
@@ -177,6 +186,24 @@
 		/obj/item/shuttle_creator
 	)
 	crate_name = "Shuttle in a Box"
+
+/datum/supply_pack/machinery/ion_thruster
+	name = "Ion Thruster Crate"
+	desc = "A crate containing an ion thruster and its precharger's electronics. For when you need a little extra thrust."
+	cost = 1500
+	contains = list(/obj/item/circuitboard/machine/shuttle/smes,
+					/obj/item/circuitboard/machine/shuttle/engine/electric)
+	crate_name = "ion thruster crate"
+	crate_type = /obj/structure/closet/crate/engineering
+
+/datum/supply_pack/machinery/plasma_thruster
+	name = "Plasma Thruster Crate"
+	desc = "A crate containing a plasma thruster and its heater's electronics. For when you need a lot of extra thrust."
+	cost = 1500
+	contains = list(/obj/item/circuitboard/machine/shuttle/heater,
+					/obj/item/circuitboard/machine/shuttle/engine/plasma)
+	crate_name = "plasma thruster crate"
+	crate_type = /obj/structure/closet/crate/engineering
 
 /datum/supply_pack/machinery/drill_crate
 	name = "Heavy duty laser mining drill"
@@ -242,6 +269,16 @@
 					/obj/item/circuitboard/machine/circulator,
 					/obj/item/circuitboard/machine/circulator)
 	crate_name = "thermoelectric generator crate"
+	crate_type = /obj/structure/closet/crate/engineering/electrical
+
+/datum/supply_pack/machinery/turbine
+	name = "Turbine Crate"
+	desc = "Contains the electronics needed for a turbine generator! Plasma gas not included."
+	cost = 4000
+	contains = list(/obj/item/circuitboard/machine/power_turbine,
+					/obj/item/circuitboard/machine/power_compressor,
+					/obj/item/circuitboard/computer/turbine_computer)
+	crate_name = "turbine crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
 /datum/supply_pack/machinery/collector
