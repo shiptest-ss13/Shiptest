@@ -335,31 +335,9 @@
 	crate_name = "grounding rod crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
-/datum/supply_pack/machinery/PA
-	name = "Particle Accelerator Crate"
-	desc = "A supermassive black hole or hyper-powered teslaball are the perfect way to spice up any party! This \"My First Apocalypse\" kit contains everything you need to build your own particle accelerator! Ages 10 and up."
-	cost = 3000
-	contains = list(/obj/structure/particle_accelerator/fuel_chamber,
-					/obj/machinery/particle_accelerator/control_box,
-					/obj/structure/particle_accelerator/particle_emitter/center,
-					/obj/structure/particle_accelerator/particle_emitter/left,
-					/obj/structure/particle_accelerator/particle_emitter/right,
-					/obj/structure/particle_accelerator/power_box,
-					/obj/structure/particle_accelerator/end_cap)
-	crate_name = "particle accelerator crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
-
 /*
 		Engine cores
 */
-
-/datum/supply_pack/machinery/sing_gen
-	name = "Singularity Generator Crate"
-	desc = "The key to unlocking the power of Lord Singuloth. Particle accelerator not included."
-	cost = 5000
-	contains = list(/obj/machinery/the_singularitygen)
-	crate_name = "singularity generator crate"
-	crate_type = /obj/structure/closet/crate/secure/engineering
 
 /datum/supply_pack/machinery/supermatter_shard
 	name = "Supermatter Shard Crate"
@@ -367,13 +345,5 @@
 	cost = 10000
 	contains = list(/obj/machinery/power/supermatter_crystal/shard)
 	crate_name = "supermatter shard crate"
-	crate_type = /obj/structure/closet/crate/secure/engineering
-
-/datum/supply_pack/machinery/tesla_gen
-	name = "Tesla Generator Crate"
-	desc = "The stabilized heart of a tesla engine. Particle accelerator not included."
-	cost = 6000
-	contains = list(/obj/machinery/the_singularitygen/tesla)
-	crate_name = "tesla generator crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 
