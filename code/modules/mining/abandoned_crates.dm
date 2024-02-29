@@ -222,7 +222,7 @@
 		if(96)
 			new /obj/item/banhammer(src)
 			for(var/i in 1 to 3)
-				new /obj/item/mine/sound(src)
+				new /obj/item/mine/pressure/sound(src)
 		if(97)
 			for(var/i in 1 to 4)
 				new /obj/item/clothing/mask/balaclava(src)

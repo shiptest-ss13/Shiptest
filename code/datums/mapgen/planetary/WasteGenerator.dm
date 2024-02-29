@@ -125,7 +125,7 @@
 
 
 		//the illusive shrapnel plant
-		/obj/item/mine/explosive/shrapnel/live = 30,
+		/obj/item/mine/pressure/explosive/shrapnel/live = 30,
 		/obj/effect/spawner/lootdrop/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -204,7 +204,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/four = 20,
 		/obj/structure/flora/ash/garden/waste = 300,
 		/obj/structure/flora/ash/glowshroom = 1800,
-		/obj/item/mine/explosive/shrapnel/live = 30,
+		/obj/item/mine/pressure/explosive/shrapnel/live = 30,
 		/obj/effect/spawner/lootdrop/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -251,7 +251,7 @@
 		/obj/effect/spawner/lootdrop/waste/atmos_can = 180,
 		/obj/effect/spawner/lootdrop/waste/atmos_can/rare = 1,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 300,
-		/obj/item/mine/explosive/rad/live = 30,
+		/obj/item/mine/pressure/explosive/rad/live = 30,
 		/obj/effect/spawner/lootdrop/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -315,7 +315,7 @@
 		/obj/effect/spawner/lootdrop/waste/salvageable = 400,
 		/obj/structure/flora/ash/garden/waste = 70,
 		/obj/structure/flora/ash/glowshroom = 400, //more common in caves
-		/obj/item/mine/explosive/rad/live = 10,
+		/obj/item/mine/pressure/explosive/rad/live = 10,
 		/obj/effect/spawner/lootdrop/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -372,7 +372,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/three = 100,
 		/obj/effect/spawner/lootdrop/maintenance/four = 200,
 		/obj/structure/flora/ash/glowshroom = 1800,
-		/obj/item/mine/explosive/rad/live = 30,
+		/obj/item/mine/pressure/explosive/rad/live = 30,
 		/obj/effect/spawner/lootdrop/mine = 8,
 		/obj/effect/spawner/minefield = 2
 	)
@@ -409,7 +409,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/three = 20,
 		/obj/effect/spawner/lootdrop/maintenance/four = 40,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 80,
-		/obj/item/mine/spawner/manhack = 40,
+		/obj/item/mine/proximity/spawner/manhack = 40,
 		/obj/effect/spawner/lootdrop/mine = 8,
 		/obj/effect/spawner/minefield/manhack = 2
 	)
@@ -443,7 +443,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/four = 20,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 40,
 		/obj/structure/foamedmetal = 100,
-		/obj/item/mine/spawner/manhack = 20
+		/obj/item/mine/proximity/spawner/manhack = 20
 	)
 	mob_spawn_list = list( //Whoops! All hivebots!
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,

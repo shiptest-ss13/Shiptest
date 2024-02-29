@@ -39,7 +39,7 @@
 		/obj/structure/salvageable/circuit_imprinter = 8,
 		/obj/structure/salvageable/destructive_analyzer = 8,
 		/obj/structure/salvageable/server = 8,
-		/obj/item/mine/explosive/rusty = 30,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
 		/obj/effect/spawner/lootdrop/mine = 8
 	)
 	feature_spawn_list = list(

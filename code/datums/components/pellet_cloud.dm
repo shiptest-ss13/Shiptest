@@ -114,7 +114,7 @@
 //create_blast_pellets() is for when we have a central point we want to shred the surroundings of with a ring of shrapnel, namely frag grenades and landmines.
 
 //Note that grenades have extra handling for someone throwing themselves/being thrown on top of it, see [/datum/component/pellet_cloud/proc/handle_martyrs]
-//Landmines just have a small check for [/obj/item/mine/explosive/shrapnel/var/shred_triggerer], and spawn extra shrapnel for them if so
+//Landmines just have a small check for [/obj/item/mine/pressure/explosive/shrapnel/var/shred_triggerer], and spawn extra shrapnel for them if so
 
 //Arguments:
 ////O- Our parent, the thing making the shrapnel obviously (grenade or landmine)
@@ -126,7 +126,7 @@
 	if(isgrenade(parent)) // handle_martyrs can reduce the radius and thus the number of pellets we produce if someone dives on top of a frag grenade
 		handle_martyrs(punishable_triggerer) // note that we can modify radius in this proc
 	else if(islandmine(parent))
-		var/obj/item/mine/explosive/triggered_mine = parent
+		var/obj/item/mine/pressure/explosive/triggered_mine = parent
 		if(triggered_mine.shred_triggerer && istype(punishable_triggerer)) // free shrapnel for the idiot who stepped on it if we're a mine that shreds the triggerer
 			pellet_delta += radius // so they don't count against the later total
 			if(punishable_triggerer.loc == triggered_mine.loc)//only trigger this if they're actually on the tile

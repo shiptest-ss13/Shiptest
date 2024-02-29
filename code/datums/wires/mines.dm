@@ -1,5 +1,5 @@
 /datum/wires/mine
-	holder_type = /obj/item/mine
+	holder_type = /obj/item/mine/pressure
 	randomize = TRUE
 
 /datum/wires/mine/New(atom/holder)
@@ -9,13 +9,13 @@
 	..()
 
 /datum/wires/mine/interactable(mob/user)
-	var/obj/item/mine/ourmine = holder
+	var/obj/item/mine/pressure/ourmine = holder
 	if(ourmine.open_panel)
 		return TRUE
 
 //are you feelin lucky, punk?
 /datum/wires/mine/on_pulse(wire)
-	var/obj/item/mine/ourmine = holder
+	var/obj/item/mine/pressure/ourmine = holder
 	switch(wire)
 		if(WIRE_BOOM)//oopsies
 			holder.visible_message(span_userdanger("[icon2html(ourmine, viewers(holder))] \The [ourmine] makes a shrill noise! It's go-"))
@@ -42,7 +42,7 @@
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s securing bolt shifts. Nothing happens."))
 
 /datum/wires/mine/on_cut(wire, mend)
-	var/obj/item/mine/ourmine = holder
+	var/obj/item/mine/pressure/ourmine = holder
 	switch(wire)
 		if(WIRE_BOOM)
 			if(!mend)
