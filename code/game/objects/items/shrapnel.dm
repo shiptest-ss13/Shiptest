@@ -91,8 +91,8 @@
 
 /obj/projectile/bullet/pellet/stingball
 	name = "ballistic gel clump"
-	damage = 1
-	stamina = 12
+	damage = 5
+	stamina = 15
 	ricochets_max = 6
 	ricochet_chance = 66
 	ricochet_decay_chance = 1

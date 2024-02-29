@@ -537,7 +537,7 @@
 #define COMSIG_TOOL_IN_USE "tool_in_use" ///from base of [/obj/item/proc/tool_check_callback]: (mob/living/user)
 #define COMSIG_TOOL_START_USE "tool_start_use" ///from base of [/obj/item/proc/tool_start_check]: (mob/living/user)
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
-#define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/item/mine/proc/triggermine]:
+#define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/item/mine/proc/trigger_mine]:
 ///from [/obj/structure/closet/supplypod/proc/endlaunch]:
 #define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
 

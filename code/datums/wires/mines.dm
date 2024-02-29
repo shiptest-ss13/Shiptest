@@ -4,7 +4,7 @@
 
 /datum/wires/mine/New(atom/holder)
 	wires = list(
-		WIRE_BOOM, WIRE_BOOM, WIRE_FUSE, WIRE_PIN, WIRE_RESET
+		WIRE_BOOM, WIRE_BOOM, WIRE_PIN, WIRE_RESET
 	)
 	..()
 
@@ -19,12 +19,7 @@
 	switch(wire)
 		if(WIRE_BOOM)//oopsies
 			holder.visible_message(span_userdanger("[icon2html(ourmine, viewers(holder))] \The [ourmine] makes a shrill noise! It's go-"))
-			ourmine.triggermine()
-		//scrambles det time, up to 10 seconds, down to 10 miliseconds(basically instant)
-		if(WIRE_FUSE)
-			holder.visible_message(span_danger("[icon2html(ourmine, viewers(holder))] \The [ourmine] buzzes ominously."))
-			playsound(ourmine, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
-			ourmine.blast_delay = rand(1,100)
+			ourmine.trigger_mine()
 		//Resets the detonation pin, allowing someone to step off the mine. Minor success.
 		if(WIRE_PIN)
 			if(ourmine.clicked == TRUE)
@@ -52,17 +47,7 @@
 		if(WIRE_BOOM)
 			if(!mend)
 				holder.visible_message(span_userdanger("[icon2html(ourmine, viewers(holder))] \The [ourmine] makes a shrill noise! It's go-"))
-				ourmine.triggermine()
-		//sets det time to 3 seconds, reset back to previous time on mend.
-		if(WIRE_FUSE)
-			var/olddelay //define the olddelay here so it exists
-			if(!mend)
-				holder.visible_message(span_danger("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s timer goes dark."))
-				olddelay = ourmine.blast_delay//store old delay
-				ourmine.blast_delay = 3 SECONDS
-			else
-				holder.visible_message(span_danger("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s timer flickers back on."))
-				ourmine.blast_delay = olddelay//reset to old delay
+				ourmine.trigger_mine()
 		//Disables the detonation pin. Nothing will happen when the mine is triggered.
 		//Mine can still be exploded by cutting wires & damage.
 		if(WIRE_PIN)

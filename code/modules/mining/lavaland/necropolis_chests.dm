@@ -1520,7 +1520,7 @@
 /obj/item/mayhem/attack_self(mob/user)
 	for(var/mob/living/carbon/human/H in range(7,user))
 		var/obj/item/mine/pickup/bloodbath/B = new(H)
-		INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/item/mine/pickup/bloodbath, mineEffect), H)
+		INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/item/mine/pickup/bloodbath, mine_effect), H)
 	to_chat(user, "<span class='notice'>You shatter the bottle!</span>")
 	playsound(user.loc, 'sound/effects/glassbr1.ogg', 100, TRUE)
 	message_admins("<span class='adminnotice'>[ADMIN_LOOKUPFLW(user)] has activated a bottle of mayhem!</span>")

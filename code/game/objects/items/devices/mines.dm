@@ -22,7 +22,7 @@
 	/// Sets a delay for mines going live after being planted
 	var/arm_delay = 5 SECONDS
 	/// Use to set a delay after activation to trigger the explosion.
-	var/blast_delay = 5 DECISECONDS
+	var/blast_delay = 2 DECISECONDS
 
 	/// When true, mines trigger instantly on being stepped upon
 	var/hair_trigger = FALSE
@@ -97,7 +97,7 @@
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
 
 //insert your horrible fate here
-/obj/item/mine/proc/mineEffect(mob/victim)
+/obj/item/mine/proc/mine_effect(mob/victim)
 	return
 
 //step 1: the mistake
@@ -118,7 +118,7 @@
 	if(ismob(arrived))
 		var/mob/living/fool = arrived
 		fool.do_alert_animation(fool)
-		if(dud == FALSE)
+		if(dud == FALSE || blast_delay <= 5 DECISECONDS)
 			fool.add_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
 		if(!hair_trigger)
 			fool.Immobilize(15 DECISECONDS, TRUE)
@@ -127,7 +127,7 @@
 	if(dud == FALSE)//see wirecutting
 		clicked = TRUE
 		if(hair_trigger)
-			triggermine(arrived)
+			trigger_mine(arrived)
 	alpha = 255
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
@@ -143,11 +143,11 @@
 	// Check that the guy who's on it is stepping off
 	if(foot_on_mine && !IS_WEAKREF_OF(gone, foot_on_mine))
 		return
-	INVOKE_ASYNC(src, PROC_REF(triggermine), gone)
+	INVOKE_ASYNC(src, PROC_REF(trigger_mine), gone)
 	foot_on_mine = null
 
 /// When something sets off a mine
-/obj/item/mine/proc/triggermine(atom/movable/triggerer)
+/obj/item/mine/proc/trigger_mine(atom/movable/triggerer)
 	if(obj_integrity <= 0)
 		return
 	if(triggered) //too busy detonating to detonate again
@@ -173,9 +173,9 @@
 	sporks.set_up(3, 1, src)
 	sporks.start()
 	if(ismob(triggerer))
-		mineEffect(triggerer)
+		mine_effect(triggerer)
 	else
-		mineEffect()
+		mine_effect()
 	visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] detonates!"))
 	SEND_SIGNAL(src, COMSIG_MINE_TRIGGERED, triggerer)
 	if(ismob(triggerer))
@@ -199,7 +199,7 @@
 //using an unarmed mine inhand deploys it.
 /obj/item/mine/attack_self(mob/user)
 	if(!armed)
-		user.visible_message("<span class='danger'>[user] deploys the [src].</span>", "<span class='notice'>You deploy the [src].</span>")
+		user.visible_message(span_danger("[user] deploys the [src]."), span_notice("You deploy the [src]."))
 
 		user.dropItemToGround(src)
 		anchored = TRUE
@@ -219,7 +219,7 @@
 	. = ..()
 	if(prob(35) & obj_integrity > 0)
 		blast_delay = blast_delay * 3
-		triggermine()
+		trigger_mine()
 
 /obj/item/mine/Destroy()//just in case
 	if(foot_on_mine?.resolve())
@@ -237,7 +237,7 @@
 				disarm()
 			else
 				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hand!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
-				triggermine(user)
+				trigger_mine(user)
 				return
 		else
 			user.visible_message(span_notice("[user] withdraws their hand from \the [src]."), span_notice("You decide against picking up \the [src]."))
@@ -263,7 +263,7 @@
 			user.visible_message(user, span_notice("[user] gently pokes \the [src] with [I]. Nothing seems to happen."), span_notice("You gently prod \the [src] with [I]. Thankfully, nothing happens."))
 		else//at this point it's just natural selection
 			user.visible_message(span_danger("[user] hits \the [src] with [I], activating it!"), span_userdanger("[icon2html(src, viewers(src))]You hit \the [src] with [I]. The light goes red."))
-			triggermine(user)
+			trigger_mine(user)
 
 //
 //LANDMINE TYPES
@@ -293,7 +293,7 @@
 	stealthpwr = 100
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
-/obj/item/mine/explosive/mineEffect(mob/victim)
+/obj/item/mine/explosive/mine_effect(mob/victim)
 	explosion(loc, range_devastation, range_heavy, range_light, range_flash, 1, 0, range_flame, 0, 1)
 	if(shrapnel_magnitude > 0)
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
@@ -317,7 +317,7 @@
 	shrapnel_type = /obj/projectile/bullet/shrapnel/hot
 	shrapnel_magnitude = 4
 
-/obj/item/mine/explosive/fire/mineEffect(mob/victim)
+/obj/item/mine/explosive/fire/mine_effect(mob/victim)
 	for(var/turf/T in view(4,src))
 		T.IgniteTurf(15)
 		new /obj/effect/hotspot(T)
@@ -359,7 +359,7 @@
 	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
 
 	range_heavy = 0
-	range_light = 0
+	range_light = 1
 	range_flash = 3
 	range_flame = 0
 
@@ -378,7 +378,7 @@
 	shrapnel_type = /obj/projectile/bullet/shrapnel/spicy
 	var/radpower = 750
 
-/obj/item/mine/explosive/rad/mineEffect(mob/victim)
+/obj/item/mine/explosive/rad/mine_effect(mob/victim)
 	radiation_pulse(src, radpower, 1)
 	. = ..()
 
@@ -393,7 +393,7 @@
 	shrapnel_type = /obj/projectile/energy/plasmabolt
 	manufacturer = MANUFACTURER_PGF
 
-/obj/item/mine/explosive/plasma/mineEffect(mob/victim)
+/obj/item/mine/explosive/plasma/mine_effect(mob/victim)
 	for(var/turf/T in view(3,src))
 		T.IgniteTurf(25, "green")
 	. = ..()
@@ -404,7 +404,7 @@
 	var/spawn_type = null //manhacks go here :)
 	var/spawn_number = 6
 
-/obj/item/mine/spawner/mineEffect(mob/victim)
+/obj/item/mine/spawner/mine_effect(mob/victim)
 	if(isturf(loc))
 		var/turf/T = get_turf(src)
 		playsound(T, 'sound/effects/phasein.ogg', 100, TRUE)
@@ -422,59 +422,25 @@
 	name = "\improper G-MTH Defusal Trainer"
 	desc = "A mothballed anti-personnel explosive, equipped with VISCERAL DEFUSAL ACTION for training purposes. Though Scarborough was forced to mothball their stockpiles of mines as part of the ceasefire, the deployed minefields remain."
 
-/obj/item/mine/training/mineEffect(mob/living/victim)
+/obj/item/mine/training/mine_effect(mob/living/victim)
 	src.say("BOOM! Better luck next time!")
 	src.visible_message(span_notice("The mine resets itself for another disarming attempt."))
 	new /obj/item/mine/training (loc)
 
-//
-//UNUSED MINES//
-//mainly remain to demonstrate possible mine effects.
-//
-
-/obj/item/mine/stun
-	name = "stun mine"
-	var/stun_time = 80
-	hair_trigger = TRUE
-	anchored = TRUE
-	armed = TRUE
-
-/obj/item/mine/stun/mineEffect(mob/living/victim)
-	if(isliving(victim) && Adjacent(victim))
-		victim.Paralyze(stun_time)
-
 /obj/item/mine/gas
-	name = "oxygen mine"
-	var/gas_amount = 360
-	var/gas_type = "o2"
-	hair_trigger = TRUE
-	anchored = TRUE
-	armed = TRUE
-
-/obj/item/mine/gas/mineEffect(mob/victim)
-	atmos_spawn_air("[gas_type]=[gas_amount]")
-
-
-/obj/item/mine/gas/plasma
-	name = "plasma mine"
-	gas_type = "plasma"
-
-
-/obj/item/mine/gas/n2o
-	name = "\improper N2O mine"
-	gas_type = "n2o"
-
-
-/obj/item/mine/gas/water_vapor
 	name = "chilled vapor mine"
-	gas_amount = 500
-	gas_type = "water_vapor"
+	desc = "A non-lethal security deterrent."
+	var/gas_amount = 500
+	var/gas_type = "water_vapor"
+	hair_trigger = TRUE
+
+/obj/item/mine/gas/mine_effect(mob/victim)
+	atmos_spawn_air("[gas_type]=[gas_amount]")
 
 
 //
 //GIMMICK MINES//
 //pretty much exclusively for adminbus
-//use these at your own risk, I haven't tested them
 //
 
 /obj/item/mine/kickmine
@@ -483,26 +449,20 @@
 	blast_delay = 0//funnier this way
 	hair_trigger = TRUE
 
-/obj/item/mine/kickmine/mineEffect(mob/victim)
+/obj/item/mine/kickmine/mine_effect(mob/victim)
 	if(isliving(victim) && victim.client && Adjacent(victim))
-		to_chat(victim, "<span class='userdanger'>You have been kicked FOR NO REISIN!</span>")
+		to_chat(victim, span_userdanger("You have been kicked from the game. Take this time to think about what you've done."))
 		qdel(victim.client)
 
 /obj/item/mine/sound
-	name = "honkblaster 1000"
-	var/sound = 'sound/items/bikehorn.ogg'
-	anchored = TRUE
-	armed = TRUE
+	name = "sonic mine"
+	desc = "A potent tool of psychological warfare."
+	var/sound = 'sound/effects/adminhelp.ogg'
 	blast_delay = null
 	hair_trigger = TRUE
 
-/obj/item/mine/sound/mineEffect(mob/victim)
+/obj/item/mine/sound/mine_effect(mob/victim)
 	playsound(loc, sound, 100, TRUE)
-
-
-/obj/item/mine/sound/bwoink
-	name = "bwoink mine"
-	sound = 'sound/effects/adminhelp.ogg'
 
 /obj/item/mine/pickup
 	name = "pickup mine"
@@ -522,12 +482,12 @@
 	. = ..()
 	animate(src, time = 20, loop = -1)
 
-/obj/item/mine/pickup/triggermine(mob/victim)
+/obj/item/mine/pickup/trigger_mine(mob/victim)
 	if(triggered)
 		return
 	triggered = TRUE
 	invisibility = INVISIBILITY_ABSTRACT
-	mineEffect(victim)
+	mine_effect(victim)
 	qdel(src)
 
 
@@ -539,7 +499,7 @@
 	var/mob/living/doomslayer
 	var/obj/item/chainsaw/doomslayer/chainsaw
 
-/obj/item/mine/pickup/bloodbath/mineEffect(mob/living/carbon/victim)
+/obj/item/mine/pickup/bloodbath/mine_effect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
 	to_chat(victim, "<span class='reallybig redtext'>RIP AND TEAR</span>")
@@ -576,7 +536,7 @@
 	name = "healing orb"
 	desc = "Your wounds shall be undone."
 
-/obj/item/mine/pickup/healing/mineEffect(mob/living/carbon/victim)
+/obj/item/mine/pickup/healing/mine_effect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
 	to_chat(victim, "<span class='notice'>You feel great!</span>")
@@ -587,7 +547,7 @@
 	desc = "Quickens you."
 	duration = 300
 
-/obj/item/mine/pickup/speed/mineEffect(mob/living/carbon/victim)
+/obj/item/mine/pickup/speed/mine_effect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
 	to_chat(victim, "<span class='notice'>You feel fast!</span>")
@@ -597,6 +557,8 @@
 /obj/item/mine/pickup/speed/proc/finish_effect(mob/living/carbon/victim)
 	victim.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	to_chat(victim, "<span class='notice'>You slow down.</span>")
+
+
 
 //
 //mapping tool that generates "live" variants of all mine subtypes, which are anchored and ready to blow.
@@ -618,9 +580,9 @@ LIVE_MINE_HELPER(explosive/heavy)
 LIVE_MINE_HELPER(explosive/shrapnel)
 LIVE_MINE_HELPER(explosive/shrapnel/sting)
 LIVE_MINE_HELPER(spawner/manhack)
-LIVE_MINE_HELPER(gas/water_vapor)
+LIVE_MINE_HELPER(gas)
 LIVE_MINE_HELPER(kickmine)
-LIVE_MINE_HELPER(stun)
+LIVE_MINE_HELPER(sound)
 
 //
 // spawners (random mines, minefields, non-guaranteed mine)
