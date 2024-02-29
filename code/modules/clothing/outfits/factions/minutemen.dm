@@ -547,7 +547,7 @@
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
 	name = "CLIP Minutemen - Minuteman (Armed - CM-16)"
@@ -581,7 +581,7 @@
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med
@@ -595,7 +595,7 @@
 
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1, /obj/item/defibrillator/compact/loaded=1, /obj/item/storage/firstaid/medical=1, /obj/item/ammo_box/magazine/smgm9mm=3)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/defibrillator/compact/loaded=1, /obj/item/storage/firstaid/medical=1, /obj/item/ammo_box/magazine/smgm9mm=3)
 
 /obj/item/storage/belt/military/clip/gunner/PopulateContents()
 	for(var/i in 1 to 5)
@@ -609,7 +609,7 @@
 	belt = /obj/item/storage/belt/military/clip/gunner
 	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1)
 
 ///lead, i guess you could reuse this for "Brig Officer"
 
@@ -637,7 +637,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/clip/p16
 	//replace commander with the cm23 when its impemented, see the cm-f4 above
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
 
 /datum/outfit/job/clip/minutemen/grunt/commander
 	name = "CLIP Minutemen - Field Commander"
