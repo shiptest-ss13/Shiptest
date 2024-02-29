@@ -33,7 +33,7 @@
 		return
 
 	if(attached)
-		usr.visible_message("<span class='warning'>[usr] detaches [src] from [target].</span>", "<span class='notice'>You detach [src] from [target].</span>")
+		usr.visible_message(span_warning("[usr] detaches [src] from [target]."), span_notice("You detach [src] from [target]."))
 		clear_status()
 		attached = null
 		return
@@ -57,7 +57,7 @@
 		use_power = IDLE_POWER_USE
 		return
 
-	if(machine_stat && (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		clear_status()
 		return
 
@@ -82,5 +82,4 @@
 /obj/machinery/medical/proc/clear_status()
 	update_overlays()
 	qdel(attached_beam)
-	use_power = IDLE_POWER_USE
 	return
