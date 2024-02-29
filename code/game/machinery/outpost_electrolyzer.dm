@@ -55,12 +55,14 @@
 	new /obj/item/merit/bundle(drop_location(), meritval)
 	playsound(src, 'sound/items/poster_being_created.ogg', 20, FALSE)
 
-/obj/machinery/computer/electrolyzer_console/attack_hand(mob/user)
-	. = ..()
-	if(.)
+/obj/machinery/computer/electrolyzer_console/attackby(item,mob/user)
+	if(istype(item, /obj/item/multitool))
+		var/obj/item/multitool/multi = item
+		if(istype(multi.buffer, /obj/machinery/mineral/electrolyzer))
+			linked_electrolyzer = multi.buffer
+			visible_message("Linked to [linked_electrolyzer]!")
 		return
-	find_electrolyzer()
-	to_chat(user, "<span class='notice'>You attempt to connect to an electrolyzer.</span>")
+	return ..()
 
 /obj/machinery/mineral/electrolyzer
 	name = "ice crusher"
@@ -85,6 +87,14 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
+/obj/machinery/computer/electrolyzer_console/attackby(item,mob/user)
+	if(istype(item, /obj/item/multitool))
+		var/obj/item/multitool/multi = item
+		multi.buffer = src
+		to_chat(user, "<span class='notice'>[src] stored in [multi].</span>")
+		return
+	return ..()
+
 /obj/machinery/mineral/electrolyzer/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(!anchored)
@@ -97,28 +107,18 @@
 	INVOKE_ASYNC(src, PROC_REF(electrolyze), AM)
 
 /obj/machinery/mineral/electrolyzer/proc/electrolyze(atom/movable/electrolyze_target, sound=TRUE)
-	if(machine_stat & (BROKEN|NOPOWER))
+	if(istype(electrolyze_target, /obj/effect) || !linked_console || !isturf(electrolyze_target.loc) || (machine_stat & (BROKEN|NOPOWER)))
 		return
-	if(!isturf(electrolyze_target.loc))
-		return
-	if(istype(electrolyze_target, /obj/effect))
-		return	//effects are not touchable
-
-	var/not_electrolyzed //used to play sounds if something that isnt ice gets chucked in
-
-	if(!linked_console)
-		return
-	if(istype(electrolyze_target, /obj/item/stack/ore/ice))
-		linked_console.electrolyze_item(electrolyze_target)
-	else
-		not_electrolyzed = TRUE
+	if(!istype(electrolyze_target, /obj/item/stack/ore/ice))
+		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE, 1)
 		if(isliving(electrolyze_target))
 			crush_living(electrolyze_target)
-	if(not_electrolyzed)
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, FALSE, 1) // Dont play a ton of sounds for a ton of items
-
-	if(!ismob(electrolyze_target)) //MULCH IT IF IT AINT ICE
-		qdel(electrolyze_target)
+			return
+		if(!ismob(electrolyze_target)) //MULCH IT IF IT AINT ICE
+			qdel(electrolyze_target)
+			return
+	else
+		linked_console.electrolyze_item(electrolyze_target)
 
 /obj/machinery/mineral/electrolyzer/proc/crush_living(mob/living/L)
 
@@ -140,7 +140,7 @@
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump
 	name = "hydrogen pump"
-	desc = "Use merits to buy hydrogen."
+	desc = "Lets you use merits to buy hydrogen."
 	icon = 'icons/obj/atmos.dmi'
 	icon_state = "hydrogen_pump"
 
@@ -159,10 +159,11 @@
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/examine(mob/user)
 	. = ..()
 	if(merit)
-		. += "<span class='notice'>Has [merit] merits, equaling [merit * MOLS_PER_MERIT] mols of hydrogen.</span>"
+		. += "<span class='notice'>[src] has [merit] merits, equaling [merit * MOLS_PER_MERIT] mols of hydrogen.</span>"
 	else
-		. += "<span class='notice'>Has no merits, get some from the electrolyzer or buy them to get hydrogen!</span>"
-	. += "<span class='notice'>[src] is currently [on ? "on" : "off"], and shuts off above [H2_PUMP_SHUTOFF_PRESSURE]kPa.</span>"
+		. += "<span class='notice'>[src] has no merits, get some from the electrolyzer or buy them to get hydrogen!</span>"
+	. += "<span class='notice'>[src] is currently [on ? "on" : "off"], and shuts off above [H2_PUMP_SHUTOFF_PRESSURE] kPa.</span>"
+	. += "<span class='notice'>[src] can be Alt-Clicked to eject merits.</span>"
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/process_atmos()
 	update_parents()
@@ -171,7 +172,7 @@
 		return
 	if(!merit || air.return_pressure() > H2_PUMP_SHUTOFF_PRESSURE)
 		on = FALSE
-		visible_message("<span class='danger'>The [src.name] shuts off!</span>")
+		visible_message("<span class='danger'>[src] shuts off!</span>")
 		playsound(src, 'sound/machines/switch2.ogg', 10, FALSE)
 		return
 	var/meritused
@@ -180,7 +181,7 @@
 		meritused = MERITS_USED_PER_TICK
 	else
 		meritused = merit
-		merit = NONE
+		merit = 0
 		on = FALSE
 	air.adjust_moles(GAS_HYDROGEN, meritused * MOLS_PER_MERIT)
 	GLOB.hydrogen_stored -= meritused * MOLS_PER_MERIT
@@ -196,8 +197,7 @@
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/hydrogen_pump/attack_hand(mob/user)
-	. = ..()
-	if(.)
+	if(..())
 		return
 	on = !on
 	playsound(src, 'sound/machines/switch3.ogg', 10, FALSE)
@@ -218,8 +218,8 @@
 /obj/machinery/computer/hydrogen_exchange
 	name = "Hydrogen Exchange"
 	desc = "Credits to Merits at reasonable rates!"
-	icon_screen = "vault"
-	icon_keyboard = "security_key"
+	icon_screen = "exchange"
+	icon_keyboard = "power_key"
 
 	//GLOB.total_merits_exchanged starts at 0
 	var/merits = NONE
@@ -255,11 +255,11 @@
 	var/makenoise
 	if(merits)
 		new /obj/item/merit/bundle(drop_location(), merits)
-		merits = FALSE
+		merits = 0
 		makenoise = TRUE
 	if(credits)
 		new /obj/item/spacecash/bundle(drop_location(), credits)
-		credits = FALSE
+		credits = 0
 		makenoise = TRUE
 	if(makenoise)
 		playsound(src, 'sound/machines/coindrop.ogg', 20, FALSE)
@@ -275,7 +275,7 @@
 		var/reducedmerits = newtotal - oldtotal
 		GLOB.total_merits_exchanged += merits
 		credits += round(reducedmerits * CREDITS_TO_MERITS, 1)
-		merits = NONE
+		merits = 0
 	else
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20, FALSE)
 
@@ -283,13 +283,13 @@
 	if(credits)
 		playsound(src, 'sound/machines/pda_button1.ogg', 20, FALSE)
 		merits += round(credits * meritmultiplier() / CREDITS_TO_MERITS, 1)
-		credits = NONE
+		credits = 0
 	else
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 20, FALSE)
 
 /obj/machinery/computer/hydrogen_exchange/AltClick(mob/user)
 	dispense_funds()
-	to_chat(user, "<span class='notice'>You force the credits out of the machine.</span>")
+	to_chat(user, "<span class='notice'>You force the credits and merits out of the machine.</span>")
 	return ..()
 
 /obj/machinery/computer/hydrogen_exchange/ui_interact(mob/user, datum/tgui/ui)
@@ -313,8 +313,7 @@
 	return data
 
 /obj/machinery/computer/hydrogen_exchange/ui_act(action, params)
-	. = ..()
-	if(.)
+	if(..())
 		return
 
 	switch(action)
@@ -349,26 +348,27 @@
 	update_appearance()
 
 /obj/item/merit/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/merit))
-		var/obj/item/merit/bundle/bundle
-		if(istype(W, /obj/item/merit/bundle))
-			bundle = W
-		else
-			var/obj/item/merit/cash = W
-			bundle = new (loc)
-			bundle.value = cash.value
-			user.dropItemToGround(cash)
-			qdel(cash)
+	if(!istype(W, /obj/item/merit))
+		return
+	var/obj/item/merit/bundle/bundle
+	if(istype(W, /obj/item/merit/bundle))
+		bundle = W
+	else
+		var/obj/item/merit/cash = W
+		bundle = new (loc)
+		bundle.value = cash.value
+		user.dropItemToGround(cash)
+		qdel(cash)
 
-		bundle.value += value
-		bundle.update_appearance()
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			H.dropItemToGround(src)
-			H.dropItemToGround(bundle)
-			H.put_in_hands(bundle)
-		to_chat(user, "<span class='notice'>You add [value] merits worth of money to the bundle.<br>It now holds [bundle.value] merits.</span>")
-		qdel(src)
+	bundle.value += value
+	bundle.update_appearance()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.dropItemToGround(src)
+		H.dropItemToGround(bundle)
+		H.put_in_hands(bundle)
+	to_chat(user, "<span class='notice'>You add [value] merits worth of money to the bundle.<br>It now holds [bundle.value] merits.</span>")
+	qdel(src)
 
 /obj/item/merit/Destroy()
 	. = ..()
@@ -438,65 +438,68 @@
 			pickup_sound =  'sound/items/handling/dosh_pickup.ogg'
 	return ..()
 
-/obj/item/merit/bundle/attack_self()
-	var/cashamount = input(usr, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
+
+
+
+
+//FIX!!!
+
+
+
+
+
+
+/obj/item/merit/bundle/attack_self(mob/user)
+	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
 		return
 
-	else if(!Adjacent(usr))
-		to_chat(usr, "<span class='warning'>You need to be in arm's reach for that!</span>")
+	else if(!Adjacent(user))
+		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
 	value -= cashamount
 	if(!value)
-		usr.dropItemToGround(src)
+		user.dropItemToGround(src)
 		qdel(src)
 
-	var/obj/item/merit/bundle/bundle = new (usr.loc)
+	var/obj/item/merit/bundle/bundle = new (user.loc)
 	bundle.value = cashamount
 	bundle.update_appearance()
-	usr.put_in_hands(bundle)
+	user.put_in_hands(bundle)
 	update_appearance()
 
 /obj/item/merit/bundle/AltClick(mob/living/user)
-	var/cashamount = input(usr, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
+	var/cashamount = input(user, "How many merits do you want to take? (0 to [value])", "Take Merits", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
 		return
 
-	else if(!Adjacent(usr))
-		to_chat(usr, "<span class='warning'>You need to be in arm's reach for that!</span>")
+	else if(!Adjacent(user))
+		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
 	value -= cashamount
 	if(!value)
-		usr.dropItemToGround(src)
+		user.dropItemToGround(src)
 		qdel(src)
 
-	var/obj/item/merit/bundle/bundle = new (usr.loc)
+	var/obj/item/merit/bundle/bundle = new (user.loc)
 	bundle.value = cashamount
 	bundle.update_appearance()
-	usr.put_in_hands(bundle)
+	user.put_in_hands(bundle)
 	update_appearance()
 
 /obj/item/merit/bundle/attack_hand(mob/user)
-	if(user.get_inactive_held_item() == src)
-		if(value == 0)//may prevent any edge case duping
-			qdel(src)
-			return
-		var/nuvalue = value - 1
-		value = nuvalue
-		user.put_in_hands(new /obj/item/merit/bundle(loc, 1))
-		update_appearance()
-	else
-		. = ..()
-
-/obj/item/proc/get_item_merit_value()
-	return
-
-/obj/item/merit/bundle/get_item_merit_value()//used for hydrogen exchange and pumps
-	return value
+	if(user.get_inactive_held_item() != src)
+		return ..()
+	if(value == 0)//may prevent any edge case duping
+		qdel(src)
+		return
+	value--
+	user.put_in_hands(new /obj/item/merit/bundle(loc, 1))
+	update_appearance()
 
 //bundles for mapping + testing
 

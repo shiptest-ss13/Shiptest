@@ -156,7 +156,6 @@
 	moles_visible = MOLES_GAS_VISIBLE *30
 	fusion_power = -5
 
-
 /datum/gas/hydrogen
 	id = GAS_HYDROGEN
 	specific_heat = 10

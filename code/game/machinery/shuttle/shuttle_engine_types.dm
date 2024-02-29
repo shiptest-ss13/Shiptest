@@ -148,12 +148,10 @@
 
 /obj/machinery/power/shuttle/engine/fire/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(!panel_open)
-		update_icon_state()
+	update_icon_state()
 
 /obj/machinery/power/shuttle/engine/fire/update_engine()
-	. = ..()
-	if(!.)
+	if(!..())
 		return
 	if(!attached_heater && !set_heater())
 		thruster_active = FALSE

@@ -14,20 +14,24 @@ export const HydrogenExchange = (props, context) => {
       height={300}
     >
       <Window.Content>
-        <Section
-          title={
-            'Current credits: ' + credits + ', tax rate is ' + credit_tax + '%.'
-          }
-        />
-        <Section
-          title={
-            'Current merits: ' +
-            merits +
-            ', the next merit rate is ' +
-            next_merit_rate +
-            'cr'
-          }
-        />
+        <Section title={'Stored Currencies'}>
+          <LabeledList>
+            <LabeledList.Item
+              label={
+                'Current credits: ' + credits + ', the current tax rate is'
+              }
+            >
+              {' '}
+              {credit_tax + '%'}
+            </LabeledList.Item>
+            <LabeledList.Item
+              label={'Current merits: ' + merits + ', the next merit rate is'}
+            >
+              {' '}
+              {next_merit_rate + 'cr'}
+            </LabeledList.Item>
+          </LabeledList>
+        </Section>
         <Section
           title={'Exchange Rate: ' + credits_to_merits + ' credits per merit.'}
         >
