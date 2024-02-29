@@ -25,7 +25,7 @@
 			break
 	if(!player_in_range)
 		return ..()
-	COOLDOWN_START(src, pulse_cooldown, pulse_delay)
+	COOLDOWN_START(src, pulse_cooldown, rad_delay)
 	for(var/obj/O in range(rad_spread, src))
 		if(prob(rad_prob))
 			radiation_pulse(O, rad_power, rad_range)
