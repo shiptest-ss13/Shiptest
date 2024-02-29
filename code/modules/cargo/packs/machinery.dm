@@ -264,7 +264,7 @@
 /datum/supply_pack/machinery/teg
 	name = "Thermoelectric Generator Crate"
 	desc = "Turn heat into electricity! Warranty void if sneezed upon."
-	cost = 4000
+	cost = 5000
 	contains = list(/obj/item/circuitboard/machine/generator,
 					/obj/item/circuitboard/machine/circulator,
 					/obj/item/circuitboard/machine/circulator)
