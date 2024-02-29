@@ -201,7 +201,7 @@
 	desc = "A crate containing a plasma thruster and its heater's electronics. For when you need a lot of extra thrust."
 	cost = 1500
 	contains = list(/obj/item/circuitboard/machine/shuttle/heater,
-					/obj/item/circuitboard/machine/shuttle/engine/fueled/plasma)
+					/obj/item/circuitboard/machine/shuttle/engine/plasma)
 	crate_name = "plasma thruster crate"
 	crate_type = /obj/structure/closet/crate/engineering
 
