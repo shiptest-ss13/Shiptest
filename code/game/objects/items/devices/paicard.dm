@@ -149,4 +149,3 @@
 		return
 	if(pai && !pai.holoform)
 		pai.emp_act(severity)
-
