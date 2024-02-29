@@ -1197,6 +1197,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/cryo)
+"eF" = (
+/obj/structure/table/glass,
+/obj/machinery/fax/admin/outpost{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/operations)
 "eH" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -3783,6 +3790,9 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/outpost/hallway/central)
+"nV" = (
+/turf/closed/indestructible/fakeglass,
+/area/outpost/engineering/atmospherics)
 "nX" = (
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
@@ -3845,21 +3855,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/grass,
 /area/outpost/crew/lounge)
-"oe" = (
-/obj/structure/table/reinforced,
-/obj/machinery/door/window/brigdoor/southright{
-	req_access_txt = "101"
-	},
-/obj/machinery/door/window/brigdoor/southright{
-	dir = 1
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor/ert{
-	id = "outpost_security_desk";
-	desc = "A heavy duty blast door."
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/outpost/security)
 "of" = (
 /obj/structure/chair{
 	dir = 8
@@ -4928,22 +4923,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
-"rI" = (
-/obj/structure/chair/office{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/generic,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/radio/intercom/directional/north{
-	icon_state = "clip_headset"
-	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/cargo/office)
 "rJ" = (
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
@@ -6462,22 +6441,6 @@
 	},
 /turf/open/floor/concrete/slab_2,
 /area/outpost/hallway/central)
-"wG" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	pixel_y = 10;
-	pixel_x = -7
-	},
-/obj/item/paper_bin{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/pen{
-	pixel_y = 4;
-	pixel_x = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/outpost/security)
 "wH" = (
 /turf/closed/indestructible/reinforced,
 /area/outpost/maintenance/fore)
@@ -7087,6 +7050,22 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/cryo)
+"yG" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_y = 10;
+	pixel_x = -7
+	},
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/pen{
+	pixel_y = 4;
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/security)
 "yI" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -10122,6 +10101,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/crew/canteen)
+"Jj" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/radio/intercom/directional/north{
+	icon_state = "clip_headset"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/cargo/office)
 "Jm" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -12142,6 +12137,12 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/outpost/crew/library)
+"Qk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/closed/indestructible/fakeglass,
+/area/outpost/engineering/atmospherics)
 "Ql" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box/corners,
@@ -13503,14 +13504,6 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"UX" = (
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/outpost/engineering/atmospherics)
 "UY" = (
 /obj/structure/table/wood,
 /obj/item/trash/plate{
@@ -13610,11 +13603,6 @@
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/outpost/operations)
-"Vm" = (
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/outpost/engineering/atmospherics)
 "Vn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -14791,6 +14779,21 @@
 	},
 /turf/open/floor/wood,
 /area/outpost/crew/dorm)
+"ZD" = (
+/obj/structure/table/reinforced,
+/obj/machinery/door/window/brigdoor/southright{
+	req_access_txt = "101"
+	},
+/obj/machinery/door/window/brigdoor/southright{
+	dir = 1
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/ert{
+	id = "outpost_security_desk";
+	desc = "A heavy duty blast door."
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/outpost/security)
 "ZE" = (
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 6
@@ -23404,11 +23407,11 @@ Zp
 Zp
 pU
 vD
-Vm
+nV
 my
 LO
 CE
-Vm
+nV
 QU
 pU
 Qq
@@ -23527,11 +23530,11 @@ Zp
 Zp
 pU
 rP
-Vm
+nV
 my
 LO
 CE
-Vm
+nV
 qc
 pU
 dX
@@ -23650,11 +23653,11 @@ Zp
 Zp
 pU
 vD
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 QU
 pU
 dU
@@ -23806,7 +23809,7 @@ cX
 Mt
 Mt
 lS
-rI
+Jj
 TR
 ex
 RR
@@ -23896,11 +23899,11 @@ Zp
 Zp
 pU
 lr
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 QA
 pU
 gP
@@ -23923,7 +23926,7 @@ Qp
 Ev
 Zz
 Mt
-wG
+yG
 zo
 tt
 bt
@@ -24019,11 +24022,11 @@ Zp
 Zp
 pU
 ui
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 qp
 pU
 Hh
@@ -24142,11 +24145,11 @@ Zp
 Zp
 pU
 lr
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 QA
 pU
 OA
@@ -24388,11 +24391,11 @@ Zp
 Zp
 pU
 Di
-Vm
+nV
 my
 mz
 PE
-Vm
+nV
 tj
 pU
 NA
@@ -24414,7 +24417,7 @@ gs
 zq
 MP
 fy
-oe
+ZD
 tZ
 wp
 jK
@@ -24511,11 +24514,11 @@ Zp
 Zp
 pU
 BH
-Vm
+nV
 MZ
 Ck
 ye
-Vm
+nV
 tj
 pU
 vk
@@ -24634,11 +24637,11 @@ Zp
 Zp
 pU
 Tu
-Vm
+nV
 ke
 hO
 bW
-Vm
+nV
 tj
 pU
 gP
@@ -24758,9 +24761,9 @@ Zp
 pU
 pU
 pU
-Vm
-UX
-Vm
+nV
+Qk
+nV
 pU
 pU
 pU
@@ -26238,7 +26241,7 @@ EN
 wS
 wS
 aG
-iv
+eF
 Ke
 wS
 cH

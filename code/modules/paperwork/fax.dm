@@ -59,6 +59,7 @@
 	/// List with a fake-networks(not a fax actually), for request manager.
 	var/list/special_networks = list(
 		list(fax_name = "Nanotrasen Central Command", fax_id = "nanotrasen", color = "green", emag_needed = FALSE),
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
 		list(fax_name = "IRMG Mothership", fax_id = "inteq", color = "yellow", emag_needed = FALSE),
 		list(fax_name = "Solarian Confederation Frontier Affairs", fax_id = "solgov", color = "teal", emag_needed = FALSE),
 		list(fax_name = "Roumain Council of Huntsmen", fax_id = "roumain", color = "brown", emag_needed = FALSE),
@@ -505,6 +506,11 @@
 	radio_channel = RADIO_CHANNEL_CENTCOM
 	visible_to_network = FALSE
 	admin_fax_id = "nanotrasen"
+
+/obj/machinery/fax/admin/outpost
+	name = "Outpost Fax Machine"
+	fax_name = "Outpost Authority"
+	admin_fax_id = "outpost"
 
 /obj/machinery/fax/admin/solgov
 	name = "SolGov Frontier Affairs Fax Machine"

@@ -66,13 +66,13 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 
 /datum/outfit/job/inteq/captain/honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
 	W.assignment = "Honorable Vanguard"
 	W.update_label()
-	..()
 
 ///Chief Engineer
 
