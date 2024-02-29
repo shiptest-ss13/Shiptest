@@ -49,7 +49,7 @@
 
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"
-	job_icon = "hudclip_navy1"
+	job_icon = "clip_navy1"
 	jobtype = /datum/job/assistant
 	uniform =  /obj/item/clothing/under/clip
 
@@ -87,7 +87,7 @@
 
 /datum/outfit/job/clip/minutemen/captain
 	name = "CLIP Minutemen - Captain"
-	job_icon = "hudclip_navy5"
+	job_icon = "clip_navy5"
 	jobtype = /datum/job/captain
 
 	id = /obj/item/card/id/gold
@@ -116,7 +116,7 @@
 
 /datum/outfit/job/clip/captain/minutemen/general
 	name = "CLIP Minutemen - General"
-	job_icon = "hudclip_cmm6"
+	job_icon = "clip_cmm6"
 
 	head = /obj/item/clothing/head/clip/slouch/officer
 	ears = /obj/item/radio/headset/clip/alt/captain
@@ -130,7 +130,7 @@
 
 /datum/outfit/job/clip/captain/minutemen/general/admiral // for flavor, might remove outright
 	name = "CLIP Minutemen - Admiral"
-	job_icon = "hudclip_navy6"
+	job_icon = "clip_navy6"
 
 	head = /obj/item/clothing/head/clip/bicorne
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral
@@ -155,7 +155,7 @@
 
 /datum/outfit/job/clip/minutemen/chemist
 	name = "CLIP Minutemen - Chemist"
-	job_icon = "hudclip_navy2"
+	job_icon = "clip_navy2"
 	jobtype = /datum/job/chemist
 
 	glasses = /obj/item/clothing/glasses/science
@@ -174,7 +174,7 @@
 
 /datum/outfit/job/clip/ce
 	name = "CLIP Minutemen - Foreman"
-	job_icon = "hudclip_navy3"
+	job_icon = "clip_navy3"
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver
@@ -208,7 +208,7 @@
 
 /datum/outfit/job/clip/first_officer
 	name = "CLIP Minutemen - First Officer"
-	job_icon = "hudclip_navy4"
+	job_icon = "clip_navy4"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
@@ -279,7 +279,7 @@
 
 /datum/outfit/job/clip/minutemen/doctor
 	name = "CLIP Minutemen - Corpsman"
-	job_icon = "hudclip_navy2"
+	job_icon = "clip_navy2"
 	jobtype = /datum/job/doctor
 
 	l_hand = /obj/item/storage/firstaid/medical
@@ -321,7 +321,7 @@
 ///vehicle crew
 /datum/outfit/job/clip/minutemen/vehicle_crew
 	name = "CLIP Minutemen - Vehicle Crewman"
-	job_icon = "hudclip_mech1"
+	job_icon = "clip_mech1"
 	jobtype = /datum/job/roboticist
 
 	belt = /obj/item/storage/belt/utility/full
@@ -338,7 +338,7 @@
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot
 	name = "CLIP Minutemen - Vehicle Pilot"
-	job_icon = "hudclip_mech2"
+	job_icon = "clip_mech2"
 	jobtype = /datum/job/officer
 
 	backpack = /obj/item/storage/backpack/security/clip
@@ -357,13 +357,13 @@
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot/commander
 	name = "CLIP Minutemen - Vehicle Commander"
-	job_icon = "hudclip_mech3"
+	job_icon = "clip_mech3"
 	suit = /obj/item/clothing/suit/jacket/miljacket
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
 
 /datum/outfit/job/clip/minutemen/vehicle_crew/coordinator
 	name = "CLIP Minutemen - Vehicle Traffic Coordinator"
-	job_icon = "hudclip_mech4"
+	job_icon = "clip_mech4"
 	jobtype = /datum/job/roboticist
 
 	belt = null
@@ -440,7 +440,7 @@
 
 /datum/outfit/job/clip/minutemen/engineer
 	name = "CLIP Minutemen - Engineer"
-	job_icon = "hudclip_navy2"
+	job_icon = "clip_navy2"
 	jobtype = /datum/job/engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
@@ -458,7 +458,47 @@
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
-//security officers
+/datum/outfit/job/clip/investigator
+	name = "CLIP GOLD - Investigator"
+	jobtype = /datum/job/detective
+	job_icon = "detective"
+
+	head = /obj/item/clothing/head/fedora/det_hat/clip
+
+	belt = /obj/item/clipboard
+	uniform = /obj/item/clothing/under/clip/formal
+	suit = /obj/item/clothing/suit/armor/clip_trenchcoat
+
+	ears = /obj/item/radio/headset/alt
+	shoes = /obj/item/clothing/shoes/jackboots
+
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+
+	gloves = /obj/item/clothing/gloves/color/black
+	l_pocket = /obj/item/toy/crayon/white
+	r_pocket = /obj/item/radio
+
+	backpack_contents = list(/obj/item/storage/box/evidence=1,\
+		/obj/item/detective_scanner=1,\
+		/obj/item/melee/classic_baton=1)
+
+/datum/outfit/job/clip/bureaucrat
+	name = "CLIP GOLD - Bureaucrat"
+	job_icon = "scribe"
+	head = /obj/item/clothing/head/flatcap/clip
+
+	uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	suit = /obj/item/clothing/suit/armor/clip_trenchcoat
+
+	shoes = /obj/item/clothing/shoes/laceup
+
+	backpack = /obj/item/storage/backpack/satchel/leather
+	satchel = /obj/item/storage/backpack/satchel/leather
+
+	r_pocket = /obj/item/radio
+
+//grunts - for erts as well
 
 /obj/item/twenty_pounds_of_ice
 	name = "20 pounds of ice"
@@ -469,14 +509,14 @@
 
 /datum/outfit/job/clip/minutemen/grunt/reserve
 	name = "CLIP Minutemen - Reservist"
-	job_icon = "hudclip_cmm1"
+	job_icon = "clip_cmm1"
 	jobtype = /datum/job/assistant
 
 	r_pocket = /obj/item/radio
 
 /datum/outfit/job/clip/minutemen/grunt
 	name = "CLIP Minutemen - Minuteman"
-	job_icon = "hudclip_cmm2"
+	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
 	box = /obj/item/storage/box/survival/clip/balaclava/extra
 	shoes = null
@@ -488,7 +528,6 @@
 /datum/outfit/job/clip/minutemen/grunt/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(H.ckey == "meemofcourse")
-//	if(H.client?.holder)
 		H.equip_to_slot_if_possible(new /obj/item/twenty_pounds_of_ice, ITEM_SLOT_HANDS, FALSE, FALSE)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed
@@ -509,38 +548,75 @@
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)
-
-/datum/outfit/job/clip/minutemen/grunt/dressed/engi
-	name = "CLIP Minutemen - Field Engineer"
-
-	accessory = /obj/item/clothing/accessory/armband/engine
-	belt = /obj/item/storage/belt/military/clip/engi
-
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
-	name = "Minutemen - Minuteman (Armed - CM-16)"
+	name = "CLIP Minutemen - Minuteman (Armed - CM-16)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/clip/p16
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/f4 //f4 is rename of GAL, don't wanna repath upon adding the clip guns though, if i forget to remove this during then, fucking yell at me
-	name = "Minutemen - Minuteman (Armed - CM-GAL)"
+	name = "CLIP Minutemen - Minuteman (Armed - CM-GAL)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/gal
 	belt = /obj/item/storage/belt/military/clip/gal
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed/cm5
-	name = "Minutemen - Minuteman (Armed - CM-5)"
+	name = "CLIP Minutemen - Minuteman (Armed - CM-5)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 	belt = /obj/item/storage/belt/military/clip/cm5
 
+//ert outfits, i suppose you could use these for non-ert roles although i highly discourage it
+
+
+/datum/outfit/job/clip/minutemen/grunt/dressed/engi
+	name = "CLIP Minutemen - Field Engineer (Dressed)"
+
+	accessory = /obj/item/clothing/accessory/armband/engine
+	belt = /obj/item/storage/belt/military/clip/engi
+
+/datum/outfit/job/clip/minutemen/grunt/dressed/engi/armed
+	name = "CLIP Minutemen - Field Engineer (Armed - CM-16)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
+
+
+/datum/outfit/job/clip/minutemen/grunt/dressed/med
+	name = "CLIP Minutemen - Field Corpsman (Dressed)"
+
+	accessory = /obj/item/clothing/accessory/armband/medblue
+	belt = /obj/item/storage/belt/military/clip/engi
+
+/datum/outfit/job/clip/minutemen/grunt/dressed/med/armed
+	name = "CLIP Minutemen - Field Corpsman (Armed - CM-5)"
+
+	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1, /obj/item/defibrillator/compact/loaded=1, /obj/item/storage/firstaid/medical=1, /obj/item/ammo_box/magazine/smgm9mm=3)
+
+/obj/item/storage/belt/military/clip/gunner/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/ammo_box/magazine/skm_762_40/extended(src)
+	new /obj/item/grenade/frag(src)
+
+/datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
+	name = "CLIP Minutemen - Field Gunner (Armed - SKM-24u)" //See above, replace with CLIP LMG when added
+
+	accessory = /obj/item/clothing/accessory/armband
+	belt = /obj/item/storage/belt/military/clip/gunner
+	suit_store = /obj/item/gun/ballistic/automatic/hmg/skm_lmg/extended
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1)
+
 ///lead, i guess you could reuse this for "Brig Officer"
 
 /datum/outfit/job/clip/minutemen/grunt/lead
-	name = "Minutemen - Field Leader"
-	job_icon = "hudclip_cmm3"
+	name = "CLIP Minutemen - Field Sergeant"
+	job_icon = "clip_cmm3"
 	jobtype = /datum/job/warden
 
 	ears = /obj/item/radio/headset/clip/alt
@@ -553,19 +629,19 @@
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	backpack_contents = null
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)
 
 /datum/outfit/job/clip/minutemen/grunt/lead/armed
-	name = "Minutemen - Field Leader (Armed)"
+	name = "CLIP Minutemen - Field Sergeant (Armed)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	belt = /obj/item/storage/belt/military/clip/p16
 	//replace commander with the cm23 when its impemented, see the cm-f4 above
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1, /obj/item/gun/energy/e_gun/advtaser=1)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/effect/spawner/lootdrop/ration=1, /obj/item/gun/ballistic/automatic/pistol/commander=1)
 
 /datum/outfit/job/clip/minutemen/grunt/commander
-	name = "Minutemen - Field Commander
-	job_icon = "hudclip_cmm4"
+	name = "CLIP Minutemen - Field Commander"
+	job_icon = "clip_cmm4"
 
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/officer
@@ -577,8 +653,8 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/clip/minutemen/grunt/major
-	name = "Minutemen - Major
-	job_icon = "hudclip_cmm5"
+	name = "CLIP Minutemen - Major"
+	job_icon = "clip_cmm5"
 
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/officer

@@ -258,6 +258,22 @@
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
 	spawnwithmagazine = FALSE
 
+/obj/item/gun/ballistic/automatic/smg/cm5/compact
+	name = "\improper CM-5c"
+	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excells at close range and is, well, compact. You also feel like this gun is unfinished somewhat. Chambered in 9mm."
+	w_class = WEIGHT_CLASS_NORMAL
+	spread = 8
+	spread_unwielded = 20
+
+	recoil = 1
+	recoil_unwielded = 2
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
 	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."

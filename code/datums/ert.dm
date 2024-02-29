@@ -143,15 +143,27 @@
 // CLIP
 
 /datum/ert/minutemen
+	teamsize = 5
+	opendoors = FALSE
+	leader_role = /datum/antagonist/ert/minutemen/leader
+	/// commander slot fills up first, then MM slot, corpsman, than another MM. this is to avoid the situation other erts have where its often jsut a commander, a medic, and a engi with no 'grunt' roles. I suppose this could be a marksman role? but eh, you can just give the guys different guns if needed
+	roles = list(/datum/antagonist/ert/minutemen,/datum/antagonist/ert/minutemen/corpsman,/datum/antagonist/ert/minutemen,/datum/antagonist/ert/minutemen/engi,/datum/antagonist/ert/minutemen/gunner)
+	mission = "Keep the peace in sector affairs"
+	rename_team = "Generic CLIP Minutemen Team"
+	polldesc = "a CLIP Minutemen squadron"
+	ert_template = /datum/map_template/shuttle/subshuttles/crux
+
+//quick infantry - for use when you need to throw minutemen somewhere fast but dont want ANY preperation at all
+/datum/ert/minutemen/quick
 	teamsize = 4
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/minutemen/leader
+	/// commander slot fills up first, then MM slot, corpsman, than another MM. this is to avoid the situation other erts have where its often jsut a commander, a medic, and a engi with no 'grunt' roles. I suppose this could be a marksman role? but eh, you can just give the guys different guns if needed
 	roles = list(/datum/antagonist/ert/minutemen)
-	mission = "Keep the peace in sector affairs"
-	rename_team = "Generic CLIP Minutemen Team"
+	mission = "Resolve the conflict at hand"
+	rename_team = "Quick and Simple CLIP Minutemen Team"
 	polldesc = "a CLIP Minutemen emergency team"
 	random_names = TRUE
-	ert_template = /datum/map_template/shuttle/subshuttles/crux
 
 
 /datum/ert/minutemen/bard
@@ -167,12 +179,9 @@
 	rename_team = "CLIP Minutemen Riot Control Team"
 	polldesc = "a CLIP Minutemen riot control team"
 
-/datum/ert/minutemen/piratehunters
-	leader_role = /datum/antagonist/ert/minutemen/piratehunters/leader
-	roles = list(/datum/antagonist/ert/minutemen/piratehunters)
-	mission = "Eliminate pirate presence within the sector."
-	rename_team = "CLIP Minutemen Pirate Hunter Team"
-	polldesc = "a fireteam of CLIP Minutemen pirate hunters"
+/datum/ert/minutemen/eva
+	leader_role = /datum/antagonist/ert/minutemen/eva/leader
+	roles = list(/datum/antagonist/ert/minutemen/eva)
 
 /datum/ert/minutemen/inspector
 	teamsize = 1

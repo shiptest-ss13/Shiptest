@@ -345,14 +345,28 @@
 /obj/item/storage/belt/military/clip/p16/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
+	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/gal/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/gal(src)
+	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm5/PopulateContents()
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/smgm9mm(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/military/clip/cm15/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/cm15_mag(src)
+	new /obj/item/grenade/frag(src)
+
+/obj/item/storage/belt/military/clip/e50/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/stock_parts/cell/gun/large(src)
+	new /obj/item/grenade/frag(src)
+	new /obj/item/screwdriver/nuke(src)
 
 /obj/item/storage/belt/military/clip/engi/PopulateContents()
 	new /obj/item/screwdriver/power(src)
@@ -371,6 +385,15 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/belt.dmi'
 
 	icon_state = "clip-medwebbing"
+
+/obj/item/storage/belt/medical/webbing/clip/prefilled/PopulateContents()
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/synthflesh(src)
+	new /obj/item/reagent_containers/medigel/synthflesh(src)
+	new /obj/item/stack/medical/splint(src)
 
 //back
 /obj/item/storage/backpack/security/clip
