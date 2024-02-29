@@ -436,7 +436,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 	var/wakeupmessage = "The cryopod shudders as the pneumatic seals separating you and the waking world let out a hiss."
 	if(prob(60))
-		wakeupmessage += "A sickly feeling along with the pangs of hunger greet you upon your awakening."
+		wakeupmessage += " A sickly feeling along with the pangs of hunger greet you upon your awakening."
 		sleepyhead.set_nutrition(100)
 		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
 	to_chat(sleepyhead, span_danger(examine_block(wakeupmessage)))
