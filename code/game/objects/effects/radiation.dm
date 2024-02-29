@@ -19,7 +19,7 @@
 		return ..()
 
 	var/player_in_range = FALSE
-	for(var/mob/living/L in range(rad_spread * 2))
+	for(var/mob/living/L in range(rad_spread))
 		if(L.client)
 			player_in_range = TRUE
 			break
