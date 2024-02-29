@@ -253,7 +253,7 @@
 /obj/structure/sign/clip
 	name = "Banner of the Confederated League of Independent Planets"
 	desc = "A seal representing the many colonies comprising the League."
-	icon_state = "minutemen"
+	icon_state = "clip"
 
 //Numeral signs
 

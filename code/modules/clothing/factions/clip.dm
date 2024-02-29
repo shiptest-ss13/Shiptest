@@ -146,8 +146,8 @@
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
 
-	icon_state = "clip_trenchcoat"
-	item_state = "trenchcoat_solgov"
+	icon_state = "clip_captaincoat"
+	item_state = "clip_captaincoat"
 	body_parts_covered = CHEST|LEGS|ARMS
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	cold_protection = CHEST|LEGS|ARMS
@@ -188,6 +188,7 @@
 
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 35, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 80)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/clip_spotter
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 
 	resistance_flags = null
 	slowdown = 1
@@ -244,7 +245,7 @@
 /obj/item/clothing/head/clip/bicorne
 	name = "general's bicorne"
 	desc = "A fancy bicorne used by generals of the CLIP Minutemen."
-	icon_state = "minuteman_general_hat"
+	icon_state = "clip_general_hat"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/helmet/bulletproof/x11/clip
@@ -358,7 +359,7 @@
 	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/military/clip/cm15/PopulateContents()
-	for(var/i in 1 to 4)
+	for(var/i in 1 to 5)
 		new /obj/item/ammo_box/magazine/cm15_mag(src)
 	new /obj/item/grenade/frag(src)
 

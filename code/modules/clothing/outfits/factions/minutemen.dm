@@ -104,7 +104,7 @@
 	ears = /obj/item/radio/headset/clip/alt/captain
 	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	suit = /obj/item/clothing/suit/armor/clip_capcoat
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 
@@ -114,7 +114,7 @@
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
-/datum/outfit/job/clip/captain/minutemen/general
+/datum/outfit/job/clip/minutemen/captain/general
 	name = "CLIP Minutemen - General"
 	job_icon = "clip_cmm6"
 
@@ -128,7 +128,7 @@
 	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 
-/datum/outfit/job/clip/captain/minutemen/general/admiral // for flavor, might remove outright
+/datum/outfit/job/clip/minutemen/captain/general/admiral // for flavor, might remove outright
 	name = "CLIP Minutemen - Admiral"
 	job_icon = "clip_navy6"
 
@@ -275,6 +275,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/med
 	suit = /obj/item/clothing/suit/toggle/labcoat
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
 	suit_store = /obj/item/flashlight/pen
 
 /datum/outfit/job/clip/minutemen/doctor
@@ -292,6 +293,7 @@
 	uniform = /obj/item/clothing/under/clip/medic
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/clip/corpsman
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
 	suit = null
 	suit_store = null
 
@@ -489,7 +491,6 @@
 	head = /obj/item/clothing/head/flatcap/clip
 
 	uniform = /obj/item/clothing/under/clip/formal/with_shirt
-	suit = /obj/item/clothing/suit/armor/clip_trenchcoat
 
 	shoes = /obj/item/clothing/shoes/laceup
 
@@ -512,13 +513,11 @@
 	job_icon = "clip_cmm1"
 	jobtype = /datum/job/assistant
 
-	r_pocket = /obj/item/radio
-
 /datum/outfit/job/clip/minutemen/grunt
 	name = "CLIP Minutemen - Minuteman"
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
-	box = /obj/item/storage/box/survival/clip/balaclava/extra
+	box = /obj/item/storage/box/survival/clip/balaclava
 	shoes = null
 
 	backpack = /obj/item/storage/backpack/security/clip
@@ -621,6 +620,7 @@
 
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/minutemen
+	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/clip/slouch
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	belt = /obj/item/storage/belt/military/clip

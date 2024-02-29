@@ -587,6 +587,7 @@
 		/obj/item/clothing/head/clip/boonie = 3,
 		/obj/item/clothing/head/fedora/det_hat/clip = 3,
 		/obj/item/clothing/head/flatcap/clip = 3,
+		/obj/item/clothing/head/clip/bicorne = 3,
 
 	)
 	refill_canister = /obj/item/vending_refill/wardrobe/clip_wardrobe

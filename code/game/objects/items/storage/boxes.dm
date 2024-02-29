@@ -180,12 +180,8 @@
 /obj/item/storage/box/survival/clip/balaclava
 	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
 
-/obj/item/storage/box/survival/clip/balaclava/extra
-	internal_type = /obj/item/tank/internals/emergency_oxygen/engi/double
-
-/obj/item/storage/box/survival/clip/balaclava/extra/PopulateContents()
-	. = ..()
-	new /obj/item/radio/off(src)
+/obj/item/storage/box/survival/clip/balaclava
+	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"

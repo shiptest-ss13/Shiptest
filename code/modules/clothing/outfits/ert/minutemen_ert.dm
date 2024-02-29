@@ -3,7 +3,7 @@
 	job_icon = "hudclip_cmm2"
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/medium
-	suit_store = /obj/item/gun/ballistic/automatic/smg/cm15
+	suit_store = /obj/item/gun/ballistic/shotgun/bulldog/minutemen
 	mask = /obj/item/clothing/mask/gas/clip
 	head = /obj/item/clothing/head/helmet/riot/clip
 	belt = /obj/item/storage/belt/military/clip/cm15

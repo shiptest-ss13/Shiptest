@@ -262,8 +262,8 @@
 	name = "\improper CM-5c"
 	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excells at close range and is, well, compact. You also feel like this gun is unfinished somewhat. Chambered in 9mm."
 	w_class = WEIGHT_CLASS_NORMAL
-	spread = 8
-	spread_unwielded = 20
+	spread = 25
+	spread_unwielded = 40
 
 	recoil = 1
 	recoil_unwielded = 2
@@ -272,7 +272,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5/compact/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.8 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
