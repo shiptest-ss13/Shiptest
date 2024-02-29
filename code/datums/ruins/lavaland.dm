@@ -142,3 +142,9 @@
 	id = "codelab"
 	description = "A Nanotrasen genetic research facility, abandoned and ripe for looting. Whats that goo over there?"
 	suffix = "lavaland_surface_codelab.dmm"
+
+/datum/map_template/ruin/lavaland/lava_canyon
+	name = "Lava Canyon"
+	id = "lava_canyon"
+	description = "Tectonic activity has gouged a large fissure into the surface of the planet here. Tucked in the crevasse, the remains of an ashwalker village lay in ashes."
+	suffix = "lavaland_surface_lava_canyon.dmm"
