@@ -1,13 +1,3 @@
-/datum/surgery/omni/stomach_pump/can_start(mob/user, mob/living/carbon/target)
-	var/obj/item/organ/stomach/S = target.getorganslot(ORGAN_SLOT_STOMACH)
-	if(target.stat != DEAD)	//shamelessly lifted off the revival surgery but we're looking for the same critera here, a dead, non-husked, revivable patient.
-		return FALSE
-	if(HAS_TRAIT(target, TRAIT_HUSK))
-		return FALSE
-	if(!S)
-		return FALSE
-	return ..()
-
 //Working the stomach by hand in such a way that you induce vomiting.
 /datum/surgery_step/omni/stomach_pump
 	name = "Pump Stomach"
@@ -18,6 +8,17 @@
 	required_layer = list(2)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
+
+/datum/surgery_step/omni/stomach_pump/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	var/obj/item/organ/stomach/S = target.getorganslot(ORGAN_SLOT_STOMACH)
+	if(target.stat != DEAD)	//shamelessly lifted off the revival surgery but we're looking for the same critera here, a dead, non-husked, revivable patient.
+		return FALSE
+	if(HAS_TRAIT(target, TRAIT_HUSK))
+		return FALSE
+	if(!S)
+		return FALSE
+	return TRUE
+
 
 /datum/surgery_step/omni/stomach_pump/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin pumping [target]'s stomach...</span>",

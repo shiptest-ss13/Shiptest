@@ -1,8 +1,3 @@
-/datum/surgery/omni/hepatectomy/can_start(mob/user, mob/living/carbon/target)
-	var/obj/item/organ/liver/L = target.getorganslot(ORGAN_SLOT_LIVER)
-	if(L?.damage > 50 && !(L.organ_flags & ORGAN_FAILING))
-		return TRUE
-
 ////hepatectomy, removes damaged parts of the liver so that the liver may regenerate properly
 //95% chance of success, not 100 because organs are delicate
 /datum/surgery_step/omni/hepatectomy
@@ -17,6 +12,12 @@
 	valid_locations = list(BODY_ZONE_CHEST)
 	required_layer = list(2)
 	show = TRUE
+/datum/surgery_step/omni/hepatectomy/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	var/obj/item/organ/liver/L = target.getorganslot(ORGAN_SLOT_LIVER)
+	if(L?.damage > 50 && !(L.organ_flags & ORGAN_FAILING))
+		return TRUE
+	return FALSE
+
 
 /datum/surgery_step/omni/hepatectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to cut out a damaged peice of [target]'s liver...</span>",

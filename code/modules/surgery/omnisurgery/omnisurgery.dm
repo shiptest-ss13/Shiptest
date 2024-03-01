@@ -51,8 +51,9 @@
 			continue
 		if(!(atlayer in S.required_layer))
 			continue
-		if(!(S.accept_any_item || S.accept_hand) && !(S.implements.Find(tool.tool_behaviour) || S.implements.Find(tool)))
-			continue
+		if(!(S.accept_any_item || S.accept_hand))
+			if(!(S.implements.Find(tool.tool_behaviour) || S.implements.Find(tool)))
+				continue
 		if(!S.test_op(user,target,src))
 			continue
 		valid_steps[S] = S.radial_icon != null ? S.radial_icon : null

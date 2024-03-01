@@ -1,11 +1,3 @@
-/datum/surgery/omni/lobectomy/can_start(mob/user, mob/living/carbon/target)
-	var/obj/item/organ/lungs/L = target.getorganslot(ORGAN_SLOT_LUNGS)
-	if(L)
-		if(L.damage > 60 && !L.operated)
-			return TRUE
-	return FALSE
-
-
 //lobectomy, removes the most damaged lung lobe with a 95% base success chance
 /datum/surgery_step/omni/lobectomy
 	name = "excise damaged lung node"
@@ -23,6 +15,12 @@
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 
+/datum/surgery_step/omni/lobectomy/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	var/obj/item/organ/lungs/L = target.getorganslot(ORGAN_SLOT_LUNGS)
+	if(L)
+		if(L.damage > 60 && !L.operated)
+			return TRUE
+	return FALSE
 
 /datum/surgery_step/omni/lobectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to make an incision in [target]'s lungs...</span>",

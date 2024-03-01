@@ -14,7 +14,7 @@
 	show = TRUE
 	valid_locations = list(BODY_ZONE_HEAD)
 
-/datum/surgery/omni/omni_brain_surgery/can_start(mob/user, mob/living/carbon/target)
+/datum/surgery_step/omni/fix_brain/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)
 		return FALSE

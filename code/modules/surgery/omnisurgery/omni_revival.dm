@@ -47,13 +47,16 @@
 	valid_locations = list(BODY_ZONE_HEAD)
 
 /datum/surgery_step/omni/revive/test_op(mob/user, mob/living/target,datum/surgery/omni/surgery)
-	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
 	if(!istype(surgery.last_step,/datum/surgery_step/omni/incise_head))
 		return FALSE
-	if(H)
-		if(H.damage > 60 && !H.operated)
-			return TRUE
-	return FALSE
+	if(target.stat != DEAD)
+		return FALSE
+	if(target.hellbound || HAS_TRAIT(target, TRAIT_HUSK))
+		return FALSE
+	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
+	if(!B)
+		return FALSE
+	return TRUE
 
 /datum/surgery_step/omni/revive/tool_check(mob/user, obj/item/tool)
 	. = TRUE

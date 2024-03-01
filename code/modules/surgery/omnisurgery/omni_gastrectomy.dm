@@ -1,8 +1,3 @@
-/datum/surgery/omni/gastrectomy/can_start(mob/user, mob/living/carbon/target)
-	var/obj/item/organ/stomach/L = target.getorganslot(ORGAN_SLOT_STOMACH)
-	if(L?.damage > 50 && !(L.organ_flags & ORGAN_FAILING))
-		return TRUE
-
 ////Gastrectomy, because we truly needed a way to repair stomachs.
 //95% chance of success to be consistent with most organ-repairing surgeries.
 /datum/surgery_step/omni/gastrectomy
@@ -17,6 +12,12 @@
 	required_layer = list(2)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
+
+/datum/surgery_step/omni/gastrectomy/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	var/obj/item/organ/stomach/L = target.getorganslot(ORGAN_SLOT_STOMACH)
+	if(L?.damage > 50 && !(L.organ_flags & ORGAN_FAILING))
+		return TRUE
+	return FALSE
 
 /datum/surgery_step/omni/gastrectomy/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, "<span class='notice'>You begin to cut out a damaged piece of [target]'s stomach...</span>",
