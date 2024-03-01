@@ -204,32 +204,34 @@
 	if(self_message)
 		hearers -= src
 
-	var/raw_msg = message
-
 	for(var/mob/M in hearers)
 		if(!M.client)
 			continue
 
+		var/msg = message
+
 		//This entire if/else chain could be in two lines but isn't for readibilties sake.
-		var/msg = raw_msg
 		if(M.see_invisible < invisibility)//if src is invisible to M
 			msg = blind_message
 		else if(T != loc && T != src) //if src is inside something and not a turf.
 			msg = blind_message
 		else if(T.lighting_object && T.lighting_object.invisibility <= M.see_invisible && T.is_softly_lit()) //if it is too dark.
 			msg = blind_message
-		if(visible_message_flags & EMOTE_MESSAGE)
-			msg = "<span class='emote'><b>[src]</b> [raw_msg]</span>"
+		else if(visible_message_flags & EMOTE_MESSAGE)
+			var/shown_name = name
 			if(M.mind?.guestbook && ishuman(src))
 				var/mob/living/carbon/human/human_source = src
-				var/known_name = M.mind.guestbook.get_known_name(M, src, type == MSG_VISUAL ? human_source.get_face_name() : human_source.GetVoice())
+				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.get_face_name())
 				if(known_name)
-					msg = "<span class='emote'><b>[known_name]</b> [raw_msg]</span>"
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
 		if(!msg)
 			continue
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags))
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
+			M.create_chat_message(src, raw_message = message, runechat_flags = visible_message_flags)
 
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
@@ -260,12 +262,15 @@
 
 		//emote handling
 		if(audible_message_flags & EMOTE_MESSAGE)
-			msg = "<span class='emote'><b>[src]</b> [message]</span>"
+			var/shown_name = name
 			if(M.mind?.guestbook && ishuman(src))
 				var/mob/living/carbon/human/human_source = src
 				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.GetVoice())
 				if(known_name)
-					msg = "<span class='emote'><b>[known_name]</b> [raw_msg]</span>"
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
 			if(runechat_prefs_check(M, audible_message_flags) && M.can_hear())
 				M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
 
