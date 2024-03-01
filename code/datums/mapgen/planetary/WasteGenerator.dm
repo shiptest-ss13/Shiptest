@@ -409,7 +409,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/three = 20,
 		/obj/effect/spawner/lootdrop/maintenance/four = 40,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 80,
-		/obj/item/mine/proximity/spawner/manhack = 40,
+		/obj/item/mine/proximity/spawner/manhack/live = 40,
 		/obj/effect/spawner/lootdrop/mine = 8,
 		/obj/effect/spawner/minefield/manhack = 2
 	)
@@ -443,7 +443,7 @@
 		/obj/effect/spawner/lootdrop/maintenance/four = 20,
 		/obj/effect/spawner/lootdrop/waste/salvageable = 40,
 		/obj/structure/foamedmetal = 100,
-		/obj/item/mine/proximity/spawner/manhack = 20
+		/obj/item/mine/proximity/spawner/manhack/live = 20
 	)
 	mob_spawn_list = list( //Whoops! All hivebots!
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet/strong = 80,
