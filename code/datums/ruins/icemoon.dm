@@ -8,6 +8,12 @@
 
 // above ground only
 
+/datum/map_template/ruin/icemoon/huntercabin
+	name = "Saint-Roumain Hunter Cabin"
+	id = "huntercabin"
+	description = "A cozy little cabin built for two yet with no occupants."
+	suffix = "icemoon_surface_huntercabin.dmm"
+
 /datum/map_template/ruin/icemoon/engioutpost
 	name = "Engineer Outpost"
 	id = "engioutpost"
