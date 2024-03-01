@@ -150,7 +150,8 @@
 		/obj/structure/flora/rock/pile/rockplanet = 8,
 		/obj/structure/flora/ash/fern = 4,
 		/obj/structure/flora/ash/puce = 2,
-		/obj/item/mine/pressure/explosive/rusty = 1
+		/obj/item/mine/pressure/explosive/rusty = 1,
+		/obj/item/mine/proximity/explosive = 1,
 	)
 	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
@@ -182,6 +183,7 @@
 		/obj/structure/flora/ash/fern = 6,
 		/obj/structure/flora/ash/puce = 4,
 		/obj/structure/flora/ash/garden/arid = 2,
+		/obj/item/mine/proximity/explosive = 1,
 		/obj/item/mine/pressure/explosive/rusty = 1
 	)
 	mob_spawn_list = list(

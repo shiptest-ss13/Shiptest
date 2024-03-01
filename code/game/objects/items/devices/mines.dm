@@ -405,33 +405,6 @@
 	shrapnel_magnitude = 6
 	shred_triggerer = TRUE
 
-/obj/item/mine/pressure/explosive/shrapnel/carbon_only
-	name = "\improper G-84 Special"
-	desc = "A deadly fragmentation mine. This one has a specially-calibrated weight sensor designed to prevent misfire."
-
-/obj/item/mine/pressure/explosive/shrapnel/carbon_only/on_entered(datum/source, atom/movable/AM)
-	if(!iscarbon(AM))
-		return
-	. = ..()
-
-
-//like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
-/obj/item/mine/pressure/explosive/shrapnel/sting
-	name = "\improper'Stinger' Crowd Management Device"
-	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
-
-	range_heavy = 0
-	range_light = 1
-	range_flash = 3
-	range_flame = 0
-
-	hair_trigger = TRUE
-	shrapnel_magnitude = 7
-	shred_triggerer = TRUE
-	shrapnel_type = /obj/projectile/bullet/pellet/stingball
-	manufacturer = MANUFACTURER_NANOTRASEN_OLD
-
-
 /obj/item/mine/pressure/explosive/rad
 	name = "\improper G-85 Fission"
 	desc = "An anti-infantry explosive produced during the corporate wars. This one detonates a small microfission core, creating a bloom of deadly radiation. "
@@ -466,6 +439,7 @@
 /obj/item/mine/pressure/gas/mine_effect(mob/victim)
 	atmos_spawn_air("[gas_type]=[gas_amount]")
 
+
 /obj/item/mine/proximity/explosive
 	name = "\improper G-80P Bouncer"
 	desc = "An anti-infantry explosive produced during the corporate wars. This one has been rearmed with a proximity movement detector."
@@ -487,9 +461,25 @@
 	if(shrapnel_magnitude > 0)
 		AddComponent(/datum/component/pellet_cloud, projectile_type=shrapnel_type, magnitude=shrapnel_magnitude)
 
+
+//like all real 'less' than lethal crowd control options this is, in fact, not very good at being nonlethal
+/obj/item/mine/proximity/explosive/sting
+	name = "\improper'Stinger' Crowd Management Device"
+	desc = "A \"less\" than lethal crowd control weapon, designed to demoralise and scatter anti-NT protestors. The bands of ballistic gel inside strike targets and incapacitate without causing serious maiming. In Theory."
+
+	range_heavy = 0
+	range_light = 1
+	range_flash = 3
+	range_flame = 0
+
+	shrapnel_magnitude = 8
+	shrapnel_type = /obj/projectile/bullet/pellet/stingball
+	manufacturer = MANUFACTURER_NANOTRASEN_OLD
+
+
 /obj/item/mine/proximity/explosive/plasma
 	name = "\improper Etherbor EP-3"
-	desc = "An anti-infantry explosive designed by the PGF for denial of territory to enemy forces. When a living target moves nearby, it radiates high energy plasma."
+	desc = "An anti-infantry explosive designed by the PGF for denial of territory to enemy forces. Radiates high energy plasma to eradicate nearby targets."
 	range_light = 2
 	range_flame = 3
 	range_heavy = 0
@@ -660,8 +650,8 @@ LIVE_MINE_HELPER(pressure/explosive/rusty)
 LIVE_MINE_HELPER(pressure/explosive/rad)
 LIVE_MINE_HELPER(pressure/explosive/heavy)
 LIVE_MINE_HELPER(pressure/explosive/shrapnel)
-LIVE_MINE_HELPER(pressure/explosive/shrapnel/sting)
 
+LIVE_MINE_HELPER(proximity/explosive/sting)
 LIVE_MINE_HELPER(proximity/spawner/manhack)
 LIVE_MINE_HELPER(proximity/explosive/plasma)
 
@@ -681,7 +671,6 @@ LIVE_MINE_HELPER(pressure/sound)
 		/obj/item/mine/pressure/explosive/live = 10,
 		/obj/item/mine/pressure/explosive/shrapnel/live = 3,
 		/obj/item/mine/pressure/explosive/rad/live = 3,
-		/obj/item/mine/proximity/spawner/manhack/live = 3,
 		/obj/item/mine/pressure/explosive/fire/live = 3)
 
 /obj/effect/spawner/minefield

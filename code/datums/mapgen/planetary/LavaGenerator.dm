@@ -256,6 +256,7 @@
 		/obj/structure/flora/ash/tall_shroom = 2,
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 2,
+		/obj/item/mine/proximity/explosive = 1,
 		/obj/item/mine/pressure/explosive/rusty = 1
 	)
 

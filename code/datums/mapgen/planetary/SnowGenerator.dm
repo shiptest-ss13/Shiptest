@@ -255,6 +255,7 @@
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/puce = 2,
 		/obj/structure/flora/ash/garden/frigid = 2,
+		/obj/item/mine/proximity/explosive = 1,
 		/obj/item/mine/pressure/explosive/rusty = 1
 	)
 	closed_turf_types = list(
