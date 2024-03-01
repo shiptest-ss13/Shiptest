@@ -59,7 +59,7 @@
 		servant = null
 	for(var/bound in bound_atoms)
 		remove_bound(bound)
-	deltimers(dur_timer)
+	deltimer(dur_timer)
 	return ..()
 
 /datum/mission/proc/turn_in()
