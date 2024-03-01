@@ -147,6 +147,7 @@
 	icon_state = "omnilaser"
 	hitscan = TRUE
 	damage = 20
+	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'

@@ -1,4 +1,4 @@
-// 4.6x30mm (WT-550 Automatic Rifle & NT-SVG)
+// 4.6x30mm (WT-550 Automatic Rifle & SKM-24v)
 
 /obj/item/ammo_casing/c46x30mm
 	name = "4.6x30mm bullet casing"
