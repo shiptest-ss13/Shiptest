@@ -472,7 +472,7 @@
 					ert_antag = rolepick
 					ert_antag = new ert_antag
 				// pick another if the count is 0
-				else if(count == 0)
+				else if(!count)
 					continue
 				// pick it and decrease the count by one
 				else
