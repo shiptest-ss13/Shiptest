@@ -126,7 +126,7 @@
 	name = "Syndicate - Graduate (SUNS)"
 
 	uniform = /obj/item/clothing/under/syndicate/suns/uniform3
-	alt_uniform = /obj/item/clothing/under/syndicate/suns/uniform3
+	alt_uniform = /obj/item/clothing/under/syndicate/suns/uniform3/alt
 
 //atmos techs
 

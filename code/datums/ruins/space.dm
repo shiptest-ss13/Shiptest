@@ -139,12 +139,6 @@
 	name = "Syndicate Battle Sphere"
 	description = "The Syndicate Battle Sphere, complete with guns!"
 
-/datum/map_template/ruin/space/lab4071
-	id = "lab4071"
-	suffix = "lab4071.dmm"
-	name = "Syndicate Laboratory 4071"
-	description = "A Syndicate laboratory run by syndicate scientists."
-
 /datum/map_template/ruin/space/singularitylab
 	id = "singularitylab"
 	suffix = "singularity_lab.dmm"

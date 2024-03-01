@@ -10,7 +10,7 @@
 	var/requires_bodypart_type = BODYTYPE_ORGANIC				//Prevents you from performing an operation on incorrect limbs. 0 for any limb type
 	var/list/possible_locs = list() 							//Multiple locations
 	var/ignore_clothes = FALSE									//This surgery ignores clothes
-	var/mob/living/carbon/target								//Operation target mob
+	var/mob/living/target										//Operation target mob
 	var/obj/item/bodypart/operated_bodypart						//Operable body part
 	var/requires_bodypart = TRUE								//Surgery available only when a bodypart is present, or only when it is missing.
 	var/speed_modifier = 0										//Step speed modifier
