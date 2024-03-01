@@ -30,6 +30,10 @@
 	pixel_x = -8;
 	pixel_y = -5
 	},
+/obj/item/reagent_containers/glass/rag{
+	pixel_y = 3;
+	pixel_x = -8
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "bE" = (
@@ -41,7 +45,9 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/light/small/directional/north,
-/obj/machinery/airalarm/directional/west,
+/obj/machinery/airalarm/directional/west{
+	locked = 0
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
 "bO" = (
@@ -51,9 +57,6 @@
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
-/obj/structure/railing/wood{
-	dir = 1
-	},
 /turf/open/floor/wood/cold{
 	icon_state = "wood-broken5"
 	},
@@ -61,9 +64,14 @@
 "bW" = (
 /obj/machinery/hydroponics/soil,
 /obj/structure/flora/grass/brown,
+/obj/structure/railing/wood,
 /turf/open/floor/plating/sandy_dirt{
 	light_range = 2
 	},
+/area/overmap_encounter/planetoid/ice/explored)
+"cs" = (
+/obj/structure/flora/bush,
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "el" = (
 /obj/structure/cable{
@@ -73,9 +81,6 @@
 	dir = 1
 	},
 /obj/structure/closet/crate/wooden,
-/obj/item/reagent_containers/food/snacks/rationpack{
-	pixel_x = -8
-	},
 /obj/item/reagent_containers/food/snacks/rationpack{
 	pixel_x = -2
 	},
@@ -96,14 +101,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/railing/wood{
-	dir = 1
-	},
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/breakawayflask{
-	pixel_y = 10;
-	pixel_x = 3
-	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_y = 13;
 	pixel_x = -8
@@ -111,6 +109,10 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
 	pixel_y = 7;
 	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/drinks/bottle/sake{
+	pixel_x = 3;
+	pixel_y = 5
 	},
 /turf/open/floor/wood/cold,
 /area/ruin/unpowered)
@@ -141,8 +143,6 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "fX" = (
 /obj/effect/decal/cleanable/blood/drip,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice,
-/obj/structure/spider/stickyweb,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "ge" = (
@@ -160,15 +160,10 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/hunter{
-	locked = 0
+	anchored = 1
 	},
 /obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_y = -10;
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_y = -10;
-	pixel_x = -2
+	pixel_y = -10
 	},
 /obj/item/clothing/suit/armor/roumain{
 	pixel_y = -6
@@ -184,26 +179,17 @@
 /area/ruin/unpowered)
 "gQ" = (
 /obj/structure/closet/crate/wooden,
-/obj/item/seeds/wheat/rice{
-	pixel_y = -3;
-	pixel_x = 4
-	},
-/obj/item/seeds/wheat/rice{
-	pixel_y = -3
-	},
-/obj/item/seeds/sunflower/moonflower{
-	pixel_x = -2;
-	pixel_y = -5
+/obj/item/seeds/chili/ice{
+	pixel_y = -5;
+	pixel_x = 7
 	},
 /obj/item/seeds/sunflower/moonflower{
 	pixel_x = -5;
 	pixel_y = -5
 	},
-/obj/item/seeds/chili/ice{
-	pixel_y = -5;
-	pixel_x = 7
+/obj/item/seeds/wheat/rice{
+	pixel_y = -3
 	},
-/obj/item/storage/bag/plants,
 /obj/item/cultivator/rake{
 	pixel_y = -3
 	},
@@ -237,7 +223,6 @@
 	dir = 8;
 	pixel_y = 6
 	},
-/mob/living/simple_animal/hostile/poison/giant_spider/ice,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "iE" = (
@@ -249,7 +234,8 @@
 	dir = 4
 	},
 /obj/structure/closet/secure_closet/hunter{
-	locked = 0
+	locked = 0;
+	anchored = 1
 	},
 /obj/item/reagent_containers/food/snacks/spiderling{
 	pixel_y = -5
@@ -261,12 +247,22 @@
 /obj/machinery/door/airlock/wood,
 /turf/open/floor/wood/ebony,
 /area/ruin/unpowered)
+"kz" = (
+/obj/structure/flora/stump,
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "lf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
+"lC" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "lD" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/wood,
@@ -282,7 +278,9 @@
 /area/ruin/unpowered)
 "mb" = (
 /obj/structure/closet/crate/grave{
-	opened = 0
+	opened = 0;
+	name = "memorial mound";
+	desc = "Chances are nobody is buried here but this stands in rememberance to their name."
 	},
 /obj/item/reagent_containers/food/snacks/grown/moonflower{
 	pixel_x = -2;
@@ -343,7 +341,6 @@
 	pixel_x = 11;
 	pixel_y = 13
 	},
-/obj/structure/spider/stickyweb,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "pl" = (
@@ -379,9 +376,9 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/wood/reinforced,
-/obj/item/reagent_containers/food/drinks/breakawayflask/vintage/icewine{
+/obj/item/reagent_containers/food/drinks/breakawayflask{
 	pixel_y = 18;
-	pixel_x = -12
+	pixel_x = -11
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
@@ -512,10 +509,6 @@
 	pixel_x = -4;
 	pixel_y = -2
 	},
-/obj/item/stack/sheet/animalhide{
-	pixel_y = 2;
-	pixel_x = -4
-	},
 /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide{
 	pixel_y = 16;
 	pixel_x = -4
@@ -535,9 +528,21 @@
 /obj/structure/flora/ash/chilly,
 /turf/open/floor/grass/fairy,
 /area/overmap_encounter/planetoid/ice/explored)
+"Ad" = (
+/obj/structure/flora/grass/both,
+/obj/structure/railing/wood,
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "As" = (
 /obj/structure/sink/puddle,
 /turf/open/floor/plating/asteroid/sand/lit,
+/area/overmap_encounter/planetoid/ice/explored)
+"At" = (
+/obj/structure/flora/driftwood{
+	name = "branch";
+	desc = "A fallen tree branch."
+	},
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Av" = (
 /obj/structure/fans/tiny,
@@ -596,17 +601,15 @@
 	pixel_y = 10;
 	pixel_x = -4
 	},
-/obj/item/storage/toolbox/electrical{
-	pixel_x = -4;
-	pixel_y = 2
+/obj/machinery/power/apc/auto_name/directional/west{
+	locked = 0
 	},
-/obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
 /obj/item/clothing/head/welding{
 	pixel_x = -9;
-	pixel_y = -4
+	pixel_y = 2
 	},
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -653,16 +656,16 @@
 	pixel_y = 6;
 	pixel_x = -4
 	},
-/obj/item/ammo_casing/shotgun/improvised{
-	pixel_x = -8;
-	pixel_y = 14
-	},
-/obj/item/ammo_casing/shotgun/improvised{
-	pixel_x = -12;
-	pixel_y = 12
-	},
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/table/wood/reinforced,
+/obj/item/ammo_casing/spent{
+	pixel_y = 12;
+	pixel_x = -8
+	},
+/obj/item/ammo_casing/c38{
+	pixel_y = 8;
+	pixel_x = -12
+	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "DW" = (
@@ -743,6 +746,7 @@
 /area/overmap_encounter/planetoid/ice/explored)
 "IF" = (
 /obj/machinery/hydroponics/soil,
+/obj/structure/railing/wood,
 /turf/open/floor/plating/asteroid/sand/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "IM" = (
@@ -771,6 +775,10 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered)
+"Ma" = (
+/obj/structure/railing/wood,
+/turf/open/floor/plating/asteroid/snow/lit,
+/area/overmap_encounter/planetoid/ice/explored)
 "MO" = (
 /turf/open/floor/carpet/red,
 /area/ruin/unpowered)
@@ -787,10 +795,18 @@
 /obj/structure/flora/grass/brown,
 /turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
-"Qu" = (
-/obj/structure/railing/wood{
-	dir = 1
+"PJ" = (
+/obj/effect/turf_decal/solarpanel,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
 	},
+/obj/machinery/power/solar,
+/obj/structure/railing/corner/wood,
+/turf/open/floor/plating/icemoon{
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/ice/explored)
+"Qu" = (
 /obj/structure/chair/wood{
 	dir = 1
 	},
@@ -807,12 +823,8 @@
 	pixel_y = 13;
 	pixel_x = -1
 	},
-/obj/item/sharpener{
-	pixel_y = 6;
-	pixel_x = -7
-	},
 /obj/item/kitchen/knife/hunting{
-	pixel_y = 10;
+	pixel_y = 5;
 	pixel_x = -5
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -823,6 +835,9 @@
 	pixel_x = -3;
 	pixel_y = 11
 	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/structure/spider/stickyweb,
+/obj/item/reagent_containers/food/snacks/spiderling,
 /turf/open/floor/wood,
 /area/ruin/unpowered)
 "Rd" = (
@@ -886,9 +901,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/railing/wood{
-	dir = 1
-	},
 /obj/structure/chair/wood{
 	dir = 1
 	},
@@ -928,18 +940,10 @@
 /turf/open/floor/wood/cold,
 /area/ruin/unpowered)
 "We" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
+/obj/structure/flora/driftlog{
+	name = "log"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating/snowed/smoothed/icemoon{
-	light_range = 2
-	},
+/turf/open/floor/plating/asteroid/snow/lit,
 /area/overmap_encounter/planetoid/ice/explored)
 "Wq" = (
 /obj/structure/flora/tree/pine,
@@ -994,7 +998,7 @@ Nh
 Nh
 Nh
 Nh
-fr
+Wq
 pl
 Ey
 Nh
@@ -1024,7 +1028,7 @@ fr
 fr
 fr
 fr
-Nh
+fr
 Nh
 "}
 (3,1,1) = {"
@@ -1037,7 +1041,7 @@ fr
 fr
 fr
 fr
-Rd
+fr
 Rd
 Rd
 eR
@@ -1062,8 +1066,8 @@ HL
 EO
 fr
 fr
+cs
 fr
-xg
 xg
 xg
 eR
@@ -1087,9 +1091,9 @@ fX
 Cf
 fr
 fr
+fr
 nJ
 FC
-We
 ze
 UJ
 Av
@@ -1115,7 +1119,7 @@ ms
 fr
 fr
 fr
-Bp
+tE
 Bp
 Bp
 eR
@@ -1141,9 +1145,9 @@ mH
 fr
 fr
 fr
+kz
 yv
-yv
-yv
+PJ
 HL
 HL
 HL
@@ -1195,7 +1199,7 @@ tE
 Zx
 Gn
 hg
-fr
+Ma
 Uj
 Zc
 Zc
@@ -1247,7 +1251,7 @@ xx
 xx
 Zx
 IM
-YI
+Ad
 bO
 VH
 VH
@@ -1273,7 +1277,7 @@ xx
 xx
 tE
 fr
-fr
+lC
 HL
 vG
 vG
@@ -1291,7 +1295,7 @@ fa
 Nh
 qR
 YI
-fr
+We
 OU
 xx
 xx
@@ -1330,7 +1334,7 @@ fr
 fr
 fr
 iE
-fr
+At
 fr
 fr
 fr
