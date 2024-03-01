@@ -1303,9 +1303,6 @@
 	var/face_name = get_face_name("")
 	var/known_name = hovering_mob.mind.guestbook.get_known_name(hovering_mob, src, face_name)
 	if(known_name)
-		var/id_name = get_id_name("")
-		if(id_name && (known_name != id_name))
-			return "[known_name] (as [id_name])"
 		return known_name
 	return .
 

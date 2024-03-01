@@ -31,13 +31,9 @@
 		return pda.owner
 	return if_no_id
 
-//repurposed proc. Now it combines get_id_name() and get_face_name() to determine a mob's name variable. Made into a separate proc as it'll be useful elsewhere
 /mob/living/carbon/human/get_visible_name()
 	if(name_override)
 		return name_override
-	var/id_name = get_id_name("")
-	if(id_name)
-		return id_name
 	return get_generic_name(lowercase = TRUE)
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when Fluacided or when updating a human's name variable

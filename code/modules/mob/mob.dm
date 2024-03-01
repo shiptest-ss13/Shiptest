@@ -693,6 +693,7 @@
 	// this is something i should probably fix instead of adding a fallback check, but...
 	if(isobserver(src))
 		to_chat(src, span_warning("You have to be in the current round to do that!"))
+		return
 	if(!mind)
 		var/fail_message = "You have no mind!"
 		if(isobserver(src))
