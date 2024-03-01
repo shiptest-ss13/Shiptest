@@ -337,15 +337,14 @@
 /area/ship/bridge)
 "M" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "nail_window_shut";
-	dir = 8
-	},
 /obj/structure/grille,
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/poddoor/shutters{
+	id = "nail_window_shut"
+	},
 /turf/open/floor/plating,
 /area/ship/bridge)
 "N" = (
