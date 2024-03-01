@@ -91,4 +91,4 @@
 
 /datum/fantasy_affix/ugly/remove(datum/component/fantasy/comp)
 	var/obj/item/master = comp.parent
-	master.AddElement(/datum/element/beauty, min(comp.quality, -1) * 250)
+	master.RemoveElement(/datum/element/beauty, min(comp.quality, -1) * 250)
