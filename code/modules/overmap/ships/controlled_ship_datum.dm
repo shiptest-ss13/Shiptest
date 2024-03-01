@@ -63,6 +63,9 @@
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
 
+	///Stations the ship has been blacklisted from landing at, associative station = reason
+	var/list/blacklisted = list()
+
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
 	if(!..() || (!COOLDOWN_FINISHED(src, rename_cooldown) && !force))
@@ -128,6 +131,7 @@
 		QDEL_NULL(shipkey)
 	QDEL_LIST(manifest)
 	job_slots.Cut()
+	blacklisted.Cut()
 	for(var/a_key in applications)
 		if(isnull(applications[a_key]))
 			continue

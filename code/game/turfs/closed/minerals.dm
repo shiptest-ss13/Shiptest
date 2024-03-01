@@ -155,11 +155,11 @@
 	return
 
 /turf/closed/mineral/random
-	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10,
-		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 11,
+	var/list/mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 3, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4,
+		/obj/item/stack/ore/silver = 4, /obj/item/stack/ore/plasma = 40, /obj/item/stack/ore/iron = 65, /obj/item/stack/ore/titanium = 5,
 		/turf/closed/mineral/gibtonite = 4, /obj/item/stack/ore/bluespace_crystal = 1)
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
-	var/mineralChance = 13
+	var/mineralChance = 5
 
 
 /turf/closed/mineral/random/Initialize(mapload, inherited_virtual_z)
@@ -189,7 +189,7 @@
 			Spread_Vein(path)
 
 /turf/closed/mineral/random/high_chance
-	mineralChance = 25
+	mineralChance = 13
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 35, /obj/item/stack/ore/diamond = 30, /obj/item/stack/ore/gold = 45, /obj/item/stack/ore/titanium = 45,
 		/obj/item/stack/ore/silver = 50, /obj/item/stack/ore/plasma = 50, /obj/item/stack/ore/bluespace_crystal = 20)
@@ -211,7 +211,7 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
 
 /turf/closed/mineral/random/low_chance
-	mineralChance = 6
+	mineralChance = 3
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 2, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 4, /obj/item/stack/ore/titanium = 4,
 		/obj/item/stack/ore/silver = 6, /obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/iron = 40,
@@ -228,7 +228,7 @@
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	defer_change = 1
 
-	mineralChance = 10
+	mineralChance = 5
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10, /obj/item/stack/ore/titanium = 11,
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 40,
@@ -254,7 +254,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	defer_change = TRUE
-	mineralChance = 20 //as most caves is snowy, might as well bump up the chance
+	mineralChance = 10 //as most caves is snowy, might as well bump up the chance
 
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 5, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 10, /obj/item/stack/ore/titanium = 11,
@@ -281,7 +281,7 @@
 /turf/closed/mineral/random/snow/underground
 	baseturfs = /turf/open/floor/plating/asteroid/snow/icemoon
 	// abundant ore
-	mineralChance = 20
+	mineralChance = 10
 	mineralSpawnChanceList = list(
 		/obj/item/stack/ore/uranium = 10, /obj/item/stack/ore/diamond = 4, /obj/item/stack/ore/gold = 20, /obj/item/stack/ore/titanium = 22,
 		/obj/item/stack/ore/silver = 24, /obj/item/stack/ore/plasma = 20, /obj/item/stack/ore/iron = 20, /obj/item/stack/ore/bananium = 1,
@@ -818,7 +818,7 @@
 	baseturfs = /turf/open/floor/plating/asteroid/wasteplanet
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 30, /obj/item/stack/ore/diamond = 0.5, /obj/item/stack/ore/gold = 5,
 		/obj/item/stack/ore/silver = 7, /obj/item/stack/ore/plasma = 35, /obj/item/stack/ore/iron = 35, /obj/item/stack/ore/titanium = 10)
-	mineralChance = 30
+	mineralChance = 10
 
 /turf/closed/mineral/snowmountain/cavern/shipside
 	name = "ice cavern rock"

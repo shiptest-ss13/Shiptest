@@ -1516,7 +1516,6 @@
 /area/centcom/ferry)
 "arZ" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/taperecorder,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
@@ -2207,9 +2206,6 @@
 	},
 /obj/structure/table/wood/fancy,
 /turf/open/floor/wood,
-/area/wizard_station)
-"axw" = (
-/turf/open/floor/engine/cult,
 /area/wizard_station)
 "axx" = (
 /obj/machinery/vending/snack,
@@ -4457,7 +4453,7 @@
 "aOO" = (
 /obj/item/reagent_containers/food/condiment/enzyme,
 /obj/item/reagent_containers/food/drinks/shaker,
-/obj/item/book/manual/wiki/barman_recipes,
+/obj/item/book/manual/wiki/drinks,
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel,
 /area/centcom/holding)
@@ -6237,7 +6233,6 @@
 "bbL" = (
 /obj/structure/table/wood,
 /obj/item/folder/red,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/restraints/handcuffs,
 /obj/item/assembly/flash/handheld,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -6599,7 +6594,6 @@
 /area/centcom)
 "bRK" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/taperecorder,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -8374,7 +8368,6 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/supply)
 "fsQ" = (
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/taperecorder,
 /obj/structure/table/wood,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -9298,7 +9291,6 @@
 "hzR" = (
 /obj/structure/table/wood,
 /obj/item/folder/red,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/restraints/handcuffs,
 /obj/item/assembly/flash/handheld,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -10563,7 +10555,6 @@
 /area/centcom/evac)
 "kel" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/taperecorder,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -11269,7 +11260,6 @@
 "lDl" = (
 /obj/structure/table/wood,
 /obj/item/folder/red,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/restraints/handcuffs,
 /obj/item/assembly/flash/handheld,
 /obj/machinery/airalarm/directional/south,
@@ -12599,10 +12589,10 @@
 	dir = 8
 	},
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/assault/ak47/inteq{
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
 	pixel_y = 3
 	},
-/obj/item/gun/ballistic/automatic/assault/ak47/inteq{
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
 	pixel_y = -1;
 	pixel_x = -5
 	},
@@ -13391,7 +13381,7 @@
 /area/centcom/holding)
 "pDx" = (
 /obj/structure/table/wood,
-/obj/item/book/manual/wiki/barman_recipes,
+/obj/item/book/manual/wiki/drinks,
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/item/reagent_containers/glass/rag,
 /obj/machinery/newscaster/directional/north{
@@ -13822,7 +13812,6 @@
 /area/centcom/control)
 "qHN" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/item/taperecorder,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
@@ -14673,21 +14662,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
-"sow" = (
-/obj/item/book/manual/wiki/security_space_law,
-/obj/structure/table/wood,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/transparent/neutral,
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/transparent/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/control)
 "spy" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 1
@@ -15221,10 +15195,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/inteq{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
 	pixel_x = 2
 	},
-/obj/item/gun/ballistic/automatic/smg/inteq{
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
 	pixel_x = -1;
 	pixel_y = -6
 	},
@@ -23564,7 +23538,7 @@ aqZ
 aqZ
 aqZ
 awN
-axw
+aqZ
 aqE
 aqZ
 aqZ
@@ -64666,7 +64640,7 @@ aiH
 mpw
 rzn
 ail
-sow
+gDP
 gTh
 agb
 aqg

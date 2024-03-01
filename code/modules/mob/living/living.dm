@@ -52,6 +52,7 @@
 		S.removeSoulsharer(src) //If a sharer is destroy()'d, they are simply removed
 	sharedSoullinks = null
 
+	QDEL_LIST(surgeries)
 	QDEL_LIST(abilities) // so that the actions are deleted, which will clear refs to owner
 	QDEL_LIST(roundstart_quirks)
 	return ..()
