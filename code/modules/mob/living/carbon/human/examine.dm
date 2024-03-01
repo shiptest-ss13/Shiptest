@@ -8,7 +8,6 @@
 	var/t_has = p_have()
 	var/t_is = p_are()
 	var/obscure_name
-	var/apparent_species
 	var/list/obscured = check_obscured_slots()
 	var/skipface = ((wear_mask?.flags_inv & HIDEFACE) || (head?.flags_inv & HIDEFACE))
 
@@ -17,9 +16,7 @@
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
-	if(dna?.species && !skipface)
-		apparent_species = ", \an [dna.species.name]"
-	. = list("<span class='info'>This is <EM>[!obscure_name ? name : "Unknown"][apparent_species]</EM>!")
+	. = list(span_info("This is <EM>[name]</EM>!"))
 
 	if(user != src)
 		if(!obscure_name && !skipface)

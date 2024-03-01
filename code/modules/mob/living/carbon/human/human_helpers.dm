@@ -205,7 +205,7 @@
 	if(visible_age)
 		visible_age = "[visible_age] "
 	var/visible_gender = get_gender()
-	var/final_string = "[visible_adjective][visible_age][visible_gender]"
+	var/final_string = "[visible_adjective][visible_age][dna.species.name] [visible_gender]"
 	if(prefixed)
 		final_string = "\A [final_string]"
 	return lowercase ? lowertext(final_string) : final_string
