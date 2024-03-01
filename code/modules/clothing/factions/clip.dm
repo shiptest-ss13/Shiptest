@@ -13,14 +13,14 @@
 	alt_covers_chest = TRUE
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
-	dying_key = DYE_REGISTRY_UNDER //???
+	dying_key = DYE_REGISTRY_UNDER //??? // it's for washing machines don't worry about it
 
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION | KEPORI_VARIATION // a new record!
 
 /obj/item/clothing/under/clip/minutemen
 	name = "clip minutemen fatigues"
-	desc = "Fatigues worn by the CLIP Minutemen."
+	desc = "Fatigues worn by the CLIP Minutemen's enlisted."
 
 	icon_state = "clip_minuteman"
 
@@ -140,8 +140,8 @@
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/clip_capcoat
-	name = "\improper CLIP Minutemen Captains Coat"
-	desc = "A well made coat used by CLIP Minutemen captains. It's thick padding stops some hazards for it's user. "
+	name = "\improper CLIP Minutemen captain's coat"
+	desc = "A well-made coat used by CLIP Minutemen captains. It's thick padding stops some hazards for the user."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
