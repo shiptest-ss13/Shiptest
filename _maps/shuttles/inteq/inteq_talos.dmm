@@ -1920,16 +1920,14 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/armor/vest/bulletproof,
-/obj/item/clothing/head/warden/drill{
-	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.";
-	name = "master at arms' campaign hat"
-	},
 /obj/item/megaphone/sec,
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_y = -32
 	},
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/head/warden/inteq,
+/obj/item/clothing/suit/armor/vest/security/warden/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ms" = (
@@ -4700,8 +4698,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/book/manual/srmlore,
-/obj/item/book/manual/wiki/detective,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/structure/bookcase,
 /obj/item/book/random,
 /obj/item/book/random,
@@ -6289,7 +6285,7 @@
 	id = "talos_engine_shutter"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -7589,6 +7585,7 @@
 	},
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/head/inteq_peaked,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "YC" = (

@@ -233,39 +233,47 @@
 	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
 	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
 	material_flags = NONE
+	has_latches = FALSE
 
-/obj/item/storage/toolbox/ammo/a762/PopulateContents()
-	name = "ammo can (7.62x54mmR)"
+/obj/item/storage/toolbox/ammo/a850r/PopulateContents()
+	name = "ammo can (8x50mmR)"
+	icon_state = "ammobox_850"
 	for(var/i in 1 to 7)
-		new /obj/item/ammo_box/a762(src)
+		new /obj/item/ammo_box/magazine/illestren_a850r(src)
 
-/obj/item/storage/toolbox/ammo/a762_39/PopulateContents()
-	name = "ammo can (7.62x39mm)"
+/obj/item/storage/toolbox/ammo/a762_40/PopulateContents()
+	name = "ammo can (7.62x40mm CLIP)"
+	icon_state = "ammobox_762"
 	for (var/i in 1 to 4)
-		new /obj/item/ammo_box/a762_39(src)
+		new /obj/item/ammo_box/a762_40(src)
 
 /obj/item/storage/toolbox/ammo/a308/PopulateContents()
 	name = "ammo can (.308)"
+	icon_state = "ammobox_308"
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/a308(src)
 
 /obj/item/storage/toolbox/ammo/c45/PopulateContents()
 	name = "ammo can (.45)"
+	icon_state = "ammobox_45"
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/c45(src)
 
 /obj/item/storage/toolbox/ammo/c9mm/PopulateContents()
 	name = "ammo can (9mm)"
+	icon_state = "ammobox_9mm"
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/c9mm(src)
 
 /obj/item/storage/toolbox/ammo/c10mm/PopulateContents()
 	name = "ammo can (10mm)"
+	icon_state = "ammobox_10mm"
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/c10mm(src)
 
 /obj/item/storage/toolbox/ammo/shotgun/PopulateContents()
 	name = "ammo can (12ga)"
+	icon_state = "ammobox_12ga"
 	for (var/i in 1 to 4)
 		new /obj/item/ammo_box/a12g(src)
 

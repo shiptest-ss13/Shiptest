@@ -387,6 +387,8 @@
 	#define COMPONENT_BLOCK_SWAP (1<<0)
 ///from base of /mob/verb/pointed: (atom/A)
 #define COMSIG_MOB_POINTED "mob_pointed"
+/// from mob/get_status_tab_items(): (list/items)
+#define COMSIG_MOB_GET_STATUS_TAB_ITEMS "mob_get_status_tab_items"
 ///from base of mob/living/resist() (/mob/living)
 #define COMSIG_LIVING_RESIST "living_resist"
 ///from base of mob/living/look_up() (/mob/living)
@@ -724,6 +726,10 @@
 #define COMSIG_OVERMAP_DOCK "overmap_dock"
 /// From overmap Undock(): (datum/overmap)
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
+
+// /datum/component/spawner signals
+// Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
+#define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
 
 ///Beam Signals
 /// Called before beam is redrawn

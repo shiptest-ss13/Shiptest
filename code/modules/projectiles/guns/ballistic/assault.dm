@@ -14,90 +14,50 @@
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 	spread_unwielded = 20
 
-/obj/item/gun/ballistic/automatic/assault/ak47
-	name = "\improper SVG-67"
-	desc = "A Frontier-built assault rifle descended from a pattern of unknown provenance. Its low cost, ease of maintenance, and powerful 7.62x39mm cartridge make it a popular choice among a wide variety of outlaws."
+/obj/item/gun/ballistic/automatic/assault/skm
+	name = "\improper SKM-24"
+	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
 	icon = 'icons/obj/guns/48x32guns.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/ak47.ogg'
+	fire_sound = 'sound/weapons/gun/rifle/skm.ogg'
 
-	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
-	load_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/rifle/ak47_reload.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/ak47_unload.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/skm_unload.ogg'
 
-	icon_state = "ak47"
-	item_state = "ak47"
+	icon_state = "skm"
+	item_state = "skm"
 	mag_display = TRUE
+	special_mags = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/ak47
-	spread = 0
+	manufacturer = MANUFACTURER_IMPORT
+	mag_type = /obj/item/ammo_box/magazine/skm_762_40
+
+	spread = 1
 	wield_delay = 0.7 SECONDS
 
-/obj/item/gun/ballistic/automatic/assault/ak47/ComponentInitialize()
+/obj/item/gun/ballistic/automatic/assault/skm/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
-/obj/item/gun/ballistic/automatic/assault/ak47/nt
-	name = "\improper NT-SVG"
-	desc = "An even cheaper version of the SVG-67, rechambered for the lightweight 4.6x30mm PDW cartridge. The flimsy folding stock and light construction make for a highly-portable rifle that lacks accuracy and power."
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
-	icon_state = "ak47_nt"
-	item_state = "ak47_nt"
-	mag_type = /obj/item/ammo_box/magazine/aknt
-	var/folded = FALSE
-	var/unfolded_spread = 2
-	var/unfolded_item_state = "ak47_nt"
-	var/folded_spread = 20
-	var/folded_item_state = "ak47_nt_stockless"
+/obj/item/gun/ballistic/automatic/assault/skm/pirate
+	name = "\improper Chopper"
+	desc = "An SKM-24 in a state of shockingly poor repair: Several parts are missing and the 'grip' is improvised from scrap wood. It's a miracle it still works at all. Chambered in 7.62x40mm CLIP."
 
-/obj/item/gun/ballistic/automatic/assault/ak47/nt/CtrlClick(mob/user)
-	. = ..()
-	if((!ishuman(user) || user.stat))
-		return
-	to_chat(user, "<span class='notice'>You start to [folded ? "unfold" : "fold"] the stock on the [src].</span>")
-	if(do_after(user, 10, target = src))
-		fold(user)
-		user.update_inv_back()
-		user.update_inv_hands()
-		user.update_inv_s_store()
+	icon_state = "skm_pirate"
+	item_state = "skm_pirate"
+	manufacturer = MANUFACTURER_NONE
 
-/obj/item/gun/ballistic/automatic/assault/ak47/nt/proc/fold(mob/user)
-	if(folded)
-		to_chat(user, "<span class='notice'>You unfold the stock on the [src].</span>")
-		spread = unfolded_spread
-		item_state = unfolded_item_state
-		w_class = WEIGHT_CLASS_BULKY
-	else
-		to_chat(user, "<span class='notice'>You fold the stock on the [src].</span>")
-		spread = folded_spread
-		item_state = folded_item_state
-		w_class = WEIGHT_CLASS_NORMAL
+/obj/item/gun/ballistic/automatic/assault/skm/inteq
+	name = "\improper SKM-44"
+	desc = "An obsolete model of assault rifle once used by CLIP. Most of these were seized from Frontiersmen armories or purchased in CLIP, then modified to IRMG standards. Chambered in 7.62x40mm CLIP."
 
-	folded = !folded
-	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/assault/ak47/nt/update_overlays()
-	. = ..()
-	var/mutable_appearance/stock
-	if(!folded)
-		stock = mutable_appearance(icon, "ak47_nt_stock")
-	else
-		stock = mutable_appearance(icon, null)
-	. += stock
-
-/obj/item/gun/ballistic/automatic/assault/ak47/inteq
-	name = "\improper SkM-24"
-	desc = "An antique assault rifle seized from Frontiersmen armories then extensively modified to IRMG standards. Chambered in 7.62x39mm."
-	icon = 'icons/obj/guns/48x32guns.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/akm.ogg'
-	icon_state = "akm"
-	item_state = "akm"
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	icon_state = "skm_inteq"
+	item_state = "skm_inteq"
+	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/automatic/assault/p16
 	name = "\improper P-16"
@@ -127,22 +87,6 @@
 	desc = "The standard-issue rifle of the Colonial Minutemen and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
 	icon_state = "cm16"
 	item_state = "cm16"
-
-/obj/item/gun/ballistic/automatic/assault/ar
-	name = "\improper NT-ARG 'Boarder'"
-	desc = "A burst-fire 5.56mm carbine occasionally found in the hands of Nanotrasen marines."
-	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
-	icon_state = "arg"
-	item_state = "arg"
-	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/p16
-	can_suppress = FALSE
-	burst_size = 3
-	fire_delay = 1
-
-/obj/item/gun/ballistic/automatic/assault/ar/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
 
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese
 	name = "\improper Swiss Cheese"
@@ -319,3 +263,28 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/assault)
 	fire_delay = 2
+
+//techinically a battle rifle, i'm putting it here for organisation sake
+
+/obj/item/gun/ballistic/automatic/vickland //weapon designed by Apogee-dev
+	name = "\improper Vickland"
+	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
+	icon_state = "vickland"
+	item_state = "vickland"
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_BULKY
+	internal_magazine = TRUE
+	mag_type = /obj/item/ammo_box/magazine/internal/vickland
+	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
+	burst_size = 0
+	actions_types = list()
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+
+	spread_unwielded = 25
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 0.75

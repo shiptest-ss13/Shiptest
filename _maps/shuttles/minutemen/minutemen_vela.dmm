@@ -562,7 +562,7 @@
 /obj/item/clothing/suit/toggle/lawyer/minutemen,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/glasses/sunglasses,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/gun/ballistic/automatic/pistol/candor,
 /obj/item/clothing/head/cowboy/sec/minutemen,
 /obj/item/radio/headset/minutemen/alt/captain,
 /obj/item/storage/backpack,
@@ -5893,10 +5893,6 @@
 	},
 /obj/structure/table,
 /obj/machinery/firealarm/directional/south,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = 9;
-	pixel_y = 4
-	},
 /obj/item/flashlight/lamp{
 	pixel_x = -7;
 	pixel_y = 4
@@ -8315,8 +8311,8 @@
 /area/ship/crew/office)
 "Th" = (
 /obj/structure/guncase,
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
-/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
+/obj/item/gun/ballistic/automatic/pistol/candor/no_mag,
 /obj/item/gun/ballistic/automatic/smg/cm5{
 	spawnwithmagazine = 0
 	},
@@ -9115,7 +9111,7 @@
 /area/ship/hallway/fore)
 "XC" = (
 /obj/structure/table,
-/obj/item/book/manual/wiki/engineering_guide,
+/obj/item/book/manual/wiki/engineering,
 /turf/open/floor/wood,
 /area/ship/hallway/central)
 "XJ" = (

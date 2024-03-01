@@ -65,7 +65,7 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN)		//WS Edit - SolGov Rep
+		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN, "Outpost")		//WS Edit - SolGov Rep
 		if(!sender)
 			return
 		switch(sender)
@@ -75,6 +75,8 @@
 				sender = input("From what division?", "Minutemen") as null|anything in list("Colonial Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
+			if ("Outpost")
+				sender = "Outpost Authority"
 		if(!sender)
 			return
 	message_admins("[key_name_admin(src)] has started answering [key_name_admin(H)]'s [sender] request.")

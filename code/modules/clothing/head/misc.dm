@@ -65,7 +65,6 @@
 	name = "nurse's hat"
 	desc = "It allows quick identification of trained medical personnel."
 	icon_state = "nursehat"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/nurse
 
@@ -124,7 +123,6 @@
 	name = "rabbit ears"
 	desc = "A headband with a pair of faux rabbit ears."
 	icon_state = "bunny"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/rabbit
 
@@ -165,14 +163,12 @@
 	desc = "Yarr."
 	icon_state = "bandana"
 	item_state = "bandana"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/bowler
 	name = "bowler-hat"
 	desc = "Gentleman, elite aboard!"
 	icon_state = "bowler"
 	item_state = "bowler"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/witchwig
 	name = "witch costume wig"
@@ -288,7 +284,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("warned", "cautioned", "smashed")
 	resistance_flags = NONE
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/santa
 	name = "santa hat"
@@ -303,7 +298,6 @@
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
 	icon_state = "jester_hat"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/jester/alt
 	icon_state = "jester2"
@@ -331,7 +325,6 @@
 	icon_state = "crown"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/crown/fancy
 	name = "magnificent crown"
@@ -376,7 +369,6 @@
 	name = "french beret"
 	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage in military conflict, for some reason."
 	icon_state = "beret"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
@@ -439,7 +431,6 @@
 	item_state = "shrine_wig"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/intern
 	name = "\improper CentCom Head Intern beancap"
@@ -466,11 +457,11 @@
 	icon_state = "JackFrostHat"
 	item_state = "JackFrostHat"
 
-/obj/item/clothing/head/gorlexcap
+/obj/item/clothing/head/ngrcap
 	name = "2nd Battlegroup peaked cap"
-	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup."
-	icon_state = "gorlexcap"
-	item_state = "gorlexcap"
+	desc = "A cap worn by officers of the New Gorlex Republic's 2nd Battlegroup."
+	icon_state = "ngrcap"
+	item_state = "ngrcap"
 	flags_inv = 0
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
@@ -505,8 +496,6 @@
 	name = "cowboy hat"
 	desc = "A classic stetson hat, made from real imitation leather! Wearing it gives you a strong urge to yeehaw."
 	icon_state = "cowboy"
-	dynamic_fhair_suffix = "+generic"
-	dynamic_fhair_suffix = "+generic"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
 
@@ -520,3 +509,4 @@
 	name = "SolGov surgery cap"
 	desc = "It's a surgery cap utilized by solarian doctors."
 	icon_state = "solgov_surgery"
+
