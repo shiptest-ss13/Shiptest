@@ -329,7 +329,7 @@
 		var/mob/living/carbon/human/humanc = character
 		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
-		ship.addMobToCrewGuestbook(humanc)
+		ship.add_mob_to_crew_guestbook(humanc)
 		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
 		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
