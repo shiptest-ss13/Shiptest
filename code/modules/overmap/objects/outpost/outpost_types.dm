@@ -162,13 +162,13 @@
 	// Uses "test" hangars.
 
 
-/* prison event */
-/datum/map_template/outpost/event_prison
-	name = "event_prison"
+/* event outpost */
+/datum/map_template/outpost/outpost_event
+	name = "outpost_event"
 
-/datum/overmap/outpost/outpost_prison
+/datum/overmap/outpost/outpost_event
 	token_icon_state = "station_1"
-	main_template = /datum/map_template/outpost/event_prison
+	main_template = /datum/map_template/outpost/outpost_event
 	elevator_template = /datum/map_template/outpost/elevator_indie
 	main_level_ztraits = list(
 		ZTRAIT_STATION = TRUE,
