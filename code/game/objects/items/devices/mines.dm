@@ -226,7 +226,7 @@
 		var/mob/living/fool = arrived
 		fool.do_alert_animation(fool)
 		if(!hair_trigger)
-			fool.Immobilize(15 DECISECONDS, TRUE)
+			fool.Immobilize(25 DECISECONDS, TRUE)
 			to_chat(fool, span_userdanger("You step on \the [src] and freeze."))
 	visible_message(span_danger("[icon2html(src, viewers(src))] *click*"))
 	if(dud == FALSE)//see wirecutting

@@ -33,10 +33,10 @@
 
 /obj/projectile/bullet/shrapnel
 	name = "flying shrapnel shard"
-	damage = 14
+	damage = 10
 	range = 10
 	armour_penetration = -20
-	dismemberment = 15
+	dismemberment = 25
 	ricochets_max = 2
 	ricochet_chance = 40
 	shrapnel_type = /obj/item/shrapnel
@@ -44,9 +44,9 @@
 	hit_stunned_targets = TRUE
 
 /obj/projectile/bullet/shrapnel/rusty
-	damage = 10
+	damage = 8
 	armour_penetration = -35
-	dismemberment = 5
+	dismemberment = 15
 	ricochets_max = 3//duller = less likely to stick in a wall
 	ricochet_chance = 60
 
@@ -54,17 +54,17 @@
 	damage = 20
 	name = "flying shrapnel hunk"
 	range = 25
-	dismemberment = 20
+	dismemberment = 35
 	ricochets_max = 4
 	ricochet_chance = 90
 	ricochet_decay_chance = 0.9
 
 /obj/projectile/bullet/shrapnel/hot
 	name = "white-hot metal slag"
-	damage = 10
+	damage = 8
 	range = 8
 	armour_penetration = -35
-	dismemberment = 4
+	dismemberment = 10
 	shrapnel_type = /obj/item/shrapnel/hot
 	damage_type = BURN
 
@@ -80,6 +80,7 @@
 	damage_type = BURN
 	damage = 10
 	range = 8
+	dismemberment = 10
 	armour_penetration = -35
 	shrapnel_type = /obj/item/shrapnel/hot
 
