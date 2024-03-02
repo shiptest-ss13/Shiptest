@@ -310,37 +310,37 @@
 					/obj/item/stock_parts/cell/gun)
 	cost = 1500
 
-/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+/datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
 	desc = "Contains a fifty-round 4.6x30mm box for PDWs such as the WT-550."
 	contains = list(/obj/item/ammo_box/c46x30mm_box)
 	cost = 250
 
-/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+/datum/supply_pack/ammo/c8x50mm_boxcrate
 	name = "8x50mm Ammo Box Crate"
 	desc = "Contains a twenty-round 8x50mm ammo box for rifles such as the Illestren."
 	contains = list(/obj/item/ammo_box/c8x50mm_box)
 	cost = 250
 
-/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+/datum/supply_pack/ammo/c8x50mm_boxhp_boxcrate
 	name = "8x50mm Hollow Point Crate"
 	desc = "Contains a twenty-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
 	contains = list(/obj/item/ammo_box/c8x50mmhp_box)
 	cost = 500
 
-/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+/datum/supply_pack/ammo/ferropelletboxcrate
 	name = "Ferromagnetic Pellet Box Crate"
 	desc = "Contains a fifty-round ferromagnetic pellet ammo box for gauss guns such as the Claris."
 	contains = list(/obj/item/ammo_box/ferropelletbox)
 	cost = 250
 
-/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+/datum/supply_pack/ammo/ferroslugbox
 	name = "Ferromagnetic Slug Box Crate"
 	desc = "Contains a twenty-round ferromagnetic slug for gauss guns such as the Model-H."
 	contains = list(/obj/item/ammo_box/ferroslugbox)
 	cost = 250
 
-/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+/datum/supply_pack/ammo/ferrolancebox
 	name = "Ferromagnetic Lance Box Crate"
 	desc = "Contains a fifty-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/ammo_box/ferrolancebox)
