@@ -96,7 +96,7 @@
 		/obj/structure/flora/grass/both = 12,
 		/obj/structure/flora/ash/chilly = 4,
 		/obj/structure/flora/ash/garden/frigid = 2,
-		/obj/item/mine/pressure/explosive/rusty = 1
+		/obj/item/mine/pressure/explosive/rusty/live = 1
 	)
 	flora_spawn_chance = 10
 	mob_spawn_chance = 1
@@ -153,7 +153,7 @@
 		/obj/structure/flora/tree/pine = 20,
 		/obj/structure/flora/tree/dead = 6,
 		/obj/structure/flora/grass/both = 8,
-		/obj/item/mine/pressure/explosive/rusty = 1,
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 
 /datum/biome/snow/forest/dense
@@ -162,7 +162,7 @@
 		/obj/structure/flora/tree/pine = 20,
 		/obj/structure/flora/grass/both = 6,
 		/obj/structure/flora/tree/dead = 3,
-		/obj/item/mine/pressure/explosive/rusty = 1,
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 
 /datum/biome/arctic
@@ -255,8 +255,8 @@
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/puce = 2,
 		/obj/structure/flora/ash/garden/frigid = 2,
-		/obj/item/mine/proximity/explosive = 1,
-		/obj/item/mine/pressure/explosive/rusty = 1
+		/obj/item/mine/proximity/explosive/live = 1,
+		/obj/item/mine/pressure/explosive/rusty/live = 1
 	)
 	closed_turf_types = list(
 		/turf/closed/mineral/random/snow = 1
@@ -327,7 +327,7 @@
 		/obj/structure/flora/ash/leaf_shroom = 3,
 		/obj/structure/flora/ash/cap_shroom = 3,
 		/obj/structure/flora/ash/stem_shroom = 3,
-		/obj/item/mine/pressure/explosive/fire = 1,
+		/obj/item/mine/pressure/explosive/fire/live = 1,
 	)
 	feature_spawn_chance = 0.2
 

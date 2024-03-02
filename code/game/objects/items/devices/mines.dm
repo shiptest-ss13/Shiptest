@@ -693,4 +693,4 @@ LIVE_MINE_HELPER(pressure/sound)
 
 /obj/effect/spawner/minefield/manhack
 	name = "manhack field spawner"
-	minetype = /obj/item/mine/proximity/spawner/manhack
+	minetype = /obj/item/mine/proximity/spawner/manhack/live
