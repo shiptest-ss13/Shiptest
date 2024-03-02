@@ -548,6 +548,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
+"fb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 8
+	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/hallway/fore)
 "fl" = (
 /obj/machinery/light_switch{
 	dir = 1;
@@ -859,6 +868,9 @@
 /obj/machinery/atmospherics/pipe/simple/green/visible,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/aft)
 "hC" = (
@@ -2350,6 +2362,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "uy" = (
@@ -2585,6 +2600,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/generic,
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/central)
 "wM" = (
@@ -7029,7 +7047,7 @@ ph
 Px
 pa
 Kq
-vd
+fb
 QL
 EI
 gK
