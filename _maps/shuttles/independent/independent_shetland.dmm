@@ -228,6 +228,9 @@
 /area/ship/hallway/central)
 "cl" = (
 /obj/structure/ore_box,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/mono{
 	dir = 1
 	},
@@ -567,6 +570,14 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
+"fo" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/mono{
+	dir = 1
+	},
+/area/ship/cargo)
 "ft" = (
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 8
@@ -1164,6 +1175,9 @@
 	dir = 4;
 	id = "shetland_cargo";
 	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -1924,6 +1938,9 @@
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/glass/twenty,
 /obj/item/stack/sheet/metal/twenty,
+/obj/structure/cable{
+	icon_state = "1-5"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "qQ" = (
@@ -2158,6 +2175,9 @@
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/autolathe,
 /obj/effect/turf_decal/box,
+/obj/structure/cable{
+	icon_state = "2-9"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "su" = (
@@ -2768,6 +2788,9 @@
 /obj/structure/cable{
 	icon_state = "5-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "yg" = (
@@ -3323,6 +3346,14 @@
 "CN" = (
 /turf/closed/wall/rust,
 /area/ship/maintenance/starboard)
+"CS" = (
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/turf/open/floor/plasteel/mono{
+	dir = 1
+	},
+/area/ship/cargo)
 "CZ" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
@@ -4011,6 +4042,12 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
+"Jd" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "Jm" = (
 /obj/structure/curtain,
 /obj/structure/toilet{
@@ -5246,6 +5283,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "TO" = (
@@ -5495,6 +5535,9 @@
 "Wb" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/structure/crate_shelf,
+/obj/structure/cable{
+	icon_state = "1-6"
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
 "We" = (
@@ -5544,6 +5587,9 @@
 	dir = 8;
 	id = "shetland_cargo";
 	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/cargo)
@@ -6832,7 +6878,7 @@ ly
 Ne
 TM
 Wb
-Ds
+fo
 jV
 OU
 "}
@@ -6860,7 +6906,7 @@ pl
 MV
 xZ
 qO
-Ds
+CS
 Gf
 OU
 "}
@@ -6886,7 +6932,7 @@ yO
 ZV
 DC
 Xr
-MV
+Jd
 JQ
 Ds
 Gf
