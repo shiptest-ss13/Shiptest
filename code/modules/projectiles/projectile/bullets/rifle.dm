@@ -13,7 +13,7 @@
 	damage = 35
 	armour_penetration = 40
 
-/obj/projectile/bullet/a8_50r
+/obj/projectile/bullet/a8_50rhp
 	name = "8x50mmR bullet"
 	speed = 0.3
 	damage = 55
