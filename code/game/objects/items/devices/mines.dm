@@ -300,6 +300,9 @@
 /obj/item/mine/proximity/now_armed()
 	. = ..()
 	proximity_monitor = new(src, proximity_range)
+	light_color = "#FF0000"
+	light_power = 1
+	light_range = 1
 
 /obj/item/mine/proximity/disarm()
 	. = ..()
@@ -421,7 +424,7 @@
 //put this on military ships for disarming practice
 /obj/item/mine/pressure/training
 	name = "\improper G-MTH Defusal Trainer"
-	desc = "A mothballed anti-personnel explosive, equipped with VISCERAL DEFUSAL ACTION for training purposes. Though Scarborough was forced to mothball their stockpiles of mines as part of the ceasefire, the deployed minefields remain."
+	desc = "A mothballed anti-personnel explosive, equipped with VISCERAL DEFUSAL ACTION for training purposes. Though Scarborough was forced to decomission their stockpiles of mines as part of the ceasefire, the deployed minefields remain."
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/pressure/training/mine_effect(mob/living/victim)
