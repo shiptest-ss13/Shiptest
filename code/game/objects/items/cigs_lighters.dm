@@ -829,7 +829,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 ///////////////
 /obj/item/clothing/mask/vape
 	name = "\improper E-Cigarette"
-	desc = "A classy and highly sophisticated electronic cigarette, for classy and dignified gentlemen. A warning label reads \"Warning: Do not fill with flammable materials.\" Must be lit via interfacing with a PDA."//<<< i'd vape to that.
+	desc = "A classy and highly sophisticated electronic cigarette, for classy and dignified gentlemen. A warning label reads \"Warning: Do not fill with flammable materials.\" Can be lit via interfacing with a PDA, tablet computer, or an APC."//<<< i'd vape to that.
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "red_vapeoff"
 	item_state = "red_vapeoff"
@@ -891,7 +891,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			to_chat(user, "<span class='warning'>[src] can't be modified!</span>")
 		else
 			..()
-	if(istype(O, /obj/item/pda)) //BeginWS edit - Lightable e-cigarettes
+	if(istype(O, /obj/item/pda) || istype(O, /obj/item/modular_computer/tablet)) //BeginWS edit - Lightable e-cigarettes
 		if(screw)
 			to_chat(user, "<span class='notice'>You need to close the cap first!</span>")
 			return
@@ -920,6 +920,30 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		user.update_inv_wear_mask()
 		user.update_inv_hands() //EndWS edit - Lightable e-cigarettes
 
+/obj/item/clothing/mask/vape/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	if((!istype(target, /obj/machinery/power/apc)) || !ishuman(user) || !proximity_flag)
+		return ..()
+	if(screw)
+		to_chat(user, "<span class='notice'>You need to close the cap first!</span>")
+		return
+	on = !on
+	if(on)
+		user.visible_message(
+			"<span class='notice'>[user] turns on [user.p_their()] [src] with a holographic flame from the APC.</span>",
+			"<span class='notice'>You turn on your [src] with a holographic flame from the APC.</span>"
+		)
+		reagents.flags |= NO_REACT
+		icon_state = "[vapecolor]_vape"
+		item_state = "[vapecolor]_vape"
+	else
+		user.visible_message(
+			"<span class='notice'>[user] turns off [user.p_their()] [src] with a holographic gust from the APC.</span>",
+			"<span class='notice'>You turn off your [src] with a holographic gust from the APC.</span>"
+		)
+		reagents.flags &= NO_REACT
+		icon_state = "[vapecolor]_vapeoff"
+		item_state = "[vapecolor]_vapeoff"
+	src.update_icon_state()
 
 /obj/item/clothing/mask/vape/emag_act(mob/user)// I WON'T REGRET WRITTING THIS, SURLY.
 	if(screw)
@@ -1033,7 +1057,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/vape/cigar
 	name = "\improper E-Cigar"
-	desc = "The latest recreational device developed by a small tech startup, Shadow Tech, the E-Cigar has all the uses of a normal E-Cigarette, with the classiness of short fat cigar. Must be lit via interfacing with a PDA."
+	desc = "The latest recreational device developed by a small tech startup, Shadow Tech, the E-Cigar has all the uses of a normal E-Cigarette, with the classiness of short fat cigar. Can be lit via interfacing with a PDA, tablet computer, or an APC."
 	icon_state = "ecigar_vapeoff"
 	item_state = "ecigar_vapeoff"
 	vapecolor = "ecigar"
