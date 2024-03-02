@@ -3,7 +3,7 @@
 	desc = "A compact, 30-round top-loading magazine for the WT-550 Automatic Rifle. These rounds do okay damage with average performance against armor."
 	icon_state = "46x30mmt-30"
 	base_icon_state = "46x30mmt"
-	ammo_type = "4.6x30mm"
+	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
 	max_ammo = 30
 
