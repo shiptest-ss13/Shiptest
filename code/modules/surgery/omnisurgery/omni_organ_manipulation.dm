@@ -93,9 +93,9 @@
 			for(var/obj/item/organ/O in organs)
 				O.on_find(user)
 				organs -= O
-				organs[O.name] = O
+				organs[O.name] = O.type
 
-			manipulated_organ = input("Remove which organ?", "Surgery", null, null) as null|anything in sortList(organs)
+			manipulated_organ = show_radial_menu(user,target,organs,require_near = TRUE)
 			if(manipulated_organ && user && target && user.Adjacent(target) && user.get_active_held_item() == tool)
 				manipulated_organ = organs[manipulated_organ]
 				if(!manipulated_organ)
