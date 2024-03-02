@@ -212,9 +212,6 @@
 
 /mob/living/carbon/human/proc/get_gender()
 	var/visible_gender = p_they()
-	if(isipc(src))
-		visible_gender = "Positronic"
-		return visible_gender
 	switch(visible_gender)
 		if("he")
 			visible_gender = "Man"
