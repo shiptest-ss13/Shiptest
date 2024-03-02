@@ -179,7 +179,7 @@
 
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
-		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] \the [initial(name)] ([registered_name], [assignment]).</span>", "<span class='notice'>You show \the [initial(name)] ([registered_name], [assignment]).</span>")
+		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] \the [initial(name)] [(!registered_name) ? "(" : "([registered_name]"][(!assignment) ? ")" : ", [assignment])"].</span>", "<span class='notice'>You show \the [initial(name)] [(!registered_name) ? "(" : "([registered_name],"] [(!assignment) ? ")" : "[assignment])"].</span>")
 	add_fingerprint(user)
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
