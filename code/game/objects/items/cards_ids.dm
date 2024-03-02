@@ -179,10 +179,7 @@
 
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
-		var/minor
-		if(registered_name && registered_age && registered_age < AGE_MINOR)
-			minor = " <b>(MINOR)</b>"
-		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] [src.name][minor].</span>", "<span class='notice'>You show \the [src.name][minor].</span>")
+		user.visible_message("<span class='notice'>[user] shows you: [icon2html(src, viewers(user))] \the [initial(name)] ([registered_name], [assignment]).</span>", "<span class='notice'>You show \the [initial(name)] ([registered_name], [assignment]).</span>")
 	add_fingerprint(user)
 
 /obj/item/card/id/vv_edit_var(var_name, var_value)
