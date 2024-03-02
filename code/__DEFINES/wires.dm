@@ -54,3 +54,5 @@
 #define WIRE_PIN "Trigger Pin"
 #define WIRE_FUSE "Fuse"
 #define WIRE_RESET "Factory Reset"
+#define WIRE_DELAYBOOM "Delayed Boom"
+

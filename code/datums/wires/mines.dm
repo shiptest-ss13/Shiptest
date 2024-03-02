@@ -4,7 +4,7 @@
 
 /datum/wires/mine/New(atom/holder)
 	wires = list(
-		WIRE_BOOM, WIRE_BOOM, WIRE_PIN, WIRE_RESET
+		WIRE_BOOM, WIRE_DELAYBOOM, WIRE_PIN, WIRE_RESET
 	)
 	..()
 
@@ -18,6 +18,10 @@
 	var/obj/item/mine/pressure/ourmine = holder
 	switch(wire)
 		if(WIRE_BOOM)//oopsies
+			holder.visible_message(span_userdanger("[icon2html(ourmine, viewers(holder))] \The [ourmine] makes a shrill noise! It's go-"))
+			ourmine.trigger_mine()
+		if(WIRE_DELAYBOOM)//oopsies but you get to run
+			ourmine.blast_delay = clamp(ourmine.blast_delay * 5, 8, 50)
 			holder.visible_message(span_userdanger("[icon2html(ourmine, viewers(holder))] \The [ourmine] makes a shrill noise! It's go-"))
 			ourmine.trigger_mine()
 		//Resets the detonation pin, allowing someone to step off the mine. Minor success.
@@ -46,6 +50,11 @@
 	switch(wire)
 		if(WIRE_BOOM)
 			if(!mend)
+				holder.visible_message(span_userdanger("[icon2html(ourmine, viewers(holder))] \The [ourmine] makes a shrill noise! It's go-"))
+				ourmine.trigger_mine()
+		if(WIRE_DELAYBOOM)
+			if(!mend)
+				ourmine.blast_delay = clamp(ourmine.blast_delay * 5, 8, 50)
 				holder.visible_message(span_userdanger("[icon2html(ourmine, viewers(holder))] \The [ourmine] makes a shrill noise! It's go-"))
 				ourmine.trigger_mine()
 		//Disables the detonation pin. Nothing will happen when the mine is triggered.

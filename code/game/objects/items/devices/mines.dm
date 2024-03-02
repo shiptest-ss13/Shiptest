@@ -654,6 +654,7 @@ LIVE_MINE_HELPER(pressure/explosive/rad)
 LIVE_MINE_HELPER(pressure/explosive/heavy)
 LIVE_MINE_HELPER(pressure/explosive/shrapnel)
 
+LIVE_MINE_HELPER(proximity/explosive)
 LIVE_MINE_HELPER(proximity/explosive/sting)
 LIVE_MINE_HELPER(proximity/spawner/manhack)
 LIVE_MINE_HELPER(proximity/explosive/plasma)
