@@ -570,14 +570,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
-"fo" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plasteel/mono{
-	dir = 1
-	},
-/area/ship/cargo)
 "ft" = (
 /obj/effect/turf_decal/corner/opaque/neutral/half{
 	dir = 8
@@ -1312,6 +1304,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
+"lc" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plasteel/mono{
+	dir = 1
+	},
+/area/ship/cargo)
 "lo" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2573,6 +2573,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
+"wr" = (
+/obj/structure/cable{
+	icon_state = "6-10"
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ship/cargo)
 "wt" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -3103,7 +3109,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "5-10"
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -3317,6 +3323,14 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/port)
+"CH" = (
+/obj/structure/cable{
+	icon_state = "8-9"
+	},
+/turf/open/floor/plasteel/mono{
+	dir = 1
+	},
+/area/ship/cargo)
 "CI" = (
 /obj/item/cigbutt,
 /turf/open/floor/plasteel/grimy,
@@ -3346,14 +3360,6 @@
 "CN" = (
 /turf/closed/wall/rust,
 /area/ship/maintenance/starboard)
-"CS" = (
-/obj/structure/cable{
-	icon_state = "8-9"
-	},
-/turf/open/floor/plasteel/mono{
-	dir = 1
-	},
-/area/ship/cargo)
 "CZ" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
@@ -4042,12 +4048,6 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
-"Jd" = (
-/obj/structure/cable{
-	icon_state = "6-10"
-	},
-/turf/open/floor/plasteel/patterned,
-/area/ship/cargo)
 "Jm" = (
 /obj/structure/curtain,
 /obj/structure/toilet{
@@ -4904,7 +4904,7 @@
 /obj/effect/turf_decal/miskilamo_big/seven{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/layer_manifold{
+/obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -6878,7 +6878,7 @@ ly
 Ne
 TM
 Wb
-fo
+lc
 jV
 OU
 "}
@@ -6906,7 +6906,7 @@ pl
 MV
 xZ
 qO
-CS
+CH
 Gf
 OU
 "}
@@ -6932,7 +6932,7 @@ yO
 ZV
 DC
 Xr
-Jd
+wr
 JQ
 Ds
 Gf
