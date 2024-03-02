@@ -385,3 +385,38 @@
 	custom_materials = list(/datum/material/iron = 15000)
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
+
+/obj/item/ammo_box/c4.6x30mm
+	name = "ammo box (4.6x30mm)"
+	desc = "A box of standard 4.6x30mm ammo."
+	icon_state = "9mmbox"
+	ammo_type = 4.6x30mm
+	max_ammo = 50
+
+/obj/item/ammo_box/c8x50mm_box
+	name = "ammo box (8x50mm)"
+	desc = "A box of standard 8x50mm ammo."
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	max_ammo = 50
+
+/obj/item/ammo_box/gauss_box
+	name = "ammo box (ferromagnetic pellets)"
+	desc = "A box of ferromagnetic pellets."
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss
+	max_ammo = 50
+
+/obj/item/ammo_box/modelh_box
+	name = "ammo box (ferromagnetic slugs)"
+	desc = "A box of standard ferromagnetic slugs."
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/slug
+	max_ammo = 50
+
+/obj/item/ammo_box/gar_box
+	name = "ammo box (ferromagnetic lances)"
+	desc = "A box of standard ferromagnetic lances."
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/lance
+	max_ammo = 50

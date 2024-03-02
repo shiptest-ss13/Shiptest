@@ -325,3 +325,35 @@
 					/obj/item/stock_parts/cell/gun,
 					/obj/item/stock_parts/cell/gun)
 	cost = 1500
+
+/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+	name = "5.56 Caseless Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56 caseless boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c4.6x30mm,)
+	cost = 500
+
+/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+	name = "5.56 Caseless Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56 caseless boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_box/c8x50mm_box)
+	cost = 500
+
+/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+	name = "5.56 Caseless Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56 caseless boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_casing/caseless/gauss)
+	cost = 500
+
+/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+	name = "5.56 Caseless Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56 caseless boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_casing/caseless/gauss/slug)
+	cost = 500
+
+/datum/supply_pack/ammo/c556HITPrubber_ammo_box
+	name = "5.56 Caseless Rubber Ammo Box Crate"
+	desc = "Contains two fifty-round 5.56 caseless boxes loaded with less-than-lethal rubber rounds for a total of 100 rounds."
+	contains = list(/obj/item/ammo_casing/caseless/gauss/lance)
+	cost = 500
+
+
