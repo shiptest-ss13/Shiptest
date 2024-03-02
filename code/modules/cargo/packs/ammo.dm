@@ -334,13 +334,13 @@
 	contains = list(/obj/item/ammo_box/ferropelletbox)
 	cost = 250
 
-/datum/supply_pack/ammo/ferroslugbox
+/datum/supply_pack/ammo/ferroslugboxcrate
 	name = "Ferromagnetic Slug Box Crate"
 	desc = "Contains a twenty-round ferromagnetic slug for gauss guns such as the Model-H."
 	contains = list(/obj/item/ammo_box/ferroslugbox)
 	cost = 250
 
-/datum/supply_pack/ammo/ferrolancebox
+/datum/supply_pack/ammo/ferrolanceboxcrate
 	name = "Ferromagnetic Lance Box Crate"
 	desc = "Contains a fifty-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/ammo_box/ferrolancebox)
