@@ -90,12 +90,14 @@
 			to_chat(user, "<span class='warning'>There are no removable organs in [target]'s [parse_zone(target_zone)]!</span>")
 			return -1
 		else
+			var/list/toshow = list()
 			for(var/obj/item/organ/O in organs)
 				O.on_find(user)
 				organs -= O
-				organs[O.name] = O.type
+				organs[O.name] = O
+				toshow[O.name] = O.type
 
-			manipulated_organ = show_radial_menu(user,target,organs,require_near = TRUE)
+			manipulated_organ = show_radial_menu(user,target,toshow,require_near = TRUE)
 			if(manipulated_organ && user && target && user.Adjacent(target) && user.get_active_held_item() == tool)
 				manipulated_organ = organs[manipulated_organ]
 				if(!manipulated_organ)
