@@ -100,16 +100,24 @@
 	bounce_away(FALSE, NONE)
 	. = ..()
 
+/obj/item/ammo_casing/proc/on_eject()
+	forceMove(drop_location()) //Eject casing onto ground.
+	bounce_away(TRUE)
+
 /obj/item/ammo_casing/proc/bounce_away(still_warm = FALSE, bounce_delay = 3)
 	if(!heavy_metal)
 		return
 	update_appearance()
 	SpinAnimation(10, 1)
-	var/turf/T = get_turf(src)
+	var/turf/location = get_turf(src)
 	if(bounce_sfx_override)
 		addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(playsound), src, pick(bounce_sfx_override), 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
 		return
-	if(still_warm && T && T.bullet_sizzle)
+	if(!location)
+		return
+
+	if(still_warm && location.bullet_sizzle)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/items/welder.ogg', 20, 1), bounce_delay) //If the turf is made of water and the shell casing is still hot, make a sizzling sound when it's ejected.
-	else if(T && T.bullet_bounce_sound)
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, pick(T.bullet_bounce_sound), 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
+
+	else if(location.bullet_bounce_sound)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, pick(location.bullet_bounce_sound), 20, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
