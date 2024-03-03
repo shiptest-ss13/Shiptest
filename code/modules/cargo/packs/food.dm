@@ -93,9 +93,10 @@
 	)
 	crate_name = "meat crate"
 	crate_type = /obj/structure/closet/crate/freezer
+	var/items = 7
 
 /datum/supply_pack/food/ingredients_randomized/fill(obj/structure/closet/crate/C)
-	for(var/i in 1 to 7)
+	for(var/i in 1 to items)
 		var/item = pick(contains)
 		new item(C)
 
@@ -156,6 +157,7 @@
 	)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
+	items = 10
 
 /datum/supply_pack/food/ingredients_randomized/bread
 	name = "Bread Crate"
