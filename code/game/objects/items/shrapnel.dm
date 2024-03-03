@@ -1,6 +1,6 @@
 /obj/item/shrapnel // frag grenades
 	name = "shrapnel shard"
-	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=4, embed_chance_turf_mod=-100)
+	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=2, embed_chance_turf_mod=-100)
 	custom_materials = list(/datum/material/iron=50)
 	armour_penetration = -20
 	icon = 'icons/obj/shards.dmi'
@@ -10,12 +10,12 @@
 
 /obj/item/shrapnel/hot
 	name = "molten slag"
-	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=4, embed_chance_turf_mod=-100)
+	embedding = list(embed_chance=70, ignore_throwspeed_threshold=TRUE, fall_chance=2, embed_chance_turf_mod=-100)
 	damtype =  BURN
 
 /obj/item/shrapnel/stingball
 	name = "clump of ballistic gel"
-	embedding = list(embed_chance=15, fall_chance=1, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.8, pain_mult=3, jostle_pain_mult=5, rip_time=15, embed_chance_turf_mod=-100)
+	embedding = list(embed_chance=15, fall_chance=2, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.8, pain_mult=3, jostle_pain_mult=5, rip_time=15, embed_chance_turf_mod=-100)
 	icon_state = "tiny"
 
 /obj/item/shrapnel/bullet // bullets
@@ -42,6 +42,10 @@
 	shrapnel_type = /obj/item/shrapnel
 	ricochet_incidence_leeway = 60
 	hit_stunned_targets = TRUE
+
+/obj/projectile/bullet/shrapnel/Initialize()
+	. = ..()
+	def_zone = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
 /obj/projectile/bullet/shrapnel/rusty
 	damage = 8
