@@ -27,8 +27,7 @@
 	implements = list(
 		TOOL_CAUTERY = 100,
 		TOOL_WELDER = 40,
-		/obj/item/gun/energy/laser = 60,
-		/obj/item = 30) // 30% success with any hot item. //this is fine, and decently reasonable
+		/obj/item/gun/energy/laser = 60)
 	time = 2.4 SECONDS
 	preop_sound = 'sound/surgery/cautery1.ogg'
 	success_sound = 'sound/surgery/cautery2.ogg'

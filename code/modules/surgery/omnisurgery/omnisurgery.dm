@@ -47,12 +47,20 @@
 	for(var/datum/surgery_step/omni/S in all_steps)
 		if(!S.show)
 			continue
-		if(!S.valid_locations.Find(location))
+		if(!(location in S.valid_locations))
 			continue
 		if(!(atlayer in S.required_layer))
 			continue
 		if(!(S.accept_any_item || S.accept_hand))
-			if(!(S.implements.Find(tool.tool_behaviour) || S.implements.Find(tool)))
+			var/good = FALSE
+			for(var/obj in S.implements)
+				if(istype(tool,obj))
+					good = TRUE
+					break
+				if((tool.tool_behaviour in S.implements) || (tool in S.implements))
+					good = TRUE
+					break
+			if (!good)
 				continue
 		if(!S.test_op(user,target,src))
 			continue
