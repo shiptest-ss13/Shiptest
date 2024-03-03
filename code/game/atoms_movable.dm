@@ -555,20 +555,20 @@
 
 /mob/living/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
-	if(!client)
-		return
 	if(previous_virtual_z)
 		LAZYREMOVEASSOC(SSmobs.players_by_virtual_z, "[previous_virtual_z]", src)
+	if(!client)
+		return
 	if(new_virtual_z)
 		LAZYADDASSOC(SSmobs.players_by_virtual_z, "[new_virtual_z]", src)
 		SSidlenpcpool.try_wakeup_virtual_z(new_virtual_z)
 
 /mob/dead/on_virtual_z_change(new_virtual_z, previous_virtual_z)
 	. = ..()
-	if(!client)
-		return
 	if(previous_virtual_z)
 		LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[previous_virtual_z]", src)
+	if(!client)
+		return
 	if(new_virtual_z)
 		LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[new_virtual_z]", src)
 
