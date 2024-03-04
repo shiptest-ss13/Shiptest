@@ -14,6 +14,14 @@
 	belt = /obj/item/storage/belt/security/full
 	id = /obj/item/card/id
 
+/datum/outfit/job/independent/ert/post_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.access += list(ACCESS_CENT_GENERAL)
+
 /datum/outfit/job/independent/ert/emt
 	name = "ERT - Independent Paramedic"
 	jobtype = /datum/job/paramedic

@@ -4,13 +4,6 @@
 	prefix = "_maps/RandomRuins/SandRuins/"
 	ruin_type = RUINTYPE_SAND
 
-/datum/map_template/ruin/whitesands/seed_vault
-	name = "Seed Vault"
-	id = "seed-vault"
-	description = "The creators of these vaults were a highly advanced and benevolent race, and launched many into the stars, hoping to aid fledgling civilizations. \
-	However, all the inhabitants seem to do is grow drugs and guns."
-	suffix = "whitesands_surface_seed_vault.dmm"
-
 /datum/map_template/ruin/whitesands/starfury_crash
 	name = "Starfury Crash"
 	id = "starfurycrash"
