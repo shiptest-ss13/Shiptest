@@ -8,7 +8,7 @@
 	role = "Minuteman"
 
 /datum/antagonist/ert/minutemen/greet()
-	to_chat(owner, "<B><font size=3 color=red>You are \a [role].</font></B>")
+	to_chat(owner, "<B><font size=3 color=red>You are \the [role].</font></B>")
 	var/missiondesc = "You serve in the armed forced of the Confederated League of Independent Planets (CLIP), an independent government. You are being deployed to the sector of [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your squad to complete all objectives."
@@ -42,6 +42,15 @@
 	name = "BARD Infantry"
 	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bard
 	role = "Minuteman"
+
+/datum/antagonist/ert/minutemen/bard/flamer
+	name = "BARD Flamethrower Infantry"
+	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bard/flamer
+
+/datum/antagonist/ert/minutemen/bard/medic
+	name = "BARD Corpsman"
+	outfit = /datum/outfit/job/clip/minutemen/grunt/dressed/bard/medic
+	role = "Corpsman"
 
 /datum/antagonist/ert/minutemen/bard/leader
 	name = "BARD Sergeant"

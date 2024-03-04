@@ -378,6 +378,11 @@
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/stack/cable_coil(src)
 
+/obj/item/storage/belt/military/clip/flamer/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/reagent_containers/glass/beaker/large/fuel(src)
+	new /obj/item/ammo_box/magazine/co9mm(src)
+
 /obj/item/storage/belt/medical/webbing/clip
 	name = "medical webbing"
 	desc = "A chest rig worn by corpsmen of the CLIP Minutemen ."

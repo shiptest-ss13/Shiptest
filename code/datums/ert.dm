@@ -148,8 +148,8 @@
 	teamsize = 5
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/minutemen/leader
-	/// commander slot fills up first, then MM slot, corpsman, than another MM. this is to avoid the situation other erts have where its often jsut a commander, a medic, and a engi with no 'grunt' roles. I suppose this could be a marksman role? but eh, you can just give the guys different guns if needed
-	roles = list(/datum/antagonist/ert/minutemen,/datum/antagonist/ert/minutemen/corpsman,/datum/antagonist/ert/minutemen,/datum/antagonist/ert/minutemen/engi,/datum/antagonist/ert/minutemen/gunner)
+	/// TODO: figure out a way to fill in at least one rifleman first
+	roles = list(/datum/antagonist/ert/minutemen, /datum/antagonist/ert/minutemen/corpsman = 1, /datum/antagonist/ert/minutemen/engi = 1, /datum/antagonist/ert/minutemen/gunner = 1)
 	mission = "Keep the peace in sector affairs"
 	rename_team = "CLIP Minutemen Squadron"
 	polldesc = "a CLIP Minutemen squadron"
@@ -160,7 +160,6 @@
 	teamsize = 4
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/minutemen/leader
-	/// commander slot fills up first, then MM slot, corpsman, than another MM. this is to avoid the situation other erts have where its often jsut a commander, a medic, and a engi with no 'grunt' roles. I suppose this could be a marksman role? but eh, you can just give the guys different guns if needed
 	roles = list(/datum/antagonist/ert/minutemen)
 	mission = "Resolve the conflict at hand"
 	polldesc = "a CLIP Minutemen emergency team"
@@ -169,7 +168,7 @@
 
 /datum/ert/minutemen/bard
 	leader_role = /datum/antagonist/ert/minutemen/bard/leader
-	roles = list(/datum/antagonist/ert/minutemen/bard)
+	roles = list(/datum/antagonist/ert/minutemen/bard, /datum/antagonist/ert/minutemen/bard/medic = 1, /datum/antagonist/ert/minutemen/bard/flamer = 1)
 	rename_team = "CLIP Minutemen BARD Squadron"
 	polldesc = "a CLIP Minutemen biohazard removal team"
 
