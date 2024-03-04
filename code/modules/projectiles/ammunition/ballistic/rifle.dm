@@ -7,6 +7,14 @@
 	caliber = "8x50mmR"
 	projectile_type = /obj/projectile/bullet/a8_50r
 
+/obj/item/ammo_casing/a8_50rhp
+	name = "8x50mmR hollow point bullet casing"
+	desc = "A 8x50mmR hollow point bullet casing."
+	icon_state = "rifle-brass-hollow"
+	caliber = "8x50mmR"
+	projectile_type = /obj/projectile/bullet/a8_50rhp
+
+
 // 8x58mm Caseless (SSG-669C)
 
 /obj/item/ammo_casing/caseless/a858
