@@ -27,6 +27,7 @@
 	RegisterSignal(parent, COMSIG_JOB_RECEIVED, PROC_REF(register_job_signals))
 
 	var/mob/living/owner = parent
+	owner.become_area_sensitive(MOOD_COMPONENT_TRAIT)
 	if(owner.hud_used)
 		modify_hud()
 		var/datum/hud/hud = owner.hud_used
@@ -35,6 +36,9 @@
 /datum/component/mood/Destroy()
 	STOP_PROCESSING(SSmood, src)
 	unmodify_hud()
+
+	var/mob/living/owner = parent
+	owner.lose_area_sensitivity(MOOD_COMPONENT_TRAIT)
 	return ..()
 
 /datum/component/mood/proc/register_job_signals(datum/source, job)
