@@ -27,7 +27,7 @@
 
 	backpack_contents = list(
 	/obj/item/flashlight/seclite = 1,
-	/obj/item/defibrillator/loaded = 1,
+	/obj/item/defibrillator/compact/loaded = 1,
 	/obj/item/storage/firstaid/advanced = 1,
 	/obj/item/ammo_box/magazine/smgm9mm = 2
 	)
