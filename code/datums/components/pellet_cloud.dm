@@ -64,7 +64,7 @@
 	purple_hearts = null
 	pellets = null
 	targets_hit = null
-	bodies = null
+	LAZYNULL(bodies)
 	return ..()
 
 /datum/component/pellet_cloud/RegisterWithParent()
