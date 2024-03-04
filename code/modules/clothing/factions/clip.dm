@@ -141,7 +141,7 @@
 
 /obj/item/clothing/suit/armor/clip_capcoat
 	name = "\improper CLIP Minutemen captain's coat"
-	desc = "A well-made coat used by CLIP Minutemen captains. It's thick padding stops some hazards for the user."
+	desc = "A well-made coat used by CLIP Minutemen captains. It's thick padding stops some hazards for its user."
 
 	icon = 'icons/obj/clothing/faction/clip/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/suits.dmi'
@@ -239,7 +239,7 @@
 
 /obj/item/clothing/head/clip/boonie
 	name = "CLIP Minutemen boonie hat"
-	desc = "A a wide brimmed cap to keep yourself cool during blistering hot weather."
+	desc = "A wide brimmed cap to keep yourself cool during blistering hot weather."
 	icon_state = "clip_boonie"
 
 /obj/item/clothing/head/clip/bicorne
@@ -250,7 +250,7 @@
 
 /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	name = "\improper Minutemen X11 Helmet"
-	desc = "A bulletproof helmet that is worn by members of the CLIP Minutemen."
+	desc = "A bulletproof helmet worn by members of the CLIP Minutemen."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -261,7 +261,7 @@
 
 /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	name = "\improper Minutemen Vehicle Crewman M10 Helmet"
-	desc = "A light bulletproof helmet that is worn by Vehicle Crewmen of the CLIP Minutemen. The ear padding protects the ears from loud noises and the microphone automatically connects with a headset."
+	desc = "A light bulletproof helmet worn by Vehicle Crewmen of the CLIP Minutemen. The ear padding protects the ears from loud noises and the microphone automatically connects with a headset."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -285,7 +285,7 @@
 //GOLD
 /obj/item/clothing/head/fedora/det_hat/clip
 	name = "GOLD fedora"
-	desc = "A hat issued by the GOLD division of the CLIP Minutemen. Designed to look more casual than the standard CLIP military equipment, yet fashionable"
+	desc = "A hat issued by the GOLD division of the CLIP Minutemen. Designed to look fashionable and more casual than standard CLIP attire."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -297,7 +297,7 @@
 
 /obj/item/clothing/head/flatcap/clip
 	name = "GOLD flatcap"
-	desc = "A hat issued by the GOLD division of the CLIP Minutemen. A office worker's hat."
+	desc = "A hat issued by the GOLD division of the CLIP Minutemen. An office worker's hat."
 
 	icon = 'icons/obj/clothing/faction/clip/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/head.dmi'
@@ -308,7 +308,7 @@
 
 /obj/item/clothing/mask/gas/clip
 	name = "CM-20 gas mask"
-	desc = "A close-fitting gas mask that can be connected to an air supply. Created in 420 FS during the Xenofauna war after it was discovered that 20 year old gas masks weren't going cut it against Xenofauna. It is standard issue for every Minuteman, but is rarely used; It's mostly used as a deterrence against chemical attacks."
+	desc = "A close-fitting gas mask that can be connected to an air supply. Created in 420 FS during the Xenofauna war after it was discovered that 20 year old gas masks weren't going cut it against Xenofauna. Standard issue for every Minuteman, but rarely used; it's mostly used as a deterrence against chemical attacks."
 
 	icon = 'icons/obj/clothing/faction/clip/mask.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/clip/mask.dmi'

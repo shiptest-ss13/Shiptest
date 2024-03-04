@@ -15,7 +15,7 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/clip/captain",
+			"outfit": "/datum/outfit/job/clip/minutemen/captain",
 			"officer": true,
 			"slots": 1
 		},
@@ -24,32 +24,29 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Bridge Officer": {
-			"outfit": "/datum/outfit/job/clip/head_of_personnel",
+		"First Officer": {
+			"outfit": "/datum/outfit/job/clip/minutemen/first_officer",
+			"officer": true,
 			"slots": 1
 		},
 		"Mech Pilot": {
 			"outfit": "/datum/outfit/job/clip/minutemen/vehicle_pilot",
 			"slots": 4
 		},
-		"Mech Technician": {
-			"outfit": "/datum/outfit/job/clip/minutemen/vehicle_crew",
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
 			"slots": 2
 		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/clip/mechanic",
 			"slots": 2
 		},
-		"Minuteman": {
-			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
-			"slots": 2
-		},
-		"Scientist": {
+		"Researcher": {
 			"outfit": "/datum/outfit/job/clip/scientist",
 			"slots": 2
 		},
-		"Cadet": {
-			"outfit": "/datum/outfit/job/clip/assistant",
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/clip/minutemen/deckhand",
 			"slots": 1
 		}
 	},

@@ -11,59 +11,59 @@
 
 	box = /obj/item/storage/box/survival/clip
 
+// 	var/list/selectable_alt_titles = list()
+
 /datum/outfit/job/clip/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
+/* 	if(selectable_alt_titles)
+		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
+	if(!selection)
+		return
 
-// Navy / Base CLIP
+	var/obj/item/card/id/W = H.wear_id
+	if(W)
+		W.assignment = alt_title
+*/
+
+// Base CLIP
 
 /datum/outfit/job/clip/assistant
 	name = "CLIP - Volunteer"
 	job_icon = "assistant"
 	jobtype = /datum/job/assistant
+	// selectable_alt_titles = list("Volunteer","Civillian")
 
 	r_pocket = /obj/item/radio
-/*
-/datum/outfit/job/clip/assistant/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	if(visualsOnly)
-		return
-	var/list/selectable_alt_titles = list("Volunteer","Civillian")
-
-	var/selection = tgui_input_list(H,"Select an alternative name for the [name] role.","Select your job title!",selectable_alt_titles)
-	if(selection)
-		return
-*/
 
 /datum/outfit/job/clip/captain
 	name = "CLIP - Captain"
 	job_icon = "captain"
 	jobtype = /datum/job/captain
 
+	uniform = /obj/item/clothing/under/clip/formal
+	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	alt_suit = null
+	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
+	head = /obj/item/clothing/head/clip/slouch
 	id = /obj/item/card/id/gold
+	ears = /obj/item/radio/headset/clip/alt/captain
 	gloves = /obj/item/clothing/gloves/color/white
-
+	shoes = /obj/item/clothing/shoes/laceup
+//	accessory = /obj/item/clothing/accessory/medal/gold/captain
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-//	accessory = /obj/item/clothing/accessory/medal/gold/captain
-
-//	ears = /obj/item/radio/headset/clip/alt/captain
-	uniform = /obj/item/clothing/under/clip/formal
-	alt_uniform = /obj/item/clothing/under/clip/formal/with_shirt
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
-	alt_suit = null
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
-
-	shoes = /obj/item/clothing/shoes/laceup
-	head = /obj/item/clothing/head/clip/slouch
-	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+	backpack_contents = list(
+		/obj/item/storage/box/ids = 1,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/chemist
 	name = "CLIP - Pharmacist"
@@ -82,32 +82,26 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 /datum/outfit/job/clip/ce
-	name = "CLIP Minutemen - Foreman"
+	name = "CLIP - Foreman"
 	job_icon = "clip_navy3"
 	jobtype = /datum/job/chief_engineer
 
 	id = /obj/item/card/id/silver
+	gloves = /obj/item/clothing/gloves/color/yellow
+	belt = /obj/item/storage/belt/utility/full
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/hardhat/white
+	ears = /obj/item/radio/headset/clip
+	uniform = /obj/item/clothing/under/clip
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	alt_suit = null
 
 	backpack = /obj/item/storage/backpack/industrial
 	satchel = /obj/item/storage/backpack/satchel/eng
 	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
 	courierbag = /obj/item/storage/backpack/messenger/engi
-
 	box = /obj/item/storage/box/survival/engineer
-
-	chameleon_extras = /obj/item/stamp/ce
-
-
-	ears = /obj/item/radio/headset/clip/alt
-	uniform = /obj/item/clothing/under/clip
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
-	alt_suit = null
-	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/storage/belt/utility/full
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/clip/slouch
-	backpack = /obj/item/storage/backpack
 	backpack_contents = list(
 		/obj/item/melee/classic_baton/telescopic=1,
 		/obj/item/modular_computer/tablet/preset/advanced = 1
@@ -119,25 +113,26 @@
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/clip/alt
+	uniform = /obj/item/clothing/under/clip/formal
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip/fo
+	alt_suit = null
+
+	shoes = /obj/item/clothing/shoes/combat
+	head = /obj/item/clothing/head/clip/slouch/officer
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
+	backpack_contents = list(
+		/obj/item/storage/box/ids=1,
+		/obj/item/melee/classic_baton/telescopic=1,
+		/obj/item/modular_computer/tablet/preset/advanced = 1)
+
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/head_of_personnel)
-
-	ears = /obj/item/radio/headset/clip/alt
-	uniform = /obj/item/clothing/under/clip/formal
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
-	alt_suit = null
-
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/clip/slouch/officer
-	backpack = /obj/item/storage/backpack
-	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/doctor
 	name = "CLIP - Doctor"
@@ -146,20 +141,19 @@
 
 	l_hand = /obj/item/storage/firstaid/medical
 
-	backpack = /obj/item/storage/backpack/medic
-	satchel = /obj/item/storage/backpack/satchel/med
-	duffelbag = /obj/item/storage/backpack/duffelbag/med
-	courierbag = /obj/item/storage/backpack/messenger/med
 	box = /obj/item/storage/box/survival/medical
-
 	chameleon_extras = /obj/item/gun/syringe
-
 	accessory = /obj/item/clothing/accessory/armband/medblue
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	head = /obj/item/clothing/head/beret/med
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/clip
 	suit_store = /obj/item/flashlight/pen
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel = /obj/item/storage/backpack/satchel/med
+	duffelbag = /obj/item/storage/backpack/duffelbag/med
+	courierbag = /obj/item/storage/backpack/messenger/med
 
 /datum/outfit/job/clip/scientist
 	name = "CLIP - Researcher"
@@ -185,6 +179,7 @@
 
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/combat
+
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,
 		/obj/item/stack/marker_beacon/ten=1,
@@ -197,6 +192,7 @@
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
+	gloves = /obj/item/clothing/gloves/color/yellow
 	belt = /obj/item/storage/belt/utility/full/engi
 	shoes = /obj/item/clothing/shoes/workboots
 	r_pocket = /obj/item/t_scanner
@@ -219,18 +215,16 @@
 	job_icon = "detective"
 
 	head = /obj/item/clothing/head/fedora/det_hat/clip
-
 	belt = /obj/item/clipboard
 	uniform = /obj/item/clothing/under/clip/formal
 	suit = /obj/item/clothing/suit/armor/clip_trenchcoat
-
 	ears = /obj/item/radio/headset/alt
 	shoes = /obj/item/clothing/shoes/jackboots
+	gloves = /obj/item/clothing/gloves/color/black
 
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 
-	gloves = /obj/item/clothing/gloves/color/black
 	l_pocket = /obj/item/toy/crayon/white
 	r_pocket = /obj/item/radio
 
@@ -260,6 +254,11 @@
 	jobtype = /datum/job/assistant
 	uniform = /obj/item/clothing/under/clip/minutemen
 
+	backpack = /obj/item/storage/backpack/security/clip
+	satchel = /obj/item/storage/backpack/satchel/sec/clip
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
+
 	box = /obj/item/storage/box/survival/clip/balaclava
 
 /datum/outfit/job/clip/minutemen/deckhand
@@ -267,6 +266,7 @@
 	job_icon = "clip_navy1"
 	jobtype = /datum/job/assistant
 	uniform =  /obj/item/clothing/under/clip
+	shoes = /obj/item/clothing/shoes/sneakers/black
 
 	r_pocket = /obj/item/radio
 
@@ -277,26 +277,24 @@
 
 	id = /obj/item/card/id/gold
 	gloves = /obj/item/clothing/gloves/color/captain
-
-	backpack = /obj/item/storage/backpack/captain
-	satchel = /obj/item/storage/backpack/satchel/cap
-	duffelbag = /obj/item/storage/backpack/duffelbag/captain
-	courierbag = /obj/item/storage/backpack/messenger/com
-
 	accessory = /obj/item/clothing/accessory/medal/gold/captain
-
 	ears = /obj/item/radio/headset/clip/alt/captain
 	uniform = /obj/item/clothing/under/clip/officer
 	alt_uniform = null
 	suit = /obj/item/clothing/suit/armor/clip_capcoat
 	alt_suit = null
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
-
 	shoes = /obj/item/clothing/shoes/combat
 	head = /obj/item/clothing/head/clip/slouch/officer
-	backpack = /obj/item/storage/backpack
-	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+
+	backpack = /obj/item/storage/backpack/captain
+	satchel = /obj/item/storage/backpack/satchel/cap
+	duffelbag = /obj/item/storage/backpack/duffelbag/captain
+	courierbag = /obj/item/storage/backpack/messenger/com
+
+	backpack_contents = list(/obj/item/storage/box/ids=1,
+		/obj/item/melee/classic_baton/telescopic=1,
+		/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/minutemen/captain/general
 	name = "CLIP Minutemen - General"
@@ -309,7 +307,6 @@
 	shoes = /obj/item/clothing/shoes/combat
 
 	box = /obj/item/storage/box/survival/engineer/radio
-	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 
 /datum/outfit/job/clip/minutemen/captain/general/post_equip(mob/living/carbon/human/H, visualsOnly)
@@ -354,29 +351,25 @@
 
 	chameleon_extras = /obj/item/gun/syringe
 
-
-
 /datum/outfit/job/clip/minutemen/head_of_personnel
 	name = "CLIP Minutemen - Bridge Officer"
 	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
+	head = /obj/item/clothing/head/clip/slouch
+	ears = /obj/item/radio/headset/clip/alt
+	uniform = /obj/item/clothing/under/clip/formal
+	alt_uniform = null
+	suit = /obj/item/clothing/suit/toggle/lawyer/clip
+	alt_suit = null
+	shoes = /obj/item/clothing/shoes/combat
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
 	duffelbag = /obj/item/storage/backpack/duffelbag/captain
 	courierbag = /obj/item/storage/backpack/messenger/com
 
-	ears = /obj/item/radio/headset/clip/alt
-	uniform = /obj/item/clothing/under/clip/formal
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/clip
-	alt_suit = null
-
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/clip/slouch
-	backpack = /obj/item/storage/backpack
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
 
 /datum/outfit/job/clip/minutemen/doctor
@@ -388,8 +381,8 @@
 
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	duffelbag = /obj/item/storage/backpack/duffelbag
+	courierbag = /obj/item/storage/backpack/messenger
 
 	uniform = /obj/item/clothing/under/clip/medic
 	shoes = /obj/item/clothing/shoes/sneakers/white
@@ -441,12 +434,7 @@
 /datum/outfit/job/clip/minutemen/vehicle_pilot
 	name = "CLIP Minutemen - Vehicle Pilot"
 	job_icon = "clip_mech2"
-	jobtype = /datum/job/officer
-
-	backpack = /obj/item/storage/backpack/security/clip
-	satchel = /obj/item/storage/backpack/satchel/sec/clip
-	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	courierbag = /obj/item/storage/backpack/messenger/sec
+	jobtype = /datum/job/mining
 
 	head = /obj/item/clothing/head/helmet/bulletproof/m10/clip_vc
 	uniform = /obj/item/clothing/under/clip/minutemen
@@ -454,7 +442,7 @@
 	ears = /obj/item/radio/headset/clip
 
 	suit = /obj/item/clothing/suit/armor/vest/alt
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/hud/diagnostic
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot/commander
@@ -509,12 +497,6 @@
 	icon_state = "20_lb_ice"
 	w_class = WEIGHT_CLASS_NORMAL
 
-
-/datum/outfit/job/clip/minutemen/grunt/reserve
-	name = "CLIP Minutemen - Reservist"
-	job_icon = "clip_cmm1"
-	jobtype = /datum/job/assistant
-
 /datum/outfit/job/clip/minutemen/grunt
 	name = "CLIP Minutemen - Minuteman"
 	jobtype = /datum/job/officer
@@ -532,6 +514,15 @@
 	if(H.ckey == "meemofcourse")
 		H.equip_to_slot_if_possible(new /obj/item/twenty_pounds_of_ice, ITEM_SLOT_HANDS, FALSE, FALSE)
 
+
+/datum/outfit/job/clip/minutemen/grunt/reserve
+	name = "CLIP Minutemen - Reservist"
+	job_icon = "clip_cmm1"
+	jobtype = /datum/job/assistant
+
+	head = /obj/item/clothing/head/clip
+	shoes = /obj/item/clothing/shoes/combat
+
 /datum/outfit/job/clip/minutemen/grunt/dressed
 	name = "CLIP Minutemen - Minuteman (Dressed)"
 
@@ -541,13 +532,14 @@
 	uniform = /obj/item/clothing/under/clip/minutemen
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
+	gloves = /obj/item/clothing/gloves/color/black
 
 	belt = /obj/item/storage/belt/military/clip
 
 	l_pocket = /obj/item/flashlight/seclite
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1)
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chicken_wings_hot_sauce=1)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/armed
 	name = "CLIP Minutemen - Minuteman (Armed - CM-16)"
@@ -580,21 +572,21 @@
 	name = "CLIP Minutemen - Field Engineer (Armed - CM-16)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/assault/p16/minutemen
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/chili_macaroni=1, /obj/item/grenade/c4=2, /obj/item/ammo_box/magazine/p16=3)
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med
 	name = "CLIP Minutemen - Field Corpsman (Dressed)"
 	jobtype = /datum/job/doctor
 
 	accessory = /obj/item/clothing/accessory/armband/medblue
-	belt = /obj/item/storage/belt/military/clip/engi
+	belt = /obj/item/storage/belt/medical/webbing/clip/prefilled
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med/armed
 	name = "CLIP Minutemen - Field Corpsman (Armed - CM-5)"
 
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
 
-	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/reagent_containers/food/snacks/rationpack=1, /obj/item/defibrillator/compact/loaded=1, /obj/item/storage/firstaid/medical=1, /obj/item/ammo_box/magazine/smgm9mm=3)
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1, /obj/item/storage/ration/cheese_pizza_slice, /obj/item/defibrillator/compact/loaded=1, /obj/item/storage/firstaid/medical=1, /obj/item/ammo_box/magazine/smgm9mm=3)
 
 /obj/item/storage/belt/military/clip/gunner/PopulateContents()
 	for(var/i in 1 to 5)
@@ -646,7 +638,7 @@
 	ears = /obj/item/radio/headset/clip/alt
 	uniform = /obj/item/clothing/under/clip/officer
 
-	head = /obj/item/clothing/head/clip/slouch
+	head = /obj/item/clothing/head/clip/slouch/officer
 	suit = /obj/item/clothing/suit/toggle/lawyer/clip
 
 	shoes = /obj/item/clothing/shoes/combat

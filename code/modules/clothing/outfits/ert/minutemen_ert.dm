@@ -52,6 +52,11 @@
 	backpack_contents = null
 	box = null
 
+	backpack = null
+	duffelbag = null
+	courierbag = null
+	satchel = null
+
 /datum/outfit/job/clip/minutemen/grunt/dressed/riot/leader
 	name = "ERT - CLIP Minutemen Riot Officer Sergeant"
 	job_icon = "lieutenant"
