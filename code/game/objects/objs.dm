@@ -205,6 +205,7 @@
 	ui_interact(user)
 
 /mob/proc/unset_machine()
+	SIGNAL_HANDLER
 	if(!machine)
 		return
 	UnregisterSignal(machine, COMSIG_PARENT_QDELETING)
@@ -216,6 +217,8 @@
 	return
 
 /mob/proc/set_machine(obj/O)
+	if(QDELETED(src) || QDELETED(O))
+		return
 	if(machine)
 		unset_machine()
 	machine = O
