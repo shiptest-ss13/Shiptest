@@ -224,9 +224,9 @@
 #define COMSIG_LIVING_GET_PULLED "living_start_pulled"
 
 /////////////////
-//from base of area/Entered(): (/area)
+//from base of area/Entered(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
 #define COMSIG_ENTER_AREA "enter_area"
-//from base of area/Exited(): (/area)
+//from base of area/Exited(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
 #define COMSIG_EXIT_AREA "exit_area"
 //from base of atom/Click(): (location, control, params, mob/user)
 #define COMSIG_CLICK "atom_click"
@@ -736,6 +736,10 @@
 #define COMSIG_OVERMAP_DOCK "overmap_dock"
 /// From overmap Undock(): (datum/overmap)
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
+
+// /datum/component/spawner signals
+// Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
+#define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
 
 ///Beam Signals
 /// Called before beam is redrawn

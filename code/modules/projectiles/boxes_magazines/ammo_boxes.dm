@@ -156,10 +156,16 @@
 
 /obj/item/ammo_box/c38_box
 	name = "ammo box (.38)"
-	desc = "A box of standard .38 special ammo."
+	desc = "A box of standard .38 Special ammo."
 	icon_state = "38box"
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 50
+
+/obj/item/ammo_box/c38_box/surplus
+	name = "ammo box (.38 surplus)"
+	desc = "A box of low-quality .38 Special ammo."
+	icon_state = "38box-surplus"
+	ammo_type = /obj/item/ammo_casing/c38/surplus
 
 /obj/item/ammo_box/a12g
 	name = "ammo box (12g buckshot)"

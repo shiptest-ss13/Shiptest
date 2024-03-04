@@ -197,6 +197,7 @@
 		FD.emergency_pressure_stop()
 
 /turf/proc/handle_decompression_floor_rip()
+
 /turf/open/floor/handle_decompression_floor_rip(sum)
 	if(sum > 20 && prob(clamp(sum / 10, 0, 30)) && !blocks_air)
 		remove_tile()
