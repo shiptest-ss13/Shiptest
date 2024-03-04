@@ -28,7 +28,7 @@
 	var/list/pellets = list()
 	/// An associated list with the atom hit as the key and how many pellets they've eaten for the value, for printing aggregate messages
 	var/list/targets_hit = list()
-	/// For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
+	/// LAZY LIST. For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
 	var/list/bodies
 	/// For grenades, tracking people who die covering a grenade for achievement purposes, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
 	var/list/purple_hearts

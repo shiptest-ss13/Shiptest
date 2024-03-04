@@ -861,7 +861,7 @@
 /obj/item/freeze_cube/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	icon_state = initial(icon_state)
 	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
-	var/mob/thrown_by = thrownby
+	var/mob/thrown_by = thrownby.resolve()
 	if(ismovable(hit_atom) && !caught && (!thrown_by || thrown_by && COOLDOWN_FINISHED(src, freeze_cooldown)))
 		freeze(hit_atom)
 	if(thrown_by && !caught)
