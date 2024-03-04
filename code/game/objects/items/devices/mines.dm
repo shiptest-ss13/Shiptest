@@ -59,6 +59,8 @@
 
 //handles controlled deactivation
 /obj/item/mine/proc/disarm()
+	if(triggered) //no turning back now
+		return
 	anchored = FALSE
 	armed = FALSE
 	alpha = 255
@@ -135,7 +137,8 @@
 		mine_effect()
 	visible_message(span_danger("[icon2html(src, viewers(src))] \the [src] detonates!"))
 	SEND_SIGNAL(src, COMSIG_MINE_TRIGGERED, triggerer)
-	qdel(src)
+	if(triggered)//setting triggered to false in mine_effect() creates a reusable mine
+		qdel(src)
 
 //trying to pick up a live mine is probably up there when it comes to terrible ideas
 /obj/item/mine/attack_hand(mob/user)
@@ -147,8 +150,9 @@
 				disarm()
 			else
 				user.visible_message(span_danger("[user] attempts to pick up \the [src] only to hear a beep as it activates in their hand!"), span_danger("You attempt to pick up \the [src] only to hear a beep as it activates in your hands!"))
+				anchored = FALSE
 				trigger_mine(user)
-				return
+				return . =..()
 		else
 			user.visible_message(span_notice("[user] withdraws their hand from \the [src]."), span_notice("You decide against picking up \the [src]."))
 	. =..()
@@ -215,7 +219,10 @@
 	// Flying = can't step on a mine
 	if(arrived.movement_type & FLYING)
 		return
-		// Someone already on it
+	//no cheap disarming
+	if(arrived.throwing && isitem(arrived))
+		return
+	// Someone already on it
 	if(foot_on_mine?.resolve())
 		return
 
@@ -425,12 +432,15 @@
 /obj/item/mine/pressure/training
 	name = "\improper G-MTH Defusal Trainer"
 	desc = "A mothballed anti-personnel explosive, equipped with VISCERAL DEFUSAL ACTION for training purposes. Though Scarborough was forced to decomission their stockpiles of mines as part of the ceasefire, the deployed minefields remain."
+	arm_delay = 2 SECONDS
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/pressure/training/mine_effect(mob/living/victim)
 	src.say("BOOM! Better luck next time!")
 	src.visible_message(span_notice("The mine resets itself for another disarming attempt."))
-	new /obj/item/mine/pressure/training (loc)
+	triggered = FALSE
+	disarm()
+	. = ..()
 
 /obj/item/mine/pressure/gas
 	name = "chilled vapor mine"
