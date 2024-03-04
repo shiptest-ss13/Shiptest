@@ -781,6 +781,16 @@
  * Called when this human should be washed
  */
 /mob/living/carbon/human/wash(clean_types)
+	// Check and wash stuff that can be covered
+	var/list/obscured = check_obscured_slots()
+
+	// Wash hands if exposed
+	// This runs before the parent call since blood_in_hands should be cleared before the blood DNA is removed
+	if(!gloves && (clean_types & CLEAN_TYPE_BLOOD) && blood_in_hands > 0 && !(ITEM_SLOT_GLOVES in obscured))
+		blood_in_hands = 0
+		update_inv_gloves()
+		. = TRUE
+
 	. = ..()
 
 	// Wash equipped stuff that cannot be covered
@@ -792,20 +802,11 @@
 		update_inv_belt()
 		. = TRUE
 
-	// Check and wash stuff that can be covered
-	var/list/obscured = check_obscured_slots()
-
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured) && w_uniform.wash(clean_types))
 		update_inv_w_uniform()
 		. = TRUE
 
 	if(!is_mouth_covered() && clean_lips())
-		. = TRUE
-
-	// Wash hands if exposed
-	if(!gloves && (clean_types & CLEAN_TYPE_BLOOD) && blood_in_hands > 0 && !(ITEM_SLOT_GLOVES in obscured))
-		blood_in_hands = 0
-		update_inv_gloves()
 		. = TRUE
 
 //Turns a mob black, flashes a skeleton overlay

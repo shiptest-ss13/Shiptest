@@ -66,13 +66,13 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 
 /datum/outfit/job/inteq/captain/honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	. = ..()
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
 	W.assignment = "Honorable Vanguard"
 	W.update_label()
-	..()
 
 ///Chief Engineer
 
@@ -188,12 +188,12 @@
 	job_icon = "warden"
 
 	ears = /obj/item/radio/headset/inteq/alt
+	head = /obj/item/clothing/head/warden/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
-	head = /obj/item/clothing/head/beret/sec/hos/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	mask = /obj/item/clothing/mask/gas/sechailer/inteq
 	belt = /obj/item/storage/belt/military/assault
-	suit = /obj/item/clothing/suit/armor/vest/alt
+	suit = /obj/item/clothing/suit/armor/vest/security/warden/inteq
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
