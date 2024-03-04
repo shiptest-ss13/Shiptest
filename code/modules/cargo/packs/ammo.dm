@@ -8,66 +8,52 @@
 
 /datum/supply_pack/ammo/co9mm_mag
 	name = "9mm Commander Magazine Crate"
-	desc = "Contains three 9mm magazines for the standard-issue Commander pistol, each containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/co9mm,
-					/obj/item/ammo_box/magazine/co9mm,
-					/obj/item/ammo_box/magazine/co9mm)
-	cost = 1500
+	desc = "Contains a 9mm magazine for the standard-issue Commander pistol, containing ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/co9mm,)
+	cost = 500
 
 /datum/supply_pack/ammo/m45_mag
 	name = ".45 ACP Candor Magazine Crate"
-	desc = "Contains three .45 ACP magazines for the Candor pistol, each containing eight rounds."
-	contains = list(/obj/item/ammo_box/magazine/m45,
-					/obj/item/ammo_box/magazine/m45,
-					/obj/item/ammo_box/magazine/m45)
-	cost = 1500
+	desc = "Contains a .45 ACP magazine for the Candor pistol, containing eight rounds."
+	contains = list(/obj/item/ammo_box/magazine/m45)
+	cost = 500
 
 /datum/supply_pack/ammo/m45_speedloader
 	name = ".45 ACP Speedloader Crate"
-	desc = "Contains four .45 ACP speedloaders for revolvers, each containing six rounds."
-	contains = list(/obj/item/ammo_box/c45_speedloader,
-					/obj/item/ammo_box/c45_speedloader,
-					/obj/item/ammo_box/c45_speedloader,
-					/obj/item/ammo_box/c45_speedloader)
-	cost = 1500
+	desc = "Contains a .45 ACP speedloader for revolvers, containing six rounds."
+	contains = list(/obj/item/ammo_box/c45_speedloader)
+	cost = 400
 
 /datum/supply_pack/ammo/c38_mag
 	name = ".38 Speedloader Crate"
-	desc = "Contains four .38 speedloaders for revolvers, each containing six rounds."
-	contains = list(/obj/item/ammo_box/c38,
-					/obj/item/ammo_box/c38,
-					/obj/item/ammo_box/c38,
-					/obj/item/ammo_box/c38)
-	cost = 1500
+	desc = "Contains a .38 speedloader for revolvers, containing six rounds."
+	contains = list(/obj/item/ammo_box/c38)
+	cost = 350
 
 /datum/supply_pack/ammo/m10mm_mag
 	name = "10mm Stechkin Magazine Crate"
-	desc = "Contains three 10mm magazines for the stechkin pistol, each containing eight rounds."
-	contains = list(/obj/item/ammo_box/magazine/m10mm,
-					/obj/item/ammo_box/magazine/m10mm,
-					/obj/item/ammo_box/magazine/m10mm)
-	cost = 1500
+	desc = "Contains a 10mm magazine for the stechkin pistol, containing eight rounds."
+	contains = list(/obj/item/ammo_box/magazine/m10mm)
+	cost = 500
 
 /datum/supply_pack/ammo/a357_mag
 	name = ".357 Speedloader Crate"
-	desc = "Contains two .357 speedloaders for revolvers, each containing seven rounds."
+	desc = "Contains a .357 speedloader for revolvers,  containing seven rounds."
 	contains = list(/obj/item/ammo_box/a357,
 					/obj/item/ammo_box/a357)
 	cost = 1500
 
 /datum/supply_pack/ammo/mag_556mm
 	name = "5.56 Pistole C Magazine Crate"
-	desc = "Contains two 5.56mm magazines for the Pistole C, each containing twelve rounds."
-	contains = list(/obj/item/ammo_box/magazine/pistol556mm,
-					/obj/item/ammo_box/magazine/pistol556mm)
-	cost = 1500
+	desc = "Contains a 5.56mm magazine for the Pistole C, containing twelve rounds."
+	contains = list(/obj/item/ammo_box/magazine/pistol556mm)
+	cost = 750
 
 /datum/supply_pack/ammo/fms_mag
 	name = "Ferromagnetic Slug Magazine Crate"
-	desc = "Contains two ferromagnetic slug magazines for the Model H pistol, each containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/modelh,
-					/obj/item/ammo_box/magazine/modelh)
-	cost = 1500
+	desc = "Contains a ferromagnetic slug magazine for the Model H pistol, containing ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/modelh)
+	cost = 750
 
 /*
 		Shotgun ammo
@@ -91,7 +77,7 @@
 
 /datum/supply_pack/ammo/winchester_ammo
 	name = "Flaming Arrow and Detective Special .38 Ammo Boxes"
-	desc = "Contains two 30 round ammo boxes for refilling .38 weapons."
+	desc = "Contains a 30 round ammo boxes for refilling .38 weapons."
 	cost = 500
 	contains = list(/obj/item/ammo_box/c38_box,
 					/obj/item/ammo_box/c38_box)
@@ -119,11 +105,9 @@
 
 /datum/supply_pack/ammo/wt550_ammo
 	name = "WT-550 Auto Rifle Ammo Crate"
-	desc = "Contains three 20-round magazine for the WT-550 Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads."
-	cost = 2250
-	contains = list(/obj/item/ammo_box/magazine/wt550m9,
-					/obj/item/ammo_box/magazine/wt550m9,
-					/obj/item/ammo_box/magazine/wt550m9)
+	desc = "Contains a 20-round magazine for the WT-550 Auto Rifle. Each magazine is designed to facilitate rapid tactical reloads."
+	cost = 750
+	contains = list(/obj/item/ammo_box/magazine/wt550m9)
 
 /datum/supply_pack/ammo/cool_wt550_ammo
 	name = "WT-550 Auto Rifle Exotic Ammo Crate"
@@ -134,10 +118,9 @@
 
 /datum/supply_pack/ammo/smgm45ammo
 	name = ".45 Cobra Ammo Crate"
-	desc = "Contains two .45 magazines for the Cobra-20, each containing 24 rounds."
-	cost = 1500
-	contains = list(/obj/item/ammo_box/magazine/smgm45,
-					/obj/item/ammo_box/magazine/smgm45)
+	desc = "Contains a .45 magazine for the Cobra-20, containing 24 rounds."
+	cost = 750
+	contains = list(/obj/item/ammo_box/magazine/smgm45)
 
 /*
 		Rifle ammo
@@ -145,54 +128,45 @@
 
 /datum/supply_pack/ammo/gal308_ammo
 	name = "CM-GAL .308 Magazine Crate"
-	desc = "Contains two .308 CM-GAL magazines for the CM-GAL rifle, each containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/gal,
-					/obj/item/ammo_box/magazine/gal)
-	cost = 2000
+	desc = "Contains a .308 CM-GAL magazine for the CM-GAL rifle, containing ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/gal)
+	cost = 1000
 
 /datum/supply_pack/ammo/gar_ammo
 	name = "GAR Ferromagnetic Lance Magazine Crate"
-	desc = "Contains two ferromagnetic lance magazines for the GAR rifle, each containing thirty two rounds."
-	contains = list(/obj/item/ammo_box/magazine/gar,
-					/obj/item/ammo_box/magazine/gar)
-	cost = 2000
+	desc = "Contains a ferromagnetic lance magazine for the GAR rifle, containing thirty two rounds."
+	contains = list(/obj/item/ammo_box/magazine/gar)
+	cost = 1000
 
 /datum/supply_pack/ammo/claris_ammo
 	name = "Claris Ferromagnetic Pellet Speedloader Crate"
-	desc = "Contains two ferromagnetic pellet speedloaders for the Claris rifle, each containing twenty two rounds."
-	contains = list(/obj/item/ammo_box/amagpellet_claris,
-					/obj/item/ammo_box/amagpellet_claris)
-	cost = 2000
+	desc = "Contains a ferromagnetic pellet speedloader for the Claris rifle, containing twenty two rounds."
+	contains = list(/obj/item/ammo_box/amagpellet_claris)
+	cost = 1000
 
 /datum/supply_pack/ammo/ebr_ammo
 	name = "M514 EBR .308 Magazine Crate"
-	desc = "Contains two .308 magazines for the M514 EBR rifle, each containing ten rounds."
-	contains = list(/obj/item/ammo_box/magazine/ebr,
-					/obj/item/ammo_box/magazine/ebr)
-	cost = 2000
+	desc = "Contains a .308 magazine for the M514 EBR rifle, containing ten rounds."
+	contains = list(/obj/item/ammo_box/magazine/ebr)
+	cost = 1000
 
 /datum/supply_pack/ammo/skm_ammo
 	name = "SKM 7.62x40mm CLIP Magazine Crate"
-	desc = "Contains two 7.62x40mm magazines for the SKM rifles, each containing twenty rounds."
-	contains = list(/obj/item/ammo_box/magazine/skm_762_40,
-					/obj/item/ammo_box/magazine/skm_762_40)
-	cost = 2000
+	desc = "Contains a 7.62x40mm magazine for the SKM rifles, containing twenty rounds."
+	contains = list(/obj/item/ammo_box/magazine/skm_762_40)
+	cost = 1000
 
 /datum/supply_pack/ammo/p16_ammo
 	name = "P-16 5.56mm Magazine Crate"
-	desc = "Contains two 5.56mm magazines for the P-16 rifle, each containing thirty rounds."
-	contains = list(/obj/item/ammo_box/magazine/p16,
-					/obj/item/ammo_box/magazine/p16)
-	cost = 2000
+	desc = "Contains a 5.56mm magazine for the P-16 rifle, containing thirty rounds."
+	contains = list(/obj/item/ammo_box/magazine/p16)
+	cost = 1000
 
 /datum/supply_pack/ammo/a850r_ammo
 	name = "8x50mmR En Bloc Clip Crate"
-	desc = "Contains four 8x50mmR en bloc clips for rifles like the illestren rifle, each containing five rounds."
-	contains = list(/obj/item/ammo_box/magazine/illestren_a850r,
-					/obj/item/ammo_box/magazine/illestren_a850r,
-					/obj/item/ammo_box/magazine/illestren_a850r,
-					/obj/item/ammo_box/magazine/illestren_a850r)
-	cost = 1000
+	desc = "Contains a 8x50mmR en bloc clips for rifles like the illestren rifle, containing five rounds."
+	contains = list(/obj/item/ammo_box/magazine/illestren_a850r)
+	cost = 250
 
 /datum/supply_pack/ammo/a762_ammo_box
 	name = "7.62x40mm CLIP Ammo Box Crate"
@@ -304,11 +278,9 @@
 
 /datum/supply_pack/ammo/guncell
 	name = "Weapon Cell Crate"
-	desc = "Contains three weapon cells, compatible with laser guns."
-	contains = list(/obj/item/stock_parts/cell/gun,
-					/obj/item/stock_parts/cell/gun,
-					/obj/item/stock_parts/cell/gun)
-	cost = 1500
+	desc = "Contains a weapon cell, compatible with laser guns."
+	contains = list(/obj/item/stock_parts/cell/gun)
+	cost = 500
 
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
