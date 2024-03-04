@@ -435,7 +435,12 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	if(!thearea)
 		return
 
-	usr.abstract_move(pick(get_area_turfs(thearea)))
+	var/list/area_turfs = get_area_turfs(thearea)
+
+	if(!length(area_turfs))
+		return
+
+	usr.abstract_move(pick(area_turfs))
 	update_parallax_contents()
 
 /mob/dead/observer/verb/follow()

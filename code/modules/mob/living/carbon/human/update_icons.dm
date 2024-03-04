@@ -191,7 +191,9 @@ There are several things that need to be remembered:
 				bloody_overlay.icon_state = "bloodyhands_left"
 			else if(has_right_hand(FALSE))
 				bloody_overlay.icon_state = "bloodyhands_right"
-		bloody_overlay.color = get_blood_dna_color(return_blood_DNA())
+		var/list/blood_dna = return_blood_DNA()
+		if(length(blood_dna))
+			bloody_overlay.color = get_blood_dna_color(return_blood_DNA())
 
 		overlays_standing[GLOVES_LAYER] = bloody_overlay
 	//Bloody hands end
