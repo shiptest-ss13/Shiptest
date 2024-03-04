@@ -2,12 +2,14 @@
 	name = "organ harvester"
 	desc = "An advanced machine used for harvesting organs and limbs from the deceased."
 	density = TRUE
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
 	icon = 'icons/obj/machines/harvester.dmi'
 	icon_state = "harvester"
 	base_icon_state = "harvester"
 	verb_say = "states"
 	state_open = FALSE
-	idle_power_usage = 50
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/harvester
 	light_color = LIGHT_COLOR_BLUE
 	var/interval = 20

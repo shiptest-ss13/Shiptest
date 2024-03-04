@@ -73,6 +73,9 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 		return
 	..()
 
+/obj/machinery/atmospherics/components/binary/valve/digital/toggle()
+	use_power(ACTIVE_DRAW_MINIMAL)
+	. = ..()
 
 /obj/machinery/atmospherics/components/binary/valve/layer2
 	piping_layer = 2

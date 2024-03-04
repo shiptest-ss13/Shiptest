@@ -3,7 +3,7 @@
 	desc = "A machine used to deposit and withdraw funds."
 	icon_screen = "vault"
 	icon_keyboard = "security_key"
-	idle_power_usage = 100
+	idle_power_usage = IDLE_DRAW_LOW
 
 	var/siphoning = FALSE
 	var/next_warning = 0

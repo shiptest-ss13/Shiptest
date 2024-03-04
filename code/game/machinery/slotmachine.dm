@@ -22,7 +22,7 @@
 	base_icon_state = "slots"
 	density = TRUE
 	use_power = IDLE_POWER_USE
-	idle_power_usage = 50
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/computer/slot_machine
 	light_color = LIGHT_COLOR_BROWN
 	unique_icon = TRUE

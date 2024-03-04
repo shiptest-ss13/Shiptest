@@ -6,7 +6,9 @@
 	pixel_z = 1
 	obj_flags = CAN_BE_HIT | UNIQUE_RENAME
 	circuit = /obj/item/circuitboard/machine/hydroponics
-	idle_power_usage = 0
+	use_power = IDLE_POWER_USE
+	idle_power_usage = IDLE_DRAW_LOW
+	active_power_usage = ACTIVE_DRAW_HIGH
 	var/waterlevel = 100	//The amount of water in the tray (max 100)
 	var/maxwater = 100		//The maximum amount of water in the tray
 	var/nutridrain = 1      // How many units of nutrient will be drained in the tray
@@ -114,7 +116,7 @@
 
 	if(!powered() && self_sustaining)
 		visible_message("<span class='warning'>[name]'s auto-grow functionality shuts off!</span>")
-		idle_power_usage = 0
+		set_idle_power()
 		self_sustaining = FALSE
 		update_appearance()
 
@@ -671,7 +673,10 @@
 	if(!anchored)
 		return
 	self_sustaining = !self_sustaining
-	idle_power_usage = self_sustaining ? 1250 : 0
+	if(self_sustaining)
+		set_active_power()
+	else
+		set_idle_power()
 	to_chat(user, "<span class='notice'>You [self_sustaining ? "activate" : "deactivated"] [src]'s autogrow function[self_sustaining ? ", maintaining the tray's health while using high amounts of power" : ""].")
 	update_appearance()
 
@@ -702,7 +707,7 @@
 		desc = initial(desc)
 		TRAY_NAME_UPDATE
 		if(self_sustaining) //No reason to pay for an empty tray.
-			idle_power_usage = 0
+			set_idle_power()
 			self_sustaining = FALSE
 	update_appearance()
 

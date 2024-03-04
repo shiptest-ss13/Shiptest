@@ -61,8 +61,8 @@
 	density = TRUE
 	max_integrity = 100
 	integrity_failure = 0.8
-	idle_power_usage = 100
-	active_power_usage = 1000
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_MEDIUM
 	anchored = FALSE
 	light_power = 1.75
 	var/list/light_setting_list = list(0, 5, 10, 15)

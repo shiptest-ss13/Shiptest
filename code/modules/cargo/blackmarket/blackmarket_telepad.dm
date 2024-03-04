@@ -16,7 +16,7 @@
 	circuit = /obj/item/circuitboard/machine/ltsrbt
 	density = TRUE
 
-	idle_power_usage = 200
+	idle_power_usage = IDLE_DRAW_LOW
 
 	/// Divider for power_usage_per_teleport.
 	var/power_efficiency = 1

@@ -16,7 +16,7 @@
 	icon_state = "heater_pipe"
 	var/icon_state_closed = "heater_pipe"
 	var/icon_state_open = "heater_pipe_open"
-	idle_power_usage = 50
+	idle_power_usage = IDLE_DRAW_MINIMAL
 	circuit = /obj/item/circuitboard/machine/shuttle/heater
 
 	density = TRUE

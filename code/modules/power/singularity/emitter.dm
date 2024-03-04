@@ -11,8 +11,8 @@
 	circuit = /obj/item/circuitboard/machine/emitter
 
 	use_power = NO_POWER_USE
-	idle_power_usage = 10
-	active_power_usage = 300
+	idle_power_usage = IDLE_DRAW_MINIMAL
+	active_power_usage = ACTIVE_DRAW_LOW
 
 	var/icon_state_on = "emitter_+a"
 	var/icon_state_underpowered = "emitter_+u"
@@ -67,7 +67,7 @@
 	var/max_firedelay = 120
 	var/firedelay = 120
 	var/min_firedelay = 24
-	var/power_usage = 350
+	var/power_usage = ACTIVE_DRAW_LOW
 	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
 		max_firedelay -= 20 * L.rating
 		min_firedelay -= 4 * L.rating
