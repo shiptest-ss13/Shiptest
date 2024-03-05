@@ -26,14 +26,6 @@
 
 //wardrobes
 
-/obj/structure/closet/wardrobe/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "blue_wall"
-
 /obj/structure/closet/wardrobe/pink/wall
 	wall_mounted = TRUE
 	anchored = TRUE
