@@ -99,6 +99,7 @@ GLOBAL_LIST_EMPTY(glass_variants)
 
 //clear garnishes on wash
 /obj/item/reagent_containers/food/drinks/modglass/wash(clean_types)
+	. = ..()
 	garnishes = list()
 	update_appearance()
 

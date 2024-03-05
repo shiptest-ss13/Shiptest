@@ -27,10 +27,6 @@
 	name = "Hierophant's Arena"
 	icon_state = "dk_yellow"
 
-//Seed Vault
-
-/area/ruin/powered/seedvault
-	icon_state = "dk_yellow"
 
 //Elephant Graveyard
 
@@ -48,11 +44,6 @@
 	name = "Syndicate Comm Outpost"
 	icon_state = "dk_yellow"
 
-//Syndicate Lava Base (I have no idea what this is)
-/area/ruin/unpowered/syndicate_lava_base
-	name = "Secret Base"
-	icon_state = "dk_yellow"
-	ambientsounds = HIGHSEC
 
 //Cult Altar
 
