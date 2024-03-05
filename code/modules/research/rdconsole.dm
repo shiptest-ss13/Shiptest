@@ -1023,13 +1023,17 @@ Nothing else in the console has ID requirements.
 				linked_imprinter.linked_console = null
 				linked_imprinter = null
 	if(ls["eject_design"]) //Eject the design disk.
+		if(QDELETED(d_disk))
+			say("No Design Disk Inserted!")
+			return
 		eject_disk("design",usr)
 		screen = RDSCREEN_MENU
-		say("Ejecting [d_disk.name]")
 	if(ls["eject_tech"]) //Eject the technology disk.
+		if(QDELETED(t_disk))
+			say("No Technology Disk Inserted!")
+			return
 		eject_disk("tech", usr)
 		screen = RDSCREEN_MENU
-		say("Ejecting [t_disk.name]")
 	if(ls["deconstruct"])
 		if(QDELETED(linked_destroy))
 			say("No Destructive Analyzer Linked!")

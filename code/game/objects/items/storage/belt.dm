@@ -933,10 +933,10 @@
 	item_state = "inteq_webbing"
 	supports_variations = VOX_VARIATION
 
-/obj/item/storage/belt/security/webbing/inteq/ak47/PopulateContents()
+/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
 	. = ..()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_box/magazine/ak47(src)
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/skm_762_40(src)
 
 /obj/item/storage/belt/security/webbing/inteq/alt
 	name = "inteq drop pouch harness"

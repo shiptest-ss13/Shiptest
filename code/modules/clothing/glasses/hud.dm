@@ -92,6 +92,7 @@
 	item_state = "glasses"
 	flash_protect = FLASH_PROTECTION_FLASH
 	tint = 1
+	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/hud/security
 	name = "security HUD"
@@ -260,6 +261,7 @@
 	icon_state = "inteq_goggles"
 	item_state = "inteq_goggles"
 	supports_variations = KEPORI_VARIATION
+	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/hud/health/prescription
 	name = "prescription health scanner HUD"

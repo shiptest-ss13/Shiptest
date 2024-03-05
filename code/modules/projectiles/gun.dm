@@ -16,7 +16,7 @@
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
-
+#define MANUFACTURER_IMPORT "Lanchester Import Co."
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -450,15 +450,17 @@
 					to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
+			sprd = calculate_spread(user, sprd)
+
 			before_firing(target,user)
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
 				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-					shoot_live_shot(user, 1, target, message)
+					shoot_live_shot(user, TRUE, target, message)
 				else
-					shoot_live_shot(user, 0, target, message)
+					shoot_live_shot(user, FALSE, target, message)
 		else
 			shoot_with_empty_chamber(user)
 			return
@@ -781,8 +783,16 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
+// We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks
+/obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
+	return recoil_bonus
+
+// We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
+/obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
+	return bonus_spread
+
 /obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
-	var/total_recoil = recoil_bonus
+	var/total_recoil = calculate_recoil(user, recoil_bonus)
 
 	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
 	if(actual_angle > 360)
