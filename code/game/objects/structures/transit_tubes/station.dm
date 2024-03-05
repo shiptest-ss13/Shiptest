@@ -285,7 +285,6 @@
 	boarding_dir = turn(dir, 180)
 
 /obj/structure/transit_tube/station/dispenser/reverse/flipped
-	icon_state = "closed_terminusdispenser1"
 	base_icon = "terminusdispenser1"
 	tube_construction = /obj/structure/c_transit_tube/station/dispenser/reverse/flipped
 
