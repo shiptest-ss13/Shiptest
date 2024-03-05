@@ -1106,3 +1106,33 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/arrowaxe_small/right
 	icon_state = "arrowaxe-right"
+
+//SUNS
+
+/obj/effect/turf_decal/suns
+	icon = 'icons/obj/solgov_floor.dmi'
+	icon_state = "top-left"
+
+/obj/effect/turf_decal/suns/top
+	icon_state = "top-center"
+
+/obj/effect/turf_decal/suns/top_right
+	icon_state = "top-right"
+
+/obj/effect/turf_decal/suns/center_left
+	icon_state = "center-left"
+
+/obj/effect/turf_decal/suns/center
+	icon_state = "center"
+
+/obj/effect/turf_decal/suns/center_right
+	icon_state = "center-right"
+
+/obj/effect/turf_decal/suns/bottom_left
+	icon_state = "bottom-left"
+
+/obj/effect/turf_decal/suns/bottom_center
+	icon_state = "bottom-center"
+
+/obj/effect/turf_decal/suns/bottom_right
+	icon_state = "bottom-right"

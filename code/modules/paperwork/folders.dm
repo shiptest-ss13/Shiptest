@@ -135,7 +135,6 @@
 	new /obj/item/documents/solgov(src)
 	update_appearance()
 
-
 /obj/item/folder/terragov/red
 	desc = "A green folder with a Terran Regency seal."
 	icon_state = "folder_terragovred"
@@ -143,4 +142,13 @@
 /obj/item/folder/terragov/red/Initialize()
 	. = ..()
 	new /obj/item/documents/terragov(src)
+	update_appearance()
+
+/obj/item/folder/suns/red
+	desc = "A green folder with a Terran Regency seal."
+	icon_state = "folder_terragovred"
+
+/obj/item/folder/suns/red/Initialize()
+	. = ..()
+	new /obj/item/documents/suns(src)
 	update_appearance()
