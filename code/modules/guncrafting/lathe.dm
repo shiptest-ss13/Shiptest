@@ -103,7 +103,7 @@
 	to_chat(user, "The [work_piece.name] is broken down into parts.")
 	playsound(src,'sound/items/welder.ogg',50,TRUE)
 	if(istype(work_piece, /obj/item/gun))
-		var/obj/item/gun/gun_work_piece = work_piece
+		//var/obj/item/gun/gun_work_piece = work_piece
 		var/obj/item/new_part = new /obj/item/stack/gun_part
 		new_part.forceMove(drop_location())
 		/* I think this should be a seperate procces for obtaining the frame

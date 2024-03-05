@@ -110,3 +110,13 @@
 	contains = list(/obj/item/stack/sheet/mineral/wood/fifty)
 	crate_name = "wood planks crate"
 
+/datum/supply_pack/material/gun_parts
+	name = "Gun Parts Crate"
+	desc = "Contains a variety of parts for assembling and maintaining firearms."
+	cost = 1000
+	contains = list(/obj/item/stack/gun_part,
+					/obj/item/stack/gun_part,
+					/obj/item/stack/gun_part,
+					/obj/item/stack/gun_part,
+					/obj/item/stack/gun_part)
+	crate_name = "gun parts crate"

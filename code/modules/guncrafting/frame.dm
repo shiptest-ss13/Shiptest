@@ -197,6 +197,7 @@
 			. += "<span class='notice'>[src] has " + part_type_message + ".</span>"
 */
 
+/*
 /obj/item/part/gun/frame/winchester
 	name = "winchester gun frame"
 	icon_state = "frame_shotgun"
@@ -223,8 +224,19 @@
 /obj/item/part/gun/frame/boltaction
 	name = "bolt action gun frame"
 
-/obj/item/part/gun/frame/revolver
+*/
 
+/obj/item/part/gun/frame/revolver
+	name = "revolver gun frame"
+	icon_state = "frame_revolver"
+	preinstalled_parts = list(
+		/obj/item/part/gun/modular/grip/wood,
+		/obj/item/part/gun/modular/mechanism/revolver,
+		/obj/item/part/gun/modular/barrel/revolver
+		)
+
+/*
 /obj/item/part/gun/frame/tec9
 
 /obj/item/part/gun/frame/shotgun
+*/
