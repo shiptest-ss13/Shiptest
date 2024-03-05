@@ -132,7 +132,7 @@
 	name = "manipulate mechanical organs"
 	preop_sound = 'sound/surgery/organ2.ogg'
 	success_sound = 'sound/surgery/organ1.ogg'
-	var/implements_extract = list(
+	implements_extract = list(
 		TOOL_HEMOSTAT = 55,
 		TOOL_CROWBAR = 100,
 		/obj/item/kitchen/fork = 35)
