@@ -51,7 +51,7 @@
 /obj/item/fishing_rod/proc/fish_bonus(fish_type)
 	return 0
 
-/obj/item/fishing_rod/proc/consume_bait()
+/obj/item/fishing_rod/proc/consume_bait(atom/movable/reward)
 	if(bait)
 		QDEL_NULL(bait)
 		update_appearance()
@@ -137,7 +137,7 @@
 	SIGNAL_HANDLER
 	. = NONE
 
-	if(!CheckToolReach(src, source.target, cast_range))
+	if(!isturf(source.origin) || !isturf(source.target) || !CheckToolReach(src, source.target, cast_range))
 		SEND_SIGNAL(source, COMSIG_FISHING_LINE_SNAPPED) //Stepped out of range or los interrupted
 		return BEAM_CANCEL_DRAW
 

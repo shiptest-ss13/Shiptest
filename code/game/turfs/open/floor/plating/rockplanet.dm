@@ -33,9 +33,6 @@
 	icon_state = "wet_soft0"
 	base_icon_state = "wet_soft"
 
-/turf/open/floor/plating/asteroid/rockplanet/wet/atmos
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
-
 /turf/open/floor/plating/asteroid/rockplanet/wet/lit
 	light_range = 2
 	light_power = 0.6
@@ -50,36 +47,33 @@
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
 
-/turf/open/floor/plating/asteroid/rockplanet/grass
+/turf/open/floor/plating/grass/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "dry grass"
 	desc = "A patch of dry grass."
-	icon_state = "grass0"
 
-/turf/open/floor/plating/asteroid/rockplanet/mud
+/turf/open/floor/plating/dirt/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "mud"
 	icon_state = "greenerdirt"
 
-/turf/open/floor/plating/asteroid/rockplanet/pond
+/turf/open/water/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "pond"
-	icon_state = "riverwater"
 
-/turf/open/floor/plating/asteroid/rockplanet/plating
+/turf/open/floor/plating/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "exterior plating"
-	icon_state = "plating"
 
-/turf/open/floor/plating/asteroid/rockplanet/plating/scorched
-	name = "exterior plating"
-	icon_state = "panelscorched"
 
-/turf/open/floor/plating/asteroid/rockplanet/stairs
+/turf/open/floor/plasteel/stairs/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "exterior stairs"
-	icon_state = "stairs"
 
-/turf/open/floor/plating/asteroid/rockplanet/hull_plating
-	name = "exterior hull plating"
-	icon_state = "regular_hull"
 
-/turf/open/floor/plating/asteroid/rockplanet/plasteel
+/turf/open/floor/engine/hull/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
+
+/turf/open/floor/plasteel/rockplanet
+	initial_gas_mix = ROCKPLANET_DEFAULT_ATMOS
 	name = "exterior floor"
-	icon_state = "tiled_gray"
-	icon = 'icons/turf/floors/tiles.dmi'
