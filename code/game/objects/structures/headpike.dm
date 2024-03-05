@@ -13,23 +13,52 @@
 	icon_state = "headpike-bone"
 	bonespear = TRUE
 
-/obj/structure/headpike/CheckParts(list/parts_list)
-	..()
-	victim = locate(/obj/item/bodypart/head) in parts_list
-	update_appearance()
-	if(bonespear)
-		spear = locate(/obj/item/spear/bonespear) in parts_list
-	else
-		spear = locate(/obj/item/spear) in parts_list
-
-/obj/structure/headpike/Initialize()
+/obj/structure/headpike/Initialize(mapload)
 	. = ..()
-	pixel_x = rand(-8, 8)
+	if(mapload)
+		CheckParts()
+
+/obj/structure/headpike/CheckParts(list/parts_list)
+	victim = locate(/obj/item/bodypart/head) in parts_list
+	if(!victim) //likely a mapspawned one
+		victim = new(src)
+		victim.real_name = random_unique_name(prob(50))
+
+	spear = locate(bonespear ? /obj/item/spear/bonespear : /obj/item/spear) in parts_list
+	if(!spear)
+		spear = bonespear ? new/obj/item/spear/bonespear(src) : new/obj/item/spear(src)
+
+	update_appearance()
+	return ..()
 
 /obj/structure/headpike/Destroy()
 	QDEL_NULL(victim)
 	QDEL_NULL(spear)
 	return ..()
+
+/obj/structure/headpike/handle_atom_del(atom/A)
+	if(A == victim)
+		victim = null
+	if(A == spear)
+		spear = null
+	if(!QDELETED(src))
+		deconstruct(TRUE)
+	return ..()
+
+/obj/structure/headpike/deconstruct(disassembled)
+	if(!disassembled)
+		return ..()
+	if(victim)
+		victim.forceMove(drop_location())
+		victim = null
+	if(spear)
+		spear.forceMove(drop_location())
+		spear = null
+	return ..()
+
+/obj/structure/headpike/Initialize()
+	. = ..()
+	pixel_x = rand(-8, 8)
 
 /obj/structure/headpike/update_overlays()
 	. = ..()
@@ -45,12 +74,7 @@
 	if(.)
 		return
 	to_chat(user, "<span class='notice'>You take down [src].</span>")
-	if(victim)
-		victim.forceMove(drop_location())
-		victim = null
-	spear.forceMove(drop_location())
-	spear = null
-	qdel(src)
+	deconstruct(TRUE)
 
 /obj/structure/headpike/update_name()
 	name = "[victim.real_name] on a [spear]"

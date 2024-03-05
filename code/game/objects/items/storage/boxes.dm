@@ -787,6 +787,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/light/bulb(src)
 
+/obj/item/storage/box/flares
+	name = "box of flares"
+	illustration = "firecracker"
+
+/obj/item/storage/box/flares/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"

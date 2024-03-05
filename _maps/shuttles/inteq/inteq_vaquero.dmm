@@ -571,15 +571,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
-"iq" = (
-/obj/structure/bed,
-/obj/structure/curtain/bounty,
-/obj/item/bedsheet/brown,
-/obj/structure/sign/poster/clip/lanchester{
-	pixel_y = -32
-	},
-/turf/open/floor/carpet/black,
-/area/ship/crew)
 "iu" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -637,6 +628,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/hallway/central)
+"iB" = (
+/obj/structure/bed,
+/obj/structure/curtain/bounty,
+/obj/item/bedsheet/brown,
+/obj/structure/sign/poster/clip/lanchester{
+	pixel_y = -32
+	},
+/turf/open/floor/carpet/black,
+/area/ship/crew)
 "iL" = (
 /obj/structure/chair{
 	dir = 4
@@ -906,7 +906,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"mQ" = (
+"mM" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
@@ -1063,6 +1063,39 @@
 /area/ship/bridge)
 "qe" = (
 /turf/open/floor/carpet/orange,
+/area/ship/bridge)
+"qt" = (
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "vanguard's locker";
+	pixel_x = -28;
+	req_access_txt = "20"
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/belt/security/webbing/inteq/alt,
+/obj/item/storage/backpack/messenger/inteq,
+/obj/item/megaphone/command,
+/obj/item/clothing/under/syndicate/inteq/skirt,
+/obj/item/clothing/under/syndicate/inteq,
+/obj/item/clothing/suit/armor/hos/inteq,
+/obj/item/clothing/head/beret/sec/hos/inteq,
+/obj/item/radio/headset/inteq/alt/captain,
+/obj/item/shield/riot/tele,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/storage/belt/military/assault,
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/item/clothing/head/inteq_peaked,
+/turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "qy" = (
 /obj/structure/cable{
@@ -1234,39 +1267,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
-"us" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "vanguard's locker";
-	pixel_x = -28;
-	req_access_txt = "20"
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/armor/hos/inteq,
-/obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/item/radio/headset/inteq/alt/captain,
-/obj/item/shield/riot/tele,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/storage/belt/military/assault,
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/item/clothing/head/inteq_peaked,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "uy" = (
 /obj/machinery/cryopod,
 /obj/item/radio/intercom/directional/west,
@@ -2107,6 +2107,16 @@
 "Gq" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/crew)
+"Gy" = (
+/obj/structure/table,
+/obj/item/instrument/accordion,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/small/directional/west,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/cell_charger,
+/turf/open/floor/plasteel/grimy,
+/area/ship/crew)
 "GB" = (
 /obj/machinery/door/airlock{
 	name = "Dormitory"
@@ -2351,35 +2361,6 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"JZ" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "equipment locker";
-	req_access_txt = "1"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line{
-	dir = 1
-	},
-/obj/item/clothing/suit/armor/vest/bulletproof,
-/obj/item/clothing/head/helmet/swat/inteq,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/storage/belt/security/webbing/inteq/alt,
-/obj/item/melee/baton/loaded,
-/obj/item/storage/box/zipties,
-/obj/machinery/airalarm/directional/west,
-/obj/structure/sign/warning/nosmoking/circle{
-	pixel_y = 23
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security)
 "Kr" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable/yellow{
@@ -2852,16 +2833,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/crew/office)
-"SB" = (
-/obj/structure/table,
-/obj/item/instrument/accordion,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/machinery/light/small/directional/west,
-/obj/machinery/airalarm/directional/north,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/cell_charger,
-/turf/open/floor/plasteel/grimy,
-/area/ship/crew)
 "SW" = (
 /obj/structure/sign/warning/docking{
 	pixel_x = -9;
@@ -3353,6 +3324,35 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
+"ZB" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "equipment locker";
+	req_access_txt = "1"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line{
+	dir = 1
+	},
+/obj/item/clothing/suit/armor/vest/bulletproof,
+/obj/item/clothing/head/helmet/swat/inteq,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/storage/belt/security/webbing/inteq/alt,
+/obj/item/melee/baton/loaded,
+/obj/item/storage/box/zipties,
+/obj/machinery/airalarm/directional/west,
+/obj/structure/sign/warning/nosmoking/circle{
+	pixel_y = 23
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "ZF" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/syndicate{
@@ -3627,10 +3627,10 @@ RF
 Ul
 oX
 gY
-us
+qt
 hM
 Ul
-SB
+Gy
 Ie
 GB
 Ur
@@ -3694,7 +3694,7 @@ rA
 ZA
 Gq
 jE
-iq
+iB
 Gq
 "}
 (17,1,1) = {"
@@ -3812,7 +3812,7 @@ Zh
 te
 Ci
 Jc
-mQ
+mM
 vo
 ww
 ww
@@ -3850,7 +3850,7 @@ zG
 gO
 Bj
 te
-JZ
+ZB
 fI
 te
 ww
