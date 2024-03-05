@@ -44,11 +44,11 @@
 	)
 	if (prob(10))
 		belt = pickweight(list(
-			/obj/item/gun/ballistic/automatic/pistol/m1911 = 2,
+			/obj/item/gun/ballistic/automatic/pistol/candor = 2,
 			/obj/item/gun/ballistic/automatic/pistol/commander = 1,
 			/obj/item/gun/ballistic/automatic/pistol = 1,
 			/obj/item/gun/ballistic/revolver = 1,
-			/obj/item/gun/ballistic/revolver/pepperbox = 1,
+			/obj/item/gun/ballistic/revolver/firebrand = 1,
 			)
 		)
 	if(prob(50))
@@ -412,7 +412,7 @@
 		if(prob(75))
 			backpack_contents += pickweight(list(
 				/obj/item/spacecash/bundle/mediumrand = 5,
-				/obj/item/ammo_box/a762 = 5,
+				/obj/item/ammo_box/magazine/illestren_a850r = 5,
 				/obj/item/ammo_box/magazine/zip_ammo_9mm = 5,
 				/obj/item/modular_computer/tablet/preset/cargo = 3,
 				/obj/item/stack/tape = 3,
@@ -425,7 +425,7 @@
 		accessory = /obj/item/clothing/accessory/armband/cargo
 	if(prob(25))
 		suit = /obj/item/clothing/suit/armor/vest/scrap_armor
-		suit_store = /obj/item/gun/ballistic/rifle/boltaction //An attempt to refrence gun cargo
+		suit_store = /obj/item/gun/ballistic/rifle/illestren
 
 /datum/outfit/generic/cargo
 	name = "Cargo Technician (Legion)"
