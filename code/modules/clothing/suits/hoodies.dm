@@ -110,6 +110,5 @@
 /obj/item/clothing/head/hooded/hood/rilena
 	name = "RILENA: LMR K4L1 hood"
 	desc = "A hood for your RILENA themed hoodie."
-	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 
