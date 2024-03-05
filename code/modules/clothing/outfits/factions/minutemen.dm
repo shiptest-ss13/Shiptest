@@ -353,7 +353,7 @@
 
 /datum/outfit/job/clip/minutemen/head_of_personnel
 	name = "CLIP Minutemen - Bridge Officer"
-	job_icon = "headofpersonnel"
+	job_icon = "clip_navy3"
 	jobtype = /datum/job/head_of_personnel
 
 	id = /obj/item/card/id/silver
