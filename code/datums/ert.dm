@@ -12,7 +12,9 @@
 	var/polldesc
 	/// If TRUE, gives the team members "[role] [random last name]" style names
 	var/random_names = FALSE
-	/// If TRUE, the admin who created the response team will be spawned in the briefing room in their preferred briefing outfit (assuming they're a ghost)
+	/// If TRUE, special slots (that are not the leader) will use a predefined limit
+	var/limit_slots = FALSE
+	/// If TRUE, the admin who created the response team will be spawned in the briefing room (or in the shuttle) in their preferred briefing outfit (assuming they're a ghost)
 	var/spawn_admin = FALSE
 	/// If TRUE, we try and pick one of the most experienced players who volunteered to fill the leader slot
 	var/leader_experience = TRUE
@@ -51,7 +53,7 @@
 
 /datum/ert/marine
 	leader_role = /datum/antagonist/ert/marine
-	roles = list(/datum/antagonist/ert/marine/security, /datum/antagonist/ert/marine/engineer, /datum/antagonist/ert/marine/medic)
+	roles = list(/datum/antagonist/ert/marine/security, /datum/antagonist/ert/marine/engineer = 1, /datum/antagonist/ert/marine/medic = 1)
 	rename_team = "Marine Squad"
 	polldesc = "an 'elite' Nanotrasen Strike Team"
 	opendoors = FALSE
@@ -102,7 +104,7 @@
 	teamsize = 4
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/lp/lieutenant
-	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic, /datum/antagonist/ert/lp/engineer)
+	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic = 1, /datum/antagonist/ert/lp/engineer = 1)
 	rename_team = "Loss Prevention Team"
 	polldesc = "a Nanotrasen loss prevention team"
 
@@ -195,7 +197,7 @@
 
 /datum/ert/syndicate/gorlex
 	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
-	roles = list(/datum/antagonist/ert/syndicate/gorlex, /datum/antagonist/ert/syndicate/gorlex/pointman, /datum/antagonist/ert/syndicate/gorlex/medic, /datum/antagonist/ert/syndicate/gorlex/sniper)
+	roles = list(/datum/antagonist/ert/syndicate/gorlex, /datum/antagonist/ert/syndicate/gorlex/pointman = 1, /datum/antagonist/ert/syndicate/gorlex/medic = 1, /datum/antagonist/ert/syndicate/gorlex/sniper = 1)
 	mission = "Serve the interests of the 2nd Battlegroup."
 	rename_team = "2nd Battlegroup Squad"
 	polldesc = "a loyalist Gorlex squad"

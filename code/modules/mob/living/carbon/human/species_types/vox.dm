@@ -104,16 +104,15 @@
 	return ..()
 
 /datum/species/vox/get_item_offsets_for_dir(dir, hand)
-	////LEFT/RIGHT
-	switch(dir)
-		if(SOUTH)
-			return list(list("x" = 10, "y" = -1), list("x" = 8, "y" = -1))
-		if(NORTH)
-			return list(list("x" = 9, "y" = 0), list("x" = 9, "y" = 0))
-		if(EAST)
-			return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
-		if(WEST)
-			return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
+	//LEFT/RIGHT
+	if(dir & NORTH)
+		return list(list("x" = 9, "y" = 0), list("x" = 9, "y" = 0))
+	if(dir & SOUTH)
+		return list(list("x" = 10, "y" = -1), list("x" = 8, "y" = -1))
+	if(dir & EAST)
+		return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
+	if(dir & WEST)
+		return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
 
 /datum/action/innate/tail_hold
 	name = "Tail Hold"
@@ -174,10 +173,13 @@
 			owner.cut_overlay(held_item_overlay)
 			held_item_overlay = null
 		return
+
 	if(olddir == newdir && !force)
 		return
 
 	newdir ||= owner.dir
+
+	newdir = normalize_dir_to_cardinals(newdir)
 
 	owner.cut_overlay(held_item_overlay)
 	var/dirtext = dir2text(newdir)

@@ -225,7 +225,8 @@
 						if(plasma_parts.len)
 							var/obj/item/bodypart/NB = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs for dismember() to use
 							PP.emote("scream")
-							NB.limb_id = "plasmaman"//change the species_id of the limb to that of a plasmaman
+							NB.limb_id = "plasmaman" //change the species_id of the limb to that of a plasmaman
+							NB.static_icon = 'icons/mob/species/plasmaman/bodyparts.dmi'
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
 							PP.visible_message(

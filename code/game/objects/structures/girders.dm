@@ -44,11 +44,15 @@
 			M.add_fingerprint(user)
 			qdel(src)
 
+			return
+
 	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
 		to_chat(user, "<span class='notice'>You smash through the girder!</span>")
 		new /obj/item/stack/sheet/metal(get_turf(src))
 		W.play_tool_sound(src)
 		qdel(src)
+
+		return
 
 
 	else if(istype(W, /obj/item/stack))
@@ -77,6 +81,8 @@
 					var/obj/structure/falsewall/iron/FW = new (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 5)
 					to_chat(user, "<span class='warning'>You need at least five rods to add plating!</span>")
@@ -111,6 +117,8 @@
 					var/obj/structure/falsewall/F = new (loc)
 					transfer_fingerprints_to(F)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need two sheets of metal to finish a wall!</span>")
@@ -141,6 +149,8 @@
 					var/obj/structure/falsewall/reinforced/FW = new (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(state == GIRDER_REINF)
 					if(S.get_amount() < 1)
@@ -185,6 +195,8 @@
 					var/obj/structure/FW = new F (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need at least two sheets to add plating!</span>")
@@ -209,8 +221,6 @@
 					transfer_fingerprints_to(T)
 					qdel(src)
 				return
-
-		add_hiddenprint(user)
 
 	else if(istype(W, /obj/item/pipe))
 		var/obj/item/pipe/P = W
