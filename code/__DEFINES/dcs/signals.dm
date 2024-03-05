@@ -225,8 +225,8 @@
 
 /////////////////
 
-#define COMSIG_ENTER_AREA "enter_area" //from base of area/Entered(): (/area)
-#define COMSIG_EXIT_AREA "exit_area" //from base of area/Exited(): (/area)
+#define COMSIG_ENTER_AREA "enter_area" //from base of area/Entered(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
+#define COMSIG_EXIT_AREA "exit_area" //from base of area/Exited(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
 
 #define COMSIG_CLICK "atom_click" //from base of atom/Click(): (location, control, params, mob/user)
 #define COMSIG_CLICK_SHIFT "shift_click" //from base of atom/ShiftClick(): (/mob)
@@ -724,6 +724,10 @@
 #define COMSIG_OVERMAP_DOCK "overmap_dock"
 /// From overmap Undock(): (datum/overmap)
 #define COMSIG_OVERMAP_UNDOCK "overmap_undock"
+
+// /datum/component/spawner signals
+// Called by parent when pausing spawning, returns bool: (datum/source, spawning_started)
+#define COMSIG_SPAWNER_TOGGLE_SPAWNING "spawner_toggle"
 
 ///Beam Signals
 /// Called before beam is redrawn

@@ -370,6 +370,7 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
 	name = "improvised shotgun"
 	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
+	icon = 'icons/obj/guns/projectile.dmi'
 	base_icon_state = "ishotgun"
 	icon_state = "ishotgun"
 	item_state = "ishotgun"
@@ -586,7 +587,7 @@
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/winchester
 	fire_sound = 'sound/weapons/gun/rifle/flamingarrow.ogg'
-	rack_sound = 'sound/weapons/gun/rifle/ak47_cocked.ogg'
+	rack_sound = 'sound/weapons/gun/rifle/skm_cocked.ogg'
 	bolt_wording = "lever"
 	cartridge_wording = "bullet"
 	can_be_sawn_off  = TRUE
@@ -679,6 +680,7 @@
 	base_icon_state = "beacon"
 	icon_state = "beacon"
 	item_state = "beacon"
+	unique_reskin = null
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	inhand_x_dimension = 32
