@@ -47,11 +47,10 @@
 		attached_beam = src.Beam(target, icon_state = "1-full", maxdistance = 3)
 		add_fingerprint(usr)
 		attached = target
-		update_overlays()
+		update_appearance(UPDATE_ICON)
 
 /obj/machinery/medical/process()
-	update_overlays()
-	update_appearance()
+	update_appearance(UPDATE_ICON)
 
 	if(!attached)
 		use_power = IDLE_POWER_USE
@@ -80,6 +79,6 @@
  * put on the attached victim. Automatically updates overlays in case you have some, and changes power to idle power use.
  */
 /obj/machinery/medical/proc/clear_status()
-	update_overlays()
+	update_appearance(UPDATE_ICON)
 	qdel(attached_beam)
 	return

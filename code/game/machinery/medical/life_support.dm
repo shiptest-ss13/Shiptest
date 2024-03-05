@@ -5,7 +5,7 @@
 	icon_state = "basic"
 	circuit = /obj/item/circuitboard/machine/life_support
 	idle_power_usage = 100
-	active_power_usage = 500
+	active_power_usage = 1000
 	///Maximum damage someone can have and still live while hooked up
 	var/health_treshold = -200
 	///Determines if this is active or not.
@@ -80,8 +80,6 @@
 
 	if(attached.health < health_treshold)
 		clear_status()
-		update_overlays()
-		update_icon()
 		return
 
 	attached.apply_status_effect(STATUS_EFFECT_LIFE_SUPPORT, STASIS_MACHINE_EFFECT)
@@ -117,24 +115,17 @@
 		if(1 to INFINITY)
 			soundloop_flatline.stop()
 			soundloop_ekg.start()
-
-/obj/machinery/medical/life_support/advanced
-	name = "advanced life support unit"
-	desc = "A miracle of modern engineering, this machine allows you to indefinitely suspend someone in a stasis like state, but uses up massive amounts of electricity to do so."
-	icon_state = "advanced"
-	circuit = /obj/item/circuitboard/machine/life_support/advanced
-	idle_power_usage = 250
-	active_power_usage = 1000
-	health_treshold = -1000
-
+/* 
+ * TODO: Make this use a cell
 /obj/machinery/medical/life_support/mobile
 	name = "portable life support unit"
 	desc = "A miracle of modern engineering, allows you to suspend someone in a coma-like state, wherever you go!"
 	icon_state = "mobile"
 	circuit = /obj/item/circuitboard/machine/life_support/mobile
-	idle_power_usage = 50
-	active_power_usage = 200
+	idle_power_usage = 100
+	active_power_usage = 1000
 	anchored = FALSE
 
 /obj/machinery/medical/life_support/mobile/wrench_act(mob/living/user, obj/item/I) //unewrenchable
 	return
+*/

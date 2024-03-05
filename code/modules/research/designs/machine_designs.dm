@@ -574,22 +574,6 @@
 	category = list("Medical Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/board/life_support_advanced
-	name = "Machine Design (Advanced Life Support Unit)"
-	desc = "The circuit board for a life support unit."
-	id = "life_support_adv"
-	build_path = /obj/item/circuitboard/machine/life_support/advanced
-	category = list("Medical Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
-/datum/design/board/life_support_mobile
-	name = "Machine Design (Mobile Life Support Unit)"
-	desc = "The circuit board for a life support unit."
-	id = "life_support_mob"
-	build_path = /obj/item/circuitboard/machine/life_support/mobile
-	category = list("Medical Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/medical_kiosk
 	name = "Machine Design (Medical Kiosk)"
 	desc = "The circuit board for a Medical Kiosk."

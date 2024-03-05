@@ -7,8 +7,8 @@
 
 /obj/machinery/medical/dialysis/RefreshParts()
 	var/change = 0
-	for(var/obj/item/stock_parts/capacitor/C in component_parts)
-		change += C.rating
+	for(var/obj/item/stock_parts/capacitor/capacitor in component_parts)
+		change += capacitor.rating
 	purge_amount = initial(purge_amount) * change
 	return
 
@@ -17,6 +17,6 @@
 	if(!attached || !attached.reagents)
 		return
 	for(var/R in attached.reagents.reagent_list)
-		var/datum/reagent/r1 = R
-		attached.reagents.remove_reagent(r1.type, purge_amount)
+		var/datum/reagent/reagent = R
+		attached.reagents.remove_reagent(reagent.type, purge_amount)
 	return
