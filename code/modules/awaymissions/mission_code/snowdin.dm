@@ -153,10 +153,7 @@
 	light_range = 3
 	light_power = 0.75
 	light_color = LIGHT_COLOR_PURPLE
-
-/turf/open/lava/plasma/Initialize(mapload)
-	. = ..()
-	QDEL_NULL(lava)
+	particle_emitter = null
 
 /turf/open/lava/plasma/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/glass/C = I
