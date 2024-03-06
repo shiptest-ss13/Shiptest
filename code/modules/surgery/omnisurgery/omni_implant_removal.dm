@@ -1,10 +1,11 @@
-//extract implant
+//extract implant (CREATE A TOOL SPECIFICALLY TO DO THIS PLEASE or just add in forceps [when you sprite it])
 /datum/surgery_step/omni/extract_implant
 	name = "extract implant"
 	implements = list(
-		TOOL_HEMOSTAT = 100,
-		TOOL_CROWBAR = 40,
-		/obj/item/kitchen/fork = 33)
+		//TOOL_HEMOSTAT = 100,
+		//TOOL_CROWBAR = 40,
+		///obj/item/kitchen/fork = 33
+		)
 	time = 6.4 SECONDS
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	experience_given = MEDICAL_SKILL_MEDIUM

@@ -3,6 +3,8 @@
 	name = "Dermal Incision"
 	implements = list(
 		TOOL_SCALPEL = 100)
+	preop_sound = 'sound/surgery/scalpel1.ogg'
+	success_sound = 'sound/surgery/scalpel2.ogg'
 	time = 2.5 SECONDS
 	show = TRUE
 	required_layer = list(0)
@@ -15,7 +17,9 @@
 	name = "Retract Muscle" //Should cause minor bleeding
 	implements = list(
 		TOOL_RETRACTOR = 100)
-	time = 2.5 SECONDS
+	time = 3.5 SECONDS
+	preop_sound = 'sound/surgery/retractor1.ogg'
+	success_sound = 'sound/surgery/retractor2.ogg'
 	show = TRUE
 	required_layer = list(1)
 
@@ -27,7 +31,9 @@
 	name = "Saw Bone" //Should not cause bleeding, but should cause damage
 	implements = list(
 		TOOL_SAW = 100)
-	time = 2.5 SECONDS
+	time = 10 SECONDS
+	preop_sound = 'sound/surgery/saw.ogg'
+	success_sound = 'sound/surgery/bone3.ogg'
 	show = TRUE
 	required_layer = list(2)
 
@@ -40,6 +46,8 @@
 	implements = list(
 		TOOL_SCALPEL = 100)
 	time = 2.5 SECONDS
+	preop_sound = 'sound/surgery/scalpel1.ogg'
+	success_sound = 'sound/surgery/scalpel2.ogg'
 	show = TRUE
 	required_layer = list(3)
 
@@ -54,6 +62,8 @@
 	implements = list(
 		TOOL_CAUTERY = 100)
 	time = 2.5 SECONDS
+	preop_sound = 'sound/surgery/cautery1.ogg'
+	success_sound = 'sound/surgery/retractor2.ogg'
 	show = TRUE
 	required_layer = list(4)
 
@@ -64,8 +74,10 @@
 /datum/surgery_step/omni/boneup
 	name = "Mend Bone"
 	implements = list(
-		TOOL_CAUTERY = 100)
+		TOOL_HEMOSTAT = 100)
 	time = 2.5 SECONDS
+	preop_sound = 'sound/surgery/cautery1.ogg'
+	success_sound = 'sound/surgery/bone3.ogg'
 	show = TRUE
 	required_layer = list(3)
 
@@ -78,6 +90,8 @@
 	implements = list(
 		TOOL_CAUTERY = 100)
 	time = 2.5 SECONDS
+	preop_sound = 'sound/surgery/cautery1.ogg'
+	success_sound = 'sound/surgery/retractor2.ogg'
 	show = TRUE
 	required_layer = list(2)
 
@@ -91,7 +105,7 @@
 		TOOL_CAUTERY = 100,
 		TOOL_WELDER = 40,
 		/obj/item/gun/energy/laser = 60)
-	time = 2.4 SECONDS
+	time = 2.5 SECONDS
 	preop_sound = 'sound/surgery/cautery1.ogg'
 	success_sound = 'sound/surgery/cautery2.ogg'
 	show = TRUE
