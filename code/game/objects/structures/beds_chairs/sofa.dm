@@ -26,3 +26,6 @@
 
 /obj/structure/chair/sofa/red/corner
 	icon_state = "sofacorner_red"
+
+/obj/structure/chair/sofa/red/internal_corner
+	icon_state = "sofainternalcorner_red"
