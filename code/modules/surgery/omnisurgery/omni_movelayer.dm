@@ -126,6 +126,7 @@
 /datum/surgery_step/omni/close/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	if (ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.bleed_rate = max((H.bleed_rate - 3), 0)
+		//H.bleed_rate = max((H.bleed_rate - 3), 0) Disabling for test purposes
+		H.bleed_rate = 0 //Setting this to 0 until Clamp Bleeders gets figured out
 	surgery.complete()
 	return ..()
