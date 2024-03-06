@@ -19,16 +19,16 @@
 	if(intent == INTENT_DISARM)
 		try_to_fail = TRUE
 	var/obj/item/tool = user.get_active_held_item()
-	var/list/L = get_surgery_step(tool,user,target)
-	if(L)
+	var/list/possible_steps = get_surgery_step(tool,user,target)
+	if(possible_steps)
 		var/datum/surgery_step/omni/S = null
-		if(L.len == 1)
-			var/datum/surgery_step/omni/val = L[1]
+		if(possible_steps.len == 1)
+			var/datum/surgery_step/omni/val = possible_steps[1]
 			S = new val.type
 		else
-			var/P = show_radial_menu(user,target,L,require_near = TRUE)
+			var/P = show_radial_menu(user,target,possible_steps,require_near = TRUE)
 			if(P && user && user.Adjacent(target) && (tool in user))
-				var/datum/surgery_step/omni/T = locate(P) in L // Why tf does L[P] not work here.
+				var/datum/surgery_step/omni/T = locate(P) in possible_steps // Why tf does L[P] not work here.
 				for(var/datum/surgery/other in target.surgeries)
 					if(other == src)
 						continue
@@ -44,27 +44,27 @@
 /datum/surgery/omni/get_surgery_step(obj/item/tool,mob/user,mob/living/target)
 	var/list/all_steps = GLOB.omnisurgerysteps_list.Copy()
 	var/list/valid_steps = list()
-	for(var/datum/surgery_step/omni/S in all_steps)
-		if(!S.show)
+	for(var/datum/surgery_step/omni/Step in all_steps)
+		if(!Step.show)
 			continue
-		if(!(location in S.valid_locations))
+		if(!(location in Step.valid_locations))
 			continue
-		if(!(atlayer in S.required_layer))
+		if(!(atlayer in Step.required_layer))
 			continue
-		if(!(S.accept_any_item || S.accept_hand))
+		if(!(Step.accept_any_item || Step.accept_hand))
 			var/good = FALSE
-			for(var/obj in S.implements)
+			for(var/obj in Step.implements)
 				if(istype(tool,obj))
 					good = TRUE
 					break
-				if((tool.tool_behaviour in S.implements) || (tool in S.implements))
+				if((tool.tool_behaviour in Step.implements) || (tool in Step.implements))
 					good = TRUE
 					break
 			if (!good)
 				continue
-		if(!S.test_op(user,target,src))
+		if(!Step.test_op(user,target,src))
 			continue
-		valid_steps[S] = S.radial_icon != null ? S.radial_icon : null
+		valid_steps[Step] = Step.radial_icon != null ? Step.radial_icon : null
 	return valid_steps
 
 /datum/surgery/omni/get_surgery_next_step()
