@@ -1060,9 +1060,8 @@
 
 /atom/movable/vv_get_dropdown()
 	. = ..()
-	VV_DROPDOWN_OPTION(VV_HK_EDIT_PARTICLES, "Edit Particles")
-	VV_DROPDOWN_OPTION("adminplayerobservefollow", "Follow Particles")
-	VV_DROPDOWN_OPTION("admingetmovable", "Get")
+	. += "<option value='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(src)]'>Follow</option>"
+	. += "<option value='?_src_=holder;[HrefToken()];admingetmovable=[REF(src)]'>Get</option>"
 
 /atom/movable/proc/ex_check(ex_id)
 	if(!ex_id)
