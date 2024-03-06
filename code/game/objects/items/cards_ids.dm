@@ -161,6 +161,7 @@
 	var/icon/cached_flat_icon
 	var/registered_age = 13 // default age for ss13 players
 	var/job_icon
+	var/faction_icon
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
@@ -435,11 +436,6 @@ update_label()
 	registered_name = "Emergency Command Hologram"
 	access = list(ACCESS_CHANGE_IDS)
 
-/obj/item/card/id/silver/reaper
-	access = list(ACCESS_MAINT_TUNNELS)
-	assignment = "Reaper"
-	registered_name = "Thirteen"
-
 /obj/item/card/id/gold
 	name = "gold identification card"
 	desc = "A golden card which shows power and might."
@@ -525,6 +521,8 @@ update_label()
 		else if (popup_input == "Forge/Reset" && forged)
 			registered_name = initial(registered_name)
 			assignment = initial(assignment)
+			faction_icon = initial(faction_icon)
+			job_icon = initial(job_icon)
 			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
 			update_label()
 			forged = FALSE
@@ -782,39 +780,6 @@ update_label()
 	name = "Officer ID"
 	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_MAINT, ACCESS_AWAY_SEC)
 
-/obj/item/card/id/away/old
-	name = "\proper a perfectly generic identification card"
-	desc = "A perfectly generic identification card. Looks like it could use some flavor."
-
-/obj/item/card/id/away/old/sec
-	name = "Charlie Station Security Officer's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Security Officer\"."
-	assignment = "Charlie Station Security Officer"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_SEC)
-
-/obj/item/card/id/away/old/sci
-	name = "Charlie Station Scientist's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Scientist\"."
-	assignment = "Charlie Station Scientist"
-	access = list(ACCESS_AWAY_GENERAL)
-
-/obj/item/card/id/away/old/eng
-	name = "Charlie Station Engineer's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Station Engineer\"."
-	assignment = "Charlie Station Engineer"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE)
-
-/obj/item/card/id/away/old/cap
-	name = "Charlie Station Captain's ID card"
-	desc = "A faded Charlie Station ID card. You can make out the rank \"Captain\"."
-	assignment = "Charlie Station Captain"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_AWAY_ENGINE, ACCESS_AWAY_SEC)
-
-/obj/item/card/id/away/old/apc
-	name = "APC Access ID"
-	desc = "A special ID card that allows access to APC terminals."
-	access = list(ACCESS_ENGINE_EQUIP)
-
 /obj/item/card/id/away/deep_storage //deepstorage.dmm space ruin
 	name = "bunker access ID"
 
@@ -829,14 +794,6 @@ update_label()
 	name = "\improper SolGov ID"
 	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
 	assignment = "Commander"
-
-/obj/item/card/id/away/slime //We're ranchin, baby! //It's slimin time
-	name = "\improper Slime Lab access card"
-	desc = "An ID card with access to the Slime Lab"
-	assignment = "Slime Research Staff"
-	access = list(ACCESS_AWAY_GENERAL, ACCESS_XENOBIOLOGY)
-	registered_name = "Slime Researcher"
-	icon_state = "id"
 
 /obj/item/card/id/departmental_budget
 	name = "departmental card (FUCK)"

@@ -258,12 +258,7 @@ Charged extracts:
 
 /obj/item/slimecross/charged/adamantine
 	colour = "adamantine"
-	effect_desc = "Creates a completed golem shell."
-
-/obj/item/slimecross/charged/adamantine/do_effect(mob/user)
-	user.visible_message("<span class='notice'>[src] produces a fully formed golem shell!</span>")
-	new /obj/effect/mob_spawn/human/golem/servant(get_turf(src), /datum/species/golem/adamantine, user)
-	..()
+	effect_desc = "Does nothing. Sorry :)"
 
 /obj/item/slimecross/charged/rainbow
 	colour = "rainbow"

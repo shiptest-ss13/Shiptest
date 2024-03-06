@@ -103,12 +103,6 @@
 	description = "an abandoned secure storage location. there is no power left in the batteries and the former ocupants locked it pretty tight before leaving.\
 	You will have to power areas to raise the bolts on the doors. look out for secrets."
 
-/datum/map_template/ruin/space/oldshuttle
-	id = "oldcode-nukeops"
-	suffix = "oldcodeops.dmm"
-	name = "Strange Infiltrator"
-	description = "A nuclear operative's ship, drifing along the stars. This thing looks like it belongs in ancient times."
-
 /datum/map_template/ruin/space/transport18
 	id = "transport18"
 	suffix = "transport18.dmm"
@@ -144,12 +138,6 @@
 	suffix = "provinggrounds.dmm"
 	name = "Syndicate Battle Sphere"
 	description = "The Syndicate Battle Sphere, complete with guns!"
-
-/datum/map_template/ruin/space/lab4071
-	id = "lab4071"
-	suffix = "lab4071.dmm"
-	name = "Syndicate Laboratory 4071"
-	description = "A Syndicate laboratory run by syndicate scientists."
 
 /datum/map_template/ruin/space/singularitylab
 	id = "singularitylab"

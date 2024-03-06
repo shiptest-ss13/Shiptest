@@ -35,10 +35,6 @@
 		if(nodes[i])
 			. += getpipeimage(icon, "pipe-[piping_layer]", get_dir(src, nodes[i]))
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer1
-	piping_layer = 1
-	icon_state = "manifold4w-1"
-
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer2
 	piping_layer = 2
 	icon_state = "manifold4w-2"

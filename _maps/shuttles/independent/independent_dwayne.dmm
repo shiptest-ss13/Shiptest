@@ -95,13 +95,10 @@
 /obj/docking_port/mobile{
 	can_move_docking_ports = 1;
 	dir = 2;
-	dwidth = 12;
-	height = 17;
 	launch_status = 0;
 	name = "mining ship";
 	port_direction = 8;
-	preferred_direction = 4;
-	width = 28
+	preferred_direction = 4
 	},
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 8;
@@ -2105,9 +2102,9 @@
 	dir = 4
 	},
 /obj/structure/guncase/shotgun,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
-/obj/item/gun/ballistic/shotgun/winchester,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
 /turf/open/floor/plasteel,
 /area/ship/cargo)
 "WE" = (
@@ -2135,7 +2132,6 @@
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/light/directional/west,
 /obj/item/storage/box/lights/mixed,
-/obj/item/paper/fluff/ruins/oldstation/generator_manual,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "WZ" = (

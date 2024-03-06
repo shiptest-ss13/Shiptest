@@ -303,6 +303,11 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
+/obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/m12g(src)
+
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
 	desc = "A versatile chest rig, cherished by miners and hunters alike."
@@ -434,22 +439,40 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/storage/belt/military/c20r/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm45(src)
+
+/obj/item/storage/belt/military/assault/m90/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556(src)
+
 /obj/item/storage/belt/military/minutemen
 	name = "minutemen tactical webbing"
 	desc = "A set of tactical webbing worn by the Colonial Minutemen of the frontier."
 	icon_state = "cmmwebbing"
 	item_state = "cmmwebbing"
 
-/obj/item/storage/belt/military/minutemen/loaded/PopulateContents()
-	for(var/i in 1 to 7)
+/obj/item/storage/belt/military/minutemen/p16/PopulateContents()
+	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/p16(src)
+
+/obj/item/storage/belt/military/minutemen/gal/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/gal(src)
+
+/obj/item/storage/belt/military/minutemen/cm5/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm9mm(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
 
 /obj/item/storage/belt/military/snack/Initialize()
 	. = ..()
-	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
+	var/sponsor = pick("Donk! Co.", "CyberSun")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
 /obj/item/storage/belt/military/snack/ComponentInitialize()
@@ -666,17 +689,17 @@
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding shotgun ammunition."
+	desc = "A bandolier for holding ammunition. Does not hold magazines"
 	icon_state = "bandolier"
 	item_state = "bandolier"
 
 /obj/item/storage/belt/bandolier/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 18
+	STR.max_items = 40
 	STR.display_numerical_stacking = TRUE
 	STR.set_holdable(list(
-		/obj/item/ammo_casing/shotgun
+		/obj/item/ammo_casing
 		))
 
 /obj/item/storage/belt/fannypack
@@ -762,7 +785,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
-	STR.use_sound = null
+	STR.use_sound = null //if youre wondering why this is null, its so you can look in your sheath to prepare to draw, without letting anyone know youre preparing to draw it
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
 		/obj/item/melee/sabre
@@ -819,12 +842,101 @@
 	new /obj/item/melee/sabre/solgov(src)
 	update_appearance()
 
+/obj/item/storage/belt/sabre/suns
+	name = "SUNS sabre sheath"
+	desc = "A leather sheath designed to hold a blade."
+
+	icon = 'icons/obj/clothing/faction/suns/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/belt.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+	base_icon_state = "suns-sheath"
+	icon_state = "suns-sheath"
+	item_state = "suns-sheath"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/suns/ComponentInitialize()
+	AddComponent(component_type)
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/suns
+		))
+
+/obj/item/storage/belt/sabre/suns/PopulateContents()
+	new /obj/item/melee/sabre/suns(src)
+	update_appearance()
+
+
+/obj/item/storage/belt/sabre/suns/captain
+	name = "SUNS captain's sabre sheath"
+	desc = "An elegant and impressively made leather sheath designed to hold a captain's blade."
+
+	base_icon_state = "suns-capsheath"
+	icon_state = "suns-capsheath"
+	item_state = "suns-capsheath"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/suns/captain/ComponentInitialize()
+	AddComponent(component_type)
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/suns/captain
+		))
+
+/obj/item/storage/belt/sabre/suns/captain/PopulateContents()
+	new /obj/item/melee/sabre/suns/captain(src)
+	update_appearance()
+
+/obj/item/storage/belt/sabre/suns/cmo
+	name = "SUNS cane sheath"
+	desc = "A walking cane modified to hold a thin stick sabre. It does not fit on belts, contrary to popular belief."
+	slot_flags = null
+
+	icon = 'icons/obj/clothing/faction/suns/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/belt.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+	base_icon_state = "suns-cane"
+	icon_state = "suns-cane"
+	item_state = "suns-cane"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/suns/ComponentInitialize()
+	AddComponent(component_type)
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/suns/cmo
+		))
+
+/obj/item/storage/belt/sabre/suns/PopulateContents()
+	new /obj/item/melee/sabre/suns/cmo(src)
+	update_appearance()
+
 /obj/item/storage/belt/security/webbing/inteq
 	name = "inteq webbing"
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
 	supports_variations = VOX_VARIATION
+
+/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/skm_762_40(src)
 
 /obj/item/storage/belt/security/webbing/inteq/alt
 	name = "inteq drop pouch harness"

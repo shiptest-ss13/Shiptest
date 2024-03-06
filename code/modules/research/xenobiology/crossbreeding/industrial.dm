@@ -188,12 +188,6 @@ Industrial extracts:
 	plasmarequired = 3
 	itempath = /obj/item/storage/fancy/heart_box
 
-/obj/item/slimecross/industrial/adamantine
-	colour = "adamantine"
-	effect_desc = "Produces sheets of adamantine."
-	plasmarequired = 10
-	itempath = /obj/item/stack/sheet/mineral/adamantine
-
 /obj/item/slimecross/industrial/rainbow
 	colour = "rainbow"
 	effect_desc = "Produces random slime extracts."

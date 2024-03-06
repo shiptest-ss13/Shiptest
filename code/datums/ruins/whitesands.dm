@@ -4,13 +4,6 @@
 	prefix = "_maps/RandomRuins/SandRuins/"
 	ruin_type = RUINTYPE_SAND
 
-/datum/map_template/ruin/whitesands/seed_vault
-	name = "Seed Vault"
-	id = "seed-vault"
-	description = "The creators of these vaults were a highly advanced and benevolent race, and launched many into the stars, hoping to aid fledgling civilizations. \
-	However, all the inhabitants seem to do is grow drugs and guns."
-	suffix = "whitesands_surface_seed_vault.dmm"
-
 /datum/map_template/ruin/whitesands/starfury_crash
 	name = "Starfury Crash"
 	id = "starfurycrash"
@@ -48,6 +41,12 @@
 	description = "Some sort of survivors, brandishing old nanotrasen security gear."
 	suffix = "whitesands_surface_chokepoint.dmm"
 
+/datum/map_template/ruin/whitesands/pubbyslopcrash
+	name = "Pubby Slop Crash"
+	id = "ws-pubbyslopcrash"
+	description = "A failed attempt of the Nanotrasen nutrional replacement program"
+	suffix = "whitesands_surface_pubbyslopcrash.dmm"
+
 //////////OUTSIDE SETTLEMENTS/RUINS//////////
 /datum/map_template/ruin/whitesands/survivors/drugstore
 	name = "Abandoned Store"
@@ -67,3 +66,4 @@
 	description = "A small encampment of nomadic survivors of the First Colony, and their descendants. By all accounts, feral and without allegance to anyone but themselves."
 	suffix = "whitesands_surface_camp_combination.dmm"
 	allow_duplicates = FALSE
+

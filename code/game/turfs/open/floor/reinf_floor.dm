@@ -3,7 +3,6 @@
 	name = "reinforced floor"
 	desc = "Extremely sturdy."
 	icon_state = "engine"
-	holodeck_compatible = TRUE
 	thermal_conductivity = 0.025
 	heat_capacity = INFINITY
 	floor_tile = /obj/item/stack/sheet/metal
@@ -39,6 +38,9 @@
 	return
 
 /turf/open/floor/engine/crowbar_act(mob/living/user, obj/item/I)
+	return
+
+/turf/open/floor/engine/handle_decompression_floor_rip(sum)
 	return
 
 /turf/open/floor/engine/wrench_act(mob/living/user, obj/item/I)

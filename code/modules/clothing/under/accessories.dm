@@ -464,10 +464,7 @@
 	name = "detective's shoulder holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
 
-/obj/item/clothing/accessory/holster/lieutenant
-	name = "lieutenant's shoulder holster"
-	desc = "A modified shoulder holster designed to fit a small egun and power cells."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/lt
+
 
 /obj/item/clothing/accessory/holster/detective/Initialize()
 	. = ..()
@@ -515,7 +512,7 @@
 
 /obj/item/clothing/accessory/holster/marine/Initialize()
 	. = ..()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 
@@ -523,3 +520,25 @@
 	name = "solgov waistcoat"
 	desc = "A standard issue waistcoat in solgov colors."
 	icon_state = "solgov_waistcoat"
+
+//////////
+//RILENA//
+//////////
+
+/obj/item/clothing/accessory/rilena_pin
+	name = "RILENA: LMR Xader pin"
+	desc = "A pin that shows your love for the webseries RILENA."
+	icon_state = "rilena_pin"
+	above_suit = FALSE
+	minimize_when_attached = TRUE
+	attachment_slot = CHEST
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_equip(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "rilena_pin", /datum/mood_event/rilena_fan)
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "rilena_pin")

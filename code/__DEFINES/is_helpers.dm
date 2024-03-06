@@ -63,7 +63,6 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define isandroid(A) (is_species(A, /datum/species/android))
 #define issynth(A) (is_species(A, /datum/species/synth))
 #define ismilsynth(A) (is_species(A, /datum/species/synth/military))
-#define isgolem(A) (is_species(A, /datum/species/golem))
 #define islizard(A) (is_species(A, /datum/species/lizard))
 #define isplasmaman(A) (is_species(A, /datum/species/plasmaman))
 #define ispodperson(A) (is_species(A, /datum/species/pod))
@@ -226,8 +225,6 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define is_glass_sheet(O) (is_type_in_typecache(O, GLOB.glass_sheet_types))
 
 #define iseffect(O) (istype(O, /obj/effect))
-
-#define isholoeffect(O) (istype(O, /obj/effect/holodeck_effect))
 
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
 
