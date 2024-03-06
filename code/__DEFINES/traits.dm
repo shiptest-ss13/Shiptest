@@ -272,6 +272,13 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 
+/*
+ * Used for movables that need to be updated, via COMSIG_ENTER_AREA and COMSIG_EXIT_AREA, when transitioning areas.
+ * Use [/atom/movable/proc/become_area_sensitive(trait_source)] to properly enable it. How you remove it isn't as important.
+ */
+#define TRAIT_AREA_SENSITIVE "area-sensitive"
+
+///Used for managing KEEP_TOGETHER in [/atom/var/appearance_flags]
 #define TRAIT_KEEP_TOGETHER "keep-together"
 
 // item traits
@@ -426,6 +433,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
 /// Granted by prismwine
 #define TRAIT_REFLECTIVE "reflective"
+/// Self-explainatory.
+#define BEAUTY_ELEMENT_TRAIT "beauty_element"
+#define MOOD_COMPONENT_TRAIT "mood_component"
 
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
