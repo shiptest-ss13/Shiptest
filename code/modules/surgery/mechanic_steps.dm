@@ -172,33 +172,35 @@
 	var/organ_rejection_dam = 0
 
 /datum/surgery_step/add_prosthetic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	if(istype(tool, /obj/item/bodypart))
-		var/obj/item/bodypart/BP = tool
-		if(ishuman(target))
-			if(IS_ORGANIC_LIMB(BP))
-				to_chat(user, "<span class='warning'>[BP] isn't mechanical prosthesis!</span>")
-				return -1
-
-		if(target_zone == BP.body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
-			display_results(user, target, "<span class='notice'>You begin to replace [target]'s [parse_zone(target_zone)] with [tool]...</span>",
-				"<span class='notice'>[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool].</span>",
-				"<span class='notice'>[user] begins to replace [target]'s [parse_zone(target_zone)].</span>")
-		else
-			to_chat(user, "<span class='warning'>[tool] isn't the right type for [parse_zone(target_zone)].</span>")
+	if(!istype(tool, /obj/item/bodypart))
+		to_chat(user, "<span class='warning'>[tool] isn't a mechanical prosthesis!</span>")
+		return FALSE
+	var/obj/item/bodypart/BP = tool
+	if(ishuman(target))
+		if(IS_ORGANIC_LIMB(BP))
+			to_chat(user, "<span class='warning'>[BP] isn't a mechanical prosthesis!</span>")
 			return -1
 
+	if(target_zone != BP.body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
+		to_chat(user, "<span class='warning'>[tool] isn't the right type for [parse_zone(target_zone)].</span>")
+		return -1
+	display_results(user, target, "<span class='notice'>You begin to replace [target]'s [parse_zone(target_zone)] with [tool]...</span>",
+		"<span class='notice'>[user] begins to replace [target]'s [parse_zone(target_zone)] with [tool].</span>",
+		"<span class='notice'>[user] begins to replace [target]'s [parse_zone(target_zone)].</span>")
+
 /datum/surgery_step/add_prosthetic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	. = ..()
-	if(istype(tool, /obj/item/bodypart) && user.temporarilyRemoveItemFromInventory(tool))
-		var/obj/item/bodypart/L = tool
-		if(!L.attach_limb(target))
-			display_results(user, target, "<span class='warning'>You fail in replacing [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!</span>",
-				"<span class='warning'>[user] fails to replace [target]'s [parse_zone(target_zone)]!</span>",
-				"<span class='warning'>[user] fails to replaces [target]'s [parse_zone(target_zone)]!</span>")
-			L.forceMove(target.loc)
-			return
-		display_results(user, target, "<span class='notice'>You succeed in replacing [target]'s [parse_zone(target_zone)].</span>",
-			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!</span>",
-			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)]!</span>")
-		return
-	return ..() //if for some reason we fail everything we'll print out some text okay?
+	if(HAS_TRAIT(tool, TRAIT_NODROP))
+		display_results(user, target, "<span class= 'warning'>The [tool] is stuck in your hand!</span>",
+			"<span class= 'warning'>The [tool] seems stuck to [user]'s hand!</span>",
+			"<span class= 'warning'>The [tool] seems stuck to [user]'s hand!</span>")
+		return FALSE
+	var/obj/item/bodypart/L = tool
+	if(!L.attach_limb(target))
+		display_results(user, target, "<span class='warning'>You fail to replace [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!</span>",
+			"<span class='warning'>[user] fails to replace [target]'s [parse_zone(target_zone)]!</span>",
+			"<span class='warning'>[user] fails to replace [target]'s [parse_zone(target_zone)]!</span>")
+		return FALSE
+	display_results(user, target, "<span class='notice'>You succeed in replacing [target]'s [parse_zone(target_zone)].</span>",
+		"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!</span>",
+		"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)]!</span>")
+	return ..()

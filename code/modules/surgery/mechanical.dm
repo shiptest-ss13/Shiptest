@@ -108,6 +108,7 @@
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	lying_required = FALSE
 	self_operable = TRUE
+	ignore_clothes = TRUE
 
 /datum/surgery/prosthesis_attachment
 	name = "Prosthesis attachment"
@@ -117,10 +118,11 @@
 	requires_bodypart_type = 0
 	lying_required = FALSE
 	self_operable = TRUE
+	ignore_clothes = TRUE
 
 /datum/surgery/prosthesis_attachment/can_start(mob/user, mob/living/carbon/target)
 	if(!iscarbon(target))
-		return 0
+		return FALSE
 	var/mob/living/carbon/C = target
 	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
-		return 1
+		return TRUE
