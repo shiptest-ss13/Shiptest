@@ -16,7 +16,7 @@
 	preop_sound = 'sound/surgery/scalpel1.ogg'
 	success_sound = 'sound/surgery/scalpel2.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 
@@ -65,7 +65,7 @@
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = MEDICAL_SKILL_ORGAN_FIX
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 

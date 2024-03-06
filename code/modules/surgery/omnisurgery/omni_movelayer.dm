@@ -1,3 +1,4 @@
+// [Going Down Layers]
 /datum/surgery_step/omni/skindown
 	name = "Dermal Incision"
 	implements = list(
@@ -11,7 +12,7 @@
 	return ..()
 
 /datum/surgery_step/omni/muscledown
-	name = "Retract Muscle"
+	name = "Retract Muscle" //Should cause minor bleeding
 	implements = list(
 		TOOL_RETRACTOR = 100)
 	time = 2.5 SECONDS
@@ -20,6 +21,68 @@
 
 /datum/surgery_step/omni/muscledown/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, default_display_results)
 	surgery.atlayer++
+	return ..()
+
+/datum/surgery_step/omni/bonedown
+	name = "Saw Bone" //Should not cause bleeding, but should cause damage
+	implements = list(
+		TOOL_SAW = 100)
+	time = 2.5 SECONDS
+	show = TRUE
+	required_layer = list(2)
+
+/datum/surgery_step/omni/bonedown/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, default_display_results)
+	surgery.atlayer++
+	return ..()
+
+/datum/surgery_step/omni/membranedown
+	name = "Pierce Membrane" //Must implement bleeding
+	implements = list(
+		TOOL_SCALPEL = 100)
+	time = 2.5 SECONDS
+	show = TRUE
+	required_layer = list(3)
+
+/datum/surgery_step/omni/membranedown/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, default_display_results)
+	surgery.atlayer++
+	return ..()
+
+// [Going Up Layers] (All cautery for now for the sake of simplicity, otherwise there'll be lots of radial menus)
+
+/datum/surgery_step/omni/membraneup
+	name = "Seal Membrane"
+	implements = list(
+		TOOL_CAUTERY = 100)
+	time = 2.5 SECONDS
+	show = TRUE
+	required_layer = list(4)
+
+/datum/surgery_step/omni/membraneup/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, default_display_results)
+	surgery.atlayer--
+	return ..()
+
+/datum/surgery_step/omni/boneup
+	name = "Mend Bone"
+	implements = list(
+		TOOL_CAUTERY = 100)
+	time = 2.5 SECONDS
+	show = TRUE
+	required_layer = list(3)
+
+/datum/surgery_step/omni/boneup/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, default_display_results)
+	surgery.atlayer--
+	return ..()
+
+/datum/surgery_step/omni/muscleup
+	name = "Mend Muscle"
+	implements = list(
+		TOOL_CAUTERY = 100)
+	time = 2.5 SECONDS
+	show = TRUE
+	required_layer = list(2)
+
+/datum/surgery_step/omni/muscleup/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, default_display_results)
+	surgery.atlayer--
 	return ..()
 
 /datum/surgery_step/omni/close
@@ -32,7 +95,7 @@
 	preop_sound = 'sound/surgery/cautery1.ogg'
 	success_sound = 'sound/surgery/cautery2.ogg'
 	show = TRUE
-	required_layer = list(0,1,2)
+	required_layer = list(0,1)
 
 
 /datum/surgery_step/omni/close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

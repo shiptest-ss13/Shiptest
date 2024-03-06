@@ -11,7 +11,7 @@
 	success_sound = 'sound/surgery/organ1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = MEDICAL_SKILL_ORGAN_FIX
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 

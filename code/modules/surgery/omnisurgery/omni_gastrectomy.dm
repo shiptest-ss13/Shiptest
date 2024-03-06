@@ -9,7 +9,7 @@
 		/obj/item/shard = 10)
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //for consistency across organ surgeries
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 

@@ -10,7 +10,7 @@
 	time = 52
 	experience_given = (MEDICAL_SKILL_ORGAN_FIX*0.8) //repeatable so not as much xp
 	valid_locations = list(BODY_ZONE_CHEST)
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 /datum/surgery_step/omni/hepatectomy/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
 	var/obj/item/organ/liver/L = target.getorganslot(ORGAN_SLOT_LIVER)

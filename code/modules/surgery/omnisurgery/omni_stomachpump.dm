@@ -5,7 +5,7 @@
 	repeatable = TRUE
 	time = 20
 	experience_given = 0
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 

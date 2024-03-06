@@ -9,7 +9,7 @@
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	experience_given = MEDICAL_SKILL_MEDIUM
 	var/obj/item/implant/I = null
-	required_layer = list(2)
+	required_layer = list(3)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 

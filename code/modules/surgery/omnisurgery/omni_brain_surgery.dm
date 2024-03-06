@@ -10,7 +10,7 @@
 	success_sound = 'sound/surgery/hemostat1.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = 0 // per_trauma
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_HEAD)
 

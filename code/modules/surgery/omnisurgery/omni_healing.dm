@@ -8,9 +8,9 @@
 	time = 2.5 SECONDS
 	success_sound = 'sound/surgery/retractor2.ogg'
 	failure_sound = 'sound/surgery/organ2.ogg'
-	var/brutehealing = 0
-	var/burnhealing = 0
-	var/missinghpbonus = 0 //heals an extra point of damager per X missing damage of type (burn damage for burn healing, brute for brute). Smaller Number = More Healing!
+	var/brutehealing = 5
+	var/burnhealing = 5
+	var/missinghpbonus = 5 //heals an extra point of damager per X missing damage of type (burn damage for burn healing, brute for brute). Smaller Number = More Healing!
 	show = TRUE
 	required_layer = list(1)
 	radial_icon = /obj/item/kinetic_crusher
@@ -95,6 +95,7 @@
 	name = "tend burn wounds"
 	burnhealing = 5
 	missinghpbonus = 15
+
 /datum/surgery_step/omni/heal/burn/upgraded
 	burnhealing = 5
 	missinghpbonus = 10
@@ -104,12 +105,14 @@
 	missinghpbonus = 5
 */
 /********************COMBO STEPS********************/
+/*
 /datum/surgery_step/omni/heal/combo
 	name = "tend physical wounds"
 	brutehealing = 3
 	burnhealing = 3
 	missinghpbonus = 15
 	time = 10
+*/
 /*
 /datum/surgery_step/omni/heal/combo/upgraded
 	brutehealing = 3

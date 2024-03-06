@@ -1,7 +1,8 @@
 /datum/surgery_step/omni/remove_object
 	name = "remove embedded objects"
+	implements = list(
+		TOOL_HEMOSTAT = 90)
 	time = 32
-	accept_hand = 1
 	experience_given = MEDICAL_SKILL_MEDIUM
 	var/obj/item/bodypart/L = null
 	required_layer = list(2)
