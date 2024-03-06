@@ -1211,8 +1211,13 @@
 			vv_auto_rename(newname)
 
 	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
-		var/client/C = usr.client
-		C?.open_filter_editor(src)
+		var/client/current_client = usr.client
+		current_client?.open_filter_editor(src)
+
+	if(href_list[VV_HK_EDIT_PARTICLES] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
+		var/client/current_client = usr.client
+		current_client?.open_particle_editor(src)
+
 
 /atom/vv_get_header()
 	. = ..()
