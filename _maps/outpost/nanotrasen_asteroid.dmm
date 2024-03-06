@@ -3558,7 +3558,7 @@
 /area/outpost/crew/library)
 "mZ" = (
 /obj/structure/table/wood,
-/obj/machinery/fax,
+/obj/machinery/fax/ruin,
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
 "na" = (
@@ -7053,10 +7053,6 @@
 /obj/item/pen{
 	pixel_y = 4;
 	pixel_x = 5
-	},
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = -6;
-	pixel_y = -10
 	},
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
@@ -13493,12 +13489,10 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "UX" = (
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/structure/grille,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/closed/indestructible/fakeglass,
 /area/outpost/engineering/atmospherics)
 "UY" = (
 /obj/structure/table/wood,
@@ -13600,9 +13594,7 @@
 /turf/open/floor/plasteel/rockvault,
 /area/outpost/operations)
 "Vm" = (
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
+/turf/closed/indestructible/fakeglass,
 /area/outpost/engineering/atmospherics)
 "Vn" = (
 /obj/effect/turf_decal/siding/wood{
@@ -13811,6 +13803,13 @@
 /obj/machinery/newscaster/directional/east,
 /turf/open/floor/wood,
 /area/outpost/hallway/central)
+"We" = (
+/obj/structure/table/glass,
+/obj/machinery/fax/admin/outpost{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/operations)
 "Wi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -14782,10 +14781,6 @@
 /area/outpost/crew/dorm)
 "ZD" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = 4;
-	pixel_y = 2
-	},
 /obj/machinery/door/window/brigdoor/southright{
 	req_access_txt = "101"
 	},
@@ -26246,7 +26241,7 @@ EN
 wS
 wS
 aG
-iv
+We
 Ke
 wS
 cH

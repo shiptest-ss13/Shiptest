@@ -18,10 +18,6 @@
 	var/seconds_electrified = MACHINE_NOT_ELECTRIFIED
 	/// If true, the fax machine is jammed and needs cleaning
 	var/jammed = FALSE
-	/// Determines the possibility of sending papers to the additional faxes.
-	var/access_additional_faxes = FALSE
-	/// Defines a list of accesses whose owners can open a connection with the additional faxes.
-	var/static/access_additional_faxes_required = list(ACCESS_HEADS, ACCESS_LAWYER, ACCESS_SECURITY)
 	/// Necessary to hide syndicate faxes from the general list. Doesn't mean he's EMAGGED!
 	var/frontier_network = FALSE
 	/// True if the fax machine should be visible to other fax machines in general.
@@ -53,23 +49,48 @@
 		/obj/item/holochip,
 		/obj/item/card,
 	)
+	/// Internal radio for announcing over comms
+	var/obj/item/radio/radio
+	/// Radio channel to speak into
+	var/radio_channel
+	/// Cooldown for aformentioned radio, prevents radio spam
+	COOLDOWN_DECLARE(radio_cooldown)
+
+	/// List with a fake-networks(not a fax actually), for request manager.
+	var/list/special_networks = list(
+		list(fax_name = "Nanotrasen Central Command", fax_id = "nanotrasen", color = "green", emag_needed = FALSE),
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "IRMG Mothership", fax_id = "inteq", color = "yellow", emag_needed = FALSE),
+		list(fax_name = "Solarian Confederation Frontier Affairs", fax_id = "solgov", color = "teal", emag_needed = FALSE),
+		list(fax_name = "Roumain Council of Huntsmen", fax_id = "roumain", color = "brown", emag_needed = FALSE),
+		list(fax_name = "Colonial League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
+		list(fax_name = "Syndicate Coalition Coordination Center", fax_id = "syndicate", color = "red", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+	// should we make our message be important and be recieved in admin faxes
+	var/admin_fax_id
 
 /obj/machinery/fax/Initialize(mapload)
 	. = ..()
 	GLOB.fax_machines += src
 	if(!fax_id)
 		fax_id = SSnetworks.make_address()
-	if(fax_name == initial(fax_name))
+	if(fax_name == initial(fax_name) && !admin_fax_id)
 		fax_name = "[get_area_name(src)] Fax Machine"
 	wires = new /datum/wires/fax(src)
 
-/obj/machinery/fax/hacked
-	set_obj_flags = "EMAGGED"
-	allow_exotic_faxes = TRUE
-	access_additional_faxes = TRUE
+	radio = new(src)
+	radio.subspace_transmission = TRUE
+	radio.canhear_range = 0
+	// Override in subtypes // no
+	radio.on = TRUE
 
-/obj/machinery/fax/frontiersmen
-	frontier_network = TRUE
+/obj/machinery/fax/ruin
+	visible_to_network = FALSE
+
+/obj/machinery/fax/ruin/Initialize(mapload)
+	. = ..()
+	fax_name = "Unregistered Fax Machine " + fax_id
 
 /obj/machinery/fax/Destroy()
 	GLOB.fax_machines -= src
@@ -112,6 +133,20 @@
 	if(!(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
 		to_chat(user, "<span class='warning'>The screen of the [src] flickers!</span>")
+
+/**
+ * EMP Interaction
+ */
+/obj/machinery/fax/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	allow_exotic_faxes = !allow_exotic_faxes
+	visible_message("<span class='warning'>[src] [allow_exotic_faxes ? "starts beeping" : "stops beeping"] ominously[allow_exotic_faxes ? "..." : "."]")
+
+/**
+ * Unanchor/anchor
+ */
 
 /obj/machinery/fax/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -160,27 +195,6 @@
 			update_icon()
 		return
 	return ..()
-
-// Checks if the card has access to switch "legal" faxes of administrators.
-/obj/machinery/fax/proc/access_additional_faxes_check(mob/living/user)
-	if(isAdminObserver(user))
-		return TRUE
-
-	var/obj/item/card/id/used_card = user.get_idcard(TRUE)
-	if(used_card)
-		// We check if it makes sense to check access at all.
-		if(!access_additional_faxes_required || !used_card.access)
-			return FALSE
-
-		for(var/requested_access in access_additional_faxes_required)
-			if(requested_access in used_card.access)
-				return TRUE
-		return FALSE
-
-// Switches access to the "legal" administrator's fax list. Access to the "illegal" is switched by hacking.
-/obj/machinery/fax/proc/access_additional_faxes_toggle()
-	access_additional_faxes = !access_additional_faxes
-	say("Bluespace channel communication [access_additional_faxes ? "opened" : "closed"].")
 
 /**
  * Attempts to clean out a jammed machine using a passed item.
@@ -237,12 +251,6 @@
 		ui.open()
 		ui.set_autoupdate(TRUE)
 
-/obj/machinery/fax/ui_static_data(mob/user)
-	var/list/data = list()
-	data["additional_faxes_list"] = GLOB.additional_faxes_list
-	data["frontier_faxes_list"] = GLOB.frontier_faxes_list
-	return data
-
 /obj/machinery/fax/ui_data(mob/user)
 	var/list/data = list()
 	//Record a list of all existing faxes.
@@ -264,12 +272,11 @@
 	data["fax_id"] = fax_id
 	data["fax_name"] = fax_name
 	data["visible"] = visible_to_network
-	data["access_additional_faxes"] = access_additional_faxes
-	data["сan_switch_access"] = access_additional_faxes_check(user)
 	// In this case, we don't care if the fax is hacked or in the syndicate's network. The main thing is to check the visibility of other faxes.
 	data["frontier_network"] = (frontier_network || (obj_flags & EMAGGED))
 	data["has_paper"] = !!loaded_item_ref?.resolve()
 	data["fax_history"] = fax_history
+	data["special_faxes"] = special_networks
 	return data
 
 /obj/machinery/fax/ui_act(action, list/params)
@@ -287,8 +294,6 @@
 			loaded_item_ref = null
 			update_icon()
 			return TRUE
-		if("access_additional_faxes_toggle")
-			access_additional_faxes_toggle()
 		if("send")
 			var/obj/item/loaded = loaded_item_ref?.resolve()
 			if(!loaded)
@@ -299,17 +304,31 @@
 				loaded_item_ref = null
 				update_icon()
 				return TRUE
-		if("send_to_additional_fax")
-			var/obj/item/loaded = loaded_item_ref?.resolve()
-			if(!loaded)
+		if("send_special")
+			var/obj/item/paper/fax_paper = loaded_item_ref?.resolve()
+			if(!fax_paper)
 				return
-			if(istype(loaded, /obj/item/paper))
-				if(send_to_additional_faxes(loaded, usr, params["name"], params["color"]))
-					loaded_item_ref = null
-					update_icon()
-					return TRUE
-			else
-				say("The destination fax blocks the reception of this item.")
+			if(!istype(fax_paper))
+				to_chat(usr, icon2html(src.icon, usr) + "<span class='warning'>ERROR: Failed to send fax.</span>")
+				return
+
+			fax_paper.request_state = TRUE
+			fax_paper.loc = null
+
+			INVOKE_ASYNC(src, PROC_REF(animate_object_travel), fax_paper, "fax_receive", find_overlay_state(fax_paper, "send"))
+			history_add("Send", params["name"])
+
+			GLOB.requests.fax_request(usr.client, "sent a fax message from [fax_name]/[fax_id] to [params["name"]]", fax_paper)
+			to_chat(GLOB.admins, "<span class='adminnotice'>[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])]</span> [ADMIN_SHOW_PAPER(fax_paper)]")
+			log_fax(fax_paper, params["id"], params["name"])
+			loaded_item_ref = null
+
+			for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
+				if(fax.admin_fax_id == params["id"])
+					fax.receive(fax_paper, fax_name)
+					break
+			update_appearance()
+
 		if("history_clear")
 			history_clear()
 			return TRUE
@@ -349,39 +368,11 @@
 			balloon_alert(usr, "destination port jammed")
 			playsound(src, 'sound/machines/scanbuzz.ogg', 25, TRUE, -9)
 			return FALSE
-		fax.receive(loaded, fax_name)
-		playback_sending(loaded, fax.fax_name)
+		fax.receive(loaded, fax_name, important = admin_fax_id)
+		history_add("Send", fax.fax_name)
+		INVOKE_ASYNC(src, PROC_REF(animate_object_travel), loaded, "fax_receive", find_overlay_state(loaded, "send"))
 		return TRUE
 	return FALSE
-
-/**
- * The procedure for sending a item to virtual admins fax machine.
- *
- * This procedure is similar to the send procedure except that it sends the item to
- * a "virtual" fax to a special administrator list.
- * Arguments:
- * * loaded - The item to be sent.
- * * sender - Reference to the sender's substance.
- * * receiver_name - The recipient's fax name, which will be displayed in the administrator's list.
- * * receiver_color - The color the receiver_name will be colored in.
- */
-/obj/machinery/fax/proc/send_to_additional_faxes(obj/item/loaded, mob/sender, receiver_name, receiver_color)
-	GLOB.fax_manager.receive_request(sender, src, receiver_name, loaded, receiver_color)
-	playback_sending(loaded, receiver_name)
-	log_fax(loaded, "ADDITIONAL", receiver_name)
-	return TRUE
-
-/**
- * The procedure for playing the animation.
- *
- * Procedure called to add to the history of sending messages, playing the sending animation.
- * Arguments:
- * * loaded - Sending item to determine the animation..
- * * receiver_name - Recipient's name to be added to the message history.
- */
-/obj/machinery/fax/proc/playback_sending(obj/item/loaded, receiver_name)
-	history_add("Send", receiver_name)
-	INVOKE_ASYNC(src, PROC_REF(animate_object_travel), loaded, "fax_receive", find_overlay_state(loaded, "send"))
 
 /**
  * Procedure for accepting papers from another fax machine.
@@ -391,7 +382,7 @@
  * * loaded - The object to be printed.
  * * sender_name - The sender's name, which will be displayed in the message and recorded in the history of operations.
  */
-/obj/machinery/fax/proc/receive(obj/item/loaded, sender_name)
+/obj/machinery/fax/proc/receive(obj/item/loaded, sender_name, important = FALSE)
 	playsound(src, 'sound/items/poster_being_created.ogg', 20, FALSE)
 	INVOKE_ASYNC(src, PROC_REF(animate_object_travel), loaded, "fax_receive", find_overlay_state(loaded, "receive"))
 	say("Received correspondence from [sender_name].")
@@ -504,3 +495,50 @@
 	do_sparks(5, TRUE, src)
 	var/check_range = TRUE
 	return electrocute_mob(user, get_area(src), src, 0.7, check_range)
+
+/obj/machinery/fax/frontiersmen
+	frontier_network = TRUE
+	visible_to_network = FALSE
+
+/obj/machinery/fax/admin
+	name = "Central Command Fax Machine"
+	fax_name = "Nanotrasen Central Command"
+	radio_channel = RADIO_CHANNEL_CENTCOM
+	visible_to_network = FALSE
+	admin_fax_id = "nanotrasen"
+
+/obj/machinery/fax/admin/outpost
+	name = "Outpost Fax Machine"
+	fax_name = "Outpost Authority"
+	admin_fax_id = "outpost"
+
+/obj/machinery/fax/admin/solgov
+	name = "SolGov Frontier Affairs Fax Machine"
+	fax_name = "Solarian Confederation Frontier Affairs"
+	admin_fax_id = "solgov"
+
+/obj/machinery/fax/admin/syndicate
+	name = "Syndicate Coordination Fax Machine"
+	fax_name = "Syndicate Coordination Center"
+	admin_fax_id = "syndicate"
+
+/obj/machinery/fax/admin/inteq
+	name = "IRMG Fax Machine"
+	fax_name = "IRMG Mothership"
+	admin_fax_id = "inteq"
+
+/obj/machinery/fax/admin/minutemen
+	name = "CLIP HiComm Fax Machine"
+	fax_name = "Colonial League Leadership"
+	admin_fax_id = "minutemen"
+
+/obj/machinery/fax/admin/roumain
+	name = "Huntsman Council Fax Machine"
+	fax_name = "Saint-Roumain Council of Huntsmen"
+	admin_fax_id = "roumain"
+
+/obj/machinery/fax/admin/frontiersmen
+	name = "old fax machine"
+	fax_name = "Frontiersmen Communications Quartermaster"
+	admin_fax_id = "frontiersmen"
+	frontier_network = TRUE

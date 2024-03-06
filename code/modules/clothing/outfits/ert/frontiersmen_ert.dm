@@ -4,7 +4,7 @@
 	head = /obj/item/clothing/head/beret/sec/frontier
 	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
-	suit_store = /obj/item/gun/ballistic/rifle/boltaction
+	suit_store = /obj/item/gun/ballistic/rifle/illestren
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
@@ -15,7 +15,7 @@
 
 	id = null // lol
 
-	backpack_contents = list(/obj/item/ammo_box/a762=5, /obj/item/grenade/frag=1)
+	backpack_contents = list(/obj/item/ammo_box/magazine/illestren_a850r=5, /obj/item/grenade/frag=1)
 
 /datum/outfit/job/frontiersmen/ert/random
 	name = "ERT - Frontiersman Randomized"
@@ -83,27 +83,27 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/grenade/full
 		if("Ammo Carrier")
-			backpack_contents += list(/obj/item/ammo_box/a762_39 = 1)
+			backpack_contents += list(/obj/item/ammo_box/a762_40 = 1)
 
 	var/weapon = pick(list("Bolt-Action", "Pistol", "Melee"))
 	switch(weapon)
 		if("Bolt-Action")
-			r_hand = /obj/item/gun/ballistic/rifle/boltaction
+			r_hand = /obj/item/gun/ballistic/rifle/illestren
 			if(prob(70) && istype(back, /obj/item/storage/backpack))
-				backpack_contents += list(/obj/item/ammo_box/a762 = rand(1,4))
+				backpack_contents += list(/obj/item/ammo_box/magazine/illestren_a850r = rand(1,4))
 			if(prob(55))
-				l_pocket = /obj/item/ammo_box/a762
+				l_pocket = /obj/item/ammo_box/magazine/illestren_a850r
 		if("Pistol")
 			r_hand = pick(list(
 			/obj/item/gun/ballistic/automatic/pistol/disposable,
 			/obj/item/gun/ballistic/automatic/pistol,
-			/obj/item/gun/ballistic/revolver/pepperbox,
+			/obj/item/gun/ballistic/revolver/firebrand,
 			/obj/item/gun/energy/e_gun/mini))
 			if(prob(30))
 				l_hand = pick(list(
 				/obj/item/gun/ballistic/automatic/pistol/disposable,
 				/obj/item/gun/ballistic/automatic/pistol,
-				/obj/item/gun/ballistic/revolver/pepperbox,
+				/obj/item/gun/ballistic/revolver/firebrand,
 				/obj/item/gun/energy/e_gun/mini))
 		if("Melee")
 			r_hand = pickweight(list(
@@ -124,10 +124,10 @@
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	suit = /obj/item/clothing/suit/armor/frontier
-	suit_store = /obj/item/gun/ballistic/revolver/nagant
+	suit_store = /obj/item/gun/ballistic/revolver
 	belt = /obj/item/storage/belt/military/assault
 
-	backpack_contents = list(/obj/item/ammo_box/n762_clip=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/ammo_box/a357=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
 
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"

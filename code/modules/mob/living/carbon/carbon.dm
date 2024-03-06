@@ -28,6 +28,9 @@
 	if(!held_index)
 		held_index = (active_hand_index % held_items.len)+1
 
+	if(!isnum(held_index))
+		CRASH("You passed [held_index] into swap_hand instead of a number. WTF man")
+
 	var/oindex = active_hand_index
 	active_hand_index = held_index
 	if(hud_used)
@@ -414,14 +417,6 @@
 		if(61 to 90) //throw it down to the floor
 			var/turf/target = get_turf(loc)
 			I.safe_throw_at(target,I.throw_range,I.throw_speed,src, force = move_force)
-
-/mob/living/carbon/get_status_tab_items()
-	. = ..()
-	var/obj/item/organ/alien/plasmavessel/vessel = getorgan(/obj/item/organ/alien/plasmavessel)
-	if(vessel)
-		. += "Plasma Stored: [vessel.storedPlasma]/[vessel.max_plasma]"
-	if(locate(/obj/item/assembly/health) in src)
-		. += "Health: [health]"
 
 /mob/living/carbon/get_proc_holders()
 	. = ..()

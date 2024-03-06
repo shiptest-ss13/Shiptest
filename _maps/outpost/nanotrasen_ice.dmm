@@ -174,6 +174,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "bj" = (
@@ -1250,10 +1251,6 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = 13;
-	pixel_y = 1
-	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "jl" = (
@@ -1662,6 +1659,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "mm" = (
@@ -2277,6 +2275,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "pv" = (
@@ -3818,6 +3817,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "zw" = (
@@ -5903,6 +5903,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "OR" = (
@@ -6664,6 +6665,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "Ti" = (
@@ -7463,8 +7465,10 @@
 /area/outpost/security/armory)
 "XG" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
 /obj/machinery/light/directional/south,
+/obj/machinery/fax/admin/outpost{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "XI" = (
@@ -7835,10 +7839,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_y = 17;
-	pixel_x = 3
-	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security/checkpoint)

@@ -40,6 +40,9 @@
 /turf/open/floor/engine/crowbar_act(mob/living/user, obj/item/I)
 	return
 
+/turf/open/floor/engine/handle_decompression_floor_rip(sum)
+	return
+
 /turf/open/floor/engine/wrench_act(mob/living/user, obj/item/I)
 	..()
 	to_chat(user, "<span class='notice'>You begin removing the sheet...</span>")

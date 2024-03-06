@@ -24,43 +24,29 @@
 // .45-70 Ammo Holders (Hunting Revolver)
 
 /obj/item/ammo_box/a4570
-	name = "ammo holder (.45-70)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These rounds do significant damage with average performance against armor."
+	name = "ammo box (.45-70)"
+	desc = "A box of top grade .45-70 ammo. These rounds do significant damage with average performance against armor."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/a4570
-	max_ammo = 6
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	item_flags = NO_MAT_REDEMPTION
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
+	max_ammo = 12
 
 /obj/item/ammo_box/a4570/match
 	name = "ammo holder (.45-70 match)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	icon_state = "4570-match"
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
 /obj/item/ammo_box/a4570/hp
 	name = "ammo holder (.45-70 hollow point)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
-	ammo_type = /obj/item/ammo_casing/a357/hp
+	icon_state = "4570-hp"
+	ammo_type = /obj/item/ammo_casing/a4570/hp
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
+	icon_state = "4570-explosive"
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
-
-// 7.62x38mmR Ammo Holders (Nagant Revolver)
-
-/obj/item/ammo_box/n762_clip
-	name = "ammo holder (7.62x38mmR)"
-	desc = "A 7-round ammo holder for the Nagant revolver. These rounds do good damage, but struggle against armor."
-	icon_state = "n762"
-	ammo_type = /obj/item/ammo_casing/n762_38
-	max_ammo = 7
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	item_flags = NO_MAT_REDEMPTION
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
 
 // .38 special Speed Loaders (Colt Detective Special)
 
@@ -105,34 +91,48 @@
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These iceblox bullets contain a cryogenic payload that chills targets."
 	ammo_type = /obj/item/ammo_casing/c38/iceblox
 
-// 7.62x54mmR Stripper Clip (Illestren Hunting Rifle)
-
-/obj/item/ammo_box/a762
-	name = "stripper clip (7.62x54mmR)"
-	desc = "A 5-round stripper clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "762"
-	ammo_type = /obj/item/ammo_casing/a762_54
-	max_ammo = 5
-	multiple_sprites = AMMO_BOX_PER_BULLET
-	w_class = WEIGHT_CLASS_TINY
-	instant_load = TRUE
-
 // 8x58mm Stripper Clip (SSG-669C)
 
 /obj/item/ammo_box/a858
 	name = "stripper clip (8x58mm)"
 	desc = "A 5-round stripper clip for the SSG-669C rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "762"
+	icon_state = "858"
 	ammo_type = /obj/item/ammo_casing/caseless/a858
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	instant_load = TRUE
+
+// .308 Stripper Clip (Vickland)
+
+/obj/item/ammo_box/vickland_a308
+	name = "stripper clip  (.308)"
+	desc = "A 5-round stripper clip for the Vickland Battle Rifle. The Vickland itself has a 10 round capacity, so keep in mind two of these are needed to fully reload it. These rounds do good damage with significant armor penetration."
+	icon_state = "308"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE
+
+
+// .300 Magnum Stripper Clip (Scout)
+
+/obj/item/ammo_box/a300
+	name = "stripper clip (.300 Magnum)"
+	desc = "A 5-round stripper clip for the Scout Rifle. These rounds do great damage with significant armor penetration."
+	icon_state = "300m"
+	ammo_type = /obj/item/ammo_casing/a300
+	max_ammo = 5
+	multiple_sprites = AMMO_BOX_PER_BULLET
+	w_class = WEIGHT_CLASS_TINY
+	instant_load = TRUE
 
 // .300 Blackout Stripper Clip (Polymer Survivor Rifle)
 
 /obj/item/ammo_box/aac_300blk_stripper
 	name = "stripper clip (.300 BLK)"
 	desc = "A 5-round stripper clip for makeshift bolt-action rifles. These rounds do good damage with good armor penetration."
-	icon_state = "762"
+	icon_state = "300m"
 	ammo_type = /obj/item/ammo_casing/aac_300blk
 	caliber = ".300 BLK"
 	max_ammo = 5
@@ -156,10 +156,16 @@
 
 /obj/item/ammo_box/c38_box
 	name = "ammo box (.38)"
-	desc = "A box of standard .38 special ammo."
+	desc = "A box of standard .38 Special ammo."
 	icon_state = "38box"
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 50
+
+/obj/item/ammo_box/c38_box/surplus
+	name = "ammo box (.38 surplus)"
+	desc = "A box of low-quality .38 Special ammo."
+	icon_state = "38box-surplus"
+	ammo_type = /obj/item/ammo_casing/c38/surplus
 
 /obj/item/ammo_box/a12g
 	name = "ammo box (12g buckshot)"
@@ -336,24 +342,24 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/n762
-	name = "ammo box (7.62x38mmR)"
-	icon_state = "n762box"
-	desc = "A box of unusual revolver ammunition with the bullet seated below the mouth of the cartridge."
-	ammo_type = /obj/item/ammo_casing/n762_38
-	max_ammo = 28
+/obj/item/ammo_box/a762_40
+	name = "ammo box (7.62x40mm CLIP)"
+	icon_state = "a762_40box_big"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/a762_39
-	name = "ammo box (7.62x39mm)"
-	icon_state = "a762_39box"
-	ammo_type = /obj/item/ammo_casing/a762_39
-	max_ammo = 60
+/obj/item/ammo_box/a762_40/inteq
+	icon_state = "a762_40box_big_inteq"
 
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"
 	icon_state = "a308box"
-	ammo_type = /obj/item/ammo_casing/win308
+	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 30
+
+/obj/item/ammo_box/a308/hunterspride //just an alternative graphic for srm ships
+	icon_state = "a308box-HP"
 
 /obj/item/ammo_box/foambox
 	name = "ammo box (Foam Darts)"
@@ -385,3 +391,45 @@
 	custom_materials = list(/datum/material/iron = 15000)
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
+
+/obj/item/ammo_box/c46x30mm_box
+	name = "ammo box (4.6x30mm)"
+	desc = "A box of standard 4.6x30mm ammo."
+	icon_state = "4.6x30mmbox"
+	ammo_type = /obj/item/ammo_casing/c46x30mm
+	max_ammo = 50
+
+/obj/item/ammo_box/c8x50mm_box
+	name = "ammo box (8x50mm)"
+	desc = "A box of standard 8x50mm ammo."
+	icon_state = "8x50mm"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	max_ammo = 50
+
+/obj/item/ammo_box/ferropelletbox
+	name = "ammo box (ferromagnetic pellets)"
+	desc = "A box of ferromagnetic pellets."
+	icon_state = "ferropelletsbox"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss
+	max_ammo = 50
+
+/obj/item/ammo_box/ferroslugbox
+	name = "ammo box (ferromagnetic slugs)"
+	desc = "A box of standard ferromagnetic slugs."
+	icon_state = "ferroslugsbox"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/slug
+	max_ammo = 20
+
+/obj/item/ammo_box/ferrolancebox
+	name = "ammo box (ferromagnetic lances)"
+	desc = "A box of standard ferromagnetic lances."
+	icon_state = "ferrolancesbox"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/lance
+	max_ammo = 50
+
+/obj/item/ammo_box/c8x50mmhp_box
+	name = "ammo box (8x50mm)"
+	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of ."
+	icon_state = "8x50mm-hp"
+	ammo_type = /obj/item/ammo_casing/a8_50rhp
+	max_ammo = 20
