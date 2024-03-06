@@ -1,34 +1,3 @@
-//an incision but with greater bleed, and a 90% base success chance
-/datum/surgery_step/omni/incise_chest
-	name = "incise chest"
-	implements = list(
-		TOOL_SCALPEL = 90,
-		/obj/item/kitchen/knife = 40,
-		/obj/item/shard = 33)
-	time = 1.6 SECONDS
-	preop_sound = 'sound/surgery/scalpel1.ogg'
-	success_sound = 'sound/surgery/scalpel2.ogg'
-	failure_sound = 'sound/surgery/organ2.ogg'
-	required_layer = list(4)
-	show = TRUE
-	valid_locations = list(BODY_ZONE_CHEST)
-
-/datum/surgery_step/omni/incise_chest/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to make an incision in [target]'s chest...</span>",
-		"<span class='notice'>[user] begins to make an incision in [target]'s chest.</span>",
-		"<span class='notice'>[user] begins to make an incision in [target]'s chest.</span>")
-
-/datum/surgery_step/omni/incise_chest/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		if (!(NOBLOOD in H.dna.species.species_traits))
-			display_results(user, target, "<span class='notice'>Blood pools around the incision in [H]'s chest.</span>",
-				"<span class='notice'>Blood pools around the incision in [H]'s chest.</span>",
-				"")
-			H.bleed_rate += 10
-			target.apply_damage(15, BRUTE, "[target_zone]")
-	return ..()
-
 /datum/surgery_step/omni/manipulate_organs
 	time = 6.4 SECONDS
 	name = "manipulate organs"
@@ -44,11 +13,6 @@
 	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
-
-/datum/surgery_step/omni/manipulate_organs/test_op(mob/user, mob/living/target,datum/surgery/omni/surgery)
-	if(!istype(surgery.last_step,/datum/surgery_step/omni/incise_chest))
-		return FALSE
-	return TRUE
 
 /datum/surgery_step/omni/manipulate_organs/New()
 	..()
