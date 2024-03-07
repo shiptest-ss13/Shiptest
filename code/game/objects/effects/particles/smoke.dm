@@ -40,6 +40,21 @@
 	spawning = 2
 	velocity = list(0, 0.25, 0)
 
+/particles/smoke/steam/vent
+	position = generator(GEN_SPHERE, 16, 16, NORMAL_RAND)
+	lifespan = 2 SECONDS
+	spawning = 3
+
+/particles/smoke/steam/vent/low
+	spawning = 1
+	velocity = list(0, 0.3, 0)
+	friction = 0.25
+
+/particles/smoke/steam/vent/high
+	spawning = 8
+	velocity = list(0, 0.25, 0)
+	count = 1000
+
 /particles/smoke/ash
 	icon_state = list("ash_1" = 2, "ash_2" = 2, "ash_3" = 1, "smoke_1" = 3, "smoke_2" = 2)
 	count = 500
