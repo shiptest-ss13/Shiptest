@@ -104,7 +104,7 @@
 /datum/surgery/prosthesis_removal
 	name = "Detach prosthesis"
 	steps = list(/datum/surgery_step/mechanic_open, /datum/surgery_step/open_hatch, /datum/surgery_step/prepare_electronics, /datum/surgery_step/mechanic_unwrench, /datum/surgery_step/prosthesis_removal)
-	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
+	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	lying_required = FALSE
 	self_operable = TRUE
