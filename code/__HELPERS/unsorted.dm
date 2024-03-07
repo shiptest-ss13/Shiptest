@@ -1558,3 +1558,14 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return call(source, proctype)(arglist(arguments))
 
 #define TURF_FROM_COORDS_LIST(List) (locate(List[1], List[2], List[3]))
+
+/proc/normalize_dir_to_cardinals(dir)
+	if(dir & NORTH)
+		return NORTH
+	if(dir & SOUTH)
+		return SOUTH
+	if(dir & EAST)
+		return EAST
+	if(dir & WEST)
+		return WEST
+	return 0
