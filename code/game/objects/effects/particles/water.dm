@@ -12,3 +12,6 @@
 	position = generator(GEN_BOX, list(-9,-9,0), list(9,18,0), NORMAL_RAND)
 	scale = generator(GEN_VECTOR, list(0.9,0.9), list(1.1,1.1), NORMAL_RAND)
 	gravity = list(0, -0.9)
+
+/particles/droplets/blood
+	spawning = 0.2

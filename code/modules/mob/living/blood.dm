@@ -95,12 +95,53 @@
 					temp_bleed += 0.5
 
 			if(brutedamage >= 20)
-				temp_bleed += (brutedamage * 0.013)
+				temp_bleed += (brutedamage * 0.020)
+		var/message_cooldown = 5 SECONDS
+		var/bleeeding_wording
+		var/bleed_change_wording
+		switch(bleed_rate)
+			if(0.2 to 0.4)
+				bleeeding_wording = "You feel droplets of your blood drip down to the floor"
+				message_cooldown *= 2.5
+			if(0.4 to 1)
+				bleeeding_wording = "Your blood flows to the floor"
+				message_cooldown *= 2
+			if(1 to 2)
+				bleeeding_wording = "The amount of streaming blood leaving your body is worrying you"
+				message_cooldown *= 1.7
+			if(2 to 4)
+				bleeeding_wording = "You're losing blood <i>very fast</i>, which is freaking you out"
+				message_cooldown *= 1.5
+			if(4 to INFINITY)
+				bleeeding_wording = "<b>Your heartbeat beats extremely unstably as you lose a massive amount of blood coupled with your fear</b>"
 
+		var/old_bleed = bleed_rate
 		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects (heparin) naturally decreases
+
+		if(bleeeding_wording)
+			if(old_bleed > bleed_rate+0.2)
+				bleed_change_wording = ", however your bleeding's clotting up."
+
+			else if(old_bleed+0.1 < bleed_rate)
+				bleed_change_wording = "<b>, as your bleeding gets worse.</b>"
+			else
+				bleed_change_wording = "."
 
 		if(bleed_rate && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 			bleed(bleed_rate)
+			if(!blood_particle)
+				blood_particle = new(src, /particles/droplets/blood, PARTICLE_ATTACH_MOB)
+
+			blood_particle.particles.color = dna.blood_type.color //mouthful
+			blood_particle.particles.spawning = bleed_rate
+
+			if(COOLDOWN_FINISHED(src, bloodloss_message) && bleeeding_wording)
+				to_chat(src, span_warning("[bleeeding_wording][bleed_change_wording]"))
+				COOLDOWN_START(src, bloodloss_message, message_cooldown)
+		else
+			if(blood_particle)
+				QDEL_NULL(blood_particle)
+
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
@@ -108,10 +149,10 @@
 		blood_volume = max(blood_volume - amt, 0)
 		if (prob(sqrt(amt)*BLOOD_DRIP_RATE_MOD))
 			if(isturf(src.loc) && !isgroundlessturf(src.loc)) //Blood loss still happens in locker, floor stays clean
-				if(amt >= 10)
+				if(amt >= 2)
 					add_splatter_floor(src.loc)
 				else
-					add_splatter_floor(src.loc, 1)
+					add_splatter_floor(src.loc, TRUE)
 
 /mob/living/carbon/human/bleed(amt)
 	amt *= physiology.bleed_mod
@@ -252,7 +293,9 @@
 	if(!T)
 		T = get_turf(src)
 
+	var/mob/living/carbon/human/current_user = src //i hate
 	var/list/temp_blood_DNA
+
 	if(small_drip)
 		// Only a certain number of drips (or one large splatter) can be on a given turf.
 		var/obj/effect/decal/cleanable/blood/drip/drop = locate() in T
@@ -265,7 +308,7 @@
 			else
 				temp_blood_DNA = drop.return_blood_DNA() //we transfer the dna from the drip to the splatter
 				qdel(drop)//the drip is replaced by a bigger splatter
-		else
+		else if (current_user?.bleed_rate < 2)
 			drop = new(T, get_static_viruses())
 			drop.transfer_mob_blood_dna(src)
 			return
@@ -278,7 +321,11 @@
 		B = candidate
 		break
 	if(!B)
-		B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+		if(current_user?.bleed_rate > 4)
+			B = new /obj/effect/decal/cleanable/blood(T, get_static_viruses())
+		else
+			B = new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+
 	if(QDELETED(B)) //Give it up
 		return
 	B.bloodiness = min((B.bloodiness + BLOOD_AMOUNT_PER_DECAL), BLOOD_POOL_MAX)
