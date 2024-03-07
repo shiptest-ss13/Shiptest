@@ -87,6 +87,7 @@
 
 /obj/machinery/fax/ruin
 	visible_to_network = FALSE
+	special_networks = list()
 
 /obj/machinery/fax/ruin/Initialize(mapload)
 	. = ..()
