@@ -134,6 +134,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
 	icon_state = "ebr"
 	item_state = "ebr"
+	zoomable = TRUE
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -153,6 +154,7 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "gal"
 	item_state = "gal"
+	zoomable = TRUE
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
