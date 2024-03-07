@@ -402,7 +402,7 @@
 /obj/item/ammo_box/c8x50mm_box
 	name = "ammo box (8x50mm)"
 	desc = "A box of standard 8x50mm ammo."
-	icon_state = "8x50mm"
+	icon_state = "8x50mmbox"
 	ammo_type = /obj/item/ammo_casing/a8_50r
 	max_ammo = 50
 
