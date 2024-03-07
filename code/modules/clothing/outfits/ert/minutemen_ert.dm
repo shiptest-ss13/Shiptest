@@ -1,6 +1,6 @@
 /datum/outfit/job/clip/minutemen/grunt/dressed/bard
 	name = "ERT - CLIP Minuteman BARD Specialist"
-	job_icon = "hudclip_cmm2"
+	job_icon = "clip_cmm2"
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
 	suit_store = /obj/item/gun/ballistic/shotgun/bulldog/minutemen
@@ -50,7 +50,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/bard/leader
 	name = "ERT - CLIP Minuteman BARD Specialist Sergeant"
-	job_icon = "hudclip_cmm3"
+	job_icon = "clip_cmm3"
 
 	belt = /obj/item/storage/belt/military/clip/e50
 	uniform = /obj/item/clothing/under/clip/officer
