@@ -133,6 +133,22 @@
 /obj/structure/closet/wardrobe/grey,
 /turf/open/indestructible,
 /area/outpost/hallway/central)
+"hE" = (
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/structure/closet/crate,
+/turf/open/floor/plating,
+/area/outpost/operations)
 "hZ" = (
 /obj/item/fishing_rod/tech,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -153,6 +169,24 @@
 "jm" = (
 /turf/open/floor/engine/n2,
 /area/outpost/engineering/atmospherics)
+"jx" = (
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/item/wallframe/camera,
+/obj/structure/closet/crate,
+/turf/open/floor/plating,
+/area/outpost/operations)
 "jI" = (
 /obj/item/storage/box/stockparts/deluxe,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -327,6 +361,10 @@
 /obj/effect/spawner/lootdrop/waste/trash,
 /turf/open/water/jungle,
 /area/space)
+"rD" = (
+/obj/item/floor_painter,
+/turf/open/floor/plating,
+/area/outpost/operations)
 "rE" = (
 /obj/structure/chair/sofa{
 	dir = 8
@@ -376,6 +414,7 @@
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
 /obj/effect/spawner/lootdrop/ration,
+/obj/structure/closet/crate,
 /turf/open/floor/plating,
 /area/outpost/operations)
 "uo" = (
@@ -405,6 +444,21 @@
 /obj/item/circuitboard/machine/chem_dispenser,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/space)
+"wj" = (
+/obj/item/bodypart/leg/right/robot,
+/obj/item/bodypart/r_arm/robot,
+/obj/item/bodypart/leg/left/robot,
+/obj/item/bodypart/l_arm/robot,
+/obj/item/bodypart/chest/robot,
+/obj/item/bodypart/head/robot,
+/obj/item/borg/upgrade/ai,
+/obj/item/robot_suit,
+/obj/structure/closet/crate/engineering,
+/obj/item/stock_parts/cell/high,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/turf/open/floor/plating,
+/area/outpost/operations)
 "wr" = (
 /obj/item/circuitboard/machine/recharger,
 /obj/item/circuitboard/machine/recharger,
@@ -741,9 +795,12 @@
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
 /obj/structure/closet/crate,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
 /turf/open/floor/plating,
 /area/outpost/operations)
 "LX" = (
@@ -874,6 +931,7 @@
 "SP" = (
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/structure/closet/crate,
+/obj/item/circuitboard/machine/recharger,
 /turf/open/floor/plating,
 /area/outpost/operations)
 "SX" = (
@@ -996,6 +1054,17 @@
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plating,
 /area/outpost/engineering/atmospherics)
+"Yq" = (
+/obj/structure/AIcore,
+/obj/item/mmi/posibrain,
+/obj/item/circuitboard/aicore,
+/obj/item/stack/sheet/rglass{
+	amount = 25
+	},
+/obj/item/wrench,
+/obj/item/stack/cable_coil/cyan,
+/turf/open/floor/plating,
+/area/outpost/operations)
 "YC" = (
 /obj/structure/spawner/lavaland/medium_threat,
 /turf/open/floor/plating/dirt/jungle/dark,
@@ -1015,9 +1084,14 @@
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/space)
 "Zg" = (
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/structure/closet/crate,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/kitchen/knife/combat/survival,
+/obj/item/storage/toolbox/ammo/a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
 /turf/open/floor/plating,
 /area/outpost/operations)
 "Zl" = (
@@ -10538,7 +10612,7 @@ ph
 ph
 ph
 iY
-ph
+jx
 uk
 Wk
 uQ
@@ -10752,7 +10826,7 @@ ph
 ph
 ph
 ph
-ph
+Yq
 uQ
 rN
 rN
@@ -10964,7 +11038,7 @@ ph
 ph
 ph
 ph
-ph
+wj
 uQ
 rN
 rN
@@ -11589,7 +11663,7 @@ cg
 cg
 cg
 uQ
-ph
+Zg
 ph
 ph
 ph
@@ -11801,7 +11875,7 @@ cg
 cg
 cg
 uQ
-Zg
+ph
 ph
 ph
 ph
@@ -12022,7 +12096,7 @@ ph
 ph
 ph
 ph
-ph
+hE
 xM
 Wk
 uQ
@@ -12228,7 +12302,7 @@ cg
 Wk
 Wk
 ag
-ph
+rD
 ph
 ph
 ph
@@ -12967,7 +13041,7 @@ cg
 cg
 ff
 cg
-cg
+cd
 cg
 cg
 cg
@@ -14098,7 +14172,7 @@ xG
 xG
 xG
 cg
-cg
+cd
 cg
 cg
 cg
@@ -17381,7 +17455,7 @@ xG
 cg
 cg
 cg
-cg
+vX
 cg
 cg
 cg
@@ -17635,7 +17709,7 @@ ff
 cg
 cg
 cg
-cg
+Zo
 cg
 cg
 xG
@@ -18712,7 +18786,7 @@ cg
 xG
 cg
 cg
-cg
+Zo
 cg
 cg
 xG
@@ -19142,7 +19216,7 @@ cg
 Zl
 cg
 cg
-cg
+Zo
 cg
 xG
 xG
@@ -19990,7 +20064,7 @@ xG
 xG
 cg
 cg
-cg
+Zo
 cg
 cg
 cg
@@ -20208,7 +20282,7 @@ cg
 cg
 cg
 cg
-cg
+Zo
 cg
 cg
 cg
@@ -20374,7 +20448,7 @@ ff
 ff
 ff
 cg
-cg
+Zo
 cg
 cg
 xG
@@ -20848,7 +20922,7 @@ xG
 xG
 cg
 cg
-cg
+Zo
 cg
 cg
 cg
@@ -21553,7 +21627,7 @@ ff
 cg
 tF
 ff
-cg
+Zo
 ff
 cg
 cg
@@ -22320,7 +22394,7 @@ cg
 cg
 cg
 cg
-cg
+Zo
 cg
 cg
 cg
@@ -23149,7 +23223,7 @@ cg
 cg
 cg
 cg
-ff
+gi
 cg
 xG
 xG
@@ -23161,7 +23235,7 @@ ff
 ff
 cg
 cg
-cg
+Zo
 cg
 cg
 ff
@@ -23276,7 +23350,7 @@ xG
 cg
 xG
 cg
-ff
+Wm
 ff
 ff
 ff
@@ -24312,7 +24386,7 @@ xG
 xG
 xG
 xG
-cg
+cd
 cg
 cg
 xG
@@ -31972,7 +32046,7 @@ xG
 cg
 cg
 cg
-cg
+cd
 cg
 ff
 cg
@@ -32112,7 +32186,7 @@ ff
 cg
 xG
 cg
-cg
+Zo
 ff
 cg
 ff
@@ -34907,7 +34981,7 @@ xG
 cg
 ff
 ff
-ff
+Wm
 cg
 ff
 xG
@@ -36249,7 +36323,7 @@ xG
 cg
 cg
 xG
-cg
+Zo
 cg
 cg
 cg
@@ -37485,7 +37559,7 @@ cg
 ff
 cg
 cg
-cg
+cd
 cg
 cg
 xG
@@ -38432,7 +38506,7 @@ nw
 ff
 cg
 cg
-cg
+Zo
 ff
 cg
 ff
