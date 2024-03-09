@@ -303,15 +303,25 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
 
-	if(linked_ship)
-		if(mob_occupant.job in linked_ship.current_ship.job_slots)
-			linked_ship.current_ship.job_slots[mob_occupant.job]++
+	if(linked_ship && mob_occupant.mind.original_ship == WEAKREF(linked_ship.current_ship))
+		var/job_identifier = mob_occupant.job
 
-		if(mob_occupant.mind && mob_occupant.mind.assigned_role)
-			//Handle job slot/tater cleanup.
-			if(LAZYLEN(mob_occupant.mind.objectives))
-				mob_occupant.mind.objectives.Cut()
-				mob_occupant.mind.special_role = null
+		var/datum/job/crew_job
+		for(var/datum/job/job as anything in linked_ship.current_ship.job_slots)
+			if(job.name == job_identifier)
+				crew_job = job
+				break
+
+		if(isnull(crew_job))
+			message_admins(span_warning("Failed to identify the job of [key_name_admin(mob_occupant)] on [linked_ship] at [loc_name(src)]."))
+		else
+			linked_ship.current_ship.job_slots[crew_job]++
+
+	if(mob_occupant.mind && mob_occupant.mind.assigned_role)
+		//Handle job slot/tater cleanup.
+		if(LAZYLEN(mob_occupant.mind.objectives))
+			mob_occupant.mind.objectives.Cut()
+			mob_occupant.mind.special_role = null
 
 	// Delete them from datacore.
 	var/announce_rank = null

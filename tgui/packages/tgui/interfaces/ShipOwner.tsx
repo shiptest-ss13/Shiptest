@@ -9,6 +9,39 @@ import {
 } from '../components';
 import { Window } from '../layouts';
 
+type ShipOwnerData = {
+  crew: [CrewData];
+  jobs: [JobData];
+  memo: string;
+  pending: boolean;
+  joinMode: string;
+  cooldown: number;
+  applications: [ApplicationData];
+  isAdmin: boolean;
+};
+
+type ApplicationData = {
+  ref: string;
+  key: string;
+  name: string;
+  text: string;
+  status: string;
+};
+
+type CrewData = {
+  ref: string;
+  name: string;
+  allowed: boolean;
+};
+
+type JobData = {
+  ref: string;
+  name: string;
+  slots: number;
+  max: number;
+  def: number;
+};
+
 export const ShipOwner = (props, context) => {
   return (
     <Window width={620} height={620} resizable>
@@ -19,8 +52,8 @@ export const ShipOwner = (props, context) => {
   );
 };
 
-const ShipOwnerContent = (props, context) => {
-  const { act, data } = useBackend(context);
+const ShipOwnerContent = (_, context: any) => {
+  const { act, data } = useBackend<ShipOwnerData>(context);
   const [tab, setTab] = useLocalState(context, 'tab', 1);
   const {
     crew = [],
@@ -30,6 +63,7 @@ const ShipOwnerContent = (props, context) => {
     joinMode,
     cooldown = 1,
     applications = [],
+    isAdmin,
   } = data;
   return (
     <Section
@@ -85,7 +119,7 @@ const ShipOwnerContent = (props, context) => {
               <Table.Cell>Message</Table.Cell>
               <Table.Cell>Status</Table.Cell>
             </Table.Row>
-            {applications.map((app) => (
+            {applications.map((app: ApplicationData) => (
               <Table.Row key={app.ref}>
                 <Table.Cell>{app.key}</Table.Cell>
                 <Table.Cell>{app.name}</Table.Cell>
@@ -144,16 +178,16 @@ const ShipOwnerContent = (props, context) => {
             <Table.Cell>Can be owner</Table.Cell>
             <Table.Cell>Transfer Ownership</Table.Cell>
           </Table.Row>
-          {crew.map((mind) => (
-            <Table.Row key={mind.name}>
-              <Table.Cell>{mind.name}</Table.Cell>
+          {crew.map((crew_data: CrewData) => (
+            <Table.Row key={crew_data.name}>
+              <Table.Cell>{crew_data.name}</Table.Cell>
               <Table.Cell>
                 <Button.Checkbox
                   content="Candidate"
-                  checked={mind.allowed}
+                  checked={crew_data.allowed}
                   onClick={() =>
                     act('toggleCandidate', {
-                      ref: mind.ref,
+                      ref: crew_data.ref,
                     })
                   }
                 />
@@ -163,7 +197,7 @@ const ShipOwnerContent = (props, context) => {
                   content="Transfer Owner"
                   onClick={() =>
                     act('transferOwner', {
-                      ref: mind.ref,
+                      ref: crew_data.ref,
                     })
                   }
                 />
@@ -184,13 +218,18 @@ const ShipOwnerContent = (props, context) => {
               <Table.Cell>Job Name</Table.Cell>
               <Table.Cell>Slots</Table.Cell>
             </Table.Row>
-            {jobs.map((job) => (
+            {jobs.map((job: JobData) => (
               <Table.Row key={job.name}>
                 <Table.Cell>{job.name}</Table.Cell>
                 <Table.Cell>
                   <Button
                     content="+"
-                    disabled={cooldown > 0 || job.slots >= job.max}
+                    disabled={!isAdmin || cooldown > 0 || job.slots >= job.max}
+                    tooltip={
+                      !isAdmin
+                        ? 'You must be an admin to increase job slots'
+                        : undefined
+                    }
                     color={job.slots >= job.def ? 'average' : 'default'}
                     onClick={() =>
                       act('adjustJobSlot', {

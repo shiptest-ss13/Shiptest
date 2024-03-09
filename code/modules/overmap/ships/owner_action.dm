@@ -72,6 +72,7 @@
 	.["pending"] = FALSE
 	.["joinMode"] = parent_ship.join_mode
 	.["cooldown"] = COOLDOWN_TIMELEFT(parent_ship, job_slot_adjustment_cooldown)
+	.["isAdmin"] = !!user.client?.holder
 	.["applications"] = list()
 	for(var/a_key as anything in parent_ship.applications)
 		var/datum/ship_application/app = parent_ship.applications[a_key]
@@ -197,18 +198,21 @@
 			if(!target_job || target_job.officer || !COOLDOWN_FINISHED(parent_ship, job_slot_adjustment_cooldown))
 				return TRUE
 
+			var/change_amount = params["delta"]
+			if(change_amount > 0)
+				if(!user.client.holder)
+					to_chat(user, span_warning("You cannot increase the number of slots for a job."))
+					return TRUE
+				message_admins("[key_name_admin(user)] has increased the number of slots for [target_job.name] on [parent_ship.name] by [change_amount].")
+
+			var/new_amount = parent_ship.job_slots[target_job] + change_amount
 			var/job_default_slots = parent_ship.source_template.job_slots[target_job]
 			var/job_max_slots = min(job_default_slots * 2, job_default_slots + 3)
-			var/new_slots = parent_ship.job_slots[target_job] + params["delta"]
-			if(new_slots < 0 || new_slots > job_max_slots)
+			if(new_amount < 0 || new_amount > job_max_slots)
 				return TRUE
 
-			var/cooldown_time = 5 SECONDS
-			if(params["delta"] > 0 && new_slots > job_default_slots)
-				cooldown_time = 2 MINUTES
-			COOLDOWN_START(parent_ship, job_slot_adjustment_cooldown, cooldown_time * cooldown_coeff)
-
-			parent_ship.job_slots[target_job] = new_slots
+			COOLDOWN_START(parent_ship, job_slot_adjustment_cooldown, (5 SECONDS) * cooldown_coeff)
+			parent_ship.job_slots[target_job] = new_amount
 			update_static_data(user)
 			return TRUE
 
