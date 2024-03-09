@@ -2,6 +2,7 @@
 /obj/item/organ/cyberimp
 	name = "cybernetic implant"
 	desc = "A state-of-the-art implant that improves a baseline's functionality."
+	icon = 'icons/obj/implants/implant.dmi'
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
 	var/implant_color = "#FFFFFF"
@@ -16,8 +17,6 @@
 		overlay.color = implant_color
 		add_overlay(overlay)
 	return ..()
-
-
 
 //[[[[BRAIN]]]]
 
