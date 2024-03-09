@@ -247,23 +247,29 @@
 
 	action_icon_state = "repulse"
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 5)
+/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/hit_turfs, mob/user = usr, stun_amt = 5)
 	var/list/thrownatoms = list()
 	var/atom/throwtarget
 	var/distfromcaster
 	playMagSound()
-	for(var/atom/movable/hit_target as anything in targets) //Done this way so things don't get thrown all around hilariously.
-		thrownatoms += hit_target
+
+	for(var/turf/T in hit_turfs)
+		for(var/atom/movable/hit_target in T.contents)
+			thrownatoms += hit_target
 
 	for(var/am in thrownatoms)
+		if(!ismovable(am))
+			continue
 		var/atom/movable/AM = am
-		if(AM == user || AM.anchored)
+		if(AM == user)
 			continue
 
 		if(ismob(AM))
 			var/mob/M = AM
 			if(M.anti_magic_check(anti_magic_check, FALSE))
 				continue
+		else
+			continue
 
 		throwtarget = get_edge_target_turf(user, get_dir(user, get_step_away(AM, user)))
 		distfromcaster = get_dist(user, AM)
