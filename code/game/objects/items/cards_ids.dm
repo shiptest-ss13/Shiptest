@@ -418,11 +418,10 @@ update_label()
 */
 
 /obj/item/card/id/proc/update_label()
-	name = "[initial(name)][(!assignment) ? "" : " ([assignment])"]"
+	name = "[(istype(src, /obj/item/card/id/syndicate)) ? "[initial(name)]" : "access card"][(!assignment) ? "" : " ([assignment])"]"
 	update_appearance()
 
 /obj/item/card/id/silver
-	name = "silver access card"
 	desc = "A silver-colored card, usually given to higher-ranking officials in ships and stations."
 	icon_state = "silver"
 	item_state = "silver_id"
@@ -435,7 +434,6 @@ update_label()
 	access = list(ACCESS_CHANGE_IDS)
 
 /obj/item/card/id/gold
-	name = "gold identification card"
 	desc = "A golden-colored card, usually given to those at the top of the hierarchy in a ship."
 	icon_state = "gold"
 	item_state = "gold_id"
@@ -539,7 +537,6 @@ update_label()
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
 
 /obj/item/card/id/syndicate_command
-	name = "syndicate access card"
 	desc = "An access card widely utilized by Coalition splinters in the frontier."
 	icon_state = "syndie"
 	access = list(ACCESS_SYNDICATE)

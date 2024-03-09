@@ -148,8 +148,10 @@
 		card.job_icon = outfit.job_icon
 		card.faction_icon = outfit.faction_icon
 		card.assignment = J.name
-		card.update_label()
-		card.name = "[!card.registered_name ? initial(card.name) : "[card.registered_name]'s ID Card"][" ([old_assignment])"]" // this is terrible, but whatever
+		// the reason why i'm not calling update_label here is because the id card's overlays are tied to the assignment.
+		// this is absolutely a hack, but oh well
+		card.update_appearance()
+		card.name = "[(istype(src, /obj/item/card/id/syndicate)) ? "[initial(name)]" : "access card"][(!old_assignment) ? "" : " ([old_assignment])"]"
 		H.sec_hud_set_ID()
 
 	qdel(outfit)
