@@ -254,7 +254,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
 	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of the Colonial Minutemen, most often used by boarding crews. Only compatible with specialized 8-round magazines."
+	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mag_type = /obj/item/ammo_box/magazine/cm15_mag
 	icon_state = "cm15"

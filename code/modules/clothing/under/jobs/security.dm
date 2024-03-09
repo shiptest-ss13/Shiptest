@@ -270,14 +270,6 @@
 	desc = "A dark colored uniform worn by private military engineers."
 	icon_state = "military_eng"
 
-/obj/item/clothing/under/rank/security/officer/minutemen
-	name = "colonial minutemen jumpsuit"
-	desc = "A jumpsuit worn by low ranking members of the Colonial Minutemen."
-	icon_state = "minuteman"
-	item_state = "b_suit"
-	can_adjust = FALSE
-	supports_variations = DIGITIGRADE_VARIATION
-
 /obj/item/clothing/under/rank/security/officer/camo
 	name = "fatigues"
 	desc = "A combat uniform most often worn by mercenaries and TPLRC soldiers. Features polychromatic design to adjust to different environments."
@@ -290,6 +282,10 @@
 		"Woodland" = "camo_woodland",
 		"Snow" = "camo_snow",
 		)
+
+/obj/item/storage/belt/military/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
 
 /obj/item/clothing/under/rank/security/officer/frontier
 	name = "\improper Frontiersmen uniform"

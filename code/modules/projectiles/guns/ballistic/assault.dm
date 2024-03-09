@@ -100,7 +100,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	name = "\improper CM-16"
-	desc = "The standard-issue rifle of the Colonial Minutemen and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
+	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
 	icon_state = "cm16"
 	item_state = "cm16"
 

@@ -56,8 +56,8 @@
 	icon_state = "rolled_solgov"
 
 /obj/item/poster/random_minutemen
-	name = "random cmm poster"
-	poster_type = /obj/structure/sign/poster/minutemen/random
+	name = "random clip poster"
+	poster_type = /obj/structure/sign/poster/clip/random
 	icon_state = "rolled_legit"
 
 /obj/item/poster/random_rilena
@@ -261,7 +261,7 @@
 
 /obj/structure/sign/poster/contraband/lusty_xenomorph
 	name = "Lusty Xenomorph"
-	desc = "A heretical poster depicting the titular star of an equally heretical book. Wow, this would be extremely offensive to anyone in the CMM."
+	desc = "A heretical poster depicting the titular star of an equally heretical book. Wow, this would be extremely offensive to anyone in CLIP."
 	icon_state = "poster_xeno" //i dont even know how to redo this one
 
 /obj/structure/sign/poster/contraband/syndicate_recruitment
@@ -427,7 +427,7 @@
 
 /obj/structure/sign/poster/contraband/backdoor_xeno_babes_6
 	name = "Backdoor Xeno Babes 6"
-	desc = "... You don't even know where to start with this. Wow, this would be extremely offensive to anyone in the CMM."
+	desc = "... You don't even know where to start with this. Wow, this would be extremely offensive to anyone in CLIP."
 	icon_state = "poster_xeno_maid"
 
 /obj/structure/sign/poster/contraband/robustmore_drinkfoods
@@ -938,54 +938,54 @@
 	desc = "SUNS, best known for it's diverse variety of top students from various solarian universities, dealing with internal fighting via dueling with swords, and being sued by Nanotrasen for trademark infrigement on their old name \"NSV.\""
 	icon_state = "poster-solgov_suns"
 
-//CMM poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CMM ships.
+//CLIP poster pool. This is quite limited, so don't use more than 3 random ones at once. Expect to see these on CLIP ships.
 
-/obj/structure/sign/poster/minutemen
-	poster_item_name = "cmm poster"
-	poster_item_desc = "A poster that is produced within the CMM. It comes with adhesive backing, for easy pinning to any vertical surface."
+/obj/structure/sign/poster/clip
+	poster_item_name = "clip poster"
+	poster_item_desc = "A poster that is produced within CLIP. It comes with adhesive backing, for easy pinning to any vertical surface."
 	poster_item_icon_state = "rolled_legit"
 
-/obj/structure/sign/poster/minutemen/random
-	name = "random cmm poster"
-	icon_state = "random_cmm"
+/obj/structure/sign/poster/clip/random
+	name = "random clip poster"
+	icon_state = "random_clip"
 	never_random = TRUE
-	random_basetype = /obj/structure/sign/poster/minutemen
+	random_basetype = /obj/structure/sign/poster/clip
 	random_type = POSTER_SUBTYPES
 
-/obj/structure/sign/poster/minutemen/enlist
+/obj/structure/sign/poster/clip/enlist
 	name = "Enlist"
-	desc = "\"Do your part for not just the CMM, but Luna Town, Lanchester City, Serene, Star City, Ryunosuke, Lanshuka, Radinska, New Kalixcis, and all of your families! Plus, finance your future; It's a win/win to enlist in the CMM!\""
-	icon_state = "poster-cmm_enlist"
+	desc = "\"Do your part for not just CLIP, but Luna Town, Lanchester City, Serene, Star City, Ryunosuke, Lanshuka, Radinska, New Kalixcis, and all of your families! Plus, finance your future; It's a win/win to enlist in the CMM!\""
+	icon_state = "poster-clip_enlist"
 
-/obj/structure/sign/poster/minutemen/bard
+/obj/structure/sign/poster/clip/bard
 	name = "CMM-BARD"
 	desc = "A poster made by soldiers to recruit people into the BARD, depecting a \"Sergeant Clues\" mowing down waves and waves of xenofauna, and them exploding into blood. Something tells you that service is a lot less interesting than this."
-	icon_state = "poster-cmm_bard"
+	icon_state = "poster-clip_bard"
 
-/obj/structure/sign/poster/minutemen/gold
-	name = "CMM-GOLD"
-	desc = "A poster listing job positions open in the CMM GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
-	icon_state = "poster-cmm_gold"
+/obj/structure/sign/poster/clip/gold
+	name = "CLIP-GOLD"
+	desc = "A poster listing job positions open in the CLIP GOLD and asking for applications, listing important but uninteresting benifits like health insurance and such."
+	icon_state = "poster-clip_gold"
 
-/obj/structure/sign/poster/minutemen/lunatown
+/obj/structure/sign/poster/clip/lunatown
 	name = "Luna-Town"
-	desc = "Luna-town, the second planet of the Kanler-332 system. The capital of the Colonial Minutemen and the Milita. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing the CMM from the brink into what it is today."
-	icon_state = "poster-cmm_luna"
+	desc = "Luna-town, one of the many moons of the gas giant Maxin. The capital of the Confederated League of Independent Planets. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, including the capital city itself and the remains of the UNSV Lichtenstein, famous for bringing CLIP from the brink into what it is today."
+	icon_state = "poster-clip_luna"
 
-/obj/structure/sign/poster/minutemen/maxin
+/obj/structure/sign/poster/clip/maxin
 	name = "Maxin"
 	desc = "Maxin, the fourth planet of the Kanler-332 system. It's many moons including Lanchester City make it a popular sightseeing attraction for those enroute to Lanchester City."
-	icon_state = "poster-cmm_maxin"
+	icon_state = "poster-clip_maxin"
 
-/obj/structure/sign/poster/minutemen/lanchester
+/obj/structure/sign/poster/clip/lanchester
 	name = "Lanchester City"
-	desc = "Luna-town, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
-	icon_state = "poster-cmm_lanchester"
+	desc = "Lanchester City, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
+	icon_state = "poster-clip_lanchester"
 
-/obj/structure/sign/poster/minutemen/serene
+/obj/structure/sign/poster/clip/serene
 	name = "Serene"
 	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so darn cold.\" This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old Frontiersmen War sites and Xenofauna war sites."
-	icon_state = "poster-cmm_serene"
+	icon_state = "poster-clip_serene"
 
 // Syndicate posters. Since syndicate are dived lorewise, this would only make sense on pre-split ships.
 /obj/structure/sign/poster/syndicate

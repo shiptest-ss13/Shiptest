@@ -159,17 +159,6 @@
 	icon_state = "suitjacket_charcoal"
 	item_state = "suitjacket_charcoal"
 
-/obj/item/clothing/suit/toggle/lawyer/minutemen
-	name = "minutemen suit jacket"
-	desc = "An enterprising dress jacket used by officers of the Colonial Minutemen."
-	icon_state = "suitjacket_minuteman"
-	item_state = "suitjacket_navy"
-
-/obj/item/clothing/suit/toggle/lawyer/minutemen/Initialize()
-	. = ..()
-	if(!allowed)
-		allowed = GLOB.security_vest_allowed //it's hop-equivalent gear after all
-
 /obj/item/clothing/suit/toggle/lawyer/cmo
 	name = "light blue suit jacket"
 	desc = "A foppish dress jacket."

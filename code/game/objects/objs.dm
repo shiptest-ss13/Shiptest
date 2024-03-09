@@ -364,7 +364,7 @@
 		current_skin = pick
 	icon_state = unique_reskin[pick]
 	to_chat(M, "[src] is now skinned as '[pick].'")
-	update_icon_state()
+	update_appearance()
 
 /**
  * Checks if we are allowed to interact with a radial menu for reskins
