@@ -149,7 +149,7 @@
 
 /obj/item/gun/ballistic/automatic/gal
 	name = "\improper CM-GAL-S"
-	desc = "The standard issue DMR of the CMM. Dates back to the Xenofauna War, this particular model is in a carbine configuration, and, as such, is shorter than the standard model. Chambered in .308."
+	desc = "The standard issue DMR of CLIP. Dates back to the Xenofauna War, this particular model is in a carbine configuration, and, as such, is shorter than the standard model. Chambered in .308."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "gal"
@@ -169,7 +169,7 @@
 
 /obj/item/gun/ballistic/automatic/gal/inteq
 	name = "\improper SsG-04"
-	desc = "A marksman rifle purchased from the Colonial Minutemen and modified to suit IRMG's needs. Chambered in .308."
+	desc = "A marksman rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
 	icon_state = "gal-inteq"
 	item_state = "gal-inteq"
 

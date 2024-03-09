@@ -42,7 +42,7 @@
 
 /obj/item/encryptionkey/minutemen
 	name = "minutemen encryption key"
-	icon_state = "cmm_cypherkey"
+	icon_state = "clip_cypherkey"
 	channels = list(RADIO_CHANNEL_MINUTEMEN = 1)
 
 /obj/item/encryptionkey/inteq
