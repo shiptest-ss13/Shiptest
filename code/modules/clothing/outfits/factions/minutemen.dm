@@ -263,6 +263,7 @@
 
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"
+	id_assignment = "Deckhand"
 	job_icon = "clip_navy1"
 	jobtype = /datum/job/assistant
 	uniform =  /obj/item/clothing/under/clip
@@ -298,6 +299,7 @@
 
 /datum/outfit/job/clip/minutemen/captain/general
 	name = "CLIP Minutemen - General"
+	id_assignment = "General"
 	job_icon = "clip_cmm6"
 
 	head = /obj/item/clothing/head/clip/slouch/officer
@@ -309,28 +311,13 @@
 	box = /obj/item/storage/box/survival/engineer/radio
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 
-/datum/outfit/job/clip/minutemen/captain/general/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.registered_name = H.real_name
-		W.assignment = "General"
-		W.update_label()
-
 /datum/outfit/job/clip/minutemen/captain/general/admiral // for flavor, might remove outright
 	name = "CLIP Minutemen - Admiral"
+	id_assignment = "Admiral"
 	job_icon = "clip_navy6"
 
 	head = /obj/item/clothing/head/clip/bicorne
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral
-
-/datum/outfit/job/clip/minutemen/captain/general/admiral/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.registered_name = H.real_name
-		W.assignment = "Admiral"
-		W.update_label()
 
 ///chemist
 
@@ -353,6 +340,7 @@
 
 /datum/outfit/job/clip/minutemen/head_of_personnel
 	name = "CLIP Minutemen - Bridge Officer"
+	id_assignment = "Bridge Officer"
 	job_icon = "clip_navy3"
 	jobtype = /datum/job/head_of_personnel
 
@@ -374,6 +362,7 @@
 
 /datum/outfit/job/clip/minutemen/doctor
 	name = "CLIP Minutemen - Corpsman"
+	id_assignment = "Corpsman"
 	job_icon = "clip_navy2"
 	jobtype = /datum/job/doctor
 
@@ -416,6 +405,7 @@
 
 /datum/outfit/job/clip/minutemen/vehicle_crew
 	name = "CLIP Minutemen - Vehicle Crewman"
+	id_assignment = "Vehicle Crewman"
 	job_icon = "clip_mech1"
 	jobtype = /datum/job/roboticist
 
@@ -433,6 +423,7 @@
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot
 	name = "CLIP Minutemen - Vehicle Pilot"
+	id_assignment = "Pilot"
 	job_icon = "clip_mech2"
 	jobtype = /datum/job/mining
 
@@ -447,6 +438,7 @@
 
 /datum/outfit/job/clip/minutemen/vehicle_pilot/commander
 	name = "CLIP Minutemen - Vehicle Commander"
+	id_assignment = "Vehicle Commander"
 	job_icon = "clip_mech3"
 
 	suit = /obj/item/clothing/suit/jacket/miljacket
@@ -454,6 +446,7 @@
 
 /datum/outfit/job/clip/minutemen/vehicle_crew/coordinator
 	name = "CLIP Minutemen - Vehicle Traffic Coordinator"
+	id_assignment = "Traffic Coordinator"
 	job_icon = "clip_mech4"
 	jobtype = /datum/job/roboticist
 
@@ -499,6 +492,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt
 	name = "CLIP Minutemen - Minuteman"
+	id_assignment = "Minuteman"
 	jobtype = /datum/job/officer
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
@@ -517,6 +511,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/reserve
 	name = "CLIP Minutemen - Reservist"
+	id_assignment = "Reservist"
 	job_icon = "clip_cmm1"
 	jobtype = /datum/job/assistant
 
@@ -563,6 +558,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/engi
 	name = "CLIP Minutemen - Field Engineer (Dressed)"
+	id_assignment = "Field Engineer"
 	jobtype = /datum/job/engineer
 
 	accessory = /obj/item/clothing/accessory/armband/engine
@@ -576,6 +572,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/med
 	name = "CLIP Minutemen - Field Corpsman (Dressed)"
+	id_assignment = "Field Corpsman"
 	jobtype = /datum/job/doctor
 
 	accessory = /obj/item/clothing/accessory/armband/medblue
@@ -595,6 +592,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/gunner_armed
 	name = "CLIP Minutemen - Field Gunner (Armed - SKM-24u)" //See above, replace with CLIP LMG when added
+	id_assignment = "Machinegunner"
 
 	accessory = /obj/item/clothing/accessory/armband
 	belt = /obj/item/storage/belt/military/clip/gunner
@@ -606,6 +604,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/lead
 	name = "CLIP Minutemen - Field Sergeant"
+	id_assignment = "Sergeant"
 	job_icon = "clip_cmm3"
 	jobtype = /datum/job/warden
 
@@ -632,6 +631,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/commander
 	name = "CLIP Minutemen - Field Commander"
+	id_assignment = "Commander"
 	job_icon = "clip_cmm4"
 	jobtype = /datum/job/hos
 
@@ -646,6 +646,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/major
 	name = "CLIP Minutemen - Major"
+	id_assignment = "Major"
 	job_icon = "clip_cmm5"
 	jobtype = /datum/job/captain
 
