@@ -30,9 +30,6 @@
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] You hear something inside \the [ourmine] click softly."))
 				playsound(ourmine, 'sound/weapons/empty.ogg', 30, TRUE)
 				ourmine.clicked = FALSE
-				var/mob/living/defuser = ourmine.foot_on_mine.resolve()
-				defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
-				ourmine.foot_on_mine = null
 			else
 				holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s detonation pad shifts slightly. Nothing happens."))
 		if(WIRE_RESET)//Disarms the mine, allowing it to be picked up. Major success.
@@ -66,8 +63,6 @@
 					holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] You hear something inside \the [ourmine] shift out of place."))
 					playsound(ourmine, 'sound/weapons/empty.ogg', 30, TRUE)
 					ourmine.clicked = FALSE
-					var/mob/living/defuser = ourmine.foot_on_mine.resolve()
-					defuser.remove_movespeed_modifier(/datum/movespeed_modifier/stepped_on_mine)
 				else
 					holder.visible_message(span_notice("[icon2html(ourmine, viewers(holder))] \The [ourmine]'s detonation pad goes loose."))
 				ourmine.foot_on_mine = null
