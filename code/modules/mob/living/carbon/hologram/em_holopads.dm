@@ -173,11 +173,6 @@
 	em_name = "logistics"
 	em_spawn_type = /mob/living/simple_animal/hologram/cargo
 
-/obj/machinery/holopad/emergency/clown
-	name = "advanced comedy holopad"
-	em_name = "comedy"
-	em_spawn_type = /mob/living/simple_animal/hologram/clown
-
 /obj/machinery/holopad/emergency/detective
 	name = "advanced forensics holopad"
 	em_name = "forensics"

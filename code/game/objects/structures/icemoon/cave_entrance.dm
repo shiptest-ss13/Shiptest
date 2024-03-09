@@ -219,7 +219,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/clown/clownhulk(loc)
 				new /mob/living/simple_animal/hostile/clown/longface(loc)
 				new /mob/living/simple_animal/hostile/clown/clownhulk/chlown(loc)
-				new /obj/item/shield/energy/bananium(loc)
 			if(prob(35))
 				new /mob/living/simple_animal/hostile/clown/banana(loc)
 			if(prob(35))
@@ -247,7 +246,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/megaphone/clown(loc)
 				new /mob/living/simple_animal/hostile/clown/stacked(loc)
 			if(prob(25))
-				new /obj/item/reagent_containers/spray/waterflower/lube(loc)
 				new /mob/living/simple_animal/hostile/clown/fleshclown(loc)
 				new /mob/living/simple_animal/hostile/clown/fleshclown(loc)
 			if(prob(35))
@@ -256,7 +254,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			if(prob(35))
 				new /mob/living/simple_animal/hostile/clown/fleshclown(loc)
 			if(prob(25))
-				new /obj/item/clothing/shoes/clown_shoes/banana_shoes/combat(loc)
 				new /mob/living/simple_animal/hostile/clown/fleshclown(loc)
 			if(prob(25))//you lost
 				new /obj/item/circlegame(loc)

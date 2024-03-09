@@ -642,8 +642,6 @@
 	loot = list(
 			/obj/item/circuitboard/mecha/ripley/main = 100,
 			/obj/item/circuitboard/mecha/ripley/peripherals = 100,
-			/obj/item/circuitboard/mecha/honker/main = 5,
-			/obj/item/circuitboard/mecha/honker/peripherals = 5,
 			/obj/item/circuitboard/mecha/odysseus/main = 5,
 			/obj/item/circuitboard/mecha/odysseus/peripherals = 5,
 			/obj/item/circuitboard/mecha/gygax/main = 1,
