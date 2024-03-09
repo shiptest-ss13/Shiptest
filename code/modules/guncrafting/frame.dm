@@ -173,8 +173,10 @@
 /obj/item/part/gun/frame/examine(user, distance)
 	. = ..()
 	if(.)
-		for(var/obj/item/part/gun/part in installed_parts)
-			. += "<span class='notice'>[src] has \a [part] [icon2html(part, user)] installed.</span>"
+		if(length(installed_parts) != 0)
+			. += "<span class='notice'>[src] has parts installed:</span>"
+			for(var/obj/item/part/gun/part in installed_parts)
+				. += "\a [part] [icon2html(part, user)] installed."
 		for(var/datum/lathe_recipe/gun/recipe in filtered_recipes)
 			var/obj/recipe_result = recipe.result
 			var/list/parts_for_craft = list()
@@ -188,7 +190,7 @@
 				for(var/part in parts_for_craft)
 					. += part
 			else
-				. += "<span class='notice'>You can craft a [initial(recipe_result.name)] with the parts installed.</span>"
+				. += "<span class='notice'>You can craft a [initial(recipe_result.name)].</span>"
 /*
 		var/part_type_message = ""
 		for(var/part_type in get_part_types())
