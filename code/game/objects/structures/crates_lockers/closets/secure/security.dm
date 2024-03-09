@@ -296,7 +296,6 @@
 
 /obj/structure/closet/secure_closet/armory2/PopulateContents()
 	..()
-	new /obj/item/storage/box/firingpins(src)
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/rubbershot(src)
 	for(var/i in 1 to 3)
@@ -309,7 +308,6 @@
 
 /obj/structure/closet/secure_closet/armory3/PopulateContents()
 	..()
-	new /obj/item/storage/box/firingpins(src)
 	new /obj/item/gun/energy/ionrifle(src)
 	for(var/i in 1 to 3)
 		new /obj/item/gun/energy/e_gun(src)

@@ -32,7 +32,6 @@
 	big_gun = TRUE
 	cell_type = "/obj/item/stock_parts/cell/gun/large"
 	canMouseDown = TRUE
-	pin = null
 	var/aiming = FALSE
 	var/aiming_time = 12
 	var/aiming_time_fire_threshold = 5
@@ -82,7 +81,6 @@
 	cell_type = /obj/item/stock_parts/cell/infinite
 	aiming_time = 0
 	recoil = 0
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/beam_rifle/equipped(mob/user)
 	set_user(user)
