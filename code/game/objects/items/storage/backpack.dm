@@ -460,6 +460,8 @@
 	new /obj/item/cautery(src)
 	new /obj/item/clothing/mask/surgical(src)
 	new /obj/item/razor(src)
+	new /obj/item/bonegel(src)
+	new /obj/item/bonesetter(src)
 
 /obj/item/storage/backpack/duffelbag/sec
 	name = "security duffel bag"

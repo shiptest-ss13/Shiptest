@@ -9,6 +9,12 @@
 	show = TRUE
 	required_layer = list(0)
 
+/datum/surgery_step/omni/skindown/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	var/mob/living/carbon/C = target
+	if(!C.get_bodypart(user.zone_selected)) //You can't do surgery on air; I'm sorry
+		return FALSE
+	return TRUE
+
 /datum/surgery_step/omni/skindown/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, default_display_results)
 	surgery.atlayer++
 	return ..()

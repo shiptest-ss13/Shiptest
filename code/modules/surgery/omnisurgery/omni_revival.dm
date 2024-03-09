@@ -1,4 +1,5 @@
 //an incision but with greater bleed, and a 90% base success chance
+/*
 /datum/surgery_step/omni/incise_head
 	name = "incise head"
 	implements = list(
@@ -27,7 +28,7 @@
 				"")
 			H.bleed_rate += 10
 			target.apply_damage(15, BRUTE, "[target_zone]")
-	return ..()
+	return ..() */
 
 //revive after incision
 /datum/surgery_step/omni/revive
@@ -42,13 +43,13 @@
 	failure_sound = 'sound/machines/defib_zap.ogg'
 	repeatable = TRUE
 	experience_given = MEDICAL_SKILL_ADVANCED
-	required_layer = list(2)
+	required_layer = list(4)
 	show = TRUE
 	valid_locations = list(BODY_ZONE_HEAD)
 
 /datum/surgery_step/omni/revive/test_op(mob/user, mob/living/target,datum/surgery/omni/surgery)
-	if(!istype(surgery.last_step,/datum/surgery_step/omni/incise_head))
-		return FALSE
+	//if(!istype(surgery.last_step,/datum/surgery_step/omni/incise_head))
+		//.return FALSE
 	if(target.stat != DEAD)
 		return FALSE
 	if(target.hellbound || HAS_TRAIT(target, TRAIT_HUSK))
