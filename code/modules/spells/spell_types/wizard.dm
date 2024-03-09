@@ -249,7 +249,6 @@
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/hit_turfs, mob/user = usr, stun_amt = 5)
 	var/list/thrownatoms = list()
-	var/atom/throwtarget
 	var/distfromcaster
 	playMagSound()
 
@@ -257,37 +256,20 @@
 		for(var/atom/movable/hit_target in T.contents)
 			thrownatoms += hit_target
 
-	for(var/am in thrownatoms)
-		if(!ismovable(am))
+	for(var/thrown_atom in thrownatoms)
+		if(!ismovable(thrown_atom))
 			continue
-		var/atom/movable/AM = am
-		if(AM == user)
+		var/atom/movable/AM = thrown_atom
+		if(AM == user || AM.anchored)
 			continue
-
-		if(ismob(AM))
-			var/mob/M = AM
-			if(M.anti_magic_check(anti_magic_check, FALSE))
-				continue
-		else
-			continue
-
-		throwtarget = get_edge_target_turf(user, get_dir(user, get_step_away(AM, user)))
-		distfromcaster = get_dist(user, AM)
-		if(distfromcaster == 0)
-			if(isliving(AM))
-				var/mob/living/M = AM
-				M.Paralyze(40)
-				M.adjustBruteLoss(5)
-				shake_camera(AM, 2, 1)
-				to_chat(M, "<span class='userdanger'>You're slammed into the floor by [user]!</span>")
-		else
-			new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
-			if(isliving(AM))
-				var/mob/living/M = AM
-				shake_camera(AM, 2, 1)
-				M.Paralyze(stun_amt)
-				to_chat(M, "<span class='userdanger'>You're thrown back by [user]!</span>")
-			AM.safe_throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
+		var/atom/throwtarget = get_edge_target_turf(user, get_dir(user, get_step_away(AM, user)))
+		new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
+		if(isliving(AM))
+			var/mob/living/M = AM
+			shake_camera(AM, 2, 1)
+			M.Paralyze(stun_amt)
+			to_chat(M, "<span class='userdanger'>You're thrown back by [user]!</span>")
+		AM.safe_throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/xeno //i fixed conflicts only to find out that this is in the WIZARD file instead of the xeno file?!
 	name = "Tail Sweep"
