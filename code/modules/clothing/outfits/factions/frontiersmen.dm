@@ -160,7 +160,7 @@
 
 	accessory = /obj/item/clothing/accessory/armband
 	head = /obj/item/clothing/head/beret/sec/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	suit = null
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	shoes = /obj/item/clothing/shoes/combat

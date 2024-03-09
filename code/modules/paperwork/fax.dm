@@ -63,7 +63,7 @@
 		list(fax_name = "IRMG Mothership", fax_id = "inteq", color = "yellow", emag_needed = FALSE),
 		list(fax_name = "Solarian Confederation Frontier Affairs", fax_id = "solgov", color = "teal", emag_needed = FALSE),
 		list(fax_name = "Roumain Council of Huntsmen", fax_id = "roumain", color = "brown", emag_needed = FALSE),
-		list(fax_name = "Colonial League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
+		list(fax_name = "Confederated League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
 		list(fax_name = "Syndicate Coalition Coordination Center", fax_id = "syndicate", color = "red", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
 	)
@@ -529,7 +529,7 @@
 
 /obj/machinery/fax/admin/minutemen
 	name = "CLIP HiComm Fax Machine"
-	fax_name = "Colonial League Leadership"
+	fax_name = "Confederated League Leadership"
 	admin_fax_id = "minutemen"
 
 /obj/machinery/fax/admin/roumain
