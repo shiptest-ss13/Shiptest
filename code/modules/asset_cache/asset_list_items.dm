@@ -117,7 +117,7 @@
 		"stamp-vanguard" = 'icons/stamp_icons/large_stamp-vanguard.png',
 		"stamp-maa" = 'icons/stamp_icons/large_stamp-maa.png',
 		"stamp-artificer" = 'icons/stamp_icons/large_stamp-artificer.png',
-		"stamp-cmm" = 'icons/stamp_icons/large_stamp-cmm.png',
+		"stamp-clip" = 'icons/stamp_icons/large_stamp-clip.png',
 		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
 		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
 		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
