@@ -23,6 +23,11 @@
 
 // above and below ground together
 
+/datum/map_template/ruin/icemoon/cybersun_blacksite
+	name = "Cybersun's blacksite"
+	id = "cybersun-blacksite"
+	description = "A remote place where Cybersun enjoy their newfound test subjects"
+	suffix = "icemoon_cybersun_blacksite.dmm"
 
 // below ground only
 
@@ -64,3 +69,5 @@
 	id = "crashed_holemaker"
 	description = "Safety records for early Nanotrasen Spaceworks vessels were, and always have been, top of their class. Absolutely no multi-billion credit projects have been painstakingly erased from history. (Citation Needed)"
 	suffix = "icemoon_crashed_holemaker.dmm"
+
+
