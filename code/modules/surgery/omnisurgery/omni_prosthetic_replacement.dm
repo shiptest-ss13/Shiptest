@@ -1,3 +1,12 @@
+
+/datum/surgery_step/omni/prosthetic_replacement/test_op(mob/user, mob/living/carbon/target)
+	if(!iscarbon(target))
+		return FALSE
+	var/mob/living/carbon/C = target
+	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
+		return TRUE
+	return FALSE
+
 /datum/surgery_step/omni/add_prosthetic
 	name = "add prosthetic"
 	implements = list(
@@ -7,18 +16,10 @@
 		/obj/item/melee/synthetic_arm_blade = 100)
 	time = 32
 	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
-	valid_locations = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
+	valid_locations = GLOB.broad_body_zones
 	show = TRUE
 	required_layer = list(0)
 	var/organ_rejection_dam = 0
-
-/datum/surgery_step/omni/prosthetic_replacement/test_op(mob/user, mob/living/carbon/target)
-	if(!iscarbon(target))
-		return FALSE
-	var/mob/living/carbon/C = target
-	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
-		return TRUE
-	return FALSE
 
 /datum/surgery_step/omni/add_prosthetic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(istype(tool, /obj/item/organ_storage))

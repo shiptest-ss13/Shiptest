@@ -4,7 +4,7 @@
 	status = 1
 	steps = list()										//We ballin
 	target_mobtypes = list(/mob/living/carbon/human)	//Acceptable Species
-	possible_locs = list(BODY_ZONE_CHEST,BODY_ZONE_HEAD,BODY_ZONE_L_ARM,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_R_LEG)
+	possible_locs = GLOB.all_body_zones
 	speed_modifier = 1									//Step speed modifier
 	var/atlayer = 0										// 0/1/2 skin/muscle/bone
 	var/datum/surgery_step/omni/last_step				//The last step preformed in the surgery

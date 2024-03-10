@@ -1,3 +1,5 @@
+// Assume surgeries with no valid_locations in this file can be done at any location 
+
 // [Going Down Layers]
 /datum/surgery_step/omni/skindown
 	name = "Dermal Incision"
@@ -11,7 +13,7 @@
 
 /datum/surgery_step/omni/skindown/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
 	var/mob/living/carbon/C = target
-	if(!C.get_bodypart(user.zone_selected)) //You can't do surgery on air; I'm sorry
+	if(!C.get_bodypart(user.zone_selected) && !(user.zone_selected in GLOB.precise_body_zones)) //You can't do surgery on air; sorry
 		return FALSE
 	return TRUE
 
