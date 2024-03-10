@@ -70,7 +70,7 @@
 	var/current_slots = parent_ship.job_slots[job_target]
 
 	var/used_slots = 0
-	var/job_holders = job_holder_refs[job_target]
+	var/job_holders = parent_ship.job_holder_refs[job_target]
 
 	for(var/datum/weakref/job_holder_ref as anything in job_holders)
 		var/mob/living/job_holder = job_holder_ref.resolve()
@@ -231,9 +231,9 @@
 				return TRUE
 
 			var/change_amount = params["delta"]
-			if(change_amount > 0)
+			if(change_amount > 0 && !allow_job_slot_increase(target_job))
 				if(!user.client.holder)
-					to_chat(user, span_warning("You cannot increase the number of slots for a job."))
+					to_chat(user, span_warning("You cannot increase the number of slots for this job."))
 					return TRUE
 				message_admins("[key_name_admin(user)] has increased the number of slots for [target_job.name] on [parent_ship.name] by [change_amount].")
 
