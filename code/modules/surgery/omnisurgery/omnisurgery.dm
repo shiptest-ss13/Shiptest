@@ -54,12 +54,13 @@
 		if(!(Step.accept_any_item || Step.accept_hand))
 			var/good = FALSE
 			for(var/obj in Step.implements)
-				if(istype(tool,obj))
-					good = TRUE
-					break
-				if((tool.tool_behaviour in Step.implements) || (tool in Step.implements))
-					good = TRUE
-					break
+				if(tool != null)
+					if(istype(tool,obj))
+						good = TRUE
+						break
+					if((tool.tool_behaviour in Step.implements) || (tool in Step.implements))
+						good = TRUE
+						break
 			if (!good)
 				continue
 		if(!Step.test_op(user,target,src))
