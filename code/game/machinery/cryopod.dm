@@ -303,19 +303,22 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
 
-	if(linked_ship && mob_occupant.mind.original_ship == WEAKREF(linked_ship.current_ship))
+	if(!isnull(mob_occupant.mind.original_ship))
+		var/datum/overmap/ship/controlled/original_ship_instance = mob_occupant.mind.original_ship.resolve()
+
 		var/job_identifier = mob_occupant.job
 
 		var/datum/job/crew_job
-		for(var/datum/job/job as anything in linked_ship.current_ship.job_slots)
+		for(var/datum/job/job as anything in original_ship_instance.job_slots)
 			if(job.name == job_identifier)
 				crew_job = job
 				break
 
 		if(isnull(crew_job))
-			message_admins(span_warning("Failed to identify the job of [key_name_admin(mob_occupant)] on [linked_ship] at [loc_name(src)]."))
+			message_admins(span_warning("Failed to identify the job of [key_name_admin(mob_occupant)] belonging to [original_ship_instance.name] at [loc_name(src)]."))
 		else
-			linked_ship.current_ship.job_slots[crew_job]++
+			original_ship_instance.job_slots[crew_job]++
+			original_ship_instance.job_holder_refs[crew_job] -= WEAKREF(mob_occupant)
 
 	if(mob_occupant.mind && mob_occupant.mind.assigned_role)
 		//Handle job slot/tater cleanup.

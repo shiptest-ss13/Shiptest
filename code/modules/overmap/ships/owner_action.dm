@@ -65,6 +65,34 @@
 		ui = new(user, src, "ShipOwner", name)
 		ui.open()
 
+/datum/action/ship_owner/proc/allow_job_slot_increase(datum/job/job_target)
+	var/default_slots = parent_ship.source_template.job_slots[job_target]
+	var/current_slots = parent_ship.job_slots[job_target]
+
+	var/used_slots = 0
+	var/job_holders = job_holder_refs[job_target]
+
+	for(var/datum/weakref/job_holder_ref as anything in job_holders)
+		var/mob/living/job_holder = job_holder_ref.resolve()
+		if(isnull(job_holder))
+			continue
+
+		if(job_holder.client)
+			used_slots += 1
+			continue
+
+		var/mob/dead/observer/job_holder_ghost
+		for(var/mob/dead/observer/ghost in GLOB.dead_mob_list)
+			if(ghost.mind == job_holder.mind)
+				job_holder_ghost = ghost
+				break
+		if(!isnull(job_holder_ghost))
+			used_slots += 1
+			continue
+
+	var/actual_slots = current_slots + used_slots
+	return actual_slots < default_slots
+
 /datum/action/ship_owner/ui_data(mob/user)
 	. = list()
 	.["memo"] = parent_ship.memo
@@ -86,6 +114,10 @@
 			text = app.app_msg,
 			status = app.status
 		))
+	var/list/job_increase_allowed = list()
+	for(var/datum/job/job as anything in parent_ship.job_slots)
+		job_increase_allowed[job.name] = allow_job_slot_increase(job)
+	.["jobIncreaseAllowed"] = job_increase_allowed
 
 /datum/action/ship_owner/ui_static_data(mob/user)
 	. = list()

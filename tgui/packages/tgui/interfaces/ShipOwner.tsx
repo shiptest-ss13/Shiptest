@@ -12,6 +12,7 @@ import { Window } from '../layouts';
 type ShipOwnerData = {
   crew: [CrewData];
   jobs: [JobData];
+  jobIncreaseAllowed: [string];
   memo: string;
   pending: boolean;
   joinMode: string;
@@ -64,6 +65,7 @@ const ShipOwnerContent = (_, context: any) => {
     cooldown = 1,
     applications = [],
     isAdmin,
+    jobIncreaseAllowed = [],
   } = data;
   return (
     <Section
@@ -224,10 +226,14 @@ const ShipOwnerContent = (_, context: any) => {
                 <Table.Cell>
                   <Button
                     content="+"
-                    disabled={!isAdmin || cooldown > 0 || job.slots >= job.max}
+                    disabled={
+                      !(isAdmin || jobIncreaseAllowed[job.name]) ||
+                      cooldown > 0 ||
+                      job.slots >= job.max
+                    }
                     tooltip={
-                      !isAdmin
-                        ? 'You must be an admin to increase job slots'
+                      !jobIncreaseAllowed[job.name] && !isAdmin
+                        ? 'Cannot increase job slots above maximum.'
                         : undefined
                     }
                     color={job.slots >= job.def ? 'average' : 'default'}
