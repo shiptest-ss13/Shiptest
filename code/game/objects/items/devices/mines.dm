@@ -22,15 +22,7 @@
 	/// Use to set a delay after activation to trigger the explosion.
 	var/blast_delay = 1 DECISECONDS
 
-	/// Armed mines will become transparent by a set %. 0 is invisible, default value is fully visible
-	var/stealthpwr = 255
-
 	var/manufacturer = MANUFACTURER_NONE
-
-/obj/item/mine/Initialize()
-	. = ..()
-	if(armed)
-		alpha = stealthpwr
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -63,7 +55,6 @@
 		return
 	anchored = FALSE
 	armed = FALSE
-	alpha = 255
 	update_appearance(UPDATE_ICON_STATE)
 	return
 
@@ -82,13 +73,11 @@
 			addtimer(CALLBACK(src, PROC_REF(now_armed)), arm_delay)
 		else
 			armed = TRUE
-			alpha = stealthpwr
 		log_admin("[key_name(user)] has placed \a [src] at ([x],[y],[z]).")
 
 //let them know the mine's done cooking
 /obj/item/mine/proc/now_armed()
 	armed = TRUE
-	alpha = stealthpwr
 	update_appearance(UPDATE_ICON_STATE)
 	playsound(src, 'sound/machines/nuke/angry_beep.ogg', 55, FALSE, 1)
 	visible_message("<span class='danger'>\The [src] beeps softly, indicating it is now active.<span>", vision_distance = COMBAT_MESSAGE_RANGE)
@@ -240,7 +229,6 @@
 		clicked = TRUE
 		if(hair_trigger)
 			trigger_mine(arrived)
-	alpha = 255
 	playsound(src, 'sound/machines/click.ogg', 100, TRUE)
 
 //step 2: the consequences
@@ -288,7 +276,6 @@
 	name = "dummy proximity mine"
 	blast_delay = 15 DECISECONDS
 	arm_delay = 10 SECONDS//clear the area
-	stealthpwr = 50//extra sneaky.
 	///needed for the proximity checks.
 	var/datum/proximity_monitor/proximity_monitor
 	var/proximity_range = 2
@@ -325,7 +312,6 @@
 		return
 	if(!can_trigger(triggerer))
 		return
-	alpha = 255
 	var/mob/living/clueless = triggerer
 	clueless.do_alert_animation(clueless)
 	trigger_mine(triggerer)
@@ -357,7 +343,6 @@
 	/// If TRUE, we spawn extra pellets to eviscerate a person still sitting on it, otherwise it just spawns a ring of pellets around the tile we're on (making setting it off an offensive move)
 	var/shred_triggerer = TRUE
 
-	stealthpwr = 100
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/mine/pressure/explosive/mine_effect(mob/victim)
