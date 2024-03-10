@@ -5,7 +5,7 @@
 	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "as" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -14,7 +14,7 @@
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "aC" = (
 /obj/structure/sign/syndicate{
 	pixel_y = 32
@@ -26,7 +26,7 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "aH" = (
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner{
 	dir = 8
@@ -35,21 +35,21 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "aL" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "aN" = (
 /obj/machinery/power/port_gen/pacman,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "aQ" = (
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner{
 	dir = 1
@@ -62,19 +62,20 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "aW" = (
 /obj/structure/chair{
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/syndicate/melee/space,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "bc" = (
 /obj/structure/window/spawner,
 /obj/structure/flora/ausbushes/grassybush,
+/mob/living/simple_animal/butterfly,
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "bg" = (
 /obj/structure{
 	desc = "A devastating strike weapon of times past. The mountings seem broken now.";
@@ -89,19 +90,19 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "bj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "bm" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -110,7 +111,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "br" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -128,17 +129,17 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "bs" = (
 /obj/structure/flora/driftlog,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "bx" = (
 /obj/structure/chair/sofa/right{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "bD" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -147,18 +148,18 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "bQ" = (
 /obj/machinery/door/airlock/grunge,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "bR" = (
 /obj/structure/bed,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "bW" = (
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -168,21 +169,21 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "cb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "ce" = (
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "cg" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "co" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/spawner,
@@ -193,20 +194,20 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "cr" = (
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "cz" = (
 /obj/structure/railing/modern,
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "cO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
@@ -215,12 +216,12 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/carpet/lone,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "cV" = (
 /turf/open/floor/plating{
 	initial_gas_mix = "ws_atmos"
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "da" = (
 /obj/machinery/door/airlock/security/brig,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -228,25 +229,31 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "di" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "dp" = (
 /obj/structure/table/greyscale,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "ds" = (
 /obj/structure/fireplace,
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "dE" = (
-/obj/structure/sign/poster/contraband/syndicate,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/powered/testing_facilities)
 "dG" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -255,9 +262,8 @@
 	dir = 1
 	},
 /obj/machinery/light/dim/directional/east,
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "dK" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -271,21 +277,21 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "dT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "dU" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/airalarm/directional/east,
 /obj/structure/cable,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ea" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -296,9 +302,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "ec" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -307,9 +312,8 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "em" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -318,20 +322,20 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "ex" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "eF" = (
 /turf/closed/wall/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "eG" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "eL" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
@@ -340,7 +344,10 @@
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
+"fd" = (
+/turf/open/floor/plasteel/freezer,
+/area/ruin/powered/testing_facilities)
 "fg" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -350,7 +357,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "fj" = (
 /obj/effect/turf_decal/siding/white,
 /obj/effect/turf_decal/siding/white{
@@ -361,7 +368,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "fs" = (
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/machinery/door/airlock/grunge,
@@ -373,23 +380,23 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "fR" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/crew_facilities)
 "fU" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "gm" = (
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "gn" = (
 /obj/structure/railing/modern,
 /obj/structure/cable{
@@ -398,34 +405,34 @@
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "gr" = (
 /mob/living/simple_animal/hostile/asteroid/polarbear/warrior,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "gy" = (
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "gH" = (
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "gI" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "gJ" = (
-/obj/effect/mob_spawn/human/corpse,
 /obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/effect/mob_spawn/human/corpse,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "gN" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -439,21 +446,14 @@
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "gQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
-"gW" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "hF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -463,7 +463,10 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
+"hH" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/testing_facilities)
 "hK" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -471,17 +474,17 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "hL" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "hM" = (
 /obj/structure/falsewall/plastitanium,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "hN" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 4
@@ -493,7 +496,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "hY" = (
 /obj/structure/closet/crate/freezer/surplus_limbs/organs,
 /obj/item/organ/heart,
@@ -502,22 +505,23 @@
 /obj/item/organ/moth_wings,
 /obj/item/organ/eyes/robotic/xray,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "ia" = (
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/carpet/lone,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ib" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "ie" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ih" = (
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner{
 	dir = 4
@@ -526,7 +530,11 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
+"ii" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/maintenance)
 "im" = (
 /obj/machinery/door/airlock/security{
 	dir = 4
@@ -538,14 +546,14 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "is" = (
 /turf/template_noop,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "iv" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "iw" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -555,19 +563,19 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "iz" = (
-/turf/open/floor/plating{
-	icon_state = "platingdmg2";
-	initial_gas_mix = "ws_atmos"
+/obj/structure/flora/grass/both,
+/turf/open/floor/plating/asteroid/snow/ice{
+	initial_gas_mix = "o2=0;n2=82;plasma=0;TEMP=120"
 	},
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "iB" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "iG" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -586,7 +594,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "iH" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -598,26 +606,26 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "iM" = (
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "iS" = (
 /obj/machinery/atmospherics/pipe/manifold/orange{
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "jd" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "ji" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "jp" = (
 /obj/structure/chair/office/dark{
 	dir = 8
@@ -626,14 +634,14 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "jY" = (
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/laptop,
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "kb" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
@@ -643,9 +651,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "kf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -661,27 +668,22 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
-"kj" = (
-/obj/effect/turf_decal/corner/opaque/bar/border,
-
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "kl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 6
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "kn" = (
 /mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating/asteroid/icerock/cracked,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "kp" = (
 /obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "kr" = (
 /obj/machinery/door/airlock/glass{
 	dir = 4
@@ -693,7 +695,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/wood/cold,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ks" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -702,13 +704,12 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "ku" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "kD" = (
 /obj/effect/turf_decal/industrial/loading,
 /obj/structure/cable{
@@ -717,24 +718,27 @@
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
 	},
-/area/ruin/powered)
-"kV" = (
-/obj/structure/closet/wall,
+/area/ruin/powered/hangar)
+"kF" = (
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/ice)
+"kH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "kZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 6
 	},
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ln" = (
 /obj/effect/turf_decal/trimline/opaque/orange/warning{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "lE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
@@ -749,38 +753,45 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "lW" = (
-/turf/open/floor/plating/asteroid/snow/ice,
-/area/ruin/powered)
+/turf/open/floor/plating/asteroid/snow/ice{
+	initial_gas_mix = "o2=0;n2=82;plasma=0;TEMP=120"
+	},
+/area/overmap_encounter/planetoid/ice)
+"mf" = (
+/obj/structure/sign/poster/syndicate/random,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/testing_facilities)
 "mh" = (
 /obj/structure/bed,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "mk" = (
-/obj/machinery/suit_storage_unit/syndicate{
-	storage_type = /obj/item/toy/balloon/syndicate
-	},
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "my" = (
 /obj/machinery/light/dim/directional/south,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "mC" = (
 /obj/structure/chair/e_chair,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "mD" = (
 /obj/structure/frame/computer/retro{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "mO" = (
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -790,7 +801,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "nc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -798,17 +809,17 @@
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "nh" = (
 /obj/machinery/power/floodlight,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "nq" = (
 /obj/structure/window/spawner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "ny" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -820,7 +831,10 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
+"nC" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/powered/testing_facilities)
 "nI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner{
@@ -829,17 +843,15 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "nK" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "oe" = (
 /obj/machinery/door/airlock/command{
 	dir = 4
@@ -854,7 +866,7 @@
 /turf/open/floor/plasteel/stairs/left{
 	dir = 4
 	},
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "oh" = (
 /obj/structure/window/spawner,
 /obj/structure/window/spawner,
@@ -863,18 +875,18 @@
 	},
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "oj" = (
 /obj/item/shard/plasma,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ot" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "ou" = (
 /obj/effect/mob_spawn/human/corpse,
 /obj/effect/decal/cleanable/blood/gibs/down,
@@ -882,11 +894,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "oA" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/space,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "oB" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -897,7 +909,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "oG" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -907,7 +919,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "oJ" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/effect/decal/cleanable/dirt,
@@ -917,17 +929,19 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "oK" = (
 /obj/structure/chair/comfy/black,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
 /obj/item/kitchen/knife/combat,
+/obj/structure/closet/wall/red{
+	pixel_y = 31
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "oT" = (
 /obj/effect/turf_decal/industrial/loading,
 /obj/structure/cable{
@@ -936,12 +950,9 @@
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "pc" = (
 /obj/machinery/light/dim/directional/north,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
@@ -949,13 +960,13 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "pe" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "pk" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/effect/turf_decal/borderfloorblack{
@@ -971,52 +982,55 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "px" = (
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "pM" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "pP" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "pW" = (
 /obj/structure/window/spawner,
 /obj/structure/flora/grass/brown,
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "qc" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
 	name = "Grav Couch"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "qd" = (
 /obj/effect/turf_decal/trimline/opaque/orange/warning{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "qe" = (
 /obj/structure/closet/crate/coffin,
 /obj/effect/mob_spawn/human/corpse,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "qn" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
+"qp" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/crew_facilities)
 "qs" = (
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "qM" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -1034,18 +1048,18 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "rj" = (
 /obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "rn" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/secure_data/laptop{
 	dir = 8
 	},
 /turf/open/floor/carpet/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "rw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1055,14 +1069,18 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "rz" = (
 /obj/structure/window/spawner{
 	dir = 4
 	},
 /obj/structure/window/spawner,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
+"rK" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/crew_facilities)
 "rL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1080,15 +1098,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "rS" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "rV" = (
 /obj/machinery/computer/operating/retro,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "rW" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -1097,23 +1115,21 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "sd" = (
 /obj/structure/frame/computer{
 	anchored = 1;
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "se" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "st" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1123,11 +1139,11 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "sB" = (
 /obj/machinery/light/dim/directional/east,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "sS" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1139,13 +1155,13 @@
 	dir = 6
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "sZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "tg" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
@@ -1154,28 +1170,32 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
+"tk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/turf/open/floor/plating,
+/area/ruin/powered/maintenance)
 "tw" = (
 /obj/structure/railing/modern{
 	dir = 8
 	},
 /turf/open/floor/plasteel/stairs/old,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "ty" = (
 /obj/structure/bed{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "tB" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "tM" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "tV" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -1184,11 +1204,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "ub" = (
 /obj/item/stack/cable_coil/cut/red,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "ue" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/table/wood,
@@ -1196,18 +1216,18 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/cable,
 /turf/open/floor/carpet/lone,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ui" = (
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ul" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "us" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1220,33 +1240,33 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "ut" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "uA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "uF" = (
 /obj/structure/table/glass,
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "uG" = (
 /obj/item/shard/plasma,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "uL" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "uQ" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1255,51 +1275,50 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "uV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "uW" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "vb" = (
 /obj/structure/table/wood,
 /turf/open/floor/carpet/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "vo" = (
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "vq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "vu" = (
 /obj/structure/chair/stool,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "vK" = (
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "vN" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "vR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -1307,7 +1326,7 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "vS" = (
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/effect/decal/cleanable/blood/bubblegum,
@@ -1318,19 +1337,19 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "vV" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/donkpockets,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "vY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "vZ" = (
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "wq" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1341,35 +1360,42 @@
 	},
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "wA" = (
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "wB" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
 /obj/item/storage/box/donkpockets,
 /obj/item/storage/box/donkpockets,
+/obj/structure/closet/wall/red{
+	pixel_y = 31
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "wU" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "xf" = (
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "xk" = (
-/obj/effect/turf_decal/corner/opaque/bar/border{
-	dir = 8
+/obj/machinery/atmospherics/components/unary/passive_vent/layer4{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/ice)
+"xp" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/crew_facilities)
 "xC" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1379,18 +1405,18 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "ya" = (
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "yd" = (
 /obj/structure/table/rolling,
 /obj/item/storage/backpack/duffelbag/syndie/surgery,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/research_notes/loot/small,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "yw" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -1402,19 +1428,19 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "yK" = (
 /obj/effect/mob_spawn/human/corpse/syndicatecommando,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "za" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
 	dir = 4
 	},
 /turf/open/floor/engine/hull,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "ze" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -1422,7 +1448,7 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "zO" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -1437,7 +1463,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "zU" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -1447,32 +1473,32 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ac" = (
 /obj/structure/marker_beacon,
 /turf/open/floor/plating{
 	initial_gas_mix = "ws_atmos"
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Ap" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/airalarm/directional/north,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ar" = (
 /obj/machinery/door/airlock/command,
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "AA" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "AO" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1481,7 +1507,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "AP" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1490,22 +1516,22 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "AT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 8
-	},
 /obj/machinery/light/dim/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "AW" = (
 /mob/living/simple_animal/hostile/asteroid/wolf/alpha,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Bk" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1513,11 +1539,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Bq" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Bw" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1532,14 +1558,14 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "BI" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "BL" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1548,18 +1574,18 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "BM" = (
 /obj/machinery/airalarm/directional/south,
 /obj/effect/turf_decal/siding/white/end{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "BO" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "BQ" = (
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner{
 	dir = 4
@@ -1574,12 +1600,13 @@
 	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Cc" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/carpet/lone,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ch" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
@@ -1594,61 +1621,69 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Cp" = (
 /obj/item/weldingtool,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
+"Cq" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/crew_facilities)
 "Ct" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "CO" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "CR" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
+"CS" = (
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/crew_facilities)
 "Da" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	name = "Blast Shutters"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Dg" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/airlock/external,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Ds" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Dw" = (
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Dx" = (
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "DB" = (
 /obj/item/kitchen/knife/hunting,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "DI" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1660,39 +1695,39 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "DN" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
 /mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Ej" = (
 /obj/machinery/door/airlock/freezer,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "El" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ey" = (
 /obj/structure/railing/modern,
 /obj/structure/railing/modern{
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "EE" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "EH" = (
 /mob/living/simple_animal/hostile/syndicate/melee/sword,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "EY" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -1700,13 +1735,13 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Fo" = (
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 9
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Fr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1722,7 +1757,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "FC" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -1736,7 +1771,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "FL" = (
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1745,9 +1780,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "FN" = (
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
@@ -1755,11 +1789,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "FO" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Gj" = (
 /obj/structure/sign/syndicate{
 	pixel_y = -32
@@ -1769,17 +1803,17 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Gm" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Gp" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Gs" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1790,7 +1824,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "GC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -1800,25 +1834,15 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
-"GG" = (
-/obj/effect/turf_decal/corner/opaque/bar/border{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "GJ" = (
 /obj/structure/sign/poster/syndicate/random,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "GL" = (
 /obj/structure/window/spawner,
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "GT" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1826,7 +1850,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Hq" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -1836,9 +1860,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Hs" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -1850,22 +1873,14 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "HA" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
-/area/ruin/powered)
-"HG" = (
-/obj/effect/turf_decal/corner/opaque/bar/border,
-/obj/effect/turf_decal/corner/opaque/bar/border{
-	dir = 4
-	},
-
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "HR" = (
 /obj/structure/bed/pod{
 	dir = 4
@@ -1877,30 +1892,28 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "HV" = (
 /obj/item/clothing/head/helmet/space/syndicate/black/red,
 /obj/item/clothing/mask/gas/syndicate,
-/obj/machinery/suit_storage_unit/syndicate{
-	storage_type = /obj/item/toy/balloon/syndicate
-	},
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ig" = (
 /obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Ih" = (
 /obj/structure/chair/comfy/black,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ik" = (
 /obj/machinery/door/airlock/grunge{
 	dir = 4
@@ -1912,15 +1925,15 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Il" = (
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Iu" = (
 /obj/item/grenade/c4,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Iz" = (
 /obj/structure/table/greyscale,
 /obj/item/storage/toolbox/syndicate/empty,
@@ -1928,7 +1941,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "IA" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1938,19 +1951,19 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "IF" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "II" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "IK" = (
 /obj/machinery/door/airlock/glass{
 	dir = 4
@@ -1962,7 +1975,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "IN" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -1972,7 +1985,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "IP" = (
 /obj/machinery/door/airlock/grunge,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -1980,13 +1993,17 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "IY" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
 	},
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
+"Je" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/plasteel/white,
+/area/ruin/powered/testing_facilities)
 "Jj" = (
 /obj/machinery/door/window{
 	dir = 4
@@ -1996,12 +2013,12 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Jl" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/vending/snack,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Jq" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2011,9 +2028,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "JE" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -2021,17 +2037,18 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "JG" = (
 /obj/effect/decal/cleanable/blood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Kr" = (
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Kw" = (
 /obj/structure/chair/office/light,
 /obj/effect/decal/cleanable/dirt,
@@ -2043,7 +2060,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Kx" = (
 /obj/structure/railing/modern,
 /obj/machinery/light/dim/directional/north,
@@ -2053,7 +2070,7 @@
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "KF" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
@@ -2073,13 +2090,13 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "KL" = (
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "KU" = (
 /obj/effect/turf_decal/number/zero{
 	pixel_x = -7;
@@ -2101,7 +2118,7 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "KV" = (
 /obj/machinery/door/airlock/grunge,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2110,18 +2127,21 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Le" = (
 /obj/machinery/airalarm/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 8
+	},
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "LE" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "LG" = (
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 8
@@ -2132,14 +2152,14 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "LS" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4;
 	pixel_y = 11
 	},
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "LX" = (
 /obj/structure{
 	desc = "A formerly deadly laser cannon, now stuck rusting on a fightercraft.";
@@ -2152,14 +2172,14 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "LY" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Ma" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2168,7 +2188,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Mp" = (
 /obj/item/ammo_casing/caseless/rocket{
 	desc = "An 84mm high explosive rocket. Looks like they'd fit into a launcher";
@@ -2207,13 +2227,13 @@
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Mu" = (
 /obj/structure/toilet,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Mv" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/door/airlock/external,
@@ -2221,10 +2241,10 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Mx" = (
 /turf/closed/mineral/random/snow,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "My" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -2236,32 +2256,31 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "MA" = (
 /obj/structure/dresser,
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "MH" = (
 /obj/structure/window/spawner,
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "MN" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/effect/turf_decal/corner/opaque/bar/bordercee,
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "MS" = (
 /obj/structure/table/wood,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "MT" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -2269,24 +2288,21 @@
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "MU" = (
-/obj/machinery/power/smes{
-	charge = 25
-	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/smes/engineering,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "MY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Nf" = (
 /obj/machinery/door/airlock/research{
 	dir = 4
@@ -2301,7 +2317,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Nl" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -2317,7 +2333,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ns" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -2326,7 +2342,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "NG" = (
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -2336,26 +2352,26 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "NM" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "NN" = (
 /obj/structure/marker_beacon,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "NT" = (
 /obj/structure/table/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ol" = (
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ot" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
@@ -2364,7 +2380,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "OH" = (
 /obj/machinery/shower,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2373,7 +2389,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "OM" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -2387,7 +2403,11 @@
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/under/syndicate/combat,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
+"Pb" = (
+/obj/structure/sign/poster/contraband/syndicate,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/crew_facilities)
 "Pm" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2397,7 +2417,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Pp" = (
 /obj/structure/bed/pod{
 	dir = 4
@@ -2406,15 +2426,16 @@
 /obj/item/bedsheet/syndie{
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Pq" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Pz" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/effect/decal/cleanable/dirt,
@@ -2424,24 +2445,24 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "PD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 6
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "PG" = (
 /mob/living/simple_animal/hostile/asteroid/wolf/random,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Qa" = (
 /obj/effect/mob_spawn/human/corpse/nanotrasenassaultsoldier,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
 	},
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Qb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -2451,21 +2472,21 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Qf" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Qk" = (
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Qo" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2476,20 +2497,22 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
+"Qp" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/maintenance)
 "Qt" = (
 /obj/structure/window/spawner{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "QB" = (
 /obj/effect/decal/cleanable/blood/innards,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "QH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2498,8 +2521,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "QI" = (
 /obj/structure/bed/pod{
 	dir = 8
@@ -2510,7 +2534,7 @@
 	},
 /obj/item/bedsheet/orange,
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "QW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -2519,7 +2543,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "QZ" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/machinery/light/dim/directional/south,
@@ -2527,11 +2551,11 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Rq" = (
 /mob/living/simple_animal/hostile/asteroid/ice_demon,
 /turf/open/floor/plating/asteroid/icerock,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "RB" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -2539,7 +2563,7 @@
 	name = "Blast Shutters"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "RC" = (
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -2547,7 +2571,7 @@
 	},
 /obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "RD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -2559,7 +2583,10 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
+"RE" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/crew_facilities)
 "RL" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -2575,11 +2602,11 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "RM" = (
 /obj/structure/table/glass,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "RT" = (
 /obj/structure/railing/modern,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2589,7 +2616,7 @@
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Sa" = (
 /obj/machinery/door/airlock/highsecurity,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2598,8 +2625,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/turf/open/floor/plasteel/dark,
+/area/ruin/powered/crew_facilities)
 "Se" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/plasma/reinforced/spawner,
@@ -2611,18 +2638,18 @@
 	pixel_y = -2
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Sf" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/barricade/sandbags,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Sg" = (
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Sh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
@@ -2632,14 +2659,14 @@
 	},
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Sj" = (
 /obj/machinery/atmospherics/pipe/manifold/orange{
 	dir = 8
 	},
 /obj/machinery/light/directional/west,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Sk" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2655,7 +2682,7 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Sr" = (
 /obj/structure/table/wood,
 /obj/structure/table/wood,
@@ -2666,7 +2693,11 @@
 /obj/item/kitchen/fork,
 /obj/item/kitchen/knife,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
+"St" = (
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/grass,
+/area/ruin/powered/hallway)
 "Sx" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -2676,7 +2707,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "SA" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2687,9 +2718,8 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "SL" = (
 /obj/effect/turf_decal/borderfloorblack,
 /obj/machinery/airalarm/directional/south,
@@ -2697,31 +2727,30 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "SP" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "SQ" = (
 /obj/structure/sign/poster/contraband/ss13,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Tb" = (
 /obj/machinery/airalarm/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "TA" = (
 /obj/structure/table/optable,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "TP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -2730,7 +2759,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Ud" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2741,40 +2770,36 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Ur" = (
 /mob/living/simple_animal/hostile/syndicate/melee,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Us" = (
 /obj/structure/table/greyscale,
 /obj/item/storage/toolbox/syndicate,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "Ux" = (
 /obj/structure/table/greyscale,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "UC" = (
 /obj/structure/closet/syndicate,
 /obj/item/gun/ballistic/automatic/pistol,
 /obj/item/ammo_box/magazine/co9mm,
 /obj/item/ammo_box/magazine/co9mm,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "UJ" = (
 /obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "UQ" = (
 /obj/machinery/door/airlock/security{
 	dir = 4
@@ -2789,7 +2814,10 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
+"Vd" = (
+/turf/open/floor/plating,
+/area/ruin/powered/testing_facilities)
 "Ve" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -2798,15 +2826,15 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Vh" = (
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Vj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "Vm" = (
 /obj/machinery/door/airlock/public,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -2817,7 +2845,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "VC" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2826,7 +2854,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "VO" = (
 /obj/machinery/door/airlock/maintenance{
 	dir = 4
@@ -2836,7 +2864,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "VX" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -2848,20 +2876,21 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Wk" = (
 /obj/item/chainsaw,
 /obj/structure/table/greyscale,
 /obj/item/retractor/advanced,
 /obj/item/gun/ballistic/revolver,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Wp" = (
 /obj/structure/chair/sofa/left{
 	dir = 4
 	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/mono/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "WG" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -2870,12 +2899,12 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "WI" = (
 /obj/structure/window/plasma/fulltile,
 /obj/structure/grille,
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "WJ" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 8
@@ -2887,34 +2916,31 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Xa" = (
-/obj/machinery/suit_storage_unit/syndicate{
-	storage_type = /obj/item/toy/balloon/syndicate
-	},
 /obj/item/clothing/suit/space/syndicate,
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
+/obj/machinery/suit_storage_unit/inherit,
 /turf/open/floor/plasteel/tech,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Xi" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	piping_layer = 2
 	},
 /turf/open/floor/plating,
-/area/ruin/powered)
+/area/ruin/powered/maintenance)
 "Xr" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/closed/mineral/random/snow,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Xs" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Xu" = (
 /obj/structure/railing/modern,
 /obj/structure/cable{
@@ -2923,7 +2949,7 @@
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Xw" = (
 /obj/structure/bed/pod{
 	dir = 8
@@ -2932,7 +2958,7 @@
 /obj/structure/cable,
 /obj/item/bedsheet/orange,
 /turf/open/floor/carpet/royalblack,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "XQ" = (
 /obj/machinery/power/apc/auto_name/directional/north,
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/orion,
@@ -2941,7 +2967,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "XR" = (
 /obj/effect/turf_decal/corner/opaque/bar/bordercorner{
 	dir = 1
@@ -2958,31 +2984,30 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "XV" = (
 /obj/machinery/power/floodlight,
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Yb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Yd" = (
 /obj/structure/railing/modern,
 /turf/open/floor/plasteel/stairs/old{
 	dir = 8
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Ye" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Yk" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/machinery/airalarm/directional/east,
@@ -2993,13 +3018,14 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "YB" = (
 /obj/machinery/door/window{
 	dir = 4
 	},
+/mob/living/simple_animal/butterfly,
 /turf/open/floor/grass,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "YF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -3011,13 +3037,13 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "YH" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/spawner,
 /obj/item/modular_computer/laptop,
 /turf/open/floor/wood/birch,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "YO" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -3026,9 +3052,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "YZ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
@@ -3037,13 +3062,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Za" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "Zb" = (
 /turf/template_noop,
 /area/template_noop)
@@ -3053,7 +3078,7 @@
 	},
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Zh" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 1
@@ -3065,7 +3090,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Zi" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -3077,55 +3102,52 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 "Zm" = (
 /obj/structure/closet/secure_closet/wall{
 	dir = 4
 	},
 /obj/item/documents/syndicate,
 /turf/open/floor/wood,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Zt" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/grass/snow/safe,
-/area/ruin/powered)
+/area/overmap_encounter/planetoid/ice)
 "Zv" = (
 /obj/structure/railing/modern,
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "Zw" = (
 /obj/machinery/shower,
 /obj/structure/curtain,
 /obj/item/soap/syndie,
 /turf/open/floor/plasteel/white,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "Zx" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/powered)
+/area/ruin/powered/crew_facilities)
 "ZE" = (
 /obj/structure/sign/poster/contraband/syndicate_recruitment,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered)
+/area/ruin/powered/hangar)
 "ZQ" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/powered)
+/area/ruin/powered/testing_facilities)
 "ZX" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/powered)
+/area/ruin/powered/hallway)
 
 (1,1,1) = {"
 Zb
@@ -4525,12 +4547,12 @@ xf
 xf
 xf
 xf
-NM
-NM
-NM
-NM
-NM
-NM
+hH
+hH
+hH
+hH
+hH
+hH
 xf
 xf
 xf
@@ -4585,14 +4607,14 @@ xf
 Bq
 xf
 xf
-Vh
+xk
 xf
-NM
+hH
 tB
 iw
 Wp
 bx
-NM
+hH
 xf
 xf
 LE
@@ -4634,29 +4656,29 @@ xf
 xf
 xf
 xf
-NM
-NM
-NM
-NM
-NM
-NM
-NM
+Qp
+Qp
+Qp
+Qp
+Qp
+Qp
+Qp
 LE
-NM
-NM
-NM
-NM
-NM
+Qp
+Qp
+Qp
+Qp
+Qp
 uV
-NM
-NM
+Qp
+hH
 vV
 RD
 uF
 RM
-NM
-NM
-NM
+hH
+pP
+pP
 NM
 NM
 qs
@@ -4696,22 +4718,22 @@ xf
 xf
 xf
 xf
-NM
+Qp
 Iz
 hL
 hL
 hL
 wU
-NM
+Qp
 xf
-NM
+Qp
 PD
-vY
+tk
 kl
 BI
 Vj
 Us
-Ye
+kH
 uA
 fg
 gH
@@ -4758,26 +4780,26 @@ xf
 xf
 LE
 xf
-NM
+Qp
 MU
 aN
-NM
-NM
+Qp
+Qp
 hN
-Ye
+ii
 Ye
 dT
 VO
-Ye
-Ye
+ii
+ii
 HA
 Ot
 Xi
-NM
+hH
 px
 yw
 QH
-QH
+dE
 Vm
 lE
 uW
@@ -4819,28 +4841,28 @@ xf
 xf
 LE
 xf
-NM
-NM
-NM
-NM
-NM
+RE
+RE
+Qp
+Qp
+Qp
 sS
 LG
-NM
+RE
 Xs
 GL
 ea
 CR
-NM
-NM
-NM
-NM
-NM
-NM
+hH
+hH
+hH
+hH
+hH
+hH
 II
-NM
-NM
-NM
+hH
+hH
+hH
 kf
 uW
 NM
@@ -4873,22 +4895,22 @@ Mx
 xf
 xf
 xf
-NM
-NM
-NM
-NM
-NM
-NM
-NM
-NM
+RE
+RE
+RE
+RE
+RE
+RE
+RE
+RE
 SQ
 Mu
-vo
+CS
 GJ
 AP
 tg
 IA
-dE
+Pb
 Dx
 bc
 Qo
@@ -4897,7 +4919,7 @@ bQ
 vS
 mO
 Ux
-NM
+hH
 ty
 ou
 Yb
@@ -4935,23 +4957,23 @@ Mx
 xf
 xf
 xf
-NM
+RE
 Cc
 Zm
 KL
 ia
-NM
+RE
 ui
 mk
-NM
-NM
+RE
+RE
 ad
-NM
+RE
 Ih
 NT
 SL
-NM
-Dx
+RE
+St
 pW
 Zh
 CO
@@ -4959,7 +4981,7 @@ FN
 Za
 EY
 bR
-NM
+hH
 Ux
 LY
 Yk
@@ -4997,35 +5019,35 @@ xf
 xf
 xf
 xf
-NM
+RE
 Ol
 vb
 rn
 Ol
-NM
+RE
 mk
 BM
-NM
+RE
 Zw
-vo
-kV
+CS
+RE
 wB
 Sr
 QZ
-NM
+RE
 BO
 GL
 Ud
 nK
-pP
-gW
-pP
-NM
-NM
-uV
-NM
-NM
-NM
+Je
+Je
+Je
+hH
+hH
+hH
+hH
+hH
+hH
 oB
 YZ
 uW
@@ -5059,28 +5081,28 @@ xf
 xf
 xf
 xf
-NM
+RE
 ds
 jp
 Qk
 kZ
-Ye
+qp
 HV
 fj
-NM
+RE
 Il
 uL
-kV
+RE
 oK
 NT
 zU
-NM
+RE
 YB
 oh
 Ud
 nI
-xk
-xk
+aL
+aL
 bD
 vY
 aL
@@ -5121,18 +5143,18 @@ xf
 xf
 Bq
 xf
-NM
+RE
 cO
 Qb
 Tb
 ue
-NM
+RE
 Xa
 Nl
-Ye
+qp
 OH
 dU
-pP
+rK
 Ch
 KF
 pk
@@ -5145,10 +5167,10 @@ Ns
 Hq
 ks
 YO
-GG
-GG
+YO
+YO
 My
-GG
+YO
 ub
 BQ
 YZ
@@ -5183,35 +5205,35 @@ xf
 xf
 xf
 xf
-NM
+RE
 oe
-NM
-NM
-NM
-NM
-II
+RE
+RE
+RE
+RE
+Cq
 im
-NM
+RE
 NG
-II
-pP
+Cq
+rK
 Ik
 GC
-NM
-pP
+RE
+rK
 as
 MT
 ih
 nK
-NM
-NM
-NM
-NM
-NM
-uV
-NM
-NM
-NM
+hH
+hH
+hH
+hH
+hH
+hH
+hH
+hH
+hH
 Pm
 bm
 IF
@@ -5245,7 +5267,7 @@ xf
 xf
 xf
 xf
-NM
+RE
 rw
 Kw
 YH
@@ -5261,7 +5283,7 @@ RL
 us
 AO
 Sx
-NM
+pP
 as
 SA
 uQ
@@ -5269,7 +5291,7 @@ IP
 Ve
 GT
 Ux
-NM
+hH
 ty
 st
 gJ
@@ -5307,7 +5329,7 @@ xf
 xf
 xf
 Bq
-NM
+RE
 Pz
 Fr
 co
@@ -5324,14 +5346,14 @@ em
 cr
 aH
 ot
-NM
+pP
 Jq
 SP
 WI
 JG
 Qf
 mh
-Ye
+kH
 dp
 oG
 iH
@@ -5348,7 +5370,7 @@ ji
 ji
 ji
 qs
-cV
+Vh
 my
 NM
 xf
@@ -5369,35 +5391,35 @@ Mx
 xf
 xf
 xf
-NM
+RE
 pM
 gQ
 Ar
 Dw
-NM
-NM
+RE
+RE
 IK
-NM
+RE
 kr
-NM
-NM
+RE
+RE
 UQ
-pP
+rK
 Ma
 ZX
 Pq
-NM
+pP
 rW
 kb
-pP
-NM
+Je
+hH
 II
-NM
-NM
-NM
-NM
+hH
+hH
+hH
+hH
 Ct
-NM
+hH
 rL
 ul
 NM
@@ -5432,34 +5454,34 @@ xf
 xf
 xf
 xf
-NM
-NM
-NM
+RE
+RE
+RE
 Dw
-NM
+RE
 Pp
 bj
-Ye
+qp
 AT
 HR
 di
 Ap
 mD
-uV
+xp
 Da
 Da
-NM
+RE
 ec
 oJ
 fs
 bW
 RC
 Ur
-NM
+hH
 rV
 EE
 EH
-NM
+hH
 Nf
 NM
 NM
@@ -5468,10 +5490,10 @@ gn
 qs
 qs
 qs
-cV
+Vh
 qs
 yK
-cV
+Vh
 qs
 qs
 NM
@@ -5496,28 +5518,28 @@ xf
 xf
 xf
 xf
-NM
+RE
 Jl
-NM
+RE
 ce
 QW
-NM
+RE
 Le
 wA
-NM
+RE
 pc
 uG
 gN
 qd
 qd
-dE
+Pb
 se
-kj
-NM
+uW
+hH
 ZQ
 mC
 cg
-NM
+hH
 yd
 TA
 iv
@@ -5558,28 +5580,28 @@ xf
 xf
 xf
 xf
-NM
-NM
-NM
+RE
+RE
+RE
 rS
 QI
-NM
+RE
 MA
 Xw
-NM
+RE
 UC
 Zx
 El
 oj
 gy
-NM
+RE
 se
-kj
-NM
+uW
+hH
 Wk
 sB
 Ig
-GJ
+mf
 nq
 Qt
 Jj
@@ -5593,9 +5615,9 @@ qs
 NN
 qs
 qs
-iz
-iz
-iz
+Vh
+Vh
+Vh
 Ac
 NM
 xf
@@ -5622,26 +5644,26 @@ xf
 LE
 xf
 xf
-NM
-NM
-NM
-NM
-NM
-NM
+RE
+RE
+RE
+RE
+RE
+RE
 vq
-pP
+rK
 XQ
 Se
 ln
 ln
 gI
 dG
-HG
-NM
-NM
-NM
+ul
+hH
+hH
+hH
 hM
-NM
+hH
 vo
 qn
 Gp
@@ -5655,9 +5677,9 @@ qs
 XV
 qs
 qs
-cV
-cV
-cV
+Vh
+Vh
+Vh
 xf
 PG
 xf
@@ -5691,21 +5713,24 @@ xf
 xf
 xf
 xf
-NM
-NM
-NM
+RE
+RE
+RE
 RB
 pe
-NM
-NM
-NM
-NM
+RE
+pP
+pP
+hH
 qe
-Vh
-Vh
+Vd
+Vd
 MS
-NM
+hH
 Ej
+hH
+hH
+hH
 NM
 NM
 NM
@@ -5714,11 +5739,8 @@ NM
 NM
 NM
 NM
-NM
-NM
-NM
-cV
-cV
+Vh
+Vh
 Gm
 xf
 xf
@@ -5755,22 +5777,22 @@ xf
 LE
 xf
 xf
-Vh
-Vh
-Vh
-Vh
+kF
+kF
+kF
+kF
 xf
 xf
-NM
-eF
+hH
+nC
 qe
 qe
-eF
-NM
+nC
+hH
 cb
-Kr
+fd
 oA
-NM
+hH
 xf
 xf
 xf
@@ -5780,8 +5802,8 @@ xf
 xf
 xf
 xf
-iz
-Vh
+kF
+kF
 xf
 xf
 lW
@@ -5819,20 +5841,20 @@ xf
 Zt
 aW
 nh
-Vh
+kF
 xf
 Zt
 xf
 xf
-NM
-eF
-eF
-NM
-NM
+hH
+nC
+nC
+hH
+hH
 ut
 hY
 Kr
-NM
+hH
 xf
 xf
 xf
@@ -5890,16 +5912,17 @@ xf
 xf
 xf
 xf
-NM
-NM
-NM
-NM
-NM
+hH
+hH
+hH
+hH
+hH
 xf
 xf
 LE
 xf
 xf
+vZ
 xf
 xf
 xf
@@ -5907,8 +5930,7 @@ xf
 xf
 xf
 xf
-xf
-xf
+lW
 Bq
 xf
 xf
@@ -5950,7 +5972,7 @@ xf
 xf
 xf
 xf
-LE
+iz
 xf
 xf
 xf
@@ -5961,8 +5983,8 @@ xf
 xf
 xf
 xf
-xf
-xf
+vZ
+vZ
 xf
 xf
 xf
@@ -6022,9 +6044,9 @@ xf
 xf
 Bq
 xf
-xf
-xf
-xf
+vZ
+vZ
+vZ
 xf
 xf
 PG
@@ -6068,8 +6090,8 @@ xf
 xf
 xf
 Bq
-xf
-xf
+vZ
+vZ
 xf
 xf
 xf
@@ -6084,7 +6106,7 @@ Bq
 xf
 xf
 xf
-xf
+vZ
 xf
 xf
 xf
@@ -6129,11 +6151,11 @@ xf
 xf
 Bq
 xf
-xf
-xf
-xf
-xf
-xf
+vZ
+vZ
+vZ
+vZ
+vZ
 xf
 bs
 xf
@@ -6191,9 +6213,9 @@ xf
 xf
 xf
 xf
-xf
-xf
-xf
+vZ
+vZ
+vZ
 Mx
 Mx
 Mx
@@ -6254,8 +6276,8 @@ xf
 xf
 lW
 xf
-xf
-xf
+vZ
+vZ
 Mx
 Mx
 Mx
