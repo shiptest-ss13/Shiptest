@@ -16,7 +16,7 @@
 		/obj/item/melee/synthetic_arm_blade = 100)
 	time = 32
 	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
-	valid_locations = GLOB.broad_body_zones
+	valid_locations = ALL_BODY_ZONES
 	show = TRUE
 	required_layer = list(0)
 	var/organ_rejection_dam = 0

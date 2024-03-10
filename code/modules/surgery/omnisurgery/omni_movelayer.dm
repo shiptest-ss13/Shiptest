@@ -13,7 +13,7 @@
 
 /datum/surgery_step/omni/skindown/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
 	var/mob/living/carbon/C = target
-	if(!C.get_bodypart(user.zone_selected) && !(user.zone_selected in GLOB.precise_body_zones)) //You can't do surgery on air; sorry
+	if(!C.get_bodypart(user.zone_selected) && !(user.zone_selected in PRECISE_BODY_ZONES)) //You can't do surgery on air; sorry
 		return FALSE
 	return TRUE
 
