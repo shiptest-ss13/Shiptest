@@ -230,11 +230,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/crew_facilities)
-"di" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered/crew_facilities)
 "dp" = (
 /obj/structure/table/greyscale,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
@@ -345,6 +340,13 @@
 	light_range = 2
 	},
 /area/ruin/powered/hangar)
+"eN" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/closet/secure_closet/wall{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered/crew_facilities)
 "fd" = (
 /turf/open/floor/plasteel/freezer,
 /area/ruin/powered/testing_facilities)
@@ -373,9 +375,6 @@
 /obj/effect/decal/cleanable/blood/footprints,
 /obj/machinery/door/airlock/grunge,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 5
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -442,9 +441,6 @@
 	pixel_y = -2
 	},
 /obj/item/shard/plasma,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/crew_facilities)
 "gQ" = (
@@ -785,7 +781,8 @@
 /area/ruin/powered/testing_facilities)
 "mD" = (
 /obj/structure/frame/computer/retro{
-	dir = 4
+	dir = 4;
+	anchored = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
@@ -1294,12 +1291,6 @@
 "vo" = (
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/testing_facilities)
-"vq" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered/crew_facilities)
 "vu" = (
 /obj/structure/chair/stool,
 /obj/machinery/airalarm/directional/north,
@@ -1390,12 +1381,6 @@
 	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/ice)
-"xp" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered/crew_facilities)
 "xC" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -1828,9 +1813,6 @@
 "GC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /turf/open/floor/plasteel/white,
@@ -2297,12 +2279,6 @@
 /obj/machinery/power/smes/engineering,
 /turf/open/floor/plating,
 /area/ruin/powered/maintenance)
-"MY" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered/testing_facilities)
 "Nf" = (
 /obj/machinery/door/airlock/research{
 	dir = 4
@@ -3105,7 +3081,8 @@
 /area/ruin/powered/hallway)
 "Zm" = (
 /obj/structure/closet/secure_closet/wall{
-	dir = 4
+	dir = 4;
+	pixel_x = -30
 	},
 /obj/item/documents/syndicate,
 /turf/open/floor/wood,
@@ -4738,7 +4715,7 @@ uA
 fg
 gH
 px
-MY
+hH
 tV
 Ze
 NM
@@ -5086,7 +5063,7 @@ ds
 jp
 Qk
 kZ
-qp
+eN
 HV
 fj
 RE
@@ -5464,10 +5441,10 @@ bj
 qp
 AT
 HR
-di
+qp
 Ap
 mD
-xp
+RE
 Da
 Da
 RE
@@ -5650,7 +5627,7 @@ RE
 RE
 RE
 RE
-vq
+RE
 rK
 XQ
 Se
