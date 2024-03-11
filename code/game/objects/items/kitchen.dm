@@ -248,6 +248,21 @@
 	custom_price = 20
 	tool_behaviour = TOOL_ROLLINGPIN
 
-/obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
+/* Trays  moved to /obj/item/storage/bag */
+
+/obj/item/kitchen/spoon/plastic
+	name = "plastic spoon"
+	desc = "Just be careful your food doesn't melt the spoon first."
+	icon_state = "plastic_spoon"
+	force = 0
+	w_class = WEIGHT_CLASS_TINY
+	throwforce = 0
+	custom_materials = list(/datum/material/plastic=120)
+	custom_price = 50
+	var/break_chance = 25
+
+/obj/item/kitchen/knife/plastic/afterattack(mob/living/carbon/user)
+	.=..()
+	if(prob(break_chance))
+		user.visible_message(span_danger("[user]'s spoon snaps into tiny pieces in their hand."))
+		qdel(src)

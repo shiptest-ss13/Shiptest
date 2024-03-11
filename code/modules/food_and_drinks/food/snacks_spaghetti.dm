@@ -2,7 +2,7 @@
 /obj/item/reagent_containers/food/snacks/spaghetti
 	name = "spaghetti"
 	desc = "Now that's a nic'e pasta!"
-	icon = 'icons/obj/food/pizzaspaghetti.dmi'
+	icon = 'icons/obj/food/spaghetti.dmi'
 	icon_state = "spaghetti"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	cooked_type = /obj/item/reagent_containers/food/snacks/spaghetti/boiledspaghetti

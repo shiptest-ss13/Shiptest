@@ -16,9 +16,9 @@
 #define TOOL_SAW "saw"
 #define TOOL_KNIFE "knife"
 #define TOOL_ROLLINGPIN "rollingpin"
-#define TOOL_BIKEHORN		"bike horn"
-// If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
-// tool sound is only played when op is started. If not, it's played twice.
+
+/// If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
+/// tool sound is only played when op is started. If not, it's played twice.
 #define MIN_TOOL_SOUND_DELAY 20
 
 /// When a tooltype_act proc is successful
