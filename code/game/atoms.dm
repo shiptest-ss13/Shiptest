@@ -454,23 +454,20 @@
  */
 /atom/proc/CheckParts(list/parts_list, datum/crafting_recipe/R)
 	SEND_SIGNAL(src, COMSIG_ATOM_CHECKPARTS, parts_list, R)
-	if(parts_list, datum/crafting_recipe/R)
-	SEND_SIGNAL(src, COMSIG_ATOM_CHECKPARTS, parts_list, R)
 	if(parts_list)
-			for(var/A in parts_list)
-				if(istype(A, /datum/reagent))
-					if(!reagents)
-						reagents = new()
-					reagents.reagent_list.Add(A)
-					reagents.conditional_update()
-				else if(ismovable(A))
-					var/atom/movable/M = A
-					if(isliving(M.loc))
-						var/mob/living/L = M.loc
-						L.transferItemToLoc(M, src)
-					else
-						M.forceMove(src)
-					SEND_SIGNAL(M, COMSIG_ATOM_USED_IN_CRAFT, src)
+		for(var/A in parts_list)
+			if(istype(A, /datum/reagent))
+				if(!reagents)
+					reagents = new()
+				reagents.reagent_list.Add(A)
+				reagents.conditional_update()
+			else if(ismovable(A))
+				var/atom/movable/M = A
+				if(isliving(M.loc))
+					var/mob/living/L = M.loc
+					L.transferItemToLoc(M, src)
+				else
+					M.forceMove(src)
 		parts_list.Cut()
 
 ///Take air from the passed in gas mixture datum

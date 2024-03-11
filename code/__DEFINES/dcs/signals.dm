@@ -158,6 +158,8 @@
 ///from internal loop in atom/movable/proc/CanReach(): (list/next)
 #define COMSIG_ATOM_CANREACH "atom_can_reach"
 	#define COMPONENT_BLOCK_REACH 1
+///for when an atom has been created through processing (atom/original_atom, list/chosen_processing_option)
+#define COMSIG_ATOM_CREATEDBY_PROCESSING "atom_createdby_processing"
 ///from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
 #define COMSIG_ATOM_SCREWDRIVER_ACT "atom_screwdriver_act"
 ///from base of atom/wrench_act(): (mob/living/user, obj/item/I)
@@ -528,7 +530,10 @@
 	#define COMPONENT_BLOCK_MARK_RETRIEVAL 1
 #define COMSIG_ITEM_HIT_REACT "item_hit_react" //from base of obj/item/hit_reaction(): (list/args)
 #define COMSIG_ITEM_WEARERCROSSED "wearer_crossed" //called on item when crossed by something (): (/atom/movable, mob/living/crossed)
-#define COMSIG_ITEM_MICROWAVE_ACT "microwave_act" //called on item when microwaved (): (obj/machinery/microwave/M)
+///called on item when microwaved (): (obj/machinery/microwave/M)
+#define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"
+///called on item when created through microwaving (): (obj/machinery/microwave/M, cooking_efficiency)
+#define COMSIG_ITEM_MICROWAVE_COOKED "microwave_cooked"
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act" //from base of item/sharpener/attackby(): (amount, max)
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
 	#define COMPONENT_BLOCK_SHARPEN_BLOCKED 2
@@ -649,7 +654,16 @@
 #define COMSIG_COMPONENT_CLEAN_FACE_ACT "clean_face_act" //called when you wash your face at a sink: (num/strength)
 
 //Food
-#define COMSIG_FOOD_EATEN "food_eaten" //from base of obj/item/reagent_containers/food/snacks/attack(): (mob/living/eater, mob/feeder)
+///from base of obj/item/reagent_containers/food/snacks/attack() & Edible component: (mob/living/eater, mob/feeder)
+#define COMSIG_FOOD_EATEN "food_eaten"
+///from base of Component/edible/On_Consume: (mob/living/eater, mob/living/feeder)
+#define COMSIG_FOOD_CONSUMED "food_consumed"
+#define COMSIG_ITEM_FRIED "item_fried"
+	#define COMSIG_FRYING_HANDLED (1<<0)
+///From /datum/component/edible/on_compost(source, /mob/living/user)
+#define COMSIG_EDIBLE_ON_COMPOST "on_compost"
+	// Used to stop food from being composted.
+	#define COMPONENT_EDIBLE_BLOCK_COMPOST 1
 
 //Gibs
 #define COMSIG_GIBS_STREAK "gibs_streak" // from base of /obj/effect/decal/cleanable/blood/gibs/streak(): (list/directions, list/diseases)
