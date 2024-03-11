@@ -31,6 +31,11 @@
 	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
 	var/unscrewing_time = 20 ///Time it takes to unscrew the cell
 
+	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
+	var/tac_reloads = FALSE
+	///If we allow tacitcal reloads, how long should it take to reload?
+	var/tactical_reload_delay  = 1.2 SECONDS
+
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg' //Sound when inserting magazine. UPDATE PLEASE
 	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg' //Sound of ejecting a cell. UPDATE PLEASE
 	var/sound_volume = 40 //Volume of loading/unloading sounds
@@ -99,6 +104,13 @@
 			recharge_newshot(TRUE)
 		update_appearance()
 
+//ATTACK HAND IGNORING PARENT RETURN VALUE
+/obj/item/gun/energy/attack_hand(mob/user)
+	if(!internal_cell && loc == user && user.is_holding(src) && cell && tac_reloads)
+		eject_cell(user)
+		return
+	return ..()
+
 /obj/item/gun/energy/unique_action(mob/living/user)
 	if(ammo_type.len > 1)
 		select_fire(user)
@@ -109,6 +121,10 @@
 		var/obj/item/stock_parts/cell/gun/C = A
 		if (!cell)
 			insert_cell(user, C)
+		else
+			if (tac_reloads)
+				eject_cell(user, C)
+
 	return ..()
 
 /obj/item/gun/energy/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
@@ -128,18 +144,26 @@
 		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
-/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/I)
-	to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
-	if(I.use_tool(src, user, unscrewing_time, volume=100))
-		to_chat(user, "<span class='notice'>You remove the power cell.</span>")
-		playsound(src, load_sound, sound_volume, load_sound_vary)
-		cell.forceMove(drop_location())
-		var/obj/item/stock_parts/cell/gun/old_cell = cell
-		cell = null
-		user.put_in_hands(old_cell)
-		old_cell.update_appearance()
-		to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
-		update_appearance()
+/obj/item/gun/energy/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)
+	playsound(src, load_sound, sound_volume, load_sound_vary)
+	cell.forceMove(drop_location())
+	var/obj/item/stock_parts/cell/gun/old_cell = cell
+	old_cell.update_appearance()
+	cell = null
+	to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+	update_appearance()
+	if(tac_load && tac_reloads)
+		if(do_after(user, tactical_reload_delay, TRUE, src))
+			if(insert_cell(user, tac_load))
+				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src].</span>")
+			else
+				to_chat(user, "<span class='warning'>You dropped the old cell, but the new one doesn't fit. How embarassing.</span>")
+		else
+			to_chat(user, "<span class='warning'>Your reload was interupted!</span>")
+			return
+
+	user.put_in_hands(old_cell)
+	update_appearance()
 
 /obj/item/gun/energy/get_gun_attachments()
 	if(cell && !internal_cell)
@@ -148,8 +172,9 @@
 
 /obj/item/gun/energy/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
 	if(picked_option == "Cell")
-		eject_cell(user, I)
-		return TRUE
+		if(I.use_tool(src, user, unscrewing_time, volume=100))
+			eject_cell(user, I)
+			return TRUE
 	..()
 
 /obj/item/gun/energy/can_shoot(visuals)
@@ -185,6 +210,7 @@
 		cell.use(shot.e_cost)//... drain the cell cell
 	chambered = null //either way, released the prepared shot
 	recharge_newshot() //try to charge a new shot
+	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 
 /obj/item/gun/energy/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(!chambered && can_shoot())
