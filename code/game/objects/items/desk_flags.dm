@@ -21,6 +21,11 @@
 	desc = "The blue and gold flag of the Sol Government."
 	icon_state = "solgov"
 
+/obj/item/desk_flag/suns
+	name = "\improper SUNS desk flag"
+	desc = "The symbol of a student's union."
+	icon_state = "suns"
+
 /obj/item/desk_flag/trans
 	name = "vampire desk flag"
 	desc = "The blue, cyan, and white flag of the transylvanian society of vampires."

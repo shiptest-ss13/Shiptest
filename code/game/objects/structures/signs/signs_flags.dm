@@ -37,6 +37,12 @@
 	icon_state = "flag_gezena"
 	item_flag = /obj/item/sign/flag/gezena
 
+/obj/structure/sign/flag/suns
+	name = "\improper SUNS flag"
+	desc = "PH"
+	icon_state = "flag_suns"
+	item_flag = /obj/item/sign/flag/suns
+
 // ITEM FLAGS - THE THINGS YOU HOLD AND PLACE
 
 /obj/item/sign/flag
@@ -51,3 +57,9 @@
 	desc = "lizards but folded"
 	icon_state = "folded_gezena"
 	sign_path = /obj/structure/sign/flag/gezena
+
+/obj/item/sign/flag/suns
+	name = "folded SUNS flag"
+	desc = "PH"
+	icon_state = "folded_suns"
+	sign_path = /obj/structure/sign/flag/suns

@@ -24,6 +24,10 @@
 	desc = "\"RESTRICTED\"-level state documents listing points in space, all within five light-years of the Bezuts star system. Portions of the document are covered in unintelligible blue annotations."
 	icon_state = "docs_verified"
 
+/obj/item/documents/suns
+	desc = "\"RESTRICTED\"-level placeholder documents."
+	icon_state = "docs_blue"
+
 /obj/item/documents/syndicate
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence."
 

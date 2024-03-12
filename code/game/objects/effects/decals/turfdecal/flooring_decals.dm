@@ -1106,3 +1106,12 @@ TURF_DECAL_COLOR_HELPER(transparent/inteqbrown, "#4b2a18", 140)
 
 /obj/effect/turf_decal/arrowaxe_small/right
 	icon_state = "arrowaxe-right"
+
+//SUNS
+
+/obj/effect/turf_decal/suns
+	icon = 'icons/turf/decals/suns_floor.dmi'
+	icon_state = "top-left"
+
+/obj/effect/turf_decal/suns/line
+	icon_state = "suns_border"
