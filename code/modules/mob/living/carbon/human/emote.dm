@@ -306,17 +306,8 @@
 	if(..())
 		playsound(user.loc, 'sound/machines/synth_yes.ogg', 50)
 
-// the following emotes were originally clown-locked and synthetic exclusive
-// since clowns have been removed I see no reason to let them collect dust
-
-/datum/emote/living/carbon/human/robot_tongue/honk
-	key = "honk"
-	key_third_person = "honks"
-	message = "honks."
-
-/datum/emote/living/carbon/human/robot_tongue/honk/run_emote(mob/user, params)
-	if(..())
-		playsound(user.loc, 'sound/items/bikehorn.ogg', 50)
+// the following emote were originally clown-locked and synthetic exclusive
+// since clowns have been removed I see no reason to let it collect dust
 
 /datum/emote/living/carbon/human/robot_tongue/sad
 	key = "sad"
