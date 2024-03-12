@@ -13,6 +13,12 @@
 	damage = 35
 	armour_penetration = 40
 
+/obj/projectile/bullet/a8_50rhp
+	name = "8x50mmR bullet"
+	speed = 0.3
+	damage = 55
+	armour_penetration = 0
+
 // .300 Magnum (Smile Rifle)
 
 /obj/projectile/bullet/a300
@@ -43,10 +49,10 @@
 	damage = 30
 	armour_penetration = 20
 
-//7.62x39mm (SVG-67 & SkM-24)
+//7.62x40mm CLIP (SKM Rifles)
 
-/obj/projectile/bullet/a762_39
-	name = "7.62x39mm"
+/obj/projectile/bullet/a762_40
+	name = "7.62x40mm CLIP"
 	damage = 30
 	armour_penetration = 20
 

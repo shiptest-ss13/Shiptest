@@ -1900,7 +1900,7 @@
 /area/ship/hallway/central)
 "ml" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,
@@ -1920,16 +1920,14 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/armor/vest/bulletproof,
-/obj/item/clothing/head/warden/drill{
-	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.";
-	name = "master at arms' campaign hat"
-	},
 /obj/item/megaphone/sec,
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_y = -32
 	},
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/head/warden/inteq,
+/obj/item/clothing/suit/armor/vest/security/warden/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ms" = (
@@ -3597,7 +3595,7 @@
 /obj/item/clothing/head/hardhat/white,
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/megaphone/cargo{
 	name = "engineering megaphone"
@@ -5626,6 +5624,9 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "JT" = (
@@ -7502,7 +7503,7 @@
 	name = "equipment locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/storage/box/handcuffs,
@@ -7556,7 +7557,7 @@
 /area/ship/crew/canteen)
 "Yz" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,

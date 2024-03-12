@@ -3,15 +3,15 @@
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
-	suit_store = /obj/item/gun/ballistic/automatic/assault/ak47/inteq
+	suit_store = /obj/item/gun/ballistic/automatic/assault/skm/inteq
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/inteq/alt
 	id = /obj/item/card/id
-	belt = /obj/item/storage/belt/security/webbing/inteq/ak47
+	belt = /obj/item/storage/belt/security/webbing/inteq/skm
 	back = /obj/item/storage/backpack/fireproof
 
 	l_pocket = /obj/item/kitchen/knife/combat
