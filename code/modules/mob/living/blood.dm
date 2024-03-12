@@ -86,16 +86,13 @@
 		var/temp_bleed = 0
 		//Bleeding out
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			var/brutedamage = BP.brute_dam
+			temp_bleed += BP.bleeding
 
 			//We want an accurate reading of .len
 			listclearnulls(BP.embedded_objects)
 			for(var/obj/item/embeddies in BP.embedded_objects)
 				if(!embeddies.isEmbedHarmless())
 					temp_bleed += 0.5
-
-			if(brutedamage >= 20)
-				temp_bleed += (brutedamage * 0.013)
 
 		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects (heparin) naturally decreases
 

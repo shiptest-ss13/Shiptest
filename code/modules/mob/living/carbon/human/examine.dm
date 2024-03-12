@@ -401,6 +401,21 @@
 
 /mob/living/carbon/human/examine_more(mob/user)
 	. = ..()
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		var/bleed_text
+		switch(BP.bleeding)
+			if(0)
+				continue
+			if(1-3)
+				bleed_text = "lightly."
+			if(4-6)
+				bleed_text = "moderately."
+			if(7-10)
+				bleed_text = "heavily!"
+			else
+				bleed_text = "significantly!!"
+		. += span_warning("Their [BP] is bleeding [bleed_text]")
+
 	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 		return
 	var/age_text
