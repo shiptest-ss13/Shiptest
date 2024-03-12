@@ -48,6 +48,7 @@
 		/obj/item/spacecash,
 		/obj/item/holochip,
 		/obj/item/card,
+		/obj/item/folder/biscuit
 	)
 	/// Internal radio for announcing over comms
 	var/obj/item/radio/radio
@@ -97,6 +98,7 @@
 	GLOB.fax_machines -= src
 	QDEL_NULL(loaded_item_ref)
 	QDEL_NULL(wires)
+	QDEL_NULL(radio)
 	return ..()
 
 /obj/machinery/fax/update_overlays()
