@@ -40,7 +40,7 @@
 /area/ship/maintenance/starboard)
 "ax" = (
 /obj/machinery/newscaster/security_unit/directional/west,
-/obj/structure/filingcabinet/employment,
+/obj/machinery/photocopier,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "aC" = (
@@ -249,7 +249,8 @@
 "dH" = (
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/light/directional/south,
-/obj/machinery/photocopier,
+/obj/structure/table/reinforced,
+/obj/machinery/fax/indie,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "dJ" = (
@@ -1624,6 +1625,7 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "uC" = (
@@ -2293,7 +2295,6 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 8
 	},
-/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Bp" = (
@@ -2820,7 +2821,7 @@
 /obj/effect/turf_decal/kfp_small{
 	dir = 8
 	},
-/obj/structure/sign/poster/minutemen/random{
+/obj/structure/sign/poster/clip/random{
 	pixel_x = 32
 	},
 /turf/open/floor/plating,
@@ -3308,6 +3309,9 @@
 /obj/effect/turf_decal/corner/opaque/blue/border{
 	dir = 1
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Ov" = (
@@ -3420,10 +3424,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Pd" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
-	dir = 4
-	},
 /obj/effect/turf_decal/corner/opaque/blue/border,
+/obj/machinery/holopad/emergency/command,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Pg" = (
@@ -3587,7 +3589,6 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "QQ" = (
-/obj/machinery/holopad/emergency/command,
 /obj/item/storage/backpack/captain,
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/clothing/under/rank/security/detective/grey,
@@ -3596,6 +3597,8 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/gun/ballistic/revolver/detective,
 /obj/item/clothing/head/HoS/cowboy,
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/c38,
 /obj/structure/closet/secure_closet/wall{
 	dir = 4;
 	icon_state = "solgov_wall";
@@ -3603,8 +3606,6 @@
 	pixel_x = -28;
 	req_access_txt = "57"
 	},
-/obj/item/ammo_box/c38,
-/obj/item/ammo_box/c38,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "QT" = (
@@ -3755,9 +3756,6 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/cryo)
 "SS" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
-	},
 /obj/effect/turf_decal/corner/opaque/blue/bordercorner{
 	dir = 8
 	},
@@ -3779,6 +3777,7 @@
 /obj/item/ammo_box/magazine/m45,
 /obj/item/spacecash/bundle/c1000,
 /obj/item/spacecash/bundle/c1000,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "SW" = (
@@ -4068,14 +4067,17 @@
 	dir = 1
 	},
 /obj/item/radio/intercom/wideband/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "Vt" = (
 /obj/structure/sign/poster/official/random{
 	pixel_x = -32
 	},
-/obj/structure/filingcabinet/chestdrawer,
 /obj/item/radio/intercom/wideband/directional/north,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "VG" = (
