@@ -945,9 +945,8 @@
 /obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
 	dir = 4
 	},
-/obj/machinery/modular_computer/console/preset/id{
-	dir = 1
-	},
+/obj/structure/table/reinforced,
+/obj/machinery/fax/indie,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "if" = (
@@ -2715,6 +2714,24 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
+"xr" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_y = 5
+	},
+/obj/item/folder/blue{
+	pixel_y = 5
+	},
+/obj/item/pen/red{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/pen/blue{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "xs" = (
 /obj/effect/turf_decal/corner/opaque/neutral/half,
 /obj/machinery/atmospherics/pipe/simple/green/hidden{
@@ -3291,10 +3308,10 @@
 	dir = 1
 	},
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/newscaster/directional/south,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin,
 /obj/item/paper/crumpled,
 /obj/item/paper/crumpled{
 	pixel_x = -3;
@@ -5423,24 +5440,10 @@
 /area/ship/crew/canteen)
 "Vg" = (
 /obj/machinery/light/small/directional/south,
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_y = 5
-	},
 /obj/effect/turf_decal/corner/opaque/neutral/three_quarters{
 	dir = 4
 	},
-/obj/item/folder/blue{
-	pixel_y = 5
-	},
-/obj/item/pen/red{
-	pixel_x = 3;
-	pixel_y = 5
-	},
-/obj/item/pen/blue{
-	pixel_x = -3;
-	pixel_y = 5
-	},
+/obj/structure/filingcabinet/double/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Vp" = (
@@ -7259,7 +7262,7 @@ Um
 On
 Vt
 Ri
-VZ
+xr
 Lq
 ib
 On
