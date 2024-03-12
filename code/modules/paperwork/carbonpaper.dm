@@ -17,7 +17,7 @@
 	. = ..()
 	if(copied)
 		return
-	. += span_notice("Right-click to tear off the carbon-copy (you must use both hands).")
+	. += span_notice("Alt-click to tear off the carbon-copy (you must use both hands).")
 
 /obj/item/paper/carbon/proc/removecopy(mob/living/user)
 	if(copied)
@@ -34,3 +34,8 @@
 
 /obj/item/paper/carbon_copy
 	icon_state = "cpaper"
+
+/obj/item/paper/carbon/AltClick(mob/living/carbon/user, obj/item/I)
+	. = ..()
+	if(!copied)
+		removecopy(user)

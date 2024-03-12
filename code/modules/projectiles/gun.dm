@@ -134,6 +134,9 @@
 	///If the saftey on? If so, we can't fire the weapon
 	var/safety = FALSE
 
+	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
+	var/safety_wording = "safety"
+
 /obj/item/gun/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
@@ -237,6 +240,7 @@
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
+	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 	return FALSE
 
 //check if there's enough ammo/energy/whatever to shoot one time
@@ -260,9 +264,9 @@
 	if(muzzle_flash && !muzzle_flash.applied)
 		handle_muzzle_flash(user, muzzle_angle)
 
-	if(wielded_fully && recoil)
+	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
-	else if(!wielded_fully && recoil_unwielded)
+	else if(!wielded_fully)
 		simulate_recoil(user, recoil_unwielded, actual_angle)
 
 	if(suppressed)
@@ -540,8 +544,8 @@
 	if(!silent)
 		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 		user.visible_message(
-			span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-			span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("[user] turns the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("You turn the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
 		)
 
 	update_appearance()
@@ -735,9 +739,9 @@
 		var/mutable_appearance/safety_overlay
 		safety_overlay = mutable_appearance('icons/obj/guns/safety.dmi')
 		if(safety)
-			safety_overlay.icon_state = "safety-on"
+			safety_overlay.icon_state = "[safety_wording]-on"
 		else
-			safety_overlay.icon_state = "safety-off"
+			safety_overlay.icon_state = "[safety_wording]-off"
 		. += safety_overlay
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)

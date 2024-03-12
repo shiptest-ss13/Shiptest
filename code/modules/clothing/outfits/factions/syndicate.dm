@@ -954,6 +954,7 @@
 
 	id = /obj/item/card/id/syndicate_command/crew_id
 	uniform = /obj/item/clothing/under/syndicate/ngr
+	alt_uniform = /obj/item/clothing/under/syndicate/gec
 	accessory = /obj/item/clothing/accessory/armband/engine
 	glasses = /obj/item/clothing/glasses/sunglasses
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -970,6 +971,7 @@
 	name = "Syndicate - Ship Engineer (GEC)"
 
 	uniform = /obj/item/clothing/under/syndicate/gec
+	alt_uniform = null
 	suit = /obj/item/clothing/suit/toggle/hazard
 	head = /obj/item/clothing/head/hardhat
 	id = /obj/item/card/id/syndicate_command/crew_id
@@ -979,13 +981,13 @@
 
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	shoes = /obj/item/clothing/shoes/workboots
-	alt_uniform = null
 	glasses = null
 
 /datum/outfit/job/syndicate/engineer/twink
 	name = "Syndicate - Ship Engineer (Twinkleshine, GEC)"
 
 	uniform = /obj/item/clothing/under/syndicate/gec
+	alt_uniform = null
 	id = /obj/item/card/id/syndicate_command/crew_id/engi
 	mask = /obj/item/clothing/mask/gas/syndicate/voicechanger
 	ears = null

@@ -799,11 +799,11 @@
 	category = list("hacked", "Security")
 
 /datum/design/c38
-	name = "Ammo Box (.38)"
+	name = "Ammo Box (.38 surplus)"
 	id = "c38"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
-	build_path = /obj/item/ammo_box/c38_box
+	build_path = /obj/item/ammo_box/c38_box/surplus
 	category = list("initial", "Security", "Ammo")
 
 /datum/design/beanbag_slug
@@ -1198,3 +1198,20 @@
 	materials = list(/datum/material/iron = 200, /datum/material/glass = 200)
 	build_path = /obj/item/fishing_rod
 	category = list("initial","Misc","Equipment")
+
+
+/datum/design/paper_biscuit
+	name = "Paper Biscuit"
+	id = "biscuit"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/plastic = 20)
+	build_path = /obj/item/folder/biscuit/unsealed
+	category = list("initial", "Tools", "Misc")
+
+/datum/design/paper_biscuit_confidental
+	name = "Confidental Paper Biscuit"
+	id = "confidental_biscuit"
+	build_type = PROTOLATHE | AUTOLATHE
+	materials = list(/datum/material/plastic = 30)
+	build_path = /obj/item/folder/biscuit/unsealed/confidental
+	category = list("initial", "Tools", "Misc")
