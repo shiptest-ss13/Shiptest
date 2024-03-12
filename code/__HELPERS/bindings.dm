@@ -182,6 +182,3 @@
 
 /proc/_auxtools_register_gas(gas)
 	return call_ext(AUXMOS, "byond:hook_register_gas_ffi")(gas)
-
-/proc/__auxmos_shutdown()
-	return call_ext(AUXMOS, "byond:auxmos_shutdown_ffi")()
