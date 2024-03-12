@@ -2,7 +2,7 @@
 	name = "ERT - Frontiersman Basic"
 
 	head = /obj/item/clothing/head/beret/sec/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/frontier
 	suit_store = /obj/item/gun/ballistic/rifle/illestren
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
@@ -49,7 +49,7 @@
 	if(prob(30))
 		mask = pickweight(list(
 		/obj/item/clothing/mask/gas = 5,
-		/obj/item/clothing/mask/gas/sechailer/minutemen = 5,
+		/obj/item/clothing/mask/gas/sechailer/balaclava = 5,
 		/obj/item/clothing/mask/breath = 5,
 		/obj/item/clothing/mask/whistle = 3))
 
@@ -83,7 +83,7 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/grenade/full
 		if("Ammo Carrier")
-			backpack_contents += list(/obj/item/ammo_box/a762_39 = 1)
+			backpack_contents += list(/obj/item/ammo_box/a762_40 = 1)
 
 	var/weapon = pick(list("Bolt-Action", "Pistol", "Melee"))
 	switch(weapon)

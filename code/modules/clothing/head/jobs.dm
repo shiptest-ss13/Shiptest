@@ -12,7 +12,6 @@
 	desc = "The commander in chef's head wear."
 	strip_delay = 10
 	equip_delay_other = 10
-	dynamic_hair_suffix = ""
 	dog_fashion = /datum/dog_fashion/head/chef
 
 //Captain
@@ -42,11 +41,6 @@
 /obj/item/clothing/head/caphat/nt
 	name = "captain's hat"
 	icon_state = "captain_nt"
-
-/obj/item/clothing/head/caphat/minutemen
-	name = "general's bicorne"
-	desc = "A fancy bicorne used by generals of the Colonial Minutemen."
-	icon_state = "minuteman_general_hat"
 
 /obj/item/clothing/head/caphat/frontier
 	name = "\improper Frontiersmen commander's cap"
@@ -108,8 +102,10 @@
 	. = ..()
 	new /obj/item/reagent_containers/food/drinks/flask/det(src)
 
-/obj/item/clothing/head/fedora/det_hat/examine(mob/user)
-	. = ..()
+/obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
+	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
+		. = "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		return
 	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
@@ -138,7 +134,6 @@
 	icon_state = "hoscap"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 80
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/cowboy
 	name = "sheriff's hat"
@@ -153,11 +148,6 @@
 	icon_state = "cowboysec"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
-
-/obj/item/clothing/head/cowboy/sec/minutemen
-	name = "colonial minutmen officer's slouch hat"
-	desc = "A commanding slouch hat adorned with a officer's badge, used by the Colonial Minutemen."
-	icon_state = "minuteman_officer_hat"
 
 /obj/item/clothing/head/cowboy/sec/roumain
 	name = "hunter's hat"
@@ -217,6 +207,11 @@
 	icon_state = "cowboywarden"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/warden/inteq
+	name = "master at arms' campaign hat"
+	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
+	icon_state = "maahat"
 
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"

@@ -67,10 +67,6 @@
 	description = "Only the truly insane would wear this around their neck."
 	path = /obj/item/clothing/neck/petcollar
 
-/datum/gear/accessory/maidneckpiece
-	display_name = "maid neckpiece"
-	path = /obj/item/clothing/neck/maid
-
 /datum/gear/accessory/gloves/black
 	display_name = "black gloves"
 	description = "Standard hand coverings for everyday use."
@@ -85,11 +81,6 @@
 	display_name = "evening gloves"
 	description = "Excessively fancy elbow-length gloves."
 	path = /obj/item/clothing/gloves/color/evening
-	slot = ITEM_SLOT_GLOVES
-
-/datum/gear/accessory/gloves/maid
-	display_name = "maid arm covers"
-	path = /obj/item/clothing/gloves/maid
 	slot = ITEM_SLOT_GLOVES
 
 /datum/gear/accessory/tiki
