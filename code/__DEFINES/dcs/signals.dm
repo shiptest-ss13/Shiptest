@@ -160,8 +160,6 @@
 	#define COMPONENT_BLOCK_REACH 1
 ///for when an atom has been created through processing (atom/original_atom, list/chosen_processing_option)
 #define COMSIG_ATOM_CREATEDBY_PROCESSING "atom_createdby_processing"
-///from base of atom/screwdriver_act(): (mob/living/user, obj/item/I)
-	#define COMPONENT_BLOCK_TOOL_ATTACK (1<<0)
 ///called when teleporting into a protected turf: (channel, turf/origin)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"
 	#define COMPONENT_BLOCK_TELEPORT (1<<0)
