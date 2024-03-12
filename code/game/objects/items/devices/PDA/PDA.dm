@@ -410,7 +410,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 //BASIC FUNCTIONS===================================
 
 			if("Refresh")//Refresh, goes to the end of the proc.
-
+				pass()
 			if("Return")//Return
 				if(mode<=9)
 					mode = 0

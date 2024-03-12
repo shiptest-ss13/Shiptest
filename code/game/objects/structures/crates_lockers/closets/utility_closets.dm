@@ -50,7 +50,7 @@
 			new /obj/item/clothing/mask/breath(src)
 
 		if ("nothing")
-			// doot
+			pass()
 
 		// teehee
 		if ("delete")
