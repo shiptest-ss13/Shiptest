@@ -1,0 +1,33 @@
+author: Skies-Of-Blue
+changes:
+  - {rscadd: 'creates close_hatch, a step that mirrors open_hatch in prosthetic surgeries
+      for the sake of consistency. Why you leaving that hatch open?? The final step
+      before screwing to finish surgery. This affects implant removal, ipc revival,
+      mechanical brain surgery, and prosthesis organ manipulation'}
+  - {rscadd: 'creates manipulate_organs/mechanic, a step that swaps the necessary
+      implements in synthetic surgery. Use a crowbar instead of a hemostat to remove
+      any organs on an augmented limb!'}
+  - {tweak: 'changes implant removal surgery to reflect the above. The new tool order
+      is as follows: screwdriver, hand, wrench, crowbar, wrench, hand, screwdriver'}
+  - {tweak: 'changes the (unused) ipc revival surgery to reflect the above. The new
+      tool order is as follows: screwdriver, hand, multitool, inducer, hand, screwdriver'}
+  - {tweak: 'changes mechanical brain surgery to reflect the above. The new tool order
+      is as follows: screwdriver, hand, multitool, hemostat, hand, screwdriver'}
+  - {tweak: 'changes prosthesis organ manipulation to reflect the above. The new tool
+      order is as follows: screwdriver, hand, wrench (if head/chest), multitool, crowbar,
+      wrench (if head/chest), hand, screwdriver'}
+  - {rscadd: 'creates the Detach Prosthesis surgery, a less violent alternative to
+      Amputation. This allows for prosthesis users to remove their own limbs, for
+      the purposes of maintenance or just plain comfort! The tool order is as follows:
+      screwdriver, hand, multitool, wrench, crowbar/wrench/hand (so you can flavor
+      how you remove the limb)'}
+  - {tweak: 'changes the Prosthetic Replacement surgery, renaming it to Limb Grafting
+      surgery. The steps remain the same, but the name needed some retooling, as the
+      procedure is much more surgically involved than its new sibling:'}
+  - {rscadd: 'creates Prosthesis Attachment surgery, a less surgically involved version
+      of the Limb Grafting surgery. This allows for people with prostheses to re-attach
+      the limb they took off with Prosthesis Removal! The tool order is as follows:
+      wrench, multitool, plug in prosthesis, hand, screwdriver'}
+  - {rscdel: removes the chainsaw and synthetic arm blade from being viable prostheses.
+      Left the code intact in case someone wants to do something similar in-future}
+delete-after: true
