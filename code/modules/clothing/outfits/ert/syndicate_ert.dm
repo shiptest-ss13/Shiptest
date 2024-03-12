@@ -9,7 +9,7 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	gloves = /obj/item/clothing/gloves/color/black
 	id = /obj/item/card/id/syndicate_command/crew_id
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	head = /obj/item/clothing/head/helmet/operator
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/military/c20r
@@ -160,7 +160,7 @@
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "syndicate"
 
-	uniform = /obj/item/clothing/under/syndicate/officer
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	mask = null
 	belt = /obj/item/clipboard

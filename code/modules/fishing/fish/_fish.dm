@@ -33,7 +33,7 @@
 	/// What type of reagent this fish needs to be fed.
 	var/food = /datum/reagent/consumable/nutriment
 	/// How often the fish needs to be fed
-	var/feeding_frequency = 20 MINUTES
+	var/feeding_frequency = 30 MINUTES
 	/// Time of last feedeing
 	var/last_feeding
 
@@ -263,12 +263,14 @@
 
 /obj/item/fish/proc/process_health(delta_time)
 	var/health_change_per_second = 0
+
 	if(!proper_environment())
 		health_change_per_second -= 3 //Dying here
-	if(world.time - last_feeding <= feeding_frequency)
-		health_change_per_second += 0.5 //Slowly healing
+	if(world.time - last_feeding >= feeding_frequency)
+		health_change_per_second -= 0.5 //Starving
 	else
-		return
+		health_change_per_second += 0.5 //Slowly healing
+
 	adjust_health(health + health_change_per_second)
 
 /obj/item/fish/proc/adjust_health(amt)
@@ -290,8 +292,6 @@
 	if(!istype(aquarium))
 		return
 	if(length(aquarium.tracked_fish) >= AQUARIUM_MAX_BREEDING_POPULATION) //so aquariums full of fish don't need to do these expensive checks
-		return
-	if(world.time - last_feeding >= feeding_frequency)
 		return
 	var/list/other_fish_of_same_type = list()
 	for(var/obj/item/fish/fish_in_aquarium in aquarium)
