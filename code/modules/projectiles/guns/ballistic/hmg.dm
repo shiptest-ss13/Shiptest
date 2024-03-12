@@ -114,17 +114,23 @@
 	retract_bipod(user=user)
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = 1
 	var/total_recoil = recoil_bonus
 	if(bipod_deployed)
 		total_recoil += deploy_recoil_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_recoil += gunslinger_bonus
+	total_recoil = clamp(total_recoil,0,INFINITY)
 	return total_recoil
 
 /obj/item/gun/ballistic/automatic/hmg/calculate_spread(mob/user, bonus_spread)
+	var/gunslinger_bonus = 4
 	var/total_spread = bonus_spread
 	if(bipod_deployed)
 		total_spread += deploy_spread_bonus
-		total_spread = clamp(total_spread,0,INFINITY)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_spread += gunslinger_bonus
+	total_spread = clamp(total_spread,0,INFINITY)
 	return total_spread
 
 

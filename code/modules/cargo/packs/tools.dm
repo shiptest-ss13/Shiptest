@@ -39,6 +39,13 @@
 					/obj/item/clothing/glasses/meson/engine)
 	crate_name = "engineering gear crate"
 
+/datum/supply_pack/tools/cellcharger
+	name = "Cell Charger Crate"
+	desc = "Contains a cell charger, able to charge all sorts of power cells."
+	cost = 4000
+	contains = list(/obj/machinery/cell_charger)
+
+
 /datum/supply_pack/tools/rped
 	name = "RPED crate"
 	desc = "Tired of deconstructing all of your machines just to replace the power cells? This device has you covered. Actual parts not included."

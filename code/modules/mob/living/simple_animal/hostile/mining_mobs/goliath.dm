@@ -281,6 +281,7 @@
 				cached_tentacle_turfs -= t
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
 	fromtendril = TRUE
 
 //tentacles
