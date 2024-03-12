@@ -72,3 +72,10 @@
 	volume = 85
 	vary = TRUE
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/looping_sound/drill
+	mid_sounds = list('sound/machines/gravgen/gravgen_mid1.ogg'=1, 'sound/machines/gravgen/gravgen_mid2.ogg'=1, 'sound/machines/gravgen/gravgen_mid3.ogg'=1, 'sound/machines/gravgen/gravgen_mid4.ogg'=1)
+	mid_length = 4
+	volume = 50
+	extra_range = 6

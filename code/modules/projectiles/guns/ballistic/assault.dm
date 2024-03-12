@@ -14,6 +14,22 @@
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
 	spread_unwielded = 20
 
+/obj/item/gun/ballistic/automatic/assault/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = 2
+	var/total_recoil = recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_recoil += gunslinger_bonus
+		total_recoil = clamp(total_recoil,0,INFINITY)
+	return total_recoil
+
+/obj/item/gun/ballistic/automatic/assault/calculate_spread(mob/user, bonus_spread)
+	var/gunslinger_bonus = 8
+	var/total_spread = bonus_spread
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_spread += gunslinger_bonus
+		total_spread = clamp(total_spread,0,INFINITY)
+	return total_spread
+
 /obj/item/gun/ballistic/automatic/assault/skm
 	name = "\improper SKM-24"
 	desc = "An obsolete model of assault rifle once used by CLIP. Legendary for its durability and low cost, surplus rifles are commonplace on the Frontier, and the design has been widely copied. Chambered in 7.62x40mm CLIP."
@@ -84,7 +100,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/p16/minutemen
 	name = "\improper CM-16"
-	desc = "The standard-issue rifle of the Colonial Minutemen and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
+	desc = "The standard-issue rifle of CLIP and an extensively modified reproduction of the P-16. Chambered in 5.56mm."
 	icon_state = "cm16"
 	item_state = "cm16"
 
