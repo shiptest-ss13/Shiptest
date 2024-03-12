@@ -118,17 +118,17 @@
 		stored_item = inserted_item
 
 /** Removes the item from the food, after a do_after.
-  *
-  * Arguments
-  * user - person removing the item.
-  */
+ *
+ * Arguments
+ * user - person removing the item.
+*/
 /datum/component/food_storage/proc/begin_remove_item(mob/user)
 	if(do_after(user, 10 SECONDS, target = parent))
 		remove_item(user)
 
 /**
-  * Removes the stored item, putting it in user's hands or on the ground, then updates the reference.
-  */
+ * Removes the stored item, putting it in user's hands or on the ground, then updates the reference.
+*/
 /datum/component/food_storage/proc/remove_item(mob/user)
 	if(user.put_in_hands(stored_item))
 		user.visible_message("<span class='warning'>[user.name] slowly pulls [stored_item.name] out of \the [parent].</span>", \
