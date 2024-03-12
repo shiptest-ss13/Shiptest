@@ -308,23 +308,3 @@
 	if(L.a_intent == INTENT_HARM && L.reagents && !stat)
 		L.reagents.add_reagent(/datum/reagent/consumable/nutriment, 0.4)
 		L.reagents.add_reagent(/datum/reagent/consumable/nutriment/vitamin, 0.4)
-
-/mob/living/simple_animal/pet/cat/breadcat
-	name = "bread cat"
-	desc = "It's a cat... with a bread!"
-	gender = MALE
-	icon_state = "breadcat"
-	icon_living = "breadcat"
-	icon_dead = "breadcat_dead"
-	collar_type = null
-	held_state = "breadcat"
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/organ/ears/cat = 1, /obj/item/organ/tail/cat = 1, /obj/item/organ/tongue/cat = 1, /obj/item/food/breadslice/plain = 1)
-
-/mob/living/simple_animal/pet/cat/halal
-	name = "arabian cat"
-	desc = "It's a cat with Agal on his head."
-	gender = MALE
-	icon_state = "cathalal"
-	icon_living = "cathalal"
-	collar_type = null
-	held_state = "cathalal"

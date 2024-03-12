@@ -65,7 +65,6 @@
 	tastes = list("dough" = 1)
 	foodtype = GRAIN
 
-
 /obj/item/reagent_containers/food/snacks/bun
 	name = "bun"
 	desc = "A base for any self-respecting burger."

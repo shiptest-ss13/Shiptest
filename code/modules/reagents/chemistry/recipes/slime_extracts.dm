@@ -149,7 +149,7 @@
 	..()
 
 /datum/chemical_reaction/slime/slimebork/proc/getbork()
-	return get_random_food()
+	return //get_random_food()
 
 /datum/chemical_reaction/slime/slimebork/drinks
 	required_reagents = list(/datum/reagent/water = 1)

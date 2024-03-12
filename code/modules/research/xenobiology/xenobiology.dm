@@ -155,6 +155,7 @@
 
 /obj/item/slime_extract/silver/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
+		/*
 		if(SLIME_ACTIVATE_MINOR)
 			var/food_type = get_random_food()
 			var/obj/O = new food_type
@@ -163,6 +164,7 @@
 			playsound(user, 'sound/effects/splat.ogg', 50, TRUE)
 			user.visible_message("<span class='warning'>[user] spits out [O]!</span>", "<span class='notice'>You spit out [O]!</span>")
 			return 200
+		*/
 		if(SLIME_ACTIVATE_MAJOR)
 			var/drink_type = get_random_drink()
 			var/obj/O = new drink_type

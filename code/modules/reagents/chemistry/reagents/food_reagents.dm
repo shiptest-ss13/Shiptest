@@ -34,7 +34,7 @@
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "quality_drink", /datum/mood_event/quality_verygood)
 				if (DRINK_FANTASTIC)
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "quality_drink", /datum/mood_event/quality_fantastic)
-				if (FOOD_AMAZING)
+				if (DRINK_AMAZING)
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "quality_food", /datum/mood_event/amazingtaste)
 	return ..()
 
@@ -754,7 +754,7 @@
 	nutriment_factor = 2 * REAGENTS_METABOLISM
 	color = "#792300"
 	taste_description = "indescribable"
-	quality = FOOD_AMAZING
+	quality = DRINK_AMAZING
 	taste_mult = 100
 	can_synth = FALSE
 

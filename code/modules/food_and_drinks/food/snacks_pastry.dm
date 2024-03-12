@@ -43,7 +43,7 @@
 /obj/item/reagent_containers/food/snacks/donut/proc/in_box_sprite()
 	return "[icon_state]_inbox"
 
-/obj/item/reagent_containers/food/snacks/donut/checkLiked(fraction, mob/M)	//Sec officers always love donuts
+/obj/item/reagent_containers/food/snacks/donut/check_liked(fraction, mob/M)	//Sec officers always love donuts
 	if(last_check_time + 50 < world.time)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M

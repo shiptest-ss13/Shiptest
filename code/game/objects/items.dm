@@ -249,9 +249,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	updateEmbedding()
 
-	if(GLOB.rpg_loot_items)
-		AddComponent(/datum/component/fantasy)
-
 	if(sharpness) //give sharp objects butchering functionality, for consistency
 		AddComponent(/datum/component/butchering, 80 * toolspeed)
 
@@ -1080,7 +1077,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
  * * discover_after - if the item will be discovered after being chomped (FALSE will usually mean it was swallowed, TRUE will usually mean it was bitten into and discovered)
  */
 /obj/item/proc/on_accidental_consumption(mob/living/carbon/victim, mob/living/carbon/user, obj/item/source_item, discover_after = TRUE)
-	if(is_sharp() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
+	if(get_sharpness() && force >= 5) //if we've got something sharp with a decent force (ie, not plastic)
 		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, emote), "scream")
 		victim.visible_message("<span class='warning'>[victim] looks like [victim.p_theyve()] just bit something they shouldn't have!</span>", \
 							"<span class='boldwarning'>OH GOD! Was that a crunch? That didn't feel good at all!!</span>")
@@ -1111,7 +1108,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				found_mats++
 
 		//if there's glass in it and the glass is more than 60% of the item, then we can shatter it
-		if(custom_materials[getmaterialref(/datum/material/glass)] >= total_material_amount * 0.60)
+		if(custom_materials[SSmaterials.GetMaterialRef(/datum/material/glass)] >= total_material_amount * 0.60)
 			if(prob(66)) //66% chance to break it
 				/// The glass shard that is spawned into the source item
 				var/obj/item/shard/broken_glass = new /obj/item/shard(loc)

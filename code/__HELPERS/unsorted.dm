@@ -1456,7 +1456,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else if(isatom(target))
 		var/atom/the_atom2 = target
 		REMOVE_TRAIT(the_atom2,trait,source)
-
+/*
 /proc/get_random_food()
 	var/list/blocked = list(/obj/item/reagent_containers/food/snacks/store/bread,
 		/obj/item/reagent_containers/food/snacks/breadslice,
@@ -1482,7 +1482,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
 
 	return pick(subtypesof(/obj/item/reagent_containers/food/snacks) - blocked)
-
+*/
 /proc/get_random_drink()
 	var/list/blocked = list(/obj/item/reagent_containers/food/drinks/soda_cans,
 		/obj/item/reagent_containers/food/drinks/bottle

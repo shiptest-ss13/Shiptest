@@ -133,6 +133,7 @@ Burning extracts:
 	colour = "silver"
 	effect_desc = "Creates a few pieces of slime jelly laced food."
 
+/*
 /obj/item/slimecross/burning/silver/do_effect(mob/user)
 	var/amount = rand(3,6)
 	var/list/turfs = list()
@@ -146,6 +147,7 @@ Burning extracts:
 			O.desc += " It smells strange..."
 	user.visible_message("<span class='danger'>[src] produces a few pieces of food!</span>")
 	..()
+*/
 
 /obj/item/slimecross/burning/bluespace
 	colour = "bluespace"

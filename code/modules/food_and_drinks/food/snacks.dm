@@ -155,7 +155,7 @@ All foods are distributed among various categories. Use common sense.
 				reagents.trans_to(M, bitesize, transfered_by = user, method = INGEST)
 				bitecount++
 				On_Consume(M)
-				checkLiked(fraction, M)
+				check_liked(fraction, M)
 				return TRUE
 
 	return 0

@@ -1284,19 +1284,19 @@
 		return TRUE
 	switch(tool_type)
 		if(TOOL_CROWBAR)
-			. = crowbar_act(user, I)
+			crowbar_act(user, I)
 		if(TOOL_MULTITOOL)
-			. = multitool_act(user, I)
+			multitool_act(user, I)
 		if(TOOL_SCREWDRIVER)
-			. = screwdriver_act(user, I)
+			screwdriver_act(user, I)
 		if(TOOL_WRENCH)
-			. = wrench_act(user, I)
+			wrench_act(user, I)
 		if(TOOL_WIRECUTTER)
-			. = wirecutter_act(user, I)
+			wirecutter_act(user, I)
 		if(TOOL_WELDER)
-			. = welder_act(user, I)
+			welder_act(user, I)
 		if(TOOL_ANALYZER)
-			. = analyzer_act(user, I)
+			analyzer_act(user, I)
 	if(. || signal_result & COMPONENT_BLOCK_TOOL_ATTACK) //Either the proc or the signal handled the tool's events in some way.
 		return TRUE
 
@@ -1343,11 +1343,11 @@
 
 ///Crowbar act
 /atom/proc/crowbar_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_CROWBAR_ACT, user, I)
+	return
 
 ///Multitool act
 /atom/proc/multitool_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_MULTITOOL_ACT, user, I)
+	return
 
 ///Check if the multitool has an item in it's data buffer
 /atom/proc/multitool_check_buffer(user, obj/item/I, silent = FALSE)
@@ -1359,23 +1359,23 @@
 
 ///Screwdriver act
 /atom/proc/screwdriver_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_SCREWDRIVER_ACT, user, I)
+	return
 
 ///Wrench act
 /atom/proc/wrench_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_WRENCH_ACT, user, I)
+	return
 
 ///Wirecutter act
 /atom/proc/wirecutter_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_WIRECUTTER_ACT, user, I)
+	return
 
 ///Welder act
 /atom/proc/welder_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_WELDER_ACT, user, I)
+	return
 
 ///Analyzer act
 /atom/proc/analyzer_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_ANALYSER_ACT, user, I)
+	return
 
 ///Generate a tag for this atom
 /atom/proc/GenerateTag()

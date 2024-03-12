@@ -29,10 +29,14 @@ Behavior that's still missing from this component that original food items had t
 	var/junkiness = 0
 	///Message to send when eating
 	var/list/eatverbs
+	///Callback to be ran before you eat something, so you can check if someone *can* eat it.
+	var/datum/callback/pre_eat
 	///Callback to be ran for when you take a bite of something
 	var/datum/callback/after_eat
 	///Callback to be ran for when you finish eating something
 	var/datum/callback/on_consume
+	///Callback to be ran before composting something, in case you don't want a piece of food to be compostable for some reason.
+	var/datum/callback/on_compost
 	///Last time we checked for food likes
 	var/last_check_time
 	///The initial reagents of this food when it is made
@@ -149,7 +153,7 @@ Behavior that's still missing from this component that original food items had t
 			else
 				examine_list += "[parent] was bitten multiple times!"
 
-/datum/component/edible/proc/UseFromHand(obj/item/source, mob/living/M, mob/living/user)
+/datum/component/edible/proc/use_from_hand(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER
 
 	return TryToEat(M, user)
@@ -391,7 +395,7 @@ Behavior that's still missing from this component that original food items had t
 	return TRUE
 
 ///Check foodtypes to see if we should send a moodlet
-/datum/component/edible/proc/checkLiked(fraction, mob/M)
+/datum/component/edible/proc/check_liked(fraction, mob/M)
 	if(last_check_time + 50 > world.time)
 		return FALSE
 	if(!ishuman(M))

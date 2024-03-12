@@ -181,18 +181,6 @@
 	result = /obj/item/food/cake/vanilla_cake
 	subcategory = CAT_CAKE
 
-/datum/crafting_recipe/food/trumpetcake
-	name = "Spaceman's Cake"
-	reqs = list(
-		/obj/item/food/cake/plain = 1,
-		/obj/item/reagent_containers/food/snacks/grown/flower/trumpet = 2,
-		/datum/reagent/consumable/cream = 5,
-		/datum/reagent/consumable/berryjuice = 5
-	)
-	result = /obj/item/food/cake/trumpet
-	subcategory = CAT_CAKE
-
-
 /datum/crafting_recipe/food/cak
 	name = "Living cat/cake hybrid"
 	reqs = list(
@@ -206,14 +194,3 @@
 	)
 	result = /mob/living/simple_animal/pet/cat/cak
 	subcategory = CAT_CAKE //Cat! Haha, get it? CAT? GET IT? We get it - Love Felines
-
-/datum/crafting_recipe/food/popup_cake
-	name = "Towering pile of cakes"
-	reqs = list(
-			/obj/item/food/cake/plain = 3,
-			/datum/reagent/consumable/sugar = 10,
-			/datum/reagent/consumable/cream = 5,
-			/obj/item/bikehorn/airhorn = 1
-	)
-	result = /obj/structure/popout_cake
-	subcategory = CAT_CAKE

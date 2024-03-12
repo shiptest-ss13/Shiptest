@@ -349,26 +349,6 @@
 	tastes = list("blackberry" = 2, "strawberries" = 2, "vanilla" = 2, "sweetness" = 2,"cake" = 3)
 	foodtypes = GRAIN | DAIRY | FRUIT | SUGAR
 
-/obj/item/food/cake/bscc // blackbarry strawberries chocolate cake
-	name = "blackberry and strawberry chocolate cake"
-	desc = "A chocolate cake, filled with assortment of blackberries and strawberries!"
-	icon_state = "blackbarry_strawberries_cake_coco_cake"
-	food_reagents = list(
-		/datum/reagent/consumable/nutriment = 20,
-		/datum/reagent/consumable/nutriment/vitamin = 5,
-		/datum/reagent/consumable/cocoa = 5
-	)
-	tastes = list("blackberry" = 2, "strawberries" = 2, "chocolate" = 4, "sweetness" = 2,"cake" = 3)
-	foodtypes = GRAIN | DAIRY | FRUIT | SUGAR
-	slice_type = /obj/item/food/cakeslice/bscc
-
-/obj/item/food/cakeslice/bscc
-	name = "blackberry and strawberry chocolate cake slice"
-	desc = "Just a slice of cake  filled with assortment of blackberries and strawberries!"
-	icon_state = "blackbarry_strawberries_cake_coco_slice"
-	tastes = list("blackberry" = 2, "strawberries" = 2, "chocolate" = 4, "sweetness" = 2,"cake" = 3)
-	foodtypes = GRAIN | DAIRY | FRUIT | SUGAR
-
 /obj/item/food/cake/holy_cake
 	name = "angel food cake"
 	desc = "A cake made for angels and chaplains alike! Contains holy water."
@@ -421,7 +401,7 @@
 		/datum/reagent/consumable/nutriment = 20,
 		/datum/reagent/consumable/nutriment/vitamin = 5,
 		/datum/reagent/toxin/acid = 15,
-		/datum/reagent/oil = 15
+		/datum/reagent/fuel/oil = 15
 		)
 	tastes = list("acid" = 3, "metal" = 4, "glass" = 5)
 	foodtypes = GRAIN | GROSS
@@ -435,7 +415,7 @@
 		/datum/reagent/consumable/nutriment = 4,
 		/datum/reagent/consumable/nutriment/vitamin = 1,
 		/datum/reagent/toxin/acid = 3,
-		/datum/reagent/oil = 3
+		/datum/reagent/fuel/oil = 3
 	)
 	tastes = list("acid" = 3, "metal" = 4, "glass" = 5)
 	foodtypes = GRAIN | GROSS

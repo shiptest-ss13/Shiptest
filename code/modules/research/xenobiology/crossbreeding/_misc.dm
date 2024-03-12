@@ -153,7 +153,7 @@ Slimecrossing Items
 	foodtype = null //Don't ask what went into them. You're better off not knowing.
 	list_reagents = list(/datum/reagent/consumable/nutriment/stabilized = 10, /datum/reagent/consumable/nutriment = 2) //Won't make you fat. Will make you question your sanity.
 
-/obj/item/reagent_containers/food/snacks/rationpack/checkLiked(fraction, mob/M)	//Nobody likes rationpacks. Nobody.
+/obj/item/reagent_containers/food/snacks/rationpack/check_liked(fraction, mob/M)	//Nobody likes rationpacks. Nobody.
 	if(last_check_time + 50 < world.time)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M

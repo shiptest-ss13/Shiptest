@@ -268,7 +268,7 @@
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "baguette"
 	item_state = null
-	worn_icon_state = "baguette"
+	mob_overlay_icon = "baguette"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
 		/datum/reagent/consumable/nutriment/vitamin = 3
@@ -333,7 +333,7 @@
 	plane = initial(plane)
 	lefthand_file = fried.lefthand_file
 	righthand_file = fried.righthand_file
-	worn_icon_state = fried.worn_icon_state
+	mob_overlay_icon = fried.mob_overlay_icon
 	desc = fried.desc
 	w_class = fried.w_class
 	slowdown = fried.slowdown
