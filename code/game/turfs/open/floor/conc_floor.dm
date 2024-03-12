@@ -193,8 +193,7 @@
 	return // can't be easily replaced
 
 /turf/open/floor/concrete/crowbar_act(mob/living/user, obj/item/I)
-	return SEND_SIGNAL(src, COMSIG_ATOM_CROWBAR_ACT, user, I) // can't be pried up
-
+	return
 
 /turf/open/floor/concrete/slab_1
 	icon_state = "conc_slab_1"

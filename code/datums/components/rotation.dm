@@ -55,7 +55,7 @@
 		RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(HandRot))
 		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(ExamineMessage))
 	if(rotation_flags & ROTATION_WRENCH)
-		RegisterSignal(parent, COMSIG_ATOM_WRENCH_ACT, PROC_REF(WrenchRot))
+		RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(WrenchRot))
 
 /datum/component/simple_rotation/proc/add_verbs()
 	if(rotation_flags & ROTATION_VERBS)

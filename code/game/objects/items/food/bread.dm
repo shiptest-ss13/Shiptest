@@ -37,7 +37,7 @@
 
 /obj/item/food/bread/plain
 	name = "bread"
-	desc = "Some plain old earthen bread."
+	desc = "Some plain old bread."
 	icon_state = "bread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 10

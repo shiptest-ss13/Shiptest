@@ -159,17 +159,22 @@
 	crate_type = /obj/structure/closet/crate/freezer
 	items = 10
 
-/datum/supply_pack/food/ingredients_randomized/bread
+/datum/supply_pack/food/ingredients_randomized/bread //bread :thumbsup:
 	name = "Bread Crate"
 	desc = "A crate full of various breads. Bready to either be eaten or made into delicious meals."
 	cost = 1000
-	contains = list(/obj/item/reagent_containers/food/snacks/store/bread/plain,
-					/obj/item/food/breadslice/plain,
-					/obj/item/food/breadslice/plain,
-					/obj/item/food/breadslice/plain, //Weighted to be more common
+	contains = list(/obj/item/food/bread/plain,
+					/obj/item/food/bread/plain,
+					/obj/item/food/bread/plain,
+					/obj/item/reagent_containers/food/snacks/bun,
+					/obj/item/reagent_containers/food/snacks/bun,
 					/obj/item/reagent_containers/food/snacks/bun,
 					/obj/item/reagent_containers/food/snacks/tortilla,
-					/obj/item/reagent_containers/food/snacks/pizzabread
+					/obj/item/reagent_containers/food/snacks/tortilla,
+					/obj/item/reagent_containers/food/snacks/tortilla,
+					/obj/item/reagent_containers/food/snacks/pizzabread,
+					/obj/item/reagent_containers/food/snacks/pizzabread,
+					/obj/item/reagent_containers/food/snacks/pizzabread,
 	)
 	crate_name = "food crate"
 	crate_type = /obj/structure/closet/crate/freezer
