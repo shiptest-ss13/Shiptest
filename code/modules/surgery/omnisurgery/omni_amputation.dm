@@ -32,4 +32,5 @@
 		target_limb.drop_limb()
 	if(user.mind)
 		user.mind.adjust_experience(/datum/skill/healing, experience_given)
+	surgery.complete()
 	return ..()

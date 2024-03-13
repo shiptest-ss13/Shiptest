@@ -13,7 +13,7 @@
 
 /datum/surgery_step/omni/skindown/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
 	var/mob/living/carbon/C = target
-	if(!C.get_bodypart(user.zone_selected) && !(user.zone_selected in PRECISE_BODY_ZONES)) //You can't do surgery on air; sorry
+	if(!C.get_bodypart(user.zone_selected) && !(user.zone_selected in PRECISE_BODY_ZONES)) //Can't remove skin of non-existent limb
 		return FALSE
 	return TRUE
 
@@ -64,7 +64,6 @@
 	return ..()
 
 // [Going Up Layers] (All cautery for now for the sake of simplicity, otherwise there'll be lots of radial menus)
-
 /datum/surgery_step/omni/membraneup
 	name = "Seal Membrane"
 	implements = list(
@@ -138,3 +137,5 @@
 		H.bleed_rate = 0 //Setting this to 0 until Clamp Bleeders gets figured out
 	surgery.complete()
 	return ..()
+
+// [Lost-Limb Surgeries] Surgeries that can be done on areas with missing limbs..

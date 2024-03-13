@@ -1,16 +1,21 @@
 /datum/surgery_step/omni
 	var/list/required_layer = list(0,1,2) //What layers can this step be preformed at?
 	var/list/valid_locations = list(BODY_ZONE_CHEST,BODY_ZONE_HEAD,BODY_ZONE_L_ARM,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_R_LEG,BODY_ZONE_PRECISE_EYES,BODY_ZONE_PRECISE_GROIN,BODY_ZONE_PRECISE_MOUTH) //List of all places this step can be preformed
-	var/show = FALSE //if false, isn't considered a 'valid' step, and cant be preformed. Used for 'base' step
+	var/requires_bodypart = TRUE //Swap to false if surgery needs to be done on a bodypart that doesn't exist (eg. An amputated limb)
+	var/show = TRUE //if false, isn't considered a 'valid' step, and cant be preformed. Used for 'base' step
 	var/radial_icon = null // If not null, is the image for the radial
+	var/lying_required = TRUE //Does the vicitm needs to be lying down.
 
 	//For any additional logic needing done before we say this step is 'valid' Why not try_op? Couple reasons.
 	// One: We already are testing half of try_op before calling test_op
 	// Two: We only want if the surgery is a valid step that can be taken, we don't necissarily want to initiate it.
+
+//The main test function that can be inserted into any surgery and functions with the "show" variable. See var/show for more details on how that works.
 /datum/surgery_step/omni/proc/test_op(mob/user,mob/living/target,datum/surgery/omni/surgery)
 	return TRUE
 
-/datum/surgery_step/omni/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, try_to_fail = FALSE)
+//Attempts operation and initiates it if success = TRUE. [Do Not Use. Unless you know what you're doing]
+/datum/surgery_step/omni/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/omni/surgery, datum/surgery_step/omni/surgery_step, try_to_fail = FALSE)
 	var/success = FALSE
 	if(accept_hand)
 		if(!tool)
@@ -38,12 +43,16 @@
 	if(success)
 		if(target_zone == surgery.location)
 			if(get_location_accessible(target, target_zone) || surgery.ignore_clothes)
-				initiate(user, target, target_zone, tool, surgery, try_to_fail)
+				if(surgery.test_lying(user,target))
+					initiate(user, target, target_zone, tool, surgery, try_to_fail)
+				else
+					to_chat(user,"<span class='warning'>Incompatible surgery step: requires_lying returned FALSE.</span>")
 			else
 				to_chat(user, "<span class='warning'>You need to expose [target]'s [parse_zone(target_zone)] to perform surgery on it!</span>")
-			return TRUE	//returns TRUE so we don't stab the guy in the dick or wherever.
+		return TRUE	//returns TRUE so we don't stab the guy in the dick or wherever.
 	return FALSE
 
+// Initiator of surgery steps. [Do Not Use. Unless you know what you're doing.]
 /datum/surgery_step/omni/initiate(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	surgery.step_in_progress = TRUE
 	var/speed_mod = 1
