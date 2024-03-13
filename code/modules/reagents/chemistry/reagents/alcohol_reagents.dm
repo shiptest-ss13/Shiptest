@@ -1006,7 +1006,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "a poor excuse for alcohol"
 	glass_icon_state = "grogglass"
 	glass_name = "Grog"
-	glass_desc = "Watered-down rum, to really stretch out your alcohol rations. A Belter classic.
+	glass_desc = "Watered-down rum, to really stretch out your alcohol rations. A Belter classic."
 
 
 /datum/reagent/consumable/ethanol/aloe
