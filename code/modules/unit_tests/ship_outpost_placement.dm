@@ -33,6 +33,8 @@
 			if(cur_ship.docked_to)
 				cur_ship.Undock(TRUE)
 
+			log_world("Tested [cur_ship.source_template.name] docking with [test_outpost.type]")
+
 	var/list/errors = atmosscan(TRUE)
 	errors += powerdebug(TRUE)
 

@@ -109,7 +109,7 @@ All ShuttleMove procs go here
 		CRASH("A turf queued to clean up after a shuttle dock somehow didn't have enough skipovers in baseturfs. [oldT]([oldT.type]):[oldT.loc]")
 
 	if(BT_index != length(baseturfs))
-		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP|CHANGETURF_DEFER_CHANGE)
+		oldT.ScrapeAway(baseturfs.len - BT_index, CHANGETURF_FORCEOP)
 
 	return TRUE
 
