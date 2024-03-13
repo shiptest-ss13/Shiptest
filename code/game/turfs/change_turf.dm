@@ -186,7 +186,8 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 			QDEL_NULL(turf_fire)
 		if(ispath(path, /turf/open))
 			. = ..()
-			Initalize_Atmos(0)
+			if(!istype(air, /datum/gas_mixture))
+				Initalize_Atmos(0)
 		else
 			update_air_ref(AIR_REF_CLOSED_TURF)
 			. = ..()
