@@ -294,14 +294,14 @@
 		else if(get_dist(src, M) != 0)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			var/shovetarget = get_edge_target_turf(M, get_dir(M, get_step_away(src, M)))
-			Knockdown(0.1 SECONDS)
+			Knockdown(0.5 SECONDS)
 			throw_at(shovetarget, 4, 2, M, force = MOVE_FORCE_OVERPOWERING)
 			log_combat(M, src, "shoved")
 			visible_message("<span class='danger'>[M] tackles [src] down!</span>", \
 							"<span class='userdanger'>[M] shoves you with great force!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", null, M)
 			to_chat(M, "<span class='danger'>You shove [src] with great force!</span>")
 		else
-			Paralyze(0.5 SECONDS)
+			Paralyze(1 SECONDS)
 			adjustBruteLoss(5)
 			playsound(loc, 'sound/weapons/punch3.ogg', 25, TRUE, -1)
 			visible_message("<span class='danger'>[M] slams [src] into the floor!</span>", \
