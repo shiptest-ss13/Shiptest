@@ -369,7 +369,7 @@
 /obj/item/seeds/watermelon,
 /obj/structure/closet/wall/white{
 	color = "#50C878";
-	name = "Seeds Locker";
+	name = "Seeds Storage";
 	pixel_y = -30;
 	dir = 1
 	},
@@ -429,15 +429,11 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/obj/structure/closet/wall/orange{
-	name = "fuel locker";
-	pixel_y = 28
-	},
-/obj/item/stack/sheet/mineral/plasma{
-	amount = 15
-	},
 /obj/structure/cable/orange{
 	icon_state = "0-6"
+	},
+/obj/structure/sign/warning/electricshock{
+	pixel_y = 32
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -497,6 +493,8 @@
 	color = "#D5A66E"
 	},
 /obj/structure/closet/crate/bin,
+/obj/item/trash/popcorn,
+/obj/item/trash/can,
 /turf/open/floor/wood/birch,
 /area/ship/crew/dorm)
 "ga" = (
@@ -1250,7 +1248,12 @@
 	pixel_x = 12
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_x = 30
+	pixel_x = 25
+	},
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_x = 32;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -1904,6 +1907,12 @@
 /area/ship/crew/canteen)
 "yL" = (
 /obj/structure/closet/crate/bin,
+/obj/item/reagent_containers/food/snacks/badrecipe,
+/obj/item/trash/can/food/peaches,
+/obj/structure/sign/directions/evac{
+	dir = 4;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "yQ" = (
@@ -2108,6 +2117,10 @@
 /area/ship/maintenance/aft)
 "BO" = (
 /obj/structure/curtain/cloth/fancy,
+/obj/structure/sign/directions/evac{
+	dir = 1;
+	pixel_x = 32
+	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/crew/canteen)
 "BR" = (
@@ -2256,6 +2269,12 @@
 	},
 /obj/structure/cable/green{
 	icon_state = "0-6"
+	},
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 15
+	},
+/obj/structure/closet/crate/engineering/electrical{
+	name = "fuel crate"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -2754,6 +2773,7 @@
 /obj/structure/sign/painting/library{
 	pixel_y = 28
 	},
+/obj/item/trash/candle,
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "KG" = (
@@ -3258,7 +3278,9 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
-/obj/structure/closet/crate/wooden,
+/obj/structure/closet/crate/wooden{
+	anchored = 1
+	},
 /obj/machinery/light_switch{
 	dir = 8;
 	pixel_x = 24;
