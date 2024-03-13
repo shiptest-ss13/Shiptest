@@ -243,13 +243,25 @@
 	if(blood_volume < BLOOD_VOLUME_SAFE || skin_tone == "albino")
 		msg += "[t_He] [t_has] pale skin.\n"
 
-	if(bleedsuppress)
+
+	var/list/obj/item/bodypart/bleed_check = get_bleeding_parts()
+	if(LAZYLEN(bleed_check))
+		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
+			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
+		else
+			var/bleed_msg = "[t_He] [t_is] bandaged with something.\n"
+			for(var/obj/item/bodypart/BP in bleed_check)
+				if(!BP.dressing)
+					bleed_msg = "<B>[t_He] [t_is] bleeding!</B>\n"
+					break
+			msg += bleed_msg
+	/*if(bleedsuppress)
 		msg += "[t_He] [t_is] bandaged with something.\n"
 	else if(bleed_rate || LAZYLEN(get_bleeding_parts()))
 		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
 		else
-			msg += "<B>[t_He] [t_is] bleeding!</B>\n"
+			msg += "<B>[t_He] [t_is] bleeding!</B>\n"*/
 
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
 		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
@@ -403,6 +415,9 @@
 	. = ..()
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		var/bleed_text
+		if(BP.dressing)
+			. += span_notice("Their [BP] is dressed with [BP.dressing.name]")
+			continue
 		if(!BP.bleeding)
 			continue
 		switch(BP.bleeding)

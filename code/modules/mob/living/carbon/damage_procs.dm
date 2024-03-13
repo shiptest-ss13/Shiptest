@@ -270,6 +270,8 @@
 
 /// Gets a list of bleeding bodyparts
 /mob/living/carbon/proc/get_bleeding_parts()
+	var/list/obj/item/bodypart/parts = list()
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.bleeding)
-			. += BP
+			parts += BP
+	return parts

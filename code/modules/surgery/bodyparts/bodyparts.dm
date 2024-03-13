@@ -60,6 +60,8 @@
 	var/bleed_damage_min_blunt = 10
 	/// Current limb bleeding, increased when the limb takes brute damage over certain thresholds, decreased through bandages and cauterization
 	var/bleeding = 0
+	/// Currently applied bandage, used for healing
+	var/obj/item/stack/medical/gauze/dressing = null
 
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
@@ -212,6 +214,9 @@
 	if(stamina_dam > DAMAGE_PRECISION && owner.stam_regen_start_time <= world.time)					//DO NOT update health here, it'll be done in the carbon's life.
 		heal_damage(0, 0, INFINITY, null, FALSE)
 		. |= BODYPART_LIFE_UPDATE_HEALTH
+	if(dressing)
+		heal_damage(dressing.healing_rate, dressing.healing_rate, required_status = BODYTYPE_ORGANIC, updating_health = FALSE)
+
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc

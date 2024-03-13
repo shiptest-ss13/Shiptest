@@ -87,6 +87,8 @@
 		//Bleeding out
 		var/limb_bleed = 0
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
+			if(BP.dressing)
+				continue
 			limb_bleed += BP.bleeding
 
 			//We want an accurate reading of .len
