@@ -51,10 +51,12 @@
 	for(var/direction in GLOB.cardinals_multiz)
 		var/turf/current_turf = get_step_multiz(src, direction)
 		if(!isopenturf(current_turf))
-			atmos_adjacent_turfs -= current_turf
-			LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
-			
 			conductivity_blocked_directions |= direction
+
+			if(current_turf)
+				atmos_adjacent_turfs -= current_turf
+				LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
+
 			continue
 
 		var/other_contains_firelock = 1
