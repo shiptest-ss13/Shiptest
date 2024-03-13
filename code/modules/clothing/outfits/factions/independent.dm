@@ -632,6 +632,8 @@
 	shoes = /obj/item/clothing/shoes/laceup
 
 /datum/outfit/job/independent/bartender/disarmed
+	name = "Independent - Bartender (Disarmed)"
+
 	suit = null
 	alt_suit = null
 	backpack_contents = null
