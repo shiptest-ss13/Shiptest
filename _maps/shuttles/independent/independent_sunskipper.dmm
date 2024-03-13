@@ -3170,16 +3170,6 @@
 "PQ" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/hallway/central)
-"PS" = (
-/obj/structure/window/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "sunskipper_bridge_shutters";
-	name = "Bridge Lockdown";
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/ship/bridge)
 "Qc" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -3602,7 +3592,8 @@
 "Wg" = (
 /obj/structure/filingcabinet{
 	pixel_x = 11;
-	pixel_y = 20
+	pixel_y = 20;
+	density = 0
 	},
 /obj/item/clipboard,
 /obj/item/folder/red,
@@ -4086,7 +4077,7 @@ Iq
 "}
 (11,1,1) = {"
 nQ
-PS
+nQ
 AP
 sW
 nJ
@@ -4110,7 +4101,7 @@ Iq
 (12,1,1) = {"
 Pa
 nQ
-PS
+nQ
 iS
 uc
 Nk
@@ -4378,7 +4369,7 @@ OP
 Rz
 Lb
 mW
-yp
+ru
 ru
 Pa
 Pa
@@ -4446,7 +4437,7 @@ vy
 pp
 Pt
 uP
-yp
+ru
 ru
 Pa
 Pa
@@ -4468,7 +4459,7 @@ hh
 Lb
 ok
 HG
-yp
+ru
 ru
 Pa
 Pa
@@ -4490,8 +4481,8 @@ cI
 LP
 Hu
 FO
-ru
-ru
+yp
+yp
 Pa
 Pa
 Pa
@@ -4511,7 +4502,7 @@ VE
 Bo
 KJ
 bt
-ru
+yp
 yp
 yp
 Pa
