@@ -241,11 +241,6 @@
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take double burn //nothing can burn with so much snowflake code around
 			burn *= 2
 
-
-	// Bleeding is applied here
-	if(brute && ((brute_dam > bleed_threshold && sharpness) || (brute_dam > bleed_threshold_blunt)))
-		bleeding++
-
 	// Is the damage greater than the threshold, and if so, probability of damage + item force
 	if((brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
 		break_bone()
@@ -262,6 +257,10 @@
 
 	brute_dam += brute
 	burn_dam += burn
+
+	// Bleeding is applied here
+	if((sharpness && brute_dam > bleed_threshold && brute > bleed_damage_min) || (brute_dam > bleed_threshold_blunt && brute > bleed_damage_min_blunt))
+		bleeding += brute_dam/max_damage
 
 	//We've dealt the physical damages, if there's room lets apply the stamina damage.
 	if(stamina)

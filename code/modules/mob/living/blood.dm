@@ -85,8 +85,9 @@
 
 		var/temp_bleed = 0
 		//Bleeding out
+		var/limb_bleed = 0
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			temp_bleed += BP.bleeding
+			limb_bleed += BP.bleeding
 
 			//We want an accurate reading of .len
 			listclearnulls(BP.embedded_objects)
@@ -96,8 +97,8 @@
 
 		bleed_rate = max(bleed_rate - 0.5, temp_bleed)//if no wounds, other bleed effects (heparin) naturally decreases
 
-		if(bleed_rate && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
-			bleed(bleed_rate)
+		if((bleed_rate || limb_bleed) && !bleedsuppress && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)))
+			bleed(bleed_rate + limb_bleed)
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
@@ -122,6 +123,8 @@
 
 /mob/living/carbon/human/restore_blood()
 	blood_volume = BLOOD_VOLUME_NORMAL
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		BP.bleeding = 0
 	bleed_rate = 0
 
 /****************************************************

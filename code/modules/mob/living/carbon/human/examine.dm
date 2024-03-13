@@ -245,7 +245,7 @@
 
 	if(bleedsuppress)
 		msg += "[t_He] [t_is] bandaged with something.\n"
-	else if(bleed_rate)
+	else if(bleed_rate || LAZYLEN(get_bleeding_parts()))
 		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
 			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
 		else
@@ -403,14 +403,14 @@
 	. = ..()
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		var/bleed_text
+		if(!BP.bleeding)
+			continue
 		switch(BP.bleeding)
-			if(0)
-				continue
-			if(1-3)
+			if(0 to 1)
 				bleed_text = "lightly."
-			if(4-6)
+			if(1 to 2)
 				bleed_text = "moderately."
-			if(7-10)
+			if(2 to 3)
 				bleed_text = "heavily!"
 			else
 				bleed_text = "significantly!!"

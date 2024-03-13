@@ -11,6 +11,8 @@
  * * blocked - armor value applied
  * * forced - bypass hit percentage
  * * spread_damage - used in overrides
+ * * break_modifier - increases bone breaking chance
+ * * sharpness - used for bleeding
  *
  * Returns TRUE if damage applied
  */

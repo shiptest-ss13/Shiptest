@@ -267,3 +267,9 @@
 	if(update)
 		update_damage_overlays()
 	update_stamina()
+
+/// Gets a list of bleeding bodyparts
+/mob/living/carbon/proc/get_bleeding_parts()
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(BP.bleeding)
+			. += BP
