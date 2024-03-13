@@ -184,4 +184,3 @@
 /mob/living/carbon/alien/examine(mob/user)
 	. = ..()
 	. += "It's a strange creature."
-	
