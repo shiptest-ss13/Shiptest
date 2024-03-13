@@ -1886,9 +1886,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "yB" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 6;
 	color = "#543C30"
@@ -1896,15 +1893,18 @@
 /obj/structure/sign/painting/library{
 	pixel_y = -28
 	},
+/obj/structure/chair/sofa/red/right{
+	dir = 1
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "yH" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 2;
 	color = "#543C30"
+	},
+/obj/structure/chair/sofa/red{
+	dir = 1
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
@@ -2106,12 +2106,12 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "Bz" = (
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 9;
 	color = "#543C30"
+	},
+/obj/structure/chair/sofa/red/left{
+	dir = 4
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
@@ -2386,14 +2386,14 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
 "FY" = (
-/obj/structure/chair/sofa{
-	dir = 4
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#543C30"
 	},
 /obj/machinery/light/dim/directional/west,
+/obj/structure/chair/sofa/red{
+	dir = 4
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "Gd" = (
@@ -3252,14 +3252,14 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Rr" = (
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10;
 	color = "#543C30"
 	},
 /obj/machinery/newscaster/directional/west,
+/obj/structure/chair/sofa/red/corner{
+	dir = 1
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "Ry" = (
