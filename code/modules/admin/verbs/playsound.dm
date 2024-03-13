@@ -45,7 +45,7 @@
 	if(!check_rights(R_SOUND))
 		return
 
-	var/vol = input("Select a volume for the sound", "Volume") as null|anything in list(100, 75, 50, 25, 5)
+	var/vol = input("Select a volume for the sound", "Play Local Sound", 50) as num
 	log_admin("[key_name(src)] played a local sound [S]")
 	message_admins("[key_name_admin(src)] played a local sound [S]")
 	playsound(get_turf(src.mob), S, vol, FALSE, FALSE)
