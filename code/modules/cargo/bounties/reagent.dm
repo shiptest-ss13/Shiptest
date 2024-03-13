@@ -100,9 +100,7 @@
 		/datum/reagent/consumable/ethanol/booger,\
 		/datum/reagent/consumable/ethanol/hippies_delight,\
 		/datum/reagent/consumable/ethanol/drunkenblumpkin,\
-		/datum/reagent/consumable/ethanol/fetching_fizz,\
 		/datum/reagent/consumable/ethanol/goldschlager,\
-		/datum/reagent/consumable/ethanol/narsour,\
 		/datum/reagent/consumable/ethanol/neurotoxin,\
 		/datum/reagent/consumable/ethanol/patron,\
 		/datum/reagent/consumable/ethanol/quadruple_sec,\

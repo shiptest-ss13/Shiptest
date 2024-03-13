@@ -1215,25 +1215,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "Sharper tasting, alcoholic apple cider."
 	shot_glass_icon_state = "shotglassbrown"
 
-
-/datum/reagent/consumable/ethanol/fetching_fizz //A reference to one of my favorite games of all time. Pulls nearby ores to the imbiber!
-	name = "Fetching Fizz"
-	description = "Whiskey sour/iron/uranium mixture resulting in a highly magnetic slurry. Mild alcohol content." //Requires no alcohol to make but has alcohol anyway because ~magic~
-	color = rgb(255, 91, 15)
-	boozepwr = 10
-	quality = DRINK_VERYGOOD
-	metabolization_rate = 0.1 * REAGENTS_METABOLISM
-	taste_description = "charged metal" // the same as teslium, honk honk.
-	glass_icon_state = "fetching_fizz"
-	glass_name = "Fetching Fizz"
-	glass_desc = "Induces magnetism in the imbiber. Started as a barroom prank, but evolved to become popular with miners and scrappers. Metallic aftertaste."
-
-
-/datum/reagent/consumable/ethanol/fetching_fizz/on_mob_life(mob/living/carbon/M)
-	for(var/obj/item/stack/ore/O in orange(3, M))
-		step_towards(O, get_turf(M))
-	return ..()
-
 //Another reference. Heals those in critical condition extremely quickly.
 /datum/reagent/consumable/ethanol/hearty_punch
 	name = "Hearty Punch"

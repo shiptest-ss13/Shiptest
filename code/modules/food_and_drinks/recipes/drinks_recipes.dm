@@ -382,11 +382,6 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/whiskey = 1, /datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/sugar = 1)
 	mix_message = "The mixture darkens to a rich gold hue."
 
-/datum/chemical_reaction/fetching_fizz
-	results = list(/datum/reagent/consumable/ethanol/fetching_fizz = 3)
-	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/iron = 1) //Manufacturable from only the mining station
-	mix_message = "The mixture slightly vibrates before settling."
-
 /datum/chemical_reaction/hearty_punch
 	results = list(/datum/reagent/consumable/ethanol/hearty_punch = 1)  //Very little, for balance reasons
 	required_reagents = list(/datum/reagent/consumable/ethanol/brave_bull = 5, /datum/reagent/consumable/ethanol/syndicatebomb = 5, /datum/reagent/consumable/ethanol/absinthe = 5)
@@ -429,12 +424,6 @@
 /datum/chemical_reaction/eggnog
 	results = list(/datum/reagent/consumable/ethanol/eggnog = 15)
 	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 5, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/eggyolk = 5)
-
-/datum/chemical_reaction/narsour
-	results = list(/datum/reagent/consumable/ethanol/narsour = 1)
-	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/ethanol/demonsblood = 1)
-	mix_message = "The mixture develops a sinister glow."
-	mix_sound = 'sound/effects/singlebeat.ogg'
 
 /datum/chemical_reaction/quadruplesec
 	results = list(/datum/reagent/consumable/ethanol/quadruple_sec = 15)
@@ -527,7 +516,7 @@
 
 /datum/chemical_reaction/blank_paper
 	results = list(/datum/reagent/consumable/ethanol/blank_paper = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/silencer = 1, /datum/reagent/consumable/nothing = 1, /datum/reagent/consumable/nuka_cola = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/silencer = 1, /datum/reagent/consumable/nothing = 1)
 
 /datum/chemical_reaction/wizz_fizz
 	results = list(/datum/reagent/consumable/ethanol/wizz_fizz = 3)
@@ -618,21 +607,10 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/black_russian = 2, /datum/reagent/consumable/ethanol/creme_de_cacao = 2, /datum/reagent/consumable/ethanol/irishcarbomb = 1)
 	mix_message = "The area around the glass seems to darken as the mixture forms!"
 
-/datum/chemical_reaction/archmagus_brew
-	results = list(/datum/reagent/consumable/ethanol/archmagus_brew = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol/wizz_fizz = 2, /datum/reagent/consumable/ethanol/crevice_spike = 1, /datum/reagent/consumable/ethanol/stinger = 1)
-	mix_message = "The mixture bubbles intensely before settling in the glass."
-
 /datum/chemical_reaction/out_of_lime
 	results = list(/datum/reagent/consumable/ethanol/out_of_lime = 4)
 	required_reagents = list(/datum/reagent/consumable/lemonade = 1, /datum/reagent/consumable/ethanol/beer/green = 1, /datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/ethanol/out_of_touch = 1)
 	mix_message = "The glass cycles through different colors before settling on one."
-
-/datum/chemical_reaction/cogchamp
-	results = list(/datum/reagent/consumable/ethanol/cogchamp = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol/screwdrivercocktail = 1)
-	mix_message = "You hear faint sounds of gears turning as it mixes."
-	mix_sound = 'sound/effects/clockcult_gateway_closing.ogg'
 
 /datum/chemical_reaction/ash_wine
 	results = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 5)
