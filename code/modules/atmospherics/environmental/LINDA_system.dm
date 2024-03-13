@@ -46,12 +46,14 @@
 	if(locate(/obj/machinery/door/firedoor) in src)
 		src_contains_firelock |= 2
 
-	LAZYINITLIST(src.atmos_adjacent_turfs)
-	var/list/atmos_adjacent_turfs = src.atmos_adjacent_turfs
+	var/list/atmos_adjacent_turfs = list()
 
 	for(var/direction in GLOB.cardinals_multiz)
 		var/turf/current_turf = get_step_multiz(src, direction)
 		if(!isopenturf(current_turf))
+			atmos_adjacent_turfs -= current_turf
+			LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
+			
 			conductivity_blocked_directions |= direction
 			continue
 
