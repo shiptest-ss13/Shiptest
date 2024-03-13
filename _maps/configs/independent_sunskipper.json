@@ -1,0 +1,39 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Sunskipper-class Culinary Vessel",
+	"prefix": "ISV",
+	"namelists": ["CRUISE", "NATURAL"],
+	"map_short_name": "Sunskipper-class",
+	"map_path": "_maps/shuttles/independent/independent_sunskipper.dmm",
+	"description": "The Sunskipper-class is a widespread mobile restaurant. Welcomed with open arms by weary travelers, fatigued by the monotony of their chores. It features a kitchen, hydroponics, and a large dining area with a fully stacked bar to accommodate any potential needs.",
+	"tags": [
+		"RP Focus",
+		"Service"
+	],
+	"starting_funds": 4000,
+	"limit": 1,
+	"job_slots": {
+		"Manager": {
+			"outfit": "/datum/outfit/job/independent/captain/manager",
+			"slots": 1,
+			"officer": true
+		},
+		"Bartender": {
+			"outfit": "/datum/outfit/job/independent/bartender/disarmed",
+			"slots": 1
+		},
+		"Cook": {
+			"outfit": "/datum/outfit/job/independent/cook",
+			"slots": 2
+		},
+		"Botanist": {
+			"outfit": "/datum/outfit/job/independent/botanist",
+			"slots": 1
+		},
+		"Waiter": {
+			"outfit": "/datum/outfit/job/independent/assistant/waiter",
+			"slots": 2
+		}
+	},
+	"enabled": true
+}

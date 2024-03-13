@@ -19,8 +19,15 @@
 
 /datum/outfit/job/independent/assistant/waiter
 	name = "Independent - Assistant (Waiter)"
+	jobtype = /datum/job/cook //inherited access
+
 	uniform = /obj/item/clothing/under/suit/waiter
+	alt_uniform = /obj/item/clothing/under/suit/waiter/syndicate
+	gloves = /obj/item/clothing/gloves/color/evening
+	ears = /obj/item/radio/headset/headset_srv
 	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket = /obj/item/lighter
+	r_pocket = /obj/item/reagent_containers/glass/rag
 
 /datum/outfit/job/independent/assistant/fancy
 	name = "Independent - Assistant (Formal Uniform)"
@@ -131,6 +138,18 @@
 	shoes = /obj/item/clothing/shoes/combat
 	l_pocket = /obj/item/kitchen/knife/combat
 	implants = list(/obj/item/implant/radio)
+	accessory = null
+
+/datum/outfit/job/independent/captain/manager
+	name = "Independent - Captain (Manager)"
+
+	id = /obj/item/card/id
+	gloves = /obj/item/clothing/gloves/color/white
+	uniform = /obj/item/clothing/under/suit/black_really
+	alt_uniform = /obj/item/clothing/under/suit/blacktwopiece
+	dcoat = null
+	glasses = /obj/item/clothing/glasses/sunglasses
+	head = null
 	accessory = null
 
 // Head of Personnel
@@ -582,7 +601,7 @@
 	job_icon = "cook"
 
 	ears = /obj/item/radio/headset/headset_srv
-	uniform = /obj/item/clothing/under/rank/civilian/chef //WS Edit - Alt Uniforms
+	uniform = /obj/item/clothing/under/rank/civilian/chef
 	suit = /obj/item/clothing/suit/toggle/chef
 	alt_suit = /obj/item/clothing/suit/apron/chef
 	head = /obj/item/clothing/head/chefhat
@@ -597,8 +616,6 @@
 	var/chosen_box = pick(possible_boxes)
 	var/obj/item/storage/box/I = new chosen_box(src)
 	H.equip_to_slot_or_del(I,ITEM_SLOT_BACKPACK)
-	var/datum/martial_art/cqc/under_siege/justacook = new
-	justacook.teach(H)
 
 // Bartender
 
@@ -613,6 +630,11 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
+
+/datum/outfit/job/independent/bartender/disarmed
+	suit = null
+	alt_suit = null
+	backpack_contents = null
 
 /datum/outfit/job/independent/bartender/pharma
 	name = "Independent - Bartender (Mixologist)"
