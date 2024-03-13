@@ -1833,21 +1833,24 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "yn" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 6;
-	color = "#543C30"
-	},
-/obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/extinguisher_cabinet/directional/east,
-/obj/effect/turf_decal/industrial/warning/corner{
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2{
 	dir = 4
 	},
-/obj/structure/sign/painting/library{
-	pixel_y = -28
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
 	},
+/obj/structure/sign/warning/vacuum/external{
+	pixel_y = 39
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "yp" = (
@@ -2634,11 +2637,7 @@
 /area/ship/crew/canteen/kitchen)
 "IV" = (
 /obj/machinery/door/airlock/external{
-	dir = 4;
-	name = "External Airlock"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
@@ -2777,18 +2776,15 @@
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "KG" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/layer4{
-	dir = 1
-	},
 /obj/machinery/light/directional/south,
+/obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 10;
 	color = "#543C30"
 	},
-/obj/item/radio/intercom/directional/west,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "KJ" = (
@@ -2925,25 +2921,21 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "MM" = (
-/obj/machinery/advanced_airlock_controller{
-	pixel_y = 25
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 10
+/obj/structure/sign/painting/library{
+	pixel_y = -28
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
+	dir = 6;
 	color = "#543C30"
 	},
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
-	dir = 8
+/obj/effect/turf_decal/industrial/warning/corner{
+	dir = 4
 	},
-/obj/structure/sign/warning/vacuum/external{
-	pixel_y = 39
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/advanced_airlock_controller{
+	pixel_x = 28
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
@@ -3086,8 +3078,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "Pa" = (
-/turf/open/space/basic,
-/area/space)
+/turf/template_noop,
+/area/template_noop)
 "Pe" = (
 /obj/item/radio/intercom/directional/south,
 /obj/structure/table/reinforced,
@@ -3175,6 +3167,9 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"PQ" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ship/hallway/central)
 "PS" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -3366,9 +3361,8 @@
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "SY" = (
-/obj/machinery/door/airlock/external/glass{
-	dir = 4;
-	name = "Internal Airlock"
+/obj/machinery/door/airlock/external{
+	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3377,15 +3371,12 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
-	},
-/obj/effect/turf_decal/siding/wood{
 	dir = 2;
 	color = "#543C30"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#543C30"
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
@@ -3405,8 +3396,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "TM" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/layer2{
-	dir = 8
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
 	},
 /obj/structure/closet/emcloset/wall{
 	pixel_y = 30
@@ -3735,14 +3726,13 @@
 /area/ship/crew/toilet)
 "Yl" = (
 /obj/docking_port/stationary{
-	dir = 4;
+	dwidth = 7;
 	width = 30;
 	height = 15;
-	dwidth = 30;
-	dheight = 15
+	dir = 4
 	},
-/turf/open/space/basic,
-/area/space)
+/turf/template_noop,
+/area/template_noop)
 "YF" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 4;
@@ -3870,32 +3860,6 @@ Pa
 Pa
 Pa
 Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-"}
-(2,1,1) = {"
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
 Ph
 hi
 hi
@@ -3912,10 +3876,8 @@ Pa
 Pa
 Pa
 Pa
-Pa
 "}
-(3,1,1) = {"
-Pa
+(2,1,1) = {"
 Pa
 Pa
 bK
@@ -3937,10 +3899,8 @@ Pa
 Pa
 Pa
 Pa
-Pa
 "}
-(4,1,1) = {"
-Pa
+(3,1,1) = {"
 Pa
 Pa
 Cu
@@ -3962,10 +3922,8 @@ Pa
 Pa
 Pa
 Pa
-Pa
 "}
-(5,1,1) = {"
-Pa
+(4,1,1) = {"
 Pa
 Pa
 Cu
@@ -3987,10 +3945,8 @@ ZO
 cf
 Pa
 Pa
-Pa
 "}
-(6,1,1) = {"
-Pa
+(5,1,1) = {"
 Pa
 bK
 Cu
@@ -4012,10 +3968,8 @@ Kh
 Jf
 cf
 Pa
-Pa
 "}
-(7,1,1) = {"
-Pa
+(6,1,1) = {"
 Pa
 Cu
 Nk
@@ -4037,10 +3991,8 @@ GR
 Ry
 ZO
 Pa
-Pa
 "}
-(8,1,1) = {"
-Pa
+(7,1,1) = {"
 bK
 Cu
 zc
@@ -4062,10 +4014,8 @@ tJ
 Jf
 ZO
 BR
-Pa
 "}
-(9,1,1) = {"
-Pa
+(8,1,1) = {"
 Cu
 bz
 Zr
@@ -4087,10 +4037,8 @@ mX
 op
 fg
 Iq
-Pa
 "}
-(10,1,1) = {"
-Pa
+(9,1,1) = {"
 nQ
 ZY
 Ez
@@ -4112,10 +4060,8 @@ on
 DK
 lu
 Iq
-Pa
 "}
-(11,1,1) = {"
-Pa
+(10,1,1) = {"
 nQ
 Tr
 mr
@@ -4137,10 +4083,8 @@ ne
 wf
 fP
 Iq
-Pa
 "}
-(12,1,1) = {"
-Pa
+(11,1,1) = {"
 nQ
 PS
 AP
@@ -4162,10 +4106,8 @@ uQ
 Lx
 CM
 Iq
-Pa
 "}
-(13,1,1) = {"
-Pa
+(12,1,1) = {"
 Pa
 nQ
 PS
@@ -4187,10 +4129,8 @@ uQ
 rf
 HP
 Iq
-Pa
 "}
-(14,1,1) = {"
-Pa
+(13,1,1) = {"
 Pa
 vh
 nQ
@@ -4212,10 +4152,8 @@ uQ
 uQ
 WA
 BR
-Pa
 "}
-(15,1,1) = {"
-Pa
+(14,1,1) = {"
 Pa
 Gz
 cY
@@ -4237,10 +4175,8 @@ rl
 ya
 SV
 Pa
-Pa
 "}
-(16,1,1) = {"
-Pa
+(15,1,1) = {"
 Pa
 ux
 ux
@@ -4262,10 +4198,8 @@ Pk
 Pk
 SV
 Pa
-Pa
 "}
-(17,1,1) = {"
-Pa
+(16,1,1) = {"
 Pa
 ux
 ux
@@ -4287,10 +4221,8 @@ VM
 SV
 sN
 Pa
-Pa
 "}
-(18,1,1) = {"
-Pa
+(17,1,1) = {"
 Pa
 qj
 ux
@@ -4312,10 +4244,8 @@ uz
 SV
 Pa
 Pa
-Pa
 "}
-(19,1,1) = {"
-Pa
+(18,1,1) = {"
 Pa
 Pa
 ux
@@ -4337,10 +4267,8 @@ Pk
 SV
 Pa
 Pa
-Pa
 "}
-(20,1,1) = {"
-Pa
+(19,1,1) = {"
 Pa
 Pa
 ux
@@ -4362,10 +4290,8 @@ CQ
 ru
 Pa
 Pa
-Pa
 "}
-(21,1,1) = {"
-Pa
+(20,1,1) = {"
 Pa
 Pa
 ux
@@ -4387,10 +4313,8 @@ gU
 ru
 Pa
 Pa
-Pa
 "}
-(22,1,1) = {"
-Pa
+(21,1,1) = {"
 Pa
 Pa
 ux
@@ -4412,10 +4336,8 @@ Ve
 ru
 Pa
 Pa
-Pa
 "}
-(23,1,1) = {"
-Pa
+(22,1,1) = {"
 Pa
 Pa
 qj
@@ -4437,10 +4359,8 @@ FO
 ru
 Pa
 Pa
-Pa
 "}
-(24,1,1) = {"
-Pa
+(23,1,1) = {"
 Pa
 Pa
 ET
@@ -4462,10 +4382,8 @@ yp
 ru
 Pa
 Pa
-Pa
 "}
-(25,1,1) = {"
-Pa
+(24,1,1) = {"
 Pa
 Pa
 eR
@@ -4487,10 +4405,8 @@ ru
 Pa
 Pa
 Pa
-Pa
 "}
-(26,1,1) = {"
-Pa
+(25,1,1) = {"
 Pa
 Pa
 aQ
@@ -4512,10 +4428,8 @@ ru
 Pa
 Pa
 Pa
-Pa
 "}
-(27,1,1) = {"
-Pa
+(26,1,1) = {"
 Pa
 Pa
 Pa
@@ -4537,10 +4451,8 @@ ru
 Pa
 Pa
 Pa
-Pa
 "}
-(28,1,1) = {"
-Pa
+(27,1,1) = {"
 Pa
 Pa
 Pa
@@ -4562,10 +4474,8 @@ Pa
 Pa
 Pa
 Pa
-Pa
 "}
-(29,1,1) = {"
-Pa
+(28,1,1) = {"
 Pa
 Pa
 Pa
@@ -4587,16 +4497,14 @@ Pa
 Pa
 Pa
 Pa
-Pa
 "}
-(30,1,1) = {"
-Pa
+(29,1,1) = {"
 Pa
 Pa
 Pa
 wK
 SY
-kX
+PQ
 kX
 bX
 VE
@@ -4612,15 +4520,13 @@ Pa
 Pa
 Pa
 Pa
-Pa
 "}
-(31,1,1) = {"
-Pa
+(30,1,1) = {"
 Pa
 Pa
 Pa
 wK
-MM
+yn
 KG
 kX
 Wg
@@ -4637,20 +4543,40 @@ Pa
 Pa
 Pa
 Pa
+"}
+(31,1,1) = {"
+Pa
+Pa
+Pa
+wK
+TM
+MM
+wK
+ex
+ex
+zS
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
+Pa
 Pa
 "}
 (32,1,1) = {"
 Pa
 Pa
 Pa
+jb
+IV
+PQ
+MO
 Pa
-wK
-TM
-yn
-wK
-ex
-ex
-zS
+Pa
 Pa
 Pa
 Pa
@@ -4669,59 +4595,7 @@ Pa
 Pa
 Pa
 Pa
-jb
-IV
-wK
-MO
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-"}
-(34,1,1) = {"
-Pa
-Pa
-Pa
-Pa
-Pa
 Yl
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-"}
-(35,1,1) = {"
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
-Pa
 Pa
 Pa
 Pa
