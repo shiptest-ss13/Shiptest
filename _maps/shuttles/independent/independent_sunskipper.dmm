@@ -254,6 +254,7 @@
 /obj/structure/sign/poster/contraband/peacemaker{
 	pixel_y = 32
 	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "bM" = (
@@ -1337,7 +1338,6 @@
 /obj/item/clothing/head/helmet/space/eva,
 /obj/item/clothing/suit/space/eva,
 /obj/item/clothing/mask/breath,
-/obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/airalarm/directional/north,
 /obj/structure/cable/green{
 	icon_state = "6-8"
@@ -1695,7 +1695,7 @@
 /area/ship/crew/canteen/kitchen)
 "vI" = (
 /obj/structure/mirror{
-	pixel_y = 32
+	pixel_y = 34
 	},
 /obj/structure/sink{
 	pixel_y = 24
@@ -2284,6 +2284,7 @@
 /obj/structure/closet/crate/engineering/electrical{
 	name = "fuel crate"
 	},
+/obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Eg" = (
@@ -3108,7 +3109,7 @@
 	pixel_y = -10
 	},
 /obj/structure/mirror{
-	pixel_y = 32
+	pixel_y = 34
 	},
 /obj/structure/sink{
 	pixel_y = 24
