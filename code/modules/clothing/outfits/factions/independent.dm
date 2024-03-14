@@ -630,6 +630,7 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
+	accessory = /obj/item/clothing/accessory/waistcoat
 
 /datum/outfit/job/independent/bartender/disarmed
 	name = "Independent - Bartender (Disarmed)"
@@ -648,6 +649,7 @@
 	belt = /obj/item/storage/belt
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	uniform = /obj/item/clothing/under/suit/black
+	accessory = null
 
 // Lawyer
 

@@ -60,6 +60,9 @@
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
+/obj/item/kirbyplants/random{
+	pixel_y = 20
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "aK" = (
@@ -77,6 +80,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/structure/marker_beacon,
 /turf/open/floor/plating/airless,
 /area/ship/external)
 "aV" = (
@@ -206,17 +210,16 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/item/reagent_containers/food/condiment/ketchup{
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/condiment/mayonnaise{
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "bJ" = (
-/obj/machinery/reagentgrinder{
-	pixel_y = 5
-	},
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -226,6 +229,10 @@
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_x = -12;
 	pixel_y = 1
+	},
+/obj/item/paper_bin{
+	pixel_y = 9;
+	pixel_x = 8
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -239,13 +246,13 @@
 /obj/structure/cable/orange{
 	icon_state = "0-10"
 	},
-/obj/structure/sign/poster/random{
-	pixel_y = 32
-	},
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = -20;
 	dir = 1
+	},
+/obj/structure/sign/poster/contraband/peacemaker{
+	pixel_y = 32
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -429,11 +436,11 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/obj/structure/cable/orange{
-	icon_state = "0-6"
-	},
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -526,8 +533,11 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/firealarm/directional/north,
 /obj/structure/table/reinforced,
-/obj/machinery/reagentgrinder{
-	pixel_y = 5
+/obj/item/reagent_containers/food/condiment/soysauce{
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/food/condiment/bbqsauce{
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -1210,9 +1220,8 @@
 "pw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 30;
-	name = "Spare Clothing"
+	name = "Spare Clothing";
+	pixel_y = 30
 	},
 /obj/item/clothing/under/rank/civilian/chef,
 /obj/item/clothing/under/suit/charcoal,
@@ -1244,8 +1253,7 @@
 "pM" = (
 /obj/structure/sink/kitchen{
 	dir = 8;
-	layer = 2.04;
-	pixel_x = 12
+	layer = 2.04
 	},
 /obj/structure/sign/warning/nosmoking/circle{
 	pixel_x = 25
@@ -1428,6 +1436,9 @@
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
+/obj/structure/sign/poster/contraband/starkist{
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "sd" = (
@@ -1557,7 +1568,8 @@
 /obj/structure/table/wood/reinforced,
 /obj/machinery/smartfridge/drinks{
 	pixel_x = -32;
-	density = 0
+	density = 0;
+	color = "#D5A66E"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10;
@@ -1809,7 +1821,7 @@
 /area/ship/crew/canteen)
 "ya" = (
 /obj/structure/toilet{
-	pixel_y = -10;
+	pixel_y = -4;
 	dir = 1
 	},
 /obj/machinery/button/door{
@@ -1826,10 +1838,11 @@
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "yi" = (
-/obj/structure/urinal{
-	pixel_y = 32
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/machinery/light/directional/north,
+/obj/item/kirbyplants/random{
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "yn" = (
@@ -1934,7 +1947,8 @@
 /area/ship/crew/canteen)
 "zc" = (
 /obj/structure/bed/dogbed{
-	name = "Remy's bed"
+	name = "Remy's bed";
+	anchored = 1
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -2065,19 +2079,11 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "Bl" = (
-/obj/structure/closet/wall/white/med{
-	dir = 4;
-	pixel_x = -30;
-	name = "First Aid"
-	},
-/obj/item/storage/firstaid/regular,
-/obj/item/storage/pill_bottle/charcoal/less,
-/obj/item/reagent_containers/hypospray/medipen,
-/obj/item/reagent_containers/hypospray/medipen,
-/obj/item/reagent_containers/hypospray/medipen/salbutamol,
 /obj/structure/urinal{
-	pixel_y = 32
+	dir = 4;
+	pixel_x = -16
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Bo" = (
@@ -2095,7 +2101,7 @@
 	},
 /obj/machinery/door/airlock{
 	name = "Lobby";
-	req_one_access_txt = "28"
+	req_one_access = list(25, 28, 35)
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -2216,8 +2222,7 @@
 "Dg" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
-	layer = 2.04;
-	pixel_x = -12
+	layer = 2.04
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -2471,6 +2476,9 @@
 /obj/structure/cable/green{
 	icon_state = "5-9"
 	},
+/obj/structure/cable/orange{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Gz" = (
@@ -2513,12 +2521,6 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
-	},
-/obj/item/reagent_containers/food/condiment/soysauce{
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/food/condiment/bbqsauce{
-	pixel_x = 6
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
@@ -2708,10 +2710,10 @@
 	},
 /obj/effect/turf_decal/box/red,
 /obj/structure/cable/orange{
-	icon_state = "9-10"
+	icon_state = "0-8"
 	},
 /obj/structure/cable/orange{
-	icon_state = "0-9"
+	icon_state = "8-10"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -2893,7 +2895,7 @@
 /area/ship/crew/dorm)
 "Mh" = (
 /obj/structure/table/reinforced,
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/borg_fancy_1{
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/mono,
@@ -2955,7 +2957,7 @@
 "Nd" = (
 /obj/structure/toilet{
 	dir = 8;
-	pixel_x = 5
+	pixel_x = 8
 	},
 /obj/machinery/button/door{
 	pixel_x = -13;
@@ -2968,7 +2970,7 @@
 	},
 /obj/structure/sink{
 	dir = 1;
-	pixel_y = -7
+	pixel_y = -14
 	},
 /obj/structure/mirror{
 	pixel_y = -28
@@ -3048,6 +3050,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/reagentgrinder{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "OU" = (
@@ -3084,10 +3089,12 @@
 /obj/item/radio/intercom/directional/south,
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/food/condiment/enzyme{
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/condiment/oliveoil{
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
@@ -3130,10 +3137,6 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable/green{
 	icon_state = "0-2"
-	},
-/obj/item/paper_bin{
-	pixel_y = 9;
-	pixel_x = 8
 	},
 /obj/item/lighter{
 	pixel_x = -3;
@@ -3440,7 +3443,7 @@
 /obj/machinery/hydroponics/constructable{
 	layer = 2
 	},
-/obj/structure/sink{
+/obj/structure/sink/kitchen{
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/mono/dark,
@@ -3565,10 +3568,6 @@
 "VG" = (
 /obj/machinery/light/directional/west,
 /obj/structure/table/reinforced,
-/obj/machinery/jukebox/boombox{
-	pixel_x = -7;
-	pixel_y = 7
-	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "VI" = (
@@ -3581,12 +3580,20 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "VM" = (
-/obj/item/kirbyplants/random,
 /obj/structure/cable/green{
 	icon_state = "0-5"
 	},
-/obj/machinery/power/apc/auto_name/directional/south,
-/obj/item/radio/intercom/directional/west,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/closet/wall/white/med{
+	name = "First Aid";
+	pixel_y = -30;
+	dir = 1
+	},
+/obj/item/storage/firstaid/regular,
+/obj/item/reagent_containers/hypospray/medipen/salbutamol,
+/obj/item/reagent_containers/hypospray/medipen,
+/obj/item/reagent_containers/hypospray/medipen,
+/obj/item/storage/pill_bottle/charcoal/less,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Wg" = (
@@ -3662,7 +3669,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
-/obj/structure/sign/poster/random{
+/obj/structure/sign/poster/contraband/ntos{
 	pixel_y = 32
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -3712,7 +3719,10 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "Yc" = (
-/obj/machinery/light/directional/west,
+/obj/structure/urinal{
+	dir = 4;
+	pixel_x = -16
+	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "Yl" = (
@@ -4215,7 +4225,7 @@ Pa
 "}
 (17,1,1) = {"
 Pa
-qj
+Pa
 ux
 fi
 il
