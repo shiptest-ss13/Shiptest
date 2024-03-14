@@ -19,7 +19,6 @@
 
 /datum/outfit/job/independent/assistant/waiter
 	name = "Independent - Assistant (Waiter)"
-	jobtype = /datum/job/cook //inherited access
 
 	uniform = /obj/item/clothing/under/suit/waiter
 	alt_uniform = /obj/item/clothing/under/suit/waiter/syndicate
@@ -28,6 +27,13 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket = /obj/item/lighter
 	r_pocket = /obj/item/reagent_containers/glass/rag
+
+/datum/outfit/job/independent/assistant/waiter/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	var/obj/item/card/id/W = H.wear_id
+	W.access += list(ACCESS_KITCHEN)
 
 /datum/outfit/job/independent/assistant/fancy
 	name = "Independent - Assistant (Formal Uniform)"

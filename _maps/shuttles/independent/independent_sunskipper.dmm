@@ -1386,7 +1386,8 @@
 /obj/machinery/door/airlock/hatch{
 	id_tag = "sunskipper_toilet";
 	name = "Toilet";
-	dir = 1
+	dir = 1;
+	req_ship_access = 0
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -1427,7 +1428,8 @@
 	},
 /obj/machinery/door/airlock/wood/glass{
 	id_tag = "sunskipper_lobby";
-	name = "Lobby"
+	name = "Lobby";
+	req_ship_access = 0
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/central)
@@ -1890,7 +1892,7 @@
 	icon_state = "5-9"
 	},
 /obj/machinery/door/airlock/maintenance{
-	req_one_access = list(28, 35)
+	req_one_access = list(25, 28, 35)
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
@@ -2610,7 +2612,8 @@
 	},
 /obj/machinery/door/airlock/wood/glass{
 	id_tag = "sunskipper_lobby";
-	name = "Lobby"
+	name = "Lobby";
+	req_ship_access = 0
 	},
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/central)
@@ -2640,7 +2643,8 @@
 /area/ship/crew/canteen/kitchen)
 "IV" = (
 /obj/machinery/door/airlock/external{
-	dir = 4
+	dir = 4;
+	req_ship_access = 0
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
@@ -2747,7 +2751,7 @@
 	},
 /obj/machinery/door/airlock/glass{
 	name = "Hydroponics";
-	req_one_access = list(28, 35);
+	req_one_access = list(25, 28, 35);
 	dir = 4
 	},
 /obj/structure/cable/green{
@@ -3350,7 +3354,8 @@
 /area/ship/external)
 "SY" = (
 /obj/machinery/door/airlock/external{
-	dir = 4
+	dir = 4;
+	req_ship_access = 0
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3419,7 +3424,8 @@
 	},
 /obj/machinery/door/airlock/wood/glass{
 	dir = 4;
-	name = "Office"
+	name = "Office";
+	req_access_txt = "20"
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 4
@@ -3585,7 +3591,6 @@
 	dir = 1
 	},
 /obj/item/storage/firstaid/regular,
-/obj/item/reagent_containers/hypospray/medipen/salbutamol,
 /obj/item/reagent_containers/hypospray/medipen,
 /obj/item/reagent_containers/hypospray/medipen,
 /obj/item/storage/pill_bottle/charcoal/less,
@@ -3615,7 +3620,7 @@
 /obj/machinery/door/airlock{
 	dir = 4;
 	name = "Bar";
-	req_access_txt = "25"
+	req_one_access = list(25, 28)
 	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 8
