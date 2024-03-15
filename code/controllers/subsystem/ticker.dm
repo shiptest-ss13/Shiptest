@@ -574,14 +574,8 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/deliguana.ogg',
 		'sound/roundend/undecided.ogg',
 		'sound/roundend/repair.ogg',
-		'sound/roundend/knockknock.ogg',
-		'sound/roundend/flow.ogg',
-		'sound/roundend/gorp.ogg',
-		'sound/roundend/nuts.ogg',
 		'sound/roundend/boowomp.ogg',
-		'sound/roundend/helpme.ogg',
 		'sound/roundend/shiptestingthursday.ogg',
-		'sound/roundend/shitpest.ogg',
 		'sound/roundend/gayrights.ogg'\
 		)
 	///The reference to the end of round sound that we have chosen.
