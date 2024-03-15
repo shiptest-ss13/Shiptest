@@ -206,6 +206,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			id.registered_name = H.real_name
 			id.assignment = "Captain"
 			id.update_label()
+			id.update_appearance()
 
 			if(worn)
 				if(istype(worn, /obj/item/pda))
