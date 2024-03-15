@@ -25,12 +25,10 @@
 	message = "chimes."
 	sound = 'sound/machines/chime.ogg'
 
-/datum/emote/silicon/honk
-	key = "honk"
-	key_third_person = "honks"
-	message = "honks."
-	vary = TRUE
-	sound = 'sound/items/bikehorn.ogg'
+/datum/emote/silicon/no
+	key = "no"
+	message = "emits an negative blip."
+	sound = 'sound/machines/synth_no.ogg'
 
 /datum/emote/silicon/ping
 	key = "ping"
@@ -48,3 +46,8 @@
 	key = "warn"
 	message = "blares an alarm!"
 	sound = 'sound/machines/warning-buzzer.ogg'
+
+/datum/emote/silicon/yes
+	key = "yes"
+	message = "emits an affirmative blip."
+	sound = 'sound/machines/synth_yes.ogg'
