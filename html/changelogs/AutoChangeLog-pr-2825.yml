@@ -1,0 +1,7 @@
+author: meemofcourse
+changes:
+  - {code_imp: ID cards' update_label proc no longer calls update_appearance. Please
+      report any issues that may involve ID cards not updating overlays.}
+  - {code_imp: 'Outfits now have an id_assignment field. If a job has an id, and an
+      id_assignment, it will automatically apply.'}
+delete-after: true
