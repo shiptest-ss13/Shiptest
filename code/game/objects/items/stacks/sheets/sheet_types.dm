@@ -114,8 +114,8 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("pestle", /obj/item/pestle, 1, time = 50), \
 	new/datum/stack_recipe("hygienebot assembly", /obj/item/bot_assembly/hygienebot, 2, time = 50), \
 	new/datum/stack_recipe_list("weight machines", list( \
-		new/datum/stack_recipe("chest press", /obj/structure/weightmachine/stacklifter, 5, one_per_turf = TRUE, on_floor = TRUE), \
-		new/datum/stack_recipe("bench press", /obj/structure/weightmachine/weightlifter, 5, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("chest press", /obj/structure/weightmachine/stacklifter, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("bench press", /obj/structure/weightmachine/weightlifter, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
 	new/datum/stack_recipe("shower", /obj/machinery/shower, 3, time = 25)
 ))
@@ -366,6 +366,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("19x19 canvas", /obj/item/canvas/nineteenXnineteen, 3), \
 	new/datum/stack_recipe("23x19 canvas", /obj/item/canvas/twentythreeXnineteen, 4), \
 	new/datum/stack_recipe("23x23 canvas", /obj/item/canvas/twentythreeXtwentythree, 5), \
+	new/datum/stack_recipe("punching bag", /obj/structure/punching_bag, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/cotton/cloth

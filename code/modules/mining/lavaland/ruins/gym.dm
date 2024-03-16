@@ -7,6 +7,25 @@
 	layer = WALL_OBJ_LAYER
 	var/list/hit_sounds = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg',\
 	'sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 'sound/weapons/punch4.ogg')
+	var/buildstacktype = /obj/item/stack/sheet/cotton/cloth
+	var/buildstackamount = 5
+
+/obj/structure/punching_bag/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+	..()
+
+/obj/structure/punching_bag/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_WIRECUTTER && !(flags_1&NODECONSTRUCT_1))
+		W.play_tool_sound(src)
+		deconstruct(TRUE)
+	else
+		return ..()
+
+/obj/structure/punching_bag/examine(mob/user)
+	. = ..()
+		. += "<span class='notice'>The seams look like they could be <b>cut</b>.</span>"
 
 /obj/structure/punching_bag/attack_hand(mob/user as mob)
 	. = ..()
