@@ -49,6 +49,11 @@
 	else
 		return ..()
 
+/obj/structure/weightmachine/examine(mob/user)
+	. = ..()
+	if(bolts)
+		. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
+
 /obj/structure/weightmachine/update_overlays()
 	. = ..()
 
