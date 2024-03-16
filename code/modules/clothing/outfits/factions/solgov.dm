@@ -11,6 +11,7 @@
 
 /datum/outfit/job/solgov/assistant
 	name = "SolGov - Scribe"
+	id_assignment = "Scribe"
 	jobtype = /datum/job/assistant
 	job_icon = "scribe"
 
@@ -21,6 +22,7 @@
 
 /datum/outfit/job/solgov/bureaucrat
 	name = "SolGov - Bureaucrat"
+	id_assignment = "Bureaucrat"
 	jobtype = /datum/job/curator
 	job_icon = "curator"
 
@@ -61,6 +63,7 @@
 
 /datum/outfit/job/solgov/sonnensoldner
 	name = "SolGov - Sonnensöldner"
+	id_assignment = "Sonnensöldner"
 	jobtype = /datum/job/officer
 	job_icon = "sonnensoldner"
 
@@ -103,6 +106,7 @@
 
 /datum/outfit/job/solgov/overseer
 	name = "SolGov - Overseer"
+	id_assignment = "Overseer"
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "headofpersonnel"
 
@@ -140,6 +144,7 @@
 
 /datum/outfit/job/solgov/miner
 	name = "SolGov - Field Engineer"
+	id_assignment = "Field Engineer"
 	jobtype = /datum/job/mining
 	job_icon = "shaftminer"
 
@@ -181,8 +186,9 @@
 
 /datum/outfit/job/solgov/patient
 	name = "SolGov - Attentive Care Patient"
+	id_assignment = "Attentive Care Patient"
 	jobtype = /datum/job/prisoner
-	job_icon = "assistant" // todo: bug rye for patient icon
+	job_icon = "assistant" // todo: bug rye for patient icon // rye. rye. give me 50 gazillion billion dollars paypal
 
 	id = /obj/item/card/id/patient
 	uniform = /obj/item/clothing/under/rank/medical/gown
@@ -191,6 +197,7 @@
 
 /datum/outfit/job/solgov/engineer
 	name = "SolGov - Ship Engineer"
+	id_assignment = "Ship Engineer"
 	jobtype = /datum/job/engineer
 	job_icon = "stationengineer"
 
@@ -213,6 +220,7 @@
 
 /datum/outfit/job/solgov/quartermaster
 	name = "SolGov - Logistics Deck Officer"
+	id_assignment = "Logistics Deck Officer"
 	jobtype = /datum/job/qm
 	job_icon = "quartermaster"
 
