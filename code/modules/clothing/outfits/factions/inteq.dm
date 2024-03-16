@@ -20,6 +20,7 @@
 
 /datum/outfit/job/inteq/assistant
 	name = "IRMG - Recruit"
+	id_assignment = "Recruit"
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
@@ -29,6 +30,7 @@
 
 /datum/outfit/job/inteq/captain
 	name = "IRMG - Vanguard (Naked)"
+	id_assignment = "Vanguard"
 	jobtype = /datum/job/captain
 	job_icon = "captain"
 
@@ -55,6 +57,7 @@
 
 /datum/outfit/job/inteq/captain/honorable
 	name = "IRMG - Honorable Vanguard"
+	id_assignment = "Honorable Vanguard"
 
 	head = /obj/item/clothing/head/beret/sec/hos/inteq/honorable
 	uniform = /obj/item/clothing/under/syndicate/inteq/honorable
@@ -65,19 +68,11 @@
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 
-/datum/outfit/job/inteq/captain/honorable/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	. = ..()
-	if(visualsOnly)
-		return
-
-	var/obj/item/card/id/W = H.wear_id
-	W.assignment = "Honorable Vanguard"
-	W.update_label()
-
 ///Chief Engineer
 
 /datum/outfit/job/inteq/ce
 	name = "IRMG - Artificer Class II"
+	id_assignment = "Artificer Class II"
 	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
 
@@ -101,6 +96,7 @@
 
 /datum/outfit/job/inteq/paramedic
 	name = "IRMG - Corpsman"
+	id_assignment = "Corpsman"
 	job_icon = "paramedic"
 	jobtype = /datum/job/paramedic
 
@@ -115,7 +111,7 @@
 	backpack_contents = list(/obj/item/roller=1)
 
 /datum/outfit/job/inteq/paramedic/empty
-	name = "IRMG Corpsman (Inteq) (Naked)"
+	name = "IRMG - Corpsman (Naked)"
 
 	head = null
 	suit = null
@@ -126,6 +122,7 @@
 
 /datum/outfit/job/inteq/security
 	name = "IRMG - Enforcer"
+	id_assignment = "Enforcer"
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
@@ -171,6 +168,7 @@
 
 /datum/outfit/job/inteq/engineer
 	name = "IRMG - Artificer"
+	id_assignment = "Artificer"
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
 
@@ -184,6 +182,7 @@
 
 /datum/outfit/job/inteq/warden
 	name = "IRMG - Master At Arms"
+	id_assignment = "Master at Arms"
 	jobtype = /datum/job/warden
 	job_icon = "warden"
 
@@ -205,7 +204,8 @@
 // cmo
 
 /datum/outfit/job/inteq/cmo
-	name = "IRMG Honorable Corpsman (Inteq)"
+	name = "IRMG - Honorable Corpsman"
+	id_assignment = "Honorable Corpsman"
 	jobtype = /datum/job/cmo
 	job_icon = "chiefmedicalofficer"
 
