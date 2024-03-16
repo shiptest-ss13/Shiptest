@@ -139,7 +139,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/item/bedsheet/brown,
-/obj/structure/sign/poster/minutemen/lanchester{
+/obj/structure/sign/poster/clip/lanchester{
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/black,
@@ -917,7 +917,7 @@
 	req_access_txt = "20"
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -1952,7 +1952,7 @@
 /area/ship/maintenance/starboard)
 "DP" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -2204,7 +2204,7 @@
 /obj/item/clothing/head/helmet/swat/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/melee/baton/loaded,
@@ -2214,6 +2214,9 @@
 	pixel_y = 23
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "HN" = (
@@ -2916,7 +2919,7 @@
 /area/ship/bridge)
 "TQ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8

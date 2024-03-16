@@ -238,8 +238,8 @@
 /obj/item/storage/toolbox/ammo/a850r/PopulateContents()
 	name = "ammo can (8x50mmR)"
 	icon_state = "ammobox_850"
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_box/magazine/illestren_a850r(src)
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/c8x50mm_box(src)
 
 /obj/item/storage/toolbox/ammo/a762_40/PopulateContents()
 	name = "ammo can (7.62x40mm CLIP)"
