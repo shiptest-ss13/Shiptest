@@ -9,6 +9,7 @@
 	'sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 'sound/weapons/punch4.ogg')
 	var/buildstacktype = /obj/item/stack/sheet/cotton/cloth
 	var/buildstackamount = 5
+	var/cut = TRUE
 
 /obj/structure/punching_bag/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -25,7 +26,8 @@
 
 /obj/structure/punching_bag/examine(mob/user)
 	. = ..()
-		. += "<span class='notice'>The seams look like they could be <b>cut</b>.</span>"
+	if(cut)
+		. += "<span class='notice'>The seams look like they can be <b>cut</b> apart.</span>"
 
 /obj/structure/punching_bag/attack_hand(mob/user as mob)
 	. = ..()
