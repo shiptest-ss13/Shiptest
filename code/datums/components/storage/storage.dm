@@ -359,7 +359,7 @@
 	ui_hide(source)
 
 /datum/component/storage/proc/close(mob/M)
-	ui_hide(usr)
+	ui_hide(M)
 
 /datum/component/storage/proc/close_all()
 	SIGNAL_HANDLER
