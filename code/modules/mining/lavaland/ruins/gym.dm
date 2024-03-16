@@ -25,6 +25,9 @@
 	icon = 'icons/obj/gym_equipment.dmi'
 	density = TRUE
 	anchored = TRUE
+	var/buildstacktype = /obj/item/stack/sheet/metal
+	var/buildstackamount = 5
+	var/bolts = TRUE
 
 /obj/structure/weightmachine/proc/AnimateMachine(mob/living/user)
 	return
@@ -32,6 +35,13 @@
 /obj/structure/weightmachine/update_icon_state()
 	. = ..()
 	icon_state = (obj_flags & IN_USE) ? "[base_icon_state]-u" : base_icon_state
+
+/obj/structure/weightmachine/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(buildstacktype)
+			new buildstacktype(loc,buildstackamount)
+	..()
+
 
 /obj/structure/weightmachine/update_overlays()
 	. = ..()
