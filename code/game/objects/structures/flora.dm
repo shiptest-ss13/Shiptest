@@ -63,7 +63,7 @@
 	desc = "A coniferous pine tree."
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_1"
-	var/list/icon_states = list("pine_1", "pine_2", "pine_3")
+	var/list/icon_states = list("pine_1", "pine_2", "pine_3", "pine_4")
 
 /obj/structure/flora/tree/pine/Initialize()
 	. = ..()

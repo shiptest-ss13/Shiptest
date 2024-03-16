@@ -168,6 +168,7 @@
 	if(mapload && access_txt)
 		access = text2access(access_txt)
 	update_label()
+	update_appearance()
 	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, PROC_REF(update_in_wallet))
 
 /obj/item/card/id/Destroy()
@@ -419,7 +420,6 @@ update_label()
 
 /obj/item/card/id/proc/update_label()
 	name = "[(istype(src, /obj/item/card/id/syndicate)) ? "[initial(name)]" : "access card"][(!assignment) ? "" : " ([assignment])"]"
-	update_appearance()
 
 /obj/item/card/id/silver
 	desc = "A silver-colored card, usually given to higher-ranking officials in ships and stations."
