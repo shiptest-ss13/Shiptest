@@ -178,3 +178,24 @@
 2024-03-15:
   cuddleandtea:
   - rscadd: volume setting for play local sound
+2024-03-16:
+  Martinpachu:
+  - spellcheck: Fixes some cargo descriptions.
+  Sadhorizon:
+  - bugfix: Cybersun cap no longer defaults to black cap's sprite.
+  Skies-Of-Blue:
+  - rscadd: silicons across the sector have added two new noises to their lexicon,
+      try them out with *yes and *no!
+  - tweak: silicons across the sector have also overridden their clown inhibitors,
+      allowing them to play a bummer trombone with *sad
+  - tweak: borgs have leaked the secrets of *warn to their integrated positronic counterparts
+  - rscdel: due to wide reaching protest, silicons across the galaxy have decided
+      to give up their ability to *honk in respect for the lives lost during the ICW
+  - soundadd: several new roundend audio clips, as well as a new roundstart clip
+  - sounddel: all of the old roundend audio clips, as well as the old roundstart clip
+  - rscdel: soul
+  meemofcourse:
+  - code_imp: ID cards' update_label proc no longer calls update_appearance. Please
+      report any issues that may involve ID cards not updating overlays.
+  - code_imp: Outfits now have an id_assignment field. If a job has an id, and an
+      id_assignment, it will automatically apply.
