@@ -42,6 +42,12 @@
 			new buildstacktype(loc,buildstackamount)
 	..()
 
+/obj/structure/weightmachine/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1))
+		W.play_tool_sound(src)
+		deconstruct(TRUE)
+	else
+		return ..()
 
 /obj/structure/weightmachine/update_overlays()
 	. = ..()
