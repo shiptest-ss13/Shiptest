@@ -9,7 +9,6 @@
 	'sound/weapons/punch1.ogg', 'sound/weapons/punch2.ogg', 'sound/weapons/punch3.ogg', 'sound/weapons/punch4.ogg')
 	var/buildstacktype = /obj/item/stack/sheet/cotton/cloth
 	var/buildstackamount = 5
-	var/cut = TRUE
 
 /obj/structure/punching_bag/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -17,17 +16,42 @@
 			new buildstacktype(loc,buildstackamount)
 	..()
 
-/obj/structure/punching_bag/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WIRECUTTER && !(flags_1&NODECONSTRUCT_1))
-		W.play_tool_sound(src)
-		deconstruct(TRUE)
+/obj/structure/punching_bag/wrench_act(mob/living/user, obj/item/W)
+	if(..())
+		return TRUE
+	add_fingerprint(user)
+	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
+	var/uraction = anchored ? "unsbolt [src] from" : "bolt [src] to"
+	user.visible_message("<span class='warning'>[user] [action] the floor.</span>", "<span class='notice'>You start to [uraction] the floor...</span>", "<span class='hear'>You hear rustling noises.</span>")
+	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
+		set_anchored(!anchored)
+		to_chat(user, "<span class='notice'>You [anchored ? "unbolt" : "bolt"] [src] from the floor.</span>")
+		return TRUE
 	else
-		return ..()
+		return TRUE
+
+/obj/structure/punching_bag/wirecutter_act(mob/living/user, obj/item/W)
+	. = ..()
+	if(!anchored)
+		user.visible_message("<span class='warning'>[user] cuts apart [src].</span>", "<span class='notice'>You start to cut apart [src].</span>", "<span class='hear'>You hear cutting.</span>")
+		if(W.use_tool(src, user, 50, volume=100))
+			if(anchored)
+				return TRUE
+			to_chat(user, "<span class='notice'>You cut apart [src].</span>")
+			deconstruct(TRUE)
+		return TRUE
+
+/obj/structure/punching_bag/proc/check_anchored_state(check_anchored)
+	if(anchored != check_anchored)
+		return FALSE
+	return TRUE
 
 /obj/structure/punching_bag/examine(mob/user)
 	. = ..()
-	if(cut)
-		. += "<span class='notice'>The seams look like they can be <b>cut</b> apart.</span>"
+	if(anchored)
+		. += "<span class='notice'>[src] is <b>bolted</b> to the floor.</span>"
+	else
+		. += "<span class='notice'>[src] is no longer <i>bolted</i> to the floor, and the seams can be <b>cut</b> apart.</span>"
 
 /obj/structure/punching_bag/attack_hand(mob/user as mob)
 	. = ..()
@@ -48,7 +72,6 @@
 	anchored = TRUE
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 5
-	var/bolts = TRUE
 
 /obj/structure/weightmachine/proc/AnimateMachine(mob/living/user)
 	return
@@ -63,17 +86,42 @@
 			new buildstacktype(loc,buildstackamount)
 	..()
 
-/obj/structure/weightmachine/attackby(obj/item/W, mob/user, params)
-	if(W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1))
-		W.play_tool_sound(src)
-		deconstruct(TRUE)
+/obj/structure/weightmachine/wrench_act(mob/living/user, obj/item/W)
+	if(..())
+		return TRUE
+	add_fingerprint(user)
+	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
+	var/uraction = anchored ? "unsbolt [src] from" : "bolt [src] to"
+	user.visible_message("<span class='warning'>[user] [action] the floor.</span>", "<span class='notice'>You start to [uraction] the floor...</span>", "<span class='hear'>You hear rustling noises.</span>")
+	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
+		set_anchored(!anchored)
+		to_chat(user, "<span class='notice'>You [anchored ? "unbolt" : "bolt"] [src] from the floor.</span>")
+		return TRUE
 	else
-		return ..()
+		return TRUE
+
+/obj/structure/weightmachine/screwdriver_act(mob/living/user, obj/item/W)
+	. = ..()
+	if(!anchored)
+		user.visible_message("<span class='warning'>[user] screws apart [src].</span>", "<span class='notice'>You start to screw apart [src].</span>", "<span class='hear'>You hear screwing.</span>")
+		if(W.use_tool(src, user, 50, volume=100))
+			if(anchored)
+				return TRUE
+			to_chat(user, "<span class='notice'>You screw apart [src].</span>")
+			deconstruct(TRUE)
+		return TRUE
+
+/obj/structure/weightmachine/proc/check_anchored_state(check_anchored)
+	if(anchored != check_anchored)
+		return FALSE
+	return TRUE
 
 /obj/structure/weightmachine/examine(mob/user)
 	. = ..()
-	if(bolts)
-		. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
+	if(anchored)
+		. += "<span class='notice'>[src] is <b>bolted</b> to the floor.</span>"
+	else
+		. += "<span class='notice'>[src] is no longer <i>bolted</i> to the floor, and the <b>screws</b> are exposed.</span>"
 
 /obj/structure/weightmachine/update_overlays()
 	. = ..()
