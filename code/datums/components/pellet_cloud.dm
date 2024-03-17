@@ -125,7 +125,7 @@
 
 	if(isgrenade(parent)) // handle_martyrs can reduce the radius and thus the number of pellets we produce if someone dives on top of a frag grenade
 		handle_martyrs(punishable_triggerer) // note that we can modify radius in this proc
-	else if(islandmine(parent))
+	else if(istype(parent, /obj/item/mine/pressure/explosive))
 		var/obj/item/mine/pressure/explosive/triggered_mine = parent
 		if(triggered_mine.shred_triggerer && istype(punishable_triggerer)) // free shrapnel for the idiot who stepped on it if we're a mine that shreds the triggerer
 			pellet_delta += radius // so they don't count against the later total

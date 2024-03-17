@@ -2,7 +2,7 @@
 /obj/item/mine
 	name = "mine"
 	desc = "An anti-personnel mine. This one explodes into nothing and does nothing. Why can you see this? You should't be able to see this. Stop looking at this."
-	icon = 'icons/obj/device.dmi'
+	icon = 'icons/obj/landmine.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 5
@@ -23,6 +23,13 @@
 	var/blast_delay = 1 DECISECONDS
 
 	var/manufacturer = MANUFACTURER_NONE
+
+
+/obj/item/mine/Initialize(mapload)
+	. = ..()
+	if(armed)
+		now_armed()
+
 
 /obj/item/mine/examine(mob/user)
 	. = ..()
@@ -73,7 +80,7 @@
 			addtimer(CALLBACK(src, PROC_REF(now_armed)), arm_delay)
 		else
 			armed = TRUE
-		log_admin("[key_name(user)] has placed \a [src] at ([x],[y],[z]).")
+		message_admins("[key_name(user)] has placed \a [src] at ([x],[y],[z]).")
 
 //let them know the mine's done cooking
 /obj/item/mine/proc/now_armed()
@@ -280,7 +287,7 @@
 	var/datum/proximity_monitor/proximity_monitor
 	var/proximity_range = 2
 
-/obj/item/mine/proximity/Initialize()
+/obj/item/mine/proximity/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSfastprocess, src)
 
