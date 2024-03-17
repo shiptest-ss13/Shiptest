@@ -76,6 +76,7 @@
 	makeItemInactive()
 
 /atom/movable/screen/storage/volumetric_box/MouseEntered(location, control, params)
+	. = ..()
 	makeItemActive()
 
 /atom/movable/screen/storage/volumetric_box/proc/on_item_mouse_enter()
@@ -168,6 +169,7 @@
 	return master.MouseExited(location, control, params)
 
 /atom/movable/screen/storage/volumetric_edge/MouseEntered(location, control, params)
+	. = ..()
 	return master.MouseEntered(location, control, params)
 
 /atom/movable/screen/storage/volumetric_edge/stored_left
