@@ -15,15 +15,6 @@
 	Includes a unique(*) laser pistol display case, and the recently introduced I.C.E(tm)."
 	suffix = "lavaland_surface_biodome_winter.dmm"
 
-/datum/map_template/ruin/lavaland/free_golem
-	name = "Free Golem Ship"
-	id = "golem-ship"
-	description = "Lumbering humanoids, made out of precious metals, move inside this ship. They frequently leave to mine more minerals, which they somehow turn into more of them. \
-	Seem very intent on research and individual liberty, and also geology-based naming?"
-	cost = 20
-	suffix = "lavaland_surface_golem_ship.dmm"
-	allow_duplicates = FALSE
-
 /datum/map_template/ruin/lavaland/sin
 	cost = 10
 	allow_duplicates = FALSE
@@ -128,3 +119,9 @@
 	id = "codelab"
 	description = "A Nanotrasen genetic research facility, abandoned and ripe for looting. Whats that goo over there?"
 	suffix = "lavaland_surface_codelab.dmm"
+
+/datum/map_template/ruin/lavaland/lava_canyon
+	name = "Lava Canyon"
+	id = "lava_canyon"
+	description = "Tectonic activity has gouged a large fissure into the surface of the planet here. Tucked in the crevasse, the remains of an ashwalker village lay in ashes."
+	suffix = "lavaland_surface_lava_canyon.dmm"

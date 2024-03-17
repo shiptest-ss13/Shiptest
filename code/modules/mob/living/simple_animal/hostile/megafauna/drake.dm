@@ -388,28 +388,6 @@ Difficulty: Medium
 	if(!lava_success)
 		arena_escape_enrage()
 
-/obj/effect/landmark/ashdrake_ghost_spawn //spawn a random ghost role if ash drake is killed
-	name = "ash drake ghost role spawner"
-	var/picked
-
-/obj/effect/landmark/ashdrake_ghost_spawn/proc/create_roles()
-	picked = pick(1,2,3,4,5,6,7) //picks 1-7
-	switch(picked) //then picks out of 7 ghost roles to spawn
-		if(1)
-			new /obj/effect/mob_spawn/human/lost/doctor(get_turf(loc))
-		if(2)
-			new /obj/effect/mob_spawn/human/lost/centcom(get_turf(loc))
-		if(3)
-			new /obj/effect/mob_spawn/human/lost/shaftminer(get_turf(loc))
-		if(4)
-			new /obj/effect/mob_spawn/human/lost/ashwalker_heir(get_turf(loc))
-		if(5)
-			new /obj/effect/mob_spawn/human/lost/assistant(get_turf(loc))
-		if(6)
-			new /obj/effect/mob_spawn/human/lost/syndicate(get_turf(loc))
-
-	qdel(src) //no spawning people twice
-
 /mob/living/simple_animal/hostile/megafauna/dragon/ex_act(severity, target)
 	if(severity == EXPLODE_LIGHT)
 		return
@@ -623,8 +601,3 @@ Difficulty: Medium
 	return
 
 /mob/living/simple_animal/hostile/megafauna/dragon/icemoon
-
-/mob/living/simple_animal/hostile/megafauna/dragon/icemoon/death()
-	for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
-		L.create_roles()
-	..()

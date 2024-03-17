@@ -63,12 +63,12 @@
 	desc = "A coniferous pine tree."
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_1"
-	var/list/icon_states = list("pine_1", "pine_2", "pine_3")
+	var/list/icon_states = list("pine_1", "pine_2", "pine_3", "pine_4")
 
 /obj/structure/flora/tree/pine/Initialize()
 	. = ..()
 
-	if(islist(icon_states && icon_states.len))
+	if(islist(icon_states) && icon_states.len)
 		icon_state = pick(icon_states)
 
 /obj/structure/flora/tree/pine/xmas
@@ -368,8 +368,8 @@
 /obj/item/kirbyplants/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/tactical)
-	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddComponent), list(/datum/component/beauty, 500)), 0)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
+	AddElement(/datum/element/beauty, 500)
 
 /obj/item/kirbyplants/random
 	icon = 'icons/obj/flora/_flora.dmi'

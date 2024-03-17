@@ -49,10 +49,16 @@
 // .38 Special (Colt Detective Special & Winchester)
 
 /obj/item/ammo_casing/c38
-	name = ".38 special bullet casing"
-	desc = "A .38 special bullet casing."
+	name = ".38 Special bullet casing"
+	desc = "A .38 Special bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/projectile/bullet/c38
+
+/obj/item/ammo_casing/c38/surplus
+	name = ".38 surplus bullet casing"
+	desc = "A .38 surplus bullet casing."
+	projectile_type = /obj/projectile/bullet/c38/surplus
+
 
 /obj/item/ammo_casing/c38/trac
 	name = ".38 TRAC bullet casing"

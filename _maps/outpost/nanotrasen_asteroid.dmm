@@ -1199,6 +1199,13 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/cryo)
+"eF" = (
+/obj/structure/table/glass,
+/obj/machinery/fax/admin/outpost{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/outpost/operations)
 "eH" = (
 /obj/structure/railing/wood{
 	dir = 4
@@ -3773,6 +3780,9 @@
 	},
 /turf/open/floor/concrete/tiles,
 /area/outpost/hallway/central)
+"nV" = (
+/turf/closed/indestructible/fakeglass,
+/area/outpost/engineering/atmospherics)
 "nX" = (
 /turf/open/floor/wood,
 /area/outpost/crew/bar)
@@ -10081,6 +10091,22 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/ridged,
 /area/outpost/crew/canteen)
+"Jj" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 10
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/item/radio/intercom/directional/north{
+	icon_state = "clip_headset"
+	},
+/turf/open/floor/plasteel/tech,
+/area/outpost/cargo/office)
 "Jm" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -10962,22 +10988,6 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering/atmospherics)
-"Mg" = (
-/obj/structure/chair/office{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/generic,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 10
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/item/radio/intercom/directional/north{
-	icon_state = "cmm_headset"
-	},
-/turf/open/floor/plasteel/tech,
-/area/outpost/cargo/office)
 "Mi" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -12118,6 +12128,12 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/outpost/crew/library)
+"Qk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/turf/closed/indestructible/fakeglass,
+/area/outpost/engineering/atmospherics)
 "Ql" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box/corners,
@@ -13477,14 +13493,6 @@
 	},
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
-"UX" = (
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/structure/grille,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/outpost/engineering/atmospherics)
 "UY" = (
 /obj/structure/table/wood,
 /obj/item/trash/plate{
@@ -13584,11 +13592,6 @@
 	},
 /turf/open/floor/plasteel/rockvault,
 /area/outpost/operations)
-"Vm" = (
-/obj/structure/window/plasma/reinforced/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/outpost/engineering/atmospherics)
 "Vn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -23399,11 +23402,11 @@ Zp
 Zp
 pU
 vD
-Vm
+nV
 my
 LO
 CE
-Vm
+nV
 QU
 pU
 Qq
@@ -23522,11 +23525,11 @@ Zp
 Zp
 pU
 rP
-Vm
+nV
 my
 LO
 CE
-Vm
+nV
 qc
 pU
 dX
@@ -23645,11 +23648,11 @@ Zp
 Zp
 pU
 vD
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 QU
 pU
 dU
@@ -23801,7 +23804,7 @@ cX
 Mt
 Mt
 lS
-Mg
+Jj
 TR
 ex
 RR
@@ -23891,11 +23894,11 @@ Zp
 Zp
 pU
 lr
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 QA
 pU
 gP
@@ -24014,11 +24017,11 @@ Zp
 Zp
 pU
 ui
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 qp
 pU
 Hh
@@ -24137,11 +24140,11 @@ Zp
 Zp
 pU
 lr
-Vm
+nV
 my
 mz
 ye
-Vm
+nV
 QA
 pU
 OA
@@ -24383,11 +24386,11 @@ Zp
 Zp
 pU
 Di
-Vm
+nV
 my
 mz
 PE
-Vm
+nV
 tj
 pU
 NA
@@ -24506,11 +24509,11 @@ Zp
 Zp
 pU
 BH
-Vm
+nV
 MZ
 Ck
 ye
-Vm
+nV
 tj
 pU
 vk
@@ -24629,11 +24632,11 @@ Zp
 Zp
 pU
 Tu
-Vm
+nV
 ke
 hO
 bW
-Vm
+nV
 tj
 pU
 gP
@@ -24753,9 +24756,9 @@ Zp
 pU
 pU
 pU
-Vm
-UX
-Vm
+nV
+Qk
+nV
 pU
 pU
 pU
@@ -26233,7 +26236,7 @@ EN
 wS
 wS
 aG
-iv
+eF
 Ke
 wS
 cH

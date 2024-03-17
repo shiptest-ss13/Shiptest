@@ -194,6 +194,8 @@
 	var/job_icon
 	// the background of the job icon
 	var/faction_icon
+	// if there is an id, this will get automatically applied to an id's assignment variable
+	var/id_assignment
 
 	var/alt_uniform
 
@@ -280,6 +282,9 @@
 			C.registered_age = H.age
 		C.job_icon = job_icon
 		C.faction_icon = faction_icon
+		C.update_appearance()
+		if(id_assignment)
+			C.assignment = id_assignment
 		C.update_label()
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A
