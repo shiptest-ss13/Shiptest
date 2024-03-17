@@ -168,6 +168,7 @@
 	if(mapload && access_txt)
 		access = text2access(access_txt)
 	update_label()
+	update_appearance()
 	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, PROC_REF(update_in_wallet))
 
 /obj/item/card/id/Destroy()
@@ -421,7 +422,6 @@ update_label()
 /obj/item/card/id/proc/update_label()
 	var/blank = !registered_name
 	name = "[blank ? initial(name) : "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
-	update_appearance()
 
 /obj/item/card/id/silver
 	name = "silver identification card"
