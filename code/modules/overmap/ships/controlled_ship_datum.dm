@@ -36,8 +36,12 @@
 	var/list/datum/mission/missions
 	/// The maximum number of currently active missions that a ship may take on.
 	var/max_missions = 2
-	/// Manifest list of people on the ship
+
+	/// Manifest list of people on the ship. Indexed by mob REAL NAME. value is JOB INSTANCE
 	var/list/manifest = list()
+
+	/// List of mob refs indexed by their job instance
+	var/list/datum/weakref/job_holder_refs = list()
 
 	var/list/datum/mind/owner_candidates
 
@@ -130,6 +134,7 @@
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
 	QDEL_LIST(manifest)
+	job_holder_refs.Cut()
 	job_slots.Cut()
 	blacklisted.Cut()
 	for(var/a_key in applications)
@@ -297,6 +302,10 @@
 	RegisterSignal(H.mind, COMSIG_PARENT_QDELETING, PROC_REF(crew_mind_deleting))
 	if(!owner_mob)
 		set_owner_mob(H)
+
+	if(!(human_job in job_holder_refs))
+		job_holder_refs[human_job] = list()
+	job_holder_refs[human_job] += WEAKREF(H)
 
 /datum/overmap/ship/controlled/proc/set_owner_mob(mob/new_owner)
 	if(owner_mob)
