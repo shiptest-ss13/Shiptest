@@ -33,24 +33,23 @@
 
 /obj/item/ammo_box/a4570/match
 	name = "ammo holder (.45-70 match)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	desc = "A 12-round ammo box for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	icon_state = "4570-match"
 	ammo_type = /obj/item/ammo_casing/a4570/match
-	caliber = ".45-70"
+
 
 /obj/item/ammo_box/a4570/hp
 	name = "ammo holder (.45-70 hollow point)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
+	desc = "A 12-round ammo box for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
 	ammo_type = /obj/item/ammo_casing/a4570/hp
-	caliber = ".45-70"
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
+	desc = "A 12-round ammo box for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
 	icon_state = "4570-explosive"
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
-	caliber = ".45-70"
+
 
 // .38 special Speed Loaders (Colt Detective Special)
 
