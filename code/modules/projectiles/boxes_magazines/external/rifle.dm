@@ -141,6 +141,7 @@
 	desc = "A 5-round en bloc clip for the Illestren Hunting Rifle. These rounds do good damage with significant armor penetration."
 	icon_state = "enbloc_858"
 	ammo_type = /obj/item/ammo_casing/a8_50r
+	caliber = "8x50mmR"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_TINY

@@ -5,6 +5,7 @@
 	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
 	icon_state = "357"
 	ammo_type = /obj/item/ammo_casing/a357
+	caliber = ".357"
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	item_flags = NO_MAT_REDEMPTION
@@ -35,18 +36,21 @@
 	desc = "A 6-round ammo holder for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	icon_state = "4570-match"
 	ammo_type = /obj/item/ammo_casing/a4570/match
+	caliber = ".45-70"
 
 /obj/item/ammo_box/a4570/hp
 	name = "ammo holder (.45-70 hollow point)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
 	ammo_type = /obj/item/ammo_casing/a4570/hp
+	caliber = ".45-70"
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
 	icon_state = "4570-explosive"
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
+	caliber = ".45-70"
 
 // .38 special Speed Loaders (Colt Detective Special)
 
@@ -55,6 +59,7 @@
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These rounds do moderate damage, but plink against armor."
 	icon_state = "38"
 	ammo_type = /obj/item/ammo_casing/c38
+	caliber = ".38"
 	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	custom_materials = list(/datum/material/iron = 15000)
@@ -386,6 +391,7 @@
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "38"
 	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
 	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	custom_materials = list(/datum/material/iron = 15000)
