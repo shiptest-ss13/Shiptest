@@ -92,7 +92,7 @@
 	icon_living = "warbear"
 	icon_dead = "warbear_dead"
 	mob_trophy = /obj/item/crusher_trophy/war_paw
-	crusher_drop_mod = 75
+	trophy_drop_mod = 75
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 3, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 3, /obj/item/bear_armor = 1)
 
