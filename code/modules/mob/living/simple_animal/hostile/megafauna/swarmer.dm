@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 	for(var/t in swarmerTypes)
 		. += GLOB.AISwarmerCapsByType[t]
 
-
+//this should. not be a simple mob i think
 /mob/living/simple_animal/hostile/megafauna/swarmer_swarm_beacon
 	name = "swarmer beacon"
 	desc = "That name is a bit of a mouthful, but stop paying attention to your mouth they're eating everything!"

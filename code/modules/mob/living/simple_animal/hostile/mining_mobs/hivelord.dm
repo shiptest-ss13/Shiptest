@@ -50,8 +50,8 @@
 	OpenFire()
 	return TRUE
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/spawn_crusher_loot()
-	loot += crusher_loot //we don't butcher
+/mob/living/simple_animal/hostile/asteroid/hivelord/spawn_mob_trophy()
+	loot += mob_trophy //we don't butcher
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/death(gibbed)
 	mouse_opacity = MOUSE_OPACITY_ICON
@@ -119,7 +119,7 @@
 	throw_message = "bounces harmlessly off of"
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
-	crusher_loot = /obj/item/crusher_trophy/legion_skull
+	mob_trophy = /obj/item/crusher_trophy/legion_skull
 	del_on_death = 1
 	stat_attack = HARD_CRIT
 	robust_searching = 1
@@ -150,7 +150,7 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	crusher_loot = /obj/item/crusher_trophy/dwarf_skull
+	mob_trophy = /obj/item/crusher_trophy/dwarf_skull
 	maxHealth = 150
 	health = 150
 	move_to_delay = 2
@@ -334,7 +334,7 @@
 	icon_living = "snowlegion"
 	icon_aggro = "snowlegion_alive"
 	icon_dead = "snowlegion"
-	crusher_loot = /obj/item/crusher_trophy/legion_skull
+	mob_trophy = /obj/item/crusher_trophy/legion_skull
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow
 
