@@ -12,7 +12,7 @@
 	response_harm_simple = "strike"
 	status_flags = 0
 	a_intent = INTENT_HARM
-	var/crusher_loot
+	var/mob_trophy
 	var/throw_message = "bounces off of"
 	var/throw_deflection = 20		//WS edit - Whitesands
 	var/fromtendril = FALSE
@@ -71,12 +71,12 @@
 /mob/living/simple_animal/hostile/asteroid/death(gibbed)
 	SSblackbox.record_feedback("tally", "mobs_killed_mining", 1, type)
 	var/datum/status_effect/crusher_damage/C = has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
-	if(C && crusher_loot && prob((C.total_damage/maxHealth) * crusher_drop_mod)) //on average, you'll need to kill 4 creatures before getting the item
-		spawn_crusher_loot()
+	if(C && mob_trophy && prob((C.total_damage/maxHealth) * crusher_drop_mod)) //on average, you'll need to kill 4 creatures before getting the item
+		spawn_mob_trophy()
 	..(gibbed)
 
-/mob/living/simple_animal/hostile/asteroid/proc/spawn_crusher_loot()
-	butcher_results[crusher_loot] = 1
+/mob/living/simple_animal/hostile/asteroid/proc/spawn_mob_trophy()
+	butcher_results[mob_trophy] = 1
 
 /mob/living/simple_animal/hostile/asteroid/handle_temperature_damage()
 	if(bodytemperature < minbodytemp)
