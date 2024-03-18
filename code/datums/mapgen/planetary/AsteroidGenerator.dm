@@ -113,7 +113,6 @@
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 1,
 		/obj/structure/spawner/mining/goliath = 1,
-		/obj/structure/spawner/mining = 1,
 		/obj/structure/spawner/mining/hivelord = 1
 	)
 

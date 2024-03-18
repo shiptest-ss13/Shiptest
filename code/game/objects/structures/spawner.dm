@@ -5,7 +5,6 @@ GLOBAL_LIST_INIT(astroloot, list(
 	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/gold = 50,
 	/obj/item/stack/ore/diamond = 25,
-	/obj/item/stack/ore/bananium = 5,
 	/obj/item/stack/ore/titanium = 75,
 	/obj/item/pickaxe/diamond = 15,
 	/obj/item/borg/upgrade/modkit/cooldown = 5,
@@ -53,39 +52,6 @@ GLOBAL_LIST_INIT(astroloot, list(
 		return
 	..()
 
-
-/obj/structure/spawner/syndicate
-	name = "warp beacon"
-	icon = 'icons/obj/device.dmi'
-	icon_state = "syndbeacon"
-	spawn_text = "warps in from"
-	mob_types = list(/mob/living/simple_animal/hostile/syndicate/ranged)
-	faction = list(ROLE_SYNDICATE)
-
-/obj/structure/spawner/skeleton
-	name = "bone pit"
-	desc = "A pit full of bones, and some still seem to be moving..."
-	icon_state = "hole"
-	icon = 'icons/mob/nest.dmi'
-	max_integrity = 150
-	max_mobs = 15
-	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/skeleton)
-	spawn_text = "climbs out of"
-	faction = list("skeleton")
-
-/obj/structure/spawner/clown
-	name = "Laughing Larry"
-	desc = "A laughing, jovial figure. Something seems stuck in his throat."
-	icon_state = "clownbeacon"
-	icon = 'icons/obj/device.dmi'
-	max_integrity = 200
-	max_mobs = 15
-	spawn_time = 150
-	mob_types = list(/mob/living/simple_animal/hostile/retaliate/clown, /mob/living/simple_animal/hostile/retaliate/clown/fleshclown, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk, /mob/living/simple_animal/hostile/retaliate/clown/longface, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/chlown, /mob/living/simple_animal/hostile/retaliate/clown/clownhulk/honcmunculus, /mob/living/simple_animal/hostile/retaliate/clown/mutant/blob, /mob/living/simple_animal/hostile/retaliate/clown/banana, /mob/living/simple_animal/hostile/retaliate/clown/honkling, /mob/living/simple_animal/hostile/retaliate/clown/lube)
-	spawn_text = "climbs out of"
-	faction = list("clown")
-
 /obj/structure/spawner/carp
 	name = "carp spawn" //the non game spawn meaning
 	desc = "A puddle, which appears to be full of carp"
@@ -98,9 +64,6 @@ GLOBAL_LIST_INIT(astroloot, list(
 	spawn_text = "climbs out of"
 	faction = list("carp")
 
-/obj/structure/spawner/mining/proc/adestroy_effect()
-	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
-	visible_message("<span class='boldannounce'>[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the cave as it is destroyed!</span>")
 
 /obj/structure/spawner/mining
 	name = "monster den"
@@ -117,6 +80,10 @@ GLOBAL_LIST_INIT(astroloot, list(
 	adestroy_effect()
 	drop_astroloot()
 	return ..()
+
+/obj/structure/spawner/mining/proc/adestroy_effect()
+	playsound(loc,'sound/effects/explosionfar.ogg', 200, TRUE)
+	visible_message("<span class='boldannounce'>[src] collapses, sealing everything inside!</span>\n<span class='warning'>Ores fall out of the cave as it is destroyed!</span>")
 
 /obj/structure/spawner/mining/proc/drop_astroloot()
 	for(var/type in GLOB.astroloot)
