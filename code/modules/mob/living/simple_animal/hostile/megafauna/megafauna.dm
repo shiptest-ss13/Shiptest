@@ -71,10 +71,10 @@
 	if(health > 0)
 		return
 	else
-		var/datum/status_effect/crusher_damage/C = has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
+		spawn_mob_trophy()
+		var/datum/status_effect/crusher_damage/crusher = has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
 		var/crusher_kill = FALSE
-		if(C && mob_trophy && C.total_damage >= maxHealth * 0.6)
-			spawn_mob_trophy()
+		if(crusher && mob_trophy && crusher.total_damage >= maxHealth * 0.6)
 			crusher_kill = TRUE
 		if(true_spawn && !(flags_1 & ADMIN_SPAWNED_1))
 			var/tab = "megafauna_kills"
