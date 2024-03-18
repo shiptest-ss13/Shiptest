@@ -88,7 +88,6 @@
 						/obj/item/crusher_trophy/demon_claws,
 						/obj/item/crusher_trophy/broodmother_tongue,
 						/obj/item/crusher_trophy/ice_block_talisman,
-						/obj/item/crusher_trophy/king_goat,
 						/obj/item/crusher_trophy/miner_eye,
 						/obj/item/crusher_trophy/vortex_talisman,
 						/obj/item/crusher_trophy/blaster_tubes)

@@ -678,35 +678,6 @@
 /obj/effect/temp_visual/hierophant/wall/crusher
 	duration = 75
 
-//I am afraid of this code. It also does not function(in terms of doing damage to enemies) as of my last test.
-/obj/item/crusher_trophy/king_goat
-	name = "king goat hoof"
-	desc = "A hoof from the king of all goats, it still glows with a fraction of its original power..."
-	icon_state = "goat_hoof" //needs a better sprite but I cant sprite .
-	denied_type = /obj/item/crusher_trophy/king_goat
-
-/obj/item/crusher_trophy/king_goat/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>Suitable as a trophy for a proto-kinetic crusher.</span>"
-
-/obj/item/crusher_trophy/king_goat/effect_desc()
-	return "you also passively recharge pulses 5x as fast while this is equipped and do a decent amount of damage at the cost of dulling the blade"
-
-/obj/item/crusher_trophy/king_goat/on_projectile_fire(obj/projectile/destabilizer/marker, mob/living/user)
-	marker.damage = 10 //in my testing only does damage to simple mobs so should be fine to have it high //it does damage to nobody. Please fix -M
-
-/obj/item/crusher_trophy/king_goat/add_to(obj/item/kinetic_crusher/H, mob/living/user)
-	. = ..()
-	if(.)
-		H.charge_time = 3
-		H.AddComponent(/datum/component/two_handed, force_wielded=5)
-
-/obj/item/crusher_trophy/king_goat/remove_from(obj/item/kinetic_crusher/H, mob/living/user)
-	. = ..()
-	if(.)
-		H.charge_time = 15
-		H.AddComponent(/datum/component/two_handed, force_wielded=20)
-
 /obj/item/crusher_trophy/shiny
 	name = "shiny nugget"
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
