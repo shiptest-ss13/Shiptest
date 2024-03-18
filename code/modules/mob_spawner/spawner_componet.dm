@@ -14,7 +14,6 @@
 	var/wave_timer
 	var/current_timerid
 
-
 /datum/component/spawner/Initialize(_mob_types, _spawn_time, _faction, _spawn_text, _max_mobs, _spawn_sound, _spawn_distance_min, _spawn_distance_max, _wave_length, _wave_downtime)
 	if(_spawn_time)
 		spawn_time=_spawn_time

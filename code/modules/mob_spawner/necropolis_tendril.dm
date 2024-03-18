@@ -47,7 +47,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 				if(L.stat || !L.client)
 					continue
 				L.client.give_award(/datum/award/achievement/boss/tendril_exterminator, L)
-				L.client.give_award(/datum/award/score/tendril_score, L) //Progresses score by one
+				L.client.give_award(/datum/award/score/nest_score, L) //Progresses score by one
 	GLOB.tendrils -= src
 	QDEL_NULL(emitted_light)
 	return ..()

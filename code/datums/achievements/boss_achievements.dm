@@ -2,10 +2,10 @@
 	category = "Bosses"
 	icon = "baseboss"
 
-/datum/award/achievement/boss/tendril_exterminator
-	name = "Tendril Exterminator"
+/datum/award/achievement/boss/nest_exterminator
+	name = "Nest Exterminator"
 	desc = "Watch your step"
-	database_id = BOSS_MEDAL_TENDRIL
+	database_id = BOSS_MEDAL_NEST
 	icon = "tendril"
 
 /datum/award/achievement/boss/boss_killer

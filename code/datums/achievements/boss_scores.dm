@@ -1,7 +1,7 @@
-/datum/award/score/tendril_score
-	name = "Tendril Score"
+/datum/award/score/nest_score
+	name = "Nest Score"
 	desc = "Watch your step"
-	database_id = TENDRIL_CLEAR_SCORE
+	database_id = NEST_CLEAR_SCORE
 
 /datum/award/score/boss_score
 	name = "Bosses Killed"
