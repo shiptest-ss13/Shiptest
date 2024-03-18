@@ -423,19 +423,16 @@
 		)
 	)
 
-	switch(type)
-		if("Miner")
-			outfit = /datum/outfit/generic/miner
-		if("Assistant")
-			outfit = /datum/outfit/generic
-		if("Engineer")
-			outfit = /datum/outfit/generic/engineer
-		if("Doctor")
-			outfit = /datum/outfit/generic/doctor
-		if("Scientist")
-			outfit = /datum/outfit/generic/science
-		if("Cargo")
-			outfit = /datum/outfit/generic/cargo
-		if("Security")
-			outfit = /datum/outfit/generic/security
+	var/outfit_map = list(
+			"Miner" = /datum/outfit/generic/miner,
+			"Assistant" = /datum/outfit/generic,
+			"Engineer" = /datum/outfit/generic/engineer,
+			"Doctor" = /datum/outfit/generic/doctor,
+			"Scientist" = /datum/outfit/generic/science,
+			"Cargo" = /datum/outfit/generic/cargo,
+			"Security" = /datum/outfit/generic/security
+		)
+
+	outfit = outfit_map[type]  // Access outfit directly
+
 	. = ..()
