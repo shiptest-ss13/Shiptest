@@ -68,5 +68,3 @@
 /obj/structure/spawner/wasteplanet/hivebot/extreme_threat
 	max_mobs = 10
 	spawn_time = 150
-
-
