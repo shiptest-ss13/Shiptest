@@ -27,7 +27,8 @@
 		set_anchored(!anchored)
 		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
 		return TRUE
-
+	else
+		return TRUE
 /obj/structure/punching_bag/wirecutter_act(mob/living/user, obj/item/W)
 	. = ..()
 	if(!anchored)
@@ -37,6 +38,7 @@
 				return TRUE
 			to_chat(user, "<span class='notice'>You cut apart [src].</span>")
 			deconstruct(TRUE)
+		return TRUE
 
 /obj/structure/punching_bag/proc/check_anchored_state(check_anchored)
 	if(anchored != check_anchored)
@@ -94,6 +96,8 @@
 		set_anchored(!anchored)
 		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
 		return TRUE
+	else
+		return TRUE
 
 /obj/structure/weightmachine/screwdriver_act(mob/living/user, obj/item/W)
 	. = ..()
@@ -104,6 +108,7 @@
 				return TRUE
 			to_chat(user, "<span class='notice'>You screw apart [src].</span>")
 			deconstruct(TRUE)
+		return TRUE
 
 /obj/structure/weightmachine/proc/check_anchored_state(check_anchored)
 	if(anchored != check_anchored)
