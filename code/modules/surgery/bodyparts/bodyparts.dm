@@ -54,14 +54,12 @@
 	var/bleed_threshold = 10
 	/// Threshold at which the limb will start bleeding if damaged by blunt items
 	var/bleed_threshold_blunt = 40
-	/// Minimum damage of an incoming attack to cause bleeding
+	/// Minimum damage of an incoming attack for it to cause bleeding
 	var/bleed_damage_min = 5
-	/// Minimum damage of an incoming blunt attack to cause bleeding
+	/// Minimum damage of an incoming blunt attack for it to cause bleeding
 	var/bleed_damage_min_blunt = 10
 	/// Current limb bleeding, increased when the limb takes brute damage over certain thresholds, decreased through bandages and cauterization
 	var/bleeding = 0
-	/// Currently applied bandage, used for healing
-	var/obj/item/stack/medical/gauze/dressing = null
 
 	/// So we know if we need to scream if this limb hits max damage
 	var/last_maxed
@@ -214,8 +212,6 @@
 	if(stamina_dam > DAMAGE_PRECISION && owner.stam_regen_start_time <= world.time)					//DO NOT update health here, it'll be done in the carbon's life.
 		heal_damage(0, 0, INFINITY, null, FALSE)
 		. |= BODYPART_LIFE_UPDATE_HEALTH
-	if(dressing)
-		heal_damage(dressing.healing_rate, dressing.healing_rate, required_status = BODYTYPE_ORGANIC, updating_health = FALSE)
 
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
@@ -250,6 +246,10 @@
 	if((brute_dam > bone_break_threshold) && prob(brute_dam + break_modifier))
 		break_bone()
 
+	// Bleeding is applied here
+	if((sharpness && brute_dam+brute > bleed_threshold && brute > bleed_damage_min) || (brute_dam+brute > bleed_threshold_blunt && brute > bleed_damage_min_blunt))
+		adjust_bleeding(brute/max_damage)
+
 	var/can_inflict = max_damage - get_damage()
 	if(can_inflict <= 0)
 		return FALSE
@@ -262,10 +262,6 @@
 
 	brute_dam += brute
 	burn_dam += burn
-
-	// Bleeding is applied here
-	if((sharpness && brute_dam > bleed_threshold && brute > bleed_damage_min) || (brute_dam > bleed_threshold_blunt && brute > bleed_damage_min_blunt))
-		bleeding += brute_dam/max_damage
 
 	//We've dealt the physical damages, if there's room lets apply the stamina damage.
 	if(stamina)
@@ -293,6 +289,7 @@
 
 	if(brute)
 		set_brute_dam(round(max(brute_dam - brute, 0), DAMAGE_PRECISION))
+		adjust_bleeding(brute/max_damage, BLOOD_LOSS_DAMAGE_CAP)
 	if(burn)
 		set_burn_dam(round(max(burn_dam - burn, 0), DAMAGE_PRECISION))
 	if(stamina)
@@ -334,6 +331,11 @@
 	. = stamina_dam
 	stamina_dam = new_value
 
+/// Adjusts bodypart bleeding,  value = amount of change, maximum = maximum current bloodloss amount this can modify
+/obj/item/bodypart/proc/adjust_bleeding(value, maximum = BLOOD_LOSS_MAXIMUM)
+	if(bleeding > maximum)
+		return
+	bleeding = round(clamp(bleeding+value, 0, maximum), 0.01)
 
 //Returns total damage.
 /obj/item/bodypart/proc/get_damage(include_stamina = FALSE)

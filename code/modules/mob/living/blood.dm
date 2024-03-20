@@ -87,7 +87,7 @@
 		//Bleeding out
 		var/limb_bleed = 0
 		for(var/obj/item/bodypart/BP as anything in bodyparts)
-			if(BP.dressing)
+			if(BP.GetComponent(/datum/component/bandage))
 				continue
 			limb_bleed += BP.bleeding
 

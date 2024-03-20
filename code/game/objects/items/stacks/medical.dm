@@ -155,19 +155,21 @@
 	amount = 12
 
 /obj/item/stack/medical/gauze/heal(mob/living/target, mob/user)
-	if(ishuman(target))
-		var/mob/living/carbon/human/H = target
-		var/obj/item/bodypart/BP = H.get_bodypart(check_zone(user.zone_selected))
-		if(!BP || !(BP in H.get_damaged_bodyparts(TRUE, TRUE)))
+	if(iscarbon(target))
+		var/mob/living/carbon/C = target
+		var/obj/item/bodypart/BP = C.get_bodypart(check_zone(user.zone_selected))
+		if(!BP)
+			to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]!"))
 			return
-		BP.dressing = new type(BP, 1, FALSE)
-		use(1)
-		user.visible_message(span_notice("[user] wraps [target]'s [BP] with [src]."), span_notice("You wrap [target]'s [BP] with [src]."), span_hear("You hear ruffling cloth."))
+		if(!BP.get_damage() && !BP.bleeding)
+			to_chat(user, span_warning("[C]'s [BP] is already fully healed!"))
+			return
+		if(BP.GetComponent(/datum/component/bandage))
+			to_chat(user, span_warning("[C] is already bandaged!"))
+			return
+		BP.AddComponent( /datum/component/bandage, healing_rate, lifespan, "gauze")
+		user.visible_message(span_notice("[user] wraps [C]'s [BP] with [src]."), span_notice("You wrap [C]'s [BP] with [src]."), span_hear("You hear ruffling cloth."))
 		return TRUE
-		/*if(!H.bleedsuppress && H.bleed_rate) //so you can't stack bleed suppression
-			to_chat(user, "<span class='notice'>You stop the bleeding of [target]!</span>")
-			return TRUE*/
-	to_chat(user, "<span class='warning'>You can not use \the [src] on [target]!</span>")
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())

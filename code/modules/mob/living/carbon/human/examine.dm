@@ -251,9 +251,9 @@
 		else
 			var/bleed_msg = "[t_He] [t_is] bandaged with something.\n"
 			for(var/obj/item/bodypart/BP in bleed_check)
-				if(!BP.dressing)
-					bleed_msg = "<B>[t_He] [t_is] bleeding!</B>\n"
-					break
+				//if(!BP.dressing)
+					//bleed_msg = "<B>[t_He] [t_is] bleeding!</B>\n"
+					//break
 			msg += bleed_msg
 	/*if(bleedsuppress)
 		msg += "[t_He] [t_is] bandaged with something.\n"
@@ -415,17 +415,17 @@
 	. = ..()
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		var/bleed_text
-		if(BP.dressing)
-			. += span_notice("Their [BP] is dressed with [BP.dressing.name]")
-			continue
+		//if(BP.dressing)
+			//. += span_notice("Their [BP] is dressed with [BP.dressing.name]")
+			//continue
 		if(!BP.bleeding)
 			continue
 		switch(BP.bleeding)
-			if(0 to 1)
+			if(0 to 0.5)
 				bleed_text = "lightly."
-			if(1 to 2)
+			if(0.5 to 1)
 				bleed_text = "moderately."
-			if(2 to 3)
+			if(1 to 1.5)
 				bleed_text = "heavily!"
 			else
 				bleed_text = "significantly!!"

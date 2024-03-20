@@ -74,7 +74,7 @@
 		log_combat(user, H, "finishes slicing the throat of")
 		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD)
 		var/obj/item/bodypart/throat_in_question = H.get_bodypart(BODY_ZONE_HEAD)
-		throat_in_question.bleeding = clamp(throat_in_question.bleeding + 20, 0, 30)
+		throat_in_question.adjust_bleeding(20)
 		H.apply_status_effect(/datum/status_effect/neck_slice)
 
 /datum/component/butchering/proc/Butcher(mob/living/butcher, mob/living/meat)
