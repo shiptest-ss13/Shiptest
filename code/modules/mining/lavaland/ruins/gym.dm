@@ -21,13 +21,11 @@
 		return TRUE
 	add_fingerprint(user)
 	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
-	var/uraction = anchored ? "unsbolt [src] from" : "bolt [src] to"
+	var/uraction = anchored ? "unbolt [src] from" : "bolt [src] to"
 	user.visible_message("<span class='warning'>[user] [action] the floor.</span>", "<span class='notice'>You start to [uraction] the floor...</span>", "<span class='hear'>You hear rustling noises.</span>")
 	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
 		set_anchored(!anchored)
-		to_chat(user, "<span class='notice'>You [anchored ? "unbolt" : "bolt"] [src] from the floor.</span>")
-		return TRUE
-	else
+		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
 		return TRUE
 
 /obj/structure/punching_bag/wirecutter_act(mob/living/user, obj/item/W)
@@ -39,7 +37,6 @@
 				return TRUE
 			to_chat(user, "<span class='notice'>You cut apart [src].</span>")
 			deconstruct(TRUE)
-		return TRUE
 
 /obj/structure/punching_bag/proc/check_anchored_state(check_anchored)
 	if(anchored != check_anchored)
@@ -91,13 +88,11 @@
 		return TRUE
 	add_fingerprint(user)
 	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
-	var/uraction = anchored ? "unsbolt [src] from" : "bolt [src] to"
+	var/uraction = anchored ? "unbolt [src] from" : "bolt [src] to"
 	user.visible_message("<span class='warning'>[user] [action] the floor.</span>", "<span class='notice'>You start to [uraction] the floor...</span>", "<span class='hear'>You hear rustling noises.</span>")
 	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
 		set_anchored(!anchored)
-		to_chat(user, "<span class='notice'>You [anchored ? "unbolt" : "bolt"] [src] from the floor.</span>")
-		return TRUE
-	else
+		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
 		return TRUE
 
 /obj/structure/weightmachine/screwdriver_act(mob/living/user, obj/item/W)
@@ -109,7 +104,6 @@
 				return TRUE
 			to_chat(user, "<span class='notice'>You screw apart [src].</span>")
 			deconstruct(TRUE)
-		return TRUE
 
 /obj/structure/weightmachine/proc/check_anchored_state(check_anchored)
 	if(anchored != check_anchored)
