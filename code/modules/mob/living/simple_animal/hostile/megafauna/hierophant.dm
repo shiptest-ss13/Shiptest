@@ -58,8 +58,8 @@ Difficulty: Hard
 	ranged = TRUE
 	ranged_cooldown_time = 40
 	aggro_vision_range = 21 //so it can see to one side of the arena to the other
+	mob_trophy = /obj/item/crusher_trophy/vortex_talisman
 	loot = list(/obj/item/hierophant_club)
-	mob_trophy = obj/item/crusher_trophy/vortex_talisman
 	wander = FALSE
 	gps_name = "Zealous Signal"
 	achievement_type = /datum/award/achievement/boss/hierophant_kill
