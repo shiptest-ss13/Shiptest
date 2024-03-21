@@ -33,16 +33,11 @@
 	icon_state = "mechanism_pistol"
 	gun_part_type = GUN_PART_MECHANISM
 
-/obj/item/part/gun/modular/mechanism/shotgun
-	name = "generic shotgun mechanism"
-	icon_state = "mechanism_shotgun"
-
-/obj/item/part/gun/modular/mechanism/rifle
-
 /obj/item/part/gun/modular/mechanism/revolver
 	name = "generic revolver mechanism"
 
 /obj/item/part/gun/modular/mechanism/pistol
+	name = "generic pistol mechanism"
 
 /obj/item/part/gun/modular/barrel
 	name = "generic barrel"
@@ -50,13 +45,8 @@
 	icon_state = "barrel_35"
 	gun_part_type = GUN_PART_BARREL
 
-/obj/item/part/gun/modular/barrel/shotgun
-	name = "generic shotgun barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction."
-	icon_state = "barrel_30"
-
-/obj/item/part/gun/modular/barrel/rifle
-
 /obj/item/part/gun/modular/barrel/revolver
+	name = "generic revolver barrel"
 
 /obj/item/part/gun/modular/barrel/pistol
+	name = "generic pistol barrel"

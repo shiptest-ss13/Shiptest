@@ -116,7 +116,5 @@
 	cost = 1000
 	contains = list(/obj/item/stack/gun_part,
 					/obj/item/stack/gun_part,
-					/obj/item/stack/gun_part,
-					/obj/item/stack/gun_part,
-					/obj/item/stack/gun_part)
+					/obj/item/stack/gun_part,)
 	crate_name = "gun parts crate"

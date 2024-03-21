@@ -9,23 +9,9 @@
 /datum/lathe_recipe/part/frame
 	result = /obj/item/part/gun/frame
 
-
 /datum/lathe_recipe/part/grip/wood
 	result = /obj/item/part/gun/modular/grip/wood
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3)
-
-/*
-/datum/lathe_recipe/part/frame/winchester
-	result = /obj/item/part/gun/frame/winchester
-
-/datum/lathe_recipe/part/mechanism/shotgun
-	result = /obj/item/part/gun/modular/mechanism/shotgun
-	reqs = list(/obj/item/stack/sheet/metal = 2,
-			/obj/item/stack/gun_part = 1)
-
-/datum/lathe_recipe/part/barrel/shotgun
-	result = /obj/item/part/gun/modular/barrel/shotgun
-*/
 
 /datum/lathe_recipe/part/barrel/revolver
 	result = /obj/item/part/gun/modular/barrel/revolver
@@ -44,16 +30,6 @@
 	var/list/valid_parts = list()
 	var/required_part_types = ALL
 
-/*
-/datum/lathe_recipe/gun/vickland
-	result = /obj/item/gun/ballistic/automatic/vickland
-	valid_parts = list(
-		/obj/item/part/gun/frame,
-		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/rifle,
-		/obj/item/part/gun/modular/barrel/rifle
-		)
-
 /datum/lathe_recipe/gun/candor
 	result = /obj/item/gun/ballistic/automatic/pistol/candor
 	valid_parts = list(
@@ -62,7 +38,6 @@
 		/obj/item/part/gun/modular/mechanism/pistol,
 		/obj/item/part/gun/modular/barrel/pistol
 		)
-*/
 
 /datum/lathe_recipe/gun/montagne
 	result = /obj/item/gun/ballistic/revolver/montagne

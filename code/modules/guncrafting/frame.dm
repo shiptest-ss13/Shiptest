@@ -2,7 +2,7 @@
 	name = "gun frame"
 	desc = "a generic gun frame."
 	icon_state = "frame_olivaw"
-	var/list/preinstalled_parts = list()
+	//var/list/preinstalled_parts = list()
 	var/list/installed_parts = list()
 	var/list/filtered_recipes = list()
 
@@ -11,8 +11,10 @@
 
 /obj/item/part/gun/frame/Initialize()
 	. = ..()
+	/*
 	for (var/part_type in preinstalled_parts)
 		installed_parts += new part_type(src)
+	*/
 	get_current_recipes()
 	/*
 	var/spawn_with_preinstalled_parts = TRUE
@@ -199,46 +201,14 @@
 			. += "<span class='notice'>[src] has " + part_type_message + ".</span>"
 */
 
-/*
-/obj/item/part/gun/frame/winchester
-	name = "winchester gun frame"
-	icon_state = "frame_shotgun"
-	preinstalled_parts = list(
-		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/rifle,
-		/obj/item/part/gun/modular/barrel/rifle
-		)
-
-/obj/item/part/gun/frame/winchester/mk1
-	name = "winchester mk1 gun frame"
-
-/obj/item/part/gun/frame/candor
-	name = "candor gun frame"
-	preinstalled_parts = list(
-		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/pistol,
-		/obj/item/part/gun/modular/barrel/pistol
-		)
-
-/obj/item/part/gun/frame/commander
-	name = "commander gun frame"
-
-/obj/item/part/gun/frame/boltaction
-	name = "bolt action gun frame"
-
-*/
-
 /obj/item/part/gun/frame/revolver
 	name = "revolver gun frame"
 	icon_state = "frame_revolver"
-	preinstalled_parts = list(
-		/obj/item/part/gun/modular/grip/wood,
-		/obj/item/part/gun/modular/mechanism/revolver,
-		/obj/item/part/gun/modular/barrel/revolver
-		)
 
-/*
-/obj/item/part/gun/frame/tec9
+/obj/item/part/gun/frame/deringer
+	name = "deringer gun frame"
+	icon_state = "frame_revolver"
 
-/obj/item/part/gun/frame/shotgun
-*/
+/obj/item/part/gun/frame/pistol
+	name = "pistol gun frame"
+	icon_state = "frame_pistol"
