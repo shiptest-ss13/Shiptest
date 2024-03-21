@@ -148,32 +148,32 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
-//minutemen
-/obj/item/radio/headset/minutemen
+//clip
+/obj/item/radio/headset/clip
 	name = "minutemen radio headset"
-	desc = "Used by militias flying the five stars of the Colonial Minutemen."
-	icon_state = "cmm_headset"
+	desc = "Used by militias flying the five stars of the CLIP Minutemen."
+	icon_state = "clip_headset"
 	keyslot = new /obj/item/encryptionkey/minutemen
 
-/obj/item/radio/headset/minutemen/captain
+/obj/item/radio/headset/clip/captain
 	name = "minuteman officer radio headset"
-	desc = "Used by the Colonial Minutemen's enlisted officers."
+	desc = "Used by the CLIP Minutemen's enlisted officers."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
-/obj/item/radio/headset/minutemen/alt
+/obj/item/radio/headset/clip/alt
 	name = "minutemen bowman headset"
-	desc = "Used by militias flying the five stars of the Colonial Minutemen. Protects ears from flashbangs."
-	icon_state = "cmm_headset_alt"
-	item_state = "cmm_headset_alt"
+	desc = "Used by militias flying the five stars of the CLIP Minutemen. Protects ears from flashbangs."
+	icon_state = "clip_headset_alt"
+	item_state = "clip_headset_alt"
 
-/obj/item/radio/headset/minutemen/alt/captain
+/obj/item/radio/headset/clip/alt/captain
 	name = "minuteman officer bowman headset"
-	desc = "Used by the Colonial Minutemen's enlisted officers. Protects ears from flashbangs."
+	desc = "Used by the CLIP Minutemen's enlisted officers. Protects ears from flashbangs."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
-/obj/item/radio/headset/minutemen/alt/ComponentInitialize()
+/obj/item/radio/headset/clip/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
 
@@ -335,8 +335,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/silicon/pai
 	name = "\proper mini Integrated Subspace Transceiver "
-	subspace_transmission = FALSE
-
 
 /obj/item/radio/headset/silicon/ai
 	name = "\proper Integrated Subspace Transceiver "

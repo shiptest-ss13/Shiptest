@@ -17,7 +17,7 @@
 #define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
 #define MANUFACTURER_DONKCO "the Donk! Co. logo"
 #define MANUFACTURER_PGF "the Etherbor Industries emblem"
-
+#define MANUFACTURER_IMPORT "Lanchester Import Co."
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -134,12 +134,13 @@
 	var/has_safety = FALSE
 	///If the saftey on? If so, we can't fire the weapon
 	var/safety = FALSE
+	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
+	var/safety_wording = "safety"
 
 	// Guncrafting
 	var/obj/item/part/gun/frame/frame
 	// 0 means no frame 1-5 are diffrent quality parts
 	var/quality = 3
-
 
 /obj/item/gun/Initialize(mapload, proviedQuality)
 	. = ..()
@@ -249,6 +250,7 @@
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
+	SEND_SIGNAL(src, COMSIG_GUN_CHAMBER_PROCESSED)
 	return FALSE
 
 //check if there's enough ammo/energy/whatever to shoot one time
@@ -272,9 +274,9 @@
 	if(muzzle_flash && !muzzle_flash.applied)
 		handle_muzzle_flash(user, muzzle_angle)
 
-	if(wielded_fully && recoil)
+	if(wielded_fully)
 		simulate_recoil(user, recoil, actual_angle)
-	else if(!wielded_fully && recoil_unwielded)
+	else if(!wielded_fully)
 		simulate_recoil(user, recoil_unwielded, actual_angle)
 
 	if(suppressed)
@@ -462,15 +464,17 @@
 					to_chat(user, "<span class='warning'>[src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
+			sprd = calculate_spread(user, sprd)
+
 			before_firing(target,user)
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
 				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-					shoot_live_shot(user, 1, target, message)
+					shoot_live_shot(user, TRUE, target, message)
 				else
-					shoot_live_shot(user, 0, target, message)
+					shoot_live_shot(user, FALSE, target, message)
 		else
 			shoot_with_empty_chamber(user)
 			return
@@ -550,8 +554,8 @@
 	if(!silent)
 		playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
 		user.visible_message(
-			span_notice("[user] turns the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
-			span_notice("You turn the safety on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("[user] turns the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
+			span_notice("You turn the [safety_wording] on [src] [safety ? "<span class='green'>ON</span>" : "<span class='red'>OFF</span>"]."),
 		)
 
 	update_appearance()
@@ -745,9 +749,9 @@
 		var/mutable_appearance/safety_overlay
 		safety_overlay = mutable_appearance('icons/obj/guns/safety.dmi')
 		if(safety)
-			safety_overlay.icon_state = "safety-on"
+			safety_overlay.icon_state = "[safety_wording]-on"
 		else
-			safety_overlay.icon_state = "safety-off"
+			safety_overlay.icon_state = "[safety_wording]-off"
 		. += safety_overlay
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
@@ -793,8 +797,16 @@
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
 
+// We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks
+/obj/item/gun/proc/calculate_recoil(mob/user, recoil_bonus = 0)
+	return recoil_bonus
+
+// We do it like this in case theres some specific gun behavior for adjusting spread, like bipods or folded stocks
+/obj/item/gun/proc/calculate_spread(mob/user, bonus_spread)
+	return bonus_spread
+
 /obj/item/gun/proc/simulate_recoil(mob/living/user, recoil_bonus = 0, firing_angle)
-	var/total_recoil = recoil_bonus
+	var/total_recoil = calculate_recoil(user, recoil_bonus)
 
 	var/actual_angle = firing_angle + rand(-recoil_deviation, recoil_deviation) + 180
 	if(actual_angle > 360)

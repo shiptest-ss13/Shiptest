@@ -329,6 +329,15 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/c38
+	name = "Ammo Box (.38 Special)"
+	id = "c38"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 15000)
+	build_path = /obj/item/ammo_box/c38_box
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/c9mm
 	name = "Ammo Box (9mm)"
 	id = "c9mm"

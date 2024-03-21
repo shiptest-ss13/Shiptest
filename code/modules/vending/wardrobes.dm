@@ -541,3 +541,56 @@
 /obj/item/vending_refill/wardrobe/cent_wardrobe
 	machine_name = "CentDrobe"
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
+
+
+/obj/machinery/vending/wardrobe/clip_wardrobe
+	name = "\improper CLIPDrobe"
+	desc = "A very special vending machine that somehow vends every piece of clothing used by the Confederated League! Wow! You get the feeling this is meant for debugging."
+	icon_state = "clipdrobe"
+	product_ads = "Coast guard in style!"
+	vend_reply = "Thank you for using the CLIPDrobe!"
+	products = list(
+		/obj/item/clothing/shoes/laceup = 3,
+		/obj/item/clothing/shoes/jackboots = 3,
+		/obj/item/clothing/gloves/combat = 3,
+		/obj/item/clothing/glasses/sunglasses = 3,
+
+		/obj/item/clothing/under/clip = 3,
+		/obj/item/clothing/under/clip/minutemen = 3,
+		/obj/item/clothing/under/clip/formal/with_shirt = 3,
+		/obj/item/clothing/under/clip/formal/with_shirt/alt = 3,
+		/obj/item/clothing/under/clip/medic = 3,
+		/obj/item/clothing/under/clip/officer = 3,
+		/obj/item/clothing/under/clip/officer/alt = 3,
+
+		/obj/item/clothing/mask/gas/clip = 3,
+		/obj/item/storage/belt/military/clip = 3,
+		/obj/item/storage/belt/medical/webbing/clip = 3,
+		/obj/item/clothing/gloves/color/latex/nitrile/clip = 3,
+
+		/obj/item/clothing/suit/toggle/lawyer/clip = 3,
+		/obj/item/clothing/suit/armor/vest/capcarapace/clip = 3,
+		/obj/item/clothing/suit/armor/vest/capcarapace/clip/admiral = 3,
+		/obj/item/clothing/suit/armor/clip_trenchcoat = 3,
+		/obj/item/clothing/suit/armor/vest/bulletproof = 3,
+		/obj/item/clothing/suit/armor/riot/clip = 3,
+
+		/obj/item/clothing/suit/space/hardsuit/security/independent/clip = 3,
+		/obj/item/clothing/suit/space/hardsuit/clip_spotter = 3,
+
+		/obj/item/clothing/head/helmet/bulletproof/x11/clip = 3,
+		/obj/item/clothing/head/helmet/riot/clip = 3,
+		/obj/item/clothing/head/clip = 3,
+		/obj/item/clothing/head/clip/corpsman = 3,
+		/obj/item/clothing/head/clip/slouch = 3,
+		/obj/item/clothing/head/clip/slouch/officer = 3,
+		/obj/item/clothing/head/clip/boonie = 3,
+		/obj/item/clothing/head/fedora/det_hat/clip = 3,
+		/obj/item/clothing/head/flatcap/clip = 3,
+		/obj/item/clothing/head/clip/bicorne = 3,
+
+	)
+	refill_canister = /obj/item/vending_refill/wardrobe/clip_wardrobe
+/obj/item/vending_refill/wardrobe/clip_wardrobe
+	machine_name = "CLIPDrobe"
+	light_color = LIGHT_COLOR_CYAN
