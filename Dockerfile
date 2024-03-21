@@ -10,7 +10,7 @@ WORKDIR /build
 COPY dependencies.sh .
 RUN dpkg --add-architecture i386 \
     && apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends -o APT::Immediate-Configure=false \
     curl ca-certificates gcc-multilib \
     g++-multilib libc6-i386 zlib1g-dev:i386 \
     libssl-dev:i386 pkg-config:i386 git \
