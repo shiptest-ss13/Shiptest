@@ -119,7 +119,7 @@
 	throw_message = "bounces harmlessly off of"
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
-	mob_trophy = /obj/item/crusher_trophy/legion_skull
+	mob_trophy = /obj/item/mob_trophy/legion_skull
 	del_on_death = 1
 	stat_attack = HARD_CRIT
 	robust_searching = 1
@@ -131,7 +131,7 @@
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
-		new /obj/item/crusher_trophy/legion_skull(loc)
+		new /obj/item/mob_trophy/legion_skull(loc)
 		visible_message("<span class='warning'>One of the [src]'s skulls looks intact.</span>")
 	..()
 
@@ -150,7 +150,7 @@
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
 	icon_dead = "dwarf_legion"
-	mob_trophy = /obj/item/crusher_trophy/dwarf_skull
+	mob_trophy = /obj/item/mob_trophy/dwarf_skull
 	maxHealth = 150
 	health = 150
 	move_to_delay = 2
@@ -183,7 +183,7 @@
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(75))
-		new /obj/item/crusher_trophy/dwarf_skull(loc)
+		new /obj/item/mob_trophy/dwarf_skull(loc)
 		visible_message("<span class='warning'>One of the [src]'s skulls looks like it survived.</span>")
 	..()
 
@@ -334,7 +334,7 @@
 	icon_living = "snowlegion"
 	icon_aggro = "snowlegion_alive"
 	icon_dead = "snowlegion"
-	mob_trophy = /obj/item/crusher_trophy/legion_skull
+	mob_trophy = /obj/item/mob_trophy/legion_skull
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/snow
 

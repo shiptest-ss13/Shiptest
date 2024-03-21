@@ -19,8 +19,8 @@
 	time = 35
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 3,
-				/obj/item/crusher_trophy/wolf_ear = 2,
-				/obj/item/crusher_trophy/fang = 1)
+				/obj/item/mob_trophy/wolf_ear = 2,
+				/obj/item/mob_trophy/fang = 1)
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/bonecodpiece
@@ -28,7 +28,7 @@
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/crusher_trophy/legion_skull = 1,
+				/obj/item/mob_trophy/legion_skull = 1,
 				/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	category = CAT_PRIMAL
 
@@ -142,7 +142,7 @@
 	time = 55
 	reqs = list(/obj/item/spear = 1,
 				/obj/item/organ/regenerative_core = 1,
-				/obj/item/crusher_trophy/legion_skull = 2)
+				/obj/item/mob_trophy/legion_skull = 2)
 	result = /obj/structure/legionpike
 	category = CAT_PRIMAL
 
@@ -212,8 +212,8 @@
 	name = "Dragonslayer's Spear"
 	result = /obj/item/spear/dragonspear
 	time = 45
-	reqs = list(/obj/item/crusher_trophy/ash_spike = 1,
-				/obj/item/crusher_trophy/tail_spike = 2,
+	reqs = list(/obj/item/mob_trophy/ash_spike = 1,
+				/obj/item/mob_trophy/tail_spike = 2,
 				/obj/item/stack/sheet/bone = 5,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_PRIMAL

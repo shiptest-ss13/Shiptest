@@ -37,7 +37,7 @@
 	move_resist = MOVE_RESIST_DEFAULT
 	pull_force = PULL_FORCE_DEFAULT
 	if(prob(15))
-		new /obj/item/crusher_trophy/shiny(loc)
+		new /obj/item/mob_trophy/shiny(loc)
 		visible_message("<span class='warning'>You notice a glimmering nugget of shiny metal.</span>")
 	..()
 
