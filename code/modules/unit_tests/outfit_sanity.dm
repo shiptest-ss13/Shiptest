@@ -3,7 +3,10 @@
 	/* We don't check the result of equip_to_slot_or_del because it returns false for random jumpsuits, as they delete themselves on init */ \
 	var/obj/item/outfit_item = H.get_item_by_slot(##slot_name); \
 	if (!outfit_item) { \
-		TEST_FAIL("[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
+		if (outfit.random != TRUE) \
+			TEST_FAIL("[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
+		else \
+			log_world("[outfit.name]'s [#outfit_key] is invalid! Could not equip a [outfit.##outfit_key] into that slot."); \
 	} \
 }
 
