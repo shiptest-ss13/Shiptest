@@ -402,9 +402,9 @@
 /obj/item/ammo_box/c8x50mm_box
 	name = "ammo box (8x50mm)"
 	desc = "A box of standard 8x50mm ammo."
-	icon_state = "8x50mm"
+	icon_state = "8x50mmbox"
 	ammo_type = /obj/item/ammo_casing/a8_50r
-	max_ammo = 50
+	max_ammo = 20
 
 /obj/item/ammo_box/ferropelletbox
 	name = "ammo box (ferromagnetic pellets)"
@@ -429,7 +429,7 @@
 
 /obj/item/ammo_box/c8x50mmhp_box
 	name = "ammo box (8x50mm)"
-	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of ."
-	icon_state = "8x50mm-hp"
+	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration.."
+	icon_state = "8x50mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/a8_50rhp
 	max_ammo = 20

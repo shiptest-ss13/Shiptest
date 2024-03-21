@@ -3,7 +3,7 @@
 	"map_name": "Vela-class Industrial Cruiser",
 	"prefix": "CMGSV",
 	"namelists": ["GENERAL", "MYTHOLOGICAL", "BEASTS"],
-	"description": "The Vela-Class is the designation for a series of semi-modular industrial cruisers created by the Colonial Minutemen in the early 440s. While the original design was created almost exclusively for extracting minerals from asteroid belts, modern examples tend to take on a multi-mission role, with the most common configuration being a mech hanger, and research pod. The ship itself often sees long deployments that encourage modification, leading to Velas taking on a personality as their crews leave their mark.",
+	"description": "The Vela-Class is the designation for a series of semi-modular industrial cruisers created by the CLIP Minutemen in the early 440s. While the original design was created almost exclusively for extracting minerals from asteroid belts, modern examples tend to take on a multi-mission role, with the most common configuration being a mech hanger, and research pod. The ship itself often sees long deployments that encourage modification, leading to Velas taking on a personality as their crews leave their mark.",
 	"tags": [
 		"Robotics",
 		"Construction",
@@ -15,41 +15,38 @@
 	"limit": 1,
 	"job_slots": {
 		"Captain": {
-			"outfit": "/datum/outfit/job/minutemen/captain",
+			"outfit": "/datum/outfit/job/clip/minutemen/captain",
 			"officer": true,
 			"slots": 1
 		},
 		"Foreman": {
-			"outfit": "/datum/outfit/job/minutemen/ce",
+			"outfit": "/datum/outfit/job/clip/ce",
 			"officer": true,
 			"slots": 1
 		},
-		"Bridge Officer": {
-			"outfit": "/datum/outfit/job/minutemen/head_of_personnel",
+		"First Officer": {
+			"outfit": "/datum/outfit/job/clip/first_officer",
+			"officer": true,
 			"slots": 1
 		},
 		"Mech Pilot": {
-			"outfit": "/datum/outfit/job/minutemen/miner",
+			"outfit": "/datum/outfit/job/clip/minutemen/vehicle_pilot",
 			"slots": 4
 		},
-		"Mech Technician": {
-			"outfit": "/datum/outfit/job/minutemen/roboticist",
+		"Minuteman": {
+			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
 			"slots": 2
 		},
 		"Engineer": {
-			"outfit": "/datum/outfit/job/minutemen/engineer",
+			"outfit": "/datum/outfit/job/clip/mechanic",
 			"slots": 2
 		},
-		"Minuteman": {
-			"outfit": "/datum/outfit/job/minutemen/security",
+		"Researcher": {
+			"outfit": "/datum/outfit/job/clip/scientist",
 			"slots": 2
 		},
-		"Scientist": {
-			"outfit": "/datum/outfit/job/minutemen/scientist",
-			"slots": 2
-		},
-		"Cadet": {
-			"outfit": "/datum/outfit/job/minutemen/assistant",
+		"Deckhand": {
+			"outfit": "/datum/outfit/job/clip/minutemen/deckhand",
 			"slots": 1
 		}
 	},
