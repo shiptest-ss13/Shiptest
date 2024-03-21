@@ -17,8 +17,6 @@
 	)
 	spawn_text = "crawls out of"
 	spawn_sound = list('sound/effects/suitstep2.ogg')
-	move_resist = INFINITY
-	anchored = TRUE
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 	var/obj/effect/light_emitter/hivespawner/emitted_light
 

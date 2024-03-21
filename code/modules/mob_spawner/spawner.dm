@@ -1,10 +1,10 @@
 /obj/structure/spawner
 	name = "monster nest"
-	icon = 'icons/mob/animal.dmi'
+	icon = 'icons/mob/nest.dmi'
 	icon_state = "hole"
 	max_integrity = 100
 
-	move_resist = MOVE_FORCE_EXTREMELY_STRONG
+	move_resist = INFINITY
 	anchored = TRUE
 	density = TRUE
 
@@ -36,5 +36,5 @@
 	max_mobs = 5
 	spawn_time = 1200
 	mob_types = list(/mob/living/simple_animal/hostile/carp)
-	spawn_text = "climbs out of"
+	spawn_text = "swims out of"
 	faction = list("carp")
