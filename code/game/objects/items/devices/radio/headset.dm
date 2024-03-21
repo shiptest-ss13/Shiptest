@@ -160,7 +160,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/clip/alt
 	name = "minutemen bowman headset"
 	desc = "Used by militias flying the five stars of the Colonial Minutemen. Protects ears from flashbangs."
-	icon_state = "cmm_headset_alt"
+	mob_overlay_state = "cmm_headset_alt"
 
 /obj/item/radio/headset/clip/alt/captain
 	name = "minuteman officer bowman headset"
