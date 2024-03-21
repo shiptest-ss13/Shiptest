@@ -340,8 +340,8 @@
 		if(istype(L))
 			L.apply_status_effect(/datum/status_effect/freon/watcher)
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril
-	fromtendril = TRUE
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/nest
+	from_nest = TRUE
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
 	name = "forgotten watcher"

@@ -15,7 +15,7 @@
 	var/mob_trophy
 	var/throw_message = "bounces off of"
 	var/throw_deflection = 20		//WS edit - Whitesands
-	var/fromtendril = FALSE
+	var/from_nest = FALSE
 	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	mob_size = MOB_SIZE_LARGE

@@ -57,18 +57,18 @@ GLOBAL_LIST_INIT(ore_probability, list(
 
 /obj/structure/spawner/burrow/lava_planet
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 27,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 26,
-		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril = 26,
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 27,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 26,
+		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/nest = 26,
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 20,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing = 1
 	)
 
 /obj/structure/spawner/burrow/sand_planet
 	mob_types = list(
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril = 40,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/nest = 40,
 		/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands = 40,
-		/mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril = 20
+		/mob/living/simple_animal/hostile/asteroid/goliath/beast/nest = 20
 	)
 
 /obj/structure/spawner/burrow/ice_planet
@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/structure/spawner/burrow/ice_planet/hard
 	mob_types = list(
 		/mob/living/simple_animal/hostile/asteroid/brimdemon = 35,
-		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/tendril = 35,
+		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow/nest = 35,
 		/mob/living/simple_animal/hostile/asteroid/ice_whelp = 15,
 		/mob/living/simple_animal/hostile/asteroid/ice_demon = 15
 	)
