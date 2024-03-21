@@ -5,7 +5,10 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	/obj/item/stack/ore/silver = 50,
 	/obj/item/stack/ore/gold = 50,
 	/obj/item/stack/ore/uranium = 50,
-	/obj/item/stack/ore/diamond = 25
+	/obj/item/stack/ore/diamond = 25,
+	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25,
+	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25,
+	/obj/effect/mob_spawn/human/corpse/damaged/legioninfested = 25
 	))
 
 /obj/structure/spawner/burrow
