@@ -239,3 +239,10 @@
 	desc = "A wolf fang, displaying the wear and tear associated with a long and colorful life. Could be attached to a kinetic crusher or used to make a trophy."
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "fang"
+
+// Broodmother's loot: Broodmother Tongue
+/obj/item/mob_trophy/broodmother_tongue
+	name = "broodmother tongue"
+	desc = "The tongue of a broodmother.  If attached a certain way, makes for a suitable crusher trophy."
+	icon = 'icons/obj/lavaland/elite_trophies.dmi'
+	icon_state = "broodmother_tongue"
