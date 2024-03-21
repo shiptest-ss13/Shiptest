@@ -10,11 +10,10 @@ WORKDIR /build
 COPY dependencies.sh .
 RUN dpkg --add-architecture i386 \
     && apt-get update \
-    && apt-get install -y --no-install-recommends -o APT::Immediate-Configure=false \
+    && apt-get install -y --no-install-recommends \
     curl ca-certificates gcc-multilib \
     g++-multilib libc6-i386 zlib1g-dev:i386 \
     libssl-dev:i386 pkg-config:i386 git \
-    libgcc-s1:i386 \
     && /bin/bash -c "source dependencies.sh \
     && curl https://sh.rustup.rs | sh -s -- -y -t i686-unknown-linux-gnu --no-modify-path --profile minimal --default-toolchain \$RUST_VERSION" \
     && rm -rf /var/lib/apt/lists/*
@@ -32,7 +31,7 @@ RUN git init \
 FROM rust-build as auxmos
 RUN git init \
     && /bin/bash -c "source dependencies.sh \
-    && apt-get install -y --no-install-recommends libssl-dev:i386 \
+    && apt install -o APT::Immediate-Configure=false libgcc-s1:i386
     && git remote add origin \$AUXMOS_REPO \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
     && git checkout FETCH_HEAD \
