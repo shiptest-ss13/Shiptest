@@ -19,6 +19,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	resistance_flags = NONE
 	dog_fashion = null
+	content_overlays = FALSE
 
 /obj/item/clothing/suit/space
 	name = "space suit"
