@@ -34,7 +34,7 @@ RUN git init \
     && git remote add origin \$AUXMOS_REPO \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
     && git checkout FETCH_HEAD \
-    && cargo rustc --target=i686-unknown-linux-gnu --release --features all_reaction_hooks,katmos -- -C target-cpu=native
+    && PKG_CONFIG_ALLOW_CROSS=1 RUSTFLAGS="-C target-cpu=native" cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
 
 # Install nodejs which is required to deploy Shiptest
 FROM base as node
