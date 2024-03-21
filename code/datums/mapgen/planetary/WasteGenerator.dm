@@ -227,6 +227,7 @@
 	flora_spawn_list = list( //there are no plants here
 		/obj/effect/spawner/lootdrop/waste/mechwreck = 200,
 		/obj/effect/spawner/lootdrop/waste/mechwreck/rare = 50,
+		/obj/effect/spawner/lootdrop/gun_parts = 500,
 		/obj/effect/spawner/lootdrop/waste/trash = 900,
 		/obj/effect/spawner/lootdrop/waste/radiation = 80,
 		/obj/effect/spawner/lootdrop/waste/radiation/more_rads = 20,

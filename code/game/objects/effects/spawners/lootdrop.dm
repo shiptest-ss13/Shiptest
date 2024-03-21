@@ -1007,6 +1007,24 @@
 
 //wasteplanet things
 
+/obj/effect/spawner/lootdrop/gun_parts
+	name = "gun parts spawner"
+	loot = list(
+		/obj/item/stack/gun_part = 10,
+		/obj/item/part/gun/modular/grip = 1,
+		/obj/item/part/gun/modular/grip/wood = 1,
+		/obj/item/part/gun/modular/grip/black = 1,
+		/obj/item/part/gun/modular/mechanism = 1,
+		/obj/item/part/gun/modular/mechanism/revolver = 1,
+		/obj/item/part/gun/modular/mechanism/pistol = 1,
+		/obj/item/part/gun/modular/barrel = 1,
+		/obj/item/part/gun/modular/barrel/revolver = 1,
+		/obj/item/part/gun/modular/barrel/pistol = 1,
+		/obj/item/part/gun/frame/revolver = 1,
+		/obj/item/part/gun/frame/deringer = 1,
+		/obj/item/part/gun/frame/pistol
+	)
+
 /obj/effect/spawner/lootdrop/waste/grille_or_trash
 	name = "wasteplanet loot spawner"
 	loot = list(
