@@ -6,7 +6,6 @@
 	icon_state = "bsm_on"
 
 	faction = list("mining")
-	max_mobs = 5
 	max_integrity = 250
 	mob_types = list(
 		/mob/living/simple_animal/hostile/hivebot/wasteplanet = 40,
@@ -49,20 +48,3 @@
 	set_luminosity = 4
 	set_cap = 2.5
 	light_color = COLOR_RED_LIGHT
-
-
-/obj/structure/spawner/wasteplanet/hivebot/low_threat
-	max_mobs = 4
-	spawn_time = 300
-
-/obj/structure/spawner/wasteplanet/hivebot/medium_threat
-	max_mobs = 5
-	spawn_time = 250
-
-/obj/structure/spawner/wasteplanet/hivebot/high_threat
-	max_mobs = 7
-	spawn_time = 200
-
-/obj/structure/spawner/wasteplanet/hivebot/extreme_threat
-	max_mobs = 10
-	spawn_time = 150
