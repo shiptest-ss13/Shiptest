@@ -430,6 +430,6 @@
 	)
 	mob_spawn_chance = 30
 	feature_spawn_list = list(
-		/obj/structure/spawner/hivebot
+		/obj/structure/spawner/hivebot = 1
 	)
 	feature_spawn_chance = 2 //hivebot biomes should have their dongles
