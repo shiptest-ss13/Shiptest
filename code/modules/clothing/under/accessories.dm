@@ -432,7 +432,7 @@
 	name = "hunter's necklace"
 	desc = "A thick necklace woven from sinew and bits of wolfhide, adorned with a carved fang. Slaying such beasts is rumoured to elate the gods of old, and such an item proves your worth."
 	icon_state = "wolf_talisman"
-	armor = list("melee" = 15	, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 25, "acid" = 25)
+	armor = list("melee" = 15 , "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 25, "acid" = 25)
 	attachment_slot = CHEST
 	above_suit = TRUE
 

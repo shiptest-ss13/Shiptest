@@ -32,16 +32,6 @@
 				/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	category = CAT_PRIMAL
 
-/datum/crafting_recipe/bonestaff
-	name = "Legion Staff"
-	result = /obj/item/legion_staff
-	time = 35
-	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/crusher_trophy/legion_skull = 2,\
-				/obj/item/crusher_trophy/dwarf_skull = 1,
-				/obj/item/organ/regenerative_core/legion = 1)
-	category = CAT_PRIMAL
-
 /datum/crafting_recipe/skilt
 	name = "Sinew Kilt"
 	result = /obj/item/clothing/accessory/skilt
