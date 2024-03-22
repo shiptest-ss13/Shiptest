@@ -87,7 +87,7 @@
 				/obj/item/assembly/flash/handheld = 1,
 				/obj/item/restraints/handcuffs/cable/zipties = 1,
 				/obj/item/restraints/handcuffs = 1,
-				/obj/item/radio/off = 1,
+				/obj/item/radio = 1,
 				/obj/item/lighter = 3,
 				/obj/item/storage/box/matches = 3,
 				/obj/item/reagent_containers/syringe/contraband/space_drugs = 1,
