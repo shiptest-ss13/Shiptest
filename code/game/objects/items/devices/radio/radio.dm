@@ -434,11 +434,6 @@
 
 		recalculateChannels()
 
-
-/obj/item/radio	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
-	listening = 0			// And it's nice to have a subtype too for future features.
-	dog_fashion = /datum/dog_fashion/back
-
 /obj/item/radio/old
 	name = "old radio"
 	icon_state = "radio"
