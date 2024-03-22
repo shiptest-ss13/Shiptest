@@ -375,13 +375,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"bo" = (
-/obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/energy/laser/retro,
-/obj/item/gun/energy/laser/retro,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/dark,
-/area/ship/cargo)
 "bq" = (
 /obj/effect/turf_decal/corner/transparent/bar/diagonal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2216,6 +2209,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
+/obj/structure/bed/roller,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "vk" = (
@@ -3606,6 +3600,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/medical,
+/obj/item/storage/firstaid/fire,
+/obj/item/reagent_containers/hypospray/medipen/survival,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/item/reagent_containers/syringe,
+/obj/item/storage/firstaid/medical,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "XR" = (
@@ -3624,11 +3624,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "YR" = (
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid/fire,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/item/reagent_containers/syringe,
-/obj/item/reagent_containers/hypospray/medipen/survival,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -3639,6 +3634,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/gun/energy/laser/retro,
+/obj/item/gun/energy/laser/retro,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "YW" = (
@@ -4052,7 +4050,7 @@ cK
 aF
 bX
 km
-bo
+ap
 cK
 cS
 aF
