@@ -54,7 +54,7 @@
 	autolinkers = list("processor4")
 
 /obj/machinery/telecomms/processor/preset_five
-	id = "CMM Communications Processor"
+	id = "CLIP Communications Processor"
 	network = "tcommsat"
 	autolinkers = list("processor5")
 

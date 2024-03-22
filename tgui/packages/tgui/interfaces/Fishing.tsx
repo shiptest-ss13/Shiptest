@@ -8,7 +8,7 @@ import {
 import { useDispatch } from 'common/redux';
 import { Component } from 'inferno';
 import { resolveAsset } from '../assets';
-import { backendSuspendStart, useBackend } from '../backend';
+import { useBackend } from '../backend';
 import { Icon } from '../components';
 import { globalEvents } from '../events';
 import { Window } from '../layouts';
@@ -360,10 +360,8 @@ class FishingMinigame extends Component<
 
     if (newCompletion <= 0) {
       this.props.lose();
-      dispatch(backendSuspendStart());
     } else if (newCompletion >= 100) {
       this.props.win(this.perfect);
-      dispatch(backendSuspendStart());
     }
 
     return newState;

@@ -154,9 +154,6 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/analyzer{
-	pixel_y = 3
-	},
 /obj/machinery/button/door{
 	dir = 8;
 	pixel_x = 22;
@@ -164,6 +161,7 @@
 	id = "mudskipper_engine";
 	name = "Engine Shutters"
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/engine)
 "dN" = (
@@ -348,19 +346,8 @@
 /obj/item/reagent_containers/pill/patch/styptic,
 /obj/item/reagent_containers/pill/patch/silver_sulf,
 /obj/item/circular_saw,
-/obj/item/gps/mining{
-	gpstag = "SCAV1"
-	},
-/obj/item/gps/mining{
-	gpstag = "SCAV2"
-	},
-/obj/item/gps/mining{
-	gpstag = "SCAV3"
-	},
-/obj/item/gps/mining{
-	gpstag = "SCAV4"
-	},
 /obj/item/multitool,
+/obj/item/stack/marker_beacon/thirty,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "gT" = (
@@ -641,8 +628,12 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/caphat,
 /obj/item/megaphone/command,
-/obj/item/kitchen/knife/combat/survival,
-/obj/item/flashlight/seclite,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser,
+/obj/item/gun/energy/laser/e10,
+/obj/item/gun/energy/laser/e10,
+/obj/item/stock_parts/cell/gun,
+/obj/item/stock_parts/cell/gun,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "ot" = (
@@ -1651,6 +1642,10 @@
 	color = "#c1b6a5"
 	},
 /obj/item/paper_bin,
+/obj/item/analyzer{
+	pixel_y = 3;
+	pixel_x = 13
+	},
 /obj/item/pen,
 /obj/structure/cable{
 	icon_state = "1-10"
@@ -2354,16 +2349,22 @@
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
-/obj/item/stock_parts/cell/gun,
-/obj/item/gun/energy/laser{
-	pixel_y = 5
+/obj/item/gps/mining{
+	gpstag = "SCAV1"
 	},
-/obj/item/stock_parts/cell/gun,
-/obj/item/gun/energy/laser,
-/obj/item/flashlight/seclite,
+/obj/item/gps/mining{
+	gpstag = "SCAV1"
+	},
+/obj/item/gps/mining{
+	gpstag = "SCAV1"
+	},
+/obj/item/gps/mining{
+	gpstag = "SCAV1"
+	},
+/obj/item/kitchen/knife/combat/survival,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/flashlight/seclite,
-/obj/item/kitchen/knife/combat/survival,
+/obj/item/flashlight/seclite,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Yd" = (

@@ -223,6 +223,7 @@
 	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Yes" : "No"
 	.["mainsettings"]["leader_experience"]["value"] = newtemplate.leader_experience ? "Yes" : "No"
 	.["mainsettings"]["random_names"]["value"] = newtemplate.random_names ? "Yes" : "No"
+	.["mainsettings"]["limit_slots"]["value"] = newtemplate.limit_slots ? "Yes" : "No"
 	.["mainsettings"]["spawn_admin"]["value"] = newtemplate.spawn_admin ? "Yes" : "No"
 	.["mainsettings"]["use_custom_shuttle"]["value"] = newtemplate.use_custom_shuttle ? "Yes" : "No"
 	.["mainsettings"]["spawn_at_outpost"]["value"] = newtemplate.spawn_at_outpost ? "Yes" : "No"
@@ -293,6 +294,7 @@
 		"open_armory" = list("desc" = "Open armory doors", "type" = "boolean", "value" = "[(ertemplate.opendoors ? "Yes" : "No")]"),
 		"leader_experience" = list("desc" = "Pick an experienced leader", "type" = "boolean", "value" = "[(ertemplate.leader_experience ? "Yes" : "No")]"),
 		"random_names" = list("desc" = "Randomize names", "type" = "boolean", "value" = "[(ertemplate.random_names ? "Yes" : "No")]"),
+		"limit_slots" = list("desc" = "Limit special roles", "type" = "boolean", "value" = "[(ertemplate.limit_slots ? "Yes" : "No")]"),
 		"spawn_admin" = list("desc" = "Spawn yourself as briefing officer", "type" = "boolean", "value" = "[(ertemplate.spawn_admin ? "Yes" : "No")]"),
 		"use_custom_shuttle" = list("desc" = "Use the ERT's custom shuttle (if it has one)", "type" = "boolean", "value" = "[(ertemplate.use_custom_shuttle ? "Yes" : "No")]"),
 		"spawn_at_outpost" = list("desc" = "Spawn the ERT/Dock the ERT at the Outpost", "type" = "boolean", "value" = "[(ertemplate.spawn_at_outpost ? "Yes" : "No")]"),
@@ -317,13 +319,14 @@
 		ertemplate.teamsize = prefs["teamsize"]["value"]
 		ertemplate.mission = prefs["mission"]["value"]
 		ertemplate.polldesc = prefs["polldesc"]["value"]
-		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 7 are effectively toggles
+		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" // these next 8 are effectively toggles
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes"
 		ertemplate.leader_experience = prefs["leader_experience"]["value"] == "Yes"
 		ertemplate.random_names = prefs["random_names"]["value"] == "Yes"
+		ertemplate.limit_slots = prefs["limit_slots"]["value"] == "Yes"
 		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
 		ertemplate.use_custom_shuttle = prefs["use_custom_shuttle"]["value"] == "Yes"
-		ertemplate.spawn_at_outpost = prefs["use_custom_shuttle"]["value"] == "Yes"
+		ertemplate.spawn_at_outpost = prefs["spawn_at_outpost"]["value"] == "Yes"
 
 		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 		var/index = 0
@@ -341,11 +344,6 @@
 			to_chat(usr, span_warning("No applicants for ERT. Aborting spawn."))
 			return FALSE
 
-		if(ertemplate.spawn_at_outpost && !ertemplate.use_custom_shuttle)
-			if(!length(GLOB.emergencyresponseteam_outpostspawn))
-				message_admins("No outpost spawns found!")
-			spawnpoints = GLOB.emergencyresponseteam_outpostspawn
-
 		if(ertemplate.use_custom_shuttle && ertemplate.ert_template)
 			to_chat(usr, span_boldnotice("Attempting to spawn ERT custom shuttle, this may take a few seconds..."))
 
@@ -356,7 +354,7 @@
 				if(length(SSovermap.outposts) > 1)
 					var/temp_loc = input(usr, "Select outpost to spawn at") as null|anything in SSovermap.outposts
 					if(!temp_loc)
-						message_admins("ERT Shuttle found no outpost to spawn at!")
+						message_admins("ERT found no outpost to spawn at!")
 						return
 					spawn_location = temp_loc
 				else
@@ -377,7 +375,7 @@
 					spawn_turfs += get_turf(spawner)
 
 				if(!brief_spawn)
-					brief_spawn = locate(/obj/effect/landmark/ert_shuttle_brief_spawn) in shuttle_turfs
+					brief_spawn = locate(/obj/effect/landmark/ert_shuttle_brief_spawn) in ship_turfs
 
 			if(!length(spawn_turfs))
 				stack_trace("ERT shuttle loaded but found no spawnpoints, placing the ERT at wherever inside the shuttle instead.")
@@ -386,9 +384,14 @@
 						continue
 					spawn_turfs += open_turf
 
+		if(!ertemplate.use_custom_shuttle && ertemplate.spawn_at_outpost)
+			if(!length(GLOB.emergencyresponseteam_outpostspawn))
+				message_admins("No outpost spawns found!")
+			spawn_turfs = GLOB.emergencyresponseteam_outpostspawn
+
 		if(ertemplate.spawn_admin)
 			if(isobserver(usr))
-				var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawn_turfs || spawnpoints[1])
+				var/mob/living/carbon/human/admin_officer = new (brief_spawn || spawnpoints[1])
 				var/chosen_outfit = usr.client?.prefs?.brief_outfit
 				usr.client.prefs.copy_to(admin_officer)
 				admin_officer.equipOutfit(chosen_outfit)
@@ -459,6 +462,23 @@
 				ert_antag = new ertemplate.leader_role ()
 				earmarked_leader = null
 				leader_spawned = TRUE
+			else if(ertemplate.limit_slots)
+				// pick a role from the role list
+				var/rolepick
+				rolepick = pick(ertemplate.roles)
+				var/count = ertemplate.roles[rolepick]
+				// is it a special role (does it have a number value)? if not, tough luck, spawn
+				if(!isnum(count))
+					ert_antag = rolepick
+					ert_antag = new ert_antag
+				// pick another if the count is 0
+				else if(!count)
+					continue
+				// pick it and decrease the count by one
+				else
+					count =- 1
+					ert_antag = rolepick
+					ert_antag = new ert_antag
 			else
 				ert_antag = ertemplate.roles[WRAP(numagents,1,length(ertemplate.roles) + 1)]
 				ert_antag = new ert_antag

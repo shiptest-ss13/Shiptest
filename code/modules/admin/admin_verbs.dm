@@ -204,7 +204,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/display_sendmaps,
 	#endif
 	/datum/admins/proc/create_or_modify_area,
-	/datum/admins/proc/fixcorruption,
 	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
 	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
 	/datum/admins/proc/open_borgopanel,
@@ -766,7 +765,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set name = "Debug Stat Panel"
 	set category = "Debug"
 
-	src << output("", "statbrowser:create_debug")
+	src.stat_panel.send_message("create_debug")
 
 #ifdef SENDMAPS_PROFILE
 /client/proc/display_sendmaps()

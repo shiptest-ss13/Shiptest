@@ -5173,6 +5173,9 @@
 "Gv" = (
 /obj/structure/table,
 /obj/effect/turf_decal/floordetail/tiled,
+/obj/machinery/fax/admin/outpost{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/outpost/security)
 "GB" = (
@@ -5818,12 +5821,6 @@
 /obj/effect/turf_decal/corner/opaque/neutral,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
-"Ki" = (
-/obj/machinery/door/poddoor/shutters/indestructible{
-	dir = 4
-	},
-/turf/closed/indestructible/rock,
-/area/outpost/external)
 "Kl" = (
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/structure/cable/yellow{
@@ -7013,10 +7010,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
-"Rx" = (
-/obj/structure/falsewall/reinforced,
-/turf/open/floor/plating,
-/area/outpost/vacant_rooms)
 "RA" = (
 /obj/structure/railing/wood{
 	dir = 10;
@@ -18222,7 +18215,7 @@ MI
 eE
 hX
 lb
-Rx
+wL
 lY
 uJ
 Lh
@@ -19339,7 +19332,7 @@ mC
 mC
 HD
 HD
-Ki
+HD
 HD
 mC
 mC

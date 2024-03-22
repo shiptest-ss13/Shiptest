@@ -102,7 +102,10 @@
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
 	if(!air_contents)
 		return
-	return air_contents.return_volume()
+	//Using the ideal gas law here - the pressure is 4500 because that's the limit of gas pumps, which most ships use on plasma thrusters
+	//If you refit your fuel system to use a volume pump or cool your plasma, you can have numbers over 100% on the helm as a treat
+	var/mole_capacity = (4500 * air_contents.return_volume()) / (R_IDEAL_GAS_EQUATION * T20C)
+	return mole_capacity
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/update_gas_stats()
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]

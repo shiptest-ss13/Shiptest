@@ -40,7 +40,7 @@
 	name = "ammo holder (.45-70 hollow point)"
 	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
-	ammo_type = /obj/item/ammo_casing/a357/hp
+	ammo_type = /obj/item/ammo_casing/a4570/hp
 
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo holder (.45-70 explosive)"
@@ -156,10 +156,16 @@
 
 /obj/item/ammo_box/c38_box
 	name = "ammo box (.38)"
-	desc = "A box of standard .38 special ammo."
+	desc = "A box of standard .38 Special ammo."
 	icon_state = "38box"
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 50
+
+/obj/item/ammo_box/c38_box/surplus
+	name = "ammo box (.38 surplus)"
+	desc = "A box of low-quality .38 Special ammo."
+	icon_state = "38box-surplus"
+	ammo_type = /obj/item/ammo_casing/c38/surplus
 
 /obj/item/ammo_box/a12g
 	name = "ammo box (12g buckshot)"
@@ -336,11 +342,15 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/a762_39
-	name = "ammo box (7.62x39mm)"
-	icon_state = "a762_39box"
-	ammo_type = /obj/item/ammo_casing/a762_39
-	max_ammo = 60
+/obj/item/ammo_box/a762_40
+	name = "ammo box (7.62x40mm CLIP)"
+	icon_state = "a762_40box_big"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	max_ammo = 120
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/a762_40/inteq
+	icon_state = "a762_40box_big_inteq"
 
 /obj/item/ammo_box/a308
 	name = "ammo box (.308)"
@@ -381,3 +391,45 @@
 	custom_materials = list(/datum/material/iron = 15000)
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
+
+/obj/item/ammo_box/c46x30mm_box
+	name = "ammo box (4.6x30mm)"
+	desc = "A box of standard 4.6x30mm ammo."
+	icon_state = "4.6x30mmbox"
+	ammo_type = /obj/item/ammo_casing/c46x30mm
+	max_ammo = 50
+
+/obj/item/ammo_box/c8x50mm_box
+	name = "ammo box (8x50mm)"
+	desc = "A box of standard 8x50mm ammo."
+	icon_state = "8x50mmbox"
+	ammo_type = /obj/item/ammo_casing/a8_50r
+	max_ammo = 20
+
+/obj/item/ammo_box/ferropelletbox
+	name = "ammo box (ferromagnetic pellets)"
+	desc = "A box of ferromagnetic pellets."
+	icon_state = "ferropelletsbox"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss
+	max_ammo = 50
+
+/obj/item/ammo_box/ferroslugbox
+	name = "ammo box (ferromagnetic slugs)"
+	desc = "A box of standard ferromagnetic slugs."
+	icon_state = "ferroslugsbox"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/slug
+	max_ammo = 20
+
+/obj/item/ammo_box/ferrolancebox
+	name = "ammo box (ferromagnetic lances)"
+	desc = "A box of standard ferromagnetic lances."
+	icon_state = "ferrolancesbox"
+	ammo_type = /obj/item/ammo_casing/caseless/gauss/lance
+	max_ammo = 50
+
+/obj/item/ammo_box/c8x50mmhp_box
+	name = "ammo box (8x50mm)"
+	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration.."
+	icon_state = "8x50mmbox-hp"
+	ammo_type = /obj/item/ammo_casing/a8_50rhp
+	max_ammo = 20
