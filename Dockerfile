@@ -14,7 +14,7 @@ RUN dpkg --add-architecture i386 \
     curl ca-certificates gcc-multilib \
     g++-multilib libc6-i386 zlib1g-dev:i386 \
     libssl-dev:i386 pkg-config:i386 git \
-    libclang-7-dev:i386 \
+    libclang-8-dev:i386 \
     && /bin/bash -c "source dependencies.sh \
     && curl https://sh.rustup.rs | sh -s -- -y -t i686-unknown-linux-gnu --no-modify-path --profile minimal --default-toolchain \$RUST_VERSION" \
     && rm -rf /var/lib/apt/lists/*
