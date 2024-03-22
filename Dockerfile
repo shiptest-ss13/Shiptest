@@ -30,7 +30,6 @@ RUN git init \
 # Build auxmos
 FROM rust-build as auxmos
 RUN git init \
-    && apt install -o APT::Immediate-Configure=false libgcc-s1:i386 -y \
     && /bin/bash -c "source dependencies.sh \
     && git remote add origin \$AUXMOS_REPO \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
