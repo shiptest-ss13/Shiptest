@@ -25,7 +25,7 @@
 	var/last_chatter_time // The time since we last played a radio chatter sound. (WS edit - Radio Chatter #434)
 
 	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
-	var/listening = TRUE  // Whether the radio is currently receiving.
+	var/listening = FALSE  // Whether the radio is currently receiving.
 	var/prison_radio = FALSE  // If true, the transmit wire starts cut.
 	var/unscrewed = FALSE  // Whether wires are accessible. Toggleable by screwdrivering.
 	var/freerange = FALSE  // If true, the radio has access to the full spectrum.
@@ -435,10 +435,9 @@
 		recalculateChannels()
 
 
-/obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
+/obj/item/radio	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
 	listening = 0			// And it's nice to have a subtype too for future features.
 	dog_fashion = /datum/dog_fashion/back
-
 
 /obj/item/radio/old
 	name = "old radio"

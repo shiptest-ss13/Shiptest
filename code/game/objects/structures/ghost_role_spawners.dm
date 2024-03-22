@@ -149,7 +149,7 @@
 	name = "Demonic Friend"
 	uniform = /obj/item/clothing/under/misc/assistantformal
 	shoes = /obj/item/clothing/shoes/laceup
-	r_pocket = /obj/item/radio/off
+	r_pocket = /obj/item/radio
 	back = /obj/item/storage/backpack
 	implants = list(/obj/item/implant/mindshield) //No revolutionaries, he's MY friend.
 	id = /obj/item/card/id

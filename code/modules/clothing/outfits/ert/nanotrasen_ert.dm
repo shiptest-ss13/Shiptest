@@ -460,6 +460,5 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/ert
 
-	box = /obj/item/storage/box/survival/radio
 	l_pocket = /obj/item/megaphone/command
 	r_pocket = /obj/item/binoculars
