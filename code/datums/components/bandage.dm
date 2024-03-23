@@ -44,14 +44,14 @@
 	cleanliness --
 	if(heal_target.bleeding)
 		cleanliness = round(cleanliness - max(heal_target.bleeding, 1))
-		heal_target.adjust_bleeding(actual_heal_speed)
+		heal_target.adjust_bleeding(-actual_heal_speed)
 	if(cleanliness <= 0 || (!heal_target.bleeding && !heal_target.get_damage()))
 		drop_bandage()
 
 /datum/component/bandage/proc/drop_bandage()
 	
 	if(trash_item)
-		new trash_item(get_turf(parent))
+		new trash_item(get_turf(mummy))
 		mummy.visible_message(span_notice("The [bandage_name] on [mummy]'s [parent] falls to the floor."), span_notice("The [bandage_name] on your [parent] falls to the floor."))
 	else
 		to_chat(mummy, span_notice("The [bandage_name] on your [parent] has healed what it can."))
