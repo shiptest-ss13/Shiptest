@@ -1,3 +1,5 @@
+//TODO: make this code more readable. weird var names, convoluted logic, etc
+
 //Boxes of ammo
 /obj/item/ammo_box
 	name = "ammo box (null_reference_exception)"
@@ -61,7 +63,7 @@
 		return b
 
 ///puts a round into the magazine
-/obj/item/ammo_box/proc/give_round(obj/item/ammo_casing/R, replace_spent = 0)
+/obj/item/ammo_box/proc/give_round(obj/item/ammo_casing/R, replace_spent = FALSE)
 	// Boxes don't have a caliber type, magazines do. Not sure if it's intended or not, but if we fail to find a caliber, then we fall back to ammo_type.
 	if(!R || (caliber && R.caliber != caliber) || (!caliber && R.type != ammo_type))
 		return FALSE
@@ -87,31 +89,31 @@
 /obj/item/ammo_box/proc/can_load(mob/user)
 	return TRUE
 
-/obj/item/ammo_box/attackby(obj/item/A, mob/user, params, silent = FALSE, replace_spent = 0)
+/obj/item/ammo_box/attackby(obj/item/attacking_obj, mob/user, params, silent = FALSE, replace_spent = FALSE)
 	var/num_loaded = 0
 	if(!can_load(user))
 		return
-	if(istype(A, /obj/item/ammo_box))
-		var/obj/item/ammo_box/AM = A
-		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			if(!((instant_load && AM.instant_load) || (stored_ammo.len >= max_ammo) || do_after_mob(user, list(AM), 1 SECONDS,)))
+	if(istype(attacking_obj, /obj/item/ammo_box))
+		var/obj/item/ammo_box/attacking_box = attacking_obj
+		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
+			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after_mob(user, list(attacking_box), 1 SECONDS)))
 				break
-			var/did_load = give_round(AC, replace_spent)
+			var/did_load = give_round(casing_to_insert, replace_spent)
 			if(!did_load)
 				break
-			AM.stored_ammo -= AC
+			attacking_box.stored_ammo -= casing_to_insert
 			if(!silent)
-				playsound(get_turf(AM), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use AM
+				playsound(get_turf(attacking_box), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use attacking_box
 			num_loaded++
-			A.update_appearance()
+			attacking_obj.update_appearance()
 			update_appearance()
 
-	if(istype(A, /obj/item/ammo_casing))
-		var/obj/item/ammo_casing/AC = A
-		if(give_round(AC, replace_spent))
-			user.transferItemToLoc(AC, src, TRUE)
+	if(istype(attacking_obj, /obj/item/ammo_casing))
+		var/obj/item/ammo_casing/casing_to_insert = attacking_obj
+		if(give_round(casing_to_insert, replace_spent))
+			user.transferItemToLoc(casing_to_insert, src, TRUE)
 			if(!silent)
-				playsound(AC, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
+				playsound(casing_to_insert, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 			num_loaded++
 			update_appearance()
 

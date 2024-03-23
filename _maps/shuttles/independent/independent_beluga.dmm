@@ -322,13 +322,42 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/machinery/fax,
+/obj/machinery/fax/indie,
 /obj/machinery/airalarm/directional/north,
 /obj/machinery/camera/autoname{
 	dir = 6
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"dB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/wall/blue{
+	dir = 4;
+	name = "Janitorial Closet";
+	pixel_x = -28
+	},
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/soap/deluxe,
+/obj/item/reagent_containers/glass/rag,
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/item/clothing/head/soft/purple{
+	pixel_x = 5
+	},
+/obj/item/clothing/shoes/galoshes{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/storage/box/mousetraps{
+	pixel_y = -3;
+	pixel_x = -9
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/crew/dorm)
 "dC" = (
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 1
@@ -3325,30 +3354,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
-"FF" = (
-/obj/structure/closet/cabinet,
-/obj/item/clothing/suit/toggle/lawyer/burgundy{
-	pixel_y = -3
-	},
-/obj/item/clothing/head/beanie/stripedgreen{
-	pixel_x = 2;
-	pixel_y = -5
-	},
-/obj/item/clothing/glasses/regular/hipster,
-/obj/machinery/button/door{
-	id = "beluga_dorm1_window";
-	pixel_x = 10;
-	pixel_y = -23;
-	dir = 1
-	},
-/obj/machinery/light/small/directional/west,
-/obj/item/clothing/under/suit/charcoal,
-/obj/item/clothing/glasses/monocle,
-/obj/item/clothing/shoes/laceup{
-	pixel_y = -11
-	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/crew)
 "FH" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ship/hallway/central)
@@ -3426,35 +3431,6 @@
 	},
 /turf/open/floor/carpet/nanoweave/orange,
 /area/ship/security)
-"Hb" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Janitorial Closet";
-	pixel_x = -28
-	},
-/obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
-/obj/item/soap/deluxe,
-/obj/item/reagent_containers/glass/rag,
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/item/clothing/head/soft/purple{
-	pixel_x = 5
-	},
-/obj/item/clothing/shoes/galoshes{
-	pixel_x = 7;
-	pixel_y = -8
-	},
-/obj/item/storage/box/mousetraps{
-	pixel_y = -3;
-	pixel_x = -9
-	},
-/turf/open/floor/carpet/nanoweave/beige,
-/area/ship/crew/dorm)
 "Hc" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/light/directional/north,
@@ -3964,6 +3940,30 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/library)
+"Lj" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/toggle/lawyer/burgundy{
+	pixel_y = -3
+	},
+/obj/item/clothing/head/beanie/stripedgreen{
+	pixel_x = 2;
+	pixel_y = -5
+	},
+/obj/item/clothing/glasses/regular/hipster,
+/obj/machinery/button/door{
+	id = "beluga_dorm1_window";
+	pixel_x = 10;
+	pixel_y = -23;
+	dir = 1
+	},
+/obj/machinery/light/small/directional/west,
+/obj/item/clothing/under/suit/charcoal,
+/obj/item/clothing/glasses/monocle,
+/obj/item/clothing/shoes/laceup{
+	pixel_y = -11
+	},
+/turf/open/floor/carpet/nanoweave/beige,
+/area/ship/crew)
 "Lr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
@@ -4538,29 +4538,6 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
-"RW" = (
-/obj/effect/turf_decal/siding/wideplating/dark,
-/obj/structure/closet/wall/red{
-	dir = 1;
-	name = "Officer's Locker";
-	pixel_y = -28
-	},
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/security/webbing/inteq,
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/mask/gas/sechailer/inteq,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/head/beret/sec/inteq,
-/obj/item/clothing/gloves/tackler/combat,
-/obj/item/reagent_containers/spray/pepper{
-	pixel_x = 7;
-	pixel_y = -3
-	},
-/obj/effect/turf_decal/trimline/opaque/yellow/line,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "Sd" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -4995,6 +4972,29 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
+"WG" = (
+/obj/effect/turf_decal/siding/wideplating/dark,
+/obj/structure/closet/wall/red{
+	dir = 1;
+	name = "Officer's Locker";
+	pixel_y = -28
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/under/syndicate/inteq/skirt,
+/obj/item/clothing/under/syndicate/inteq,
+/obj/item/clothing/head/beret/sec/inteq,
+/obj/item/clothing/gloves/tackler/combat,
+/obj/item/reagent_containers/spray/pepper{
+	pixel_x = 7;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/trimline/opaque/yellow/line,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "WS" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -5726,7 +5726,7 @@ aF
 Iw
 pH
 mr
-Hb
+dB
 TG
 Go
 Kn
@@ -5737,7 +5737,7 @@ bF
 TV
 Ey
 xe
-FF
+Lj
 bF
 Sv
 "}
@@ -6071,7 +6071,7 @@ GY
 Sy
 eJ
 iX
-RW
+WG
 OE
 Sv
 Sv
@@ -6092,7 +6092,7 @@ fV
 fX
 pk
 Zl
-RW
+WG
 OE
 Sv
 Sv

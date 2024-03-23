@@ -94,7 +94,7 @@
 	density = FALSE
 	door_opened = TRUE
 	layer = OPEN_DOOR_LAYER
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_appearance()
 	isSwitchingStates = FALSE
 
@@ -115,7 +115,7 @@
 	set_opacity(TRUE)
 	door_opened = FALSE
 	layer = initial(layer)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_appearance()
 	isSwitchingStates = FALSE
 

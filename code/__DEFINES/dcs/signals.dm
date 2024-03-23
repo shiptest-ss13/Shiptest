@@ -762,3 +762,6 @@
 /// send when enabling/diabling an autofire component
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
+
+///called in /obj/item/gun/process_chamber (src)
+#define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"

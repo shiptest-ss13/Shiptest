@@ -16,6 +16,20 @@
 /obj/machinery/power/terminal,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
+"ah" = (
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/mask/gas/syndicate,
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ship/hallway/central)
 "am" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 6
@@ -985,22 +999,6 @@
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
-"jh" = (
-/obj/effect/turf_decal/corner_techfloor_grid{
-	dir = 5
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/closet/crate/secure/loot,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 6
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "jp" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
@@ -2792,6 +2790,22 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"BL" = (
+/obj/effect/turf_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/closet/crate/secure/loot,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 6
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "BP" = (
 /obj/structure/sign/syndicate,
 /turf/closed/wall/mineral/plastitanium,
@@ -3098,7 +3112,7 @@
 /area/ship/crew/canteen)
 "El" = (
 /obj/structure/filingcabinet,
-/obj/item/folder/syndicate/mining,
+/obj/item/folder/documents/syndicate/mining,
 /turf/open/floor/engine,
 /area/ship/bridge)
 "Ep" = (
@@ -3590,20 +3604,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/starboard)
-"Iv" = (
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/effect/turf_decal/techfloor{
-	dir = 10
-	},
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/structure/closet/syndicate{
-	desc = "It's a basic storage unit.";
-	name = "uniform closet"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ship/hallway/central)
 "IE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
@@ -5024,7 +5024,7 @@
 	pixel_x = -4;
 	pixel_y = 5
 	},
-/obj/machinery/fax{
+/obj/machinery/fax/syndicate{
 	pixel_x = 4;
 	pixel_y = 0
 	},
@@ -5659,7 +5659,7 @@ Dl
 JB
 bS
 tC
-jh
+BL
 KE
 Vq
 Or
@@ -5719,7 +5719,7 @@ Dd
 RN
 Ye
 OG
-Iv
+ah
 VR
 Eg
 xP

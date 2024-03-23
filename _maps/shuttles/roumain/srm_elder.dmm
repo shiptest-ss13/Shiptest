@@ -345,17 +345,27 @@
 	pixel_x = 8;
 	pixel_y = 6
 	},
-/obj/item/ammo_box/magazine/illestren_a850r{
-	pixel_x = 8;
-	pixel_y = 2
-	},
 /obj/item/ammo_box/c38_box{
 	pixel_x = -6;
 	pixel_y = 1
 	},
 /obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
 	pixel_x = 8;
-	pixel_y = -2
+	pixel_y = -4
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8;
+	pixel_y = 6
+	},
+/obj/item/ammo_box/magazine/illestren_a850r{
+	pixel_x = 8;
+	pixel_y = -6
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/storage)
@@ -2016,9 +2026,10 @@
 	pixel_x = -7
 	},
 /obj/item/gun/ballistic/revolver/montagne,
-/obj/item/ammo_box/c38/match,
-/obj/item/ammo_box/c38/match,
 /obj/item/storage/backpack/satchel/leather,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/ammo_box/c45,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "zH" = (
@@ -2043,7 +2054,7 @@
 /area/ship/engineering/engine)
 "zX" = (
 /obj/structure/table/wood,
-/obj/machinery/fax,
+/obj/machinery/fax/roumain,
 /obj/effect/turf_decal/spline/fancy/wood{
 	dir = 8
 	},

@@ -422,7 +422,7 @@
 	pixel_y = 32
 	},
 /obj/structure/table,
-/obj/machinery/fax{
+/obj/machinery/fax/syndicate{
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/tech,
@@ -1692,11 +1692,11 @@
 /area/ship/medical)
 "jO" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/syndicate/red{
+/obj/item/folder/documents/syndicate/red{
 	pixel_x = -8;
 	pixel_y = 6
 	},
-/obj/item/folder/syndicate/blue{
+/obj/item/folder/documents/syndicate/blue{
 	pixel_x = 6;
 	pixel_y = 4
 	},
@@ -7701,7 +7701,7 @@
 	pixel_y = 12
 	},
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/riot/minutemen{
+/obj/item/clothing/suit/armor/riot/clip{
 	desc = "Designed to protect against close range attacks. This one is painted black.";
 	pixel_y = 1;
 	pixel_x = 5
@@ -8604,7 +8604,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered/half{
 	dir = 8
 	},
-/obj/machinery/fax,
+/obj/machinery/fax/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/bridge)
 "Xf" = (
