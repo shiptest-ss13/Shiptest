@@ -190,6 +190,7 @@
 
 /obj/item/clothing/head/helmet/sec
 	can_flashlight = TRUE
+	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
 	if(issignaler(I))
