@@ -1,3 +1,21 @@
+/datum/healing_surface
+	// What this is referred to in player-facing terms, can be a combination
+	var/name = "scab"
+	/// Layer this applies stuff to, higher layers will impede interacting with lower layers
+	var/layer
+	/// List of items this will drop when healing is finished
+	var/list/trash_items = list()
+	/// Amount of healing this directs to brute damage
+	var/brute_coeff = 0
+	/// Amount of healing this directs to burn damage
+	var/burn_coeff = 0
+
+/datum/healing_surface/
+
+
+
+
+
 #define BANDAGE_DAMAGE_COEFF 5
 
 /datum/component/bandage
