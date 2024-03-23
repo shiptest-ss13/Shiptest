@@ -73,6 +73,9 @@ GLOBAL_LIST_EMPTY(created_baseturf_lists)
 	/// Used to stop radiation from travelling across virtual z-levels such as transit zones and planetary encounters.
 	var/rad_fullblocker = FALSE
 
+	/// List of all the ambiences coming from other atoms on the turf
+	var/list/ambience_list
+
 	hitsound_volume = 90
 
 /turf/vv_edit_var(var_name, new_value)

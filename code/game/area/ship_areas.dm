@@ -7,7 +7,7 @@
 	icon = 'ICON FILENAME' 			(defaults to 'icons/turf/areas.dmi')
 	icon_state = "NAME OF ICON" 	(defaults to "unknown" (blank))
 	requires_power = FALSE 				(defaults to true)
-	ambientsounds = list()				(defaults to GENERIC from sound.dm. override it as "ambientsounds = list('sound/ambience/signal.ogg')" or using another define.
+	main_ambience = AMBIENCE_GENERIC				(defaults to GENERIC from sound.dm. override it as "main_ambience = AMBIENCE_SOUND" or using another define.
 
 NOTE: there are two lists of areas in the end of this file: centcom and station itself. Please maintain these lists valid. --rastaf0
 
@@ -26,7 +26,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_environ = FALSE
 	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
 	outdoors = TRUE
-	ambientsounds = SPACE
+	main_ambience = null
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_SPACE
 
@@ -53,11 +53,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "asteroid"
 	has_gravity = STANDARD_GRAVITY
 	area_flags = UNIQUE_AREA | CAVES_ALLOWED | MOB_SPAWN_ALLOWED
-	ambientsounds = MINING
+	main_ambience = null
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_ASTEROID
-	min_ambience_cooldown = 70 SECONDS
-	max_ambience_cooldown = 220 SECONDS
 
 /area/aux_base
 	name = "Auxiliary Base Construction"
@@ -70,6 +68,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = FALSE
+	main_ambience = AMBIENCE_SHIP_GENERIC
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED // Loading the same shuttle map at a different time will produce distinct area instances.
 	icon_state = "shuttle"
 	flags_1 = CAN_BE_DIRTY_1
@@ -125,10 +124,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/bridge
 	name = "Bridge"
 	icon_state = "bridge"
-	ambientsounds = list('sound/ambience/signal.ogg')
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
+
+/area/ship/bridge/decrepit //i'm so sorry. this is the only way i can do this.
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Crew Quarters ///
 /area/ship/crew
@@ -138,7 +139,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
-/area/ship/crew/crewtwo
+/area/ship/crew/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
+/area/ship/crew/crewtwo //why do we need 5 of these. Sobs!
 	name = "Crew Quarters 2"
 
 /area/ship/crew/crewthree
@@ -156,9 +160,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#e3ffff"
 	lighting_colour_bulb = "#d5ffff"
 
+/area/ship/crew/cryo/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/crew/dorm
 	name = "Dormitory"
 	icon_state = "Sleep"
+
+/area/ship/crew/dorm/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/crew/dorm/dormtwo
 	name = "Dormitory 2"
@@ -176,22 +186,32 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Restroom"
 	icon_state = "toilet"
 
+/area/ship/crew/toilet/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/crew/canteen
 	name = "Canteen"
 	icon_state = "cafeteria"
 
+/area/ship/crew/canteen/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 /area/ship/crew/canteen/kitchen
 	name = "Kitchen"
 	icon_state = "kitchen"
+
+/area/ship/crew/canteen/kitchen
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/crew/hydroponics
 	name = "Hydroponics"
 	icon_state = "hydro"
 
+/area/ship/crew/hydroponics/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/crew/chapel
 	name = "Chapel"
 	icon_state = "chapel"
-	ambientsounds = HOLY
 	flags_1 = NONE
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
@@ -206,10 +226,16 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_WOODFLOOR
 
+/area/ship/crew/library/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/crew/law_office
 	name = "Law Office"
 	icon_state = "law"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
+/area/ship/crew/law_office/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/crew/solgov
 	name = "SolGov Consulate"
@@ -230,20 +256,25 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/medical
 	name = "Infirmary"
 	icon_state = "medbay3"
-	ambientsounds = MEDICAL
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
-	min_ambience_cooldown = 90 SECONDS
-	max_ambience_cooldown = 180 SECONDS
+
+/area/ship/medical/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/medical/surgery
 	name = "Surgical Bay"
 	icon_state = "surgery"
 
+/area/ship/medical/surgery/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/medical/morgue
 	name = "Morgue"
 	icon_state = "morgue"
-	ambientsounds = SPOOKY
+
+/area/ship/medical/morgue/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Science Lab ///
 /area/ship/science
@@ -252,43 +283,68 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#f0fbff"
 	lighting_colour_bulb = "#e4f7ff"
 
+/area/ship/science/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/science/xenobiology
 	name = "Xenobiology Lab"
 	icon_state = "xenolab"
+
+/area/ship/science/xenobiology
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/science/storage
 	name = "Toxins Storage"
 	icon_state = "toxstorage"
 
+/area/ship/science/storage/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/science/misc_lab
 	name = "Testing Lab"
 	icon_state = "toxmisc"
+
+/area/ship/science/misc_lab/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/science/robotics
 	name = "Robotics"
 	icon_state = "medresearch"
 
+/area/ship/science/robotics/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/science/ai_chamber
 	name = "AI Chamber"
 	icon_state = "ai_chamber"
-	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
+
+/area/ship/science/ai_chamber/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Engineering ///
 /area/ship/engineering
 	name = "Engineering"
 	icon_state = "engine"
-	ambientsounds = ENGINEERING
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
+
+/area/ship/engineering/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/engineering/atmospherics
 	name = "Atmospherics"
 	icon_state = "atmos"
 
+/area/ship/engineering/atmospherics/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/engineering/electrical
 	name = "Electrical"
 	icon_state = "engine_smes"
+
+/area/ship/engineering/electrical/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/engineering/communications
 	name = "Communications"
@@ -296,41 +352,67 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_tube = "#e2feff"
 	lighting_colour_bulb = "#d5fcff"
 
+/area/ship/engineering/communications/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/engineering/engine
 	name = "Engine Room"
 	icon_state = "engine_sm"
+
+/area/ship/engineering/engine/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/engineering/incinerator
 	name = "Incinerator"
 	icon_state = "disposal"
 
+/area/ship/engineering/incinerator
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /// Security ///
 /area/ship/security
 	name = "Brig"
 	icon_state = "brig"
-	ambientsounds = HIGHSEC
 	lighting_colour_tube = "#ffeee2"
 	lighting_colour_bulb = "#ffdfca"
+
+/area/ship/security/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/security/prison
 	name = "Brig Cells"
 	icon_state = "sec_prison"
 
+/area/ship/security/prison/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/security/range
 	name = "Firing Range"
 	icon_state = "firingrange"
 
-/area/ship/security
+/area/ship/security/range/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
+/area/ship/security/office
 	name = "Security Office"
 	icon_state = "security"
+
+/area/ship/security/office/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/security/armory
 	name = "Armory"
 	icon_state = "armory"
 
+/area/ship/security/armory/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/security/dock
 	name = "Shuttle Dock"
 	icon_state = "security"
+
+/area/ship/security/dock/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Cargo Bay ///
 /area/ship/cargo
@@ -340,6 +422,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb8"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
+/area/ship/cargo/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/cargo/office
 	name = "Cargo Office"
 	icon_state = "quartoffice"
@@ -348,8 +433,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/cargo/port
 	name = "Port Cargo Bay"
 
+/area/ship/cargo/port/decrepit
+
 /area/ship/cargo/starboard
 	name = "Starboard Cargo Bay"
+
+/area/ship/cargo/starboard/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Hangars ///
 
@@ -357,13 +447,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Hangar"
 	icon_state = "shuttlered"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
-	ambientsounds = ENGINEERING
+
+/area/ship/hangar/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/hangar/port
 	name = "Port Hangar"
 
+/area/ship/hangar/port/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/hangar/starboard
 	name = "Starboard Hangar"
+
+/area/ship/hangar/starboard/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Hallways ///
 /area/ship/hallway
@@ -393,10 +491,32 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Central Hallway"
 	icon_state = "hallC"
 
+/area/ship/hallway/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
+/area/ship/hallway/decrepit/aft
+	name = "Aft Hallway"
+	icon_state = "hallA"
+
+/area/ship/hallway/decrepit/fore
+	name = "Fore Hallway"
+	icon_state = "hallF"
+
+/area/ship/hallway/decrepit/starboard
+	name = "Starboard Hallway"
+	icon_state = "hallS"
+
+/area/ship/hallway/decrepit/port
+	name = "Port Hallway"
+	icon_state = "hallP"
+
+/area/ship/hallway/decrepit/central
+	name = "Central Hallway"
+	icon_state = "hallC"
+
 /// Maintenance Areas ///
 /area/ship/maintenance
 	name = "Maintenance"
-	ambientsounds = MAINTENANCE
 	lighting_colour_tube = "#ffe5cb"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
@@ -425,9 +545,39 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "External Hull Access"
 	icon_state = "amaint"
 
+/area/ship/maintenance/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
+/area/ship/maintenance/decrepit/aft
+	name = "Aft Maintenance"
+	icon_state = "amaint"
+
+/area/ship/maintenance/decrepit/fore
+	name = "Fore Maintenance"
+	icon_state = "fmaint"
+
+/area/ship/maintenance/decrepit/starboard
+	name = "Starboard Maintenance"
+	icon_state = "smaint"
+
+/area/ship/maintenance/decrepit/port
+	name = "Port Maintenance"
+	icon_state = "pmaint"
+
+/area/ship/maintenance/decrepit/central
+	name = "Central Maintenance"
+	icon_state = "maintcentral"
+
+/area/ship/maintenance/decrepit/external
+	name = "External Hull Access"
+	icon_state = "amaint"
+
 /area/ship/construction
 	name = "Construction Area"
 	icon_state = "construction"
+
+/area/ship/construction/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Storage Areas ///
 
@@ -436,15 +586,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "storage"
 	sound_environment = SOUND_AREA_STANDARD_STATION
 
+/area/ship/storage/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/storage/eva
 	name = "EVA Storage"
 	icon_state = "eva"
+
+/area/ship/storage/eva/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// External Areas ///
 /area/ship/external
 	name = "External"
 	icon_state = "space_near"
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
-	ambientsounds = SPACE
+	main_ambience = null
 	sound_environment = SOUND_AREA_SPACE
 	lightswitch = TRUE

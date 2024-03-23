@@ -10,7 +10,6 @@
 #define TURF_FIRE_BURN_RATE_PER_POWER 0.02
 #define TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER 0.75
 #define TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED 0.5
-#define TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE 6
 
 #define TURF_FIRE_STATE_SMALL 1
 #define TURF_FIRE_STATE_MEDIUM 2
@@ -20,6 +19,7 @@
 	icon = 'icons/effects/turf_fire.dmi'
 	base_icon_state = "red"
 	icon_state = "red_small"
+	ambience = AMBIENCE_FIRE_LARGE //if this causes too much problems with sound channels, comment this out.
 	layer = BELOW_OPEN_DOOR_LAYER
 	anchored = TRUE
 	move_resist = INFINITY
@@ -148,8 +148,6 @@
 	if(interact_with_atmos)
 		if(prob(fire_power))
 			open_turf.burn_tile()
-		if(prob(TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE))
-			playsound(open_turf, 'sound/effects/comfyfire.ogg', 40, TRUE)
 		UpdateFireState()
 
 /obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/atom_crossing)

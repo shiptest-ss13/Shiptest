@@ -6,6 +6,7 @@
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | NOTELEPORT // not unique, in case multiple outposts get loaded. all derivatives should also be NOTELEPORT
 	flags_1 = CAN_BE_DIRTY_1
 	sound_environment = SOUND_AREA_STANDARD_STATION
+	main_ambience = null
 	lighting_colour_tube = "#ffce99"
 	lighting_colour_bulb = "#ffdbb4"
 
@@ -84,7 +85,6 @@
 /area/outpost/engineering
 	name = "Engineering"
 	icon_state = "engine"
-	ambientsounds = ENGINEERING
 	lighting_colour_tube = "#ffce93"
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
@@ -123,7 +123,6 @@
 
 /area/outpost/maintenance
 	name = "Maintenance"
-	ambientsounds = MAINTENANCE
 	lighting_colour_tube = "#ffe5cb"
 	lighting_colour_bulb = "#ffdbb4"
 	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
@@ -152,12 +151,9 @@
 /area/outpost/medical
 	name = "Infirmary"
 	icon_state = "medbay3"
-	ambientsounds = MEDICAL
 	lighting_colour_tube = "#e7f8ff"
 	lighting_colour_bulb = "#d5f2ff"
 	lighting_colour_night = "#d5f2ff"
-	min_ambience_cooldown = 90 SECONDS
-	max_ambience_cooldown = 180 SECONDS
 
 
 /area/outpost/operations
@@ -174,7 +170,6 @@
 /area/outpost/security
 	name = "Security"
 	icon_state = "security"
-	ambientsounds = HIGHSEC
 	lighting_colour_tube = "#ffeee2"
 	lighting_colour_bulb = "#ffdfca"
 
@@ -204,13 +199,13 @@
 	name = "Shop"
 	icon_state = "vacant_room"
 
-//for powered outdoors non-space areas -- uses ice planet ambience
+//for powered outdoors non-space areas -- uses ice planet ambience. if you make an exterior outpost in another environment it'd probably be a good idea to make an area subtype for it.
 
 /area/outpost/exterior
 	name = "Exterior"
 	icon_state = "green"
-	sound_environment = SOUND_ENVIRONMENT_CAVE
-	ambientsounds = SPOOKY
+	sound_environment = SOUND_ENVIRONMENT_PARKING_LOT
+	main_ambience = AMBIENCE_ICE
 
 // this might be redundant with /area/space/nearstation. unsure; use with caution?
 /area/outpost/external
@@ -218,7 +213,7 @@
 	icon_state = "space_near"
 	always_unpowered = TRUE
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-	ambientsounds = SPACE
+	main_ambience = null
 	sound_environment = SOUND_AREA_SPACE
 
 
@@ -234,3 +229,8 @@
 	power_equip = TRUE // provided begrudgingly, mostly for mappers
 	power_light = TRUE
 	power_environ = TRUE
+
+/area/hangar/exterior //subtype of hangar area for outdoor hangars.
+	name = "Exterior Hangar"
+	sound_environment = SOUND_ENVIRONMENT_PARKING_LOT
+	main_ambience = AMBIENCE_ICE

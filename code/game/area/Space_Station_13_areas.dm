@@ -7,7 +7,7 @@
 	icon = 'ICON FILENAME' 			(defaults to 'icons/turf/areas.dmi')
 	icon_state = "NAME OF ICON" 	(defaults to "unknown" (blank))
 	requires_power = FALSE 				(defaults to true)
-	ambientsounds = list()				(defaults to GENERIC from sound.dm. override it as "ambientsounds = list('sound/ambience/signal.ogg')" or using another define.
+	main_ambience = AMBIENCE_GENERIC				(defaults to GENERIC from sound.dm. override it as "main_ambience = AMBIENCE_SOUND" or using another define.
 
 NOTE: there are two lists of areas in the end of this file: centcom and station itself. Please maintain these lists valid. --rastaf0
 
@@ -1348,3 +1348,5 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Port Bow External Hull Access"
 
 Shiptest End */
+
+//hi. je here. do we even want this file still. i could totally remove this file.

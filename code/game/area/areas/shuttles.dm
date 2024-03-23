@@ -40,7 +40,7 @@
 
 /area/shuttle/syndicate
 	name = "Syndicate Infiltrator"
-	ambientsounds = HIGHSEC
+	main_ambience = AMBIENCE_SHIP_GENERIC
 
 /area/shuttle/syndicate/bridge
 	name = "Syndicate Infiltrator Control"

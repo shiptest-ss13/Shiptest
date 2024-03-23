@@ -55,7 +55,6 @@
 
 	var/parallax_movedir = 0
 
-	var/list/ambientsounds = GENERIC
 	flags_1 = CAN_BE_DIRTY_1
 
 	var/list/firedoors
@@ -81,14 +80,13 @@
 	///Used to decide what kind of reverb the area makes sound have
 	var/sound_environment = SOUND_ENVIRONMENT_NONE
 
-	///Used to decide what the minimum time between ambience is
-	var/min_ambience_cooldown = 30 SECONDS
-	///Used to decide what the maximum time between ambience is
-	var/max_ambience_cooldown = 90 SECONDS
-
 	/// Whether area is underground, important for weathers which shouldn't affect caves etc.
 	var/underground = FALSE
 
+	/// Main ambience that will play for users in the area.
+	var/main_ambience = null
+	/// A list of miscellanous ambient noises that will also play for users in the area.
+	var/list/ambient_noises
 
 /**
  * A list of teleport locations
@@ -576,8 +574,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
  * Call back when an atom enters an area
  *
  * Sends signals COMSIG_AREA_ENTERED and COMSIG_ENTER_AREA (to a list of atoms)
- *
- * If the area has ambience, then it plays some ambience music to the ambience channel
  */
 /area/Entered(atom/movable/arrived, area/old_area)
 	set waitfor = FALSE
@@ -586,16 +582,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		return
 	for(var/atom/movable/recipient as anything in arrived.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
 		SEND_SIGNAL(recipient, COMSIG_ENTER_AREA, src)
-	if(!isliving(arrived))
-		return
-
-	var/mob/living/L = arrived
-	if(!L.ckey)
-		return
-
-	//Ship ambience just loops if turned on.
-	if(L.client?.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		SEND_SOUND(L, sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ))
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()

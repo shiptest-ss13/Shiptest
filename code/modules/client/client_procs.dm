@@ -467,7 +467,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
 
-	update_ambience_pref()
+	ambience_controller = new(src)
 
 
 	//This is down here because of the browse() calls in tooltip/New()
@@ -542,7 +542,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_NULL(view_size)
 	QDEL_NULL(void)
 	QDEL_NULL(tooltips)
-	SSambience.ambience_listening_clients -= src
+	QDEL_NULL(ambience_controller)
 	seen_messages = null
 	Master.UpdateTickRate()
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
@@ -1137,12 +1137,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		holder.filteriffic.ui_interact(mob)
 
 /client/proc/update_ambience_pref()
-	if(prefs.toggles & SOUND_AMBIENCE)
-		if(SSambience.ambience_listening_clients[src] > world.time)
-			return // If already properly set we don't want to reset the timer.
-		SSambience.ambience_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
-	else
-		SSambience.ambience_listening_clients -= src
+	ambience_controller.client_pref_update()
 
 /**
  * Handles incoming messages from the stat-panel TGUI.
