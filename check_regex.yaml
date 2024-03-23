@@ -23,7 +23,7 @@
 standards:
     - exactly: [0, "mangled characters", '[\u0000\uFFFF\uFFFD]']
     - exactly: [8, "escapes", '\\\\(red|blue|green|black|b|i[^mc])']
-    - exactly: [9, "Del()s", '\WDel\(']
+    - exactly: [8, "Del()s", '\WDel\(']
 
     - exactly: [1, "/atom text paths", '"/atom']
     - exactly: [1, "/area text paths", '"/area']
@@ -38,7 +38,7 @@ standards:
 
     - exactly:
           [
-              271,
+              269,
               "non-bitwise << uses",
               '(?<!\d)(?<!\d\s)(?<!<)<<(?!=|\s\d|\d|<|\/)',
           ]

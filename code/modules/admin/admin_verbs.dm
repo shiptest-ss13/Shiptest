@@ -204,7 +204,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/display_sendmaps,
 	#endif
 	/datum/admins/proc/create_or_modify_area,
-	/datum/admins/proc/fixcorruption,
 	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
 	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
 	/datum/admins/proc/open_borgopanel,

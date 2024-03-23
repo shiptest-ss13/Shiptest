@@ -35,7 +35,7 @@
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	CalculateAffectingAreas()
 
 /obj/machinery/door/firedoor/examine(mob/user)

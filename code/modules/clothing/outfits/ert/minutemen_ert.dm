@@ -1,5 +1,6 @@
 /datum/outfit/job/clip/minutemen/grunt/dressed/bard
 	name = "ERT - CLIP Minuteman BARD Specialist"
+	id_assignment = "Biohazard Assessment Specialist"
 	job_icon = "clip_cmm2"
 
 	suit = /obj/item/clothing/suit/armor/vest/marine/heavy
@@ -18,6 +19,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/bard/medic
 	name = "ERT - CLIP Minuteman BARD Medical Specialist"
+	id_assignment = "Corpsman"
 
 	suit = /obj/item/clothing/suit/armor/vest/marine
 	suit_store = /obj/item/gun/ballistic/automatic/smg/cm5
@@ -50,6 +52,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/bard/leader
 	name = "ERT - CLIP Minuteman BARD Specialist Sergeant"
+	id_assignment = "Biohazard Assessment Sergeant"
 	job_icon = "clip_cmm3"
 
 	belt = /obj/item/storage/belt/military/clip/e50
@@ -87,6 +90,7 @@
 
 /datum/outfit/job/clip/minutemen/grunt/dressed/riot/leader
 	name = "ERT - CLIP Minutemen Riot Officer Sergeant"
+	id_assignment = "Security Sergeant"
 	job_icon = "lieutenant"
 
 	ears = /obj/item/radio/headset/clip/alt/captain
