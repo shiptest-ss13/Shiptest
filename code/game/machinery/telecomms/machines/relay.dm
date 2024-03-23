@@ -84,7 +84,7 @@
 	network = "irmg_commnet"
 
 /obj/machinery/telecomms/relay/preset/minutemen
-	freq_listening = list(FREQ_COMMAND, FREQ_MINUTEMEN, FREQ_COMMON)
+	freq_listening = list(FREQ_COMMAND, FREQ_MINUTEMEN)
 	id = "CLIP Relay"
 	network = "clip_commnet"
 
