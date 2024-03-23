@@ -152,7 +152,6 @@
 
 	for(var/turf/turf_to_disable as anything in border)
 		turf_to_disable.blocks_air = TRUE
-		turf_to_disable.set_sleeping(TRUE)
 		turf_to_disable.air_update_turf(TRUE)
 
 	// Accept cached maps, but don't save them automatically - we don't want

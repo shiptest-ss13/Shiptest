@@ -1160,7 +1160,7 @@
 /area/ship/hallway/central)
 "hK" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /obj/machinery/button/door{
 	id = "talos_bridge";
 	name = "Bridge Shutters";
@@ -1900,7 +1900,7 @@
 /area/ship/hallway/central)
 "ml" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,
@@ -3595,7 +3595,7 @@
 /obj/item/clothing/head/hardhat/white,
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/megaphone/cargo{
 	name = "engineering megaphone"
@@ -5624,6 +5624,9 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "JT" = (
@@ -7500,7 +7503,7 @@
 	name = "equipment locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/storage/box/handcuffs,
@@ -7554,7 +7557,7 @@
 /area/ship/crew/canteen)
 "Yz" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,

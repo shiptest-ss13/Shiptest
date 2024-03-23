@@ -41,6 +41,25 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"aE" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/fancy/cigarettes/cigars{
+	pixel_x = 8
+	},
+/obj/item/lighter{
+	pixel_x = -11;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/a762_40/inteq{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "aX" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
@@ -558,49 +577,6 @@
 /obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
-"nD" = (
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = -5
-	},
-/obj/item/ammo_box/magazine/skm_762_40{
-	pixel_x = -7
-	},
-/obj/item/ammo_box/magazine/skm_762_40{
-	pixel_x = 7
-	},
-/obj/item/gun/ballistic/automatic/assault/skm/inteq{
-	pixel_x = -5
-	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	icon_state = "sec_wall";
-	name = "weapons lockup";
-	pixel_y = -28;
-	req_one_access_txt = "58"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "nL" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/borderfloorblack{
@@ -988,6 +964,32 @@
 /obj/item/storage/toolbox/ammo/c9mm,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"va" = (
+/obj/structure/closet/secure_closet/wall{
+	dir = 4;
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "vanguard's locker";
+	pixel_x = -28;
+	req_access_txt = "58"
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
+/obj/item/clothing/gloves/tackler/combat/insulated,
+/obj/item/clothing/shoes/combat,
+/obj/item/storage/belt/military/assault,
+/obj/item/storage/backpack/messenger/inteq,
+/obj/item/megaphone/command,
+/obj/item/clothing/under/syndicate/inteq/skirt,
+/obj/item/clothing/under/syndicate/inteq,
+/obj/item/clothing/suit/armor/hos/inteq,
+/obj/item/clothing/head/beret/sec/hos/inteq,
+/obj/item/radio/headset/inteq/alt/captain,
+/obj/item/areaeditor/shuttle,
+/obj/item/shield/riot/tele,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "ve" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/corner/opaque/yellow,
@@ -1358,6 +1360,49 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew)
+"Ek" = (
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/skm_762_40{
+	pixel_x = -7
+	},
+/obj/item/ammo_box/magazine/skm_762_40{
+	pixel_x = 7
+	},
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_x = -5
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_state = "sec_wall";
+	name = "weapons lockup";
+	pixel_y = -28;
+	req_one_access_txt = "58"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "EC" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
@@ -1598,32 +1643,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"Ix" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "vanguard's locker";
-	pixel_x = -28;
-	req_access_txt = "58"
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
-/obj/item/clothing/gloves/tackler/combat/insulated,
-/obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/military/assault,
-/obj/item/storage/backpack/messenger/inteq,
-/obj/item/megaphone/command,
-/obj/item/clothing/under/syndicate/inteq/skirt,
-/obj/item/clothing/under/syndicate/inteq,
-/obj/item/clothing/suit/armor/hos/inteq,
-/obj/item/clothing/head/beret/sec/hos/inteq,
-/obj/item/radio/headset/inteq/alt/captain,
-/obj/item/areaeditor/shuttle,
-/obj/item/shield/riot/tele,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "ID" = (
 /obj/structure/sign/number/one,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -2075,7 +2094,7 @@
 "RM" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Sh" = (
@@ -2375,25 +2394,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
-"Zy" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/fancy/cigarettes/cigars{
-	pixel_x = 8
-	},
-/obj/item/lighter{
-	pixel_x = -11;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/a762_40/inteq{
-	pixel_x = 5;
-	pixel_y = 12
-	},
-/obj/item/reagent_containers/food/drinks/bottle/whiskey{
-	pixel_x = -7;
-	pixel_y = 6
-	},
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "ZR" = (
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
@@ -2797,7 +2797,7 @@ ib
 ib
 GB
 mw
-Ix
+va
 Ki
 of
 NI
@@ -2816,9 +2816,9 @@ ib
 ib
 ib
 Yj
-Zy
+aE
 DB
-nD
+Ek
 pe
 ne
 Pk

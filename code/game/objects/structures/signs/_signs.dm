@@ -249,11 +249,11 @@
 	icon = 'icons/obj/solgov_logos.dmi'
 	icon_state = "solgovflag-left"
 
-// colonial minutemen seal
-/obj/structure/sign/minutemen
-	name = "Banner of the Colonial Minutemen"
-	desc = "A seal representing the many colonies comprising the Colonial Minutemen."
-	icon_state = "minutemen"
+// clip seal
+/obj/structure/sign/clip
+	name = "Banner of the Confederated League of Independent Planets"
+	desc = "A seal representing the many colonies comprising the League."
+	icon_state = "clip"
 
 //Numeral signs
 
