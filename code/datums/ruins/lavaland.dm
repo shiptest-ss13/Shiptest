@@ -8,7 +8,7 @@
 	name = "Solarian Winter Biodome"
 	id = "biodome-winter"
 	description = "A Solarian frontier research facility created by the Pionierskompanien \
-	This one seems to simulate the wintery climate of the northern provinces, includes a sauna!"
+	This one seems to simulate the wintery climate of the northern provinces, including a sauna!"
 	suffix = "lavaland_surface_biodome_winter.dmm"
 
 /datum/map_template/ruin/lavaland/sin
