@@ -34,9 +34,9 @@
 #define WEIGHT_CLASS_SMALL 2
 /// Can be carried in one hand comfortably, ex: Fire extinguisher, Stunbaton, Gas Mask, Metal Sheets
 #define WEIGHT_CLASS_NORMAL 3
-/// Items that can be wielded or equipped, (e.g. defibrillator, backpack, space suits). Often fits inside backpacks.
+/// Items that can be wielded or equipped, (e.g. defibrillator, space suits). Often fits inside backpacks.
 #define WEIGHT_CLASS_BULKY 4
-/// Usually represents objects that require two hands to operate, (e.g. shotgun, two-handed melee weapons) May fit on some inventory slots or huge storage objects(like duffel bags)
+/// Usually represents objects that require two hands to operate, (e.g. shotgun, two-handed melee weapons) May fit on some inventory slots
 #define WEIGHT_CLASS_HUGE 5
 /// Essentially means it cannot be picked up or placed in an inventory, ex: Mech Parts, Safe - Can not fit in Boh
 #define WEIGHT_CLASS_GIGANTIC 6
