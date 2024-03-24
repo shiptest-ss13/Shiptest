@@ -61,7 +61,8 @@
 	. = ..()
 	. += "Intent: [a_intent]"
 	. += "Move Mode: [m_intent]"
-	if (internal)
+
+	if (internal) //TODO: Refactor this to use the signal on tanks
 		if (!internal.air_contents)
 			qdel(internal)
 		else
@@ -69,32 +70,6 @@
 			. += "Internal Atmosphere Info: [internal.name]"
 			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
 			. += "Distribution Pressure: [internal.distribute_pressure]"
-	/*WS begin - no cells in suits
-	if(istype(wear_suit, /obj/item/clothing/suit/space))
-		var/obj/item/clothing/suit/space/S = wear_suit
-		. += "Thermal Regulator: [S.thermal_on ? "on" : "off"]"
-		. += "Cell Charge: [S.cell ? "[round(S.cell.percent(), 0.1)]%" : "!invalid!"]"
-	*/
-	var/mob/living/simple_animal/borer/B = has_brain_worms()		//WS Begin - Borers
-	if(B && B.controlling)
-		. += "Borer Body Health: [B.health]"
-		. += "Chemicals: [B.chemicals]"								//WS End
-
-	if(mind)
-		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
-		if(changeling)
-			. += ""
-			. += "Chemical Storage: [changeling.chem_charges]/[changeling.chem_storage]"
-			. += "Absorbed DNA: [changeling.absorbedcount]"
-
-		//WS Begin - Display Ethereal Charge
-		if(istype(src))
-			var/datum/species/ethereal/eth_species = src.dna?.species
-			if(istype(eth_species))
-				var/obj/item/organ/stomach/ethereal/stomach = src.getorganslot(ORGAN_SLOT_STOMACH)
-				if(istype(stomach))
-					. += "Crystal Charge: [round((stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
-		//WS End
 
 	//NINJACODE
 	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)) //Only display if actually a ninja.
@@ -806,6 +781,16 @@
  * Called when this human should be washed
  */
 /mob/living/carbon/human/wash(clean_types)
+	// Check and wash stuff that can be covered
+	var/list/obscured = check_obscured_slots()
+
+	// Wash hands if exposed
+	// This runs before the parent call since blood_in_hands should be cleared before the blood DNA is removed
+	if(!gloves && (clean_types & CLEAN_TYPE_BLOOD) && blood_in_hands > 0 && !(ITEM_SLOT_GLOVES in obscured))
+		blood_in_hands = 0
+		update_inv_gloves()
+		. = TRUE
+
 	. = ..()
 
 	// Wash equipped stuff that cannot be covered
@@ -817,20 +802,11 @@
 		update_inv_belt()
 		. = TRUE
 
-	// Check and wash stuff that can be covered
-	var/list/obscured = check_obscured_slots()
-
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured) && w_uniform.wash(clean_types))
 		update_inv_w_uniform()
 		. = TRUE
 
 	if(!is_mouth_covered() && clean_lips())
-		. = TRUE
-
-	// Wash hands if exposed
-	if(!gloves && (clean_types & CLEAN_TYPE_BLOOD) && blood_in_hands > 0 && !(ITEM_SLOT_GLOVES in obscured))
-		blood_in_hands = 0
-		update_inv_gloves()
 		. = TRUE
 
 //Turns a mob black, flashes a skeleton overlay

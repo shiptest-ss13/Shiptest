@@ -323,7 +323,6 @@
 
 /mob/living/silicon/robot/get_status_tab_items()
 	. = ..()
-	. += ""
 	if(cell)
 		. += "Charge Left: [cell.charge]/[cell.maxcharge]"
 	else

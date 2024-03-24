@@ -1,10 +1,3 @@
-// 7.62x38mmR (Nagant Revolver)
-
-/obj/projectile/bullet/n762
-	name = "7.62x38mmR bullet"
-	damage = 30
-	armour_penetration = -20
-
 // .50 AE (Desert Eagle)
 
 /obj/projectile/bullet/a50AE
@@ -20,8 +13,11 @@
 
 /obj/projectile/bullet/c38
 	name = ".38 bullet"
-	damage = 25
+	damage = 20
 	armour_penetration = -20
+
+/obj/projectile/bullet/c38/surplus
+	damage = 15
 
 /obj/projectile/bullet/c38/match
 	name = ".38 match bullet"
@@ -155,4 +151,4 @@
 	damage = 20
 	armour_penetration = -45
 	ricochet_incidence_leeway = 20
-	ricochet_chance = 45
+	ricochet_chance = 65

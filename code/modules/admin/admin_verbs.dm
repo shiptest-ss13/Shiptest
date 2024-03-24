@@ -26,7 +26,9 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/resetasaycolor,
 	/client/proc/fix_air,				/*resets air in designated radius to its default atmos composition*/
 	/client/proc/addbunkerbypass,
-	/client/proc/revokebunkerbypass
+	/client/proc/revokebunkerbypass,
+	/client/proc/requests,
+	/client/proc/fax_panel, /*send a paper to fax*/
 	)
 GLOBAL_LIST_INIT(admin_verbs_admin, world.AVerbsAdmin())
 GLOBAL_PROTECT(admin_verbs_admin)
@@ -119,7 +121,6 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/polymorph_all,
 	/client/proc/show_tip,
 	/client/proc/smite,
-	/client/proc/fax_manager,
 	/client/proc/spawn_ruin,
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
@@ -203,7 +204,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/display_sendmaps,
 	#endif
 	/datum/admins/proc/create_or_modify_area,
-	/datum/admins/proc/fixcorruption,
 	/datum/admins/proc/open_shuttlepanel, /* Opens shuttle manipulator UI */
 	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
 	/datum/admins/proc/open_borgopanel,
@@ -283,7 +283,6 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/cmd_display_del_log,
 	/client/proc/toggle_combo_hud,
 	/client/proc/debug_huds,
-	/client/proc/fax_manager
 	))
 GLOBAL_PROTECT(admin_verbs_hideable)
 
@@ -766,7 +765,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set name = "Debug Stat Panel"
 	set category = "Debug"
 
-	src << output("", "statbrowser:create_debug")
+	src.stat_panel.send_message("create_debug")
 
 #ifdef SENDMAPS_PROFILE
 /client/proc/display_sendmaps()

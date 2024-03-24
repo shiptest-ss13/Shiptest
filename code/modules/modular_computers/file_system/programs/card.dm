@@ -179,6 +179,7 @@
 				return
 			id_card.registered_name = new_name
 			id_card.update_label()
+			id_card.update_appearance()
 			playsound(computer, "terminal_type", 50, FALSE)
 			return TRUE
 		if("PRG_assign")

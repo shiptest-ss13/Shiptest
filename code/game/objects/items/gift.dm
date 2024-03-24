@@ -62,7 +62,7 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 		/obj/item/grown/corncob,
 		/obj/item/poster/random_contraband,
 		/obj/item/poster/random_official,
-		/obj/item/book/manual/wiki/barman_recipes,
+		/obj/item/book/manual/wiki/drinks,
 		/obj/item/book/manual/chef_recipes,
 		/obj/item/bikehorn,
 		/obj/item/toy/beach_ball,

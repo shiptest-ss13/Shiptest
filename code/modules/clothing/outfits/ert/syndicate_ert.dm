@@ -1,5 +1,7 @@
 /datum/outfit/job/syndicate/ert
 	name = "ERT - Syndicate Basic"
+	jobtype = /datum/job/officer
+	job_icon = "securityofficer"
 
 	suit = /obj/item/clothing/suit/armor/vest/syndie
 	suit_store = /obj/item/gun/ballistic/automatic/smg/c20r
@@ -7,7 +9,7 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	gloves = /obj/item/clothing/gloves/color/black
 	id = /obj/item/card/id/syndicate_command/crew_id
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	head = /obj/item/clothing/head/helmet/operator
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/military/c20r
@@ -18,10 +20,9 @@
 	implants = list(/obj/item/implant/weapons_auth)
 	backpack_contents = list(/obj/item/radio=1)
 
-	jobtype = /datum/job/officer // most of these are Shooty Shooty People anyway
-
 /datum/outfit/job/syndicate/ert/leader
 	name = "ERT - Syndicate Basic Leader"
+	job_icon = "lieutenant"
 
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/captain
@@ -31,7 +32,7 @@
 // gorlex loyalist/2nd battlegroup
 
 /datum/outfit/job/syndicate/ert/gorlex
-	name = "ERT - Syndicate Gorlex Loyalist Trooper"
+	name = "ERT - New Gorlex Republic Trooper"
 
 	head = /obj/item/clothing/head/helmet/swat
 	uniform = /obj/item/clothing/under/syndicate/combat
@@ -41,13 +42,15 @@
 	suit_store = /obj/item/gun/ballistic/automatic/smg/m90
 
 /datum/outfit/job/syndicate/ert/gorlex/pointman
-	name = "ERT - Syndicate Gorlex Loyalist Pointman"
+	name = "ERT - New Gorlex Republic Pointman"
 
 	suit_store = /obj/item/gun/ballistic/shotgun/bulldog
 	belt = /obj/item/storage/belt/security/webbing/bulldog
 
 /datum/outfit/job/syndicate/ert/gorlex/medic
-	name = "ERT - Syndicate Gorlex Loyalist Medic"
+	name = "ERT - New Gorlex Republic Medic"
+	jobtype = /datum/job/paramedic
+	job_icon = "paramedic"
 
 	head = /obj/item/clothing/head/soft/black
 	mask = null
@@ -62,7 +65,7 @@
 	backpack_contents = list(/obj/item/ammo_box/magazine/m10mm=2, /obj/item/storage/firstaid/medical=1, /obj/item/defibrillator/compact/combat/loaded=1)
 
 /datum/outfit/job/syndicate/ert/gorlex/sniper
-	name = "ERT - Syndicate Gorlex Loyalist Sniper"
+	name = "ERT - New Gorlex Republic Sniper"
 
 	head = /obj/item/clothing/head/beret/black
 	back = /obj/item/storage/backpack/messenger/sec
@@ -78,7 +81,8 @@
 	backpack_contents = list(/obj/item/ammo_box/magazine/sniper_rounds=2, /obj/item/radio=1)
 
 /datum/outfit/job/syndicate/ert/gorlex/leader
-	name = "ERT - Syndicate Gorlex Loyalist Sergeant"
+	name = "ERT - New Gorlex Republic Sergeant"
+	job_icon = "lieutenant"
 
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	head = /obj/item/clothing/head/HoS/beret/syndicate
@@ -93,6 +97,7 @@
 
 /datum/outfit/job/syndicate/ert/cybersun
 	name = "ERT - Syndicate Cybersun Commando"
+	job_icon = "syndicate"
 
 	head = null
 	uniform = /obj/item/clothing/under/syndicate/combat
@@ -117,6 +122,7 @@
 
 /datum/outfit/job/syndicate/ert/cybersun/medic
 	name = "ERT - Syndicate Cybersun Paramedic"
+	job_icon = "paramedic"
 
 	uniform = /obj/item/clothing/under/syndicate/medic
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/cybersun/paramed
@@ -138,6 +144,8 @@
 
 /datum/outfit/job/syndicate/ert/cybersun/medic/leader
 	name = "ERT - Syndicate Cybersun Lead Paramedic"
+	id_assignment = "Lead Paramedic"
+	job_icon = "chiefmedicalofficer"
 
 	head = /obj/item/clothing/head/beret/cmo
 	glasses = /obj/item/clothing/glasses/hud/security/night
@@ -150,8 +158,11 @@
 
 /datum/outfit/job/syndicate/ert/inspector
 	name = "ERT - Inspector (Syndicate)"
+	id_assignment = "Inspector"
+	jobtype = /datum/job/head_of_personnel
+	job_icon = "syndicate"
 
-	uniform = /obj/item/clothing/under/syndicate/officer
+	uniform = /obj/item/clothing/under/syndicate/ngr/officer
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	mask = null
 	belt = /obj/item/clipboard
@@ -160,15 +171,8 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	gloves = /obj/item/clothing/gloves/color/white
 	suit = /obj/item/clothing/suit/armor/hos
+	l_pocket = null
+	r_pocket = null
 	suit_store = null
 
-	job_icon = "syndicate"
-	jobtype = /datum/job/head_of_personnel
-
-/datum/outfit/job/syndicate/ert/inspector/post_equip(mob/living/carbon/human/H, visualsOnly)
-	. = ..()
-	var/obj/item/card/id/W = H.wear_id
-	if(W)
-		W.registered_name = H.real_name
-		W.assignment = "Inspector"
-		W.update_label()
+	backpack_contents = list(/obj/item/stamp/syndicate)

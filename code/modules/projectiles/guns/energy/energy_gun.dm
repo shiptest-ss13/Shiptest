@@ -31,6 +31,12 @@
 	flight_x_offset = 19
 	flight_y_offset = 13
 
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 /obj/item/gun/energy/e_gun/mini/Initialize()
 	set_gun_light(new /obj/item/flashlight/seclite(src))
 	return ..()
@@ -193,6 +199,13 @@
 	ammo_x_offset = 2
 	charge_sections = 6
 	small_gun = TRUE
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hitscan, /obj/item/ammo_casing/energy/ion/cheap)
 	cell_type = /obj/item/stock_parts/cell/gun/mini
 
@@ -217,7 +230,7 @@
 
 /obj/item/gun/energy/e_gun/smg/Initialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
 
 /obj/item/gun/energy/e_gun/iot
 	name = "\improper E-SG 500 Second Edition"
@@ -244,6 +257,7 @@
 	flight_x_offset = 20
 	flight_y_offset = 9
 	spread = 80
+	spread_unwielded = 140
 	dual_wield_spread = 140
 	shaded_charge = TRUE
 	manufacturer = MANUFACTURER_EOEHOMA

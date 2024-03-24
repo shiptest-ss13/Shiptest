@@ -52,6 +52,7 @@
 		S.removeSoulsharer(src) //If a sharer is destroy()'d, they are simply removed
 	sharedSoullinks = null
 
+	QDEL_LIST(surgeries)
 	QDEL_LIST(abilities) // so that the actions are deleted, which will clear refs to owner
 	QDEL_LIST(roundstart_quirks)
 	return ..()
@@ -92,6 +93,10 @@
 
 //Called when we bump onto a mob
 /mob/living/proc/MobBump(mob/M)
+	//No bumping/swapping/pushing others if you are on walk intent
+	if(m_intent == MOVE_INTENT_WALK)
+		return TRUE
+
 	//Even if we don't push/swap places, we "touched" them, so spread fire
 	spreadFire(M)
 
