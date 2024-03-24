@@ -21,38 +21,50 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
 			"outfit": "/datum/outfit/job/nanotrasen/hop",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Internal Affairs Agent": {
 			"outfit": "/datum/outfit/job/nanotrasen/lawyer/corporaterepresentative",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots" : 1
 		},
 		"Medical Doctor": 1,
 		"Engineer": {
 			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Atmospheric Technician": {
 			"outfit": "/datum/outfit/job/nanotrasen/atmos",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/atmospherics",
 			"slots": 1
 		},
-		"Shaft Miner": 2,
+		"Shaft Miner": {
+			"outfit": "/datum/outfit/job/nanotrasen/miner",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/mining",
+			"slots": 2
+		},
 		"Cargo Technician": {
-		"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
-		"slots": 1
+			"outfit": "/datum/outfit/job/nanotrasen/cargo_tech",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cargo",
+			"slots": 1
 		},
 		"Security Officer": {
 			"outfit": "/datum/outfit/job/nanotrasen/security",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/security",
 			"slots": 1
 		},
 		"Cook": {
 			"outfit": "/datum/outfit/job/cook",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/chef",
 			"slots": 1
 		},
 		"Assistant": {

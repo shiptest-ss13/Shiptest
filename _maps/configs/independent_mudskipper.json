@@ -20,15 +20,18 @@
 	"job_slots": {
 		"Salvage Leader": {
 			"outfit": "/datum/outfit/job/independent/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Salvager": {
 			"outfit": "/datum/outfit/job/independent/engineer/salvage",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 2
 		},
 		"Salvage Technician": {
 			"outfit": "/datum/outfit/job/independent/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		}
 	},

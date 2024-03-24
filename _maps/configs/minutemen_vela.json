@@ -16,37 +16,45 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/clip/minutemen/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Foreman": {
 			"outfit": "/datum/outfit/job/clip/ce",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/ce",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
 			"outfit": "/datum/outfit/job/clip/first_officer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Mech Pilot": {
 			"outfit": "/datum/outfit/job/clip/minutemen/vehicle_pilot",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/robotics",
 			"slots": 4
 		},
 		"Minuteman": {
 			"outfit": "/datum/outfit/job/clip/minutemen/grunt",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/security",
 			"slots": 2
 		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/clip/mechanic",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 2
 		},
 		"Researcher": {
 			"outfit": "/datum/outfit/job/clip/scientist",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/science",
 			"slots": 2
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/clip/minutemen/deckhand",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 1
 		}
 	},

@@ -18,28 +18,34 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/solgov/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/solgov",
 			"officer": true,
 			"slots": 1
 		},
 		"Overseer": {
 			"outfit": "/datum/outfit/job/solgov/overseer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Sonnensöldner": {
 			"outfit": "/datum/outfit/job/solgov/sonnensoldner",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/security",
 			"slots": 1
 		},
 		"Ship Engineer": {
 			"outfit": "/datum/outfit/job/solgov/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 2
 		},
 		"Field Engineer": {
 			"outfit": "/datum/outfit/job/solgov/miner",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/mining",
 			"slots": 2
 		},
 		"Scribe": {
 			"outfit": "/datum/outfit/job/solgov/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots" : 2
 		}
 	},

@@ -20,27 +20,33 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/independent/captain/western",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Foreman": {
 			"outfit": "/datum/outfit/job/independent/quartermaster/western",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cargo",
 			"slots": 1
 		},
 		"Ship's Doctor": {
 			"outfit": "/datum/outfit/job/independent/doctor",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/medical",
 			"slots": 1
 		},
 		"Ship's Engineer": {
 			"outfit": "/datum/outfit/job/independent/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Asteroid Miner": {
 			"outfit": "/datum/outfit/job/independent/miner/hazard",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/mining",
 			"slots": 2
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/independent/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 3
 		}
 	},

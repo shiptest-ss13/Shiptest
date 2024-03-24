@@ -7,6 +7,8 @@
 
 	///The outfit this job will recieve upon joining.
 	var/datum/outfit/job/outfit = null
+	///The outfit this job will recieve upon joining, but as a plasmaman
+	var/datum/outfit/job/plasmaman_outfit = null
 
 	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
 	var/list/minimal_access = list()		//Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
@@ -29,10 +31,11 @@
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
 
-/datum/job/New(new_name, datum/outfit/new_outfit)
+/datum/job/New(new_name, datum/outfit/new_outfit, datum/outfit/new_plasmaman_outfit)
 	if(new_name)
 		name = new_name
 		outfit = new_outfit
+		plasmaman_outfit = new_plasmaman_outfit
 		register()
 
 /datum/job/proc/register()
@@ -131,6 +134,8 @@
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
 	if(outfit_override || outfit)
+		if(isplasmaman(H))
+			H.equipOutfit(outfit_override ? outfit_override : plasmaman_outfit, visualsOnly, preference_source)
 		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly, preference_source)
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)

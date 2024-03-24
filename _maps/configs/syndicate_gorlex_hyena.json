@@ -19,24 +19,29 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/syndicate/captain/gorlex",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Foreman": {
 			"outfit": "/datum/outfit/job/syndicate/ce/gorlex",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/ce",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
 			"outfit": "/datum/outfit/job/syndicate/engineer/gorlex",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Wrecker": {
 			"outfit": "/datum/outfit/job/syndicate/miner/gorlex",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/mining",
 			"slots": 2
 		},
 		"Junior Agent": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/gorlex",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 2
 		}
 	},

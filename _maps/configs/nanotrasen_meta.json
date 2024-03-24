@@ -19,32 +19,39 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Quartermaster": {
 			"outfit": "/datum/outfit/job/nanotrasen/quartermaster",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cargo",
 			"officer": true,
 			"slots": 1
 		},
 		"Medical Doctor": {
 			"outfit": "/datum/outfit/job/nanotrasen/doctor",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/medical",
 			"slots": 1
 		},
 		"Ship Engineer": {
 			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Shaft Miner": {
 			"outfit": "/datum/outfit/job/nanotrasen/miner",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/mining",
 			"slots": 1
 		},
 		"Cargo Technician": {
 			"outfit": "/datum/outfit/job/cargo_tech",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cargo",
 			"slots": 1
 		},
 		"Assistant": {
 			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 2
 		}
 	},

@@ -19,24 +19,29 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Operations Chief": {
 			"outfit": "/datum/outfit/job/nanotrasen/ce",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/ce",
 			"officer": true,
 			"slots": 1
 		},
 		"Engine Technician": {
 			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 2
 		},
 		"Salvage Technician": {
 			"outfit": "/datum/outfit/job/nanotrasen/miner",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/mining",
 			"slots": 2
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 4
 		}
 	},

@@ -214,10 +214,14 @@ SUBSYSTEM_DEF(mapping)
 				slots = value
 			else if(islist(value))
 				var/datum/outfit/job_outfit = text2path(value["outfit"])
+				var/datum/outfit/plasmaman_job_outfit = text2path(value["plasmaman_outfit"])
 				if(isnull(job_outfit))
 					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
-				job_slot = new /datum/job(job, job_outfit)
+				if(isnull(plasmaman_job_outfit))
+					stack_trace("Invalid plasmaman job outfit! [value["plasmaman_outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
+					plasmaman_job_outfit = /datum/outfit/plasmaman
+				job_slot = new /datum/job(job, job_outfit, plasmaman_job_outfit)
 				job_slot.display_order = length(S.job_slots)
 				job_slot.wiki_page = value["wiki_page"]
 				job_slot.officer = value["officer"]

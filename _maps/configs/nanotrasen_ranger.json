@@ -23,23 +23,28 @@
 	"job_slots": {
 		"LP Lieutenant": {
 			"outfit": "/datum/outfit/job/nanotrasen/captain/lp",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"LP Engineering Specialist": {
 			"outfit": "/datum/outfit/job/nanotrasen/engineer/lp",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/ce",
 			"slots": 1
 		},
 		"LP Security Specialist": {
 			"outfit": "/datum/outfit/job/nanotrasen/security/lp",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hos",
 			"slots": 1
 		},
 		"LP Medical Specialist": {
 			"outfit": "/datum/outfit/job/nanotrasen/doctor/lp",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cmo",
 			"slots": 1
 		},
 		"Intern": {
 			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 1
 		}
 	},

@@ -19,37 +19,44 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/syndicate/captain/suns",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 
 		"Lead Doctor": {
 			"outfit": "/datum/outfit/job/syndicate/cmo/suns",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cmo",
 			"slots": 1
 		},
 
 		"Ship Doctor":{
 			"outfit": "/datum/outfit/job/syndicate/doctor/suns",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/medical",
 			"slots": 2
 		},
 
 		"Mechanic": {
 			"outfit": "/datum/outfit/job/syndicate/engineer/suns",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 
 		"Deck Service Assistant": {
 			"outfit": "/datum/outfit/job/syndicate/botanist/suns",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/botany",
 			"slots": 2
 		},
 
 		"Ship Psychologist": {
 			"outfit": "/datum/outfit/job/syndicate/psychologist/suns",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/medical",
 			"slots": 1
 		},
 
 		"Long Term Patient": {
 			"outfit": "/datum/outfit/job/syndicate/patient",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 2
 		}
 	},

@@ -1,3 +1,12 @@
+/datum/outfit/plasmaman
+	name = "Plasmaman"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman
+	uniform = /obj/item/clothing/under/plasmaman
+	belt = /obj/item/tank/internals/plasmaman/belt/full
+	mask = /obj/item/clothing/mask/breath
+	gloves = /obj/item/clothing/gloves/color/plasmaman
+
 /datum/outfit/plasmaman/bar
 	name = "Bartender Plasmaman"
 
@@ -213,7 +222,7 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/clown
 
 /datum/outfit/plasmaman/solgov //WS edit sgr
-	name = "Plasmasolgov"
+	name = "Plasmaman (Solgov)"
 	head = /obj/item/clothing/head/helmet/space/plasmaman/solgov
 	uniform = /obj/item/clothing/under/plasmaman/solgov
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white

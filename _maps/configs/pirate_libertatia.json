@@ -15,28 +15,34 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/independent/captain/pirate",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"First Mate": {
 			"outfit": "/datum/outfit/job/independent/hop/pirate",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Buccaneer": {
 			"outfit": "/datum/outfit/job/independent/security/pirate",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/security",
 			"slots": 2
 		},
 		"Motorman": {
 			"outfit": "/datum/outfit/job/independent/engineer/pirate",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Ship's Doctor": {
 			"outfit": "/datum/outfit/job/independent/doctor/pirate",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/medical",
 			"slots": 1
 		},
 		"Deckhand": {
 			"outfit": "/datum/outfit/job/independent/assistant/pirate",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 4
 		}
 	},
