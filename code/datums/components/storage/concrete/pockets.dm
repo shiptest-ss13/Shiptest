@@ -88,6 +88,8 @@
 		/obj/item/clothing/glasses/welding,
 		/obj/item/clothing/glasses/thermal,
 		/obj/item/clothing/glasses/night,
+		/obj/item/clothing/glasses/hud/health/night,
+		/obj/item/clothing/glasses/hud/security/night,
 		/obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 		/obj/item/ammo_casing,
 		/obj/item/ammo_box/magazine/illestren_a850r,
