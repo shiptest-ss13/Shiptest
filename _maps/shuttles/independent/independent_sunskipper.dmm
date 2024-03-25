@@ -805,6 +805,9 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
+"kn" = (
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/hydroponics)
 "kw" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/directional/east,
@@ -926,6 +929,19 @@
 /obj/machinery/photocopier,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
+"lL" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/food/egg_smudge,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen/kitchen)
 "lV" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
@@ -977,9 +993,6 @@
 	},
 /obj/machinery/vending/hydronutrients,
 /obj/machinery/airalarm/directional/east,
-/obj/structure/extinguisher_cabinet/directional/north{
-	pixel_x = 6
-	},
 /obj/machinery/firealarm/directional/north{
 	pixel_x = -6
 	},
@@ -1946,9 +1959,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
-"zy" = (
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/hydroponics)
 "zC" = (
 /obj/effect/turf_decal/solarpanel,
 /obj/machinery/power/solar,
@@ -2263,19 +2273,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
-"Ec" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/food/egg_smudge,
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
 "Eg" = (
 /obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/mono/white,
@@ -3590,7 +3587,7 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/closet/wall/white/med{
 	name = "First Aid";
-	pixel_y = -30;
+	pixel_y = -28;
 	dir = 1
 	},
 /obj/item/storage/firstaid/regular,
@@ -3644,7 +3641,12 @@
 /obj/machinery/hydroponics/constructable{
 	layer = 2
 	},
-/obj/machinery/newscaster/directional/north,
+/obj/machinery/newscaster/directional/north{
+	pixel_x = -6
+	},
+/obj/structure/extinguisher_cabinet/directional/north{
+	pixel_x = 6
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "WR" = (
@@ -3771,6 +3773,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/item/clothing/under/suit/checkered,
+/obj/item/clothing/under/suit/red,
+/obj/item/clothing/under/suit/blacktwopiece,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "YM" = (
@@ -4015,7 +4020,7 @@ bL
 BA
 mD
 NM
-zy
+kn
 dG
 Lp
 Jf
@@ -4127,7 +4132,7 @@ ul
 GM
 xT
 LF
-Ec
+lL
 LF
 XS
 Pe
