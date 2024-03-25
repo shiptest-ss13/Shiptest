@@ -55,7 +55,7 @@
 
 /obj/item/ammo_box/c38
 	name = "speed loader (.38 special)"
-	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These rounds do moderate damage, but plink against armor."
+	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These rounds do okay damage, but struggle against armor."
 	icon_state = "38"
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"

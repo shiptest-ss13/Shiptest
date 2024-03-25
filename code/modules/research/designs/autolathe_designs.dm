@@ -801,7 +801,7 @@
 /datum/design/c38_surplus
 	name = "Ammo Box (.38 surplus)"
 	id = "c38_surplus"
-	build_type = AUTOLATHE
+	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c38_box/surplus
 	category = list("initial", "Security", "Ammo")
