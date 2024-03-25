@@ -26,6 +26,7 @@
 	/// The amount of experience given for successfully completing the step.
 	var/experience_given = MEDICAL_SKILL_EASY
 
+
 /datum/surgery_step/proc/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	var/success = FALSE
 	if(accept_hand)

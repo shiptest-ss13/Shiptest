@@ -1,6 +1,6 @@
 /proc/attempt_initiate_surgery(obj/item/I, mob/living/M, mob/user)
 	if(!istype(M))
-		return
+		return //Tell me what you're returning please for the love of god
 
 	var/mob/living/carbon/C
 	var/obj/item/bodypart/affecting
@@ -12,7 +12,7 @@
 
 	var/datum/surgery/current_surgery
 
-	for(var/datum/surgery/S in M.surgeries)
+	for(var/datum/surgery/S in M.surgeries) // Make this into a callable DEFINED list to allow for multiple forms of omnisurgery
 		if(S.location == selected_zone)
 			current_surgery = S
 
@@ -24,15 +24,15 @@
 			if(!S.possible_locs.Find(selected_zone))
 				continue
 			if(affecting)
-				if(!S.requires_bodypart)
+				if(!(S.test_part(user,M)))
 					continue
 				if(S.requires_bodypart_type && !(affecting.bodytype & S.requires_bodypart_type))
 					continue
 				if(S.requires_real_bodypart && affecting.is_pseudopart)
 					continue
-			else if(C && S.requires_bodypart) //mob with no limb in surgery zone when we need a limb
+			else if(C && S.test_part(user,M)) //mob with no limb in surgery zone when we need a limb
 				continue
-			if(S.lying_required && (M.body_position != LYING_DOWN))
+			if(!(S.test_lying(user, M)))
 				continue
 			if(!S.can_start(user, M))
 				continue
@@ -56,13 +56,13 @@
 			if(C)
 				affecting = C.get_bodypart(check_zone(selected_zone))
 			if(affecting)
-				if(!S.requires_bodypart)
+				if(!(S.test_part(user,M)))
 					return
 				if(S.requires_bodypart_type && !(affecting.bodytype & S.requires_bodypart_type))
 					return
-			else if(C && S.requires_bodypart)
+			else if(C && S.test_part(user,M))
 				return
-			if(S.lying_required && (M.body_position != LYING_DOWN))
+			if(!(S.test_lying(user, M)))
 				return
 			if(!S.can_start(user, M))
 				return

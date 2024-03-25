@@ -421,3 +421,47 @@
 			limb_snip_candidate.dismember()
 		user.visible_message("<span class='danger'>[src] violently slams shut, amputating [patient]'s [candidate_name].</span>", "<span class='notice'>You amputate [patient]'s [candidate_name] with [src].</span>")
 
+/obj/item/bonegel
+	name = "bone gel"
+	desc = "A dense bottle of gel meant to be plastered on broken bones before setting them. It says so on the back of the bottle."
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "bone-gel"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	item_state = "bone-gel"
+	flags_1 = CONDUCT_1
+	item_flags = SURGICAL_TOOL
+	w_class = WEIGHT_CLASS_TINY
+	throwforce = 5
+	throw_speed = 3
+	throw_range = 5
+	custom_materials = list(/datum/material/iron=4000, /datum/material/glass=1000)
+	attack_verb = list("glooped","globbed","glomped","gonked","congealed","gelled","gooped")
+	hitsound = 'sound/weapons/tap.ogg'
+	tool_behaviour = TOOL_BONEGEL
+	toolspeed = 1
+
+/obj/item/bonesetter
+	name = "bone setter"
+	desc = "The 'wrench' of surgery tools whose sole purpose is to set bones back to their original place. Effectively useless without bone gel."
+	icon = 'icons/obj/surgery.dmi' //SHIPTEST edit: cool and new tools
+	icon_state = "bone setter"
+	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	pickup_sound =  'sound/items/handling/surgery1_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
+	item_state = "bone-setter"
+	flags_1 = CONDUCT_1
+	item_flags = SURGICAL_TOOL
+	force = 10
+	w_class = WEIGHT_CLASS_TINY
+	throwforce = 5
+	throw_speed = 3
+	throw_range = 5
+	custom_materials = list(/datum/material/iron=4000, /datum/material/glass=1000)
+	attack_verb = list("bashed","smashed","smacked","bone unset")
+	hitsound = 'sound/weapons/smash.ogg'
+	tool_behaviour = TOOL_BONESETTER
+	toolspeed = 1
