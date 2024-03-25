@@ -19,11 +19,26 @@ jobs:
         with:
           ref: master
       - uses: actions/checkout@v3
+
       - name: Restore SpacemanDMM cache
+        id: cache-spacemandmm
         uses: actions/cache@v3
         with:
-          path: ~/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
+          path: ~/dreamchecker
+          key: ${{ runner.os }}-spacemandmm-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+      - name: Build SpacemanDMM
+        run: bash tools/ci/build_spaceman_dmm.sh dreamchecker
+
+      - name: Restore BYOND cache
+        id: cache-byond
+        uses: actions/cache@v3
+        with:
+          path: ~/BYOND
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
+      - name: Install BYOND
+        if: steps.cache-byond.outputs.cache-hit != 'true'
+        run: bash tools/ci/install_byond.sh
+
       - name: Restore Yarn cache
         uses: actions/cache@v3
         with:
@@ -33,14 +48,15 @@ jobs:
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       - name: Install Tools
         run: |
           pip3 install setuptools
           bash tools/ci/install_node.sh
-          bash tools/ci/install_byond.sh
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
           cargo install ripgrep --features pcre2
           tools/bootstrap/python -c ''
+
       - name: Run Linters
         run: |
           tools/bootstrap/python -m tools.maplint.source --github
@@ -52,19 +68,17 @@ jobs:
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
+
       - name: Annotate Lints
         uses: yogstation13/DreamAnnotate@v2
-        if: always()
         with:
           outputFile: output-annotations.txt
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
+
       - name: Run Check Regex
         run: |
           tools/bootstrap/python -m ci.check_regex --log-changes-only --github-actions
+
       - name: Annotate Regex Matches
-        if: always()
         run: |
           cat check_regex_output.txt
 
@@ -74,22 +88,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Python setup
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
+
       - name: Setup cache
         id: cache-byond
         uses: actions/cache@v3
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-cache-${{ hashFiles('Dockerfile') }}
+          key: ${{ runner.os }}-byond-cache-${{ secrets.CACHE_PURGE_KEY }}-${{ hashFiles('dependencies.sh') }}
       - name: Install BYOND
         if: steps.cache-byond.outputs.cache-hit != 'true'
         run: bash tools/ci/install_byond.sh
+
       - name: Compile All Maps
         run: |
-          bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
           tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS -DFULL_INIT
 
@@ -97,7 +108,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Integration Tests
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         arg: [
           "BASIC_TESTS",
@@ -129,6 +140,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Restore Yarn cache
         uses: actions/cache@v3
         with:
@@ -138,14 +150,17 @@ jobs:
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:
           DM_EXE: "C:\\byond\\bin\\dm.exe"
+
       - name: Create artifact
         run: |
           md deploy
           bash tools/deploy.sh ./deploy
+
       - name: Deploy artifact
         uses: actions/upload-artifact@v3
         with:
