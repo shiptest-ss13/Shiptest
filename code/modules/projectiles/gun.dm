@@ -3,6 +3,7 @@
 #define FIRING_PIN_REMOVAL_DELAY 50
 
 #define MANUFACTURER_NONE null
+#define MANUFACTURER_KYBER "the simple, handmade marking of an unknown gunsmith"
 #define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
 #define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
 #define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
@@ -133,12 +134,21 @@
 	var/has_safety = FALSE
 	///If the saftey on? If so, we can't fire the weapon
 	var/safety = FALSE
-
 	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
 	var/safety_wording = "safety"
 
-/obj/item/gun/Initialize()
+	// Guncrafting
+	var/obj/item/part/gun/frame/frame
+	// 0 means no frame 1-5 are diffrent quality parts
+	var/quality = 3
+
+/obj/item/gun/Initialize(mapload, proviedQuality)
 	. = ..()
+	if(proviedQuality)
+		quality = proviedQuality
+	if(quality != 0)
+		if(!frame)
+			frame = new(src)
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	if(pin)

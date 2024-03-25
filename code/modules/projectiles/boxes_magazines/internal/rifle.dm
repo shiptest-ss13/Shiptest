@@ -6,13 +6,6 @@
 	max_ammo = 5
 	instant_load = TRUE
 
-/obj/item/ammo_box/magazine/internal/boltaction/enchanted
-	max_ammo = 1
-	ammo_type = /obj/item/ammo_casing/a8_50r
-
-/obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage
-	ammo_type = /obj/item/ammo_casing/magic/arcane_barrage
-
 /obj/item/ammo_box/magazine/internal/boltaction/solgov
 	name = "SSG-669C internal magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/a858
