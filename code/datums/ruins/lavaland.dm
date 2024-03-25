@@ -129,7 +129,7 @@
 /datum/map_template/ruin/lavaland/train_station
 	name = "Train Station"
 	id = "train_station"
-	description = "An old and abandoned train station. Who built it, and what were they moving?"
+	description = "A long fallen barracks outpost of some kind with a docked supply train, seems infested with golaiths and legion."
 	suffix = "lavaland_surface_train_station.dmm"
 
 /datum/map_template/ruin/lavaland/lava_canyon
