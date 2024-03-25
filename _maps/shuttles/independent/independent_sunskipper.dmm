@@ -107,9 +107,6 @@
 /area/ship/crew/hydroponics)
 "bi" = (
 /obj/structure/table/wood/reinforced,
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
@@ -150,6 +147,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#332521"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -655,6 +655,9 @@
 /obj/item/clothing/head/that,
 /obj/item/clothing/glasses/sunglasses/reagent,
 /obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "iC" = (
@@ -805,9 +808,6 @@
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
-"kn" = (
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/hydroponics)
 "kw" = (
 /obj/structure/table/reinforced,
 /obj/item/radio/intercom/directional/east,
@@ -929,19 +929,6 @@
 /obj/machinery/photocopier,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
-"lL" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/food/egg_smudge,
-/turf/open/floor/plasteel/mono,
-/area/ship/crew/canteen/kitchen)
 "lV" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
@@ -1497,6 +1484,9 @@
 	dir = 9;
 	color = "#543C30"
 	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "tr" = (
@@ -1548,6 +1538,9 @@
 	color = "#332521"
 	},
 /obj/item/radio/intercom/directional/west,
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
 "uc" = (
@@ -1735,10 +1728,14 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/central)
 "xI" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/turf/open/floor/wood/ebony,
+/turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "xJ" = (
 /obj/item/kirbyplants/random{
@@ -2027,11 +2024,8 @@
 /turf/closed/wall/r_wall,
 /area/ship/crew/hydroponics)
 "AX" = (
-/obj/structure/cable/green{
-	icon_state = "5-10"
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew/canteen)
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/hydroponics)
 "AY" = (
 /obj/machinery/jukebox,
 /obj/machinery/firealarm/directional/west,
@@ -3139,9 +3133,6 @@
 /area/ship/crew/canteen)
 "Pu" = (
 /obj/structure/table/wood,
-/obj/structure/cable/green{
-	icon_state = "0-2"
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#332521"
@@ -3180,18 +3171,18 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Qc" = (
-/obj/structure/chair/stool/bar{
-	dir = 1
-	},
 /obj/structure/cable/green{
-	icon_state = "1-2"
+	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#543C30"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
 	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew/canteen)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/food/egg_smudge,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen/kitchen)
 "Qp" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/effect/turf_decal/borderfloorblack,
@@ -4020,7 +4011,7 @@ bL
 BA
 mD
 NM
-kn
+AX
 dG
 Lp
 Jf
@@ -4132,7 +4123,7 @@ ul
 GM
 xT
 LF
-lL
+Qc
 LF
 XS
 Pe
@@ -4245,8 +4236,8 @@ il
 br
 tP
 td
-QG
-AX
+xI
+pS
 iC
 xM
 ro
@@ -4265,10 +4256,10 @@ Pa
 ux
 fi
 Pu
-xI
+cC
 bi
-Qc
-pS
+zP
+Rz
 Rz
 mQ
 vf
