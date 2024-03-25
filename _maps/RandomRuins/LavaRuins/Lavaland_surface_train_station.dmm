@@ -14,11 +14,13 @@
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava)
 "ax" = (
-/obj/structure/closet/crate/engineering/electrical,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical,
 /obj/machinery/light/directional/east,
 /obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/structure/closet/crate{
+	icon_state = "engi_e_crate"
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "aL" = (
@@ -55,9 +57,11 @@
 /turf/open/floor/engine/hull,
 /area/ruin/unpowered/train_station/cargo)
 "bD" = (
-/obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/plasma/twenty,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate{
+	icon_state = "radiation"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/train_station/Barracks)
 "bO" = (
@@ -116,10 +120,15 @@
 /area/ruin/unpowered/train_station/Barracks)
 "cy" = (
 /obj/structure/rack,
-/obj/item/gun/energy,
+/obj/item/gun/energy{
+	pixel_y = -3
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 9
+	},
+/obj/item/gun/energy{
+	pixel_y = 10
 	},
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/Barracks)
@@ -154,7 +163,7 @@
 /area/ruin/unpowered/train_station/Barracks)
 "dE" = (
 /obj/item/crowbar/large,
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "dL" = (
@@ -178,6 +187,8 @@
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/item/crusher_trophy/legion_skull,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "dS" = (
@@ -211,13 +222,12 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/Barracks)
 "et" = (
-/obj/machinery/recharger{
-	pixel_y = 22
-	},
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/Barracks)
 "eG" = (
@@ -352,6 +362,11 @@
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
+"ht" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/crusher_trophy/legion_skull,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/train_station/Barracks)
 "hH" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/train_station/Barracks)
@@ -398,7 +413,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/smes,
+/obj/structure/salvageable/server,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "jg" = (
@@ -441,11 +456,15 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava)
 "ky" = (
-/obj/structure/fluff/bus/passable/seat,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered/train_station/cargo)
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/train_station/Barracks)
 "kz" = (
-/obj/machinery/power/port_gen/pacman,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -456,6 +475,7 @@
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 4
 	},
+/obj/structure/salvageable/protolathe/reployer,
 /turf/open/floor/circuit/green/off,
 /area/ruin/unpowered/train_station/Barracks)
 "kB" = (
@@ -520,6 +540,7 @@
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/head/beret/black,
+/obj/item/gun/energy/laser/bluetag,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "lI" = (
@@ -532,7 +553,7 @@
 /obj/structure/cable{
 	icon_state = "0-1"
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/structure/salvageable/protolathe/reployer,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "lU" = (
@@ -654,7 +675,7 @@
 "nX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/crystal,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "oj" = (
@@ -740,13 +761,10 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/train_station/train)
 "pI" = (
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/under/syndicate/tacticool,
-/obj/structure/closet,
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 8
 	},
+/obj/item/flashlight/lamp,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "pT" = (
@@ -756,7 +774,6 @@
 "pX" = (
 /obj/structure/closet/crate/large,
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster,
-/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "qc" = (
@@ -786,11 +803,16 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/unpowered/train_station/Barracks)
 "qv" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/bus/passable/seat,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered/train_station/cargo)
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/beret/black,
+/obj/item/clothing/under/syndicate/tacticool,
+/obj/structure/closet,
+/obj/effect/turf_decal/corner/opaque/ntblue{
+	dir = 8
+	},
+/obj/item/gun/energy/laser/bluetag,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/train_station/Barracks)
 "qw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -868,7 +890,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "rM" = (
-/obj/structure/closet/crate/engineering/electrical,
+/obj/structure/closet/crate/engineering/electrical{
+	icon = s
+	},
 /obj/item/stack/cable_coil/red,
 /obj/item/stack/cable_coil/red,
 /obj/item/stack/cable_coil/red,
@@ -1013,9 +1037,13 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "uQ" = (
-/obj/item/toy/prize/durand,
-/turf/open/floor/plasteel/mono/white,
-/area/ruin/unpowered/train_station/train)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/pew/left{
+	desc = "The train seems late";
+	name = "Bench"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/unpowered/train_station/cargo)
 "uR" = (
 /obj/item/flashlight/lamp/green{
 	pixel_y = 12;
@@ -1064,13 +1092,15 @@
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "vt" = (
-/obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 5
+	},
+/obj/structure/closet/crate{
+	icon_state = "radiation"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/train_station/Barracks)
@@ -1084,6 +1114,10 @@
 	desc = "a spreed sheet that seems to have once shown stations and arrival and leaving times";
 	default_raw_text = "Station $@*!"
 	},
+/obj/item/toy/prize/durand{
+	pixel_y = 13;
+	pixel_x = 15
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "vQ" = (
@@ -1092,6 +1126,7 @@
 	dir = 8
 	},
 /obj/structure/closet/wardrobe/cargotech,
+/obj/item/laser_pointer,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "wq" = (
@@ -1210,7 +1245,7 @@
 /obj/structure/cable{
 	icon_state = "0-9"
 	},
-/obj/machinery/power/port_gen/pacman,
+/obj/structure/salvageable/protolathe/reployer,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "yS" = (
@@ -1314,7 +1349,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/core,
-/obj/structure/fluff/bus/passable/seat,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "AZ" = (
@@ -1346,13 +1380,15 @@
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava)
 "Bj" = (
-/obj/structure/closet/crate/radiation,
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/turf_decal/industrial/radiation{
 	dir = 9
+	},
+/obj/structure/closet/crate{
+	icon_state = "radiation"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/train_station/Barracks)
@@ -1427,7 +1463,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/up,
-/obj/structure/fluff/bus/passable/seat,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "CN" = (
@@ -1498,7 +1533,10 @@
 /area/overmap_encounter/planetoid/lava)
 "Ex" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/bus/passable/seat,
+/obj/structure/chair/pew/right{
+	name = "Bench";
+	desc = "The train seems late"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "EE" = (
@@ -1674,6 +1712,7 @@
 	dir = 8
 	},
 /obj/structure/closet/wardrobe/cargotech,
+/obj/item/laser_pointer,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "Jf" = (
@@ -1705,6 +1744,10 @@
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/item/reagent_containers/food/snacks/salad/ricebowl{
+	pixel_y = -1;
+	pixel_x = 15
+	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "Jw" = (
@@ -1749,10 +1792,11 @@
 /area/ruin/unpowered/train_station/Barracks)
 "Kh" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/donkpockets{
-	pixel_y = 6
-	},
 /obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/item/reagent_containers/food/snacks/salad/gumbo{
+	pixel_y = 4
+	},
+/obj/item/kitchen/knife/butcher,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "Kj" = (
@@ -1764,6 +1808,7 @@
 /obj/item/clothing/under/syndicate/tacticool,
 /obj/item/clothing/suit/armor/vest,
 /obj/item/clothing/head/beret/black,
+/obj/item/gun/energy/laser/bluetag,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "Kn" = (
@@ -1789,6 +1834,7 @@
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 8
 	},
+/obj/item/gun/energy/laser/bluetag,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "KL" = (
@@ -1980,9 +2026,6 @@
 "Oe" = (
 /obj/structure/rack,
 /obj/item/gun/energy/e_gun/mini{
-	pixel_y = 8
-	},
-/obj/item/gun/energy/e_gun/mini{
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2012,6 +2055,14 @@
 /obj/effect/turf_decal/corner/opaque/ntblue{
 	dir = 8
 	},
+/obj/item/gun/energy/e_gun/mini{
+	pixel_y = -3
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion,
+/obj/structure/flippedtable{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "OG" = (
@@ -2031,6 +2082,13 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/train_station/Barracks)
+"PR" = (
+/obj/structure/chair/pew/right{
+	name = "Bench";
+	desc = "The train seems late"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/unpowered/train_station/cargo)
 "Qe" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall,
@@ -2345,11 +2403,12 @@
 /area/ruin/unpowered/train_station/cargo)
 "WS" = (
 /obj/structure/rack,
-/obj/item/gun/energy,
 /obj/effect/turf_decal/corner_techfloor_grid/full{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/clothing/suit/armor/riot,
+/obj/item/clothing/head/helmet/riot,
 /turf/open/floor/engine,
 /area/ruin/unpowered/train_station/Barracks)
 "WX" = (
@@ -2916,7 +2975,7 @@ cb
 ic
 ic
 Ns
-AN
+ky
 ww
 eG
 ww
@@ -2927,7 +2986,7 @@ pI
 Ns
 Ai
 jO
-Ug
+uQ
 DX
 Tb
 gv
@@ -2962,7 +3021,7 @@ Kj
 Ns
 Nt
 jO
-Ug
+Ex
 gl
 LH
 eX
@@ -2992,11 +3051,11 @@ Jr
 EL
 Ns
 KL
-xp
-pI
+Ao
+qv
 Ns
 Ag
-Ex
+Ug
 AW
 gl
 Ls
@@ -3062,7 +3121,7 @@ AN
 YI
 Ns
 CA
-Ao
+ht
 KJ
 Ns
 Ox
@@ -3137,7 +3196,7 @@ vQ
 Ns
 Ai
 jO
-Ug
+uQ
 he
 fd
 gv
@@ -3172,7 +3231,7 @@ dO
 Ns
 qN
 jO
-Ug
+Ex
 gl
 RN
 gv
@@ -3206,8 +3265,8 @@ Ns
 Ns
 Ns
 Ox
-qv
-Ex
+rI
+Ug
 xg
 KQ
 eX
@@ -3317,7 +3376,7 @@ gl
 RN
 gv
 yz
-uQ
+UD
 Zk
 oj
 pX
@@ -3347,7 +3406,7 @@ fV
 Ns
 Mw
 jO
-Ug
+uQ
 Rb
 bB
 QH
@@ -3382,7 +3441,7 @@ WX
 Ns
 Mw
 jO
-Ug
+Ex
 xg
 RN
 jq
@@ -3416,7 +3475,7 @@ Mq
 oF
 Ns
 ip
-Ex
+Ug
 CL
 qX
 ll
@@ -3557,7 +3616,7 @@ Xo
 Ns
 bW
 jO
-Ug
+uQ
 Rb
 Mz
 zp
@@ -3592,7 +3651,7 @@ IZ
 Ns
 EE
 jO
-ap
+PR
 DE
 RN
 YX
@@ -3626,8 +3685,8 @@ Ns
 Ns
 Ns
 EE
-ky
-ky
+ap
+ap
 Cs
 ll
 Ni
