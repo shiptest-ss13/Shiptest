@@ -457,7 +457,7 @@
 "eW" = (
 /obj/structure/table/wood,
 /obj/structure/sign/painting/library{
-	pixel_y = 28
+	pixel_y = 30
 	},
 /obj/machinery/fax/indie,
 /turf/open/floor/carpet/nanoweave/beige,
@@ -621,7 +621,7 @@
 	dir = 10
 	},
 /obj/structure/sign/painting/library{
-	pixel_y = -28
+	pixel_y = -30
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
@@ -1728,15 +1728,8 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/central)
 "xI" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	color = "#543C30";
-	dir = 1
-	},
-/obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/turf/open/floor/wood/walnut,
-/area/ship/crew/canteen)
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/crew/hydroponics)
 "xJ" = (
 /obj/item/kirbyplants/random{
 	pixel_x = 8
@@ -1871,7 +1864,7 @@
 	color = "#543C30"
 	},
 /obj/structure/sign/painting/library{
-	pixel_y = -28
+	pixel_y = -30
 	},
 /obj/structure/chair/sofa/red/right{
 	dir = 1
@@ -2024,8 +2017,15 @@
 /turf/closed/wall/r_wall,
 /area/ship/crew/hydroponics)
 "AX" = (
-/turf/open/floor/plasteel/mono/dark,
-/area/ship/crew/hydroponics)
+/obj/effect/turf_decal/siding/wood/corner{
+	color = "#543C30";
+	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "AY" = (
 /obj/machinery/jukebox,
 /obj/machinery/firealarm/directional/west,
@@ -2750,7 +2750,7 @@
 	},
 /obj/item/trash/plate,
 /obj/structure/sign/painting/library{
-	pixel_y = 28
+	pixel_y = 30
 	},
 /obj/item/trash/candle,
 /turf/open/floor/wood/ebony,
@@ -2915,7 +2915,7 @@
 /area/ship/crew/toilet)
 "MM" = (
 /obj/structure/sign/painting/library{
-	pixel_y = -28
+	pixel_y = -30
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 6;
@@ -3072,7 +3072,7 @@
 	pixel_y = -5
 	},
 /obj/structure/sign/painting/library{
-	pixel_x = 28
+	pixel_x = 30
 	},
 /turf/open/floor/wood/ebony,
 /area/ship/crew/canteen)
@@ -4011,7 +4011,7 @@ bL
 BA
 mD
 NM
-AX
+xI
 dG
 Lp
 Jf
@@ -4236,7 +4236,7 @@ il
 br
 tP
 td
-xI
+AX
 pS
 iC
 xM
