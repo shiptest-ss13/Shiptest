@@ -913,7 +913,7 @@
 	item_state = "suns-cane"
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/storage/belt/sabre/suns/ComponentInitialize()
+/obj/item/storage/belt/sabre/suns/cmo/ComponentInitialize()
 	AddComponent(component_type)
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -924,7 +924,7 @@
 		/obj/item/melee/sabre/suns/cmo
 		))
 
-/obj/item/storage/belt/sabre/suns/PopulateContents()
+/obj/item/storage/belt/sabre/suns/cmo/PopulateContents()
 	new /obj/item/melee/sabre/suns/cmo(src)
 	update_appearance()
 
