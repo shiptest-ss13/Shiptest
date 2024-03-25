@@ -1,30 +1,35 @@
-/datum/surgery/prosthetic_replacement
-	name = "Prosthetic replacement"
-	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/retract_skin, /datum/surgery_step/add_prosthetic)
+// Formerly prosthetic_replacement.dm
+
+/datum/surgery/limb_grafting
+	name = "Limb grafting"
+	steps = list(/datum/surgery_step/incise, /datum/surgery_step/clamp_bleeders, /datum/surgery_step/retract_skin, /datum/surgery_step/graft_limb)
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
 	requires_bodypart = FALSE //need a missing limb
 	requires_bodypart_type = 0
 
-/datum/surgery/prosthetic_replacement/can_start(mob/user, mob/living/carbon/target)
+/datum/surgery/limb_grafting/can_start(mob/user, mob/living/carbon/target)
 	if(!iscarbon(target))
 		return 0
 	var/mob/living/carbon/C = target
 	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
 		return 1
 
-/datum/surgery_step/add_prosthetic
-	name = "add prosthetic"
+/datum/surgery_step/graft_limb
+	name = "graft limb"
 	implements = list(
 		/obj/item/bodypart = 100,
-		/obj/item/organ_storage = 100,
-		/obj/item/chainsaw = 100,
-		/obj/item/melee/synthetic_arm_blade = 100)
+		/obj/item/organ_storage = 100)
+//		/obj/item/chainsaw = 100,
+//		/obj/item/melee/synthetic_arm_blade = 100)
+// Frankly these have always bothered me. They fill like a bad fit for Shiptest.
+// Marking out for now. Keeping the later code used to install unconventional prostheses just in case someone finds a good use for it.
+
 	time = 32
 	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
 	var/organ_rejection_dam = 0
 
-/datum/surgery_step/add_prosthetic/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+/datum/surgery_step/graft_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(istype(tool, /obj/item/organ_storage))
 		if(!tool.contents.len)
 			to_chat(user, "<span class='warning'>There is nothing inside [tool]!</span>")
@@ -65,7 +70,7 @@
 		to_chat(user, "<span class='warning'>[tool] must be installed onto an arm.</span>")
 		return -1
 
-/datum/surgery_step/add_prosthetic/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
+/datum/surgery_step/graft_limb/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	. = ..()
 	if(istype(tool, /obj/item/organ_storage))
 		tool.icon_state = initial(tool.icon_state)

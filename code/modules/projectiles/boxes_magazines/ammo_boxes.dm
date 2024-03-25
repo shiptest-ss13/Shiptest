@@ -5,6 +5,7 @@
 	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
 	icon_state = "357"
 	ammo_type = /obj/item/ammo_casing/a357
+	caliber = ".357"
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	item_flags = NO_MAT_REDEMPTION
@@ -31,22 +32,24 @@
 	max_ammo = 12
 
 /obj/item/ammo_box/a4570/match
-	name = "ammo holder (.45-70 match)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
+	name = "ammo box (.45-70 match)"
+	desc = "A 12-round ammo box for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	icon_state = "4570-match"
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
+
 /obj/item/ammo_box/a4570/hp
-	name = "ammo holder (.45-70 hollow point)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
+	name = "ammo box (.45-70 hollow point)"
+	desc = "A 12-round ammo box for .45-70 revolvers. These hollow point rounds do legendary damage against soft targets, but are nearly ineffective against armored ones."
 	icon_state = "4570-hp"
 	ammo_type = /obj/item/ammo_casing/a4570/hp
 
 /obj/item/ammo_box/a4570/explosive
-	name = "ammo holder (.45-70 explosive)"
-	desc = "A 6-round ammo holder for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
+	name = "ammo box (.45-70 explosive)"
+	desc = "A 12-round ammo box for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
 	icon_state = "4570-explosive"
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
+
 
 // .38 special Speed Loaders (Colt Detective Special)
 
@@ -55,6 +58,7 @@
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These rounds do moderate damage, but plink against armor."
 	icon_state = "38"
 	ammo_type = /obj/item/ammo_casing/c38
+	caliber = ".38"
 	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	custom_materials = list(/datum/material/iron = 15000)
@@ -386,6 +390,7 @@
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "38"
 	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
 	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	custom_materials = list(/datum/material/iron = 15000)
@@ -402,9 +407,9 @@
 /obj/item/ammo_box/c8x50mm_box
 	name = "ammo box (8x50mm)"
 	desc = "A box of standard 8x50mm ammo."
-	icon_state = "8x50mm"
+	icon_state = "8x50mmbox"
 	ammo_type = /obj/item/ammo_casing/a8_50r
-	max_ammo = 50
+	max_ammo = 20
 
 /obj/item/ammo_box/ferropelletbox
 	name = "ammo box (ferromagnetic pellets)"
@@ -429,7 +434,7 @@
 
 /obj/item/ammo_box/c8x50mmhp_box
 	name = "ammo box (8x50mm)"
-	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of ."
-	icon_state = "8x50mm-hp"
+	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration.."
+	icon_state = "8x50mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/a8_50rhp
 	max_ammo = 20

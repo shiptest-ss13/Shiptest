@@ -23,7 +23,7 @@
 
 	//spam prevention, 60 second delay
 	remove_verb(src, /client/verb/mentorhelp)
-	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(add_verb), src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(add_verb), src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
 
 /proc/get_mentor_counts()
 	. = list("total" = 0, "afk" = 0, "present" = 0)
