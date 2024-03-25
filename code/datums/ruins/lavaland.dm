@@ -126,8 +126,8 @@
 	description = "A Nanotrasen genetic research facility, abandoned and ripe for looting. Whats that goo over there?"
 	suffix = "lavaland_surface_codelab.dmm"
 
-/datum/map_template/ruin/lavaland/codelab
-	name = "Train station"
+/datum/map_template/ruin/lavaland/train_station
+	name = "Train Station"
 	id = "train_station"
 	description = "An old and abandoned train station. Who built it, and what were they moving?"
 	suffix = "lavaland_surface_train_station.dmm"
