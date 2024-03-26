@@ -36,14 +36,14 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "lQ" = (
-/obj/machinery/conveyor/auto{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_1,
+/obj/structure/bed,
+/turf/open/floor/plating/asteroid/basalt/lava,
 /area/space)
 "mG" = (
-/obj/structure/closet/crate/freezer,
-/turf/open/floor/plasteel/dark,
+/obj/structure/toilet{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
 /area/space)
 "pt" = (
 /obj/structure/fence{
@@ -54,19 +54,8 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
-"pY" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
-	},
-/obj/machinery/recycler/deathtrap,
-/turf/open/floor/plasteel/dark,
-/area/space)
 "su" = (
 /turf/open/floor/plating/asteroid/basalt/lava,
-/area/space)
-"sx" = (
-/obj/machinery/mineral/unloading_machine,
-/turf/open/floor/plasteel/dark,
 /area/space)
 "ty" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
@@ -96,10 +85,7 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "xG" = (
-/obj/machinery/conveyor/auto{
-	dir = 8
-	},
-/obj/machinery/mineral/processing_unit,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "yq" = (
@@ -112,12 +98,6 @@
 /obj/structure/grille,
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
-/area/space)
-"Am" = (
-/obj/machinery/conveyor/auto{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
 /area/space)
 "An" = (
 /obj/structure/fence{
@@ -154,7 +134,6 @@
 /turf/open/floor/plasteel/white,
 /area/space)
 "Gn" = (
-/obj/structure/grille,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/space)
@@ -174,12 +153,6 @@
 /area/space)
 "In" = (
 /turf/open/floor/concrete,
-/area/space)
-"Ja" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
 /area/space)
 "JM" = (
 /obj/structure/chair/comfy/lime,
@@ -221,12 +194,6 @@
 /turf/closed/wall/r_wall,
 /turf/open/floor/plasteel/dark,
 /area/space)
-"TP" = (
-/obj/machinery/conveyor/auto{
-	dir = 5
-	},
-/turf/open/floor/plasteel/dark,
-/area/space)
 "Uz" = (
 /turf/open/space/basic,
 /area/space)
@@ -250,9 +217,7 @@
 /turf/open/floor/plating,
 /area/space)
 "ZN" = (
-/obj/machinery/conveyor/auto{
-	dir = 1
-	},
+/obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plasteel/dark,
 /area/space)
 "ZS" = (
@@ -383,8 +348,8 @@ cm
 cm
 cm
 cm
-gL
-gL
+cm
+cm
 gL
 gL
 gL
@@ -435,9 +400,9 @@ EC
 Lv
 Lv
 cm
-gL
-gL
-gL
+mG
+cm
+cm
 gL
 gL
 gL
@@ -486,10 +451,10 @@ cm
 Lv
 Lv
 Lv
+Lv
+Lv
+Lv
 cm
-gL
-gL
-gL
 gL
 gL
 gL
@@ -1656,11 +1621,11 @@ ul
 ul
 ul
 ul
-ul
-ul
-ul
-gL
-gL
+bd
+bd
+bd
+bd
+bd
 gL
 gL
 "}
@@ -1685,7 +1650,7 @@ MH
 MH
 MH
 MH
-su
+MH
 su
 MH
 MH
@@ -1701,18 +1666,18 @@ Tm
 ul
 Ou
 Ou
-ul
 Ou
 Ou
 Ou
-TP
 ZN
-lQ
 bd
 bd
 bd
-gL
-gL
+bd
+bd
+bd
+bd
+bd
 gL
 gL
 "}
@@ -1737,7 +1702,7 @@ MH
 MH
 MH
 MH
-MH
+su
 su
 MH
 MH
@@ -1753,18 +1718,18 @@ ul
 Ou
 Ou
 Ou
-ul
 Ou
 Ou
 Ou
-pY
-ul
+ZN
 bd
 bd
 bd
 bd
-gL
-gL
+bd
+bd
+bd
+bd
 gL
 gL
 "}
@@ -1804,19 +1769,19 @@ Ou
 Ou
 Ou
 Ou
-mG
-ul
-Ja
-mG
+Ou
+Ou
+Ou
+Ou
 ZN
-ZN
-ul
 bd
 bd
 bd
 bd
-gL
-gL
+bd
+bd
+bd
+bd
 gL
 gL
 "}
@@ -1839,11 +1804,11 @@ MH
 MH
 MH
 MH
+MH
+MH
 su
 su
-su
-su
-su
+MH
 MH
 MH
 MH
@@ -1856,19 +1821,19 @@ Ou
 Ou
 Ou
 Ou
+Ou
+Ou
+Ou
 ul
-ul
-Ja
 ul
 Gn
 Gn
+Gn
 ul
-ul
 bd
 bd
 bd
-gL
-gL
+bd
 gL
 gL
 "}
@@ -1891,13 +1856,13 @@ MH
 MH
 MH
 MH
-su
-su
-su
-su
 MH
-MH
-MH
+su
+su
+su
+su
+lQ
+su
 MH
 MH
 MH
@@ -1908,19 +1873,19 @@ ul
 Ou
 Ou
 Ou
-sx
-ul
-Ja
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
 Gn
-Ou
-Ou
-Ou
-ul
 bd
 bd
 bd
-gL
-gL
+bd
 gL
 gL
 "}
@@ -1948,7 +1913,7 @@ su
 su
 su
 su
-MH
+lQ
 MH
 MH
 MH
@@ -1960,19 +1925,19 @@ ul
 Ou
 Ou
 Ou
-xG
+Ou
+Ou
+Ou
 ul
-Ja
+Ou
+Ou
+Ou
+Ou
 Gn
-Ou
-Ou
-Ou
-ul
 bd
 bd
 bd
-gL
-gL
+bd
 gL
 gL
 "}
@@ -2000,8 +1965,8 @@ su
 su
 su
 su
-su
-su
+lQ
+MH
 MH
 MH
 MH
@@ -2012,19 +1977,19 @@ ul
 Ou
 Ou
 Ou
-Am
+Ou
+Ou
+Ou
 ul
-Ja
+Ou
+Ou
+Ou
+Ou
 Gn
-Ou
-Ou
-Ou
-ul
 bd
-gL
-gL
-gL
-gL
+bd
+bd
+bd
 gL
 gL
 "}
@@ -2046,14 +2011,14 @@ MH
 MH
 MH
 MH
+su
+su
+su
+su
+su
+su
+lQ
 MH
-su
-su
-su
-su
-su
-su
-su
 MH
 MH
 MH
@@ -2063,20 +2028,20 @@ Sx
 ul
 Ou
 Ou
+Ou
+Ou
+Ou
+Ou
 ul
-Am
-ZN
-ZN
-ul
-Gn
+Ou
+Ou
 Ou
 ul
 ul
 bd
-gL
-gL
-gL
-gL
+bd
+bd
+bd
 gL
 gL
 "}
@@ -2099,13 +2064,13 @@ MH
 MH
 MH
 MH
-su
-su
-su
-su
-su
-su
-su
+MH
+lQ
+lQ
+lQ
+lQ
+MH
+MH
 MH
 MH
 MH
@@ -2115,20 +2080,20 @@ Sx
 ul
 Ou
 Ou
-ul
-ul
-ul
-ul
-ul
+Ou
+Ou
 Ou
 Ou
 ul
+ul
+Gn
+xG
+ul
 bd
 bd
-gL
-gL
-gL
-gL
+bd
+bd
+bd
 gL
 gL
 "}
@@ -2152,12 +2117,12 @@ MH
 MH
 MH
 MH
-su
-su
-su
-su
-su
-su
+MH
+MH
+MH
+MH
+MH
+MH
 MH
 MH
 MH
@@ -2174,13 +2139,13 @@ Ou
 Ou
 Ou
 Ou
+Ou
 ul
 bd
-gL
-gL
-gL
-gL
-gL
+bd
+bd
+bd
+bd
 gL
 gL
 "}
@@ -2204,11 +2169,11 @@ MH
 MH
 MH
 MH
-su
-su
 MH
 MH
-su
+MH
+MH
+MH
 MH
 MH
 MH
@@ -2217,6 +2182,7 @@ MH
 MH
 MH
 ul
+Ou
 Ou
 Ou
 Ou
@@ -2228,11 +2194,10 @@ Ou
 Ou
 ul
 bd
-gL
-gL
-gL
-gL
-gL
+bd
+bd
+bd
+bd
 gL
 gL
 "}
@@ -2269,22 +2234,22 @@ MH
 MH
 MH
 ul
-ul
-ul
-ul
-ul
-ul
-ul
-ul
-ul
-ul
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
+Ou
 ul
 bd
-gL
-gL
-gL
-gL
-gL
+bd
+bd
+bd
+bd
 gL
 gL
 "}
@@ -2320,23 +2285,23 @@ MH
 MH
 MH
 MH
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
-gL
+ul
+ul
+ul
+ul
+ul
+ul
+ul
+ul
+ul
+ul
+ul
+ul
+bd
+bd
+bd
+bd
+bd
 gL
 gL
 "}
