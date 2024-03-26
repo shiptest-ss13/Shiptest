@@ -183,7 +183,7 @@
 	icon_state = "captainhat"
 	item_state = "bluecloth"
 
-/obj/item/clothing/head/helmet/gezena //TODO: subtype under bulletproof, likely too late due to mapping efforts already beginning
+/obj/item/clothing/head/helmet/gezena
 	name = "\improper Raksha-helm"
 	desc = "Far more practical for combat than either type of cap, but not nearly as traditional or comfortable. Features small sections of removable plating to make space for the horns of horned races."
 	icon = 'icons/obj/clothing/faction/gezena/head.dmi'
