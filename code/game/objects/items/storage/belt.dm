@@ -441,7 +441,6 @@
 		"Snow" = "militarywebbing_snow",
 		"Urban" = "militarywebbing_urban",
 		)
-	unique_reskin = null
 
 //this might seem obtuse instead of setting allow_post_reskins to TRUE, but reskin menu would open every time on alt click, which is not good for this
 /obj/item/storage/belt/military/examine(mob/user)
