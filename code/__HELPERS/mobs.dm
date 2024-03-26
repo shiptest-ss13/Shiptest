@@ -273,7 +273,8 @@ GLOBAL_LIST_EMPTY(species_list)
 /proc/do_after(mob/user, delay = 3 SECONDS, atom/target, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks)
 	if(!user)
 		return FALSE
-
+	if(!isnum(delay))
+		CRASH("do_after was passed a non-number delay: [delay || "null"].")
 	if(target && INTERACTING_WITH(user, target))
 		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
 		return
