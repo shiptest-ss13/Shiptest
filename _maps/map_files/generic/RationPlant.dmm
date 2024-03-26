@@ -16,7 +16,9 @@
 /turf/closed/wall/mineral/titanium,
 /area/space)
 "el" = (
-/obj/structure/sink,
+/obj/structure/sink{
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/space)
 "gL" = (
@@ -54,6 +56,11 @@
 	},
 /turf/open/floor/concrete/slab_1,
 /area/space)
+"qc" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/space)
 "su" = (
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/space)
@@ -75,6 +82,9 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
+/area/space)
+"vS" = (
+/turf/closed/wall/mineral/wood/nonmetal,
 /area/space)
 "xj" = (
 /obj/machinery/door/poddoor/shutters,
@@ -144,7 +154,9 @@
 /turf/open/floor/plating/moss,
 /area/space)
 "GK" = (
-/obj/machinery/shower,
+/obj/machinery/shower{
+	pixel_y = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/space)
 "GO" = (
@@ -176,6 +188,10 @@
 /area/space)
 "Ou" = (
 /turf/open/floor/plasteel/dark,
+/area/space)
+"OO" = (
+/obj/machinery/power/floodlight,
+/turf/open/floor/plating/asteroid/basalt/lava,
 /area/space)
 "QG" = (
 /obj/machinery/computer/mech_bay_power_console,
@@ -1595,12 +1611,12 @@ gL
 gL
 gL
 gL
-gL
-gL
 MH
+MH
+vS
 su
 su
-MH
+vS
 MH
 gL
 gL
@@ -1650,7 +1666,7 @@ MH
 MH
 MH
 MH
-MH
+su
 su
 MH
 MH
@@ -1805,10 +1821,10 @@ MH
 MH
 MH
 MH
-MH
+vS
 su
 su
-MH
+vS
 MH
 MH
 MH
@@ -1857,12 +1873,12 @@ MH
 MH
 MH
 MH
-su
+OO
 su
 su
 su
 lQ
-su
+MH
 MH
 MH
 MH
@@ -1980,7 +1996,7 @@ Ou
 Ou
 Ou
 Ou
-ul
+Gn
 Ou
 Ou
 Ou
@@ -2011,14 +2027,14 @@ MH
 MH
 MH
 MH
-su
+vS
 su
 su
 su
 su
 su
 lQ
-MH
+vS
 MH
 MH
 MH
@@ -2032,7 +2048,7 @@ Ou
 Ou
 Ou
 Ou
-ul
+qc
 Ou
 Ou
 Ou
@@ -2064,12 +2080,12 @@ MH
 MH
 MH
 MH
-MH
+vS
 lQ
 lQ
 lQ
 lQ
-MH
+vS
 MH
 MH
 MH
