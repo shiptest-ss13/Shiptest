@@ -400,7 +400,7 @@
 /obj/item/ammo_box/c46x30mm_box
 	name = "ammo box (4.6x30mm)"
 	desc = "A box of standard 4.6x30mm ammo."
-	icon_state = "4.6x30mmbox"
+	icon_state = "46x30mmbox"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	max_ammo = 50
 
