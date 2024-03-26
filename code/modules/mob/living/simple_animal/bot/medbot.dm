@@ -488,6 +488,9 @@
 		return TRUE
 
 /mob/living/simple_animal/bot/medbot/attack_hand(mob/living/carbon/human/H)
+	if(DOING_INTERACTION_WITH_TARGET(H, src))
+		to_chat(H, "<span class='warning'>You're already interacting with [src].</span>")
+		return
 
 	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
 		H.visible_message("<span class='danger'>[H] begins tipping over [src].</span>", "<span class='warning'>You begin tipping over [src]...</span>")
