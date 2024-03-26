@@ -31,9 +31,6 @@
 		reagents.add_reagent(reagent_id, potency)
 
 /obj/structure/geyser/plunger_act(obj/item/plunger/P, mob/living/user, _reinforced)
-	if(!_reinforced)
-		to_chat(user, "<span class='warning'>The [P.name] isn't strong enough!</span>")
-		return
 	if(activated)
 		to_chat(user, "<span class'warning'>The [name] is already active!</span>")
 		return
