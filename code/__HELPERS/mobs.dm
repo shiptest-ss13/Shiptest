@@ -243,7 +243,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			return "unknown"
 
 ///Timed action involving two mobs, the user and the target.
-/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE)
+/proc/do_mob(mob/user, mob/target, time = 3 SECONDS, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks, ignore_loc_change = FALSE)
 	if(!user || !target)
 		return FALSE
 
@@ -271,26 +271,36 @@ GLOBAL_LIST_EMPTY(species_list)
 	. = TRUE
 	while (world.time < endtime)
 		stoplag(1)
-		if(!QDELETED(progbar))
-			progbar.update(world.time - starttime)
 		if(QDELETED(user) || QDELETED(target))
 			. = FALSE
 			break
-		if(uninterruptible)
-			continue
+
+		if(progress)
+			progbar.update(world.time - starttime)
 
 		if(drifting && !user.inertia_dir)
 			drifting = FALSE
 			user_loc = user.loc
 
-
-		if(!ignore_loc_change && ((!drifting && user.loc != user_loc) || target.loc != target_loc))
+		// Check flags
+		if(!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc)
 			. = FALSE
+
+		if(!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE) && target.loc != target_loc)
+			. = FALSE
+
+		if(!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding)
+			. = FALSE
+
+		if(!(timed_action_flags & IGNORE_INCAPACITATED) && user.incapacitated())
+			. = FALSE
+
+		if(extra_checks && !extra_checks.Invoke())
+			. = FALSE
+
+		if(!.)
 			break
 
-		if(user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
-			. = FALSE
-			break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
 	if(!QDELETED(target))
@@ -312,7 +322,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks)
 	if(!user)
 		return FALSE
 
@@ -320,15 +330,15 @@ GLOBAL_LIST_EMPTY(species_list)
 		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
 		return
 
-	var/atom/Tloc = null
+	var/atom/target_loc = null
 	if(target && !isturf(target))
-		Tloc = target.loc
+		target_loc = target.loc
 
 	if(target)
 		LAZYADD(user.do_afters, target)
 		LAZYADD(target.targeted_by, user)
 
-	var/atom/Uloc = user.loc
+	var/atom/user_loc = user.loc
 
 	var/drifting = FALSE
 	if(!user.Process_Spacemove(0) && user.inertia_dir)
@@ -336,57 +346,56 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	var/holding = user.get_active_held_item()
 
-	var/holdingnull = TRUE //User's hand started out empty, check for an empty hand
-	if(holding)
-		holdingnull = FALSE //Users hand started holding something, check to see if it's still holding that
-
 	delay *= user.do_after_coefficent()
 
 	var/datum/progressbar/progbar
 	if(progress)
-		progbar = new(user, delay, target || user)
+		if(target) // the progress bar needs a target, so if we don't have one just pass it the user.
+			progbar = new(user, delay, target)
+		else
+			progbar = new(user, delay, user)
 
 	var/endtime = world.time + delay
 	var/starttime = world.time
 	. = TRUE
 	while (world.time < endtime)
 		stoplag(1)
+
+		if(QDELETED(user))
+			. = FALSE
+			break
+
 		if(!QDELETED(progbar))
 			progbar.update(world.time - starttime)
 
 		if(drifting && !user.inertia_dir)
 			drifting = FALSE
-			Uloc = user.loc
+			user_loc = user.loc
 
-		if(QDELETED(user) || user.stat || (!drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
+		// Check flags
+		if(!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc)
 			. = FALSE
+
+		if(!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding)
+			. = FALSE
+
+		if(!(timed_action_flags & IGNORE_INCAPACITATED) && user.incapacitated())
+			. = FALSE
+
+		if(extra_checks && !extra_checks.Invoke())
+			. = FALSE
+
+		// If we have a target, we check for them moving here. We don't care about it if we're drifting, though
+		if(!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE) && !drifting)
+			if(!QDELETED(target_loc) && (QDELETED(target) || target_loc != target.loc))
+				. = FALSE
+
+		if(target && !(timed_action_flags & IGNORE_TARGET_IN_DOAFTERS) && !(target in user.do_afters))
+			. = FALSE
+
+		if(!.)
 			break
 
-		if(isliving(user))
-			var/mob/living/L = user
-			if(L.IsStun() || L.IsParalyzed())
-				. = FALSE
-				break
-
-		if(!QDELETED(Tloc) && (QDELETED(target) || Tloc != target.loc))
-			if((Uloc != Tloc || Tloc != user) && !drifting)
-				. = FALSE
-				break
-
-		if(target && !(target in user.do_afters))
-			. = FALSE
-			break
-
-		if(needhand)
-			//This might seem like an odd check, but you can still need a hand even when it's empty
-			//i.e the hand is used to pull some item/tool out of the construction
-			if(!holdingnull)
-				if(!holding)
-					. = FALSE
-					break
-			if(user.get_active_held_item() != holding)
-				. = FALSE
-				break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
 
@@ -437,8 +446,14 @@ GLOBAL_LIST_EMPTY(species_list)
 	mainloop:
 		while(world.time < endtime)
 			stoplag(1)
+
+			if(QDELETED(user))
+				. = FALSE
+				break
+
 			if(!QDELETED(progbar))
 				progbar.update(world.time - starttime)
+
 			if(QDELETED(user) || !targets)
 				. = FALSE
 				break

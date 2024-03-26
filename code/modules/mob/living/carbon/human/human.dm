@@ -1184,7 +1184,7 @@
 		//Joe Medic starts quickly/expertly lifting Grey Tider onto their back..
 		"<span class='notice'>[carrydelay < 35 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to lift [target] onto your back[carrydelay == 40 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
 		//(Using your gloves' nanochips, you/You) (/quickly/expertly) start to lift Grey Tider onto your back(, while assisted by the nanochips in your gloves../...)
-		if(do_after(src, carrydelay, TRUE, target))
+		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(can_be_firemanned(target) && !incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
@@ -1207,7 +1207,7 @@
 		//Joe Medic starts quickly/expertly scooping Grey Tider into their arms..
 		"<span class='notice'>[carrydelay < 11 ? "Using your gloves' nanochips, you" : "You"] [skills_space] start to scoop [target] into your arms[carrydelay == 15 ? ", while assisted by the nanochips in your gloves.." : "..."]</span>")
 		//(Using your gloves' nanochips, you/You) ( /quickly/expertly) start to scoop Grey Tider into your arms(, while assisted by the nanochips in your gloves../...)
-		if(do_after(src, carrydelay, TRUE, target))
+		if(do_after(src, carrydelay, target))
 			//Second check to make sure they're still valid to be carried
 			if(!incapacitated(FALSE, TRUE) && !target.buckled)
 				buckle_mob(target, TRUE, TRUE, 90, 1, 0)
