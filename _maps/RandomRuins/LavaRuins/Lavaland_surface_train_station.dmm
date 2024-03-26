@@ -362,11 +362,6 @@
 	},
 /turf/open/floor/concrete/reinforced,
 /area/ruin/unpowered/train_station/Barracks)
-"ht" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/crusher_trophy/legion_skull,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/train_station/Barracks)
 "hH" = (
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/unpowered/train_station/Barracks)
@@ -456,12 +451,14 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava)
 "ky" = (
-/obj/effect/turf_decal/corner/opaque/white/mono,
-/obj/structure/closet/secure_closet/freezer/fridge,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/snacks/grown/apple,
-/obj/item/reagent_containers/food/snacks/meat/slab,
-/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/beret/black,
+/obj/item/clothing/under/syndicate/tacticool,
+/obj/structure/closet,
+/obj/effect/turf_decal/corner/opaque/ntblue{
+	dir = 8
+	},
+/obj/item/gun/energy/laser/bluetag,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered/train_station/Barracks)
 "kz" = (
@@ -692,6 +689,22 @@
 	},
 /turf/open/floor/engine/hull,
 /area/ruin/unpowered/train_station/cargo)
+"or" = (
+/obj/structure/chair/pew/right{
+	name = "Bench";
+	desc = "The train seems late"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/unpowered/train_station/cargo)
+"oA" = (
+/obj/effect/turf_decal/corner/opaque/white/mono,
+/obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/train_station/Barracks)
 "oC" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -803,16 +816,13 @@
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/unpowered/train_station/Barracks)
 "qv" = (
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/head/beret/black,
-/obj/item/clothing/under/syndicate/tacticool,
-/obj/structure/closet,
-/obj/effect/turf_decal/corner/opaque/ntblue{
-	dir = 8
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/pew/right{
+	name = "Bench";
+	desc = "The train seems late"
 	},
-/obj/item/gun/energy/laser/bluetag,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered/train_station/Barracks)
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/unpowered/train_station/cargo)
 "qw" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -890,9 +900,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
 "rM" = (
-/obj/structure/closet/crate/engineering/electrical{
-	icon = s
-	},
 /obj/item/stack/cable_coil/red,
 /obj/item/stack/cable_coil/red,
 /obj/item/stack/cable_coil/red,
@@ -905,6 +912,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stock_parts/cell/high/empty,
 /obj/item/stock_parts/cell/high/empty,
+/obj/structure/closet/crate/engineering/electrical,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/unpowered/train_station/train)
 "sb" = (
@@ -1038,12 +1046,9 @@
 /area/ruin/unpowered/train_station/train)
 "uQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/pew/left{
-	desc = "The train seems late";
-	name = "Bench"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered/train_station/cargo)
+/obj/item/crusher_trophy/legion_skull,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered/train_station/Barracks)
 "uR" = (
 /obj/item/flashlight/lamp/green{
 	pixel_y = 12;
@@ -1533,9 +1538,9 @@
 /area/overmap_encounter/planetoid/lava)
 "Ex" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/pew/right{
-	name = "Bench";
-	desc = "The train seems late"
+/obj/structure/chair/pew/left{
+	desc = "The train seems late";
+	name = "Bench"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/unpowered/train_station/cargo)
@@ -2082,13 +2087,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/train_station/Barracks)
-"PR" = (
-/obj/structure/chair/pew/right{
-	name = "Bench";
-	desc = "The train seems late"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/unpowered/train_station/cargo)
 "Qe" = (
 /obj/structure/sign/warning/radiation,
 /turf/closed/wall,
@@ -2975,7 +2973,7 @@ cb
 ic
 ic
 Ns
-ky
+oA
 ww
 eG
 ww
@@ -2986,7 +2984,7 @@ pI
 Ns
 Ai
 jO
-uQ
+Ex
 DX
 Tb
 gv
@@ -3021,7 +3019,7 @@ Kj
 Ns
 Nt
 jO
-Ex
+qv
 gl
 LH
 eX
@@ -3052,7 +3050,7 @@ EL
 Ns
 KL
 Ao
-qv
+ky
 Ns
 Ag
 Ug
@@ -3121,7 +3119,7 @@ AN
 YI
 Ns
 CA
-ht
+uQ
 KJ
 Ns
 Ox
@@ -3196,7 +3194,7 @@ vQ
 Ns
 Ai
 jO
-uQ
+Ex
 he
 fd
 gv
@@ -3231,7 +3229,7 @@ dO
 Ns
 qN
 jO
-Ex
+qv
 gl
 RN
 gv
@@ -3406,7 +3404,7 @@ fV
 Ns
 Mw
 jO
-uQ
+Ex
 Rb
 bB
 QH
@@ -3441,7 +3439,7 @@ WX
 Ns
 Mw
 jO
-Ex
+qv
 xg
 RN
 jq
@@ -3616,7 +3614,7 @@ Xo
 Ns
 bW
 jO
-uQ
+Ex
 Rb
 Mz
 zp
@@ -3651,7 +3649,7 @@ IZ
 Ns
 EE
 jO
-PR
+or
 DE
 RN
 YX
