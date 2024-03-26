@@ -202,7 +202,7 @@
 			visible_message("<span class='danger'>[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name].</span>", \
 							"<span class='userdanger'>[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name].</span>", null, null, usr)
 			to_chat(usr, "<span class='notice'>You try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]...</span>")
-			if(do_mob(usr, src, POCKET_STRIP_DELAY))
+			if(do_after(usr, POCKET_STRIP_DELAY, src))
 				if(internal)
 					internal = null
 					update_internals_hud_icon(0)
@@ -306,7 +306,7 @@
 	if(!cuff_break)
 		visible_message("<span class='warning'>[src] attempts to remove [I]!</span>")
 		to_chat(src, "<span class='notice'>You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)</span>")
-		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
+		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM|IGNORE_RESTRAINED))
 			. = clear_cuffs(I, cuff_break)
 		else
 			to_chat(src, "<span class='warning'>You fail to remove [I]!</span>")
@@ -315,7 +315,7 @@
 		breakouttime = 50
 		visible_message("<span class='warning'>[src] is trying to break [I]!</span>")
 		to_chat(src, "<span class='notice'>You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)</span>")
-		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM))
+		if(do_after(src, breakouttime, target = src, timed_action_flags = IGNORE_HELD_ITEM|IGNORE_RESTRAINED))
 			. = clear_cuffs(I, cuff_break)
 		else
 			to_chat(src, "<span class='warning'>You fail to break [I]!</span>")

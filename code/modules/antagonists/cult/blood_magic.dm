@@ -535,7 +535,7 @@
 		playsound(loc, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
 		C.visible_message("<span class='danger'>[user] begins restraining [C] with dark magic!</span>", \
 								"<span class='userdanger'>[user] begins shaping dark magic shackles around your wrists!</span>")
-		if(do_mob(user, C, 30))
+		if(do_after(user, 3 SECONDS, C))
 			if(!C.handcuffed)
 				C.set_handcuffed(new /obj/item/restraints/handcuffs/energy/cult/used(C))
 				C.update_handcuffed()

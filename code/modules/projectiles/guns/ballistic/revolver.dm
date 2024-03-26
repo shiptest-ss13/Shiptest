@@ -96,13 +96,13 @@
 
 		for(var/i in 1 to num_to_unload)
 			var/doafter_time = 0.4 SECONDS
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
 			if(!eject_casing())
 				doafter_time = 0 SECONDS
 			else
 				num_unloaded++
-			if(!do_mob(user,user,doafter_time))
+			if(!do_after(user, doafter_time, user))
 				break
 			chamber_round(TRUE, TRUE)
 
@@ -160,7 +160,7 @@
 	else
 		if(slot)
 			if(!slot.BB && allow_ejection)
-				if(do_mob(user,user,doafter_time))
+				if(!do_after(user, doafter_time, user))
 					eject_casing(user)
 
 		rounds = magazine.ammo_list()
@@ -204,7 +204,7 @@
 					var/doafter_time = 0.8 SECONDS
 					if(magazine.instant_load && attacking_box.instant_load)
 						doafter_time = 0 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(user, casing_to_insert, FALSE))
 						break
@@ -221,7 +221,7 @@
 					if(!casing_to_insert || (magazine.caliber && casing_to_insert.caliber != magazine.caliber) || (!magazine.caliber && casing_to_insert.type != magazine.ammo_type))
 						break
 					var/doafter_time = 0.4 SECONDS
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					if(!insert_casing(null, casing_to_insert, FALSE))
 						doafter_time = 0 SECONDS
@@ -229,7 +229,7 @@
 						num_loaded++
 						attacking_box.update_appearance()
 						attacking_box.stored_ammo -= casing_to_insert
-					if(!do_mob(user,user,doafter_time))
+					if(!do_after(user, doafter_time, user))
 						break
 					switch(gate_load_direction)
 						if(REVOLVER_AUTO_ROTATE_RIGHT_LOADING)

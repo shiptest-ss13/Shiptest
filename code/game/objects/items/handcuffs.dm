@@ -57,7 +57,8 @@
 								"<span class='userdanger'>[user] is trying to put [src.name] on you!</span>")
 
 			playsound(loc, cuffsound, 30, TRUE, -2)
-			if(do_mob(user, C, 30) && C.canBeHandcuffed())
+			log_combat(user, C, "attempted to handcuff")
+			if(do_after(user, 3 SECONDS, C) && C.canBeHandcuffed())
 				if(iscyborg(user))
 					apply_cuffs(C, user, TRUE)
 				else

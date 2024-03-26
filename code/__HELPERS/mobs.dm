@@ -242,71 +242,6 @@ GLOBAL_LIST_EMPTY(species_list)
 		else
 			return "unknown"
 
-///Timed action involving two mobs, the user and the target.
-/proc/do_mob(mob/user, mob/target, time = 3 SECONDS, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks, ignore_loc_change = FALSE)
-	if(!user || !target)
-		return FALSE
-
-	if(target && INTERACTING_WITH(user, target))
-		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
-		return
-
-	var/user_loc = user.loc
-
-	var/drifting = FALSE
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = TRUE
-
-	var/target_loc = target.loc
-
-	LAZYADD(user.do_afters, target)
-	LAZYADD(target.targeted_by, user)
-	var/holding = user.get_active_held_item()
-	var/datum/progressbar/progbar
-	if (progress)
-		progbar = new(user, time, target)
-
-	var/endtime = world.time+time
-	var/starttime = world.time
-	. = TRUE
-	while (world.time < endtime)
-		stoplag(1)
-		if(QDELETED(user) || QDELETED(target))
-			. = FALSE
-			break
-
-		if(progress)
-			progbar.update(world.time - starttime)
-
-		if(drifting && !user.inertia_dir)
-			drifting = FALSE
-			user_loc = user.loc
-
-		// Check flags
-		if(!(timed_action_flags & IGNORE_USER_LOC_CHANGE) && !drifting && user.loc != user_loc)
-			. = FALSE
-
-		if(!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE) && target.loc != target_loc)
-			. = FALSE
-
-		if(!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding)
-			. = FALSE
-
-		if(!(timed_action_flags & IGNORE_INCAPACITATED) && user.incapacitated())
-			. = FALSE
-
-		if(extra_checks && !extra_checks.Invoke())
-			. = FALSE
-
-		if(!.)
-			break
-
-	if(!QDELETED(progbar))
-		progbar.end_progress()
-	if(!QDELETED(target))
-		LAZYREMOVE(user.do_afters, target)
-		LAZYREMOVE(target.targeted_by, user)
-
 //some additional checks as a callback for for do_afters that want to break on losing health or on the mob taking action
 /mob/proc/break_do_after_checks(list/checked_health, check_clicks)
 	if(check_clicks && next_move > world.time)
@@ -321,8 +256,21 @@ GLOBAL_LIST_EMPTY(species_list)
 		checked_health["health"] = health
 	return ..()
 
-///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, delay, needhand = TRUE, atom/target, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks)
+/**
+ * Timed action involving one mob user. A target can also be specified, but it is optional.
+ *
+ * Checks that `user` does not move, change hands, get stunned, etc. for the
+ * given `delay`. Returns `TRUE` on success or `FALSE` on failure.
+ *
+ * Arguments:
+ * * user - the primary "user" of the do_after.
+ * * delay - how long the do_after takes. Defaults to 3 SECONDS.
+ * * target - the (optional) target mob of the do_after. If they move/cease to exist, the do_after is cancelled.
+ * * timed_action_flags - optional flags to override certain do_after checks (see DEFINES/timed_action.dm).
+ * * progress - if TRUE, a progress bar is displayed.
+ * * extra_checks - a callback that can be used to add extra checks to the do_after. Returning false in this callback will cancel the do_after.
+ */
+/proc/do_after(mob/user, delay = 3 SECONDS, atom/target, timed_action_flags = NONE, progress = TRUE, datum/callback/extra_checks)
 	if(!user)
 		return FALSE
 
@@ -330,15 +278,12 @@ GLOBAL_LIST_EMPTY(species_list)
 		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
 		return
 
-	var/atom/target_loc = null
-	if(target && !isturf(target))
-		target_loc = target.loc
-
 	if(target)
 		LAZYADD(user.do_afters, target)
 		LAZYADD(target.targeted_by, user)
 
 	var/atom/user_loc = user.loc
+	var/atom/target_loc = target?.loc
 
 	var/drifting = FALSE
 	if(!user.Process_Spacemove(0) && user.inertia_dir)
@@ -379,15 +324,15 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(!(timed_action_flags & IGNORE_HELD_ITEM) && user.get_active_held_item() != holding)
 			. = FALSE
 
-		if(!(timed_action_flags & IGNORE_INCAPACITATED) && user.incapacitated())
+		if(!(timed_action_flags & IGNORE_INCAPACITATED) && user.incapacitated(ignore_restraints = (timed_action_flags & IGNORE_RESTRAINED)))
 			. = FALSE
 
 		if(extra_checks && !extra_checks.Invoke())
 			. = FALSE
 
-		// If we have a target, we check for them moving here. We don't care about it if we're drifting, though
+		// If we have a target, we check for them moving here. We don't care about it if we're drifting or we ignore target loc change
 		if(!(timed_action_flags & IGNORE_TARGET_LOC_CHANGE) && !drifting)
-			if(!QDELETED(target_loc) && (QDELETED(target) || target_loc != target.loc))
+			if(target_loc && user != target && (QDELETED(target) || target_loc != target.loc))
 				. = FALSE
 
 		if(target && !(timed_action_flags & IGNORE_TARGET_IN_DOAFTERS) && !(target in user.do_afters))
