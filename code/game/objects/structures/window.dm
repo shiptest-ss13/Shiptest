@@ -58,7 +58,7 @@
 	if(reinf && anchored)
 		state = RWINDOW_SECURE
 
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 	if(fulltile)
 		setDir()
@@ -308,12 +308,12 @@
 	return TRUE
 
 /obj/structure/window/proc/after_rotation(mob/user,rotation_type)
-	air_update_turf(TRUE, FALSE)
+	air_update_turf(TRUE)
 	add_fingerprint(user)
 
 /obj/structure/window/Destroy()
 	density = FALSE
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	update_nearby_icons()
 	return ..()
 
