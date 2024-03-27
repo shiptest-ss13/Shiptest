@@ -521,7 +521,7 @@
 	name = "agent belt"
 	desc = "A belt used by abductor agents."
 	icon = 'icons/obj/abductor.dmi'
-	icon_state = "grenadebeltnew"
+	icon_state = "belt"
 	item_state = "grenadebeltnew"
 	unique_reskin = null
 

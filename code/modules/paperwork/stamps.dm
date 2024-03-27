@@ -127,7 +127,7 @@
 
 /obj/item/stamp/clip
 	name = "CLIP Minutemen rubber stamp"
-	icon_state = "stamp-clip"
+	icon_state = "stamp-cmm"
 	dye_color = DYE_FO
 
 /obj/item/stamp/gold

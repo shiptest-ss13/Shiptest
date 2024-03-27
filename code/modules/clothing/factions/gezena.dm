@@ -187,7 +187,6 @@
 	icon = 'icons/obj/clothing/faction/gezena/hands.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/hands.dmi'
 	icon_state = "navalgloves"
-	item_state = "navalgloves"
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -196,21 +195,18 @@
 	name = "\improper PGFMC Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Carries extra tactile grip on the fingertips for easy use of firearms."
 	icon_state = "marinegloves"
-	item_state = "marinegloves"
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50)
 
 /obj/item/clothing/gloves/gezena/engi
 	name = "\improper PGFN Engineering Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Comes with anti-conductive microfibers interwoven to supply the useer with electrical insulation."
 	icon_state = "engigloves"
-	item_state = "engigloves"
 	siemens_coefficient = 0
 
 /obj/item/clothing/gloves/gezena/captain
 	name = "\improper PGFN Captain's Ihuz-irra Gloves"
 	desc = "As the name, “ihuz-irra”, or “sure-grip”, suggests, the gloves employed by the PGF military are designed to ensure the highest possible grip is maintained while also providing protection from blisters in work environments. Bears the silver standard of a Gezenan captain."
 	icon_state = "captaingloves"
-	item_state = "captaingloves"
 	siemens_coefficient = 0
 
 //Boots
@@ -221,7 +217,7 @@
 	icon = 'icons/obj/clothing/faction/gezena/feet.dmi'
 	//mob_overlay_icon = 'icons/mob/clothing/faction/gezena/feet.dmi' todo: find out why digi breaks here
 	icon_state = "pgfboots"
-	item_state = "pgfboots"
+	item_state = "jackboots"
 
 //Belt
 
