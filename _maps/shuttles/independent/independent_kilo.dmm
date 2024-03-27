@@ -618,7 +618,6 @@
 "cY" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -632,6 +631,10 @@
 	pixel_x = -23;
 	id = "kiloengine"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cZ" = (
@@ -1840,6 +1843,9 @@
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)

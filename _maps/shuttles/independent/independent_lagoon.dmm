@@ -741,8 +741,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "eS" = (
-/obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/directional/west,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "eT" = (
@@ -4074,6 +4077,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Bg" = (
@@ -7448,6 +7452,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)

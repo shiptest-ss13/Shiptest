@@ -400,6 +400,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ship/engineering)
 "dm" = (
@@ -4416,6 +4419,9 @@
 	},
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
 "Ct" = (
@@ -4618,6 +4624,10 @@
 	},
 /obj/structure/sign/poster/solgov/random{
 	pixel_y = 32
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering)
@@ -6933,6 +6943,9 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
 "Ul" = (

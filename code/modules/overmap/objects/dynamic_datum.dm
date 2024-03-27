@@ -35,6 +35,9 @@
 	/// The turf used as the backup baseturf for any reservations created by this datum. Should not be null.
 	var/turf/default_baseturf = /turf/open/space
 
+	///The default gravity the virtual z will have
+	var/gravity = 0
+
 	///The weather the virtual z will have. If null, the planet will have no weather.
 	var/datum/weather_controller/weather_controller_type
 
@@ -139,6 +142,7 @@
 	token.color = planet.color
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
+	gravity = planet.gravity
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound

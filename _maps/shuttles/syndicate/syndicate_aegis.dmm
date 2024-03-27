@@ -1886,6 +1886,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "qa" = (
@@ -2512,11 +2513,11 @@
 /area/ship/engineering)
 "wM" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/rack,
 /obj/item/clothing/mask/gas/suns,
 /obj/item/clothing/mask/gas/suns,
 /obj/item/clothing/mask/gas/suns,
 /obj/item/holosign_creator/atmos,
-/obj/structure/rack,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "wQ" = (
@@ -5256,7 +5257,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over,
-/obj/structure/reagent_dispensers/fueltank,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Zj" = (

@@ -199,6 +199,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "kS" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "kY" = (
@@ -241,6 +245,9 @@
 	},
 /obj/effect/turf_decal/number/zero{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)

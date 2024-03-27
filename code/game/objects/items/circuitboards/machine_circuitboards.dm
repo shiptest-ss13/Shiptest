@@ -389,6 +389,17 @@
 	name = "Freezer (Machine Board)"
 	build_path = PATH_FREEZER
 
+/obj/item/circuitboard/machine/ship_gravity
+	name = "Gravity Generator (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/ship_gravity
+	req_components = list(
+		/obj/item/stock_parts/capacitor = 5,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
+		/obj/item/stock_parts/micro_laser = 4
+		)
+	needs_anchored = FALSE
+
 #undef PATH_FREEZER
 #undef PATH_HEATER
 

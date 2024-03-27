@@ -339,6 +339,9 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/space_heater,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "el" = (
@@ -2197,7 +2200,10 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/medical)
 "Gu" = (
-/obj/machinery/portable_atmospherics/scrubber,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Gx" = (
@@ -2297,6 +2303,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
+"IP" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "Ji" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/structure/closet/radiation,
@@ -3689,7 +3705,7 @@ Zx
 uI
 vf
 vf
-vf
+IP
 uI
 "}
 (5,1,1) = {"

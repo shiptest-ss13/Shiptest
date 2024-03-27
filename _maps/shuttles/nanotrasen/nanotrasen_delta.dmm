@@ -726,6 +726,9 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "dd" = (
@@ -916,6 +919,10 @@
 "dA" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-1"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -2205,6 +2212,9 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "ID" = (
