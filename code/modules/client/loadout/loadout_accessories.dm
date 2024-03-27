@@ -77,6 +77,11 @@
 	description = "Standard hand coverings for everyday use."
 	path = /obj/item/clothing/gloves/color/white
 
+/datum/gear/accessory/gloves/fingerless
+	display_name = "fingerless gloves"
+	description = "Radical hand coverings for everyday use."
+	path = /obj/item/clothing/gloves/fingerless
+
 /datum/gear/accessory/gloves/evening
 	display_name = "evening gloves"
 	description = "Excessively fancy elbow-length gloves."

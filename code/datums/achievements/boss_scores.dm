@@ -1,7 +1,7 @@
-/datum/award/score/tendril_score
-	name = "Tendril Score"
+/datum/award/score/nest_score
+	name = "Nest Score"
 	desc = "Watch your step"
-	database_id = TENDRIL_CLEAR_SCORE
+	database_id = NEST_CLEAR_SCORE
 
 /datum/award/score/boss_score
 	name = "Bosses Killed"
@@ -42,11 +42,6 @@
 	name = "Legions Killed"
 	desc = "You've killed HOW many?"
 	database_id = LEGION_SCORE
-
-/datum/award/score/swarmer_beacon_score
-	name = "Swarmer Beacons Killed"
-	desc = "You've killed HOW many?"
-	database_id = SWARMER_BEACON_SCORE
 
 /datum/award/score/wendigo_score
 	name = "Wendigos Killed"

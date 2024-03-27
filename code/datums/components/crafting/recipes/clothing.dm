@@ -236,3 +236,42 @@
 	reqs = list(/obj/item/stack/sheet/leather = 2)
 	time = 45
 	category = CAT_CLOTHING
+
+/datum/crafting_recipe/mummy
+	name = "Mummification Bandages (Mask)"
+	result = /obj/item/clothing/mask/mummy
+	time = 10
+	tools = list(/obj/item/nullrod/egyptian)
+	reqs = list(/obj/item/stack/sheet/cotton/cloth = 2)
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/mummy/body
+	name = "Mummification Bandages (Body)"
+	result = /obj/item/clothing/under/costume/mummy
+	reqs = list(/obj/item/stack/sheet/cotton/cloth = 5)
+
+/datum/crafting_recipe/chaplain_hood
+	name = "Follower Hoodie"
+	result = /obj/item/clothing/suit/hooded/chaplain_hoodie
+	time = 10
+	tools = list(/obj/item/clothing/suit/hooded/chaplain_hoodie, /obj/item/storage/book/bible)
+	reqs = list(/obj/item/stack/sheet/cotton/cloth = 4)
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/gripperoffbrand
+	name = "Improvised Gripper Gloves"
+	reqs = list(
+			/obj/item/clothing/gloves/fingerless = 1,
+			/obj/item/stack/tape = 1)
+	result = /obj/item/clothing/gloves/tackler/offbrand
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/scrap_armor
+	name = "Scrap Armor"
+	result = /obj/item/clothing/suit/armor/vest/scrap_armor
+	time = 60
+	reqs = list(
+		/obj/item/stack/sheet/metal = 10,
+		/obj/item/stack/cable_coil = 20,
+	)
+	category = CAT_CLOTHING

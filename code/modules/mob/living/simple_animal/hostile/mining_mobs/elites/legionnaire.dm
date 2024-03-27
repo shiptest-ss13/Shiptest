@@ -38,7 +38,7 @@
 	mouse_opacity = MOUSE_OPACITY_ICON
 	deathsound = 'sound/magic/curse.ogg'
 	deathmessage = "'s arms reach out before it falls apart onto the floor, lifeless."
-	loot_drop = /obj/item/crusher_trophy/legionnaire_spine
+	loot_drop = /obj/item/mob_trophy/legionnaire_spine
 
 	attack_action_types = list(/datum/action/innate/elite_attack/legionnaire_charge,
 								/datum/action/innate/elite_attack/head_detach,
@@ -278,23 +278,8 @@
 	transform *= 0.33
 
 // Legionnaire's loot: Legionnaire Spine
-
-/obj/item/crusher_trophy/legionnaire_spine
+/obj/item/mob_trophy/legionnaire_spine
 	name = "legionnaire spine"
 	desc = "The spine of a legionnaire.  It almost feels like it's moving..."
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "legionnaire_spine"
-	denied_type = /obj/item/crusher_trophy/legionnaire_spine
-	bonus_value = 50//These skulls are a joke, so this bonus value had to be put on steroidal emergency treatment
-
-/obj/item/crusher_trophy/legionnaire_spine/effect_desc()
-	return "waveform collapse to have a <b>[bonus_value]%</b> chance to summon a loyal legion skull"
-
-/obj/item/crusher_trophy/legionnaire_spine/on_mark_detonation(mob/living/target, mob/living/user)
-	if(!rand(1, 100) <= bonus_value || target.stat == DEAD)
-		return
-	var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/A = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion(user.loc)
-	A.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
-	A.GiveTarget(target)
-	A.friends = user
-	A.faction = user.faction.Copy()
