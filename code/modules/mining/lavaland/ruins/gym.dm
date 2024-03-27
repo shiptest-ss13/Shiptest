@@ -14,7 +14,7 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(buildstacktype)
 			new buildstacktype(loc,buildstackamount)
-	..()
+	return..()
 
 /obj/structure/punching_bag/wrench_act(mob/living/user, obj/item/W)
 	if(..())
@@ -26,9 +26,7 @@
 	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
 		set_anchored(!anchored)
 		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
-		return TRUE
-	else
-		return TRUE
+	return TRUE
 
 /obj/structure/punching_bag/wirecutter_act(mob/living/user, obj/item/W)
 	. = ..()
@@ -42,9 +40,7 @@
 		return TRUE
 
 /obj/structure/punching_bag/proc/check_anchored_state(check_anchored)
-	if(anchored != check_anchored)
-		return FALSE
-	return TRUE
+	return anchored == check_anchored
 
 /obj/structure/punching_bag/examine(mob/user)
 	. = ..()
@@ -84,7 +80,7 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(buildstacktype)
 			new buildstacktype(loc,buildstackamount)
-	..()
+	return..()
 
 /obj/structure/weightmachine/wrench_act(mob/living/user, obj/item/W)
 	if(..())
@@ -96,9 +92,7 @@
 	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
 		set_anchored(!anchored)
 		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
-		return TRUE
-	else
-		return TRUE
+	return TRUE
 
 /obj/structure/weightmachine/screwdriver_act(mob/living/user, obj/item/W)
 	. = ..()
@@ -112,9 +106,7 @@
 		return TRUE
 
 /obj/structure/weightmachine/proc/check_anchored_state(check_anchored)
-	if(anchored != check_anchored)
-		return FALSE
-	return TRUE
+	return anchored == check_anchored
 
 /obj/structure/weightmachine/examine(mob/user)
 	. = ..()
