@@ -133,7 +133,7 @@
 		QDEL_NULL(ship_account)
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
-	QDEL_LIST(manifest)
+	manifest.Cut()
 	job_holder_refs.Cut()
 	job_slots.Cut()
 	blacklisted.Cut()
