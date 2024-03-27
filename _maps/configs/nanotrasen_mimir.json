@@ -20,19 +20,23 @@
 	"job_slots": {
 		"Warden": {
 			"outfit": "/datum/outfit/job/nanotrasen/warden",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/warden",
 			"officer": true,
 			"slots": 1
 		},
 		"Facility Security Officer": {
 			"outfit": "/datum/outfit/job/nanotrasen/security",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/security",
 			"slots": 2
 		},
 		"Facility Physician": {
 			"outfit": "/datum/outfit/job/nanotrasen/brig_phys",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/secmed",
 			"slots": 1
 		},
 		"Patient": {
 			"outfit": "/datum/outfit/job/prisoner",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/prisoner",
 			"slots": 2
 		}
 	},

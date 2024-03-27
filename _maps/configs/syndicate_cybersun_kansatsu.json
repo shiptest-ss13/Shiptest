@@ -17,24 +17,29 @@
 	"job_slots": {
 		"Commander": {
 			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Intelligence Officer": {
 			"outfit": "/datum/outfit/job/syndicate/head_of_personnel/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/syndicate/engineer/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Field Agent": {
 			"outfit": "/datum/outfit/job/syndicate/miner/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/mining",
 			"slots": 2
 		},
 		"Junior Agent": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 2
 		}
 	},

@@ -15,24 +15,29 @@
 	"job_slots": {
 		"Vanguard": {
 			"outfit": "/datum/outfit/job/inteq/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hos",
 			"officer": true,
 			"slots": 1
 		},
 		"Honorable Corpsman": {
 			"outfit": "/datum/outfit/job/inteq/cmo/empty",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cmo",
 			"officer": true,
 			"slots": 1
 		},
 		"Corpsman": {
 			"outfit": "/datum/outfit/job/inteq/paramedic/empty",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/paramedic",
 			"slots": 3
 		},
 		"Enforcer": {
 			"outfit": "/datum/outfit/job/inteq/security/empty",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/security",
 			"slots": 2
 		},
 		"Recruit": {
 			"outfit": "/datum/outfit/job/inteq/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 2
 		}
 	},

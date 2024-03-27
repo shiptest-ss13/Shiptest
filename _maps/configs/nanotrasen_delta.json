@@ -20,19 +20,23 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/nanotrasen/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"Roboticist": {
 			"outfit": "/datum/outfit/job/nanotrasen/roboticist",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/robotics",
 			"slots": 2
 		},
 		"Engineer": {
 			"outfit": "/datum/outfit/job/nanotrasen/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Assistant": {
 			"outfit": "/datum/outfit/job/nanotrasen/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 3
 		}
 	},

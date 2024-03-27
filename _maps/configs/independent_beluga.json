@@ -17,36 +17,44 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/independent/captain",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"officer": true,
 			"slots": 1
 		},
 		"First Officer": {
 			"outfit": "/datum/outfit/job/independent/hop",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/hop",
 			"officer": true,
 			"slots": 1
 		},
 		"Mechanic": {
 			"outfit": "/datum/outfit/job/independent/engineer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/engineering",
 			"slots": 1
 		},
 		"Private Security Officer": {
 			"outfit": "/datum/outfit/job/inteq/security/beluga",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/security",
 			"slots": 2
 		},
 		"High-Class Passenger": {
 			"outfit": "/datum/outfit/job/independent/lawyer",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/bar",
 			"slots": 4
 		},
 		"Bartender": {
 			"outfit": "/datum/outfit/job/independent/bartender",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/bar",
 			"slots": 1
 		},
 		"Janitor": {
 			"outfit": "/datum/outfit/job/independent/janitor",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/janitor",
 			"slots": 1
 		},
 		"Assistant": {
 			"outfit": "/datum/outfit/job/independent/assistant",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 2
 		}
 	},

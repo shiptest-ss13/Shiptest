@@ -20,7 +20,7 @@
 		"description": {
 			"title": "Class Description",
 			"type": "string",
-			"description": "A description of the ship class, currently only shown to admins on the shuttle manipulator, but will likely be shown to players before ship purchase in the future.",
+			"description": "A description of the ship class, show to admins in the Shuttle Manipulator and to players when purchasing a ship.",
 			"minLength": 250
 		},
 		"tags": {
@@ -103,6 +103,11 @@
 							"outfit": {
 								"type": "string",
 								"description": "The name of the outfit that will be placed in this slot. Must be exact, will error if not found in the code.",
+								"pattern": "^/datum/outfit/(.*)$"
+							},
+							"plasmaman_outfit": {
+								"type": "string",
+								"description": "The name of the outfit that will be placed in this slot used for phorids. Must be exact, will error if not found in the code..",
 								"pattern": "^/datum/outfit/(.*)$"
 							},
 							"officer": {

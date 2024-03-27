@@ -18,26 +18,31 @@
 	"job_slots": {
 		"Chief Pharmacist": {
 			"outfit": "/datum/outfit/job/independent/cmo/pharma",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cmo",
 			"officer": true,
 			"slots": 1
 		},
 		"Pharmacist": {
 			"outfit": "/datum/outfit/job/independent/chemist/pharma",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/chemist",
 			"officer": false,
 			"slots": 1
 		},
 		"Mixologist": {
 			"outfit": "/datum/outfit/job/independent/bartender/pharma",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/bar",
 			"officer": false,
 			"slots": 1
 		},
 		"Herbalist": {
 			"outfit": "/datum/outfit/job/independent/botanist/pharma",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/botany",
 			"officer": false,
 			"slots": 2
 		},
 		"Pharmacology Student": {
 			"outfit": "/datum/outfit/job/independent/assistant/pharma",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"officer": false,
 			"slots": 2
 		}

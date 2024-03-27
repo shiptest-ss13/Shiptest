@@ -16,19 +16,23 @@
 	"job_slots": {
 		"Captain": {
 			"outfit": "/datum/outfit/job/syndicate/captain/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/command",
 			"slots": 1
 		},
 		"Medical Director": {
 			"outfit": "/datum/outfit/job/syndicate/cmo",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/cmo",
 			"officer": true,
 			"slots": 1
 		},
 		"Trauma Team Technician": {
 			"outfit": "/datum/outfit/job/syndicate/doctor/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman/medical",
 			"slots": 3
 		},
 		"Cybersun Medical Intern": {
 			"outfit": "/datum/outfit/job/syndicate/assistant/cybersun",
+			"plasmaman_outfit": "/datum/outfit/plasmaman",
 			"slots": 3
 		}
 	},
