@@ -296,7 +296,7 @@
 	return IsStandingStill()
 
 /mob/living/carbon/monkey/proc/pickpocket(mob/M)
-	if(do_mob(src, M, MONKEY_ITEM_SNATCH_DELAY) && pickupTarget)
+	if(do_after(src, MONKEY_ITEM_SNATCH_DELAY, M) && pickupTarget)
 		for(var/obj/item/I in M.held_items)
 			if(I == pickupTarget)
 				M.visible_message("<span class='danger'>[src] snatches [pickupTarget] from [M].</span>", "<span class='userdanger'>[src] snatched [pickupTarget]!</span>")

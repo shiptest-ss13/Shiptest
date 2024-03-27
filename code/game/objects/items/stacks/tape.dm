@@ -114,7 +114,7 @@
 				return
 			if(use(1))
 				playsound(loc, usesound, 30, TRUE, -2)
-				if(do_mob(user, C, other_delay) && (!C.is_mouth_covered() || !C.is_muzzled()))
+				if(do_after(user, other_delay, C) && (!C.is_mouth_covered() || !C.is_muzzled()))
 					apply_gag(C, user)
 					C.visible_message("<span class='notice'>[user] tapes [C]s mouth shut.</span>", \
 										"<span class='userdanger'>[user] taped your mouth shut!</span>")
@@ -134,7 +134,7 @@
 										"<span class='userdanger'>[user] is trying to put [src.name] on you!</span>")
 
 					playsound(loc, usesound, 30, TRUE, -2)
-					if(do_mob(user, C, self_delay) && (C.canBeHandcuffed()))
+					if(do_after(user, self_delay, C) && (C.canBeHandcuffed()))
 						apply_tapecuffs(C, user)
 						C.visible_message("<span class='notice'>[user] tapecuffs [C].</span>", \
 											"<span class='userdanger'>[user] tapecuffs you.</span>")
@@ -152,11 +152,11 @@
 	if(C == user)
 		playsound(loc, usesound, 30, TRUE, -2)
 		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
-		if(!do_mob(user, C, self_delay, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, self_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 	else if(other_delay)
 		user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [C].</span>", "<span class='notice'>You begin applying \the [src] on [C]...</span>")
-		if(!do_mob(user, C, other_delay, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
+		if(!do_after(user, other_delay, C, extra_checks=CALLBACK(C, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 
 	if(heal(C, user))

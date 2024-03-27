@@ -104,7 +104,7 @@
 	var/new_appearance = show_radial_menu(user, src, possible_appearances, custom_check = CALLBACK(src, PROC_REF(check_menu), user, crayon), radius = 36, require_near = TRUE)
 	if(!new_appearance)
 		return FALSE
-	if(!do_after(user, 10, FALSE, src, TRUE))
+	if(!do_after(user, 10, src, progress = TRUE))
 		return FALSE
 	if(!check_menu(user, crayon))
 		return FALSE

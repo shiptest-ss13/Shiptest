@@ -343,7 +343,7 @@
 		"<span class='warning'>You [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
 		"<span class='hear'>You hear clanging.</span>")
 	if(actuallyismob)
-		if(do_after_mob(user, targets, 40))
+		if(do_after(user, 40, targets))
 			user.visible_message(
 				"<span class='notice'>[user] stuffs [O] into [src].</span>", \
 				"<span class='notice'>You stuff [O] into [src].</span>", \
