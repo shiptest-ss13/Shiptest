@@ -123,7 +123,7 @@
 		return FALSE
 	if(!visualsOnly)
 		var/datum/bank_account/bank_account = new(H.real_name, src)
-		bank_account.adjust_money(officer ? 250 : 100) //just a little bit of money for you
+		bank_account.adjust_money(officer ? 250 : 100, "starting_money") //just a little bit of money for you
 		H.account_id = bank_account.account_id
 
 	//Equip the rest of the gear
