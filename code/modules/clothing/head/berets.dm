@@ -193,26 +193,22 @@
 	name = "\improper SolGov beret"
 	desc = "A beret with SolGov's emblem emblazoned on it. Colored in SolGov blue."
 	icon_state = "beret_solgov"
-	item_state = "beret_solgov"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/beret/solgov/plain
 	name = "\improper SolGov beret"
 	desc = "A plain blue beret. It looks like it's missing something."
 	icon_state = "beret_solgovplain"
-	item_state = "beret_solgovplain"
 
 /obj/item/clothing/head/beret/solgov/terragov
 	name = "\improper TerraGov beret"
 	desc = "A beret with SolGov's emblem emblazoned on it. It's still colored in original TerraGov green."
 	icon_state = "beret_terragov"
-	item_state = "beret_terragov"
 
 /obj/item/clothing/head/beret/solgov/terragov/plain
 	name = "\improper TerraGov beret"
 	desc = "A plain beret colored in original TerraGov green. It looks like it's missing something."
 	icon_state = "beret_terragovplain"
-	item_state = "beret_terragovplain"
 
 // Inteq
 
@@ -220,19 +216,16 @@
 	name = "inteq beret"
 	desc = "A comfortable looking brown beret with a badge of the golden shield of the IRMG. Denotes the wearer as part of the IRMG."
 	icon_state = "inteq_beret"
-	item_state = "inteq_beret"
 
 /obj/item/clothing/head/beret/sec/hos/inteq
 	name = "inteq vanguard beret"
 	desc = "A comfortable looking brown beret with a badge of the golden shield of the IRMG. Denotes the wearer as a vanguard of the IRMG. The padding inside feels thicker."
 	icon_state = "inteq_beret"
-	item_state = "inteq_beret"
 
 /obj/item/clothing/head/beret/sec/hos/inteq/honorable
 	name = "honorable vanguard beret"
 	desc = "A snow white beret with an air of distinction around it, emblazoned with the golden shield of the IRMG as the badge."
 	icon_state = "inteq_honorable_beret"
-	item_state = "inteq_honorable_beret"
 	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 
 // Frontier

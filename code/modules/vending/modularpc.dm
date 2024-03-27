@@ -26,7 +26,6 @@
 	refill_canister = /obj/item/vending_refill/modularpc
 	default_price = 150
 	extra_price = 400
-	payment_department = ACCOUNT_SCI
 
 /obj/item/vending_refill/modularpc
 	machine_name = "Deluxe Silicate Selections"

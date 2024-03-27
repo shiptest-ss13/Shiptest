@@ -79,7 +79,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "bowman headset"
 	desc = "An updated, modular intercom that fits over the head. Protects ears from flashbangs."
 	icon_state = "headset_alt"
-	item_state = "headset_alt"
 
 /obj/item/radio/headset/alt/ComponentInitialize()
 	. = ..()
@@ -90,7 +89,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "syndicate headset"
 	desc = "A headset worn by members of the various Syndicate splinters on the frontier."
 	icon_state = "syndie_headset"
-	item_state = "syndie_headset"
 	keyslot = new /obj/item/encryptionkey/syndicate
 
 /obj/item/radio/headset/syndicate/captain
@@ -103,7 +101,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "syndicate bowman headset"
 	desc = "A headset worn by members of the various Syndicate splinters on the frontier. Protects ears from flashbangs."
 	icon_state = "syndie_headset_alt"
-	item_state = "syndie_headset_alt"
 
 /obj/item/radio/headset/syndicate/alt/captain
 	name = "syndicate leader bowman headset"
@@ -136,7 +133,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "nanotrasen bowman headset"
 	desc = "Worn proudly by the battered remnants of Nanotrasen's frontier holdings. Protects ears from flashbangs."
 	icon_state = "nanotrasen_headset_alt"
-	item_state = "nanotrasen_headset_alt"
 
 /obj/item/radio/headset/nanotrasen/alt/captain
 	name = "nanotrasen captain's bowman headset"
@@ -163,9 +159,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 /obj/item/radio/headset/clip/alt
 	name = "minutemen bowman headset"
-	desc = "Used by militias flying the five stars of the CLIP Minutemen. Protects ears from flashbangs."
-	icon_state = "clip_headset_alt"
-	item_state = "clip_headset_alt"
+	desc = "Used by militias flying the five stars of the Colonial Minutemen. Protects ears from flashbangs."
+	mob_overlay_state = "cmm_headset_alt"
 
 /obj/item/radio/headset/clip/alt/captain
 	name = "minuteman officer bowman headset"
@@ -194,7 +189,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "inteq bowman headset"
 	desc = "This is used by Inteq Risk Management Group's mercenaries. Protects ears from flashbangs."
 	icon_state = "inteq_headset_alt"
-	item_state = "inteq_headset_alt"
 
 /obj/item/radio/headset/inteq/alt/captain
 	name = "vanguard bowman headset"
@@ -223,7 +217,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "pirate bowman headset"
 	desc = "Used to sing shanties across the vast emptiness of space, and complain about Minuteman patrols. Protects ears from flashbangs."
 	icon_state = "pirate_headset_alt"
-	item_state = "pirate_headset_alt"
 
 /obj/item/radio/headset/pirate/alt/captain
 	name = "pirate captain bowman headset"
@@ -274,7 +267,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "command bowman headset"
 	desc = "An officer's headset. Protects ears from flashbangs."
 	icon_state = "com_headset_alt"
-	item_state = "com_headset_alt"
 
 /obj/item/radio/headset/headset_com/alt/ComponentInitialize()
 	. = ..()
@@ -294,7 +286,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "captain's bowman headset"
 	desc = "Dresses the ears of independent ship captains across the frontier. Protects ears from flashbangs."
 	icon_state = "com_headset_alt"
-	item_state = "com_headset_alt"
 
 /obj/item/radio/headset/heads/captain/alt/ComponentInitialize()
 	. = ..()
@@ -326,7 +317,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "\improper CentCom bowman headset"
 	desc = "A headset especially for emergency response personnel. Protects ears from flashbangs."
 	icon_state = "cent_headset_alt"
-	item_state = "cent_headset_alt"
 	keyslot = null
 
 /obj/item/radio/headset/headset_cent/alt/ComponentInitialize()
@@ -354,7 +344,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "security bowman headset"
 	desc = "This is used by your elite security force. Protects ears from flashbangs."
 	icon_state = "sec_headset_alt"
-	item_state = "sec_headset_alt"
 
 /obj/item/radio/headset/headset_sec/alt/ComponentInitialize()
 	. = ..()
@@ -423,7 +412,6 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "\proper the head of security's bowman headset"
 	desc = "The headset of the man in charge of keeping order and protecting the innocent. Protects ears from flashbangs."
 	icon_state = "com_headset_alt"
-	item_state = "com_headset_alt"
 
 /obj/item/radio/headset/heads/hos/ComponentInitialize()
 	. = ..()
