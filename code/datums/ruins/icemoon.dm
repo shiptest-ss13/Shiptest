@@ -23,6 +23,11 @@
 
 // above and below ground together
 
+/datum/map_template/ruin/icemoon/cybersun_blacksite
+	name = "Cybersun's blacksite"
+	id = "cybersun-blacksite"
+	description = "A remote place where Cybersun enjoy their newfound test subjects"
+	suffix = "icemoon_cybersun_blacksite.dmm"
 
 // below ground only
 

@@ -40,3 +40,31 @@
 /area/ruin/unpowered/crashed_holemaker
 	name = "NTSV Holemaker II" // In honor of the kugelblitz shenanigan of all time
 	icon_state = "green"
+
+//Cybersun blacksite
+
+/area/ruin/powered/hallway
+	name = "Hallways"
+	lighting_colour_tube = "#ffce99"
+	lighting_colour_bulb = "#ffdbb4"
+	lighting_brightness_tube = 7
+	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
+
+/area/ruin/powered/testing_facilities
+	name = "Testing Facilities"
+	icon_state = "medresearch"
+
+/area/ruin/powered/crew_facilities
+	name = "Crew Quarters"
+	icon_state = "crew_quarters"
+
+/area/ruin/powered/hangar
+	name = "Hangar"
+	icon_state = "storage"
+
+/area/ruin/powered/maintenance
+	name = "Maintenance"
+	ambientsounds = MAINTENANCE
+	lighting_colour_tube = "#ffe5cb"
+	lighting_colour_bulb = "#ffdbb4"
+	sound_environment = SOUND_AREA_TUNNEL_ENCLOSED
