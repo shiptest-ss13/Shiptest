@@ -102,6 +102,81 @@
 	//All fuel code already handled
 
 /**
+ * ### Combustion/Fire engines
+ * Engines that use oxidizer and fuel to output thrust. Theoretically works with any mix of fuels and oxiders. Wish me luck.
+*/
+
+/obj/machinery/power/shuttle/engine/fire
+	name = "combustion thruster"
+	desc = "A thruster that burns fuel with oxider that is stored in an adjacent heater."
+	icon_state = "burst_plasma"
+	icon_state_off = "burst_plasma_off"
+	circuit = /obj/item/circuitboard/machine/shuttle/engine/fire
+
+	idle_power_usage = 0
+	///what portion of the mols in the attached heater to "burn"
+	var/fuel_consumption = 0.0125
+	//multiplier for thrust
+	thrust = 3
+	//used by stockparts, efficiency_multiplier
+	var/consumption_multiplier = 1
+	//If this engine should create heat when burned.
+	var/heat_creation = FALSE
+	//A weakref of the connected engine heater with fuel.
+	var/datum/weakref/attached_heater
+
+
+/obj/machinery/power/shuttle/engine/fire/burn_engine(percentage = 100, deltatime)
+	. = ..()
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	if(!resolved_heater)
+		return
+	if(heat_creation)
+		heat_engine()
+	var/actual_consumption = fuel_consumption * (percentage / 100) * deltatime * consumption_multiplier
+	return resolved_heater.consume_fuel(actual_consumption) * thrust //this proc returns the min of the fuel/oxy possible burns, multiply by our thrust value
+
+/obj/machinery/power/shuttle/engine/fire/return_fuel()
+	. = ..()
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	return resolved_heater?.return_gas()
+
+/obj/machinery/power/shuttle/engine/fire/return_fuel_cap()
+	. = ..()
+	var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/resolved_heater = attached_heater?.resolve()
+	return resolved_heater?.return_gas_capacity()
+
+/obj/machinery/power/shuttle/engine/fire/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	update_icon_state()
+
+/obj/machinery/power/shuttle/engine/fire/update_engine()
+	if(!..())
+		return
+	if(!attached_heater && !set_heater())
+		thruster_active = FALSE
+		return FALSE
+
+/obj/machinery/power/shuttle/engine/fire/proc/set_heater()
+	for(var/direction in GLOB.cardinals)
+		for(var/obj/machinery/atmospherics/components/unary/shuttle/fire_heater/found in get_step(get_turf(src), direction))
+			if(found.dir != dir)
+				continue
+			if(found.panel_open)
+				continue
+			if(!found.anchored)
+				continue
+			attached_heater = WEAKREF(found)
+			update_icon_state()
+			return TRUE
+
+/obj/machinery/power/shuttle/engine/fire/RefreshParts()
+	var/laz = 0
+	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
+		laz += L.rating
+	consumption_multiplier = laz
+	return
+/**
  * ### Ion Engines
  * Engines that convert electricity to thrust. Yes, I know that's not how it works, it needs a propellant, but this is a video game.
  */
