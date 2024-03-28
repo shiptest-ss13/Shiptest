@@ -15,12 +15,15 @@
 
 	var/fuel_added = 0
 	var/flame_expiry_timer
+	var/datum/looping_sound/fire_small/soundloop
 
 /obj/structure/fireplace/New()
 	..()
 	START_PROCESSING(SSobj, src)
+	soundloop = new(list(src), FALSE)
 
 /obj/structure/fireplace/Destroy()
+	QDEL_NULL(soundloop)
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
@@ -35,6 +38,7 @@
 	if(msg)
 		visible_message(msg)
 		ignite()
+		soundloop.start()
 		return TRUE
 
 /obj/structure/fireplace/attackby(obj/item/T, mob/user)
@@ -139,7 +143,6 @@
 
 /obj/structure/fireplace/proc/ignite()
 	lit = TRUE
-	set_ambience(AMBIENCE_FIRE_SMALL)
 	desc = "A large stone brick fireplace, warm and cozy."
 	flame_expiry_timer = world.time + fuel_added
 	fuel_added = 0
@@ -148,7 +151,7 @@
 
 /obj/structure/fireplace/proc/put_out()
 	lit = FALSE
-	set_ambience(null)
+	soundloop.stop()
 	update_appearance()
 	adjust_light()
 	desc = initial(desc)
