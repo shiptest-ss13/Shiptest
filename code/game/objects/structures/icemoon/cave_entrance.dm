@@ -586,14 +586,12 @@ GLOBAL_LIST_INIT(ore_probability, list(
 		if(9)//Now's your chance to be a [[BIG SHOT]]
 			visible_message("<span class='userdanger'>You hear the sound of big money and bigger avarice.</span>")
 			playsound(loc,'sound/lavaland/cursed_slot_machine_jackpot.ogg', 150, FALSE, 50, TRUE, TRUE)
-			new /obj/structure/cursed_slot_machine(loc)
 			if(prob(35))
 				new /obj/item/spacecash/bundle/mediumrand(loc)
 				new /obj/item/spacecash/bundle/mediumrand(loc)
 				new /obj/item/coin/gold(loc)
 				new /mob/living/simple_animal/hostile/faithless(loc)
 			if(prob(35))
-				new /obj/item/clothing/mask/spamton(loc)
 				new /mob/living/simple_animal/hostile/faithless(loc)
 			if(prob(35))
 				new /obj/item/gem/fdiamond(loc)
@@ -910,7 +908,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			playsound(loc,'sound/magic/knock.ogg', 100, FALSE, 50, TRUE, TRUE)
 			new /mob/living/simple_animal/hostile/big_legion(loc)
 			if(prob(75))
-				new /obj/structure/closet/crate/necropolis/tendril/greater(loc)
+				new /obj/structure/closet/crate/necropolis/tendril(loc)
 			new /turf/open/indestructible/necropolis(loc)
 		if(18)//xenobiologist's hubris
 			visible_message("<span class='userdanger'>You catch a glimpse of a wobbling sea of slimy friends. An abused-looking keeper slips through the portal.</span>")
