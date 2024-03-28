@@ -388,7 +388,7 @@
 		return TRUE
 	return ..()
 
-/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
+/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
 
 // Should move all contained objects to it's location.
