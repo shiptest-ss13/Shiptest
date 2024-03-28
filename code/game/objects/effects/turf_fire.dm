@@ -10,7 +10,6 @@
 #define TURF_FIRE_BURN_RATE_PER_POWER 0.02
 #define TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER 0.75
 #define TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED 0.5
-#define TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE 6
 
 #define TURF_FIRE_STATE_SMALL 1
 #define TURF_FIRE_STATE_MEDIUM 2
@@ -43,6 +42,9 @@
 
 	/// If we are using a custom hex color, which color are we using?
 	var/hex_color
+
+	// Sound loop. Uses sound/ambience/shiptest_ambience/misc/fire_large.ogg
+	var/datum/looping_sound/fire_large/soundloop
 
 ///All the subtypes are for adminbussery and or mapping
 /obj/effect/abstract/turf_fire/magical
@@ -86,6 +88,8 @@
 
 	open_turf.turf_fire = src
 	START_PROCESSING(SSturf_fire, src)
+	soundloop = new(list(src), FALSE)
+	soundloop.start()
 	if(power)
 		fire_power = min(TURF_FIRE_MAX_POWER, power)
 	UpdateFireState()
@@ -93,6 +97,8 @@
 /obj/effect/abstract/turf_fire/Destroy()
 	var/turf/open/open_turf = loc
 	open_turf.turf_fire = null
+	soundloop.stop()
+	QDEL_NULL(soundloop)
 	STOP_PROCESSING(SSturf_fire, src)
 	return ..()
 
@@ -148,8 +154,6 @@
 	if(interact_with_atmos)
 		if(prob(fire_power))
 			open_turf.burn_tile()
-		if(prob(TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE))
-			playsound(open_turf, 'sound/effects/comfyfire.ogg', 40, TRUE)
 		UpdateFireState()
 
 /obj/effect/abstract/turf_fire/proc/on_entered(datum/source, atom/movable/atom_crossing)
@@ -216,7 +220,6 @@
 #undef TURF_FIRE_BURN_RATE_PER_POWER
 #undef TURF_FIRE_BURN_CARBON_DIOXIDE_MULTIPLIER
 #undef TURF_FIRE_BURN_MINIMUM_OXYGEN_REQUIRED
-#undef TURF_FIRE_BURN_PLAY_SOUND_EFFECT_CHANCE
 
 #undef TURF_FIRE_STATE_SMALL
 #undef TURF_FIRE_STATE_MEDIUM

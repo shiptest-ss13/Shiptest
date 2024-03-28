@@ -32,7 +32,6 @@
 
 /area/ruin/space/has_grav/powered/aesthetic
 	name = "Aesthetic"
-	ambientsounds = list('sound/ambience/ambivapor1.ogg')
 
 //Ruin of Derelict Oupost
 

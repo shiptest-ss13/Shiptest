@@ -75,17 +75,17 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 /area/ruin/space/has_grav/syndicate_forgotten_ship
 	name = "Syndicate Forgotten Ship"
 	icon_state = "syndie-ship"
-	ambientsounds = list('sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg', 'sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg')
+	main_ambience = AMBIENCE_DECREPIT_MAINTENANCE
 
 /area/ruin/space/has_grav/syndicate_forgotten_cargopod
 	name = "Syndicate Forgotten Cargo pod"
 	icon_state = "syndie-ship"
-	ambientsounds = list('sound/ambience/ambigen4.ogg', 'sound/ambience/signal.ogg')
+	main_ambience = AMBIENCE_DECREPIT_MAINTENANCE
 
 /area/ruin/space/has_grav/powered/syndicate_forgotten_vault
 	name = "Syndicate Forgotten Vault"
 	icon_state = "syndie-ship"
-	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+	main_ambience = AMBIENCE_DECREPIT_MAINTENANCE
 	area_flags = NOTELEPORT | UNIQUE_AREA
 
 	//Cybersun hardsuit

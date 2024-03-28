@@ -97,6 +97,9 @@ Class Procs:
 
 	hitsound_type = PROJECTILE_HITSOUND_METAL
 
+/// What ambience do we play when we're powered and not broken
+	var/powered_ambience
+
 	var/machine_stat = NONE
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
@@ -141,6 +144,8 @@ Class Procs:
 	. = ..()
 	GLOB.machines += src
 	RegisterSignal(src, COMSIG_MOVABLE_Z_CHANGED, PROC_REF(power_change))
+	if(powered_ambience)
+		set_ambience(powered_ambience)
 	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit
 		if(mapload || apply_default_parts)
@@ -203,8 +208,12 @@ Class Procs:
 	if(old_value & (NOPOWER|BROKEN|MAINT))
 		if(!(machine_stat & (NOPOWER|BROKEN|MAINT))) //From off to on.
 			set_is_operational(TRUE)
+		if(powered_ambience)
+			set_ambience(powered_ambience)
 	else if(machine_stat & (NOPOWER|BROKEN|MAINT)) //From on to off.
 		set_is_operational(FALSE)
+		if(powered_ambience)
+			set_ambience(null)
 
 
 /obj/machinery/emp_act(severity)

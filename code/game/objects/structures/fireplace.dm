@@ -15,12 +15,15 @@
 
 	var/fuel_added = 0
 	var/flame_expiry_timer
+	var/datum/looping_sound/fire_small/soundloop
 
 /obj/structure/fireplace/New()
 	..()
 	START_PROCESSING(SSobj, src)
+	soundloop = new(list(src), FALSE)
 
 /obj/structure/fireplace/Destroy()
+	QDEL_NULL(soundloop)
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
@@ -35,6 +38,7 @@
 	if(msg)
 		visible_message(msg)
 		ignite()
+		soundloop.start()
 		return TRUE
 
 /obj/structure/fireplace/attackby(obj/item/T, mob/user)
@@ -110,7 +114,6 @@
 		put_out()
 		return
 
-	playsound(src, 'sound/effects/comfyfire.ogg',50,FALSE, FALSE, TRUE)
 	var/turf/T = get_turf(src)
 	T.hotspot_expose(700, 5)
 	update_appearance()
@@ -148,6 +151,7 @@
 
 /obj/structure/fireplace/proc/put_out()
 	lit = FALSE
+	soundloop.stop()
 	update_appearance()
 	adjust_light()
 	desc = initial(desc)

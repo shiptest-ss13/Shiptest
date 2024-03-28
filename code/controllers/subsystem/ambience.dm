@@ -1,27 +1,26 @@
 /// The subsystem used to play ambience to users every now and then, makes them real excited.
 SUBSYSTEM_DEF(ambience)
 	name = "Ambience"
-	flags = SS_BACKGROUND|SS_NO_INIT
+	flags = SS_BACKGROUND
 	priority = FIRE_PRIORITY_AMBIENCE
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
-	wait = 1 SECONDS
-	///Assoc list of listening client - next ambience time
-	var/list/ambience_listening_clients = list()
+	wait = 0.5 SECONDS
+	/// List of ambient sound datums we populate
+	var/list/ambient_sounds[TOTAL_AMBIENT_SOUNDS]
+	/// List of all ambience controllers
+	var/list/ambience_controller_list = list()
+
+/datum/controller/subsystem/ambience/Initialize(timeofday)
+	for(var/ambience_type in subtypesof(/datum/ambient_sound))
+		var/datum/ambient_sound/ambi_cast = ambience_type
+		if(!initial(ambi_cast.id))
+			continue
+		ambi_cast = new ambience_type()
+		ambient_sounds[ambi_cast.id] = ambi_cast
+	return ..()
 
 /datum/controller/subsystem/ambience/fire(resumed)
-	for(var/client/client_iterator as anything in ambience_listening_clients)
-
-		if(isnull(client_iterator) || isnewplayer(client_iterator.mob))
-			ambience_listening_clients -= client_iterator
-			continue
-
-		if(ambience_listening_clients[client_iterator] > world.time)
-			continue //Not ready for the next sound
-
-		var/area/current_area = get_area(client_iterator.mob)
-
-		var/sound = pick(current_area.ambientsounds)
-
-		SEND_SOUND(client_iterator.mob, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
-
-		ambience_listening_clients[client_iterator] = world.time + rand(current_area.min_ambience_cooldown, current_area.max_ambience_cooldown)
+	for(var/datum/ambience_controller/ambi_control as anything in ambience_controller_list)
+		ambi_control.process()
+		if(MC_TICK_CHECK)
+			return

@@ -155,6 +155,8 @@
 	var/base_pixel_x
 	///Default Y pixel offset
 	var/base_pixel_y
+	/// Ambience emitter ID this atom is emitting
+	var/ambience
 
 	///Wanted sound when hit by a projectile
 	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING

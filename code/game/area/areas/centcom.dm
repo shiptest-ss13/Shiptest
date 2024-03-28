@@ -140,7 +140,7 @@
 	has_gravity = STANDARD_GRAVITY
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
-	ambientsounds = HIGHSEC
+	main_ambience = AMBIENCE_SHIP_GENERIC
 
 /area/syndicate_mothership/control
 	name = "Syndicate Control Room"

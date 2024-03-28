@@ -93,7 +93,7 @@
 	icon_state = "ai_camera_room"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
 	area_flags = NOTELEPORT | HIDDEN_AREA | UNIQUE_AREA
-	ambientsounds = null
+	main_ambience = null
 	flags_1 = NONE
 
 GLOBAL_DATUM(ai_camera_room_landmark, /obj/effect/landmark/ai_multicam_room)

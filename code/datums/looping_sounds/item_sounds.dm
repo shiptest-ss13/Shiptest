@@ -51,3 +51,13 @@
 	mid_sounds = list('sound/items/weeoo1.ogg' = 1)
 	mid_length = 15
 	volume = 40
+
+/datum/looping_sound/fire_large
+	mid_sounds = list('sound/ambience/shiptest_ambience/misc/fire_large.ogg')
+	mid_length = 9
+	volume = 25
+
+/datum/looping_sound/fire_small
+	mid_sounds = list('sound/ambience/shiptest_ambience/misc/fire_large.ogg')
+	mid_length = 9
+	volume = 10

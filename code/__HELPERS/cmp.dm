@@ -142,3 +142,6 @@ GLOBAL_VAR_INIT(cmp_field, "name")
 	if(A.dock_width == B.dock_width)
 		return A.dock_height - B.dock_height
 	return A.dock_width - B.dock_width
+
+/proc/cmp_ambience_dist_asc(datum/ambience_sort/a, datum/ambience_sort/b)
+	return cmp_numeric_asc(a.dist, b.dist)

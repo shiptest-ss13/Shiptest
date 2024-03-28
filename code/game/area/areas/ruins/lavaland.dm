@@ -49,7 +49,7 @@
 
 /area/ruin/unpowered/cultaltar
 	name = "Cult Altar"
-	ambientsounds = SPOOKY
+	main_ambience = AMBIENCE_SPOOKY
 
 //Xeno Nest
 

@@ -26,7 +26,6 @@
 
 //AREAS
 /area/ruin/reebe
-	ambientsounds = REEBE
 	always_unpowered = FALSE
 
 //TURFS
