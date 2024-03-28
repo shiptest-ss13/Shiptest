@@ -257,7 +257,7 @@
 /obj/item/circuitboard/machine/power_turbine
 	name = "Power Turbine (Machine Board)"
 	icon_state = "engineering"
-	build_path = /obj/machinery/power/turbine
+	build_path = /obj/machinery/power/shuttle/engine/turbine
 	req_components = list(
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/capacitor = 6)
