@@ -396,4 +396,7 @@
 	name = "Haste-class Ambulance"
 	prefix = "IRMV"
 
-
+/datum/map_template/shuttle/subshuttles/brawler
+	file_name = "frontiersmen_brawler"
+	name = "Brawler-class Dropship"
+	prefix = "SV"

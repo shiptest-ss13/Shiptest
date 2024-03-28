@@ -64,11 +64,9 @@
 	ears = /obj/item/radio/headset/pirate/alt/captain
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/officer
 	head = /obj/item/clothing/head/caphat/frontier
-	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/armor/frontier
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	gloves = /obj/item/clothing/gloves/combat
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
 /datum/outfit/job/frontiersmen/captain/admiral
 	name = "Frontiersmen - Admiral"
@@ -80,8 +78,6 @@
 	ears = /obj/item/radio/headset/pirate/captain
 	gloves = /obj/item/clothing/gloves/color/evening
 	suit = null
-	mask = null
-	glasses = null
 
 // Chief Engineer
 /datum/outfit/job/frontiersmen/ce
@@ -106,13 +102,10 @@
 	jobtype = /datum/job/engineer
 
 	accessory = /obj/item/clothing/accessory/armband/engine
-	belt = /obj/item/storage/belt/utility/full/engi
-	suit = /obj/item/clothing/suit/toggle/industrial
+	suit = /obj/item/clothing/suit/hazardvest
 	shoes = /obj/item/clothing/shoes/workboots
-	glasses = /obj/item/clothing/glasses/welding
-	head = /obj/item/clothing/head/beret/sec/frontier
+	head = /obj/item/clothing/head/hardhat
 
-	l_pocket = /obj/item/radio
 	r_pocket = /obj/item/analyzer
 
 // Cook
@@ -188,6 +181,5 @@
 
 	accessory = /obj/item/clothing/accessory/armband/med
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
-	glasses = /obj/item/clothing/glasses/hud/health/prescription
+	glasses = /obj/item/clothing/glasses/hud/health
 	r_pocket = /obj/item/kitchen/knife/combat/survival
-	backpack_contents = list(/obj/item/storage/firstaid/medical)
