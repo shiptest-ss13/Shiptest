@@ -121,7 +121,8 @@
 		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
 		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
 		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
-		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png'
+		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png',
+		"clip_logo.png" = 'html/paperwork/clip_logo.png'
 	)
 
 /datum/asset/simple/fuckywucky
