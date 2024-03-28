@@ -174,6 +174,56 @@
 	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
 	icon_state = "asleep"
 
+//LIFE SUPPORT
+/datum/status_effect/grouped/life_support
+	id = "life_support"
+	duration = -1
+	tick_interval = 10
+	alert_type = /atom/movable/screen/alert/status_effect/life_support
+	///last time the affected person was dead
+	var/last_dead_time
+
+/atom/movable/screen/alert/status_effect/life_support
+	name = "Life Support"
+	desc = "You are in a state of life suspension, and you can't die. Pray that someone doesn't pull the cord."
+	icon_state = "stasis"
+
+/**
+ * Updates the time of death
+ *
+ * Replaces the incorrect time of death with the actual time they died.
+ */
+/datum/status_effect/grouped/life_support/proc/update_time_of_death()
+	if(last_dead_time)
+		var/delta = world.time - last_dead_time
+		var/new_timeofdeath = owner.timeofdeath + delta
+		owner.timeofdeath = new_timeofdeath
+		owner.tod = station_time_timestamp(wtime=new_timeofdeath)
+		last_dead_time = null
+	if(owner.stat == DEAD)
+		last_dead_time = world.time
+
+/datum/status_effect/grouped/life_support/on_creation(mob/living/new_owner, set_duration, updating_canmove)
+	. = ..()
+	if(.)
+		update_time_of_death()
+
+/datum/status_effect/grouped/life_support/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_NOCRITDAMAGE, TRAIT_STATUS_EFFECT(id))
+	ADD_TRAIT(owner, TRAIT_NODEATH, TRAIT_STATUS_EFFECT(id))
+
+/datum/status_effect/grouped/life_support/tick()
+	update_time_of_death()
+
+/datum/status_effect/grouped/life_support/on_remove()
+	REMOVE_TRAIT(owner,TRAIT_NOCRITDAMAGE, TRAIT_STATUS_EFFECT(id))
+	REMOVE_TRAIT(owner,TRAIT_NODEATH, TRAIT_STATUS_EFFECT(id))
+	update_time_of_death()
+	return ..()
+
 //STASIS
 /datum/status_effect/grouped/stasis
 	id = "stasis"

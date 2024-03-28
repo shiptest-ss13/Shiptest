@@ -4,7 +4,7 @@
  *
  * Sends [COMSIG_MOB_APPLY_DAMGE]
  *
- * Arguuments:
+ * Arguments:
  * * damage - amount of damage
  * * damagetype - one of [BRUTE], [BURN], [TOX], [OXY], [CLONE], [STAMINA]
  * * def_zone - zone that is being hit if any
