@@ -139,9 +139,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffdbb4"
 	lighting_brightness_tube = 6
 
-/area/ship/crew/decrepit
-	main_ambience = AMBIENCE_SHIP_DECREPIT
-
 /area/ship/crew/crewtwo //why do we need 5 of these. Sobs!
 	name = "Crew Quarters 2"
 
@@ -152,6 +149,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Crew Quarters 4"
 
 /area/ship/crew/crewfive
+	name = "Crew Quarters 5"
+
+/area/ship/crew/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
+/area/ship/crew/decrepit/crewtwo
+	name = "Crew Quarters 2"
+
+/area/ship/crew/decrepit/crewthree
+	name = "Crew Quarters 3"
+
+/area/ship/crew/decrepit/crewfour
+	name = "Crew Quarters 4"
+
+/area/ship/crew/decrepit/crewfive
 	name = "Crew Quarters 5"
 
 /area/ship/crew/cryo
@@ -199,7 +211,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Kitchen"
 	icon_state = "kitchen"
 
-/area/ship/crew/canteen/kitchen
+/area/ship/crew/canteen/kitchen/decrepit
 	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/crew/hydroponics
@@ -247,10 +259,16 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "vacant_office"
 	sound_environment = SOUND_AREA_WOODFLOOR
 
+/area/ship/crew/office/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
+
 /area/ship/crew/janitor
 	name = "Custodial Closet"
 	icon_state = "janitor"
 	sound_environment = SOUND_AREA_SMALL_ENCLOSED
+
+/area/ship/crew/janitor/decrepit
+	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Medical Bay ///
 /area/ship/medical
@@ -290,7 +308,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Xenobiology Lab"
 	icon_state = "xenolab"
 
-/area/ship/science/xenobiology
+/area/ship/science/xenobiology/decrepit
 	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /area/ship/science/storage
@@ -366,7 +384,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Incinerator"
 	icon_state = "disposal"
 
-/area/ship/engineering/incinerator
+/area/ship/engineering/incinerator/decrepit
 	main_ambience = AMBIENCE_SHIP_DECREPIT
 
 /// Security ///
@@ -544,6 +562,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/maintenance/external
 	name = "External Hull Access"
 	icon_state = "amaint"
+	main_ambience = null
 
 /area/ship/maintenance/decrepit
 	main_ambience = AMBIENCE_SHIP_DECREPIT
@@ -567,10 +586,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ship/maintenance/decrepit/central
 	name = "Central Maintenance"
 	icon_state = "maintcentral"
-
-/area/ship/maintenance/decrepit/external
-	name = "External Hull Access"
-	icon_state = "amaint"
 
 /area/ship/construction
 	name = "Construction Area"
