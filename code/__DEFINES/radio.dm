@@ -35,6 +35,10 @@
 #define RADIO_KEY_MINUTEMEN "m"
 #define RADIO_TOKEN_MINUTEMEN ":m"
 
+#define RADIO_CHANNEL_PGF "PGF"
+#define RADIO_KEY_PGF "g"
+#define RADIO_TOKEN_PGF ":g"
+
 #define RADIO_CHANNEL_INTEQ "Inteq"
 #define RADIO_KEY_INTEQ "q"
 #define RADIO_TOKEN_INTEQ ":q"
@@ -59,6 +63,7 @@
 #define FREQ_CENTCOM 1337 // CentCom comms frequency, gray
 #define FREQ_SOLGOV 1345 // SolGov comms frequency, dark blue WS ADDITION
 #define FREQ_INTEQ 1347 // Inteq comms frequency, light brown
+#define FREQ_PGF 1349 // PGF comms frequency, lime green
 #define FREQ_NANOTRASEN 1351 // Nanotrasen comms frequency, plum
 #define FREQ_COMMAND 1353 // Command comms frequency, gold
 #define FREQ_MINUTEMEN 1355 // Minutemen comms frequency, soft blue

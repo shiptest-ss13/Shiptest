@@ -45,6 +45,11 @@
 	icon_state = "cmm_cypherkey"
 	channels = list(RADIO_CHANNEL_MINUTEMEN = 1)
 
+/obj/item/encryptionkey/pgf
+	name = "pgf encryption key"
+	icon_state = "bin_cypherkey"
+	channels = list(RADIO_CHANNEL_PGF = 1)
+
 /obj/item/encryptionkey/inteq
 	name = "inteq encryption key"
 	icon_state = "irmg_cypherkey"

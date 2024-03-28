@@ -282,6 +282,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lighting_colour_bulb = "#ffbc6f"
 	sound_environment = SOUND_AREA_LARGE_ENCLOSED
 
+/area/ship/engineering/engines
+	name = "Engines"
+
+/area/ship/engineering/engines/port
+	name = "Port Engines"
+
+/area/ship/engineering/engines/starboard
+	name = "Starboard Engines"
+
 /area/ship/engineering/atmospherics
 	name = "Atmospherics"
 	icon_state = "atmos"
