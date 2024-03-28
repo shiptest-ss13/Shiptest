@@ -177,6 +177,7 @@
 
 /obj/item/kitchen/knife/combat
 	name = "combat knife"
+	icon = 'icons/obj/world/melee.dmi'
 	icon_state = "buckknife"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)
@@ -184,6 +185,10 @@
 	throwforce = 20
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
+
+/obj/item/kitchen/knife/combat/Initialize()
+	. = ..()
+	AddElement(/datum/element/world_icon, null, icon, 'icons/obj/kitchen.dmi')
 
 /obj/item/kitchen/knife/combat/survival
 	name = "survival knife"
