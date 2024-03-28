@@ -19,6 +19,11 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
 
+/datum/outfit/job/gezena/assistant/bridge
+	name = "PGF - Bridge Crew"
+	id_assignment = "Bridge Crew"
+	jobtype = /datum/job/head_of_personnel
+
 /datum/outfit/job/gezena/engineer
 	name = "PGF - Navy Engineer"
 	id_assignment = "Naval Engineer"
@@ -66,7 +71,7 @@
 
 	uniform = /obj/item/clothing/under/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	neck = /obj/item/clothing/neck/cloak/gezena/command
 
 /datum/outfit/job/gezena/captain
 	name = "PGF - Captain"
