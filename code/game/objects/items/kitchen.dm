@@ -245,7 +245,8 @@
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.5)
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
-	custom_price = 200
+	custom_price = 20
+	tool_behaviour = TOOL_ROLLINGPIN
 
 /* Trays  moved to /obj/item/storage/bag */
 
@@ -263,5 +264,5 @@
 /obj/item/kitchen/knife/plastic/afterattack(mob/living/carbon/user)
 	.=..()
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user]'s spoon snaps into tiny pieces in their hand.</span>")
+		user.visible_message(span_danger("[user]'s spoon snaps into tiny pieces in their hand."))
 		qdel(src)
