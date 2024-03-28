@@ -57,7 +57,7 @@
 		_contents_limbo = null
 	if(_user_limbo)
 		for(var/i in _user_limbo)
-			show_to(i)
+			ui_show(i)
 		_user_limbo = null
 
 /datum/component/storage/concrete/_insert_physical_item(obj/item/I, override = FALSE)
