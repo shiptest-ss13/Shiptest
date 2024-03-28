@@ -74,6 +74,7 @@
 /obj/structure/fluff/bus
 	name = "bus"
 	desc = "GO TO SCHOOL. READ A BOOK."
+	icon_state = "backseat"
 	icon = 'icons/obj/bus.dmi'
 	density = TRUE
 	anchored = TRUE
@@ -126,6 +127,7 @@
 
 /obj/structure/fluff/divine
 	name = "Miracle"
+	icon_state = "trap_rand"
 	icon = 'icons/obj/hand_of_god_structures.dmi'
 	anchored = TRUE
 	density = TRUE
@@ -179,15 +181,6 @@
 	density = TRUE
 	deconstructible = FALSE
 
-/obj/structure/fluff/beach_towel
-	name = "beach towel"
-	desc = "A towel decorated in various beach-themed designs."
-	icon = 'icons/obj/fluff.dmi'
-	icon_state = "railing"
-	density = FALSE
-	anchored = TRUE
-	deconstructible = FALSE
-
 /obj/structure/fluff/beach_umbrella
 	name = "beach umbrella"
 	desc = "A fancy umbrella designed to keep the sun off beach-goers."
@@ -215,6 +208,7 @@
 /obj/structure/fluff/clockwork
 	name = "Clockwork Fluff"
 	icon = 'icons/obj/clockwork_objects.dmi'
+	icon_state = "rare_pepe" //This should never be seen and i just found out that its in this file for some reason
 	deconstructible = FALSE
 
 /obj/structure/fluff/clockwork/alloy_shards

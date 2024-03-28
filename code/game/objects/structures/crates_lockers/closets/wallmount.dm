@@ -6,105 +6,37 @@
 	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "generic_wall"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall, 28)
+
 /obj/structure/closet/wall/red
 	icon_state = "sec_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/red, 28)
 
 /obj/structure/closet/wall/orange
 	icon_state = "cargo_wall"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/orange, 28)
+
 /obj/structure/closet/wall/blue
 	icon_state = "solgov_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/blue, 28)
 
 /obj/structure/closet/wall/white
 	icon_state = "freezer_wall"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/white, 28)
+
 /obj/structure/closet/wall/white/chem
 	icon_door = "chemical_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/chem, 28)
 
 /obj/structure/closet/wall/white/med
 	icon_door = "med_wall"
 
-//wardrobes
-
-/obj/structure/closet/wardrobe/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "blue_wall"
-
-/obj/structure/closet/wardrobe/pink/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "pink_wall"
-
-/obj/structure/closet/wardrobe/black/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "black_wall"
-
-/obj/structure/closet/wardrobe/green/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "green_wall"
-
-/obj/structure/closet/wardrobe/orange/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "orange_wall"
-
-/obj/structure/closet/wardrobe/yellow/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "yellow_wall"
-
-/obj/structure/closet/wardrobe/white/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "white_wall"
-
-/obj/structure/closet/wardrobe/pjs/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "white_wall"
-
-/obj/structure/closet/wardrobe/grey/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "grey_wall"
-
-/obj/structure/closet/wardrobe/mixed/wall
-	wall_mounted = TRUE
-	anchored = TRUE
-	density = TRUE
-	can_be_unanchored = FALSE
-	icon = 'icons/obj/wallcloset.dmi'
-	icon_door = "mixed_wall"
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/wall/med, 28)
 
 //special
 
@@ -116,6 +48,8 @@
 	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "fire_wall"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/firecloset/wall, 28)
+
 /obj/structure/closet/emcloset/wall
 	wall_mounted = TRUE
 	anchored = TRUE
@@ -123,6 +57,8 @@
 	can_be_unanchored = FALSE
 	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "emergency_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/emcloset/wall, 28)
 
 //secure closets/freezers
 /obj/structure/closet/secure_closet/wall
@@ -133,6 +69,8 @@
 	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "freezer_wall"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/wall, 28)
+
 /obj/structure/closet/secure_closet/freezer/wall
 	wall_mounted = TRUE
 	anchored = TRUE
@@ -140,6 +78,8 @@
 	can_be_unanchored = FALSE
 	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "freezer_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/freezer/wall, 28)
 
 /obj/structure/closet/secure_closet/freezer/kitchen/wall
 	wall_mounted = TRUE
@@ -149,6 +89,8 @@
 	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "freezer_wall"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/freezer/kitchen/wall, 28)
+
 /obj/structure/closet/secure_closet/brig/wall
 	wall_mounted = TRUE
 	anchored = TRUE
@@ -157,3 +99,5 @@
 	icon = 'icons/obj/wallcloset.dmi'
 	icon_state = "generic_wall"
 	icon_door = "generic_wall"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/closet/secure_closet/brig/wall, 28)

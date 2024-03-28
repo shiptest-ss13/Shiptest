@@ -785,7 +785,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	name = "pepperoni sheetzzas"
 	desc = "It's a delicious pepperoni sheetzza!"
 	singular_name = "pepperoni sheetzza"
-	icon_state = "sheet-pizza"
+	icon_state = "sheet-meat" //This needs a pizza sheet but we also i dont think anyone will ever make this.
 	custom_materials = list(/datum/material/pizza = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/pizza
 	material_type = /datum/material/pizza

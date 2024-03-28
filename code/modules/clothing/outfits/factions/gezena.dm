@@ -55,8 +55,9 @@
 	job_icon = "headofsecurity"
 
 	uniform = /obj/item/clothing/under/gezena/marine
+	head = /obj/item/clothing/head/gezena/marine/lead
 	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	neck = /obj/item/clothing/neck/cloak/gezena/lead
 
 /datum/outfit/job/gezena/hop
 	name = "PGF - Bridge Officer"
@@ -136,11 +137,11 @@
 
 	uniform = /obj/item/clothing/under/gezena/marine
 	suit = /obj/item/clothing/suit/armor/gezena/marine
-	head = /obj/item/clothing/head/helmet/gezena
+	head = /obj/item/clothing/head/gezena/marine/lead
 	belt = /obj/item/storage/belt/military/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	neck = /obj/item/clothing/neck/cloak/gezena/lead
 	r_hand = /obj/item/gun/energy/kalix/pgf
 
 /datum/outfit/job/gezena/paramedic
