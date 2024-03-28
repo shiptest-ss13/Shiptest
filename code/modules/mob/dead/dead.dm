@@ -107,7 +107,7 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	. = ..()
 	if(!client)
 		return
-	LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+	LAZYADDASSOCLIST(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
 
 /mob/dead/Logout()
 	. = ..()

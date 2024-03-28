@@ -1404,7 +1404,7 @@
 	say(message, language)
 	return NOPASS
 
-/obj/item/toy/dummy/GetVoice()
+/obj/item/toy/dummy/GetVoice(if_no_voice = "Unknown")
 	return doll_name
 
 /obj/item/toy/seashell

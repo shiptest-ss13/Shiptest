@@ -560,7 +560,7 @@
 	if(!client)
 		return
 	if(new_virtual_z)
-		LAZYADDASSOC(SSmobs.players_by_virtual_z, "[new_virtual_z]", src)
+		LAZYADDASSOCLIST(SSmobs.players_by_virtual_z, "[new_virtual_z]", src)
 		SSidlenpcpool.try_wakeup_virtual_z(new_virtual_z)
 
 /mob/dead/on_virtual_z_change(new_virtual_z, previous_virtual_z)
@@ -570,7 +570,7 @@
 	if(!client)
 		return
 	if(new_virtual_z)
-		LAZYADDASSOC(SSmobs.dead_players_by_virtual_z, "[new_virtual_z]", src)
+		LAZYADDASSOCLIST(SSmobs.dead_players_by_virtual_z, "[new_virtual_z]", src)
 
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
 // You probably want CanPass()
