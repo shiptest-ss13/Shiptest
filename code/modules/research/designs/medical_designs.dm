@@ -657,6 +657,14 @@
 	research_icon_state = "surgery_head"
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
+/datum/design/surgery/advanced_neurosurgery
+	name = "Advanced Neurosurgery"
+	desc = "A lengthy, precise brain surgery. Utilizes operating computer algorithms to visualize, identify and produce surgery steps to heal even the most deep-rooted of brain traumas."
+	id = "surgery_advanced_neurosurgery"
+	surgery = /datum/surgery/advanced/advanced_neurosurgery
+	research_icon_state = "surgery_head"
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
 /datum/design/surgery/pacify
 	name = "Pacification"
 	desc = "A surgical procedure which permanently inhibits the aggression center of the brain, making the patient unwilling to cause direct harm."
