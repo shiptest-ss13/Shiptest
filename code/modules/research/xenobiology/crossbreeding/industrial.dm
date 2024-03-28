@@ -115,9 +115,11 @@ Industrial extracts:
 	plasmarequired = 1
 	//Item picked below.
 
+/*
 /obj/item/slimecross/industrial/silver/process()
 	itempath = pick(list(get_random_food(), get_random_drink()))
 	..()
+*/
 
 /obj/item/slimecross/industrial/bluespace
 	colour = "bluespace"

@@ -21,6 +21,7 @@
 
 	if(!proximity_flag) // if the user is not adjacent to the container
 		return
+
 	var/obj/item/reagent_containers/container = target // the container we're trying to dunk into
 	if(istype(container) && container.reagent_flags & DUNKABLE) // container should be a valid target for dunking
 		if(!container.is_drainable())

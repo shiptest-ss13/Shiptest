@@ -24,7 +24,7 @@ handles linking back and forth.
 	src.allow_standalone = allow_standalone
 
 	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
-	RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, PROC_REF(OnMultitool))
+	//RegisterSignal(parent, COMSIG_ATOM_MULTITOOL_ACT, PROC_REF(OnMultitool)) todo: port component rework of multitool buffers (bee)
 
 	if (allow_standalone)
 		_MakeLocal()

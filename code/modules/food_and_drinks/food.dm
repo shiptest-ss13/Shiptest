@@ -22,7 +22,7 @@
 		pixel_y = rand(-5, 5)
 	ADD_TRAIT(src, FISHING_BAIT_TRAIT, INNATE_TRAIT)
 
-/obj/item/reagent_containers/food/proc/checkLiked(fraction, mob/M)
+/obj/item/reagent_containers/food/proc/check_liked(fraction, mob/M)
 	if(last_check_time + 50 < world.time)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M

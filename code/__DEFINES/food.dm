@@ -14,10 +14,12 @@
 #define BREAKFAST (1<<13)
 #define CLOTH (1<<14)
 #define GRILLED (1<<15)
-/*#define NUTS (1<<16)
+/* WIP
+#define NUTS (1<<16)
 #define SEAFOOD (1<<17)
 #define ORANGES (1<<18)
-#define BUGS (1<<19)*/
+#define BUGS (1<<19)
+*/
 #define GORE (1<<20)
 
 /// IC meaning (more or less) for food flags
@@ -43,12 +45,23 @@
 	"Bugs", \
 )
 
-#define DRINK_NICE 1
-#define DRINK_GOOD 2
-#define DRINK_VERYGOOD 3
-#define DRINK_FANTASTIC 4
-#define FOOD_AMAZING 5
+#define DRINK_BAD 1
+#define DRINK_NICE 2
+#define DRINK_GOOD 3
+#define DRINK_VERYGOOD 4
+#define DRINK_FANTASTIC 5
+#define DRINK_AMAZING 6
 
+/// Food is "in a container", not in a code sense, but in a literal sense (canned foods)
 #define FOOD_IN_CONTAINER (1<<0)
+/// Finger food can be eaten while walking / running around
+#define FOOD_FINGER_FOOD (1<<1)
 
 #define STOP_SERVING_BREAKFAST (15 MINUTES)
+
+///Amount of reagents you start with on crafted food excluding the used parts
+#define CRAFTED_FOOD_BASE_REAGENT_MODIFIER 0.7
+///Modifier of reagents you get when crafting food from the parts used
+#define CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER 0.5
+
+#define IS_EDIBLE(O) (O.GetComponent(/datum/component/edible))

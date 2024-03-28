@@ -10,7 +10,7 @@
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	pickup_sound =  'sound/items/handling/bottle_pickup.ogg'
 	drop_sound = 'sound/items/handling/bottle_drop.ogg'
-	reagent_flags = OPENCONTAINER | DUNKABLE
+	reagent_flags = OPENCONTAINER | DUNKABLE | DUNKABLE
 	var/gulp_size = 5 //This is now officially broken ... need to think of a nice way to fix it.
 	possible_transfer_amounts = list(5,10,15,20,25,30,50)
 	volume = 50
@@ -48,7 +48,7 @@
 		log_combat(user, M, "fed", reagents.log_list())
 
 	var/fraction = min(gulp_size/reagents.total_volume, 1)
-	checkLiked(fraction, M)
+	check_liked(fraction, M)
 	reagents.trans_to(M, gulp_size, transfered_by = user, method = INGEST)
 	playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 	return TRUE

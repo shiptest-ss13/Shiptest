@@ -36,14 +36,7 @@
 	/// List of types which should be allowed to be faxed if hacked
 	var/static/list/exotic_types = list(
 		/obj/item/reagent_containers/food/snacks/pizzaslice,
-		/obj/item/reagent_containers/food/snacks/breadslice,
-		/obj/item/reagent_containers/food/snacks/donkpocket,
-		/obj/item/reagent_containers/food/snacks/cookie,
-		/obj/item/reagent_containers/food/snacks/salami,
-		/obj/item/reagent_containers/food/snacks/sugarcookie,
-		/obj/item/reagent_containers/food/snacks/oatmealcookie,
-		/obj/item/reagent_containers/food/snacks/raisincookie,
-		/obj/item/reagent_containers/food/snacks/pancakes,
+		/obj/item/food/breadslice/plain,
 		/obj/item/throwing_star,
 		/obj/item/spacecash,
 		/obj/item/holochip,
