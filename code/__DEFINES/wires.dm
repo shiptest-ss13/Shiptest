@@ -51,4 +51,8 @@
 #define WIRE_PRIZEVEND "Emergency Prize Vend"
 #define WIRE_RESETOWNER "Reset Owner"
 #define WIRE_AGELIMIT "Age Limit"
+#define WIRE_PIN "Trigger Pin"
+#define WIRE_FUSE "Fuse"
+#define WIRE_RESET "Factory Reset"
+#define WIRE_DELAYBOOM "Delayed Boom"
 

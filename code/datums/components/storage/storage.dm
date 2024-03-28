@@ -227,6 +227,9 @@
 	if(!len)
 		to_chat(M, "<span class='warning'>You failed to pick up anything with [parent]!</span>")
 		return
+	if(I.anchored)
+		to_chat(M, "<span class='warning'>\The [I] is stuck to the ground and cannot be picked up by [parent]!</span>")
+		return
 	var/datum/progressbar/progress = new(M, len, I.loc)
 	var/list/rejections = list()
 	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))

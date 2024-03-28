@@ -1,0 +1,16 @@
+//weapon manufacturers
+#define MANUFACTURER_NONE null
+#define MANUFACTURER_SHARPLITE "the Sharplite Defense logo"
+#define MANUFACTURER_SHARPLITE_NEW "the Nanotrasen-Sharplite logo"
+#define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
+#define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
+#define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
+#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
+#define MANUFACTURER_NANOTRASEN_OLD "an outdated Nanotrasen logo"
+#define MANUFACTURER_NANOTRASEN "the Nanotrasen logo"
+#define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
+#define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
+#define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
+#define MANUFACTURER_DONKCO "the Donk! Co. logo"
+#define MANUFACTURER_PGF "the Etherbor Industries emblem"
+#define MANUFACTURER_IMPORT "Lanchester Import Co."

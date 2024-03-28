@@ -39,10 +39,12 @@
 		/obj/structure/salvageable/circuit_imprinter = 8,
 		/obj/structure/salvageable/destructive_analyzer = 8,
 		/obj/structure/salvageable/server = 8,
+		/obj/item/mine/pressure/explosive/rusty/live = 30,
+		/obj/effect/spawner/lootdrop/mine = 8
 	)
 	feature_spawn_list = list(
 		/obj/structure/geyser/random = 1,
-		/obj/effect/mine/shrapnel/human_only = 1
+		/obj/effect/spawner/minefield = 1
 	)
 	mob_spawn_list = list(
 		//hivebots, not too difficult
