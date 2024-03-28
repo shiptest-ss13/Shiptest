@@ -14,6 +14,7 @@ RUN dpkg --add-architecture i386 \
     curl ca-certificates gcc-multilib \
     g++-multilib libc6-i386 zlib1g-dev:i386 \
     libssl-dev:i386 pkg-config:i386 git \
+    libclang-dev \
     && /bin/bash -c "source dependencies.sh \
     && curl https://sh.rustup.rs | sh -s -- -y -t i686-unknown-linux-gnu --no-modify-path --profile minimal --default-toolchain \$RUST_VERSION" \
     && rm -rf /var/lib/apt/lists/*
@@ -34,7 +35,7 @@ RUN git init \
     && git remote add origin \$AUXMOS_REPO \
     && git fetch --depth 1 origin \$AUXMOS_VERSION" \
     && git checkout FETCH_HEAD \
-    && cargo rustc --target=i686-unknown-linux-gnu --release --features all_reaction_hooks,katmos -- -C target-cpu=native
+    && RUSTFLAGS="-C target-cpu=native" cargo build --release --target=i686-unknown-linux-gnu --features "all_reaction_hooks,katmos"
 
 # Install nodejs which is required to deploy Shiptest
 FROM base as node
