@@ -21,7 +21,7 @@
 /obj/item/ammo_box/magazine/toy/pistol
 	name = "foam force pistol magazine"
 	desc = "A toy pistol magazine designed to fit harmless foam darts."
-	icon_state = "9x19p"
+	icon_state = "stechkin_mag-8"
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 

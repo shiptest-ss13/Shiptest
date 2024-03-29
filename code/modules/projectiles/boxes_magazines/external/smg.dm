@@ -121,19 +121,6 @@
 	. = ..()
 	icon_state = "firestorm_pan"
 
-/obj/item/ammo_box/magazine/pistol556mm
-	name = "handgun magazine (5.56mm HITP caseless)"
-	desc = "A 12-round, double-stack magazine for the Pistole C pistol. These rounds do okay damage with average performance against armor."
-	icon_state = "5.56mmHITP-12" //ok i did it
-	base_icon_state = "5.56mmHITP"
-	ammo_type = /obj/item/ammo_casing/caseless/c556mm
-	caliber = "5.56mm caseless"
-	max_ammo = 12
-
-/obj/item/ammo_box/magazine/pistol556mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(),2)]"
-
 /obj/item/ammo_box/magazine/tec9
 	name = "machine pistol magazine (9mm AP)"
 	desc = "A sizable 20-round magazine for the TEC-9 machine pistol. These armor-piercing rounds are okay at piercing protective equipment, but lose some stopping power.."
