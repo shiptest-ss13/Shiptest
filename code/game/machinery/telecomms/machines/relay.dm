@@ -85,8 +85,8 @@
 
 /obj/machinery/telecomms/relay/preset/minutemen
 	freq_listening = list(FREQ_COMMAND, FREQ_MINUTEMEN, FREQ_COMMON)
-	id = "CMM Relay"
-	network = "cmm_commnet"
+	id = "CLIP Relay"
+	network = "clip_commnet"
 
 /obj/machinery/telecomms/relay/preset/solgov
 	freq_listening = list(FREQ_COMMAND, FREQ_SOLGOV, FREQ_COMMON)

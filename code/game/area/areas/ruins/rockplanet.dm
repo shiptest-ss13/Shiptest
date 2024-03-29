@@ -7,7 +7,8 @@
 
 //budgetcuts
 /area/ruin/rockplanet/nanotrasen
-	name = "Abandoned Mining Facility"
+	name = "Abandoned Research Facility"
+	always_unpowered = FALSE
 	icon_state = "green"
 
 //nomad

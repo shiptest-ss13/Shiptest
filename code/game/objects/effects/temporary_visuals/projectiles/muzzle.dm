@@ -6,7 +6,7 @@
 	icon_state = "muzzle_laser"
 
 /obj/effect/projectile/muzzle/laser/blue
-	icon_state = "muzzle_laser_blue"
+	icon_state = "muzzle_blue"
 
 /obj/effect/projectile/muzzle/laser/emitter
 	name = "emitter flash"
@@ -33,8 +33,11 @@
 /obj/effect/projectile/muzzle/wormhole
 	icon_state = "wormhole_g"
 
+/obj/effect/projectile/muzzle/kalix
+	icon_state = "muzzle_kalix"
+
 /obj/effect/projectile/muzzle/pgf
 	icon_state = "muzzle_pgf"
 
-/obj/effect/projectile/muzzle/kalix
-	icon_state = "muzzle_kalix"
+/obj/effect/projectile/muzzle/pgf/rifle
+	icon_state = "muzzle_pgf_rifle"

@@ -11,6 +11,7 @@
 //Playable Roles (put in ships):
 /datum/outfit/job/gezena/assistant
 	name = "PGF - Crewman"
+	id_assignment = "Crewman"
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
@@ -20,6 +21,7 @@
 
 /datum/outfit/job/gezena/engineer
 	name = "PGF - Navy Engineer"
+	id_assignment = "Naval Engineer"
 	jobtype = /datum/job/engineer
 	job_icon = "stationengineer"
 
@@ -38,6 +40,7 @@
 
 /datum/outfit/job/gezena/security
 	name = "PGF - Marine"
+	id_assignment = "Marine"
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
@@ -47,12 +50,14 @@
 
 /datum/outfit/job/gezena/hos
 	name = "PGF - Marine Sergeant"
+	id_assignment = "Sergeant"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
 	uniform = /obj/item/clothing/under/gezena/marine
+	head = /obj/item/clothing/head/gezena/marine/lead
 	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	neck = /obj/item/clothing/neck/cloak/gezena/lead
 
 /datum/outfit/job/gezena/captain
 	name = "PGF - Captain"
@@ -123,11 +128,11 @@
 
 	uniform = /obj/item/clothing/under/gezena/marine
 	suit = /obj/item/clothing/suit/armor/gezena/marine
-	head = /obj/item/clothing/head/helmet/gezena
+	head = /obj/item/clothing/head/gezena/marine/lead
 	belt = /obj/item/storage/belt/military/gezena
 	gloves = /obj/item/clothing/gloves/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	neck = /obj/item/clothing/neck/cloak/gezena/lead
 	r_hand = /obj/item/gun/energy/kalix/pgf
 
 /datum/outfit/job/gezena/paramedic

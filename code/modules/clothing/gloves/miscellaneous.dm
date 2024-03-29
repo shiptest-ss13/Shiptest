@@ -3,7 +3,6 @@
 	name = "fingerless gloves"
 	desc = "Plain black gloves without fingertips for the hard working."
 	icon_state = "fingerless"
-	item_state = "fingerless"
 	transfer_prints = TRUE
 	strip_delay = 40
 	equip_delay_other = 20
@@ -30,7 +29,6 @@
 	name = "combat gloves"
 	desc = "These tactical gloves are fireproof and electrically insulated."
 	icon_state = "combat"
-	item_state = "combat"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	strip_delay = 80
@@ -46,19 +44,16 @@
 	name = "combat maid sleeves"
 	desc = "These 'tactical' gloves and sleeves are fireproof and electrically insulated. Warm to boot."
 	icon_state = "syndimaid_arms"
-	item_state = "syndimaid_arms"
 
 /obj/item/clothing/gloves/combat/maid/inteq
 	name = "inteq combat maid sleeves"
 	desc = "Tacticute and comfy, along with being both fireproof and electrically insulated."
 	icon_state = "inteqmaid_arms"
-	item_state = "inteqmaid_arms"
 
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
 	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."
 	icon_state = "bracers"
-	item_state = "bracers"
 	transfer_prints = TRUE
 	strip_delay = 40
 	equip_delay_other = 20
@@ -73,7 +68,6 @@
 	name = "Gloves of the North Star"
 	desc = "Just looking at these fills you with an urge to beat the shit out of people."
 	icon_state = "rapid"
-	item_state = "rapid"
 	transfer_prints = TRUE
 	cuttable = FALSE
 
@@ -86,7 +80,6 @@
 	desc = "Covers up those scandalous boney hands."
 	name = "plasma envirogloves"
 	icon_state = "plasmaman"
-	item_state = "plasmaman"
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -98,65 +91,56 @@
 /obj/item/clothing/gloves/color/plasmaman/black
 	name = "black envirogloves"
 	icon_state = "blackplasma"
-	item_state = "blackplasma"
 
 /obj/item/clothing/gloves/color/plasmaman/white
 	name = "white envirogloves"
 	icon_state = "whiteplasma"
-	item_state = "whiteplasma"
+	item_state = "lgloves"
 
 /obj/item/clothing/gloves/color/plasmaman/robot
 	name = "roboticist envirogloves"
 	icon_state = "robotplasma"
-	item_state = "robotplasma"
 
 /obj/item/clothing/gloves/color/plasmaman/janny
 	name = "janitor envirogloves"
 	icon_state = "jannyplasma"
-	item_state = "jannyplasma"
 
 /obj/item/clothing/gloves/color/plasmaman/cargo
 	name = "cargo envirogloves"
 	icon_state = "cargoplasma"
-	item_state = "cargoplasma"
 
 /obj/item/clothing/gloves/color/plasmaman/engineer
 	name = "engineering envirogloves"
 	icon_state = "engieplasma"
-	item_state = "engieplasma"
+	item_state = "ygloves"
 	siemens_coefficient = 0
 
 /obj/item/clothing/gloves/color/plasmaman/atmos
 	name = "atmos envirogloves"
 	icon_state = "atmosplasma"
-	item_state = "atmosplasma"
+	item_state = "ygloves"
 	siemens_coefficient = 0
 
 /obj/item/clothing/gloves/color/plasmaman/explorer
 	name = "explorer envirogloves"
 	icon_state = "explorerplasma"
-	item_state = "explorerplasma"
 
 /obj/item/clothing/gloves/color/botanic_leather/plasmaman
 	name = "botany envirogloves"
 	desc = "Covers up those scandalous boney hands."
 	icon_state = "botanyplasma"
-	item_state = "botanyplasma"
 	permeability_coefficient = 0.05
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95)
 
 /obj/item/clothing/gloves/color/plasmaman/prototype
 	name = "prototype envirogloves"
 	icon_state = "protoplasma"
-	item_state = "protoplasma"
 
 /obj/item/clothing/gloves/color/plasmaman/clown
 	name = "clown envirogloves"
 	icon_state = "clownplasma"
-	item_state = "clownplasma"
 
 /obj/item/clothing/gloves/combat/wizard
 	name = "enchanted gloves"
 	desc = "These gloves have been enchanted with a spell that makes them electrically insulated and fireproof."
 	icon_state = "wizard"
-	item_state = "purplegloves"
