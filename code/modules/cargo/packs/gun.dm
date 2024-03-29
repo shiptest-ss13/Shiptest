@@ -89,7 +89,7 @@
 
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotgun Crate"
-	desc = "For when you need to deal with 7 hooligans. Contains a pump shotgun, with a 8-round capacity."
+	desc = "For when you need to deal with 8 hooligans. Contains a pump shotgun, with a 8-round capacity."
 	cost = 2000
 	contains = list(/obj/item/gun/ballistic/shotgun/hellfire)
 	crate_name = "shotgun crate"
