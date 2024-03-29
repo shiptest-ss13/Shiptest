@@ -373,7 +373,6 @@
 	pixel_y = 7
 	},
 /obj/item/clothing/under/syndicate/sniper,
-/obj/item/clothing/under/syndicate/officer,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/suit/armor/vest/duster,
@@ -1876,10 +1875,8 @@
 	pixel_y = 5;
 	pixel_x = -8
 	},
-/obj/machinery/fax{
-	pixel_y = 0
-	},
 /obj/machinery/light/directional/south,
+/obj/machinery/fax/syndicate,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "rS" = (
@@ -2474,11 +2471,11 @@
 /turf/open/floor/pod/dark,
 /area/ship/medical)
 "wE" = (
-/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
-	dir = 8
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/light/directional/east,
+/obj/machinery/chem_dispenser/drinks/beer{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "wG" = (
@@ -2904,7 +2901,6 @@
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/c10mm,
-/obj/item/clothing/under/syndicate/officer,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/suit/armor/vest/leather{
 	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of the Gorlex Marauders."
@@ -2921,6 +2917,7 @@
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/clothing/suit/armor/vest/blueshirt,
 /obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/under/syndicate,
 /obj/item/clothing/accessory/holster,
 /obj/item/clothing/shoes/combat,
 /obj/item/radio/headset/syndicate,
@@ -3155,7 +3152,6 @@
 	req_access_txt = "20"
 	},
 /obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/under/syndicate/officer,
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
 /obj/item/clothing/gloves/krav_maga/combatglovesplus,
 /obj/item/clothing/shoes/jackboots,
@@ -3171,7 +3167,7 @@
 /area/ship/bridge)
 "El" = (
 /obj/structure/filingcabinet,
-/obj/item/folder/syndicate/mining,
+/obj/item/folder/documents/syndicate/red,
 /turf/open/floor/engine,
 /area/ship/bridge)
 "Em" = (
@@ -4095,7 +4091,6 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 9
 	},
-/obj/item/clothing/mask/gas/sechailer/minutemen,
 /obj/item/clothing/under/syndicate/skirt,
 /obj/structure/closet/syndicate{
 	desc = "It's a basic storage unit.";
@@ -4450,10 +4445,10 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "QC" = (
-/obj/machinery/chem_dispenser/drinks/fullupgrade{
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks{
 	dir = 8
 	},
-/obj/structure/table/reinforced,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "QI" = (
