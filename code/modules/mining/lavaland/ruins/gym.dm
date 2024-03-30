@@ -22,20 +22,20 @@
 	add_fingerprint(user)
 	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
 	var/uraction = anchored ? "unbolt [src] from" : "bolt [src] to"
-	user.visible_message("<span class='warning'>[user] [action] the floor.</span>", "<span class='notice'>You start to [uraction] the floor...</span>", "<span class='hear'>You hear rustling noises.</span>")
+	user.visible_message(span_warning("[user] [action] the floor."), span_notice("You start to [uraction] the floor..."), span_hear("You hear rustling noises."))
 	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
 		set_anchored(!anchored)
-		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
+		to_chat(user, span_notice("You [anchored ? "bolt" : "unbolt"] [src] from the floor."))
 	return TRUE
 
 /obj/structure/punching_bag/wirecutter_act(mob/living/user, obj/item/W)
 	. = ..()
 	if(!anchored)
-		user.visible_message("<span class='warning'>[user] cuts apart [src].</span>", "<span class='notice'>You start to cut apart [src].</span>", "<span class='hear'>You hear cutting.</span>")
+		user.visible_message(span_warning("[user] cuts apart [src]."), span_notice("You start to cut apart [src]."), span_hear("You hear cutting."))
 		if(W.use_tool(src, user, 50, volume=100))
 			if(anchored)
 				return TRUE
-			to_chat(user, "<span class='notice'>You cut apart [src].</span>")
+			to_chat(user, span_notice("You cut apart [src]."))
 			deconstruct(TRUE)
 		return TRUE
 
@@ -45,9 +45,9 @@
 /obj/structure/punching_bag/examine(mob/user)
 	. = ..()
 	if(anchored)
-		. += "<span class='notice'>[src] is <b>bolted</b> to the floor.</span>"
+		. += span_notice("[src] is <b>bolted</b> to the floor.")
 	else
-		. += "<span class='notice'>[src] is no longer <i>bolted</i> to the floor, and the seams can be <b>cut</b> apart.</span>"
+		. += span_notice("[src] is no longer <i>bolted</i> to the floor, and the seams can be <b>cut</b> apart.")
 
 /obj/structure/punching_bag/attack_hand(mob/user as mob)
 	. = ..()
@@ -88,20 +88,20 @@
 	add_fingerprint(user)
 	var/action = anchored ? "unbolts [src] from" : "bolts [src] to"
 	var/uraction = anchored ? "unbolt [src] from" : "bolt [src] to"
-	user.visible_message("<span class='warning'>[user] [action] the floor.</span>", "<span class='notice'>You start to [uraction] the floor...</span>", "<span class='hear'>You hear rustling noises.</span>")
+	user.visible_message(span_warning("[user] [action] the floor."), span_notice("You start to [uraction] the floor..."), span_hear("You hear rustling noises."))
 	if(W.use_tool(src, user, 50, volume=100, extra_checks = CALLBACK(src, PROC_REF(check_anchored_state), anchored)))
 		set_anchored(!anchored)
-		to_chat(user, "<span class='notice'>You [anchored ? "bolt" : "unbolt"] [src] from the floor.</span>")
+		to_chat(user, span_notice("You [anchored ? "bolt" : "unbolt"] [src] from the floor."))
 	return TRUE
 
 /obj/structure/weightmachine/screwdriver_act(mob/living/user, obj/item/W)
 	. = ..()
 	if(!anchored)
-		user.visible_message("<span class='warning'>[user] screws apart [src].</span>", "<span class='notice'>You start to screw apart [src].</span>", "<span class='hear'>You hear screwing.</span>")
+		user.visible_message(span_warning("[user] screws apart [src]."), span_notice("You start to screw apart [src]."), span_hear("You hear screwing."))
 		if(W.use_tool(src, user, 50, volume=100))
 			if(anchored)
 				return TRUE
-			to_chat(user, "<span class='notice'>You screw apart [src].</span>")
+			to_chat(user, span_notice("You screw apart [src]."))
 			deconstruct(TRUE)
 		return TRUE
 
@@ -111,9 +111,9 @@
 /obj/structure/weightmachine/examine(mob/user)
 	. = ..()
 	if(anchored)
-		. += "<span class='notice'>[src] is <b>bolted</b> to the floor.</span>"
+		. += span_notice("[src] is <b>bolted</b> to the floor.")
 	else
-		. += "<span class='notice'>[src] is no longer <i>bolted</i> to the floor, and the <b>screws</b> are exposed.</span>"
+		. += span_notice("[src] is no longer <i>bolted</i> to the floor, and the <b>screws</b> are exposed.")
 
 /obj/structure/weightmachine/update_overlays()
 	. = ..()
@@ -126,7 +126,7 @@
 	if(.)
 		return
 	if(obj_flags & IN_USE)
-		to_chat(user, "<span class='warning'>It's already in use - wait a bit!</span>")
+		to_chat(user, span_warning("It's already in use - wait a bit!"))
 		return
 	else
 		obj_flags |= IN_USE
