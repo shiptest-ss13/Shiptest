@@ -344,6 +344,15 @@
 	},
 /turf/open/floor/vault,
 /area/ship/security/armory)
+"cQ" = (
+/obj/structure/bed,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/bedsheet/purple,
+/obj/structure/curtain/cloth/grey,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "cR" = (
 /turf/open/floor/engine/hull,
 /area/ship/external/dark)
@@ -1601,7 +1610,7 @@
 /area/ship/hallway/port)
 "no" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
+/obj/item/bedsheet/cosmos,
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -5484,6 +5493,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
+"Ri" = (
+/obj/structure/bed,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/bedsheet/yellow,
+/obj/structure/curtain/cloth/grey,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "Rl" = (
 /obj/machinery/shower{
 	dir = 4
@@ -5593,6 +5611,15 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/port)
+"Sa" = (
+/obj/structure/bed,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/item/bedsheet/black,
+/obj/structure/curtain/cloth/grey,
+/turf/open/floor/plasteel/dark,
+/area/ship/crew/dorm)
 "Sc" = (
 /obj/effect/turf_decal/corner/opaque/lime/mono,
 /obj/effect/turf_decal/trimline/opaque/bottlegreen/filled/line,
@@ -5825,10 +5852,10 @@
 /area/ship/engineering/engines/port)
 "UB" = (
 /obj/structure/bed,
-/obj/item/bedsheet/random,
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/item/bedsheet/red,
 /obj/structure/curtain/cloth/grey,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/dorm)
@@ -6965,7 +6992,7 @@ fG
 (10,1,1) = {"
 eE
 rd
-UB
+Ri
 UB
 EJ
 Fm
@@ -7021,8 +7048,8 @@ uJ
 (12,1,1) = {"
 eE
 no
-UB
-UB
+Sa
+cQ
 Vp
 wm
 Eg
