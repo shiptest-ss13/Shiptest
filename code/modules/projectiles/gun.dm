@@ -776,18 +776,17 @@
 
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
-	//Sort of reimplements old suicide behavior just for guns.
-	if(chambered?.BB)
+	// Check if the gun is usable, a round is chambered, and if the chambered round's projectile has damage
+	var/obj/item/organ/brain/brain_to_blast = target.getorganslot(ORGAN_SLOT_BRAIN)
+	if(chambered?.BB && brain_to_blast && can_trigger_gun(user) && chambered.BB.damage > 0)
+		var/turf/splat_turf = get_turf(target)
+		var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
+		var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, shotbrain, 1, FALSE, target)
 		chambered.BB.damage *= 4
 		process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
-		var/obj/item/organ/brain/shotbrain = target.getorganslot(ORGAN_SLOT_BRAIN)
-		if(shotbrain && chambered.BB.damage > 0)
-			var/turf/splat_turf = get_turf(target)
-			var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
-			var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, shotbrain, 1, FALSE, target)
-			shotbrain.Remove(target)
-			shotbrain.forceMove(splat_turf)
-			shotbrain.throw_at(splat_target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback = gibspawner)
+		brain_to_blast.Remove(target)
+		brain_to_blast.forceMove(splat_turf)
+		brain_to_blast.throw_at(splat_target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback = gibspawner)
 
 #undef BRAINS_BLOWN_THROW_RANGE
 #undef BRAINS_BLOWN_THROW_SPEED
