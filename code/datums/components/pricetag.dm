@@ -23,7 +23,7 @@
 	var/price = item_value
 	if(price)
 		var/adjusted_value = price*(profit_ratio/100)
-		owner.adjust_money(adjusted_value)
+		owner.adjust_money(adjusted_value, "pricetag")
 		owner.bank_card_talk("Sale recorded. [adjusted_value] credits added to account.")
 		return TRUE
 

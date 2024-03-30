@@ -127,7 +127,6 @@
 	refill_canister = /obj/item/vending_refill/clothing
 	default_price = 60
 	extra_price = 120
-	payment_department = NO_FREEBIES
 	light_mask = "wardrobe-light-mask"
 	light_color = LIGHT_COLOR_ELECTRIC_GREEN
 

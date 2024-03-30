@@ -15,7 +15,6 @@
 	refill_canister = /obj/item/vending_refill/coffee
 	default_price = 45
 	extra_price = 150
-	payment_department = ACCOUNT_SRV
 	light_mask = "coffee-light-mask"
 	light_color = COLOR_DARK_MODERATE_ORANGE
 

@@ -52,6 +52,7 @@
 
 /datum/outfit/job/nanotrasen/captain/lp
 	name = "Nanotrasen - Loss Prevention Lieutenant"
+	id_assignment = "Lieutenant"
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
@@ -138,6 +139,7 @@
 
 /datum/outfit/job/nanotrasen/roboticist
 	name = "Nanotrasen - Mech Technician"
+	id_assignment = "Mech Technician"
 	job_icon = "roboticist"
 	jobtype = /datum/job/roboticist
 
@@ -152,6 +154,7 @@
 
 /datum/outfit/job/nanotrasen/pilot
 	name = "Nanotrasen - Pilot"
+	id_assignment = "Pilot"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military
 	suit = /obj/item/clothing/suit/jacket/leather/duster
@@ -177,9 +180,9 @@
 	chameleon_extras = /obj/item/stamp/law
 
 /datum/outfit/job/nanotrasen/lawyer/corporaterepresentative
-	name = "Nanotrasen - Lawyer (Corporate Representative)"
+	name = "Nanotrasen - Corporate Representative"
+	id_assignment = "Corporate Representative"
 	job_icon = "nanotrasen"
-
 
 	uniform = /obj/item/clothing/under/rank/command/head_of_personnel/suit
 	suit = null
@@ -254,6 +257,7 @@
 
 /datum/outfit/job/nanotrasen/security/mech_pilot
 	name = "Nanotrasen - Mech Pilot"
+	id_assignment = "Mech Pilot"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
 	head = /obj/item/clothing/head/beret/sec/officer
@@ -262,6 +266,7 @@
 
 /datum/outfit/job/nanotrasen/security/lp
 	name = "Nanotrasen - LP Security Specialist"
+	id_assignment = "Security Specialist"
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
@@ -396,6 +401,7 @@
 
 /datum/outfit/job/nanotrasen/doctor/lp
 	name = "Nanotrasen - LP Medical Specialist"
+	id_assignment = "Medical Specialist"
 
 	implants = list(/obj/item/implant/mindshield)
 	ears = /obj/item/radio/headset/nanotrasen/alt/captain
