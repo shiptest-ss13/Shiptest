@@ -225,8 +225,8 @@
 
 /////////////////
 
-#define COMSIG_ENTER_AREA "enter_area" //from base of area/Entered(): (/area)
-#define COMSIG_EXIT_AREA "exit_area" //from base of area/Exited(): (/area)
+#define COMSIG_ENTER_AREA "enter_area" //from base of area/Entered(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
+#define COMSIG_EXIT_AREA "exit_area" //from base of area/Exited(): (/area). Sent to "area-sensitive" movables, see __DEFINES/traits.dm for info.
 
 #define COMSIG_CLICK "atom_click" //from base of atom/Click(): (location, control, params, mob/user)
 #define COMSIG_CLICK_SHIFT "shift_click" //from base of atom/ShiftClick(): (/mob)
@@ -762,3 +762,6 @@
 /// send when enabling/diabling an autofire component
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
+
+///called in /obj/item/gun/process_chamber (src)
+#define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"

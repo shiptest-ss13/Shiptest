@@ -10,7 +10,7 @@
 	var/requires_bodypart_type = BODYTYPE_ORGANIC				//Prevents you from performing an operation on incorrect limbs. 0 for any limb type
 	var/list/possible_locs = list() 							//Multiple locations
 	var/ignore_clothes = FALSE									//This surgery ignores clothes
-	var/mob/living/carbon/target								//Operation target mob
+	var/mob/living/target										//Operation target mob
 	var/obj/item/bodypart/operated_bodypart						//Operable body part
 	var/requires_bodypart = TRUE								//Surgery available only when a bodypart is present, or only when it is missing.
 	var/speed_modifier = 0										//Step speed modifier
@@ -135,14 +135,13 @@
 /obj/item/disk/surgery
 	name = "Surgery Procedure Disk"
 	desc = "A disk that contains advanced surgery procedures, must be loaded into an Operating Console."
-	icon_state = "datadisk1"
+	illustration = "med"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
 	var/list/surgeries
 
 /obj/item/disk/surgery/debug
 	name = "Debug Surgery Disk"
 	desc = "A disk that contains all existing surgery procedures."
-	icon_state = "datadisk1"
 	custom_materials = list(/datum/material/iron=300, /datum/material/glass=100)
 
 /obj/item/disk/surgery/debug/Initialize()

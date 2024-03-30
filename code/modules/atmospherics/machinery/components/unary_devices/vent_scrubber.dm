@@ -276,7 +276,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer1
 	piping_layer = 1
-	icon_state = "scrub_map-1"
+	icon_state = "scrub_map-2"
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer2
 	piping_layer = 2
@@ -292,7 +292,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1
 	piping_layer = 1
-	icon_state = "scrub_map_on-1"
+	icon_state = "scrub_map_on-2"
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2
 	piping_layer = 2

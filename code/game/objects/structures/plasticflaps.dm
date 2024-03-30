@@ -111,4 +111,4 @@
 	var/atom/oldloc = loc
 	. = ..()
 	if (oldloc)
-		oldloc.air_update_turf(1)
+		oldloc.air_update_turf(TRUE)

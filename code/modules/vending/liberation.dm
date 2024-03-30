@@ -32,5 +32,4 @@
 	resistance_flags = FIRE_PROOF
 	default_price = 150
 	extra_price = 500
-	payment_department = ACCOUNT_SEC
 	light_mask = "liberation-light-mask"

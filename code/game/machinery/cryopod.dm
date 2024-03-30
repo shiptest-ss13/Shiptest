@@ -303,18 +303,30 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
 
-	if(linked_ship)
-		if(mob_occupant.job in linked_ship.current_ship.job_slots)
-			linked_ship.current_ship.job_slots[mob_occupant.job]++
+	if(!isnull(mob_occupant.mind.original_ship))
+		var/datum/overmap/ship/controlled/original_ship_instance = mob_occupant.mind.original_ship.resolve()
 
-		if(mob_occupant.mind && mob_occupant.mind.assigned_role)
-			//Handle job slot/tater cleanup.
-			if(LAZYLEN(mob_occupant.mind.objectives))
-				mob_occupant.mind.objectives.Cut()
-				mob_occupant.mind.special_role = null
+		var/job_identifier = mob_occupant.job
+
+		var/datum/job/crew_job
+		for(var/datum/job/job as anything in original_ship_instance.job_slots)
+			if(job.name == job_identifier)
+				crew_job = job
+				break
+
+		if(isnull(crew_job))
+			message_admins(span_warning("Failed to identify the job of [key_name_admin(mob_occupant)] belonging to [original_ship_instance.name] at [loc_name(src)]."))
+		else
+			original_ship_instance.job_slots[crew_job]++
+			original_ship_instance.job_holder_refs[crew_job] -= WEAKREF(mob_occupant)
+
+	if(mob_occupant.mind && mob_occupant.mind.assigned_role)
+		//Handle job slot/tater cleanup.
+		if(LAZYLEN(mob_occupant.mind.objectives))
+			mob_occupant.mind.objectives.Cut()
+			mob_occupant.mind.special_role = null
 
 	// Delete them from datacore.
-
 	var/announce_rank = null
 	for(var/datum/data/record/R in GLOB.data_core.medical)
 		if((R.fields["name"] == mob_occupant.real_name))
@@ -327,10 +339,8 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			announce_rank = G.fields["rank"]
 			qdel(G)
 
-	// Regardless of what ship you spawned in you need to be removed from it.
-	// This covers scenarios where you spawn in one ship but cryo in another.
-	for(var/datum/overmap/ship/controlled/sim_ship as anything in SSovermap.controlled_ships)
-		sim_ship.manifest -= mob_occupant.real_name
+	var/datum/overmap/ship/controlled/original_ship = mob_occupant.mind.original_ship.resolve()
+	original_ship.manifest -= mob_occupant.real_name
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
 
@@ -353,6 +363,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 			continue//means we already moved whatever this thing was in
 			//I'm a professional, okay
 			//what the fuck are you on rn and can I have some
+			//who are you even talking to
 		if(is_type_in_typecache(W, preserve_items_typecache))
 			if(control_computer_obj && control_computer_obj.allow_items)
 				control_computer_obj.frozen_items += W
@@ -378,9 +389,10 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		else
 			mob_occupant.ghostize(TRUE)
 	handle_objectives()
-	QDEL_NULL(occupant)
 	open_machine()
-	name = initial(name)
+	qdel(mob_occupant)
+	//Just in case open_machine didn't clear it
+	occupant = null
 
 /obj/machinery/cryopod/MouseDrop_T(mob/living/target, mob/user)
 	if(!istype(target) || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || !ismob(target) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
@@ -436,7 +448,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 	var/wakeupmessage = "The cryopod shudders as the pneumatic seals separating you and the waking world let out a hiss."
 	if(prob(60))
-		wakeupmessage += "A sickly feeling along with the pangs of hunger greet you upon your awakening."
+		wakeupmessage += " A sickly feeling along with the pangs of hunger greet you upon your awakening."
 		sleepyhead.set_nutrition(100)
 		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
 	to_chat(sleepyhead, span_danger(examine_block(wakeupmessage)))

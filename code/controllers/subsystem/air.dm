@@ -9,13 +9,13 @@ SUBSYSTEM_DEF(air)
 	var/cost_turfs = 0
 	var/cost_groups = 0
 	var/cost_highpressure = 0
-	var/cost_deferred_airs
 	var/cost_hotspots = 0
 	var/cost_post_process = 0
 	var/cost_superconductivity = 0
 	var/cost_pipenets = 0
 	var/cost_rebuilds = 0
 	var/cost_atmos_machinery = 0
+	var/cost_atmos_machinery_air = 0
 	var/cost_equalize = 0
 	var/thread_wait_ticks = 0
 	var/cur_thread_wait_ticks = 0
@@ -31,8 +31,6 @@ SUBSYSTEM_DEF(air)
 	var/list/rebuild_queue = list()
 	//Subservient to rebuild queue
 	var/list/expansion_queue = list()
-	var/list/deferred_airs = list()
-	var/max_deferred_airs = 0
 
 	///List of all currently processing atmos machinery that doesn't interact with the air around it
 	var/list/obj/machinery/atmos_machinery = list()
@@ -61,7 +59,7 @@ SUBSYSTEM_DEF(air)
 
 	var/log_explosive_decompression = TRUE // If things get spammy, admemes can turn this off.
 
-	var/planet_equalize_enabled = FALSE
+	var/planet_equalize_enabled = TRUE
 	// Max number of turfs equalization will grab.
 	var/equalize_turf_limit = 30
 	// Max number of turfs to look for a space turf, and max number of turfs that will be decompressed.
@@ -75,7 +73,6 @@ SUBSYSTEM_DEF(air)
 	// Excited group processing will try to equalize groups with total pressure difference less than this amount.
 	var/excited_group_pressure_goal = 1
 
-
 /datum/controller/subsystem/air/stat_entry(msg)
 	msg += "C:{"
 	msg += "HP:[round(cost_highpressure,1)]|"
@@ -83,7 +80,8 @@ SUBSYSTEM_DEF(air)
 	msg += "HE:[round(heat_process_time(),1)]|"
 	msg += "SC:[round(cost_superconductivity,1)]|"
 	msg += "PN:[round(cost_pipenets,1)]|"
-	msg += "AM:[round(cost_atmos_machinery,1)]"
+	msg += "AM:[round(cost_atmos_machinery,1)]|"
+	msg += "AA:[round(cost_atmos_machinery_air,1)]"
 	msg += "} "
 	msg += "TC:{"
 	msg += "AT:[round(cost_turfs,1)]|"
@@ -92,14 +90,13 @@ SUBSYSTEM_DEF(air)
 	msg += "PO:[round(cost_post_process,1)]"
 	msg += "}"
 	msg += "TH:[round(thread_wait_ticks,1)]|"
-	msg += "HS:[hotspots.len]|"
-	msg += "PN:[networks.len]|"
-	msg += "HP:[high_pressure_delta.len]|"
+	msg += "HS:[length(hotspots)]|"
+	msg += "PN:[length(networks)]|"
+	msg += "HP:[length(high_pressure_delta)]|"
 	msg += "HT:[high_pressure_turfs]|"
 	msg += "LT:[low_pressure_turfs]|"
 	msg += "ET:[num_equalize_processed]|"
 	msg += "GT:[num_group_turfs_processed]|"
-	msg += "DF:[max_deferred_airs]|"
 	msg += "GA:[get_amt_gas_mixes()]|"
 	msg += "MG:[get_max_gas_mixes()]"
 	return ..()
@@ -115,8 +112,6 @@ SUBSYSTEM_DEF(air)
 
 /datum/controller/subsystem/air/proc/extools_update_ssair()
 
-/datum/controller/subsystem/air/proc/auxtools_update_reactions()
-
 /proc/reset_all_air()
 	SSair.can_fire = FALSE
 	message_admins("Air reset begun.")
@@ -126,22 +121,7 @@ SUBSYSTEM_DEF(air)
 	message_admins("Air reset done.")
 	SSair.can_fire = TRUE
 
-/datum/controller/subsystem/air/proc/thread_running()
-	return FALSE
-
-/proc/fix_corrupted_atmos()
-
-/datum/admins/proc/fixcorruption()
-	set category = "Debug"
-	set desc="Fixes air that has weird NaNs (-1.#IND and such). Hopefully."
-	set name="Fix Infinite Air"
-	fix_corrupted_atmos()
-
 /datum/controller/subsystem/air/fire(resumed = 0)
-	if(thread_running())
-		pause()
-		return
-
 	var/timer = TICK_USAGE_REAL
 
 	//Rebuilds can happen at any time, so this needs to be done outside of the normal system
@@ -155,6 +135,44 @@ SUBSYSTEM_DEF(air)
 		if(state != SS_RUNNING)
 			return
 
+	if(currentpart == SSAIR_ACTIVETURFS)
+		timer = TICK_USAGE_REAL
+		process_turfs(resumed)
+		cost_turfs = MC_AVERAGE(cost_turfs, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
+		if(state != SS_RUNNING)
+			return
+		resumed = 0
+
+		currentpart = SSAIR_EXCITEDGROUPS
+
+	if(currentpart == SSAIR_EXCITEDGROUPS)
+		timer = TICK_USAGE_REAL
+		process_excited_groups(resumed)
+		cost_groups = MC_AVERAGE(cost_groups, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
+		if(state != SS_RUNNING)
+			return
+		resumed = 0
+		currentpart = SSAIR_EQUALIZE
+
+	if(currentpart == SSAIR_EQUALIZE)
+		timer = TICK_USAGE_REAL
+		process_turf_equalize(resumed)
+		cost_equalize = MC_AVERAGE(cost_equalize, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
+		if(state != SS_RUNNING)
+			return
+		resumed = 0
+		currentpart = SSAIR_FINALIZE_TURFS
+
+	if(currentpart == SSAIR_FINALIZE_TURFS)
+		finish_turf_processing(resumed)
+		if(state != SS_RUNNING)
+			cur_thread_wait_ticks++
+			return
+		resumed = 0
+		thread_wait_ticks = MC_AVERAGE(thread_wait_ticks, cur_thread_wait_ticks)
+		cur_thread_wait_ticks = 0
+		currentpart = SSAIR_PIPENETS
+
 	if(currentpart == SSAIR_PIPENETS || !resumed)
 		timer = TICK_USAGE_REAL
 		process_pipenets(resumed)
@@ -163,6 +181,7 @@ SUBSYSTEM_DEF(air)
 			return
 		resumed = 0
 		currentpart = SSAIR_ATMOSMACHINERY
+
 	// This is only machinery like filters, mixers that don't interact with air
 	if(currentpart == SSAIR_ATMOSMACHINERY)
 		timer = TICK_USAGE_REAL
@@ -180,31 +199,12 @@ SUBSYSTEM_DEF(air)
 		if(state != SS_RUNNING)
 			return
 		resumed = 0
-		currentpart = SSAIR_FINALIZE_TURFS
-	// This literally just waits for the turf processing thread to finish, doesn't do anything else.
-	// this is necessary cause the next step after this interacts with the air--we get consistency
-	// issues if we don't wait for it, disappearing gases etc.
-	if(currentpart == SSAIR_FINALIZE_TURFS)
-		finish_turf_processing(resumed)
-		if(state != SS_RUNNING)
-			cur_thread_wait_ticks++
-			return
-		resumed = 0
-		thread_wait_ticks = MC_AVERAGE(thread_wait_ticks, cur_thread_wait_ticks)
-		cur_thread_wait_ticks = 0
-		currentpart = SSAIR_DEFERRED_AIRS
-	if(currentpart == SSAIR_DEFERRED_AIRS)
-		timer = TICK_USAGE_REAL
-		process_deferred_airs(resumed)
-		cost_deferred_airs = MC_AVERAGE(cost_deferred_airs, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
 		currentpart = SSAIR_ATMOSMACHINERY_AIR
+
 	if(currentpart == SSAIR_ATMOSMACHINERY_AIR)
 		timer = TICK_USAGE_REAL
 		process_atmos_air_machinery(resumed)
-		cost_atmos_machinery = MC_AVERAGE(cost_atmos_machinery, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
+		cost_atmos_machinery_air = MC_AVERAGE(cost_atmos_machinery_air, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
 		if(state != SS_RUNNING)
 			return
 		resumed = 0
@@ -218,6 +218,7 @@ SUBSYSTEM_DEF(air)
 			return
 		resumed = 0
 		currentpart = heat_enabled ? SSAIR_TURF_CONDUCTION : SSAIR_ACTIVETURFS
+
 	// Heat -- slow and of questionable usefulness. Off by default for this reason. Pretty cool, though.
 	if(currentpart == SSAIR_TURF_CONDUCTION)
 		timer = TICK_USAGE_REAL
@@ -228,46 +229,6 @@ SUBSYSTEM_DEF(air)
 			return
 		resumed = 0
 		currentpart = SSAIR_ACTIVETURFS
-	// This simply starts the turf thread. It runs in the background until the FINALIZE_TURFS step, at which point it's waited for.
-	// This also happens to do all the commented out stuff below, all in a single separate thread. This is mostly so that the
-	// waiting is consistent.
-	if(currentpart == SSAIR_ACTIVETURFS)
-		timer = TICK_USAGE_REAL
-		process_turfs(resumed)
-		cost_turfs = MC_AVERAGE(cost_turfs, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
-	/*
-	// Monstermos and/or Putnamos--making large pressure deltas move faster
-	if(currentpart == SSAIR_EQUALIZE)
-		timer = TICK_USAGE_REAL
-		process_turf_equalize(resumed)
-		cost_equalize = MC_AVERAGE(cost_equalize, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
-		currentpart = SSAIR_EXCITEDGROUPS
-	// Making small pressure deltas equalize immediately so they don't process anymore
-	if(currentpart == SSAIR_EXCITEDGROUPS)
-		timer = TICK_USAGE_REAL
-		process_excited_groups(resumed)
-		cost_groups = MC_AVERAGE(cost_groups, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
-		currentpart = SSAIR_TURF_POST_PROCESS
-	// Quick multithreaded "should we display/react?" checks followed by finishing those up before the next step
-	if(currentpart == SSAIR_TURF_POST_PROCESS)
-		timer = TICK_USAGE_REAL
-		post_process_turfs(resumed)
-		cost_post_process = MC_AVERAGE(cost_post_process, TICK_DELTA_TO_MS(TICK_USAGE_REAL - timer))
-		if(state != SS_RUNNING)
-			return
-		resumed = 0
-		currentpart = SSAIR_HOTSPOTS
-	*/
-	currentpart = SSAIR_PIPENETS
 
 /datum/controller/subsystem/air/Recover()
 	hotspots = SSair.hotspots
@@ -280,7 +241,6 @@ SUBSYSTEM_DEF(air)
 	gas_reactions = SSair.gas_reactions
 	high_pressure_delta = SSair.high_pressure_delta
 	currentrun = SSair.currentrun
-	deferred_airs = SSair.deferred_airs
 	string_mixes = SSair.string_mixes
 
 /**
@@ -425,31 +385,6 @@ SUBSYSTEM_DEF(air)
 		if (MC_TICK_CHECK)
 			return
 
-/datum/controller/subsystem/air/proc/process_deferred_airs(resumed = 0)
-	max_deferred_airs = max(deferred_airs.len,max_deferred_airs)
-	while(deferred_airs.len)
-		var/list/cur_op = deferred_airs[deferred_airs.len]
-		deferred_airs.len--
-		var/datum/gas_mixture/air1
-		var/datum/gas_mixture/air2
-		if(isopenturf(cur_op[1]))
-			var/turf/open/T = cur_op[1]
-			air1 = T.return_air()
-		else
-			air1 = cur_op[1]
-		if(isopenturf(cur_op[2]))
-			var/turf/open/T = cur_op[2]
-			air2 = T.return_air()
-		else
-			air2 = cur_op[2]
-		if(istype(cur_op[3], /datum/callback))
-			var/datum/callback/cb = cur_op[3]
-			cb.Invoke(air1, air2)
-		else
-			air1.transfer_ratio_to(air2, cur_op[3])
-		if(MC_TICK_CHECK)
-			return
-
 /datum/controller/subsystem/air/proc/process_atmos_machinery(resumed = 0)
 	var/seconds = wait * 0.1
 	if (!resumed)
@@ -512,64 +447,23 @@ SUBSYSTEM_DEF(air)
 		if(MC_TICK_CHECK)
 			return
 
+
 /datum/controller/subsystem/air/proc/process_turf_equalize(resumed = 0)
-	if(process_turf_equalize_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(process_turf_equalize_auxtools(MC_TICK_REMAINING_MS))
 		pause()
-	/*
-	//cache for sanic speed
-	var/fire_count = times_fired
-	if (!resumed)
-		src.currentrun = active_turfs.Copy()
-	//cache for sanic speed (lists are references anyways)
-	var/list/currentrun = src.currentrun
-	while(currentrun.len)
-		var/turf/open/T = currentrun[currentrun.len]
-		currentrun.len--
-		if (T)
-			T.equalize_pressure_in_zone(fire_count)
-			//equalize_pressure_in_zone(T, fire_count)
-		if (MC_TICK_CHECK)
-			return
-	*/
 
 /datum/controller/subsystem/air/proc/process_turfs(resumed = 0)
-	if(process_turfs_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(process_turfs_auxtools(MC_TICK_REMAINING_MS))
 		pause()
-	/*
-	//cache for sanic speed
-	var/fire_count = times_fired
-	if (!resumed)
-		src.currentrun = active_turfs.Copy()
-	//cache for sanic speed (lists are references anyways)
-	var/list/currentrun = src.currentrun
-	while(currentrun.len)
-		var/turf/open/T = currentrun[currentrun.len]
-		currentrun.len--
-		if (T)
-			T.process_cell(fire_count)
-		if (MC_TICK_CHECK)
-			return
-	*/
 
 /datum/controller/subsystem/air/proc/process_excited_groups(resumed = 0)
-	if(process_excited_groups_auxtools(resumed,MC_TICK_REMAINING_MS))
+	if(process_excited_groups_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 
 /datum/controller/subsystem/air/proc/finish_turf_processing(resumed = 0)
 	if(finish_turf_processing_auxtools(MC_TICK_REMAINING_MS))
 		pause()
 
-/datum/controller/subsystem/air/proc/post_process_turfs(resumed = 0)
-	if(post_process_turfs_auxtools(resumed,MC_TICK_REMAINING_MS))
-		pause()
-
-/datum/controller/subsystem/air/proc/finish_turf_processing_auxtools()
-/datum/controller/subsystem/air/proc/process_turfs_auxtools()
-/datum/controller/subsystem/air/proc/post_process_turfs_auxtools()
-/datum/controller/subsystem/air/proc/process_turf_equalize_auxtools()
-/datum/controller/subsystem/air/proc/process_excited_groups_auxtools()
-/datum/controller/subsystem/air/proc/get_amt_gas_mixes()
-/datum/controller/subsystem/air/proc/get_max_gas_mixes()
 /datum/controller/subsystem/air/proc/turf_process_time()
 /datum/controller/subsystem/air/proc/heat_process_time()
 
@@ -607,8 +501,8 @@ SUBSYSTEM_DEF(air)
 		CHECK_TICK
 
 //this can't be done with setup_atmos_machinery() because
-//	all atmos machinery has to initalize before the first
-//	pipenet can be built.
+//all atmos machinery has to initalize before the first
+//pipenet can be built.
 /datum/controller/subsystem/air/proc/setup_pipenets()
 	for (var/obj/machinery/atmospherics/AM in atmos_machinery)
 		var/list/targets = AM.get_rebuild_targets()
@@ -642,55 +536,19 @@ SUBSYSTEM_DEF(air)
 
 	return pipe_init_dirs_cache[type]["[dir]"]
 
-// Once we've got __auxtools_parse_gas_string, replace this with the original preprocess_gas_string (commented out, below);
-// there's no need to cache because auxtools can parse strings in an actually reasonable amount of time.
-// Atmosphere datums will also require some changes to put them back how they were before. I am sorry
-/datum/controller/subsystem/air/proc/get_gas_string_mix(gas_string)
+/datum/controller/subsystem/air/proc/preprocess_gas_string(gas_string)
 	if(!string_mixes)
 		generate_atmos()
-
-	var/datum/gas_mixture/ret_mix = string_mixes[gas_string]
-	if(ret_mix)
-		return ret_mix
-
-	ret_mix = new(CELL_VOLUME)
-	var/list/gas_list = params2list(gas_string)
-
-	if(gas_list["TEMP"])
-		var/temp = text2num(gas_list["TEMP"])
-		gas_list -= "TEMP"
-		if(!isnum(temp) || temp < TCMB)
-			temp = TCMB
-		ret_mix.set_temperature(temp)
-	ret_mix.clear()
-	for(var/id in gas_list)
-		ret_mix.set_moles(id, text2num(gas_list[id]))
-	ret_mix.mark_immutable()
-
-	string_mixes[gas_string] = ret_mix
-	return ret_mix
+	if(!string_mixes[gas_string])
+		return gas_string
+	var/datum/atmosphere/mix = string_mixes[gas_string]
+	return mix.gas_string
 
 /datum/controller/subsystem/air/proc/generate_atmos()
 	string_mixes = list()
 	for(var/T in subtypesof(/datum/atmosphere))
-		var/datum/atmosphere/atmostype = new T
-		string_mixes[initial(atmostype.id)] = atmostype.gasmix
-		qdel(atmostype)
-
-// Saved for when we switch to auxmos 2.0 and gain access to __auxtools_parse_gas_string
-// /datum/controller/subsystem/air/proc/preprocess_gas_string(gas_string)
-// 	if(!string_mixes)
-// 		generate_atmos()
-// 	if(!string_mixes[gas_string])
-// 		return gas_string
-// 	var/datum/atmosphere/mix = string_mixes[gas_string]
-// 	return mix.gas_string
-
-// /datum/controller/subsystem/air/proc/generate_atmos()
-// 	string_mixes = list()
-// 	for(var/T in subtypesof(/datum/atmosphere))
-// 		var/datum/atmosphere/atmostype = T
-// 		string_mixes[initial(atmostype.id)] = new atmostype
+		var/datum/atmosphere/atmostype = T
+		string_mixes[initial(atmostype.id)] = new atmostype
 
 
 #undef SSAIR_EXCITEDGROUPS

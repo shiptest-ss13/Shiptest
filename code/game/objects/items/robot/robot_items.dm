@@ -4,7 +4,6 @@
 /obj/item/borg
 	icon = 'icons/mob/robot_items.dmi'
 
-
 /obj/item/borg/stun
 	name = "electrically-charged arm"
 	icon_state = "elecarm"
@@ -543,7 +542,7 @@
 	name = "\improper Hyperkinetic Dampening projector"
 	desc = "A device that projects a dampening field that weakens kinetic energy above a certain threshold. <span class='boldnotice'>Projects a field that drains power per second while active, that will weaken and slow damaging projectiles inside its field.</span> Still being a prototype, it tends to induce a charge on ungrounded metallic surfaces."
 	icon = 'icons/obj/device.dmi'
-	icon_state = "shield"
+	icon_state = "shield0"
 	var/maxenergy = 1500
 	var/energy = 1500
 	var/energy_recharge = 7.5
@@ -710,7 +709,7 @@
 /obj/item/borg/sight/material
 	name = "\proper material vision"
 	sight_mode = BORGMATERIAL
-	icon_state = "material"
+	icon_state = "meson"
 
 /obj/item/borg/sight/hud
 	name = "hud"
