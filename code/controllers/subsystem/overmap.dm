@@ -227,7 +227,7 @@ SUBSYSTEM_DEF(overmap)
 
 /**
  * Spawns a controlled ship with the passed template at the template's preferred spawn location.
- * Inteded for ship purchases, etc.
+ * Intended for ship purchases, etc.
  */
 /datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template)
 	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.
