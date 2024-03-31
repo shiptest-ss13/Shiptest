@@ -889,9 +889,8 @@ GLOBAL_LIST_INIT(empty_ammo_box_recipes, list ( \
 	icon_state = "sheet-ammo"
 	item_state = "sheet-ammo"
 	novariants = TRUE
-	custom_materials = list(/datum/material/empty_ammo_box = MINERAL_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/empty_ammo_box
-	material_type = /datum/material/empty_ammo_box
 	material_modifier = 1
 
 /obj/item/stack/sheet/empty_ammo_box/fifty
