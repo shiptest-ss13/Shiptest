@@ -235,7 +235,7 @@
 	head = /obj/item/clothing/head/gezena
 	gloves = /obj/item/clothing/gloves/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
-	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	neck = /obj/item/clothing/neck/cloak/gezena/command
 	r_hand = /obj/item/gun/energy/kalix/pgf
 
 	backpack = /obj/item/storage/backpack/captain
