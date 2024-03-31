@@ -42,13 +42,14 @@
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]
 			LAZYSET(base_cost, material, (material_amount * 0.10))
-
 			material_amount *= 0.90 // 10% for the container
 			material_amount /= max_ammo
 			LAZYSET(bullet_cost, material, material_amount)
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
+	else
+		update_custom_materials()
 	update_appearance()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun

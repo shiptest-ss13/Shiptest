@@ -870,6 +870,14 @@
 	build_path = /obj/item/ammo_box/c556mmHITP/surplus
 	category = list("initial", "Security", "Ammo")
 
+/datum/design/empty_ammo_box
+	name = "Empty Ammo Box"
+	id = "ammo-empty"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/stack/sheet/empty_ammo_box
+	category = list("initial", "Security", "Ammo")
+
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
 	id = "cleaver"
