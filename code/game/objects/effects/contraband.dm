@@ -867,7 +867,7 @@
 
 /obj/structure/sign/poster/solgov/solgov_logo
 	name = "Solgov"
-	desc = "The seal of The Most Serene Solar and Intersolar Confederation, or more boringly known as SolGov. \"The State is a sapling: Waters of change may drown it, and rays of fear may wither it, but well-tended it will one day bear fruit.\""
+	desc = "The seal of The Most Serene Solar and Intersolar Confederation, or more boringly known as Protectorate. \"The State is a sapling: Waters of change may drown it, and rays of fear may wither it, but well-tended it will one day bear fruit.\""
 	icon_state = "poster-solgov"
 
 /obj/structure/sign/poster/solgov/terra
@@ -926,7 +926,7 @@
 
 /obj/structure/sign/poster/solgov/solgov_enlist //much better.
 	name = "Enlist"
-	desc = "Enlist to be a part of the SolGov Exploration Forces!"
+	desc = "Enlist to be a part of the Protectorate Exploration Forces!"
 	icon_state = "poster_solgov_enlist_legit"
 
 /obj/structure/sign/poster/solgov/nanomichi_ad
@@ -980,12 +980,12 @@
 
 /obj/structure/sign/poster/clip/lanchester
 	name = "Lanchester City"
-	desc = "Lanchester City, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed Frontiersmen ships and the massive entertainment industry."
+	desc = "Lanchester City, one of the many moons of the gas giant Maxin. A moon well known for it's numerous, massive factories. This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as crashed USCM ships and the massive entertainment industry."
 	icon_state = "poster-clip_lanchester"
 
 /obj/structure/sign/poster/clip/serene
 	name = "Serene"
-	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so darn cold.\" This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old Frontiersmen War sites and Xenofauna war sites."
+	desc = "Serene, the fifth planet of the Druja system. Covered with a thick sheet of snow, the atmosphere has been described as \"Breathable, if it weren't so darn cold.\" This poster is attempting to encounrage tourism with this poster by listing several tourist attractions, such as old USCM War sites and Xenofauna war sites."
 	icon_state = "poster-clip_serene"
 
 // Syndicate posters. Since syndicate are dived lorewise, this would only make sense on pre-split ships.

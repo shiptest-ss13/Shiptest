@@ -86,6 +86,10 @@
 	wield_slowdown = 1
 	wield_delay = 1.3 SECONDS
 
+/obj/item/gun/ballistic/automatic/sniper_rifle/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
+
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
 	desc = "A heavily-modified .50 BMG anti-material rifle utilized by Syndicate agents. Requires both hands to fire."

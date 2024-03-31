@@ -1,5 +1,5 @@
 /datum/species/moth
-	name = "\improper Mothman"
+	name = "\improper Saturnian"
 	id = SPECIES_MOTH
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)

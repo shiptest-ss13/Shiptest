@@ -471,7 +471,7 @@
 
 /obj/item/clothing/head/helmet/r_trapper
 	name = "reinforced trapper hat"
-	desc = "An occasional sight on the heads of Frontiersmen stationed on cold worlds. 200% bear."
+	desc = "An occasional sight on the heads of USCM stationed on cold worlds. 200% bear."
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
@@ -506,8 +506,8 @@
 	can_flashlight = TRUE
 
 /obj/item/clothing/head/solgov
-	name = "\improper SolGov officer's cap"
-	desc = "A blue cap worn by high-ranking officers of SolGov."
+	name = "\improper Protectorate officer's cap"
+	desc = "A blue cap worn by high-ranking officers of Protectorate."
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_solgov"
 	item_state = "cap_solgov"
@@ -515,14 +515,14 @@
 
 /obj/item/clothing/head/solgov/terragov
 	name = "\improper TerraGov officer's cap"
-	desc = "A cap worn by high-ranking officers of SolGov. This one is still in original TerraGov green."
+	desc = "A cap worn by high-ranking officers of Protectorate. This one is still in original TerraGov green."
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 	icon_state = "cap_terragov"
 	item_state = "cap_terragov"
 
 /obj/item/clothing/head/solgov/sonnensoldner
 	name = "\improper Sonnensoldner Hat"
-	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
+	desc = "A standard-issue Protectorate hat adorned with a feather, commonly used by Sonnensoldners."
 	icon_state = "sonnensoldner_hat"
 	item_state = "sonnensoldner_hat"
 	worn_y_offset = 4
@@ -530,7 +530,7 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/solgov/captain
-	name = "\improper SolGov bicorne hat"
+	name = "\improper Protectorate bicorne hat"
 	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
 	icon_state = "solgov_bicorne"
 	item_state = "solgov_bicorne"
@@ -539,7 +539,7 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/helmet/space/plasmaman/solgov
-	name = "\improper SolGov envirosuit helmet"
+	name = "\improper Protectorate envirosuit helmet"
 	desc = "A generic white envirohelmet with a secondary blue."
 	icon_state = "solgov_envirohelm"
 	item_state = "solgov_envirohelm"
@@ -586,7 +586,7 @@
 		)
 
 /obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	name = "\improper Frontiersmen X11 Helmet"
-	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
+	name = "\improper USCM X11 Helmet"
+	desc = "A heavily modified X11 used by the USCM pirate fleet."
 	icon_state = "x11helm_frontier"
 	unique_reskin = null

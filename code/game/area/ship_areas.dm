@@ -212,7 +212,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 
 /area/ship/crew/solgov
-	name = "SolGov Consulate"
+	name = "Protectorate Consulate"
 	icon_state = "solgov"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
 

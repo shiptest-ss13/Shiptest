@@ -263,11 +263,11 @@
 	toolspeed = 10 //You will never willingly choose to use one of these over a shovel.
 
 /obj/item/pen/solgov
-	name = "\improper SolGov pen"
-	desc = "A pen with SolGov's insignia on the side."
+	name = "\improper Protectorate pen"
+	desc = "A pen with Protectorate's insignia on the side."
 	icon_state = "pen-sg"
 
 /obj/item/pen/fountain/solgov
-	name = "\improper SolGov fountain pen"
-	desc = "A fancy fountain pen with SolGov's insignia emblazoned onto the wood."
+	name = "\improper Protectorate fountain pen"
+	desc = "A fancy fountain pen with Protectorate's insignia emblazoned onto the wood."
 	icon_state = "pen-fountain-sg"

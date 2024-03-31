@@ -1,5 +1,5 @@
 /datum/outfit/job/solgov/ert
-	name = "ERT - SolGov Sonnensöldner"
+	name = "ERT - Protectorate Sonnensöldner"
 	id_assignment = "Sonnensöldner"
 	jobtype = /datum/job/officer
 	job_icon = "sonnensoldner"
@@ -19,7 +19,7 @@
 
 
 /datum/outfit/job/solgov/ert/inspector
-	name = "ERT - Inspector (SolGov)"
+	name = "ERT - Inspector (Protectorate)"
 	id_assignment = "Inspector"
 	jobtype = /datum/job/head_of_personnel
 	job_icon = "solgovrepresentative"

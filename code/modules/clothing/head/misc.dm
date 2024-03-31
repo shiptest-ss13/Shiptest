@@ -497,7 +497,7 @@
 	item_state = "cowboy"
 
 /obj/item/clothing/head/solgov_surgery
-	name = "SolGov surgery cap"
+	name = "Protectorate surgery cap"
 	desc = "It's a surgery cap utilized by solarian doctors."
 	icon_state = "solgov_surgery"
 

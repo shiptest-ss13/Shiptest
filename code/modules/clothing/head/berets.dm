@@ -187,22 +187,22 @@
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 10, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	strip_delay = 90
 
-// SolGov
+// Protectorate
 
 /obj/item/clothing/head/beret/solgov
-	name = "\improper SolGov beret"
-	desc = "A beret with SolGov's emblem emblazoned on it. Colored in SolGov blue."
+	name = "\improper Protectorate beret"
+	desc = "A beret with Protectorate's emblem emblazoned on it. Colored in Protectorate blue."
 	icon_state = "beret_solgov"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
 /obj/item/clothing/head/beret/solgov/plain
-	name = "\improper SolGov beret"
+	name = "\improper Protectorate beret"
 	desc = "A plain blue beret. It looks like it's missing something."
 	icon_state = "beret_solgovplain"
 
 /obj/item/clothing/head/beret/solgov/terragov
 	name = "\improper TerraGov beret"
-	desc = "A beret with SolGov's emblem emblazoned on it. It's still colored in original TerraGov green."
+	desc = "A beret with Protectorate's emblem emblazoned on it. It's still colored in original TerraGov green."
 	icon_state = "beret_terragov"
 
 /obj/item/clothing/head/beret/solgov/terragov/plain
@@ -231,13 +231,13 @@
 // Frontier
 
 /obj/item/clothing/head/beret/sec/frontier
-	name = "\improper Frontiersmen beret"
-	desc = "A scratchy olive green beret, worn by Frontiersmen who want to look good while intimidating freighter crew."
+	name = "\improper USCM beret"
+	desc = "A scratchy olive green beret, worn by USCM who want to look good while intimidating freighter crew."
 	icon_state = "frontier_beret"
 
 /obj/item/clothing/head/beret/sec/frontier/officer
-	name = "\improper Frontiersmen officer beret"
-	desc = "A scratchy olive green beret emblazoned with the Frontiersmen insignia, worn by Frontiersmen who want to look good while intimidating freighter captains."
+	name = "\improper USCM officer beret"
+	desc = "A scratchy olive green beret emblazoned with the USCM insignia, worn by USCM who want to look good while intimidating freighter captains."
 	icon_state = "frontier_officer_beret"
 
 

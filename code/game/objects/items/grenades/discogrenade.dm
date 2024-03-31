@@ -7,8 +7,8 @@
 //////////////////////
 
 /obj/item/grenade/discogrenade
-	name = "Ethereal Disco Grenade"
-	desc = "An unethical micro-party that will make all non-Ethereal beings dance to its beat!"
+	name = "Goonber Disco Grenade"
+	desc = "A micro-party that will make all beings dance to its beat!"
 	icon_state = "disco"
 	item_state = "flashbang"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -91,7 +91,7 @@
 		return
 	if(target.stat != CONSCIOUS)	//Only conscious people can dance
 		return
-	if(!target || isethereal(target))	//Non humans and non etherals can't dance
+	if(!target)	//Non humans and non etherals can't dance
 		return
 
 	var/distance = max(0,get_dist(get_turf(src), target_turf))

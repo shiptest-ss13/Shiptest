@@ -286,7 +286,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/solgov/suns
 	name = "\improper SUNS captain's hardsuit"
-	desc = "A well decorated spaceworthy suit. The design was co-created by SolGov and SUNS academics."
+	desc = "A well decorated spaceworthy suit. The design was co-created by Protectorate and SUNS academics."
 	icon_state = "suns_commandsuit"
 	item_state = "suns_commandsuit"
 	icon = 'icons/obj/clothing/faction/suns/suits.dmi'

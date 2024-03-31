@@ -151,6 +151,7 @@
 /obj/item/gun/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed)
+	AddComponent(/datum/component/fortnite)
 
 /// triggered on wield of two handed item
 /obj/item/gun/proc/on_wield(obj/item/source, mob/user)
@@ -785,6 +786,8 @@
 
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
+	SIGNAL_HANDLER
+	SEND_SIGNAL(src,COMSIG_GUN_BEFORE_FIRING)
 	return
 
 // We do it like this in case theres some specific gun behavior for adjusting recoil, like bipods or folded stocks

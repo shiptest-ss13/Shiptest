@@ -192,7 +192,7 @@
 	icon_state = "hood_centcom"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 50, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 60)
 
-// SolGov
+// Protectorate
 
 /obj/item/clothing/suit/hooded/wintercoat/solgov
 	name = "solgov winter coat"

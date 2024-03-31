@@ -1,5 +1,5 @@
 /datum/outfit/job/frontiersmen
-	name = "Frontiersmen - Base Outfit"
+	name = "USCM - Base Outfit"
 
 	// faction_icon = "bg_frontiersmen"
 
@@ -24,7 +24,7 @@
 // Assistant
 
 /datum/outfit/job/frontiersmen/assistant
-	name = "Frontiersmen - Rookie"
+	name = "USCM - Rookie"
 	id_assignment = "Rookie"
 	job_icon = "assistant"
 	jobtype = /datum/job/assistant
@@ -34,7 +34,7 @@
 // Atmospheric Technician
 
 /datum/outfit/job/frontiersmen/atmos
-	name = "Frontiersmen - Atmospheric Specialist"
+	name = "USCM - Atmospheric Specialist"
 	job_icon = "atmospherictechnician"
 	jobtype = /datum/job/atmos
 
@@ -44,7 +44,7 @@
 // Cargo Technician
 
 /datum/outfit/job/frontiersmen/cargo_tech
-	name = "Frontiersmen - Cargo Tech"
+	name = "USCM - Cargo Tech"
 	job_icon = "cargotechnician"
 	jobtype = /datum/job/cargo_tech
 
@@ -57,7 +57,7 @@
 // Captain
 
 /datum/outfit/job/frontiersmen/captain
-	name = "Frontiersmen - Captain"
+	name = "USCM - Captain"
 	job_icon = "captain"
 	jobtype = /datum/job/captain
 
@@ -71,7 +71,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 
 /datum/outfit/job/frontiersmen/captain/admiral
-	name = "Frontiersmen - Admiral"
+	name = "USCM - Admiral"
 	id_assignment = "Admiral"
 
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier/admiral
@@ -85,7 +85,7 @@
 
 // Chief Engineer
 /datum/outfit/job/frontiersmen/ce
-	name = "Frontiersmen - Senior Mechanic"
+	name = "USCM - Senior Mechanic"
 	id_assignment = "Senior Mechanic"
 	job_icon = "chiefengineer"
 	jobtype = /datum/job/chief_engineer
@@ -100,7 +100,7 @@
 
 // Engineer
 /datum/outfit/job/frontiersmen/engineer
-	name = "Frontiersmen - Mechanic"
+	name = "USCM - Mechanic"
 	id_assignment = "Mechanic"
 	job_icon = "stationengineer"
 	jobtype = /datum/job/engineer
@@ -118,7 +118,7 @@
 // Cook
 
 /datum/outfit/job/frontiersmen/cook
-	name = "Frontiersmen - Steward"
+	name = "USCM - Steward"
 	id_assignment = "Steward"
 	job_icon = "cook"
 	jobtype = /datum/job/cook
@@ -130,7 +130,7 @@
 // Head of Personnel
 
 /datum/outfit/job/frontiersmen/hop
-	name = "Frontiersmen - Helmsman"
+	name = "USCM - Helmsman"
 	id_assignment = "Helmsman"
 	job_icon = "headofpersonnel"
 	jobtype = /datum/job/head_of_personnel
@@ -144,7 +144,7 @@
 
 // Head of Security
 /datum/outfit/job/frontiersmen/hos
-	name = "Frontiersmen - Deck Boss"
+	name = "USCM - Deck Boss"
 	id_assignment = "Deck Boss"
 	job_icon = "headofsecurity"
 	jobtype = /datum/job/hos
@@ -161,7 +161,7 @@
 // Security Officer
 
 /datum/outfit/job/frontiersmen/security
-	name = "Frontiersmen - Boarder"
+	name = "USCM - Boarder"
 	id_assignment = "Boarder"
 	job_icon = "securityofficer"
 	jobtype = /datum/job/officer
@@ -181,7 +181,7 @@
 // Medical Doctor
 
 /datum/outfit/job/frontiersmen/doctor
-	name = "Frontiersmen - Surgeon"
+	name = "USCM - Surgeon"
 	id_assignment = "Surgeon"
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor

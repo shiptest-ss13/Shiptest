@@ -86,7 +86,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 
 /obj/item/clothing/suit/hazardvest/solgov
-	name = "SolGov hazard vest"
+	name = "Protectorate hazard vest"
 	desc = "A high-visibility vest used in work zones by solarian engineers."
 	icon_state = "hazard_solgov"
 	item_state = "hazard_solgov"
@@ -205,38 +205,38 @@
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
 
-//SolGov suits
+//Protectorate suits
 
 /obj/item/clothing/suit/solgov
-	name = "SolGov robe"
-	desc = "A set of plain SolGov robes, commonly used by civilians."
+	name = "Protectorate robe"
+	desc = "A set of plain Protectorate robes, commonly used by civilians."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "solgov_robe"
 	item_state = "solgov_robe"
 
 /obj/item/clothing/suit/solgov/dress
-	name = "SolGov dress"
-	desc = "A plain SolGov dress, commonly used by civilians."
+	name = "Protectorate dress"
+	desc = "A plain Protectorate dress, commonly used by civilians."
 	body_parts_covered = CHEST|GROIN
 	icon_state = "solgov_dress"
 	item_state = "solgov_dress"
 
 /obj/item/clothing/suit/solgov/suit
-	name = "SolGov suit"
-	desc = "A formal SolGov suit, commonly used by civilians."
+	name = "Protectorate suit"
+	desc = "A formal Protectorate suit, commonly used by civilians."
 	body_parts_covered = CHEST|GROIN
 	icon_state = "solgov_suit"
 	item_state = "solgov_suit"
 
 /obj/item/clothing/suit/solgov/bureaucrat
-	name = "SolGov bureaucrat robe"
-	desc = "A set of unique SolGov robes, utilized by Solarian Bureaucrats."
+	name = "Protectorate bureaucrat robe"
+	desc = "A set of unique Protectorate robes, utilized by Solarian Bureaucrats."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "solgov_bureaucrat_robe"
 	item_state = "solgov_bureaucrat_robe"
 
 /obj/item/clothing/suit/solgov/overcoat
-	name = "SolGov overcoat"
+	name = "Protectorate overcoat"
 	desc = "A traditional solarian overcoat, used by cilivians and ship crews alike."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "solgov_overcoat"
@@ -244,15 +244,15 @@
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/solgov/jacket
-	name = "SolGov jacket"
-	desc = "A plain SolGov jacket, commonly used by civilians."
+	name = "Protectorate jacket"
+	desc = "A plain Protectorate jacket, commonly used by civilians."
 	body_parts_covered = CHEST|GROIN|ARMS
 	icon_state = "solgov_jacket"
 	item_state = "solgov_jacket"
 
 /obj/item/clothing/suit/toggle/solgov
-	name = "\improper SolGov coat"
-	desc = "An armored coat worn for special occasions. This one is dyed in SolGov blue."
+	name = "\improper Protectorate coat"
+	desc = "An armored coat worn for special occasions. This one is dyed in Protectorate blue."
 	body_parts_covered = CHEST|GROIN|ARMS|HANDS
 	icon_state = "coat_solgov"
 	item_state = "coat_solgov"

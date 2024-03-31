@@ -310,7 +310,7 @@
 
 /datum/design/m9cammo
 	name = "M9C magazine (5.56mm HITP caseless)"
-	desc = "A double stack M9C magazine, designed to chamber 5.56mm HITP caseless and fit into SolGov's M9C sidearms."
+	desc = "A double stack M9C magazine, designed to chamber 5.56mm HITP caseless and fit into Protectorate's M9C sidearms."
 	id = "m9cammo"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 18000)

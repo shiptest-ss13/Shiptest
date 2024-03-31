@@ -1094,8 +1094,8 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
-	name = "\improper Frontiersmen hardsuit helmet"
-	desc = "An old hardsuit helmet based on a even older hardsuit helmet. Used prolifically by the Frontiersmen pirate fleet."
+	name = "\improper USCM hardsuit helmet"
+	desc = "An old hardsuit helmet based on a even older hardsuit helmet. Used prolifically by the USCM pirate fleet."
 	icon_state = "hardsuit0-frontier"
 	hardsuit_type = "frontier"
 
@@ -1111,8 +1111,8 @@
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
-	name = "\improper Frontiersmen hardsuit"
-	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the Frontiersmen pirate fleet."
+	name = "\improper USCM hardsuit"
+	desc = "An old hardsuit based on a even older hardsuit. Used prolifically by the USCM pirate fleet."
 	icon_state = "hardsuit_frontier"
 	hardsuit_type = "hardsuit_frontier"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/independent/frontier
@@ -1262,7 +1262,7 @@
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/head/helmet/space/hardsuit/solgov
-	name = "\improper SolGov hardsuit helmet"
+	name = "\improper Protectorate hardsuit helmet"
 	desc = "An armored spaceproof helmet, its visor is reminiscent of knights of yore."
 	icon_state = "hardsuit0-solgov"
 	item_state = "hardsuit0-solgov"
@@ -1271,7 +1271,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/solgov
 	icon_state = "hardsuit_solgov"
-	name = "\improper SolGov hardsuit"
+	name = "\improper Protectorate hardsuit"
 	desc = "An armored spaceproof suit. A powered exoskeleton keeps the suit light and mobile."
 	item_state = "hardsuit_solgov"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 60, "fire" = 90, "acid" = 75) //intentionally the fucking strong, this is master chief-tier armor //is this really what you call the strong?? is this the best solgov has to offer??????

@@ -102,6 +102,9 @@
 	spread = 4
 	spread_unwielded = 7
 
+/obj/item/gun/ballistic/automatic/pistol/deagle/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)
 /obj/item/gun/ballistic/automatic/pistol/deagle/gold
 	desc = "A gold-plated Desert Eagle folded over a million times by superior Martian gunsmiths. Uses .50 AE ammo."
 	icon_state = "deagleg"

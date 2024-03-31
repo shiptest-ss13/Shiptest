@@ -69,7 +69,7 @@
 
 /obj/item/gun/ballistic/automatic/assault/skm/inteq
 	name = "\improper SKM-44"
-	desc = "An obsolete model of assault rifle once used by CLIP. Most of these were seized from Frontiersmen armories or purchased in CLIP, then modified to IRMG standards. Chambered in 7.62x40mm CLIP."
+	desc = "An obsolete model of assault rifle once used by CLIP. Most of these were seized from USCM armories or purchased in CLIP, then modified to IRMG standards. Chambered in 7.62x40mm CLIP."
 
 	icon_state = "skm_inteq"
 	item_state = "skm_inteq"

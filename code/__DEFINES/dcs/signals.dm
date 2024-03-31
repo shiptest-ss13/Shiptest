@@ -765,3 +765,6 @@
 
 ///called in /obj/item/gun/process_chamber (src)
 #define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
+
+///called in /obj/item/gun/proc/before_firing (src)
+#define COMSIG_GUN_BEFORE_FIRING "gun_before_fire"

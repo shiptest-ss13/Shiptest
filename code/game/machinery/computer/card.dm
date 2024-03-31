@@ -41,7 +41,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Research Director",
 		"Chief Medical Officer",
 		"Brig Physician",
-		"SolGov Representative",		//WS Edit - SolGov Rep
+		"Protectorate Representative",		//WS Edit - SolGov Rep
 		"Prisoner")
 
 	//The scaling factor of max total positions in relation to the total amount of people on board the station in %

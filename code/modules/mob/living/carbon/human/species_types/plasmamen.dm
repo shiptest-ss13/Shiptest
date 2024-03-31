@@ -166,7 +166,7 @@
 		if("Clown")
 			O = new /datum/outfit/plasmaman/clown
 
-		if("SolGov Representative") //WS edit sgr
+		if("Protectorate Representative") //WS edit sgr
 			O = new /datum/outfit/plasmaman/solgov
 
 	var/holder		//WS Edit Begin - Plasma skirtsuit prefs

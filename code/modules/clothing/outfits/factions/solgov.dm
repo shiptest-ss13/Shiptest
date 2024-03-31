@@ -46,7 +46,7 @@
 	id = /obj/item/card/id/gold
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/solgov/alt/captain
-	uniform =  /obj/item/clothing/under/solgov/formal/captain
+	uniform =  /obj/item/clothing/under/solgov/formal
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/solgov/captain
@@ -68,7 +68,7 @@
 	job_icon = "sonnensoldner"
 
 	id = /obj/item/card/id/solgov
-	uniform = /obj/item/clothing/under/solgov
+	uniform = /obj/item/clothing/under/solgov/formal
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	ears = /obj/item/radio/headset/solgov/alt
 	gloves = /obj/item/clothing/gloves/combat
@@ -151,7 +151,7 @@
 	ears = /obj/item/radio/headset/headset_cargo/mining
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/explorer
-	uniform = /obj/item/clothing/under/solgov
+	uniform = /obj/item/clothing/under/solgov/formal
 	accessory = /obj/item/clothing/accessory/armband/cargo
 	head = /obj/item/clothing/head/hardhat/solgov
 	suit =  /obj/item/clothing/suit/hazardvest/solgov
@@ -188,12 +188,18 @@
 	name = "SolGov - Attentive Care Patient"
 	id_assignment = "Attentive Care Patient"
 	jobtype = /datum/job/prisoner
-	job_icon = "assistant" // todo: bug rye for patient icon // rye. rye. give me 50 gazillion billion dollars paypal
+	job_icon = "assistant" // todo: bug rye for patient icon // rye. rye. give me 50 gazillion billion dollars paypal //done
 
 	id = /obj/item/card/id/patient
 	uniform = /obj/item/clothing/under/rank/medical/gown
 	alt_suit = null
 	shoes = /obj/item/clothing/shoes/sandal/slippers
+
+/datum/outfit/job/solgov/patient/post_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(H.ckey == "meemofcourse")
+		H.equip_to_slot_if_possible(new /obj/item/spacecash/bundle/c5000000, ITEM_SLOT_HANDS, FALSE, FALSE)
+
 
 /datum/outfit/job/solgov/engineer
 	name = "SolGov - Ship Engineer"

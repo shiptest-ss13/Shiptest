@@ -120,7 +120,7 @@
 	polldesc = "an Inteq emergency team"
 	ert_template = /datum/map_template/shuttle/subshuttles/anvil
 
-// SolGov
+// Protectorate
 
 /datum/ert/solgov
 	teamsize = 4
@@ -128,14 +128,14 @@
 	leader_role = /datum/antagonist/ert/solgov
 	roles = list(/datum/antagonist/ert/solgov)
 	mission = "Intervene in Solarian interests."
-	rename_team = "SolGov Sonnensoldner Team"
-	polldesc = "a SolGov mercenary team"
+	rename_team = "Protectorate Sonnensoldner Team"
+	polldesc = "a Protectorate mercenary team"
 
 /datum/ert/solgov/inspector
 	teamsize = 1
 	leader_role = /datum/antagonist/ert/official/solgov
 	roles = list(/datum/antagonist/ert/official/solgov)
-	rename_team = "SolGov Inspector"
+	rename_team = "Protectorate Inspector"
 	polldesc = "a solarian inspector"
 	spawn_at_outpost = FALSE
 
@@ -235,14 +235,14 @@
 /datum/ert/syndicate/inspector/New()
 	mission = "Conduct a routine review on [station_name()]'s vessels."
 
-// Frontiersmen
+// USCM
 /datum/ert/frontier
 	teamsize = 4
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/frontier/leader
 	roles = list(/datum/antagonist/ert/frontier)
-	rename_team = "Generic Frontiersmen Team"
-	mission = "Pillage in the name of the Frontiersmen."
+	rename_team = "Generic USCM Team"
+	mission = "Pillage in the name of the USCM."
 	polldesc = "an armed group of pirates"
 	random_names = TRUE
 	leader_experience = FALSE
@@ -253,12 +253,12 @@
 	teamsize = 8
 	leader_role = /datum/antagonist/ert/frontier/random
 	roles = list(/datum/antagonist/ert/frontier/random)
-	rename_team = "Randomly Equipped Frontiersmen Team"
+	rename_team = "Randomly Equipped USCM Team"
 
 /datum/ert/frontier/assault
 	leader_role = /datum/antagonist/ert/frontier/leader
 	roles = list(/datum/antagonist/ert/frontier, /datum/antagonist/ert/frontier/medic, /datum/antagonist/ert/frontier/engineer)
-	rename_team = "Assault Frontiersmen Team"
+	rename_team = "Assault USCM Team"
 	polldesc = "a well armed squad of pirates"
 
 /datum/ert/independent

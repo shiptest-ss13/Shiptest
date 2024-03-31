@@ -460,7 +460,7 @@
 	update_appearance()
 
 /obj/item/stock_parts/cell/gun/solgov
-	name = "SolGov power cell"
+	name = "Protectorate power cell"
 	icon_state = "g-sg-cell"
 
 /obj/item/stock_parts/cell/gun/large

@@ -65,7 +65,7 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN, "Outpost")		//WS Edit - SolGov Rep
+		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN, "Outpost")		//WS Edit - Protectorate Rep
 		if(!sender)
 			return
 		switch(sender)
@@ -87,7 +87,7 @@
 
 	log_directed_talk(mob, H, input, LOG_ADMIN, "reply")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - SolGov Rep
+	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - Protectorate Rep
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 

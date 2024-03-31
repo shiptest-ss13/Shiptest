@@ -127,7 +127,7 @@
 	suffix = "jungle_medtech_outbreak.dmm"
 
 /datum/map_template/ruin/jungle/cavecrew
-	name = "Frontiersmen Cave"
+	name = "USCM Cave"
 	id = "cavecrew"
 	description = "A frontiersmen base, hidden within a cave. They don't seem friendly"
 	suffix = "jungle_cavecrew.dmm"

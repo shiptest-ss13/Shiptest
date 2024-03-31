@@ -549,16 +549,16 @@ Contains:
 	/obj/item/storage/firstaid, /obj/item/stack/medical/gauze, /obj/item/stack/medical/suture, /obj/item/stack/medical/mesh, /obj/item/storage/bag/chemistry)
 
 /obj/item/clothing/head/helmet/space/solgov
-	name = "\improper SolGov Vacuum Helmet"
+	name = "\improper Protectorate Vacuum Helmet"
 	icon_state = "vachelmet_solgov"
 	desc = "This space-proof helmet is meant to be worn with a matching T-MA suit."
 	item_state = "vachelmet_solgov"
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 
 /obj/item/clothing/suit/space/solgov
-	name = "\improper SolGov Vacuum Suit"
+	name = "\improper Protectorate Vacuum Suit"
 	icon_state = "vacsuit_solgov"
-	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's exploration teams."
+	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by Protectorate's exploration teams."
 	item_state = "vacsuit_solgov"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)

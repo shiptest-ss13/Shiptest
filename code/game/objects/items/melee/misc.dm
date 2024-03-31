@@ -81,7 +81,7 @@
 
 /obj/item/melee/sabre/solgov
 	name = "solarian sabre"
-	desc = "A refined ceremonial blade often given to soldiers and high ranking officials of SolGov."
+	desc = "A refined ceremonial blade often given to soldiers and high ranking officials of Protectorate."
 	icon_state = "sabresolgov"
 	item_state = "sabresolgov"
 

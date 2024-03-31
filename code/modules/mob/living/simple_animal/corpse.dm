@@ -247,7 +247,7 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 
 /obj/effect/mob_spawn/human/corpse/solgov/sonnensoldner
-	name = "SolGov Sonnensoldner"
-	id_job = "SolGov Sonnensoldner"
+	name = "Protectorate Sonnensoldner"
+	id_job = "Protectorate Sonnensoldner"
 	outfit = /datum/outfit/job/solgov/sonnensoldner
 	id_access_list = list(ACCESS_SOLGOV)

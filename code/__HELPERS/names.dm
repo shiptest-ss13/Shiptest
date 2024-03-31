@@ -273,7 +273,7 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 	"Nanotrasen" = list(
 		"NTSV",
 	),
-	"Frontiersmen Fleet" = list(
+	"USCM Fleet" = list(
 		"FFV",
 	),
 	"Saint-Roumaine Militia" = list(

@@ -229,7 +229,7 @@ LINEN BINS
 	dream_messages = list("authority", "an ending")
 
 /obj/item/bedsheet/solgov
-	name = "\improper SolGov bedsheet"
+	name = "\improper Protectorate bedsheet"
 	desc = "It has the emblem of the Solar Confederation emblazoned upon it!"
 	icon_state = "sheetsolgov"
 	item_state = "sheetsolgov"
@@ -350,7 +350,7 @@ LINEN BINS
 	desc = "It appears to have a beaker emblem, and is made out of fire-resistant material, although it probably won't protect you in the event of fires you're familiar with every day."
 
 /obj/item/bedsheet/double/solgov
-	name = "double SolGov bedsheet"
+	name = "double Protectorate bedsheet"
 	icon_state = "double_sheetsolgov"
 	item_state = "double_sheetsolgov"
 	dream_messages = list("bureaucracy", "laws", "papers", "writing")

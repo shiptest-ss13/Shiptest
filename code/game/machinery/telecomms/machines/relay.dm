@@ -100,7 +100,7 @@
 
 /obj/machinery/telecomms/relay/preset/frontiersmen
 	freq_listening = list(FREQ_COMMAND, FREQ_PIRATE)
-	id = "Frontiersmen Relay"
+	id = "USCM Relay"
 	network = "frontier_commnet"
 
 /obj/machinery/telecomms/relay/preset/pgf

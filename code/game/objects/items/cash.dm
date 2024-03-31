@@ -81,7 +81,7 @@
 		while(remaining_value >= i && iteration < 50)
 			remaining_value -= i
 			iteration++
-			var/image/banknote = image('icons/obj/economy.dmi', "credit[i]")
+			var/image/banknote = image('icons/obj/economy.dmi', "pixel")
 			var/matrix/M = matrix()
 			M.Translate(rand(-6, 6), rand(-4, 8))
 			banknote.transform = M
@@ -93,7 +93,7 @@
 			while(remaining_value >= i && iteration < 50)
 				remaining_value -= i
 				iteration++
-				var/image/coin = image('icons/obj/economy.dmi', "credit[i]")
+				var/image/coin = image('icons/obj/economy.dmi', "pixel")
 				var/matrix/M = matrix()
 				M.Translate(rand(-6, 6), rand(-4, 8))
 				coin.transform = M
@@ -101,25 +101,25 @@
 
 	if(coins_only)
 		if(value == 1)
-			name = "one credit coin"
+			name = "one credit pixel"
 			desc = "Heavier then it looks."
 			drop_sound = 'sound/items/handling/coin_drop.ogg'
 			pickup_sound =  'sound/items/handling/coin_pickup.ogg'
 		else
-			name = "[value] credits"
+			name = "[value] pixels"
 			desc = "Heavier than they look."
 			gender = PLURAL
 			drop_sound = 'sound/items/handling/coin_drop.ogg'
 			pickup_sound =  'sound/items/handling/coin_pickup.ogg'
 	else
 		if(value <= 3000)
-			name = "[value] credits"
+			name = "[value] pixels"
 			gender = NEUTER
 			desc = "Some cold, hard cash."
 			drop_sound = 'sound/items/handling/dosh_drop.ogg'
 			pickup_sound =  'sound/items/handling/dosh_pickup.ogg'
 		else
-			name = "[value] credits"
+			name = "[value] pixels"
 			gender = NEUTER
 			desc = "That's a lot of dosh."
 			drop_sound = 'sound/items/handling/dosh_drop.ogg'
@@ -127,7 +127,7 @@
 	return ..()
 
 /obj/item/spacecash/bundle/attack_self()
-	var/cashamount = input(usr, "How many credits do you want to take? (0 to [value])", "Take Money", 20) as num
+	var/cashamount = input(usr, "How many pixels do you want to take? (0 to [value])", "Take Money", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
 		return
@@ -232,3 +232,7 @@
 	value = rand(2500, 6000)
 	icon_state = "credit1000"
 	. = ..()
+
+/obj/item/spacecash/bundle/c5000000
+	value = 5000000
+	icon_state = "credit1000"

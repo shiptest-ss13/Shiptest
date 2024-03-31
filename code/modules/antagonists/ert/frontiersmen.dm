@@ -1,15 +1,15 @@
 // ********************************************************************
-// ** Frontiersmen **
+// ** USCM **
 // ********************************************************************
 
 /datum/antagonist/ert/frontier
-	name = "Frontiersmen Pirate"
+	name = "USCM Mercanar"
 	outfit = /datum/outfit/job/frontiersmen/ert
 	role = "Grunt"
 
 /datum/antagonist/ert/frontier/greet()
 	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
-	var/missiondesc = "You are one of the ruthless, sadistic pirates in the Frontiersmen pirate fleet, stationed in [station_name()].<BR>"
+	var/missiondesc = "You are one of the ruthless, sadistic pirates in the USCM pirate fleet, stationed in [station_name()].<BR>"
 	if(leader) //If Squad Leader
 		missiondesc += "Lead your team to complete your objectives."
 	else
@@ -22,16 +22,16 @@
 	outfit = /datum/outfit/job/frontiersmen/ert/random
 
 /datum/antagonist/ert/frontier/leader
-	name = "Frontiersmen Officer"
+	name = "USCM Officer"
 	outfit = /datum/outfit/job/frontiersmen/ert/leader
 	role = "Officer"
 
 /datum/antagonist/ert/frontier/medic
-	name = "Frontiersmen Medic"
+	name = "USCM Medic"
 	outfit = /datum/outfit/job/frontiersmen/ert/medic
 	role = "Stretcher-Bearer"
 
 /datum/antagonist/ert/frontier/engineer
-	name = "Frontiersmen Engineer"
+	name = "USCM Engineer"
 	outfit = /datum/outfit/job/frontiersmen/ert/engineer
 	role = "Sapper"

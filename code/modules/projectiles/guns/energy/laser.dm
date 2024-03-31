@@ -246,4 +246,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = 0
 
-
+/obj/item/gun/energy/laser/e50/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/fortnite,_rarity_table = RARITY_TABLE_ALWAYS_EPIC_TO_LEGEND_ONLY)

@@ -1,5 +1,5 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
-	name = "\improper Integrated Positronic Chassis" //inherited from the real species, for health scanners and things
+	name = "\improper Glitch" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
 	sexes = FALSE
 	species_age_min = 0
@@ -78,6 +78,7 @@
 		else
 			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
 		C.RegisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, TYPE_PROC_REF(/mob/living/carbon, charge))
+		C.dna.add_mutation(MEDIEVAL, MUT_OTHER)
 
 /datum/species/ipc/on_species_loss(mob/living/carbon/C)
 	. = ..()
@@ -287,3 +288,44 @@
 /mob/living/carbon/proc/charge(datum/source, amount, repairs)
 	if(nutrition < NUTRITION_LEVEL_WELL_FED)
 		adjust_nutrition(amount / 10) // The original amount is capacitor_rating*100
+
+//i cant be assed to make this its own file
+/datum/mutation/human/medieval
+	name = "Medieval"
+	desc = "A horrible mutation originating from the distant past, thought to have once been a common gene in all of old world Europe."
+	quality = MINOR_NEGATIVE
+	text_gain_indication = "<span class='notice'>You feel like seeking the holy grail!</span>"
+	text_lose_indication = "<span class='notice'>You no longer feel like seeking anything.</span>"
+
+/datum/mutation/human/medieval/on_acquiring(mob/living/carbon/human/owner)
+	if(..())
+		return
+	RegisterSignal(owner, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+
+/datum/mutation/human/medieval/on_losing(mob/living/carbon/human/owner)
+	if(..())
+		return
+	UnregisterSignal(owner, COMSIG_MOB_SAY)
+
+/datum/mutation/human/medieval/proc/handle_speech(datum/source, list/speech_args)
+	SIGNAL_HANDLER
+
+	var/message = speech_args[SPEECH_MESSAGE]
+	if(message)
+		message = " [message] "
+		var/list/medieval_words = strings("medieval_replacement.json", "medieval")
+		var/list/startings = strings("medieval_replacement.json", "startings")
+		for(var/key in medieval_words)
+			var/value = medieval_words[key]
+			if(islist(value))
+				value = pick(value)
+			if(uppertext(key) == key)
+				value = uppertext(value)
+			if(capitalize(key) == key)
+				value = capitalize(value)
+			message = replacetextEx(message,regex("\b[REGEX_QUOTE(key)]\b","ig"), value)
+		message = trim(message)
+		var/chosen_starting = pick(startings)
+		message = "[chosen_starting] [message]"
+
+		speech_args[SPEECH_MESSAGE] = message

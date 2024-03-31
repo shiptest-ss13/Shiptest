@@ -216,7 +216,7 @@
 	equip_delay_other = 50
 
 /obj/item/clothing/suit/armor/vest/bulletproof/frontier
-	name = "\improper Frontiersmen bulletproof armor"
+	name = "\improper USCM bulletproof armor"
 	desc = "A scrap piece of armor made of disused protective plates. This one was used to protect the squishy bits of a Frontiersman, once."
 	icon_state = "frontier_armor"
 
@@ -400,21 +400,21 @@
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov
 	name = "\improper Sonnensoldner gambison"
-	desc = "A standard armor vest fielded for SolGov's Sonnensoldners."
+	desc = "A standard armor vest fielded for Protectorate's Sonnensoldners."
 	icon_state = "solgov_gambison"
 	item_state = "solgov_gambison"
 	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/overseer
-	name = "\improper SolGov Overseer robe"
-	desc = "An elaborately designed robe utilized by SolGov overseers."
+	name = "\improper Protectorate Overseer robe"
+	desc = "An elaborately designed robe utilized by Protectorate overseers."
 	icon_state = "solgov_overseer_robe"
 	item_state = "solgov_overseer_robe"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/bulletproof/solgov/captain
-	name = "\improper SolGov Captain coat"
-	desc = "An armored coat typically used by SolGov captains."
+	name = "\improper Protectorate Captain coat"
+	desc = "An armored coat typically used by Protectorate captains."
 	icon_state = "solgov_coat"
 	item_state = "solgov_coat"
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -455,7 +455,7 @@
 	heat_protection = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/solgov_trenchcoat
-	name = "\improper SolGov trenchcoat"
+	name = "\improper Protectorate trenchcoat"
 	desc = "A solgov official's trenchcoat. Has a lot of pockets."
 	icon_state = "armor_solgov_trenchcoat"
 	item_state = "trenchcoat_solgov"

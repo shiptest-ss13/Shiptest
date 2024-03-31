@@ -309,7 +309,7 @@
 
 /obj/item/ammo_box/c556mmHITP
 	name = "ammo box (5.56mm HITP caseless)"
-	desc = "A box of 5.56mm HITP caseless ammo, a SolGov standard."
+	desc = "A box of 5.56mm HITP caseless ammo, a Protectorate standard."
 	icon_state = "556mmHITPbox"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm
 	max_ammo = 50

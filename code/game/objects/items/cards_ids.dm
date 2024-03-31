@@ -774,13 +774,13 @@ update_label()
 	name = "bunker access ID"
 
 /obj/item/card/id/solgov
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of."
+	name = "\improper Protectorate ID"
+	desc = "A Protectorate ID with no proper access to speak of."
 	assignment = "Officer"
 	icon_state = "solgov"
 	uses_overlays = FALSE
 
 /obj/item/card/id/solgov/commander
-	name = "\improper SolGov ID"
-	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+	name = "\improper Protectorate ID"
+	desc = "A Protectorate ID with no proper access to speak of. This one indicates a Commander."
 	assignment = "Commander"
