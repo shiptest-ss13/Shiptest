@@ -480,7 +480,7 @@
 	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/foambox/empty
- 	start_empty = TRUE
+	start_empty = TRUE
 
 /obj/item/ammo_box/foambox/riot
 	icon_state = "foambox_riot"
@@ -488,7 +488,7 @@
 	custom_materials = list(/datum/material/iron = 50000)
 
 /obj/item/ammo_box/foambox/riot/empty
- 	start_empty = TRUE
+	start_empty = TRUE
 
 /obj/item/ammo_box/c22lr_box
 	name = "ammo box (.22 LR)"
