@@ -887,7 +887,7 @@ GLOBAL_LIST_INIT(empty_ammo_box_recipes, list ( \
 	desc = "An unformatted ammo box. You could probably fold it to hold different types of ammo."
 	singular_name = "blank ammo box"
 	icon_state = "sheet-ammo"
-	item_state = "sheet-card"
+	item_state = "sheet-ammo"
 	novariants = TRUE
 	custom_materials = list(/datum/material/empty_ammo_box = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/empty_ammo_box
