@@ -355,7 +355,10 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 
 /datum/overmap/event/meteor/storm
 	name = "THE STORM"
+	desc = "Chat, it's the storm. No chat, I shoudn't go in there."
+	chance_to_affect = 100
 	token_icon_state = "danger"
+	safe_speed = 0
 	meteor_types = list(
 		/obj/effect/meteor/tunguska = 1
 	)

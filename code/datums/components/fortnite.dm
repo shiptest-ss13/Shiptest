@@ -19,7 +19,7 @@
 
 /datum/component/fortnite
 	/// Only one of the component can exist on an item
-	dupe_mode = COMPONENT_DUPE_HIGHLANDER
+	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 	///our current rarity
 	var/rarity = FORTNITE_RARITY_COMMON
 	///do we edit the prefix of the item
@@ -42,6 +42,13 @@
 	rarity_table = _rarity_table
 	get_rarity(force_rarity)
 
+/datum/component/fortnite/InheritComponent(datum/component/C, i_am_original, force_rarity=FALSE, _edit_prefix = TRUE , _adjust_bullet_stats = TRUE, _rarity_table = RARITY_TABLE_DEFAULT)
+	var/obj/modifying_thing = parent
+	modifying_thing.remove_filter("fortnite")
+
+	Initialize(force_rarity, _edit_prefix , _adjust_bullet_stats, _rarity_table)
+
+
 
 /datum/component/fortnite/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_NAME, PROC_REF(update_prefix))
@@ -49,14 +56,12 @@
 
 /datum/component/fortnite/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_ATOM_UPDATE_NAME, COMSIG_GUN_BEFORE_FIRING))
-	var/obj/modifying_thing = parent
-	modifying_thing.remove_filter("fortnite")
 
 /datum/component/fortnite/proc/get_rarity(force_rarity)
 	var/dont_loot_gen
 	if(force_rarity)
 		rarity = force_rarity
-		return
+		dont_loot_gen = TRUE
 
 	switch(rarity_table)
 		if(RARITY_TABLE_ALWAYS_COMMON)
@@ -143,3 +148,187 @@
 
 	if(current_gun.chambered.BB)
 		current_gun.chambered.BB.damage += damage_bonus//smiles
+
+//idk where else to put this so rest of the file is unrelated to the component
+
+GLOBAL_LIST_EMPTY(royale_common_loot)
+GLOBAL_LIST_EMPTY(royale_rarer_loot)
+GLOBAL_LIST_EMPTY(royale_legendary_loot)
+/obj/effect/battle_royale
+	name = "generic battle royale spawner"
+
+/obj/effect/battle_royale/Initialize(mapload)
+	. = ..()
+	var/turf/current_turf = get_turf(src)
+	var/obj/structure/closet/supplypod/centcompod/pod = new(null, STYLE_BOX)
+	pod.bluespace = FALSE
+
+	extra_changes(get_cargo(pod))
+	new /obj/effect/pod_landingzone(current_turf, pod)
+	return INITIALIZE_HINT_QDEL
+
+
+/obj/effect/battle_royale/proc/get_cargo(pod)
+	if(!GLOB.royale_common_loot.len)
+		var/list/loot_types_list = subtypesof(/datum/supply_pack)
+		for(var/datum/supply_pack/picked_pack as anything in loot_types_list)
+			if(!check_type(picked_pack))
+				loot_types_list -= picked_pack
+		GLOB.royale_common_loot = loot_types_list
+	var/datum/supply_pack/picked_cargo = pick(GLOB.royale_common_loot)
+	picked_cargo = new picked_cargo
+
+	return picked_cargo.generate(pod)
+
+/obj/effect/battle_royale/proc/extra_changes(obj/thing_to_check)
+	var/list/ignore_these = list(
+		/obj/item/gun/ballistic/automatic/sniper_rifle,
+		/obj/item/gun/ballistic/automatic/hmg,
+		/obj/item/gun/ballistic/automatic/pistol/deagle,
+		/obj/item/gun/energy/laser/e50,
+		/obj/item/gun/energy/pulse
+		)
+	if(!thing_to_check)
+		return
+	for(var/obj/item/gun/gun_to_check in thing_to_check.contents)
+		if(!gun_to_check)
+			continue
+		for(var/obj/currently_looking as anything in  ignore_these)
+			if(istype(gun_to_check,currently_looking))
+				break
+		gun_to_check.AddComponent(/datum/component/fortnite,force_rarity=FORTNITE_RARITY_COMMON)
+
+
+
+/obj/effect/battle_royale/proc/check_type(datum/checking)
+	var/list/bad_types = list(
+		/datum/supply_pack/gun,
+		/datum/supply_pack/ammo,
+		/datum/supply_pack/animal,
+		/datum/supply_pack/canister,
+		/datum/supply_pack/chemistry,
+		/datum/supply_pack/civilian,
+		/datum/supply_pack/costumes_toys,
+		/datum/supply_pack/emergency,
+		/datum/supply_pack/exploration,
+		/datum/supply_pack/food,
+		/datum/supply_pack/machinery,
+		/datum/supply_pack/material,
+		/datum/supply_pack/mech,
+		/datum/supply_pack/medical,
+		/datum/supply_pack/sec_supply,
+		/datum/supply_pack/spacesuit_armor,
+		/datum/supply_pack/tools,
+		/datum/supply_pack/vendor_refill
+		)
+	for(var/datum/checked_datum as anything in bad_types)
+		if(checking.type == checked_datum)
+			return FALSE
+	return TRUE
+
+/obj/effect/battle_royale/common
+	name = "common battle royale loot spawner"
+
+/obj/effect/battle_royale/rarer
+	name = "rare battle royale loot spawner"
+
+/obj/effect/battle_royale/rarer/get_cargo(pod)
+	if(!GLOB.royale_rarer_loot.len)
+		var/list/loot_types_list = subtypesof(/datum/supply_pack)
+		for(var/datum/supply_pack/picked_pack as anything in loot_types_list)
+			if(!check_type(picked_pack))
+				loot_types_list -= picked_pack
+		GLOB.royale_rarer_loot = loot_types_list
+	var/datum/supply_pack/picked_cargo = pick(GLOB.royale_rarer_loot)
+	picked_cargo = new picked_cargo
+
+	return picked_cargo.generate(pod)
+
+/obj/effect/battle_royale/rarer/check_type(datum/checking)
+	var/list/bad_types = list(
+		/datum/supply_pack/gun,
+		/datum/supply_pack/ammo,
+		/datum/supply_pack/animal,
+		/datum/supply_pack/canister,
+		/datum/supply_pack/chemistry,
+		/datum/supply_pack/civilian,
+		/datum/supply_pack/costumes_toys,
+		/datum/supply_pack/emergency,
+		/datum/supply_pack/exploration,
+		/datum/supply_pack/food,
+		/datum/supply_pack/machinery,
+		/datum/supply_pack/material,
+		/datum/supply_pack/mech,
+		/datum/supply_pack/medical,
+		/datum/supply_pack/sec_supply,
+		/datum/supply_pack/spacesuit_armor,
+		/datum/supply_pack/tools,
+		/datum/supply_pack/vendor_refill
+		)
+	var/list/bad_subtypes = list(
+		/datum/supply_pack/costumes_toys,
+		/datum/supply_pack/vendor_refill,
+		/datum/supply_pack/animal,
+		/datum/supply_pack/civilian,
+		/datum/supply_pack/food,
+		)
+	for(var/datum/checked_datum as anything in bad_types)
+		if(checking.type == checked_datum)
+			return FALSE
+
+	for(var/datum/checked_datum as anything in bad_subtypes)
+		if(istype(checking,checked_datum))
+			return FALSE
+	return TRUE
+
+/obj/effect/battle_royale/rarer/extra_changes(obj/thing_to_check)
+	var/list/ignore_these = list(
+		/obj/item/gun/ballistic/automatic/sniper_rifle,
+		/obj/item/gun/ballistic/automatic/hmg,
+		/obj/item/gun/ballistic/automatic/pistol/deagle,
+		/obj/item/gun/energy/laser/e50,
+		/obj/item/gun/energy/pulse
+		)
+	if(!thing_to_check)
+		return
+	for(var/obj/item/gun/gun_to_check in thing_to_check.contents)
+		if(!gun_to_check)
+			continue
+		for(var/obj/currently_looking as anything in  ignore_these)
+			if(istype(gun_to_check,currently_looking))
+				break
+		gun_to_check.AddComponent(/datum/component/fortnite,_rarity_table=RARITY_TABLE_ALWAYS_UNCOMMON_TO_LEGEND_ONLY)
+
+/obj/effect/battle_royale/legendary
+	name = "legendary battle royale loot spawner"
+
+/obj/effect/battle_royale/legendary/get_cargo(pod)
+	if(!GLOB.royale_legendary_loot.len)
+		var/list/loot_types_list = subtypesof(/datum/supply_pack/gun)
+		for(var/datum/supply_pack/picked_pack as anything in loot_types_list)
+			if(!check_type(picked_pack))
+				loot_types_list -= picked_pack
+		GLOB.royale_legendary_loot = loot_types_list
+	var/datum/supply_pack/picked_cargo = pick(GLOB.royale_legendary_loot)
+	picked_cargo = new picked_cargo
+
+	return picked_cargo.generate(pod)
+
+/obj/effect/battle_royale/legendary/extra_changes(obj/thing_to_check)
+	if(!thing_to_check)
+		return
+	for(var/obj/item/gun/gun_to_check in thing_to_check.contents)
+		if(!gun_to_check)
+			continue
+		gun_to_check.AddComponent(/datum/component/fortnite,force_rarity=FORTNITE_RARITY_LEGENDARY)
+		if(istype(gun_to_check,/obj/item/gun/ballistic))
+			var/obj/item/gun/ballistic/ballistic_to_check = gun_to_check
+			if(!ballistic_to_check.internal_magazine)
+				for(var/i in 1 to 2)
+					new ballistic_to_check.mag_type(thing_to_check)
+		else if(istype(gun_to_check,/obj/item/gun/energy))
+			var/obj/item/gun/energy/energy_to_check = gun_to_check
+			if(!energy_to_check.internal_cell)
+				for(var/i in 1 to 2)
+					new energy_to_check.cell_type(thing_to_check)
+
