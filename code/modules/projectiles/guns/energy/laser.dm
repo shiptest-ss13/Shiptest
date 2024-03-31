@@ -187,7 +187,6 @@
 
 /obj/item/gun/energy/laser/iot/lethal
 	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking. This one appears to be modified to fire lethal beams."
-	icon_state = "iotshotgun_lethal"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultima)
 
 /obj/item/gun/energy/laser/hitscanpistol
@@ -214,6 +213,13 @@
 	desc = "A very old laser weapon. Despite the extreme age of some of these weapons, they are sometimes preferred to newer, mass-produced Nanotrasen laser weapons."
 	icon_state = "e10"
 	w_class = WEIGHT_CLASS_SMALL
+
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+	spread = 2
+	spread_unwielded = 5
+
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/eoehoma)
 	manufacturer = MANUFACTURER_EOEHOMA
 

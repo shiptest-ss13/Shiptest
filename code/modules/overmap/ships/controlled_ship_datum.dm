@@ -36,8 +36,12 @@
 	var/list/datum/mission/missions
 	/// The maximum number of currently active missions that a ship may take on.
 	var/max_missions = 2
-	/// Manifest list of people on the ship
+
+	/// Manifest list of people on the ship. Indexed by mob REAL NAME. value is JOB INSTANCE
 	var/list/manifest = list()
+
+	/// List of mob refs indexed by their job instance
+	var/list/datum/weakref/job_holder_refs = list()
 
 	var/list/datum/mind/owner_candidates
 
@@ -62,6 +66,9 @@
 	var/list/job_slots
 	///Time that next job slot change can occur
 	COOLDOWN_DECLARE(job_slot_adjustment_cooldown)
+
+	///Stations the ship has been blacklisted from landing at, associative station = reason
+	var/list/blacklisted = list()
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -126,8 +133,10 @@
 		QDEL_NULL(ship_account)
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
-	QDEL_LIST(manifest)
+	manifest.Cut()
+	job_holder_refs.Cut()
 	job_slots.Cut()
+	blacklisted.Cut()
 	for(var/a_key in applications)
 		if(isnull(applications[a_key]))
 			continue
@@ -294,6 +303,10 @@
 	if(!owner_mob)
 		set_owner_mob(H)
 
+	if(!(human_job in job_holder_refs))
+		job_holder_refs[human_job] = list()
+	job_holder_refs[human_job] += WEAKREF(H)
+
 /datum/overmap/ship/controlled/proc/set_owner_mob(mob/new_owner)
 	if(owner_mob)
 		// we (hopefully) don't have to hook qdeletion,
@@ -407,7 +420,7 @@
 /obj/item/key/ship
 	name = "ship key"
 	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."
-	icon_state = "keyship"
+	icon_state = "shipkey"
 	var/datum/overmap/ship/controlled/master_ship
 	var/static/list/key_colors = list(
 		"blue" = "#4646fc",
