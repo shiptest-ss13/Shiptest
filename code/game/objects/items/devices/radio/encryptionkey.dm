@@ -42,7 +42,7 @@
 
 /obj/item/encryptionkey/minutemen
 	name = "minutemen encryption key"
-	icon_state = "clip_cypherkey"
+	icon_state = "cmm_cypherkey"
 	channels = list(RADIO_CHANNEL_MINUTEMEN = 1)
 
 /obj/item/encryptionkey/inteq
@@ -57,7 +57,7 @@
 
 /obj/item/encryptionkey/headset_com
 	name = "command radio encryption key"
-	icon_state = "comm_cypherkey"
+	icon_state = "com_cypherkey"
 	channels = list(RADIO_CHANNEL_COMMAND = 1)
 
 /obj/item/encryptionkey/heads/captain

@@ -212,7 +212,7 @@
 	icon_state = "mixer_on_f_map-2"
 /obj/machinery/atmospherics/components/trinary/mixer/flipped/on/layer4
 	piping_layer = 4
-	icon_state = "mixer_on_f_map-4"
+	icon_state = "mixer_on_f_map-2"
 
 /obj/machinery/atmospherics/components/trinary/mixer/airmix //For standard airmix to distro
 	name = "air mixer"

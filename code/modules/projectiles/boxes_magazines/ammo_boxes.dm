@@ -56,7 +56,7 @@
 
 /obj/item/ammo_box/c38
 	name = "speed loader (.38 special)"
-	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These rounds do moderate damage, but plink against armor."
+	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These rounds do okay damage, but struggle against armor."
 	icon_state = "speedloader_38-6"
 	base_icon_state = "speedloader_38"
 	ammo_type = /obj/item/ammo_casing/c38
@@ -102,7 +102,7 @@
 /obj/item/ammo_box/a858
 	name = "stripper clip (8x58mm)"
 	desc = "A 5-round stripper clip for the SSG-669C rifle. These rounds do good damage with significant armor penetration."
-	icon_state = "858"
+	icon_state = "enbloc_858"
 	ammo_type = /obj/item/ammo_casing/caseless/a858
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
@@ -438,7 +438,7 @@
 
 /obj/item/ammo_box/c8x50mmhp_box
 	name = "ammo box (8x50mm)"
-	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration.."
+	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
 	icon_state = "8x50mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/a8_50rhp
 	max_ammo = 20
