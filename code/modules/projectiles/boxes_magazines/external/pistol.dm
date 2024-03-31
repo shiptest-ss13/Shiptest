@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/m10mm
 	name = "pistol magazine (10mm)"
 	desc = "An 8-round single-stack magazine for the stechkin pistol. These rounds do moderate damage, but struggle against armor."
-	icon_state = "stechkin_mag-8"
+	icon_state = "stechkin_mag-1"
 	base_icon_state = "stechkin_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
@@ -62,7 +62,7 @@
 	icon_state = "[base_icon_state]-[min(ammo_count(), 8)]"
 
 /obj/item/ammo_box/magazine/co9mm
-	name = "pistol magazine (9mm)"
+	name = "commander pistol magazine (9mm)"
 	desc = "A 10-round double-stack magazine for Commander pistols. These rounds do okay damage, but struggle against armor."
 	icon_state = "commander_mag-10"
 	base_icon_state = "commander_mag"
@@ -72,7 +72,7 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 
 /obj/item/ammo_box/magazine/pistol556mm
-	name = "handgun magazine (5.56mm HITP caseless)"
+	name = "Pistole C magazine (5.56mm HITP caseless)"
 	desc = "A 12-round, double-stack magazine for the Pistole C pistol. These rounds do okay damage with average performance against armor."
 	icon_state = "pistolec_mag-12" //ok i did it
 	base_icon_state = "pistolec_mag"
@@ -82,7 +82,16 @@
 
 /obj/item/ammo_box/magazine/pistol556mm/update_icon_state()
 	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
+	if(ammo_count() == 12)
+		icon_state = "[base_icon_state]-12"
+	else if(ammo_count() >= 10)
+		icon_state = "[base_icon_state]-10"
+	else if(ammo_count() >= 5)
+		icon_state = "[base_icon_state]-5"
+	else if(ammo_count() >= 1)
+		icon_state = "[base_icon_state]-1"
+	else
+		icon_state = "[base_icon_state]-0"
 
 /obj/item/ammo_box/magazine/co9mm/inc
 	name = "pistol magazine (9mm incendiary)"
@@ -111,15 +120,12 @@
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "large pistol magazine (9mm)"
 	desc = "A long, 15-round double-stack magazine designed for the stechkin APS pistol. These rounds do okay damage, but struggle against armor."
-	icon_state = "9x19p-8"
-	base_icon_state = "9x19p"
+	icon_state = "stechkin_mag-1"
+	base_icon_state = "stechkin_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
 	max_ammo = 15
-
-/obj/item/ammo_box/magazine/pistolm9mm/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[ammo_count() ? "8" : "0"]"
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m50
 	name = "handgun magazine (.50 AE)"
@@ -134,7 +140,8 @@
 /obj/item/ammo_box/magazine/disposable
 	name = "part of a disposable gun"
 	desc = "You ripped out part of the gun, somehow, rendering it unusuable. I hope you're happy."
-	icon_state = "45-8"
+	icon_state = "himehabu_mag-10"
+	base_icon_state = "himehabu_mag"
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = ".22lr"
 	max_ammo = 10
@@ -152,8 +159,10 @@
 /obj/item/ammo_box/magazine/m22lr
 	name = "pistol magazine (.22 LR)"
 	desc = "A single-stack handgun magazine designed to chamber .22 LR. It's rather tiny, all things considered."
-	icon_state = "pistol_22lr"
+	icon_state = "himehabu_mag-10"
+	base_icon_state = "himehabu_mag"
 	ammo_type = /obj/item/ammo_casing/c22lr
 	caliber = "22lr"
 	max_ammo = 10
 	w_class = WEIGHT_CLASS_TINY
+	multiple_sprites = AMMO_BOX_PER_BULLET
