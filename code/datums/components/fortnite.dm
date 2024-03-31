@@ -120,16 +120,16 @@
 	var/obj/item/gun/current_gun = parent
 	var/damage_bonus
 	switch(rarity_table)
-		if(RARITY_TABLE_DEFAULT || RARITY_TABLE_ALWAYS_COMMON || RARITY_TABLE_ALWAYS_UNCOMMON_TO_LEGEND_ONLY)
+		if(RARITY_TABLE_DEFAULT, RARITY_TABLE_ALWAYS_COMMON, RARITY_TABLE_ALWAYS_UNCOMMON_TO_LEGEND_ONLY)
 			switch(rarity)
 				if(FORTNITE_RARITY_UNCOMMON)
 					damage_bonus = 3
 				if(FORTNITE_RARITY_RARE)
 					damage_bonus = 6
 				if(FORTNITE_RARITY_EPIC)
-					damage_bonus = 10
+					damage_bonus = 9
 				if(FORTNITE_RARITY_LEGENDARY)
-					damage_bonus = 15
+					damage_bonus = 12
 		if(RARITY_TABLE_ALWAYS_RARE_TO_LEGEND_ONLY)//the gun is already good anwyays, don't fuck with the stats too much
 			switch(rarity)
 				if(FORTNITE_RARITY_EPIC)
