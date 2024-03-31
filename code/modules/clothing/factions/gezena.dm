@@ -86,12 +86,14 @@
 	desc = "Raksha - a Kalixcian word for 'protection of the heart'. Sturdy and reliable."
 	icon_state = "marinevest"
 	item_state = "marinevest"
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 
 /obj/item/clothing/suit/armor/gezena/marinecoat
 	name = "coated Raksha-plating"
 	desc = "Less practical with the coat than without."
 	icon_state = "marinecoat"
 	item_state = "bluecloth"
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //same
 
 //Spacesuits
 
@@ -151,6 +153,18 @@
 	icon_state = "marineflap"
 	item_state = "marinecloth"
 
+/obj/item/clothing/head/gezena/marine/lead
+	name = "\improper PGFMC Commander Cap"
+	desc = "The standard cap of the PGF military, in Marine Corps colors. The silver markings denote it as a commander's cap."
+	icon_state = "squadhat"
+	item_state = "marinecloth"
+
+/obj/item/clothing/head/gezena/marine/lead/flap
+	name = "\improper PGFMC Commander's' Betzu-il cap"
+	desc = "The standard cap of the PGF military, in Marine Corps colors. “betzu-il”, translating to “sun-blocker”, refers to the flap at the back for protection against natural hazards such as sunburns, sandstorms, and biting insects. The silver markings denote it as a commander's cap."
+	icon_state = "squadflap"
+	item_state = "marinecloth"
+
 /obj/item/clothing/head/gezena/medic
 	name = "\improper PGF medic cap"
 	desc = "The standard cap of the PGF military. The coloring indicates the wearer as a medical officer."
@@ -176,6 +190,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/faction/gezena/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/gezena/gezena_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
+	armor = list("melee" = 35, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //the laser gun country should probably have laser armor
 	icon_state = "marinehelmet"
 	item_state = "marinehelm"
 
@@ -230,6 +245,7 @@
 	righthand_file = 'icons/mob/inhands/faction/gezena/gezena_righthand.dmi'
 	icon_state = "pouches"
 	item_state = "bluecloth"
+	unique_reskin = null
 
 /obj/item/storage/belt/medical/gezena
 	name = "\improper PGF Medical Iho-Usks"
@@ -253,6 +269,12 @@
 	icon_state = "cape"
 	item_state = "blackcloth"
 
+/obj/item/clothing/neck/cloak/gezena/lead
+	name = "sergeant's Azuilhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a squad commander."
+	icon_state = "squadcape"
+	item_state = "blackcloth"
+
 /obj/item/clothing/neck/cloak/gezena/engi
 	name = "engineering Aziulhauz"
 	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as an officer with an engineering specialization."
@@ -263,10 +285,16 @@
 	name = "medical Aziulhauz"
 	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as an officer with a medical specialization."
 	icon_state = "medcape"
-	item_state = "blackcloth"
+	item_state = "whitecloth"
+
+/obj/item/clothing/neck/cloak/gezena/command
+	name = "officer's Azuilhauz"
+	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as an officer."
+	icon_state = "commandcape"
+	item_state = "whitecloth"
 
 /obj/item/clothing/neck/cloak/gezena/captain
-	name = "officer's Azuilhauz"
+	name = "captain's Azuilhauz"
 	desc = "The “Aziulhauz”, or “rank-cape”, is the method with which PGF military members display their rank to others. Wearing one while on duty is required by uniform code. This variant displays the wearer's rank as a high ranking officer."
 	icon_state = "captaincape"
-	item_state = "blackcloth"
+	item_state = "whitecloth"
