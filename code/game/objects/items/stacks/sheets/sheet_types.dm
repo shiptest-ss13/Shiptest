@@ -842,24 +842,56 @@ GLOBAL_LIST_INIT(empty_ammo_box_recipes, list ( \
 		new /datum/stack_recipe("empty .45 incendiary ammo box", /obj/item/ammo_box/c45/fire/empty, 1)
 		)),
 	new/datum/stack_recipe_list("5.56mm HITP caseless ammo boxes", list(
-		new /datum/stack_recipe("empty 5.56mm HITP caselessammo box", /obj/item/ammo_box/c556mmHITP/empty, 1),
+		new /datum/stack_recipe("empty 5.56mm HITP caseless ammo box", /obj/item/ammo_box/c556mmHITP/empty, 1),
 		new /datum/stack_recipe("empty 5.56mm HITP caseless rubbershot ammo box", /obj/item/ammo_box/c556mmHITP/rubbershot/empty, 1),
 		new /datum/stack_recipe("empty 5.56mm HITP caseless surplus ammo box", /obj/item/ammo_box/c556mmHITP/surplus/empty, 1),
 		new /datum/stack_recipe("empty 5.56mm HITP caseless hollowpoint ammo box", /obj/item/ammo_box/c556mmHITP/hp/empty, 1),
 		new /datum/stack_recipe("empty 5.56mm HITP caseless armor piercing ammo box", /obj/item/ammo_box/c556mmHITP/ap/empty, 1)
 		)),
+	new/datum/stack_recipe_list(".45-70 ammo boxes", list(
+		new /datum/stack_recipe("empty .45-70 ammo box", /obj/item/ammo_box/a4570/empty, 1),
+		new /datum/stack_recipe("empty .45-70 hollowpoint ammo box", /obj/item/ammo_box/a4570/hp/empty, 1),
+		new /datum/stack_recipe("empty .45-70 explosive ammo box", /obj/item/ammo_box/a4570/explosive/empty, 1)
+		)),
+	new/datum/stack_recipe_list(".38 special ammo boxes", list(
+		new /datum/stack_recipe("empty .38 special ammo box", /obj/item/ammo_box/c38_box/empty, 1),
+		new /datum/stack_recipe("empty .38 special surplus ammo box", /obj/item/ammo_box/c38_box/surplus/empty, 1)
+		)),
+	new/datum/stack_recipe_list("12 gauge ammo boxes", list(
+		new /datum/stack_recipe("empty 12g buckshot ammo box", /obj/item/ammo_box/a12g/empty, 1),
+		new /datum/stack_recipe("empty 12g slug ammo box", /obj/item/ammo_box/a12g/slug/empty, 1),
+		new /datum/stack_recipe("empty 12g beanbag ammo box", /obj/item/ammo_box/a12g/beanbag/empty, 1),
+		new /datum/stack_recipe("empty 12g rubbershot ammo box", /obj/item/ammo_box/a12g/rubbershot/empty, 1),
+		)),
+	new/datum/stack_recipe_list("foam dart boxes", list(
+		new /datum/stack_recipe("empty foam dart box", /obj/item/ammo_box/foambox/empty, 1),
+		new /datum/stack_recipe("empty riot foam dart box", /obj/item/ammo_box/foambox/riot/empty, 1)
+		)),
+	new/datum/stack_recipe_list("8x50mm ammo boxes", list(
+		new/datum/stack_recipe("empty 8x50mm ammo box", /obj/item/ammo_box/c8x50mm_box/empty, 1),
+		new /datum/stack_recipe("empty 8x50mm hollowpoint ammo box", /obj/item/ammo_box/c8x50mmhp_box/empty, 1)
+		)),
+	new/datum/stack_recipe_list("ferromagnetic ammo boxes", list(
+		new/datum/stack_recipe("empty ferromganetic pellet ammo box", /obj/item/ammo_box/ferropelletbox/empty, 1),
+		new/datum/stack_recipe("empty ferromganetic slug ammo box", /obj/item/ammo_box/ferroslugbox/empty, 1),
+		new/datum/stack_recipe("empty ferromganetic lance ammo box", /obj/item/ammo_box/ferrolancebox/empty, 1),
+		)),
+	new/datum/stack_recipe("empty .308 ammo box", /obj/item/ammo_box/a308/empty, 1),
+	new/datum/stack_recipe("empty .22 LR ammo box", /obj/item/ammo_box/c22lr_box/empty, 1),
+	new/datum/stack_recipe("empty 4.6x30mm ammo box", /obj/item/ammo_box/c46x30mm_box, 1),
+	new/datum/stack_recipe("empty 40mm grenade ammo box", /obj/item/ammo_box/a40mm/empty, 2),
 	new/datum/stack_recipe("empty 7.62x40mm ammo box", /obj/item/ammo_box/a762_40/empty, 2)))
 
 /obj/item/stack/sheet/empty_ammo_box
 	name = "blank ammo boxes"
-	desc = "An unformatted ammo box. You could probably fold it to hold something"
+	desc = "An unformatted ammo box. You could probably fold it to hold different types of ammo."
 	singular_name = "blank ammo box"
 	icon_state = "sheet-card"
-	icon_state = "sheet-card"
+	item_state = "sheet-card"
 	novariants = TRUE
-	custom_materials = list(/datum/material/cardboard = MINERAL_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/empty_ammo_box = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/empty_ammo_box
-	material_type = /datum/material/cardboard
+	material_type = /datum/material/empty_ammo_box
 	material_modifier = 1
 
 /obj/item/stack/sheet/empty_ammo_box/fifty

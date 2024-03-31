@@ -419,3 +419,14 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = 0.2
 	turf_sound_override = FOOTSTEP_WOOD
 	texture_layer_icon_state = "bamboo"
+
+/datum/material/empty_ammo_box
+	name = "ammo box sheets"
+	id = "empty ammo box"
+	desc = "Like cardboard, but for bullets!"
+	color = "#4c4028"
+	categories = list(MAT_CATEGORY_RIGID = TRUE)
+	sheet_type = /obj/item/stack/sheet/empty_ammo_box
+	value_per_unit = 0.003
+	armor_modifiers = list("melee" = 0.25, "bullet" = 0.25, "laser" = 0.25, "energy" = 0.25, "bomb" = 0.25, "bio" = 0.25, "rad" = 1.5, "fire" = 0, "acid" = 1.5)
+	beauty_modifier = -0.1

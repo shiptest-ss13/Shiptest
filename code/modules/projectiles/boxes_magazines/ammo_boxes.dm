@@ -31,12 +31,17 @@
 	ammo_type = /obj/item/ammo_casing/a4570
 	max_ammo = 12
 
+/obj/item/ammo_box/a4570/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a4570/match
 	name = "ammo box (.45-70 match)"
 	desc = "A 12-round ammo box for .45-70 revolvers. These match rounds travel faster, perform better against armor, and can ricochet off targets."
 	icon_state = "4570-match"
 	ammo_type = /obj/item/ammo_casing/a4570/match
 
+/obj/item/ammo_box/a4570/match/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/a4570/hp
 	name = "ammo box (.45-70 hollow point)"
@@ -44,12 +49,17 @@
 	icon_state = "4570-hp"
 	ammo_type = /obj/item/ammo_casing/a4570/hp
 
+/obj/item/ammo_box/a4570/hp/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a4570/explosive
 	name = "ammo box (.45-70 explosive)"
 	desc = "A 12-round ammo box for .45-70 revolvers. These explosive rounds contain a small explosive charge that detonates on impact, creating large wounds and potentially removing limbs."
 	icon_state = "4570-explosive"
 	ammo_type = /obj/item/ammo_casing/a4570/explosive
 
+/obj/item/ammo_box/a4570/explosive/empty
+	start_empty = TRUE
 
 // .38 special Speed Loaders (Colt Detective Special)
 
@@ -165,11 +175,17 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 50
 
+/obj/item/ammo_box/c38_box/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c38_box/surplus
 	name = "ammo box (.38 surplus)"
 	desc = "A box of low-quality .38 Special ammo."
 	icon_state = "38box-surplus"
 	ammo_type = /obj/item/ammo_casing/c38/surplus
+
+/obj/item/ammo_box/c38_box/surplus/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/a12g
 	name = "ammo box (12g buckshot)"
@@ -178,11 +194,17 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 25
 
+/obj/item/ammo_box/a12g/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a12g/slug
 	name = "ammo box (12g slug)"
 	desc = "A box of 12-gauge slugs, for improved accuracy and penetration."
 	icon_state = "12gbox-slug"
 	ammo_type = /obj/item/ammo_casing/shotgun
+
+/obj/item/ammo_box/a12g/slug/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/a12g/beanbag
 	name = "ammo box (12g beanbag)"
@@ -190,11 +212,17 @@
 	icon_state = "12gbox-beanbag"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 
+/obj/item/ammo_box/a12g/beanbag/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a12g/rubbershot
 	name = "ammo box (12g rubbershot)"
 	desc = "A box of 12-gauge rubbershot shells, designed for riot control."
 	icon_state = "12gbox-rubbershot"
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+
+/obj/item/ammo_box/a12g/rubbershot/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
@@ -416,6 +444,9 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/ammo_box/a40mm/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a762_40
 	name = "ammo box (7.62x40mm CLIP)"
 	icon_state = "a762_40box_big"
@@ -435,6 +466,9 @@
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 30
 
+/obj/item/ammo_box/a308/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/a308/hunterspride //just an alternative graphic for srm ships
 	icon_state = "a308box-HP"
 
@@ -446,10 +480,16 @@
 	max_ammo = 40
 	custom_materials = list(/datum/material/iron = 500)
 
+/obj/item/ammo_box/foambox/empty
+ 	start_empty = TRUE
+
 /obj/item/ammo_box/foambox/riot
 	icon_state = "foambox_riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	custom_materials = list(/datum/material/iron = 50000)
+
+/obj/item/ammo_box/foambox/riot/empty
+ 	start_empty = TRUE
 
 /obj/item/ammo_box/c22lr_box
 	name = "ammo box (.22 LR)"
@@ -457,6 +497,9 @@
 	icon_state = "22lrbox"
 	ammo_type = /obj/item/ammo_casing/c22lr
 	max_ammo = 75
+
+/obj/item/ammo_box/c22lr_box/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c45_speedloader
 	name = "speed loader (.45)"
@@ -477,12 +520,18 @@
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	max_ammo = 50
 
+/obj/item/ammo_box/c46x30mm_box/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c8x50mm_box
 	name = "ammo box (8x50mm)"
 	desc = "A box of standard 8x50mm ammo."
 	icon_state = "8x50mmbox"
 	ammo_type = /obj/item/ammo_casing/a8_50r
 	max_ammo = 20
+
+/obj/item/ammo_box/c8x50mm_box/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/ferropelletbox
 	name = "ammo box (ferromagnetic pellets)"
@@ -491,12 +540,18 @@
 	ammo_type = /obj/item/ammo_casing/caseless/gauss
 	max_ammo = 50
 
+/obj/item/ammo_box/ferropelletbox/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/ferroslugbox
 	name = "ammo box (ferromagnetic slugs)"
 	desc = "A box of standard ferromagnetic slugs."
 	icon_state = "ferroslugsbox"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/slug
 	max_ammo = 20
+
+/obj/item/ammo_box/ferroslugbox/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/ferrolancebox
 	name = "ammo box (ferromagnetic lances)"
@@ -505,9 +560,15 @@
 	ammo_type = /obj/item/ammo_casing/caseless/gauss/lance
 	max_ammo = 50
 
+/obj/item/ammo_box/ferrolancebox/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c8x50mmhp_box
 	name = "ammo box (8x50mm)"
 	desc = "A box of hollow point 8x50mm ammo, designed to cause massive damage at the cost of armor penetration."
 	icon_state = "8x50mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/a8_50rhp
 	max_ammo = 20
+
+/obj/item/ammo_box/c8x50mmhp_box/empty
+	start_empty = TRUE
