@@ -885,7 +885,7 @@ GLOBAL_LIST_INIT(empty_ammo_box_recipes, list ( \
 /obj/item/stack/sheet/empty_ammo_box
 	name = "blank ammo boxes"
 	desc = "An unformatted ammo box. You could probably fold it to hold different types of ammo."
-	singular_name = "blank ammo box"
+	singular_name = "blank ammo box sheet"
 	icon_state = "sheet-ammo"
 	item_state = "sheet-ammo"
 	novariants = TRUE
