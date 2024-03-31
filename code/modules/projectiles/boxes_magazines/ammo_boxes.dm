@@ -325,7 +325,6 @@
 /obj/item/ammo_box/c10mm/hp/empty
 	start_empty = TRUE
 
-
 /obj/item/ammo_box/c10mm/fire
 	name = "ammo box (10mm incendiary)"
 	desc = "A box of 10mm incendiary ammo, designed to ignite targets at the cost of initial damage."
