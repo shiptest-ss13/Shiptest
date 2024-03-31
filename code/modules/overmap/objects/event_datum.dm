@@ -355,7 +355,6 @@ GLOBAL_LIST_INIT(overmap_event_pick_list, list(
 
 /datum/overmap/event/meteor/storm
 	name = "THE STORM"
-	color = "#FF0000"
 	token_icon_state = "danger"
 	meteor_types = list(
 		/obj/effect/meteor/tunguska = 1
