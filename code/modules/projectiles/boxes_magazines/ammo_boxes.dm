@@ -203,11 +203,17 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 50
 
+/obj/item/ammo_box/c9mm/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c9mm/surplus
 	name = "ammo box (9mm surplus)"
 	desc = "A box of low-quality 9mm ammo."
 	icon_state = "9mmbox-surplus"
 	ammo_type = /obj/item/ammo_casing/c9mm/surplus
+
+/obj/item/ammo_box/c9mm/surplus/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c9mm/rubbershot
 	name = "ammo box (9mm rubbershot)"
@@ -215,11 +221,17 @@
 	icon_state = "9mmbox-rubbershot"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
+/obj/item/ammo_box/c9mm/rubbershot/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c9mm/ap
 	name = "ammo box (9mm armor-piercing)"
 	desc = "A box of 9mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "9mmbox-ap"
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
+
+/obj/item/ammo_box/c9mm/ap/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c9mm/hp
 	name = "ammo box (9mm hollow point)"
@@ -227,11 +239,17 @@
 	icon_state = "9mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/c9mm/hp
 
+/obj/item/ammo_box/c9mm/hp/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c9mm/fire
 	name = "ammo box (9mm incendiary)"
 	desc = "A box of 9mm incendiary ammo, designed to ignite targets at the cost of initial damage."
 	icon_state = "9mmbox-incendiary"
 	ammo_type = /obj/item/ammo_casing/c9mm/inc
+
+/obj/item/ammo_box/c9mm/fire/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c10mm
 	name = "ammo box (10mm)"
@@ -240,11 +258,17 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 50
 
+/obj/item/ammo_box/c10mm/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c10mm/surplus
 	name = "ammo box (10mm surplus)"
 	desc = "A box of low-quality 10mm ammo."
 	icon_state = "10mmbox-surplus"
 	ammo_type = /obj/item/ammo_casing/c10mm/surplus
+
+/obj/item/ammo_box/c10mm/surplus/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c10mm/rubbershot
 	name = "ammo box (10mm rubbershot)"
@@ -252,11 +276,17 @@
 	icon_state = "10mmbox-rubbershot"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
+/obj/item/ammo_box/c10mm/rubbershot/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c10mm/ap
 	name = "ammo box (10mm armor-piercing)"
 	desc = "A box of 10mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "10mmbox-ap"
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
+
+/obj/item/ammo_box/c10mm/ap/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c10mm/hp
 	name = "ammo box (10mm hollow point)"
@@ -264,11 +294,18 @@
 	icon_state = "10mmbox-hp"
 	ammo_type = /obj/item/ammo_casing/c10mm/hp
 
+/obj/item/ammo_box/c10mm/hp/empty
+	start_empty = TRUE
+
+
 /obj/item/ammo_box/c10mm/fire
 	name = "ammo box (10mm incendiary)"
 	desc = "A box of 10mm incendiary ammo, designed to ignite targets at the cost of initial damage."
 	icon_state = "10mmbox-incendiary"
 	ammo_type = /obj/item/ammo_casing/c10mm/inc
+
+/obj/item/ammo_box/c10mm/fire/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c45
 	name = "ammo box (.45)"
@@ -277,11 +314,17 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 50
 
+/obj/item/ammo_box/c45/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c45/surplus
 	name = "ammo box (.45 surplus)"
 	desc = "A box of low-quality .45 ammo."
 	icon_state = "45box-surplus"
 	ammo_type = /obj/item/ammo_casing/c45/surplus
+
+/obj/item/ammo_box/c45/surplus/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c45/rubbershot
 	name = "ammo box (.45 rubbershot)"
@@ -289,11 +332,17 @@
 	icon_state = "45box-rubbershot"
 	ammo_type = /obj/item/ammo_casing/c45/rubber
 
+/obj/item/ammo_box/c45/rubbershot/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c45/ap
 	name = "ammo box (.45 armor-piercing)"
 	desc = "A box of .45 armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "45box-ap"
 	ammo_type = /obj/item/ammo_casing/c45/ap
+
+/obj/item/ammo_box/c45/ap/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c45/hp
 	name = "ammo box (.45 hollow point)"
@@ -301,11 +350,17 @@
 	icon_state = "45box-hp"
 	ammo_type = /obj/item/ammo_casing/c45/hp
 
+/obj/item/ammo_box/c45/hp/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c45/fire
 	name = "ammo box (.45 incendiary)"
 	desc = "A box of .45 incendiary ammo, designed to ignite targets at the cost of initial damage."
 	icon_state = "45box-incendiary"
 	ammo_type = /obj/item/ammo_casing/c45/inc
+
+/obj/item/ammo_box/c45/fire/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c556mmHITP
 	name = "ammo box (5.56mm HITP caseless)"
@@ -314,11 +369,17 @@
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm
 	max_ammo = 50
 
+/obj/item/ammo_box/c556mmHITP/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c556mmHITP/surplus
 	name = "ammo box (5.56mm HITP caseless surplus)"
 	desc = "A box of low-quality 5.56mm HITP caseless ammo."
 	icon_state = "556mmHITPbox-surplus"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/surplus
+
+/obj/item/ammo_box/c556mmHITP/surplus/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/c556mmHITP/rubbershot
 	name = "ammo box (5.56mm HITP caseless rubbershot)"
@@ -326,17 +387,26 @@
 	icon_state = "556mmHITPbox-rubbershot"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/rubbershot
 
+/obj/item/ammo_box/c556mmHITP/rubbershot/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c556mmHITP/ap
 	name = "ammo box (5.56mm HITP caseless armor-piercing)"
 	desc = "A box of 5.56mm HITP caseless armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "556mmHITPbox-ap"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/ap
 
+/obj/item/ammo_box/c556mmHITP/ap/empty
+	start_empty = TRUE
+
 /obj/item/ammo_box/c556mmHITP/hp
 	name = "ammo box (5.56mm HITP caseless hollow point)"
 	desc = "A box of 5.56mm HITP caseless hollow point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "556mmHITPbox-hp"
 	ammo_type = /obj/item/ammo_casing/caseless/c556mm/hp
+
+/obj/item/ammo_box/c556mmHITP/hp/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"
@@ -352,6 +422,9 @@
 	ammo_type = /obj/item/ammo_casing/a762_40
 	max_ammo = 120
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/a762_40/empty
+	start_empty = TRUE
 
 /obj/item/ammo_box/a762_40/inteq
 	icon_state = "a762_40box_big_inteq"

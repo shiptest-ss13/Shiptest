@@ -9,6 +9,7 @@
  * Paper Frames
  * Runed Metal (cult)
  * Bronze (bake brass)
+ * Empty Ammo Boxes
  */
 
 /*
@@ -814,3 +815,62 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	amount = 20
 /obj/item/stack/sheet/sandblock/five
 	amount = 5
+
+GLOBAL_LIST_INIT(empty_ammo_box_recipes, list ( \
+	new/datum/stack_recipe_list("9mm ammo boxes", list(
+		new /datum/stack_recipe("empty 9mm ammo box", /obj/item/ammo_box/c9mm/empty, 1),
+		new /datum/stack_recipe("empty 9mm rubbershot ammo box", /obj/item/ammo_box/c9mm/rubbershot/empty, 1),
+		new /datum/stack_recipe("empty 9mm surplus ammo box", /obj/item/ammo_box/c9mm/surplus/empty, 1),
+		new /datum/stack_recipe("empty 9mm hollowpoint ammo box", /obj/item/ammo_box/c9mm/hp/empty, 1),
+		new /datum/stack_recipe("empty 9mm armor piercing ammo box", /obj/item/ammo_box/c9mm/ap/empty, 1),
+		new /datum/stack_recipe("empty 9mm incendiary ammo box", /obj/item/ammo_box/c9mm/fire/empty, 1)
+		)),
+	new/datum/stack_recipe_list("10mm ammo boxes", list(
+		new /datum/stack_recipe("empty 10mm ammo box", /obj/item/ammo_box/c10mm/empty, 1),
+		new /datum/stack_recipe("empty 10mm rubbershot ammo box", /obj/item/ammo_box/c10mm/rubbershot/empty, 1),
+		new /datum/stack_recipe("empty 10mm surplus ammo box", /obj/item/ammo_box/c10mm/surplus/empty, 1),
+		new /datum/stack_recipe("empty 10mm hollowpoint ammo box", /obj/item/ammo_box/c10mm/hp/empty, 1),
+		new /datum/stack_recipe("empty 10mm armor piercing ammo box", /obj/item/ammo_box/c10mm/ap/empty, 1),
+		new /datum/stack_recipe("empty 10mm incendiary ammo box", /obj/item/ammo_box/c10mm/fire/empty, 1)
+		)),
+	new/datum/stack_recipe_list(".45 ammo boxes", list(
+		new /datum/stack_recipe("empty .45 ammo box", /obj/item/ammo_box/c45/empty, 1),
+		new /datum/stack_recipe("empty .45 rubbershot ammo box", /obj/item/ammo_box/c45/rubbershot/empty, 1),
+		new /datum/stack_recipe("empty .45 surplus ammo box", /obj/item/ammo_box/c45/surplus/empty, 1),
+		new /datum/stack_recipe("empty .45 hollowpoint ammo box", /obj/item/ammo_box/c45/hp/empty, 1),
+		new /datum/stack_recipe("empty .45 armor piercing ammo box", /obj/item/ammo_box/c45/ap/empty, 1),
+		new /datum/stack_recipe("empty .45 incendiary ammo box", /obj/item/ammo_box/c45/fire/empty, 1)
+		)),
+	new/datum/stack_recipe_list("5.56mm HITP caseless ammo boxes", list(
+		new /datum/stack_recipe("empty 5.56mm HITP caselessammo box", /obj/item/ammo_box/c556mmHITP/empty, 1),
+		new /datum/stack_recipe("empty 5.56mm HITP caseless rubbershot ammo box", /obj/item/ammo_box/c556mmHITP/rubbershot/empty, 1),
+		new /datum/stack_recipe("empty 5.56mm HITP caseless surplus ammo box", /obj/item/ammo_box/c556mmHITP/surplus/empty, 1),
+		new /datum/stack_recipe("empty 5.56mm HITP caseless hollowpoint ammo box", /obj/item/ammo_box/c556mmHITP/hp/empty, 1),
+		new /datum/stack_recipe("empty 5.56mm HITP caseless armor piercing ammo box", /obj/item/ammo_box/c556mmHITP/ap/empty, 1)
+		)),
+	new/datum/stack_recipe("empty 7.62x40mm ammo box", /obj/item/ammo_box/a762_40/empty, 2)))
+
+/obj/item/stack/sheet/empty_ammo_box
+	name = "blank ammo boxes"
+	desc = "An unformatted ammo box. You could probably fold it to hold something"
+	singular_name = "blank ammo box"
+	icon_state = "sheet-card"
+	icon_state = "sheet-card"
+	novariants = TRUE
+	custom_materials = list(/datum/material/cardboard = MINERAL_MATERIAL_AMOUNT)
+	merge_type = /obj/item/stack/sheet/empty_ammo_box
+	material_type = /datum/material/cardboard
+	material_modifier = 1
+
+/obj/item/stack/sheet/empty_ammo_box/fifty
+	amount = 50
+/obj/item/stack/sheet/empty_ammo_box/twenty
+	amount = 20
+/obj/item/stack/sheet/empty_ammo_box/five
+	amount = 5
+
+/obj/item/stack/sheet/empty_ammo_box/get_main_recipes()
+	. = ..()
+	. += GLOB.empty_ammo_box_recipes
+
+

@@ -300,6 +300,15 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/empty_ammo_box
+	name = "Empty Ammo Box"
+	result = /obj/item/stack/sheet/empty_ammo_box
+	reqs = list(/obj/item/stack/sheet/cardboard = 1,
+				/obj/item/stack/sheet/metal = 1)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/ishotgun
 	name = "Improvised Shotgun"
 	result = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
