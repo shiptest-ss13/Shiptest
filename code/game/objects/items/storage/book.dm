@@ -246,12 +246,6 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	item_state = "koran"
 	deity_name = "Allah"
 
-/obj/item/storage/book/bible/torah
-	name = "Torah"
-	icon_state = "torah"
-	item_state = "torah"
-	deity_name = "YHWH"
-
 /obj/item/storage/book/bible/booze
 	desc = "To be applied to the head repeatedly."
 
