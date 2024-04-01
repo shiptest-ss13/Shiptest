@@ -2205,6 +2205,14 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
+"Ds" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/structure/chair/wood,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "DH" = (
 /obj/structure/cable/orange{
 	icon_state = "5-10"
@@ -2795,14 +2803,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
-"Li" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#543C30"
-	},
-/obj/structure/chair/wood,
-/turf/open/floor/wood/walnut,
-/area/ship/crew/canteen)
 "Ll" = (
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/oxygen,
@@ -3475,7 +3475,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
-/obj/item/fish_feed,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "Ve" = (
@@ -3559,6 +3558,10 @@
 "VG" = (
 /obj/machinery/light/directional/west,
 /obj/structure/table/reinforced,
+/obj/item/fish_feed{
+	pixel_y = 5;
+	pixel_x = 1
+	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
 "VI" = (
@@ -4492,7 +4495,7 @@ kX
 HK
 cI
 LP
-Li
+Ds
 pp
 yp
 yp
