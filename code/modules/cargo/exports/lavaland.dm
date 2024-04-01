@@ -16,7 +16,7 @@
 						/obj/item/clothing/suit/space/hardsuit/cult,
 						/obj/item/voodoo,
 						/obj/item/grenade/clusterbuster/inferno,
-						/obj/item/clothing/neck/necklace/memento_mori,
+						/obj/item/clothing/neck/memento_mori,
 						/obj/item/organ/heart/cursed/wizard,
 						/obj/item/clothing/suit/hooded/cloak/drake,
 						/obj/item/dragons_blood,

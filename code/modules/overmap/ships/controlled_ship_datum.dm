@@ -133,7 +133,7 @@
 		QDEL_NULL(ship_account)
 	if(!QDELETED(shipkey))
 		QDEL_NULL(shipkey)
-	QDEL_LIST(manifest)
+	manifest.Cut()
 	job_holder_refs.Cut()
 	job_slots.Cut()
 	blacklisted.Cut()
@@ -420,7 +420,7 @@
 /obj/item/key/ship
 	name = "ship key"
 	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."
-	icon_state = "keyship"
+	icon_state = "shipkey"
 	var/datum/overmap/ship/controlled/master_ship
 	var/static/list/key_colors = list(
 		"blue" = "#4646fc",

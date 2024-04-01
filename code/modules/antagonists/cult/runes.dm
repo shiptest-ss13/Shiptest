@@ -669,7 +669,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 
 /obj/effect/rune/wall/proc/update_state()
 	deltimer(density_timer)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	if(density)
 		var/mutable_appearance/shimmer = mutable_appearance('icons/effects/effects.dmi', "barriershimmer", ABOVE_MOB_LAYER)
 		shimmer.appearance_flags |= RESET_COLOR

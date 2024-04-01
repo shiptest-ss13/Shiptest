@@ -29,7 +29,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "ai" = (
-/obj/structure/stone_tile/slab/cracked,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "ak" = (
@@ -728,10 +728,9 @@
 /turf/open/floor/carpet,
 /area/outpost/crew/library)
 "cW" = (
-/obj/structure/stone_tile{
-	dir = 1
-	},
-/turf/open/floor/plasteel/cult,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
 /area/outpost/maintenance/fore)
 "cX" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -1166,7 +1165,10 @@
 /turf/open/floor/wood,
 /area/outpost/crew/library)
 "ev" = (
-/obj/structure/girder/cult,
+/obj/structure/girder,
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-9"
+	},
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
@@ -1500,9 +1502,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/outpost/hallway/fore)
-"fF" = (
-/turf/closed/wall/mineral/cult,
-/area/outpost/maintenance/fore)
 "fG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1752,7 +1751,7 @@
 /turf/open/floor/carpet/nanoweave,
 /area/outpost/crew/canteen)
 "gz" = (
-/obj/structure/girder/cult,
+/obj/structure/girder,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "gA" = (
@@ -3608,17 +3607,8 @@
 /turf/open/floor/plasteel/rockvault,
 /area/outpost/operations)
 "ng" = (
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 4
-	},
-/obj/structure/stone_tile/surrounding_tile/cracked{
-	dir = 6
-	},
-/obj/structure/stone_tile/surrounding_tile/cracked,
-/obj/effect/decal/remains/human{
-	pixel_y = 4
-	},
-/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "foam_plating"
 	},
@@ -6263,8 +6253,10 @@
 	},
 /area/outpost/hallway/central)
 "vY" = (
-/obj/structure/stone_tile/burnt,
-/turf/open/floor/plasteel/cult,
+/obj/structure/catwalk/over/plated_catwalk,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/outpost/maintenance/fore)
 "vZ" = (
 /turf/open/floor/plasteel/patterned/grid,
@@ -7089,10 +7081,9 @@
 /turf/open/floor/concrete/tiles,
 /area/outpost/crew/lounge)
 "yK" = (
-/obj/structure/stone_tile/block{
-	dir = 4
-	},
-/turf/open/floor/plasteel/cult,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
 /area/outpost/maintenance/fore)
 "yL" = (
 /obj/machinery/door/airlock/grunge,
@@ -7892,10 +7883,9 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/outpost/crew/canteen)
 "BB" = (
-/obj/structure/stone_tile{
-	dir = 8
-	},
-/turf/open/floor/plasteel/cult,
+/obj/effect/decal/cleanable/plasma,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel,
 /area/outpost/maintenance/fore)
 "BC" = (
 /obj/structure/cable{
@@ -10745,12 +10735,11 @@
 /turf/open/floor/grass/snow/safe,
 /area/outpost/hallway/fore)
 "Lw" = (
-/obj/structure/stone_tile/block{
-	dir = 8
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-11"
 	},
-/turf/open/floor/plating{
-	icon_state = "foam_plating"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "Lx" = (
 /obj/effect/turf_decal/borderfloorwhite{
@@ -11326,8 +11315,10 @@
 /turf/open/floor/plasteel,
 /area/outpost/crew/canteen)
 "NC" = (
-/obj/structure/stone_tile/block,
-/turf/open/floor/plasteel/cult,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
 /area/outpost/maintenance/fore)
 "NF" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -12845,10 +12836,8 @@
 	},
 /area/outpost/maintenance/fore)
 "SK" = (
-/obj/structure/stone_tile/block{
-	dir = 1
-	},
-/obj/structure/stone_tile/block/cracked,
+/obj/structure/catwalk/over/plated_catwalk,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/outpost/maintenance/fore)
 "SL" = (
@@ -14430,8 +14419,14 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/engineering/atmospherics)
 "Yz" = (
-/obj/structure/stone_tile/surrounding/cracked,
-/obj/item/toy/plush/narplush,
+/obj/item/toy/plush/lizardplushie{
+	name = "Him";
+	desc = "A menace unleashed."
+	},
+/obj/effect/decal/fakelattice{
+	icon_state = "lattice-38"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/fore)
 "YC" = (
@@ -14592,7 +14587,7 @@
 	dir = 8;
 	pixel_x = 28
 	},
-/obj/item/clothing/under/rank/civilian/cookjorts,
+/obj/item/clothing/under/shorts/cookjorts,
 /obj/item/clothing/shoes/cookflops,
 /obj/item/clothing/suit/toggle/chef,
 /obj/item/clothing/under/rank/civilian/chef,
@@ -20339,7 +20334,7 @@ UG
 lz
 wH
 wH
-fF
+Lw
 ev
 Rp
 AE
@@ -20462,7 +20457,7 @@ UG
 wH
 wH
 ng
-Lw
+SH
 BB
 Rp
 AE
