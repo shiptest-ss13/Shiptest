@@ -270,6 +270,8 @@ DEFINE_BITFIELD(knpc_traits, list(
 	var/simulated_only
 	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
 	var/turf/avoid
+	/// A specific turf we're avoiding, like if a mulebot is being blocked by someone t-posing in a doorway we're trying to get through
+	var/list/turfs_to_avoid = list(/turf/open/acid,/turf/open/lava)
 
 /datum/pathfind/New(atom/movable/caller, atom/goal, id, max_distance, mintargetdist, simulated_only, avoid, avoid_mobs)
 	src.caller = caller
@@ -369,6 +371,9 @@ DEFINE_BITFIELD(knpc_traits, list(
 		steps_taken++
 		if(!CAN_STEP(lag_turf, current_turf))
 			return
+		for(var/turf/checked_turf as anything in turfs_to_avoid)
+			if(istype(current_turf,checked_turf))
+				return
 
 		if(current_turf == end || (mintargetdist && (get_dist(current_turf, end) <= mintargetdist)))
 			var/datum/jps_node/final_node = new(current_turf, parent_node, steps_taken)
@@ -430,6 +435,9 @@ DEFINE_BITFIELD(knpc_traits, list(
 		steps_taken++
 		if(!CAN_STEP(lag_turf, current_turf))
 			return
+		for(var/turf/checked_turf as anything in turfs_to_avoid)
+			if(istype(current_turf,checked_turf))
+				return
 
 		if(current_turf == end || (mintargetdist && (get_dist(current_turf, end) <= mintargetdist)))
 			var/datum/jps_node/final_node = new(current_turf, parent_node, steps_taken)
@@ -531,6 +539,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	var/static/list/climbable = typecacheof(list(/obj/structure/table, /obj/structure/railing)) // climbable structures
 	var/pathfind_timeout = 0 //If pathfinding fails, it is püt in timeout for a while to avoid spamming the server with pathfinding calls.
 	var/timeout_stacks = 0 //Consecutive pathfind fails add additional delay stacks to further counteract the effects of knpcs in unreachable locations.
+	var/list/turfs_to_avoid = list(/turf/open/acid,/turf/open/lava)
 
 /mob/living/carbon/human/ai_boarder
 	faction = list("neutral")
@@ -580,6 +589,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 /mob/living/carbon/human/ai_boarder/hermit/gunslinger
 	survivor_type = "gunslinger"
 
+/mob/living/carbon/human/ai_boarder/hermit/commando
+	survivor_type = "commando"
+
 /mob/living/carbon/human/ai_boarder/hermit/Initialize(mapload)
 	if(!survivor_type)
 		survivor_type = pick("survivor","hunter","gunslinger")
@@ -600,7 +612,8 @@ GLOBAL_LIST_EMPTY(knpcs)
 	INVOKE_ASYNC(src, PROC_REF(set_species), mob_species)
 
 	var/obj/item/clothing/suit/hooded/survivor_hood = wear_suit
-	survivor_hood.ToggleHood()
+	if(survivor_hood)
+		survivor_hood.ToggleHood()
 
 /datum/outfit/whitesands/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	var/mob/living/carbon/human/ai_boarder/hermit/hermit = H
@@ -627,7 +640,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			/obj/item/clothing/under/utility = 5
 			)
 		)
-	else if (survivor_type == "gunslinger")
+	else if (survivor_type == "gunslinger" || survivor_type == "commando")
 		picked = pickweight(list(
 			/obj/item/clothing/under/rank/cargo/miner/lavaland = 35,
 			/obj/item/clothing/under/color/random = 25,
@@ -665,7 +678,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			/obj/item/storage/belt/mining/vendor = 3,
 			)
 		)
-	else if(survivor_type == "gunslinger")
+	else if(survivor_type == "gunslinger" || survivor_type == "commando")
 		picked = pickweight(list(
 			/obj/item/storage/belt/mining = 30,
 			/obj/item/storage/belt/bandolier = 30,
@@ -683,7 +696,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	//everyone wears the same suit
 	suit = /obj/item/clothing/suit/hooded/survivor
 
-	if (survivor_type == "gunslinger")
+	if (survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(30))
 			picked = /obj/item/clothing/shoes/combat //but sometimes there are nicer shoes
 		else
@@ -774,6 +787,8 @@ GLOBAL_LIST_EMPTY(knpcs)
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
 	if(prob(5))
 		backpack_contents += /obj/item/reagent_containers/hypospray/medipen/survival
+	if(prob(10)) //carried over from previous
+		backpack_contents += /obj/item/crusher_trophy/shiny
 
 	//pockets
 	if(survivor_type == "survivor") //could also use fleshing out
@@ -787,9 +802,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 		if (prob(20))
 			l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 
-	if(survivor_type == "gunslinger")
+	if(survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(50))
-			l_pocket = /obj/item/ammo_box/magazine/aks74u
+			l_pocket = /obj/item/ammo_box/magazine/skm_545_39
 		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 	else
@@ -802,6 +817,14 @@ GLOBAL_LIST_EMPTY(knpcs)
 		/obj/item/clothing/mask/gas/explorer = 20,
 		/obj/item/clothing/mask/gas/explorer/old = 20,
 		/obj/item/clothing/mask/gas/syndicate = 20,
+		/obj/item/clothing/mask/breath = 5,
+		/obj/item/clothing/mask/breath/medical = 5,
+		/obj/item/clothing/mask/breath/suns = 5,
+		/obj/item/clothing/mask/gas/sechailer = 10,
+		/obj/item/clothing/mask/gas/sechailer/balaclava = 10,
+		/obj/item/clothing/mask/gas/sechailer/balaclava/inteq = 10,
+		/obj/item/clothing/mask/gas/sechailer/swat = 1,
+		/obj/item/clothing/mask/gas/sechailer/swat/spacepol = 1,
 		)
 	)
 
@@ -841,10 +864,40 @@ GLOBAL_LIST_EMPTY(knpcs)
 		for(var/i in 1 to spare_ammo_count)
 			backpack_contents += /obj/item/ammo_box/aac_300blk_stripper
 
-	if(survivor_type == "gunslinger")
-		r_hand = /obj/item/gun/ballistic/automatic/smg/aks74u
-		for(var/i in 1 to spare_ammo_count)
-			backpack_contents += /obj/item/ammo_box/magazine/aks74u
+	if(survivor_type == "gunslinger" || survivor_type == "commando")
+		if(prob(7) || survivor_type == "commando") //cause fuck you, thats why
+			uniform = /obj/item/clothing/under/rank/security/officer/camo
+
+			suit =	pickweight(list(
+				/obj/item/clothing/suit/armor/vest/bulletproof = 35,
+				/obj/item/clothing/suit/armor/vest/syndie = 20,
+				/obj/item/clothing/suit/armor/vest/marine = 1,
+				/obj/item/clothing/suit/armor/vest/marine/heavy = 1,
+				/obj/item/clothing/suit/armor/vest/marine = 1,
+			))
+			head =	pickweight(list(
+				/obj/item/clothing/head/helmet/bulletproof/x11 = 40,
+				/obj/item/clothing/head/helmet/bulletproof/m10 = 40,
+
+				/obj/item/clothing/head/helmet/swat = 20,
+				/obj/item/clothing/head/helmet/swat/nanotrasen = 20,
+
+				/obj/item/clothing/head/helmet/marine = 1,
+				/obj/item/clothing/head/helmet/marine/security = 1,
+			))
+			spare_ammo_count = rand(1,3)
+			r_hand = /obj/item/gun/ballistic/automatic/assault/skm/pirate
+			for(var/i in 1 to spare_ammo_count)
+				if(prob(5))
+					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40/drum //die.
+				else if(prob(20))
+					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40/extended
+				else
+					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40
+		else
+			r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+			for(var/i in 1 to spare_ammo_count)
+				backpack_contents += /obj/item/ammo_box/magazine/skm_545_39
 
 	internals_slot = ITEM_SLOT_RPOCKET
 
@@ -916,13 +969,21 @@ GLOBAL_LIST_EMPTY(knpcs)
 		return FALSE
 	if(pathfind_timeout > 0) //Pathfinding in timeout, move around aimlessly
 		H.set_resting(FALSE, FALSE)
-		H.Move(get_step(H,pick(GLOB.cardinals)))
+		var/turf/new_pos = get_step(H,pick(GLOB.cardinals))
+		for(var/turf/checked_turf as anything in turfs_to_avoid)
+			if(istype(new_pos,checked_turf))
+				return FALSE
+		H.Move(new_pos)
 		return FALSE
 	if(!path)
 		return FALSE
 	if(tries > 5)
 		//Add a bit of randomness to their movement to reduce "traffic jams"
-		H.Move(get_step(H,pick(GLOB.cardinals)))
+		var/turf/new_pos = get_step(H,pick(GLOB.cardinals))
+		for(var/turf/checked_turf as anything in turfs_to_avoid)
+			if(istype(new_pos,checked_turf))
+				return FALSE
+		H.Move(new_pos)
 		if(prob(10))
 			H.toggle_resting()
 			return FALSE
@@ -1007,7 +1068,11 @@ GLOBAL_LIST_EMPTY(knpcs)
 		chosen_dir = pick(cardinal_sidestep_directions)
 	if(chosen_dir)
 		chosen_dir = turn(target_dir,chosen_dir)
-		H.Move(get_step(H,chosen_dir))
+		var/turf/new_pos = get_step(H,chosen_dir)
+		for(var/turf/checked_turf as anything in turfs_to_avoid)
+			if(istype(new_pos,checked_turf))
+				return FALSE
+		H.Move(new_pos)
 		H.face_atom(target) //Looks better if they keep looking at you when dodging
 
 ///Allows the AI actor to be revived by a medic, and get straight back into the fight!
@@ -1160,6 +1225,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		return 0
 	var/obj/item/gun/G_New = locate(/obj/item/gun) in oview(HA.view_range, H)
 	if(G_New && gun_suitable(H, G_New))
+		G_New.safety = FALSE
 		return AI_SCORE_CRITICAL //There is a gun really obviously in the open....
 	return score
 
@@ -1177,6 +1243,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 	var/mob/living/carbon/human/H = HA.parent
 	var/obj/item/storage/S = H.back
 	var/obj/item/gun/target_item = null
+	var/obj/item/A = H.get_active_held_item()
 	//Okay first off, is the gun already on our person?
 	if(S)
 		var/list/expanded_contents = S.contents + H.contents
@@ -1185,6 +1252,11 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		if(target_item)
 			H.visible_message("<span class='notice'>[H] rummages around in their backpack...</span>")
 			target_item.forceMove(get_turf(H)) //Put it on the floor so they can grab it
+			if(A)
+				if(!S)
+					A.forceMove(get_turf(H))
+				else
+					A.forceMove(S)
 			if(H.put_in_hands(target_item))
 				return TRUE //We're done!
 	//Now we run the more expensive check to find a gun laying on the ground.
@@ -1211,6 +1283,11 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 				var/obj/structure/closet/C = target_item.loc
 				if(C.open(H))
 					H.visible_message("<span class='notice'>[H] pops open [C]...</span>")
+			if(A)
+				if(!S)
+					A.forceMove(get_turf(H))
+				else
+					A.forceMove(S)
 			if(istype(target_item, /obj/item/gun/ballistic))
 				var/obj/item/gun/ballistic/B = target_item
 				var/obj/item/ammo_box/magazine/M = locate(B.mag_type) in oview(3, target_item)
@@ -1324,12 +1401,17 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 	var/obj/item/gun/G = null
 	if(istype(A, /obj/item/gun))
 		G = A
+	if(iscarbon(target) || !(G && get_dist(target, H) < 3))
+		HA.pathfind_to(target) //Walk up close and YEET SLAM
+	else
+		HA.dest = null
 	var/obj/item/gun/ballistic/B = null
 	if(istype(A, /obj/item/gun/ballistic))
 		B = A
 	H.a_intent = (prob(65)) ? INTENT_HARM : INTENT_DISARM
-	G.safety = FALSE
-	if(G && dist > 0)
+	if(G)
+		G.safety = FALSE
+	if(G && dist > 0 && !istype(target, /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands))
 		if(!G.can_shoot() || !G?.chambered.BB)
 			if(istype(B, /obj/item/gun/ballistic/rifle) && check_ammo(B))
 				B.rack(H)
@@ -1350,7 +1432,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 			if(istype(G, /obj/item/gun/energy/e_gun))
 				var/obj/item/gun/energy/e_gun/E = G
 				if(prob(20))
-					E.select_fire(H)
+					E.unique_action(H)
 
 			if(isobj(target.loc))
 				if(!just_racked)
@@ -1368,56 +1450,90 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		call_backup(HA)
 
 	if(dist <= 1)
-		if(A && !istype(A, /obj/item/gun) && A.force > 0)
-			target.attackby(A, H)
-			A.afterattack(target, H, TRUE)
+		var/proc_fist = TRUE
+		if(!istype(A, /obj/item/gun) && H.a_intent == INTENT_HARM)
+			if(grab_melee(HA) )
+				A = H.get_active_held_item()
+				if(A)
+					target.attackby(A, H)
+					A.afterattack(target, H, TRUE)
+					proc_fist = FALSE
 
-		else
+		if(proc_fist && !isanimal(target))
 			H.dna.species.spec_attack_hand(H, target)
-			if(target.incapacitated())
-				//I know kung-fu.
 
-				var/obj/item/card/id/their_id = target.get_idcard()
-				if(their_id && !HA.stealing_id && H.knpc_traits & KNPC_STEAL_ID)
-					H.visible_message("<span class='warning'>[H] starts to take [their_id] from [target]!</span>")
-					HA.stealing_id = TRUE
-					addtimer(CALLBACK(HA, TYPE_PROC_REF(/datum/component/knpc, steal_id), their_id), 5 SECONDS)
+		if(target.incapacitated())
+			//I know kung-fu.
 
-				if(istype(H) && H.knpc_traits & KNPC_IS_MARTIAL_ARTIST)
-					switch(rand(0, 2))
-						//Throw!
-						if(0)
-							H.start_pulling(target, supress_message = FALSE)
-							H.setGrabState(GRAB_AGGRESSIVE)
-							H.visible_message("<span class='warning'>[H] judo throws [target]!</span>")
+			var/obj/item/card/id/their_id = target.get_idcard()
+			if(their_id && !HA.stealing_id && H.knpc_traits & KNPC_STEAL_ID)
+				H.visible_message("<span class='warning'>[H] starts to take [their_id] from [target]!</span>")
+				HA.stealing_id = TRUE
+				addtimer(CALLBACK(HA, TYPE_PROC_REF(/datum/component/knpc, steal_id), their_id), 5 SECONDS)
+
+			if(istype(H) && H.knpc_traits & KNPC_IS_MARTIAL_ARTIST)
+				switch(rand(0, 2))
+					//Throw!
+					if(0)
+						H.start_pulling(target, supress_message = FALSE)
+						H.setGrabState(GRAB_AGGRESSIVE)
+						H.visible_message("<span class='warning'>[H] judo throws [target]!</span>")
 //							playsound(get_turf(target), 'nsv13/sound/effects/judo_throw.ogg', 100, TRUE)
-							target.shake_animation(10)
-							target.throw_at(get_turf(get_step(H, pick(GLOB.cardinals))), 5, 5)
-						if(1)
-							H.do_attack_animation(target, ATTACK_EFFECT_PUNCH)
-							target.visible_message("<span class='warning'>[H] grabs [target]'s wrist and wrenches it sideways!</span>", \
-											"<span class='userdanger'>[H] grabs your wrist and violently wrenches it to the side!</span>")
-							playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-							target.emote("scream")
-							target.dropItemToGround(target.get_active_held_item())
-							target.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-						if(2)
-							H.do_attack_animation(target, ATTACK_EFFECT_KICK)
-							target.visible_message("<span class='warning'>[H] knees [target] in the stomach!</span>", \
-											"<span class='userdanger'>[H] winds you with a knee in the stomach!</span>")
-							target.audible_message("<b>[target]</b> gags!")
-							target.losebreath += 3
+						target.shake_animation(10)
+						target.throw_at(get_turf(get_step(H, pick(GLOB.cardinals))), 5, 5)
+					if(1)
+						H.do_attack_animation(target, ATTACK_EFFECT_PUNCH)
+						target.visible_message("<span class='warning'>[H] grabs [target]'s wrist and wrenches it sideways!</span>", \
+										"<span class='userdanger'>[H] grabs your wrist and violently wrenches it to the side!</span>")
+						playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+						target.emote("scream")
+						target.dropItemToGround(target.get_active_held_item())
+						target.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+					if(2)
+						H.do_attack_animation(target, ATTACK_EFFECT_KICK)
+						target.visible_message("<span class='warning'>[H] knees [target] in the stomach!</span>", \
+										"<span class='userdanger'>[H] winds you with a knee in the stomach!</span>")
+						target.audible_message("<b>[target]</b> gags!")
+						target.losebreath += 3
 
-				else
-					//So they actually execute the curbstomp.
-					if(dist <= 1)
-						H.forceMove(get_turf(target))
-					H.zone_selected = BODY_ZONE_HEAD
-					//Curbstomp!
-					H.MouseDrop(target)
-					return
+			else
+				//So they actually execute the curbstomp.
+				if(dist <= 1)
+					H.forceMove(get_turf(target))
+				H.zone_selected = BODY_ZONE_HEAD
+				//Curbstomp!
+				H.MouseDrop(target)
+				return
 		if(H.knpc_traits & KNPC_IS_DODGER)
 			HA.kite(target)
+
+/datum/ai_goal/human/proc/grab_melee(datum/component/knpc/HA)
+	var/mob/living/carbon/human/ai_boarder/H = HA.parent
+	var/obj/item/A = H.get_active_held_item()
+	if(A && A.force > 10)
+		return TRUE
+
+	var/obj/item/storage/back_storage = H.back
+	//Okay first off, is the gun already on our person?
+	var/list/expanded_contents = H.contents
+	if(back_storage)
+		expanded_contents = back_storage.contents + H.contents
+	var/obj/item/highest_force_score
+	for(var/obj/item/item_to_check as anything in expanded_contents)
+		if(!isobj(item_to_check))
+			continue
+		if(item_to_check.force < 5)
+			continue
+		if(!highest_force_score)
+			highest_force_score = item_to_check
+			continue
+		if(item_to_check.force > highest_force_score.force)
+			highest_force_score = item_to_check
+			continue
+	if(H.put_in_hands(highest_force_score))
+		return TRUE
+	return FALSE
+
 
 /datum/ai_goal/human/proc/call_backup(datum/component/knpc/HA)
 	HA.next_backup_call = world.time + 30 SECONDS //So it's not horribly spammy.
