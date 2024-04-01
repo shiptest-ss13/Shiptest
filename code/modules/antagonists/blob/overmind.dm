@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	set_strain(BS)
 	color = blobstrain.complementary_color
 	if(blob_core)
-		blob_core.update_icon()
+		blob_core.update_appearance()
 	announcement_time = world.time + 6000
 	. = ..()
 	START_PROCESSING(SSobj, src)
@@ -114,7 +114,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 		SSredbot.send_discord_message("admin","A blob has reached critical mass.","round ending event")
 		max_blob_points = INFINITY
 		blob_points = INFINITY
-		addtimer(CALLBACK(src, .proc/victory), 450)
+		addtimer(CALLBACK(src, PROC_REF(victory)), 450)
 	else if(!free_strain_rerolls && (last_reroll_time + BLOB_REROLL_TIME<world.time))
 		to_chat(src, "<b><span class='big'><font color=\"#EE4000\">You have gained another free strain re-roll.</font></span></b>")
 		free_strain_rerolls = 1
@@ -174,11 +174,12 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	SSticker.force_ending = 1
 
 /mob/camera/blob/Destroy()
+	QDEL_NULL(blobstrain)
 	for(var/BL in GLOB.blobs)
 		var/obj/structure/blob/B = BL
 		if(B && B.overmind == src)
 			B.overmind = null
-			B.update_icon() //reset anything that was ours
+			B.update_appearance() //reset anything that was ours
 	for(var/BLO in blob_mobs)
 		var/mob/living/simple_animal/hostile/blob/BM = BLO
 		if(BM)

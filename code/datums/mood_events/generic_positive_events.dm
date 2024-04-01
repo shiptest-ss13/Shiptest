@@ -113,6 +113,14 @@
 	description = "<span class='nicegreen'>I love showing off my mime pin!</span>\n"
 	mood_change = 1
 
+/datum/mood_event/rilena_fan
+	description = "<span class='nicegreen'>I love my RILENA merch!</span>\n"
+	mood_change = 1
+
+/datum/mood_event/rilena_super_fan
+	description = "<span class='nicegreen'>I love my RILENA hoodie!</span>\n"
+	mood_change = 1
+
 /datum/mood_event/goodmusic
 	description = "<span class='nicegreen'>There is something soothing about this music.</span>\n"
 	mood_change = 3
@@ -175,18 +183,6 @@
 	description = "<span class='nicegreen'>What a peculiar emblem.  It makes me feel hopeful for my future.</span>\n"
 	mood_change = 5
 
-/datum/mood_event/drippy
-	description = "<span class='nicegreen'>My self confidence, unstopping. My style, unbreakable.</span>\n"
-	mood_change = 5
-
-/datum/mood_event/dripjordan
-	description = "<span class='nicegreen'>These shoes make me feel like I could really push myself to victory!</span>\n"
-	mood_change = 5
-
-/datum/mood_event/nojordans
-	description = "<span class='warning'>They're gone... my fashion is ruined. I can feel my self esteem decaying... </span>\n"
-	mood_change = -10
-
 /datum/mood_event/nanite_happiness
 	description = "<span class='nicegreen robot'>+++++++HAPPINESS ENHANCEMENT+++++++</span>\n"
 	mood_change = 7
@@ -206,10 +202,10 @@
 	description = "<span class='nicegreen'>I'm feeling confident with a head full of hair.</span>\n"
 	mood_change = 2
 
-/datum/mood_event/dkickflip				//WS Edit Begin - Skateboards can take you to the afterlife
+/datum/mood_event/dkickflip
 	description = "<span class='nicegreen'>I just witnessed the most RAD thing ever.</span>\n"
 	mood_change = 5
-	timeout = 2 MINUTES				//WS Edit End
+	timeout = 2 MINUTES
 
 /datum/mood_event/high_five
 	description = "<span class='nicegreen'>I love getting high fives!</span>\n"
@@ -238,3 +234,8 @@
 		description = "[beau.name] gave me a kiss, ahh!!"
 	else
 		description = "[beau.name] blew a kiss at me, I must be a real catch!"
+
+/datum/mood_event/fishing
+	description = "Fishing is relaxing"
+	mood_change = 5
+	timeout = 3 MINUTES

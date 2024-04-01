@@ -5,9 +5,12 @@
 	var/color_vary = 0
 
 /datum/overmap/star/Initialize(position, ...)
-	Rename(gen_star_name())
+	var/name = gen_star_name()
+	Rename(name)
+	set_station_name(name)
 	token.desc = token_desc
 	alter_token_appearance()
+
 
 /datum/overmap/star/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
@@ -133,7 +136,7 @@
 
 /datum/overmap/star/binary
 	token_icon_state = "binaryswoosh"
-	token_desc = "Two stars, each locked the other's orbit. These systems form at stellar birth, and may persist long after one or both stars die."
+	token_desc = "Two stars, each locked in the other's orbit. These systems form at stellar birth, and may persist long after one or both stars die."
 	color_vary = 0.75
 
 /datum/overmap/star/binary/gen_star_name()

@@ -32,6 +32,7 @@
 		icon_state = "holopad1"
 	else
 		icon_state = "holopad3"
+	return ..()
 
 /obj/machinery/holopad/emergency/attack_ghost(mob/dead/observer/user)
 	if(!SSticker.HasRoundStarted() || !loc || !em_starting || em)
@@ -94,11 +95,11 @@
 		if("em_action")
 			if(!em_active)
 				var/area/A = get_area(src)
-				notify_ghosts("An emergency hologram is being requested in \the [A.name].", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_DRONE, notify_suiciders = FALSE)
+				notify_ghosts("An emergency hologram is being requested in \the [A.name].", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_DRONE)
 				em_starting = TRUE
 				icon_state = "holopad_ringing"
 				calling = TRUE
-				addtimer(CALLBACK(src, .proc/stop_starting), 300)
+				addtimer(CALLBACK(src, PROC_REF(stop_starting)), 300)
 			else
 				QDEL_NULL(em)
 				em_cooldown = TRUE

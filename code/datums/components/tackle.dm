@@ -30,7 +30,7 @@
 	///Some gloves, generally ones that increase mobility, may have a minimum distance to fly. Rocket gloves are especially dangerous with this, be sure you'll hit your target or have a clear background if you miss, or else!
 	var/min_distance
 	///The throwdatum we're currently dealing with, if we need it
-	var/datum/thrownthing/tackle
+	var/datum/weakref/tackle_ref
 
 /datum/component/tackler/Initialize(stamina_cost = 25, base_knockdown = 1 SECONDS, range = 4, speed = 1, skill_mod = 0, min_distance = min_distance)
 	if(!iscarbon(parent))
@@ -46,26 +46,27 @@
 	var/mob/P = parent
 	to_chat(P, "<span class='notice'>You are now able to launch tackles! You can do so by activating throw intent, and clicking on your target with an empty hand.</span>")
 
-	addtimer(CALLBACK(src, .proc/resetTackle), base_knockdown, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(resetTackle)), base_knockdown, TIMER_STOPPABLE)
 
 /datum/component/tackler/Destroy()
 	var/mob/P = parent
 	to_chat(P, "<span class='notice'>You can no longer tackle.</span>")
-	..()
+	return ..()
 
 /datum/component/tackler/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_MOB_CLICKON, .proc/checkTackle)
-	RegisterSignal(parent, COMSIG_MOVABLE_IMPACT, .proc/sack)
-	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, .proc/registerTackle)
+	RegisterSignal(parent, COMSIG_MOB_CLICKON, PROC_REF(checkTackle))
+	RegisterSignal(parent, COMSIG_MOVABLE_IMPACT, PROC_REF(sack))
+	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, PROC_REF(registerTackle))
 
 /datum/component/tackler/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_MOB_CLICKON, COMSIG_MOVABLE_IMPACT, COMSIG_MOVABLE_MOVED, COMSIG_MOVABLE_POST_THROW))
 
 ///Store the thrownthing datum for later use
-/datum/component/tackler/proc/registerTackle(mob/living/carbon/user, datum/thrownthing/TT)
+/datum/component/tackler/proc/registerTackle(mob/living/carbon/user, datum/thrownthing/tackle)
 	SIGNAL_HANDLER
 
-	tackle = TT
+	tackle_ref = WEAKREF(tackle)
+	tackle.thrower = user
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/A, params)
@@ -105,7 +106,7 @@
 
 	tackling = TRUE
 	user.throw_mode_off(THROW_MODE_TOGGLE)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/checkObstacle)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(checkObstacle))
 	playsound(user, 'sound/weapons/thudswoosh.ogg', 40, TRUE, -1)
 
 	if(can_see(user, A, 7))
@@ -119,7 +120,7 @@
 	user.Knockdown(base_knockdown, ignore_canstun = TRUE)
 	user.adjustStaminaLoss(stamina_cost)
 	user.throw_at(A, range, speed, user, FALSE)
-	addtimer(CALLBACK(src, .proc/resetTackle), base_knockdown, TIMER_STOPPABLE)
+	addtimer(CALLBACK(src, PROC_REF(resetTackle)), base_knockdown, TIMER_STOPPABLE)
 	return(COMSIG_MOB_CANCEL_CLICKON)
 
 /**
@@ -145,12 +146,14 @@
 /datum/component/tackler/proc/sack(mob/living/carbon/user, atom/hit)
 	SIGNAL_HANDLER
 
+	var/datum/thrownthing/tackle = tackle_ref?.resolve()
 	if(!tackling || !tackle)
+		tackle = null
 		return
 
 	if(!iscarbon(hit))
 		if(hit.density)
-			INVOKE_ASYNC(src, .proc/splat, user, hit)
+			INVOKE_ASYNC(src, PROC_REF(splat), user, hit)
 		return
 
 	var/mob/living/carbon/target = hit
@@ -180,7 +183,7 @@
 			user.Knockdown(30)
 			if(ishuman(target) && !T.has_movespeed_modifier(/datum/movespeed_modifier/shove))
 				T.add_movespeed_modifier(/datum/movespeed_modifier/shove) // maybe define a slightly more severe/longer slowdown for this
-				addtimer(CALLBACK(T, /mob/living/carbon/proc/clear_shove_slowdown), SHOVE_SLOWDOWN_LENGTH)
+				addtimer(CALLBACK(T, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
 
 		if(-1 to 0) // decent hit, both parties are about equally inconvenienced
 			user.visible_message("<span class='warning'>[user] lands a passable tackle on [target], sending them both tumbling!</span>", "<span class='userdanger'>You land a passable tackle on [target], sending you both tumbling!</span>", target)
@@ -205,26 +208,30 @@
 			to_chat(target, "<span class='userdanger'>[user] lands an expert tackle on you, knocking you down hard and maintaining a passive grab!</span>")
 
 			user.SetKnockdown(0)
+			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 			target.adjustStaminaLoss(40)
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(S.dna.species, /datum/species.proc/grab, S, T)
-				S.setGrabState(GRAB_PASSIVE)
+				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
+				if(S.pulling == T)
+					S.setGrabState(GRAB_PASSIVE)
 
 		if(5 to INFINITY) // absolutely BODIED
 			user.visible_message("<span class='warning'>[user] lands a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", "<span class='userdanger'>You land a monster tackle on [target], knocking [target.p_them()] senseless and applying an aggressive pin!</span>", target)
 			to_chat(target, "<span class='userdanger'>[user] lands a monster tackle on you, knocking you senseless and aggressively pinning you!</span>")
 
 			user.SetKnockdown(0)
+			user.get_up(TRUE)
 			user.forceMove(get_turf(target))
 			target.adjustStaminaLoss(40)
 			target.Paralyze(5)
 			target.Knockdown(30)
 			if(ishuman(target) && ishuman(user))
-				INVOKE_ASYNC(S.dna.species, /datum/species.proc/grab, S, T)
-				S.setGrabState(GRAB_AGGRESSIVE)
+				INVOKE_ASYNC(S.dna.species, TYPE_PROC_REF(/datum/species, grab), S, T)
+				if(S.pulling == T)
+					S.setGrabState(GRAB_AGGRESSIVE)
 
 
 	return COMPONENT_MOVABLE_IMPACT_FLIP_HITPUSH
@@ -252,8 +259,6 @@
 		defense_mod -= 1
 	if(HAS_TRAIT(target, TRAIT_CLUMSY))
 		defense_mod -= 2
-	if(HAS_TRAIT(target, TRAIT_FAT)) // chonkers are harder to knock over
-		defense_mod += 1
 	if(HAS_TRAIT(target, TRAIT_GRABWEAKNESS))
 		defense_mod -= 2
 	if(HAS_TRAIT(target, TRAIT_DWARF))
@@ -422,7 +427,7 @@
 
 /datum/component/tackler/proc/resetTackle()
 	tackling = FALSE
-	QDEL_NULL(tackle)
+	QDEL_NULL(tackle_ref)
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
 
 ///A special case for splatting for handling windows
@@ -508,8 +513,11 @@
 		I.throw_at(get_ranged_target_turf(I, pick(GLOB.alldirs), range = dist), range = dist, speed = sp)
 		I.visible_message("<span class='danger'>[I] goes flying[sp > 3 ? " dangerously fast" : ""]!</span>") // standard embed speed
 
+	var/datum/thrownthing/tackle = tackle_ref?.resolve()
+
 	playsound(owner, 'sound/weapons/smash.ogg', 70, TRUE)
-	tackle.finalize(hit=TRUE)
+	if(tackle)
+		tackle.finalize(hit=TRUE)
 	resetTackle()
 
 #undef MAX_TABLE_MESSES

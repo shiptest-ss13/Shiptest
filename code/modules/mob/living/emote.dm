@@ -26,7 +26,7 @@
 		var/list/key_emotes = GLOB.emote_list["blush"]
 		for(var/datum/emote/living/blush/living_emote in key_emotes)
 			// The existing timer restarts if it's already running
-			blush_timer = addtimer(CALLBACK(living_emote, .proc/end_blush, living_user), BLUSH_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+			blush_timer = addtimer(CALLBACK(living_emote, PROC_REF(end_blush), living_user), BLUSH_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /datum/emote/living/blush/proc/end_blush(mob/living/living_user)
 	if(!QDELETED(living_user))
@@ -59,6 +59,18 @@
 	key_third_person = "crosses"
 	message = "crosses their arms."
 	hands_use_check = TRUE
+
+/datum/emote/living/carbon/mothchitter
+	key = "chitter"
+	key_third_person = "chitters"
+	message = "chitters."
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/mothchitter/get_sound(mob/living/user)
+	var/mob/living/carbon/human/H = user
+	if(ismoth(H) | (istype(H, /mob/living/simple_animal/pet/mothroach)))
+		return 'sound/voice/moth/mothchitter.ogg'
 
 /datum/emote/living/chuckle
 	key = "chuckle"
@@ -157,7 +169,7 @@
 				H.CloseWings()
 			else
 				H.OpenWings()
-			addtimer(CALLBACK(H, open ? /mob/living/carbon/human.proc/OpenWings : /mob/living/carbon/human.proc/CloseWings), wing_time)
+			addtimer(CALLBACK(H, open ? TYPE_PROC_REF(/mob/living/carbon/human, OpenWings) : TYPE_PROC_REF(/mob/living/carbon/human, CloseWings)), wing_time)
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
@@ -256,13 +268,17 @@
 		return !C.silent
 
 /datum/emote/living/laugh/get_sound(mob/living/user)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
-			if(user.gender == FEMALE)
-				return 'sound/voice/human/womanlaugh.ogg'
-			else
-				return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	var/human_laugh = ishumanbasic(H)
+	if(human_laugh && (!H.mind || !H.mind.miming))
+		if(user.gender == FEMALE)
+			return 'sound/voice/human/womanlaugh.ogg'
+		else
+			return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+	if(ismoth(H))
+		return 'sound/voice/moth/mothlaugh.ogg'
 
 /datum/emote/living/look
 	key = "look"
@@ -275,6 +291,18 @@
 	key_third_person = "nods"
 	message = "nods."
 	message_param = "nods at %t."
+
+/datum/emote/living/carbon/mothsqueak
+	key = "msqueak"
+	key_third_person = "lets out a tiny squeak"
+	message = "lets out a tiny squeak!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/mothsqueak/get_sound(mob/living/user)
+	var/mob/living/carbon/human/H = user
+	if(ismoth(H) | (istype(H, /mob/living/simple_animal/pet/mothroach)))
+		return 'sound/voice/moth/mothsqueak.ogg'
 
 /datum/emote/living/point
 	key = "point"
@@ -389,7 +417,7 @@
 		var/list/key_emotes = GLOB.emote_list["snore"]
 		for(var/datum/emote/living/snore/living_emote in key_emotes)
 			// The existing timer restarts if it's already running
-			snore_timer = addtimer(CALLBACK(living_emote, .proc/end_snore, living_user), SNORE_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+			snore_timer = addtimer(CALLBACK(living_emote, PROC_REF(end_snore), living_user), SNORE_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /datum/emote/living/snore/proc/end_snore(mob/living/living_user)
 	if(!QDELETED(living_user))

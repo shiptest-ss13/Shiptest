@@ -10,8 +10,8 @@
 
 /obj/item/pda/clown/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/slippery/clowning, 120, NO_SLIP_WHEN_WALKING, CALLBACK(src, .proc/AfterSlip))
-	AddComponent(/datum/component/wearertargeting/sitcomlaughter, CALLBACK(src, .proc/after_sitcom_laugh))
+	AddComponent(/datum/component/slippery/clowning, 120, NO_SLIP_WHEN_WALKING, CALLBACK(src, PROC_REF(AfterSlip)))
+	AddComponent(/datum/component/wearertargeting/sitcomlaughter, CALLBACK(src, PROC_REF(after_sitcom_laugh)))
 
 /obj/item/pda/clown/proc/AfterSlip(mob/living/carbon/human/M)
 	if (istype(M) && (M.real_name != owner))
@@ -61,7 +61,7 @@
 
 /obj/item/pda/ai/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_PDA_CHECK_DETONATE, .proc/pda_no_detonate)
+	RegisterSignal(src, COMSIG_PDA_CHECK_DETONATE, PROC_REF(pda_no_detonate))
 
 /obj/item/pda/medical
 	name = "medical PDA"
@@ -144,7 +144,7 @@
 
 /obj/item/pda/captain/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_PDA_CHECK_DETONATE, .proc/pda_no_detonate)
+	RegisterSignal(src, COMSIG_PDA_CHECK_DETONATE, PROC_REF(pda_no_detonate))
 
 /obj/item/pda/cargo
 	name = "cargo technician PDA"
@@ -239,8 +239,3 @@
 	name = "brig physician PDA"
 	default_cartridge = /obj/item/cartridge/medical
 	icon_state = "pda-brig_phys"
-
-/obj/item/pda/lieutenant
-	name = "lieutenant PDA"
-	default_cartridge = /obj/item/cartridge/hos
-	icon_state = "pda-h"

@@ -16,7 +16,7 @@
 /area/ruin/powered)
 "bd" = (
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors/explored)
+/area/overmap_encounter/planetoid/sand/explored)
 "bf" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -139,9 +139,7 @@
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
 /obj/item/kitchen/spoon/plastic,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "hs" = (
@@ -259,7 +257,7 @@
 /obj/machinery/icecream_vat,
 /obj/item/shovel/spoon,
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors/explored)
+/area/overmap_encounter/planetoid/sand/explored)
 "sl" = (
 /obj/item/kitchen/spoon/plastic{
 	pixel_x = 11
@@ -288,7 +286,7 @@
 /area/ruin/powered)
 "uE" = (
 /turf/open/floor/plating/asteroid/whitesands/dried,
-/area/whitesands/surface/outdoors/explored)
+/area/overmap_encounter/planetoid/sand/explored)
 "vO" = (
 /obj/item/ammo_casing/spent{
 	dir = 9;
@@ -336,9 +334,7 @@
 "ys" = (
 /obj/structure/rack,
 /obj/item/stack/sheet/plastic/five,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "zb" = (
@@ -439,15 +435,13 @@
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/clothing/glasses/regular,
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/turf/open/floor/material,
+/obj/machinery/light/broken/directional/west,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "EC" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter,
 /turf/open/floor/plating/asteroid/whitesands,
-/area/whitesands/surface/outdoors/explored)
+/area/overmap_encounter/planetoid/sand/explored)
 "Fi" = (
 /obj/machinery/autolathe,
 /obj/machinery/camera{
@@ -504,7 +498,7 @@
 /turf/closed/wall/rust,
 /area/ruin/powered)
 "Jb" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "Jm" = (
@@ -520,9 +514,7 @@
 /area/ruin/powered)
 "Ke" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/broken{
-	dir = 4
-	},
+/obj/machinery/light/broken/directional/east,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "KY" = (
@@ -541,7 +533,7 @@
 /area/ruin/powered)
 "Lz" = (
 /turf/closed/mineral/random/whitesands,
-/area/whitesands/surface/outdoors/explored)
+/area/overmap_encounter/planetoid/sand/explored)
 "Me" = (
 /obj/item/ammo_casing/spent{
 	dir = 8;
@@ -575,18 +567,11 @@
 /obj/item/paper_bin,
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/material,
-/area/ruin/powered)
-"NU" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/mob/living/simple_animal/hostile/asteroid/whitesands/survivor,
-/turf/open/floor/material,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "Oo" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "OJ" = (
@@ -607,10 +592,6 @@
 	},
 /obj/item/ammo_box/magazine/wt550m9,
 /turf/open/floor/plastic,
-/area/ruin/powered)
-"PO" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/material,
 /area/ruin/powered)
 "Qm" = (
 /obj/item/ammo_casing/spent{
@@ -635,12 +616,11 @@
 /area/ruin/powered)
 "Ro" = (
 /obj/machinery/door/airlock/glass,
-/obj/structure/fans/tiny,
-/turf/open/floor/material,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "Rz" = (
 /obj/machinery/door/airlock/highsecurity,
-/turf/open/floor/material,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "RG" = (
 /obj/item/ammo_casing/spent{
@@ -659,7 +639,7 @@
 "RN" = (
 /obj/machinery/camera,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/material,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "Sr" = (
 /obj/item/ammo_casing/spent{
@@ -699,7 +679,7 @@
 	},
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/material,
+/turf/open/floor/plastic,
 /area/ruin/powered)
 "TD" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -724,9 +704,7 @@
 /area/ruin/powered)
 "XL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /turf/open/floor/plastic,
 /area/ruin/powered)
 "Ze" = (
@@ -796,9 +774,9 @@ Lz
 ct
 ct
 FB
-PO
+Ze
 DM
-PO
+Ze
 IH
 ct
 "}
@@ -816,7 +794,7 @@ dl
 MG
 dl
 MG
-NU
+ew
 TA
 NP
 FB
@@ -836,9 +814,9 @@ VR
 jw
 zb
 Rz
-PO
-PO
-PO
+Ze
+Ze
+Ze
 Ro
 bd
 "}
@@ -857,8 +835,8 @@ sv
 WA
 MG
 RN
-PO
-PO
+Ze
+Ze
 IH
 bd
 "}

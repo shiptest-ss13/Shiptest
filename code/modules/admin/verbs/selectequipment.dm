@@ -106,13 +106,7 @@
 
 /datum/select_equipment/ui_data(mob/user)
 	var/list/data = list()
-	if(!dummy_key)
-		init_dummy()
 
-	var/icon/dummysprite = get_flat_human_icon(null,
-		dummy_key = dummy_key,
-		outfit_override = selected_outfit)
-	data["icon64"] = icon2base64(dummysprite)
 	data["name"] = target_mob
 
 	var/datum/preferences/prefs = user?.client?.prefs
@@ -129,6 +123,15 @@
 
 /datum/select_equipment/ui_static_data(mob/user)
 	var/list/data = list()
+	if(!dummy_key)
+		init_dummy()
+	var/icon/dummysprite = get_flat_human_icon(
+		null,
+		dummy_key = dummy_key,
+		outfit_override = selected_outfit
+	)
+	data["icon64"] = icon2base64(dummysprite)
+
 	if(!cached_outfits)
 		cached_outfits = list()
 		cached_outfits += list(outfit_entry("General", /datum/outfit, "Naked", priority=TRUE))
@@ -152,7 +155,7 @@
 			return custom_outfit
 
 
-/datum/select_equipment/ui_act(action, params)
+/datum/select_equipment/ui_act(action, params, ui)
 	if(..())
 		return
 	. = TRUE
@@ -171,6 +174,7 @@
 				return
 
 			selected_outfit = new_outfit
+			update_static_data(user, ui)
 
 		if("applyoutfit")
 			var/datum/outfit/new_outfit = resolve_outfit(params["path"])

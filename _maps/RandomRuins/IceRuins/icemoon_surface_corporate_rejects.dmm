@@ -17,7 +17,7 @@
 /obj/item/stack/cable_coil/yellow,
 /obj/item/wirecutters/old,
 /obj/item/analyzer,
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
 "aQ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -79,13 +79,10 @@
 /obj/structure/cable/blue{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
 "cN" = (
 /obj/structure/safe/floor,
-/obj/item/stack/sheet/capitalisium{
-	amount = 10
-	},
 /obj/item/hand_tele,
 /obj/item/stack/sheet/mineral/adamantine,
 /obj/item/stack/sheet/mineral/adamantine,
@@ -119,6 +116,17 @@
 /obj/item/storage/box/evidence,
 /obj/item/storage/box/bodybags,
 /turf/open/floor/mineral/plastitanium/red,
+/area/ruin/unpowered/corprejectrooms)
+"dw" = (
+/obj/structure/cable/blue{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "dG" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
@@ -167,7 +175,9 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "ff" = (
@@ -194,13 +204,14 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/ruin/unpowered/corprejectrooms)
-"fq" = (
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable/blue{
-	icon_state = "0-5"
-	},
-/obj/machinery/light,
-/turf/open/floor/mineral/plastitanium/red,
+"fE" = (
+/obj/structure/chair,
+/obj/machinery/light/directional/north,
+/turf/open/floor/wood,
+/area/ruin/unpowered/corprejectrooms)
+"fH" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/wood,
 /area/ruin/unpowered/corprejectrooms)
 "fN" = (
 /obj/structure/cable/blue{
@@ -262,6 +273,13 @@
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
+"gL" = (
+/obj/machinery/light/directional/south,
+/obj/structure/cable/blue{
+	icon_state = "5-8"
+	},
+/turf/open/floor/wood,
+/area/ruin/unpowered/corprejectrooms)
 "gT" = (
 /obj/item/ammo_casing/shotgun/incendiary{
 	pixel_y = 10
@@ -271,21 +289,19 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
-"hi" = (
+"hn" = (
+/turf/closed/wall/r_wall,
+/area/ruin/unpowered/corprejectrooms)
+"hu" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
-"hn" = (
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered/corprejectrooms)
 "hz" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
@@ -370,23 +386,13 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
-"jF" = (
-/obj/machinery/vending/security,
-/obj/machinery/light,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/unpowered/corprejectrooms)
-"kn" = (
+"jY" = (
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/blue{
-	icon_state = "1-2"
+	icon_state = "0-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plating/catwalk_floor,
+/turf/open/floor/mineral/titanium/tiled/blue,
 /area/ruin/unpowered/corprejectrooms)
 "kq" = (
 /obj/structure/cable/blue{
@@ -395,17 +401,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
 /turf/open/floor/plasteel/sepia,
-/area/ruin/unpowered/corprejectrooms)
-"kD" = (
-/mob/living/simple_animal/hostile/nanotrasen/elite{
-	desc = "A former major player for Nanotrasen militaristic needs. He doesn't seem like someone who'd want to talk over tea.";
-	faction = list("DeserterNT");
-	name = "Sam the Sharp"
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "kF" = (
 /obj/structure/cable/blue{
@@ -419,6 +414,12 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
+"kY" = (
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/structure/table/optable,
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ruin/unpowered/corprejectrooms)
 "la" = (
 /obj/structure/cable/blue{
 	icon_state = "4-8"
@@ -444,9 +445,19 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
+"lj" = (
+/obj/structure/mecha_wreckage/ripley/mkii,
+/obj/machinery/light/directional/east,
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/unpowered/corprejectengineering)
 "lk" = (
 /turf/closed/mineral/snowmountain/icemoon,
 /area/ruin/unpowered/corprejectrooms)
+"lF" = (
+/obj/structure/mecha_wreckage/honker/dark,
+/obj/machinery/light/directional/east,
+/turf/open/floor/mech_bay_recharge_floor,
+/area/ruin/unpowered/corprejectengineering)
 "lL" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
@@ -458,6 +469,19 @@
 /obj/machinery/autolathe/hacked,
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
+"mt" = (
+/obj/structure/cable/blue{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/unpowered/corprejectrooms)
 "mN" = (
 /obj/machinery/power/terminal{
 	dir = 8
@@ -487,15 +511,6 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
-"ni" = (
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable/blue,
-/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
-	faction = list("DeserterNT");
-	name = "Dell"
-	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/corprejectvault)
 "nk" = (
 /obj/structure/cable/blue{
 	icon_state = "1-2"
@@ -535,7 +550,7 @@
 	dir = 4
 	},
 /obj/item/storage/toolbox/emergency/old,
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
 "nW" = (
 /obj/structure/cable/blue{
@@ -553,13 +568,15 @@
 /obj/structure/fence,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
-"od" = (
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable/blue{
-	icon_state = "0-9"
+"or" = (
+/mob/living/simple_animal/hostile/nanotrasen/elite{
+	desc = "A former major player for Nanotrasen militaristic needs. He doesn't seem like someone who'd want to talk over tea.";
+	faction = list("DeserterNT");
+	name = "Sam the Sharp"
 	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/corprejectengineering)
+/obj/machinery/light/directional/north,
+/turf/open/floor/vault,
+/area/ruin/unpowered/corprejectrooms)
 "ou" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -572,7 +589,7 @@
 /obj/machinery/door/window/westright,
 /obj/item/clothing/gloves/color/fyellow,
 /obj/item/clothing/gloves/color/yellow,
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
 "oB" = (
 /obj/structure/curtain/cloth/fancy,
@@ -605,7 +622,9 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "ph" = (
@@ -622,7 +641,9 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "pi" = (
@@ -668,7 +689,9 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 4
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "qe" = (
@@ -692,7 +715,9 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "qO" = (
@@ -709,17 +734,11 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/tinted,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
-"rs" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal,
-/obj/structure/table/optable,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/mineral/titanium/tiled/blue,
-/area/ruin/unpowered/corprejectrooms)
 "rH" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /obj/machinery/vending/wallmed{
@@ -736,9 +755,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ruin/unpowered/corprejectrooms)
-"rL" = (
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered/corprejectrooms)
 "rW" = (
 /obj/structure/cable/blue{
 	icon_state = "1-2"
@@ -753,6 +769,18 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/corprejectrooms)
+"sG" = (
+/obj/effect/turf_decal/corner/opaque/white/diagonal,
+/obj/structure/cable/blue{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/light/directional/west,
+/turf/open/floor/mineral/titanium/tiled/blue,
+/area/ruin/unpowered/corprejectrooms)
 "tb" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /mob/living/simple_animal/hostile/nanotrasen/ranged/smg{
@@ -761,17 +789,6 @@
 	name = "Rebecca Slouch"
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
-/area/ruin/unpowered/corprejectrooms)
-"tk" = (
-/obj/structure/table/reinforced,
-/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
-	dir = 1
-	},
-/obj/structure/cable/blue{
-	icon_state = "4-9"
-	},
-/obj/machinery/light,
-/turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/corprejectrooms)
 "tD" = (
 /obj/structure/cable/blue{
@@ -815,31 +832,18 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/tinted,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "uE" = (
 /obj/structure/fans/tiny,
 /obj/machinery/door/keycard{
-	name = "NanoTrasen Secure Solutions";
+	name = "Nanotrasen Secure Solutions";
 	puzzle_id = "NTB1"
 	},
 /turf/open/floor/wood,
-/area/ruin/unpowered/corprejectrooms)
-"uH" = (
-/obj/structure/cable/blue{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/mob/living/simple_animal/hostile/viscerator{
-	faction = list("DeserterNT");
-	name = "Lu Bu"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "uN" = (
 /obj/structure/cable/blue{
@@ -853,7 +857,9 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/tinted,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "uO" = (
@@ -868,13 +874,11 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/tinted,
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
-"vb" = (
-/obj/machinery/light,
-/turf/open/floor/wood,
-/area/ruin/unpowered/corprejectrooms)
 "vl" = (
 /obj/machinery/vending/cola/pwr_game,
 /turf/open/floor/plasteel/sepia,
@@ -890,7 +894,7 @@
 /area/ruin/unpowered/corprejectrooms)
 "vP" = (
 /obj/structure/bed,
-/obj/item/bedsheet/cult,
+/obj/item/bedsheet/dorms,
 /turf/open/floor/carpet/lone,
 /area/ruin/unpowered/corprejectrooms)
 "wl" = (
@@ -941,6 +945,11 @@
 /obj/item/reagent_containers/food/snacks/donut/chaos,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
+"wE" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/sepia,
+/area/ruin/unpowered/corprejectrooms)
 "xf" = (
 /obj/structure/cable/blue{
 	icon_state = "5-8"
@@ -982,7 +991,7 @@
 	name = "Secure Solutions Card";
 	puzzle_id = "NTB4"
 	},
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
 "yd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -1022,20 +1031,6 @@
 /area/ruin/unpowered/corprejectrooms)
 "yp" = (
 /turf/open/floor/wood,
-/area/ruin/unpowered/corprejectrooms)
-"yr" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal,
-/obj/structure/cable/blue{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/mineral/titanium/tiled/blue,
 /area/ruin/unpowered/corprejectrooms)
 "yy" = (
 /obj/item/restraints/legcuffs/beartrap{
@@ -1151,6 +1146,19 @@
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
+"Aj" = (
+/obj/structure/cable/blue{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/mob/living/simple_animal/hostile/viscerator{
+	faction = list("DeserterNT");
+	name = "Lu Bu"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/unpowered/corprejectrooms)
 "Al" = (
 /turf/template_noop,
 /area/template_noop)
@@ -1164,13 +1172,6 @@
 	icon_state = "2-6"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/unpowered/corprejectrooms)
-"AW" = (
-/obj/machinery/light,
-/obj/structure/cable/blue{
-	icon_state = "5-8"
-	},
-/turf/open/floor/wood,
 /area/ruin/unpowered/corprejectrooms)
 "Bb" = (
 /obj/structure/bed,
@@ -1224,6 +1225,14 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
+"Cv" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable/blue{
+	icon_state = "0-5"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/unpowered/corprejectrooms)
 "CA" = (
 /obj/structure/table/reinforced,
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/punching_glove,
@@ -1306,17 +1315,6 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
-"DK" = (
-/obj/structure/cable/blue{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/light,
-/turf/open/floor/plating/catwalk_floor,
-/area/ruin/unpowered/corprejectrooms)
 "DS" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
@@ -1351,6 +1349,17 @@
 "Ev" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered/corprejectvault)
+"EA" = (
+/obj/structure/table/reinforced,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
+	dir = 1
+	},
+/obj/structure/cable/blue{
+	icon_state = "4-9"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/grimy,
+/area/ruin/unpowered/corprejectrooms)
 "EJ" = (
 /obj/structure/cable/blue{
 	icon_state = "5-10"
@@ -1365,7 +1374,9 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/obj/machinery/door/poddoor/shutters,
+/obj/machinery/door/poddoor/shutters{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
 "EL" = (
@@ -1388,6 +1399,17 @@
 	icon_state = "5-6"
 	},
 /turf/open/floor/plasteel/sepia,
+/area/ruin/unpowered/corprejectrooms)
+"Fz" = (
+/obj/structure/cable/blue{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/light/directional/west,
+/turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "FI" = (
 /obj/structure/sign/barsign,
@@ -1425,14 +1447,13 @@
 /obj/structure/table/wood/poker,
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/corprejectrooms)
-"Hc" = (
-/obj/item/phone,
-/obj/structure/table/glass,
-/obj/machinery/light/small{
-	dir = 8
+"Hs" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable/blue{
+	icon_state = "0-9"
 	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/corprejectvault)
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/corprejectengineering)
 "Hw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
@@ -1545,7 +1566,7 @@
 	dir = 4
 	},
 /obj/item/storage/toolbox/mechanical/old/heirloom,
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
 "II" = (
 /obj/item/skub,
@@ -1577,28 +1598,33 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
-"Ke" = (
-/obj/item/bedsheet/nanotrasen,
-/obj/structure/bed,
-/obj/machinery/light{
-	dir = 4
+"Kg" = (
+/obj/structure/cable/blue{
+	icon_state = "1-4"
 	},
-/turf/open/floor/carpet/lone,
-/area/ruin/unpowered/corprejectrooms)
-"Kj" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/smgm9mm/ap,
-/obj/item/ammo_box/magazine/smgm9mm/fire,
-/obj/machinery/light/small{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 6
 	},
-/turf/open/floor/vault,
-/area/ruin/unpowered/corprejectvault)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
+	dir = 6
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/tech,
+/area/ruin/unpowered/corprejectengineering)
 "Kk" = (
 /obj/structure/bed,
 /obj/effect/mob_spawn/human/clown/corpse,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
+"Kn" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable/blue,
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet{
+	faction = list("DeserterNT");
+	name = "Dell"
+	},
+/turf/open/floor/vault,
+/area/ruin/unpowered/corprejectvault)
 "Ku" = (
 /obj/item/poster/random_official,
 /obj/item/poster/random_official,
@@ -1622,14 +1648,6 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
-"Lp" = (
-/obj/structure/bed,
-/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/unpowered/corprejectrooms)
 "LA" = (
 /obj/effect/turf_decal/corner/opaque/white/diagonal,
 /turf/open/floor/mineral/titanium/tiled/blue,
@@ -1665,23 +1683,6 @@
 /obj/structure/bed,
 /turf/open/floor/carpet/lone,
 /area/ruin/unpowered/corprejectrooms)
-"LL" = (
-/obj/structure/safe,
-/obj/item/stack/sheet/mineral/plasma/twenty,
-/obj/item/stack/sheet/mineral/uranium/twenty,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/spacecash/bundle/c1000,
-/obj/item/stack/sheet/bluespace_crystal/five,
-/obj/item/stack/sheet/mineral/bananium{
-	amount = 15
-	},
-/obj/item/stack/sheet/mineral/gold/twenty,
-/obj/item/stack/sheet/mineral/runite/ten,
-/obj/item/toy/figure/captain,
-/obj/item/organ/cyberimp/brain/anti_stun,
-/obj/item/disk/design_disk/adv/knight_gear,
-/turf/open/floor/vault,
-/area/ruin/unpowered/corprejectvault)
 "LY" = (
 /obj/structure/cable/blue{
 	icon_state = "4-6"
@@ -1694,6 +1695,13 @@
 "Mc" = (
 /obj/structure/table/glass,
 /obj/item/fireaxe,
+/turf/open/floor/vault,
+/area/ruin/unpowered/corprejectvault)
+"Md" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/smgm9mm/ap,
+/obj/item/ammo_box/magazine/smgm9mm/inc,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
 "Mh" = (
@@ -1710,9 +1718,6 @@
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
-"Ng" = (
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered/corprejectrooms)
 "Nk" = (
 /obj/structure/chair/stool/bar,
 /obj/structure/cable/blue{
@@ -1720,6 +1725,23 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/corprejectrooms)
+"ND" = (
+/obj/structure/safe,
+/obj/item/stack/sheet/mineral/plasma/twenty,
+/obj/item/stack/sheet/mineral/uranium/twenty,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/spacecash/bundle/c1000,
+/obj/item/stack/sheet/bluespace_crystal/five,
+/obj/item/stack/sheet/mineral/bananium{
+	amount = 15
+	},
+/obj/item/stack/sheet/mineral/gold/twenty,
+/obj/item/stack/sheet/mineral/runite/ten,
+/obj/item/toy/figure/captain,
+/obj/item/organ/cyberimp/brain/anti_stun,
+/obj/item/disk/design_disk/adv/knight_gear,
+/turf/open/floor/vault,
+/area/ruin/unpowered/corprejectvault)
 "NJ" = (
 /obj/structure/bed,
 /obj/item/bedsheet/cosmos,
@@ -1744,12 +1766,12 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
-"NU" = (
-/obj/structure/closet/emcloset,
-/obj/machinery/light{
-	dir = 8
+"NQ" = (
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable/blue{
+	icon_state = "0-6"
 	},
-/turf/open/floor/plasteel/sepia,
+/turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/corprejectrooms)
 "Oc" = (
 /obj/structure/cable/blue{
@@ -1759,21 +1781,6 @@
 /area/ruin/unpowered/corprejectengineering)
 "Ok" = (
 /obj/structure/AIcore/deactivated,
-/turf/open/floor/plasteel/tech,
-/area/ruin/unpowered/corprejectengineering)
-"Oy" = (
-/obj/structure/cable/blue{
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/light{
-	dir = 8
-	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
 "ON" = (
@@ -1836,19 +1843,6 @@
 	},
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
-"PR" = (
-/obj/structure/cable/blue{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plating/catwalk_floor,
-/area/ruin/unpowered/corprejectrooms)
 "PS" = (
 /obj/structure/table/reinforced,
 /obj/machinery/cell_charger,
@@ -1860,6 +1854,12 @@
 "PU" = (
 /obj/structure/bed,
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/unpowered/corprejectrooms)
+"Qf" = (
+/obj/structure/bed,
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/unpowered/corprejectrooms)
 "Qi" = (
@@ -1875,17 +1875,10 @@
 /obj/structure/cable/blue{
 	icon_state = "0-2"
 	},
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
 "Qt" = (
 /obj/machinery/vending/boozeomat/all_access,
-/turf/open/floor/plasteel/grimy,
-/area/ruin/unpowered/corprejectrooms)
-"QE" = (
-/obj/machinery/power/apc/auto_name/west,
-/obj/structure/cable/blue{
-	icon_state = "0-6"
-	},
 /turf/open/floor/plasteel/grimy,
 /area/ruin/unpowered/corprejectrooms)
 "QZ" = (
@@ -2011,14 +2004,6 @@
 /obj/structure/curtain,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ruin/unpowered/corprejectrooms)
-"SZ" = (
-/obj/effect/turf_decal/corner/opaque/white/diagonal,
-/obj/machinery/power/apc/auto_name/south,
-/obj/structure/cable/blue{
-	icon_state = "0-8"
-	},
-/turf/open/floor/mineral/titanium/tiled/blue,
-/area/ruin/unpowered/corprejectrooms)
 "Tb" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -2052,11 +2037,22 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectvault)
+"To" = (
+/obj/structure/cable/blue{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plating/catwalk_floor,
+/area/ruin/unpowered/corprejectrooms)
 "Tu" = (
 /obj/structure/table/glass,
 /obj/item/paper{
 	desc = "Standard Nanotrasen typeface for important documents.";
-	info = "Welcome to the NNTVS 'Not Nanotrasen Vault Station'! We are never happier to have people on board than when we get new arrivals ready to betray and renounce their allegiance to the coporate egregory known as Nanotrasen! ";
+	default_raw_text = "Welcome to the NNTVS 'Not Nanotrasen Vault Station'! We are never happier to have people on board than when we get new arrivals ready to betray and renounce their allegiance to the coporate egregory known as Nanotrasen! ";
 	name = "Corporate Desertion and You!"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
@@ -2111,6 +2107,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/unpowered/corprejectengineering)
+"Ut" = (
+/obj/machinery/vending/security,
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/unpowered/corprejectrooms)
 "UF" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered/corprejectengineering)
@@ -2177,6 +2178,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/corprejectrooms)
+"Wa" = (
+/obj/item/bedsheet/nanotrasen,
+/obj/structure/bed,
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/lone,
+/area/ruin/unpowered/corprejectrooms)
 "WT" = (
 /turf/open/floor/plasteel/sepia,
 /area/ruin/unpowered/corprejectrooms)
@@ -2207,19 +2214,6 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/ruin/unpowered/corprejectrooms)
-"XK" = (
-/obj/structure/cable/blue{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/light,
-/turf/open/floor/plating/catwalk_floor,
-/area/ruin/unpowered/corprejectrooms)
 "XL" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced,
@@ -2233,13 +2227,13 @@
 	dir = 4
 	},
 /obj/item/clothing/mask/gas/welding,
-/turf/open/floor/plasteel/patterned/monofloor,
+/turf/open/floor/plasteel/mono,
 /area/ruin/unpowered/corprejectengineering)
-"XQ" = (
+"Yj" = (
 /obj/structure/chair{
 	dir = 8
 	},
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/blue{
 	icon_state = "0-4"
 	},
@@ -2264,27 +2258,12 @@
 	},
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
-"YV" = (
-/obj/structure/mecha_wreckage/honker/dark,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/mech_bay_recharge_floor,
-/area/ruin/unpowered/corprejectengineering)
-"YW" = (
-/obj/structure/chair,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/corprejectrooms)
-"YY" = (
-/obj/structure/mecha_wreckage/ripley/mkii,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/mech_bay_recharge_floor,
-/area/ruin/unpowered/corprejectengineering)
+"Zh" = (
+/obj/item/phone,
+/obj/structure/table/glass,
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/vault,
+/area/ruin/unpowered/corprejectvault)
 "Zu" = (
 /obj/structure/cable/blue{
 	icon_state = "4-10"
@@ -2302,9 +2281,6 @@
 /obj/machinery/door/poddoor/shutters,
 /turf/open/floor/plating,
 /area/ruin/unpowered/corprejectvault)
-"ZH" = (
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered/corprejectrooms)
 "ZM" = (
 /turf/open/floor/plating/snowed/temperatre,
 /area/ruin/unpowered/corprejectrooms)
@@ -2466,15 +2442,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 ZM
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2506,15 +2482,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 uE
 hn
-ZH
-ZH
-ZH
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2546,15 +2522,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-YW
+hn
+hn
+fE
 yp
 yp
 yp
-vb
-Ng
-ZH
+fH
+hn
+hn
 Al
 Al
 Al
@@ -2586,15 +2562,15 @@ Al
 Al
 Al
 Al
-ZH
-rL
+hn
+hn
 xq
 IU
 yo
 dq
 Gb
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -2626,23 +2602,23 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 ed
 Di
 Tu
 zc
-XQ
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+Yj
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2665,24 +2641,24 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 xq
 yp
 Hz
 yp
-AW
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+gL
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2704,11 +2680,11 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-YW
+hn
+hn
+hn
+hn
+fE
 yp
 VM
 xp
@@ -2717,17 +2693,17 @@ rW
 wy
 wy
 Dh
-kn
+To
 PF
 wy
 za
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2743,31 +2719,31 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 Xt
-ZH
+hn
 tN
 tN
 tN
 tN
 tN
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Er
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2783,11 +2759,11 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 Te
 VB
-ZH
+hn
 tN
 Pj
 Pj
@@ -2798,16 +2774,16 @@ Pj
 Pj
 tN
 tN
-ZH
-NU
+hn
+wE
 Sr
 Fa
 oF
 GX
-QE
+NQ
 Qt
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -2823,11 +2799,11 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 II
-ZH
-ZH
+hn
+hn
 Pj
 Pj
 pd
@@ -2845,9 +2821,9 @@ LY
 yK
 GX
 ZV
-tk
+EA
 FI
-ZH
+hn
 Al
 Al
 Al
@@ -2863,10 +2839,10 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 MR
-ZH
+hn
 Pj
 Pj
 EJ
@@ -2886,11 +2862,11 @@ Bl
 pD
 Rb
 Hw
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2901,18 +2877,18 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
 NL
-ZH
+hn
 Pj
 Zu
 Ev
 Ev
 CS
-Hc
+Zh
 Ku
 Ev
 Ev
@@ -2926,11 +2902,11 @@ Nk
 zh
 em
 zz
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -2941,11 +2917,11 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 tN
 Pj
 aR
@@ -2954,7 +2930,7 @@ Ge
 gT
 Is
 jy
-LL
+ND
 Ev
 wl
 Pj
@@ -2969,8 +2945,8 @@ px
 ja
 WV
 za
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -2981,8 +2957,8 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 hV
 io
 NO
@@ -2994,7 +2970,7 @@ Tn
 CU
 It
 TN
-ni
+Kn
 Ev
 ws
 Pj
@@ -3005,12 +2981,12 @@ oB
 oB
 oB
 oB
-ZH
-ZH
-ZH
-DK
-ZH
-ZH
+hn
+hn
+hn
+dw
+hn
+hn
 Al
 Al
 Al
@@ -3021,9 +2997,9 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-kD
+hn
+hn
+or
 jd
 Rh
 tN
@@ -3041,16 +3017,16 @@ Pj
 tN
 LK
 vP
-Ke
+Wa
 Bb
 NJ
 LK
-ZH
+hn
 cN
-ZH
+hn
 gd
-ZH
-ZH
+hn
+hn
 Al
 Al
 Al
@@ -3061,8 +3037,8 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 le
 nb
 Ri
@@ -3072,24 +3048,24 @@ iX
 Ev
 Ev
 En
-Kj
+Md
 fS
 Ev
 Ev
 yf
 Pj
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 ff
-ZH
+hn
 gd
-ZH
+hn
 Al
 Al
 Al
@@ -3100,9 +3076,9 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 nZ
 pi
 RE
@@ -3127,12 +3103,12 @@ lk
 lk
 lk
 lk
-ZH
+hn
 gd
 aQ
 zM
-ZH
-ZH
+hn
+hn
 Al
 Al
 "}
@@ -3140,14 +3116,14 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
+hn
+hn
+hn
 PA
 tD
 SF
-ZH
-ZH
+hn
+hn
 Pj
 Pj
 ph
@@ -3172,7 +3148,7 @@ la
 nX
 UF
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3180,14 +3156,14 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 At
 hz
 xf
 Tb
-jF
-ZH
+Ut
+hn
 tN
 Pj
 Pj
@@ -3205,14 +3181,14 @@ wo
 Mk
 UF
 Qr
-Oy
+Kg
 bI
 Cm
 kF
-hi
+hu
 lc
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3220,14 +3196,14 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 AT
 dO
 Rm
 oP
 ue
-ZH
+hn
 tN
 tN
 tN
@@ -3235,7 +3211,7 @@ tN
 tN
 tN
 tN
-ZH
+hn
 tN
 Mk
 Mk
@@ -3252,7 +3228,7 @@ Oc
 cl
 lM
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3260,8 +3236,8 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 Kk
 eK
 Ik
@@ -3272,10 +3248,10 @@ ZX
 WV
 yO
 WV
-uH
+Aj
 WV
 za
-ZH
+hn
 Mk
 HY
 Mk
@@ -3292,7 +3268,7 @@ ou
 QZ
 CA
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3300,29 +3276,29 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-Lp
+hn
+hn
+Qf
 hz
 yS
 Uq
 wB
-ZH
+hn
 EL
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 HX
 qO
-ZH
-ZH
-ZH
+hn
+hn
+hn
 qO
-ZH
-ZH
-ZH
+hn
+hn
+hn
 UF
 UN
 nl
@@ -3332,7 +3308,7 @@ nN
 fN
 PS
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3340,28 +3316,28 @@ Al
 Al
 Al
 Al
-ZH
-ZH
+hn
+hn
 PU
 hz
 Rs
 UT
-fq
-ZH
+Cv
+hn
 EL
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 mU
 LB
 LH
 rH
-yr
+sG
 ON
 wy
-PR
+Fz
 wy
 Bo
 UZ
@@ -3370,9 +3346,9 @@ Sy
 Sy
 nW
 Us
-od
+Hs
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3380,39 +3356,39 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 BM
-ZH
-ZH
-XK
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+mt
+hn
+hn
+hn
+hn
+hn
 OP
 lL
 XB
 Ie
 Iy
 qO
-ZH
-ZH
-ZH
+hn
+hn
+hn
 UF
-YY
+lj
 cF
 Vc
 Xa
-YV
+lF
 ZP
 Ok
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3420,29 +3396,29 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
 Vy
 WV
 WV
 gB
-ZH
-ZH
+hn
+hn
 Al
-ZH
-ZH
-rs
+hn
+hn
+kY
 tb
 LA
 Rp
-SZ
-ZH
-ZH
-ZH
-ZH
+jY
+hn
+hn
+hn
+hn
 UF
 UF
 UF
@@ -3452,7 +3428,7 @@ UF
 UF
 UF
 UF
-ZH
+hn
 Al
 Al
 "}
@@ -3463,36 +3439,36 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
-ZH
-ZH
+hn
+hn
 dG
 tM
 SV
 SV
 tI
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 "}
@@ -3503,24 +3479,24 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al
@@ -3552,15 +3528,15 @@ Al
 Al
 Al
 Al
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
-ZH
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
+hn
 Al
 Al
 Al

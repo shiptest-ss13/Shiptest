@@ -26,6 +26,7 @@ em						{font-style: normal;	font-weight: bold;}
 .prefix					{					font-weight: bold;}
 
 .ooc					{					font-weight: bold;}
+.looc					{					font-weight: bold;}
 .adminobserverooc		{color: #0099cc;	font-weight: bold;}
 .adminooc				{color: #700038;	font-weight: bold;}
 
@@ -44,8 +45,9 @@ em						{font-style: normal;	font-weight: bold;}
 .ntradio				{color: #4e3399;}
 .comradio				{color: #948f02;}
 .pirradio				{color: #a30000;}
-.cmmradio				{color: #337296;}
+.clipradio				{color: #337296;}
 .irmgradio				{color: #885231;}
+.pgfradio				{color: #127a35;}
 .syndradio				{color: ##612425;}
 .centcomradio			{color: #686868;}
 .aiprivradio			{color: #ff00ff;}
@@ -127,7 +129,6 @@ h1.alert, h2.alert		{color: #000000;}
 .redtext				{color: #FF0000;	font-size: 3;}
 .clown					{color: #FF69Bf;	font-size: 3;	font-family: "Comic Sans MS", cursive, sans-serif;	font-weight: bold;}
 .singing				{font-family: "Trebuchet MS", cursive, sans-serif; font-style: italic;}
-.his_grace				{color: #15D512;	font-family: "Courier New", cursive, sans-serif;	font-style: italic;}
 .hypnophrase			{color: #3bb5d3;	font-weight: bold;	animation: hypnocolor 1500ms infinite; animation-direction: alternate;}
 	@keyframes hypnocolor {
 		0%		{color: #0d0d0d;}

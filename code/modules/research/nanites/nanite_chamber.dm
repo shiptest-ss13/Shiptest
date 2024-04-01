@@ -4,6 +4,7 @@
 	circuit = /obj/item/circuitboard/machine/nanite_chamber
 	icon = 'icons/obj/machines/nanite_chamber.dmi'
 	icon_state = "nanite_chamber"
+	base_icon_state = "nanite_chamber"
 	layer = ABOVE_WINDOW_LAYER
 	use_power = IDLE_POWER_USE
 	anchored = TRUE
@@ -11,7 +12,6 @@
 	idle_power_usage = 50
 	active_power_usage = 300
 
-	var/obj/machinery/computer/nanite_chamber_control/console
 	var/locked = FALSE
 	var/breakout_time = 1200
 	var/scan_level
@@ -43,7 +43,7 @@
 	busy = status
 	busy_message = message
 	busy_icon_state = working_icon
-	update_icon()
+	update_appearance()
 
 /obj/machinery/nanite_chamber/proc/set_safety(threshold)
 	if(!occupant)
@@ -68,11 +68,11 @@
 
 	//TODO OMINOUS MACHINE SOUNDS
 	set_busy(TRUE, "Initializing injection protocol...", "[initial(icon_state)]_raising")
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Analyzing host bio-structure...", "[initial(icon_state)]_active"),20)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Priming nanites...", "[initial(icon_state)]_active"),40)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Injecting...", "[initial(icon_state)]_active"),70)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Activating nanites...", "[initial(icon_state)]_falling"),110)
-	addtimer(CALLBACK(src, .proc/complete_injection, locked_state),130)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Analyzing host bio-structure...", "[initial(icon_state)]_active"),20)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Priming nanites...", "[initial(icon_state)]_active"),40)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Injecting...", "[initial(icon_state)]_active"),70)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Activating nanites...", "[initial(icon_state)]_falling"),110)
+	addtimer(CALLBACK(src, PROC_REF(complete_injection), locked_state),130)
 
 /obj/machinery/nanite_chamber/proc/complete_injection(locked_state)
 	//TODO MACHINE DING
@@ -95,11 +95,11 @@
 
 	//TODO OMINOUS MACHINE SOUNDS
 	set_busy(TRUE, "Initializing cleanup protocol...", "[initial(icon_state)]_raising")
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Analyzing host bio-structure...", "[initial(icon_state)]_active"),20)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Pinging nanites...", "[initial(icon_state)]_active"),40)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Initiating graceful self-destruct sequence...", "[initial(icon_state)]_active"),70)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "Removing debris...", "[initial(icon_state)]_falling"),110)
-	addtimer(CALLBACK(src, .proc/complete_removal, locked_state),130)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Analyzing host bio-structure...", "[initial(icon_state)]_active"),20)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Pinging nanites...", "[initial(icon_state)]_active"),40)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Initiating graceful self-destruct sequence...", "[initial(icon_state)]_active"),70)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "Removing debris...", "[initial(icon_state)]_falling"),110)
+	addtimer(CALLBACK(src, PROC_REF(complete_removal), locked_state),130)
 
 /obj/machinery/nanite_chamber/proc/complete_removal(locked_state)
 	//TODO MACHINE DING
@@ -112,13 +112,11 @@
 /obj/machinery/nanite_chamber/update_icon_state()
 	//running and someone in there
 	if(occupant)
-		if(busy)
-			icon_state = busy_icon_state
-		else
-			icon_state = initial(icon_state) + "_occupied"
-	else
-		//running
-		icon_state = initial(icon_state) + (state_open ? "_open" : "")
+		icon_state = busy ? busy_icon_state : "[base_icon_state]_occupied"
+		return ..()
+	//running
+	icon_state = "[base_icon_state][state_open ? "_open" : null]"
+	return ..()
 
 /obj/machinery/nanite_chamber/update_overlays()
 	. = ..()
@@ -126,13 +124,16 @@
 	if((machine_stat & MAINT) || panel_open)
 		. += "maint"
 
-	else if(!(machine_stat & (NOPOWER|BROKEN)))
-		if(busy || locked)
-			. += "red"
-			if(locked)
-				. += "bolted"
-		else
-			. += "green"
+		return
+	if(machine_stat & (NOPOWER|BROKEN))
+		return
+
+	if(busy || locked)
+		. += "red"
+		if(locked)
+			. += "bolted"
+		return
+	. += "green"
 
 /obj/machinery/nanite_chamber/proc/toggle_open(mob/user)
 	if(panel_open)
@@ -199,7 +200,7 @@
 			linked_techweb = server.stored_research
 
 	if(!occupant && default_deconstruction_screwdriver(user, icon_state, icon_state, I))//sent icon_state is irrelevant...
-		update_icon()//..since we're updating the icon here, since the scanner can be unpowered when opened/closed
+		update_appearance()//..since we're updating the icon here, since the scanner can be unpowered when opened/closed
 		return
 
 	if(default_pry_open(I))

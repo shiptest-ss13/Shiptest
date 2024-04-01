@@ -20,8 +20,6 @@
 		stack_trace("Gib list dir length mismatch!")
 		return
 
-	var/obj/effect/decal/cleanable/blood/gibs/gib = null
-
 	if(sound_to_play && isnum(sound_vol))
 		playsound(src, sound_to_play, sound_vol, TRUE)
 
@@ -46,14 +44,13 @@
 		if(gibamounts[i])
 			for(var/j = 1, j<= gibamounts[i], j++)
 				var/gibType = gibtypes[i]
-				gib = new gibType(loc, diseases)
+				var/obj/effect/decal/cleanable/blood/gibs/gib = new gibType(loc, diseases)
 
 				gib.add_blood_DNA(dna_to_add)
 
 				var/list/directions = gibdirections[i]
-				if(isturf(loc))
-					if(directions.len)
-						gib.streak(directions)
+				if(isturf(loc) && length(directions) && istype(gib))
+					gib.streak(directions)
 
 	return INITIALIZE_HINT_QDEL
 
@@ -153,14 +150,19 @@
 	return ..()
 
 /obj/effect/gibspawner/robot/bodypartless
-	gibtypes = list(/obj/effect/decal/cleanable/robot_debris/up, /obj/effect/decal/cleanable/robot_debris/down, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris)
-	gibamounts = list(1, 1, 1, 1, 1)
+	gibtypes = list(/obj/effect/decal/cleanable/robot_debris/up, /obj/effect/decal/cleanable/robot_debris/down, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris, /obj/effect/decal/cleanable/robot_debris)
+	gibamounts = list(1, 1, 1, 1, 1, 1)
 
 /obj/effect/gibspawner/robot/bodypartless/Initialize()
 	if(!gibdirections.len)
-		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs)
+		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),list(EAST, NORTHEAST, SOUTHEAST), GLOB.alldirs, GLOB.alldirs)
 	return ..()
 
 /obj/effect/gibspawner/generic/crystal
 	gibtypes = list(/obj/effect/decal/cleanable/glass/strange, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core)
 	gibamounts = list(5, 2, 2, 1)
+
+/obj/effect/gibspawner/generic/crystal/Initialize()
+	if(!gibdirections.len)
+		gibdirections = list(list(NORTH, NORTHEAST, NORTHWEST),list(SOUTH, SOUTHEAST, SOUTHWEST),list(WEST, NORTHWEST, SOUTHWEST),GLOB.alldirs)
+	return ..()

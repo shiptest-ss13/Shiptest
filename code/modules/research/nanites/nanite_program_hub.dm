@@ -99,7 +99,7 @@
 		var/list/program_design = list()
 		program_design["id"] = D.id
 		program_design["name"] = D.name
-		program_design["desc"] = D.desc
+		program_design["desc"] = D.get_description()
 		data["programs"][cat_name] += list(program_design)
 
 	if(!length(data["programs"]))

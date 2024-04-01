@@ -18,8 +18,9 @@
 	ranged_cooldown_time = 30
 	minimum_distance = 4
 	retreat_distance = 3
-	maxHealth = 150
-	health = 150
+	maxHealth = 80
+	health = 80
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	obj_damage = 40
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -193,7 +194,7 @@
 	icon_state = "frozen"
 
 /datum/status_effect/ice_crystal/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, .proc/owner_moved)
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(owner_moved))
 	if(!owner.stat)
 		to_chat(owner, "<span class='userdanger'>You become frozen in a cube!</span>")
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")

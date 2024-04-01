@@ -21,11 +21,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	var/force_opens = FALSE
 
-/obj/item/crowbar/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/weapons/genhit.ogg', 50, TRUE, -1)
-	return (BRUTELOSS)
-
 /obj/item/crowbar/red
 	icon_state = "crowbar_red"
 	force = 8
@@ -66,21 +61,6 @@
 	. = ..()
 	. += " It's fitted with a [tool_behaviour == TOOL_CROWBAR ? "prying" : "cutting"] head."
 
-/obj/item/crowbar/power/suicide_act(mob/user)
-	if(tool_behaviour == TOOL_CROWBAR)
-		user.visible_message("<span class='suicide'>[user] is putting [user.p_their()] head in [src], it looks like [user.p_theyre()] trying to commit suicide!</span>")
-		playsound(loc, 'sound/items/jaws_pry.ogg', 50, TRUE, -1)
-	else
-		user.visible_message("<span class='suicide'>[user] is wrapping \the [src] around [user.p_their()] neck. It looks like [user.p_theyre()] trying to rip [user.p_their()] head off!</span>")
-		playsound(loc, 'sound/items/jaws_cut.ogg', 50, TRUE, -1)
-		if(iscarbon(user))
-			var/mob/living/carbon/C = user
-			var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)
-			if(BP)
-				BP.drop_limb()
-				playsound(loc, "desceration", 50, TRUE, -1)
-	return (BRUTELOSS)
-
 /obj/item/crowbar/power/attack_self(mob/user)
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, TRUE)
 	if(tool_behaviour == TOOL_CROWBAR)
@@ -88,11 +68,36 @@
 		to_chat(user, "<span class='notice'>You attach the cutting jaws to [src].</span>")
 		usesound = 'sound/items/jaws_cut.ogg'
 		icon_state = "jaws_cutter"
+		update_appearance()
 	else
 		tool_behaviour = TOOL_CROWBAR
 		to_chat(user, "<span class='notice'>You attach the prying jaws to [src].</span>")
 		usesound = 'sound/items/jaws_pry.ogg'
 		icon_state = "jaws_pry"
+		update_appearance()
+
+/obj/item/crowbar/power/attack_hand(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/crowbar/power/pickup(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/crowbar/power/dropped(mob/user)
+	. = ..()
+	update_appearance()
+
+/obj/item/crowbar/power/update_overlays()
+	. = ..()
+	if(ismob(loc))
+		var/mode_ovelay
+		switch(tool_behaviour)
+			if (TOOL_CROWBAR)
+				mode_ovelay = "jaw_pry"
+			if (TOOL_WIRECUTTER)
+				mode_ovelay = "jaw_cut"
+		. += mode_ovelay
 
 /obj/item/crowbar/power/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && tool_behaviour == TOOL_WIRECUTTER)

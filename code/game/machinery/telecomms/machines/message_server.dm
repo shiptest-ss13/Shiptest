@@ -27,7 +27,7 @@
 		user.put_in_hands(stored)
 		stored = null
 		to_chat(user, "<span class='notice'>You remove the blackbox from [src]. The tapes stop spinning.</span>")
-		update_icon()
+		update_appearance()
 		return
 	else
 		to_chat(user, "<span class='warning'>It seems that the blackbox is missing...</span>")
@@ -42,22 +42,24 @@
 		"<span class='notice'>You press the device into [src], and it clicks into place. The tapes begin spinning again.</span>")
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 		stored = I
-		update_icon()
+		update_appearance()
 		return
+	return ..()
+
+/obj/machinery/blackbox_recorder/deconstruct(disassembled)
+	if(stored)
+		stored.forceMove(drop_location())
+		new /obj/effect/decal/cleanable/oil(loc)
 	return ..()
 
 /obj/machinery/blackbox_recorder/Destroy()
 	if(stored)
-		stored.forceMove(loc)
-		new /obj/effect/decal/cleanable/oil(loc)
+		QDEL_NULL(stored)
 	return ..()
 
-/obj/machinery/blackbox_recorder/update_icon()
-	. = ..()
-	if(!stored)
-		icon_state = "blackbox_b"
-	else
-		icon_state = "blackbox"
+/obj/machinery/blackbox_recorder/update_icon_state()
+	icon_state = "blackbox[stored ? null : "_b"]"
+	return ..()
 
 /obj/item/blackbox
 	name = "\proper the blackbox"

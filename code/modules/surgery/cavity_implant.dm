@@ -9,7 +9,8 @@
 /datum/surgery_step/handle_cavity
 	name = "implant item"
 	accept_hand = TRUE
-	implements = list(/obj/item = 100)
+	implements = list(
+		/obj/item = 100)
 	repeatable = TRUE
 	time = 3.2 SECONDS
 	preop_sound = 'sound/surgery/organ1.ogg'

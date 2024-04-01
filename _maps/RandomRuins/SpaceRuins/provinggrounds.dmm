@@ -6,7 +6,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "at" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "au" = (
@@ -17,12 +17,21 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "aW" = (
-/turf/closed/indestructible/rock/snow/ice/ore,
+/turf/closed/indestructible/rock/snow,
 /area/ruin/space/has_grav/syndicircle/winter)
 "ba" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
+"bd" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 64;
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "bf" = (
 /obj/machinery/modular_computer/console/preset,
 /turf/open/floor/plasteel/tech/techmaint,
@@ -34,7 +43,7 @@
 	pixel_x = 8;
 	pixel_y = -8
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "bx" = (
 /obj/structure/flora/rock/icy,
@@ -62,9 +71,7 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "bM" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "bP" = (
@@ -82,7 +89,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 99
+	id = 99;
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -119,12 +127,10 @@
 	pixel_x = -8;
 	pixel_y = -8
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "dN" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "dP" = (
@@ -153,7 +159,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 6
+	id = 6;
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -201,7 +208,7 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "gi" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/syndicate/red,
+/obj/item/folder/documents/syndicate/red,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "gp" = (
@@ -245,7 +252,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "ho" = (
-/obj/machinery/blackbox_recorder,
+/obj/structure/salvageable/server,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
 "ht" = (
@@ -264,6 +271,15 @@
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
+"in" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 128;
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "iq" = (
 /obj/item/target,
 /obj/structure/flippedtable{
@@ -308,18 +324,13 @@
 /area/ruin/space/has_grav/syndicircle/winter)
 "iR" = (
 /obj/effect/mine/shrapnel,
-/obj/effect/turf_decal/weather/snow/corner,
 /obj/item/stack/tile/mineral/snow,
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "iZ" = (
-/obj/machinery/light/dim{
-	dir = 4
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "jo" = (
@@ -364,15 +375,22 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
+"kE" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 32;
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "kK" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/ballistic/automatic/smg/c20r{
 	pixel_x = 4;
 	pixel_y = -4
 	},
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "lb" = (
@@ -384,7 +402,9 @@
 "le" = (
 /obj/structure/barricade/wooden/snowed,
 /obj/effect/turf_decal/snow,
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 8
+	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/winter)
@@ -453,13 +473,20 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
+"nm" = (
+/obj/machinery/door/poddoor{
+	dir = 4
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
 "nR" = (
 /obj/structure/flippedtable,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "nU" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -522,13 +549,16 @@
 	},
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
+"pT" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/syndicircle/halls)
 "qm" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
 "qo" = (
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/winter)
 "qv" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun{
@@ -538,7 +568,7 @@
 /area/ruin/space/has_grav/syndicircle/winter)
 "qP" = (
 /obj/item/target,
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
@@ -656,7 +686,7 @@
 /area/ruin/space/has_grav/syndicircle/research)
 "tG" = (
 /obj/effect/turf_decal/ntlogo,
-/obj/machinery/nuclearbomb/selfdestruct,
+/obj/machinery/nuclearbomb/beer,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "tN" = (
@@ -694,7 +724,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 256
+	id = 256;
+	dir = 8
 	},
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -715,20 +746,19 @@
 /area/ruin/space/has_grav/syndicircle/winter)
 "uE" = (
 /obj/effect/turf_decal/number/two,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "uU" = (
 /obj/machinery/button{
 	id = 99;
 	name = "Zone Alpha shutters";
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "vc" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "vg" = (
@@ -762,7 +792,11 @@
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/syndicircle/research)
 "vQ" = (
-/obj/machinery/light{
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"vT" = (
+/obj/machinery/power/terminal{
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -809,7 +843,8 @@
 /obj/machinery/button{
 	id = 6;
 	name = "Zone Delta shutters";
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -823,9 +858,7 @@
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "wU" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "xd" = (
@@ -866,6 +899,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/training)
+"yG" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
 "yO" = (
 /obj/structure/flora/rock/pile,
 /obj/effect/decal/cleanable/dirt,
@@ -876,9 +913,10 @@
 	id = 64;
 	name = "Zone Bravo shutters";
 	pixel_x = -8;
-	pixel_y = 8
+	pixel_y = -2;
+	dir = 8
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "zm" = (
 /turf/open/floor/circuit,
@@ -891,7 +929,9 @@
 /turf/open/floor/circuit,
 /area/ruin/space/has_grav/syndicircle/research)
 "zr" = (
-/obj/machinery/door/poddoor,
+/obj/machinery/door/poddoor{
+	dir = 4
+	},
 /obj/structure/fans/tiny,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -946,18 +986,21 @@
 /turf/open/space,
 /area/template_noop)
 "AQ" = (
-/obj/machinery/light/dim,
+/obj/machinery/light/dim/directional/south,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
 "AV" = (
-/obj/structure/table/reinforced,
-/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/item/blackbox,
+/obj/machinery/blackbox_recorder,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
+"Bc" = (
+/obj/machinery/light/directional/west,
+/turf/closed/mineral/random,
+/area/ruin/space/has_grav/syndicircle/spacewalk)
 "Bj" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -976,7 +1019,7 @@
 /turf/open/floor/circuit,
 /area/ruin/space/has_grav/syndicircle/research)
 "Bw" = (
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
@@ -986,17 +1029,18 @@
 /obj/machinery/button{
 	id = 4;
 	name = "Zone Charlie shutters";
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 8
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/space/has_grav/syndicircle/research)
 "BJ" = (
 /obj/effect/turf_decal/number/zero,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "BV" = (
 /obj/effect/turf_decal/number/one,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "BY" = (
 /obj/structure/cable{
@@ -1027,7 +1071,7 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "Ci" = (
 /obj/effect/turf_decal/snow,
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/winter)
@@ -1035,21 +1079,39 @@
 /obj/machinery/button{
 	id = 6;
 	name = "Zone Delta shutters";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/open/floor/plating/asteroid/snow/atmosphere,
 /area/ruin/space/has_grav/syndicircle/winter)
+"Cu" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
 "CA" = (
 /obj/machinery/button{
 	id = 4;
 	name = "Zone Charlie shutters";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "CC" = (
 /obj/machinery/computer/camera_advanced{
 	networks = list("zoned")
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"CO" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 128;
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1114,7 +1176,7 @@
 /area/ruin/space/has_grav/syndicircle/research)
 "Ek" = (
 /obj/effect/turf_decal/number/three,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "EO" = (
 /obj/structure/fans/tiny,
@@ -1122,9 +1184,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "EQ" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/vending/sovietsoda,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1162,9 +1222,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/mob/living/simple_animal/hostile/syndicate/civilian{
-	name = "Syndicate Researcher"
-	},
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Fv" = (
@@ -1179,13 +1237,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
-"FH" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/mineral/plastitanium,
+"FG" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
+"FH" = (
+/obj/effect/decal/cleanable/robot_debris,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
 "FM" = (
 /mob/living/simple_animal/hostile/syndicate/civilian{
 	name = "Syndicate Researcher"
@@ -1232,11 +1292,16 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Hi" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/machinery/vending/cola/shamblers,
 /turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"Hl" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/turf/open/space/basic,
 /area/ruin/space/has_grav/syndicircle/halls)
 "HC" = (
 /mob/living/simple_animal/hostile/syndicate/civilian{
@@ -1247,28 +1312,30 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
-"HF" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/template_noop)
-"HV" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/space/has_grav/syndicircle/spacewalk)
 "Ik" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Im" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light{
+/obj/machinery/light/directional/west,
+/obj/item/paper_bin,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"Ir" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
+"Iv" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 4;
 	dir = 8
 	},
-/obj/item/paper_bin,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "IE" = (
@@ -1289,20 +1356,17 @@
 /obj/machinery/power/smes/magical{
 	name = "power storage unit"
 	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Je" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /obj/item/paper_bin,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Ji" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Jq" = (
@@ -1317,7 +1381,9 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Jx" = (
-/obj/machinery/door/airlock/centcom,
+/obj/machinery/door/airlock/centcom{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -1332,9 +1398,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "JT" = (
-/obj/machinery/light{
-	dir = 4
-	},
+/obj/machinery/light/directional/east,
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
 "Kb" = (
@@ -1342,9 +1406,10 @@
 	id = 32;
 	name = "Zone Alpha shutters";
 	pixel_x = 7;
-	pixel_y = 8
+	pixel_y = 3;
+	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Kr" = (
 /obj/structure/rack,
@@ -1360,7 +1425,8 @@
 /obj/machinery/button{
 	id = 84;
 	name = "Zone Bravo shutters";
-	pixel_x = -25
+	pixel_x = -25;
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
@@ -1380,7 +1446,7 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "Lb" = (
 /obj/structure/sign/warning/securearea,
-/turf/closed/wall/mineral/plastitanium,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/space/has_grav/syndicircle/halls)
 "Lh" = (
 /obj/structure/window/plasma/reinforced/plastitanium,
@@ -1390,8 +1456,13 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
+"Li" = (
+/obj/effect/decal/cleanable/robot_debris,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ruin/space/has_grav/syndicircle/research)
 "Lt" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
@@ -1467,7 +1538,7 @@
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
 "NV" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/space,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "Oc" = (
@@ -1490,19 +1561,25 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
 "OH" = (
-/turf/closed/mineral/random/asteroid,
+/turf/closed/mineral/random,
 /area/ruin/space/has_grav/syndicircle/spacewalk)
 "OW" = (
 /turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
 "OY" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
+"Pq" = (
+/obj/machinery/door/airlock/centcom{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "Pv" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -1512,9 +1589,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Qc" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
 "Qd" = (
@@ -1529,9 +1604,22 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
 "QT" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
+"Rj" = (
+/mob/living/simple_animal/hostile/syndicate,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
+"Rs" = (
+/obj/structure/window/plasma/reinforced/plastitanium,
+/obj/structure/grille,
+/obj/machinery/door/poddoor{
+	id = 256;
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "Rw" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/dirt/jungle/wasteland,
@@ -1588,7 +1676,7 @@
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/syndicircle/escape)
 "SC" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
@@ -1664,7 +1752,11 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
 "Ua" = (
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/syndicircle/halls)
+"UA" = (
+/mob/living/simple_animal/hostile/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
 "UI" = (
@@ -1730,9 +1822,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland,
 /area/ruin/space/has_grav/syndicircle/training)
 "Wt" = (
-/obj/machinery/light{
-	dir = 1
-	},
+/obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/sandy_dirt,
 /area/ruin/space/has_grav/syndicircle/training)
@@ -1791,7 +1881,8 @@
 /obj/structure/window/plasma/reinforced/plastitanium,
 /obj/structure/grille,
 /obj/machinery/door/poddoor{
-	id = 84
+	id = 84;
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1808,7 +1899,8 @@
 /obj/machinery/button{
 	id = 84;
 	name = "Zone Bravo shutters";
-	pixel_x = 25
+	pixel_x = 25;
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1901,9 +1993,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/syndicircle/training)
 "Zf" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/machinery/light/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1924,7 +2014,8 @@
 /obj/machinery/button{
 	id = 99;
 	name = "Zone Alpha shutters";
-	pixel_x = 8
+	pixel_x = 8;
+	dir = 4
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
@@ -1949,7 +2040,7 @@
 	dir = 5;
 	network = list("zoneb")
 	},
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -2028,7 +2119,7 @@ ZW
 ZW
 AP
 GV
-HF
+AP
 GV
 AP
 ZW
@@ -2076,11 +2167,11 @@ ZW
 ZW
 ZW
 ZW
-am
-EO
-am
-EO
-am
+pT
+Ir
+pT
+Hl
+pT
 ZW
 ZW
 ZW
@@ -2130,7 +2221,7 @@ BJ
 ay
 ay
 ay
-am
+pT
 AP
 ZW
 ZW
@@ -2223,17 +2314,17 @@ ZW
 ZW
 ZW
 ZW
+pT
+pT
+pT
+pT
+Ir
 am
-am
-am
-am
-EO
-am
-EO
-am
-am
-am
-am
+Ir
+pT
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -2270,10 +2361,10 @@ ZW
 ZW
 ZW
 ZW
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ap
 ap
 ay
@@ -2283,10 +2374,10 @@ ap
 ay
 ap
 ap
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -2317,10 +2408,10 @@ ZW
 ZW
 ZW
 ZW
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ap
 ap
 ap
@@ -2336,10 +2427,10 @@ ap
 ap
 ap
 ap
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -2365,9 +2456,9 @@ ZW
 ZW
 ZW
 ZW
-am
-am
-am
+pT
+pT
+pT
 Df
 ur
 ur
@@ -2375,13 +2466,13 @@ ur
 ur
 ur
 Ch
-am
-am
+pT
+pT
 Jx
-am
-au
-am
-am
+pT
+Pq
+pT
+pT
 ap
 ap
 ap
@@ -2389,9 +2480,9 @@ ap
 ap
 ap
 ap
-am
-am
-am
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -2414,35 +2505,35 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 ay
 ap
 jx
 ap
 ap
-am
-am
-am
-am
-am
-am
+pT
+pT
+pT
+pT
+pT
+pT
 Dm
 ap
 ap
-am
-am
-am
-am
-am
-am
+pT
+pT
+pT
+pT
+pT
+pT
 ap
 ap
 ay
 ap
 ay
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -2463,8 +2554,8 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 jo
 ur
 BY
@@ -2476,24 +2567,24 @@ aW
 aW
 aW
 aW
-am
+pT
 Dm
 ap
 ap
-am
+pT
 MV
 Rw
 MV
 MV
-am
-am
-am
+pT
+pT
+pT
 ap
 ay
 ap
 ay
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -2512,13 +2603,13 @@ ZW
 ZW
 ZW
 ZW
-am
+pT
 bo
 dN
 jx
 ay
-am
-am
+pT
+pT
 qo
 aW
 bL
@@ -2526,7 +2617,7 @@ eh
 en
 aW
 aW
-am
+pT
 EQ
 ap
 ap
@@ -2537,14 +2628,14 @@ Ng
 TG
 Oc
 RV
-am
-am
-am
+pT
+pT
+pT
 ay
 ay
 Ua
 Kb
-am
+pT
 ZW
 ZW
 ZW
@@ -2561,13 +2652,13 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 ay
 ay
 ov
 dP
-am
+pT
 dZ
 dZ
 eh
@@ -2589,13 +2680,13 @@ Ng
 Oc
 MW
 Ox
-am
+pT
 JP
-du
+UA
 ay
 ay
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -2610,13 +2701,13 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 ay
 ay
-du
+UA
 uc
-dP
+Rs
 kK
 mN
 dZ
@@ -2640,13 +2731,13 @@ Oc
 Oc
 RH
 IE
+kE
 JP
-JP
 ay
 ay
 ay
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -2660,7 +2751,7 @@ ZW
 ZW
 ZW
 ZW
-am
+pT
 ay
 ap
 ay
@@ -2691,12 +2782,12 @@ Ng
 RH
 qP
 MV
-JP
+kE
 JP
 ay
 ap
 ay
-am
+pT
 ZW
 ZW
 ZW
@@ -2709,12 +2800,12 @@ ZW
 (16,1,1) = {"
 ZW
 ZW
-am
-am
+pT
+pT
 ap
 ay
-am
-am
+pT
+pT
 gi
 iz
 iH
@@ -2742,12 +2833,12 @@ Ox
 MV
 MV
 MV
-am
-am
+pT
+pT
 ay
 ap
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -2759,11 +2850,11 @@ ZW
 (17,1,1) = {"
 ZW
 ZW
-am
+pT
 ap
 ay
 ap
-am
+pT
 dZ
 gp
 iD
@@ -2793,11 +2884,11 @@ UL
 iy
 Oc
 by
-am
+pT
 ap
 ay
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -2809,11 +2900,11 @@ ZW
 (18,1,1) = {"
 ZW
 ZW
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 dZ
 dZ
 iH
@@ -2843,11 +2934,11 @@ RR
 YD
 Ng
 Ng
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -2858,11 +2949,11 @@ ZW
 "}
 (19,1,1) = {"
 ZW
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 aW
 bL
 dZ
@@ -2894,11 +2985,11 @@ JT
 Ng
 Oc
 MV
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -2908,11 +2999,11 @@ ZW
 "}
 (20,1,1) = {"
 ZW
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 bx
 bL
 gv
@@ -2944,11 +3035,11 @@ MV
 MV
 oJ
 MV
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -2958,10 +3049,10 @@ ZW
 "}
 (21,1,1) = {"
 ZW
-am
+pT
 ap
 ap
-am
+pT
 aW
 bD
 eh
@@ -2995,10 +3086,10 @@ RV
 Ng
 Ng
 MW
-am
+pT
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -3007,11 +3098,11 @@ ZW
 ZW
 "}
 (22,1,1) = {"
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 aW
 bL
 en
@@ -3045,11 +3136,11 @@ Oc
 Ng
 Ng
 xD
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -3057,11 +3148,11 @@ ZW
 ZW
 "}
 (23,1,1) = {"
-am
+pT
 ap
 ap
 ap
-am
+pT
 aW
 aW
 eu
@@ -3079,7 +3170,7 @@ aW
 am
 Jx
 am
-au
+Pq
 am
 MV
 Sb
@@ -3095,11 +3186,11 @@ Oc
 Oc
 RV
 QT
-am
+pT
 ap
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -3107,11 +3198,11 @@ ZW
 ZW
 "}
 (24,1,1) = {"
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 aW
 aW
 aW
@@ -3145,11 +3236,11 @@ RV
 Oc
 MW
 iq
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 AP
 AP
 ZW
@@ -3157,18 +3248,18 @@ ZW
 ZW
 "}
 (25,1,1) = {"
-am
+pT
 ap
 ap
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ew
 ew
 am
-lv
-lv
+Cu
+Cu
 am
 ew
 ew
@@ -3189,25 +3280,25 @@ ci
 ci
 Zt
 zr
-lv
+nm
 am
 ci
 ci
 bS
-am
-am
-am
+pT
+pT
+pT
 ap
 ay
-am
+pT
 uE
 BJ
-am
-HF
+pT
+AP
 AP
 "}
 (26,1,1) = {"
-am
+pT
 ap
 ap
 au
@@ -3257,10 +3348,10 @@ GV
 GV
 "}
 (27,1,1) = {"
-am
+pT
 ap
 at
-am
+pT
 ap
 ap
 ap
@@ -3277,9 +3368,9 @@ ap
 am
 AV
 Dm
-FH
+Bj
 IY
-ap
+vT
 ap
 OE
 am
@@ -3299,15 +3390,15 @@ ap
 am
 vQ
 ay
-am
+pT
 dN
 ay
-am
+pT
 AP
 GV
 "}
 (28,1,1) = {"
-am
+pT
 ap
 ap
 au
@@ -3321,7 +3412,7 @@ ay
 ay
 CA
 tq
-eH
+FG
 wU
 ap
 au
@@ -3357,21 +3448,21 @@ GV
 GV
 "}
 (29,1,1) = {"
-am
+pT
 ap
 ap
-am
-am
-am
+pT
+pT
+pT
 bS
-fe
-fe
+Iv
+Iv
 am
-lv
-lv
+nm
+Cu
 am
-fe
-fe
+Iv
+Iv
 am
 am
 am
@@ -3379,7 +3470,7 @@ am
 DG
 HC
 ap
-FM
+Rj
 Mr
 am
 am
@@ -3389,29 +3480,29 @@ WY
 WY
 am
 zr
-lv
+nm
 am
 WY
 WY
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ap
 ay
-am
+pT
 Lb
-am
-am
-HF
+pT
+pT
+AP
 AP
 "}
 (30,1,1) = {"
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 ba
 bV
 bV
@@ -3420,7 +3511,7 @@ Bx
 kc
 bV
 qV
-ho
+Li
 vg
 ho
 vg
@@ -3441,15 +3532,15 @@ ZZ
 TF
 xF
 KH
-HV
+Tj
 OH
+Bc
 OH
-OH
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 AP
 AP
 ZW
@@ -3457,29 +3548,29 @@ ZW
 ZW
 "}
 (31,1,1) = {"
-am
+pT
 ap
 ap
 ap
-am
+pT
 bf
 cC
 ff
 ho
-ho
-bV
+yG
+FH
 oV
 rf
 ho
 vx
 xd
 zm
-ho
+bV
 ho
 am
 Jx
 am
-au
+Pq
 am
 OH
 Sf
@@ -3495,11 +3586,11 @@ Vn
 Sf
 OH
 OH
-am
+pT
 ap
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -3507,17 +3598,17 @@ ZW
 ZW
 "}
 (32,1,1) = {"
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 bf
 cQ
 fI
-ho
+FH
 jA
-bV
+ho
 bV
 ru
 tz
@@ -3545,11 +3636,11 @@ Vn
 ZU
 Sf
 OH
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -3558,15 +3649,15 @@ ZW
 "}
 (33,1,1) = {"
 ZW
-am
+pT
 ap
 ap
-am
+pT
 ba
 dd
 bV
 ho
-ho
+yG
 lX
 mc
 rV
@@ -3574,7 +3665,7 @@ tE
 vB
 xs
 rf
-ho
+Li
 ho
 bS
 Dm
@@ -3595,10 +3686,10 @@ Vn
 Sf
 SQ
 OH
-am
+pT
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -3608,11 +3699,11 @@ ZW
 "}
 (34,1,1) = {"
 ZW
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 dh
 bV
 ht
@@ -3644,11 +3735,11 @@ Vn
 Tj
 DU
 OH
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -3658,11 +3749,11 @@ ZW
 "}
 (35,1,1) = {"
 ZW
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 bV
 dd
 hw
@@ -3674,8 +3765,8 @@ tG
 vE
 xE
 rf
-ho
-ho
+bV
+yG
 fe
 GW
 ay
@@ -3694,11 +3785,11 @@ Tj
 MP
 OH
 OH
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -3709,11 +3800,11 @@ ZW
 (36,1,1) = {"
 ZW
 ZW
-am
+pT
 ap
 ap
-am
-am
+pT
+pT
 fO
 if
 bV
@@ -3743,11 +3834,11 @@ Sf
 OH
 OH
 OH
-am
-am
+pT
+pT
 ap
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -3759,11 +3850,11 @@ ZW
 (37,1,1) = {"
 ZW
 ZW
-am
+pT
 ap
 ay
 ap
-am
+pT
 ba
 bV
 kc
@@ -3793,11 +3884,11 @@ Tl
 SQ
 OH
 OH
-am
+pT
 ap
 ay
 ap
-am
+pT
 ZW
 ZW
 ZW
@@ -3809,12 +3900,12 @@ ZW
 (38,1,1) = {"
 ZW
 ZW
-am
-am
+pT
+pT
 ap
 ay
-am
-am
+pT
+pT
 bf
 kj
 bV
@@ -3823,7 +3914,7 @@ sI
 tZ
 wp
 bV
-bV
+FH
 bV
 kc
 lv
@@ -3842,12 +3933,12 @@ Tl
 Vn
 Tj
 DU
-am
-am
+pT
+pT
 ay
 ap
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -3860,12 +3951,12 @@ ZW
 ZW
 ZW
 ZW
-am
+pT
 ay
 ap
 du
 fZ
-fZ
+CO
 kv
 mC
 qm
@@ -3873,7 +3964,7 @@ bV
 lX
 ws
 ho
-ho
+bV
 Aj
 Ej
 am
@@ -3891,12 +3982,12 @@ Tl
 Vn
 XW
 Tl
-GP
+bd
 GP
 ay
 ap
 ay
-am
+pT
 ZW
 ZW
 ZW
@@ -3910,20 +4001,20 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 ay
 ay
 ay
 fZ
-fZ
+in
 kv
 dd
 sX
 fO
 ws
-ho
-ho
+FH
+yG
 ho
 bV
 fe
@@ -3940,13 +4031,13 @@ Vn
 Vn
 Vn
 Vn
+bd
 GP
-GP
 ay
 ay
 ay
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -3961,13 +4052,13 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 ay
 ay
-du
+UA
 fZ
-am
+pT
 ba
 bV
 bV
@@ -3989,13 +4080,13 @@ Vn
 Vn
 Wx
 NV
-am
+pT
 GP
-du
+UA
 ay
 du
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -4012,21 +4103,21 @@ ZW
 ZW
 ZW
 ZW
-am
+pT
 dx
 dN
 ay
 ay
-am
-am
-am
+pT
+pT
+pT
 dd
 wD
 dd
 cC
 AG
 Bw
-am
+pT
 Hi
 ap
 ap
@@ -4037,14 +4128,14 @@ Tj
 Tj
 Sf
 DU
-am
-am
-am
+pT
+pT
+pT
 ay
 ay
 Ua
 yT
-am
+pT
 ZW
 ZW
 ZW
@@ -4063,37 +4154,37 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 ay
 ap
 ay
 ap
-am
-am
-am
+pT
+pT
+pT
 ba
 kv
 kv
 ba
-am
+pT
 ap
 ap
 ap
-am
+pT
 OH
 OH
 Tj
 DU
-am
-am
-am
+pT
+pT
+pT
 ap
 ay
 ap
 ay
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -4114,35 +4205,35 @@ ZW
 ZW
 ZW
 ZW
-am
-am
+pT
+pT
 ay
 ap
 ay
 ap
 ap
-am
-am
-am
-am
-am
-am
+pT
+pT
+pT
+pT
+pT
+pT
 ap
 ap
 ap
-am
-am
-am
-am
-am
-am
+pT
+pT
+pT
+pT
+pT
+pT
 ap
 ap
 ay
 ap
 ay
-am
-am
+pT
+pT
 ZW
 ZW
 ZW
@@ -4165,9 +4256,23 @@ ZW
 ZW
 ZW
 ZW
+pT
+pT
+pT
+ap
+ap
+ap
+ap
+ap
+ap
+ap
+pT
+pT
+Pq
 am
-am
-am
+Pq
+pT
+pT
 ap
 ap
 ap
@@ -4175,23 +4280,9 @@ ap
 ap
 ap
 ap
-am
-am
-au
-am
-au
-am
-am
-ap
-ap
-ap
-ap
-ap
-ap
-ap
-am
-am
-am
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -4217,10 +4308,10 @@ ZW
 ZW
 ZW
 ZW
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ap
 ap
 ap
@@ -4236,10 +4327,10 @@ ap
 ap
 ap
 ap
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -4270,10 +4361,10 @@ ZW
 ZW
 ZW
 ZW
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ap
 ap
 ay
@@ -4283,10 +4374,10 @@ ap
 ay
 ap
 ap
-am
-am
-am
-am
+pT
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -4323,17 +4414,17 @@ ZW
 ZW
 ZW
 ZW
+pT
+pT
+pT
+pT
+Ir
 am
-am
-am
-am
-EO
-am
-EO
-am
-am
-am
-am
+Ir
+pT
+pT
+pT
+pT
 ZW
 ZW
 ZW
@@ -4430,7 +4521,7 @@ Ek
 ay
 ay
 ay
-am
+pT
 AP
 ZW
 ZW
@@ -4476,11 +4567,11 @@ ZW
 ZW
 ZW
 ZW
+pT
+Ir
 am
-EO
-am
-EO
-am
+Ir
+pT
 ZW
 ZW
 ZW

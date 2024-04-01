@@ -27,7 +27,7 @@
 		return
 	if(!(entered_dirs & AM.dir))
 		entered_dirs |= AM.dir
-		update_icon()
+		update_appearance()
 
 /turf/open/floor/plating/asteroid/snow/Exited(atom/movable/AM)
 	. = ..()
@@ -35,7 +35,7 @@
 		return
 	if(!(exited_dirs & AM.dir))
 		exited_dirs |= AM.dir
-		update_icon()
+		update_appearance()
 
 // adapted version of footprints' update_icon code
 /turf/open/floor/plating/asteroid/snow/update_overlays()
@@ -72,7 +72,7 @@
 		if(old_exited_dirs & Ddir)
 			exited_dirs |= NDir
 
-	update_icon()
+	update_appearance()
 	return ..()
 
 /turf/open/floor/plating/asteroid/snow/getDug()
@@ -105,6 +105,7 @@
 
 /turf/open/floor/plating/asteroid/snow/temperatre
 	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
+	baseturfs = /turf/open/floor/plating/asteroid/icerock/temperate
 
 /turf/open/floor/plating/asteroid/snow/atmosphere
 	initial_gas_mix = FROZEN_ATMOS
@@ -155,6 +156,9 @@
 	floor_variance = 0
 	icon_state = "icemoon_ground_smooth"
 	base_icon_state = "icemoon_ground_smooth"
+
+/turf/open/floor/plating/asteroid/icerock/temperate
+	initial_gas_mix = "o2=22;n2=82;TEMP=255.37"
 
 /turf/open/floor/plating/asteroid/iceberg
 	gender = PLURAL

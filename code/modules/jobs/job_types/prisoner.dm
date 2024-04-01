@@ -1,7 +1,5 @@
 /datum/job/prisoner
 	name = "Prisoner"
-	total_positions = 0
-	spawn_positions = 2
 
 	outfit = /datum/outfit/job/prisoner
 
@@ -18,22 +16,3 @@
 	id = /obj/item/card/id/prisoner
 	ears = null
 	belt = null
-
-/datum/outfit/job/prisoner/protectedcustody
-	name = "Prisoner (Protected Custody)"
-
-	uniform = /obj/item/clothing/under/rank/prisoner/protected_custody
-	alt_uniform = /obj/item/clothing/under/rank/prisoner/protected_custody
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/sneakers/orange
-
-/datum/outfit/job/prisoner/shotcaller
-	name = "Shotcaller"
-	l_pocket = /obj/item/kitchen/knife/shiv
-
-/datum/outfit/job/prisoner/longtermpatient
-	name = "Long Term Patient"
-	id = /obj/item/card/id/syndicate_command/crew_id
-	uniform = /obj/item/clothing/under/misc/pj/red
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/sandal

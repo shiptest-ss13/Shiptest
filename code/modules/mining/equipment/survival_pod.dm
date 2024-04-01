@@ -149,6 +149,7 @@
 /obj/machinery/stasis/survival_pod
 	icon = 'icons/obj/lavaland/survival_pod.dmi'
 	icon_state = "sleeper"
+	base_icon_state = "sleeper"
 	mattress_state = null
 	buckle_lying = 270
 
@@ -270,7 +271,7 @@
 
 /obj/structure/fans/Initialize(mapload)
 	. = ..()
-	air_update_turf(1)
+	air_update_turf(TRUE)
 
 //Inivisible, indestructible fans
 /obj/structure/fans/tiny/invisible
@@ -282,14 +283,12 @@
 /obj/structure/sign/mining
 	name = "\improper Nanotrasen mining corps sign"
 	desc = "A sign of relief for weary miners, and a warning for would-be competitors to Nanotrasen's mining claims."
-	icon = 'icons/turf/walls/survival_pod_walls.dmi'
-	icon_state = "ntpod"
+	icon_state = "nanotrasen"
 
 /obj/structure/sign/mining/survival
 	name = "shelter sign"
 	desc = "A high visibility sign designating a safe shelter."
-	icon = 'icons/turf/walls/survival_pod_walls.dmi'
-	icon_state = "survival"
+	icon_state = "secureareaold"
 
 //Fluff
 /obj/structure/tubes
@@ -312,7 +311,6 @@
 						/obj/item/lava_staff,
 						/obj/item/energy_katana,
 						/obj/item/hierophant_club,
-						/obj/item/his_grace,
 						/obj/item/gun/energy/minigun,
 						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
 						/obj/item/gun/magic/staff/chaos,

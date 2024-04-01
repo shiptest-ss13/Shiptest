@@ -65,6 +65,10 @@
 	desc = "A key belonging to a once peaceful scholar, brought to death and ruin through means of violence by savage outsider."
 	puzzle_id = "priestkey"
 
+/obj/item/keycard/gatedrop/lavacanyon
+	name = "Vault Key"
+	desc = "A dusty key, smudged with dried blood."
+	puzzle_id = "lavacanyonkey"
 
 //***************
 //*****Doors*****
@@ -130,10 +134,10 @@
 	desc = "A gate made out of hard metal. Opens with a key."
 	icon = 'icons/obj/doors/gates.dmi'
 	icon_state = "closed"
-	layer = SHUTTER_LAYER
-	closingLayer = SHUTTER_LAYER
-	var/open_sound = 'sound/machines/gate.ogg'
-	var/close_sound = 'sound/machines/gate.ogg'
+	layer = BLASTDOOR_LAYER
+	closingLayer = BLASTDOOR_LAYER
+	var/open_sound = 'sound/machines/airlocks/gate.ogg'
+	var/close_sound = 'sound/machines/airlocks/gate.ogg'
 	glass = TRUE
 	opacity = FALSE
 	move_resist = MOVE_FORCE_OVERPOWERING
@@ -148,10 +152,8 @@
 			playsound(src, close_sound, 30, FALSE)
 
 /obj/machinery/door/keycard/gates/update_icon_state()
-	if(density)
-		icon_state = "closed"
-	else
-		icon_state = "open"
+	. = ..()
+	icon_state = density ? "closed" : "open"
 
 /obj/machinery/door/keycard/gates/drakelair
 	puzzle_id = "drakelairkey"
@@ -185,6 +187,9 @@
 	name = "The Priest's Treasury"
 	desc = "Gates holding The Priest's eternal hoarde. Drakeborn, incapable of avoiding the grand desire to collect and learn."
 	puzzle_id = "priestkey"
+
+/obj/machinery/door/keycard/gates/lavacanyon
+	puzzle_id = "lavacanyonkey"
 
 //*************************
 //***Box Pushing Puzzles***
@@ -223,7 +228,7 @@
 	AddElement(/datum/element/undertile, tile_overlay = tile_overlay) //we remove use_anchor here, so it ALWAYS stays anchored
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

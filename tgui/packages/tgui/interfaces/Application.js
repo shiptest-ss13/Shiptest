@@ -20,8 +20,8 @@ export const Application = (props, context) => {
           <Stack.Item grow>
             <p>
               This ship is <b>application-only.</b> To join, your application
-              must be approved by the current ship owner. This is an <b>OOC</b>
-              utility.
+              must be approved by the current ship owner. This is an
+              <b>OOC</b> utility.
               <br />
               <br />
               <b>You only get one application per ship.</b> Different characters

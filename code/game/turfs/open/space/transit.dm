@@ -32,15 +32,17 @@
 		AM.throw_atom_into_space()
 
 /atom/proc/throw_atom_into_space()
-	if(istype(src, /obj/docking_port))
-		return
-	if(iseffect(src))
-		return
-	if(isliving(src))
-		var/mob/living/poor_soul = src			// This may not seem like much, but if you toss someone out
-		poor_soul.apply_damage_type(50, BRUTE)	// and they go through like four tiles, they're goners
+	if(flags_1 & INITIALIZED_1)
 		return
 	qdel(src)
+
+/obj/throw_atom_into_space()
+	if(resistance_flags & HYPERSPACE_PROOF)
+		return
+	return ..()
+
+/mob/living/throw_atom_into_space()
+	apply_damage_type(25, BRUTE)	// This may not seem like much, but if you toss someone out and they go through like four tiles, they're goners
 
 /turf/open/space/transit/CanBuildHere()
 	return SSshuttle.is_in_shuttle_bounds(src)
@@ -48,7 +50,7 @@
 
 /turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	update_icon()
+	update_appearance()
 	for(var/atom/movable/AM in src)
 		AM.throw_atom_into_space()
 
@@ -58,6 +60,7 @@
 
 /turf/open/space/transit/update_icon_state()
 	icon_state = "speedspace_ns_[get_transit_state(src)]"
+	return ..()
 
 /proc/get_transit_state(turf/T)
 	var/p = 9

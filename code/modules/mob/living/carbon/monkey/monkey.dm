@@ -20,8 +20,8 @@
 		/obj/item/bodypart/head/monkey,
 		/obj/item/bodypart/l_arm/monkey,
 		/obj/item/bodypart/r_arm/monkey,
-		/obj/item/bodypart/r_leg/monkey,
-		/obj/item/bodypart/l_leg/monkey,
+		/obj/item/bodypart/leg/right/monkey,
+		/obj/item/bodypart/leg/left/monkey,
 		)
 	hud_type = /datum/hud/monkey
 	melee_damage_lower = 1
@@ -52,6 +52,7 @@
 	create_dna(src)
 	dna.initialize_dna(random_blood_type())
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, -6)
+	AddComponent(/datum/component/bloodysoles/feet)
 
 /mob/living/carbon/monkey/Destroy()
 	SSmobs.cubemonkeys -= src
@@ -113,12 +114,6 @@
 	set category = "IC"
 	internal = null
 	return
-
-
-/mob/living/carbon/monkey/IsAdvancedToolUser()//Unless its monkey mode monkeys can't use advanced tools
-	if(mind && is_monkey(mind))
-		return TRUE
-	return FALSE
 
 /mob/living/carbon/monkey/can_use_guns(obj/item/G)
 	if(G.trigger_guard == TRIGGER_GUARD_NONE)

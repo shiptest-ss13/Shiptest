@@ -18,8 +18,8 @@
 	species_head = /obj/item/bodypart/head/shadow
 	species_l_arm = /obj/item/bodypart/l_arm/shadow
 	species_r_arm = /obj/item/bodypart/r_arm/shadow
-	species_l_leg = /obj/item/bodypart/l_leg/shadow
-	species_r_leg = /obj/item/bodypart/r_leg/shadow
+	species_l_leg = /obj/item/bodypart/leg/left/shadow
+	species_r_leg = /obj/item/bodypart/leg/right/shadow
 
 
 /datum/species/shadow/spec_life(mob/living/carbon/human/H)
@@ -31,11 +31,6 @@
 			H.take_overall_damage(1,1, 0, BODYTYPE_ORGANIC)
 		else if (light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD) //heal in the dark
 			H.heal_overall_damage(1,1, 0, BODYTYPE_ORGANIC)
-
-/datum/species/shadow/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return ..()
 
 /datum/species/shadow/nightmare
 	name = "Nightmare"
@@ -218,7 +213,7 @@
 		var/obj/item/pda/PDA = O
 		PDA.set_light_on(FALSE)
 		PDA.set_light_range(0) //It won't be turning on again.
-		PDA.update_icon()
+		PDA.update_appearance()
 		visible_message("<span class='danger'>The light in [PDA] shorts out!</span>")
 	else
 		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")

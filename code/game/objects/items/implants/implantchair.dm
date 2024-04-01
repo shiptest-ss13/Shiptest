@@ -24,7 +24,7 @@
 /obj/machinery/implantchair/Initialize()
 	. = ..()
 	open_machine()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/implantchair/ui_state(mob/user)
 	return GLOB.notcontained_state
@@ -77,13 +77,13 @@
 		ready_implants--
 		if(!replenishing && auto_replenish)
 			replenishing = TRUE
-			addtimer(CALLBACK(src,.proc/replenish),replenish_cooldown)
+			addtimer(CALLBACK(src, PROC_REF(replenish)),replenish_cooldown)
 		if(injection_cooldown > 0)
 			ready = FALSE
-			addtimer(CALLBACK(src,.proc/set_ready),injection_cooldown)
+			addtimer(CALLBACK(src, PROC_REF(set_ready)),injection_cooldown)
 	else
 		playsound(get_turf(src), 'sound/machines/buzz-sigh.ogg', 25, TRUE)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/implantchair/proc/implant_action(mob/living/M)
 	var/obj/item/I = new implant_type
@@ -104,6 +104,7 @@
 		icon_state += "_open"
 	if(occupant)
 		icon_state += "_occupied"
+	return ..()
 
 /obj/machinery/implantchair/update_overlays()
 	. = ..()
@@ -120,7 +121,7 @@
 
 /obj/machinery/implantchair/proc/set_ready()
 	ready = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/implantchair/container_resist_act(mob/living/user)
 	user.changeNext_move(CLICK_CD_BREAKOUT)
@@ -156,23 +157,6 @@
 		..(user)
 		if(auto_inject && ready && ready_implants > 0)
 			implant(user,null)
-
-/obj/machinery/implantchair/genepurge
-	name = "Genetic purifier"
-	desc = "Used to purge a human genome of foreign influences."
-	special = TRUE
-	special_name = "Purge genome"
-	injection_cooldown = 0
-	replenish_cooldown = 300
-
-/obj/machinery/implantchair/genepurge/implant_action(mob/living/carbon/human/H,mob/user)
-	if(!istype(H))
-		return 0
-	H.set_species(/datum/species/human, 1)//lizards go home
-	H.purrbation_remove()//remove cats
-	H.dna.remove_all_mutations()//hulks out
-	return 1
-
 
 /obj/machinery/implantchair/brainwash
 	name = "Neural Imprinter"

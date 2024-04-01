@@ -451,3 +451,13 @@
 	construction_time = 250
 	build_path = /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
 	category = list("Exosuit Equipment")
+
+/datum/design/mecha_kineticgun
+	name = "Exosuit Mining (Proto-kinetic Accelerator)"
+	desc = "An exosuit-mounted mining tool that does increased damage in low pressure. Drawing from an onboard power source allows it to project further than the handheld version."
+	id = "mecha_kineticgun"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
+	materials = list(/datum/material/iron = 8000, /datum/material/glass = 1000)
+	construction_time = 100
+	category = list("Exosuit Equipment")

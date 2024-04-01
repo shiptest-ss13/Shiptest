@@ -36,9 +36,7 @@
 /area/ruin/space/has_grav/powered/aesthetic)
 "j" = (
 /obj/structure/chair/stool,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/space/has_grav/powered/aesthetic)
 "k" = (
@@ -138,12 +136,6 @@
 	initial_gas_mix = "TEMP=2.7"
 	},
 /area/ruin/unpowered/no_grav)
-"D" = (
-/obj/effect/turf_decal/sand,
-/turf/open/floor/plasteel/airless{
-	icon_state = "recharge_floor_asteroid"
-	},
-/area/ruin/unpowered/no_grav)
 "E" = (
 /obj/effect/turf_decal/sand,
 /turf/open/floor/plasteel/airless,
@@ -199,19 +191,15 @@
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/space/has_grav/powered/aesthetic)
 "P" = (
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/vaporwave,
 /area/ruin/space/has_grav/powered/aesthetic)
 "R" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/sand/plating,
 /turf/open/floor/plating{
 	initial_gas_mix = "TEMP=2.7"
@@ -366,9 +354,9 @@ k
 k
 k
 f
-D
+E
 J
-I
+E
 d
 "}
 (10,1,1) = {"
@@ -400,7 +388,7 @@ k
 k
 k
 f
-D
+E
 L
 E
 I

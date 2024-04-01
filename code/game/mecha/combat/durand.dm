@@ -14,11 +14,11 @@
 	var/obj/durand_shield/shield
 
 
-/obj/mecha/combat/durand/cmm
+/obj/mecha/combat/durand/clip
 	desc = "An aging combat exosuit appropriated from abandoned Nanotrasen facilities, now supplied to the CMM-BARD anti-xenofauna division."
 	name = "\improper Paladin"
-	icon_state = "cmmdurand"
-	wreckage = /obj/structure/mecha_wreckage/durand/cmm
+	icon_state = "clipdurand"
+	wreckage = /obj/structure/mecha_wreckage/durand/clip
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 50, "fire" = 100, "acid" = 100)
 
 	//TODO: Custom melee backlash shield with no projectile protection
@@ -26,8 +26,8 @@
 /obj/mecha/combat/durand/Initialize()
 	. = ..()
 	shield = new /obj/durand_shield(loc, src, layer, dir)
-	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, .proc/relay)
-	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, .proc/prehit)
+	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(relay))
+	RegisterSignal(src, COMSIG_PROJECTILE_PREHIT, PROC_REF(prehit))
 
 
 /obj/mecha/combat/durand/Destroy()
@@ -165,7 +165,7 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 	chassis = _chassis
 	layer = _layer
 	setDir(_dir)
-	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, .proc/activate)
+	RegisterSignal(src, COMSIG_MECHA_ACTION_ACTIVATE, PROC_REF(activate))
 
 
 /obj/durand_shield/Destroy()
@@ -204,11 +204,11 @@ the shield is disabled by means other than the action button (like running out o
 		invisibility = 0
 		flick("shield_raise", src)
 		playsound(src, 'sound/mecha/mech_shield_raise.ogg', 50, FALSE)
-		addtimer(CALLBACK(src, .proc/shield_icon_enable), 3)
+		addtimer(CALLBACK(src, PROC_REF(shield_icon_enable)), 3)
 	else
 		flick("shield_drop", src)
 		playsound(src, 'sound/mecha/mech_shield_drop.ogg', 50, FALSE)
-		addtimer(CALLBACK(src, .proc/shield_icon_reset), 5)
+		addtimer(CALLBACK(src, PROC_REF(shield_icon_reset)), 5)
 	switching = FALSE
 
 /obj/durand_shield/proc/shield_icon_enable()

@@ -356,7 +356,7 @@
 		playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 		say("Initiating scan...")
 
-		addtimer(CALLBACK(src, .proc/do_scan, usr, body_only), 2 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(do_scan), usr, body_only), 2 SECONDS)
 
 		//No locking an open scanner.
 	else if ((href_list["lock"]) && !isnull(scanner) && scanner.is_operational)
@@ -544,7 +544,7 @@
 		scantemp = "<font class='bad'>Unable to locate valid genetic data.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 		return
-	if(!body_only && (mob_occupant.suiciding || mob_occupant.hellbound))
+	if(!body_only && mob_occupant.hellbound)
 		scantemp = "<font class='bad'>Subject's brain is not responding to scanning stimuli.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 		return

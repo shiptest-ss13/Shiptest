@@ -282,7 +282,7 @@ Chilling extracts:
 
 /obj/item/slimecross/chilling/oil/do_effect(mob/user)
 	user.visible_message("<span class='danger'>[src] begins to shake with muted intensity!</span>")
-	addtimer(CALLBACK(src, .proc/boom), 50)
+	addtimer(CALLBACK(src, PROC_REF(boom)), 50)
 
 /obj/item/slimecross/chilling/oil/proc/boom()
 	explosion(get_turf(src), -1, -1, 10, 0) //Large radius, but mostly light damage, and no flash.
@@ -290,14 +290,7 @@ Chilling extracts:
 
 /obj/item/slimecross/chilling/black
 	colour = "black"
-	effect_desc = "Transforsms the user into a random type of golem."
-
-/obj/item/slimecross/chilling/black/do_effect(mob/user)
-	if(ishuman(user))
-		user.visible_message("<span class='notice'>[src] crystallizes along [user]'s skin, turning into metallic scales!</span>")
-		var/mob/living/carbon/human/H = user
-		H.set_species(/datum/species/golem/random)
-	..()
+	effect_desc = "Does nothing. :)"
 
 /obj/item/slimecross/chilling/lightpink
 	colour = "light pink"

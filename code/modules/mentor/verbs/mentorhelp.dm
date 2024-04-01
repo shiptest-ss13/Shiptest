@@ -13,7 +13,6 @@
 		return
 	var/show_char = CONFIG_GET(flag/mentors_mobname_only)
 	var/mentor_msg = "<span class='mentornotice'><b><span class='info'>MENTORHELP:</b> <b>[key_name_mentor(src, 1, 0, 1, show_char)]</b>:</span> [msg]</span>"
-	SSredbot.send_discord_message("mentor","Mentorhelp: [key_name_mentor(src, 0, 0, 0, 0)]: [msg]","mentor")
 	log_mentor("MENTORHELP: [key_name_mentor(src, 0, 0, 0, 0)]: [msg]")
 
 	for(var/client/X in GLOB.mentors)
@@ -24,7 +23,7 @@
 
 	//spam prevention, 60 second delay
 	remove_verb(src, /client/verb/mentorhelp)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/add_verb, src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(add_verb), src, /client/verb/mentorhelp), 1 MINUTES, TIMER_STOPPABLE)
 
 /proc/get_mentor_counts()
 	. = list("total" = 0, "afk" = 0, "present" = 0)
@@ -35,7 +34,7 @@
 		else
 			.["present"]++
 
-/proc/key_name_mentor(whom, include_link = null, include_name = 0, include_follow = 0, char_name_only = 0)
+/proc/key_name_mentor(whom, include_link = null, include_name = 0, char_name_only = 0)
 	var/mob/M
 	var/client/C
 	var/key
@@ -91,8 +90,5 @@
 			. += "</a>"
 	else
 		. += "*no key*"
-
-	if(include_follow)
-		. += " (<a href='?mentor_follow=[REF(M)]'>F</a>)"
 
 	return .

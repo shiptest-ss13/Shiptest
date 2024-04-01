@@ -4,7 +4,7 @@
 	name = "brimdemon"
 	desc = "A misshapen demon with big, red eyes and a hinged mouth. Not much is known about the creatures \
 		due to their response to any unexpected stimulus being \"brimbeam\", a deadly blood-laser barrage."
-	icon = 'icons/mob/brimdemon.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "brimdemon"
 	icon_living = "brimdemon"
 	icon_dead = "brimdemon_dead"
@@ -28,7 +28,7 @@
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
 	//attack_vis_effect = ATTACK_EFFECT_BITE
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat	 = 2, /obj/effect/decal/cleanable/brimdust = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/effect/decal/cleanable/brimdust = 1)
 	loot = list()
 	robust_searching = TRUE
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -98,7 +98,7 @@
 	visible_message(span_danger("[src] starts charging!"))
 	balloon_alert(src, "charging...")
 	to_chat(src, "<span class='warning'>You begin to charge up...</span>")
-	addtimer(CALLBACK(src, .proc/fire_laser), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(fire_laser)), 1 SECONDS)
 	COOLDOWN_START(src, ranged_cooldown, ranged_cooldown_time)
 
 /mob/living/simple_animal/hostile/asteroid/brimdemon/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
@@ -143,7 +143,7 @@
 		last_brimbeam.icon_state = "brimbeam_end"
 		var/atom/first_brimbeam = beamparts[1]
 		first_brimbeam.icon_state = "brimbeam_start"
-	addtimer(CALLBACK(src, .proc/end_laser), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(end_laser)), 2 SECONDS)
 
 /// Deletes all the brimbeam parts and sets variables back to their initial ones.
 /mob/living/simple_animal/hostile/asteroid/brimdemon/proc/end_laser()
@@ -159,7 +159,7 @@
 
 /obj/effect/brimbeam
 	name = "brimbeam"
-	icon = 'icons/mob/brimdemon.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "brimbeam_mid"
 	layer = ABOVE_MOB_LAYER
 	plane = -2

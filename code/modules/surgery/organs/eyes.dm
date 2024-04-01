@@ -140,10 +140,14 @@
 
 /obj/item/organ/eyes/robotic
 	name = "robotic eyes"
-	icon_state = "cybernetic_eyeballs"
+	icon_state = "robotic_eyes"
+	eye_icon_state = "eyes_synth" // i feel like this should be here
 	desc = "A very basic set of optical sensors with no extra vision modes or functions."
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
+
+/obj/item/organ/eyes/robotic/lizard
+	eye_icon_state = "eyes_synth"
 
 /obj/item/organ/eyes/robotic/emp_act(severity)
 	. = ..()
@@ -157,6 +161,7 @@
 /obj/item/organ/eyes/robotic/xray
 	name = "\improper X-ray eyes"
 	desc = "These cybernetic eyes will give you X-ray vision. Blinking is futile."
+	icon_state = "robotic_eyes_u2"
 	eye_color = "000"
 	see_in_dark = 8
 	sight_flags = SEE_MOBS | SEE_OBJS | SEE_TURFS
@@ -164,6 +169,7 @@
 /obj/item/organ/eyes/robotic/thermals
 	name = "thermal eyes"
 	desc = "These cybernetic eye implants will give you thermal vision. Vertical slit pupil included."
+	icon_state = "robotic_eyes_u"
 	eye_color = "FC0"
 	sight_flags = SEE_MOBS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
@@ -296,7 +302,7 @@
 
 /obj/item/organ/eyes/robotic/glow/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = FALSE)
 	. = ..()
-	RegisterSignal(M, COMSIG_ATOM_DIR_CHANGE, .proc/update_visuals)
+	RegisterSignal(M, COMSIG_ATOM_DIR_CHANGE, PROC_REF(update_visuals))
 
 /obj/item/organ/eyes/robotic/glow/Remove(mob/living/carbon/M, special = FALSE)
 	. = ..()

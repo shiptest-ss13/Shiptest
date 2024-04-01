@@ -12,9 +12,14 @@
 	pressure_resistance = 2
 	attack_verb = list("stamped")
 
-/obj/item/stamp/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] stamps 'VOID' on [user.p_their()] forehead, then promptly falls over, dead.</span>")
-	return (OXYLOSS)
+
+/obj/item/stamp/get_writing_implement_details()
+	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+	return list(
+		interaction_mode = MODE_STAMPING,
+		stamp_icon_state = icon_state,
+		stamp_class = sheet.icon_class_name(icon_state)
+	)
 
 /obj/item/stamp/qm
 	name = "quartermaster's rubber stamp"
@@ -85,6 +90,55 @@
 	name = "Syndicate rubber stamp"
 	icon_state = "stamp-syndicate"
 	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/donk
+	name = "Donk! Co. rubber stamp"
+	icon_state = "stamp-donk"
+	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/cybersun
+	name = "Cybersun rubber stamp"
+	icon_state = "stamp-cybersun"
+	dye_color = DYE_SYNDICATE
+
+/obj/item/stamp/solgov
+	name = "SolGov rubber stamp"
+	icon_state = "stamp-solgov"
+
+/obj/item/stamp/inteq
+	name = "Inteq rubber stamp"
+	icon_state = "stamp-inteq"
+	dye_color = DYE_QM
+
+/obj/item/stamp/vanguard
+	name = "Vanguard's rubber stamp"
+	icon_state = "stamp-vanguard"
+	dye_color = DYE_QM
+
+/obj/item/stamp/maa
+	name = "Master at Arms' rubber stamp"
+	icon_state = "stamp-maa"
+	dye_color = DYE_QM
+
+/obj/item/stamp/artificer
+	name = "Class II Artificer's rubber stamp"
+	icon_state = "stamp-artificer"
+	dye_color = DYE_QM
+
+/obj/item/stamp/clip
+	name = "CLIP Minutemen rubber stamp"
+	icon_state = "stamp-cmm"
+	dye_color = DYE_FO
+
+/obj/item/stamp/gold
+	name = "GOLD rubber stamp"
+	icon_state = "stamp-gold"
+	dye_color = DYE_FO
+
+/obj/item/stamp/bard
+	name = "BARD rubber stamp"
+	icon_state = "stamp-bard"
+	dye_color = DYE_FO
 
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

@@ -1,27 +1,16 @@
-// Hey! Listen! Update \config\rockruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/rockplanet
 	prefix = "_maps/RandomRuins/RockRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_ROCK
 
 /datum/map_template/ruin/rockplanet/heirophant
 	name = "Ancient Heirophant"
 	id = "rockheiro"
 	description = "something dangerous"
 	suffix = "rockplanet_heirophant.dmm"
-
-/datum/map_template/ruin/rockplanet/clock
-	name = "Clockcult base"
-	id = "clockcultrock"
-	description = "the last remnants of a clockcult base on rockplanet."
-	suffix = "rockplanet_clock.dmm"
-
-/datum/map_template/ruin/rockplanet/cult
-	name = "Cult base"
-	id = "rockcult"
-	description = "Cultists seem to have gotten here too."
-	suffix = "rockplanet_cult.dmm"
 
 /* TODO: GREEBLE
 /datum/map_template/ruin/rockplanet/dangerpod
@@ -37,15 +26,6 @@
 	id = "pioneer"
 	description = "The pioneers used to ride these babies for miles!"
 	suffix = "rockplanet_pioneer.dmm"
-*/
-
-
-/* greeble
-/datum/map_template/ruin/rockplanet/wizard
-	name = "rockplanet wizard den"
-	id = "rockwizard"
-	description = "Wizards have reached all the ways out here too."
-	suffix = "rockplanet_wizard.dmm"
 */
 
 /*greeble
@@ -70,10 +50,10 @@
 	suffix = "rockplanet_boxsci.dmm"
 
 /datum/map_template/ruin/rockplanet/crash_cult
-	name = "Crashed Cult Ship"
-	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
+	name = "Crashed Exploration Clipper"
+	description = "A crashed exploration vessel. Hivebots are taking this ship apart for scrap."
 	id = "crash_cult"
-	suffix = "rockplanet_crash_cult.dmm"
+	suffix = "rockplanet_crash.dmm"
 
 /datum/map_template/ruin/rockplanet/saloon
 	name = "Abandoned saloon"
@@ -82,7 +62,19 @@
 	suffix = "rockplanet_saloon.dmm"
 
 /datum/map_template/ruin/rockplanet/harmfactory
-	name = "Harm factory"
+	name = "Harm Factory"
 	description = "A factory made for HARM and AGONY."
 	id = "rockplanet_harmfactory"
 	suffix = "rockplanet_harmfactory.dmm"
+
+/datum/map_template/ruin/rockplanet/budgetcuts
+	name = "Budgetcuts"
+	description = "Nanotrasen's gotta lay off some personnel, and this facility hasn't been worth the effort so far"
+	id = "rockplanet_budgetcuts"
+	suffix = "rockplanet_budgetcuts.dmm"
+
+/datum/map_template/ruin/rockplanet/nomadcrash
+	name = "Nomad Crash"
+	description = "A Crashed Arrow & Axe Interceptor. A long forgotten Crew. They tried their best to survive..."
+	id = "rockplanet_nomadcrash"
+	suffix = "rockplanet_nomadcrash.dmm"

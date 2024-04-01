@@ -2,12 +2,14 @@
 /mob/living/simple_animal/hostile/asteroid/goliath
 	name = "goliath"
 	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
-	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
-	icon_state = "Goliath"
-	icon_living = "Goliath"
-	icon_aggro = "Goliath_alert"
-	icon_dead = "Goliath_dead"
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
+	icon_state = "ancient_goliath"
+	icon_living = "ancient_goliath"
+	icon_aggro = "ancient_goliath_alert"
+	icon_dead = "ancient_goliath_dead"
 	icon_gib = "syndicate_gib"
+	pixel_x = -12
+	base_pixel_x = -12
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	mouse_opacity = MOUSE_OPACITY_ICON
 	move_to_delay = 40
@@ -18,9 +20,9 @@
 	speak_emote = list("bellows")
 	speed = 3
 	throw_deflection = 10
-	maxHealth = 200
-	health = 200
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	maxHealth = 80
+	health = 80
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10) //Thick carapace, weak to AP ammo.
 	harm_intent_damage = 0
 	obj_damage = 100
 	melee_damage_lower = 12
@@ -35,7 +37,7 @@
 	gender = MALE //lavaland elite goliath says that it s female and i s stronger because of sexual dimorphism, so normal goliaths should be male
 	var/can_charge = TRUE
 	var/pre_attack = 0
-	var/pre_attack_icon = "Goliath_preattack"
+	var/pre_attack_icon = "ancient_goliath_preattack"
 	var/tentacle_type = /obj/effect/temp_visual/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
@@ -138,13 +140,13 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast
 	name = "goliath"
 	desc = "A hulking, armor-plated beast with long tendrils arching from its back."
-	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "goliath"
 	icon_living = "goliath"
 	icon_aggro = "goliath"
 	icon_dead = "goliath_dead"
 	throw_message = "does nothing to the tough hide of the"
-	pre_attack_icon = "goliath2"
+	pre_attack_icon = "goliath_preattack"
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10)
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide = 2)
@@ -240,15 +242,15 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient
 	name = "ancient goliath"
 	desc = "Goliaths are biologically immortal, and rare specimens have survived for centuries. This one is clearly ancient, and its tentacles constantly churn the earth around it."
-	icon_state = "Goliath"
-	icon_living = "Goliath"
-	icon_aggro = "Goliath_alert"
-	icon_dead = "Goliath_dead"
-	maxHealth = 350
-	health = 350
+	icon_state = "ancient_goliath"
+	icon_living = "ancient_goliath"
+	icon_aggro = "ancient_goliath_alert"
+	icon_dead = "ancient_goliath_dead"
+	maxHealth = 180
+	health = 180
 	speed = 4
 	crusher_loot = /obj/item/crusher_trophy/elder_tentacle
-	pre_attack_icon = "Goliath_preattack"
+	pre_attack_icon = "ancient_goliath_preattack"
 	throw_message = "does nothing to the rocky hide of the"
 	guaranteed_butcher_results = list()
 	crusher_drop_mod = 75
@@ -279,6 +281,7 @@
 				cached_tentacle_turfs -= t
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
 	fromtendril = TRUE
 
 //tentacles
@@ -304,7 +307,7 @@
 		var/turf/closed/mineral/M = loc
 		M.gets_drilled()
 	deltimer(timerid)
-	timerid = addtimer(CALLBACK(src, .proc/tripanim), 7, TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(tripanim)), 7, TIMER_STOPPABLE)
 	if(!recursive)
 		return
 	var/list/directions = get_directions()
@@ -319,26 +322,27 @@
 
 /obj/effect/temp_visual/goliath_tentacle/proc/tripanim()
 	deltimer(timerid)
-	timerid = addtimer(CALLBACK(src, .proc/trip), 3, TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(trip)), 3, TIMER_STOPPABLE)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/trip()
 	var/latched = FALSE
 	for(var/mob/living/L in loc)
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
-		visible_message("<span class='danger'>[src] grabs hold of [L]!</span>")
+		visible_message("<span class='danger'>[src] wraps a mass of tentacles around [L]!</span>")
 		on_hit(L)
 		latched = TRUE
 	if(!latched)
 		retract()
 	else
 		deltimer(timerid)
-		timerid = addtimer(CALLBACK(src, .proc/retract), 10, TIMER_STOPPABLE)
+		timerid = addtimer(CALLBACK(src, PROC_REF(retract)), 10, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/L)
-	L.Stun(100)
-	L.adjustBruteLoss(rand(10,15))
-
+/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/target)
+	target.apply_damage(rand(20,30), BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	if(iscarbon(target))
+		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
+		B.on_entered(src, target)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"
@@ -374,6 +378,8 @@
 	icon_living = "crystal_goliath"
 	icon_aggro = "crystal_goliath"
 	icon_dead = "crystal_goliath_dead"
+	pixel_x = 0
+	base_pixel_x = 0
 	throw_message = "does nothing to the tough hide of the"
 	pre_attack_icon = "crystal_goliath2"
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/ore/silver = 10, /obj/item/strange_crystal = 2)
@@ -388,13 +394,13 @@
 	shake_animation(20)
 	visible_message("<span class='warning'>[src] convulses violently!! Get back!!</span>")
 	playsound(loc, 'sound/effects/magic.ogg', 100, TRUE)
-	addtimer(CALLBACK(src, .proc/open_fire_2), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(open_fire_2)), 1 SECONDS)
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient/crystal/proc/open_fire_2()
 	if(prob(20) && !(spiral_attack_inprogress))
 		visible_message("<span class='warning'>[src] sprays crystalline shards in a circle!</span>")
 		playsound(loc, 'sound/magic/charge.ogg', 100, TRUE)
-		INVOKE_ASYNC(src,.proc/spray_of_crystals)
+		INVOKE_ASYNC(src, PROC_REF(spray_of_crystals))
 	else
 		visible_message("<span class='warning'>[src] expels it's matter, releasing a spray of crystalline shards!</span>")
 		playsound(loc, 'sound/effects/bamf.ogg', 100, TRUE)
@@ -435,15 +441,18 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/rockplanet
 	name = "gruboid"
 	desc = "A massive beast that uses long tentacles to ensnare its prey, threatening them is not advised under any conditions."
+	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "gruboid2"
 	icon_living = "gruboid2"
 	icon_aggro = "gruboid"
-	pre_attack_icon = "gruboid"
 	icon_dead = "gruboid_dead"
+	pixel_x = 0
+	base_pixel_x = 0
+	pre_attack_icon = "gruboid"
 	icon_gib = "syndicate_gib"
 	tentacle_type = /obj/effect/temp_visual/goliath_tentacle/rockplanet
 
 /obj/effect/temp_visual/goliath_tentacle/rockplanet
-	icon_state = "Gruboid_tentacle_wiggle"
-	wiggle = "Gruboid_tentacle_spawn"
-	retract = "Gruboid_tentacle_retract"
+	icon_state = "gruboid_tentacle_wiggle"
+	wiggle = "gruboid_tentacle_spawn"
+	retract = "gruboid_tentacle_retract"

@@ -16,9 +16,10 @@
 	update_damage_hud()
 	update_health_hud()
 
-	var/turf/T = get_turf(src)
-	if (isturf(T))
-		update_z(T.z)
+
+	var/virtual_z = virtual_z()
+	LAZYADDASSOC(SSmobs.players_by_virtual_z, "[virtual_z]", src)
+	SSidlenpcpool.try_wakeup_virtual_z(virtual_z)
 
 	//Vents
 	if(ventcrawler)

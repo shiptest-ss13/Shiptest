@@ -102,7 +102,10 @@
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
 	if(!air_contents)
 		return
-	return air_contents.return_volume()
+	//Using the ideal gas law here - the pressure is 4500 because that's the limit of gas pumps, which most ships use on plasma thrusters
+	//If you refit your fuel system to use a volume pump or cool your plasma, you can have numbers over 100% on the helm as a treat
+	var/mole_capacity = (4500 * air_contents.return_volume()) / (R_IDEAL_GAS_EQUATION * T20C)
+	return mole_capacity
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/update_gas_stats()
 	var/datum/gas_mixture/air_contents = use_tank ? fuel_tank?.air_contents : airs[1]
@@ -160,17 +163,8 @@
 	icon_state_open = use_tank ? "heater_open" : "[initial(icon_state)]_open"
 
 /obj/machinery/atmospherics/components/unary/shuttle/heater/proc/update_adjacent_engines()
-	var/engine_turf
-	switch(dir)
-		if(NORTH)
-			engine_turf = get_offset_target_turf(src, 0, -1)
-		if(SOUTH)
-			engine_turf = get_offset_target_turf(src, 0, 1)
-		if(EAST)
-			engine_turf = get_offset_target_turf(src, -1, 0)
-		if(WEST)
-			engine_turf = get_offset_target_turf(src, 1, 0)
-	if(!engine_turf)
+	var/engine_turf = get_step(src, dir)
+	if(!isturf(engine_turf))
 		return
 	for(var/obj/machinery/power/shuttle/engine/E in engine_turf)
 		E.update_icon_state()

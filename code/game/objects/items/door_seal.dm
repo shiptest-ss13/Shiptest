@@ -17,9 +17,3 @@
 	var/seal_time = 3 SECONDS
 	/// how long it takes to remove the seal from a door
 	var/unseal_time = 2 SECONDS
-
-/obj/item/door_seal/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is sealing [user.p_them()]self off from the world with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/items/jaws_pry.ogg', 30, TRUE)
-	return(BRUTELOSS)
-

@@ -53,7 +53,7 @@
 "cr" = (
 /obj/structure/barricade/sandbags,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "ct" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
 	faction = list("brazillian")
@@ -126,20 +126,20 @@
 /area/ruin/unpowered)
 "hr" = (
 /turf/closed/wall/mineral/wood/nonmetal,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "ht" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
 	faction = list("brazillian")
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "hA" = (
 /obj/item/candle/tribal_torch{
 	name = "standing torch";
 	start_lit = 1
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "hO" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/floor/plating/grass/jungle{
@@ -149,7 +149,7 @@
 "hR" = (
 /obj/structure/flora/rock/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "hT" = (
 /obj/structure/flora/grass/jungle/b,
 /obj/item/cultivator/rake,
@@ -172,7 +172,7 @@
 "jn" = (
 /obj/item/ammo_casing/spent,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "jy" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -213,7 +213,7 @@
 "lu" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "lA" = (
 /obj/structure/table,
 /obj/item/weaponcrafting/stock{
@@ -239,7 +239,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "mM" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -339,7 +339,7 @@
 /obj/structure/flora/tree/pine,
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "qS" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
 	desc = "The greatest chef this side of the wastes.";
@@ -394,7 +394,7 @@
 "sE" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "te" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -402,12 +402,6 @@
 "tf" = (
 /obj/item/weaponcrafting/stock,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood{
-	initial_gas_mix = "ICEMOON_ATMOS"
-	},
-/area/ruin/unpowered)
-"us" = (
-/obj/structure/barricade/wooden/snowed,
 /turf/open/floor/wood{
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
@@ -423,6 +417,10 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
+"vi" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/overmap_encounter/planetoid/cave/explored)
 "vH" = (
 /obj/structure/flora/junglebush/b,
 /obj/item/reagent_containers/glass/bucket/wooden,
@@ -472,7 +470,7 @@
 "xg" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "xu" = (
 /obj/structure/bed,
 /obj/structure/curtain,
@@ -494,7 +492,7 @@
 "xK" = (
 /obj/structure/statue/snow/snowman,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "xN" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance/three,
@@ -535,7 +533,7 @@
 "zi" = (
 /obj/structure/flora/grass/both,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "zy" = (
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor{
 	desc = " A wild-eyed figure, wearing tattered mining equipment and boasting a malformed body.";
@@ -635,10 +633,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"Ct" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
 "CI" = (
 /obj/structure/flora/junglebush/c,
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter{
@@ -700,11 +694,11 @@
 "Ex" = (
 /obj/structure/flora/grass/brown,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "Fh" = (
 /obj/structure/statue/snow/snowlegion,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "Gc" = (
 /obj/machinery/pipedispenser,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -736,13 +730,14 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"GX" = (
-/obj/structure/barricade/wooden/crude/snow,
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/ruin/unpowered)
 "Hb" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
+"HI" = (
+/turf/open/floor/wood{
+	initial_gas_mix = "ICEMOON_ATMOS"
+	},
+/area/overmap_encounter/planetoid/cave/explored)
 "HV" = (
 /obj/item/target/alien/anchored,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -874,10 +869,6 @@
 	initial_gas_mix = "ICEMOON_ATMOS"
 	},
 /area/ruin/unpowered)
-"MJ" = (
-/obj/structure/barricade/sandbags,
-/turf/open/floor/plating/asteroid/snow/icemoon,
-/area/template_noop)
 "MM" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -909,7 +900,7 @@
 	faction = list("brazillian")
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "NY" = (
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -951,7 +942,7 @@
 "Pu" = (
 /obj/structure/flora/tree/pine/xmas,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "Qk" = (
 /obj/structure/table/wood/reinforced,
 /obj/machinery/chem_dispenser/drinks/beer,
@@ -1008,7 +999,7 @@
 "To" = (
 /obj/structure/barricade/wooden/crude/snow,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "Tw" = (
 /obj/item/candle/infinite{
 	pixel_x = 10;
@@ -1098,7 +1089,7 @@
 "VI" = (
 /obj/structure/flora/rock/pile,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/ruin/unpowered)
 "VS" = (
 /obj/structure/flora/grass/jungle/b,
 /turf/open/floor/plasteel/white{
@@ -1134,7 +1125,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "XL" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/reagent_containers/food/drinks/drinkingglass{
@@ -1228,7 +1219,7 @@
 "YV" = (
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/surface/outdoors)
+/area/overmap_encounter/planetoid/cave/explored)
 "YX" = (
 /turf/open/floor/plating/grass/jungle{
 	initial_gas_mix = "ICEMOON_ATMOS"
@@ -1274,9 +1265,9 @@ aW
 aW
 Hb
 zi
-Ct
-Ct
-Ct
+cr
+cr
+cr
 Hb
 Hb
 aW
@@ -1306,7 +1297,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 zi
 Hb
 kX
@@ -1323,7 +1314,7 @@ aW
 aW
 YV
 Hb
-Ct
+cr
 Hb
 aW
 aW
@@ -1338,7 +1329,7 @@ aW
 aW
 aW
 aW
-MJ
+cr
 Hb
 Hb
 NY
@@ -1405,7 +1396,7 @@ aW
 aW
 aW
 Hb
-GX
+fd
 Vt
 xI
 Ul
@@ -1446,15 +1437,15 @@ WH
 Iz
 kX
 aW
-Ct
-Ct
+cr
+cr
 Hb
 zi
 Hb
 aW
 zi
 Hb
-Ct
+cr
 aW
 "}
 (7,1,1) = {"
@@ -1479,14 +1470,14 @@ kX
 kX
 Hb
 Hb
-Ct
+cr
 Hb
 Hb
 Hb
 aW
 sE
 lu
-Ct
+cr
 hr
 "}
 (8,1,1) = {"
@@ -1511,7 +1502,7 @@ oR
 kX
 Hb
 zi
-Ct
+cr
 Hb
 Hb
 aW
@@ -1540,10 +1531,10 @@ Jt
 LB
 BL
 mn
-us
+hg
 Hb
 Fh
-Ct
+cr
 Hb
 aW
 aW
@@ -1581,7 +1572,7 @@ aW
 aW
 aW
 xg
-Ct
+cr
 lu
 aW
 "}
@@ -1622,7 +1613,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 aW
 aW
 aW
@@ -1640,7 +1631,7 @@ kX
 aW
 Hb
 Hb
-Ct
+cr
 Hb
 hr
 Hb
@@ -1654,7 +1645,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 aW
 aW
 aW
@@ -1672,7 +1663,7 @@ kX
 aW
 Hb
 zi
-Ct
+cr
 Hb
 To
 Hb
@@ -1686,7 +1677,7 @@ aW
 aW
 aW
 zi
-Ct
+cr
 aW
 aW
 aW
@@ -1701,10 +1692,10 @@ si
 Tx
 YX
 aW
-Ct
+cr
 Hb
 hA
-Ct
+cr
 Hb
 hr
 YV
@@ -1717,8 +1708,8 @@ aW
 aW
 aW
 aW
-Ct
-Ct
+cr
+cr
 aW
 aW
 MI
@@ -1733,12 +1724,12 @@ hT
 MI
 YX
 CI
-Ct
+cr
 lu
 Hb
 Hb
 NR
-Ct
+cr
 Hb
 aW
 aW
@@ -1749,7 +1740,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 zi
 aW
 aW
@@ -1770,7 +1761,7 @@ YV
 aW
 lu
 Hb
-Ct
+cr
 Hb
 Hb
 Hb
@@ -1781,7 +1772,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 ht
 aW
 CI
@@ -1813,7 +1804,7 @@ aW
 aW
 aW
 zi
-Ct
+cr
 Hb
 aW
 YX
@@ -1836,16 +1827,16 @@ kX
 aW
 aW
 Hb
-Ct
-Ct
-VI
+cr
+cr
+vi
 aW
 "}
 (19,1,1) = {"
 aW
 aW
 Hb
-Ct
+cr
 Hb
 aW
 YX
@@ -1869,7 +1860,7 @@ kX
 Hb
 hA
 Ex
-Ct
+cr
 Hb
 aW
 "}
@@ -1877,7 +1868,7 @@ aW
 aW
 aW
 qD
-Ct
+cr
 Hb
 aW
 YX
@@ -1909,7 +1900,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 Hb
 aW
 YX
@@ -1941,7 +1932,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 Hb
 aW
 YX
@@ -1965,7 +1956,7 @@ kX
 Ex
 xK
 Ex
-Ct
+cr
 zi
 aW
 "}
@@ -1973,7 +1964,7 @@ aW
 aW
 aW
 zi
-Ct
+cr
 Hb
 aW
 YX
@@ -1997,7 +1988,7 @@ zi
 hA
 Hb
 Hb
-Ct
+cr
 Hb
 aW
 "}
@@ -2005,8 +1996,8 @@ aW
 aW
 aW
 Hb
-Ct
-Ct
+cr
+cr
 aW
 Ux
 MI
@@ -2028,8 +2019,8 @@ aW
 jn
 Hb
 NR
-Ct
-Ct
+cr
+cr
 Hb
 aW
 "}
@@ -2038,7 +2029,7 @@ aW
 aW
 aW
 Hb
-Ct
+cr
 Hb
 aW
 YX
@@ -2059,8 +2050,8 @@ lu
 aW
 aW
 Pu
-Ct
-Ct
+cr
+cr
 Hb
 aW
 aW
@@ -2086,7 +2077,7 @@ YX
 DX
 Ux
 aW
-Ct
+cr
 aW
 aW
 Hb
@@ -2118,10 +2109,10 @@ YX
 YX
 aW
 aW
-Ct
+cr
 zi
 Hb
-Ct
+cr
 Hb
 Hb
 Hb
@@ -2153,7 +2144,7 @@ YV
 aW
 hR
 xK
-Ct
+cr
 Hb
 Hb
 zi
@@ -2253,7 +2244,7 @@ aW
 aW
 Hb
 Hb
-Ct
+cr
 zi
 Hb
 "}
@@ -2284,8 +2275,8 @@ aW
 aW
 aW
 aW
-Ct
-Ct
+cr
+cr
 Hb
 Hb
 "}
@@ -2444,7 +2435,7 @@ aW
 aW
 aW
 zi
-Ct
+cr
 Hb
 aW
 aW
@@ -2461,7 +2452,7 @@ bq
 WH
 Br
 aW
-WH
+HI
 aW
 Hb
 Hb
@@ -2475,8 +2466,8 @@ aW
 aW
 Hb
 Hb
-Ct
-Ct
+cr
+cr
 Hb
 aW
 aW
@@ -2492,7 +2483,7 @@ kX
 kX
 kX
 aW
-WH
+HI
 aW
 aW
 aW
@@ -2504,10 +2495,10 @@ aW
 aW
 aW
 Hb
-VI
+vi
 Hb
-Ct
-Ct
+cr
+cr
 Hb
 aW
 aW

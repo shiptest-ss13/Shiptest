@@ -27,14 +27,21 @@
 	bodytemp_cold_divisor = VOX_BODYTEMP_COLD_DIVISOR
 	bodytemp_autorecovery_min = VOX_BODYTEMP_AUTORECOVERY_MIN
 
-	unique_prosthesis = TRUE
+	bodytype = BODYTYPE_VOX
 
 	species_chest = /obj/item/bodypart/chest/vox
 	species_head = /obj/item/bodypart/head/vox
 	species_l_arm = /obj/item/bodypart/l_arm/vox
 	species_r_arm = /obj/item/bodypart/r_arm/vox
-	species_l_leg = /obj/item/bodypart/l_leg/vox
-	species_r_leg = /obj/item/bodypart/r_leg/vox
+	species_l_leg = /obj/item/bodypart/leg/left/vox
+	species_r_leg = /obj/item/bodypart/leg/right/vox
+
+	species_robotic_chest = /obj/item/bodypart/chest/robot/vox
+	species_robotic_head = /obj/item/bodypart/head/robot/vox
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/vox
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/vox
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/vox
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/vox
 
 	var/datum/action/innate/tail_hold/tail_action
 
@@ -60,25 +67,11 @@
 
 /datum/species/vox/New()
 	. = ..()
-	offset_clothing = list(
-		"[BELT_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = 9), "[EAST]" = list("x" = 0, "y" = 9), "[SOUTH]" = list("x" = 0, "y" = 9), "[WEST]" = list("x" =  0, "y" = 9)),
-	)
 
-/datum/species/vox/random_name(gender,unique,lastname,attempts)
-	. = ""
-
-	var/new_name = ""
-	var/static/list/syllables = list("ti", "ti", "ti", "hi", "hi", "ki", "ki", "ki", "ki", "ya", "ta", "ha", "ka", "ya", "chi", "cha", "kah", \
-		"skre", "ahk", "ehk", "rawk", "kra", "ki", "ii", "kri", "ka")
-	for(var/x = rand(3,8) to 0 step -1)
-		new_name += pick(syllables)
-	. += "[capitalize(new_name)]"
-
-	if(unique && attempts < 10)
-		if(findname(new_name))
-			. = .(gender, TRUE, null, attempts++)
-
-	return .
+/datum/species/vox/random_name(gender,unique,lastname)
+	if(unique)
+		return random_unique_vox_name()
+	return vox_name()
 
 
 
@@ -111,27 +104,20 @@
 	return ..()
 
 /datum/species/vox/get_item_offsets_for_dir(dir, hand)
-	////LEFT/RIGHT
-	switch(dir)
-		if(SOUTH)
-			return list(list("x" = 10, "y" = -1), list("x" = 8, "y" = -1))
-		if(NORTH)
-			return list(list("x" = 9, "y" = 0), list("x" = 9, "y" = 0))
-		if(EAST)
-			return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
-		if(WEST)
-			return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
-
-/datum/species/vox/after_equip_job(datum/job/J, mob/living/carbon/human/H)
-	. = ..()
-	var/obj/item/environmental_regulator/regulator = new
-	if(!H.equip_to_slot_if_possible(regulator, ITEM_SLOT_BACK, swap = TRUE))
-		if(!H.put_in_hands(regulator, forced = TRUE))
-			regulator.forceMove(get_turf(H))
+	//LEFT/RIGHT
+	if(dir & NORTH)
+		return list(list("x" = 9, "y" = 0), list("x" = 9, "y" = 0))
+	if(dir & SOUTH)
+		return list(list("x" = 10, "y" = -1), list("x" = 8, "y" = -1))
+	if(dir & EAST)
+		return list(list("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
+	if(dir & WEST)
+		return list(list("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
 
 /datum/action/innate/tail_hold
 	name = "Tail Hold"
 	desc = "Store an item in your tail's grip."
+	button_icon_state = "tail_hold"
 	var/obj/item/held_item
 	var/mutable_appearance/held_item_overlay
 
@@ -153,7 +139,7 @@
 
 /datum/action/innate/tail_hold/Grant(mob/M)
 	. = ..()
-	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, .proc/handle_sprite_magic, override = TRUE)
+	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(handle_sprite_magic), override = TRUE)
 
 /datum/action/innate/tail_hold/Trigger()
 	var/mob/living/carbon/human/H = owner
@@ -170,7 +156,7 @@
 			if(H.temporarilyRemoveItemFromInventory(I, FALSE, FALSE))
 				held_item = I
 				to_chat(H,"<span class='notice'>You move \the [I] into your tail's grip.</span>")
-				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/on_examine)
+				RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 				handle_sprite_magic(force = TRUE)
 				return
 
@@ -187,10 +173,13 @@
 			owner.cut_overlay(held_item_overlay)
 			held_item_overlay = null
 		return
+
 	if(olddir == newdir && !force)
 		return
 
 	newdir ||= owner.dir
+
+	newdir = normalize_dir_to_cardinals(newdir)
 
 	owner.cut_overlay(held_item_overlay)
 	var/dirtext = dir2text(newdir)

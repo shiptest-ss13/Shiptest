@@ -41,7 +41,8 @@
 
 /datum/surgery_step/gland_insert
 	name = "insert gland"
-	implements = list(/obj/item/organ/heart/gland = 100)
+	implements = list(
+		/obj/item/organ/heart/gland = 100)
 	time = 32
 
 /datum/surgery_step/gland_insert/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)

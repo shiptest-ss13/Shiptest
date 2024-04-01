@@ -58,7 +58,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/expose_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/paper))
 		var/obj/item/paper/paperaffected = O
-		paperaffected.clearpaper()
+		paperaffected.clear_paper()
 		to_chat(usr, "<span class='notice'>[paperaffected]'s ink washes away.</span>")
 	if(istype(O, /obj/item/book))
 		if(reac_volume >= 5)
@@ -73,7 +73,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(!isliving(M))
 		return
 
-	if(method in list(TOUCH, VAPOR, PATCH))
+	if(method in list(TOUCH, SMOKE, VAPOR, PATCH))
 		M.adjust_fire_stacks(reac_volume / 15)
 
 		if(iscarbon(M))
@@ -265,7 +265,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/vodka
 	name = "Vodka"
-	description = "Number one drink AND fueling choice for Russians worldwide."
+	description = "Number one drink that also serves as fuel."
 	color = "#0064C8" // rgb: 0, 100, 200
 	boozepwr = 65
 	taste_description = "grain alcohol"
@@ -365,8 +365,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	shot_glass_icon_state = "shotglassred"
 
 /datum/reagent/consumable/ethanol/lizardwine
-	name = "lizard wine"
-	description = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol."
+	name = "Kalixcis Wine"
+	description = "A relatively popular Kalixcane beverage, made by infusing cacti in ethanol."
 	color = "#7E4043" // rgb: 126, 64, 67
 	boozepwr = 45
 	quality = DRINK_FANTASTIC
@@ -501,15 +501,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "cubalibreglass"
 	glass_name = "Cuba Libre"
 	glass_desc = "A classic mix of rum, cola, and lime. A favorite of revolutionaries everywhere!"
-
-/datum/reagent/consumable/ethanol/cuba_libre/on_mob_life(mob/living/carbon/M)
-	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev)) //Cuba Libre, the traditional drink of revolutions! Heals revolutionaries.
-		M.adjustBruteLoss(-1, 0)
-		M.adjustFireLoss(-1, 0)
-		M.adjustToxLoss(-1, 0)
-		M.adjustOxyLoss(-5, 0)
-		. = 1
-	return ..() || .
 
 /datum/reagent/consumable/ethanol/whiskey_cola
 	name = "Whiskey Cola"
@@ -1948,17 +1939,20 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	generate_data_info(data)
 
 /datum/reagent/consumable/ethanol/fruit_wine/proc/generate_data_info(list/data)
-	var/minimum_percent = 0.15 //Percentages measured between 0 and 1.
+	// BYOND's compiler fails to catch non-consts in a ranged switch case, and it causes incorrect behavior. So this needs to explicitly be a constant.
+	var/const/minimum_percent = 0.15 //Percentages measured between 0 and 1.
 	var/list/primary_tastes = list()
 	var/list/secondary_tastes = list()
 	glass_name = "glass of [name]"
 	glass_desc = description
 	for(var/taste in tastes)
-		switch(tastes[taste])
-			if(minimum_percent*2 to INFINITY)
-				primary_tastes += taste
-			if(minimum_percent to minimum_percent*2)
-				secondary_tastes += taste
+		var/taste_percent = tastes[taste]
+		if(taste_percent < minimum_percent)
+			continue
+		if(taste_percent > (minimum_percent * 2))
+			primary_tastes += taste
+			continue
+		secondary_tastes += taste
 
 	var/minimum_name_percent = 0.35
 	name = ""
@@ -2196,17 +2190,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(prob(70))
 				M.vomit()
 	return ..()
-
-
-/datum/reagent/consumable/ethanol/planet_cracker
-	name = "Planet Cracker"
-	description = "This jubilant drink celebrates humanity's triumph over the alien menace. May be offensive to non-human crewmembers."
-	boozepwr = 50
-	quality = DRINK_FANTASTIC
-	taste_description = "triumph with a hint of bitterness"
-	glass_icon_state = "planet_cracker"
-	glass_name = "Planet Cracker"
-	glass_desc = "Although historians believe the drink was originally created to commemorate the end of an important conflict in man's past, its origins have largely been forgotten and it is today seen more as a general symbol of human supremacy."
 
 /datum/reagent/consumable/ethanol/mauna_loa
 	name = "Mauna Loa"
@@ -2451,7 +2434,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A spin on the classic. Artists and street fighters swear by this stuff."
 
 /datum/reagent/consumable/ethanol/out_of_lime/expose_mob(mob/living/carbon/human/consumer, method=INGEST, reac_volume)
-	if(method == INGEST || method == TOUCH)
+	if(method == INGEST || method == TOUCH || method == SMOKE)
 		if(istype(consumer))
 			consumer.hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
 			consumer.facial_hair_color = pick("0ad","a0f","f73","d14","0b5","fc2","084","05e","d22","fa0")
@@ -2472,3 +2455,47 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.clockcultslurring = min(M.clockcultslurring + 3, 3)
 	M.stuttering = min(M.stuttering + 3, 3)
 	..()
+
+/datum/reagent/consumable/ethanol/shotinthedark
+	name = "Shot in the Dark"
+	description = "A coconut elixir with a golden tinge."
+	color = "#bbebff"
+	boozepwr = 40
+	quality = DRINK_VERYGOOD
+	taste_description = "an incoming bullet"
+	glass_icon_state = "shotinthedark"
+	glass_name = "Shot in the Dark"
+	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Contains traces of gold from the real bullet inside."
+
+/datum/reagent/consumable/ethanol/bullethell
+	name = "Bullet Hell"
+	description = "An incredibly potent combination drink and fire hazard, typically served in a brass shell casing. May spontaneously combust."
+	color = "#c33206"
+	boozepwr = 80
+	quality = DRINK_VERYGOOD
+	taste_description = "being shot in the head several times and then set on fire"
+	glass_icon_state = "bullethell"
+	glass_name = "Bullet Hell"
+	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Served in an oversized brass shell casing, since glass would probably melt from how intense it is."
+	accelerant_quality = 20
+
+/datum/reagent/consumable/ethanol/bullethell/on_mob_life(mob/living/carbon/M) //rarely sets you on fire
+	if (prob(5))
+		M.adjust_fire_stacks(1)
+		M.IgniteMob()
+	..()
+
+/datum/reagent/consumable/ethanol/homesick
+	name = "Homesick"
+	description = "A soft, creamy drink that tastes like home, and hurts just as much."
+	color = "#a9c6e5"
+	boozepwr = 10
+	quality = DRINK_GOOD
+	taste_description = "home, in a way that hurts"
+	glass_icon_state = "homesick"
+	glass_name = "Homesick"
+	glass_desc = "A specially made drink from the popular webseries RILENA: LMR. Ri's mother's favorite drink."
+
+/datum/reagent/consumable/ethanol/homesick/on_mob_metabolize(mob/living/M)
+	var/drink_message = pick("You think of what you've left behind...", "You think of the people who miss you...", "You think of where you're from...")
+	to_chat(M, "<span class='notice'>[drink_message]</span>")

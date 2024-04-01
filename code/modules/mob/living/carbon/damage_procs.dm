@@ -1,6 +1,6 @@
 
 
-/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1) //WS change, adds bone break mod
+/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0))
@@ -25,12 +25,16 @@
 					update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
 				adjustBruteLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 		if(BURN)
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, break_modifier))
 					update_damage_overlays()
 			else
 				adjustFireLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 		if(TOX)
 			adjustToxLoss(damage_amount, forced = forced)
 		if(OXY)
@@ -43,6 +47,8 @@
 					update_damage_overlays()
 			else
 				adjustStaminaLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 	return TRUE
 
 

@@ -12,8 +12,6 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 
 // Also allows you to add new gases at runtime
 
-/proc/_auxtools_register_gas(datum/gas/gas) // makes sure auxtools knows stuff about this gas
-
 /datum/auxgm
 	var/list/datums = list()
 	var/list/specific_heats = list()
@@ -108,8 +106,6 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 			enthalpies[g] = gas.enthalpy
 		_auxtools_register_gas(gas)
 
-/proc/finalize_gas_refs()
-
 /datum/auxgm/New()
 	for(var/gas_path in subtypesof(/datum/gas))
 		var/datum/gas/gas = new gas_path
@@ -138,7 +134,7 @@ GLOBAL_DATUM_INIT(gas_data, /datum/auxgm, new)
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	anchored = TRUE  // should only appear in vis_contents, but to be safe
 	layer = FLY_LAYER
-	appearance_flags = TILE_BOUND
+	appearance_flags = TILE_BOUND | RESET_COLOR
 	vis_flags = NONE
 
 /obj/effect/overlay/gas/New(state)

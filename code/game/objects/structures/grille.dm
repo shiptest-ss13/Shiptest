@@ -3,6 +3,7 @@
 	name = "grille"
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "grille"
+	base_icon_state = "grille"
 	density = TRUE
 	anchored = TRUE
 	pass_flags_self = PASSGRILLE
@@ -29,21 +30,20 @@
 
 /obj/structure/grille/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
-	update_icon()
+	update_appearance()
 
-/obj/structure/grille/update_icon()
+/obj/structure/grille/update_appearance(updates)
 	if(QDELETED(src) || broken)
 		return
 
-	var/ratio = obj_integrity / max_integrity
-	ratio = CEILING(ratio*4, 1) * 25
+	. = ..()
 
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 
-	if(ratio > 50)
-		return
-	icon_state = "grille50_[rand(0,3)]"
+/obj/structure/grille/update_icon_state()
+	icon_state = "[base_icon_state][((obj_integrity / max_integrity) <= 0.5) ? "50_[rand(0, 3)]" : null]"
+	return ..()
 
 /obj/structure/grille/examine(mob/user)
 	. = ..()
@@ -126,7 +126,7 @@
 	if(!shock(user, 70))
 		take_damage(20, BRUTE, "melee", 1)
 
-/obj/structure/grille/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/grille/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(!. && istype(mover, /obj/projectile))
 		return prob(30)
@@ -221,8 +221,8 @@
 /obj/structure/grille/deconstruct(disassembled = TRUE)
 	if(!loc) //if already qdel'd somehow, we do nothing
 		return
-	if(!(flags_1&NODECONSTRUCT_1))
-		var/obj/R = new rods_type(drop_location(), rods_amount)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/obj/R = new rods_type(drop_location(), rods_amount) || locate(rods_type) in drop_location() // if the rods get merged, find the stack
 		transfer_fingerprints_to(R)
 		qdel(src)
 	..()
@@ -230,7 +230,7 @@
 /obj/structure/grille/obj_break()
 	if(!broken && !(flags_1 & NODECONSTRUCT_1))
 		new broken_type(src.loc)
-		var/obj/R = new rods_type(drop_location(), rods_broken)
+		var/obj/R = new rods_type(drop_location(), rods_broken) || locate(rods_type) in drop_location() // see above
 		transfer_fingerprints_to(R)
 		qdel(src)
 

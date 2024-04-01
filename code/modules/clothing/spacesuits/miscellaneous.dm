@@ -56,11 +56,10 @@ Contains:
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/beret
-	name = "officer's beret"
+	name = "CentCom officer's beret"
 	desc = "An armored beret commonly used by special operations officers. Uses advanced force field technology to protect the head from space."
 	icon_state = "beret_badge"
-	dynamic_hair_suffix = "+generic"
-	dynamic_fhair_suffix = "+generic"
+	greyscale_colors = "#397F3F#FFCE5B"
 	flags_inv = 0
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 60, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	strip_delay = 130
@@ -68,12 +67,12 @@ Contains:
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/space/officer
-	name = "officer's jacket"
-	desc = "An armored, space-proof jacket used in special operations."
-	icon = 'icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
-	icon_state = "detective"
-	item_state = "det_suit"
+	name = "CentCom officer's coat"
+	desc = "An armored, space-proof coat used in special operations."
+	icon = 'icons/obj/clothing/suits/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
+	icon_state = "centcom_coat"
+	item_state = "centcom"
 	blood_overlay_type = "coat"
 	slowdown = 0
 	flags_inv = 0
@@ -152,8 +151,6 @@ Contains:
 /obj/item/clothing/suit/space/pirate
 	name = "pirate coat"
 	desc = "Yarr."
-	icon_state = "pirate"
-	item_state = "pirate"
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_inv = 0
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/transforming/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
@@ -316,7 +313,7 @@ Contains:
 	light_system = NO_LIGHT_SUPPORT
 	light_range = 0 //luminosity when on
 	actions_types = list()
-	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR //facial hair will clip with the helm, this'll need a dynamic_fhair_suffix at some point.
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/head/helmet/space/hardsuit/carp/Initialize()
 	. = ..()
@@ -556,14 +553,42 @@ Contains:
 	icon_state = "vachelmet_solgov"
 	desc = "This space-proof helmet is meant to be worn with a matching T-MA suit."
 	item_state = "vachelmet_solgov"
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 
 /obj/item/clothing/suit/space/solgov
 	name = "\improper SolGov Vacuum Suit"
 	icon_state = "vacsuit_solgov"
-	desc = "Originally designed by independent contractors on Luna for the security team of a major hotel chain, the armored and lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's peacekeeper forces."
+	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's exploration teams."
 	item_state = "vacsuit_solgov"
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 20,"energy" = 30, "bomb" = 60, "bio" = 100, "rad" = 90, "fire" = 85, "acid" = 75)
+	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/suit/space/inteq
+	name = "inteq space suit"
+	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
+	item_state = "space-inteq"
+	icon_state = "space-inteq"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/clothing/head/helmet/space/inteq
+	name = "inteq space helmet"
+	desc = "A black space helmet with an opaque yellow visor, there is a small 'IRMG' written on the earpad."
+	item_state = "space-inteq"
+	icon_state = "space-inteq"
+	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/clothing/suit/space/scar
+	name = "Scar Suit"
+	desc = "A heavily modified eva suit, custom made for the captain of the ember."
+	icon_state = "hostile_env"
+	item_state = "hostile_env"
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF
+	slowdown = 0.5
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 30, "energy" = 25, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)

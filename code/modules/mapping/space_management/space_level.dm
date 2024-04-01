@@ -15,16 +15,14 @@
 	allocation_type = new_allocation_type
 
 /datum/space_level/proc/is_box_free(low_x, low_y, high_x, high_y)
-	. = TRUE
 	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
 		if(low_x <= vlevel.high_x && vlevel.low_x <= high_x && low_y <= vlevel.high_y && vlevel.low_y <= high_y)
-			. = FALSE
-			break
+			return FALSE
 
 	for(var/datum/dummy_space_reservation/dlevel as anything in dummy_reservations)
 		if(low_x <= dlevel.high_x && dlevel.low_x <= high_x && low_y <= dlevel.high_y && dlevel.low_y <= high_y)
-			. = FALSE
-			break
+			return FALSE
+	return TRUE
 
 /// Datum used for safeguarding a reservation in case of asynchronous operations
 /datum/dummy_space_reservation

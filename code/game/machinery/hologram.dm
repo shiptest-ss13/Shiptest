@@ -31,6 +31,7 @@ Possible to do for anyone motivated enough:
 	name = "holopad"
 	desc = "It's a floor-mounted device for projecting holographic images."
 	icon_state = "holopad0"
+	base_icon_state = "holopad"
 	layer = LOW_OBJ_LAYER
 	plane = FLOOR_PLANE
 	req_access = list(ACCESS_KEYCARD_AUTH) //Used to allow for forced connecting to other (not secure) holopads. Anyone can make a call, though.
@@ -97,6 +98,8 @@ Possible to do for anyone motivated enough:
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	flags_1 = NODECONSTRUCT_1
 	on_network = FALSE
+	///Proximity monitor associated with this atom, needed for proximity checks.
+	var/datum/proximity_monitor/proximity_monitor
 	var/proximity_range = 1
 
 /obj/machinery/holopad/tutorial/Initialize(mapload)
@@ -380,7 +383,7 @@ Possible to do for anyone motivated enough:
 				playsound(src, 'sound/machines/twobeep.ogg', 100)	//bring, bring!
 				ringing = TRUE
 
-	update_icon()
+	update_appearance()
 
 /obj/machinery/holopad/proc/activate_holo(mob/living/user)
 	var/mob/living/silicon/ai/AI = user
@@ -449,16 +452,16 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		set_light(2)
 	else
 		set_light(0)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/holopad/update_icon_state()
 	var/total_users = LAZYLEN(masters) + LAZYLEN(holo_calls)
 	if(ringing)
-		icon_state = "holopad_ringing"
-	else if(total_users || replay_mode)
-		icon_state = "holopad1"
-	else
-		icon_state = "holopad0"
+		icon_state = "[base_icon_state]_ringing"
+		return ..()
+	icon_state = "[base_icon_state][(total_users || replay_mode) ? 1 : 0]"
+	return ..()
+
 
 /obj/machinery/holopad/proc/set_holo(mob/living/user, obj/effect/overlay/holo_pad_hologram/h)
 	LAZYSET(masters, user, h)
@@ -472,6 +475,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 
 /obj/machinery/holopad/proc/clear_holo(mob/living/user)
 	qdel(masters[user]) // Get rid of user's hologram
+	masters -= user
 	unset_holo(user)
 	return TRUE
 
@@ -524,6 +528,9 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		var/transfered = FALSE
 		if(!validate_location(new_turf))
 			if(!transfer_to_nearby_pad(new_turf,user))
+				if(holo.HC)
+					holo.HC.eye.setLoc(get_turf(src))
+					return FALSE
 				clear_holo(user)
 				return FALSE
 			else
@@ -646,7 +653,7 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 		if(HOLORECORD_SOUND)
 			playsound(src,entry[2],50,TRUE)
 		if(HOLORECORD_DELAY)
-			addtimer(CALLBACK(src,.proc/replay_entry,entry_number+1),entry[2])
+			addtimer(CALLBACK(src, PROC_REF(replay_entry),entry_number+1),entry[2])
 			return
 		if(HOLORECORD_LANGUAGE)
 			var/datum/language_holder/holder = replay_holo.get_language_holder()
@@ -668,6 +675,11 @@ For the other part of the code, check silicon say.dm. Particularly robot talk.*/
 /obj/machinery/holopad/proc/record_clear()
 	if(disk && disk.record)
 		QDEL_NULL(disk.record)
+
+/obj/machinery/holopad/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock, list/obj/docking_port/mobile/towed_shuttles)
+	. = ..()
+	for(var/datum/holocall/holocall in holo_calls)
+		holocall.eye.setLoc(newT, TRUE)
 
 /obj/effect/overlay/holo_pad_hologram
 	initial_language_holder = /datum/language_holder/universal

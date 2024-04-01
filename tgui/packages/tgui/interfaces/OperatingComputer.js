@@ -55,6 +55,9 @@ const PatientStateView = (props, context) => {
   if (!table) {
     return <NoticeBox>No Table Detected</NoticeBox>;
   }
+  if (!patient) {
+    return <NoticeBox>No Patient Detected</NoticeBox>;
+  }
   return (
     <>
       <Section title="Patient State">

@@ -77,16 +77,6 @@
 	name = "construction site"
 	icon_state = "green"
 
-/area/ruin/jungle/paradise/mine
-	name = "Mineshaft"
-	icon_state = "yellow"
-
-/area/ruin/jungle/paradise/shuttle
-	name = "crashed escape shuttle"
-	icon_state = "dk_yellow"
-	always_unpowered = TRUE
-	ambientsounds = MAINTENANCE
-
 /area/ruin/jungle/paradise/med
 	name = "surgical medical pod"
 	icon_state = "blue"
@@ -94,11 +84,6 @@
 /area/ruin/jungle/paradise/misc
 	name = "Paradise"
 	icon_state = "green"
-
-/area/ruin/jungle/paradise/darkmisc
-	name = "paradisedark"
-	icon_state = "garden"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/ruin/jungle/paradise/cargo
 	name = "cargo dump"
@@ -130,3 +115,33 @@
 /area/ruin/jungle/syndifort/jerry
 	name = "Syndicate Fort Tower"
 	icon_state = "bridge"
+
+// Cave Crew
+
+/area/ruin/jungle/cavecrew
+	name = "Cave"
+	icon_state = "red"
+
+/area/ruin/jungle/cavecrew/cargo
+	name = "Cave Cargo"
+	icon_state = "dk_yellow"
+
+/area/ruin/jungle/cavecrew/bridge
+	name = "Cave Bridge"
+	icon_state = "bridge"
+
+/area/ruin/jungle/cavecrew/hallway
+	name = "Cave Base Hallway"
+	icon_state = "hallP"
+
+/area/ruin/jungle/cavecrew/engineering
+	name = "Cave Base Engineering"
+	icon_state = "dk_yellow"
+
+/area/ruin/jungle/cavecrew/security
+	name = "Cave Base Security"
+	icon_state = "red"
+
+/area/ruin/jungle/cavecrew/dormitories
+	name = "Cave Base dormitories"
+	icon_state = "crew_quarters"

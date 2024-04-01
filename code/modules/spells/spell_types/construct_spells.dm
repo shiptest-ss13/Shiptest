@@ -210,7 +210,7 @@
 	target.playsound_local(get_turf(target), 'sound/hallucinations/i_see_you1.ogg', 50, 1)
 	user.playsound_local(get_turf(user), 'sound/effects/ghost2.ogg', 50, 1)
 	target.become_blind(ABYSSAL_GAZE_BLIND)
-	addtimer(CALLBACK(src, .proc/cure_blindness, target), 40)
+	addtimer(CALLBACK(src, PROC_REF(cure_blindness), target), 40)
 	target.adjust_bodytemperature(-200)
 
 /**
@@ -290,11 +290,6 @@
 			to_chat(user, "<span class='warning'>[S] is already serving Nar'Sie!</span>")
 		return FALSE
 	return TRUE
-
-/obj/effect/proc_holder/spell/targeted/ethereal_jaunt/shift/golem
-	charge_max = 800
-	jaunt_in_type = /obj/effect/temp_visual/dir_setting/cult/phase
-	jaunt_out_type = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /obj/effect/proc_holder/spell/targeted/projectile/dumbfire/juggernaut
 	name = "Gauntlet Echo"

@@ -40,7 +40,7 @@
 /obj/machinery/meter/Initialize(mapload, new_piping_layer)
 	if(!isnull(new_piping_layer))
 		target_layer = new_piping_layer
-	SSair.start_processing_machine(src)
+	SSair.start_processing_machine(src, mapload)
 	if(!target)
 		reattach_to_layer()
 	return ..()

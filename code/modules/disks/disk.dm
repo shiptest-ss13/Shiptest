@@ -32,7 +32,7 @@
 		add_atom_colour(random_disk_colors[our_color], FIXED_COLOUR_PRIORITY)
 	else
 		add_atom_colour(color, FIXED_COLOUR_PRIORITY)
-	update_icon()
+	update_appearance()
 	update_overlays()
 
 /obj/item/disk/update_overlays()
@@ -55,3 +55,17 @@
 		var/mutable_appearance/writing = mutable_appearance(icon, illustration)
 		writing.appearance_flags = RESET_COLOR
 		. += writing
+
+/obj/item/disk/attackby(obj/item/object, mob/user, params)
+	if(istype(object, /obj/item/pen))
+		if(!user.is_literate())
+			to_chat(user, "<span class='notice'>You scribble illegibly on the cover of [src]!</span>")
+			return
+		var/inputvalue = stripped_input(user, "What would you like to label the Disk?", "Disk Labelling", "", MAX_NAME_LEN)
+
+		if(!inputvalue)
+			return
+
+		if(user.canUseTopic(src, BE_CLOSE))
+			name = "[initial(src.name)][(inputvalue ? " - '[inputvalue]'" : null)]"
+	return

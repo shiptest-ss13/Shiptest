@@ -139,11 +139,7 @@
 					//The final step: create a full turret
 
 					var/obj/machinery/porta_turret/turret
-					//fuck lasertag turrets
-					if(istype(installed_gun, /obj/item/gun/energy/laser/bluetag) || istype(installed_gun, /obj/item/gun/energy/laser/redtag))
-						turret = new/obj/machinery/porta_turret/lasertag(loc)
-					else
-						turret = new/obj/machinery/porta_turret(loc)
+					turret = new/obj/machinery/porta_turret(loc)
 					turret.name = finish_name
 					turret.installation = installed_gun.type
 					turret.setup(installed_gun)

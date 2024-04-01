@@ -9,6 +9,8 @@
 	buildstackamount = 3
 	item_chair = null
 
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
+
 /obj/structure/chair/pew/left
 	name = "left wooden pew end"
 	icon_state = "pewend_left"

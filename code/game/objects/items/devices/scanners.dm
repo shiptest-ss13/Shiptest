@@ -33,10 +33,6 @@ GENE SCANNER
 	drop_sound = 'sound/items/handling/device_drop.ogg'
 	custom_materials = list(/datum/material/iron=150)
 
-/obj/item/t_scanner/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to emit terahertz-rays into [user.p_their()] brain with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return TOXLOSS
-
 /obj/item/t_scanner/proc/toggle_on()
 	on = !on
 	icon_state = copytext_char(icon_state, 1, -1) + "[on]"
@@ -81,13 +77,13 @@ GENE SCANNER
 /obj/item/healthanalyzer
 	name = "health analyzer"
 	icon = 'icons/obj/device.dmi'
-	icon_state = "health"
-	item_state = "healthanalyzer"
+	icon_state = "analyzer-1"
+	item_state = "analyzer"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
 	drop_sound = 'sound/items/handling/device_drop.ogg'
-	desc = "A hand-held body scanner capable of distinguishing vital signs of the subject."
+	desc = "A chunky brick with a worn leather carry handle. Its thick screen and heavy redundancy makes it tough to break."
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
@@ -99,18 +95,26 @@ GENE SCANNER
 	var/mode = SCANNER_VERBOSE
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
+	var/healthmode = "analyzer-1"
+	var/reagentmode = "reagentanalyzer"
+	var/healthmodeinhand = "analyzer"
+	var/reagentmodeinhand = "reagentanalyzer-1"
 	custom_price = 300
 
-/obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
-	return BRUTELOSS
-
 /obj/item/healthanalyzer/attack_self(mob/user)
+	playsound(get_turf(user), 'sound/machines/click.ogg', 50, TRUE)
 	scanmode = !scanmode
-	to_chat(user, "<span class='notice'>You switch the health analyzer to [scanmode ? "scan chemical contents" : "check physical health"].</span>")
+	if(scanmode == 1)
+		balloon_alert(user, "scanning reagents")
+		icon_state = reagentmode
+		item_state = reagentmodeinhand
+	else
+		balloon_alert(user, "scanning health")
+		icon_state = healthmode
+		item_state = healthmodeinhand
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
-	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
+	flick("[icon_state]-anim", src) //makes it so that it plays the scan animation upon scanning, including clumsy scanning
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)
 
 	// Clumsiness/brain damage check
@@ -136,7 +140,7 @@ GENE SCANNER
 
 // Used by the PDA medical scanner too
 /proc/healthscan(mob/user, mob/living/M, mode = SCANNER_VERBOSE, advanced = FALSE)
-	if(isliving(user) && (user.incapacitated() || user.is_blind()))
+	if(isliving(user) && (user.incapacitated()))
 		return
 
 	// the final list of strings to render
@@ -356,7 +360,7 @@ GENE SCANNER
 				if(H.bleed_rate)
 					render_list += "<span class='alert ml-1'><b>Subject is bleeding!</b></span>\n"
 			var/blood_percent =  round((C.blood_volume / BLOOD_VOLUME_NORMAL)*100)
-			var/blood_type = C.dna.blood_type
+			var/blood_type = C.dna.blood_type.name
 			if(blood_id != /datum/reagent/blood) // special blood substance
 				var/datum/reagent/R = GLOB.chemical_reagents_list[blood_id]
 				blood_type = R ? R.name : blood_id
@@ -376,7 +380,9 @@ GENE SCANNER
 			render_list += "<span class='notice ml-2'>[cyberimp_detect]</span>\n"
 
 	SEND_SIGNAL(M, COMSIG_NANITE_SCAN, user, FALSE)
-	to_chat(user, jointext(render_list, ""), trailing_newline = FALSE) // we handled the last <br> so we don't need handholding
+
+	// we handled the last <br> so we don't need handholding
+	to_chat(user, examine_block(jointext(render_list, "")), trailing_newline = FALSE, type = MESSAGE_TYPE_INFO)
 
 /proc/chemscan(mob/living/user, mob/living/M)
 	if(istype(M) && M.reagents)
@@ -393,8 +399,8 @@ GENE SCANNER
 				render_list += "<span class='alert ml-2'>[R.name]</span>\n"
 		else
 			render_list += "<span class='notice ml-1'>Subject is not addicted to any reagents.</span>\n"
-
-		to_chat(user, jointext(render_list, ""), trailing_newline = FALSE) // we handled the last <br> so we don't need handholding
+		// we handled the last <br> so we don't need handholding
+		to_chat(user, examine_block(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
 
 /obj/item/healthanalyzer/verb/toggle_mode()
 	set name = "Switch Verbosity"
@@ -409,8 +415,14 @@ GENE SCANNER
 /obj/item/healthanalyzer/advanced
 	name = "advanced health analyzer"
 	icon_state = "health_adv"
+	icon_state = "advanalyzer"
+	item_state = "advanalyzer"
 	desc = "A hand-held body scanner able to distinguish vital signs of the subject with high accuracy."
 	advanced = TRUE
+	healthmode = "advanalyzer"
+	reagentmode = "advreagentanalyzer"
+	healthmodeinhand = "advanalyzer"
+	reagentmodeinhand = "advreagentanalyzer"
 
 /obj/item/analyzer
 	desc = "A hand-held environmental scanner which reports current gas levels. Alt-Click to use the built in barometer function."
@@ -441,14 +453,10 @@ GENE SCANNER
 	. = ..()
 	. += "<span class='notice'>Alt-click [src] to activate the barometer function.</span>"
 
-/obj/item/analyzer/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
-	return BRUTELOSS
-
 /obj/item/analyzer/attack_self(mob/user)
 	add_fingerprint(user)
 
-	if (user.stat || user.is_blind())
+	if (user.stat)
 		return
 
 	var/turf/location = user.loc
@@ -542,7 +550,7 @@ GENE SCANNER
 			else
 				to_chat(user, "<span class='warning'>[src]'s barometer function says a storm will land in approximately [butchertime(fixed)].</span>")
 		cooldown = TRUE
-		addtimer(CALLBACK(src,/obj/item/analyzer/proc/ping), cooldown_time)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/analyzer, ping)), cooldown_time)
 
 /obj/item/analyzer/proc/ping()
 	if(isliving(loc))
@@ -604,7 +612,8 @@ GENE SCANNER
 			render_list += "<span class='boldnotice'>Large amounts of free neutrons detected in the air indicate that a fusion reaction took place.</span>\
 						\n<span class='notice'>Instability of the last fusion reaction: [round(cached_scan_results["fusion"], 0.01)].</span>"
 
-	to_chat(user, jointext(render_list, "\n")) // we let the join apply newlines so we do need handholding
+	// we let the join apply newlines so we do need handholding
+	to_chat(user, examine_block(jointext(render_list, "\n")), type = MESSAGE_TYPE_INFO)
 	return TRUE
 
 //slime scanner
@@ -627,7 +636,7 @@ GENE SCANNER
 	custom_materials = list(/datum/material/iron=30, /datum/material/glass=20)
 
 /obj/item/slime_scanner/attack(mob/living/M, mob/living/user)
-	if(user.stat || user.is_blind())
+	if(user.stat)
 		return
 	if (!isslime(M))
 		to_chat(user, "<span class='warning'>This device can only scan slimes!</span>")
@@ -636,8 +645,7 @@ GENE SCANNER
 	slime_scan(T, user)
 
 /proc/slime_scan(mob/living/simple_animal/slime/T, mob/living/user)
-	var/to_render = "========================\
-					\n<b>Slime scan results:</b>\
+	var/to_render = "\n<b>Slime scan results:</b>\
 					\n<span class='notice'>[T.colour] [T.is_adult ? "adult" : "baby"] slime</span>\
 					\nNutrition: [T.nutrition]/[T.get_max_nutrition()]"
 	if (T.nutrition < T.get_starve_nutrition())
@@ -651,20 +659,20 @@ GENE SCANNER
 		if (T.slime_mutation[3] == T.slime_mutation[4])
 			if (T.slime_mutation[2] == T.slime_mutation[1])
 				to_render += "\nPossible mutation: [T.slime_mutation[3]]\
-							  \nGenetic destability: [T.mutation_chance/2] % chance of mutation on splitting"
+							\nGenetic destability: [T.mutation_chance/2] % chance of mutation on splitting"
 			else
 				to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]] (x2)\
-							  \nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
+							\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
 		else
 			to_render += "\nPossible mutations: [T.slime_mutation[1]], [T.slime_mutation[2]], [T.slime_mutation[3]], [T.slime_mutation[4]]\
-						  \nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
+						\nGenetic destability: [T.mutation_chance] % chance of mutation on splitting"
 	if (T.cores > 1)
 		to_render += "\nMultiple cores detected"
 	to_render += "\nGrowth progress: [T.amount_grown]/[SLIME_EVOLUTION_THRESHOLD]"
 	if(T.effectmod)
 		to_render += "\n<span class='notice'>Core mutation in progress: [T.effectmod]</span>\
-					  \n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
-	to_chat(user, to_render + "\n========================")
+					\n<span class='notice'>Progress in core mutation: [T.applied] / [(SLIME_EXTRACT_CROSSING_REQUIRED * T.crossbreed_modifier)]</span>"
+	to_chat(user, examine_block(to_render))
 
 
 /obj/item/nanite_scanner
@@ -785,7 +793,7 @@ GENE SCANNER
 
 		ready = FALSE
 		icon_state = "[icon_state]_recharging"
-		addtimer(CALLBACK(src, .proc/recharge), cooldown, TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(recharge)), cooldown, TIMER_UNIQUE)
 
 /obj/item/sequence_scanner/proc/recharge()
 	icon_state = initial(icon_state)
@@ -843,8 +851,8 @@ GENE SCANNER
 /obj/item/reagent_scanner //essentially just the code from the PDA reagent scanner, but shoved into this object, and specifies amount
 	name = "reagent scanner"
 	icon = 'icons/obj/device.dmi'
-	icon_state = "reagent"
-	item_state = "reagentanalyzer"
+	icon_state = "reagentanalyzer"
+	item_state = "reagentanalyzer-1"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	pickup_sound =  'sound/items/handling/device_pickup.ogg'
@@ -861,7 +869,7 @@ GENE SCANNER
 
 /obj/item/reagent_scanner/afterattack(atom/A as mob|obj|turf|area, mob/user, proximity)
 	. = ..()
-	flick("[icon_state]-scan", src)
+	flick("[icon_state]-anim", src)
 	if(!proximity)
 		return
 	playsound(src, 'sound/effects/fastbeep.ogg', 10)

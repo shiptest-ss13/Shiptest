@@ -8,33 +8,6 @@
 	var/labels_left = 30
 	var/mode = 0
 
-/obj/item/hand_labeler/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is pointing [src] at [user.p_them()]self. [user.p_theyre(TRUE)] going to label [user.p_them()]self as a suicide!</span>")
-	labels_left = max(labels_left - 1, 0)
-
-	var/old_real_name = user.real_name
-	user.real_name += " (suicide)"
-	// no conflicts with their identification card
-	for(var/atom/A in user.GetAllContents())
-		if(istype(A, /obj/item/card/id))
-			var/obj/item/card/id/their_card = A
-
-			// only renames their card, as opposed to tagging everyone's
-			if(their_card.registered_name != old_real_name)
-				continue
-
-			their_card.registered_name = user.real_name
-			their_card.update_label()
-
-	// NOT EVEN DEATH WILL TAKE AWAY THE STAIN
-	user.mind.name += " (suicide)"
-
-	mode = 1
-	icon_state = "labeler[mode]"
-	label = "suicide"
-
-	return OXYLOSS
-
 /obj/item/hand_labeler/afterattack(atom/A, mob/user,proximity)
 	. = ..()
 	if(!proximity)

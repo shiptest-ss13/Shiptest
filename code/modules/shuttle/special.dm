@@ -10,6 +10,7 @@
 	icon = 'icons/obj/machines/magic_emitter.dmi'
 	icon_state = "wabbajack_statue"
 	icon_state_on = "wabbajack_statue_on"
+	base_icon_state = "wabbajack_statue"
 	active = FALSE
 	allow_switch_interact = FALSE
 	var/list/active_tables = list()
@@ -19,13 +20,11 @@
 	. = ..()
 	if(prob(50))
 		desc = "Oh no, not again."
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/emitter/energycannon/magical/update_icon_state()
-	if(active)
-		icon_state = icon_state_on
-	else
-		icon_state = initial(icon_state)
+	. = ..()
+	icon_state = active ? icon_state_on : initial(icon_state)
 
 /obj/machinery/power/emitter/energycannon/magical/process()
 	. = ..()
@@ -39,7 +38,7 @@
 			visible_message("<span class='revenboldnotice'>\
 				[src] closes its eyes.</span>")
 		active = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/power/emitter/energycannon/magical/attackby(obj/item/W, mob/user, params)
 	return
@@ -94,7 +93,7 @@
 		L.visible_message("<span class='revennotice'>A strange purple glow wraps itself around [L] as [L.p_they()] suddenly fall[L.p_s()] unconscious.</span>",
 			"<span class='revendanger'>[desc]</span>")
 		// Don't let them sit suround unconscious forever
-		addtimer(CALLBACK(src, .proc/sleeper_dreams, L), 100)
+		addtimer(CALLBACK(src, PROC_REF(sleeper_dreams), L), 100)
 
 	// Existing sleepers
 	for(var/i in found)
@@ -146,8 +145,13 @@
 /mob/living/simple_animal/drone/snowflake/bardrone/Initialize()
 	. = ..()
 	access_card.access |= ACCESS_CENT_BAR
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/check_barstaff_godmode)
+	become_area_sensitive(ROUNDSTART_TRAIT)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(check_barstaff_godmode))
 	check_barstaff_godmode()
+
+/mob/living/simple_animal/drone/snowflake/bardrone/Destroy()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
+	return ..()
 
 /mob/living/simple_animal/hostile/alien/maid/barmaid
 	gold_core_spawnable = NO_SPAWN
@@ -166,12 +170,14 @@
 	access_card.access = C.get_access()
 	access_card.access |= ACCESS_CENT_BAR
 	ADD_TRAIT(access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/check_barstaff_godmode)
+	become_area_sensitive(ROUNDSTART_TRAIT)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(check_barstaff_godmode))
 	check_barstaff_godmode()
 
 /mob/living/simple_animal/hostile/alien/maid/barmaid/Destroy()
 	qdel(access_card)
-	. = ..()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
+	return ..()
 
 /mob/living/simple_animal/proc/check_barstaff_godmode()
 	SIGNAL_HANDLER
@@ -194,7 +200,7 @@
 /obj/structure/table/wood/bar/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered)
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -231,7 +237,7 @@
 	var/static/list/check_times = list()
 	var/list/payees = list()
 
-/obj/machinery/scanner_gate/luxury_shuttle/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/scanner_gate/luxury_shuttle/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 
 	if(mover in approved_passengers)
@@ -271,7 +277,7 @@
 
 	if(account)
 		if(account.account_balance < threshold - payees[AM])
-			account.adjust_money(-account.account_balance)
+			account.adjust_money(-account.account_balance, "luxury_shuttle")
 			payees[AM] += account.account_balance
 		else
 			var/money_owed = threshold - payees[AM]
@@ -364,7 +370,7 @@
 
 /mob/living/simple_animal/hostile/bear/fightpit
 	name = "fight pit bear"
-	desc = "This bear's trained through ancient Russian secrets to fear the walls of its glass prison."
+	desc = "This bear's trained through ancient Solarian secrets to fear the walls of its glass prison."
 	environment_smash = ENVIRONMENT_SMASH_NONE
 
 /obj/effect/decal/hammerandsickle

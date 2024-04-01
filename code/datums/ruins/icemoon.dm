@@ -1,9 +1,10 @@
-// Hey! Listen! Update \config\iceruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/icemoon
 	prefix = "_maps/RandomRuins/IceRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_ICE
 
 // above ground only
 
@@ -34,36 +35,17 @@
 	description = "Who knows what lies within?"
 	suffix = "icemoon_underground_abandoned_village.dmm"
 
-/datum/map_template/ruin/icemoon/hermit
-	name = "Frozen Shack"
-	id = "hermitshack"
-	description = "A place of shelter for a lone hermit, scraping by to live another day."
-	suffix = "icemoon_underground_hermit.dmm"
-
 /datum/map_template/ruin/icemoon/corpreject
 	name = "NT Security Solutions Site Gamma"
 	id = "corpreject"
 	description = "Nanotrasen Corporate Security Solutions vault site Gamma."
 	suffix = "icemoon_surface_corporate_rejects.dmm"
 
-/datum/map_template/ruin/icemoon/icecropolis
-	name = "The Bloody Hallow"
-	id = "icecropolis"
-	description = "Blood and writhing flesh make up this citadel of horrors."
-	suffix = "icemoon_underground_icecropolis.dmm"
-
 /datum/map_template/ruin/icemoon/syndicate_outpost
 	name = "Abandoned Syndicate Outpost"
 	id = "syndicate-outpost-icemoon"
 	description = "A outpost that used to be a staging area for nuclear operatives. The Syndicate have moved to another location, but this still remains."
 	suffix = "icemoon_underground_abandoned_newcops.dmm"
-
-/datum/map_template/ruin/icemoon/oldstation
-	id = "oldstation-icemoon"
-	suffix = "icemoon_underground_oldstation.dmm"
-	name = "Arctic Charlie Module Station"
-	description = "The crew of a outpost awaken one hundred years after a crisis. Awaking to a derelict outpost on the verge of collapse, and a hostile force of invading \
-	hivebots. Can the surviving crew overcome the odds and survive and rebuild, or will the cold embrace of the moon become their new home?"
 
 /datum/map_template/ruin/icemoon/drakelair
 	name = "Dragon's Lair"
@@ -77,8 +59,8 @@
 	description = "A conspicuous compound in the middle of the cold wasteland. What goodies are inside?"
 	suffix = "icemoon_underground_brazillianlab.dmm"
 
-/datum/map_template/ruin/icemoon/slimelab
-	name = "Slime Lab"
-	id = "slimelab"
-	description = "An underground research facility devoted to researching the uncommon slime lifeform"
-	suffix = "icemoon_underground_slimelab.dmm"
+/datum/map_template/ruin/icemoon/crashed_holemaker
+	name = "Crashed Holemaker"
+	id = "crashed_holemaker"
+	description = "Safety records for early Nanotrasen Spaceworks vessels were, and always have been, top of their class. Absolutely no multi-billion credit projects have been painstakingly erased from history. (Citation Needed)"
+	suffix = "icemoon_crashed_holemaker.dmm"

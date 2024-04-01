@@ -58,4 +58,4 @@
 			"<span class='warning'>[user] screws up, brusing [H]'s chest!</span>",
 			"<span class='warning'>[user] screws up!</span>")
 		H.adjustOrganLoss(ORGAN_SLOT_STOMACH, 5)
-		H.adjustBruteLoss(5)
+		target.apply_damage(15, BRUTE, "[target_zone]")

@@ -29,11 +29,6 @@
 	quickdraw = FALSE
 	silent = FALSE
 
-/datum/component/storage/concrete/pockets/exo/cloak
-	max_items = 1
-	max_w_class = WEIGHT_CLASS_NORMAL
-	quickdraw = TRUE
-
 /datum/component/storage/concrete/pockets/exo/large
 	max_items = 3
 
@@ -41,7 +36,7 @@
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
 		/obj/item/katana, /obj/item/toy/katana, /obj/item/nullrod/claymore/katana,
-		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/smg/thompson/drum
+		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/smg/firestorm/pan
 		))
 	exception_hold = exception_cache
 
@@ -91,7 +86,7 @@
 		/obj/item/reagent_containers/food/drinks/bottle/vodka,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov,
 		/obj/item/reagent_containers/food/drinks/drinkingglass,
-		/obj/item/ammo_box/a762
+		/obj/item/ammo_box/magazine/illestren_a850r
 	))
 
 /datum/component/storage/concrete/pockets/holster
@@ -121,16 +116,6 @@
 /datum/component/storage/concrete/pockets/holster/nukie
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_BULKY
-
-/datum/component/storage/concrete/pockets/holster/lt/Initialize()
-	original_parent = parent
-	. = ..()
-	can_hold = typecacheof(list(
-		/obj/item/gun/energy/e_gun/adv_stopping,
-		/obj/item/gun/energy/e_gun/mini,
-		/obj/item/gun/energy/disabler,
-		/obj/item/stock_parts/cell/gun
-	))
 
 /datum/component/storage/concrete/pockets/holster/nukie/Initialize()
 	original_parent = parent

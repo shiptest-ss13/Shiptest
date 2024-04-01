@@ -184,8 +184,8 @@
 	var/list/obj/effect/portal/created = create_portal_pair(current_location, get_teleport_turf(current_location, get_turf(T), 0, FALSE), 300, 1, null, atmos_link_override)
 	if(!(LAZYLEN(created) == 2))
 		return
-	RegisterSignal(created[1], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy) //Gosh darn it kevinz.
-	RegisterSignal(created[2], COMSIG_PARENT_QDELETING, .proc/on_portal_destroy)
+	RegisterSignal(created[1], COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy)) //Gosh darn it kevinz.
+	RegisterSignal(created[2], COMSIG_PARENT_QDELETING, PROC_REF(on_portal_destroy))
 	var/obj/effect/portal/c1 = created[1]
 	var/obj/effect/portal/c2 = created[2]
 	var/turf/check_turf = get_turf(get_step(user, user.dir))
@@ -209,17 +209,3 @@
 		if(active_portal_pairs[i] == P)
 			return DESTINATION_PORTAL
 	return FALSE
-
-/obj/item/hand_tele/suicide_act(mob/user)
-	if(iscarbon(user))
-		user.visible_message("<span class='suicide'>[user] is creating a weak portal and sticking [user.p_their()] head through! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		var/mob/living/carbon/itemUser = user
-		var/obj/item/bodypart/head/head = itemUser.get_bodypart(BODY_ZONE_HEAD)
-		if(head)
-			head.drop_limb()
-			var/list/safeLevels = SSmapping.virtual_levels_by_any_trait(list(ZTRAIT_SPACE_RUINS, ZTRAIT_LAVA_RUINS, ZTRAIT_STATION, ZTRAIT_MINING))
-			head.forceMove(locate(rand(1, world.maxx), rand(1, world.maxy), pick(safeLevels)))
-			itemUser.visible_message("<span class='suicide'>The portal snaps closed taking [user]'s head with it!</span>")
-		else
-			itemUser.visible_message("<span class='suicide'>[user] looks even further depressed as they realize they do not have a head...and suddenly dies of shame!</span>")
-		return (BRUTELOSS)

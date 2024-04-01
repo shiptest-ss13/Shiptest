@@ -64,13 +64,14 @@ SUBSYSTEM_DEF(shuttle)
 			else
 				var/obj/docking_port/mobile/M = requester
 				message_admins("Shuttle [M] repeatedly failed to create transit zone.")
+				log_runtime("Shuttle [M] repeatedly failed to create transit zone.")
 		if(MC_TICK_CHECK)
 			break
 
 /// Requests a bluespace jump, which, after jump_request_time deciseconds, will initiate a bluespace jump.
 /datum/controller/subsystem/shuttle/proc/request_jump(modifier = 1)
 	jump_mode = BS_JUMP_CALLED
-	jump_timer = addtimer(CALLBACK(src, .proc/initiate_jump), jump_request_time * modifier, TIMER_STOPPABLE)
+	jump_timer = addtimer(CALLBACK(src, PROC_REF(initiate_jump)), jump_request_time * modifier, TIMER_STOPPABLE)
 	priority_announce("Preparing for jump. ETD: [jump_request_time * modifier / (1 MINUTES)] minutes.", null, null, "Priority")
 
 /// Cancels a currently requested bluespace jump. Can only be done after the jump has been requested but before the jump has actually begun.
@@ -116,13 +117,9 @@ SUBSYSTEM_DEF(shuttle)
 
 	// Shuttles travelling on their side have their dimensions swapped
 	// from our perspective
-	switch(dock_dir)
-		if(NORTH, SOUTH)
-			transit_width += M.width
-			transit_height += M.height
-		if(EAST, WEST)
-			transit_width += M.height
-			transit_height += M.width
+	var/list/union_coords = M.return_union_coords(M.get_all_towed_shuttles(), 0, 0, dock_dir)
+	transit_width += union_coords[3] - union_coords[1] + 1
+	transit_height += union_coords[4] - union_coords[2] + 1
 
 	var/transit_path = /turf/open/space/transit
 	switch(travel_dir)
@@ -164,25 +161,10 @@ SUBSYSTEM_DEF(shuttle)
 		)
 
 	// Then create a transit docking port in the middle
-	var/coords = M.return_coords(0, 0, dock_dir)
-	/*  0------2
-	*   |      |
-	*   |      |
-	*   |  x   |
-	*   3------1
-	*/
-
-	var/x0 = coords[1]
-	var/y0 = coords[2]
-	var/x1 = coords[3]
-	var/y1 = coords[4]
-	// Then we want the point closest to -infinity,-infinity
-	var/x2 = min(x0, x1)
-	var/y2 = min(y0, y1)
-
-	// Then invert the numbers
-	var/transit_x = bottomleft.x + SHUTTLE_TRANSIT_BORDER + abs(x2)
-	var/transit_y = bottomleft.y + SHUTTLE_TRANSIT_BORDER + abs(y2)
+	// union coords (1,2) points from the docking port to the bottom left corner of the bounding box
+	// So if we negate those coordinates, we get the vector pointing from the bottom left of the bounding box to the docking port
+	var/transit_x = bottomleft.x + SHUTTLE_TRANSIT_BORDER + abs(union_coords[1])
+	var/transit_y = bottomleft.y + SHUTTLE_TRANSIT_BORDER + abs(union_coords[2])
 
 	var/turf/midpoint = locate(transit_x, transit_y, bottomleft.z)
 	if(!midpoint)
@@ -200,6 +182,7 @@ SUBSYSTEM_DEF(shuttle)
 	return new_transit_dock
 
 /datum/controller/subsystem/shuttle/Recover()
+	initialized = SSshuttle.initialized
 	if (istype(SSshuttle.mobile))
 		mobile = SSshuttle.mobile
 	if (istype(SSshuttle.stationary))
@@ -210,6 +193,8 @@ SUBSYSTEM_DEF(shuttle)
 		transit_requesters = SSshuttle.transit_requesters
 	if (istype(SSshuttle.transit_request_failures))
 		transit_request_failures = SSshuttle.transit_request_failures
+	if (istype(SSshuttle.supply_packs))
+		supply_packs = SSshuttle.supply_packs
 
 	ordernum = SSshuttle.ordernum
 	lockdown = SSshuttle.lockdown
@@ -270,7 +255,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/result = new_shuttle.canDock(destination_port)
 	if((result != SHUTTLE_CAN_DOCK))
 		WARNING("Template shuttle [new_shuttle] cannot dock at [destination_port] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle, TRUE)
 		return
 	new_shuttle.initiate_docking(destination_port)
 	return new_shuttle
@@ -289,12 +274,12 @@ SUBSYSTEM_DEF(shuttle)
 	if(!to_replace || !replacement)
 		return
 	var/obj/docking_port/mobile/new_shuttle = load_template(replacement, parent, FALSE)
-	var/obj/docking_port/stationary/old_shuttle_location = to_replace.get_docked()
+	var/obj/docking_port/stationary/old_shuttle_location = to_replace.docked
 	var/result = new_shuttle.canDock(old_shuttle_location)
 
 	if((result != SHUTTLE_CAN_DOCK) && (result != SHUTTLE_SOMEONE_ELSE_DOCKED)) //Someone else /IS/ docked, the old shuttle!
 		WARNING("Template shuttle [new_shuttle] cannot dock at [old_shuttle_location] ([result]).")
-		new_shuttle.jumpToNullSpace()
+		qdel(new_shuttle, TRUE)
 		return
 
 	new_shuttle.timer = to_replace.timer //Copy some vars from the old shuttle
@@ -306,7 +291,7 @@ SUBSYSTEM_DEF(shuttle)
 		to_replace.assigned_transit = null
 		new_shuttle.assigned_transit = old_shuttle_location
 
-	to_replace.jumpToNullSpace() //This will destroy the old shuttle
+	qdel(to_replace, TRUE)
 	new_shuttle.initiate_docking(old_shuttle_location) //This will spawn the new shuttle
 	return new_shuttle
 
@@ -342,8 +327,8 @@ SUBSYSTEM_DEF(shuttle)
 		for(var/obj/docking_port/P in T)
 			if(istype(P, /obj/docking_port/mobile))
 				if(new_shuttle)
+					stack_trace("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 					qdel(P, TRUE)
-					log_world("Map warning: Shuttle Template [template.mappath] has multiple mobile docking ports.")
 				else
 					new_shuttle = P
 			if(istype(P, /obj/docking_port/stationary))
@@ -355,26 +340,31 @@ SUBSYSTEM_DEF(shuttle)
 			T0.empty()
 
 		message_admins(msg)
-		WARNING(msg)
-		return
+		CRASH(msg)
 
-	if(!new_shuttle.can_move_docking_ports && length(stationary_ports))
-		log_world("Map warning: Shuttle Template [template.mappath] has [length(stationary_ports)] stationary docking port(s) and does not have var/can_move_docking_ports set to TRUE. Will not move these ports.")
 	new_shuttle.docking_points = stationary_ports
+	new_shuttle.current_ship = parent //for any ships that spawn on top of us
+
+	for(var/obj/docking_port/stationary/S in stationary_ports)
+		S.owner_ship = new_shuttle
+		S.load_roundstart()
 
 	var/obj/docking_port/mobile/transit_dock = generate_transit_dock(new_shuttle)
 
 	if(!transit_dock)
+		qdel(src, TRUE)
 		CRASH("No dock found/could be created for shuttle ([template.name]), aborting.")
 
 	var/result = new_shuttle.canDock(transit_dock)
 	if((result != SHUTTLE_CAN_DOCK))
-		WARNING("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
-		new_shuttle.jumpToNullSpace()
-		return
+		qdel(src, TRUE)
+		CRASH("Template shuttle [new_shuttle] cannot dock at [transit_dock] ([result]).")
 
 	new_shuttle.initiate_docking(transit_dock)
 	new_shuttle.linkup(transit_dock, parent)
+
+	var/area/fill_area = GLOB.areas_by_type[/area/space]
+	loading_zone.fill_in(turf_type = /turf/open/space/transit/south, area_override = fill_area ? fill_area : /area/space)
 	QDEL_NULL(loading_zone)
 
 	//Everything fine
@@ -416,7 +406,7 @@ SUBSYSTEM_DEF(shuttle)
 		L["file_name"] = S.file_name
 		L["category"] = S.category
 		L["description"] = S.description
-		L["admin_notes"] = S.admin_notes
+		L["tags"] = S.tags
 
 		templates[S.category]["templates"] += list(L)
 
@@ -426,13 +416,26 @@ SUBSYSTEM_DEF(shuttle)
 	data["shuttles"] = list()
 	for(var/obj/docking_port/mobile/M as anything in mobile)
 		var/list/L = list()
+
+		if(M.current_ship)
+			L["type"] = "[M.current_ship.source_template ? (M.current_ship.source_template.short_name ? M.current_ship.source_template.short_name : M.current_ship.source_template.name) : "Custom"]"
+		else
+			L["type"] = "???"
+
 		L["name"] = M.name
 		L["id"] = REF(M)
 		L["timer"] = M.timer
 		L["can_fly"] = TRUE
 		if (M.mode != SHUTTLE_IDLE)
 			L["mode"] = capitalize(M.mode)
-		L["status"] = M.getDbgStatusText()
+
+		if(M.current_ship)
+			if(M.current_ship.docked_to)
+				L["position"] = "Docked at [M.current_ship.docked_to.name] ([M.current_ship.docked_to.x], [M.current_ship.docked_to.y])"
+			else
+				L["position"] = "Flying At ([M.current_ship.x], [M.current_ship.y])"
+		else
+			L["position"] = "???"
 
 		data["shuttles"] += list(L)
 
@@ -453,8 +456,36 @@ SUBSYSTEM_DEF(shuttle)
 		if("select_template")
 			if(S)
 				. = TRUE
-				// If successful, returns the mobile docking port
-				var/datum/overmap/ship/controlled/new_ship = new(null, S)
+				var/choice = tgui_input_list(
+					user,
+					"Select a location for the new ship.",
+					"Ship Location",
+					list("Random Overmap Square", "Outpost", "Specific Overmap Square")
+				)
+				var/ship_loc
+				var/datum/overmap/ship/controlled/new_ship
+
+				switch(choice)
+					if(null)
+						return
+					if("Random Overmap Square")
+						ship_loc = null // null location causes overmap to just get a random square
+					if("Outpost")
+						if(length(SSovermap.outposts) > 1)
+							var/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+							if(!temp_loc)
+								message_admins("Invalid spawn location.")
+								return
+							ship_loc = temp_loc
+						else
+							ship_loc = SSovermap.outposts[1]
+					if("Specific Overmap Square")
+						var/loc_x = input(user, "X overmap coordinate:") as num
+						var/loc_y = input(user, "Y overmap coordinate:") as num
+						ship_loc = list("x" = loc_x, "y" = loc_y)
+
+				if(!new_ship)
+					new_ship = new(ship_loc, S)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")
@@ -503,6 +534,32 @@ SUBSYSTEM_DEF(shuttle)
 				return
 			if(user.client)
 				user.client.debug_variables(port.current_ship)
+			return TRUE
+
+		if("blist")
+			var/obj/docking_port/mobile/port = locate(params["id"]) in mobile
+			if(!port || !port.current_ship)
+				return
+			var/datum/overmap/ship/controlled/port_ship = port.current_ship
+			var/temp_loc = input(user, "Select outpost to modify ship blacklist status for", "Get Em Outta Here") as null|anything in SSovermap.outposts
+			if(!temp_loc)
+				return
+			var/datum/overmap/outpost/please_leave = temp_loc
+			if(please_leave in port_ship.blacklisted)
+				if(tgui_alert(user, "Rescind ship blacklist?", "Maybe They Aren't So Bad", list("Yes", "No")) == "Yes")
+					port_ship.blacklisted &= ~please_leave
+					message_admins("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+					log_admin("[key_name_admin(user)] unblocked [port_ship] from [please_leave].")
+				return TRUE
+			var/reason = input(user, "Provide a reason for blacklisting, which will be displayed on docking attempts", "Bar Them From The Pearly Gates", "Contact local law enforcement for more information.") as null|text
+			if(!reason)
+				return TRUE
+			if(please_leave in port_ship.blacklisted) //in the event two admins are blacklisting a ship at the same time
+				if(tgui_alert(user, "Ship is already blacklisted, overwrite current reason with your own?", "I call the shots here", list("Yes", "No")) != "Yes")
+					return TRUE
+			port_ship.blacklisted[please_leave] = reason
+			message_admins("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
+			log_admin("[key_name_admin(user)] blacklisted [port_ship] from landing at [please_leave] with reason: [reason]")
 			return TRUE
 
 		if("fly")

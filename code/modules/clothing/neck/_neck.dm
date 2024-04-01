@@ -22,7 +22,6 @@
 /obj/item/clothing/neck/tie
 	name = "tie"
 	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
-	icon = 'icons/obj/clothing/neck.dmi'
 	unique_reskin = list("red tie" = "redtie",
 						"orange tie" = "orangetie",
 						"green tie" = "greentie",
@@ -169,10 +168,6 @@
 	icon_state = "stethoscope"
 	cuttable = FALSE
 
-/obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
-	return OXYLOSS
-
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
 		if(user.a_intent == INTENT_HELP)
@@ -275,7 +270,7 @@
 
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
-//However, these 3 don't have corgi versions of their sprites
+//However, these 4 don't have corgi versions of their sprites
 /obj/item/clothing/neck/stripedredscarf
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
@@ -289,6 +284,11 @@
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
+	custom_price = 10
+
+/obj/item/clothing/neck/stripedsolgovscarf
+	name = "striped solgov scarf"
+	icon_state = "stripedsolgovscarf"
 	custom_price = 10
 
 /obj/item/clothing/neck/petcollar
@@ -311,7 +311,6 @@
 /obj/item/clothing/neck/necklace/dope
 	name = "gold necklace"
 	desc = "Damn, it feels good to be a gangster."
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
 	cuttable = FALSE
 
@@ -382,7 +381,6 @@
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
 	desc = "A cheap, plastic bead necklace. Show team spirit! Collect them! Throw them away! The posibilites are endless!"
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "beads"
 	color = "#ffffff"
 	custom_price = 10

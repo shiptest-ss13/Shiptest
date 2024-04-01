@@ -14,6 +14,13 @@
 	weapon_weight = WEAPON_MEDIUM
 	pickup_sound =  'sound/items/handling/rifle_pickup.ogg'
 
+	wield_delay = 1 SECONDS
+	spread = 0
+	spread_unwielded = 13
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 0.35
+
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
 	if(!select)
@@ -39,8 +46,8 @@
 		fire_delay = initial(fire_delay)
 		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_icon()
+	playsound(user, 'sound/weapons/gun/general/selector.ogg', 100, TRUE)
+	update_appearance()
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -49,7 +56,7 @@
 
 /obj/item/gun/ballistic/automatic/sniper_rifle
 	name = "sniper rifle"
-	desc = "A long ranged weapon that does significant damage. No, you can't quickscope."
+	desc = "An anti-material rifle chambered in .50 BMG with a scope mounted on it. Its prodigious bulk requires both hands to use."
 	icon_state = "sniper"
 	item_state = "sniper"
 	fire_sound = 'sound/weapons/gun/sniper/shot.ogg'
@@ -70,10 +77,18 @@
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 	mag_display = TRUE
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	spread = -5
+	spread_unwielded = 20
+	recoil = 0
+	recoil_unwielded = 4
+	wield_slowdown = 1
+	wield_delay = 1.3 SECONDS
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
-	desc = "An illegally modified .50 cal sniper rifle with suppression compatibility. Quickscoping still doesn't work."
+	desc = "A heavily-modified .50 BMG anti-material rifle utilized by Syndicate agents. Requires both hands to fire."
 	can_suppress = TRUE
 	can_unsuppress = TRUE
 	pin = /obj/item/firing_pin/implant/pindicate
@@ -81,13 +96,13 @@
 // Old Semi-Auto Rifle //
 
 /obj/item/gun/ballistic/automatic/surplus
-	name = "Surplus Rifle"
-	desc = "One of countless obsolete ballistic rifles that still sees use as a cheap deterrent. Uses 10mm ammo and its bulky frame prevents one-hand firing."
+	name = "surplus rifle"
+	desc = "One of countless cheap, obsolete rifles found throughout the Frontier. Its lack of lethality renders it mostly a deterrent. Chambered in 10mm."
 	icon_state = "surplus"
 	item_state = "moistnugget"
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
-	fire_delay = 30
+	fire_delay = 10
 	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
@@ -113,13 +128,13 @@
 
 /obj/item/gun/ballistic/automatic/ebr
 	name = "\improper M514 EBR"
-	desc = "A cheap, reliable rifle often found in the hands of low-ranking Syndicate personnel. It's known for rather high stopping power and mild armor-piercing capabilities. Chambered in .308."
+	desc = "A reliable, high-powered battle rifle often found in the hands of Syndicate personnel and remnants, chambered in .308. Effective against personnel and armor alike."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
-	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "ebr"
 	item_state = "ebr"
+	zoomable = TRUE
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -127,14 +142,19 @@
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt2.ogg'
 	burst_size = 0
 	actions_types = list()
+	manufacturer = MANUFACTURER_SCARBOROUGH
+
+	wield_slowdown = 2
+	spread = -4
 
 /obj/item/gun/ballistic/automatic/gal
 	name = "\improper CM-GAL-S"
-	desc = "The standard issue DMR of the CMM. Dates back to the Xenofauna War, this particular model is in a carbine configuration and as such shorter than the standard model. Chambered in .308."
+	desc = "The standard issue DMR of CLIP. Dates back to the Xenofauna War, this particular model is in a carbine configuration, and, as such, is shorter than the standard model. Chambered in .308."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/shot.ogg'
 	icon_state = "gal"
 	item_state = "gal"
+	zoomable = TRUE
 	mag_display = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
@@ -142,10 +162,20 @@
 	fire_sound = 'sound/weapons/gun/rifle/gal.ogg'
 	burst_size = 0
 	actions_types = list()
+	manufacturer = MANUFACTURER_MINUTEMAN
+
+	wield_slowdown = 2
+	spread = -4
+
+/obj/item/gun/ballistic/automatic/gal/inteq
+	name = "\improper SsG-04"
+	desc = "A marksman rifle purchased from CLIP and modified to suit IRMG's needs. Chambered in .308."
+	icon_state = "gal-inteq"
+	item_state = "gal-inteq"
 
 /obj/item/gun/ballistic/automatic/zip_pistol
 	name = "makeshift pistol"
-	desc = "A makeshift pistol. It's a miracle it even works."
+	desc = "A makeshift zip gun cobbled together from various scrap bits and chambered in 9mm. It's a miracle it even works."
 	icon_state = "ZipPistol"
 	item_state = "ZipPistol"
 	mag_type = /obj/item/ammo_box/magazine/zip_ammo_9mm

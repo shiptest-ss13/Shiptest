@@ -233,7 +233,7 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
 		if (41) //crew manifest
 			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "<center>[SSjob.get_manifest_html()]</center>"
+			menu += "<center>[SSovermap.get_manifest_html()]</center>"
 
 
 		if (42) //status displays
@@ -486,7 +486,7 @@ Code:
 				active1 = null
 
 		if("Send Signal")
-			INVOKE_ASYNC(radio, /obj/item/integrated_signaler.proc/send_activation)
+			INVOKE_ASYNC(radio, TYPE_PROC_REF(/obj/item/integrated_signaler, send_activation))
 
 		if("Signal Frequency")
 			var/new_frequency = sanitize_frequency(radio.frequency + text2num(href_list["sfreq"]))

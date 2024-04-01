@@ -12,17 +12,7 @@
 	desc = "The commander in chef's head wear."
 	strip_delay = 10
 	equip_delay_other = 10
-	dynamic_hair_suffix = ""
 	dog_fashion = /datum/dog_fashion/head/chef
-
-/obj/item/clothing/head/chefhat/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to become a chef.</span>")
-	user.say("Bork Bork Bork!", forced = "chef hat suicide")
-	sleep(20)
-	user.visible_message("<span class='suicide'>[user] climbs into an imaginary oven!</span>")
-	user.say("BOOORK!", forced = "chef hat suicide")
-	playsound(user, 'sound/machines/ding.ogg', 50, TRUE)
-	return(FIRELOSS)
 
 //Captain
 /obj/item/clothing/head/caphat
@@ -52,11 +42,6 @@
 	name = "captain's hat"
 	icon_state = "captain_nt"
 
-/obj/item/clothing/head/caphat/minutemen
-	name = "general's bicorne"
-	desc = "A fancy bicorne used by generals of the Colonial Minutemen."
-	icon_state = "minuteman_general_hat"
-
 /obj/item/clothing/head/caphat/frontier
 	name = "\improper Frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
@@ -64,7 +49,7 @@
 
 /obj/item/clothing/head/caphat/frontier/admiral
 	name = "\improper Frontiersmen admiral's cap"
-	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersman pirate fleet."
+	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
 
 //Head of Personnel
@@ -117,8 +102,10 @@
 	. = ..()
 	new /obj/item/reagent_containers/food/drinks/flask/det(src)
 
-/obj/item/clothing/head/fedora/det_hat/examine(mob/user)
-	. = ..()
+/obj/item/clothing/head/fedora/det_hat/examine_more(mob/user)
+	if(!in_range(src, user) || !isobserver(user)) //hide the easter egg a little more
+		. = "<span class='warning'>You try to examine [src] closer, but you're too far away.</span>"
+		return
 	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
@@ -147,7 +134,6 @@
 	icon_state = "hoscap"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 80
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/HoS/cowboy
 	name = "sheriff's hat"
@@ -162,12 +148,6 @@
 	icon_state = "cowboysec"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
-
-/obj/item/clothing/head/cowboy/sec/minutemen
-	name = "colonial minutmen officer's slouch hat"
-	desc = "A commanding slouch hat adorned with a offier's badge, used by the Colonial Minutemen."
-	icon_state = "minuteman_officer_hat"
-
 
 /obj/item/clothing/head/cowboy/sec/roumain
 	name = "hunter's hat"
@@ -192,6 +172,12 @@
 /obj/item/clothing/head/HoS/syndicate
 	name = "syndicate cap"
 	desc = "A black cap fit for a high ranking syndicate officer."
+
+/obj/item/clothing/head/HoS/cybersun
+	name = "cybersun hat"
+	desc = "A crimson-red hat fit for a high ranking cybersun officer."
+	icon_state = "cybersunhat"
+	item_state = "cybersunhat"
 
 /obj/item/clothing/head/HoS/beret/syndicate
 	name = "syndicate beret"
@@ -221,6 +207,11 @@
 	icon_state = "cowboywarden"
 
 	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/warden/inteq
+	name = "master at arms' campaign hat"
+	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
+	icon_state = "maahat"
 
 /obj/item/clothing/head/warden/drill
 	name = "warden's campaign hat"
@@ -257,7 +248,7 @@
 /obj/item/clothing/head/warden/drill/equipped(mob/M, slot)
 	. = ..()
 	if (slot == ITEM_SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 

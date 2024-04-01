@@ -146,7 +146,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_MUTE "mute"
 #define TRAIT_EMOTEMUTE "emotemute"
 #define TRAIT_NEARSIGHT "nearsighted"
-#define TRAIT_FAT "fat"
 #define TRAIT_HUSK "husk"
 #define TRAIT_BADDNA "baddna"
 #define TRAIT_CLUMSY "clumsy"
@@ -216,6 +215,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NOMOBSWAP "no-mob-swap"
 #define TRAIT_XRAY_VISION "xray_vision"
 #define TRAIT_THERMAL_VISION "thermal_vision"
+/// We have some form of forced gravity acting on us
+#define TRAIT_FORCED_GRAVITY "forced_gravity"
 #define TRAIT_ABDUCTOR_TRAINING "abductor-training"
 #define TRAIT_ABDUCTOR_SCIENTIST_TRAINING "abductor-scientist-training"
 #define TRAIT_SURGEON "surgeon"
@@ -240,7 +241,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_XENO_IMMUNE "xeno_immune"//prevents xeno huggies implanting skeletons
 #define TRAIT_NAIVE "naive"
 #define TRAIT_PRIMITIVE "primitive"
-#define TRAIT_GUNFLIP "gunflip"
+#define TRAIT_GUNSLINGER "gunslinger"
 #define TRAIT_SPECIAL_TRAUMA_BOOST "special_trauma_boost" ///Increases chance of getting special traumas, makes them harder to cure
 #define TRAIT_BLOODCRAWL_EAT "bloodcrawl_eat"
 #define TRAIT_SPACEWALK "spacewalk"
@@ -263,12 +264,21 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SCOOPABLE "scoopable"
 //your smooches actually deal damage to their target
 #define TRAIT_KISS_OF_DEATH "kiss_of_death"
+/// This mob overrides certian SSlag_switch measures with this special trait
+#define TRAIT_BYPASS_MEASURES "bypass_lagswitch_measures"
 //non-mob traits
 /// Used for limb-based paralysis, where replacing the limb will fix it.
 #define TRAIT_PARALYSIS "paralysis"
 
 #define TRAIT_HEARING_SENSITIVE "hearing_sensitive"
 
+/*
+ * Used for movables that need to be updated, via COMSIG_ENTER_AREA and COMSIG_EXIT_AREA, when transitioning areas.
+ * Use [/atom/movable/proc/become_area_sensitive(trait_source)] to properly enable it. How you remove it isn't as important.
+ */
+#define TRAIT_AREA_SENSITIVE "area-sensitive"
+
+///Used for managing KEEP_TOGETHER in [/atom/var/appearance_flags]
 #define TRAIT_KEEP_TOGETHER "keep-together"
 
 // item traits
@@ -286,6 +296,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_SPIRITUAL "spiritual"
 #define TRAIT_FAN_CLOWN "fan_clown"
 #define TRAIT_FAN_MIME "fan_mime"
+#define TRAIT_FAN_RILENA "fan_rilena"
 #define TRAIT_VORACIOUS "voracious"
 #define TRAIT_SELF_AWARE "self_aware"
 #define TRAIT_FREERUNNING "freerunning"
@@ -308,13 +319,16 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Trait granted by lipstick
 #define LIPSTICK_TRAIT "lipstick_trait"
 
+// Bone breaking traits. Don't actually do anything(?)
+#define TRAIT_NOBREAK "no_break"
+#define TRAIT_ALLBREAK "all_break"
+
 // common trait sources
 #define TRAIT_GENERIC "generic"
 #define GENERIC_ITEM_TRAIT "generic_item"
 #define UNCONSCIOUS_TRAIT "unconscious"
 #define EYE_DAMAGE "eye_damage"
 #define GENETIC_MUTATION "genetic"
-#define OBESITY "obesity"
 #define MAGIC_TRAIT "magic"
 #define TRAUMA_TRAIT "trauma"
 #define DISEASE_TRAIT "disease"
@@ -375,10 +389,8 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define CHRONO_GUN_TRAIT "chrono-gun"
 #define REVERSE_BEAR_TRAP_TRAIT "reverse-bear-trap"
 #define CURSED_MASK_TRAIT "cursed-mask"
-#define HIS_GRACE_TRAIT "his-grace"
 #define HAND_REPLACEMENT_TRAIT "magic-hand"
 #define HOT_POTATO_TRAIT "hot-potato"
-#define SABRE_SUICIDE_TRAIT "sabre-suicide"
 #define ABDUCTOR_VEST_TRAIT "abductor-vest"
 #define CAPTURE_THE_FLAG_TRAIT "capture-the-flag"
 #define EYE_OF_GOD_TRAIT "eye-of-god"
@@ -413,3 +425,18 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define BRAIN_UNAIDED "brain-unaided"
 /// Trait granted by [/obj/item/clothing/head/helmet/space/hardsuit/berserker]
 #define BERSERK_TRAIT "berserk_trait"
+/// Currently fishing
+#define TRAIT_GONE_FISHING "fishing"
+/// Fish in this won't die
+#define TRAIT_FISH_SAFE_STORAGE "fish_case"
+/// Stuff that can go inside fish cases
+#define TRAIT_FISH_CASE_COMPATIBILE "fish_case_compatibile"
+/// Granted by prismwine
+#define TRAIT_REFLECTIVE "reflective"
+/// Self-explainatory.
+#define BEAUTY_ELEMENT_TRAIT "beauty_element"
+#define MOOD_COMPONENT_TRAIT "mood_component"
+
+/// Trait granted by [mob/living/silicon/ai]
+/// Applied when the ai anchors itself
+#define AI_ANCHOR_TRAIT "ai_anchor"

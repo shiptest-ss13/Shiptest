@@ -149,23 +149,15 @@
 	cached_results["fire"] = 0
 	var/turf/open/location = isturf(holder) ? holder : null
 
-	var/burned_fuel = 0
-	if(air.get_moles(GAS_O2) < air.get_moles(GAS_TRITIUM))
-		burned_fuel = air.get_moles(GAS_O2)/TRITIUM_BURN_OXY_FACTOR
+	var/burned_fuel = max(min(air.get_moles(GAS_TRITIUM), air.get_moles(GAS_O2) / TRITIUM_BURN_OXY_FACTOR), 0) / TRITIUM_BURN_TRIT_FACTOR
+	if(burned_fuel > 0)
 		air.adjust_moles(GAS_TRITIUM, -burned_fuel)
-	else
-		burned_fuel = air.get_moles(GAS_TRITIUM)*TRITIUM_BURN_TRIT_FACTOR
-		air.adjust_moles(GAS_TRITIUM, -air.get_moles(GAS_TRITIUM)/TRITIUM_BURN_TRIT_FACTOR)
-		air.adjust_moles(GAS_O2,-air.get_moles(GAS_TRITIUM))
-
-	if(burned_fuel)
+		air.adjust_moles(GAS_O2, -burned_fuel / 2)
+		air.adjust_moles(GAS_H2O, burned_fuel)
 		energy_released += (FIRE_HYDROGEN_ENERGY_RELEASED * burned_fuel)
+		cached_results["fire"] += burned_fuel
 		if(location && prob(10) && burned_fuel > TRITIUM_MINIMUM_RADIATION_ENERGY) //woah there let's not crash the server
 			radiation_pulse(location, energy_released/TRITIUM_BURN_RADIOACTIVITY_FACTOR)
-
-		air.adjust_moles(GAS_H2O, burned_fuel/TRITIUM_BURN_OXY_FACTOR)
-
-		cached_results["fire"] += burned_fuel
 
 	if(energy_released > 0)
 		var/new_heat_capacity = air.heat_capacity()
@@ -537,21 +529,24 @@
 	G.set_moles(GAS_NITRYL,1)
 	G.set_temperature(15000)
 	G.set_volume(1000)
+
 	var/result = G.react()
 	if(result != REACTING)
 		return list("success" = FALSE, "message" = "Reaction didn't go at all!")
-	if(abs(G.analyzer_results["fusion"] - 0.691869) > 0.01)
-		var/instability = G.analyzer_results["fusion"]
-		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 0.691869, is instead [instability]")
-	if(abs(G.get_moles(GAS_PLASMA) - 552.789) > 0.5)
-		var/plas = G.get_moles(GAS_PLASMA)
-		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.531, is instead [plas]")
-	if(abs(G.get_moles(GAS_CO2) - 411.096) > 0.5)
-		var/co2 = G.get_moles(GAS_CO2)
-		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.078, is instead [co2]")
-	if(abs(G.return_temperature() - 78222) > 200) // I'm not calculating this at all just putting in the values I get when I do it now
-		var/temp = G.return_temperature()
-		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 112232, is instead [temp]")
+
+	var/instability	= G.analyzer_results["fusion"]
+	var/plas = G.get_moles(GAS_PLASMA)
+	var/co2 = G.get_moles(GAS_CO2)
+	var/temp = G.return_temperature()
+
+	if(abs(instability - 2.66) > 0.01)
+		return list("success" = FALSE, "message" = "Fusion is not calculating analyzer results correctly, should be 2.66, is instead [instability]")
+	if(abs(plas - 458.241) > 0.5)
+		return list("success" = FALSE, "message" = "Fusion is not calculating plasma correctly, should be 458.241, is instead [plas]")
+	if(abs(co2 - 505.369) > 0.5)
+		return list("success" = FALSE, "message" = "Fusion is not calculating co2 correctly, should be 505.369, is instead [co2]")
+	if(abs(temp - 112291) > 200) // I'm not calculating this at all just putting in the values I get when I do it now
+		return list("success" = FALSE, "message" = "Fusion is not calculating temperature correctly, should be around 112291, is instead [temp]")
 	return ..()
 
 /datum/gas_reaction/nitrousformation //formationn of n2o, esothermic, requires bz as catalyst

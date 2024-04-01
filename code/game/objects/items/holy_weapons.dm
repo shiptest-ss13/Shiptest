@@ -83,7 +83,6 @@
 	item_state = "cage"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	dynamic_hair_suffix = ""
 
 /obj/item/storage/box/holy/sentinel
 	name = "Stone Sentinel Kit"
@@ -208,10 +207,6 @@
 	. = ..()
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
 
-/obj/item/nullrod/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!</span>")
-	return (BRUTELOSS|FIRELOSS)
-
 /obj/item/nullrod/attack_self(mob/user)
 	if(user.mind && (user.mind.holy_role) && !reskinned)
 		reskin_holy_weapon(user)
@@ -234,7 +229,7 @@
 			nullrod_icons += list(initial(rodtype.name) = image(icon = initial(rodtype.icon), icon_state = initial(rodtype.icon_state)))
 
 	nullrod_icons = sortList(nullrod_icons)
-	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, .proc/check_menu, M), radius = 42, require_near = TRUE)
+	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), M), radius = 42, require_near = TRUE)
 	if(!choice || !check_menu(M))
 		return
 
@@ -291,7 +286,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	force = 5
 	slot_flags = ITEM_SLOT_BACK
-	block_chance = 50
+	block_chance = 40
 	var/shield_icon = "shield-red"
 
 /obj/item/nullrod/staff/worn_overlays(isinhands)
@@ -362,6 +357,7 @@
 	icon_state = "katana"
 	item_state = "katana"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	supports_variations = VOX_VARIATION
 
 /obj/item/nullrod/claymore/multiverse
 	name = "extradimensional blade"

@@ -38,7 +38,7 @@
 		for(var/obj/structure/transit_tube_pod/pod in loc)
 			if(!pod.moving)
 				AM.forceMove(pod)
-				pod.update_icon()
+				pod.update_appearance()
 				return
 
 
@@ -109,7 +109,7 @@
 	if(open_status == STATION_TUBE_CLOSED)
 		icon_state = "opening_[base_icon]"
 		open_status = STATION_TUBE_OPENING
-		addtimer(CALLBACK(src, .proc/finish_animation), OPEN_DURATION)
+		addtimer(CALLBACK(src, PROC_REF(finish_animation)), OPEN_DURATION)
 
 /obj/structure/transit_tube/station/proc/finish_animation()
 	switch(open_status)
@@ -124,7 +124,7 @@
 	if(open_status == STATION_TUBE_OPEN)
 		icon_state = "closing_[base_icon]"
 		open_status = STATION_TUBE_CLOSING
-		addtimer(CALLBACK(src, .proc/finish_animation), CLOSE_DURATION)
+		addtimer(CALLBACK(src, PROC_REF(finish_animation)), CLOSE_DURATION)
 
 /obj/structure/transit_tube/station/proc/launch_pod()
 	if(launch_cooldown >= world.time)
@@ -146,7 +146,7 @@
 
 /obj/structure/transit_tube/station/pod_stopped(obj/structure/transit_tube_pod/pod, from_dir)
 	pod_moving = TRUE
-	addtimer(CALLBACK(src, .proc/start_stopped, pod), 5)
+	addtimer(CALLBACK(src, PROC_REF(start_stopped), pod), 5)
 
 /obj/structure/transit_tube/station/proc/start_stopped(obj/structure/transit_tube_pod/pod)
 	if(QDELETED(pod))
@@ -155,7 +155,7 @@
 		pod.setDir(tube_dirs[1]) //turning the pod around for next launch.
 	launch_cooldown = world.time + cooldown_delay
 	open_animation()
-	addtimer(CALLBACK(src, .proc/finish_stopped, pod), OPEN_DURATION + 2)
+	addtimer(CALLBACK(src, PROC_REF(finish_stopped), pod), OPEN_DURATION + 2)
 
 /obj/structure/transit_tube/station/proc/finish_stopped(obj/structure/transit_tube_pod/pod)
 	pod_moving = FALSE
@@ -249,7 +249,7 @@
 	playsound(src, 'sound/weapons/emitter2.ogg', 50, TRUE)
 	pod.setDir(turn(src.dir, -90))
 	AM.forceMove(pod)
-	pod.update_icon()
+	pod.update_appearance()
 	launch_pod()
 
 /obj/structure/transit_tube/station/dispenser/pod_stopped(obj/structure/transit_tube_pod/pod, from_dir)
@@ -269,7 +269,6 @@
 /obj/structure/transit_tube/station/dispenser/reverse
 	tube_construction = /obj/structure/c_transit_tube/station/dispenser/reverse
 	reverse_launch = TRUE
-	icon_state = "closed_terminusdispenser0"
 	base_icon = "terminusdispenser0"
 
 /obj/structure/transit_tube/station/dispenser/reverse/init_tube_dirs()
@@ -285,7 +284,6 @@
 	boarding_dir = turn(dir, 180)
 
 /obj/structure/transit_tube/station/dispenser/reverse/flipped
-	icon_state = "closed_terminusdispenser1"
 	base_icon = "terminusdispenser1"
 	tube_construction = /obj/structure/c_transit_tube/station/dispenser/reverse/flipped
 

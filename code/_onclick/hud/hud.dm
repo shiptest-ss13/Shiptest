@@ -53,16 +53,15 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/list/hand_slots // /atom/movable/screen/inventory/hand objects, assoc list of "[held_index]" = object
 	var/list/atom/movable/screen/plane_master/plane_masters = list() // see "appearance_flags" in the ref, assoc list of "[plane]" = object
 
+	///UI for screentips that appear when you mouse over things
+	var/atom/movable/screen/screentip/screentip_text
+
 	var/atom/movable/screen/movable/action_button/hide_toggle/hide_actions_toggle
 	var/action_buttons_hidden = FALSE
 
 	var/atom/movable/screen/healths
 	var/atom/movable/screen/healthdoll
 	var/atom/movable/screen/internals
-	var/atom/movable/screen/wanted/wanted_lvl
-	/*WS begin
-	var/atom/movable/screen/spacesuit
-	WS End - Fuckin' spacesuits. */
 	// subtypes can override this to force a specific UI style
 	var/ui_style
 
@@ -84,6 +83,9 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 		var/atom/movable/screen/plane_master/instance = new mytype()
 		plane_masters["[instance.plane]"] = instance
 		instance.backdrop(mymob)
+
+	screentip_text = new(null, src)
+	static_inventory += screentip_text
 
 	owner.overlay_fullscreen("see_through_darkness", /atom/movable/screen/fullscreen/see_through_darkness)
 
@@ -107,7 +109,6 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 
 	healths = null
 	healthdoll = null
-	wanted_lvl = null
 	internals = null
 	lingchemdisplay = null
 	devilsouldisplay = null
@@ -120,6 +121,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	QDEL_LIST_ASSOC_VAL(plane_masters)
 	QDEL_LIST(screenoverlays)
 	mymob = null
+	QDEL_NULL(screentip_text)
 
 	return ..()
 
@@ -284,7 +286,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 		hand_slots["[i]"] = hand_box
 		hand_box.hud = src
 		static_inventory += hand_box
-		hand_box.update_icon()
+		hand_box.update_appearance()
 
 	var/i = 1
 	for(var/atom/movable/screen/swap_hand/SH in static_inventory)

@@ -126,8 +126,8 @@
 /*WS Begin - No Cobbychmes
 
 /datum/chemical_reaction/instabitaluri
-	results = list(/datum/reagent/medicine/C2/instabitaluri = 3)
-	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/C2/libital = 1)
+	results = list(/datum/reagent/medicine/c2/instabitaluri = 3)
+	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/carbon = 1, /datum/reagent/medicine/c2/libital = 1)
 
 WS End */
 

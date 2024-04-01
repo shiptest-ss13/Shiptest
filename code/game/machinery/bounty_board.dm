@@ -161,6 +161,7 @@ GLOBAL_LIST_EMPTY(request_list)
 	icon_state = "request_kiosk"
 	custom_materials = list(/datum/material/iron=14000, /datum/material/glass=8000)
 	result_path = /obj/machinery/bounty_board
+	inverse = FALSE
 
 /**
  * A combined all in one datum that stores everything about the request, the requester's account, as well as the requestee's account

@@ -1,10 +1,6 @@
 /datum/job/brig_phys
 	name = "Brig Physician"
-	total_positions = 1
-	spawn_positions = 1
 	minimal_player_age = 7
-	exp_requirements = 300
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Guide_to_Medicine" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/brig_phys
@@ -23,7 +19,6 @@
 	belt = /obj/item/pda/brig_phys
 	ears = /obj/item/radio/headset/headset_medsec/alt
 	uniform = /obj/item/clothing/under/rank/security/brig_phys
-	alt_uniform = /obj/item/clothing/under/rank/medical/doctor/red
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
@@ -33,20 +28,3 @@
 	l_hand = /obj/item/storage/firstaid/regular
 	head = /obj/item/clothing/head/soft/sec/brig_phys
 	implants = list(/obj/item/implant/mindshield)
-
-
-/datum/outfit/job/brig_phys/securitymedic
-	name = "Brig Physician (Security Medic)"
-
-	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt
-	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
-	suit_store = /obj/item/flashlight/pen
-	alt_suit = null
-
-/datum/outfit/job/brig_phys/executionsupervisor
-	name = "Brig Physician (Execution Supervisor)"
-
-	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt
-	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
-	l_pocket = /obj/item/reagent_containers/syringe
-	alt_suit = null

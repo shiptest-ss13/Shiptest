@@ -183,7 +183,12 @@
 #undef PATH_POWERCOIL
 #undef PATH_RPCOIL
 
-
+/obj/item/circuitboard/machine/tesla_ground
+	name = "Tesla Ground (Machine Board)"
+	icon_state = "engineering"
+	build_path = /obj/machinery/power/tesla_coil/tesla_ground
+	req_components = list(/obj/item/stock_parts/capacitor = 1)
+	needs_anchored = TRUE
 
 /obj/item/circuitboard/machine/cell_charger
 	name = "Cell Charger (Machine Board)"
@@ -678,6 +683,13 @@
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/vending_refill/donksoft = 1)
+/obj/item/circuitboard/machine/fax
+	name = "Fax Machine"
+	build_path = /obj/machinery/fax
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 1,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 1,)
 
 //Medical
 
@@ -690,6 +702,7 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
+		/obj/item/stack/sheet/bluespace_crystal = 1,
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
@@ -788,13 +801,6 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 4)
 
-/obj/item/circuitboard/machine/fat_sucker
-	name = "Lipid Extractor (Machine Board)"
-	icon_state = "medical"
-	build_path = /obj/machinery/fat_sucker
-	req_components = list(/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/kitchen/fork = 1)
-
 /obj/item/circuitboard/machine/harvester
 	name = "Harvester (Machine Board)"
 	icon_state = "medical"
@@ -805,23 +811,9 @@
 	name = "Medical Kiosk (Machine Board)"
 	icon_state = "medical"
 	build_path = /obj/machinery/medical_kiosk
-	var/custom_cost = 10
 	req_components = list(
 		/obj/item/healthanalyzer = 1,
 		/obj/item/stock_parts/scanning_module = 1)
-
-/obj/item/circuitboard/machine/medical_kiosk/multitool_act(mob/living/user)
-	. = ..()
-	var/new_cost = input("Set a new cost for using this medical kiosk.","New cost", custom_cost) as num|null
-	if(!new_cost || (loc != user))
-		to_chat(user, "<span class='warning'>You must hold the circuitboard to change its cost!</span>")
-		return
-	custom_cost = clamp(round(new_cost, 1), 10, 1000)
-	to_chat(user, "<span class='notice'>The cost is now set to [custom_cost].</span>")
-
-/obj/item/circuitboard/machine/medical_kiosk/examine(mob/user)
-	. = ..()
-	. += "The cost to use this kiosk is set to [custom_cost]."
 
 /obj/item/circuitboard/machine/limbgrower
 	name = "Limb Grower (Machine Board)"
@@ -1378,36 +1370,6 @@
 		/obj/item/stock_parts/scanning_module = 2,
 		/obj/item/stock_parts/micro_laser = 2)
 
-/obj/item/circuitboard/machine/deepcore/drill
-	name = "Deep Core Bluespace Drill (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/drill
-	req_components = list(
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/matter_bin = 1)
-
-/obj/item/circuitboard/machine/deepcore/hopper
-	name = "Bluespace Material Hopper (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/hopper
-	req_components = list(
-		/obj/item/stack/ore/bluespace_crystal = 2,
-		/obj/item/stock_parts/capacitor = 2,
-		/obj/item/stock_parts/manipulator = 2,
-		/obj/item/stock_parts/matter_bin = 2)
-	def_components = list(/obj/item/stack/ore/bluespace_crystal = /obj/item/stack/ore/bluespace_crystal/artificial)
-
-/obj/item/circuitboard/machine/deepcore/hub
-	name = "Deepcore Mining Control Hub (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/deepcore/hub
-	req_components = list(
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/micro_laser = 2,
-		/obj/item/stock_parts/matter_bin = 3,
-		/obj/item/stock_parts/manipulator = 2)
-
 //Misc
 /obj/item/circuitboard/machine/sheetifier
 	name = "Sheet-meister 2000 (Machine Board)"
@@ -1464,6 +1426,12 @@
 	req_components = list(/obj/item/stock_parts/capacitor = 3,
 		/obj/item/stock_parts/micro_laser = 3)
 
+/obj/item/circuitboard/machine/shuttle/engine/electric/bad
+	name = "Outdated Ion Thruster (Machine Board)"
+	build_path = /obj/machinery/power/shuttle/engine/electric/bad
+	req_components = list(/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stock_parts/micro_laser = 2)
+
 /obj/item/circuitboard/machine/shuttle/engine/expulsion
 	name = "Expulsion Thruster (Machine Board)"
 	build_path = /obj/machinery/power/shuttle/engine/fueled/expulsion
@@ -1502,4 +1470,42 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/cell = 3,
 		/obj/item/stock_parts/capacitor = 1
+	)
+
+/obj/item/circuitboard/machine/shuttle/smes/micro
+	name = "Micro Electric Engine Precharger (Machine Board)"
+	build_path = /obj/machinery/power/smes/shuttle/micro
+	req_components = list(
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/cell = 3,
+		/obj/item/stock_parts/capacitor = 2
+	)
+
+/obj/item/circuitboard/machine/printer
+	name = "Poster Printer (Machine Board)"
+	build_path = /obj/machinery/printer
+	req_components = list(
+		/obj/item/stock_parts/scanning_module = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/stock_parts/manipulator = 2,
+	)
+
+/obj/item/circuitboard/machine/coffeemaker
+	name = "Modello 3 Coffeemaker"
+	build_path = /obj/machinery/coffeemaker
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/micro_laser = 2,
+	)
+
+/obj/item/circuitboard/machine/coffeemaker/impressa
+	name = "Impressa Coffeemaker"
+	build_path = /obj/machinery/coffeemaker/impressa
+	req_components = list(
+		/obj/item/stack/sheet/glass = 1,
+		/obj/item/reagent_containers/glass/beaker = 2,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/micro_laser = 2,
 	)

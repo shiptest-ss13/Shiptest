@@ -10,6 +10,15 @@
 	var/receive_frequency = FREQ_ATMOS_ALARMS
 	var/datum/radio_frequency/radio_connection
 
+/obj/machinery/computer/atmos_alert/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_alert/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/atmos_alert/Initialize()
 	. = ..()
@@ -53,7 +62,7 @@
 				to_chat(usr, "<span class='notice'>Minor alarm for [zone] cleared.</span>")
 				minor_alarms -= zone
 				. = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/computer/atmos_alert/proc/set_frequency(new_frequency)
 	SSradio.remove_object(src, receive_frequency)
@@ -76,7 +85,7 @@
 		priority_alarms += zone
 	else if (severity == "minor")
 		minor_alarms += zone
-	update_icon()
+	update_appearance()
 	return
 
 /obj/machinery/computer/atmos_alert/update_overlays()
@@ -85,5 +94,6 @@
 		return
 	if(priority_alarms.len)
 		. += "alert:2"
-	else if(minor_alarms.len)
+		return
+	if(minor_alarms.len)
 		. += "alert:1"

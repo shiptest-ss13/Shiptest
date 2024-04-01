@@ -24,9 +24,7 @@
 	//The code below here isn't exactly optimal, but because of the individual decals that each area uses it's still applicable.
 
 				//high dirt - 1/3 chance.
-	var/static/list/high_dirt_areas = typecacheof(list(/area/mine/production,
-														/area/mine/living_quarters,
-														/area/ruin/space))
+	var/static/list/high_dirt_areas = typecacheof(list(/area/ruin/space))
 	if(is_type_in_typecache(A, high_dirt_areas))
 		new /obj/effect/decal/cleanable/dirt(src)	//vanilla, but it works
 		return

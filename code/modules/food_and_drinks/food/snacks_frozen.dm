@@ -222,14 +222,14 @@
 
 /obj/item/reagent_containers/food/snacks/popsicle/update_overlays()
 	. = ..()
-	if(bitecount)
-		. += "[initial(overlay_state)]_[min(bitecount, 3)]"
-	else
+	if(!bitecount)
 		. += initial(overlay_state)
+		return
+	. += "[initial(overlay_state)]_[min(bitecount, 3)]"
 
 /obj/item/reagent_containers/food/snacks/popsicle/On_Consume(mob/living/eater)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/popsicle_stick
 	name = "popsicle stick"
@@ -262,13 +262,13 @@
 	bonus_reagents = list(/datum/reagent/consumable/hot_coco = 4, /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 3, /datum/reagent/consumable/sugar = 2)
 	overlay_state = "jumbo"
 
-/obj/item/reagent_containers/food/snacks/popsicle/nogga_black
-	name = "nogga black"
-	desc = "A salty licorice icecream recently reintroduced due to all the records of the controversy being lost to time. Those who cannot remember the past are doomed to repeat it."
+/obj/item/reagent_containers/food/snacks/popsicle/licorice
+	name = "licorice icecream"
+	desc = "A salty licorice icecream."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sodiumchloride = 1,  /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 4)
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sodiumchloride = 1,  /datum/reagent/consumable/cream = 2, /datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/sugar = 4)
 	tastes = list("salty liquorice")
-	overlay_state = "nogga_black"
+	overlay_state = "licorice"
 
 /obj/item/reagent_containers/food/snacks/cornuto
 	name = "cornuto"

@@ -28,7 +28,18 @@
 #define LAZYADDASSOCLIST(L, K, V) if(!L) { L = list(); } L[K] += list(V);
 #define LAZYREMOVEASSOC(L, K, V) if(L) { if(L[K]) { L[K] -= V; if(!length(L[K])) L -= K; } if(!length(L)) L = null; }
 #define LAZYACCESSASSOC(L, I, K) L ? L[I] ? L[I][K] ? L[I][K] : null : null : null
+#define LAZYNULL(L) L = null
 #define QDEL_LAZYLIST(L) for(var/I in L) qdel(I); L = null;
+/// ORs two lazylists together without inserting errant nulls, returning a new list and not modifying the existing lists.
+#define LAZY_LISTS_OR(left_list, right_list)\
+	(length(left_list)\
+		? length(right_list)\
+			? (left_list | right_list)\
+			: left_list.Copy()\
+		: length(right_list)\
+			? right_list.Copy()\
+			: null\
+	)
 
 /// Performs an insertion on the given lazy list with the given key and value. If the value already exists, a new one will not be made.
 #define LAZYORASSOCLIST(lazy_list, key, value) \
@@ -239,6 +250,49 @@
 
 	return null
 
+/// Takes a weighted list (see above) and expands it into raw entries
+/// This eats more memory, but saves time when actually picking from it
+/proc/expand_weights(list/list_to_pick)
+	var/list/values = list()
+	for(var/item in list_to_pick)
+		var/value = list_to_pick[item]
+		if(!value)
+			continue
+		values += value
+
+	var/gcf = greatest_common_factor(values)
+
+	var/list/output = list()
+	for(var/item in list_to_pick)
+		var/value = list_to_pick[item]
+		if(!value)
+			continue
+		for(var/i in 1 to value / gcf)
+			output += item
+	return output
+
+/// Takes a list of numbers as input, returns the highest value that is cleanly divides them all
+/// Note: this implementation is expensive as heck for large numbers, I only use it because most of my usecase
+/// Is < 10 ints
+/proc/greatest_common_factor(list/values)
+	var/smallest = min(arglist(values))
+	for(var/i in smallest to 1 step -1)
+		var/safe = TRUE
+		for(var/entry in values)
+			if(entry % i != 0)
+				safe = FALSE
+				break
+		if(safe)
+			return i
+
+/// Pick a random element from the list and remove it from the list.
+/proc/pick_n_take(list/list_to_pick)
+	RETURN_TYPE(list_to_pick[_].type)
+	if(list_to_pick.len)
+		var/picked = rand(1,list_to_pick.len)
+		. = list_to_pick[picked]
+		list_to_pick.Cut(picked,picked+1) //Cut is far more efficient that Remove()
+
 // Allows picks with non-integer weights and also 0
 // precision 1000 means it works up to 3 decimal points
 /proc/pickweight_float(list/L, default=1, precision=1000)
@@ -256,14 +310,6 @@
 			return item
 
 	return null
-
-//Pick a random element from the list and remove it from the list.
-/proc/pick_n_take(list/L)
-	RETURN_TYPE(L[_].type)
-	if(L.len)
-		var/picked = rand(1,L.len)
-		. = L[picked]
-		L.Cut(picked,picked+1)			//Cut is far more efficient that Remove()
 
 //Returns the top(last) element from the list and removes it from the list (typical stack function)
 /proc/pop(list/L)
@@ -375,7 +421,7 @@
 		return (result + L.Copy(Li, 0))
 	return (result + R.Copy(Ri, 0))
 
-//Converts a bitfield to a list of numbers (or words if a wordlist is provided)
+///Converts a bitfield to a list of numbers (or words if a wordlist is provided)
 /proc/bitfield_to_list(bitfield = 0, list/wordlist)
 	var/list/r = list()
 	if(islist(wordlist))

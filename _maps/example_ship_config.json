@@ -6,6 +6,8 @@
 	"namelists": ["GENERAL", "SPACE", "MYTHOLOGICAL", "WEAPONS"],
 	"map_path": "_maps/shuttles/shiptest/null.dmm",
 	"limit": 2,
+	"spawn_time_coeff": 1.5,
+	"officer_time_coeff": 0.5,
 	"job_slots": {
 		"The First Slot will always be the 'captain' that the purchaser becomes.": {
 			"outfit": "/datum/outfit/job/captain",
@@ -18,5 +20,6 @@
 		},
 		"Assistant": 3
 	},
-	"enabled": true
+	"enabled": true,
+	"space_spawn": false
 }

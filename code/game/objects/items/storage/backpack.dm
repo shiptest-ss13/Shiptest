@@ -26,6 +26,7 @@
 	max_integrity = 300
 	greyscale_icon_state = "backpack"
 	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -61,14 +62,6 @@
 	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
 	STR.max_combined_w_class = 35
 
-/obj/item/storage/backpack/holding/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
-	user.dropItemToGround(src, TRUE)
-	user.Stun(100, ignore_canstun = TRUE)
-	sleep(20)
-	playsound(src, "rustle", 50, TRUE, -5)
-	qdel(user)
-
 /obj/item/storage/backpack/santabag
 	name = "Santa's Gift Bag"
 	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"
@@ -86,12 +79,8 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 60
 
-/obj/item/storage/backpack/santabag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit...</span>")
-	return (OXYLOSS)
-
 /obj/item/storage/backpack/santabag/proc/regenerate_presents()
-	addtimer(CALLBACK(src, .proc/regenerate_presents), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(regenerate_presents)), 30 SECONDS)
 
 	var/mob/M = get(loc, /mob)
 	if(!istype(M))
@@ -141,11 +130,6 @@
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
 	item_state = "securitypack"
-
-/obj/item/storage/backpack/security/cmm
-	name = "cmm backpack"
-	desc = "It's a very blue backpack."
-	icon_state = "cmmpack"
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
@@ -232,6 +216,7 @@
 	item_state = "satchel-norm"
 	greyscale_icon_state = "satchel"
 	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
@@ -295,11 +280,6 @@
 	icon_state = "satchel-sec"
 	item_state = "satchel-sec"
 
-/obj/item/storage/backpack/satchel/sec/cmm
-	name = "cmm satchel"
-	desc = "A robust satchel for anti-piracy related needs."
-	icon_state = "satchel-cmm"
-
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"
 	desc = "A robust satchel for stashing your loot."
@@ -346,16 +326,12 @@
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe,
 		/obj/item/clothing/under/syndicate/tacticool,
 		/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-		/obj/item/storage/fancy/cigarettes/cigpack_shadyjims,
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/clothing/neck/necklace/dope,
 		/obj/item/vending_refill/donksoft)
 	for(var/i in 1 to 2)
 		var/ctype = pick(contraband)
 		new ctype(src)
-
-/obj/item/storage/backpack/satchel/flat/with_drip/PopulateContents()
-	new /obj/item/clothing/under/drip(src)
 
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/plasteel(src)
@@ -684,10 +660,9 @@
 		new /obj/item/grenade/c4/x4(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/firestarter
-	desc = "A large duffel bag containing a New Russian pyro backpack sprayer, Elite hardsuit, a Stechkin APS pistol, minibomb, ammo, and other equipment."
+	desc = "A large duffel bag containing a pyro backpack sprayer, Elite hardsuit, a Stechkin APS pistol, minibomb, ammo, and other equipment."
 
 /obj/item/storage/backpack/duffelbag/syndie/firestarter/PopulateContents()
-	new /obj/item/clothing/under/syndicate/soviet(src)
 	new /obj/item/watertank/op(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
 	new /obj/item/gun/ballistic/automatic/pistol/APS(src)

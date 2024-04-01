@@ -195,7 +195,7 @@ Charged extracts:
 
 /obj/item/slimecross/charged/gold/do_effect(mob/user)
 	user.visible_message("<span class='warning'>[src] starts shuddering violently!</span>")
-	addtimer(CALLBACK(src, .proc/startTimer), 50)
+	addtimer(CALLBACK(src, PROC_REF(startTimer)), 50)
 
 /obj/item/slimecross/charged/gold/proc/startTimer()
 	START_PROCESSING(SSobj, src)
@@ -220,7 +220,7 @@ Charged extracts:
 
 /obj/item/slimecross/charged/oil/do_effect(mob/user)
 	user.visible_message("<span class='danger'>[src] begins to shake with rapidly increasing force!</span>")
-	addtimer(CALLBACK(src, .proc/boom), 50)
+	addtimer(CALLBACK(src, PROC_REF(boom)), 50)
 
 /obj/item/slimecross/charged/oil/proc/boom()
 	explosion(get_turf(src), 2, 3, 4) //Much smaller effect than normal oils, but devastatingly strong where it does hit.
@@ -258,12 +258,7 @@ Charged extracts:
 
 /obj/item/slimecross/charged/adamantine
 	colour = "adamantine"
-	effect_desc = "Creates a completed golem shell."
-
-/obj/item/slimecross/charged/adamantine/do_effect(mob/user)
-	user.visible_message("<span class='notice'>[src] produces a fully formed golem shell!</span>")
-	new /obj/effect/mob_spawn/human/golem/servant(get_turf(src), /datum/species/golem/adamantine, user)
-	..()
+	effect_desc = "Does nothing. Sorry :)"
 
 /obj/item/slimecross/charged/rainbow
 	colour = "rainbow"

@@ -7,10 +7,11 @@
 
 /obj/item/clothing/under/color/jumpskirt
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
+	can_adjust = TRUE
 
 /obj/item/clothing/under/color/random
 	icon_state = "random_jumpsuit"
+	mob_overlay_state = "rainbow" // if you somehow equip it like that
 
 /obj/item/clothing/under/color/random/Initialize()
 	..()
@@ -24,6 +25,7 @@
 
 /obj/item/clothing/under/color/jumpskirt/random
 	icon_state = "random_jumpsuit"		//Skirt variant needed
+	mob_overlay_state = "rainbow"
 
 /obj/item/clothing/under/color/jumpskirt/random/Initialize()
 	..()
@@ -160,7 +162,6 @@
 	name = "teal jumpskirt"
 	icon_state = "teal_skirt"
 	item_state = "b_suit"
-
 
 /obj/item/clothing/under/color/lightpurple
 	name = "purple jumpsuit"

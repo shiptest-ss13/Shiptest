@@ -4,7 +4,6 @@
 #define ALL (~0) //For convenience.
 #define NONE 0
 
-
 GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768))
 
 /* Directions */
@@ -26,6 +25,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define OVERLAY_QUEUED_1 (1<<8)
 /// item has priority to check when entering or leaving
 #define ON_BORDER_1 (1<<9)
+//Whether or not this atom shows screentips when hovered over
+#define NO_SCREENTIPS_1 (1<<10)
 /// Prevent clicking things below it on the same turf eg. doors/ fulltile windows
 #define PREVENT_CLICK_UNDER_1 (1<<11)
 #define HOLOGRAM_1 (1<<12)
@@ -45,6 +46,23 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define SHOW_BEHIND_LARGE_ICONS_1 (1<<12)
 /// Should we use the initial icon for display? Mostly used by overlay only objects
 #define HTML_USE_INITAL_ICON_1 (1<<20)
+
+// Update flags for [/atom/proc/update_appearance]
+/// Update the atom's name
+#define UPDATE_NAME (1<<0)
+/// Update the atom's desc
+#define UPDATE_DESC (1<<1)
+/// Update the atom's icon state
+#define UPDATE_ICON_STATE (1<<2)
+/// Update the atom's overlays
+#define UPDATE_OVERLAYS (1<<3)
+/// Update the atom's greyscaling
+#define UPDATE_GREYSCALE (1<<4)
+/// Update the atom's smoothing. (More accurately, queue it for an update)
+#define UPDATE_SMOOTHING (1<<5)
+/// Update the atom's icon
+#define UPDATE_ICON (UPDATE_ICON_STATE|UPDATE_OVERLAYS)
+
 
 //turf-only flags
 #define NOJAUNT_1 (1<<0)
@@ -79,10 +97,8 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define HIDDEN_AREA (1<<6)
 /// If false, loading multiple maps with this area type will create multiple instances.
 #define UNIQUE_AREA (1<<7)
-/// If people are allowed to suicide in it. Mostly for OOC stuff like minigames
-#define BLOCK_SUICIDE (1<<8)
 /// Can the Xenobio management console transverse this area by default?
-#define XENOBIOLOGY_COMPATIBLE (1<<9)
+#define XENOBIOLOGY_COMPATIBLE (1<<8)
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
@@ -122,6 +138,10 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define INDESTRUCTIBLE (1<<6)
 /// can't be frozen
 #define FREEZE_PROOF (1<<7)
+/// Should this object not be destroyed when a shuttle lands on it?
+#define LANDING_PROOF (1<<8)
+/// Should this object be able to be in hyperspace without being deleted?
+#define HYPERSPACE_PROOF (1<<9)
 
 //tesla_zap
 #define ZAP_MACHINE_EXPLOSIVE (1<<0)
@@ -133,6 +153,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 
 #define ZAP_DEFAULT_FLAGS ZAP_MACHINE_EXPLOSIVE | ZAP_ALLOW_DUPLICATES | ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
 #define ZAP_FUSION_FLAGS ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
+#define ZAP_STORM_FLAGS ZAP_OBJ_DAMAGE | ZAP_MOB_DAMAGE | ZAP_MOB_STUN
 
 #define ZAP_SUPERMATTER_FLAGS ZAP_GIVES_RESEARCH
 #define ZAP_TESLA_FLAGS ZAP_DEFAULT_FLAGS | ZAP_GIVES_RESEARCH

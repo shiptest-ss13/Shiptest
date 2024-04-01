@@ -1,0 +1,271 @@
+2023-06-22:
+  Any%, Ryester, Azlan, Quantum M:
+  - rscadd: New wall sprites
+  - rscadd: New airlock sprite
+  - rscadd: New a lot of fucking sprites, see https://github.com/shiptest-ss13/Shiptest/pull/1838
+      for more information
+  - rscadd: Updates almost every map in the game to fit any% walls
+  - rscadd: Dwayne has been updated
+  Apogee-dev:
+  - rscdel: Disabled the Cricket
+  - tweak: Updated Talos with new assets, adjusted engine and job slots
+  - rscadd: Added a Master-at-Arms to the Colossus
+  - tweak: Redesigned the Colossus's armory
+  - rscadd: Added the Inteq SsG-04 marksman rifle
+  - tweak: Improved IRMG gunsprites
+  - rscdel: Removed the Lamia-class wizard ship
+  - rscdel: Removed the Solar-class
+  - rscdel: Removed the HighTide and TrunkTide
+  - rscdel: deprecated the Tide
+  - balance: Fixes RnD balance
+  - rscdel: Disabled research nodes for nanites
+  AverageUser67:
+  - balance: you can actually recycle syndicate walls now
+  - bugfix: eluzose no longer have ethereal meat, or any kind of meat at all
+  BarteG44:
+  - rscadd: Added carp spawner
+  - tweak: Reworked the fishing hut ruin
+  - tweak: tweaked the modern railing sprite
+  - rscadd: Added Pizza cutters
+  - rscadd: Added black and purple office chairs
+  - tweak: tweaked how racks stack items
+  - tweak: renames armbands from departments to their colors and adds them to clothes
+      vendors
+  - tweak: made utility belts able to hold decal painters and etc.
+  - tweak: adds a little more variety to the chem table sprite
+  - tweak: makes the decal painter's decals more resistant to cleaning
+  - bugfix: fixed being unable to make and color modern railings
+  - bugfix: fixed up some tiles on the box and li tieguai class
+  - bugfix: fixes a typo on the box class engine shutter and reworks it's bathroom
+  - bugfix: fixes the justice helmet at last. rejoice!
+  - bugfix: fixed belts not appearing on player sprites
+  - bugfix: fixed decal painter's decals not getting colored
+  Bjarl:
+  - tweak: The MOTD has been updated
+  - balance: Cryopods now apply a range of effects to you when you wake up.
+  - tweak: The Kansatsu-Class is now available for spawning.
+  - rscdel: The tide has lost R&D, its medical gear, and the RCD/RPD
+  - tweak: The BYO has been made Aspawn
+  - rscadd: Chickens will now infrequently spawn on jungle planets
+  - rscdel: Radios no longer tell you the job of people using them
+  - code_imp: solgov sabre belts are now a subtype of sabre belts
+  - imageadd: sabre sprites from tg, originally done by eris, touched up by imaginos,
+      redone by viro, and then ported here by me.
+  - imageadd: sabre belt inhands, done by InGorer for /tg/ station
+  - tweak: tendrils no longer emit a GPS signal. Go out and explore!
+  - rscadd: Sand Planet hermits now have randomized inventories. And Hair. Sometimes.
+  - rscadd: Sand Planet hermits can now drop different races
+  - rscadd: legions will now drop a variety of species
+  - balance: drop rates for legions have been changed in a few spots.
+  - bugfix: hivelord.dm no longer sears my eyes out.
+  - rscdel: away mission templates
+  - rscadd: Tendrils now spawn from a list of creatures, instead of mono-creature,
+      with different levels of danger having a chance to spawn.
+  - balance: Demonic Portal Loot has been rebalanced.
+  - rscadd: More Ship Names
+  - rscdel: Everything Deepcore Mining
+  - rscadd: Waste planets now generate with biomes, please report any weirdness.
+  BogCreature:
+  - rscadd: TG fishing minigame
+  - rscadd: Aquariums
+  - rscadd: The ability to fish on beach, lava, and jungle planets
+  - rscadd: New outpost missions
+  - rscadd: New fishing related outpost crates
+  - rscdel: Removed flying fish from beach planets and made them into actual fish
+  - tweak: Increased the amount of outpost missions that generate at once from 15
+      to 20
+  - refactor: Refactored beam code to use signals
+  Bokkiewokkie:
+  - admin: Renaming ships is now recorded in the admin log
+  Ebin-Halcyon:
+  - imageadd: IRMG clothing has been resprited with a cleaner color palette.
+  - rscadd: an IRMG spacesuit and an alternative drop pouch webbing sprite. currently
+      not in game but will be down the line.
+  FalloutFalcon:
+  - rscadd: Trickwines
+  - rscadd: Breakaway flasks!
+  - rscadd: Basic Trickwine brewing equipment to the SRM glaive
+  - imageadd: Sprites for breakaway flasks along with trick wine icons for them!
+  - code_imp: Breakaway_flask_icon_state = null used for the same purpose as the glass
+      and shot glass versions
+  Fulgro:
+  - rscdel: booty borg code
+  - rscdel: booty borg sprites
+  Hibou48888:
+  - tweak: reduced Kilo crew count from 8 to 5, removed Foreman
+  - code_imp: multitools now change the alt+click behavior of an ORM
+  - tweak: ORMs can now have their input and output tiles onto the same tile, or two
+      tiles at a right angle, as well as the old behavior of having them on opposite
+      sides of the machine
+  Latentish:
+  - rscadd: Adds a mimir (sleepy)
+  - code_imp: adds some supporting code for the mimir (sleepy)
+  - tweak: disables the Mimir class
+  MarkSuckerberg:
+  - admin: Adds ship purchasing bans.
+  - bugfix: Ships can no longer burn while docked to something.
+  Merlin1230:
+  - bugfix: Fixed the Colonial Minuteman General Coat's worn sprite, so it actually
+      shows up
+  Nitha:
+  - rscadd: Cleaning now has an effect and sound.
+  - tweak: Various cleanbot improvements.
+  NithaTheTired:
+  - rscadd: you can now buckle to things while on adjacent tiles
+  - bugfix: fixed a bug where you could climb the table you are standing on
+  - rscadd: Allows pixel shifted players to not be pushed around depending on direction.
+  Orchidthederg:
+  - tweak: Replaced Bar Tables in all maps where present
+  PigeonVerde#8826:
+  - rscadd: Added double beds
+  - rscadd: Ports mothplushies from Beestation
+  - rscadd: Ports flushedplush from Beestation
+  PositiveEntropy:
+  - imageadd: SolGov stamps are now a thing! Use them to give your documentation some
+      Solarian approval!
+  - rscadd: You can now put halberds on your back slot!
+  - bugfix: Adjusted some outfit code further, making it all fully functional *and*
+      compliant!
+  - balance: The SolGov vacsuit now has a more environmental protection focus and
+      the SolGov hardsuit had its radiation protection toned down.
+  - rscdel: Removes several unused floor types, as well as completely annihilating
+      the "monofloor" and "dirty" floor types, and the "edge" decal type.
+  - imageadd: Redoes the floors using the TileTest tileset!
+  PositiveEntropy, MarkSuckerberg, TetraZeta, PiperDoots:
+  - rscadd: The start of new SolGov! Expect a new and improved SolGov to now roam
+      the frontier!
+  - rscdel: Removes many old jobs and content related to Old Solgov.
+  - rscdel: Fully deprecates the Cricket-Class.
+  - rscdel: Fully deprecates the Liberty-Class.
+  - code_imp: Adds the worn_y_offset variable, making offsetting hats much easier.
+  PositiveEntropy, PiperDoots:
+  - imageadd: Resprites the SolGov letter opener!
+  - imageadd: Adds Solarian Sabres!
+  - imageadd: Adds SolGov and TerraGov folders!
+  - imageadd: New floor decals for SolGov have been added!
+  PositiveEntropy, PiperDoots, TripleZeta:
+  - imageadd: New SolGov jobs now exist, as well as respective equipment for them!
+  - imageadd: The SolGov Seal and Flag have been added and remade!
+  - code_imp: A new IFF flag has been added for SolGov, making those turrets able
+      to target non-SolGov aligned people!
+  - rscdel: Removes even more old SolGov content. Good riddance.
+  SirConway:
+  - bugfix: changed the RIG heat suit to use its own helmet instead of the prototype's
+  Stiel0248, Positive entropy:
+  - imageadd: Resprites the flyswatter
+  Zevotech:
+  - rscadd: The energy halberd, a previously unfinished weapon. Comes in 5 colors
+      and a hacked rainbow version.
+  - bugfix: Rainbow energy weapon sprites now actually follow rainbow order
+  - bugfix: Syndicate Battle Dome (provinggrounds.dmm) should now have a functional
+      SMES and airlocks/blast doors.
+  - bugfix: Syndicate Battle Dome (provinggrounds.dmm) no longer has ~20 black box
+      recorders and now only has one.
+  axelzonvolt:
+  - tweak: rewrote the config.jsons for the meta, boyardee and box-class ships to
+      enforce proper headset pathing instead of resorting to default path, which is
+      NT apparently?
+  dragomagol:
+  - bugfix: alien tools have working icon states
+  goober3:
+  - bugfix: Plasteel stairs have regained their shade.
+  meemofcourse:
+  - tweak: Reworks the Twinkleshine
+  - rscadd: Added observer_start landmarks to all ships
+  mystery3525:
+  - rscadd: Gave engineering cyborgs their own shuttle manipulation blueprints
+  - tweak: moved the skipper's pipes
+  - tweak: added more admin-relevant features to the Shuttle Manipulator
+  - bugfix: removed repeat in the Shuttle Manipulator
+  phoaly:
+  - rscadd: Added shipturfs
+  - rscdel: Old planetary turf subtypes
+  - bugfix: Fixed water turfs runtiming when hit with a bat
+  - bugfix: Replaced tiles on the Glaive and Shepherd
+  - tweak: Swapped the montagnes ID
+  - tweak: Nerfed Glaive mining gear
+  retlaw34:
+  - rscadd: Changes the airlock sounds
+  - rscadd: New hydroponic tray sprites
+  - rscadd: Adds 2 new posters
+  - bugfix: Some posters were fixed and tweaked.
+  spockye:
+  - rscadd: Adds the Beluga class transport
+  - tweak: replaced the seed vendor on the ember with the broken variant and some
+      scattered seeds
+  - bugfix: fixed some things on the Cepheus class
+  - rscadd: adds the pirate_cutter
+  - rscadd: adds the scar suit
+  - rscadd: misc frontiersmen jobs
+  - rscadd: Ports updated food container sprites from TG
+  - rscadd: Ports the BLT from TG
+  - bugfix: fixed small jungle trees spawning with false icon states
+  - rscdel: Removed seed vendor restock from the mimir class
+  stiel#0248:
+  - rscadd: Added seaweed / seaweedsheets / seaweed seeds
+  - rscadd: Added freegrowing seaweed patches (only in beach planet waters)
+  - rscadd: Added new sushi dishes (vegetariansushiroll/spicysushiroll/nigirisushi/fishi)
+  - rscadd: Added new misc dishes (onigiri/eggrolls)
+  thgvr:
+  - imageadd: Most of the old hardsuits have been resprited
+  - rscadd: Elzu now bleed, but do not have Liquid Electricity reagent as blood. (will
+      be changed in the future)
+  - rscadd: IPCs now "bleed" by leaking coolant
+  - rscadd: Sarathi now have teal-colored blood.
+  - rscadd: Blood will now dry over time
+  - rscadd: New bloody footprint sprites from bay
+  - refactor: Refactors a lot of blood code
+  - rscadd: Examining and other chat outputs now display in blocks to make them easier
+      to see
+  - rscadd: Being on harm intent will cause your character to face your mouse.
+  - rscdel: PDAs, Modcomps, AIs, and pAIs no longer have a crew manifest option.
+  - bugfix: Sarathi and Elzu tails/bits wont be eaten by suits anymore
+  - spellcheck: Fixed some grammar inconsistencies with Elzuosa/Elzuose
+  - balance: Engine prechargers now start with a 5kw charge leve.
+  - rscadd: Sarathi accents speaking Common are now a little more thick.
+  - balance: Cryo sleep will now make you nauseous and hungry when you wake up.
+  - balance: Goliaths, Ice whelps, and Whitesands basilisks should be easier to kill
+      now. Try AP ammo.
+  - balance: Crushers no longer drop from legion bodies, only old crushers.
+  - balance: Tweaked how crushers distribute their damage.
+  - balance: Survivor suits no longer make you run at hyperspeed
+  - balance: Laser weaponry should be a little more effective versus most common fauna.
+  - bugfix: Added a sound to help show when a whitesands basilisk absorbs a bullet
+  - rscdel: Removed maid box in loadout
+  - rscadd: Attack animations are now functional
+  tmtmtl30:
+  - tweak: Lava planets have been cooled below plasma's ignition temperature.
+2023-06-24:
+  phoaly:
+  - rscadd: Added descriptions to all jsons
+  - rscadd: Added tags to all ship jsons
+  - rscadd: Added Ship Tags and descriptions to the ship purchase/join/shuttle manipulator
+      menus
+  - rscadd: Added tag manipulation to the ship editor
+  - tweak: Tweaks the UI of the shuttle manipulator
+2023-06-25:
+  Bjarl:
+  - rscadd: Vela-Class Industrial Cruiser, a large CMM Ship built around mechs and
+      mining
+  PrefabQuasar:
+  - rscadd: added the Junker-class salvage(d) ship
+  - rscadd: added the reployer
+  - rscdel: removed the trunktide (older version of the junker)
+2023-06-27:
+  Bjarl:
+  - bugfix: chicken flocks will now spawn
+  tmtmtl30:
+  - bugfix: Different planets should hopefully no longer repeatedly generate in the
+      exact same part of the map, overwriting each other and causing double-dock SGTs.
+2023-06-28:
+  Arturlang:
+  - bugfix: Prettier should now work on VSCode again.
+  thgvr:
+  - rscadd: The Solarian Marine Society has begun mass production of a cute, marketable
+      plushie of their mascot. May be favored by vampires. Sprites by INFRARED_BARON.
+  - bugfix: Potentially fixed a lot of lag related to pipes
+2023-06-30:
+  axelzonvolt:
+  - tweak: actually adds shaft miner outfit pathing to the meta-class.json
+  linkylink21:
+  - bugfix: Added Missing APCs to the Osprey

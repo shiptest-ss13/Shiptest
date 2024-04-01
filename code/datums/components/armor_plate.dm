@@ -9,11 +9,11 @@
 	if(!isobj(parent))
 		return COMPONENT_INCOMPATIBLE
 
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/examine)
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/applyplate)
-	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, .proc/dropplates)
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examine))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(applyplate))
+	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, PROC_REF(dropplates))
 	if(istype(parent, /obj/mecha/working/ripley))
-		RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, .proc/apply_mech_overlays)
+		RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(apply_mech_overlays))
 
 	if(_maxamount)
 		maxamount = _maxamount
@@ -72,7 +72,7 @@
 
 	if(ismecha(O))
 		var/obj/mecha/R = O
-		R.update_icon()
+		R.update_appearance()
 		to_chat(user, "<span class='info'>You strengthen [R], improving its resistance against melee, bullet and laser damage.</span>")
 	else
 		to_chat(user, "<span class='info'>You strengthen [O], improving its resistance against melee attacks.</span>")

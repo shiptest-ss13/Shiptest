@@ -1,11 +1,7 @@
 /datum/job/officer
 	name = "Security Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
-	total_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 5 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	minimal_player_age = 7
-	exp_requirements = 300
-	exp_type = EXP_TYPE_CREW
 	wiki_page = "Space_Law" //WS Edit - Wikilinks/Warning
 
 	outfit = /datum/outfit/job/security
@@ -91,7 +87,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1) //WS edit - security rearming
+	backpack_contents = null //WS edit - security rearming // SHIPTEST EDIT - security re-disarming. certified whitesands moment.
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -103,172 +99,3 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
-
-//Shiptest outfits begin
-
-/datum/outfit/job/security/solgov
-	name = "Boarding Specialist (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov
-	accessory = /obj/item/clothing/accessory/armband
-	shoes = /obj/item/clothing/shoes/combat
-	head = /obj/item/clothing/head/helmet/solgov
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof/solgov
-
-/datum/outfit/job/security/solgov/rebel
-	name = "Boarding Specialist (Deserter)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-
-/datum/outfit/job/security/solgov/elite
-	name = "Marine (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov/elite
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-
-	backpack = /obj/item/storage/backpack/ert/security
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher/solgov=1)
-
-/datum/outfit/job/security/marine
-	name = "Marine (SolGov)"
-
-	uniform = /obj/item/clothing/under/solgov/elite
-	shoes = /obj/item/clothing/shoes/combat/swat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-
-	backpack = /obj/item/storage/backpack/ert/security
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher/solgov=1)
-
-/datum/outfit/job/security/pirate
-	name = "Buccaneer (Pirate)"
-
-	uniform = /obj/item/clothing/under/syndicate/camo
-	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/bandana
-	suit = /obj/item/clothing/suit/armor/vest
-
-/datum/outfit/job/security/corporate
-	name = "Corporate Security"
-
-	uniform = /obj/item/clothing/under/syndicate/combat
-	shoes = /obj/item/clothing/shoes/jackboots
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	head = /obj/item/clothing/head/beret/sec/officer
-	suit = /obj/item/clothing/suit/armor/vest/security/officer
-
-/datum/outfit/job/security/western
-	name = "Security Detail (Western)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/blueshirt
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/jackboots
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	head = /obj/item/clothing/head/cowboy/sec
-
-/datum/outfit/job/security/minutemen
-	name = "Minuteman (Colonial Minutemen)"
-
-	head = /obj/item/clothing/head/helmet/bulletproof/minutemen
-	mask = /obj/item/clothing/mask/gas/sechailer/minutemen
-	suit = /obj/item/clothing/suit/armor/vest/bulletproof
-	uniform = /obj/item/clothing/under/rank/security/officer/minutemen
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/combat
-
-	belt = /obj/item/storage/belt/military
-
-	l_pocket = /obj/item/flashlight/seclite
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-
-	backpack = /obj/item/storage/backpack/security/cmm
-	box = /obj/item/storage/box/survival/engineer/radio
-	backpack_contents = null
-
-/datum/outfit/job/security/minutemen/naked
-	name = "Minuteman (Colonial Minutemen) (Naked)"
-
-	head = null
-	suit = null
-	mask = null
-	shoes = null
-	gloves = null
-	ears = null
-
-	belt = null
-
-	l_pocket = null
-	r_pocket = null
-
-/datum/outfit/job/security/minutemen/armed
-	name = "Minuteman (Colonial Minutemen) (Armed)"
-
-	suit_store = /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
-	belt = /obj/item/storage/belt/military/minutemen
-
-/datum/outfit/job/security/minutemen/mechpilot
-	name = "Mech Pilot  (Colonial Minutemen)"
-
-	suit = /obj/item/clothing/suit/armor/vest/alt
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	glasses = /obj/item/clothing/glasses/hud/diagnostic
-
-	backpack_contents = list(/obj/item/melee/classic_baton=1, /obj/item/gun/ballistic/automatic/pistol/commander=1, /obj/item/restraints/handcuffs=1)
-
-/datum/outfit/job/security/inteq
-	name = "IRMG Enforcer (Inteq)"
-
-	head = /obj/item/clothing/head/helmet/inteq
-	suit = /obj/item/clothing/suit/armor/vest/alt
-	belt = /obj/item/storage/belt/security/webbing/inteq
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
-	uniform = /obj/item/clothing/under/syndicate/inteq
-	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	shoes = /obj/item/clothing/shoes/combat
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	gloves = /obj/item/clothing/gloves/combat
-
-	courierbag = /obj/item/storage/backpack/messenger/inteq
-	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/ammo_box/magazine/co9mm=1, /obj/item/gun_voucher=1,/obj/item/pda/security)
-
-/datum/outfit/job/security/inteq/naked
-	name = "IRMG Enforcer (Inteq) (Naked)"
-	head = null
-	suit = null
-	belt = null
-	mask = null
-	gloves = null
-
-/datum/outfit/job/security/nanotrasen
-	name = "Security Officer (Nanotrasen)"
-
-	uniform = /obj/item/clothing/under/rank/security/officer/nt
-	alt_uniform = null
-
-/datum/outfit/job/security/roumain
-	name = "Hunter (Saint-Roumain Militia)"
-
-	uniform = /obj/item/clothing/under/suit/roumain
-	alt_uniform = null
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/armor/roumain
-
-	head = /obj/item/clothing/head/cowboy/sec/roumain
-	gloves = null
-	backpack = /obj/item/storage/backpack
-	satchel  = /obj/item/storage/backpack/satchel
-	duffelbag = /obj/item/storage/backpack/duffelbag
-	courierbag = /obj/item/storage/backpack/messenger
-	backpack_contents = null
-
-/datum/outfit/job/security/syndicate/gorlex
-	name = "Syndicate Battlecruiser Assault Operative"
-	uniform = /obj/item/clothing/under/syndicate
-	r_pocket = /obj/item/kitchen/knife/combat/survival
-	belt = /obj/item/storage/belt/military
-	back = /obj/item/storage/backpack
-	suit = /obj/item/clothing/suit/armor/vest
-	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1)
-
-//Shiptest outfits end

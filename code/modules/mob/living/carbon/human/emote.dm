@@ -67,11 +67,60 @@
 			return pick('sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg', 'sound/voice/human/malescream_6.ogg')
 	else if(ismoth(H))
 		return 'sound/voice/moth/scream_moth.ogg'
-	else if(issquidperson(H)) //WS squids go blubbblp
-		return 'sound/voice/squid/squidscream.ogg'
 	else if(islizard(H))
 		return pick('sound/voice/lizard/lizard_scream_1.ogg', 'sound/voice/lizard/lizard_scream_2.ogg', 'sound/voice/lizard/lizard_scream_3.ogg', 'sound/voice/lizard/lizard_scream_4.ogg')
 
+/datum/emote/living/carbon/human/hiss //lizard
+	key = "hiss"
+	key_third_person = "hisses"
+	message = "hisses!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/hiss/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/hiss.ogg'
+
+/datum/emote/living/carbon/human/squeal //lizard
+	key = "squeal"
+	key_third_person = "squeals"
+	message = "squeals!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/squeal/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/squeal.ogg' //This is from Bay
+
+/datum/emote/living/carbon/human/tailthump //lizard
+	key = "thump"
+	key_third_person = "thumps their tail"
+	message = "thumps their tail!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/tailthump/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/tailthump.ogg' //https://freesound.org/people/TylerAM/sounds/389665/
+
+/datum/emote/living/carbon/human/weh //lizard
+	key = "weh"
+	key_third_person = "lets out a weh"
+	message = "lets out a weh!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/human/weh/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(islizard(user))
+		return 'sound/voice/lizard/weh.ogg'
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"
@@ -174,8 +223,6 @@
 		var/turf/T = loc
 		T.Entered(src)
 
-//Ayy lmao
-
 // Robotic Tongue emotes. Beep!
 
 /datum/emote/living/carbon/human/robot_tongue/can_run_emote(mob/user, status_check = TRUE , intentional)
@@ -222,6 +269,15 @@
 	if(..())
 		playsound(user.loc, 'sound/machines/chime.ogg', 50)
 
+/datum/emote/living/carbon/human/robot_tongue/no
+	key = "no"
+	key_third_person = "no"
+	message = "emits an negative blip."
+
+/datum/emote/living/carbon/human/robot_tongue/no/run_emote(mob/user, params)
+	if(..())
+		playsound(user.loc, 'sound/machines/synth_no.ogg', 50)
+
 /datum/emote/living/carbon/human/robot_tongue/ping
 	key = "ping"
 	key_third_person = "pings"
@@ -232,28 +288,32 @@
 	if(..())
 		playsound(user.loc, 'sound/machines/ping.ogg', 50)
 
-// Clown Robotic Tongue ONLY. Henk.
+/datum/emote/living/carbon/human/robot_tongue/warn
+	key = "warn"
+	key_third_person = "warn"
+	message = "blares an alarm!"
 
-/datum/emote/living/carbon/human/robot_tongue/clown/can_run_emote(mob/user, status_check = TRUE , intentional)
-	if(!..())
-		return FALSE
-	if(user.mind.assigned_role == "Clown")
-		return TRUE
-
-/datum/emote/living/carbon/human/robot_tongue/clown/honk
-	key = "honk"
-	key_third_person = "honks"
-	message = "honks."
-
-/datum/emote/living/carbon/human/robot_tongue/clown/honk/run_emote(mob/user, params)
+/datum/emote/living/carbon/human/robot_tongue/warn/run_emote(mob/user, params)
 	if(..())
-		playsound(user.loc, 'sound/items/bikehorn.ogg', 50)
+		playsound(user.loc, 'sound/machines/warning-buzzer.ogg', 50)
 
-/datum/emote/living/carbon/human/robot_tongue/clown/sad
+/datum/emote/living/carbon/human/robot_tongue/yes
+	key = "yes"
+	key_third_person = "yes"
+	message = "emits an affirmative blip."
+
+/datum/emote/living/carbon/human/robot_tongue/yes/run_emote(mob/user, params)
+	if(..())
+		playsound(user.loc, 'sound/machines/synth_yes.ogg', 50)
+
+// the following emote were originally clown-locked and synthetic exclusive
+// since clowns have been removed I see no reason to let it collect dust
+
+/datum/emote/living/carbon/human/robot_tongue/sad
 	key = "sad"
 	key_third_person = "plays a sad trombone..."
 	message = "plays a sad trombone..."
 
-/datum/emote/living/carbon/human/robot_tongue/clown/sad/run_emote(mob/user, params)
+/datum/emote/living/carbon/human/robot_tongue/sad/run_emote(mob/user, params)
 	if(..())
 		playsound(user.loc, 'sound/misc/sadtrombone.ogg', 50)

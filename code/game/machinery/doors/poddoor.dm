@@ -5,7 +5,7 @@
 	icon_state = "closed"
 	var/id = 1
 	layer = BLASTDOOR_LAYER
-	closingLayer = CLOSED_BLASTDOOR_LAYER
+	closingLayer = BLASTDOOR_LAYER
 	sub_door = TRUE
 	explosion_block = 3
 	heat_proof = TRUE
@@ -16,8 +16,9 @@
 	damage_deflection = 70
 	poddoor = TRUE
 	assemblytype = /obj/structure/poddoor_assembly
-	var/open_sound = 'sound/machines/blastdoor.ogg'
-	var/close_sound = 'sound/machines/blastdoor.ogg'
+	smoothing_groups = list(SMOOTH_GROUP_AIRLOCK)
+	var/open_sound = 'sound/machines/airlocks/blastdoor.ogg'
+	var/close_sound = 'sound/machines/airlocks/blastdoor.ogg'
 
 /obj/machinery/door/poddoor/attackby(obj/item/W, mob/user, params)
 	. = ..()
@@ -62,8 +63,9 @@
 		assembly.state = AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS
 		assembly.created_name = name
 		assembly.update_name()
-		assembly.update_icon()
+		assembly.update_appearance()
 		assembly.welded = TRUE
+		assembly.dir = dir
 		new /obj/item/electronics/airlock(loc)
 	qdel(src)
 
@@ -88,9 +90,9 @@
 /obj/machinery/door/poddoor/shuttledock/proc/check()
 	var/turf/T = get_step(src, checkdir)
 	if(!istype(T, turftype))
-		INVOKE_ASYNC(src, .proc/open)
+		INVOKE_ASYNC(src, PROC_REF(open))
 	else
-		INVOKE_ASYNC(src, .proc/close)
+		INVOKE_ASYNC(src, PROC_REF(close))
 
 /obj/machinery/door/poddoor/incinerator_toxmix
 	name = "Combustion Chamber Vent"
@@ -104,13 +106,6 @@
 	name = "Combustion Chamber Vent"
 	id = INCINERATOR_ATMOS_AUXVENT
 
-/obj/machinery/door/poddoor/incinerator_syndicatelava_main
-	name = "turbine vent"
-	id = INCINERATOR_SYNDICATELAVA_MAINVENT
-
-/obj/machinery/door/poddoor/incinerator_syndicatelava_aux
-	name = "Combustion Chamber Vent"
-	id = INCINERATOR_SYNDICATELAVA_AUXVENT
 
 /obj/machinery/door/poddoor/Bumped(atom/movable/AM)
 	if(density)
@@ -134,10 +129,8 @@
 			playsound(src, close_sound, 30, FALSE)
 
 /obj/machinery/door/poddoor/update_icon_state()
-	if(density)
-		icon_state = "closed"
-	else
-		icon_state = "open"
+	. = ..()
+	icon_state = density ? "closed" : "open"
 
 /obj/machinery/door/poddoor/try_to_activate_door(mob/user)
 	return
@@ -152,7 +145,7 @@
 		user.visible_message("<span class='warning'>[user] begins prying open [src].</span>",\
 					"<span class='noticealien'>You begin digging your claws into [src] with all your might!</span>",\
 					"<span class='warning'>You hear groaning metal...</span>")
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE)
 
 		var/time_to_open = 5 SECONDS
 		if(hasPower())

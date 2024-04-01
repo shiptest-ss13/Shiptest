@@ -5,6 +5,9 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	new/datum/stack_recipe("linen bin", /obj/structure/bedsheetbin/empty, 2, time = 5, one_per_turf = 0), \
 	new/datum/stack_recipe("railing", /obj/structure/railing, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("railing corner", /obj/structure/railing/corner, 1, time = 10, window_checks = TRUE), \
+	new/datum/stack_recipe("modern railing", /obj/structure/railing/modern, 3, time = 18, window_checks = TRUE), \
+	new/datum/stack_recipe("modern railing corner", /obj/structure/railing/modern/corner, 1, time = 10, window_checks = TRUE), \
+	new/datum/stack_recipe("modern railing end", /obj/structure/railing/modern/end, 3, time = 18, window_checks = TRUE), \
 	new/datum/stack_recipe("ladder", /obj/structure/ladder/crafted, 15, time = 150, one_per_turf = TRUE, on_floor = FALSE), \
 	))
 
@@ -27,19 +30,16 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	embedding = list()
 	novariants = TRUE
 
-/obj/item/stack/rods/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to stuff \the [src] down [user.p_their()] throat! It looks like [user.p_theyre()] trying to commit suicide!</span>")//it looks like theyre ur mum
-	return BRUTELOSS
-
 /obj/item/stack/rods/Initialize(mapload, new_amount, merge = TRUE)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/stack/rods/get_main_recipes()
 	. = ..()
 	. += GLOB.rod_recipes
 
 /obj/item/stack/rods/update_icon_state()
+	. = ..()
 	var/amount = get_amount()
 	if(amount <= 5)
 		icon_state = "rods-[amount]"

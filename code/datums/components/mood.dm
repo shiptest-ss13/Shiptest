@@ -18,15 +18,16 @@
 
 	START_PROCESSING(SSmood, src)
 
-	RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT, .proc/add_event)
-	RegisterSignal(parent, COMSIG_CLEAR_MOOD_EVENT, .proc/clear_event)
-	RegisterSignal(parent, COMSIG_ENTER_AREA, .proc/check_area_mood)
-	RegisterSignal(parent, COMSIG_LIVING_REVIVE, .proc/on_revive)
+	RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT, PROC_REF(add_event))
+	RegisterSignal(parent, COMSIG_CLEAR_MOOD_EVENT, PROC_REF(clear_event))
+	RegisterSignal(parent, COMSIG_ENTER_AREA, PROC_REF(check_area_mood))
+	RegisterSignal(parent, COMSIG_LIVING_REVIVE, PROC_REF(on_revive))
 
-	RegisterSignal(parent, COMSIG_MOB_HUD_CREATED, .proc/modify_hud)
-	RegisterSignal(parent, COMSIG_JOB_RECEIVED, .proc/register_job_signals)
+	RegisterSignal(parent, COMSIG_MOB_HUD_CREATED, PROC_REF(modify_hud))
+	RegisterSignal(parent, COMSIG_JOB_RECEIVED, PROC_REF(register_job_signals))
 
 	var/mob/living/owner = parent
+	owner.become_area_sensitive(MOOD_COMPONENT_TRAIT)
 	if(owner.hud_used)
 		modify_hud()
 		var/datum/hud/hud = owner.hud_used
@@ -35,16 +36,19 @@
 /datum/component/mood/Destroy()
 	STOP_PROCESSING(SSmood, src)
 	unmodify_hud()
+
+	var/mob/living/owner = parent
+	owner.lose_area_sensitivity(MOOD_COMPONENT_TRAIT)
 	return ..()
 
 /datum/component/mood/proc/register_job_signals(datum/source, job)
 	SIGNAL_HANDLER
 
 	if(job in list("Research Director", "Scientist", "Roboticist"))
-		RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT_RND, .proc/add_event) //Mood events that are only for RnD members
+		RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT_RND, PROC_REF(add_event)) //Mood events that are only for RnD members
 
 /datum/component/mood/proc/print_mood(mob/user)
-	var/msg = "<span class='info'>*---------*\n<EM>My current mental status:</EM></span>\n"
+	var/msg = "[span_info("<EM>My current mental status:</EM>")]\n"
 	msg += "<span class='notice'>My current sanity: </span>" //Long term
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
@@ -88,7 +92,7 @@
 			msg += event.description
 	else
 		msg += "<span class='nicegreen'>I don't have much of a reaction to anything right now.</span>\n"
-	to_chat(user, msg)
+	to_chat(user, examine_block(msg))
 
 ///Called after moodevent/s have been added/removed.
 /datum/component/mood/proc/update_mood()
@@ -250,7 +254,7 @@
 			clear_event(null, category)
 		else
 			if(the_event.timeout)
-				addtimer(CALLBACK(src, .proc/clear_event, null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
+				addtimer(CALLBACK(src, PROC_REF(clear_event), null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
 			return 0 //Don't have to update the event.
 	var/list/params = args.Copy(4)
 	params.Insert(1, parent)
@@ -261,7 +265,7 @@
 	update_mood()
 
 	if(the_event.timeout)
-		addtimer(CALLBACK(src, .proc/clear_event, null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
+		addtimer(CALLBACK(src, PROC_REF(clear_event), null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /datum/component/mood/proc/clear_event(datum/source, category)
 	SIGNAL_HANDLER
@@ -294,8 +298,8 @@
 	screen_obj = new
 	screen_obj.color = "#4b96c4"
 	hud.infodisplay += screen_obj
-	RegisterSignal(hud, COMSIG_PARENT_QDELETING, .proc/unmodify_hud)
-	RegisterSignal(screen_obj, COMSIG_CLICK, .proc/hud_click)
+	RegisterSignal(hud, COMSIG_PARENT_QDELETING, PROC_REF(unmodify_hud))
+	RegisterSignal(screen_obj, COMSIG_CLICK, PROC_REF(hud_click))
 
 /datum/component/mood/proc/unmodify_hud(datum/source)
 	SIGNAL_HANDLER
@@ -322,12 +326,7 @@
 	if(HAS_TRAIT(L, TRAIT_NOHUNGER))
 		return FALSE //no mood events for nutrition
 	switch(L.nutrition)
-		if(NUTRITION_LEVEL_FULL to INFINITY)
-			if (!HAS_TRAIT(L, TRAIT_VORACIOUS))
-				add_event(null, "nutrition", /datum/mood_event/fat)
-			else
-				add_event(null, "nutrition", /datum/mood_event/wellfed) // round and full
-		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
+		if(NUTRITION_LEVEL_WELL_FED to INFINITY)
 			add_event(null, "nutrition", /datum/mood_event/wellfed)
 		if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
 			add_event(null, "nutrition", /datum/mood_event/fed)

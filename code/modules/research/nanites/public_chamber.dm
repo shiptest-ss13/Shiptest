@@ -35,7 +35,7 @@
 /obj/machinery/public_nanite_chamber/proc/set_busy(status, working_icon)
 	busy = status
 	busy_icon_state = working_icon
-	update_icon()
+	update_appearance()
 
 /obj/machinery/public_nanite_chamber/proc/inject_nanites(mob/living/attacker)
 	if(machine_stat & (NOPOWER|BROKEN))
@@ -50,9 +50,9 @@
 
 	//TODO OMINOUS MACHINE SOUNDS
 	set_busy(TRUE, "[initial(icon_state)]_raising")
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "[initial(icon_state)]_active"),20)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "[initial(icon_state)]_falling"),60)
-	addtimer(CALLBACK(src, .proc/complete_injection, locked_state, attacker),80)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "[initial(icon_state)]_active"),20)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "[initial(icon_state)]_falling"),60)
+	addtimer(CALLBACK(src, PROC_REF(complete_injection), locked_state, attacker),80)
 
 /obj/machinery/public_nanite_chamber/proc/complete_injection(locked_state, mob/living/attacker)
 	//TODO MACHINE DING
@@ -77,9 +77,9 @@
 	locked = TRUE
 
 	set_busy(TRUE, "[initial(icon_state)]_raising")
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "[initial(icon_state)]_active"),20)
-	addtimer(CALLBACK(src, .proc/set_busy, TRUE, "[initial(icon_state)]_falling"),40)
-	addtimer(CALLBACK(src, .proc/complete_cloud_change, locked_state, attacker),60)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "[initial(icon_state)]_active"),20)
+	addtimer(CALLBACK(src, PROC_REF(set_busy), TRUE, "[initial(icon_state)]_falling"),40)
+	addtimer(CALLBACK(src, PROC_REF(complete_cloud_change), locked_state, attacker),60)
 
 /obj/machinery/public_nanite_chamber/proc/complete_cloud_change(locked_state, mob/living/attacker)
 	locked = locked_state
@@ -100,6 +100,7 @@
 	else
 		//running
 		icon_state = initial(icon_state)+ (state_open ? "_open" : "")
+	return ..()
 
 /obj/machinery/public_nanite_chamber/update_overlays()
 	. = ..()
@@ -156,7 +157,7 @@
 
 	. = TRUE
 
-	addtimer(CALLBACK(src, .proc/try_inject_nanites, attacker), 30) //If someone is shoved in give them a chance to get out before the injection starts
+	addtimer(CALLBACK(src, PROC_REF(try_inject_nanites), attacker), 30) //If someone is shoved in give them a chance to get out before the injection starts
 
 /obj/machinery/public_nanite_chamber/proc/try_inject_nanites(mob/living/attacker)
 	if(occupant)
@@ -195,7 +196,7 @@
 		return
 
 	if(!occupant && default_deconstruction_screwdriver(user, icon_state, icon_state, I))//sent icon_state is irrelevant...
-		update_icon()//..since we're updating the icon here, since the scanner can be unpowered when opened/closed
+		update_appearance()//..since we're updating the icon here, since the scanner can be unpowered when opened/closed
 		return
 
 	if(default_pry_open(I))

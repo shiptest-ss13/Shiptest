@@ -2,6 +2,7 @@
 	prefix = "_maps/RandomRuins/ReebeRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_YELLOW
 
 /datum/map_template/ruin/reebe/clockwork_arena
 	name = "Clockcult Arena"

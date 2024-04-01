@@ -1,3 +1,7 @@
+#define IGNITE_TURF_CHANCE 30
+#define IGNITE_TURF_LOW_POWER 8
+#define IGNITE_TURF_HIGH_POWER 22
+
 /turf/open
 	plane = FLOOR_PLANE
 
@@ -123,7 +127,7 @@
 	smoothing_flags = SMOOTH_CORNERS
 	tiled_dirt = FALSE
 
-/turf/open/indestructible/hierophant/two
+/turf/open/indestructible/hierophant/two //I assume this exists to bypass turf smoothing to make patterns in the floor of the arena. cool!
 
 /turf/open/indestructible/hierophant/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	return FALSE
@@ -154,11 +158,10 @@
 	baseturfs = /turf/open/indestructible/airblock
 
 /turf/open/Initalize_Atmos(times_fired)
-	if(!blocks_air)
-		if(!istype(air,/datum/gas_mixture/turf))
-			air = new(2500,src)
-		air.copy_from_turf(src)
-		update_air_ref(planetary_atmos ? 1 : 2)
+	if(!istype(air,/datum/gas_mixture/turf))
+		air = new(2500, src)
+	air.copy_from_turf(src)
+	update_air_ref(planetary_atmos ? AIR_REF_PLANETARY_TURF : AIR_REF_OPEN_TURF)
 
 	update_visuals()
 
@@ -174,6 +177,11 @@
 /turf/open/proc/TakeTemperature(temp)
 	air.set_temperature(air.return_temperature() + temp)
 	air_update_turf()
+
+/turf/open/temperature_expose()
+	if(prob(IGNITE_TURF_CHANCE))
+		IgniteTurf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
+	return ..()
 
 /turf/open/proc/freon_gas_act()
 	for(var/obj/I in contents)
@@ -237,7 +245,7 @@
 			lube |= SLIDE_ICE
 
 		if(lube&SLIDE)
-			new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 4), 1, FALSE, CALLBACK(C, /mob/living/carbon/.proc/spin, 1, 1))
+			new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 4), 1, FALSE, CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, spin), 1, 1))
 		else if(lube&SLIDE_ICE)
 			if(C.force_moving) //If we're already slipping extend it
 				qdel(C.force_moving)
@@ -271,3 +279,7 @@
 	if(isgroundlessturf(src))
 		return
 	new /obj/effect/abstract/turf_fire(src, power, fire_color)
+
+#undef IGNITE_TURF_CHANCE
+#undef IGNITE_TURF_LOW_POWER
+#undef IGNITE_TURF_HIGH_POWER

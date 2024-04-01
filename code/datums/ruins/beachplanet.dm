@@ -1,21 +1,16 @@
-// Hey! Listen! Update \config\beachruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/beachplanet
 	prefix = "_maps/RandomRuins/BeachRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_BEACH
 
 /datum/map_template/ruin/beachplanet/fishinghut
 	name = "Fishing Hut"
 	id = "fishinghut"
 	description = "A small fishing hut floating on the ocean."
 	suffix = "beach_fishing_hut.dmm"
-
-/datum/map_template/ruin/beachplanet/pushit
-	name = "Elite Club"
-	id = "pushit"
-	description = "A heavily guarded dance club. For the high elite of some city, they wouldnt want you to get your hands on it."
-	suffix = "beach_push_it.dmm"
 
 /datum/map_template/ruin/beachplanet/ancient
 	name = "Ancient Danger"
@@ -28,6 +23,12 @@
 	id = "beach_colony"
 	description = "A abandoned colony. It seems that this colony was abandoned, for a reason or another"
 	suffix = "beach_colony.dmm"
+
+/datum/map_template/ruin/beachplanet/town
+	name = "Beachside Town"
+	id = "beach_town"
+	description = "A fresh town on a lovely coast, where its inhabitants are is unknown."
+	suffix = "beach_ocean_town.dmm"
 
 /datum/map_template/ruin/beachplanet/scrapvillage
 	name = "Pirate Village"
@@ -59,3 +60,8 @@
 	description = "An abandoned camp built by a crashed engineer"
 	suffix = "beach_crashed_engineer.dmm"
 
+/datum/map_template/ruin/beachplanet/floatresort
+	name = "Floating Beach Resort"
+	id = "beach_float_resort"
+	description = "A hidden paradise on the beach"
+	suffix = "beach_float_resort.dmm"

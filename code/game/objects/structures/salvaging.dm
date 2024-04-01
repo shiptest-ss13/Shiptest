@@ -5,14 +5,16 @@
 	density = TRUE
 	anchored = TRUE
 	var/salvageable_parts = list()
+	var/frame_type = /obj/structure/frame/machine
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
 	. += "You can use a crowbar to salvage this."
 
 /obj/structure/salvageable/proc/dismantle(mob/living/user)
-	var/obj/frame = new /obj/structure/frame/machine(get_turf(src))
-	frame.anchored = TRUE
+	var/obj/frame = new frame_type(get_turf(src))
+	frame.anchored = anchored
+	frame.dir = dir
 	for(var/path in salvageable_parts)
 		if(prob(salvageable_parts[path]))
 			new path (loc)
@@ -59,6 +61,7 @@
 /obj/structure/salvageable/computer
 	name = "broken computer"
 	icon_state = "computer_broken"
+	frame_type = /obj/structure/frame/computer/retro
 	salvageable_parts = list(
 		/obj/item/stack/sheet/glass/two = 80,
 		/obj/item/stack/cable_coil/cut = 90,
@@ -210,14 +213,14 @@
 		if(41 to 60)
 			visible_message("<span class='danger'>You flinch as the [src]'s laser apparatus lights up, but your tool destroys it before it activates...</span>")
 		if(61 to 79)
-			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
+			visible_message("<span class='danger'>You see a dim light from the [src] before the laser reactivates in your face!</span>")
 			shoot_projectile(user, /obj/projectile/beam/scatter)
 		if(80 to 89)
 			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
 			shoot_projectile(user, /obj/projectile/beam)
 		if(90 to 100)
-			visible_message("<span class='danger'>You see a bright light from the [src] before the laser reactivates in your face!</span>")
-			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser)
+			visible_message("<span class='danger'>You see an intense light from the [src] before the laser reactivates in your face!</span>")
+			shoot_projectile(user, /obj/projectile/beam/laser/heavylaser) //i'd like to make this flash people. but i'm not sure how to do that. shame!
 
 /obj/structure/salvageable/destructive_analyzer/proc/shoot_projectile(mob/living/target, obj/projectile/projectile_to_shoot)
 	var/obj/projectile/projectile_being_shot = new projectile_to_shoot(get_turf(src))
@@ -269,22 +272,59 @@
 		if(1 to 45)
 			audible_message("<span class='notice'>The [src] makes a crashing sound as its salvaged.</span>")
 
-		if(46 to 50)
+		if(46 to 89)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
 			new /mob/living/simple_animal/bot/medbot/rockplanet(get_turf(src))
 
-		if(51 to 77)
+		if(95 to 100)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear a buzz from the [src] and a voice,</span>")
 
 			new /mob/living/simple_animal/bot/firebot/rockplanet(get_turf(src))
 
-		if(77 to 100)
+		if(90 to 94)
 			playsound(src, 'sound/machines/buzz-two.ogg', 100, FALSE, FALSE)
 			audible_message("<span class='danger'>You hear as buzz from the [src] as an abandoned security bot rolls out from the [src]!!</span>")
 
 			new /mob/living/simple_animal/bot/secbot/ed209/rockplanet(get_turf(src))
+
+/obj/structure/salvageable/safe_server //i am evil and horrible and i don't deserve to touch code
+	name = "broken server"
+	icon_state = "wreck_server"
+	salvageable_parts = list(
+		/obj/item/stack/sheet/glass/two = 80,
+		/obj/item/stack/cable_coil/cut = 80,
+		/obj/item/stack/ore/salvage/scrapuranium/five = 60,
+		/obj/item/stack/ore/salvage/scrapmetal/five = 60,
+		/obj/item/stack/ore/salvage/scrapbluespace = 60,
+
+		/obj/item/research_notes/loot/tiny = 50,
+		/obj/item/research_notes/loot/medium = 20,
+		/obj/item/research_notes/loot/big = 5,
+
+		/obj/item/disk/tech_disk/major = 3,
+		/obj/item/disk/tech_disk = 20,
+		/obj/item/disk/data = 20,
+		/obj/item/disk/holodisk = 20,
+		/obj/item/disk/plantgene = 20,
+
+		/obj/item/computer_hardware/network_card = 40,
+		/obj/item/computer_hardware/network_card = 40,
+		/obj/item/computer_hardware/processor_unit = 40,
+		/obj/item/computer_hardware/processor_unit = 40,
+		/obj/item/stock_parts/subspace/amplifier = 40,
+		/obj/item/stock_parts/subspace/amplifier = 40,
+		/obj/item/stock_parts/subspace/analyzer = 40,
+		/obj/item/stock_parts/subspace/analyzer = 40,
+		/obj/item/stock_parts/subspace/ansible = 40,
+		/obj/item/stock_parts/subspace/ansible = 40,
+		/obj/item/stock_parts/subspace/transmitter = 40,
+		/obj/item/stock_parts/subspace/transmitter = 40,
+		/obj/item/stock_parts/subspace/crystal = 30,
+		/obj/item/stock_parts/subspace/crystal = 30,
+		/obj/item/computer_hardware/network_card/advanced = 20,
+	)
 
 /obj/structure/salvageable/seed
 	name = "ruined seed vendor"
@@ -328,6 +368,7 @@
 /obj/item/stack/ore/salvage
 	name = "salvage"
 	icon = 'icons/obj/salvage_structure.dmi'
+	icon_state = "smetal"
 
 /obj/item/stack/ore/salvage/examine(mob/user)
 	. = ..()
@@ -336,8 +377,6 @@
 /obj/item/stack/ore/salvage/scrapmetal
 	name = "scrap metal"
 	desc = "A collection of metal parts and pieces."
-	icon_state = "smetal"
-	item_state = "smetal"
 	points = 1
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
@@ -356,7 +395,6 @@
 	name = "scrap titanium"
 	desc = "Lightweight, rust-resistant parts and pieces from high-performance equipment."
 	icon_state = "stitanium"
-	item_state = "stitanium"
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/titanium=MINERAL_MATERIAL_AMOUNT)
@@ -369,7 +407,6 @@
 	name = "worn crt"
 	desc = "An old CRT display with the letters 'STANDBY' burnt into the screen."
 	icon_state = "ssilver"
-	item_state = "ssilver"
 	points = 16
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/silver=MINERAL_MATERIAL_AMOUNT)
@@ -382,7 +419,6 @@
 	name = "scrap electronics"
 	desc = "Various bits of electrical components."
 	icon_state = "sgold"
-	item_state = "sgold"
 	points = 18
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/gold=MINERAL_MATERIAL_AMOUNT)
@@ -395,7 +431,6 @@
 	name = "junk plasma cell"
 	desc = "A nonfunctional plasma cell, once used as portable power generation."
 	icon_state = "splasma"
-	item_state = "splasma"
 	points = 15
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
@@ -408,7 +443,6 @@
 	name = "broken detector"
 	desc = "The label on the side warns the reader of radioactive elements."
 	icon_state = "suranium"
-	item_state = "suranium"
 	points = 30
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
@@ -421,7 +455,6 @@
 	name = "damaged bluespace circuit"
 	desc = "It's damaged beyond repair, but the crystal inside its housing looks fine."
 	icon_state = "sbluespace"
-	item_state = "sbluespace"
 	points = 50
 	material_flags = MATERIAL_NO_EFFECTS
 	custom_materials = list(/datum/material/bluespace=MINERAL_MATERIAL_AMOUNT)
@@ -539,8 +572,8 @@
 	loot = list(
 			/obj/item/bodypart/l_arm/robot/surplus = 1,
 			/obj/item/bodypart/r_arm/robot/surplus = 1,
-			/obj/item/bodypart/l_leg/robot/surplus = 1,
-			/obj/item/bodypart/r_leg/robot/surplus = 1,
+			/obj/item/bodypart/leg/left/robot/surplus = 1,
+			/obj/item/bodypart/leg/right/robot/surplus = 1,
 		)
 /obj/effect/spawner/lootdrop/random_gun_protolathe_lootdrop
 	loot = list(
@@ -646,7 +679,7 @@
 			/obj/item/circuitboard/computer/med_data = 5,
 		)
 
-//DESTRUCTIVE ANAL
+//DESTRUCTIVE ANAL //i'm killing you
 /obj/effect/spawner/lootdrop/destructive_anal_loot //what do people usually put in these things anayways
 	loot = list(
 			/obj/item/storage/toolbox/syndicate/empty = 650,
@@ -664,19 +697,4 @@
 			/obj/item/crowbar/syndie = 30,
 			/obj/item/wirecutters/syndie = 30,
 			/obj/item/multitool/syndie = 30,
-
-			/obj/item/scalpel/alien = 1,
-			/obj/item/hemostat/alien = 1,
-			/obj/item/cautery/alien = 1,
-			/obj/item/retractor/alien = 1,
-			/obj/item/circular_saw/alien = 1,
-			/obj/item/surgicaldrill/alien = 1,
-
-			/obj/item/wrench/abductor = 1,
-			/obj/item/screwdriver/abductor = 1,
-			/obj/item/weldingtool/abductor = 1,
-			/obj/item/crowbar/abductor = 1,
-			/obj/item/wirecutters/abductor = 1,
-			/obj/item/multitool/abductor = 1,
-
 		)

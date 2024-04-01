@@ -56,8 +56,8 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 	// Looping through the player list has the added bonus of working for mobs inside containers
 	var/sound/S = sound(get_sfx(soundin))
 	var/maxdistance = SOUND_RANGE + extrarange
-	var/source_z = turf_source.z
-	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
+	var/source_z = "[turf_source.virtual_z]"
+	var/list/listeners = LAZYACCESS(SSmobs.players_by_virtual_z, source_z) || list()
 
 	var/turf/above_turf = turf_source.above()
 	var/turf/below_turf = turf_source.below()
@@ -73,10 +73,10 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 
 	else
 		if(above_turf && istransparentturf(above_turf))
-			listeners += SSmobs.clients_by_zlevel[above_turf.z]
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[above_turf.virtual_z()]") || list()
 
 		if(below_turf && istransparentturf(turf_source))
-			listeners += SSmobs.clients_by_zlevel[below_turf.z]
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[below_turf.virtual_z()]") || list()
 
 	for(var/P in listeners)
 		var/mob/M = P
@@ -85,7 +85,8 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 			ismono = get_dist(get_turf(P), turf_source) < 2	//If adjacent, play as mono
 		if(get_dist(M, turf_source) <= maxdistance)
 			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, ignore_direction = ismono)
-	for(var/P in SSmobs.dead_players_by_zlevel[source_z])
+
+	for(var/P in LAZYACCESS(SSmobs.dead_players_by_virtual_z, source_z))
 		var/mob/M = P
 		var/ismono = FALSE
 		if(mono_adj)
@@ -244,8 +245,62 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 				soundin = pick('sound/voice/hiss1.ogg','sound/voice/hiss2.ogg','sound/voice/hiss3.ogg','sound/voice/hiss4.ogg')
 			if ("pageturn")
 				soundin = pick('sound/effects/pageturn1.ogg', 'sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg')
-			if ("ricochet")
-				soundin = pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg','sound/weapons/effects/ric3.ogg','sound/weapons/effects/ric4.ogg','sound/weapons/effects/ric5.ogg')
+//gun related stuff start
+			if ("bullet_hit")
+				soundin = pick('sound/weapons/gun/hit/bullet_impact1.ogg', 'sound/weapons/gun/hit/bullet_impact2.ogg','sound/weapons/gun/hit/bullet_impact3.ogg')
+			if ("bullet_impact")
+				soundin = pick('sound/weapons/gun/hit/bullet_ricochet1.ogg', 'sound/weapons/gun/hit/bullet_ricochet2.ogg','sound/weapons/gun/hit/bullet_ricochet3.ogg','sound/weapons/gun/hit/bullet_ricochet4.ogg','sound/weapons/gun/hit/bullet_ricochet5.ogg','sound/weapons/gun/hit/bullet_ricochet6.ogg','sound/weapons/gun/hit/bullet_ricochet7.ogg','sound/weapons/gun/hit/bullet_ricochet8.ogg')
+			if ("bullet_bounce")
+				soundin = pick('sound/weapons/gun/hit/bullet_bounce1.ogg', 'sound/weapons/gun/hit/bullet_bounce2.ogg','sound/weapons/gun/hit/bullet_bounce3.ogg','sound/weapons/gun/hit/bullet_bounce4.ogg','sound/weapons/gun/hit/bullet_bounce5.ogg')
+			if("bullet_miss")
+				soundin = pick('sound/weapons/gun/hit/bullet_miss1.ogg', 'sound/weapons/gun/hit/bullet_miss2.ogg', 'sound/weapons/gun/hit/bullet_miss3.ogg')
+			if("bullet_hit_glass")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_glass_01.ogg',
+					'sound/weapons/gun/hit/bullet_glass_02.ogg',
+					'sound/weapons/gun/hit/bullet_glass_03.ogg',
+					'sound/weapons/gun/hit/bullet_glass_04.ogg',
+					'sound/weapons/gun/hit/bullet_glass_05.ogg',
+					'sound/weapons/gun/hit/bullet_glass_06.ogg',
+					'sound/weapons/gun/hit/bullet_glass_07.ogg',
+				)
+			if("bullet_hit_stone")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_masonry_01.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_02.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_03.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_04.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_05.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_06.ogg',
+				)
+			if("bullet_hit_metal")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_metal_01.ogg',
+					'sound/weapons/gun/hit/bullet_metal_02.ogg',
+					'sound/weapons/gun/hit/bullet_metal_03.ogg',
+					'sound/weapons/gun/hit/bullet_metal_04.ogg',
+					'sound/weapons/gun/hit/bullet_metal_05.ogg',
+					'sound/weapons/gun/hit/bullet_metal_06.ogg',
+				)
+			if("bullet_hit_wood")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_wood_01.ogg',
+					'sound/weapons/gun/hit/bullet_wood_02.ogg',
+					'sound/weapons/gun/hit/bullet_wood_03.ogg',
+					'sound/weapons/gun/hit/bullet_wood_04.ogg',
+					'sound/weapons/gun/hit/bullet_wood_05.ogg',
+					'sound/weapons/gun/hit/bullet_wood_06.ogg',
+				)
+			if("bullet_hit_snow")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_snow_01.ogg',
+					'sound/weapons/gun/hit/bullet_snow_02.ogg',
+					'sound/weapons/gun/hit/bullet_snow_03.ogg',
+					'sound/weapons/gun/hit/bullet_snow_04.ogg',
+					'sound/weapons/gun/hit/bullet_snow_05.ogg',
+					'sound/weapons/gun/hit/bullet_snow_06.ogg',
+				)
+// gun related stuff  end
 			if ("terminal_type")
 				soundin = pick('sound/machines/terminal_button01.ogg', 'sound/machines/terminal_button02.ogg', 'sound/machines/terminal_button03.ogg', \
 								'sound/machines/terminal_button04.ogg', 'sound/machines/terminal_button05.ogg', 'sound/machines/terminal_button06.ogg', \
@@ -256,8 +311,6 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 				soundin = pick('sound/hallucinations/im_here1.ogg', 'sound/hallucinations/im_here2.ogg')
 			if ("can_open")
 				soundin = pick('sound/effects/can_open1.ogg', 'sound/effects/can_open2.ogg', 'sound/effects/can_open3.ogg')
-			if("bullet_miss")
-				soundin = pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg')
 			if("revolver_spin")
 				soundin = pick('sound/weapons/gun/revolver/spin1.ogg', 'sound/weapons/gun/revolver/spin2.ogg', 'sound/weapons/gun/revolver/spin3.ogg')
 			if("law")

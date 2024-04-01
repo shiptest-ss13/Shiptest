@@ -54,12 +54,13 @@ DEFINE_BITFIELD(smoothing_junction, list(
 #define DEFAULT_UNDERLAY_ICON_STATE "plating"
 
 
-#define SET_ADJ_IN_DIR(source, junction, direction, direction_flag) \
+#define SET_ADJ_IN_DIR(source, junction, conn_junction, direction, direction_flag) \
 	do { \
 		var/turf/neighbor = get_step(source, direction); \
 		if(!neighbor) { \
 			if(source.smoothing_flags & SMOOTH_BORDER) { \
 				junction |=  direction_flag; \
+				conn_junction |= direction_flag; \
 			}; \
 		}; \
 		else { \
@@ -69,6 +70,9 @@ DEFINE_BITFIELD(smoothing_junction, list(
 						continue; \
 					}; \
 					junction |= direction_flag; \
+					if(!is_type_in_typecache(neighbor, source.no_connector_typecache)) { \
+						conn_junction |= direction_flag; \
+					}; \
 					break; \
 				}; \
 			}; \
@@ -82,6 +86,9 @@ DEFINE_BITFIELD(smoothing_junction, list(
 							continue; \
 						}; \
 						junction |= direction_flag; \
+						if(!is_type_in_typecache(thing, source.no_connector_typecache)) { \
+							conn_junction |= direction_flag; \
+						}; \
 						break; \
 					}; \
 					if(junction & direction_flag) { \
@@ -317,30 +324,42 @@ DEFINE_BITFIELD(smoothing_junction, list(
 */
 /atom/proc/bitmask_smooth()
 	var/new_junction = NONE
+	var/new_conn_junction = NONE
 
 	for(var/direction in GLOB.cardinals) //Cardinal case first.
-		SET_ADJ_IN_DIR(src, new_junction, direction, direction)
+		SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, direction, direction)
 
 	if(!(new_junction & (NORTH|SOUTH)) || !(new_junction & (EAST|WEST)))
 		set_smoothed_icon_state(new_junction)
+		if(smoothing_flags & SMOOTH_CONNECTORS)
+			set_connector_overlay(new_conn_junction)
 		return
 
 	if(new_junction & NORTH_JUNCTION)
 		if(new_junction & WEST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, NORTHWEST, NORTHWEST_JUNCTION)
+			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, NORTHWEST, NORTHWEST_JUNCTION)
 
 		if(new_junction & EAST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, NORTHEAST, NORTHEAST_JUNCTION)
+			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, NORTHEAST, NORTHEAST_JUNCTION)
 
 	if(new_junction & SOUTH_JUNCTION)
 		if(new_junction & WEST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, SOUTHWEST, SOUTHWEST_JUNCTION)
+			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, SOUTHWEST, SOUTHWEST_JUNCTION)
 
 		if(new_junction & EAST_JUNCTION)
-			SET_ADJ_IN_DIR(src, new_junction, SOUTHEAST, SOUTHEAST_JUNCTION)
+			SET_ADJ_IN_DIR(src, new_junction, new_conn_junction, SOUTHEAST, SOUTHEAST_JUNCTION)
 
 	set_smoothed_icon_state(new_junction)
-
+	if(smoothing_flags & SMOOTH_CONNECTORS)
+		if(new_conn_junction & NORTH_JUNCTION)
+			new_conn_junction |= new_junction & (NORTHEAST_JUNCTION | NORTHWEST_JUNCTION)
+		if(new_conn_junction & SOUTH_JUNCTION)
+			new_conn_junction |= new_junction & (SOUTHEAST_JUNCTION | SOUTHWEST_JUNCTION)
+		if(new_conn_junction & EAST_JUNCTION)
+			new_conn_junction |= new_junction & (NORTHEAST_JUNCTION | SOUTHEAST_JUNCTION)
+		if(new_conn_junction & WEST_JUNCTION)
+			new_conn_junction |= new_junction & (NORTHWEST_JUNCTION | SOUTHWEST_JUNCTION)
+		set_connector_overlay(new_conn_junction)
 
 ///Changes the icon state based on the new junction bitmask. Returns the old junction value.
 /atom/proc/set_smoothed_icon_state(new_junction)
@@ -348,6 +367,18 @@ DEFINE_BITFIELD(smoothing_junction, list(
 	smoothing_junction = new_junction
 	icon_state = "[base_icon_state]-[smoothing_junction]"
 
+/atom/proc/set_connector_overlay(new_conn_junction)
+	if(new_conn_junction == connector_junction)
+		return
+	cut_overlay(connector_overlay)
+
+	connector_junction = new_conn_junction
+	if(!connector_junction)
+		connector_overlay = null
+		return
+
+	connector_overlay = iconstate2appearance(connector_icon, "[connector_icon_state]-[connector_junction]")
+	add_overlay(connector_overlay)
 
 /turf/closed/set_smoothed_icon_state(new_junction)
 	. = ..()

@@ -1,7 +1,7 @@
 //Parent types
 
 /area/ruin
-	name = "\improper Unexplored Location"
+	name = "unexplored location"
 	icon_state = "away"
 	has_gravity = STANDARD_GRAVITY
 	area_flags = HIDDEN_AREA | BLOBS_ALLOWED
