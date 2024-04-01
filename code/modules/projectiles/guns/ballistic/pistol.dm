@@ -116,14 +116,20 @@
 	item_state = "deagleg"
 
 /obj/item/gun/ballistic/automatic/pistol/APS
-	name = "stechkin APS pistol"
-	desc = "A burst-fire machine pistol based on the stechkin model. Utilizes specialized 9mm magazines."
+	name = "Commander 2 "
+	desc = "The canceled successor to the commander due to  icw blah blah blah- who cares it's the gock 18. Chambered in 9mm."
 	icon_state = "aps"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
+	manufacturer = MANUFACTURER_NANOTRASEN
+	fire_sound = 'sound/weapons/gun/pistol/commander2.ogg'
+	load_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/mag_release.ogg'
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
+	fire_delay = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/stickman
