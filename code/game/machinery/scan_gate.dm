@@ -6,6 +6,7 @@
 #define SCANGATE_WANTED "Wanted"
 #define SCANGATE_SPECIES "Species"
 
+//god why cant this use the normal species defines
 #define SCANGATE_HUMAN "human"
 #define SCANGATE_LIZARD "lizard"
 #define SCANGATE_FLY "fly"
@@ -17,7 +18,7 @@
 #define SCANGATE_SPIDER "rachnid"
 #define SCANGATE_IPC "ipc"
 #define SCANGATE_SQUID "squid"
-#define SCANGATE_ETHEREAL "ethereal"
+#define SCANGATE_ELZUOSA "elzuosa"
 #define SCANGATE_KEPORI "kepori"
 
 /obj/machinery/scanner_gate
@@ -146,7 +147,7 @@
 						scan_species = /datum/species/spider
 					if(SCANGATE_IPC)
 						scan_species = /datum/species/ipc
-					if(SCANGATE_ETHEREAL)
+					if(SCANGATE_ELZUOSA)
 						scan_species = /datum/species/elzuosa
 					if(SCANGATE_KEPORI)
 						scan_species = /datum/species/kepori
@@ -247,5 +248,5 @@
 #undef SCANGATE_SPIDER
 #undef SCANGATE_IPC
 #undef SCANGATE_SQUID
-#undef SCANGATE_ETHEREAL
+#undef SCANGATE_ELZUOSA
 #undef SCANGATE_KEPORI

@@ -1,4 +1,4 @@
-#define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
+#define ELZUOSA_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
 
 /datum/species/elzuosa
 	name = "\improper Elzuose"
@@ -169,7 +169,7 @@
 /datum/species/elzuosa/proc/handle_emag(mob/living/carbon/human/H)
 	if(!emag_effect)
 		return
-	current_color = pick(ETHEREAL_EMAG_COLORS)
+	current_color = pick(ELZUOSA_EMAG_COLORS)
 	spec_updatehealth(H)
 	addtimer(CALLBACK(src, PROC_REF(handle_emag), H), 5) //Call ourselves every 0.5 seconds to change color
 
@@ -181,27 +181,27 @@
 /datum/species/elzuosa/proc/handle_charge(mob/living/carbon/human/H)
 	brutemod = 1.25
 	switch(get_charge(H))
-		if(ETHEREAL_CHARGE_NONE to ETHEREAL_CHARGE_LOWPOWER)
-			if(get_charge(H) == ETHEREAL_CHARGE_NONE)
-				H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 3)
+		if(ELZUOSA_CHARGE_NONE to ELZUOSA_CHARGE_LOWPOWER)
+			if(get_charge(H) == ELZUOSA_CHARGE_NONE)
+				H.throw_alert("ELZUOSA_CHARGE", /atom/movable/screen/alert/etherealcharge, 3)
 			else
-				H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 2)
+				H.throw_alert("ELZUOSA_CHARGE", /atom/movable/screen/alert/etherealcharge, 2)
 			if(H.health > 10.5)
 				apply_damage(0.2, TOX, null, null, H)
 			brutemod = 1.75
-		if(ETHEREAL_CHARGE_LOWPOWER to ETHEREAL_CHARGE_NORMAL)
-			H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 1)
+		if(ELZUOSA_CHARGE_LOWPOWER to ELZUOSA_CHARGE_NORMAL)
+			H.throw_alert("ELZUOSA_CHARGE", /atom/movable/screen/alert/etherealcharge, 1)
 			brutemod = 1.5
-		if(ETHEREAL_CHARGE_FULL to ETHEREAL_CHARGE_OVERLOAD)
+		if(ELZUOSA_CHARGE_FULL to ELZUOSA_CHARGE_OVERLOAD)
 			H.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 1)
 			brutemod = 1.5
-		if(ETHEREAL_CHARGE_OVERLOAD to ETHEREAL_CHARGE_DANGEROUS)
+		if(ELZUOSA_CHARGE_OVERLOAD to ELZUOSA_CHARGE_DANGEROUS)
 			H.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
 			brutemod = 1.75
 			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
 				discharge_process(H)
 		else
-			H.clear_alert("ethereal_charge")
+			H.clear_alert("ELZUOSA_CHARGE")
 			H.clear_alert("ethereal_overcharge")
 
 /datum/species/elzuosa/proc/discharge_process(mob/living/carbon/human/H)
@@ -215,9 +215,9 @@
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(H, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		H.cut_overlay(overcharge)
-		tesla_zap(H, 2, (stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
+		tesla_zap(H, 2, (stomach.crystal_charge / ELZUOSA_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
-			stomach.adjust_charge(ETHEREAL_CHARGE_FULL - stomach.crystal_charge)
+			stomach.adjust_charge(ELZUOSA_CHARGE_FULL - stomach.crystal_charge)
 		to_chat(H, "<span class='warning'>You violently discharge energy!</span>")
 		H.visible_message("<span class='danger'>[H] violently discharges energy!</span>")
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
@@ -232,7 +232,7 @@
 	var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(istype(stomach))
 		return stomach.crystal_charge
-	return ETHEREAL_CHARGE_NONE
+	return ELZUOSA_CHARGE_NONE
 
 /datum/species/elzuosa/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
 	if(istype(I, /obj/item/multitool))

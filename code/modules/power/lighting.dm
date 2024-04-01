@@ -13,7 +13,7 @@
 #define BROKEN_SPARKS_MAX (9 MINUTES)
 
 #define LIGHT_DRAIN_TIME 25                                             //WS Edit -- Ethereal Charge Scaling
-#define LIGHT_POWER_GAIN (1.75 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
+#define LIGHT_POWER_GAIN (1.75 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)    //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/wallframe/light_fixture
 	name = "light fixture frame"

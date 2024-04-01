@@ -1,6 +1,6 @@
 #define CELL_DRAIN_TIME 35
-#define CELL_POWER_GAIN (3    * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
-#define CELL_POWER_DRAIN (37.5 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_GAIN (3    * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
+#define CELL_POWER_DRAIN (37.5 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
 
 /obj/item/stock_parts/cell
 	name = "power cell"
@@ -153,7 +153,7 @@
 	if(iselzuosa(user))
 		var/mob/living/carbon/human/H = user
 		var/datum/species/elzuosa/E = H.dna.species
-		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - CELL_POWER_GAIN
+		var/charge_limit = ELZUOSA_CHARGE_DANGEROUS - CELL_POWER_GAIN
 		if(E.drain_time > world.time)
 			return
 		if(charge < CELL_POWER_DRAIN)

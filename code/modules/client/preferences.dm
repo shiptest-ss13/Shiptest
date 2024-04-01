@@ -427,7 +427,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			if(istype(pref_species, /datum/species/elzuosa)) //not the best thing to do tbf but I dont know whats better.
 
-				dat += "<h3>Ethereal Color</h3>"
+				dat += "<h3>Elzuosa Color</h3>"
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
