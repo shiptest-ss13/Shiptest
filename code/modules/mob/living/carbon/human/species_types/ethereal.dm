@@ -2,7 +2,7 @@
 
 /datum/species/elzuosa
 	name = "\improper Elzuose"
-	id = SPECIES_ETHEREAL
+	id = SPECIES_ELZUOSA
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
@@ -66,7 +66,7 @@
 	//The following code is literally only to make admin-spawned ethereals not be black.
 	C.dna.features["mcolor"] = C.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
-		if(BP.limb_id == SPECIES_ETHEREAL)
+		if(BP.limb_id == SPECIES_ELZUOSA)
 			BP.update_limb(is_creating = TRUE)
 
 /datum/species/elzuosa/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
