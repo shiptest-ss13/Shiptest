@@ -388,6 +388,12 @@
 	contains = list(/obj/item/gun/ballistic/shotgun/doublebarrel/beacon)
 	crate_name = "shotguns crate"
 
+/datum/supply_pack/ammo/box_4570
+	name = "45-70 ammo box"
+	desc = "Contains a 12 round ammo box for 45-70."
+	cost = 1500
+	contains = list(/obj/item/ammo_box/a4570)
+	crate_name = "ammo crate"
 /*
 		Rifles
 */
