@@ -192,6 +192,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
+	//uncle dane can kiss my ass
+	var/random_crits = TRUE
+	var/crit_mult = 1
+	var/crit = FALSE
+
 /obj/item/Initialize()
 
 	if(attack_verb)

@@ -66,7 +66,7 @@
 	if(prob(1))
 		criticon = "shit"
 	else
-		criticon = "criticon_[pick("1","2")]"
+		criticon = "crit_[pick("1","2")]"
 
 	var/image/I = image('icons/effects/effects.dmi', A, criticon, A.layer+1)
 	flick_overlay_view(I, A, 8)

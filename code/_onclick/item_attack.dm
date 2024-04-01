@@ -108,7 +108,10 @@
 		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 			M = user
 		return eyestab(M,user)
-
+	if(random_crits == TRUE && prob(15 * crit_mult))
+		crit = TRUE
+		playsound(loc, 'sound/weapons/crit.ogg', 100, TRUE, 10)
+		M.do_crit_animation(M)
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), TRUE, -1)
 	else if(hitsound)
@@ -153,7 +156,9 @@
 	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
 	send_item_attack_message(I, user)
 	if(I.force)
-		apply_damage(I.force, I.damtype, break_modifier = I.force, blocked = armor_value) //Bone break modifier = item force
+		apply_damage((I.crit == TRUE) ? (I.force * 3) : I.force, I.damtype, break_modifier = I.force, blocked = armor_value) //Bone break modifier = item force
+		if(I.crit)
+			I.crit = FALSE
 		if(I.damtype == BRUTE)
 			if(prob(33))
 				I.add_mob_blood(src)
