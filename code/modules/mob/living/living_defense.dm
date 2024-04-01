@@ -59,6 +59,9 @@
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
+	if(P.crit == TRUE)//we hope it was worth the wait
+		playsound(src, 'sound/weapons/crit.ogg', 100, TRUE, 10)
+		src.do_crit_animation(src)
 	return on_hit_state ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
 /mob/living/proc/check_projectile_dismemberment(obj/projectile/P, def_zone)

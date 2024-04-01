@@ -167,6 +167,11 @@
 	/// If true directly targeted turfs can be hit
 	var/can_hit_turfs = FALSE
 
+	//casual mode enabled
+	var/random_crits = TRUE
+	var/crit_mult = 1
+	var/crit = FALSE
+
 	var/static/list/projectile_connections = list(
 		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
@@ -174,6 +179,16 @@
 /obj/projectile/Initialize()
 	. = ..()
 	decayedRange = range
+	if(prob((2 * crit_mult) * (damage / 10)) && random_crits == TRUE)//after nine years in development
+		crit = TRUE
+		// yes I know tf2 does x3 but they also make every hit in a 2 second timeframe crit so SHUT UP you're not my MOM
+		damage = initial(damage) * 6
+		if(dismemberment)
+			dismemberment = initial(dismemberment) * 2
+		if(stun)
+			stun = initial(stun) * 2
+		if(knockdown)
+			knockdown = initial(knockdown) * 2
 	AddElement(/datum/element/connect_loc, projectile_connections)
 
 /obj/projectile/proc/Range()
