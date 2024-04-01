@@ -318,6 +318,7 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/hangar)
 "eG" = (
@@ -333,12 +334,6 @@
 	light_range = 2
 	},
 /area/ruin/powered/hangar)
-"eN" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/powered/crew_facilities)
 "fd" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -868,7 +863,7 @@
 "oe" = (
 /obj/machinery/door/airlock/command{
 	dir = 4;
-	name = "Site's director office"
+	name = "Site director office"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2128,7 +2123,7 @@
 	dir = 4
 	},
 /mob/living/simple_animal/hostile/syndicate/ranged/space/stormtrooper{
-	name = "Site's Director"
+	name = "Site Director"
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/crew_facilities)
@@ -2219,6 +2214,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/bar,
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/machinery/door/window,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/hangar)
 "Mu" = (
@@ -3021,6 +3017,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered,
+/obj/structure/window/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/hangar)
 "YH" = (
@@ -5079,7 +5076,7 @@ ds
 jp
 Qk
 kZ
-eN
+RE
 HV
 fj
 RE
