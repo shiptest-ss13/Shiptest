@@ -7,6 +7,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_SYNDICATE = RADIO_TOKEN_SYNDICATE,
 	RADIO_CHANNEL_NANOTRASEN = RADIO_TOKEN_NANOTRASEN, //Shiptest edits - faction channels, removed department channels
 	RADIO_CHANNEL_MINUTEMEN = RADIO_TOKEN_MINUTEMEN,
+	RADIO_CHANNEL_PGF = RADIO_TOKEN_PGF,
 	RADIO_CHANNEL_INTEQ = RADIO_TOKEN_INTEQ,
 	RADIO_CHANNEL_PIRATE = RADIO_TOKEN_PIRATE,
 	MODE_BINARY = MODE_TOKEN_BINARY,
@@ -227,6 +228,29 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 /obj/item/radio/headset/pirate/alt/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(ITEM_SLOT_EARS))
+
+//PGF
+/obj/item/radio/headset/pgf
+	name = "\improper PGF headset"
+	desc = "A headset often worn by members of the PGFN and PGFMC."
+	keyslot = new /obj/item/encryptionkey/pgf
+
+/obj/item/radio/headset/pgf/captain
+	name = "\improper PGF official radio headset"
+	desc = "Worn by various officials and leaders serving the PGFN or PGFMC."
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+	command = TRUE
+
+/obj/item/radio/headset/pgf/alt
+	name = "\improper PGF bowman headset"
+	desc = "A headset often worn by members of the PGFN and PGFMC. Protects ears from flashbangs."
+	icon_state = "solgov_headset_alt"
+
+/obj/item/radio/headset/pgf/alt/captain
+	name = "\improper PGF official bowman headset"
+	desc = "Worn by various officials and leaders serving the PGFN or PGFMC. Protects ears from flashbangs."
+	keyslot2 = new /obj/item/encryptionkey/heads/captain
+	command = TRUE
 
 //solgov
 /obj/item/radio/headset/solgov
