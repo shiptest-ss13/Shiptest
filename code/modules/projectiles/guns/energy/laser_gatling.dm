@@ -22,9 +22,14 @@
 	. = ..()
 	gun = new(src)
 	battery = new(src)
+	gun.cell = battery
 	START_PROCESSING(SSobj, src)
 
 /obj/item/minigunpack/Destroy()
+	if(!QDELETED(gun))
+		qdel(gun)
+	gun = null
+	QDEL_NULL(battery)
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -41,7 +46,7 @@
 					armed = 0
 					to_chat(user, "<span class='warning'>You need a free hand to hold the gun!</span>")
 					return
-				update_icon()
+				update_appearance()
 				user.update_inv_back()
 		else
 			to_chat(user, "<span class='warning'>You are already holding the gun!</span>")
@@ -77,10 +82,8 @@
 
 
 /obj/item/minigunpack/update_icon_state()
-	if(armed)
-		icon_state = "notholstered"
-	else
-		icon_state = "holstered"
+	icon_state = "[(armed ? "not" : "")]holstered"
+	return ..()
 
 /obj/item/minigunpack/proc/attach_gun(mob/user)
 	if(!gun)
@@ -91,7 +94,7 @@
 		to_chat(user, "<span class='notice'>You attach the [gun.name] to the [name].</span>")
 	else
 		src.visible_message("<span class='warning'>The [gun.name] snaps back onto the [name]!</span>")
-	update_icon()
+	update_appearance()
 	user.update_inv_back()
 
 
@@ -105,7 +108,7 @@
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = null
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = WEAPON_MEDIUM
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/minigun)
 	cell_type = /obj/item/stock_parts/cell/crap
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
@@ -118,7 +121,13 @@
 
 	ammo_pack = loc
 	AddElement(/datum/element/update_icon_blocker)
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.15 SECONDS)
+	return ..()
+
+/obj/item/gun/energy/minigun/Destroy()
+	if(!QDELETED(ammo_pack))
+		qdel(ammo_pack)
+	ammo_pack = null
 	return ..()
 
 /obj/item/gun/energy/minigun/attack_self(mob/living/user)

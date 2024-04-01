@@ -22,12 +22,14 @@
 
 /// Adds new physical space level. DO NOT USE THIS TO LOAD SOMETHING NEW. SSmapping.get_free_allocation() will create any levels nessecary and pass you coordinates to create a new virtual level
 /datum/controller/subsystem/mapping/proc/add_new_zlevel(name, z_type = /datum/space_level, allocation_type = ALLOCATION_FREE)
+	SHOULD_NOT_SLEEP(TRUE)
+	// This proc used to sleep. It caused an infuriating desynchronization: new_z would calculate, the max z would be increased, and then the proc used CHECK_TICK.
+	// As a result, two space_levels could be added to the z_list, each believing itself to reside at the same z-coodinate.
+	// Watch your fucking race conditions.
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_NEW_Z, args)
 	var/new_z = z_list.len + 1
 	if (world.maxz < new_z)
 		world.incrementMaxZ()
-		CHECK_TICK
-	// TODO: sleep here if the Z level needs to be cleared
 	var/datum/space_level/S = new z_type(new_z, name, allocation_type)
 	z_list += S
 	return S

@@ -1,7 +1,15 @@
 import { map } from 'common/collections';
 import { toFixed } from 'common/math';
 import { useBackend } from '../backend';
-import { Box, Button, LabeledList, NumberInput, Section } from '../components';
+import {
+  Box,
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+  Divider,
+  Table,
+} from '../components';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 
@@ -18,6 +26,8 @@ export const Radio = (props, context) => {
     useCommand,
     subspace,
     subspaceSwitchable,
+    chatlog,
+    chatloglist = [],
   } = data;
   const tunedChannel = RADIO_CHANNELS.find(
     (channel) => channel.freq === frequency
@@ -28,15 +38,19 @@ export const Radio = (props, context) => {
   }))(data.channels);
   // Calculate window height
   let height = 106;
+  let width = 360;
   if (subspace) {
     if (channels.length > 0) {
       height += channels.length * 21 + 6;
     } else {
       height += 24;
     }
+  } else if (chatlog) {
+    height += 400;
+    width += 110;
   }
   return (
-    <Window width={360} height={height}>
+    <Window width={width} height={height}>
       <Window.Content>
         <Section>
           <LabeledList>
@@ -127,6 +141,31 @@ export const Radio = (props, context) => {
             )}
           </LabeledList>
         </Section>
+        {!!chatlog && (
+          <Section
+            title="Voice Log"
+            height="400px"
+            width="460px"
+            overflowY="scroll"
+          >
+            <Table>
+              <Table.Row header>
+                <Table.Cell>Timestamp</Table.Cell>
+                <Table.Cell>Transcript</Table.Cell>
+                <Divider />
+              </Table.Row>
+              {chatloglist.map((log) => (
+                <Table.Row key={log.message} className="candystripe">
+                  <Table.Cell>{log.time}</Table.Cell>
+                  <Table bold color="blue">
+                    {log.name}
+                  </Table>
+                  <Table>{log.message}</Table>
+                </Table.Row>
+              ))}
+            </Table>
+          </Section>
+        )}
       </Window.Content>
     </Window>
   );

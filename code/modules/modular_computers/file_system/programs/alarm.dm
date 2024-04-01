@@ -43,7 +43,7 @@
 			var/list/alarm = our_sort[areaname]
 			var/list/sources = alarm[3]
 			if (!(source in sources))
-				sources += source
+				sources += WEAKREF(source)
 			return TRUE
 
 	var/obj/machinery/camera/cam = null
@@ -54,7 +54,7 @@
 			cam = our_cams[1]
 	else if(cameras && istype(cameras, /obj/machinery/camera))
 		cam = cameras
-	our_sort[home.name] = list(home, (cam ? cam : cameras), list(source))
+	our_sort[home.name] = list(home, (cam ? cam : cameras), list(WEAKREF(source)))
 
 	update_alarm_display()
 	return TRUE
@@ -76,7 +76,7 @@
 
 /datum/computer_file/program/alarm_monitor/proc/cancelAlarm(class, area/A, obj/origin)
 	var/list/L = alarms[class]
-	var/cleared = 0
+	var/cleared = FALSE
 	var/arealevelalarm = FALSE // set to TRUE for alarms that set/clear whole areas
 	if (class=="Fire")
 		arealevelalarm = TRUE
@@ -85,14 +85,18 @@
 			if (!arealevelalarm) // the traditional behaviour
 				var/list/alarm = L[I]
 				var/list/srcs  = alarm[3]
-				if (origin in srcs)
-					srcs -= origin
-				if (srcs.len == 0)
-					cleared = 1
+				if (WEAKREF(origin) in srcs)
+					srcs -= WEAKREF(origin)
+				for(var/datum/weakref/ref as anything in srcs)
+					if(ref.resolve())
+						continue
+					srcs -= ref
+				if (!length(srcs))
+					cleared = TRUE
 					L -= I
 			else
 				L -= I // wipe the instances entirely
-				cleared = 1
+				cleared = TRUE
 
 
 	update_alarm_display()

@@ -246,3 +246,37 @@
 /obj/item/reagent_containers/food/snacks/grown/aloe/microwave_act(obj/machinery/microwave/M)
 	new /obj/item/stack/medical/aloe(drop_location(), 2)
 	qdel(src)
+
+/obj/item/seeds/seaweed
+	name = "pack of seaweed seeds" //dude, i pinkypromise! of course seaweed has seeds :)
+	desc = "These seeds grow into seaweed."
+	icon_state = "seed-seaweed"
+	species = "seaweed"
+	plantname = "seaweeds"
+	product = /obj/item/reagent_containers/food/snacks/grown/seaweed
+	maturation = 2
+	yield = 1
+	growing_icon = 'icons/obj/hydroponics/growing.dmi'
+	growthstages = 3
+	icon_grow = "seaweed-grow"
+	icon_dead = "seaweed-dead"
+	reagents_add = list(/datum/reagent/water = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.2)
+
+/obj/item/reagent_containers/food/snacks/grown/seaweed
+	seed = /obj/item/seeds/seaweed
+	name = "seaweed"
+	desc = "It's so rubbery... is this safe to eat?"
+	icon_state = "seaweed"
+	filling_color = "#4a7244"
+	bitesize_mod = 1
+	foodtype = VEGETABLES
+	grind_results = list(/datum/reagent/water = 1, /datum/reagent/consumable/sodiumchloride = 2)
+
+/obj/item/reagent_containers/food/snacks/grown/seaweed/sheet
+	name = "seaweed sheet"
+	desc = "A dried sheet of seaweed used for making sushi."
+	icon_state = "seaweedsheet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("seaweed" = 1)
+	foodtype = VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL

@@ -1,6 +1,7 @@
 /obj/vehicle/ridden/wheelchair/motorized
 	name = "motorized wheelchair"
 	desc = "A chair with big wheels. It seems to have a motor in it."
+	foldabletype = null
 	max_integrity = 150
 	var/speed = 2
 	var/power_efficiency = 1
@@ -67,7 +68,7 @@
 
 /obj/vehicle/ridden/wheelchair/motorized/attack_hand(mob/living/user)
 	if(power_cell && panel_open)
-		power_cell.update_icon()
+		power_cell.update_appearance()
 		user.put_in_hands(power_cell)
 		power_cell = null
 		to_chat(user, "<span class='notice'>You remove the power cell from [src].</span>")

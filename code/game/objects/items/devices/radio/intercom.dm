@@ -8,7 +8,9 @@
 	canhear_range = 2
 	dog_fashion = null
 	unscrewed = FALSE
-	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom //WS edit - Wideband Radio
+	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
 /obj/item/radio/intercom/unscrewed
 	unscrewed = TRUE
@@ -20,7 +22,7 @@
 	var/area/current_area = get_area(src)
 	if(!current_area)
 		return
-	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, .proc/AreaPowerCheck)
+	RegisterSignal(current_area, COMSIG_AREA_POWER_CHANGE, PROC_REF(AreaPowerCheck))
 
 /obj/item/radio/intercom/examine(mob/user)
 	. = ..()
@@ -101,7 +103,7 @@
 
 /obj/item/radio/intercom/emp_act(severity)
 	. = ..() // Parent call here will set `on` to FALSE.
-	update_icon()
+	update_appearance()
 
 /obj/item/radio/intercom/end_emp_effect(curremp)
 	. = ..()
@@ -115,7 +117,7 @@
 		icon_state = "[initial(icon_state)]-p"
 
 /**
- * Proc called whenever the intercom's area loses or gains power. Responsible for setting the `on` variable and calling `update_icon()`.
+ * Proc called whenever the intercom's area loses or gains power. Responsible for setting the `on` variable and calling `update_appearance()`.
  *
  * Normally called after the intercom's area recieves the `COMSIG_AREA_POWER_CHANGE` signal, but it can also be called directly.
  * Arguments:
@@ -127,7 +129,7 @@
 		on = FALSE
 	else
 		on = current_area.powered(AREA_USAGE_EQUIP) // set "on" to the equipment power status of our area.
-	update_icon()
+	update_appearance()
 
 /obj/item/radio/intercom/add_blood_DNA(list/blood_dna)
 	return FALSE
@@ -138,9 +140,22 @@
 	desc = "A ready-to-go intercom. Just slap it on a wall and screw it in!"
 	icon_state = "intercom"
 	result_path = /obj/item/radio/intercom/unscrewed
-	pixel_shift = 24
-	inverse = TRUE
+	pixel_shift = 31
+	inverse = FALSE
 	custom_materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
+
+//table Normal Intercoms
+
+/obj/item/radio/intercom/table
+	icon_state = "intercom-table"
+	wallframe = /obj/item/wallframe/intercom/table
+
+/obj/item/wallframe/intercom/table
+	icon_state = "intercom-table"
+	icon = 'icons/obj/radio.dmi'
+	result_path = /obj/item/radio/intercom/table
+	pixel_shift = 0
+
 
 //wideband radio
 /obj/item/radio/intercom/wideband
@@ -153,6 +168,7 @@
 	frequency = FREQ_WIDEBAND
 	freqlock = TRUE
 	freerange = TRUE
+	log = TRUE
 	wallframe = /obj/item/wallframe/intercom/wideband
 
 /obj/item/radio/intercom/wideband/Initialize(mapload, ndir, building)
@@ -163,6 +179,12 @@
 /obj/item/radio/intercom/wideband/unscrewed
 	unscrewed = TRUE
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/wideband, 26)
+
+/obj/item/radio/intercom/wideband/table
+	icon_state = "intercom-wideband-table"
+	wallframe = /obj/item/wallframe/intercom/wideband/table
+
 /obj/item/radio/intercom/wideband/recalculateChannels()
 	. = ..()
 	independent = TRUE
@@ -172,6 +194,10 @@
 	desc = "A detached wideband relay. Attach to a wall and screw it in to use."
 	icon_state = "intercom-wideband"
 	result_path = /obj/item/radio/intercom/wideband/unscrewed
+	pixel_shift = 26
 
 /obj/item/wallframe/intercom/wideband/table
 	icon_state = "intercom-wideband-table"
+	icon = 'icons/obj/radio.dmi'
+	result_path = /obj/item/radio/intercom/wideband/table
+	pixel_shift = 0

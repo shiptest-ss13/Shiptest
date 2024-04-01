@@ -59,6 +59,10 @@
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
 
+/turf/closed/wall/rust/yesdiag
+	icon_state = "rusty_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+
 /turf/closed/wall/rust/icecropolis
 	baseturfs = /turf/open/indestructible/necropolis/air
 	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
@@ -71,6 +75,10 @@
 	base_icon_state = "rusty_reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 15
+
+/turf/closed/wall/r_wall/rust/yesdiag
+	icon_state = "rusty_reinforced_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/bronze
 	name = "clockwork wall"

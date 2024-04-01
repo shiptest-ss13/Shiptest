@@ -43,9 +43,8 @@
 	for(var/thing in verbs_list)
 		var/procpath/verb_to_add = thing
 		output_list[++output_list.len] = list(verb_to_add.category, verb_to_add.name)
-	output_list = url_encode(json_encode(output_list))
 
-	target << output("[output_list];", "statbrowser:add_verb_list")
+	target.stat_panel.send_message("add_verb_list", output_list)
 
 /**
  * handles removing verb and sending it to browser to update, use this for removing verbs
@@ -69,6 +68,8 @@
 	var/list/verbs_list = list()
 	if(!islist(verb_or_list_to_remove))
 		verbs_list += verb_or_list_to_remove
+		if(verb_or_list_to_remove in GLOB.client_verbs_required)
+			CRASH("attempted to remove verb ([verb_or_list_to_remove]) that is required for the client to function")
 	else
 		var/list/verb_listref = verb_or_list_to_remove
 		var/list/elements_to_process = verb_listref.Copy()
@@ -78,6 +79,9 @@
 			if(islist(element_or_list))
 				elements_to_process += element_or_list //list/a += list/b adds the contents of b into a, not the reference to the list itself
 			else
+				if(element_or_list in GLOB.client_verbs_required)
+					stack_trace("attempted to remove a verb ([element_or_list]) that is required for the client to function")
+					continue
 				verbs_list += element_or_list
 
 	if(mob_target)
@@ -91,6 +95,5 @@
 	for(var/thing in verbs_list)
 		var/procpath/verb_to_remove = thing
 		output_list[++output_list.len] = list(verb_to_remove.category, verb_to_remove.name)
-	output_list = url_encode(json_encode(output_list))
 
-	target << output("[output_list];", "statbrowser:remove_verb_list")
+	target.stat_panel.send_message("remove_verb_list", output_list)

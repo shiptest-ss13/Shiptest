@@ -43,8 +43,8 @@
 	var/playing = FALSE
 	var/locked = FALSE
 	var/drop_dir = SOUTH
-	var/static/list/coin_values = list(/obj/item/coin/diamond = 100, /obj/item/coin/gold = 25, /obj/item/coin/silver = 10, /obj/item/coin/iron = 1) //Make sure this is ordered from left to right.
-	var/list/coins_to_dispense = list()
+	var/static/list/cash_values = list(/obj/item/spacecash/bundle/c100 = 100, /obj/item/spacecash/bundle/c50 = 50, /obj/item/spacecash/bundle/c10 = 10, /obj/item/spacecash/bundle/c1 = 1) //Make sure this is ordered from left to right.
+	var/list/bundles_to_dispense = list()
 	var/datum/looping_sound/jackpot/jackpot_loop
 	var/on = TRUE
 	var/last_spin = 13
@@ -53,6 +53,11 @@
 	. = ..()
 	jackpot_loop = new(list(src), FALSE)
 	wires = new /datum/wires/roulette(src)
+
+/obj/machinery/roulette/Destroy()
+	QDEL_NULL(jackpot_loop)
+	QDEL_NULL(wires)
+	return ..()
 
 /obj/machinery/roulette/obj_break(damage_flag)
 	prize_theft(0.05)
@@ -100,7 +105,7 @@
 		if("ChangeBetType")
 			chosen_bet_type = params["type"]
 			. = TRUE
-	update_icon() // Not applicable to all objects.
+	update_appearance() // Not applicable to all objects.
 
 ///Handles setting ownership and the betting itself.
 /obj/machinery/roulette/attackby(obj/item/W, mob/user, params)
@@ -159,7 +164,7 @@
 			playsound(src, 'sound/machines/piston_raise.ogg', 70)
 			playsound(src, 'sound/machines/chime.ogg', 50)
 
-			addtimer(CALLBACK(src, .proc/play, user, player_card, chosen_bet_type, chosen_bet_amount, potential_payout), 4) //Animation first
+			addtimer(CALLBACK(src, PROC_REF(play), user, player_card, chosen_bet_type, chosen_bet_amount, potential_payout), 4) //Animation first
 			return TRUE
 		else
 			var/obj/item/card/id/new_card = W
@@ -183,14 +188,14 @@
 	my_card.registered_account.transfer_money(player_id.registered_account, bet_amount)
 
 	playing = TRUE
-	update_icon()
+	update_appearance()
 	set_light(0)
 
 	var/rolled_number = rand(0, 36)
 
 	playsound(src, 'sound/machines/roulettewheel.ogg', 50)
-	addtimer(CALLBACK(src, .proc/finish_play, player_id, bet_type, bet_amount, payout, rolled_number), 34) //4 deciseconds more so the animation can play
-	addtimer(CALLBACK(src, .proc/finish_play_animation), 30)
+	addtimer(CALLBACK(src, PROC_REF(finish_play), player_id, bet_type, bet_amount, payout, rolled_number), 34) //4 deciseconds more so the animation can play
+	addtimer(CALLBACK(src, PROC_REF(finish_play_animation)), 30)
 
 /obj/machinery/roulette/proc/finish_play_animation()
 	icon_state = "idle"
@@ -221,8 +226,9 @@
 
 	dispense_prize(potential_payout)
 
-///Fills a list of coins that should be dropped.
+///Fills a list of bundles that should be dropped.
 /obj/machinery/roulette/proc/dispense_prize(payout)
+
 
 	if(payout >= ROULETTE_JACKPOT_AMOUNT)
 		jackpot_loop.start()
@@ -231,42 +237,42 @@
 
 	my_card.registered_account.adjust_money(-payout)
 
-	for(var/coin_type in coin_values) //Loop through all coins from most valuable to least valuable. Try to give as much of that coin (the iterable) as possible until you can't anymore, then move to the next.
-		var/value = coin_values[coin_type] //Change this to use initial value once we change to mat datum coins.
-		var/coin_count = round(remaining_payout / value)
+	for(var/cash_type in cash_values) //Loop through all bundles from most valuable to least valuable. Try to give as much of that bundle as possible until you can't anymore, then move to the next.
+		var/value = cash_values[cash_type] //Change this to use initial value once we change to the right bundle
+		var/cash_count = round(remaining_payout / value)
 
-		if(!coin_count) //Cant make coins of this type, as we can't reach it's value.
+		if(!cash_count) //Cant make bundles of this type, as we can't reach it's value.
 			continue
 
-		remaining_payout -= value * coin_count
-		coins_to_dispense[coin_type] += coin_count
+		remaining_payout -= value * cash_count
+		bundles_to_dispense[cash_type] += cash_count
 
-	drop_coin() //Start recursively dropping coins
+	drop_cash() //Start recursively dropping bundles
 
-///Recursive function that runs until it runs out of coins to drop.
-/obj/machinery/roulette/proc/drop_coin()
-	var/coin_to_drop
+///Recursive function that runs until it runs out of bundles to drop.
+/obj/machinery/roulette/proc/drop_cash()
+	var/bundle_to_drop
 
-	for(var/i in coins_to_dispense) //Find which coin to drop
-		if(coins_to_dispense[i] <= 0) //Less than 1? go to next potential coin.
+	for(var/i in bundles_to_dispense) //Find which bundle to drop
+		if(bundles_to_dispense[i] <= 0) //Less than 1? go to next potential bundle.
 			continue
-		coin_to_drop = i
+		bundle_to_drop = i
 		break
 
-	if(!coin_to_drop) //No more coins, stop recursion.
+	if(!bundle_to_drop) //No more bundles, stop recursion.
 		jackpot_loop.stop()
 		return FALSE
 
-	coins_to_dispense[coin_to_drop] -= 1
+	bundles_to_dispense[bundle_to_drop] -= 1
 
 	var/turf/drop_loc = get_step(loc, drop_dir)
-	var/obj/item/cash = new coin_to_drop(drop_loc)
+	var/obj/item/cash = new bundle_to_drop(drop_loc)
 	playsound(cash, pick(list('sound/machines/coindrop.ogg', 'sound/machines/coindrop2.ogg')), 40, TRUE)
 
-	addtimer(CALLBACK(src, .proc/drop_coin), 3) //Recursion time
+	addtimer(CALLBACK(src, PROC_REF(drop_cash)), 3) //Recursion time
 
 
-///Fills a list of coins that should be dropped.
+///Fills a list of bundles that should be dropped.
 /obj/machinery/roulette/proc/prize_theft(percentage)
 	if(locked)
 		return
@@ -323,14 +329,19 @@
 	playsound(src, 'sound/machines/buzz-two.ogg', 30, TRUE)
 	return FALSE
 
-/obj/machinery/roulette/update_icon(payout, color, rolled_number, is_winner = FALSE)
-	cut_overlays()
+/obj/machinery/roulette/update_overlays()
+	. = ..()
 
 	if(machine_stat & MAINT)
 		return
 
 	if(playing)
-		add_overlay("random_numbers")
+		. += "random_numbers"
+
+/obj/machinery/roulette/update_icon(updates=ALL, payout, color, rolled_number, is_winner = FALSE)
+	. = ..()
+	if(machine_stat & MAINT)
+		return
 
 	if(!payout || !color || isnull(rolled_number)) //Don't fall for tricks.
 		return
@@ -402,14 +413,14 @@
 		return
 	loc.visible_message("<span class='warning'>\The [src] begins to beep loudly!</span>")
 	used = TRUE
-	addtimer(CALLBACK(src, .proc/launch_payload), 40)
+	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 40)
 
 /obj/item/roulette_wheel_beacon/proc/launch_payload()
 	var/obj/structure/closet/supplypod/centcompod/toLaunch = new()
 
 	new /obj/machinery/roulette(toLaunch)
 
-	new /obj/effect/DPtarget(drop_location(), toLaunch)
+	new /obj/effect/pod_landingzone(drop_location(), toLaunch)
 	qdel(src)
 
 #undef ROULETTE_SINGLES_PAYOUT

@@ -7,7 +7,16 @@
 			"windows": {
 				"command": ".\\tools\\build\\build.bat"
 			},
-			"problemMatcher": ["$dreammaker", "$eslint-stylish"],
+			"options": {
+				"env": {
+					"DM_EXE": "${config:dreammaker.byondPath}"
+				}
+			},
+			"problemMatcher": [
+				"$dreammaker",
+				"$tsc",
+				"$eslint-stylish"
+			],
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -18,24 +27,81 @@
 		{
 			"type": "dreammaker",
 			"dme": "shiptest.dme",
-			"problemMatcher": ["$dreammaker"],
+			"problemMatcher": [
+				"$dreammaker"
+			],
 			"group": "build",
-			"label": "dm: build - shiptest.dme"
-		},
-		{
-			"type": "shell",
-			"command": "tgui/bin/tgui",
-			"windows": {
-				"command": ".\\tgui\\bin\\tgui.bat"
-			},
-			"problemMatcher": ["$eslint-stylish"],
-			"group": "build",
-			"label": "tgui: build"
+			"label": "dm: build - tgstation.dme"
 		},
 		{
 			"command": "${command:dreammaker.reparse}",
 			"group": "build",
 			"label": "dm: reparse"
+		},
+		{
+			"type": "shell",
+			"command": "bin/tgui-build",
+			"windows": {
+				"command": ".\\bin\\tgui-build.cmd"
+			},
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build",
+			"label": "tgui: build"
+		},
+		{
+			"type": "shell",
+			"command": "bin/tgui-dev",
+			"windows": {
+				"command": ".\\bin\\tgui-dev.cmd"
+			},
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build",
+			"label": "tgui: dev server"
+		},
+		{
+			"type": "shell",
+			"command": "bin/tgui-bench",
+			"windows": {
+				"command": ".\\bin\\tgui-bench.cmd"
+			},
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build",
+			"label": "tgui: bench"
+		},
+		{
+			"type": "shell",
+			"command": "bin/tgui-sonar",
+			"windows": {
+				"command": ".\\bin\\tgui-sonar.cmd"
+			},
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build",
+			"label": "tgui: sonar"
+		},
+		{
+			"type": "shell",
+			"command": "bin/tgfont",
+			"windows": {
+				"command": ".\\bin\\tgfont.cmd"
+			},
+			"problemMatcher": [
+				"$tsc",
+				"$eslint-stylish"
+			],
+			"group": "build",
+			"label": "tgui: rebuild tgfont"
 		}
 	]
 }

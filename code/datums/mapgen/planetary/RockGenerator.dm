@@ -83,8 +83,16 @@
 /datum/biome/rock
 	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/lit = 1)
 
-	feature_spawn_chance = 0.1
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
+	feature_spawn_chance = 0.25
+	feature_spawn_list = list(
+		/obj/structure/geyser/random = 80,
+		/obj/structure/vein = 60,
+		/obj/structure/elite_tumor = 40,
+		/obj/structure/vein/classtwo = 40,
+		/obj/effect/spawner/lootdrop/anomaly/rock = 10,
+		/obj/structure/vein/classthree = 10,
+		/obj/effect/spawner/lootdrop/anomaly/big = 1 //get out of here stalker
+	)
 
 	flora_spawn_chance = 5
 	mob_spawn_chance = 3
@@ -105,7 +113,9 @@
 	)
 
 /datum/biome/rock/icecap
-	open_turf_types = list(/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 1, /turf/open/floor/plating/asteroid/snow/lit/rockplanet = 5)
+	open_turf_types = list(
+		/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 1,
+		/turf/open/floor/plating/asteroid/snow/lit/rockplanet = 5)
 	flora_spawn_chance = 1
 	mob_spawn_chance = 2
 
@@ -129,7 +139,7 @@
 	)
 
 /datum/biome/cave/rock
-	closed_turf_types = list(/turf/closed/mineral/random/asteroid/rockplanet = 1)
+	closed_turf_types = list(/turf/closed/mineral/random/rockplanet = 1)
 	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet/cracked = 1)
 	flora_spawn_chance = 4
 	flora_spawn_list = list(
@@ -138,8 +148,16 @@
 		/obj/structure/flora/ash/fern = 2,
 		/obj/structure/flora/ash/puce = 1,
 	)
-	feature_spawn_chance = 0.3
-	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2, /obj/structure/spawner/ice_moon/rockplanet = 4)
+	feature_spawn_chance = 0.5
+	feature_spawn_list = list(
+		/obj/structure/vein = 3,
+		/obj/structure/geyser/random = 2,
+		/obj/structure/vein/classtwo = 2,
+		/obj/structure/elite_tumor = 1,
+		/obj/structure/vein/classthree = 1,
+		/obj/structure/spawner/ice_moon/rockplanet = 4,
+		/obj/effect/spawner/lootdrop/anomaly/rock/cave = 1,
+	)
 	mob_spawn_chance = 6
 	mob_spawn_list = list(
 		/mob/living/simple_animal/hostile/netherworld/asteroid = 20,

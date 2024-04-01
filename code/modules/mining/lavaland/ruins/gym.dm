@@ -48,7 +48,7 @@
 		return
 	else
 		obj_flags |= IN_USE
-		update_icon()
+		update_appearance()
 		user.setDir(SOUTH)
 		user.Stun(80)
 		user.forceMove(src.loc)
@@ -58,7 +58,7 @@
 
 		playsound(user, 'sound/machines/click.ogg', 60, TRUE)
 		obj_flags &= ~IN_USE
-		update_icon()
+		update_appearance()
 		user.pixel_y = user.base_pixel_y
 		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)

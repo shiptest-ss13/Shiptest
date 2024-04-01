@@ -132,8 +132,6 @@ Difficulty: Very Hard
 		if(H.mind)
 			if(istype(H.mind.martial_art, /datum/martial_art/the_sleeping_carp))
 				. = TRUE
-		if (is_species(H, /datum/species/golem/sand))
-			. = TRUE
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/alternating_dir_shots()
 	ranged_cooldown = world.time + 40
@@ -156,8 +154,8 @@ Difficulty: Very Hard
 	visible_message("<span class='colossus'>\"<b>Die.</b>\"</span>")
 
 	SLEEP_CHECK_DEATH(10)
-	INVOKE_ASYNC(src, .proc/spiral_shoot, FALSE)
-	INVOKE_ASYNC(src, .proc/spiral_shoot, TRUE)
+	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), FALSE)
+	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), TRUE)
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/spiral_shoot(negative = pick(TRUE, FALSE), counter_start = 8)
 	var/turf/start_turf = get_step(src, pick(GLOB.alldirs))
@@ -240,7 +238,7 @@ Difficulty: Very Hard
 /obj/effect/temp_visual/at_shield/Initialize(mapload, new_target)
 	. = ..()
 	target = new_target
-	INVOKE_ASYNC(src, /atom/movable/proc/orbit, target, 0, FALSE, 0, 0, FALSE, TRUE)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, orbit), target, 0, FALSE, 0, 0, FALSE, TRUE)
 
 /mob/living/simple_animal/hostile/megafauna/colossus/bullet_act(obj/projectile/P)
 	if(!stat)
@@ -270,10 +268,9 @@ Difficulty: Very Hard
 		else
 			SSexplosions.medturf += target
 
-
-
+//There can only ever be one blackbox, and we want to know if there already is one when we spawn
+GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 //Black Box
-
 /obj/machinery/smartfridge/black_box
 	name = "black box"
 	desc = "A completely indestructible chunk of crystal, rumoured to predate the start of this universe. It looks like you could store things inside it."
@@ -302,11 +299,9 @@ Difficulty: Very Hard
 
 /obj/machinery/smartfridge/black_box/Initialize()
 	. = ..()
-	var/static/obj/machinery/smartfridge/black_box/current
-	if(current && current != src)
-		qdel(src, force=TRUE)
-		return
-	current = src
+	if(GLOB.blackbox != src)
+		return INITIALIZE_HINT_QDEL_FORCE
+	GLOB.blackbox = src
 	ReadMemory()
 
 /obj/machinery/smartfridge/black_box/process()
@@ -351,6 +346,8 @@ Difficulty: Very Hard
 
 /obj/machinery/smartfridge/black_box/Destroy(force = FALSE)
 	if(force)
+		if(GLOB.blackbox == src)
+			GLOB.blackbox = null
 		for(var/thing in src)
 			qdel(thing)
 		return ..()

@@ -337,15 +337,6 @@
 	name = "cyborg destination tagger"
 	desc = "Used to fool the disposal mail network into thinking that you're a harmless parcel. Does actually work as a regular destination tagger as well."
 
-/obj/item/destTagger/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins tagging [user.p_their()] final destination! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	if (islizard(user))
-		to_chat(user, "<span class='notice'>*HELL*</span>")//lizard nerf
-	else
-		to_chat(user, "<span class='notice'>*HEAVEN*</span>")
-	playsound(src, 'sound/machines/twobeep_high.ogg', 100, TRUE)
-	return BRUTELOSS
-
 /obj/item/destTagger/proc/openwindow(mob/user)
 	var/dat = "<tt><center><h1><b>TagMaster 2.2</b></h1></center>"
 

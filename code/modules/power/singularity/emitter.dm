@@ -3,6 +3,7 @@
 	desc = "A heavy-duty industrial laser, often used in containment fields and power generation."
 	icon = 'icons/obj/singularity.dmi'
 	icon_state = "emitter"
+	base_icon_state = "emitter"
 
 	anchored = FALSE
 	density = TRUE
@@ -27,7 +28,7 @@
 	var/allow_switch_interact = TRUE
 
 	var/projectile_type = /obj/projectile/beam/emitter/hitscan //WS - Hitscan emitters
-	var/projectile_sound = 'sound/weapons/emitter.ogg'
+	var/projectile_sound = 'sound/weapons/gun/laser/heavy_laser.ogg'
 	var/datum/effect_system/spark_spread/sparks
 
 	var/obj/item/gun/energy/gun
@@ -39,20 +40,6 @@
 	var/charge = 0
 	var/last_projectile_params
 
-
-/obj/machinery/power/emitter/welded/Initialize()
-	welded = TRUE
-	return ..()
-
-/obj/machinery/power/emitter/ctf
-	name = "Energy Cannon"
-	active = TRUE
-	active_power_usage = FALSE
-	idle_power_usage = FALSE
-	locked = TRUE
-	req_access_txt = "100"
-	welded = TRUE
-	use_power = FALSE
 
 /obj/machinery/power/emitter/Initialize()
 	. = ..()
@@ -112,7 +99,7 @@
 
 /obj/machinery/power/emitter/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, .proc/can_be_rotated))
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, PROC_REF(can_be_rotated)))
 
 /obj/machinery/power/emitter/proc/can_be_rotated(mob/user,rotation_type)
 	if (anchored)
@@ -135,10 +122,11 @@
 	return ..()
 
 /obj/machinery/power/emitter/update_icon_state()
-	if(active && powernet)
-		icon_state = avail(active_power_usage) ? icon_state_on : icon_state_underpowered
-	else
-		icon_state = initial(icon_state)
+	if(!active || !powernet)
+		icon_state = base_icon_state
+		return ..()
+	icon_state = avail(active_power_usage) ? icon_state_on : icon_state_underpowered
+	return ..()
 
 /obj/machinery/power/emitter/interact(mob/user)
 	add_fingerprint(user)
@@ -160,7 +148,7 @@
 			log_game("Emitter turned [active ? "ON" : "OFF"] by [key_name(user)] in [AREACOORD(src)]")
 			investigate_log("turned [active ? "<font color='green'>ON</font>" : "<font color='red'>OFF</font>"] by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 
-			update_icon()
+			update_appearance()
 
 		else
 			to_chat(user, "<span class='warning'>The controls are locked!</span>")
@@ -182,19 +170,19 @@
 		return
 	if(!welded || (!powernet && active_power_usage))
 		active = FALSE
-		update_icon()
+		update_appearance()
 		return
 	if(active == TRUE)
 		if(!active_power_usage || surplus() >= active_power_usage)
 			add_load(active_power_usage)
 			if(!powered)
 				powered = TRUE
-				update_icon()
+				update_appearance()
 				investigate_log("regained power and turned <font color='green'>ON</font> at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 		else
 			if(powered)
 				powered = FALSE
-				update_icon()
+				update_appearance()
 				investigate_log("lost power and turned <font color='red'>OFF</font> at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 				log_game("Emitter lost power in [AREACOORD(src)]")
 			return
@@ -369,10 +357,31 @@
 	if(user)
 		user.visible_message("<span class='warning'>[user.name] emags [src].</span>", "<span class='notice'>You short out the lock.</span>")
 
+/obj/machinery/power/emitter/ctf
+	name = "Energy Cannon"
+	active = TRUE
+	active_power_usage = FALSE
+	idle_power_usage = FALSE
+	locked = TRUE
+	req_access_txt = "100"
+	welded = TRUE
+	use_power = FALSE
+
+/obj/machinery/power/emitter/welded/Initialize()
+	welded = TRUE
+	return ..()
+
+/obj/machinery/power/emitter/welded/upgraded/Initialize()
+	. = ..()
+	component_parts = list()
+	component_parts += new /obj/item/stock_parts/micro_laser/quadultra(null)
+	component_parts += new /obj/item/stock_parts/manipulator/femto(null)
+	RefreshParts()
 
 /obj/machinery/power/emitter/prototype
 	name = "Prototype Emitter"
 	icon = 'icons/obj/turrets.dmi'
+	base_icon_state = "protoemitter"
 	icon_state = "protoemitter"
 	icon_state_on = "protoemitter_+a"
 	icon_state_underpowered = "protoemitter_+u"
@@ -397,7 +406,7 @@
 	auto.Remove(buckled_mob)
 	. = ..()
 
-/obj/machinery/power/emitter/prototype/user_buckle_mob(mob/living/M, mob/living/carbon/user)
+/obj/machinery/power/emitter/prototype/user_buckle_mob(mob/living/M, mob/living/carbon/user, check_loc = FALSE)
 	if(user.incapacitated() || !istype(user))
 		return
 	for(var/atom/movable/A in get_turf(src))

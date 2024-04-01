@@ -5,8 +5,13 @@ SUBSYSTEM_DEF(mobs)
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
 	var/list/currentrun = list()
-	var/static/list/clients_by_zlevel[][]
-	var/static/list/dead_players_by_zlevel[][] = list(list()) // Needs to support zlevel 1 here, MaxZChanged only happens when z2 is created and new_players can login before that.
+
+	/// List of player mobs by their stringified virtual z-level
+	var/static/list/list/players_by_virtual_z = list()
+
+	/// List of all dead player mobs by virtual z-level
+	var/static/list/list/dead_players_by_virtual_z = list()
+
 	var/static/list/cubemonkeys = list()
 	var/static/list/cheeserats = list()
 
@@ -19,16 +24,6 @@ SUBSYSTEM_DEF(mobs)
 	var/list/cust = list()
 	cust["processing"] = length(GLOB.mob_living_list)
 	.["custom"] = cust
-
-/datum/controller/subsystem/mobs/proc/MaxZChanged()
-	if (!islist(clients_by_zlevel))
-		clients_by_zlevel = new /list(world.maxz,0)
-		dead_players_by_zlevel = new /list(world.maxz,0)
-	while (clients_by_zlevel.len < world.maxz)
-		clients_by_zlevel.len++
-		clients_by_zlevel[clients_by_zlevel.len] = list()
-		dead_players_by_zlevel.len++
-		dead_players_by_zlevel[dead_players_by_zlevel.len] = list()
 
 /datum/controller/subsystem/mobs/fire(resumed = 0)
 	var/seconds = wait * 0.1

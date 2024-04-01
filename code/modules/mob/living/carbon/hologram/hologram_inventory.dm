@@ -106,10 +106,10 @@
 		var/atom/movable/screen/inventory/inv
 
 		inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_LPOCKET) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 		inv = hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_RPOCKET) + 1]
-		inv.update_icon()
+		inv.update_appearance()
 
 		if(l_store)
 			l_store.screen_loc = ui_storage1

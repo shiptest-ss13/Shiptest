@@ -1,4 +1,4 @@
-import { useBackend } from '../backend';
+import { useBackend, useLocalState } from '../backend';
 import {
   Dropdown,
   Input,
@@ -17,6 +17,8 @@ export const ShipEditor = (props, context) => {
   for (let name in data.outfits) {
     outfits.push(name);
   }
+
+  const [tagText, setTagText] = useLocalState(context, 'tagText', '');
 
   return (
     <Window title="Ship Editor" width={500} height={600}>
@@ -60,7 +62,42 @@ export const ShipEditor = (props, context) => {
               />
             </LabeledList.Item>
 
-            <LabeledList.Item label="Admin Panel Category">
+            <LabeledList.Item label="Add Ship Tag">
+              {
+                <>
+                  <Input
+                    placeholder="Add Tag..."
+                    autoFocus
+                    value={tagText}
+                    onInput={(_, value) => {
+                      setTagText(value);
+                    }}
+                  />
+
+                  <Button
+                    content="Add"
+                    value={tagText}
+                    onClick={(e, value) => {
+                      act('addTemplateTags', {
+                        new_template_tags: tagText,
+                      });
+                    }}
+                  />
+
+                  <Button
+                    content="Remove"
+                    value={tagText}
+                    onClick={(e, value) => {
+                      act('removeTemplateTags', {
+                        new_template_tags: tagText,
+                      });
+                    }}
+                  />
+                </>
+              }
+            </LabeledList.Item>
+
+            <LabeledList.Item label="Ship Category">
               <Input
                 value={data.templateCategory}
                 onChange={(e, value) =>
@@ -77,6 +114,30 @@ export const ShipEditor = (props, context) => {
                 stepPixelSize={30}
                 onChange={(e, value) =>
                   act('setTemplateLimit', { new_template_limit: value })
+                }
+              />
+            </LabeledList.Item>
+
+            <LabeledList.Item label="Spawn Time Coeff.">
+              <NumberInput
+                value={data.templateSpawnCoeff}
+                minValue={0}
+                maxValue={100}
+                stepPixelSize={30}
+                onChange={(e, value) =>
+                  act('setSpawnCoeff', { new_spawn_coeff: value })
+                }
+              />
+            </LabeledList.Item>
+
+            <LabeledList.Item label="Officer Time Coeff.">
+              <NumberInput
+                value={data.templateOfficerCoeff}
+                minValue={0}
+                maxValue={100}
+                stepPixelSize={30}
+                onChange={(e, value) =>
+                  act('setOfficerCoeff', { new_officer_coeff: value })
                 }
               />
             </LabeledList.Item>

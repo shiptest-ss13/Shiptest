@@ -15,21 +15,49 @@
 	tastes = list("fish" = 4, "batter" = 1, "hot peppers" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/carpmeat
-	name = "carp fillet"
-	desc = "A fillet of spess carp meat."
+/obj/item/reagent_containers/food/snacks/fishmeat
+	name = "fish fillet"
+	desc = "A fillet of fish meat."
 	icon_state = "fishfillet"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1)
 	foodtype = MEAT
 
-/obj/item/reagent_containers/food/snacks/carpmeat/Initialize()
+/obj/item/reagent_containers/food/snacks/fishmeat/Initialize()
 	. = ..()
 	eatverb = pick("bite","chew","gnaw","swallow","chomp")
 
-/obj/item/reagent_containers/food/snacks/carpmeat/imitation
+/obj/item/reagent_containers/food/snacks/fishmeat/moonfish
+	name = "moonfish fillet"
+	desc = "A fillet of moonfish."
+	icon_state = "moonfish_fillet"
+
+/obj/item/reagent_containers/food/snacks/fishmeat/gunner_jellyfish
+	name = "filleted gunner jellyfish"
+	desc = "A gunner jellyfish with the stingers removed. Mildly hallucinogenic."
+	icon_state = "jellyfish_fillet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/mindbreaker = 2)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/armorfish
+	name = "cleaned armorfish"
+	desc = "An armorfish with its guts and shell removed, ready for use in cooking."
+	icon_state = "armorfish_fillet"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/donkfish
+	name = "donkfillet"
+	desc = "The dreaded donkfish fillet. No sane spaceman would eat this, and it does not get better when cooked."
+	icon_state = "donkfillet"
+	list_reagents = list(/datum/reagent/yuck = 3)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/carp
+	name = "carp fillet"
+	desc = "A fillet of spess carp meat."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/toxin/carpotoxin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+
+/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation
 	name = "imitation carp fillet"
 	desc = "Almost just like the real thing, kinda."
 
@@ -53,6 +81,80 @@
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1, "chips" = 1)
 	foodtype = MEAT | VEGETABLES | FRIED
+
+/obj/item/reagent_containers/food/snacks/vegetariansushiroll
+	name = "vegetarian sushi roll"
+	desc = "A roll of simple vegetarian sushi with rice, carrots, and potatoes. Sliceable into pieces!"
+	icon_state = "vegan-sushi-roll"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
+	filling_color = "#7daa70"
+	tastes = list("boiled rice" = 4, "carrots" = 2, "potato" = 2)
+	foodtype = VEGETABLES
+	slice_path = /obj/item/reagent_containers/food/snacks/vegetariansushislice
+	slices_num = 4
+
+/obj/item/reagent_containers/food/snacks/vegetariansushislice
+	name = "vegetarian sushi slice"
+	desc = "A slice of simple vegetarian sushi with rice, carrots, and potatoes."
+	icon_state = "vegan-sushi-slice"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#7daa70"
+	tastes = list("boiled rice" = 4, "carrots" = 2, "potato" = 2)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/spicyfiletsushiroll
+	name = "spicy filet sushi roll"
+	desc = "A roll of tasty, spicy sushi made with fish and vegetables. Sliceable into pieces!"
+	icon_state = "spicy-sushi-roll"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
+	filling_color = "#d8b02c"
+	tastes = list("boiled rice" = 4, "fish" = 2, "spicyness" = 2)
+	foodtype = VEGETABLES | MEAT
+	slice_path = /obj/item/reagent_containers/food/snacks/spicyfiletsushislice
+	slices_num = 4
+
+/obj/item/reagent_containers/food/snacks/spicyfiletsushislice
+	name = "spicy filet sushi slice"
+	desc = "A slice of tasty, spicy sushi made with fish and vegetables. Don't eat it too fast!."
+	icon_state = "spicy-sushi-slice"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#d8b02c"
+	tastes = list("boiled rice" = 4, "fish" = 2, "spicyness" = 2)
+	foodtype = VEGETABLES | MEAT
+
+/obj/item/reagent_containers/food/snacks/onigiri
+	name = "onigiri"
+	desc = "A ball of cooked rice surrounding a filling formed into a triangular shape and wrapped in seaweed."
+	icon_state = "onigiri"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	filling_color = "#d3ceba"
+	tastes = list("rice" = 1, "dried seaweed" = 1)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/fishi
+	name = "Fi-shi roll"
+	desc = "An entire fish, surrounded by a thick layer of seaweed. is this... edible?"
+	icon_state = "fi-shi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/toxin/carpotoxin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 18, /datum/reagent/consumable/nutriment/vitamin = 8, /datum/reagent/toxin/carpotoxin = 8)
+	filling_color = "#eac57b"
+	tastes = list("raw fish" = 6, "dried seaweed" = 3)
+	foodtype = VEGETABLES | MEAT
+
+/obj/item/reagent_containers/food/snacks/nigiri_sushi
+	name = "nigiri sushi"
+	desc = "A simple nigiri of fish atop a packed rice ball with a seaweed wrapping and a side of soy sauce."
+	icon_state = "nigiri_sushi"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 6)
+	filling_color = "#d3ceba"
+	tastes = list("boiled rice" = 2, "fish filet" = 2, "soy sauce" = 2, "dried seaweed" = 1)
+	foodtype = VEGETABLES | MEAT
 
 ////////////////////////////////////////////MEATS AND ALIKE////////////////////////////////////////////
 
@@ -125,7 +227,7 @@
 
 /obj/item/reagent_containers/food/snacks/sausage/Initialize()
 	. = ..()
-	eatverb = pick("bite","chew","nibble","deep throat","gobble","chomp")
+	eatverb = pick("bite","chew","nibble","gobble","chomp")
 
 /obj/item/reagent_containers/food/snacks/salami
 	name = "salami"
@@ -180,33 +282,6 @@
 		visible_message("<span class='notice'>[src] fails to expand!</span>")
 	qdel(src)
 
-/obj/item/reagent_containers/food/snacks/monkeycube/suicide_act(mob/living/M)
-	M.visible_message("<span class='suicide'>[M] is putting [src] in [M.p_their()] mouth! It looks like [M.p_theyre()] trying to commit suicide!</span>")
-	var/eating_success = do_after(M, 10, TRUE, src, TRUE)
-	if(QDELETED(M)) //qdeletion: the nuclear option of self-harm
-		return SHAME
-	if(!eating_success || QDELETED(src)) //checks if src is gone or if they failed to wait for a second
-		M.visible_message("<span class='suicide'>[M] chickens out!</span>")
-		return SHAME
-	if(HAS_TRAIT(M, TRAIT_NOHUNGER)) //plasmamen don't have saliva/stomach acid
-		M.visible_message("<span class='suicide'>[M] realizes [M.p_their()] body won't activate [src]!</span>"
-		,"<span class='warning'>Your body won't activate [src]...</span>")
-		return SHAME
-	playsound(M, 'sound/items/eatfood.ogg', rand(10,50), TRUE)
-	M.temporarilyRemoveItemFromInventory(src) //removes from hands, keeps in M
-	addtimer(CALLBACK(src, .proc/finish_suicide, M), 15) //you've eaten it, you can run now
-	return MANUAL_SUICIDE
-
-/obj/item/reagent_containers/food/snacks/monkeycube/proc/finish_suicide(mob/living/M) ///internal proc called by a monkeycube's suicide_act using a timer and callback. takes as argument the mob/living who activated the suicide
-	if(QDELETED(M) || QDELETED(src))
-		return
-	if((src.loc != M)) //how the hell did you manage this
-		to_chat(M, "<span class='warning'>Something happened to [src]...</span>")
-		return
-	Expand()
-	M.visible_message("<span class='danger'>[M]'s torso bursts open as a primate emerges!</span>")
-	M.gib(null, TRUE, null, TRUE)
-
 /obj/item/reagent_containers/food/snacks/monkeycube/syndicate
 	faction = list("neutral", ROLE_SYNDICATE)
 
@@ -246,7 +321,7 @@
 
 /obj/item/reagent_containers/food/snacks/boiledspiderleg
 	name = "boiled spider leg"
-	desc = "A giant spider's leg that's still twitching after being cooked. Gross!"
+	desc = "A giant spider's leg that's still twitching after being cooked. Yum!" //Its cooked and not GORE, so it shouldnt imply that its gross to eat
 	icon_state = "spiderlegcooked"
 	trash = /obj/item/trash/plate
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -339,7 +414,7 @@
 	desc = "A human meat, on a stick."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("tender meat" = 3, "metal" = 1)
-	foodtype = MEAT | GROSS
+	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/kebab/monkey
 	name = "meat-kebab"
@@ -355,14 +430,6 @@
 	tastes = list("tofu" = 3, "metal" = 1)
 	foodtype = VEGETABLES
 
-
-/obj/item/reagent_containers/food/snacks/kebab/tail
-	name = "lizard-tail kebab"
-	desc = "Severed lizard tail on a stick."
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
-	tastes = list("meat" = 8, "metal" = 4, "scales" = 1)
-	foodtype = MEAT
-
 /obj/item/reagent_containers/food/snacks/kebab/rat
 	name = "rat-kebab"
 	desc = "Not so delicious rat meat, on a stick."
@@ -370,7 +437,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("rat meat" = 1, "metal" = 1)
-	foodtype = MEAT | GROSS
+	foodtype = MEAT | GORE
 
 /obj/item/reagent_containers/food/snacks/kebab/rat/double
 	name = "double rat-kebab"

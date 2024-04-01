@@ -25,7 +25,6 @@
 	product_ads = "Only the finest!;Have some tools.;The most robust equipment.;The finest gear in space!"
 	default_price = 125
 	extra_price = 100
-	payment_department = NO_FREEBIES
 	light_mask = "generic-light-mask"
 
 /obj/item/vending_refill/assist

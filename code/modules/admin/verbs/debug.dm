@@ -47,7 +47,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	if(ishuman(M))
 		log_admin("[key_name(src)] has robotized [M.key].")
 		var/mob/living/carbon/human/H = M
-		INVOKE_ASYNC(H, /mob/living/carbon/human.proc/Robotize)
+		INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, Robotize))
 
 	else
 		alert("Invalid mob")
@@ -84,7 +84,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		return
 
 	log_admin("[key_name(src)] has animalized [M.key].")
-	INVOKE_ASYNC(M, /mob.proc/Animalize)
+	INVOKE_ASYNC(M, TYPE_PROC_REF(/mob, Animalize))
 
 
 /client/proc/makepAI(turf/T in GLOB.mob_list)
@@ -128,7 +128,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		alert("Wait until the game starts")
 		return
 	if(ishuman(M))
-		INVOKE_ASYNC(M, /mob/living/carbon/human/proc/Alienize)
+		INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/living/carbon/human, Alienize))
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Alien") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		log_admin("[key_name(usr)] made [key_name(M)] into an alien at [AREACOORD(M)].")
 		message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into an alien.</span>")
@@ -143,7 +143,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		alert("Wait until the game starts")
 		return
 	if(ishuman(M))
-		INVOKE_ASYNC(M, /mob/living/carbon/human/proc/slimeize)
+		INVOKE_ASYNC(M, TYPE_PROC_REF(/mob/living/carbon/human, slimeize))
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Make Slime") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		log_admin("[key_name(usr)] made [key_name(M)] into a slime at [AREACOORD(M)].")
 		message_admins("<span class='adminnotice'>[key_name_admin(usr)] made [ADMIN_LOOKUPFLW(M)] into a slime.</span>")
@@ -206,6 +206,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			id.registered_name = H.real_name
 			id.assignment = "Captain"
 			id.update_label()
+			id.update_appearance()
 
 			if(worn)
 				if(istype(worn, /obj/item/pda))
@@ -216,7 +217,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 					var/obj/item/storage/wallet/W = worn
 					W.front_id = id
 					id.forceMove(W)
-					W.update_icon()
+					W.update_appearance()
 			else
 				H.equip_to_slot(id,ITEM_SLOT_ID)
 
@@ -549,7 +550,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 			F.power = 250
 			F.warming_up = 3
 			F.start_fields()
-			F.update_icon()
+			F.update_appearance()
 
 	spawn(30)
 		for(var/obj/machinery/the_singularitygen/G in GLOB.machines)
@@ -690,61 +691,26 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		to_chat(usr, "<span class='name'>[template.name]</span>", confidential = TRUE)
 		to_chat(usr, "<span class='italics'>[template.description]</span>", confidential = TRUE)
 
-/client/proc/place_ruin()
+/client/proc/fucky_wucky()
 	set category = "Debug"
-	set name = "Spawn Ruin"
-	set desc = "Attempt to randomly place a specific ruin."
-	if (!holder)
+	set name = "Fucky Wucky"
+	set desc = "Inform the players that the code monkeys at our headquarters are working very hard to fix this."
+
+	if(!check_rights(R_DEBUG))
 		return
+	remove_verb(/client/proc/fucky_wucky)
+	message_admins("<span class='adminnotice'>[key_name_admin(src)] did a fucky wucky.</span>")
+	log_admin("[key_name(src)] did a fucky wucky.")
+	for(var/m in GLOB.player_list)
+		var/datum/asset/fuckywucky = get_asset_datum(/datum/asset/simple/fuckywucky)
+		fuckywucky.send(m)
+		SEND_SOUND(m, 'sound/misc/fuckywucky.ogg')
+		to_chat(m, span_purple(examine_block("<img src='[SSassets.transport.get_asset_url("fuckywucky.png")]'>")))
 
-	var/list/exists = list()
-	for(var/landmark in GLOB.ruin_landmarks)
-		var/obj/effect/landmark/ruin/L = landmark
-		exists[L.ruin_template] = landmark
+	addtimer(CALLBACK(src, PROC_REF(restore_fucky_wucky)), 600)
 
-	var/list/names = list()
-	names += "---- Space Ruins ----"
-	for(var/name in SSmapping.space_ruins_templates)
-		names[name] = list(SSmapping.space_ruins_templates[name], ZTRAIT_SPACE_RUINS, list(/area/space))
-	names += "---- Lava Ruins ----"
-	for(var/name in SSmapping.lava_ruins_templates)
-		names[name] = list(SSmapping.lava_ruins_templates[name], ZTRAIT_LAVA_RUINS, list(/area/lavaland/surface/outdoors/unexplored))
-	names += "---- Ice Ruins ----"
-	for(var/name in SSmapping.ice_ruins_templates)
-		names[name] = list(SSmapping.ice_ruins_templates[name], ZTRAIT_ICE_RUINS, list(/area/icemoon/surface/outdoors/unexplored, /area/icemoon/underground/unexplored))
-	names += "---- Sand Ruins ----"
-	for(var/name in SSmapping.sand_ruins_templates)
-		names[name] = list(SSmapping.sand_ruins_templates[name], ZTRAIT_SAND_RUINS, list(/area/whitesands/surface/outdoors/unexplored))
-	names += "---- Jungle Ruins ----"
-	for(var/name in SSmapping.jungle_ruins_templates)
-		names[name] = list(SSmapping.jungle_ruins_templates[name], ZTRAIT_JUNGLE_RUINS, list(/area/jungle/surface/outdoors/unexplored))
-	names += "---- Rock Ruins ----"
-	for(var/name in SSmapping.rock_ruins_templates)
-		names[name] = list(SSmapping.rock_ruins_templates[name], ZTRAIT_ROCK_RUINS, list(/area/rock/surface/outdoors/unexplored))
-
-	var/ruinname = input("Select ruin", "Spawn Ruin") as null|anything in sortList(names)
-	var/data = names[ruinname]
-	if (!data)
-		return
-	var/datum/map_template/ruin/template = data[1]
-	if (exists[template])
-		var/response = alert("There is already a [template] in existence.", "Spawn Ruin", "Jump", "Place Another", "Cancel")
-		if (response == "Jump")
-			usr.forceMove(get_turf(exists[template]))
-			return
-		else if (response == "Cancel")
-			return
-
-	var/len = GLOB.ruin_landmarks.len
-	seedRuins(SSmapping.virtual_levels_by_trait(data[2]), max(1, template.cost), data[3], list(ruinname = template))
-	if (GLOB.ruin_landmarks.len > len)
-		var/obj/effect/landmark/ruin/landmark = GLOB.ruin_landmarks[GLOB.ruin_landmarks.len]
-		log_admin("[key_name(src)] randomly spawned ruin [ruinname] at [COORD(landmark)].")
-		usr.forceMove(get_turf(landmark))
-		to_chat(src, "<span class='name'>[template.name]</span>", confidential = TRUE)
-		to_chat(src, "<span class='italics'>[template.description]</span>", confidential = TRUE)
-	else
-		to_chat(src, "<span class='warning'>Failed to place [template.name].</span>", confidential = TRUE)
+/client/proc/restore_fucky_wucky()
+	add_verb(/client/proc/fucky_wucky)
 
 /client/proc/toggle_medal_disable()
 	set category = "Debug"
@@ -871,7 +837,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	var/list/sorted = list()
 	for (var/source in per_source)
 		sorted += list(list("source" = source, "count" = per_source[source]))
-	sorted = sortTim(sorted, .proc/cmp_timer_data)
+	sorted = sortTim(sorted, PROC_REF(cmp_timer_data))
 
 	// Now that everything is sorted, compile them into an HTML output
 	var/output = "<table border='1'>"

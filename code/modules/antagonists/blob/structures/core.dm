@@ -14,32 +14,35 @@
 	GLOB.blob_cores += src
 	START_PROCESSING(SSobj, src)
 	GLOB.poi_list |= src
-	update_icon() //so it atleast appears
+	update_appearance() //so it atleast appears
 	if(!placed && !overmind)
 		return INITIALIZE_HINT_QDEL
 	if(overmind)
-		update_icon()
+		update_appearance()
 	. = ..()
+
+/obj/structure/blob/core/Destroy()
+	GLOB.blob_cores -= src
+	GLOB.poi_list -= src
+	if(overmind)
+		overmind.blob_core = null
+		overmind = null
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/structure/blob/core/scannerreport()
 	return "Directs the blob's expansion, gradually expands, and sustains nearby blob spores and blobbernauts."
 
-/obj/structure/blob/core/update_icon()
-	cut_overlays()
-	color = null
+/obj/structure/blob/core/update_overlays()
+	. = ..()
 	var/mutable_appearance/blob_overlay = mutable_appearance('icons/mob/blob.dmi', "blob")
 	if(overmind)
 		blob_overlay.color = overmind.blobstrain.color
-	add_overlay(blob_overlay)
-	add_overlay(mutable_appearance('icons/mob/blob.dmi', "blob_core_overlay"))
+	. += blob_overlay
+	. += mutable_appearance('icons/mob/blob.dmi', "blob_core_overlay")
 
-/obj/structure/blob/core/Destroy()
-	GLOB.blob_cores -= src
-	if(overmind)
-		overmind.blob_core = null
-	overmind = null
-	STOP_PROCESSING(SSobj, src)
-	GLOB.poi_list -= src
+/obj/structure/blob/core/update_appearance()
+	color = null
 	return ..()
 
 /obj/structure/blob/core/ex_act(severity, target)

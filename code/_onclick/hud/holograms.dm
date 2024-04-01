@@ -31,7 +31,7 @@
 
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
-	pull_icon.update_icon()
+	pull_icon.update_appearance()
 	pull_icon.screen_loc = ui_above_intent
 	pull_icon.hud = src
 	static_inventory += pull_icon
@@ -40,7 +40,7 @@
 		if(inv.slot_id)
 			inv.hud = src
 			inv_slots[TOBITSHIFT(inv.slot_id) + 1] = inv
-			inv.update_icon()
+			inv.update_appearance()
 
 
 /datum/hud/dextrous/hologram/persistent_inventory_update()

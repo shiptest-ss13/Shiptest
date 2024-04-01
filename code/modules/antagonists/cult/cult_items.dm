@@ -135,6 +135,11 @@
 /obj/item/cult_bastard/proc/nemesis_effects(mob/living/user, mob/living/target)
 	return
 
+/obj/item/cult_bastard/Destroy()
+	QDEL_NULL(jaunt)
+	QDEL_NULL(linked_action)
+	return ..()
+
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
@@ -168,7 +173,7 @@
 
 /obj/item/cult_bastard/IsReflect()
 	if(spinning)
-		playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+		playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 		return TRUE
 	else
 		..()
@@ -177,7 +182,7 @@
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/weapons/parry.ogg', 75, TRUE)
@@ -216,7 +221,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable()
-	if(current_charges)
+	if(iscultist(owner) && current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -250,7 +255,7 @@
 	sword.spinning = TRUE
 	sword.block_chance = 100
 	sword.slowdown += 1.5
-	addtimer(CALLBACK(src, .proc/stop_spinning), 50)
+	addtimer(CALLBACK(src, PROC_REF(stop_spinning)), 50)
 	holder.update_action_buttons_icon()
 
 /datum/action/innate/cult/spin2win/proc/stop_spinning()
@@ -379,6 +384,7 @@
 
 /obj/item/sharpener/cult/update_icon_state()
 	icon_state = "cult_sharpener[used ? "_used" : ""]"
+	return ..()
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield
 	name = "empowered cultist armor"
@@ -464,7 +470,7 @@
 /obj/item/reagent_containers/glass/beaker/unholywater
 	name = "flask of unholy water"
 	desc = "Toxic to nonbelievers; reinvigorating to the faithful - this flask may be sipped or thrown."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "holyflask"
 	color = "#333333"
 	list_reagents = list(/datum/reagent/fuel/unholywater = 50)
@@ -580,6 +586,7 @@
 	name = "blood halberd"
 	desc = "A sickening spear composed entirely of crystallized blood."
 	icon_state = "bloodspear0"
+	base_icon_state = "occultpoleaxe"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	slot_flags = 0
@@ -596,13 +603,13 @@
 
 /obj/item/cult_spear/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 90)
-	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="bloodspear1")
+	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
 /obj/item/cult_spear/proc/on_wield(obj/item/source, mob/user)
@@ -617,12 +624,13 @@
 	wielded = FALSE
 
 /obj/item/cult_spear/update_icon_state()
-	icon_state = "bloodspear0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/cult_spear/Destroy()
 	if(spear_act)
 		qdel(spear_act)
-	..()
+	return ..()
 
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
@@ -658,7 +666,7 @@
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/weapons/parry.ogg', 100, TRUE)
@@ -696,7 +704,7 @@
 		spear.throw_at(owner, 10, 2, owner)
 
 
-/obj/item/gun/ballistic/rifle/boltaction/enchanted/arcane_barrage/blood
+/obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage/blood
 	name = "blood bolt barrage"
 	desc = "Blood for blood."
 	color = "#ff0000"
@@ -769,10 +777,10 @@
 		qdel(src)
 		return
 	charging = TRUE
-	INVOKE_ASYNC(src, .proc/charge, user)
+	INVOKE_ASYNC(src, PROC_REF(charge), user)
 	if(do_after(user, 90, target = user))
 		firing = TRUE
-		INVOKE_ASYNC(src, .proc/pewpew, user, params)
+		INVOKE_ASYNC(src, PROC_REF(pewpew), user, params)
 		var/obj/structure/emergency_shield/invoker/N = new(user.loc)
 		if(do_after(user, 90, target = user))
 			user.Paralyze(40)
@@ -844,8 +852,7 @@
 						L.adjustBruteLoss(45)
 						playsound(L, 'sound/hallucinations/wail.ogg', 50, TRUE)
 						L.emote("scream")
-		var/datum/beam/current_beam = new(user,temp_target,time=7,beam_icon_state="blood_beam",btype=/obj/effect/ebeam/blood)
-		INVOKE_ASYNC(current_beam, /datum/beam.proc/Start)
+		user.Beam(temp_target, icon_state="blood_beam", time = 7, beam_type = /obj/effect/ebeam/blood)
 
 
 /obj/effect/ebeam/blood
@@ -886,7 +893,7 @@
 			playsound(src, 'sound/weapons/parry.ogg', 100, TRUE)
 			if(illusions > 0)
 				illusions--
-				addtimer(CALLBACK(src, /obj/item/shield/mirror.proc/readd), 450)
+				addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/shield/mirror, readd)), 450)
 				if(prob(60))
 					var/mob/living/simple_animal/hostile/illusion/M = new(owner.loc)
 					M.faction = list("cult")

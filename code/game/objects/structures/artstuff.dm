@@ -39,7 +39,7 @@
 	name = "canvas"
 	desc = "Draw out your soul on this canvas!"
 	icon = 'icons/obj/artstuff.dmi'
-	icon_state = "square"
+	icon_state = "11x11"
 	resistance_flags = FLAMMABLE
 	var/width = 11
 	var/height = 11
@@ -117,7 +117,7 @@
 			var/y = text2num(params["y"])
 			grid[x][y] = color
 			used = TRUE
-			update_icon()
+			update_appearance()
 			. = TRUE
 		if("finalize")
 			. = TRUE
@@ -132,17 +132,19 @@
 
 /obj/item/canvas/update_overlays()
 	. = ..()
-	if(!icon_generated)
-		if(used)
-			var/mutable_appearance/detail = mutable_appearance(icon,"[icon_state]wip")
-			detail.pixel_x = 1
-			detail.pixel_y = 1
-			. += detail
-	else
+	if(icon_generated)
 		var/mutable_appearance/detail = mutable_appearance(generated_icon)
 		detail.pixel_x = 1
 		detail.pixel_y = 1
 		. += detail
+		return
+	if(!used)
+		return
+
+	var/mutable_appearance/detail = mutable_appearance(icon, "[icon_state]wip")
+	detail.pixel_x = 1
+	detail.pixel_y = 1
+	. += detail
 
 /obj/item/canvas/proc/generate_proper_overlay()
 	if(icon_generated)
@@ -153,7 +155,7 @@
 		CRASH("Error generating painting png : [result]")
 	generated_icon = new(png_filename)
 	icon_generated = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/item/canvas/proc/get_data_string()
 	var/list/data = list()
@@ -218,7 +220,7 @@
 /obj/item/wallframe/painting
 	name = "painting frame"
 	desc = "The perfect showcase for your favorite deathtrap memories."
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	custom_materials = null
 	flags_1 = 0
 	icon_state = "frame-empty"
@@ -227,7 +229,7 @@
 /obj/structure/sign/painting
 	name = "Painting"
 	desc = "Art or \"Art\"? You decide."
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "frame-empty"
 	var/obj/item/canvas/C
 	var/persistence_id = "general"
@@ -274,7 +276,7 @@
 		C.forceMove(drop_location())
 		C = null
 		to_chat(user, "<span class='notice'>You remove the painting from the frame.</span>")
-		update_icon()
+		update_appearance()
 		return TRUE
 
 /obj/structure/sign/painting/proc/frame_canvas(mob/user,obj/item/canvas/new_canvas)
@@ -283,7 +285,7 @@
 		if(!C.finalized)
 			C.finalize(user)
 		to_chat(user,"<span class='notice'>You frame [C].</span>")
-	update_icon()
+	update_appearance()
 
 /obj/structure/sign/painting/proc/try_rename(mob/user)
 	if(!C.painting_name)
@@ -295,6 +297,7 @@
 		icon_state = null
 	else
 		icon_state = "frame-empty"
+	return ..()
 
 /obj/structure/sign/painting/update_overlays()
 	. = ..()
@@ -336,7 +339,7 @@
 	new_canvas.painting_name = title
 	new_canvas.author_ckey = author
 	C = new_canvas
-	update_icon()
+	update_appearance()
 
 /obj/structure/sign/painting/proc/save_persistent()
 	if(!persistence_id || !C)

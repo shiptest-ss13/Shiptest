@@ -22,8 +22,8 @@
 	species_head = /obj/item/bodypart/head/snail
 	species_l_arm = /obj/item/bodypart/l_arm/snail
 	species_r_arm = /obj/item/bodypart/r_arm/snail
-	species_l_leg = /obj/item/bodypart/l_leg/snail
-	species_r_leg = /obj/item/bodypart/r_leg/snail
+	species_l_leg = /obj/item/bodypart/leg/left/snail
+	species_r_leg = /obj/item/bodypart/leg/right/snail
 
 /datum/species/snail/New()
 	. = ..()
@@ -66,6 +66,12 @@
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 	max_integrity = 200
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/storage/backpack/snail/dropped(mob/user, silent)
+	. = ..()
+	emptyStorage()
+	if(!QDELETED(src))
+		qdel(src)
 
 /obj/item/storage/backpack/snail/Initialize()
 	. = ..()

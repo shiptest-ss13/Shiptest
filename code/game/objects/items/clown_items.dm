@@ -80,22 +80,10 @@
 	cleanspeed = 3 //Only the truest of mind soul and body get one of these
 	uses = 301
 
-/obj/item/soap/omega/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is using [src] to scrub themselves from the timeline! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	new /obj/structure/chrono_field(user.loc, user)
-	return MANUAL_SUICIDE
-
 /obj/item/paper/fluff/stations/soap
 	name = "ancient janitorial poem"
 	desc = "An old paper that has passed many hands."
-	info = "The legend of the omega soap</B><BR><BR> Essence of <B>potato</B>. Juice, not grind.<BR><BR> A <B>lizard's</B> tail, turned into <B>wine</B>.<BR><BR> <B>powder of monkey</B>, to help the workload.<BR><BR> Some <B>Krokodil</B>, because meth would explode.<BR><BR> <B>Nitric acid</B> and <B>Baldium</B>, for organic dissolving.<BR><BR> A cup filled with <B>Hooch</B>, for sinful absolving<BR><BR> Some <B>Bluespace Dust</B>, for removal of stains.<BR><BR> A syringe full of <B>Pump-up</B>, it's security's bane.<BR><BR> Add a can of <B>Space Cola</B>, because we've been paid.<BR><BR> <B>Heat</B> as hot as you can, let the soap be your blade.<BR><BR> <B>Ten units of each regent create a soap that could topple all others.</B>"
-
-
-/obj/item/soap/suicide_act(mob/user)
-	user.say(";FFFFFFFFFFFFFFFFUUUUUUUDGE!!", forced="soap suicide")
-	user.visible_message("<span class='suicide'>[user] lifts [src] to [user.p_their()] mouth and gnaws on it furiously, producing a thick froth! [user.p_they(TRUE)]'ll never get that BB gun now!</span>")
-	new /obj/effect/particle_effect/foam(loc)
-	return (TOXLOSS)
+	default_raw_text = "The legend of the omega soap</B><BR><BR> Essence of <B>potato</B>. Juice, not grind.<BR><BR> A <B>cactus</B> brew, fermented into <B>wine</B>.<BR><BR> <B>powder of monkey</B>, to help the workload.<BR><BR> Some <B>Krokodil</B>, because meth would explode.<BR><BR> <B>Nitric acid</B> and <B>Baldium</B>, for organic dissolving.<BR><BR> A cup filled with <B>Hooch</B>, for sinful absolving<BR><BR> Some <B>Bluespace Dust</B>, for removal of stains.<BR><BR> A syringe full of <B>Pump-up</B>, it's security's bane.<BR><BR> Add a can of <B>Space Cola</B>, because we've been paid.<BR><BR> <B>Heat</B> as hot as you can, let the soap be your blade.<BR><BR> <B>Ten units of each regent create a soap that could topple all others.</B>"
 
 /obj/item/soap/proc/decreaseUses(mob/user)
 	var/skillcheck = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
@@ -112,6 +100,8 @@
 	var/clean_speedies = cleanspeed * min(user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)+0.1,1) //less scaling for soapies
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
+	target.add_overlay(GLOB.cleaning_bubbles)
+	playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
 	if(user.client && ((target in user.client.screen) && !user.is_holding(target)))
 		to_chat(user, "<span class='warning'>You need to take that [target.name] off before cleaning it!</span>")
 	else if(istype(target, /obj/effect/decal/cleanable))
@@ -130,7 +120,6 @@
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			H.update_lips(null)
 		decreaseUses(user)
-		return
 	else if(istype(target, /obj/structure/window))
 		user.visible_message("<span class='notice'>[user] begins to clean \the [target.name] with [src]...</span>", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
 		if(do_after(user, clean_speedies, target = target))
@@ -150,6 +139,7 @@
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			decreaseUses(user)
+	target.cut_overlay(GLOB.cleaning_bubbles)
 	return
 
 
@@ -189,11 +179,6 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "honk", /datum/mood_event/honk)
 	return ..()
 
-/obj/item/bikehorn/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] solemnly points [src] at [user.p_their()] temple! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/items/bikehorn.ogg', 50, TRUE)
-	return (BRUTELOSS)
-
 //air horn
 /obj/item/bikehorn/airhorn
 	name = "air horn"
@@ -227,7 +212,6 @@
 				continue
 		M.emote("flip")
 	flip_cooldown = world.time + 7
-
 //canned laughter
 /obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter
 	name = "Canned Laughter"

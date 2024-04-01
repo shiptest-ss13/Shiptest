@@ -52,5 +52,14 @@
 	result = /obj/item/reagent_containers/food/snacks/notasandwich
 	subcategory = CAT_SANDWICH
 
-
+/datum/crafting_recipe/food/blt
+	name = "BLT"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/breadslice/plain = 2,
+		/obj/item/reagent_containers/food/snacks/meat/bacon = 2,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/blt
+	category = CAT_SANDWICH
 

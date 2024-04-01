@@ -1,85 +1,100 @@
-// 7.62 (Nagant Rifle)
+// 8x50mmR (Illestren Hunting Rifle)
 
-/obj/item/ammo_casing/a762
-	name = "7.62x54 bullet casing"
-	desc = "A 7.62x54 bullet casing."
+/obj/item/ammo_casing/a8_50r
+	name = "8x50mmR bullet casing"
+	desc = "A 8x50mmR bullet casing."
 	icon_state = "rifle-brass"
-	caliber = "a762"
-	projectile_type = /obj/projectile/bullet/a762
+	caliber = "8x50mmR"
+	projectile_type = /obj/projectile/bullet/a8_50r
 
-/obj/item/ammo_casing/a762/enchanted
-	bullet_skin = "rubber"
-	projectile_type = /obj/projectile/bullet/a762_enchanted
+/obj/item/ammo_casing/a8_50rhp
+	name = "8x50mmR hollow point bullet casing"
+	desc = "A 8x50mmR hollow point bullet casing."
+	icon_state = "rifle-brass-hollow"
+	caliber = "8x50mmR"
+	projectile_type = /obj/projectile/bullet/a8_50rhp
+
+
+// 8x58mm Caseless (SSG-669C)
+
+/obj/item/ammo_casing/caseless/a858
+	name = "8x58mm caseless round"
+	desc = "A 8x58mm caseless round."
+	icon_state = "caseless"
+	caliber = "a858"
+	projectile_type = /obj/projectile/bullet/a858
 
 // .300 Magnum (Smile Rifle)
 
 /obj/item/ammo_casing/a300
 	name = ".300 Magnum bullet casing"
 	desc = "A .300 Magnum bullet casing."
-	icon_state = "762-casing"
+	icon_state = "rifle-steel"
 	caliber = "a300"
 	projectile_type = /obj/projectile/bullet/a300
 
-// 5.56mm (M-90gl Carbine & P-16)
+// 5.56x39mm (M-90gl Carbine & P-16)
 
-/obj/item/ammo_casing/a556
-	name = "5.56mm bullet casing"
-	desc = "A 5.56mm bullet casing."
+/obj/item/ammo_casing/a556_39
+	name = "5.56x39mm bullet casing"
+	desc = "A 5.56x39mm bullet casing."
 	icon_state = "rifle-brass"
-	caliber = "a556"
-	projectile_type = /obj/projectile/bullet/a556
+	caliber = "5.56x45mm"
+	projectile_type = /obj/projectile/bullet/a556_45
+
+// 5.45x39mm (SKM-24v)
 
 /obj/item/ammo_casing/a545_39
 	name = "5.45x39mm bullet casing"
 	desc = "A 5.45x39mm bullet casing."
-	icon_state = "rifle-steel"
+	icon_state = "rifle-brass"
 	caliber = "5.45x39mm"
 	randomspread = TRUE
-	variance = 2
 	projectile_type = /obj/projectile/bullet/a545_39
 
 /obj/item/ammo_casing/a545_39/recycled
 	name = "recycled 5.45x39mm bullet casing"
-	desc = "A recycled 5.45x39mm bullet casing. Likely has been spent and reloaded dozens of times."
+	desc = "A recycled 5.45x39mm bullet casing."
 	bullet_skin = "surplus"
 	caliber = "5.45x39mm"
-	variance = 3.5
 	projectile_type = /obj/projectile/bullet/a545_39
 
-/obj/item/ammo_casing/a762_39
-	name = "7.62x39mm FMJ bullet casing"
-	desc = "A 7.62x39mm FMJ bullet casing."
-	icon_state = "rifle-steel"
-	caliber = "7.62x39mm FMJ"
-	variance = 2
-	projectile_type = /obj/projectile/bullet/a762_39
+// 7.62x40mm CLIP (SKM Rifles)
+
+/obj/item/ammo_casing/a762_40
+	name = "7.62x40mm CLIP bullet casing"
+	desc = "A 7.62x40mm CLIP bullet casing."
+	icon_state = "rifle-brass"
+	caliber = "7.62x40mm"
+	projectile_type = /obj/projectile/bullet/a762_40
+
+// .300 Blackout (Polymer Survivor Rifle)
 
 /obj/item/ammo_casing/aac_300blk
-	name = ".300BLK bullet casing"
+	name = ".300 BLK bullet casing"
 	desc = "A .300 Blackout bullet casing."
 	icon_state = "rifle-steel"
-	caliber = ".300BLK"
+	caliber = ".300 BLK"
 	projectile_type = /obj/projectile/bullet/aac_300blk
 
 /obj/item/ammo_casing/aac_300blk/recycled
-	name = "recycled .300BLK bullet casing"
-	desc = "A .300 Blackout bullet casing. It looks like it has been re-necked and reloaded several times."
-	bullet_skin = "surplus"
-	caliber = ".300BLK"
+	name = "recycled .300 BLK bullet casing"
+	desc = "A recycled .300 Blackout bullet casing."
+	caliber = ".300 BLK"
 	projectile_type = /obj/projectile/bullet/aac_300blk
+
+//.308 (M514 EBR & CM-GAL-S)
 
 /obj/item/ammo_casing/a308
 	name = ".308 bullet casing"
 	desc = "A .308 bullet casing."
-	icon_state = "rifle-steel"
+	icon_state = "rifle-brass"
 	caliber = ".308"
 	projectile_type = /obj/projectile/bullet/a308
 
-// 40mm (Grenade Launcher)
-
-/obj/item/ammo_casing/a40mm
-	name = "40mm HE shell"
-	desc = "A cased high explosive grenade that can only be activated once fired out of a grenade launcher."
-	icon_state = "40mmHE"
-	caliber = "40mm"
-	projectile_type = /obj/projectile/bullet/a40mm
+/obj/item/ammo_casing/caseless/c299
+	name = ".229 Eoehoma caseless bullet casing"
+	desc = "A .229 Eoehoma caseless bullet casing."
+	icon_state = "caseless"
+	caliber = ".299 caseless"
+	projectile_type = /obj/projectile/bullet/c299

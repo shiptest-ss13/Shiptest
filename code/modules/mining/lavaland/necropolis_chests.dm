@@ -29,7 +29,7 @@
 			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 		if(7)
 			new /obj/item/pickaxe/diamond(src)
-			new /obj/item/pinpointer/deepcore/advanced(src)
+			new /obj/item/t_scanner/adv_mining_scanner(src)
 		if(8)
 			if(prob(50))
 				new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -75,8 +75,7 @@
 		if(24)
 			new /obj/item/clothing/gloves/gauntlets(src)
 		if(25)
-			new /obj/item/clothing/under/drip(src)
-			new /obj/item/clothing/shoes/drip(src)
+			new /obj/item/toy/plush/blahaj(src)
 		if(26)
 			new /obj/item/freeze_cube(src)
 		if(27)
@@ -107,7 +106,7 @@
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
 			if(7)
 				new /obj/item/pickaxe/diamond(src)
-				new /obj/item/pinpointer/deepcore/advanced(src)
+				new /obj/item/t_scanner/adv_mining_scanner(src)
 			if(8)
 				if(prob(50))
 					new /obj/item/disk/design_disk/modkit_disc/resonator_blast(src)
@@ -153,8 +152,7 @@
 			if(24)
 				new /obj/item/clothing/gloves/gauntlets(src)
 			if(25)
-				new /obj/item/clothing/under/drip(src)
-				new /obj/item/clothing/shoes/drip(src)
+				new /obj/item/toy/plush/blahaj(src)
 			if(26)
 				new /obj/item/freeze_cube(src)
 			if(27)
@@ -228,57 +226,6 @@
 
 //Spooky special loot
 
-//drip
-/obj/item/clothing/under/drip
-	name = "incredibly fashionable outfit"
-	desc = "Why don't you go test some shi-"
-	icon = 'icons/obj/clothing/under/suits.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/under/suits.dmi'
-	mob_overlay_state = "drippy"
-	icon_state = "drippy"
-	item_state = "drippy"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF//the unbreakable fashion
-	can_adjust = FALSE
-
-/obj/item/clothing/shoes/drip
-	name = "fashionable shoes"
-	desc = "Expensive-looking designer sneakers. Loud, ostentatious, agressively attractive. The elaborate design on the sole could probably give you some decent traction."
-	icon = 'icons/obj/clothing/shoes.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/feet.dmi'
-	mob_overlay_state = "dripshoes"
-	icon_state = "dripshoes"
-	item_state = "dripshoes"
-	clothing_flags = NOSLIP_ICE | NOSLIP
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 100, "acid" = 100)
-	resistance_flags = FIRE_PROOF | ACID_PROOF | LAVA_PROOF
-	strip_delay = 40
-	resistance_flags = NONE
-	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	lace_time = 35 SECONDS//nike shoelace art joke
-	slowdown = -0.2
-
-/obj/item/clothing/under/drip/equipped(mob/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_ICLOTHING)
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drippy", /datum/mood_event/drippy)
-
-/obj/item/clothing/under/drip/dropped(mob/user)
-	. = ..()
-	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "drippy")
-
-/obj/item/clothing/shoes/drip/equipped(mob/user, slot)
-	. = ..()
-	if(slot == ITEM_SLOT_FEET)
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dripjordan", /datum/mood_event/dripjordan)
-		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "nojordans")
-
-/obj/item/clothing/shoes/drip/dropped(mob/user)
-	. = ..()
-	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "dripjordan")
-	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "nojordans", /datum/mood_event/nojordans)
-
 //Rod of Asclepius
 /obj/item/rod_of_asclepius
 	name = "\improper Rod of Asclepius"
@@ -334,30 +281,31 @@
 	activated = TRUE
 
 //Memento Mori
-/obj/item/clothing/neck/necklace/memento_mori
+/obj/item/clothing/neck/memento_mori
 	name = "Memento Mori"
 	desc = "A mysterious pendant. An inscription on it says: \"Certain death tomorrow means certain life today.\""
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "memento_mori"
+	mob_overlay_state = "crystal_talisman"
 	actions_types = list(/datum/action/item_action/hands_free/memento_mori)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/mob/living/carbon/human/active_owner
 
-/obj/item/clothing/neck/necklace/memento_mori/item_action_slot_check(slot)
+/obj/item/clothing/neck/memento_mori/item_action_slot_check(slot)
 	return slot == ITEM_SLOT_NECK
 
-/obj/item/clothing/neck/necklace/memento_mori/dropped(mob/user)
+/obj/item/clothing/neck/memento_mori/dropped(mob/user)
 	..()
 	if(active_owner)
 		mori()
 
 //Just in case
-/obj/item/clothing/neck/necklace/memento_mori/Destroy()
+/obj/item/clothing/neck/memento_mori/Destroy()
 	if(active_owner)
 		mori()
 	return ..()
 
-/obj/item/clothing/neck/necklace/memento_mori/proc/memento(mob/living/carbon/human/user)
+/obj/item/clothing/neck/memento_mori/proc/memento(mob/living/carbon/human/user)
 	to_chat(user, "<span class='warning'>You feel your life being drained by the pendant...</span>")
 	if(do_after(user, 40, target = user))
 		to_chat(user, "<span class='notice'>Your lifeforce is now linked to the pendant! You feel like removing it would kill you, and yet you instinctively know that until then, you won't die.</span>")
@@ -367,7 +315,7 @@
 		icon_state = "memento_mori_active"
 		active_owner = user
 
-/obj/item/clothing/neck/necklace/memento_mori/proc/mori()
+/obj/item/clothing/neck/memento_mori/proc/mori()
 	icon_state = "memento_mori"
 	if(!active_owner)
 		return
@@ -382,7 +330,7 @@
 	desc = "Bind your life to the pendant."
 
 /datum/action/item_action/hands_free/memento_mori/Trigger()
-	var/obj/item/clothing/neck/necklace/memento_mori/MM = target
+	var/obj/item/clothing/neck/memento_mori/MM = target
 	if(!MM.active_owner)
 		if(ishuman(owner))
 			MM.memento(owner)
@@ -446,7 +394,7 @@
 /obj/effect/wisp/orbit(atom/thing, radius, clockwise, rotation_speed, rotation_segments, pre_rotation, lockinorbit)
 	. = ..()
 	if(ismob(thing))
-		RegisterSignal(thing, COMSIG_MOB_UPDATE_SIGHT, .proc/update_user_sight)
+		RegisterSignal(thing, COMSIG_MOB_UPDATE_SIGHT, PROC_REF(update_user_sight))
 		var/mob/being = thing
 		being.update_sight()
 		to_chat(thing, "<span class='notice'>The wisp enhances your vision.</span>")
@@ -471,6 +419,12 @@
 	var/teleport_color = "#3FBAFD"
 	var/obj/item/warp_cube/linked
 	var/teleporting = FALSE
+
+/obj/item/warp_cube/Destroy()
+	if(!QDELETED(linked))
+		qdel(linked)
+	linked =  null
+	return ..()
 
 /obj/item/warp_cube/attack_self(mob/user)
 	var/turf/current_location = get_turf(user)
@@ -541,7 +495,7 @@
 	item_flags = NEEDS_PERMIT
 	force = 15
 	sharpness = IS_SHARP
-	block_chance = 25//A pittance, but might be worth something in a scuffle
+	block_chance = 5//A pittance, but might be worth something in a scuffle
 	hitsound = 'sound/weapons/chainhit.ogg'
 
 /obj/item/gun/magic/hook/melee_attack_chain(mob/user, atom/target, params)
@@ -557,7 +511,7 @@
 	desc = "A hook."
 	projectile_type = /obj/projectile/hook
 	caliber = "hook"
-	icon_state = "hook"
+	icon_state = "arrow"
 
 /obj/projectile/hook
 	name = "hook"
@@ -574,7 +528,7 @@
 
 /obj/projectile/hook/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "chain")
+		chain = firer.Beam(src, icon_state = "chain", emissive = FALSE)
 	..()
 	//TODO: root the firer until the chain returns
 
@@ -677,7 +631,7 @@
 
 	can_destroy = FALSE
 
-	addtimer(CALLBACK(src, .proc/unvanish, user), 15 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(unvanish), user), 15 SECONDS)
 
 /obj/effect/immortality_talisman/proc/unvanish(mob/user)
 	user.status_flags &= ~GODMODE
@@ -714,7 +668,6 @@
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "paradox_bag"
 	mob_overlay_icon = 'icons/mob/clothing/belt.dmi'
-	mob_overlay_state = "paradoxbag"
 	slot_flags = ITEM_SLOT_BELT
 	resistance_flags = INDESTRUCTIBLE
 
@@ -777,13 +730,14 @@
 	name = "Flight Potion"
 	description = "Strange mutagenic compound of unknown origins."
 	reagent_state = LIQUID
+	process_flags = ORGANIC | SYNTHETIC
 	color = "#FFEBEB"
 
 /datum/reagent/flightpotion/expose_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		var/mob/living/carbon/C = M
 		var/holycheck = ishumanbasic(C)
-		if(reac_volume < 5 || !(holycheck || islizard(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
+		if(reac_volume < 5 || !(holycheck || islizard(C) || isipc(C) || (ismoth(C) && C.dna.features["moth_wings"] != "Burnt Off"))) // implying xenohumans are holy //as with all things,
 			if(method == INGEST && show_message)
 				to_chat(C, "<span class='notice'><i>You feel nothing but a terrible aftertaste.</i></span>")
 			return ..()
@@ -907,11 +861,11 @@
 /obj/item/freeze_cube/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	icon_state = initial(icon_state)
 	var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
-	var/mob/thrown_by = thrownby
+	var/mob/thrown_by = thrownby.resolve()
 	if(ismovable(hit_atom) && !caught && (!thrown_by || thrown_by && COOLDOWN_FINISHED(src, freeze_cooldown)))
 		freeze(hit_atom)
 	if(thrown_by && !caught)
-		addtimer(CALLBACK(src, /atom/movable.proc/throw_at, thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, throw_at), thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
 
 /obj/item/freeze_cube/proc/freeze(atom/movable/hit_atom)
 	playsound(src, 'sound/effects/glassbr3.ogg', 50, TRUE)
@@ -934,8 +888,6 @@
 	desc = "Buried deep beneath the earth, these ancient gauntlets absorbed the tectonic power of earthquakes. "
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "concussive_gauntlets"
-	mob_overlay_icon = 'icons/mob/clothing/hands.dmi'
-	mob_overlay_state = "concussive_gauntlets"
 	toolspeed = 0.1
 	strip_delay = 40
 	equip_delay_other = 20
@@ -950,8 +902,8 @@
 	. = ..()
 	if(slot == ITEM_SLOT_GLOVES)
 		tool_behaviour = TOOL_MINING
-		RegisterSignal(user, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, .proc/rocksmash)
-		RegisterSignal(user, COMSIG_MOVABLE_BUMP, .proc/rocksmash)
+		RegisterSignal(user, COMSIG_HUMAN_EARLY_UNARMED_ATTACK, PROC_REF(rocksmash))
+		RegisterSignal(user, COMSIG_MOVABLE_BUMP, PROC_REF(rocksmash))
 	else
 		stopmining(user)
 
@@ -988,13 +940,20 @@
 	recoil = 1
 	cell_type = /obj/item/stock_parts/cell/gun
 	ammo_type = list(/obj/item/ammo_casing/energy/spur)
+	supports_variations = VOX_VARIATION
 	var/chargesound
 
 /obj/item/gun/energy/spur/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>This weapon contains a gradual heat accelerator that increases shot power as the weapon's energy stores are depleted. Shots at low power are significantly stronger, but also have incredibly short range.</span>"
 
-/obj/item/gun/energy/spur/update_icon()
+/obj/item/gun/energy/spur/update_appearance()
+	if(!cell)
+		chargesound = null
+		recoil = 1
+		fire_sound = 'sound/weapons/spur_high.ogg'
+		return
+
 	var/maxcharge = cell.maxcharge
 	var/charge = cell.charge
 
@@ -1019,7 +978,8 @@
 
 	if(chargesound != oldsound)
 		playsound(src, chargesound, 100)
-		return
+		return ..()
+	return ..()
 
 /obj/item/ammo_casing/energy/spur
 	projectile_type = /obj/projectile/bullet/spur
@@ -1244,12 +1204,6 @@
 	"Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.\n"+\
 	"Transforming it immediately after an attack causes the next attack to come out faster.</span>"
 
-/obj/item/melee/transforming/cleaving_saw/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is [active ? "closing [src] on [user.p_their()] neck" : "opening [src] into [user.p_their()] chest"]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	transform_cooldown = 0
-	transform_weapon(user, TRUE)
-	return BRUTELOSS
-
 /obj/item/melee/transforming/cleaving_saw/transform_weapon(mob/living/user, supress_message_text)
 	if(transform_cooldown > world.time)
 		return FALSE
@@ -1429,8 +1383,8 @@
 
 	switch(random)
 		if(1)
-			to_chat(user, "<span class='danger'>Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a freak without the cool abilities.</span>")
-			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "snout" = "Sharp", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
+			to_chat(user, "<span class='danger'>Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a dragon without the cool abilities.</span>")
+			H.dna.features = list("mcolor" = "A02720", "tail_lizard" = "Dark Tiger", "tail_human" = "None", "face_markings" = "None", "horns" = "Curled", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "Long", "body_markings" = "Dark Tiger Body", "legs" = "Digitigrade Legs")
 			H.eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)
@@ -1564,7 +1518,7 @@
 /obj/item/mayhem/attack_self(mob/user)
 	for(var/mob/living/carbon/human/H in range(7,user))
 		var/obj/effect/mine/pickup/bloodbath/B = new(H)
-		INVOKE_ASYNC(B, /obj/effect/mine/pickup/bloodbath/.proc/mineEffect, H)
+		INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/effect/mine/pickup/bloodbath, mineEffect), H)
 	to_chat(user, "<span class='notice'>You shatter the bottle!</span>")
 	playsound(user.loc, 'sound/effects/glassbr1.ogg', 100, TRUE)
 	message_admins("<span class='adminnotice'>[ADMIN_LOOKUPFLW(user)] has activated a bottle of mayhem!</span>")
@@ -1672,21 +1626,6 @@
 	. = ..()
 	. += "<span class='hierophant_warning'>The[beacon ? " beacon is not currently":"re is a beacon"] attached.</span>"
 
-/obj/item/hierophant_club/suicide_act(mob/living/user)
-	say("Xverwpsgexmrk...", forced = "hierophant club suicide")
-	user.visible_message("<span class='suicide'>[user] holds [src] into the air! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	new/obj/effect/temp_visual/hierophant/telegraph(get_turf(user))
-	playsound(user,'sound/machines/airlockopen.ogg', 75, TRUE)
-	user.visible_message("<span class='hierophant_warning'>[user] fades out, leaving [user.p_their()] belongings behind!</span>")
-	for(var/obj/item/I in user)
-		if(I != src)
-			user.dropItemToGround(I)
-	for(var/turf/T in RANGE_TURFS(1, user))
-		var/obj/effect/temp_visual/hierophant/blast/B = new(T, user, TRUE)
-		B.damage = 0
-	user.dropItemToGround(src) //Drop us last, so it goes on top of their stuff
-	qdel(user)
-
 /obj/item/hierophant_club/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	var/turf/T = get_turf(target)
@@ -1695,11 +1634,11 @@
 	calculate_anger_mod(user)
 	timer = world.time + CLICK_CD_MELEE //by default, melee attacks only cause melee blasts, and have an accordingly short cooldown
 	if(proximity_flag)
-		INVOKE_ASYNC(src, .proc/aoe_burst, T, user)
+		INVOKE_ASYNC(src, PROC_REF(aoe_burst), T, user)
 		log_combat(user, target, "fired 3x3 blast at", src)
 	else
 		if(ismineralturf(target) && get_dist(user, target) < 6) //target is minerals, we can hit it(even if we can't see it)
-			INVOKE_ASYNC(src, .proc/cardinal_blasts, T, user)
+			INVOKE_ASYNC(src, PROC_REF(cardinal_blasts), T, user)
 			timer = world.time + cooldown_time
 		else if(target in view(5, get_turf(user))) //if the target is in view, hit it
 			timer = world.time + cooldown_time
@@ -1710,12 +1649,12 @@
 				C.monster_damage_boost = FALSE
 				log_combat(user, target, "fired a chaser at", src)
 			else
-				INVOKE_ASYNC(src, .proc/cardinal_blasts, T, user) //otherwise, just do cardinal blast
+				INVOKE_ASYNC(src, PROC_REF(cardinal_blasts), T, user) //otherwise, just do cardinal blast
 				log_combat(user, target, "fired cardinal blast at", src)
 		else
 			to_chat(user, "<span class='warning'>That target is out of range!</span>" )
 			timer = world.time
-	INVOKE_ASYNC(src, .proc/prepare_icon_update)
+	INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 
 /obj/item/hierophant_club/proc/calculate_anger_mod(mob/user) //we get stronger as the user loses health
 	chaser_cooldown = initial(chaser_cooldown)
@@ -1732,11 +1671,12 @@
 
 /obj/item/hierophant_club/update_icon_state()
 	icon_state = item_state = "hierophant_club[timer <= world.time ? "_ready":""][(beacon && !QDELETED(beacon)) ? "":"_beacon"]"
+	return ..()
 
 /obj/item/hierophant_club/proc/prepare_icon_update()
-	update_icon()
+	update_appearance()
 	sleep(timer - world.time)
-	update_icon()
+	update_appearance()
 
 /obj/item/hierophant_club/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_unfriendly_fire)) //toggle friendly fire...
@@ -1753,7 +1693,7 @@
 			user.visible_message("<span class='hierophant_warning'>[user] starts fiddling with [src]'s pommel...</span>", \
 			"<span class='notice'>You start detaching the hierophant beacon...</span>")
 			timer = world.time + 51
-			INVOKE_ASYNC(src, .proc/prepare_icon_update)
+			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 			if(do_after(user, 50, target = user) && !beacon)
 				var/turf/T = get_turf(user)
 				playsound(T,'sound/magic/blind.ogg', 200, TRUE, -4)
@@ -1765,7 +1705,7 @@
 				<span class='notice'>You can remove the beacon to place it again by striking it with the club.</span>")
 			else
 				timer = world.time
-				INVOKE_ASYNC(src, .proc/prepare_icon_update)
+				INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 		else
 			to_chat(user, "<span class='warning'>You need to be on solid ground to detach the beacon!</span>")
 		return
@@ -1783,7 +1723,7 @@
 	user.update_action_buttons_icon()
 	user.visible_message("<span class='hierophant_warning'>[user] starts to glow faintly...</span>")
 	timer = world.time + 50
-	INVOKE_ASYNC(src, .proc/prepare_icon_update)
+	INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 	beacon.icon_state = "hierophant_tele_on"
 	var/obj/effect/temp_visual/hierophant/telegraph/edge/TE1 = new /obj/effect/temp_visual/hierophant/telegraph/edge(user.loc)
 	var/obj/effect/temp_visual/hierophant/telegraph/edge/TE2 = new /obj/effect/temp_visual/hierophant/telegraph/edge(beacon.loc)
@@ -1795,7 +1735,7 @@
 			to_chat(user, "<span class='warning'>The beacon is blocked by something, preventing teleportation!</span>")
 			user.update_action_buttons_icon()
 			timer = world.time
-			INVOKE_ASYNC(src, .proc/prepare_icon_update)
+			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 			beacon.icon_state = "hierophant_tele_off"
 			return
 		new /obj/effect/temp_visual/hierophant/telegraph(T, user)
@@ -1807,7 +1747,7 @@
 			if(user)
 				user.update_action_buttons_icon()
 			timer = world.time
-			INVOKE_ASYNC(src, .proc/prepare_icon_update)
+			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 			if(beacon)
 				beacon.icon_state = "hierophant_tele_off"
 			return
@@ -1816,7 +1756,7 @@
 			to_chat(user, "<span class='warning'>The beacon is blocked by something, preventing teleportation!</span>")
 			user.update_action_buttons_icon()
 			timer = world.time
-			INVOKE_ASYNC(src, .proc/prepare_icon_update)
+			INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 			beacon.icon_state = "hierophant_tele_off"
 			return
 		user.log_message("teleported self from [AREACOORD(source)] to [beacon]", LOG_GAME)
@@ -1829,7 +1769,7 @@
 			var/obj/effect/temp_visual/hierophant/blast/B = new /obj/effect/temp_visual/hierophant/blast(t, user, TRUE) //but absolutely will hurt enemies
 			B.damage = 30
 		for(var/mob/living/L in range(1, source))
-			INVOKE_ASYNC(src, .proc/teleport_mob, source, L, T, user) //regardless, take all mobs near us along
+			INVOKE_ASYNC(src, PROC_REF(teleport_mob), source, L, T, user) //regardless, take all mobs near us along
 		sleep(6) //at this point the blasts detonate
 		if(beacon)
 			beacon.icon_state = "hierophant_tele_off"
@@ -1837,7 +1777,7 @@
 		qdel(TE1)
 		qdel(TE2)
 		timer = world.time
-		INVOKE_ASYNC(src, .proc/prepare_icon_update)
+		INVOKE_ASYNC(src, PROC_REF(prepare_icon_update))
 	if(beacon)
 		beacon.icon_state = "hierophant_tele_off"
 	teleporting = FALSE
@@ -1878,7 +1818,7 @@
 	B.damage = HIEROPHANT_CLUB_CARDINAL_DAMAGE
 	B.monster_damage_boost = FALSE
 	for(var/d in GLOB.cardinals)
-		INVOKE_ASYNC(src, .proc/blast_wall, T, d, user)
+		INVOKE_ASYNC(src, PROC_REF(blast_wall), T, d, user)
 
 /obj/item/hierophant_club/proc/blast_wall(turf/T, dir, mob/living/user) //make a wall of blasts blast_range tiles long
 	if(!T)

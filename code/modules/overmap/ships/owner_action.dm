@@ -65,6 +65,34 @@
 		ui = new(user, src, "ShipOwner", name)
 		ui.open()
 
+/datum/action/ship_owner/proc/allow_job_slot_increase(datum/job/job_target)
+	var/default_slots = parent_ship.source_template.job_slots[job_target]
+	var/current_slots = parent_ship.job_slots[job_target]
+
+	var/used_slots = 0
+	var/job_holders = parent_ship.job_holder_refs[job_target]
+
+	for(var/datum/weakref/job_holder_ref as anything in job_holders)
+		var/mob/living/job_holder = job_holder_ref.resolve()
+		if(isnull(job_holder))
+			continue
+
+		if(job_holder.client)
+			used_slots += 1
+			continue
+
+		var/mob/dead/observer/job_holder_ghost
+		for(var/mob/dead/observer/ghost in GLOB.dead_mob_list)
+			if(ghost.mind == job_holder.mind)
+				job_holder_ghost = ghost
+				break
+		if(!isnull(job_holder_ghost))
+			used_slots += 1
+			continue
+
+	var/actual_slots = current_slots + used_slots
+	return actual_slots < default_slots
+
 /datum/action/ship_owner/ui_data(mob/user)
 	. = list()
 	.["memo"] = parent_ship.memo
@@ -72,6 +100,7 @@
 	.["pending"] = FALSE
 	.["joinMode"] = parent_ship.join_mode
 	.["cooldown"] = COOLDOWN_TIMELEFT(parent_ship, job_slot_adjustment_cooldown)
+	.["isAdmin"] = !!user.client?.holder
 	.["applications"] = list()
 	for(var/a_key as anything in parent_ship.applications)
 		var/datum/ship_application/app = parent_ship.applications[a_key]
@@ -85,6 +114,10 @@
 			text = app.app_msg,
 			status = app.status
 		))
+	var/list/job_increase_allowed = list()
+	for(var/datum/job/job as anything in parent_ship.job_slots)
+		job_increase_allowed[job.name] = allow_job_slot_increase(job)
+	.["jobIncreaseAllowed"] = job_increase_allowed
 
 /datum/action/ship_owner/ui_static_data(mob/user)
 	. = list()
@@ -134,7 +167,7 @@
 
 		if("memo")
 			var/memo_result = sanitize(stripped_multiline_input(
-				user, "Enter a message for prospective players joining your ship. Playstyle and RP level information is encouraged.",
+				user, "Enter a message for prospective players joining your ship. This information could include your goals for the outing, or details about the way your ship may play.",
 				"Ship Memo", parent_ship.memo
 			))
 			// stripped_multiline_input returns an empty string if people press Cancel, but
@@ -197,18 +230,21 @@
 			if(!target_job || target_job.officer || !COOLDOWN_FINISHED(parent_ship, job_slot_adjustment_cooldown))
 				return TRUE
 
+			var/change_amount = params["delta"]
+			if(change_amount > 0 && !allow_job_slot_increase(target_job))
+				if(!user.client.holder)
+					to_chat(user, span_warning("You cannot increase the number of slots for this job."))
+					return TRUE
+				message_admins("[key_name_admin(user)] has increased the number of slots for [target_job.name] on [parent_ship.name] by [change_amount].")
+
+			var/new_amount = parent_ship.job_slots[target_job] + change_amount
 			var/job_default_slots = parent_ship.source_template.job_slots[target_job]
 			var/job_max_slots = min(job_default_slots * 2, job_default_slots + 3)
-			var/new_slots = parent_ship.job_slots[target_job] + params["delta"]
-			if(new_slots < 0 || new_slots > job_max_slots)
+			if(new_amount < 0 || new_amount > job_max_slots)
 				return TRUE
 
-			var/cooldown_time = 5 SECONDS
-			if(params["delta"] > 0 && new_slots > job_default_slots)
-				cooldown_time = 2 MINUTES
-			COOLDOWN_START(parent_ship, job_slot_adjustment_cooldown, cooldown_time * cooldown_coeff)
-
-			parent_ship.job_slots[target_job] = new_slots
+			COOLDOWN_START(parent_ship, job_slot_adjustment_cooldown, (5 SECONDS) * cooldown_coeff)
+			parent_ship.job_slots[target_job] = new_amount
 			update_static_data(user)
 			return TRUE
 

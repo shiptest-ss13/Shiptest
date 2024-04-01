@@ -2,6 +2,8 @@
 	name = "under"
 	icon = 'icons/obj/clothing/under/default.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/default.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing/suits_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/suits_righthand.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	permeability_coefficient = 0.9
 	slot_flags = ITEM_SLOT_ICLOTHING
@@ -22,7 +24,6 @@
 	var/obj/item/clothing/accessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/freshly_laundered = FALSE
-
 	supports_variations = VOX_VARIATION
 
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
@@ -31,7 +32,9 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damageduniform")
 		if(HAS_BLOOD_DNA(src))
-			. += mutable_appearance('icons/effects/blood.dmi', "uniformblood")
+			var/mutable_appearance/bloody_uniform = mutable_appearance('icons/effects/blood.dmi', "uniformblood")
+			bloody_uniform.color = get_blood_dna_color(return_blood_DNA())
+			. += bloody_uniform
 		if(accessory_overlay)
 			. += accessory_overlay
 

@@ -15,7 +15,9 @@
 /datum/surgery_step/set_bone
 	name = "set bone"
 	time = 6.4 SECONDS
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 25, TOOL_WRENCH = 35)
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_WRENCH = 40)
 	preop_sound = 'sound/surgery/bone1.ogg'
 	success_sound = 'sound/surgery/bone3.ogg'
 

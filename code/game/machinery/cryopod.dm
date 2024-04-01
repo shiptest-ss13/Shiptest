@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	density = FALSE
 	req_one_access = list(ACCESS_HEADS, ACCESS_ARMORY) //Heads of staff or the warden can go here to claim recover items from their department that people went were cryodormed with.
 
+	unique_icon = TRUE
 	/// Used for logging people entering cryosleep and important items they are carrying. Shows crew members.
 	var/list/frozen_crew = list()
 	/// Used for logging people entering cryosleep and important items they are carrying. Shows items.
@@ -27,6 +28,15 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 	/// Whether or not to store items from people going into cryosleep.
 	var/allow_items = TRUE
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod, 17)
+
+/obj/machinery/computer/cryopod/retro
+	desc = "An interface between crew and the cryogenic storage oversight systems. Currently strugggling to catch up with the modern cryogenic storage system."
+	icon_state = "wallconsole_old"
+	icon_screen = "wallconsole_old_cryo"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 
 /obj/machinery/computer/cryopod/Initialize()
 	. = ..()
@@ -165,10 +175,11 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 /obj/machinery/cryopod/Destroy()
 	linked_ship?.spawn_points -= src
+	linked_ship = null
 	return ..()
 
 /obj/machinery/cryopod/LateInitialize()
-	update_icon()
+	update_appearance()
 	find_control_computer()
 
 /obj/machinery/cryopod/proc/find_control_computer(urgent = FALSE)
@@ -184,7 +195,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		message_admins("Cryopod in [get_area(src)] could not find control computer!")
 		last_no_computer_message = world.time
 
-/obj/machinery/cryopod/JoinPlayerHere(mob/M, buckle)
+/obj/machinery/cryopod/join_player_here(mob/M)
 	. = ..()
 	close_machine(M, TRUE)
 
@@ -202,7 +213,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		var/mob/living/mob_occupant = occupant
 		if(mob_occupant && mob_occupant.stat != DEAD)
 			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
-			addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
+			addtimer(CALLBACK(src, PROC_REF(try_despawn_occupant), mob_occupant), mob_occupant.client ? time_till_despawn * 0.1 : time_till_despawn) // If they're logged in, reduce the timer
 	icon_state = close_state
 	if(close_sound)
 		playsound(src, close_sound, 40)
@@ -243,7 +254,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 
 		despawn_occupant()
 	else
-		addtimer(CALLBACK(src, .proc/try_despawn_occupant, mob_occupant), time_till_despawn) //try again with normal delay
+		addtimer(CALLBACK(src, PROC_REF(try_despawn_occupant), mob_occupant), time_till_despawn) //try again with normal delay
 
 /obj/machinery/cryopod/proc/handle_objectives()
 	var/mob/living/mob_occupant = occupant
@@ -292,18 +303,30 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 /obj/machinery/cryopod/proc/despawn_occupant()
 	var/mob/living/mob_occupant = occupant
 
-	if(linked_ship)
-		if(mob_occupant.job in linked_ship.current_ship.job_slots)
-			linked_ship.current_ship.job_slots[mob_occupant.job]++
+	if(!isnull(mob_occupant.mind.original_ship))
+		var/datum/overmap/ship/controlled/original_ship_instance = mob_occupant.mind.original_ship.resolve()
 
-		if(mob_occupant.mind && mob_occupant.mind.assigned_role)
-			//Handle job slot/tater cleanup.
-			if(LAZYLEN(mob_occupant.mind.objectives))
-				mob_occupant.mind.objectives.Cut()
-				mob_occupant.mind.special_role = null
+		var/job_identifier = mob_occupant.job
+
+		var/datum/job/crew_job
+		for(var/datum/job/job as anything in original_ship_instance.job_slots)
+			if(job.name == job_identifier)
+				crew_job = job
+				break
+
+		if(isnull(crew_job))
+			message_admins(span_warning("Failed to identify the job of [key_name_admin(mob_occupant)] belonging to [original_ship_instance.name] at [loc_name(src)]."))
+		else
+			original_ship_instance.job_slots[crew_job]++
+			original_ship_instance.job_holder_refs[crew_job] -= WEAKREF(mob_occupant)
+
+	if(mob_occupant.mind && mob_occupant.mind.assigned_role)
+		//Handle job slot/tater cleanup.
+		if(LAZYLEN(mob_occupant.mind.objectives))
+			mob_occupant.mind.objectives.Cut()
+			mob_occupant.mind.special_role = null
 
 	// Delete them from datacore.
-
 	var/announce_rank = null
 	for(var/datum/data/record/R in GLOB.data_core.medical)
 		if((R.fields["name"] == mob_occupant.real_name))
@@ -316,10 +339,8 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			announce_rank = G.fields["rank"]
 			qdel(G)
 
-	// Regardless of what ship you spawned in you need to be removed from it.
-	// This covers scenarios where you spawn in one ship but cryo in another.
-	for(var/datum/overmap/ship/controlled/sim_ship as anything in SSovermap.controlled_ships)
-		sim_ship.manifest -= mob_occupant.real_name
+	var/datum/overmap/ship/controlled/original_ship = mob_occupant.mind.original_ship.resolve()
+	original_ship.manifest -= mob_occupant.real_name
 
 	var/obj/machinery/computer/cryopod/control_computer_obj = control_computer?.resolve()
 
@@ -328,7 +349,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		var/list/frozen_details = list()
 		frozen_details["name"] = "[mob_occupant.real_name]"
 		frozen_details["rank"] = announce_rank || "[mob_occupant.job]"
-		frozen_details["time"] = gameTimestamp()
+		frozen_details["time"] = station_time_timestamp()
 
 		control_computer_obj.frozen_crew += list(frozen_details)
 
@@ -342,6 +363,7 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 			continue//means we already moved whatever this thing was in
 			//I'm a professional, okay
 			//what the fuck are you on rn and can I have some
+			//who are you even talking to
 		if(is_type_in_typecache(W, preserve_items_typecache))
 			if(control_computer_obj && control_computer_obj.allow_items)
 				control_computer_obj.frozen_items += W
@@ -367,9 +389,10 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 		else
 			mob_occupant.ghostize(TRUE)
 	handle_objectives()
-	QDEL_NULL(occupant)
 	open_machine()
-	name = initial(name)
+	qdel(mob_occupant)
+	//Just in case open_machine didn't clear it
+	occupant = null
 
 /obj/machinery/cryopod/MouseDrop_T(mob/living/target, mob/user)
 	if(!istype(target) || user.incapacitated() || !target.Adjacent(user) || !Adjacent(user) || !ismob(target) || (!ishuman(user) && !iscyborg(user)) || !istype(user.loc, /turf) || target.buckled)
@@ -418,12 +441,38 @@ GLOBAL_LIST_EMPTY(cryopod_computers)
 	linked_ship = port
 	linked_ship.spawn_points += src
 
+/obj/machinery/cryopod/apply_effects_to_mob(mob/living/carbon/sleepyhead)
+	//it always sucks a little to get up
+	sleepyhead.set_nutrition(200)
+	sleepyhead.SetSleeping(60)
+
+	var/wakeupmessage = "The cryopod shudders as the pneumatic seals separating you and the waking world let out a hiss."
+	if(prob(60))
+		wakeupmessage += " A sickly feeling along with the pangs of hunger greet you upon your awakening."
+		sleepyhead.set_nutrition(100)
+		sleepyhead.apply_effect(rand(3,10), EFFECT_DROWSY)
+	to_chat(sleepyhead, span_danger(examine_block(wakeupmessage)))
+
+/obj/machinery/cryopod/syndicate
+	icon_state = "sleeper_s-open"
+	open_state = "sleeper_s-open"
+	close_state = "sleeper_s"
+
 /obj/machinery/cryopod/poor
 	name = "low quality cryogenic freezer"
 	desc = "Keeps crew frozen in cryostasis until they are needed in order to cut down on supply usage. This one seems cheaply made."
 
 /obj/machinery/cryopod/poor/apply_effects_to_mob(mob/living/carbon/sleepyhead)
-	sleepyhead.SetSleeping(50)
-	sleepyhead.set_disgust(60)
-	sleepyhead.set_nutrition(160)
-	to_chat(sleepyhead, "<span class='bolddanger'>A very bad headache wakes you up from cryosleep...</span>")
+	sleepyhead.set_nutrition(200)
+	sleepyhead.SetSleeping(80)
+	if(prob(90)) //suffer
+		sleepyhead.apply_effect(rand(5,15), EFFECT_DROWSY)
+	if(prob(75))
+		sleepyhead.blur_eyes(rand(6, 10))
+	if(prob(66))
+		sleepyhead.adjust_disgust(rand(35, 45))
+	if(prob(40))
+		sleepyhead.adjust_disgust(rand(15, 25))
+	if(prob(20))
+		sleepyhead.adjust_disgust(rand(5,15))
+	to_chat(sleepyhead, "<span class='userdanger'>The symptoms of a horrid cryosleep set in as you awaken...")

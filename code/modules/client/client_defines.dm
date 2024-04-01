@@ -31,6 +31,8 @@
 	///Internal counter for clients sending external (IRC/Discord) relay messages via ahelp to prevent spamming. Set to a number every time an admin reply is sent, decremented for every client send.
 	var/externalreplyamount = 0
 	var/ircreplyamount = 0
+	///Tracks say() usage for ic/dchat while slowmode is enabled
+	COOLDOWN_DECLARE(say_slowmode)
 		/////////
 		//OTHER//
 		/////////
@@ -148,15 +150,14 @@
 	/// our current tab
 	var/stat_tab
 
-	/// whether our browser is ready or not yet
-	var/statbrowser_ready = FALSE
-
 	/// list of all tabs
 	var/list/panel_tabs = list()
 	/// list of tabs containing spells and abilities
 	var/list/spell_tabs = list()
 	///A lazy list of atoms we've examined in the last EXAMINE_MORE_TIME (default 1.5) seconds, so that we will call [atom/proc/examine_more()] instead of [atom/proc/examine()] on them when examining
 	var/list/recent_examines
+	///Our object window datum. It stores info about and handles behavior for the object tab
+	var/datum/object_window_info/obj_window
 
 	var/list/parallax_layers
 	var/list/parallax_layers_cached

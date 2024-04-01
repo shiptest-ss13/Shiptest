@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(tile_reskin_lists)
 		icon_state = initial(choice.icon_state)
 		turf_type = initial(choice.turf_type)
 		merge_type = initial(choice.merge_type)
-		update_icon()
+		update_appearance()
 		return
 
 	choice = new choice(user.drop_location(), amount)

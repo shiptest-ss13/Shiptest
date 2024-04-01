@@ -199,10 +199,10 @@
 	if("set_external_pressure" in signal.data)
 		external_pressure_bound = clamp(text2num(signal.data["set_external_pressure"]),0,ONE_ATMOSPHERE*50)
 
-	addtimer(CALLBACK(src, .proc/broadcast_status), 2)
+	addtimer(CALLBACK(src, PROC_REF(broadcast_status)), 2)
 
 	if(!("status" in signal.data)) //do not update_icon
-		update_icon()
+		update_appearance()
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/welder_act(mob/living/user, obj/item/I)
 	..()
@@ -216,7 +216,7 @@
 		else
 			user.visible_message("<span class='notice'>[user] unwelded the vent.</span>", "<span class='notice'>You unweld the vent.</span>", "<span class='hear'>You hear welding.</span>")
 			welded = FALSE
-		update_icon()
+		update_appearance()
 		pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
 		pipe_vision_img.plane = ABOVE_HUD_PLANE
 		investigate_log("was [welded ? "welded shut" : "unwelded"] by [key_name(user)]", INVESTIGATE_ATMOS)
@@ -246,7 +246,7 @@
 		return
 	user.visible_message("<span class='warning'>[user] furiously claws at [src]!</span>", "<span class='notice'>You manage to clear away the stuff blocking the vent.</span>", "<span class='hear'>You hear loud scraping noises.</span>")
 	welded = FALSE
-	update_icon()
+	update_appearance()
 	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
 	pipe_vision_img.plane = ABOVE_HUD_PLANE
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, TRUE)
@@ -289,10 +289,6 @@
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos
 	id_tag = INCINERATOR_ATMOS_DP_VENTPUMP
-	frequency = FREQ_AIRLOCK_CONTROL
-
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_syndicatelava
-	id_tag = INCINERATOR_SYNDICATELAVA_DP_VENTPUMP
 	frequency = FREQ_AIRLOCK_CONTROL
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer2

@@ -6,7 +6,7 @@
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
 		if(query)
-			var/output = wikiurl + "/index.php?title=Special%3ASearch&profile=default&search=" + query
+			var/output = "[wikiurl]?title=Special%3ASearch&profile=default&search=[query]"
 			src << link(output)
 		else if (query != null)
 			src << link(wikiurl)
@@ -14,17 +14,17 @@
 		to_chat(src, "<span class='danger'>The wiki URL is not set in the server configuration.</span>")
 	return
 
-/client/verb/forum()
-	set name = "forum"
-	set desc = "Visit the forum."
+/client/verb/lore()
+	set name = "lore"
+	set desc = "View the lore landing page."
 	set hidden = TRUE
-	var/forumurl = CONFIG_GET(string/forumurl)
-	if(forumurl)
-		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")!="Yes")
+	var/loreurl = CONFIG_GET(string/loreurl)
+	if(loreurl)
+		if(alert("This will open the lore page in your browser. Are you sure?",,"Yes","No")!="Yes")
 			return
-		src << link(forumurl)
+		src << link(loreurl)
 	else
-		to_chat(src, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='danger'>The lore page URL is not set in the server configuration.</span>")
 	return
 
 /client/verb/rules()

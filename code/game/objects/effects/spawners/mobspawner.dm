@@ -58,3 +58,22 @@
 		/mob/living/simple_animal/borer/sterile = 0.35,
 		/obj/effect/spawner/lootdrop/maintenance = 0.65,
 	)
+
+/obj/effect/spawner/lootdrop/chicken
+	name = "chicken spawner"
+	loot = list(
+		/mob/living/simple_animal/chicken
+	)
+
+/obj/effect/spawner/lootdrop/chicken/jungle
+	name = "jungle chicken spawner"
+	loot = list(
+		/mob/living/simple_animal/hostile/retaliate/chicken
+	)
+
+/obj/effect/spawner/lootdrop/chicken/jungle/flock
+	loot = list(
+		/mob/living/simple_animal/hostile/retaliate/chicken
+	)
+	lootcount = 7
+	lootdoubles = TRUE

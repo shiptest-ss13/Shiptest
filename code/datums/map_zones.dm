@@ -32,8 +32,7 @@
 /datum/map_zone/Destroy()
 	SSmapping.map_zones -= src
 	QDEL_NULL(weather_controller)
-	for(var/datum/virtual_level/vlevel as anything in virtual_levels)
-		qdel(vlevel)
+	QDEL_LIST(virtual_levels)
 	return ..()
 
 /// Clears all of what's inside the virtual levels managed by the mapzone.
@@ -83,6 +82,7 @@
 #define MAPPING_MARGIN 5
 
 /datum/virtual_level
+	/// An admin-facing name used to identify the virtual level. May be duplicate, or changed after instancing.
 	var/name = "Sub Map Zone"
 	var/relative_id
 	var/id
@@ -410,10 +410,17 @@
 	for(var/dir in crosslinked)
 		if(crosslinked[dir]) //Because it could be linking with itself
 			unlink(dir)
-	var/datum/space_level/level = SSmapping.z_list[z_value]
-	level.virtual_levels -= src
+	parent_level.virtual_levels -= src
+	parent_level = null
+	LAZYREMOVE(SSidlenpcpool.idle_mobs_by_virtual_level, "[id]")
 	SSmapping.virtual_z_translation -= "[id]"
 	parent_map_zone.remove_virtual_level(src)
+	if(up_linkage)
+		up_linkage.down_linkage = null
+		up_linkage = null
+	if(down_linkage)
+		down_linkage.up_linkage = null
+		down_linkage = null
 	return ..()
 
 /datum/virtual_level/proc/mark_turfs()
@@ -428,9 +435,14 @@
 
 	var/list/turf/block_turfs = get_block()
 
+	var/static/list/ignored_atoms = typecacheof(list(/mob/dead, /atom/movable/lighting_object))
 	for(var/turf/turf as anything in block_turfs)
 		// don't waste time trying to qdelete the lighting object
-		for(var/datum/thing in (turf.contents - turf.lighting_object))
+		for(var/atom/movable/thing as anything in turf.contents)
+			//There's a dedicated macro for checking in a typecache, but it has unecessary checks
+			//And this needs to be fast
+			if(ignored_atoms[thing.type])
+				continue
 			qdel(thing)
 			// DO NOT CHECK_TICK HERE. IT CAN CAUSE ITEMS TO GET LEFT BEHIND
 			// THIS IS REALLY IMPORTANT FOR CONSISTENCY. SORRY ABOUT THE LAG SPIKE
@@ -442,6 +454,7 @@
 		var/area/old_area = get_area(turf)
 		space_area.contents += turf
 		turf.change_area(old_area, space_area)
+		turf.virtual_z = 0
 		CHECK_TICK
 
 	for(var/turf/turf as anything in block_turfs)
@@ -547,16 +560,10 @@
 	return get_alive_client_mobs() + get_dead_client_mobs()
 
 /datum/virtual_level/proc/get_alive_client_mobs()
-	. = list()
-	for(var/mob/Mob as anything in SSmobs.clients_by_zlevel[z_value])
-		if(is_in_bounds(Mob))
-			. += Mob
+	return LAZYACCESS(SSmobs.players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_dead_client_mobs()
-	. = list()
-	for(var/mob/Mob as anything in SSmobs.dead_players_by_zlevel[z_value])
-		if(is_in_bounds(Mob))
-			. += Mob
+	return LAZYACCESS(SSmobs.dead_players_by_virtual_z, "[z_value]") || list()
 
 /datum/virtual_level/proc/get_mind_mobs()
 	. = list()

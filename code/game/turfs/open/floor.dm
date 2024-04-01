@@ -11,6 +11,7 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	flags_1 = CAN_BE_DIRTY_1 | NO_SCREENTIPS_1
 
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR)
 	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN)
@@ -20,7 +21,7 @@
 	intact = TRUE
 	tiled_dirt = TRUE
 
-	// initiailized as null to stop turfs that update_icon() before Initialize() (in late ruin loading) from getting "stuck" as plating
+	// initiailized as null to stop turfs that update_appearance() before Initialize() (in late ruin loading) from getting "stuck" as plating
 	var/icon_plating = null
 	var/broken = FALSE
 	var/burnt = FALSE
@@ -280,8 +281,6 @@
 	name = "floor"
 	icon_state = "materialfloor"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	icon = 'icons/turf/floors/tiles.dmi'
-	icon_state = "tiled"
 
 /turf/open/floor/material/spawn_tile()
 	for(var/i in custom_materials)

@@ -3,7 +3,7 @@
 /datum/dna
 	var/unique_enzymes
 	var/uni_identity
-	var/blood_type
+	var/datum/blood_type/blood_type
 	var/datum/species/species = new /datum/species/human //The type of mutant race the player is if applicable (i.e. potato-man)
 	var/list/features = list("FFF") //first value is mutant color
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
@@ -320,7 +320,7 @@
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -339,20 +339,21 @@
 		for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
 			quirks_to_remove += quirk_instance.type
 		for(var/quirk_name in quirks_resolved)
-			var/datum/quirk/quirk_instance = SSquirks.quirk_instances[quirk_name]
-			quirks_resolved += quirk_instance.type
+			var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+			quirks_resolved += quirk_type
 			quirks_resolved -= quirk_name
 		quirks_to_remove -= quirks_resolved
 		for(var/quirk_type in quirks_to_remove)
 			remove_quirk(quirk_type)
-		dna.species.on_species_gain(src, old_species, pref_load)
+		dna.species.on_species_gain(src, old_species, pref_load, robotic)
 		if(ishuman(src))
 			qdel(language_holder)
 			var/species_holder = initial(mrace.species_language_holder)
 			language_holder = new species_holder(src)
 		update_atom_languages()
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
+	robotic ||= fbp
 	..()
 	if(icon_update)
 		update_hair()
@@ -687,12 +688,12 @@
 				spawn_gibs()
 				set_species(/datum/species/skeleton)
 				if(prob(90))
-					addtimer(CALLBACK(src, .proc/death), 30)
+					addtimer(CALLBACK(src, PROC_REF(death)), 30)
 					if(mind)
 						mind.hasSoul = FALSE
 			if(5)
 				to_chat(src, "<span class='phobia'>LOOK UP!</span>")
-				addtimer(CALLBACK(src, .proc/something_horrible_mindmelt), 30)
+				addtimer(CALLBACK(src, PROC_REF(something_horrible_mindmelt)), 30)
 
 
 /mob/living/carbon/human/proc/something_horrible_mindmelt()
@@ -703,4 +704,4 @@
 		eyes.Remove(src)
 		qdel(eyes)
 		visible_message("<span class='notice'>[src] looks up and their eyes melt away!</span>", "<span class>='userdanger'>I understand now.</span>")
-		addtimer(CALLBACK(src, .proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 20)
+		addtimer(CALLBACK(src, PROC_REF(adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 20)

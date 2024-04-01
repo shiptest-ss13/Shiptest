@@ -170,10 +170,10 @@
 	colour = "#ffff66"
 
 /datum/client_colour/glass_colour/red
-	colour = "#ffaaaa"
+	colour = "#ffbfcf"
 
 /datum/client_colour/glass_colour/darkred
-	colour = "#bb5555"
+	colour = "#e5a5b5"
 
 /datum/client_colour/glass_colour/orange
 	colour = "#ffbb99"
@@ -182,7 +182,10 @@
 	colour = "#ffddaa"
 
 /datum/client_colour/glass_colour/purple
-	colour = "#ff99ff"
+	colour = "#ffbbff"
+
+/datum/client_colour/glass_colour/darkpurple
+	colour = "#dd99dd"
 
 /datum/client_colour/glass_colour/gray
 	colour = "#cccccc"
@@ -204,7 +207,7 @@
 
 /datum/client_colour/bloodlust/New(mob/_owner)
 	..()
-	addtimer(CALLBACK(src, .proc/update_colour, list(1,0,0,0.8,0.2,0, 0.8,0,0.2,0.1,0,0), 10, SINE_EASING|EASE_OUT), 1)
+	addtimer(CALLBACK(src, PROC_REF(update_colour), list(1,0,0,0.8,0.2,0, 0.8,0,0.2,0.1,0,0), 10, SINE_EASING|EASE_OUT), 1)
 
 /datum/client_colour/thirdeye
 	colour = list(

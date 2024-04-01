@@ -36,23 +36,12 @@
 
 /obj/item/storage/box/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/box/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.use_sound = 'sound/items/storage/briefcase.ogg'
-
-/obj/item/storage/box/suicide_act(mob/living/carbon/user)
-	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-	if(myhead)
-		user.visible_message("<span class='suicide'>[user] puts [user.p_their()] head into \the [src], and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		myhead.dismember()
-		myhead.forceMove(src)//force your enemies to kill themselves with your head collection box!
-		playsound(user, "desceration-01.ogg", 50, TRUE, -1)
-		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] beating [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/storage/box/update_overlays()
 	. = ..()
@@ -110,7 +99,7 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
 
-
+//guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
 	illustration = "disk_kit"
@@ -180,6 +169,19 @@
 // Medical survival box
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
+
+/obj/item/storage/box/survival/clip
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
+
+/obj/item/storage/box/survival/clip/PopulateContents()
+	. = ..()
+	new /obj/item/radio/off(src)
+
+/obj/item/storage/box/survival/clip/balaclava
+	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
+
+/obj/item/storage/box/survival/clip/balaclava
+	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -785,6 +787,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/light/bulb(src)
 
+/obj/item/storage/box/flares
+	name = "box of flares"
+	illustration = "firecracker"
+
+/obj/item/storage/box/flares/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"
@@ -820,10 +829,6 @@
 	icon_state = "hugbox"
 	illustration = "heart"
 	foldable = null
-
-/obj/item/storage/box/hug/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] clamps the box of hugs on [user.p_their()] jugular! Guess it wasn't such a hugbox after all..</span>")
-	return (BRUTELOSS)
 
 /obj/item/storage/box/hug/attack_self(mob/user)
 	..()
@@ -945,10 +950,11 @@
 		icon_state = "[item_state]"
 	else
 		icon_state = "[item_state]_closed"
+	return ..()
 
 /obj/item/storage/box/papersack/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))
-		var/choice = show_radial_menu(user, src , papersack_designs, custom_check = CALLBACK(src, .proc/check_menu, user, W), radius = 36, require_near = TRUE)
+		var/choice = show_radial_menu(user, src , papersack_designs, custom_check = CALLBACK(src, PROC_REF(check_menu), user, W), radius = 36, require_near = TRUE)
 		if(!choice)
 			return FALSE
 		if(icon_state == "paperbag_[choice]")
@@ -1137,7 +1143,7 @@
 	new /obj/item/reagent_containers/food/snacks/meat/slab/bear(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
-	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+	new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/meatball(src)
@@ -1147,7 +1153,7 @@
 
 /obj/item/storage/box/ingredients/exotic/PopulateContents()
 	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 		new /obj/item/reagent_containers/food/snacks/grown/soybeans(src)
 		new /obj/item/reagent_containers/food/snacks/grown/cabbage(src)
 	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
@@ -1556,3 +1562,54 @@
 		/obj/item/stack/wrapping_paper/small=1
 		)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/coffeepack
+	icon_state = "arabica_beans"
+	name = "arabica beans"
+	desc = "A bag containing fresh, dry coffee arabica beans. Ethically sourced and packaged by Donk! Co."
+	illustration = null
+	icon = 'icons/obj/food/containers.dmi'
+	var/beantype = /obj/item/reagent_containers/food/snacks/grown/coffee
+
+/obj/item/storage/box/cofeepack/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 5
+	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/grown/coffee))
+
+/obj/item/storage/box/coffeepack/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/reagent_containers/food/snacks/grown/coffee = 5,
+		/obj/item/reagent_containers/food/snacks/grown/coffee/robusta = 5)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/coffeepack/robusta
+	icon_state = "robusta_beans"
+	name = "robusta beans"
+	desc = "A bag containing fresh, dry coffee robusta beans. Ethically sourced and packaged by Donk! Co."
+	beantype = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
+
+
+/*
+ * Coffee condiments display -- someone can make this fancy eventually, i cant fucking figure it out for the life of me -- it exists in TG
+ */
+
+/obj/item/storage/box/coffee_condi_display
+	name = "coffee condiments display"
+	desc = "A neat small box, holding all your favorite coffee condiments."
+
+/obj/item/storage/box/coffee_condi_display/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 14
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/food/condiment/pack/sugar,
+		/obj/item/reagent_containers/food/condiment/pack/creamer,
+		/obj/item/reagent_containers/food/condiment/pack/astrotame,
+	))
+
+/obj/item/storage/box/coffee_condi_display/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/food/condiment/pack/sugar(src)
+		new /obj/item/reagent_containers/food/condiment/pack/creamer(src)
+		new /obj/item/reagent_containers/food/condiment/pack/astrotame(src)

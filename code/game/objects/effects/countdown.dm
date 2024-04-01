@@ -146,11 +146,13 @@
 		return round(time_left)
 
 /obj/effect/countdown/holosign/Destroy(...)
-	if(attached_to)
-		var/obj/structure/holosign/H = attached_to
-		if(H.countdown)
-			H.countdown = null
-			return ..()
+	if(!attached_to)
+		return ..()
+	var/obj/structure/holosign/H = attached_to
+	if(!istype(H) || !H.countdown)
+		return ..()
+	H.countdown = null
+	return ..()
 
 /obj/effect/countdown/hourglass
 	name = "hourglass countdown"

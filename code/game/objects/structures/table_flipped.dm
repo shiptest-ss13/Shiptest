@@ -2,7 +2,7 @@
 	name = "flipped table"
 	desc = "A flipped table."
 	icon = 'icons/obj/flipped_tables.dmi'
-	icon_state = "metal-flipped"
+	icon_state = "table"
 	anchored = TRUE
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
@@ -12,7 +12,7 @@
 /obj/structure/flippedtable/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXIT = .proc/on_exit,
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
 	)
 
 	AddElement(/datum/element/connect_loc, loc_connections)

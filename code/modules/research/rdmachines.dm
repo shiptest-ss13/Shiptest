@@ -55,6 +55,7 @@
 			var/obj/machinery/rnd/server/server = multi.buffer
 			linked_techweb = server.stored_research
 			visible_message("Linked to [server]!")
+			return TRUE
 	if(is_refillable() && O.is_drainable())
 		return FALSE //inserting reagents into the machine
 	if(Insert_Item(O, user))
@@ -111,4 +112,4 @@
 		stack_name = S.name
 		use_power(min(1000, (amount_inserted / 100)))
 	add_overlay("protolathe_[stack_name]")
-	addtimer(CALLBACK(src, /atom/proc/cut_overlay, "protolathe_[stack_name]"), 10)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, cut_overlay), "protolathe_[stack_name]"), 10)

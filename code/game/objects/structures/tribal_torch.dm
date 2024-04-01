@@ -19,12 +19,12 @@
 		burning = FALSE
 		icon_state = "torch_unlit"
 		set_light(0)
-		update_icon()
+		update_appearance()
 		return
 	if(!burning)
 		user.visible_message("<span class='notice'>[user] starts to pull [src] free from the ground....</span>", "<span class='notice'>You start to pull [src] free from the ground...</span>")
 		if(do_after(user, 20, progress = 1, target = src))
-			to_chat("<span class='notice'>You pull [src] free from the ground.</span>")
+			to_chat(user, "<span class='notice'>You pull [src] free from the ground.</span>")
 			var/torch = new /obj/item/candle/tribal_torch
 			user.put_in_hands(torch)
 			qdel(src)
@@ -33,7 +33,7 @@
 /obj/structure/destructible/tribal_torch/attackby(obj/item/W, mob/user, params)
 	if(W.get_temperature())
 		StartBurning()
-		update_icon()
+		update_appearance()
 		user.visible_message("<span class='notice'>[user] lights [src] with [W].</span>", "<span class='notice'>You light [src] with [W].</span>")
 		return
 
@@ -42,7 +42,7 @@
 		burning = TRUE
 		icon_state = "torch_lit"
 		set_light(7)
-		update_icon()
+		update_appearance()
 		return
 
 /obj/structure/destructible/tribal_torch/fire_act(exposed_temperature, exposed_volume)

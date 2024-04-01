@@ -1,27 +1,28 @@
-// 7.62x38mmR (Nagant Revolver)
-
-/obj/projectile/bullet/n762
-	name = "7.62x38mmR bullet"
-	damage = 35
-
-// .50AE (Desert Eagle)
+// .50 AE (Desert Eagle)
 
 /obj/projectile/bullet/a50AE
-	name = ".50AE bullet"
-	damage = 60
+	name = ".50 AE bullet"
+	damage = 40
 
-// .38 (Detective's Gun & Winchester)
+/obj/projectile/bullet/a50AE/hp
+	name = ".50 AE hollow point bullet"
+	damage = 60
+	armour_penetration = -50
+
+// .38 (Colt Detective Special & Winchester)
 
 /obj/projectile/bullet/c38
 	name = ".38 bullet"
 	damage = 20
-	ricochets_max = 2
-	ricochet_chance = 50
-	ricochet_auto_aim_angle = 10
-	ricochet_auto_aim_range = 3
+	armour_penetration = -20
+
+/obj/projectile/bullet/c38/surplus
+	damage = 15
 
 /obj/projectile/bullet/c38/match
-	name = ".38 Match bullet"
+	name = ".38 match bullet"
+	speed = 0.3
+	armour_penetration = -10
 	ricochets_max = 4
 	ricochet_chance = 100
 	ricochet_auto_aim_angle = 40
@@ -30,11 +31,12 @@
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1
 
-/obj/projectile/bullet/c38/match/bouncy
-	name = ".38 Rubber bullet"
-	damage = 10
-	stamina = 30
-	armour_penetration = -30
+/obj/projectile/bullet/c38/match/bouncy // I don't know why this is a subtype of match
+	name = ".38 rubber bullet"
+	speed = 0.4
+	damage = 7
+	stamina = 38
+	armour_penetration = -60
 	ricochets_max = 6
 	ricochet_incidence_leeway = 70
 	ricochet_chance = 130
@@ -42,9 +44,9 @@
 	shrapnel_type = NONE
 
 /obj/projectile/bullet/c38/dumdum
-	name = ".38 DumDum bullet"
-	damage = 15
-	armour_penetration = -30
+	name = ".38 dum-dum bullet"
+	damage = 20
+	armour_penetration = -50
 	ricochets_max = 0
 	shrapnel_type = /obj/item/shrapnel/bullet/c38/dumdum
 
@@ -67,20 +69,18 @@
 		imp.implant(M)
 
 /obj/projectile/bullet/c38/hotshot //similar to incendiary bullets, but do not leave a flaming trail
-	name = ".38 Hot Shot bullet"
-	damage = 20
+	name = ".38 hot shot bullet"
 	ricochets_max = 0
 
 /obj/projectile/bullet/c38/hotshot/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(6)
+		M.adjust_fire_stacks(3)
 		M.IgniteMob()
 
 /obj/projectile/bullet/c38/iceblox //see /obj/projectile/temp for the original code
-	name = ".38 Iceblox bullet"
-	damage = 20
+	name = ".38 iceblox bullet"
 	var/temperature = 100
 	ricochets_max = 0
 
@@ -90,40 +90,40 @@
 		var/mob/living/M = target
 		M.adjust_bodytemperature(((100-blocked)/100)*(temperature - M.bodytemperature))
 
-/obj/projectile/bullet/c38/hunting //bonus damage to simplemobs
-	name = ".38 hunting"
-	damage = 15
-	var/bonus_damage = 40 // if a simplemob then do this much extra
-
-/obj/projectile/bullet/c38/hunting/on_hit(atom/target, blocked = FALSE)
-	if(istype(target, /mob/living/simple_animal/hostile/asteroid/))
-		damage += bonus_damage
-	..()
-
-// .357 (Syndie Revolver)
+// .357 (Syndicate Revolver)
 
 /obj/projectile/bullet/a357
 	name = ".357 bullet"
-	damage = 35 //shiptest nerf
+	damage = 30 //shiptest nerf
 
 // admin only really, for ocelot memes
 /obj/projectile/bullet/a357/match
 	name = ".357 match bullet"
+	speed = 0.3
+	armour_penetration = 10
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
 	ricochet_auto_aim_range = 6
 	ricochet_incidence_leeway = 80
 	ricochet_decay_chance = 1
+
+/obj/projectile/bullet/a357/hp
+	name = ".357 hollow point bullet"
+	damage = 50
+	armour_penetration = -50
+	ricochet_chance = 0 //mushroom on impact, no bounces
 
 // .45-70 Gov't (Hunting Revolver)
 
 /obj/projectile/bullet/a4570
 	name = ".45-70 bullet"
-	damage = 60 //it's the old .357
+	damage = 45 //crits in 3-4 taps depending on armor
 
 /obj/projectile/bullet/a4570/match
 	name = ".45-70 match bullet"
+	speed = 0.3
+	armour_penetration = 10
 	ricochets_max = 5
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
@@ -131,10 +131,24 @@
 	ricochet_incidence_leeway = 80
 	ricochet_decay_chance = 1
 
+/obj/projectile/bullet/a4570/hp
+	name = ".45-70 hollow point bullet"
+	damage = 60 //it's the pre-nerf .357 with less armor pen
+	armour_penetration = -50
+
 /obj/projectile/bullet/a4570/explosive //for extra oof
 	name = ".45-70 explosive bullet"
+	dismemberment = 50 //literally blow limbs off
 
 /obj/projectile/bullet/a4570/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
 	explosion(target, -1, 0, 1)
 	return BULLET_ACT_HIT
+
+
+/obj/projectile/bullet/c22lr
+	name = ".22LR bullet"
+	damage = 20
+	armour_penetration = -45
+	ricochet_incidence_leeway = 20
+	ricochet_chance = 65

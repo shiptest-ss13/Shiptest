@@ -17,13 +17,13 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 	if(with_bodyparts)
 		switch(dna.species.species_gibs)
 			if("human")
-				new /obj/effect/gibspawner/human(get_turf(src), dna, get_static_viruses())
+				new /obj/effect/gibspawner/human(get_turf(src), src, get_static_viruses())
 			if("robotic")
 				new /obj/effect/gibspawner/robot(get_turf(src))
 	else
 		switch(dna.species.species_gibs)
 			if("human")
-				new /obj/effect/gibspawner/human/bodypartless(get_turf(src), dna, get_static_viruses())
+				new /obj/effect/gibspawner/human/bodypartless(get_turf(src), src, get_static_viruses())
 			if("robotic")
 				new /obj/effect/gibspawner/robot/bodypartless(get_turf(src))
 
@@ -49,9 +49,8 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 
 	dizziness = 0
 	jitteriness = 0
-	if(client && !suiciding && !(client in GLOB.dead_players_during_shift))
+	if(client && !(client in GLOB.dead_players_during_shift))
 		GLOB.dead_players_during_shift += client
-		GLOB.deaths_during_shift++
 	if(ismecha(loc))
 		var/obj/mecha/M = loc
 		if(M.occupant == src)
@@ -64,7 +63,7 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 		SSblackbox.ReportDeath(src)
 		log_message("has died (BRUTE: [src.getBruteLoss()], BURN: [src.getFireLoss()], TOX: [src.getToxLoss()], OXY: [src.getOxyLoss()], CLONE: [src.getCloneLoss()])", LOG_ATTACK)
 	if(is_devil(src))
-		INVOKE_ASYNC(is_devil(src), /datum/antagonist/devil.proc/beginResurrectionCheck, src)
+		INVOKE_ASYNC(is_devil(src), TYPE_PROC_REF(/datum/antagonist/devil, beginResurrectionCheck), src)
 
 	to_chat(src, "<span class='warning'>You have died. Barring complete bodyloss, you can in most cases be revived by other players. If you do not wish to be brought back, use the \"Do Not Resuscitate\" verb in the ghost tab.</span>")
 

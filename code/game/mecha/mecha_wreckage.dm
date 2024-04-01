@@ -32,7 +32,7 @@
 		return
 	AI = AI_pilot
 	AI.apply_damage(150, BURN) //Give the AI a bit of damage from the "shock" of being suddenly shut down
-	INVOKE_ASYNC(AI, /mob/living/silicon.proc/death) //The damage is not enough to kill the AI, but to be 'corrupted files' in need of repair.
+	INVOKE_ASYNC(AI, TYPE_PROC_REF(/mob/living/silicon, death)) //The damage is not enough to kill the AI, but to be 'corrupted files' in need of repair.
 	AI.forceMove(src) //Put the dead AI inside the wreckage for recovery
 	add_overlay(mutable_appearance('icons/obj/projectiles.dmi', "green_laser")) //Overlay for the recovery beacon
 	AI.controlled_mech = null
@@ -153,9 +153,9 @@
 				/obj/item/mecha_parts/part/ripley_left_leg,
 				/obj/item/mecha_parts/part/ripley_right_leg)
 
-/obj/structure/mecha_wreckage/ripley/cmm
+/obj/structure/mecha_wreckage/ripley/clip
 	name = "\improper Rogue wreckage"
-	icon_state = "cmmripley-broken"
+	icon_state = "clipripley-broken"
 
 /obj/structure/mecha_wreckage/ripley/mkii
 	name = "\improper Ripley MK-II wreckage"
@@ -200,9 +200,9 @@
 			/obj/item/mecha_parts/part/durand_left_leg,
 			/obj/item/mecha_parts/part/durand_right_leg)
 
-/obj/structure/mecha_wreckage/durand/cmm
+/obj/structure/mecha_wreckage/durand/clip
 	name = "\improper Paladin wreckage"
-	icon_state = "cmmdurand-broken"
+	icon_state = "clipdurand-broken"
 
 /obj/structure/mecha_wreckage/phazon
 	name = "\improper Phazon wreckage"

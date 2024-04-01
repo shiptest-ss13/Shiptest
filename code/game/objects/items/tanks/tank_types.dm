@@ -119,6 +119,7 @@
 	force = 4
 	distribute_pressure = TANK_DEFAULT_RELEASE_PRESSURE
 	volume = 1 //Tiny. Real life equivalents only have 21 breaths of oxygen in them. They're EMERGENCY tanks anyway -errorage (dangercon 2011)
+	supports_variations = VOX_VARIATION
 
 
 /obj/item/tank/internals/emergency_oxygen/populate_gas()

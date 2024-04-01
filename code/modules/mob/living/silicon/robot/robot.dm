@@ -111,7 +111,7 @@
 
 	wires = new /datum/wires/robot(src)
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
-	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, .proc/charge)
+	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
 
 	robot_modules_background = new()
 	robot_modules_background.icon_state = "block"
@@ -155,9 +155,9 @@
 		mmi.brainmob.name = src.real_name
 		mmi.brainmob.real_name = src.real_name
 		mmi.brainmob.container = mmi
-		mmi.update_icon()
+		mmi.update_appearance()
 
-	INVOKE_ASYNC(src, .proc/updatename)
+	INVOKE_ASYNC(src, PROC_REF(updatename))
 
 	playsound(loc, 'sound/voice/liveagain.ogg', 75, TRUE)
 	aicamera = new/obj/item/camera/siliconcam/robot_camera(src)
@@ -184,7 +184,7 @@
 				mmi.brainmob.remove_from_dead_mob_list()
 				mmi.brainmob.add_to_alive_mob_list()
 			mind.transfer_to(mmi.brainmob)
-			mmi.update_icon()
+			mmi.update_appearance()
 		else
 			to_chat(src, "<span class='boldannounce'>Oops! Something went very wrong, your MMI was unable to receive your mind. You have been ghosted. Please make a bug report so we can fix this bug.</span>")
 			ghostize()
@@ -200,12 +200,14 @@
 		if(T && istype(radio) && istype(radio.keyslot))
 			radio.keyslot.forceMove(T)
 			radio.keyslot = null
-	qdel(wires)
-	qdel(module)
-	qdel(eye_lights)
-	wires = null
-	module = null
-	eye_lights = null
+	QDEL_NULL(wires)
+	QDEL_NULL(module)
+	QDEL_NULL(eye_lights)
+	QDEL_NULL(inv1)
+	QDEL_NULL(inv2)
+	QDEL_NULL(inv3)
+	QDEL_NULL(spark_system)
+	QDEL_LIST(upgrades)
 	cell = null
 	return ..()
 
@@ -321,7 +323,6 @@
 
 /mob/living/silicon/robot/get_status_tab_items()
 	. = ..()
-	. += ""
 	if(cell)
 		. += "Charge Left: [cell.charge]/[cell.maxcharge]"
 	else
@@ -438,11 +439,11 @@
 	return update_icons()
 
 /mob/living/silicon/robot/update_icons()
+	if(QDELETED(src))
+		return
 	cut_overlays()
 	icon_state = module.cyborg_base_icon
-	//WS changes - Thanks Cit - Allows modules to use different icon files
 	icon = (module.cyborg_icon_override ? module.cyborg_icon_override : initial(icon))
-	//EndWS Changes
 	if(module.cyborg_base_icon == "robot")
 		icon = 'icons/mob/robots.dmi'
 		pixel_x = initial(pixel_x)
@@ -496,6 +497,9 @@
 	set category = "IC"
 	set src = usr
 
+	return ..()
+
+/mob/living/silicon/robot/execute_mode()
 	if(incapacitated())
 		return
 	var/obj/item/W = get_active_held_item()
@@ -505,7 +509,7 @@
 
 /mob/living/silicon/robot/proc/SetLockdown(state = TRUE)
 	// They stay locked down if their wire is cut.
-	if(wires.is_cut(WIRE_LOCKDOWN))
+	if(wires?.is_cut(WIRE_LOCKDOWN))
 		state = TRUE
 	if(state)
 		throw_alert("locked", /atom/movable/screen/alert/locked)
@@ -570,14 +574,14 @@
 	if(!(update_color && lamp_enabled) && (turn_off || lamp_enabled || update_color || !lamp_functional || stat || low_power_mode))
 		set_light_on(FALSE)
 		lamp_enabled = FALSE
-		lampButton.update_icon()
+		lampButton.update_appearance()
 		update_icons()
 		return
 	set_light_range(lamp_intensity)
 	set_light_color(lamp_color)
 	set_light_on(TRUE)
 	lamp_enabled = TRUE
-	lampButton.update_icon()
+	lampButton.update_appearance()
 	update_icons()
 
 /mob/living/silicon/robot/proc/deconstruct()
@@ -605,11 +609,11 @@
 		robot_suit.head.flash2.burn_out()
 		robot_suit.head.flash2 = null
 		robot_suit.head = null
-		robot_suit.update_icon()
+		robot_suit.update_appearance()
 	else
 		new /obj/item/robot_suit(T)
-		new /obj/item/bodypart/l_leg/robot(T)
-		new /obj/item/bodypart/r_leg/robot(T)
+		new /obj/item/bodypart/leg/left/robot(T)
+		new /obj/item/bodypart/leg/right/robot(T)
 		new /obj/item/stack/cable_coil(T, 1)
 		new /obj/item/bodypart/chest/robot(T)
 		new /obj/item/bodypart/l_arm/robot(T)
@@ -685,7 +689,7 @@
 /mob/living/silicon/robot/modules/syndicate/Initialize()
 	. = ..()
 	laws = new /datum/ai_laws/syndicate_override()
-	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+	addtimer(CALLBACK(src, PROC_REF(show_playstyle)), 5)
 
 /mob/living/silicon/robot/modules/syndicate/create_modularInterface()
 	if(!modularInterface)
@@ -718,7 +722,7 @@
 /mob/living/silicon/robot/modules/syndicateproto/Initialize()
 	. = ..()
 	laws = new /datum/ai_laws/syndproto_override()
-	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+	addtimer(CALLBACK(src, PROC_REF(show_playstyle)), 5)
 
 /mob/living/silicon/robot/modules/syndicateproto/create_modularInterface()
 	if(!modularInterface)
@@ -921,7 +925,7 @@
 	hat_offset = module.hat_offset
 
 	magpulse = module.magpulsing
-	INVOKE_ASYNC(src, .proc/updatename)
+	INVOKE_ASYNC(src, PROC_REF(updatename))
 
 
 /mob/living/silicon/robot/proc/place_on_head(obj/item/new_hat)
@@ -1089,12 +1093,11 @@
 			riding_datum.restore_position(user)
 	. = ..(user)
 
-/mob/living/silicon/robot/resist()
+/mob/living/silicon/robot/execute_resist()
 	. = ..()
 	if(!has_buckled_mobs())
 		return
-	for(var/i in buckled_mobs)
-		var/mob/unbuckle_me_now = i
+	for(var/mob/unbuckle_me_now as anything in buckled_mobs)
 		unbuckle_mob(unbuckle_me_now, FALSE)
 
 
@@ -1146,7 +1149,7 @@
 /mob/living/silicon/robot/proc/logevent(string = "")
 	if(!string)
 		return
-	if(stat == DEAD) //Dead borgs log no longer
+	if(stat == DEAD || QDELETED(src)) //Dead borgs log no longer //Gone
 		return
 	if(!modularInterface)
 		stack_trace("Cyborg [src] ([type]) was somehow missing their integrated tablet. Please make a bug report.")

@@ -28,7 +28,7 @@
 	if(can_interact(user))
 		on = !on
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/AltClick(mob/user)
@@ -36,7 +36,7 @@
 		volume_rate = MAX_TRANSFER_RATE
 		investigate_log("was set to [volume_rate] L/s by [key_name(user)]", INVESTIGATE_ATMOS)
 		to_chat(user, "<span class='notice'>You maximize the volume output on [src] to [volume_rate] L/s.</span>")
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/Destroy()
@@ -57,19 +57,20 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/process_atmos()
 	..()
 
-	injecting = 0
+	injecting = TRUE
 
-	if(!on || !is_operational)
+	if(!on || !is_operational || !isopenturf(loc))
 		return
 
 	var/datum/gas_mixture/air_contents = airs[1]
 
-	if(air_contents != null)
-		if(air_contents.return_temperature() > 0)
-			loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
-			air_update_turf()
+	if(!air_contents || air_contents.return_temperature() <= 0)
+		return
 
-		update_parents()
+	loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
+	air_update_turf()
+
+	update_parents()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/proc/inject()
 
@@ -78,7 +79,7 @@
 
 	var/datum/gas_mixture/air_contents = airs[1]
 
-	injecting = 1
+	injecting = TRUE
 
 	if(air_contents.return_temperature() > 0)
 		loc.assume_air_ratio(air_contents, volume_rate / air_contents.return_volume())
@@ -124,7 +125,7 @@
 		on = !on
 
 	if("inject" in signal.data)
-		INVOKE_ASYNC(src, .proc/inject)
+		INVOKE_ASYNC(src, PROC_REF(inject))
 		return
 
 	if("set_volume_rate" in signal.data)
@@ -132,10 +133,10 @@
 		var/datum/gas_mixture/air_contents = airs[1]
 		volume_rate = clamp(number, 0, air_contents.return_volume())
 
-	addtimer(CALLBACK(src, .proc/broadcast_status), 2)
+	addtimer(CALLBACK(src, PROC_REF(broadcast_status)), 2)
 
 	if(!("status" in signal.data)) //do not update_icon
-		update_icon()
+		update_appearance()
 
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/ui_interact(mob/user, datum/tgui/ui)
@@ -172,7 +173,7 @@
 			if(.)
 				volume_rate = clamp(rate, 0, MAX_TRANSFER_RATE)
 				investigate_log("was set to [volume_rate] L/s by [key_name(usr)]", INVESTIGATE_ATMOS)
-	update_icon()
+	update_appearance()
 	broadcast_status()
 
 /obj/machinery/atmospherics/components/unary/outlet_injector/can_unwrench(mob/user)

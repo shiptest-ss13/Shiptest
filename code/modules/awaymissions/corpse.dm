@@ -57,7 +57,7 @@
 /obj/effect/mob_spawn/Initialize(mapload)
 	. = ..()
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
-		INVOKE_ASYNC(src, .proc/create)
+		INVOKE_ASYNC(src, PROC_REF(create))
 	else if(ghost_usable)
 		GLOB.poi_list |= src
 		LAZYADD(GLOB.mob_spawners[name], src)
@@ -307,6 +307,9 @@
 	outfit = /datum/outfit/job/assistant
 	icon_state = "corpsegreytider"
 
+/obj/effect/mob_spawn/human/corpse/assistant/husked
+	husk = TRUE
+
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
 
@@ -326,6 +329,8 @@
 	outfit = /datum/outfit/job/cook
 	icon_state = "corpsecook"
 
+/obj/effect/mob_spawn/human/cook/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
@@ -353,11 +358,8 @@
 
 /obj/effect/mob_spawn/human/engineer
 	name = "Engineer"
-	outfit = /datum/outfit/job/engineer/gloved
+	outfit = /datum/outfit/job/engineer
 	icon_state = "corpseengineer"
-
-/obj/effect/mob_spawn/human/engineer/rig
-	outfit = /datum/outfit/job/engineer/gloved/rig
 
 /obj/effect/mob_spawn/human/clown
 	name = "Clown"
@@ -374,15 +376,6 @@
 	outfit = /datum/outfit/job/miner
 	icon_state = "corpseminer"
 
-/obj/effect/mob_spawn/human/miner/rig
-	outfit = /datum/outfit/job/miner/equipped/hardsuit
-
-/obj/effect/mob_spawn/human/miner/explorer
-	outfit = /datum/outfit/job/miner/equipped
-
-/obj/effect/mob_spawn/human/miner/old
-	outfit = /datum/outfit/job/miner/old
-
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
 	outfit = /datum/outfit/plasmaman
@@ -390,6 +383,9 @@
 /obj/effect/mob_spawn/human/botanist
 	outfit = /datum/outfit/job/botanist
 	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/botanist/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/sec
 	outfit = /datum/outfit/job/security
@@ -405,9 +401,13 @@
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"
+	icon_state = "corpsebartender"
 	id_job = "Bartender"
 	id_access_list = list(ACCESS_BAR)
 	outfit = /datum/outfit/spacebartender
+
+/obj/effect/mob_spawn/human/bartender/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/bartender/alive
 	death = FALSE
@@ -465,8 +465,8 @@
 	name = "Beach Bum"
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/storage/wallet/random
-	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank;
-	uniform = /obj/item/clothing/under/pants/youngfolksjeans
+	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank
+	uniform = /obj/item/clothing/under/pants/jeans
 	id = /obj/item/card/id
 
 /datum/outfit/beachbum/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -486,7 +486,7 @@
 /datum/outfit/nanotrasenbridgeofficercorpse
 	name = "Bridge Officer Corpse"
 	ears = /obj/item/radio/headset/heads/head_of_personnel
-	uniform = /obj/item/clothing/under/rank/centcom/officer
+	uniform = /obj/item/clothing/under/rank/centcom/official
 	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -514,22 +514,10 @@
 
 
 /obj/effect/mob_spawn/human/nanotrasensoldier
-	name = "\improper Nanotrasen Private Security Officer"
+	name = "\improper Nanotrasen LP Security Specialist"
 	id_job = "Private Security Force"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-	outfit = /datum/outfit/nanotrasensoldiercorpse
-
-/datum/outfit/nanotrasensoldiercorpse
-	name = "NT Private Security Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
+	outfit = /datum/outfit/job/nanotrasen/security/lp
 
 /obj/effect/mob_spawn/human/commander/alive
 	death = FALSE
@@ -620,42 +608,3 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	suit = /obj/item/clothing/suit/armor/vest
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
-
-/datum/outfit/whitesands
-	name = "Whitesands Inhabitant Default Outfit"
-
-/datum/outfit/whitesands/survivor
-	name = "Whitesands Survivor"
-	uniform = /obj/item/clothing/under/color/random
-	back = /obj/item/storage/backpack
-	shoes = /obj/item/clothing/shoes/workboots/mining
-	suit = /obj/item/clothing/suit/hooded/survivor
-	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
-	gloves = /obj/item/clothing/gloves/color/black
-
-/datum/outfit/whitesands/survivor/hunter
-	name = "Whitesands Hunter"
-	l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
-
-/datum/outfit/whitesands/survivor/gunslinger
-	name = "Whitesands Gunslinger"
-	l_pocket = /obj/item/ammo_box/magazine/aks74u
-
-/obj/effect/mob_spawn/human/corpse/whitesands
-	death = TRUE
-	roundstart = FALSE
-
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor
-	name = "Whitesands Survivor Corpse"
-	outfit = /datum/outfit/whitesands/survivor
-	hairstyle = "Bald"
-	skin_tone = "caucasian1"
-	facial_hairstyle= "Shaved"
-
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor/hunter
-	name = "Whitesands Hunter Corpse"
-	outfit = /datum/outfit/whitesands/survivor/hunter
-
-/obj/effect/mob_spawn/human/corpse/whitesands/survivor/gunslinger
-	name = "Whitesands Gunslinger Corpse"
-	outfit = /datum/outfit/whitesands/survivor/gunslinger

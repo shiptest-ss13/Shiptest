@@ -11,9 +11,9 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/moth
-	liked_food = FRUIT | SUGAR
+	liked_food = FRUIT | SUGAR | CLOTH
 	disliked_food = GROSS
-	toxic_food = MEAT | RAW
+	toxic_food = MEAT | RAW | GORE
 	mutanteyes = /obj/item/organ/eyes/compound 	//WS Edit - Compound eyes
 	mutanttongue = /obj/item/organ/tongue/moth //WS Edit - Insectoid language
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
@@ -27,10 +27,10 @@
 	species_head = /obj/item/bodypart/head/moth
 	species_l_arm = /obj/item/bodypart/l_arm/moth
 	species_r_arm = /obj/item/bodypart/r_arm/moth
-	species_l_leg = /obj/item/bodypart/l_leg/moth
-	species_r_leg = /obj/item/bodypart/r_leg/moth
+	species_l_leg = /obj/item/bodypart/leg/left/moth
+	species_r_leg = /obj/item/bodypart/leg/right/moth
 
-/datum/species/moth/regenerate_organs(mob/living/carbon/C,datum/species/old_species,replace_current=TRUE,list/excluded_zones)
+/datum/species/moth/regenerate_organs(mob/living/carbon/C, datum/species/old_species,replace_current=TRUE, list/excluded_zones, robotic = FALSE)
 	. = ..()
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C

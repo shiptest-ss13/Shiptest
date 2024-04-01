@@ -180,11 +180,6 @@
 	icon_state = "generic"
 	build_path = /obj/machinery/computer/arcade/orion_trail
 
-/obj/item/circuitboard/computer/holodeck// Not going to let people get this, but it's just here for future
-	name = "Holodeck Control (Computer Board)"
-	icon_state = "generic"
-	build_path = /obj/machinery/computer/holodeck
-
 /obj/item/circuitboard/computer/libraryconsole
 	name = "Library Visitor Console (Computer Board)"
 	build_path = /obj/machinery/computer/libraryconsole

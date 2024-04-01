@@ -93,7 +93,7 @@
 	name = "bluespace receiving pad"
 	icon = 'icons/turf/floors.dmi'
 	desc = "A receiving zone for bluespace teleportations."
-	icon_state = "light_on-w"
+	icon_state = "light_on_flicker-1"
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	density = FALSE
 	anchored = TRUE
@@ -101,7 +101,7 @@
 
 /obj/structure/receiving_pad/New(loc, mob/living/simple_animal/hostile/guardian/healer/G)
 	. = ..()
-	if(G.guardiancolor)
+	if(G?.guardiancolor)
 		add_atom_colour(G.guardiancolor, FIXED_COLOUR_PRIORITY)
 
 /obj/structure/receiving_pad/proc/disappear()

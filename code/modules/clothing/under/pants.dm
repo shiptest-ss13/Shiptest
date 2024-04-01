@@ -7,27 +7,12 @@
 	mob_overlay_icon = 'icons/mob/clothing/under/shorts_pants.dmi'
 	greyscale_colors = list(list(14, 10), list(16, 10), list(16, 9))
 	greyscale_icon_state = "pants"
-
-/obj/item/clothing/under/pants/classicjeans
-	name = "classic jeans"
-	desc = "You feel cooler already."
-	icon_state = "jeansclassic"
-
-/obj/item/clothing/under/pants/mustangjeans
-	name = "Must Hang jeans"
-	desc = "Made in the finest space jeans factory this side of Alpha Centauri."
-	icon_state = "jeansmustang"
-	custom_price = 180
+	supports_variations = DIGITIGRADE_VARIATION
 
 /obj/item/clothing/under/pants/blackjeans
 	name = "black jeans"
 	desc = "Only for those who can pull it off."
 	icon_state = "jeansblack"
-
-/obj/item/clothing/under/pants/youngfolksjeans
-	name = "Young Folks jeans"
-	desc = "For those tired of boring old jeans. Relive the passion of your youth!"
-	icon_state = "jeansyoungfolks"
 
 /obj/item/clothing/under/pants/white
 	name = "white pants"
@@ -47,7 +32,7 @@
 /obj/item/clothing/under/pants/tan
 	name = "tan pants"
 	desc = "Some tan pants. You look like a white collar worker with these on."
-	icon_state = "tanpants"
+	icon_state = "khaki"
 
 /obj/item/clothing/under/pants/track
 	name = "track pants"

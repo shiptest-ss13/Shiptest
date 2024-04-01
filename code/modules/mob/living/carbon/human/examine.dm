@@ -1,6 +1,7 @@
 /mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.
 	var/t_He = p_they(TRUE)
+	var/t_he = p_they()
 	var/t_His = p_their(TRUE)
 	var/t_his = p_their()
 	var/t_him = p_them()
@@ -18,7 +19,7 @@
 	var/apparent_species
 	if(dna?.species && !skipface)
 		apparent_species = ", \an [dna.species.name]"
-	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"][apparent_species]</EM>!")
+	. = list("<span class='info'>This is <EM>[!obscure_name ? name : "Unknown"][apparent_species]</EM>!")
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
@@ -122,13 +123,11 @@
 			just_sleeping = TRUE
 
 		if(!just_sleeping)
-			if(suiciding)
-				. += "<span class='warning'>[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.</span>"
 			if(hellbound)
 				. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.</span>"
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...</span>"
+				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_he] won't be coming back...</span>"
 			else
 				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
 
@@ -233,11 +232,6 @@
 
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
 		msg += "[t_He] [t_is] severely malnourished.\n"
-	else if(nutrition >= NUTRITION_LEVEL_FAT)
-		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_He] [t_is] plump and delicious looking - Like a fat little piggy. A tasty piggy.\n"
-		else
-			msg += "[t_He] [t_is] quite chubby.\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
 			msg += "[t_He] look[p_s()] a bit grossed out.\n"
@@ -373,7 +367,6 @@
 
 				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
 				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_citation=1'>\[Add citation\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
 					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")

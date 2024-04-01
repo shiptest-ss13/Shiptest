@@ -403,7 +403,7 @@
 	name = "Dissection Guide"
 	icon_state = "alienpaper_words"
 	show_written_words = FALSE
-	info = {"<b>Dissection for Dummies</b><br>
+	default_raw_text = {"<b>Dissection for Dummies</b><br>
 
 <br>
 1.Acquire fresh specimen.<br>
@@ -485,9 +485,10 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(!turned_on)
 		toggle_on(user)
 	to_chat(usr, "<span class='notice'>You switch the baton to [txt] mode.</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/baton/abductor/update_icon_state()
+	. = ..()
 	switch(mode)
 		if(BATON_STUN)
 			icon_state = "wonderprodStun"
@@ -501,6 +502,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 		if(BATON_PROBE)
 			icon_state = "wonderprodProbe"
 			item_state = "wonderprodProbe"
+	return ..()
 
 /obj/item/melee/baton/abductor/attack(mob/target, mob/living/user)
 	if(!AbductorCheck(user))
@@ -687,7 +689,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	user.visible_message("<span class='notice'>[user] places down [src] and activates it.</span>", "<span class='notice'>You place down [src] and activate it.</span>")
 	user.dropItemToGround(src)
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50)
-	addtimer(CALLBACK(src, .proc/try_spawn_machine), 30)
+	addtimer(CALLBACK(src, PROC_REF(try_spawn_machine)), 30)
 
 /obj/item/abductor_machine_beacon/proc/try_spawn_machine()
 	var/viable = FALSE
@@ -713,30 +715,35 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	name = "alien scalpel"
 	desc = "It's a gleaming sharp knife made out of silvery-green metal."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "scalpel"
 	toolspeed = 0.25
 
 /obj/item/hemostat/alien
 	name = "alien hemostat"
 	desc = "You've never seen this before."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "hemostat"
 	toolspeed = 0.25
 
 /obj/item/retractor/alien
 	name = "alien retractor"
 	desc = "You're not sure if you want the veil pulled back."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "retractor"
 	toolspeed = 0.25
 
 /obj/item/circular_saw/alien
 	name = "alien saw"
 	desc = "Do the aliens also lose this, and need to find an alien hatchet?"
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "saw"
 	toolspeed = 0.25
 
 /obj/item/surgicaldrill/alien
 	name = "alien drill"
 	desc = "Maybe alien surgeons have finally found a use for the drill."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "drill"
 	toolspeed = 0.25
 
 /obj/item/cautery/alien
@@ -744,6 +751,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	desc = "Why would bloodless aliens have a tool to stop bleeding? \
 		Unless..."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "cautery"
 	toolspeed = 0.25
 
 /obj/item/clothing/head/helmet/abductor
@@ -833,7 +841,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 /obj/structure/table/optable/abductor/Initialize()
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

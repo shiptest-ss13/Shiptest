@@ -8,6 +8,16 @@
 
 	light_color = LIGHT_COLOR_CYAN
 
+/obj/machinery/computer/station_alert/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/station_alert/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/station_alert/Initialize()
 	. = ..()
 	GLOB.alert_consoles += src

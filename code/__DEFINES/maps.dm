@@ -34,29 +34,18 @@ require only minor tweaks.
 #define ZTRAIT_RESERVED "Reserved"
 #define ZTRAIT_AWAY "Away Mission"
 #define ZTRAIT_SPACE_RUINS "Space Ruins"
-#define ZTRAIT_LAVA_RUINS "Lava Ruins"
-#define ZTRAIT_ICE_RUINS "Ice Ruins"
-#define ZTRAIT_ICE_RUINS_UNDERGROUND "Ice Ruins Underground"
-#define ZTRAIT_SAND_RUINS "Sand Ruins"
-#define ZTRAIT_JUNGLE_RUINS "Jungle Ruins"
-#define ZTRAIT_ROCK_RUINS "Rock Ruins"
-#define ZTRAIT_WASTE_RUINS "Waste Ruins"
-
-// boolean - weather types that occur on the level
-#define ZTRAIT_SANDSTORM "Weather_Sandstorm"
-#define ZTRAIT_SNOWSTORM "Weather_Snowstorm"
-#define ZTRAIT_ASHSTORM "Weather_Ashstorm"
-#define ZTRAIT_ACIDRAIN "Weather_Acidrain"
-#define ZTRAIT_TEMPERATURE_GRADIENT "Weather_Gradient" //WS edit - Whitesands
 
 // enum - how SSsun should calculate sun exposure on this level
+// if left null, AZIMUTH is assumed
 #define ZTRAIT_SUN_TYPE "Sun Cycle Type"
-	// if left null, the value below will be assumed
-	// default & original SSsun behaviour - orbit the 'station' horizontially
+	// default & original SSsun behaviour - orbit the 'station' horizontially.
+	// solar panels will cast a line (default 20 steps) and if it is occluded they lose sunlight
 	#define AZIMUTH null
-	// static - exposed everywhere by default
+	// static, exposed
+	// the solar panel must be within 1 tile of space, or another "groundless" turf, to be exposed to sunlight
 	#define STATIC_EXPOSED "Static Exposed"
-	// static - obstructed everywhere
+	// static, obscured
+	// solar panels are never exposed to sunlight
 	#define STATIC_OBSCURED "Static Obscured"
 
 // number - bombcap is multiplied by this before being applied to bombs
@@ -65,50 +54,28 @@ require only minor tweaks.
 // number - default gravity if there's no gravity generators or area overrides present
 #define ZTRAIT_GRAVITY "Gravity"
 
-// numeric offsets - e.g. {"Down": -1} means that chasms will fall to z - 1 rather than oblivion
-#define ZTRAIT_UP "Up"
-#define ZTRAIT_DOWN "Down"
-
-// enum - how space transitions should affect this level
-#define ZTRAIT_LINKAGE "Linkage"
-	// UNAFFECTED if absent - no space transitions
-	#define UNAFFECTED null
-	// SELFLOOPING - space transitions always self-loop
-	#define SELFLOOPING "Self"
-	// CROSSLINKED - mixed in with the cross-linked space pool
-	#define CROSSLINKED "Cross"
-
 // string - type path of the z-level's baseturf (defaults to space)
 #define ZTRAIT_BASETURF "Baseturf"
 
 // default trait definitions, used by SSmapping
 #define ZTRAITS_CENTCOM list(ZTRAIT_CENTCOM = TRUE)
-#define ZTRAITS_STATION list(ZTRAIT_LINKAGE = SELFLOOPING, ZTRAIT_STATION = TRUE)
-#define ZTRAITS_SPACE list(ZTRAIT_LINKAGE = SELFLOOPING, ZTRAIT_SPACE_RUINS = TRUE)
+#define ZTRAITS_STATION list(ZTRAIT_STATION = TRUE)
+#define ZTRAITS_SPACE list(ZTRAIT_SPACE_RUINS = TRUE)
 #define ZTRAITS_LAVALAND list( \
 	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_ASHSTORM = TRUE, \
-	ZTRAIT_LAVA_RUINS = TRUE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
 	ZTRAIT_BASETURF = /turf/open/lava/smooth/lava_land_surface)
 #define ZTRAITS_WHITESANDS list( \
 	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_TEMPERATURE_GRADIENT = TRUE, \
-	ZTRAIT_SAND_RUINS = TRUE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
 	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/whitesands)
 #define ZTRAITS_ICEMOON list( \
 	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_SNOWSTORM = TRUE, \
-	ZTRAIT_ICE_RUINS = TRUE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_DOWN = -1, \
 	ZTRAIT_BASETURF = /turf/open/floor/plating/asteroid/snow/ice)
 #define ZTRAITS_ICEMOON_UNDERGROUND list( \
 	ZTRAIT_MINING = TRUE, \
-	ZTRAIT_ICE_RUINS_UNDERGROUND = TRUE, \
 	ZTRAIT_BOMBCAP_MULTIPLIER = 2, \
-	ZTRAIT_UP = 1, \
 	ZTRAIT_BASETURF = /turf/open/lava/plasma/ice_moon)
 
 #define DL_NAME "name"

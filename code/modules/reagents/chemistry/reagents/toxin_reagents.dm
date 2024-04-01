@@ -104,7 +104,7 @@
 		T.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
 
 /datum/reagent/toxin/plasma/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with plasma is stronger than fuel!
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()
@@ -178,11 +178,6 @@
 	color = "#CF3600" // rgb: 207, 54, 0
 	toxpwr = 0
 	taste_description = "mint"
-
-/datum/reagent/toxin/minttoxin/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_FAT))
-		M.inflate_gib()
-	return ..()
 
 /datum/reagent/toxin/carpotoxin
 	name = "Carpotoxin"
@@ -377,7 +372,7 @@
 	..()
 
 /datum/reagent/toxin/fakebeer	//disguised as normal beer for use by emagged brobots
-	name = "Beer"
+	name = "Beer?"
 	description = "A specially-engineered sedative disguised as beer. It induces instant sleep in its target."
 	color = "#664300" // rgb: 102, 67, 0
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
@@ -574,7 +569,7 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/itching_powder/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.reagents?.add_reagent(/datum/reagent/toxin/itching_powder, reac_volume)
 
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)

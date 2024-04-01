@@ -215,6 +215,12 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(GLOB.areas_by_type[type] == src)
 		GLOB.areas_by_type[type] = null
 	STOP_PROCESSING(SSobj, src)
+	// this isn't necessarily stable, because an area's "z" value
+	// may change during gameplay if new turfs get added to it.
+	// but if it IS on that z-level, we should remove it
+	var/list/z_areas = SSmapping.areas_in_z["[z]"]
+	if(z_areas)
+		z_areas.Remove(src)
 	return ..()
 
 /**
@@ -312,7 +318,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				if(D.operating)
 					D.nextstate = opening ? FIREDOOR_OPEN : FIREDOOR_CLOSED
 				else if(!(D.density ^ opening) && !D.is_holding_pressure())
-					INVOKE_ASYNC(D, (opening ? /obj/machinery/door/firedoor.proc/open : /obj/machinery/door/firedoor.proc/close))
+					INVOKE_ASYNC(D, (opening ? TYPE_PROC_REF(/obj/machinery/door/firedoor, open) : TYPE_PROC_REF(/obj/machinery/door/firedoor, close)))
 
 /**
  * Generate an firealarm alert for this area
@@ -330,7 +336,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		ModifyFiredoors(FALSE)
 		for(var/item in firealarms)
 			var/obj/machinery/firealarm/F = item
-			F.update_icon()
+			F.update_appearance()
 
 	for (var/item in GLOB.alert_consoles)
 		var/obj/machinery/computer/station_alert/a = item
@@ -361,7 +367,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		ModifyFiredoors(TRUE)
 		for(var/item in firealarms)
 			var/obj/machinery/firealarm/F = item
-			F.update_icon()
+			F.update_appearance()
 
 	for (var/item in GLOB.silicon_mobs)
 		var/mob/living/silicon/aiPlayer = item
@@ -429,7 +435,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		var/mob/living/silicon/SILICON = i
 		if(SILICON.triggerAlarm("Burglar", src, cameras, trigger))
 			//Cancel silicon alert after 1 minute
-			addtimer(CALLBACK(SILICON, /mob/living/silicon.proc/cancelAlarm,"Burglar",src,trigger), 600)
+			addtimer(CALLBACK(SILICON, TYPE_PROC_REF(/mob/living/silicon, cancelAlarm),"Burglar",src,trigger), 600)
 
 /**
  * Trigger the fire alarm visual affects in an area
@@ -485,11 +491,13 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			weather_icon = TRUE
 	if(!weather_icon)
 		icon_state = null
+	return ..()
 
 /**
  * Update the icon of the area (overridden to always be null for space
  */
 /area/space/update_icon_state()
+	SHOULD_CALL_PARENT(FALSE)
 	icon_state = null
 
 
@@ -530,7 +538,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	for(var/obj/machinery/M in src)	// for each machine in the area
 		M.power_change()				// reverify power status (to update icons etc.)
 	SEND_SIGNAL(src, COMSIG_AREA_POWER_CHANGE)
-	update_icon()
+	update_appearance()
 
 
 /**
@@ -567,18 +575,21 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /**
  * Call back when an atom enters an area
  *
- * Sends signals COMSIG_AREA_ENTERED and COMSIG_ENTER_AREA (to the atom)
+ * Sends signals COMSIG_AREA_ENTERED and COMSIG_ENTER_AREA (to a list of atoms)
  *
  * If the area has ambience, then it plays some ambience music to the ambience channel
  */
-/area/Entered(atom/movable/M, area/old_area)
+/area/Entered(atom/movable/arrived, area/old_area)
 	set waitfor = FALSE
-	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M, old_area)
-	SEND_SIGNAL(M, COMSIG_ENTER_AREA, src) //The atom that enters the area
-	if(!isliving(M))
+	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, arrived, old_area)
+	if(!LAZYACCESS(arrived.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE))
+		return
+	for(var/atom/movable/recipient as anything in arrived.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
+		SEND_SIGNAL(recipient, COMSIG_ENTER_AREA, src)
+	if(!isliving(arrived))
 		return
 
-	var/mob/living/L = M
+	var/mob/living/L = arrived
 	if(!L.ckey)
 		return
 
@@ -600,11 +611,14 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /**
  * Called when an atom exits an area
  *
- * Sends signals COMSIG_AREA_EXITED and COMSIG_EXIT_AREA (to the atom)
+ * Sends signals COMSIG_AREA_EXITED and COMSIG_EXIT_AREA (to a list of atoms)
  */
 /area/Exited(atom/movable/gone, direction)
 	SEND_SIGNAL(src, COMSIG_AREA_EXITED, gone, direction)
-	SEND_SIGNAL(gone, COMSIG_EXIT_AREA, src) //The atom that exits the area
+	if(!LAZYACCESS(gone.important_recursive_contents, RECURSIVE_CONTENTS_AREA_SENSITIVE))
+		return
+	for(var/atom/movable/recipient as anything in gone.important_recursive_contents[RECURSIVE_CONTENTS_AREA_SENSITIVE])
+		SEND_SIGNAL(recipient, COMSIG_EXIT_AREA, src)
 
 
 /**
@@ -647,5 +661,5 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	CRASH("Bad op: area/drop_location() called")
 
 /// A hook so areas can modify the incoming args (of what??)
-/area/proc/PlaceOnTopReact(list/new_baseturfs, turf/fake_turf_type, flags)
+/area/proc/PlaceOnTopReact(turf/T, list/new_baseturfs, turf/fake_turf_type, flags)
 	return flags

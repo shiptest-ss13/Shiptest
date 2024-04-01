@@ -11,6 +11,10 @@
 	var/datum/component/storage/detached_pockets
 	var/attachment_slot = CHEST
 
+/obj/item/clothing/accessory/Destroy()
+	set_detached_pockets(null)
+	return ..()
+
 /obj/item/clothing/accessory/proc/can_attach_accessory(obj/item/clothing/U, mob/user)
 	if(!attachment_slot || (U && U.body_parts_covered & attachment_slot))
 		return TRUE
@@ -23,7 +27,7 @@
 		if(SEND_SIGNAL(U, COMSIG_CONTAINS_STORAGE))
 			return FALSE
 		U.TakeComponent(storage)
-		detached_pockets = storage
+		set_detached_pockets(storage)
 	U.attached_accessory = src
 	forceMove(U)
 	layer = FLOAT_LAYER
@@ -65,6 +69,17 @@
 	U.cut_overlays()
 	U.attached_accessory = null
 	U.accessory_overlay = null
+
+/obj/item/clothing/accessory/proc/set_detached_pockets(new_pocket)
+	if(detached_pockets)
+		UnregisterSignal(detached_pockets, COMSIG_PARENT_QDELETING)
+	detached_pockets = new_pocket
+	if(detached_pockets)
+		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, PROC_REF(handle_pockets_del))
+
+/obj/item/clothing/accessory/proc/handle_pockets_del(datum/source)
+	SIGNAL_HANDLER
+	set_detached_pockets(null)
 
 /obj/item/clothing/accessory/proc/on_uniform_equip(obj/item/clothing/under/U, user)
 	return
@@ -279,7 +294,7 @@
 
 /obj/item/clothing/accessory/armband
 	name = "red armband"
-	desc = "An fancy red armband!"
+	desc = "A fancy red armband!"
 	icon_state = "redband"
 	attachment_slot = null
 
@@ -288,33 +303,33 @@
 	desc = "An armband, worn by personnel authorized to act as a deputy of corporate security."
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is brown."
+	name = "brown armband"
+	desc = "A fancy brown armband!"
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	name = "orange armband"
+	desc = "A fancy orange and yellow armband!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
-	name = "science guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is purple."
+	name = "purple armband"
+	desc = "A fancy purple armband!"
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
-	name = "hydroponics guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is green and blue."
+	name = "green and blue armband"
+	desc = "A fancy green and blue armband!"
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white."
+	name = "white armband"
+	desc = "A fancy white armband!"
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
-	name = "medical guard armband"
-	desc = "An armband, worn by the private security forces to display which department they're assigned to. This one is white and blue."
+	name = "white and blue armband"
+	desc = "A fancy white and blue armband!"
 	icon_state = "medblueband"
 
 //////////////
@@ -449,10 +464,7 @@
 	name = "detective's shoulder holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
 
-/obj/item/clothing/accessory/holster/lieutenant
-	name = "lieutenant's shoulder holster"
-	desc = "A modified shoulder holster designed to fit a small egun and power cells."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/lt
+
 
 /obj/item/clothing/accessory/holster/detective/Initialize()
 	. = ..()
@@ -463,16 +475,12 @@
 /obj/item/clothing/accessory/holster/nukie
 	name = "operative holster"
 	desc = "A deep shoulder holster capable of holding almost any form of ballistic weaponry."
-	icon_state = "syndicate_holster"
-	item_state = "syndicate_holster"
 	w_class = WEIGHT_CLASS_BULKY
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/nukie
 
 /obj/item/clothing/accessory/holster/chameleon
 	name = "syndicate holster"
 	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
-	icon_state = "syndicate_holster"
-	item_state = "syndicate_holster"
 	var/datum/action/item_action/chameleon/change/chameleon_action
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
 
@@ -500,7 +508,7 @@
 
 /obj/item/clothing/accessory/holster/marine/Initialize()
 	. = ..()
-	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 
@@ -508,3 +516,25 @@
 	name = "solgov waistcoat"
 	desc = "A standard issue waistcoat in solgov colors."
 	icon_state = "solgov_waistcoat"
+
+//////////
+//RILENA//
+//////////
+
+/obj/item/clothing/accessory/rilena_pin
+	name = "RILENA: LMR Xader pin"
+	desc = "A pin that shows your love for the webseries RILENA."
+	icon_state = "rilena_pin"
+	above_suit = FALSE
+	minimize_when_attached = TRUE
+	attachment_slot = CHEST
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_equip(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "rilena_pin", /datum/mood_event/rilena_fan)
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "rilena_pin")

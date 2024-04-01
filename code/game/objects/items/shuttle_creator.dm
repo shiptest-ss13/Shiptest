@@ -1,8 +1,4 @@
 #define SHUTTLE_CREATOR_MAX_SIZE CONFIG_GET(number/max_shuttle_size)
-#define CUSTOM_SHUTTLE_LIMIT CONFIG_GET(number/max_shuttle_count)
-
-GLOBAL_VAR_INIT(custom_shuttle_count, 0)		//The amount of custom shuttles created to prevent creating hundreds
-GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (Heaters, engines)
 
 /obj/item/shuttle_creator
 	name = "Rapid Shuttle Designator"
@@ -24,13 +20,13 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	var/ready = TRUE
-	var/recorded_shuttle_area
+	var/area/ship/recorded_shuttle_area
 	var/list/loggedTurfs = list()
-	var/loggedOldArea
+	var/area/loggedOldArea
 
 /obj/item/shuttle_creator/attack_self(mob/user)
 	..()
-	if(GLOB.custom_shuttle_count > CUSTOM_SHUTTLE_LIMIT)
+	if(!SSovermap.player_ship_spawn_allowed())
 		return
 	return check_current_area(user)
 
@@ -45,7 +41,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		if(get_area(target) != loggedOldArea)
 			to_chat(user, "<span class='warning'>Caution, airlock must be on the shuttle to function as a dock.</span>")
 			return
-		if(GLOB.custom_shuttle_count > CUSTOM_SHUTTLE_LIMIT)
+		if(!SSovermap.player_ship_spawn_allowed())
 			to_chat(user, "<span class='warning'>Shuttle limit reached, sorry.</span>")
 			return
 		if(!create_shuttle_area(user))
@@ -134,8 +130,10 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	if(loggedTurfs.len == 0 || !recorded_shuttle_area)
 		to_chat(user, "<span class='warning'>Invalid shuttle, restarting bluespace systems...</span>")
 		return FALSE
+	var/static/num_customs = 0
+	num_customs++
 
-	var/obj/docking_port/mobile/port = new /obj/docking_port/mobile(get_turf(target), "custom_[GLOB.custom_shuttle_count]")
+	var/obj/docking_port/mobile/port = new /obj/docking_port/mobile(get_turf(target), "custom_[num_customs]")
 	var/obj/docking_port/stationary/stationary_port = new /obj/docking_port/stationary(get_turf(target))
 	port.callTime = 50
 	port.dir = 1	//Point away from space.
@@ -163,21 +161,22 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 
 	port.shuttle_areas = list()
 	//var/list/all_turfs = port.return_ordered_turfs(port.x, port.y, port.z, port.dir)
-	var/list/all_turfs = loggedTurfs
-	for(var/i in 1 to all_turfs.len)
-		var/turf/curT = all_turfs[i]
-		var/area/cur_area = curT.loc
+	for(var/i in 1 to loggedTurfs.len)
+		var/turf/curT = loggedTurfs[i]
+		var/area/old_area = curT.loc
+		recorded_shuttle_area.contents += curT
+		port.underlying_turf_area[curT] = old_area
+		curT.change_area(old_area, recorded_shuttle_area)
 		//Add the area to the shuttle <3
-		if(istype(cur_area, recorded_shuttle_area))
-			if(istype(curT, /turf/open/space))
-				continue
-			if(length(curT.baseturfs) < 2)
-				continue
-			//Add the shuttle base shit to the shuttle
-			var/list/sanity = curT.baseturfs.Copy()
-			sanity.Insert(3, /turf/baseturf_skipover/shuttle)
-			curT.baseturfs = baseturfs_string_list(sanity, curT)
-			port.shuttle_areas[cur_area] = TRUE
+		if(istype(curT, /turf/open/space))
+			continue
+		if(length(curT.baseturfs) < 2) //This really only works well in space, someone should make this more robust.
+			continue
+		//Add the shuttle base shit to the shuttle
+		var/list/sanity = curT.baseturfs.Copy()
+		sanity.Insert(3, /turf/baseturf_skipover/shuttle)
+		curT.baseturfs = baseturfs_string_list(sanity, curT)
+		port.shuttle_areas[recorded_shuttle_area] = TRUE
 
 	var/datum/overmap/ship/controlled/new_custom_ship = new(SSovermap.get_overmap_object_by_location(port), SSmapping.shuttle_templates["custom_shuttle"], FALSE)
 	port.linkup(stationary_port, new_custom_ship)
@@ -190,9 +189,8 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	port.timer = 0
 
 	port.register()
-	GLOB.custom_shuttle_count++
-	message_admins("[ADMIN_LOOKUPFLW(user)] created a new shuttle with a [src] at [ADMIN_VERBOSEJMP(user)] ([GLOB.custom_shuttle_count] custom shuttles, limit is [CUSTOM_SHUTTLE_LIMIT])")
-	log_game("[key_name(user)] created a new shuttle with a [src] at [AREACOORD(user)] ([GLOB.custom_shuttle_count] custom shuttles, limit is [CUSTOM_SHUTTLE_LIMIT])")
+	message_admins("[ADMIN_LOOKUPFLW(user)] created a new shuttle with a [src] at [ADMIN_VERBOSEJMP(user)] ([num_customs] customs, [SSovermap.get_num_cap_ships()] all, limit is [CONFIG_GET(number/max_shuttle_count)])")
+	log_game("[key_name(user)] created a new shuttle with a [src] at [AREACOORD(user)] ([num_customs] customs, [SSovermap.get_num_cap_ships()] all, limit is [CONFIG_GET(number/max_shuttle_count)])")
 	return TRUE
 
 /obj/item/shuttle_creator/proc/create_shuttle_area(mob/user)
@@ -200,7 +198,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		return FALSE
 	//Create the new area
 	var/area/ship/newS
-	var/area/oldA = loggedOldArea
 	var/str = stripped_input(user, "Shuttle Name:", "Blueprint Editing", "", MAX_NAME_LEN)
 	if(!str || !length(str))
 		return FALSE
@@ -216,18 +213,6 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	//Record the area for use when creating the docking port
 	recorded_shuttle_area = newS
 
-	for(var/i in 1 to loggedTurfs.len)
-		var/turf/turf_holder = loggedTurfs[i]
-		var/area/old_area = turf_holder.loc
-		newS.contents += turf_holder
-		turf_holder.change_area(old_area, newS)
-
-	newS.reg_in_areas_in_z()
-
-	var/list/firedoors = oldA.firedoors
-	for(var/door in firedoors)
-		var/obj/machinery/door/firedoor/FD = door
-		FD.CalculateAffectingAreas()
 	return TRUE
 
 /obj/item/shuttle_creator/proc/check_current_area(mob/user)

@@ -34,6 +34,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/glass_icon_state = null
 	/// used for shot glasses, mostly for alcohol
 	var/shot_glass_icon_state = null
+	/// used for breakaway flasks similar to glass or shotglass icon state
+	var/breakaway_flask_icon_state = null
 	/// reagent holder this belongs to
 	var/datum/reagents/holder = null
 	/// LIQUID, SOLID, GAS
@@ -99,6 +101,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 			var/amount = round(reac_volume*modifier, 0.1)
 			if(amount >= 0.5)
 				M.reagents.add_reagent(type, amount)
+	SSblackbox.record_feedback("nested tally", "reagent expose mob", 1, list("[name]", "[M]", "[method]", "[reac_volume]"))
 	return 1
 
 /// Applies this reagent to an [/obj]

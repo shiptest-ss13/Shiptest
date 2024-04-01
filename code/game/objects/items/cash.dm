@@ -4,10 +4,10 @@
 //Code borrowed from baycode by way of Eris.
 
 /obj/item/spacecash
-	name = "coin"
-	desc = "It's worth something. Probably."
+	name = "coin?"
+	desc = "If you can see this, please make a bug report. If you're a mapper, use the bundle subtype!"
 	icon = 'icons/obj/economy.dmi'
-	icon_state = "credit1"
+	icon_state = "credit0"
 	throwforce = 1
 	throw_speed = 2
 	throw_range = 2
@@ -17,10 +17,28 @@
 	grind_results = list(/datum/reagent/iron = 10)
 
 /obj/item/spacecash/Initialize(mapload, amount)
-	..()
+	. = ..()
 	if(amount)
 		value = amount
-	update_icon()
+	update_appearance()
+	SSeconomy.physical_money += value
+
+/obj/item/spacecash/proc/adjust_value(amount)
+	value += amount
+	SSeconomy.physical_money += amount
+	update_appearance()
+
+/obj/item/spacecash/proc/transfer_value(amount, obj/item/spacecash/target)
+	amount = clamp(amount, 0, value)
+	value -= amount
+	target.value += amount
+	target.update_appearance()
+
+	if(value == 0)
+		qdel(src)
+		return
+
+	update_appearance()
 
 /obj/item/spacecash/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/spacecash))
@@ -31,31 +49,28 @@
 			var/obj/item/spacecash/cash = W
 			bundle = new (loc)
 			bundle.value = cash.value
+			cash.value = 0
 			user.dropItemToGround(cash)
 			qdel(cash)
 
-		bundle.value += value
-		bundle.update_icon()
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.dropItemToGround(src)
 			H.dropItemToGround(bundle)
 			H.put_in_hands(bundle)
 		to_chat(user, "<span class='notice'>You add [value] credits worth of money to the bundle.<br>It now holds [bundle.value] credits.</span>")
-		qdel(src)
+		bundle.transfer_value(bundle.value, src)
 
 /obj/item/spacecash/Destroy()
-	. = ..()
+	SSeconomy.physical_money -= value
 	value = 0 // Prevents money from be duplicated anytime.//I'll trust eris on this one
+	return ..()
 
 /obj/item/spacecash/bundle
+	icon_state = "credit20"
+
+/obj/item/spacecash/bundle/update_appearance()
 	icon_state = "nothing"
-
-/obj/item/spacecash/bundle/Initialize()
-	. = ..()
-	update_icon()
-
-/obj/item/spacecash/bundle/update_icon()
 	cut_overlays()
 	var/remaining_value = value
 	var/iteration = 0
@@ -106,9 +121,10 @@
 		else
 			name = "[value] credits"
 			gender = NEUTER
-			desc = "An executive's ransom made manifest."
+			desc = "That's a lot of dosh."
 			drop_sound = 'sound/items/handling/dosh_drop.ogg'
 			pickup_sound =  'sound/items/handling/dosh_pickup.ogg'
+	return ..()
 
 /obj/item/spacecash/bundle/attack_self()
 	var/cashamount = input(usr, "How many credits do you want to take? (0 to [value])", "Take Money", 20) as num
@@ -120,47 +136,37 @@
 		to_chat(usr, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
-	value -= cashamount
-	if(!value)
-		usr.dropItemToGround(src)
-		qdel(src)
-
-	var/obj/item/spacecash/bundle/bundle = new (usr.loc)
-	bundle.value = cashamount
-	bundle.update_icon()
+	var/obj/item/spacecash/bundle/bundle = new(usr.loc)
+	transfer_value(cashamount, bundle)
 	usr.put_in_hands(bundle)
-	update_icon()
+	update_appearance()
 
 /obj/item/spacecash/bundle/AltClick(mob/living/user)
-	var/cashamount = input(usr, "How many credits do you want to take? (0 to [value])", "Take Money", 20) as num
+	var/cashamount = input(user, "How many credits do you want to take? (0 to [value])", "Take Money", 20) as num
 	cashamount = round(clamp(cashamount, 0, value))
 	if(!cashamount)
 		return
 
-	else if(!Adjacent(usr))
-		to_chat(usr, "<span class='warning'>You need to be in arm's reach for that!</span>")
+	else if(!Adjacent(user))
+		to_chat(user, "<span class='warning'>You need to be in arm's reach for that!</span>")
 		return
 
-	value -= cashamount
+	adjust_value(-cashamount)
 	if(!value)
-		usr.dropItemToGround(src)
+		user.dropItemToGround(src)
 		qdel(src)
 
-	var/obj/item/spacecash/bundle/bundle = new (usr.loc)
-	bundle.value = cashamount
-	bundle.update_icon()
-	usr.put_in_hands(bundle)
-	update_icon()
+	var/obj/item/spacecash/bundle/bundle = new(user.loc, cashamount)
+	user.put_in_hands(bundle)
 
 /obj/item/spacecash/bundle/attack_hand(mob/user)
 	if(user.get_inactive_held_item() == src)
 		if(value == 0)//may prevent any edge case duping
 			qdel(src)
 			return
-		var/nuvalue = value - 1
-		value = nuvalue
+		adjust_value(-1)
 		user.put_in_hands(new /obj/item/spacecash/bundle(loc, 1))
-		update_icon()
+		update_appearance()
 	else
 		. = ..()
 
@@ -169,46 +175,60 @@
 
 /obj/item/spacecash/bundle/c1
 	value = 1
+	icon_state = "credit1"
 
 /obj/item/spacecash/bundle/c5
 	value = 5
+	icon_state = "credit5"
 
 /obj/item/spacecash/bundle/c10
 	value = 10
+	icon_state = "credit10"
 
 /obj/item/spacecash/bundle/c20
 	value = 20
+	icon_state = "credit20"
 
 /obj/item/spacecash/bundle/c50
 	value = 50
+	icon_state = "credit50"
 
 /obj/item/spacecash/bundle/c100
 	value = 100
+	icon_state = "credit100"
 
 /obj/item/spacecash/bundle/c200
 	value = 200
+	icon_state = "credit200"
 
 /obj/item/spacecash/bundle/c500
 	value = 500
+	icon_state = "credit500"
 
 /obj/item/spacecash/bundle/c1000
 	value = 1000
+	icon_state = "credit1000"
 
 /obj/item/spacecash/bundle/c10000
 	value = 10000
+	icon_state = "credit1000"
 
 /obj/item/spacecash/bundle/pocketchange/Initialize()
 	value = rand(10, 100)
+	icon_state = "credit100"
 	. = ..()
 
 /obj/item/spacecash/bundle/smallrand/Initialize()
 	value = rand(100, 500)
+	icon_state = "credit200"
 	. = ..()
 
 /obj/item/spacecash/bundle/mediumrand/Initialize()
 	value = rand(500, 3000)
+	icon_state = "credit500"
 	. = ..()
 
 /obj/item/spacecash/bundle/loadsamoney/Initialize()
 	value = rand(2500, 6000)
+	icon_state = "credit1000"
 	. = ..()

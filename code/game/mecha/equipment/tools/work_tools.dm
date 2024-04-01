@@ -377,7 +377,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/cable_layer/attach()
 	..()
-	event = chassis.events.addEvent("onMove", CALLBACK(src, .proc/layCable))
+	event = chassis.events.addEvent("onMove", CALLBACK(src, PROC_REF(layCable)))
 	return
 
 /obj/item/mecha_parts/mecha_equipment/cable_layer/detach()
@@ -470,13 +470,13 @@
 	var/obj/structure/cable/NC = new(new_turf, "red")
 	NC.d1 = 0
 	NC.d2 = fdirn
-	NC.update_icon()
+	NC.update_appearance()
 
 	var/datum/powernet/PN
 	if(last_piece && last_piece.d2 != chassis.dir)
 		last_piece.d1 = min(last_piece.d2, chassis.dir)
 		last_piece.d2 = max(last_piece.d2, chassis.dir)
-		last_piece.update_icon()
+		last_piece.update_appearance()
 		PN = last_piece.powernet
 
 	if(!PN)
@@ -562,16 +562,16 @@
 	source_mech = list(/obj/mecha/working/ripley, /obj/mecha/working/ripley/mining)
 	result_mech = /obj/mecha/working/ripley/mkii
 
-/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/cmm
-	name = "CMM Ripley MK-IV Conversion Kit"
-	desc = "A CMM-custom lightweight canopy kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the mobile and spaceworthy Mk-IV design. This kit cannot be removed, once applied."
-	icon_state = "cmmupgrade"
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
+	name = "CLIP Ripley MK-IV Conversion Kit"
+	desc = "A CLIP-custom lightweight canopy kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the mobile and spaceworthy Mk-IV design. This kit cannot be removed, once applied."
+	icon_state = "clipupgrade"
 	source_mech = list(/obj/mecha/working/ripley, /obj/mecha/working/ripley/mining)
-	result_mech = /obj/mecha/working/ripley/cmm
+	result_mech = /obj/mecha/working/ripley/clip
 
 /obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
-	name = "CMM Paladin Conversion Kit"
-	desc = "A CMM-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit."
-	icon_state = "cmmupgrade"
+	name = "CLIP Paladin Conversion Kit"
+	desc = "A CLIP-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit."
+	icon_state = "clipupgrade"
 	source_mech = list(/obj/mecha/combat/durand)
-	result_mech = /obj/mecha/combat/durand/cmm
+	result_mech = /obj/mecha/combat/durand/clip

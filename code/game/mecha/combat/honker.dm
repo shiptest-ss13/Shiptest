@@ -160,7 +160,7 @@
 			if("saberon")
 				playsound(src, 'sound/weapons/saberon.ogg', 50)
 			if("airlock_alien_prying")
-				playsound(src, 'sound/machines/airlock_alien_prying.ogg', 50)
+				playsound(src, 'sound/machines/creaking.ogg', 50)
 			if("lightningbolt")
 				playsound(src, 'sound/magic/lightningbolt.ogg', 50)
 			if("explosionfar")

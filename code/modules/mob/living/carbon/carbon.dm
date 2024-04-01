@@ -11,6 +11,7 @@
 
 	QDEL_LIST(hand_bodyparts)
 	QDEL_LIST(internal_organs)
+	internal_organs_slot.Cut()
 	QDEL_LIST(bodyparts)
 	QDEL_LIST(implants)
 	remove_from_all_data_huds()
@@ -27,16 +28,19 @@
 	if(!held_index)
 		held_index = (active_hand_index % held_items.len)+1
 
+	if(!isnum(held_index))
+		CRASH("You passed [held_index] into swap_hand instead of a number. WTF man")
+
 	var/oindex = active_hand_index
 	active_hand_index = held_index
 	if(hud_used)
 		var/atom/movable/screen/inventory/hand/H
 		H = hud_used.hand_slots["[oindex]"]
 		if(H)
-			H.update_icon()
+			H.update_appearance()
 		H = hud_used.hand_slots["[held_index]"]
 		if(H)
-			H.update_icon()
+			H.update_appearance()
 
 
 /mob/living/carbon/activate_hand(selhand) //l/r OR 1-held_items.len
@@ -135,6 +139,8 @@
 			var/turf/end_T = get_turf(target)
 			if(start_T && end_T)
 				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+		do_attack_animation(target, no_effect = 1)
+		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)
 		visible_message("<span class='danger'>[src] throws [thrown_thing].</span>", \
 						"<span class='danger'>You throw [thrown_thing].</span>")
 		log_message("has thrown [thrown_thing]", LOG_ATTACK)
@@ -218,6 +224,13 @@
 			return
 		SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
 		return
+
+	if(href_list["show_paper_note"])
+		var/obj/item/paper/paper_note = locate(href_list["show_paper_note"])
+		if(!paper_note)
+			return
+
+		paper_note.show_through_camera(usr)
 
 /mob/living/carbon/on_fall()
 	. = ..()
@@ -389,7 +402,7 @@
 
 	switch(rand(1,100)+modifier) //91-100=Nothing special happens
 		if(-INFINITY to 0) //attack yourself
-			INVOKE_ASYNC(I, /obj/item.proc/attack, src, src)
+			INVOKE_ASYNC(I, TYPE_PROC_REF(/obj/item, attack), src, src)
 		if(1 to 30) //throw it at yourself
 			I.throw_impact(src)
 		if(31 to 60) //Throw object in facing direction
@@ -404,17 +417,6 @@
 		if(61 to 90) //throw it down to the floor
 			var/turf/target = get_turf(loc)
 			I.safe_throw_at(target,I.throw_range,I.throw_speed,src, force = move_force)
-
-/mob/living/carbon/get_status_tab_items()
-	. = ..()
-	var/obj/item/organ/alien/plasmavessel/vessel = getorgan(/obj/item/organ/alien/plasmavessel)
-	if(vessel)
-		. += "Plasma Stored: [vessel.storedPlasma]/[vessel.max_plasma]"
-	var/obj/item/organ/dwarfgland/dwarfgland = getorgan(/obj/item/organ/dwarfgland)		// BeginWS Edit - Dwarf Alcohol Gland
-	if(dwarfgland)
-		. += "Alcohol Stored: [dwarfgland.stored_alcohol]/[dwarfgland.max_alcohol]"		// EndWS Edit
-	if(locate(/obj/item/assembly/health) in src)
-		. += "Health: [health]"
 
 /mob/living/carbon/get_proc_holders()
 	. = ..()
@@ -823,7 +825,6 @@
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
 	if(admin_revive)
-		suiciding = FALSE
 		regenerate_limbs()
 		regenerate_organs()
 		set_handcuffed(null)
@@ -846,14 +847,14 @@
 
 /mob/living/carbon/proc/can_defib()
 	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
-	if(suiciding || hellbound || HAS_TRAIT(src, TRAIT_HUSK))
+	if (hellbound || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 	if((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
 		return
 	if(!heart || (heart.organ_flags & ORGAN_FAILING))
 		return
 	var/obj/item/organ/brain/BR = getorgan(/obj/item/organ/brain)
-	if(QDELETED(BR) || (BR.organ_flags & ORGAN_FAILING) || BR.suicided)
+	if(QDELETED(BR) || (BR.organ_flags & ORGAN_FAILING))
 		return
 	return TRUE
 
@@ -1000,9 +1001,9 @@
 					if(BODY_ZONE_HEAD)
 						limbtypes = typesof(/obj/item/bodypart/head)
 					if(BODY_ZONE_L_LEG)
-						limbtypes = typesof(/obj/item/bodypart/l_leg)
+						limbtypes = typesof(/obj/item/bodypart/leg/left)
 					if(BODY_ZONE_R_LEG)
-						limbtypes = typesof(/obj/item/bodypart/r_leg)
+						limbtypes = typesof(/obj/item/bodypart/leg/right)
 
 				if((edit_action == "add") && BP)
 					to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")

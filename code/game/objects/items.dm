@@ -2,6 +2,8 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 GLOBAL_DATUM_INIT(welding_sparks, /mutable_appearance, mutable_appearance('icons/effects/welding_effect.dmi', "welding_sparks", GASFIRE_LAYER, ABOVE_LIGHTING_PLANE))
 
+GLOBAL_DATUM_INIT(cleaning_bubbles, /mutable_appearance, mutable_appearance('icons/effects/effects.dmi', "bubbles", ABOVE_MOB_LAYER, GAME_PLANE))
+
 GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 // if true, everyone item when created will have its name changed to be
 // more... RPG-like.
@@ -30,7 +32,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Icon file for mob worn overlays.
 	var/icon/mob_overlay_icon
 	///icon state for mob worn overlays, if null the normal icon_state will be used.
-	var/mob_overlay_state //WS EDIT - Mob Overlay State
+	var/mob_overlay_state
 	///Forced mob worn layer instead of the standard preferred ssize.
 	var/alternate_worn_layer
 
@@ -43,6 +45,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///Same as for [worn_y_dimension][/obj/item/var/worn_y_dimension] but for inhands, uses the lefthand_ and righthand_ file vars
 	var/inhand_y_dimension = 32
 
+	/// Worn overlay will be shifted by this along y axis
+	var/worn_y_offset = 0
 
 	max_integrity = 200
 
@@ -129,8 +133,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///A bitfield of bodytypes that the item cannot be worn by.
 	var/restricted_bodytypes = null
 
-	///Who threw the item
-	var/mob/thrownby = null
+	///A weakref to the mob who threw the item
+	var/datum/weakref/thrownby = null //I cannot verbally describe how much I hate this var
 
 	///the icon to indicate this object is being dragged
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
@@ -150,6 +154,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/toolspeed = 1
 
 	var/block_chance = 0
+	var/block_cooldown_time = 1 SECONDS
+	COOLDOWN_DECLARE(block_cooldown)
 	var/hit_reaction_chance = 0 //If you want to have something unrelated to blocking/armour piercing etc. Maybe not needed, but trying to think ahead/allow more freedom
 	///In tiles, how far this weapon can reach; 1 for adjacent, which is default
 	var/reach = 1
@@ -248,15 +254,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(sharpness) //give sharp objects butchering functionality, for consistency
 		AddComponent(/datum/component/butchering, 80 * toolspeed)
-
-/**Makes cool stuff happen when you suicide with an item
- *
- *Outputs a creative message and then return the damagetype done
- * Arguments:
- * * user: The mob that is suiciding
- */
-/obj/item/proc/suicide_act(mob/user)
-	return
 
 /obj/item/verb/move_to_top()
 	set name = "Move To Top"
@@ -454,8 +451,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
-	if(prob(final_block_chance))
+	if((prob(final_block_chance) && COOLDOWN_FINISHED(src, block_cooldown)) || (prob(final_block_chance) && istype(src, /obj/item/shield)))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
+		playsound(src, 'sound/weapons/effects/deflect.ogg', 100)
+		if(!istype(src, /obj/item/shield))
+			COOLDOWN_START(src, block_cooldown, block_cooldown_time)
 		return 1
 	return 0
 
@@ -676,10 +676,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	if(HAS_TRAIT(src, TRAIT_NODROP))
 		return
-	thrownby = thrower
-	callback = CALLBACK(src, .proc/after_throw, callback) //replace their callback with our own
+	thrownby = WEAKREF(thrower)
+	callback = CALLBACK(src, PROC_REF(after_throw), callback) //replace their callback with our own
 	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force, gentle, quickstart = quickstart)
-
 
 /obj/item/proc/after_throw(datum/callback/callback)
 	if (callback) //call the original callback
@@ -842,10 +841,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		openToolTip(user,src,params,title = name,content = "[desc]<br><b>Force:</b> [force_string]",theme = "")
 
 /obj/item/MouseEntered(location, control, params)
+	. = ..()
 	if((item_flags & IN_INVENTORY || item_flags & IN_STORAGE) && usr.client.prefs.enable_tips && !QDELETED(src))
 		var/timedelay = usr.client.prefs.tip_delay/100
 		var/user = usr
-		tip_timer = addtimer(CALLBACK(src, .proc/openTip, location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
+		tip_timer = addtimer(CALLBACK(src, PROC_REF(openTip), location, control, params, user), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. dividing by 100 converts it.
 	var/mob/living/L = usr
 	if(istype(L) && L.incapacitated())
 		apply_outline(COLOR_RED_GRAY)
@@ -874,15 +874,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				colour = COLOR_BLUE_GRAY
 		else
 			colour = COLOR_BLUE_GRAY
-	if(outline_filter)
-		filters -= outline_filter
-	outline_filter = filter(type="outline", size=1, color=colour)
-	filters += outline_filter
+	add_filter(HOVER_OUTLINE_FILTER, 1, list(type="outline", size=1, color=colour))
+
 
 /obj/item/proc/remove_outline()
-	if(outline_filter)
-		filters -= outline_filter
-		outline_filter = null
+	remove_filter(HOVER_OUTLINE_FILTER)
 
 /// Called when a mob tries to use the item as a tool.Handles most checks.
 /obj/item/proc/use_tool(atom/target, mob/living/user, delay, amount=0, volume=0, datum/callback/extra_checks)
@@ -908,7 +904,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(delay)
 		// Create a callback with checks that would be called every tick by do_after.
-		var/datum/callback/tool_check = CALLBACK(src, .proc/tool_check_callback, user, amount, extra_checks)
+		var/datum/callback/tool_check = CALLBACK(src, PROC_REF(tool_check_callback), user, amount, extra_checks)
 
 		if(ismob(target))
 			if(!do_mob(user, target, delay, extra_checks=tool_check))
@@ -1095,3 +1091,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/on_offer_taken(mob/living/carbon/offerer, mob/living/carbon/taker)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_OFFER_TAKEN, offerer, taker) & COMPONENT_OFFER_INTERRUPT)
 		return TRUE
+
+///Intended for interactions with guns, like racking
+/obj/item/proc/unique_action(mob/living/user)
+	return
+
+/**
+ * Returns null if this object cannot be used to interact with physical writing mediums such as paper.
+ * Returns a list of key attributes for this object interacting with paper otherwise.
+ */
+/obj/item/proc/get_writing_implement_details()
+	return null

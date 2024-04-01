@@ -12,23 +12,18 @@ SUBSYSTEM_DEF(mapping)
  * IF YOU ADD A NEW TYPE OF RUIN, ADD IT TO code\__DEFINES\ruins.dm
  */
 
+	var/list/ruin_types_list = list()
+	var/list/ruin_types_probabilities = list()
 	var/list/ruins_templates = list()
-	var/list/space_ruins_templates = list()
-	var/list/lava_ruins_templates = list()
-	var/list/ice_ruins_templates = list()
-	var/list/sand_ruins_templates = list()
-	var/list/jungle_ruins_templates = list()
-	var/list/rock_ruins_templates = list()
-	var/list/beach_ruins_templates = list()
-	var/list/waste_ruins_templates = list()
-	var/list/yellow_ruins_templates = list()
+	var/list/planet_types = list()
 
 	var/list/maplist
 	var/list/ship_purchase_list
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
-	var/list/holodeck_templates = list()
+	// List mapping TYPES of outpost map templates to instances of their singletons.
+	var/list/outpost_templates = list()
 
 	var/list/areas_in_z = list()
 
@@ -41,7 +36,6 @@ SUBSYSTEM_DEF(mapping)
 	var/station_start  // should only be used for maploading-related tasks
 	var/space_levels_so_far = 0
 	var/list/datum/space_level/z_list
-	var/datum/space_level/empty_space
 
 	/// List of all map zones
 	var/list/map_zones = list()
@@ -82,33 +76,38 @@ SUBSYSTEM_DEF(mapping)
 
 	for(var/N in nuke_tiles)
 		var/turf/open/floor/circuit/C = N
-		C.update_icon()
+		C.update_appearance()
 
 /datum/controller/subsystem/mapping/Recover()
 	flags |= SS_NO_INIT
 	initialized = SSmapping.initialized
+
 	map_templates = SSmapping.map_templates
+
 	ruins_templates = SSmapping.ruins_templates
-	space_ruins_templates = SSmapping.space_ruins_templates
-	lava_ruins_templates = SSmapping.lava_ruins_templates
-	rock_ruins_templates = SSmapping.rock_ruins_templates
-	beach_ruins_templates = SSmapping.beach_ruins_templates
-	waste_ruins_templates = SSmapping.waste_ruins_templates
-	sand_ruins_templates = SSmapping.sand_ruins_templates
-	jungle_ruins_templates = SSmapping.jungle_ruins_templates
-	ice_ruins_templates = SSmapping.ice_ruins_templates
+	ruin_types_list = SSmapping.ruin_types_list
+	ruin_types_probabilities = SSmapping.ruin_types_probabilities
+
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
-	holodeck_templates = SSmapping.holodeck_templates
 
+	outpost_templates = SSmapping.outpost_templates
+
+	shuttle_templates = SSmapping.shuttle_templates
+	shelter_templates = SSmapping.shelter_templates
+
+	areas_in_z = SSmapping.areas_in_z
+	map_zones = SSmapping.map_zones
+	biomes = SSmapping.biomes
+	planet_types = SSmapping.planet_types
+
+	maplist = SSmapping.maplist
+	ship_purchase_list = SSmapping.ship_purchase_list
+
+	virtual_z_translation = SSmapping.virtual_z_translation
 	z_list = SSmapping.z_list
 
 #define INIT_ANNOUNCE(X) to_chat(world, "<span class='boldannounce'>[X]</span>"); log_world(X)
-
-/datum/controller/subsystem/mapping/proc/mapvote()
-	SSvote.initiate_vote("map", "automatic map rotation", TRUE) //WS Edit - Ghost Voting Rework
-
-/datum/controller/subsystem/mapping/proc/changemap(datum/map_template/map)
 
 /datum/controller/subsystem/mapping/proc/preloadTemplates(path = "_maps/templates/") //see master controller setup
 	var/list/filelist = flist(path)
@@ -120,17 +119,11 @@ SUBSYSTEM_DEF(mapping)
 	preloadShuttleTemplates()
 	load_ship_templates()
 	preloadShelterTemplates()
-	preloadHolodeckTemplates()
+	preloadOutpostTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
-	// Still supporting bans by filename
-	var/list/banned = generateMapList("[global.config.directory]/lavaruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/spaceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/iceruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/sandruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/jungleruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/rockruinblacklist.txt")
-	banned += generateMapList("[global.config.directory]/wasteruinblacklist.txt")
+	for(var/datum/planet_type/type as anything in subtypesof(/datum/planet_type))
+		planet_types[initial(type.planet)] = new type
 
 	for(var/item in sortList(subtypesof(/datum/map_template/ruin), /proc/cmp_ruincost_priority))
 		var/datum/map_template/ruin/ruin_type = item
@@ -139,31 +132,13 @@ SUBSYSTEM_DEF(mapping)
 			continue
 		var/datum/map_template/ruin/R = new ruin_type()
 
-		if(R.mappath in banned)
-			continue
-
 		map_templates[R.name] = R
 		ruins_templates[R.name] = R
+		ruin_types_list[R.ruin_type] += list(R.name = R)
 
-		if(istype(R, /datum/map_template/ruin/lavaland))
-			lava_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/whitesands))
-			sand_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/jungle))
-			jungle_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/icemoon))
-			ice_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/space))
-			space_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/rockplanet))
-			rock_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/beachplanet))
-			beach_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/wasteplanet))
-			waste_ruins_templates[R.name] = R
-		else if(istype(R, /datum/map_template/ruin/reebe))
-			yellow_ruins_templates[R.name] = R
-
+		var/list/ruin_entry = list()
+		ruin_entry[R] = initial(R.placement_weight)
+		ruin_types_probabilities[R.ruin_type] += ruin_entry
 
 /datum/controller/subsystem/mapping/proc/preloadShuttleTemplates()
 	for(var/item in subtypesof(/datum/map_template/shuttle))
@@ -201,20 +176,32 @@ SUBSYSTEM_DEF(mapping)
 		CHECK_LIST_EXISTS("job_slots")
 		var/datum/map_template/shuttle/S = new(data["map_path"], data["map_name"], TRUE)
 		S.file_name = data["map_path"]
-		S.category = "shiptest"
 
 		if(istext(data["map_short_name"]))
 			S.short_name = data["map_short_name"]
 		else
 			S.short_name = copytext(S.name, 1, 20)
+
 		if(istext(data["prefix"]))
 			S.prefix = data["prefix"]
+			if(istext(data["faction_name"]))
+				S.faction_name = data["faction_name"]
+			else
+				S.faction_name = ship_prefix_to_faction(S.prefix)
+
+		S.category = S.faction_name
+
 		if(islist(data["namelists"]))
 			S.name_categories = data["namelists"]
-		if ( isnum( data[ "unique_ship_access" ] && data["unique_ship_access"] ) )
+
+		if(isnum(data[ "unique_ship_access" ] && data["unique_ship_access"]))
 			S.unique_ship_access = data[ "unique_ship_access" ]
+
 		if(istext(data["description"]))
 			S.description = data["description"]
+
+		if(islist(data["tags"]))
+			S.tags = data["tags"]
 
 		S.job_slots = list()
 		var/list/job_slot_list = data["job_slots"]
@@ -223,7 +210,7 @@ SUBSYSTEM_DEF(mapping)
 			var/value = job_slot_list[job]
 			var/slots
 			if(isnum(value))
-				job_slot = SSjob.GetJob(job)
+				job_slot = GLOB.name_occupations[job]
 				slots = value
 			else if(islist(value))
 				var/datum/outfit/job_outfit = text2path(value["outfit"])
@@ -231,8 +218,8 @@ SUBSYSTEM_DEF(mapping)
 					stack_trace("Invalid job outfit! [value["outfit"]] on [S.name]'s config! Defaulting to assistant clothing.")
 					job_outfit = /datum/outfit/job/assistant
 				job_slot = new /datum/job(job, job_outfit)
+				job_slot.display_order = length(S.job_slots)
 				job_slot.wiki_page = value["wiki_page"]
-				job_slot.exp_requirements = value["exp_requirements"]
 				job_slot.officer = value["officer"]
 				slots = value["slots"]
 
@@ -241,14 +228,30 @@ SUBSYSTEM_DEF(mapping)
 				continue
 
 			S.job_slots[job_slot] = slots
+		if(isnum(data["limit"]))
+			S.limit = data["limit"]
+
+		if(isnum(data["spawn_time_coeff"]))
+			S.spawn_time_coeff = data["spawn_time_coeff"]
+
+		if(isnum(data["officer_time_coeff"]))
+			S.officer_time_coeff = data["officer_time_coeff"]
+
+		if(isnum(data["starting_funds"]))
+			S.starting_funds = data["starting_funds"]
+
 		if(isnum(data["enabled"]) && data["enabled"])
 			S.enabled = TRUE
 			ship_purchase_list[S.name] = S
-		if(isnum(data["limit"]))
-			S.limit = data["limit"]
-		shuttle_templates[S.file_name] = S
+
 		if(isnum(data["roundstart"]) && data["roundstart"])
 			maplist[S.name] = S
+
+		if(isnum(data["space_spawn"]) && data["space_spawn"])
+			S.space_spawn = TRUE
+
+		shuttle_templates[S.file_name] = S
+		map_templates[S.file_name] = S
 #undef CHECK_STRING_EXISTS
 #undef CHECK_LIST_EXISTS
 
@@ -277,17 +280,15 @@ SUBSYSTEM_DEF(mapping)
 /// Creates basic physical levels so we dont have to do that during runtime every time, nothing bad will happen if this wont run, as allocation will handle adding new levels
 /datum/controller/subsystem/mapping/proc/init_reserved_levels()
 	add_new_zlevel("Free Allocation Level", allocation_type = ALLOCATION_FREE)
+	CHECK_TICK
 	add_new_zlevel("Quadrant Allocation Level", allocation_type = ALLOCATION_QUADRANT)
+	CHECK_TICK
 
-/datum/controller/subsystem/mapping/proc/preloadHolodeckTemplates()
-	for(var/item in subtypesof(/datum/map_template/holodeck))
-		var/datum/map_template/holodeck/holodeck_type = item
-		if(!(initial(holodeck_type.mappath)))
-			continue
-		var/datum/map_template/holodeck/holo_template = new holodeck_type()
-
-		holodeck_templates[holo_template.template_id] = holo_template
-		map_templates[holo_template.template_id] = holo_template
+/datum/controller/subsystem/mapping/proc/preloadOutpostTemplates()
+	for(var/datum/map_template/outpost/outpost_type as anything in subtypesof(/datum/map_template/outpost))
+		var/datum/map_template/outpost/outpost_template = new outpost_type()
+		outpost_templates[outpost_template.type] = outpost_template
+		map_templates[outpost_template.name] = outpost_template
 
 //////////////////
 // RESERVATIONS //

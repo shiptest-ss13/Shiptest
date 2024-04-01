@@ -266,7 +266,7 @@
 		SEND_SOUND(ranged_ability_user, sound('sound/effects/ghost.ogg',0,1,50))
 		var/image/C = image('icons/effects/cult_effects.dmi',H,"bloodsparkles", ABOVE_MOB_LAYER)
 		add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/cult, "cult_apoc", C, NONE)
-		addtimer(CALLBACK(H,/atom/.proc/remove_alt_appearance,"cult_apoc",TRUE), 2400, TIMER_OVERRIDE|TIMER_UNIQUE)
+		addtimer(CALLBACK(H, TYPE_PROC_REF(/atom, remove_alt_appearance),"cult_apoc",TRUE), 2400, TIMER_OVERRIDE|TIMER_UNIQUE)
 		to_chat(ranged_ability_user,"<span class='cult'><b>[H] has been cursed with living nightmares!</b></span>")
 		attached_action.charges--
 		attached_action.desc = attached_action.base_desc
@@ -356,9 +356,10 @@
 	var/datum/action/innate/cult/blood_spell/source
 
 /obj/item/melee/blood_magic/New(loc, spell)
-	source = spell
-	uses = source.charges
-	health_cost = source.health_cost
+	if(spell)
+		source = spell
+		uses = source.charges
+		health_cost = source.health_cost
 	..()
 
 /obj/item/melee/blood_magic/Destroy()
@@ -373,7 +374,7 @@
 			source.desc = source.base_desc
 			source.desc += "<br><b><u>Has [uses] use\s remaining</u></b>."
 			source.UpdateButtonIcon()
-	..()
+	return ..()
 
 /obj/item/melee/blood_magic/attack_self(mob/living/user)
 	afterattack(user, user, TRUE)
@@ -428,7 +429,7 @@
 			L.mob_light(_range = 2, _color = LIGHT_COLOR_HOLY_MAGIC, _duration = 10 SECONDS)
 			var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
 			L.add_overlay(forbearance)
-			addtimer(CALLBACK(L, /atom/proc/cut_overlay, forbearance), 100)
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/atom, cut_overlay), forbearance), 100)
 
 			if(istype(anti_magic_source, /obj/item))
 				var/obj/item/ams_object = anti_magic_source
@@ -608,7 +609,7 @@
 			if(candidate.mmi)
 				channeling = TRUE
 				user.visible_message("<span class='danger'>A dark cloud emanates from [user]'s hand and swirls around [candidate]!</span>")
-				playsound(T, 'sound/machines/airlock_alien_prying.ogg', 80, TRUE)
+				playsound(T, 'sound/machines/creaking.ogg', 80, TRUE)
 				var/prev_color = candidate.color
 				candidate.color = "black"
 				if(do_after(user, 90, target = candidate))
@@ -618,7 +619,7 @@
 						"Wraith" = image(icon = 'icons/mob/cult.dmi', icon_state = "wraith"),
 						"Artificer" = image(icon = 'icons/mob/cult.dmi', icon_state = "artificer")
 						)
-					var/construct_class = show_radial_menu(user, src, constructs, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+					var/construct_class = show_radial_menu(user, src, constructs, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 					if(!check_menu(user))
 						return
 					if(QDELETED(candidate))
@@ -802,12 +803,6 @@
 					temp += max((B.bloodiness**2)/800,1)
 				new /obj/effect/temp_visual/cult/turf/floor(get_turf(B))
 				qdel(B)
-		for(var/obj/effect/decal/cleanable/trail_holder/TH in view(T, 2))
-			qdel(TH)
-		var/obj/item/clothing/shoes/shoecheck = user.shoes
-		if(shoecheck && shoecheck.bloody_shoes[/datum/reagent/blood])
-			temp += shoecheck.bloody_shoes[/datum/reagent/blood]/20
-			shoecheck.bloody_shoes[/datum/reagent/blood] = 0
 		if(temp)
 			user.Beam(T,icon_state="drainbeam",time=15)
 			new /obj/effect/temp_visual/cult/sparks(get_turf(user))
@@ -844,7 +839,7 @@
 				if(uses < BLOOD_BARRAGE_COST)
 					to_chat(user, "<span class='cultitalic'>You need [BLOOD_BARRAGE_COST] charges to perform this rite.</span>")
 				else
-					var/obj/rite = new /obj/item/gun/ballistic/rifle/boltaction/enchanted/arcane_barrage/blood()
+					var/obj/rite = new /obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage/blood()
 					uses -= BLOOD_BARRAGE_COST
 					qdel(src)
 					if(user.put_in_hands(rite))

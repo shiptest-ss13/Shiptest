@@ -35,9 +35,6 @@
 /atom/movable/emissive_blocker/blob_act()
 	return
 
-/atom/movable/emissive_blocker/onTransitZ()
-	return
-
 //Prevents people from moving these after creation, because they shouldn't be.
 /atom/movable/emissive_blocker/forceMove(atom/destination, no_tp=FALSE, harderforce = FALSE)
 	if(harderforce)

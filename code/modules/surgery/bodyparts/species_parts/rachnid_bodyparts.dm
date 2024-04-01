@@ -1,31 +1,34 @@
 /obj/item/bodypart/head/rachnid
-	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
+	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
-	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
+	overlay_icon_state = TRUE
 
 /obj/item/bodypart/chest/rachnid
-	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
+	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
 	is_dimorphic = FALSE
 	should_draw_greyscale = FALSE
+	overlay_icon_state = TRUE
 
 /obj/item/bodypart/l_arm/rachnid
-	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
+	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE
 
 /obj/item/bodypart/r_arm/rachnid
-	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
+	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE
 
-/obj/item/bodypart/l_leg/rachnid
-	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
+/obj/item/bodypart/leg/left/rachnid
+	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE
+	overlay_icon_state = TRUE
 
-/obj/item/bodypart/r_leg/rachnid
-	icon = 'icons/mob/species/rachnid/bodyparts.dmi'
+/obj/item/bodypart/leg/right/rachnid
+	static_icon = 'icons/mob/species/rachnid/bodyparts.dmi'
 	limb_id = SPECIES_RACHNID
 	should_draw_greyscale = FALSE
+	overlay_icon_state = TRUE

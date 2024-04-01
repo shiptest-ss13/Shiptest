@@ -12,6 +12,9 @@ SUBSYSTEM_DEF(overmap)
 	var/list/overmap_objects
 	///List of all simulated ships. All ships in this list are fully initialized.
 	var/list/controlled_ships
+	///List of spawned outposts. The default spawn location is the first index.
+	var/list/outposts
+
 	///List of all events
 	var/list/events
 
@@ -28,6 +31,9 @@ SUBSYSTEM_DEF(overmap)
 	///The two-dimensional list that contains every single tile in the overmap as a sublist.
 	var/list/list/overmap_container
 
+	///Whether or not a ship is currently being spawned. Used to prevent multiple ships from being spawned at once.
+	var/ship_spawning //TODO: Make a proper queue for this
+
 /datum/controller/subsystem/overmap/get_metrics()
 	. = ..()
 	var/list/cust = list()
@@ -41,6 +47,7 @@ SUBSYSTEM_DEF(overmap)
 /datum/controller/subsystem/overmap/Initialize(start_timeofday)
 	overmap_objects = list()
 	controlled_ships = list()
+	outposts = list()
 	events = list()
 
 	generator_type = CONFIG_GET(string/overmap_generator_type)
@@ -183,15 +190,33 @@ SUBSYSTEM_DEF(overmap)
  * Creates a single outpost somewhere near the center of the system.
  */
 /datum/controller/subsystem/overmap/proc/spawn_outpost()
-	var/list/S = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
-	new /datum/overmap/dynamic/outpost(S)
+	var/list/location = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+
+	var/datum/overmap/outpost/found_type
+	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
+		var/file_text = trim_right(file2text(OUTPOST_OVERRIDE_FILEPATH)) // trim_right because there's often a trailing newline
+		var/datum/overmap/outpost/potential_type = text2path(file_text)
+		if(!potential_type || !ispath(potential_type, /datum/overmap/outpost))
+			stack_trace("SSovermap found an outpost override file at [OUTPOST_OVERRIDE_FILEPATH], but was unable to find the outpost type [potential_type]!")
+		else
+			found_type = potential_type
+		fdel(OUTPOST_OVERRIDE_FILEPATH) // don't want it to affect 2 rounds in a row.
+
+	if(!found_type)
+		var/list/possible_types = subtypesof(/datum/overmap/outpost)
+		for(var/datum/overmap/outpost/outpost_type as anything in possible_types)
+			if(!initial(outpost_type.main_template))
+				possible_types -= outpost_type
+		found_type = pick(possible_types)
+
+	new found_type(location)
 	return
 
 /datum/controller/subsystem/overmap/proc/spawn_initial_ships()
 #ifndef UNIT_TESTS
 	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
 	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	new /datum/overmap/ship/controlled(null, selected_template)
+	spawn_ship_at_start(selected_template)
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
@@ -199,6 +224,24 @@ SUBSYSTEM_DEF(overmap)
 		query_round_map_name.Execute()
 		qdel(query_round_map_name)
 #endif
+
+/**
+ * Spawns a controlled ship with the passed template at the template's preferred spawn location.
+ * Inteded for ship purchases, etc.
+ */
+/datum/controller/subsystem/overmap/proc/spawn_ship_at_start(datum/map_template/shuttle/template)
+	//Should never happen, but just in case. This'll delay the next spawn until the current one is done.
+	UNTIL(!ship_spawning)
+
+	var/ship_loc
+	if(template.space_spawn)
+		ship_loc = null
+	else
+		ship_loc = SSovermap.outposts[1]
+
+	ship_spawning = TRUE
+	. = new /datum/overmap/ship/controlled(ship_loc, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
+	ship_spawning = FALSE
 
 /**
  * Creates an overmap object for each ruin level, making them accessible.
@@ -227,7 +270,7 @@ SUBSYSTEM_DEF(overmap)
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
 
 	// name is random but PROBABLY unique
-	var/encounter_name = dynamic_datum.planet_name || "Dynamic Overmap Encounter #[rand(1111,9999)]-[rand(1111,9999)]"
+	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
 	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
 	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
 		encounter_name,
@@ -283,7 +326,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/obj/docking_port/stationary/primary_dock = new(primary_docking_turf)
 	primary_dock.dir = NORTH
-	primary_dock.name = "\improper Uncharted Space"
+	primary_dock.name = "[encounter_name] docking location #1"
 	primary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 	primary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	primary_dock.dheight = 0
@@ -292,7 +335,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/obj/docking_port/stationary/secondary_dock = new(secondary_docking_turf)
 	secondary_dock.dir = NORTH
-	secondary_dock.name = "\improper Uncharted Space"
+	secondary_dock.name = "[encounter_name] docking location #2"
 	secondary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 	secondary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 	secondary_dock.dheight = 0
@@ -315,7 +358,7 @@ SUBSYSTEM_DEF(overmap)
 
 		var/obj/docking_port/stationary/tertiary_dock = new(tertiary_docking_turf)
 		tertiary_dock.dir = NORTH
-		tertiary_dock.name = "\improper Uncharted Space"
+		tertiary_dock.name = "[encounter_name] docking location #3"
 		tertiary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 		tertiary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		tertiary_dock.dheight = 0
@@ -324,7 +367,7 @@ SUBSYSTEM_DEF(overmap)
 
 		var/obj/docking_port/stationary/quaternary_dock = new(quaternary_docking_turf)
 		quaternary_dock.dir = NORTH
-		quaternary_dock.name = "\improper Uncharted Space"
+		quaternary_dock.name = "[encounter_name] docking location #4"
 		quaternary_dock.height = RESERVE_DOCK_MAX_SIZE_SHORT
 		quaternary_dock.width = RESERVE_DOCK_MAX_SIZE_LONG
 		quaternary_dock.dheight = 0
@@ -374,18 +417,80 @@ SUBSYSTEM_DEF(overmap)
  * * source - The object you want to get the corresponding parent overmap object for.
  */
 /datum/controller/subsystem/overmap/proc/get_overmap_object_by_location(atom/source)
+	var/turf/T = get_turf(source)
+	var/area/ship/A = get_area(source)
+	while(istype(A) && A.mobile_port)
+		if(A.mobile_port.current_ship)
+			return A.mobile_port.current_ship
+		A = A.mobile_port.underlying_turf_area[T]
 	for(var/O in overmap_objects)
 		if(istype(O, /datum/overmap/dynamic))
 			var/datum/overmap/dynamic/D = O
 			if(D.mapzone?.is_in_bounds(source))
 				return D
 
+/// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
+/datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
+	if(!(GLOB.ship_spawn_enabled) || (get_num_cap_ships() >= CONFIG_GET(number/max_shuttle_count)))
+		return FALSE
+	return TRUE
+
+/// Returns the number of ships on the overmap that count against the spawn cap.
+/datum/controller/subsystem/overmap/proc/get_num_cap_ships()
+	var/ship_count = 0
+	for(var/datum/overmap/ship/controlled/Ship as anything in controlled_ships)
+		if(!Ship.source_template || Ship.source_template.category != "subshuttles")
+			ship_count++
+	return ship_count
+
+/datum/controller/subsystem/overmap/proc/get_manifest()
+	var/list/manifest_out = list()
+	for(var/datum/overmap/ship/controlled/ship as anything in controlled_ships)
+		if(!length(ship.manifest))
+			continue
+		manifest_out["[ship.name] ([ship.source_template.short_name])"] = list()
+		for(var/crewmember in ship.manifest)
+			var/datum/job/crewmember_job = ship.manifest[crewmember]
+			manifest_out["[ship.name] ([ship.source_template.short_name])"] += list(list(
+				"name" = crewmember,
+				"rank" = crewmember_job.name,
+				"officer" = crewmember_job.officer
+			))
+
+	return manifest_out
+
+/datum/controller/subsystem/overmap/proc/get_manifest_html(monochrome = FALSE)
+	var/list/manifest = get_manifest()
+	var/dat = {"
+	<head><style>
+		.manifest {border-collapse:collapse;}
+		.manifest td, th {border:1px solid [monochrome ? "black":"#DEF; background-color:white; color:black"]; padding:.25em}
+		.manifest th {height: 2em; [monochrome ? "border-top-width: 3px":"background-color: #48C; color:white"]}
+		.manifest tr.head th { [monochrome ? "border-top-width: 1px":"background-color: #488;"] }
+		.manifest tr.alt td {[monochrome ? "border-top-width: 2px":"background-color: #DEF"]}
+	</style></head>
+	<table class="manifest" width='350px'>
+	<tr class='head'><th>Name</th><th>Rank</th></tr>
+	"}
+	for(var/department in manifest)
+		var/list/entries = manifest[department]
+		dat += "<tr><th colspan=3>[department]</th></tr>"
+		var/even = FALSE
+		for(var/entry in entries)
+			var/list/entry_list = entry
+			dat += "<tr[even ? " class='alt'" : ""]><td>[entry_list["name"]]</td><td>[entry_list["rank"]]</td></tr>"
+			even = !even
+
+	dat += "</table>"
+	dat = replacetext(dat, "\n", "")
+	dat = replacetext(dat, "\t", "")
+	return dat
+
 /datum/controller/subsystem/overmap/Recover()
-	if(istype(SSovermap.overmap_objects))
-		overmap_objects = SSovermap.overmap_objects
-	if(istype(SSovermap.controlled_ships))
-		controlled_ships = SSovermap.controlled_ships
-	if(istype(SSovermap.events))
-		events = SSovermap.events
-	if(istype(SSovermap.radius_positions))
-		radius_positions = SSovermap.radius_positions
+	overmap_objects = SSovermap.overmap_objects
+	controlled_ships = SSovermap.controlled_ships
+	events = SSovermap.events
+	outposts = SSovermap.outposts
+	radius_positions = SSovermap.radius_positions
+	overmap_vlevel = SSovermap.overmap_vlevel
+	overmap_container = SSovermap.overmap_container

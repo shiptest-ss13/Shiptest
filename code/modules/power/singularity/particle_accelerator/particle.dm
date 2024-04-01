@@ -23,10 +23,10 @@
 
 /obj/effect/accelerated_particle/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/move), 1)
+	addtimer(CALLBACK(src, PROC_REF(move)), 1)
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered)
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 

@@ -8,7 +8,7 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/l_arm
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightarm
 	name = "Right Arm"
@@ -16,30 +16,30 @@
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
 	build_path = /obj/item/bodypart/r_arm
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/leftleg
 	name = "Left Leg"
 	id = "l_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/l_leg
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	build_path = /obj/item/bodypart/leg/left
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/rightleg
 	name = "Right Leg"
 	id = "r_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/r_leg
-	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_GOLEM,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
+	build_path = /obj/item/bodypart/leg/right
+	category = list("initial",SPECIES_HUMAN,SPECIES_LIZARD,SPECIES_MOTH,SPECIES_PLASMAMAN,SPECIES_ETHEREAL,SPECIES_RACHNID,SPECIES_VOX,SPECIES_KEPORI,SPECIES_ABDUCTOR,SPECIES_FLYPERSON,SPECIES_POD,SPECIES_SKELETON,SPECIES_SNAIL)
 
 /datum/design/digitigrade/leftleg
 	name = "Digitigrade Left Leg"
 	id = "digi_l_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/l_leg/digitigrade
+	build_path = /obj/item/bodypart/leg/left/lizard/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
 /datum/design/digitigrade/rightleg
@@ -47,7 +47,7 @@
 	id = "digi_r_leg"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/synthflesh = 25)
-	build_path = /obj/item/bodypart/r_leg/digitigrade
+	build_path = /obj/item/bodypart/leg/right/lizard/digitigrade
 	category = list("initial",SPECIES_LIZARD)
 
 //Non-limb limb designs
@@ -116,7 +116,7 @@
 	build_path = /obj/item/organ/tongue
 	category = list("initial",SPECIES_HUMAN)
 
-// Grows a fake lizard tail - not usable in lizard wine and other similar recipes.
+// Grows a fake lizard tail
 /datum/design/lizard_tail
 	name = "Lizard Tail"
 	id = "liztail"
@@ -158,29 +158,21 @@
 	build_path = /obj/item/organ/ears/cat
 	category = list("initial",SPECIES_HUMAN)
 
-/datum/design/dwarf_gland
-	name = "Dwarf Gland"
-	id = "dwarfgland"
+/datum/design/fox_tail
+	name = "Fox Tail"
+	id = "foxtail"
 	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
-	build_path = /obj/item/organ/dwarfgland
-	category = list("initial",SPECIES_DWARF)
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
+	build_path = /obj/item/organ/tail/fox
+	category = list("initial",SPECIES_HUMAN)
 
-/datum/design/dwarf_liver
-	name = "Dwarf Liver"
-	id = "dwarfliver"
+/datum/design/fox_ears
+	name = "Fox Ears"
+	id = "foxears"
 	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20, /datum/reagent/consumable/ethanol = 20)
-	build_path = /obj/item/organ/liver/dwarf
-	category = list("initial",SPECIES_DWARF)
-
-/datum/design/dwarf_tongue
-	name = "Dwarf Tongue"
-	id = "dwarftongue"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 10, /datum/reagent/consumable/ethanol = 10)
-	build_path = /obj/item/organ/tongue/dwarf
-	category = list("initial",SPECIES_DWARF)
+	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
+	build_path = /obj/item/organ/ears/fox
+	category = list("initial",SPECIES_HUMAN)
 
 /datum/design/lizard_tongue
 	name = "Lizard Tongue"
@@ -327,38 +319,6 @@
 	build_path = /obj/item/organ/stomach/fly
 	category = list("initial",SPECIES_FLYPERSON)
 
-/datum/design/golem_tongue
-	name = "Golem Tongue"
-	id = "golemtongue"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 10)
-	build_path = /obj/item/organ/tongue/golem_base
-	category = list("initial",SPECIES_GOLEM)
-
-/datum/design/golem_vocal_chords
-	name = "Adamantine Vocal Chords"
-	id = "golemvocalchords"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
-	build_path = /obj/item/organ/vocal_cords/adamantine
-	category = list("initial",SPECIES_GOLEM)
-
-/datum/design/golem_resonator
-	name = "Adamantine Resonator"
-	id = "golemresonator"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
-	build_path = /obj/item/organ/adamantine_resonator
-	category = list("initial",SPECIES_GOLEM)
-
-/datum/design/golem_vocal_chords
-	name = "Adamantine Vocal Chords"
-	id = "golemvocalchords"
-	build_type = LIMBGROWER
-	reagents_list = list(/datum/reagent/medicine/synthflesh = 20)
-	build_path = /obj/item/organ/vocal_cords/adamantine
-	category = list("initial",SPECIES_GOLEM)
-
 /datum/design/skeleton_tongue
 	name = "Skeleton... Tongue?"
 	id = "skeletontongue"
@@ -461,8 +421,6 @@
 			race = "Abductor"
 		if(SPECIES_FLYPERSON)
 			race = "Flyperson"
-		if(SPECIES_GOLEM)
-			race = "Golem"
 		if(SPECIES_POD)
 			race = "Phytosian"
 		if(SPECIES_SKELETON)
@@ -504,16 +462,6 @@
 	desc = "Contains designs for flyperson bodyparts and organs for the limbgrower."
 	id = "limbdesign_fly"
 	build_path = /obj/item/disk/design_disk/limbs/fly
-
-/obj/item/disk/design_disk/limbs/golem
-	name = "Golem Limb Design Disk"
-	species = SPECIES_GOLEM
-
-/datum/design/limb_disk/golem
-	name = "Golem Limb Design Disk"
-	desc = "Contains designs for golem bodyparts and organs for the limbgrower."
-	id = "limbdesign_golem"
-	build_path = /obj/item/disk/design_disk/limbs/golem
 
 /obj/item/disk/design_disk/limbs/pod
 	name = "Phytosian Limb Design Disk"

@@ -13,7 +13,7 @@
 	prepare_huds() //Prevents a nasty runtime on human init
 
 	if(dna.species)
-		INVOKE_ASYNC(src, .proc/set_species, dna.species.type) //This generates new limbs based on the species, beware.
+		INVOKE_ASYNC(src, PROC_REF(set_species), dna.species.type) //This generates new limbs based on the species, beware.
 
 	//initialise organs
 	create_internal_organs() //most of it is done in set_species now, this is only for parent call
@@ -21,9 +21,10 @@
 
 	. = ..()
 
-	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_FACE_ACT, .proc/clean_face)
+	RegisterSignal(src, COMSIG_COMPONENT_CLEAN_FACE_ACT, PROC_REF(clean_face))
 	AddComponent(/datum/component/personal_crafting)
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, -6)
+	AddComponent(/datum/component/bloodysoles/feet)
 	GLOB.human_list += src
 
 /mob/living/carbon/human/proc/setup_human_dna()
@@ -39,6 +40,7 @@
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
+	QDEL_LIST(bioware)
 	GLOB.human_list -= src
 	return ..()
 
@@ -59,7 +61,8 @@
 	. = ..()
 	. += "Intent: [a_intent]"
 	. += "Move Mode: [m_intent]"
-	if (internal)
+
+	if (internal) //TODO: Refactor this to use the signal on tanks
 		if (!internal.air_contents)
 			qdel(internal)
 		else
@@ -67,32 +70,6 @@
 			. += "Internal Atmosphere Info: [internal.name]"
 			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
 			. += "Distribution Pressure: [internal.distribute_pressure]"
-	/*WS begin - no cells in suits
-	if(istype(wear_suit, /obj/item/clothing/suit/space))
-		var/obj/item/clothing/suit/space/S = wear_suit
-		. += "Thermal Regulator: [S.thermal_on ? "on" : "off"]"
-		. += "Cell Charge: [S.cell ? "[round(S.cell.percent(), 0.1)]%" : "!invalid!"]"
-	*/
-	var/mob/living/simple_animal/borer/B = has_brain_worms()		//WS Begin - Borers
-	if(B && B.controlling)
-		. += "Borer Body Health: [B.health]"
-		. += "Chemicals: [B.chemicals]"								//WS End
-
-	if(mind)
-		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
-		if(changeling)
-			. += ""
-			. += "Chemical Storage: [changeling.chem_charges]/[changeling.chem_storage]"
-			. += "Absorbed DNA: [changeling.absorbedcount]"
-
-		//WS Begin - Display Ethereal Charge
-		if(istype(src))
-			var/datum/species/ethereal/eth_species = src.dna?.species
-			if(istype(eth_species))
-				var/obj/item/organ/stomach/ethereal/stomach = src.getorganslot(ORGAN_SLOT_STOMACH)
-				if(istype(stomach))
-					. += "Crystal Charge: [round((stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
-		//WS End
 
 	//NINJACODE
 	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)) //Only display if actually a ninja.
@@ -455,38 +432,6 @@
 				to_chat(usr, "<b>Notes:</b> [R.fields["notes"]]")
 				return
 
-			if(href_list["add_citation"])
-				var/maxFine = CONFIG_GET(number/maxfine)
-				var/t1 = stripped_input("Please input citation crime:", "Security HUD", "", null)
-				var/fine = FLOOR(input("Please input citation fine, up to [maxFine]:", "Security HUD", 50) as num|null, 1)
-				if(!R || !t1 || !fine || !allowed_access)
-					return
-				if(!H.canUseHUD())
-					return
-				if(!HAS_TRAIT(H, TRAIT_SECURITY_HUD))
-					return
-				if(fine < 0)
-					to_chat(usr, "<span class='warning'>You're pretty sure that's not how money works.</span>")
-					return
-				fine = min(fine, maxFine)
-
-				var/crime = GLOB.data_core.createCrimeEntry(t1, "", allowed_access, station_time_timestamp(), fine)
-				for (var/obj/item/pda/P in GLOB.PDAs)
-					if(P.owner == R.fields["name"])
-						var/message = "You have been fined [fine] credits for '[t1]'. Fines may be paid at security."
-						var/datum/signal/subspace/messaging/pda/signal = new(src, list(
-							"name" = "Security Citation",
-							"job" = "Citation Server",
-							"message" = message,
-							"targets" = list("[P.owner] ([P.ownjob])"),
-							"automated" = 1
-						))
-						signal.send_to_receivers()
-						usr.log_message("(PDA: Citation Server) sent \"[message]\" to [signal.format_target()]", LOG_PDA)
-				GLOB.data_core.addCitation(R.fields["id"], crime)
-				investigate_log("New Citation: <strong>[t1]</strong> Fine: [fine] | Added to [R.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-				return
-
 			if(href_list["add_crime"])
 				var/t1 = stripped_input("Please input crime name:", "Security HUD", "", null)
 				if(!R || !t1 || !allowed_access)
@@ -539,7 +484,7 @@
 				var/counter = 1
 				while(R.fields[text("com_[]", counter)])
 					counter++
-				R.fields[text("com_[]", counter)] = text("Made by [] on [] [], []<BR>[]", allowed_access, station_time_timestamp(), time2text(world.realtime, "MMM DD"), "504 FS", t1)
+				R.fields[text("com_[]", counter)] = text("Made by [] on [], []<BR>[]", allowed_access, station_time_timestamp(), sector_datestamp(shortened = TRUE), t1)
 				to_chat(usr, "<span class='notice'>Successfully added comment.</span>")
 				return
 
@@ -644,7 +589,7 @@
 	return threatcount
 
 
-//Used for new human mobs created by cloning/goleming/podding
+//Used for new human mobs created by cloning/podding
 /mob/living/carbon/human/proc/set_cloned_appearance()
 	if(gender == MALE)
 		facial_hairstyle = "Full Beard"
@@ -664,47 +609,68 @@
 				to_chat(src, "<span class='warning'>\The [S] pulls \the [hand] from your grip!</span>")
 	rad_act(current_size * 3)
 
-/mob/living/carbon/human/proc/do_cpr(mob/living/carbon/C)
-	CHECK_DNA_AND_SPECIES(C)
+#define CPR_PANIC_SPEED (0.8 SECONDS)
+/// Performs CPR on the target after a delay.
+/mob/living/carbon/human/proc/do_cpr(mob/living/carbon/target)
+	var/panicking = FALSE
 
-	if(C.stat == DEAD || (HAS_TRAIT(C, TRAIT_FAKEDEATH)))
-		to_chat(src, "<span class='warning'>[C.name] is dead!</span>")
-		return
-	if(is_mouth_covered())
-		to_chat(src, "<span class='warning'>Remove your mask first!</span>")
-		return 0
-	if(C.is_mouth_covered())
-		to_chat(src, "<span class='warning'>Remove [p_their()] mask first!</span>")
-		return 0
+	do
+		CHECK_DNA_AND_SPECIES(target)
 
-	if(C.cpr_time < world.time + 30)
-		visible_message("<span class='notice'>[src] is trying to perform CPR on [C.name]!</span>", \
-						"<span class='notice'>You try to perform CPR on [C.name]... Hold still!</span>")
-		if(!do_mob(src, C))
-			to_chat(src, "<span class='warning'>You fail to perform CPR on [C]!</span>")
-			return 0
+		if (INTERACTING_WITH(src, target))
+			return FALSE
 
-		var/they_breathe = !HAS_TRAIT(C, TRAIT_NOBREATH)
-		var/they_lung = C.getorganslot(ORGAN_SLOT_LUNGS)
+		if (target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))
+			to_chat(src, "<span class='warning'>[target.name] is dead!</span>")
+			return FALSE
 
-		if(C.health > C.crit_threshold)
-			return
+		if (is_mouth_covered())
+			to_chat(src, "<span class='warning'>Remove your mask first!</span>")
+			return FALSE
 
-		src.visible_message("<span class='notice'>[src] performs CPR on [C.name]!</span>", "<span class='notice'>You perform CPR on [C.name].</span>")
+		if (target.is_mouth_covered())
+			to_chat(src, "<span class='warning'>Remove [p_their()] mask first!</span>")
+			return FALSE
+
+		if (!getorganslot(ORGAN_SLOT_LUNGS))
+			to_chat(src, "<span class='warning'>You have no lungs to breathe with, so you cannot perform CPR!</span>")
+			return FALSE
+
+		if (HAS_TRAIT(src, TRAIT_NOBREATH))
+			to_chat(src, "<span class='warning'>You do not breathe, so you cannot perform CPR!</span>")
+			return FALSE
+
+		visible_message("<span class='notice'>[src] is trying to perform CPR on [target.name]!</span>", \
+						"<span class='notice'>You try to perform CPR on [target.name]... Hold still!</span>")
+
+		if (!do_mob(src, target, time = panicking ? CPR_PANIC_SPEED : (3 SECONDS)))
+			to_chat(src, "<span class='warning'>You fail to perform CPR on [target]!</span>")
+			return FALSE
+
+		if (target.health > target.crit_threshold)
+			return FALSE
+
+		visible_message("<span class='notice'>[src] performs CPR on [target.name]!</span>", "<span class='notice'>You perform CPR on [target.name].</span>")
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "perform_cpr", /datum/mood_event/perform_cpr)
-		C.cpr_time = world.time
-		log_combat(src, C, "CPRed")
+		log_combat(src, target, "CPRed")
 
-		if(they_breathe && they_lung)
-			var/suff = min(C.getOxyLoss(), 7)
-			C.adjustOxyLoss(-suff)
-			C.updatehealth()
-			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air enter your lungs... It feels good...</span>")
-		else if(they_breathe && !they_lung)
-			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... but you don't feel any better...</span>")
+		if (HAS_TRAIT(target, TRAIT_NOBREATH))
+			to_chat(target, "<span class='unconscious'>You feel a breath of fresh air... which is a sensation you don't recognise...</span>")
+		else if (!target.getorganslot(ORGAN_SLOT_LUNGS))
+			to_chat(target, "<span class='unconscious'>You feel a breath of fresh air... but you don't feel any better...</span>")
 		else
-			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... which is a sensation you don't recognise...</span>")
+			target.adjustOxyLoss(-min(target.getOxyLoss(), 7))
+			to_chat(target, "<span class='unconscious'>You feel a breath of fresh air enter your lungs... It feels good...</span>")
 
+		if (target.health <= target.crit_threshold)
+			if (!panicking)
+				to_chat(src, "<span class='warning'>[target] still isn't up! You try harder!</span>")
+			panicking = TRUE
+		else
+			panicking = FALSE
+	while (panicking)
+
+#undef CPR_PANIC_SPEED
 /mob/living/carbon/human/cuff_resist(obj/item/I)
 	if(dna && dna.check_mutation(HULK))
 		say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
@@ -783,6 +749,16 @@
  * Called when this human should be washed
  */
 /mob/living/carbon/human/wash(clean_types)
+	// Check and wash stuff that can be covered
+	var/list/obscured = check_obscured_slots()
+
+	// Wash hands if exposed
+	// This runs before the parent call since blood_in_hands should be cleared before the blood DNA is removed
+	if(!gloves && (clean_types & CLEAN_TYPE_BLOOD) && blood_in_hands > 0 && !(ITEM_SLOT_GLOVES in obscured))
+		blood_in_hands = 0
+		update_inv_gloves()
+		. = TRUE
+
 	. = ..()
 
 	// Wash equipped stuff that cannot be covered
@@ -794,20 +770,11 @@
 		update_inv_belt()
 		. = TRUE
 
-	// Check and wash stuff that can be covered
-	var/list/obscured = check_obscured_slots()
-
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured) && w_uniform.wash(clean_types))
 		update_inv_w_uniform()
 		. = TRUE
 
 	if(!is_mouth_covered() && clean_lips())
-		. = TRUE
-
-	// Wash hands if exposed
-	if(!gloves && (clean_types & CLEAN_TYPE_BLOOD) && blood_in_hands > 0 && !(ITEM_SLOT_GLOVES in obscured))
-		blood_in_hands = 0
-		update_inv_gloves()
 		. = TRUE
 
 //Turns a mob black, flashes a skeleton overlay
@@ -821,7 +788,7 @@
 			electrocution_skeleton_anim = mutable_appearance(icon, "electrocuted_base")
 			electrocution_skeleton_anim.appearance_flags |= RESET_COLOR|KEEP_APART
 		add_overlay(electrocution_skeleton_anim)
-		addtimer(CALLBACK(src, .proc/end_electrocution_animation, electrocution_skeleton_anim), anim_duration)
+		addtimer(CALLBACK(src, PROC_REF(end_electrocution_animation), electrocution_skeleton_anim), anim_duration)
 
 	else //or just do a generic animation
 		flick_overlay_view(image(icon,src,"electrocuted_generic",ABOVE_MOB_LAYER), src, anim_duration)
@@ -1296,7 +1263,7 @@
 
 /mob/living/carbon/human/species/Initialize()
 	. = ..()
-	INVOKE_ASYNC(src, .proc/set_species, race)
+	INVOKE_ASYNC(src, PROC_REF(set_species), race)
 
 /mob/living/carbon/human/species/abductor
 	race = /datum/species/abductor
@@ -1312,90 +1279,6 @@
 
 /mob/living/carbon/human/species/fly
 	race = /datum/species/fly
-
-/mob/living/carbon/human/species/golem
-	race = /datum/species/golem
-
-/mob/living/carbon/human/species/golem/random
-	race = /datum/species/golem/random
-
-/mob/living/carbon/human/species/golem/adamantine
-	race = /datum/species/golem/adamantine
-
-/mob/living/carbon/human/species/golem/plasma
-	race = /datum/species/golem/plasma
-
-/mob/living/carbon/human/species/golem/diamond
-	race = /datum/species/golem/diamond
-
-/mob/living/carbon/human/species/golem/gold
-	race = /datum/species/golem/gold
-
-/mob/living/carbon/human/species/golem/silver
-	race = /datum/species/golem/silver
-
-/mob/living/carbon/human/species/golem/plasteel
-	race = /datum/species/golem/plasteel
-
-/mob/living/carbon/human/species/golem/titanium
-	race = /datum/species/golem/titanium
-
-/mob/living/carbon/human/species/golem/plastitanium
-	race = /datum/species/golem/plastitanium
-
-/mob/living/carbon/human/species/golem/alien_alloy
-	race = /datum/species/golem/alloy
-
-/mob/living/carbon/human/species/golem/wood
-	race = /datum/species/golem/wood
-
-/mob/living/carbon/human/species/golem/uranium
-	race = /datum/species/golem/uranium
-
-/mob/living/carbon/human/species/golem/sand
-	race = /datum/species/golem/sand
-
-/mob/living/carbon/human/species/golem/glass
-	race = /datum/species/golem/glass
-
-/mob/living/carbon/human/species/golem/bluespace
-	race = /datum/species/golem/bluespace
-
-/mob/living/carbon/human/species/golem/bananium
-	race = /datum/species/golem/bananium
-
-/mob/living/carbon/human/species/golem/blood_cult
-	race = /datum/species/golem/runic
-
-/mob/living/carbon/human/species/golem/cloth
-	race = /datum/species/golem/cloth
-
-/mob/living/carbon/human/species/golem/plastic
-	race = /datum/species/golem/plastic
-
-/mob/living/carbon/human/species/golem/bronze
-	race = /datum/species/golem/bronze
-
-/mob/living/carbon/human/species/golem/cardboard
-	race = /datum/species/golem/cardboard
-
-/mob/living/carbon/human/species/golem/leather
-	race = /datum/species/golem/leather
-
-/mob/living/carbon/human/species/golem/bone
-	race = /datum/species/golem/bone
-
-/mob/living/carbon/human/species/golem/durathread
-	race = /datum/species/golem/durathread
-
-/mob/living/carbon/human/species/golem/snow
-	race = /datum/species/golem/snow
-
-/mob/living/carbon/human/species/golem/capitalist
-	race = /datum/species/golem/capitalist
-
-/mob/living/carbon/human/species/golem/soviet
-	race = /datum/species/golem/soviet
 
 /mob/living/carbon/human/species/jelly
 	race = /datum/species/jelly
@@ -1427,9 +1310,6 @@
 /mob/living/carbon/human/species/shadow
 	race = /datum/species/shadow
 
-/mob/living/carbon/human/species/squid
-	race = /datum/species/squid
-
 /mob/living/carbon/human/species/shadow/nightmare
 	race = /datum/species/shadow/nightmare
 
@@ -1438,6 +1318,9 @@
 
 /mob/living/carbon/human/species/snail
 	race = /datum/species/snail
+
+/mob/living/carbon/human/species/vox
+	race = /datum/species/vox
 
 /mob/living/carbon/human/species/kepori
 	race = /datum/species/kepori
@@ -1456,9 +1339,6 @@
 
 /mob/living/carbon/human/species/ipc
 	race = /datum/species/ipc
-
-/mob/living/carbon/human/species/squid
-	race = /datum/species/squid
 
 /mob/living/carbon/human/species/lizard/ashwalker/kobold
 	race = /datum/species/lizard/ashwalker/kobold

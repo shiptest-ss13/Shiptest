@@ -70,8 +70,14 @@
 /datum/outfit_editor/ui_data(mob/user)
 	var/list/data = list()
 
-	data["outfit"] = serialize_outfit()
 	data["saveable"] = !GLOB.custom_outfits.Find(drip)
+
+	return data
+
+/datum/outfit_editor/ui_static_data(mob/user)
+	var/list/data = list()
+
+	data["outfit"] = serialize_outfit()
 
 	if(!dummy_key)
 		init_dummy()
@@ -83,7 +89,6 @@
 
 	return data
 
-
 /datum/outfit_editor/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	if(..())
 		return
@@ -93,8 +98,10 @@
 	switch(action)
 		if("click")
 			choose_item(slot)
+			update_static_data(usr, ui)
 		if("ctrlClick")
 			choose_any_item(slot)
+			update_static_data(usr, ui)
 		if("clear")
 			if(drip.vars.Find(slot))
 				drip.vars[slot] = null

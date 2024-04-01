@@ -29,8 +29,8 @@
 	set_tape(added_integrity)
 
 /datum/component/taped/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/tape_rip)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/examine_tape)
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(tape_rip))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examine_tape))
 
 /datum/component/taped/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_PARENT_ATTACKBY, COMSIG_PARENT_EXAMINE))
@@ -46,7 +46,7 @@
 	tape_marks.Blend(icon('icons/obj/tapes.dmi', "[taped_icon_state]_mask"), ICON_MULTIPLY)
 	taped_icon = new(tape_marks)
 	I.add_overlay(taped_icon)
-	I.update_icon()
+	I.update_appearance()
 
 /datum/component/taped/proc/tape_rip(datum/source, obj/item/attacker, mob/user)
 	var/obj/item/I = attacker

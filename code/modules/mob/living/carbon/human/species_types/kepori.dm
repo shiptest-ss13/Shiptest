@@ -2,13 +2,13 @@
 	name = "\improper Kepori"
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
-	species_traits = list(MUTCOLORS, EYECOLOR, NO_UNDERWEAR)
+	species_traits = list(MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
 	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", "body_size" = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
-	disliked_food = GROSS | FRIED
-	liked_food = MEAT
+	disliked_food = FRIED | GROSS | CLOTH
+	liked_food = MEAT | GORE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
 	loreblurb = "Kepori are a species covered in feathers vaguely reminiscent of earth’s extinct troodontidae. They’re small and sometimes seen as weak by other species due to their hollow bones but make up for that in speed and reflexes. Those found in space are commonly known as rollaways. They tend to woop when excited, scared, or for any other reason at all."
 	attack_verb = "slash"
@@ -41,14 +41,21 @@
 	/// See: [/datum/component/tackler/var/skill_mod]
 	var/skill_mod = 2
 
-	unique_prosthesis = TRUE
+	bodytype = BODYTYPE_KEPORI
 
 	species_chest = /obj/item/bodypart/chest/kepori
 	species_head = /obj/item/bodypart/head/kepori
 	species_l_arm = /obj/item/bodypart/l_arm/kepori
 	species_r_arm = /obj/item/bodypart/r_arm/kepori
-	species_l_leg = /obj/item/bodypart/l_leg/kepori
-	species_r_leg = /obj/item/bodypart/r_leg/kepori
+	species_l_leg = /obj/item/bodypart/leg/left/kepori
+	species_r_leg = /obj/item/bodypart/leg/right/kepori
+
+	species_robotic_chest = /obj/item/bodypart/chest/robot/kepori
+	species_robotic_head = /obj/item/bodypart/head/robot/kepori
+	species_robotic_l_arm = /obj/item/bodypart/l_arm/robot/surplus/kepori
+	species_robotic_r_arm = /obj/item/bodypart/r_arm/robot/surplus/kepori
+	species_robotic_l_leg = /obj/item/bodypart/leg/left/robot/surplus/kepori
+	species_robotic_r_leg = /obj/item/bodypart/leg/right/robot/surplus/kepori
 
 /datum/species/kepori/New()
 	. = ..()

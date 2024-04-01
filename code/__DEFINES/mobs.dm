@@ -71,9 +71,6 @@
 #define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
 
-//Bodypart change blocking flags
-#define BP_BLOCK_CHANGE_SPECIES (1<<0)
-
 //Defines for Species IDs
 #define SPECIES_ABDUCTOR "abductor"
 #define SPECIES_ANDROID "android"
@@ -90,10 +87,8 @@
 #define SPECIES_LIZARD "lizard"
 #define SPECIES_ASHWALKER "ashwalker"
 #define SPECIES_KOBOLD "kobold"
-#define SPECIES_GOLEM "golem"
 #define SPECIES_MONKEY "monkey"
 #define SPECIES_MOTH "moth"
-#define SPECIES_MUSH "mush"
 #define SPECIES_PLASMAMAN "plasmaman"
 #define SPECIES_POD "pod"
 #define SPECIES_SHADOW "shadow"
@@ -101,7 +96,6 @@
 #define SPECIES_SNAIL "snail"
 #define SPECIES_RACHNID "rachnid"
 #define SPECIES_KEPORI "kepori"
-#define SPECIES_DWARF "dwarf"
 #define SPECIES_VAMPIRE "vampire"
 #define SPECIES_VOX "vox"
 #define SPECIES_ZOMBIE "zombie"
@@ -230,7 +224,6 @@
 #define SANITY_INSANE 0
 
 //Nutrition levels for humans
-#define NUTRITION_LEVEL_FAT 600
 #define NUTRITION_LEVEL_FULL 550
 #define NUTRITION_LEVEL_WELL_FED 450
 #define NUTRITION_LEVEL_FED 350
@@ -352,7 +345,7 @@
 #define DOOR_CRUSH_DAMAGE 15 //the amount of damage that airlocks deal when they crush you
 
 #define HUNGER_FACTOR 0.1 //factor at which mob nutrition decreases
-#define ETHEREAL_CHARGE_FACTOR (0.05 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases //WS Edit -- Ethereal Charge Scaling
+#define ETHEREAL_CHARGE_FACTOR (0.05 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 
@@ -434,3 +427,6 @@
 #define THROW_MODE_DISABLED 0
 #define THROW_MODE_TOGGLE 1
 #define THROW_MODE_HOLD 2
+
+//Saves a proc call, life is suffering. If who has no targets_from var, we assume it's just who
+#define GET_TARGETS_FROM(who) (who.targets_from ? who.get_targets_from() : who)

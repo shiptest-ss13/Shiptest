@@ -99,7 +99,7 @@
 /datum/antagonist/gang/purple/check_gang_objective()
 	for(var/mob/M in GLOB.player_list)
 		if(M.mind.assigned_role in cop_roles)
-			if(!considered_alive(M) && !M.suiciding)
+			if(!considered_alive(M))
 				return FALSE
 	return TRUE
 
@@ -189,7 +189,7 @@
 			return FALSE
 	for(var/mob/M in GLOB.player_list)
 		if(M.mind.assigned_role == "Chaplain")
-			if(!considered_alive(M) && !M.suiciding)
+			if(!considered_alive(M))
 				return FALSE
 	return TRUE
 
@@ -198,11 +198,9 @@
 	roundend_category = "The Tunnel Snakes"
 	gang_name = "Tunnel Snakes"
 	gang_id = "TS"
-	acceptable_clothes = list(/obj/item/clothing/under/pants/classicjeans,
-							/obj/item/clothing/suit/jacket,
+	acceptable_clothes = list(/obj/item/clothing/suit/jacket,
 							/obj/item/clothing/mask/bandana/skull)
 	free_clothes = list(/obj/item/clothing/suit/jacket,
-						/obj/item/clothing/under/pants/classicjeans,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "TUNNEL SNAKES RULE!!! Make sure that everyone knows that, by getting 25% of people on station to wear any part of our uniform! TUNNEL SNAKES RULE!!!"
 	antag_hud_name = "Snakes"

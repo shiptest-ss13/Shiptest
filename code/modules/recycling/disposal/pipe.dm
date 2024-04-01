@@ -90,7 +90,7 @@
 
 	if(isfloorturf(T)) //intact floor, pop the tile
 		floorturf = T
-		if(floorturf.floor_tile)
+		if(floorturf.floor_tile && !istype(floorturf, /turf/open/floor/engine))
 			new floorturf.floor_tile(T)
 		floorturf.make_plating()
 

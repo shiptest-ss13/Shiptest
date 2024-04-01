@@ -3,8 +3,8 @@
 	desc = "We require data on the behavior of electrical storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms.\
 			It must be powered to collect the data. "
-	value = 1500 // base value, before adding bonus for number of things to fly through
-	duration = 30 MINUTES
+	value = 3000 // base value, before adding bonus for number of things to fly through
+	duration = 60 MINUTES
 	weight = 8
 
 	var/datum/overmap/objective_type = /datum/overmap/event/electric
@@ -20,7 +20,7 @@
 /datum/mission/research/accept(datum/overmap/ship/controlled/acceptor, turf/accept_loc)
 	. = ..()
 	scanner = spawn_bound(/obj/machinery/mission_scanner, accept_loc, VARSET_CALLBACK(src, scanner, null))
-	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, .proc/ship_moved)
+	RegisterSignal(servant, COMSIG_OVERMAP_MOVED, PROC_REF(ship_moved))
 
 /datum/mission/research/Destroy()
 	scanner = null
@@ -56,22 +56,42 @@
 	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return
 	num_current++
-
+/* commented out until ion storms aren't literal torture
 /datum/mission/research/ion
 	name = "Ion storm research mission"
 	desc = "We require data on the behavior of ion storms in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the storms. \
 			It must be powered to collect the data."
+	value = 3500
 	objective_type = /datum/overmap/event/emp
-
+*/
 /datum/mission/research/meteor
 	name = "Asteroid field research mission"
 	desc = "We require data on the behavior of asteroid fields in the system for an ongoing study. \
 			Please anchor the attached sensor array to your ship and fly it through the fields. \
 			It must be powered to collect the data."
-	value = 2000
+	value = 4000
 	weight = 4
 	objective_type = /datum/overmap/event/meteor
+
+/datum/mission/research/carp
+	name = "Carp migration research mission"
+	desc = "We require data on the migration patterns of space carp for an ongoing study. \
+			Please anchor the attached sensor array to your ship and fly it through the fields. \
+			It must be powered to collect the data."
+	value = 2000
+	weight = 4
+	num_wanted = 3
+	objective_type = /datum/overmap/event/meteor/carp
+
+/datum/mission/research/dust
+	name = "dust research mission"
+	desc = "We require data on the density of space dust for updated navcharts. \
+			Please anchor the attached sensor array to your ship and fly it through the fields. \
+			It must be powered to collect the data."
+	value = 1000
+	weight = 4
+	objective_type = /datum/overmap/event/meteor/dust
 
 /*
 		Research mission scanning machine
@@ -107,9 +127,9 @@
 		set_is_operational(FALSE)
 		STOP_PROCESSING(SSmachines, src)
 		use_power = NO_POWER_USE
-	power_change() // calls update_icon(), makes sure we're powered
+	power_change() // calls update_appearance(), makes sure we're powered
 
-/obj/machinery/mission_scanner/update_icon_state()
+/obj/machinery/mission_scanner/update_appearance(updates)
 	. = ..()
 	if(is_operational)
 		icon_state = "scanner_power"

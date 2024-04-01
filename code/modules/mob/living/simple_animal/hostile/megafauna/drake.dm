@@ -38,7 +38,7 @@ Difficulty: Medium
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
+	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	icon_state = "dragon"
 	icon_living = "dragon"
 	icon_dead = "dragon_dead"
@@ -52,8 +52,8 @@ Difficulty: Medium
 	speed = 5
 	move_to_delay = 5
 	ranged = TRUE
-	pixel_x = -16
-	base_pixel_x = -16
+	pixel_x = -32
+	base_pixel_x = -32
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
 	butcher_results = list(/obj/item/gem/amber = 1, /obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
@@ -160,7 +160,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/lava_swoop(amount = 30)
 	if(health < maxHealth * 0.5)
 		return swoop_attack(lava_arena = TRUE, swoop_cooldown = 60)
-	INVOKE_ASYNC(src, .proc/lava_pools, amount)
+	INVOKE_ASYNC(src, PROC_REF(lava_pools), amount)
 	swoop_attack(FALSE, target, 1000) // longer cooldown until it gets reset below
 	SLEEP_CHECK_DEATH(0)
 	fire_cone()
@@ -179,7 +179,7 @@ Difficulty: Medium
 		var/increment = 360 / spiral_count
 		for(var/j = 1 to spiral_count)
 			var/list/turfs = line_target(j * increment + i * increment / 2, range, src)
-			INVOKE_ASYNC(src, .proc/fire_line, turfs)
+			INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 		SLEEP_CHECK_DEATH(25)
 	SetRecoveryTime(30)
 
@@ -246,15 +246,15 @@ Difficulty: Medium
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, TRUE)
 	SLEEP_CHECK_DEATH(0)
 	if(prob(50) && meteors)
-		INVOKE_ASYNC(src, .proc/fire_rain)
+		INVOKE_ASYNC(src, PROC_REF(fire_rain))
 	var/range = 15
 	var/list/turfs = list()
 	turfs = line_target(-40, range, at)
-	INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 	turfs = line_target(0, range, at)
-	INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 	turfs = line_target(40, range, at)
-	INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/line_target(offset, range, atom/at = target)
 	if(!at)
@@ -305,7 +305,7 @@ Difficulty: Medium
 	stop_automated_movement = TRUE
 	swooping |= SWOOP_DAMAGEABLE
 	density = FALSE
-	icon_state = "shadow"
+	icon_state = "dragon_shadow"
 	visible_message("<span class='boldwarning'>[src] swoops up high!</span>")
 
 	var/negative
@@ -388,30 +388,6 @@ Difficulty: Medium
 	if(!lava_success)
 		arena_escape_enrage()
 
-/obj/effect/landmark/ashdrake_ghost_spawn //spawn a random ghost role if ash drake is killed
-	name = "ash drake ghost role spawner"
-	var/picked
-
-/obj/effect/landmark/ashdrake_ghost_spawn/proc/create_roles()
-	picked = pick(1,2,3,4,5,6,7) //picks 1-7
-	switch(picked) //then picks out of 7 ghost roles to spawn
-		if(1)
-			new /obj/effect/mob_spawn/human/lost/doctor(get_turf(loc))
-		if(2)
-			new /obj/effect/mob_spawn/human/lost/centcom(get_turf(loc))
-		if(3)
-			new /obj/effect/mob_spawn/human/lost/shaftminer(get_turf(loc))
-		if(4)
-			new /obj/effect/mob_spawn/human/lost/ashwalker_heir(get_turf(loc))
-		if(5)
-			new /obj/effect/mob_spawn/human/lost/assistant(get_turf(loc))
-		if(6)
-			new /obj/effect/mob_spawn/human/lost/syndicate(get_turf(loc))
-		if(7)
-			new /obj/effect/mob_spawn/human/lost/solgov(get_turf(loc))
-
-	qdel(src) //no spawning people twice
-
 /mob/living/simple_animal/hostile/megafauna/dragon/ex_act(severity, target)
 	if(severity == EXPLODE_LIGHT)
 		return
@@ -454,7 +430,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/lava_warning/Initialize(mapload, reset_time = 10)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fall, reset_time)
+	INVOKE_ASYNC(src, PROC_REF(fall), reset_time)
 	src.alpha = 63.75
 	animate(src, alpha = 255, time = duration)
 
@@ -479,7 +455,7 @@ Difficulty: Medium
 		var/lava_turf = /turf/open/lava/smooth
 		var/reset_turf = T.type
 		T.ChangeTurf(lava_turf, flags = CHANGETURF_INHERIT_AIR)
-		addtimer(CALLBACK(T, /turf.proc/ChangeTurf, reset_turf, null, CHANGETURF_INHERIT_AIR), reset_time, TIMER_OVERRIDE|TIMER_UNIQUE)
+		addtimer(CALLBACK(T, TYPE_PROC_REF(/turf, ChangeTurf), reset_turf, null, CHANGETURF_INHERIT_AIR), reset_time, TIMER_OVERRIDE|TIMER_UNIQUE)
 
 /obj/effect/temp_visual/drakewall
 	desc = "An ash drakes true flame."
@@ -512,7 +488,7 @@ Difficulty: Medium
 	duration = 10
 
 /obj/effect/temp_visual/dragon_flight
-	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
+	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	icon_state = "dragon"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_x = -16
@@ -521,7 +497,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/dragon_flight/Initialize(mapload, negative)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/flight, negative)
+	INVOKE_ASYNC(src, PROC_REF(flight), negative)
 
 /obj/effect/temp_visual/dragon_flight/proc/flight(negative)
 	if(negative)
@@ -529,7 +505,7 @@ Difficulty: Medium
 	else
 		animate(src, pixel_x = DRAKE_SWOOP_HEIGHT*0.1, pixel_z = DRAKE_SWOOP_HEIGHT*0.15, time = 3, easing = BOUNCE_EASING)
 	sleep(3)
-	icon_state = "swoop"
+	icon_state = "dragon_swoop"
 	if(negative)
 		animate(src, pixel_x = -DRAKE_SWOOP_HEIGHT, pixel_z = DRAKE_SWOOP_HEIGHT, time = 7)
 	else
@@ -573,7 +549,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/target/Initialize(mapload, list/flame_hit)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fall, flame_hit)
+	INVOKE_ASYNC(src, PROC_REF(fall), flame_hit)
 
 /obj/effect/temp_visual/target/proc/fall(list/flame_hit)
 	var/turf/T = get_turf(src)
@@ -625,8 +601,3 @@ Difficulty: Medium
 	return
 
 /mob/living/simple_animal/hostile/megafauna/dragon/icemoon
-
-/mob/living/simple_animal/hostile/megafauna/dragon/icemoon/death()
-	for(var/obj/effect/landmark/ashdrake_ghost_spawn/L in GLOB.landmarks_list)
-		L.create_roles()
-	..()

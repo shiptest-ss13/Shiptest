@@ -10,6 +10,10 @@
 #define BEE_POLLINATE_PEST_CHANCE 33
 #define BEE_POLLINATE_POTENCY_CHANCE 50
 
+/* For when we makes bees edible lmao (NEWFOOD)
+#define BEE_FOODGROUPS RAW | MEAT | GORE /*| BUGS*/
+*/
+
 /mob/living/simple_animal/hostile/poison/bees
 	name = "bee"
 	desc = "Buzzy buzzy bee, stingy sti- Ouch!"
@@ -92,7 +96,8 @@
 		return ..()
 	else
 		. = list() // The following code is only very slightly slower than just returning oview(vision_range, targets_from), but it saves us much more work down the line
-		var/list/searched_for = oview(vision_range, targets_from)
+		var/atom/target_from = GET_TARGETS_FROM(src)
+		var/list/searched_for = oview(vision_range, target_from)
 		for(var/obj/A in searched_for)
 			. += A
 		for(var/mob/A in searched_for)
@@ -306,7 +311,7 @@
 	QDEL_NULL(queen)
 	return ..()
 
-/mob/living/simple_animal/hostile/poison/bees/consider_wakeup()
+/mob/living/simple_animal/hostile/poison/bees/check_should_sleep()
 	if (beehome && loc == beehome) // If bees are chilling in their nest, they're not actively looking for targets
 		idle = min(100, ++idle)
 		if(idle >= BEE_IDLE_ROAMING && prob(BEE_PROB_GOROAM))
@@ -320,4 +325,4 @@
 
 /mob/living/simple_animal/hostile/poison/bees/short/Initialize(mapload, timetolive=50 SECONDS)
 	. = ..()
-	addtimer(CALLBACK(src, .proc/death), timetolive)
+	addtimer(CALLBACK(src, PROC_REF(death)), timetolive)

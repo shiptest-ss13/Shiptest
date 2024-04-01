@@ -113,43 +113,14 @@
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/tailclub
-	name = "Tail Club"
-	result = /obj/item/tailclub
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-				/obj/item/stack/sheet/metal = 1)
-	blacklist = list(/obj/item/organ/tail/lizard/fake)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/tailwhip
-	name = "Liz O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-				/obj/item/stack/cable_coil = 1)
-	blacklist = list(/obj/item/organ/tail/lizard/fake)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/catwhip
-	name = "Cat O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip/kitty
-	reqs = list(/obj/item/organ/tail/cat = 1,
-				/obj/item/stack/cable_coil = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/ed209
 	name = "ED209"
 	result = /mob/living/simple_animal/bot/secbot/ed209
 	reqs = list(/obj/item/robot_suit = 1,
 				/obj/item/clothing/head/helmet = 1,
 				/obj/item/clothing/suit/armor/vest = 1,
-				/obj/item/bodypart/l_leg/robot = 1,
-				/obj/item/bodypart/r_leg/robot = 1,
+				/obj/item/bodypart/leg/left/robot = 1,
+				/obj/item/bodypart/leg/right/robot = 1,
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/gun/energy/disabler = 1,
@@ -371,28 +342,6 @@
 				/datum/reagent/water/holywater = 10)
 	parts = list(/obj/item/camera = 1)
 	category = CAT_MISC
-
-/datum/crafting_recipe/lizardhat
-	name = "lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/organ/tail/lizard = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/lizardhat_alternate
-	name = "lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/stack/sheet/animalhide/lizard = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/kittyears
-	name = "Kitty Ears"
-	result = /obj/item/clothing/head/kitty/genuine
-	time = 10
-	reqs = list(/obj/item/organ/tail/cat = 1,
-				/obj/item/organ/ears/cat = 1)
-	category = CAT_CLOTHING
 
 /datum/crafting_recipe/skateboard
 	name = "Skateboard"
@@ -871,9 +820,9 @@
 /datum/crafting_recipe/ipickaxe
 	name = "Improvised Pickaxe"
 	reqs = list(
-		   /obj/item/crowbar = 1,
-		   /obj/item/kitchen/knife = 1,
-		   /obj/item/stack/tape = 1)
+			/obj/item/crowbar = 1,
+			/obj/item/kitchen/knife = 1,
+			/obj/item/stack/tape = 1)
 	result = /obj/item/pickaxe/improvised
 	category = CAT_MISC
 
@@ -1144,3 +1093,43 @@
 	reqs = list(/datum/reagent/consumable/ice = 25,
 	/obj/item/stack/sheet/metal = 2)
 	category = CAT_MISC
+
+/datum/crafting_recipe/aquarium
+	name = "Aquarium"
+	result = /obj/structure/aquarium
+	time = 10 SECONDS
+	reqs = list(/obj/item/stack/sheet/metal = 15,
+				/obj/item/stack/sheet/glass = 10,
+				/obj/item/aquarium_kit = 1)
+	category = CAT_MISC
+
+/datum/crafting_recipe/mothplush
+	name = "Moth Plushie"
+	result = /obj/item/toy/plush/moth
+	reqs = list(/obj/item/stack/sheet/animalhide/mothroach = 1,
+				/obj/item/organ/heart = 1,
+				/obj/item/stack/sheet/cotton/cloth = 3)
+	category = CAT_MISC
+
+/datum/crafting_recipe/breakawayflask
+	name = "Breakaway Flask"
+	result = /obj/item/reagent_containers/food/drinks/breakawayflask
+	time = 5 SECONDS
+	reqs = list(/obj/item/stack/sheet/glass = 5,
+				/obj/item/stack/sheet/mineral/plasma = 1)
+	tools = list(TOOL_WELDER)
+	category = CAT_DRINK
+
+/datum/crafting_recipe/fermenting_barrel
+	name = "Wooden Barrel"
+	result = /obj/structure/fermenting_barrel
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8)
+	time = 50
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/distiller
+	name = "Distiller"
+	result = /obj/structure/fermenting_barrel/distiller
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 8, /obj/item/stack/sheet/metal = 5, /datum/reagent/srm_bacteria = 30)
+	time = 50
+	category = CAT_PRIMAL

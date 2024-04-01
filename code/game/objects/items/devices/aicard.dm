@@ -21,10 +21,6 @@
 	desc = "A spoOoOoky upgrade to the intelliCard."
 	icon_state = "aispook"
 
-/obj/item/aicard/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is trying to upload [user.p_them()]self into [src]! That's not going to work out well!</span>")
-	return BRUTELOSS
-
 /obj/item/aicard/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity || !target)
@@ -36,10 +32,9 @@
 		target.transfer_ai(AI_TRANS_TO_CARD, user, null, src)
 		if(AI)
 			log_combat(user, AI, "carded", src)
-	update_icon() //Whatever happened, update the card's state (icon, name) to match.
+	update_appearance() //Whatever happened, update the card's state (icon, name) to match.
 
-/obj/item/aicard/update_icon()
-	cut_overlays()
+/obj/item/aicard/update_icon_state()
 	if(AI)
 		name = "[initial(name)] - [AI.name]"
 		if(AI.stat == DEAD)
@@ -52,6 +47,7 @@
 	else
 		name = initial(name)
 		icon_state = initial(icon_state)
+	return ..()
 
 /obj/item/aicard/ui_state(mob/user)
 	return GLOB.hands_state
@@ -64,7 +60,7 @@
 
 /obj/item/aicard/ui_data()
 	var/list/data = list()
-	if(AI)
+	if(!QDELETED(AI))
 		data["name"] = AI.name
 		data["laws"] = AI.laws.get_law_list(include_zeroth = TRUE, render_html = FALSE)
 		data["health"] = (AI.health + 100) / 2
@@ -103,4 +99,4 @@
 			AI.radio_enabled = !AI.radio_enabled
 			to_chat(AI, "<span class='warning'>Your Subspace Transceiver has been [AI.radio_enabled ? "enabled" : "disabled"]!</span>")
 			. = TRUE
-	update_icon()
+	update_appearance()

@@ -2,7 +2,7 @@
 	name = "belt"
 	desc = "Can hold various things."
 	icon = 'icons/obj/clothing/belts.dmi'
-	icon_state = "utilitybelt"
+	icon_state = "utility"
 	item_state = "utility"
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
@@ -10,28 +10,28 @@
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
 	equip_sound = 'sound/items/equip/toolbelt_equip.ogg'
+	w_class = WEIGHT_CLASS_BULKY
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
+	supports_variations = VOX_VARIATION
 	greyscale_icon_state = "belt"
 	greyscale_colors = list(list(16, 12), list(15, 11), list(13, 12))
 
-/obj/item/storage/belt/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /obj/item/storage/belt/update_overlays()
 	. = ..()
-	if(content_overlays)
-		for(var/obj/item/I in contents)
-			. += I.get_belt_overlay()
+	if(!content_overlays)
+		return
+	for(var/obj/item/I in contents)
+		. += I.get_belt_overlay()
+
 
 /obj/item/storage/belt/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/belt/utility
 	name = "toolbelt" //Carn: utility belt is nicer, but it bamboozles the text parsing.
 	desc = "Holds tools."
-	icon_state = "utilitybelt"
+	icon_state = "utility"
 	item_state = "utility"
 	content_overlays = TRUE
 	custom_price = 350
@@ -68,6 +68,10 @@
 		/obj/item/pipe_dispenser,
 		/obj/item/inducer,
 		/obj/item/plunger,
+		/obj/item/airlock_painter,
+		/obj/item/decal_painter,
+		/obj/item/floor_painter,
+		/obj/item/chisel,
 		/obj/item/clothing/glasses/welding, //WS edit: ok mald sure I'll add the welding stuff to the. ok.
 		/obj/item/clothing/mask/gas/welding,
 		/obj/item/clothing/head/welding //WS end
@@ -76,7 +80,7 @@
 /obj/item/storage/belt/utility/chief
 	name = "\improper Chief Engineer's toolbelt" //"the Chief Engineer's toolbelt", because "Chief Engineer's toolbelt" is not a proper noun
 	desc = "Holds tools, looks snazzy."
-	icon_state = "utilitybelt_ce"
+	icon_state = "utility_ce"
 	item_state = "utility_ce"
 
 /obj/item/storage/belt/utility/chief/full/PopulateContents()
@@ -147,8 +151,9 @@
 /obj/item/storage/belt/medical
 	name = "medical belt"
 	desc = "Can hold various medical equipment."
-	icon_state = "medicalbelt"
+	icon_state = "medical"
 	item_state = "medical"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/medical/webbing
 	name = "medical webbing"
@@ -222,7 +227,7 @@
 	new /obj/item/reagent_containers/syringe(src)
 	new /obj/item/reagent_containers/glass/bottle/epinephrine(src)
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/belt/medical/webbing/paramedic/PopulateContents()
 	new /obj/item/sensor_device(src)
@@ -231,7 +236,7 @@
 	new /obj/item/reagent_containers/syringe(src)
 	new /obj/item/reagent_containers/glass/bottle/epinephrine(src)
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/belt/medical/surgery/PopulateContents()
 	new /obj/item/scalpel(src)
@@ -241,14 +246,15 @@
 	new /obj/item/cautery(src)
 	new /obj/item/hemostat(src)
 	new /obj/item/hypospray/mkii(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/belt/security
 	name = "security belt"
 	desc = "Can hold security gear like handcuffs and flashes."
-	icon_state = "securitybelt"
+	icon_state = "security"
 	item_state = "security"//Could likely use a better one.
 	content_overlays = TRUE
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/security/ComponentInitialize()
 	. = ..()
@@ -282,7 +288,7 @@
 	new /obj/item/grenade/flashbang(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/melee/baton/loaded(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/belt/security/webbing
 	name = "security webbing"
@@ -297,6 +303,11 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 6
 
+/obj/item/storage/belt/security/webbing/bulldog/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 3)
+		new /obj/item/ammo_box/magazine/m12g(src)
+
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
 	desc = "A versatile chest rig, cherished by miners and hunters alike."
@@ -304,6 +315,7 @@
 	item_state = "explorer1"
 	w_class = WEIGHT_CLASS_BULKY
 	custom_price = 400
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/mining/ComponentInitialize()
 	. = ..()
@@ -376,8 +388,8 @@
 /obj/item/storage/belt/soulstone
 	name = "soul stone belt"
 	desc = "Designed for ease of access to the shards during a fight, as to not let a single enemy spirit slip away."
-	icon_state = "soulstonebelt"
-	item_state = "soulstonebelt"
+	icon_state = "soulstone"
+	item_state = "soulstone"
 
 /obj/item/storage/belt/soulstone/ComponentInitialize()
 	. = ..()
@@ -402,9 +414,10 @@
 /obj/item/storage/belt/champion
 	name = "championship belt"
 	desc = "Proves to the world that you are the strongest!"
-	icon_state = "championbelt"
-	item_state = "championbelt"
+	icon_state = "champion"
+	item_state = "champion"
 	custom_materials = list(/datum/material/gold=400)
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/champion/ComponentInitialize()
 	. = ..()
@@ -421,21 +434,47 @@
 	item_state = "militarywebbing"
 	resistance_flags = FIRE_PROOF
 
+	unique_reskin = list(
+		"None" = "militarywebbing",
+		"Desert" = "militarywebbing_desert",
+		"Woodland" = "militarywebbing_woodland",
+		"Snow" = "militarywebbing_snow",
+		"Urban" = "militarywebbing_urban",
+		)
+
+//this might seem obtuse instead of setting allow_post_reskins to TRUE, but reskin menu would open every time on alt click, which is not good for this
+/obj/item/storage/belt/military/examine(mob/user)
+	. = ..()
+	if(unique_reskin && current_skin)
+		. += "You can <b>Ctrl-Click</b> [src] to reskin it again after skinning it."
+
+/obj/item/storage/belt/military/CtrlClick(mob/user)
+	. = ..()
+	if(isliving(user) && in_range(src, user))
+		current_skin = null
+		to_chat(user, "You can reskin [src] again wtih <b>Alt-Click</b>.")
+
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/storage/belt/military/minutemen/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/ammo_box/magazine/p16(src)
+/obj/item/storage/belt/military/c20r/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/smgm45(src)
+
+/obj/item/storage/belt/military/assault/m90/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/m556(src)
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
 
 /obj/item/storage/belt/military/snack/Initialize()
 	. = ..()
-	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
+	var/sponsor = pick("Donk! Co.", "CyberSun")
 	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
 
 /obj/item/storage/belt/military/snack/ComponentInitialize()
@@ -482,7 +521,8 @@
 	desc = "A belt used by abductor agents."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "belt"
-	item_state = "security"
+	item_state = "grenadebeltnew"
+	unique_reskin = null
 
 /obj/item/storage/belt/military/abductor/full/PopulateContents()
 	new /obj/item/screwdriver/abductor(src)
@@ -497,17 +537,16 @@
 	name = "army belt"
 	desc = "A belt used by military forces."
 	icon_state = "grenadebeltold"
-	item_state = "security"
+	item_state = "grenadebeltol"
+	unique_reskin = null
 
 /obj/item/storage/belt/military/assault
 	name = "assault belt"
 	desc = "A tactical assault belt."
-	icon_state = "assaultbelt"
-	item_state = "security"
-
-/obj/item/storage/belt/military/assault/minutemen/PopulateContents()
-	for(var/i in 1 to 6)
-		new /obj/item/ammo_box/magazine/p16(src)
+	icon_state = "assault"
+	item_state = "assault"
+	supports_variations = VOX_VARIATION
+	unique_reskin = null
 
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
@@ -518,7 +557,7 @@
 	name = "grenadier belt"
 	desc = "A belt for holding grenades."
 	icon_state = "grenadebeltnew"
-	item_state = "security"
+	item_state = "grenadebeltnew"
 
 /obj/item/storage/belt/grenade/ComponentInitialize()
 	. = ..()
@@ -557,8 +596,8 @@
 /obj/item/storage/belt/wands
 	name = "wand belt"
 	desc = "A belt designed to hold various rods of power. A veritable fanny pack of exotic magic."
-	icon_state = "soulstonebelt"
-	item_state = "soulstonebelt"
+	icon_state = "soulstone"
+	item_state = "soulstone"
 
 /obj/item/storage/belt/wands/ComponentInitialize()
 	. = ..()
@@ -583,8 +622,9 @@
 /obj/item/storage/belt/janitor
 	name = "janibelt"
 	desc = "A belt used to hold most janitorial supplies."
-	icon_state = "janibelt"
-	item_state = "janibelt"
+	icon_state = "jani"
+	item_state = "jani"
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/belt/janitor/ComponentInitialize()
 	. = ..()
@@ -598,6 +638,7 @@
 		/obj/item/reagent_containers/spray,
 		/obj/item/soap,
 		/obj/item/holosign_creator,
+		/obj/item/clothing/suit/caution,
 		/obj/item/forcefield_projector,
 		/obj/item/key/janitor,
 		/obj/item/clothing/gloves,
@@ -617,8 +658,8 @@
 /obj/item/storage/belt/plant
 	name = "botanical belt"
 	desc = "A belt used to hold most hydroponics supplies. Suprisingly, not green."
-	icon_state = "plantbelt"
-	item_state = "plantbelt"
+	icon_state = "plant"
+	item_state = "plant"
 	content_overlays = TRUE
 
 /obj/item/storage/belt/plant/ComponentInitialize()
@@ -649,17 +690,17 @@
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding shotgun ammunition."
+	desc = "A bandolier for holding ammunition. Does not hold magazines"
 	icon_state = "bandolier"
 	item_state = "bandolier"
 
 /obj/item/storage/belt/bandolier/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 18
+	STR.max_items = 40
 	STR.display_numerical_stacking = TRUE
 	STR.set_holdable(list(
-		/obj/item/ammo_casing/shotgun
+		/obj/item/ammo_casing
 		))
 
 /obj/item/storage/belt/fannypack
@@ -737,6 +778,7 @@
 	desc = "An ornate sheath designed to hold an officer's blade."
 	icon_state = "sheath"
 	item_state = "sheath"
+	base_icon_state = "sheath"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/belt/sabre/ComponentInitialize()
@@ -744,7 +786,7 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 1
-	STR.use_sound = null
+	STR.use_sound = null //if youre wondering why this is null, its so you can look in your sheath to prepare to draw, without letting anyone know youre preparing to draw it
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
 		/obj/item/melee/sabre
@@ -762,24 +804,143 @@
 		var/obj/item/I = contents[1]
 		user.visible_message("<span class='notice'>[user] takes [I] out of [src].</span>", "<span class='notice'>You take [I] out of [src].</span>")
 		user.put_in_hands(I)
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
 /obj/item/storage/belt/sabre/update_icon_state()
-	icon_state = "sheath"
-	item_state = "sheath"
+	icon_state = "[base_icon_state]"
+	item_state = "[base_icon_state]"
 	if(contents.len)
 		icon_state += "-sabre"
 		item_state += "-sabre"
+	return ..()
 
 /obj/item/storage/belt/sabre/PopulateContents()
 	new /obj/item/melee/sabre(src)
-	update_icon()
+	update_appearance()
+
+/obj/item/storage/belt/sabre/solgov
+	name = "solarian sabre sheath"
+	desc = "An ornate sheath designed to hold an officer's blade."
+	base_icon_state = "sheath-solgov"
+	icon_state = "sheath-solgov"
+	item_state = "sheath-solgov"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/solgov/ComponentInitialize()
+	AddComponent(component_type)
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/solgov
+		))
+
+/obj/item/storage/belt/sabre/solgov/PopulateContents()
+	new /obj/item/melee/sabre/solgov(src)
+	update_appearance()
+
+/obj/item/storage/belt/sabre/suns
+	name = "SUNS sabre sheath"
+	desc = "A leather sheath designed to hold a blade."
+
+	icon = 'icons/obj/clothing/faction/suns/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/belt.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+	base_icon_state = "suns-sheath"
+	icon_state = "suns-sheath"
+	item_state = "suns-sheath"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/suns/ComponentInitialize()
+	AddComponent(component_type)
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/suns
+		))
+
+/obj/item/storage/belt/sabre/suns/PopulateContents()
+	new /obj/item/melee/sabre/suns(src)
+	update_appearance()
+
+
+/obj/item/storage/belt/sabre/suns/captain
+	name = "SUNS captain's sabre sheath"
+	desc = "An elegant and impressively made leather sheath designed to hold a captain's blade."
+
+	base_icon_state = "suns-capsheath"
+	icon_state = "suns-capsheath"
+	item_state = "suns-capsheath"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/suns/captain/ComponentInitialize()
+	AddComponent(component_type)
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/suns/captain
+		))
+
+/obj/item/storage/belt/sabre/suns/captain/PopulateContents()
+	new /obj/item/melee/sabre/suns/captain(src)
+	update_appearance()
+
+/obj/item/storage/belt/sabre/suns/cmo
+	name = "SUNS cane sheath"
+	desc = "A walking cane modified to hold a thin stick sabre. It does not fit on belts, contrary to popular belief."
+	slot_flags = null
+
+	icon = 'icons/obj/clothing/faction/suns/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/suns/belt.dmi'
+	lefthand_file = 'icons/mob/inhands/faction/suns/suns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/faction/suns/suns_righthand.dmi'
+
+	base_icon_state = "suns-cane"
+	icon_state = "suns-cane"
+	item_state = "suns-cane"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/suns/cmo/ComponentInitialize()
+	AddComponent(component_type)
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sabre/suns/cmo
+		))
+
+/obj/item/storage/belt/sabre/suns/cmo/PopulateContents()
+	new /obj/item/melee/sabre/suns/cmo(src)
+	update_appearance()
 
 /obj/item/storage/belt/security/webbing/inteq
 	name = "inteq webbing"
 	desc = "A set of tactical webbing for operators of the IRMG, can hold security gear."
 	icon_state = "inteq_webbing"
 	item_state = "inteq_webbing"
-	content_overlays = FALSE
+	supports_variations = VOX_VARIATION
+
+/obj/item/storage/belt/security/webbing/inteq/skm/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/skm_762_40(src)
+
+/obj/item/storage/belt/security/webbing/inteq/alt
+	name = "inteq drop pouch harness"
+	desc = "A harness with a bunch of pouches attached to them emblazoned in the colors of the IRMG, can hold security gear."
+	icon_state = "inteq_droppouch"
+	item_state = "inteq_droppouch"

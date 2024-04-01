@@ -1,3 +1,5 @@
+//TODO: make this code more readable. weird var names, convoluted logic, etc
+
 //Boxes of ammo
 /obj/item/ammo_box
 	name = "ammo box (null_reference_exception)"
@@ -10,7 +12,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	custom_materials = list(/datum/material/iron = 15000)
 	throwforce = 2
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	throw_speed = 3
 	throw_range = 7
 	///list containing the actual ammo within the magazine
@@ -25,6 +27,8 @@
 	var/caliber
 	///Allows multiple bullets to be loaded in from one click of another box/magazine
 	var/multiload = TRUE
+	///Whether or not an ammo box skips the do_after process (e.g. speedloaders)
+	var/instant_load = FALSE
 	///Whether the magazine should start with nothing in it
 	var/start_empty = FALSE
 	///cost of all the bullets in the magazine/box
@@ -45,7 +49,7 @@
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
-	update_icon()
+	update_appearance()
 
 ///gets a round from the magazine, if keep is TRUE the round will stay in the gun
 /obj/item/ammo_box/proc/get_round(keep = FALSE)
@@ -59,7 +63,7 @@
 		return b
 
 ///puts a round into the magazine
-/obj/item/ammo_box/proc/give_round(obj/item/ammo_casing/R, replace_spent = 0)
+/obj/item/ammo_box/proc/give_round(obj/item/ammo_casing/R, replace_spent = FALSE)
 	// Boxes don't have a caliber type, magazines do. Not sure if it's intended or not, but if we fail to find a caliber, then we fall back to ammo_type.
 	if(!R || (caliber && R.caliber != caliber) || (!caliber && R.type != ammo_type))
 		return FALSE
@@ -85,56 +89,99 @@
 /obj/item/ammo_box/proc/can_load(mob/user)
 	return TRUE
 
-/obj/item/ammo_box/attackby(obj/item/A, mob/user, params, silent = FALSE, replace_spent = 0)
+/obj/item/ammo_box/attackby(obj/item/attacking_obj, mob/user, params, silent = FALSE, replace_spent = FALSE)
 	var/num_loaded = 0
 	if(!can_load(user))
 		return
-	if(istype(A, /obj/item/ammo_box))
-		var/obj/item/ammo_box/AM = A
-		for(var/obj/item/ammo_casing/AC in AM.stored_ammo)
-			var/did_load = give_round(AC, replace_spent)
-			if(did_load)
-				AM.stored_ammo -= AC
-				num_loaded++
-			if(!did_load || !multiload)
+	if(istype(attacking_obj, /obj/item/ammo_box))
+		var/obj/item/ammo_box/attacking_box = attacking_obj
+		for(var/obj/item/ammo_casing/casing_to_insert in attacking_box.stored_ammo)
+			if(!((instant_load && attacking_box.instant_load) || (stored_ammo.len >= max_ammo) || do_after_mob(user, list(attacking_box), 1 SECONDS)))
 				break
-	if(istype(A, /obj/item/ammo_casing))
-		var/obj/item/ammo_casing/AC = A
-		if(give_round(AC, replace_spent))
-			user.transferItemToLoc(AC, src, TRUE)
+			var/did_load = give_round(casing_to_insert, replace_spent)
+			if(!did_load)
+				break
+			attacking_box.stored_ammo -= casing_to_insert
+			if(!silent)
+				playsound(get_turf(attacking_box), 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE) //src is nullspaced, which means internal magazines won't properly play sound, thus we use attacking_box
 			num_loaded++
+			attacking_obj.update_appearance()
+			update_appearance()
+
+	if(istype(attacking_obj, /obj/item/ammo_casing))
+		var/obj/item/ammo_casing/casing_to_insert = attacking_obj
+		if(give_round(casing_to_insert, replace_spent))
+			user.transferItemToLoc(casing_to_insert, src, TRUE)
+			if(!silent)
+				playsound(casing_to_insert, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
+			num_loaded++
+			update_appearance()
+
 
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-			playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-		A.update_icon()
-		update_icon()
+			to_chat(user, "<span class='notice'>You load [num_loaded] cartridge\s into \the [src]!</span>")
 	return num_loaded
 
 /obj/item/ammo_box/attack_self(mob/user)
 	var/obj/item/ammo_casing/A = get_round()
-	if(A)
-		A.forceMove(drop_location())
-		if(!user.is_holding(src) || !user.put_in_hands(A))	//incase they're using TK
-			A.bounce_away(FALSE, NONE)
-		playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
-		to_chat(user, "<span class='notice'>You remove a round from [src]!</span>")
-		update_icon()
+	if(!A)
+		return
 
-/obj/item/ammo_box/update_icon()
-	var/shells_left = stored_ammo.len
+	A.forceMove(drop_location())
+	var/mob/living/carbon/human/H = user
+	if(!(user.is_holding(src) || H.l_store == src || H.r_store == src) || !user.put_in_hands(A)) //incase they're using TK
+		A.bounce_away(FALSE, NONE)
+	playsound(src, 'sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
+	to_chat(user, "<span class='notice'>You remove a round from [src]!</span>")
+	update_ammo_count()
+
+/// Updates the materials and appearance of this ammo box
+/obj/item/ammo_box/proc/update_ammo_count()
+	update_custom_materials()
+	update_appearance()
+
+/obj/item/ammo_box/update_desc(updates)
+	. = ..()
+	var/shells_left = LAZYLEN(stored_ammo)
+	desc = "[initial(desc)] There [(shells_left == 1) ? "is" : "are"] [shells_left] shell\s left!"
+
+/obj/item/ammo_box/update_icon_state()
+	var/shells_left = LAZYLEN(stored_ammo)
 	switch(multiple_sprites)
 		if(AMMO_BOX_PER_BULLET)
 			icon_state = "[initial(icon_state)]-[shells_left]"
 		if(AMMO_BOX_FULL_EMPTY)
 			icon_state = "[initial(icon_state)]-[shells_left ? "[max_ammo]" : "0"]"
-	desc = "[initial(desc)] There [(shells_left == 1) ? "is" : "are"] [shells_left] shell\s left!"
-	for (var/material in bullet_cost)
-		var/material_amount = bullet_cost[material]
-		material_amount = (material_amount*stored_ammo.len) + base_cost[material]
-		custom_materials[material] = material_amount
-	set_custom_materials(custom_materials)//make sure we setup the correct properties again
+	return ..()
+
+/// Updates the amount of material in this ammo box according to how many bullets are left in it.
+/obj/item/ammo_box/proc/update_custom_materials()
+	var/temp_materials = custom_materials.Copy()
+	for(var/material in bullet_cost)
+		temp_materials[material] = (bullet_cost[material] * stored_ammo.len) + base_cost[material]
+	set_custom_materials(temp_materials)
+
+/obj/item/ammo_box/AltClick(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if((user.is_holding(src) ||H.l_store == src || H.r_store == src) && !(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))	//caliber because boxes have none, instant load because speedloaders use the base ammo box type with instant load on, and magazine for the obvious.
+			attack_self(user)
+			return
+	..()
+
+/obj/item/ammo_box/examine(mob/user)
+	. = ..()
+	if(!(caliber || istype(src, /obj/item/ammo_box/magazine) || instant_load))
+		. += "Alt-click on [src] while it in a pocket or your off-hand to take out a round while it is there."
+
+/obj/item/ammo_box/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	for(var/obj/item/ammo_casing/bullet2pop in stored_ammo)
+		bullet2pop.fire_act()
+
+/obj/item/ammo_box/magazine
+	w_class = WEIGHT_CLASS_SMALL //Default magazine weight, only differs for tiny mags and drums
 
 ///Count of number of bullets in the magazine
 /obj/item/ammo_box/magazine/proc/ammo_count(countempties = TRUE)
@@ -160,4 +207,5 @@
 
 /obj/item/ammo_box/magazine/handle_atom_del(atom/A)
 	stored_ammo -= A
-	update_icon()
+	update_ammo_count()
+

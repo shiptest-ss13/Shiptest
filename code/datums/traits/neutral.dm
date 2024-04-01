@@ -185,8 +185,8 @@
 	old_hair = H.hairstyle
 	H.hairstyle = "Bald"
 	H.update_hair()
-	RegisterSignal(H, COMSIG_CARBON_EQUIP_HAT, .proc/equip_hat)
-	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, .proc/unequip_hat)
+	RegisterSignal(H, COMSIG_CARBON_EQUIP_HAT, PROC_REF(equip_hat))
+	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, PROC_REF(unequip_hat))
 
 /datum/quirk/bald/remove()
 	if(quirk_holder)
@@ -203,7 +203,7 @@
 		W.hairstyle = pick(GLOB.hairstyles_list - "Bald")
 	else
 		W.hairstyle = old_hair
-	W.update_icon()
+	W.update_appearance()
 	var/list/slots = list (
 		"head" = ITEM_SLOT_HEAD,
 		"backpack" = ITEM_SLOT_BACKPACK,
@@ -226,3 +226,11 @@
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
 
+/datum/quirk/gunslinger
+	name = "Gunslinger"
+	desc = "You are one of the fastest guns in the frontier. Those new-fangled and complicated firearms don't suit you; pistols and semi-automatic rifles suit you better, but revolvers in particular were made for you. You can fan single action revolvers, flip any revolver, and have mastery of the greatest handgun ever made. NOT RECOMENDED FOR BEGINNERS. ADVANCED PLAYERS ONLY."
+	value = 0
+	gain_text = "<span class='notice'>The HP Shadow is greatest handgun ever made.</span>"
+	lose_text = "<span class='notice'>...Who the hell would use such antiquated weapons in this year?</span>"
+	medical_record_text = "Patient always has their hand around their holster."
+	mob_traits = list(TRAIT_GUNSLINGER)

@@ -16,6 +16,14 @@
 				return idcard.registered_name
 			else
 				return real_name
+	if(istype(wear_mask, /obj/item/clothing/mask/gas/syndicate/voicechanger))
+		var/obj/item/clothing/mask/gas/syndicate/voicechanger/V = wear_mask
+		if(V.voice_change && wear_id)
+			var/obj/item/card/id/idcard = wear_id.GetID()
+			if(istype(idcard))
+				return idcard.registered_name
+			else
+				return real_name
 		else
 			return real_name
 	if(istype(wear_mask, /obj/item/clothing/mask/infiltrator))
@@ -60,7 +68,7 @@
 		if(dongle.translate_binary)
 			return TRUE
 
-/mob/living/carbon/human/radio(message, list/message_mods = list(), list/spans, language) //Poly has a copy of this, lazy bastard
+/mob/living/carbon/human/radio(message, list/message_mods = list(), list/spans, language) //Polly has a copy of this, lazy bastard
 	. = ..()
 	if(. != FALSE)
 		return .

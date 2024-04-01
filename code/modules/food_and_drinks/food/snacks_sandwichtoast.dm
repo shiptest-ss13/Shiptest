@@ -104,3 +104,13 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("bread" = 2)
 	foodtype = GRAIN
+
+/obj/item/reagent_containers/food/snacks/blt
+	name = "BLT"
+	desc = "A classic bacon, lettuce, and tomato sandwich."
+	icon = 'icons/obj/food/burgerbread.dmi'
+	icon_state = "blt"
+	bitesize = 4
+	list_reagents = list(/datum/reagent/consumable/nutriment = 7, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("meat" = 1, "cabbage" = 1, "bread" = 2)
+	foodtype = MEAT | VEGETABLES | GRAIN | BREAKFAST

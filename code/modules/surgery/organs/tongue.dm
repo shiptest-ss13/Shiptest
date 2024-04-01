@@ -21,7 +21,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar
 	))
 
@@ -34,25 +33,16 @@
 /obj/item/organ/tongue/Insert(mob/living/carbon/M, special = 0)
 	..()
 	if (modifies_speech)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	M.UnregisterSignal(M, COMSIG_MOB_SAY)
 
 /obj/item/organ/tongue/Remove(mob/living/carbon/M, special = 0)
 	..()
-	UnregisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
-	M.RegisterSignal(M, COMSIG_MOB_SAY, /mob/living/carbon/.proc/handle_tongueless_speech)
+	UnregisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
+	M.RegisterSignal(M, COMSIG_MOB_SAY, TYPE_PROC_REF(/mob/living/carbon, handle_tongueless_speech))
 
 /obj/item/organ/tongue/could_speak_language(language)
 	return is_type_in_typecache(language, languages_possible)
-
-//Say_mod-Only Tongues
-/obj/item/organ/tongue/golem_base
-	name = "golem tongue"
-	say_mod = "rumbles"
-
-/obj/item/organ/tongue/golem_honk
-	name = "bananium tongue"
-	say_mod = "honks"
 
 /obj/item/organ/tongue/toma
 	name = "mutated tongue"
@@ -68,14 +58,25 @@
 	modifies_speech = TRUE
 
 /obj/item/organ/tongue/lizard/handle_speech(datum/source, list/speech_args)
-	if(speech_args[SPEECH_LANGUAGE] == /datum/language/draconic) //WS edit - lizard tongues don't hiss when speaking Draconic
+	if(speech_args[SPEECH_LANGUAGE] == /datum/language/draconic) //lizard tongues don't hiss when speaking Draconic
 		return
+
 	var/static/regex/lizard_hiss = new("s+", "g")
 	var/static/regex/lizard_hiSS = new("S+", "g")
+	var/static/regex/lizard_kss = new(@"(\w)x", "g")
+	var/static/regex/lizard_kSS = new(@"(\w)X", "g")
+	var/static/regex/lizard_ecks = new(@"\bx([\-|r|R]|\b)", "g")
+	var/static/regex/lizard_eckS = new(@"\bX([\-|r|R]|\b)", "g")
+
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message[1] != "*")
 		message = lizard_hiss.Replace(message, "sss")
 		message = lizard_hiSS.Replace(message, "SSS")
+		message = lizard_kss.Replace(message, "$1kss")
+		message = lizard_kSS.Replace(message, "$1KSS")
+		message = lizard_ecks.Replace(message, "ecks$1")
+		message = lizard_eckS.Replace(message, "ECKS$1")
+
 	speech_args[SPEECH_MESSAGE] = message
 
 /obj/item/organ/tongue/fly
@@ -97,7 +98,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/buzzwords,
 		/datum/language/ratvar
 	))
@@ -234,7 +234,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/calcic,
 		/datum/language/ratvar
 	))
@@ -298,25 +297,6 @@
 			new_message += message[i]
 	speech_args[SPEECH_MESSAGE] = new_message
 
-/obj/item/organ/tongue/squid
-	name = "squid tongue"
-	desc = "A smaller tentacle used to synthesize speech."
-	icon_state = "tonguesquid"
-	var/static/list/languages_possible_squid = typecacheof(list(
-		/datum/language/rylethian,
-		/datum/language/common,
-		/datum/language/xenocommon,
-		/datum/language/aphasia,
-		/datum/language/narsie,
-		/datum/language/monkey,
-		/datum/language/shadowtongue,
-		/datum/language/ratvar
-		))
-
-/obj/item/organ/tongue/squid/Initialize(mapload)
-	. = ..()
-	languages_possible = languages_possible_squid
-
 /obj/item/organ/tongue/ethereal
 	name = "electric discharger"
 	desc = "A sophisticated ethereal organ, capable of synthesising speech via electrical discharge."
@@ -336,7 +316,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar,
 	))
 
@@ -361,7 +340,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/ratvar,
 		/datum/language/slime
 	))
@@ -386,7 +364,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/buzzwords
 	))
 
@@ -428,7 +405,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/teceti_unified
 	))
 
@@ -452,7 +428,6 @@
 		/datum/language/moffic,
 		/datum/language/sylvan,
 		/datum/language/shadowtongue,
-		/datum/language/terrum,
 		/datum/language/vox_pidgin
 	))
 

@@ -13,7 +13,7 @@
 		update_living_varspeed()
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -52,6 +52,7 @@
 		S.removeSoulsharer(src) //If a sharer is destroy()'d, they are simply removed
 	sharedSoullinks = null
 
+	QDEL_LIST(surgeries)
 	QDEL_LIST(abilities) // so that the actions are deleted, which will clear refs to owner
 	QDEL_LIST(roundstart_quirks)
 	return ..()
@@ -92,6 +93,10 @@
 
 //Called when we bump onto a mob
 /mob/living/proc/MobBump(mob/M)
+	//No bumping/swapping/pushing others if you are on walk intent
+	if(m_intent == MOVE_INTENT_WALK)
+		return TRUE
+
 	//Even if we don't push/swap places, we "touched" them, so spread fire
 	spreadFire(M)
 
@@ -314,7 +319,7 @@
 		if(!iscarbon(src))
 			M.LAssailant = null
 		else
-			M.LAssailant = usr
+			M.LAssailant = WEAKREF(usr)
 		if(isliving(M))
 			var/mob/living/L = M
 			SEND_SIGNAL(M, COMSIG_LIVING_GET_PULLED, src)
@@ -398,11 +403,14 @@
 /mob/living/pointed(atom/A as mob|obj|turf in view(client.view, src))
 	if(incapacitated())
 		return FALSE
+
+	return ..()
+
+/mob/living/_pointed(atom/pointing_at)
 	if(!..())
 		return FALSE
-	visible_message("<span class='name'>[src]</span> points at [A].", "<span class='notice'>You point at [A].</span>")
-	return TRUE
-
+	log_message("points at [pointing_at]", LOG_EMOTE)
+	visible_message("<span class='infoplain'>[span_name("[src]")] points at [pointing_at].</span>", span_notice("You point at [pointing_at]."))
 
 /mob/living/verb/succumb(whispered as null)
 	set hidden = TRUE
@@ -499,8 +507,7 @@
 
 /mob/living/proc/get_up(instant = FALSE)
 	set waitfor = FALSE
-	var/static/datum/callback/rest_checks = CALLBACK(src, .proc/rest_checks_callback)
-	if(!instant && !do_mob(src, src, 2 SECONDS, uninterruptible = TRUE, extra_checks = rest_checks))
+	if(!instant && !do_mob(src, src, 2 SECONDS, uninterruptible = TRUE, extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback))))
 		return
 	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED))
 		return
@@ -643,7 +650,6 @@
 	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
 		remove_from_dead_mob_list()
 		add_to_alive_mob_list()
-		set_suicide(FALSE)
 		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()
@@ -655,7 +661,7 @@
 				var/obj/effect/proc_holder/spell/spell = S
 				spell.updateButtonIcon()
 		if(excess_healing)
-			INVOKE_ASYNC(src, .proc/emote, "gasp")
+			INVOKE_ASYNC(src, PROC_REF(emote), "gasp")
 			log_combat(src, src, "revived")
 
 /mob/living/proc/remove_CC()
@@ -787,10 +793,8 @@
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
 	if(!has_gravity())
 		return
-	var/blood_exists = FALSE
+	var/blood_exists = locate(/obj/effect/decal/cleanable/blood/trail_holder) in start
 
-	for(var/obj/effect/decal/cleanable/trail_holder/C in start) //checks for blood splatter already on the floor
-		blood_exists = TRUE
 	if(isturf(start))
 		var/trail_type = getTrail()
 		if(trail_type)
@@ -807,9 +811,9 @@
 				if((newdir in GLOB.cardinals) && (prob(50)))
 					newdir = turn(get_dir(target_turf, start), 180)
 				if(!blood_exists)
-					new /obj/effect/decal/cleanable/trail_holder(start, get_static_viruses())
+					new /obj/effect/decal/cleanable/blood/trail_holder(start, get_static_viruses())
 
-				for(var/obj/effect/decal/cleanable/trail_holder/TH in start)
+				for(var/obj/effect/decal/cleanable/blood/trail_holder/TH in start)
 					if((!(newdir in TH.existing_dirs) || trail_type == "trails_1" || trail_type == "trails_2") && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
 						TH.existing_dirs += newdir
 						TH.add_overlay(image('icons/effects/blood.dmi', trail_type, dir = newdir))
@@ -862,6 +866,10 @@
 	set name = "Resist"
 	set category = "IC"
 
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_resist)))
+
+///proc extender of [/mob/living/verb/resist] meant to make the process queable if the server is overloaded when the verb is called
+/mob/living/proc/execute_resist()
 	if(!can_resist())
 		return
 	changeNext_move(CLICK_CD_RESIST)
@@ -887,7 +895,6 @@
 		else if(last_special <= world.time)
 			resist_restraints() //trying to remove cuffs.
 
-
 /mob/proc/resist_grab(moving_resist)
 	return 1 //returning 0 means we successfully broke free
 
@@ -899,12 +906,6 @@
 			altered_grab_state++
 		var/resist_chance = BASE_GRAB_RESIST_CHANCE // see defines/combat.dm
 		resist_chance = max((resist_chance/altered_grab_state)-sqrt((getBruteLoss()+getFireLoss()+getOxyLoss()+getToxLoss()+getCloneLoss())*0.5+getStaminaLoss()), 0) //stamina loss is weighted twice as heavily as the other damage types in this calculation
-		//WS - Yuggolith tentacle grip/slip
-		if(issquidperson(pulledby))
-			resist_chance = resist_chance * 0.5
-		if(issquidperson(src))
-			resist_chance = resist_chance + (resist_chance * 0.5)
-		//WS - End
 		if(prob(resist_chance))
 			visible_message("<span class='danger'>[src] breaks free of [pulledby]'s grip!</span>", \
 							"<span class='danger'>You break free of [pulledby]'s grip!</span>", null, null, pulledby)
@@ -1327,39 +1328,6 @@
 		if(client)
 			reset_perspective()
 
-
-/mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
-	if (registered_z != new_z)
-		if (registered_z)
-			SSmobs.clients_by_zlevel[registered_z] -= src
-		if (client)
-			if (new_z)
-				//Figure out how many clients were here before
-				var/oldlen = SSmobs.clients_by_zlevel[new_z].len
-				SSmobs.clients_by_zlevel[new_z] += src
-				for (var/I in length(SSidlenpcpool.idle_mobs_by_zlevel[new_z]) to 1 step -1) //Backwards loop because we're removing (guarantees optimal rather than worst-case performance), it's fine to use .len here but doesn't compile on 511
-					var/mob/living/simple_animal/SA = SSidlenpcpool.idle_mobs_by_zlevel[new_z][I]
-					if (SA)
-						if(oldlen == 0)
-							//Start AI idle if nobody else was on this z level before (mobs will switch off when this is the case)
-							SA.toggle_ai(AI_IDLE)
-
-						//If they are also within a close distance ask the AI if it wants to wake up
-						if(get_dist(get_turf(src), get_turf(SA)) < MAX_SIMPLEMOB_WAKEUP_RANGE)
-							SA.consider_wakeup() // Ask the mob if it wants to turn on it's AI
-					//They should clean up in destroy, but often don't so we get them here
-					else
-						SSidlenpcpool.idle_mobs_by_zlevel[new_z] -= SA
-
-
-			registered_z = new_z
-		else
-			registered_z = null
-
-/mob/living/onTransitZ(old_z,new_z)
-	..()
-	update_z(new_z)
-
 /mob/living/MouseDrop_T(atom/dropping, atom/user)
 	var/mob/living/U = user
 	if(isliving(dropping))
@@ -1562,8 +1530,8 @@
 	if(!can_look_up())
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
-	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_up) //We stop looking up if we move.
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/start_look_up) //We start looking again after we move.
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_look_up)) //We stop looking up if we move.
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_up)) //We start looking again after we move.
 	start_look_up()
 
 /mob/living/proc/start_look_up()
@@ -1607,8 +1575,8 @@
 	if(!can_look_up()) //if we cant look up, we cant look down.
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
-	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_down) //We stop looking down if we move.
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/start_look_down) //We start looking again after we move.
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_look_down)) //We stop looking down if we move.
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_down)) //We start looking again after we move.
 	start_look_down()
 
 /mob/living/proc/start_look_down()

@@ -65,7 +65,7 @@ Featuring:
 	if(spawn_mecha_type)
 		var/obj/mecha/M = new spawn_mecha_type (get_turf(src))
 		if(istype(M))
-			INVOKE_ASYNC(src, .proc/enter_mecha, M)
+			INVOKE_ASYNC(src, PROC_REF(enter_mecha), M)
 
 
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot/proc/enter_mecha(obj/mecha/M)
@@ -73,7 +73,7 @@ Featuring:
 		return 0
 	LoseTarget() //Target was our mecha, so null it out
 	M.aimob_enter_mech(src)
-	set_targets_from(M)
+	targets_from = WEAKREF(M)
 	allow_movement_on_non_turfs = TRUE //duh
 	var/do_ranged = 0
 	for(var/equip in mecha.equipment)
@@ -99,7 +99,7 @@ Featuring:
 
 	mecha.aimob_exit_mech(src)
 	allow_movement_on_non_turfs = FALSE
-	set_targets_from(src)
+	targets_from = null
 
 	//Find a new mecha
 	wanted_objects = typecacheof(/obj/mecha/combat, TRUE)
@@ -232,13 +232,13 @@ Featuring:
 					if(mecha.defense_action && mecha.defense_action.owner && !mecha.defense_mode)
 						mecha.leg_overload_mode = 0
 						mecha.defense_action.Activate(TRUE)
-						addtimer(CALLBACK(mecha.defense_action, /datum/action/innate/mecha/mech_defense_mode.proc/Activate, FALSE), 100) //10 seconds of defense, then toggle off
+						addtimer(CALLBACK(mecha.defense_action, TYPE_PROC_REF(/datum/action/innate/mecha/mech_defense_mode, Activate), FALSE), 100) //10 seconds of defense, then toggle off
 
 				else if(prob(retreat_chance))
 					//Speed boost if possible
 					if(mecha.overload_action && mecha.overload_action.owner && !mecha.leg_overload_mode)
 						mecha.overload_action.Activate(TRUE)
-						addtimer(CALLBACK(mecha.overload_action, /datum/action/innate/mecha/mech_defense_mode.proc/Activate, FALSE), 100) //10 seconds of speeeeed, then toggle off
+						addtimer(CALLBACK(mecha.overload_action, TYPE_PROC_REF(/datum/action/innate/mecha/mech_defense_mode, Activate), FALSE), 100) //10 seconds of speeeeed, then toggle off
 
 					retreat_distance = 50
 					addtimer(VARSET_CALLBACK(src, retreat_distance, 0), 10 SECONDS)

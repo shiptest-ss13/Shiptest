@@ -14,7 +14,7 @@
 	name = "holographic energy sword"
 	desc = "May the force be with you. Sorta."
 	icon = 'icons/obj/transforming_energy.dmi'
-	icon_state = "sword0"
+	icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	force = 3.0
@@ -185,7 +185,7 @@
 
 	ready = !ready
 
-	update_icon()
+	update_appearance()
 
 	var/numbuttons = 0
 	var/numready = 0
@@ -202,6 +202,7 @@
 		icon_state = "auth_on"
 	else
 		icon_state = "auth_off"
+	return ..()
 
 /obj/machinery/readybutton/proc/begin_event()
 
@@ -222,8 +223,8 @@
 
 /obj/item/paper/fluff/holodeck/trek_diploma
 	name = "paper - Starfleet Academy Diploma"
-	info = {"<h2>Starfleet Academy</h2></br><p>Official Diploma</p></br>"}
+	default_raw_text = {"<h2>Starfleet Academy</h2></br><p>Official Diploma</p></br>"}
 
 /obj/item/paper/fluff/holodeck/disclaimer
 	name = "Holodeck Disclaimer"
-	info = "Bruises sustained in the holodeck can be healed simply by sleeping."
+	default_raw_text = "Bruises sustained in the holodeck can be healed simply by sleeping."

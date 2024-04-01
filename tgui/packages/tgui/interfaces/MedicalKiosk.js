@@ -19,7 +19,7 @@ export const MedicalKiosk = (props, context) => {
   const { active_status_1, active_status_2, active_status_3, active_status_4 } =
     data;
   return (
-    <Window width={575} height={420} resizable>
+    <Window width={575} height={420}>
       <Window.Content scrollable>
         <Flex mb={1}>
           <Flex.Item mr={1}>
@@ -86,7 +86,7 @@ const MedicalKioskScanButton = (props, context) => {
           color={paid ? 'green' : 'grey'}
         />
       </Stack.Item>
-      <Stack.Item grow>
+      <Stack.Item grow basis="content">
         <Button
           fluid
           icon={icon}
@@ -108,12 +108,12 @@ const MedicalKioskScanButton = (props, context) => {
 
 const MedicalKioskInstructions = (props, context) => {
   const { act, data } = useBackend(context);
-  const { kiosk_cost, patient_name } = data;
+  const { patient_name } = data;
   return (
     <Section minHeight="100%">
       <Box italic>
         Greetings Valued Employee! Please select a desired automatic health
-        check procedure. Diagnosis costs <b>{kiosk_cost} credits.</b>
+        check procedure.
       </Box>
       <Box mt={1}>
         <Box inline color="label" mr={1}>

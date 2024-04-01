@@ -40,7 +40,7 @@
 		icon_state = "cutters"
 		var/our_color = pick(wirecutter_colors)
 		add_atom_colour(wirecutter_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+		update_appearance()
 
 /obj/item/wirecutters/update_overlays()
 	. = ..()
@@ -65,18 +65,8 @@
 		user.visible_message("<span class='notice'>[user] cuts [C]'s restraints with [src]!</span>")
 		qdel(C.handcuffed)
 		return
-	else if(istype(C) && C.has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
-		to_chat(C, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-		if(do_after(user, 15, null, C))
-			to_chat(C, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
-			C.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 	else
 		..()
-
-/obj/item/wirecutters/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is cutting at [user.p_their()] arteries with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, usesound, 50, TRUE, -1)
-	return (BRUTELOSS)
 
 /obj/item/wirecutters/abductor
 	name = "alien wirecutters"

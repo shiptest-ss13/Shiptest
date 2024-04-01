@@ -1,9 +1,10 @@
-// Hey! Listen! Update \config\wasteruinblacklist.txt with your new ruins!
+// Hey! Listen! Update _maps\map_catalogue.txt with your new ruins!
 
 /datum/map_template/ruin/wasteplanet
 	prefix = "_maps/RandomRuins/WasteRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_WASTE
 
 /datum/map_template/ruin/wasteplanet/fortress
 	name = "Fortress of Solitide"

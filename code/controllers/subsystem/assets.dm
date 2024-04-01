@@ -31,3 +31,7 @@ SUBSYSTEM_DEF(assets)
 	transport.Initialize(cache)
 
 	..()
+
+/datum/controller/subsystem/assets/Recover()
+	cache = SSassets.cache
+	preload = SSassets.preload

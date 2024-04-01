@@ -7,6 +7,11 @@
  *
  **/
 
+//Init the debugger datum first so we can debug Master
+//You might wonder why not just create the debugger datum global in its own file, since its loaded way earlier than this DM file
+//Well for whatever reason then the Master gets created first and then the debugger when doing that
+//So thats why this code lives here now, until someone finds out how Byond inits globals
+GLOBAL_REAL(Debugger, /datum/debugger) = new
 //This is the ABSOLUTE ONLY THING that should init globally like this
 //2019 update: the failsafe,config and Global controllers also do it
 GLOBAL_REAL(Master, /datum/controller/master) = new
@@ -88,15 +93,27 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/list/_subsystems = list()
 	subsystems = _subsystems
 	if (Master != src)
-		if (istype(Master))
+		if (istype(Master)) //If there is an existing MC take over his stuff and delete it
 			Recover()
 			qdel(Master)
+			Master = src
 		else
+			//Code used for first master on game boot or if existing master got deleted
+			Master = src
 			var/list/subsytem_types = subtypesof(/datum/controller/subsystem)
 			sortTim(subsytem_types, /proc/cmp_subsystem_init)
+			//Find any abandoned subsystem from the previous master (if there was any)
+			var/list/existing_subsystems = list()
+			for(var/global_var in global.vars)
+				if (istype(global.vars[global_var], /datum/controller/subsystem))
+					existing_subsystems += global.vars[global_var]
+			//Either init a new SS or if an existing one was found use that
 			for(var/I in subsytem_types)
-				_subsystems += new I
-		Master = src
+				var/datum/controller/subsystem/existing_subsystem = locate(I) in existing_subsystems
+				if (istype(existing_subsystem))
+					_subsystems += existing_subsystem
+				else
+					_subsystems += new I
 
 	if(!GLOB)
 		new /datum/controller/global_vars
@@ -127,7 +144,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/delay = 50 * ++Master.restart_count
 	Master.restart_timeout = world.time + delay
 	Master.restart_clear = world.time + (delay * 2)
-	Master.processing = FALSE //stop ticking this one
+	if (Master) //Can only do this if master hasn't been deleted
+		Master.processing = FALSE //stop ticking this one
 	try
 		new/datum/controller/master()
 	catch
@@ -173,8 +191,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		current_runlevel = Master.current_runlevel
 		StartProcessing(10)
 	else
-		to_chat(world, "<span class='boldannounce'>The Master Controller is having some issues, we will need to re-initialize EVERYTHING</span>")
-		Initialize(20, TRUE)
+		to_chat(world, span_boldannounce("The Master Controller is having some issues, we will need to re-initialize EVERYTHING"))
+		Initialize(20, TRUE, FALSE)
 
 
 // Please don't stuff random bullshit here,
@@ -325,9 +343,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	queue_tail = null
 	//these sort by lower priorities first to reduce the number of loops needed to add subsequent SS's to the queue
 	//(higher subsystems will be sooner in the queue, adding them later in the loop means we don't have to loop thru them next queue add)
-	sortTim(tickersubsystems, /proc/cmp_subsystem_priority)
+	sortTim(tickersubsystems, GLOBAL_PROC_REF(cmp_subsystem_priority))
 	for(var/I in runlevel_sorted_subsystems)
-		sortTim(runlevel_sorted_subsystems, /proc/cmp_subsystem_priority)
+		sortTim(I, GLOBAL_PROC_REF(cmp_subsystem_priority))
 		I += tickersubsystems
 
 	var/cached_runlevel = current_runlevel
@@ -349,6 +367,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	while (1)
 		tickdrift = max(0, MC_AVERAGE_FAST(tickdrift, (((REALTIMEOFDAY - init_timeofday) - (world.time - init_time)) / world.tick_lag)))
 		var/starting_tick_usage = TICK_USAGE
+
 		if (init_stage != init_stage_completed)
 			return MC_LOOP_RTN_NEWSTAGES
 		if (processing <= 0)
@@ -655,8 +674,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 /datum/controller/master/StartLoadingMap()
 	//disallow more than one map to load at once, multithreading it will just cause race conditions
-	while(map_loading)
-		stoplag()
+	UNTIL(!map_loading)
 	for(var/S in subsystems)
 		var/datum/controller/subsystem/SS = S
 		SS.StartLoadingMap()

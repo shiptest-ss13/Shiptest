@@ -87,6 +87,13 @@
 	icon_state = "nosmoking"
 	is_editable = TRUE
 
+/obj/structure/sign/warning/nosmoking/burnt
+	name = "\improper NO SMOKING sign"
+	sign_change_name = "Warning - No Smoking Burnt"
+	desc = "A warning sign with reads 'NO SMOKING'. It seems a bit seared."
+	icon_state = "nosmoking2_b"
+	is_editable = TRUE
+
 /obj/structure/sign/warning/radiation
 	name = "\improper HAZARDOUS RADIATION sign"
 	sign_change_name = "Warning - Radiation"

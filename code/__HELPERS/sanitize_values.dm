@@ -48,7 +48,7 @@
 				return default
 	return default
 
-/proc/sanitize_hexcolor(color, desired_format=3, include_crunch=0, default)
+/proc/sanitize_hexcolor(color, desired_format = 6, include_crunch = FALSE, default)
 	var/crunch = include_crunch ? "#" : ""
 	if(!istext(color))
 		color = ""
@@ -77,6 +77,11 @@
 			i += length(color[i])
 
 	if(length_char(.) != desired_format)
+		if(desired_format == 6 && length_char(.) == 3) //doing this quickly rather than elegantly
+			var/red = .[1]
+			var/green = .[2]
+			var/blue = .[3]
+			return crunch + "[red][red][green][green][blue][blue]"
 		if(default)
 			return default
 		return crunch + repeat_string(desired_format, "0")

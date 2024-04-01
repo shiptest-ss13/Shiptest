@@ -48,33 +48,6 @@
 	c.dataId = ++securityCrimeCounter
 	return c
 
-/datum/datacore/proc/addCitation(id = "", datum/data/crime/crime)
-	for(var/datum/data/record/R in security)
-		if(R.fields["id"] == id)
-			var/list/crimes = R.fields["citation"]
-			crimes |= crime
-			return
-
-/datum/datacore/proc/removeCitation(id, cDataId)
-	for(var/datum/data/record/R in security)
-		if(R.fields["id"] == id)
-			var/list/crimes = R.fields["citation"]
-			for(var/datum/data/crime/crime in crimes)
-				if(crime.dataId == text2num(cDataId))
-					crimes -= crime
-					return
-
-/datum/datacore/proc/payCitation(id, cDataId, amount)
-	for(var/datum/data/record/R in security)
-		if(R.fields["id"] == id)
-			var/list/crimes = R.fields["citation"]
-			for(var/datum/data/crime/crime in crimes)
-				if(crime.dataId == text2num(cDataId))
-					crime.paid = crime.paid + amount
-					var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_SEC)
-					D.adjust_money(amount)
-					return
-
 /**
  * Adds crime to security record.
  *
@@ -264,7 +237,7 @@
 		var/datum/data/record/M = new()
 		M.fields["id"]			= id
 		M.fields["name"]		= H.real_name
-		M.fields["blood_type"]	= H.dna.blood_type
+		M.fields["blood_type"]	= H.dna.blood_type.name
 		M.fields["b_dna"]		= H.dna.unique_enzymes
 		M.fields["mi_dis"]		= "None"
 		M.fields["mi_dis_d"]	= "No minor disabilities have been declared."
@@ -282,7 +255,6 @@
 		S.fields["id"]			= id
 		S.fields["name"]		= H.real_name
 		S.fields["criminal"]	= "None"
-		S.fields["citation"]	= list()
 		S.fields["crim"]		= list()
 		S.fields["notes"]		= "No notes."
 		security += S

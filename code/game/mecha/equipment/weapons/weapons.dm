@@ -72,7 +72,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/start_cooldown()
 	set_ready_state(0)
 	chassis.use_power(energy_drain*get_shot_amount())
-	addtimer(CALLBACK(src, .proc/set_ready_state, 1), equip_cooldown)
+	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 8
@@ -150,6 +150,25 @@
 	else if(M.equipment.len < M.max_equip && istype(M))
 		return 1
 	return 0
+
+//Exosuit-mounted kinetic accelerator
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
+	equip_cooldown = 10
+	name = "Exosuit Proto-kinetic Accelerator"
+	desc = "An exosuit-mounted mining tool that does increased damage in low pressure. Drawing from an onboard power source allows it to project further than the handheld version."
+	icon_state = "mecha_kineticgun"
+	energy_drain = 30
+	projectile = /obj/projectile/kinetic/mech
+	fire_sound = 'sound/weapons/kenetic_accel.ogg'
+	harmful = TRUE
+
+//attachable to all mechas, like the plasma cutter
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/can_attach(obj/mecha/working/Mech)
+	if(..()) //combat mech
+		return TRUE
+	else if(Mech.equipment.len < Mech.max_equip && istype(Mech))
+		return TRUE
+	return FALSE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
 	name = "\improper PBT \"Pacifier\" mounted taser"
@@ -420,7 +439,7 @@
 	var/turf/T = get_turf(src)
 	message_admins("[ADMIN_LOOKUPFLW(chassis.occupant)] fired a [src] in [ADMIN_VERBOSEJMP(T)]")
 	log_game("[key_name(chassis.occupant)] fired a [src] in [AREACOORD(T)]")
-	addtimer(CALLBACK(F, /obj/item/grenade/flashbang.proc/prime), det_time)
+	addtimer(CALLBACK(F, TYPE_PROC_REF(/obj/item/grenade/flashbang, prime)), det_time)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/clusterbang //Because I am a heartless bastard -Sieve //Heartless? for making the poor man's honkblast? - Kaze
 	name = "\improper SOB-3 grenade launcher"
@@ -501,7 +520,7 @@
 	if(!istype(PG))
 		return
 	//has to be low sleep or it looks weird, the beam doesn't exist for very long so it's a non-issue
-	chassis.Beam(PG, icon_state = "chain", time = missile_range * 20, maxdistance = missile_range + 2, beam_sleep_time = 1)
+	chassis.Beam(PG, icon_state = "chain", time = missile_range * 20, maxdistance = missile_range + 2)
 
 /obj/item/punching_glove
 	name = "punching glove"

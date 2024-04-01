@@ -69,7 +69,8 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
 	if(..()) //we have a target
-		if(isliving(target) && !target.Adjacent(targets_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
+		var/atom/target_from = GET_TARGETS_FROM(src)
+		if(isliving(target) && !target.Adjacent(target_from) && ranged_cooldown <= world.time)//No more being shot at point blank or spammed with RNG beams
 			OpenFire(target)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/ex_act(severity, target)
@@ -92,7 +93,7 @@
 			set_varspeed(0)
 			warmed_up = TRUE
 			projectiletype = /obj/projectile/temp/basilisk/heated
-			addtimer(CALLBACK(src, .proc/cool_down), 3000)
+			addtimer(CALLBACK(src, PROC_REF(cool_down)), 3000)
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/proc/cool_down()
 	visible_message("<span class='warning'>[src] appears to be cooling down...</span>")
@@ -116,7 +117,9 @@
 	attack_same = TRUE		// So we'll attack watchers
 	butcher_results = list(/obj/item/stack/sheet/sinew = 4, /obj/item/stack/sheet/bone = 2)
 	lava_drinker = FALSE
-	var/shell_health = 50
+	maxHealth = 40
+	health = 40
+	var/shell_health = 80 //Tough to crack, easy to kill.
 	var/has_shell = TRUE
 	var/list/shell_loot = list(/obj/item/stack/ore/diamond, /obj/item/stack/ore/diamond)
 	var/shell_snap_message = FALSE
@@ -134,9 +137,9 @@
 				audible_message("<span class='danger'>[src]'s shell violently cracks as it's armor is shattered!</span>")
 				throw_message = "bounces off of"
 				shell_snap_message = TRUE //so it doesnt repeat
-		update_icon()
+		update_appearance()
 		return TRUE
-	update_icon()
+	update_appearance()
 	return FALSE
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/CanAttack(atom/the_target)
@@ -159,6 +162,7 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/bullet_act(obj/projectile/P)
 	shell_damage(BULLET_SHELL_DAMAGE)
 	if(has_shell)
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 85, TRUE)
 		visible_message("<span class='notice'>The [P] is absorbed by the [src]'s shell, dealing minimal damage!</span>") //make it less confusing when bullets do no damage
 	return ..()
 
@@ -182,7 +186,7 @@
 	..()
 	cut_overlays()
 
-/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/update_icon()
+/mob/living/simple_animal/hostile/asteroid/basilisk/whitesands/update_appearance()
 	. = ..()
 	if(stat == CONSCIOUS)
 		if(has_shell)
@@ -206,14 +210,14 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher
 	name = "watcher"
 	desc = "A levitating, eye-like creature held aloft by winglike formations of sinew. A sharp spine of crystal protrudes from its body."
-	icon = 'icons/mob/lavaland/watcher.dmi'
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
 	icon_state = "watcher"
 	icon_living = "watcher"
 	icon_aggro = "watcher"
 	icon_dead = "watcher_dead"
 	health_doll_icon = "watcher"
-	pixel_x = -10
-	base_pixel_x = -10
+	pixel_x = -12
+	base_pixel_x = -12
 	throw_message = "bounces harmlessly off of"
 	melee_damage_lower = 5
 	melee_damage_upper = 12
@@ -342,6 +346,7 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/forgotten
 	name = "forgotten watcher"
 	desc = "This watcher has a cancerous crystal growth on it, forever scarring it and deforming it into this twisted form."
+	icon = 'icons/mob/lavaland/watcher.dmi'
 	icon_state = "forgotten"
 	icon_living = "forgotten"
 	icon_aggro = "forgotten"

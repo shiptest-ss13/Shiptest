@@ -228,6 +228,8 @@
 		M.name = replacetext(M.name,oldtitle,title)
 	for(var/obj/machinery/door/M in A)
 		M.name = replacetext(M.name,oldtitle,title)
+	for(var/obj/machinery/fax/M in A)
+		M.fax_name = replacetext(M.fax_name,oldtitle,title)
 	//TODO: much much more. Unnamed airlocks, cameras, etc.
 
 /obj/item/areaeditor/shuttle
@@ -304,6 +306,14 @@
 			continue
 		if(!place.requires_power || (place.area_flags & NOTELEPORT) || (place.area_flags & HIDDEN_AREA))
 			continue // No expanding powerless rooms etc
+		var/area/ship/underlying_area = target_shuttle?.underlying_turf_area[turfs[i]]
+		if(istype(underlying_area) && underlying_area.mobile_port)
+			to_chat(creator, "<span class='warning'>Shuttle expansion protocals are disabled while docked to another ship.</span>")
+			return // While this could possibly work, it'll be a lot of effort to implement and will likely be a buggy mess
+		var/area/ship/ship_place = place
+		if(istype(ship_place) && ship_place.mobile_port != target_shuttle)
+			to_chat(creator, "<span class='warning'>The new area must not be in or next to a different shuttle.</span>")
+			return // No stealing other ship's areas please
 		areas[place.name] = place
 
 		// The following code checks to see if the tile is within one tile of the target shuttle
@@ -342,6 +352,8 @@
 	for(var/i in 1 to turfs.len)
 		var/turf/thing = turfs[i]
 		var/area/old_area = thing.loc
+		if(!target_shuttle.shuttle_areas[old_area])
+			target_shuttle.underlying_turf_area[thing] = old_area
 		newA.contents += thing
 		thing.change_area(old_area, newA)
 
@@ -363,15 +375,20 @@
 
 	target_shuttle.shuttle_areas[newA] = TRUE
 
-	newA.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
+	newA.connect_to_shuttle(target_shuttle, target_shuttle.docked)
 	newA.mobile_port = target_shuttle
 	for(var/atom/thing in newA)
-		thing.connect_to_shuttle(target_shuttle, target_shuttle.get_docked())
+		thing.connect_to_shuttle(target_shuttle, target_shuttle.docked)
 
 	target_shuttle.recalculate_bounds()
 
 	to_chat(creator, "<span class='notice'>You have created a new area, named [newA.name]. It is now weather proof, and constructing an APC will allow it to be powered.</span>")
 	return TRUE
+
+/obj/item/areaeditor/shuttle/cyborg
+	name = "ship structure schematics"
+	desc = "A digital copy of the local ship blueprints and zoning stored in your memory, used to expand flying shuttles."
+	fluffnotice = "For use in engineering cyborgs only. Wipe from memory upon disabling."
 
 // VERY EXPENSIVE (I think)
 /obj/docking_port/mobile/proc/recalculate_bounds()

@@ -134,12 +134,12 @@
 /obj/item/hot_potato/proc/activate(delay, mob/user)
 	if(active)
 		return
-	update_icon()
+	update_appearance()
 	if(sticky)
 		ADD_TRAIT(src, TRAIT_NODROP, HOT_POTATO_TRAIT)
 	name = "primed [name]"
 	activation_time = timer + world.time
-	detonation_timerid = addtimer(CALLBACK(src, .proc/detonate), delay, TIMER_STOPPABLE)
+	detonation_timerid = addtimer(CALLBACK(src, PROC_REF(detonate)), delay, TIMER_STOPPABLE)
 	START_PROCESSING(SSfastprocess, src)
 	if(user)
 		log_bomber(user, "has primed a", src, "for detonation (Timer:[delay],Explosive:[detonate_explosion],Range:[detonate_dev_range]/[detonate_heavy_range]/[detonate_light_range]/[detonate_fire_range])")
@@ -148,7 +148,7 @@
 	active = TRUE
 
 /obj/item/hot_potato/proc/deactivate()
-	update_icon()
+	update_appearance()
 	name = initial(name)
 	REMOVE_TRAIT(src, TRAIT_NODROP, HOT_POTATO_TRAIT)
 	deltimer(detonation_timerid)
@@ -158,7 +158,8 @@
 	active = FALSE
 
 /obj/item/hot_potato/update_icon_state()
-	icon_state = active? icon_on : icon_off
+	icon_state = active ? icon_on : icon_off
+	return ..()
 
 /obj/item/hot_potato/syndicate
 	detonate_light_range = 4

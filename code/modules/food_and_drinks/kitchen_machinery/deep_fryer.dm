@@ -45,7 +45,8 @@
 		/obj/item/reagent_containers/food/condiment,
 		/obj/item/storage,
 		/obj/item/smallDelivery,
-		/obj/item/his_grace))
+		)
+	)
 	var/datum/looping_sound/deep_fryer/fry_loop
 
 /obj/machinery/deepfryer/Initialize()
@@ -57,6 +58,11 @@
 	component_parts += new /obj/item/stock_parts/micro_laser(null)
 	RefreshParts()
 	fry_loop = new(list(src), FALSE)
+
+/obj/machinery/deepfryer/Destroy()
+	QDEL_NULL(frying)
+	QDEL_NULL(fry_loop)
+	return ..()
 
 /obj/machinery/deepfryer/RefreshParts()
 	var/oil_efficiency

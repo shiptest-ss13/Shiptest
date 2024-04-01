@@ -185,6 +185,10 @@
 /// just check density
 #define ATMOS_PASS_DENSITY -2
 
+// Adjacency flags
+#define ATMOS_ADJACENT_ANY (1<<0)
+#define ATMOS_ADJACENT_FIRELOCK (1<<1)
+
 #define CANATMOSPASS(A, O) (A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : (A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass))
 #define CANVERTICALATMOSPASS(A, O) (A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : (A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical))
 
@@ -213,13 +217,20 @@
 #define ATMOS_TANK_AIRMIX "o2=2644;n2=10580;TEMP=293.15"
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 
-//LAVALAND
+//PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
 #define LAVALAND_EQUIPMENT_EFFECT_PRESSURE 90
 #define ICEMOON_DEFAULT_ATMOS "ICEMOON_ATMOS"
+#define GAS_GIANT_ATMOS "GAS_GIANT_ATMOS"
+#define PLASMA_GIANT_ATMOS "PLASMA_GIANT_ATMOS"
+#define WASTEPLANET_DEFAULT_ATMOS "WASTEPLANET_ATMOS"
+#define LAVALAND_DEFAULT_ATMOS "LAVALAND_ATMOS"
+
 
 //ATMOS MIX IDS
-#define LAVALAND_DEFAULT_ATMOS "LAVALAND_ATMOS"
+
+
+
 
 //ATMOSIA GAS MONITOR TAGS
 #define ATMOS_GAS_MONITOR_INPUT_O2 "o2_in"
@@ -285,16 +296,6 @@
 #define INCINERATOR_ATMOS_AIRLOCK_INTERIOR "atmos_incinerator_airlock_interior"
 #define INCINERATOR_ATMOS_AIRLOCK_EXTERIOR "atmos_incinerator_airlock_exterior"
 
-//Syndicate lavaland base incinerator (lavaland_surface_syndicate_base1.dmm)
-#define INCINERATOR_SYNDICATELAVA_IGNITER "syndicatelava_igniter"
-#define INCINERATOR_SYNDICATELAVA_MAINVENT "syndicatelava_mainvent"
-#define INCINERATOR_SYNDICATELAVA_AUXVENT "syndicatelava_auxvent"
-#define INCINERATOR_SYNDICATELAVA_DP_VENTPUMP "syndicatelava_airlock_pump"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_SENSOR "syndicatelava_airlock_sensor"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_CONTROLLER "syndicatelava_airlock_controller"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_INTERIOR "syndicatelava_airlock_interior"
-#define INCINERATOR_SYNDICATELAVA_AIRLOCK_EXTERIOR "syndicatelava_airlock_exterior"
-
 //MULTIPIPES
 //IF YOU EVER CHANGE THESE CHANGE SPRITES TO MATCH.
 #define PIPING_LAYER_MIN 1
@@ -331,6 +332,13 @@
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
 
+// Flag for update_air_ref()
+#define AIR_REF_CLOSED_TURF -1
+#define AIR_REF_SPACE_TURF 0
+
+#define AIR_REF_PLANETARY_TURF (1<<0) //SIMULATION_DIFFUSE 0b1
+#define AIR_REF_OPEN_TURF (1<<1) //SIMULATION_ALL 0b10
+
 //HELPERS
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \
 	if(T.dir & (NORTH|SOUTH)) {									 \
@@ -351,17 +359,6 @@
 #define PIPING_LAYER_DOUBLE_SHIFT(T, PipingLayer) \
 	T.pixel_x = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_X; \
 	T.pixel_y = (PipingLayer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_P_Y;
-
-GLOBAL_VAR(atmos_extools_initialized) // this must be an uninitialized (null) one or init_monstermos will be called twice because reasons
-#define ATMOS_EXTOOLS_CHECK if(!GLOB.atmos_extools_initialized){ \
-	GLOB.atmos_extools_initialized=TRUE; \
-	if(fexists(world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so")){ \
-		var/result = call((world.system_type == MS_WINDOWS ? "./byond-extools.dll" : "./libbyond-extools.so"),"init_monstermos")(); \
-		if(result != "ok") {CRASH(result);} \
-	} else { \
-		CRASH("byond-extools.dll does not exist!"); \
-	} \
-}
 
 GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
 	"amethyst" = rgb(130,43,255), //supplymain

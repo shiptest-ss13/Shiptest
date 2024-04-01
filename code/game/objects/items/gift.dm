@@ -28,10 +28,6 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 
 	contains_type = get_gift_type()
 
-/obj/item/a_gift/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] peeks inside [src] and cries [user.p_them()]self to death! It looks like [user.p_they()] [user.p_were()] on the naughty list...</span>")
-	return (BRUTELOSS)
-
 /obj/item/a_gift/examine(mob/M)
 	. = ..()
 	if((M.mind && HAS_TRAIT(M.mind, TRAIT_PRESENT_VISION)) || isobserver(M))
@@ -66,7 +62,7 @@ GLOBAL_LIST_EMPTY(possible_gifts)
 		/obj/item/grown/corncob,
 		/obj/item/poster/random_contraband,
 		/obj/item/poster/random_official,
-		/obj/item/book/manual/wiki/barman_recipes,
+		/obj/item/book/manual/wiki/drinks,
 		/obj/item/book/manual/chef_recipes,
 		/obj/item/bikehorn,
 		/obj/item/toy/beach_ball,

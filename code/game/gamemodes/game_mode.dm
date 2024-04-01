@@ -92,13 +92,6 @@
 	if(!report)
 		report = !CONFIG_GET(flag/no_intercept_report)
 
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles))
-		var/delay = CONFIG_GET(number/reopen_roundstart_suicide_roles_delay)
-		if(delay)
-			delay = (delay SECONDS)
-		else
-			delay = (4 MINUTES) //default to 4 minutes if the delay isn't defined.
-
 	if(SSdbcore.Connect())
 		var/list/to_set = list()
 		var/arguments = list()
@@ -117,7 +110,7 @@
 			query_round_game_mode.Execute()
 			qdel(query_round_game_mode)
 	if(report)
-		addtimer(CALLBACK(src, .proc/send_intercept, 0), rand(waittime_l, waittime_h))
+		addtimer(CALLBACK(src, PROC_REF(send_intercept), 0), rand(waittime_l, waittime_h))
 	generate_station_goals()
 	gamemode_ready = TRUE
 	return 1
@@ -427,9 +420,6 @@
 
 /datum/game_mode/proc/remove_antag_for_borging(datum/mind/newborgie)
 	SSticker.mode.remove_cultist(newborgie, 0, 0)
-	var/datum/antagonist/rev/rev = newborgie.has_antag_datum(/datum/antagonist/rev)
-	if(rev)
-		rev.remove_revolutionary(TRUE)
 
 /datum/game_mode/proc/generate_station_goals()
 	var/list/possible = list()

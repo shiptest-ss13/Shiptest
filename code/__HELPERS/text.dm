@@ -236,6 +236,24 @@
 			return copytext(text, 1, i + 1)
 	return ""
 
+//Returns a string with reserved characters and spaces after the first and last letters removed
+//Like trim(), but very slightly faster. worth it for niche usecases
+/proc/trim_reduced(text)
+	var/starting_coord = 1
+	var/text_len = length(text)
+	for (var/i in 1 to text_len)
+		if (text2ascii(text, i) > 32)
+			starting_coord = i
+			break
+
+	for (var/i = text_len, i >= starting_coord, i--)
+		if (text2ascii(text, i) > 32)
+			return copytext(text, starting_coord, i + 1)
+
+	if(starting_coord > 1)
+		return copytext(text, starting_coord)
+	return ""
+
 /**
  * Truncate a string to the given length
  *
@@ -255,7 +273,7 @@
 /proc/trim(text, max_length)
 	if(max_length)
 		text = copytext_char(text, 1, max_length)
-	return trim_left(trim_right(text))
+	return trim_reduced(text)
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t)
@@ -330,15 +348,34 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		. += string
 
 /proc/random_short_color()
-	return random_string(3, GLOB.hex_characters)
+	return num2text(rand(0, 4095), 3, 16)
+
+/proc/color_from_seed(seed)
+	seed = md5(seed)
+
+	var/red = num2text(hex2num(copytext(seed, 1, 3)), 2, 16)
+	var/green = num2text(hex2num(copytext(seed, 3, 5)), 2, 16)
+	var/blue = num2text(hex2num(copytext(seed, 5, 7)), 2, 16)
+
+	return red + green + blue
 
 /proc/random_color()
-	return random_string(6, GLOB.hex_characters)
+	return num2text(rand(0, 16777215), 6, 16)
 
-/proc/random_short_color_natural()	//For use in natural haircolors.
-	var red = num2text(rand(0,255), 1, 16)
-	var green = num2text(rand(0,128), 1, 16)	//Conversion to hex
-	var blue = "00"
+/proc/random_color_natural()	//For use in natural haircolors.
+	var/red = num2text(rand(0,255), 2, 16)
+	var/green = num2text(rand(0,128), 2, 16)	//Conversion to hex
+	var/blue = "00"
+
+	return red + green + blue
+
+/proc/color_natural_from_seed(seed)
+	seed = md5(seed)
+
+	var/red = num2text(hex2num(copytext(seed, 1, 3)), 2, 16)
+	var/green = num2text(hex2num(copytext(seed, 3, 5)) / 2, 2, 16)
+	var/blue = "00"
+
 	return red + green + blue
 
 //merges non-null characters (3rd argument) from "from" into "into". Returns result
@@ -537,7 +574,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 	t = parsemarkdown_basic_step1(t)
 
-	t = replacetext(t, regex("%s(?:ign)?(?=\\s|$)", "igm"), user ? "<font face=\"[SIGNFONT]\"><i>[user.real_name]</i></font>" : "<span class=\"paper_field\"></span>")
+	t = replacetext(t, regex("%s(?:ign)?(?=\\s|$)", "igm"), user ? "<font face=\"[SIGNATURE_FONT]\"><i>[user.real_name]</i></font>" : "<span class=\"paper_field\"></span>")
 	t = replacetext(t, regex("%f(?:ield)?(?=\\s|$)", "igm"), "<span class=\"paper_field\"></span>")
 
 	t = parsemarkdown_basic_step2(t)
@@ -726,6 +763,9 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 			base = text("[]\herself", rest)
 		if("hers")
 			base = text("[]\hers", rest)
+		else // Someone fucked up, if you're not a macro just go home yeah?
+			// This does technically break parsing, but at least it's better then what it used to do
+			return base
 
 	. = base
 	if(rest)
@@ -848,3 +888,15 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	var/start = findtext(text, ">")
 	var/end = findtext(text, "<", 2)
 	return strip_html(copytext_char(text, start, min(start + limit, end)))
+
+/// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
+/proc/sanitize_css_class_name(name)
+	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
+	return replacetext(name, regex, "")
+
+/proc/shuffletext(string)
+	. = ""
+	while(length(string))
+		var/pos = rand(1, length(string))
+		. += copytext(string, pos, pos+1)
+		string = splicetext(string, pos, pos+1, null)

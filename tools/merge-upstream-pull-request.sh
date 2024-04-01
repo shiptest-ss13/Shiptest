@@ -82,11 +82,11 @@ if echo "$CHERRY_PICK_OUTPUT" | grep -i 'error: mainline was specified but commi
   echo "Commit was a squash, retrying"
   if containsElement "$MERGE_SHA" "${COMMITS[@]}"; then
     for commit in $COMMITS; do
-  	  echo "Cherry-picking: $commit"
-	  git -c core.editor=true cherry-pick "$commit"
-	  # Add all files onto this branch
-	  git add -A .
-	  git -c core.editor=true cherry-pick --continue
+      echo "Cherry-picking: $commit"
+      git -c core.editor=true cherry-pick "$commit"
+      # Add all files onto this branch
+      git add -A .
+      git -c core.editor=true cherry-pick --continue
     done
   else
     echo "Cherry-picking: $MERGE_SHA"

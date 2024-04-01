@@ -99,7 +99,7 @@
 /area/ruin/powered)
 "fq" = (
 /obj/structure/table,
-/obj/item/ammo_box/n762,
+/obj/item/ammo_box/c45_speedloader,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/powered)
 "fJ" = (
@@ -165,12 +165,6 @@
 "hl" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/powered)
-"hL" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/sniper_rounds
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
 "ih" = (
 /obj/structure/table/wood/reinforced,
 /obj/item/stack/sheet/mineral/uranium/five,
@@ -205,12 +199,6 @@
 /obj/item/stock_parts/cell/gun/empty,
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/powered)
-"iE" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/mm712x82
-	},
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "jn" = (
@@ -313,12 +301,6 @@
 /obj/item/modular_computer/laptop/preset,
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered)
-"os" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/smgm45
-	},
-/turf/open/floor/plasteel,
-/area/ruin/powered)
 "ov" = (
 /obj/effect/turf_decal/corner/transparent/neutral/diagonal,
 /obj/machinery/autolathe/hacked,
@@ -346,6 +328,13 @@
 "pL" = (
 /obj/machinery/porta_turret/syndicate/energy,
 /turf/open/floor/plating/rust,
+/area/ruin/powered)
+"pT" = (
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/mono,
 /area/ruin/powered)
 "qg" = (
 /obj/effect/turf_decal/corner/transparent/neutral/diagonal,
@@ -489,9 +478,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "wf" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/co9mm
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "wp" = (
@@ -509,7 +496,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/powered)
 "wM" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/powered)
 "wT" = (
@@ -617,9 +606,7 @@
 /area/ruin/powered)
 "BK" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/mm712x82
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "Cl" = (
@@ -814,8 +801,10 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "QL" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/public/glass{
+	dir = 4
+	},
 /turf/open/floor/plasteel/mono,
 /area/ruin/powered)
 "QR" = (
@@ -855,9 +844,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/powered)
 "Ta" = (
-/obj/structure/displaycase/noalert{
-	start_showpiece_type = /obj/item/ammo_box/magazine/ebr
-	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/plating/rust,
 /area/ruin/powered)
 "Tb" = (
@@ -1158,7 +1145,7 @@ Rw
 Rw
 Rw
 GR
-QL
+pT
 QL
 Rw
 Rw
@@ -1168,7 +1155,7 @@ Rw
 Rw
 Rw
 Ta
-iE
+wf
 wf
 GR
 tD
@@ -1518,9 +1505,9 @@ Rw
 Rw
 Rw
 Rw
-os
+wf
 BK
-hL
+wf
 GR
 tD
 tD
@@ -1536,7 +1523,7 @@ Rw
 Rw
 Rw
 GR
-QL
+pT
 wM
 GR
 dD
