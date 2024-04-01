@@ -269,6 +269,15 @@
 	if(..())
 		playsound(user.loc, 'sound/machines/chime.ogg', 50)
 
+/datum/emote/living/carbon/human/robot_tongue/no
+	key = "no"
+	key_third_person = "no"
+	message = "emits an negative blip."
+
+/datum/emote/living/carbon/human/robot_tongue/no/run_emote(mob/user, params)
+	if(..())
+		playsound(user.loc, 'sound/machines/synth_no.ogg', 50)
+
 /datum/emote/living/carbon/human/robot_tongue/ping
 	key = "ping"
 	key_third_person = "pings"
@@ -279,28 +288,32 @@
 	if(..())
 		playsound(user.loc, 'sound/machines/ping.ogg', 50)
 
-// Clown Robotic Tongue ONLY. Henk.
+/datum/emote/living/carbon/human/robot_tongue/warn
+	key = "warn"
+	key_third_person = "warn"
+	message = "blares an alarm!"
 
-/datum/emote/living/carbon/human/robot_tongue/clown/can_run_emote(mob/user, status_check = TRUE , intentional)
-	if(!..())
-		return FALSE
-	if(user.mind.assigned_role == "Clown")
-		return TRUE
-
-/datum/emote/living/carbon/human/robot_tongue/clown/honk
-	key = "honk"
-	key_third_person = "honks"
-	message = "honks."
-
-/datum/emote/living/carbon/human/robot_tongue/clown/honk/run_emote(mob/user, params)
+/datum/emote/living/carbon/human/robot_tongue/warn/run_emote(mob/user, params)
 	if(..())
-		playsound(user.loc, 'sound/items/bikehorn.ogg', 50)
+		playsound(user.loc, 'sound/machines/warning-buzzer.ogg', 50)
 
-/datum/emote/living/carbon/human/robot_tongue/clown/sad
+/datum/emote/living/carbon/human/robot_tongue/yes
+	key = "yes"
+	key_third_person = "yes"
+	message = "emits an affirmative blip."
+
+/datum/emote/living/carbon/human/robot_tongue/yes/run_emote(mob/user, params)
+	if(..())
+		playsound(user.loc, 'sound/machines/synth_yes.ogg', 50)
+
+// the following emote were originally clown-locked and synthetic exclusive
+// since clowns have been removed I see no reason to let it collect dust
+
+/datum/emote/living/carbon/human/robot_tongue/sad
 	key = "sad"
 	key_third_person = "plays a sad trombone..."
 	message = "plays a sad trombone..."
 
-/datum/emote/living/carbon/human/robot_tongue/clown/sad/run_emote(mob/user, params)
+/datum/emote/living/carbon/human/robot_tongue/sad/run_emote(mob/user, params)
 	if(..())
 		playsound(user.loc, 'sound/misc/sadtrombone.ogg', 50)

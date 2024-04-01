@@ -28,7 +28,6 @@
 	refill_canister = /obj/item/vending_refill/donksoft
 	default_price = 150
 	extra_price = 300
-	payment_department = ACCOUNT_SRV
 
 /obj/item/vending_refill/donksoft
 	machine_name = "Donksoft Toy Vendor"

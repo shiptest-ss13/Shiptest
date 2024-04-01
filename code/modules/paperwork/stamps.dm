@@ -125,8 +125,8 @@
 	icon_state = "stamp-artificer"
 	dye_color = DYE_QM
 
-/obj/item/stamp/cmm
-	name = "Colonial Minutemen rubber stamp"
+/obj/item/stamp/clip
+	name = "CLIP Minutemen rubber stamp"
 	icon_state = "stamp-cmm"
 	dye_color = DYE_FO
 
