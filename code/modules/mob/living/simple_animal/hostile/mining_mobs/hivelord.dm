@@ -405,7 +405,7 @@
 	mob_species = pickweight(list(
 		/datum/species/human = 31,
 		/datum/species/lizard = 26,
-		/datum/species/ethereal = 24,
+		/datum/species/elzuosa = 24,
 		/datum/species/spider = 7,
 		/datum/species/ipc = 7,
 		/datum/species/jelly = 4,

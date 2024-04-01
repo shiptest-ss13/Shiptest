@@ -133,7 +133,7 @@
 	icon_state = "wire1"
 
 /obj/item/apc_powercord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	if((!istype(target, /obj/machinery/power/apc) && !isethereal(target)) || !ishuman(user) || !proximity_flag)
+	if((!istype(target, /obj/machinery/power/apc) && !iselzuosa(target)) || !ishuman(user) || !proximity_flag)
 		return ..()
 	user.changeNext_move(CLICK_CD_MELEE)
 	var/mob/living/carbon/human/H = user
@@ -155,7 +155,7 @@
 			to_chat(user, "<span class='warning'>There is not enough charge to draw from that APC.</span>")
 			return
 
-	if(isethereal(target))
+	if(iselzuosa(target))
 		var/mob/living/carbon/human/target_ethereal = target
 		var/obj/item/organ/stomach/ethereal/eth_stomach = target_ethereal.getorganslot(ORGAN_SLOT_STOMACH)
 		if(target_ethereal.nutrition > 0 && eth_stomach)

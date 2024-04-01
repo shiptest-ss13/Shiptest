@@ -690,9 +690,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/light/small/built, 28)
 		var/mob/living/carbon/human/H = user
 
 		if(istype(H))
-			var/datum/species/ethereal/eth_species = H.dna?.species
+			var/datum/species/elzuosa/eth_species = H.dna?.species
 			if(istype(eth_species))
-				var/datum/species/ethereal/E = H.dna.species
+				var/datum/species/elzuosa/E = H.dna.species
 				if(E.drain_time > world.time)
 					return
 				to_chat(H, "<span class='notice'>You start channeling some power through the [fitting] into your body.</span>")

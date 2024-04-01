@@ -147,7 +147,7 @@
 					if(SCANGATE_IPC)
 						scan_species = /datum/species/ipc
 					if(SCANGATE_ETHEREAL)
-						scan_species = /datum/species/ethereal
+						scan_species = /datum/species/elzuosa
 					if(SCANGATE_KEPORI)
 						scan_species = /datum/species/kepori
 				if(is_species(H, scan_species))

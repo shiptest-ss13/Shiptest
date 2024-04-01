@@ -150,9 +150,9 @@
 
 //WS Begin -- Ethereal Charge Scaling
 /obj/item/stock_parts/cell/attack_self(mob/user)
-	if(isethereal(user))
+	if(iselzuosa(user))
 		var/mob/living/carbon/human/H = user
-		var/datum/species/ethereal/E = H.dna.species
+		var/datum/species/elzuosa/E = H.dna.species
 		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - CELL_POWER_GAIN
 		if(E.drain_time > world.time)
 			return

@@ -834,9 +834,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/power/apc/auto_name, 25)
 		return
 
 	//[REDACTED] Begin -- Ethereal Charge Scaling //Let the hubris remain but the name be forgotten
-	if(isethereal(user))
+	if(iselzuosa(user))
 		var/mob/living/carbon/human/H = user
-		var/datum/species/ethereal/E = H.dna.species
+		var/datum/species/elzuosa/E = H.dna.species
 		var/charge_limit = ETHEREAL_CHARGE_DANGEROUS - APC_POWER_GAIN
 		if((H.a_intent == INTENT_HARM) && (E.drain_time < world.time))
 			if(cell.charge <= (cell.maxcharge / 20)) // ethereals can't drain APCs under half charge, this is so that they are forced to look to alternative power sources if the station is running low
