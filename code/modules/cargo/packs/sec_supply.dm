@@ -88,7 +88,7 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /*
-		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)
+		Stamina / PVP weapons (intentionally overpriced due to odd balafasd
 */
 
 /datum/supply_pack/sec_supply/stingpack
@@ -139,3 +139,33 @@
 	contains = list(/obj/item/gun/energy/e_gun/advtaser,
 					/obj/item/gun/energy/e_gun/advtaser)
 	crate_name = "hybrid taser crate"
+
+/datum/supply_pack/sec_supply/fragnades
+	name = "Fragmentation Grenades"
+	desc = "Has 5 frag grenades."
+	contains = list(/obj/item/grenade/frag,
+					/obj/item/grenade/frag,
+					/obj/item/grenade/frag,
+					/obj/item/grenade/frag,
+					/obj/item/grenade/frag)
+	cost = 3500
+
+/datum/supply_pack/sec_supply/HEnades
+	name = "High Explosive Grenades"
+	desc = "Has 5 HE grenades (DANGER)."
+	contains = list(/obj/item/grenade/syndieminibomb/concussion,
+					/obj/item/grenade/syndieminibomb/concussion,
+					/obj/item/grenade/syndieminibomb/concussion,
+					/obj/item/grenade/syndieminibomb/concussion,
+					/obj/item/grenade/syndieminibomb/concussion)
+	cost = 8000
+
+/datum/supply_pack/sec_supply/disco
+	name = "Disco Grenades"
+	desc = "Has 5, let's not mince words here, boogie bombs."
+	contains = list(/obj/item/grenade/discogrenade,
+					/obj/item/grenade/discogrenade,
+					/obj/item/grenade/discogrenade,
+					/obj/item/grenade/discogrenade,
+					/obj/item/grenade/discogrenade)
+	cost = 6500

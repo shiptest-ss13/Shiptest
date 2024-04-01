@@ -45,10 +45,9 @@
 /datum/component/fortnite/InheritComponent(datum/component/C, i_am_original, force_rarity=FALSE, _edit_prefix = TRUE , _adjust_bullet_stats = TRUE, _rarity_table = RARITY_TABLE_DEFAULT)
 	var/obj/modifying_thing = parent
 	modifying_thing.remove_filter("fortnite")
+	rarity_color = null
 
 	Initialize(force_rarity, _edit_prefix , _adjust_bullet_stats, _rarity_table)
-
-
 
 /datum/component/fortnite/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_NAME, PROC_REF(update_prefix))
@@ -110,6 +109,7 @@
 		if(FORTNITE_RARITY_LEGENDARY)
 			rarity_color = "#de6e0e"
 
+	modifying_thing.remove_filter("fortnite")
 	if(rarity_color)
 		modifying_thing.add_filter("fortnite", 5, list("type"="outline", "color"= rarity_color, "size"=1))
 	update_prefix()
@@ -219,7 +219,49 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/sec_supply,
 		/datum/supply_pack/spacesuit_armor,
 		/datum/supply_pack/tools,
-		/datum/supply_pack/vendor_refill
+		/datum/supply_pack/vendor_refill,
+		/datum/supply_pack/gun/skm_lmg,
+		/datum/supply_pack/gun/l6_saw,
+		/datum/supply_pack/gun/cm40,
+		/datum/supply_pack/gun/shredder,
+		/datum/supply_pack/gun/gal,
+		/datum/supply_pack/gun/gal_inteq,
+		/datum/supply_pack/gun/ebr,
+		/datum/supply_pack/gun/vickland,
+		/datum/supply_pack/gun/swiss,
+		/datum/supply_pack/gun/skm,
+		/datum/supply_pack/gun/skm_pirate,
+		/datum/supply_pack/gun/skm_inteq,
+		/datum/supply_pack/gun/p16,
+		/datum/supply_pack/gun/gar_twink,
+		/datum/supply_pack/gun/gar,
+		/datum/supply_pack/gun/m90,
+		/datum/supply_pack/gun/wt550,
+		/datum/supply_pack/gun/amr,
+		/datum/supply_pack/gun/f90,
+		/datum/supply_pack/gun/ssg669,
+		/datum/supply_pack/gun/scout,
+		/datum/supply_pack/gun/illestren_scoped,
+		/datum/supply_pack/gun/huntsman,
+		/datum/supply_pack/gun/combat_sg,
+		/datum/supply_pack/gun/cm15,
+		/datum/supply_pack/gun/inteq_bulldog_sg,
+		/datum/supply_pack/gun/bulldog_sg,
+		/datum/supply_pack/gun/hb7,
+		/datum/supply_pack/gun/bg16,
+		/datum/supply_pack/gun/e40,
+		/datum/supply_pack/gun/hades,
+		/datum/supply_pack/gun/e50,
+		/datum/supply_pack/gun/captain,
+		/datum/supply_pack/gun/hos,
+		/datum/supply_pack/gun/model_h,
+		/datum/supply_pack/gun/model_h_twink,
+		/datum/supply_pack/gun/ashhand,
+		/datum/supply_pack/gun/deagle,
+		/datum/supply_pack/gun/deagle_gold,
+		/datum/supply_pack/gun/commander_2,
+		/datum/supply_pack/gun/cm70,
+		/datum/supply_pack/gun/ion,
 		)
 	for(var/datum/checked_datum as anything in bad_types)
 		if(checking.type == checked_datum)
@@ -234,10 +276,21 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 
 /obj/effect/battle_royale/rarer/get_cargo(pod)
 	if(!GLOB.royale_rarer_loot.len)
+		var/list/bad_subtypes = list(
+			/datum/supply_pack/costumes_toys,
+			/datum/supply_pack/vendor_refill,
+			/datum/supply_pack/animal,
+			/datum/supply_pack/civilian,
+			/datum/supply_pack/food
+			)
 		var/list/loot_types_list = subtypesof(/datum/supply_pack)
 		for(var/datum/supply_pack/picked_pack as anything in loot_types_list)
 			if(!check_type(picked_pack))
 				loot_types_list -= picked_pack
+			for(var/datum/supply_pack/checked_datum as anything in bad_subtypes)
+				if(istype(picked_pack,checked_datum))
+					loot_types_list -= picked_pack
+					break
 		GLOB.royale_rarer_loot = loot_types_list
 	var/datum/supply_pack/picked_cargo = pick(GLOB.royale_rarer_loot)
 	picked_cargo = new picked_cargo
@@ -270,8 +323,11 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 		/datum/supply_pack/vendor_refill,
 		/datum/supply_pack/animal,
 		/datum/supply_pack/civilian,
-		/datum/supply_pack/food,
+		/datum/supply_pack/food
 		)
+	for(var/datum/supply_pack/checked_datum as anything in bad_subtypes)
+		bad_types += subtypesof(checked_datum)
+
 	for(var/datum/checked_datum as anything in bad_types)
 		if(checking.type == checked_datum)
 			return FALSE
@@ -313,6 +369,69 @@ GLOBAL_LIST_EMPTY(royale_legendary_loot)
 	picked_cargo = new picked_cargo
 
 	return picked_cargo.generate(pod)
+
+/obj/effect/battle_royale/legendary/check_type(datum/checking)
+	var/list/bad_types = list(
+		/datum/supply_pack/gun,
+		/datum/supply_pack/ammo,
+		/datum/supply_pack/animal,
+		/datum/supply_pack/canister,
+		/datum/supply_pack/chemistry,
+		/datum/supply_pack/civilian,
+		/datum/supply_pack/costumes_toys,
+		/datum/supply_pack/emergency,
+		/datum/supply_pack/exploration,
+		/datum/supply_pack/food,
+		/datum/supply_pack/machinery,
+		/datum/supply_pack/material,
+		/datum/supply_pack/mech,
+		/datum/supply_pack/medical,
+		/datum/supply_pack/sec_supply,
+		/datum/supply_pack/spacesuit_armor,
+		/datum/supply_pack/tools,
+		/datum/supply_pack/vendor_refill,
+		/datum/supply_pack/gun/disposable,
+		/datum/supply_pack/gun/commanders,
+		/datum/supply_pack/gun/commanders_inteq,
+		/datum/supply_pack/gun/cm23,
+		/datum/supply_pack/gun/candor,
+		/datum/supply_pack/gun/makarovs,
+		/datum/supply_pack/gun/solgov,
+		/datum/supply_pack/gun/conflagration,
+		/datum/supply_pack/gun/himehabu,
+		/datum/supply_pack/gun/detrevolver,
+		/datum/supply_pack/gun/firebrand,
+		/datum/supply_pack/gun/laser,
+		/datum/supply_pack/gun/mini_laser,
+		/datum/supply_pack/gun/ion,
+		/datum/supply_pack/gun/e10,
+		/datum/supply_pack/gun/esg500,
+		/datum/supply_pack/gun/laser,
+		/datum/supply_pack/gun/e11,
+		/datum/supply_pack/gun/hellfire_shotgun,
+		/datum/supply_pack/gun/brimstone_shotgun,
+		/datum/supply_pack/gun/winchester
+		)
+	var/list/bad_subtypes = list(
+		/datum/supply_pack/costumes_toys,
+		/datum/supply_pack/vendor_refill,
+		/datum/supply_pack/animal,
+		/datum/supply_pack/civilian,
+		/datum/supply_pack/food
+		)
+
+	for(var/datum/supply_pack/checked_datum as anything in bad_subtypes)
+		bad_types += subtypesof(checked_datum)
+
+	for(var/datum/checked_datum as anything in bad_types)
+		if(checking.type == checked_datum)
+			return FALSE
+
+	for(var/datum/checked_datum as anything in bad_subtypes)
+		if(istype(checking,checked_datum))
+			return FALSE
+	return TRUE
+
 
 /obj/effect/battle_royale/legendary/extra_changes(obj/thing_to_check)
 	if(!thing_to_check)

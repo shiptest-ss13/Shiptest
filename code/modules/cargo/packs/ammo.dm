@@ -281,6 +281,18 @@
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
 
+/datum/supply_pack/ammo/guncell_good
+	name = "Upgraded Weapon Cell Crate"
+	desc = "Contains a better weapon cell, compatible with laser guns."
+	contains = list(/obj/item/stock_parts/cell/gun/upgraded)
+	cost = 1000
+
+/datum/supply_pack/ammo/guncell_pgf
+	name = "PGF Weapon Cell Crate"
+	desc = "Contains a better weapon cell, compatible with laser guns. Why the PGF military is giving this to you is beyond you."
+	contains = list(/obj/item/stock_parts/cell/gun/pgf)
+	cost = 1000
+
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
 	desc = "Contains a fifty-round 4.6x30mm box for PDWs such as the WT-550."
