@@ -595,7 +595,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 
 	//Ship ambience just loops if turned on.
 	if(L.client?.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		SEND_SOUND(L, sound('sound/ambience/shipambience.ogg', repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ))
+		SEND_SOUND(L, sound('sound/ambience/epic_sci-fi.ogg', repeat = 1, wait = 0, volume = 10, channel = CHANNEL_BUZZ))
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()

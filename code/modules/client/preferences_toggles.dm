@@ -222,15 +222,15 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_ship_ambience)()
-	set name = "Hear/Silence Ship Ambience"
+	set name = "Hear/Silence Soundtrack"
 	set category = "Preferences"
-	set desc = "Hear Ship Ambience Roar"
+	set desc = "Hear The Exclusive Shiptest Soundtrack"
 	usr.client.prefs.toggles ^= SOUND_SHIP_AMBIENCE
 	usr.client.prefs.save_preferences()
 	if(usr.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		to_chat(usr, "You will now hear ship ambience.")
+		to_chat(usr, "You will now hear the soundtrack.")
 	else
-		to_chat(usr, "You will no longer hear ship ambience.")
+		to_chat(usr, "You will no longer hear the soundtrack.")
 		usr.stop_sound_channel(CHANNEL_BUZZ)
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ship Ambience", "[usr.client.prefs.toggles & SOUND_SHIP_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, I bet you read this comment expecting to see the same thing :^)
 /datum/verbs/menu/Settings/Sound/toggle_ship_ambience/Get_checked(client/C)
