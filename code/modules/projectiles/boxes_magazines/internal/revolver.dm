@@ -35,4 +35,8 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 	max_ammo = 6
+	instant_load = FALSE
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev45/montagne
+	name = "montagne revolver cylinder"
 	instant_load = TRUE

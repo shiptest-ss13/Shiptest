@@ -7,7 +7,6 @@
 	..()
 	new /obj/item/clothing/head/beret/ce(src) //Berets
 	new /obj/item/clothing/under/rank/command(src) //Better command uniforms
-	new /obj/item/card/id/departmental_budget/eng(src) //Budger Cards
 	new /obj/item/stack/tape/industrial/pro(src) //Better tape
 	new /obj/item/clothing/neck/cloak/ce(src)
 	new /obj/item/clothing/under/rank/engineering/chief_engineer(src)

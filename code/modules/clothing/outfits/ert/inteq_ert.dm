@@ -1,9 +1,10 @@
 /datum/outfit/job/inteq/ert
 	name = "ERT - Inteq Rifleman"
+	id_assignment = "Enforcer"
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
-	mask = /obj/item/clothing/mask/gas/sechailer/inteq
+	mask = /obj/item/clothing/mask/gas/sechailer/balaclava/inteq
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	uniform = /obj/item/clothing/under/syndicate/inteq
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
@@ -22,6 +23,7 @@
 
 /datum/outfit/job/inteq/ert/shotgun
 	name = "ERT - Inteq Shotgunner"
+	id_assignment = "Enforcer"
 
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	belt = /obj/item/storage/belt/security/webbing/inteq/alt
@@ -30,6 +32,7 @@
 
 /datum/outfit/job/inteq/ert/medic
 	name = "ERT - Inteq Corpsman"
+	id_assignment = "Corpsman"
 	jobtype = /datum/job/paramedic
 	job_icon = "paramedic"
 
@@ -43,6 +46,7 @@
 
 /datum/outfit/job/inteq/ert/leader
 	name = "ERT - Inteq Vanguard"
+	id_assignment = "Vanguard"
 	jobtype = /datum/job/hos
 	job_icon = "headofsecurity"
 
