@@ -1118,12 +1118,11 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "ok" = (
-/obj/structure/table/wood,
-/obj/item/candle{
-	pixel_y = 4
-	},
 /obj/effect/turf_decal/siding/wood/corner{
 	color = "#543C30"
+	},
+/obj/structure/chair/wood{
+	dir = 4
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
@@ -1181,10 +1180,14 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/hallway/central)
 "pp" = (
-/obj/structure/chair/wood{
-	dir = 4
+/obj/effect/turf_decal/siding/wood{
+	dir = 6;
+	color = "#543C30"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/structure/table/wood,
+/obj/item/candle{
+	pixel_y = 4
+	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "pw" = (
@@ -2792,6 +2795,14 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
+"Li" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#543C30"
+	},
+/obj/structure/chair/wood,
+/turf/open/floor/wood/walnut,
+/area/ship/crew/canteen)
 "Ll" = (
 /obj/structure/closet/crate/internals,
 /obj/item/tank/internals/oxygen,
@@ -4436,7 +4447,7 @@ jk
 mk
 vy
 vy
-pp
+vy
 Pt
 uP
 ru
@@ -4458,7 +4469,7 @@ Id
 BO
 wM
 hh
-Lb
+Rz
 ok
 gw
 ru
@@ -4481,8 +4492,8 @@ kX
 HK
 cI
 LP
-Hu
-FO
+Li
+pp
 yp
 yp
 Pa
