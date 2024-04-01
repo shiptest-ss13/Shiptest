@@ -62,7 +62,13 @@
 	animate(I, pixel_z = 32, alpha = 255, time = 5, easing = ELASTIC_EASING)
 
 /mob/living/proc/do_crit_animation(atom/A)//this is so bad, thank goodness I'm only copying it for april fools (clueless)
-	var/image/I = image('icons/effects/effects.dmi', A, "crit", A.layer+1)
+	var/criticon
+	if(prob(1))
+		criticon = "shit"
+	else
+		criticon = "criticon_[pick("1","2")]"
+
+	var/image/I = image('icons/effects/effects.dmi', A, criticon, A.layer+1)
 	flick_overlay_view(I, A, 8)
 	I.alpha = 0
 	animate(I, pixel_z = 32, alpha = 255, time = 5, easing = ELASTIC_EASING, luminosity = 100)
