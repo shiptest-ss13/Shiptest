@@ -2,6 +2,8 @@
 	name = "under"
 	icon = 'icons/obj/clothing/under/default.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/default.dmi'
+	lefthand_file = 'icons/mob/inhands/clothing/suits_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing/suits_righthand.dmi'
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	permeability_coefficient = 0.9
 	slot_flags = ITEM_SLOT_ICLOTHING

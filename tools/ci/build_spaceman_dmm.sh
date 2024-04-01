@@ -3,7 +3,8 @@ set -euo pipefail
 
 source dependencies.sh
 
-cd $HOME/SpacemanDMM
+mkdir -p "$HOME/SpacemanDMM"
+cd "$HOME/SpacemanDMM"
 
 if [ ! -d .git ]
 then
@@ -11,7 +12,7 @@ then
 	git remote add origin https://github.com/SpaceManiac/SpacemanDMM.git
 fi
 
-git fetch origin --depth=1 $SPACEMAN_DMM_COMMIT_HASH
+git fetch origin --depth=1 $SPACEMAN_DMM_VERSION
 git reset --hard FETCH_HEAD
 
 cargo build --release --bin $1

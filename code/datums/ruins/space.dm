@@ -60,12 +60,6 @@
 	description = "Pause and remember-- You are unique.You are special. Every mistake, trial, and hardship has helped to sculpt your real beauty. \
 	Stop hating yourself and start appreciating and loving yourself!"
 
-/datum/map_template/ruin/space/clericden
-	id = "clericden"
-	suffix = "clericden.dmm"
-	name = "Cleric's Den"
-	description = "Once part of a larger monastery, this holy order of long dead clerics practiced far less non-violence than they preached. Appears to have been untouched by looters, however. Odd."
-
 /datum/map_template/ruin/space/hellfactory
 	id = "hellfactory"
 	suffix = "hellfactory.dmm"
