@@ -60,7 +60,7 @@
 			if(mode == "Fabricate")
 				work_on_part(user)
 		else
-			balloon_alert(user, "You need a tool with [tool_required] to work on this part.")
+			balloon_alert(user, "you need a tool with [tool_required] to work on this part.")
 	if(work_piece)
 		to_chat(user, "You cant add another item to the lathe.")
 		return

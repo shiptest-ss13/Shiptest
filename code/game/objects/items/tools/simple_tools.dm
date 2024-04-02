@@ -4,7 +4,6 @@
 	name = "Electric Boogaloo 3000"
 	icon_state = "omnitool"
 	item_state = "omnitool"
-	spawn_tags = null
 	tool_qualities = list(QUALITY_BOLT_TURNING = 100,
 							QUALITY_PRYING = 100,
 							QUALITY_WELDING = 100,
@@ -28,14 +27,14 @@
 /obj/item/tool/hammer
 	name = "ballpin hammer"
 	icon_state = "oldcrowbar"
-	tool_qualities = (QUALITY_HAMMERING = 50)
+	tool_qualities = list(QUALITY_HAMMERING = 50)
 
 /obj/item/tool/file
 	name = "metal file"
 	icon_state = "oldwrench"
-	tool_qualities = (QUALITY_FILING = 50)
+	tool_qualities = list(QUALITY_FILING = 50)
 
 /obj/item/tool/saw
 	name = "rusty hacksaw"
 	icon_state = "oldcutters_map"
-	tool_qualities = (QUALITY_SAWING = 50)
+	tool_qualities = list(QUALITY_SAWING = 50)

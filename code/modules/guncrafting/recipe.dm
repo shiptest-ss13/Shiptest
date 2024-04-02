@@ -33,7 +33,7 @@
 /datum/lathe_recipe/gun/candor
 	result = /obj/item/gun/ballistic/automatic/pistol/candor
 	valid_parts = list(
-		/obj/item/part/gun/frame/candor,
+		/obj/item/part/gun/frame/pistol/candor,
 		/obj/item/part/gun/modular/grip/wood,
 		/obj/item/part/gun/modular/mechanism/pistol,
 		/obj/item/part/gun/modular/barrel/pistol

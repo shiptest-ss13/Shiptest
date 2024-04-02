@@ -1,10 +1,10 @@
 /obj/item/tool
 	name = "tool"
 	icon = 'icons/obj/tools.dmi'
-	slot_flags = SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT
 	force = 10
 	throwforce = 10
-	w_class = ITEM_SIZE_SMALL
+	w_class = WEIGHT_CLASS_SMALL
 
 /******************************
 	/* Data and Checking */
