@@ -18,7 +18,7 @@
 	var/working = FALSE
 	//The part that the user has picked to fabricate
 	var/obj/item/picked_part = FALSE
-	var/list/tools_required = list(/obj/item/tool/hammer, /obj/item/tool/file, /obj/item/tool/saw)
+	var/list/tools_required = list(QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_FILING)
 	var/tool_required = FALSE
 
 /obj/structure/lathe/Initialize()
@@ -53,6 +53,14 @@
 			work_on_part(user)
 
 /obj/structure/lathe/attackby(obj/item/I, mob/user)
+	if(mode && !working)
+		if(is_valid_tool(I))
+			if(mode == "Deconstruct")
+				deconstruct_work_piece(user)
+			if(mode == "Fabricate")
+				work_on_part(user)
+		else
+			balloon_alert(user, "You need a tool with [tool_required] to work on this part.")
 	if(work_piece)
 		to_chat(user, "You cant add another item to the lathe.")
 		return
@@ -86,6 +94,10 @@
 	mode = FALSE
 	steps_left = FALSE
 	working = FALSE
+
+/obj/structure/lathe/proc/is_valid_tool(obj/item/I)
+	if(I.has_quality(tool_required))
+		return TRUE
 
 /////////////////
 // DECONSTRUCT //
@@ -140,7 +152,7 @@
 		var/list/choose_options = list()
 		var/list/option_results = list()
 		if(gun_work_piece.frame)
-			var/obj/item/part/gun/frame = gun_work_piece.frame
+			var/obj/item/part/gun/frame/frame = gun_work_piece.frame
 			if(frame.material_cost)
 				choose_options += list("Craft [frame.name]" = image(icon = frame.icon , icon_state = frame.icon_state))
 				option_results["Craft [frame.name]"] = frame.type
@@ -180,9 +192,6 @@
 	if(!picked_part)
 		picked_part = choose_part(user)
 	if(!picked_part || !start_work(user))
-		return
-	if(!user.has_item_of_type(tool_required))
-		balloon_alert(user, "You need a [tool_required.name] to work on this part.")
 		return
 	if(user.getStaminaLoss() > DECONSTRUCT_STAMINA_MINIMUM)
 		balloon_alert(user, "too tired")

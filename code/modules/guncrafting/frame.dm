@@ -215,3 +215,6 @@
 	name = "pistol gun frame"
 	icon_state = "frame_pistol"
 	material_cost = list(/obj/item/stack/sheet/metal = 2)
+
+/obj/item/part/gun/frame/pistol/candor
+	name = "candor gun frame"

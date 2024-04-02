@@ -97,6 +97,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	///you can see someone's mask through their transparent visor, but you can't reach it
 	var/transparent_protection = NONE
 
+	var/list/tool_qualities// List of item qualities for tools system. See tools_and_qualities.dm.
+
 	///flags for what should be done when you click on the item, default is picking it up
 	var/interaction_flags_item = INTERACT_ITEM_ATTACK_HAND_PICKUP
 
