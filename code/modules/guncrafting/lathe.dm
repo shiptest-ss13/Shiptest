@@ -204,7 +204,7 @@
 			to_chat(user, "You have [steps_left] steps left.")
 			user.adjustStaminaLoss(DECONSTRUCT_STAMINA_USE)
 			tool_required = pick(tools_required)
-			balloon_alert(user, "You need a [tool_required.name] next.")
+			balloon_alert(user, "You need a tool with [tool_required] next.")
 			work_on_part(user)
 		else
 			fabricate_part(user)
