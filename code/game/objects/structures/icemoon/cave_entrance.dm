@@ -1047,7 +1047,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			if(prob(45))
 				new /obj/item/dnainjector/dwarf(loc)
 			if(prob(35))
-				new /obj/item/dnainjector/firebreath(loc)
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			if(prob(35))
 				new /mob/living/simple_animal/hostile/gorilla(loc)
