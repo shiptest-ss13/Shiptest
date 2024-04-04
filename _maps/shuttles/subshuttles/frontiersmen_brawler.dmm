@@ -115,15 +115,16 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "r" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 8
-	},
 /obj/machinery/power/shieldwallgen/atmos{
 	id = "brawler_aft_holo";
 	dir = 1
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "brawler_aft"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
@@ -198,9 +199,6 @@
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
 "z" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 8
-	},
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
 	},
@@ -209,6 +207,10 @@
 	name = "brawler shuttle";
 	port_direction = 2;
 	preferred_direction = 4
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "brawler_aft"
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/bridge)
