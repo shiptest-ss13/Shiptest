@@ -30,6 +30,7 @@
 	jobtype = /datum/job/assistant
 
 	head = /obj/item/clothing/head/beret/sec/frontier
+	shoes = /obj/item/clothing/shoes/sneakers/black // you do not get jackboots!!!! fuck you!!!!
 
 // Atmospheric Technician
 
@@ -160,7 +161,6 @@
 	jobtype = /datum/job/officer
 
 	accessory = /obj/item/clothing/accessory/armband
-	head = /obj/item/clothing/head/beret/sec/frontier
 	mask = /obj/item/clothing/mask/gas/sechailer/balaclava
 	suit = null
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
