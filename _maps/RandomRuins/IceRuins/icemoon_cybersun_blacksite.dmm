@@ -71,10 +71,10 @@
 /turf/open/floor/carpet/royalblack,
 /area/ruin/powered/crew_facilities)
 "bm" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
@@ -116,6 +116,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/hallway)
+"bO" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/ice)
 "bQ" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Cell 2"
@@ -177,9 +183,14 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/powered/hallway)
 "cz" = (
-/obj/structure/railing/modern,
-/obj/machinery/light/dim/directional/north,
-/turf/open/floor/concrete/reinforced{
+/obj/structure/marker_beacon,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
 /area/ruin/powered/hangar)
@@ -501,7 +512,9 @@
 	},
 /area/ruin/powered/hangar)
 "ie" = (
-/obj/machinery/door/airlock/external,
+/obj/machinery/door/airlock/external{
+	dir = 8
+	},
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -521,6 +534,9 @@
 "ii" = (
 /obj/structure/railing/modern{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
@@ -720,6 +736,9 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 5
+	},
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
 	},
@@ -761,6 +780,14 @@
 	initial_gas_mix = "o2=0;n2=82;plasma=0;TEMP=120"
 	},
 /area/overmap_encounter/planetoid/ice)
+"lY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/powered/hangar)
 "mf" = (
 /obj/structure/sign/poster/syndicate/random,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -813,6 +840,9 @@
 /area/ruin/powered/hangar)
 "nh" = (
 /obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/ice)
 "nq" = (
@@ -887,8 +917,19 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
 /area/ruin/powered/hallway)
+"oi" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/powered/hangar)
 "oj" = (
 /obj/item/shard/plasma,
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/crew_facilities)
 "ot" = (
@@ -953,6 +994,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plasteel/stairs/right{
 	dir = 1
 	},
@@ -971,6 +1015,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4
 	},
+/obj/structure/fans/tiny/invisible,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/crew_facilities)
 "pk" = (
@@ -1288,10 +1333,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/crew_facilities)
 "uL" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
@@ -1691,6 +1736,7 @@
 "Dg" = (
 /obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/hangar)
 "Ds" = (
@@ -1737,11 +1783,15 @@
 /area/ruin/powered/testing_facilities)
 "El" = (
 /obj/structure/table/reinforced,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/crew_facilities)
 "Ey" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/hallway)
 "EE" = (
@@ -1794,6 +1844,13 @@
 	},
 /turf/open/floor/wood/birch,
 /area/ruin/powered/crew_facilities)
+"Fu" = (
+/obj/machinery/power/floodlight,
+/obj/structure/cable,
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/powered/hangar)
 "FC" = (
 /obj/effect/turf_decal/corner/opaque/bar/border{
 	dir = 4
@@ -1969,11 +2026,13 @@
 "IF" = (
 /obj/effect/turf_decal/corner/opaque/bar/border,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/hallway)
 "II" = (
 /obj/structure/railing/modern/corner,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -2054,6 +2113,15 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/hallway)
+"JD" = (
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/concrete/slab_1{
+	light_range = 2
+	},
+/area/ruin/powered/hangar)
 "JE" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -2547,6 +2615,10 @@
 	id = 2;
 	name = "Blast Shutters"
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/fans/tiny/invisible,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered/crew_facilities)
 "RC" = (
@@ -2591,9 +2663,11 @@
 /area/ruin/powered/testing_facilities)
 "RT" = (
 /obj/structure/railing/modern,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 10
 	},
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
@@ -2731,6 +2805,15 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/crew_facilities)
+"Tv" = (
+/obj/effect/turf_decal/trimline/opaque/orange/warning{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered/crew_facilities)
 "TA" = (
 /obj/structure/table/optable,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
@@ -2761,6 +2844,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/powered/hallway)
+"Ue" = (
+/obj/structure/railing/modern,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/turf/open/floor/concrete/reinforced{
+	light_range = 2
+	},
+/area/ruin/powered/hangar)
 "Ur" = (
 /mob/living/simple_animal/hostile/syndicate/melee,
 /turf/open/floor/mineral/plastitanium,
@@ -2933,6 +3028,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
@@ -2976,6 +3074,9 @@
 /area/ruin/powered/hallway)
 "XV" = (
 /obj/machinery/power/floodlight,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/concrete/slab_1{
 	light_range = 2
 	},
@@ -3106,6 +3207,9 @@
 /area/overmap_encounter/planetoid/ice)
 "Zv" = (
 /obj/structure/railing/modern,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/concrete/reinforced{
 	light_range = 2
 	},
@@ -3119,6 +3223,9 @@
 "Zx" = (
 /obj/structure/cable{
 	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered/crew_facilities)
@@ -4671,8 +4778,8 @@ pP
 pP
 NM
 NM
-qs
-XV
+oi
+Fu
 qs
 qs
 XV
@@ -4733,9 +4840,9 @@ tV
 Ze
 NM
 Zv
-NN
-qs
-gm
+cz
+lY
+JD
 II
 ii
 fg
@@ -4794,7 +4901,7 @@ Vm
 lE
 uW
 NM
-Zv
+gn
 qs
 hK
 qs
@@ -4856,7 +4963,7 @@ hH
 kf
 uW
 NM
-Zv
+gn
 qs
 WG
 NM
@@ -4918,7 +5025,7 @@ VX
 Bw
 uW
 NM
-cz
+Kx
 qs
 qs
 NM
@@ -5104,7 +5211,7 @@ aQ
 fU
 uW
 bg
-gn
+Ue
 qs
 Cp
 Cp
@@ -5166,7 +5273,7 @@ BQ
 qp
 uW
 ZE
-gn
+Ue
 qs
 Cp
 kl
@@ -5644,7 +5751,7 @@ RE
 RE
 XQ
 Se
-ln
+Tv
 ln
 gI
 dG
@@ -5663,8 +5770,8 @@ NM
 eL
 nc
 Xu
-qs
-XV
+lY
+Fu
 qs
 qs
 Vh
@@ -5768,7 +5875,7 @@ LE
 xf
 xf
 kF
-kF
+bO
 kF
 kF
 xf
