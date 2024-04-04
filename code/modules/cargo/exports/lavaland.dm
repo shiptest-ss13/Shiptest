@@ -23,7 +23,6 @@
 						/obj/item/lava_staff,
 						/obj/item/ship_in_a_bottle,
 						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
-						/obj/item/gun/magic/staff/honk,
 						/obj/item/kitchen/knife/envy,
 						/obj/item/veilrender/vealrender,
 						/obj/item/nullrod/scythe/talking/necro,
@@ -54,8 +53,7 @@
 						/obj/machinery/anomalous_crystal,
 						/obj/item/mayhem,
 						/obj/item/blood_contract,
-						/obj/item/guardiancreator/miner/choose,//this is basically the most valulable mining loot so good luck getting a miner to part ways
-						/obj/item/gun/magic/staff/spellblade,
+						/obj/item/guardiancreator/miner/choose//this is basically the most valulable mining loot so good luck getting a miner to part ways
 						)
 
 /datum/export/lavaland/trophycommon

@@ -12,11 +12,11 @@
 	projectile_type = /obj/projectile/magic/animate
 
 /obj/item/ammo_casing/magic/heal
-	projectile_type = /obj/projectile/magic/resurrection
+	projectile_type = /obj/projectile/debug/resurrection
 	harmful = FALSE
 
 /obj/item/ammo_casing/magic/death
-	projectile_type = /obj/projectile/magic/death
+	projectile_type = /obj/projectile/debug/death
 
 /obj/item/ammo_casing/magic/teleport
 	projectile_type = /obj/projectile/magic/teleport

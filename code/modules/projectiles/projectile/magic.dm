@@ -7,56 +7,6 @@
 	armour_penetration = 100
 	flag = "magic"
 
-/obj/projectile/magic/death
-	name = "bolt of death"
-	icon_state = "pulse1_bl"
-
-/obj/projectile/magic/death/on_hit(target)
-	. = ..()
-	if(ismob(target))
-		var/mob/M = target
-		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
-			return BULLET_ACT_BLOCK
-		if(isliving(M))
-			var/mob/living/L = M
-			if(L.mob_biotypes & MOB_UNDEAD) //negative energy heals the undead
-				if(L.hellbound && L.stat == DEAD)
-					return BULLET_ACT_BLOCK
-				if(L.revive(full_heal = TRUE, admin_revive = TRUE))
-					L.grab_ghost(force = TRUE)
-					to_chat(L, "<span class='notice'>You rise with a start, you're undead!!!</span>")
-				else if(L.stat != DEAD)
-					to_chat(L, "<span class='notice'>You feel great!</span>")
-			else
-				L.death(0)
-		else
-			M.death(0)
-
-/obj/projectile/magic/resurrection
-	name = "bolt of resurrection"
-	icon_state = "ion"
-	damage = 0
-	damage_type = OXY
-	nodamage = TRUE
-
-/obj/projectile/magic/resurrection/on_hit(mob/living/carbon/target)
-	. = ..()
-	if(isliving(target))
-		if(target.anti_magic_check())
-			target.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
-			return BULLET_ACT_BLOCK
-		if(target.mob_biotypes & MOB_UNDEAD) //positive energy harms the undead
-			target.death(0)
-		else
-			if(target.hellbound && target.stat == DEAD)
-				return BULLET_ACT_BLOCK
-			if(target.revive(full_heal = TRUE, admin_revive = TRUE))
-				target.grab_ghost(force = TRUE) // even suicides
-				to_chat(target, "<span class='notice'>You rise with a start, you're alive!!!</span>")
-			else if(target.stat != DEAD)
-				to_chat(target, "<span class='notice'>You feel great!</span>")
-
 /obj/projectile/magic/teleport
 	name = "bolt of teleportation"
 	icon_state = "bluespace"
