@@ -745,7 +745,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/clothing/suit/space/hardsuit/carp(loc)
 				new /mob/living/simple_animal/hostile/carp(loc)
 			if(prob(45))
-				new /obj/item/gun/magic/hook(loc)
 				new /mob/living/simple_animal/hostile/carp(loc)
 			if(prob(45))
 				new /obj/item/reagent_containers/food/snacks/fishmeat/carp(loc)
