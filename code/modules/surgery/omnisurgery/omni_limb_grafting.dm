@@ -14,8 +14,47 @@
 //	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
 //		return 1
 
+/datum/surgery_step/omni/prepare_flesh
+	name = "Prepare Flesh"
+	implements = list(
+		TOOL_HEMOSTAT = 100)
+	time = 12
+	show = TRUE
+	valid_locations = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
+	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
+	requires_bodypart = FALSE
+	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
+	required_layer = list(0)
+	var/organ_rejection_dam = 0
+
+/datum/surgery_step/omni/prepare_flesh/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	if(istype(surgery.last_step,/datum/surgery_step/omni/prepare_flesh))
+		return FALSE
+	if(istype(surgery.last_step,/datum/surgery_step/omni/apply_bonegel_limbgrafting))
+		return FALSE
+	return TRUE
+	
+
+/datum/surgery_step/omni/apply_bonegel_limbgrafting
+	name = "Apply Bonegel"
+	implements = list(
+		TOOL_BONEGEL = 100)
+	time = 12
+	show = TRUE
+	valid_locations = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
+	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
+	requires_bodypart = FALSE
+	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
+	required_layer = list(0)
+	var/organ_rejection_dam = 0
+
+/datum/surgery_step/omni/apply_bonegel_limbgrafting/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	if(istype(surgery.last_step,/datum/surgery_step/omni/prepare_flesh))
+		return TRUE
+	return FALSE
+
 /datum/surgery_step/omni/graft_limb
-	name = "graft limb"
+	name = "Graft Limb"
 	implements = list(
 		/obj/item/bodypart = 100,
 		/obj/item/organ_storage = 100)
@@ -29,8 +68,14 @@
 //	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
 	requires_bodypart = FALSE
+	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	required_layer = list(0)
 	var/organ_rejection_dam = 0
+
+/datum/surgery_step/omni/graft_limb/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
+	if(istype(surgery.last_step,/datum/surgery_step/omni/apply_bonegel_limbgrafting))
+		return TRUE
+	return FALSE
 
 /datum/surgery_step/omni/graft_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(istype(tool, /obj/item/organ_storage))
@@ -94,12 +139,13 @@
 		display_results(user, target, "<span class='notice'>You succeed in replacing [target]'s [parse_zone(target_zone)].</span>",
 			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!</span>",
 			"<span class='notice'>[user] successfully replaces [target]'s [parse_zone(target_zone)]!</span>")
+		surgery.complete()
 		return
 	else
 		var/obj/item/bodypart/L = target.new_body_part(target_zone, FALSE, FALSE)
 		L.is_pseudopart = TRUE
 		if(!L.attach_limb(target))
-			display_results(user, target, "<span class='warning'>You fail in attaching [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!</span>",
+			display_results(user, target, "<span class='warnin++++++g'>You fail in attaching [target]'s [parse_zone(target_zone)]! Their body has rejected [L]!</span>",
 				"<span class='warning'>[user] fails to attach [target]'s [parse_zone(target_zone)]!</span>",
 				"<span class='warning'>[user] fails to attach [target]'s [parse_zone(target_zone)]!</span>")
 			L.forceMove(target.loc)
@@ -109,12 +155,9 @@
 			"<span class='notice'>[user] finishes attaching [tool]!</span>",
 			"<span class='notice'>[user] finishes the attachment procedure!</span>")
 		qdel(tool)
-		if(istype(tool, /obj/item/chainsaw))
-			var/obj/item/mounted_chainsaw/new_arm = new(target)
-			target_zone == BODY_ZONE_R_ARM ? target.put_in_r_hand(new_arm) : target.put_in_l_hand(new_arm)
-			return
-		else if(istype(tool, /obj/item/melee/synthetic_arm_blade))
+		if(istype(tool, /obj/item/melee/synthetic_arm_blade))
 			var/obj/item/melee/arm_blade/new_arm = new(target,TRUE,TRUE)
 			target_zone == BODY_ZONE_R_ARM ? target.put_in_r_hand(new_arm) : target.put_in_l_hand(new_arm)
 			return
+		surgery.complete()
 	return ..() //if for some reason we fail everything we'll print out some text okay?

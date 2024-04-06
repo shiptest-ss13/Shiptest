@@ -30,8 +30,9 @@
 /datum/surgery_step/proc/try_op(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	var/success = FALSE
 	if(accept_hand)
-		if(!tool)
+		if(!tool && tool_check(user, tool))
 			success = TRUE
+			
 		if(iscyborg(user))
 			success = TRUE
 

@@ -1,6 +1,6 @@
-//Working the stomach by hand in such a way that you induce vomiting.
 /datum/surgery_step/omni/stomach_pump
 	name = "Pump Stomach"
+	implements = list()
 	accept_hand = TRUE
 	repeatable = TRUE
 	time = 20
@@ -9,13 +9,11 @@
 	show = TRUE
 	valid_locations = list(BODY_ZONE_CHEST)
 
-/datum/surgery_step/omni/stomach_pump/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
-	var/obj/item/organ/stomach/S = target.getorganslot(ORGAN_SLOT_STOMACH)
-	if(target.stat != DEAD)	//shamelessly lifted off the revival surgery but we're looking for the same critera here, a dead, non-husked, revivable patient.
-		return FALSE
+/datum/surgery_step/omni/stomach_pump/test_op(mob/user, mob/living/carbon/target, datum/surgery/omni/surgery)
+	var/obj/item/organ/stomach/Stomach = target.getorganslot(ORGAN_SLOT_STOMACH)
 	if(HAS_TRAIT(target, TRAIT_HUSK))
 		return FALSE
-	if(!S)
+	if(!Stomach)
 		return FALSE
 	return TRUE
 

@@ -33,7 +33,7 @@
 		return TRUE
 	return FALSE
 
-//Tests a bodypart based on the "requires_bodypart" variable
+//Tests a bodypart based on the "requires_bodypart", "requires_bodypart_type" and "is_pseudopart" variables
 /datum/surgery/proc/test_part(mob/user,mob/living/target)
 	var/selected_zone = user.zone_selected
 	var/mob/living/carbon/carbon_target
@@ -42,13 +42,21 @@
 		carbon_target = target
 		part_affected = carbon_target.get_bodypart(check_zone(selected_zone))
 	else
-		return FALSE //consider sending message relaying this "Not valid target for this step"
+		return FALSE 
+	
+	//Disallows requires_bodypart surgeries to pass if it is FALSE and part_affected is null
 	if(!(requires_bodypart) && part_affected == null)
 		return TRUE
 	if(requires_bodypart && part_affected)
 		return TRUE
-	if(requires_bodypart == "DYNAMIC")
-		return TRUE
+
+	//Disallows requires_bodypart_type surgeries to pass if the part affected is a pseudopart or the bodytype of the limb is different from the required bodytype.
+	if(requires_bodypart_type && !(part_affected == null)) //Necessary else can't check null statement in part_affected.bodytype 
+		if(requires_bodypart_type != part_affected.bodytype)
+			return TRUE
+		if(part_affected.is_pseudopart)
+			return TRUE
+		return FALSE
 	return FALSE
 
 // Raw Datums

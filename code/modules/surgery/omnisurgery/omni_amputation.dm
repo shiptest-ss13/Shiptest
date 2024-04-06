@@ -8,8 +8,8 @@
 		/obj/item/fireaxe = 50,
 		/obj/item/hatchet = 40,
 		/obj/item/kitchen/knife/butcher = 25)
-	time = 6.4 SECONDS
-	preop_sound = 'sound/surgery/scalpel1.ogg'
+	time = 12 SECONDS
+	preop_sound = 'sound/surgery/saw.ogg'
 	success_sound = 'sound/surgery/organ2.ogg'
 	time = 64
 	experience_given = MEDICAL_SKILL_ORGAN_FIX

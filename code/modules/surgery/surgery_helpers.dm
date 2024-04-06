@@ -26,10 +26,6 @@
 			if(affecting)
 				if(!(S.test_part(user,M)))
 					continue
-				if(S.requires_bodypart_type && !(affecting.bodytype & S.requires_bodypart_type))
-					continue
-				if(S.requires_real_bodypart && affecting.is_pseudopart)
-					continue
 			else if(C && S.test_part(user,M)) //mob with no limb in surgery zone when we need a limb
 				continue
 			if(!(S.test_lying(user, M)))

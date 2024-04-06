@@ -2,6 +2,7 @@
 	var/list/required_layer = list(0,1,2) //What layers can this step be preformed at?
 	var/list/valid_locations = list(BODY_ZONE_CHEST,BODY_ZONE_HEAD,BODY_ZONE_L_ARM,BODY_ZONE_L_LEG,BODY_ZONE_R_ARM,BODY_ZONE_R_LEG,BODY_ZONE_PRECISE_EYES,BODY_ZONE_PRECISE_GROIN,BODY_ZONE_PRECISE_MOUTH) //List of all places this step can be preformed
 	var/requires_bodypart = TRUE //Swap to false if surgery needs to be done on a bodypart that doesn't exist (eg. An amputated limb)
+	var/target_mobtypes = list()
 	var/show = TRUE //if false, isn't considered a 'valid' step, and cant be preformed. Used for 'base' step
 	var/radial_icon = null // If not null, is the image for the radial
 	var/lying_required = TRUE //Does the vicitm needs to be lying down.
