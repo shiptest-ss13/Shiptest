@@ -178,6 +178,7 @@
 	color = "#792f27";
 	dir = 9
 	},
+/obj/item/radio/intercom/wideband/directional/west,
 /obj/machinery/button/door{
 	pixel_x = -10;
 	pixel_y = 22;
@@ -189,7 +190,6 @@
 	name = "Crew Area Shutters Control";
 	id = "sunskipper_crew_shutters"
 	},
-/obj/item/radio/intercom/wideband/directional/west,
 /obj/machinery/button/door{
 	pixel_x = 10;
 	pixel_y = 22;
@@ -393,6 +393,8 @@
 /obj/item/seeds/cocoapod,
 /obj/item/seeds/grape,
 /obj/item/seeds/soya,
+/obj/item/seeds/coffee,
+/obj/item/seeds/tea,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "ex" = (
@@ -529,16 +531,15 @@
 	},
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
+"gA" = (
+/obj/machinery/smartfridge/food,
+/turf/open/floor/plasteel/mono,
+/area/ship/crew/canteen/kitchen)
 "gE" = (
 /obj/machinery/firealarm/directional/north,
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/food/condiment/soysauce{
-	pixel_x = -6
-	},
-/obj/item/reagent_containers/food/condiment/bbqsauce{
-	pixel_x = 6
-	},
 /obj/item/radio/intercom/directional/west,
+/obj/machinery/jukebox/boombox,
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "gU" = (
@@ -1755,7 +1756,12 @@
 	dir = 1;
 	color = "#543C30"
 	},
-/obj/item/clothing/mask/vape/cigar,
+/obj/item/clothing/mask/vape/cigar{
+	pixel_y = -2
+	},
+/obj/item/toy/cards/deck/kotahi{
+	pixel_y = -14
+	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "xT" = (
@@ -2012,6 +2018,7 @@
 /obj/structure/safe,
 /obj/item/reagent_containers/food/drinks/bottle/moonshine,
 /obj/item/spacecash/bundle/c1000,
+/obj/item/gun/energy/e_gun/mini,
 /turf/open/floor/wood/mahogany,
 /area/ship/bridge)
 "AR" = (
@@ -2162,13 +2169,13 @@
 /area/ship/crew/canteen)
 "CM" = (
 /obj/structure/table/wood,
+/obj/item/toy/cards/deck/cas{
+	pixel_y = 8;
+	pixel_x = 10
+	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = -5;
 	pixel_y = 3
-	},
-/obj/item/clothing/head/fedora{
-	pixel_x = 12;
-	pixel_y = 6
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
@@ -2583,6 +2590,10 @@
 	},
 /obj/item/pen,
 /obj/machinery/newscaster/directional/east,
+/obj/item/toy/cards/deck/cas/black{
+	pixel_y = 8;
+	pixel_x = -10
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
 "Id" = (
@@ -2887,6 +2898,10 @@
 /obj/structure/table/reinforced,
 /obj/structure/sign/poster/contraband/borg_fancy_1{
 	pixel_y = -32
+	},
+/obj/item/fish_feed{
+	pixel_y = 5;
+	pixel_x = 1
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
@@ -3409,10 +3424,10 @@
 /obj/effect/turf_decal/box,
 /obj/item/radio/intercom/directional/east,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
-/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /obj/item/reagent_containers/food/snacks/meat/slab/bear,
 /obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen/kitchen)
 "Ug" = (
@@ -3522,6 +3537,7 @@
 	pixel_x = -11;
 	dir = 1
 	},
+/obj/item/reagent_containers/spray/pepper,
 /turf/open/floor/carpet/black,
 /area/ship/hallway/central)
 "Vm" = (
@@ -3558,9 +3574,13 @@
 "VG" = (
 /obj/machinery/light/directional/west,
 /obj/structure/table/reinforced,
-/obj/item/fish_feed{
-	pixel_y = 5;
-	pixel_x = 1
+/obj/item/reagent_containers/food/condiment/soysauce{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/condiment/bbqsauce{
+	pixel_x = 6;
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/crew/canteen/kitchen)
@@ -3647,6 +3667,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#543C30"
+	},
+/obj/item/toy/cards/deck/syndicate{
+	pixel_y = 2;
+	pixel_x = -1
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
@@ -3757,11 +3781,9 @@
 	name = "Manager's Locker"
 	},
 /obj/item/clipboard,
-/obj/item/gun/energy/e_gun/mini,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/shoes/laceup,
-/obj/item/reagent_containers/spray/pepper,
 /obj/item/clothing/under/suit/black_really,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -4147,7 +4169,7 @@ Nk
 HG
 OS
 eK
-vH
+gA
 Xz
 ds
 By
