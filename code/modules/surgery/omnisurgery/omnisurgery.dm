@@ -57,11 +57,9 @@
 				if(tool != null)
 					if(istype(tool,obj))
 						good = TRUE
-						to_chat(user,"<span class='warning'>istype(tool,obj) passed True</span>")
 						break
 					if((tool.tool_behaviour in Step.implements) || (tool in Step.implements))
 						good = TRUE
-						to_chat(user,"<span class='warning'>(tool.tool_behaviour in Step.implements) || (tool in Step.implements)</span>")
 						break
 			if (!good)
 				continue
