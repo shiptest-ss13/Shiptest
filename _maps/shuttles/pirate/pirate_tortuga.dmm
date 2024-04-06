@@ -49,7 +49,8 @@
 /area/ship/bridge)
 "bu" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 4
+	dir = 4;
+	id = "watchdog_cargo"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -242,9 +243,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/crew/canteen)
+"dm" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/titanium,
+/area/ship/security/armory)
 "ds" = (
 /obj/machinery/door/poddoor/shutters{
-	dir = 4
+	dir = 4;
+	id = "watchdog_cargo"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -477,7 +483,7 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ship/security/armory)
 "fR" = (
 /obj/docking_port/stationary{
@@ -485,7 +491,7 @@
 	dwidth = 15;
 	height = 15;
 	name = "tortuga dock";
-	width = 20
+	width = 15
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -588,6 +594,7 @@
 /obj/machinery/suit_storage_unit/industrial{
 	suit_type = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "hD" = (
@@ -613,7 +620,7 @@
 /area/ship/bridge)
 "hG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ship/security/armory)
 "hL" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -900,7 +907,7 @@
 	pixel_y = 20;
 	pixel_x = 12
 	},
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "kp" = (
 /obj/effect/spawner/lootdrop/maintenance,
@@ -1004,7 +1011,7 @@
 	pixel_x = 8
 	},
 /obj/machinery/light/directional/north,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/plastitanium,
 /area/ship/security/armory)
 "mf" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
@@ -1017,6 +1024,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /turf/open/floor/mineral/titanium,
 /area/ship/security/armory)
 "ml" = (
@@ -1202,7 +1211,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ship/security/armory)
 "oe" = (
 /obj/effect/turf_decal/borderfloor{
@@ -1748,7 +1757,7 @@
 /obj/item/paper_bin,
 /obj/item/pen,
 /obj/machinery/computer/helm/viewscreen/directional/east,
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "vW" = (
 /obj/item/flashlight/flare,
@@ -1837,6 +1846,9 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/maintenance)
+"xb" = (
+/turf/closed/wall/r_wall/rust,
+/area/ship/cargo)
 "xf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -1890,7 +1902,7 @@
 	pixel_x = -6;
 	pixel_y = 12
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "yl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2329,8 +2341,10 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
 "FP" = (
-/turf/closed/wall/r_wall,
-/area/ship/maintenance)
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/turf/open/floor/mineral/titanium/tiled,
+/area/ship/security/armory)
 "FQ" = (
 /turf/open/floor/mineral/titanium,
 /area/ship/security/armory)
@@ -2655,7 +2669,7 @@
 /obj/item/paicard{
 	pixel_x = 4
 	},
-/turf/open/floor/plasteel/mono,
+/turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "JZ" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer4,
@@ -2703,15 +2717,16 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "Kx" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 4
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
 /obj/machinery/power/shieldwallgen/atmos{
 	id = "watchdog_holo";
 	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "watchdog_cargo"
 	},
 /turf/open/floor/plating,
 /area/ship/cargo)
@@ -3141,7 +3156,7 @@
 /area/ship/cargo)
 "PV" = (
 /obj/structure/chair/office,
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Qi" = (
 /obj/effect/turf_decal/siding/wood,
@@ -3340,7 +3355,9 @@
 /area/ship/bridge)
 "SD" = (
 /obj/machinery/airalarm/directional/east,
-/turf/open/floor/mineral/titanium,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ship/security/armory)
 "SG" = (
 /obj/structure/closet/crate/bin,
@@ -3404,7 +3421,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/turf/open/floor/mineral/titanium,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/spline/fancy/opaque/black,
+/turf/open/floor/mineral/titanium/tiled,
 /area/ship/security/armory)
 "TM" = (
 /obj/effect/turf_decal/borderfloor,
@@ -4468,7 +4487,7 @@ CG
 Tq
 dY
 Pw
-CG
+oH
 VP
 Xb
 Hx
@@ -4484,7 +4503,7 @@ Ko
 eE
 vQ
 YX
-sQ
+Ko
 QM
 Hk
 yc
@@ -4503,7 +4522,7 @@ oH
 oH
 HG
 SS
-CG
+oH
 VP
 ov
 nc
@@ -4519,7 +4538,7 @@ Ko
 qy
 AZ
 sQ
-sQ
+Ko
 Hk
 kv
 lJ
@@ -4538,7 +4557,7 @@ ZH
 II
 wN
 iP
-CG
+oH
 Vx
 UQ
 lx
@@ -4586,9 +4605,9 @@ wL
 Vt
 Vt
 Vt
-Vt
-FP
-FP
+qD
+QJ
+QJ
 QJ
 mf
 lJ
@@ -4651,12 +4670,12 @@ WF
 WF
 Zp
 rd
-rd
+xb
 Vt
 Vt
 RV
 qu
-Vt
+qD
 AG
 Jv
 Eb
@@ -4686,12 +4705,12 @@ PC
 JE
 MC
 Gx
-Vt
+qD
 lY
+dm
+dm
 FQ
-FQ
-FQ
-Vt
+qD
 Yo
 XX
 Hk
@@ -4721,12 +4740,12 @@ iw
 Gd
 Iw
 Yu
-Vt
+qD
 jV
 Lz
-FQ
+dm
 mg
-Vt
+qD
 qD
 MI
 QJ
@@ -4762,7 +4781,7 @@ fM
 hG
 TG
 hT
-Vt
+qD
 XX
 kv
 lJ
@@ -4795,9 +4814,9 @@ Vt
 xB
 RH
 hP
-FQ
+FP
 hz
-Vt
+qD
 Dv
 fn
 lJ
@@ -4830,7 +4849,7 @@ Vt
 hU
 gD
 yH
-FQ
+FP
 hz
 qD
 MH
@@ -4867,7 +4886,7 @@ FB
 Px
 SD
 hT
-Vt
+qD
 XX
 YU
 lJ
@@ -4898,10 +4917,10 @@ iW
 Zz
 Vt
 Vt
-Vt
-Vt
-Vt
-Vt
+qD
+qD
+qD
+qD
 Vt
 MI
 QJ
@@ -5177,8 +5196,8 @@ mB
 wC
 Op
 mw
-mB
-mB
+mw
+mw
 yt
 Lm
 Kn
