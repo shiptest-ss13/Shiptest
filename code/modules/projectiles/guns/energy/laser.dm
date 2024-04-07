@@ -187,7 +187,6 @@
 
 /obj/item/gun/energy/laser/iot/lethal
 	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking. This one appears to be modified to fire lethal beams."
-	icon_state = "iotshotgun_lethal"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultima)
 
 /obj/item/gun/energy/laser/hitscanpistol
