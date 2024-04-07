@@ -63,5 +63,4 @@
 
 /obj/item/ammo_box/magazine/toy/m762/riot
 	desc = "A huge toy LMG magazine designed to fit vast quantities of legally-harmless riot control darts."
-	icon_state = "a762-riot"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
