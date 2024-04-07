@@ -27,7 +27,6 @@
 	refill_canister = /obj/item/vending_refill/security
 	default_price = 650
 	extra_price = 700
-	payment_department = ACCOUNT_SEC
 
 	var/voucher_items = list(
 		"NT-E-Rifle" = /obj/item/gun/energy/e_gun,

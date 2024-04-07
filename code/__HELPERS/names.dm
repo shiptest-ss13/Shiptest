@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 		"SUNS",
 	),
 	"SolGov" = list(
-		"SGSV",
+		"SCSV",
 	),
 	"Saint-Roumain Militia" = list(
 		"SRSV",
@@ -278,6 +278,11 @@ GLOBAL_LIST_INIT(ship_faction_to_prefixes, list(
 	),
 	"Saint-Roumaine Militia" = list(
 		"SRSV",
+	),
+	"Pan-Gezenan Federation" = list(
+		"PGF",
+		"PGFMC",
+		"PGFN",
 	),
 ))
 

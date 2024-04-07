@@ -31,14 +31,14 @@
 		return
 	if(target == user)
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
-		if(!do_mob(user, target, self_delay, extra_checks=CALLBACK(target, /mob/living/proc/can_inject, user, TRUE)))
+		if(!do_mob(user, target, self_delay, extra_checks=CALLBACK(target, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
 
 	else if(other_delay)
 		playsound(src, islist(apply_sounds) ? pick(apply_sounds) : apply_sounds, 25)
-		if(!do_mob(user, target, other_delay, extra_checks=CALLBACK(target, /mob/living/proc/can_inject, user, TRUE)))
+		if(!do_mob(user, target, other_delay, extra_checks=CALLBACK(target, TYPE_PROC_REF(/mob/living, can_inject), user, TRUE)))
 			return
 		if(!silent)
 			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [target].</span>", "<span class='notice'>You begin applying \the [src] on [target]...</span>")

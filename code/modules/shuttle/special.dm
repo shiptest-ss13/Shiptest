@@ -277,7 +277,7 @@
 
 	if(account)
 		if(account.account_balance < threshold - payees[AM])
-			account.adjust_money(-account.account_balance)
+			account.adjust_money(-account.account_balance, "luxury_shuttle")
 			payees[AM] += account.account_balance
 		else
 			var/money_owed = threshold - payees[AM]

@@ -148,8 +148,9 @@
 		card.job_icon = outfit.job_icon
 		card.faction_icon = outfit.faction_icon
 		card.assignment = J.name
+		card.update_appearance()
+		card.assignment = old_assignment
 		card.update_label()
-		card.name = "[!card.registered_name ? initial(card.name) : "[card.registered_name]'s ID Card"][" ([old_assignment])"]" // this is terrible, but whatever
 		H.sec_hud_set_ID()
 
 	qdel(outfit)
