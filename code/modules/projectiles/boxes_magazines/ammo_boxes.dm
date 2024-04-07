@@ -392,7 +392,8 @@
 /obj/item/ammo_box/c45_speedloader
 	name = "speed loader (.45)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "38"
+	icon_state = "speedloader_38-6"
+	base_icon_state = "speedloader_38"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 	max_ammo = 6

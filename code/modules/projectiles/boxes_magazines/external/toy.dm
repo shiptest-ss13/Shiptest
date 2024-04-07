@@ -21,7 +21,8 @@
 /obj/item/ammo_box/magazine/toy/pistol
 	name = "foam force pistol magazine"
 	desc = "A toy pistol magazine designed to fit harmless foam darts."
-	icon_state = "stechkin_mag-8"
+	icon_state = "stechkin_mag-1"
+	base_icon_state = "stechkin_mag"
 	max_ammo = 8
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
@@ -49,7 +50,7 @@
 /obj/item/ammo_box/magazine/toy/m762
 	name = "donksoft box magazine"
 	desc = "A huge toy LMG magazine designed to fit vast quantities of harmless foam darts."
-	icon_state = "a762-toy"
+	icon_state = "a762-100"
 	base_icon_state = "a762"
 	caliber = "foam_force"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
