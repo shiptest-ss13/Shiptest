@@ -33,3 +33,8 @@
 /obj/item/clothing/under/shorts/purple
 	name = "purple athletic shorts"
 	icon_state = "purpleshorts"
+
+/obj/item/clothing/under/shorts/cookjorts
+	name = "grilling shorts"
+	desc = "For when all you want in life is to grill for god's sake!"
+	icon_state = "greyshorts"
