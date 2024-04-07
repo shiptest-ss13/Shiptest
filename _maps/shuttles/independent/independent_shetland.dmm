@@ -333,6 +333,9 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "cR" = (
@@ -374,9 +377,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer5,
 /obj/item/radio/intercom/directional/east,
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "dl" = (
@@ -1335,6 +1335,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "lu" = (
@@ -1444,6 +1447,11 @@
 	dir = 6
 	},
 /obj/effect/decal/cleanable/oil/slippery,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "mI" = (
@@ -1470,13 +1478,6 @@
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/plasteel/white,
 /area/ship/medical)
-"mQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-6"
-	},
-/turf/open/floor/plating,
-/area/ship/engineering/engine)
 "mR" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
@@ -1510,9 +1511,6 @@
 /area/ship/hallway/port)
 "nc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/cable{
-	icon_state = "6-9"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "nm" = (
@@ -3142,6 +3140,9 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "Aj" = (
@@ -3803,9 +3804,6 @@
 /obj/machinery/atmospherics/pipe/simple/dark/visible/layer1{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "5-9"
-	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
 "GS" = (
@@ -3951,10 +3949,6 @@
 /area/ship/hallway/central)
 "Id" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/power/ship_gravity,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Ii" = (
@@ -4943,9 +4937,6 @@
 	},
 /obj/machinery/atmospherics/pipe/layer_manifold/visible{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "6-9"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/engine)
@@ -6134,7 +6125,7 @@ PP
 PP
 QB
 Id
-mQ
+pr
 Zn
 JF
 xf
