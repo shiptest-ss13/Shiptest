@@ -220,7 +220,7 @@
 /obj/item/storage/backpack/satchel/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_volume = STORAGE_VOLUME_SATCHEL
+	STR.max_volume = STORAGE_VOLUME_BACKPACK
 	STR.max_w_class = MAX_WEIGHT_CLASS_M_CONTAINER
 
 /obj/item/storage/backpack/satchel/leather
