@@ -106,8 +106,8 @@
 		stop_movement()
 		return
 
-	moving_atom.pixel_x += (horizontal_velocity * (cos(angle_of_movement)))
-	moving_atom.pixel_y += (horizontal_velocity * (sin(angle_of_movement)))
+	moving_atom.pixel_x += (horizontal_velocity * (sin(angle_of_movement)))
+	moving_atom.pixel_y += (horizontal_velocity * (cos(angle_of_movement)))
 
 	horizontal_velocity = max(0, horizontal_velocity - horizontal_friction)
 
