@@ -77,7 +77,7 @@
 		addtimer(CALLBACK(src, PROC_REF(unspin)), 3 SECONDS)
 	moving_atom.pixel_z = z_floor
 	horizontal_velocity = max(0, horizontal_velocity + (vertical_velocity * -0.8))
-	vertical_velocity = max(0, ((vertical_velocity * -0.6) - 0.2))
+	vertical_velocity = max(0, ((vertical_velocity * -0.8) - 0.2))
 
 /datum/component/movable_physics/proc/ricochet(atom/movable/moving_atom, bounce_angle)
 	angle_of_movement = ((180 - bounce_angle) - angle_of_movement)
@@ -98,6 +98,8 @@
 
 /datum/component/movable_physics/process(delta_time)
 	var/atom/movable/moving_atom = parent
+	var/turf/location = get_turf(moving_atom)
+
 	angle_of_movement = fix_angle(angle_of_movement, moving_atom)
 	if(horizontal_velocity <= 0 && moving_atom.pixel_z == 0)
 		horizontal_velocity = 0
@@ -113,7 +115,7 @@
 	if(moving_atom.pixel_z > z_floor)
 		vertical_velocity -= (z_gravity * 0.05)
 
-	if(moving_atom.pixel_z <= z_floor && (vertical_velocity != 0)) //z bounce
+	if(moving_atom.pixel_z <= z_floor && (vertical_velocity != 0) && moving_atom.has_gravity(location)) //z bounce
 		z_floor_bounce(moving_atom)
 
 	if(moving_atom.pixel_x > 16)
