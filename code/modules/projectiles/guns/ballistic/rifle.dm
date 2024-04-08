@@ -33,11 +33,11 @@
 	. = ..()
 	. += "[icon_state]_bolt[bolt_locked ? "_locked" : ""]"
 
-/obj/item/gun/ballistic/rifle/rack(mob/user = null)
+/obj/item/gun/ballistic/rifle/rack(mob/living/user)
 	if (bolt_locked == FALSE)
 		to_chat(user, "<span class='notice'>You open the bolt of \the [src].</span>")
 		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-		process_chamber(FALSE, FALSE, FALSE)
+		process_chamber(FALSE, FALSE, FALSE, shooter = user)
 		bolt_locked = TRUE
 		update_appearance()
 		if (magazine && !magazine?.ammo_count() && empty_autoeject && !internal_magazine)
