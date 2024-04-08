@@ -104,3 +104,14 @@
 
 	surgery.step_in_progress = FALSE
 	return advance
+
+/datum/surgery_step/omni/proc/get_chem_list()
+	if(!LAZYLEN(chems_needed))
+		return
+	var/list/chems = list()
+	for(var/R in chems_needed)
+		var/datum/reagent/temp = GLOB.chemical_reagents_list[R]
+		if(temp)
+			var/chemname = temp.name
+			chems += chemname
+	return english_list(chems, and_text = require_all_chems ? " and " : " or ")

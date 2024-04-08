@@ -216,17 +216,6 @@
 			if(target.reagents.has_reagent(R))
 				return TRUE
 
-/datum/surgery_step/proc/get_chem_list()
-	if(!LAZYLEN(chems_needed))
-		return
-	var/list/chems = list()
-	for(var/R in chems_needed)
-		var/datum/reagent/temp = GLOB.chemical_reagents_list[R]
-		if(temp)
-			var/chemname = temp.name
-			chems += chemname
-	return english_list(chems, and_text = require_all_chems ? " and " : " or ")
-
 //Replaces visible_message during operations so only people looking over the surgeon can tell what they're doing, allowing for shenanigans.
 /datum/surgery_step/proc/display_results(mob/user, mob/living/carbon/target, self_message, detailed_message, vague_message, target_detailed = FALSE)
 	var/list/detailed_mobs = get_hearers_in_view(1, user) //Only the surgeon and people looking over his shoulder can see the operation clearly

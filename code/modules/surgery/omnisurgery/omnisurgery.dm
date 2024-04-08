@@ -9,6 +9,14 @@
 	var/atlayer = 0										// 0/1/2 skin/muscle/bone
 	var/datum/surgery_step/omni/last_step				//The last step preformed in the surgery
 
+/datum/surgery/omni/proc/get_layer_surgeries()
+	var/list/all_steps = GLOB.omnisurgerysteps_list.Copy()
+	var/list/atlayer_surgeries = list()
+	for(var/datum/surgery_step/omni/Step in all_steps)
+		if(Step.required_layer == atlayer)
+			atlayer_surgeries += Step.name
+	return atlayer_surgeries
+
 /datum/surgery/omni/next_step(mob/user, intent)
 	if(location != user.zone_selected)
 		return FALSE
