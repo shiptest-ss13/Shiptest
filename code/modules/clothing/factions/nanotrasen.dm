@@ -13,76 +13,76 @@
 // Engineering uniforms
 /obj/item/clothing/under/nanotrasen/engineering
 	name = "engineering jumpsuit"
-	desc = 
+	desc = ""
 	icon_state = "engi"
 	item_state = "greycloth"
 
 /obj/item/clothing/under/nanotrasen/engineering/atmos
 	name = "atmospherics jumpsuit"
-	desc = 
+	desc = ""
 	icon_state = "atmos_tech"
 	item_state = "greycloth"
 
 /obj/item/clothing/under/nanotrasen/engineering/director
 	name = "director's overalls"
-	desc = 
+	desc = ""
 	icon_state = "engi_director"
 	item_state = "blackcloth"
 
 //Supply uniforms
 /obj/item/clothing/under/nanotrasen/supply
 	name = "supply shorts"
-	desc = 
+	desc = ""
 	icon_state = "supply"
 	item_state = "browncloth"
 
 /obj/item/clothing/under/nanotrasen/supply/qm
 	name = "supply pants"
-	desc = 
+	desc = ""
 	icon_state = "supply_director"
 	item_state = "browncloth"
 
 /obj/item/clothing/under/nanotrasen/supply/miner
 	name = "supply overalls"
-	desc = 
+	desc = ""
 	icon_state = "miner"
 	item_state = "browncloth"
 
 //Science uniforms
 /obj/item/clothing/under/nanotrasen/science
 	name = "science slacks"
-	desc = 
+	desc = ""
 	icon_state = "sci"
 	item_state = "whitecloth"
 
 /obj/item/clothing/under/nanotrasen/science/robotics
 	name = "robotics jumpsuit"
-	desc = 
+	desc = ""
 	icon_state = "robotics"
 	item_state = "blackcloth"
 
 /obj/item/clothing/under/nanotrasen/science/director
 	name = "science director's slacks"
-	desc = 
+	desc = ""
 	icon_state = "sci_director"
 	item_state = 
 
 //Medical uniforms
 /obj/item/clothing/under/nanotrasen/medical
 	name = "medical slacks"
-	desc = 
+	desc = ""
 	icon_state = "doctor"
 	item_state = "whitecloth"
 
 /obj/item/clothing/under/nanotrasen/medical/paramedic
 	name = "paramedic slacks"
-	desc = 
+	desc = ""
 	icon_state = "paramedic"
 	item_state = "whitecloth"
 
 /obj/item/clothing/under/nanotrasen/medical/director
 	name = "medical director's slacks"
-	desc = 
+	desc = ""
 	icon_state = "medical_cirector"
 	item_state = "bluecloth"
 
@@ -90,38 +90,38 @@
 
 /obj/item/clothing/under/nanotrasen/janitor
 	name = "janitor's uniform"
-	desc = 
+	desc = ""
 	icon_state = "janitor"
 	item_state = "graycloth"
 
 /obj/item/clothing/under/nanotrasen/affairs
 	name = "neatly pleated slacks"
-	desc = 
+	desc = ""
 	icon_state = "affairs"
 	item_state = "whitecloth"
 
 /obj/item/clothing/under/nanotrasen/security
 	name = "security slacks"
-	desc = 
+	desc = ""
 	icon_state = "security"
 	item_state = "graycloth"
 
 /obj/item/clothing/under/nanotrasen/security/director
 	name = "security director's slacks"
-	desc = 
+	desc = ""
 	icon_state = "security_director"
 	item_state = "redcloth"
 
 //Command uniforms
 /obj/item/clothing/under/nanotrasen/captain
 	name = "captain's slacks"
-	desc = 
+	desc = ""
 	icon_state = "captain"
 	item_state = "bluecloth"
 
 /obj/item/clothing/under/nanotrasen/captain/skirt
 	name = "captain's skirt"
-	desc = 
+	desc = ""
 	icon_state = "captain_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -136,13 +136,13 @@
 
 /obj/item/clothing/under/nanotrasen/officer
 	name = "officer's slacks"
-	desc = 
+	desc = ""
 	icon_state = "officer"
 	item_state = "bluecloth"
 
 /obj/item/clothing/under/nanotrasen/officer/skirt
 	name = "officer's skirt"
-	desc = 
+	desc = ""
 	icon_state = "officer_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
@@ -159,31 +159,31 @@
 
 /obj/item/clothing/suit/nanotrasen/medical_smock
 	name = "surgical smock"
-	desc = 
+	desc = ""
 	icon_state = "med_smock"
 	item_state = "bluecloth"
 
 /obj/item/clothing/suit/nanotrasen/suitjacket
 	name = "fancy suit jacket"
-	desc = 
+	desc = ""
 	icon_state = "suit_jacket"
 	item_state = "blackcloth"
 
 /obj/item/clothing/suit/nanotrasen/vest
 	name = "black hazard vest"
-	desc = 
+	desc = ""
 	icon_state = "engi_vest"
 	item_state = "blackcloth"
 
 /obj/item/clothing/suit/nanotrasen/vest/blue
 	name = "blue hazard vest"
-	desc = 
+	desc = ""
 	icon_state = "atmos_vest"
 	item_state = "bluecloth"
 
 /obj/item/clothing/suit/toggle/nanotrasen
 	name = "officer's coat"
-	desc = 
+	desc = ""
 	icon = 'icons/obj/clothing/faction/nanotrasen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_lefthand.dmi'
@@ -254,7 +254,7 @@
 
 /obj/item/clothing/suit/armor/nanotrasen/captain/parade
 	name = "captain's fancy coat"
-	desc = 
+	desc = ""
 	icon_state = "captain_formal"
 	item_state = "bluecloth"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -356,7 +356,7 @@
 
 /obj/item/clothing/head/hardhat/nanotrasen //TODO: inhands for hardhats
 	name = "black heavy-duty hat"
-	desc = 
+	desc = ""
 	icon = 'icons/obj/clothing/faction/nanotrasen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/nanotrasen/head.dmi'
 	lefthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_lefthand.dmi'
