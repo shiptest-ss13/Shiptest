@@ -33,6 +33,8 @@
 	var/allow_ai_control = FALSE
 	/// store an ntnet relay for tablets on the ship
 	var/obj/machinery/ntnet_relay/integrated/ntnet_relay
+	/// where are we jumping to, if null, deletes the ship
+	var/datum/overmap_star_system/jump_destination
 
 /obj/machinery/computer/helm/retro
 	icon = 'icons/obj/machines/retro_computer.dmi'
@@ -178,7 +180,7 @@
 		var/available_dock = FALSE
 
 		//Even if its full or incompatible with us, it should still show up.
-		if(object in SSovermap.overmap_container[current_ship.x][current_ship.y])
+		if(object in current_ship.current_overmap.overmap_container[current_ship.x][current_ship.y])
 			available_dock = TRUE
 
 		//Detect any ships in this location we can dock to

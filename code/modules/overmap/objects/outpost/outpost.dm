@@ -88,6 +88,7 @@
 	. = ..()
 	if(!.)
 		return
+	alter_token_appearance()
 	var/list/hangar_vlevels = mapzone.virtual_levels.Copy()
 	mapzone.name = name
 
@@ -365,6 +366,11 @@
 
 		shaft.shaft_elevator.add_floor_landmarks(anchor_mark, mach_marks)
 	return h_dock
+
+/datum/overmap/outpost/alter_token_appearance()
+	. = ..()
+	token.icon_state = token_icon_state
+	token.color = current_overmap.secondary_structure_color
 
 /*
 	Hangar shafts

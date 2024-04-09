@@ -93,7 +93,7 @@
  * * creation_template - The template used to create the ship.
  * * target_port - The port to dock the new ship to.
  */
-/datum/overmap/ship/controlled/Initialize(position, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
+/datum/overmap/ship/controlled/Initialize(position, system_spawned_in, datum/map_template/shuttle/creation_template, create_shuttle = TRUE)
 	. = ..()
 	if(creation_template)
 		source_template = creation_template
@@ -117,11 +117,13 @@
 	Rename("[source_template.prefix] [pick_list_replacements(SHIP_NAMES_FILE, pick(source_template.name_categories))]", TRUE)
 #endif
 	SSovermap.controlled_ships += src
+	current_overmap.controlled_ships += src
 
 /datum/overmap/ship/controlled/Destroy()
 	//SHOULD be called first
 	. = ..()
 	SSovermap.controlled_ships -= src
+	current_overmap.controlled_ships -= src
 	helms.Cut()
 	QDEL_LIST(missions)
 	LAZYCLEARLIST(owner_candidates)
@@ -203,11 +205,11 @@
  * Docks to an empty dynamic encounter. Used for intership interaction, structural modifications, and such
  */
 /datum/overmap/ship/controlled/proc/dock_in_empty_space()
-	var/datum/overmap/dynamic/empty/E = locate() in SSovermap.overmap_container[x][y]
-	if(!E)
-		E = new(list("x" = x, "y" = y))
-	if(E) //Don't make this an else
-		Dock(E)
+	var/datum/overmap/dynamic/empty/empty_space = locate() in current_overmap.overmap_container[x][y]
+	if(!empty_space)
+		empty_space = new(list("x" = x, "y" = y))
+	if(empty_space) //Don't make this an else
+		Dock(empty_space)
 
 /datum/overmap/ship/controlled/burn_engines(percentage = 100, deltatime)
 	var/thrust_used = 0 //The amount of thrust that the engines will provide with one burn

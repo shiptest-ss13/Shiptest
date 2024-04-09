@@ -102,7 +102,7 @@
 		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = SSovermap.get_unused_overmap_square()
+	var/list/results = current_overmap.get_unused_overmap_square() //curious on why theyre "reset" instead of deleted; ask mark
 	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -134,9 +134,7 @@
 		Rename(planet.name)
 		token.name = "[planet.name]"
 
-	token.icon_state = planet.icon_state
-	token.desc = planet.desc
-	token.color = planet.color
+	alter_token_appearance()
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	mapgen = planet.mapgen
@@ -158,6 +156,18 @@
 	if(!preserve_level)
 		token.desc += " It may not still be here if you leave it."
 		token.update_appearance()
+
+/datum/overmap/dynamic/alter_token_appearance()
+	if(!planet)
+		return
+	token_icon_state = planet.icon_state
+	token.icon_state = token_icon_state
+	token.desc = planet.desc
+	token.color = current_overmap.primary_color
+	if(!current_overmap.override_object_colors)
+		token.color = planet.color
+	return ..()
+
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -187,7 +197,7 @@
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
 	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
+	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 

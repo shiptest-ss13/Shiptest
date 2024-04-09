@@ -116,6 +116,8 @@
 	var/reserved_margin = 0
 	/// Margin for dockers and ruins to avoid placing things
 	var/mapping_margin = MAPPING_MARGIN
+	///what is our star system? usually null
+	var/datum/overmap_star_system/current_systen
 
 /datum/virtual_level/proc/is_in_mapping_bounds(atom/Atom)
 	if(Atom.x >= low_x + mapping_margin && Atom.x <= high_x - mapping_margin && Atom.y >= low_y + mapping_margin && Atom.y <= high_y - mapping_margin && Atom.z == z_value)

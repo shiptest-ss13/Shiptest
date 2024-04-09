@@ -3,6 +3,7 @@
 	var/token_desc = "A star."
 	var/spectral_type = STAR_G
 	var/color_vary = 0
+	var/custom_color = TRUE // do we randomly have a color?
 
 /datum/overmap/star/Initialize(position, ...)
 	var/name = gen_star_name()
@@ -15,7 +16,11 @@
 /datum/overmap/star/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
 
-/datum/overmap/star/proc/alter_token_appearance()
+/datum/overmap/star/alter_token_appearance()
+	. = ..()
+	if(!custom_color)
+		token.add_atom_colour(current_overmap.hazard_primary_color, FIXED_COLOUR_PRIORITY)
+		return
 	token.add_atom_colour(get_rand_spectral_color(spectral_type, color_vary), FIXED_COLOUR_PRIORITY)
 
 /datum/overmap/star/proc/get_rand_spectral_color(base_spec, vary_amt = 0)
@@ -72,12 +77,13 @@
 	color_vary = 0.25
 
 /datum/overmap/star/medium/alter_token_appearance()
+	. = ..()
 	token.icon = 'icons/misc/overmap_large.dmi'
 	token.bound_height = 64
 	token.bound_width = 64
 	token.pixel_x = -16
 	token.pixel_y = -16
-	..()
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/star/medium/blue
 	token_desc = "A young, blue, massive main-sequence star. The reactions at its core are so intense as to whip the entire star into convection waves."
@@ -106,12 +112,13 @@
 	color_vary = 1
 
 /datum/overmap/star/giant/alter_token_appearance()
+	. = ..()
 	token.icon = 'icons/misc/overmap_larger.dmi'
 	token.bound_height = 96
 	token.bound_width = 96
 	token.pixel_x = -32
 	token.pixel_y = -32
-	..()
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/star/giant/yellow
 	token_desc = "Like many other yellow giants, this dying star \"pulsates\" as its brightness fluctuates rhythmically."
@@ -119,7 +126,7 @@
 	color_vary = 0.25
 
 /datum/overmap/star/giant/yellow/alter_token_appearance()
-	..()
+	. = ..()
 	// adds a slight, slow flicker
 	// this took me far too long to get working right
 	var/half_duration = rand(7 SECONDS, 15 SECONDS)

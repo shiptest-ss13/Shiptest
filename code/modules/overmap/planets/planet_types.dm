@@ -16,7 +16,7 @@
 	name = "lava planet"
 	desc = "A planet rife with seismic and volcanic activity. High temperatures and dangerous xenofauna render it dangerous for the unprepared."
 	planet = DYNAMIC_WORLD_LAVA
-	icon_state = "globe_2"
+	icon_state = "lava"
 	color = COLOR_ORANGE
 	mapgen = /datum/map_generator/planet_generator/lava
 	default_baseturf = /turf/open/floor/plating/asteroid/basalt/lava
@@ -29,7 +29,7 @@
 	name = "frozen planet"
 	desc = "A frozen planet covered in thick snow, thicker ice, and dangerous predators."
 	planet = DYNAMIC_WORLD_ICE
-	icon_state = "globe_2"
+	icon_state = "ice"
 	color = COLOR_BLUE_LIGHT
 	mapgen = /datum/map_generator/planet_generator/snow
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
@@ -41,7 +41,7 @@
 	name = "jungle planet"
 	desc = "A densely forested world, filled with vines, animals, and underbrush. Surprisingly habitable with a machete."
 	planet = DYNAMIC_WORLD_JUNGLE
-	icon_state = "globe_2"
+	icon_state = "jungle"
 	color = COLOR_LIME
 	mapgen = /datum/map_generator/planet_generator/jungle
 	default_baseturf = /turf/open/floor/plating/dirt/jungle
@@ -53,7 +53,7 @@
 	name = "rock planet"
 	desc = "A rocky red world in the midst of terraforming. While some plants have taken hold, it is widely hostile to life."
 	planet = DYNAMIC_WORLD_ROCKPLANET
-	icon_state = "globe_2"
+	icon_state = "rock"
 	color = "#bd1313"
 	mapgen = /datum/map_generator/planet_generator/rock
 	default_baseturf = /turf/open/floor/plating/asteroid
@@ -62,10 +62,10 @@
 	landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 /datum/planet_type/sand
-	name = "sand planet"
+	name = "salty sand planet"
 	desc = "A formerly vibrant world, turned to sand by the ravages of the ICW. The survivors of it are long mad by now."
 	planet = DYNAMIC_WORLD_SAND
-	icon_state = "globe_2"
+	icon_state = "whitesands"
 	color = COLOR_GRAY
 	mapgen = /datum/map_generator/planet_generator/sand
 	default_baseturf = /turf/open/floor/plating/asteroid/whitesands
@@ -74,10 +74,10 @@
 	landing_sound = 'sound/effects/planet_landing_2.ogg'
 
 /datum/planet_type/beach
-	name = "beach planet"
+	name = "ocean planet"
 	desc = "The platonic ideal of vacation spots. Warm, comfortable temperatures, and a breathable atmosphere."
 	planet = DYNAMIC_WORLD_BEACHPLANET
-	icon_state = "globe"
+	icon_state = "ocean"
 	color = "#c6b597"
 	mapgen = /datum/map_generator/planet_generator/beach
 	default_baseturf = /turf/open/floor/plating/asteroid/sand/lit
@@ -127,7 +127,7 @@
 	name = "waste disposal planet"
 	desc = "A highly oxygenated world, coated in garbage, radiation, and rust."
 	planet = DYNAMIC_WORLD_WASTEPLANET
-	icon_state = "globe_2"
+	icon_state = "waste"
 	color = "#a9883e"
 	mapgen = /datum/map_generator/planet_generator/waste
 	default_baseturf = /turf/open/floor/plating/asteroid/wasteplanet
@@ -139,7 +139,7 @@
 	name = "gas giant"
 	desc = "A floating ball of gas, with high gravity and even higher pressure."
 	planet = DYNAMIC_WORLD_GAS_GIANT
-	icon_state = "globe"
+	icon_state = "giant"
 	color = COLOR_DARK_MODERATE_ORANGE
 	mapgen = /datum/map_generator/single_biome/gas_giant
 	default_baseturf = /turf/open/chasm/gas_giant
@@ -157,6 +157,6 @@
 	mapgen = /datum/map_generator/single_biome/plasma_giant
 	default_baseturf = /turf/open/chasm/gas_giant/plasma
 	weight = 0
-	icon_state = "globe"
+	icon_state = "giant"
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'

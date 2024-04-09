@@ -70,7 +70,7 @@
 #define SHIP_APPLICATION_DENIED "denied"
 
 ///Used to get the turf on the "physical" overmap representation.
-#define OVERMAP_TOKEN_TURF(x_pos, y_pos) locate(SSovermap.overmap_vlevel.low_x + SSovermap.overmap_vlevel.reserved_margin + x_pos - 1, SSovermap.overmap_vlevel.low_y + SSovermap.overmap_vlevel.reserved_margin + y_pos - 1, SSovermap.overmap_vlevel.z_value)
+#define OVERMAP_TOKEN_TURF(x_pos, y_pos, system) locate(system.overmap_vlevel.low_x + system.overmap_vlevel.reserved_margin + x_pos - 1, system.overmap_vlevel.low_y + system.overmap_vlevel.reserved_margin + y_pos - 1, system.overmap_vlevel.z_value)
 
 ///Name of the file used for ship name random selection, if any new categories are added be sure to add them to the schema, too!
 #define SHIP_NAMES_FILE "ship_names.json"

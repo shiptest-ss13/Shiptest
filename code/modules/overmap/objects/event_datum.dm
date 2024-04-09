@@ -16,11 +16,17 @@
 /datum/overmap/event/Initialize(position, ...)
 	. = ..()
 	SSovermap.events += src
-	token.desc = desc
+	current_overmap.events += src
+	alter_token_appearance()
 
 /datum/overmap/event/Destroy()
 	. = ..()
 	SSovermap.events -= src
+	current_overmap.events -= src
+
+/datum/overmap/event/alter_token_appearance()
+	. = ..()
+	token.desc = desc
 
 /**
  * The main proc for calling other procs. Called by SSovermap.
@@ -53,12 +59,13 @@
 		/obj/effect/meteor/irradiated=3
 	)
 
-/datum/overmap/event/meteor/Initialize(position, ...)
+/datum/overmap/event/meteor/alter_token_appearance()
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
-	token.color = "#a08444"
-	token.light_color = "#a08444"
-	token.update_appearance()
+	token.color = current_overmap.hazard_primary_color
+	if(!current_overmap.override_object_colors)
+		token.color = "#a08444"
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/meteor/apply_effect()
 	for(var/datum/overmap/ship/controlled/Ship in get_nearby_overmap_objects())
@@ -90,7 +97,7 @@
 		/obj/effect/meteor/irradiated=10,
 		/obj/effect/meteor/tunguska = 1
 	)
-/* commented out until ion storms aren't literal torture
+
 ///ION STORM - explodes your IPCs
 /datum/overmap/event/emp
 	name = "ion storm (moderate)"
@@ -101,12 +108,13 @@
 	chance_to_affect = 20
 	var/strength = 4
 
-/datum/overmap/event/emp/Initialize(position, ...)
+/datum/overmap/event/emp/alter_token_appearance()
 	. = ..()
 	token.icon_state = "ion[rand(1, 4)]"
-	token.color = "#7cb4d4"
-	token.light_color = "#7cb4d4"
-	token.update_appearance()
+	token.color = current_overmap.hazard_primary_color
+	if(!current_overmap.override_object_colors)
+		token.color = "#7cb4d4"
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)
@@ -128,7 +136,7 @@
 	chance_to_affect = 25
 	chain_rate = 4
 	strength = 6
-*/
+
 ///ELECTRICAL STORM - explodes your computer and IPCs
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
@@ -141,12 +149,13 @@
 	var/max_damage = 15
 	var/min_damage = 5
 
-/datum/overmap/event/electric/Initialize(position, ...)
+/datum/overmap/event/electric/alter_token_appearance()
 	. = ..()
 	token.icon_state = "electrical[rand(1, 4)]"
-	token.color = "#e8e85c"
-	token.light_color = "#e8e85c"
-	token.update_appearance()
+	token.color = current_overmap.hazard_primary_color
+	if(!current_overmap.override_object_colors)
+		token.color = "#e8e85c"
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
 	var/datum/virtual_level/ship_vlevel = S.shuttle_port.get_virtual_level()
@@ -178,12 +187,13 @@
 	chain_rate = 8
 	spread_chance = 75
 
-/datum/overmap/event/nebula/Initialize(position, ...)
+/datum/overmap/event/nebula/alter_token_appearance()
 	. = ..()
 	token.opacity = TRUE
-	token.color = "#c053f3"
-	token.light_color = "#c053f3"
-	token.update_appearance()
+	token.color = current_overmap.hazard_secondary_color
+	if(!current_overmap.override_object_colors)
+		token.color = "#c053f3"
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/wormhole
 	name = "wormhole"
@@ -204,15 +214,21 @@
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
 		other_wormhole = new(null, src) //Create a new wormhole at a random location
-	token.color = adjust_colors()
-	token.light_color = adjust_colors()
+	alter_token_appearance()
+
+/datum/overmap/event/wormhole/alter_token_appearance()
+	. = ..()
+	token.color = current_overmap.hazard_primary_color
+	if(!current_overmap.override_object_colors)
+		token.color = adjust_colors()
 	token.update_appearance()
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
 	if(!other_wormhole)
 		qdel(src)
 	if(--stability <= 0)
-		var/list/results = SSovermap.get_unused_overmap_square()
+		var/list/results = current_overmap.get_unused_overmap_square()
 		S.overmap_move(results["x"], results["y"])
 		QDEL_NULL(other_wormhole)
 		for(var/MN in GLOB.player_list)
@@ -258,13 +274,13 @@
 		/obj/effect/meteor/carp/big=1, //numbers I pulled out of my ass
 	)
 
-/datum/overmap/event/meteor/carp/Initialize(position, ...)
+/datum/overmap/event/meteor/carp/alter_token_appearance()
 	. = ..()
 	token.icon_state = "carp[rand(1, 4)]"
-	token.color = "#7b1ca8"
-	token.light_color = "#7b1ca8"
-	token.update_icon()
-
+	token.color = current_overmap.hazard_primary_color
+	if(!current_overmap.override_object_colors)
+		token.color = "#7b1ca8"
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/meteor/carp/minor
 	name = "carp migration (minor)"
@@ -302,12 +318,13 @@
 		/obj/effect/meteor/dust=3,
 	)
 
-/datum/overmap/event/meteor/dust/Initialize(position, ...)
+/datum/overmap/event/meteor/dust/alter_token_appearance()
 	. = ..()
 	token.icon_state = "dust[rand(1, 4)]"
-	token.color = "#506469" //we should make these defines
-	token.light_color = "#506469"
-	token.update_icon()
+	token.color = current_overmap.hazard_secondary_color
+	if(!current_overmap.override_object_colors)
+		token.color = "#506469" //we should make these defines
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/anomaly
 	name = "anomaly field"
@@ -317,12 +334,13 @@
 	spread_chance = 35
 	chain_rate = 6
 
-/datum/overmap/event/anomaly/Initialize(position, ...)
+/datum/overmap/event/anomaly/alter_token_appearance()
 	. = ..()
 	token.icon_state = "anomaly[rand(1, 4)]"
-	token.color = "#c46a24"
-	token.light_color = "#c46a24"
-	token.update_icon()
+	token.color = current_overmap.hazard_secondary_color
+	if(!current_overmap.override_object_colors)
+		token.color = "#c46a24"
+	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
 	var/area/source_area = pick(S.shuttle_port.shuttle_areas)

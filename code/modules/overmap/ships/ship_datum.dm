@@ -1,13 +1,19 @@
 /**
  * # Overmap ships
  *
- * Basically, any overmap object that is capable of moving by itself.
+ * Basically, any overmap object that is capable of moving by itself. //wouldnt it make more sense for this to be named /datum/overmap/movable
  *
  */
 /datum/overmap/ship
 	name = "overmap vessel"
 	char_rep = ">"
 	token_icon_state = "ship"
+
+	///the icon state used when we are stationary
+	var/stationary_icon_state = "ship"
+	///the icon state used when we are moving
+	var/moving_icon_state = "ship_moving"
+
 	///Timer ID of the looping movement timer
 	var/movement_callback_id
 	///Max possible speed (1 tile per tick / 600 tiles per minute)
@@ -27,7 +33,7 @@
 	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
 
-/datum/overmap/ship/Initialize(position, ...)
+/datum/overmap/ship/Initialize(position, system_spawned_in, ...)
 	. = ..()
 	if(docked_to)
 		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, PROC_REF(on_docked_to_moved))
@@ -229,8 +235,15 @@
 		char_rep = "^"
 	else if(direction & SOUTH)
 		char_rep = "v"
+	alter_token_appearance()
+
+/datum/overmap/ship/alter_token_appearance()
+	. = ..()
+	var/direction = get_heading()
 	if(direction)
-		token.icon_state = "ship_moving"
+		token_icon_state = moving_icon_state
 		token.dir = direction
 	else
-		token.icon_state = "ship"
+		token_icon_state = stationary_icon_state
+	token.icon_state = token_icon_state
+	token.color = current_overmap.primary_structure_color

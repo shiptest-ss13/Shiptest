@@ -26,6 +26,8 @@
 	/// Whether or not the overmap object is currently docking.
 	var/docking
 
+	/// Current overmap we are apart of.
+	var/datum/overmap_star_system/current_overmap
 	/// List of all datums docked in this datum.
 	var/list/datum/overmap/contents
 	/// The datum this datum is docked to.
@@ -41,17 +43,19 @@
 	/// The current docking ticket of this object, if any
 	var/datum/docking_ticket/current_docking_ticket
 
-/datum/overmap/New(position, ...)
+/datum/overmap/New(position, system_spawned_in, ...)
 	SHOULD_NOT_OVERRIDE(TRUE) // Use [/datum/overmap/proc/Initialize] instead.
+	current_overmap = system_spawned_in
 	if(!position)
-		position = SSovermap.get_unused_overmap_square(force = TRUE)
+		position = current_overmap.get_unused_overmap_square(force = TRUE)
 
+	current_overmap.overmap_objects |= src
 	SSovermap.overmap_objects |= src
 
 	contents = list()
 
 	if(islist(position))
-		SSovermap.overmap_container[position["x"]][position["y"]] += src
+		current_overmap.overmap_container[position["x"]][position["y"]] += src
 		x = position["x"]
 		y = position["y"]
 	else if(istype(position, /datum/overmap))
@@ -66,6 +70,7 @@
 	Initialize(arglist(args))
 
 /datum/overmap/Destroy(force, ...)
+	current_overmap.overmap_objects -= src
 	SSovermap.overmap_objects -= src
 	if(current_docking_ticket)
 		QDEL_NULL(current_docking_ticket)
@@ -73,7 +78,7 @@
 		docked_to.post_undocked()
 		docked_to.contents -= src
 	if(isnum(x) && isnum(y))
-		SSovermap.overmap_container[x][y] -= src
+		current_overmap.overmap_container[x][y] -= src
 	token.parent = null
 	QDEL_NULL(token)
 	QDEL_LIST(contents)
@@ -105,10 +110,12 @@
 			token.parent.token = null
 		token.parent = src
 		update_token_location()
+		alter_token_appearance()
 		return
 
 	// creating a new token
 	token = new token_type(null, src)
+	alter_token_appearance()
 	update_token_location()
 
 /**
@@ -118,7 +125,7 @@
 	if(!isnull(docked_to))
 		token.abstract_move(docked_to.token)
 		return
-	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))
+	token.abstract_move(OVERMAP_TOKEN_TURF(x, y, current_overmap))
 
 /**
  * Called whenever you need to move an overmap datum to another position. Can be overridden to add additional movement functionality, as long as it calls the parent proc.
@@ -135,20 +142,20 @@
 		CRASH("Overmap datum [src] tried to move() to an invalid location. (X: [new_x], Y: [new_y])")
 	if(new_x == x && new_y == y)
 		return
-	new_x %= SSovermap.size
-	new_y %= SSovermap.size
+	new_x %= current_overmap.size
+	new_y %= current_overmap.size
 	if(new_x == 0) // I don't know how to do this better atm
-		new_x = SSovermap.size
+		new_x = current_overmap.size
 	if(new_y == 0)
-		new_y = SSovermap.size
-	SSovermap.overmap_container[x][y] -= src
-	SSovermap.overmap_container[new_x][new_y] += src
+		new_y = current_overmap.size
+	current_overmap.overmap_container[x][y] -= src
+	current_overmap.overmap_container[new_x][new_y] += src
 	var/old_x = x
 	var/old_y = y
 	x = new_x
 	y = new_y
 	// Updates the token with the new position.
-	token.abstract_move(OVERMAP_TOKEN_TURF(x, y))
+	token.abstract_move(OVERMAP_TOKEN_TURF(x, y, current_overmap))
 	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y)
 	return TRUE
 
@@ -192,7 +199,7 @@
 /datum/overmap/proc/get_nearby_overmap_objects(include_docked = FALSE)
 	if(docked_to)
 		return list()
-	. = SSovermap.overmap_container[x][y] - src
+	. = current_overmap.overmap_container[x][y] - src
 	if(!include_docked)
 		return
 	var/dequeue_pointer = 0
@@ -287,7 +294,7 @@
 /datum/overmap/proc/complete_dock(datum/overmap/dock_target, datum/docking_ticket/ticket)
 	SHOULD_CALL_PARENT(TRUE)
 	if(isnum(x) && isnum(y))
-		SSovermap.overmap_container[x][y] -= src
+		current_overmap.overmap_container[x][y] -= src
 	x = null
 	y = null
 	dock_target.contents |= src
@@ -336,13 +343,13 @@
 	var/datum/overmap/container = docked_to
 	while(container && !container.x || !container.y)
 		container = container.docked_to
-	SSovermap.overmap_container[container.x][container.y] += src
+	current_overmap.overmap_container[container.x][container.y] += src
 	x = container.x
 	y = container.y
 	docked_to.contents -= src
 	var/datum/overmap/old_docked_to = docked_to
 	docked_to = null
-	token.forceMove(OVERMAP_TOKEN_TURF(x, y))
+	token.forceMove(OVERMAP_TOKEN_TURF(x, y, current_overmap))
 	INVOKE_ASYNC(old_docked_to, PROC_REF(post_undocked), src)
 	docking = FALSE
 	SEND_SIGNAL(src, COMSIG_OVERMAP_UNDOCK, old_docked_to)
@@ -414,3 +421,37 @@
 	dock_to_adjust.forceMove(locate(new_dock_location[1], new_dock_location[2], dock_to_adjust.z))
 	dock_to_adjust.dheight = new_dheight
 	dock_to_adjust.dwidth = new_dwidth
+
+/*
+ * Called when trying to jump to another star system.
+ *
+ * * new_system - The overmap we are trying to go to.
+ * * new_x - New x coordinates, if any.
+ * * new_y - New x coordinates, if any.
+ */
+/datum/overmap/proc/move_overmaps(datum/overmap_star_system/new_system, new_x, new_y)
+	if(!new_system)
+		CRASH("move_overmaps() called with no valid overmap!")
+
+	current_overmap.overmap_container[x][y] -= src
+	current_overmap = new_system // finally, we move
+
+	if(new_x || new_y)
+		overmap_move(new_x, new_y)
+	else
+		var/list/results = current_overmap.get_unused_overmap_square()
+		overmap_move(results["x"], results["y"])
+	alter_token_appearance()
+
+
+/*
+ * Simply updates the token's appearance with new information, think of this like update_appearance() on atoms.
+ */
+
+/datum/overmap/proc/alter_token_appearance()
+	token.icon_state = token_icon_state
+	if(token.icon != current_overmap.tileset)
+		token.icon = current_overmap.tileset
+	if(!current_overmap.override_object_colors)
+		token.color = current_overmap.primary_color
+	current_overmap.post_edit_token_state(src)

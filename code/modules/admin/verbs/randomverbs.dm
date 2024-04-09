@@ -852,13 +852,22 @@
 					ruin_target = select_from[selected_ruin]
 
 	var/list/position = list()
+	var/datum/overmap_star_system/selected_system //the star system we are
+
+	if(length(SSovermap.tracked_star_systems) > 1)
+		selected_system = tgui_input_list(usr, "Which star system do you want to spawn it in?", "Spawn Planet/Ruin", SSovermap.tracked_star_systems)
+	else
+		selected_system = SSovermap.tracked_star_systems[1]
+	if(!selected_system)
+		return //if selected_system didnt get selected, we nope out, this is very bad
+
 	if(tgui_alert(usr, "Where do you want to spawn your Planet/Ruin?", "Spawn Planet/Ruin", list("Pick a location", "Random")) == "Pick a location")
-		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,SSovermap.size)) as num
-		if(locate(/datum/overmap) in SSovermap.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
+		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,selected_system.size)) as num
+		if(locate(/datum/overmap) in selected_system.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
 			return
 	else
-		position = SSovermap.get_unused_overmap_square()
+		position = selected_system.get_unused_overmap_square()
 
 	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
 	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
@@ -877,6 +886,23 @@
 	for(var/ruin in encounter.ruin_turfs)
 		var/turf/ruin_turf = encounter.ruin_turfs[ruin]
 		message_admins(span_big("Click here to jump to \"[ruin]\": " + ADMIN_JMP(ruin_turf)))
+
+/client/proc/spawn_overmap()
+	set name = "Spawn Overmap"
+	set category = "Fun"
+	if(!check_rights(R_ADMIN) || !check_rights(R_SPAWN))
+		return
+
+	var/overmap_type = tgui_input_list(usr, "What type of Star System?", "Spawn Overmap", typesof(/datum/overmap_star_system/), 60 SECONDS)
+	if(!overmap_type)
+		return
+
+	message_admins("Generating Star System type: [overmap_type], this may take some time!")
+	var/datum/overmap_star_system/nova = SSovermap.spawn_new_star_system(overmap_type)
+	if(!nova)
+		message_admins("Failed to generate Star System [overmap_type]!")
+		return
+	message_admins(span_big("Overmap [nova.name] successfully generated!"))
 
 /client/proc/smite(mob/living/target as mob)
 	set name = "Smite"

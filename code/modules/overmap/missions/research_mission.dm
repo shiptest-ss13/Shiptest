@@ -51,7 +51,7 @@
 	var/obj/docking_port/mobile/scanner_port
 	if(failed || (num_current >= num_wanted))
 		return
-	over_obj = locate(objective_type) in SSovermap.overmap_container[ship.x][ship.y]
+	over_obj = locate(objective_type) in ship.current_overmap.overmap_container[ship.x][ship.y]
 	scanner_port = SSshuttle.get_containing_shuttle(scanner)
 	if(!over_obj || !scanner.is_operational || scanner_port?.current_ship != servant)
 		return

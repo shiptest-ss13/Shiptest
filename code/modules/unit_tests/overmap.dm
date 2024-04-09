@@ -28,7 +28,7 @@
 	docker.Dock(dockee)
 
 	TEST_ASSERT_EQUAL(docker.docked_to, dockee, "Ship did not dock to dockee (Value: [docker.docked_to])")
-	TEST_ASSERT(!(docker in SSovermap.overmap_container[1][1]), "Ship did not remove itself from overmap container after docking")
+	TEST_ASSERT(!(docker in docker.current_overmap.overmap_container[1][1]), "Ship did not remove itself from overmap container after docking")
 	TEST_ASSERT(docker in dockee.contents, "Ship did not add itself to dockee after docking")
 	TEST_ASSERT_EQUAL(docker.docking, FALSE, "Ship did not set var/docking to false after docking (Value: [docker.docking])")
 
@@ -43,7 +43,7 @@
 	docker.Undock()
 
 	TEST_ASSERT(!docker.docked_to, "Ship did not undock from dockee (Value: [docker.docked_to])")
-	TEST_ASSERT(docker in SSovermap.overmap_container[3][3], "Ship did not add itself to overmap container in correct position after undocking")
+	TEST_ASSERT(docker in docker.current_overmap.overmap_container[3][3], "Ship did not add itself to overmap container in correct position after undocking")
 	TEST_ASSERT(!(docker in dockee.contents), "Ship did not remove itself from dockee after undocking")
 	TEST_ASSERT_EQUAL(docker.docking, FALSE, "Ship did not set var/docking to false after undocking (Value: [docker.docking])")
 
