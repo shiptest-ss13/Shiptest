@@ -65,7 +65,7 @@
 	name = "science director's slacks"
 	desc = ""
 	icon_state = "sci_director"
-	item_state = 
+	item_state = "blackcloth"
 
 //Medical uniforms
 /obj/item/clothing/under/nanotrasen/medical
@@ -287,8 +287,8 @@
 /obj/item/clothing/head/nanotrasen/beret/security/command
 	name = "fancy black beret"
 	desc = ""
-	icon_state = "beret_blue"
-	item_state = "bluecloth"
+	icon_state = "beret_black"
+	item_state = "blackcloth"
 
 /obj/item/clothing/head/nanotrasen/surgical
 	name = "surgical cap"

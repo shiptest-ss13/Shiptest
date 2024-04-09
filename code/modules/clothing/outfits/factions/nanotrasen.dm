@@ -36,7 +36,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/captain
 	shoes = /obj/item/clothing/shoes/laceup
 	neck = /obj/item/clothing/neck/cloak/nanotrasen
-	head = /obj/item/clothing/head/caphat/nt
+	head = /obj/item/clothing/head/nanotrasen/captain/peaked
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
 	backpack = /obj/item/storage/backpack/captain
@@ -99,8 +99,8 @@
 	uniform = /obj/item/clothing/under/nanotrasen/security/director
 	alt_uniform = null
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
-	alt_suit = /obj/item/clothing/suit/armor/nanotrasen/slim
+	suit = /obj/item/clothing/suit/armor/nanotrasen/slim
+	alt_suit = /obj/item/clothing/suit/armor/nanotrasen/sec_director
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/nanotrasen/beret/security/command
@@ -394,7 +394,7 @@
 
 	ears = /obj/item/radio/headset/headset_srvsec
 	uniform = /obj/item/clothing/under/nanotrasen/affairs
-	suit = /obj/item/clothing/suit/toggle/nanotrasen/suitjacket
+	suit = /obj/item/clothing/suit/nanotrasen/suitjacket
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/laser_pointer
@@ -434,8 +434,8 @@
 
 // Roboticist
 /datum/outfit/job/nanotrasen/roboticist
-	name = "Nanotrasen - Mech Technician"
-	id_assignment = "Mech Technician"
+	name = "Nanotrasen - Roboticist"
+	id_assignment = "Roboticist"
 	job_icon = "roboticist"
 	jobtype = /datum/job/roboticist
 

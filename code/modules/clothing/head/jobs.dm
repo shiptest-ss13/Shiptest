@@ -35,6 +35,10 @@
 	desc = "A commanding white stetson adorned with a general's badge. Why this belongs to a captain is anybody's guess."
 	icon_state = "cowboycap"
 
+/obj/item/clothing/head/caphat/nt
+	name = "captain's hat"
+	icon_state = "captain_nt"
+
 /obj/item/clothing/head/caphat/frontier
 	name = "\improper Frontiersmen commander's cap"
 	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
