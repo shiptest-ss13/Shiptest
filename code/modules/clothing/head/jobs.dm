@@ -25,22 +25,15 @@
 	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/captain
 
-//Captain: This is no longer space-worthy
 /obj/item/clothing/head/caphat/parade
 	name = "captain's parade cap"
 	desc = "Worn only by Captains with an abundance of class."
 	icon_state = "capcap"
 
-	dog_fashion = null
-
 /obj/item/clothing/head/caphat/cowboy
 	name = "general's hat"
 	desc = "A commanding white stetson adorned with a general's badge. Why this belongs to a captain is anybody's guess."
 	icon_state = "cowboycap"
-
-/obj/item/clothing/head/caphat/nt
-	name = "captain's hat"
-	icon_state = "captain_nt"
 
 /obj/item/clothing/head/caphat/frontier
 	name = "\improper Frontiersmen commander's cap"
