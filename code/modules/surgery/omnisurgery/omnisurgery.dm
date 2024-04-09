@@ -13,11 +13,14 @@
 	var/list/all_steps = GLOB.omnisurgerysteps_list.Copy()
 	var/list/atlayer_surgeries = list()
 	for(var/datum/surgery_step/omni/Step in all_steps)
-		if(Step.required_layer == atlayer)
-			atlayer_surgeries += Step.name
+		if(atlayer in Step.required_layer)
+			atlayer_surgeries += Step
 	return atlayer_surgeries
 
 /datum/surgery/omni/next_step(mob/user, intent)
+	for(var/datum/surgery_step/omni/Step in get_layer_surgeries())
+		user.visible_message("[Step]")
+
 	if(location != user.zone_selected)
 		return FALSE
 	if(step_in_progress)
