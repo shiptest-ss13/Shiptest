@@ -3,7 +3,7 @@
 	name = "generic looking aquarium fish"
 	desc = "very bland"
 	icon = 'icons/obj/aquarium.dmi'
-	icon_state = "bugfish"
+	icon_state = "trout" //Replace this with "bugfish" from tg please
 
 	w_class = WEIGHT_CLASS_TINY
 
