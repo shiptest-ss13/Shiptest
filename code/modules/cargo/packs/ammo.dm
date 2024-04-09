@@ -39,9 +39,8 @@
 /datum/supply_pack/ammo/a357_mag
 	name = ".357 Speedloader Crate"
 	desc = "Contains a .357 speedloader for revolvers,  containing seven rounds."
-	contains = list(/obj/item/ammo_box/a357,
-					/obj/item/ammo_box/a357)
-	cost = 1500
+	contains = list(/obj/item/ammo_box/a357)
+	cost = 750
 
 /datum/supply_pack/ammo/mag_556mm
 	name = "5.56 Pistole C Magazine Crate"
@@ -164,7 +163,7 @@
 
 /datum/supply_pack/ammo/a850r_ammo
 	name = "8x50mmR En Bloc Clip Crate"
-	desc = "Contains a 8x50mmR en bloc clips for rifles like the illestren rifle, containing five rounds."
+	desc = "Contains a 8x50mmR en bloc clip for rifles like the illestren rifle, containing five rounds."
 	contains = list(/obj/item/ammo_box/magazine/illestren_a850r)
 	cost = 250
 
@@ -182,7 +181,7 @@
 
 /datum/supply_pack/ammo/c45_ammo_box
 	name = ".45 Ammo Box Crate"
-	desc = "Contains a fifty-round .45 box for pistols and SMGs like the M1911 or the C-20r."
+	desc = "Contains a fifty-round .45 box for pistols and SMGs like the Candor or the C-20r."
 	contains = list(/obj/item/ammo_box/c45)
 	cost = 250
 

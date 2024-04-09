@@ -12,12 +12,6 @@
 	description = "something dangerous"
 	suffix = "rockplanet_heirophant.dmm"
 
-/datum/map_template/ruin/rockplanet/cult
-	name = "Cult base"
-	id = "rockcult"
-	description = "Cultists seem to have gotten here too."
-	suffix = "rockplanet_cult.dmm"
-
 /* TODO: GREEBLE
 /datum/map_template/ruin/rockplanet/dangerpod
 	name = "Dangerous pod"
@@ -32,15 +26,6 @@
 	id = "pioneer"
 	description = "The pioneers used to ride these babies for miles!"
 	suffix = "rockplanet_pioneer.dmm"
-*/
-
-
-/* greeble
-/datum/map_template/ruin/rockplanet/wizard
-	name = "rockplanet wizard den"
-	id = "rockwizard"
-	description = "Wizards have reached all the ways out here too."
-	suffix = "rockplanet_wizard.dmm"
 */
 
 /*greeble
@@ -65,10 +50,10 @@
 	suffix = "rockplanet_boxsci.dmm"
 
 /datum/map_template/ruin/rockplanet/crash_cult
-	name = "Crashed Cult Ship"
-	description = "A crashed part of some unlucky ship. Has been occupied by a cult."
+	name = "Crashed Exploration Clipper"
+	description = "A crashed exploration vessel. Hivebots are taking this ship apart for scrap."
 	id = "crash_cult"
-	suffix = "rockplanet_crash_cult.dmm"
+	suffix = "rockplanet_crash.dmm"
 
 /datum/map_template/ruin/rockplanet/saloon
 	name = "Abandoned saloon"

@@ -127,7 +127,7 @@
 
 /obj/item/clothing/head/soft/sec/brig_phys
 	name = "security medic cap"
-	icon_state = "secmedsoft"
+	icon_state = "secsoft"
 
 /obj/item/clothing/head/soft/paramedic
 	name = "paramedic cap"
@@ -140,7 +140,7 @@
 	name = "cybersun agent cap"
 	desc = "A black baseball hat emblazoned with a reflective Cybersun patch."
 	icon_state = "agentsoft"
-	soft_type = "black"
+	soft_type = "agent"
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/cybersun/medical

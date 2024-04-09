@@ -3,6 +3,7 @@
 /obj/structure/sign/map
 	name = "station map"
 	desc = "A navigational chart of the station."
+	icon_state = "map-left"
 	icon = 'icons/obj/structures/signs/directions.dmi'
 	max_integrity = 500
 

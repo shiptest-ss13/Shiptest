@@ -37,7 +37,12 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new /datum/stack_recipe("sofa (middle)", /obj/structure/chair/sofa, 1, one_per_turf = TRUE, on_floor = TRUE),
 		new /datum/stack_recipe("sofa (left)", /obj/structure/chair/sofa/left, 1, one_per_turf = TRUE, on_floor = TRUE),
 		new /datum/stack_recipe("sofa (right)", /obj/structure/chair/sofa/right, 1, one_per_turf = TRUE, on_floor = TRUE),
-		new /datum/stack_recipe("sofa (corner)", /obj/structure/chair/sofa/corner, 1, one_per_turf = TRUE, on_floor = TRUE)
+		new /datum/stack_recipe("sofa (corner)", /obj/structure/chair/sofa/corner, 1, one_per_turf = TRUE, on_floor = TRUE),
+		new /datum/stack_recipe("red sofa (middle)", /obj/structure/chair/sofa/red, 1, one_per_turf = TRUE, on_floor = TRUE),
+		new /datum/stack_recipe("red sofa (left)", /obj/structure/chair/sofa/left, 1, one_per_turf = TRUE, on_floor = TRUE),
+		new /datum/stack_recipe("red sofa (right)", /obj/structure/chair/sofa/red/right, 1, one_per_turf = TRUE, on_floor = TRUE),
+		new /datum/stack_recipe("red sofa (corner)", /obj/structure/chair/sofa/red/corner, 1, one_per_turf = TRUE, on_floor = TRUE),
+		new /datum/stack_recipe("red sofa (internal corner)", /obj/structure/chair/sofa/red/internal_corner, 1, one_per_turf = TRUE, on_floor = TRUE)
 		)),
 	null, \
 	new/datum/stack_recipe("rack parts", /obj/item/rack_parts), \
@@ -780,7 +785,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	name = "pepperoni sheetzzas"
 	desc = "It's a delicious pepperoni sheetzza!"
 	singular_name = "pepperoni sheetzza"
-	icon_state = "sheet-pizza"
+	icon_state = "sheet-meat" //This needs a pizza sheet but we also i dont think anyone will ever make this.
 	custom_materials = list(/datum/material/pizza = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/pizza
 	material_type = /datum/material/pizza

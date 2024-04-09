@@ -30,12 +30,18 @@
 /obj/structure/filingcabinet/filingcabinet	//not changing the path to avoid unnecessary map issues, but please don't name stuff like this in the future -Pete
 	icon_state = "tallcabinet"
 
+/obj/structure/filingcabinet/wide
+	icon_state = "widecabinet"
+
 /obj/structure/filingcabinet/double
 	name = "filing cabinets"
 	icon_state = "doublefilingcabinet"
 
 /obj/structure/filingcabinet/double/grey
 	icon_state = "doubletallcabinet"
+
+/obj/structure/filingcabinet/double/grey
+	icon_state = "doublewidecabinet"
 
 /obj/structure/filingcabinet/Initialize(mapload)
 	. = ..()
