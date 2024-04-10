@@ -4,7 +4,7 @@
  * Medical Director
 */
 
-/datum/outfit/job/nanotrasen 
+/datum/outfit/job/nanotrasen
 	name = "Nanotrasen - Base Outfit"
 	faction_icon = "bg_nanotrasen"
 
@@ -73,7 +73,7 @@
 
 	backpack_contents = list(
 						/obj/item/storage/box/ids=1,
-						/obj/item/melee/classic_baton/telescopic=1, 
+						/obj/item/melee/classic_baton/telescopic=1,
 						/obj/item/modular_computer/tablet/preset/advanced = 1,
 						)
 

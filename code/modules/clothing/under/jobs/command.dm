@@ -50,12 +50,6 @@
 	can_adjust = FALSE
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON | VOX_VARIATION
 
-/obj/item/clothing/under/rank/command/captain/parade
-	name = "captain's parade uniform"
-	desc = "A captain's luxury-wear, for special occasions."
-	icon_state = "captain_parade"
-	item_state = "b_suit"
-	can_adjust = FALSE
 
 //Head of Personnel
 

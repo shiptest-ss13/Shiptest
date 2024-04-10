@@ -9,6 +9,7 @@
 	righthand_file = 'icons/mob/inhands/faction/nanotrasen/nt_righthand.dmi'
 	icon_state = "deckhand"
 	item_state = "graycloth"
+	supports_variations = DIGITIGRADE_VARIATION
 
 // Engineering uniforms
 /obj/item/clothing/under/nanotrasen/engineering
@@ -83,7 +84,7 @@
 /obj/item/clothing/under/nanotrasen/medical/director
 	name = "medical director's slacks"
 	desc = ""
-	icon_state = "medical_cirector"
+	icon_state = "medical_director"
 	item_state = "bluecloth"
 
 //Security/civilian uniforms
@@ -116,20 +117,20 @@
 /obj/item/clothing/under/nanotrasen/captain
 	name = "captain's slacks"
 	desc = ""
-	icon_state = "captain"
+	icon_state = "nt_captain"
 	item_state = "bluecloth"
 
 /obj/item/clothing/under/nanotrasen/captain/skirt
 	name = "captain's skirt"
 	desc = ""
-	icon_state = "captain_skirt"
+	icon_state = "nt_captain_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /*
 /obj/item/clothing/under/nanotrasen/captain/parade
-	name = 
-	desc =
+	name = ""
+	desc = ""
 	icon_state = "captain_parade"
 	can_adjust = FALSE
 */
