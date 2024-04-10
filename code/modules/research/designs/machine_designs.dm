@@ -183,23 +183,6 @@
 	build_path = /obj/item/circuitboard/machine/reagentgrinder
 	category = list ("Medical Machinery")
 
-
-/datum/design/board/dnascanner
-	name = "Machine Design (DNA Scanner)"
-	desc = "Allows for the construction of circuit boards used to build a Cloning Scanner."
-	id = "dnascanner"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-	build_path = /obj/item/circuitboard/machine/dnascanner
-	category = list("Medical Machinery")
-
-/datum/design/board/clonepod
-	name = "Machine Design (Cloning Pod)"
-	desc = "An electronically-lockable pod for growing organic tissue."
-	id = "clonepod"
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-	build_path = /obj/item/circuitboard/machine/clonepod
-	category = list("Medical Machinery")
-
 /datum/design/board/hypnochair
 	name = "Machine Design (Enhanced Interrogation Chamber)"
 	desc = "Allows for the construction of circuit boards used to build an Enhanced Interrogation Chamber."
@@ -582,15 +565,6 @@
 	id = "paystand"
 	build_path = /obj/item/circuitboard/machine/paystand
 	category = list ("Misc. Machinery")
-
-
-/datum/design/board/fat_sucker
-	name = "Machine Design (Lipid Extractor)"
-	desc = "The circuit board for a lipid extractor."
-	id = "fat_sucker"
-	build_path = /obj/item/circuitboard/machine/fat_sucker
-	category = list ("Misc. Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/board/stasis
 	name = "Machine Design (Lifeform Stasis Unit)"

@@ -42,6 +42,7 @@
 #endif // REFERENCE_DOING_IT_LIVE
 
 //#define UNIT_TESTS //Enables unit tests via TEST_RUN_PARAMETER
+//#define ALL_TESTS //Enables all tests, including the ones that take a long time to run
 
 #ifndef PRELOAD_RSC				//set to:
 #define PRELOAD_RSC 2			//	0 to allow using external resources or on-demand behaviour;
@@ -78,19 +79,14 @@
 #define GC_FAILURE_HARD_LOOKUP
 #endif
 
+#ifdef ALL_TESTS
+#define BASIC_TESTS
+#define CREATE_AND_DESTROY_TEST
+#define PLANET_GEN_TEST
+#define RUIN_PLACEMENT_TEST
+#define SHIP_PLACEMENT_TEST
+#endif
+
 // A reasonable number of maximum overlays an object needs
 // If you think you need more, rethink it
 #define MAX_ATOM_OVERLAYS 100
-
-#define AUXMOS (world.system_type == MS_WINDOWS ? "auxmos.dll" : __detect_auxmos())
-
-/proc/__detect_auxmos()
-	var/static/auxmos_path
-	if(!auxmos_path)
-		if (fexists("./libauxmos.so"))
-			auxmos_path = "./libauxmos.so"
-		else if (fexists("[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"))
-			auxmos_path = "[world.GetConfig("env", "HOME")]/.byond/bin/libauxmos.so"
-		else
-			CRASH("Could not find libauxmos.so")
-	return auxmos_path

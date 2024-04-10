@@ -1160,7 +1160,7 @@
 /area/ship/hallway/central)
 "hK" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /obj/machinery/button/door{
 	id = "talos_bridge";
 	name = "Bridge Shutters";
@@ -1900,7 +1900,7 @@
 /area/ship/hallway/central)
 "ml" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,
@@ -1920,16 +1920,14 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/armor/vest/bulletproof,
-/obj/item/clothing/head/warden/drill{
-	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.";
-	name = "master at arms' campaign hat"
-	},
 /obj/item/megaphone/sec,
 /obj/structure/sign/poster/contraband/eoehoma{
 	pixel_y = -32
 	},
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/head/warden/inteq,
+/obj/item/clothing/suit/armor/vest/security/warden/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "ms" = (
@@ -3597,7 +3595,7 @@
 /obj/item/clothing/head/hardhat/white,
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/megaphone/cargo{
 	name = "engineering megaphone"
@@ -4700,8 +4698,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/book/manual/srmlore,
-/obj/item/book/manual/wiki/detective,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/structure/bookcase,
 /obj/item/book/random,
 /obj/item/book/random,
@@ -5628,6 +5624,9 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "JT" = (
@@ -5929,14 +5928,10 @@
 /obj/effect/turf_decal/industrial/fire{
 	dir = 4
 	},
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters{
 	id = "talos_engine_shutter"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "talos_engine_shutter"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Mf" = (
@@ -6293,7 +6288,7 @@
 	id = "talos_engine_shutter"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Pm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -7508,7 +7503,7 @@
 	name = "equipment locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/storage/box/handcuffs,
@@ -7562,7 +7557,7 @@
 /area/ship/crew/canteen)
 "Yz" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,
@@ -7593,6 +7588,7 @@
 	},
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/storage/belt/security/webbing/inteq,
+/obj/item/clothing/head/inteq_peaked,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "YC" = (

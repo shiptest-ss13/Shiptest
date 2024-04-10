@@ -83,6 +83,7 @@
 "bb" = (
 /obj/structure/cable/green,
 /obj/effect/turf_decal/industrial/radiation/full,
+/obj/machinery/power/grounding_rod,
 /turf/open/floor/plating,
 /area/ship/storage)
 "be" = (
@@ -998,7 +999,7 @@
 "jl" = (
 /obj/item/bedsheet/ce,
 /obj/structure/bed,
-/obj/item/toy/plush/narplush,
+/obj/item/toy/plush/lizardplushie,
 /obj/structure/window/reinforced/tinted,
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
@@ -1280,7 +1281,7 @@
 "mj" = (
 /obj/structure/table/wood,
 /obj/machinery/light/directional/east,
-/obj/machinery/fax{
+/obj/machinery/fax/indie{
 	pixel_y = -5
 	},
 /obj/effect/turf_decal/corner/opaque/yellow/border{
@@ -1310,7 +1311,7 @@
 /obj/item/rcd_ammo,
 /obj/item/rcd_ammo,
 /obj/item/clothing/gloves/color/yellow,
-/obj/item/gun/ballistic/shotgun/winchester,
+/obj/item/gun/ballistic/shotgun/flamingarrow,
 /obj/item/ammo_box/c38_box,
 /obj/item/storage/fancy/cigarettes/cigars/cohiba,
 /obj/effect/turf_decal/corner/opaque/yellow/border{
@@ -4162,6 +4163,19 @@
 /obj/machinery/suit_storage_unit/atmos,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
+"Or" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 4
+	},
+/obj/machinery/power/grounding_rod,
+/turf/open/floor/mineral/titanium,
+/area/ship/storage)
 "Ot" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -4450,7 +4464,14 @@
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "Sw" = (
-/obj/machinery/atmospherics/components/unary/thermomachine,
+/obj/structure/frame/machine,
+/obj/item/circuitboard/machine/thermomachine/freezer,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/micro_laser,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stock_parts/matter_bin,
+/obj/item/stack/cable_coil/cut,
+/obj/item/stack/sheet/glass,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "Sx" = (
@@ -7063,9 +7084,9 @@ Zy
 mV
 bB
 SY
-SY
-SY
-SY
+Or
+Or
+Or
 bb
 zy
 wg

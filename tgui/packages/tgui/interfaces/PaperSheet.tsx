@@ -29,6 +29,7 @@ type PaperContext = {
   default_pen_font: string;
   default_pen_color: string;
   signature_font: string;
+  sanitize_text: boolean;
 
   // ui_data
   held_item_details?: WritingImplement;
@@ -39,6 +40,7 @@ type PaperInput = {
   font?: string;
   color?: string;
   bold?: boolean;
+  advanced_html?: boolean;
 };
 
 type StampInput = {
@@ -112,8 +114,6 @@ const fieldRegex: RegExp = /\[((?:_+))\]/gi;
 // Handles the ghost stamp when attempting to stamp paper sheets.
 class PaperSheetStamper extends Component<PaperSheetStamperProps> {
   style: null;
-  // It works on TG for almost 4 months as of November 2022, so it's probably fine.
-  // eslint-disable-next-line react/state-in-constructor
   state: PaperSheetStamperState = { x: 0, y: 0, rotation: 0, yOffset: 0 };
   scrollableRef: RefObject<HTMLDivElement>;
 
@@ -245,7 +245,7 @@ class PaperSheetStamper extends Component<PaperSheetStamperProps> {
 }
 
 // Creates a full stamp div to render the given stamp to the preview.
-export const Stamp = (props, context) => {
+export const Stamp = (props, context): InfernoElement<HTMLDivElement> => {
   const { activeStamp, sprite, x, y, rotation, opacity, yOffset = 0 } = props;
   const stamp_transform = {
     'left': x + 'px',
@@ -528,8 +528,7 @@ export class PreviewView extends Component<PreviewViewProps> {
   onInputHandler = (ev: Event): void => {
     const input = ev.target as HTMLInputElement;
 
-    // We don't care about text area input, but this is a good place to
-    // clear the text box cache if we've had new input.
+    // Skip text area input.
     if (input.nodeName !== 'INPUT') {
       this.parsedTextBoxCache = '';
       return;
@@ -604,6 +603,7 @@ export class PreviewView extends Component<PreviewViewProps> {
       const fontColor = value.color || default_pen_color;
       const fontFace = value.font || default_pen_font;
       const fontBold = value.bold || false;
+      const advancedHtml = value.advanced_html || false;
 
       let processingOutput = this.formatAndProcessRawText(
         rawText,
@@ -612,7 +612,8 @@ export class PreviewView extends Component<PreviewViewProps> {
         paper_color,
         fontBold,
         fieldCount,
-        readOnly
+        readOnly,
+        advancedHtml
       );
 
       output += processingOutput.text;
@@ -741,16 +742,18 @@ export class PreviewView extends Component<PreviewViewProps> {
     paperColor: string,
     bold: boolean,
     fieldCounter: number = 0,
-    forceReadonlyFields: boolean = false
+    forceReadonlyFields: boolean = false,
+    advanced_html: boolean = false
   ): FieldCreationReturn => {
     // First lets make sure it ends in a new line
+    const { data } = useBackend<PaperContext>(this.context);
     rawText += rawText[rawText.length] === '\n' ? '\n' : '\n\n';
 
     // Second, parse the text using markup
     const parsedText = this.runMarkedDefault(rawText);
 
     // Third, we sanitize the text of html
-    const sanitizedText = sanitizeText(parsedText);
+    const sanitizedText = sanitizeText(parsedText, advanced_html);
 
     // Fourth we replace the [__] with fields
     const fieldedText = this.createFields(
@@ -915,7 +918,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     let input = document.createElement('input');
     input.setAttribute('type', 'text');
 
-    input.style.fontSize = field.is_signature ? '12px' : `${fontSize}px`;
+    input.style.fontSize = field.is_signature ? '15px' : `${fontSize}px`;
     input.style.fontFamily = fieldData.font || font;
     input.style.fontStyle = field.is_signature ? 'italic' : 'normal';
     input.style.fontWeight = 'bold';

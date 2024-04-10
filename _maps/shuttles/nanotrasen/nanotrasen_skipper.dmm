@@ -479,7 +479,7 @@
 /area/ship/engineering/atmospherics)
 "ed" = (
 /obj/structure/table,
-/obj/machinery/fax,
+/obj/machinery/fax/nanotrasen,
 /obj/structure/sign/poster/official/random{
 	pixel_y = 32
 	},
@@ -2201,19 +2201,6 @@
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
-"rb" = (
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
-/turf/open/floor/plating,
-/area/ship/cargo)
 "rc" = (
 /obj/machinery/firealarm/directional/south,
 /obj/machinery/vending/cigarette,
@@ -2653,10 +2640,6 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/industrial/warning,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/poddoor{
-	id = "amogusdoors";
-	name = "Cargo Bay Blast Door"
-	},
 /obj/machinery/door/poddoor{
 	id = "amogusdoors";
 	name = "Cargo Bay Blast Door"
@@ -3727,7 +3710,6 @@
 /obj/structure/closet/cardboard{
 	name = "pranking materials"
 	},
-/obj/item/storage/box/maid,
 /obj/item/toy/katana,
 /obj/item/bikehorn,
 /obj/item/grown/bananapeel,
@@ -3955,7 +3937,7 @@
 /turf/closed/wall,
 /area/ship/cargo)
 "Fv" = (
-/obj/machinery/fax,
+/obj/machinery/fax/nanotrasen,
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -6384,7 +6366,7 @@ hz
 sh
 Kv
 jv
-rb
+Ym
 fW
 "}
 (11,1,1) = {"

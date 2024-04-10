@@ -74,7 +74,7 @@ GLOBAL_LIST_EMPTY(bunker_passthrough)
 
 /datum/tgs_chat_command/addbunkerbypass/Run(datum/tgs_chat_user/sender, params)
 	if(!CONFIG_GET(flag/sql_enabled))
-		return "The Database is not enabled!"
+		return new /datum/tgs_message_content("The Database is not enabled!")
 
 	GLOB.bunker_passthrough |= ckey(params)
 
@@ -82,7 +82,7 @@ GLOBAL_LIST_EMPTY(bunker_passthrough)
 	SSpersistence.SavePanicBunker() //we can do this every time, it's okay
 	log_admin("[sender.friendly_name] has added [params] to the current round's bunker bypass list.")
 	message_admins("[sender.friendly_name] has added [params] to the current round's bunker bypass list.")
-	return "[params] has been added to the current round's bunker bypass list."
+	return new /datum/tgs_message_content("[params] has been added to the current round's bunker bypass list.")
 
 /datum/controller/subsystem/persistence/proc/LoadPanicBunker()
 	var/bunker_path = file("data/bunker_passthrough.json")

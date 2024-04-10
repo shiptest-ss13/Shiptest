@@ -331,7 +331,7 @@
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "bq" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -1044,7 +1044,6 @@
 "eH" = (
 /obj/structure/closet/crate/freezer/blood,
 /obj/machinery/iv_drip,
-/obj/machinery/iv_drip,
 /obj/effect/turf_decal/corner/opaque/lightgrey/diagonal,
 /obj/structure/sign/poster/official/here_for_your_safety{
 	pixel_y = -32
@@ -1280,6 +1279,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
+/obj/machinery/cell_charger,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "iU" = (
@@ -2227,7 +2227,7 @@
 /obj/structure/catwalk/over,
 /obj/item/cigbutt/roach,
 /obj/item/reagent_containers/food/snacks/burrito,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Dr" = (
 /obj/machinery/door/airlock{
@@ -2589,7 +2589,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/toilet)
 "OF" = (
-/obj/machinery/fax,
+/obj/machinery/fax/indie,
 /obj/structure/table/reinforced,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/dark,
@@ -2622,7 +2622,7 @@
 	dir = 8
 	},
 /obj/item/chair/plastic,
-/turf/open/floor/plating,
+/turf/open/floor/plating/airless,
 /area/ship/external)
 "Qh" = (
 /obj/machinery/power/apc/auto_name/directional/south,

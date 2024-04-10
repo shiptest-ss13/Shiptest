@@ -1085,7 +1085,7 @@
 /area/ruin/space/has_grav/spacemall/dorms)
 "eb" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/wiki/engineering_hacking,
+/obj/item/book/manual/wiki/hacking,
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/spacemall/shop)
 "ed" = (
@@ -1111,9 +1111,7 @@
 "el" = (
 /obj/structure/table/glass,
 /obj/item/toy/plush/lizardplushie,
-/obj/item/toy/toy_dagger{
-	pixel_x = 10
-	},
+/obj/item/kitchen/knife,
 /turf/open/floor/light,
 /area/ruin/space/has_grav/spacemall/shop2)
 "eo" = (
@@ -3034,7 +3032,7 @@
 /obj/effect/turf_decal/corner/transparent/lime{
 	dir = 4
 	},
-/obj/structure/sign/poster/official/sgt{
+/obj/structure/sign/poster/retro/random{
 	pixel_y = 30
 	},
 /obj/structure/table,
@@ -3237,9 +3235,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/spacemall/maint)
 "mv" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},

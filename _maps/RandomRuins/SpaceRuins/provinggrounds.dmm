@@ -208,7 +208,7 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "gi" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/syndicate/red,
+/obj/item/folder/documents/syndicate/red,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "gp" = (
@@ -795,6 +795,12 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/syndicircle/halls)
+"vT" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/syndicircle/halls)
 "wa" = (
 /obj/machinery/modular_computer/console/preset{
 	dir = 1
@@ -1295,7 +1301,7 @@
 /obj/machinery/door/airlock/hatch{
 	dir = 4
 	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/turf/open/space/basic,
 /area/ruin/space/has_grav/syndicircle/halls)
 "HC" = (
 /mob/living/simple_animal/hostile/syndicate/civilian{
@@ -3364,7 +3370,7 @@ AV
 Dm
 Bj
 IY
-ap
+vT
 ap
 OE
 am

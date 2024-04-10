@@ -139,7 +139,7 @@
 /obj/structure/bed,
 /obj/structure/curtain/bounty,
 /obj/item/bedsheet/brown,
-/obj/structure/sign/poster/minutemen/lanchester{
+/obj/structure/sign/poster/clip/lanchester{
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/black,
@@ -723,6 +723,7 @@
 /obj/machinery/light/small/directional/west,
 /obj/machinery/airalarm/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "jK" = (
@@ -829,7 +830,7 @@
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
 /obj/machinery/firealarm/directional/west,
-/obj/structure/sign/poster/official/sgt{
+/obj/structure/sign/poster/official/wtf_is_co2{
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -916,7 +917,7 @@
 	req_access_txt = "20"
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -936,6 +937,7 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 1
 	},
+/obj/item/clothing/head/inteq_peaked,
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "mE" = (
@@ -1288,7 +1290,6 @@
 	dir = 5
 	},
 /obj/docking_port/mobile{
-	dheight = 3;
 	dir = 2;
 	launch_status = 0;
 	port_direction = 8;
@@ -1951,7 +1952,7 @@
 /area/ship/maintenance/starboard)
 "DP" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/security/webbing/inteq/alt,
@@ -1971,10 +1972,6 @@
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/suit/armor/vest/bulletproof,
-/obj/item/clothing/head/warden/drill{
-	desc = "A special armored campaign hat with the IRMG insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection.";
-	name = "master at arms' campaign hat"
-	},
 /obj/item/megaphone/sec,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
@@ -1986,6 +1983,8 @@
 	},
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/machinery/light/small/directional/south,
+/obj/item/clothing/head/warden/inteq,
+/obj/item/clothing/suit/armor/vest/security/warden/inteq,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Eh" = (
@@ -2205,7 +2204,7 @@
 /obj/item/clothing/head/helmet/swat/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/storage/belt/security/webbing/inteq/alt,
 /obj/item/melee/baton/loaded,
@@ -2215,6 +2214,9 @@
 	pixel_y = 23
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "HN" = (
@@ -2917,7 +2919,7 @@
 /area/ship/bridge)
 "TQ" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /obj/machinery/light/small/directional/south,
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 8

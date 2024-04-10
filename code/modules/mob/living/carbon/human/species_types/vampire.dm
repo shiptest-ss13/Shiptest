@@ -132,3 +132,15 @@
 	charge_max = 50
 	cooldown_min = 50
 	shapeshift_type = /mob/living/simple_animal/hostile/retaliate/bat
+
+/obj/item/organ/internal/heart/vampire/Insert(mob/living/carbon/receiver, special, drop_if_replaced)
+	. = ..()
+	RegisterSignal(receiver, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
+
+/obj/item/organ/internal/heart/vampire/Remove(mob/living/carbon/heartless, special)
+	. = ..()
+	UnregisterSignal(heartless, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
+
+/obj/item/organ/internal/heart/vampire/proc/get_status_tab_item(mob/living/carbon/source, list/items)
+	SIGNAL_HANDLER
+	items += "Blood Level: [source.blood_volume]/[BLOOD_VOLUME_MAXIMUM]"

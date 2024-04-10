@@ -3,6 +3,8 @@
 /obj/structure/sign/map
 	name = "station map"
 	desc = "A navigational chart of the station."
+	icon_state = "map-left"
+	icon = 'icons/obj/structures/signs/directions.dmi'
 	max_integrity = 500
 
 /obj/structure/sign/map/left
@@ -10,6 +12,11 @@
 
 /obj/structure/sign/map/right
 	icon_state = "map-right"
+
+/obj/structure/sign/directions
+	name = "You shouldn't see this"
+	icon_state = "direction"
+	icon = 'icons/obj/structures/signs/directions.dmi'
 
 /obj/structure/sign/directions/science
 	name = "science department sign"
@@ -56,3 +63,7 @@
 	desc = "A direction sign, pointing out which way the station's AI Upload is."
 	icon_state = "direction_upload"
 
+/obj/structure/sign/directions/service
+	name = "service sign"
+	desc = "A directional sign, pointing which way the station's Service department is in"
+	icon_state = "direction_srv"

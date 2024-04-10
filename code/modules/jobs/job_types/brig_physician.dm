@@ -28,20 +28,3 @@
 	l_hand = /obj/item/storage/firstaid/regular
 	head = /obj/item/clothing/head/soft/sec/brig_phys
 	implants = list(/obj/item/implant/mindshield)
-
-
-/datum/outfit/job/brig_phys/securitymedic
-	name = "Brig Physician (Security Medic)"
-
-	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt
-	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
-	suit_store = /obj/item/flashlight/pen
-	alt_suit = null
-
-/datum/outfit/job/brig_phys/executionsupervisor
-	name = "Brig Physician (Execution Supervisor)"
-
-	uniform = /obj/item/clothing/under/rank/security/brig_phys/nt
-	suit = /obj/item/clothing/suit/toggle/labcoat/brig_phys
-	l_pocket = /obj/item/reagent_containers/syringe
-	alt_suit = null

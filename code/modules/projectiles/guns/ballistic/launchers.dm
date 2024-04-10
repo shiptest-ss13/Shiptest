@@ -4,6 +4,7 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
 	desc = "A break-action, single-shot grenade launcher. A compact way to deliver a big boom."
 	name = "grenade launcher"
+	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "dshotgun_sawn"
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
@@ -63,6 +64,7 @@
 	cartridge_wording = "rocket"
 	empty_indicator = TRUE
 	tac_reloads = FALSE
+	manufacturer = MANUFACTURER_SCARBOROUGH
 
 /obj/item/gun/ballistic/rocketlauncher/unrestricted
 	pin = /obj/item/firing_pin
@@ -80,3 +82,4 @@
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "panzerfaust"
 	item_state = "panzerfaust"
+	manufacturer = MANUFACTURER_SOLARARMORIES

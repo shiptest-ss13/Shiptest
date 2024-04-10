@@ -131,11 +131,6 @@
 	icon_state = "securitypack"
 	item_state = "securitypack"
 
-/obj/item/storage/backpack/security/cmm
-	name = "cmm backpack"
-	desc = "It's a very blue backpack."
-	icon_state = "cmmpack"
-
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
 	desc = "It's a special backpack made exclusively for Nanotrasen officers."
@@ -285,11 +280,6 @@
 	icon_state = "satchel-sec"
 	item_state = "satchel-sec"
 
-/obj/item/storage/backpack/satchel/sec/cmm
-	name = "cmm satchel"
-	desc = "A robust satchel for anti-piracy related needs."
-	icon_state = "satchel-cmm"
-
 /obj/item/storage/backpack/satchel/explorer
 	name = "explorer satchel"
 	desc = "A robust satchel for stashing your loot."
@@ -336,7 +326,6 @@
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe,
 		/obj/item/clothing/under/syndicate/tacticool,
 		/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
-		/obj/item/storage/fancy/cigarettes/cigpack_shadyjims,
 		/obj/item/clothing/mask/gas/syndicate,
 		/obj/item/clothing/neck/necklace/dope,
 		/obj/item/vending_refill/donksoft)

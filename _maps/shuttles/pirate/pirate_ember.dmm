@@ -1736,7 +1736,7 @@
 "jg" = (
 /obj/structure/table_frame/wood,
 /obj/effect/decal/cleanable/blood/old,
-/obj/item/toy/toy_dagger,
+/obj/item/kitchen/knife,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -2243,37 +2243,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/engineering)
-"le" = (
-/obj/effect/decal/cleanable/cobweb,
-/obj/item/clothing/gloves/krav_maga/combatglovesplus,
-/obj/item/clothing/under/syndicate/camo,
-/obj/item/clothing/under/syndicate/camo,
-/obj/item/clothing/neck/scarf/black,
-/obj/item/clothing/neck/cloak/hos,
-/obj/item/clothing/mask/bandana/black{
-	pixel_x = 1;
-	pixel_y = -4
-	},
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/suit/armor/vest/marine/medium,
-/obj/item/storage/belt/military,
-/obj/item/clothing/shoes/cowboy/black,
-/obj/item/clothing/head/helmet/bulletproof/x11/frontier,
-/obj/structure/extinguisher_cabinet/directional/north,
-/obj/structure/closet/secure_closet{
-	anchored = 1;
-	icon_state = "hos";
-	name = "master at arm's locker";
-	req_access_txt = "3"
-	},
-/obj/item/gun/ballistic/automatic/pistol/APS,
-/obj/item/ammo_box/magazine/pistolm9mm,
-/obj/item/clothing/mask/gas/atmos{
-	name = "tactical gas mask";
-	desc = "Improved gas mask utilized by pirates. Still not very good at blocking gas flow, but it's flameproof!"
-	},
-/turf/open/floor/carpet/black,
-/area/ship/security)
 "lf" = (
 /obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/dirt,
@@ -2612,7 +2581,6 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "mW" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
@@ -2895,7 +2863,7 @@
 	pixel_y = -4;
 	pixel_x = 3
 	},
-/obj/item/gun/ballistic/rifle/boltaction/polymer{
+/obj/item/gun/ballistic/rifle/polymer{
 	pixel_y = -8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -3020,6 +2988,21 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/incinerator)
+"oM" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/item/book/manual/wiki/hacking{
+	pixel_x = 5;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/soda_cans/efuel{
+	pixel_x = -7;
+	pixel_y = 3
+	},
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/plating/rust,
+/area/ship/engineering/communications)
 "oN" = (
 /obj/structure/railing{
 	dir = 2;
@@ -3633,6 +3616,29 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"rV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/candy,
+/obj/effect/decal/cleanable/vomit/old,
+/obj/item/book/manual/wiki/ghetto_chemistry{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/trash/sosjerky,
+/obj/item/storage/portable_chem_mixer{
+	pixel_x = -1;
+	pixel_y = -3
+	},
+/obj/item/trash/syndi_cakes{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/obj/item/trash/energybar{
+	pixel_y = -6
+	},
+/turf/open/floor/plating,
+/area/ship/maintenance/fore)
 "rW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
 	dir = 8
@@ -4777,6 +4783,37 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"wV" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/item/clothing/gloves/krav_maga/combatglovesplus,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/under/syndicate/camo,
+/obj/item/clothing/neck/scarf/black,
+/obj/item/clothing/neck/cloak/hos,
+/obj/item/clothing/mask/bandana/black{
+	pixel_x = 1;
+	pixel_y = -4
+	},
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/clothing/suit/armor/vest/marine/medium,
+/obj/item/storage/belt/military,
+/obj/item/clothing/shoes/cowboy/black,
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier,
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/closet/secure_closet{
+	anchored = 1;
+	icon_state = "hos";
+	name = "master at arm's locker";
+	req_access_txt = "3"
+	},
+/obj/item/gun/ballistic/automatic/pistol/APS,
+/obj/item/ammo_box/magazine/pistolm9mm,
+/obj/item/clothing/mask/gas/atmos{
+	name = "tactical gas mask";
+	desc = "Improved gas mask utilized by pirates. Still not very good at blocking gas flow, but it's flameproof!"
+	},
+/turf/open/floor/carpet/black,
+/area/ship/security)
 "wZ" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8;
@@ -5597,11 +5634,11 @@
 /area/ship/engineering/incinerator)
 "Bx" = (
 /obj/structure/table/reinforced,
-/obj/item/gun/ballistic/revolver/nagant{
+/obj/item/gun/ballistic/revolver/shadow{
 	pixel_y = 6
 	},
-/obj/item/gun/ballistic/revolver/nagant,
-/obj/item/gun/ballistic/revolver/nagant{
+/obj/item/gun/ballistic/revolver/shadow,
+/obj/item/gun/ballistic/revolver/shadow{
 	pixel_y = -5
 	},
 /obj/effect/turf_decal/techfloor{
@@ -5615,7 +5652,7 @@
 /area/ship/security/armory)
 "By" = (
 /obj/structure/guncase,
-/obj/item/gun/ballistic/automatic/smg/thompson{
+/obj/item/gun/ballistic/automatic/smg/mini_uzi{
 	pixel_y = -3
 	},
 /obj/effect/turf_decal/techfloor{
@@ -5624,7 +5661,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/obj/item/gun/ballistic/rifle/boltaction{
+/obj/item/gun/ballistic/rifle/illestren{
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/dark,
@@ -5725,45 +5762,6 @@
 	icon_state = "panelscorched"
 	},
 /area/ship/hallway/central)
-"BX" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "equipment locker";
-	req_access_txt = "1"
-	},
-/obj/effect/turf_decal/techfloor,
-/obj/item/clothing/mask/bandana/black{
-	pixel_x = 1;
-	pixel_y = -4
-	},
-/obj/item/clothing/mask/bandana/black{
-	pixel_x = 1;
-	pixel_y = -4
-	},
-/obj/item/clothing/mask/bandana/black{
-	pixel_x = 1;
-	pixel_y = -4
-	},
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/clothing/mask/gas/sechailer/minutemen,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/clothing/head/helmet/old{
-	pixel_x = 7
-	},
-/obj/item/clothing/head/helmet/old{
-	pixel_x = 7;
-	pixel_y = -4
-	},
-/obj/item/clothing/suit/armor/riot,
-/obj/machinery/light_switch{
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "BZ" = (
 /obj/machinery/light/directional/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -6489,7 +6487,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Fi" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
@@ -8367,6 +8364,45 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/hallway/fore)
+"Mn" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "equipment locker";
+	req_access_txt = "1"
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/item/clothing/mask/bandana/black{
+	pixel_x = 1;
+	pixel_y = -4
+	},
+/obj/item/clothing/mask/bandana/black{
+	pixel_x = 1;
+	pixel_y = -4
+	},
+/obj/item/clothing/mask/bandana/black{
+	pixel_x = 1;
+	pixel_y = -4
+	},
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/clothing/mask/gas/sechailer/balaclava,
+/obj/item/storage/belt/military,
+/obj/item/storage/belt/military,
+/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/military/army,
+/obj/item/clothing/head/helmet/old{
+	pixel_x = 7
+	},
+/obj/item/clothing/head/helmet/old{
+	pixel_x = 7;
+	pixel_y = -4
+	},
+/obj/item/clothing/suit/armor/riot,
+/obj/machinery/light_switch{
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "Mo" = (
 /obj/effect/turf_decal/industrial/traffic,
 /obj/effect/turf_decal/industrial/traffic{
@@ -8673,29 +8709,6 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/security)
-"NT" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/trashcart,
-/obj/item/trash/candy,
-/obj/effect/decal/cleanable/vomit/old,
-/obj/item/book/manual/wiki/chemistry{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/trash/sosjerky,
-/obj/item/storage/portable_chem_mixer{
-	pixel_x = -1;
-	pixel_y = -3
-	},
-/obj/item/trash/syndi_cakes{
-	pixel_x = -4;
-	pixel_y = 3
-	},
-/obj/item/trash/energybar{
-	pixel_y = -6
-	},
-/turf/open/floor/plating,
-/area/ship/maintenance/fore)
 "NW" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 4
@@ -8987,10 +9000,10 @@
 /obj/effect/turf_decal/techfloor/hole{
 	dir = 8
 	},
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -3
 	},
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -1;
 	pixel_x = 1
 	},
@@ -9001,20 +9014,20 @@
 	pixel_y = 2;
 	pixel_x = -4
 	},
-/obj/item/ammo_box/magazine/smgm45/drum{
+/obj/item/ammo_box/magazine/uzim9mm{
 	pixel_y = -4
 	},
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/magazine/uzim9mm,
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -3
 	},
-/obj/item/ammo_box/n762{
+/obj/item/ammo_box/c45_speedloader{
 	pixel_y = -5;
 	pixel_x = -1
 	},
-/obj/item/ammo_box/a762,
-/obj/item/ammo_box/a762,
-/obj/item/storage/toolbox/ammo/a762{
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/storage/toolbox/ammo/a850r{
 	pixel_y = -6;
 	pixel_x = 5
 	},
@@ -9358,21 +9371,6 @@
 	color = "#808080"
 	},
 /area/ship/engineering/atmospherics)
-"Ry" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/item/book/manual/wiki/engineering_hacking{
-	pixel_x = 5;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/drinks/soda_cans/efuel{
-	pixel_x = -7;
-	pixel_y = 3
-	},
-/obj/machinery/airalarm/directional/south,
-/turf/open/floor/plating/rust,
-/area/ship/engineering/communications)
 "RB" = (
 /obj/effect/turf_decal/techfloor/corner{
 	dir = 8
@@ -10318,7 +10316,7 @@
 /area/ship/hallway/fore)
 "Wb" = (
 /obj/structure/bed,
-/obj/item/bedsheet/cult,
+/obj/item/bedsheet/dorms,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
@@ -11214,7 +11212,7 @@ Ds
 Yv
 YH
 uO
-Ry
+oM
 fH
 ws
 ws
@@ -12122,7 +12120,7 @@ KY
 Yh
 Ht
 jY
-le
+wV
 ni
 Iv
 Gw
@@ -12241,7 +12239,7 @@ um
 ys
 UY
 TI
-BX
+Mn
 kc
 fm
 By
@@ -12568,7 +12566,7 @@ ln
 ln
 IL
 yM
-NT
+rV
 IL
 tu
 je

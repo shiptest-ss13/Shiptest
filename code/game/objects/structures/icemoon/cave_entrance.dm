@@ -19,7 +19,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 	/obj/item/tank/jetpack/suit = 10,
 	/obj/item/survivalcapsule = 15,
 	/obj/item/reagent_containers/hypospray/medipen/survival = 15,
-	/obj/item/card/mining_point_card = 15,
 	/obj/item/gps/mining = 10,
 	/obj/item/extraction_pack = 10,
 	/obj/item/reagent_containers/food/drinks/beer = 15,
@@ -28,8 +27,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 /obj/structure/spawner/ice_moon
 	name = "cave entrance"
 	desc = "A hole in the ground, filled with monsters ready to defend it."
-	icon = 'icons/mob/nest.dmi'
-	icon_state = "hole"
 	faction = list("mining")
 	max_mobs = 3
 	max_integrity = 250
@@ -210,7 +207,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
  */
 /obj/effect/collapsing_demonic_portal/proc/drop_loot()
 	visible_message("<span class='warning'>Something slips out of [src]!</span>")
-	var/loot = rand(1, 24)
+	var/loot = rand(1, 23)
 	switch(loot)
 		if(1)//Clown hell. God help you if you roll this.
 			visible_message("<span class='userdanger'>You can hear screaming and joyful honking.</span>")//now THIS is what we call a critical failure
@@ -317,7 +314,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/reagent_containers/glass/bottle/potion/flight(loc)
 				new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 			else
-				new /obj/item/clothing/neck/necklace/memento_mori(loc)
+				new /obj/item/clothing/neck/memento_mori(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 			if(prob(35))
@@ -726,7 +723,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast(loc)
 			new /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient(loc)
-			new /obj/effect/mob_spawn/human/miner/old(loc)
+			new /obj/effect/mob_spawn/human/miner(loc)
 			new /turf/open/floor/plating/asteroid/basalt(loc)
 		if(12)//sailing the ocean blue
 			visible_message("<span class='userdanger'>Water pours out of the portal, followed by a strange vessel. It's occupied.</span>")
@@ -965,62 +962,19 @@ GLOBAL_LIST_INIT(ore_probability, list(
 			new /obj/effect/mob_spawn/human/scientist(loc)
 			new /turf/open/floor/mineral/titanium/purple(loc)
 			new /mob/living/simple_animal/slime/random(loc)
-		if(19)//lost abductor
-			visible_message("<span class='userdanger'>You glimpse a frigid wreckage. A large block of something slips through the portal.</span>")
-			playsound(loc,'sound/effects/break_stone.ogg', 100, FALSE, 50, TRUE, TRUE)
-			if(prob(45))
-				new /obj/item/stack/sheet/mineral/abductor(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(30))
-				new /obj/item/clothing/under/abductor(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(35))
-				new /obj/item/weldingtool/abductor(loc)
-			if(prob(30))
-				new /obj/item/scalpel/alien(loc)
-			if(prob(35))
-				new /obj/item/circuitboard/machine/plantgenes/vault(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(35))
-				new /obj/item/organ/heart/gland/heal(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(35))
-				new /obj/item/organ/heart/gland/ventcrawling(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(35))
-				new /obj/item/organ/heart/gland/slime(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(10))
-				new /obj/item/organ/heart/gland/spiderman(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(35))
-				new /obj/item/wrench/abductor(loc)
-				new /obj/item/screwdriver/abductor(loc)
-			if(prob(35))
-				new /obj/item/crowbar/abductor(loc)
-				new /obj/item/multitool/abductor(loc)
-			if(prob(15))
-				new /obj/item/abductor_machine_beacon/chem_dispenser(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			if(prob(35))
-				new /obj/item/clothing/suit/armor/abductor/vest(loc)
-				new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			new /obj/structure/fluff/iced_abductor(loc)
-			new /mob/living/simple_animal/hostile/asteroid/polarbear(loc)
-			new /turf/open/floor/mineral/abductor(loc)
-		if(20)//hey, free elite tumor!
+		if(19)//hey, free elite tumor!
 			visible_message("<span class='userdanger'>A large, pulsating structure falls through the portal and crashes to the floor.</span>")
 			playsound(loc,'sound/effects/break_stone.ogg', 100, FALSE, 50, TRUE, TRUE)
 			new /obj/structure/elite_tumor(loc)
 			new /turf/open/floor/plating/asteroid/basalt(loc)
-		if(21)//*you flush the toilet.*
+		if(20)//*you flush the toilet.*
 			visible_message("<span class='userdanger'>You hear the faint noise of a long flush.</span>")
 			new /obj/structure/toilet(loc)
 			new /obj/effect/decal/remains(loc)
 			new /obj/item/newspaper(loc)
 			new /turf/open/floor/plastic(loc)
 			new /obj/item/clothing/head/papersack/smiley(loc) //welcome to the bathroom
-		if(22)//Research & Zombies
+		if(21)//Research & Zombies
 			visible_message("<span class='userdanger'>Flashing lights and quarantine alarms echo through the portal. You smell rotting flesh and plasma.</span>")
 			playsound(loc,'sound/misc/bloblarm.ogg', 120, FALSE, 50, TRUE, TRUE)
 			if(prob(35))
@@ -1065,7 +1019,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/research_notes/loot/small(loc)
 			new/turf/open/floor/mineral/titanium/purple(loc)
 			new /mob/living/simple_animal/hostile/zombie(loc)
-		if(23)//Silverback's locker room
+		if(22)//Silverback's locker room
 			visible_message("<span class='userdanger'>You catch a glimpse of verdant green. Smells like a locker room.</span>")
 			playsound(loc,'sound/creatures/gorilla.ogg', 75, FALSE, 50, TRUE, TRUE)
 			new /mob/living/simple_animal/hostile/gorilla(loc)
@@ -1087,7 +1041,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/dnainjector/hulkmut(loc)
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			if(prob(35))
-				new /obj/item/dnainjector/firemut(loc)
 				new /mob/living/simple_animal/hostile/gorilla(loc)
 			if(prob(35))
 				new /obj/item/dnainjector/gigantism(loc)

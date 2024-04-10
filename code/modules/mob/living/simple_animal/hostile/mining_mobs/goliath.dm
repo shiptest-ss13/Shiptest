@@ -281,6 +281,7 @@
 				cached_tentacle_turfs -= t
 
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/tendril
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/goliath = 2, /obj/item/stack/sheet/bone = 2, /obj/item/stack/sheet/sinew = 2)
 	fromtendril = TRUE
 
 //tentacles
@@ -328,7 +329,7 @@
 	for(var/mob/living/L in loc)
 		if((!QDELETED(spawner) && spawner.faction_check_mob(L)) || L.stat == DEAD)
 			continue
-		visible_message("<span class='danger'>[src] grabs hold of [L]!</span>")
+		visible_message("<span class='danger'>[src] wraps a mass of tentacles around [L]!</span>")
 		on_hit(L)
 		latched = TRUE
 	if(!latched)
@@ -337,10 +338,11 @@
 		deltimer(timerid)
 		timerid = addtimer(CALLBACK(src, PROC_REF(retract)), 10, TIMER_STOPPABLE)
 
-/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/L)
-	L.Stun(100)
-	L.adjustBruteLoss(rand(10,15))
-
+/obj/effect/temp_visual/goliath_tentacle/proc/on_hit(mob/living/target)
+	target.apply_damage(rand(20,30), BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
+	if(iscarbon(target))
+		var/obj/item/restraints/legcuffs/beartrap/goliath/B = new /obj/item/restraints/legcuffs/beartrap/goliath(get_turf(target))
+		B.on_entered(src, target)
 
 /obj/effect/temp_visual/goliath_tentacle/proc/retract()
 	icon_state = "marker"

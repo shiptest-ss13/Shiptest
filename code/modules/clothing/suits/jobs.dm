@@ -159,17 +159,6 @@
 	icon_state = "suitjacket_charcoal"
 	item_state = "suitjacket_charcoal"
 
-/obj/item/clothing/suit/toggle/lawyer/minutemen
-	name = "minutemen suit jacket"
-	desc = "An enterprising dress jacket used by officers of the Colonial Minutemen."
-	icon_state = "suitjacket_minuteman"
-	item_state = "suitjacket_navy"
-
-/obj/item/clothing/suit/toggle/lawyer/minutemen/Initialize()
-	. = ..()
-	if(!allowed)
-		allowed = GLOB.security_vest_allowed //it's hop-equivalent gear after all
-
 /obj/item/clothing/suit/toggle/lawyer/cmo
 	name = "light blue suit jacket"
 	desc = "A foppish dress jacket."
@@ -215,45 +204,6 @@
 	desc = "A sterile blue surgical apron."
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
-
-//Robotocist
-
-/obj/item/clothing/suit/hooded/techpriest
-	name = "techpriest robes"
-	desc = "For those who REALLY love their toasters."
-	icon_state = "techpriest"
-	item_state = "techpriest"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	hoodtype = /obj/item/clothing/head/hooded/techpriest
-
-/obj/item/clothing/head/hooded/techpriest
-	name = "techpriest's hood"
-	desc = "A hood for those who REALLY love their toasters."
-	icon_state = "techpriesthood"
-	item_state = "techpriesthood"
-	body_parts_covered = HEAD
-	flags_inv = HIDEHAIR|HIDEEARS
-
-//Lieutenant
-/obj/item/clothing/suit/armor/lieutenant_trenchcoat
-	name = "lieutenant's trenchcoat"
-	desc = "A design taken from a war over 500 years ago. Makes you look like a badass."
-	icon_state = "armor_blueshield_trenchcoat"
-	item_state = "trenchcoat_blueshield"
-	blood_overlay_type = "coat"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
-	cold_protection = CHEST|LEGS|ARMS
-	heat_protection = CHEST|LEGS|ARMS
-
-/obj/item/clothing/suit/toggle/lieutenant
-	name = "lieutenant's coat"
-	desc = "Surplus from some military. You finally have your own coat."
-	icon_state = "blueshield_coat"
-	item_state = "blueshield_coat"
-	allowed = list(/obj/item/gun/energy, /obj/item/reagent_containers/spray/pepper, /obj/item/ammo_box, /obj/item/ammo_casing,/obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/flashlight/seclite, /obj/item/melee/classic_baton)
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	body_parts_covered = CHEST|GROIN|ARMS|HANDS
 
 //SolGov suits
 
@@ -333,3 +283,4 @@
 	item_state = "enginseerhood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
+

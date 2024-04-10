@@ -235,6 +235,17 @@
 	var/armed = 0
 	var/trap_damage = 20
 
+/obj/item/restraints/legcuffs/beartrap/goliath
+	name = "tentacle mass"
+	desc = "Ew."
+	icon_state = "goliathtrap"
+	flags_1 = NONE
+	slowdown = 10
+	breakouttime = 5 SECONDS
+	item_flags = DROPDEL
+	armed = 1
+	trap_damage = 0
+
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()
 	update_appearance()
@@ -294,8 +305,8 @@
 					snap = FALSE
 			if(snap)
 				close_trap()
-				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
-						"<span class='userdanger'>You trigger \the [src]!</span>")
+				L.visible_message("<span class='danger'>[L] gets caught by \the [src]!</span>", \
+						"<span class='userdanger'>You get caught by \the [src]!</span>")
 				L.apply_damage(trap_damage, BRUTE, def_zone)
 
 /obj/item/restraints/legcuffs/beartrap/energy
