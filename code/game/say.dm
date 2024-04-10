@@ -7,6 +7,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_NANOTRASEN]" = "ntradio",
 	"[FREQ_MINUTEMEN]" = "clipradio",
 	"[FREQ_INTEQ]" = "irmgradio",
+	"[FREQ_PGF]" = "pgfradio",
 	"[FREQ_PIRATE]" = "pirradio",
 	"[FREQ_COMMAND]" = "comradio",
 	"[FREQ_AI_PRIVATE]" = "aiprivradio",
