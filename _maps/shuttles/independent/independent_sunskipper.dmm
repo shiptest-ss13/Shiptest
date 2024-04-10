@@ -378,12 +378,6 @@
 /obj/item/seeds/carrot,
 /obj/item/seeds/berry,
 /obj/item/seeds/watermelon,
-/obj/structure/closet/wall/white{
-	color = "#50C878";
-	name = "Seeds Storage";
-	pixel_y = -28;
-	dir = 1
-	},
 /obj/item/seeds/sugarcane,
 /obj/item/seeds/plump,
 /obj/item/seeds/poppy,
@@ -400,6 +394,10 @@
 /obj/item/seeds/pumpkin,
 /obj/item/seeds/eggplant,
 /obj/item/seeds/cherry,
+/obj/structure/closet/wall/white/directional/south{
+	name = "Seeds Storage";
+	color = "#50C878"
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "ex" = (
@@ -1194,10 +1192,6 @@
 /area/ship/crew/canteen)
 "pw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/closet/wall{
-	name = "Spare Clothing";
-	pixel_y = 28
-	},
 /obj/item/clothing/under/rank/civilian/chef,
 /obj/item/clothing/under/suit/charcoal,
 /obj/item/clothing/under/suit/sl,
@@ -1210,6 +1204,9 @@
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/green{
 	icon_state = "0-6"
+	},
+/obj/structure/closet/wall/directional/north{
+	name = "Spare Clothing"
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/cryo)
@@ -1759,9 +1756,6 @@
 	},
 /obj/item/clothing/mask/vape/cigar{
 	pixel_y = -2
-	},
-/obj/item/toy/cards/deck/kotahi{
-	pixel_y = -14
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
@@ -2592,8 +2586,8 @@
 /obj/item/pen,
 /obj/machinery/newscaster/directional/east,
 /obj/item/toy/cards/deck/cas/black{
-	pixel_y = 8;
-	pixel_x = -10
+	pixel_y = 4;
+	pixel_x = -16
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/crew/dorm)
@@ -3241,15 +3235,14 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/structure/closet/wall/orange{
-	name = "Tool Closet";
-	pixel_y = 28
-	},
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/clothing/head/welding,
 /obj/item/flashlight,
 /obj/item/storage/toolbox/mechanical,
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Tool Closet"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Rr" = (
@@ -3405,9 +3398,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 30
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 5;
 	color = "#543C30"
@@ -3415,6 +3405,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "Uc" = (
@@ -3516,14 +3507,6 @@
 /turf/open/floor/plating,
 /area/ship/crew/canteen/kitchen)
 "Vj" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	pixel_y = -28;
-	icon_state = "sec_wall";
-	name = "Security Equipment";
-	pixel_x = 2;
-	req_access = list(20)
-	},
 /obj/item/storage/box/zipties,
 /obj/item/reagent_containers/spray/pepper,
 /obj/item/reagent_containers/spray/pepper,
@@ -3539,6 +3522,12 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/spray/pepper,
+/obj/structure/closet/secure_closet/wall/directional/south{
+	name = "Security Equipment";
+	icon_state = "sec_wall";
+	req_access = list(20);
+	pixel_x = 2
+	},
 /turf/open/floor/carpet/black,
 /area/ship/hallway/central)
 "Vm" = (
@@ -3601,8 +3590,7 @@
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/closet/wall/white/med{
 	name = "First Aid";
-	pixel_y = -28;
-	dir = 1
+	pixel_y = -28
 	},
 /obj/item/storage/firstaid/regular,
 /obj/item/reagent_containers/hypospray/medipen,
@@ -3669,9 +3657,8 @@
 	dir = 4;
 	color = "#543C30"
 	},
-/obj/item/toy/cards/deck/syndicate{
-	pixel_y = 2;
-	pixel_x = -1
+/obj/item/toy/cards/deck/kotahi{
+	pixel_y = 4
 	},
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
@@ -3777,10 +3764,6 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "YL" = (
-/obj/structure/closet/wall/blue{
-	pixel_y = 28;
-	name = "Manager's Locker"
-	},
 /obj/item/clipboard,
 /obj/item/clothing/gloves/color/white,
 /obj/item/clothing/glasses/sunglasses,
@@ -3792,6 +3775,9 @@
 /obj/item/clothing/under/suit/checkered,
 /obj/item/clothing/under/suit/red,
 /obj/item/clothing/under/suit/blacktwopiece,
+/obj/structure/closet/wall/blue/directional/north{
+	name = "Manager's Locker"
+	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/bridge)
 "YM" = (

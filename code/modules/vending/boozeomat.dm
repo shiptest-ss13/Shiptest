@@ -25,10 +25,12 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 4,
 		/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 8,
-		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 15,
+		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 8,
 		/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 8,
 		/obj/item/reagent_containers/food/drinks/bottle/grenadine = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/menthol = 4,
+		/obj/item/reagent_containers/food/drinks/mug/tea = 8,
+		/obj/item/reagent_containers/food/drinks/coffee = 8,
 		/obj/item/reagent_containers/food/drinks/ale = 6,
 		/obj/item/reagent_containers/food/drinks/beer = 8,
 		/obj/item/reagent_containers/food/drinks/bottle/gin = 5,
@@ -38,7 +40,6 @@
 		/obj/item/reagent_containers/food/drinks/bottle/vermouth = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/rum = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/wine = 5,
-		/obj/item/reagent_containers/food/drinks/bottle/fernet = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/cognac = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/kahlua = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/hcider = 5,
@@ -56,10 +57,9 @@
 		/obj/item/garnish/umbrellagreen = 10
 	)
 	contraband = list(
-		/obj/item/reagent_containers/food/drinks/mug/tea = 12,
-		/obj/item/reagent_containers/food/drinks/bottle/fernet = 5)
+		/obj/item/reagent_containers/glass/bottle/ethanol = 4)
 	premium = list(
-		/obj/item/reagent_containers/glass/bottle/ethanol = 4,
+		/obj/item/reagent_containers/food/drinks/bottle/fernet = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/champagne = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/trappist = 5)
 
