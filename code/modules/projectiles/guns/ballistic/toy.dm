@@ -70,7 +70,7 @@
 	. = ..()
 	. += "[icon_state]_toy"
 
-/obj/item/gun/ballistic/shotgun/toy/process_chamber(empty_chamber = 0, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter = null)
+/obj/item/gun/ballistic/shotgun/toy/process_chamber(empty_chamber = 0, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	. = ..()
 	if(chambered && !chambered.BB)
 		qdel(chambered)

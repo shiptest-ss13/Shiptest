@@ -47,7 +47,7 @@
 	cached_animate_movement = moving_atom.animate_movement
 	moving_atom.animate_movement = NO_STEPS
 	START_PROCESSING(SSmovablephysics, src)
-	moving_atom.SpinAnimation(speed = 3 SECONDS, loops = 1)
+	moving_atom.SpinAnimation(speed = 1 SECONDS, loops = 1)
 
 ///Alright it's time to stop
 /datum/component/movable_physics/proc/stop_movement()
@@ -66,18 +66,18 @@
 	ricochet(atom_source, Get_Angle(atom_source, throwingdatum.target_turf))
 
 /datum/component/movable_physics/proc/z_floor_bounce(atom/movable/moving_atom)
+	var/numbounce = 1
 	angle_of_movement += rand(-3000, 3000) / 100
 	var/turf/a_turf = get_turf(moving_atom)
 	if(istype(moving_atom, /obj/item/ammo_casing))
 		playsound(moving_atom, a_turf.bullet_bounce_sound, 50, TRUE)
 	else
 		playsound(moving_atom, bounce_sound, 50, TRUE)
-	if(!spun)
-		moving_atom.SpinAnimation(speed = 3 SECONDS, loops = 1)
-		addtimer(CALLBACK(src, PROC_REF(unspin)), 3 SECONDS)
+	moving_atom.SpinAnimation(speed = 1 SECONDS / numbounce, loops = 1)
 	moving_atom.pixel_z = z_floor
 	horizontal_velocity = max(0, horizontal_velocity + (vertical_velocity * -0.8))
 	vertical_velocity = max(0, ((vertical_velocity * -0.8) - 0.2))
+	numbounce += 1
 
 /datum/component/movable_physics/proc/ricochet(atom/movable/moving_atom, bounce_angle)
 	angle_of_movement = ((180 - bounce_angle) - angle_of_movement)
@@ -149,5 +149,3 @@
 			moving_atom.pixel_y = -16
 			ricochet(moving_atom, 180)
 
-/datum/component/movable_physics/proc/unspin()
-	spun = FALSE

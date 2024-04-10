@@ -30,7 +30,7 @@
 /obj/item/gun/chem/can_shoot()
 	return syringes_left
 
-/obj/item/gun/chem/process_chamber(atom/shooter = null)
+/obj/item/gun/chem/process_chamber(atom/shooter)
 	if(chambered && !chambered.BB && syringes_left)
 		chambered.newshot()
 
