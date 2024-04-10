@@ -2,7 +2,7 @@
 	name = "\improper Kepori"
 	id = SPECIES_KEPORI
 	default_color = "6060FF"
-	species_traits = list(MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
+	species_traits = list(SCLERA, MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
 	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
 	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", "body_size" = "Normal")
@@ -15,7 +15,7 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 	species_clothing_path = 'icons/mob/clothing/species/kepori.dmi'
-	species_eye_path = 'icons/mob/kepori_parts.dmi'
+	species_eye_path = 'icons/mob/species/kepori/kepori_eyes.dmi'
 	heatmod = 0.67
 	coldmod = 1.5
 	brutemod = 1.5
@@ -86,17 +86,27 @@
 		return equip_delay_self_check(I, H, bypass_equip_delay_self)
 
 /datum/species/kepori/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
-	..()
+	. = ..()
+
+	C.base_pixel_x -= 8
+	C.pixel_x = C.base_pixel_x
+	C.update_hands_on_rotate()
+
 	if(ishuman(C))
 		keptackle = new
 		keptackle.Grant(C)
 
 /datum/species/kepori/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+	. = ..()
+
+	C.base_pixel_x += 8
+	C.pixel_x = C.base_pixel_x
+	C.stop_updating_hands()
+
 	if(keptackle)
 		keptackle.Remove(C)
-	qdel(C.GetComponent(/datum/component/tackler))
-	..()
 
+	qdel(C.GetComponent(/datum/component/tackler))
 
 /datum/action/innate/keptackle
 	name = "Pounce"

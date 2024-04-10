@@ -73,8 +73,6 @@
 		return random_unique_vox_name()
 	return vox_name()
 
-
-
 /datum/species/vox/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
 	C.base_pixel_x -= 9
