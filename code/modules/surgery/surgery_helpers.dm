@@ -80,42 +80,16 @@
 
 /proc/attempt_cancel_surgery(datum/surgery/S, obj/item/I, mob/living/M, mob/user)
 	var/selected_zone = user.zone_selected
-	to_chat(user, "<span class='notice'>You begin to cancel \the [S].</span>")
-	if (!do_mob(user, M, 3 SECONDS))
-		return
 
 	if(S.status == 1)
+		to_chat(user, "<span class='notice'>You begin to cancel \the [S].</span>")
+		if (!do_mob(user, M, 3 SECONDS))
+			return
 		M.surgeries -= S
 		user.visible_message("<span class='notice'>[user] stops the surgery on [M]'s [parse_zone(selected_zone)].</span>", \
 			"<span class='notice'>You stop the surgery on [M]'s [parse_zone(selected_zone)].</span>")
 		qdel(S)
 		return
-
-	if(S.can_cancel)
-		var/required_tool_type = TOOL_CAUTERY
-		// Historically surgical drapes were used with the cautery in the inactive hand, but these drapes don't seem to exist here
-		var/obj/item/close_tool = user.get_active_held_item()
-		var/is_robotic = S.requires_bodypart_type == BODYTYPE_ROBOTIC
-
-		if(is_robotic)
-			required_tool_type = TOOL_SCREWDRIVER
-
-		if(iscyborg(user))
-			close_tool = locate(/obj/item/cautery) in user.held_items
-			if(!close_tool)
-				to_chat(user, "<span class='warning'>You need to equip a cautery in an active slot to stop [M]'s surgery!</span>")
-				return
-		else if(!close_tool || close_tool.tool_behaviour != required_tool_type)
-			to_chat(user, "<span class='warning'>You need to hold a [is_robotic ? "screwdriver" : "cautery"] in your active hand to stop [M]'s surgery!</span>")
-			return
-
-		if(ishuman(M))
-			var/mob/living/carbon/human/H = M
-			H.bleed_rate = max((H.bleed_rate - 3), 0)
-		M.surgeries -= S
-		user.visible_message("<span class='notice'>[user] closes [M]'s [parse_zone(selected_zone)] with [close_tool] and stops the surgery.</span>", \
-			"<span class='notice'>You close [M]'s [parse_zone(selected_zone)] with [close_tool] and stop the surgery.</span>")
-		qdel(S)
 
 
 /proc/get_location_modifier(mob/M)

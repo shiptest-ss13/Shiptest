@@ -42,6 +42,7 @@
 					success = TRUE
 					break
 	if(success)
+		surgery.status++
 		if(target_zone == surgery.location)
 			if(get_location_accessible(target, target_zone) || surgery.ignore_clothes)
 				if(surgery.test_lying(user,target))

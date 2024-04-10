@@ -1,6 +1,6 @@
 //reshape_face
 /datum/surgery_step/omni/reshape_face
-	name = "reshape face"
+	name = "Reshape face"
 	implements = list(
 		TOOL_SCALPEL = 100,
 		/obj/item/kitchen/knife = 40,

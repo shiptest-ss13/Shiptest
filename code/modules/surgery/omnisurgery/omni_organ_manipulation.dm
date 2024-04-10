@@ -1,6 +1,6 @@
 /datum/surgery_step/omni/manipulate_organs
 	time = 6.4 SECONDS
-	name = "manipulate organs"
+	name = "Manipulate organs"
 	repeatable = TRUE
 	implements = list(/obj/item/organ = 100,
 		/obj/item/organ_storage = 100,

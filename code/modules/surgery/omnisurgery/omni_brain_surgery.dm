@@ -1,5 +1,5 @@
 /datum/surgery_step/omni/fix_brain
-	name = "fix brain"
+	name = "Fix brain"
 	implements = list(
 		TOOL_HEMOSTAT = 85,
 		TOOL_SCREWDRIVER = 40,

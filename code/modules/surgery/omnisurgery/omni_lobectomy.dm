@@ -1,6 +1,6 @@
 //lobectomy, removes the most damaged lung lobe with a 95% base success chance
 /datum/surgery_step/omni/lobectomy
-	name = "excise damaged lung node"
+	name = "Excise damaged lung node"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		/obj/item/melee/transforming/energy/sword = 33,
