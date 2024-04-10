@@ -2707,6 +2707,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yp" = (
@@ -3241,9 +3244,12 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "EL" = (
-/obj/machinery/vending/tool,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 6
+	},
+/obj/machinery/computer/monitor,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -3518,6 +3524,9 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "HF" = (
@@ -3680,10 +3689,11 @@
 /area/ship/crew/canteen)
 "Jp" = (
 /obj/structure/sink{
-	pixel_y = 20
+	pixel_y = 16
 	},
 /obj/structure/mirror{
-	pixel_y = 30
+	pixel_y = 30;
+	layer = 2.8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/west,
@@ -3967,7 +3977,6 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
 "Ml" = (
-/obj/machinery/computer/monitor/secret,
 /obj/effect/turf_decal/spline/fancy/opaque/black{
 	dir = 8
 	},
@@ -3980,6 +3989,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
+/obj/machinery/computer/monitor,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
 "ME" = (
@@ -4642,8 +4652,7 @@
 	pixel_x = 28
 	},
 /obj/structure/sink/kitchen{
-	dir = 8;
-	pixel_x = 11
+	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/mineral/plastitanium,
@@ -5466,6 +5475,7 @@
 	pixel_x = 1;
 	pixel_y = -3
 	},
+/obj/item/storage/belt/medical,
 /obj/item/bodybag,
 /obj/item/bodybag{
 	pixel_x = -3;
