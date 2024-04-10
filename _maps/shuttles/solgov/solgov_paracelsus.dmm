@@ -1160,9 +1160,7 @@
 /turf/template_noop,
 /area/template_noop)
 "lD" = (
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
@@ -1891,8 +1889,7 @@
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	pixel_y = 28;
+/obj/structure/closet/secure_closet/wall/directional/north{
 	name = "navigational supplies";
 	req_access_txt = "19"
 	},
@@ -2866,11 +2863,9 @@
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_y = -28;
 	req_access_txt = "19"
 	},
 /turf/open/floor/carpet/royalblue,
@@ -4316,10 +4311,7 @@
 /area/ship/cargo/office)
 "Pp" = (
 /obj/structure/table/wood,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/secure_closet/wall/directional/east,
 /obj/item/clipboard,
 /obj/item/paper_bin/carbon,
 /obj/item/clothing/accessory/waistcoat/solgov,

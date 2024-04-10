@@ -890,11 +890,9 @@
 /obj/item/clothing/head/hardhat,
 /obj/item/clothing/shoes/combat,
 /obj/effect/turf_decal/hardline_small/right,
-/obj/structure/closet/wall{
-	dir = 8;
+/obj/structure/closet/wall/directional/east{
 	icon_door = "yellow_wall";
-	name = "engineering closet";
-	pixel_x = 28
+	name = "engineering closet"
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
@@ -908,12 +906,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "mu" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_door = "solgov_wall";
 	icon_state = "solgov_wall";
 	name = "vanguard's locker";
-	pixel_x = -28;
 	req_access_txt = "20"
 	},
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
@@ -1209,10 +1205,9 @@
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
 /obj/item/clothing/head/soft/inteq,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "uniform closet";
-	pixel_y = 28
+	name = "uniform closet"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
@@ -1737,9 +1732,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "Bu" = (
-/obj/structure/closet/wall{
-	icon_door = "grey_wall";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	icon_door = "grey_wall"
 	},
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -1868,10 +1862,8 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/number/six,
-/obj/structure/closet/wall/orange{
-	dir = 8;
+/obj/structure/closet/wall/orange/directional/east{
 	name = "tool closet";
-	pixel_x = 28;
 	req_access_txt = "11"
 	},
 /obj/item/pipe_dispenser,
@@ -2149,10 +2141,9 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "orange_wall";
-	name = "uniform closet";
-	pixel_y = 28
+	name = "uniform closet"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2220,10 +2211,9 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security)
 "HN" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_door = "med_wall";
 	name = "medical locker";
-	pixel_y = 28;
 	req_access_txt = "5"
 	},
 /obj/item/storage/firstaid/regular{

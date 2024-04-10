@@ -3,12 +3,10 @@
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_door = "sec_wall";
 	icon_state = "sec_wall";
 	name = "gun locker";
-	pixel_x = -32;
 	req_access_txt = "19"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2185,10 +2183,8 @@
 /turf/open/floor/plasteel/white,
 /area/ship/science)
 "oE" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	icon_door = "grey_wall";
-	pixel_y = -28
+/obj/structure/closet/wall/directional/south{
+	icon_door = "grey_wall"
 	},
 /obj/item/clothing/under/color/grey,
 /obj/item/clothing/under/color/grey,
@@ -2239,9 +2235,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering/atmospherics)
 "oQ" = (
@@ -2545,10 +2539,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/corner/transparent/neutral,
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "qw" = (
@@ -2922,10 +2913,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/crew/cryo)
 "sJ" = (
@@ -3057,9 +3045,7 @@
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
 "tO" = (

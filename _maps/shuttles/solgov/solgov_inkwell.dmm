@@ -1051,10 +1051,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
@@ -1308,10 +1305,7 @@
 /obj/item/clothing/under/solgov/formal/skirt,
 /obj/item/clothing/suit/solgov/suit,
 /obj/structure/table/wood,
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/machinery/button/door{
 	pixel_y = -21;
 	pixel_x = -8;
@@ -1695,10 +1689,7 @@
 /obj/item/clothing/under/solgov/formal/skirt,
 /obj/item/clothing/suit/solgov/suit,
 /obj/structure/table/wood,
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/item/clothing/suit/hooded/wintercoat/solgov,
 /obj/item/clothing/suit/hooded/wintercoat/solgov,
 /turf/open/floor/wood/walnut,
@@ -2566,9 +2557,7 @@
 	dir = 8
 	},
 /obj/structure/table/wood,
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
@@ -5827,9 +5816,7 @@
 /obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/starboard)
@@ -6259,10 +6246,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)
 "PB" = (
@@ -6400,9 +6384,7 @@
 /obj/effect/turf_decal/spline/fancy/transparent/solgovblue{
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
 "QT" = (

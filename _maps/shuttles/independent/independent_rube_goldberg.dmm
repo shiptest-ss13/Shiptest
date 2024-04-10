@@ -1427,10 +1427,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/plating/airless,
 /area/ship/hallway)
 "ny" = (
@@ -3598,10 +3595,7 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible/layer2{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -29
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "IL" = (
@@ -4105,9 +4099,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/canteen)
 "NC" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},

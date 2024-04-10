@@ -108,10 +108,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/crew/toilet)
 "aV" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
@@ -1819,9 +1816,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/ship/hallway/central)
 "km" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -30;
+/obj/structure/closet/wall/blue/directional/west{
 	name = "Space Suits";
 	desc = "Contains supplies for space walking."
 	},
@@ -2101,10 +2096,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "lA" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/crew/dorm/dormthree)
@@ -3568,10 +3560,7 @@
 /turf/open/floor/plating,
 /area/ship/storage/eva)
 "uO" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -3751,9 +3740,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/electrical)
 "wk" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4516,9 +4503,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security/armory)
 "AP" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -30;
+/obj/structure/closet/wall/blue/directional/west{
 	name = "Space Suits";
 	desc = "Contains supplies for space walking."
 	},
@@ -6396,10 +6381,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 8
 	},
@@ -7462,9 +7444,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/bridge)
 "Rm" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},

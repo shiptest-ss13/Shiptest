@@ -4,10 +4,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/item/clothing/suit/space/syndicate/black/engie,
 /obj/item/clothing/head/helmet/space/syndicate/black/engie,
 /turf/open/floor/plasteel/dark,
@@ -135,10 +132,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "aG" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/secure_closet/wall/directional/east,
 /obj/item/kitchen/knife,
 /obj/item/cutting_board,
 /obj/item/clothing/under/suit/waiter/syndicate,
@@ -2323,9 +2317,7 @@
 /obj/item/card/id/syndicate_command/lieutenant{
 	name = "lieutenant ID card"
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	pixel_x = -28;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	name = "spare cards locker";
 	req_access = list(3,150)
 	},
@@ -2428,10 +2420,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 10
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 1
 	},
@@ -4781,10 +4770,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
@@ -5212,10 +5198,7 @@
 /obj/effect/turf_decal/corner/opaque/syndiered{
 	dir = 9
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/effect/turf_decal/borderfloorblack{
 	dir = 4
 	},
@@ -5798,10 +5781,7 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/port)
 "GN" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/clothing/suit/space/syndicate,
 /obj/item/clothing/suit/space/syndicate,
 /obj/item/clothing/head/helmet/space/syndicate,
@@ -6173,10 +6153,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/engineering/communications)
 "IV" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/clothing/suit/space/syndicate,
 /obj/item/clothing/head/helmet/space/syndicate,
 /obj/item/clothing/head/helmet/space/syndicate,
@@ -7777,10 +7754,7 @@
 "SA" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/item/clothing/suit/space/syndicate/black/engie,
 /obj/item/clothing/head/helmet/space/syndicate/black/engie,
 /turf/open/floor/plasteel/dark,
@@ -8340,9 +8314,8 @@
 /obj/effect/turf_decal/trimline/opaque/orange/line{
 	dir = 5
 	},
-/obj/structure/closet/wall/orange{
-	name = "Chemical Closet";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Chemical Closet"
 	},
 /obj/item/storage/bag/chemistry,
 /obj/item/reagent_containers/glass/beaker/large,
@@ -8573,9 +8546,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/effect/turf_decal/borderfloorblack,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/starboard)

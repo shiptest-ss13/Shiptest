@@ -162,9 +162,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "aV" = (
@@ -2728,10 +2726,8 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing,
 /obj/machinery/airalarm/directional/north,
-/obj/structure/closet/wall{
-	dir = 4;
-	icon_door = "grey_wall";
-	pixel_x = -32
+/obj/structure/closet/wall/directional/west{
+	icon_door = "grey_wall"
 	},
 /obj/item/radio/headset,
 /obj/item/radio/headset,
@@ -3787,9 +3783,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "wQ" = (
@@ -3815,9 +3809,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "xb" = (

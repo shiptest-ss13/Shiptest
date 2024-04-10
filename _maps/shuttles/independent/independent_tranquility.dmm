@@ -563,10 +563,8 @@
 /obj/item/reagent_containers/food/condiment/rice,
 /obj/item/reagent_containers/food/condiment/rice,
 /obj/item/storage/box/condimentbottles,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
-	name = "Kitchen Cabinet";
-	pixel_x = -28
+/obj/structure/closet/secure_closet/wall/directional/west{
+	name = "Kitchen Cabinet"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -672,10 +670,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/wall/directional/south,
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
@@ -1329,10 +1324,8 @@
 /turf/open/floor/grass,
 /area/ship/crew/hydroponics)
 "js" = (
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "Wardrobe";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Wardrobe"
 	},
 /obj/item/clothing/head/beret,
 /obj/item/clothing/under/color/jumpskirt/random,
@@ -1455,10 +1448,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "Wardrobe";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Wardrobe"
 	},
 /obj/item/clothing/head/wig/random,
 /obj/item/clothing/under/color/jumpskirt/random,
@@ -1747,10 +1738,7 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
 "ny" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "nz" = (
@@ -1990,10 +1978,7 @@
 /area/ship/hallway/port)
 "pT" = (
 /obj/effect/turf_decal/techfloor/orange,
-/obj/structure/closet/wall/orange{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/closet/wall/orange/directional/south,
 /obj/item/stack/tape/industrial/electrical,
 /obj/item/stack/tape/industrial,
 /obj/item/holosign_creator/engineering,
@@ -2071,10 +2056,8 @@
 /area/ship/hallway/port)
 "qV" = (
 /obj/effect/turf_decal/siding/wood,
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "Wardrobe";
-	pixel_y = -28
+/obj/structure/closet/wall/directional/south{
+	name = "Wardrobe"
 	},
 /obj/item/clothing/head/wig/random,
 /obj/item/storage/box/syndie_kit/chameleon,
@@ -2458,10 +2441,8 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
 "ub" = (
-/obj/structure/closet/wall{
-	dir = 8;
-	name = "Personal Effects";
-	pixel_x = 32
+/obj/structure/closet/wall/directional/east{
+	name = "Personal Effects"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -2937,9 +2918,7 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormfour)
 "xW" = (
-/obj/structure/closet/wall/orange{
-	pixel_y = 32
-	},
+/obj/structure/closet/wall/orange/directional/north,
 /obj/item/clothing/suit/fire/atmos,
 /obj/item/clothing/mask/gas/atmos,
 /obj/item/clothing/head/hardhat/atmos,
@@ -3469,9 +3448,8 @@
 /obj/item/clothing/under/pants/khaki,
 /obj/item/clothing/shoes/laceup,
 /obj/item/clothing/under/suit/charcoal,
-/obj/structure/closet/wall{
-	name = "Wardrobe";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	name = "Wardrobe"
 	},
 /obj/item/clothing/accessory/waistcoat,
 /turf/open/floor/carpet/black,
@@ -4486,10 +4464,8 @@
 	icon_state = "1-8"
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
-/obj/structure/closet/wall/blue{
-	dir = 1;
-	name = "Janitorial Closet";
-	pixel_y = -28
+/obj/structure/closet/wall/blue/directional/south{
+	name = "Janitorial Closet"
 	},
 /obj/item/soap/deluxe,
 /obj/item/mop,
@@ -4748,10 +4724,8 @@
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/starboard)
 "LS" = (
-/obj/structure/closet/wall{
-	dir = 8;
-	name = "Wardrobe";
-	pixel_x = 32
+/obj/structure/closet/wall/directional/east{
+	name = "Wardrobe"
 	},
 /obj/item/clothing/suit/toggle/labcoat/chemist/side,
 /obj/item/clothing/head/beret/puce,
@@ -4791,10 +4765,8 @@
 "Md" = (
 /obj/item/circuitboard/machine/telecomms/relay,
 /obj/item/circuitboard/machine/telecomms/message_server,
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Component Storage";
-	pixel_x = -28
+/obj/structure/closet/wall/blue/directional/west{
+	name = "Component Storage"
 	},
 /obj/item/stack/cable_coil/blue,
 /obj/item/stock_parts/subspace/filter,
@@ -5464,10 +5436,8 @@
 /obj/item/reagent_containers/food/condiment/soymilk,
 /obj/item/storage/fancy/egg_box,
 /obj/item/storage/fancy/egg_box,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	name = "Freezer";
-	pixel_x = 32
+/obj/structure/closet/secure_closet/wall/directional/east{
+	name = "Freezer"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/crew/canteen)
@@ -5836,10 +5806,8 @@
 /turf/closed/wall/mineral/titanium,
 /area/ship/storage)
 "TI" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Personal Effects";
-	pixel_x = -32
+/obj/structure/closet/wall/blue/directional/west{
+	name = "Personal Effects"
 	},
 /obj/item/storage/belt/utility/full,
 /obj/item/clothing/suit/hooded/wintercoat/engineering,
@@ -5856,10 +5824,8 @@
 /turf/open/floor/carpet/nanoweave/red,
 /area/ship/crew/dorm/dormfour)
 "TJ" = (
-/obj/structure/closet/wall{
-	dir = 8;
-	name = "Personal Effects";
-	pixel_x = 32
+/obj/structure/closet/wall/directional/east{
+	name = "Personal Effects"
 	},
 /obj/item/storage/bag/chemistry,
 /obj/item/storage/box/pillbottles,
@@ -6634,10 +6600,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/medical/surgery)
 "ZU" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/port)
 

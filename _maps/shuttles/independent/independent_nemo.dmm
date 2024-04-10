@@ -1890,10 +1890,7 @@
 	},
 /obj/item/kinetic_crusher,
 /obj/item/kinetic_crusher,
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/wall/orange/directional/west,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /obj/item/t_scanner/adv_mining_scanner/lesser,
 /turf/open/floor/plasteel/patterned/cargo_one,
@@ -2169,11 +2166,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "hunting locker";
-	pixel_x = -32;
 	req_access = list(30)
 	},
 /obj/item/firing_pin,
@@ -2201,10 +2196,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Gx" = (
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/item/radio/off,
 /obj/item/radio/off,
 /obj/item/radio/off,
@@ -2317,9 +2309,8 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/wall{
-	name = "scientist closet";
-	pixel_y = 32
+/obj/structure/closet/wall/directional/north{
+	name = "scientist closet"
 	},
 /obj/item/disk/nanite_program,
 /obj/item/disk/nanite_program,
@@ -2563,10 +2554,7 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	pixel_x = -30
-	},
+/obj/structure/closet/wall/orange/directional/west,
 /obj/item/clothing/head/hardhat/weldhat,
 /obj/item/pipe_dispenser,
 /obj/item/construction/rcd/loaded,
@@ -2855,9 +2843,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/wall{
-	name = "roboticist closet";
-	pixel_y = 32
+/obj/structure/closet/wall/directional/north{
+	name = "roboticist closet"
 	},
 /obj/item/clothing/glasses/hud/diagnostic,
 /obj/item/stock_parts/cell/high/plus,
@@ -3014,10 +3001,7 @@
 /obj/item/storage/belt/utility/atmostech,
 /obj/item/holosign_creator/atmos,
 /obj/item/analyzer,
-/obj/structure/closet/wall/orange{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/wall/orange/directional/west,
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos,
 /obj/item/extinguisher/advanced,
 /obj/item/clothing/gloves/color/black,

@@ -158,11 +158,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_state = "sec_wall";
 	name = "clothing locker";
-	pixel_x = 28;
 	req_access_txt = "5"
 	},
 /obj/item/clothing/head/helmet/sec,
@@ -395,11 +393,9 @@
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber;
 	name = "Commander magazine (Rubbershot 9mm)"
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_x = -28;
 	req_access_txt = "5"
 	},
 /turf/open/floor/plasteel/dark,
@@ -547,10 +543,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/effect/turf_decal/number/five{
 	dir = 4
 	},
@@ -729,11 +722,9 @@
 /obj/item/clothing/head/helmet/sec,
 /obj/item/clothing/head/helmet/sec,
 /obj/item/clothing/head/helmet/sec,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_state = "sec_wall";
 	name = "armor locker";
-	pixel_x = 28;
 	req_access_txt = "5"
 	},
 /turf/open/floor/plasteel/dark,
@@ -1043,11 +1034,9 @@
 	name = "Commander magazine (AP 9mm)"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_x = -28;
 	req_access_txt = "5"
 	},
 /obj/item/ammo_box/magazine/co9mm{
@@ -1332,10 +1321,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "IG" = (
@@ -1567,11 +1553,9 @@
 /obj/item/storage/backpack/messenger/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "solgov_wall";
 	name = "head of security's closet";
-	pixel_y = -28;
 	req_access_txt = "40"
 	},
 /turf/open/floor/carpet/nanoweave,
@@ -1595,9 +1579,7 @@
 /obj/item/ammo_box/magazine/toy/pistol,
 /obj/item/ammo_box/magazine/toy/pistol,
 /obj/item/ammo_box/magazine/toy/pistol,
-/obj/structure/closet/wall/red{
-	dir = 8;
-	pixel_x = 28;
+/obj/structure/closet/wall/red/directional/east{
 	name = "foam gun cabinet"
 	},
 /obj/item/gun/ballistic/automatic/toy/pistol/unrestricted,
@@ -1933,11 +1915,9 @@
 /turf/template_noop,
 /area/template_noop)
 "UJ" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "solgov_wall";
 	name = "captain's closet";
-	pixel_y = -28;
 	req_access_txt = "20"
 	},
 /obj/effect/landmark/start/captain,

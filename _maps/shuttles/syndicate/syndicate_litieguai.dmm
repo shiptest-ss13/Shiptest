@@ -1021,11 +1021,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	req_access_txt = "5";
-	pixel_y = 28
+	req_access_txt = "5"
 	},
 /obj/item/ammo_box/magazine/m10mm/rubber,
 /obj/item/ammo_box/magazine/m10mm/rubber,
@@ -1093,9 +1092,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/ship/crew/toilet)
 "wt" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/effect/turf_decal/number/two,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1403,12 +1400,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "armor locker";
-	req_access_txt = "5";
-	pixel_y = -28
+	req_access_txt = "5"
 	},
 /obj/item/clothing/suit/armor/vest/marine/trauma,
 /obj/item/clothing/suit/armor/vest/marine/trauma,
@@ -1490,12 +1485,10 @@
 /obj/item/storage/belt/medical,
 /obj/item/healthanalyzer/advanced,
 /obj/item/hypospray/mkii/CMO,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "solgov_wall";
 	name = "chief medical officer's closet";
-	req_access_txt = "40";
-	pixel_x = -28
+	req_access_txt = "40"
 	},
 /obj/item/storage/backpack/satchel/med,
 /obj/item/defibrillator/compact/loaded,
@@ -1561,12 +1554,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "clothing locker";
-	req_access_txt = "5";
-	pixel_y = -28
+	req_access_txt = "5"
 	},
 /obj/item/clothing/under/syndicate/medic,
 /obj/item/clothing/under/syndicate/medic,
@@ -2392,11 +2383,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10
 	},
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "equipment locker";
-	req_access_txt = "5";
-	pixel_y = 28
+	req_access_txt = "5"
 	},
 /obj/item/healthanalyzer/advanced,
 /obj/item/healthanalyzer/advanced,
@@ -2842,12 +2832,10 @@
 /obj/item/areaeditor/shuttle,
 /obj/item/megaphone/command,
 /obj/item/clothing/glasses/sunglasses,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "solgov_wall";
 	name = "captain's closet";
-	req_access_txt = "20";
-	pixel_x = -28
+	req_access_txt = "20"
 	},
 /obj/item/gun/ballistic/revolver,
 /obj/item/clothing/suit/armor/vest/capcarapace/cybersun,
@@ -2873,10 +2861,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "Xx" = (

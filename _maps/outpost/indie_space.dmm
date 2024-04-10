@@ -2856,10 +2856,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "sB" = (
@@ -3933,10 +3930,7 @@
 "yV" = (
 /obj/effect/turf_decal/corner/opaque/grey/full,
 /obj/effect/turf_decal/corner/opaque/neutral,
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/port)
 "za" = (
@@ -7221,9 +7215,7 @@
 /obj/effect/turf_decal/corner/opaque/neutral{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel,
 /area/outpost/hallway/central)
 "SC" = (

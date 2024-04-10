@@ -2164,10 +2164,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo/office)
 "qS" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	name = "The Captain's Personal Medicine Cabinet And Soap Holder";
-	pixel_x = -28;
 	req_access_txt = "20"
 	},
 /obj/item/soap/nanotrasen,
@@ -3700,10 +3698,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "Dy" = (
@@ -5672,9 +5667,7 @@
 /turf/open/floor/engine,
 /area/ship/engineering/atmospherics)
 "Wy" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/hallway/central)
 "Wz" = (

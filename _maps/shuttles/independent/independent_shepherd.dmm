@@ -12,10 +12,7 @@
 /obj/item/clothing/suit/hooded/chaplain_hoodie,
 /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
 /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 30
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/structure/dresser,
 /obj/item/clothing/suit/hooded/chaplain_hoodie,
 /obj/item/clothing/suit/hooded/chaplainsuit/monkhabit,
@@ -1505,10 +1502,8 @@
 /obj/item/lighter,
 /obj/item/toner,
 /obj/item/table_bell/brass,
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "supply closet";
-	pixel_y = -30
+/obj/structure/closet/wall/directional/south{
+	name = "supply closet"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -1574,10 +1569,8 @@
 /obj/item/cultivator,
 /obj/item/reagent_containers/glass/bucket/wooden,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "supply closet";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "supply closet"
 	},
 /obj/item/reagent_containers/food/drinks/bottle/holywater,
 /obj/effect/turf_decal/siding/wood{
@@ -1821,10 +1814,7 @@
 /turf/open/floor/wood,
 /area/ship/hallway/port)
 "pW" = (
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 30
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /obj/item/radio,
 /obj/item/radio,
@@ -2131,10 +2121,8 @@
 /turf/open/floor/wood,
 /area/ship/hallway/starboard)
 "sH" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "glass storage";
-	pixel_y = -28
+/obj/structure/closet/wall/directional/south{
+	name = "glass storage"
 	},
 /obj/item/reagent_containers/food/drinks/modglass/large,
 /obj/item/reagent_containers/food/drinks/modglass/large,
@@ -2607,10 +2595,7 @@
 /area/ship/bridge)
 "xg" = (
 /obj/machinery/door/window/northleft,
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 30
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /obj/item/clothing/under/suit/black,
 /obj/item/clothing/under/suit/black,
@@ -2927,10 +2912,8 @@
 /turf/open/floor/carpet/red_gold,
 /area/ship/bridge)
 "AA" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "glass storage";
-	pixel_y = -28
+/obj/structure/closet/wall/directional/south{
+	name = "glass storage"
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
@@ -3570,10 +3553,8 @@
 /obj/item/clothing/head/welding,
 /obj/item/multitool,
 /obj/item/clothing/glasses/welding,
-/obj/structure/closet/wall/orange{
-	dir = 8;
-	name = "Engineering Supplies";
-	pixel_x = 30
+/obj/structure/closet/wall/orange/directional/east{
+	name = "Engineering Supplies"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
@@ -3781,10 +3762,7 @@
 /area/ship/engineering/electrical)
 "Ix" = (
 /obj/machinery/computer/cryopod/directional/south,
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 30
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/effect/turf_decal/corner_techfloor_grid/diagonal,
 /obj/item/flashlight/lantern,
 /obj/item/flashlight/lantern,
@@ -5303,9 +5281,7 @@
 /turf/open/floor/grass/ship/jungle,
 /area/ship/crew/hydroponics)
 "Uu" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},

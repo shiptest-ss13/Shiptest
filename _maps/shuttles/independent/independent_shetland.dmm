@@ -1282,11 +1282,9 @@
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
 	name = "mortuary locker";
-	pixel_x = 28;
 	req_access_txt = "5"
 	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
@@ -2111,11 +2109,9 @@
 /area/ship/hallway/fore)
 "rQ" = (
 /obj/effect/turf_decal/corner/opaque/bottlegreen/full,
-/obj/structure/closet/wall{
-	dir = 4;
+/obj/structure/closet/wall/directional/west{
 	icon_door = "white_wall";
-	name = "medical closet";
-	pixel_x = -28
+	name = "medical closet"
 	},
 /obj/item/storage/backpack/satchel/med,
 /obj/item/clothing/shoes/sneakers/white,
@@ -3194,10 +3190,7 @@
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
 "AG" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -5019,11 +5012,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "Rm" = (
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
 	name = "medical locker";
-	pixel_x = 28;
 	req_access_txt = "5"
 	},
 /obj/item/storage/box/syringes,
