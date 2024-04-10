@@ -41,7 +41,6 @@
 	refill_canister = /obj/item/vending_refill/medical
 	default_price = 250
 	extra_price = 500
-	payment_department = ACCOUNT_MED
 	light_mask = "med-light-mask"
 
 /obj/item/vending_refill/medical

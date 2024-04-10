@@ -18,7 +18,6 @@
 
 /turf/open/CanAtmosPass(turf/T, vertical = FALSE)
 	var/dir = vertical? get_dir_multiz(src, T) : get_dir(src, T)
-	var/opp = REVERSE_DIR(dir)
 	. = TRUE
 	if(vertical && !(zAirOut(dir, T) && T.zAirIn(dir, src)))
 		. = FALSE
@@ -30,11 +29,9 @@
 		var/turf/other = (O.loc == src ? T : src)
 		if(!(vertical? (CANVERTICALATMOSPASS(O, other)) : (CANATMOSPASS(O, other))))
 			. = FALSE
-		if(O.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
-			conductivity_blocked_directions |= dir
-			T.conductivity_blocked_directions |= opp
-			if(!.)
-				return .
+
+/turf/proc/block_all_conductivity()
+	conductivity_blocked_directions |= NORTH | SOUTH | EAST | WEST | UP | DOWN
 
 /atom/movable/proc/BlockThermalConductivity() // Objects that don't let heat through.
 	return FALSE
@@ -42,32 +39,71 @@
 /turf/proc/ImmediateCalculateAdjacentTurfs()
 	var/canpass = CANATMOSPASS(src, src)
 	var/canvpass = CANVERTICALATMOSPASS(src, src)
+
+	conductivity_blocked_directions = 0
+
+	var/src_contains_firelock = 1
+	if(locate(/obj/machinery/door/firedoor) in src)
+		src_contains_firelock |= 2
+
+	var/list/atmos_adjacent_turfs = list()
+
 	for(var/direction in GLOB.cardinals_multiz)
-		var/turf/T = get_step_multiz(src, direction)
-		if(isnull(T))
+		var/turf/current_turf = get_step_multiz(src, direction)
+		if(!isopenturf(current_turf))
+			conductivity_blocked_directions |= direction
+
+			if(current_turf)
+				atmos_adjacent_turfs -= current_turf
+				LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
+
 			continue
-		if(isopenturf(T) && !(blocks_air || T.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(T, src)) : (canpass && CANATMOSPASS(T, src))))
-			LAZYINITLIST(atmos_adjacent_turfs)
-			LAZYINITLIST(T.atmos_adjacent_turfs)
-			atmos_adjacent_turfs[T] = direction
-			T.atmos_adjacent_turfs[src] = REVERSE_DIR(direction)
+
+		var/other_contains_firelock = 1
+		if(locate(/obj/machinery/door/firedoor) in current_turf)
+			other_contains_firelock |= 2
+
+		//Conductivity Update
+		var/opp = REVERSE_DIR(direction)
+		//all these must be above zero for auxmos to even consider them
+		if(!thermal_conductivity || !heat_capacity || !current_turf.thermal_conductivity || !current_turf.heat_capacity)
+			conductivity_blocked_directions |= direction
+			current_turf.conductivity_blocked_directions |= opp
 		else
-			if (atmos_adjacent_turfs)
-				atmos_adjacent_turfs -= T
-			LAZYREMOVE(T.atmos_adjacent_turfs, src)
-		T.__update_auxtools_turf_adjacency_info(isspaceturf(T.get_z_base_turf()))
+			for(var/obj/O in contents + current_turf.contents)
+				if(O.BlockThermalConductivity()) 	//the direction and open/closed are already checked on CanAtmosPass() so there are no arguments
+					conductivity_blocked_directions |= direction
+					current_turf.conductivity_blocked_directions |= opp
+					break
+		//End Conductivity Update
+
+		if(!(blocks_air || current_turf.blocks_air) && ((direction & (UP|DOWN))? (canvpass && CANVERTICALATMOSPASS(current_turf, src)) : (canpass && CANATMOSPASS(current_turf, src))))
+			atmos_adjacent_turfs[current_turf] = other_contains_firelock | src_contains_firelock
+			LAZYSET(current_turf.atmos_adjacent_turfs, src, src_contains_firelock)
+		else
+			atmos_adjacent_turfs -= current_turf
+			LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
+
+		current_turf.__update_auxtools_turf_adjacency_info()
 	UNSETEMPTY(atmos_adjacent_turfs)
 	src.atmos_adjacent_turfs = atmos_adjacent_turfs
-	__update_auxtools_turf_adjacency_info(isspaceturf(get_z_base_turf()))
+	__update_auxtools_turf_adjacency_info()
 
-/turf/proc/set_sleeping(should_sleep)
+/turf/proc/clear_adjacencies()
+	block_all_conductivity()
+	for(var/turf/current_turf as anything in atmos_adjacent_turfs)
+		LAZYREMOVE(current_turf.atmos_adjacent_turfs, src)
+		current_turf.__update_auxtools_turf_adjacency_info()
 
-/turf/proc/__update_auxtools_turf_adjacency_info()
+	LAZYNULL(atmos_adjacent_turfs)
+	__update_auxtools_turf_adjacency_info()
 
-//returns a list of adjacent turfs that can share air with this one.
-//alldir includes adjacent diagonal tiles that can share
-//	air with both of the related adjacent cardinal tiles
-/turf/proc/GetAtmosAdjacentTurfs(alldir = 0)
+/**
+ * Returns a list of adjacent turfs that can share air with this one.
+ * alldir includes adjacent diagonal tiles that can share
+ * air with both of the related adjacent cardinal tiles
+ */
+/turf/proc/GetAtmosAdjacentTurfs(alldir = FALSE)
 	var/adjacent_turfs
 	if (atmos_adjacent_turfs)
 		adjacent_turfs = atmos_adjacent_turfs.Copy()
@@ -99,20 +135,21 @@
 
 	return adjacent_turfs
 
-/atom/proc/air_update_turf(command = 0)
-	if(!isturf(loc) && command)
+/atom/proc/air_update_turf(calculate_adjacencies = FALSE)
+	var/turf/location = get_turf(src)
+	if(!location)
 		return
-	var/turf/T = get_turf(loc)
-	T.air_update_turf(command)
+	location.air_update_turf(calculate_adjacencies)
 
-/turf/air_update_turf(command = 0)
-	if(command)
-		ImmediateCalculateAdjacentTurfs()
+/turf/air_update_turf(calculate_adjacencies = FALSE)
+	if(!calculate_adjacencies)
+		return
+	ImmediateCalculateAdjacentTurfs()
 
 /atom/movable/proc/move_update_air(turf/T)
 	if(isturf(T))
-		T.air_update_turf(1)
-	air_update_turf(1)
+		T.air_update_turf(TRUE)
+	air_update_turf(TRUE)
 
 /atom/proc/atmos_spawn_air(text) //because a lot of people loves to copy paste awful code lets just make an easy proc to spawn your plasma fires
 	var/turf/open/T = get_turf(src)
