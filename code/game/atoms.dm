@@ -160,6 +160,7 @@
 	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
 	///volume wanted for being hit
 	var/hitsound_volume = 50
+
 /**
  * Called when an atom is created in byond (built in engine proc)
  *
