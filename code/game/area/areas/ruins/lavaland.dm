@@ -99,7 +99,7 @@
 	name = "Nanotrasen Genetic Research Maintenance"
 	icon_state = "dk_yellow"
 
-/area/ruin/unpowered/train_station/train
+/area/ruin/unpowered/train_station
 	name = "Train"
 	icon_state = "bridge"
 /area/ruin/unpowered/scorched_hut
