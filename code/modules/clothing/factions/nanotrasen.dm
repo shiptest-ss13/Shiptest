@@ -245,7 +245,7 @@
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 90)
 
 /obj/item/clothing/suit/armor/nanotrasen/captain
-	name = "commanding officer's vest"
+	name = "captain's vest"
 	desc = ""
 	icon_state = "armor_captain"
 	item_state = "bluecloth"
