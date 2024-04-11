@@ -2,7 +2,7 @@
  * Double-Bladed Energy Swords - Cheridan
  */
 /obj/item/dualsaber
-	icon = 'icons/obj/transforming_energy.dmi'
+	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "dualsaber"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'

@@ -265,7 +265,7 @@
 /obj/item/toy/sword
 	name = "toy sword"
 	desc = "A cheap, plastic replica of an energy sword. Realistic sounds! Ages 8 and up."
-	icon = 'icons/obj/transforming_energy.dmi'
+	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "sword"
 	item_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'

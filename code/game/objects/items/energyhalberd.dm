@@ -3,7 +3,7 @@
  * Copied mostly from dualsaber.dm to avoid inhertance issues
  */
 /obj/item/energyhalberd
-	icon = 'icons/obj/transforming_energy.dmi'
+	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "halberd"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'

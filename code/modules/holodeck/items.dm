@@ -13,7 +13,7 @@
 /obj/item/holo/esword
 	name = "holographic energy sword"
 	desc = "May the force be with you. Sorta."
-	icon = 'icons/obj/transforming_energy.dmi'
+	icon = 'icons/obj/weapon/energy.dmi'
 	icon_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
