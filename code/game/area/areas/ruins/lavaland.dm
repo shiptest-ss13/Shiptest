@@ -102,15 +102,6 @@
 /area/ruin/unpowered/train_station/train
 	name = "Train"
 	icon_state = "bridge"
-
-/area/ruin/unpowered/train_station/cargo
-	name = "Train platform"
-	icon_state = "Cargo_bay"
-
-/area/ruin/unpowered/train_station/Barracks
-	name = "Barracks"
-	icon_state = "Sleep"
-
 /area/ruin/unpowered/scorched_hut
 	name = "Scorched Hut"
 	icon_state = "red"
