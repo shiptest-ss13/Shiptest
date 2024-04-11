@@ -763,7 +763,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/wall/orange/directional/north,
+/obj/structure/closet/wall/orange/directional/north{
+	name = "fuel supply"
+	},
 /obj/item/stack/sheet/mineral/uranium/five,
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /obj/effect/turf_decal/radiation,
