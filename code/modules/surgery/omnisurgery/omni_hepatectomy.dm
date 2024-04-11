@@ -1,7 +1,7 @@
 ////hepatectomy, removes damaged parts of the liver so that the liver may regenerate properly
 //95% chance of success, not 100 because organs are delicate
 /datum/surgery_step/omni/hepatectomy
-	name = "remove damaged liver section"
+	name = "Remove damaged liver section"
 	implements = list(
 		TOOL_SCALPEL = 95,
 		/obj/item/melee/transforming/energy/sword = 33,

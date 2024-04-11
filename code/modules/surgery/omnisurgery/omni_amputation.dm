@@ -1,5 +1,5 @@
 /datum/surgery_step/omni/sever_limb
-	name = "sever limb"
+	name = "Sever limb"
 	implements = list(//this is fine, detaching limbs doesn't require precision - this is only more precise because zone targeting is randomized
 		/obj/item/shears = 300,
 		TOOL_SCALPEL = 100,

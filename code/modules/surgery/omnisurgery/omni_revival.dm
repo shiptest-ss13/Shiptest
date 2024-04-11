@@ -32,7 +32,7 @@
 
 //revive after incision
 /datum/surgery_step/omni/revive
-	name = "shock brain"
+	name = "Shock brain"
 	implements = list(
 		/obj/item/shockpaddles = 100,	//this is useful for reviving simepeople.
 		/obj/item/melee/baton = 40,		//i hate this a lot

@@ -1,6 +1,6 @@
 //extract implant (CREATE A TOOL SPECIFICALLY TO DO THIS PLEASE or just add in forceps [when you sprite it])
 /datum/surgery_step/omni/extract_implant
-	name = "extract implant"
+	name = "Extract implant"
 	implements = list(
 		//TOOL_HEMOSTAT = 100,
 		//TOOL_CROWBAR = 40,

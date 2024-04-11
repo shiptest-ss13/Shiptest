@@ -1,6 +1,6 @@
 //fix eyes
 /datum/surgery_step/omni/fix_eyes
-	name = "fix eyes"
+	name = "Fix eyes"
 	implements = list(
 		TOOL_HEMOSTAT = 100,
 		TOOL_SCREWDRIVER = 40) //ow! my eyes !

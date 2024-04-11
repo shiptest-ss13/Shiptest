@@ -1,5 +1,5 @@
 /datum/surgery_step/omni/remove_object
-	name = "remove embedded objects"
+	name = "Remove embedded objects"
 	implements = list(
 		TOOL_HEMOSTAT = 90)
 	time = 32

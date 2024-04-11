@@ -8,6 +8,7 @@
 	speed_modifier = 1									//Step speed modifier
 	var/atlayer = 0										// 0/1/2 skin/muscle/bone
 	var/datum/surgery_step/omni/last_step				//The last step preformed in the surgery
+	can_cancel = FALSE
 
 /datum/surgery/omni/proc/get_layer_surgeries()
 	var/list/all_steps = GLOB.omnisurgerysteps_list.Copy()
@@ -17,8 +18,16 @@
 			atlayer_surgeries += Step
 	return atlayer_surgeries
 
+/datum/surgery/omni/proc/get_valid_surgeries()
+	var/list/layers_surgeries = get_layer_surgeries()
+	var/list/valid_surgeries = list()
+	for(var/datum/surgery_step/omni/Step in layers_surgeries)
+		if(location in Step.valid_locations)
+			valid_surgeries += Step
+	return valid_surgeries
+
 /datum/surgery/omni/next_step(mob/user, intent)
-	for(var/datum/surgery_step/omni/Step in get_layer_surgeries())
+	for(var/datum/surgery_step/omni/Step in get_valid_surgeries())
 		user.visible_message("[Step]")
 
 	if(location != user.zone_selected)

@@ -96,12 +96,9 @@ const PatientStateView = (props, context) => {
       {procedures.length === 0 && <Section>No Active Procedures</Section>}
       {procedures.map((procedure) => (
         <Section key={procedure.name} title={procedure.name}>
-          <LabeledList key={procedure.name}>
           {procedure.steps.map((step) => (
-            <LabeledList.Item label={step.name}>
-            </LabeledList.Item>
+            <Section key={step}>{step}</Section>
           ))}
-          </LabeledList>
         </Section>
       ))}
     </>
