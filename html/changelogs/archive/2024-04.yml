@@ -19,3 +19,38 @@
   Imaginos16, spookywastaken:
   - rscadd: Resprites a ton of gun magazines
   - bugfix: Changes how magainzes with only a empty and loaded state are
+2024-04-12:
+  Gristlebee:
+  - rscadd: Punching bags can be built with 5 cloth.
+  - rscadd: Bench press and chest press can be built with 5 metal.
+  - rscadd: Exercise equipment can be deconstructed.
+  Martinpachu:
+  - bugfix: Fixes MAA on the Colossus not being able to access the bridge.
+  Sadhorizon:
+  - tweak: Random blood packs now can roll Elzu and IPC blood.
+  SomeguyManperson:
+  - bugfix: anesthetic can no longer semi permanently knock people out
+  Yata9ar4su:
+  - rscadd: Fullscreen on F11
+  Zxaber:
+  - tweak: You can now use drop / use inhand hotkey to retract and deploy arm implants
+  meemofcourse:
+  - rscadd: Long-range bluespace technologies in fax machines now allow the faxing
+      of photos. I am not responsible for any consequences that might result from
+      sending your faction's command personnel a photo of your character's ass.
+  phoaly:
+  - rscdel: Removed some old ships
+  - tweak: Aspawned the Lagoon and Junker
+  sapphicoverload, PestoVerde322, PacifistDalek:
+  - rscadd: turbines now provide thrust for ships
+  - tweak: turbines respect conservation of energy instead of moving gas around for
+      free
+  - tweak: turbine control console now shows the internal pressure of the turbine
+  - code_imp: refactored how gas flows through the turbine
+  - bugfix: fixed turbines making free energy from nowhere at low RPM
+  - bugfix: fixed turbines forcing air into the output turf when it's blocked
+  - bugfix: fixed turbines not updating air at the input and output turfs
+  - bugfix: fixed turbines disconnecting when docking and undocking
+  - imageadd: new turbine sprites
+  thgvr:
+  - rscadd: Suicide & Execution with a damaging firearm is now more deadly and gruesome.

@@ -729,6 +729,9 @@
 			safety_overlay.icon_state = "[safety_wording]-off"
 		. += safety_overlay
 
+#define BRAINS_BLOWN_THROW_RANGE 2
+#define BRAINS_BLOWN_THROW_SPEED 1
+
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))
 		return
@@ -736,32 +739,58 @@
 	if(semicd)
 		return
 
+	if(!can_shoot()) //Just because you can pull the trigger doesn't mean it can shoot.
+		shoot_with_empty_chamber(user)
+		return
+
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
+			span_userdanger("You stick [src] in your mouth, ready to pull the trigger..."))
 	else
-		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>[user] points [src] at your head, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
+			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
 
 	semicd = TRUE
 
-	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
+	if(!bypass_timer && (!do_mob(user, target, 100) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
-				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
+				user.visible_message(span_notice("[user] decided not to shoot."))
 			else if(target && target.Adjacent(user))
-				target.visible_message("<span class='notice'>[user] has decided to spare [target]</span>", "<span class='notice'>[user] has decided to spare your life!</span>")
+				target.visible_message(span_notice("[user] has decided to spare [target]."), span_notice("[user] has decided to spare your life!"))
 		semicd = FALSE
 		return
 
 	semicd = FALSE
 
-	target.visible_message("<span class='warning'>[user] pulls the trigger!</span>", "<span class='userdanger'>[(user == target) ? "You pull" : "[user] pulls"] the trigger!</span>")
+	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
-	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
+	if(chambered && chambered.BB && can_trigger_gun(user))
+		chambered.BB.damage *= 3
+		//Check is here for safeties and such, brain will be removed after
+		process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
 
-	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
+		var/obj/item/organ/brain/brain_to_blast = target.getorganslot(ORGAN_SLOT_BRAIN)
+		if(brain_to_blast)
+
+			//Check if the projectile is actually damaging and not of type STAMINA
+			if(chambered.BB.nodamage || !chambered.BB.damage || chambered.BB.damage_type == STAMINA)
+				return
+
+			//Remove brain of the mob shot
+			brain_to_blast.Remove(target)
+
+			var/turf/splat_turf = get_turf(target)
+			//Move the brain of the person shot to selected turf
+			brain_to_blast.forceMove(splat_turf)
+
+			var/turf/splat_target = get_ranged_target_turf(target, REVERSE_DIR(target.dir), BRAINS_BLOWN_THROW_RANGE)
+			var/datum/callback/gibspawner = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(spawn_atom_to_turf), /obj/effect/gibspawner/generic, brain_to_blast, 1, FALSE, target)
+			//Throw the brain that has been removed away and place a gibspawner on landing
+			brain_to_blast.throw_at(splat_target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback = gibspawner)
+
+#undef BRAINS_BLOWN_THROW_RANGE
+#undef BRAINS_BLOWN_THROW_SPEED
 
 /obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
 	if(pin)
