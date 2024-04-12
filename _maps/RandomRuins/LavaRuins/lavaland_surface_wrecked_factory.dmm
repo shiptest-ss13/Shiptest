@@ -6,22 +6,22 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/trophy/gold_cup,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "ac" = (
 /obj/structure/curtain,
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "ae" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/donut_box,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "ap" = (
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/glass,
 /obj/item/shard,
 /turf/open/floor/carpet/nanoweave/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "as" = (
 /obj/machinery/door/airlock/command{
 	dir = 4
@@ -31,19 +31,32 @@
 	id = "sec"
 	},
 /turf/open/floor/carpet/nanoweave,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "av" = (
 /obj/structure/fence/door{
 	dir = 4
 	},
 /turf/open/floor/concrete/slab_1,
 /area/overmap_encounter/planetoid/lava/explored)
+"ax" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/adminstrative)
 "aA" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
+"aE" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/warning{
+	dir = 8
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/lavaland/factory/lobby)
 "bd" = (
 /turf/open/floor/concrete/slab_1,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -56,7 +69,7 @@
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "bm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button{
@@ -66,7 +79,7 @@
 	pixel_x = -24
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "bn" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
@@ -77,18 +90,30 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/lava/explored)
+"bx" = (
+/obj/effect/turf_decal/corner/opaque/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/bar,
+/turf/open/floor/plasteel,
+/area/ruin/lavaland/factory/adminstrative)
 "bz" = (
 /obj/structure/table/wood,
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "bH" = (
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
 "bQ" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
+"ca" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "ce" = (
 /obj/machinery/conveyor{
 	dir = 8
@@ -97,8 +122,9 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "cm" = (
 /obj/structure/table/wood,
+/obj/machinery/light/directional/east,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "cx" = (
 /obj/structure/sink{
 	pixel_y = 10
@@ -127,22 +153,22 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "cy" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "cz" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "cE" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating/rust,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "dl" = (
 /obj/machinery/shower{
 	pixel_y = -5;
@@ -151,7 +177,7 @@
 /obj/structure/curtain,
 /obj/item/bikehorn/rubberducky,
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "dA" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -159,14 +185,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "dH" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "dL" = (
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 4
@@ -178,13 +204,13 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "dY" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "ei" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -193,20 +219,20 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "el" = (
 /obj/structure/chair{
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "en" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 8
 	},
 /obj/machinery/door/airlock,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "ev" = (
 /obj/effect/gibspawner/human,
 /obj/item/clothing/head/helmet/sec,
@@ -220,7 +246,7 @@
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "eD" = (
 /obj/item/shard,
 /obj/effect/decal/cleanable/glass,
@@ -230,7 +256,7 @@
 	id = "foreman"
 	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "eE" = (
 /obj/item/trash/can,
 /obj/item/trash/can/food/beans{
@@ -242,13 +268,13 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "eG" = (
 /obj/effect/turf_decal/siding{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "eI" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
 /turf/open/floor/plasteel/dark,
@@ -260,22 +286,27 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "eW" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/oil/streak,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
+"fc" = (
+/obj/structure/catwalk/over/plated_catwalk/dark,
+/turf/open/floor/plating,
+/area/ruin/lavaland/factory/warehouse)
 "fg" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "fq" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -288,7 +319,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "fs" = (
 /obj/item/shovel,
 /turf/open/floor/plating/moss,
@@ -299,6 +330,10 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
+/area/ruin/lavaland/factory/adminstrative)
+"ga" = (
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "gc" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -307,15 +342,15 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "gj" = (
 /obj/item/radio/intercom/directional/north,
 /turf/open/floor/carpet/nanoweave,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "gk" = (
 /obj/structure/safe/floor,
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "go" = (
 /obj/structure/railing{
 	dir = 8
@@ -327,18 +362,18 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "gs" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "gt" = (
 /obj/machinery/vending/snack/orange,
 /turf/open/floor/plasteel/mono/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "gL" = (
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -350,26 +385,26 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/office,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "hb" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning,
 /obj/machinery/door/airlock{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "hf" = (
 /obj/effect/turf_decal/ntlogo{
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "hh" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/corner{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "hw" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 8
@@ -379,13 +414,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "hy" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "hJ" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning/corner,
@@ -414,6 +449,9 @@
 	},
 /turf/open/floor/concrete,
 /area/overmap_encounter/planetoid/lava/explored)
+"iP" = (
+/turf/closed/wall/r_wall,
+/area/ruin/lavaland/factory/warehouse)
 "iS" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -421,8 +459,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "iU" = (
 /obj/effect/turf_decal/corner/opaque/lime{
 	dir = 5
@@ -431,29 +470,30 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "jk" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "jr" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "ju" = (
 /obj/effect/turf_decal/corner/opaque/lime{
 	dir = 5
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "jx" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "jz" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 4
@@ -462,24 +502,25 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "jE" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 4
 	},
 /obj/machinery/door/airlock,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "jG" = (
 /obj/structure/toilet{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "jJ" = (
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "jM" = (
 /obj/structure/sink{
 	pixel_y = 10
@@ -488,7 +529,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "jP" = (
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
@@ -497,7 +538,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "jQ" = (
 /turf/closed/wall/mineral/titanium,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "jV" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -512,12 +553,12 @@
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "jW" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/closet/crate/medical,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "ka" = (
 /obj/structure/lattice,
 /obj/item/stack/sheet/metal,
@@ -528,7 +569,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "ku" = (
 /obj/structure/railing{
 	dir = 9
@@ -536,13 +577,21 @@
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 4
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
+"kv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/adminstrative)
 "kx" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "kB" = (
 /obj/structure/sink{
 	dir = 8;
@@ -552,23 +601,21 @@
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "kG" = (
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
 "kJ" = (
-/obj/structure/sign/poster/contraband/space_cola{
-	pixel_y = 32
-	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/carpet/nanoweave/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "kV" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "kY" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -582,7 +629,7 @@
 	},
 /obj/structure/crate_shelf,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "lf" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 5
@@ -590,20 +637,21 @@
 /obj/structure/guncase,
 /obj/item/gun/energy/e_gun,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "lj" = (
 /obj/effect/turf_decal/corner/opaque/bar,
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "lq" = (
 /obj/machinery/shower{
 	dir = 4
 	},
+/obj/machinery/light/small/directional/south,
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "lr" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating/rust,
@@ -613,7 +661,7 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "lB" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 10
@@ -623,11 +671,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "lQ" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "lR" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -636,7 +684,7 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "lU" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/grille/broken,
@@ -644,20 +692,20 @@
 	id = "foreman"
 	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "mk" = (
 /obj/machinery/computer/mech_bay_power_console{
 	dir = 4
 	},
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "mG" = (
 /obj/machinery/door/airlock/glass,
 /obj/machinery/door/poddoor/shutters{
 	id = "sec"
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "mM" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/clothing/head/beret/qm,
@@ -666,7 +714,14 @@
 	dir = 10
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"mQ" = (
+/obj/effect/turf_decal/corner/opaque/red{
+	dir = 10
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/adminstrative)
 "mY" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -690,36 +745,45 @@
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "nk" = (
 /obj/structure/toilet{
 	dir = 8;
 	pixel_x = 5
 	},
 /obj/effect/decal/cleanable/vomit/old,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "nm" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/warning,
 /turf/open/floor/plasteel/mono/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
+"nv" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "nG" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "nH" = (
 /obj/structure/flippedtable,
 /obj/item/gun/energy/e_gun,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "nK" = (
 /obj/item/bot_assembly/ed209,
 /obj/item/assembly/prox_sensor,
 /obj/effect/decal/cleanable/robot_debris/old,
 /turf/open/floor/circuit/red,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "nP" = (
 /obj/structure/table,
 /obj/effect/turf_decal/corner/opaque/bar{
@@ -737,14 +801,18 @@
 /obj/item/storage/bag/tray/cafeteria{
 	pixel_y = 6
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "nT" = (
 /obj/structure/chair/office{
 	dir = 4
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"nV" = (
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/adminstrative)
 "oc" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp{
@@ -765,11 +833,19 @@
 	},
 /obj/effect/turf_decal/corner/opaque/red/border,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "oh" = (
 /obj/item/stack/ore/salvage/scrapmetal/five,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
+"ok" = (
+/obj/structure/toilet{
+	dir = 8;
+	pixel_x = 5
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/lavaland/factory/dorms)
 "ol" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
@@ -779,7 +855,7 @@
 "or" = (
 /obj/structure/closet/crate,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "oz" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -787,7 +863,7 @@
 "oI" = (
 /obj/structure/closet/crate/freezer,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "oO" = (
 /obj/structure/table/wood,
 /obj/item/newspaper{
@@ -805,21 +881,22 @@
 	pixel_y = 13
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "po" = (
 /obj/machinery/door/airlock/command,
 /obj/machinery/door/poddoor/shutters{
 	id = "management"
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "pp" = (
 /obj/structure/toilet{
 	dir = 8;
 	pixel_x = 5
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "pt" = (
 /obj/structure/fence{
 	dir = 4
@@ -843,11 +920,15 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/lava/explored)
+"qs" = (
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/dorms)
 "qu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil/slippery,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "qz" = (
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = -10;
@@ -857,14 +938,15 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "qP" = (
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "qS" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/structure/bookcase/random,
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "qV" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -874,29 +956,34 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "rj" = (
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "rF" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
 "sf" = (
 /obj/structure/table/reinforced,
 /obj/item/megaphone/cargo,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "sn" = (
 /obj/structure/chair/greyscale{
 	dir = 8
 	},
 /turf/open/floor/carpet/nanoweave/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
+"so" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/manager_office)
 "sp" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -918,18 +1005,18 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "sD" = (
 /obj/effect/turf_decal/road/stop{
 	dir = 8;
 	pixel_x = 5
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "sG" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "sQ" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 9
@@ -943,7 +1030,7 @@
 /obj/item/radio/headset/headset_sec/alt,
 /obj/item/restraints/handcuffs,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "sT" = (
 /obj/structure/sink{
 	pixel_y = 10
@@ -952,7 +1039,10 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"sZ" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/lavaland/factory/dorms)
 "td" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -972,20 +1062,21 @@
 "tm" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/r_wall,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "tq" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "ty" = (
+/obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "tN" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "tT" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -999,15 +1090,16 @@
 /obj/effect/turf_decal/ntlogo{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "us" = (
 /obj/machinery/door/airlock/freezer{
 	dir = 1;
 	name = "bathroom"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "uz" = (
 /obj/machinery/door/airlock{
 	dir = 4;
@@ -1015,42 +1107,45 @@
 	id_tag = "sgi_bolt"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
+"uE" = (
+/turf/closed/wall/r_wall,
+/area/ruin/lavaland/factory/manager_office)
 "uH" = (
 /obj/structure/closet/crate/secure/engineering,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "uJ" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "uV" = (
 /obj/machinery/door/airlock/command{
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "ve" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "vj" = (
 /obj/structure/mirror,
 /turf/closed/wall/mineral/titanium,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "vp" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "vv" = (
 /obj/effect/turf_decal/box/corners,
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "vw" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
@@ -1064,13 +1159,13 @@
 	},
 /obj/structure/closet/crate/engineering/electrical,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "vE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "vG" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -1083,26 +1178,26 @@
 	name = "Manager"
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "vQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "vS" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "wk" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "wt" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1121,7 +1216,7 @@
 	pixel_x = 4
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "wU" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/grille,
@@ -1130,7 +1225,7 @@
 	id = "foreman"
 	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "xj" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/drinks/waterbottle/empty{
@@ -1152,19 +1247,19 @@
 	pixel_x = 7
 	},
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "xw" = (
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "xz" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
 /obj/structure/closet/crate/large,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "xB" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 4
@@ -1173,7 +1268,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "xC" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1183,19 +1278,22 @@
 /obj/structure/sign/poster/official/safety_eye_protection{
 	pixel_x = -32
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "yq" = (
-/obj/structure/displaycase/noalert,
+/obj/structure/displaycase/noalert{
+	start_showpiece_type = /obj/item/gun/energy/e_gun/hades
+	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "yw" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
 	},
 /obj/structure/sign/warning/incident,
 /turf/closed/wall/r_wall,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "yF" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning{
@@ -1203,6 +1301,13 @@
 	},
 /turf/open/floor/concrete,
 /area/overmap_encounter/planetoid/lava/explored)
+"yG" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/syndicate/melee/sword,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "yK" = (
 /obj/effect/turf_decal/trimline/opaque/beige/line{
 	dir = 5
@@ -1212,16 +1317,16 @@
 	name = "Warehouse"
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "yU" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "yY" = (
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /turf/open/floor/carpet/nanoweave,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "zf" = (
 /obj/structure/bed/double{
 	dir = 1
@@ -1230,7 +1335,16 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/blue,
+/area/ruin/lavaland/factory/adminstrative)
+"zh" = (
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/light/broken/directional/north,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
+"zk" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/blue,
+/area/ruin/lavaland/factory/manager_office)
 "zs" = (
 /obj/structure/table/wood,
 /obj/item/modular_computer/laptop/preset/civilian/rilena,
@@ -1239,7 +1353,7 @@
 	pixel_y = 12
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "zx" = (
 /obj/machinery/power/port_gen/pacman/super,
 /obj/machinery/power/terminal{
@@ -1247,17 +1361,18 @@
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "zD" = (
 /obj/machinery/door/airlock/command/glass,
 /obj/machinery/door/poddoor/shutters{
 	id = "sec"
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "zJ" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/built/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
 "zO" = (
@@ -1267,7 +1382,10 @@
 	id = "foreman"
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
+"Ac" = (
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/adminstrative)
 "Ai" = (
 /obj/structure/table_frame,
 /obj/structure/fluff/paper/stack{
@@ -1276,11 +1394,11 @@
 /obj/structure/fluff/paper/stack,
 /obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Al" = (
 /obj/structure/filingcabinet/double,
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "An" = (
 /obj/structure/fence{
 	dir = 4
@@ -1297,7 +1415,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "AC" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 8
@@ -1309,11 +1427,24 @@
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "AE" = (
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/concrete,
 /area/overmap_encounter/planetoid/lava/explored)
+"AG" = (
+/obj/effect/decal/cleanable/plastic,
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
+/turf/open/floor/plasteel/dark,
+/area/overmap_encounter/planetoid/lava/explored)
+"AI" = (
+/obj/effect/turf_decal/corner/opaque/bar{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/bar,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel,
+/area/ruin/lavaland/factory/dorms)
 "AM" = (
 /obj/effect/turf_decal/road/stop{
 	dir = 1
@@ -1322,8 +1453,9 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "AP" = (
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "AT" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
@@ -1343,18 +1475,24 @@
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Bd" = (
 /obj/effect/turf_decal/trimline/opaque/red/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Be" = (
 /obj/machinery/power/smes,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
+"Bh" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/adminstrative)
 "Bo" = (
 /obj/structure/sign/warning/fire,
 /turf/closed/wall/mineral/titanium,
@@ -1363,7 +1501,7 @@
 /obj/effect/turf_decal/box/corners,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Bv" = (
 /obj/effect/turf_decal/industrial/fire{
 	dir = 1
@@ -1378,7 +1516,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "BA" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window{
@@ -1388,13 +1526,21 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Cc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
+"Ck" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/carpet/blue,
+/area/ruin/lavaland/factory/manager_office)
+"Cp" = (
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/turf/open/floor/plasteel/mono,
+/area/ruin/lavaland/factory/warehouse)
 "CG" = (
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1403,7 +1549,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "CT" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/item/clothing/under/rank/command/captain,
@@ -1412,7 +1558,7 @@
 	dir = 9
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "CW" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -1429,11 +1575,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Dt" = (
 /obj/item/rack_parts/shelf,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Dz" = (
 /obj/structure/lattice,
 /obj/structure/salvageable/machine,
@@ -1444,20 +1590,27 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "DE" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /obj/machinery/newscaster/directional/west,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"DK" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/lavaland/factory/dorms)
 "DP" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "DT" = (
 /obj/machinery/door/airlock{
 	name = "Restroom"
@@ -1466,13 +1619,13 @@
 	id = "sec"
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Ee" = (
 /obj/effect/turf_decal/trimline/opaque/lime/filled/warning{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Eg" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 4
@@ -1480,7 +1633,7 @@
 /obj/structure/closet/crate/hydroponics,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "El" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
@@ -1493,7 +1646,7 @@
 /obj/structure/table,
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "EC" = (
 /obj/structure/bed{
 	dir = 1
@@ -1505,12 +1658,22 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"EK" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/effect/turf_decal/corner/opaque/ntblue,
+/obj/effect/turf_decal/corner/opaque/ntblue{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/dorms)
 "EQ" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/broken/directional/west,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
 "EU" = (
@@ -1518,12 +1681,12 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "EW" = (
 /obj/structure/crate_shelf,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Fe" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/dark,
@@ -1535,22 +1698,29 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Fv" = (
 /obj/effect/turf_decal/corner/opaque/red/border,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Fx" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"FJ" = (
+/obj/structure/chair/greyscale{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/dorms)
 "FM" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "FY" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 9
@@ -1561,7 +1731,7 @@
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Gj" = (
 /obj/structure/table,
 /obj/machinery/jukebox/boombox,
@@ -1569,7 +1739,7 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Gn" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -1580,18 +1750,18 @@
 	pixel_y = 22
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Gp" = (
 /obj/item/trash/sosjerky,
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Gw" = (
 /mob/living/simple_animal/bot/secbot/ed209/rockplanet{
 	faction = list("Deathsquad");
 	name = "\improper  ED-209 Robot"
 	},
 /turf/open/floor/circuit/red,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Gy" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning{
@@ -1602,11 +1772,19 @@
 "GE" = (
 /obj/item/trash/chips,
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "GK" = (
 /obj/machinery/door/airlock/outpost,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
+"GL" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "GO" = (
 /obj/structure/fence,
 /turf/open/floor/concrete/slab_1,
@@ -1630,7 +1808,7 @@
 	dir = 9
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Hc" = (
 /obj/effect/decal/cleanable/glass,
 /obj/structure/grille,
@@ -1638,16 +1816,16 @@
 	id = "foreman"
 	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Ho" = (
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Hp" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "HJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -1681,39 +1859,39 @@
 	pixel_y = 22
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "HK" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "HO" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/warning{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "HS" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Id" = (
 /obj/structure/table/wood,
 /obj/machinery/fax/ruin,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Ie" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Ij" = (
 /obj/item/storage/cans/sixbeer,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "In" = (
 /turf/open/floor/concrete,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1722,7 +1900,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "IG" = (
 /obj/structure/table,
 /obj/item/storage/pill_bottle/dice{
@@ -1741,7 +1919,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "IJ" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1749,16 +1927,28 @@
 	},
 /turf/open/floor/concrete,
 /area/overmap_encounter/planetoid/lava/explored)
+"IO" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "IQ" = (
 /obj/machinery/door/airlock/security,
 /obj/machinery/door/poddoor/shutters{
 	id = "sec"
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "IX" = (
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"Jc" = (
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/turf/open/floor/carpet/nanoweave/blue,
+/area/ruin/lavaland/factory/lobby)
 "Jd" = (
 /obj/effect/turf_decal/trimline/opaque/beige/corner{
 	dir = 4
@@ -1767,24 +1957,27 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Jk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/mecha_wreckage/ripley,
 /obj/effect/decal/cleanable/robot_debris/old,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "JM" = (
 /obj/structure/table/glass,
 /obj/item/phone,
+/obj/structure/sign/poster/contraband/space_cola{
+	pixel_y = 32
+	},
 /turf/open/floor/carpet/nanoweave/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "JO" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "JQ" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 4
@@ -1793,7 +1986,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "JT" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 1
@@ -1802,18 +1995,22 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Kg" = (
 /obj/machinery/photocopier,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
+"Km" = (
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/lobby)
 "Kp" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "KB" = (
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plasteel/dark,
@@ -1831,13 +2028,16 @@
 /obj/item/stack/rods,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
+"KX" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/lavaland/factory/manager_office)
 "Lq" = (
 /obj/effect/turf_decal/trimline/opaque/ntblue/corner,
 /turf/open/floor/plasteel/mono/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "Lv" = (
 /turf/open/floor/carpet/nanoweave/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "LB" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/open/floor/plating,
@@ -1851,10 +2051,14 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "LF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
+/area/ruin/lavaland/factory/warehouse)
+"LI" = (
+/mob/living/simple_animal/hostile/syndicate/melee,
+/turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "LK" = (
 /obj/effect/turf_decal/industrial/stand_clear,
@@ -1863,26 +2067,26 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "LL" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "LP" = (
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "LS" = (
 /obj/effect/turf_decal/ntlogo,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "LX" = (
 /obj/effect/turf_decal/trimline/opaque/red/arrow_cw{
 	dir = 8
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "LZ" = (
 /turf/open/lava/smooth,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1894,15 +2098,23 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/mono/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "Mq" = (
 /obj/structure/salvageable/computer,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
+"MC" = (
+/obj/effect/turf_decal/trimline/opaque/beige/warning{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/warehouse)
 "ME" = (
 /obj/machinery/vending/cola/shamblers,
 /turf/open/floor/plasteel/mono/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "MF" = (
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
@@ -1938,7 +2150,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "MH" = (
 /turf/closed/mineral/volcanic,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1946,6 +2158,12 @@
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/lava/explored)
+"MY" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/manager_office)
 "Nj" = (
 /obj/machinery/light/floor,
 /obj/effect/turf_decal/industrial/warning/corner{
@@ -1966,7 +2184,7 @@
 /obj/effect/gibspawner/human,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "Oc" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green{
@@ -1977,7 +2195,7 @@
 	pixel_x = 10
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Oe" = (
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1993,16 +2211,29 @@
 	pixel_y = -32
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "OO" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/grille,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
+"Pb" = (
+/obj/effect/turf_decal/corner/opaque/lime{
+	dir = 5
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/adminstrative)
+"Pf" = (
+/obj/effect/turf_decal/trimline/opaque/ntblue/warning{
+	dir = 4
+	},
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plasteel/mono/white,
+/area/ruin/lavaland/factory/lobby)
 "Pg" = (
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Pk" = (
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 8
@@ -2020,7 +2251,7 @@
 /obj/item/soap/nanotrasen,
 /obj/item/soap/nanotrasen,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Pp" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/grille,
@@ -2028,14 +2259,14 @@
 	id = "foreman"
 	},
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Pt" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Pv" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger,
@@ -2047,7 +2278,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "PE" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /obj/item/clothing/neck/cloak/qm,
@@ -2064,30 +2295,36 @@
 /obj/effect/mob_spawn/human/engineer,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "PL" = (
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
+"PQ" = (
+/obj/structure/chair/greyscale{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/dorms)
 "PR" = (
 /obj/machinery/door/poddoor/shutters{
 	dir = 4;
 	id = "management"
 	},
 /turf/open/floor/plasteel/tech/grid,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Qc" = (
 /turf/open/floor/carpet/nanoweave,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Qh" = (
 /obj/machinery/mech_bay_recharge_port{
 	dir = 1
 	},
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "QA" = (
 /obj/item/folder/yellow{
 	pixel_x = -7;
@@ -2098,7 +2335,7 @@
 	},
 /obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "QB" = (
 /obj/structure/lattice,
 /obj/item/stack/cable_coil/cut/yellow,
@@ -2110,20 +2347,20 @@
 	},
 /obj/item/pen/fourcolor,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "QK" = (
 /obj/effect/turf_decal/siding{
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/opaque/lime/filled/warning,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "QM" = (
 /obj/structure/table/wood,
 /obj/item/cutting_board,
 /obj/item/kitchen/knife,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Rj" = (
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = -15;
@@ -2137,18 +2374,18 @@
 	dir = 1
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Rv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "RA" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
 	pixel_y = 15
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "RF" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
@@ -2157,12 +2394,19 @@
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/light/directional/south,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "RI" = (
 /obj/item/stack/sheet/metal,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/lava/explored)
+"RZ" = (
+/obj/machinery/shower{
+	dir = 4
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/ruin/lavaland/factory/dorms)
 "Sa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -2177,7 +2421,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Sn" = (
 /obj/item/stock_parts/matter_bin,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2189,7 +2433,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Sx" = (
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -2202,7 +2446,7 @@
 	name = "Warehouse"
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "SK" = (
 /obj/effect/turf_decal/corner/opaque/lime{
 	dir = 5
@@ -2212,6 +2456,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/adminstrative)
+"SL" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
 "SP" = (
 /obj/item/stack/ore/salvage/scrapmetal,
@@ -2221,8 +2470,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "SR" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
@@ -2235,11 +2485,11 @@
 	pixel_x = -8
 	},
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "SZ" = (
 /obj/structure/chair,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Tc" = (
 /obj/effect/turf_decal/trimline/opaque/lime/line{
 	dir = 9
@@ -2248,7 +2498,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Th" = (
 /obj/structure/sink{
 	pixel_y = 10
@@ -2257,7 +2507,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Tn" = (
 /obj/item/ammo_casing/spent{
 	icon_state = "pistol-steel-empty";
@@ -2265,21 +2515,21 @@
 	pixel_y = 12
 	},
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Tt" = (
 /obj/machinery/door/airlock/security/glass,
 /obj/machinery/door/poddoor/shutters{
 	id = "sec"
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Tx" = (
 /obj/machinery/door/airlock/command/glass,
 /obj/machinery/door/poddoor/shutters{
 	id = "foreman"
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "TC" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 1
@@ -2288,17 +2538,17 @@
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "TG" = (
 /obj/structure/falsewall/reinforced,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "TI" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner{
 	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "TZ" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 8
@@ -2306,32 +2556,33 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/industrial/warning,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Uf" = (
 /obj/effect/turf_decal/trimline/opaque/lime/line{
 	dir = 6
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Uh" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "warehouse"
 	},
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Uj" = (
 /obj/effect/turf_decal/corner/opaque/red/border{
 	dir = 8
 	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Ut" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
 	},
 /obj/structure/closet/crate/internals,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Uz" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2342,7 +2593,7 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plasteel/patterned,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "UG" = (
 /obj/structure/railing{
 	dir = 4
@@ -2352,7 +2603,7 @@
 	},
 /obj/machinery/suit_storage_unit,
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "UJ" = (
 /obj/item/bedsheet/qm{
 	dir = 4
@@ -2362,7 +2613,7 @@
 	},
 /obj/item/toy/plush/kari,
 /turf/open/floor/carpet/blue,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "UO" = (
 /obj/structure/table_frame,
 /turf/open/floor/plating,
@@ -2375,13 +2626,13 @@
 /turf/open/floor/plasteel/stairs{
 	dir = 1
 	},
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "UY" = (
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 10
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Va" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
@@ -2390,7 +2641,7 @@
 /obj/structure/grille,
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Vp" = (
 /obj/item/stack/sheet/metal,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2398,7 +2649,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "Vw" = (
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "VC" = (
 /obj/item/stack/ore/salvage/scrapmetal{
 	pixel_x = -15;
@@ -2411,6 +2662,17 @@
 /obj/structure/girder/reinforced,
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/lava/explored)
+"VK" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
+"VN" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper,
+/turf/open/floor/plasteel/white,
+/area/ruin/lavaland/factory/adminstrative)
 "VX" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
@@ -2424,26 +2686,34 @@
 /obj/effect/decal/cleanable/plastic,
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/lava/explored)
+"Wx" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/manager_office)
 "WI" = (
 /obj/structure/closet/secure_closet/quartermaster,
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "Xc" = (
 /obj/structure/sign/poster/official/cleanliness,
 /turf/closed/wall/mineral/titanium,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Xh" = (
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner/opaque/bar,
 /obj/structure/closet/crate/bin,
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Xp" = (
 /obj/machinery/computer/secure_data,
 /turf/open/floor/carpet/nanoweave/red,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Xv" = (
 /obj/structure/salvageable/machine,
 /turf/open/floor/plasteel/dark,
@@ -2451,7 +2721,7 @@
 "XA" = (
 /obj/machinery/computer/security/telescreen/entertainment,
 /turf/closed/wall/mineral/titanium,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "XB" = (
 /obj/structure/table_frame,
 /obj/effect/decal/cleanable/plastic,
@@ -2464,19 +2734,20 @@
 	pixel_y = -26
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "XT" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/item/rack_parts,
 /obj/item/clothing/mask/gas/explorer,
 /turf/open/floor/plasteel/mono,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Yo" = (
 /obj/structure/chair/greyscale{
 	dir = 4
 	},
+/obj/machinery/light/directional/west,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Yr" = (
 /obj/effect/turf_decal/trimline/opaque/beige/arrow_cw{
 	dir = 4
@@ -2488,12 +2759,12 @@
 	dir = 5
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Yz" = (
 /obj/structure/table,
 /obj/item/toy/cards/deck,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "YG" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 1
@@ -2501,13 +2772,13 @@
 /obj/effect/mob_spawn/human/corpse/syndicatesoldier,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "YH" = (
 /obj/structure/chair/greyscale{
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "YJ" = (
 /obj/structure/bed,
 /obj/item/bedsheet/dorms,
@@ -2517,7 +2788,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "YK" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -2538,12 +2809,21 @@
 	pixel_y = 32
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Za" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
+"Zc" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/lavaland/factory/adminstrative)
+"Zd" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/lavaland/factory/adminstrative)
 "Zg" = (
 /obj/effect/decal/cleanable/blood/footprints{
 	dir = 4
@@ -2560,11 +2840,11 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/nanoweave/red,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/adminstrative)
 "Zp" = (
 /obj/machinery/door/airlock/glass_large,
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/lobby)
 "Zq" = (
 /obj/effect/turf_decal/trimline/opaque/lime/line{
 	dir = 10
@@ -2573,10 +2853,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "Zt" = (
+/obj/machinery/light/directional/west,
 /turf/open/floor/mech_bay_recharge_floor,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 "Zx" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/effect/turf_decal/corner/opaque/ntblue,
@@ -2584,7 +2865,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/dorms)
 "ZH" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/cigarettes/cigars,
@@ -2596,7 +2877,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/manager_office)
 "ZL" = (
 /turf/closed/wall/r_wall/rust,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -2606,13 +2887,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
+"ZO" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space,
+/turf/open/floor/carpet/nanoweave,
+/area/ruin/lavaland/factory/manager_office)
 "ZS" = (
 /turf/closed/wall/r_wall,
 /area/overmap_encounter/planetoid/lava/explored)
 "ZU" = (
 /obj/item/trash/pistachios,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/lavaland/factory/warehouse)
 
 (1,1,1) = {"
 gL
@@ -2832,17 +3118,17 @@ gL
 gL
 gL
 gL
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
 gL
 gL
 gL
@@ -2883,19 +3169,19 @@ gL
 gL
 gL
 gL
-jQ
-jQ
+Zc
+Zc
 oO
 zf
-jQ
+Zc
 UJ
 zs
 ei
 mM
-jQ
+Zc
 jG
-jQ
-jQ
+Zc
+Zc
 gL
 gL
 gL
@@ -2935,19 +3221,19 @@ gL
 gL
 gL
 gL
-jQ
+Zc
 CT
-EU
+Zd
 rj
-jQ
+Zc
 SQ
-Vw
+nV
 Fx
 Hp
 us
 kB
 dl
-jQ
+Zc
 gL
 gL
 gL
@@ -2985,25 +3271,25 @@ gL
 gL
 gL
 gL
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
 qS
-Vw
+nV
 Rn
-jQ
+Zc
 HJ
-LL
+Bh
 Ox
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
+Zc
 gL
 gL
 US
@@ -3037,25 +3323,25 @@ gL
 gL
 gL
 gL
-jQ
+Zc
 RA
-jQ
+Zc
 YK
 Fx
 UG
-jQ
-jQ
+Zc
+Zc
 uV
-jQ
-jQ
+Zc
+Zc
 SK
 Df
 lB
-jQ
+Zc
 sQ
 Uj
 EC
-jQ
+Zc
 gL
 gL
 gL
@@ -3089,7 +3375,7 @@ gL
 gL
 gL
 gL
-jQ
+Zc
 cx
 us
 Yy
@@ -3105,9 +3391,9 @@ IX
 uJ
 IQ
 Bd
-Ou
+Ac
 Fv
-jQ
+Zc
 gL
 gL
 gL
@@ -3115,14 +3401,14 @@ Sx
 Oe
 Sx
 gL
-ZS
-ZS
-ZS
-ZS
-ZS
-ZS
-ZS
-ZS
+iP
+iP
+iP
+iP
+iP
+iP
+iP
+iP
 gL
 gL
 gL
@@ -3141,32 +3427,32 @@ gL
 gL
 gL
 gL
-jQ
+Zc
 nk
-jQ
-jQ
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
+Zc
+Zc
 lj
 lj
-PL
-jQ
+bx
+Zc
 ju
 IX
-UY
-jQ
+mQ
+Zc
 lf
 jx
 ex
-jQ
+Zc
 gL
 gL
 gL
 Sx
 Oe
 Sx
-ZS
+iP
 yw
 TZ
 Zt
@@ -3174,8 +3460,8 @@ Qh
 mk
 xC
 hw
-ZS
-ZS
+iP
+iP
 gL
 gL
 gL
@@ -3193,32 +3479,32 @@ gL
 gL
 gL
 LZ
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
 fE
-DB
-DB
+kv
+ax
 DE
-DB
-DB
-DB
-jQ
-ju
-IX
+ax
+ax
+ax
+Zc
+Pb
+VN
 UY
-jQ
-jQ
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
+Zc
+Zc
 gL
 gL
 gL
 Sx
 Oe
 Sx
-ZS
+iP
 dH
 jz
 xB
@@ -3227,7 +3513,7 @@ dA
 LE
 JQ
 HK
-ZS
+iP
 gL
 gL
 gL
@@ -3247,23 +3533,23 @@ gL
 LZ
 LZ
 LZ
-jQ
-jQ
+Zc
+Zc
 yU
 QM
-Vw
+nV
 SZ
 ae
 el
-jQ
+Zc
 iU
 IX
 UY
-jQ
+Zc
 FY
 Uj
 Pv
-jQ
+Zc
 gL
 gL
 gL
@@ -3275,11 +3561,11 @@ sv
 Rv
 nG
 jk
-eI
+ca
 TC
 qu
 lc
-ZS
+iP
 gL
 gL
 gL
@@ -3300,22 +3586,22 @@ LZ
 LZ
 LZ
 LZ
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
 XA
 SZ
 cm
 el
-jQ
-ju
+Zc
+Pb
 IX
 xw
 Tt
 Bd
-Ou
+Ac
 oc
-jQ
+Zc
 gL
 gL
 gL
@@ -3327,11 +3613,11 @@ eO
 PK
 Tn
 YG
-eI
+ca
 kV
 Ho
 Dt
-ZS
+iP
 gL
 gL
 gL
@@ -3355,19 +3641,19 @@ LZ
 LZ
 LZ
 LZ
-jQ
-jQ
-jQ
-jQ
-jQ
+Zc
+Zc
+Zc
+Zc
+Zc
 ju
 IX
-UY
-jQ
+mQ
+Zc
 Xp
 nT
 Zn
-jQ
+Zc
 gL
 gL
 gL
@@ -3383,7 +3669,7 @@ Za
 XT
 LF
 EW
-ZS
+iP
 gL
 gL
 gL
@@ -3409,17 +3695,17 @@ LZ
 gL
 LZ
 LZ
-jQ
+Zc
 sT
 DT
 Ee
 IX
 UY
-jQ
+Zc
 OO
 BA
 OO
-jQ
+Zc
 jQ
 gL
 gL
@@ -3435,7 +3721,7 @@ Za
 jV
 LF
 cz
-ZS
+iP
 gL
 gL
 gL
@@ -3456,15 +3742,15 @@ LZ
 LZ
 LZ
 LZ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
+KX
+KX
+KX
+KX
+KX
+KX
 pp
-jQ
-ju
+Zc
+Pb
 IX
 uJ
 zD
@@ -3478,7 +3764,7 @@ gL
 Sx
 Oe
 Sx
-ZS
+iP
 AC
 hy
 hy
@@ -3487,7 +3773,7 @@ Su
 Pt
 Pt
 Pt
-ZS
+iP
 gL
 gL
 gL
@@ -3507,19 +3793,19 @@ LZ
 LZ
 Vn
 Vn
-jQ
-jQ
+KX
+KX
 GS
 ZH
 DB
 RF
-jQ
-jQ
-jQ
-jQ
+KX
+Zc
+Zc
+Zc
 as
-jQ
-jQ
+Zc
+Zc
 ku
 go
 dL
@@ -3530,18 +3816,18 @@ jQ
 Sx
 Oe
 Sx
-ZS
-dH
+iP
+GL
 dH
 HK
 wk
 jr
 Ba
 dH
-dH
-ZS
-ZS
-ZS
+MC
+iP
+iP
+iP
 gL
 gL
 gL
@@ -3560,29 +3846,29 @@ Vn
 Vn
 LP
 LP
-LP
-Yy
+Ck
+Wx
 ve
 Vw
 rh
-jQ
+KX
 Qc
 Qc
+ZO
 Qc
 Qc
-Qc
-jQ
+KX
 Lq
 aA
 aA
 aA
 aA
-aA
+Pf
 jQ
 gO
 Oe
 Sx
-ZS
+iP
 HS
 jW
 Ut
@@ -3591,10 +3877,10 @@ Za
 vB
 Ho
 xz
-ZS
+iP
 Ij
-ZS
-ZS
+iP
+iP
 gL
 gL
 gL
@@ -3614,40 +3900,40 @@ LP
 By
 Oc
 LP
-Yy
+Wx
 LL
-Hp
-jQ
+MY
+KX
 gj
 Qc
 Qc
 Qc
 Qc
-jQ
+KX
 nm
 ud
 LS
 NG
-IX
-IX
+Km
+Km
 Zp
 Sx
 Oe
 Sx
-ZS
+iP
 oI
 Rv
-Ho
+Cp
 AB
 Za
 Ho
 Ho
 tq
-ZS
+iP
 TG
-ZS
-ZS
-ZS
+iP
+iP
+iP
 gL
 gL
 gL
@@ -3675,32 +3961,32 @@ Qc
 Qc
 Qc
 Qc
-jQ
+KX
 nm
 hf
 fr
 nH
-IX
-IX
-IX
+Km
+Km
+Km
 Sx
 Oe
 Sx
-ZS
+iP
 Ho
 Ho
 Ho
 jk
-eI
+ca
 Ho
 uH
 sG
-ZS
+iP
 ZU
 qP
 xj
-ZS
-ZS
+iP
+iP
 gL
 gL
 gL
@@ -3721,38 +4007,38 @@ LP
 vE
 DB
 Cc
-jQ
+KX
 Gn
 ty
 JO
 ty
 JO
-jQ
+KX
 hh
 HO
 HO
 HO
 HO
-HO
+aE
 jQ
 Sx
 Oe
 Sx
-ZS
+iP
 Eg
 or
 jJ
 jk
-eI
+ca
 gs
 Ho
 vv
-ZS
+iP
 eE
 Fs
 qP
 zx
-ZS
+iP
 gL
 gL
 gL
@@ -3768,30 +4054,30 @@ Vn
 Vn
 LP
 LP
-LP
+zk
 vE
 EU
 Vw
 Id
-jQ
+KX
 PR
-jQ
+KX
 PR
-jQ
+KX
 PR
-jQ
+KX
 kJ
 Lv
 Lv
-Lv
+Jc
 gt
 jQ
 jQ
 Sx
 Oe
 Sx
-ZS
-ZS
+iP
+iP
 Pt
 Pt
 kj
@@ -3804,7 +4090,7 @@ GE
 Gp
 Pg
 Be
-ZS
+iP
 gL
 gL
 gL
@@ -3819,19 +4105,19 @@ LZ
 LZ
 Vn
 Vn
-jQ
-jQ
+KX
+KX
 ab
 vQ
 LL
 Kg
-jQ
+KX
 nK
-jQ
+KX
 Gw
-jQ
+KX
 Gw
-jQ
+KX
 JM
 sn
 sn
@@ -3843,20 +4129,20 @@ Sx
 Oe
 Sx
 Sx
-ZS
-ZS
-dH
+iP
+iP
+IO
 wk
 jr
+IO
 dH
-dH
-HK
+yG
 UF
 cE
-AP
+fc
 AP
 Ev
-ZS
+iP
 gL
 gL
 gL
@@ -3872,18 +4158,18 @@ LZ
 LZ
 LZ
 LZ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
+KX
+KX
+KX
+KX
+KX
+KX
+KX
+KX
+KX
+KX
+KX
+KX
 jQ
 jQ
 jQ
@@ -3896,19 +4182,19 @@ Oe
 Oe
 Sx
 Sx
-ZS
-ZS
+iP
+iP
 yK
 SC
-ZS
-ZS
-ZS
-ZS
-ZS
-ZS
-ZS
-ZS
-ZS
+iP
+iP
+iP
+iP
+iP
+iP
+iP
+iP
+iP
 gL
 gL
 gL
@@ -4091,12 +4377,12 @@ MH
 MH
 MH
 MH
-jQ
-jQ
+sZ
+sZ
 Tc
 Zq
-jQ
-jQ
+sZ
+sZ
 Sx
 Sx
 Oe
@@ -4136,20 +4422,20 @@ LZ
 LZ
 MH
 MH
-jQ
-jQ
-jQ
-jQ
-jQ
+sZ
+sZ
+sZ
+sZ
+sZ
 MH
-jQ
-jQ
+sZ
+sZ
 Xh
 dY
 Ie
 Yo
-jQ
-jQ
+sZ
+sZ
 Sx
 Sx
 Oe
@@ -4188,21 +4474,21 @@ MH
 MH
 MH
 MH
-jQ
+sZ
+DK
+RZ
 lq
-lq
-lq
-jQ
-jQ
-jQ
+sZ
+sZ
+sZ
 MF
 PL
 dY
 Ie
 Yz
 YH
-jQ
-jQ
+sZ
+sZ
 Sx
 Oe
 Sx
@@ -4239,29 +4525,29 @@ MH
 MH
 MH
 MH
-jQ
-jQ
+sZ
+sZ
 ac
-jQ
+sZ
 ac
-jQ
-jQ
+sZ
+sZ
 nP
 PL
 PL
 dY
 Ie
 Sm
-IX
+qs
 XM
-jQ
+sZ
 Sx
 Oe
 Sx
 GK
 Vp
 Va
-KB
+AG
 bH
 eI
 Va
@@ -4299,14 +4585,14 @@ vS
 vS
 en
 vS
-vS
+nv
 vS
 tN
 TI
 vS
-vS
+nv
 IG
-jQ
+sZ
 Sx
 Oe
 Sx
@@ -4317,11 +4603,11 @@ qV
 ka
 QB
 RI
-ZS
-ZS
+uE
+uE
 wU
 wU
-ZS
+uE
 Sd
 Sd
 Sd
@@ -4346,7 +4632,7 @@ MH
 vj
 jM
 DP
-DP
+VK
 DP
 DP
 jE
@@ -4358,7 +4644,7 @@ bQ
 DP
 DP
 Gj
-jQ
+sZ
 Sx
 Oe
 Sx
@@ -4371,10 +4657,10 @@ Va
 Ou
 Tx
 bm
-Va
+so
 sf
-ZS
-ZS
+uE
+uE
 bd
 Oe
 bd
@@ -4395,22 +4681,22 @@ LZ
 LZ
 MH
 MH
-jQ
+sZ
 Xc
 uz
-jQ
+sZ
 uz
-jQ
-jQ
+sZ
+sZ
 iS
 PL
 PL
 dY
 Ie
-Yo
-IX
+PQ
+qs
 Kp
-jQ
+sZ
 Sx
 Oe
 Sx
@@ -4421,9 +4707,9 @@ PH
 ev
 lr
 Fe
-ZS
+uE
 WI
-Va
+so
 ha
 Iz
 Pp
@@ -4448,26 +4734,26 @@ LZ
 MH
 MH
 MH
-jQ
-pp
-jQ
-pp
-jQ
-jQ
-jQ
+sZ
+ok
+sZ
+ok
+sZ
+sZ
+sZ
 nh
-PL
+AI
 dY
 Ie
 lQ
 YH
-jQ
-jQ
+sZ
+sZ
 Sx
 Oe
 Sx
 ZL
-oz
+zh
 vw
 XB
 AM
@@ -4500,20 +4786,20 @@ LZ
 MH
 MH
 MH
-jQ
-jQ
-jQ
-jQ
-jQ
+sZ
+sZ
+sZ
+sZ
+sZ
 MH
-jQ
-jQ
+sZ
+sZ
 fg
 dY
 Ie
-Sm
-jQ
-jQ
+FJ
+sZ
+sZ
 MH
 MH
 MH
@@ -4529,8 +4815,8 @@ lU
 gc
 FM
 QA
-ZS
-ZS
+uE
+uE
 bd
 bd
 bd
@@ -4559,12 +4845,12 @@ MH
 MH
 MH
 MH
-jQ
-jQ
+sZ
+sZ
 JT
 hb
-jQ
-jQ
+sZ
+sZ
 MH
 MH
 Sx
@@ -4575,13 +4861,13 @@ wP
 pP
 KI
 MJ
-Sd
+SL
 CG
-ZS
-ZS
+uE
+uE
 eD
 zO
-ZS
+uE
 bd
 bd
 bd
@@ -4611,12 +4897,12 @@ MH
 MH
 MH
 MH
-jQ
-Zx
+sZ
+EK
 dY
 Ie
-Zx
-jQ
+EK
+sZ
 MH
 MH
 MH
@@ -4663,12 +4949,12 @@ MH
 MH
 MH
 MH
-jQ
+sZ
 YJ
 dY
 Ie
 YJ
-jQ
+sZ
 MH
 MH
 MH
@@ -4715,12 +5001,12 @@ MH
 MH
 MH
 MH
-jQ
+sZ
 Zx
 dY
 Ie
 Zx
-jQ
+sZ
 MH
 MH
 MH
@@ -4767,12 +5053,12 @@ MH
 MH
 MH
 MH
-jQ
+sZ
 YJ
 dY
 Ie
 YJ
-jQ
+sZ
 MH
 MH
 MH
@@ -4819,12 +5105,12 @@ MH
 MH
 MH
 MH
-jQ
+sZ
 Zx
 dY
 Ie
 Zx
-jQ
+sZ
 MH
 MH
 MH
@@ -4842,7 +5128,7 @@ gL
 gL
 gL
 gL
-gL
+LI
 gL
 gL
 gL
@@ -4871,12 +5157,12 @@ MH
 MH
 MH
 MH
-jQ
+sZ
 YJ
 lv
 Uf
 YJ
-jQ
+sZ
 MH
 MH
 MH
@@ -4923,12 +5209,12 @@ MH
 MH
 MH
 MH
-jQ
-jQ
-jQ
-jQ
-jQ
-jQ
+sZ
+sZ
+sZ
+sZ
+sZ
+sZ
 MH
 MH
 MH
@@ -4942,7 +5228,7 @@ MH
 gL
 gL
 gL
-gL
+ga
 gL
 gL
 gL

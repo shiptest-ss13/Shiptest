@@ -130,4 +130,9 @@
 	icon_state = "hallC"
 	requires_power = FALSE
 
+/area/ruin/lavaland/factory/dorms
+	name ="Dormitory"
+	icon_state = "crew_quarters"
+	requires_power = FALSE
+
 
