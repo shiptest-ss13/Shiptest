@@ -114,7 +114,7 @@
 				/obj/item/flashlight/pen,
 				/obj/item/reagent_containers/glass/bottle,
 				/obj/item/reagent_containers/glass/beaker,
-				/obj/item/reagent_containers/pill
+				/obj/item/reagent_containers/pill,
 				/obj/item/storage/pill_bottle,
 				/obj/item/paper,
 				/obj/item/melee/classic_baton/telescopic,

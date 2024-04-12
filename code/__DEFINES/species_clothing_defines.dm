@@ -33,6 +33,7 @@
 #define KEPORI_SUIT_PATH 'icons/mob/species/kepori/onmob_suit_kepori.dmi'
 #define KEPORI_MASK_PATH 'icons/mob/species/kepori/onmob_mask_kepori.dmi'
 #define KEPORI_HEAD_PATH 'icons/mob/species/kepori/onmob_head_kepori.dmi'
+#define KEPORI_EYES_PATH 'icons/mob/species/kepori/onmob_eyes_kepori.dmi'
 #define KEPORI_GLOVES_PATH 'icons/mob/species/kepori/onmob_hands_kepori.dmi'
 //#define KEPORI_BELT_PATH 'icons/mob/species/kepori/onmob_belt_kepori.dmi'
 #define KEPORI_UNDERWEAR_TORSO_PATH 'icons/mob/clothing/underwear/species/underwear_torso_kepori.dmi'

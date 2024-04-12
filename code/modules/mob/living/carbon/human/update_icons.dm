@@ -246,6 +246,9 @@ There are several things that need to be remembered:
 			if((dna.species.bodytype & BODYTYPE_VOX) && (I.supports_variations & VOX_VARIATION))
 				icon_file = VOX_GLASSES_PATH
 
+			if((dna.species.bodytype & BODYTYPE_KEPORI) && (I.supports_variations & KEPORI_VARIATION))
+				icon_file = KEPORI_EYES_PATH
+
 			if(!(icon_exists(icon_file, RESOLVE_ICON_STATE(I))))
 				handled_by_bodytype = FALSE
 				icon_file = DEFAULT_GLASSES_PATH

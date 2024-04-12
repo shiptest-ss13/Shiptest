@@ -116,7 +116,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ipc_brain" = "Posibrain",
 							"kepori_feathers" = "None",
 							"kepori_body_feathers" = "None",
-							"kepori_head_feathers" = "None"
+							"kepori_head_feathers" = "None",
 							"kepori_tail_feathers" = "None",
 							"vox_head_quills" = "Plain",
 							"vox_neck_quills" = "Plain",
