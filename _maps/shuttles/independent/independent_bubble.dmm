@@ -480,13 +480,9 @@
 /turf/open/floor/plasteel,
 /area/ship/bridge)
 "uw" = (
-/obj/item/pipe_dispenser,
-/obj/structure/closet/crate,
-/obj/item/construction/plumbing,
-/obj/item/construction/rcd/arcd,
-/obj/item/stack/sheet/plasteel/fifty,
-/obj/item/construction/rcd/combat,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "uE" = (
@@ -636,6 +632,9 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "Ay" = (
@@ -945,10 +944,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/ship_gravity,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
 /turf/open/floor/plating/rust,
 /area/ship/maintenance/aft)
 "Na" = (
@@ -991,6 +986,21 @@
 /area/ship/external)
 "Ob" = (
 /turf/closed/wall,
+/area/ship/maintenance/aft)
+"OR" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/pipe_dispenser,
+/obj/item/construction/rcd/arcd,
+/obj/item/construction/rcd/combat,
+/obj/item/construction/plumbing,
+/turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "OY" = (
 /obj/structure/cable{
@@ -1349,7 +1359,7 @@ bv
 MZ
 jI
 MW
-VA
+OR
 Ob
 Ob
 VB

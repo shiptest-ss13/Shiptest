@@ -2209,10 +2209,6 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "KQ" = (
@@ -2399,6 +2395,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Oy" = (

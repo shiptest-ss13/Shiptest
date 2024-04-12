@@ -1996,6 +1996,20 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/metal/fifty{
+	pixel_y = 2
+	},
+/obj/item/stack/sheet/metal/fifty{
+	pixel_y = 6;
+	pixel_x = 6
+	},
+/obj/item/stack/sheet/mineral/plastitanium/fifty{
+	pixel_x = -3
+	},
+/obj/item/stack/sheet/mineral/plastitanium/twenty{
+	pixel_y = 2
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)
 "kc" = (
@@ -3707,19 +3721,9 @@
 /obj/structure/cable{
 	icon_state = "2-9"
 	},
-/obj/item/stack/sheet/metal/fifty{
-	pixel_y = 2
-	},
-/obj/item/stack/sheet/metal/fifty{
-	pixel_y = 6;
-	pixel_x = 6
-	},
-/obj/structure/closet/crate/engineering,
-/obj/item/stack/sheet/mineral/plastitanium/fifty{
-	pixel_x = -3
-	},
-/obj/item/stack/sheet/mineral/plastitanium/twenty{
-	pixel_y = 2
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-2"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/electrical)

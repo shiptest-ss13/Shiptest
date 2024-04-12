@@ -292,6 +292,13 @@
 	},
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
+"ck" = (
+/obj/effect/turf_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/structure/tank_dispenser,
+/turf/open/floor/plasteel/mono/dark,
+/area/ship/construction)
 "cs" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
@@ -701,8 +708,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/item/radio/intercom/directional/east,
-/obj/structure/tank_dispenser,
+/obj/structure/cable,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gx" = (
@@ -4935,6 +4942,7 @@
 	pixel_x = 6;
 	pixel_y = 2
 	},
+/obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Nz" = (
@@ -7597,7 +7605,7 @@ Sh
 vh
 mL
 cY
-xO
+ck
 TO
 xz
 xz

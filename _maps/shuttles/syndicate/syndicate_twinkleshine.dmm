@@ -410,6 +410,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "cC" = (
@@ -2766,10 +2769,6 @@
 	},
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
-	},
-/obj/machinery/power/ship_gravity,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
@@ -7107,6 +7106,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "Pd" = (
@@ -8161,7 +8161,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "UB" = (
-/obj/structure/extinguisher_cabinet/directional/south,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
 "UC" = (
@@ -9267,7 +9268,7 @@ Rj
 YB
 gv
 tg
-tg
+zi
 Ke
 zs
 Ua

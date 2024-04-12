@@ -670,7 +670,6 @@
 	name = "Air to Distro"
 	},
 /obj/effect/turf_decal/hardline_small,
-/obj/machinery/light/small/directional/north,
 /obj/machinery/atmospherics/components/binary/pump/layer4{
 	dir = 4;
 	name = "Input to Waste"
@@ -679,6 +678,7 @@
 	pixel_x = 10;
 	pixel_y = 22
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "jB" = (
@@ -2167,7 +2167,6 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible/layer2{
 	dir = 1
 	},
-/obj/machinery/firealarm/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2177,6 +2176,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/starboard)
 "Hn" = (

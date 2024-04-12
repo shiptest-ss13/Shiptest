@@ -67,6 +67,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/cargo)
+"bz" = (
+/obj/machinery/light/small/directional/south,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/maintenance/port)
 "bD" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1379,7 +1385,6 @@
 /area/ship/medical)
 "zT" = (
 /obj/effect/turf_decal/number/zero,
-/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Ah" = (
@@ -1649,6 +1654,9 @@
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1921,10 +1929,6 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/power/ship_gravity,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "HU" = (
@@ -2569,6 +2573,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
+"SX" = (
+/turf/closed/wall/mineral/titanium,
+/area/template_noop)
 "Td" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
@@ -2794,6 +2801,10 @@
 /obj/structure/window/reinforced/fulltile/shuttle,
 /turf/open/floor/plating,
 /area/ship/science)
+"VN" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/plating,
+/area/ship/maintenance/starboard)
 "WB" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
@@ -2929,7 +2940,9 @@
 	dir = 4
 	},
 /obj/item/storage/toolbox/electrical,
-/obj/machinery/light/small/directional/south,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
 "YA" = (
@@ -3162,7 +3175,7 @@ HU
 ZC
 XL
 Yw
-ZC
+bz
 fp
 UG
 vx
@@ -3176,7 +3189,7 @@ gL
 UG
 UG
 Ti
-UO
+VN
 zT
 kh
 UO
@@ -3186,7 +3199,7 @@ ZC
 KS
 Xu
 ZC
-UG
+SX
 UG
 UG
 Ra
@@ -3198,7 +3211,7 @@ tO
 Ra
 UG
 UG
-UG
+SX
 UO
 wt
 xW
