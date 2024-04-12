@@ -114,9 +114,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							"ipc_tail" = "None",
 							"ipc_chassis" = "Morpheus Cyberkinetics (Custom)",
 							"ipc_brain" = "Posibrain",
-							"kepori_feathers" = "Plain",
-							"kepori_body_feathers" = "Plain",
-							"kepori_tail_feathers" = "Fan",
+							"kepori_feathers" = "None",
+							"kepori_body_feathers" = "None",
+							"kepori_head_feathers" = "None"
+							"kepori_tail_feathers" = "None",
 							"vox_head_quills" = "Plain",
 							"vox_neck_quills" = "Plain",
 							"elzu_horns" = "None",
@@ -721,6 +722,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<a href='?_src_=prefs;preference=kepori_feathers;task=input'>[features["kepori_feathers"]]</a><BR>"
 				dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
 				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("kepori_head_feathers" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Head Feathers</h3>"
+				dat += "<a href='?_src_=prefs;preference=kepori_head_feathers;task=input'>[features["kepori_head_feathers"]]</a><BR>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1958,6 +1972,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_kepori_feathers = input(user, "Choose your character's plumage type:", "Character Preference") as null|anything in GLOB.kepori_feathers_list
 					if (new_kepori_feathers)
 						features["kepori_feathers"] = new_kepori_feathers
+
+				if("kepori_head_feathers")
+					var/new_kepori_feathers
+					new_kepori_feathers = input(user, "Choose your character's head feathers:", "Character Preference") as null|anything in GLOB.kepori_head_feathers_list
+					if (new_kepori_feathers)
+						features["kepori_head_feathers"] = new_kepori_feathers
 
 				if("kepori_body_feathers")
 					var/new_kepori_feathers

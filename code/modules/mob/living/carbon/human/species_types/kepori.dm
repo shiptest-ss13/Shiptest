@@ -4,8 +4,8 @@
 	default_color = "6060FF"
 	species_traits = list(SCLERA, MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
 	inherent_traits = list(TRAIT_SCOOPABLE)
-	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", "body_size" = "Normal")
+	mutant_bodyparts = list("kepori_body_feathers", "kepori_head_feathers" "kepori_tail_feathers", "kepori_feathers")
+	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "None", "kepori_head_feathers" = "None",  "kepori_body_feathers" = "None", "kepori_tail_feathers" = "None", "body_size" = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = FRIED | GROSS | CLOTH
 	liked_food = MEAT | GORE
@@ -63,10 +63,37 @@
 	// Why not just use HEAD_LAYER? Well, because HEAD_LAYER is a number, and if you try to use numbers as indexes,
 	// BYOND will try to make it an ordered list. So, we have to use a string. This is annoying, but it's the only way to do it smoothly.
 	offset_clothing = list(
-		"[HEAD_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -4), "[EAST]" = list("x" = 4, "y" = -4), "[SOUTH]" = list("x" = 0, "y" = -4), "[WEST]" = list("x" =  -4, "y" = -4)),
-		"[GLASSES_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -4), "[EAST]" = list("x" = 4, "y" = -4), "[SOUTH]" = list("x" = 0, "y" = -4), "[WEST]" = list("x" =  -4, "y" = -4)),
-		"[FACEMASK_LAYER]" = list("[NORTH]" = list("x" = 0, "y" = -5), "[EAST]" = list("x" = 4, "y" = -5), "[SOUTH]" = list("x" = 0, "y" = -5), "[WEST]" = list("x" =  -4, "y" = -5)),
+		"[HEAD_LAYER]" = list(
+							"[NORTH]" = list("x" = 8, "y" = -3),
+							"[EAST]" = list("x" = 19, "y" = -3), //ISSUE: The head sprites seem to be cut off when given an offset this large, combined with kepori offset
+							"[SOUTH]" = list("x" = 8, "y" = -3),
+							"[WEST]" = list("x" =  -3, "y" = -3)
+							),
+		"[GLASSES_LAYER]" = list(
+							"[NORTH]" = list("x" = 0, "y" = -4),
+							"[EAST]" = list("x" = 4, "y" = -4),
+							"[SOUTH]" = list("x" = 0, "y" = -4),
+							"[WEST]" = list("x" =  -4, "y" = -4)
+							),
+		"[FACEMASK_LAYER]" = list(
+							"[NORTH]" = list("x" = 0, "y" = -5),
+							"[EAST]" = list("x" = 4, "y" = -5),
+							"[SOUTH]" = list("x" = 0, "y" = -5),
+							"[WEST]" = list("x" =  -4, "y" = -5)
+							),
 	)
+
+// First list is left hand, second list is right hand. This is used for inhand offsets.
+/datum/species/kepori/get_item_offsets_for_dir(dir, hand)
+	//LEFT/RIGHT
+	if(dir & NORTH)
+		return list(list("x" = 9, "y" = -1), list("x" = 7, "y" = -1))
+	if(dir & SOUTH)
+		return list(list("x" = 7, "y" = -1), list("x" = 9, "y" = -1))
+	if(dir & EAST)
+		return list(list("x" = 18, "y" = -2), list("x" = 21, "y" = -2)) //("x" = 18, "y" = 2), list("x" = 21, "y" = -1))
+	if(dir & WEST)
+		return list(list("x" = -4, "y" = -2), list("x" = -1, "y" = -2)) //("x" = -5, "y" = -1), list("x" = -1, "y" = 2))
 
 /datum/species/kepori/random_name(gender,unique,lastname)
 	if(unique)

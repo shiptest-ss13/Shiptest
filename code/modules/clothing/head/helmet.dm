@@ -497,6 +497,7 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/helmet/inteq
 	name = "inteq helmet"
@@ -504,6 +505,7 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
+	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/head/solgov
 	name = "\improper SolGov officer's cap"
