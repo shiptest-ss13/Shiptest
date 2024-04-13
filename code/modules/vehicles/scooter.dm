@@ -57,7 +57,7 @@
 	///Stores the default icon state
 	var/board_icon = "skateboard"
 	///The handheld item counterpart for the board
-	var/board_item_type = /obj/item/melee/skateboard
+	var/board_item_type = /obj/item/skateboard
 	///Stamina drain multiplier
 	var/instability = 10
 
@@ -165,13 +165,13 @@
 	desc = "A RaDSTORMz brand professional skateboard. Looks a lot more stable than the average board."
 	icon_state = "skateboard2"
 	board_icon = "skateboard2"
-	board_item_type = /obj/item/melee/skateboard/pro
+	board_item_type = /obj/item/skateboard/pro
 	instability = 6
 
 /obj/vehicle/ridden/scooter/skateboard/hoverboard/
 	name = "hoverboard"
 	desc = "A blast from the past, so retro!"
-	board_item_type = /obj/item/melee/skateboard/hoverboard
+	board_item_type = /obj/item/skateboard/hoverboard
 	instability = 3
 	icon_state = "hoverboard_red"
 	board_icon = "hoverboard_red"
@@ -188,7 +188,7 @@
 /obj/vehicle/ridden/scooter/skateboard/hoverboard/admin
 	name = "\improper Board Of Directors"
 	desc = "The engineering complexity of a spaceship concentrated inside of a board. Just as expensive, too."
-	board_item_type = /obj/item/melee/skateboard/hoverboard/admin
+	board_item_type = /obj/item/skateboard/hoverboard/admin
 	instability = 0
 	icon_state = "hoverboard_nt"
 	board_icon = "hoverboard_nt"

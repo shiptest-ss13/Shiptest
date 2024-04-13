@@ -1,25 +1,3 @@
-/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork
-	name = "Summon Pitchfork"
-	desc = "A devil's weapon of choice.  Use this to summon/unsummon your pitchfork."
-	invocation_type = "none"
-	include_user = TRUE
-	range = -1
-	clothes_req = FALSE
-	item_type = /obj/item/pitchfork/demonic
-
-	school = "conjuration"
-	charge_max = 150
-	cooldown_min = 10
-	action_icon = 'icons/mob/actions/actions_minor_antag.dmi'
-	action_icon_state = "pitchfork"
-	action_background_icon_state = "bg_demon"
-
-/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/greater
-	item_type = /obj/item/pitchfork/demonic/greater
-
-/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pitchfork/ascended
-	item_type = /obj/item/pitchfork/demonic/ascended
-
 /obj/effect/proc_holder/spell/targeted/conjure_item/violin
 	item_type = /obj/item/instrument/violin/golden
 	desc = "A devil's instrument of choice.  Use this to summon/unsummon your golden violin."

@@ -117,7 +117,7 @@
 			new /obj/item/card/emag(src) // 6 tc
 
 /obj/item/storage/box/syndicate/bundle_B/PopulateContents()
-	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "bee" = 1, "mr_freeze" = 2, "made_man"= 1)))
+	switch (pickweight(list( "bond" = 2, "ninja" = 1, "darklord" = 1, "white_whale_holy_grail" = 2, "mad_scientist" = 2, "mr_freeze" = 2, "made_man"= 1)))
 		if("bond")
 			new /obj/item/gun/ballistic/automatic/pistol(src)
 			new /obj/item/suppressor(src)
@@ -167,16 +167,6 @@
 			new /obj/item/pen/edagger(src)
 			new /obj/item/gun/energy/decloner/unrestricted(src)
 
-		if("bee")
-			new /obj/item/paper/fluff/bee_objectives(src) // 0 tc (motivation)
-			new /obj/item/clothing/suit/hooded/bee_costume(src) // 0 tc
-			new /obj/item/clothing/mask/rat/bee(src) // 0 tc
-			new /obj/item/storage/belt/fannypack/yellow(src) // 0 tc
-			new /obj/item/grenade/spawnergrenade/buzzkill(src)
-			new /obj/item/grenade/spawnergrenade/buzzkill(src)
-			new /obj/item/reagent_containers/glass/bottle/beesease(src) // 10 tc?
-			new /obj/item/melee/beesword(src) //priceless
-
 		if("mr_freeze")
 			new /obj/item/clothing/glasses/cold(src)
 			new /obj/item/clothing/gloves/color/black(src)
@@ -208,14 +198,6 @@
 			new /obj/item/card/id/syndicate (src) // 2 TC, Gotta be named the part, boss.
 			new /obj/item/reagent_containers/food/drinks/flask (src) // 1 TC, I can't believe I forgot about the booze flask AAAAAAA
 			new /obj/item/storage/secure/briefcase/syndie (src) // 1TC, for bribing the bartender to let you set up shop... amongst other actions.
-
-
-/obj/item/paper/fluff/bee_objectives
-	name = "Objectives of a Bee Liberation Front Operative"
-	default_raw_text = "<b>Objective #1</b>. Liberate all bees on the NT transport vessel 2416/B. <b>Success!</b>  <br><b>Objective #2</b>. Escape alive. <b>Failed.</b>"
-
-
-
 
 /obj/item/storage/box/syndicate/contract_kit
 	name = "Contract Kit"
