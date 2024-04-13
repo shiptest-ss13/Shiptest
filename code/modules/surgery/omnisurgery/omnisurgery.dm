@@ -7,7 +7,6 @@
 	possible_locs = BROAD_BODY_ZONES
 	speed_modifier = 1									//Step speed modifier
 	var/atlayer = 0										// 0/1/2 skin/muscle/bone
-	var/datum/surgery_step/omni/last_step				//The last step preformed in the surgery
 	can_cancel = FALSE
 
 /datum/surgery/omni/proc/get_layer_surgeries()
@@ -18,17 +17,18 @@
 			atlayer_surgeries += Step
 	return atlayer_surgeries
 
-/datum/surgery/omni/proc/get_valid_surgeries()
+/datum/surgery/omni/proc/get_valid_surgeries(user, patient)
 	var/list/layers_surgeries = get_layer_surgeries()
 	var/list/valid_surgeries = list()
 	for(var/datum/surgery_step/omni/Step in layers_surgeries)
 		if(location in Step.valid_locations)
-			valid_surgeries += Step
+			if(Step.test_op(user, patient, Step))
+				valid_surgeries += Step
 	return valid_surgeries
 
 /datum/surgery/omni/next_step(mob/user, intent)
-	for(var/datum/surgery_step/omni/Step in get_valid_surgeries())
-		user.visible_message("[Step]")
+//	for(var/datum/surgery_step/omni/Step in get_valid_surgeries())
+//		user.visible_message("[Step]")
 
 	if(location != user.zone_selected)
 		return FALSE
@@ -41,10 +41,10 @@
 	var/obj/item/tool = user.get_active_held_item()
 	var/list/possible_steps = get_surgery_step(tool,user,target)
 	if(possible_steps)
-		var/datum/surgery_step/omni/S = null
+		var/datum/surgery_step/omni/surgery = null
 		if(possible_steps.len == 1)
 			var/datum/surgery_step/omni/val = possible_steps[1]
-			S = new val.type
+			surgery = new val.type
 		else
 			var/P = show_radial_menu(user,target,possible_steps,require_near = TRUE)
 			if(P && user && user.Adjacent(target) && (tool in user))
@@ -54,10 +54,9 @@
 						continue
 					if(other.location == user.zone_selected)
 						return FALSE
-				S = new T.type
-		if(S)
-			if(S.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
-				last_step = S
+				surgery = new T.type
+		if(surgery)
+			if(surgery.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
 				return TRUE
 	return FALSE
 

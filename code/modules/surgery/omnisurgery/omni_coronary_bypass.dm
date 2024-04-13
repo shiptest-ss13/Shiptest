@@ -71,8 +71,6 @@
 
 /datum/surgery_step/omni/coronary_bypass/test_op(mob/user, mob/living/target,datum/surgery/omni/surgery)
 	var/obj/item/organ/heart/H = target.getorganslot(ORGAN_SLOT_HEART)
-	if(!istype(surgery.last_step,/datum/surgery_step/omni/incise_heart))
-		return FALSE
 	if(H)
 		if(H.damage > 60 && !H.operated)
 			return TRUE

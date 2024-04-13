@@ -140,7 +140,7 @@
 
 	if(patient.surgeries.len)
 		for(var/datum/surgery/omni/procedure in patient.surgeries)
-			var/list/atlayer_surgeries = procedure.get_valid_surgeries()
+			var/list/atlayer_surgeries = procedure.get_valid_surgeries(user, patient)
 			var/list/listed_surgery_steps = list()
 			for(var/datum/surgery_step/surgery_step in atlayer_surgeries)
 				listed_surgery_steps += surgery_step.name

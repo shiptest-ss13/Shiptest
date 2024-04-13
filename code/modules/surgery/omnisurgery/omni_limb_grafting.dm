@@ -13,46 +13,6 @@
 //	var/mob/living/carbon/C = target
 //	if(!C.get_bodypart(user.zone_selected)) //can only start if limb is missing
 //		return 1
-
-/datum/surgery_step/omni/prepare_flesh
-	name = "Prepare Flesh"
-	implements = list(
-		TOOL_HEMOSTAT = 100)
-	time = 12
-	show = TRUE
-	valid_locations = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
-	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
-	requires_bodypart = FALSE
-	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
-	required_layer = list(0)
-	var/organ_rejection_dam = 0
-
-/datum/surgery_step/omni/prepare_flesh/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
-	if(istype(surgery.last_step,/datum/surgery_step/omni/prepare_flesh))
-		return FALSE
-	if(istype(surgery.last_step,/datum/surgery_step/omni/apply_bonegel_limbgrafting))
-		return FALSE
-	return TRUE
-	
-
-/datum/surgery_step/omni/apply_bonegel_limbgrafting
-	name = "Apply Bonegel"
-	implements = list(
-		TOOL_BONEGEL = 100)
-	time = 12
-	show = TRUE
-	valid_locations = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_HEAD)
-	experience_given = MEDICAL_SKILL_ORGAN_FIX //won't get full XP if rejected
-	requires_bodypart = FALSE
-	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
-	required_layer = list(0)
-	var/organ_rejection_dam = 0
-
-/datum/surgery_step/omni/apply_bonegel_limbgrafting/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
-	if(istype(surgery.last_step,/datum/surgery_step/omni/prepare_flesh))
-		return TRUE
-	return FALSE
-
 /datum/surgery_step/omni/graft_limb
 	name = "Graft Limb"
 	implements = list(
@@ -71,11 +31,6 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	required_layer = list(0)
 	var/organ_rejection_dam = 0
-
-/datum/surgery_step/omni/graft_limb/test_op(mob/user, mob/living/target, datum/surgery/omni/surgery)
-	if(istype(surgery.last_step,/datum/surgery_step/omni/apply_bonegel_limbgrafting))
-		return TRUE
-	return FALSE
 
 /datum/surgery_step/omni/graft_limb/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(istype(tool, /obj/item/organ_storage))
