@@ -97,42 +97,35 @@
 
 /datum/supply_pack/spacesuit_armor/basic_armor
 	name = "Armor Crate"
-	desc = "Two sets of well-rounded body armor. Each set includes a helmet and vest."
-	cost = 1500
+	desc = "One set of well-rounded body armor. The set includes a helmet and vest."
+	cost = 750
 	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/head/helmet/sec,
 					/obj/item/clothing/head/helmet/sec)
 	crate_name = "armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/spacesuit_armor/riot_armor
 	name = "Riot Armor Crate"
-	desc = "Contains two full sets of riot armor. Although heavily padded to deal with close-quarters threats, they perform poorly against most firearms."
-	cost = 3000
+	desc = "Contains one full set of riot armor. Although heavily padded to deal with close-quarters threats, they perform poorly against most firearms."
+	cost = 1500
 	contains = list(/obj/item/clothing/suit/armor/riot,
-					/obj/item/clothing/suit/armor/riot,
-					/obj/item/clothing/head/helmet/riot,
 					/obj/item/clothing/head/helmet/riot)
 	crate_name = "riot armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/spacesuit_armor/bullet_armor
 	name = "Bulletproof Armor Crate"
-	desc = "Contains two full sets of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
-	cost = 3500
+	desc = "Contains one full set of bulletproof armor, guaranteed to reduce a bullet's stopping power by half but with limited protection against melee weaponry."
+	cost = 1750
 	contains = list(/obj/item/clothing/suit/armor/vest/bulletproof,
-					/obj/item/clothing/suit/armor/vest/bulletproof,
-					/obj/item/clothing/head/helmet/bulletproof,
 					/obj/item/clothing/head/helmet/bulletproof)
 	crate_name = "bulletproof armor crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/spacesuit_armor/laser_armor
 	name = "Reflector Vest Crate"
-	desc = "Contains two vests of highly reflective material. Each armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely."
-	cost = 3000
-	contains = list(/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/suit/armor/laserproof)
+	desc = "Contains one vest made of highly reflective material. The armor piece diffuses a laser's energy by over half, as well as offering a good chance to reflect the laser entirely."
+	cost = 1500
+	contains = list(/obj/item/clothing/suit/armor/laserproof)
 	crate_name = "reflector vest crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
