@@ -54,3 +54,23 @@
   - imageadd: new turbine sprites
   thgvr:
   - rscadd: Suicide & Execution with a damaging firearm is now more deadly and gruesome.
+2024-04-13:
+  FalloutFalcon:
+  - tweak: all radios start off
+  - tweak: all survival boxs start with a radio
+  Sun-Soaked:
+  - rscadd: Redesigns landmines as an item that can be picked up, disarmed, deployed.
+      Some logic courtesy of /tg/.
+  - rscadd: Adds a proximity explosive variant of landmines.
+  - bugfix: shrapnel embedding once again respects targeted limb and no longer runtimes
+      on hitting a wall or destroying an object.
+  - bugfix: storage can no longer pick up anchored objects, causing them to get stuck
+      inside
+  - balance: Nerfs the ability of heavy explosions to immediately breach to space
+  - soundadd: adds two mine detonation noises
+  - code_imp: moves weapon manufacturer defines to a DEFINE file
+  generalthrax:
+  - rscadd: Etherbor SG-8 Beam Pistol to cargo for 1000 credits
+  - rscadd: Etherbor BG-12 Beam Rifle to cargo for 3000 credits
+  - rscadd: Etherbor civilian weapon cells for 600 credits, slightly higher capacity
+      than the generic cells
