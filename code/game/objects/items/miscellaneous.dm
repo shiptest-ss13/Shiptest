@@ -445,3 +445,124 @@
 	icon_state = "hoverboard_nt"
 	item_state = "hoverboard_nt"
 	board_item_type = /obj/vehicle/ridden/scooter/skateboard/hoverboard/admin
+
+/obj/item/statuebust
+	name = "bust"
+	desc = "A priceless ancient marble bust, the kind that belongs in a museum." //or you can hit people with it
+	icon = 'icons/obj/statue.dmi'
+	icon_state = "bust"
+	force = 15
+	throwforce = 10
+	throw_speed = 5
+	throw_range = 2
+	attack_verb = list("busted")
+	var/impressiveness = 45
+
+/obj/item/statuebust/Initialize()
+	. = ..()
+	AddComponent(/datum/component/art, impressiveness)
+	AddElement(/datum/element/beauty, 1000)
+
+/obj/item/statuebust/hippocratic
+	name = "hippocrates bust"
+	desc = "A bust of the famous Greek physician Hippocrates of Kos, often referred to as the father of western medicine."
+	icon_state = "hippocratic"
+	impressiveness = 50
+
+/obj/item/extendohand
+	name = "extendo-hand"
+	desc = "Futuristic tech has allowed these classic spring-boxing toys to essentially act as a fully functional hand-operated hand prosthetic."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "extendohand"
+	item_state = "extendohand"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	force = 0
+	throwforce = 5
+	reach = 2
+	var/min_reach = 2
+
+/obj/item/extendohand/acme
+	name = "\improper ACME Extendo-Hand"
+	desc = "A novelty extendo-hand produced by the ACME corporation. Originally designed to knock out roadrunners."
+
+/obj/item/extendohand/attack(atom/M, mob/living/carbon/human/user)
+	var/dist = get_dist(M, user)
+	if(dist < min_reach)
+		to_chat(user, "<span class='warning'>[M] is too close to use [src] on.</span>")
+		return
+	M.attack_hand(user)
+
+/obj/item/gohei
+	name = "gohei"
+	desc = "A wooden stick with white streamers at the end. Originally used by shrine maidens to purify things."
+	force = 5
+	throwforce = 5
+	hitsound = "swing_hit"
+	attack_verb = list("whacked", "thwacked", "walloped", "socked")
+	icon_state = "gohei"
+	item_state = "gohei"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+
+/obj/item/ectoplasm
+	name = "ectoplasm"
+	desc = "Spooky."
+	gender = PLURAL
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "ectoplasm"
+
+/obj/item/ectoplasm/angelic
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "angelplasm"
+
+/obj/item/cane
+	name = "cane"
+	desc = "A cane used by a true gentleman. Or a clown."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "cane"
+	item_state = "stick"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	force = 5
+	throwforce = 5
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron=50)
+	attack_verb = list("bludgeoned", "whacked", "disciplined", "thrashed")
+
+/obj/item/staff
+	name = "wizard staff"
+	desc = "Apparently a staff used by the wizard."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "staff"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	force = 3
+	throwforce = 5
+	throw_speed = 2
+	throw_range = 5
+	w_class = WEIGHT_CLASS_SMALL
+	armour_penetration = 100
+	attack_verb = list("bludgeoned", "whacked", "disciplined")
+	resistance_flags = FLAMMABLE
+
+/obj/item/staff/broom
+	name = "broom"
+	desc = "Used for sweeping, and flying into the night while cackling. Black cat not included."
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "broom"
+	resistance_flags = FLAMMABLE
+
+/obj/item/staff/stick
+	name = "stick"
+	desc = "A great tool to drag someone else's drinks across the bar."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "cane"
+	item_state = "stick"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	force = 3
+	throwforce = 5
+	throw_speed = 2
+	throw_range = 5
+	w_class = WEIGHT_CLASS_SMALL

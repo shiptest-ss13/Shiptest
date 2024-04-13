@@ -511,16 +511,6 @@
 				/obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	category = CAT_PRIMAL
 
-/datum/crafting_recipe/bonestaff
-	name = "Legion Staff"
-	result = /obj/item/legion_staff
-	time = 35
-	reqs = list(/obj/item/stack/sheet/bone = 2,
-				/obj/item/crusher_trophy/legion_skull = 2,\
-				/obj/item/crusher_trophy/dwarf_skull = 1,
-				/obj/item/organ/regenerative_core/legion = 1)
-	category = CAT_PRIMAL
-
 /datum/crafting_recipe/skilt
 	name = "Sinew Kilt"
 	result = /obj/item/clothing/accessory/skilt
@@ -701,34 +691,6 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_MISC
 
-/datum/crafting_recipe/aitater
-	name = "intelliTater"
-	result = /obj/item/aicard/aitater
-	time = 30
-	tools = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/aicard = 1,
-					/obj/item/reagent_containers/food/snacks/grown/potato = 1,
-					/obj/item/stack/cable_coil = 5)
-	category = CAT_MISC
-
-/datum/crafting_recipe/aitater/check_requirements(mob/user, list/collected_requirements)
-	var/obj/item/aicard/aicard = collected_requirements[/obj/item/aicard][1]
-	if(!aicard.AI)
-		return TRUE
-
-	to_chat(user, "<span class='boldwarning'>You can't craft an intelliTater with an AI in the card!</span>")
-	return FALSE
-
-/datum/crafting_recipe/aispook
-	name = "intelliLantern"
-	result = /obj/item/aicard/aispook
-	time = 30
-	tools = list(TOOL_WIRECUTTER)
-	reqs = list(/obj/item/aicard = 1,
-					/obj/item/reagent_containers/food/snacks/grown/pumpkin = 1,
-					/obj/item/stack/cable_coil = 5)
-	category = CAT_MISC
-
 /datum/crafting_recipe/ghettojetpack
 	name = "Improvised Jetpack"
 	result = /obj/item/tank/jetpack/improvised
@@ -797,16 +759,6 @@
 			/obj/item/stack/tape = 1)
 	result = /obj/item/clothing/gloves/tackler/offbrand
 	category = CAT_CLOTHING
-
-/*WS edit - Normal BoH
-/datum/crafting_recipe/boh
-	name = "Bag of Holding"
-	reqs = list(
-			/obj/item/bag_of_holding_inert = 1,
-			/obj/item/assembly/signaler/anomaly/bluespace = 1)
-	result = /obj/item/storage/backpack/holding
-	category = CAT_CLOTHING
-*/
 
 /datum/crafting_recipe/ipickaxe
 	name = "Improvised Pickaxe"
