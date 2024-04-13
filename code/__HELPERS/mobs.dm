@@ -312,7 +312,7 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null, hidden = FALSE)
 	if(!user)
 		return FALSE
 
@@ -343,9 +343,11 @@ GLOBAL_LIST_EMPTY(species_list)
 	delay *= user.do_after_coefficent()
 
 	var/datum/progressbar/progbar
+	var/datum/cogbar/cog
 	if(progress)
 		progbar = new(user, delay, target || user)
-
+		if(!hidden && delay >= 1 SECONDS)
+			cog = new(user)
 	var/endtime = world.time + delay
 	var/starttime = world.time
 	. = TRUE
@@ -389,6 +391,8 @@ GLOBAL_LIST_EMPTY(species_list)
 				break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
+
+	cog?.remove()
 
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
