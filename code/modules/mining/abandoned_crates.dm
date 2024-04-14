@@ -221,9 +221,7 @@
 			new /obj/item/toy/plush/nukeplushie(src)
 		if(96)
 			for(var/i in 1 to 3)
-				var/obj/effect/mine/sound/bwoink/mine = new (src)
-				mine.set_anchored(FALSE)
-				mine.move_resist = MOVE_RESIST_DEFAULT
+				new /obj/item/mine/pressure/sound(src)
 		if(97)
 			for(var/i in 1 to 4)
 				new /obj/item/clothing/mask/balaclava(src)

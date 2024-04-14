@@ -537,7 +537,7 @@
 #define COMSIG_TOOL_IN_USE "tool_in_use" ///from base of [/obj/item/proc/tool_check_callback]: (mob/living/user)
 #define COMSIG_TOOL_START_USE "tool_start_use" ///from base of [/obj/item/proc/tool_start_check]: (mob/living/user)
 #define COMSIG_ITEM_DISABLE_EMBED "item_disable_embed" ///from [/obj/item/proc/disableEmbedding]:
-#define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/effect/mine/proc/triggermine]:
+#define COMSIG_MINE_TRIGGERED "minegoboom" ///from [/obj/item/mine/proc/trigger_mine]:
 ///from [/obj/structure/closet/supplypod/proc/endlaunch]:
 #define COMSIG_SUPPLYPOD_LANDED "supplypodgoboom"
 
@@ -610,7 +610,7 @@
 #define COMSIG_PROJECTILE_PREHIT "com_proj_prehit" // sent to targets during the process_hit proc of projectiles
 #define COMSIG_PROJECTILE_RANGE_OUT "projectile_range_out" // sent to targets during the process_hit proc of projectiles
 #define COMSIG_EMBED_TRY_FORCE "item_try_embed" // sent when trying to force an embed (mainly for projectiles, only used in the embed element)
-
+	#define COMPONENT_EMBED_SUCCESS (1<<1)
 #define COMSIG_PELLET_CLOUD_INIT "pellet_cloud_init" // sent to targets during the process_hit proc of projectiles
 
 // /obj/mecha signals
