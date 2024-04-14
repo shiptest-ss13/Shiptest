@@ -298,7 +298,7 @@
 	return ..()
 
 //HF blade
-/obj/item/sword/vibro
+/obj/item/melee/sword/vibro
 	icon_state = "hfrequency0"
 	base_icon_state = "hfrequency"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -317,33 +317,33 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/wielded = FALSE // track wielded status on item
 
-/obj/item/sword/vibro/Initialize()
+/obj/item/melee/sword/vibro/Initialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
-/obj/item/sword/vibro/ComponentInitialize()
+/obj/item/melee/sword/vibro/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 20, 105)
 	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
-/obj/item/sword/vibro/proc/on_wield(obj/item/source, mob/user)
+/obj/item/melee/sword/vibro/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	wielded = TRUE
 
 /// triggered on unwield of two handed item
-/obj/item/sword/vibro/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/melee/sword/vibro/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	wielded = FALSE
 
-/obj/item/sword/vibro/update_icon_state()
+/obj/item/melee/sword/vibro/update_icon_state()
 	icon_state = "[base_icon_state]0"
 	return ..()
 
-/obj/item/sword/vibro/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+/obj/item/melee/sword/vibro/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)
 		final_block_chance *= 2
 	if(wielded || attack_type != PROJECTILE_ATTACK)

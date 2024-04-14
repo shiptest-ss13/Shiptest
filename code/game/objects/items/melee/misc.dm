@@ -282,11 +282,9 @@
 /obj/item/melee/baseball_bat
 	name = "baseball bat"
 	desc = "There ain't a skull in the league that can withstand a swatter."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/weapon/blunt.dmi'
 	icon_state = "baseball_bat"
 	item_state = "baseball_bat"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 12
 	throwforce = 12
 	attack_verb = list("beat", "smacked")
@@ -354,11 +352,8 @@
 /obj/item/melee/flyswatter
 	name = "flyswatter"
 	desc = "Useful for killing insects of all sizes."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "flyswatter"
 	item_state = "flyswatter"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 1
 	throwforce = 1
 	attack_verb = list("swatted", "smacked")

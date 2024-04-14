@@ -337,7 +337,7 @@
 /obj/item/melee/classic_baton
 	name = "police baton"
 	desc = "A wooden truncheon for beating criminal scum."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/weapon/baton.dmi'
 	icon_state = "classic_baton"
 	item_state = "classic_baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
