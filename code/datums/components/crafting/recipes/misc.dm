@@ -1,12 +1,3 @@
-/datum/crafting_recipe/spooky_camera
-	name = "Camera Obscura"
-	result = /obj/item/camera/spooky
-	time = 15
-	reqs = list(/obj/item/camera = 1,
-				/datum/reagent/water/holywater = 10)
-	parts = list(/obj/item/camera = 1)
-	category = CAT_MISC
-
 /datum/crafting_recipe/skateboard
 	name = "Skateboard"
 	result = /obj/vehicle/ridden/scooter/skateboard
@@ -59,7 +50,6 @@
 	reqs = list(/obj/item/paper = 5)
 	category = CAT_MISC
 
-
 /datum/crafting_recipe/flashlight_eyes
 	name = "Flashlight Eyes"
 	result = /obj/item/organ/eyes/robotic/flashlight
@@ -85,18 +75,6 @@
 	result = /obj/item/paper_bin/bundlenatural
 	category = CAT_MISC
 
-/datum/crafting_recipe/toysword
-	name = "Toy Sword"
-	reqs = list(/obj/item/light/bulb = 1, /obj/item/stack/cable_coil = 1, /obj/item/stack/sheet/plastic = 4)
-	result = /obj/item/toy/sword
-	category = CAT_MISC
-
-/datum/crafting_recipe/blackcarpet
-	name = "Black Carpet"
-	reqs = list(/obj/item/stack/tile/carpet = 50, /obj/item/toy/crayon/black = 1)
-	result = /obj/item/stack/tile/carpet/black/fifty
-	category = CAT_MISC
-
 /datum/crafting_recipe/curtain
 	name = "Curtains"
 	reqs = 	list(/obj/item/stack/sheet/cotton/cloth = 4, /obj/item/stack/rods = 1)
@@ -113,14 +91,6 @@
 	name = "Extendo-Hand"
 	reqs = list(/obj/item/bodypart/r_arm/robot = 1, /obj/item/clothing/gloves/boxing = 1)
 	result = /obj/item/extendohand
-	category = CAT_MISC
-
-/datum/crafting_recipe/gold_horn
-	name = "Golden Bike Horn"
-	result = /obj/item/bikehorn/golden
-	time = 20
-	reqs = list(/obj/item/stack/sheet/mineral/bananium = 5,
-				/obj/item/bikehorn = 1)
 	category = CAT_MISC
 
 /datum/crafting_recipe/pressureplate
@@ -205,14 +175,6 @@
 	result = /obj/item/stack/medical/splint/ghetto
 	category = CAT_MISC
 
-/datum/crafting_recipe/cwzippo
-	name = "Clockwork Zippo"
-	reqs = list(
-			/obj/item/lighter = 1,
-			/obj/item/stack/tile/bronze = 5)
-	result = /obj/item/lighter/clockwork
-	category = CAT_MISC
-
 /datum/crafting_recipe/portableseedextractor
 	name = "Portable seed extractor"
 	reqs = list(
@@ -223,20 +185,6 @@
 	result = /obj/item/storage/bag/plants/portaseeder //this will probably mean that you can craft portable seed extractors into themselves, sending the other materials into the void, but we still don't have a solution for recipes involving radios stealing your headset, so this is officially not my problem. "no, Tills-The-Soil, adding more analyzers and micro-manipulators to your portable seed extractor does not make it make more seeds. in fact it does exactly nothing."
 	time = 20
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	category = CAT_MISC
-
-/datum/crafting_recipe/crystalamulet
-	name = "Crystal Amulet"
-	result = /obj/item/clothing/neck/crystal_amulet
-	time = 4 SECONDS
-	reqs = list(/obj/item/strange_crystal = 3)
-	category = CAT_MISC
-
-/datum/crafting_recipe/crystalspear
-	name = "Crystal Spear"
-	result = /obj/item/spear/crystal
-	time = 4 SECONDS
-	reqs = list(/obj/item/strange_crystal = 2)
 	category = CAT_MISC
 
 /datum/crafting_recipe/freezer
