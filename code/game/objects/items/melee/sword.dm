@@ -1,4 +1,5 @@
 /obj/item/melee/sword
+	icon = 'icons/obj/weapon/sword.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	pickup_sound =  'sound/items/unsheath.ogg'

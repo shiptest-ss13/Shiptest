@@ -1,7 +1,7 @@
 /obj/item/melee/baton
 	name = "stun baton"
 	desc = "A stun baton for incapacitating people with."
-
+	icon = 'icons/obj/weapon/baton.dmi'
 	icon_state = "stunbaton"
 	item_state = "baton"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
