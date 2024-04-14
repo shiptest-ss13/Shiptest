@@ -73,14 +73,6 @@
 	)
 	category = CAT_CLOTHING
 
-/datum/crafting_recipe/hudsunsecremoval
-	name = "Security HUD removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses = 1)
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/hudsunmed
 	name = "Medical HUDsunglasses"
 	result = /obj/item/clothing/glasses/hud/health/sunglasses
@@ -91,14 +83,6 @@
 		/obj/item/clothing/glasses/sunglasses = 1,
 		/obj/item/stack/cable_coil = 5
 	)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/hudsunmedremoval
-	name = "Medical HUD removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/health/sunglasses = 1)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/hudsundiag
@@ -113,14 +97,6 @@
 	)
 	category = CAT_CLOTHING
 
-/datum/crafting_recipe/hudsundiagremoval
-	name = "Diagnostic HUD removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/diagnostic/sunglasses = 1)
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/sciencesunglasses
 	name = "Science Sunglasses"
 	result = /obj/item/clothing/glasses/sunglasses/chemical
@@ -131,14 +107,6 @@
 		/obj/item/clothing/glasses/sunglasses = 1,
 		/obj/item/stack/cable_coil = 5
 	)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/sciencesunglassesremoval
-	name = "Science Sunglasses Dissemble"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/sunglasses/reagent = 1)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/medhudglasses // The prescription HUD glasses. This long to have them... #Lianvee
@@ -153,14 +121,6 @@
 	)
 	category = CAT_CLOTHING
 
-/datum/crafting_recipe/medhudglassesremoval
-	name = "MedicalHUD Prescription Glasses Disassembly"
-	result = /obj/item/clothing/glasses/regular
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/health/prescription = 1)
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/sechudglasses
 	name = "SecurityHUD Prescription Glasses"
 	result = /obj/item/clothing/glasses/hud/security/prescription
@@ -171,14 +131,6 @@
 		/obj/item/clothing/glasses/regular = 1,
 		/obj/item/stack/cable_coil = 5
 	)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/sechudglassesremoval
-	name = "SecurityHUD Prescription Glasses Disassembly"
-	result = /obj/item/clothing/glasses/regular
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/security/prescription = 1)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/mesonglasses
@@ -193,14 +145,6 @@
 	)
 	category = CAT_CLOTHING
 
-/datum/crafting_recipe/mesonglassesremoval
-	name = "Meson Prescription Glasses Disassembly"
-	result = /obj/item/clothing/glasses/regular
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/meson/prescription = 1)
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/scienceglasses
 	name = "Science Prescription Glasses"
 	result = /obj/item/clothing/glasses/science/prescription
@@ -211,14 +155,6 @@
 		/obj/item/clothing/glasses/regular = 1,
 		/obj/item/stack/cable_coil = 5
 	)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/scienceglassesremoval
-	name = "Science Prescription Glasses Disassembly"
-	result = /obj/item/clothing/glasses/regular
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/science/prescription = 1)
 	category = CAT_CLOTHING
 
 // Misc.
@@ -235,27 +171,6 @@
 	result = /obj/item/clothing/shoes/cowboy
 	reqs = list(/obj/item/stack/sheet/leather = 2)
 	time = 45
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/mummy
-	name = "Mummification Bandages (Mask)"
-	result = /obj/item/clothing/mask/mummy
-	time = 10
-	tools = list(/obj/item/nullrod/egyptian)
-	reqs = list(/obj/item/stack/sheet/cotton/cloth = 2)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/mummy/body
-	name = "Mummification Bandages (Body)"
-	result = /obj/item/clothing/under/costume/mummy
-	reqs = list(/obj/item/stack/sheet/cotton/cloth = 5)
-
-/datum/crafting_recipe/chaplain_hood
-	name = "Follower Hoodie"
-	result = /obj/item/clothing/suit/hooded/chaplain_hoodie
-	time = 10
-	tools = list(/obj/item/clothing/suit/hooded/chaplain_hoodie, /obj/item/storage/book/bible)
-	reqs = list(/obj/item/stack/sheet/cotton/cloth = 4)
 	category = CAT_CLOTHING
 
 /datum/crafting_recipe/gripperoffbrand
