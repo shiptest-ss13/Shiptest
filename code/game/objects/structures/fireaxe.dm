@@ -10,7 +10,7 @@
 	integrity_failure = 0.33
 	var/locked = TRUE
 	var/open = FALSE
-	var/obj/item/fireaxe/fireaxe
+	var/obj/item/melee/axe/fire/fireaxe
 
 /obj/structure/fireaxecabinet/Initialize()
 	. = ..()
@@ -49,8 +49,8 @@
 			obj_integrity = max_integrity
 			update_appearance()
 	else if(open || broken)
-		if(istype(I, /obj/item/fireaxe) && !fireaxe)
-			var/obj/item/fireaxe/F = I
+		if(istype(I, /obj/item/melee/axe/fire) && !fireaxe)
+			var/obj/item/melee/axe/fire/F = I
 			if(F && F.wielded)
 				to_chat(user, "<span class='warning'>Unwield the [F.name] first.</span>")
 				return

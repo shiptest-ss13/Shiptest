@@ -3,6 +3,7 @@
 /obj/item/wirerod
 	name = "wired rod"
 	desc = "A rod with some wire wrapped around the top. It'd be easy to attach something to the top bit."
+	icon = 'icons/obj/weapon/spear.dmi'
 	icon_state = "wiredrod"
 	item_state = "rods"
 	flags_1 = CONDUCT_1
@@ -154,69 +155,3 @@
 	. = ..()
 	if(part)
 		part.drop_limb()
-
-//HF blade
-/obj/item/vibro_weapon
-	icon_state = "hfrequency0"
-	base_icon_state = "hfrequency"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	name = "vibro sword"
-	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
-	armour_penetration = 100
-	block_chance = 30
-	force = 20
-	throwforce = 20
-	throw_speed = 4
-	sharpness = IS_SHARP
-	attack_verb = list("cut", "sliced", "diced")
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	var/wielded = FALSE // track wielded status on item
-
-/obj/item/vibro_weapon/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-
-/obj/item/vibro_weapon/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/butchering, 20, 105)
-	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="[base_icon_state]1")
-
-/// triggered on wield of two handed item
-/obj/item/vibro_weapon/proc/on_wield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = TRUE
-
-/// triggered on unwield of two handed item
-/obj/item/vibro_weapon/proc/on_unwield(obj/item/source, mob/user)
-	SIGNAL_HANDLER
-
-	wielded = FALSE
-
-/obj/item/vibro_weapon/update_icon_state()
-	icon_state = "[base_icon_state]0"
-	return ..()
-
-/obj/item/vibro_weapon/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(wielded)
-		final_block_chance *= 2
-	if(wielded || attack_type != PROJECTILE_ATTACK)
-		if(prob(final_block_chance))
-			if(attack_type == PROJECTILE_ATTACK)
-				owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-				playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
-				return 1
-			else
-				owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
-				return 1
-	return 0
-
-/obj/item/vibro_weapon/weak
-	armour_penetration = 10
-	block_chance = 10
-	force = 15
-	throwforce = 20

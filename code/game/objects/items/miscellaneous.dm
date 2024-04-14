@@ -298,7 +298,7 @@
 	attack_verb = list("called", "rang")
 	hitsound = 'sound/weapons/ring.ogg'
 
-/obj/item/melee/roastingstick
+/obj/item/roastingstick
 	name = "advanced roasting stick"
 	desc = "A telescopic roasting stick with a miniature shield generator designed to ensure entry into various high-tech shielded cooking ovens and firepits."
 	icon_state = "roastingstick_0"
@@ -313,12 +313,12 @@
 	var/on = FALSE
 	var/datum/beam/beam
 
-/obj/item/melee/roastingstick/Initialize()
+/obj/item/roastingstick/Initialize()
 	. = ..()
 	if (!ovens)
 		ovens = typecacheof(list(/obj/singularity, /obj/machinery/power/supermatter_crystal, /obj/structure/bonfire))
 
-/obj/item/melee/roastingstick/attack_self(mob/user)
+/obj/item/roastingstick/attack_self(mob/user)
 	on = !on
 	if(on)
 		extend(user)
@@ -331,7 +331,7 @@
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
 	add_fingerprint(user)
 
-/obj/item/melee/roastingstick/attackby(atom/target, mob/user)
+/obj/item/roastingstick/attackby(atom/target, mob/user)
 	..()
 	if (istype(target, /obj/item/reagent_containers/food/snacks/sausage))
 		if (!on)
@@ -346,36 +346,36 @@
 			to_chat(user, "<span class='warning'>[target] doesn't seem to want to get on [src]!</span>")
 	update_appearance()
 
-/obj/item/melee/roastingstick/attack_hand(mob/user)
+/obj/item/roastingstick/attack_hand(mob/user)
 	..()
 	if (held_sausage)
 		user.put_in_hands(held_sausage)
 		held_sausage = null
 	update_appearance()
 
-/obj/item/melee/roastingstick/update_overlays()
+/obj/item/roastingstick/update_overlays()
 	. = ..()
 	if (held_sausage)
 		. += mutable_appearance(icon, "roastingstick_sausage")
 
-/obj/item/melee/roastingstick/proc/extend(user)
+/obj/item/roastingstick/proc/extend(user)
 	to_chat(user, "<span class='warning'>You extend [src].</span>")
 	icon_state = "roastingstick_1"
 	item_state = "nullrod"
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/melee/roastingstick/proc/retract(user)
+/obj/item/roastingstick/proc/retract(user)
 	to_chat(user, "<span class='notice'>You collapse [src].</span>")
 	icon_state = "roastingstick_0"
 	item_state = null
 	w_class = WEIGHT_CLASS_SMALL
 
-/obj/item/melee/roastingstick/handle_atom_del(atom/target)
+/obj/item/roastingstick/handle_atom_del(atom/target)
 	if (target == held_sausage)
 		held_sausage = null
 		update_appearance()
 
-/obj/item/melee/roastingstick/afterattack(atom/target, mob/user, proximity)
+/obj/item/roastingstick/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if (!on)
 		return
@@ -398,7 +398,7 @@
 			QDEL_NULL(beam)
 			playsound(src, 'sound/weapons/batonextend.ogg', 50, TRUE)
 
-/obj/item/melee/roastingstick/proc/finish_roasting(user, atom/target)
+/obj/item/roastingstick/proc/finish_roasting(user, atom/target)
 	to_chat(user, "<span class='notice'>You finish roasting [held_sausage].</span>")
 	playsound(src,'sound/items/welder2.ogg',50,TRUE)
 	held_sausage.add_atom_colour(rgb(103,63,24), FIXED_COLOUR_PRIORITY)

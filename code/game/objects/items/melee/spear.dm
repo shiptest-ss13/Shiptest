@@ -154,10 +154,6 @@
 	base_icon_state = "bone_spear0"
 	icon_prefix = "bone_spear"
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 12
 	throwforce = 22
 	armour_penetration = 15				//Enhanced armor piercing
@@ -165,13 +161,10 @@
 /obj/item/spear/bonespear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=20, icon_wielded="[icon_prefix]1")
-/obj/item/spear/dragonspear//version of the bone spear crafted from the trophy dropped by the Ash Drake. High damage, high ap, burns.
+
+//version of the bone spear crafted from the trophy dropped by the Ash Drake. High damage, high ap, burns.
+/obj/item/spear/dragonspear
 	name = "dragonslayer's spear"
-	desc = "A bone spear crafted from the leading spine of a fully-grown drake, razor-sharp and hotter then magma. Wielded by the deranged, pyromaniacs, and champions of lavaland."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 20
 	throwforce = 25
 	block_chance = 15//lol,lmao
@@ -227,12 +220,8 @@
 	icon_state = "crystal_spear0"
 	name = "crystal spear"
 	desc = "While more 'sharp stick' than spear, this thing is extremely dangerous neverless. Crafted out of the mysterous crystals, it can hit for very high damage, although it will break with repeated use."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	base_icon_state = "crystal_spear"
 	icon_prefix = "crystal_spear"
-	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
 	force = 12
 	throwforce = 40
 	armour_penetration = 20

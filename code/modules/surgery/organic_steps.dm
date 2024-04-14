@@ -145,7 +145,7 @@
 	name = "saw bone"
 	implements = list(
 		TOOL_SAW = 100,
-		/obj/item/fireaxe = 50,
+		/obj/item/melee/axe/fire = 50,
 		/obj/item/melee/arm_blade = 40,
 		/obj/item/hatchet = 40,
 		/obj/item/kitchen/knife/butcher = 33,
@@ -154,7 +154,7 @@
 	preop_sound = list(
 		/obj/item/circular_saw = 'sound/surgery/saw.ogg',
 		/obj/item/melee/arm_blade = 'sound/surgery/scalpel1.ogg',
-		/obj/item/fireaxe = 'sound/surgery/scalpel1.ogg',
+		/obj/item/melee/axe/fire = 'sound/surgery/scalpel1.ogg',
 		/obj/item/hatchet = 'sound/surgery/scalpel1.ogg',
 		/obj/item/kitchen/knife/butcher = 'sound/surgery/scalpel1.ogg',
 		/obj/item = 'sound/surgery/scalpel1.ogg',

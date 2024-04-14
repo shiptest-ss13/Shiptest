@@ -658,7 +658,7 @@
 			if(prob(45))
 				back = pickweight(list(
 					/obj/item/spear/bonespear = 3,
-					/obj/item/fireaxe/boneaxe = 2
+					/obj/item/melee/axe/bone = 2
 					)
 				)
 			if(prob(10))
@@ -790,7 +790,7 @@
 			if(prob(5))
 				back = pickweight(list(
 					/obj/item/spear/bonespear = 3,
-					/obj/item/fireaxe/boneaxe = 2
+					/obj/item/melee/axe/bone = 2
 					)
 				)
 			if(prob(10))
