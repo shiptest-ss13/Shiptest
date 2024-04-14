@@ -23,8 +23,8 @@
 	ranged_cooldown_time = 20
 	vision_range = 10
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0.5, CLONE = 0.5, STAMINA = 0, OXY = 0.5)
-	loot = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
-	crusher_loot = list(/obj/item/claymore/cursed, /obj/item/clothing/suit/space/hardsuit/cult/enchanted, /obj/item/upgradescroll)
+	loot = list(/obj/item/melee/sword/claymore, /obj/item/clothing/suit/space/hardsuit/cult/enchanted)
+	crusher_loot = list(/obj/item/melee/sword/claymore, /obj/item/clothing/suit/space/hardsuit/cult/enchanted, /obj/item/upgradescroll)
 	wander = FALSE
 	del_on_death = TRUE
 	blood_volume = BLOOD_VOLUME_NORMAL
@@ -40,7 +40,7 @@
 								/datum/action/innate/megafauna_attack/rapid_fire)
 	move_force = MOVE_FORCE_NORMAL
 	var/turf/starting
-	var/obj/item/claymore/cursed/mob/weapon
+	var/obj/item/melee/sword/claymore/weapon
 	var/charging = FALSE
 	var/dash_cooldown = 6 SECONDS
 	var/runic_blast_cooldown = 14 SECONDS
@@ -49,23 +49,6 @@
 	var/dash_mod = 0.9
 	var/dash_num = 3
 	var/newcolor = rgb(149, 10, 10)
-
-/obj/item/claymore/cursed
-	name = "cursed longsword"
-	desc = "For those who overcame a great challenge. It glows with a dim red light."
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	throwforce = 25
-	block_chance = 65
-	armour_penetration = 50
-	sharpness = IS_SHARP
-
-/obj/item/claymore/cursed/mob
-	block_chance = 0
-	force = 16
 
 /mob/living/simple_animal/hostile/megafauna/cult_templar/Initialize()
 	. = ..()

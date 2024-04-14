@@ -807,7 +807,7 @@
 			head = /obj/item/clothing/head/helmet/knight
 			suit = /obj/item/clothing/suit/armor/riot/knight
 			back = /obj/item/shield/riot/buckler
-			belt = /obj/item/nullrod/claymore
+			belt = /obj/item/melee/sword/claymore
 			r_pocket = /obj/item/tank/internals/emergency_oxygen
 			mask = /obj/item/clothing/mask/breath
 		if("Operative")

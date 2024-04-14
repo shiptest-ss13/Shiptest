@@ -362,7 +362,7 @@
 		/obj/item/storage/bag/plants,
 		/obj/item/stack/marker_beacon,
 		/obj/item/restraints/legcuffs/bola/watcher,
-		/obj/item/claymore/bone,
+		/obj/item/melee/sword/bone,
 		/obj/item/key/lasso
 		))
 
@@ -789,7 +789,7 @@
 	STR.use_sound = null //if youre wondering why this is null, its so you can look in your sheath to prepare to draw, without letting anyone know youre preparing to draw it
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre
+		/obj/item/melee/sword/sabre
 		))
 
 /obj/item/storage/belt/sabre/examine(mob/user)
@@ -817,7 +817,7 @@
 	return ..()
 
 /obj/item/storage/belt/sabre/PopulateContents()
-	new /obj/item/melee/sabre(src)
+	new /obj/item/melee/sword/sabre(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/solgov
@@ -836,11 +836,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/solgov
+		/obj/item/melee/sword/sabre/solgov
 		))
 
 /obj/item/storage/belt/sabre/solgov/PopulateContents()
-	new /obj/item/melee/sabre/solgov(src)
+	new /obj/item/melee/sword/sabre/solgov(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/suns
@@ -865,11 +865,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/suns
+		/obj/item/melee/sword/sabre/suns
 		))
 
 /obj/item/storage/belt/sabre/suns/PopulateContents()
-	new /obj/item/melee/sabre/suns(src)
+	new /obj/item/melee/sword/sabre/suns(src)
 	update_appearance()
 
 
@@ -890,11 +890,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/suns/captain
+		/obj/item/melee/sword/sabre/suns/captain
 		))
 
 /obj/item/storage/belt/sabre/suns/captain/PopulateContents()
-	new /obj/item/melee/sabre/suns/captain(src)
+	new /obj/item/melee/sword/sabre/suns/captain(src)
 	update_appearance()
 
 /obj/item/storage/belt/sabre/suns/cmo
@@ -920,11 +920,11 @@
 	STR.use_sound = null
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.set_holdable(list(
-		/obj/item/melee/sabre/suns/cmo
+		/obj/item/melee/sword/sabre/suns/cmo
 		))
 
 /obj/item/storage/belt/sabre/suns/cmo/PopulateContents()
-	new /obj/item/melee/sabre/suns/cmo(src)
+	new /obj/item/melee/sword/sabre/suns/cmo(src)
 	update_appearance()
 
 /obj/item/storage/belt/security/webbing/inteq

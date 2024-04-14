@@ -139,7 +139,7 @@
 
 /datum/crafting_recipe/bonesword
 	name = "Bone Sword"
-	result = /obj/item/claymore/bone
+	result = /obj/item/melee/sword/bone
 	time = 40
 	reqs = list(/obj/item/stack/sheet/bone = 3,
 				/obj/item/stack/sheet/sinew = 2)

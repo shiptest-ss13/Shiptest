@@ -300,7 +300,7 @@
 	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
 	icon_state = "riot_knight_green"
 	item_state = "riot_knight_green"
-	allowed = list(/obj/item/nullrod, /obj/item/claymore, /obj/item/banner, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/oxygen, /obj/item/tank/internals/plasmaman)
+	allowed = list(/obj/item/nullrod, /obj/item/melee/sword/claymore, /obj/item/banner, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/armor/riot/knight/yellow
 	icon_state = "riot_knight_yellow"

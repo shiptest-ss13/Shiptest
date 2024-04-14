@@ -322,7 +322,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 				new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 			if(prob(40))
-				new /obj/item/claymore(loc)
+				new /obj/item/melee/sword/claymore(loc)
 				new /mob/living/simple_animal/hostile/skeleton/templar(loc)
 			if(prob(45))
 				new /obj/item/gun/ballistic/bow(loc)

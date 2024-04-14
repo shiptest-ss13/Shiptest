@@ -74,7 +74,7 @@
 	loot = list(/obj/effect/decal/remains/human,
 				/obj/item/clothing/suit/armor/riot/chaplain,
 				/obj/item/clothing/head/helmet/chaplain,
-				/obj/item/claymore/weak{name = "holy sword"})
+				/obj/item/melee/sword/claymore{name = "holy sword"})
 
 /mob/living/simple_animal/hostile/skeleton/ice
 	name = "ice skeleton"

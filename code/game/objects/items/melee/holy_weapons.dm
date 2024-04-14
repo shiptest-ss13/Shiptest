@@ -300,110 +300,6 @@
 	item_state = "godstaff-blue"
 	shield_icon = "shield-old"
 
-/obj/item/nullrod/claymore
-	icon_state = "claymore_gold"
-	item_state = "claymore_gold"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
-	drop_sound = 'sound/items/handling/metal_drop.ogg'
-	name = "holy claymore"
-	desc = "A weapon fit for a crusade!"
-	w_class = WEIGHT_CLASS_HUGE
-	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
-	block_chance = 30
-	sharpness = IS_SHARP
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-
-/obj/item/nullrod/claymore/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(attack_type == PROJECTILE_ATTACK)
-		final_block_chance = 0 //Don't bring a sword to a gunfight
-	return ..()
-
-/obj/item/nullrod/claymore/darkblade
-	icon_state = "cultblade"
-	item_state = "cultblade"
-	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	name = "dark blade"
-	desc = "Spread the glory of the dark gods!"
-	slot_flags = ITEM_SLOT_BELT
-	hitsound = 'sound/hallucinations/growl1.ogg'
-
-/obj/item/nullrod/claymore/chainsaw_sword
-	icon_state = "chainswordon"
-	item_state = "chainswordon"
-	name = "sacred chainsaw sword"
-	desc = "Suffer not a heretic to live."
-	slot_flags = ITEM_SLOT_BELT
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
-	hitsound = 'sound/weapons/chainsawhit.ogg'
-	tool_behaviour = TOOL_SAW
-	toolspeed = 1.5 //slower than a real saw
-
-/obj/item/nullrod/claymore/glowing
-	icon_state = "swordon"
-	item_state = "swordon"
-	name = "force weapon"
-	desc = "The blade glows with the power of faith. Or possibly a battery."
-	slot_flags = ITEM_SLOT_BELT
-
-/obj/item/nullrod/claymore/katana
-	name = "\improper Hanzo steel"
-	desc = "Capable of cutting clean through a holy claymore."
-	icon_state = "katana"
-	item_state = "katana"
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	supports_variations = VOX_VARIATION
-
-/obj/item/nullrod/claymore/multiverse
-	name = "extradimensional blade"
-	desc = "Once the harbinger of an interdimensional war, its sharpness fluctuates wildly."
-	icon_state = "multiverse"
-	item_state = "multiverse"
-	slot_flags = ITEM_SLOT_BELT
-
-/obj/item/nullrod/claymore/multiverse/attack(mob/living/carbon/M, mob/living/carbon/user)
-	force = rand(1, 30)
-	..()
-
-/obj/item/nullrod/claymore/saber
-	name = "light energy sword"
-	hitsound = 'sound/weapons/blade1.ogg'
-	icon = 'icons/obj/weapon/energy.dmi'
-	icon_state = "swordblue"
-	item_state = "swordblue"
-	desc = "If you strike me down, I shall become more robust than you can possibly imagine."
-	slot_flags = ITEM_SLOT_BELT
-
-/obj/item/nullrod/claymore/saber/red
-	name = "dark energy sword"
-	icon_state = "swordred"
-	item_state = "swordred"
-	desc = "Woefully ineffective when used on steep terrain."
-
-/obj/item/nullrod/claymore/saber/pirate
-	name = "nautical energy sword"
-	icon_state = "cutlassred"
-	item_state = "cutlassred"
-	desc = "Convincing HR that your religion involved piracy was no mean feat."
-
-/obj/item/nullrod/sord
-	name = "\improper UNREAL SORD"
-	desc = "This thing is so unspeakably HOLY you are having a hard time even holding it."
-	icon_state = "sord"
-	item_state = "sord"
-	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	slot_flags = ITEM_SLOT_BELT
-	force = 4.13
-	throwforce = 1
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-
 /obj/item/nullrod/scythe
 	icon_state = "scythe1"
 	item_state = "scythe1"
@@ -654,22 +550,6 @@
 		to_chat(user, "<span class='boldnotice'>You are blessed by Carp-Sie. Wild space carp will no longer attack you.</span>")
 		user.faction |= "carp"
 		used_blessing = TRUE
-
-/obj/item/nullrod/claymore/bostaff //May as well make it a "claymore" and inherit the blocking
-	name = "monk's staff"
-	desc = "A long, tall staff made of polished wood. Traditionally used in ancient old-Earth martial arts, it is now used to harass the clown."
-	w_class = WEIGHT_CLASS_BULKY
-	force = 15
-	block_chance = 40
-	slot_flags = ITEM_SLOT_BACK
-	sharpness = IS_BLUNT
-	hitsound = "swing_hit"
-	attack_verb = list("smashed", "slammed", "whacked", "thwacked")
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "bostaff0"
-	item_state = "bostaff0"
-	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
 
 /obj/item/nullrod/tribal_knife
 	icon_state = "crysknife"
