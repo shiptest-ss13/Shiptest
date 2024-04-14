@@ -309,7 +309,7 @@
 						/obj/item/melee/sword/supermatter,
 						/obj/item/shield/changeling,
 						/obj/item/lava_staff,
-						/obj/item/energy_katana,
+						/obj/item/melee/sword/energy_katana,
 						/obj/item/hierophant_club,
 						/obj/item/gun/energy/minigun,
 						/obj/item/gun/ballistic/automatic/hmg/l6_saw,
