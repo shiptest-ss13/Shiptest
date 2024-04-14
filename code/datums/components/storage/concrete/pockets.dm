@@ -35,7 +35,7 @@
 /datum/component/storage/concrete/pockets/small/fedora/Initialize()
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
-		/obj/item/katana, /obj/item/toy/katana, /obj/item/melee/sword/katana,
+		/obj/item/toy/katana, /obj/item/melee/sword/katana,
 		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/smg/firestorm/pan
 		))
 	exception_hold = exception_cache

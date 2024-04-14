@@ -37,7 +37,7 @@
 	throwforce = 10
 	armour_penetration = 15
 
-/obj/item/sword/katana
+/obj/item/melee/sword/katana
 	name = "katana"
 	desc = "Woefully underpowered in D20."
 	icon_state = "katana"

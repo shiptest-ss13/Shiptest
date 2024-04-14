@@ -307,11 +307,6 @@
 	desc = "A caprious tool that can fire all sorts of magic without any rhyme or reason. Using it on people you care about is not recommended."
 	item_path = /obj/item/gun/magic/staff/chaos
 
-/datum/spellbook_entry/item/spellblade
-	name = "Spellblade"
-	desc = "A sword capable of firing blasts of energy which rip targets limb from limb."
-	item_path = /obj/item/gun/magic/staff/spellblade
-
 /datum/spellbook_entry/item/staffdoor
 	name = "Staff of Door Creation"
 	desc = "A particular staff that can mold solid walls into ornate doors. Useful for getting around in the absence of other transportation. Does not work on glass."

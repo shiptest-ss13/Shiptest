@@ -58,14 +58,6 @@
 	if(spawn_amt_left <= 0)
 		qdel(src)
 
-/obj/effect/rend/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/nullrod))
-		user.visible_message("<span class='danger'>[user] seals \the [src] with \the [I].</span>")
-		qdel(src)
-		return
-	else
-		return ..()
-
 /obj/effect/rend/singularity_pull()
 	return
 

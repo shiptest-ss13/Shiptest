@@ -151,7 +151,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/computer/cryopod/retro, 17)
 		/obj/item/reagent_containers/hypospray/CMO,
 		/obj/item/clothing/accessory/medal/gold/captain,
 		/obj/item/clothing/gloves/krav_maga,
-		/obj/item/nullrod,
 		/obj/item/tank/jetpack,
 		/obj/item/documents,
 		/obj/item/nuke_core_container

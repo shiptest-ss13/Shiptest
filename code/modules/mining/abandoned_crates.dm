@@ -211,7 +211,7 @@
 			for(var/i in 1 to 30)
 				new /mob/living/simple_animal/hostile/cockroach(src)
 		if(92)
-			new /obj/item/katana(src)
+			new /obj/item/melee/sword/katana(src)
 		if(93)
 			new /obj/item/dnainjector/xraymut(src)
 		if(94)

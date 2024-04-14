@@ -133,7 +133,7 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/suit/wizrobe, /obj/item/clothing/head/wizard, /obj/item/spellbook, /obj/item/staff,
 			/obj/item/clothing/suit/space/hardsuit/shielded/wizard, /obj/item/clothing/suit/space/hardsuit/wizard,
 			/obj/item/gun/magic/staff, /obj/item/gun/magic/wand,
-			/obj/item/nullrod, /obj/item/clothing/under/rank/civilian/chaplain)),
+			/obj/item/clothing/under/rank/civilian/chaplain)),
 
 		"aliens"   = typecacheof(list(
 			/obj/item/clothing/mask/facehugger_item, /obj/item/organ/body_egg/alien_embryo,
@@ -153,12 +153,12 @@ SUBSYSTEM_DEF(traumas)
 			/obj/item/clothing/head/helmet/space/freedom, /obj/item/clothing/suit/space/freedom)),
 
 		"anime" = typecacheof(list(
-			/obj/item/clothing/under/costume/schoolgirl, /obj/item/katana, /obj/item/reagent_containers/food/snacks/sashimi,
+			/obj/item/clothing/under/costume/schoolgirl, /obj/item/reagent_containers/food/snacks/sashimi,
 			/obj/item/reagent_containers/food/snacks/chawanmushi,
 			/obj/item/reagent_containers/food/drinks/bottle/sake, /obj/item/throwing_star,
 			/obj/item/clothing/suit/space/space_ninja,
 			/obj/item/clothing/mask/gas/space_ninja, /obj/item/clothing/shoes/space_ninja, /obj/item/clothing/gloves/space_ninja,
-			/obj/item/vibro_weapon, /obj/item/nullrod/scythe/vibro, /obj/item/energy_katana, /obj/item/toy/katana,
+			/obj/item/vibro_weapon, /obj/item/energy_katana, /obj/item/toy/katana,
 			/obj/item/melee/sword/katana, /obj/structure/window/paperframe, /obj/structure/mineral_door/paperframe))
 	)
 

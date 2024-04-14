@@ -300,7 +300,7 @@
 	item_state = "godstaff-blue"
 	shield_icon = "shield-old"
 
-/obj/item/nullrod/scythe
+/obj/item/scythe
 	icon_state = "scythe1"
 	item_state = "scythe1"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
@@ -313,11 +313,11 @@
 	sharpness = IS_SHARP
 	attack_verb = list("chopped", "sliced", "cut", "reaped")
 
-/obj/item/nullrod/scythe/Initialize()
+/obj/item/scythe/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 70, 110) //the harvest gives a high bonus chance
 
-/obj/item/nullrod/scythe/vibro
+/obj/item/scythe/vibro
 	icon_state = "hfrequency0"
 	item_state = "hfrequency1"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -327,7 +327,7 @@
 	attack_verb = list("chopped", "sliced", "cut", "zandatsu'd")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
-/obj/item/nullrod/scythe/spellblade
+/obj/item/scythe/spellblade
 	icon_state = "spellblade"
 	item_state = "spellblade"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -337,7 +337,7 @@
 	desc = "The blade grants the wielder nearly limitless power...if they can figure out how to turn it on, that is."
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
-/obj/item/nullrod/scythe/talking
+/obj/item/scythe/talking
 	icon_state = "talking_sword"
 	item_state = "talking_sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -348,10 +348,10 @@
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	var/possessed = FALSE
 
-/obj/item/nullrod/scythe/talking/relaymove(mob/living/user, direction)
+/obj/item/scythe/talking/relaymove(mob/living/user, direction)
 	return //stops buckled message spam for the ghost.
 
-/obj/item/nullrod/scythe/talking/attack_self(mob/living/user)
+/obj/item/scythe/talking/attack_self(mob/living/user)
 	if(possessed)
 		return
 
@@ -379,13 +379,13 @@
 		to_chat(user, "<span class='warning'>The blade is dormant. Maybe you can try again later.</span>")
 		possessed = FALSE
 
-/obj/item/nullrod/scythe/talking/Destroy()
+/obj/item/scythe/talking/Destroy()
 	for(var/mob/living/simple_animal/shade/S in contents)
 		to_chat(S, "<span class='userdanger'>You were destroyed!</span>")
 		qdel(S)
 	return ..()
 
-/obj/item/nullrod/scythe/talking/chainsword
+/obj/item/scythe/talking/chainsword
 	icon_state = "chainswordon"
 	item_state = "chainswordon"
 	name = "possessed chainsaw sword"
@@ -398,7 +398,7 @@
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.5 //faster than normal saw
 
-/obj/item/nullrod/scythe/talking/necro
+/obj/item/scythe/talking/necro
 	desc = "An ancient weapon flush with the souls of the fallen. The blood of the necropolis has suffused it over time immemorial, granting a toothy bite."
 	force = 35
 	block_chance = 35
@@ -410,11 +410,11 @@
 	var/bleed_stacks_per_hit = 2 //this effect has rapid scaling and is an instant down pretty much, I'll crib it since it can trigger on non-fauna
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
-/obj/item/nullrod/scythe/talking/necro/examine(mob/user)
+/obj/item/scythe/talking/necro/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>This weapon applies a growing blood curse on attack. Though it slowly fades, fully manifesting it causes your target's blood to violently explode, creating a lethal burst of damage.</span>"
 
-/obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
+/obj/item/scythe/talking/necro/attack(mob/living/target)
 	..()
 	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
 	if(!B)

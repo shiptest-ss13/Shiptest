@@ -404,7 +404,7 @@
 /obj/item/clothing/suit/space/hardsuit/cult/enchanted
 	name = "\improper Cursed Nar'Sien hardened armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. This one is cursed, screaming voices into the mind of the wearer."
-	allowed = list(/obj/item/gun, /obj/item/nullrod, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/tank/internals)
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 80, "fire" = 100, "acid" = 100)
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF

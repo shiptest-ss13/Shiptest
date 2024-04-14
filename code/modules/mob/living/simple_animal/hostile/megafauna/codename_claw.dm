@@ -77,7 +77,7 @@
 	qdel(src)
 
 /obj/effect/spawner/clawloot/crusher/spawn_loot()
-	new /obj/item/nullrod/armblade/tentacle(get_turf(src)) //idk what to put here, memed is the loot person
+	new /obj/item/gun/energy/pulse/pistol(get_turf(src)) //idk what to put here, memed is the loot person
 	return ..()
 ///LOOT END
 

@@ -45,7 +45,7 @@
 			new /obj/item/borg/upgrade/modkit/lifesteal(src)
 			new /obj/item/bedsheet/cult(src)
 		if(14)
-			new /obj/item/nullrod/scythe/talking/necro(src)
+			new /obj/item/scythe(src)
 		if(15)
 			new /obj/item/book_of_babel(src)
 		if(16)
@@ -120,7 +120,7 @@
 				new /obj/item/borg/upgrade/modkit/lifesteal(src)
 				new /obj/item/bedsheet/cult(src)
 			if(14)
-				new /obj/item/nullrod/scythe/talking/necro(src)
+				new /obj/item/scythe(src)
 			if(15)
 				new /obj/item/book_of_babel(src)
 			if(16)
@@ -1261,7 +1261,7 @@
 	var/loot = rand(1,4)
 	switch(loot)
 		if(1)
-			new /obj/item/melee/ghost_sword(src)
+			new /obj/item/melee/sword/claymore(src)
 		if(2)
 			new /obj/item/lava_staff(src)
 		if(3)
@@ -1411,7 +1411,7 @@
 		if(2)
 			new /obj/item/blood_contract(src)
 		if(3)
-			new /obj/item/gun/magic/staff/spellblade(src)
+			new /obj/item/melee/sword/katana(src)
 
 /obj/structure/closet/crate/necropolis/bubblegum/crusher
 	name = "bloody bubblegum chest"
