@@ -176,7 +176,7 @@
 /datum/antagonist/cult/proc/admin_take_all(mob/admin)
 	var/mob/living/current = owner.current
 	for(var/o in current.GetAllContents())
-		if(istype(o, istype(o, /obj/item/stack/sheet/runed_metal))
+		if(istype(o, /obj/item/stack/sheet/runed_metal))
 			qdel(o)
 
 /datum/antagonist/cult/master
