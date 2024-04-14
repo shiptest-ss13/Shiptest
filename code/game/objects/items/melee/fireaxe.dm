@@ -4,6 +4,7 @@
 /obj/item/fireaxe  // DEM AXES MAN, marker -Agouri
 	icon_state = "fireaxe0"
 	base_icon_state = "fireaxe"
+	icon = 'icons/obj/weapon/axe.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	name = "fire axe"

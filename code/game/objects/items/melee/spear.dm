@@ -1,6 +1,7 @@
 //spears
 /obj/item/spear
 	icon_state = "spearglass0"
+	icon = 'icons/obj/weapon/spear.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	name = "spear"

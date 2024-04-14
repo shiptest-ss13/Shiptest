@@ -130,7 +130,6 @@
 	desc = "He."
 	icon = 'icons/obj/marg.dmi'
 	icon_state = "marg"
-	density = FALSE
 	var/duration = 0
 	pixel_x = -8
 	pixel_y = 1
@@ -148,7 +147,7 @@
 	qdel(src)
 
 
-/obj/effect/mine/pickup/bloodbath
+
 	name = "His Odium"
 	desc = "Embrace my righteous fury."
 	duration = 1200 //2min
