@@ -11,7 +11,15 @@
 /datum/overmap
 	/// The name of this overmap datum, propogated to the token, docking port, and areas.
 	var/name
-	/// The character that represents this overmap datum on the overmap in ASCII mode.
+	///A quick description of the event. Should fit into a quick tgui hoverover tip.
+	var/desc
+	///Extra info that would fit into a sidebar or an extra pane such as. Should fit into a quick tgui hoverover tip.
+	var/extra_info
+	///the color of the event if it isn't overridden by the overmap
+	var/default_color
+	/// The icon state the token will be set to on init.
+	var/token_icon_state = "object"
+	/// The character that represents this overmap datum on the overmap in the admin ASCII mode.
 	var/char_rep
 
 	/// The x position of this datum on the overmap. Use [/datum/overmap/proc/move] to change this.
@@ -37,8 +45,6 @@
 	var/obj/overmap/token
 	/// Token type to instantiate.
 	var/token_type = /obj/overmap
-	/// The icon state the token will be set to on init.
-	var/token_icon_state = "object"
 
 	/// The current docking ticket of this object, if any
 	var/datum/docking_ticket/current_docking_ticket
@@ -189,7 +195,7 @@
 	if(!new_name || new_name == name)
 		return FALSE
 	name = new_name
-	token.name = new_name
+	alter_token_appearance()
 	return TRUE
 
 /**
@@ -449,9 +455,14 @@
  */
 
 /datum/overmap/proc/alter_token_appearance()
+	token.name = name
+	token.desc = desc
+
 	token.icon_state = token_icon_state
 	if(token.icon != current_overmap.tileset)
 		token.icon = current_overmap.tileset
-	if(!current_overmap.override_object_colors)
+
+	token.color = default_color
+	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)

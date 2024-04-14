@@ -234,6 +234,10 @@ SUBSYSTEM_DEF(overmap)
 	///the icon state for the overmap background. if using a bright background, use "overmap", if dark, "overmap_dark"
 	var/overmap_icon_state = "overmap_dark"
 
+/datum/overmap_star_system/wilderness
+	name = null
+	has_outpost = FALSE
+
 /datum/overmap_star_system/outposted
 	name = "Ligmata Teagarden Memorial sector"
 	has_outpost = TRUE

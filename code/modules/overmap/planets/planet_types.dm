@@ -115,7 +115,7 @@
 	name = "weak energy signal"
 	desc = "A very weak energy signal originating from space."
 	planet = DYNAMIC_WORLD_SPACERUIN
-	icon_state = "strange_event"
+	icon_state = "signal_strange"
 	color = null
 	mapgen = /datum/map_generator/single_turf/space
 	default_baseturf = /turf/open/space

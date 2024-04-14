@@ -159,14 +159,15 @@
 
 /datum/overmap/dynamic/alter_token_appearance()
 	if(!planet)
-		return
+		return ..()
 	token_icon_state = planet.icon_state
-	token.icon_state = token_icon_state
-	token.desc = planet.desc
-	token.color = current_overmap.primary_color
-	if(!current_overmap.override_object_colors)
-		token.color = planet.color
-	return ..()
+	desc = planet.desc
+	default_color = planet.color
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.primary_color
+	current_overmap.post_edit_token_state(src)
+
 
 
 /datum/overmap/dynamic/proc/gen_planet_name()
@@ -210,6 +211,7 @@
 
 /datum/overmap/dynamic/empty
 	name = "Empty Space"
+	token_icon_state = "signal_ship"
 
 /datum/overmap/dynamic/empty/choose_level_type()
 	return
@@ -220,6 +222,9 @@
 	log_shuttle("[src] [REF(src)] UNLOAD")
 	qdel(src)
 
+/datum/overmap/dynamic/spaceruin
+	name = "wreckage"
+	force_encounter = RUINTYPE_SPACE
 
 /*
 	OVERMAP ENCOUNTER AREAS

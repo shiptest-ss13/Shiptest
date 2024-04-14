@@ -9,8 +9,11 @@
 	char_rep = ">"
 	token_icon_state = "ship"
 
+	var/legacy_rendering_switch = FALSE //afjkhsdjklha
+
 	///the icon state used when we are stationary
-	var/stationary_icon_state = "ship"
+	//var/stationary_icon_state = "ship"
+	var/stationary_icon_state = "ship_generic"
 	///the icon state used when we are moving
 	var/moving_icon_state = "ship_moving"
 
@@ -238,12 +241,26 @@
 	alter_token_appearance()
 
 /datum/overmap/ship/alter_token_appearance()
-	. = ..()
 	var/direction = get_heading()
-	if(direction)
-		token_icon_state = moving_icon_state
-		token.dir = direction
+	var/speed = get_speed()
+	if(legacy_rendering_switch)
+		if(direction)
+			token_icon_state = moving_icon_state
+			token.dir = direction
+		else
+			token_icon_state = stationary_icon_state
 	else
 		token_icon_state = stationary_icon_state
-	token.icon_state = token_icon_state
+		if(direction)
+			token.dir = direction
+	..()
 	token.color = current_overmap.primary_structure_color
+	current_overmap.post_edit_token_state(src)
+	if(!legacy_rendering_switch)
+		token.cut_overlays()
+		if(direction)
+			token.add_overlay("dir_moving")
+		else
+			token.add_overlay("dir_idle")
+		if(speed)
+			token.add_overlay("speed_[clamp(round(speed,1),0,10)]")

@@ -3,8 +3,8 @@
 #define JUMP_STATE_IONIZING 2
 #define JUMP_STATE_FIRING 3
 #define JUMP_STATE_FINALIZED 4
-#define JUMP_CHARGE_DELAY (20 SECONDS)
-#define JUMP_CHARGEUP_TIME (3 MINUTES)
+#define JUMP_CHARGE_DELAY (7 SECONDS)
+#define JUMP_CHARGEUP_TIME (1 MINUTES)
 
 /obj/machinery/computer/helm
 	name = "helm control console"
@@ -47,11 +47,11 @@
 	deconpath = /obj/structure/frame/computer/solgov
 
 /datum/config_entry/number/bluespace_jump_wait
-	default = 30 MINUTES
+	default = 5 MINUTES
 
 /obj/machinery/computer/helm/Initialize(mapload, obj/item/circuitboard/C)
 	. = ..()
-	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
+//	jump_allowed = world.time + CONFIG_GET(number/bluespace_jump_wait)
 	ntnet_relay = new(src)
 
 /obj/machinery/computer/helm/proc/calibrate_jump(inline = FALSE)
@@ -69,7 +69,10 @@
 		return // This exists to prefent Href exploits to call process_jump more than once by a client
 	message_admins("[ADMIN_LOOKUPFLW(usr)] has initiated a bluespace jump in [ADMIN_VERBOSEJMP(src)]")
 	jump_timer = addtimer(CALLBACK(src, PROC_REF(jump_sequence), TRUE), JUMP_CHARGEUP_TIME, TIMER_STOPPABLE)
-	priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	if(jump_destination)
+		priority_announce("Bluespace jump calibration to destination [jump_destination.name] initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
+	else
+		priority_announce("Bluespace jump calibration initialized. Calibration completion in [JUMP_CHARGEUP_TIME/600] minutes.", sender_override="[current_ship.name] Bluespace Pylon", zlevel=virtual_z())
 	calibrating = TRUE
 	return TRUE
 
@@ -107,7 +110,13 @@
 
 /obj/machinery/computer/helm/proc/do_jump()
 	priority_announce("Bluespace Jump Initiated.", sender_override = "[current_ship.name] Bluespace Pylon", sound = 'sound/magic/lightningbolt.ogg', zlevel = virtual_z())
-	qdel(current_ship)
+	if(!jump_destination)
+		qdel(current_ship)
+		return
+	current_ship.move_overmaps(jump_destination)
+	jump_destination = null
+	jump_state = JUMP_STATE_OFF
+	calibrating = FALSE
 
 /obj/machinery/computer/helm/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	if(current_ship && current_ship != port.current_ship)
@@ -337,10 +346,29 @@
 					cancel_jump()
 					return
 				else
-					if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+					if(length(SSovermap.tracked_star_systems) >= 1)
+						var/list/choices = LAZYCOPY(SSovermap.tracked_star_systems)
+						LAZYADD(choices, "Out of the Frontier")
+						LAZYREMOVE(choices, current_ship.current_overmap)
+						var/selected_system = tgui_input_list(usr, "To which system?", "Bluespace Jump", choices)
+						if(selected_system == "Out of the Frontier")
+							if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+								return
+							calibrate_jump()
+							return
+						if(!selected_system)
+							return
+						else
+							jump_destination = selected_system
+						calibrate_jump()
 						return
-					calibrate_jump()
-					return
+
+
+					else
+						if(tgui_alert(usr, "Do you want to bluespace jump? Your ship and everything on it will be removed from the round.", "Jump Confirmation", list("Yes", "No")) != "Yes")
+							return
+						calibrate_jump()
+						return
 			if("dock_empty")
 				current_ship.dock_in_empty_space(usr)
 				return

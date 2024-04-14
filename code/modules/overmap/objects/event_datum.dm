@@ -5,13 +5,17 @@
  */
 /datum/overmap/event
 	name = "generic overmap event"
+	///determines the icon of the event
+	var/base_icon_state
+	///suffix of base_icon_state generated on init, usually 1-4
+	var/icon_suffix
 	///If prob(this), call affect_ship when processed
 	var/chance_to_affect = 0
 	///Chance to spread to nearby tiles if spawned
 	var/spread_chance = 0
 	///How many additional tiles to spawn at once in the selected orbit. Used with OVERMAP_GENERATOR_SOLAR.
 	var/chain_rate = 0
-	var/desc
+
 
 /datum/overmap/event/Initialize(position, ...)
 	. = ..()
@@ -25,8 +29,8 @@
 	current_overmap.events -= src
 
 /datum/overmap/event/alter_token_appearance()
-	. = ..()
-	token.desc = desc
+	token_icon_state = "[base_icon_state][icon_suffix]"
+	return ..()
 
 /**
  * The main proc for calling other procs. Called by SSovermap.
@@ -47,7 +51,8 @@
 /datum/overmap/event/meteor
 	name = "asteroid field (moderate)"
 	desc = "An area of space rich with asteroids, going fast through here could prove dangerous"
-	token_icon_state = "meteor1"
+	base_icon_state = "meteor_medium_"
+	default_color = "#a08444"
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
@@ -60,11 +65,10 @@
 	)
 
 /datum/overmap/event/meteor/alter_token_appearance()
-	. = ..()
-	token.icon_state = "meteor[rand(1, 4)]"
-	token.color = current_overmap.hazard_primary_color
-	if(!current_overmap.override_object_colors)
-		token.color = "#a08444"
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/meteor/apply_effect()
@@ -79,6 +83,7 @@
 
 /datum/overmap/event/meteor/minor
 	name = "asteroid field (minor)"
+	base_icon_state = "meteor_light_"
 	chain_rate = 3
 	meteor_types = list(
 		/obj/effect/meteor/dust=12,
@@ -88,6 +93,7 @@
 
 /datum/overmap/event/meteor/major
 	name = "asteroid field (major)"
+	base_icon_state = "meteor_major_"
 	spread_chance = 25
 	chain_rate = 6
 	meteor_types = list(
@@ -102,18 +108,18 @@
 /datum/overmap/event/emp
 	name = "ion storm (moderate)"
 	desc = "A heavily ionized area of space, prone to causing electromagnetic pulses in ships"
-	token_icon_state = "ion1"
+	base_icon_state = "ion"
+	default_color = "#7cb4d4"
 	spread_chance = 20
 	chain_rate = 2
 	chance_to_affect = 20
 	var/strength = 4
 
 /datum/overmap/event/emp/alter_token_appearance()
-	. = ..()
-	token.icon_state = "ion[rand(1, 4)]"
-	token.color = current_overmap.hazard_primary_color
-	if(!current_overmap.override_object_colors)
-		token.color = "#7cb4d4"
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
@@ -141,7 +147,8 @@
 /datum/overmap/event/electric
 	name = "electrical storm (moderate)"
 	desc = "A spatial anomaly, an unfortunately common sight on the frontier. Disturbing it tends to lead to intense electrical discharges"
-	token_icon_state = "electrical1"
+	base_icon_state = "electrical_medium_"
+	default_color = "#e8e85c"
 	chance_to_affect = 15
 	spread_chance = 30
 	chain_rate = 3
@@ -150,11 +157,10 @@
 	var/min_damage = 5
 
 /datum/overmap/event/electric/alter_token_appearance()
-	. = ..()
-	token.icon_state = "electrical[rand(1, 4)]"
-	token.color = current_overmap.hazard_primary_color
-	if(!current_overmap.override_object_colors)
-		token.color = "#e8e85c"
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
@@ -167,6 +173,7 @@
 
 /datum/overmap/event/electric/minor
 	name = "electrical storm (minor)"
+	base_icon_state = "electrical_minor_"
 	spread_chance = 40
 	chain_rate = 2
 	max_damage = 10
@@ -174,6 +181,7 @@
 
 /datum/overmap/event/electric/major
 	name = "electrical storm (major)"
+	base_icon_state = "electrical_major_"
 	spread_chance = 15
 	chain_rate = 6
 	max_damage = 20
@@ -183,17 +191,18 @@
 /datum/overmap/event/nebula
 	name = "nebula"
 	desc = "There's coffee in here"
-	token_icon_state = "nebula"
+	base_icon_state = "nebula"
+	default_color = "#c053f3"
 	chain_rate = 8
 	spread_chance = 75
 
 /datum/overmap/event/nebula/alter_token_appearance()
 	. = ..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_secondary_color
 	token.opacity = TRUE
-	token.color = current_overmap.hazard_secondary_color
-	if(!current_overmap.override_object_colors)
-		token.color = "#c053f3"
 	current_overmap.post_edit_token_state(src)
+
 
 /datum/overmap/event/wormhole
 	name = "wormhole"
@@ -217,11 +226,10 @@
 	alter_token_appearance()
 
 /datum/overmap/event/wormhole/alter_token_appearance()
-	. = ..()
-	token.color = current_overmap.hazard_primary_color
-	if(!current_overmap.override_object_colors)
-		token.color = adjust_colors()
-	token.update_appearance()
+	default_color = adjust_colors()
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
@@ -264,7 +272,8 @@
 /datum/overmap/event/meteor/carp
 	name = "carp migration (moderate)"
 	desc = "A migratory school of space carp. They travel at high speeds, and flying through them may cause them to impact your ship"
-	token_icon_state = "carp1"
+	base_icon_state = "carp"
+	default_color = "#7b1ca8"
 	chance_to_affect = 15
 	spread_chance = 50
 	chain_rate = 4
@@ -275,16 +284,14 @@
 	)
 
 /datum/overmap/event/meteor/carp/alter_token_appearance()
-	. = ..()
-	token.icon_state = "carp[rand(1, 4)]"
-	token.color = current_overmap.hazard_primary_color
-	if(!current_overmap.override_object_colors)
-		token.color = "#7b1ca8"
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_primary_color
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/meteor/carp/minor
 	name = "carp migration (minor)"
-	token_icon_state = "carp1"
 	chance_to_affect = 5
 	spread_chance = 25
 	chain_rate = 4
@@ -295,7 +302,6 @@
 
 /datum/overmap/event/meteor/carp/major
 	name = "carp migration (major)"
-	token_icon_state = "carp1"
 	chance_to_affect = 25
 	spread_chance = 25
 	chain_rate = 4
@@ -309,7 +315,8 @@
 /datum/overmap/event/meteor/dust
 	name = "dust cloud"
 	desc = "A cloud of spaceborne dust. Relatively harmless, unless you're travelling at relative speeds"
-	token_icon_state = "carp1"
+	base_icon_state = "dust"
+	default_color = "#506469" //we should make these defines
 	chance_to_affect = 30
 	spread_chance = 50
 	chain_rate = 4
@@ -319,27 +326,26 @@
 	)
 
 /datum/overmap/event/meteor/dust/alter_token_appearance()
-	. = ..()
-	token.icon_state = "dust[rand(1, 4)]"
-	token.color = current_overmap.hazard_secondary_color
-	if(!current_overmap.override_object_colors)
-		token.color = "#506469" //we should make these defines
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_secondary_color
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/anomaly
 	name = "anomaly field"
 	desc = "A highly anomalous area of space, disturbing it leads to the manifestation of odd spatial phenomena"
-	token_icon_state = "anomaly1"
+	base_icon_state = "anomaly"
+	default_color = "#c46a24"
 	chance_to_affect = 10
 	spread_chance = 35
 	chain_rate = 6
 
 /datum/overmap/event/anomaly/alter_token_appearance()
-	. = ..()
-	token.icon_state = "anomaly[rand(1, 4)]"
-	token.color = current_overmap.hazard_secondary_color
-	if(!current_overmap.override_object_colors)
-		token.color = "#c46a24"
+	icon_suffix = "[rand(1, 4)]"
+	..()
+	if(current_overmap.override_object_colors)
+		token.color = current_overmap.hazard_secondary_color
 	current_overmap.post_edit_token_state(src)
 
 /datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)
