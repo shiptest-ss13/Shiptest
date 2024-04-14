@@ -47,7 +47,7 @@
 					var/mob/living/carbon/victim = looking
 					var/obj/effect/anomaly/tvstatic/planetary/expansion
 					expansion = new(get_turf(victim))
-					visible_message("<span class='warning'> The static overtakes [victim], [expansion] taking their place!</span>")
+					visible_message("<span class='warning'> The static overtakes [victim], taking their place!</span>")
 					victim.death()
 					expansion.stored_mob = victim
 					victim.forceMove(expansion)
@@ -122,11 +122,11 @@
 	immobile = TRUE
 
 /obj/effect/anomaly/tvstatic/planetary/Initialize(mapload)
-	var/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/vicspawner = new (src)
-	var/mob/living/carbon/victim = (vicspawner.spawned_mob_ref)?.resolve()
-	visible_message("<span class='warning'> The static overtakes [victim], [src] taking their place!</span>")
-	src.stored_mob = victim
-	victim.forceMove(src)
+	if(prob(25) & !stored_mob)
+		var/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/vicspawner = new (src)
+		var/mob/living/carbon/victim = (vicspawner.spawned_mob_ref)?.resolve()
+		src.stored_mob = victim
+		victim.forceMove(src)
 	. = ..()
 
 /obj/effect/particle_effect/staticball
