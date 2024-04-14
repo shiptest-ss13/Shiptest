@@ -122,8 +122,11 @@
 	immobile = TRUE
 
 /obj/effect/anomaly/tvstatic/planetary/Initialize(mapload)
-	if(prob(25))
-		stored_mob = /obj/effect/mob_spawn/human/corpse/damaged
+	var/obj/effect/mob_spawn/human/corpse/damaged/legioninfested/vicspawner = new (src)
+	var/mob/living/carbon/victim = (vicspawner.spawned_mob_ref)?.resolve()
+	visible_message("<span class='warning'> The static overtakes [victim], [src] taking their place!</span>")
+	src.stored_mob = victim
+	victim.forceMove(src)
 	. = ..()
 
 /obj/effect/particle_effect/staticball
