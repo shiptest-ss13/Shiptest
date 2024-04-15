@@ -7,7 +7,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	obj_flags = UNIQUE_RENAME
 	block_chance = 25
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -58,7 +58,6 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=22, icon_wielded="[base_icon_state]1")
 
-
 /obj/item/melee/sword/katana
 	name = "katana"
 	desc = "Woefully underpowered in D20."
@@ -92,7 +91,6 @@
 	item_state = "sabre"
 	force = 15
 	throwforce = 10
-	w_class = WEIGHT_CLASS_BULKY
 	block_chance = 60
 	armour_penetration = 75
 	attack_verb = list("slashed", "cut")
@@ -196,7 +194,6 @@
 	icon_state = "supermatter_sword"
 	item_state = "supermatter_sword"
 	slot_flags = null
-	w_class = WEIGHT_CLASS_BULKY
 	force = 0.001
 	armour_penetration = 1000
 	var/obj/machinery/power/supermatter_crystal/shard
@@ -331,7 +328,6 @@
 	throw_speed = 4
 	sharpness = IS_SHARP
 	attack_verb = list("cut", "sliced", "diced")
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/wielded = FALSE // track wielded status on item
@@ -381,7 +377,6 @@
 	desc = "Glorious nippon steel, folded 1000 times."
 	icon_state = "weeb_blade"
 	item_state = "weeb_blade"
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	sharpness = IS_SHARP_ACCURATE
 	force = 25
@@ -417,7 +412,6 @@
 	icon = 'icons/obj/weapon/sword.dmi'
 	icon_state = "weeb_sheath"
 	item_state = "sheath"
-	w_class = WEIGHT_CLASS_BULKY
 	force = 3
 	var/primed = FALSE //Prerequisite to anime bullshit
 	// ##The anime bullshit## - Mostly stolen from action/innate/dash
