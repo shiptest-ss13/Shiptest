@@ -338,7 +338,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(35))
-				new /obj/item/staff/bostaff(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 				new /mob/living/simple_animal/hostile/skeleton(loc)
 			if(prob(45))
