@@ -7,6 +7,7 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/radio/headset/headset_cent/alt
+	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/centcom/ert/post_equip(mob/living/carbon/human/human, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -27,8 +28,7 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/ert
 	belt = /obj/item/storage/belt/security/full
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/melee/baton/loaded=1)
 	l_pocket = /obj/item/switchblade
 
 /datum/outfit/centcom/ert/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -45,9 +45,7 @@
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/pulse/pistol/loyalpin=1)
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/pulse/pistol/loyalpin=1)
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 
 /datum/outfit/centcom/ert/security
@@ -60,9 +58,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	back = /obj/item/storage/backpack/ert/security
 	belt = /obj/item/storage/belt/security/full
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/handcuffs=1,
-		/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/storage/box/handcuffs=1, /obj/item/melee/baton/loaded=1)
 
 /datum/outfit/centcom/ert/security/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -79,9 +75,7 @@
 
 	suit_store = /obj/item/gun/energy/pulse/carbine/loyalpin
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/handcuffs=1,\
-		/obj/item/melee/baton/loaded=1)
+	backpack_contents = list(/obj/item/storage/box/handcuffs=1, /obj/item/melee/baton/loaded=1)
 
 /datum/outfit/centcom/ert/medic
 	name = "ERT Medic"
@@ -93,10 +87,8 @@
 	back = /obj/item/storage/backpack/ert/medical
 	belt = /obj/item/storage/belt/medical
 	r_hand = /obj/item/storage/firstaid/regular
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/reagent_containers/hypospray/combat=1,\
-		/obj/item/gun/medbeam=1)
+	box = /obj/item/storage/box/survival/medical
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/reagent_containers/hypospray/combat=1, /obj/item/gun/medbeam=1)
 
 /datum/outfit/centcom/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -112,11 +104,7 @@
 	name = "ERT Medic - High Alert"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
-		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
-		/obj/item/gun/medbeam=1)
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/pulse/pistol/loyalpin=1, /obj/item/reagent_containers/hypospray/combat/nanites=1, /obj/item/gun/medbeam=1)
 
 /datum/outfit/centcom/ert/engineer
 	name = "ERT Engineer"
@@ -129,9 +117,8 @@
 	belt = /obj/item/storage/belt/utility/full
 	l_pocket = /obj/item/rcd_ammo/large
 	r_hand = /obj/item/storage/firstaid/regular
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/construction/rcd/loaded=1)
+	box = /obj/item/storage/box/survival/engineer
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/construction/rcd/loaded=1)
 
 
 /datum/outfit/centcom/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -148,10 +135,7 @@
 	name = "ERT Engineer - High Alert"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
-		/obj/item/construction/rcd/combat=1)
+	backpack_contents = list(/obj/item/melee/baton/loaded=1, /obj/item/gun/energy/pulse/pistol/loyalpin=1, /obj/item/construction/rcd/combat=1)
 
 // official
 
@@ -199,12 +183,7 @@
 	r_pocket = /obj/item/grenade/chem_grenade/cleaner
 	l_pocket = /obj/item/grenade/chem_grenade/cleaner
 	l_hand = /obj/item/storage/bag/trash/bluespace
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/lights/mixed=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/mop/advanced=1,\
-		/obj/item/reagent_containers/glass/bucket=1,\
-		/obj/item/grenade/clusterbuster/cleaner=1)
+	backpack_contents = list(/obj/item/storage/box/lights/mixed=1, /obj/item/melee/baton/loaded=1, /obj/item/mop/advanced=1, /obj/item/reagent_containers/glass/bucket=1, /obj/item/grenade/clusterbuster/cleaner=1)
 
 /datum/outfit/centcom/ert/janitor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -221,10 +200,7 @@
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	r_hand = /obj/item/reagent_containers/spray/chemsprayer/janitor
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/storage/box/lights/mixed=1,\
-		/obj/item/melee/baton/loaded=1,\
-		/obj/item/grenade/clusterbuster/cleaner=3)
+	backpack_contents = list(/obj/item/storage/box/lights/mixed=1, /obj/item/melee/baton/loaded=1, /obj/item/grenade/clusterbuster/cleaner=3)
 
 /datum/outfit/centcom/centcom_intern
 	name = "CentCom Intern"
@@ -240,7 +216,6 @@
 	l_pocket = /obj/item/ammo_box/magazine/illestren_a850r
 	r_pocket = /obj/item/ammo_box/magazine/illestren_a850r
 	id = /obj/item/card/id/centcom
-	backpack_contents = list(/obj/item/storage/box/survival = 1)
 /datum/outfit/centcom/centcom_intern/unarmed
 	name = "CentCom Intern (Unarmed)"
 	belt = null
@@ -281,10 +256,7 @@
 	id = /obj/item/card/id/ert
 	suit = /obj/item/clothing/suit/armor/vest/marine
 	back = /obj/item/storage/backpack/ert
-	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
-		/obj/item/gun_voucher/nanotrasen = 1
-)
+	backpack_contents = list(/obj/item/gun_voucher/nanotrasen = 1)
 	belt = /obj/item/storage/belt/military/assault
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 	l_pocket = /obj/item/kitchen/knife/combat
@@ -331,15 +303,10 @@
 	back = /obj/item/storage/backpack/ert/medical
 	l_pocket = /obj/item/healthanalyzer
 	head = /obj/item/clothing/head/helmet/marine/medic
-	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
-		/obj/item/gun_voucher/nanotrasen = 1,
-		/obj/item/reagent_containers/hypospray/combat = 1,
-		/obj/item/storage/firstaid/regular = 1,
-		/obj/item/storage/firstaid/advanced = 1
-)
+	backpack_contents = list(/obj/item/gun_voucher/nanotrasen = 1, /obj/item/reagent_containers/hypospray/combat = 1, /obj/item/storage/firstaid/regular = 1, /obj/item/storage/firstaid/advanced = 1)
 	belt = /obj/item/storage/belt/medical/paramedic
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/centcom/ert/marine/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -358,15 +325,12 @@
 	suit = /obj/item/clothing/suit/armor/vest/marine/medium
 	head = /obj/item/clothing/head/helmet/marine/engineer
 	back = /obj/item/storage/backpack/ert/engineer
-	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
-		/obj/item/gun_voucher/nanotrasen = 1,
-		/obj/item/rcd_ammo/large = 2,
-		)
+	backpack_contents = list(/obj/item/gun_voucher/nanotrasen = 1, /obj/item/rcd_ammo/large = 2)
 	r_hand = /obj/item/deployable_turret_folded
 	uniform = /obj/item/clothing/under/rank/security/officer/military/eng
 	belt = /obj/item/storage/belt/utility/full/ert
 	glasses = /obj/item/clothing/glasses/hud/diagnostic/sunglasses
+	box = /obj/item/storage/box/survival/engineer
 
 /datum/outfit/centcom/ert/marine/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -397,7 +361,6 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	back = /obj/item/storage/backpack/ert/security
 
-	box = /obj/item/storage/box/survival/security
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/kitchen/knife/combat
 

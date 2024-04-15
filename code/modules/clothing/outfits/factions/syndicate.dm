@@ -50,8 +50,6 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
-	box = /obj/item/storage/box/survival/syndie
-
 /datum/outfit/job/syndicate/assistant/gorlex
 	name = "Syndicate - Junior Agent (Gorlex Marauders)"
 
@@ -91,8 +89,6 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/syndicate/assistant/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()
@@ -207,8 +203,6 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
-	box = /obj/item/storage/box/survival/syndie
-
 /datum/outfit/job/syndicate/bartender/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	assign_codename(H)
@@ -260,8 +254,6 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/syndicate/captain/aclf
 	name = "Captain (ACLF)"
@@ -549,8 +541,6 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
-	box = /obj/item/storage/box/survival/syndie
-
 /datum/outfit/job/syndicate/hos/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	assign_codename(H)
@@ -603,6 +593,7 @@
 	shoes = /obj/item/clothing/shoes/sneakers/white
 	alt_suit = /obj/item/clothing/suit/apron/surgical
 	l_hand = /obj/item/storage/firstaid/medical
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/syndicate/doctor/suns
 	name = "Syndicate - Medical Doctor (SUNS)"
@@ -635,7 +626,7 @@
 	r_pocket = /obj/item/kitchen/knife/combat/survival
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
-	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
+	backpack_contents = list(/obj/item/storage/firstaid/medical,)
 
 //paramedics
 
@@ -696,8 +687,6 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/med
 	courierbag = /obj/item/storage/backpack/messenger/sec
 
-	box = /obj/item/storage/box/survival/syndie
-
 /datum/outfit/job/syndicate/paramedic/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()
 	assign_codename(H)
@@ -716,6 +705,7 @@
 	alt_uniform = null
 	l_hand = /obj/item/clipboard
 	pda_slot = ITEM_SLOT_BELT
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/syndicate/psychologist/suns
 	name = "Syndicate - Psychologist (SUNS)"
@@ -847,8 +837,6 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	courierbag = /obj/item/storage/backpack/messenger/sec
-
-	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/syndicate/security/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()
@@ -1002,8 +990,6 @@
 	l_pocket = null
 	r_pocket = null
 	implants = list(/obj/item/implant/weapons_auth)
-
-	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/syndicate/engineer/twink/post_equip(mob/living/carbon/human/H)
 	. = ..()

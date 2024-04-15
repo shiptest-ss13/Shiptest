@@ -74,7 +74,7 @@
 	l_pocket = null
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
-	box = /obj/item/storage/box/survival
+	box = /obj/item/storage/box/survival/security
 	backpack_contents = list(/obj/item/crowbar/power)
 
 /datum/outfit/job/solgov/representative
@@ -174,6 +174,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id
 	l_hand = /obj/item/clipboard
+	box = /obj/item/storage/box/survival/medical
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med

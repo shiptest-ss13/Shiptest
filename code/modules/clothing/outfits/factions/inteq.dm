@@ -38,6 +38,7 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	jobtype = /datum/job/captain
 	id = /obj/item/card/id/gold
+	box = /obj/item/storage/box/survival/security
 
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
 
@@ -88,10 +89,10 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/storage/belt/utility/full
+	belt = /obj/item/storage/belt/utility/chief/full
+	box = /obj/item/storage/box/survival/engineer
 
 	id = /obj/item/card/id/silver
-	belt = /obj/item/storage/belt/utility/chief/full
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
 
@@ -110,6 +111,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	ears = /obj/item/radio/headset/headset_medsec/alt
+	box = /obj/item/storage/box/survival/medical
 
 	suit_store = /obj/item/flashlight/pen
 	backpack_contents = list(/obj/item/roller=1)
@@ -138,6 +140,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
 	gloves = /obj/item/clothing/gloves/combat
+	box = /obj/item/storage/box/survival/security
 
 	backpack = /obj/item/storage/backpack/messenger/inteq
 	satchel = /obj/item/storage/backpack/messenger/inteq
@@ -179,6 +182,7 @@
 	shoes = /obj/item/clothing/shoes/combat
 	belt = /obj/item/storage/belt/utility/full/engi
 	r_pocket = /obj/item/t_scanner
+	box = /obj/item/storage/box/survival/engineer
 
 //wardens
 
@@ -197,6 +201,7 @@
 	dcoat = /obj/item/clothing/suit/hooded/wintercoat/security/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/combat
+	box = /obj/item/storage/box/survival/security
 	suit_store = null
 
 	courierbag = /obj/item/storage/backpack/messenger/inteq
@@ -218,6 +223,7 @@
 	alt_suit = /obj/item/clothing/suit/armor/inteq/corpsman
 	dcoat = /obj/item/clothing/suit/armor/hos/inteq
 	r_pocket = /obj/item/pda/medical
+	box = /obj/item/storage/box/survival/medical
 
 	chameleon_extras = null
 

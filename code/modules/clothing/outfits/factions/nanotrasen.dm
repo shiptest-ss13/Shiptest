@@ -411,7 +411,6 @@
 	satchel = /obj/item/storage/backpack/satchel/med
 	duffelbag = /obj/item/storage/backpack/duffelbag/med
 	courierbag = /obj/item/storage/backpack/messenger/med
-	box = /obj/item/storage/box/survival/medical
 
 // Cargo Tech
 

@@ -13,6 +13,7 @@
 	id = /obj/item/card/id
 	belt = /obj/item/storage/belt/security/webbing/inteq/skm
 	back = /obj/item/storage/backpack/fireproof
+	box = /obj/item/storage/box/survival/security
 
 	l_pocket = /obj/item/kitchen/knife/combat
 	r_pocket = /obj/item/flashlight/seclite
@@ -36,6 +37,7 @@
 	uniform = /obj/item/clothing/under/syndicate/inteq/corpsman
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
 	suit_store = null
+	box = /obj/item/storage/box/survival/medical
 
 	l_pocket = /obj/item/healthanalyzer
 

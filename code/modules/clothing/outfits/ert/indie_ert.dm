@@ -13,6 +13,7 @@
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/security/full
 	id = /obj/item/card/id
+	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/job/independent/ert/post_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
 	. = ..()
@@ -36,6 +37,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/paramedic
 	back = /obj/item/storage/backpack/medic
 	belt = /obj/item/storage/belt/medical/webbing/paramedic
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/independent/ert/firefighter
 	name = "ERT - Independent Firefighter (Standard)"
@@ -51,6 +53,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	gloves = /obj/item/clothing/gloves/color/black
 	back = /obj/item/tank/internals/oxygen/red
+	box = /obj/item/storage/box/survival/engineer
 
 	l_pocket = /obj/item/crowbar/red
 	r_pocket = /obj/item/radio
@@ -65,6 +68,7 @@
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	glasses = /obj/item/clothing/glasses/hud/health
 	suit_store = /obj/item/tank/internals/emergency_oxygen
+	box = /obj/item/storage/box/survival/medical
 
 	l_pocket = /obj/item/extinguisher/mini
 

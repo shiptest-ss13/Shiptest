@@ -13,7 +13,7 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	back = /obj/item/storage/backpack
 
-	box = /obj/item/storage/box/survival
+	box = /obj/item/storage/box/survival/security
 	l_hand = /obj/item/energyhalberd
 
 
@@ -29,6 +29,7 @@
 	head = /obj/item/clothing/head/solgov
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
+	box = /obj/item/storage/box/survival
 	suit = null
 	suit_store = null
 	mask = null

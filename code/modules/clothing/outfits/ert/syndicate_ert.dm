@@ -13,6 +13,7 @@
 	head = /obj/item/clothing/head/helmet/operator
 	back = /obj/item/storage/backpack/security
 	belt = /obj/item/storage/belt/military/c20r
+	box = /obj/item/storage/box/survival/syndie
 
 	r_pocket = /obj/item/kitchen/knife/combat
 	l_pocket = /obj/item/grenade/frag
@@ -59,6 +60,7 @@
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/evil
 	suit_store = /obj/item/gun/ballistic/automatic/pistol
+	box = /obj/item/storage/box/survival/medical
 
 	l_pocket = /obj/item/radio
 
@@ -136,6 +138,7 @@
 	l_pocket = /obj/item/kitchen/knife/combat/survival
 	r_pocket = /obj/item/pinpointer/crew
 	accessory = /obj/item/clothing/accessory/holster/marine
+	box = /obj/item/storage/box/survival/medical
 
 	backpack_contents = list(/obj/item/storage/firstaid/tactical=1, /obj/item/holosign_creator/medical=1, /obj/item/radio=1)
 

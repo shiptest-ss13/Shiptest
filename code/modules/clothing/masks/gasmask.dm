@@ -4,7 +4,7 @@
 	icon_state = "gas_alt"
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | ALLOWINTERNALS
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	item_state = "gas_alt"
 	gas_transfer_coefficient = 0.01
 	permeability_coefficient = 0.01
@@ -17,7 +17,6 @@
 	icon_state = "gas_atmos"
 	item_state = "gas_atmos"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 20, "acid" = 10)
-	w_class = WEIGHT_CLASS_SMALL
 	gas_transfer_coefficient = 0.001 //cargo cult time, this var does nothing but just in case someone actually makes it do something
 	permeability_coefficient = 0.001
 	resistance_flags = FIRE_PROOF
@@ -90,7 +89,6 @@
 	icon_state = "clown"
 	item_state = "clown_hat"
 	dye_color = "clown"
-	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 	actions_types = list(/datum/action/item_action/adjust)
@@ -146,7 +144,6 @@
 	clothing_flags = ALLOWINTERNALS
 	icon_state = "mime"
 	item_state = "mime"
-	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = MASKCOVERSEYES
 	resistance_flags = FLAMMABLE
 	actions_types = list(/datum/action/item_action/adjust)

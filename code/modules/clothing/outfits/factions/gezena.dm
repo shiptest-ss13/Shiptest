@@ -26,6 +26,7 @@
 	uniform = /obj/item/clothing/under/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/engi
+	box = /obj/item/storage/box/survival/engineer
 
 /datum/outfit/job/gezena/doctor
 	name = "PGF - Navy Doctor"
@@ -35,6 +36,7 @@
 	uniform = /obj/item/clothing/under/gezena
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
+	box = /obj/item/storage/box/survival/medical
 
 /datum/outfit/job/gezena/security
 	name = "PGF - Marine"
@@ -44,6 +46,7 @@
 	uniform = /obj/item/clothing/under/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena
+	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/job/gezena/hos
 	name = "PGF - Marine Sergeant"
@@ -53,6 +56,7 @@
 	uniform = /obj/item/clothing/under/gezena/marine
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	box = /obj/item/storage/box/survival/security
 
 /datum/outfit/job/gezena/captain
 	name = "PGF - Captain"
@@ -62,6 +66,7 @@
 	uniform = /obj/item/clothing/under/gezena/captain
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/captain
+	box = /obj/item/storage/box/survival/security
 
 //Adminspawn Roles (for events):
 
@@ -143,6 +148,7 @@
 	shoes = /obj/item/clothing/shoes/combat/gezena
 	neck = /obj/item/clothing/neck/cloak/gezena/med
 	r_hand = /obj/item/gun/energy/kalix/pgf
+	box = /obj/item/storage/box/survival/medical
 
 
 /datum/outfit/job/gezena/captain/geared
