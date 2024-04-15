@@ -186,20 +186,6 @@
 	time = 50
 	category = CAT_PRIMAL
 
-/datum/crafting_recipe/crystalamulet
-	name = "Crystal Amulet"
-	result = /obj/item/clothing/neck/crystal_amulet
-	time = 4 SECONDS
-	reqs = list(/obj/item/strange_crystal = 3)
-	category = CAT_PRIMAL
-
-/datum/crafting_recipe/crystalspear
-	name = "Crystal Spear"
-	result = /obj/item/spear/crystal
-	time = 4 SECONDS
-	reqs = list(/obj/item/strange_crystal = 2)
-	category = CAT_PRIMAL
-
 /datum/crafting_recipe/mushroom_bowl
 	name = "Mushroom Bowl"
 	result = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
