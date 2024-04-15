@@ -53,7 +53,7 @@
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
 	//this should be a plasma spear or worse.
 	force = 11
-	throwforce = 19
+	throwforce = 21
 
 /obj/item/spear/bonespear/ComponentInitialize()
 	. = ..()

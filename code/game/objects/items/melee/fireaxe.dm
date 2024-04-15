@@ -51,13 +51,22 @@
 			W.obj_destruction("axe")
 
 /obj/item/melee/axe/fire  // DEM AXES MAN, marker -Agouri
-	icon_state = "fireaxe0"
-	base_icon_state = "fireaxe"
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
+	icon_state = "fireaxe0"
+	base_icon_state = "fireaxe"
 
 /obj/item/melee/axe/bone  // Blatant imitation of the fireaxe, but made out of bone.
-	icon_state = "bone_axe0"
-	base_icon_state = "bone_axe"
 	name = "bone axe"
 	desc = "A large, vicious axe crafted out of several sharpened bone plates and crudely tied together. Made of monsters, by killing monsters, for killing monsters."
+	icon_state = "bone_axe0"
+	base_icon_state = "bone_axe"
+
+/obj/item/melee/axe/scrap
+	name = "scrap axe"
+	desc = "Oversided and with a pretty dull blade, its decent against armour"
+	armour_penetration = 10
+
+/obj/item/melee/axe/scrap/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=22, icon_wielded="[base_icon_state]1")

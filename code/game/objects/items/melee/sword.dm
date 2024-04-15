@@ -30,13 +30,34 @@
 	AddComponent(/datum/component/butchering, 40, 105)
 
 /obj/item/melee/sword/bone
-	name = "Bone Sword"
+	name = "bone sword"
 	desc = "Jagged pieces of bone are tied to what looks like a goliaths femur."
 	icon_state = "bone_sword"
 	item_state = "bone_sword"
 	force = 15
 	throwforce = 10
 	armour_penetration = 15
+
+/obj/item/melee/sword/scrap
+	name = "scrap sword"
+	desc = "A jagged and painful weapon only effective on targets without an armour
+	icon_state = "scrap_sword"
+	force = 24
+	throwforce = 10
+	armour_penetration = -35
+	max_integrity = 100
+
+/obj/item/melee/sword/mass
+	name = "mass produced machete"
+	desc = "A middle ground between a machete and a short sword. A simple construction of stamped steel but its so cheap its hard to complain. Its right between being a one hand and two handed weapon"
+	force = 20
+	throwforce = 15
+	max_integrity = 50
+
+/obj/item/melee/sword/mass/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=22, icon_wielded="[base_icon_state]1")
+
 
 /obj/item/melee/sword/katana
 	name = "katana"
@@ -51,10 +72,13 @@
 	max_integrity = 200
 
 /obj/item/melee/sword/chainsaw
-	icon_state = "chainswordon"
-	item_state = "chainswordon"
 	name = "sacred chainsaw sword"
 	desc = "Suffer not a heretic to live."
+	icon_state = "chainswordon"
+	item_state = "chainswordon"
+	force = 15
+	throwforce = 10
+	armour_penetration = 25
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
@@ -78,11 +102,6 @@
 /obj/item/melee/sword/sabre/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 95, 5) //fast and effective, but as a sword, it might damage the results.
-
-/obj/item/melee/sword/sabre/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(attack_type == PROJECTILE_ATTACK)
-		final_block_chance = 0 //Don't bring a sword to a gunfight
-	return ..()
 
 /obj/item/melee/sword/sabre/on_enter_storage(datum/component/storage/concrete/S)
 	var/obj/item/storage/belt/sabre/B = S.real_location()
