@@ -22,7 +22,6 @@
 						/obj/item/ship_in_a_bottle,
 						/obj/item/clothing/shoes/clown_shoes/banana_shoes,
 						/obj/item/gun/magic/staff/honk,
-						/obj/item/melee/knife/kitcken/envy,
 						/obj/item/gun/ballistic/revolver/russian/soul,
 						/obj/item/veilrender/vealrender,
 						/obj/item/clothing/suit/armor/ascetic)

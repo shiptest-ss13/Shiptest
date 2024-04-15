@@ -755,7 +755,7 @@
 			if(prob(50))
 				r_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
-					/obj/item/melee/knife/kitcken/letter_opener = 3,
+					/obj/item/melee/knife/letter_opener = 3,
 					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
@@ -764,7 +764,7 @@
 			if(prob(50))
 				l_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
-					/obj/item/melee/knife/kitcken/letter_opener = 3,
+					/obj/item/melee/knife/letter_opener = 3,
 					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1

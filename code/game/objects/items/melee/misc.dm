@@ -22,8 +22,6 @@
 	desc = "A tool used by great men to placate the frothing masses."
 	icon_state = "chain"
 	item_state = "chain"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 10
@@ -52,15 +50,11 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 60, 80) //very imprecise
 
-
-
 /obj/item/melee/curator_whip
 	name = "curator's whip"
 	desc = "Somewhat eccentric and outdated, it still stings like hell to be hit by."
 	icon_state = "whip"
 	item_state = "chain"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 15
 	w_class = WEIGHT_CLASS_NORMAL
@@ -96,7 +90,7 @@
 	overlay.appearance_flags = RESET_COLOR
 	add_overlay(overlay)
 
-/obj/item/melee/knife/kitcken/letter_opener
+/obj/item/melee/knife/letter_opener
 	name = "letter opener"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "letter_opener"

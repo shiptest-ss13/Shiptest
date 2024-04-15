@@ -101,7 +101,7 @@
 	implants = list(/obj/item/implant/mindshield)
 
 	backpack_contents = list(
-		/obj/item/melee/knife/kitcken/letter_opener = 1
+		/obj/item/melee/knife/letter_opener = 1
 	)
 
 /datum/outfit/job/solgov/overseer

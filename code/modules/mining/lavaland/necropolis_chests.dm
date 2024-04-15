@@ -80,8 +80,6 @@
 			new /obj/item/gun/energy/spur(src)
 		if(28)
 			new /obj/item/clothing/suit/armor/ascetic(src)
-		if(29)
-			new /obj/item/melee/knife/kitcken/envy(src)
 
 /obj/structure/closet/crate/necropolis/tendril/greater
 	desc = "It's watching you wearily. It seems terribly bloated."
@@ -155,8 +153,6 @@
 				new /obj/item/gun/energy/spur(src)
 			if(28)
 				new /obj/item/clothing/suit/armor/ascetic(src)
-			if(29)
-				new /obj/item/melee/knife/kitcken/envy(src)
 
 //KA modkit design discs
 /obj/item/disk/design_disk/modkit_disc
