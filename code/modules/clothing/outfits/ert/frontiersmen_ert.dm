@@ -44,7 +44,7 @@
 		suit = pickweight(list(
 		/obj/item/clothing/suit/armor/vest = 5,
 		/obj/item/clothing/suit/armor/vest/bulletproof/frontier = 5,
-		/obj/item/clothing/suit/armor/vest/scrap_armor = 1))
+		/obj/item/clothing/suit/armor/vest/scrap = 1))
 
 	if(prob(30))
 		mask = pickweight(list(

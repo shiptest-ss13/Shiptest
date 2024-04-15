@@ -183,7 +183,7 @@
 
 /datum/crafting_recipe/scrap_armor
 	name = "Scrap Armor"
-	result = /obj/item/clothing/suit/armor/vest/scrap_armor
+	result = /obj/item/clothing/suit/armor/vest/scrap
 	time = 60
 	reqs = list(
 		/obj/item/stack/sheet/metal = 10,

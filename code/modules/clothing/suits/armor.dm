@@ -435,13 +435,6 @@
 	icon_state = "armor_syndie"
 	item_state = "syndiearmor"
 
-/obj/item/clothing/suit/armor/vest/scrap_armor
-	name = "scrap armor"
-	desc = "An 'armor' vest consisting of sheet metal held together with cable. Who thought this was a good idea?"
-	icon_state = "scraparmor"
-	item_state = "scraparmor"
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
-
 /obj/item/clothing/suit/armor/curator
 	name = "treasure hunter's coat"
 	desc = "Both fashionable and lightly armoured, this jacket is favoured by treasure hunters the galaxy over."
