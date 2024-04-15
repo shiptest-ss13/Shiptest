@@ -107,7 +107,7 @@
 				/obj/item/gun/energy/e_gun/mini))
 		if("Melee")
 			r_hand = pickweight(list(
-			/obj/item/kitchen/knife = 15,
+			/obj/item/melee/knife/kitcken = 15,
 			/obj/item/melee/baseball_bat = 10,
 			/obj/item/melee/cleric_mace = 7,
 			/obj/item/roastingstick = 2,
@@ -127,7 +127,7 @@
 	suit_store = /obj/item/gun/ballistic/revolver
 	belt = /obj/item/storage/belt/military/assault
 
-	backpack_contents = list(/obj/item/ammo_box/a357=3, /obj/item/binoculars=1, /obj/item/kitchen/knife/combat/survival)
+	backpack_contents = list(/obj/item/ammo_box/a357=3, /obj/item/binoculars=1, /obj/item/melee/knife/combat/survival)
 
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"

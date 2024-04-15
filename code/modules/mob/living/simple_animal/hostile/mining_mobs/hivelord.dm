@@ -493,7 +493,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
+						/obj/item/melee/knife/combat/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -512,7 +512,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
+						/obj/item/melee/knife/combat/survival = 3,
 						/obj/item/flashlight/seclite = 3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -531,7 +531,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
+						/obj/item/melee/knife/combat/survival = 3,
 						/obj/item/flashlight/seclite = 3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -574,7 +574,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
+						/obj/item/melee/knife/combat/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -593,7 +593,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
+						/obj/item/melee/knife/combat/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -612,7 +612,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/kitchen/knife/combat/survival = 3,
+						/obj/item/melee/knife/combat/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -666,7 +666,7 @@
 			if(prob(30))
 				r_pocket = /obj/item/restraints/legcuffs/bola/watcher
 			if(prob(30))
-				l_pocket = /obj/item/kitchen/knife/combat/bone
+				l_pocket = /obj/item/melee/knife/combat/bone
 		if("Soldier")
 			mob_species = /datum/species/human
 			if(prob(90))
@@ -699,7 +699,7 @@
 						/obj/item/stack/marker_beacon/ten = 3,
 						/obj/item/detective_scanner = 2,
 						/obj/item/extinguisher/mini = 3,
-						/obj/item/kitchen/knife/combat = 3,
+						/obj/item/melee/knife/combat = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/ammo_casing/shotgun = 3,
 						/obj/item/binoculars = 3,
@@ -718,7 +718,7 @@
 						/obj/item/stack/marker_beacon/ten = 3,
 						/obj/item/detective_scanner = 2,
 						/obj/item/extinguisher/mini = 3,
-						/obj/item/kitchen/knife/combat = 3,
+						/obj/item/melee/knife/combat = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/ammo_casing/shotgun = 3,
 						/obj/item/binoculars = 3,
@@ -737,7 +737,7 @@
 						/obj/item/stack/marker_beacon/ten = 3,
 						/obj/item/detective_scanner = 2,
 						/obj/item/extinguisher/mini = 3,
-						/obj/item/kitchen/knife/combat = 3,
+						/obj/item/melee/knife/combat = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/ammo_casing/shotgun = 3,
 						/obj/item/binoculars = 3,
@@ -755,7 +755,7 @@
 			if(prob(50))
 				r_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
-					/obj/item/kitchen/knife/letter_opener = 3,
+					/obj/item/melee/knife/kitcken/letter_opener = 3,
 					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
@@ -764,7 +764,7 @@
 			if(prob(50))
 				l_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
-					/obj/item/kitchen/knife/letter_opener = 3,
+					/obj/item/melee/knife/kitcken/letter_opener = 3,
 					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
@@ -796,9 +796,9 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/mining/primitive
 			if(prob(30))
-				r_pocket = /obj/item/kitchen/knife/combat/bone
+				r_pocket = /obj/item/melee/knife/combat/bone
 			if(prob(30))
-				l_pocket = /obj/item/kitchen/knife/combat/bone
+				l_pocket = /obj/item/melee/knife/combat/bone
 		if("YeOlde")
 			mob_gender = FEMALE
 			uniform = /obj/item/clothing/under/costume/maid
@@ -907,7 +907,7 @@
 			if(prob(25))
 				suit_store = /obj/item/gun/ballistic/shotgun/flamingarrow
 			r_pocket = /obj/item/book/manual/trickwines_4_brewers
-			belt = pick(list(/obj/item/kitchen/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
+			belt = pick(list(/obj/item/melee/knife/hunting = 1, /obj/item/gun/ballistic/derringer = 1))
 			back = /obj/item/storage/backpack/cultpack
 			backpack_contents = list()
 			if(prob(75))

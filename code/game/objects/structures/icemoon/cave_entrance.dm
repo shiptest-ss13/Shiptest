@@ -859,7 +859,6 @@ GLOBAL_LIST_INIT(ore_probability, list(
 		if(16)//the backroom freezer
 			visible_message("<span class='userdanger'>The faint hallogen glow of a faraway kitchen greets you.</span>")
 			if(prob(45))
-				new /obj/item/kitchen/knife/bloodletter(loc)
 				new /mob/living/simple_animal/hostile/killertomato(loc)
 			if(prob(55))
 				new /obj/item/clothing/gloves/butchering(loc)
@@ -880,7 +879,7 @@ GLOBAL_LIST_INIT(ore_probability, list(
 				new /obj/item/reagent_containers/food/snacks/burger/roburgerbig(loc)
 				new /mob/living/simple_animal/hostile/killertomato(loc)
 			if(prob(35))
-				new /obj/item/kitchen/knife/butcher(loc)
+				new /obj/item/melee/knife/butcher(loc)
 				new /mob/living/simple_animal/hostile/killertomato(loc)
 			if(prob(35))
 				new /obj/item/flamethrower/full(loc)

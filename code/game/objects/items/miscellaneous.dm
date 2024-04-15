@@ -116,7 +116,7 @@
 /obj/item/storage/box/hero/carphunter/PopulateContents()
 	new /obj/item/clothing/suit/space/hardsuit/carp/old(src)
 	new /obj/item/clothing/mask/gas/carp(src)
-	new /obj/item/kitchen/knife/hunting(src)
+	new /obj/item/melee/knife/hunting(src)
 	new /obj/item/storage/box/papersack/meat(src)
 	new /obj/item/fishing_rod(src)
 	new /obj/item/fishing_line(src)

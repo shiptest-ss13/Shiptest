@@ -61,7 +61,7 @@
 	var/gunlight_state = "flight"
 
 	var/can_bayonet = FALSE //if a bayonet can be added or removed if it already has one.
-	var/obj/item/kitchen/knife/bayonet
+	var/obj/item/melee/knife/kitcken/bayonet
 	var/knife_x_offset = 0
 	var/knife_y_offset = 0
 
@@ -499,8 +499,8 @@
 			alight = new(src)
 			if(loc == user)
 				alight.Grant(user)
-	else if(istype(I, /obj/item/kitchen/knife))
-		var/obj/item/kitchen/knife/K = I
+	else if(istype(I, /obj/item/melee/knife/kitcken))
+		var/obj/item/melee/knife/kitcken/K = I
 		if(!can_bayonet || !K.bayonet || bayonet) //ensure the gun has an attachment point available, and that the knife is compatible with it.
 			return ..()
 		if(!user.transferItemToLoc(I, src))

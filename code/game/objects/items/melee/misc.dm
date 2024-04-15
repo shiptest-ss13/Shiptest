@@ -96,7 +96,7 @@
 	overlay.appearance_flags = RESET_COLOR
 	add_overlay(overlay)
 
-/obj/item/kitchen/knife/letter_opener
+/obj/item/melee/knife/kitcken/letter_opener
 	name = "letter opener"
 	icon = 'icons/obj/items.dmi'
 	icon_state = "letter_opener"
