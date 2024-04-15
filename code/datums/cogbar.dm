@@ -14,19 +14,20 @@
 	/// The blank image that overlaps the cog - hides it from the source user
 	var/image/blank
 	/// The offset of the icon
-	var/offset_y
+	//var/offset_y
 
 
 /datum/cogbar/New(mob/user)
 	src.user = user
 	src.user_client = user.client
 
-	var/list/icon_offsets = user.get_oversized_icon_offsets()
-	offset_y = icon_offsets["y"]
+//Porting oversized icon offsets later, they have too many other unported dependencies. sorry zephyr
+	//var/list/icon_offsets = user.get_oversized_icon_offsets()
+	//offset_y = icon_offsets["y"]
 
 	add_cog_to_user()
 
-	RegisterSignal(user, COMSIG_QDELETING, PROC_REF(on_user_delete))
+	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(on_user_delete))
 
 
 /datum/cogbar/Destroy()
@@ -52,14 +53,14 @@
 		unique = TRUE,
 		alpha = 0,
 	)
-	cog.pixel_y = world.icon_size + offset_y
+	cog.pixel_y = world.icon_size// + offset_y
 	animate(cog, alpha = 255, time = COGBAR_ANIMATION_TIME)
 
 	if(isnull(user_client))
 		return
 
 	blank = image('icons/blanks/32x32.dmi', cog, "nothing")
-	SET_PLANE_EXPLICIT(blank, HIGH_GAME_PLANE, user)
+	blank.plane = HIGH_GAME_PLANE
 	blank.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	blank.override = TRUE
 
