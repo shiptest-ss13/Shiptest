@@ -255,7 +255,6 @@
 /obj/item/melee/transforming/energy/ctf
 	name = "energy sword"
 	desc = "That cable over there, I'm going to cut it."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "plasmasword0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'

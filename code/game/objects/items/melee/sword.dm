@@ -356,3 +356,169 @@
 				owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
 				return 1
 	return 0
+
+/obj/item/melee/sword/weebstick
+	name = "Weeb Stick"
+	desc = "Glorious nippon steel, folded 1000 times."
+	icon_state = "weeb_blade"
+	item_state = "weeb_blade"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	sharpness = IS_SHARP_ACCURATE
+	force = 25
+	throw_speed = 4
+	throw_range = 5
+	throwforce = 12
+	block_chance = 20
+	armour_penetration = 50
+	hitsound = 'sound/weapons/anime_slash.ogg'
+
+/obj/item/melee/sword/weebstick/Initialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 25, 90, 5) //Not made for scalping victims, but will work nonetheless
+
+/obj/item/melee/sword/weebstick/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(attack_type == PROJECTILE_ATTACK)
+		final_block_chance = block_chance / 2 //Pretty good...
+	return ..()
+
+/obj/item/melee/sword/weebstick/on_exit_storage(datum/component/storage/concrete/S)
+	var/obj/item/storage/belt/weebstick/B = S.real_location()
+	if(istype(B))
+		playsound(B, 'sound/items/unsheath.ogg', 25, TRUE)
+
+/obj/item/melee/sword/weebstick/on_enter_storage(datum/component/storage/concrete/S)
+	var/obj/item/storage/belt/weebstick/B = S.real_location()
+	if(istype(B))
+		playsound(B, 'sound/items/sheath.ogg', 25, TRUE)
+
+/obj/item/storage/belt/weebstick
+	name = "nanoforged blade sheath"
+	desc = "It yearns to bath in the blood of your enemies... but you hold it back!"
+	icon = 'icons/obj/weapon/sword.dmi'
+	icon_state = "weeb_sheath"
+	item_state = "sheath"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 3
+	var/primed = FALSE //Prerequisite to anime bullshit
+	// ##The anime bullshit## - Mostly stolen from action/innate/dash
+	var/dash_sound = 'sound/weapons/unsheathed_blade.ogg'
+	var/beam_effect = "blood_beam"
+	var/phasein = /obj/effect/temp_visual/dir_setting/cult/phase
+	var/phaseout = /obj/effect/temp_visual/dir_setting/cult/phase
+
+/obj/item/storage/belt/weebstick/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.use_sound = null
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.set_holdable(list(
+		/obj/item/melee/sword/weebstick
+		))
+
+/obj/item/storage/belt/weebstick/examine(mob/user)
+	. = ..()
+	if(length(contents))
+		. += "<span class='notice'>Use [src] in-hand to prime for an opening strike."
+		. += "<span class='info'>Alt-click it to quickly draw the blade.</span>"
+
+/obj/item/storage/belt/weebstick/AltClick(mob/user)
+	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)) || primed)
+		return
+	if(length(contents))
+		var/obj/item/I = contents[1]
+		playsound(user, dash_sound, 25, TRUE)
+		user.visible_message("<span class='notice'>[user] swiftly draws \the [I].</span>", "<span class='notice'>You draw \the [I].</span>")
+		user.put_in_hands(I)
+		update_appearance()
+	else
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+
+/obj/item/storage/belt/weebstick/attack_self(mob/user)
+	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(length(contents))
+		var/datum/component/storage/CP = GetComponent(/datum/component/storage)
+		if(primed)
+			CP.locked = FALSE
+			playsound(user, 'sound/items/sheath.ogg', 25, TRUE)
+			to_chat(user, "<span class='notice'>You return your stance.</span>")
+			primed = FALSE
+			update_appearance()
+		else
+			CP.locked = TRUE //Prevents normal removal of the blade while primed
+			playsound(user, 'sound/items/unsheath.ogg', 25, TRUE)
+			user.visible_message("<span class='warning'>[user] grips the blade within [src] and primes to attack.</span>", "<span class='warning'>You take an opening stance...</span>", "<span class='warning'>You hear a weapon being drawn...</span>")
+			primed = TRUE
+			update_appearance()
+	else
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+
+/obj/item/storage/belt/weebstick/afterattack(atom/A, mob/living/user, proximity_flag, params)
+	. = ..()
+	if(primed && length(contents))
+		if(!(A in view(user.client.view, user)))
+			return
+		var/obj/item/I = contents[1]
+		if(!user.put_in_inactive_hand(I))
+			to_chat(user, "<span class='warning'>You need a free hand!</span>")
+			return
+		var/datum/component/storage/CP = GetComponent(/datum/component/storage)
+		CP.locked = FALSE
+		primed = FALSE
+		update_appearance()
+		primed_attack(A, user)
+		if(CanReach(A, I))
+			I.melee_attack_chain(user, A, params)
+		user.swap_hand()
+
+/obj/item/storage/belt/weebstick/proc/primed_attack(atom/target, mob/living/user)
+	var/turf/end = get_turf(user)
+	var/turf/start = get_turf(user)
+	var/obj/spot1 = new phaseout(start, user.dir)
+	var/halt = FALSE
+	// Stolen dash code
+	for(var/T in getline(start, get_turf(target)))
+		var/turf/tile = T
+		for(var/mob/living/victim in tile)
+			if(victim != user)
+				playsound(victim, 'sound/weapons/anime_slash.ogg', 10, TRUE)
+				victim.take_bodypart_damage(15)
+		// Unlike actual ninjas, we stop noclip-dashing here.
+		if(isclosedturf(T))
+			halt = TRUE
+		for(var/obj/O in tile)
+			// We ignore mobs as we are cutting through them
+			if(!O.CanPass(user, tile))
+				halt = TRUE
+		if(halt)
+			break
+		else
+			end = T
+	user.forceMove(end) // YEET
+	playsound(start, dash_sound, 35, TRUE)
+	var/obj/spot2 = new phasein(end, user.dir)
+	spot1.Beam(spot2, beam_effect, time=20)
+	user.visible_message("<span class='warning'>In a flash of red, [user] draws [user.p_their()] blade!</span>", "<span class='notice'>You dash forward while drawing your weapon!</span>", "<span class='warning'>You hear a blade slice through the air at impossible speeds!</span>")
+
+/obj/item/storage/belt/weebstick/update_icon_state()
+	icon_state = "weeb_sheath"
+	item_state = "sheath"
+	if(contents.len)
+		if(primed)
+			icon_state += "-primed"
+		else
+			icon_state += "-blade"
+		item_state += "-sabre"
+	return ..()
+
+/obj/item/storage/belt/weebstick/PopulateContents()
+	//Time to generate names now that we have the sword
+	var/n_title = pick(GLOB.ninja_titles)
+	var/n_name = pick(GLOB.ninja_names)
+	var/obj/item/melee/sword/weebstick/sword = new /obj/item/melee/sword/weebstick(src)
+	sword.name = "[n_title] blade of clan [n_name]"
+	name = "[n_title] scabbard of clan [n_name]"
+	update_appearance()
