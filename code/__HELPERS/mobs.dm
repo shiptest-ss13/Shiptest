@@ -243,7 +243,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			return "unknown"
 
 ///Timed action involving two mobs, the user and the target.
-/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE)
+/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE, hidden = FALSE)
 	if(!user || !target)
 		return FALSE
 
@@ -263,8 +263,11 @@ GLOBAL_LIST_EMPTY(species_list)
 	LAZYADD(target.targeted_by, user)
 	var/holding = user.get_active_held_item()
 	var/datum/progressbar/progbar
+	var/datum/cogbar/cog
 	if (progress)
 		progbar = new(user, time, target)
+		if(!hidden && time >= 1 SECONDS)
+			cog = new(user)
 
 	var/endtime = world.time+time
 	var/starttime = world.time
@@ -293,6 +296,8 @@ GLOBAL_LIST_EMPTY(species_list)
 			break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
+
+	cog?.remove()
 	if(!QDELETED(target))
 		LAZYREMOVE(user.do_afters, target)
 		LAZYREMOVE(target.targeted_by, user)
