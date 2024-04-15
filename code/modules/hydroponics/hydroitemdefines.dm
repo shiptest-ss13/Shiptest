@@ -59,7 +59,7 @@
 /obj/item/cultivator
 	name = "cultivator"
 	desc = "It's used for removing weeds or scratching your back."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "cultivator"
 	item_state = "cultivator"
 	lefthand_file = 'icons/mob/inhands/equipment/hydroponics_lefthand.dmi'

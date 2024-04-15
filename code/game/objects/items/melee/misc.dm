@@ -76,7 +76,7 @@
 /obj/item/melee/cleric_mace
 	name = "cleric mace"
 	desc = "The grandson of the club, yet the grandfather of the baseball bat. Most notably used by holy orders in days past."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "mace_greyscale"
 	item_state = "mace_greyscale"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
@@ -100,7 +100,7 @@
 
 /obj/item/kitchen/knife/letter_opener
 	name = "letter opener"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "letter_opener"
 	desc = "A military combat utility survival knife."
 	embedding = list("pain_mult" = 4, "embed_chance" = 65, "fall_chance" = 10, "ignore_throwspeed_threshold" = TRUE)

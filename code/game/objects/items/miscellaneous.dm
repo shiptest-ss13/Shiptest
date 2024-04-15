@@ -164,7 +164,7 @@
 /obj/item/skub
 	desc = "It's skub."
 	name = "skub"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "skub"
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("skubbed")
@@ -288,7 +288,7 @@
 /obj/item/phone
 	name = "red phone"
 	desc = "Should anything ever go wrong..."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "red_phone"
 	force = 3
 	throwforce = 2
@@ -472,7 +472,7 @@
 /obj/item/extendohand
 	name = "extendo-hand"
 	desc = "Futuristic tech has allowed these classic spring-boxing toys to essentially act as a fully functional hand-operated hand prosthetic."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "extendohand"
 	item_state = "extendohand"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
@@ -519,7 +519,7 @@
 /obj/item/cane
 	name = "cane"
 	desc = "A cane used by a true gentleman. Or a clown."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "cane"
 	item_state = "stick"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
@@ -556,7 +556,7 @@
 /obj/item/staff/stick
 	name = "stick"
 	desc = "A great tool to drag someone else's drinks across the bar."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/items.dmi'
 	icon_state = "cane"
 	item_state = "stick"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
