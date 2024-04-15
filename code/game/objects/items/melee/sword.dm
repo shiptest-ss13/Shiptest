@@ -40,7 +40,7 @@
 
 /obj/item/melee/sword/scrap
 	name = "scrap sword"
-	desc = "A jagged and painful weapon only effective on targets without an armour
+	desc = "A jagged and painful weapon only effective on targets without an armour"
 	icon_state = "scrap_sword"
 	force = 24
 	throwforce = 10
