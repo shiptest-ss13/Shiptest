@@ -493,7 +493,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/melee/knife/combat/survival = 3,
+						/obj/item/melee/knife/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -512,7 +512,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/melee/knife/combat/survival = 3,
+						/obj/item/melee/knife/survival = 3,
 						/obj/item/flashlight/seclite = 3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -531,7 +531,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/melee/knife/combat/survival = 3,
+						/obj/item/melee/knife/survival = 3,
 						/obj/item/flashlight/seclite = 3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -574,7 +574,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/melee/knife/combat/survival = 3,
+						/obj/item/melee/knife/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -593,7 +593,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/melee/knife/combat/survival = 3,
+						/obj/item/melee/knife/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -612,7 +612,7 @@
 						/obj/item/stack/marker_beacon/ten = 2,
 						/obj/item/mining_scanner = 2,
 						/obj/item/extinguisher/mini = 2,
-						/obj/item/melee/knife/combat/survival = 3,
+						/obj/item/melee/knife/survival = 3,
 						/obj/item/flashlight/seclite=3,
 						/obj/item/stack/sheet/sinew = 3,
 						/obj/item/stack/sheet/bone = 3
@@ -666,7 +666,7 @@
 			if(prob(30))
 				r_pocket = /obj/item/restraints/legcuffs/bola/watcher
 			if(prob(30))
-				l_pocket = /obj/item/melee/knife/combat/bone
+				l_pocket = /obj/item/melee/knife/bone
 		if("Soldier")
 			mob_species = /datum/species/human
 			if(prob(90))
@@ -796,9 +796,9 @@
 			if(prob(10))
 				belt = /obj/item/storage/belt/mining/primitive
 			if(prob(30))
-				r_pocket = /obj/item/melee/knife/combat/bone
+				r_pocket = /obj/item/melee/knife/bone
 			if(prob(30))
-				l_pocket = /obj/item/melee/knife/combat/bone
+				l_pocket = /obj/item/melee/knife/bone
 		if("YeOlde")
 			mob_gender = FEMALE
 			uniform = /obj/item/clothing/under/costume/maid

@@ -140,7 +140,7 @@
 	shoes = /obj/item/clothing/shoes/cowboy/black
 	head = /obj/item/clothing/head/beret/sec/frontier/officer
 	gloves = /obj/item/clothing/gloves/combat
-	r_pocket = /obj/item/melee/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 
 // Head of Security
 /datum/outfit/job/frontiersmen/hos
@@ -189,5 +189,5 @@
 	accessory = /obj/item/clothing/accessory/armband/med
 	uniform = /obj/item/clothing/under/rank/security/officer/frontier
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
-	r_pocket = /obj/item/melee/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	backpack_contents = list(/obj/item/storage/firstaid/medical)

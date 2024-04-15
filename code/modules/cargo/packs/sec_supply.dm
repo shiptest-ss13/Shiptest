@@ -67,9 +67,9 @@
 	name = "Survival Knives Crate"
 	desc = "Contains three sharpened survival knives. Each knife guaranteed to fit snugly inside any galactic-standard boot."
 	cost = 500
-	contains = list(/obj/item/melee/knife/combat/survival,
-					/obj/item/melee/knife/combat/survival,
-					/obj/item/melee/knife/combat/survival)
+	contains = list(/obj/item/melee/knife/survival,
+					/obj/item/melee/knife/survival,
+					/obj/item/melee/knife/survival)
 	crate_name = "combat knife crate"
 
 /datum/supply_pack/sec_supply/machete

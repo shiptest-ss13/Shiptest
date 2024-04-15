@@ -682,7 +682,7 @@ GLOBAL_LIST_INIT(bone_recipes, list( \
 	new /datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/bone, 3), \
 	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/bone, 6), \
 	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4), \
-	new /datum/stack_recipe("bone dagger", /obj/item/melee/knife/combat/bone, 2), \
+	new /datum/stack_recipe("bone dagger", /obj/item/melee/knife/bone, 2), \
 	new /datum/stack_recipe("club", /obj/item/melee/baseball_bat/bone, 6)))
 /obj/item/stack/sheet/bone
 	name = "bones"

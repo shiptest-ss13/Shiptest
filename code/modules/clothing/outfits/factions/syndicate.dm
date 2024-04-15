@@ -477,7 +477,7 @@
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	gloves = /obj/item/clothing/gloves/color/white
 	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/melee/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	glasses = /obj/item/clothing/glasses/hud/health
 	backpack_contents = list(/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
@@ -493,7 +493,7 @@
 	head = /obj/item/clothing/head/HoS/cybersun
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate_command/crew_id
-	r_pocket = /obj/item/melee/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 /datum/outfit/job/syndicate/head_of_personnel/suns
@@ -651,7 +651,7 @@
 
 	uniform = /obj/item/clothing/under/syndicate/gorlex
 	glasses = /obj/item/clothing/glasses/hud/health/prescription
-	r_pocket = /obj/item/melee/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	back = /obj/item/storage/backpack/duffelbag/syndie/med
 	id = /obj/item/card/id/syndicate_command/crew_id
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1, /obj/item/storage/firstaid/medical,)
@@ -826,7 +826,7 @@
 	job_icon = "securityofficer"
 
 	uniform = /obj/item/clothing/under/syndicate
-	r_pocket = /obj/item/melee/knife/combat/survival
+	r_pocket = /obj/item/melee/knife/survival
 	belt = /obj/item/storage/belt/military
 	back = /obj/item/storage/backpack
 	suit = /obj/item/clothing/suit/armor/vest
@@ -909,7 +909,7 @@
 	r_pocket = /obj/item/storage/bag/ore
 	backpack_contents = list(
 		/obj/item/flashlight/seclite=1,\
-		/obj/item/melee/knife/combat/survival=1,\
+		/obj/item/melee/knife/survival=1,\
 		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
 

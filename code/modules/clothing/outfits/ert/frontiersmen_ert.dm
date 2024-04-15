@@ -127,7 +127,7 @@
 	suit_store = /obj/item/gun/ballistic/revolver
 	belt = /obj/item/storage/belt/military/assault
 
-	backpack_contents = list(/obj/item/ammo_box/a357=3, /obj/item/binoculars=1, /obj/item/melee/knife/combat/survival)
+	backpack_contents = list(/obj/item/ammo_box/a357=3, /obj/item/binoculars=1, /obj/item/melee/knife/survival)
 
 /datum/outfit/job/frontiersmen/ert/medic
 	name = "ERT - Frontiersman Medic"

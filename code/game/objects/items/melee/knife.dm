@@ -104,16 +104,17 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
 
-/obj/item/melee/knife/combat/survival
+/obj/item/melee/knife/survival
 	name = "survival knife"
 	icon_state = "survivalknife"
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	desc = "A hunting grade survival knife."
 	force = 15
 	throwforce = 15
+	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
 	bayonet = TRUE
 
-/obj/item/melee/knife/combat/bone
+/obj/item/melee/knife/bone
 	name = "bone dagger"
 	item_state = "bone_dagger"
 	icon_state = "bone_dagger"
