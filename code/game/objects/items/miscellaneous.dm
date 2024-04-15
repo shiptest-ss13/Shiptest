@@ -164,7 +164,6 @@
 /obj/item/skub
 	desc = "It's skub."
 	name = "skub"
-	icon = 'icons/obj/items.dmi'
 	icon_state = "skub"
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("skubbed")
@@ -288,7 +287,6 @@
 /obj/item/phone
 	name = "red phone"
 	desc = "Should anything ever go wrong..."
-	icon = 'icons/obj/items.dmi'
 	icon_state = "red_phone"
 	force = 3
 	throwforce = 2
@@ -472,7 +470,6 @@
 /obj/item/extendohand
 	name = "extendo-hand"
 	desc = "Futuristic tech has allowed these classic spring-boxing toys to essentially act as a fully functional hand-operated hand prosthetic."
-	icon = 'icons/obj/items.dmi'
 	icon_state = "extendohand"
 	item_state = "extendohand"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
