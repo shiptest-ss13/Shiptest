@@ -923,7 +923,6 @@
 		/obj/item/kitchen/knife/combat/survival=1,\
 		/obj/item/mining_voucher=1,\
 		/obj/item/stack/marker_beacon/ten=1)
-	box = /obj/item/storage/box/survival/syndie
 
 /datum/outfit/job/syndicate/miner/gorlex
 	name = "Syndicate - Wrecker (Gorlex Marauders)"
@@ -1003,7 +1002,7 @@
 	head = /obj/item/clothing/head/hardhat/dblue
 	r_pocket = /obj/item/t_scanner
 
-	box = /obj/item/storage/box/survival/syndie
+	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
 
