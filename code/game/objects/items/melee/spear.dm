@@ -20,7 +20,6 @@
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	species_exception = list(/datum/species/kepori)
-	var/war_cry = "AAAAARGH!!!"
 	var/icon_prefix = "spearglass"
 
 /obj/item/spear/ComponentInitialize()
@@ -43,12 +42,31 @@
 	qdel(tip)
 	..()
 
+/*
+ * Bone Spear
+ */
+/obj/item/spear/bonespear	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
+	icon_state = "bone_spear0"
+	name = "bone spear"
+	base_icon_state = "bone_spear0"
+	icon_prefix = "bone_spear"
+	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
+	//this should be a plasma spear or worse.
+	force = 11
+	throwforce = 19
+
+/obj/item/spear/bonespear/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]1")
+
+
 /obj/item/spear/explosive
 	name = "explosive lance"
 	icon_state = "spearbomb0"
 	base_icon_state = "spearbomb"
 	icon_prefix = "spearbomb"
 	var/obj/item/grenade/explosive = null
+	var/war_cry = "AAAAARGH!!!"
 	var/wielded = FALSE // track wielded status on item
 
 /obj/item/spear/explosive/Initialize(mapload)
@@ -118,46 +136,3 @@
 		explosive.forceMove(AM)
 		explosive.prime()
 		qdel(src)
-
-//GREY TIDE
-/obj/item/spear/grey_tide
-	name = "\improper Grey Tide"
-	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualities among Nanotrasen military forces."
-	attack_verb = list("gored")
-	force=15
-
-/obj/item/spear/grey_tide/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=15, force_wielded=25, icon_wielded="[icon_prefix]1")
-
-/obj/item/spear/grey_tide/afterattack(atom/movable/AM, mob/living/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	user.faction |= "greytide([REF(user)])"
-	if(isliving(AM))
-		var/mob/living/L = AM
-		if(istype (L, /mob/living/simple_animal/hostile/illusion))
-			return
-		if(!L.stat && prob(50))
-			var/mob/living/simple_animal/hostile/illusion/M = new(user.loc)
-			M.faction = user.faction.Copy()
-			M.Copy_Parent(user, 100, user.health/2.5, 12, 30)
-			M.GiveTarget(L)
-
-/*
- * Bone Spear
- */
-/obj/item/spear/bonespear	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
-	icon_state = "bone_spear0"
-	name = "bone spear"
-	base_icon_state = "bone_spear0"
-	icon_prefix = "bone_spear"
-	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
-	force = 12
-	throwforce = 22
-	armour_penetration = 15				//Enhanced armor piercing
-
-/obj/item/spear/bonespear/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=20, icon_wielded="[icon_prefix]1")
