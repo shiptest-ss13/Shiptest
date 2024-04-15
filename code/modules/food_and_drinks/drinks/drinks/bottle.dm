@@ -483,7 +483,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/moonshine
 	name = "moonshine jug"
-	desc = "It is said that the ancient Applalacians used these stoneware jugs to capture lightning in a bottle."
+	desc = "It is said that the ancient Solarians used these stoneware jugs to capture lightning in a bottle."
 	icon_state = "moonshinebottle"
 	list_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 100)
 
@@ -710,3 +710,22 @@
 /obj/item/storage/bottles/sandblast/PopulateContents()
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/food/drinks/bottle/sarsaparilla(src)
+
+/obj/item/storage/bottles/moonshine
+	name = "moonshine bottle crate"
+	desc = "Holds four bottles of the strongest hooch this side of the sector."
+	icon_state = "hoochcrate"
+
+/obj/item/storage/bottles/moonshine/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/S = GetComponent(/datum/component/storage)
+	S.max_items = 4
+	S.set_holdable(list(/obj/item/reagent_containers/food/drinks/bottle/moonshine)) //this really shouldn't work like this but i'm a mapper not a coder
+
+
+/obj/item/storage/bottles/moonshine/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/food/drinks/bottle/moonshine(src)
+
+/obj/item/storage/bottles/moonshine/sealed
+	sealed = TRUE

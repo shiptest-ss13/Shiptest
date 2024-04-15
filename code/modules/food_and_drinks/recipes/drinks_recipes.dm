@@ -29,11 +29,6 @@
 	results = list(/datum/reagent/consumable/nuka_cola = 6)
 	required_reagents = list(/datum/reagent/uranium = 1, /datum/reagent/consumable/space_cola = 6)
 
-/datum/chemical_reaction/moonshine
-	results = list(/datum/reagent/consumable/ethanol/moonshine = 10)
-	required_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 5)
-	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
-
 /datum/chemical_reaction/wine
 	results = list(/datum/reagent/consumable/ethanol/wine = 10)
 	required_reagents = list(/datum/reagent/consumable/grapejuice = 10)
@@ -680,3 +675,9 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
 	required_container = /obj/structure/fermenting_barrel/distiller
 	mix_sound ='sound/weapons/laser.ogg'
+
+/datum/chemical_reaction/moonshine
+	results = list(/datum/reagent/consumable/ethanol/moonshine = 10)
+	required_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 5)
+	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
+	required_container = /obj/structure/fermenting_barrel/distiller
