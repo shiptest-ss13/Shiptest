@@ -2,6 +2,7 @@
 /obj/structure/chair/comfy
 	name = "comfy chair"
 	desc = "It looks comfy."
+	icon_state = null
 	icon = 'icons/obj/structures/chairs/comfychair.dmi'
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
