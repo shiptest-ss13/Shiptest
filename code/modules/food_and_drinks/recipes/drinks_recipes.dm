@@ -680,4 +680,4 @@
 	results = list(/datum/reagent/consumable/ethanol/moonshine = 10)
 	required_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 5)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
-	required_container = /obj/structure/fermenting_barrel/distiller
+	required_container = /obj/structure/fermenting_barrel
