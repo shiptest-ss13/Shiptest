@@ -226,6 +226,7 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive/corpo, 0)
 /obj/structure/chair/bench
 	name = "comfy bench"
 	desc = "It looks comfy."
+	icon = 'icons/obj/structures/chairs/comfychair.dmi'
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
 	buildstackamount = 2
