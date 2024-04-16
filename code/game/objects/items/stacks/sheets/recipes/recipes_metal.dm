@@ -10,6 +10,14 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 		new/datum/stack_recipe("dark office chair", /obj/structure/chair/office/dark, 5, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("purple office chair", /obj/structure/chair/office/purple, 5, one_per_turf = TRUE, on_floor = TRUE), \
 		)), \
+	new/datum/stack_recipe_list("bench chairs", list( \
+		new/datum/stack_recipe("purple bench chair", /obj/structure/chair/bench/purple, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("beige bench chair", /obj/structure/chair/bench/beige, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("grey bench chair", /obj/structure/chair/bench/grey, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("blue bench chair", /obj/structure/chair/bench/blue, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("red bench chair", /obj/structure/chair/bench/red, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		new/datum/stack_recipe("olive bench chair", /obj/structure/chair/bench/olive, 2, one_per_turf = TRUE, on_floor = TRUE), \
+		)), \
 	new/datum/stack_recipe_list("comfy chairs", list( \
 		new/datum/stack_recipe("purple comfy chair", /obj/structure/chair/comfy/purple, 2, one_per_turf = TRUE, on_floor = TRUE), \
 		new/datum/stack_recipe("beige comfy chair", /obj/structure/chair/comfy/beige, 2, one_per_turf = TRUE, on_floor = TRUE), \
