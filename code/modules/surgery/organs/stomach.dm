@@ -100,7 +100,7 @@
 /obj/item/organ/stomach/ethereal
 	name = "biological battery"
 	icon_state = "stomach-p" //Welp. At least it's more unique in functionaliy.
-	desc = "A crystal-like organ that stores the electric charge of elzuosas."
+	desc = "A crystal-like organ that stores the electric charge of elzuosa."
 	var/crystal_charge = ELZUOSE_CHARGE_FULL
 
 /obj/item/organ/stomach/ethereal/on_life()
