@@ -83,6 +83,20 @@
 	crate_name = "ion rifle crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
+/datum/supply_pack/gun/laser/kalix/pistol
+	name = "Etherbor SG-8 Beam Pistol Crate"
+	desc = "Contains a single SG-8 Beam Pistol, a civilian-grade sidearm developed in the PGF, manufactured by Etherbor Industries."
+	cost = 1000
+	contains = list(/obj/item/gun/energy/kalix/pistol)
+	crate_name = "beam pistol crate"
+
+/datum/supply_pack/gun/laser/kalix
+	name = "Etherbor BG-12 Beam Rifle Crate"
+	desc = "Contains a single BG-12 Beam Rifle, a civilian-grade semi-automatic developed in the PGF, manufactured by Etherbor Industries."
+	cost = 3000
+	contains = list(/obj/item/gun/energy/kalix)
+	crate_name = "beam rifle crate"
+
 /*
 		Shotguns
 */
