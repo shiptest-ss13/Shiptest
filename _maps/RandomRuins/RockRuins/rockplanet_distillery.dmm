@@ -40,7 +40,9 @@
 /area/ruin/rockplanet/distillery/crew)
 "aC" = (
 /obj/structure/catwalk/over,
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plating,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "aE" = (
@@ -230,7 +232,8 @@
 	dir = 8
 	},
 /obj/structure/railing/corner{
-	dir = 8
+	dir = 8;
+	layer = 4.1
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -941,7 +944,9 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/line{
 	dir = 1
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "kU" = (
@@ -1096,8 +1101,7 @@
 	dir = 4
 	},
 /obj/structure/railing{
-	dir = 1;
-	layer = 2/7
+	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 9
@@ -1131,7 +1135,9 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/corner{
 	dir = 4
 	},
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "ne" = (
@@ -1507,8 +1513,7 @@
 	dir = 1
 	},
 /obj/structure/railing{
-	dir = 1;
-	layer = 2/7
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -1917,7 +1922,9 @@
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/office)
 "wb" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/structure/sign/warning/gasmask{
 	pixel_y = -32
 	},
@@ -1975,8 +1982,7 @@
 	},
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/line,
 /obj/structure/railing{
-	dir = 1;
-	layer = 2/7
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -2369,7 +2375,9 @@
 /area/ruin/rockplanet/distillery/saloon)
 "AV" = (
 /obj/machinery/atmospherics/components/unary/passive_vent/layer2,
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -2397,7 +2405,9 @@
 	},
 /area/ruin/rockplanet/distillery/engineering)
 "Be" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sign/poster/retro/nanotrasen_logo_80s{
 	pixel_y = 32
@@ -2673,8 +2683,7 @@
 "Ej" = (
 /obj/structure/table/wood/reinforced,
 /obj/structure/railing{
-	dir = 1;
-	layer = 2/7
+	dir = 1
 	},
 /obj/item/reagent_containers/food/drinks/beer{
 	pixel_y = 8;
@@ -2739,8 +2748,7 @@
 	},
 /obj/machinery/light/small/directional/east,
 /obj/structure/railing{
-	dir = 1;
-	layer = 2/7
+	dir = 1
 	},
 /turf/open/floor/plasteel/patterned/ridged/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -2771,7 +2779,8 @@
 	dir = 5
 	},
 /obj/structure/railing/corner{
-	dir = 8
+	dir = 8;
+	layer = 4.1
 	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
@@ -3097,14 +3106,18 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
 "Je" = (
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/stairs{
 	dir = 8
 	},
 /area/ruin/rockplanet/distillery/saloon)
 "JC" = (
 /obj/item/chair,
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 10
 	},
@@ -3335,7 +3348,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/siding/white/corner,
-/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	layer = 4.1
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
@@ -3736,7 +3751,9 @@
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Rn" = (
 /obj/structure/table/wood/reinforced,
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 6
 	},
@@ -3759,7 +3776,9 @@
 	icon_state = "1-5"
 	},
 /obj/machinery/light/small/directional/west,
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/patterned/ridged/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Rr" = (
@@ -3839,7 +3858,9 @@
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/line{
 	dir = 9
 	},
-/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "RO" = (
@@ -4197,7 +4218,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white,
-/obj/structure/railing,
+/obj/structure/railing{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/patterned/ridged/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Vz" = (
@@ -4268,7 +4291,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/spline/fancy/opaque/white/corner,
-/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	layer = 4.1
+	},
 /turf/open/floor/plasteel/patterned/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "VW" = (
@@ -4407,7 +4432,9 @@
 /turf/open/floor/plating/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "XU" = (
-/obj/structure/railing/corner,
+/obj/structure/railing/corner{
+	layer = 4.1
+	},
 /obj/effect/turf_decal/siding/white{
 	dir = 9
 	},
