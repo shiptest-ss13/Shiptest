@@ -1,7 +1,7 @@
 // Base type - DO NOT USE!
 /obj/structure/chair/sofa
 	name = "sofa"
-	icon_state = "sofamiddle"
+	icon_state = null
 	icon = 'icons/obj/structures/chairs/sofa.dmi'
 	buildstackamount = 1
 	item_chair = null
