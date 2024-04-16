@@ -124,6 +124,7 @@
 
 			// This is slightly delayed because of the sleep calls above to handle the narrative.
 			// We don't want to tell the station instantly.
+			/*
 			var/points_to_check
 			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 			if(D)
@@ -135,6 +136,7 @@
 
 			priority_announce("One of your crew was captured by a rival organisation - we've needed to pay their ransom to bring them back. \
 							As is policy we've taken a portion of the station's funds to offset the overall cost.", null, 'sound/ai/attention.ogg', null, "Nanotrasen Asset Protection")
+			*/
 
 			sleep(30)
 
@@ -147,7 +149,7 @@
 					C = H.get_idcard(TRUE)
 
 				if(C && C.registered_account)
-					C.registered_account.adjust_money(ransom * 0.35)
+					C.registered_account.adjust_money(ransom * 0.35, "syndicate_contract")
 
 					C.registered_account.bank_card_talk("We've processed the ransom, agent. Here's your cut - your balance is now \
 					[C.registered_account.account_balance] cr.", TRUE)

@@ -99,7 +99,7 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
 
-
+//guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
 	illustration = "disk_kit"
@@ -121,9 +121,11 @@
 	var/mask_type = /obj/item/clothing/mask/breath
 	var/internal_type = /obj/item/tank/internals/emergency_oxygen
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
+	var/radio_type = /obj/item/radio
 
 /obj/item/storage/box/survival/PopulateContents()
 	new mask_type(src)
+	new radio_type(src)
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -131,10 +133,6 @@
 		new internal_type(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
-
-/obj/item/storage/box/survival/radio/PopulateContents()
-	..() // we want the survival stuff too.
-	new /obj/item/radio/off(src)
 
 // Mining survival box
 /obj/item/storage/box/survival/mining
@@ -148,10 +146,6 @@
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
-/obj/item/storage/box/survival/engineer/radio/PopulateContents()
-	..() // we want the regular items too.
-	new /obj/item/radio/off(src)
-
 // Syndie survival box
 /obj/item/storage/box/survival/syndie
 	mask_type = /obj/item/clothing/mask/gas/syndicate
@@ -162,13 +156,18 @@
 /obj/item/storage/box/survival/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 
-/obj/item/storage/box/survival/security/radio/PopulateContents()
-	..() // we want the regular stuff too
-	new /obj/item/radio/off(src)
-
 // Medical survival box
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
+
+/obj/item/storage/box/survival/clip
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
+
+/obj/item/storage/box/survival/clip/balaclava
+	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
+
+/obj/item/storage/box/survival/clip/balaclava
+	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -774,6 +773,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/light/bulb(src)
 
+/obj/item/storage/box/flares
+	name = "box of flares"
+	illustration = "firecracker"
+
+/obj/item/storage/box/flares/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"

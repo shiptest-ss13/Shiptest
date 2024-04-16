@@ -48,6 +48,7 @@
 		/obj/item/spacecash,
 		/obj/item/holochip,
 		/obj/item/card,
+		/obj/item/folder/biscuit
 	)
 	/// Internal radio for announcing over comms
 	var/obj/item/radio/radio
@@ -63,7 +64,7 @@
 		list(fax_name = "IRMG Mothership", fax_id = "inteq", color = "yellow", emag_needed = FALSE),
 		list(fax_name = "Solarian Confederation Frontier Affairs", fax_id = "solgov", color = "teal", emag_needed = FALSE),
 		list(fax_name = "Roumain Council of Huntsmen", fax_id = "roumain", color = "brown", emag_needed = FALSE),
-		list(fax_name = "Colonial League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
+		list(fax_name = "Confederated League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
 		list(fax_name = "Syndicate Coalition Coordination Center", fax_id = "syndicate", color = "red", emag_needed = FALSE),
 		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
 	)
@@ -87,6 +88,7 @@
 
 /obj/machinery/fax/ruin
 	visible_to_network = FALSE
+	special_networks = list()
 
 /obj/machinery/fax/ruin/Initialize(mapload)
 	. = ..()
@@ -96,6 +98,7 @@
 	GLOB.fax_machines -= src
 	QDEL_NULL(loaded_item_ref)
 	QDEL_NULL(wires)
+	QDEL_NULL(radio)
 	return ..()
 
 /obj/machinery/fax/update_overlays()
@@ -305,27 +308,34 @@
 				update_icon()
 				return TRUE
 		if("send_special")
-			var/obj/item/paper/fax_paper = loaded_item_ref?.resolve()
-			if(!fax_paper)
+			var/obj/item/loaded = loaded_item_ref?.resolve()
+			var/obj/thing_to_send
+			if(!loaded)
 				return
-			if(!istype(fax_paper))
+			if(istype(loaded, /obj/item/paper))
+				var/obj/item/paper/fax_paper = loaded
+				fax_paper.request_state = TRUE
+				thing_to_send = fax_paper
+			else if(istype(loaded, /obj/item/photo))
+				thing_to_send = loaded
+			else
 				to_chat(usr, icon2html(src.icon, usr) + "<span class='warning'>ERROR: Failed to send fax.</span>")
 				return
 
-			fax_paper.request_state = TRUE
-			fax_paper.loc = null
-
-			INVOKE_ASYNC(src, PROC_REF(animate_object_travel), fax_paper, "fax_receive", find_overlay_state(fax_paper, "send"))
+			if(!thing_to_send)
+				return
+			thing_to_send.loc = null
+			INVOKE_ASYNC(src, PROC_REF(animate_object_travel), thing_to_send, "fax_receive", find_overlay_state(thing_to_send, "send"))
 			history_add("Send", params["name"])
 
-			GLOB.requests.fax_request(usr.client, "sent a fax message from [fax_name]/[fax_id] to [params["name"]]", fax_paper)
-			to_chat(GLOB.admins, "<span class='adminnotice'>[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])]</span> [ADMIN_SHOW_PAPER(fax_paper)]")
-			log_fax(fax_paper, params["id"], params["name"])
+			GLOB.requests.fax_request(usr.client, "sent a fax message from [fax_name]/[fax_id] to [params["name"]]", thing_to_send)
+			to_chat(GLOB.admins, "<span class='adminnotice'>[icon2html(src.icon, GLOB.admins)]<b><font color=green>FAX REQUEST: </font>[ADMIN_FULLMONTY(usr)]:</b> <span class='linkify'>sent a fax message from [fax_name]/[fax_id][ADMIN_FLW(src)] to [html_encode(params["name"])]</span> [istype(thing_to_send, /obj/item/paper) ? ADMIN_SHOW_PAPER(thing_to_send) : ADMIN_SHOW_PHOTO(thing_to_send)]")
+			log_fax(thing_to_send, params["id"], params["name"])
 			loaded_item_ref = null
 
 			for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 				if(fax.admin_fax_id == params["id"])
-					fax.receive(fax_paper, fax_name)
+					fax.receive(thing_to_send, fax_name)
 					break
 			update_appearance()
 
@@ -357,7 +367,7 @@
  * * loaded - The object to be sent.
  * * id - The network ID of the fax machine you want to send the item to.
  */
-/obj/machinery/fax/proc/send(obj/item/loaded, id)
+/obj/machinery/fax/proc/send(atom/movable/loaded, id)
 	for(var/obj/machinery/fax/fax as anything in GLOB.fax_machines)
 		if(fax.fax_id != id)
 			continue
@@ -382,7 +392,7 @@
  * * loaded - The object to be printed.
  * * sender_name - The sender's name, which will be displayed in the message and recorded in the history of operations.
  */
-/obj/machinery/fax/proc/receive(obj/item/loaded, sender_name, important = FALSE)
+/obj/machinery/fax/proc/receive(atom/movable/loaded, sender_name, important = FALSE)
 	playsound(src, 'sound/items/poster_being_created.ogg', 20, FALSE)
 	INVOKE_ASYNC(src, PROC_REF(animate_object_travel), loaded, "fax_receive", find_overlay_state(loaded, "receive"))
 	say("Received correspondence from [sender_name].")
@@ -439,7 +449,7 @@
  * Arguments:
  * * vend - Item to vend from the fax machine.
  */
-/obj/machinery/fax/proc/vend_item(obj/item/vend)
+/obj/machinery/fax/proc/vend_item(atom/movable/vend)
 	vend.forceMove(drop_location())
 	if(hurl_contents)
 		vend.throw_at(get_edge_target_turf(drop_location(), pick(GLOB.alldirs)), rand(1, 4), EMBED_THROWSPEED_THRESHOLD)
@@ -500,6 +510,55 @@
 	frontier_network = TRUE
 	visible_to_network = FALSE
 
+/obj/machinery/fax/inteq
+	special_networks = list(
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "IRMG Mothership", fax_id = "inteq", color = "yellow", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+
+/obj/machinery/fax/clip
+	special_networks = list(
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "Colonial League Leadership", fax_id = "minutemen", color = "blue", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+
+/obj/machinery/fax/indie
+	special_networks = list(
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+
+/obj/machinery/fax/nanotrasen
+	special_networks = list(
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "Nanotrasen Central Command", fax_id = "nanotrasen", color = "green", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+
+/obj/machinery/fax/syndicate
+	special_networks = list(
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "Syndicate Coalition Coordination Center", fax_id = "syndicate", color = "red", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+
+/obj/machinery/fax/solgov
+	special_networks = list(
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "Solarian Confederation Frontier Affairs", fax_id = "solgov", color = "teal", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+
+/obj/machinery/fax/roumain
+	special_networks = list(
+		list(fax_name = "Outpost Authority", fax_id = "outpost", color = "orange", emag_needed = FALSE),
+		list(fax_name = "Roumain Council of Huntsmen", fax_id = "roumain", color = "brown", emag_needed = FALSE),
+		list(fax_name = "Frontiersmen Communications Quartermaster", fax_id = "frontiersmen", color = "black", emag_needed = TRUE)
+	)
+
+
 /obj/machinery/fax/admin
 	name = "Central Command Fax Machine"
 	fax_name = "Nanotrasen Central Command"
@@ -529,7 +588,7 @@
 
 /obj/machinery/fax/admin/minutemen
 	name = "CLIP HiComm Fax Machine"
-	fax_name = "Colonial League Leadership"
+	fax_name = "Confederated League Leadership"
 	admin_fax_id = "minutemen"
 
 /obj/machinery/fax/admin/roumain
