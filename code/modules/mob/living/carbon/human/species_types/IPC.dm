@@ -17,8 +17,8 @@
 	mutantlungs = null //no more collecting change for you
 	mutantappendix = null
 	mutant_organs = list(/obj/item/organ/cyberimp/arm/power_cord)
-	mutant_bodyparts = list("ipc_screen", "ipc_antenna", "ipc_chassis", "ipc_brain")
-	default_features = list("mcolor" = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", "ipc_chassis" = "Morpheus Cyberkinetics (Custom)", "ipc_brain" = "Posibrain", "body_size" = "Normal")
+	mutant_bodyparts = list("ipc_screen", "ipc_antenna", FEATURE_IPC_CHASSIS, FEATURE_IPC_BRAIN)
+	default_features = list(FEATURE_MUTANT_COLOR = "#7D7D7D", "ipc_screen" = "Static", "ipc_antenna" = "None", FEATURE_IPC_CHASSIS = "Morpheus Cyberkinetics (Custom)", FEATURE_IPC_BRAIN = "Posibrain", FEATURE_BODY_SIZE = "Normal")
 	meat = /obj/item/stack/sheet/plasteel{amount = 5}
 	skinned_type = /obj/item/stack/sheet/metal{amount = 10}
 	exotic_bloodtype = "Coolant"
@@ -69,7 +69,7 @@
 		if(!change_screen)
 			change_screen = new
 			change_screen.Grant(H)
-		if(H.dna.features["ipc_brain"] == "Man-Machine Interface")
+		if(H.dna.features[FEATURE_IPC_BRAIN] == "Man-Machine Interface")
 			mutantbrain = /obj/item/organ/brain/mmi_holder
 		else
 			mutantbrain = /obj/item/organ/brain/mmi_holder/posibrain
@@ -82,6 +82,7 @@
 		change_screen.Remove(C)
 	C.UnregisterSignal(C, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
 
+// ! direct string modifications... ugh.
 /datum/species/ipc/spec_death(gibbed, mob/living/carbon/C)
 	saved_screen = C.dna.features["ipc_screen"]
 	C.dna.features["ipc_screen"] = "BSOD"
@@ -101,7 +102,8 @@
 	button_icon_state = "drone_vision"
 
 /datum/action/innate/change_screen/Activate()
-	var/screen_choice = input(usr, "Which screen do you want to use?", "Screen Change") as null | anything in GLOB.ipc_screens_list
+	var/screen_list = GLOB.mut_part_name_datum_lookup[/datum/sprite_accessory/mutant_part/ipc_screens]
+	var/screen_choice = input(usr, "Which screen do you want to use?", "Screen Change") as null | anything in screen_list
 	var/color_choice = input(usr, "Which color do you want your screen to be?", "Color Change") as null | color
 	if(!screen_choice)
 		return
@@ -229,14 +231,14 @@
 /datum/species/ipc/replace_body(mob/living/carbon/C, datum/species/new_species, robotic = FALSE)
 	..()
 
-	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features["ipc_chassis"]]
+	var/datum/sprite_accessory/ipc_chassis/chassis_of_choice = GLOB.ipc_chassis_list[C.dna.features[FEATURE_IPC_CHASSIS]]
 
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts) //Override bodypart data as necessary
 		if(BP.limb_id=="synth")
 			BP.uses_mutcolor = chassis_of_choice.color_src ? TRUE : FALSE
 			if(BP.uses_mutcolor)
 				BP.should_draw_greyscale = TRUE
-				BP.species_color = C.dna?.features["mcolor"]
+				BP.species_color = C.dna?.features[FEATURE_MUTANT_COLOR]
 
 			BP.limb_id = chassis_of_choice.limbs_id
 			BP.name = "\improper[chassis_of_choice.name] [parse_zone(BP.body_zone)]"

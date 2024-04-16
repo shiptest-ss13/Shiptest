@@ -136,3 +136,21 @@
 
 #define NOT_SYNTHETIC FALSE
 #define IS_SYNTHETIC TRUE
+
+// Strings used as keys in the "features" list on mobs, signifying various attributes.
+// THESE SHOULD NOT OVERLAP WITH THE mutant_string VARIABLE
+// ON ANY /datum/sprite_accessory/mutant_part SUBTYPE!!
+// THINGS WILL BREAK!!!!
+#define FEATURE_MUTANT_COLOR "mcolor"
+#define FEATURE_MUTANT_COLOR2 "mcolor2"
+#define FEATURE_BODY_SIZE "body_size"
+
+#define FEATURE_GRADIENT_STYLE "grad_style"
+#define FEATURE_GRADIENT_COLOR "grad_color"
+
+#define FEATURE_ETHEREAL_COLOR "ethcolor"
+#define FEATURE_FLAVOR_TEXT "flavor_text"
+#define FEATURE_IPC_CHASSIS "ipc_chassis"
+#define FEATURE_IPC_BRAIN "ipc_brain"
+
+#define FEATURE_LEGS_TYPE "legs"

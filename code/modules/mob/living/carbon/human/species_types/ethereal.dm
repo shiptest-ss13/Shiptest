@@ -28,7 +28,7 @@
 	hair_color = "fixedmutcolor"
 	hair_alpha = 140
 	mutant_bodyparts = list("elzu_horns", "tail_elzu")
-	default_features = list("elzu_horns" = "None", "tail_elzu" = "None", "body_size" = "Normal")
+	default_features = list("elzu_horns" = "None", "tail_elzu" = "None", FEATURE_BODY_SIZE = "Normal")
 	species_eye_path = 'icons/mob/ethereal_parts.dmi'
 	mutant_organs = list(/obj/item/organ/tail/elzu)
 
@@ -57,14 +57,14 @@
 	if(!ishuman(C))
 		return
 	var/mob/living/carbon/human/ethereal = C
-	default_color = "#[ethereal.dna.features["ethcolor"]]"
+	default_color = "#[ethereal.dna.features[FEATURE_ETHEREAL_COLOR]]"
 	RegisterSignal(ethereal, COMSIG_ATOM_EMAG_ACT, .proc/on_emag_act)
 	RegisterSignal(ethereal, COMSIG_ATOM_EMP_ACT, .proc/on_emp_act)
 	ethereal_light = ethereal.mob_light()
 	spec_updatehealth(ethereal)
 
 	//The following code is literally only to make admin-spawned ethereals not be black.
-	C.dna.features["mcolor"] = C.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
+	C.dna.features[FEATURE_MUTANT_COLOR] = C.dna.features[FEATURE_ETHEREAL_COLOR] //Ethcolor and Mut color are both dogshit and will be replaced
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
 		if(BP.limb_id == SPECIES_ETHEREAL)
 			BP.update_limb(is_creating = TRUE)

@@ -171,25 +171,25 @@
 					H.dna.update_ui_block(DNA_SKIN_TONE_BLOCK)
 
 			if(MUTCOLORS in H.dna.species.species_traits)
-				var/new_mutantcolor = input(user, "Choose your skin color:", "Race change","#" + H.dna.features["mcolor"]) as color|null
+				var/new_mutantcolor = input(user, "Choose your skin color:", "Race change","#" + H.dna.features[FEATURE_MUTANT_COLOR]) as color|null
 				if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 					return
 				if(new_mutantcolor)
 					var/temp_hsv = RGBtoHSV(new_mutantcolor)
 
 					if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3]) // mutantcolors must be bright
-						H.dna.features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
+						H.dna.features[FEATURE_MUTANT_COLOR] = sanitize_hexcolor(new_mutantcolor)
 
 					else
 						to_chat(H, "<span class='notice'>Invalid color. Your color is not bright enough.</span>")
 
 				if(MUTCOLORS_SECONDARY in H.dna.species.species_traits)
-					var/new_secondary_mutantcolor = input(user, "Choose your secondary skin color:", "Race change","#" + H.dna.features["mcolor2"]) as color|null
+					var/new_secondary_mutantcolor = input(user, "Choose your secondary skin color:", "Race change","#" + H.dna.features[FEATURE_MUTANT_COLOR2]) as color|null
 					if(new_secondary_mutantcolor)
 						var/temp_hsv = RGBtoHSV(new_secondary_mutantcolor)
 
 						if(ReadHSV(temp_hsv)[3] >= ReadHSV("#191919")[3]) // mutantcolors must be bright
-							H.dna.features["mcolor2"] = sanitize_hexcolor(new_secondary_mutantcolor)
+							H.dna.features[FEATURE_MUTANT_COLOR2] = sanitize_hexcolor(new_secondary_mutantcolor)
 
 						else
 							to_chat(H, "<span class='notice'>Invalid color. Your secondary color is not bright enough.</span>")

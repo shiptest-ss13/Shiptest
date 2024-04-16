@@ -165,9 +165,9 @@
 	var/select_alteration = input(owner, "Select what part of your form to alter.", "Form Alteration", "Cancel") in list("Body Color", "Hair Style", "Ears", "Tail") //Select what you want to alter
 	switch(select_alteration) //fuck you i like readability
 		if("Body Color")
-			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features["mcolor"]) as color|null
+			var/new_color = input(owner, "Select your new color.", "Color Change", "#"+H.dna.features[FEATURE_MUTANT_COLOR]) as color|null
 			if(new_color)
-				H.dna.features["mcolor"] = sanitize_hexcolor(new_color)
+				H.dna.features[FEATURE_MUTANT_COLOR] = sanitize_hexcolor(new_color)
 				H.update_body()
 				H.update_hair()
 
@@ -331,7 +331,7 @@
 
 	spare.underwear = "Nude"
 	H.dna.transfer_identity(spare, transfer_SE=1)
-	spare.dna.features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	spare.dna.features[FEATURE_MUTANT_COLOR] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
 	spare.real_name = spare.dna.real_name
 	spare.name = spare.dna.real_name
 	spare.updateappearance(mutcolor_update=1)
@@ -406,7 +406,7 @@
 
 		var/list/L = list()
 		// HTML colors need a # prefix
-		L["htmlcolor"] = "#[body.dna.features["mcolor"]]"
+		L["htmlcolor"] = "#[body.dna.features[FEATURE_MUTANT_COLOR]]"
 		L["area"] = get_area_name(body, TRUE)
 		var/stat = "error"
 		switch(body.stat)
@@ -558,7 +558,7 @@
 /datum/species/jelly/luminescent/proc/update_glow(mob/living/carbon/C, intensity)
 	if(intensity)
 		glow_intensity = intensity
-	glow.set_light(glow_intensity, glow_intensity, C.dna.features["mcolor"])
+	glow.set_light(glow_intensity, glow_intensity, C.dna.features[FEATURE_MUTANT_COLOR])
 
 /obj/effect/dummy/luminescent_glow
 	name = "luminescent glow"

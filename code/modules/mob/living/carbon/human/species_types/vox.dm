@@ -7,7 +7,7 @@
 	species_age_max = 280
 	species_traits = list(EYECOLOR, NO_UNDERWEAR)
 	mutant_bodyparts = list("vox_head_quills", "vox_neck_quills")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", "body_size" = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "vox_head_quills" = "None", "vox_neck_quills" = "None", FEATURE_BODY_SIZE = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GRAIN
 	liked_food = MEAT

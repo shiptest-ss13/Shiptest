@@ -5,7 +5,7 @@
 	species_traits = list(MUTCOLORS, EYECOLOR, MUTCOLORS_SECONDARY)
 	inherent_traits = list(TRAIT_SCOOPABLE)
 	mutant_bodyparts = list("kepori_body_feathers", "kepori_tail_feathers", "kepori_feathers")
-	default_features = list("mcolor" = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", "body_size" = "Normal")
+	default_features = list(FEATURE_MUTANT_COLOR = "0F0", "wings" = "None", "kepori_feathers" = "Plain", "kepori_body_feathers" = "Plain", "kepori_tail_feathers" = "Fan", FEATURE_BODY_SIZE = "Normal")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/chicken
 	disliked_food = GROSS | FRIED
 	liked_food = MEAT

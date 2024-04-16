@@ -52,7 +52,7 @@
 	destination.dna.features = features.Copy()
 	destination.dna.real_name = real_name
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
-	destination.flavor_text = destination.dna.features["flavor_text"] //Update the flavor_text to use new dna text
+	destination.flavor_text = destination.dna.features[FEATURE_FLAVOR_TEXT] //Update the flavor_text to use new dna text
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
 		destination.dna.default_mutation_genes = default_mutation_genes
@@ -296,12 +296,12 @@
 /datum/dna/proc/update_body_size()
 	if(!holder)
 		return
-	var/desired_size = GLOB.body_sizes[features["body_size"]]
+	var/desired_size = GLOB.body_sizes[features[FEATURE_BODY_SIZE]]
 
 	if(desired_size == current_body_size)
 		return
 
-	if(!features["body_size"])
+	if(!features[FEATURE_BODY_SIZE])
 		return
 
 	var/change_multiplier = desired_size / current_body_size
@@ -372,7 +372,7 @@
 //Do not use force_transfer_mutations for stuff like cloners without some precautions, otherwise some conditional mutations could break (timers, drill hat etc)
 	if(newfeatures)
 		dna.features = newfeatures
-		flavor_text = dna.features["flavor_text"] //Update the flavor_text to use new dna text
+		flavor_text = dna.features[FEATURE_FLAVOR_TEXT] //Update the flavor_text to use new dna text
 
 	if(mrace)
 		var/datum/species/newrace = new mrace.type
