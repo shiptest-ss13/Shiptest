@@ -280,6 +280,14 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/rust/rockplanet/lit,
 /area/ruin/rockplanet/distillery)
+"cp" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/traffic,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/pod,
+/area/ruin/rockplanet/distillery/office)
 "cw" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4
@@ -483,6 +491,15 @@
 "fv" = (
 /obj/structure/railing{
 	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 8;
+	id = "frontier_door";
+	name = "Door Lock";
+	pixel_x = 23;
+	pixel_y = -2;
+	normaldoorcontrol = 1;
+	specialfunctions = 4
 	},
 /turf/open/floor/plasteel/stairs{
 	dir = 1
@@ -1161,7 +1178,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/white{
 	dir = 8
 	},
-/turf/open/floor/plasteel/patterned/rockplanet/lit,
+/turf/open/floor/plasteel/patterned/rockplanet,
 /area/ruin/rockplanet/distillery/crew)
 "nm" = (
 /obj/machinery/door/airlock{
@@ -1257,21 +1274,11 @@
 	pixel_y = 8
 	},
 /obj/item/reagent_containers/food/condiment/enzyme{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/condiment/enzyme{
-	pixel_y = 8;
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/food/condiment/enzyme{
 	pixel_x = -8
 	},
 /obj/item/reagent_containers/food/condiment/enzyme{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/food/condiment/enzyme,
 /obj/item/reagent_containers/food/condiment/enzyme{
 	pixel_x = 8
 	},
@@ -1406,6 +1413,16 @@
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/rockplanet/wet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"ql" = (
+/obj/effect/turf_decal/industrial/loading{
+	dir = 8
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/white,
+/obj/effect/turf_decal/spline/fancy/opaque/white{
+	dir = 1
+	},
+/turf/open/floor/plasteel/patterned,
+/area/ruin/rockplanet/distillery/office)
 "qm" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -2185,6 +2202,12 @@
 "yS" = (
 /turf/closed/wall/r_wall/rust,
 /area/ruin/rockplanet/distillery/crew)
+"yW" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/guncase,
+/obj/item/gun/ballistic/automatic/pistol/commander/no_mag,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/office)
 "ze" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rockplanet/lit{
@@ -2732,8 +2755,8 @@
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Ft" = (
-/obj/structure/closet/crate/hydroponics,
 /obj/effect/turf_decal/industrial/outline/red,
+/obj/structure/salvageable/machine,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery)
 "FA" = (
@@ -3035,6 +3058,37 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Ja" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/secure/weapon{
+	name = "ammo crate"
+	},
+/obj/item/ammo_box/a357{
+	pixel_x = -3
+	},
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/c9mm/ap,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/co9mm{
+	start_empty = 1
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	start_empty = 1
+	},
+/obj/item/ammo_box/a357{
+	pixel_x = 3
+	},
+/obj/machinery/button/door{
+	name = "Armory Door Lock";
+	pixel_y = -6;
+	pixel_x = -22;
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "frontier_armory";
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/office)
 "Jc" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -3545,6 +3599,22 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
+"OV" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "armory";
+	name = "armor locker"
+	},
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/head/helmet/swat/nanotrasen,
+/obj/item/clothing/head/helmet/swat/nanotrasen,
+/obj/item/clothing/suit/armor/frontier,
+/obj/item/clothing/head/beret/sec/frontier,
+/obj/item/clothing/gloves/combat,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ruin/rockplanet/distillery/office)
 "Pl" = (
 /obj/effect/turf_decal/trimline/opaque/neutral/filled/line{
 	dir = 8
@@ -3860,6 +3930,12 @@
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plasteel/patterned/brushed/rockplanet,
 /area/ruin/rockplanet/distillery)
+"SF" = (
+/obj/structure/girder,
+/obj/item/stack/ore/salvage/scrapmetal,
+/obj/item/stack/ore/salvage/scrapmetal,
+/turf/open/floor/plating/rust,
+/area/ruin/rockplanet/distillery/office)
 "SG" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4066,6 +4142,21 @@
 	},
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery)
+"Va" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/door/airlock/grunge{
+	dir = 4;
+	id_tag = "frontier_armory";
+	locked = 1;
+	security_level = 4
+	},
+/turf/open/floor/pod/rockplanet,
+/area/ruin/rockplanet/distillery/office)
 "Vf" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
@@ -4280,8 +4371,16 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/frontier/ranged/officer,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/button/door{
+	name = "Armory Door Lock";
+	pixel_y = 24;
+	pixel_x = 6;
+	normaldoorcontrol = 1;
+	specialfunctions = 4;
+	id = "frontier_armory"
+	},
+/mob/living/simple_animal/hostile/frontier/ranged/officer/internals,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/distillery/office)
 "XD" = (
@@ -4292,7 +4391,8 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/grunge{
-	dir = 4
+	dir = 4;
+	id_tag = "frontier_door"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -5657,7 +5757,7 @@ hY
 hY
 KA
 KA
-KA
+Va
 KA
 KA
 jM
@@ -5702,10 +5802,10 @@ hY
 hY
 hY
 hY
-hY
-hY
-hY
-hY
+SF
+Ja
+ql
+OV
 RR
 dZ
 Go
@@ -5749,10 +5849,10 @@ Nr
 hY
 hY
 hY
-hY
-hY
-hY
-hY
+KA
+KA
+cp
+yW
 RR
 Os
 eF
@@ -5797,9 +5897,9 @@ hY
 hY
 hY
 hY
-hY
-hY
-hY
+KA
+KA
+KA
 RR
 RR
 RR
