@@ -11,18 +11,14 @@
 /obj/structure/chair/sofa/brown
 	icon_state = "brown_sofa_middle"
 
-
 /obj/structure/chair/sofa/brown/left
 	icon_state = "brown_sofa_end_left"
-
 
 /obj/structure/chair/sofa/brown/right
 	icon_state = "brown_sofa_end_right"
 
-
 /obj/structure/chair/sofa/brown/corner
 	icon_state = "brown_sofa_corner"
-
 
 /obj/structure/chair/sofa/brown/internal_corner
 	icon_state = "brown_sofa_internalcorner"
@@ -80,7 +76,6 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/brown/corpo/left, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/brown/corpo/right, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/brown/corpo/corner, 0)
 MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/sofa/brown/corpo/internal_corner, 0)
-
 
 // purple, new
 
