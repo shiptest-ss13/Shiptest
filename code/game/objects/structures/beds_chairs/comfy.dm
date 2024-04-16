@@ -42,6 +42,7 @@
 	name = "shuttle seat"
 	desc = "A comfortable, secure seat. It has a more sturdy looking buckling system, for smoother flights."
 	icon_state = "shuttle_chair"
+	icon = 'icons/obj/chairs.dmi'
 	buildstacktype = /obj/item/stack/sheet/mineral/titanium
 
 /obj/structure/chair/comfy/shuttle/get_armrest()

@@ -816,10 +816,9 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/aft)
 "di" = (
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/west{
 	buildstackamount = 0;
-	color = "#c45c57";
-	dir = 8
+	color = "#c45c57"
 	},
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms)
@@ -1625,9 +1624,7 @@
 	},
 /area/outpost/hallway/fore)
 "gd" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "ge" = (
@@ -2436,9 +2433,7 @@
 /turf/open/floor/plating,
 /area/outpost/maintenance/aft)
 "jm" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -3625,7 +3620,7 @@
 /turf/open/floor/plasteel,
 /area/outpost/vacant_rooms)
 "nk" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -3961,9 +3956,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/machinery/firealarm/directional/west,
 /turf/open/floor/concrete/tiles,
 /area/outpost/hallway/aft)
@@ -4051,9 +4044,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "oZ" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /turf/open/floor/plasteel/sepia,
 /area/outpost/crew/canteen)
 "pa" = (
@@ -4093,9 +4084,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /obj/item/radio/intercom/directional/west,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 4
@@ -4227,7 +4216,7 @@
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/crew/cryo)
 "pG" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = 32
 	},
@@ -5568,9 +5557,7 @@
 /turf/open/floor/wood,
 /area/outpost/operations)
 "tN" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /turf/open/floor/plasteel/sepia,
 /area/outpost/crew/canteen)
 "tO" = (
@@ -5626,18 +5613,14 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/outpost/hallway/fore)
 "tY" = (
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/corner/directional/north,
 /obj/structure/sign/poster/official/moth/epi{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/sepia,
 /area/outpost/crew/canteen)
 "tZ" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/machinery/button/door{
 	dir = 4;
 	pixel_x = -28;
@@ -6384,9 +6367,7 @@
 /turf/open/floor/concrete/slab_3,
 /area/outpost/hallway/starboard)
 "wy" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -6676,9 +6657,7 @@
 /turf/open/floor/wood,
 /area/outpost/hallway/central)
 "xv" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /obj/structure/sign/poster/contraband/free_tonto{
 	pixel_y = -32
 	},
@@ -7333,9 +7312,7 @@
 /turf/open/floor/plating/rust,
 /area/outpost/maintenance/fore)
 "zG" = (
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /obj/machinery/light/directional/west,
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_x = 7;
@@ -7362,9 +7339,7 @@
 /turf/open/floor/concrete/slab_3,
 /area/outpost/hallway/central)
 "zK" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/item/toy/plush/moth,
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
@@ -7811,7 +7786,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/food/flour,
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/item/toy/figure/botanist{
 	pixel_x = 2
 	},
@@ -8150,7 +8125,7 @@
 	},
 /area/outpost/operations)
 "Cw" = (
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -8642,9 +8617,7 @@
 /turf/open/floor/concrete/slab_1,
 /area/outpost/crew/library)
 "En" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
@@ -9365,9 +9338,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/crew/cryo)
 "GG" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_y = 7
 	},
@@ -9693,9 +9664,7 @@
 /turf/open/floor/plasteel/tech,
 /area/outpost/crew/cryo)
 "HS" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/item/toy/plush/beeplushie,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
@@ -11009,7 +10978,7 @@
 /turf/open/floor/carpet,
 /area/outpost/crew/dorm)
 "Mp" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /turf/open/floor/plasteel/dark,
 /area/outpost/operations)
 "Mq" = (
@@ -11085,9 +11054,7 @@
 /turf/open/floor/concrete/tiles,
 /area/outpost/hallway/aft)
 "MO" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/sepia,
 /area/outpost/crew/canteen)
@@ -12333,9 +12300,7 @@
 /turf/open/floor/plasteel/dark,
 /area/outpost/security)
 "QM" = (
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/wood,
 /area/outpost/crew/library)
@@ -12896,9 +12861,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/outpost/crew/canteen)
 "SW" = (
-/obj/structure/chair/sofa/left{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/left/directional/north,
 /obj/effect/decal/cleanable/robot_debris/gib{
 	pixel_x = -13
 	},
@@ -13164,9 +13127,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -13789,9 +13750,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/machinery/light/directional/south,
 /obj/machinery/newscaster/directional/east,
 /turf/open/floor/wood,
@@ -14932,9 +14891,7 @@
 /turf/open/floor/grass,
 /area/outpost/hallway/fore)
 "ZR" = (
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},

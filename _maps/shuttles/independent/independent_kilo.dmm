@@ -650,10 +650,9 @@
 /turf/open/floor/carpet,
 /area/ship/crew)
 "da" = (
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/north{
 	buildstackamount = 0;
-	color = "#c45c57";
-	dir = 1
+	color = "#c45c57"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/status_display{
@@ -1225,7 +1224,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -1434,9 +1433,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 2
 	},
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/left/directional/west,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -1608,7 +1605,7 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/brown/corner/directional/south,
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/wood{
