@@ -576,6 +576,10 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"gu" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/plating/asteroid/rockplanet/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "gv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4{
 	dir = 6
@@ -1304,6 +1308,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
+"oO" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/item/mine/pressure/explosive/live{
+	layer = 2/8
+	},
+/turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "oU" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 4
@@ -1551,7 +1562,9 @@
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery/crew)
 "rW" = (
-/obj/effect/mine/explosive,
+/obj/item/mine/pressure/explosive/live{
+	layer = 2/8
+	},
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "sb" = (
@@ -2954,8 +2967,10 @@
 /turf/open/floor/wood/rockplanet,
 /area/ruin/rockplanet/distillery/saloon)
 "Hu" = (
-/obj/effect/mine/explosive,
 /obj/structure/flora/ausbushes/sparsegrass,
+/obj/item/mine/pressure/explosive/rusty/live{
+	layer = 2.8
+	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Hv" = (
@@ -3884,14 +3899,9 @@
 /obj/item/paper/crumpled/muddy/fluff/distillery{
 	pixel_y = -12
 	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	icon_state = "distiller";
-	closed_state = "distiller";
+/obj/structure/fermenting_barrel/distiller{
 	pixel_y = 12;
-	density = 0;
-	name = "Distiller";
-	desc = "A repurposed barrel and keg used for brewing alcohol."
+	density = 0
 	},
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery)
@@ -4497,7 +4507,7 @@
 /turf/open/floor/pod/rockplanet,
 /area/ruin/rockplanet/distillery)
 "Yo" = (
-/obj/effect/mine/explosive,
+/obj/item/mine/pressure/explosive/live,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Yq" = (
@@ -6058,7 +6068,7 @@ hY
 Wc
 DE
 dn
-rW
+Xg
 nR
 nR
 "}
@@ -6105,7 +6115,7 @@ hY
 hY
 Wc
 Dw
-Ru
+oO
 Xg
 nR
 "}
@@ -6265,7 +6275,7 @@ nR
 nR
 nR
 qw
-Yo
+gu
 nR
 nR
 Xg
