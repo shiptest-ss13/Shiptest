@@ -1674,7 +1674,11 @@
 			active_hud.screentip_text.maptext = ""
 		else
 			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
-			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[name]</span>"
+			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[get_screentip_name(client)]</span>"
+
+/// Returns the atom name that should be used on screentip
+/atom/proc/get_screentip_name(client/hovering_client)
+	return name
 
 ///Called whenever a player is spawned on the same turf as this atom.
 /atom/proc/join_player_here(mob/M)

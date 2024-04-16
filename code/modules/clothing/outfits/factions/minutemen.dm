@@ -308,7 +308,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/clip
 	shoes = /obj/item/clothing/shoes/combat
 
-	box = /obj/item/storage/box/survival/engineer/radio
+	box = /obj/item/storage/box/survival/engineer
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/ballistic/revolver/mateba=1)
 
 /datum/outfit/job/clip/minutemen/captain/general/admiral // for flavor, might remove outright
