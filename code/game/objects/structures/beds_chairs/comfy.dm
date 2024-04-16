@@ -102,6 +102,11 @@
 /obj/structure/chair/comfy/purple/corpo
 	icon_state = "corp_purple"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/purple, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/purple/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/purple/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/purple/corpo, 0)
+
 // Beige
 /obj/structure/chair/comfy/beige
 	icon_state = "imaginos_beige"
@@ -115,6 +120,11 @@
 /obj/structure/chair/comfy/beige/corpo
 	icon_state = "corp_beige"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/beige, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/beige/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/beige/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/beige/corpo, 0)
+
 // Grey
 /obj/structure/chair/comfy/grey
 	icon_state = "imaginos_grey"
@@ -127,6 +137,11 @@
 
 /obj/structure/chair/comfy/grey/corpo
 	icon_state = "corp_grey"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/grey, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/grey/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/grey/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/grey/corpo, 0)
 
 // Orange
 
@@ -142,6 +157,11 @@
 /obj/structure/chair/comfy/orange/corpo
 	icon_state = "corp_orange"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/orange, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/orange/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/orange/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/orange/corpo, 0)
+
 // Blue
 
 /obj/structure/chair/comfy/blue
@@ -155,6 +175,11 @@
 
 /obj/structure/chair/comfy/blue/corpo
 	icon_state = "corp_blue"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/blue, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/blue/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/blue/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/blue/corpo, 0)
 
 // Red
 
@@ -170,6 +195,11 @@
 /obj/structure/chair/comfy/red/corpo
 	icon_state = "corp_red"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/red, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/red/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/red/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/red/corpo, 0)
+
 // Olive
 
 /obj/structure/chair/comfy/olive
@@ -183,6 +213,11 @@
 
 /obj/structure/chair/comfy/olive/corpo
 	icon_state = "corp_olive"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive/old, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive/old/alt, 0)
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/comfy/olive/corpo, 0)
 
 // Benches - No armrests
 
@@ -198,20 +233,34 @@
 /obj/structure/chair/bench/purple
 	icon_state = "bench_purple"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/purple, 0)
+
 /obj/structure/chair/bench/beige
 	icon_state = "bench_beige"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/beige, 0)
 
 /obj/structure/chair/bench/grey
 	icon_state = "bench_grey"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/grey, 0)
+
 /obj/structure/chair/bench/orange
 	icon_state = "bench_orange"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/orange, 0)
 
 /obj/structure/chair/bench/blue
 	icon_state = "bench_blue"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/blue, 0)
+
 /obj/structure/chair/bench/red
 	icon_state = "bench_red"
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/red, 0)
+
 /obj/structure/chair/bench/olive
 	icon_state = "bench_olive"
+
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/bench/olive, 0)
