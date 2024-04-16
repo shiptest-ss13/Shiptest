@@ -317,3 +317,34 @@
 /datum/emote/living/carbon/human/robot_tongue/sad/run_emote(mob/user, params)
 	if(..())
 		playsound(user.loc, 'sound/misc/sadtrombone.ogg', 50)
+
+//kepi
+
+/datum/emote/living/carbon/human/kepiclick
+	key = "click"
+	key_third_person = "clicks"
+	message = "clicks."
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/carbon/human/kepiclick/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(iskepori(user))
+		return 'sound/voice/kepori/kepiclick.ogg' //https://freesound.org/people/Ambiabstract/sounds/584212/
+
+/datum/emote/living/carbon/human/kepiwhistle
+	key = "whistle"
+	key_third_person = "whistles"
+	message = "whistles!"
+	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/carbon/human/kepiwhistle/get_sound(mob/living/user)
+	if(!ishuman(user))
+		return
+	if(iskepori(user))
+		return 'sound/voice/kepori/kepiwhistle.ogg' //https://freesound.org/people/Andreas.Mustola/sounds/338277/
+
+/datum/emote/living/carbon/human/kepiwoop
+	key = "woop"
+	key_third_person = "woops"
+	message = "woops!"
