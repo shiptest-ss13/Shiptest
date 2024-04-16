@@ -281,8 +281,8 @@
 			credit_card_details = H.get_bank_account()
 		if(H in gun_owners)
 			if(multi_payment && credit_card_details)
-				if(credit_card_details.adjust_money(-payment_amount))
-					pin_owner.registered_account.adjust_money(payment_amount)
+				if(credit_card_details.has_money(payment_amount))
+					pin_owner.registered_account.transfer_money(credit_card_details, payment_amount)
 					return TRUE
 				to_chat(user, "<span class='warning'>ERROR: User balance insufficent for successful transaction!</span>")
 				return FALSE
@@ -295,8 +295,8 @@
 				return FALSE
 			switch(license_request)
 				if("Yes")
-					if(credit_card_details.adjust_money(-payment_amount))
-						pin_owner.registered_account.adjust_money(payment_amount)
+					if(credit_card_details.has_money(payment_amount))
+						pin_owner.registered_account.transfer_money(credit_card_details, payment_amount)
 						gun_owners += H
 						to_chat(user, "<span class='notice'>Gun license purchased, have a secure day!</span>")
 						active_prompt = FALSE

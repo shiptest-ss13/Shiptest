@@ -445,6 +445,7 @@
 	name = "hook modified sawn-off shotgun"
 	desc = "Range isn't an issue when you can bring your victim to you."
 	icon_state = "hookshotgun"
+	icon = 'icons/obj/guns/projectile.dmi'
 	item_state = "shotgun"
 	load_sound = 'sound/weapons/gun/shotgun/insert_shell.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bounty

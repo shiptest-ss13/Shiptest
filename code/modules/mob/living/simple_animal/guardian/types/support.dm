@@ -93,7 +93,7 @@
 	name = "bluespace receiving pad"
 	icon = 'icons/turf/floors.dmi'
 	desc = "A receiving zone for bluespace teleportations."
-	icon_state = "light_on-w"
+	icon_state = "light_on_flicker-1"
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	density = FALSE
 	anchored = TRUE
