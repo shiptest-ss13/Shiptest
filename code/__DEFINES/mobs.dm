@@ -76,7 +76,7 @@
 #define SPECIES_ANDROID "android"
 #define SPECIES_CORPORATE "corporate"
 #define SPECIES_DULLAHAN "dullahan"
-#define SPECIES_ELZUOSA "elzuosa"
+#define SPECIES_ELZUOSE "elzuose"
 #define SPECIES_FLYPERSON "fly"
 #define SPECIES_HUMAN "human"
 #define SPECIES_IPC "ipc"
@@ -117,7 +117,7 @@
 //Species bitflags for sprite sheets. If this somehow ever gets above 23 we have larger problems.
 #define FLAG_HUMAN (1<<0)
 #define FLAG_IPC (1<<1)
-#define FLAG_ELZUOSA (1<<2)
+#define FLAG_ELZUOSE (1<<2)
 #define FLAG_PLASMAMAN (1<<3)
 #define FLAG_MOTH (1<<4)
 #define FLAG_LIZARD (1<<5)
@@ -244,14 +244,14 @@
 
 //Charge levels for Ethereals
 //WS Begin -- Ethereal Charge Scaling
-#define ELZUOSA_CHARGE_SCALING_MULTIPLIER 20
-#define ELZUOSA_CHARGE_NONE (0 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
-#define ELZUOSA_CHARGE_LOWPOWER (20 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
-#define ELZUOSA_CHARGE_NORMAL (50 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
-#define ELZUOSA_CHARGE_ALMOSTFULL (75 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
-#define ELZUOSA_CHARGE_FULL (100 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
-#define ELZUOSA_CHARGE_OVERLOAD (125 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
-#define ELZUOSA_CHARGE_DANGEROUS (150 * ELZUOSA_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_SCALING_MULTIPLIER 20
+#define ELZUOSE_CHARGE_NONE (0 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_LOWPOWER (20 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_NORMAL (50 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_ALMOSTFULL (75 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_FULL (100 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_OVERLOAD (125 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
+#define ELZUOSE_CHARGE_DANGEROUS (150 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 //WS End
 
 //Slime evolution threshold. Controls how fast slimes can split/grow
@@ -345,7 +345,7 @@
 #define DOOR_CRUSH_DAMAGE 15 //the amount of damage that airlocks deal when they crush you
 
 #define HUNGER_FACTOR 0.1 //factor at which mob nutrition decreases
-#define ELZUOSA_CHARGE_FACTOR (0.05 * ELZUOSA_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
+#define ELZUOSE_CHARGE_FACTOR (0.05 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) //factor at which ethereal's charge decreases
 #define REAGENTS_METABOLISM 0.4 //How many units of reagent are consumed per tick, by default.
 #define REAGENTS_EFFECT_MULTIPLIER (REAGENTS_METABOLISM / 0.4) // By defining the effect multiplier this way, it'll exactly adjust all effects according to how they originally were with the 0.4 metabolism
 

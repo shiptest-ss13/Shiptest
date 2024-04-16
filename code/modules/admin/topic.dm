@@ -1239,7 +1239,7 @@
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
 		else if(isplasmaman(H))
 			cookiealt = /obj/item/reagent_containers/food/condiment/milk
-		else if(iselzuosa(H))
+		else if(iselzuose(H))
 			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
 		// WS - More fun with cookies - Start
 		else if(islizard(H))

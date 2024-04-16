@@ -18,7 +18,7 @@
 #define SCANGATE_SPIDER "rachnid"
 #define SCANGATE_IPC "ipc"
 #define SCANGATE_SQUID "squid"
-#define SCANGATE_ELZUOSA "elzuosa"
+#define SCANGATE_ELZUOSE "elzuose"
 #define SCANGATE_KEPORI "kepori"
 
 /obj/machinery/scanner_gate
@@ -147,8 +147,8 @@
 						scan_species = /datum/species/spider
 					if(SCANGATE_IPC)
 						scan_species = /datum/species/ipc
-					if(SCANGATE_ELZUOSA)
-						scan_species = /datum/species/elzuosa
+					if(SCANGATE_ELZUOSE)
+						scan_species = /datum/species/elzuose
 					if(SCANGATE_KEPORI)
 						scan_species = /datum/species/kepori
 				if(is_species(H, scan_species))
@@ -248,5 +248,5 @@
 #undef SCANGATE_SPIDER
 #undef SCANGATE_IPC
 #undef SCANGATE_SQUID
-#undef SCANGATE_ELZUOSA
+#undef SCANGATE_ELZUOSE
 #undef SCANGATE_KEPORI
