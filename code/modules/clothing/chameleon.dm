@@ -150,7 +150,7 @@
 		card.assignment = J.name
 		card.update_appearance()
 		card.assignment = old_assignment
-		card.update_label()
+		card.name = "[(istype(src, /obj/item/card/id/syndicate)) ? "[initial(name)]" : "access card"][(!old_assignment) ? "" : " ([old_assignment])"]"
 		H.sec_hud_set_ID()
 
 	qdel(outfit)

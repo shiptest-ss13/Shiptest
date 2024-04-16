@@ -4,9 +4,9 @@ First-time installation should be fairly straightforward. First, you'll need
 BYOND installed. You can get it from https://www.byond.com/download. Once you've done
 that, extract the game files to wherever you want to keep them. This is a
 sourcecode-only release, so the next step is to compile the server files.
-Open shiptest.dme by double-clicking it, open the Build menu, and click
-compile. This'll take a little while, and if everything's done right you'll get
-a message like this:
+
+Double-click `BUILD.bat` in the root directory of the source code. This'll take
+a little while, and if everything's done right you'll get a message like this:
 
 ```
 saving shiptest.dmb (DEBUG mode)
@@ -16,14 +16,6 @@ shiptest.dmb - 0 errors, 0 warnings
 If you see any errors or warnings, something has gone wrong - possibly a corrupt
 download or the files extracted wrong. If problems persist, ask for assistance
 in [the discord](https://shiptest.net/discord)
-
-Once that's done, open up the config folder. You'll want to edit config.txt to
-set the probabilities for different gamemodes in Secret and to set your server
-location so that all your players don't get disconnected at the end of each
-round. It's recommended you don't turn on the gamemodes with probability 0,
-except Extended, as they have various issues and aren't currently being tested,
-so they may have unknown and bizarre bugs. Extended is essentially no mode, and
-isn't in the Secret rotation by default as it's just not very fun.
 
 You'll also want to edit config/admins.txt to remove the default admins and add
 your own. "Game Master" is the highest level of access, and probably the one
@@ -43,9 +35,15 @@ Windows DLL is included in this repository, but Linux users will need to build
 and install it themselves. Directions can be found at the [rust-g
 repo](https://github.com/tgstation/rust-g).
 
+**Unlike other servers,** Shiptest also uses an external library called Auxmos, which
+needs to be compiled on linux systems. Like with rust-g, Windows hosts should be fine, as the DLL
+it needs is shipped with the repository. Please download and install [auxmos](https://github.com/Putnam3145/auxmos)
+using the instructions provided if you're running a linux system.
+`tools/ci/build_auxmos.sh` can also be used if you're in a rush.
+
 Finally, to start the server, run Dream Daemon and enter the path to your
 compiled shiptest.dmb file. Make sure to set the port to the one you
-specified in the config.txt, and set the Security box to 'Safe'. Then press GO
+specified in the config.txt, and set the Security box to 'Trusted'. Then press GO
 and the server should start up and be ready to join. It is also recommended that
 you set up the SQL backend (see below).
 
@@ -68,9 +66,14 @@ https://github.com/tgstation/tgstation-server
 
 ## SQL SETUP
 
-The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not supported but Mariadb is a drop in replacement for mysql. SQL is required for the library, stats tracking, admin notes, and job-only bans, among other features, mostly related to server administration. Your server details go in /config/dbconfig.txt, and the SQL schema is in /SQL/tgstation_schema.sql and /SQL/tgstation_schema_prefix.sql depending on if you want table prefixes. More detailed setup instructions are located here: https://shiptest.net/wiki/Downloading_the_source_code#Setting_up_the_database
+The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not 
+supported, but Mariadb is a drop in replacement for mysql. SQL is required for the 
+library, stats tracking, admin notes, and job-only bans, among other features,
+mostly related to server administration. Your server details go in /config/dbconfig.txt, 
+and the SQL schema is in /SQL/tgstation_schema.sql and /SQL/tgstation_schema_prefix.sql 
+depending on if you want table prefixes. 
 
-If you are hosting a testing server on windows you can use a standalone version of MariaDB pre load with a blank (but initialized) tgdb database. Find them here: https://tgstation13.download/database/ Just unzip and run for a working (but insecure) database server. Includes a zipped copy of the data folder for easy resetting back to square one.
+More detailed setup instructions are located here: https://shiptest.net/wiki/Downloading_the_source_code#Setting_up_the_database
 
 ## WEB/CDN RESOURCE DELIVERY
 
