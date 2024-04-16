@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isgrenade(A) (istype(A, /obj/item/grenade))
 
-#define islandmine(A) (istype(A, /obj/effect/mine))
+#define islandmine(A) (istype(A, /obj/item/mine))
 
 #define issupplypod(A) (istype(A, /obj/structure/closet/supplypod))
 
