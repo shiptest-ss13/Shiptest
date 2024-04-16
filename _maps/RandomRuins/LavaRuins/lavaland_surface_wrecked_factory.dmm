@@ -144,7 +144,6 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "bQ" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner,
-/obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
@@ -324,7 +323,6 @@
 /area/ruin/lavaland/factory/dorms)
 "ev" = (
 /obj/effect/gibspawner/human,
-/obj/item/clothing/head/helmet/sec,
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -534,6 +532,10 @@
 /obj/machinery/door/airlock{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "hf" = (
@@ -736,8 +738,14 @@
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "jW" = (
-/turf/template_noop,
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/machinery/button/door{
+	id = "management";
+	name = "Office Lockdown";
+	dir = 8;
+	pixel_x = 22
+	},
+/turf/open/floor/carpet/blue,
+/area/ruin/lavaland/factory/manager_office)
 "jX" = (
 /obj/structure/flora/rock/lava,
 /turf/open/floor/plating/moss,
@@ -1012,6 +1020,15 @@
 	},
 /turf/open/floor/plating/rust,
 /area/overmap_encounter/planetoid/lava/explored)
+"nA" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning,
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "nG" = (
 /obj/effect/turf_decal/box/corners{
 	dir = 8
@@ -1453,6 +1470,15 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/lavaland/factory/manager_office)
+"tH" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "tN" = (
 /obj/effect/turf_decal/trimline/opaque/lime/corner{
 	dir = 1
@@ -1519,6 +1545,7 @@
 /obj/item/mecha_parts/part/ripley_right_arm,
 /obj/item/mecha_parts/part/ripley_right_leg,
 /obj/item/mecha_parts/part/ripley_torso,
+/obj/item/mecha_parts/mecha_equipment/drill,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "uJ" = (
@@ -1532,7 +1559,7 @@
 /obj/item/reagent_containers/glass/bottle/morphine,
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/glass/bottle/charcoal,
-/obj/item/storage/box/bodybags,
+/obj/item/clothing/neck/stethoscope,
 /turf/open/floor/plasteel/mono,
 /area/ruin/lavaland/factory/warehouse)
 "uV" = (
@@ -1793,6 +1820,9 @@
 /obj/structure/flora/tree/dead/tall,
 /turf/open/floor/plating/asteroid/purple/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"yQ" = (
+/turf/closed/indestructible/titanium,
+/area/ruin/lavaland/factory/manager_office)
 "yU" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
@@ -1850,6 +1880,14 @@
 /obj/structure/catwalk/over/plated_catwalk/dark,
 /turf/open/floor/plating,
 /area/ruin/lavaland/factory/warehouse)
+"zz" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning{
+	dir = 1
+	},
+/obj/item/gun/ballistic/automatic/smg/proto/unrestricted,
+/obj/item/ammo_box/magazine/smgm9mm,
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "zC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/cable/yellow{
@@ -2104,6 +2142,9 @@
 /obj/effect/turf_decal/trimline/opaque/lime/warning,
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/blood{
+	icon_state = "gibmid2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
@@ -2889,6 +2930,9 @@
 /obj/structure/flippedtable,
 /obj/effect/gibspawner/human,
 /obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/lobby)
 "NM" = (
@@ -3202,10 +3246,8 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/adminstrative)
 "SL" = (
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/syndicate/ranged,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/turf/closed/indestructible/reinforced,
+/area/ruin/lavaland/factory/manager_office)
 "SP" = (
 /obj/item/stack/ore/salvage/scrapmetal,
 /turf/open/floor/plating/moss,
@@ -3318,6 +3360,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
+"TP" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/turf/open/floor/plasteel/dark,
+/area/overmap_encounter/planetoid/lava/explored)
 "TZ" = (
 /obj/effect/turf_decal/trimline/opaque/beige/warning{
 	dir = 8
@@ -3529,6 +3575,14 @@
 /obj/structure/flora/ausbushes/genericbush/hell,
 /turf/open/floor/plating/asteroid/purple/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"WZ" = (
+/obj/effect/turf_decal/trimline/opaque/lime/warning,
+/obj/effect/decal/cleanable/blood{
+	icon_state = "trails_2";
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/lavaland/factory/dorms)
 "Xc" = (
 /obj/structure/sign/poster/official/cleanliness,
 /turf/closed/wall/mineral/titanium,
@@ -3570,6 +3624,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/lavaland/factory/lobby)
 "XM" = (
@@ -3933,7 +3988,7 @@ Xn
 Ui
 hY
 Ui
-jW
+tV
 An
 AE
 In
@@ -4553,12 +4608,12 @@ LZ
 LZ
 LZ
 LZ
-KX
-KX
-KX
-KX
-KX
-KX
+yQ
+yQ
+yQ
+yQ
+yQ
+yQ
 pp
 Zc
 Pb
@@ -4601,13 +4656,13 @@ LZ
 LZ
 Vn
 Vn
-KX
-KX
+yQ
+yQ
 GS
 ZH
 DB
 RF
-KX
+yQ
 Zc
 Zc
 Zc
@@ -4656,7 +4711,7 @@ Wx
 ve
 Vw
 rh
-KX
+yQ
 Qc
 Qc
 ZO
@@ -4705,7 +4760,7 @@ LP
 Wx
 LL
 MY
-KX
+yQ
 gj
 Qc
 Qc
@@ -4846,7 +4901,7 @@ LZ
 Vn
 Vn
 LP
-LP
+jW
 zk
 vE
 EU
@@ -4895,8 +4950,8 @@ LZ
 LZ
 Vn
 Vn
-KX
-KX
+yQ
+yQ
 ab
 vQ
 LL
@@ -4945,11 +5000,11 @@ LZ
 LZ
 LZ
 LZ
-KX
-KX
-KX
-KX
-KX
+yQ
+yQ
+yQ
+yQ
+yQ
 KX
 KX
 KX
@@ -5366,11 +5421,11 @@ qV
 ka
 QB
 RI
-uE
+SL
 uE
 wU
 wU
-uE
+SL
 Sd
 Sd
 Sd
@@ -5414,13 +5469,13 @@ Va
 UO
 qV
 Ga
-Ou
+TP
 Tx
 bm
 so
 sf
-uE
-uE
+SL
+SL
 bd
 Oe
 bd
@@ -5464,7 +5519,7 @@ PH
 ev
 lr
 Fe
-uE
+SL
 Ut
 so
 ha
@@ -5547,7 +5602,7 @@ sZ
 sZ
 oI
 dY
-Ie
+WZ
 FJ
 sZ
 sZ
@@ -5566,8 +5621,8 @@ lU
 gc
 FM
 QA
-uE
-uE
+SL
+SL
 bd
 bd
 bd
@@ -5609,13 +5664,13 @@ wP
 pP
 KI
 MJ
-SL
+Sd
 CG
-uE
-uE
+SL
+SL
 eD
 zO
-uE
+SL
 bd
 bd
 bd
@@ -5645,7 +5700,7 @@ MH
 sZ
 qX
 dY
-Ie
+WZ
 CT
 sZ
 MH
@@ -5694,7 +5749,7 @@ MH
 sZ
 YJ
 dY
-Ie
+WZ
 YJ
 sZ
 MH
@@ -5743,7 +5798,7 @@ MH
 sZ
 gk
 dY
-Ie
+tH
 of
 sZ
 MH
@@ -5791,8 +5846,8 @@ MH
 MH
 sZ
 YJ
-dY
-Ie
+zz
+nA
 YJ
 sZ
 MH
