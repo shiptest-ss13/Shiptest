@@ -41,7 +41,7 @@
 /obj/item/melee/sword/scrap
 	name = "scrap sword"
 	desc = "A jagged and painful weapon only effective on targets without an armour"
-	icon_state = "scrap_sword"
+	icon_state = "machete0"
 	force = 24
 	throwforce = 10
 	armour_penetration = -35
@@ -50,6 +50,8 @@
 /obj/item/melee/sword/mass
 	name = "mass produced machete"
 	desc = "A middle ground between a machete and a short sword. A simple construction of stamped steel but its so cheap its hard to complain. Its right between being a one hand and two handed weapon"
+	icon_state = "machete0"
+	base_icon_state = "machete"
 	force = 20
 	throwforce = 15
 	max_integrity = 50

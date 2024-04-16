@@ -59,7 +59,6 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]1")
 
-
 /obj/item/spear/explosive
 	name = "explosive lance"
 	icon_state = "spearbomb0"
