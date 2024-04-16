@@ -650,33 +650,33 @@
 	custom_materials = list(/datum/material/gold = 200)
 
 /obj/item/storage/bottles
-    name = "bottle crate"
-    desc = "A small crate for storing bottles"
-    icon = 'icons/obj/storage.dmi'
-    icon_state = "bottlecrate"
-    item_state = "deliverypackage"
-    lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
-    righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-    custom_materials = list(/datum/material/wood = 800)
-    w_class = WEIGHT_CLASS_BULKY
-    var/sealed = FALSE
-    var/max_bottles = 6
-    var/list/valid_bottles = list(/obj/item/reagent_containers/food/drinks/beer,
-    /obj/item/reagent_containers/food/drinks/ale,
-    /obj/item/reagent_containers/food/drinks/bottle)
+	name = "bottle crate"
+	desc = "A small crate for storing bottles"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "bottlecrate"
+	item_state = "deliverypackage"
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
+	custom_materials = list(/datum/material/wood = 800)
+	w_class = WEIGHT_CLASS_BULKY
+	var/sealed = FALSE
+	var/max_bottles = 6
+	var/list/valid_bottles = list(/obj/item/reagent_containers/food/drinks/beer,
+	/obj/item/reagent_containers/food/drinks/ale,
+	/obj/item/reagent_containers/food/drinks/bottle)
 
 /obj/item/storage/bottles/Initialize()
-    . = ..()
-    update_appearance()
+	. = ..()
+	update_appearance()
 
 /obj/item/storage/bottles/ComponentInitialize()
-    . = ..()
-    var/datum/component/storage/S = GetComponent(/datum/component/storage)
-    S.max_w_class = WEIGHT_CLASS_NORMAL
-    S.max_combined_w_class = 16
-    S.max_items = max_bottles
-    S.set_holdable(valid_bottles)
-    S.locked = sealed
+	. = ..()
+	var/datum/component/storage/S = GetComponent(/datum/component/storage)
+	S.max_w_class = WEIGHT_CLASS_NORMAL
+	S.max_combined_w_class = 16
+	S.max_items = max_bottles
+	S.set_holdable(valid_bottles)
+	S.locked = sealed
 
 /obj/item/storage/bottles/update_icon_state()
 	if(sealed)
