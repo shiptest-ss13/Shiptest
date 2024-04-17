@@ -5777,7 +5777,6 @@
 /obj/effect/decal/cleanable/greenglow{
 	pixel_y = -10
 	},
-/obj/machinery/light/directional/east,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
@@ -5802,7 +5801,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/structure/frame/machine,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4;
 	color = "#808080"
@@ -9773,9 +9771,6 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 1
 	},
-/obj/structure/sign/poster/official/build{
-	pixel_y = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -9787,6 +9782,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
@@ -11762,6 +11760,17 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"Sb" = (
+/obj/structure/sign/poster/official/build{
+	pixel_y = -32
+	},
+/obj/machinery/light/directional/south,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/machinery/power/ship_gravity,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "Sc" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -14168,7 +14177,7 @@ Fu
 WW
 Mv
 Ko
-hr
+Sb
 hr
 UJ
 UJ

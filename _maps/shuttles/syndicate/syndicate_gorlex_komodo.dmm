@@ -2707,8 +2707,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -3244,13 +3244,11 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "EL" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/obj/machinery/computer/monitor,
-/obj/structure/cable/yellow{
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "EN" = (
@@ -3524,9 +3522,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "HF" = (

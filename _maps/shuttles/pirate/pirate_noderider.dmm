@@ -413,6 +413,12 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/industrial/caution,
+/obj/structure/closet/secure_closet/engineering_electrical{
+	req_access = null
+	},
+/obj/structure/cable{
+	icon_state = "5-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "fD" = (
@@ -2964,15 +2970,16 @@
 /obj/structure/railing/corner{
 	layer = 3.1
 	},
-/obj/structure/closet/secure_closet/engineering_electrical{
-	req_access = null
-	},
 /obj/effect/turf_decal/spline/fancy/opaque/black/corner,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/turf_decal/corner_techfloor_gray{
 	dir = 8
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)

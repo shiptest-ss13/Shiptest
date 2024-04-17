@@ -1317,15 +1317,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/item/analyzer{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1540,6 +1534,13 @@
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/number/five,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "jT" = (
@@ -2757,6 +2758,19 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"qD" = (
+/obj/structure/railing,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "qF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -4532,6 +4546,9 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Ba" = (
@@ -5822,7 +5839,13 @@
 /obj/item/assembly/igniter{
 	pixel_y = 6
 	},
-/obj/structure/cable/yellow,
+/obj/item/analyzer{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Lu" = (
@@ -6237,16 +6260,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "OG" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /obj/structure/railing,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/catwalk/over,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "OK" = (
 /obj/machinery/cryopod{
@@ -7944,7 +7960,7 @@ sV
 sV
 AO
 cj
-ek
+qD
 jS
 AZ
 gV

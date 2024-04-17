@@ -1169,6 +1169,10 @@
 	sortTypes = list(4);
 	tag = "Engineering"
 	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/firealarm/directional/east,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "ir" = (
@@ -1330,7 +1334,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/firealarm/directional/south,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/engineering)
 "jo" = (
@@ -5972,6 +5978,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/cargo)
+"MT" = (
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
+/obj/effect/turf_decal/industrial/warning/corner,
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/engineering)
 "Nd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2
@@ -8183,7 +8195,7 @@ hr
 vx
 XK
 jn
-WU
+MT
 VV
 Aj
 VV

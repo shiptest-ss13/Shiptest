@@ -760,10 +760,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "jx" = (
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "4-8"
 	},
+/obj/structure/closet/wall/orange/directional/north{
+	name = "fuel supply"
+	},
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/effect/turf_decal/radiation,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "jy" = (
@@ -2334,8 +2340,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/north,
 /obj/structure/catwalk/over,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "BZ" = (
@@ -2462,13 +2468,17 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "DE" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/structure/sign/warning/nosmoking{
-	pixel_y = 32
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "DG" = (
@@ -4036,11 +4046,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/mineral/uranium/five,
-/obj/item/stack/sheet/mineral/plasma/fifty,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/radiation,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Vo" = (
@@ -4183,6 +4193,9 @@
 "WM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)

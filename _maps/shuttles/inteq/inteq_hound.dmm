@@ -2256,6 +2256,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark/corner{
 	dir = 1
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
 "Wk" = (
@@ -2281,6 +2284,10 @@
 /obj/machinery/navbeacon/wayfinding{
 	codes_txt = "patrol;next_patrol=crew";
 	location = "eva"
+	},
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/eva)
