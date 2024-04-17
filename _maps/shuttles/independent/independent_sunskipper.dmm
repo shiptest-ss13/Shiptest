@@ -223,21 +223,19 @@
 /turf/closed/wall/r_wall/yesdiag,
 /area/ship/bridge)
 "bL" = (
-/obj/machinery/power/solar_control{
-	dir = 8
-	},
-/obj/structure/cable/orange{
-	icon_state = "0-10"
-	},
 /obj/machinery/light_switch{
 	pixel_x = -10;
 	pixel_y = -19;
 	dir = 1
 	},
-/obj/structure/sign/poster/contraband/peacemaker{
-	pixel_y = 32
-	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/obj/structure/sign/poster/contraband/peacemaker{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "bM" = (
@@ -305,6 +303,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/bordercorner{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/food/tomato_smudge,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/crew/hydroponics)
 "cH" = (
@@ -439,12 +438,10 @@
 /obj/machinery/power/terminal{
 	dir = 4
 	},
-/obj/structure/sign/warning/electricshock{
-	pixel_y = 28
-	},
 /obj/structure/cable/orange{
 	icon_state = "0-2"
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "eW" = (
@@ -574,15 +571,10 @@
 /area/ship/external/dark)
 "hC" = (
 /obj/structure/cable/green{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
 	icon_state = "1-8"
 	},
-/obj/machinery/power/apc/auto_name/directional/east,
-/obj/structure/cable/green,
-/obj/structure/cable/orange{
-	icon_state = "5-6"
+/obj/structure/cable/green{
+	icon_state = "1-6"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -828,6 +820,7 @@
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "kW" = (
@@ -870,14 +863,18 @@
 /turf/open/floor/plasteel/mono,
 /area/ship/crew/canteen/kitchen)
 "lf" = (
-/obj/structure/cable/green{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 4
 	},
-/obj/structure/extinguisher_cabinet/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/closet/wall/orange/directional/south{
+	name = "Tool Closet"
+	},
+/obj/item/flashlight,
+/obj/item/storage/toolbox/electrical,
+/obj/item/clothing/head/welding,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "lu" = (
@@ -1485,6 +1482,9 @@
 /obj/structure/cable/green{
 	icon_state = "0-10"
 	},
+/obj/structure/sign/warning/electricshock{
+	pixel_y = 28
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "ty" = (
@@ -1865,16 +1865,13 @@
 /obj/structure/cable/orange{
 	icon_state = "9-10"
 	},
-/obj/structure/cable/orange{
-	icon_state = "5-9"
-	},
-/obj/machinery/door/airlock/maintenance{
-	req_one_access = list(25, 28, 35)
-	},
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
 /obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/maintenance{
+	req_one_access = list(25, 28, 35)
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "yB" = (
@@ -1959,6 +1956,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/dept/cargo{
+	dir = 4
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "zC" = (
@@ -2292,8 +2292,7 @@
 /obj/machinery/button/door{
 	name = "Engine Blast Doors";
 	id = "sunskipper_engine_shutters";
-	pixel_y = 22;
-	pixel_x = -10
+	pixel_y = 22
 	},
 /obj/item/stack/sheet/mineral/wood{
 	amount = 10
@@ -2466,17 +2465,22 @@
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "Gp" = (
-/obj/structure/cable/green{
-	icon_state = "4-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/cable/orange{
-	icon_state = "6-9"
-	},
-/obj/machinery/firealarm/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable/orange{
+	icon_state = "1-6"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-9"
+	},
+/obj/structure/extinguisher_cabinet/directional/south{
+	pixel_x = 6
+	},
+/obj/machinery/firealarm/directional/south{
+	pixel_x = -6
+	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "Gt" = (
@@ -2560,6 +2564,22 @@
 	},
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/cryo)
+"Hj" = (
+/obj/machinery/power/solar_control{
+	dir = 8
+	},
+/obj/structure/cable/orange{
+	icon_state = "0-1"
+	},
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/structure/railing{
+	color = "#999999"
+	},
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/plating,
+/area/ship/maintenance/aft)
 "Hq" = (
 /obj/structure/chair/stool/bar{
 	dir = 1
@@ -2709,7 +2729,6 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "JY" = (
-/obj/item/radio/intercom/directional/east,
 /obj/machinery/power/port_gen/pacman{
 	anchored = 1
 	},
@@ -2718,7 +2737,7 @@
 	icon_state = "0-8"
 	},
 /obj/structure/cable/orange{
-	icon_state = "8-10"
+	icon_state = "2-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -3254,13 +3273,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
 	},
-/obj/item/storage/toolbox/electrical,
-/obj/item/storage/toolbox/mechanical,
-/obj/item/clothing/head/welding,
-/obj/item/flashlight,
-/obj/item/storage/toolbox/mechanical,
-/obj/structure/closet/wall/orange/directional/north{
-	name = "Tool Closet"
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "0-8"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
@@ -3276,10 +3294,6 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "Ry" = (
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
@@ -3766,7 +3780,6 @@
 	layer = 2.35;
 	piping_layer = 2
 	},
-/obj/machinery/light/directional/south,
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
 	},
@@ -4004,7 +4017,7 @@ lK
 BA
 tr
 JY
-BA
+Hj
 Gp
 BA
 Gd
