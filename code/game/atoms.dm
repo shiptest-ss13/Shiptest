@@ -1548,6 +1548,7 @@
  * * No gravity if this atom is in is a space turf
  * * Gravity if the area it's in always has gravity
  * * Gravity if there's a gravity generator on the z level
+ * * Gravity if there is a ship gravity generator in a ship
  * * Gravity if the Z level has an SSMappingTrait for ZTRAIT_GRAVITY
  * * otherwise no gravity
  */
@@ -1580,12 +1581,22 @@
 	else
 		// See if there's a gravity generator on our map zone
 		var/datum/map_zone/mapzone = T.get_map_zone()
+		var/max_grav = T.virtual_level_trait(ZTRAIT_GRAVITY)
 		if(mapzone?.gravity_generators.len)
-			var/max_grav = 0
 			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
-			return max_grav
-	return T.virtual_level_trait(ZTRAIT_GRAVITY)
+		// Check for ship-based gravity
+		var/area/ship/ship = A
+		if(istype(ship))
+			var/obj/docking_port/mobile/shuttle = ship.mobile_port
+			if(shuttle)
+				for(var/datum/weakref/weakref as anything in shuttle.gravgen_list)
+					var/obj/machinery/power/ship_gravity/SG = weakref.resolve()
+					if(!SG)
+						shuttle.gravgen_list -= weakref
+						continue
+					max_grav = max(SG.active,max_grav)
+		return max_grav
 
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
