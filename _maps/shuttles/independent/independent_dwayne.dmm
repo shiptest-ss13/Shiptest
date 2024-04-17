@@ -254,6 +254,10 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over/plated_catwalk/dark,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "gm" = (
@@ -292,9 +296,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy,
 /obj/item/clothing/shoes/cowboy,
@@ -422,9 +424,7 @@
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/white{
 	dir = 1
 	},
@@ -563,7 +563,7 @@
 	pixel_x = -9;
 	pixel_y = 7
 	},
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},
@@ -1499,9 +1499,8 @@
 /obj/item/pickaxe/silver,
 /obj/item/storage/bag/ore,
 /obj/item/storage/bag/ore,
-/obj/structure/closet/wall{
-	name = "equipment closet";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	name = "equipment closet"
 	},
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 1
@@ -2125,7 +2124,7 @@
 "WL" = (
 /obj/structure/table,
 /obj/item/storage/belt/utility,
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},

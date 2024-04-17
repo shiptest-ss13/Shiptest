@@ -1160,9 +1160,7 @@
 /turf/template_noop,
 /area/template_noop)
 "lD" = (
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
@@ -1891,8 +1889,7 @@
 /obj/structure/railing/wood{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	pixel_y = 28;
+/obj/structure/closet/secure_closet/wall/directional/north{
 	name = "navigational supplies";
 	req_access_txt = "19"
 	},
@@ -2025,6 +2022,7 @@
 /obj/machinery/atmospherics/pipe/manifold/general/visible/layer2{
 	dir = 4
 	},
+/obj/machinery/airalarm/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
 "ul" = (
@@ -2450,7 +2448,8 @@
 /area/ship/hallway/starboard)
 "xU" = (
 /obj/effect/turf_decal/techfloor,
-/obj/machinery/airalarm/directional/south,
+/obj/structure/cable,
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
 "xX" = (
@@ -2866,11 +2865,9 @@
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
 /obj/item/ammo_box/magazine/pistol556mm,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_y = -28;
 	req_access_txt = "19"
 	},
 /turf/open/floor/carpet/royalblue,
@@ -3539,6 +3536,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/maintenance/starboard)
@@ -4316,10 +4316,7 @@
 /area/ship/cargo/office)
 "Pp" = (
 /obj/structure/table/wood,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/secure_closet/wall/directional/east,
 /obj/item/clipboard,
 /obj/item/paper_bin/carbon,
 /obj/item/clothing/accessory/waistcoat/solgov,
@@ -4551,6 +4548,9 @@
 /obj/machinery/atmospherics/components/binary/pump/on/layer2{
 	dir = 8;
 	name = "Air to Distro"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/maintenance/starboard)
