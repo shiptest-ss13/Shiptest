@@ -282,11 +282,9 @@ GLOBAL_LIST_EMPTY(species_list)
 	if(!isnum(delay))
 		CRASH("do_after was passed a non-number delay: [delay || "null"].")
 
-	/*
 	if(target && INTERACTING_WITH(user, target))
 		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
 		return
-	*/
 
 	if(!interaction_key && target)
 		interaction_key = target //Use the direct ref to the target
