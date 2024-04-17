@@ -74,3 +74,18 @@
   - rscadd: Etherbor BG-12 Beam Rifle to cargo for 3000 credits
   - rscadd: Etherbor civilian weapon cells for 600 credits, slightly higher capacity
       than the generic cells
+2024-04-17:
+  Gristlebee:
+  - tweak: Granularizes Outpost Spacesuits and Armor
+  - balance: Reduces the cost of specialized space suits
+  SomeguyManperson:
+  - tweak: ships no longer have intrinsic gravity
+  - rscadd: new gravity generator machine for ships
+  - tweak: planetary gravity is now stored level-wide, a ship landing at a planet
+      will be effected by the planet's gravity
+  meemofcourse:
+  - tweak: Identification Cards are now Access Cards. The only real difference is
+      that your name only shows up on a double examine.
+  - refactor: Anonymous mechanics. Characters no longer instantly recognize each other,
+      and need to properly memorize each other in order. You can recognize an unmasked
+      person by ctrl-shift-clicking them.
