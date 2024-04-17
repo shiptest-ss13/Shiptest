@@ -32,6 +32,6 @@
 
 /obj/item/bodypart/leg/right/ethereal
 	icon = 'icons/mob/species/ethereal/bodyparts.dmi'
-	icon_state = "elzuos_r_leg"
+	icon_state = "elzuose_r_leg"
 	limb_id = SPECIES_ELZUOSE
 	uses_mutcolor = TRUE
