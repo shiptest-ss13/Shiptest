@@ -46,11 +46,7 @@
 "ap" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32;
-	pixel_y = -6
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plating,
 /area/ship/hallway/port)
 "ar" = (
@@ -848,9 +844,7 @@
 /obj/effect/turf_decal/corner/opaque/bar{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel,
 /area/ship/crew)
 "dr" = (
@@ -934,10 +928,8 @@
 /obj/machinery/camera{
 	dir = 5
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "Emergency Defense Storage";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Emergency Defense Storage"
 	},
 /obj/item/ammo_box/magazine/co9mm{
 	pixel_x = 5
@@ -1451,10 +1443,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "oz" = (
@@ -2715,10 +2704,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/corner/opaque/lime,
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "Radio Storage";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "Radio Storage"
 	},
 /obj/item/radio,
 /obj/item/radio,

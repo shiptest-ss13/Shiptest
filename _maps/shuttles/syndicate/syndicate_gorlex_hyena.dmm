@@ -1486,10 +1486,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
 "zq" = (
-/obj/structure/closet/wall/red{
-	dir = 8;
-	name = "uniform closet";
-	pixel_x = 28
+/obj/structure/closet/wall/red/directional/east{
+	name = "uniform closet"
 	},
 /obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/under/syndicate/gorlex,
@@ -1558,9 +1556,7 @@
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "Af" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/cargo)
@@ -3163,9 +3159,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/tech,
 /area/ship/hallway/central)
 "Yc" = (

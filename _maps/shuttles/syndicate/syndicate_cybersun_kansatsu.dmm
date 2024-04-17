@@ -86,10 +86,8 @@
 /obj/item/storage/firstaid/medical,
 /obj/item/storage/firstaid/regular,
 /obj/item/storage/firstaid/regular,
-/obj/structure/closet/wall/white{
-	dir = 1;
-	name = "Medical Supplies";
-	pixel_y = -32
+/obj/structure/closet/wall/white/directional/south{
+	name = "Medical Supplies"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
@@ -1382,9 +1380,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 6
 	},
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/machinery/computer/cryopod/directional/west,
 /obj/machinery/camera/autoname{
 	dir = 4
@@ -1428,9 +1424,8 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/bridge)
 "KP" = (
-/obj/structure/closet/wall{
-	name = "emergency rum cabinet";
-	pixel_y = 28
+/obj/structure/closet/wall/directional/north{
+	name = "emergency rum cabinet"
 	},
 /obj/item/reagent_containers/food/drinks/bottle/rum,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner{
@@ -1882,9 +1877,7 @@
 "VJ" = (
 /obj/structure/chair/comfy/black,
 /obj/effect/turf_decal/corner/opaque/syndiered/bordercorner,
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
 "Xa" = (

@@ -239,10 +239,8 @@
 	pixel_x = 7;
 	pixel_y = -5
 	},
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
-	dir = 4;
-	pixel_x = -28;
 	name = "equipment locker"
 	},
 /obj/effect/turf_decal/corner/opaque/purple/border{
@@ -793,11 +791,9 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/obj/structure/closet/wall{
-	dir = 1;
+/obj/structure/closet/wall/directional/south{
 	icon_door = null;
-	name = "Uniforms";
-	pixel_y = -28
+	name = "Uniforms"
 	},
 /obj/item/clothing/under/gezena{
 	pixel_y = -5;
@@ -990,10 +986,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1182,9 +1175,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
 "jt" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "cargo_wall";
-	pixel_y = 28;
 	name = "Engineer's Locker"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
@@ -1519,10 +1511,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/ship/crew/dorm/dormthree)
 "na" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/machinery/light/directional/north,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
@@ -1543,9 +1532,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "nm" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -28;
+/obj/structure/closet/wall/blue/directional/west{
 	name = "Spare EVA Closet"
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
@@ -1736,9 +1723,7 @@
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 4
 	},
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 28;
+/obj/structure/closet/wall/directional/east{
 	name = "Cleaning Station"
 	},
 /obj/machinery/computer/helm/viewscreen/directional/south,
@@ -1997,9 +1982,8 @@
 /turf/closed/wall/mineral/titanium/exterior,
 /area/ship/construction)
 "qZ" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "cargo_wall";
-	pixel_y = 28;
 	name = "Engineer's Locker"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
@@ -2075,10 +2059,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/office)
 "rN" = (
-/obj/structure/closet/secure_closet/wall{
-	icon_state = "secure_wall";
-	dir = 8;
-	pixel_x = 26
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_state = "secure_wall"
 	},
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable{
@@ -2132,10 +2114,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -27
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -2225,10 +2204,7 @@
 /obj/structure/railing{
 	dir = 6
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/bridge)
 "ty" = (
@@ -2321,10 +2297,8 @@
 	pixel_x = 11;
 	pixel_y = -5
 	},
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
-	dir = 4;
-	pixel_x = -28;
 	name = "equipment locker"
 	},
 /obj/structure/window/reinforced{
@@ -3040,11 +3014,9 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 9
 	},
-/obj/structure/closet/wall{
-	dir = 2;
+/obj/structure/closet/wall/directional/north{
 	icon_door = null;
-	name = "headset storage";
-	pixel_y = 28
+	name = "headset storage"
 	},
 /obj/item/encryptionkey/pgf{
 	pixel_y = -5;
@@ -3419,9 +3391,7 @@
 /obj/item/towel,
 /obj/item/towel,
 /obj/item/towel,
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28;
+/obj/structure/closet/wall/directional/west{
 	name = "towel closet"
 	},
 /turf/open/floor/plastic,
@@ -3714,10 +3684,7 @@
 /obj/effect/turf_decal/spline/fancy/opaque/lime{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -3737,11 +3704,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
-/obj/structure/closet/wall{
-	dir = 1;
+/obj/structure/closet/wall/directional/south{
 	icon_door = null;
-	name = "Uniforms";
-	pixel_y = -28
+	name = "Uniforms"
 	},
 /obj/item/clothing/gloves/gezena{
 	pixel_x = -5;
@@ -4469,10 +4434,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
@@ -4488,10 +4450,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "KB" = (
@@ -4718,13 +4677,10 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormtwo)
 "MC" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
 	name = "Doctor's Locker";
-	pixel_y = 0;
-	req_access_txt = "5";
-	dir = 8;
-	pixel_x = 28
+	req_access_txt = "5"
 	},
 /obj/item/clothing/gloves/gezena{
 	pixel_x = 3;
@@ -5277,10 +5233,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
 "PP" = (
-/obj/structure/closet/wall{
-	dir = 4;
+/obj/structure/closet/wall/directional/west{
 	icon_state = "emergency_wall";
-	pixel_x = -28;
 	name = "Spare Internals Closet"
 	},
 /obj/effect/turf_decal/corner/opaque/lime/mono,
@@ -5425,10 +5379,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -27
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ship/engineering)
@@ -5582,10 +5533,7 @@
 	dir = 10
 	},
 /obj/machinery/light/directional/north,
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/construction)
 "RX" = (
@@ -6367,10 +6315,8 @@
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/hallway/central)
 "Xz" = (
-/obj/structure/closet/secure_closet/wall{
-	icon_state = "secure_wall";
-	dir = 8;
-	pixel_x = 26
+/obj/structure/closet/secure_closet/wall/directional/east{
+	icon_state = "secure_wall"
 	},
 /turf/open/floor/plastic,
 /area/ship/crew/toilet)
@@ -6650,10 +6596,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/crew/dorm/dormthree)
 "ZH" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "cargo_wall";
-	pixel_y = -28;
-	dir = 1;
 	name = "Engineering Equipment"
 	},
 /obj/item/storage/box/metalfoam{

@@ -386,10 +386,7 @@
 /obj/item/clothing/suit/hawaiian,
 /obj/item/spacecash/bundle/c1000,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
@@ -1166,10 +1163,7 @@
 /turf/open/floor/engine,
 /area/ship/engineering)
 "hN" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -1264,10 +1258,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -2694,9 +2685,7 @@
 /obj/item/cultivator,
 /obj/item/storage/box/beakers,
 /obj/item/plant_analyzer,
-/obj/structure/closet/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/clothing/gloves/botanic_leather,
 /obj/effect/turf_decal/siding/wood{
@@ -2896,10 +2885,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "sQ" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 5
 	},
@@ -3720,10 +3706,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/port)
 "ys" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/storage/firstaid/o2,
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 8
@@ -3794,9 +3777,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -4199,9 +4180,7 @@
 /turf/open/floor/plasteel,
 /area/ship/hallway/starboard)
 "BT" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -4602,10 +4581,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
@@ -5067,10 +5043,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/storage/firstaid/o2,
 /obj/effect/turf_decal/corner/opaque/white/border{
 	dir = 8
@@ -6278,10 +6251,7 @@
 /turf/open/floor/wood,
 /area/ship/crew/dorm)
 "QU" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
@@ -6767,10 +6737,9 @@
 /obj/item/radio,
 /obj/item/gun/energy/e_gun/advtaser,
 /obj/item/pen/survival,
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "equipment locker";
-	pixel_y = 28;
 	req_access = list(30)
 	},
 /obj/item/card/id/captains_spare,

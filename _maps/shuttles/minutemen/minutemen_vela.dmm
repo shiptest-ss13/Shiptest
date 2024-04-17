@@ -1032,10 +1032,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
 "gB" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 10
 	},
@@ -1563,10 +1560,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science)
 "jI" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 5
 	},
@@ -2490,10 +2484,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/machinery/button/door{
 	dir = 8;
 	id = "vela_labeva";
@@ -3979,10 +3970,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/atmospherics)
 "wk" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
@@ -4736,10 +4724,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "zR" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/firstaid/fire,
 /obj/effect/turf_decal/techfloor,
@@ -6189,10 +6174,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "HO" = (
-/obj/structure/closet/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/wall/directional/south,
 /obj/machinery/power/apc/auto_name/directional/west,
 /obj/effect/turf_decal/steeldecal/steel_decals_central7{
 	pixel_y = 1
@@ -6400,10 +6382,8 @@
 /area/ship/hallway/central)
 "Jj" = (
 /obj/effect/turf_decal/spline/fancy/opaque/black,
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "spare uniforms";
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "spare uniforms"
 	},
 /obj/item/clothing/under/clip/minutemen,
 /obj/item/clothing/under/clip/minutemen,
@@ -7412,10 +7392,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/science/xenobiology)
 "Ox" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/effect/turf_decal/techfloor{
 	dir = 6
 	},
@@ -8487,10 +8464,7 @@
 /obj/machinery/camera/autoname{
 	dir = 10
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/effect/turf_decal/techfloor,
 /turf/open/floor/plasteel/dark,
 /area/ship/hangar/port)
@@ -8518,10 +8492,7 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Uw" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/item/storage/box/gum/happiness,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)

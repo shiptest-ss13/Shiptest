@@ -443,10 +443,7 @@
 /turf/open/floor/plating/dirt/jungle/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "dv" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -29
-	},
+/obj/structure/closet/wall/blue/directional/west,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -485,10 +482,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/ruin/jungle/interceptor/porthall)
 "dE" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 6
 	},
@@ -581,10 +575,8 @@
 	},
 /obj/item/clothing/suit/armor/vest,
 /obj/item/gun/energy/disabler,
-/obj/structure/closet/wall/red{
-	name = "secure locker";
-	dir = 4;
-	pixel_x = -28
+/obj/structure/closet/wall/red/directional/west{
+	name = "secure locker"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/security)
@@ -999,10 +991,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 5
 	},
-/obj/structure/closet/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/wall/directional/east,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /obj/item/reagent_containers/food/condiment/sugar,
@@ -1096,10 +1085,7 @@
 /turf/open/floor/wood,
 /area/ruin/jungle/interceptor/starhall)
 "im" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -29
-	},
+/obj/structure/closet/wall/blue/directional/west,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -1166,10 +1152,7 @@
 /obj/effect/turf_decal/corner/opaque/bottlegreen/border{
 	dir = 8
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/jungle/interceptor/starhall)
@@ -1529,10 +1512,7 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "mU" = (
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	pixel_x = -29
-	},
+/obj/structure/closet/wall/blue/directional/west,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -1796,10 +1776,7 @@
 /obj/effect/turf_decal/corner_steel_grid{
 	dir = 10
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/structure/cable/green{
 	icon_state = "4-9"
 	},
@@ -2124,10 +2101,7 @@
 /turf/open/floor/plating/dirt/jungle/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
 "rU" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/item/clothing/mask/breath,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/plastic,
@@ -3087,10 +3061,8 @@
 /obj/effect/turf_decal/corner/transparent/bar/three_quarters{
 	dir = 4
 	},
-/obj/structure/closet/wall/red{
-	name = "secure locker";
-	dir = 4;
-	pixel_x = -28
+/obj/structure/closet/wall/red/directional/west{
+	name = "secure locker"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/interceptor/security)
@@ -3209,10 +3181,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -3934,10 +3903,8 @@
 	},
 /obj/item/light/bulb/broken,
 /obj/item/clothing/suit/space/hardsuit/security,
-/obj/structure/closet/wall/red{
-	name = "secure locker";
-	dir = 1;
-	pixel_y = -28
+/obj/structure/closet/wall/red/directional/south{
+	name = "secure locker"
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/security)
@@ -4503,9 +4470,7 @@
 /obj/structure/cable/orange{
 	icon_state = "2-8"
 	},
-/obj/structure/closet/wall{
-	pixel_y = 29
-	},
+/obj/structure/closet/wall/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/light/small/broken/directional/east,
@@ -5517,10 +5482,7 @@
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/interceptor/starlaunchertwo)
 "UD" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/effect/turf_decal/corner/opaque/orange/border{
 	dir = 5
 	},

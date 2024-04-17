@@ -3130,8 +3130,7 @@
 /turf/open/floor/engine/n2,
 /area/ship/engineering/engine)
 "Ez" = (
-/obj/structure/closet/secure_closet/wall{
-	pixel_y = 28;
+/obj/structure/closet/secure_closet/wall/directional/north{
 	name = "bridge supplies"
 	},
 /obj/item/binoculars,
@@ -3336,10 +3335,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/machinery/camera/autoname{
 	dir = 4
 	},
@@ -3903,10 +3899,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/wood,
 /area/ship/bridge)
 "Me" = (
@@ -3982,10 +3975,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ship/engineering/engine)
 "Nm" = (
