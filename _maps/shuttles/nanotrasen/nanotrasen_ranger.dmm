@@ -381,9 +381,7 @@
 /turf/open/floor/plating,
 /area/ship/hallway/central)
 "dK" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
@@ -441,22 +439,13 @@
 /turf/template_noop,
 /area/template_noop)
 "eo" = (
-/obj/structure/rack,
-/obj/item/flashlight/seclite{
-	pixel_x = 4;
-	pixel_y = -1
-	},
-/obj/item/gps{
-	pixel_y = 10;
-	pixel_x = -5
-	},
-/obj/item/kitchen/knife/combat/survival{
-	pixel_y = 6;
-	pixel_x = 5
-	},
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "er" = (
@@ -947,9 +936,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
 "iI" = (
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
 	},
@@ -1495,10 +1482,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "pf" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -1536,14 +1520,43 @@
 /area/ship/crew/toilet)
 "ps" = (
 /obj/structure/closet/secure_closet/lp/engineer,
-/obj/item/clothing/head/welding,
-/obj/item/holosign_creator/engineering,
-/obj/item/holosign_creator/atmos,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/clothing/glasses/meson/gar,
-/obj/item/crowbar/power,
-/obj/item/clothing/shoes/magboots,
 /obj/machinery/light/dim/directional/north,
+/obj/item/clothing/gloves/color/yellow{
+	pixel_y = -9
+	},
+/obj/item/crowbar/power{
+	pixel_y = 3
+	},
+/obj/item/clothing/shoes/magboots{
+	pixel_x = -6;
+	pixel_y = -8
+	},
+/obj/item/holosign_creator/engineering{
+	pixel_y = 6;
+	pixel_x = -5
+	},
+/obj/item/holosign_creator/atmos{
+	pixel_y = 6;
+	pixel_x = 6
+	},
+/obj/item/flashlight/seclite{
+	pixel_x = 2;
+	pixel_y = 15
+	},
+/obj/item/gps{
+	pixel_y = 9;
+	pixel_x = -12
+	},
+/obj/item/kitchen/knife/combat/survival{
+	pixel_y = 6;
+	pixel_x = 5
+	},
+/obj/item/clothing/head/welding{
+	pixel_y = -9
+	},
+/obj/item/clothing/glasses/meson/gar{
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ship/engineering)
 "pA" = (
@@ -2668,10 +2681,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "BY" = (
@@ -2979,6 +2989,9 @@
 /obj/effect/turf_decal/siding/yellow{
 	dir = 5
 	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "FQ" = (
@@ -3043,10 +3056,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -30
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/central)
 "Gn" = (
@@ -4015,10 +4025,7 @@
 /turf/open/floor/plasteel/white,
 /area/ship/hallway/port)
 "RA" = (
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
