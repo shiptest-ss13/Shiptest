@@ -582,7 +582,7 @@
 	name = "Large Beaker"
 	id = "large_beaker"
 	build_type = AUTOLATHE | PROTOLATHE
-	materials = list(/datum/material/glass = 2500)
+	materials = list(/datum/material/glass = 1500)
 	build_path = /obj/item/reagent_containers/glass/beaker/large
 	category = list("initial", "Medical", "Medical Designs")
 

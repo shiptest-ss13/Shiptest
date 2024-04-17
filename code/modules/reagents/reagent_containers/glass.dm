@@ -147,7 +147,7 @@
 	desc = "An extra-large beaker. Can hold up to 120 units."
 	icon_state = "beakerwhite"
 	fill_icon_state = "beakerlarge"
-	custom_materials = list(/datum/material/glass=2500, /datum/material/plastic=3000)
+	custom_materials = list(/datum/material/glass=1000, /datum/material/plastic=1000)
 	volume = 120
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5,10,15,20,25,30,60,120)
