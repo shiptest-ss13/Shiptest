@@ -662,9 +662,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "iE" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -2580,10 +2578,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/east{
 	buildstackamount = 0;
-	color = "#c45c57";
-	dir = 4
+	color = "#c45c57"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
@@ -3765,9 +3762,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/structure/chair/comfy/brown{
-	color = "#66b266";
-	dir = 4
+/obj/structure/chair/comfy/orange/directional/east{
+	color = "#66b266"
 	},
 /obj/item/book/manual/wiki/surgery{
 	pixel_x = 10;
