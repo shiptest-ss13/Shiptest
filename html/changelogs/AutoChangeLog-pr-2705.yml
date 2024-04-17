@@ -1,0 +1,7 @@
+author: SomeguyManperson
+changes:
+  - {tweak: ships no longer have intrinsic gravity}
+  - {rscadd: new gravity generator machine for ships}
+  - {tweak: "planetary gravity is now stored level-wide, a ship landing at a planet
+      will be effected by the planet's gravity"}
+delete-after: true
