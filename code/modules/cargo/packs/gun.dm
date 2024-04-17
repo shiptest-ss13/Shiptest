@@ -18,32 +18,32 @@
 	crate_name = "disposable gun crate"
 
 /datum/supply_pack/gun/commanders
-	name = "Commander pistol crate"
+	name = "Commander Pistol Crate"
 	desc = "Contains a modified Candor 'Commander' pistol, produced by Nanotrasen and chambered in 9mm."
 	cost = 750
 	contains = list(/obj/item/gun/ballistic/automatic/pistol/commander)
 
 /datum/supply_pack/gun/makarovs
-	name = "Stechkin pistol crate"
+	name = "Stechkin Pistol Crate"
 	desc = "Contains a concealable stechkin pistol, produced by Scarborough Arms and chambered in 10mm."
 	cost = 1000
 	contains = list(/obj/item/gun/ballistic/automatic/pistol,
 					/obj/item/gun/ballistic/automatic/pistol)
 
 /datum/supply_pack/gun/revolver
-	name = "Scarbourgh Revolver crate"
-	desc = "Contains a concealable Scarbourgh revolver, chambered in .357."
+	name = "Scarborough Revolver Crate"
+	desc = "Contains a concealable Scarborough revolver, chambered in .357."
 	cost = 1250
 	contains = list(/obj/item/gun/ballistic/revolver)
 
 /datum/supply_pack/gun/detrevolver
-	name = "Hunter's Pride Detective Revolver crate"
+	name = "Hunter's Pride Detective Revolver Crate"
 	desc = "Contains a concealable Solarian revolver, chambered in .38."
 	cost = 1000
 	contains = list(/obj/item/gun/ballistic/revolver/detective)
 
 /datum/supply_pack/gun/shadowrevolver
-	name = "Shadow Revolver crate"
+	name = "Shadow Revolver Crate"
 	desc = "Contains a concealable Shadow revolver, chambered in .45 ACP."
 	cost = 1000
 	contains = list(/obj/item/gun/ballistic/revolver/shadow)
@@ -128,7 +128,7 @@
 
 /datum/supply_pack/gun/cobra20
 	name = "Cobra-20 SMG Crate"
-	desc = "Contains a .45 submachine gun, manufactured by Scaraborough Arms and chambered in .45"
+	desc = "Contains a .45 submachine gun, manufactured by Scarborough Arms and chambered in .45"
 	cost = 3000
 	contains = list(/obj/item/gun/ballistic/automatic/smg/c20r/cobra)
 	crate_name = "SMG crate"
