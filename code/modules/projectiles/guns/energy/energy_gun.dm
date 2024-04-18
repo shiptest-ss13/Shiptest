@@ -5,10 +5,7 @@
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
 	modifystate = 1
-	can_flashlight = TRUE
 	ammo_x_offset = 2
-	flight_x_offset = 15
-	flight_y_offset = 10
 	dual_wield_spread = 60
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
 
@@ -26,20 +23,11 @@
 	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
 	charge_sections = 3
-	can_flashlight = FALSE // Can't attach or detach the flashlight, and override it's icon update
-	gunlight_state = "mini-light"
-	flight_x_offset = 19
-	flight_y_offset = 13
-
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15
 
 	spread = 2
 	spread_unwielded = 5
-
-/obj/item/gun/energy/e_gun/mini/Initialize()
-	set_gun_light(new /obj/item/flashlight/seclite(src))
-	return ..()
 
 /obj/item/gun/energy/e_gun/hades
 	name = "SL AL-655 'Hades' energy rifle"
@@ -250,10 +238,7 @@
 	desc = "A hybrid energy gun fondly remembered as one of the worst weapons ever made. It hurts, but that's only if it manages to hit its target."
 	icon_state = "e11"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/eoehoma)
-	can_flashlight = TRUE
 	ammo_x_offset = 0
-	flight_x_offset = 20
-	flight_y_offset = 9
 	spread = 80
 	spread_unwielded = 140
 	dual_wield_spread = 140

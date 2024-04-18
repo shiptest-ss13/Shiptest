@@ -217,8 +217,6 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/rifle47x33mm
 	spread = 7
-	can_suppress = FALSE
-	can_bayonet = FALSE
 	mag_display = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	manufacturer = MANUFACTURER_SOLARARMORIES

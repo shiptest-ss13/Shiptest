@@ -165,18 +165,6 @@
 	user.put_in_hands(old_cell)
 	update_appearance()
 
-/obj/item/gun/energy/get_gun_attachments()
-	if(cell && !internal_cell)
-		attachment_options += list("Cell" = image(icon = cell.icon, icon_state = cell.icon_state))
-	..()
-
-/obj/item/gun/energy/remove_gun_attachments(mob/living/user, obj/item/I, picked_option)
-	if(picked_option == "Cell")
-		if(I.use_tool(src, user, unscrewing_time, volume=100))
-			eject_cell(user, I)
-			return TRUE
-	..()
-
 /obj/item/gun/energy/can_shoot(visuals)
 	if(safety && !visuals)
 		return FALSE
