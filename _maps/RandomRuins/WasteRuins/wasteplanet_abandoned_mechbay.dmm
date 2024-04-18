@@ -3425,7 +3425,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ruin/wasteplanet/abandoned_mechbay/bay1)
 "Og" = (
-/obj/effect/mine/shrapnel/human_only,
+/obj/item/mine/pressure/explosive/shrapnel/live,
 /turf/open/floor/plating/asteroid/wasteplanet,
 /area/overmap_encounter/planetoid/cave/explored)
 "Oj" = (
@@ -4127,9 +4127,7 @@
 /turf/closed/wall/concrete/reinforced,
 /area/ruin/wasteplanet/abandoned_mechbay/mechlab)
 "Yu" = (
-/obj/structure/closet/wall/white{
-	pixel_y = 29
-	},
+/obj/structure/closet/wall/white/directional/north,
 /obj/item/storage/firstaid/toxin,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 10

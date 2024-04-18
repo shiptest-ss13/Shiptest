@@ -1057,6 +1057,12 @@
 	else if(can_be_firemanned(target))
 		fireman_carry(target)
 
+/mob/living/carbon/human/limb_attack_self()
+	var/obj/item/bodypart/arm = hand_bodyparts[active_hand_index]
+	if(arm)
+		arm.attack_self(src)
+	return ..()
+
 /mob/living/carbon/human/MouseDrop(mob/over)
 	. = ..()
 	if(ishuman(over))
@@ -1257,6 +1263,23 @@
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 		return FALSE
 	return ..()
+
+/mob/living/carbon/human/CtrlShiftClick(mob/user)
+	. = ..()
+	if(isobserver(user) || !user.mind?.guestbook)
+		return
+	INVOKE_ASYNC(user.mind.guestbook, TYPE_PROC_REF(/datum/guestbook, try_add_guest), user, src, FALSE)
+
+/mob/living/carbon/human/get_screentip_name(client/hovering_client)
+	. = ..()
+	var/mob/hovering_mob = hovering_client?.mob
+	if(!hovering_mob?.mind?.guestbook)
+		return .
+	var/face_name = get_face_name("")
+	var/known_name = hovering_mob.mind.guestbook.get_known_name(hovering_mob, src, face_name)
+	if(known_name)
+		return known_name
+	return .
 
 /mob/living/carbon/human/species
 	var/race = null

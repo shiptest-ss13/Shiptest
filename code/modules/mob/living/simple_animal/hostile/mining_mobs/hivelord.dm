@@ -756,7 +756,7 @@
 				r_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
 					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
+					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
 					)
@@ -765,7 +765,7 @@
 				l_pocket = pickweight(list(
 					/obj/item/reagent_containers/hypospray/medipen/stimpack = 1,
 					/obj/item/kitchen/knife/letter_opener = 3,
-					/obj/item/radio/off = 3,
+					/obj/item/radio = 3,
 					/obj/item/grenade/syndieminibomb/concussion = 1,
 					/obj/item/melee/transforming/energy/ctf/solgov = 1
 					)

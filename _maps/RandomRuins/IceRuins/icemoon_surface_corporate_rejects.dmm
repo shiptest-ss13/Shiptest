@@ -321,10 +321,7 @@
 /turf/open/floor/vault,
 /area/ruin/unpowered/corprejectrooms)
 "io" = (
-/obj/structure/closet/wall/red{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/red/directional/west,
 /obj/item/keycard/office{
 	desc = "Only Elite level employees are authorized to handle this keycard. All other employees may face termination if found in possession.";
 	name = "Vault Card";
@@ -1391,9 +1388,7 @@
 /turf/open/floor/plating/catwalk_floor,
 /area/ruin/unpowered/corprejectrooms)
 "Fa" = (
-/obj/structure/closet/firecloset/wall{
-	pixel_x = -27
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/cable/blue{
 	icon_state = "5-6"
 	},

@@ -122,7 +122,7 @@
 		. += "[icon_state]_suppressor"
 	if (magazine)
 		if (special_mags)
-			. += "[icon_state]_mag_[initial(magazine.icon_state)]"
+			. += "[icon_state]_mag_[magazine.base_icon_state]"
 			if (!magazine.ammo_count())
 				. += "[icon_state]_mag_empty"
 		else
