@@ -40,7 +40,7 @@
 		if(istype(weapon, /obj/item/gun/ballistic/rocketlauncher) && weapon.chambered)
 			shooter.client.give_award(/datum/award/achievement/misc/rocket_holdup, shooter)
 
-	target.do_alert_animation(target)
+	target.do_alert_animation()
 	target.playsound_local(target.loc, 'sound/machines/chime.ogg', 50, TRUE)
 	SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gunpoint", /datum/mood_event/gunpoint)
 

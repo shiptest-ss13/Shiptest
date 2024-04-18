@@ -376,12 +376,10 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/item/clothing/suit/armor/vest/duster,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "Bridge Officer's Locker";
-	req_access_txt = "57";
-	pixel_y = -29
+	req_access_txt = "57"
 	},
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/clothing/neck/chameleon,
@@ -834,10 +832,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "Utility Closet";
-	pixel_x = -30
+/obj/structure/closet/wall/directional/west{
+	name = "Utility Closet"
 	},
 /obj/item/radio,
 /obj/item/radio,
@@ -887,10 +883,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/machinery/advanced_airlock_controller{
 	dir = 8;
 	pixel_x = 24
@@ -1160,10 +1153,8 @@
 /turf/open/floor/circuit/green/off,
 /area/ship/maintenance/starboard)
 "lr" = (
-/obj/structure/closet/wall/orange{
-	dir = 1;
-	name = "Engineering locker";
-	pixel_y = -30
+/obj/structure/closet/wall/orange/directional/south{
+	name = "Engineering locker"
 	},
 /obj/item/clothing/under/syndicate/coldres,
 /obj/item/clothing/suit/toggle/industrial,
@@ -1411,11 +1402,9 @@
 /obj/item/pickaxe,
 /obj/item/mining_scanner,
 /obj/item/mining_scanner,
-/obj/structure/closet/wall{
-	dir = 1;
+/obj/structure/closet/wall/directional/south{
 	icon_door = "orange_wall";
-	name = "Mining equipment";
-	pixel_y = -29
+	name = "Mining equipment"
 	},
 /obj/item/gps/mining,
 /turf/open/floor/plasteel/tech,
@@ -1580,10 +1569,7 @@
 	dir = 8;
 	name = "tactical chair"
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 29
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /obj/effect/turf_decal/techfloor{
 	dir = 4
 	},
@@ -2017,12 +2003,10 @@
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/storage/toolbox/ammo/c10mm,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "Ammo Locker";
-	req_access_txt = "1";
-	pixel_x = -29
+	req_access_txt = "1"
 	},
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/ammo_box/magazine/smgm45,
@@ -2301,12 +2285,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "secure_wall";
 	name = "Peacekeeping Locker";
-	req_access_txt = "1";
-	pixel_x = -29
+	req_access_txt = "1"
 	},
 /obj/item/gun/energy/disabler,
 /obj/item/gun/energy/disabler,
@@ -2704,8 +2686,8 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
@@ -2727,10 +2709,8 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over,
-/obj/structure/closet/wall/orange{
-	dir = 8;
-	name = "fuel locker";
-	pixel_x = 28
+/obj/structure/closet/wall/orange/directional/east{
+	name = "fuel locker"
 	},
 /obj/item/stack/sheet/mineral/plasma/five,
 /obj/item/stack/sheet/mineral/plasma/five,
@@ -2907,12 +2887,10 @@
 	},
 /obj/item/clothing/mask/gas/sechailer/swat,
 /obj/item/clothing/head/HoS/beret/syndicate,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "Sergeant's Locker";
-	req_access_txt = "58";
-	pixel_x = -29
+	req_access_txt = "58"
 	},
 /obj/item/melee/classic_baton/telescopic,
 /obj/item/clothing/suit/armor/vest/blueshirt,
@@ -3128,10 +3106,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 9
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 8;
-	pixel_x = 29
-	},
+/obj/structure/closet/firecloset/wall/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Eb" = (
@@ -3241,13 +3216,11 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "EL" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 6
-	},
-/obj/machinery/computer/monitor,
-/obj/structure/cable/yellow{
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "EN" = (
@@ -3521,9 +3494,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/catwalk/over,
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "HF" = (
@@ -4001,10 +3971,8 @@
 /obj/effect/turf_decal/trimline/transparent/bar/filled/line{
 	dir = 6
 	},
-/obj/structure/closet/wall/red{
-	dir = 1;
-	name = "Bartender's locker";
-	pixel_y = -29
+/obj/structure/closet/wall/red/directional/south{
+	name = "Bartender's locker"
 	},
 /obj/item/clothing/shoes/cowboy/black,
 /obj/item/storage/belt/military/snack,
@@ -4119,12 +4087,10 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "Armor Locker";
-	req_access_txt = "1";
-	pixel_x = -29
+	req_access_txt = "1"
 	},
 /obj/item/storage/belt/military,
 /obj/item/storage/belt/military,
@@ -5542,10 +5508,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	name = "uniform closet";
-	pixel_x = -30
+/obj/structure/closet/wall/directional/west{
+	name = "uniform closet"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/backpack/duffelbag/syndie,

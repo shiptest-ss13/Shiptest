@@ -282,7 +282,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/marine
 	back = /obj/item/storage/backpack/ert
 	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
+		/obj/item/storage/box/survival/engineer = 1,
 		/obj/item/gun_voucher/nanotrasen = 1
 )
 	belt = /obj/item/storage/belt/military/assault
@@ -332,7 +332,7 @@
 	l_pocket = /obj/item/healthanalyzer
 	head = /obj/item/clothing/head/helmet/marine/medic
 	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
+		/obj/item/storage/box/survival/engineer = 1,
 		/obj/item/gun_voucher/nanotrasen = 1,
 		/obj/item/reagent_containers/hypospray/combat = 1,
 		/obj/item/storage/firstaid/regular = 1,
@@ -359,7 +359,7 @@
 	head = /obj/item/clothing/head/helmet/marine/engineer
 	back = /obj/item/storage/backpack/ert/engineer
 	backpack_contents = list(
-		/obj/item/storage/box/survival/engineer/radio = 1,
+		/obj/item/storage/box/survival/engineer = 1,
 		/obj/item/gun_voucher/nanotrasen = 1,
 		/obj/item/rcd_ammo/large = 2,
 		)
@@ -460,6 +460,5 @@
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/ert
 
-	box = /obj/item/storage/box/survival/radio
 	l_pocket = /obj/item/megaphone/command
 	r_pocket = /obj/item/binoculars
