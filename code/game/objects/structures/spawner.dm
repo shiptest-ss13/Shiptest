@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(astroloot, list(
 
 /obj/structure/spawner
 	name = "monster nest"
-	icon = 'icons/mob/animal.dmi'
+	icon = 'icons/mob/nest.dmi'
 	icon_state = "hole"
 	max_integrity = 100
 
@@ -65,8 +65,6 @@ GLOBAL_LIST_INIT(astroloot, list(
 /obj/structure/spawner/skeleton
 	name = "bone pit"
 	desc = "A pit full of bones, and some still seem to be moving..."
-	icon_state = "hole"
-	icon = 'icons/mob/nest.dmi'
 	max_integrity = 150
 	max_mobs = 15
 	spawn_time = 150
@@ -105,9 +103,7 @@ GLOBAL_LIST_INIT(astroloot, list(
 /obj/structure/spawner/mining
 	name = "monster den"
 	desc = "A hole dug into the ground, harboring all kinds of monsters found within most caves or mining asteroids."
-	icon_state = "hole"
 	max_mobs = 3
-	icon = 'icons/mob/nest.dmi'
 	spawn_text = "crawls out of"
 	mob_types = list(/mob/living/simple_animal/hostile/asteroid/goldgrub, /mob/living/simple_animal/hostile/asteroid/goliath, /mob/living/simple_animal/hostile/asteroid/hivelord, /mob/living/simple_animal/hostile/asteroid/basilisk, /mob/living/simple_animal/hostile/asteroid/fugu)
 	faction = list("mining")

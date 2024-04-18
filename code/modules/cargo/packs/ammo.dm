@@ -281,6 +281,12 @@
 	contains = list(/obj/item/stock_parts/cell/gun)
 	cost = 500
 
+/datum/supply_pack/ammo/guncell/kalix
+	name = "Etherbor Cell Crate"
+	desc = "Contains an Etherbor weapon cell, compatible with Etherbor armaments with a slightly higher capacity."
+	contains = list(/obj/item/stock_parts/cell/gun/kalix)
+	cost = 600
+
 /datum/supply_pack/ammo/c46x30mm_boxcrate
 	name = "4.6x30mm Ammo Box Crate"
 	desc = "Contains a fifty-round 4.6x30mm box for PDWs such as the WT-550."

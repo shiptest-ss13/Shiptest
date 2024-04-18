@@ -647,7 +647,7 @@
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 75, /datum/material/glass = 25)
-	build_path = /obj/item/radio/off
+	build_path = /obj/item/radio
 	category = list("initial", "T-Comm")
 
 /datum/design/intercom_frame
@@ -798,9 +798,9 @@
 	build_path = /obj/item/weaponcrafting/receiver
 	category = list("hacked", "Security")
 
-/datum/design/c38
+/datum/design/c38_surplus
 	name = "Ammo Box (.38 surplus)"
-	id = "c38"
+	id = "c38_surplus"
 	build_type = AUTOLATHE | PROTOLATHE
 	materials = list(/datum/material/iron = 15000)
 	build_path = /obj/item/ammo_box/c38_box/surplus
