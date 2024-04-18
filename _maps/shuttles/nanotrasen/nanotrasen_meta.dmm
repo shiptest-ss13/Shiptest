@@ -227,7 +227,7 @@
 	pixel_x = -2;
 	pixel_y = -4
 	},
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = 6;
 	pixel_y = 7
 	},
@@ -1639,6 +1639,9 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/ship/engineering)
 "id" = (
@@ -2237,8 +2240,8 @@
 /obj/item/storage/belt/utility{
 	pixel_y = 6
 	},
-/obj/item/radio/off,
-/obj/item/radio/off{
+/obj/item/radio,
+/obj/item/radio{
 	pixel_x = -3;
 	pixel_y = 3
 	},
@@ -3227,6 +3230,8 @@
 "NL" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "NN" = (

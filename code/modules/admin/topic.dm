@@ -2227,6 +2227,15 @@
 			return
 		paper_to_show.ui_interact(usr)
 
+	else if(href_list["show_photo"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/obj/item/photo/photo_to_show = locate(href_list["show_photo"])
+		if(!istype(photo_to_show))
+			return
+		photo_to_show.show(usr)
+
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))
 		return

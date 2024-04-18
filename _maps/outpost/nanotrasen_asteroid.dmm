@@ -3191,10 +3191,7 @@
 /area/outpost/crew/bar)
 "lS" = (
 /obj/structure/table/reinforced,
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = 2;
 	pixel_y = 4
 	},
@@ -3896,10 +3893,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/east,
 /turf/open/floor/wood,
 /area/outpost/hallway/central)
 "op" = (
@@ -5302,10 +5296,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/east,
 /obj/item/clothing/suit/apron/chef,
 /turf/open/floor/concrete/tiles,
 /area/outpost/crew/library)
@@ -5961,10 +5952,8 @@
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light/directional/north,
-/obj/structure/closet/wall{
-	name = "Storage Locker";
-	dir = 8;
-	pixel_x = 28
+/obj/structure/closet/wall/directional/east{
+	name = "Storage Locker"
 	},
 /turf/open/floor/carpet,
 /area/outpost/hallway/central)
@@ -6032,9 +6021,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
@@ -6150,10 +6137,8 @@
 /obj/item/reagent_containers/glass/rag,
 /obj/item/mop,
 /obj/item/soap/deluxe,
-/obj/structure/closet/wall/blue{
-	dir = 4;
-	name = "Janitorial Closet";
-	pixel_x = -29
+/obj/structure/closet/wall/blue/directional/west{
+	name = "Janitorial Closet"
 	},
 /obj/machinery/door/window,
 /obj/effect/turf_decal/industrial/warning,
@@ -7238,9 +7223,7 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 5
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/engineering)
 "zm" = (
@@ -7386,10 +7369,8 @@
 /turf/open/floor/grass,
 /area/outpost/crew/garden)
 "zP" = (
-/obj/structure/closet/wall/red{
-	dir = 8;
-	name = "Bartender's locker";
-	pixel_x = 29
+/obj/structure/closet/wall/red/directional/east{
+	name = "Bartender's locker"
 	},
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -9157,10 +9138,8 @@
 /turf/open/floor/plating,
 /area/outpost/crew/lounge)
 "Gi" = (
-/obj/structure/closet/wall{
-	name = "Storage Locker";
-	pixel_y = -28;
-	dir = 1
+/obj/structure/closet/wall/directional/south{
+	name = "Storage Locker"
 	},
 /turf/open/floor/carpet/green,
 /area/outpost/hallway/central)
@@ -10430,10 +10409,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /turf/open/floor/wood,
 /area/outpost/hallway/central)
 "Kn" = (
@@ -14305,10 +14281,7 @@
 /obj/effect/turf_decal/techfloor/orange{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /turf/open/floor/plasteel/tech/grid,
 /area/outpost/engineering)
 "Yi" = (
@@ -14583,10 +14556,7 @@
 /turf/closed/indestructible/reinforced,
 /area/outpost/crew/dorm)
 "Zb" = (
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 8;
-	pixel_x = 28
-	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/east,
 /obj/item/clothing/under/shorts/cookjorts,
 /obj/item/clothing/shoes/cookflops,
 /obj/item/clothing/suit/toggle/chef,
@@ -14869,10 +14839,8 @@
 	dir = 6
 	},
 /obj/machinery/light/directional/south,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/east{
 	name = "Game Locker";
-	dir = 8;
-	pixel_x = 28;
 	desc = "It's a basic storage unit. Theres a little label on it, asking you to put the toys back in when finished"
 	},
 /obj/item/toy/figure/curator{

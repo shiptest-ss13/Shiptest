@@ -465,10 +465,8 @@
 /area/ship/storage)
 "fv" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/red{
-	dir = 1;
-	name = "Bartender's locker";
-	pixel_y = -28
+/obj/structure/closet/wall/red/directional/south{
+	name = "Bartender's locker"
 	},
 /obj/item/clothing/under/suit/waiter/syndicate,
 /obj/item/clothing/suit/apron/purple_bartender,
@@ -1029,10 +1027,7 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_y = 32
 	},
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/west,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
@@ -2857,10 +2852,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/item/reagent_containers/syringe/contraband/bath_salts{
 	pixel_y = 6;
 	pixel_x = -4
