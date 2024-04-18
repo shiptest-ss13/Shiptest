@@ -92,7 +92,7 @@
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/powered/screwdriver_act(mob/living/user, obj/item/I)
-	if(cell && !internal_cell && !bayonet && (!gun_light || !can_flashlight))
+	if(cell && !internal_cell)
 		to_chat(user, "<span class='notice'>You begin unscrewing and pulling out the cell...</span>")
 		if(I.use_tool(src, user, unscrewing_time, volume=100))
 			to_chat(user, "<span class='notice'>You remove the power cell.</span>")
