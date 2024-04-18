@@ -31,16 +31,9 @@
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 2
-<<<<<<< HEAD
-=======
-	can_flashlight = TRUE
-	flight_x_offset = 15
-	flight_y_offset = 10
 	manufacturer = MANUFACTURER_SHARPLITE_NEW
-
 	spread = 2
 	spread_unwielded = 4
->>>>>>> Shiptest/master
 
 /obj/item/gun/energy/disabler/cyborg
 	name = "cyborg disabler"
