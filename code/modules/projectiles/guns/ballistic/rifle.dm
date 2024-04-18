@@ -67,10 +67,6 @@
 	. = ..()
 	. += "The bolt is [bolt_locked ? "open" : "closed"]."
 
-///////////////////////
-// BOLT ACTION RIFLE //
-///////////////////////
-
 /obj/item/gun/ballistic/rifle/illestren
 	name = "\improper HP Illestren"
 	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, the Illestren is popular among colonists, pirates, snipers, and countless others. Chambered in 8x50mmR."
@@ -150,57 +146,6 @@
 	zoom_out_amt = 5
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted
-	name = "enchanted bolt-action rifle"
-	desc = "Careful not to lose your head."
-	var/guns_left = 30
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted
-	can_be_sawn_off = FALSE
-	manufacturer = MANUFACTURER_NONE
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage
-	name = "arcane barrage"
-	desc = "Pew Pew Pew."
-	fire_sound = 'sound/weapons/emitter.ogg'
-	pin = /obj/item/firing_pin/magic
-	icon = 'icons/obj/guns/projectile.dmi'
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
-	icon_state = "arcane_barrage"
-	item_state = "arcane_barrage"
-	slot_flags = null
-	item_flags = NEEDS_PERMIT | DROPDEL | ABSTRACT | NOBLUDGEON
-	flags_1 = NONE
-	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
-
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/dropped()
-	. = ..()
-	guns_left = 0
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/proc/discard_gun(mob/living/user)
-	user.throw_item(pick(oview(7,get_turf(user))))
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage/discard_gun(mob/living/user)
-	qdel(src)
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/attack_self()
-	return
-
-/obj/item/gun/ballistic/rifle/illestren/enchanted/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	. = ..()
-	if(!.)
-		return
-	if(guns_left)
-		var/obj/item/gun/ballistic/rifle/illestren/enchanted/gun = new type
-		gun.guns_left = guns_left - 1
-		discard_gun(user)
-		user.swap_hand()
-		user.put_in_hands(gun)
-	else
-		user.dropItemToGround(src, TRUE)
 
 /obj/item/gun/ballistic/rifle/polymer
 	name = "polymer survivor rifle"

@@ -541,7 +541,6 @@
 	icon_state = "goldrevolver"
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
-	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_NONE
 
 /obj/item/gun/ballistic/revolver/montagne
@@ -657,30 +656,6 @@
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
 	user.visible_message("<span class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span class='userdanger'>You fire [src] at your head!</span>", "<span class='hear'>You hear a gunshot!</span>")
-
-/obj/item/gun/ballistic/revolver/russian/soul
-	name = "cursed Russian revolver"
-	desc = "To play with this revolver requires wagering your very soul."
-
-/obj/item/gun/ballistic/revolver/russian/soul/shoot_self(mob/living/user)
-	..()
-	var/obj/item/soulstone/anybody/revolver/SS = new /obj/item/soulstone/anybody/revolver(get_turf(src))
-	if(!SS.transfer_soul("FORCE", user)) //Something went wrong
-		qdel(SS)
-		return
-	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
-
-/obj/item/gun/ballistic/revolver/reverse //Fires directly at its user... unless the user is a clown, of course.
-	clumsy_check = 0
-
-/obj/item/gun/ballistic/revolver/reverse/can_trigger_gun(mob/living/user)
-	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && user.mind.assigned_role == "Clown"))
-		return ..()
-	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
-		user.emote("scream")
-		user.drop_all_held_items()
-		user.Paralyze(80)
 
 /obj/item/gun/ballistic/revolver/firebrand
 	name = "\improper HP Firebrand"

@@ -10,7 +10,6 @@
 	throw_range = 7
 	force = 4
 	custom_materials = list(/datum/material/iron=2000)
-	clumsy_check = FALSE
 	fire_sound = 'sound/items/syringeproj.ogg'
 	var/time_per_syringe = 250
 	var/syringes_left = 4
