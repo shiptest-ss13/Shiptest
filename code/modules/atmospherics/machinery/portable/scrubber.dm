@@ -2,6 +2,7 @@
 	name = "portable air scrubber"
 	icon_state = "pscrubber:0"
 	density = TRUE
+	volume = 1000
 
 	var/on = FALSE
 	var/volume_rate = 1000
@@ -17,6 +18,7 @@
 
 /obj/machinery/portable_atmospherics/scrubber/update_icon_state()
 	icon_state = "pscrubber:[on]"
+	return ..()
 
 /obj/machinery/portable_atmospherics/scrubber/update_overlays()
 	. = ..()
@@ -38,7 +40,7 @@
 		var/turf/T = get_turf(src)
 		scrub(T.return_air())
 
-/obj/machinery/portable_atmospherics/scrubber/proc/scrub(var/datum/gas_mixture/mixture)
+/obj/machinery/portable_atmospherics/scrubber/proc/scrub(datum/gas_mixture/mixture)
 	if(air_contents.return_pressure() >= overpressure_m * ONE_ATMOSPHERE)
 		return
 
@@ -50,10 +52,10 @@
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
 		return
-	if(is_operational())
+	if(is_operational)
 		if(prob(50 / severity))
 			on = !on
-		update_icon()
+		update_appearance()
 
 /obj/machinery/portable_atmospherics/scrubber/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -86,7 +88,7 @@
 		if(close_valve)
 			if(on)
 				on = FALSE
-				update_icon()
+				update_appearance()
 		else if(on && holding)
 			investigate_log("[key_name(user)] started a transfer into [holding].", INVESTIGATE_ATMOS)
 
@@ -105,7 +107,7 @@
 		if("toggle_filter")
 			scrubbing ^= params["val"]
 			. = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/portable_atmospherics/scrubber/huge
 	name = "huge air scrubber"
@@ -129,11 +131,12 @@
 
 /obj/machinery/portable_atmospherics/scrubber/huge/update_icon_state()
 	icon_state = "scrubber:[on]"
+	return ..()
 
 /obj/machinery/portable_atmospherics/scrubber/huge/process_atmos()
-	if((!anchored && !movable) || !is_operational())
+	if((!anchored && !movable) || !is_operational)
 		on = FALSE
-		update_icon()
+		update_appearance()
 	use_power = on ? ACTIVE_POWER_USE : IDLE_POWER_USE
 	if(!on)
 		return

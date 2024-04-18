@@ -31,11 +31,6 @@
 	item_flags = EYE_STAB
 	var/datum/reagent/forkload //used to eat omelette
 
-/obj/item/kitchen/fork/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] stabs \the [src] into [user.p_their()] chest! It looks like [user.p_theyre()] trying to take a bite out of [user.p_them()]self!</span>")
-	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
-	return BRUTELOSS
-
 /obj/item/kitchen/fork/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(!istype(M))
 		return ..()
@@ -74,6 +69,8 @@
 	icon_state = "knife"
 	item_state = "knife"
 	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
+	pickup_sound =  'sound/items/handling/knife1_pickup.ogg'
+	drop_sound = 'sound/items/handling/knife3_drop.ogg'
 	flags_1 = CONDUCT_1
 	force = 10
 	w_class = WEIGHT_CLASS_SMALL
@@ -97,12 +94,6 @@
 /obj/item/kitchen/knife/proc/set_butchering()
 	AddComponent(/datum/component/butchering, 80 - force, 100, force - 10) //bonus chance increases depending on force
 
-/obj/item/kitchen/knife/suicide_act(mob/user)
-	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
-	return (BRUTELOSS)
-
 /obj/item/kitchen/knife/plastic
 	name = "plastic knife"
 	icon_state = "plastic_knife"
@@ -123,6 +114,18 @@
 	if(prob(break_chance))
 		user.visible_message("<span class='danger'>[user]'s knife snaps into tiny pieces in their hand.</span>")
 		qdel(src)
+
+/obj/item/kitchen/knife/pizza_cutter
+	name = "pizza cutter"
+	icon_state = "pizza_cutter"
+	desc = "A knife edge bent around a circle using the power of science. Perfect for safely cutting pizza."
+	force = 1
+	w_class = WEIGHT_CLASS_SMALL
+	throwforce = 1
+	throw_range = 6
+	custom_materials = list(/datum/material/iron=4000)
+	attack_verb = list("prodded", "whiffed","rolled", "poked")
+	sharpness = IS_SHARP
 
 /obj/item/kitchen/knife/ritual
 	name = "ritual knife"
@@ -154,7 +157,7 @@
 	name = "butcher's cleaver"
 	icon_state = "butch"
 	item_state = "butch"
-	desc = "A huge thing used for chopping and chopping up meat. This includes clowns and clown by-products."
+	desc = "A huge thing used for chopping and chopping up meat."
 	flags_1 = CONDUCT_1
 	force = 15
 	throwforce = 10
@@ -231,10 +234,6 @@
 	desc = "Unlike other carrots, you should probably keep this far away from your eyes."
 	custom_materials = null
 
-/obj/item/kitchen/knife/shiv/carrot/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] forcefully drives \the [src] into [user.p_their()] eye! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
 /obj/item/kitchen/rollingpin
 	name = "rolling pin"
 	desc = "Used to knock out the Bartender."
@@ -248,9 +247,6 @@
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	custom_price = 200
 
-/obj/item/kitchen/rollingpin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins flattening [user.p_their()] head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 /* Trays  moved to /obj/item/storage/bag */
 
 /obj/item/kitchen/spoon/plastic

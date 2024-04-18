@@ -265,10 +265,10 @@
 	icon = "thealenath"
 	desc = "All right, buddy. I think you've had EI NATH. Time to get a cab."
 
-/datum/barsign/thealohasnackbar
-	name = "The Aloha Snackbar"
-	icon = "alohasnackbar"
-	desc = "A tasteful, inoffensive tiki bar sign."
+/datum/barsign/hulabrews
+	name = "Hula Brews"
+	icon = "hulabrews"
+	desc = "A tropical-themed sign perfect for a tiki bar."
 
 /datum/barsign/thenet
 	name = "The Net"
@@ -296,6 +296,16 @@
 	name = "The Loose Goose"
 	icon = "goose"
 	desc = "Drink till you puke and/or break the laws of reality!"
+
+/datum/barsign/dustydunesaloon
+	name = "Dusty Dune Saloon"
+	icon = "saloon"
+	desc = "The perfect place to get trashed then get killed in a shootout"
+
+/datum/barsign/birdsnest
+	name = "Bird's Nest ♡"
+	icon = "birdsnest"
+	desc = "It is NOT what you're thinking it is."
 
 /datum/barsign/hiddensigns
 	hidden = TRUE

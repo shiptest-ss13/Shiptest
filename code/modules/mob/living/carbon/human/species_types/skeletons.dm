@@ -1,30 +1,30 @@
 /datum/species/skeleton
 	// 2spooky
-	name = "Spooky Scary Skeleton"
-	id = "skeleton"
-	say_mod = "rattles"
+	name = "\improper Spooky Scary Skeleton"
+	id = SPECIES_SKELETON
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/skeleton
-	species_traits = list(NOBLOOD, NO_BONES) //WHY THE FUCK DOES BONE MAN NOT HAVE BONES?!!
+	species_traits = list(NOBLOOD, NOHUSK) //WHY THE FUCK DOES BONE MAN NOT HAVE BONES?!!
 	inherent_traits = list(TRAIT_NOMETABOLISM,TRAIT_TOXIMMUNE,TRAIT_RESISTHEAT,TRAIT_NOBREATH,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,\
 	TRAIT_GENELESS,TRAIT_PIERCEIMMUNE,TRAIT_NOHUNGER,TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_FAKEDEATH,TRAIT_XENO_IMMUNE,TRAIT_NOCLONELOSS)
 	inherent_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	mutanttongue = /obj/item/organ/tongue/bone
 	damage_overlay_type = ""//let's not show bloody wounds or burns over bones.
 	disliked_food = NONE
-	liked_food = GROSS | MEAT | RAW
+	liked_food = GROSS | MEAT | RAW | DAIRY
 	//They can technically be in an ERT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
 	species_language_holder = /datum/language_holder/skeleton
 
-/datum/species/skeleton/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return ..()
+	species_chest = /obj/item/bodypart/chest/skeleton
+	species_head = /obj/item/bodypart/head/skeleton
+	species_l_arm = /obj/item/bodypart/l_arm/skeleton
+	species_r_arm = /obj/item/bodypart/r_arm/skeleton
+	species_l_leg = /obj/item/bodypart/leg/left/skeleton
+	species_r_leg = /obj/item/bodypart/leg/right/skeleton
 
 //Can still metabolize milk through meme magic
 /datum/species/skeleton/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
-	. = ..()
 	if(chem.type == /datum/reagent/consumable/milk)
 		if(chem.volume > 10)
 			H.reagents.remove_reagent(chem.type, chem.volume - 10)
@@ -57,3 +57,5 @@
 					H.emote("sigh")
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate)
 		return TRUE
+
+	return ..()

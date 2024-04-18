@@ -14,6 +14,13 @@
 		html = msg,
 		confidential = TRUE)
 
+/proc/message_debug(msg)
+	log_world("DEBUG: [msg]")
+	msg = "<span class=\"admindebug\"><span class=\"prefix\">DEBUG:</span> <span class=\"message linkify\">[msg]</span></span>"
+	to_chat(GLOB.admins,
+		type = MESSAGE_TYPE_DEBUG,
+		html = msg,
+		confidential = TRUE)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
 
@@ -32,7 +39,7 @@
 		return
 
 	var/body = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Options for [M.key]</title></head>"
-	body += "<body>Options panel for <b>[M]</b>"
+	body += "<body>Options panel for <b>[M.real_name]</b>"
 	if(M.client)
 		body += " played by <b>[M.client]</b> "
 		body += "<A href='?_src_=holder;[HrefToken()];editrights=[(GLOB.admin_datums[M.client.ckey] || GLOB.deadmins[M.client.ckey]) ? "rank" : "add"];key=[M.key]'>[M.client.holder ? M.client.holder.rank : "Player"]</A>"
@@ -54,33 +61,6 @@
 		body += "<br><br><b>Show related accounts by:</b> "
 		body += " <a href='?_src_=holder;[HrefToken()];showrelatedacc=cid;client=[REF(M.client)]'>CID</a>"
 		body += "<a href='?_src_=holder;[HrefToken()];showrelatedacc=ip;client=[REF(M.client)]'>IP</a> "
-		body += "<br><br><b>CentCom Galactic Ban DB: </b> "
-		if(CONFIG_GET(string/centcom_ban_db))
-			body += "<a href='?_src_=holder;[HrefToken()];centcomlookup=[M.client.ckey]'>Search</a>"
-		else
-			body += "<i>Disabled</i>"
-		var/rep = 0
-		rep += SSpersistence.antag_rep[M.ckey]
-		body += "<br><br><b>Antagonist reputation: [rep]"
-		body += "<br><a href='?_src_=holder;[HrefToken()];modantagrep=add;mob=[REF(M)]'>+</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=subtract;mob=[REF(M)]'>-</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=set;mob=[REF(M)]'>=</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagrep=zero;mob=[REF(M)]'>0</a>"
-		//WS Begin - Metacoins
-		var/metabalance = M.client.get_metabalance()
-		body += "<br><br><b>[CONFIG_GET(string/metacurrency_name)]s</b>: [metabalance] "
-		body += "<br><a href='?_src_=holder;[HrefToken()];modmetacoin=add;mob=[REF(M)]'>+</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modmetacoin=subtract;mob=[REF(M)]'>-</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modmetacoin=set;mob=[REF(M)]'>=</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modmetacoin=zero;mob=[REF(M)]'>0</a>"
-		//Antag Tokens
-		var/antag_tokens = M.client.get_antag_token_count()
-		body += "<br><br><b>Antag Tokens</b>: [antag_tokens]"
-		body += "<br><a href='?_src_=holder;[HrefToken()];modantagtokens=add;mob=[REF(M)]'>+</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagtokens=subtract;mob=[REF(M)]'>-</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagtokens=set;mob=[REF(M)]'>=</a> "
-		body += "<a href='?_src_=holder;[HrefToken()];modantagtokens=zero;mob=[REF(M)]'>0</a>"
-		//WS End
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
 			full_version = "[M.client.byond_version].[M.client.byond_build ? M.client.byond_build : "xxx"]"
@@ -267,8 +247,8 @@
 			dat+="<BR><A href='?src=[REF(src)];[HrefToken()];ac_menu_censor_channel=1'>Mark Feed Channel with Nanotrasen D-Notice (disables and locks the channel).</A>"
 			dat+="<BR><HR><A href='?src=[REF(src)];[HrefToken()];ac_set_signature=1'>The newscaster recognises you as:<BR> <FONT COLOR='green'>[src.admin_signature]</FONT></A>"
 		if(1)
-			dat+= "Station Feed Channels<HR>"
-			if( !length(GLOB.news_network.network_channels) )
+			dat+= "Feed Channels<HR>"
+			if(!length(GLOB.news_network.network_channels))
 				dat+="<I>No active channels found...</I>"
 			else
 				for(var/datum/newscaster/feed_channel/CHANNEL in GLOB.news_network.network_channels)
@@ -321,7 +301,7 @@
 				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
-				if( !length(src.admincaster_feed_channel.messages) )
+				if(!length(src.admincaster_feed_channel.messages))
 					dat+="<I>No feed messages found in channel...</I><BR>"
 				else
 					var/i = 0
@@ -365,7 +345,7 @@
 			dat+="<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1> created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.returnAuthor(-1)]</FONT> </FONT><BR>"
 			dat+="<FONT SIZE=2><A href='?src=[REF(src)];[HrefToken()];ac_censor_channel_author=[REF(src.admincaster_feed_channel)]'>[(src.admincaster_feed_channel.authorCensor) ? ("Undo Author censorship") : ("Censor channel Author")]</A></FONT><HR>"
 
-			if( !length(src.admincaster_feed_channel.messages) )
+			if(!length(src.admincaster_feed_channel.messages))
 				dat+="<I>No feed messages found in channel...</I><BR>"
 			else
 				for(var/datum/newscaster/feed_message/MESSAGE in src.admincaster_feed_channel.messages)
@@ -382,7 +362,7 @@
 				dat+="<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the station, and marked with a Nanotrasen D-Notice.<BR>"
 				dat+="No further feed story additions are allowed while the D-Notice is in effect.</FONT><BR><BR>"
 			else
-				if( !length(src.admincaster_feed_channel.messages) )
+				if(!length(src.admincaster_feed_channel.messages))
 					dat+="<I>No feed messages found in channel...</I><BR>"
 				else
 					for(var/datum/newscaster/feed_message/MESSAGE in src.admincaster_feed_channel.messages)
@@ -457,7 +437,7 @@
 			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart=1'>(Force Roundstart Rulesets)</A><br>"
 			if (GLOB.dynamic_forced_roundstart_ruleset.len > 0)
 				for(var/datum/dynamic_ruleset/roundstart/rule in GLOB.dynamic_forced_roundstart_ruleset)
-					dat += {"<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_remove=\ref[rule]'>-> [rule.name] <-</A><br>"}
+					dat += {"<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_remove=[text_ref(rule)]'>-> [rule.name] <-</A><br>"}
 				dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_clear=1'>(Clear Rulesets)</A><br>"
 			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_options=1'>(Dynamic mode options)</A><br>"
 		dat += "<hr/>"
@@ -592,7 +572,6 @@
 	SSredbot.send_discord_message("ooc", "**OOC has been [GLOB.ooc_allowed ? "enabled" : "disabled"] on the server.**")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle OOC", "[GLOB.ooc_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-//BeginWS Edit
 /datum/admins/proc/toggleooclocal()
 	set category = "Server"
 	set desc="Toggle dat bitch"
@@ -601,7 +580,6 @@
 	log_admin("[key_name(usr)] toggled LOOC.")
 	message_admins("[key_name_admin(usr)] toggled LOOC.")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Local OOC", "[GLOB.looc_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-//EndWS Edit
 
 /datum/admins/proc/toggleoocdead()
 	set category = "Server"
@@ -646,15 +624,12 @@
 	set category = "Server"
 	set desc="People can't enter"
 	set name="Toggle Entering"
-	GLOB.enter_allowed = !( GLOB.enter_allowed )
-	if (!( GLOB.enter_allowed ))
-		to_chat(world, "<B>New players may no longer enter the game.</B>", confidential = TRUE)
-	else
-		to_chat(world, "<B>New players may now enter the game.</B>", confidential = TRUE)
-	log_admin("[key_name(usr)] toggled new player game entering.")
-	message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled new player game entering.</span>")
-	world.update_status()
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Entering", "[GLOB.enter_allowed ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	if(!SSlag_switch.initialized)
+		return
+	SSlag_switch.set_measure(DISABLE_NON_OBSJOBS, !SSlag_switch.measures[DISABLE_NON_OBSJOBS])
+	log_admin("[key_name(usr)] toggled new player game entering. Lag Switch at index ([DISABLE_NON_OBSJOBS])")
+	message_admins("[key_name_admin(usr)] toggled new player game entering [SSlag_switch.measures[DISABLE_NON_OBSJOBS] ? "OFF" : "ON"].")
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Entering", "[!SSlag_switch.measures[DISABLE_NON_OBSJOBS] ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/toggleAI()
 	set category = "Server"
@@ -709,10 +684,15 @@
 /datum/admins/proc/unprison(mob/M in GLOB.mob_list)
 	set category = "Admin"
 	set name = "Unprison"
-	if (is_centcom_level(M.z))
-		SSjob.SendToLateJoin(M)
-		message_admins("[key_name_admin(usr)] has unprisoned [key_name_admin(M)]")
-		log_admin("[key_name(usr)] has unprisoned [key_name(M)]")
+	if (is_centcom_level(M))
+		var/datum/overmap/ship/controlled/original_ship = M.mind.original_ship.resolve()
+		if(original_ship)
+			var/atom/new_spawn_point = pick(original_ship.shuttle_port.spawn_points)
+			new_spawn_point.join_player_here(M)
+			message_admins("[key_name_admin(usr)] has unprisoned [key_name_admin(M)]")
+			log_admin("[key_name(usr)] has unprisoned [key_name(M)]")
+		else
+			alert("[M.name] could not be sent back to their original ship.")
 	else
 		alert("[M.name] is not prisoned.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Unprison") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -767,7 +747,7 @@
 		var/obj/structure/closet/supplypod/centcompod/pod = new()
 		var/atom/A = new chosen(pod)
 		A.flags_1 |= ADMIN_SPAWNED_1
-		new /obj/effect/DPtarget(T, pod)
+		new /obj/effect/pod_landingzone(T, pod)
 
 	log_admin("[key_name(usr)] pod-spawned [chosen] at [AREACOORD(usr)]")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Podspawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -806,7 +786,7 @@
 	target_mind.traitor_panel()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Traitor Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-/datum/admins/proc/show_skill_panel(var/target)
+/datum/admins/proc/show_skill_panel(target)
 	set category = "Admin.Game"
 	set desc = "Edit mobs's experience and skill levels"
 	set name = "Show Skill Panel"
@@ -826,7 +806,7 @@
 	set category = "Debug"
 	set desc="Reduces view range when wearing welding helmets"
 	set name="Toggle tinted welding helmes"
-	GLOB.tinted_weldhelh = !( GLOB.tinted_weldhelh )
+	GLOB.tinted_weldhelh = !(GLOB.tinted_weldhelh)
 	if (GLOB.tinted_weldhelh)
 		to_chat(world, "<B>The tinted_weldhelh has been enabled!</B>", confidential = TRUE)
 	else
@@ -886,44 +866,6 @@
 		to_chat(usr, devil.printdevilinfo(), confidential = TRUE)
 	else
 		to_chat(usr, "<b>[M] is not a devil.", confidential = TRUE)
-
-/datum/admins/proc/manage_free_slots()
-	if(!check_rights())
-		return
-	var/datum/browser/browser = new(usr, "jobmanagement", "Manage Free Slots", 520)
-	var/list/dat = list()
-	var/count = 0
-
-	if(!SSjob.initialized)
-		alert(usr, "You cannot manage jobs before the job subsystem is initialized!")
-		return
-
-	dat += "<table>"
-
-	for(var/j in SSjob.occupations)
-		var/datum/job/job = j
-		count++
-		var/J_title = html_encode(job.title)
-		var/J_opPos = html_encode(job.total_positions - (job.total_positions - job.current_positions))
-		var/J_totPos = html_encode(job.total_positions)
-		dat += "<tr><td>[J_title]:</td> <td>[J_opPos]/[job.total_positions < 0 ? " (unlimited)" : J_totPos]"
-
-		dat += "</td>"
-		dat += "<td>"
-		if(job.total_positions >= 0)
-			dat += "<A href='?src=[REF(src)];[HrefToken()];customjobslot=[job.title]'>Custom</A>"
-			dat += "<A href='?src=[REF(src)];[HrefToken()];addjobslot=[job.title]'>Add 1</A>"
-			if(job.total_positions > job.current_positions)
-				dat += "<A href='?src=[REF(src)];[HrefToken()];removejobslot=[job.title]'>Remove</A>"
-			else
-				dat += "Remove"
-			dat += "<A href='?src=[REF(src)];[HrefToken()];unlimitjobslot=[job.title]'>Unlimit</A></td>"
-		else
-			dat += "<A href='?src=[REF(src)];[HrefToken()];limitjobslot=[job.title]'>Limit</A></td>"
-
-	browser.height = min(100 + count * 20, 650)
-	browser.set_content(dat.Join())
-	browser.open()
 
 /datum/admins/proc/dynamic_mode_options(mob/user)
 	var/dat = {"
@@ -1044,3 +986,35 @@
 				"Admin login: [key_name(src)]")
 		if(string)
 			message_admins("[string]")
+
+/datum/admins/proc/show_lag_switch_panel()
+	set category = "Admin.Game"
+	set name = "Show Lag Switches"
+	set desc="Display the controls for drastic lag mitigation measures."
+
+	if(!SSlag_switch.initialized)
+		to_chat(usr, span_notice("The Lag Switch subsystem has not yet been initialized."))
+		return
+	if(!check_rights())
+		return
+
+	var/list/dat = list("<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Lag Switches</title></head><body><h2><B>Lag (Reduction) Switches</B></h2>")
+	dat += "Automatic Trigger: <a href='?_src_=holder;[HrefToken()];change_lag_switch_option=TOGGLE_AUTO'><b>[SSlag_switch.auto_switch ? "On" : "Off"]</b></a><br/>"
+	dat += "Population Threshold: <a href='?_src_=holder;[HrefToken()];change_lag_switch_option=NUM'><b>[SSlag_switch.trigger_pop]</b></a><br/>"
+	dat += "Slowmode Cooldown (toggle On/Off below): <a href='?_src_=holder;[HrefToken()];change_lag_switch_option=SLOWCOOL'><b>[SSlag_switch.slowmode_cooldown/10] seconds</b></a><br/>"
+	dat += "<br/><b>SET ALL MEASURES: <a href='?_src_=holder;[HrefToken()];change_lag_switch=ALL_ON'>ON</a> | <a href='?_src_=holder;[HrefToken()];change_lag_switch=ALL_OFF'>OFF</a></b><br/>"
+	dat += "<br/>Disable ghosts zoom and t-ray verbs (except staff): <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_GHOST_ZOOM_TRAY]'><b>[SSlag_switch.measures[DISABLE_GHOST_ZOOM_TRAY] ? "On" : "Off"]</b></a><br/>"
+	dat += "Disable planet deletion: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_PLANETDEL]'><b>[SSlag_switch.measures[DISABLE_PLANETDEL] ? "On" : "Off"]</b></a><br/>"
+	dat += "Disable <b>ALL</b> planet GENERATION: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_PLANETGEN]'><b>[SSlag_switch.measures[DISABLE_PLANETGEN] ? "On" : "Off"]</b></a><br/>"
+	dat += "Disable late joining: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_NON_OBSJOBS]'><b>[SSlag_switch.measures[DISABLE_NON_OBSJOBS] ? "On" : "Off"]</b></a><br/>"
+	dat += "<br/>============! MAD GHOSTS ZONE !============<br/>"
+	dat += "Disable deadmob keyLoop (except staff, informs dchat): <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_DEAD_KEYLOOP]'><b>[SSlag_switch.measures[DISABLE_DEAD_KEYLOOP] ? "On" : "Off"]</b></a><br/>"
+	dat += "==========================================<br/>"
+	dat += "<br/><b>Measures below can be bypassed with a <abbr title='TRAIT_BYPASS_MEASURES'><u>special trait</u></abbr></b><br/>"
+	dat += "Slowmode say verb (informs world): <a href='?_src_=holder;[HrefToken()];change_lag_switch=[SLOWMODE_SAY]'><b>[SSlag_switch.measures[SLOWMODE_SAY] ? "On" : "Off"]</b></a><br/>"
+	dat += "Disable runechat: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_RUNECHAT]'><b>[SSlag_switch.measures[DISABLE_RUNECHAT] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to speaker</span><br/>"
+	dat += "Disable examine icons: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_USR_ICON2HTML]'><b>[SSlag_switch.measures[DISABLE_USR_ICON2HTML] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to examiner</span><br/>"
+	dat += "Disable parallax: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_PARALLAX]'><b>[SSlag_switch.measures[DISABLE_PARALLAX] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to character</span><br />"
+	dat += "Disable footsteps: <a href='?_src_=holder;[HrefToken()];change_lag_switch=[DISABLE_FOOTSTEPS]'><b>[SSlag_switch.measures[DISABLE_FOOTSTEPS] ? "On" : "Off"]</b></a> - <span style='font-size:80%'>trait applies to character</span><br />"
+	dat += "</body></html>"
+	usr << browse(dat.Join(), "window=lag_switch_panel;size=420x480")

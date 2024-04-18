@@ -1,7 +1,7 @@
 /obj/item/wirecutters
 	name = "wirecutters"
 	desc = "This cuts wires."
-	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "cutters_map"
 	item_state = "cutters"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -40,7 +40,7 @@
 		icon_state = "cutters"
 		var/our_color = pick(wirecutter_colors)
 		add_atom_colour(wirecutter_colors[our_color], FIXED_COLOUR_PRIORITY)
-		update_icon()
+		update_appearance()
 
 /obj/item/wirecutters/update_overlays()
 	. = ..()
@@ -52,31 +52,21 @@
 
 /obj/item/wirecutters/get_belt_overlay()
 	if(random_color)
-		var/mutable_appearance/body = mutable_appearance('whitesands/icons/obj/clothing/belt_overlays.dmi', "cutters")
-		var/mutable_appearance/head = mutable_appearance('whitesands/icons/obj/clothing/belt_overlays.dmi', "cutters_head")
+		var/mutable_appearance/body = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "cutters")
+		var/mutable_appearance/head = mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "cutters_head")
 		body.color = color
 		head.add_overlay(body)
 		return head
 	else
-		return mutable_appearance('whitesands/icons/obj/clothing/belt_overlays.dmi', icon_state)
+		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', icon_state)
 
 /obj/item/wirecutters/attack(mob/living/carbon/C, mob/user)
 	if(istype(C) && C.handcuffed && istype(C.handcuffed, /obj/item/restraints/handcuffs/cable))
 		user.visible_message("<span class='notice'>[user] cuts [C]'s restraints with [src]!</span>")
 		qdel(C.handcuffed)
 		return
-	else if(istype(C) && C.has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
-		to_chat(C, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-		if(do_after(user, 15, null, C))
-			to_chat(C, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
-			C.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 	else
 		..()
-
-/obj/item/wirecutters/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is cutting at [user.p_their()] arteries with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, usesound, 50, TRUE, -1)
-	return (BRUTELOSS)
 
 /obj/item/wirecutters/abductor
 	name = "alien wirecutters"
@@ -93,3 +83,15 @@
 	icon_state = "wirecutters_cyborg"
 	toolspeed = 0.5
 	random_color = FALSE
+
+/obj/item/wirecutters/syndie
+	name = "suspicious-looking wirecutters"
+	desc = "The blades of these wirecutters have suspiciously fine serrated teeth."
+	icon_state = "cutters_syndie"
+	toolspeed = 0.5
+	random_color = FALSE
+
+/obj/item/wirecutters/old
+	desc = "This cuts wires. It also appears to be slightly rusty..."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "oldcutters"

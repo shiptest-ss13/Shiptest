@@ -239,6 +239,86 @@
 			</body>
 			</html>"}
 
+/obj/item/book/manual/trickwines_4_brewers
+	name = "Trickwines for brewers"
+	icon_state = "book2"
+	author = "Bridget Saint-Baskett"
+	title = "Trickwines for brewers"
+	dat = {"<html>
+			<head>
+			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			<style>
+			h1 {font-size: 18px; margin: 15px 0px 5px;}
+			h2 {font-size: 15px; margin: 15px 0px 5px;}
+			li {margin: 2px 0px 2px 15px;}
+			ul {list-style: none; margin: 5px; padding: 0px;}
+			ol {margin: 5px; padding: 0px 15px;}
+			</style>
+			</head>
+			<body>
+			<h3>Trickwines for idiots</h3>
+			Okay, so you just joined the SRM and you want to make some brews! I'm tired of explaining all of this so I'm jotting it all down for you clowns.<br>
+			Trickwines almost all share the same effect. When you drink them, they provide a beneficial effect and when you toss them at someone it provides some sort of bad effect.
+			<h2> Breakaway flasks</h2>
+			Honestly, I love these things. I'm not a scientist so I cant exactly explain how it works but somehow when you fuse plasma into glass it makes it ultra sharp and makes it really good for cracking over fauna heads.<br>
+			The simplest way I have found of making them is crafting them with a chunk of glass, plasma, and a welder.<br>
+
+			<h2> Bacteria </h2>
+			A speical speices of bacteria native to Illestren is what allows Trickwines form.<br>
+			Now we use a special distiller that keeps just enough bacertia alive to ferment without turning the batch sour.<br>
+			Now you should still have one on board but if you dont its fine.<br>
+			It just so happens we have trees on board our ships host to the Bacteria.<br>
+			To get enough Bacteria your going to need to feed it anything that would help a plant.<br>
+			Water, Fertilizer, Ashwine are all good options.<br>
+			Soon it will drops some apples and you can grind them for the bacteria.<br>
+			Once you have enough you can fabricate it the same way you would a normal barrel.<br>
+
+			<h2> Ashwine </h2>
+			It's kind of our trademark, and it's one of the simplest trickwines to make. The Montagnes love using this stuff in ceremonies as well so it should get you some good boy points.<br>
+			It's made with a ratio of 3:1:1 absinthe, mushroom hallucinogen, and ash respectively.<br>
+			Mushroom hallucinogens come from mushroom caps and you can ferment absinthe from moonflowers.<br>
+			Its a mild hallucinogenic but seems to have powerful cleansing effects on the devoted SRM.<br>
+			It can also really fuck someone up, causing their vision to go shaky and blurry which makes it difficult for them to fight.<br>
+
+			<h2> Icewine </h2>
+			This one helps stopping foes in their tracks. It's also got a nice taste.
+			Its made with 3:1:1 saké, polar bear fur, frost oil(grind chilled peppers).<br>
+			You can get polar bear fur and frost oil from grinding up polar bear hides and chilled peppers.<br>
+			It's pretty good at sealing burns and lowering your temperature quickly.<br>
+			However, it completely encases foes in ice and drops their temperature substantially.<br>
+
+			<h2> Shockwine </h2>
+			Easily my favorite, this thing is great at scorching most fauna.<br>
+			Its made with vodka, calcium, and lemon juice.<br>
+			If you did not know, vodka requires enzymes instead of the normal fermenting process.<br>
+			It's a nice upper. Great if you're trying to run away.<br>
+			This one's really flashy. Expect some severe burns on your target<br>
+
+			<h2> Hearthwine </h2>
+			I once threw back a flask of this stuff in the heat of a really bad battle and it sealed my wounds within seconds its honestly increadible.<br>
+			It also acts like the inverse of Icewine heating you up more then a fever.<br>
+			Last time I threw it at someone though i almost burnt down the forest I was in.<br>
+			Its made out of ground up fireblossems with some nice hard cider and a bit of welding fuel with of course a ratio of 3:1:1.<br>
+
+			<h2> Forcewine </h2>
+			I once had a duel with a wizard and and I was able to completly ignore a few of his spells! Its like they just fizzled out when they hit me.<br>
+			Would recomend for any esoteric senarios even though I have only been in a few of those.<br>
+			You can also use it to entrap Fauna inside of a forcefield like bubble, Gives you time to breath and laugh at them.<br>
+			3:1:1 Tequila, Space Montain Wind, and I know its strange but hollow water, Its that stuff you can extract from geysers<br>
+
+			<h2> Prismwine </h2>
+			Gives you a nice shiny layer of armour, fire seems to have alot harder time sticking to me when i tested it.<br>
+			Throwing it seeems to do the reverse acting like a magnifying glass to burns and lasers<br>
+			Made 3:1:1 with good ol Gin, then add plasma and tinea luxor which is found from mushroom stems<br>
+
+			Some of these can be a bit situatinal but its always nice to have a few in your bag for emergecys.<br>
+			As a bonus, most of the other factions have no clue how to make these so you can sell them for a fair chunk of cash.<br>
+
+			<br>Bridget Saint-Baskett, Senior Brewer<br>
+
+			</body>
+			</html>"}
+
 // Wiki books that are linked to the configured wiki link.
 
 // A book that links to the wiki
@@ -255,210 +335,202 @@
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
 		dat = {"
-
-			<html>
-			<head>
-			<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+			<iframe
+				id='ext_frame'
+				src='[wikiurl]/frame.html'
+				style='border: none; width: 100vw; height: 100vh;'>
+			</iframe>
 			<style>
-				iframe {
-					display: none;
+			html, body {
+				height: 100vh;
+				width: 100vw;
+				margin: 0;
+				overflow: hidden;
+			}
+			body > :not(iframe) {
+				display: none;
 				}
 			</style>
-			</head>
-			<body>
-			<script type="text/javascript">
-				function pageloaded(myframe) {
-					document.getElementById("loading").style.display = "none";
-					myframe.style.display = "inline";
+			<script>
+				window.onmessage = function() {
+					document.getElementById('ext_frame').contentWindow.postMessage('[page_link]', '*')
 				}
 			</script>
-			<p id='loading'>You start skimming through the manual...</p>
-			<iframe width='100%' height='97%' onload="pageloaded(this)" src="[wikiurl]/[page_link]?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
-			</body>
-
-			</html>
-
 			"}
 
 /obj/item/book/manual/wiki/chemistry
 	name = "Chemistry Textbook"
-	icon_state ="chemistrybook"
-	author = "Nanotrasen"
+	icon_state = "chemistrybook"
+	author = "GREMLIN"
 	title = "Chemistry Textbook"
-	page_link = "Guide_to_chemistry"
+	page_link = "Guide_to_Chemistry"
 
-/obj/item/book/manual/wiki/engineering_construction
-	name = "Station Repairs and Construction"
-	icon_state ="bookEngineering"
-	author = "Engineering Encyclopedia"
-	title = "Station Repairs and Construction"
-	page_link = "Guide_to_construction"
+/obj/item/book/manual/wiki/command
+	name = "Command and Delegate"
+	icon_state = "book"
+	author = "Frontier Assistance Program"
+	title = "Command and Delegate: The Entreprising Captain's Guide"
+	page_link = "Guide_to_Command"
 
-/obj/item/book/manual/wiki/engineering_guide
-	name = "Engineering Textbook"
-	icon_state ="bookEngineering2"
-	author = "Engineering Encyclopedia"
-	title = "Engineering Textbook"
-	page_link = "Guide_to_engineering"
+/obj/item/book/manual/wiki/piloting
+	name = "You and Helm Consoles"
+	icon_state = "book"
+	author = "Frontier Assistance Program"
+	title = "You and Helm Consoles: The Bold Helmsman's Manual"
+	page_link = "Guide_to_the_Overmap"
 
-/obj/item/book/manual/wiki/engineering_singulo_tesla
-	name = "Singularity and Tesla for Dummies"
-	icon_state ="bookEngineeringSingularitySafety"
-	author = "Engineering Encyclopedia"
-	title = "Singularity and Tesla for Dummies"
-	page_link = "Singularity_and_Tesla_engines"
+/obj/item/book/manual/wiki/ghetto_chemistry
+	name = "Ghetto Chemistry Textbook"
+	icon_state = "chemistrybook"
+	author = "GREMLIN"
+	title = "Less Legal Chemistry Textbook"
+	page_link = "Guide_to_Ghetto_Chemistry"
 
-/obj/item/book/manual/wiki/security_space_law
-	name = "Space Law"
-	desc = "A set of Nanotrasen guidelines for keeping law and order on their space stations."
-	icon_state = "bookSpaceLaw"
-	author = "Nanotrasen"
-	title = "Space Law"
-	page_link = "Space_Law"
+/obj/item/book/manual/wiki/cooking
+	name = "Cookbook"
+	desc = "It's a cookbook!"
+	icon_state = "cooked_book"
+	author = "Frontier Assistance Program"
+	title = "To Serve Man"
+	page_link = "Guide_to_Food_and_Drinks"
 
-/obj/item/book/manual/wiki/security_space_law/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] pretends to read \the [src] intently... then promptly dies of laughter!</span>")
-	return OXYLOSS
+/obj/item/book/manual/wiki/construction
+	name = "Ship Repairs and Construction"
+	icon_state = "bookEngineering"
+	author = "Frontier Assistance Program"
+	title = "Ship Repairs and Construction"
+	page_link = "Construction"
 
-/obj/item/book/manual/wiki/infections
-	name = "Infections - Making your own pandemic!"
-	icon_state = "bookInfections"
-	author = "Infections Encyclopedia"
-	title = "Infections - Making your own pandemic!"
-	page_link = "Infections"
+/obj/item/book/manual/wiki/engineering
+	name = "Engineering Guide"
+	icon_state = "bookEngineering2"
+	author = "Frontier Assistance Program"
+	title = "The Ship Engineer's Guide to Mechanical and Electrical Engineering"
+	page_link = "Guide_to_Engineering"
 
-/obj/item/book/manual/wiki/telescience
-	name = "Teleportation Science - Bluespace for dummies!"
-	icon_state = "book7"
-	author = "University of Bluespace"
-	title = "Teleportation Science - Bluespace for dummies!"
-	page_link = "Guide_to_telescience"
-
-/obj/item/book/manual/wiki/engineering_hacking
+/obj/item/book/manual/wiki/hacking
 	name = "Hacking"
-	icon_state ="bookHacking"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookHacking"
+	author = "Frontier Assistance Program"
 	title = "Hacking"
 	page_link = "Hacking"
 
-/obj/item/book/manual/wiki/detective
-	name = "The Film Noir: Proper Procedures for Investigations"
-	icon_state ="bookDetective"
-	author = "Nanotrasen"
-	title = "The Film Noir: Proper Procedures for Investigations"
-	page_link = "Detective"
-
-/obj/item/book/manual/wiki/barman_recipes
+/obj/item/book/manual/wiki/drinks
 	name = "Barman Recipes: Mixing Drinks and Changing Lives"
 	icon_state = "barbook"
 	author = "Sir John Rose"
 	title = "Barman Recipes: Mixing Drinks and Changing Lives"
-	page_link = "Guide_to_food_and_drinks"
+	page_link = "Guide_to_Food_and_Drinks"
 
-/obj/item/book/manual/wiki/robotics_cyborgs
+/obj/item/book/manual/wiki/medicine
+	name = "Guide to Medical Aid"
+	icon_state = "book8"
+	author = "Frontier Assistance Program"
+	title = "The Crewman's Guide to Medical Aid"
+	page_link = "Guide_to_Medical"
+
+/obj/item/book/manual/wiki/surgery
+	name = "Guide to Surgery"
+	icon_state = "book4"
+	author = "Frontier Assistance Program"
+	title = "Guide to Surgery: Scalpel, Hemostat, Wristwatch"
+	page_link = "Guide_to_Surgery"
+
+/obj/item/book/manual/wiki/robotics
 	name = "Robotics for Dummies"
 	icon_state = "borgbook"
 	author = "XISC"
 	title = "Robotics for Dummies"
-	page_link = "Guide_to_robotics"
+	page_link = "Guide_to_Robotics"
 
-/obj/item/book/manual/wiki/research_and_development
-	name = "Research and Development 101"
-	icon_state = "rdbook"
-	author = "Dr. L. Ight"
-	title = "Research and Development 101"
-	page_link = "Guide_to_Research_and_Development"
+// /obj/item/book/manual/wiki/engineering_singulo_tesla
+//	name = "Singularity and Tesla for Dummies"
+//	icon_state ="bookEngineeringSingularitySafety"
+//	author = "Engineering Encyclopedia"
+//	title = "Singularity and Tesla for Dummies"
+//	page_link = "Singularity_and_Tesla_engines"
 
-/obj/item/book/manual/wiki/experimentor
-	name = "Mentoring your Experiments"
-	icon_state = "rdbook"
-	author = "Dr. H.P. Kritz"
-	title = "Mentoring your Experiments"
-	page_link = "Experimentor"
+// /obj/item/book/manual/wiki/security_space_law
+//	name = "Space Law"
+//	desc = "A set of Nanotrasen guidelines for keeping law and order on their space stations."
+//	icon_state = "bookSpaceLaw"
+//	author = "Nanotrasen"
+//	title = "Space Law"
+//	page_link = "Space_Law"
 
-/obj/item/book/manual/wiki/cooking_to_serve_man
-	name = "To Serve Man"
-	desc = "It's a cookbook!"
-	icon_state ="cooked_book"
-	author = "the Kanamitan Empire"
-	title = "To Serve Man"
-	page_link = "Guide_to_food_and_drinks"
+// /obj/item/book/manual/wiki/infections
+//	name = "Infections - Making your own pandemic!"
+//	icon_state = "bookInfections"
+//	author = "Infections Encyclopedia"
+//	title = "Infections - Making your own pandemic!"
+//	page_link = "Infections"
 
-/obj/item/book/manual/wiki/tcomms
-	name = "Subspace Telecommunications And You"
-	icon_state = "book3"
-	author = "Engineering Encyclopedia"
-	title = "Subspace Telecommunications And You"
-	page_link = "Guide_to_Telecommunications"
+// /obj/item/book/manual/wiki/telescience
+//	name = "Teleportation Science - Bluespace for dummies!"
+//	icon_state = "book7"
+//	author = "University of Bluespace"
+//	title = "Teleportation Science - Bluespace for dummies!"
+//	page_link = "Guide_to_telescience"
 
-/obj/item/book/manual/wiki/atmospherics
-	name = "Lexica Atmosia"
-	icon_state = "book5"
-	author = "the City-state of Atmosia"
-	title = "Lexica Atmosia"
-	page_link = "Guide_to_Atmospherics"
+// /obj/item/book/manual/wiki/detective
+//	name = "The Film Noir: Proper Procedures for Investigations"
+//	icon_state ="bookDetective"
+//	author = "Nanotrasen"
+//	title = "The Film Noir: Proper Procedures for Investigations"
+//	page_link = "Detective"
 
-/obj/item/book/manual/wiki/medicine
-	name = "Medical Space Compendium, Volume 638"
-	icon_state = "book8"
-	author = "Medical Journal"
-	title = "Medical Space Compendium, Volume 638"
-	page_link = "Guide_to_medicine"
+// /obj/item/book/manual/wiki/research_and_development
+// 	name = "Research and Development 101"
+//	icon_state = "rdbook"
+//	author = "Dr. L. Ight"
+//	title = "Research and Development 101"
+//	page_link = "Guide_to_Research_and_Development"
 
-/obj/item/book/manual/wiki/surgery
-	name = "Brain Surgery for Dummies"
-	icon_state = "book4"
-	author = "Dr. F. Fran"
-	title = "Brain Surgery for Dummies"
-	page_link = "Surgery"
+// /obj/item/book/manual/wiki/experimentor
+//	name = "Mentoring your Experiments"
+//	icon_state = "rdbook"
+//	author = "Dr. H.P. Kritz"
+//	title = "Mentoring your Experiments"
+//	page_link = "E.X.P.E.R.I-MENTOR"
 
-/obj/item/book/manual/wiki/grenades
-	name = "DIY Chemical Grenades"
-	icon_state = "book2"
-	author = "W. Powell"
-	title = "DIY Chemical Grenades"
-	page_link = "Grenade"
+// /obj/item/book/manual/wiki/tcomms
+//	name = "Subspace Telecommunications And You"
+//	icon_state = "book3"
+//	author = "Engineering Encyclopedia"
+//	title = "Subspace Telecommunications And You"
+//	page_link = "Guide_to_Telecommunications"
 
-/obj/item/book/manual/wiki/toxins
-	name = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
-	icon_state = "book6"
-	author = "Cuban Pete"
-	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
-	page_link = "Guide_to_toxins"
+// /obj/item/book/manual/wiki/atmospherics
+//	name = "Lexica Atmosia"
+//	icon_state = "book5"
+//	author = "the City-state of Atmosia"
+//	title = "Lexica Atmosia"
+//	page_link = "Guide_to_Atmospherics"
 
-/obj/item/book/manual/wiki/toxins/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] starts dancing to the Rhumba Beat! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
-	if (!QDELETED(H))
-		H.emote("spin")
-		sleep(20)
-		for(var/obj/item/W in H)
-			H.dropItemToGround(W)
-			if(prob(50))
-				step(W, pick(GLOB.alldirs))
-		ADD_TRAIT(H, TRAIT_DISFIGURED, TRAIT_GENERIC)
-		H.bleed_rate = 5
-		H.gib_animation()
-		sleep(3)
-		H.adjustBruteLoss(1000) //to make the body super-bloody
-		H.spawn_gibs()
-		H.spill_organs()
-		H.spread_bodyparts()
-	return (BRUTELOSS)
+// /obj/item/book/manual/wiki/grenades
+//	name = "DIY Chemical Grenades"
+//	icon_state = "book2"
+//	author = "W. Powell"
+//	title = "DIY Chemical Grenades"
+//	page_link = "Grenade"
 
-/obj/item/book/manual/wiki/plumbing
-	name = "Chemical Factories Without Narcotics"
-	icon_state ="plumbingbook"
-	author = "Nanotrasen"
-	title = "Chemical Factories Without Narcotics"
-	page_link = "Guide_to_plumbing"
+// /obj/item/book/manual/wiki/toxins
+//	name = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
+//	icon_state = "book6"
+//	author = "Cuban Pete"
+//	title = "Toxins or: How I Learned to Stop Worrying and Love the Maxcap"
+//	page_link = "Guide_to_toxins"
 
-//WS Addition - Spacepods
-/obj/item/book/manual/wiki/spacepod
-	name = "Guide to Podracing"
-	icon_state = "bookParticleAccelerator"
-	author = "Bananakin"
-	title = "Guide to Podracing"
-	page_link = "Space_Pods"
-//WS End
+// /obj/item/book/manual/wiki/plumbing
+//	name = "Chemical Factories Without Narcotics"
+//	icon_state ="plumbingbook"
+//	author = "Nanotrasen"
+//	title = "Chemical Factories Without Narcotics"
+//	page_link = "Guide_to_plumbing"
+
+// /obj/item/book/manual/wiki/medical_cloning
+//	name = "Cloning techniques of the 26th century"
+//	icon_state ="bookCloning"
+//	author = "Medical Journal, volume 3"
+//	title = "Cloning techniques of the 26th century"
+//	page_link = "Guide_to_genetics#Cloning"

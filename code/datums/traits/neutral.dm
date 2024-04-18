@@ -5,7 +5,7 @@
 	name = "Ageusia"
 	desc = "You can't taste anything! Toxic food will still poison you."
 	value = 0
-	mob_trait = TRAIT_AGEUSIA
+	mob_traits = list(TRAIT_AGEUSIA)
 	gain_text = "<span class='notice'>You can't taste anything!</span>"
 	lose_text = "<span class='notice'>You can taste again!</span>"
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
@@ -40,7 +40,7 @@
 	gain_text = "<span class='notice'>You feel like you understand what things should look like.</span>"
 	lose_text = "<span class='notice'>Well who cares about deco anyways?</span>"
 	medical_record_text = "Patient seems to be rather stuck up."
-	mob_trait = TRAIT_SNOB
+	mob_traits = list(TRAIT_SNOB)
 
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
@@ -109,11 +109,11 @@
 	medical_record_text = "Patient is afflicted with almost complete color blindness."
 
 /datum/quirk/monochromatic/add()
-	quirk_holder.add_client_colour(/datum/client_colour/monochrome)
+	quirk_holder.add_client_colour(/datum/client_colour/monochrome/blind/permanent)
 
 /datum/quirk/monochromatic/post_add()
 	if(quirk_holder.mind.assigned_role == "Detective")
-		to_chat(quirk_holder, "<span class='boldannounce'>Mmm. Nothing's ever clear on this station. It's all shades of gray...</span>")
+		to_chat(quirk_holder, "<span class='boldannounce'>Mmm. Nothing's ever clear in this world of ours. It's all shades of gray...</span>")
 		quirk_holder.playsound_local(quirk_holder, 'sound/ambience/ambidet1.ogg', 50, FALSE)
 
 /datum/quirk/monochromatic/remove()
@@ -173,7 +173,7 @@
 	name = "Smooth-Headed"
 	desc = "You have no hair and are quite insecure about it! Keep your wig on, or at least your head covered up."
 	value = 0
-	mob_trait = TRAIT_BALD
+	mob_traits = list(TRAIT_BALD)
 	gain_text = "<span class='notice'>Your head is as smooth as can be, it's terrible.</span>"
 	lose_text = "<span class='notice'>Your head itches, could it be... growing hair?!</span>"
 	medical_record_text = "Patient starkly refused to take off headwear during examination."
@@ -185,15 +185,16 @@
 	old_hair = H.hairstyle
 	H.hairstyle = "Bald"
 	H.update_hair()
-	RegisterSignal(H, COMSIG_CARBON_EQUIP_HAT, .proc/equip_hat)
-	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, .proc/unequip_hat)
+	RegisterSignal(H, COMSIG_CARBON_EQUIP_HAT, PROC_REF(equip_hat))
+	RegisterSignal(H, COMSIG_CARBON_UNEQUIP_HAT, PROC_REF(unequip_hat))
 
 /datum/quirk/bald/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.hairstyle = old_hair
-	H.update_hair()
-	UnregisterSignal(H, list(COMSIG_CARBON_EQUIP_HAT, COMSIG_CARBON_UNEQUIP_HAT))
-	SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "bad_hair_day")
+	if(quirk_holder)
+		var/mob/living/carbon/human/H = quirk_holder
+		H.hairstyle = old_hair
+		H.update_hair()
+		UnregisterSignal(H, list(COMSIG_CARBON_EQUIP_HAT, COMSIG_CARBON_UNEQUIP_HAT))
+		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "bad_hair_day")
 
 /datum/quirk/bald/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
@@ -202,7 +203,7 @@
 		W.hairstyle = pick(GLOB.hairstyles_list - "Bald")
 	else
 		W.hairstyle = old_hair
-	W.update_icon()
+	W.update_appearance()
 	var/list/slots = list (
 		"head" = ITEM_SLOT_HEAD,
 		"backpack" = ITEM_SLOT_BACKPACK,
@@ -224,3 +225,12 @@
 	SIGNAL_HANDLER
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_hair_day", /datum/mood_event/bald)
+
+/datum/quirk/gunslinger
+	name = "Gunslinger"
+	desc = "You are one of the fastest guns in the frontier. Those new-fangled and complicated firearms don't suit you; pistols and semi-automatic rifles suit you better, but revolvers in particular were made for you. You can fan single action revolvers, flip any revolver, and have mastery of the greatest handgun ever made. NOT RECOMENDED FOR BEGINNERS. ADVANCED PLAYERS ONLY."
+	value = 0
+	gain_text = "<span class='notice'>The HP Shadow is greatest handgun ever made.</span>"
+	lose_text = "<span class='notice'>...Who the hell would use such antiquated weapons in this year?</span>"
+	medical_record_text = "Patient always has their hand around their holster."
+	mob_traits = list(TRAIT_GUNSLINGER)

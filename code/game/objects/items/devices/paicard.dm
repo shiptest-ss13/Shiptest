@@ -10,10 +10,6 @@
 	var/mob/living/silicon/pai/pai
 	resistance_flags = FIRE_PROOF | ACID_PROOF | INDESTRUCTIBLE
 
-/obj/item/paicard/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is staring sadly at [src]! [user.p_they()] can't keep living without real human intimacy!</span>")
-	return OXYLOSS
-
 /obj/item/paicard/Initialize()
 	SSpai.pai_card_list += src
 	add_overlay("pai-off")
@@ -34,7 +30,11 @@
 	if(pai)
 		if(!pai.master_dna || !pai.master)
 			dat += "<a href='byond://?src=[REF(src)];setdna=1'>Imprint Master DNA</a><br>"
-		dat += "Installed Personality: [pai.name]<br>"
+		dat += "Prime directive: <br>"
+		if(pai.laws.zeroth)
+			dat +="[pai.laws.zeroth]<br>"
+		else
+			dat +="None<br>"
 		dat += "Prime directive: <br>[pai.laws.zeroth]<br>"
 		for(var/slaws in pai.laws.supplied)
 			dat += "Additional directives: <br>[slaws]<br>"
@@ -52,6 +52,7 @@
 			var/mob/living/carbon/human/H = user
 			if(H.real_name == pai.master || H.dna.unique_enzymes == pai.master_dna)
 				dat += "<A href='byond://?src=[REF(src)];toggle_holo=1'>\[[pai.canholo? "Disable" : "Enable"] holomatrix projectors\]</a><br>"
+				dat += "<A href='byond://?src=[REF(src)];clear_zero=1'>\[Remove Prime directive\]</a><br>"
 		dat += "<A href='byond://?src=[REF(src)];fix_speech=1'>\[Reset speech synthesis module\]</a><br>"
 		dat += "<A href='byond://?src=[REF(src)];wipe=1'>\[Wipe current pAI personality\]</a><br>"
 	else
@@ -83,6 +84,7 @@
 				pai.master = M.real_name
 				pai.master_dna = M.dna.unique_enzymes
 				to_chat(pai, "<span class='notice'>You have been bound to a new master.</span>")
+				pai.laws.set_zeroth_law("Serve your master.")
 				pai.emittersemicd = FALSE
 		if(href_list["wipe"])
 			var/confirm = input("Are you CERTAIN you wish to delete the current personality? This action cannot be undone.", "Personality Wipe") in list("Yes", "No")
@@ -93,6 +95,10 @@
 					to_chat(pai, "<span class='userdanger'>Your mental faculties leave you.</span>")
 					to_chat(pai, "<span class='rose'>oblivion... </span>")
 					qdel(pai)
+		if(href_list["clear_zero"])
+			if((input("Are you CERTAIN you wish to remove this pAI's Prime directive? This action cannot be undone.", "Clear Directive") in list("Yes", "No")) == "Yes")
+				if(pai)
+					pai.laws.clear_zeroth_law()
 		if(href_list["fix_speech"])
 			pai.stuttering = 0
 			pai.slurring = 0
@@ -129,38 +135,20 @@
 //		WIRE_TRANSMIT = 4
 
 /obj/item/paicard/proc/setPersonality(mob/living/silicon/pai/personality)
-	src.pai = personality
-	src.add_overlay("pai-null")
+	pai = personality
+	add_overlay("pai-underlay")
+	add_overlay("pai-null")
 
 	playsound(loc, 'sound/effects/pai_boot.ogg', 50, TRUE, -1)
 	audible_message("\The [src] plays a cheerful startup noise!")
 
-/obj/item/paicard/proc/setEmotion(emotion)
+/obj/item/paicard/proc/set_emotion(emotion)
 	if(pai)
-		src.cut_overlays()
-		switch(emotion)
-			if(1)
-				src.add_overlay("pai-happy")
-			if(2)
-				src.add_overlay("pai-cat")
-			if(3)
-				src.add_overlay("pai-extremely-happy")
-			if(4)
-				src.add_overlay("pai-face")
-			if(5)
-				src.add_overlay("pai-laugh")
-			if(6)
-				src.add_overlay("pai-off")
-			if(7)
-				src.add_overlay("pai-sad")
-			if(8)
-				src.add_overlay("pai-angry")
-			if(9)
-				src.add_overlay("pai-what")
-			if(10)
-				src.add_overlay("pai-null")
-			if(11)
-				src.add_overlay("pai-sunglasses")
+		cut_overlays()
+		if(emotion != "off")
+			add_overlay("pai-underlay")
+			add_overlay("pai-[emotion]")
+
 
 /obj/item/paicard/proc/alertUpdate()
 	audible_message("<span class='info'>[src] flashes a message across its screen, \"Additional personalities available for download.\"</span>", "<span class='notice'>[src] vibrates with an alert.</span>")
@@ -171,4 +159,3 @@
 		return
 	if(pai && !pai.holoform)
 		pai.emp_act(severity)
-

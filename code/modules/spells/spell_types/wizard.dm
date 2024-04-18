@@ -247,14 +247,13 @@
 
 	action_icon_state = "repulse"
 
-/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 40)
+/obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 5)
 	var/list/thrownatoms = list()
 	var/atom/throwtarget
 	var/distfromcaster
 	playMagSound()
-	for(var/turf/T in targets) //Done this way so things don't get thrown all around hilariously.
-		for(var/atom/movable/AM in T)
-			thrownatoms += AM
+	for(var/atom/movable/hit_target as anything in targets) //Done this way so things don't get thrown all around hilariously.
+		thrownatoms += hit_target
 
 	for(var/am in thrownatoms)
 		var/atom/movable/AM = am
@@ -271,13 +270,15 @@
 		if(distfromcaster == 0)
 			if(isliving(AM))
 				var/mob/living/M = AM
-				M.Paralyze(100)
+				M.Paralyze(40)
 				M.adjustBruteLoss(5)
+				shake_camera(AM, 2, 1)
 				to_chat(M, "<span class='userdanger'>You're slammed into the floor by [user]!</span>")
 		else
 			new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
 			if(isliving(AM))
 				var/mob/living/M = AM
+				shake_camera(AM, 2, 1)
 				M.Paralyze(stun_amt)
 				to_chat(M, "<span class='userdanger'>You're thrown back by [user]!</span>")
 			AM.safe_throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user, force = repulse_force)//So stuff gets tossed around at the same time.
@@ -340,7 +341,7 @@
 /obj/effect/proc_holder/spell/targeted/conjure_item/spellpacket/cast(list/targets, mob/user = usr)
 	..()
 	for(var/mob/living/carbon/C in targets)
-		C.throw_mode_on()
+		C.throw_mode_on(THROW_MODE_TOGGLE)
 
 /obj/item/spellpacket/lightningbolt
 	name = "\improper Lightning bolt Spell Packet"

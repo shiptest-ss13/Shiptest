@@ -15,7 +15,7 @@
 		owner.Unconscious(200 * GET_MUTATION_POWER(src))
 		owner.Jitter(1000 * GET_MUTATION_POWER(src))
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "epilepsy", /datum/mood_event/epilepsy)
-		addtimer(CALLBACK(src, .proc/jitter_less), 90)
+		addtimer(CALLBACK(src, PROC_REF(jitter_less)), 90)
 
 /datum/mutation/human/epilepsy/proc/jitter_less()
 	if(owner)
@@ -93,6 +93,7 @@
 	if(..())
 		return
 	ADD_TRAIT(owner, TRAIT_DWARF, GENETIC_MUTATION)
+	ADD_TRAIT(owner, TRAIT_SCOOPABLE, GENETIC_MUTATION)
 	owner.transform = owner.transform.Scale(1, 0.8)
 	passtable_on(owner, GENETIC_MUTATION)
 	owner.visible_message("<span class='danger'>[owner] suddenly shrinks!</span>", "<span class='notice'>Everything around you seems to grow..</span>")
@@ -101,6 +102,7 @@
 	if(..())
 		return
 	REMOVE_TRAIT(owner, TRAIT_DWARF, GENETIC_MUTATION)
+	REMOVE_TRAIT(owner, TRAIT_SCOOPABLE, GENETIC_MUTATION)
 	owner.transform = owner.transform.Scale(1, 1.25)
 	passtable_off(owner, GENETIC_MUTATION)
 	owner.visible_message("<span class='danger'>[owner] suddenly grows!</span>", "<span class='notice'>Everything around you seems to shrink..</span>")
@@ -393,7 +395,7 @@
 	. = ..()
 	if(.)
 		return
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/on_move)
+	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
 /datum/mutation/human/extrastun/on_losing()
 	. = ..()
@@ -424,7 +426,7 @@
 	. = ..()
 	if(.)
 		return TRUE
-	RegisterSignal(owner, COMSIG_MOB_STATCHANGE, .proc/bloody_shower)
+	RegisterSignal(owner, COMSIG_MOB_STATCHANGE, PROC_REF(bloody_shower))
 
 /datum/mutation/human/martyrdom/on_losing()
 	. = ..()
@@ -482,7 +484,7 @@
 		head.drop_organs()
 		qdel(head)
 		owner.regenerate_icons()
-	RegisterSignal(owner, COMSIG_LIVING_ATTACH_LIMB, .proc/abortattachment)
+	RegisterSignal(owner, COMSIG_LIVING_ATTACH_LIMB, PROC_REF(abortattachment))
 
 /datum/mutation/human/headless/on_losing()
 	. = ..()

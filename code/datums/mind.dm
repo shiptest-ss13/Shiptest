@@ -57,7 +57,7 @@
 	var/hasSoul = TRUE // If false, renders the character unable to sell their soul.
 	var/holy_role = NONE //is this person a chaplain or admin role allowed to use bibles, Any rank besides 'NONE' allows for this.
 
-	var/mob/living/enslaved_to //If this mind's master is another mob (i.e. adamantine golems)
+	var/mob/living/enslaved_to //If this mind's master is another mob
 	var/datum/language_holder/language_holder
 	var/unconvertable = FALSE
 	var/late_joiner = FALSE
@@ -72,12 +72,15 @@
 	var/list/skills_rewarded
 	///Assoc list of skills. Use SKILL_LVL to access level, and SKILL_EXP to access skill's exp.
 	var/list/known_skills = list()
-	///What character we joined in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not
-	var/mob/original_character
+	///Weakref to thecharacter we joined in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not
+	var/datum/weakref/original_character
 	/// The index for what character slot, if any, we were loaded from, so we can track persistent scars on a per-character basis. Each character slot gets PERSISTENT_SCAR_SLOTS scar slots
 	var/original_character_slot_index
 	/// The index for our current scar slot, so we don't have to constantly check the savefile (unlike the slots themselves, this index is independent of selected char slot, and increments whenever a valid char is joined with)
 	var/current_scar_slot_index
+
+	/// Guestbook datum, in case we actually make use of the guestbook mechanics
+	var/datum/guestbook/guestbook
 
 	///Skill multiplier, adjusts how much xp you get/loose from adjust_xp. Dont override it directly, add your reason to experience_multiplier_reasons and use that as a key to put your value in there.
 	var/experience_multiplier = 1
@@ -87,13 +90,15 @@
 	/// A lazy list of statuses to add next to this mind in the traitor panel
 	var/list/special_statuses
 
-	///WS edit - Crew objectives variable, stores crew objective datums
-	var/list/crew_objectives
+	/// A weakref to the /datum/overmap/ship/controlled the original mob spawned on
+	var/datum/weakref/original_ship
 
 /datum/mind/New(_key)
+	SSticker.minds += src
 	key = _key
 	soulOwner = src
 	martial_art = default_martial_art
+	guestbook = new()
 	init_known_skills()
 
 /datum/mind/Destroy()
@@ -101,7 +106,23 @@
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
 	QDEL_NULL(language_holder)
+	QDEL_NULL(guestbook)
+	set_current(null)
+	soulOwner = null
 	return ..()
+
+/datum/mind/proc/set_current(mob/new_current)
+	if(new_current && QDELETED(new_current))
+		CRASH("Tried to set a mind's current var to a qdeleted mob, what the fuck")
+	if(current)
+		UnregisterSignal(src, COMSIG_PARENT_QDELETING)
+	current = new_current
+	if(current)
+		RegisterSignal(src, COMSIG_PARENT_QDELETING, PROC_REF(clear_current))
+
+/datum/mind/proc/clear_current(datum/source)
+	SIGNAL_HANDLER
+	set_current(null)
 
 /datum/mind/proc/get_language_holder()
 	if(!language_holder)
@@ -109,7 +130,8 @@
 	return language_holder
 
 /datum/mind/proc/transfer_to(mob/new_character, force_key_move = 0)
-	if(current)	// remove ourself from our old body's mind variable
+	set_original_character(null)
+	if(current) // remove ourself from our old body's mind variable
 		current.mind = null
 		UnregisterSignal(current, COMSIG_MOB_DEATH)
 		SStgui.on_transfer(current, new_character)
@@ -120,16 +142,16 @@
 	else
 		key = new_character.key
 
-	if(new_character.mind)								//disassociate any mind currently in our new body's mind variable
-		new_character.mind.current = null
+	if(new_character.mind) //disassociate any mind currently in our new body's mind variable
+		new_character.mind.set_current(null)
 
 	var/datum/atom_hud/antag/hud_to_transfer = antag_hud//we need this because leave_hud() will clear this list
 	var/mob/living/old_current = current
 	if(current)
-		current.transfer_observers_to(new_character)	//transfer anyone observing the old character to the new one
-	current = new_character								//associate ourself with our new body
-	new_character.mind = src							//and associate our new body with ourself
-	for(var/a in antag_datums)	//Makes sure all antag datums effects are applied in the new body
+		current.transfer_observers_to(new_character) //transfer anyone observing the old character to the new one
+	set_current(new_character) //associate ourself with our new body
+	new_character.mind = src //and associate our new body with ourself
+	for(var/a in antag_datums) //Makes sure all antag datums effects are applied in the new body
 		var/datum/antagonist/A = a
 		A.on_body_transfer(old_current, current)
 	if(iscarbon(new_character))
@@ -138,13 +160,17 @@
 	transfer_antag_huds(hud_to_transfer)				//inherit the antag HUD
 	transfer_actions(new_character)
 	transfer_martial_arts(new_character)
-	RegisterSignal(new_character, COMSIG_MOB_DEATH, .proc/set_death_time)
+	RegisterSignal(new_character, COMSIG_MOB_DEATH, PROC_REF(set_death_time))
 	if(active || force_key_move)
 		new_character.key = key		//now transfer the key to link the client to our new body
 	if(new_character.client)
 		LAZYCLEARLIST(new_character.client.recent_examines)
 		new_character.client.init_verbs() // re-initialize character specific verbs
 	current.update_atom_languages()
+
+//I cannot trust you fucks to do this properly
+/datum/mind/proc/set_original_character(new_original_character)
+	original_character = WEAKREF(new_original_character)
 
 /datum/mind/proc/init_known_skills()
 	for (var/type in GLOB.skill_types)
@@ -217,12 +243,12 @@
 	if(!length(shown_skills))
 		to_chat(user, "<span class='notice'>You don't seem to have any particularly outstanding skills.</span>")
 		return
-	var/msg = "<span class='info'>*---------*\n<EM>Your skills</EM></span>\n<span class='notice'>"
+	var/msg = "[span_info("<EM>Your skills</EM>")]\n<span class='notice'>"
 	for(var/i in shown_skills)
 		var/datum/skill/the_skill = i
 		msg += "[initial(the_skill.name)] - [get_skill_level_name(the_skill)]\n"
 	msg += "</span>"
-	to_chat(user, msg)
+	to_chat(user, examine_block(msg))
 
 /datum/mind/proc/set_death_time()
 	SIGNAL_HANDLER
@@ -263,7 +289,7 @@
 	var/datum/team/antag_team = A.get_team()
 	if(antag_team)
 		antag_team.add_member(src)
-	A.on_gain()
+	INVOKE_ASYNC(A, TYPE_PROC_REF(/datum/antagonist, on_gain))
 	log_game("[key_name(src)] has gained antag datum [A.name]([A.type])")
 	return A
 
@@ -326,13 +352,6 @@
 	special_role = null
 	remove_antag_equip()
 
-/datum/mind/proc/remove_rev()
-	var/datum/antagonist/rev/rev = has_antag_datum(/datum/antagonist/rev)
-	if(rev)
-		remove_antag_datum(rev.type)
-		special_role = null
-
-
 /datum/mind/proc/remove_antag_equip()
 	var/list/Mob_Contents = current.get_contents()
 	for(var/obj/item/I in Mob_Contents)
@@ -346,7 +365,6 @@
 	remove_nukeop()
 	remove_wizard()
 	remove_cultist()
-	remove_rev()
 
 /datum/mind/proc/equip_traitor(employer = "The Syndicate", silent = FALSE, datum/antagonist/uplink_owner)
 	if(!current)
@@ -421,10 +439,6 @@
 /datum/mind/proc/enslave_mind_to_creator(mob/living/creator)
 	if(iscultist(creator))
 		SSticker.mode.add_cultist(src)
-
-	else if(is_revolutionary(creator))
-		var/datum/antagonist/rev/converter = creator.mind.has_antag_datum(/datum/antagonist/rev,TRUE)
-		converter.add_revolutionary(src,FALSE)
 
 	else if(is_nuclear_operative(creator))
 		var/datum/antagonist/nukeop/converter = creator.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE)
@@ -703,13 +717,6 @@
 		to_chat(current, "<font color=\"purple\"><b><i>You catch a glimpse of the Realm of Nar'Sie, The Geometer of Blood. You now see how flimsy your world is, you see that it should be open to the knowledge of Nar'Sie.</b></i></font>")
 		to_chat(current, "<font color=\"purple\"><b><i>Assist your new brethren in their dark dealings. Their goal is yours, and yours is theirs. You serve the Dark One above all else. Bring It back.</b></i></font>")
 
-/datum/mind/proc/make_Rev()
-	var/datum/antagonist/rev/head/head = new()
-	head.give_flash = TRUE
-	head.give_hud = TRUE
-	add_antag_datum(head)
-	special_role = ROLE_REV_HEAD
-
 /datum/mind/proc/AddSpell(obj/effect/proc_holder/spell/S)
 	spell_list += S
 	S.action.Grant(current)
@@ -726,7 +733,7 @@
 		if(istype(S, spell))
 			spell_list -= S
 			qdel(S)
-	current?.client << output(null, "statbrowser:check_spells")
+	current?.client.stat_panel.send_message("check_spells")
 
 /datum/mind/proc/RemoveAllSpells()
 	for(var/obj/effect/proc_holder/S in spell_list)
@@ -760,7 +767,7 @@
 				continue
 		S.charge_counter = delay
 		S.updateButtonIcon()
-		INVOKE_ASYNC(S, /obj/effect/proc_holder/spell.proc/start_recharge)
+		INVOKE_ASYNC(S, TYPE_PROC_REF(/obj/effect/proc_holder/spell, start_recharge))
 
 /datum/mind/proc/get_ghost(even_if_they_cant_reenter, ghosts_with_clients)
 	for(var/mob/dead/observer/G in (ghosts_with_clients ? GLOB.player_list : GLOB.dead_mob_list))
@@ -806,13 +813,12 @@
 /mob/proc/mind_initialize()
 	if(mind)
 		mind.key = key
-
 	else
 		mind = new /datum/mind(key)
-		SSticker.minds += mind
+
 	if(!mind.name)
 		mind.name = real_name
-	mind.current = src
+	mind.set_current(src)
 
 /mob/living/carbon/mind_initialize()
 	..()

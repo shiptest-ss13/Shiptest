@@ -21,7 +21,7 @@
 		. += E.bang_protect
 
 /mob/living/carbon/is_mouth_covered(head_only = 0, mask_only = 0)
-	if( (!mask_only && head && (head.flags_cover & HEADCOVERSMOUTH)) || (!head_only && wear_mask && (wear_mask.flags_cover & MASKCOVERSMOUTH)) )
+	if((!mask_only && head && (head.flags_cover & HEADCOVERSMOUTH)) || (!head_only && wear_mask && (wear_mask.flags_cover & MASKCOVERSMOUTH)))
 		return TRUE
 
 /mob/living/carbon/is_eyes_covered(check_glasses = TRUE, check_head = TRUE, check_mask = TRUE)
@@ -44,7 +44,7 @@
 
 /mob/living/carbon/proc/can_catch_item(skip_throw_mode_check)
 	. = FALSE
-	if(!skip_throw_mode_check && !in_throw_mode)
+	if(!skip_throw_mode_check && !throw_mode)
 		return
 	if(get_active_held_item())
 		return
@@ -62,7 +62,7 @@
 					if(get_active_held_item() == I) //if our attack_hand() picks up the item...
 						visible_message("<span class='warning'>[src] catches [I]!</span>", \
 										"<span class='userdanger'>You catch [I] in mid-air!</span>")
-						throw_mode_off()
+						throw_mode_off(THROW_MODE_TOGGLE)
 						return 1
 	..()
 
@@ -79,10 +79,10 @@
 	if(!affecting) //missing limb? we select the first bodypart (you can never have zero, because of chest)
 		affecting = bodyparts[1]
 	SEND_SIGNAL(I, COMSIG_ITEM_ATTACK_ZONE, src, user, affecting)
-	send_item_attack_message(I, user, affecting.name)
+	send_item_attack_message(I, user, parse_zone(affecting.body_zone))
 	if(I.force)
 		apply_damage(I.force, I.damtype, affecting)
-		if(I.damtype == BRUTE && affecting.status == BODYPART_ORGANIC)
+		if(I.damtype == BRUTE && (IS_ORGANIC_LIMB(affecting)))
 			if(prob(33))
 				I.add_mob_blood(src)
 				var/turf/location = get_turf(src)
@@ -204,6 +204,132 @@
 	return dam_zone
 
 
+/**
+ * Attempt to disarm the target mob.
+ * Will shove the target mob back, and drop them if they're in front of something dense
+ * or another carbon.
+*/
+/mob/living/carbon/proc/disarm(mob/living/carbon/target)
+	do_attack_animation(target, ATTACK_EFFECT_DISARM)
+	playsound(target, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
+
+	if (ishuman(target))
+		var/mob/living/carbon/human/human_target = target
+		human_target.w_uniform?.add_fingerprint(src)
+
+	SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, src, zone_selected)
+
+	var/turf/target_oldturf = target.loc
+	var/shove_dir = get_dir(loc, target_oldturf)
+	var/turf/target_shove_turf = get_step(target.loc, shove_dir)
+	var/mob/living/carbon/target_collateral_carbon
+	var/obj/structure/table/target_table
+	var/obj/machinery/disposal/bin/target_disposal_bin
+	var/shove_blocked = FALSE //Used to check if a shove is blocked so that if it is knockdown logic can be applied
+
+	//Thank you based whoneedsspace
+	target_collateral_carbon = locate(/mob/living/carbon) in target_shove_turf.contents
+
+	// If we can't shove the target into the carbon (such as if it's an alien), then just pretend nothing was there
+	if (!target_collateral_carbon?.can_be_shoved_into)
+		target_collateral_carbon = null
+
+	if(target_collateral_carbon)
+		shove_blocked = TRUE
+	else
+		target.Move(target_shove_turf, shove_dir)
+		if(get_turf(target) == target_oldturf)
+			target_table = locate(/obj/structure/table) in target_shove_turf.contents
+			target_disposal_bin = locate(/obj/machinery/disposal/bin) in target_shove_turf.contents
+			shove_blocked = TRUE
+
+	if(target.IsKnockdown() && !target.IsParalyzed())
+		target.Paralyze(SHOVE_CHAIN_PARALYZE)
+		target.visible_message("<span class='danger'>[name] kicks [target.name] onto [target.p_their()] side!</span>",
+						"<span class='userdanger'>You're kicked onto your side by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
+		to_chat(src, "<span class='danger'>You kick [target.name] onto [target.p_their()] side!</span>")
+		addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, SetKnockdown), 0), SHOVE_CHAIN_PARALYZE)
+		log_combat(src, target, "kicks", "onto their side (paralyzing)")
+
+	if(shove_blocked && !target.is_shove_knockdown_blocked() && !target.buckled)
+		var/directional_blocked = FALSE
+		if(shove_dir in GLOB.cardinals) //Directional checks to make sure that we're not shoving through a windoor or something like that
+			var/target_turf = get_turf(target)
+			for(var/obj/obj_content in target_turf)
+				if(obj_content.flags_1 & ON_BORDER_1 && obj_content.dir == shove_dir && obj_content.density)
+					directional_blocked = TRUE
+					break
+			if(target_turf != target_shove_turf) //Make sure that we don't run the exact same check twice on the same tile
+				for(var/obj/obj_content in target_shove_turf)
+					if(obj_content.flags_1 & ON_BORDER_1 && obj_content.dir == turn(shove_dir, 180) && obj_content.density)
+						directional_blocked = TRUE
+						break
+		if((!target_table && !target_collateral_carbon && !target_disposal_bin) || directional_blocked)
+			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
+			target.visible_message("<span class='danger'>[name] shoves [target.name], knocking [target.p_them()] down!</span>",
+							"<span class='userdanger'>You're knocked down from a shove by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, "<span class='danger'>You shove [target.name], knocking [target.p_them()] down!</span>")
+			log_combat(src, target, "shoved", "knocking them down")
+		else if(target_table)
+			target.Knockdown(SHOVE_KNOCKDOWN_TABLE)
+			target.visible_message("<span class='danger'>[name] shoves [target.name] onto \the [target_table]!</span>",
+							"<span class='userdanger'>You're shoved onto \the [target_table] by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, "<span class='danger'>You shove [target.name] onto \the [target_table]!</span>")
+			target.throw_at(target_table, 1, 1, null, FALSE) //1 speed throws with no spin are basically just forcemoves with a hard collision check
+			log_combat(src, target, "shoved", "onto [target_table] (table)")
+		else if(target_collateral_carbon)
+			target.Knockdown(SHOVE_KNOCKDOWN_HUMAN)
+			target_collateral_carbon.Knockdown(SHOVE_KNOCKDOWN_COLLATERAL)
+			target.visible_message("<span class='danger'>[name] shoves [target.name] into [target_collateral_carbon.name]!</span>",
+				"<span class='userdanger'>You're shoved into [target_collateral_carbon.name] by [name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, "<span class='danger'>You shove [target.name] into [target_collateral_carbon.name]!</span>")
+			log_combat(src, target, "shoved", "into [target_collateral_carbon.name]")
+		else if(target_disposal_bin)
+			target.Knockdown(SHOVE_KNOCKDOWN_SOLID)
+			target.forceMove(target_disposal_bin)
+			target.visible_message("<span class='danger'>[name] shoves [target.name] into \the [target_disposal_bin]!</span>",
+							"<span class='userdanger'>You're shoved into \the [target_disposal_bin] by [target.name]!</span>", "<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, src)
+			to_chat(src, "<span class='danger'>You shove [target.name] into \the [target_disposal_bin]!</span>")
+			log_combat(src, target, "shoved", "into [target_disposal_bin] (disposal bin)")
+	else
+		target.visible_message("<span class='danger'>[name] shoves [target.name]!</span>",
+						"<span class='userdanger'>You're shoved by [name]!</span>", "<span class='hear'>You hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, src)
+		to_chat(src, "<span class='danger'>You shove [target.name]!</span>")
+		var/target_held_item = target.get_active_held_item()
+		var/knocked_item = FALSE
+		if(!is_type_in_typecache(target_held_item, GLOB.shove_disarming_types))
+			target_held_item = null
+		if(!target.has_movespeed_modifier(/datum/movespeed_modifier/shove))
+			target.add_movespeed_modifier(/datum/movespeed_modifier/shove)
+			if(target_held_item)
+				target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
+					"<span class='warning'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
+			addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living/carbon, clear_shove_slowdown)), SHOVE_SLOWDOWN_LENGTH)
+		else if(target_held_item)
+			target.dropItemToGround(target_held_item)
+			knocked_item = TRUE
+			target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!</span>",
+				"<span class='warning'>You drop \the [target_held_item]!</span>", null, COMBAT_MESSAGE_RANGE)
+		var/append_message = ""
+		if(target_held_item)
+			if(knocked_item)
+				append_message = "causing [target.p_them()] to drop [target_held_item]"
+			else
+				append_message = "loosening [target.p_their()] grip on [target_held_item]"
+		log_combat(src, target, "shoved", append_message)
+
+/mob/living/carbon/proc/is_shove_knockdown_blocked() //If you want to add more things that block shove knockdown, extend this
+	for (var/obj/item/clothing/clothing in get_equipped_items())
+		if(clothing.clothing_flags & BLOCKS_SHOVE_KNOCKDOWN)
+			return TRUE
+	return FALSE
+
+/mob/living/carbon/proc/clear_shove_slowdown()
+	remove_movespeed_modifier(/datum/movespeed_modifier/shove)
+	var/active_item = get_active_held_item()
+	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
+		visible_message("<span class='warning'>[name] regains their grip on \the [active_item]!</span>", "<span class='warning'>You regain your grip on \the [active_item]</span>", null, COMBAT_MESSAGE_RANGE)
+
 /mob/living/carbon/blob_act(obj/structure/blob/B)
 	if (stat == DEAD)
 		return
@@ -248,7 +374,7 @@
 	jitteriness += 1000
 	do_jitter_animation(jitteriness)
 	stuttering += 2
-	addtimer(CALLBACK(src, .proc/secondary_shock, should_stun), 20)
+	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.
@@ -264,6 +390,14 @@
 
 	if(M == src && check_self_for_injuries())
 		return
+
+	if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH)
+		var/obj/item/clothing/mask/cigarette/theircig = wear_mask
+		var/obj/item/clothing/mask/cigarette/ourcig = M.wear_mask
+		if(istype(ourcig) && istype(theircig))
+			if(ourcig.lit && !theircig.lit)
+				theircig.light(span_notice("[M] leans towards [src], lighting [p_their()] [theircig.name] with [M.p_their()] own."))
+				return
 
 	if(body_position == LYING_DOWN)
 		if(buckled)
@@ -314,14 +448,14 @@
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/warmhug, M) // You got a warm hug
 
 		// Let people know if they hugged someone really warm or really cold
-		if(M.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+		if(M.bodytemperature > M.dna.species.bodytemp_heat_damage_limit)
 			to_chat(src, "<span class='warning'>It feels like [M] is over heating as they hug you.</span>")
-		else if(M.bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT)
+		else if(M.bodytemperature < M.dna.species.bodytemp_cold_damage_limit)
 			to_chat(src, "<span class='warning'>It feels like [M] is freezing as they hug you.</span>")
 
-		if(bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
+		if(bodytemperature > dna.species.bodytemp_heat_damage_limit)
 			to_chat(M, "<span class='warning'>It feels like [src] is over heating as you hug them.</span>")
-		else if(bodytemperature < BODYTEMP_COLD_DAMAGE_LIMIT)
+		else if(bodytemperature < dna.species.bodytemp_cold_damage_limit)
 			to_chat(M, "<span class='warning'>It feels like [src] is freezing as you hug them.</span>")
 
 		if(HAS_TRAIT(M, TRAIT_FRIENDLY))
@@ -363,8 +497,7 @@
 		return
 
 	var/embeds = FALSE
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/LB = X
+	for(var/obj/item/bodypart/LB as anything in bodyparts)
 		for(var/obj/item/I in LB.embedded_objects)
 			if(!embeds)
 				embeds = TRUE
@@ -400,7 +533,7 @@
 			to_chat(src, "<span class='warning'>Your eyes burn.</span>")
 			eyes.applyOrganDamage(rand(2, 4))
 
-		else if( damage >= 3)
+		else if(damage >= 3)
 			to_chat(src, "<span class='warning'>Your eyes itch and burn severely!</span>")
 			eyes.applyOrganDamage(rand(12, 16))
 

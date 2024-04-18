@@ -22,7 +22,7 @@
 /datum/reagent/consumable/tomatojuice
 	name = "Tomato Juice"
 	description = "Tomatoes made into juice. What a waste of big, juicy tomatoes, huh?"
-	color = "#731008" // rgb: 115, 16, 8
+	color = "#92160d" // rgb: 115, 16, 8
 	taste_description = "tomatoes"
 	glass_icon_state = "glass_red"
 	glass_name = "glass of tomato juice"
@@ -37,7 +37,7 @@
 /datum/reagent/consumable/limejuice
 	name = "Lime Juice"
 	description = "The sweet-sour juice of limes."
-	color = "#365E30" // rgb: 54, 94, 48
+	color = "#669933" // rgb: 54, 94, 48
 	taste_description = "unbearable sourness"
 	glass_icon_state = "glass_green"
 	glass_name = "glass of lime juice"
@@ -52,7 +52,7 @@
 /datum/reagent/consumable/carrotjuice
 	name = "Carrot Juice"
 	description = "It is just like a carrot but without crunching."
-	color = "#973800" // rgb: 151, 56, 0
+	color = "#cb650c"
 	taste_description = "carrots"
 	glass_icon_state = "carrotjuice"
 	glass_name = "glass of  carrot juice"
@@ -73,7 +73,7 @@
 /datum/reagent/consumable/berryjuice
 	name = "Berry Juice"
 	description = "A delicious blend of several different kinds of berries."
-	color = "#863333" // rgb: 134, 51, 51
+	color = "#983939" // rgb: 134, 51, 51
 	taste_description = "berries"
 	glass_icon_state = "berryjuice"
 	glass_name = "glass of berry juice"
@@ -88,7 +88,7 @@
 /datum/reagent/consumable/poisonberryjuice
 	name = "Poison Berry Juice"
 	description = "A tasty juice blended from various kinds of very deadly and toxic berries."
-	color = "#863353" // rgb: 134, 51, 83
+	color = "#a7315e" // rgb: 134, 51, 83
 	taste_description = "berries"
 	glass_icon_state = "poisonberryjuice"
 	glass_name = "glass of berry juice"
@@ -102,7 +102,7 @@
 /datum/reagent/consumable/watermelonjuice
 	name = "Watermelon Juice"
 	description = "Delicious juice made from watermelon."
-	color = "#863333" // rgb: 134, 51, 51
+	color = "#b23b3b" // rgb: 134, 51, 51
 	taste_description = "juicy watermelon"
 	glass_icon_state = "glass_red"
 	glass_name = "glass of watermelon juice"
@@ -111,7 +111,7 @@
 /datum/reagent/consumable/lemonjuice
 	name = "Lemon Juice"
 	description = "This juice is VERY sour."
-	color = "#863333" // rgb: 175, 175, 0
+	color = "#caad19"
 	taste_description = "sourness"
 	glass_icon_state  = "lemonglass"
 	glass_name = "glass of lemon juice"
@@ -120,7 +120,7 @@
 /datum/reagent/consumable/banana
 	name = "Banana Juice"
 	description = "The raw essence of a banana. HONK"
-	color = "#863333" // rgb: 175, 175, 0
+	color = "#e6d283"
 	taste_description = "banana"
 	glass_icon_state = "banana"
 	glass_name = "glass of banana juice"
@@ -178,7 +178,7 @@
 	name = "Potato Juice"
 	description = "Juice of the potato. Bleh."
 	nutriment_factor = 2 * REAGENTS_METABOLISM
-	color = "#302000" // rgb: 48, 32, 0
+	color = "#9e8045" // rgb: 48, 32, 0
 	taste_description = "irish sadness"
 	glass_icon_state = "glass_brown"
 	glass_name = "glass of potato juice"
@@ -187,7 +187,7 @@
 /datum/reagent/consumable/grapejuice
 	name = "Grape Juice"
 	description = "The juice of a bunch of grapes. Guaranteed non-alcoholic."
-	color = "#290029" // dark purple
+	color = "#790b79" // dark purple
 	taste_description = "grape soda"
 
 /datum/reagent/consumable/milk
@@ -240,7 +240,7 @@
 /datum/reagent/consumable/coffee
 	name = "Coffee"
 	description = "Coffee is a brewed drink prepared from roasted seeds, commonly called coffee beans, of the coffee plant."
-	color = "#482000" // rgb: 72, 32, 0
+	color = "#572b07" // rgb: 72, 32, 0
 	nutriment_factor = 0
 	overdose_threshold = 80
 	taste_description = "bitterness"
@@ -266,7 +266,7 @@
 /datum/reagent/consumable/tea
 	name = "Tea"
 	description = "Tasty black tea, it has antioxidants, it's good for you!"
-	color = "#101000" // rgb: 16, 16, 0
+	color = "#5f4a05"
 	nutriment_factor = 0
 	taste_description = "tart black tea"
 	glass_icon_state = "teaglass"
@@ -314,7 +314,7 @@
 /datum/reagent/consumable/icecoffee
 	name = "Iced Coffee"
 	description = "Coffee and ice, refreshing and cool."
-	color = "#102838" // rgb: 16, 40, 56
+	color = "#112a3b" // rgb: 16, 40, 56
 	nutriment_factor = 0
 	taste_description = "bitter coldness"
 	glass_icon_state = "icedcoffeeglass"
@@ -333,7 +333,7 @@
 /datum/reagent/consumable/hot_ice_coffee
 	name = "Hot Ice Coffee"
 	description = "Coffee with pulsing ice shards"
-	color = "#102838" // rgb: 16, 40, 56
+	color = "#132043" // rgb: 16, 40, 56
 	nutriment_factor = 0
 	quality = DRINK_FANTASTIC
 	taste_description = "bitter coldness and a hint of smoke"
@@ -374,7 +374,7 @@
 /datum/reagent/consumable/space_cola
 	name = "Cola"
 	description = "A refreshing beverage."
-	color = "#100800" // rgb: 16, 8, 0
+	color = "#743c05" // rgb: 16, 8, 0
 	taste_description = "cola"
 	glass_icon_state  = "glass_brown"
 	glass_name = "glass of Space Cola"
@@ -388,7 +388,7 @@
 /datum/reagent/consumable/nuka_cola
 	name = "Nuka Cola"
 	description = "Cola, cola never changes."
-	color = "#100800" // rgb: 16, 8, 0
+	color = "#3b6c0e" // rgb: 16, 8, 0
 	quality = DRINK_VERYGOOD
 	taste_description = "the future"
 	glass_icon_state = "nuka_colaglass"
@@ -442,7 +442,7 @@
 /datum/reagent/consumable/spacemountainwind
 	name = "SM Wind"
 	description = "Blows right through you like a space wind."
-	color = "#102000" // rgb: 16, 32, 0
+	color = "#c4ff2d" // rgb: 16, 32, 0
 	taste_description = "sweet citrus soda"
 	glass_icon_state = "Space_mountain_wind_glass"
 	glass_name = "glass of Space Mountain Wind"
@@ -459,7 +459,7 @@
 /datum/reagent/consumable/dr_gibb
 	name = "Dr. Gibb"
 	description = "A delicious blend of 42 different flavours."
-	color = "#102000" // rgb: 16, 32, 0
+	color = "#732a03"
 	taste_description = "cherry soda" // FALSE ADVERTISING
 	glass_icon_state = "dr_gibb_glass"
 	glass_name = "glass of Dr. Gibb"
@@ -551,7 +551,7 @@
 /datum/reagent/consumable/tonic
 	name = "Tonic Water"
 	description = "It tastes strange but at least the quinine keeps the Space Malaria at bay."
-	color = "#0064C8" // rgb: 0, 100, 200
+	color = "#709fce"
 	taste_description = "tart and fresh"
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of tonic water"
@@ -785,7 +785,7 @@
 	name = "Hot Coco"
 	description = "Made with love! And coco beans."
 	nutriment_factor = 3 * REAGENTS_METABOLISM
-	color = "#403010" // rgb: 64, 48, 16
+	color = "#4f3a11" // rgb: 64, 48, 16
 	taste_description = "creamy chocolate"
 	glass_icon_state  = "chocolateglass"
 	glass_name = "glass of hot coco"

@@ -110,7 +110,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 
 */
 
-/obj/effect/rune/proc/can_invoke(var/mob/living/user=null)
+/obj/effect/rune/proc/can_invoke(mob/living/user=null)
 	//This proc determines if the rune can be invoked at the time. If there are multiple required cultists, it will find all nearby cultists.
 	var/list/invokers = list() //people eligible to invoke the rune
 	if(user)
@@ -130,7 +130,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 				invokers += L
 	return invokers
 
-/obj/effect/rune/proc/invoke(var/list/invokers)
+/obj/effect/rune/proc/invoke(list/invokers)
 	//This proc contains the effects of the rune as well as things that happen afterwards. If you want it to spawn an object and then delete itself, have both here.
 	for(var/M in invokers)
 		if(isliving(M))
@@ -157,7 +157,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	var/oldcolor = color
 	color = rgb(255, 0, 0)
 	animate(src, color = oldcolor, time = 5)
-	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 5)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_atom_colour)), 5)
 
 //Malformed Rune: This forms if a rune is not drawn correctly. Invoking it does nothing but hurt the user.
 /obj/effect/rune/malformed
@@ -171,7 +171,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	icon_state = "[rand(1,7)]"
 	color = rgb(rand(0,255), rand(0,255), rand(0,255))
 
-/obj/effect/rune/malformed/invoke(var/list/invokers)
+/obj/effect/rune/malformed/invoke(list/invokers)
 	..()
 	qdel(src)
 
@@ -189,7 +189,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/convert/do_invoke_glow()
 	return
 
-/obj/effect/rune/convert/invoke(var/list/invokers)
+/obj/effect/rune/convert/invoke(list/invokers)
 	if(rune_in_use)
 		return
 	var/list/myriad_targets = list()
@@ -221,7 +221,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		..()
 		do_sacrifice(L, invokers)
 	animate(src, color = oldcolor, time = 5)
-	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 5)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_atom_colour)), 5)
 	Cult_team.check_size() // Triggers the eye glow or aura effects if the cult has grown large enough relative to the crew
 	rune_in_use = FALSE
 
@@ -296,7 +296,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 				to_chat(M, "<span class='cultlarge'>\"I accept this meager sacrifice.\"</span>")
 
 	var/obj/item/soulstone/stone = new /obj/item/soulstone(get_turf(src))
-	if(sacrificial.mind && !sacrificial.suiciding)
+	if(sacrificial.mind)
 		stone.invisibility = INVISIBILITY_MAXIMUM //so it's not picked up during transfer_soul()
 		stone.transfer_soul("FORCE", sacrificial, usr)
 		stone.invisibility = 0
@@ -320,7 +320,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	color = RUNE_COLOR_TALISMAN
 	construct_invoke = FALSE
 
-/obj/effect/rune/empower/invoke(var/list/invokers)
+/obj/effect/rune/empower/invoke(list/invokers)
 	. = ..()
 	var/mob/living/user = invokers[1] //the first invoker is always the user
 	for(var/datum/action/innate/cult/blood_magic/BM in user.actions)
@@ -350,13 +350,13 @@ structure_check() searches for nearby cultist structures required for the invoca
 	GLOB.teleport_runes -= src
 	return ..()
 
-/obj/effect/rune/teleport/invoke(var/list/invokers)
+/obj/effect/rune/teleport/invoke(list/invokers)
 	var/mob/living/user = invokers[1] //the first invoker is always the user
 	var/list/potential_runes = list()
 	var/list/teleportnames = list()
 	for(var/R in GLOB.teleport_runes)
 		var/obj/effect/rune/teleport/T = R
-		if(T != src && !is_away_level(T.z))
+		if(T != src && !is_away_level(T))
 			potential_runes[avoid_assoc_duplicate_keys(T.listkey, teleportnames)] = T
 
 	if(!potential_runes.len)
@@ -366,7 +366,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		return
 
 	var/turf/T = get_turf(src)
-	if(is_away_level(T.z))
+	if(is_away_level(T))
 		to_chat(user, "<span class='cult italic'>You are not in the right dimension!</span>")
 		log_game("Teleport rune failed - user in away mission")
 		fail_invoke()
@@ -401,7 +401,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 			continue
 		if(!A.anchored)
 			movedsomething = TRUE
-			if(do_teleport(A, target, forceMove = TRUE, channel = TELEPORT_CHANNEL_CULT))
+			if(do_teleport(A, target, channel = TELEPORT_CHANNEL_CULT))
 				movesuccess = TRUE
 	if(movedsomething)
 		..()
@@ -436,7 +436,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	outer_portal = new(T, 600, color)
 	light_range = 4
 	update_light()
-	addtimer(CALLBACK(src, .proc/close_portal), 600, TIMER_UNIQUE)
+	addtimer(CALLBACK(src, PROC_REF(close_portal)), 600, TIMER_UNIQUE)
 
 /obj/effect/rune/teleport/proc/close_portal()
 	qdel(inner_portal)
@@ -471,7 +471,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/narsie/conceal() //can't hide this, and you wouldn't want to
 	return
 
-/obj/effect/rune/narsie/invoke(var/list/invokers)
+/obj/effect/rune/narsie/invoke(list/invokers)
 	if(used)
 		return
 	var/mob/living/user = invokers[1]
@@ -522,7 +522,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	if(iscultist(user) || user.stat == DEAD)
 		. += "<b>Sacrifices unrewarded:</b> [LAZYLEN(GLOB.sacrificed) - sacrifices_used]"
 
-/obj/effect/rune/raise_dead/invoke(var/list/invokers)
+/obj/effect/rune/raise_dead/invoke(list/invokers)
 	var/turf/T = get_turf(src)
 	var/mob/living/mob_to_revive
 	var/list/potential_revive_mobs = list()
@@ -627,7 +627,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/wall/BlockThermalConductivity()
 	return density
 
-/obj/effect/rune/wall/invoke(var/list/invokers)
+/obj/effect/rune/wall/invoke(list/invokers)
 	if(recharging)
 		return
 	var/mob/living/user = invokers[1]
@@ -647,11 +647,11 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/wall/proc/spread_density()
 	for(var/R in GLOB.wall_runes)
 		var/obj/effect/rune/wall/W = R
-		if(W.get_virtual_z_level() == get_virtual_z_level() && get_dist(src, W) <= 2 && !W.density && !W.recharging)
+		if(W.virtual_z() == virtual_z() && get_dist(src, W) <= 2 && !W.density && !W.recharging)
 			W.density = TRUE
 			W.update_state()
 			W.spread_density()
-	density_timer = addtimer(CALLBACK(src, .proc/lose_density), 3000, TIMER_STOPPABLE)
+	density_timer = addtimer(CALLBACK(src, PROC_REF(lose_density)), 3000, TIMER_STOPPABLE)
 
 /obj/effect/rune/wall/proc/lose_density()
 	if(density)
@@ -661,7 +661,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		var/oldcolor = color
 		add_atom_colour("#696969", FIXED_COLOUR_PRIORITY)
 		animate(src, color = oldcolor, time = 50, easing = EASE_IN)
-		addtimer(CALLBACK(src, .proc/recharge), 50)
+		addtimer(CALLBACK(src, PROC_REF(recharge)), 50)
 
 /obj/effect/rune/wall/proc/recharge()
 	recharging = FALSE
@@ -669,7 +669,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 
 /obj/effect/rune/wall/proc/update_state()
 	deltimer(density_timer)
-	air_update_turf(1)
+	air_update_turf(TRUE)
 	if(density)
 		var/mutable_appearance/shimmer = mutable_appearance('icons/effects/effects.dmi', "barriershimmer", ABOVE_MOB_LAYER)
 		shimmer.appearance_flags |= RESET_COLOR
@@ -691,7 +691,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	icon_state = "3"
 	color = RUNE_COLOR_SUMMON
 
-/obj/effect/rune/summon/invoke(var/list/invokers)
+/obj/effect/rune/summon/invoke(list/invokers)
 	var/mob/living/user = invokers[1]
 	var/list/cultists = list()
 	for(var/datum/mind/M in SSticker.mode.cult)
@@ -720,7 +720,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		fail_invoke()
 		log_game("Summon Cultist rune failed - target was deconverted")
 		return
-	if(is_away_level(cultist_to_summon.z))
+	if(is_away_level(cultist_to_summon))
 		to_chat(user, "<span class='cult italic'>[cultist_to_summon] is not in our dimension!</span>")
 		fail_invoke()
 		log_game("Summon Cultist rune failed - target in away mission")
@@ -750,7 +750,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 /obj/effect/rune/blood_boil/do_invoke_glow()
 	return
 
-/obj/effect/rune/blood_boil/invoke(var/list/invokers)
+/obj/effect/rune/blood_boil/invoke(list/invokers)
 	if(rune_in_use)
 		return
 	..()
@@ -823,7 +823,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 		return list()
 	return ..()
 
-/obj/effect/rune/manifest/invoke(var/list/invokers)
+/obj/effect/rune/manifest/invoke(list/invokers)
 	. = ..()
 	var/mob/living/user = invokers[1]
 	var/turf/T = get_turf(src)
@@ -932,7 +932,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	req_cultists = 3
 	scribe_delay = 100
 
-/obj/effect/rune/apocalypse/invoke(var/list/invokers)
+/obj/effect/rune/apocalypse/invoke(list/invokers)
 	if(rune_in_use)
 		return
 	. = ..()
@@ -962,19 +962,19 @@ structure_check() searches for nearby cultist structures required for the invoca
 		L.Paralyze(30)
 	empulse(T, 0.42*(intensity), 1)
 	var/list/images = list()
-	var/zmatch = T.get_virtual_z_level()
+	var/zmatch = T.virtual_z()
 	var/datum/atom_hud/AH = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
 	for(var/mob/living/M in GLOB.alive_mob_list)
-		if(M.get_virtual_z_level() != zmatch)
+		if(M.virtual_z() != zmatch)
 			continue
 		if(ishuman(M))
 			if(!iscultist(M))
 				AH.remove_hud_from(M)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/hudFix, M), duration)
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(hudFix), M), duration)
 			var/image/A = image('icons/mob/cult.dmi',M,"cultist", ABOVE_MOB_LAYER)
 			A.override = 1
 			add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/noncult, "human_apoc", A, NONE)
-			addtimer(CALLBACK(M,/atom/.proc/remove_alt_appearance,"human_apoc",TRUE), duration)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, remove_alt_appearance),"human_apoc",TRUE), duration)
 			images += A
 			SEND_SOUND(M, pick(sound('sound/ambience/antag/bloodcult.ogg'),sound('sound/spookoween/ghost_whisper.ogg'),sound('sound/spookoween/ghosty_wind.ogg')))
 		else
@@ -982,13 +982,13 @@ structure_check() searches for nearby cultist structures required for the invoca
 			var/image/B = image('icons/mob/mob.dmi',M,construct, ABOVE_MOB_LAYER)
 			B.override = 1
 			add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/noncult, "mob_apoc", B, NONE)
-			addtimer(CALLBACK(M,/atom/.proc/remove_alt_appearance,"mob_apoc",TRUE), duration)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, remove_alt_appearance),"mob_apoc",TRUE), duration)
 			images += B
 		if(!iscultist(M))
 			if(M.client)
 				var/image/C = image('icons/effects/cult_effects.dmi',M,"bloodsparkles", ABOVE_MOB_LAYER)
 				add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/cult, "cult_apoc", C, NONE)
-				addtimer(CALLBACK(M,/atom/.proc/remove_alt_appearance,"cult_apoc",TRUE), duration)
+				addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, remove_alt_appearance),"cult_apoc",TRUE), duration)
 				images += C
 		else
 			to_chat(M, "<span class='cultlarge'>An Apocalypse Rune was invoked in the [place.name], it is no longer available as a summoning site!</span>")
@@ -999,9 +999,9 @@ structure_check() searches for nearby cultist structures required for the invoca
 		switch(outcome)
 			if(1 to 10)
 				var/datum/round_event_control/disease_outbreak/D = new()
-				var/datum/round_event_control/mice_migration/M = new()
+				// var/datum/round_event_control/mice_migration/M = new()
 				D.runEvent()
-				M.runEvent()
+				// M.runEvent()
 			if(11 to 20)
 				var/datum/round_event_control/radiation_storm/RS = new()
 				RS.runEvent()
@@ -1019,23 +1019,14 @@ structure_check() searches for nearby cultist structures required for the invoca
 			if(51 to 60)
 				var/datum/round_event_control/spider_infestation/SI = new()
 				SI.runEvent()
-			if(61 to 70)
-				var/datum/round_event_control/anomaly/anomaly_flux/AF
-				var/datum/round_event_control/anomaly/anomaly_grav/AG
-				var/datum/round_event_control/anomaly/anomaly_pyro/AP
-				var/datum/round_event_control/anomaly/anomaly_vortex/AV
-				AF.runEvent()
-				AG.runEvent()
-				AP.runEvent()
-				AV.runEvent()
-			if(71 to 80)
+			if(61 to 80)
 				var/datum/round_event_control/spacevine/SV = new()
 				var/datum/round_event_control/grey_tide/GT = new()
 				SV.runEvent()
 				GT.runEvent()
 	qdel(src)
 
-/obj/effect/rune/apocalypse/proc/image_handler(var/list/images, duration)
+/obj/effect/rune/apocalypse/proc/image_handler(list/images, duration)
 	var/end = world.time + duration
 	set waitfor = 0
 	while(end>world.time)

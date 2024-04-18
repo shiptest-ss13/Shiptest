@@ -1,8 +1,8 @@
 /**
-  * Tool flash bespoke element
-  *
-  * Flashes the user when using this tool
-  */
+ * Tool flash bespoke element
+ *
+ * Flashes the user when using this tool
+ */
 /datum/element/tool_flash
 	element_flags = ELEMENT_BESPOKE
 	id_arg_index = 2
@@ -16,8 +16,8 @@
 
 	src.flash_strength = flash_strength
 
-	RegisterSignal(target, COMSIG_TOOL_IN_USE, .proc/prob_flash)
-	RegisterSignal(target, COMSIG_TOOL_START_USE, .proc/flash)
+	RegisterSignal(target, COMSIG_TOOL_IN_USE, PROC_REF(prob_flash))
+	RegisterSignal(target, COMSIG_TOOL_START_USE, PROC_REF(flash))
 
 /datum/element/tool_flash/Detach(datum/source, force)
 	. = ..()

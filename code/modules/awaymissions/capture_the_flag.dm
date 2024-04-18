@@ -39,6 +39,8 @@
 	. = ..()
 	if(!reset)
 		reset = new reset_path(get_turf(src))
+		reset.flag = src
+	RegisterSignal(src, COMSIG_PARENT_PREQDELETED, PROC_REF(reset_flag)) //just in case CTF has some map hazards (read: chasms).
 
 /obj/item/ctf/ComponentInitialize()
 	. = ..()
@@ -55,8 +57,24 @@
 				to_chat(M, "<span class='userdanger'>\The [src] has been returned to base!</span>")
 		STOP_PROCESSING(SSobj, src)
 
-//ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/ctf/attack_hand(mob/living/user)
+/obj/item/ctf/proc/reset_flag(capture = FALSE)
+	SIGNAL_HANDLER
+
+	var/turf/our_turf = get_turf(src.reset)
+	if(!our_turf)
+		return TRUE
+	forceMove(our_turf)
+	for(var/mob/M in GLOB.player_list)
+		var/area/mob_area = get_area(M)
+		if(istype(mob_area, /area/ctf))
+			if(!capture)
+				to_chat(M, "<span class='userdanger'>[src] has been returned to the base!</span>")
+	STOP_PROCESSING(SSobj, src)
+	return TRUE //so if called by a signal, it doesn't delete
+
+//working with attack hand feels like taking my brain and putting it through an industrial pill press so i'm gonna be a bit liberal with the comments
+/obj/item/ctf/attack_hand(mob/living/user, list/modifiers)
+	//pre normal check item stuff, this is for our special flag checks
 	if(!is_ctf_target(user) && !anyonecanpickup)
 		to_chat(user, "<span class='warning'>Non-players shouldn't be moving the flag!</span>")
 		return
@@ -112,10 +130,17 @@
 
 /obj/effect/ctf/flag_reset
 	name = "banner landmark"
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/banner.dmi'
 	icon_state = "banner"
 	desc = "This is where a banner with Nanotrasen's logo on it would go."
 	layer = LOW_ITEM_LAYER
+	var/obj/item/ctf/flag
+
+/obj/effect/ctf/flag_reset/Destroy()
+	if(flag)
+		flag.reset = null
+		flag = null
+	return ..()
 
 /obj/effect/ctf/flag_reset/red
 	name = "red flag landmark"
@@ -173,17 +198,15 @@
 
 /obj/machinery/capture_the_flag/Destroy()
 	GLOB.poi_list.Remove(src)
-	..()
+	return ..()
 
 /obj/machinery/capture_the_flag/process()
 	for(var/i in spawned_mobs)
-		if(!i)
-			spawned_mobs -= i
-			continue
 		// Anyone in crit, automatically reap
 		var/mob/living/living_participant = i
 		if(HAS_TRAIT(living_participant, TRAIT_CRITICAL_CONDITION) || living_participant.stat == DEAD)
 			ctf_dust_old(living_participant)
+			spawned_mobs -= living_participant
 		else
 			// The changes that you've been hit with no shield but not
 			// instantly critted are low, but have some healing.
@@ -260,16 +283,16 @@
 		var/turf/T = get_turf(body)
 		new /obj/effect/ctf/ammo(T)
 		recently_dead_ckeys += body.ckey
-		addtimer(CALLBACK(src, .proc/clear_cooldown, body.ckey), respawn_cooldown, TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(clear_cooldown), body.ckey), respawn_cooldown, TIMER_UNIQUE)
 		body.dust()
 
-/obj/machinery/capture_the_flag/proc/clear_cooldown(var/ckey)
+/obj/machinery/capture_the_flag/proc/clear_cooldown(ckey)
 	recently_dead_ckeys -= ckey
 
 /obj/machinery/capture_the_flag/proc/spawn_team_member(client/new_team_member)
 	var/mob/living/carbon/human/M = new/mob/living/carbon/human(get_turf(src))
 	new_team_member.prefs.copy_to(M)
-	M.set_species(/datum/species/synth)
+	M.set_species(/datum/species/human)
 	M.key = new_team_member.key
 	M.faction += team
 	M.equipOutfit(ctf_gear)
@@ -384,7 +407,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/floor_vanish), 1)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/ctf/proc/floor_vanish()
 	if(isturf(loc))
@@ -412,7 +435,7 @@
 
 /obj/item/gun/ballistic/automatic/laser/ctf/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/floor_vanish), 1)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
 
 /obj/item/gun/ballistic/automatic/laser/ctf/proc/floor_vanish()
 	if(isturf(loc))
@@ -423,7 +446,7 @@
 
 /obj/item/ammo_box/magazine/recharge/ctf/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/floor_vanish), 1)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 1)
 
 /obj/item/ammo_box/magazine/recharge/ctf/proc/floor_vanish()
 	if(isturf(loc))
@@ -514,10 +537,14 @@
 		ADD_TRAIT(I, TRAIT_NODROP, CAPTURE_THE_FLAG_TRAIT)
 
 /datum/outfit/ctf/instagib
+	name = "CTF (Instagib)"
+
 	r_hand = /obj/item/gun/energy/laser/instakill
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
 /datum/outfit/ctf/red
+	name = "CTF (Red)"
+
 	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/red
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/red
 	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/red
@@ -525,10 +552,14 @@
 	id = /obj/item/card/id/syndicate_command //it's red
 
 /datum/outfit/ctf/red/instagib
+	name = "CTF (Red, Instagib)"
+
 	r_hand = /obj/item/gun/energy/laser/instakill/red
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
 /datum/outfit/ctf/blue
+	name = "CTF (Blue)"
+
 	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/blue
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/blue
 	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/blue
@@ -536,6 +567,8 @@
 	id = /obj/item/card/id/centcom //it's blue
 
 /datum/outfit/ctf/blue/instagib
+	name = "CTF (Blue, Instagib)"
+
 	r_hand = /obj/item/gun/energy/laser/instakill/blue
 	shoes = /obj/item/clothing/shoes/jackboots/fast
 
@@ -612,11 +645,15 @@
 	invisibility = 0
 
 /obj/effect/ctf/ammo/Initialize(mapload)
-	..()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 	QDEL_IN(src, AMMO_DROP_LIFETIME)
 
-/obj/effect/ctf/ammo/Crossed(atom/movable/AM)
-	. = ..()
+/obj/effect/ctf/ammo/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	reload(AM)
 
 /obj/effect/ctf/ammo/Bump(atom/A)
@@ -650,6 +687,11 @@
 	. = ..()
 	for(var/obj/machinery/capture_the_flag/CTF in GLOB.machines)
 		CTF.dead_barricades += src
+
+/obj/effect/ctf/dead_barricade/Destroy()
+	for(var/obj/machinery/capture_the_flag/CTF in GLOB.machines)
+		CTF.dead_barricades -= src
+	return ..()
 
 /obj/effect/ctf/dead_barricade/proc/respawn()
 	if(!QDELETED(src))

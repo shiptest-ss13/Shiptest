@@ -1,4 +1,4 @@
- /*
+/*
 What are the archived variables for?
 	Calculations are done using the archived variables with the results merged into the regular variables.
 	This prevents race conditions that arise based on the order of tile processing.
@@ -18,13 +18,10 @@ What are the archived variables for?
 
 GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 
-/proc/auxtools_atmos_init()
-
 /datum/gas_mixture/New(volume)
 	if (!isnull(volume))
 		initial_volume = volume
-	AUXTOOLS_CHECK(AUXMOS)
-	if(!GLOB.auxtools_atmos_initialized && auxtools_atmos_init())
+	if(!GLOB.auxtools_atmos_initialized && auxtools_atmos_init(GLOB.gas_data))
 		GLOB.auxtools_atmos_initialized = TRUE
 	__gasmixture_register()
 	reaction_results = new
@@ -99,12 +96,9 @@ GLOBAL_LIST_INIT(auxtools_atmos_initialized, FALSE)
 		message_admins("[key_name(usr)] modified gas mixture [REF(src)]: Changed volume to [volume].")
 		set_volume(volume)
 
-/*
-we use a hook instead
 /datum/gas_mixture/Del()
 	__gasmixture_unregister()
 	. = ..()
-*/
 
 /datum/gas_mixture/vv_edit_var(var_name, var_value)
 	if(var_name == "_extools_pointer_gasmixture" || var_name == "gas_list_view_only")
@@ -126,33 +120,11 @@ we use a hook instead
 		dummy["THERMAL ENERGY"] = thermal_energy()
 		return debug_variable("gases (READ ONLY)", dummy, 0, src)
 
-/datum/gas_mixture/proc/__gasmixture_unregister()
-/datum/gas_mixture/proc/__gasmixture_register()
-
 /proc/gas_types()
 	var/list/L = subtypesof(/datum/gas)
-	for(var/gt in L)
-		var/datum/gas/G = gt
-		L[gt] = initial(G.specific_heat)
+	for(var/datum/gas/G as anything in L)
+		L[G] = initial(G.specific_heat)
 	return L
-
-/datum/gas_mixture/proc/heat_capacity() //joules per kelvin
-
-/datum/gas_mixture/proc/partial_heat_capacity(gas_type)
-
-	/// Calculate moles
-/datum/gas_mixture/proc/total_moles()
-
-/datum/gas_mixture/proc/return_pressure() //kilopascals
-
-/datum/gas_mixture/proc/return_temperature() //kelvins
-
-/datum/gas_mixture/proc/set_min_heat_capacity(n)
-/datum/gas_mixture/proc/set_temperature(new_temp)
-/datum/gas_mixture/proc/set_volume(new_volume)
-/datum/gas_mixture/proc/get_moles(gas_type)
-/datum/gas_mixture/proc/set_moles(gas_type, moles)
-/datum/gas_mixture/proc/scrub_into(datum/gas_mixture/target, ratio, list/gases)
 
 // VV WRAPPERS - EXTOOLS HOOKED PROCS DO NOT TAKE ARGUMENTS FROM CALL() FOR SOME REASON.
 /datum/gas_mixture/proc/vv_set_moles(gas_type, moles)
@@ -166,41 +138,13 @@ we use a hook instead
 /datum/gas_mixture/proc/vv_react(datum/holder)
 	return react(holder)
 
-/datum/gas_mixture/proc/mark_immutable()
-/datum/gas_mixture/proc/mark_vacuum()
-/datum/gas_mixture/proc/get_gases()
-/datum/gas_mixture/proc/multiply(factor)
-//WS Edit Start - Immutable Gax Mix Temperature Gradients
-/datum/gas_mixture/proc/create_temperature_gradient(a, b, c)
-/datum/gas_mixture/proc/tick_temperature_gradient(step)
-//WS Edit End - Immutable Gax Mix Temperature Gradients
-/datum/gas_mixture/proc/get_last_share()
-/datum/gas_mixture/proc/clear()
-
-/datum/gas_mixture/proc/adjust_moles(gas_type, amt = 0)
-	set_moles(gas_type, clamp(get_moles(gas_type) + amt,0,INFINITY))
-
-/datum/gas_mixture/proc/return_volume() //liters
-
-/datum/gas_mixture/proc/thermal_energy() //joules
-
-	///Update archived versions of variables. Returns: 1 in all cases
-/datum/gas_mixture/proc/archive()
-	//Update archived versions of variables
-	//Returns: 1 in all cases
-
-/datum/gas_mixture/proc/merge(datum/gas_mixture/giver)
-	//Merges all air from giver into self. Deletes giver.
-	//Returns: 1 if we are mutable, 0 otherwise
-
 /datum/gas_mixture/proc/remove(amount)
 	//Proportionally removes amount of gas from the gas_mixture
 	//Returns: gas_mixture with the gases removed
 
-/datum/gas_mixture/proc/transfer_to(datum/gas_mixture/target, amount)
-
-/datum/gas_mixture/proc/transfer_ratio_to(datum/gas_mixture/target, ratio)
-	//Transfers ratio of gas to target. Equivalent to target.merge(remove_ratio(amount)) but faster.
+/datum/gas_mixture/proc/remove_by_flag(flag, amount)
+	//Removes amount of gas from the gas mixture by flag
+	//Returns: gas_mixture with gases that match the flag removed
 
 /datum/gas_mixture/proc/remove_ratio(ratio)
 	//Proportionally removes amount of gas from the gas_mixture
@@ -210,10 +154,6 @@ we use a hook instead
 	//Creates new, identical gas mixture
 	//Returns: duplicate gas mixture
 
-/datum/gas_mixture/proc/copy_from(datum/gas_mixture/sample)
-	//Copies variables from sample
-	//Returns: 1 if we are mutable, 0 otherwise
-
 /datum/gas_mixture/proc/copy_from_turf(turf/model)
 	//Copies all gas info from the turf into the gas list along with temperature
 	//Returns: 1 if we are mutable, 0 otherwise
@@ -222,48 +162,18 @@ we use a hook instead
 	//Copies variables from a particularly formatted string.
 	//Returns: 1 if we are mutable, 0 otherwise
 
-/datum/gas_mixture/proc/share(datum/gas_mixture/sharer)
-	//Performs air sharing calculations between two gas_mixtures assuming only 1 boundary length
-	//Returns: amount of gas exchanged (+ if sharer received)
+/datum/gas_mixture/remove_by_flag(flag, amount)
+	var/datum/gas_mixture/removed = new type
+	__remove_by_flag(removed, flag, amount)
 
-/datum/gas_mixture/proc/temperature_share(datum/gas_mixture/sharer, conduction_coefficient)
-	//Performs temperature sharing calculations (via conduction) between two gas_mixtures assuming only 1 boundary length
-	//Returns: new temperature of the sharer
+	return removed
 
-/datum/gas_mixture/proc/compare(datum/gas_mixture/sample)
-	//Compares sample to self to see if within acceptable ranges that group processing may be enabled
-	//Returns: a string indicating what check failed, or "" if check passes
-
-/datum/gas_mixture/proc/react(turf/open/dump_location)
-	//Performs various reactions such as combustion or fusion (LOL)
-	//Returns: 1 if any reaction took place; 0 otherwise
-
-/datum/gas_mixture/proc/adjust_heat(amt)
-	//Adjusts the thermal energy of the gas mixture, rather than having to do the full calculation.
-	//Returns: null
-
-/datum/gas_mixture/proc/equalize_with(datum/gas_mixture/giver)
-	//Makes this mix have the same temperature and gas ratios as the giver, but with the same pressure, accounting for volume.
-	//Returns: null
-
-/datum/gas_mixture/proc/get_oxidation_power(temp)
-	//Gets how much oxidation this gas can do, optionally at a given temperature.
-
-/datum/gas_mixture/proc/get_fuel_amount(temp)
-	//Gets how much fuel for fires (not counting trit/plasma!) this gas has, optionally at a given temperature.
-
-/proc/equalize_all_gases_in_list(list/L)
-	//Makes every gas in the given list have the same pressure, temperature and gas proportions.
-	//Returns: null
-
-/datum/gas_mixture/proc/__remove()
 /datum/gas_mixture/remove(amount)
 	var/datum/gas_mixture/removed = new type
 	__remove(removed, amount)
 
 	return removed
 
-/datum/gas_mixture/proc/__remove_ratio()
 /datum/gas_mixture/remove_ratio(ratio)
 	var/datum/gas_mixture/removed = new type
 	__remove_ratio(removed, ratio)
@@ -283,17 +193,8 @@ we use a hook instead
 
 /datum/gas_mixture/parse_gas_string(gas_string)
 	gas_string = SSair.preprocess_gas_string(gas_string)
-	var/list/gas = params2list(gas_string)
-	if(gas["TEMP"])
-		var/temp = text2num(gas["TEMP"])
-		gas -= "TEMP"
-		if(!isnum(temp) || temp < 2.7)
-			temp = 2.7
-		set_temperature(temp)
-	clear()
-	for(var/id in gas)
-		set_moles(id, text2num(gas[id]))
-	return 1
+
+	return __auxtools_parse_gas_string(gas_string)
 
 /datum/gas_mixture/proc/set_analyzer_results(instability)
 	if(!analyzer_results)

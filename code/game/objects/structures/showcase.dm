@@ -14,7 +14,7 @@
 /obj/structure/showcase/fakeid
 	name = "\improper CentCom identification console"
 	desc = "You can use this to change ID's."
-	icon = 'icons/obj/computer.dmi'
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 
 /obj/structure/showcase/fakeid/Initialize()
@@ -25,7 +25,7 @@
 /obj/structure/showcase/fakesec
 	name = "\improper CentCom security records"
 	desc = "Used to view and edit personnel's security records."
-	icon = 'icons/obj/computer.dmi'
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 
 /obj/structure/showcase/fakesec/Initialize()
@@ -56,6 +56,18 @@
 	icon_state = "robot_old"
 	density = FALSE
 
+/obj/structure/showcase/cyborg/assault
+	name = "Syndicate Assault Borg Display"
+	desc = "A gutted chassis of the Cybersun Bloodhound, a model infamous across space as the first truly successful example of a weaponized machine lifeform. An attached plaque extolls the design as a harbinger of Cybersun's rise to industry dominance in the field of combat cybernetics. "
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "showcase_6"
+
+/obj/structure/showcase/cyborg/old/medical
+	name = "Syndicate Mediborg Display"
+	desc = "The gutted chassis of Cybersun's iconic Valkyrie model, fitted with weak LED's where menacing red spotlights once shone. The once-mighty combat medic now lies still and unmoving, but the plaque alongside it reminds you that generations of this design have accompanied syndicate forces into battle wherever and whenever, performing whatever duties are required."
+	icon = 'icons/obj/stationobjs.dmi'
+	icon_state = "showcase_7"
+
 /obj/structure/showcase/mecha/marauder
 	name = "combat mech exhibit"
 	desc = "A stand with an empty old Nanotrasen Corporation combat mech bolted to it. It is described as the premier unit used to defend corporate interests and employees."
@@ -76,7 +88,7 @@
 
 /obj/structure/showcase/machinery/microwave
 	name = "\improper Nanotrasen-brand microwave"
-	desc = "The famous Nanotrasen-brand microwave, the multi-purpose cooking appliance every station needs! This one appears to be drawn onto a cardboard box."
+	desc = "The famous Nanotrasen-brand microwave, the multi-purpose cooking appliance every household needs! This one appears to be drawn onto a cardboard box."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "mw"
 
@@ -93,7 +105,7 @@
 /obj/structure/showcase/machinery/tv
 	name = "\improper Nanotrasen corporate newsfeed"
 	desc = "A slightly battered looking TV. Various Nanotrasen infomercials play on a loop, accompanied by a jaunty tune."
-	icon = 'icons/obj/computer.dmi'
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "television"
 
 /obj/structure/showcase/machinery/signal_decrypter

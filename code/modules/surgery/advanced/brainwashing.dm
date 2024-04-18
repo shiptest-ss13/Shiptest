@@ -27,8 +27,16 @@
 
 /datum/surgery_step/brainwash
 	name = "brainwash"
-	implements = list(TOOL_HEMOSTAT = 85, TOOL_WIRECUTTER = 50, /obj/item/stack/packageWrap = 35, /obj/item/stack/cable_coil = 15)
-	time = 200
+	implements = list(
+		TOOL_HEMOSTAT = 85,
+		/obj/item/soap = 60, //haha. brainwashing. get it?
+		TOOL_WIRECUTTER = 30,
+		/obj/item/stack/packageWrap = 20,
+		/obj/item/stack/cable_coil = 10)
+	time = 20 SECONDS
+	preop_sound = 'sound/surgery/hemostat1.ogg'
+	success_sound = 'sound/surgery/hemostat1.ogg'
+	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = MEDICAL_SKILL_ADVANCED
 	var/objective
 

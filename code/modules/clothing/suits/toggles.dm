@@ -1,10 +1,12 @@
 //Hoods for winter coats and chaplain hoodie etc
 
 /obj/item/clothing/suit/hooded
+	icon = 'icons/obj/clothing/suits/hooded.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/hooded.dmi'
 	actions_types = list(/datum/action/item_action/toggle_hood)
 	var/obj/item/clothing/head/hooded/hood
 	var/hoodtype = /obj/item/clothing/head/hooded/winterhood //so the chaplain hoodie or other hoodies can override this
-	pocket_storage_component_path = FALSE //WS Edit - Exowear Pockets
+	pocket_storage_component_path = FALSE
 
 /obj/item/clothing/suit/hooded/Initialize()
 	. = ..()
@@ -73,7 +75,6 @@
 
 /obj/item/clothing/head/hooded
 	var/obj/item/clothing/suit/hooded/suit
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/hooded/Destroy()
 	suit = null
@@ -93,6 +94,9 @@
 			qdel(src)
 
 //Toggle exosuits for different aesthetic styles (hoodies, suit jacket buttons, etc)
+/obj/item/clothing/suit/toggle
+	icon = 'icons/obj/clothing/suits/toggle.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/toggle.dmi'
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	..()
@@ -132,10 +136,11 @@
 	. = ..()
 
 /obj/item/clothing/suit/space/hardsuit/Destroy()
-	if(helmet)
+	if(!QDELETED(helmet))
 		helmet.suit = null
 		qdel(helmet)
-	qdel(jetpack)
+		helmet = null
+	QDEL_NULL(jetpack)
 	return ..()
 
 /obj/item/clothing/head/helmet/space/hardsuit/Destroy()

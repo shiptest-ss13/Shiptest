@@ -7,7 +7,7 @@
 	rad_insulation = RAD_MEDIUM_INSULATION
 	pass_flags_self = PASSCLOSEDTURF
 
-/turf/closed/Initialize()
+/turf/closed/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 
 /turf/closed/AfterChange()
@@ -36,11 +36,6 @@
 /turf/closed/indestructible/singularity_act()
 	return
 
-/turf/closed/indestructible/oldshuttle
-	name = "strange shuttle wall"
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "block"
-
 /turf/closed/indestructible/sandstone
 	name = "sandstone wall"
 	desc = "A wall with sandstone plating. Rough."
@@ -49,9 +44,6 @@
 	base_icon_state = "sandstone_wall"
 	baseturfs = /turf/closed/indestructible/sandstone
 	smoothing_flags = SMOOTH_BITMASK
-
-/turf/closed/indestructible/oldshuttle/corner
-	icon_state = "corner"
 
 /turf/closed/indestructible/splashscreen
 	name = "Space Station 13"
@@ -78,12 +70,12 @@
 /turf/closed/indestructible/reinforced
 	name = "reinforced wall"
 	desc = "A huge chunk of reinforced metal used to separate rooms. Effectively impervious to conventional methods of destruction."
-	icon = 'icons/turf/walls/reinforced_wall.dmi'
+	icon = 'icons/turf/walls/rwalls/reinforced_wall.dmi'
 	icon_state = "reinforced_wall-0"
 	base_icon_state = "reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 
 /turf/closed/indestructible/riveted
@@ -93,6 +85,47 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+
+/turf/closed/indestructible/riveted/supermatter
+	name = "wall"
+	desc = "A wall made out of a strange metal. The squares on it pulse in a predictable pattern."
+	icon = 'icons/turf/walls/bananium_wall.dmi'
+	icon_state = "bananium_wall-0"
+	base_icon_state = "bananium_wall"
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_BANANIUM_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_BANANIUM_WALLS)
+
+/turf/closed/indestructible/riveted/supermatter/Bumped(atom/movable/AM)
+	if(isliving(AM))
+		AM.visible_message("<span class='danger'>\The [AM] slams into \the [src] inducing a resonance... [AM.p_their()] body starts to glow and burst into flames before flashing into dust!</span>",\
+		"<span class='userdanger'>You slam into \the [src] as your ears are filled with unearthly ringing. Your last thought is \"Oh, fuck.\"</span>",\
+		"<span class='hear'>You hear an unearthly noise as a wave of heat washes over you.</span>")
+	else if(isobj(AM) && !iseffect(AM))
+		AM.visible_message("<span class='danger'>\The [AM] smacks into \the [src] and rapidly flashes to ash.</span>", null,\
+		"<span class='hear'>You hear a loud crack as you are washed with a wave of heat.</span>")
+	else
+		return
+
+	playsound(get_turf(src), 'sound/effects/supermatter.ogg', 50, TRUE)
+	Consume(AM)
+
+/turf/closed/indestructible/riveted/supermatter/proc/Consume(atom/movable/AM)
+	if(isliving(AM))
+		var/mob/living/user = AM
+		if(user.status_flags & GODMODE)
+			return
+		message_admins("[src] has consumed [key_name_admin(user)] [ADMIN_JMP(src)].")
+		investigate_log("has consumed [key_name(user)].", INVESTIGATE_SUPERMATTER)
+		user.dust(force = TRUE)
+	else if(isobj(AM))
+		if(!iseffect(AM))
+			var/suspicion = ""
+			if(AM.fingerprintslast)
+				suspicion = "last touched by [AM.fingerprintslast]"
+				message_admins("[src] has consumed [AM], [suspicion] [ADMIN_JMP(src)].")
+			investigate_log("has consumed [AM] - [suspicion].", INVESTIGATE_SUPERMATTER)
+		qdel(AM)
 
 /turf/closed/indestructible/syndicate
 	icon = 'icons/turf/walls/plastitanium_wall.dmi'
@@ -121,8 +154,8 @@
 	icon_state = "wood_wall-0"
 	base_icon_state = "wood_wall"
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WOOD_WALLS)
-	canSmoothWith = list(SMOOTH_GROUP_WOOD_WALLS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_WALLS, SMOOTH_GROUP_AIRLOCK)
+	canSmoothWith = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE, SMOOTH_GROUP_AIRLOCK)
 
 
 /turf/closed/indestructible/alien
@@ -164,7 +197,7 @@
 	smoothing_groups = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 	canSmoothWith = list(SMOOTH_GROUP_WINDOW_FULLTILE)
 
-/turf/closed/indestructible/fakeglass/Initialize()
+/turf/closed/indestructible/fakeglass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	underlays += mutable_appearance('icons/obj/structures.dmi', "grille") //add a grille underlay
 	underlays += mutable_appearance('icons/turf/floors.dmi', "plating") //add the plating underlay, below the grille
@@ -189,37 +222,43 @@
 /turf/closed/indestructible/fakedoor
 	name = "CentCom Access"
 	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
-	icon_state = "fake_door"
+	icon_state = "fakedoor"
 
 /turf/closed/indestructible/rock
 	name = "dense rock"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
-	icon = 'icons/turf/mining.dmi'
-	icon_state = "rock"
+	icon = 'icons/turf/walls/rock_wall.dmi'
+	icon_state = "rock_wall-0"
+	base_icon_state = "rock_wall"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER | SMOOTH_CONNECTORS
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
+	no_connector_typecache = list(/turf/closed/mineral, /turf/closed/indestructible/rock)
+	connector_icon = 'icons/turf/connectors/smoothrocks_connector.dmi'
+	connector_icon_state = "smoothrocks_connector"
+	pixel_x = -4
+	pixel_y = -4
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
-	desc = "An extremely densely-packed rock, sheeted over with centuries worth of ice and snow."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "snowrock"
-	bullet_sizzle = TRUE
-	bullet_bounce_sound = null
-
-/turf/closed/indestructible/rock/snow/ice
-	name = "iced rock"
 	desc = "Extremely densely-packed sheets of ice and rock, forged over the years of the harsh cold."
-	icon = 'icons/turf/walls.dmi'
-	icon_state = "icerock"
-
-/turf/closed/indestructible/rock/snow/ice/ore
 	icon = 'icons/turf/walls/icerock_wall.dmi'
 	icon_state = "icerock_wall-0"
 	base_icon_state = "icerock_wall"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
-	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	smoothing_groups = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_MINERAL_WALLS)
+	canSmoothWith = list(SMOOTH_GROUP_MINERAL_WALLS)
 	pixel_x = -4
 	pixel_y = -4
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null
 
+/turf/closed/indestructible/rock/schist
+	name = "schist"
+	desc = "Extremely densely-packed layers of schist. Say it ten times fast."
+	icon = 'icons/turf/walls/rockwall_icemoon.dmi'
+	icon_state = "rockwall_icemoon-0"
+	base_icon_state = "rockwall_icemoon"
 
 /turf/closed/indestructible/paper
 	name = "thick paper wall"
@@ -268,3 +307,10 @@
 	smoothing_flags = SMOOTH_CORNERS
 	smoothing_groups = list(SMOOTH_GROUP_HIERO_WALL)
 	canSmoothWith = list(SMOOTH_GROUP_HIERO_WALL)
+
+/turf/closed/indestructible/blank
+	name = "space"
+	desc = "It's the end of the world every day, for someone."
+	icon = 'icons/turf/space.dmi'
+	icon_state = "black"
+	explosion_block = 1000 // fuck it, let's go higher

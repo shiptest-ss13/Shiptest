@@ -15,11 +15,11 @@
 	if (up)
 		src.up = up
 		up.down = src
-		up.update_icon()
+		up.update_appearance()
 	if (down)
 		src.down = down
 		down.up = src
-		down.update_icon()
+		down.update_appearance()
 	return INITIALIZE_HINT_LATELOAD
 
 /obj/structure/ladder/Destroy(force)
@@ -34,40 +34,35 @@
 	var/obj/structure/ladder/L
 
 	if (!down)
-		L = locate() in SSmapping.get_turf_below(T)
+		L = locate() in T.below()
 		if (L)
 			if(crafted == L.crafted)
 				down = L
 				L.up = src  // Don't waste effort looping the other way
-				L.update_icon()
+				L.update_appearance()
 	if (!up)
-		L = locate() in SSmapping.get_turf_above(T)
+		L = locate() in T.above()
 		if (L)
 			if(crafted == L.crafted)
 				up = L
 				L.down = src  // Don't waste effort looping the other way
-				L.update_icon()
+				L.update_appearance()
 
-	update_icon()
+	update_appearance()
 
 /obj/structure/ladder/proc/disconnect()
 	if(up && up.down == src)
 		up.down = null
-		up.update_icon()
+		up.update_appearance()
 	if(down && down.up == src)
 		down.up = null
-		down.update_icon()
+		down.update_appearance()
 	up = down = null
 
 /obj/structure/ladder/update_icon_state()
-	if(up && down)
-		icon_state = "ladder11"
-	else if(up)
-		icon_state = "ladder10"
-	else if(down)
-		icon_state = "ladder01"
-	else	//wtf make your ladders properly assholes
-		icon_state = "ladder00"
+	icon_state = "ladder[up ? 1 : 0][down ? 1 : 0]"
+	return ..()
+
 
 /obj/structure/ladder/singularity_pull()
 	if (!(resistance_flags & INDESTRUCTIBLE))
@@ -98,7 +93,7 @@
 		)
 
 	if (up && down)
-		var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+		var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 		if (!is_ghost && !in_range(src, user))
 			return  // nice try
 		switch(result)
@@ -171,7 +166,7 @@
 /obj/structure/ladder/unbreakable/LateInitialize()
 	// Override the parent to find ladders based on being height-linked
 	if (!id || (up && down))
-		update_icon()
+		update_appearance()
 		return
 
 	for (var/O in GLOB.ladders)
@@ -181,17 +176,17 @@
 		if (!down && L.height == height - 1)
 			down = L
 			L.up = src
-			L.update_icon()
+			L.update_appearance()
 			if (up)
 				break  // break if both our connections are filled
 		else if (!up && L.height == height + 1)
 			up = L
 			L.down = src
-			L.update_icon()
+			L.update_appearance()
 			if (down)
 				break  // break if both our connections are filled
 
-	update_icon()
+	update_appearance()
 
 /obj/structure/ladder/crafted
 	crafted = TRUE

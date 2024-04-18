@@ -76,8 +76,6 @@ to understand what this is about.
 - Lower case names are native browser events and should be used sparingly,
 for example when you need an explicit IE8 support. **DO NOT** use
 lowercase event handlers unless you really know what you are doing.
-- [Button](#button) component does not support the lowercase `onclick` event.
-Use the camel case `onClick` instead.
 
 ## `tgui/components`
 
@@ -186,6 +184,7 @@ all available horizontal space.
 - `bold: boolean` - Make text bold.
 - `italic: boolean` - Make text italic.
 - `nowrap: boolean` - Stops text from wrapping.
+- `preserveWhitespace: boolean` - Preserves line-breaks and spacing in text.
 - `textAlign: string` - Align text inside the box.
   - `left` (default)
   - `center`
@@ -213,6 +212,7 @@ Buttons allow users to take actions, and make choices, with a single click.
 - See inherited props: [Box](#box)
 - `fluid: boolean` - Fill all available horizontal space.
 - `icon: string` - Adds an icon to the button.
+- `iconPosition?: string` - Set to `'right'` to align the icon to the right of the children
 - `color: string` - Button color, as defined in `variables.scss`.
   - There is also a special color `transparent` - makes the button
   transparent and slightly dim when inactive.
@@ -220,11 +220,7 @@ Buttons allow users to take actions, and make choices, with a single click.
 - `selected: boolean` - Activates the button (gives it a green color).
 - `tooltip: string` - A fancy, boxy tooltip, which appears when hovering
 over the button.
-- `tooltipPosition: string` - Position of the tooltip.
-  - `top` - Show tooltip above the button.
-  - `bottom` (default) - Show tooltip below the button.
-  - `left` - Show tooltip on the left of the button.
-  - `right` - Show tooltip on the right of the button.
+- `tooltipPosition?: string` - Position of the tooltip. See [`Popper`](#Popper) for valid options.
 - `ellipsis: boolean` - If button width is constrained, button text will
 be truncated with an ellipsis. Be careful however, because this prop breaks
 the baseline alignment.
@@ -232,6 +228,10 @@ the baseline alignment.
 over the button.
 - `children: any` - Content to render inside the button.
 - `onClick: function` - Called when element is clicked.
+- `verticalAlignContent: string` - Align content vertically using flex. Use lineHeight if the height is static.
+  - `top` - align content to the ceiling of the button box.
+  - `middle` - align content on the middle of the button box.
+  - `bottom` - align content on the ground of the button box.
 
 ### `Button.Checkbox`
 
@@ -244,7 +244,7 @@ A ghetto checkbox, made entirely using existing Button API.
 
 ### `Button.Confirm`
 
-A button with a an extra confirmation step, using native button component.
+A button with an extra confirmation step, using native button component.
 
 **Props:**
 
@@ -261,7 +261,7 @@ commit, while escape cancels.
 **Props:**
 
 - See inherited props: [Box](#box)
-- `fluid`: fill availible horizontal space
+- `fluid`: fill available horizontal space
 - `onCommit: (e, value) => void`: function that is called after the user
 defocuses the input or presses enter
 - `currentValue: string`: default string to display when the input is shown
@@ -363,15 +363,14 @@ and displays selected entry.
 
 - See inherited props: [Box](#box)
 - See inherited props: [Icon](#icon)
-- `options: string[]` - An array of strings which will be displayed in the
-dropdown when open
-- `selected: string` - Currently selected entry
-- `width: number` - Width of dropdown button and resulting menu
+- `options: string[] | DropdownEntry[]` - An array of strings which will be displayed in the
+dropdown when open. See Dropdown.tsx for more adcanced usage with DropdownEntry
+- `selected: any` - Currently selected entry
+- `width: string` - Width of dropdown button and resulting menu; css width value
 - `over: boolean` - Dropdown renders over instead of below
 - `color: string` - Color of dropdown button
 - `nochevron: boolean` - Whether or not the arrow on the right hand side of the dropdown button is visible
-- `noscroll: boolean` - Whether or not the dropdown menu should have a scroll bar
-- `displayText: string` - Text to always display in place of the selected text
+- `displayText: string | number | InfernoNode` - Text to always display in place of the selected text
 - `onClick: (e) => void` - Called when dropdown button is clicked
 - `onSelected: (value) => void` - Called when a value is picked from the list, `value` is the value that was picked
 
@@ -665,8 +664,20 @@ to perform some sort of action), there is a way to do that:
 
 **Props:**
 
-- `label: string` - Item label.
-- `color: string` - Sets the color of the text.
+- `className: string` - Applies a CSS class to the element.
+- `label: string|InfernoNode` - Item label.
+- `labelWrap: boolean` - Lets the label wrap and makes it not take the minimum width.
+- `labelColor: string` - Sets the color of the label.
+- `color: string` - Sets the color of the content text.
+- `textAlign: string` - Align the content text.
+  - `left` (default)
+  - `center`
+  - `right`
+- `verticalAlign: string` - Align both the label and the content vertically.
+  - `baseline` (default)
+  - `top`
+  - `middle`
+  - `bottom`
 - `buttons: any` - Buttons to render aside the content.
 - `children: any` - Content of this labeled item.
 
@@ -743,6 +754,16 @@ the input, or successfully enter a number.
 - `onDrag: (e, value) => void` - An event, which fires about every 500ms
 when you drag the input up and down, on release and on manual editing.
 
+### `Popper`
+
+Popper lets you position elements so that they don't go out of the bounds of the window. See [popper.js](https://popper.js.org/) for more information.
+
+**Props:**
+
+- `popperContent: InfernoNode` - The content that will be put inside the popper.
+- `options?: { ... }` - An object of options to pass to `createPopper`. See [https://popper.js.org/docs/v2/constructors/#options], but the one you want most is `placement`. Valid placements are "bottom", "top", "left", and "right". You can affix "-start" and "-end" to achieve something like top left or top right respectively. You can also use "auto" (with an optional "-start" or "-end"), where a best fit will be chosen.
+- `additionalStyles: { ... }` - A map of CSS styles to add to the element that will contain the popper.
+
 ### `ProgressBar`
 
 Progress indicators inform users about the status of ongoing processes.
@@ -772,7 +793,11 @@ percentage and how filled the bar is.
 - `maxValue: number` - Highest possible value.
 - `ranges: { color: [from, to] }` - Applies a `color` to the progress bar
 based on whether the value lands in the range between `from` and `to`.
-- `color: string` - Color of the progress bar.
+- `color: string` - Color of the progress bar. Can take any of the following formats:
+  - `#ffffff` - Hex format
+  - `rgb(r,g,b) / rgba(r,g,b,a)` - RGB format
+  - `<name>` - the name of a `color-<name>` CSS class. See `CSS_COLORS` in `constants.js`.
+  - `<name>` - the name of a base CSS color, if not overridden by the definitions above.
 - `children: any` - Content to render inside the progress bar.
 
 ### `RoundGauge`
@@ -803,7 +828,8 @@ The alert on the gauge is optional, and will only be shown if the `alertAfter` p
 - `minValue: number` (default: 0) - The lower bound of the guage.
 - `maxValue: number` (default: 1) - The upper bound of the guage.
 - `ranges: { color: [from, to] }` (default: `{ "good": [0, 1] }`) - Provide regions of the guage to color between two specified values of the metric.
-- `alertAfter: number` (optional) - When provided, will cause an alert symbol on the gauge to begin flashing in the color upon which the needle currently rest, as defined in `ranges`.
+- `alertAfter: number` (optional) - When provided, will cause an alert symbol on the gauge to begin flashing in the color upon which the needle currently rests, as defined in `ranges`.
+- `alertBefore: number` (optional) - As with alertAfter, but alerts below a value. If both are set, and alertAfter comes earlier, the alert will only flash when the needle is between both values. Otherwise, the alert will flash when on the active side of either threshold.
 - `format: function(value) => string` (optional) - When provided, will be used to format the value of the metric for display.
 - `size: number` (default: 1) - When provided scales the gauge.
 
@@ -838,10 +864,12 @@ If you want to have a button on the right side of an section title
 </Section>
 ```
 
+**New:** Sections can now be nested, and will automatically font size of the
+header according to their nesting level. Previously this was done via `level`
+prop, but now it is automatically calculated.
+
 - See inherited props: [Box](#box)
 - `title: string` - Title of the section.
-- `level: number` - Section level in hierarchy. Default is 1, higher number
-means deeper level of nesting. Must be an integer number.
 - `buttons: any` - Buttons to render aside the section title.
 - `fill: boolean` - If true, fills all available vertical space.
 - `fitted: boolean` - If true, removes all section padding.
@@ -1025,25 +1053,41 @@ Notice that tabs do not contain state. It is your job to track the selected
 tab, handle clicks and place tab content where you need it. In return, you get
 a lot of flexibility in regards to how you can layout your tabs.
 
-Tabs also support a vertical configuration. This is usually paired with a
-[Flex](#flex) component to render tab content to the right.
+Tabs also support a vertical configuration. This is usually paired with
+[Stack](#stack) to render tab content to the right.
 
 ```jsx
-<Flex>
-  <Flex.Item>
+<Stack>
+  <Stack.Item>
     <Tabs vertical>
       ...
     </Tabs>
-  </Flex.Item>
-  <Flex.Item grow={1} basis={0}>
+  </Stack.Item>
+  <Stack.Item grow={1} basis={0}>
     Tab content.
-  </Flex.Item>
-</Flex>
+  </Stack.Item>
+</Stack>
+```
+
+If you need to combine a tab section with other elements, or if you want to
+add scrollable functionality to tabs, pair them with the [Section](#section)
+component:
+
+```jsx
+<Section fill fitted scrollable width="128px">
+  <Tabs vertical>
+    ...
+  </Tabs>
+  ... other things ...
+</Section>
 ```
 
 **Props:**
 
 - See inherited props: [Box](#box)
+- `fluid: boolean` - If true, tabs will take all available horizontal space.
+- `fill: boolean` - Similarly to `fill` on [Section](#section), tabs will fill
+all available vertical space. Only makes sense in a vertical configuration.
 - `vertical: boolean` - Use a vertical configuration, where tabs will be
 stacked vertically.
 - `children: Tab[]` - This component only accepts tabs as its children.
@@ -1074,17 +1118,16 @@ it is recommended to use that prop instead.
 Usage:
 
 ```jsx
-<Box position="relative">
-  Sample text.
-  <Tooltip
-    position="bottom"
-    content="Box tooltip" />
-</Box>
+<Tooltip position="bottom" content="Box tooltip">
+  <Box position="relative">
+    Sample text.
+  </Box>
+</Tooltip>
 ```
 
 **Props:**
 
-- `position: string` - Tooltip position.
+- `position?: string` - Tooltip position. See [`Popper`](#Popper) for valid options. Defaults to "auto".
 - `content: string` - Content of the tooltip. Must be a plain string.
 Fragments or other elements are **not** supported.
 
@@ -1099,9 +1142,7 @@ it in one way or another.
 Example:
 
 ```jsx
-<Window
-  theme="hackerman"
-  resizable>
+<Window theme="hackerman">
   <Window.Content scrollable>
     Hello, world!
   </Window.Content>
@@ -1115,8 +1156,9 @@ Example:
 - `theme: string` - A name of the theme.
   - For a list of themes, see `packages/tgui/styles/themes`.
 - `title: string` - Window title.
-- `resizable: boolean` - Controls resizability of the window.
-- `noClose: boolean` - Controls the ability to close the window.
+- `width: number` - Window width.
+- `height: number` - Window height.
+- `canClose: boolean` - Controls the ability to close the window.
 - `children: any` - Child elements, which are rendered directly inside the
 window. If you use a [Dimmer](#dimmer) or [Modal](#modal) in your UI,
 they should be put as direct childs of a Window, otherwise you should be

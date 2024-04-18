@@ -7,7 +7,6 @@
 	..()
 	//WS Begin
 	new /obj/item/clothing/head/beret/captain(src) //Berets
-	new /obj/item/card/id/departmental_budget/civ(src) //Budget Cards
 	new /obj/item/storage/backpack/messenger/com(src) //Messenger Bags
 	//WS End
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
@@ -27,7 +26,7 @@
 	new /obj/item/clothing/under/rank/command/captain/parade(src)
 	new /obj/item/clothing/suit/armor/vest/capcarapace/alt(src)
 	new /obj/item/clothing/head/caphat/parade(src)
-	new /obj/item/clothing/suit/captunic(src)
+	new /obj/item/clothing/suit/armor/vest/capcarapace/captunic(src)
 	new /obj/item/clothing/head/crown/fancy(src)
 	new /obj/item/cartridge/captain(src)
 	new /obj/item/storage/box/silver_ids(src)
@@ -48,7 +47,6 @@
 
 /obj/structure/closet/secure_closet/head_of_personnel/PopulateContents()
 	..()
-	new /obj/item/card/id/departmental_budget/srv(src) //WS Edit - Budget Cards
 	new /obj/item/clothing/neck/cloak/head_of_personnel(src)
 	new /obj/item/storage/lockbox/medal/service(src)
 	new /obj/item/clothing/head/beret/hop(src) //WS edit - More Berets
@@ -80,7 +78,6 @@
 
 /obj/structure/closet/secure_closet/hos/PopulateContents()
 	..()
-	new /obj/item/card/id/departmental_budget/sec(src) //WS edit - budget card
 	new /obj/item/storage/box/deputy(src) //WS edit - Small QoL Brig additions
 	new /obj/item/clothing/neck/cloak/hos(src)
 	new /obj/item/clothing/under/rank/command(src) //WS edit - better command uniforms
@@ -113,6 +110,11 @@
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/gun_voucher //WS edit - gun gun gun gun gun gun gun
+
+/obj/structure/closet/secure_closet/empty/warden
+	name = "\proper warden's locker"
+	req_access = list(ACCESS_ARMORY)
+	icon_state = "warden"
 
 /obj/structure/closet/secure_closet/warden
 	name = "\proper warden's locker"
@@ -166,35 +168,31 @@
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	..()
 	new /obj/item/storage/belt/security/full(src)
-	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src) //WS edit - free lethals
+	new /obj/item/gun/ballistic/automatic/pistol/commander/no_mag(src) //WS edit - free lethals //shiptest: these comments are very funny, please dont remove them
 
 /obj/structure/closet/secure_closet/security/cargo
 
 /obj/structure/closet/secure_closet/security/cargo/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/cargo(src)
-	new /obj/item/encryptionkey/headset_cargo(src)
 
 /obj/structure/closet/secure_closet/security/engine
 
 /obj/structure/closet/secure_closet/security/engine/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/engine(src)
-	new /obj/item/encryptionkey/headset_eng(src)
 
 /obj/structure/closet/secure_closet/security/science
 
 /obj/structure/closet/secure_closet/security/science/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/science(src)
-	new /obj/item/encryptionkey/headset_sci(src)
 
 /obj/structure/closet/secure_closet/security/med
 
 /obj/structure/closet/secure_closet/security/med/PopulateContents()
 	..()
 	new /obj/item/clothing/accessory/armband/medblue(src)
-	new /obj/item/encryptionkey/headset_med(src)
 
 /obj/structure/closet/secure_closet/detective
 	name = "\improper detective's cabinet"
@@ -245,12 +243,12 @@
 
 /obj/structure/closet/secure_closet/brig/PopulateContents()
 	..()
-	new /obj/item/clothing/under/rank/prisoner( src )
-	new /obj/item/clothing/under/rank/prisoner/skirt( src )
-	new /obj/item/clothing/shoes/sneakers/orange( src )
-	new /obj/item/clothing/under/plasmaman/prisoner( src )
-	new /obj/item/clothing/under/plasmaman/prisoner/skirt( src )
-	new /obj/item/clothing/head/helmet/space/plasmaman/prisoner( src )
+	new /obj/item/clothing/under/rank/prisoner(src)
+	new /obj/item/clothing/under/rank/prisoner/skirt(src)
+	new /obj/item/clothing/shoes/sneakers/orange(src)
+	new /obj/item/clothing/under/plasmaman/prisoner(src)
+	new /obj/item/clothing/under/plasmaman/prisoner/skirt(src)
+	new /obj/item/clothing/head/helmet/space/plasmaman/prisoner(src)
 
 /obj/structure/closet/secure_closet/courtroom
 	name = "courtroom locker"
@@ -302,7 +300,7 @@
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/rubbershot(src)
 	for(var/i in 1 to 3)
-		new /obj/item/gun/ballistic/shotgun/riot(src)
+		new /obj/item/gun/ballistic/shotgun/hellfire(src)
 
 /obj/structure/closet/secure_closet/armory3
 	name = "armory energy gun locker"
@@ -325,10 +323,10 @@
 
 /obj/structure/closet/secure_closet/tac/PopulateContents()
 	..()
-	new /obj/item/gun/ballistic/automatic/wt550(src)
-	new /obj/item/clothing/head/helmet/alt(src)
+	new /obj/item/gun/ballistic/automatic/smg/wt550(src)
+	new /obj/item/clothing/head/helmet/bulletproof(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
-	new /obj/item/clothing/suit/armor/bulletproof(src)
+	new /obj/item/clothing/suit/armor/vest/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
 	name = "lethal ammunition"
@@ -357,3 +355,26 @@
 	new /obj/item/clothing/under/rank/security/officer/skirt(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/flashlight/seclite(src)
+
+/obj/structure/closet/secure_closet/brig_phys
+	name = "\proper brig physician's locker"
+	req_access = list(ACCESS_BRIG)
+	icon_state = "brig_phys"
+
+/obj/structure/closet/secure_closet/brig_phys/PopulateContents()
+	..()
+	new /obj/item/defibrillator/loaded(src)
+	new /obj/item/radio/headset/headset_medsec(src)
+	new	/obj/item/storage/firstaid/regular(src)
+	new	/obj/item/storage/firstaid/fire(src)
+	new	/obj/item/storage/firstaid/toxin(src)
+	new	/obj/item/storage/firstaid/o2(src)
+	new	/obj/item/storage/firstaid/brute(src)
+	new /obj/item/storage/belt/medical(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+	new /obj/item/clothing/suit/toggle/labcoat/brig_phys(src)
+	new /obj/item/clothing/suit/armor/vest/security/brig_phys(src)
+	new /obj/item/clothing/head/beret/sec/brig_phys(src)

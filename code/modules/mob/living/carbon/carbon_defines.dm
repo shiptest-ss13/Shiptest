@@ -15,7 +15,7 @@
 	var/silent = 0 		///Can't talk. Value goes down every life proc. NOTE TO FUTURE CODERS: DO NOT INITIALIZE NUMERICAL VARS AS NULL OR I WILL MURDER YOU.
 	var/dreaming = 0 ///How many dream images we have left to send
 
-	var/obj/item/handcuffed = null///Whether or not the mob is handcuffed
+	var/obj/item/handcuffed = null ///Whether or not the mob is handcuffed
 	var/obj/item/legcuffed = null  ///Same as handcuffs but for legs. Bear traps use this.
 
 	var/disgust = 0
@@ -47,21 +47,21 @@
 
 	var/tinttotal = 0	/// Total level of visualy impairing items
 
-	///Gets filled up in [create_bodyparts()][/mob/living/carbon/proc/create_bodyparts]
+	var/list/icon_render_keys = list()
 	var/list/bodyparts = list(
 		/obj/item/bodypart/chest,
 		/obj/item/bodypart/head,
 		/obj/item/bodypart/l_arm,
 		/obj/item/bodypart/r_arm,
-		/obj/item/bodypart/r_leg,
-		/obj/item/bodypart/l_leg,
-		)
+		/obj/item/bodypart/leg/right,
+		/obj/item/bodypart/leg/left
+	)
 
 	var/list/hand_bodyparts = list() ///a collection of arms (or actually whatever the fug /bodyparts you monsters use to wreck my systems)
 
-	var/icon_render_key = ""
 	var/static/list/limb_icon_cache = list()
-	var/has_bones = FALSE
+
+	var/layered_hands //Does the mob have "layered hands" and require using HANDS_UNDER_BODY_LAYER?
 
 	//halucination vars
 	var/image/halimage
@@ -85,3 +85,11 @@
 
 	/// WS edit - moth dust when hugging
 	var/mothdust
+
+	///List of quirk cooldowns to track
+	var/list/quirk_cooldown = list()
+	/// Timer to remove the dream_sequence timer when the mob is deleted
+	var/dream_timer
+
+	/// Can other carbons be shoved into this one to make it fall?
+	var/can_be_shoved_into = FALSE

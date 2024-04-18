@@ -20,6 +20,12 @@
 	if(has_action)
 		action = new base_action(src)
 
+/obj/effect/proc_holder/Destroy()
+	if(!QDELETED(action))
+		qdel(action)
+	action = null
+	return ..()
+
 /obj/effect/proc_holder/proc/on_gain(mob/living/user)
 	return
 
@@ -74,7 +80,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(msg)
 		to_chat(ranged_ability_user, msg)
 	active = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/effect/proc_holder/proc/remove_ranged_ability(msg)
 	if(!ranged_ability_user || !ranged_ability_user.client || (ranged_ability_user.ranged_ability && ranged_ability_user.ranged_ability != src)) //To avoid removing the wrong ability
@@ -86,7 +92,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		to_chat(ranged_ability_user, msg)
 	ranged_ability_user = null
 	active = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/effect/proc_holder/spell
 	name = "Spell"
@@ -155,7 +161,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 			return FALSE
 
 	var/turf/T = get_turf(user)
-	if(is_centcom_level(T.z) && !centcom_cancast) //Certain spells are not allowed on the centcom zlevel
+	if(is_centcom_level(T) && !centcom_cancast) //Certain spells are not allowed on the centcom zlevel
 		to_chat(user, "<span class='warning'>You can't cast this spell here!</span>")
 		return FALSE
 
@@ -284,13 +290,13 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	return
 
 /**
-  * can_target: Checks if we are allowed to cast the spell on a target.
-  *
-  * Arguments:
-  * * target The atom that is being targeted by the spell.
-  * * user The mob using the spell.
-  * * silent If the checks should not give any feedback messages.
-  */
+ * can_target: Checks if we are allowed to cast the spell on a target.
+ *
+ * Arguments:
+ * * target The atom that is being targeted by the spell.
+ * * user The mob using the spell.
+ * * silent If the checks should not give any feedback messages.
+ */
 /obj/effect/proc_holder/spell/proc/can_target(atom/target, mob/user, silent = FALSE)
 	return TRUE
 
@@ -512,11 +518,22 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	//Checks for obstacles from A to B
 	var/obj/dummy = new(A.loc)
 	dummy.pass_flags |= PASSTABLE
-	for(var/turf/turf in getline(A,B))
-		for(var/atom/movable/AM in turf)
-			if(!AM.CanPass(dummy,turf,1))
+	var/turf/previous_step = get_turf(A)
+	var/first_step = TRUE
+	for(var/turf/next_step as anything in (getline(A, B) - previous_step))
+		if(first_step)
+			for(var/obj/blocker in previous_step)
+				if(!blocker.density || !(blocker.flags_1 & ON_BORDER_1))
+					continue
+				if(blocker.CanPass(dummy, get_dir(previous_step, next_step)))
+					continue
+				return FALSE // Could not leave the first turf.
+			first_step = FALSE
+		for(var/atom/movable/movable as anything in next_step)
+			if(!movable.CanPass(dummy, get_dir(next_step, previous_step)))
 				qdel(dummy)
-				return 0
+				return FALSE
+		previous_step = next_step
 	qdel(dummy)
 	return 1
 

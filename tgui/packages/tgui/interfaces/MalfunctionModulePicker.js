@@ -4,19 +4,11 @@ import { GenericUplink } from './Uplink';
 
 export const MalfunctionModulePicker = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    processingTime,
-  } = data;
+  const { processingTime } = data;
   return (
-    <Window
-      width={620}
-      height={525}
-      theme="malfunction"
-      resizable>
+    <Window width={620} height={525} theme="malfunction" resizable>
       <Window.Content scrollable>
-        <GenericUplink
-          currencyAmount={processingTime}
-          currencySymbol="PT" />
+        <GenericUplink currencyAmount={processingTime} currencySymbol="PT" />
       </Window.Content>
     </Window>
   );

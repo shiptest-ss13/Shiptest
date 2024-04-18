@@ -13,6 +13,7 @@
 	desc = "A high fidelity testing device which unlocks the secrets of the known universe using the two most powerful substances available to man: excessive amounts of electricity and capital."
 	icon = 'icons/obj/machines/bepis.dmi'
 	icon_state = "chamber"
+	base_icon_state = "chamber"
 	density = TRUE
 	layer = ABOVE_MOB_LAYER
 	use_power = IDLE_POWER_USE
@@ -47,10 +48,10 @@
 		return
 	if(default_deconstruction_crowbar(O))
 		return
-	if(!is_operational())
+	if(!is_operational)
 		to_chat(user, "<span class='notice'>[src] can't accept money when it's not functioning.</span>")
 		return
-	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/stack/spacecash))
+	if(istype(O, /obj/item/holochip) || istype(O, /obj/item/spacecash/bundle))
 		var/deposit_value = O.get_item_credit_value()
 		banked_cash += deposit_value
 		qdel(O)
@@ -100,7 +101,7 @@
 	if(!account.has_money(deposit_value))
 		say("You do not possess enough credits.")
 		return
-	account.adjust_money(-deposit_value) //The money vanishes, not paid to any accounts.
+	account.adjust_money(-deposit_value, "bepis") //The money vanishes, not paid to any accounts.
 	SSblackbox.record_feedback("amount", "BEPIS_credits_spent", deposit_value)
 	log_econ("[deposit_value] credits were inserted into [src] by [account.account_holder]")
 	banked_cash += deposit_value
@@ -116,7 +117,7 @@
 		say("Cannot withdraw more than stored funds. Aborting.")
 	else
 		banked_cash -= withdraw_value
-		new /obj/item/holochip(src.loc, withdraw_value)
+		new /obj/item/spacecash/bundle(src.loc, withdraw_value)
 		say("Withdrawing [withdraw_value] credits from the chamber.")
 	update_icon_state()
 	return
@@ -160,26 +161,27 @@
 		use_power(MACHINE_OVERLOAD * power_saver) //To prevent gambling at low cost and also prevent spamming for infinite deer.
 		return
 	//Minor Failure
-	error_cause = pick("attempted to sell grey products to American dominated market.","attempted to sell gray products to British dominated market.","placed wild assumption that PDAs would go out of style.","simulated product #76 damaged brand reputation mortally.","simulated business model resembled 'pyramid scheme' by 98.7%.","product accidently granted override access to all station doors.")
+	error_cause = pick("attempted to sell grey products to American dominated market.","attempted to sell gray products to British dominated market.","placed wild assumption that PDAs would go out of style.","simulated product #76 damaged brand reputation mortally.","simulated business model resembled 'pyramid scheme' by 98.7%.","product accidently granted override access to all vessel doors.")
 	say("Experiment concluded with zero product viability. Cause of error: [error_cause]")
 	return
 
 /obj/machinery/rnd/bepis/update_icon_state()
 	if(panel_open == TRUE)
-		icon_state = "chamber_open"
-		return
-	if((use_power == ACTIVE_POWER_USE) && (banked_cash > 0) && (is_operational()))
-		icon_state = "chamber_active_loaded"
-		return
-	if (((use_power == IDLE_POWER_USE) && (banked_cash > 0)) || (banked_cash > 0) && (!is_operational()))
-		icon_state = "chamber_loaded"
-		return
-	if(use_power == ACTIVE_POWER_USE && is_operational())
-		icon_state = "chamber_active"
-		return
-	if(((use_power == IDLE_POWER_USE) && (banked_cash == 0)) || (!is_operational()))
-		icon_state = "chamber"
-		return
+		icon_state = "[base_icon_state]_open"
+		return ..()
+	if((use_power == ACTIVE_POWER_USE) && (banked_cash > 0) && (is_operational))
+		icon_state = "[base_icon_state]_active_loaded"
+		return ..()
+	if (((use_power == IDLE_POWER_USE) && (banked_cash > 0)) || (banked_cash > 0) && (!is_operational))
+		icon_state = "[base_icon_state]_loaded"
+		return ..()
+	if(use_power == ACTIVE_POWER_USE && is_operational)
+		icon_state = "[base_icon_state]_active"
+		return ..()
+	if(((use_power == IDLE_POWER_USE) && (banked_cash == 0)) || (!is_operational))
+		icon_state = base_icon_state
+		return ..()
+	return ..()
 
 /obj/machinery/rnd/bepis/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

@@ -10,6 +10,8 @@
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	throw_speed = 3
 	throw_range = 7
 	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 250)
@@ -45,14 +47,14 @@
 	else
 		target = null
 		STOP_PROCESSING(SSfastprocess, src)
-	update_icon()
+	update_appearance()
 
 /obj/item/pinpointer/process()
 	if(!active)
 		return PROCESS_KILL
 	if(process_scan)
 		scan_for_target()
-	update_icon()
+	update_appearance()
 
 /obj/item/pinpointer/proc/scan_for_target()
 	return
@@ -61,12 +63,12 @@
 	. = ..()
 	if(!active)
 		return
-	if(!target)
+	if(!target?.loc)
 		. += "pinon[alert ? "alert" : ""]null[icon_suffix]"
 		return
 	var/turf/here = get_turf(src)
 	var/turf/there = get_turf(target)
-	if(here.get_virtual_z_level() != there.get_virtual_z_level())
+	if(here.virtual_z() != there.virtual_z())
 		. += "pinon[alert ? "alert" : ""]null[icon_suffix]"
 		return
 	. += get_direction_icon(here, there)
@@ -97,7 +99,7 @@
 
 /obj/item/pinpointer/crew/proc/trackable(mob/living/carbon/human/H)
 	var/turf/here = get_turf(src)
-	if((H.z == 0 || H.get_virtual_z_level() == here.get_virtual_z_level()) && istype(H.w_uniform, /obj/item/clothing/under))
+	if((H.z == 0 || H.virtual_z() == here.virtual_z()) && istype(H.w_uniform, /obj/item/clothing/under))
 		var/obj/item/clothing/under/U = H.w_uniform
 
 		// Suit sensors must be on maximum.
@@ -105,7 +107,7 @@
 			return FALSE
 
 		var/turf/there = get_turf(H)
-		return (H.z != 0 || (there && ((there.get_virtual_z_level() == here.get_virtual_z_level()))))
+		return (H.z != 0 || (there && ((there.virtual_z() == here.virtual_z()))))
 
 	return FALSE
 

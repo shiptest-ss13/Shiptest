@@ -4,8 +4,8 @@
 /obj/item/modular_computer
 	name = "modular microcomputer"
 	desc = "A small portable microcomputer."
-	icon = 'icons/obj/computer.dmi'
-	icon_state = "laptop-open"
+	icon = 'icons/obj/machines/computer.dmi'
+	icon_state = "laptop"
 	light_on = FALSE
 	integrity_failure = 0.5
 	max_integrity = 100
@@ -55,7 +55,8 @@
 		physical = src
 	comp_light_color = "#FFFFFF"
 	idle_threads = list()
-	update_icon()
+	update_appearance()
+
 
 /obj/item/modular_computer/Destroy()
 	kill_program(forced = TRUE)
@@ -156,20 +157,15 @@
 	. += get_modular_computer_parts_examine(user)
 
 /obj/item/modular_computer/update_icon_state()
-	if(!enabled)
-		icon_state = icon_state_unpowered
-	else
-		icon_state = icon_state_powered
+	icon_state = enabled ? icon_state_powered : icon_state_unpowered
+	return ..()
 
 /obj/item/modular_computer/update_overlays()
 	. = ..()
 	if(!display_overlays)
 		return
 	if(enabled)
-		if(active_program)
-			. += active_program.program_icon_state ? active_program.program_icon_state : icon_state_menu
-		else
-			. += icon_state_menu
+		. += active_program?.program_icon_state || icon_state_menu
 
 	if(obj_integrity <= integrity_failure * max_integrity)
 		. += "bsod"
@@ -203,7 +199,7 @@
 		else
 			to_chat(user, "<span class='notice'>You press the power button and start up \the [src].</span>")
 		enabled = 1
-		update_icon()
+		update_appearance()
 		ui_interact(user)
 	else // Unpowered
 		if(issynth)
@@ -248,16 +244,16 @@
 	//check_update_ui_need()
 
 /**
-  * Displays notification text alongside a soundbeep when requested to by a program.
-  *
-  * After checking tha the requesting program is allowed to send an alert, creates
-  * a visible message of the requested text alongside a soundbeep. This proc adds
-  * text to indicate that the message is coming from this device and the program
-  * on it, so the supplied text should be the exact message and ending punctuation.
-  *
-  * Arguments:
-  * The program calling this proc.
-  * The message that the program wishes to display.
+ * Displays notification text alongside a soundbeep when requested to by a program.
+ *
+ * After checking tha the requesting program is allowed to send an alert, creates
+ * a visible message of the requested text alongside a soundbeep. This proc adds
+ * text to indicate that the message is coming from this device and the program
+ * on it, so the supplied text should be the exact message and ending punctuation.
+ *
+ * Arguments:
+ * The program calling this proc.
+ * The message that the program wishes to display.
  */
 
 /obj/item/modular_computer/proc/alert_call(datum/computer_file/program/caller, alerttext, sound = 'sound/machines/twobeep_high.ogg')
@@ -337,7 +333,7 @@
 	var/mob/user = usr
 	if(user && istype(user))
 		ui_interact(user) // Re-open the UI on this computer. It should show the main screen now.
-	update_icon()
+	update_appearance()
 
 // Returns 0 for No Signal, 1 for Low Signal and 2 for Good Signal. 3 is for wired connection (always-on)
 /obj/item/modular_computer/proc/get_ntnet_status(specific_action = 0)
@@ -361,7 +357,7 @@
 	if(loud)
 		physical.visible_message("<span class='notice'>\The [src] shuts down.</span>")
 	enabled = 0
-	update_icon()
+	update_appearance()
 
 /obj/item/modular_computer/screwdriver_act(mob/user, obj/item/tool)
 	if(!all_components.len)
@@ -405,7 +401,7 @@
 		if(all_components.len)
 			to_chat(user, "<span class='warning'>Remove all components from \the [src] before disassembling it.</span>")
 			return
-		new /obj/item/stack/sheet/metal( get_turf(src.loc), steel_sheet_cost )
+		new /obj/item/stack/sheet/metal(get_turf(src.loc), steel_sheet_cost)
 		physical.visible_message("<span class='notice'>\The [src] is disassembled by [user].</span>")
 		relay_qdel()
 		qdel(src)

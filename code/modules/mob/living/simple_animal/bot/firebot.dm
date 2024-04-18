@@ -14,8 +14,8 @@
 	health = 25
 	maxHealth = 25
 
-	radio_key = /obj/item/encryptionkey/headset_eng
-	radio_channel = RADIO_CHANNEL_ENGINEERING
+	radio_key = /obj/item/encryptionkey/headset_com
+	radio_channel = RADIO_CHANNEL_COMMAND
 	bot_type = FIRE_BOT
 	model = "Firebot"
 	bot_core = /obj/machinery/bot_core/firebot
@@ -23,8 +23,8 @@
 	window_name = "Mobile Fire Extinguisher v1.0"
 	path_image_color = "#FFA500"
 
-	var/atom/target_fire
-	var/atom/old_target_fire
+	var/datum/weakref/target_fire_ref
+	var/datum/weakref/old_target_fire_ref
 
 	var/obj/item/extinguisher/internal_ext
 
@@ -38,15 +38,37 @@
 	var/extinguish_fires = TRUE
 	var/stationary_mode = FALSE
 
+/mob/living/simple_animal/bot/firebot/rockplanet
+	name = "\improper Abandoned Firebot"
+	desc = "A little fire extinguishing bot. He looks rather bloodthrirsty."
+	emagged = 2
+	remote_disabled = 1
+	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
+	extinguish_fires = FALSE
+	extinguish_people = TRUE
+
+/mob/living/simple_animal/bot/firebot/rockplanet/create_extinguisher()
+	internal_ext = new /obj/item/extinguisher(src)
+	internal_ext.chem = /datum/reagent/clf3 //Refill the internal extinguisher with liquid fire
+	internal_ext.safety = FALSE
+	internal_ext.precision = TRUE
+	internal_ext.max_water = INFINITY
+	internal_ext.refill()
+
 /mob/living/simple_animal/bot/firebot/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	update_icon()
+	update_appearance()
 	var/datum/job/engineer/J = new/datum/job/engineer
 	access_card.access += J.get_access()
 	prev_access = access_card.access
 
 	create_extinguisher()
+
+/mob/living/simple_animal/bot/firebot/Destroy()
+	QDEL_NULL(internal_ext)
+	return ..()
 
 /mob/living/simple_animal/bot/firebot/bot_reset()
 	create_extinguisher()
@@ -76,26 +98,26 @@
 
 /mob/living/simple_animal/bot/firebot/turn_on()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/firebot/turn_off()
 	..()
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/firebot/bot_reset()
 	..()
-	target_fire = null
-	old_target_fire = null
+	target_fire_ref = null
+	old_target_fire_ref = null
 	ignore_list = list()
 	anchored = FALSE
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/firebot/proc/soft_reset()
 	path = list()
-	target_fire = null
+	target_fire_ref = null
 	mode = BOT_IDLE
 	last_found = world.time
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/firebot/set_custom_texts()
 	text_hack = "You corrupt [name]'s safety protocols."
@@ -127,7 +149,7 @@
 		audible_message("<span class='danger'>[src] buzzes oddly!</span>")
 		playsound(src, "sparks", 75, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		if(user)
-			old_target_fire = user
+			old_target_fire_ref = WEAKREF(user)
 		extinguish_fires = FALSE
 		extinguish_people = TRUE
 
@@ -152,7 +174,7 @@
 			stationary_mode = !stationary_mode
 
 	update_controls()
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/firebot/proc/is_burning(atom/target)
 	if(ismob(target))
@@ -162,7 +184,7 @@
 
 	else if(isturf(target))
 		var/turf/open/T = target
-		if(T.active_hotspot)
+		if(T.active_hotspot || T.turf_fire)
 			return TRUE
 
 	return FALSE
@@ -172,12 +194,12 @@
 		return
 
 	if(IsStun() || IsParalyzed())
-		old_target_fire = target_fire
-		target_fire = null
+		old_target_fire_ref = target_fire_ref
+		target_fire_ref = null
 		mode = BOT_IDLE
 		return
 
-	if(prob(1) && target_fire == null)
+	if(prob(1) && !target_fire_ref)
 		var/list/messagevoice = list("No fires detected." = 'sound/voice/firebot/nofires.ogg',
 		"Only you can prevent station fires." = 'sound/voice/firebot/onlyyou.ogg',
 		"Temperature nominal." = 'sound/voice/firebot/tempnominal.ogg',
@@ -188,24 +210,39 @@
 
 	// Couldn't reach the target, reset and try again ignoring the old one
 	if(frustration > 8)
-		old_target_fire = target_fire
+		old_target_fire_ref = target_fire_ref
 		soft_reset()
+
+	var/atom/target_fire = target_fire_ref?.resolve()
 
 	// We extinguished our target or it was deleted
 	if(QDELETED(target_fire) || !is_burning(target_fire) || isdead(target_fire))
 		target_fire = null
+		target_fire_ref = null
 		var/scan_range = (stationary_mode ? 1 : DEFAULT_SCAN_RANGE)
+		var/old_target_fire = old_target_fire_ref?.resolve()
 
 		if(extinguish_people)
 			target_fire = scan(/mob/living, old_target_fire, scan_range) // Scan for burning humans first
+			target_fire_ref = WEAKREF(target_fire)
 
-		if(target_fire == null && extinguish_fires)
+		if(!target_fire && extinguish_fires)
 			target_fire = scan(/turf/open, old_target_fire, scan_range) // Scan for burning turfs second
+			target_fire_ref = WEAKREF(target_fire)
 
-		old_target_fire = target_fire
+		old_target_fire_ref = target_fire_ref
+
+	if(!target_fire)
+		if(auto_patrol)
+			if(mode == BOT_IDLE || mode == BOT_START_PATROL)
+				start_patrol()
+
+			if(mode == BOT_PATROL)
+				bot_patrol()
+		return
 
 	// Target reached ENGAGE WATER CANNON
-	if(target_fire && (get_dist(src, target_fire) <= (emagged == 2 ? 1 : 2))) // Make the bot spray water from afar when not emagged
+	if(get_dist(src, target_fire) <= (emagged == 2 ? 1 : 2)) // Make the bot spray water from afar when not emagged
 		if((speech_cooldown + SPEECH_INTERVAL) < world.time)
 			if(ishuman(target_fire))
 				speak("Stop, drop and roll!")
@@ -221,38 +258,31 @@
 		soft_reset()
 
 	// Target ran away
-	else if(target_fire && path.len && (get_dist(target_fire,path[path.len]) > 2))
+	else if(length(path) && (get_dist(target_fire, path[length(path)]) > 2))
 		path = list()
 		mode = BOT_IDLE
 		last_found = world.time
 
-	else if(target_fire && stationary_mode)
+	else if(stationary_mode)
 		soft_reset()
 		return
 
-	if(target_fire && (get_dist(src, target_fire) > 2))
+	if(get_dist(src, target_fire) > 2)
 
 		path = get_path_to(src, get_turf(target_fire), /turf/proc/Distance_cardinal, 0, 30, 1, id=access_card)
 		mode = BOT_MOVING
-		if(!path.len)
+		if(!length(path))
 			soft_reset()
 
-	if(path.len > 0 && target_fire)
+	if(length(path))
 		if(!bot_move(path[path.len]))
-			old_target_fire = target_fire
+			old_target_fire_ref = target_fire_ref
 			soft_reset()
 		return
 
 	// We got a target but it's too far away from us
-	if(path.len > 8 && target_fire)
+	if(length(path) > 8)
 		frustration++
-
-	if(auto_patrol && !target_fire)
-		if(mode == BOT_IDLE || mode == BOT_START_PATROL)
-			start_patrol()
-
-		if(mode == BOT_PATROL)
-			bot_patrol()
 
 
 //Look for burning people or turfs around the bot
@@ -272,7 +302,7 @@
 	return result
 
 /mob/living/simple_animal/bot/firebot/temperature_expose(datum/gas_mixture/air, temperature, volume)
-	if((temperature > T0C + 200 || temperature < BODYTEMP_COLD_DAMAGE_LIMIT) && foam_cooldown + FOAM_INTERVAL < world.time)
+	if((temperature > T0C + 200 || temperature < HUMAN_BODYTEMP_COLD_DAMAGE_LIMIT) && foam_cooldown + FOAM_INTERVAL < world.time)
 		new /obj/effect/particle_effect/foam/firefighting(loc)
 		foam_cooldown = world.time
 	..()
@@ -284,17 +314,18 @@
 		flick("firebot1_use", user)
 	internal_ext.afterattack(target, user, null)
 
-/mob/living/simple_animal/bot/firebot/update_icon()
+/mob/living/simple_animal/bot/firebot/update_icon_state()
+	. = ..()
 	if(!on)
 		icon_state = "firebot0"
 		return
 	if(IsStun() || IsParalyzed())
 		icon_state = "firebots1"
+		return
 	else if(stationary_mode) //Bot has yellow light to indicate stationary mode.
 		icon_state = "firebots1"
-	else
-		icon_state = "firebot1"
-
+		return
+	icon_state = "firebot1"
 
 /mob/living/simple_animal/bot/firebot/explode()
 	on = FALSE

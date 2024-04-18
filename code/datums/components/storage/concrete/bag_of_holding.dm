@@ -5,13 +5,13 @@
 	var/list/obj/item/storage/backpack/holding/matching = typecache_filter_list(W.GetAllContents(), typecacheof(/obj/item/storage/backpack/holding))
 	matching -= A
 	if(istype(W, /obj/item/storage/backpack/holding) || matching.len)
-		INVOKE_ASYNC(src, .proc/recursive_insertion, W, user)
+		INVOKE_ASYNC(src, PROC_REF(recursive_insertion), W, user)
 		return
 	. = ..()
 
 /datum/component/storage/concrete/bluespace/bag_of_holding/proc/recursive_insertion(obj/item/W, mob/living/user)
 	var/atom/A = parent
-	var/safety = alert(user, "Doing this will have extremely dire consequences for the station and its crew. Be sure you know what you're doing.", "Put in [A.name]?", "Proceed", "Abort")
+	var/safety = alert(user, "Doing this will have extremely dire consequences for yourself and anything nearby. Be sure you know what you're doing.", "Put in [A.name]?", "Proceed", "Abort")
 	if(safety != "Proceed" || QDELETED(A) || QDELETED(W) || QDELETED(user) || !user.canUseTopic(A, BE_CLOSE, iscarbon(user)))
 		return
 	var/turf/loccheck = get_turf(A)

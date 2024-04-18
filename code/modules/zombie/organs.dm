@@ -23,14 +23,14 @@
 	GLOB.zombie_infection_list -= src
 	. = ..()
 
-/obj/item/organ/zombie_infection/Insert(var/mob/living/carbon/M, special = 0)
+/obj/item/organ/zombie_infection/Insert(mob/living/carbon/M, special = 0)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
 /obj/item/organ/zombie_infection/Remove(mob/living/carbon/M, special = 0)
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	if(iszombie(M) && old_species)
+	if(iszombie(M) && old_species && !QDELETED(M) && !special)
 		M.set_species(old_species)
 	if(timer_id)
 		deltimer(timer_id)
@@ -53,8 +53,6 @@
 			to_chat(owner, "<span class='danger'>You feel sick...</span>")
 	if(timer_id)
 		return
-	if(owner.suiciding)
-		return
 	if(owner.stat != DEAD && !converts_living)
 		return
 	if(!owner.getorgan(/obj/item/organ/brain))
@@ -65,9 +63,9 @@
 		not even death can stop, you will rise again!</span>")
 	var/revive_time = rand(revive_time_min, revive_time_max)
 	var/flags = TIMER_STOPPABLE
-	timer_id = addtimer(CALLBACK(src, .proc/zombify), revive_time, flags)
+	timer_id = addtimer(CALLBACK(src, PROC_REF(zombify), owner), revive_time, flags)
 
-/obj/item/organ/zombie_infection/proc/zombify()
+/obj/item/organ/zombie_infection/proc/zombify(mob/living/carbon/C)
 	timer_id = null
 
 	if(!converts_living && owner.stat != DEAD)
@@ -75,24 +73,24 @@
 
 	if(!iszombie(owner))
 		old_species = owner.dna.species.type
-		owner.set_species(/datum/species/zombie/infectious)
+		C.set_species(/datum/species/zombie/infectious)
 
-	var/stand_up = (owner.stat == DEAD) || (owner.stat == UNCONSCIOUS)
+	var/stand_up = (C.stat == DEAD) || (C.stat == UNCONSCIOUS)
 
 	//Fully heal the zombie's damage the first time they rise
-	owner.setToxLoss(0, 0)
-	owner.setOxyLoss(0, 0)
-	owner.heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE)
+	C.setToxLoss(0, 0)
+	C.setOxyLoss(0, 0)
+	C.heal_overall_damage(INFINITY, INFINITY, INFINITY, null, TRUE)
 
-	if(!owner.revive(full_heal = FALSE, admin_revive = FALSE))
+	if(!C.revive())
 		return
 
-	owner.grab_ghost()
-	owner.visible_message("<span class='danger'>[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!</span>", "<span class='alien'>You HUNGER!</span>")
-	playsound(owner.loc, 'sound/hallucinations/far_noise.ogg', 50, TRUE)
-	owner.do_jitter_animation(living_transformation_time)
-	owner.Stun(living_transformation_time)
-	to_chat(owner, "<span class='alertalien'>You are now a zombie! Do not seek to be cured, do not help any non-zombies in any way, do not harm your zombie brethren and spread the disease by killing others. You are a creature of hunger and violence.</span>")
+	C.grab_ghost()
+	C.visible_message("<span class='danger'>[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!</span>", "<span class='alien'>You HUNGER!</span>")
+	playsound(C.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
+	C.do_jitter_animation(living_transformation_time)
+	C.Stun(living_transformation_time)
+	to_chat(C, "<span class='alertalien'>You are now a zombie! Do not seek to be cured, do not help any non-zombies in any way, do not harm your zombie brethren and spread the disease by killing others. You are a creature of hunger and violence.</span>")
 
 /obj/item/organ/zombie_infection/nodamage
 	causes_damage = FALSE

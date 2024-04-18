@@ -47,14 +47,14 @@
 
 	if(teleporter)
 		data["teleporter"] = teleporter
-		data["teleporter_location"] = "([teleporter.x], [teleporter.y], [teleporter.get_virtual_z_level()])"
+		data["teleporter_location"] = "([teleporter.x], [teleporter.y], [teleporter.virtual_z()])"
 		data["teleporter_lock"] = teleporter.locked
 		data["teleporter_state_open"] = teleporter.state_open
 	else
 		data["teleporter"] = null
 	if(beacon)
 		data["beacon"] = beacon
-		data["beacon_location"] = "([beacon.x], [beacon.y], [beacon.get_virtual_z_level()])"
+		data["beacon_location"] = "([beacon.x], [beacon.y], [beacon.virtual_z()])"
 	else
 		data["beacon"] = null
 	if(contained_id)
@@ -112,7 +112,7 @@
 		if("teleport")
 			if(!teleporter || !beacon)
 				return
-			addtimer(CALLBACK(src, .proc/teleport, usr), 5)
+			addtimer(CALLBACK(src, PROC_REF(teleport), usr), 5)
 			return TRUE
 
 /obj/machinery/computer/prisoner/gulag_teleporter_computer/proc/scan_machinery()
@@ -124,7 +124,7 @@
 
 	for(var/direction in GLOB.cardinals)
 		teleporterf = locate(/obj/machinery/gulag_teleporter, get_step(src, direction))
-		if(teleporterf && teleporterf.is_operational())
+		if(teleporterf?.is_operational)
 			return teleporterf
 
 /obj/machinery/computer/prisoner/gulag_teleporter_computer/proc/findbeacon()

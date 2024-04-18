@@ -4,12 +4,12 @@
 	desc = "A flying cleaning robot, he'll chase down people who can't shower properly!"
 	icon = 'icons/obj/watercloset.dmi'
 	icon_state = "drone"
+	base_icon_state = "hygienebot"
 	density = FALSE
 	anchored = FALSE
 	health = 100
 	maxHealth = 100
-	radio_key = /obj/item/encryptionkey/headset_service
-	radio_channel = RADIO_CHANNEL_SERVICE //Service
+	radio_key = /obj/item/encryptionkey
 	bot_type = HYGIENE_BOT
 	model = "Cleanbot"
 	bot_core_type = /obj/machinery/bot_core/hygienebot
@@ -32,7 +32,7 @@
 
 /mob/living/simple_animal/bot/hygienebot/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 	var/datum/job/janitor/J = new/datum/job/janitor
 	access_card.access += J.get_access()
 	prev_access = access_card.access
@@ -51,7 +51,7 @@
 	if(washing)
 		do_wash(AM)
 
-/mob/living/simple_animal/bot/hygienebot/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/hygienebot/on_entered(datum/source, atom/movable/AM)
 	. = ..()
 	if(washing)
 		do_wash(AM)
@@ -86,12 +86,6 @@
 	oldtarget_name = null
 	walk_to(src,0)
 	last_found = world.time
-
-
-/mob/living/simple_animal/bot/hygienebot/Crossed(atom/movable/AM)
-	. = ..()
-	if(washing)
-		do_wash(AM)
 
 /mob/living/simple_animal/bot/hygienebot/Moved()
 	. = ..()
@@ -181,13 +175,13 @@
 	frustration = 0
 	last_found = world.time
 	stop_washing()
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 
 /mob/living/simple_animal/bot/hygienebot/proc/back_to_hunt()
 	frustration = 0
 	mode = BOT_HUNT
 	stop_washing()
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 
 /mob/living/simple_animal/bot/hygienebot/proc/look_for_lowhygiene()
 	for (var/mob/living/carbon/human/H in view(7,src)) //Find the NEET
@@ -200,18 +194,18 @@
 			playsound(loc, 'sound/effects/hygienebot_happy.ogg', 60, 1)
 			visible_message("<b>[src]</b> points at [H.name]!")
 			mode = BOT_HUNT
-			INVOKE_ASYNC(src, .proc/handle_automated_action)
+			INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 			break
 		else
 			continue
 
 /mob/living/simple_animal/bot/hygienebot/proc/start_washing()
 	washing = TRUE
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/hygienebot/proc/stop_washing()
 	washing = FALSE
-	update_icon()
+	update_appearance()
 
 
 
@@ -247,7 +241,6 @@ Maintenance panel is [open ? "opened" : "closed"]"}
 		return //lol pranked no cleaning besides that
 	else
 		A.wash(CLEAN_WASH)
-
 
 
 /obj/machinery/bot_core/hygienebot

@@ -4,17 +4,17 @@
 #define AOE_SQUARES 4
 
 /**
-  * # Pandora
-  *
-  * A box with a similar design to the Hierophant which trades large, single attacks for more frequent smaller ones.
-  * As it's health gets lower, the time between it's attacks decrease.
-  * It's attacks are as follows:
-  * - Fires hierophant blasts in a straight line.  Can only fire in a straight line in 8 directions, being the diagonals and cardinals.
-  * - Creates a box of hierophant blasts around the target.  If they try to run away to avoid it, they'll very likely get hit.
-  * - Teleports the pandora from one location to another, almost identical to Hierophant.
-  * - Spawns a 5x5 AOE at the location of choice, spreading out from the center.
-  * Pandora's fight mirrors Hierophant's closely, but has stark differences in attack effects.  Instead of long-winded dodge times and long cooldowns, Pandora constantly attacks the opponent, but leaves itself open for attack.
-  */
+ * # Pandora
+ *
+ * A box with a similar design to the Hierophant which trades large, single attacks for more frequent smaller ones.
+ * As it's health gets lower, the time between it's attacks decrease.
+ * It's attacks are as follows:
+ * - Fires hierophant blasts in a straight line.  Can only fire in a straight line in 8 directions, being the diagonals and cardinals.
+ * - Creates a box of hierophant blasts around the target.  If they try to run away to avoid it, they'll very likely get hit.
+ * - Teleports the pandora from one location to another, almost identical to Hierophant.
+ * - Spawns a 5x5 AOE at the location of choice, spreading out from the center.
+ * Pandora's fight mirrors Hierophant's closely, but has stark differences in attack effects.  Instead of long-winded dodge times and long cooldowns, Pandora constantly attacks the opponent, but leaves itself open for attack.
+ */
 
 /mob/living/simple_animal/hostile/asteroid/elite/pandora
 	name = "pandora"
@@ -47,6 +47,10 @@
 
 	var/sing_shot_length = 8
 	var/cooldown_time = 20
+	var/dungeon = FALSE //if true then will open gates on death
+
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/dungeon
+	dungeon = TRUE
 
 /datum/action/innate/elite_attack/singular_shot
 	name = "Singular Shot"
@@ -112,13 +116,13 @@
 	var/turf/T = get_step(get_turf(src), dir_to_target)
 	singular_shot_line(sing_shot_length, dir_to_target, T)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/singular_shot_line(var/procsleft, var/angleused, var/turf/T)
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/singular_shot_line(procsleft, angleused, turf/T)
 	if(procsleft <= 0)
 		return
 	new /obj/effect/temp_visual/hierophant/blast/pandora(T, src)
 	T = get_step(T, angleused)
 	procsleft = procsleft - 1
-	addtimer(CALLBACK(src, .proc/singular_shot_line, procsleft, angleused, T), 2)
+	addtimer(CALLBACK(src, PROC_REF(singular_shot_line), procsleft, angleused, T), 2)
 
 /mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/magic_box(target)
 	ranged_cooldown = world.time + cooldown_time
@@ -134,9 +138,9 @@
 	new /obj/effect/temp_visual/hierophant/telegraph(T, src)
 	new /obj/effect/temp_visual/hierophant/telegraph(source, src)
 	playsound(source,'sound/machines/airlockopen.ogg', 200, 1)
-	addtimer(CALLBACK(src, .proc/pandora_teleport_2, T, source), 2)
+	addtimer(CALLBACK(src, PROC_REF(pandora_teleport_2), T, source), 2)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/pandora_teleport_2(var/turf/T, var/turf/source)
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/pandora_teleport_2(turf/T, turf/source)
 	new /obj/effect/temp_visual/hierophant/telegraph/teleport(T, src)
 	new /obj/effect/temp_visual/hierophant/telegraph/teleport(source, src)
 	for(var/t in RANGE_TURFS(1, T))
@@ -146,9 +150,9 @@
 	animate(src, alpha = 0, time = 2, easing = EASE_OUT) //fade out
 	visible_message("<span class='hierophant_warning'>[src] fades out!</span>")
 	density = FALSE
-	addtimer(CALLBACK(src, .proc/pandora_teleport_3, T), 2)
+	addtimer(CALLBACK(src, PROC_REF(pandora_teleport_3), T), 2)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/pandora_teleport_3(var/turf/T)
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/pandora_teleport_3(turf/T)
 	forceMove(T)
 	animate(src, alpha = 255, time = 2, easing = EASE_IN) //fade IN
 	density = TRUE
@@ -159,15 +163,24 @@
 	var/turf/T = get_turf(target)
 	new /obj/effect/temp_visual/hierophant/blast/pandora(T, src)
 	var/max_size = 2
-	addtimer(CALLBACK(src, .proc/aoe_squares_2, T, 0, max_size), 2)
+	addtimer(CALLBACK(src, PROC_REF(aoe_squares_2), T, 0, max_size), 2)
 
-/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/aoe_squares_2(var/turf/T, var/ring, var/max_size)
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/proc/aoe_squares_2(turf/T, ring, max_size)
 	if(ring > max_size)
 		return
 	for(var/t in spiral_range_turfs(ring, T))
 		if(get_dist(t, T) == ring)
 			new /obj/effect/temp_visual/hierophant/blast/pandora(t, src)
-	addtimer(CALLBACK(src, .proc/aoe_squares_2, T, (ring + 1), max_size), 2)
+	addtimer(CALLBACK(src, PROC_REF(aoe_squares_2), T, (ring + 1), max_size), 2)
+
+/mob/living/simple_animal/hostile/asteroid/elite/pandora/death()
+	//open all pandora gates
+	if(dungeon)
+		for(var/obj/machinery/door/poddoor/D in GLOB.machines)
+			if(D.id == "pandora_dead")
+				D.open()
+
+	..()
 
 //The specific version of hiero's squares pandora uses
 /obj/effect/temp_visual/hierophant/blast/pandora
@@ -181,6 +194,7 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "hope"
 	resistance_flags = FIRE_PROOF
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
 
 /obj/item/clothing/accessory/pandora_hope/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user

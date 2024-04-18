@@ -15,7 +15,7 @@
 /obj/structure/statue/Initialize()
 	. = ..()
 	AddComponent(art_type, impressiveness)
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, impressiveness *  75)), 0)
+	AddElement(/datum/element/beauty, impressiveness * 75)
 
 /obj/structure/statue/attackby(obj/item/W, mob/living/user, params)
 	add_fingerprint(user)
@@ -297,6 +297,5 @@
 
 /obj/structure/statue/bronze/marx
 	name = "\improper Karl Marx bust"
-	desc = "A bust depicting a certain 19th century economist. You get the feeling a specter is haunting the station."
+	desc = "A bust depicting a certain 19th century economist. You get the feeling a specter is haunting the sector."
 	icon_state = "marx"
-	art_type = /datum/component/art/rev

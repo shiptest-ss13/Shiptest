@@ -219,40 +219,6 @@
 	desc = "Your biological functions have halted. You could live forever this way, but it's pretty boring."
 	icon_state = "stasis"
 
-//GOLEM GANG
-
-//OTHER DEBUFFS
-/datum/status_effect/strandling //get it, strand as in durathread strand + strangling = strandling hahahahahahahahahahhahahaha i want to die
-	id = "strandling"
-	status_type = STATUS_EFFECT_UNIQUE
-	alert_type = /atom/movable/screen/alert/status_effect/strandling
-
-/datum/status_effect/strandling/on_apply()
-	ADD_TRAIT(owner, TRAIT_MAGIC_CHOKE, "dumbmoron")
-	return ..()
-
-/datum/status_effect/strandling/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_MAGIC_CHOKE, "dumbmoron")
-	return ..()
-
-/atom/movable/screen/alert/status_effect/strandling
-	name = "Choking strand"
-	desc = "A magical strand of Durathread is wrapped around your neck, preventing you from breathing! Click this icon to remove the strand."
-	icon_state = "his_grace"
-	alerttooltipstyle = "hisgrace"
-
-/atom/movable/screen/alert/status_effect/strandling/Click(location, control, params)
-	. = ..()
-	if(usr != owner)
-		return
-	to_chat(owner, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
-	if(do_after(owner, 35, null, owner))
-		if(isliving(owner))
-			var/mob/living/L = owner
-			to_chat(owner, "<span class='notice'>You succesfuly remove the durathread strand.</span>")
-			L.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
-
-
 /datum/status_effect/pacify/on_creation(mob/living/new_owner, set_duration)
 	if(isnum(set_duration))
 		duration = set_duration
@@ -284,26 +250,6 @@
 
 /datum/status_effect/pacify/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
-
-/datum/status_effect/his_wrath //does minor damage over time unless holding His Grace
-	id = "his_wrath"
-	duration = -1
-	tick_interval = 4
-	alert_type = /atom/movable/screen/alert/status_effect/his_wrath
-
-/atom/movable/screen/alert/status_effect/his_wrath
-	name = "His Wrath"
-	desc = "You fled from His Grace instead of feeding Him, and now you suffer."
-	icon_state = "his_grace"
-	alerttooltipstyle = "hisgrace"
-
-/datum/status_effect/his_wrath/tick()
-	for(var/obj/item/his_grace/HG in owner.held_items)
-		qdel(src)
-		return
-	owner.adjustBruteLoss(0.1)
-	owner.adjustFireLoss(0.1)
-	owner.adjustToxLoss(0.2, TRUE, TRUE)
 
 /datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
 	id = "cult_ghost"
@@ -528,9 +474,9 @@
 /datum/status_effect/trance/on_apply()
 	if(!iscarbon(owner))
 		return FALSE
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
+	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, PROC_REF(hypnotize))
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
-	owner.add_client_colour(/datum/client_colour/monochrome/trance)
+	owner.add_client_colour(/datum/client_colour/monochrome)
 	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.</span>" : ""]", \
 	"<span class='warning'>[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]</span>")
 	return TRUE
@@ -544,7 +490,7 @@
 	UnregisterSignal(owner, COMSIG_MOVABLE_HEAR)
 	REMOVE_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.dizziness = 0
-	owner.remove_client_colour(/datum/client_colour/monochrome/trance)
+	owner.remove_client_colour(/datum/client_colour/monochrome)
 	to_chat(owner, "<span class='warning'>You snap out of your trance!</span>")
 
 /datum/status_effect/trance/proc/hypnotize(datum/source, list/hearing_args)
@@ -556,8 +502,8 @@
 		return
 	var/mob/living/carbon/C = owner
 	C.cure_trauma_type(/datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY) //clear previous hypnosis
-	addtimer(CALLBACK(C, /mob/living/carbon.proc/gain_trauma, /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hearing_args[HEARING_RAW_MESSAGE]), 10)
-	addtimer(CALLBACK(C, /mob/living.proc/Stun, 60, TRUE, TRUE), 15) //Take some time to think about it
+	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, gain_trauma), /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hearing_args[HEARING_RAW_MESSAGE]), 10)
+	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living, Stun), 60, TRUE, TRUE), 15) //Take some time to think about it
 	qdel(src)
 
 /datum/status_effect/spasms
@@ -727,3 +673,40 @@
 		to_chat(owner, fake_msg)
 
 	msg_stage++
+
+/datum/status_effect/metab_frozen
+	id = "metab_frozen"
+	duration = 5 SECONDS
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = null
+
+/datum/status_effect/metab_frozen/on_apply()
+	. = ..()
+	ADD_TRAIT(owner, TRAIT_NOMETABOLISM, "[STATUS_EFFECT_TRAIT]_[id]")
+
+/datum/status_effect/metab_frozen/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_NOMETABOLISM, "[STATUS_EFFECT_TRAIT]_[id]")
+
+/datum/status_effect/stagger
+	id = "stagger"
+	status_type = STATUS_EFFECT_REFRESH
+	duration = 30 SECONDS
+	tick_interval = 1 SECONDS
+	alert_type = null
+
+/datum/status_effect/stagger/on_apply()
+	owner.next_move_modifier *= 1.5
+	if(ishostile(owner))
+		var/mob/living/simple_animal/hostile/simple_owner = owner
+		simple_owner.ranged_cooldown_time *= 2.5
+	return TRUE
+
+/datum/status_effect/stagger/on_remove()
+	. = ..()
+	if(QDELETED(owner))
+		return
+	owner.next_move_modifier /= 1.5
+	if(ishostile(owner))
+		var/mob/living/simple_animal/hostile/simple_owner = owner
+		simple_owner.ranged_cooldown_time /= 2.5

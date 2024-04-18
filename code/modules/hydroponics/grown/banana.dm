@@ -27,19 +27,6 @@
 	juice_results = list(/datum/reagent/consumable/banana = 0)
 	distill_reagent = /datum/reagent/consumable/ethanol/bananahonk
 
-/obj/item/reagent_containers/food/snacks/grown/banana/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is aiming [src] at [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/items/bikehorn.ogg', 50, TRUE, -1)
-	sleep(25)
-	if(!user)
-		return (OXYLOSS)
-	user.say("BANG!", forced = /datum/reagent/consumable/banana)
-	sleep(25)
-	if(!user)
-		return (OXYLOSS)
-	user.visible_message("<B>[user]</B> laughs so hard they begin to suffocate!")
-	return (OXYLOSS)
-
 //Banana Peel
 /obj/item/grown/bananapeel
 	seed = /obj/item/seeds/banana
@@ -62,12 +49,6 @@
 		else
 			icon_state = "[icon_state]_3"
 
-/obj/item/grown/bananapeel/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is deliberately slipping on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/misc/slip.ogg', 50, TRUE, -1)
-	return (BRUTELOSS)
-
-
 // Mimana - invisible sprites are totally a feature!
 /obj/item/seeds/banana/mime
 	name = "pack of mimana seeds"
@@ -80,6 +61,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nothing = 0.1, /datum/reagent/toxin/mutetoxin = 0.1, /datum/reagent/consumable/nutriment = 0.02)
 	rarity = 15
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/banana/mime
 	seed = /obj/item/seeds/banana/mime
@@ -110,6 +92,7 @@
 	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/teleport, /datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/bluespace = 0.2, /datum/reagent/consumable/banana = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.02)
 	rarity = 30
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/banana/bluespace
 	seed = /obj/item/seeds/banana/bluespace

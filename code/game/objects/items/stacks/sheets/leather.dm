@@ -38,6 +38,14 @@ GLOBAL_LIST_INIT(gondola_recipes, list ( \
 	new/datum/stack_recipe("gondola suit", /obj/item/clothing/under/costume/gondola, 2), \
 	))
 
+/obj/item/stack/sheet/animalhide/mothroach
+	name = "mothroach hide"
+	desc = "A thin layer of mothroach hide."
+	singular_name = "mothroach hide piece"
+	icon_state = "sheet-mothroach"
+	item_state = "sheet-mothroach"
+	merge_type = /obj/item/stack/sheet/animalhide/mothroach
+
 /obj/item/stack/sheet/animalhide/gondola
 	name = "gondola hide"
 	desc = "The extremely valuable product of gondola hunting."
@@ -212,6 +220,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 	icon_state = "polar_bear_hide"
 	singular_name = "polar bear hide"
 	merge_type = /obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide
+	grind_results = list(/datum/reagent/polar_bear_fur = 20)
 
 /obj/item/stack/sheet/animalhide/ashdrake
 	name = "ash drake hide"

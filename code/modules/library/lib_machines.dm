@@ -17,10 +17,11 @@
 /obj/machinery/computer/libraryconsole
 	name = "library visitor console"
 	icon_state = "oldcomp"
-	icon_screen = "library"
+	icon_screen = "oldcomp_library"
 	icon_keyboard = null
 	circuit = /obj/item/circuitboard/computer/libraryconsole
 	desc = "Checked out books MUST be returned on time."
+	unique_icon = TRUE
 	var/screenstate = 0
 	var/title
 	var/category = "Any"
@@ -200,9 +201,10 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 	pass_flags = PASSTABLE
 
 	icon_state = "oldcomp"
-	icon_screen = "library"
+	icon_screen = "oldcomp_library"
 	icon_keyboard = null
 	circuit = /obj/item/circuitboard/computer/libraryconsole
+	unique_icon = TRUE
 
 	var/screenstate = 0 // 0 - Main Menu, 1 - Inventory, 2 - Checked Out, 3 - Check Out a Book
 
@@ -339,7 +341,6 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 			dat += "<h3>NTGanda(tm) Universal Printing Module</h3>"
 			dat += "What would you like to print?<BR>"
 			dat += "<A href='?src=[REF(src)];printbible=1'>\[Bible\]</A><BR>"
-			dat += "<A href='?src=[REF(src)];printposter=1'>\[Poster\]</A><BR>"
 			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
 		if(8)
 			dat += "<h3>Accessing Forbidden Lore Vault v 1.3</h3>"
@@ -508,6 +509,7 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 					B.dat = content
 					B.icon_state = "book[rand(1,8)]"
 					visible_message("<span class='notice'>[src]'s printer hums as it produces a completely bound book. How did it do that?</span>")
+					log_paper("[key_name(usr)] has printed \"[title]\" (id: [id]) by [author] from a book management console.")
 				break
 			qdel(query_library_print)
 	if(href_list["printbible"])
@@ -518,12 +520,6 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 				B.item_state = GLOB.bible_item_state
 				B.name = GLOB.bible_name
 				B.deity_name = GLOB.deity
-			cooldown = world.time + PRINTER_COOLDOWN
-		else
-			say("Printer currently unavailable, please wait a moment.")
-	if(href_list["printposter"])
-		if(cooldown < world.time)
-			new /obj/item/poster/random_official(src.loc)
 			cooldown = world.time + PRINTER_COOLDOWN
 		else
 			say("Printer currently unavailable, please wait a moment.")
@@ -623,7 +619,7 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 		if(!machine_stat)
 			visible_message("<span class='notice'>[src] whirs as it prints and binds a new book.</span>")
 			var/obj/item/book/B = new(src.loc)
-			B.dat = P.info
+			B.dat = P.get_raw_text()
 			B.name = "Print Job #" + "[rand(100, 999)]"
 			B.icon_state = "book[rand(1,7)]"
 			qdel(P)

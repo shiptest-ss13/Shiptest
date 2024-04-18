@@ -1,17 +1,16 @@
 /**
-  * The mob, usually meant to be a creature of some type
-  *
-  * Has a client attached that is a living person (most of the time), although I have to admit
-  * sometimes it's hard to tell they're sentient
-  *
-  * Has a lot of the creature game world logic, such as health etc
-  */
+ * The mob, usually meant to be a creature of some type
+ *
+ * Has a client attached that is a living person (most of the time), although I have to admit
+ * sometimes it's hard to tell they're sentient
+ *
+ * Has a lot of the creature game world logic, such as health etc
+ */
 /mob
 	datum_flags = DF_USE_TAG
 	density = TRUE
 	layer = MOB_LAYER
 	animate_movement = SLIDE_STEPS
-	flags_1 = HEAR_1
 	hud_possible = list(ANTAG_HUD)
 	pressure_resistance = 8
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
@@ -52,7 +51,6 @@
 	/// The zone this mob is currently targeting
 	var/zone_selected = BODY_ZONE_CHEST
 
-	var/computer_id = null
 	var/list/logging = list()
 
 	/// The machine the mob is interacting with (this is very bad old code btw)
@@ -89,7 +87,7 @@
 	var/name_archive //For admin things like possession
 
 	/// Default body temperature
-	var/bodytemperature = BODYTEMP_NORMAL	//310.15K / 98.6F
+	var/bodytemperature = HUMAN_BODYTEMP_NORMAL	//310.15K / 98.6F
 	/// Drowsyness level of the mob
 	var/drowsyness = 0//Carbon
 	/// Dizziness level of the mob
@@ -110,9 +108,6 @@
 	var/list/possible_a_intents = null//Living
 	/// The movement intent of the mob (run/wal)
 	var/m_intent = MOVE_INTENT_RUN//Living
-
-	/// The last known IP of the client who was in this mob
-	var/lastKnownIP = null
 
 	/// movable atom we are buckled to
 	var/atom/movable/buckled = null//Living
@@ -141,11 +136,11 @@
 	var/datum/component/storage/active_storage
 	/// Active hud
 	var/datum/hud/hud_used = null
-	/// I have no idea tbh
+	/// It allows for scientific knowledge to be imparted (e.g. blob strain, if an object has research value, if it boosts a technode)
 	var/research_scanner = FALSE
 
 	/// Is the mob throw intent on
-	var/in_throw_mode = 0
+	var/throw_mode = THROW_MODE_DISABLED
 
 	/// What job does this mob have
 	var/job = null//Living
@@ -156,8 +151,8 @@
 	/// Can this mob enter shuttles
 	var/move_on_shuttle = 1
 
-	///The last mob/living/carbon to push/drag/grab this mob (exclusively used by slimes friend recognition)
-	var/mob/living/carbon/LAssailant = null
+	///A weakref to the last mob/living/carbon to push/drag/grab this mob (exclusively used by slimes friend recognition)
+	var/datum/weakref/LAssailant = null
 
 	/**
 	* construct spells and mime spells.
@@ -196,18 +191,13 @@
 	///List of progress bars this mob is currently seeing for actions
 	var/list/progressbars = null	//for stacking do_after bars
 
-	//WS Begin - Holy fuck work for spacepods
-	var/list/mousemove_intercept_objects
-	//WS End
-
 	///For storing what do_after's someone has, in case we want to restrict them to only one of a certain do_after at a time
 	var/list/do_afters
 
 	///Allows a datum to intercept all click calls this mob is the source of
 	var/datum/click_intercept
 
-	///THe z level this mob is currently registered in
-	var/registered_z = null
+	var/registered_virtual_z
 
 	var/memory_throttle_time = 0
 
@@ -231,3 +221,12 @@
 
 	/// Whether the typing indicator is on. Not on /living level because of verbs
 	var/typing_indicator = FALSE
+
+	///Is the mob pixel shifted?
+	var/is_shifted
+
+	///Is the mob actively shifting?
+	var/shifting
+
+	/// Takes the four cardinal direction defines. Any atoms moving into this atom's tile will be allowed to from the added directions.
+	var/passthroughable = NONE

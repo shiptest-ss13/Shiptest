@@ -275,7 +275,7 @@
 		</div>
 
 	"}
-	for (var/i in 1 to 2 )
+	for (var/i in 1 to 2)
 		dat += {"
 			<div class="container-control">
 			<h4>

@@ -63,7 +63,7 @@
 
 /datum/antagonist/abductor/greet()
 	to_chat(owner.current, "<span class='notice'>You are the [owner.special_role]!</span>")
-	to_chat(owner.current, "<span class='notice'>With the help of your teammate, kidnap and experiment on station crew members!</span>")
+	to_chat(owner.current, "<span class='notice'>With the help of your teammate, kidnap and experiment on unsuspecting sapient lifeforms!</span>")
 	to_chat(owner.current, "<span class='notice'>[greet_text]</span>")
 	owner.announce_objectives()
 
@@ -112,7 +112,7 @@
 
 /datum/antagonist/abductor/get_admin_commands()
 	. = ..()
-	.["Equip"] = CALLBACK(src,.proc/admin_equip)
+	.["Equip"] = CALLBACK(src, PROC_REF(admin_equip))
 
 /datum/antagonist/abductor/proc/admin_equip(mob/admin)
 	if(!ishuman(owner.current))

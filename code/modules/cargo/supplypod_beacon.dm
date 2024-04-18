@@ -12,7 +12,7 @@
 	var/ready = FALSE
 	var/launched = FALSE
 
-/obj/item/supplypod_beacon/proc/update_status(var/consoleStatus)
+/obj/item/supplypod_beacon/proc/update_status(consoleStatus)
 	switch(consoleStatus)
 		if (SP_LINKED)
 			linked = TRUE
@@ -23,22 +23,25 @@
 			launched = TRUE
 			playsound(src,'sound/machines/triple_beep.ogg',50,FALSE)
 			playsound(src,'sound/machines/warning-buzzer.ogg',50,FALSE)
-			addtimer(CALLBACK(src, .proc/endLaunch), 33)//wait 3.3 seconds (time it takes for supplypod to land), then update icon
+			addtimer(CALLBACK(src, PROC_REF(endLaunch)), 33)//wait 3.3 seconds (time it takes for supplypod to land), then update icon
 		if (SP_UNLINK)
 			linked = FALSE
 			playsound(src,'sound/machines/synth_no.ogg',50,FALSE)
 		if (SP_UNREADY)
 			ready = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/item/supplypod_beacon/update_overlays()
 	. = ..()
-	if (launched)
+	if(launched)
 		. += "sp_green"
-	else if (ready)
+		return
+	if(ready)
 		. += "sp_yellow"
-	else if (linked)
+		return
+	if(linked)
 		. += "sp_orange"
+		return
 
 /obj/item/supplypod_beacon/proc/endLaunch()
 	launched = FALSE
@@ -71,7 +74,7 @@
 	express_console = C//set the linked console var to the console
 	express_console.beacon = src//out with the old in with the news
 	update_status(SP_LINKED)
-	if (express_console.usingBeacon)
+	if (express_console.use_beacon)
 		update_status(SP_READY)
 	to_chat(user, "<span class='notice'>[src] linked to [C].</span>")
 

@@ -3,11 +3,12 @@
 	desc = "95% Polyester, 5% Spandex!"
 	gender = PLURAL
 	body_parts_covered = GROIN
-	fitted = NO_FEMALE_UNIFORM
-	mutantrace_variation = MUTANTRACE_VARIATION
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/under/shorts_pants.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/shorts_pants.dmi'
+	greyscale_colors = list(list(16, 11), list(16, 10), list(16, 9))
+	greyscale_icon_state = "shorts"
 
 /obj/item/clothing/under/shorts/red
 	name = "red athletic shorts"
@@ -32,3 +33,8 @@
 /obj/item/clothing/under/shorts/purple
 	name = "purple athletic shorts"
 	icon_state = "purpleshorts"
+
+/obj/item/clothing/under/shorts/cookjorts
+	name = "grilling shorts"
+	desc = "For when all you want in life is to grill for god's sake!"
+	icon_state = "greyshorts"

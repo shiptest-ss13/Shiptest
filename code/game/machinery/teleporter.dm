@@ -7,6 +7,7 @@
 	name = "teleporter hub"
 	desc = "It's the hub of a teleporting machine."
 	icon_state = "tele0"
+	base_icon_state = "tele"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 2000
@@ -47,7 +48,7 @@
 	return power_station
 
 /obj/machinery/teleport/hub/Bumped(atom/movable/AM)
-	if(is_centcom_level(z))
+	if(is_centcom_level(src))
 		to_chat(AM, "<span class='warning'>You can't use this here!</span>")
 		return
 	if(is_ready())
@@ -57,7 +58,7 @@
 	if(default_deconstruction_screwdriver(user, "tele-o", "tele0", W))
 		if(power_station && power_station.engaged)
 			power_station.engaged = 0 //hub with panel open is off, so the station must be informed.
-			update_icon()
+			update_appearance()
 		return
 	if(default_deconstruction_crowbar(W))
 		return
@@ -72,7 +73,7 @@
 		visible_message("<span class='alert'>Cannot authenticate locked on coordinates. Please reinstate coordinate matrix.</span>")
 		return
 	if (ismovable(M))
-		if(do_teleport(M, com.target, channel = TELEPORT_CHANNEL_BLUESPACE))
+		if(do_teleport(M, com.target, channel = TELEPORT_CHANNEL_BLUESPACE, restrain_vlevel = FALSE))
 			use_power(5000)
 			if(!calibrated && prob(30 - ((accuracy) * 10))) //oh dear a problem
 				if(ishuman(M))//don't remove people from the round randomly you jerks
@@ -87,12 +88,8 @@
 	return
 
 /obj/machinery/teleport/hub/update_icon_state()
-	if(panel_open)
-		icon_state = "tele-o"
-	else if(is_ready())
-		icon_state = "tele1"
-	else
-		icon_state = "tele0"
+	icon_state = "[base_icon_state][panel_open ? "-o" : (is_ready() ? 1 : 0)]"
+	return ..()
 
 /obj/machinery/teleport/hub/proc/is_ready()
 	. = !panel_open && !(machine_stat & (BROKEN|NOPOWER)) && power_station && power_station.engaged && !(power_station.machine_stat & (BROKEN|NOPOWER))
@@ -107,6 +104,7 @@
 	name = "teleporter station"
 	desc = "The power control station for a bluespace teleporter. Used for toggling power, and can activate a test-fire to prevent malfunctions."
 	icon_state = "controller"
+	base_icon_state = "controller"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 10
 	active_power_usage = 2000
@@ -153,7 +151,7 @@
 /obj/machinery/teleport/station/Destroy()
 	if(teleporter_hub)
 		teleporter_hub.power_station = null
-		teleporter_hub.update_icon()
+		teleporter_hub.update_appearance()
 		teleporter_hub = null
 	if (teleporter_console)
 		teleporter_console.power_station = null
@@ -178,7 +176,7 @@
 					to_chat(user, "<span class='alert'>This station can't hold more information, try to use better parts.</span>")
 		return
 	else if(default_deconstruction_screwdriver(user, "controller-o", "controller", W))
-		update_icon()
+		update_appearance()
 		return
 
 	else if(default_deconstruction_crowbar(W))
@@ -190,7 +188,7 @@
 	toggle(user)
 
 /obj/machinery/teleport/station/proc/toggle(mob/user)
-	if(machine_stat & (BROKEN|NOPOWER) || !teleporter_hub || !teleporter_console )
+	if(machine_stat & (BROKEN|NOPOWER) || !teleporter_hub || !teleporter_console)
 		return
 	if (teleporter_console.target)
 		if(teleporter_hub.panel_open || teleporter_hub.machine_stat & (BROKEN|NOPOWER))
@@ -202,20 +200,23 @@
 	else
 		to_chat(user, "<span class='alert'>No target detected.</span>")
 		engaged = FALSE
-	teleporter_hub.update_icon()
+	teleporter_hub.update_appearance()
 	add_fingerprint(user)
 
 /obj/machinery/teleport/station/power_change()
 	. = ..()
 	if(teleporter_hub)
-		teleporter_hub.update_icon()
+		teleporter_hub.update_appearance()
 
 /obj/machinery/teleport/station/update_icon_state()
 	if(panel_open)
-		icon_state = "controller-o"
-	else if(machine_stat & (BROKEN|NOPOWER))
-		icon_state = "controller-p"
-	else if(teleporter_console && teleporter_console.calibrating)
-		icon_state = "controller-c"
-	else
-		icon_state = "controller"
+		icon_state = "[base_icon_state]-o"
+		return ..()
+	if(machine_stat & (BROKEN|NOPOWER))
+		icon_state = "[base_icon_state]-p"
+		return ..()
+	if(teleporter_console?.calibrating)
+		icon_state = "[base_icon_state]-c"
+		return ..()
+	icon_state = base_icon_state
+	return ..()

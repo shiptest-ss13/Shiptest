@@ -57,6 +57,8 @@
 ///In most cases you want a subsystem instead, so don't use this unless you have a good reason
 #define TIMER_LOOP (1<<5)
 
+///Delete the timer on parent datum Destroy() and when deltimer'd
+#define TIMER_DELETE_ME (1<<6)
 ///Empty ID define
 #define TIMER_ID_NULL -1
 
@@ -85,6 +87,9 @@
 ///Call qdel on the atom after intialization
 #define INITIALIZE_HINT_QDEL 2
 
+///Call qdel with a force of TRUE after initialization
+#define INITIALIZE_HINT_QDEL_FORCE 3
+
 ///type and all subtypes should always immediately call Initialize in New()
 #define INITIALIZE_IMMEDIATE(X) ##X/New(loc, ...){ \
 	..(); \
@@ -105,6 +110,7 @@
 #define INIT_ORDER_DBCORE 95
 #define INIT_ORDER_BLACKBOX 94
 #define INIT_ORDER_SERVER_MAINT 93
+#define INIT_ORDER_SPEECH_CONTROLLER 92
 #define INIT_ORDER_INPUT 85
 #define INIT_ORDER_SOUNDS 83
 #define INIT_ORDER_INSTRUMENTS 82
@@ -135,7 +141,6 @@
 #define INIT_ORDER_LIGHTING -20
 #define INIT_ORDER_SHUTTLE -21
 #define INIT_ORDER_OVERMAP -25
-#define INIT_ORDER_MINOR_MAPPING -40
 #define INIT_ORDER_PATH -50
 #define INIT_ORDER_DISCORD -60
 #define INIT_ORDER_EXPLOSIONS -69
@@ -147,10 +152,12 @@
 // Subsystem fire priority, from lowest to highest priority
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)
 
+#define FIRE_PRIORITY_PING 10
 #define FIRE_PRIORITY_IDLE_NPC 10
 #define FIRE_PRIORITY_SERVER_MAINT 10
 #define FIRE_PRIORITY_RESEARCH 10
 #define FIRE_PRIORITY_VIS 10
+#define FIRE_PRIORITY_AMBIENCE 10
 #define FIRE_PRIORITY_GARBAGE 15
 #define FIRE_PRIORITY_WET_FLOORS 20
 #define FIRE_PRIORITY_AIR 20
@@ -158,7 +165,6 @@
 #define FIRE_PRIORITY_PROCESS 25
 #define FIRE_PRIORITY_THROWING 25
 #define FIRE_PRIORITY_SPACEDRIFT 30
-#define FIRE_PRIORITY_FIELDS 30
 #define FIRE_PRIOTITY_SMOOTHING 35
 #define FIRE_PRIORITY_NETWORKS 40
 #define FIRE_PRIORITY_OBJ 40
@@ -171,12 +177,23 @@
 #define FIRE_PRIORITY_TGUI 110
 #define FIRE_PRIORITY_TICKER 200
 #define FIRE_PRIORITY_ATMOS_ADJACENCY 300
+#define FIRE_PRIORITY_STATPANEL 390
 #define FIRE_PRIORITY_CHAT 400
 #define FIRE_PRIORITY_RUNECHAT 410
+#define FIRE_PRIORITY_MOUSE_ENTERED 450
 #define FIRE_PRIORITY_OVERLAYS 500
 #define FIRE_PRIORITY_CALLBACKS 600
 #define FIRE_PRIORITY_EXPLOSIONS 666
+#define FIRE_PRIORITY_TIMER 700
+#define FIRE_PRIORITY_SOUND_LOOPS 800
+#define FIRE_PRIORITY_OVERMAP_MOVEMENT 850
+#define FIRE_PRIORITY_SPEECH_CONTROLLER 900
+#define FIRE_PRIORITY_DELAYED_VERBS 950
 #define FIRE_PRIORITY_INPUT 1000 // This must always always be the max highest priority. Player input must never be lost.
+
+//Pipeline rebuild helper defines, these suck but it'll do for now
+#define SSAIR_REBUILD_PIPELINE 1
+#define SSAIR_REBUILD_QUEUE 2
 
 // SS runlevels
 
@@ -188,7 +205,16 @@
 
 #define RUNLEVELS_DEFAULT (RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME)
 
-// SSair run section
+/**
+	Create a new timer and add it to the queue.
+	* Arguments:
+	* * callback the callback to call on timer finish
+	* * wait deciseconds to run the timer for
+	* * flags flags for this timer, see: code\__DEFINES\subsystems.dm
+*/
+#define addtimer(args...) _addtimer(args, file = __FILE__, line = __LINE__)
+
+// Air subsystem subtasks
 #define SSAIR_PIPENETS 1
 #define SSAIR_ATMOSMACHINERY 2
 #define SSAIR_EXCITEDGROUPS 3
@@ -211,11 +237,11 @@
 //! ## Overlays subsystem
 
 ///Compile all the overlays for an atom from the cache lists
+// |= on overlays is not actually guaranteed to not add same appearances but we're optimistically using it anyway.
 #define COMPILE_OVERLAYS(A) \
 	do{ \
 		var/list/ad = A.add_overlays; \
 		var/list/rm = A.remove_overlays; \
-		var/list/po = A.priority_overlays; \
 		if(LAZYLEN(rm)){ \
 			A.overlays -= rm; \
 			rm.Cut(); \
@@ -223,9 +249,6 @@
 		if(LAZYLEN(ad)){ \
 			A.overlays |= ad; \
 			ad.Cut(); \
-		} \
-		if(LAZYLEN(po)){ \
-			A.overlays |= po; \
 		} \
 		for(var/I in A.alternate_appearances){ \
 			var/datum/atom_hud/alternate_appearance/AA = A.alternate_appearances[I]; \
@@ -235,3 +258,16 @@
 		} \
 		A.flags_1 &= ~OVERLAY_QUEUED_1; \
 	}while(FALSE)
+
+// Vote subsystem counting methods
+/// First past the post. One selection per person, and the selection with the most votes wins.
+#define VOTE_COUNT_METHOD_SINGLE 1
+/// Approval voting. Any number of selections per person, and the selection with the most votes wins.
+#define VOTE_COUNT_METHOD_MULTI 2
+
+/// The choice with the most votes wins. Ties are broken by the first choice to reach that number of votes.
+#define VOTE_WINNER_METHOD_SIMPLE "Simple"
+/// The winning choice is selected randomly based on the number of votes each choice has.
+#define VOTE_WINNER_METHOD_WEIGHTED_RANDOM "Weighted Random"
+/// There is no winner for this vote.
+#define VOTE_WINNER_METHOD_NONE "None"

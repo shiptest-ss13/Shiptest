@@ -89,7 +89,7 @@ Buildable meters
 	set name = "Flip Pipe"
 	set src in view(1)
 
-	if ( usr.incapacitated() )
+	if (usr.incapacitated())
 		return
 
 	do_a_flip()
@@ -173,18 +173,6 @@ Buildable meters
 /obj/item/pipe/trinary/flippable/build_pipe(obj/machinery/atmospherics/components/trinary/T)
 	..()
 	T.flipped = flipped
-
-/obj/item/pipe/directional/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] shoves [src] in [user.p_their()] mouth and turns it on! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		for(var/i=1 to 20)
-			C.vomit(0, TRUE, FALSE, 4, FALSE)
-			if(prob(20))
-				C.spew_organ()
-			sleep(5)
-		C.blood_volume = 0
-	return(OXYLOSS|BRUTELOSS)
 
 /obj/item/pipe_meter
 	name = "meter"

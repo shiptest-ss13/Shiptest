@@ -233,7 +233,7 @@ Code:
 <a href='byond://?src=[REF(src)];choice=Send Signal'>Send Signal</A><BR>"}
 		if (41) //crew manifest
 			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "<center>[GLOB.data_core.get_manifest_html(monochrome=TRUE)]</center>"
+			menu += "<center>[SSovermap.get_manifest_html()]</center>"
 
 
 		if (42) //status displays
@@ -261,7 +261,7 @@ Code:
 			for(var/obj/machinery/computer/monitor/pMon in GLOB.machines)
 				if(pMon.machine_stat & (NOPOWER | BROKEN)) //check to make sure the computer is functional
 					continue
-				if(pda_turf.get_virtual_z_level() != pMon.get_virtual_z_level()) //and that we're on the same zlevel as the computer (lore: limited signal strength)
+				if(pda_turf.virtual_z() != pMon.virtual_z()) //and that we're on the same zlevel as the computer (lore: limited signal strength)
 					continue
 				if(pMon.is_secret_monitor) //make sure it isn't a secret one (ie located on a ruin), allowing people to metagame that the location exists
 					continue
@@ -406,81 +406,12 @@ Code:
 
 			menu += "<br>"
 
-		if (47) //quartermaster order records
-			menu = "<h4>[PDAIMG(crate)] Supply Record Interlink</h4>"
-
-			menu += "<BR>Current approved orders: <BR><ol>"
-			for(var/S in SSshuttle.shoppinglist)
-				var/datum/supply_order/SO = S
-				menu += "<li>#[SO.id] - [SO.pack.name] approved by [SO.orderer] [SO.reason ? "([SO.reason])":""]</li>"
-			menu += "</ol>"
-
-			menu += "Current requests: <BR><ol>"
-			for(var/S in SSshuttle.requestlist)
-				var/datum/supply_order/SO = S
-				menu += "<li>#[SO.id] - [SO.pack.name] requested by [SO.orderer]</li>"
-			// menu += "</ol><font size=\"-3\">Upgrade NOW to Space Parts & Space Vendors PLUS for full remote order control and inventory management." DOESNT EXIST, SO COMMENTED OUT
-
 		if (49) //janitorial locator
+			// hey there people, so there were two in world loops here that didnt have a timer assosciated with them.
+			// and instead of redoing this to not be actually god awful for perf and malcontent issues, I've removed it entirely.
+			// You have two, or more, legs and eyes; use them
 			menu = "<h4>[PDAIMG(bucket)] Persistent Custodial Object Locator</h4>"
-
-			var/turf/cl = get_turf(src)
-			if (cl)
-				menu += "Current Orbital Location: <b>\[[cl.x],[cl.y]\]</b>"
-
-				menu += "<h4>Located Mops:</h4>"
-
-				var/ldat
-				for (var/obj/item/mop/M in world)
-					var/turf/ml = get_turf(M)
-
-					if(ml)
-						if (ml.get_virtual_z_level() != cl.get_virtual_z_level())
-							continue
-						var/direction = get_dir(src, M)
-						ldat += "Mop - <b>\[[ml.x],[ml.y] ([uppertext(dir2text(direction))])\]</b> - [M.reagents.total_volume ? "Wet" : "Dry"]<br>"
-
-				if (!ldat)
-					menu += "None"
-				else
-					menu += "[ldat]"
-
-				menu += "<h4>Located Janitorial Cart:</h4>"
-
-				ldat = null
-				for (var/obj/structure/janitorialcart/B in world)
-					var/turf/bl = get_turf(B)
-
-					if(bl)
-						if (bl.get_virtual_z_level() != cl.get_virtual_z_level())
-							continue
-						var/direction = get_dir(src, B)
-						ldat += "Cart - <b>\[[bl.x],[bl.y] ([uppertext(dir2text(direction))])\]</b> - Water level: [B.reagents.total_volume]/100<br>"
-
-				if (!ldat)
-					menu += "None"
-				else
-					menu += "[ldat]"
-
-				menu += "<h4>Located Cleanbots:</h4>"
-
-				ldat = null
-				for (var/mob/living/simple_animal/bot/cleanbot/B in GLOB.alive_mob_list)
-					var/turf/bl = get_turf(B)
-
-					if(bl)
-						if (bl.get_virtual_z_level() != cl.get_virtual_z_level())
-							continue
-						var/direction = get_dir(src, B)
-						ldat += "Cleanbot - <b>\[[bl.x],[bl.y] ([uppertext(dir2text(direction))])\]</b> - [B.on ? "Online" : "Offline"]<br>"
-
-				if (!ldat)
-					menu += "None"
-				else
-					menu += "[ldat]"
-
-			else
-				menu += "ERROR: Unable to determine current location."
+			menu += "ERROR: Functionality disabled due to space-time warping issues. Please contact your nearest AI for assistance in locating your supplies."
 			menu += "<br><br><A href='byond://?src=[REF(src)];choice=49'>Refresh GPS Locator</a>"
 
 		if (53) // Newscaster
@@ -555,7 +486,7 @@ Code:
 				active1 = null
 
 		if("Send Signal")
-			INVOKE_ASYNC(radio, /obj/item/integrated_signaler.proc/send_activation)
+			INVOKE_ASYNC(radio, TYPE_PROC_REF(/obj/item/integrated_signaler, send_activation))
 
 		if("Signal Frequency")
 			var/new_frequency = sanitize_frequency(radio.frequency + text2num(href_list["sfreq"]))
@@ -585,9 +516,6 @@ Code:
 			var/pnum = text2num(href_list["target"])
 			powmonitor = powermonitors[pnum]
 			host_pda.mode = 433
-
-		if("Supply Orders")
-			host_pda.mode =47
 
 		if("Newscaster Access")
 			host_pda.mode = 53
@@ -683,11 +611,11 @@ Code:
 	else
 		menu += "<BR><A href='byond://?src=[REF(src)];op=botlist'>[PDAIMG(refresh)]Scan for active bots</A><BR><BR>"
 		var/turf/current_turf = get_turf(src)
-		var/zlevel = current_turf.get_virtual_z_level()
+		var/zlevel = current_turf.virtual_z()
 		var/botcount = 0
 		for(var/B in GLOB.bots_list) //Git da botz
 			var/mob/living/simple_animal/bot/Bot = B
-			if(!Bot.on || Bot.get_virtual_z_level() != zlevel || Bot.remote_disabled || !(bot_access_flags & Bot.bot_type)) //Only non-emagged bots on the same Z-level are detected!
+			if(!Bot.on || Bot.virtual_z() != zlevel || Bot.remote_disabled || !(bot_access_flags & Bot.bot_type)) //Only non-emagged bots on the same Z-level are detected!
 				continue //Also, the PDA must have access to the bot type.
 			menu += "[PDAIMG(medbot)]   <A href='byond://?src=[REF(src)];op=control;bot=[REF(Bot)]'><b>[Bot.name]</b> ([Bot.get_mode()])</a><BR>"
 			botcount++

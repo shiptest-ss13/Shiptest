@@ -65,57 +65,6 @@
 	playsound(cyborg, 'sound/effects/light_flicker.ogg', 50, TRUE)
 	cyborg.cell.give(power_to_give)
 
-/datum/status_effect/his_grace
-	id = "his_grace"
-	duration = -1
-	tick_interval = 4
-	alert_type = /atom/movable/screen/alert/status_effect/his_grace
-	var/bloodlust = 0
-
-/atom/movable/screen/alert/status_effect/his_grace
-	name = "His Grace"
-	desc = "His Grace hungers, and you must feed Him."
-	icon_state = "his_grace"
-	alerttooltipstyle = "hisgrace"
-
-/atom/movable/screen/alert/status_effect/his_grace/MouseEntered(location,control,params)
-	desc = initial(desc)
-	var/datum/status_effect/his_grace/HG = attached_effect
-	desc += "<br><font size=3><b>Current Bloodthirst: [HG.bloodlust]</b></font>\
-	<br>Becomes undroppable at <b>[HIS_GRACE_FAMISHED]</b>\
-	<br>Will consume you at <b>[HIS_GRACE_CONSUME_OWNER]</b>"
-	..()
-
-/datum/status_effect/his_grace/on_apply()
-	owner.log_message("gained His Grace's stun immunity", LOG_ATTACK)
-	owner.add_stun_absorption("hisgrace", INFINITY, 3, null, "His Grace protects you from the stun!")
-	return ..()
-
-/datum/status_effect/his_grace/tick()
-	bloodlust = 0
-	var/graces = 0
-	for(var/obj/item/his_grace/HG in owner.held_items)
-		if(HG.bloodthirst > bloodlust)
-			bloodlust = HG.bloodthirst
-		if(HG.awakened)
-			graces++
-	if(!graces)
-		owner.apply_status_effect(STATUS_EFFECT_HISWRATH)
-		qdel(src)
-		return
-	var/grace_heal = bloodlust * 0.05
-	owner.adjustBruteLoss(-grace_heal)
-	owner.adjustFireLoss(-grace_heal)
-	owner.adjustToxLoss(-grace_heal, TRUE, TRUE)
-	owner.adjustOxyLoss(-(grace_heal * 2))
-	owner.adjustCloneLoss(-grace_heal)
-
-/datum/status_effect/his_grace/on_remove()
-	owner.log_message("lost His Grace's stun immunity", LOG_ATTACK)
-	if(islist(owner.stun_absorption) && owner.stun_absorption["hisgrace"])
-		owner.stun_absorption -= "hisgrace"
-
-
 /datum/status_effect/wish_granters_gift //Fully revives after ten seconds.
 	id = "wish_granters_gift"
 	duration = 50
@@ -305,7 +254,7 @@
 	owner.add_stun_absorption("bloody bastard sword", duration, 2, "doesn't even flinch as the sword's power courses through them!", "You shrug off the stun!", " glowing with a blazing red aura!")
 	owner.spin(duration,1)
 	animate(owner, color = oldcolor, time = duration, easing = EASE_IN)
-	addtimer(CALLBACK(owner, /atom/proc/update_atom_colour), duration)
+	addtimer(CALLBACK(owner, TYPE_PROC_REF(/atom, update_atom_colour)), duration)
 	playsound(owner, 'sound/weapons/fwoosh.ogg', 75, FALSE)
 	return ..()
 
@@ -397,7 +346,7 @@
 				if(!itemUser.has_hand_for_held_index(hand))
 					//If user does not have the corresponding hand anymore, give them one and return the rod to their hand
 					if(((hand % 2) == 0))
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_R_ARM, FALSE, FALSE)
+						var/obj/item/bodypart/L = itemUser.new_body_part(BODY_ZONE_R_ARM, FALSE, FALSE)
 						if(L.attach_limb(itemUser))
 							itemUser.put_in_hand(newRod, hand, forced = TRUE)
 						else
@@ -405,7 +354,7 @@
 							consume_owner() //we can't regrow, abort abort
 							return
 					else
-						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
+						var/obj/item/bodypart/L = itemUser.new_body_part(BODY_ZONE_L_ARM, FALSE, FALSE)
 						if(L.attach_limb(itemUser))
 							itemUser.put_in_hand(newRod, hand, forced = TRUE)
 						else
@@ -449,7 +398,7 @@
 /datum/status_effect/hippocraticOath/proc/consume_owner()
 	owner.visible_message("<span class='notice'>[owner]'s soul is absorbed into the rod, relieving the previous snake of its duty.</span>")
 	var/mob/living/simple_animal/hostile/retaliate/poison/snake/healSnake = new(owner.loc)
-	var/list/chems = list(/datum/reagent/medicine/sal_acid, /datum/reagent/medicine/C2/convermol, /datum/reagent/medicine/oxandrolone)
+	var/list/chems = list(/datum/reagent/medicine/sal_acid, /datum/reagent/medicine/c2/convermol, /datum/reagent/medicine/oxandrolone)
 	healSnake.poison_type = pick(chems)
 	healSnake.name = "Asclepius's Snake"
 	healSnake.real_name = "Asclepius's Snake"
@@ -510,3 +459,24 @@
 /datum/status_effect/antimagic/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_ANTIMAGIC, MAGIC_TRAIT)
 	owner.visible_message("<span class='warning'>[owner]'s dull aura fades away...</span>")
+
+/datum/status_effect/speed_boost
+	id = "speed_boost"
+	duration = 2 SECONDS
+	status_type = STATUS_EFFECT_REPLACE
+
+/datum/status_effect/speed_boost/on_creation(mob/living/new_owner, set_duration)
+	if(isnum(set_duration))
+		duration = set_duration
+	. = ..()
+
+/datum/status_effect/speed_boost/on_apply()
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/status_speed_boost, update = TRUE)
+	return ..()
+
+/datum/status_effect/speed_boost/on_remove()
+	owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_speed_boost, update = TRUE)
+
+/datum/movespeed_modifier/status_speed_boost
+	multiplicative_slowdown = -0.5
+

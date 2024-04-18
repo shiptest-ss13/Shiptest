@@ -16,6 +16,7 @@
 	light_range = 15
 	light_color = COLOR_RED
 	gender = FEMALE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 
 /obj/singularity/narsie/large
 	name = "Nar'Sie"
@@ -67,16 +68,16 @@
 		if(player.stat != DEAD && player.loc && !iscultist(player) && !isanimal(player))
 			souls_needed[player] = TRUE
 	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)
-	SSredbot.send_discord_message("admin","Nar'sie has been summoned.","round ending event")
-	INVOKE_ASYNC(GLOBAL_PROC, .proc/begin_the_end)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(begin_the_end))
 
 /proc/begin_the_end()
+	SSredbot.send_discord_message("admin","Nar'sie has been summoned.","round ending event")
 	sleep(50)
 	if(QDELETED(GLOB.cult_narsie)) // uno
 		priority_announce("Status report? We detected a anomaly, but it disappeared almost immediately.","Central Command Higher Dimensional Affairs", 'sound/misc/notice1.ogg')
 		GLOB.cult_narsie = null
 		sleep(20)
-		INVOKE_ASYNC(GLOBAL_PROC, .proc/cult_ending_helper, 2)
+		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), 2)
 		return
 	priority_announce("An acausal dimensional event has been detected in your sector. Event has been flagged EXTINCTION-CLASS. Directing all available assets toward simulating solutions. SOLUTION ETA: 60 SECONDS.","Central Command Higher Dimensional Affairs", 'sound/misc/airraid.ogg')
 	sleep(500)
@@ -84,12 +85,11 @@
 		priority_announce("Simulations aborted, sensors report that the acasual event is normalizing. Good work, crew.","Central Command Higher Dimensional Affairs", 'sound/misc/notice1.ogg')
 		GLOB.cult_narsie = null
 		sleep(20)
-		INVOKE_ASYNC(GLOBAL_PROC, .proc/cult_ending_helper, 2)
+		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), 2)
 		return
 	priority_announce("Simulations on acausal dimensional event complete. Deploying solution package now. Deployment ETA: ONE MINUTE. ","Central Command Higher Dimensional Affairs")
 	sleep(50)
 	set_security_level("delta")
-	SSshuttle.registerHostileEnvironment(GLOB.cult_narsie)
 	SSshuttle.lockdown = TRUE
 	sleep(600)
 	if(QDELETED(GLOB.cult_narsie)) // tres
@@ -97,18 +97,19 @@
 		GLOB.cult_narsie = null
 		sleep(20)
 		set_security_level("red")
-		SSshuttle.clearHostileEnvironment()
 		SSshuttle.lockdown = FALSE
-		INVOKE_ASYNC(GLOBAL_PROC, .proc/cult_ending_helper, 2)
+		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), 2)
 		return
 	if(GLOB.cult_narsie.resolved == FALSE)
 		GLOB.cult_narsie.resolved = TRUE
 		sound_to_playing_players('sound/machines/alarm.ogg')
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/cult_ending_helper), 120)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper)), 120)
 
 /obj/singularity/narsie/large/cult/Destroy()
 	send_to_playing_players("<span class='narsie'>\"<b>[pick("Nooooo...", "Not die. How-", "Die. Mort-", "Sas tyen re-")]\"</b></span>")
 	sound_to_playing_players('sound/magic/demon_dies.ogg', 50)
+	if(GLOB.cult_narsie == src)
+		GLOB.cult_narsie = null
 	var/list/all_cults = list()
 	for(var/datum/antagonist/cult/C in GLOB.antagonists)
 		if(!C.owner)
@@ -124,13 +125,13 @@
 /proc/ending_helper()
 	SSticker.force_ending = 1
 
-/proc/cult_ending_helper(var/ending_type = 0)
+/proc/cult_ending_helper(ending_type = 0)
 	if(ending_type == 2) //narsie fukkin died
-		Cinematic(CINEMATIC_CULT_FAIL,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+		Cinematic(CINEMATIC_CULT_FAIL,world,CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(ending_helper)))
 	else if(ending_type) //no explosion
-		Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+		Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(ending_helper)))
 	else // explosion
-		Cinematic(CINEMATIC_CULT_NUKE,world,CALLBACK(GLOBAL_PROC,/proc/ending_helper))
+		Cinematic(CINEMATIC_CULT_NUKE,world,CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(ending_helper)))
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/singularity/narsie/large/attack_ghost(mob/dead/observer/user as mob)
@@ -175,7 +176,7 @@
 
 	for(var/mob/living/carbon/food in GLOB.alive_mob_list) //we don't care about constructs or cult-Ians or whatever. cult-monkeys are fair game i guess
 		var/turf/pos = get_turf(food)
-		if(!pos || (pos.get_virtual_z_level() != get_virtual_z_level()))
+		if(!pos || (pos.virtual_z() != virtual_z()))
 			continue
 
 		if(iscultist(food))
@@ -194,7 +195,7 @@
 	//no living humans, follow a ghost instead.
 	for(var/mob/dead/observer/ghost in GLOB.player_list)
 		var/turf/pos = get_turf(ghost)
-		if(!pos || (pos.get_virtual_z_level() != get_virtual_z_level()))
+		if(!pos || (pos.virtual_z() != virtual_z()))
 			continue
 		cultists += ghost
 	if(cultists.len)
@@ -231,7 +232,7 @@
 	setDir(SOUTH)
 	move_self = FALSE
 	flick("narsie_spawn_anim",src)
-	addtimer(CALLBACK(src, .proc/narsie_spawn_animation_end), 3.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(narsie_spawn_animation_end)), 3.5 SECONDS)
 
 /obj/singularity/narsie/proc/narsie_spawn_animation_end()
 	move_self = TRUE

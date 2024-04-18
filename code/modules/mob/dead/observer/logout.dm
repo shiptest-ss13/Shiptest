@@ -1,5 +1,4 @@
 /mob/dead/observer/Logout()
-	update_z(null)
 	if (client)
 		client.images -= (GLOB.ghost_images_default+GLOB.ghost_images_simple)
 
@@ -7,8 +6,7 @@
 		if(ismob(observetarget))
 			var/mob/target = observetarget
 			if(target.observers)
-				target.observers -= src
-				UNSETEMPTY(target.observers)
+				LAZYREMOVE(target.observers, src)
 			observetarget = null
 	..()
 	spawn(0)

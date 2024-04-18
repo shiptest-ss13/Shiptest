@@ -5,7 +5,7 @@
 	faction = list("mining")
 	weather_immunities = list("lava","ash")
 	obj_damage = 30
-	environment_smash = ENVIRONMENT_SMASH_WALLS
+	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	minbodytemp = 0
 	maxbodytemp = INFINITY
 	response_harm_continuous = "strikes"
@@ -29,7 +29,7 @@
 	else if (!armor)
 		armor = getArmor()
 	else if (!istype(armor, /datum/armor))
-		stack_trace("Invalid type [armor.type] found in .armor during /mob/living/simple_animal/hostile/asteroid Initialize()")		//WS edit begin - Whitesands
+		stack_trace("Invalid type [armor.type] found in .armor during [src.type] Initialize()")		//WS edit begin - Whitesands
 
 	. = ..()
 	apply_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)

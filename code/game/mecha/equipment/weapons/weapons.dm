@@ -72,7 +72,7 @@
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/start_cooldown()
 	set_ready_state(0)
 	chassis.use_power(energy_drain*get_shot_amount())
-	addtimer(CALLBACK(src, .proc/set_ready_state, 1), equip_cooldown)
+	addtimer(CALLBACK(src, PROC_REF(set_ready_state), 1), equip_cooldown)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
 	equip_cooldown = 8
@@ -151,6 +151,25 @@
 		return 1
 	return 0
 
+//Exosuit-mounted kinetic accelerator
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun
+	equip_cooldown = 10
+	name = "Exosuit Proto-kinetic Accelerator"
+	desc = "An exosuit-mounted mining tool that does increased damage in low pressure. Drawing from an onboard power source allows it to project further than the handheld version."
+	icon_state = "mecha_kineticgun"
+	energy_drain = 30
+	projectile = /obj/projectile/kinetic/mech
+	fire_sound = 'sound/weapons/kenetic_accel.ogg'
+	harmful = TRUE
+
+//attachable to all mechas, like the plasma cutter
+/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/can_attach(obj/mecha/working/Mech)
+	if(..()) //combat mech
+		return TRUE
+	else if(Mech.equipment.len < Mech.max_equip && istype(Mech))
+		return TRUE
+	return FALSE
+
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/taser
 	name = "\improper PBT \"Pacifier\" mounted taser"
 	desc = "A weapon for combat exosuits. Shoots non-lethal stunning electrodes."
@@ -212,11 +231,16 @@
 	name = "general ballistic weapon"
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
 	var/projectiles
+	var/projectiles_max //maximum amount of projectiles that can be chambered.
 	var/projectiles_cache //ammo to be loaded in, if possible.
 	var/projectiles_cache_max
 	var/projectile_energy_cost
 	var/disabledreload //For weapons with no cache (like the rockets) which are reloaded by hand
 	var/ammo_type
+
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/Initialize() //initial(projectiles) prevented me from making mech weapons start empty TODO: PORT ALL OF TG MECH IMPROVEMENTS
+	. = ..()
+	projectiles_max ||= projectiles
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_shot_amount()
 	return min(projectiles, projectiles_per_shot)
@@ -229,12 +253,12 @@
 	return 1
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/get_equip_info()
-	return "[..()] \[[src.projectiles][projectiles_cache_max &&!projectile_energy_cost?"/[projectiles_cache]":""]\][!disabledreload &&(src.projectiles < initial(src.projectiles))?" - <a href='?src=[REF(src)];rearm=1'>Rearm</a>":null]"
+	return "[..()] \[[src.projectiles][projectiles_cache_max &&!projectile_energy_cost?"/[projectiles_cache]":""]\][!disabledreload &&(src.projectiles < projectiles_max)?" - <a href='?src=[REF(src)];rearm=1'>Rearm</a>":null]"
 
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/rearm()
-	if(projectiles < initial(projectiles))
-		var/projectiles_to_add = initial(projectiles) - projectiles
+	if(projectiles < projectiles_max)
+		var/projectiles_to_add = projectiles_max - projectiles
 
 		if(projectile_energy_cost)
 			while(chassis.get_charge() >= projectile_energy_cost && projectiles_to_add)
@@ -328,6 +352,18 @@
 	harmful = TRUE
 	ammo_type = "lmg"
 
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg/mounted
+	name = "\improper mounted HMG"
+	desc = "A heavy calibre machine gun commonly used by motorized forces, famed for it's ability to give people on the recieving end more holes than normal. It is modified to be attached to vehicles"
+	projectile = /obj/projectile/bullet/lmg
+	fire_sound = 'sound/weapons/gun/hmg/hmg.ogg'
+	projectiles = 0
+	projectiles_max = 100
+	projectiles_cache = 0
+	projectiles_cache_max = 100
+	equip_cooldown = 1 SECONDS
+	projectile_delay = 1
+
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	name = "\improper SRM-8 missile rack"
 	desc = "A weapon for combat exosuits. Launches light explosive missiles."
@@ -342,8 +378,12 @@
 	harmful = TRUE
 	ammo_type = "missiles_he"
 
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/spacecops
-	projectiles = 420
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/tank
+	name = "\improper tank gun"
+	desc = "A long barreled cannon modified to shoot rockets."
+	fire_sound = 'sound/weapons/gun/general/tank_cannon.ogg'
+	projectiles_max = 8
+	projectiles = 0
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
 	name = "\improper BRM-6 missile rack"
@@ -377,7 +417,7 @@
 	return 1
 
 //used for projectile initilisation (priming flashbang) and additional logging
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/proc/proj_init(var/obj/O)
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/proc/proj_init(obj/O)
 	return
 
 
@@ -395,11 +435,11 @@
 	var/det_time = 20
 	ammo_type = "flashbang"
 
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/proj_init(var/obj/item/grenade/flashbang/F)
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/proj_init(obj/item/grenade/flashbang/F)
 	var/turf/T = get_turf(src)
 	message_admins("[ADMIN_LOOKUPFLW(chassis.occupant)] fired a [src] in [ADMIN_VERBOSEJMP(T)]")
 	log_game("[key_name(chassis.occupant)] fired a [src] in [AREACOORD(T)]")
-	addtimer(CALLBACK(F, /obj/item/grenade/flashbang.proc/prime), det_time)
+	addtimer(CALLBACK(F, TYPE_PROC_REF(/obj/item/grenade/flashbang, prime)), det_time)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/flashbang/clusterbang //Because I am a heartless bastard -Sieve //Heartless? for making the poor man's honkblast? - Kaze
 	name = "\improper SOB-3 grenade launcher"
@@ -446,7 +486,7 @@
 			return 1
 	return 0
 
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/mousetrap_mortar/proj_init(var/obj/item/assembly/mousetrap/armed/M)
+/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher/mousetrap_mortar/proj_init(obj/item/assembly/mousetrap/armed/M)
 	M.secured = 1
 
 
@@ -480,7 +520,7 @@
 	if(!istype(PG))
 		return
 	//has to be low sleep or it looks weird, the beam doesn't exist for very long so it's a non-issue
-	chassis.Beam(PG, icon_state = "chain", time = missile_range * 20, maxdistance = missile_range + 2, beam_sleep_time = 1)
+	chassis.Beam(PG, icon_state = "chain", time = missile_range * 20, maxdistance = missile_range + 2)
 
 /obj/item/punching_glove
 	name = "punching glove"

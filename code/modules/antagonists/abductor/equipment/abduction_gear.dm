@@ -267,7 +267,7 @@
 	radio_off(target, user)
 
 /obj/item/abductor/silencer/proc/radio_off(atom/target, mob/living/user)
-	if( !(user in (viewers(7,target))) )
+	if(!(user in (viewers(7,target))))
 		return
 
 	var/turf/targloc = get_turf(target)
@@ -403,21 +403,21 @@
 	name = "Dissection Guide"
 	icon_state = "alienpaper_words"
 	show_written_words = FALSE
-	info = {"<b>Dissection for Dummies</b><br>
+	default_raw_text = {"<b>Dissection for Dummies</b><br>
 
 <br>
- 1.Acquire fresh specimen.<br>
- 2.Put the specimen on operating table.<br>
- 3.Use a scalpel on the specimen's chest, preparing for experimental dissection.<br>
- 4.Clamp bleeders on specimen's torso with a hemostat.<br>
- 5.Retract skin of specimen's torso with a retractor.<br>
- 6.Apply scalpel again to specimen's torso.<br>
- 7.Search through the specimen's torso with your hands to remove any superfluous organs.<br>
- 8.Insert replacement gland (Retrieve one from gland storage).<br>
- 9.Consider dressing the specimen back to not disturb the habitat. <br>
- 10.Put the specimen in the experiment machinery.<br>
- 11.Choose one of the machine options. The target will be analyzed and teleported to the selected drop-off point.<br>
- 12.You will receive one supply credit, and the subject will be counted towards your quota.<br>
+1.Acquire fresh specimen.<br>
+2.Put the specimen on operating table.<br>
+3.Use a scalpel on the specimen's chest, preparing for experimental dissection.<br>
+4.Clamp bleeders on specimen's torso with a hemostat.<br>
+5.Retract skin of specimen's torso with a retractor.<br>
+6.Apply scalpel again to specimen's torso.<br>
+7.Search through the specimen's torso with your hands to remove any superfluous organs.<br>
+8.Insert replacement gland (Retrieve one from gland storage).<br>
+9.Consider dressing the specimen back to not disturb the habitat. <br>
+10.Put the specimen in the experiment machinery.<br>
+11.Choose one of the machine options. The target will be analyzed and teleported to the selected drop-off point.<br>
+12.You will receive one supply credit, and the subject will be counted towards your quota.<br>
 <br>
 Congratulations! You are now trained for invasive xenobiology research!"}
 
@@ -485,9 +485,10 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	if(!turned_on)
 		toggle_on(user)
 	to_chat(usr, "<span class='notice'>You switch the baton to [txt] mode.</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/melee/baton/abductor/update_icon_state()
+	. = ..()
 	switch(mode)
 		if(BATON_STUN)
 			icon_state = "wonderprodStun"
@@ -501,6 +502,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 		if(BATON_PROBE)
 			icon_state = "wonderprodProbe"
 			item_state = "wonderprodProbe"
+	return ..()
 
 /obj/item/melee/baton/abductor/attack(mob/target, mob/living/user)
 	if(!AbductorCheck(user))
@@ -659,15 +661,11 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 
 /obj/item/radio/headset/abductor
 	name = "alien headset"
-	desc = "An advanced alien headset designed to monitor communications of human space stations. Why does it have a microphone? No one knows."
+	desc = "An advanced alien headset designed to monitor communications of human space installations. Why does it have a microphone? No one knows."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "abductor_headset"
 	item_state = "abductor_headset"
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
-
-/obj/item/radio/headset/abductor/Initialize(mapload)
-	. = ..()
-	make_syndie()
 
 /obj/item/radio/headset/abductor/ComponentInitialize()
 	. = ..()
@@ -691,7 +689,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	user.visible_message("<span class='notice'>[user] places down [src] and activates it.</span>", "<span class='notice'>You place down [src] and activate it.</span>")
 	user.dropItemToGround(src)
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50)
-	addtimer(CALLBACK(src, .proc/try_spawn_machine), 30)
+	addtimer(CALLBACK(src, PROC_REF(try_spawn_machine)), 30)
 
 /obj/item/abductor_machine_beacon/proc/try_spawn_machine()
 	var/viable = FALSE
@@ -717,30 +715,35 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	name = "alien scalpel"
 	desc = "It's a gleaming sharp knife made out of silvery-green metal."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "scalpel"
 	toolspeed = 0.25
 
 /obj/item/hemostat/alien
 	name = "alien hemostat"
 	desc = "You've never seen this before."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "hemostat"
 	toolspeed = 0.25
 
 /obj/item/retractor/alien
 	name = "alien retractor"
 	desc = "You're not sure if you want the veil pulled back."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "retractor"
 	toolspeed = 0.25
 
 /obj/item/circular_saw/alien
 	name = "alien saw"
 	desc = "Do the aliens also lose this, and need to find an alien hatchet?"
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "saw"
 	toolspeed = 0.25
 
 /obj/item/surgicaldrill/alien
 	name = "alien drill"
 	desc = "Maybe alien surgeons have finally found a use for the drill."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "drill"
 	toolspeed = 0.25
 
 /obj/item/cautery/alien
@@ -748,6 +751,7 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 	desc = "Why would bloodless aliens have a tool to stop bleeding? \
 		Unless..."
 	icon = 'icons/obj/abductor.dmi'
+	icon_state = "cautery"
 	toolspeed = 0.25
 
 /obj/item/clothing/head/helmet/abductor
@@ -834,8 +838,15 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 
 	var/static/list/injected_reagents = list(/datum/reagent/medicine/cordiolis_hepatico)
 
-/obj/structure/table/optable/abductor/Crossed(atom/movable/AM)
+/obj/structure/table/optable/abductor/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/table/optable/abductor/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(iscarbon(AM))
 		START_PROCESSING(SSobj, src)
 		to_chat(AM, "<span class='danger'>You feel a series of tiny pricks!</span>")

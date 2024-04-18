@@ -32,6 +32,27 @@
 	else if(dx<0)
 		.+=360
 
+
+////Tile coordinates (x, y) to absolute coordinates (in number of pixels). Center of a tile is generally assumed to be (16,16), but can be offset.
+#define ABS_COOR(c) (((c - 1) * 32) + 16)
+#define ABS_COOR_OFFSET(c, o) (((c - 1) * 32) + o)
+
+/proc/get_angle_with_scatter(atom/start, atom/end, scatter, x_offset = 16, y_offset = 16)
+	var/end_apx
+	var/end_apy
+	if(isliving(end)) //Center mass.
+		end_apx = ABS_COOR(end.x)
+		end_apy = ABS_COOR(end.y)
+	else //Exact pixel.
+		end_apx = ABS_COOR_OFFSET(end.x, x_offset)
+		end_apy = ABS_COOR_OFFSET(end.y, y_offset)
+	scatter = ((rand(0, min(scatter, 45))) * (prob(50) ? 1 : -1)) //Up to 45 degrees deviation to either side.
+	. = round((90 - ATAN2(end_apx - ABS_COOR(start.x), end_apy - ABS_COOR(start.y))), 1) + scatter
+	if(. < 0)
+		. += 360
+	else if(. >= 360)
+		. -= 360
+
 /proc/Get_Pixel_Angle(y, x)//for getting the angle when animating something's pixel_x and pixel_y
 	if(!y)
 		return (x>=0)?90:270
@@ -40,6 +61,47 @@
 		.+=180
 	else if(x<0)
 		.+=360
+
+/proc/get_line(atom/starting_atom, atom/ending_atom)
+	var/current_x_step = starting_atom.x//start at x and y, then add 1 or -1 to these to get every turf from starting_atom to ending_atom
+	var/current_y_step = starting_atom.y
+	var/starting_z = starting_atom.z
+
+	var/list/line = list(get_turf(starting_atom))//get_turf(atom) is faster than locate(x, y, z)
+
+	var/x_distance = ending_atom.x - current_x_step //x distance
+	var/y_distance = ending_atom.y - current_y_step
+
+	var/abs_x_distance = abs(x_distance)//Absolute value of x distance
+	var/abs_y_distance = abs(y_distance)
+
+	var/x_distance_sign = SIGN(x_distance) //Sign of x distance (+ or -)
+	var/y_distance_sign = SIGN(y_distance)
+
+	var/x = abs_x_distance >> 1 //Counters for steps taken, setting to distance/2
+	var/y = abs_y_distance >> 1 //Bit-shifting makes me l33t.  It also makes get_line() unnessecarrily fast.
+
+	if(abs_x_distance >= abs_y_distance) //x distance is greater than y
+		for(var/distance_counter in 0 to (abs_x_distance - 1))//It'll take abs_x_distance steps to get there
+			y += abs_y_distance
+
+			if(y >= abs_x_distance) //Every abs_y_distance steps, step once in y direction
+				y -= abs_x_distance
+				current_y_step += y_distance_sign
+
+			current_x_step += x_distance_sign //Step on in x direction
+			line += locate(current_x_step, current_y_step, starting_z)//Add the turf to the list
+	else
+		for(var/distance_counter in 0 to (abs_y_distance - 1))
+			x += abs_x_distance
+
+			if(x >= abs_y_distance)
+				x -= abs_y_distance
+				current_x_step += x_distance_sign
+
+			current_y_step += y_distance_sign
+			line += locate(current_x_step, current_y_step, starting_z)
+	return line
 
 //Returns location. Returns null if no location was found.
 /proc/get_teleport_loc(turf/location,mob/target,distance = 1, density = FALSE, errorx = 0, errory = 0, eoffsetx = 0, eoffsety = 0)
@@ -116,7 +178,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 			var/turf/center = locate((destination.x+xoffset),(destination.y+yoffset),location.z)//So now, find the new center.
 
 			//Now to find a box from center location and make that our destination.
-			for(var/turf/T in block(locate(center.x+b1xerror,center.y+b1yerror,location.z), locate(center.x+b2xerror,center.y+b2yerror,location.z) ))
+			for(var/turf/T in block(locate(center.x+b1xerror,center.y+b1yerror,location.z), locate(center.x+b2xerror,center.y+b2yerror,location.z)))
 				if(density&&T.density)
 					continue//If density was specified.
 				if(T.x>world.maxx || T.x<1)
@@ -331,12 +393,23 @@ Turf and target are separate in case you want to teleport some distance from a t
 //For example, using this on a disk, which is in a bag, on a mob, will return the mob because it's on the turf.
 //Optional arg 'type' to stop once it reaches a specific type instead of a turf.
 /proc/get_atom_on_turf(atom/movable/M, stop_type)
-	var/atom/loc = M
-	while(loc && loc.loc && !isturf(loc.loc))
-		loc = loc.loc
-		if(stop_type && istype(loc, stop_type))
+	var/atom/turf_to_check = M
+	while(turf_to_check?.loc && !isturf(turf_to_check.loc))
+		turf_to_check = turf_to_check.loc
+		if(stop_type && istype(turf_to_check, stop_type))
 			break
-	return loc
+	return turf_to_check
+
+///Returns a list of all locations (except the area) the movable is within.
+/proc/get_nested_locs(atom/movable/atom_on_location, include_turf = FALSE)
+	. = list()
+	var/atom/location = atom_on_location.loc
+	var/turf/our_turf = get_turf(atom_on_location)
+	while(location && location != our_turf)
+		. += location
+		location = location.loc
+	if(our_turf && include_turf) //At this point, only the turf is left, provided it exists.
+		. += our_turf
 
 // returns the turf located at the map edge in the specified direction relative to A
 // used for mass driver
@@ -417,7 +490,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	Gets all contents of contents and returns them all in a list.
 */
 
-/atom/proc/GetAllContents(var/T, ignore_flag_1)
+/atom/proc/GetAllContents(T, ignore_flag_1)
 	var/list/processing_list = list(src)
 	if(T)
 		. = list()
@@ -591,15 +664,15 @@ Turf and target are separate in case you want to teleport some distance from a t
 
 /*
 
- Gets the turf this atom's *ICON* appears to inhabit
- It takes into account:
+Gets the turf this atom's *ICON* appears to inhabit
+It takes into account:
  * Pixel_x/y
  * Matrix x/y
 
- NOTE: if your atom has non-standard bounds then this proc
- will handle it, but:
+NOTE: if your atom has non-standard bounds then this proc
+will handle it, but:
  * if the bounds are even, then there are an even amount of "middle" turfs, the one to the EAST, NORTH, or BOTH is picked
- (this may seem bad, but you're atleast as close to the center of the atom as possible, better than byond's default loc being all the way off)
+(this may seem bad, but you're atleast as close to the center of the atom as possible, better than byond's default loc being all the way off)
  * if the bounds are odd, the true middle turf of the atom is returned
 
 */
@@ -607,6 +680,11 @@ Turf and target are separate in case you want to teleport some distance from a t
 /proc/get_turf_pixel(atom/AM)
 	if(!istype(AM))
 		return
+
+	//Find coordinates
+	var/turf/T = get_turf(AM) //use checked_atom's turfs, as it's coords are the same as checked_atom's AND checked_atom's coords are lost if it is inside another atom
+	if(!T)
+		return null
 
 	//Find AM's matrix so we can use it's X/Y pixel shifts
 	var/matrix/M = matrix(AM.transform)
@@ -626,10 +704,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/rough_x = round(round(pixel_x_offset,world.icon_size)/world.icon_size)
 	var/rough_y = round(round(pixel_y_offset,world.icon_size)/world.icon_size)
 
-	//Find coordinates
-	var/turf/T = get_turf(AM) //use AM's turfs, as it's coords are the same as AM's AND AM's coords are lost if it is inside another atom
-	if(!T)
-		return null
 	var/final_x = T.x + rough_x
 	var/final_y = T.y + rough_y
 
@@ -832,7 +906,7 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 // eg: center_image(I, 32,32)
 // eg2: center_image(I, 96,96)
 
-/proc/center_image(var/image/I, x_dimension = 0, y_dimension = 0)
+/proc/center_image(image/I, x_dimension = 0, y_dimension = 0)
 	if(!I)
 		return
 
@@ -899,7 +973,7 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 	var/c_dist = 1
 
 
-	while( c_dist <= dist )
+	while(c_dist <= dist)
 		y = t_center.y + c_dist
 		x = t_center.x - c_dist + 1
 		for(x in x to t_center.x+c_dist)
@@ -955,7 +1029,7 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 	if(!orange)
 		L += t_center
 
-	while( c_dist <= dist )
+	while(c_dist <= dist)
 		y = t_center.y + c_dist
 		x = t_center.x - c_dist + 1
 		for(x in x to t_center.x+c_dist)
@@ -989,7 +1063,7 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 
 	return L
 
-/atom/proc/contains(var/atom/A)
+/atom/proc/contains(atom/A)
 	if(!A)
 		return 0
 	for(var/atom/location = A.loc, location, location = location.loc)
@@ -1055,6 +1129,15 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 /datum/proc/stack_trace(msg)
 	CRASH(msg)
 
+/obj/item/bodypart/proc/limb_stacktrace(msg, bypass_cap) //yes yes this uses a magic number but fuck it.
+	var/static/mcount
+	if(mcount == 10)
+		message_debug("Kapu1178/LimbSystem: Limb Stack trace cap exceeded, further traces silenced.")
+		mcount++
+	if((mcount < 10) || bypass_cap)
+		mcount++
+		CRASH(msg)
+
 GLOBAL_REAL_VAR(list/stack_trace_storage)
 /proc/gib_stack_trace()
 	stack_trace_storage = list()
@@ -1071,7 +1154,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 
 //returns the number of ticks slept
 /proc/stoplag(initial_delay)
-	if (!Master || !(Master.current_runlevel & RUNLEVELS_DEFAULT))
+	if (!Master || Master.init_stage_completed < INITSTAGE_MAX)
 		sleep(world.tick_lag)
 		return 1
 	if (!initial_delay)
@@ -1122,7 +1205,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 	pixel_x = initialpixelx
 	pixel_y = initialpixely
 
-/proc/weightclass2text(var/w_class)
+/proc/weightclass2text(w_class)
 	switch(w_class)
 		if(WEIGHT_CLASS_TINY)
 			. = "tiny"
@@ -1302,11 +1385,13 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 	return "{[time_high]-[time_mid]-[GUID_VERSION][time_low]-[GUID_VARIANT][time_clock]-[node_id]}"
 
-// \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
-// If it ever becomes necesary to get a more performant REF(), this lies here in wait
-// #define REF(thing) (thing && istype(thing, /datum) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : "\ref[thing]")
+/**
+ * \ref behaviour got changed in 512 so this is necesary to replicate old behaviour.
+ * If it ever becomes necesary to get a more performant REF(), this lies here in wait
+ * #define REF(thing) (thing && isdatum(thing) && (thing:datum_flags & DF_USE_TAG) && thing:tag ? "[thing:tag]" : text_ref(thing))
+**/
 /proc/REF(input)
-	if(istype(input, /datum))
+	if(isdatum(input))
 		var/datum/thing = input
 		if(thing.datum_flags & DF_USE_TAG)
 			if(!thing.tag)
@@ -1314,11 +1399,11 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 				thing.datum_flags &= ~DF_USE_TAG
 			else
 				return "\[[url_encode(thing.tag)]\]"
-	return "\ref[input]"
+	return text_ref(input)
 
 // Makes a call in the context of a different usr
 // Use sparingly
-/world/proc/PushUsr(mob/M, datum/callback/CB, ...)
+/world/proc/push_usr(mob/M, datum/callback/CB, ...)
 	var/temp = usr
 	usr = M
 	if (length(args) > 2)
@@ -1327,12 +1412,9 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		. = CB.Invoke()
 	usr = temp
 
-//datum may be null, but it does need to be a typed var
-#define NAMEOF(datum, X) (#X || ##datum.##X)
-
-#define VARSET_LIST_CALLBACK(target, var_name, var_value) CALLBACK(GLOBAL_PROC, /proc/___callbackvarset, ##target, ##var_name, ##var_value)
+#define VARSET_LIST_CALLBACK(target, var_name, var_value) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___callbackvarset), ##target, ##var_name, ##var_value)
 //dupe code because dm can't handle 3 level deep macros
-#define VARSET_CALLBACK(datum, var, var_value) CALLBACK(GLOBAL_PROC, /proc/___callbackvarset, ##datum, NAMEOF(##datum, ##var), ##var_value)
+#define VARSET_CALLBACK(datum, var, var_value) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___callbackvarset), ##datum, NAMEOF(##datum, ##var), ##var_value)
 
 /proc/___callbackvarset(list_or_datum, var_name, var_value)
 	if(length(list_or_datum))
@@ -1344,8 +1426,8 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	else
 		D.vars[var_name] = var_value
 
-#define TRAIT_CALLBACK_ADD(target, trait, source) CALLBACK(GLOBAL_PROC, /proc/___TraitAdd, ##target, ##trait, ##source)
-#define TRAIT_CALLBACK_REMOVE(target, trait, source) CALLBACK(GLOBAL_PROC, /proc/___TraitRemove, ##target, ##trait, ##source)
+#define TRAIT_CALLBACK_ADD(target, trait, source) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___TraitAdd), ##target, ##trait, ##source)
+#define TRAIT_CALLBACK_REMOVE(target, trait, source) CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(___TraitRemove), ##target, ##trait, ##source)
 
 ///DO NOT USE ___TraitAdd OR ___TraitRemove as a replacement for ADD_TRAIT / REMOVE_TRAIT defines. To be used explicitly for callback.
 /proc/___TraitAdd(target,trait,source)
@@ -1457,7 +1539,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	for(var/i in L)
 		if(condition.Invoke(i))
 			. |= i
-/proc/generate_items_inside(list/items_list,var/where_to)
+/proc/generate_items_inside(list/items_list, where_to)
 	for(var/each_item in items_list)
 		for(var/i in 1 to items_list[each_item])
 			new each_item(where_to)
@@ -1476,3 +1558,14 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	return call(source, proctype)(arglist(arguments))
 
 #define TURF_FROM_COORDS_LIST(List) (locate(List[1], List[2], List[3]))
+
+/proc/normalize_dir_to_cardinals(dir)
+	if(dir & NORTH)
+		return NORTH
+	if(dir & SOUTH)
+		return SOUTH
+	if(dir & EAST)
+		return EAST
+	if(dir & WEST)
+		return WEST
+	return 0

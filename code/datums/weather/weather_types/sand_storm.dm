@@ -17,7 +17,6 @@
 
 	area_type = /area
 	protect_indoors = TRUE
-	target_trait = ZTRAIT_SANDSTORM
 
 	immunity_type = "sand"
 

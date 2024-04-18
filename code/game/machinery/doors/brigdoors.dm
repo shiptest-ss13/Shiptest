@@ -51,6 +51,10 @@
 			if (M.id == id)
 				targets += M
 
+		for(var/obj/machinery/door/airlock/security/brig/D in urange(20, src))
+			if (D.id == id)
+				targets += D
+
 		for(var/obj/machinery/flasher/F in urange(20, src))
 			if(F.id == id)
 				targets += F
@@ -61,7 +65,7 @@
 
 	if(!targets.len)
 		obj_break()
-	update_icon()
+	update_appearance()
 
 
 //Main door timer loop, if it's timing and time is >0 reduce time by 1.
@@ -74,7 +78,7 @@
 	if(timing)
 		if(world.time - activation_time >= timer_duration)
 			timer_end() // open doors, reset timer, clear status screen
-		update_icon()
+		update_appearance()
 
 // open/closedoor checks if door_timer has power, if so it checks if the
 // linked door is open/closed (by density) then opens it/closes it.
@@ -88,7 +92,12 @@
 	for(var/obj/machinery/door/window/brigdoor/door in targets)
 		if(door.density)
 			continue
-		INVOKE_ASYNC(door, /obj/machinery/door/window/brigdoor.proc/close)
+		INVOKE_ASYNC(door, TYPE_PROC_REF(/obj/machinery/door/window/brigdoor, close))
+
+	for(var/obj/machinery/door/airlock/security/brig/airlock in targets)
+		if(airlock.density)
+			continue
+		INVOKE_ASYNC(airlock, TYPE_PROC_REF(/obj/machinery/door/airlock/security/brig, close))
 
 	for(var/obj/structure/closet/secure_closet/brig/C in targets)
 		if(C.broken)
@@ -96,7 +105,7 @@
 		if(C.opened && !C.close())
 			continue
 		C.locked = TRUE
-		C.update_icon()
+		C.update_appearance()
 	return 1
 
 
@@ -106,18 +115,23 @@
 		return 0
 
 	if(!forced)
-		Radio.set_frequency(FREQ_SECURITY)
-		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_SECURITY)
+		Radio.set_frequency(FREQ_COMMAND)
+		Radio.talk_into(src, "Timer has expired. Releasing prisoner.", FREQ_COMMAND)
 
 	timing = FALSE
 	activation_time = null
 	set_timer(0)
-	update_icon()
+	update_appearance()
 
 	for(var/obj/machinery/door/window/brigdoor/door in targets)
 		if(!door.density)
 			continue
-		INVOKE_ASYNC(door, /obj/machinery/door/window/brigdoor.proc/open)
+		INVOKE_ASYNC(door, TYPE_PROC_REF(/obj/machinery/door/window/brigdoor, open))
+
+	for(var/obj/machinery/door/airlock/security/brig/airlock in targets)
+		if(!airlock.density)
+			continue
+		INVOKE_ASYNC(airlock, TYPE_PROC_REF(/obj/machinery/door/airlock/security/brig, open))
 
 	for(var/obj/structure/closet/secure_closet/brig/C in targets)
 		if(C.broken)
@@ -125,7 +139,7 @@
 		if(C.opened)
 			continue
 		C.locked = FALSE
-		C.update_icon()
+		C.update_appearance()
 
 	return 1
 
@@ -151,8 +165,8 @@
 // if BROKEN, display blue screen of death icon AI uses
 // if timing=true, run update display function
 /obj/machinery/door_timer/update_icon()
+	. = ..()
 	if(machine_stat & (NOPOWER))
-		icon_state = "frame"
 		return
 
 	if(machine_stat & (BROKEN))

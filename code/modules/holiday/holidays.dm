@@ -178,7 +178,6 @@
 	begin_month = APRIL
 
 /datum/holiday/april_fools/celebrate()
-	SSjob.set_overflow_role("Clown")
 	SSticker.login_music = 'sound/ambience/clown.ogg'
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/P = i
@@ -254,7 +253,6 @@
 	name = "UFO Day"
 	begin_day = 2
 	begin_month = JULY
-	drone_hat = /obj/item/clothing/mask/facehugger/dead
 
 /datum/holiday/UFO/getStationPrefix() //Is such a thing even possible?
 	return pick("Ayy","Truth","Tsoukalos","Mulder","Scully") //Yes it is!
@@ -530,7 +528,7 @@
 	return "Have a merry Christmas!"
 
 /datum/holiday/xmas/celebrate()
-	SSticker.OnRoundstart(CALLBACK(src, .proc/roundstart_celebrate))
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(roundstart_celebrate)))
 	GLOB.maintenance_loot += list(
 		/obj/item/toy/xmas_cracker = 3,
 		/obj/item/clothing/head/santa = 1,
@@ -632,6 +630,17 @@
 
 /datum/holiday/hotdogday/greet()
 	return "Happy National Hot Dog Day!"
+
+/datum/holiday/jaynesday
+	name = "Jaynesday"
+	begin_month = OCTOBER
+	begin_day = 18
+
+/datum/holiday/jaynesday/greet()
+	return "Today is Jaynesday!"
+
+/datum/holiday/jaynseday/getStationPrefix()
+	return pick("Mudder", "Canton", "Jayne", "Cobb")
 
 /datum/holiday/hebrew
 	name = "If you see this the Hebrew holiday calendar code is broken"

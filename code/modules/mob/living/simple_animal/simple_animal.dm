@@ -63,9 +63,9 @@
 	///This damage is taken when atmos doesn't fit all the requirements above.
 	var/unsuitable_atmos_damage = 2
 
-	///LETTING SIMPLE ANIMALS ATTACK? WHAT COULD GO WRONG. Defaults to zero so Ian can still be cuddly.
-	var/melee_damage_lower = 0
-	var/melee_damage_upper = 0
+	//Defaults to zero so Ian can still be cuddly. Moved up the tree to living! This allows us to bypass some hardcoded stuff.
+	melee_damage_lower = 0
+	melee_damage_upper = 0
 	///how much damage this simple animal does to objects, if any.
 	var/obj_damage = 0
 	///How much armour they ignore, as a flat reduction from the targets armour value.
@@ -86,8 +86,6 @@
 	///Set to 1 to allow breaking of crates,lockers,racks,tables; 2 for walls; 3 for Rwalls.
 	var/environment_smash = ENVIRONMENT_SMASH_NONE
 
-	///LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster.
-	var/speed = 1
 
 	///Hot simple_animal baby making vars.
 	var/list/childtype = null
@@ -145,7 +143,7 @@
 	///What kind of footstep this mob should have. Null if it shouldn't have any.
 	var/footstep_type
 
-/mob/living/simple_animal/Initialize()
+/mob/living/simple_animal/Initialize(mapload)
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
 	if(gender == PLURAL)
@@ -154,12 +152,15 @@
 		real_name = name
 	if(!loc)
 		stack_trace("Simple animal being instantiated in nullspace")
-	update_simplemob_varspeed()
 	if(dextrous)
 		AddComponent(/datum/component/personal_crafting)
+	if(footstep_type)
+		AddComponent(/datum/component/footstep, footstep_type)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
+
+	LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[virtual_z()]", src)
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 
@@ -167,12 +168,9 @@
 		nest.spawned_mobs -= src
 		nest = null
 
-	var/turf/T = get_turf(src)
-	if (T && AIStatus == AI_Z_OFF)
-		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
+	if(access_card)
+		QDEL_NULL(access_card)
 
-	//Walking counts as a reference, putting this here because most things don't walk, clean this up once walk() procs are dead
-	walk(src, 0)
 	return ..()
 
 /mob/living/simple_animal/attackby(obj/item/O, mob/user, params)
@@ -209,8 +207,6 @@
 		else
 			set_stat(CONSCIOUS)
 	med_hud_set_status()
-	if(footstep_type)
-		AddComponent(/datum/component/footstep, footstep_type)
 
 /mob/living/simple_animal/handle_status_effects()
 	..()
@@ -234,7 +230,7 @@
 						turns_since_move = 0
 			return 1
 
-/mob/living/simple_animal/proc/handle_automated_speech(var/override)
+/mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
 	if(speak_chance)
 		if(prob(speak_chance) || override)
@@ -376,19 +372,10 @@
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/proc/set_varspeed(var_value)
-	speed = var_value
-	update_simplemob_varspeed()
-
-/mob/living/simple_animal/proc/update_simplemob_varspeed()
-	if(speed == 0)
-		remove_movespeed_modifier(/datum/movespeed_modifier/simplemob_varspeed)
-	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/simplemob_varspeed, multiplicative_slowdown = speed)
-
 /mob/living/simple_animal/get_status_tab_items()
 	. = ..()
-	. += ""
 	. += "Health: [round((health / maxHealth) * 100)]%"
+	. += "Intent: [a_intent]"
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot.len)
@@ -435,12 +422,6 @@
 		var/obj/mecha/M = the_target
 		if (M.occupant)
 			return FALSE
-	//WS start
-	if(isspacepod(the_target))
-		var/obj/spacepod/SP = the_target
-		if(SP.pilot || SP.passengers.len)
-			return FALSE
-	//WS end
 	return TRUE
 
 /mob/living/simple_animal/handle_fire()
@@ -597,10 +578,10 @@
 		var/atom/movable/screen/inventory/hand/H
 		H = hud_used.hand_slots["[hand_index]"]
 		if(H)
-			H.update_icon()
+			H.update_appearance()
 		H = hud_used.hand_slots["[oindex]"]
 		if(H)
-			H.update_icon()
+			H.update_appearance()
 
 /mob/living/simple_animal/put_in_hands(obj/item/I, del_on_fail = FALSE, merge_stacks = TRUE)
 	. = ..(I, del_on_fail, merge_stacks)
@@ -617,7 +598,7 @@
 
 //ANIMAL RIDING
 
-/mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user)
+/mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user, check_loc = FALSE)
 	var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
 	if(riding_datum)
 		if(user.incapacitated())
@@ -642,22 +623,36 @@
 /mob/living/simple_animal/proc/toggle_ai(togglestatus)
 	if(!can_have_ai && (togglestatus != AI_OFF))
 		return
-	if (AIStatus != togglestatus)
-		if (togglestatus > 0 && togglestatus < 5)
-			if (togglestatus == AI_Z_OFF || AIStatus == AI_Z_OFF)
-				var/turf/T = get_turf(src)
-				if (AIStatus == AI_Z_OFF)
-					SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
-				else
-					SSidlenpcpool.idle_mobs_by_zlevel[T.z] += src
-			GLOB.simple_animals[AIStatus] -= src
-			GLOB.simple_animals[togglestatus] += src
-			AIStatus = togglestatus
-		else
-			stack_trace("Something attempted to set simple animals AI to an invalid state: [togglestatus]")
+	if(AIStatus == togglestatus)
+		return
 
-/mob/living/simple_animal/proc/consider_wakeup()
+	GLOB.simple_animals[AIStatus] -= src
+	GLOB.simple_animals[togglestatus] += list(src)
+	AIStatus = togglestatus
+
+	var/virt_z = "[virtual_z()]"
+	if(!virt_z)
+		return
+
+	switch(togglestatus)
+		if(AI_Z_OFF)
+			LAZYADDASSOCLIST(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
+
+		else
+			LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, virt_z, src)
+
+/mob/living/simple_animal/proc/check_should_sleep()
 	if (pulledby || shouldwakeup)
+		toggle_ai(AI_ON)
+		return
+
+	var/virt_z = "[virtual_z()]"
+	if(!virt_z)
+		return
+	var/players_on_virtual_z = LAZYACCESS(SSmobs.players_by_virtual_z, virt_z)
+	if(!length(players_on_virtual_z))
+		toggle_ai(AI_Z_OFF)
+	else if(AIStatus == AI_Z_OFF)
 		toggle_ai(AI_ON)
 
 /mob/living/simple_animal/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
@@ -666,9 +661,10 @@
 		if(AIStatus == AI_IDLE)
 			toggle_ai(AI_ON)
 
-
-/mob/living/simple_animal/onTransitZ(old_z, new_z)
-	..()
-	if (AIStatus == AI_Z_OFF)
-		SSidlenpcpool.idle_mobs_by_zlevel[old_z] -= src
-		toggle_ai(initial(AIStatus))
+/mob/living/simple_animal/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	. = ..()
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(SSidlenpcpool.idle_mobs_by_virtual_level, "[previous_virtual_z]", src)
+	toggle_ai(initial(AIStatus))
+	if(new_virtual_z)
+		check_should_sleep()

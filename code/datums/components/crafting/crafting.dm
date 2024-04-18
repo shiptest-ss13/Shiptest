@@ -1,6 +1,6 @@
 /datum/component/personal_crafting/Initialize()
 	if(ismob(parent))
-		RegisterSignal(parent, COMSIG_MOB_CLIENT_LOGIN, .proc/create_mob_button)
+		RegisterSignal(parent, COMSIG_MOB_CLIENT_LOGIN, PROC_REF(create_mob_button))
 
 /datum/component/personal_crafting/proc/create_mob_button(mob/user, client/CL)
 	SIGNAL_HANDLER
@@ -10,7 +10,7 @@
 	C.icon = H.ui_style
 	H.static_inventory += C
 	CL.screen += C
-	RegisterSignal(C, COMSIG_CLICK, .proc/component_ui_interact)
+	RegisterSignal(C, COMSIG_CLICK, PROC_REF(component_ui_interact))
 
 /datum/component/personal_crafting
 	var/busy
@@ -60,12 +60,12 @@
 */
 
 /**
-  * Check that the contents of the recipe meet the requirements.
-  *
-  * user: The /mob that initated the crafting.
-  * R: The /datum/crafting_recipe being attempted.
-  * contents: List of items to search for R's reqs.
-  */
+ * Check that the contents of the recipe meet the requirements.
+ *
+ * user: The /mob that initated the crafting.
+ * R: The /datum/crafting_recipe being attempted.
+ * contents: List of items to search for R's reqs.
+ */
 /datum/component/personal_crafting/proc/check_contents(atom/a, datum/crafting_recipe/R, list/contents)
 	var/list/item_instances = contents["instances"]
 	contents = contents["other"]
@@ -315,10 +315,10 @@
 		qdel(DL)
 
 /datum/component/personal_crafting/proc/component_ui_interact(atom/movable/screen/craft/image, location, control, params, user)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(user == parent)
-		ui_interact(user)
+		INVOKE_ASYNC(src, PROC_REF(ui_interact), user)
 
 /datum/component/personal_crafting/ui_state(mob/user)
 	return GLOB.not_incapacitated_turf_state

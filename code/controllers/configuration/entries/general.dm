@@ -96,15 +96,19 @@
 
 /datum/config_entry/flag/log_shuttle // log shuttle related actions, ie shuttle computers, shuttle manipulator, emergency console
 
-/datum/config_entry/flag/allow_admin_ooccolor	// Allows admins with relevant permissions to have their own ooc colour
+/datum/config_entry/flag/log_timers_on_bucket_reset // logs all timers in buckets on automatic bucket reset (Useful for timer debugging)
+
+/datum/config_entry/flag/allow_admin_ooccolor // Allows admins with relevant permissions to have their own ooc colour
 
 /datum/config_entry/flag/allow_admin_asaycolor //Allows admins with relevant permissions to have a personalized asay color
 
-/datum/config_entry/flag/allow_vote_restart	// allow votes to restart
+/datum/config_entry/flag/allow_vote_restart	// allow player votes to restart
 
-/datum/config_entry/flag/allow_vote_mode	// allow votes to change mode
+/datum/config_entry/flag/allow_vote_transfer	// allow player votes to initiate a transfer
 
-/datum/config_entry/flag/allow_vote_map	// allow votes to change map
+/datum/config_entry/flag/auth_only // server can only be used for authentication
+
+/datum/config_entry/flag/auth_admin_testing // auth server allows admin testing and other actions
 
 /datum/config_entry/number/vote_delay	// minimum time between voting sessions (deciseconds, 10 minute default)
 	config_entry_value = 6000
@@ -116,7 +120,9 @@
 	integer = FALSE
 	min_val = 0
 
-//WS Begin - Autotranfer vote
+/// If disabled, no-voters will automatically have their votes added to certain vote options
+/// (For eample: restart votes will default to "no restart", map votes will default to their preferred map / default map)
+/datum/config_entry/flag/default_no_vote
 
 /datum/config_entry/number/vote_autotransfer_initial //length of time before the first autotransfer vote is called (deciseconds, default 2 hours)
 	config_entry_value = 72000
@@ -128,15 +134,13 @@
 	integer = FALSE
 	min_val = 0
 
-//WS End
-
-/datum/config_entry/flag/default_no_vote	// vote does not default to nochange/norestart
 
 /datum/config_entry/flag/no_dead_vote	// dead people can't vote
 
 /datum/config_entry/flag/allow_metadata	// Metadata is supported.
 
-/datum/config_entry/flag/popup_admin_pm	// adminPMs to non-admins show in a pop-up 'reply' window when set
+/// Gives the ability to send players a maptext popup.
+/datum/config_entry/flag/popup_admin_pm
 
 /datum/config_entry/number/fps
 	config_entry_value = 20
@@ -174,11 +178,6 @@
 
 /datum/config_entry/flag/allow_holidays
 
-/datum/config_entry/number/tick_limit_mc_init	//SSinitialization throttling
-	config_entry_value = TICK_LIMIT_MC_INIT_DEFAULT
-	min_val = 0 //oranges warned us
-	integer = FALSE
-
 /datum/config_entry/flag/admin_legacy_system	//Defines whether the server uses the legacy admin system with admins.txt or the SQL system
 	protection = CONFIG_ENTRY_LOCKED
 
@@ -208,43 +207,48 @@
 
 /datum/config_entry/flag/usewhitelist
 
+
 /datum/config_entry/flag/use_age_restriction_for_jobs	//Do jobs use account age restrictions? --requires database
 
 /datum/config_entry/flag/use_account_age_for_jobs	//Uses the time they made the account for the job restriction stuff. New player joining alerts should be unaffected.
 
+
 /datum/config_entry/flag/use_exp_tracking
 
-/datum/config_entry/flag/use_exp_restrictions_heads
+/datum/config_entry/flag/use_exp_restrictions_admin_bypass
 
-/datum/config_entry/number/use_exp_restrictions_heads_hours
+/datum/config_entry/number/ship_spawn_base_exp_min
 	config_entry_value = 0
 	integer = FALSE
 	min_val = 0
 
-/datum/config_entry/flag/use_exp_restrictions_heads_department
+/datum/config_entry/number/officer_join_base_exp_min
+	config_entry_value = 0
+	integer = FALSE
+	min_val = 0
 
-/datum/config_entry/flag/use_exp_restrictions_other
-
-/datum/config_entry/flag/use_exp_restrictions_admin_bypass
 
 /datum/config_entry/string/server
 
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	config_entry_value = "https://shiptest.ga/wiki/"
+	config_entry_value = "https://shiptest.net/wiki/"
 
-/datum/config_entry/string/forumurl
-	config_entry_value = "https://discord.gg/Zuv47eNuhE"
+/datum/config_entry/string/loreurl
+	config_entry_value = "https://shiptest.net/wiki/Lore_Primer"
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = "https://shiptest.ga/wiki/Rules"
+	config_entry_value = "https://shiptest.net/wiki/Rules"
 
 /datum/config_entry/string/githuburl
 	config_entry_value = "https://github.com/shiptest-ss13/Shiptest"
 
 /datum/config_entry/string/discordurl
-	config_entry_value = "https://discord.gg/Zuv47eNuhE"
+	config_entry_value = "https://shiptest.net/discord"
+
+/datum/config_entry/string/mapviewerurl
+	config_entry_value = "https://shiptest.net/map"
 
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
@@ -319,6 +323,10 @@
 	integer = FALSE
 
 /datum/config_entry/flag/maprotation
+
+/datum/config_entry/number/auto_lag_switch_pop //Number of clients at which drastic lag mitigation measures kick in
+	config_entry_value = null
+	min_val = 0
 
 /datum/config_entry/number/soft_popcap
 	config_entry_value = null
@@ -497,7 +505,7 @@
 
 /datum/config_entry/flag/resume_after_initializations/ValidateAndSet(str_val)
 	. = ..()
-	if(. && Master.current_runlevel)
+	if(. && MC_RUNNING())
 		world.sleep_offline = !config_entry_value
 
 /datum/config_entry/number/rounds_until_hard_restart
@@ -515,15 +523,6 @@
 /datum/config_entry/flag/picture_logging_camera
 
 
-/datum/config_entry/flag/reopen_roundstart_suicide_roles
-
-/datum/config_entry/flag/reopen_roundstart_suicide_roles_command_positions
-
-/datum/config_entry/number/reopen_roundstart_suicide_roles_delay
-	min_val = 30
-
-/datum/config_entry/flag/reopen_roundstart_suicide_roles_command_report
-
 /datum/config_entry/flag/auto_profile
 
 //BeginWS Edit
@@ -533,3 +532,32 @@
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 
 /datum/config_entry/string/centcom_source_whitelist
+
+/datum/config_entry/number/whitesands_atmos_moles
+	config_entry_value = 103
+	integer = FALSE
+	min_val = 10
+	max_val = 200
+
+/datum/config_entry/keyed_list/whitesands_atmos_mix
+	key_mode = KEY_MODE_TEXT
+	value_mode = VALUE_MODE_NUM
+	lowercase = FALSE
+	splitter = " "
+
+
+/datum/config_entry/keyed_list/whitesands_atmos_mix/ValidateListEntry(key_name, key_value)
+	var/list/gas_types = gas_types()
+	for (var/type in gas_types)
+		var/datum/gas/T = type
+		if (initial(T.id) == key_name)
+			// even a high pressure zone will be less than 1.5x one atmos
+			return key_value > 0 && key_value < 1.5
+	return FALSE
+
+// Elasticsearch stuffs
+/datum/config_entry/flag/elasticsearch_metrics_enabled
+
+/datum/config_entry/string/elasticsearch_metrics_endpoint
+
+/datum/config_entry/string/elasticsearch_metrics_apikey

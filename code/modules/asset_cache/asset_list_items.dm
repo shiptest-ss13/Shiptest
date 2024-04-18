@@ -3,21 +3,21 @@
 /datum/asset/simple/tgui_common
 	keep_local_name = TRUE
 	assets = list(
-		"tgui-common.bundle.js" = 'tgui/public/tgui-common.bundle.js',
+		"tgui-common.bundle.js" = file("tgui/public/tgui-common.bundle.js"),
 	)
 
 /datum/asset/simple/tgui
 	keep_local_name = TRUE
 	assets = list(
-		"tgui.bundle.js" = 'tgui/public/tgui.bundle.js',
-		"tgui.bundle.css" = 'tgui/public/tgui.bundle.css',
+		"tgui.bundle.js" = file("tgui/public/tgui.bundle.js"),
+		"tgui.bundle.css" = file("tgui/public/tgui.bundle.css"),
 	)
 
 /datum/asset/simple/tgui_panel
 	keep_local_name = TRUE
 	assets = list(
-		"tgui-panel.bundle.js" = 'tgui/public/tgui-panel.bundle.js',
-		"tgui-panel.bundle.css" = 'tgui/public/tgui-panel.bundle.css',
+		"tgui-panel.bundle.js" = file("tgui/public/tgui-panel.bundle.js"),
+		"tgui-panel.bundle.css" = file("tgui/public/tgui-panel.bundle.css"),
 	)
 
 /datum/asset/simple/headers
@@ -99,6 +99,7 @@
 		"stamp-clown" = 'icons/stamp_icons/large_stamp-clown.png',
 		"stamp-deny" = 'icons/stamp_icons/large_stamp-deny.png',
 		"stamp-ok" = 'icons/stamp_icons/large_stamp-ok.png',
+		"stamp-void" = 'icons/stamp_icons/large_stamp-void.png',
 		"stamp-hop" = 'icons/stamp_icons/large_stamp-hop.png',
 		"stamp-cmo" = 'icons/stamp_icons/large_stamp-cmo.png',
 		"stamp-ce" = 'icons/stamp_icons/large_stamp-ce.png',
@@ -106,9 +107,27 @@
 		"stamp-rd" = 'icons/stamp_icons/large_stamp-rd.png',
 		"stamp-cap" = 'icons/stamp_icons/large_stamp-cap.png',
 		"stamp-qm" = 'icons/stamp_icons/large_stamp-qm.png',
-		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png'
+		"stamp-law" = 'icons/stamp_icons/large_stamp-law.png',
+		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',
+		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
+		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
+		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
+		"stamp-solgov" = 'icons/stamp_icons/large_stamp-solgov.png',
+		"stamp-inteq" = 'icons/stamp_icons/large_stamp-inteq.png',
+		"stamp-vanguard" = 'icons/stamp_icons/large_stamp-vanguard.png',
+		"stamp-maa" = 'icons/stamp_icons/large_stamp-maa.png',
+		"stamp-artificer" = 'icons/stamp_icons/large_stamp-artificer.png',
+		"stamp-clip" = 'icons/stamp_icons/large_stamp-clip.png',
+		"stamp-bard" = 'icons/stamp_icons/large_stamp-bard.png',
+		"stamp-gold" = 'icons/stamp_icons/large_stamp-gold.png',
+		"stamp-cybersun" = 'icons/stamp_icons/large_stamp-cybersun.png',
+		"stamp-donk" = 'icons/stamp_icons/large_stamp-donk.png'
 	)
 
+/datum/asset/simple/fuckywucky
+	assets = list(
+		"fuckywucky.png" = 'html/fuckywucky.png'
+	)
 
 /datum/asset/simple/IRV
 	assets = list(
@@ -120,30 +139,6 @@
 		/datum/asset/simple/jquery,
 		/datum/asset/simple/IRV
 	)
-
-/datum/asset/simple/namespaced/changelog
-	assets = list(
-		"88x31.png" = 'html/88x31.png',
-		"bug-minus.png" = 'html/bug-minus.png',
-		"cross-circle.png" = 'html/cross-circle.png',
-		"hard-hat-exclamation.png" = 'html/hard-hat-exclamation.png',
-		"image-minus.png" = 'html/image-minus.png',
-		"image-plus.png" = 'html/image-plus.png',
-		"music-minus.png" = 'html/music-minus.png',
-		"music-plus.png" = 'html/music-plus.png',
-		"tick-circle.png" = 'html/tick-circle.png',
-		"wrench-screwdriver.png" = 'html/wrench-screwdriver.png',
-		"spell-check.png" = 'html/spell-check.png',
-		"burn-exclamation.png" = 'html/burn-exclamation.png',
-		"chevron.png" = 'html/chevron.png',
-		"chevron-expand.png" = 'html/chevron-expand.png',
-		"scales.png" = 'html/scales.png',
-		"coding.png" = 'html/coding.png',
-		"ban.png" = 'html/ban.png',
-		"chrome-wrench.png" = 'html/chrome-wrench.png',
-		"changelog.css" = 'html/changelog.css'
-	)
-	parents = list("changelog.html" = 'html/changelog.html')
 
 /datum/asset/simple/jquery
 	legacy = TRUE
@@ -166,6 +161,12 @@
 	assets = list(
 		"sga.ttf" = 'html/sga.ttf'
 	)
+
+/// Override this in order to start the creation of the spritehseet.
+/// This is where all your Insert, InsertAll, etc calls should be inside.
+/datum/asset/spritesheet/proc/create_spritesheets()
+	SHOULD_CALL_PARENT(FALSE)
+	CRASH("create_spritesheets() not implemented for [type]!")
 
 /datum/asset/spritesheet/chat
 	name = "chat"
@@ -354,7 +355,23 @@
 	name = "vending"
 
 /datum/asset/spritesheet/vending/register()
-	for (var/k in GLOB.vending_products)
+	var/list/vendor_type_list = typesof(/obj/machinery/vending)
+	var/list/vending_products = list()
+
+	for(var/vendor_type in vendor_type_list)
+		var/obj/machinery/vending/V = new vendor_type()
+		if (V.products)
+			for(var/typepath in V.products)
+				vending_products[typepath] = 1
+		if (V.contraband)
+			for(var/typepath in V.contraband)
+				vending_products[typepath] = 1
+		if (V.premium)
+			for(var/typepath in V.premium)
+				vending_products[typepath] = 1
+		qdel(V)
+
+	for (var/k in vending_products)
 		var/atom/item = k
 		if (!ispath(item, /atom))
 			continue
@@ -405,3 +422,62 @@
 	assets = list(
 		"safe_dial.png" = 'html/safe_dial.png'
 	)
+
+/datum/asset/simple/pai
+	assets = list(
+		"paigrid.png" = 'html/paigrid.png'
+	)
+
+/datum/asset/spritesheet/fish
+	name = "fish"
+
+/datum/asset/spritesheet/fish/create_spritesheets()
+	for (var/path in subtypesof(/obj/item/fish))
+		var/obj/item/fish/fish_type = path
+		var/fish_icon = initial(fish_type.icon)
+		var/fish_icon_state = initial(fish_type.icon_state)
+		var/id = sanitize_css_class_name("[fish_icon][fish_icon_state]")
+		if(sprites[id]) //no dupes
+			continue
+		Insert(id, fish_icon, fish_icon_state)
+
+
+/datum/asset/simple/fishing_minigame
+	assets = list(
+		"fishing_background_default" = 'icons/ui_icons/fishing/default.png',
+		"fishing_background_lavaland" = 'icons/ui_icons/fishing/lavaland.png'
+	)
+
+/datum/asset/spritesheet/supplypods
+	name = "supplypods"
+
+/datum/asset/spritesheet/supplypods/register()
+	for (var/style in 1 to length(GLOB.podstyles))
+		var/icon_file = 'icons/obj/supplypods.dmi'
+		var/states = icon_states(icon_file)
+		if (style == STYLE_SEETHROUGH)
+			Insert("pod_asset[style]", icon(icon_file, "seethrough-icon", SOUTH))
+			continue
+		var/base = GLOB.podstyles[style][POD_BASE]
+		if (!base)
+			Insert("pod_asset[style]", icon(icon_file, "invisible-icon", SOUTH))
+			continue
+		var/icon/podIcon = icon(icon_file, base, SOUTH)
+		var/door = GLOB.podstyles[style][POD_DOOR]
+		if (door)
+			door = "[base]_door"
+			if(door in states)
+				podIcon.Blend(icon(icon_file, door, SOUTH), ICON_OVERLAY)
+		var/shape = GLOB.podstyles[style][POD_SHAPE]
+		if (shape == POD_SHAPE_NORML)
+			var/decal = GLOB.podstyles[style][POD_DECAL]
+			if (decal)
+				if(decal in states)
+					podIcon.Blend(icon(icon_file, decal, SOUTH), ICON_OVERLAY)
+			var/glow = GLOB.podstyles[style][POD_GLOW]
+			if (glow)
+				glow = "pod_glow_[glow]"
+				if(glow in states)
+					podIcon.Blend(icon(icon_file, glow, SOUTH), ICON_OVERLAY)
+		Insert("pod_asset[style]", podIcon)
+	return ..()

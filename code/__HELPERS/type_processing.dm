@@ -1,4 +1,4 @@
-/proc/make_types_fancy(var/list/types)
+/proc/make_types_fancy(list/types)
 	if (ispath(types))
 		types = list(types)
 	. = list()
@@ -8,6 +8,7 @@
 			/obj/effect/decal/cleanable = "CLEANABLE",
 			/obj/item/radio/headset = "HEADSET",
 			/obj/item/clothing/head/helmet/space = "SPESSHELMET",
+			/obj/item/bodypart = "BODYPART",
 			/obj/item/book/manual = "MANUAL",
 			/obj/item/reagent_containers/food/drinks = "DRINK", //longest paths comes first
 			/obj/item/reagent_containers/food = "FOOD",

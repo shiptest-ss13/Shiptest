@@ -9,7 +9,7 @@
 
 /obj/item/stack/ore
 	name = "rock"
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "ore"
 	item_state = "ore"
 	full_w_class = WEIGHT_CLASS_BULKY
@@ -96,11 +96,47 @@
 	icon_state = "Glass ore"
 	item_state = "Glass ore"
 	singular_name = "sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
 	points = 1
 	custom_materials = list(/datum/material/glass=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/glass
 	w_class = WEIGHT_CLASS_TINY
 	mine_experience = 0 //its sand
+
+/obj/item/stack/ore/glass/basalt
+	name = "volcanic ash"
+	icon_state = "volcanic_sand"
+	item_state = "volcanic_sand"
+	singular_name = "volcanic ash pile"
+	grind_results = list(/datum/reagent/toxin/lava_microbe = 1, /datum/reagent/ash = 8.5, /datum/reagent/silicon = 8.5)
+
+/obj/item/stack/ore/glass/whitesands
+	name = "white sand pile"
+	icon_state = "whitesands"
+	item_state = "whitesands"
+	singular_name = "white sand pile"
+	grind_results = list(/datum/reagent/consumable/sodiumchloride = 10, /datum/reagent/silicon = 10)
+
+/obj/item/stack/ore/glass/rockplanet
+	name = "oxidized sand pile"
+	icon_state = "rockplanet_sand"
+	item_state = "rockplanet_sand"
+	singular_name = "iron sand pile"
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/iron = 10)
+
+/obj/item/stack/ore/glass/wasteplanet
+	name = "oily dust"
+	icon_state = "wasteplanet_sand"
+	item_state = "wasteplanet_sand"
+	singular_name = "rocky dust"
+	grind_results = list(/datum/reagent/silicon = 10, /datum/reagent/lithium = 2, /datum/reagent/uranium/radium = 1, /datum/reagent/chlorine = 1, /datum/reagent/aluminium = 1)//may be unsafe for human consumption
+
+/obj/item/stack/ore/glass/beach
+	name = "beige sand pile"
+	icon_state = "beach_sand"
+	item_state = "beach_sand"
+	singular_name = "beige sand pile"
+	grind_results = list(/datum/reagent/silicon = 10)
 
 GLOBAL_LIST_INIT(sand_recipes, list(\
 		new /datum/stack_recipe("sandstone", /obj/item/stack/sheet/mineral/sandstone, 1, 1, 50),\
@@ -128,14 +164,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	if (severity == EXPLODE_NONE)
 		return
 	qdel(src)
-
-/obj/item/stack/ore/glass/basalt
-	name = "volcanic ash"
-	icon_state = "volcanic_sand"
-	item_state = "volcanic_sand"
-	singular_name = "volcanic ash pile"
-	grind_results = list(/datum/reagent/toxin/lava_microbe = 5)		//WS Edit - Fuck
-	mine_experience = 0
 
 /obj/item/stack/ore/plasma
 	name = "plasma ore"
@@ -222,7 +250,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/gibtonite
 	name = "gibtonite ore"
 	desc = "Extremely explosive if struck with mining equipment, Gibtonite is often used by miners to speed up their work by using it as a mining charge. This material is illegal to possess by unauthorized personnel under space law."
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "Gibtonite ore"
 	item_state = "Gibtonite ore"
 	w_class = WEIGHT_CLASS_BULKY
@@ -304,7 +332,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		else
 			user.visible_message("<span class='warning'>[user] strikes \the [src], causing a chain reaction!</span>", "<span class='danger'>You strike \the [src], causing a chain reaction.</span>")
 			log_bomber(user, "has primed a", src, "for detonation", notify_admins)
-		det_timer = addtimer(CALLBACK(src, .proc/detonate, notify_admins), det_time, TIMER_STOPPABLE)
+		det_timer = addtimer(CALLBACK(src, PROC_REF(detonate), notify_admins), det_time, TIMER_STOPPABLE)
 
 /obj/item/gibtonite/proc/detonate(notify_admins)
 	if(primed)
@@ -319,8 +347,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/stack/ore/Initialize()
 	. = ..()
-	pixel_x = rand(0,16)-8
-	pixel_y = rand(0,8)-8
+	pixel_x = base_pixel_x +  rand(0,16) - 8
+	pixel_y = base_pixel_y + rand(0,8) - 8
 
 /obj/item/stack/ore/ex_act(severity, target)
 	if (!severity || severity >= 2)
@@ -349,46 +377,21 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	var/value
 	var/coinflip
 	item_flags = NO_MAT_REDEMPTION //You know, it's kind of a problem that money is worth more extrinsicly than intrinsically in this universe.
-
+	drop_sound = 'sound/items/handling/coin_drop.ogg'
+	pickup_sound =  'sound/items/handling/coin_pickup.ogg'
 /obj/item/coin/Initialize()
 	. = ..()
 	coinflip = pick(sideslist)
 	icon_state = "coin_[coinflip]"
-	pixel_x = rand(0,16)-8
-	pixel_y = rand(0,8)-8
+	pixel_x = base_pixel_x + rand(0,16) - 8
+	pixel_y = base_pixel_y + rand(0,8) - 8
 
-/obj/item/coin/set_custom_materials(var/list/materials, multiplier = 1)
+/obj/item/coin/set_custom_materials(list/materials, multiplier = 1)
 	. = ..()
 	value = 0
 	for(var/i in custom_materials)
 		var/datum/material/M = i
 		value += M.value_per_unit * custom_materials[M]
-
-/obj/item/coin/get_item_credit_value()
-	return value
-
-/obj/item/coin/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
-	if (!attack_self(user))
-		user.visible_message("<span class='suicide'>[user] couldn't flip \the [src]!</span>")
-		return SHAME
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), 10)//10 = time takes for flip animation
-	return MANUAL_SUICIDE_NONLETHAL
-
-/obj/item/coin/proc/manual_suicide(mob/living/user)
-	var/index = sideslist.Find(coinflip)
-	if (index==2)//tails
-		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] promptly falls over, dead!</span>")
-		user.adjustOxyLoss(200)
-		user.death(0)
-		user.set_suicide(TRUE)
-		user.suicide_log()
-	else
-		user.visible_message("<span class='suicide'>\the [src] lands on [coinflip]! [user] keeps on living!</span>")
-
-/obj/item/coin/examine(mob/user)
-	. = ..()
-	. += "<span class='info'>It's worth [value] credit\s.</span>"
 
 /obj/item/coin/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/cable_coil))
@@ -435,7 +438,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 				"<span class='notice'>[user] flips [src]. It lands on [coinflip].</span>", \
 				"<span class='notice'>You flip [src]. It lands on [coinflip].</span>", \
 				"<span class='hear'>You hear the clattering of loose change.</span>")
-	return TRUE//did the coin flip? useful for suicide_act
+	return TRUE//did the coin flip?
 
 /obj/item/coin/gold
 	custom_materials = list(/datum/material/gold = 400)

@@ -134,6 +134,26 @@
 		var/time_left = max(0, (A.death_time - world.time) / 10)
 		return round(time_left)
 
+/obj/effect/countdown/holosign
+	name = "holosign countdown"
+
+/obj/effect/countdown/holosign/get_value()
+	var/obj/structure/holosign/HS = attached_to
+	if(!istype(HS))
+		return
+	else
+		var/time_left = max(0, (HS.death_time - world.time) /10)
+		return round(time_left)
+
+/obj/effect/countdown/holosign/Destroy(...)
+	if(!attached_to)
+		return ..()
+	var/obj/structure/holosign/H = attached_to
+	if(!istype(H) || !H.countdown)
+		return ..()
+	H.countdown = null
+	return ..()
+
 /obj/effect/countdown/hourglass
 	name = "hourglass countdown"
 
@@ -157,3 +177,16 @@
 		var/obj/machinery/computer/arena/C = A.get_controller()
 		var/time_left = max(0, (C.start_time - world.time) / 10)
 		return round(time_left)
+
+/obj/effect/countdown/clonepod
+	name = "cloning pod countdown"
+	color = "#18d100"
+	text_size = 1
+
+/obj/effect/countdown/clonepod/get_value()
+	var/obj/machinery/clonepod/C = attached_to
+	if(!istype(C))
+		return
+	else if(C.occupant)
+		var/completion = round(C.get_completion())
+		return completion

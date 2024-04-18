@@ -9,17 +9,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Department
 	MODE_KEY_DEPARTMENT = MODE_DEPARTMENT,
 	RADIO_KEY_COMMAND = RADIO_CHANNEL_COMMAND,
-	RADIO_KEY_SCIENCE = RADIO_CHANNEL_SCIENCE,
-	RADIO_KEY_MEDICAL = RADIO_CHANNEL_MEDICAL,
-	RADIO_KEY_ENGINEERING = RADIO_CHANNEL_ENGINEERING,
-	RADIO_KEY_SECURITY = RADIO_CHANNEL_SECURITY,
-	RADIO_KEY_SUPPLY = RADIO_CHANNEL_SUPPLY,
-	RADIO_KEY_SERVICE = RADIO_CHANNEL_SERVICE,
 
 	// Faction
 	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
 	RADIO_KEY_CENTCOM = RADIO_CHANNEL_CENTCOM,
 	RADIO_KEY_SOLGOV = RADIO_CHANNEL_SOLGOV,		//WS Edit - SolGov Rep
+	RADIO_KEY_NANOTRASEN = RADIO_CHANNEL_NANOTRASEN,
+	RADIO_KEY_MINUTEMEN = RADIO_CHANNEL_MINUTEMEN,
+	RADIO_KEY_PGF = RADIO_CHANNEL_PGF,
+	RADIO_KEY_INTEQ = RADIO_CHANNEL_INTEQ,
+	RADIO_KEY_PIRATE = RADIO_CHANNEL_PIRATE,
 
 	// Admin
 	MODE_KEY_ADMIN = MODE_ADMIN,
@@ -40,16 +39,14 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Department
 	"ð" = MODE_DEPARTMENT,
 	"ñ" = RADIO_CHANNEL_COMMAND,
-	"ò" = RADIO_CHANNEL_SCIENCE,
-	"ü" = RADIO_CHANNEL_MEDICAL,
-	"ó" = RADIO_CHANNEL_ENGINEERING,
-	"û" = RADIO_CHANNEL_SECURITY,
-	"ã" = RADIO_CHANNEL_SUPPLY,
-	"ì" = RADIO_CHANNEL_SERVICE,
 
 	// Faction
 	"å" = RADIO_CHANNEL_SYNDICATE,
 	"í" = RADIO_CHANNEL_CENTCOM,
+	"ò" = RADIO_CHANNEL_NANOTRASEN,
+	"ü" = RADIO_CHANNEL_MINUTEMEN,
+	"û" = RADIO_CHANNEL_PIRATE,
+	"ì" = RADIO_CHANNEL_INTEQ,
 
 	// Admin
 	"ç" = MODE_ADMIN,
@@ -102,6 +99,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/original_message = message
 	message = get_message_mods(message, message_mods)
 	var/datum/saymode/saymode = SSradio.saymodes[message_mods[RADIO_KEY]]
+	message = check_for_custom_say_emote(message, message_mods)
 
 	if(!message)
 		return
@@ -126,10 +124,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				return
 		if(HARD_CRIT)
 			if(!(message_mods[WHISPER_MODE] || message_mods[MODE_CHANGELING] || message_mods[MODE_ALIEN]))
-				return
+				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
 		if(DEAD)
 			say_dead(original_message)
 			return
+
+	if(client && SSlag_switch.measures[SLOWMODE_SAY] && !HAS_TRAIT(src, TRAIT_BYPASS_MEASURES) && !forced && src == usr)
+		if(!COOLDOWN_FINISHED(client, say_slowmode))
+			to_chat(src, span_warning("Message not sent due to slowmode. Please wait [SSlag_switch.slowmode_cooldown/10] seconds between messages.\n\"[message]\""))
+			return
+		COOLDOWN_START(client, say_slowmode, SSlag_switch.slowmode_cooldown)
 
 	if(!can_speak_basic(original_message, ignore_spam, forced))
 		return
@@ -147,20 +151,31 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/succumbed = FALSE
 
-	if(message_mods[WHISPER_MODE] == MODE_WHISPER)
-		message_range = 1
-		log_talk(message, LOG_WHISPER)
-		if(stat == HARD_CRIT)
-			var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
-			// If we cut our message short, abruptly end it with a-..
-			var/message_len = length_char(message)
-			message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
-			message = Ellipsis(message, 10, 1)
-			last_words = message
-			message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
-			succumbed = TRUE
-	else
-		log_talk(message, LOG_SAY, forced_by=forced)
+	if(message_mods[MODE_CUSTOM_SAY_EMOTE])
+		log_message(message_mods[MODE_CUSTOM_SAY_EMOTE], LOG_RADIO_EMOTE)
+
+	if(!message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
+		if(message_mods[WHISPER_MODE])
+			if(saymode || message_mods[RADIO_EXTENSION]) //no radio while in crit
+				saymode = null
+				message_mods -= RADIO_EXTENSION
+			message_range = 1
+			var/logged_message = message
+			if(stat == HARD_CRIT) //This is cheaper than checking for MODE_WHISPER_CRIT message mod
+				var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
+				// If we cut our message short, abruptly end it with a-..
+				var/message_len = length_char(message)
+				message = copytext_char(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
+				message = Ellipsis(message, 10, 1)
+				last_words = message
+				var/final_warning = alert(usr, "Your dying words will be \"[last_words]\", continue?", "Succumb", "Cancel", "Continue")
+				if(final_warning == "Cancel" || QDELETED(src))
+					return
+				message_mods[WHISPER_MODE] = MODE_WHISPER_CRIT
+				succumbed = TRUE
+			src.log_talk(logged_message, LOG_WHISPER, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
+		else
+			src.log_talk(message, LOG_SAY, forced_by=forced, custom_say_emote = message_mods[MODE_CUSTOM_SAY_EMOTE])
 
 	message = treat_message(message) // unfortunately we still need this
 	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
@@ -207,13 +222,13 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 		spans |= SPAN_ITALICS
-	message = process_chat_markup(message) //WS edit - Chat markup
 
 	send_speech(message, message_range, src, bubble_type, spans, language, message_mods)
 
 	if(succumbed)
 		succumb(1)
 		to_chat(src, compose_message(src, language, message, , spans, message_mods))
+		dying_breath(message)
 
 	return 1
 
@@ -234,7 +249,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	// Create map text prior to modifying message for goonchat
 	if (client?.prefs.chat_on_map && !(stat == UNCONSCIOUS || stat == HARD_CRIT) && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
-		create_chat_message(speaker, message_language, raw_message, spans)
+		if(message_mods[MODE_CUSTOM_SAY_ERASE_INPUT])
+			create_chat_message(speaker, null, message_mods[MODE_CUSTOM_SAY_EMOTE], spans, EMOTE_MESSAGE)
+		else
+			create_chat_message(speaker, message_language, raw_message, spans)
 
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mods)
@@ -256,9 +274,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 				continue
 			if(get_dist(player_mob, src) > 7 || player_mob.z != z) //they're out of range of normal hearing
 				if(eavesdrop_range)
-					if(!(player_mob.client.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
+					if(!(player_mob.client?.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
 						continue
-				else if(!(player_mob.client.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
+				else if(!(player_mob.client?.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 					continue
 			listening |= player_mob
 			the_dead[player_mob] = TRUE
@@ -280,11 +298,11 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	//speech bubble
 	var/list/speech_bubble_recipients = list()
 	for(var/mob/M in listening)
-		if(M.client && !M.client.prefs.chat_on_map)
+		if(M.client && (!M.client.prefs.chat_on_map || (SSlag_switch.measures[DISABLE_RUNECHAT] && !HAS_TRAIT(src, TRAIT_BYPASS_MEASURES))))
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	INVOKE_ASYNC(GLOBAL_PROC, /.proc/flick_overlay, I, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
 
 /mob/proc/binarycheck()
 	return FALSE
@@ -334,7 +352,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(cultslurring)
 		message = cultslur(message)
 
-	message = strip_html_simple(message) //Get rid of any markdown that might hurt us
+	if(clockcultslurring) //Shiptest edit
+		message = CLOCK_CULT_SLUR(message)
+
 
 	// check for and apply punctuation. thanks, bee
 	var/end = copytext(message, length(message))
@@ -399,3 +419,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(get_minds && mind)
 		return mind.get_language_holder()
 	. = ..()
+
+/mob/living/proc/dying_breath(message)
+	for(var/mob/M in get_hearers_in_view(7, src))
+		if(M.can_hear())
+			M.play_screen_text("<i>[message]")

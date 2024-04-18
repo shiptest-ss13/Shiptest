@@ -1,66 +1,159 @@
 //Cyborg
-/datum/design/borg_suit
+/datum/design/borg
+	build_type = MECHFAB
+	category = list("Cyborg")
+	research_icon = 'icons/mob/augmentation/augments.dmi'
+
+/datum/design/borg/suit
 	name = "Cyborg Endoskeleton"
 	id = "borg_suit"
-	build_type = MECHFAB
+	research_icon_state = "robo_suit"
 	build_path = /obj/item/robot_suit
 	materials = list(/datum/material/iron=15000)
 	construction_time = 500
-	category = list("Cyborg")
 
-/datum/design/borg_chest
+/datum/design/borg/chest
 	name = "Cyborg Torso"
 	id = "borg_chest"
-	build_type = MECHFAB
+	research_icon_state = "borg_chest"
 	build_path = /obj/item/bodypart/chest/robot
 	materials = list(/datum/material/iron=40000)
 	construction_time = 350
-	category = list("Cyborg")
 
-/datum/design/borg_head
+/datum/design/borg/head
 	name = "Cyborg Head"
 	id = "borg_head"
-	build_type = MECHFAB
+	research_icon_state = "borg_head"
 	build_path = /obj/item/bodypart/head/robot
 	materials = list(/datum/material/iron=5000)
 	construction_time = 350
-	category = list("Cyborg")
 
-/datum/design/borg_l_arm
+/datum/design/borg/l_arm
 	name = "Cyborg Left Arm"
 	id = "borg_l_arm"
-	build_type = MECHFAB
+	research_icon_state = "borg_l_arm"
 	build_path = /obj/item/bodypart/l_arm/robot
 	materials = list(/datum/material/iron=10000)
 	construction_time = 200
-	category = list("Cyborg")
 
-/datum/design/borg_r_arm
+/datum/design/borg/r_arm
 	name = "Cyborg Right Arm"
 	id = "borg_r_arm"
-	build_type = MECHFAB
+	research_icon_state = "borg_r_arm"
 	build_path = /obj/item/bodypart/r_arm/robot
 	materials = list(/datum/material/iron=10000)
 	construction_time = 200
-	category = list("Cyborg")
 
-/datum/design/borg_l_leg
+/datum/design/borg/l_leg
 	name = "Cyborg Left Leg"
 	id = "borg_l_leg"
-	build_type = MECHFAB
-	build_path = /obj/item/bodypart/l_leg/robot
+	research_icon_state = "borg_l_leg"
+	build_path = /obj/item/bodypart/leg/left/robot
 	materials = list(/datum/material/iron=10000)
 	construction_time = 200
-	category = list("Cyborg")
 
-/datum/design/borg_r_leg
+/datum/design/borg/r_leg
 	name = "Cyborg Right Leg"
 	id = "borg_r_leg"
-	build_type = MECHFAB
-	build_path = /obj/item/bodypart/r_leg/robot
+	research_icon_state = "borg_r_leg"
+	build_path = /obj/item/bodypart/leg/right/robot
 	materials = list(/datum/material/iron=10000)
-	construction_time = 200
-	category = list("Cyborg")
+
+
+//Prosthetics
+/datum/design/prosthetic
+	research_icon = 'icons/mob/augmentation/augments.dmi'
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 5 SECONDS
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	materials = list(/datum/material/iron=3000)
+	category = list("Misc", "Medical Designs")
+
+/datum/design/prosthetic/l_arm
+	name = "Surplus Prosthetic Left Arm"
+	id = "prosthetic_l_arm"
+	research_icon_state = "borg_l_arm"
+	build_path = /obj/item/bodypart/l_arm/robot/surplus
+
+/datum/design/prosthetic/r_arm
+	name = "Surplus Prosthetic Right Arm"
+	id = "prosthetic_r_arm"
+	research_icon_state = "borg_r_arm"
+	build_path = /obj/item/bodypart/r_arm/robot/surplus
+
+/datum/design/prosthetic/l_leg
+	name = "Surplus Prosthetic Left Leg"
+	id = "prosthetic_l_leg"
+	research_icon_state = "borg_l_leg"
+	build_path = /obj/item/bodypart/leg/left/robot/surplus
+
+/datum/design/prosthetic/r_leg
+	name = "Surplus Prosthetic Right Leg"
+	id = "prosthetic_r_leg"
+	research_icon_state = "borg_r_leg"
+	build_path = /obj/item/bodypart/leg/right/robot/surplus
+
+// Kepori
+/datum/design/prosthetic/l_arm/kepori
+	name = "Surplus Prosthetic Kepori Left Arm"
+	id = "kprosthetic_l_arm"
+	build_path = /obj/item/bodypart/l_arm/robot/surplus/kepori
+
+/datum/design/prosthetic/r_arm/kepori
+	name = "Surplus Prosthetic Kepori Right Arm"
+	id = "kprosthetic_r_arm"
+	build_path = /obj/item/bodypart/r_arm/robot/surplus/kepori
+
+/datum/design/prosthetic/l_leg/kepori
+	name = "Surplus Prosthetic Kepori Left Leg"
+	id = "kprosthetic_l_leg"
+	build_path = /obj/item/bodypart/leg/left/robot/surplus/kepori
+
+/datum/design/prosthetic/r_leg/kepori
+	name = "Surplus Prosthetic Kepori Right Leg"
+	id = "kprosthetic_r_leg"
+	build_path = /obj/item/bodypart/leg/right/robot/surplus/kepori
+
+// Vox
+/datum/design/prosthetic/l_arm/vox
+	name = "Surplus Prosthetic Vox Left Arm"
+	id = "vprosthetic_l_arm"
+	build_path = /obj/item/bodypart/l_arm/robot/surplus/vox
+
+/datum/design/prosthetic/r_arm/vox
+	name = "Surplus Prosthetic Vox Right Arm"
+	id = "vprosthetic_r_arm"
+	build_path = /obj/item/bodypart/r_arm/robot/surplus/vox
+
+/datum/design/prosthetic/l_leg/vox
+	name = "Surplus Prosthetic Vox Left Leg"
+	id = "vprosthetic_l_leg"
+	build_path = /obj/item/bodypart/leg/left/robot/surplus/vox
+
+/datum/design/prosthetic/r_leg/vox
+	name = "Surplus Prosthetic Vox Right Leg"
+	id = "vprosthetic_r_leg"
+	build_path = /obj/item/bodypart/leg/right/robot/surplus/vox
+
+/datum/design/prosthetic_l_arm/lizard
+	name = "Surplus Prosthetic Lizard Left Arm"
+	id = "lprosthetic_l_arm"
+	build_path = /obj/item/bodypart/l_arm/robot/surplus/lizard
+
+/datum/design/prosthetic_r_arm/lizard
+	name = "Surplus Prosthetic Lizard Right Arm"
+	id = "lprosthetic_r_arm"
+	build_path = /obj/item/bodypart/r_arm/robot/surplus/lizard
+
+/datum/design/prosthetic_l_leg/lizard
+	name = "Surplus Prosthetic Lizard Left Leg"
+	id = "lprosthetic_l_leg"
+	build_path = /obj/item/bodypart/leg/left/robot/surplus/lizard
+
+/datum/design/prosthetic_r_leg/lizard
+	name = "Surplus Prosthetic Lizard Right Leg"
+	id = "lprosthetic_r_leg"
+	build_path = /obj/item/bodypart/leg/right/robot/surplus/lizard
 
 //Ripley
 /datum/design/ripley_chassis
@@ -476,11 +569,29 @@
 	category = list("Phazon")
 
 //Exosuit Equipment
+/datum/design/clip_ripley_upgrade
+	name = "Ripley MK-I to MK-IV conversion kit"
+	id = "clip_ripley_upgrade"
+	build_type = AUTOLATHE
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
+	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/clip_durand_upgrade
+	name = "Durand to Paladin conversion kit"
+	id = "clip_durand_upgrade"
+	build_type = AUTOLATHE
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
+	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
 /datum/design/ripleyupgrade
 	name = "Ripley MK-1 to MK-II conversion kit"
 	id = "ripleyupgrade"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/ripleyupgrade
+	build_path = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
 	materials = list(/datum/material/iron=10000,/datum/material/plasma=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
@@ -837,6 +948,15 @@
 	construction_time = 100
 	category = list("IPC Components")
 
+/datum/design/robotic_heart
+	name = "Coolant Pump"
+	id = "robotic_heart"
+	build_type = MECHFAB
+	build_path = /obj/item/organ/heart/cybernetic/ipc
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 2000, /datum/material/silver = 500)
+	construction_time = 100
+	category = list("IPC Components")
+
 /datum/design/robotic_stomach
 	name = "Micro-cell"
 	id = "robotic_stomach"
@@ -863,3 +983,13 @@
 	materials = list(/datum/material/iron = 2000, /datum/material/glass = 1000)
 	construction_time = 100
 	category = list("IPC Components")
+
+/datum/design/maint_drone
+	name = "Maintenance Drone"
+	desc = "\"Repairs the ship without bothering you!\" is what the marketing says."
+	id = "maint_drone"
+	build_type = MECHFAB
+	materials = list(/datum/material/iron = 800, /datum/material/glass = 350)
+	construction_time = 150
+	build_path = /obj/effect/mob_spawn/drone
+	category = list("Misc")

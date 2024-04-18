@@ -4,6 +4,7 @@
 	see_in_dark = 2
 	hud_possible = list(HEALTH_HUD,STATUS_HUD,ANTAG_HUD,NANITE_HUD,DIAG_NANITE_FULL_HUD)
 	pressure_resistance = 10
+	flags_1 = SHOW_BEHIND_LARGE_ICONS_1
 
 	hud_type = /datum/hud/living
 
@@ -12,8 +13,10 @@
 	var/lastattackerckey = null
 
 	//Health and life related vars
-	var/maxHealth = 100 ///Maximum health that should be possible.
-	var/health = 100 	///A mob's health
+	/// Maximum health that should be possible.
+	var/maxHealth = MAX_LIVING_HEALTH
+	/// The mob's current health.
+	var/health = MAX_LIVING_HEALTH
 
 	//Damage related vars, NOTE: THESE SHOULD ONLY BE MODIFIED BY PROCS
 	var/bruteloss = 0	///Brutal damage caused by brute force (punching, being clubbed by a toolbox ect... this also accounts for pressure damage)
@@ -26,6 +29,14 @@
 	///When the mob enters hard critical state and is fully incapacitated.
 	var/hardcrit_threshold = HEALTH_THRESHOLD_FULLCRIT
 
+	//Damage dealing vars! These are meaningless outside of specific instances where it's checked and defined.
+	// Lower bound of damage done by unarmed melee attacks. Mob code is a mess, only works where this is checked for.
+	var/melee_damage_lower = 0
+	// Upper bound of damage done by unarmed melee attacks. Please ensure you check the xyz_defenses.dm for the mobs in question to see if it uses this or hardcoded values.
+	var/melee_damage_upper = 0
+
+	///Adjusts the mob's speed.  0 is default human speed.
+	var/speed = 0
 	/// Generic bitflags for boolean conditions at the [/mob/living] level. Keep this for inherent traits of living types, instead of runtime-changeable ones.
 	var/living_flags = NONE
 
@@ -128,6 +139,7 @@
 	var/stuttering = 0
 	var/slurring = 0
 	var/cultslurring = 0
+	var/clockcultslurring = 0 //Shiptest edit
 	var/derpspeech = 0
 
 	var/list/implants = null
@@ -138,7 +150,6 @@
 
 	var/list/obj/effect/proc_holder/abilities = list()
 
-	var/can_be_held = FALSE	//whether this can be picked up and held.
 	var/worn_slot_flags = NONE //if it can be held, can it be equipped to any slots? (think pAI's on head)
 
 	var/radiation = 0 ///If the mob is irradiated.
@@ -166,3 +177,8 @@
 	var/icon/held_rh = 'icons/mob/pets_held_rh.dmi'
 	var/icon/head_icon = 'icons/mob/pets_held.dmi'//what it looks like on your head
 	var/held_state = ""//icon state for the above
+
+	///Default X offset
+	var/body_pixel_x_offset = 0
+	///Default Y offset
+	var/body_pixel_y_offset = 0

@@ -11,18 +11,12 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
+	supports_variations = VOX_VARIATION
 	custom_materials = list(/datum/material/iron=2000) //one sheet, but where can you make them?
 	tool_behaviour = TOOL_MINING
 	toolspeed = 0.5
 	usesound = list('sound/effects/picaxe1.ogg', 'sound/effects/picaxe2.ogg', 'sound/effects/picaxe3.ogg')
 	attack_verb = list("hit", "pierced", "sliced", "attacked")
-
-/obj/item/pickaxe/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins digging into [user.p_their()] chest! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	if(use_tool(user, user, 30, volume=50))
-		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] couldn't do it!</span>")
-	return SHAME
 
 /obj/item/pickaxe/rusted
 	name = "rusty pickaxe"
@@ -62,16 +56,17 @@
 
 /obj/item/pickaxe/drill
 	name = "mining drill"
-	icon_state = "handdrill"
-	item_state = "jackhammer"
+	icon_state = "handrill"
+	item_state = "handrill"
 	slot_flags = ITEM_SLOT_BELT
 	toolspeed = 0.4 //available from roundstart, faster than a pickaxe.
 	usesound = 'sound/weapons/drill.ogg'
 	hitsound = 'sound/weapons/drill.ogg'
-	desc = "An electric mining drill for the especially scrawny."
+	desc = "An electric mining drill, complete with self-cleaning bit and part replacements. Optimized for the especially scrawny."
+	attack_verb = list("drilled", "bored", "rent", "carved")
 
 /obj/item/pickaxe/drill/cyborg
-	name = "cyborg mining drill"
+	name = "integrated mining drill"
 	desc = "An integrated electric mining drill."
 	flags_1 = NONE
 
@@ -82,22 +77,55 @@
 /obj/item/pickaxe/drill/diamonddrill
 	name = "diamond-tipped mining drill"
 	icon_state = "diamonddrill"
+	item_state = "diamonddrill"
 	toolspeed = 0.2
-	desc = "Yours is the drill that will pierce the heavens!"
+	desc = "EXOCON's improvement on the NT autodrill design, featuring a premium diamond cutting head. Yours is the drill that will pierce the heavens!"
+	force = 20
 
 /obj/item/pickaxe/drill/cyborg/diamond //This is the BORG version!
-	name = "diamond-tipped cyborg mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.
+	name = "diamond-tipped integrated mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.
 	icon_state = "diamonddrill"
 	toolspeed = 0.2
 
 /obj/item/pickaxe/drill/jackhammer
-	name = "sonic jackhammer"
+	name = "hypersonic jackhammer"
 	icon_state = "jackhammer"
 	item_state = "jackhammer"
 	toolspeed = 0.1 //the epitome of powertools. extremely fast mining
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
-	desc = "Cracks rocks with sonic blasts."
+	desc = "The epitome of conventional rock-smashing technology, invented by NT and cost-optimized by EXOCON. Smashes rocks, objects, and unfortunate wildlife with sonic blasts."
+	force = 25
+	attack_verb = list("blasted", "smashed", "slammed", "hammered")
+
+// //back in my day, our jackhammers used nothing but rattlin' drill bits! And we liked it!
+/obj/item/pickaxe/drill/jackhammer/old
+	name = "blastwave jackhammer"
+	icon_state = "jackhammerold"
+	item_state = "jackhammerold"
+	toolspeed = 0.5//meh
+	desc = "The old fashioned solution to a stubborn wall- used heavily all over known space until the onset of sonic deconstruction technology and Rapid Construction Devices."
+	force = 20
+	armour_penetration = 15
+
+/obj/item/pickaxe/drill/jackhammer/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/knockback, 2, FALSE, FALSE)
+
+//The fist of justice
+/obj/item/pickaxe/drill/jackhammer/brigador
+	name = "mechanized fist"
+	desc = "A reinforced hydraulic punching apparatus. Capable of smashing through walls, mineral aggregate, and unfortunate opponents."
+	force = 35
+	armour_penetration = 25//yours is the fist that will pierce the heavens
+	toolspeed = 0.3 //slower than the sonic
+	icon_state = "powerfist"
+	icon = 'icons/obj/items_cyborg.dmi'
+	attack_verb = list("uppercut", "sucker-punched", "hammered", "pummeled", "jabbed")
+
+/obj/item/pickaxe/drill/jackhammer/brigador/melee_attack_chain(mob/user, atom/target, params)
+	..()
+	user.changeNext_move(CLICK_CD_MELEE * 0.7)
 
 /obj/item/pickaxe/improvised
 	name = "improvised pickaxe"
@@ -135,13 +163,6 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 150, 40) //it's sharp, so it works, but barely.
 
-/obj/item/shovel/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins digging their own grave! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	if(use_tool(user, user, 30, volume=50))
-		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] couldn't do it!</span>")
-	return SHAME
-
 /obj/item/shovel/spade
 	name = "spade"
 	desc = "A small tool for digging and moving dirt."
@@ -166,3 +187,17 @@
 	toolspeed = 0.6
 	attack_verb = list("slashed", "impaled", "stabbed", "sliced")
 	sharpness = IS_SHARP
+
+/obj/item/shovel/spoon
+	name = "comically large spoon"
+	desc = "Digs out only a spoonfull"
+	icon = 'icons/obj/mining.dmi'
+	icon_state = "spoon"
+	item_state = "spoon"
+	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
+	force = 6
+	throwforce = 2
+	toolspeed = 0.8
+	attack_verb = list("bashed", "bludgeoned", "spooned", "scooped")
+	sharpness = IS_BLUNT

@@ -107,18 +107,24 @@
 	..()
 	adjust_charge(-ETHEREAL_CHARGE_FACTOR)
 
-/obj/item/organ/stomach/ethereal/Insert(mob/living/carbon/M, special = 0)
+/obj/item/organ/stomach/ethereal/Insert(mob/living/carbon/organ_owner, special = 0)
 	..()
-	RegisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, .proc/charge)
-	RegisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT, .proc/on_electrocute)
+	RegisterSignal(organ_owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
+	RegisterSignal(organ_owner, COMSIG_LIVING_ELECTROCUTE_ACT, PROC_REF(on_electrocute))
+	RegisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 
-/obj/item/organ/stomach/ethereal/Remove(mob/living/carbon/M, special = 0)
-	UnregisterSignal(owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
-	UnregisterSignal(owner, COMSIG_LIVING_ELECTROCUTE_ACT)
+/obj/item/organ/stomach/ethereal/Remove(mob/living/carbon/organ_owner, special = 0)
+	UnregisterSignal(organ_owner, COMSIG_PROCESS_BORGCHARGER_OCCUPANT)
+	UnregisterSignal(organ_owner, COMSIG_LIVING_ELECTROCUTE_ACT)
+	UnregisterSignal(organ_owner, COMSIG_MOB_GET_STATUS_TAB_ITEMS)
 	..()
+
+/obj/item/organ/stomach/ethereal/proc/get_status_tab_item(mob/living/carbon/source, list/items)
+	SIGNAL_HANDLER
+	items += "Crystal Charge: [round((crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER), 0.1)]%"
 
 /obj/item/organ/stomach/ethereal/proc/charge(datum/source, amount, repairs)
-	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70 )      //WS Edit -- Ethereal Charge Scaling
+	adjust_charge((amount * ETHEREAL_CHARGE_SCALING_MULTIPLIER) / 70)      //WS Edit -- Ethereal Charge Scaling
 
 /obj/item/organ/stomach/ethereal/proc/on_electrocute(datum/source, shock_damage, siemens_coeff = 1, flags = NONE)
 	if(flags & SHOCK_ILLUSION)
@@ -129,11 +135,43 @@
 /obj/item/organ/stomach/ethereal/proc/adjust_charge(amount)
 	crystal_charge = clamp(crystal_charge + amount, ETHEREAL_CHARGE_NONE, ETHEREAL_CHARGE_DANGEROUS)
 
+/obj/item/organ/stomach/cybernetic
+	name = "basic cybernetic stomach"
+	icon_state = "stomach-c"
+	desc = "A basic device designed to mimic the functions of a human stomach"
+	organ_flags = ORGAN_SYNTHETIC
+	maxHealth = STANDARD_ORGAN_THRESHOLD * 0.5
+	var/emp_vulnerability = 80 //Chance of permanent effects if emp-ed.
+
+/obj/item/organ/stomach/cybernetic/tier2
+	name = "cybernetic stomach"
+	icon_state = "stomach-c-u"
+	desc = "An electronic device designed to mimic the functions of a human stomach. Handles disgusting food a bit better."
+	maxHealth = 1.5 * STANDARD_ORGAN_THRESHOLD
+	disgust_metabolism = 2
+	emp_vulnerability = 40
+
+/obj/item/organ/stomach/cybernetic/tier3
+	name = "upgraded cybernetic stomach"
+	icon_state = "stomach-c-u2"
+	desc = "An upgraded version of the cybernetic stomach, designed to improve further upon organic stomachs. Handles disgusting food very well."
+	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
+	disgust_metabolism = 3
+	emp_vulnerability = 20
+
+/obj/item/organ/stomach/cybernetic/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	if(!COOLDOWN_FINISHED(src, severe_cooldown)) //So we cant just spam emp to kill people.
+		owner.vomit(stun = FALSE)
+		COOLDOWN_START(src, severe_cooldown, 10 SECONDS)
+
 //WS Begin - IPCs
 
 /obj/item/organ/stomach/cell
 	name = "micro-cell"
-	icon = 'whitesands/icons/obj/surgery.dmi'
+	icon = 'icons/obj/surgery.dmi'
 	icon_state = "microcell"
 	w_class = WEIGHT_CLASS_NORMAL
 	zone = "chest"
@@ -141,6 +179,7 @@
 	attack_verb = list("assault and battery'd")
 	desc = "A micro-cell, for IPC use only. Do not swallow."
 	status = ORGAN_ROBOTIC
+	organ_flags = ORGAN_SYNTHETIC
 
 /obj/item/organ/stomach/cell/emp_act(severity)
 	switch(severity)

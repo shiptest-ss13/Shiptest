@@ -1,12 +1,17 @@
- /**
-  * StonedMC
-  *
-  * Designed to properly split up a given tick among subsystems
-  * Note: if you read parts of this code and think "why is it doing it that way"
-  * Odds are, there is a reason
-  *
+/**
+ * StonedMC
+ *
+ * Designed to properly split up a given tick among subsystems
+ * Note: if you read parts of this code and think "why is it doing it that way"
+ * Odds are, there is a reason
+ *
  **/
 
+//Init the debugger datum first so we can debug Master
+//You might wonder why not just create the debugger datum global in its own file, since its loaded way earlier than this DM file
+//Well for whatever reason then the Master gets created first and then the debugger when doing that
+//So thats why this code lives here now, until someone finds out how Byond inits globals
+GLOBAL_REAL(Debugger, /datum/debugger) = new
 //This is the ABSOLUTE ONLY THING that should init globally like this
 //2019 update: the failsafe,config and Global controllers also do it
 GLOBAL_REAL(Master, /datum/controller/master) = new
@@ -30,6 +35,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 	/// List of subsystems to process().
 	var/list/subsystems
+
+	///Most recent init stage to complete init.
+	var/static/init_stage_completed
 
 	// Vars for keeping track of tick drift.
 	var/init_timeofday
@@ -59,6 +67,10 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/current_runlevel	//!for scheduling different subsystems for different stages of the round
 	var/sleep_offline_after_initializations = TRUE
 
+	/// During initialization, will be the instanced subsytem that is currently initializing.
+	/// Outside of initialization, returns null.
+	var/current_initializing_subsystem = null
+
 	var/static/restart_clear = 0
 	var/static/restart_timeout = 0
 	var/static/restart_count = 0
@@ -81,15 +93,27 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/list/_subsystems = list()
 	subsystems = _subsystems
 	if (Master != src)
-		if (istype(Master))
+		if (istype(Master)) //If there is an existing MC take over his stuff and delete it
 			Recover()
 			qdel(Master)
+			Master = src
 		else
+			//Code used for first master on game boot or if existing master got deleted
+			Master = src
 			var/list/subsytem_types = subtypesof(/datum/controller/subsystem)
 			sortTim(subsytem_types, /proc/cmp_subsystem_init)
+			//Find any abandoned subsystem from the previous master (if there was any)
+			var/list/existing_subsystems = list()
+			for(var/global_var in global.vars)
+				if (istype(global.vars[global_var], /datum/controller/subsystem))
+					existing_subsystems += global.vars[global_var]
+			//Either init a new SS or if an existing one was found use that
 			for(var/I in subsytem_types)
-				_subsystems += new I
-		Master = src
+				var/datum/controller/subsystem/existing_subsystem = locate(I) in existing_subsystems
+				if (istype(existing_subsystem))
+					_subsystems += existing_subsystem
+				else
+					_subsystems += new I
 
 	if(!GLOB)
 		new /datum/controller/global_vars
@@ -120,7 +144,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	var/delay = 50 * ++Master.restart_count
 	Master.restart_timeout = world.time + delay
 	Master.restart_clear = world.time + (delay * 2)
-	Master.processing = FALSE //stop ticking this one
+	if (Master) //Can only do this if master hasn't been deleted
+		Master.processing = FALSE //stop ticking this one
 	try
 		new/datum/controller/master()
 	catch
@@ -166,8 +191,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		current_runlevel = Master.current_runlevel
 		StartProcessing(10)
 	else
-		to_chat(world, "<span class='boldannounce'>The Master Controller is having some issues, we will need to re-initialize EVERYTHING</span>")
-		Initialize(20, TRUE)
+		to_chat(world, span_boldannounce("The Master Controller is having some issues, we will need to re-initialize EVERYTHING"))
+		Initialize(20, TRUE, FALSE)
 
 
 // Please don't stuff random bullshit here,
@@ -184,31 +209,52 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	if(init_sss)
 		init_subtypes(/datum/controller/subsystem, subsystems)
 
+	init_stage_completed = 0
+	var/mc_started = FALSE
+
 	to_chat(world, "<span class='boldannounce'>Initializing subsystems...</span>")
+
+	var/list/stage_sorted_subsystems = new(INITSTAGE_MAX)
+	for (var/i in 1 to INITSTAGE_MAX)
+		stage_sorted_subsystems[i] = list()
 
 	// Sort subsystems by init_order, so they initialize in the correct order.
 	sortTim(subsystems, /proc/cmp_subsystem_init)
 
+	for (var/datum/controller/subsystem/subsystem as anything in subsystems)
+		var/subsystem_init_stage = subsystem.init_stage
+		if (!isnum(subsystem_init_stage) || subsystem_init_stage < 1 || subsystem_init_stage > INITSTAGE_MAX || round(subsystem_init_stage) != subsystem_init_stage)
+			stack_trace("ERROR: MC: subsystem `[subsystem.type]` has invalid init_stage: `[subsystem_init_stage]`. Setting to `[INITSTAGE_MAX]`")
+			subsystem_init_stage = subsystem.init_stage = INITSTAGE_MAX
+		stage_sorted_subsystems[subsystem_init_stage] += subsystem
+
+	// Sort subsystems by display setting for easy access.
+	sortTim(subsystems, /proc/cmp_subsystem_display)
 	var/start_timeofday = REALTIMEOFDAY
-	// Initialize subsystems.
-	current_ticklimit = CONFIG_GET(number/tick_limit_mc_init)
-	for (var/datum/controller/subsystem/SS in subsystems)
-		if (SS.flags & SS_NO_INIT)
-			continue
-		SS.Initialize(REALTIMEOFDAY)
-		CHECK_TICK
-	current_ticklimit = TICK_LIMIT_RUNNING
+	for (var/current_init_stage in 1 to INITSTAGE_MAX)
+
+		// Initialize subsystems.
+		for (var/datum/controller/subsystem/subsystem in stage_sorted_subsystems[current_init_stage])
+			if (subsystem.flags & SS_NO_INIT || subsystem.initialized) //Don't init SSs with the correspondig flag or if they already are initialzized
+				continue
+			current_initializing_subsystem = subsystem
+			subsystem.Initialize(REALTIMEOFDAY)
+			CHECK_TICK
+		current_initializing_subsystem = null
+		init_stage_completed = current_init_stage
+		if (!mc_started)
+			mc_started = TRUE
+			if (!current_runlevel)
+				SetRunLevel(1)
+			// Loop.
+			Master.StartProcessing(0)
+
 	var/time = (REALTIMEOFDAY - start_timeofday) / 10
 
 	var/msg = "Initializations complete within [time] second[time == 1 ? "" : "s"]!"
 	to_chat(world, "<span class='boldannounce'>[msg]</span>")
 	log_world(msg)
 
-	if (!current_runlevel)
-		SetRunLevel(1)
-
-	// Sort subsystems by display setting for easy access.
-	sortTim(subsystems, /proc/cmp_subsystem_display)
 	// Set world options.
 	world.change_fps(CONFIG_GET(number/fps))
 	var/initialized_tod = REALTIMEOFDAY
@@ -220,8 +266,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	if(sleep_offline_after_initializations && CONFIG_GET(flag/resume_after_initializations))
 		world.sleep_offline = FALSE
 	initializations_finished_with_no_players_logged_in = initialized_tod < REALTIMEOFDAY - 10
-	// Loop.
-	Master.StartProcessing(0)
+
 
 /datum/controller/master/proc/SetRunLevel(new_runlevel)
 	var/old_runlevel = current_runlevel
@@ -239,8 +284,14 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	if(delay)
 		sleep(delay)
 	testing("Master starting processing")
-	var/rtn = Loop()
-	if (rtn > 0 || processing < 0)
+	var/started_stage
+	var/rtn = -2
+	do
+		started_stage = init_stage_completed
+		rtn = Loop(started_stage)
+	while (rtn == MC_LOOP_RTN_NEWSTAGES && processing > 0 && started_stage < init_stage_completed)
+
+	if (rtn >= MC_LOOP_RTN_GRACEFUL_EXIT || processing < 0)
 		return //this was suppose to happen.
 	//loop ended, restart the mc
 	log_game("MC crashed or runtimed, restarting")
@@ -252,7 +303,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		Failsafe.defcon = 2
 
 // Main loop.
-/datum/controller/master/proc/Loop()
+/datum/controller/master/proc/Loop(init_stage)
 	. = -1
 	//Prep the loop (most of this is because we want MC restarts to reset as much state as we can, and because
 	//	local vars rock
@@ -264,6 +315,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	for (var/thing in subsystems)
 		var/datum/controller/subsystem/SS = thing
 		if (SS.flags & SS_NO_FIRE)
+			continue
+		if (SS.init_stage > init_stage)
 			continue
 		SS.queued_time = 0
 		SS.queue_next = null
@@ -290,9 +343,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	queue_tail = null
 	//these sort by lower priorities first to reduce the number of loops needed to add subsequent SS's to the queue
 	//(higher subsystems will be sooner in the queue, adding them later in the loop means we don't have to loop thru them next queue add)
-	sortTim(tickersubsystems, /proc/cmp_subsystem_priority)
+	sortTim(tickersubsystems, GLOBAL_PROC_REF(cmp_subsystem_priority))
 	for(var/I in runlevel_sorted_subsystems)
-		sortTim(runlevel_sorted_subsystems, /proc/cmp_subsystem_priority)
+		sortTim(I, GLOBAL_PROC_REF(cmp_subsystem_priority))
 		I += tickersubsystems
 
 	var/cached_runlevel = current_runlevel
@@ -314,28 +367,34 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	while (1)
 		tickdrift = max(0, MC_AVERAGE_FAST(tickdrift, (((REALTIMEOFDAY - init_timeofday) - (world.time - init_time)) / world.tick_lag)))
 		var/starting_tick_usage = TICK_USAGE
+
+		if (init_stage != init_stage_completed)
+			return MC_LOOP_RTN_NEWSTAGES
 		if (processing <= 0)
 			current_ticklimit = TICK_LIMIT_RUNNING
 			sleep(10)
 			continue
 
 		//Anti-tick-contention heuristics:
-		//if there are mutiple sleeping procs running before us hogging the cpu, we have to run later.
-		//	(because sleeps are processed in the order received, longer sleeps are more likely to run first)
-		if (starting_tick_usage > TICK_LIMIT_MC) //if there isn't enough time to bother doing anything this tick, sleep a bit.
-			sleep_delta *= 2
-			current_ticklimit = TICK_LIMIT_RUNNING * 0.5
-			sleep(world.tick_lag * (processing * sleep_delta))
-			continue
+		if (init_stage == INITSTAGE_MAX)
+			//if there are mutiple sleeping procs running before us hogging the cpu, we have to run later.
+			// (because sleeps are processed in the order received, longer sleeps are more likely to run first)
+			if (starting_tick_usage > TICK_LIMIT_MC) //if there isn't enough time to bother doing anything this tick, sleep a bit.
+				sleep_delta *= 2
+				current_ticklimit = TICK_LIMIT_RUNNING * 0.5
+				sleep(world.tick_lag * (processing * sleep_delta))
+				continue
 
-		//Byond resumed us late. assume it might have to do the same next tick
-		if (last_run + CEILING(world.tick_lag * (processing * sleep_delta), world.tick_lag) < world.time)
-			sleep_delta += 1
+			//Byond resumed us late. assume it might have to do the same next tick
+			if (last_run + CEILING(world.tick_lag * (processing * sleep_delta), world.tick_lag) < world.time)
+				sleep_delta += 1
 
-		sleep_delta = MC_AVERAGE_FAST(sleep_delta, 1) //decay sleep_delta
+			sleep_delta = MC_AVERAGE_FAST(sleep_delta, 1) //decay sleep_delta
 
-		if (starting_tick_usage > (TICK_LIMIT_MC*0.75)) //we ran 3/4 of the way into the tick
-			sleep_delta += 1
+			if (starting_tick_usage > (TICK_LIMIT_MC*0.75)) //we ran 3/4 of the way into the tick
+				sleep_delta += 1
+		else
+			sleep_delta = 1
 
 		//debug
 		if (make_runtime)
@@ -395,9 +454,12 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		if (skip_ticks)
 			skip_ticks--
 		src.sleep_delta = MC_AVERAGE_FAST(src.sleep_delta, sleep_delta)
-		current_ticklimit = TICK_LIMIT_RUNNING
-		if (processing * sleep_delta <= world.tick_lag)
-			current_ticklimit -= (TICK_LIMIT_RUNNING * 0.25) //reserve the tail 1/4 of the next tick for the mc if we plan on running next tick
+		if (init_stage != INITSTAGE_MAX)
+			current_ticklimit = TICK_LIMIT_RUNNING * 2
+		else
+			current_ticklimit = TICK_LIMIT_RUNNING
+			if (processing * sleep_delta <= world.tick_lag)
+				current_ticklimit -= (TICK_LIMIT_RUNNING * 0.25) //reserve the tail 1/4 of the next tick for the mc if we plan on running next tick
 		sleep(world.tick_lag * (processing * sleep_delta))
 
 
@@ -612,8 +674,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 /datum/controller/master/StartLoadingMap()
 	//disallow more than one map to load at once, multithreading it will just cause race conditions
-	while(map_loading)
-		stoplag()
+	UNTIL(!map_loading)
 	for(var/S in subsystems)
 		var/datum/controller/subsystem/SS = S
 		SS.StartLoadingMap()

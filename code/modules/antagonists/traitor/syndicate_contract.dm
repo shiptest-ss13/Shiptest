@@ -45,7 +45,7 @@
 	var/location = pick_list_weighted(WANTED_FILE, "location")
 	wanted_message = "[base] [verb_string] [noun] [location]."
 
-/datum/syndicate_contract/proc/handle_extraction(var/mob/living/user)
+/datum/syndicate_contract/proc/handle_extraction(mob/living/user)
 	if (contract.target && contract.dropoff_check(user, contract.target.current))
 
 		var/turf/free_location = find_obstruction_free_location(3, user, contract.dropoff)
@@ -61,14 +61,14 @@
 /datum/syndicate_contract/proc/launch_extraction_pod(turf/empty_pod_turf)
 	var/obj/structure/closet/supplypod/extractionpod/empty_pod = new()
 
-	RegisterSignal(empty_pod, COMSIG_ATOM_ENTERED, .proc/enter_check)
+	RegisterSignal(empty_pod, COMSIG_ATOM_ENTERED, PROC_REF(enter_check))
 
 	empty_pod.stay_after_drop = TRUE
 	empty_pod.reversing = TRUE
 	empty_pod.explosionSize = list(0,0,0,1)
 	empty_pod.leavingSound = 'sound/effects/podwoosh.ogg'
 
-	new /obj/effect/DPtarget(empty_pod_turf, empty_pod)
+	new /obj/effect/pod_landingzone(empty_pod_turf, empty_pod)
 
 /datum/syndicate_contract/proc/enter_check(datum/source, sent_mob)
 	if (istype(source, /obj/structure/closet/supplypod/extractionpod))
@@ -111,7 +111,7 @@
 			var/obj/structure/closet/supplypod/extractionpod/pod = source
 
 			// Handle the pod returning
-			pod.send_up(pod)
+			pod.startExitSequence(pod)
 
 			if (ishuman(M))
 				var/mob/living/carbon/human/target = M
@@ -124,6 +124,7 @@
 
 			// This is slightly delayed because of the sleep calls above to handle the narrative.
 			// We don't want to tell the station instantly.
+			/*
 			var/points_to_check
 			var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
 			if(D)
@@ -135,6 +136,7 @@
 
 			priority_announce("One of your crew was captured by a rival organisation - we've needed to pay their ransom to bring them back. \
 							As is policy we've taken a portion of the station's funds to offset the overall cost.", null, 'sound/ai/attention.ogg', null, "Nanotrasen Asset Protection")
+			*/
 
 			sleep(30)
 
@@ -147,16 +149,16 @@
 					C = H.get_idcard(TRUE)
 
 				if(C && C.registered_account)
-					C.registered_account.adjust_money(ransom * 0.35)
+					C.registered_account.adjust_money(ransom * 0.35, "syndicate_contract")
 
 					C.registered_account.bank_card_talk("We've processed the ransom, agent. Here's your cut - your balance is now \
 					[C.registered_account.account_balance] cr.", TRUE)
 
 // They're off to holding - handle the return timer and give some text about what's going on.
-/datum/syndicate_contract/proc/handleVictimExperience(var/mob/living/M)
+/datum/syndicate_contract/proc/handleVictimExperience(mob/living/M)
 	// Ship 'em back - dead or alive, 4 minutes wait.
 	// Even if they weren't the target, we're still treating them the same.
-	addtimer(CALLBACK(src, .proc/returnVictim, M), (60 * 10) * 4)
+	addtimer(CALLBACK(src, PROC_REF(returnVictim), M), (60 * 10) * 4)
 
 	if (M.stat != DEAD)
 		// Heal them up - gets them out of crit/soft crit. If omnizine is removed in the future, this needs to be replaced with a
@@ -188,7 +190,7 @@
 		M.confused += 20
 
 // We're returning the victim
-/datum/syndicate_contract/proc/returnVictim(var/mob/living/M)
+/datum/syndicate_contract/proc/returnVictim(mob/living/M)
 	var/list/possible_drop_loc = list()
 
 	for (var/turf/possible_drop in contract.dropoff.contents)
@@ -226,7 +228,7 @@
 		M.Dizzy(35)
 		M.confused += 20
 
-		new /obj/effect/DPtarget(possible_drop_loc[pod_rand_loc], return_pod)
+		new /obj/effect/pod_landingzone(possible_drop_loc[pod_rand_loc], return_pod)
 	else
 		to_chat(M, "<span class='reallybig hypnophrase'>A million voices echo in your head... <i>\"Seems where you got sent here from won't \
 					be able to handle our pod... You will die here instead.\"</i></span>")

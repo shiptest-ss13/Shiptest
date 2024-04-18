@@ -38,14 +38,14 @@
 	var/can_be_carded = TRUE
 	var/alarms = list("Motion"=list(), "Fire"=list(), "Atmosphere"=list(), "Power"=list(), "Camera"=list(), "Burglar"=list())
 	var/viewalerts = 0
-	var/icon/holo_icon//Default is assigned when AI is created.
+	var/icon/holo_icon //Default is assigned when AI is created.
 	var/obj/mecha/controlled_mech //For controlled_mech a mech, to determine whether to relaymove or use the AI eye.
 	var/radio_enabled = TRUE //Determins if a carded AI can speak with its built in radio or not.
 	radiomod = ";" //AIs will, by default, state their laws on the internal radio.
 	var/obj/item/multitool/aiMulti
 	var/mob/living/simple_animal/bot/Bot
 	var/tracking = FALSE //this is 1 if the AI is currently tracking somebody, but the track has not yet been completed.
-	var/datum/effect_system/spark_spread/spark_system//So they can initialize sparks whenever/N
+	var/datum/effect_system/spark_spread/spark_system //So they can initialize sparks whenever/N
 
 	//MALFUNCTION
 	var/datum/module_picker/malf_picker
@@ -106,7 +106,7 @@
 		new/obj/structure/AIcore/deactivated(loc) //New empty terminal.
 		return INITIALIZE_HINT_QDEL //Delete AI.
 
-	ADD_TRAIT(src, TRAIT_NO_TELEPORT, src)
+	ADD_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
 	if(L && istype(L, /datum/ai_laws))
 		laws = L
 		laws.associate(src)
@@ -120,13 +120,13 @@
 			to_chat(src, "<span class='userdanger'>You have been installed as an AI! </span>")
 			to_chat(src, "<span class='danger'>You must obey your silicon laws above all else. Your objectives will consider you to be dead.</span>")
 
-	to_chat(src, "<B>You are playing the station's AI. The AI cannot move, but can interact with many objects while viewing them (through cameras).</B>")
-	to_chat(src, "<B>To look at other parts of the station, click on yourself to get a camera menu.</B>")
+	to_chat(src, "<B>You are playing as an AI. AI cannot move, but can interact with many objects while viewing them (through cameras).</B>")
+	to_chat(src, "<B>To look at other parts of your vessel, click on yourself to get a camera menu.</B>")
 	to_chat(src, "<B>While observing through a camera, you can use most (networked) devices which you can see, such as computers, APCs, intercoms, doors, etc.</B>")
 	to_chat(src, "To use something, simply click on it.")
 	to_chat(src, "Use say :b to speak to your cyborgs through binary.")
 	to_chat(src, "For department channels, use the following say commands:")
-	to_chat(src, ":o - AI Private, :c - Command, :s - Security, :e - Engineering, :u - Supply, :v - Service, :m - Medical, :n - Science.")
+	to_chat(src, ":o - AI Private, :c - Command.")
 	show_laws()
 	to_chat(src, "<b>These laws may be changed by other players, or by you being the traitor.</b>")
 
@@ -134,7 +134,7 @@
 
 	create_eye()
 	if(client)
-		apply_pref_name("ai",client)
+		INVOKE_ASYNC(src, PROC_REF(apply_pref_name),"ai",client)
 
 	set_core_display_icon()
 
@@ -193,7 +193,11 @@
 
 /mob/living/silicon/ai/Destroy()
 	GLOB.ai_list -= src
-	qdel(eyeobj) // No AI, no Eye
+	QDEL_NULL(eyeobj) // No AI, no Eye
+	QDEL_NULL(aiMulti)
+	QDEL_NULL(spark_system)
+	if(robot_control)
+		QDEL_NULL(robot_control)
 	malfhack = null
 
 	. = ..()
@@ -296,30 +300,6 @@
 	viewalerts = 1
 	src << browse(dat, "window=aialerts&can_close=0")
 
-/mob/living/silicon/ai/proc/ai_call_shuttle()
-	if(control_disabled)
-		to_chat(usr, "<span class='warning'>Wireless control is disabled!</span>")
-		return
-
-	var/can_evac_or_fail_reason = SSshuttle.canEvac(src)
-	if(can_evac_or_fail_reason != TRUE)
-		to_chat(usr, "<span class='alert'>[can_evac_or_fail_reason]</span>")
-		return
-
-	var/reason = input(src, "What is the nature of your emergency? ([CALL_SHUTTLE_REASON_LENGTH] characters required.)", "Confirm Shuttle Call") as null|text
-
-	if(incapacitated())
-		return
-
-	if(trim(reason))
-		SSshuttle.requestEvac(src, reason)
-
-	// hack to display shuttle timer
-	if(!EMERGENCY_IDLE_OR_RECALLED)
-		var/obj/machinery/computer/communications/C = locate() in GLOB.machines
-		if(C)
-			C.post_status("shuttle")
-
 /mob/living/silicon/ai/can_interact_with(atom/A)
 	. = ..()
 	var/turf/ai = get_turf(src)
@@ -330,7 +310,7 @@
 	if(!target)
 		return
 
-	if (ai.get_virtual_z_level() != target.get_virtual_z_level())
+	if (ai.virtual_z() != target.virtual_z())
 		return FALSE
 
 	if (istype(loc, /obj/item/aicard))
@@ -359,11 +339,11 @@
 	var/is_anchored = FALSE
 	if(move_resist == MOVE_FORCE_OVERPOWERING)
 		move_resist = MOVE_FORCE_NORMAL
-		REMOVE_TRAIT(src, TRAIT_NO_TELEPORT, src)
+		REMOVE_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
 	else
 		is_anchored = TRUE
 		move_resist = MOVE_FORCE_OVERPOWERING
-		ADD_TRAIT(src, TRAIT_NO_TELEPORT, src)
+		ADD_TRAIT(src, TRAIT_NO_TELEPORT, AI_ANCHOR_TRAIT)
 
 	to_chat(src, "<b>You are now [is_anchored ? "" : "un"]anchored.</b>")
 	// the message in the [] will change depending whether or not the AI is anchored
@@ -405,15 +385,17 @@
 		trackeable += track.humans + track.others
 		var/list/target = list()
 		for(var/I in trackeable)
-			var/mob/M = trackeable[I]
-			if(M.name == string)
-				target += M
+			var/datum/weakref/to_resolve = trackeable[I]
+			var/mob/to_track = to_resolve.resolve()
+			if(!to_track || to_track.name != string)
+				continue
+			target += to_track
 		if(name == string)
 			target += src
 		if(target.len)
 			ai_actual_track(pick(target))
 		else
-			to_chat(src, "Target is not on or near any active cameras on the station.")
+			to_chat(src, "Target is not on or near any active cameras on your network.")
 		return
 	if (href_list["ai_take_control"]) //Mech domination
 		var/obj/mecha/M = locate(href_list["ai_take_control"]) in GLOB.mechas_list
@@ -439,7 +421,13 @@
 			to_chat(src, "<span class='warning'>You aren't in your core!</span>")
 			return
 		if(M)
-			M.transfer_ai(AI_MECH_HACK, src, usr) //Called om the mech itself.
+			M.transfer_ai(AI_MECH_HACK, src, usr) //Called on the mech itself.
+	if(href_list["show_paper_note"])
+		var/obj/item/paper/paper_note = locate(href_list["show_paper_note"])
+		if(!paper_note)
+			return
+
+		paper_note.show_through_camera(usr)
 
 
 /mob/living/silicon/ai/proc/switchCamera(obj/machinery/camera/C)
@@ -453,7 +441,7 @@
 		view_core()
 		return
 	// ok, we're alive, camera is good and in our network...
-	eyeobj.setLoc(get_turf(C))
+	eyeobj.setLoc(get_turf(C), TRUE)
 	return TRUE
 
 /mob/living/silicon/ai/proc/botcall()
@@ -490,7 +478,7 @@
 	call_bot_cooldown = 0
 
 /mob/living/silicon/ai/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.get_virtual_z_level() != get_virtual_z_level())
+	if(source.virtual_z() != virtual_z())
 		return
 	var/list/our_sort = alarms[class]
 	for(var/areaname in our_sort)
@@ -578,7 +566,7 @@
 
 	for (var/obj/machinery/camera/C as anything in GLOB.cameranet.cameras)
 		var/list/tempnetwork = C.network
-		if(!(C.get_virtual_z_level() == get_virtual_z_level() || ("ss13" in tempnetwork)))
+		if(!(C.virtual_z() == virtual_z() || ("ss13" in tempnetwork)))
 			continue
 		if(!C.can_use())
 			continue
@@ -601,7 +589,7 @@
 			if(!C.can_use())
 				continue
 			if(network in C.network)
-				U.eyeobj.setLoc(get_turf(C))
+				U.eyeobj.setLoc(get_turf(C), TRUE)
 				break
 	to_chat(src, "<span class='notice'>Switched to the \"[uppertext(network)]\" camera network.</span>")
 //End of code by Mord_Sith
@@ -723,7 +711,7 @@
 
 		for (var/obj/machinery/camera/C in lit_cameras)
 			C.set_light(0)
-			lit_cameras = list()
+		lit_cameras = list()
 
 		return
 
@@ -749,9 +737,15 @@
 	for (var/obj/machinery/camera/C in remove)
 		lit_cameras -= C //Removed from list before turning off the light so that it doesn't check the AI looking away.
 		C.Togglelight(0)
+		UnregisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
 	for (var/obj/machinery/camera/C in add)
 		C.Togglelight(1)
 		lit_cameras |= C
+		RegisterSignal(C, COMSIG_PARENT_QDELETING, PROC_REF(camera_deleted))
+
+/mob/living/silicon/ai/proc/camera_deleted(obj/machinery/camera/camera)
+	SIGNAL_HANDLER
+	lit_cameras -= camera
 
 /mob/living/silicon/ai/proc/control_integrated_radio()
 	set name = "Transceiver Settings"
@@ -764,10 +758,6 @@
 	to_chat(src, "Accessing Subspace Transceiver control...")
 	if (radio)
 		radio.interact(src)
-
-/mob/living/silicon/ai/proc/set_syndie_radio()
-	if(radio)
-		radio.make_syndie()
 
 /mob/living/silicon/ai/proc/set_automatic_say_channel()
 	set name = "Set Auto Announce Mode"
@@ -874,7 +864,7 @@
 	module_picker.ui_interact(owner)
 
 /mob/living/silicon/ai/proc/add_malf_picker()
-	to_chat(src, "In the top left corner of the screen you will find the Malfunction Modules button, where you can purchase various abilities, from upgraded surveillance to station ending doomsday devices.")
+	to_chat(src, "In the top left corner of the screen you will find the Malfunction Modules button, where you can purchase various abilities, from upgraded surveillance to sector-destroy doomsday devices.")
 	to_chat(src, "You are also capable of hacking APCs, which grants you more points to spend on your Malfunction powers. The drawback is that a hacked APC will give you away if spotted by the crew. Hacking an APC takes 60 seconds.")
 	view_core() //A BYOND bug requires you to be viewing your core before your verbs update
 	malf_picker = new /datum/module_picker
@@ -926,7 +916,7 @@
 		to_chat(src, "<span class='danger'>Hack aborted. The designated APC no longer exists on the power network.</span>")
 		playsound(get_turf(src), 'sound/machines/buzz-two.ogg', 50, TRUE, ignore_walls = FALSE)
 	else if(apc.aidisabled)
-		to_chat(src, "<span class='danger'>Hack aborted. \The [apc] is no longer responding to our systems.</span>")
+		to_chat(src, "<span class='danger'>Hack aborted. [apc] is no longer responding to our systems.</span>")
 		playsound(get_turf(src), 'sound/machines/buzz-sigh.ogg', 50, TRUE, ignore_walls = FALSE)
 	else
 		malf_picker.processing_time += 10
@@ -937,10 +927,10 @@
 		apc.coverlocked = TRUE
 
 		playsound(get_turf(src), 'sound/machines/ding.ogg', 50, TRUE, ignore_walls = FALSE)
-		to_chat(src, "Hack complete. \The [apc] is now under your exclusive control.")
-		apc.update_icon()
+		to_chat(src, "Hack complete. [apc] is now under your exclusive control.")
+		apc.update_appearance()
 
-/mob/living/silicon/ai/verb/deploy_to_shell(var/mob/living/silicon/robot/target)
+/mob/living/silicon/ai/verb/deploy_to_shell(mob/living/silicon/robot/target)
 	set category = "AI Commands"
 	set name = "Deploy to Shell"
 
@@ -1011,9 +1001,9 @@
 	return
 
 /mob/living/silicon/ai/spawned/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
-	. = ..()
 	if(!target_ai)
 		target_ai = src //cheat! just give... ourselves as the spawned AI, because that's technically correct
+	. = ..()
 
 /mob/living/silicon/ai/proc/camera_visibility(mob/camera/aiEye/moved_eye)
 	GLOB.cameranet.visibility(moved_eye, client, all_eyes, USE_STATIC_OPAQUE)
@@ -1039,9 +1029,38 @@
 	else if(.)
 		REMOVE_TRAIT(src, TRAIT_INCAPACITATED, POWER_LACK_TRAIT)
 
-
 /mob/living/silicon/on_handsblocked_start()
 	return // AIs have no hands
 
 /mob/living/silicon/on_handsblocked_end()
 	return // AIs have no hands
+
+/mob/living/silicon/ai/verb/wipe_core()
+	set name = "Wipe Core"
+	set category = "OOC"
+	set desc = "Wipe your core. This is functionally equivalent to cryo, freeing up your job slot."
+
+	// Guard against misclicks, this isn't the sort of thing we want happening accidentally
+	if(tgui_alert("WARNING: This will immediately wipe your core and ghost you, removing your character from the round permanently (similar to cryo). Are you entirely sure you want to do this?", "Wipe Core", list("No", "Yes")) != "Yes")
+		return
+
+	// We warned you.
+	var/obj/structure/AIcore/latejoin_inactive/inactivecore = New(loc)
+	transfer_fingerprints_to(inactivecore)
+
+	if(GLOB.announcement_systems.len)
+		var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
+		announcer.announce("AIWIPE", real_name, mind.assigned_role, list())
+
+	if(mind.objectives.len)
+		mind.objectives.Cut()
+		mind.special_role = null
+
+	if(!get_ghost(1))
+		if(world.time < 30 * 600)//before the 30 minute mark
+			ghostize(0) // Players despawned too early may not re-enter the game
+	else
+		ghostize(1)
+
+	QDEL_NULL(src)
+

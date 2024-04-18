@@ -76,7 +76,7 @@
 		"<span class='hear'>You hear a loud electrical crack!</span>")
 	playsound(src.loc, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 	tesla_zap(src, 5, power_gen * 0.05)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/explosion, get_turf(src), 2, 3, 4, 8), 100) // Not a normal explosion.
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(explosion), get_turf(src), 2, 3, 4, 8), 100) // Not a normal explosion.
 
 /obj/machinery/power/rtg/abductor/bullet_act(obj/projectile/Proj)
 	. = ..()
@@ -100,3 +100,21 @@
 	..() //extend the zap
 	if(tesla_flags & ZAP_MACHINE_EXPLOSIVE)
 		overload()
+
+// "Geothermal Tap" for relatively hands off power in ruins.
+// Mapped ones will delete their circuit to keep them from getting salvaged. Otherwise try to not hand them out willy nilly.
+// try and toss these near lava for more fun
+
+/obj/machinery/power/rtg/geothermal
+	name = "Geothermal Power Tap"
+	desc = "A complex machine that drills into the soil below it to gather thermal power."
+	power_gen = 2500
+	circuit = /obj/item/circuitboard/machine/rtg/geothermal
+	irradiate = FALSE //I don't think the lava is radioactive, if your lava is, well. Then it is.
+
+
+/obj/machinery/power/rtg/geothermal/Initialize(mapload)
+	. = ..()
+	if(mapload)
+		component_parts -= circuit
+		QDEL_NULL(circuit)

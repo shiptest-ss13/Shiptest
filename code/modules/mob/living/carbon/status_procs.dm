@@ -94,3 +94,7 @@
 /mob/living/carbon/proc/break_all_bones()
 	for(var/obj/item/bodypart/B in bodyparts)
 		B.break_bone()
+
+/mob/living/carbon/proc/break_random_bone() //this might work
+	var/obj/item/bodypart/limb = pick(bodyparts)
+	limb.break_bone()

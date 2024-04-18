@@ -26,6 +26,8 @@
 	var/stock_max	= 0
 	/// Probability for this item to be available. Used by SSblackmarket on init.
 	var/availability_prob = 0
+	// Should there be an unlimited stock of an item
+	var/unlimited = FALSE
 
 /datum/blackmarket_item/New()
 	if(isnull(price))
@@ -44,7 +46,7 @@
 		return FALSE
 
 	// This shouldn't be able to happen unless there was some manipulation or admin fuckery.
-	if(!item || stock <= 0)
+	if(!item || stock <= 0 && !unlimited)
 		return FALSE
 
 	// Alright, the item has been purchased.

@@ -1,0 +1,127 @@
+2023-02-01:
+  Apogee-dev:
+  - rscadd: Added conversion kits for CMM Ripley and Durand mechs
+  - rscadd: Added a design disk containing designs for CMM conversion kits
+  - imageadd: New CMM Ripley sprites
+  - refactor: refactored the Ripley upgrade kit to make adding new mech upgrade kits
+      easier in the future
+  MarkSuckerberg:
+  - rscadd: An entirely new ship join selection menu!
+  - rscadd: Map templates should all have a description specified in the json file.
+  PestoVerde, Imaginos, Wallem:
+  - rscadd: one more material resprite couldnt hurt
+  goober3:
+  - rscadd: Metal crafting recipes for crates.
+  - rscadd: Freezers can be constructed with 25 ice and 2 metal.
+  myco/yellow:
+  - tweak: revamps the jungle roommates ruin
+2023-02-07:
+  BarteG44:
+  - bugfix: fixed spline corners always being white
+  - tweak: Reworked the box class
+  Bjarl:
+  - rscadd: The Abandoned Mech Bay, a new ruin will start spawning on waste worlds.
+      Beware its defenses, and those who've already found their way in.
+  - bugfix: you can buy the hound again
+2023-02-10:
+  goober3:
+  - tweak: Illegal Wall Objects have been removed from the Talos
+  spockye:
+  - rscadd: Cepheus class
+  - rscadd: Minutemen Mech pilot job
+  - rscadd: Minutemen Roboticist job
+2023-02-11:
+  Apogee-dev:
+  - tweak: Limited the Bubble-class colony ship to admin spawn only.
+  - rscdel: Removed the Scrapper and Scrapper-B
+  MrSamu99:
+  - bugfix: fixed Gecko atmos
+  Thera-Pissed:
+  - rscadd: A new beach ruin
+2023-02-12:
+  Bjarl:
+  - bugfix: Bombed Starport lighting now works properly
+  - imageadd: fokrads sign
+  goober3:
+  - tweak: Reworked PowerPuzzle, a cargo facility hidden in the outer reaches of space.
+  tmtmtl30:
+  - bugfix: Radiation can no longer cross z-levels.
+  - bugfix: Radiation waves and contamination can no longer reach infinite power.
+      Hopefully.
+2023-02-13:
+  tmtmtl30:
+  - rscdel: Removed some obsolete floor typepaths
+2023-02-14:
+  ArdentSpark:
+  - tweak: Replaced full tile firelocks on Delta with thin directional ones, also
+      made the catwalks in the engine room actually cover the distro/scrub pipes.
+  - bugfix: brig phys jacket no longer invisible (otherwise known as Lead Doctors
+      jacket on the AEGIS)
+  BarteG44:
+  - bugfix: fixed intercoms and widebands facing the wrong way after being built
+  goober3:
+  - tweak: Variations of plated catwalks now have icon states
+  retlaw34:
+  - rscadd: New holofield sprite
+  - balance: Holofield generator feedback should be much, much better, and they make
+      noises now upon powering up
+  spockye:
+  - bugfix: fixed space tiles on rockplanet_cult.dmm
+2023-02-18:
+  Apogee-dev:
+  - rscdel: Removed the Raven-class transport
+  Bjarl:
+  - rscadd: Roamers of beach worlds have reported a small fortification, surrounded
+      by a serene grass field. Perhaps there's something to investigate there.
+  - rscadd: DK Excavator 453 has been marginally expanded. It has things to fight
+      now!
+  BogCreature:
+  - bugfix: Warden's jacket and armored warden's jacket icon states
+  - bugfix: All forms of heavy plate armor (but not the helmets for some reason) being
+      invisible
+  - bugfix: Dragonslayer spear's icon prefix
+  - tweak: Removed ability to saw off the survivor's rifle, as it obviously wasn't
+      intended to be done
+  goober3:
+  - rscadd: Asteroid Siding, for asteroids!
+  - rscadd: Salted Sand Siding
+  - rscadd: Iron Sand Siding
+  - rscadd: Weather sidings have corners now
+  - tweak: Updated existing maps to feature weather corner sprites
+  - tweak: Beach ruins now use the /asteroid variant of sand
+  - tweak: The Luxembourg's intercom will no longer be sold by its selling pad.
+  - tweak: Gondola pockets have been ERASED from the Luxembourg's kitchen locker.
+  spockye:
+  - rscadd: Adds a new beach ruin, the beach_treasure_cove
+2023-02-25:
+  Apogee-dev:
+  - balance: Holosigns and barriers now have a limited lifespan. Countdown timer becomes
+      visible at 60 seconds remaining.
+  BarteG44:
+  - rscadd: Adds a few berets to the Li-Tieguai
+  - tweak: Replaces a rubbershot and a 9mm magazine with 2 AP magazines on the Li-Tieguai
+  - tweak: Replaces the Trauma Team Technician's medical belt with the functionally
+      identical medical webbing
+  Bjarl:
+  - rscdel: skeletons have been removed from jungle_demon
+  goober3:
+  - rscadd: The SEV Lugol-class GEC Engineering Project, a large engineering vessel.
+  - rscadd: Airless techfloor tiles
+  meemofcourse:
+  - tweak: Added a deluxe hypospray to the Aegis's Lead Doctor locker, so they can
+      actually use the large vials, and changes its cargo bay's tiny fans with a holofield.
+  - bugfix: The Syndicate jacket inside the Aegis is no longer invisible, its Medihuds
+      and First-Aid Kits are usable, and the wiring was changed so the first SMES
+      recharges.
+  spockye:
+  - bugfix: fixes /obj/item/clothing/under/rank/command/minutemen having an alt-state
+  - bugfix: fixes /obj/item/clothing/under/rank/security/officer/minutemen having
+      an alt-state
+  tmtmtl30:
+  - bugfix: Ruins don't sometimes start in hard vacuum anymore; planet turfs now share
+      atmos correctly.
+  - bugfix: There hopefully shouldn't be any random stray objects sitting in the edges
+      of planets anymore.
+  - bugfix: Planets now (hopefully) have the correct baseturfs (more or less). When
+      you bomb a ruin on a planet, it probably won't break through to space anymore.
+  - refactor: Planet generation has been refactored, improving performance somewhat.

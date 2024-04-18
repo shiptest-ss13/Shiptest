@@ -1,12 +1,17 @@
 /obj/item/radio
 	icon = 'icons/obj/radio.dmi'
-	name = "station bounced radio"
+	name = "shortwave radio"
 	icon_state = "walkietalkie"
-	item_state = "walkietalkie"
+	item_state = "radio"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	desc = "A basic handheld radio that communicates with local telecommunication networks."
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	dog_fashion = /datum/dog_fashion/back
+	supports_variations = VOX_VARIATION
 
-	flags_1 = CONDUCT_1 | HEAR_1
+	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	throw_speed = 3
 	throw_range = 7
@@ -18,10 +23,11 @@
 	var/frequency = FREQ_COMMON
 	var/canhear_range = 3  // The range around the radio in which mobs can hear what it receives.
 	var/emped = 0  // Tracks the number of EMPs currently stacked.
+	var/headset = FALSE // It can be used for hotkeys
 	var/last_chatter_time // The time since we last played a radio chatter sound. (WS edit - Radio Chatter #434)
 
 	var/broadcasting = FALSE  // Whether the radio will transmit dialogue it hears nearby.
-	var/listening = TRUE  // Whether the radio is currently receiving.
+	var/listening = FALSE  // Whether the radio is currently receiving.
 	var/prison_radio = FALSE  // If true, the transmit wire starts cut.
 	var/unscrewed = FALSE  // Whether wires are accessible. Toggleable by screwdrivering.
 	var/freerange = FALSE  // If true, the radio has access to the full spectrum.
@@ -30,21 +36,18 @@
 	var/freqlock = FALSE  // Frequency lock to stop the user from untuning specialist radios.
 	var/use_command = FALSE  // If true, broadcasts will be large and BOLD.
 	var/command = FALSE  // If true, use_command can be toggled at will.
+	var/log = FALSE // If true, the UI will display the voice log for the frequency
+	var/list/loglist = list() //the voice log
 
 	// Encryption key handling
 	var/obj/item/encryptionkey/keyslot
 	var/translate_binary = FALSE  // If true, can hear the special binary channel.
 	var/independent = FALSE  // If true, can say/hear on the special CentCom channel.
-	var/syndie = FALSE  // If true, hears all well-known channels automatically, and can say/hear on the Syndicate channel.
 	var/list/channels = list()  // Map from name (see communications.dm) to on/off. First entry is current department (:h)
 	var/list/secure_radio_connections
 
 	var/const/FREQ_LISTENING = 1
 	//FREQ_BROADCASTING = 2
-
-/obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/radio/proc/set_frequency(new_frequency)
 	SEND_SIGNAL(src, COMSIG_RADIO_NEW_FREQUENCY, args)
@@ -54,7 +57,6 @@
 /obj/item/radio/proc/recalculateChannels()
 	channels = list()
 	translate_binary = FALSE
-	syndie = FALSE
 	independent = FALSE
 
 	if(keyslot)
@@ -64,19 +66,11 @@
 
 		if(keyslot.translate_binary)
 			translate_binary = TRUE
-		if(keyslot.syndie)
-			syndie = TRUE
 		if(keyslot.independent)
 			independent = TRUE
 
 	for(var/ch_name in channels)
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
-
-/obj/item/radio/proc/make_syndie() // Turns normal radios into Syndicate radios!
-	qdel(keyslot)
-	keyslot = new /obj/item/encryptionkey/syndicate
-	syndie = 1
-	recalculateChannels()
 
 /obj/item/radio/Destroy()
 	remove_radio_all(src) //Just to be sure
@@ -96,9 +90,25 @@
 	for(var/ch_name in channels)
 		secure_radio_connections[ch_name] = add_radio(src, GLOB.radiochannels[ch_name])
 
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
+
 /obj/item/radio/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
+
+/obj/item/radio/AltClick(mob/user)
+	if(headset)
+		. = ..()
+	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
+		broadcasting = !broadcasting
+		to_chat(user, "<span class='notice'>You toggle broadcasting [broadcasting ? "on" : "off"].</span>")
+
+/obj/item/radio/CtrlShiftClick(mob/user)
+	if(headset)
+		. = ..()
+	else if(user.canUseTopic(src, !issilicon(user), TRUE, FALSE))
+		listening = !listening
+		to_chat(user, "<span class='notice'>You toggle speaker [listening ? "on" : "off"].</span>")
 
 /obj/item/radio/interact(mob/user)
 	if(unscrewed && !isAI(user))
@@ -134,6 +144,8 @@
 	data["useCommand"] = use_command
 	data["subspace"] = subspace_transmission
 	data["subspaceSwitchable"] = subspace_switchable
+	data["chatlog"] = log
+	data["chatloglist"] = loglist
 	data["headset"] = FALSE
 
 	return data
@@ -142,6 +154,8 @@
 	. = ..()
 	if(.)
 		return
+	if(isliving(usr) && in_range(src, usr))
+		playsound(src, "button", 10)
 	switch(action)
 		if("frequency")
 			if(freqlock)
@@ -188,7 +202,7 @@
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
-	INVOKE_ASYNC(src, .proc/talk_into_impl, M, message, channel, spans.Copy(), language, message_mods)
+	INVOKE_ASYNC(src, PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language, message_mods)
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language, list/message_mods)
@@ -230,7 +244,7 @@
 	var/turf/position = get_turf(src)
 	for(var/obj/item/jammer/jammer in GLOB.active_jammers)
 		var/turf/jammer_turf = get_turf(jammer)
-		if(position?.get_virtual_z_level() == jammer_turf.get_virtual_z_level() && (get_dist(position, jammer_turf) <= jammer.range))
+		if(position?.virtual_z() == jammer_turf.virtual_z() && (get_dist(position, jammer_turf) <= jammer.range))
 			return
 
 	// Determine the identity information which will be attached to the signal.
@@ -240,10 +254,10 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans, message_mods)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_WIDEBAND || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE))		//WS Edit - SolGov Rep
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
-		signal.levels = list(0)  // reaches all Z-levels
+		signal.map_zones = list(0)  // reaches all Z-levels
 		signal.broadcast()
 		playsound(src, "sound/effects/walkietalkie.ogg", 20, FALSE)			//WS Edit - Radio chatter
 		return
@@ -260,23 +274,28 @@
 
 	// Non-subspace radios will check in a couple of seconds, and if the signal
 	// was never received, send a mundane broadcast (no headsets).
-	addtimer(CALLBACK(src, .proc/backup_transmission, signal), 20)
+	addtimer(CALLBACK(src, PROC_REF(backup_transmission), signal), 20)
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)
-	if (signal.data["done"] && (T.get_virtual_z_level() in signal.levels))
+	var/datum/map_zone/mapzone = T.get_map_zone()
+	if (signal.data["done"] && (mapzone in signal.map_zones))
 		return
 
 	// Okay, the signal was never processed, send a mundane broadcast.
 	signal.data["compression"] = 0
 	signal.transmission_method = TRANSMISSION_RADIO
-	signal.levels = list(T.get_virtual_z_level())
+	signal.map_zones = list(mapzone)
 	signal.broadcast()
 
 /obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
 	if(radio_freq || !broadcasting || get_dist(src, speaker) > canhear_range)
 		return
+	var/filtered_mods = list()
+	if (message_mods[MODE_CUSTOM_SAY_EMOTE])
+		filtered_mods[MODE_CUSTOM_SAY_EMOTE] = message_mods[MODE_CUSTOM_SAY_EMOTE]
+		filtered_mods[MODE_CUSTOM_SAY_ERASE_INPUT] = message_mods[MODE_CUSTOM_SAY_ERASE_INPUT]
 
 	if(message_mods[RADIO_EXTENSION] == MODE_L_HAND || message_mods[RADIO_EXTENSION] == MODE_R_HAND)
 		// try to avoid being heard double
@@ -287,20 +306,21 @@
 			if (idx && (idx % 2) == (message_mods[RADIO_EXTENSION] == MODE_L_HAND))
 				return
 
-	talk_into(speaker, raw_message, , spans, language=message_language)
+	talk_into(speaker, raw_message, , spans, language=message_language, message_mods = filtered_mods)
 
 // Checks if this radio can receive on the given frequency.
-/obj/item/radio/proc/can_receive(freq, level)
+/obj/item/radio/proc/can_receive(freq, map_zones)
 	// deny checks
 	if (!on || !listening || wires.is_cut(WIRE_RX))
 		return FALSE
-	if (freq == FREQ_SYNDICATE && !syndie)
-		return FALSE
-	if (freq == FREQ_CENTCOM || freq == FREQ_SOLGOV)
+	if (freq == FREQ_CENTCOM)
 		return independent  // hard-ignores the z-level check
-	if (!(0 in level))
+	if (!(0 in map_zones))
 		var/turf/position = get_turf(src)
-		if(!position || !(position.get_virtual_z_level() in level))
+		if(!position)
+			return FALSE
+		var/datum/map_zone/mapzone = position.get_map_zone()
+		if(!(mapzone in map_zones))
 			return FALSE
 
 	// allow checks: are we listening on that frequency?
@@ -309,7 +329,7 @@
 	for(var/ch_name in channels)
 		if(channels[ch_name] & FREQ_LISTENING)
 			//the GLOB.radiochannels list is located in communications.dm
-			if(GLOB.radiochannels[ch_name] == text2num(freq) || syndie)
+			if(GLOB.radiochannels[ch_name] == text2num(freq))
 				return TRUE
 	return FALSE
 
@@ -322,6 +342,8 @@
 		. += "<span class='notice'>It can be attached and modified.</span>"
 	else
 		. += "<span class='notice'>It cannot be modified or attached.</span>"
+	if (in_range(src, user)&& !headset)
+		. += "<span class='info'>Ctrl-Shift-click on the [name] to toggle speaker.<br/>Alt-click on the [name] to toggle broadcasting.</span>"
 
 /obj/item/radio/attackby(obj/item/W, mob/user, params)
 	add_fingerprint(user)
@@ -347,7 +369,7 @@
 	for (var/ch_name in channels)
 		channels[ch_name] = 0
 	on = FALSE
-	addtimer(CALLBACK(src, .proc/end_emp_effect, curremp), 200)
+	addtimer(CALLBACK(src, PROC_REF(end_emp_effect), curremp), 200)
 
 /obj/item/radio/proc/end_emp_effect(curremp)
 	if(emped != curremp) //Don't fix it if it's been EMP'd again
@@ -355,6 +377,11 @@
 	emped = FALSE
 	on = TRUE
 	return TRUE
+
+/obj/item/radio/proc/log_trim()
+	if(loglist.len <= 50)
+		return
+	loglist.Cut(51)
 
 ///////////////////////////////
 //////////Borg Radios//////////
@@ -370,7 +397,6 @@
 	. = ..()
 
 /obj/item/radio/borg/syndicate
-	syndie = 1
 	keyslot = new /obj/item/encryptionkey/syndicate
 
 /obj/item/radio/borg/syndicate/Initialize()
@@ -410,7 +436,7 @@
 
 		recalculateChannels()
 
-
-/obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
-	listening = 0			// And it's nice to have a subtype too for future features.
-	dog_fashion = /datum/dog_fashion/back
+/obj/item/radio/old
+	name = "old radio"
+	icon_state = "radio"
+	desc = "An old handheld radio. You could use it, if you really wanted to."

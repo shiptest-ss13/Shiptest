@@ -14,6 +14,7 @@
 	var/Uses = 1 ///uses before it goes inert
 	var/qdel_timer = null ///deletion timer, for delayed reactions
 	var/effectmod ///Which type of crossbred
+	var/crossbreed_modifier = 1 //Modifies how many extracts are needed to cross a core.
 	var/list/activate_reagents = list() ///Reagents required for activation
 	var/recurring = FALSE
 	var/research ///Research point value for slime cores. These are defines stored in [/__DEFINES/research] - the actual values are updated there.
@@ -78,13 +79,14 @@
 
 	if(!M.effectmod)
 		M.effectmod = effectmod
+		M.crossbreed_modifier = crossbreed_modifier
 
 	M.applied++
 	qdel(src)
 	to_chat(user, "<span class='notice'>You feed the slime [src], [M.applied == 1 ? "starting to mutate its core." : "further mutating its core."]</span>")
 	playsound(M, 'sound/effects/attackblob.ogg', 50, TRUE)
 
-	if(M.applied >= SLIME_EXTRACT_CROSSING_REQUIRED)
+	if(M.applied >= (SLIME_EXTRACT_CROSSING_REQUIRED * crossbreed_modifier))
 		M.spawn_corecross()
 
 /obj/item/slime_extract/grey
@@ -93,6 +95,7 @@
 	effectmod = "reproductive"
 	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 	research = SLIME_RESEARCH_TIER_0
+	custom_price = 1000
 
 /obj/item/slime_extract/grey/activate(mob/living/carbon/human/user, datum/species/jelly/luminescent/species, activation_type)
 	switch(activation_type)
@@ -198,6 +201,7 @@
 	name = "purple slime extract"
 	icon_state = "purple slime extract"
 	effectmod = "regenerative"
+	crossbreed_modifier = 0.3
 	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 	research = SLIME_RESEARCH_TIER_1
 
@@ -263,6 +267,7 @@
 	name = "yellow slime extract"
 	icon_state = "yellow slime extract"
 	effectmod = "charged"
+	crossbreed_modifier = 0.8
 	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma,/datum/reagent/water)
 	research = SLIME_RESEARCH_TIER_2
 
@@ -273,7 +278,7 @@
 				to_chat(user, "<span class='warning'>Your glow is already enhanced!</span>")
 				return
 			species.update_glow(user, 5)
-			addtimer(CALLBACK(species, /datum/species/jelly/luminescent.proc/update_glow, user, LUMINESCENT_DEFAULT_GLOW), 600)
+			addtimer(CALLBACK(species, TYPE_PROC_REF(/datum/species/jelly/luminescent, update_glow), user, LUMINESCENT_DEFAULT_GLOW), 600)
 			to_chat(user, "<span class='notice'>You start glowing brighter.</span>")
 
 		if(SLIME_ACTIVATE_MAJOR)
@@ -489,16 +494,8 @@
 				return
 			to_chat(user, "<span class='notice'>You feel your skin harden and become more resistant.</span>")
 			species.armor += 25
-			addtimer(CALLBACK(src, .proc/reset_armor, species), 1200)
+			addtimer(CALLBACK(src, PROC_REF(reset_armor), species), 1200)
 			return 450
-
-		if(SLIME_ACTIVATE_MAJOR)
-			to_chat(user, "<span class='warning'>You feel your body rapidly crystallizing...</span>")
-			if(do_after(user, 120, target = user))
-				to_chat(user, "<span class='warning'>You feel solid.</span>")
-				user.set_species(pick(/datum/species/golem/adamantine))
-				return
-			to_chat(user, "<span class='notice'>You stop feeding [src], and your body returns to its slimelike state.</span>")
 
 /obj/item/slime_extract/adamantine/proc/reset_armor(datum/species/jelly/luminescent/species)
 	if(istype(species))
@@ -545,6 +542,7 @@
 	name = "pyrite slime extract"
 	icon_state = "pyrite slime extract"
 	effectmod = "prismatic"
+	crossbreed_modifier = 0.5
 	activate_reagents = list(/datum/reagent/blood,/datum/reagent/toxin/plasma)
 	research = SLIME_RESEARCH_TIER_3
 
@@ -879,7 +877,7 @@
 
 /obj/item/slimepotion/speed
 	name = "slime speed potion"
-	desc = "A potent chemical mix that will remove the slowdown from any item."
+	desc = "A potent chemical mix that will reduce the slowdown from any item."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "potyellow"
 
@@ -892,10 +890,10 @@
 		return
 	if(isitem(C))
 		var/obj/item/I = C
-		if(I.slowdown <= 0 || I.obj_flags & IMMUTABLE_SLOW)
+		if(I.slowdown <= 0.25 || I.obj_flags & IMMUTABLE_SLOW)
 			to_chat(user, "<span class='warning'>The [C] can't be made any faster!</span>")
 			return ..()
-		I.slowdown = 0
+		I.slowdown = 0.25
 
 	if(istype(C, /obj/vehicle))
 		var/obj/vehicle/V = C

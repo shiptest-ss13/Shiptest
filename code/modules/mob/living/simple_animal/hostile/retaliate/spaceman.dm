@@ -71,5 +71,5 @@
 	minimum_distance = 5
 	casingtype = /obj/item/ammo_casing/c46x30mm
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/wt550,
+	loot = list(/obj/item/gun/ballistic/automatic/smg/wt550,
 				/obj/effect/mob_spawn/human/corpse/nanotrasensoldier)

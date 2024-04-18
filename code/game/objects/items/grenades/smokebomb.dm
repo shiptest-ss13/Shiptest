@@ -1,8 +1,3 @@
-/**
-  *This is smoke bomb, mezum koman. It is a grenade subtype. All craftmanship is of the highest quality.
-  *It menaces with spikes of iron. On it is a depiction of an assistant.
-  *The assistant is bleeding. The assistant has a painful expression. The assistant is dead.
-  */
 /obj/item/grenade/smokebomb
 	name = "smoke grenade"
 	desc = "Real bruh moment if you ever see this. Probably tell a c*der or something."
@@ -10,8 +5,8 @@
 	icon_state = "smokewhite"
 	item_state = "smoke"
 	slot_flags = ITEM_SLOT_BELT
-	///It's extremely important to keep this list up to date. It helps to generate the insightful description of the smokebomb
-	var/static/list/bruh_moment = list("Dank", "Hip", "Lit", "Based", "Robust", "Bruh", "Nyagger")
+	///It's extremely important to keep this list up to date. It helps to generate the insightful description of the smokebomb. EDIT: honestly fuck you nemvar. go directly to jail and do not collect 200 dollars
+	var/static/list/bruh_moment = list("Dank", "Hip", "Lit", "Based", "Robust", "Bruh")
 
 ///Here we generate the extremely insightful description.
 /obj/item/grenade/smokebomb/Initialize()

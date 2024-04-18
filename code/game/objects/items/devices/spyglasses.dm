@@ -3,7 +3,7 @@
 	desc = "Made by Nerd. Co's infiltration and surveillance department. Upon closer inspection, there's a small screen in each lens."
 	var/obj/item/spy_bug/linked_bug
 
-/obj/item/clothing/glasses/regular/spy/proc/show_to_user(var/mob/user)//this is the meat of it. most of the map_popup usage is in this.
+/obj/item/clothing/glasses/regular/spy/proc/show_to_user(mob/user)//this is the meat of it. most of the map_popup usage is in this.
 	if(!user)
 		return
 	if(!user.client)
@@ -54,7 +54,7 @@
 
 /obj/item/spy_bug/Initialize()
 	. = ..()
-	tracker = new /datum/movement_detector(src, CALLBACK(src, .proc/update_view))
+	tracker = new /datum/movement_detector(src, CALLBACK(src, PROC_REF(update_view)))
 
 	cam_screen = new
 	cam_screen.name = "screen"
@@ -96,7 +96,7 @@
 	name = "Espionage For Dummies"
 	color = "#FFFF00"
 	desc = "An eye gougingly yellow pamphlet with a badly designed image of a detective on it. the subtext says \" The Latest way to violate privacy guidelines!\" "
-	info = @{"
+	default_raw_text = @{"
 
 Thank you for your purchase of the Nerd Co SpySpeks <small>tm</small>, this paper will be your quick-start guide to violating the privacy of your crewmates in three easy steps!<br><br>Step One: Nerd Co SpySpeks <small>tm</small> upon your face. <br>
 Step Two: Place the included "ProfitProtektor <small>tm</small>" camera assembly in a place of your choosing - make sure to make heavy use of it's inconspicous design!

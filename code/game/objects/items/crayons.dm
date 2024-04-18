@@ -16,6 +16,14 @@
  * Crayons
  */
 
+/obj/item/toy/crayon/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = CRAYON_FONT,
+		color = paint_color,
+		use_bold = TRUE,
+	)
+
 /obj/item/toy/crayon
 	name = "crayon"
 	desc = "A colourful crayon. Looks tasty. Mmmm..."
@@ -35,16 +43,15 @@
 	var/drawtype
 	var/text_buffer = ""
 
-	var/static/list/graffiti = list("amyjon","face","matt","revolution","engie","guy","end","dwarf","uboa","body","cyka","star","poseur tag","prolizard","antilizard")
+	var/static/list/graffiti = list("face","guy","end","body")
+	var/static/list/code = list("getout","empty","unsafe","camp","safepath","jackpot","dismantle")
 	var/static/list/symbols = list("danger","firedanger","electricdanger","biohazard","radiation","safe","evac","space","med","trade","shop","food","peace","like","skull","nay","heart","credit")
-	var/static/list/drawings = list("smallbrush","brush","largebrush","splatter","snake","stickman","carp","ghost","clown","taser","disk","fireaxe","toolbox","corgi","cat","toilet","blueprint","beepsky","scroll","bottle","shotgun")
-	var/static/list/oriented = list("arrow","line","thinline","shortline","body","chevron","footprint","clawprint","pawprint") // These turn to face the same way as the drawer
-	var/static/list/runes = list("rune1","rune2","rune3","rune4","rune5","rune6")
+	var/static/list/drawings = list("smallbrush","brush","splatter","snake","carp","ghost","taser","disk","fireaxe","toolbox","corgi","cat","toilet","blueprint","beepsky","scroll","bottle","shotgun")
+	var/static/list/oriented = list("arrow","line","thinline","shortline","body","chevron","footprint","clawprint","pawprint","dogo","nogo") // These turn to face the same way as the drawer
 	var/static/list/randoms = list(RANDOM_ANY, RANDOM_RUNE, RANDOM_ORIENTED,
 		RANDOM_NUMBER, RANDOM_GRAFFITI, RANDOM_LETTER, RANDOM_SYMBOL, RANDOM_PUNCTUATION, RANDOM_DRAWING)
-	var/static/list/graffiti_large_h = list("yiffhell", "secborg", "paint")
 
-	var/static/list/all_drawables = graffiti + symbols + drawings + oriented + runes + graffiti_large_h
+	var/static/list/all_drawables = graffiti + code + symbols + drawings + oriented
 
 	var/paint_mode = PAINT_NORMAL
 
@@ -71,10 +78,6 @@
 
 /obj/item/toy/crayon/proc/isValidSurface(surface)
 	return istype(surface, /turf/open/floor)
-
-/obj/item/toy/crayon/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is jamming [src] up [user.p_their()] nose and into [user.p_their()] brain. It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS|OXYLOSS)
 
 /obj/item/toy/crayon/Initialize()
 	. = ..()
@@ -160,7 +163,7 @@
 		if(has_cap)
 			is_capped = !is_capped
 			to_chat(user, "<span class='notice'>The cap on [src] is now [is_capped ? "on" : "off"].</span>")
-			update_icon()
+			update_appearance()
 
 /obj/item/toy/crayon/CtrlClick(mob/user)
 	if(can_change_colour && !isturf(loc) && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -172,15 +175,15 @@
 
 	. = list()
 
-	var/list/g_items = list()
+	var/list/g_items = list() //i hate tgcode
 	. += list(list("name" = "Graffiti", "items" = g_items))
 	for(var/g in graffiti)
 		g_items += list(list("item" = g))
 
-	var/list/glh_items = list()
-	. += list(list("name" = "Graffiti Large Horizontal", "items" = glh_items))
-	for(var/glh in graffiti_large_h)
-		glh_items += list(list("item" = glh))
+	var/list/c_items = list()
+	. += list(list("name" = "Code", "items" = c_items))
+	for(var/c in code)
+		c_items += list(list("item" = c))
 
 	var/list/S_items = list()
 	. += list(list("name" = "Symbols", "items" = S_items))
@@ -196,11 +199,6 @@
 	. += list(list(name = "Oriented", "items" = O_items))
 	for(var/O in oriented)
 		O_items += list(list("item" = O))
-
-	var/list/R_items = list()
-	. += list(list(name = "Runes", "items" = R_items))
-	for(var/R in runes)
-		R_items += list(list("item" = R))
 
 	var/list/rand_items = list()
 	. += list(list(name = "Random", "items" = rand_items))
@@ -241,9 +239,6 @@
 				drawtype = stencil
 				. = TRUE
 				text_buffer = ""
-			if(stencil in graffiti_large_h)
-				paint_mode = PAINT_LARGE_HORIZONTAL
-				text_buffer = ""
 			else
 				paint_mode = PAINT_NORMAL
 		if("select_colour")
@@ -255,7 +250,7 @@
 			. = TRUE
 			paint_mode = PAINT_NORMAL
 			drawtype = "a"
-	update_icon()
+	update_appearance()
 
 /obj/item/toy/crayon/proc/select_colour(mob/user)
 	var/chosen_colour = input(user, "", "Choose Color", paint_color) as color|null
@@ -277,8 +272,6 @@
 	var/istagger = HAS_TRAIT(user, TRAIT_TAGGER)
 
 	var/cost = 1
-	if(paint_mode == PAINT_LARGE_HORIZONTAL)
-		cost = 5
 	if(istype(target, /obj/item/canvas))
 		cost = 0
 	if(ishuman(user))
@@ -307,8 +300,6 @@
 			drawing = pick(drawings)
 		if(RANDOM_GRAFFITI)
 			drawing = pick(graffiti)
-		if(RANDOM_RUNE)
-			drawing = pick(runes)
 		if(RANDOM_ORIENTED)
 			drawing = pick(oriented)
 		if(RANDOM_NUMBER)
@@ -332,14 +323,6 @@
 	else if(drawing in graffiti|oriented)
 		temp = "graffiti"
 
-	var/gang_mode
-	if(user.mind)
-		gang_mode = user.mind.has_antag_datum(/datum/antagonist/gang)
-
-	if(gang_mode && (!can_claim_for_gang(user, target)))
-		return
-
-
 	var/graf_rot
 	if(drawing in oriented)
 		switch(user.dir)
@@ -352,13 +335,13 @@
 			else
 				graf_rot = 0
 
-	var/list/click_params = params2list(params)
+	var/list/modifiers = params2list(params)
 	var/clickx
 	var/clicky
 
-	if(click_params && click_params["icon-x"] && click_params["icon-y"])
-		clickx = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
-		clicky = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+	if(LAZYACCESS(modifiers, ICON_X) && LAZYACCESS(modifiers, ICON_Y))
+		clickx = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+		clicky = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 
 	if(!instant)
 		to_chat(user, "<span class='notice'>You start drawing a [temp] on the	[target.name]...</span>")
@@ -371,9 +354,8 @@
 	if(paint_mode == PAINT_LARGE_HORIZONTAL)
 		wait_time *= 3
 
-	if(gang_mode || !instant)
-		if(!do_after(user, 50, target = target))
-			return
+	if(!instant && !do_after(user, 50, target = target))
+		return
 
 	if(length(text_buffer))
 		drawing = text_buffer[1]
@@ -383,34 +365,28 @@
 
 	if(actually_paints)
 		var/obj/effect/decal/cleanable/crayon/C
-		if(gang_mode)
-			if(!can_claim_for_gang(user, target))
-				return
-			tag_for_gang(user, target, gang_mode)
-			affected_turfs += target
-		else
-			switch(paint_mode)
-				if(PAINT_NORMAL)
-					C = new(target, paint_color, drawing, temp, graf_rot)
-					C.pixel_x = clickx
-					C.pixel_y = clicky
+		switch(paint_mode)
+			if(PAINT_NORMAL)
+				C = new(target, paint_color, drawing, temp, graf_rot)
+				C.pixel_x = clickx
+				C.pixel_y = clicky
+				affected_turfs += target
+			if(PAINT_LARGE_HORIZONTAL)
+				var/turf/left = locate(target.x-1,target.y,target.z)
+				var/turf/right = locate(target.x+1,target.y,target.z)
+				if(isValidSurface(left) && isValidSurface(right))
+					C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
+					affected_turfs += left
+					affected_turfs += right
 					affected_turfs += target
-				if(PAINT_LARGE_HORIZONTAL)
-					var/turf/left = locate(target.x-1,target.y,target.z)
-					var/turf/right = locate(target.x+1,target.y,target.z)
-					if(isValidSurface(left) && isValidSurface(right))
-						C = new(left, paint_color, drawing, temp, graf_rot, PAINT_LARGE_HORIZONTAL_ICON)
-						affected_turfs += left
-						affected_turfs += right
-						affected_turfs += target
-					else
-						to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
-						return
-			C.add_hiddenprint(user)
-			if(istagger)
-				C.AddComponent(/datum/component/art, GOOD_ART)
-			else
-				C.AddComponent(/datum/component/art, BAD_ART)
+				else
+					to_chat(user, "<span class='warning'>There isn't enough space to paint!</span>")
+					return
+		C.add_hiddenprint(user)
+		if(istagger)
+			C.AddComponent(/datum/component/art, GOOD_ART)
+		else
+			C.AddComponent(/datum/component/art, BAD_ART)
 
 	if(!instant)
 		to_chat(user, "<span class='notice'>You finish drawing \the [temp].</span>")
@@ -474,19 +450,6 @@
 
 	// stolen from oldgang lmao
 	return TRUE
-
-/obj/item/toy/crayon/proc/tag_for_gang(mob/user, atom/target, datum/antagonist/gang/user_gang)
-	for(var/obj/effect/decal/cleanable/crayon/old_marking in target)
-		qdel(old_marking)
-
-	var/area/territory = get_area(target)
-
-	var/obj/effect/decal/cleanable/crayon/gang/tag = new /obj/effect/decal/cleanable/crayon/gang(target)
-	tag.my_gang = user_gang.my_gang
-	tag.icon_state = "[user_gang.gang_id]_tag"
-	tag.name = "[tag.my_gang.name] gang tag"
-	tag.desc = "Looks like someone's claimed this area for [tag.my_gang.name]."
-	to_chat(user, "<span class='notice'>You tagged [territory] for [tag.my_gang.name]!</span>")
 
 /obj/item/toy/crayon/proc/territory_claimed(area/territory, mob/user)
 	for(var/obj/effect/decal/cleanable/crayon/gang/G in GLOB.gang_tags)
@@ -596,7 +559,7 @@
 	new /obj/item/toy/crayon/blue(src)
 	new /obj/item/toy/crayon/purple(src)
 	new /obj/item/toy/crayon/black(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/crayons/update_overlays()
 	. = ..()
@@ -651,30 +614,6 @@
 /obj/item/toy/crayon/spraycan/isValidSurface(surface)
 	return (istype(surface, /turf/open/floor) || istype(surface, /turf/closed/wall))
 
-
-/obj/item/toy/crayon/spraycan/suicide_act(mob/user)
-	var/mob/living/carbon/human/H = user
-	if(is_capped || !actually_paints)
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, but nothing happens!</span>")
-		user.say("MEDIOCRE!!", forced="spraycan suicide")
-		return SHAME
-	else
-		user.visible_message("<span class='suicide'>[user] shakes up [src] with a rattle and lifts it to [user.p_their()] mouth, spraying paint across [user.p_their()] teeth!</span>")
-		user.say("WITNESS ME!!", forced="spraycan suicide")
-		if(pre_noise || post_noise)
-			playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 5)
-		if(can_change_colour)
-			paint_color = "#C0C0C0"
-		update_icon()
-		if(actually_paints)
-			H.lip_style = "spray_face"
-			H.lip_color = paint_color
-			H.update_body()
-		var/used = use_charges(user, 10, FALSE)
-		reagents.trans_to(user, used, volume_multiplier, transfered_by = user, method = VAPOR)
-
-		return (OXYLOSS)
-
 /obj/item/toy/crayon/spraycan/Initialize()
 	. = ..()
 	// If default crayon red colour, pick a more fun spraycan colour
@@ -682,7 +621,7 @@
 		paint_color = pick("#DA0000","#FF9300","#FFF200","#A8E61D","#00B7EF",
 		"#DA00FF")
 	refill()
-	update_icon()
+	update_appearance()
 
 
 /obj/item/toy/crayon/spraycan/examine(mob/user)
@@ -704,6 +643,10 @@
 	if(check_empty(user))
 		return
 
+	if(istype(target, /obj/structure/railing/modern))
+		playsound(user.loc, 'sound/effects/spray.ogg', 25, TRUE, 5)
+		return
+
 	if(iscarbon(target))
 		if(pre_noise || post_noise)
 			playsound(user.loc, 'sound/effects/spray.ogg', 25, TRUE, 5)
@@ -720,9 +663,7 @@
 			flash_color(C, flash_color=paint_color, flash_time=40)
 		if(ishuman(C) && actually_paints)
 			var/mob/living/carbon/human/H = C
-			H.lip_style = "spray_face"
-			H.lip_color = paint_color
-			H.update_body()
+			H.update_lips("spray_face", paint_color)
 
 		. = use_charges(user, 10, FALSE)
 		var/fraction = min(1, . / reagents.maximum_volume)
@@ -756,6 +697,7 @@
 
 /obj/item/toy/crayon/spraycan/update_icon_state()
 	icon_state = is_capped ? icon_capped : icon_uncapped
+	return ..()
 
 /obj/item/toy/crayon/spraycan/update_overlays()
 	. = ..()

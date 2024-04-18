@@ -88,29 +88,12 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
-/datum/design/board/scan_console
-	name = "Computer Design (DNA Machine)"
-	desc = "Allows for the construction of circuit boards used to build a new DNA scanning console."
-	id = "scan_console"
-	build_path = /obj/item/circuitboard/computer/scan_consolenew
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/cloning
-	name = "Computer Design (Cloning Console)"
-	desc = "Used to clone people and manage DNA."
-	id = "cloning"
-	build_path = /obj/item/circuitboard/computer/cloning
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/board/comconsole
 	name = "Computer Design (Communications)"
 	desc = "Allows for the construction of circuit boards used to build a communications console."
 	id = "comconsole"
 	build_path = /obj/item/circuitboard/computer/communications
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY				//Honestly should have a bridge techfab for this sometime.
 
 /datum/design/board/idcardconsole
 	name = "Computer Design (ID Console)"
@@ -118,7 +101,6 @@
 	id = "idcardconsole"
 	build_path = /obj/item/circuitboard/computer/card
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY				//Honestly should have a bridge techfab for this sometime.
 
 /datum/design/board/crewconsole
 	name = "Computer Design (Crew monitoring computer)"
@@ -198,7 +180,7 @@
 	id = "mechacontrol"
 	build_path = /obj/item/circuitboard/computer/mecha_control
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/mechapower
 	name = "Computer Design (Mech Bay Power Control Console)"
@@ -206,7 +188,7 @@
 	id = "mechapower"
 	build_path = /obj/item/circuitboard/computer/mech_bay_power_console
 	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/rdconsole
 	name = "Computer Design (R&D Console)"
@@ -215,22 +197,6 @@
 	build_path = /obj/item/circuitboard/computer/rdconsole
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/cargo
-	name = "Computer Design (Supply Console)"
-	desc = "Allows for the construction of circuit boards used to build a Supply Console."
-	id = "cargo"
-	build_path = /obj/item/circuitboard/computer/cargo
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
-/datum/design/board/cargorequest
-	name = "Computer Design (Supply Request Console)"
-	desc = "Allows for the construction of circuit boards used to build a Supply Request Console."
-	id = "cargorequest"
-	build_path = /obj/item/circuitboard/computer/cargo/request
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_CARGO
 
 /datum/design/board/bounty
 	name = "Computer Design (Bounty Console)"
@@ -327,3 +293,12 @@
 	build_path = /obj/item/circuitboard/computer/advanced_camera
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+//////////////Shuttle Computers///////////////
+/datum/design/board/shuttle/shuttle_helm
+	name = "Computer Design (Shuttle Helm Console)"
+	desc = "Allows for the construction of circuit boards used to pilot a spacecraft."
+	id = "shuttle_helm"
+	build_path = /obj/item/circuitboard/computer/shuttle/helm
+	category = list("Computer Boards", "Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

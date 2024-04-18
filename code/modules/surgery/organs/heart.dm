@@ -2,11 +2,12 @@
 	name = "heart"
 	desc = "I feel bad for the heartless bastard who lost this."
 	icon_state = "heart-on"
+	base_icon_state = "heart"
 	zone = BODY_ZONE_CHEST
 	slot = ORGAN_SLOT_HEART
 
 	healing_factor = STANDARD_ORGAN_HEALING
-	decay_factor = 3.5 * STANDARD_ORGAN_DECAY		//designed to fail a little under 4 minutes after death
+	decay_factor = STANDARD_VITAL_ORGAN_DECAY
 
 	low_threshold_passed = "<span class='info'>Prickles of pain appear then die out from within your chest...</span>"
 	high_threshold_passed = "<span class='warning'>Something inside your chest hurts, and the pain isn't subsiding. You notice yourself breathing far faster than before.</span>"
@@ -15,22 +16,22 @@
 
 	// Heart attack code is in code/modules/mob/living/carbon/human/life.dm
 	var/beating = 1
-	var/icon_base = "heart"
 	attack_verb = list("beat", "thumped")
-	var/beat = BEAT_NONE//is this mob having a heatbeat sound played? if so, which?
-	var/failed = FALSE		//to prevent constantly running failing code
-	var/operated = FALSE	//whether the heart's been operated on to fix some of its damages
+	//is this mob having a heatbeat sound played? if so, which?
+	var/beat = BEAT_NONE
+	//to prevent constantly running failing code
+	var/failed = FALSE
+	//whether the heart's been operated on to fix some of its damages
+	var/operated = FALSE
 
 /obj/item/organ/heart/update_icon_state()
-	if(beating)
-		icon_state = "[icon_base]-on"
-	else
-		icon_state = "[icon_base]-off"
+	icon_state = "[base_icon_state]-[beating ? "on" : "off"]"
+	return ..()
 
 /obj/item/organ/heart/Remove(mob/living/carbon/M, special = 0)
 	..()
 	if(!special)
-		addtimer(CALLBACK(src, .proc/stop_if_unowned), 120)
+		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned)), 120)
 
 /obj/item/organ/heart/proc/stop_if_unowned()
 	if(!owner)
@@ -42,22 +43,22 @@
 		user.visible_message("<span class='notice'>[user] squeezes [src] to \
 			make it beat again!</span>","<span class='notice'>You squeeze [src] to make it beat again!</span>")
 		Restart()
-		addtimer(CALLBACK(src, .proc/stop_if_unowned), 80)
+		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned)), 80)
 
 /obj/item/organ/heart/proc/Stop()
 	beating = 0
-	update_icon()
+	update_appearance()
 	return 1
 
 /obj/item/organ/heart/proc/Restart()
 	beating = 1
-	update_icon()
+	update_appearance()
 	return 1
 
 /obj/item/organ/heart/OnEatFrom(eater, feeder)
 	. = ..()
 	beating = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/item/organ/heart/on_life()
 	..()
@@ -98,13 +99,13 @@
 	name = "cursed heart"
 	desc = "A heart that, when inserted, will force you to pump it manually."
 	icon_state = "cursedheart-off"
-	icon_base = "cursedheart"
+	base_icon_state = "cursedheart"
 	decay_factor = 0
-	actions_types = list(/datum/action/item_action/organ_action/cursed_heart)
+	actions_types = list(/datum/action/item_action/hands_free/organ_action/cursed_heart)
 	var/last_pump = 0
 	var/add_colour = TRUE //So we're not constantly recreating colour datums
-	var/pump_delay = 30 //you can pump 1 second early, for lag, but no more (otherwise you could spam heal)
-	var/blood_loss = 100 //600 blood is human default, so 5 failures (below 122 blood is where humans die because reasons?)
+	var/pump_delay = 40 //you can pump 1 second early, for lag, but no more (otherwise you could spam heal)
+	var/blood_loss = 50 //600 blood is human default, so 10 failures (below 122 blood is where humans die because reasons?)
 
 	//How much to heal per pump, negative numbers would HURT the player
 	var/heal_brute = 0
@@ -142,11 +143,11 @@
 	..()
 	M.remove_client_colour(/datum/client_colour/cursed_heart_blood)
 
-/datum/action/item_action/organ_action/cursed_heart
+/datum/action/item_action/hands_free/organ_action/cursed_heart
 	name = "Pump your blood"
 
 //You are now brea- pumping blood manually
-/datum/action/item_action/organ_action/cursed_heart/Trigger()
+/datum/action/item_action/hands_free/organ_action/cursed_heart/Trigger()
 	. = ..()
 	if(. && istype(target, /obj/item/organ/heart/cursed))
 		var/obj/item/organ/heart/cursed/cursed_heart = target
@@ -162,7 +163,7 @@
 		var/mob/living/carbon/human/H = owner
 		if(istype(H))
 			if(H.dna && !(NOBLOOD in H.dna.species.species_traits))
-				H.blood_volume = min(H.blood_volume + cursed_heart.blood_loss*0.5, BLOOD_VOLUME_MAXIMUM)
+				H.blood_volume = min(H.blood_volume + cursed_heart.blood_loss*1.0, BLOOD_VOLUME_MAXIMUM)
 				H.remove_client_colour(/datum/client_colour/cursed_heart_blood)
 				cursed_heart.add_colour = TRUE
 				H.adjustBruteLoss(-cursed_heart.heal_brute)
@@ -202,6 +203,12 @@
 	dose_available = TRUE
 	emp_vulnerability = 20
 
+/obj/item/organ/heart/cybernetic/ipc //this sucks
+	name = "coolant pump"
+	desc = "A small pump powered by the IPC's internal systems for circulating coolant."
+	status = ORGAN_ROBOTIC
+	emp_vulnerability = 30
+
 /obj/item/organ/heart/cybernetic/emp_act(severity)
 	. = ..()
 	if(. & EMP_PROTECT_SELF)
@@ -210,12 +217,6 @@
 		owner.Dizzy(10)
 		owner.losebreath += 10
 		severe_cooldown = world.time + 20 SECONDS
-	if(prob(emp_vulnerability/severity))	//Chance of permanent effects
-		organ_flags = ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
-		Stop()
-		owner.visible_message("<span class='danger'>[owner] clutches at [owner.p_their()] chest as if [owner.p_their()] heart is stopping!</span>", \
-						"<span class='userdanger'>You feel a terrible pain in your chest, as if your heart has stopped!</span>")
-		addtimer(CALLBACK(src, .proc/Restart), 10 SECONDS)
 
 /obj/item/organ/heart/cybernetic/on_life()
 	. = ..()
@@ -241,6 +242,6 @@
 	if(owner.health < 5 && world.time > min_next_adrenaline)
 		min_next_adrenaline = world.time + rand(250, 600) //anywhere from 4.5 to 10 minutes
 		to_chat(owner, "<span class='userdanger'>You feel yourself dying, but you refuse to give up!</span>")
-		owner.heal_overall_damage(15, 15, 0, BODYPART_ORGANIC)
+		owner.heal_overall_damage(15, 15, 0, BODYTYPE_ORGANIC)
 		if(owner.reagents.get_reagent_amount(/datum/reagent/medicine/ephedrine) < 20)
 			owner.reagents.add_reagent(/datum/reagent/medicine/ephedrine, 10)

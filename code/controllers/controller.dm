@@ -1,7 +1,5 @@
 /datum/controller
 	var/name
-	// The object used for the clickable stat() button.
-	var/obj/effect/statclick/statclick
 
 /datum/controller/proc/Initialize()
 
@@ -17,3 +15,6 @@
 /datum/controller/proc/Recover()
 
 /datum/controller/proc/stat_entry(msg)
+
+/datum/controller/vv_alert_admins()
+	message_admins("[key_name_admin(usr)] is debugging the [name] Controller.")

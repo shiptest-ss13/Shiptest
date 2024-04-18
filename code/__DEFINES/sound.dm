@@ -3,7 +3,7 @@
 #define CHANNEL_ADMIN 1023
 #define CHANNEL_VOX 1022
 #define CHANNEL_JUKEBOX 1021
-#define CHANNEL_JUKEBOX_START 1016 //The gap between this and CHANNEL_JUKEBOX determines the amount of free jukebox channels. This currently allows 6 jukebox channels to exist. WS Edit Cit #7367
+#define CHANNEL_JUKEBOX_START 1016 //The gap between this and CHANNEL_JUKEBOX determines the amount of free jukebox channels. This currently allows 6 jukebox channels to exist.
 #define CHANNEL_HEARTBEAT 1015 //sound channel for heartbeats
 #define CHANNEL_AMBIENCE 1014
 #define CHANNEL_BUZZ 1013
@@ -117,6 +117,11 @@
 	'sound/hallucinations/over_here3.ogg', 'sound/hallucinations/turn_around1.ogg', \
 	'sound/hallucinations/turn_around2.ogg', 'sound/hallucinations/veryfar_noise.ogg', \
 	'sound/hallucinations/wail.ogg')
+
+#define BEACH list( \
+	'sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg', \
+	'sound/ambience/ambiodd.ogg','sound/ambience/ambinice.ogg')
+
 
 #define INTERACTION_SOUND_RANGE_MODIFIER -3
 #define EQUIP_SOUND_VOLUME 30

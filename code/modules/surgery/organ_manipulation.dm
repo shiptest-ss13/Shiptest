@@ -41,7 +41,7 @@
 /datum/surgery/organ_manipulation/mechanic
 	name = "Prosthesis organ manipulation"
 	possible_locs = list(BODY_ZONE_CHEST, BODY_ZONE_HEAD)
-	requires_bodypart_type = BODYPART_ROBOTIC
+	requires_bodypart_type = BODYTYPE_ROBOTIC
 	lying_required = FALSE
 	self_operable = TRUE
 	steps = list(
@@ -49,8 +49,9 @@
 		/datum/surgery_step/open_hatch,
 		/datum/surgery_step/mechanic_unwrench,
 		/datum/surgery_step/prepare_electronics,
-		/datum/surgery_step/manipulate_organs,
+		/datum/surgery_step/manipulate_organs/mechanic,
 		/datum/surgery_step/mechanic_wrench,
+		/datum/surgery_step/close_hatch,
 		/datum/surgery_step/mechanic_close
 		)
 
@@ -60,15 +61,20 @@
 		/datum/surgery_step/mechanic_open,
 		/datum/surgery_step/open_hatch,
 		/datum/surgery_step/prepare_electronics,
-		/datum/surgery_step/manipulate_organs,
+		/datum/surgery_step/manipulate_organs/mechanic,
+		/datum/surgery_step/close_hatch,
 		/datum/surgery_step/mechanic_close
 		)
 
 /datum/surgery_step/manipulate_organs
-	time = 64
+	time = 6.4 SECONDS
 	name = "manipulate organs"
 	repeatable = TRUE
-	implements = list(/obj/item/organ = 100, /obj/item/organ_storage = 100, /obj/item/mmi = 100)
+	implements = list(/obj/item/organ = 100,
+		/obj/item/organ_storage = 100,
+		/obj/item/mmi = 100)
+	preop_sound = 'sound/surgery/organ2.ogg'
+	success_sound = 'sound/surgery/organ1.ogg'
 	var/implements_extract = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 55, /obj/item/kitchen/fork = 35)
 	var/current_type
 	var/obj/item/organ/manipulated_organ = null
@@ -80,6 +86,8 @@
 /datum/surgery_step/manipulate_organs/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	manipulated_organ = null
 	if(istype(tool, /obj/item/organ_storage))
+		preop_sound = initial(preop_sound)
+		success_sound = initial(success_sound)
 		if(!tool.contents.len)
 			to_chat(user, "<span class='warning'>There is nothing inside [tool]!</span>")
 			return -1
@@ -90,6 +98,8 @@
 		tool = manipulated_organ
 	if(isorgan(tool))
 		current_type = "insert"
+		preop_sound = initial(preop_sound)
+		success_sound = initial(success_sound)
 		manipulated_organ = tool
 		if(target_zone != manipulated_organ.zone || target.getorganslot(manipulated_organ.slot))
 			to_chat(user, "<span class='warning'>There is no room for [manipulated_organ] in [target]'s [parse_zone(target_zone)]!</span>")
@@ -102,15 +112,16 @@
 			"<span class='notice'>[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].</span>",
 			"<span class='notice'>[user] begins to insert something into [target]'s [parse_zone(target_zone)].</span>")
 
-	//WS Begin - IPCs
-
 	if(istype(tool, /obj/item/mmi))//this whole thing is only used for robotic surgery in organ_mani_robotic.dm :*
 		current_type = "posibrain"
+		preop_sound = 'sound/items/tape_flip.ogg'
+		success_sound = 'sound/items/taperecorder_close.ogg'
 		var/obj/item/bodypart/affected = target.get_bodypart(check_zone(target_zone))
 		var/obj/item/mmi/target_mmi = tool
 		if(!affected)
 			return -1
-		if(affected.status != ORGAN_ROBOTIC)
+
+		if(IS_ORGANIC_LIMB(affected))
 			to_chat(user, "<span class='notice'>You can't put [tool] into a meat enclosure!</span>")
 			return -1
 		if(!isipc(target))
@@ -130,6 +141,8 @@
 
 	else if(implement_type in implements_extract)
 		current_type = "extract"
+		preop_sound = 'sound/surgery/hemostat1.ogg'
+		success_sound = 'sound/surgery/organ2.ogg'
 		var/list/organs = target.getorganszone(target_zone)
 
 		var/mob/living/simple_animal/borer/B = target.has_brain_worms()		//WS Begin - Borers

@@ -110,8 +110,8 @@
 	copy_overlays(target)
 	alpha = max(alpha, 150)	//fucking chameleons
 	transform = initial(transform)
-	pixel_y = initial(pixel_y)
-	pixel_x = initial(pixel_x)
+	pixel_y = base_pixel_y
+	pixel_x = base_pixel_x
 
 	//Morphed is weaker
 	melee_damage_lower = melee_damage_disguised
@@ -176,7 +176,7 @@
 /mob/living/simple_animal/hostile/morph/LoseAggro()
 	vision_range = initial(vision_range)
 
-/mob/living/simple_animal/hostile/morph/AIShouldSleep(var/list/possible_targets)
+/mob/living/simple_animal/hostile/morph/AIShouldSleep(list/possible_targets)
 	. = ..()
 	if(.)
 		var/list/things = list()

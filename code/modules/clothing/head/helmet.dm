@@ -3,6 +3,7 @@
 	desc = "Standard Security gear. Protects the head from impacts."
 	icon_state = "helmet"
 	item_state = "helmet"
+	var/flashlight_state = "helmet_flight_overlay"
 	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
@@ -11,18 +12,18 @@
 	strip_delay = 60
 	clothing_flags = SNUG_FIT
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
+	//flags_inv = HIDEHAIR // nah
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
 	var/can_flashlight = FALSE //if a flashlight can be mounted. if it has a flashlight and this is false, it is permanently attached.
 	var/obj/item/flashlight/seclite/attached_light
-	var/datum/action/item_action/toggle_helmet_flashlight/alight
+	var/datum/action/item_action/toggle_helmet_flashlight/action_light
 
 /obj/item/clothing/head/helmet/Initialize()
 	. = ..()
 	if(attached_light)
-		alight = new(src)
+		action_light = new(src)
 
 
 /obj/item/clothing/head/helmet/Destroy()
@@ -46,8 +47,8 @@
 	if(A == attached_light)
 		set_attached_light(null)
 		update_helmlight()
-		update_icon()
-		QDEL_NULL(alight)
+		update_appearance()
+		QDEL_NULL(action_light)
 		qdel(A)
 	return ..()
 
@@ -68,6 +69,115 @@
 		if(old_attached_light.loc == src)
 			old_attached_light.forceMove(get_turf(src))
 
+/obj/item/clothing/head/helmet/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated())
+		if(world.time > cooldown + toggle_cooldown)
+			cooldown = world.time
+			up = !up
+			flags_1 ^= visor_flags
+			flags_inv ^= visor_flags_inv
+			flags_cover ^= visor_flags_cover
+			icon_state = "[initial(icon_state)][up ? "up" : ""]"
+			to_chat(user, "<span class='notice'>[up ? alt_toggle_message : toggle_message] \the [src].</span>")
+
+			user.update_inv_head()
+			if(iscarbon(user))
+				var/mob/living/carbon/C = user
+				C.head_update(src, forced = 1)
+
+//LightToggle
+
+/obj/item/clothing/head/helmet/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/clothing/head/helmet/ui_action_click(mob/user, action)
+	if(istype(action, action_light))
+		toggle_helmlight()
+	else
+		..()
+
+/obj/item/clothing/head/helmet/attackby(obj/item/tool, mob/user, params)
+	if(istype(tool, /obj/item/flashlight/seclite))
+		var/obj/item/flashlight/seclite/attaching_seclite = tool
+		if(can_flashlight && !attached_light)
+			if(!user.transferItemToLoc(attaching_seclite, src))
+				return
+			to_chat(user, "<span class='notice'>You click [attaching_seclite] into place on [src].</span>")
+			set_attached_light(attaching_seclite)
+			update_appearance()
+			update_helmlight()
+			action_light = new(src)
+			if(loc == user)
+				action_light.Grant(user)
+		return
+	return ..()
+
+/obj/item/clothing/head/helmet/screwdriver_act(mob/living/user, obj/item/tool)
+	. = ..()
+	if(can_flashlight && attached_light) //if it has a light but can_flashlight is false, the light is permanently attached.
+		tool.play_tool_sound(src)
+		to_chat(user, "<span class='notice'>You unscrew [attached_light] from [src].</span>")
+		attached_light.forceMove(drop_location())
+		if(Adjacent(user) && !issilicon(user))
+			user.put_in_hands(attached_light)
+
+		var/obj/item/flashlight/removed_light = set_attached_light(null)
+		update_helmlight()
+		removed_light.update_brightness(user)
+		update_appearance()
+		user.update_inv_head()
+		QDEL_NULL(action_light)
+		return TRUE
+
+/obj/item/clothing/head/helmet/proc/toggle_helmlight()
+	set name = "Toggle Helmet light"
+	set category = "Object"
+	set desc = "Click to toggle your helmet's attached flashlight."
+
+	if(!attached_light)
+		return
+
+	var/mob/user = usr
+	if(user.incapacitated())
+		return
+	attached_light.on = !attached_light.on
+	attached_light.update_brightness()
+	to_chat(user, "<span class='notice'>You toggle the helmet light [attached_light.on ? "on":"off"].</span>")
+
+	playsound(user, attached_light.on ? attached_light.toggle_on_sound : attached_light.toggle_off_sound, 100, TRUE)
+	update_helmlight()
+
+/obj/item/clothing/head/helmet/proc/update_helmlight()
+	if(attached_light)
+		update_appearance()
+
+	for(var/datum/action/action as anything in actions)
+		action.UpdateButtonIcon()
+
+/obj/item/clothing/head/helmet/update_overlays()
+	. = ..()
+	var/mutable_appearance/flashlightlight_overlay
+	if(!attached_light)
+		return
+	if(attached_light.on)
+		flashlightlight_overlay = mutable_appearance(icon, "[flashlight_state]_on")
+	else
+		flashlightlight_overlay = mutable_appearance(icon, flashlight_state)
+	. += flashlightlight_overlay
+
+/obj/item/clothing/head/helmet/worn_overlays(isinhands)
+	. = ..()
+	var/mutable_appearance/flashlightlight_overlay
+	if(isinhands)
+		return
+	if(!attached_light)
+		return
+	if(attached_light.on)
+		flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', "[flashlight_state]_on")
+	else
+		flashlightlight_overlay = mutable_appearance('icons/mob/clothing/head.dmi', flashlight_state)
+	. += flashlightlight_overlay
 
 /obj/item/clothing/head/helmet/sec
 	can_flashlight = TRUE
@@ -88,7 +198,7 @@
 			return
 	return ..()
 
-/obj/item/clothing/head/helmet/alt
+/obj/item/clothing/head/helmet/bulletproof
 	name = "bulletproof helmet"
 	desc = "A bulletproof combat helmet that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "helmetalt"
@@ -96,6 +206,44 @@
 	armor = list("melee" = 15, "bullet" = 60, "laser" = 10, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	can_flashlight = TRUE
 	dog_fashion = null
+	allow_post_reskins = TRUE
+	unique_reskin = list(
+		"None" = "helmetalt",
+		"Desert" = "helmetalt_desert",
+		"Woodland" = "helmetalt_woodland",
+		"Snow" = "helmetalt_snow",
+		"Urban" = "helmetalt_urban",
+		)
+
+/obj/item/clothing/head/helmet/marine
+	name = "tactical combat helmet"
+	desc = "A tactical black helmet, sealed from outside hazards with a plate of reinforced glass."
+	icon_state = "marine_command"
+	item_state = "helmetalt"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 25, "bomb" = 50, "bio" = 100, "fire" = 40, "acid" = 50)
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	clothing_flags = STOPSPRESSUREDAMAGE
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	can_flashlight = TRUE
+	dog_fashion = null
+
+/obj/item/clothing/head/helmet/marine/Initialize(mapload)
+	set_attached_light(new /obj/item/flashlight/seclite)
+	update_helmlight()
+	update_appearance()
+	. = ..()
+
+/obj/item/clothing/head/helmet/marine/security
+	name = "marine heavy helmet"
+	icon_state = "marine_security"
+
+/obj/item/clothing/head/helmet/marine/engineer
+	name = "marine utility helmet"
+	icon_state = "marine_engineer"
+
+/obj/item/clothing/head/helmet/marine/medic
+	name = "marine medic helmet"
+	icon_state = "marine_medic"
 
 /obj/item/clothing/head/helmet/old
 	name = "degrading helmet"
@@ -127,27 +275,6 @@
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	dog_fashion = null
 
-/obj/item/clothing/head/helmet/attack_self(mob/user)
-	if(can_toggle && !user.incapacitated())
-		if(world.time > cooldown + toggle_cooldown)
-			cooldown = world.time
-			up = !up
-			flags_1 ^= visor_flags
-			flags_inv ^= visor_flags_inv
-			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "up" : ""]"
-			to_chat(user, "<span class='notice'>[up ? alt_toggle_message : toggle_message] \the [src].</span>")
-
-			user.update_inv_head()
-			if(iscarbon(user))
-				var/mob/living/carbon/C = user
-				C.head_update(src, forced = 1)
-
-			if(active_sound)
-				while(up)
-					playsound(src, "[active_sound]", 100, FALSE, 4)
-					sleep(15)
-
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
 	desc = "WEEEEOOO. WEEEEEOOO. WEEEEOOOO."
@@ -157,15 +284,29 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	can_toggle = 1
 	toggle_cooldown = 20
-	active_sound = 'sound/items/weeoo1.ogg'
+	var/datum/looping_sound/siren/weewooloop
 	dog_fashion = null
+
+/obj/item/clothing/head/helmet/justice/Initialize()
+	. = ..()
+	weewooloop = new(list(src), FALSE)
+
+/obj/item/clothing/head/helmet/justice/Destroy()
+	QDEL_NULL(weewooloop)
+	return ..()
+
+/obj/item/clothing/head/helmet/justice/attack_self(mob/user)
+	. = ..()
+	if(up)
+		weewooloop.start()
+	else
+		weewooloop.stop()
+
 
 /obj/item/clothing/head/helmet/justice/escape
 	name = "alarm helmet"
 	desc = "WEEEEOOO. WEEEEEOOO. STOP THAT MONKEY. WEEEOOOO."
 	icon_state = "justice2"
-	toggle_message = "You turn off the light on"
-	alt_toggle_message = "You turn on the light on"
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
@@ -186,7 +327,6 @@
 	name = "police officer's hat"
 	desc = "A police officer's Hat. This hat emphasizes that you are THE LAW."
 	icon_state = "policehelm"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/helmet/constable
 	name = "constable helmet"
@@ -303,11 +443,11 @@
 	item_state = "knight_red"
 
 /obj/item/clothing/head/helmet/knight/greyscale
-	name = "knight helmet"
+	name = "heavy plate helmet"
 	desc = "A classic medieval helmet, if you hold it upside down you could see that it's actually a bucket."
 	icon_state = "knight_greyscale"
 	item_state = "knight_greyscale"
-	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
+	armor = list("melee" = 50, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Can change color and add prefix
 
 /obj/item/clothing/head/helmet/skull
@@ -316,8 +456,6 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "skull"
 	item_state = "skull"
 	strip_delay = 100
@@ -331,17 +469,9 @@
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 40, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 50)
 	strip_delay = 60
 
-/obj/item/clothing/head/helmet/rus_helmet
-	name = "russian helmet"
-	desc = "It can hold a bottle of vodka."
-	icon_state = "rus_helmet"
-	item_state = "rus_helmet"
-	armor = list("melee" = 25, "bullet" = 30, "laser" = 0, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 50)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/helmet
-
-/obj/item/clothing/head/helmet/rus_ushanka
-	name = "battle ushanka"
-	desc = "100% bear."
+/obj/item/clothing/head/helmet/r_trapper
+	name = "reinforced trapper hat"
+	desc = "An occasional sight on the heads of Frontiersmen stationed on cold worlds. 200% bear."
 	icon_state = "rus_ushanka"
 	item_state = "rus_ushanka"
 	body_parts_covered = HEAD
@@ -361,84 +491,102 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
 	strip_delay = 80
 
+/obj/item/clothing/head/helmet/swat/inteq
+	name = "inteq SWAT helmet"
+	desc = "A robust and spaceworthy helmet with an opaque gold visor. There is an insignia on the earpad with the letters 'IRMG' on it."
+	icon_state = "inteq_swat"
+	item_state = "inteq_swat"
+	flags_inv = HIDEHAIR
 
-//LightToggle
+/obj/item/clothing/head/helmet/inteq
+	name = "inteq helmet"
+	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
+	icon_state = "inteq_helmet"
+	icon_state = "inteq_helmet"
+	can_flashlight = TRUE
 
-/obj/item/clothing/head/helmet/ComponentInitialize()
-	. = ..()
-	AddElement(/datum/element/update_icon_updates_onmob)
+/obj/item/clothing/head/solgov
+	name = "\improper SolGov officer's cap"
+	desc = "A blue cap worn by high-ranking officers of SolGov."
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+	icon_state = "cap_solgov"
+	item_state = "cap_solgov"
+	strip_delay = 80
 
-/obj/item/clothing/head/helmet/update_icon_state()
-	var/state = "[initial(icon_state)]"
-	if(attached_light)
-		if(attached_light.on)
-			state += "-flight-on" //"helmet-flight-on" // "helmet-cam-flight-on"
-		else
-			state += "-flight" //etc.
+/obj/item/clothing/head/solgov/terragov
+	name = "\improper TerraGov officer's cap"
+	desc = "A cap worn by high-ranking officers of SolGov. This one is still in original TerraGov green."
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
+	icon_state = "cap_terragov"
+	item_state = "cap_terragov"
 
-	icon_state = state
+/obj/item/clothing/head/solgov/sonnensoldner
+	name = "\improper Sonnensoldner Hat"
+	desc = "A standard-issue SolGov hat adorned with a feather, commonly used by Sonnensoldners."
+	icon_state = "sonnensoldner_hat"
+	item_state = "sonnensoldner_hat"
+	worn_y_offset = 4
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
-/obj/item/clothing/head/helmet/ui_action_click(mob/user, action)
-	if(istype(action, alight))
-		toggle_helmlight()
-	else
-		..()
+/obj/item/clothing/head/solgov/captain
+	name = "\improper SolGov bicorne hat"
+	desc = "A unique bicorne hat given to Solarian Captains on expeditionary missions."
+	icon_state = "solgov_bicorne"
+	item_state = "solgov_bicorne"
+	worn_y_offset = 2
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 60)
 
-/obj/item/clothing/head/helmet/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/flashlight/seclite))
-		var/obj/item/flashlight/seclite/S = I
-		if(can_flashlight && !attached_light)
-			if(!user.transferItemToLoc(S, src))
-				return
-			to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
-			set_attached_light(S)
-			update_icon()
-			update_helmlight()
-			alight = new(src)
-			if(loc == user)
-				alight.Grant(user)
-		return
-	return ..()
+/obj/item/clothing/head/helmet/space/plasmaman/solgov
+	name = "\improper SolGov envirosuit helmet"
+	desc = "A generic white envirohelmet with a secondary blue."
+	icon_state = "solgov_envirohelm"
+	item_state = "solgov_envirohelm"
 
-/obj/item/clothing/head/helmet/screwdriver_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(can_flashlight && attached_light) //if it has a light but can_flashlight is false, the light is permanently attached.
-		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You unscrew [attached_light] from [src].</span>")
-		attached_light.forceMove(drop_location())
-		if(Adjacent(user) && !issilicon(user))
-			user.put_in_hands(attached_light)
+/obj/item/clothing/head/helmet/operator
+	name = "\improper operator helmet"
+	desc = "A robust combat helmet commonly employed by Syndicate forces, regardless of alignment."
+	icon_state = "operator"
+	item_state = "operator"
 
-		var/obj/item/flashlight/removed_light = set_attached_light(null)
-		update_helmlight()
-		removed_light.update_brightness(user)
-		update_icon()
-		user.update_inv_head()
-		QDEL_NULL(alight)
-		return TRUE
+/obj/item/clothing/head/helmet/medical
+	name = "\improper trauma team helmet"
+	desc = "A robust combat helmet commonly employed by cybersun medical trauma teams, with its distinctive turquoise."
+	icon_state = "traumahelm"
+	item_state = "traumahelm"
 
-/obj/item/clothing/head/helmet/proc/toggle_helmlight()
-	set name = "Toggle Helmetlight"
-	set category = "Object"
-	set desc = "Click to toggle your helmet's attached flashlight."
+/obj/item/clothing/head/helmet/bulletproof/m10
+	name = "\improper M10 pattern Helmet"
+	desc = "A classic looking helmet, derived from numerous convergently-similar designs from all across inhabited space. A faded tag reads: 'The difference between an open-casket and closed-casket funeral. Wear on head for best results.'"
+	icon_state = "m10helm"
+	can_flashlight = TRUE
+	dog_fashion = null
+	unique_reskin = list(
+		"None" = "m10helm",
+		"Desert" = "m10helm_desert",
+		"Woodland" = "m10helm_woodland",
+		"Snow" = "m10helm_snow",
+		"Urban" = "m10helm_urban",
+		)
 
-	if(!attached_light)
-		return
+/obj/item/clothing/head/helmet/bulletproof/x11
+	name = "\improper Type X11 Helmet"
+	desc = "This bulky helmet is a mainstay product of any Bezuts-based armor manufacturer worth their spice. It's a (relatively) comfortable fit for individuals with frills, horns, antlers, thorns, branches, spikes, webbing..."
+	icon_state = "x11helm"
+	can_flashlight = TRUE
+	dog_fashion = null
+	allow_post_reskins = TRUE
+	unique_reskin = list(
+		"None" = "x11helm",
+		"Desert" = "x11helm_desert",
+		"Woodland" = "x11helm_woodland",
+		"Snow" = "x11helm_snow",
+		"Urban" = "x11helm_urban",
+		)
 
-	var/mob/user = usr
-	if(user.incapacitated())
-		return
-	attached_light.on = !attached_light.on
-	attached_light.update_brightness()
-	to_chat(user, "<span class='notice'>You toggle the helmet light [attached_light.on ? "on":"off"].</span>")
-
-	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_helmlight()
-
-/obj/item/clothing/head/helmet/proc/update_helmlight()
-	if(attached_light)
-		update_icon()
-
-	for(var/X in actions)
-		var/datum/action/A = X
-		A.UpdateButtonIcon()
+/obj/item/clothing/head/helmet/bulletproof/x11/frontier
+	name = "\improper Frontiersmen X11 Helmet"
+	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
+	icon_state = "x11helm_frontier"
+	unique_reskin = null

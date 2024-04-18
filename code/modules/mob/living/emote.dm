@@ -4,10 +4,36 @@
 	mob_type_allowed_typecache = /mob/living
 	mob_type_blacklist_typecache = list(/mob/living/simple_animal/slime, /mob/living/brain)
 
+
+/// The time it takes for the blush visual to be removed
+#define BLUSH_DURATION 5.2 SECONDS
+
 /datum/emote/living/blush
 	key = "blush"
 	key_third_person = "blushes"
 	message = "blushes."
+	/// Timer for the blush visual to wear off
+	var/blush_timer = TIMER_ID_NULL
+
+/datum/emote/living/blush/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(. && isliving(user))
+		var/mob/living/living_user = user
+		ADD_TRAIT(living_user, TRAIT_BLUSHING, "[type]")
+		living_user.update_body()
+
+		// Use a timer to remove the blush effect after the BLUSH_DURATION has passed
+		var/list/key_emotes = GLOB.emote_list["blush"]
+		for(var/datum/emote/living/blush/living_emote in key_emotes)
+			// The existing timer restarts if it's already running
+			blush_timer = addtimer(CALLBACK(living_emote, PROC_REF(end_blush), living_user), BLUSH_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+
+/datum/emote/living/blush/proc/end_blush(mob/living/living_user)
+	if(!QDELETED(living_user))
+		REMOVE_TRAIT(living_user, TRAIT_BLUSHING, "[type]")
+		living_user.update_body()
+
+#undef BLUSH_DURATION
 
 /datum/emote/living/bow
 	key = "bow"
@@ -33,6 +59,18 @@
 	key_third_person = "crosses"
 	message = "crosses their arms."
 	hands_use_check = TRUE
+
+/datum/emote/living/carbon/mothchitter
+	key = "chitter"
+	key_third_person = "chitters"
+	message = "chitters."
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/mothchitter/get_sound(mob/living/user)
+	var/mob/living/carbon/human/H = user
+	if(ismoth(H) | (istype(H, /mob/living/simple_animal/pet/mothroach)))
+		return 'sound/voice/moth/mothchitter.ogg'
 
 /datum/emote/living/chuckle
 	key = "chuckle"
@@ -131,7 +169,7 @@
 				H.CloseWings()
 			else
 				H.OpenWings()
-			addtimer(CALLBACK(H, open ? /mob/living/carbon/human.proc/OpenWings : /mob/living/carbon/human.proc/CloseWings), wing_time)
+			addtimer(CALLBACK(H, open ? TYPE_PROC_REF(/mob/living/carbon/human, OpenWings) : TYPE_PROC_REF(/mob/living/carbon/human, CloseWings)), wing_time)
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
@@ -197,9 +235,23 @@
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "kisses"
-	message = "blows a kiss."
-	message_param = "blows a kiss to %t."
-	emote_type = EMOTE_AUDIBLE
+	emote_type = EMOTE_VISIBLE
+
+/datum/emote/living/kiss/run_emote(mob/living/user, params, type_override, intentional)
+	. = ..()
+	if(!.)
+		return
+	var/kiss_type = /obj/item/kisser
+
+	if(HAS_TRAIT(user, TRAIT_KISS_OF_DEATH))
+		kiss_type = /obj/item/kisser/death
+
+	var/obj/item/kiss_blower = new kiss_type(user)
+	if(user.put_in_hands(kiss_blower))
+		to_chat(user, span_notice("You ready your kiss-blowing hand."))
+	else
+		qdel(kiss_blower)
+		to_chat(user, span_warning("You're incapable of blowing a kiss in your current state."))
 
 /datum/emote/living/laugh
 	key = "laugh"
@@ -216,13 +268,17 @@
 		return !C.silent
 
 /datum/emote/living/laugh/get_sound(mob/living/user)
-	if(ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(H.dna.species.id == "human" && (!H.mind || !H.mind.miming))
-			if(user.gender == FEMALE)
-				return 'sound/voice/human/womanlaugh.ogg'
-			else
-				return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	var/human_laugh = ishumanbasic(H)
+	if(human_laugh && (!H.mind || !H.mind.miming))
+		if(user.gender == FEMALE)
+			return 'sound/voice/human/womanlaugh.ogg'
+		else
+			return pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+	if(ismoth(H))
+		return 'sound/voice/moth/mothlaugh.ogg'
 
 /datum/emote/living/look
 	key = "look"
@@ -235,6 +291,18 @@
 	key_third_person = "nods"
 	message = "nods."
 	message_param = "nods at %t."
+
+/datum/emote/living/carbon/mothsqueak
+	key = "msqueak"
+	key_third_person = "lets out a tiny squeak"
+	message = "lets out a tiny squeak!"
+	emote_type = EMOTE_AUDIBLE
+	vary = TRUE
+
+/datum/emote/living/carbon/mothsqueak/get_sound(mob/living/user)
+	var/mob/living/carbon/human/H = user
+	if(ismoth(H) | (istype(H, /mob/living/simple_animal/pet/mothroach)))
+		return 'sound/voice/moth/mothsqueak.ogg'
 
 /datum/emote/living/point
 	key = "point"
@@ -326,6 +394,8 @@
 	message = "sniffs."
 	emote_type = EMOTE_AUDIBLE
 
+#define SNORE_DURATION 5.2 SECONDS
+
 /datum/emote/living/snore
 	key = "snore"
 	key_third_person = "snores"
@@ -333,6 +403,28 @@
 	message_mime = "sleeps soundly."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
+	/// Timer for the blink to wear off
+	var/snore_timer = TIMER_ID_NULL
+
+/datum/emote/living/snore/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(. && isliving(user))
+		var/mob/living/living_user = user
+		ADD_TRAIT(living_user, TRAIT_SNORE, "[type]")
+		living_user.update_body()
+
+		// Use a timer to remove the closed eyes after the SNORE_DURATION has passed
+		var/list/key_emotes = GLOB.emote_list["snore"]
+		for(var/datum/emote/living/snore/living_emote in key_emotes)
+			// The existing timer restarts if it's already running
+			snore_timer = addtimer(CALLBACK(living_emote, PROC_REF(end_snore), living_user), SNORE_DURATION, TIMER_UNIQUE | TIMER_OVERRIDE)
+
+/datum/emote/living/snore/proc/end_snore(mob/living/living_user)
+	if(!QDELETED(living_user))
+		REMOVE_TRAIT(living_user, TRAIT_SNORE, "[type]")
+		living_user.update_body()
+
+#undef SNORE_DURATION
 
 /datum/emote/living/stare
 	key = "stare"
@@ -448,7 +540,7 @@
 				else
 					alert("Unable to use this emote, must be either hearable or visible.")
 					return
-			message = custom_emote
+			message = user.say_emphasis(custom_emote)
 	else
 		message = params
 		if(type_override)
@@ -505,3 +597,9 @@
 	key = "exhale"
 	key_third_person = "exhales"
 	message = "breathes out."
+
+/datum/emote/living/clack
+	key = "clack"
+	key_third_person = "clacks"
+	message = "clacks their beak."
+	emote_type = EMOTE_VISIBLE

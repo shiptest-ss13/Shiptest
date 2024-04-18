@@ -134,8 +134,8 @@
 		usr.update_inv_hands()
 	return TRUE
 
-/atom/movable/screen/inventory/MouseEntered()
-	..()
+/atom/movable/screen/inventory/MouseEntered(location, control, params)
+	. = ..()
 	add_overlays()
 	//Apply the outline affect
 	add_stored_outline()
@@ -165,11 +165,10 @@
 	if(!icon_empty)
 		icon_empty = icon_state
 
-	if(hud?.mymob && slot_id && icon_full)
-		if(hud.mymob.get_item_by_slot(slot_id))
-			icon_state = icon_full
-		else
-			icon_state = icon_empty
+	if(!hud?.mymob || !slot_id || !icon_full)
+		return ..()
+	icon_state = hud.mymob.get_item_by_slot(slot_id) ? icon_full : icon_empty
+	return ..()
 
 /atom/movable/screen/inventory/proc/add_overlays()
 	var/mob/user = hud?.mymob
@@ -311,39 +310,40 @@
 /atom/movable/screen/internals/Click()
 	if(!iscarbon(usr))
 		return
-	var/mob/living/carbon/C = usr
-	if(C.incapacitated())
+	var/mob/living/carbon/breather = usr
+	if(breather.incapacitated())
 		return
 
-	if(C.internal)
-		C.internal = null
-		to_chat(C, "<span class='notice'>You are no longer running on internals.</span>")
+	if(breather.internal)
+		breather.internal = null
+		to_chat(breather, "<span class='notice'>You are no longer running on internals.</span>")
 		icon_state = "internal0"
 	else
-		if(!C.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-		//WS Port Begin - Citadel Internals
-			var/obj/item/clothing/check
+		if(!breather.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
+			var/obj/item/clothing/clothes_check = breather.wear_mask
 			var/internals = FALSE
 
-			for(check in GET_INTERNAL_SLOTS(C))
-				if(istype(check, /obj/item/clothing/mask))
-					var/obj/item/clothing/mask/M = check
-					if(M.mask_adjusted)
-						M.adjustmask(C)
-				if(check.clothing_flags & ALLOWINTERNALS)
-
+			if(istype(clothes_check, /obj/item/clothing/mask))
+				var/obj/item/clothing/mask/M = clothes_check
+				if(M.mask_adjusted)
+					M.adjustmask(breather)
+				if(clothes_check.clothing_flags & ALLOWINTERNALS)
 					internals = TRUE
-			if(!internals)
-				to_chat(C, "<span class='warning'>You are not wearing an internals mask!</span>")
-				return
-		//WS Port End - Citadel Internals
+			clothes_check = breather.head
+			if(istype(clothes_check, /obj/item/clothing/head))
+				if(clothes_check.clothing_flags & ALLOWINTERNALS) //me? gongaga
+					internals = TRUE
 
-		var/obj/item/I = C.is_holding_item_of_type(/obj/item/tank)
+			if(!internals)
+				to_chat(breather, "<span class='warning'>You are not wearing an internals mask!</span>")
+				return
+
+		var/obj/item/I = breather.is_holding_item_of_type(/obj/item/tank)
 		if(I)
-			to_chat(C, "<span class='notice'>You are now running on internals from [I] in your [C.get_held_index_name(C.get_held_index_of_item(I))].</span>")
-			C.internal = I
-		else if(ishuman(C))
-			var/mob/living/carbon/human/H = C
+			to_chat(breather, "<span class='notice'>You are now running on internals from [I] in your [breather.get_held_index_name(breather.get_held_index_of_item(I))].</span>")
+			breather.internal = I
+		else if(ishuman(breather))
+			var/mob/living/carbon/human/H = breather
 			if(istype(H.s_store, /obj/item/tank))
 				to_chat(H, "<span class='notice'>You are now running on internals from [H.s_store] on your [H.wear_suit.name].</span>")
 				H.internal = H.s_store
@@ -358,16 +358,16 @@
 				H.internal = H.r_store
 
 		//Separate so CO2 jetpacks are a little less cumbersome.
-		if(!C.internal && istype(C.back, /obj/item/tank))
-			to_chat(C, "<span class='notice'>You are now running on internals from [C.back] on your back.</span>")
-			C.internal = C.back
+		if(!breather.internal && istype(breather.back, /obj/item/tank))
+			to_chat(breather, "<span class='notice'>You are now running on internals from [breather.back] on your back.</span>")
+			breather.internal = breather.back
 
-		if(C.internal)
+		if(breather.internal)
 			icon_state = "internal1"
 		else
-			to_chat(C, "<span class='warning'>You don't have an oxygen tank!</span>")
+			to_chat(breather, "<span class='warning'>You don't have an oxygen tank!</span>")
 			return
-	C.update_action_buttons_icon()
+	breather.update_action_buttons_icon()
 
 /atom/movable/screen/mov_intent
 	name = "run/walk toggle"
@@ -383,6 +383,7 @@
 			icon_state = "walking"
 		if(MOVE_INTENT_RUN)
 			icon_state = "running"
+	return ..()
 
 /atom/movable/screen/mov_intent/proc/toggle(mob/user)
 	if(isobserver(user))
@@ -393,6 +394,7 @@
 	name = "stop pulling"
 	icon = 'icons/hud/screen_midnight.dmi'
 	icon_state = "pull"
+	base_icon_state = "pull"
 
 /atom/movable/screen/pull/Click()
 	if(isobserver(usr))
@@ -400,10 +402,8 @@
 	usr.stop_pulling()
 
 /atom/movable/screen/pull/update_icon_state()
-	if(hud?.mymob?.pulling)
-		icon_state = "pull"
-	else
-		icon_state = "pull0"
+	icon_state = "[base_icon_state][hud?.mymob?.pulling ? null : 0]"
+	return ..()
 
 /atom/movable/screen/resist
 	name = "resist"
@@ -421,6 +421,7 @@
 	name = "rest"
 	icon = 'icons/hud/screen_midnight.dmi'
 	icon_state = "act_rest"
+	base_icon_state = "act_rest"
 	layer = HUD_LAYER
 	plane = HUD_PLANE
 
@@ -432,11 +433,9 @@
 /atom/movable/screen/rest/update_icon_state()
 	var/mob/living/user = hud?.mymob
 	if(!istype(user))
-		return
-	if(!user.resting)
-		icon_state = "act_rest"
-	else
-		icon_state = "act_rest0"
+		return ..()
+	icon_state = "[base_icon_state][user.resting ? 0 : null]"
+	return ..()
 
 /atom/movable/screen/storage
 	name = "storage"
@@ -484,9 +483,9 @@
 	if(isobserver(usr))
 		return
 
-	var/list/PL = params2list(params)
-	var/icon_x = text2num(PL["icon-x"])
-	var/icon_y = text2num(PL["icon-y"])
+	var/list/modifiers = params2list(params)
+	var/icon_x = text2num(LAZYACCESS(modifiers, ICON_X))
+	var/icon_y = text2num(LAZYACCESS(modifiers, ICON_Y))
 	var/choice = get_zone_at(icon_x, icon_y)
 	if (!choice)
 		return 1
@@ -500,9 +499,9 @@
 	if(isobserver(usr))
 		return
 
-	var/list/PL = params2list(params)
-	var/icon_x = text2num(PL["icon-x"])
-	var/icon_y = text2num(PL["icon-y"])
+	var/list/modifiers = params2list(params)
+	var/icon_x = text2num(LAZYACCESS(modifiers, ICON_X))
+	var/icon_y = text2num(LAZYACCESS(modifiers, ICON_Y))
 	var/choice = get_zone_at(icon_x, icon_y)
 
 	if(hovering == choice)
@@ -574,7 +573,7 @@
 
 	if(choice != hud.mymob.zone_selected)
 		hud.mymob.zone_selected = choice
-		update_icon()
+		update_appearance()
 
 	return TRUE
 
@@ -685,6 +684,8 @@
 
 /atom/movable/screen/splash/New(client/C, visible, use_previous_title) //TODO: Make this use INITIALIZE_IMMEDIATE, except its not easy
 	. = ..()
+	if(!istype(C))
+		return
 
 	holder = C
 
@@ -744,14 +745,15 @@
 
 /atom/movable/screen/combo/update_icon_state(streak = "")
 	clear_streak()
-	if (timerid)
+	if(timerid)
 		deltimer(timerid)
-	if (!streak)
-		return
-	timerid = addtimer(CALLBACK(src, .proc/clear_streak), 20, TIMER_UNIQUE | TIMER_STOPPABLE)
+	if(!streak)
+		return ..()
+	timerid = addtimer(CALLBACK(src, PROC_REF(clear_streak)), 20, TIMER_UNIQUE | TIMER_STOPPABLE)
 	icon_state = "combo"
-	for (var/i = 1; i <= length(streak); ++i)
+	for(var/i = 1; i <= length(streak); ++i)
 		var/intent_text = copytext(streak, i, i + 1)
 		var/image/intent_icon = image(icon,src,"combo_[intent_text]")
 		intent_icon.pixel_x = 16 * (i - 1) - 8 * length(streak)
 		add_overlay(intent_icon)
+	return ..()

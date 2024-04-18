@@ -1,7 +1,7 @@
 /obj/machinery/vending/hydroseeds
 	name = "\improper MegaSeed Servitor"
 	desc = "When you need seeds fast!"
-	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection on the station!;Also certain mushroom varieties available, more for experts! Get certified today!"
+	product_slogans = "THIS'S WHERE TH' SEEDS LIVE! GIT YOU SOME!;Hands down the best seed selection this side 'o saturn!;Also certain mushroom varieties available, more for experts! Get certified today!"
 	product_ads = "We like plants!;Grow some crops!;Grow, baby, growww!;Aw h'yeah son!"
 	icon_state = "seeds"
 	light_mask = "seeds-light-mask"
@@ -56,7 +56,6 @@
 	refill_canister = /obj/item/vending_refill/hydroseeds
 	default_price = 50
 	extra_price = 150
-	payment_department = ACCOUNT_SRV
 
 /obj/item/vending_refill/hydroseeds
 	machine_name = "MegaSeed Servitor"

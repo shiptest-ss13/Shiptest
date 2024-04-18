@@ -99,12 +99,12 @@
 
 /datum/component/embedded/RegisterWithParent()
 	if(iscarbon(parent))
-		RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/jostleCheck)
-		RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, .proc/ripOutCarbon)
-		RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, .proc/safeRemoveCarbon)
+		RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(jostleCheck))
+		RegisterSignal(parent, COMSIG_CARBON_EMBED_RIP, PROC_REF(ripOutCarbon))
+		RegisterSignal(parent, COMSIG_CARBON_EMBED_REMOVAL, PROC_REF(safeRemoveCarbon))
 	else if(isclosedturf(parent))
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/examineTurf)
-		RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/itemMoved)
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examineTurf))
+		RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(itemMoved))
 
 /datum/component/embedded/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_MOVABLE_MOVED, COMSIG_CARBON_EMBED_RIP, COMSIG_CARBON_EMBED_REMOVAL, COMSIG_PARENT_EXAMINE))
@@ -118,7 +118,7 @@
 		UnregisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING))
 	if(overlay)
 		var/atom/A = parent
-		A.cut_overlay(overlay, TRUE)
+		UnregisterSignal(A,COMSIG_ATOM_UPDATE_OVERLAYS)
 		qdel(overlay)
 
 	return ..()
@@ -136,7 +136,7 @@
 
 	limb.embedded_objects |= weapon // on the inside... on the inside...
 	weapon.forceMove(victim)
-	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), .proc/byeItemCarbon)
+	RegisterSignal(weapon, list(COMSIG_MOVABLE_MOVED, COMSIG_PARENT_QDELETING), PROC_REF(byeItemCarbon))
 
 	if(harmful)
 		victim.visible_message("<span class='danger'>[weapon] embeds itself in [victim]'s [limb.name]!</span>",ignored_mobs=victim)
@@ -185,14 +185,17 @@
 
 /// Called when a carbon with an object embedded/stuck to them inspects themselves and clicks the appropriate link to begin ripping the item out. This handles the ripping attempt, descriptors, and dealing damage, then calls safe_remove()
 /datum/component/embedded/proc/ripOutCarbon(datum/source, obj/item/I, obj/item/bodypart/limb)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(I != weapon || src.limb != limb)
 		return
 
 	var/mob/living/carbon/victim = parent
 	var/time_taken = rip_time * weapon.w_class
+	INVOKE_ASYNC(src, PROC_REF(complete_rip_out), victim, I, limb, time_taken)
 
+/// everything async that ripOut used to do
+/datum/component/embedded/proc/complete_rip_out(mob/living/carbon/victim, obj/item/I, obj/item/bodypart/limb, time_taken)
 	victim.visible_message("<span class='warning'>[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name].</span>","<span class='notice'>You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)</span>")
 	if(do_after(victim, time_taken, target = victim))
 		if(!weapon || !limb || weapon.loc != victim || !(weapon in limb.embedded_objects))
@@ -213,7 +216,7 @@
 /// This proc handles the final step and actual removal of an embedded/stuck item from a carbon, whether or not it was actually removed safely.
 /// Pass TRUE for to_hands if we want it to go to the victim's hands when they pull it out
 /datum/component/embedded/proc/safeRemoveCarbon(to_hands)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/mob/living/carbon/victim = parent
 	limb.embedded_objects -= weapon
@@ -236,7 +239,7 @@
 		return
 
 	if(to_hands)
-		victim.put_in_hands(weapon)
+		INVOKE_ASYNC(victim, TYPE_PROC_REF(/mob, put_in_hands), weapon)
 	else
 		weapon.forceMove(get_turf(victim))
 
@@ -302,7 +305,7 @@
 	// we can't store the item IN the turf (cause turfs are just kinda... there), so we fake it by making the item invisible and bailing if it moves due to a blast
 	weapon.forceMove(hit)
 	weapon.invisibility = INVISIBILITY_ABSTRACT
-	RegisterSignal(weapon, COMSIG_MOVABLE_MOVED, .proc/itemMoved)
+	RegisterSignal(weapon, COMSIG_MOVABLE_MOVED, PROC_REF(itemMoved))
 
 	var/pixelX = rand(-2, 2)
 	var/pixelY = rand(-1, 3) // bias this upwards since in-hands are usually on the lower end of the sprite
@@ -325,7 +328,8 @@
 	var/matrix/M = matrix()
 	M.Translate(pixelX, pixelY)
 	overlay.transform = M
-	hit.add_overlay(overlay, TRUE)
+	RegisterSignal(hit,COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(apply_overlay))
+	hit.update_appearance()
 
 	if(harmful)
 		hit.visible_message("<span class='danger'>[weapon] embeds itself in [hit]!</span>")
@@ -338,6 +342,8 @@
 	else
 		hit.visible_message("<span class='danger'>[weapon] sticks itself to [hit]!</span>")
 
+/datum/component/embedded/proc/apply_overlay(atom/source, list/overlay_list)
+	overlay_list += overlay
 
 /datum/component/embedded/proc/examineTurf(datum/source, mob/user, list/examine_list)
 	if(harmful)

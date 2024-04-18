@@ -11,6 +11,8 @@
 	var/time = 10
 	var/sensitivity = 1
 	var/hearing_range = 3
+	///Proximity monitor associated with this atom, needed for it to work.
+	var/datum/proximity_monitor/proximity_monitor
 
 /obj/item/assembly/prox_sensor/Initialize()
 	. = ..()
@@ -32,7 +34,7 @@
 		timing = !timing
 	else
 		scanning = FALSE
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/item/assembly/prox_sensor/on_detach()
@@ -40,20 +42,20 @@
 	if(!.)
 		return
 	else
-		proximity_monitor.SetHost(src,src)
+		proximity_monitor.set_host(src, src)
 
 /obj/item/assembly/prox_sensor/toggle_secure()
 	secured = !secured
 	if(!secured)
 		if(scanning)
 			toggle_scan()
-			proximity_monitor.SetHost(src,src)
+			proximity_monitor.set_host(src, src)
 		timing = FALSE
 		STOP_PROCESSING(SSobj, src)
 	else
 		START_PROCESSING(SSobj, src)
-		proximity_monitor.SetHost(loc,src)
-	update_icon()
+		proximity_monitor.set_host(loc,src)
+	update_appearance()
 	return secured
 
 /obj/item/assembly/prox_sensor/HasProximity(atom/movable/AM as mob|obj)
@@ -84,27 +86,28 @@
 	if(!secured)
 		return FALSE
 	scanning = scan
-	proximity_monitor.SetRange(scanning ? sensitivity : 0)
-	update_icon()
+	proximity_monitor.set_range(scanning ? sensitivity : 0)
+	update_appearance()
 
 /obj/item/assembly/prox_sensor/proc/sensitivity_change(value)
 	var/sense = min(max(sensitivity + value, 0), 5)
 	sensitivity = sense
-	if(scanning && proximity_monitor.SetRange(sense))
+	if(scanning && proximity_monitor.set_range(sense))
 		sense()
 
-/obj/item/assembly/prox_sensor/update_icon()
-	cut_overlays()
+/obj/item/assembly/prox_sensor/update_appearance()
+	. = ..()
+	holder?.update_appearance()
+
+/obj/item/assembly/prox_sensor/update_overlays()
+	. = ..()
 	attached_overlays = list()
 	if(timing)
 		add_overlay("prox_timing")
-		attached_overlays += "prox_timing"
+		. += "prox_timing"
 	if(scanning)
 		add_overlay("prox_scanning")
-		attached_overlays += "prox_scanning"
-	if(holder)
-		holder.update_icon()
-	return
+		. += "prox_scanning"
 
 /obj/item/assembly/prox_sensor/ui_status(mob/user)
 	if(is_secured(user))
@@ -142,7 +145,7 @@
 				. = TRUE
 		if("time")
 			timing = !timing
-			update_icon()
+			update_appearance()
 			. = TRUE
 		if("input")
 			var/value = text2num(params["adjust"])

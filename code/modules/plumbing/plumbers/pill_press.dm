@@ -71,12 +71,12 @@
 			P.name = trim("[product_name] bottle")
 			stored_products += P
 	if(stored_products.len)
-		var/pill_amount = 0
-		for(var/obj/item/reagent_containers/pill/P in loc)
-			pill_amount++
-			if(pill_amount >= max_floor_products) //too much so just stop
+		var/container_amount = 0
+		for(var/obj/item/reagent_containers/container in loc)
+			container_amount++
+			if(container_amount >= max_floor_products) //too much so just stop
 				break
-		if(pill_amount < max_floor_products)
+		if(container_amount < max_floor_products)
 			var/atom/movable/AM = stored_products[1] //AM because forceMove is all we need
 			stored_products -= AM
 			AM.forceMove(drop_location())

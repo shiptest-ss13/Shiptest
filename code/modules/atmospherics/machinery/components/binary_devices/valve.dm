@@ -49,7 +49,7 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 		return
 	update_icon_nopipes(TRUE)
 	switching = TRUE
-	addtimer(CALLBACK(src, .proc/finish_interact), 10)
+	addtimer(CALLBACK(src, PROC_REF(finish_interact)), 10)
 
 /obj/machinery/atmospherics/components/binary/valve/proc/finish_interact()
 	toggle()
@@ -67,7 +67,7 @@ It's like a regular ol' straight pipe, but you can turn it on and off.
 	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OFFLINE | INTERACT_MACHINE_OPEN | INTERACT_MACHINE_OPEN_SILICON
 
 /obj/machinery/atmospherics/components/binary/valve/digital/update_icon_nopipes(animation)
-	if(!is_operational())
+	if(!is_operational)
 		normalize_cardinal_directions()
 		icon_state = "dvalve_nopower-[set_overlay_offset(piping_layer)]"
 		return

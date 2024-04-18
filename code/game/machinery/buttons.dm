@@ -25,7 +25,7 @@
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
 		pixel_y = (dir & 3)? (dir ==1 ? -24 : 24) : 0
 		panel_open = TRUE
-		update_icon()
+		update_appearance()
 
 
 	if(!built && !device && device_type)
@@ -46,10 +46,12 @@
 /obj/machinery/button/update_icon_state()
 	if(panel_open)
 		icon_state = "button-open"
-	else if(machine_stat & (NOPOWER|BROKEN))
+		return ..()
+	if(machine_stat & (NOPOWER|BROKEN))
 		icon_state = "[skin]-p"
-	else
-		icon_state = skin
+		return ..()
+	icon_state = skin
+	return ..()
 
 /obj/machinery/button/update_overlays()
 	. = ..()
@@ -64,7 +66,7 @@
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(panel_open || allowed(user))
 			default_deconstruction_screwdriver(user, "button-open", "[skin]",W)
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='alert'>Maintenance Access Denied.</span>")
 			flick("[skin]-denied", src)
@@ -98,7 +100,7 @@
 				playsound(loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 				qdel(src)
 
-		update_icon()
+		update_appearance()
 		return
 
 	if(user.a_intent != INTENT_HARM && !(W.item_flags & NOBLUDGEON))
@@ -139,6 +141,7 @@
 	if(!initialized_button)
 		setup_device()
 	add_fingerprint(user)
+	play_click_sound("button")
 	if(panel_open)
 		if(device || board)
 			if(device)
@@ -149,7 +152,7 @@
 				req_access = list()
 				req_one_access = list()
 				board = null
-			update_icon()
+			update_appearance()
 			to_chat(user, "<span class='notice'>You remove electronics from the button frame.</span>")
 
 		else
@@ -178,7 +181,7 @@
 		device.pulsed()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_BUTTON_PRESSED,src)
 
-	addtimer(CALLBACK(src, /atom/.proc/update_icon), 15)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_appearance)), 15)
 
 /obj/machinery/button/door
 	name = "door button"
@@ -203,7 +206,7 @@
 	..()
 
 /obj/machinery/button/door/incinerator_vent_toxmix
-	name = "combustion chamber vent control"
+	name = "Combustion Chamber Vent control"
 	id = INCINERATOR_TOXMIX_VENT
 	req_access = list(ACCESS_TOX)
 
@@ -213,19 +216,10 @@
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
 /obj/machinery/button/door/incinerator_vent_atmos_aux
-	name = "combustion chamber vent control"
+	name = "Combustion Chamber Vent control"
 	id = INCINERATOR_ATMOS_AUXVENT
 	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_MAINT_TUNNELS)
 
-/obj/machinery/button/door/incinerator_vent_syndicatelava_main
-	name = "turbine vent control"
-	id = INCINERATOR_SYNDICATELAVA_MAINVENT
-	req_access = list(ACCESS_SYNDICATE)
-
-/obj/machinery/button/door/incinerator_vent_syndicatelava_aux
-	name = "combustion chamber vent control"
-	id = INCINERATOR_SYNDICATELAVA_AUXVENT
-	req_access = list(ACCESS_SYNDICATE)
 
 /obj/machinery/button/massdriver
 	name = "mass driver button"
@@ -257,9 +251,6 @@
 /obj/machinery/button/ignition/incinerator/atmos
 	id = INCINERATOR_ATMOS_IGNITER
 
-/obj/machinery/button/ignition/incinerator/syndicatelava
-	id = INCINERATOR_SYNDICATELAVA_IGNITER
-
 /obj/machinery/button/flasher
 	name = "flasher button"
 	desc = "A remote control switch for a mounted flasher."
@@ -288,17 +279,13 @@
 	icon_state = "button"
 	result_path = /obj/machinery/button
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT)
+	inverse = FALSE
 
-/obj/machinery/button/elevator
-	name = "elevator button"
-	desc = "Go back. Go back. Go back. Can you operate the elevator."
+/obj/machinery/button/shieldwallgen
+	name = "holofield switch"
+	desc = "A remote switch for a holofield generator"
 	icon_state = "launcher"
 	skin = "launcher"
-	device_type = /obj/item/assembly/control/elevator
+	device_type = /obj/item/assembly/control/shieldwallgen
 	req_access = list()
 	id = 1
-
-/obj/machinery/button/elevator/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>There's a small inscription on the button...</span>"
-	. += "<span class='notice'>THIS CALLS THE ELEVATOR! IT DOES NOT OPERATE IT! Interact with the elevator itself to use it!</span>"

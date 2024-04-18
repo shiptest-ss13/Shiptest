@@ -136,7 +136,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 			return
 		prizevend(user)
 		T.pay_tickets()
-		T.update_icon()
+		T.update_appearance()
 		O = T
 		to_chat(user, "<span class='notice'>You turn in 2 tickets to the [src] and claim a prize!</span>")
 		return
@@ -532,11 +532,11 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 	if(gamers[gamer] > 2 && prob(20 * gamers[gamer]))
 
-		Radio.set_frequency(FREQ_SECURITY)
-		Radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", FREQ_SECURITY)
+		Radio.set_frequency(FREQ_COMMAND)
+		Radio.talk_into(src, "SECURITY ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please watch for violent behavior.", FREQ_COMMAND)
 
-		Radio.set_frequency(FREQ_MEDICAL)
-		Radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_MEDICAL)
+		Radio.set_frequency(FREQ_COMMAND)
+		Radio.talk_into(src, "PSYCH ALERT: Crewmember [gamer] recorded displaying antisocial tendencies in [get_area(src)]. Please schedule psych evaluation.", FREQ_COMMAND)
 
 		gamers[gamer] = -1
 
@@ -773,7 +773,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 						var/mob/living/L = usr
 						L.Stun(200, ignore_canstun = TRUE) //you can't run :^)
 					var/S = new /obj/singularity/academy(usr.loc)
-					addtimer(CALLBACK(src, /atom/movable/proc/say, "[S] winks out, just as suddenly as it appeared."), 50)
+					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, say), "[S] winks out, just as suddenly as it appeared."), 50)
 					QDEL_IN(S, 50)
 			else
 				event = null
@@ -1187,7 +1187,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 
 
 //Add Random/Specific crewmember
-/obj/machinery/computer/arcade/orion_trail/proc/add_crewmember(var/specific = "")
+/obj/machinery/computer/arcade/orion_trail/proc/add_crewmember(specific = "")
 	var/newcrew = ""
 	if(specific)
 		newcrew = specific

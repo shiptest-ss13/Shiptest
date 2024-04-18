@@ -67,7 +67,9 @@
 #define ADMIN_COORDJMP(src) "[src ? "[COORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_VERBOSEJMP(src) "[src ? "[AREACOORD(src)] [ADMIN_JMP(src)]" : "nonexistent location"]"
 #define ADMIN_INDIVIDUALLOG(user) "(<a href='?_src_=holder;[HrefToken(TRUE)];individuallog=[REF(user)]'>LOGS</a>)"
-#define ADMIN_FAX(user, fax, faxtype, sent) "(<a href='?_src_=holder;[HrefToken(TRUE)];AdminFaxCreate=[REF(user)];originfax=[REF(fax)];faxtype=[faxtype];replyto=[REF(sent)]'>FAX</a>)"
+/// Displays "(SHOW)" in the chat, when clicked it tries to show atom(paper) or atom(photo). First you need to set the request_state variable to TRUE for the paper.
+#define ADMIN_SHOW_PAPER(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_paper=[REF(atom)]'>SHOW</a>)"
+#define ADMIN_SHOW_PHOTO(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_photo=[REF(atom)]'>PHOTO</a>)"
 
 #define ADMIN_PUNISHMENT_BREAK_BONES "Break all bones"
 #define ADMIN_PUNISHMENT_LIGHTNING "Lightning bolt"
@@ -80,14 +82,12 @@
 #define ADMIN_PUNISHMENT_SUPPLYPOD "Supply Pod"
 #define ADMIN_PUNISHMENT_MAZING "Puzzle"
 #define ADMIN_PUNISHMENT_IMMERSE "Fully Immerse"
-#define ADMIN_PUNISHMENT_NYA "Neko"//WS Edit - Admin Punishment: Cat Tongue
+#define ADMIN_PUNISHMENT_NYA "Neko"
+#define ADMIN_PUNISHMENT_PIE "Cream Pie"
 
 #define AHELP_ACTIVE 1
 #define AHELP_CLOSED 2
 #define AHELP_RESOLVED 3
-
-/// Amount of time (in deciseconds) after the rounds starts, that the player disconnect report is issued.
-#define ROUNDSTART_LOGOUT_REPORT_TIME 6000
 
 /// Number of identical messages required before the spam-prevention will warn you to stfu
 #define SPAM_TRIGGER_WARNING 5
@@ -108,6 +108,10 @@
 #define STICKYBAN_DB_CACHE_TIME 10 SECONDS
 #define STICKYBAN_ROGUE_CHECK_TIME 5
 
+/// for [/proc/check_asay_links], if there are any actionable refs in the asay message, this index in the return list contains the new message text to be printed
+#define ASAY_LINK_NEW_MESSAGE_INDEX "!asay_new_message"
+/// for [/proc/check_asay_links], if there are any admin pings in the asay message, this index in the return list contains a list of admins to ping
+#define ASAY_LINK_PINGED_ADMINS_INDEX "!pinged_admins"
 
 /// Shown to vicitm of staff of change and related effects.
 #define POLICY_POLYMORPH "polymorph"

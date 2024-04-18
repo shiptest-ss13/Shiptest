@@ -46,7 +46,7 @@
 			update_contents()
 		if (locked)
 			replace_beaker(user)
-		update_icon()
+		update_appearance()
 		I.play_tool_sound(src, 50)
 		return
 
@@ -56,17 +56,17 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		update_icon()
+		update_appearance()
 		updateUsrDialog()
 		return
 
 	return ..()
 
 /**
-  * Updates the contents of the portable chemical mixer
-  *
-  * A list of dispensable reagents is created by iterating through each source beaker in the portable chemical beaker and reading its contents
-  */
+ * Updates the contents of the portable chemical mixer
+ *
+ * A list of dispensable reagents is created by iterating through each source beaker in the portable chemical beaker and reading its contents
+ */
 /obj/item/storage/portable_chem_mixer/proc/update_contents()
 	dispensable_reagents.Cut()
 
@@ -80,37 +80,40 @@
 	return
 
 /obj/item/storage/portable_chem_mixer/update_icon_state()
-	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
-	if (!locked)
+	if(!SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED))
 		icon_state = "portablechemicalmixer_open"
-	else if (beaker)
+		return ..()
+	if(beaker)
 		icon_state = "portablechemicalmixer_full"
-	else
-		icon_state = "portablechemicalmixer_empty"
-
+		return ..()
+	icon_state = "portablechemicalmixer_empty"
+	return ..()
 
 /obj/item/storage/portable_chem_mixer/AltClick(mob/living/user)
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
-	if (!locked)
+	if(!locked)
 		return ..()
 	if(!can_interact(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	replace_beaker(user)
-	update_icon()
+	update_appearance()
 
 /**
-  * Replaces the beaker of the portable chemical mixer with another beaker, or simply adds the new beaker if none is in currently
-  *
-  * Checks if a valid user and a valid new beaker exist and attempts to replace the current beaker in the portable chemical mixer with the one in hand. Simply places the new beaker in if no beaker is currently loaded
-  *	Arguments:
-  * * mob/living/user							-	The user who is trying to exchange beakers
-  *	* obj/item/reagent_containers/new_beaker	-	The new beaker that the user wants to put into the device
-  */
+ * Replaces the beaker of the portable chemical mixer with another beaker, or simply adds the new beaker if none is in currently
+ *
+ * Checks if a valid user and a valid new beaker exist and attempts to replace the current beaker in the portable chemical mixer with the one in hand. Simply places the new beaker in if no beaker is currently loaded
+ *	Arguments:
+ * * mob/living/user							-	The user who is trying to exchange beakers
+ *	* obj/item/reagent_containers/new_beaker	-	The new beaker that the user wants to put into the device
+ */
 /obj/item/storage/portable_chem_mixer/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
-	if(!user)
+	if(!user || !can_interact(user))
 		return FALSE
 	if(beaker)
-		user.put_in_hands(beaker)
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
+			user.put_in_hands(beaker)
+		else
+			beaker.forceMove(get_turf(src))
 		beaker = null
 	if(new_beaker)
 		beaker = new_beaker
@@ -212,5 +215,5 @@
 			. = TRUE
 		if("eject")
 			replace_beaker(usr)
-			update_icon()
+			update_appearance()
 			. = TRUE

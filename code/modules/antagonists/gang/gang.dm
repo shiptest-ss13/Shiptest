@@ -38,7 +38,7 @@
 /datum/antagonist/gang/get_team()
 	return my_gang
 
-/datum/antagonist/gang/proc/add_gang_points(var/points_to_add)
+/datum/antagonist/gang/proc/add_gang_points(points_to_add)
 	if(my_gang)
 		my_gang.adjust_points(points_to_add)
 
@@ -99,7 +99,7 @@
 /datum/antagonist/gang/purple/check_gang_objective()
 	for(var/mob/M in GLOB.player_list)
 		if(M.mind.assigned_role in cop_roles)
-			if(!considered_alive(M) && !M.suiciding)
+			if(!considered_alive(M))
 				return FALSE
 	return TRUE
 
@@ -139,8 +139,8 @@
 							/obj/item/clothing/neck/scarf/red,
 							/obj/item/clothing/under/suit/white,
 							/obj/item/clothing/head/beanie/red,
-							/obj/item/clothing/head/ushanka)
-	free_clothes = list(/obj/item/clothing/head/ushanka,
+							/obj/item/clothing/head/trapper)
+	free_clothes = list(/obj/item/clothing/head/trapper,
 						/obj/item/clothing/under/suit/white,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "We are starting to run low on supplies at the home base, my friend. Make sure every comrade has a bottle of some kind of booze on them, friend."
@@ -189,7 +189,7 @@
 			return FALSE
 	for(var/mob/M in GLOB.player_list)
 		if(M.mind.assigned_role == "Chaplain")
-			if(!considered_alive(M) && !M.suiciding)
+			if(!considered_alive(M))
 				return FALSE
 	return TRUE
 
@@ -198,11 +198,9 @@
 	roundend_category = "The Tunnel Snakes"
 	gang_name = "Tunnel Snakes"
 	gang_id = "TS"
-	acceptable_clothes = list(/obj/item/clothing/under/pants/classicjeans,
-							/obj/item/clothing/suit/jacket,
+	acceptable_clothes = list(/obj/item/clothing/suit/jacket,
 							/obj/item/clothing/mask/bandana/skull)
 	free_clothes = list(/obj/item/clothing/suit/jacket,
-						/obj/item/clothing/under/pants/classicjeans,
 						/obj/item/toy/crayon/spraycan)
 	gang_objective = "TUNNEL SNAKES RULE!!! Make sure that everyone knows that, by getting 25% of people on station to wear any part of our uniform! TUNNEL SNAKES RULE!!!"
 	antag_hud_name = "Snakes"
@@ -347,7 +345,7 @@
 	var/list/free_clothes = list()
 	var/datum/antagonist/gang/my_gang_datum
 
-/datum/team/gang/proc/adjust_points(var/points_to_adjust)
+/datum/team/gang/proc/adjust_points(points_to_adjust)
 	points += points_to_adjust
 
 /datum/team/gang/roundend_report()

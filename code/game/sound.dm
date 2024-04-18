@@ -41,7 +41,7 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 
 */
 
-/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, var/mono_adj = FALSE)	//WS Edit, Make tools and nearby airlocks use mono sound
+/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = TRUE, mono_adj = FALSE)	//WS Edit, Make tools and nearby airlocks use mono sound
 	if(isarea(source))
 		CRASH("playsound(): source is an area")
 
@@ -56,11 +56,11 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 	// Looping through the player list has the added bonus of working for mobs inside containers
 	var/sound/S = sound(get_sfx(soundin))
 	var/maxdistance = SOUND_RANGE + extrarange
-	var/source_z = turf_source.z
-	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
+	var/source_z = "[turf_source.virtual_z]"
+	var/list/listeners = LAZYACCESS(SSmobs.players_by_virtual_z, source_z) || list()
 
-	var/turf/above_turf = SSmapping.get_turf_above(turf_source)
-	var/turf/below_turf = SSmapping.get_turf_below(turf_source)
+	var/turf/above_turf = turf_source.above()
+	var/turf/below_turf = turf_source.below()
 
 	if(!ignore_walls) //these sounds don't carry through walls
 		listeners = listeners & hearers(maxdistance,turf_source)
@@ -73,10 +73,10 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 
 	else
 		if(above_turf && istransparentturf(above_turf))
-			listeners += SSmobs.clients_by_zlevel[above_turf.z]
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[above_turf.virtual_z()]") || list()
 
 		if(below_turf && istransparentturf(turf_source))
-			listeners += SSmobs.clients_by_zlevel[below_turf.z]
+			listeners += LAZYACCESS(SSmobs.players_by_virtual_z, "[below_turf.virtual_z()]") || list()
 
 	for(var/P in listeners)
 		var/mob/M = P
@@ -85,7 +85,8 @@ falloff_distance - Distance at which falloff begins. Sound is at peak volume (in
 			ismono = get_dist(get_turf(P), turf_source) < 2	//If adjacent, play as mono
 		if(get_dist(M, turf_source) <= maxdistance)
 			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, ignore_direction = ismono)
-	for(var/P in SSmobs.dead_players_by_zlevel[source_z])
+
+	for(var/P in LAZYACCESS(SSmobs.dead_players_by_virtual_z, source_z))
 		var/mob/M = P
 		var/ismono = FALSE
 		if(mono_adj)
@@ -173,7 +174,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 			S.y = dy
 		else
 			S.y = 1	//To make sure the mono sound doesn't make you feel like you're dying.
-		S.falloff = max_distance || 0 //use max_distance, else just use 0 as we are a direct sound so falloff isnt relevant.
+		S.falloff = max_distance || 1
 
 		if(S.environment == SOUND_ENVIRONMENT_NONE)
 			if(sound_environment_override != SOUND_ENVIRONMENT_NONE)
@@ -229,7 +230,7 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 			if ("sparks")
 				soundin = pick('sound/effects/sparks1.ogg','sound/effects/sparks2.ogg','sound/effects/sparks3.ogg','sound/effects/sparks4.ogg')
 			if ("rustle")
-				soundin = pick('sound/effects/rustle1.ogg','sound/effects/rustle2.ogg','sound/effects/rustle3.ogg','sound/effects/rustle4.ogg','sound/effects/rustle5.ogg')
+				soundin = pick('sound/items/storage/rustle1.ogg','sound/items/storage/rustle2.ogg','sound/items/storage/rustle3.ogg','sound/items/storage/rustle4.ogg','sound/items/storage/rustle5.ogg')
 			if ("bodyfall")
 				soundin = pick('sound/effects/bodyfall1.ogg','sound/effects/bodyfall2.ogg','sound/effects/bodyfall3.ogg','sound/effects/bodyfall4.ogg')
 			if ("punch")
@@ -244,8 +245,62 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 				soundin = pick('sound/voice/hiss1.ogg','sound/voice/hiss2.ogg','sound/voice/hiss3.ogg','sound/voice/hiss4.ogg')
 			if ("pageturn")
 				soundin = pick('sound/effects/pageturn1.ogg', 'sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg')
-			if ("ricochet")
-				soundin = pick(	'sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg','sound/weapons/effects/ric3.ogg','sound/weapons/effects/ric4.ogg','sound/weapons/effects/ric5.ogg')
+//gun related stuff start
+			if ("bullet_hit")
+				soundin = pick('sound/weapons/gun/hit/bullet_impact1.ogg', 'sound/weapons/gun/hit/bullet_impact2.ogg','sound/weapons/gun/hit/bullet_impact3.ogg')
+			if ("bullet_impact")
+				soundin = pick('sound/weapons/gun/hit/bullet_ricochet1.ogg', 'sound/weapons/gun/hit/bullet_ricochet2.ogg','sound/weapons/gun/hit/bullet_ricochet3.ogg','sound/weapons/gun/hit/bullet_ricochet4.ogg','sound/weapons/gun/hit/bullet_ricochet5.ogg','sound/weapons/gun/hit/bullet_ricochet6.ogg','sound/weapons/gun/hit/bullet_ricochet7.ogg','sound/weapons/gun/hit/bullet_ricochet8.ogg')
+			if ("bullet_bounce")
+				soundin = pick('sound/weapons/gun/hit/bullet_bounce1.ogg', 'sound/weapons/gun/hit/bullet_bounce2.ogg','sound/weapons/gun/hit/bullet_bounce3.ogg','sound/weapons/gun/hit/bullet_bounce4.ogg','sound/weapons/gun/hit/bullet_bounce5.ogg')
+			if("bullet_miss")
+				soundin = pick('sound/weapons/gun/hit/bullet_miss1.ogg', 'sound/weapons/gun/hit/bullet_miss2.ogg', 'sound/weapons/gun/hit/bullet_miss3.ogg')
+			if("bullet_hit_glass")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_glass_01.ogg',
+					'sound/weapons/gun/hit/bullet_glass_02.ogg',
+					'sound/weapons/gun/hit/bullet_glass_03.ogg',
+					'sound/weapons/gun/hit/bullet_glass_04.ogg',
+					'sound/weapons/gun/hit/bullet_glass_05.ogg',
+					'sound/weapons/gun/hit/bullet_glass_06.ogg',
+					'sound/weapons/gun/hit/bullet_glass_07.ogg',
+				)
+			if("bullet_hit_stone")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_masonry_01.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_02.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_03.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_04.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_05.ogg',
+					'sound/weapons/gun/hit/bullet_masonry_06.ogg',
+				)
+			if("bullet_hit_metal")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_metal_01.ogg',
+					'sound/weapons/gun/hit/bullet_metal_02.ogg',
+					'sound/weapons/gun/hit/bullet_metal_03.ogg',
+					'sound/weapons/gun/hit/bullet_metal_04.ogg',
+					'sound/weapons/gun/hit/bullet_metal_05.ogg',
+					'sound/weapons/gun/hit/bullet_metal_06.ogg',
+				)
+			if("bullet_hit_wood")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_wood_01.ogg',
+					'sound/weapons/gun/hit/bullet_wood_02.ogg',
+					'sound/weapons/gun/hit/bullet_wood_03.ogg',
+					'sound/weapons/gun/hit/bullet_wood_04.ogg',
+					'sound/weapons/gun/hit/bullet_wood_05.ogg',
+					'sound/weapons/gun/hit/bullet_wood_06.ogg',
+				)
+			if("bullet_hit_snow")
+				soundin = pick(
+					'sound/weapons/gun/hit/bullet_snow_01.ogg',
+					'sound/weapons/gun/hit/bullet_snow_02.ogg',
+					'sound/weapons/gun/hit/bullet_snow_03.ogg',
+					'sound/weapons/gun/hit/bullet_snow_04.ogg',
+					'sound/weapons/gun/hit/bullet_snow_05.ogg',
+					'sound/weapons/gun/hit/bullet_snow_06.ogg',
+				)
+// gun related stuff  end
 			if ("terminal_type")
 				soundin = pick('sound/machines/terminal_button01.ogg', 'sound/machines/terminal_button02.ogg', 'sound/machines/terminal_button03.ogg', \
 								'sound/machines/terminal_button04.ogg', 'sound/machines/terminal_button05.ogg', 'sound/machines/terminal_button06.ogg', \
@@ -256,8 +311,6 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 				soundin = pick('sound/hallucinations/im_here1.ogg', 'sound/hallucinations/im_here2.ogg')
 			if ("can_open")
 				soundin = pick('sound/effects/can_open1.ogg', 'sound/effects/can_open2.ogg', 'sound/effects/can_open3.ogg')
-			if("bullet_miss")
-				soundin = pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg')
 			if("revolver_spin")
 				soundin = pick('sound/weapons/gun/revolver/spin1.ogg', 'sound/weapons/gun/revolver/spin2.ogg', 'sound/weapons/gun/revolver/spin3.ogg')
 			if("law")
@@ -272,4 +325,12 @@ distance_multiplier - Can be used to multiply the distance at which the sound is
 				soundin = pick('sound/machines/sm/accent/normal/1.ogg', 'sound/machines/sm/accent/normal/2.ogg', 'sound/machines/sm/accent/normal/3.ogg', 'sound/machines/sm/accent/normal/4.ogg', 'sound/machines/sm/accent/normal/5.ogg', 'sound/machines/sm/accent/normal/6.ogg', 'sound/machines/sm/accent/normal/7.ogg', 'sound/machines/sm/accent/normal/8.ogg', 'sound/machines/sm/accent/normal/9.ogg', 'sound/machines/sm/accent/normal/10.ogg', 'sound/machines/sm/accent/normal/11.ogg', 'sound/machines/sm/accent/normal/12.ogg', 'sound/machines/sm/accent/normal/13.ogg', 'sound/machines/sm/accent/normal/14.ogg', 'sound/machines/sm/accent/normal/15.ogg', 'sound/machines/sm/accent/normal/16.ogg', 'sound/machines/sm/accent/normal/17.ogg', 'sound/machines/sm/accent/normal/18.ogg', 'sound/machines/sm/accent/normal/19.ogg', 'sound/machines/sm/accent/normal/20.ogg', 'sound/machines/sm/accent/normal/21.ogg', 'sound/machines/sm/accent/normal/22.ogg', 'sound/machines/sm/accent/normal/23.ogg', 'sound/machines/sm/accent/normal/24.ogg', 'sound/machines/sm/accent/normal/25.ogg', 'sound/machines/sm/accent/normal/26.ogg', 'sound/machines/sm/accent/normal/27.ogg', 'sound/machines/sm/accent/normal/28.ogg', 'sound/machines/sm/accent/normal/29.ogg', 'sound/machines/sm/accent/normal/30.ogg', 'sound/machines/sm/accent/normal/31.ogg', 'sound/machines/sm/accent/normal/32.ogg', 'sound/machines/sm/accent/normal/33.ogg')
 			if("smdelam")
 				soundin = pick('sound/machines/sm/accent/delam/1.ogg', 'sound/machines/sm/accent/normal/2.ogg', 'sound/machines/sm/accent/normal/3.ogg', 'sound/machines/sm/accent/normal/4.ogg', 'sound/machines/sm/accent/normal/5.ogg', 'sound/machines/sm/accent/normal/6.ogg', 'sound/machines/sm/accent/normal/7.ogg', 'sound/machines/sm/accent/normal/8.ogg', 'sound/machines/sm/accent/normal/9.ogg', 'sound/machines/sm/accent/normal/10.ogg', 'sound/machines/sm/accent/normal/11.ogg', 'sound/machines/sm/accent/normal/12.ogg', 'sound/machines/sm/accent/normal/13.ogg', 'sound/machines/sm/accent/normal/14.ogg', 'sound/machines/sm/accent/normal/15.ogg', 'sound/machines/sm/accent/normal/16.ogg', 'sound/machines/sm/accent/normal/17.ogg', 'sound/machines/sm/accent/normal/18.ogg', 'sound/machines/sm/accent/normal/19.ogg', 'sound/machines/sm/accent/normal/20.ogg', 'sound/machines/sm/accent/normal/21.ogg', 'sound/machines/sm/accent/normal/22.ogg', 'sound/machines/sm/accent/normal/23.ogg', 'sound/machines/sm/accent/normal/24.ogg', 'sound/machines/sm/accent/normal/25.ogg', 'sound/machines/sm/accent/normal/26.ogg', 'sound/machines/sm/accent/normal/27.ogg', 'sound/machines/sm/accent/normal/28.ogg', 'sound/machines/sm/accent/normal/29.ogg', 'sound/machines/sm/accent/normal/30.ogg', 'sound/machines/sm/accent/normal/31.ogg', 'sound/machines/sm/accent/normal/32.ogg', 'sound/machines/sm/accent/normal/33.ogg')
+			if("keystroke")
+				soundin = pick('sound/machines/keyboard/keypress1.ogg','sound/machines/keyboard/keypress2.ogg','sound/machines/keyboard/keypress3.ogg','sound/machines/keyboard/keypress4.ogg')
+			if("keyboard")
+				soundin = pick('sound/machines/keyboard/keystroke1.ogg','sound/machines/keyboard/keystroke2.ogg','sound/machines/keyboard/keystroke3.ogg','sound/machines/keyboard/keystroke4.ogg')
+			if("button")
+				soundin = pick('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg')
+			if("switch")	//stolen from nsv
+				soundin = pick('sound/machines/switch1.ogg','sound/machines/switch2.ogg','sound/machines/switch3.ogg')
 	return soundin

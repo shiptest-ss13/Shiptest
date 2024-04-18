@@ -1,31 +1,66 @@
-//Returns the world time in english
-/proc/worldtime2text()
-	return gameTimestamp("hh:mm:ss", world.time)
-
-/proc/time_stamp(format = "hh:mm:ss", show_ds)
+/proc/time_stamp(format = "YYYY-MM-DD hh:mm:ss", show_ds)
 	var/time_string = time2text(world.timeofday, format)
 	return show_ds ? "[time_string]:[world.timeofday % 10]" : time_string
 
-/proc/gameTimestamp(format = "hh:mm:ss", wtime=null)
-	if(!wtime)
-		wtime = world.time
+/proc/game_timestamp(format = "hh:mm:ss", wtime = world.time)
 	return time2text(wtime - GLOB.timezoneOffset, format)
 
-/proc/station_time(display_only = FALSE, wtime=world.time)
+/proc/station_time(display_only = FALSE, wtime = world.time)
 	return ((((wtime - SSticker.round_start_time) * SSticker.station_time_rate_multiplier) + SSticker.gametime_offset) % 864000) - (display_only? GLOB.timezoneOffset : 0)
 
 /proc/station_time_timestamp(format = "hh:mm:ss", wtime)
 	return time2text(station_time(TRUE, wtime), format)
 
-/proc/station_time_debug(force_set)
-	if(isnum(force_set))
-		SSticker.gametime_offset = force_set
-		return
-	SSticker.gametime_offset = rand(0, 864000)		//hours in day * minutes in hour * seconds in minute * deciseconds in second
-	if(prob(50))
-		SSticker.gametime_offset = FLOOR(SSticker.gametime_offset, 3600)
+/proc/station_time_timestamp_fancy(format = "hh:mm", wtime)
+	. = station_time_timestamp(format, wtime)
+	if(station_time() > 432000)
+		. += " PM"
 	else
-		SSticker.gametime_offset = CEILING(SSticker.gametime_offset, 3600)
+		. += " AM"
+
+/proc/sector_datestamp(realtime = world.realtime, shortened = FALSE)
+	//International Fixed Calendar format (https://en.wikipedia.org/wiki/International_Fixed_Calendar)
+	var/days_since = round(realtime / (24 HOURS))
+	var/year = round(days_since / 365) + 481
+	var/day_of_year = days_since % 365
+	var/month = round(day_of_year / 28)
+	var/day_of_month = day_of_year % 28 + 1
+
+	if(shortened)
+		return "[year]-[month]-[day_of_month]FSC"
+
+	var/monthname
+	switch(month)
+		if(0)
+			monthname = "January"
+		if(1)
+			monthname = "February"
+		if(2)
+			monthname = "March"
+		if(3)
+			monthname = "April"
+		if(4)
+			monthname = "May"
+		if(5)
+			monthname = "June"
+		if(6)
+			monthname = "Sol"
+		if(7)
+			monthname = "July"
+		if(8)
+			monthname = "August"
+		if(9)
+			monthname = "September"
+		if(10)
+			monthname = "October"
+		if(11)
+			monthname = "November"
+		if(12)
+			monthname = "December"
+		if(13)
+			return "Year Day, [year] FSC"
+
+	return "[monthname] [day_of_month], [year] FSC"
 
 //returns timestamp in a sql and a not-quite-compliant ISO 8601 friendly format
 /proc/SQLtime(timevar)
@@ -86,3 +121,7 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 
 /proc/daysSince(realtimev)
 	return round((world.realtime - realtimev) / (24 HOURS))
+
+/// Returns the time in an ISO-8601 friendly format. Used when dumping data into external services such as ElasticSearch
+/proc/iso_timestamp(timevar)
+	return time2text(timevar || world.timeofday, "YYYY-MM-DDThh:mm:ss")

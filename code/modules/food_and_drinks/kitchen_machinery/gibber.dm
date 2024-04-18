@@ -99,7 +99,7 @@
 				user.visible_message("<span class='danger'>[user] stuffs [C] into the gibber!</span>")
 				C.forceMove(src)
 				occupant = C
-				update_icon()
+				update_appearance()
 	else
 		startgibbing(user)
 
@@ -133,7 +133,7 @@
 
 /obj/machinery/gibber/proc/go_out()
 	dropContents()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/gibber/proc/startgibbing(mob/user)
 	if(src.operating)
@@ -145,7 +145,7 @@
 	audible_message("<span class='hear'>You hear a loud squelchy grinding sound.</span>")
 	playsound(src.loc, 'sound/machines/juicer.ogg', 50, TRUE)
 	operating = TRUE
-	update_icon()
+	update_appearance()
 
 	var/offset = prob(50) ? -2 : 2
 	animate(src, pixel_x = pixel_x + offset, time = 0.2, loop = 200) //start shaking
@@ -186,7 +186,7 @@
 		newmeat.name = "[sourcename] [newmeat.name]"
 		if(istype(newmeat))
 			newmeat.subjectname = sourcename
-			newmeat.reagents.add_reagent (/datum/reagent/consumable/nutriment, sourcenutriment / meat_produced) // Thehehe. Fat guys go first
+			newmeat.reagents.add_reagent (/datum/reagent/consumable/nutriment, sourcenutriment / meat_produced)
 			if(occupant_volume)
 				occupant.reagents.trans_to(newmeat, occupant_volume / meat_produced, remove_blacklisted = TRUE)
 			if(sourcejob)
@@ -200,7 +200,7 @@
 	mob_occupant.death(1)
 	mob_occupant.ghostize()
 	qdel(src.occupant)
-	addtimer(CALLBACK(src, .proc/make_meat, skin, allmeat, meat_produced, gibtype, diseases), gibtime)
+	addtimer(CALLBACK(src, PROC_REF(make_meat), skin, allmeat, meat_produced, gibtype, diseases), gibtime)
 
 /obj/machinery/gibber/proc/make_meat(obj/item/stack/sheet/animalhide/skin, list/obj/item/reagent_containers/food/snacks/meat/slab/allmeat, meat_produced, gibtype, list/datum/disease/diseases)
 	playsound(src.loc, 'sound/effects/splat.ogg', 50, TRUE)
@@ -219,9 +219,9 @@
 			if (!gibturf.density && (src in view(gibturf)))
 				new gibtype(gibturf,i,diseases)
 
-	pixel_x = initial(pixel_x) //return to its spot after shaking
+	pixel_x = base_pixel_x //return to its spot after shaking
 	operating = FALSE
-	update_icon()
+	update_appearance()
 
 //auto-gibs anything that bumps into it
 /obj/machinery/gibber/autogibber

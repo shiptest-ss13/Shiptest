@@ -1,10 +1,10 @@
 /obj/item/wrench
 	name = "wrench"
 	desc = "A wrench with common uses. Can be found in your hand. This one is a pipe wrench."
-	icon = 'whitesands/icons/obj/tools.dmi'
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "wrench_pipe" //now where could my pipe wrench be?
-	lefthand_file = 'whitesands/icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	force = 5
@@ -19,11 +19,6 @@
 	tool_behaviour = TOOL_WRENCH
 	toolspeed = 1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
-
-/obj/item/wrench/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is beating [user.p_them()]self to death with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(loc, 'sound/weapons/genhit.ogg', 50, TRUE, -1)
-	return (BRUTELOSS)
 
 /obj/item/wrench/abductor
 	name = "alien wrench"
@@ -42,32 +37,9 @@
 	force = 2 //MEDICAL
 	throwforce = 4
 	attack_verb = list("healed", "medicaled", "tapped", "poked", "analyzed", "cobbyed") //"cobbyed" //i dont know who added this comment but now it's a thing - zeta
-	///var to hold the name of the person who suicided
-	var/suicider
 
 /obj/item/wrench/medical/examine(mob/user)
 	. = ..()
-	if(suicider)
-		. += "<span class='notice'>For some reason, it reminds you of [suicider].</span>"
-
-/obj/item/wrench/medical/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is praying to the medical wrench to take [user.p_their()] soul. It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	user.Stun(100, ignore_canstun = TRUE)// Stun stops them from wandering off
-	user.set_light_color(COLOR_VERY_SOFT_YELLOW)
-	user.set_light(2)
-	user.add_overlay(mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER))
-	playsound(loc, 'sound/effects/pray.ogg', 50, TRUE, -1)
-
-	// Let the sound effect finish playing
-	add_fingerprint(user)
-	sleep(20)
-	if(!user)
-		return
-	for(var/obj/item/W in user)
-		user.dropItemToGround(W)
-	suicider = user.real_name
-	user.dust()
-	return OXYLOSS
 
 /obj/item/wrench/cyborg
 	name = "hydraulic wrench"
@@ -81,7 +53,6 @@
 	desc = "It's like a normal wrench but edgier. Can be found on the battlefield."
 	icon_state = "wrench_combat"
 	item_state = "wrench_combat"
-	attack_verb = list("devastated", "brutalized", "committed a war crime against", "obliterated", "humiliated")
 	tool_behaviour = null
 	toolspeed = null
 	var/on = FALSE
@@ -97,19 +68,22 @@
 		w_class = initial(w_class)
 		throwforce = initial(throwforce)
 		tool_behaviour = initial(tool_behaviour)
+		attack_verb = list("bopped")
 		toolspeed = initial(toolspeed)
 		playsound(user, 'sound/weapons/saberoff.ogg', 5, TRUE)
 		to_chat(user, "<span class='warning'>[src] can now be kept at bay.</span>")
 	else
 		on = TRUE
-		force = 6
+		force = 15
 		w_class = WEIGHT_CLASS_NORMAL
-		throwforce = 8
+		throwforce = 10
 		tool_behaviour = TOOL_WRENCH
-		toolspeed = 1
+		attack_verb = list("devastated", "brutalized", "committed a war crime against", "obliterated", "humiliated")
+		toolspeed = 0.5
+		hitsound = 'sound/weapons/blade1.ogg'
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, "<span class='warning'>[src] is now active. Woe onto your enemies!</span>")
-	update_icon()
+	update_appearance()
 
 /obj/item/wrench/combat/update_icon_state()
 	if(on)
@@ -118,3 +92,20 @@
 	else
 		icon_state = "[initial(icon_state)]"
 		item_state = "[initial(item_state)]"
+	return ..()
+
+/obj/item/wrench/syndie
+	name = "suspicious-looking wrench"
+	desc = "It's one of those fancy wrenches that you turn backward without twisting the bolt for faster action."
+	icon_state = "wrench_syndie"
+	toolspeed = 0.5
+
+/obj/item/wrench/crescent
+	name = "crescent wrench"
+	desc = "A wrench with common uses. Can be found in your hand. This one is a crescent wrench."
+	icon_state = "wrench"
+
+/obj/item/wrench/old
+	desc = "A wrench with common uses. Can be found in your hand. This one seems ancient!"
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "oldwrench"

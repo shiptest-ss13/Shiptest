@@ -57,7 +57,7 @@
 /obj/effect/mob_spawn/Initialize(mapload)
 	. = ..()
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
-		create()
+		INVOKE_ASYNC(src, PROC_REF(create))
 	else if(ghost_usable)
 		GLOB.poi_list |= src
 		LAZYADD(GLOB.mob_spawners[name], src)
@@ -142,7 +142,6 @@
 	var/disable_sensors = TRUE
 	//All of these only affect the ID that the outfit has placed in the ID slot
 	var/id_job = null			//Such as "Clown" or "Chef." This just determines what the ID reads as, not their access
-	var/id_access = null		//This is for access. See access.dm for which jobs give what access. Use "Captain" if you want it to be all access.
 	var/id_access_list = null	//Allows you to manually add access to an ID card.
 	assignedrole = "Ghost Role"
 
@@ -225,12 +224,6 @@
 	if(W)
 		if(H.age)
 			W.registered_age = H.age
-		if(id_access)
-			for(var/jobtype in typesof(/datum/job))
-				var/datum/job/J = new jobtype
-				if(J.title == id_access)
-					W.access = J.get_access()
-					break
 		if(id_access_list)
 			if(!islist(W.access))
 				W.access = list()
@@ -283,9 +276,9 @@
 	S.colour = mobcolour
 
 /obj/effect/mob_spawn/facehugger/create(ckey) //Creates a squashed facehugger
-	var/obj/item/clothing/mask/facehugger/O = new(src.loc) //variable O is a new facehugger at the location of the landmark
-	O.name = src.name
-	O.Die() //call the facehugger's death proc
+	var/mob/living/simple_animal/hostile/facehugger/object = new(src.loc) //variable object is a new facehugger at the location of the landmark
+	object.name = src.name
+	object.death() //call the facehugger's death proc
 	qdel(src)
 
 /obj/effect/mob_spawn/mouse
@@ -314,6 +307,9 @@
 	outfit = /datum/outfit/job/assistant
 	icon_state = "corpsegreytider"
 
+/obj/effect/mob_spawn/human/corpse/assistant/husked
+	husk = TRUE
+
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
 
@@ -333,6 +329,8 @@
 	outfit = /datum/outfit/job/cook
 	icon_state = "corpsecook"
 
+/obj/effect/mob_spawn/human/cook/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/doctor
 	name = "Doctor"
@@ -360,11 +358,8 @@
 
 /obj/effect/mob_spawn/human/engineer
 	name = "Engineer"
-	outfit = /datum/outfit/job/engineer/gloved
+	outfit = /datum/outfit/job/engineer
 	icon_state = "corpseengineer"
-
-/obj/effect/mob_spawn/human/engineer/rig
-	outfit = /datum/outfit/job/engineer/gloved/rig
 
 /obj/effect/mob_spawn/human/clown
 	name = "Clown"
@@ -381,23 +376,38 @@
 	outfit = /datum/outfit/job/miner
 	icon_state = "corpseminer"
 
-/obj/effect/mob_spawn/human/miner/rig
-	outfit = /datum/outfit/job/miner/equipped/hardsuit
-
-/obj/effect/mob_spawn/human/miner/explorer
-	outfit = /datum/outfit/job/miner/equipped
-
-
 /obj/effect/mob_spawn/human/plasmaman
 	mob_species = /datum/species/plasmaman
 	outfit = /datum/outfit/plasmaman
 
+/obj/effect/mob_spawn/human/botanist
+	outfit = /datum/outfit/job/botanist
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/botanist/husked
+	husk = TRUE
+
+/obj/effect/mob_spawn/human/sec
+	outfit = /datum/outfit/job/security
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/hop
+	outfit = /datum/outfit/job/head_of_personnel
+	icon_state = "corpsehuman"
+
+/obj/effect/mob_spawn/human/janitor
+	outfit = /datum/outfit/job/janitor
+	icon_state = "corpsehuman"
 
 /obj/effect/mob_spawn/human/bartender
 	name = "Space Bartender"
+	icon_state = "corpsebartender"
 	id_job = "Bartender"
 	id_access_list = list(ACCESS_BAR)
 	outfit = /datum/outfit/spacebartender
+
+/obj/effect/mob_spawn/human/bartender/husked
+	husk = TRUE
 
 /obj/effect/mob_spawn/human/bartender/alive
 	death = FALSE
@@ -455,8 +465,8 @@
 	name = "Beach Bum"
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_pocket = /obj/item/storage/wallet/random
-	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank;
-	uniform = /obj/item/clothing/under/pants/youngfolksjeans
+	l_pocket = /obj/item/reagent_containers/food/snacks/pizzaslice/dank
+	uniform = /obj/item/clothing/under/pants/jeans
 	id = /obj/item/card/id
 
 /datum/outfit/beachbum/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -476,8 +486,8 @@
 /datum/outfit/nanotrasenbridgeofficercorpse
 	name = "Bridge Officer Corpse"
 	ears = /obj/item/radio/headset/heads/head_of_personnel
-	uniform = /obj/item/clothing/under/rank/centcom/officer
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	uniform = /obj/item/clothing/under/rank/centcom/official
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	glasses = /obj/item/clothing/glasses/sunglasses
 	id = /obj/item/card/id
@@ -492,7 +502,7 @@
 /datum/outfit/nanotrasencommandercorpse
 	name = "\improper Nanotrasen Private Security Commander"
 	uniform = /obj/item/clothing/under/rank/centcom/commander
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/vest/bulletproof
 	ears = /obj/item/radio/headset/heads/captain
 	glasses = /obj/item/clothing/glasses/eyepatch
 	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
@@ -504,22 +514,10 @@
 
 
 /obj/effect/mob_spawn/human/nanotrasensoldier
-	name = "\improper Nanotrasen Private Security Officer"
+	name = "\improper Nanotrasen LP Security Specialist"
 	id_job = "Private Security Force"
 	id_access_list = list(ACCESS_CENT_CAPTAIN, ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_STORAGE, ACCESS_SECURITY, ACCESS_MECH_SECURITY)
-	outfit = /datum/outfit/nanotrasensoldiercorpse
-
-/datum/outfit/nanotrasensoldiercorpse
-	name = "NT Private Security Officer Corpse"
-	uniform = /obj/item/clothing/under/rank/security/officer
-	suit = /obj/item/clothing/suit/armor/vest
-	shoes = /obj/item/clothing/shoes/combat
-	gloves = /obj/item/clothing/gloves/tackler/combat
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	head = /obj/item/clothing/head/helmet/swat/nanotrasen
-	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id
-
+	outfit = /datum/outfit/job/nanotrasen/security/lp
 
 /obj/effect/mob_spawn/human/commander/alive
 	death = FALSE

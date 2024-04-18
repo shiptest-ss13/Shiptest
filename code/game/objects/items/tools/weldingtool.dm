@@ -2,7 +2,7 @@
 /obj/item/weldingtool
 	name = "welding tool"
 	desc = "A standard welder, used for cutting through metal."
-	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
 	item_state = "welder"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
@@ -48,7 +48,7 @@
 	create_reagents(max_fuel)
 	if(start_full)
 		reagents.add_reagent(/datum/reagent/fuel, max_fuel)
-	update_icon()
+	update_appearance()
 
 /obj/item/weldingtool/ComponentInitialize()
 	. = ..()
@@ -60,7 +60,7 @@
 		item_state = "[initial(item_state)]1"
 	else
 		item_state = "[initial(item_state)]"
-
+	return ..()
 
 /obj/item/weldingtool/update_overlays()
 	. = ..()
@@ -77,7 +77,7 @@
 		if(0)
 			force = 3
 			damtype = "brute"
-			update_icon()
+			update_appearance()
 			if(!can_off_process)
 				STOP_PROCESSING(SSobj, src)
 			return
@@ -88,16 +88,10 @@
 			++burned_fuel_for
 			if(burned_fuel_for >= WELDER_FUEL_BURN_INTERVAL)
 				use(1)
-			update_icon()
+			update_appearance()
 
 	//This is to start fires. process() is only called if the welder is on.
 	open_flame()
-
-
-/obj/item/weldingtool/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] welds [user.p_their()] every orifice closed! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (FIRELOSS)
-
 
 /obj/item/weldingtool/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
@@ -106,7 +100,7 @@
 		flamethrower_rods(I, user)
 	else
 		. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/weldingtool/proc/explode()
 	var/turf/T = get_turf(loc)
@@ -114,22 +108,25 @@
 	dyn_explosion(T, plasmaAmount/5)//20 plasma in a standard welder has a 4 power explosion. no breaches, but enough to kill/dismember holder
 	qdel(src)
 
-/obj/item/weldingtool/attack(mob/living/carbon/human/H, mob/user)
-	if(!istype(H))
-		return ..()
+/obj/item/weldingtool/use_tool(atom/target, mob/living/user, delay, amount, volume, datum/callback/extra_checks)
+	target.add_overlay(GLOB.welding_sparks)
+	. = ..()
+	target.cut_overlay(GLOB.welding_sparks)
 
-	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
-
-	if(affecting && affecting.status == BODYPART_ROBOTIC && user.a_intent != INTENT_HARM)
-		if(src.use_tool(H, user, 0, volume=50, amount=1))
-			if(user == H)
-				user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [H]'s [affecting.name].</span>",
-					"<span class='notice'>You start fixing some of the dents on [H == user ? "your" : "[H]'s"] [affecting.name].</span>")
-				if(!do_mob(user, H, 50))
-					return
-			item_heal_robotic(H, user, 15, 0)
-	else
+/obj/item/weldingtool/attack(mob/living/carbon/human/target, mob/user)
+	if(!istype(target))
 		return ..()
+	var/obj/item/bodypart/attackedLimb = target.get_bodypart(check_zone(user.zone_selected))
+	if(!attackedLimb || IS_ORGANIC_LIMB(attackedLimb) || (user.a_intent == INTENT_HARM))
+		return ..()
+	if(!tool_start_check(user, amount = 1))
+		return TRUE
+	user.visible_message("<span class='notice'>[user] starts to fix some of the dents on [target]'s [parse_zone(attackedLimb.body_zone)].</span>",
+			"<span class='notice'>You start fixing some of the dents on [target == user ? "your" : "[target]'s"] [parse_zone(attackedLimb.body_zone)].</span>")
+	if(!use_tool(target, user, delay = (target == user ? 5 SECONDS : 0.5 SECONDS), amount = 1, volume = 25))
+		return TRUE
+	item_heal_robotic(target, user, brute_heal = 15, burn_heal = 0)
+	return TRUE
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)
 	. = ..()
@@ -148,7 +145,7 @@
 	if(!status && O.is_refillable())
 		reagents.trans_to(O, reagents.total_volume, transfered_by = user)
 		to_chat(user, "<span class='notice'>You empty [src]'s fuel tank into [O].</span>")
-		update_icon()
+		update_appearance()
 
 /obj/item/weldingtool/attack_qdeleted(atom/O, mob/user, proximity)
 	. = ..()
@@ -171,7 +168,7 @@
 		explode()
 	switched_on(user)
 
-	update_icon()
+	update_appearance()
 
 
 // Ah fuck, I can't believe you've done this
@@ -214,7 +211,7 @@
 	if(get_fuel() <= 0 && welding)
 		set_light_on(FALSE)
 		switched_on(user)
-		update_icon()
+		update_appearance()
 		return 0
 	return 1
 
@@ -231,7 +228,7 @@
 			force = 15
 			damtype = "fire"
 			hitsound = 'sound/items/welder.ogg'
-			update_icon()
+			update_appearance()
 			START_PROCESSING(SSobj, src)
 		else
 			to_chat(user, "<span class='warning'>You need more fuel!</span>")
@@ -248,7 +245,7 @@
 	force = 3
 	damtype = "brute"
 	hitsound = "swing_hit"
-	update_icon()
+	update_appearance()
 
 
 /obj/item/weldingtool/examine(mob/user)
@@ -389,5 +386,10 @@
 	if(get_fuel() < max_fuel && nextrefueltick < world.time)
 		nextrefueltick = world.time + 10
 		reagents.add_reagent(/datum/reagent/fuel, 1)
+
+/obj/item/weldingtool/old
+	desc = "A standard edition welder provided by Nanotrasen. This one seems to leak a little bit."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "oldwelder"
 
 #undef WELDER_FUEL_BURN_INTERVAL

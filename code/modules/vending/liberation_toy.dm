@@ -17,8 +17,8 @@
 					/obj/item/clothing/head/syndicatefake = 5) //OPS IN DORMS oh wait it's just an assistant
 	contraband = list(
 		/obj/item/gun/ballistic/shotgun/toy/crossbow = 10,   //Congrats, you unlocked the +18 setting!
-		/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot = 10,
-		/obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted/riot = 10,
+		/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot = 10,
+		/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted/riot = 10,
 		/obj/item/ammo_box/foambox/riot = 20,
 		/obj/item/toy/katana = 10,
 		/obj/item/dualsaber/toy = 5,
@@ -28,5 +28,4 @@
 	refill_canister = /obj/item/vending_refill/donksoft
 	default_price = 150
 	extra_price = 300
-	payment_department = ACCOUNT_SRV
 	light_mask = "donksoft-light-mask"

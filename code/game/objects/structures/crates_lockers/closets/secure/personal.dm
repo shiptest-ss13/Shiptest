@@ -14,14 +14,14 @@
 		new /obj/item/storage/backpack/messenger(src)
 	else
 		new /obj/item/storage/backpack/satchel(src)
-	new /obj/item/radio/headset( src )
+	new /obj/item/radio/headset(src)
 
 /obj/structure/closet/secure_closet/personal/patient
 	name = "patient's closet"
 
 /obj/structure/closet/secure_closet/personal/patient/PopulateContents()
-	new /obj/item/clothing/under/color/white( src )
-	new /obj/item/clothing/shoes/sneakers/white( src )
+	new /obj/item/clothing/under/color/white(src)
+	new /obj/item/clothing/shoes/sneakers/white(src)
 
 /obj/structure/closet/secure_closet/personal/cabinet
 	icon_state = "cabinet"
@@ -33,9 +33,9 @@
 	close_sound_volume = 50
 
 /obj/structure/closet/secure_closet/personal/cabinet/PopulateContents()
-	new /obj/item/storage/backpack/satchel/leather/withwallet( src )
+	new /obj/item/storage/backpack/satchel/leather/withwallet(src)
 	new /obj/item/instrument/piano_synth(src)
-	new /obj/item/radio/headset( src )
+	new /obj/item/radio/headset(src)
 
 /obj/structure/closet/secure_closet/personal/attackby(obj/item/W, mob/user, params)
 	var/obj/item/card/id/I = W.GetID()
@@ -48,7 +48,7 @@
 		if(allowed(user) || !registered_name || (istype(I) && (registered_name == I.registered_name)))
 			//they can open all lockers, or nobody owns this, or they own this locker
 			locked = !locked
-			update_icon()
+			update_appearance()
 
 			if(!registered_name)
 				registered_name = I.registered_name

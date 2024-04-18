@@ -14,14 +14,6 @@
 	"}
 
 
-/datum/station_goal/station_shield/on_report()
-	//Unlock
-	var/datum/supply_pack/P = SSshuttle.supply_packs[/datum/supply_pack/engineering/shield_sat]
-	P.special_enabled = TRUE
-
-	P = SSshuttle.supply_packs[/datum/supply_pack/engineering/shield_sat_control]
-	P.special_enabled = TRUE
-
 /datum/station_goal/station_shield/check_completion()
 	if(..())
 		return TRUE
@@ -61,7 +53,7 @@
 
 /obj/machinery/computer/sat_control/proc/toggle(id)
 	for(var/obj/machinery/satellite/S in GLOB.machines)
-		if(S.id == id && S.get_virtual_z_level() == get_virtual_z_level())
+		if(S.id == id && S.virtual_z() == virtual_z())
 			S.toggle()
 
 /obj/machinery/computer/sat_control/ui_data()
@@ -90,6 +82,7 @@
 	desc = ""
 	icon = 'icons/obj/machines/satellite.dmi'
 	icon_state = "sat_inactive"
+	base_icon_state = "sat"
 	anchored = FALSE
 	density = TRUE
 	use_power = FALSE
@@ -116,7 +109,7 @@
 	else
 		end_processing()
 		animate(src, pixel_y = 0, time = 10)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/satellite/proc/toggle(mob/user)
 	if(!active && !isinspace())
@@ -128,7 +121,8 @@
 	set_anchored(!anchored)
 
 /obj/machinery/satellite/update_icon_state()
-	icon_state = active ? "sat_active" : "sat_inactive"
+	icon_state = "[base_icon_state]_[active ? "active" : "inactive"]"
+	return ..()
 
 /obj/machinery/satellite/multitool_act(mob/living/user, obj/item/I)
 	..()
@@ -153,7 +147,7 @@
 	if(!active)
 		return
 	for(var/obj/effect/meteor/M in GLOB.meteor_list)
-		if(M.get_virtual_z_level() != get_virtual_z_level())
+		if(M.virtual_z() != virtual_z())
 			continue
 		if(get_dist(M,src) > kill_range)
 			continue

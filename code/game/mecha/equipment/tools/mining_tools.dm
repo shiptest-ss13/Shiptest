@@ -64,13 +64,13 @@
 /turf/closed/wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.do_after_mecha(src, 60 / drill.drill_level))
 		drill.log_message("Drilled through [src]", LOG_MECHA)
-		dismantle_wall(TRUE, FALSE)
+		dismantle_wall(devastated = TRUE)
 
 /turf/closed/wall/r_wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.drill_level >= DRILL_HARDENED)
 		if(drill.do_after_mecha(src, 120 / drill.drill_level))
 			drill.log_message("Drilled through [src]", LOG_MECHA)
-			dismantle_wall(TRUE, FALSE)
+			dismantle_wall(devastated = TRUE)
 	else
 		drill.occupant_message("<span class='danger'>[src] is too durable to drill through.</span>")
 
@@ -131,7 +131,11 @@
 		if(isalien(target))
 			new /obj/effect/temp_visual/dir_setting/bloodsplatter/xenosplatter(target.drop_location(), splatter_dir)
 		else
-			new /obj/effect/temp_visual/dir_setting/bloodsplatter(target.drop_location(), splatter_dir)
+			var/splatter_color = null
+			if(iscarbon(target))
+				var/mob/living/carbon/carbon_target = target
+				splatter_color = carbon_target.dna.blood_type.color
+			new /obj/effect/temp_visual/dir_setting/bloodsplatter(target.drop_location(), splatter_dir, splatter_color)
 
 		//organs go everywhere
 		if(target_part && prob(10 * drill_level))
@@ -173,3 +177,4 @@
 
 #undef DRILL_BASIC
 #undef DRILL_HARDENED
+

@@ -35,7 +35,7 @@
 	damtype = "fire"
 	START_PROCESSING(SSobj, src)
 	playsound(src, 'sound/effects/fuse.ogg', 20, TRUE)
-	update_icon()
+	update_appearance()
 
 /obj/item/sparkler/process()
 	burntime--
@@ -47,7 +47,7 @@
 
 /obj/item/sparkler/Destroy()
 	STOP_PROCESSING(SSobj, src)
-	..()
+	return ..()
 
 /obj/item/sparkler/ignition_effect(atom/A, mob/user)
 	. = "<span class='notice'>[user] gracefully lights [A] with [src].</span>"
@@ -92,7 +92,7 @@
 		to_chat(user, "<span class='notice'>You shorten the fuse of [src] with [I].</span>")
 		playsound(src, 'sound/items/wirecutter.ogg', 20, TRUE)
 		icon_state = initial(icon_state) + "_[det_time]"
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='danger'>You've already removed all of the fuse!</span>")
 
@@ -106,7 +106,7 @@
 	playsound(src, 'sound/effects/fuse.ogg', volume, TRUE)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/firecracker/prime()
 	. = ..()

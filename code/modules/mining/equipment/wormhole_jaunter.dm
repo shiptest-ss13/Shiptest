@@ -1,7 +1,7 @@
 /**********************Jaunter**********************/
 /obj/item/wormhole_jaunter
 	name = "wormhole jaunter"
-	desc = "A single use device harnessing outdated wormhole technology, Nanotrasen has since turned its eyes to bluespace for more accurate teleportation. The wormholes it creates are unpleasant to travel through, to say the least.\nThanks to modifications provided by the Free Golems, this jaunter can be worn on the belt to provide protection from chasms."
+	desc = "A single use device harnessing outdated wormhole technology, Nanotrasen has since turned its eyes to bluespace for more accurate teleportation. The wormholes it creates are unpleasant to travel through, to say the least.\nThis jaunter has been modified to fit on your belt, providing you protection from chasms."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "Jaunter"
 	item_state = "electronic"
@@ -21,7 +21,7 @@
 
 /obj/item/wormhole_jaunter/proc/turf_check(mob/user)
 	var/turf/device_turf = get_turf(user)
-	if(!device_turf || is_centcom_level(device_turf.z) || is_reserved_level(device_turf.z))
+	if(!device_turf || is_centcom_level(device_turf))
 		to_chat(user, "<span class='notice'>You're having difficulties getting the [src.name] to work.</span>")
 		return FALSE
 	return TRUE
@@ -30,7 +30,7 @@
 	var/list/destinations = list()
 
 	for(var/obj/item/beacon/B in GLOB.teleportbeacons)
-		if(B.get_virtual_z_level() == get_virtual_z_level())
+		if(B.virtual_z() == virtual_z())
 			destinations += B
 
 	return destinations
@@ -39,12 +39,15 @@
 	if(!turf_check(user))
 		return
 
-	var/list/L = get_destinations(user)
-	if(!L.len)
-		to_chat(user, "<span class='notice'>The [src.name] found no beacons in the world to anchor a wormhole to.</span>")
-		return
-	var/chosen_beacon = pick(L)
-	var/obj/effect/portal/jaunt_tunnel/J = new (get_turf(src), 100, null, FALSE, get_turf(chosen_beacon))
+	var/turf/targetturf = find_safe_turf()
+	if(!targetturf)
+		if(GLOB.blobstart.len > 0)
+			targetturf = get_turf(pick(GLOB.blobstart))
+		else
+			CRASH("Unable to find a blobstart landmark")
+	var/obj/effect/portal/jaunt_tunnel/J = new (get_turf(src), 100, null, FALSE, targetturf)
+	log_game("[user] Has jaunted to [loc_name(targetturf)].")
+	message_admins("[user] Has jaunted to [ADMIN_VERBOSEJMP(targetturf)].")
 	if(adjacent)
 		try_move_adjacent(J)
 	playsound(src,'sound/effects/sparks4.ogg',50,TRUE)
@@ -96,4 +99,4 @@
 			L.Paralyze(60)
 			if(ishuman(L))
 				shake_camera(L, 20, 1)
-				addtimer(CALLBACK(L, /mob/living/carbon.proc/vomit), 20)
+				addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living/carbon, vomit)), 20)

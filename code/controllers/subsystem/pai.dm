@@ -113,7 +113,7 @@ SUBSYSTEM_DEF(pai)
 	dat += "<tr class=\"d1\"><td><a href='byond://?src=[REF(src)];option=desc;new=1;candidate=[REF(candidate)]'>\[Edit\]</a></td><td>What sort of pAI you typically play; your mannerisms, your quirks, etc. This can be as sparse or as detailed as you like.</td></tr>"
 
 	dat += "<tr class=\"d0\"><td>Preferred Role:</td><td>[candidate.role]</td></tr>"
-	dat += "<tr class=\"d1\"><td><a href='byond://?src=[REF(src)];option=role;new=1;candidate=[REF(candidate)]'>\[Edit\]</a></td><td>Do you like to partner with sneaky social ninjas? Like to help security hunt down thugs? Enjoy watching an engineer's back while he saves the station yet again? This doesn't have to be limited to just station jobs. Pretty much any general descriptor for what you'd like to be doing works here.</td></tr>"
+	dat += "<tr class=\"d1\"><td><a href='byond://?src=[REF(src)];option=role;new=1;candidate=[REF(candidate)]'>\[Edit\]</a></td><td>Do you like to partner with sneaky social ninjas? Like to help security hunt down thugs? Enjoy watching an engineer's back while he saves the sector yet again? This doesn't have to be limited to just standard jobs. Pretty much any general descriptor for what you'd like to be doing works here.</td></tr>"
 
 	dat += "<tr class=\"d0\"><td>OOC Comments:</td><td>[candidate.comments]</td></tr>"
 	dat += "<tr class=\"d1\"><td><a href='byond://?src=[REF(src)];option=ooc;new=1;candidate=[REF(candidate)]'>\[Edit\]</a></td><td>Anything you'd like to address specifically to the player reading this in an OOC manner. \"I prefer more serious RP.\", \"I'm still learning the interface!\", etc. Feel free to leave this blank if you want.</td></tr>"
@@ -130,7 +130,7 @@ SUBSYSTEM_DEF(pai)
 /datum/controller/subsystem/pai/proc/spam_again()
 	ghost_spam = FALSE
 
-/datum/controller/subsystem/pai/proc/check_ready(var/datum/paiCandidate/C)
+/datum/controller/subsystem/pai/proc/check_ready(datum/paiCandidate/C)
 	if(!C.ready)
 		return FALSE
 	for(var/mob/dead/observer/O in GLOB.player_list)
@@ -146,8 +146,8 @@ SUBSYSTEM_DEF(pai)
 				continue
 			if(!(ROLE_PAI in G.client.prefs.be_special))
 				continue
-			to_chat(G, "<span class='ghostalert'>[user] is requesting a pAI personality! Use the pAI button to submit yourself as one.</span>")
-		addtimer(CALLBACK(src, .proc/spam_again), spam_delay)
+			to_chat(G, "<span class='ghostalert'>[user.real_name] is requesting a pAI personality! Use the pAI button to submit yourself as one.</span>")
+		addtimer(CALLBACK(src, PROC_REF(spam_again)), spam_delay)
 	var/list/available = list()
 	for(var/datum/paiCandidate/c in SSpai.candidates)
 		available.Add(check_ready(c))

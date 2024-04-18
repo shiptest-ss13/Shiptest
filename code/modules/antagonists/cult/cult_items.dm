@@ -27,7 +27,7 @@
 	. = ..()
 	var/image/I = image(icon = 'icons/effects/blood.dmi' , icon_state = null, loc = src)
 	I.override = TRUE
-	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/silicons, "cult_dagger", I)
+	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/cult, "cult_dagger", I)
 
 /obj/item/melee/cultblade
 	name = "eldritch longsword"
@@ -79,12 +79,12 @@
 		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
 
 /obj/item/cult_bastard
-	name = "bloody bastard sword"
-	desc = "An enormous sword used by Nar'Sien cultists to rapidly harvest the souls of non-believers."
+	name = "geometric bastard sword"
+	desc = "An enormous sword, once used by Nar'Sien cultists to rapidly harvest the souls of non-believers. It still yet hungers to taste inpure blood."
 	w_class = WEIGHT_CLASS_HUGE
 	block_chance = 50
 	throwforce = 20
-	force = 35
+	force = 30
 	armour_penetration = 45
 	throw_speed = 1
 	throw_range = 3
@@ -92,7 +92,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 4
 	light_color = COLOR_RED
-	attack_verb = list("cleaved", "slashed", "tore", "lacerated", "hacked", "ripped", "diced", "carved")
+	attack_verb = list("cleaved", "bisected", "tore", "brutalized", "smashed", "ripped", "diced", "carved")
 	icon_state = "cultbastard"
 	item_state = "cultbastard"
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -107,17 +107,42 @@
 	var/spinning = FALSE
 	var/spin_cooldown = 250
 	var/dash_toggled = TRUE
+	var/list/nemesis_factions = list("mining", "boss")
+	var/faction_bonus_force = 25
 
 /obj/item/cult_bastard/Initialize()
 	. = ..()
 	jaunt = new(src)
 	linked_action = new(src)
-	AddComponent(/datum/component/butchering, 50, 80)
+	AddComponent(/datum/component/butchering, 50, 120)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
 
+/obj/item/cult_bastard/attack(mob/living/target, mob/living/carbon/human/user)
+	var/nemesis_faction = FALSE
+	if(LAZYLEN(nemesis_factions))
+		for(var/F in target.faction)
+			if(F in nemesis_factions)
+				nemesis_faction = TRUE
+				force += faction_bonus_force
+				throwforce += faction_bonus_force
+				nemesis_effects(user, target)
+				break
+	. = ..()
+	if(nemesis_faction)
+		force -= faction_bonus_force
+		throwforce -= faction_bonus_force
+
+/obj/item/cult_bastard/proc/nemesis_effects(mob/living/user, mob/living/target)
+	return
+
+/obj/item/cult_bastard/Destroy()
+	QDEL_NULL(jaunt)
+	QDEL_NULL(linked_action)
+	return ..()
 
 /obj/item/cult_bastard/examine(mob/user)
 	. = ..()
+	. += "<span class='notice'>This weapon will absorb the souls of unconscious human foes.</span>"
 	if(contents.len)
 		. += "<b>There are [contents.len] souls trapped within the sword's core.</b>"
 	else
@@ -135,10 +160,6 @@
 
 /obj/item/cult_bastard/pickup(mob/living/user)
 	. = ..()
-	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
-		force = 5
-		return
 	force = initial(force)
 	jaunt.Grant(user, src)
 	linked_action.Grant(user, src)
@@ -152,7 +173,7 @@
 
 /obj/item/cult_bastard/IsReflect()
 	if(spinning)
-		playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+		playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 		return TRUE
 	else
 		..()
@@ -161,7 +182,7 @@
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/weapons/parry.ogg', 75, TRUE)
@@ -178,12 +199,12 @@
 		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
 			if(H.stat != CONSCIOUS)
-				var/obj/item/soulstone/SS = new /obj/item/soulstone(src)
+				var/obj/item/soulstone/anybody/SS = new /obj/item/soulstone/anybody(src)
 				SS.attack(H, user)
 				if(!LAZYLEN(SS.contents))
 					qdel(SS)
 		if(istype(target, /obj/structure/constructshell) && contents.len)
-			var/obj/item/soulstone/SS = contents[1]
+			var/obj/item/soulstone/anybody/SS = contents[1]
 			if(istype(SS))
 				SS.transfer_soul("CONSTRUCT",target,user)
 				qdel(SS)
@@ -200,7 +221,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable()
-	if(iscultist(holder) && current_charges)
+	if(iscultist(owner) && current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -222,7 +243,7 @@
 	holder = user
 
 /datum/action/innate/cult/spin2win/IsAvailable()
-	if(iscultist(holder) && cooldown <= world.time)
+	if(cooldown <= world.time)
 		return TRUE
 	else
 		return FALSE
@@ -234,7 +255,7 @@
 	sword.spinning = TRUE
 	sword.block_chance = 100
 	sword.slowdown += 1.5
-	addtimer(CALLBACK(src, .proc/stop_spinning), 50)
+	addtimer(CALLBACK(src, PROC_REF(stop_spinning)), 50)
 	holder.update_action_buttons_icon()
 
 /datum/action/innate/cult/spin2win/proc/stop_spinning()
@@ -282,7 +303,7 @@
 	icon_state = "cultrobes"
 	item_state = "cultrobes"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	allowed = list(/obj/item/tome, /obj/item/melee/cultblade)
+	allowed = list(/obj/item/tome, /obj/item/melee/cultblade, /obj/item/tank)
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 40,"energy" = 40, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 10)
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|ARMS
@@ -363,6 +384,7 @@
 
 /obj/item/sharpener/cult/update_icon_state()
 	icon_state = "cult_sharpener[used ? "_used" : ""]"
+	return ..()
 
 /obj/item/clothing/suit/hooded/cultrobes/cult_shield
 	name = "empowered cultist armor"
@@ -436,77 +458,25 @@
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
-	if(!iscultist(user))
+	if(prob(30))
 		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
 		user.dropItemToGround(src, TRUE)
 		user.Dizzy(30)
 		user.Paralyze(100)
 		user.blind_eyes(30)
+	else
+		return
 
 /obj/item/reagent_containers/glass/beaker/unholywater
 	name = "flask of unholy water"
 	desc = "Toxic to nonbelievers; reinvigorating to the faithful - this flask may be sipped or thrown."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "holyflask"
 	color = "#333333"
 	list_reagents = list(/datum/reagent/fuel/unholywater = 50)
 	can_have_cap = FALSE
 	cap_icon_state = null
 	cap_on = FALSE
-
-/obj/item/shuttle_curse
-	name = "cursed orb"
-	desc = "You peer within this smokey orb and glimpse terrible fates befalling the escape shuttle."
-	icon = 'icons/obj/cult.dmi'
-	icon_state ="shuttlecurse"
-	var/static/curselimit = 0
-
-/obj/item/shuttle_curse/attack_self(mob/living/user)
-	if(!iscultist(user))
-		user.dropItemToGround(src, TRUE)
-		user.Paralyze(100)
-		to_chat(user, "<span class='warning'>A powerful force shoves you away from [src]!</span>")
-		return
-	if(curselimit > 1)
-		to_chat(user, "<span class='notice'>We have exhausted our ability to curse the shuttle.</span>")
-		return
-	if(locate(/obj/singularity/narsie) in GLOB.poi_list)
-		to_chat(user, "<span class='warning'>Nar'Sie is already on this plane, there is no delaying the end of all things.</span>")
-		return
-
-	if(SSshuttle.emergency.mode == SHUTTLE_CALL)
-		var/cursetime = 1800
-		var/timer = SSshuttle.emergency.timeLeft(1) + cursetime
-		var/security_num = seclevel2num(get_security_level())
-		var/set_coefficient = 1
-		switch(security_num)
-			if(SEC_LEVEL_GREEN)
-				set_coefficient = 2
-			if(SEC_LEVEL_BLUE)
-				set_coefficient = 1
-			else
-				set_coefficient = 0.5
-		var/surplus = timer - (SSshuttle.emergencyCallTime * set_coefficient)
-		SSshuttle.emergency.setTimer(timer)
-		if(surplus > 0)
-			SSshuttle.block_recall(surplus)
-		to_chat(user, "<span class='danger'>You shatter the orb! A dark essence spirals into the air, then disappears.</span>")
-		playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, TRUE)
-		qdel(src)
-		sleep(20)
-		var/static/list/curses
-		if(!curses)
-			curses = list("A fuel technician just slit his own throat and begged for death.",
-			"The shuttle's navigation programming was replaced by a file containing just two words: IT COMES.",
-			"The shuttle's custodian was found washing the windows with their own blood.",
-			"A shuttle engineer began screaming 'DEATH IS NOT THE END' and ripped out wires until an arc flash seared off her flesh.",
-			"A shuttle inspector started laughing madly over the radio and then threw herself into an engine turbine.",
-			"The shuttle dispatcher was found dead with bloody symbols carved into their flesh.",
-			"The shuttle's transponder is emitting the encoded message 'FEAR THE OLD BLOOD' in lieu of its assigned identification signal.")
-		var/message = pick_n_take(curses)
-		message += " The shuttle will be delayed by three minutes."
-		priority_announce("[message]", "System Failure", 'sound/misc/notice1.ogg')
-		curselimit++
 
 /obj/item/cult_shift
 	name = "veil shifter"
@@ -532,11 +502,6 @@
 /obj/item/cult_shift/attack_self(mob/user)
 	if(!uses || !iscarbon(user))
 		to_chat(user, "<span class='warning'>\The [src] is dull and unmoving in your hands.</span>")
-		return
-	if(!iscultist(user))
-		user.dropItemToGround(src, TRUE)
-		step(src, pick(GLOB.alldirs))
-		to_chat(user, "<span class='warning'>\The [src] flickers out of your hands, your connection to this dimension is too strong!</span>")
 		return
 
 	var/mob/living/carbon/C = user
@@ -621,6 +586,7 @@
 	name = "blood halberd"
 	desc = "A sickening spear composed entirely of crystallized blood."
 	icon_state = "bloodspear0"
+	base_icon_state = "occultpoleaxe"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	slot_flags = 0
@@ -637,13 +603,13 @@
 
 /obj/item/cult_spear/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 90)
-	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="bloodspear1")
+	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=24, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
 /obj/item/cult_spear/proc/on_wield(obj/item/source, mob/user)
@@ -658,12 +624,13 @@
 	wielded = FALSE
 
 /obj/item/cult_spear/update_icon_state()
-	icon_state = "bloodspear0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/cult_spear/Destroy()
 	if(spear_act)
 		qdel(spear_act)
-	..()
+	return ..()
 
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
@@ -699,7 +666,7 @@
 	if(prob(final_block_chance))
 		if(attack_type == PROJECTILE_ATTACK)
 			owner.visible_message("<span class='danger'>[owner] deflects [attack_text] with [src]!</span>")
-			playsound(src, pick('sound/weapons/effects/ric1.ogg', 'sound/weapons/effects/ric2.ogg', 'sound/weapons/effects/ric3.ogg', 'sound/weapons/effects/ric4.ogg', 'sound/weapons/effects/ric5.ogg'), 100, TRUE)
+			playsound(src, 'sound/weapons/effects/deflect.ogg', 100, TRUE)
 			return TRUE
 		else
 			playsound(src, 'sound/weapons/parry.ogg', 100, TRUE)
@@ -737,7 +704,7 @@
 		spear.throw_at(owner, 10, 2, owner)
 
 
-/obj/item/gun/ballistic/rifle/boltaction/enchanted/arcane_barrage/blood
+/obj/item/gun/ballistic/rifle/illestren/enchanted/arcane_barrage/blood
 	name = "blood bolt barrage"
 	desc = "Blood for blood."
 	color = "#ff0000"
@@ -810,10 +777,10 @@
 		qdel(src)
 		return
 	charging = TRUE
-	INVOKE_ASYNC(src, .proc/charge, user)
+	INVOKE_ASYNC(src, PROC_REF(charge), user)
 	if(do_after(user, 90, target = user))
 		firing = TRUE
-		INVOKE_ASYNC(src, .proc/pewpew, user, params)
+		INVOKE_ASYNC(src, PROC_REF(pewpew), user, params)
 		var/obj/structure/emergency_shield/invoker/N = new(user.loc)
 		if(do_after(user, 90, target = user))
 			user.Paralyze(40)
@@ -885,8 +852,7 @@
 						L.adjustBruteLoss(45)
 						playsound(L, 'sound/hallucinations/wail.ogg', 50, TRUE)
 						L.emote("scream")
-		var/datum/beam/current_beam = new(user,temp_target,time=7,beam_icon_state="blood_beam",btype=/obj/effect/ebeam/blood)
-		INVOKE_ASYNC(current_beam, /datum/beam.proc/Start)
+		user.Beam(temp_target, icon_state="blood_beam", time = 7, beam_type = /obj/effect/ebeam/blood)
 
 
 /obj/effect/ebeam/blood
@@ -927,7 +893,7 @@
 			playsound(src, 'sound/weapons/parry.ogg', 100, TRUE)
 			if(illusions > 0)
 				illusions--
-				addtimer(CALLBACK(src, /obj/item/shield/mirror.proc/readd), 450)
+				addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/shield/mirror, readd)), 450)
 				if(prob(60))
 					var/mob/living/simple_animal/hostile/illusion/M = new(owner.loc)
 					M.faction = list("cult")

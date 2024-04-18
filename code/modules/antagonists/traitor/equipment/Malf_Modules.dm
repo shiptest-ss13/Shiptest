@@ -133,7 +133,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	/// Sound played when an ability is unlocked
 	var/unlock_sound
 
- /// Applies upgrades
+/// Applies upgrades
 /datum/AI_Module/proc/upgrade(mob/living/silicon/ai/AI)
 	return
 
@@ -152,7 +152,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /// Doomsday Device: Starts the self-destruct timer. It can only be stopped by killing the AI completely.
 /datum/AI_Module/destructive/nuke_station
 	name = "Doomsday Device"
-	description = "Activate a weapon that will disintegrate all organic life on the station after a 450 second delay. Can only be used while on the station, will fail if your core is moved off station or destroyed."
+	description = "Assemble and activate a weapon that will disintegrate all organic life on the station after a 450 second delay. Can only be used while on the station, will fail if your core is moved off station or destroyed."
 	cost = 130
 	one_purchase = TRUE
 	power_type = /datum/action/innate/ai/nuke_station
@@ -245,6 +245,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	owner_AI.doomsday_device.start()
 	for(var/obj/item/pinpointer/nuke/P in GLOB.pinpointer_list)
 		P.switch_mode_to(TRACK_MALF_AI) //Pinpointers start tracking the AI wherever it goes
+		P.alert = TRUE //WEEWOO
 	qdel(src)
 
 /obj/machinery/doomsday_device
@@ -256,22 +257,31 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	verb_exclaim = "blares"
 	var/timing = FALSE
 	var/obj/effect/countdown/doomsday/countdown
+	var/mob/living/silicon/ai/owner
 	var/detonation_timer
 	var/next_announce
 
 /obj/machinery/doomsday_device/Initialize()
 	. = ..()
+	if(!isAI(loc))
+		stack_trace("Doomsday created outside an AI somehow, shit's fucking broke. Anyway, we're just gonna qdel now. Go make a github issue report.")
+		return INITIALIZE_HINT_QDEL
+	owner = loc
 	countdown = new(src)
 
 /obj/machinery/doomsday_device/Destroy()
 	QDEL_NULL(countdown)
 	STOP_PROCESSING(SSfastprocess, src)
-	SSshuttle.clearHostileEnvironment(src)
 	SSmapping.remove_nuke_threat(src)
-	for(var/A in GLOB.ai_list)
-		var/mob/living/silicon/ai/AI = A
-		if(AI.doomsday_device == src)
-			AI.doomsday_device = null
+	set_security_level("red")
+	for(var/mob/living/silicon/robot/borg in owner?.connected_robots)
+		borg.toggle_headlamp(FALSE, TRUE) //forces borg lamp to update
+	owner?.doomsday_device = null
+	owner?.nuking = null
+	owner = null
+	for(var/obj/item/pinpointer/nuke/P in GLOB.pinpointer_list)
+		P.switch_mode_to(TRACK_NUKE_DISK) //Party's over, back to work, everyone
+		P.alert = FALSE
 	return ..()
 
 /obj/machinery/doomsday_device/proc/start()
@@ -280,7 +290,6 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	timing = TRUE
 	countdown.start()
 	START_PROCESSING(SSfastprocess, src)
-	SSshuttle.registerHostileEnvironment(src)
 	SSmapping.add_nuke_threat(src) //This causes all blue "circuit" tiles on the map to change to animated red icon state.
 
 /obj/machinery/doomsday_device/proc/seconds_remaining()
@@ -329,8 +338,8 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 
 /datum/action/innate/ai/lockdown/Activate()
 	for(var/obj/machinery/door/D in GLOB.airlocks)
-		INVOKE_ASYNC(D, /obj/machinery/door.proc/hostile_lockdown, owner)
-		addtimer(CALLBACK(D, /obj/machinery/door.proc/disable_lockdown), 900)
+		INVOKE_ASYNC(D, TYPE_PROC_REF(/obj/machinery/door, hostile_lockdown), owner)
+		addtimer(CALLBACK(D, TYPE_PROC_REF(/obj/machinery/door, disable_lockdown)), 900)
 
 	var/obj/machinery/computer/communications/C = locate() in GLOB.machines
 	if(C)
@@ -338,7 +347,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 
 	minor_announce("Hostile runtime detected in door controllers. Isolation lockdown protocols are now in effect. Please remain calm.","Network Alert:", TRUE)
 	to_chat(owner, "<span class='danger'>Lockdown initiated. Network reset in 90 seconds.</span>")
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/minor_announce,
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce),
 		"Automatic system reboot complete. Have a secure day.",
 		"Network reset:"), 900)
 
@@ -349,7 +358,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	cost = 30
 	power_type = /datum/action/innate/ai/ranged/override_machine
 	unlock_text = "<span class='notice'>You procure a virus from the Space Dark Web and distribute it to the station's machines.</span>"
-	unlock_sound = 'sound/machines/airlock_alien_prying.ogg'
+	unlock_sound = 'sound/machines/creaking.ogg'
 
 /datum/action/innate/ai/ranged/override_machine
 	name = "Override Machine"
@@ -391,7 +400,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 		attached_action.desc = "[initial(attached_action.desc)] It has [attached_action.uses] use\s remaining."
 		attached_action.UpdateButtonIcon()
 	target.audible_message("<span class='userdanger'>You hear a loud electrical buzzing sound coming from [target]!</span>")
-	addtimer(CALLBACK(attached_action, /datum/action/innate/ai/ranged/override_machine.proc/animate_machine, target), 50) //kabeep!
+	addtimer(CALLBACK(attached_action, TYPE_PROC_REF(/datum/action/innate/ai/ranged/override_machine, animate_machine), target), 50) //kabeep!
 	remove_ranged_ability("<span class='danger'>Sending override signal...</span>")
 	return TRUE
 
@@ -453,7 +462,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /obj/effect/proc_holder/ranged_ai/overload_machine
 	active = FALSE
 	ranged_mousepointer = 'icons/effects/mouse_pointers/overload_machine_target.dmi'
-	enable_text = "<span class='notice'>You tap into the station's powernet. Click on a machine to detonate it, or use the ability again to cancel.</span>"
+	enable_text = "<span class='notice'>You tap into the local powernet. Click on a machine to detonate it, or use the ability again to cancel.</span>"
 	disable_text = "<span class='notice'>You release your hold on the powernet.</span>"
 
 /obj/effect/proc_holder/ranged_ai/overload_machine/InterceptClickOn(mob/living/caller, params, obj/machinery/target)
@@ -474,7 +483,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 		attached_action.desc = "[initial(attached_action.desc)] It has [attached_action.uses] use\s remaining."
 		attached_action.UpdateButtonIcon()
 	target.audible_message("<span class='userdanger'>You hear a loud electrical buzzing sound coming from [target]!</span>")
-	addtimer(CALLBACK(attached_action, /datum/action/innate/ai/ranged/overload_machine.proc/detonate_machine, target), 50) //kaboom!
+	addtimer(CALLBACK(attached_action, TYPE_PROC_REF(/datum/action/innate/ai/ranged/overload_machine, detonate_machine), target), 50) //kaboom!
 	remove_ranged_ability("<span class='danger'>Overcharging machine...</span>")
 	return TRUE
 
@@ -581,7 +590,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 		I.loc = T
 		client.images += I
 		I.icon_state = "[success ? "green" : "red"]Overlay" //greenOverlay and redOverlay for success and failure respectively
-		addtimer(CALLBACK(src, .proc/remove_transformer_image, client, I, T), 30)
+		addtimer(CALLBACK(src, PROC_REF(remove_transformer_image), client, I, T), 30)
 	if(!success)
 		to_chat(src, "<span class='warning'>[alert_msg]</span>")
 	return success
@@ -617,7 +626,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 	cost = 25
 	power_type = /datum/action/innate/ai/break_fire_alarms
 	unlock_text = "<span class='notice'>You replace the thermal sensing capabilities of all fire alarms with a manual override, allowing you to turn them off at will.</span>"
-	unlock_sound = 'goon/sound/machinery/firealarm.ogg'
+	unlock_sound = 'sound/machines/firealarm.ogg'
 
 /datum/action/innate/ai/break_fire_alarms
 	name = "Override Thermal Sensors"
@@ -628,7 +637,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /datum/action/innate/ai/break_fire_alarms/Activate()
 	for(var/obj/machinery/firealarm/F in GLOB.machines)
 		F.obj_flags |= EMAGGED
-		F.update_icon()
+		F.update_appearance()
 	to_chat(owner, "<span class='notice'>All thermal sensors on the station have been disabled. Fire alerts will no longer be recognized.</span>")
 	owner.playsound_local(owner, 'sound/machines/terminal_off.ogg', 50, 0)
 
@@ -651,7 +660,7 @@ GLOBAL_LIST_INIT(malf_modules, subtypesof(/datum/AI_Module))
 /datum/action/innate/ai/emergency_lights/Activate()
 	for(var/obj/machinery/light/L in GLOB.machines)
 		L.no_emergency = TRUE
-		INVOKE_ASYNC(L, /obj/machinery/light/.proc/update, FALSE)
+		INVOKE_ASYNC(L, TYPE_PROC_REF(/obj/machinery/light, update), FALSE)
 		CHECK_TICK
 	to_chat(owner, "<span class='notice'>Emergency light connections severed.</span>")
 	owner.playsound_local(owner, 'sound/effects/light_flicker.ogg', 50, FALSE)

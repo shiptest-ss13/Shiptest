@@ -2,7 +2,7 @@
 /obj/structure/guncase
 	name = "gun locker"
 	desc = "A locker that holds guns."
-	icon = 'goon/icons/obj/closet.dmi'
+	icon = 'icons/obj/closet.dmi'
 	icon_state = "shotguncase"
 	anchored = FALSE
 	density = TRUE
@@ -20,7 +20,7 @@
 				I.forceMove(src)
 			if(contents.len >= capacity)
 				break
-	update_icon()
+	update_appearance()
 
 /obj/structure/guncase/update_overlays()
 	. = ..()
@@ -29,10 +29,7 @@
 		for(var/i in 1 to contents.len)
 			gun_overlay.pixel_x = 3 * (i - 1)
 			. += new /mutable_appearance(gun_overlay)
-	if(open)
-		. += "[icon_state]_open"
-	else
-		. += "[icon_state]_door"
+	. += "[icon_state]_[open ? "open" : "door"]"
 
 /obj/structure/guncase/attackby(obj/item/I, mob/user, params)
 	if(iscyborg(user) || isalien(user))
@@ -42,14 +39,14 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			to_chat(user, "<span class='notice'>You place [I] in [src].</span>")
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>[src] is full.</span>")
 		return
 
 	else if(user.a_intent != INTENT_HARM)
 		open = !open
-		update_icon()
+		update_appearance()
 	else
 		return ..()
 
@@ -63,14 +60,14 @@
 		show_menu(user)
 	else
 		open = !open
-		update_icon()
+		update_appearance()
 
 /**
-  * show_menu: Shows a radial menu to a user consisting of an available weaponry for taking
-  *
-  * Arguments:
-  * * user The mob to which we are showing the radial menu
-  */
+ * show_menu: Shows a radial menu to a user consisting of an available weaponry for taking
+ *
+ * Arguments:
+ * * user The mob to which we are showing the radial menu
+ */
 /obj/structure/guncase/proc/show_menu(mob/user)
 	if(!LAZYLEN(contents))
 		return
@@ -85,7 +82,7 @@
 			item_image.copy_overlays(thing)
 		items += list("[thing.name] ([i])" = item_image)
 
-	var/pick = show_radial_menu(user, src, items, custom_check = CALLBACK(src, .proc/check_menu, user), radius = 36, require_near = TRUE)
+	var/pick = show_radial_menu(user, src, items, custom_check = CALLBACK(src, PROC_REF(check_menu), user), radius = 36, require_near = TRUE)
 	if(!pick)
 		return
 
@@ -95,14 +92,14 @@
 		return
 	if(!user.put_in_hands(weapon))
 		weapon.forceMove(get_turf(src))
-	update_icon()
+	update_appearance()
 
 /**
-  * check_menu: Checks if we are allowed to interact with a radial menu
-  *
-  * Arguments:
-  * * user The mob interacting with a menu
-  */
+ * check_menu: Checks if we are allowed to interact with a radial menu
+ *
+ * Arguments:
+ * * user The mob interacting with a menu
+ */
 /obj/structure/guncase/proc/check_menu(mob/living/carbon/human/user)
 	if(!open)
 		return FALSE
@@ -113,7 +110,7 @@
 	return TRUE
 
 /obj/structure/guncase/handle_atom_del(atom/A)
-	update_icon()
+	update_appearance()
 
 /obj/structure/guncase/contents_explosion(severity, target)
 	for(var/atom/A in contents)

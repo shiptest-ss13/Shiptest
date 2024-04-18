@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #If you hit github's rate limit, add a 3rd parameter here that is a github personal access token
-./CreditsTool beestation beestation-hornet
+./CreditsTool tgstation tgstation
 
 rm ../../icons/credits.dmi
 

@@ -37,7 +37,7 @@
 			if(com.power_station && com.power_station.teleporter_hub && com.power_station.engaged)
 				teletarget = com.target
 
-	addtimer(CALLBACK(src, .proc/pop, teletarget), 30)
+	addtimer(CALLBACK(src, PROC_REF(pop), teletarget), 30)
 
 /obj/effect/nettingportal/proc/pop(teletarget)
 	if(teletarget)
@@ -67,8 +67,8 @@
 		new/obj/item/restraints/legcuffs/beartrap/energy(get_turf(loc))
 	else if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy(get_turf(target))
-		B.Crossed(target)
-	..()
+		B.on_entered(src, target)
+	. = ..()
 
 /obj/projectile/energy/trap/on_range()
 	new /obj/item/restraints/legcuffs/beartrap/energy(loc)
@@ -88,9 +88,9 @@
 		qdel(src)
 	if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy/cyborg(get_turf(target))
-		B.Crossed(target)
+		B.on_entered(src, target)
 	QDEL_IN(src, 10)
-	..()
+	. = ..()
 
 /obj/projectile/energy/trap/cyborg/on_range()
 	do_sparks(1, TRUE, src)

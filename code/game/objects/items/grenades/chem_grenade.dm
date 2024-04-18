@@ -172,7 +172,7 @@
 		landminemode.activate()
 		return
 	active = TRUE
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/chem_grenade/prime()
 	if(stage != GRENADE_READY)
@@ -298,7 +298,7 @@
 	chem_splash(get_turf(src), affected_area, list(reactants), ignition_temp, threatscale)
 
 	var/turf/DT = get_turf(src)
-	addtimer(CALLBACK(src, .proc/prime), det_time)
+	addtimer(CALLBACK(src, PROC_REF(prime)), det_time)
 	log_game("A grenade detonated at [AREACOORD(DT)]")
 
 
@@ -579,6 +579,24 @@
 
 	B1.reagents.add_reagent(/datum/reagent/potassium, 100)
 	B2.reagents.add_reagent(/datum/reagent/water/holywater, 100)
+
+	beakers += B1
+	beakers += B2
+
+/obj/item/grenade/chem_grenade/ghostbuster
+	name = "counterparanormal foam grenade"
+	desc = "The note on the side guarantees to ward off most malicious spirits from covered area.\ The grenade itself seems to be old and covered with dust."
+	stage = GRENADE_READY
+
+/obj/item/grenade/chem_grenade/ghostbuster/Initialize()
+	. = ..()
+	var/obj/item/reagent_containers/glass/beaker/large/B1 = new(src)
+	var/obj/item/reagent_containers/glass/beaker/large/B2 = new(src)
+
+	B1.reagents.add_reagent(/datum/reagent/fluorosurfactant, 50)
+	B1.reagents.add_reagent(/datum/reagent/water/holywater, 50)
+	B2.reagents.add_reagent(/datum/reagent/water, 50)
+	B2.reagents.add_reagent(/datum/reagent/consumable/sodiumchloride, 50)
 
 	beakers += B1
 	beakers += B2

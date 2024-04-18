@@ -59,7 +59,7 @@
 #define MC_AI "AI"
 
 //NTNet stuff, for modular computers
- // NTNet module-configuration values. Do not change these. If you need to add another use larger number (5..6..7 etc)
+// NTNet module-configuration values. Do not change these. If you need to add another use larger number (5..6..7 etc)
 #define NTNET_SOFTWAREDOWNLOAD 1 // Downloads of software from NTNet
 #define NTNET_PEERTOPEER 2 // P2P transfers of files between devices
 #define NTNET_COMMUNICATION 3 // Communication (messaging)
@@ -126,3 +126,13 @@
 //these flags are used to tell the DNA modifier if a plant gene cannot be extracted or modified.
 #define PLANT_GENE_REMOVABLE (1<<0)
 #define PLANT_GENE_EXTRACTABLE (1<<1)
+
+//used to determine what rotation mode the ore redemption machine is in
+#define ORM_BOTH 0
+#define ORM_INPUT 1
+#define ORM_OUTPUT 2
+
+#define CLONING_SUCCESS (1<<0)
+#define CLONING_DELETE_RECORD (1<<1)
+
+#define CLICKSOUND_INTERVAL (0.1 SECONDS)	//! clicky noises, how much time needed in between clicks on the machine for the sound to play on click again.

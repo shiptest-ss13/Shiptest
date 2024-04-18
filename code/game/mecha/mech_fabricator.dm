@@ -12,7 +12,7 @@
 	var/time_coeff = 1
 	var/component_coeff = 1
 	var/datum/techweb/specialized/autounlocking/exofab/stored_research
-	var/sync = 0
+	var/linked_to_server = FALSE //if a server is linked to the exofab
 	var/part_set
 	var/datum/design/being_built
 	var/list/queue = list()
@@ -34,10 +34,9 @@
 								"Exosuit Equipment",
 								"Exosuit Ammunition",
 								"Cyborg Upgrade Modules",
-								"IPC components",
+								"IPC Components",
 								"Misc"
 								)
-	var/datum/bank_account/linked_account
 
 /obj/machinery/mecha_part_fabricator/Initialize(mapload)
 	stored_research = new
@@ -70,8 +69,6 @@
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Storing up to <b>[rmat.local_size]</b> material units.<br>Material consumption at <b>[component_coeff*100]%</b>.<br>Build time reduced by <b>[100-time_coeff*100]%</b>.</span>"
-		if(linked_account)
-			. += "<span class='notice'><br><b>Linked account:</b> [linked_account.account_holder]'s bank account<span>"
 
 /obj/machinery/mecha_part_fabricator/emag_act()
 	if(obj_flags & EMAGGED)
@@ -116,15 +113,11 @@
 	var/output
 	output += "<div class='statusDisplay'><b>Mecha Fabricator</b><br>"
 	output += "Security protocols: [(obj_flags & EMAGGED)? "<font color='red'>Disabled</font>" : "<font color='green'>Enabled</font>"]<br>"
+	output += "Linked to server: [(linked_to_server == FALSE)? "<font color='red'>Unlinked</font>" : "<font color='green'>Linked</font>"]<br>"
 	if (rmat.mat_container)
 		output += "<a href='?src=[REF(src)];screen=resources'><B>Material Amount:</B> [rmat.format_amount()]</A>"
 	else
 		output += "<font color='red'>No material storage connected, please contact the quartermaster.</font>"
-	output += "<br><a href='?src=[REF(src)];sync=1'>Sync with R&D servers</a><br>"
-	if(linked_account)
-		output += "<br><a href='?src=[REF(src)];link_id=1'>Unlink Linked Account: ([linked_account.account_holder])</a><br>"
-	else
-		output += "<br><a href='?src=[REF(src)];link_id=1'>Link Material Payment Account</a><br>"
 	output += "<a href='?src=[REF(src)];screen=main'>Main Screen</a>"
 	output += "</div>"
 	output += "<form name='search' action='?src=[REF(src)]'>\
@@ -197,18 +190,9 @@
 	if(!check_resources(D))
 		say("Not enough resources. Queue processing stopped.")
 		return FALSE
-	//Wasp start - Material Costs
-	if(materials.linked_account)
-		if(!linked_account)
-			say("No bank account linked. Please swipe an ID to link one.")
-			return FALSE
-		if(!linked_account.has_money(materials.get_material_list_cost(res_coef)) && !(obj_flags & EMAGGED))
-			say("Not enough credits in bank account. Queue processing stopped.")
-			return FALSE
 	being_built = D
 	desc = "It's building \a [initial(D.name)]."
-	materials.use_materials(res_coef, using_account = linked_account, charge = !(obj_flags & EMAGGED))
-	//Wasp end
+	materials.use_materials(res_coef)
 	rmat.silo_log(src, "built", -1, "[D.name]", res_coef)
 
 	add_overlay("fab-active")
@@ -293,18 +277,7 @@
 		output += "<a href='?src=[REF(src)];process_queue=1'>Process queue</a> | <a href='?src=[REF(src)];clear_queue=1'>Clear queue</a>"
 	return output
 
-/obj/machinery/mecha_part_fabricator/proc/sync()
-	for(var/obj/machinery/computer/rdconsole/RDC in oview(7,src))
-		RDC.stored_research.copy_research_to(stored_research)
-		updateUsrDialog()
-		say("Successfully synchronized with R&D server.")
-		return
-
-	temp = "Unable to connect to local R&D Database.<br>Please check your connections and try again.<br><a href='?src=[REF(src)];clear_temp=1'>Return</a>"
-	updateUsrDialog()
-	return
-
-/obj/machinery/mecha_part_fabricator/proc/get_resource_cost_w_coeff(datum/design/D, var/datum/material/resource, roundto = 1)
+/obj/machinery/mecha_part_fabricator/proc/get_resource_cost_w_coeff(datum/design/D, datum/material/resource, roundto = 1)
 	return round(D.materials[resource]*component_coeff, roundto)
 
 /obj/machinery/mecha_part_fabricator/proc/get_construction_time_w_coeff(datum/design/D, roundto = 1) //aran
@@ -413,7 +386,7 @@
 		add_part_set_to_queue(href_list["partset_to_queue"])
 		return update_queue_on_page()
 	if(href_list["process_queue"])
-		INVOKE_ASYNC(src, .proc/do_process_queue)
+		INVOKE_ASYNC(src, PROC_REF(do_process_queue))
 	if(href_list["clear_temp"])
 		temp = null
 	if(href_list["screen"])
@@ -428,8 +401,6 @@
 	if(href_list["clear_queue"])
 		queue = list()
 		return update_queue_on_page()
-	if(href_list["sync"])
-		sync()
 	if(href_list["part_desc"])
 		var/T = href_list["part_desc"]
 		for(var/v in stored_research.researched_designs)
@@ -450,9 +421,6 @@
 		var/datum/material/Mat = locate(href_list["material"])
 		eject_sheets(Mat, text2num(href_list["remove_mat"]))
 
-	if(href_list["link_id"])
-		link_user_id(usr)
-
 	updateUsrDialog()
 	return
 
@@ -471,7 +439,7 @@
 	if (rmat.on_hold())
 		say("Mineral access is on hold, please contact the quartermaster.")
 		return 0
-	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location(), linked_account)
+	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location())
 	var/list/matlist = list()
 	matlist[eject_sheet] = text2num(eject_amt)
 	rmat.silo_log(src, "ejected", -count, "sheets", matlist)
@@ -480,7 +448,7 @@
 /obj/machinery/mecha_part_fabricator/proc/AfterMaterialInsert(item_inserted, id_inserted, amount_inserted)
 	var/datum/material/M = id_inserted
 	add_overlay("fab-load-[M.name]")
-	addtimer(CALLBACK(src, /atom/proc/cut_overlay, "fab-load-[M.name]"), 10)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, cut_overlay), "fab-load-[M.name]"), 10)
 	updateUsrDialog()
 
 /obj/machinery/mecha_part_fabricator/attackby(obj/item/W, mob/user, params)
@@ -490,26 +458,16 @@
 	if(default_deconstruction_crowbar(W))
 		return TRUE
 
-	if(istype(W, /obj/item/card/id))
-		link_user_id(user)
-
-	return ..()
-
-/obj/machinery/mecha_part_fabricator/AltClick(mob/user)
-	. = ..()
-	link_user_id(user)
-
-/obj/machinery/mecha_part_fabricator/proc/link_user_id(mob/user)
-	if(linked_account)
-		linked_account = null
-		to_chat(user, "<span class='notice'>You unlink [src]'s linked account.</span>")
+	if(istype(W, /obj/item/multitool))
+		var/obj/item/multitool/multi = W
+		if(multi.buffer && istype(multi.buffer, /obj/machinery/rnd/server) && multi.buffer != src)
+			var/obj/machinery/rnd/server/server = multi.buffer
+			stored_research = server.stored_research
+			visible_message("Linked to [server]!")
+			linked_to_server = TRUE
 	else
-		var/datum/bank_account/user_account = user.get_bank_account()
-		if(user_account)
-			linked_account = user_account
-			to_chat(user, "<span class='notice'>You link [user_account.account_holder]'s bank account on [src].</span>")
-		else
-			to_chat(user, "<span class='warning'>No bank account found!</span>")
+		return ..()
+
 
 /obj/machinery/mecha_part_fabricator/proc/is_insertion_ready(mob/user)
 	if(panel_open)

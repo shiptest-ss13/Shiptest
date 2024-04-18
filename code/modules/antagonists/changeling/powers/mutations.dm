@@ -198,7 +198,7 @@
 		if(A.hasPower())
 			user.visible_message("<span class='warning'>[user] jams [src] into the airlock and starts prying it open!</span>", "<span class='warning'>We start forcing the [A] open.</span>", \
 			"<span class='hear'>You hear a metal screeching sound.</span>")
-			playsound(A, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+			playsound(A, 'sound/machines/creaking.ogg', 100, TRUE)
 			if(!do_after(user, 100, target = A))
 				return
 		//user.say("Heeeeeeeeeerrre's Johnny!")
@@ -268,17 +268,12 @@
 	if(charges == 0)
 		qdel(src)
 
-/obj/item/gun/magic/tentacle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] coils [src] tightly around [user.p_their()] neck! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (OXYLOSS)
-
-
 /obj/item/ammo_casing/magic/tentacle
 	name = "tentacle"
 	desc = "A tentacle."
 	projectile_type = /obj/projectile/tentacle
 	caliber = "tentacle"
-	icon_state = "tentacle_end"
+	icon_state = "arrow"
 	firing_effect_type = null
 	var/obj/item/gun/magic/tentacle/gun //the item that shot it
 
@@ -307,11 +302,11 @@
 
 /obj/projectile/tentacle/fire(setAngle)
 	if(firer)
-		chain = firer.Beam(src, icon_state = "tentacle", time = INFINITY, maxdistance = INFINITY, beam_sleep_time = 1)
+		chain = firer.Beam(src, icon_state = "tentacle", emissive = FALSE)
 	..()
 
 /obj/projectile/tentacle/proc/reset_throw(mob/living/carbon/human/H)
-	if(H.in_throw_mode)
+	if(H.throw_mode)
 		H.throw_mode_off() //Don't annoy the changeling if he doesn't catch the item
 
 /obj/projectile/tentacle/proc/tentacle_grab(mob/living/carbon/human/H, mob/living/carbon/C)
@@ -377,12 +372,12 @@
 
 					if(INTENT_GRAB)
 						C.visible_message("<span class='danger'>[L] is grabbed by [H]'s tentacle!</span>","<span class='userdanger'>A tentacle grabs you and pulls you towards [H]!</span>")
-						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, .proc/tentacle_grab, H, C))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_grab), H, C))
 						return BULLET_ACT_HIT
 
 					if(INTENT_HARM)
 						C.visible_message("<span class='danger'>[L] is thrown towards [H] by a tentacle!</span>","<span class='userdanger'>A tentacle grabs you and throws you towards [H]!</span>")
-						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, .proc/tentacle_stab, H, C))
+						C.throw_at(get_step_towards(H,C), 8, 2, H, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(tentacle_stab), H, C))
 						return BULLET_ACT_HIT
 			else
 				L.visible_message("<span class='danger'>[L] is pulled by [H]'s tentacle!</span>","<span class='userdanger'>A tentacle grabs you and pulls you towards [H]!</span>")

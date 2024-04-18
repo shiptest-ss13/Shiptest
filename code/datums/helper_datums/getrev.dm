@@ -42,6 +42,7 @@
 /datum/getrev/proc/GetTestMergeInfo(header = TRUE)
 	if(!testmerge.len)
 		return ""
+	var/static/regex/error_matcher = new("(?<=G)ITHUB(?= API ERROR)", "g")
 	. = header ? "The following pull requests are currently test merged:<br>" : ""
 	for(var/line in testmerge)
 		var/datum/tgs_revision_information/test_merge/tm = line
@@ -49,7 +50,7 @@
 		var/details = ": '" + html_encode(tm.title) + "' by " + html_encode(tm.author) + " at commit " + html_encode(copytext_char(cm, 1, 11))
 		if(details && findtext(details, "\[s\]") && (!usr || !usr.client.holder))
 			continue
-		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][details]</a><br>"
+		. += "<a href=\"[CONFIG_GET(string/githuburl)]/pull/[tm.number]\">#[tm.number][replacetext(details, error_matcher, /proc/shuffletext)]</a><br>"
 
 /client/verb/showrevinfo()
 	set category = "OOC"
@@ -87,8 +88,6 @@
 	msg += "<br><b>Current Informational Settings:</b>"
 	msg += "Protect Authority Roles From Traitor: [CONFIG_GET(flag/protect_roles_from_antagonist)]"
 	msg += "Protect Assistant Role From Traitor: [CONFIG_GET(flag/protect_assistant_from_antagonist)]"
-	msg += "Enforce Human Authority: [CONFIG_GET(flag/enforce_human_authority)]"
-	msg += "Allow Latejoin Antagonists: [CONFIG_GET(flag/allow_latejoin_antagonists)]"
 	msg += "Enforce Continuous Rounds: [length(CONFIG_GET(keyed_list/continuous))] of [config.modes.len] roundtypes"
 	msg += "Allow Midround Antagonists: [length(CONFIG_GET(keyed_list/midround_antag))] of [config.modes.len] roundtypes"
 	if(CONFIG_GET(flag/show_game_type_odds))

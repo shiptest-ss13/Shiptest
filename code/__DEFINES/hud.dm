@@ -9,6 +9,8 @@
 /// Used in show_hud(); Please ensure this is the same as the maximum index.
 #define HUD_VERSIONS 3
 
+#define HOVER_OUTLINE_FILTER "hover_outline"
+
 //1:1 HUD layout stuff
 #define UI_BOXCRAFT "EAST-4:22,SOUTH+1:6"
 #define UI_BOXAREA "EAST-4:6,SOUTH+1:6"

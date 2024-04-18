@@ -21,7 +21,6 @@
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/high/empty
 	category = list("Misc","Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/super_cell
 	name = "Super-Capacity Power Cell"
@@ -54,7 +53,7 @@
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/bluespace/empty
 	category = list("Misc","Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
 /datum/design/light_replacer
 	name = "Light Replacer"
@@ -82,7 +81,6 @@
 	id = "pacman"
 	build_path = /obj/item/circuitboard/machine/pacman
 	category = list("Engineering Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/board/pacman/super
 	name = "Machine Design (SUPERPACMAN-type Generator Board)"
@@ -96,4 +94,14 @@
 	desc = "The circuit board that for a MRSPACMAN-type portable generator."
 	id = "mrspacman"
 	build_path = /obj/item/circuitboard/machine/pacman/mrs
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/board/solar
+	name = "Solar Assembly"
+	desc = "The basis of all solar power"
+	id = "solarassembly"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/silver = 500, /datum/material/iron = 2500, /datum/material/glass = 1000)
+	build_path = /obj/item/solar_assembly
+	category = list("Power Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING

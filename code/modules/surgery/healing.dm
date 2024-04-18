@@ -25,9 +25,13 @@
 
 /datum/surgery_step/heal
 	name = "repair body"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 65, /obj/item/pen = 55)
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_SCREWDRIVER = 40)//something else could be added here - but I would prefer not. Hemostat is not that hard to come by and SHOULD be standard for ship equipment.
 	repeatable = TRUE
-	time = 25
+	time = 2.5 SECONDS
+	success_sound = 'sound/surgery/retractor2.ogg'
+	failure_sound = 'sound/surgery/organ2.ogg'
 	var/brutehealing = 0
 	var/burnhealing = 0
 	var/missinghpbonus = 0 //heals an extra point of damager per X missing damage of type (burn damage for burn healing, brute for brute). Smaller Number = More Healing!
@@ -61,11 +65,11 @@
 	var/urhealedamt_burn = burnhealing
 	if(missinghpbonus)
 		if(target.stat != DEAD)
-			urhealedamt_brute += round((target.getBruteLoss()/ missinghpbonus),0.1)
-			urhealedamt_burn += round((target.getFireLoss()/ missinghpbonus),0.1)
+			urhealedamt_brute += brutehealing ? round((target.getBruteLoss()/ missinghpbonus),0.1) : 0
+			urhealedamt_burn += burnhealing ? round((target.getFireLoss()/ missinghpbonus),0.1) : 0
 		else //less healing bonus for the dead since they're expected to have lots of damage to begin with (to make TW into defib not TOO simple)
-			urhealedamt_brute += round((target.getBruteLoss()/ (missinghpbonus*5)),0.1)
-			urhealedamt_burn += round((target.getFireLoss()/ (missinghpbonus*5)),0.1)
+			urhealedamt_brute += brutehealing ? round((target.getBruteLoss()/ (missinghpbonus*5)),0.1) : 0
+			urhealedamt_burn += burnhealing ? round((target.getFireLoss()/ (missinghpbonus*5)),0.1) : 0
 	if(!get_location_accessible(target, target_zone))
 		urhealedamt_brute *= 0.55
 		urhealedamt_burn *= 0.55
@@ -171,9 +175,6 @@
 
 /***************************COMBO***************************/
 /datum/surgery/healing/combo
-
-
-/datum/surgery/healing/combo
 	name = "Tend Wounds (Mixture, Basic)"
 	replaced_by = /datum/surgery/healing/combo/upgraded
 	requires_tech = TRUE
@@ -185,7 +186,6 @@
 	replaced_by = /datum/surgery/healing/combo/upgraded/femto
 	healing_step_type = /datum/surgery_step/heal/combo/upgraded
 	desc = "A surgical procedure that provides advanced treatment for a patient's burns and brute traumas. Heals more when the patient is severely injured."
-
 
 /datum/surgery/healing/combo/upgraded/femto //no real reason to type it like this except consistency, don't worry you're not missing anything
 	name = "Tend Wounds (Mixture, Exp.)"

@@ -15,14 +15,14 @@ It acts as a melee creature, chasing down and attacking its target while also us
 Whenever possible, the drake will breathe fire directly at it's target, igniting and heavily damaging anything caught in the blast.
 It also often causes lava to pool from the ground around you - many nearby turfs will temporarily turn into lava, dealing damage to anything on the turfs.
 The drake also utilizes its wings to fly into the sky, flying after its target and attempting to slam down on them. Anything near when it slams down takes huge damage.
- - Sometimes it will chain these swooping attacks over and over, making swiftness a necessity.
- - Sometimes, it will encase its target in an arena of lava
+- Sometimes it will chain these swooping attacks over and over, making swiftness a necessity.
+- Sometimes, it will encase its target in an arena of lava
 
 When an ash drake dies, it leaves behind a chest that can contain four things:
- 1. A spectral blade that allows its wielder to call ghosts to it, enhancing its power
- 2. A lava staff that allows its wielder to create lava
- 3. A spellbook and wand of fireballs
- 4. A bottle of dragon's blood with several effects, including turning its imbiber into a drake themselves.
+1. A spectral blade that allows its wielder to call ghosts to it, enhancing its power
+2. A lava staff that allows its wielder to create lava
+3. A spellbook and wand of fireballs
+4. A bottle of dragon's blood with several effects, including turning its imbiber into a drake themselves.
 
 When butchered, they leave behind diamonds, sinew, bone, and ash drake hide. Ash drake hide can be used to create a hooded cloak that protects its wearer from ash storms.
 
@@ -38,7 +38,7 @@ Difficulty: Medium
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/magic/demon_attack1.ogg'
-	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
+	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	icon_state = "dragon"
 	icon_living = "dragon"
 	icon_dead = "dragon_dead"
@@ -52,13 +52,15 @@ Difficulty: Medium
 	speed = 5
 	move_to_delay = 5
 	ranged = TRUE
-	pixel_x = -16
+	pixel_x = -32
+	base_pixel_x = -32
 	crusher_loot = list(/obj/structure/closet/crate/necropolis/dragon/crusher)
 	loot = list(/obj/structure/closet/crate/necropolis/dragon)
-	butcher_results = list(/obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10)
+	butcher_results = list(/obj/item/gem/amber = 1, /obj/item/stack/ore/diamond = 5, /obj/item/stack/sheet/sinew = 5, /obj/item/stack/sheet/bone = 30)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/ashdrake = 10, /obj/item/crusher_trophy/ash_spike = 1)
 	var/swooping = NONE
 	var/player_cooldown = 0
+	var/dungeon = FALSE //if true, on death will spawn a ghost role at a lank mark and open blast doors with a certain id
 	gps_name = "Fiery Signal"
 	achievement_type = /datum/award/achievement/boss/drake_kill
 	crusher_achievement_type = /datum/award/achievement/boss/drake_crusher
@@ -72,7 +74,6 @@ Difficulty: Medium
 		/datum/action/innate/megafauna_attack/mass_fire,
 		/datum/action/innate/megafauna_attack/lava_swoop)
 	small_sprite_type = /datum/action/small_sprite/megafauna/drake
-
 /datum/action/innate/megafauna_attack/fire_cone
 	name = "Fire Cone"
 	icon_icon = 'icons/obj/wizard.dmi'
@@ -159,7 +160,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/lava_swoop(amount = 30)
 	if(health < maxHealth * 0.5)
 		return swoop_attack(lava_arena = TRUE, swoop_cooldown = 60)
-	INVOKE_ASYNC(src, .proc/lava_pools, amount)
+	INVOKE_ASYNC(src, PROC_REF(lava_pools), amount)
 	swoop_attack(FALSE, target, 1000) // longer cooldown until it gets reset below
 	SLEEP_CHECK_DEATH(0)
 	fire_cone()
@@ -178,7 +179,7 @@ Difficulty: Medium
 		var/increment = 360 / spiral_count
 		for(var/j = 1 to spiral_count)
 			var/list/turfs = line_target(j * increment + i * increment / 2, range, src)
-			INVOKE_ASYNC(src, .proc/fire_line, turfs)
+			INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 		SLEEP_CHECK_DEATH(25)
 	SetRecoveryTime(30)
 
@@ -245,15 +246,15 @@ Difficulty: Medium
 	playsound(get_turf(src),'sound/magic/fireball.ogg', 200, TRUE)
 	SLEEP_CHECK_DEATH(0)
 	if(prob(50) && meteors)
-		INVOKE_ASYNC(src, .proc/fire_rain)
+		INVOKE_ASYNC(src, PROC_REF(fire_rain))
 	var/range = 15
 	var/list/turfs = list()
 	turfs = line_target(-40, range, at)
-	INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 	turfs = line_target(0, range, at)
-	INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 	turfs = line_target(40, range, at)
-	INVOKE_ASYNC(src, .proc/fire_line, turfs)
+	INVOKE_ASYNC(src, PROC_REF(fire_line), turfs)
 
 /mob/living/simple_animal/hostile/megafauna/dragon/proc/line_target(offset, range, atom/at = target)
 	if(!at)
@@ -267,7 +268,7 @@ Difficulty: Medium
 		T = check
 	return (getline(src, T) - get_turf(src))
 
-/mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_line(var/list/turfs)
+/mob/living/simple_animal/hostile/megafauna/dragon/proc/fire_line(list/turfs)
 	SLEEP_CHECK_DEATH(0)
 	dragon_fire_line(src, turfs)
 
@@ -304,7 +305,7 @@ Difficulty: Medium
 	stop_automated_movement = TRUE
 	swooping |= SWOOP_DAMAGEABLE
 	density = FALSE
-	icon_state = "shadow"
+	icon_state = "dragon_shadow"
 	visible_message("<span class='boldwarning'>[src] swoops up high!</span>")
 
 	var/negative
@@ -397,7 +398,7 @@ Difficulty: Medium
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/dragon/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE)
+/mob/living/simple_animal/hostile/megafauna/dragon/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE, separation = " ")
 	if(swooping & SWOOP_INVULNERABLE) //to suppress attack messages without overriding every single proc that could send a message saying we got hit
 		return
 	return ..()
@@ -429,11 +430,11 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/lava_warning/Initialize(mapload, reset_time = 10)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fall, reset_time)
+	INVOKE_ASYNC(src, PROC_REF(fall), reset_time)
 	src.alpha = 63.75
 	animate(src, alpha = 255, time = duration)
 
-/obj/effect/temp_visual/lava_warning/proc/fall(var/reset_time)
+/obj/effect/temp_visual/lava_warning/proc/fall(reset_time)
 	var/turf/T = get_turf(src)
 	playsound(T,'sound/magic/fleshtostone.ogg', 80, TRUE)
 	sleep(duration)
@@ -454,7 +455,7 @@ Difficulty: Medium
 		var/lava_turf = /turf/open/lava/smooth
 		var/reset_turf = T.type
 		T.ChangeTurf(lava_turf, flags = CHANGETURF_INHERIT_AIR)
-		addtimer(CALLBACK(T, /turf.proc/ChangeTurf, reset_turf, null, CHANGETURF_INHERIT_AIR), reset_time, TIMER_OVERRIDE|TIMER_UNIQUE)
+		addtimer(CALLBACK(T, TYPE_PROC_REF(/turf, ChangeTurf), reset_turf, null, CHANGETURF_INHERIT_AIR), reset_time, TIMER_OVERRIDE|TIMER_UNIQUE)
 
 /obj/effect/temp_visual/drakewall
 	desc = "An ash drakes true flame."
@@ -487,7 +488,7 @@ Difficulty: Medium
 	duration = 10
 
 /obj/effect/temp_visual/dragon_flight
-	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
+	icon = 'icons/mob/lavaland/96x96megafauna.dmi'
 	icon_state = "dragon"
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_x = -16
@@ -496,7 +497,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/dragon_flight/Initialize(mapload, negative)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/flight, negative)
+	INVOKE_ASYNC(src, PROC_REF(flight), negative)
 
 /obj/effect/temp_visual/dragon_flight/proc/flight(negative)
 	if(negative)
@@ -504,7 +505,7 @@ Difficulty: Medium
 	else
 		animate(src, pixel_x = DRAKE_SWOOP_HEIGHT*0.1, pixel_z = DRAKE_SWOOP_HEIGHT*0.15, time = 3, easing = BOUNCE_EASING)
 	sleep(3)
-	icon_state = "swoop"
+	icon_state = "dragon_swoop"
 	if(negative)
 		animate(src, pixel_x = -DRAKE_SWOOP_HEIGHT, pixel_z = DRAKE_SWOOP_HEIGHT, time = 7)
 	else
@@ -548,7 +549,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/target/Initialize(mapload, list/flame_hit)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fall, flame_hit)
+	INVOKE_ASYNC(src, PROC_REF(fall), flame_hit)
 
 /obj/effect/temp_visual/target/proc/fall(list/flame_hit)
 	var/turf/T = get_turf(src)
@@ -598,3 +599,5 @@ Difficulty: Medium
 
 /mob/living/simple_animal/hostile/megafauna/dragon/lesser/grant_achievement(medaltype,scoretype)
 	return
+
+/mob/living/simple_animal/hostile/megafauna/dragon/icemoon

@@ -15,16 +15,12 @@
 	rarity = 30
 	var/list/mutations = list()
 	reagents_add = list(/datum/reagent/medicine/charcoal = 0.04, /datum/reagent/consumable/nutriment = 0.02)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/seeds/kudzu/Copy()
 	var/obj/item/seeds/kudzu/S = ..()
 	S.mutations = mutations.Copy()
 	return S
-
-/obj/item/seeds/kudzu/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] swallows the pack of kudzu seeds! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	plant(user)
-	return (BRUTELOSS)
 
 /obj/item/seeds/kudzu/proc/plant(mob/user)
 	if(isspaceturf(user.loc))
@@ -52,7 +48,8 @@
 	var/text_string = ""
 	for(var/datum/spacevine_mutation/SM in mutations)
 		text_string += "[(text_string == "") ? "" : ", "][SM.name]"
-	text += "\n- Plant Mutations: [(text_string == "") ? "None" : text_string]"
+
+	text += "\n Plant Mutations: [(text_string == "") ? "None" : text_string]"
 	return text
 
 /obj/item/seeds/kudzu/on_chem_reaction(datum/reagents/S)

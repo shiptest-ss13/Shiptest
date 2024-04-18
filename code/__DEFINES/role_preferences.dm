@@ -41,8 +41,7 @@
 #define ROLE_FAMILIES "Familes Antagonists"
 #define ROLE_SYNDICATE_CYBERSUN "Cybersun Space Syndicate" //Ghost role syndi from Forgottenship ruin
 #define ROLE_SYNDICATE_CYBERSUN_CAPTAIN "Cybersun Space Syndicate Captain" //Forgottenship captain syndie
-
-#define ROLE_BORER "borer" //WS Edit - Boreres
+#define ROLE_BORER "borer"
 
 //Missing assignment means it's not a gamemode specific role, IT'S NOT A BUG OR ERROR.
 //The gamemode specific ones are just so the gamemodes can query whether a player is old enough
@@ -54,7 +53,6 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_CHANGELING = /datum/game_mode/changeling,
 	ROLE_WIZARD = /datum/game_mode/wizard,
 	ROLE_MALF,
-	ROLE_REV = /datum/game_mode/revolution,
 	ROLE_ALIEN,
 	ROLE_PAI,
 	ROLE_CULTIST = /datum/game_mode/cult,
@@ -62,17 +60,14 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_NINJA,
 	ROLE_OBSESSED,
 	ROLE_SPACE_DRAGON,
-	ROLE_MONKEY = /datum/game_mode/monkey,
 	ROLE_REVENANT,
 	ROLE_ABDUCTOR,
 	ROLE_DEVIL = /datum/game_mode/devil,
 	ROLE_INTERNAL_AFFAIRS = /datum/game_mode/traitor/internal_affairs,
 	ROLE_SENTIENCE,
-	ROLE_FAMILIES = /datum/game_mode/gang,
 	ROLE_BORER
-)) //WS Edit - Borers
+))
 
 //Job defines for what happens when you fail to qualify for any job during job selection
-#define BEOVERFLOW 1
-#define BERANDOMJOB 2
-#define RETURNTOLOBBY 3
+#define BERANDOMJOB 1
+#define RETURNTOLOBBY 2

@@ -1,5 +1,14 @@
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Icon, LabeledList, NoticeBox, ProgressBar, Section } from '../components';
+import {
+  Box,
+  Button,
+  Flex,
+  Icon,
+  LabeledList,
+  NoticeBox,
+  ProgressBar,
+  Section,
+} from '../components';
 import { NtosWindow } from '../layouts';
 
 export const NtosNetDownloader = (props, context) => {
@@ -14,29 +23,18 @@ export const NtosNetDownloader = (props, context) => {
     hackedavailable,
   } = data;
   return (
-    <NtosWindow
-      theme={PC_device_theme}
-      width={480}
-      height={735}
-      resizable>
+    <NtosWindow theme={PC_device_theme} width={480} height={735} resizable>
       <NtosWindow.Content scrollable>
         {!!error && (
           <NoticeBox>
-            <Box mb={1}>
-              {error}
-            </Box>
-            <Button
-              content="Reset"
-              onClick={() => act('PRG_reseterror')} />
+            <Box mb={1}>{error}</Box>
+            <Button content="Reset" onClick={() => act('PRG_reseterror')} />
           </NoticeBox>
         )}
         <Section>
           <LabeledList>
             <LabeledList.Item label="Disk usage">
-              <ProgressBar
-                value={disk_used}
-                minValue={0}
-                maxValue={disk_size}>
+              <ProgressBar value={disk_used} minValue={0} maxValue={disk_size}>
                 {`${disk_used} GQ / ${disk_size} GQ`}
               </ProgressBar>
             </LabeledList.Item>
@@ -44,30 +42,24 @@ export const NtosNetDownloader = (props, context) => {
         </Section>
         <Section>
           {downloadable_programs
-            .filter(program => program.access)
-            .map(program => (
-              <Program
-                key={program.filename}
-                program={program} />
+            .filter((program) => program.access)
+            .map((program) => (
+              <Program key={program.filename} program={program} />
             ))}
           {downloadable_programs
-            .filter(program => !program.access)
-            .map(program => (
-              <Program
-                key={program.filename}
-                program={program} />
+            .filter((program) => !program.access)
+            .map((program) => (
+              <Program key={program.filename} program={program} />
             ))}
         </Section>
         {!!hackedavailable && (
           <Section title="UNKNOWN Software Repository">
             <NoticeBox mb={1}>
-              Please note that Nanotrasen does not recommend download
-              of software from non-official servers.
+              Please note that Nanotrasen does not recommend download of
+              software from non-official servers.
             </NoticeBox>
-            {hacked_programs.map(program => (
-              <Program
-                key={program.filename}
-                program={program} />
+            {hacked_programs.map((program) => (
+              <Program key={program.filename} program={program} />
             ))}
           </Section>
         )}
@@ -98,13 +90,14 @@ const Program = (props, context) => {
           {program.size} GQ
         </Flex.Item>
         <Flex.Item ml={2} width="94px" textAlign="center">
-          {program.filename === downloadname && (
+          {(program.filename === downloadname && (
             <ProgressBar
               color="green"
               minValue={0}
               maxValue={downloadsize}
-              value={downloadcompletion} />
-          ) || (
+              value={downloadcompletion}
+            />
+          )) || (
             <Button
               fluid
               icon="download"
@@ -112,9 +105,12 @@ const Program = (props, context) => {
               disabled={
                 downloading || program.size > disk_free || !program.access
               }
-              onClick={() => act('PRG_downloadfile', {
-                filename: program.filename,
-              })} />
+              onClick={() =>
+                act('PRG_downloadfile', {
+                  filename: program.filename,
+                })
+              }
+            />
           )}
         </Flex.Item>
       </Flex>
@@ -124,7 +120,7 @@ const Program = (props, context) => {
           Incompatible!
         </Box>
       )}
-      {!(program.access) && (
+      {!program.access && (
         <Box mt={1} italic fontSize="12px" position="relative">
           <Icon mx={1} color="red" name="times" />
           Insufficient credentials!

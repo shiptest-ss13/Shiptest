@@ -7,12 +7,12 @@
 
 /turf/proc/lighting_clear_overlay()
 	if (lighting_object)
-		qdel(lighting_object, TRUE)
+		qdel(lighting_object, force=TRUE)
 
 // Builds a lighting object for us, but only if our area is dynamic.
 /turf/proc/lighting_build_overlay()
 	if (lighting_object)
-		qdel(lighting_object,force=TRUE) //Shitty fix for lighting objects persisting after death
+		qdel(lighting_object, force=TRUE) //Shitty fix for lighting objects persisting after death
 
 	var/area/A = loc
 	if (!IS_DYNAMIC_LIGHTING(A) && !light_sources)
@@ -99,7 +99,7 @@
 /turf/proc/change_area(area/old_area, area/new_area)
 	if(SSlighting.initialized)
 		if (new_area.dynamic_lighting != old_area.dynamic_lighting)
-			if (new_area.dynamic_lighting)
+			if (IS_DYNAMIC_LIGHTING(src))
 				lighting_build_overlay()
 			else
 				lighting_clear_overlay()

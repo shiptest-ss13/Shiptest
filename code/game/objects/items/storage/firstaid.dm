@@ -9,31 +9,34 @@
  * First Aid Kits
  */
 
-/*WS Edit - In Modularized File
-
 /obj/item/storage/firstaid
 	name = "first-aid kit"
 	desc = "It's an emergency medical kit for those serious boo-boos."
+	icon = 'icons/obj/storage.dmi'
 	icon_state = "firstaid"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
+	drop_sound = 'sound/items/handling/cardboardbox_drop.ogg'
+	pickup_sound =  'sound/items/handling/cardboardbox_pickup.ogg'
 	throw_speed = 3
 	throw_range = 7
 	var/empty = FALSE
 	var/damagetype_healed //defines damage type of the medkit. General ones stay null. Used for medibot healing bonuses
 
+/obj/item/storage/firstaid/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
+
 /obj/item/storage/firstaid/regular
 	icon_state = "firstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
-
-/obj/item/storage/firstaid/regular/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
 
 /obj/item/storage/firstaid/regular/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
@@ -104,6 +107,7 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/suture = 2,
 		/obj/item/stack/medical/mesh = 2,
@@ -115,7 +119,8 @@
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/ancient
-	icon_state = "oldfirstaid"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "firstaid"
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/ancient/PopulateContents()
@@ -138,20 +143,13 @@
 	item_state = "firstaid-ointment"
 	damagetype_healed = BURN
 
-/obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
-	return FIRELOSS
-
-/obj/item/storage/firstaid/fire/Initialize(mapload)
-	. = ..()
-	icon_state = pick("ointment","firefirstaid")
-
 /obj/item/storage/firstaid/fire/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/reagent_containers/pill/patch/aiuri = 3,
-		/obj/item/reagent_containers/spray/hercuri = 1,
+		/obj/item/healthanalyzer = 1,
+		/obj/item/reagent_containers/pill/patch/silver_sulf = 4,
+		/obj/item/reagent_containers/spray/rhigoxane = 1,
 		/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1)
 	generate_items_inside(items_inside,src)
@@ -163,22 +161,34 @@
 	item_state = "firstaid-toxin"
 	damagetype_healed = TOX
 
-/obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return TOXLOSS
-
-/obj/item/storage/firstaid/toxin/Initialize(mapload)
-	. = ..()
-	icon_state = pick("antitoxin","antitoxfirstaid","antitoxfirstaid2")
-
 /obj/item/storage/firstaid/toxin/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
 		/obj/item/storage/pill_bottle/charcoal/less = 1,
 		/obj/item/reagent_containers/syringe/thializid = 3,
 		/obj/item/storage/pill_bottle/potassiodide = 1,
-		/obj/item/reagent_containers/hypospray/medipen/penacid = 1)
+		/obj/item/reagent_containers/hypospray/medipen/penacid = 1,
+	)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/firstaid/radiation
+	name = "radiation treatment kit"
+	desc = "Used to treat severe radiation poisoning."
+	icon_state = "radiation"
+	item_state = "firstaid-ointment" //its yellow
+	damagetype_healed = TOX
+
+/obj/item/storage/firstaid/radiation/PopulateContents()
+	if(empty)
+		return
+	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
+		/obj/item/storage/pill_bottle/potassiodide = 2,
+		/obj/item/reagent_containers/hypospray/medipen/penacid = 2,
+		/obj/item/reagent_containers/hypospray/medipen/anti_rad = 4
+	)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/firstaid/o2
@@ -188,18 +198,11 @@
 	item_state = "firstaid-o2"
 	damagetype_healed = OXY
 
-/obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return OXYLOSS
-
-/obj/item/storage/firstaid/o2/Initialize(mapload)
-	. = ..()
-	icon_state = pick("o2","o2second")
-
 /obj/item/storage/firstaid/o2/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
 		/obj/item/reagent_containers/syringe/perfluorodecalin = 3,
 		/obj/item/reagent_containers/hypospray/medipen/salbutamol = 1,
 		/obj/item/reagent_containers/hypospray/medipen = 1,
@@ -212,22 +215,17 @@
 	icon_state = "brute"
 	item_state = "firstaid-brute"
 	damagetype_healed = BRUTE
-
-/obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
-
-/obj/item/storage/firstaid/brute/Initialize(mapload)
-	. = ..()
-	icon_state = pick("brute","brute2")
+	custom_price = 600
 
 /obj/item/storage/firstaid/brute/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/reagent_containers/pill/patch/styptic = 3,
+		/obj/item/healthanalyzer = 1,
+		/obj/item/reagent_containers/pill/patch/styptic = 2,
+		/obj/item/storage/pill_bottle/trophazole = 1,
 		/obj/item/stack/medical/gauze = 1,
-		/obj/item/storage/pill_bottle/C2/probital = 1,
+		/obj/item/stack/medical/splint = 1,
 		/obj/item/reagent_containers/hypospray/medipen/salacid = 1)
 	generate_items_inside(items_inside,src)
 
@@ -242,6 +240,7 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
+		/obj/item/healthanalyzer = 1,
 		/obj/item/reagent_containers/pill/patch/synthflesh = 3,
 		/obj/item/reagent_containers/hypospray/medipen/atropine = 2,
 		/obj/item/stack/medical/gauze = 1,
@@ -261,6 +260,7 @@
 /obj/item/storage/firstaid/tactical/PopulateContents()
 	if(empty)
 		return
+	new /obj/item/healthanalyzer/advanced(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/defibrillator/compact/combat/loaded(src)
 	new /obj/item/reagent_containers/hypospray/combat(src)
@@ -282,13 +282,15 @@
 
 	var/obj/item/bot_assembly/medbot/A = new
 	if(istype(src, /obj/item/storage/firstaid/fire))
-		A.set_skin("ointment")
+		A.set_skin("medibot_burn")
 	else if(istype(src, /obj/item/storage/firstaid/toxin))
-		A.set_skin("tox")
+		A.set_skin("medibot_toxin")
 	else if(istype(src, /obj/item/storage/firstaid/o2))
-		A.set_skin("o2")
+		A.set_skin("medibot_o2")
 	else if(istype(src, /obj/item/storage/firstaid/brute))
-		A.set_skin("brute")
+		A.set_skin("medibot_brute")
+	else if(istype(src, /obj/item/storage/firstaid/tactical))
+		A.set_skin("medibot_bezerk")
 	user.put_in_hands(A)
 	to_chat(user, "<span class='notice'>You add [S] to [src].</span>")
 	A.robot_arm = S.type
@@ -316,10 +318,7 @@
 	STR.allow_quick_gather = TRUE
 	STR.click_gather = TRUE
 	STR.set_holdable(list(/obj/item/reagent_containers/pill, /obj/item/dice))
-
-/obj/item/storage/pill_bottle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (TOXLOSS)
+	STR.use_sound = 'sound/items/storage/pillbottle.ogg'
 
 /obj/item/storage/pill_bottle/charcoal
 	name = "bottle of charcoal pills"
@@ -358,14 +357,6 @@
 /obj/item/storage/pill_bottle/potassiodide/PopulateContents()
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/pill/potassiodide(src)
-
-/obj/item/storage/pill_bottle/C2/probital
-	name = "bottle of probital pills"
-	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting, may cause fatigue'."
-
-/obj/item/storage/pill_bottle/C2/probital/PopulateContents()
-	for(var/i in 1 to 4)
-		new /obj/item/reagent_containers/pill/C2/probital(src)
 
 /obj/item/storage/pill_bottle/iron
 	name = "bottle of iron pills"
@@ -474,29 +465,10 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/floorpill(src)
 
-///////////////////////////////////////// Psychologist inventory pillbottles
-/obj/item/storage/pill_bottle/happinesspsych
-	name = "happiness pills"
-	desc = "Contains pills used as a last resort means to temporarily stabilize depression and anxiety. WARNING: side effects may include slurred speech, drooling, and severe addiction."
+/obj/item/storage/pill_bottle/trophazole
+	name = "bottle of trophazole pills"
+	desc = "Contains pills used to treat brute damage.The tag in the bottle states 'Eat before ingesting'."
 
-/obj/item/storage/pill_bottle/happinesspsych/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/pill/happinesspsych(src)
-
-/obj/item/storage/pill_bottle/lsdpsych
-	name = "mindbreaker toxin pills"
-	desc = "!FOR THERAPEUTIC USE ONLY! Contains pills used to alleviate the symptoms of Reality Dissociation Syndrome."
-
-/obj/item/storage/pill_bottle/lsdpsych/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/pill/lsdpsych(src)
-
-/obj/item/storage/pill_bottle/paxpsych
-	name = "pax pills"
-	desc = "Contains pills used to temporarily pacify patients that are deemed a harm to themselves or others."
-
-/obj/item/storage/pill_bottle/paxpsych/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/pill/paxpsych(src)
-
-WS End */
+/obj/item/storage/pill_bottle/trophazole/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/pill/trophazole(src)

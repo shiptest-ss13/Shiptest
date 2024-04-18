@@ -1,8 +1,12 @@
 // Icemoon Ruins
 
+//Buried Library
+
 /area/ruin/unpowered/buried_library
 	name = "Buried Library"
 	icon_state = "dk_yellow"
+
+//Bathhouse
 
 /area/ruin/powered/bathhouse
 	name = "Bath House"
@@ -10,25 +14,29 @@
 	mood_bonus = 10
 	mood_message = "<span class='nicegreen'>I wish I could stay here forever.</span>\n"
 
-/turf/closed/wall/bathhouse
-	desc = "It's cool to the touch, pleasantly so."
-	icon = 'icons/turf/shuttleold.dmi'
-	icon_state = "block"
-	base_icon_state = "block"
-	smoothing_flags = NONE
-	canSmoothWith = null
+//corporate rejects
 
-// slimetesters
+//Corporate Rejects
 
-/area/ruin/powered/slimerancher
-	name = "Slime Ranching Biodome"
+/area/ruin/unpowered/corprejectrooms
+	name = "NT Security Solutions Site Gamma Rooms"
 	icon_state = "dk_yellow"
 
-/area/ruin/powered/slimerancher/house
-	name = "Slime Ranching Hovel"
+/area/ruin/unpowered/corprejectengineering
+	name = "NT Security Solutions Site Gamma Engineering"
+	icon_state = "dk_yellow"
 
-/area/ruin/powered/slimerancher/prison
-	name = "Slime Ranching Prison"
+/area/ruin/unpowered/corprejectvault
+	name = "NT Security Solutions Site Gamma Vault"
+	icon_state = "dk_yellow"
 
-/area/ruin/powered/slimerancher/maints
-	name = "Slime Ranching Maints"
+//Hydroponics lab
+
+/area/ruin/powered/hydroponicslab
+	name = "Hydroponics Lab"
+	icon_state = "dk_yellow"
+
+// Crashed Holemaker
+/area/ruin/unpowered/crashed_holemaker
+	name = "NTSV Holemaker II" // In honor of the kugelblitz shenanigan of all time
+	icon_state = "green"

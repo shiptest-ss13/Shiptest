@@ -20,37 +20,25 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	if(length(CONFIG_GET(keyed_list/cross_server)))
 		add_verb(src, /mob/dead/proc/server_hop)
 	set_focus(src)
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 	return INITIALIZE_HINT_NORMAL
 
 /mob/dead/canUseStorage()
 	return FALSE
 
-/mob/dead/dust(just_ash, drop_items, force)	//ghosts can't be vaporised.
+/mob/dead/dust(just_ash, drop_items, force)
 	return
 
-/mob/dead/gib()		//ghosts can't be gibbed.
+/mob/dead/gib()
 	return
 
-/mob/dead/ConveyorMove()	//lol
+/mob/dead/ConveyorMove()
 	return
-
-/mob/dead/forceMove(atom/destination)
-	var/turf/old_turf = get_turf(src)
-	var/turf/new_turf = get_turf(destination)
-	if (old_turf?.z != new_turf?.z)
-		onTransitZ(old_turf?.z, new_turf?.z)
-	var/oldloc = loc
-	loc = destination
-	Moved(oldloc, NONE, TRUE)
 
 /mob/dead/get_status_tab_items()
 	. = ..()
-	. += ""
-	. += "Game Mode: [SSticker.hide_mode ? "Secret" : "[GLOB.master_mode]"]"
-
 	if(SSticker.HasRoundStarted())
 		return
-
 	var/time_remaining = SSticker.GetTimeLeft()
 	if(time_remaining > 0)
 		. += "Time To Start: [round(time_remaining/10)]s"
@@ -104,32 +92,23 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 	C << link("[addr]?server_hop=[key]")
 
-/mob/dead/proc/update_z(new_z) // 1+ to register, null to unregister
-	if (registered_z != new_z)
-		if (registered_z)
-			SSmobs.dead_players_by_zlevel[registered_z] -= src
-		if (client)
-			if (new_z)
-				SSmobs.dead_players_by_zlevel[new_z] += src
-			registered_z = new_z
-		else
-			registered_z = null
-
-/mob/dead/Login()
-	. = ..()
-	if(!. || !client)
-		return FALSE
-	var/turf/T = get_turf(src)
-	if (isturf(T))
-		update_z(T.z)
-
 /mob/dead/auto_deadmin_on_login()
 	return
 
-/mob/dead/Logout()
-	update_z(null)
+/mob/dead/Destroy()
+	for(var/level in SSmobs.dead_players_by_virtual_z)
+		LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, level, src)
+	// Forgive me for this one. This loop can be replaced by the line below by the one brave enough to fix
+	// observers not cleanly removing themselves from the dead_players_by_virtual_z /list when they should
+	//LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
 	return ..()
 
-/mob/dead/onTransitZ(old_z,new_z)
-	..()
-	update_z(new_z)
+/mob/dead/Login()
+	. = ..()
+	if(!client)
+		return
+	LAZYADDASSOCLIST(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)
+
+/mob/dead/Logout()
+	. = ..()
+	LAZYREMOVEASSOC(SSmobs.dead_players_by_virtual_z, "[virtual_z()]", src)

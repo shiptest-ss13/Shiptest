@@ -1,6 +1,6 @@
 /**
-  * Attached to movable atoms with opacity. Listens to them move and updates their old and new turf loc's opacity accordingly.
-  */
+ * Attached to movable atoms with opacity. Listens to them move and updates their old and new turf loc's opacity accordingly.
+ */
 /datum/element/light_blocking
 	element_flags = ELEMENT_DETACH
 
@@ -9,7 +9,7 @@
 	. = ..()
 	if(!ismovable(target))
 		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_MOVABLE_MOVED, .proc/on_target_move)
+	RegisterSignal(target, COMSIG_MOVABLE_MOVED, PROC_REF(on_target_move))
 	var/atom/movable/movable_target = target
 	if(isturf(movable_target.loc))
 		var/turf/turf_loc = movable_target.loc

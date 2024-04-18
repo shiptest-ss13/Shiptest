@@ -21,19 +21,21 @@
 	if(!is_freq_listening(signal))
 		return
 
-	signal.levels = list()
+	signal.map_zones = list()
 
 	// send the signal to the hub if possible, or a bus otherwise
 	if(!relay_information(signal, /obj/machinery/telecomms/hub))
 		relay_information(signal, /obj/machinery/telecomms/bus)
 
 /obj/machinery/telecomms/receiver/proc/check_receive_level(datum/signal/subspace/signal)
-	if (get_virtual_z_level() in signal.levels)
+	var/datum/map_zone/mapzone = get_map_zone()
+	if (mapzone in signal.map_zones)
 		return TRUE
 
 	for(var/obj/machinery/telecomms/hub/H in links)
 		for(var/obj/machinery/telecomms/relay/R in H.links)
-			if(R.can_receive(signal) && (R.get_virtual_z_level() in signal.levels))
+			var/datum/map_zone/relay_mapzone = R.get_map_zone()
+			if(R.can_receive(signal) && (relay_mapzone in signal.map_zones))
 				return TRUE
 
 	return FALSE
@@ -46,7 +48,7 @@
 	id = "Receiver A"
 	network = "tcommsat"
 	autolinkers = list("receiverA") // link to relay
-	freq_listening = list(FREQ_SCIENCE, FREQ_MEDICAL, FREQ_SUPPLY, FREQ_SERVICE)
+	freq_listening = list(FREQ_SOLGOV, FREQ_NANOTRASEN, FREQ_MINUTEMEN, FREQ_COMMAND, FREQ_COMMON)
 
 
 //--PRESET RIGHT--//
@@ -55,7 +57,7 @@
 	id = "Receiver B"
 	network = "tcommsat"
 	autolinkers = list("receiverB") // link to relay
-	freq_listening = list(FREQ_COMMAND, FREQ_ENGINEERING, FREQ_SECURITY)
+	freq_listening = list(FREQ_INTEQ, FREQ_SYNDICATE, FREQ_PIRATE, FREQ_COMMON)
 
 	//Common and other radio frequencies for people to freely use
 /obj/machinery/telecomms/receiver/preset_right/Initialize()

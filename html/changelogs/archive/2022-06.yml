@@ -1,0 +1,235 @@
+2022-06-02:
+  Ebin-Halcyon:
+  - imageadd: The IRMG have sent in a shipment of clothing for their frontline engineers
+      and medical officers!
+  Vexylius:
+  - bugfix: An update of autolathe software is now ready for download. This update
+      fixes a glitch that was blocking printing of floor painters (you can now actually
+      print floor painters and don't have to do anything).
+  - rscadd: Masinyane-Class Ship
+  coleminerman:
+  - rscadd: Added the creatively named "Admin Gun Dealer Ship"
+  - rscadd: Added a json that actually makes it function
+  retlaw34:
+  - imageadd: resprites goggles
+  tiramisuapimancer:
+  - tweak: phorids and skeletons like food with the DAIRY tag now
+2022-06-06:
+  Azarak:
+  - rscadd: Weathers
+2022-06-07:
+  MarkSuckerberg:
+  - rscdel: Paychecks. Where were they coming from anyways?
+  - rscdel: Most functions of departmental budget cards.
+  PrefabQuasar:
+  - bugfix: fixed herbal healing item icons
+  - bugfix: fixed a bug where you were able to dupe certain item reactions with foam
+  - tweak: herbal healing items have been nerfed to be on par with sutures and mesh
+  Zevotech:
+  - balance: remapped jungle_seedling.dmm
+2022-06-08:
+  Apogee-dev:
+  - rscadd: Added Inteq Colossus-class Armored Frigate
+  AquillaF:
+  - rscadd: Caravan-Class Modular Ship
+  IndusRobot:
+  - bugfix: Fixes missing nautical sword sprite by applying cutlassred icon
+  - bugfix: Fixes flipped tables trapping movement until righted
+  - bugfix: Fixes Canary alert program not loading alerts
+  PositiveEntropy:
+  - imageadd: Resprites the Morpheus Cyberkinetics IPC Chassis, as well as the Synth
+      Chassis, of which it was a duplicate of.
+  PositiveEntropy, AxieTheAxolotl:
+  - imageadd: Syndicate turtleneck and combat uniforms have been resprited.
+  Recoherent:
+  - bugfix: Fixes joining through administrator lock via spawning new ship.
+  TheNeoGamer42:
+  - bugfix: The helm console no longer draws 10kW for little reason. Probably.
+  disappointedButNotSuprised:
+  - rscadd: Added the MedTech lab ruin
+  kestoloppu:
+  - tweak: shortened vox glove sprite directionals
+  phoaly:
+  - tweak: Minor map changes to the Rube Goldberg
+  retlaw34:
+  - imageadd: Disk sprites have been edited slightly.
+  tiramisuapimancer:
+  - rscdel: red armband gone from loadout
+  triplezeta:
+  - bugfix: ghosts can view the helm console again
+  - bugfix: helm viewscreens can be used even if your helm is locked
+2022-06-10:
+  PrefabQuasar:
+  - tweak: midway has been remapped
+2022-06-11:
+  Recoherent:
+  - bugfix: Space Radioshack got new tablets in stock, so you can select actual functional
+      ones in your loadout as opposed to the completely useless empty display tablets.
+  dragomagol:
+  - tweak: borgs now choose their starting module with a radial menu
+2022-06-12:
+  tiramisuapimancer:
+  - bugfix: IPC stomach and ears shouldn't decay while dead now
+2022-06-13:
+  PositiveEntropy:
+  - imageadd: Resprites the IPC/pAI recharge cable!
+  bluezorua:
+  - tweak: You now require twice as much nicotine to OD you
+  - tweak: Cigarettes and cigars now deal less damage to your lungs
+  retlaw34:
+  - rscadd: Cobra 20
+  - imageadd: The bulldog and C20r have been resprited
+  triplezeta:
+  - spellcheck: renames the cybersun raincoat to the cybersun labcoat
+2022-06-15:
+  IndusRobot:
+  - bugfix: Fixes defib mounts eating defibs with no cell
+  - bugfix: Fixes unpowered holopads bricking calling holopads
+  - bugfix: Fix engi borgs losing the tile module when reskinning the tile
+  - bugfix: Rename floor tile crafting names for iron sheet crafting
+  - bugfix: Fixes rnd servers not initializing correctly on map load
+  Qustinnus:
+  - refactor: Ambience is now in a subsystem, and plays every now and then without
+      you having to move to a new area for it to play
+  dragomagol:
+  - server: makes the discord verification instructions accurate
+  thgvr:
+  - imageadd: New digitigrade sprites & compatability for mining boots, winter boots,
+      workboots, and jackboots.
+  tmtmtl30:
+  - bugfix: the end-round bluespace jump shouldn't spam the runtime log anymore
+  - tweak: Overmap encounter docking port placement has been tweaked to be slightly
+      more consistent.
+2022-06-17:
+  IndusRobot:
+  - rscadd: Added unique ship access
+  - rscadd: Added an option to card modification programs to toggle unique ship access
+  - rscadd: Added an option to card modification programs to toggle ID access to your
+      ship
+  - rscadd: Added a borg/AI upgrade chip that can be printed at card modification
+      programs
+  - config: Added an option to force unique ship access on a specific ship when it
+      is created
+  MarkSuckerberg:
+  - imageadd: Totally resprites Kepori!
+  - imageadd: Totally resprites Kepori feather patterns, as well. There's a lot more
+      than there used to be!
+  - rscadd: Kepori now have sprites for bedsheets and belts.
+  - tweak: Kepori body size adjustment removed for sake of sprite clarity.
+  - code_imp: Added a new, better offset system copied from Baystation 12.
+  Quantum-M, Retlaw34:
+  - tweak: Resprites intercoms
+  bluezorua:
+  - rscadd: Boyardee-B class updates
+  jupyterkat:
+  - bugfix: fixed hearing being broken sometimes
+  mel-byond:
+  - rscadd: Added more design disks, with varying capacity.
+  - rscadd: Autolathes can now fabricate autolathe-friendly designs off a disk, working
+      with more types of materials.
+  - balance: Autolathes no longer import designs, instead it takes one disk at a time
+      with designs on it.
+  retlaw34, Apogee, Imaginos16, Azlan:
+  - rscadd: indie engineer outfit
+  - imageadd: A ton of enigneer clothing was redone
+  tetrazeta, ApogeeDev, Halcyon:
+  - imageadd: Updated sprites for security helmets, swat helmets, and riot helmets.
+  - refactor: helmet flashlights are now overlays
+2022-06-20:
+  tmtmtl30:
+  - code_imp: Removed deprecated map_generator variable on /area.
+2022-06-22:
+  PrefabQuasar:
+  - rscadd: The Tranquility-class Flying Apartment Complex is now available for purchase!
+  mel-byond:
+  - rscadd: TGUI for ejecting materials from the Autolathe
+  - bugfix: Autolathe not accepting plastic
+  - bugfix: Autolathe material display not showing colors correctly
+2022-06-24:
+  ? ''
+  : - rscadd: Added Kepori tail feathers
+    - imageadd: Kepori plumage now works when it's a different color from the base
+    - imageadd: Added Kepori tail feathers
+    - spellcheck: Fixed the text of various UI elements
+  Bokkiewokkie:
+  - rscadd: Added the option for IPCs to spawn with MMI's instead of posibrains
+  - code_imp: Slightly refactored IPC brain spawning behaviour.
+  Mothblocks, Rohesie, IndieanaJones, jjpark-kb:
+  - rscadd: Disarming a monkey is now the same as disarming a human.
+  - rscadd: Monkeys can now be shoved into humans and vice versa.
+  - refactor: Allows damage that baked beanomorphs, monkeys and slimes deal to humans
+      to be modified instead of being hardcoded values.
+  - refactor: Allows different xenomorph types to deal different amounts of damage,
+      if future coders or VV-happy admins will it.
+  - balance: Xenos have been rebalanced, removing their hardstuns on their disarm
+      and neurotoxin, along with a slew of other changes.
+  - bugfix: Queen death now properly slows down xenomorphs
+  - bugfix: Facehuggers will now attempt to get near targets and impregnate them autonomously
+      again
+  - refactor: Facehuggers have been refactored into simplemobs, as opposed to being
+      items
+  - balance: xeno weeds spread cooldown lowered from 15-20 seconds to 5-10 seconds
+  retlaw34:
+  - rscadd: 'New minor faction: Saint-Roumain Militia'
+  - rscadd: A new loadout outfit that makes you feel like you need to quest
+  - rscadd: The Rigoureux has gotten a makeover, courtesy of the Roumains. It is still
+      at drydock.
+  - rscdel: The old Rigoureux  has been renamed to Riggs-T and is unbuyable
+  - bugfix: fixes wood tile colors (ships that look odd with the fixed colors can
+      use the floors tiles in hand to recolor them)
+  - imageadd: floor tile object resprite
+  tmtmtl30:
+  - bugfix: Fixed some instances in the code where biotypes were assumed to be lists,
+      instead of bitflags, when they're supposed to be bitflags.
+  triplezeta:
+  - rscadd: fireblossoms can be worn on your head
+2022-06-25:
+  Phoaly:
+  - tweak: Tweaks the Rube Goldberg
+  PrefabQuasar:
+  - tweak: kepori pounces are now a species action toggle!
+  Zevotech:
+  - balance: removed health regeneration from ice mining mobs
+  - balance: removed armor peircing from the ice whelp
+  - balance: lowered the ice whelp's aggro range
+  triplezeta:
+  - bugfix: Some clothing will now display properly on vox.
+2022-06-28:
+  TypeVar:
+  - tweak: json file job list
+  - tweak: RND and medbay
+  Vexylius:
+  - rscadd: Welding animation from TauCeti
+  Zevotech:
+  - rscadd: Bombmaker's cabin, a far more tasteful remake of the unabomber cabin ruin
+  - rscadd: Two claymores and a heroine bud to jungle_roomates
+  - rscadd: Adds some extra loot to jungle_surface_ninjashrine like throwing stars
+      and a lesser smoke spell
+  - rscadd: Adds some extra various junk to the coffins on jungle_surface_coffinpirate
+      to make it a bit more worthwile compared to the other ruins.
+  - rscadd: Adds some extra loot to jungle_spider.dmm, mainly the DNA scanner and
+      cloning console boards needed to make the cloning pod function and a toxins
+      medkit
+  - rscdel: Unabomber cabin ruin
+  - tweak: Remapped and expanded Jungle_witch.dmm, including now a wizard hardsuit
+      as final loot
+  - tweak: Remapped and expanded Jungle_syndicate.dmm, with final loot now being a
+      c20r and syndicate hardsuit
+  - bugfix: Removed the two immovable rods from jungle_surface_weed_shack.dmm
+  - bugfix: Removed impassable lattices and pointless indestructible walls from jungle_hangar.dmm
+2022-06-30:
+  tmtmtl30, tetrazeta:
+  - rscadd: Pouring -- you can now pour out a portion of a beaker's contents by clicking
+      on an object with a beaker while on help intent.
+  - rscadd: Liquid cement, made from heated carbon, hydrogen, oxygen, and water; it
+      can be concentrated into hexement by adding phenol. Don't eat it.
+  - rscadd: Concrete, made by adding sand to liquid cement. Similarly, hexacrete can
+      be made by adding sand to a beaker of hexement.
+  - rscadd: Concrete floors, made by pouring concrete or hexacrete onto catwalks over
+      plating. Use a chisel to change how they look, but be careful not to step on
+      them while they're wet.
+  - rscadd: Concrete walls, made by pouring concrete onto metal grilles. They take
+      30 seconds to fully harden, and will break if subjected to enough punishment.
+  - rscadd: Hexacrete walls, stronger concrete walls that take longer to harden, made
+      by pouring hexacrete onto metal girders. Good for building explosion-resistant
+      bunkers.

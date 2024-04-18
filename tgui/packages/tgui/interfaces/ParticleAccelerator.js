@@ -1,34 +1,29 @@
-import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
 import { Box, Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
 export const ParticleAccelerator = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    assembled,
-    power,
-    strength,
-  } = data;
+  const { assembled, power, strength } = data;
   return (
-    <Window
-      width={350}
-      height={185}>
+    <Window width={350} height={185}>
       <Window.Content>
         <Section>
           <LabeledList>
             <LabeledList.Item
               label="Status"
-              buttons={(
+              buttons={
                 <Button
-                  icon={"sync"}
-                  content={"Run Scan"}
-                  onClick={() => act('scan')} />
-              )}>
-              <Box color={assembled ? "good" : "bad"}>
+                  icon={'sync'}
+                  content={'Run Scan'}
+                  onClick={() => act('scan')}
+                />
+              }
+            >
+              <Box color={assembled ? 'good' : 'bad'}>
                 {assembled
-                  ? "Ready - All parts in place"
-                  : "Unable to detect all parts"}
+                  ? 'Ready - All parts in place'
+                  : 'Unable to detect all parts'}
               </Box>
             </LabeledList.Item>
           </LabeledList>
@@ -41,20 +36,21 @@ export const ParticleAccelerator = (props, context) => {
                 content={power ? 'On' : 'Off'}
                 selected={power}
                 disabled={!assembled}
-                onClick={() => act('power')} />
+                onClick={() => act('power')}
+              />
             </LabeledList.Item>
             <LabeledList.Item label="Particle Strength">
               <Button
                 icon="backward"
                 disabled={!assembled}
-                onClick={() => act('remove_strength')} />
-              {' '}
-              {String(strength).padStart(1, '0')}
-              {' '}
+                onClick={() => act('remove_strength')}
+              />{' '}
+              {String(strength).padStart(1, '0')}{' '}
               <Button
                 icon="forward"
                 disabled={!assembled}
-                onClick={() => act('add_strength')} />
+                onClick={() => act('add_strength')}
+              />
             </LabeledList.Item>
           </LabeledList>
         </Section>

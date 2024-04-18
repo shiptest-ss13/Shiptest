@@ -3,19 +3,35 @@
 #define COLOR_INPUT_DISABLED "#F0F0F0"
 #define COLOR_INPUT_ENABLED "#D3B5B5"
 
-//BeginWS
 #define COLOR_DARKMODE_DARKBACKGROUND "#383838"
 #define COLOR_DARKMODE_BACKGROUND "#272727"
 #define COLOR_DARKMODE_HEADER "#ffffff"
 #define COLOR_DARKMODE_TEXT "#000000"
-//EndWS
+
+
+#define COLOR_MONOTILE "#545c68"
+#define COLOR_TILE_GRAY "#444547"
+#define COLOR_TILE_DARK_GRAY "#404040"
+#define COLOR_WARNING "#D2D53D"
+
+#define WOOD_COLOR_GENERIC "#55391A"
+#define WOOD_COLOR_RICH "#792f27"
+#define WOOD_COLOR_PALE "#D2BC9D"
+#define WOOD_COLOR_PALE2 "#E6D2BA"
+#define WOOD_COLOR_PALE3 "#D5A66E"
+#define WOOD_COLOR_BLACK "#332521"
+#define WOOD_COLOR_CHOCOLATE "#543C30"
+#define WOOD_COLOR_YELLOW "#E3994E"
 
 #define COLOR_WHITE "#FFFFFF"
+#define COLOR_OFF_WHITE "#FFF5ED"
 #define COLOR_VERY_LIGHT_GRAY "#EEEEEE"
 #define COLOR_SILVER "#C0C0C0"
 #define COLOR_GRAY "#808080"
-#define COLOR_FLOORTILE_GRAY "#8D8B8B"
+#define COLOR_FLOORTILE_GRAY "#a3a2a0"
+#define COLOR_WEBSAFE_DARK_GRAY "#484848"
 #define COLOR_ALMOST_BLACK "#333333"
+#define COLOR_FULL_TONER_BLACK "#101010"
 #define COLOR_BLACK "#000000"
 #define COLOR_HALF_TRANSPARENT_BLACK "#0000007A"
 
@@ -28,6 +44,7 @@
 #define COLOR_LIGHT_GRAYISH_RED "#E4C7C5"
 /// Warm but extremely diluted red. rgb(250, 130, 130)
 #define COLOR_SOFT_RED "#FA8282"
+#define COLOR_BUBBLEGUM_RED "#950A0A"
 
 #define COLOR_YELLOW "#FFFF00"
 #define COLOR_VIVID_YELLOW "#FBFF23"
@@ -53,11 +70,15 @@
 
 #define COLOR_PINK "#FFC0CB"
 #define COLOR_MOSTLY_PURE_PINK "#E4005B"
+#define COLOR_BLUSH_PINK "#D84C59"
+#define COLOR_FADED_PINK "#ff80d5"
+#define COLOR_BLUSH_TEAL "#009696"
 #define COLOR_MAGENTA "#FF00FF"
 #define COLOR_STRONG_MAGENTA "#B800B8"
 #define COLOR_PURPLE "#800080"
 #define COLOR_VIOLET "#B900F7"
 #define COLOR_STRONG_VIOLET "#6927c5"
+#define COLOR_DARK_PURPLE "#551A8B"
 
 #define COLOR_ORANGE "#FF9900"
 #define COLOR_TAN_ORANGE "#FF7B00"
@@ -141,9 +162,14 @@
 #define LIGHT_COLOR_LAVA "#C48A18"
 /// Bright, non-saturated red. Leaning slightly towards pink for visibility. rgb(250, 100, 75)
 #define LIGHT_COLOR_FLARE "#FA644B"
+/// Vivid red. Leans a bit darker to accentuate red colors and leave other channels a bit dry.  rgb(200, 25, 25)
+#define LIGHT_COLOR_INTENSE_RED "#C81919"
 /// Weird color, between yellow and green, very slimy. rgb(175, 200, 75)
 #define LIGHT_COLOR_SLIME_LAMP "#AFC84B"
 /// Extremely diluted yellow, close to skin color (for some reason). rgb(250, 225, 175)
 #define LIGHT_COLOR_TUNGSTEN "#FAE1AF"
 /// Barely visible cyan-ish hue, as the doctor prescribed. rgb(240, 250, 250)
 #define LIGHT_COLOR_HALOGEN "#F0FAFA"
+
+/// Color used for default blood
+#define COLOR_BLOOD "#CC0000"

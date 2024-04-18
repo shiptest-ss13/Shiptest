@@ -1,4 +1,4 @@
-* text=auto
+* text=lf
 
 ## Enforce text mode and LF line breaks
 *.bat text eol=lf
@@ -34,6 +34,8 @@
 *.jpg binary
 *.png binary
 *.so binary
+*.ogg binary
+*.mid binary
 
 ## Merger hooks, run tools/hooks/install.bat or install.sh to set up
 *.dmm text eol=lf merge=dmm

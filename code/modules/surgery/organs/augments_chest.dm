@@ -23,7 +23,7 @@
 		synthesizing = TRUE
 		to_chat(owner, "<span class='notice'>You feel less hungry...</span>")
 		owner.adjust_nutrition(50)
-		addtimer(CALLBACK(src, .proc/synth_cool), 50)
+		addtimer(CALLBACK(src, PROC_REF(synth_cool)), 50)
 
 /obj/item/organ/cyberimp/chest/nutriment/proc/synth_cool()
 	synthesizing = FALSE
@@ -59,14 +59,14 @@
 	if(reviving)
 		switch(owner.stat)
 			if(UNCONSCIOUS, HARD_CRIT)
-				addtimer(CALLBACK(src, .proc/heal), 3 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(heal)), 3 SECONDS)
 			else
 				COOLDOWN_START(src, reviver_cooldown, revive_cost)
 				reviving = FALSE
 				to_chat(owner, "<span class='notice'>Your reviver implant shuts down and starts recharging. It will be ready again in [DisplayTimeText(revive_cost)].</span>")
 		return
 
-	if(!COOLDOWN_FINISHED(src, reviver_cooldown) || owner.suiciding)
+	if(!COOLDOWN_FINISHED(src, reviver_cooldown))
 		return
 
 	switch(owner.stat)
@@ -105,7 +105,7 @@
 		if(H.stat != DEAD && prob(50 / severity) && H.can_heartattack())
 			H.set_heartattack(TRUE)
 			to_chat(H, "<span class='userdanger'>You feel a horrible agony in your chest!</span>")
-			addtimer(CALLBACK(src, .proc/undo_heart_attack), 600 / severity)
+			addtimer(CALLBACK(src, PROC_REF(undo_heart_attack)), 600 / severity)
 
 /obj/item/organ/cyberimp/chest/reviver/proc/undo_heart_attack()
 	var/mob/living/carbon/human/H = owner
@@ -122,6 +122,7 @@
 	Unlike regular jetpacks, this device has no stabilization system."
 	slot = ORGAN_SLOT_THRUSTERS
 	icon_state = "imp_jetpack"
+	base_icon_state = "imp_jetpack"
 	implant_overlay = null
 	implant_color = null
 	actions_types = list(/datum/action/item_action/organ_action/toggle)
@@ -153,9 +154,9 @@
 		if(allow_thrust(0.01))
 			on = TRUE
 			ion_trail.start()
-			RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/move_react)
+			RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(move_react))
 			owner.add_movespeed_modifier(/datum/movespeed_modifier/jetpack/cybernetic)
-			RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, .proc/pre_move_react)
+			RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(pre_move_react))
 			if(!silent)
 				to_chat(owner, "<span class='notice'>You turn your thrusters set on.</span>")
 	else
@@ -166,13 +167,11 @@
 		if(!silent)
 			to_chat(owner, "<span class='notice'>You turn your thrusters set off.</span>")
 		on = FALSE
-	update_icon()
+	update_appearance()
 
 /obj/item/organ/cyberimp/chest/thrusters/update_icon_state()
-	if(on)
-		icon_state = "imp_jetpack-on"
-	else
-		icon_state = "imp_jetpack"
+	icon_state = "[base_icon_state][on ? "-on" : null]"
+	return ..()
 
 /obj/item/organ/cyberimp/chest/thrusters/proc/move_react()
 	if(!on)//If jet dont work, it dont work
@@ -215,9 +214,8 @@
 		return TRUE
 
 	// Priority 3: use internals tank.
-	var/obj/item/tank/I = owner.internal
-	if(I && I.air_contents && I.air_contents.total_moles() >= num)
-		T.assume_air_moles(I.air_contents, num)
+	if(owner.internal?.air_contents?.total_moles() >= num)
+		T.assume_air_moles(owner.internal.air_contents, num)
 
 	toggle(silent = TRUE)
 	return FALSE

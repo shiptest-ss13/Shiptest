@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda
 	name = "\improper PDA"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
-	icon = 'whitesands/icons/obj/pda.dmi' //WS Edit - Better PDAs from Eris(?)
+	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -83,14 +83,6 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	var/underline_flag = TRUE //flag for underline
 
-/obj/item/pda/suicide_act(mob/living/carbon/user)
-	var/deathMessage = msg_input(user)
-	if (!deathMessage)
-		deathMessage = "i ded"
-	user.visible_message("<span class='suicide'>[user] is sending a message to the Grim Reaper! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	tnote += "<i><b>&rarr; To The Grim Reaper:</b></i><br>[deathMessage]<br>"//records a message in their PDA as being sent to the grim reaper
-	return BRUTELOSS
-
 /obj/item/pda/examine(mob/user)
 	. = ..()
 	if(!id && !inserted_item)
@@ -114,7 +106,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		inserted_item = new inserted_item(src)
 	else
 		inserted_item =	new /obj/item/pen(src)
-	update_icon()
+	update_appearance()
 
 /obj/item/pda/equipped(mob/user, slot)
 	. = ..()
@@ -237,14 +229,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(id)
 					dat += text("ID: <A href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]   <a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
 
-				dat += "[worldtime2text()]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
-				dat += "[time2text(world.realtime, "MMM DD")] [GLOB.year_integer+540]"
-				dat += "<br><br>"
+				dat += "[station_time_timestamp()]<br>"
+				dat += "[sector_datestamp()]<br>"
+				dat += "<br>"
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)] Notekeeper</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)] Messenger</a></li>"
-				dat += "<li><a href='byond://?src=[REF(src)];choice=41'>[PDAIMG(notes)] View Crew Manifest</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=6'>[PDAIMG(skills)]Skill Tracker</a></li>"
 
 				if(cartridge)
@@ -291,7 +282,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if (pai)
 					if(pai.loc != src)
 						pai = null
-						update_icon()
+						update_appearance()
 					else
 						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=1'>pAI Device Configuration</a></li>"
 						dat += "<li>[PDAIMG(status)]   <a href='byond://?src=[REF(src)];choice=pai;option=2'>Eject pAI Device</a></li>"
@@ -335,8 +326,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 			if(6)
 				dat += "<h4>[PDAIMG(mail)] ExperTrak® Skill Tracker V4.26.2</h4>"
-				dat += "<i>Thank you for choosing ExperTrak® brand software! ExperTrak® inc. is proud to be a NanoTrasen employee expertise and effectiveness department subsidary!</i>"
-				dat += "<br><br>This software is designed to track and monitor your skill development as a NanoTrasen employee. Your job performance across different fields has been quantified and categorized below.<br>"
+				dat += "<i>Thank you for choosing ExperTrak® brand software! ExperTrak® inc. is proud to be a Nanotrasen employee expertise and effectiveness department subsidary!</i>"
+				dat += "<br><br>This software is designed to track and monitor your skill development as a Nanotrasen employee. Your job performance across different fields has been quantified and categorized below.<br>"
 				var/datum/mind/targetmind = user.mind
 				for (var/type in GLOB.skill_types)
 					var/datum/skill/S = GetSkillRef(type)
@@ -373,7 +364,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			if(41) //crew manifest
 				dat += "<h4>Crew Manifest</h4>"
 				dat += "<center>"
-				dat += GLOB.data_core.get_manifest_html()
+				dat += SSovermap.get_manifest_html()
 				dat += "</center>"
 
 			if(3)
@@ -441,7 +432,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					scanmode = 0
 					cartridge.host_pda = null
 					cartridge = null
-					update_icon()
+					update_appearance()
 
 //MENU FUNCTIONS===================================
 
@@ -478,11 +469,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 				else if((!isnull(cartridge)) && (cartridge.access & CART_ENGINE))
 					scanmode = PDA_SCANNER_HALOGEN
 			if("Honk")
-				if( !(last_noise && world.time < last_noise + 20) )
+				if(!(last_noise && world.time < last_noise + 20))
 					playsound(loc, 'sound/items/bikehorn.ogg', 50, 1)
 					last_noise = world.time
 			if("Trombone")
-				if( !(last_noise && world.time < last_noise + 20) )
+				if(!(last_noise && world.time < last_noise + 20))
 					playsound(loc, 'sound/misc/sadtrombone.ogg', 50, 1)
 					last_noise = world.time
 			if("Gas Scan")
@@ -590,8 +581,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 //EXTRA FUNCTIONS===================================
 
-	if(mode == 2 || mode == 21)//To clear message overlays.
-		update_icon()
+	cut_overlay(icon_alert) //To clear message overlays.
 
 	if((honkamt > 0) && (prob(60)))//For clown virus.
 		honkamt--
@@ -622,7 +612,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	. = id
 	id = null
 	updateSelfDialog()
-	update_icon()
+	update_appearance()
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
@@ -740,7 +730,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 		to_chat(L, "<span class='infoplain'>[icon2html(src)] <b>PDA message from [hrefstart][signal.data["name"]] ([signal.data["job"]])[hrefend], </b>[inbound_message] [reply]</span>")
 
-	update_icon()
+	update_appearance()
 	add_overlay(icon_alert)
 
 /obj/item/pda/proc/send_to_all(mob/living/U)
@@ -816,7 +806,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		set_light_on(FALSE)
 	else if(light_range)
 		set_light_on(TRUE)
-	update_icon()
+	update_appearance()
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -830,7 +820,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		user.put_in_hands(inserted_item)
 		to_chat(user, "<span class='notice'>You remove [inserted_item] from [src].</span>")
 		inserted_item = null
-		update_icon()
+		update_appearance()
 	else
 		to_chat(user, "<span class='warning'>This PDA does not have a pen in it!</span>")
 
@@ -844,7 +834,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		cartridge.host_pda = null
 		cartridge = null
 		updateSelfDialog()
-		update_icon()
+		update_appearance()
 
 //trying to insert or remove an id
 /obj/item/pda/proc/id_check(mob/user, obj/item/card/id/I)
@@ -861,7 +851,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		if(!user.transferItemToLoc(I, src))
 			return FALSE
 		insert_id(I, user)
-		update_icon()
+		update_appearance()
 	return TRUE
 
 
@@ -889,7 +879,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		cartridge.host_pda = src
 		to_chat(user, "<span class='notice'>You insert [cartridge] into [src].</span>")
 		updateSelfDialog()
-		update_icon()
+		update_appearance()
 
 	else if(istype(C, /obj/item/card/id))
 		var/obj/item/card/id/idcard = C
@@ -914,7 +904,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			return
 		pai = C
 		to_chat(user, "<span class='notice'>You slot \the [C] into [src].</span>")
-		update_icon()
+		update_appearance()
 		updateUsrDialog()
 	else if(is_type_in_list(C, contained_item)) //Checks if there is a pen
 		if(inserted_item)
@@ -924,7 +914,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				return
 			to_chat(user, "<span class='notice'>You slide \the [C] into \the [src].</span>")
 			inserted_item = C
-			update_icon()
+			update_appearance()
 	else if(istype(C, /obj/item/photo))
 		var/obj/item/photo/P = C
 		picture = P.picture
@@ -981,17 +971,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 				var/obj/machinery/power/rad_collector/RC = A
 				if(RC.loaded_tank)
 					atmosanalyzer_scan(RC.loaded_tank.air_contents, user, RC)
-			else if(istype(A, /obj/item/flamethrower))
-				var/obj/item/flamethrower/F = A
-				if(F.ptank)
-					atmosanalyzer_scan(F.ptank.air_contents, user, F)
 
 	if(!scanmode && istype(A, /obj/item/paper) && owner)
 		var/obj/item/paper/PP = A
-		if(!PP.info)
+		if(!PP.get_total_length())
 			to_chat(user, "<span class='warning'>Unable to scan! Paper is blank.</span>")
 			return
-		notehtml = PP.info
+		notehtml = PP.get_raw_text()
 		note = replacetext(notehtml, "<BR>", "\[br\]")
 		note = replacetext(note, "<li>", "\[*\]")
 		note = replacetext(note, "<ul>", "\[list\]")
@@ -1107,11 +1093,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/emp_act(severity)
 	. = ..()
 	if (!(. & EMP_PROTECT_CONTENTS))
-		for(var/atom/A in src)
-			A.emp_act(severity)
+		for(var/atom/movable/AM as anything in src)
+			AM.emp_act(severity)
 	if (!(. & EMP_PROTECT_SELF))
 		emped++
-		addtimer(CALLBACK(src, .proc/emp_end), 200 * severity)
+		addtimer(CALLBACK(src, PROC_REF(emp_end)), 200 * severity)
 
 /obj/item/pda/proc/emp_end()
 	emped--

@@ -1,6 +1,6 @@
 /obj/structure/lattice
 	name = "lattice"
-	desc = "A lightweight support lattice. These hold our station together."
+	desc = "A lightweight support lattice. Holding things together since the dawn of the industrial age."
 	icon = 'icons/obj/smooth_structures/lattice.dmi'
 	icon_state = "lattice-255"
 	base_icon_state = "lattice"
@@ -69,7 +69,7 @@
 /obj/structure/lattice/catwalk
 	name = "catwalk"
 	desc = "A catwalk for easier EVA maneuvering and cable placement."
-	icon = 'icons/obj/smooth_structures/catwalk.dmi'
+	icon = 'icons/obj/smooth_structures/more_catwalk.dmi'
 	icon_state = "catwalk-0"
 	base_icon_state = "catwalk"
 	number_of_mats = 2

@@ -1,22 +1,40 @@
 /datum/map_template/shuttle
 	name = "Base Shuttle Template"
-	var/category
+	var/category = "Basic"
 	var/file_name
 
 	var/description
-	var/prerequisites
-	var/admin_notes
-
-	var/credit_cost = INFINITY
-	var/can_be_bought = TRUE
+	var/list/tags
 
 	var/list/movement_force // If set, overrides default movement_force on shuttle
 
 	var/port_x_offset
 	var/port_y_offset
-	var/extra_desc = ""
-	var/short_name = ""
+	var/port_dir
+
+	var/limit = 2
+	var/enabled
+	var/short_name
 	var/list/job_slots = list()
+	var/list/name_categories = list("GENERAL")
+	/// The prefix of the ship's name.
+	var/prefix = "ISV"
+	/// The full name of the ship's faction.
+	var/faction_name = "Independent"
+	var/unique_ship_access = FALSE
+	/// Set by config JSON. If true, the template's ships' "default" spawn location (when bought by a player or loaded at roundstart)
+	/// will be in the middle of space, instead of at an outpost.
+	var/space_spawn = FALSE
+
+	//how much money the ship starts with
+	var/starting_funds = 2000
+
+	// Coefficients regulating the amount of necessary Living playtime to spawn this ship or join as an officer.
+	// When a player attempts to spawn a ship via the join menu, officer time requirements are ignored even if the "captain" job is an officer.
+	var/spawn_time_coeff = 1
+	var/officer_time_coeff = 1
+
+	var/static/list/outfits
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
@@ -41,12 +59,25 @@
 /datum/map_template/shuttle/proc/discover_port_offset()
 	var/key
 	var/list/models = cached_map.grid_models
+	var/start_pos
+	var/model_text = models[key]
 	for(key in models)
-		if(findtext(models[key], "[/obj/docking_port/mobile]")) // Yay compile time checks
+		model_text = models[key]
+		start_pos = findtext(model_text, "[/obj/docking_port/mobile]")
+		if(start_pos) // Yay compile time checks
 			break // This works by assuming there will ever only be one mobile dock in a template at most
 
-	for(var/i in cached_map.gridSets)
-		var/datum/grid_set/gset = i
+	// Finding the dir of the mobile port
+	var/dpos = cached_map.find_next_delimiter_position(model_text, start_pos, ",","{","}")
+	var/cache_text = trim_reduced(copytext(model_text, start_pos, dpos))
+	var/variables_start = findtext(cache_text, "{")
+	port_dir = NORTH // Incase something went wrong with variables from the cache
+	if(variables_start)
+		cache_text = copytext(cache_text, variables_start + length(cache_text[variables_start]), -length(copytext_char(cache_text, -1)))
+		var/list/fields = cached_map.readlist(cache_text, ";")
+		port_dir = fields["dir"] ? fields["dir"] : NORTH
+
+	for(var/datum/grid_set/gset as anything in cached_map.gridSets)
 		var/ycrd = gset.ycrd
 		for(var/line in gset.gridLines)
 			var/xcrd = gset.xcrd
@@ -59,27 +90,34 @@
 			--ycrd
 
 /datum/map_template/shuttle/load(turf/T, centered, register=TRUE)
-	. = ..()
+	if(centered)
+		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
+		centered = FALSE
+	//This assumes a non-multi-z shuttle. If you are making a multi-z shuttle, good luck with that, and you'll need to change the z bounds for this block.
+	var/list/turfs = block(locate(max(T.x, 1), max(T.y, 1),  T.z),
+							locate(min(T.x+width, world.maxx), min(T.y+height, world.maxy), T.z))
+	for(var/turf/turf in turfs)
+		turfs[turf] = turf.loc
+	keep_cached_map = TRUE //We need to access some stuff here below for shuttle skipovers
+	. = ..(T, centered, init_atmos = TRUE)
+	keep_cached_map = initial(keep_cached_map)
 	if(!.)
+		cached_map = keep_cached_map ? cached_map : null
 		return
-	var/list/turfs = block(	locate(.[MAP_MINX], .[MAP_MINY], .[MAP_MINZ]),
-							locate(.[MAP_MAXX], .[MAP_MAXY], .[MAP_MAXZ]))
-	for(var/i in 1 to turfs.len)
-		var/turf/place = turfs[i]
-		if(istype(place, /turf/open/space)) // This assumes all shuttles are loaded in a single spot then moved to their real destination.
+	var/obj/docking_port/mobile/my_port
+	for(var/turf/place as anything in turfs)
+		if(place.loc == turfs[place] || !istype(place.loc, /area/ship)) //If not part of the shuttle, ignore it
+			turfs -= place
 			continue
-		if(length(place.baseturfs) < 2) // Some snowflake shuttle shit
-			continue
-		var/list/sanity = place.baseturfs.Copy()
-		sanity.Insert(3, /turf/baseturf_skipover/shuttle)
-		place.baseturfs = baseturfs_string_list(sanity, place)
 
 		for(var/obj/docking_port/mobile/port in place)
+			if(my_port)
+				CRASH("[src] loaded with multiple docking ports!")
+			my_port = port
 			if(register)
 				port.register()
 			if(isnull(port_x_offset))
 				continue
-			port.source_template = src
 			switch(port.dir) // Yeah this looks a little ugly but mappers had to do this in their head before
 				if(NORTH)
 					port.width = width
@@ -102,512 +140,263 @@
 					port.dwidth = port_y_offset - 1
 					port.dheight = width - port_x_offset
 
-			port.load()
+	if(!my_port)
+		CRASH("Shuttle template loaded without a mobile port!")
+
+	for(var/turf/shuttle_turf in turfs)
+		//Set up underlying_turf_area and update relevent towed_shuttles
+		var/area/ship/turf_loc = turfs[shuttle_turf]
+		my_port.underlying_turf_area[shuttle_turf] = turf_loc
+		if(istype(turf_loc) && turf_loc.mobile_port)
+			turf_loc.mobile_port.towed_shuttles |= my_port
+
+		//Getting the amount of baseturfs added
+		var/z_offset = shuttle_turf.z - T.z
+		var/y_offset = shuttle_turf.y - T.y
+		var/x_offset = shuttle_turf.x - T.x
+		//retrieving our cache
+		var/line
+		var/list/cache
+		for(var/datum/grid_set/gset as() in cached_map.gridSets)
+			if(gset.zcrd - 1 != z_offset) //Not our Z-level
+				continue
+			if((gset.ycrd - 1 < y_offset) || (gset.ycrd - length(gset.gridLines) > y_offset)) //Our y coord isn't in the bounds
+				continue
+			line = gset.gridLines[length(gset.gridLines) - y_offset] //Y goes from top to bottom
+			if((gset.xcrd - 1 < x_offset) || (gset.xcrd + (length(line)/cached_map.key_len) - 2 > x_offset)) ///Our x coord isn't in the bounds
+				continue
+			cache = cached_map.modelCache[copytext(line, 1+((x_offset-gset.xcrd+1)*cached_map.key_len), 1+((x_offset-gset.xcrd+2)*cached_map.key_len))]
+			break
+		if(!cache) //Our turf isn't in the cached map, something went very wrong
+			continue
+
+		//How many baseturfs were added to this turf by the mapload
+		var/baseturf_length
+		var/turf/P //Typecasted for the initial call
+		for(P as() in cache[1])
+			if(ispath(P, /turf))
+				var/list/added_baseturfs = GLOB.created_baseturf_lists[initial(P.baseturfs)] //We can assume that our turf type will be included here because it was just generated in the mapload.
+				if(!islist(added_baseturfs))
+					added_baseturfs = list(added_baseturfs)
+				baseturf_length = length(added_baseturfs - GLOB.blacklisted_automated_baseturfs)
+				break
+		if(ispath(P, /turf/template_noop)) //No turf was added, don't add a skipover
+			continue
+
+		var/list/sanity = islist(shuttle_turf.baseturfs) ? shuttle_turf.baseturfs.Copy() : list(shuttle_turf.baseturfs)
+		sanity.Insert(shuttle_turf.baseturfs.len + 1 - baseturf_length, /turf/baseturf_skipover/shuttle) //The first two are the "real" baseturfs, place above these but below plating.
+		shuttle_turf.baseturfs = baseturfs_string_list(sanity, shuttle_turf)
+
+	my_port.load(src)
+	cached_map = keep_cached_map ? cached_map : null
+
+/datum/map_template/shuttle/ui_state(mob/user)
+	return GLOB.admin_debug_state
+
+/datum/map_template/shuttle/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ShipEditor")
+		ui.open()
+
+/datum/map_template/shuttle/ui_static_data(mob/user)
+	. = list()
+	if(!outfits)
+		outfits = list()
+		for(var/datum/outfit/outfit as anything in subtypesof(/datum/outfit))
+			outfits[initial(outfit.name)] = outfit
+		outfits = sortList(outfits)
+
+	.["outfits"] = outfits
+
+	.["templateName"] = name
+	.["templateShortName"] = short_name
+	.["templateDescription"] = description
+	.["templateTags"] = tags
+	.["templateCategory"] = category
+	.["templateLimit"] = limit
+	.["templateSpawnCoeff"] = spawn_time_coeff
+	.["templateOfficerCoeff"] = officer_time_coeff
+	.["templateEnabled"] = enabled
+
+	.["templateJobs"] = list()
+	for(var/datum/job/job as anything in job_slots)
+		var/list/jobdetails = list()
+		jobdetails["ref"] = REF(job)
+		jobdetails["name"] = job.name
+		jobdetails["officer"] = job.officer
+		jobdetails["outfit"] = initial(job.outfit.name)
+		jobdetails["slots"] = job_slots[job]
+		.["templateJobs"] += list(jobdetails)
+
+/datum/map_template/shuttle/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("setTemplateName")
+			name = params["new_template_name"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateShortName")
+			short_name = params["new_template_short_name"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateDescription")
+			description = params["new_template_description"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("addTemplateTags")
+			if(!tags)
+				tags = list()
+			if(!(params["new_template_tags"] in tags))
+				tags.Add(params["new_template_tags"])
+			update_static_data(usr, ui)
+			return TRUE
+		if("removeTemplateTags")
+			if(params["new_template_tags"] in tags)
+				tags.Remove(params["new_template_tags"])
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateCategory")
+			category = params["new_template_category"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setTemplateLimit")
+			limit = params["new_template_limit"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setSpawnCoeff")
+			spawn_time_coeff = params["new_spawn_coeff"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("setOfficerCoeff")
+			officer_time_coeff = params["new_officer_coeff"]
+			update_static_data(usr, ui)
+			return TRUE
+		if("toggleTemplateEnabled")
+			enabled = !enabled
+			if(enabled)
+				SSmapping.ship_purchase_list[name] = src
+			else
+				SSmapping.ship_purchase_list.Remove(name)
+			update_static_data(usr, ui)
+			return TRUE
+
+		if("addJobSlot")
+			job_slots[new /datum/job] = 0
+			update_static_data(usr, ui)
+			return TRUE
+
+	if("job_ref" in params)
+		var/datum/job/job_slot = locate(params["job_ref"]) in job_slots
+		if(!job_slot)
+			return
+		switch(action)
+			if("toggleJobOfficer")
+				job_slot.officer = !job_slot.officer
+			if("setJobName")
+				job_slot.name = params["job_name"]
+			if("setJobOutfit")
+				var/new_outfit = params["job_outfit"]
+				if(!(new_outfit in outfits))
+					return
+				new_outfit = outfits[new_outfit]
+				job_slot.outfit = new new_outfit
+			if("setJobSlots")
+				job_slots[job_slot] = clamp(params["job_slots"], 0, 100)
+		update_static_data(usr, ui)
+		return TRUE
 
 //Whatever special stuff you want
-/datum/map_template/shuttle/proc/post_load(obj/docking_port/mobile/M)
+/datum/map_template/shuttle/post_load(obj/docking_port/mobile/M)
 	if(movement_force)
 		M.movement_force = movement_force.Copy()
 
+/// Shiptest-specific main maps. Do not make subtypes! Make a json in /_maps/configs/ instead.
 /datum/map_template/shuttle/shiptest
 	category = "shiptest"
-	can_be_bought = FALSE
 
-/datum/map_template/shuttle/emergency
-	category = "emergency"
-	name = "Base Shuttle Template (Emergency)"
-
-/datum/map_template/shuttle/cargo
-	category = "cargo"
-	name = "Base Shuttle Template (Cargo)"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/ferry
-	category = "ferry"
-	name = "Base Shuttle Template (Ferry)"
-
-/datum/map_template/shuttle/whiteship
-	category = "whiteship"
-
-/datum/map_template/shuttle/labour
-	category = "labour"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/mining
-	category = "mining"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/mining_common
-	category = "commonmining"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/arrival
-	category = "arrival"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/infiltrator
-	category = "infiltrator"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/aux_base
-	category = "aux_base"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/escape_pod
-	category = "escape_pod"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/pirate
-	category = "pirate"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/hunter
-	category = "hunter"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/ruin //For random shuttles in ruins
+/// Shuttles to be loaded in ruins
+/datum/map_template/shuttle/ruin
 	category = "ruin"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/snowdin
-	category = "snowdin"
-	can_be_bought = FALSE
-
-// Shuttles start here:
-
-/datum/map_template/shuttle/emergency/backup
-	file_name = "emergency_backup"
-	name = "Backup Shuttle"
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/emergency/construction
-	file_name = "emergency_construction"
-	name = "Build your own shuttle kit"
-	description = "For the enterprising shuttle engineer! The chassis will dock upon purchase, but launch will have to be authorized as usual via shuttle call. Comes stocked with construction materials."
-	admin_notes = "No brig, no medical facilities, no shuttle console."
-	credit_cost = 2500
-
-/datum/map_template/shuttle/emergency/airless/post_load()
-	. = ..()
-	//enable buying engines from cargo
-	var/datum/supply_pack/P = SSshuttle.supply_packs[/datum/supply_pack/engineering/shuttle_engine]
-	P.special_enabled = TRUE
-
-
-/datum/map_template/shuttle/emergency/asteroid
-	file_name = "asteroid"
-	name = "Asteroid Station Emergency Shuttle"
-	description = "A respectable mid-sized shuttle that first saw service shuttling Nanotrasen crew to and from their asteroid belt embedded facilities."
-	credit_cost = 3000
-
-/datum/map_template/shuttle/emergency/bar
-	file_name = "emergency_bar"
-	name = "The Emergency Escape Bar"
-	description = "Features include sentient bar staff (a Bardrone and a Barmaid), bathroom, a quality lounge for the heads, and a large gathering table."
-	admin_notes = "Bardrone and Barmaid are GODMODE, will be automatically sentienced by the fun balloon at 60 seconds before arrival. \
-	Has medical facilities."
-	credit_cost = 5000
-
-/datum/map_template/shuttle/emergency/pod
-	file_name = "emergency_pod"
-	name = "Emergency Pods"
-	description = "We did not expect an evacuation this quickly. All we have available is two escape pods."
-	admin_notes = "For player punishment."
-	can_be_bought = FALSE
-
-/datum/map_template/shuttle/emergency/russiafightpit
-	file_name = "emergency_russiafightpit"
-	name = "Mother Russia Bleeds"
-	description = "Dis is a high-quality shuttle, da. Many seats, lots of space, all equipment! Even includes entertainment! Such as lots to drink, and a fighting arena for drunk crew to have fun! If arena not fun enough, simply press button of releasing bears. Do not worry, bears trained not to break out of fighting pit, so totally safe so long as nobody stupid or drunk enough to leave door open. Try not to let asimov babycons ruin fun!"
-	admin_notes = "Includes a small variety of weapons. And bears. Only captain-access can release the bears. Bears won't smash the windows themselves, but they can escape if someone lets them."
-	credit_cost = 5000 // While the shuttle is rusted and poorly maintained, trained bears are costly.
-
-/datum/map_template/shuttle/emergency/meteor
-	file_name = "emergency_meteor"
-	name = "Asteroid With Engines Strapped To It"
-	description = "A hollowed out asteroid with engines strapped to it, the hollowing procedure makes it very difficult to hijack but is very expensive. Due to its size and difficulty in steering it, this shuttle may damage the docking area."
-	admin_notes = "This shuttle will likely crush escape, killing anyone there."
-	credit_cost = 15000
-	movement_force = list("KNOCKDOWN" = 3, "THROW" = 2)
-
-/datum/map_template/shuttle/emergency/luxury
-	file_name = "emergency_luxury"
-	name = "Luxury Shuttle"
-	description = "A luxurious golden shuttle complete with an indoor swimming pool. Each crewmember wishing to board must bring 500 credits, payable in cash and mineral coin."
-	extra_desc = "This shuttle costs 500 credits to board."
-	admin_notes = "Due to the limited space for non paying crew, this shuttle may cause a riot."
-	credit_cost = 10000
-
-/datum/map_template/shuttle/emergency/discoinferno
-	file_name = "emergency_discoinferno"
-	name = "Disco Inferno"
-	description = "The glorious results of centuries of plasma research done by Nanotrasen employees. This is the reason why you are here. Get on and dance like you're on fire, burn baby burn!"
-	admin_notes = "Flaming hot. The main area has a dance machine as well as plasma floor tiles that will be ignited by players every single time."
-	credit_cost = 10000
-
-/datum/map_template/shuttle/emergency/arena
-	file_name = "emergency_arena"
-	name = "The Arena"
-	description = "The crew must pass through an otherworldy arena to board this shuttle. Expect massive casualties. The source of the Bloody Signal must be tracked down and eliminated to unlock this shuttle."
-	admin_notes = "RIP AND TEAR."
-	credit_cost = 10000
-
-/datum/map_template/shuttle/emergency/arena/prerequisites_met()
-	if(SHUTTLE_UNLOCK_BUBBLEGUM in SSshuttle.shuttle_purchase_requirements_met)
-		return TRUE
-	return FALSE
-
-/datum/map_template/shuttle/emergency/birdboat
-	file_name = "emergency_birdboat"
-	name = "Birdboat Station Emergency Shuttle"
-	description = "Though a little on the small side, this shuttle is feature complete, which is more than can be said for the pattern of station it was commissioned for."
-	credit_cost = 1000
-
-/datum/map_template/shuttle/emergency/box
-	file_name = "emergency_box"
-	name = "Box Station Emergency Shuttle"
-	credit_cost = 2000
-	description = "The gold standard in emergency exfiltration, this tried and true design is equipped with everything the crew needs for a safe flight home."
-
-/datum/map_template/shuttle/emergency/donut
-	file_name = "emergency_donut"
-	name = "Donutstation Emergency Shuttle"
-	description = "The perfect spearhead for any crude joke involving the station's shape, this shuttle supports a separate containment cell for prisoners and a compact medical wing."
-	admin_notes = "Has airlocks on both sides of the shuttle and will probably intersect near the front on some stations that build past departures."
-	credit_cost = 2500
-
-/datum/map_template/shuttle/emergency/clown
-	file_name = "emergency_clown"
-	name = "Snappop(tm)!"
-	description = "Hey kids and grownups! \
-	Are you bored of DULL and TEDIOUS shuttle journeys after you're evacuating for probably BORING reasons. Well then order the Snappop(tm) today! \
-	We've got fun activities for everyone, an all access cockpit, and no boring security brig! Boo! Play dress up with your friends! \
-	Collect all the bedsheets before your neighbour does! Check if the AI is watching you with our patent pending \"Peeping Tom AI Multitool Detector\" or PEEEEEETUR for short. \
-	Have a fun ride!"
-	admin_notes = "Brig is replaced by anchored greentext book surrounded by lavaland chasms, stationside door has been removed to prevent accidental dropping. No brig."
-	credit_cost = 8000
-
-/datum/map_template/shuttle/emergency/cramped
-	file_name = "emergency_cramped"
-	name = "Secure Transport Vessel 5 (STV5)"
-	description = "Well, looks like CentCom only had this ship in the area, they probably weren't expecting you to need evac for a while. \
-	Probably best if you don't rifle around in whatever equipment they were transporting. I hope you're friendly with your coworkers, because there is very little space in this thing.\n\
-	\n\
-	Contains contraband armory guns, maintenance loot, and abandoned crates!"
-	admin_notes = "Due to origin as a solo piloted secure vessel, has an active GPS onboard labeled STV5. Has roughly as much space as Hi Daniel, except with explosive crates."
-
-/datum/map_template/shuttle/emergency/meta
-	file_name = "emergency_meta"
-	name = "Meta Station Emergency Shuttle"
-	credit_cost = 4000
-	description = "A fairly standard shuttle, though larger and slightly better equipped than the Box Station variant."
-
-/datum/map_template/shuttle/emergency/kilo
-	file_name = "emergency_kilo"
-	name = "Kilo Station Emergency Shuttle"
-	credit_cost = 5000
-	description = "A fully functional shuttle including a complete infirmary, storage facilties and regular amenities."
-
-/datum/map_template/shuttle/emergency/mini
-	file_name = "emergency_mini"
-	name = "Ministation emergency shuttle"
-	credit_cost = 1000
-	description = "Despite its namesake, this shuttle is actually only slightly smaller than standard, and still complete with a brig and medbay."
-
-/datum/map_template/shuttle/emergency/scrapheap
-	file_name = "emergency_scrapheap"
-	name = "Standby Evacuation Vessel \"Scrapheap Challenge\""
-	credit_cost = -1000
-	description = "Due to a lack of functional emergency shuttles, we bought this second hand from a scrapyard and pressed it into service. Please do not lean too heavily on the exterior windows, they are fragile."
-	admin_notes = "An abomination with no functional medbay, sections missing, and some very fragile windows. Surprisingly airtight."
-	movement_force = list("KNOCKDOWN" = 3, "THROW" = 2)
-
-/datum/map_template/shuttle/emergency/narnar
-	file_name = "emergency_narnar"
-	name = "Shuttle 667"
-	description = "Looks like this shuttle may have wandered into the darkness between the stars on route to the station. Let's not think too hard about where all the bodies came from."
-	admin_notes = "Contains real cult ruins, mob eyeballs, and inactive constructs. Cult mobs will automatically be sentienced by fun balloon. \
-	Cloning pods in 'medbay' area are showcases and nonfunctional."
-
-/datum/map_template/shuttle/emergency/pubby
-	file_name = "emergency_pubby"
-	name = "Pubby Station Emergency Shuttle"
-	description = "A train but in space! Complete with a first, second class, brig and storage area."
-	admin_notes = "Choo choo motherfucker!"
-	credit_cost = 1000
-
-/datum/map_template/shuttle/emergency/cere
-	file_name = "emergency_cere"
-	name = "Cere Station Emergency Shuttle"
-	description = "The large, beefed-up version of the box-standard shuttle. Includes an expanded brig, fully stocked medbay, enhanced cargo storage with mech chargers, \
-	an engine room stocked with various supplies, and a crew capacity of 80+ to top it all off. Live large, live Cere."
-	admin_notes = "Seriously big, even larger than the Delta shuttle."
-	credit_cost = 10000
-
-/datum/map_template/shuttle/emergency/supermatter
-	file_name = "emergency_supermatter"
-	name = "Hyperfractal Gigashuttle"
-	description = "\"I dunno, this seems kinda needlessly complicated.\"\n\
-	\"This shuttle has very a very high safety record, according to CentCom Officer Cadet Yins.\"\n\
-	\"Are you sure?\"\n\
-	\"Yes, it has a safety record of N-A-N, which is apparently larger than 100%.\""
-	admin_notes = "Supermatter that spawns on shuttle is special anchored 'hugbox' supermatter that cannot take damage and does not take in or emit gas. \
-	Outside of admin intervention, it cannot explode. \
-	It does, however, still dust anything on contact, emits high levels of radiation, and induce hallucinations in anyone looking at it without protective goggles. \
-	Emitters spawn powered on, expect admin notices, they are harmless."
-	credit_cost = 100000
-	movement_force = list("KNOCKDOWN" = 3, "THROW" = 2)
-
-/datum/map_template/shuttle/emergency/imfedupwiththisworld
-	file_name = "emergency_imfedupwiththisworld"
-	name = "Oh, Hi Daniel"
-	description = "How was space work today? Oh, pretty good. We got a new space station and the company will make a lot of money. What space station? I cannot tell you; it's space confidential. \
-	Aw, come space on. Why not? No, I can't. Anyway, how is your space roleplay life?"
-	admin_notes = "Tiny, with a single airlock and wooden walls. What could go wrong?"
-	can_be_bought = FALSE
-	movement_force = list("KNOCKDOWN" = 3, "THROW" = 2)
-
-/datum/map_template/shuttle/emergency/goon
-	file_name = "emergency_goon"
-	name = "NES Port"
-	description = "The Nanotrasen Emergency Shuttle Port(NES Port for short) is a shuttle used at other less known Nanotrasen facilities and has a more open inside for larger crowds, but fewer onboard shuttle facilities."
-	credit_cost = 500
-
-/datum/map_template/shuttle/emergency/wabbajack
-	file_name = "emergency_wabbajack"
-	name = "NT Lepton Violet"
-	description = "The research team based on this vessel went missing one day, and no amount of investigation could discover what happened to them. \
-	The only occupants were a number of dead rodents, who appeared to have clawed each other to death. \
-	Needless to say, no engineering team wanted to go near the thing, and it's only being used as an Emergency Escape Shuttle because there is literally nothing else available."
-	admin_notes = "If the crew can solve the puzzle, they will wake the wabbajack statue. It will likely not end well. There's a reason it's boarded up. Maybe they should have just left it alone."
-	credit_cost = 15000
-
-/datum/map_template/shuttle/emergency/omega
-	file_name = "emergency_omega"
-	name = "Omegastation Emergency Shuttle"
-	description = "On the smaller size with a modern design, this shuttle is for the crew who like the cosier things, while still being able to stretch their legs."
-	credit_cost = 1000
-
-/datum/map_template/shuttle/emergency/cruise
-	file_name = "emergency_cruise"
-	name = "The NTSS Independence"
-	description = "Ordinarily reserved for special functions and events, the Cruise Shuttle Independence can bring a summery cheer to your next station evacuation for a 'modest' fee!"
-	admin_notes = "This motherfucker is BIG. You might need to force dock it."
-	credit_cost = 50000
-
-/datum/map_template/shuttle/ferry/base
-	file_name = "ferry_base"
-	name = "transport ferry"
-	description = "Standard issue Box/Metastation CentCom ferry."
-
-/datum/map_template/shuttle/ferry/meat
-	file_name = "ferry_meat"
-	name = "\"meat\" ferry"
-	description = "Ahoy! We got all kinds o' meat aft here. Meat from plant people, people who be dark, not in a racist way, just they're dark black. \
-	Oh and lizard meat too,mighty popular that is. Definitely 100% fresh, just ask this guy here. *person on meatspike moans* See? \
-	Definitely high quality meat, nothin' wrong with it, nothin' added, definitely no zombifyin' reagents!"
-	admin_notes = "Meat currently contains no zombifying reagents, lizard on meatspike must be spawned in."
-
-/datum/map_template/shuttle/ferry/lighthouse
-	file_name = "ferry_lighthouse"
-	name = "The Lighthouse(?)"
-	description = "*static*... part of a much larger vessel, possibly military in origin. \
-	The weapon markings aren't anything we've seen ...static... by almost never the same person twice, possible use of unknown storage ...static... \
-	seeing ERT officers onboard, but no missions are on file for ...static...static...annoying jingle... only at The LIGHTHOUSE! \
-	Fulfilling needs you didn't even know you had. We've got EVERYTHING, and something else!"
-	admin_notes = "Currently larger than ferry docking port on Box, will not hit anything, but must be force docked. Trader and ERT bodyguards are not included."
-
-/datum/map_template/shuttle/ferry/fancy
-	file_name = "ferry_fancy"
-	name = "fancy transport ferry"
-	description = "At some point, someone upgraded the ferry to have fancier flooring... and fewer seats."
-
-/datum/map_template/shuttle/ferry/kilo
-	file_name = "ferry_kilo"
-	name = "kilo transport ferry"
-	description = "Standard issue CentCom Ferry for Kilo pattern stations. Includes additional equipment and rechargers."
-
-/datum/map_template/shuttle/cargo/kilo
-	file_name = "cargo_kilo"
-	name = "supply shuttle (Kilo)"
-
-/datum/map_template/shuttle/cargo/birdboat
-	file_name = "cargo_birdboat"
-	name = "supply shuttle (Birdboat)"
-
-/datum/map_template/shuttle/cargo/donut
-	file_name = "cargo_donut"
-	name = "supply shuttle (Donut)"
-
-/datum/map_template/shuttle/emergency/delta
-	file_name = "emergency_delta"
-	name = "Delta Station Emergency Shuttle"
-	description = "A large shuttle for a large station, this shuttle can comfortably fit all your overpopulation and crowding needs. Complete with all facilities plus additional equipment."
-	admin_notes = "Go big or go home."
-	credit_cost = 7500
-
-/datum/map_template/shuttle/emergency/raven
-	file_name = "emergency_raven"
-	name = "CentCom Raven Cruiser"
-	description = "The CentCom Raven Cruiser is a former high-risk salvage vessel, now repurposed into an emergency escape shuttle. \
-	Once first to the scene to pick through warzones for valuable remains, it now serves as an excellent escape option for stations under heavy fire from outside forces. \
-	This escape shuttle boasts shields and numerous anti-personnel turrets guarding its perimeter to fend off meteors and enemy boarding attempts."
-	admin_notes = "Comes with turrets that will target anything without the neutral faction (nuke ops, xenos etc, but not pets)."
-	credit_cost = 30000
-
-/datum/map_template/shuttle/emergency/zeta
-	file_name = "emergency_zeta"
-	name = "Tr%nPo2r& Z3TA"
-	description = "A glitch appears on your monitor, flickering in and out of the options laid before you. \
-	It seems strange and alien, you may need a special technology to access the signal.."
-	admin_notes = "Has alien surgery tools, and a void core that provides unlimited power."
-	credit_cost = 8000
-
-/datum/map_template/shuttle/emergency/zeta/prerequisites_met()
-	if(SHUTTLE_UNLOCK_ALIENTECH in SSshuttle.shuttle_purchase_requirements_met)
-		return TRUE
-	return FALSE
-
-/datum/map_template/shuttle/arrival/box
-	file_name = "arrival_box"
-	name = "arrival shuttle (Box)"
-
-/datum/map_template/shuttle/cargo/box
-	file_name = "cargo_box"
-	name = "cargo ferry (Box)"
-
-/datum/map_template/shuttle/mining/box
-	file_name = "mining_box"
-	name = "mining shuttle (Box)"
-
-/datum/map_template/shuttle/labour/box
-	file_name = "labour_box"
-	name = "labour shuttle (Box)"
-
-/datum/map_template/shuttle/arrival/donut
-	file_name = "arrival_donut"
-	name = "arrival shuttle (Donut)"
-
-/datum/map_template/shuttle/infiltrator/basic
-	file_name = "infiltrator_basic"
-	name = "basic syndicate infiltrator"
-
-/datum/map_template/shuttle/infiltrator/advanced
-	file_name = "infiltrator_advanced"
-	name = "advanced syndicate infiltrator"
-
-/datum/map_template/shuttle/cargo/delta
-	file_name = "cargo_delta"
-	name = "cargo ferry (Delta)"
-
-/datum/map_template/shuttle/mining/delta
-	file_name = "mining_delta"
-	name = "mining shuttle (Delta)"
-
-/datum/map_template/shuttle/mining/kilo
-	file_name = "mining_kilo"
-	name = "mining shuttle (Kilo)"
-
-/datum/map_template/shuttle/mining/large
-	file_name = "mining_large"
-	name = "mining shuttle (Large)"
-
-/datum/map_template/shuttle/labour/delta
-	file_name = "labour_delta"
-	name = "labour shuttle (Delta)"
-
-/datum/map_template/shuttle/labour/kilo
-	file_name = "labour_kilo"
-	name = "labour shuttle (Kilo)"
-
-/datum/map_template/shuttle/mining_common/meta
-	file_name = "commonmining_meta"
-	name = "lavaland shuttle (Meta)"
-
-/datum/map_template/shuttle/mining_common/kilo
-	file_name = "commonmining_kilo"
-	name = "lavaland shuttle (Kilo)"
-
-/datum/map_template/shuttle/arrival/delta
-	file_name = "arrival_delta"
-	name = "arrival shuttle (Delta)"
-
-/datum/map_template/shuttle/arrival/kilo
-	file_name = "arrival_kilo"
-	name = "arrival shuttle (Kilo)"
-
-/datum/map_template/shuttle/arrival/pubby
-	file_name = "arrival_pubby"
-	name = "arrival shuttle (Pubby)"
-
-/datum/map_template/shuttle/arrival/omega
-	file_name = "arrival_omega"
-	name = "arrival shuttle (Omega)"
-//WS Edit
-/datum/map_template/shuttle/arrival/packed
-	file_name = "arrival_packed"
-	name = "arrival shuttle (Packedstation)"
-
-/datum/map_template/shuttle/cargo/packed
-	file_name = "cargo_packed"
-	name = "supply shuttle (Packedstation)"
-
-/datum/map_template/shuttle/mining/packed
-	file_name = "mining_packed"
-	name = "mining shuttle (Packedstation)"
-//WS End
-/datum/map_template/shuttle/aux_base/default
-	file_name = "aux_base_default"
-	name = "auxilliary base (Default)"
-
-/datum/map_template/shuttle/aux_base/small
-	file_name = "aux_base_small"
-	name = "auxilliary base (Small)"
-
-/datum/map_template/shuttle/escape_pod/default
-	file_name = "aux_base_default"
-	name = "escape pod (Default)"
-
-/datum/map_template/shuttle/escape_pod/large
-	file_name = "escape_pod_large"
-	name = "escape pod (Large)"
-
-/datum/map_template/shuttle/pirate/default
-	file_name = "pirate_default"
-	name = "pirate ship (Default)"
-
-/datum/map_template/shuttle/hunter/space_cop
-	file_name = "hunter_space_cop"
-	name = "Police Spacevan"
-
-/datum/map_template/shuttle/hunter/russian
-	file_name = "hunter_russian"
-	name = "Russian Cargo Ship"
-
-/datum/map_template/shuttle/hunter/bounty
-	file_name = "hunter_bounty"
-	name = "Bounty Hunter Ship"
-
-/datum/map_template/shuttle/ruin/caravan_victim
-	file_name = "ruin_caravan_victim"
-	name = "Small Freighter"
-
-/datum/map_template/shuttle/ruin/pirate_cutter
-	file_name = "ruin_pirate_cutter"
-	name = "Pirate Cutter"
-
-/datum/map_template/shuttle/ruin/syndicate_dropship
-	file_name = "ruin_syndicate_dropship"
-	name = "Syndicate Dropship"
-
-/datum/map_template/shuttle/ruin/syndicate_fighter_shiv
-	file_name = "ruin_syndicate_fighter_shiv"
-	name = "Syndicate Fighter"
-
-/datum/map_template/shuttle/snowdin/mining
-	file_name = "snowdin_mining"
-	name = "Snowdin Mining Elevator"
-
-/datum/map_template/shuttle/snowdin/excavation
-	file_name = "snowdin_excavation"
-	name = "Snowdin Excavation Elevator"
+	starting_funds = 0
+
+//Subshuttles
+
+/datum/map_template/shuttle/subshuttles
+	category = "subshuttles"
+	starting_funds = 0
+
+/datum/map_template/shuttle/subshuttles/pill
+	file_name = "independent_pill"
+	name = "Pill-Class Torture Device"
+	prefix = "Pill"
+	name_categories = list("PILLS")
+
+/datum/map_template/shuttle/subshuttles/pillb
+	file_name = "independent_blackpill"
+	name = "Blackpill-Class Manned Torpedo"
+	prefix = "Pill"
+	name_categories = list("PILLS")
+
+/datum/map_template/shuttle/subshuttles/pills
+	file_name = "independent_superpill"
+	name = "Superpill-Class Experimental Engineering Platform"
+	prefix = "Pill"
+	name_categories = list("PILLS")
+
+/datum/map_template/shuttle/subshuttles/kunai
+	file_name = "independent_kunai"
+	name = "Kunai Dropship"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/sugarcube
+	file_name = "independent_sugarcube"
+	name = "Sugarcube Transport"
+	prefix = "ISV"
+
+//your subshuttle here
+/datum/map_template/shuttle/subshuttles/heron
+	file_name = "nanotrasen_falcon"
+	name = "Falcon Dropship"
+	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/crux
+	file_name = "minutemen_crux"
+	name = "Crux Dropship"
+	prefix = "CMSV"
+
+/datum/map_template/shuttle/subshuttles/ancon
+	file_name = "nanotrasen_ancon"
+	name = "Nanotrasen Ancon-Class Command Ship"
+	prefix = "NTSV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/frontiersmen_gut //i need to give this a better name at some point
+	file_name = "frontiersmen_gut"
+	name = "Gut Combat Freighter"
+	prefix = "ISV"
+
+/datum/map_template/shuttle/subshuttles/anvil
+	file_name = "inteq_anvil"
+	name = "Anvil-Class Dropship"
+	prefix = "IRMV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/runner
+	file_name = "syndicate_runner"
+	name = "Runner-Class Ambulance"
+	prefix = "CSSV"
+	name_categories = list("GENERAL", "SPACE")
+
+/datum/map_template/shuttle/subshuttles/haste
+	file_name = "inteq_haste"
+	name = "Haste-class Ambulance"
+	prefix = "IRMV"
+
+/datum/map_template/shuttle/subshuttles/nail
+	file_name = "pgf_nail"
+	name = "Nail-class Boarding Vessel"
+	prefix = "PGF"

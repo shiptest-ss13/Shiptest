@@ -1,19 +1,21 @@
 /**
-  * Finds and extracts seeds from an object
-  *
-  * Checks if the object is such that creates a seed when extracted.  Used by seed
-  * extractors or posably anything that would create seeds in some way.  The seeds
-  * are dropped either at the extractor, if it exists, or where the original object
-  * was and it qdel's the object
-  *
-  * Arguments:
-  * * O - Object containing the seed, can be the loc of the dumping of seeds
-  * * t_max - Amount of seed copies to dump, -1 is ranomized
-  * * extractor - Seed Extractor, used as the dumping loc for the seeds and seed multiplier
-  * * user - checks if we can remove the object from the inventory
-  * *
-  */
-/proc/seedify(obj/item/O, t_max, obj/machinery/seed_extractor/extractor, mob/living/user)
+ * Finds and extracts seeds from an object
+ *
+ * Checks if the object is such that creates a seed when extracted.  Used by seed
+ * extractors or posably anything that would create seeds in some way.  The seeds
+ * are dropped either at the extractor, if it exists, or where the original object
+ * was and it qdel's the object
+ *
+ * Arguments:
+ * * O - Object containing the seed, can be the loc of the dumping of seeds
+ * * t_max - Amount of seed copies to dump, -1 is ranomized
+ * * l_user - If true, sets the location to drop under the user rather than the extractor
+ * * d_item - If true, deletes the item after the proc is done
+ * * extractor - Seed Extractor, used as the dumping loc for the seeds and seed multiplier
+ * * user - Checks if we can remove the object from the inventory
+ * *
+ */
+/proc/seedify(obj/item/O, t_max, l_user, d_item, obj/machinery/seed_extractor/extractor, mob/living/user)
 	var/t_amount = 0
 	var/list/seeds = list()
 	if(t_max == -1)
@@ -23,8 +25,12 @@
 			t_max = rand(1,4)
 
 	var/seedloc = O.loc
-	if(extractor)
-		seedloc = extractor.loc
+	if(l_user == TRUE)
+		if(user)
+			seedloc = user.drop_location()
+	else
+		if(extractor)
+			seedloc = extractor.loc
 
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/))
 		var/obj/item/reagent_containers/food/snacks/grown/F = O
@@ -36,7 +42,8 @@
 				seeds.Add(t_prod)
 				t_prod.forceMove(seedloc)
 				t_amount++
-			qdel(O)
+			if(d_item == TRUE)
+				qdel(O)
 			return seeds
 
 	else if(istype(O, /obj/item/grown))
@@ -106,7 +113,7 @@
 			to_chat(user, "<span class='notice'>There are no seeds in \the [O.name].</span>")
 		return
 
-	else if(seedify(O,-1, src, user))
+	else if(seedify(O,-1, FALSE, TRUE, src, user))
 		to_chat(user, "<span class='notice'>You extract some seeds.</span>")
 		return
 	else if (istype(O, /obj/item/seeds))
@@ -120,24 +127,24 @@
 		return ..()
 
 /**
-  * Generate seed string
-  *
-  * Creates a string based of the traits of a seed.  We use this string as a bucket for all
-  * seeds that match as well as the key the ui uses to get the seed.  We also use the key
-  * for the data shown in the ui.  Javascript parses this string to display
-  *
-  * Arguments:
-  * * O - seed to generate the string from
-  */
+ * Generate seed string
+ *
+ * Creates a string based of the traits of a seed.  We use this string as a bucket for all
+ * seeds that match as well as the key the ui uses to get the seed.  We also use the key
+ * for the data shown in the ui.  Javascript parses this string to display
+ *
+ * Arguments:
+ * * O - seed to generate the string from
+ */
 /obj/machinery/seed_extractor/proc/generate_seed_string(obj/item/seeds/O)
 	return "name=[O.name];lifespan=[O.lifespan];endurance=[O.endurance];maturation=[O.maturation];production=[O.production];yield=[O.yield];potency=[O.potency]]"
 
 
 /** Add Seeds Proc.
-  *
-  * Adds the seeds to the contents and to an associated list that pregenerates the data
-  * needed to go to the ui handler
-  *
+ *
+ * Adds the seeds to the contents and to an associated list that pregenerates the data
+ * needed to go to the ui handler
+ *
  **/
 /obj/machinery/seed_extractor/proc/add_seed(obj/item/seeds/O)
 	if(contents.len >= 999)

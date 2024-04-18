@@ -1,6 +1,6 @@
 /obj/machinery/computer/security
 	name = "security camera console"
-	desc = "Used to access the various cameras on the station."
+	desc = "Used to access the various cameras connected to a local network."
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	circuit = /obj/item/circuitboard/computer/security
@@ -16,6 +16,16 @@
 	var/atom/movable/screen/map_view/cam_screen
 	var/atom/movable/screen/plane_master/lighting/cam_plane_master
 	var/atom/movable/screen/background/cam_background
+
+/obj/machinery/computer/security/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/security/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/security/Initialize()
 	. = ..()
@@ -167,7 +177,7 @@
 /obj/machinery/computer/security/proc/get_available_cameras()
 	var/list/L = list()
 	for (var/obj/machinery/camera/C in GLOB.cameranet.cameras)
-		if((is_away_level(z) || is_away_level(C.z)) && (C.get_virtual_z_level() != get_virtual_z_level()))//if on away mission, can only receive feed from same z_level cameras
+		if((is_away_level(src) || is_away_level(C)) && (C.virtual_z() != virtual_z()))//if on away mission, can only receive feed from same z_level cameras
 			continue
 		L.Add(C)
 	var/list/D = list()
@@ -187,11 +197,12 @@
 
 /obj/machinery/computer/security/wooden_tv
 	name = "security camera monitor"
-	desc = "An old TV hooked into the station's camera network."
+	desc = "An old TV hooked into a local camera network."
 	icon_state = "television"
 	icon_keyboard = null
 	icon_screen = "detective_tv"
 	pass_flags = PASSTABLE
+	unique_icon = TRUE
 
 /obj/machinery/computer/security/mining
 	name = "outpost camera console"
@@ -237,11 +248,13 @@
 	density = FALSE
 	circuit = null
 	light_power = 0
+	unique_icon = TRUE
 
 /obj/machinery/computer/security/telescreen/update_icon_state()
 	icon_state = initial(icon_state)
 	if(machine_stat & BROKEN)
 		icon_state += "b"
+	return ..()
 
 /obj/machinery/computer/security/telescreen/entertainment
 	name = "entertainment monitor"
@@ -257,13 +270,13 @@
 
 /obj/machinery/computer/security/telescreen/entertainment/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_CLICK, .proc/BigClick)
+	RegisterSignal(src, COMSIG_CLICK, PROC_REF(BigClick))
 
 // Bypass clickchain to allow humans to use the telescreen from a distance
 /obj/machinery/computer/security/telescreen/entertainment/proc/BigClick()
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, /atom.proc/interact, usr)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom, interact), usr)
 
 /obj/machinery/computer/security/telescreen/entertainment/proc/notify(on)
 	if(on && icon_state == icon_state_off)

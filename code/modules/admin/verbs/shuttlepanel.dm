@@ -3,7 +3,7 @@
 	set name = "Shuttle Manipulator"
 	set desc = "Opens the shuttle manipulator UI."
 
-	if(!check_rights(R_ADMIN))
+	if(!check_rights(R_DEBUG))
 		return
 
 	SSshuttle.ui_interact(usr)
@@ -22,7 +22,6 @@
 	options += "--------"
 	options += "Infinite Transit"
 	options += "Delete Shuttle"
-	options += "Into The Sunset (delete & greentext 'escape')"
 
 	var/selection = input(user, "Select where to fly [name]:", "Fly Shuttle") as null|anything in options
 	if(!selection)
@@ -33,20 +32,17 @@
 			destination = null
 			mode = SHUTTLE_IGNITING
 			setTimer(ignitionTime)
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has placed [name] into Infinite Transit.")
 
 		if("Delete Shuttle")
 			if(alert(user, "Really delete [name]?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
 				return
-			jumpToNullSpace()
-
-		if("Into The Sunset (delete & greentext 'escape')")
-			if(alert(user, "Really delete [name] and greentext escape objectives?", "Delete Shuttle", "Cancel", "Really!") != "Really!")
-				return
-			intoTheSunset()
+			if(QDELETED(current_ship))
+				qdel(src)
+			else
+				qdel(current_ship)
+			message_admins("\[SHUTTLE]: [key_name_admin(user)] has deleted [name].")
 
 		else
 			if(options[selection])
-				request(options[selection])
-
-/obj/docking_port/mobile/emergency/admin_fly_shuttle(mob/user)
-	return  // use the existing verbs for this
+				initiate_docking(options[selection])

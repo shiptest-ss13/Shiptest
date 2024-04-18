@@ -1,0 +1,34 @@
+{
+	"map_name": "Hound-class Corvette",
+	"prefix": "IRMV",
+	"namelists": [
+		"MYTHOLOGICAL",
+		"BEASTS",
+		"NATURAL_AGGRESSIVE",
+		"INTEQ"
+	],
+	"map_short_name": "Hound-class",
+	"description": "A light, fast picket and interceptor ship operated by Inteq Risk Management, the Hound offers modest crew space sufficient for a 3-man fireteam of Inteq enforcers, a small cargo bay, powerful engines, a well-stocked armory for its size, and little else. Hounds can typically be found on picket and patrol duty, escorting larger and more vulnerable IRMG ships, or performing any duty that calls for a lightning-fast ship and a handful of very well-armed individuals.",
+	"tags": [
+		"Combat"
+	],
+	"map_path": "_maps/shuttles/inteq/inteq_hound.dmm",
+	"map_id": "inteq_hound",
+	"limit": 2,
+	"job_slots": {
+		"Vanguard": {
+			"outfit": "/datum/outfit/job/inteq/captain",
+			"officer": true,
+			"slots": 1
+		},
+		"Enforcer": {
+			"outfit": "/datum/outfit/job/inteq/security",
+			"slots": 3
+		},
+		"Recruit": {
+			"outfit": "/datum/outfit/job/inteq/assistant",
+			"slots": 3
+		}
+	},
+	"enabled": false
+}

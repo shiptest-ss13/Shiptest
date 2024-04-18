@@ -3,11 +3,11 @@ name: Bug report
 about: Create a report to help reproduce and fix an issue
 title: "[BUG]"
 labels: Bug
-assignees: ''
-
+assignees: ""
 ---
 
 <!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable -->
+
 ## Round ID:
 
 <!--- **INCLUDE THE ROUND ID**

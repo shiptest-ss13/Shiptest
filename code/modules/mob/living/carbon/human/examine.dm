@@ -1,22 +1,39 @@
 /mob/living/carbon/human/examine(mob/user)
 //this is very slightly better than it was because you can use it more places. still can't do \his[src] though.
 	var/t_He = p_they(TRUE)
+	var/t_he = p_they()
 	var/t_His = p_their(TRUE)
 	var/t_his = p_their()
 	var/t_him = p_them()
 	var/t_has = p_have()
 	var/t_is = p_are()
 	var/obscure_name
+	var/list/obscured = check_obscured_slots()
+	var/skipface = ((wear_mask?.flags_inv & HIDEFACE) || (head?.flags_inv & HIDEFACE))
 
 	if(isliving(user))
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
 
-	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>!")
+	. = list(span_info("This is <EM>[name]</EM>!"))
 
-	var/list/obscured = check_obscured_slots()
-	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	if(user != src)
+		if(!obscure_name && !skipface)
+			var/face_name = get_face_name("")
+			if(face_name)
+				//if we have no guestbook, we just KNOW okay?
+				var/known_name = user.mind?.guestbook ? user.mind.guestbook.get_known_name(user, src, face_name) : face_name
+				if(known_name)
+					. += "You know them as <EM>[known_name]</EM>."
+				else
+					. += "You don't recognize [t_him]. You can <B>Ctrl-Shift click</b> [t_him] to memorize their face."
+			else
+				. += "You can't see [t_his] face very well."
+		else
+			. += "You can't see [t_his] face very well."
+	else
+		. += "It's you, <EM>[real_name]</EM>."
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
@@ -120,13 +137,11 @@
 			just_sleeping = TRUE
 
 		if(!just_sleeping)
-			if(suiciding)
-				. += "<span class='warning'>[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.</span>"
 			if(hellbound)
 				. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.</span>"
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...</span>"
+				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_he] won't be coming back...</span>"
 			else
 				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
 
@@ -148,8 +163,7 @@
 
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/list/disabled = list()
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.bodypart_disabled)
 			disabled += BP
 		missing -= BP.body_zone
@@ -188,6 +202,10 @@
 		msg += "[t_He] really keeps to the left.\n"
 	else if(l_limbs_missing >= 2 && r_limbs_missing >= 2)
 		msg += "[t_He] [p_do()]n't seem all there.\n"
+
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(BP.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
+			msg += "<span class='info'>[t_He] [t_has] \an [BP.name].</span>\n"
 
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)
@@ -228,11 +246,6 @@
 
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
 		msg += "[t_He] [t_is] severely malnourished.\n"
-	else if(nutrition >= NUTRITION_LEVEL_FAT)
-		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_He] [t_is] plump and delicious looking - Like a fat little piggy. A tasty piggy.\n"
-		else
-			msg += "[t_He] [t_is] quite chubby.\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
 			msg += "[t_He] look[p_s()] a bit grossed out.\n"
@@ -368,7 +381,6 @@
 
 				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
 				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_citation=1'>\[Add citation\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
 					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
@@ -399,3 +411,9 @@
 			dat += "[new_text]\n" //dat.Join("\n") doesn't work here, for some reason
 	if(dat.len)
 		return dat.Join()
+
+/mob/living/carbon/human/examine_more(mob/user)
+	. = ..()
+	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
+		return
+	. += list(span_notice("[p_they(TRUE)] appear[p_s()] to be [get_age()]."))

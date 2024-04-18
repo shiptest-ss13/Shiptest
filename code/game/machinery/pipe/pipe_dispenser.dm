@@ -4,6 +4,7 @@
 	icon_state = "pipe_d"
 	desc = "Dispenses countless types of pipes. Very useful if you need pipes."
 	density = TRUE
+	circuit = /obj/item/circuitboard/machine/pipedispenser
 	interaction_flags_machine = INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_OFFLINE
 	var/wait = 0
 	var/piping_layer = PIPING_LAYER_DEFAULT
@@ -51,7 +52,7 @@
 			P.add_fingerprint(usr)
 			wait = world.time + 10
 	if(href_list["makemeter"])
-		if(wait < world.time )
+		if(wait < world.time)
 			new /obj/item/pipe_meter(loc)
 			wait = world.time + 15
 	if(href_list["layer_up"])
@@ -85,6 +86,15 @@
 
 	return TRUE
 
+/obj/machinery/pipedispenser/screwdriver_act(mob/user, obj/item/I)
+	panel_open = !panel_open
+	I.play_tool_sound(src)
+	to_chat(user, "<span class='notice'>You [panel_open?"open":"close"] the panel on [src].</span>")
+	return TRUE
+
+/obj/machinery/pipedispenser/crowbar_act(mob/living/user, obj/item/I)
+	default_deconstruction_crowbar(I)
+	return TRUE
 
 /obj/machinery/pipedispenser/disposal
 	name = "disposal pipe dispenser"
@@ -102,7 +112,7 @@
 	if (!istype(pipe, /obj/structure/disposalconstruct) && !istype(pipe, /obj/structure/c_transit_tube) && !istype(pipe, /obj/structure/c_transit_tube_pod))
 		return
 
-	if (get_dist(usr, src) > 1 || get_dist(src,pipe) > 1 )
+	if (get_dist(usr, src) > 1 || get_dist(src,pipe) > 1)
 		return
 
 	if (pipe.anchored)
@@ -148,7 +158,7 @@
 			if(href_list["dir"])
 				C.setDir(text2num(href_list["dir"]))
 			C.add_fingerprint(usr)
-			C.update_icon()
+			C.update_appearance()
 			wait = world.time + 15
 	return
 

@@ -12,6 +12,11 @@ SUBSYSTEM_DEF(spacedrift)
 	msg = "P:[length(processing)]"
 	return ..()
 
+/datum/controller/subsystem/spacedrift/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["processing"] = length(processing)
+	.["custom"] = cust
 
 /datum/controller/subsystem/spacedrift/fire(resumed = 0)
 	if (!resumed)

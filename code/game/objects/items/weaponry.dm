@@ -14,9 +14,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
 
-/obj/item/banhammer/suicide_act(mob/user)
-		user.visible_message("<span class='suicide'>[user] is hitting [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to ban [user.p_them()]self from life.</span>")
-		return (BRUTELOSS|FIRELOSS|TOXLOSS|OXYLOSS)
 /*
 oranges says: This is a meme relating to the english translation of the ss13 russian wiki page on lurkmore.
 mrdoombringer sez: and remember kids, if you try and PR a fix for this item's grammar, you are admitting that you are, indeed, a newfriend.
@@ -45,11 +42,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 
-/obj/item/sord/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is trying to impale [user.p_them()]self with [src]! It might be a suicide attempt if it weren't so shitty.</span>", \
-	"<span class='suicide'>You try to impale yourself with [src], but it's USELESS...</span>")
-	return SHAME
-
 /obj/item/claymore
 	name = "claymore"
 	desc = "What are you standing around staring at this for? Get to killing!"
@@ -57,6 +49,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "claymore"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
@@ -64,7 +58,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 50
+	block_chance = 40
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
@@ -73,10 +67,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/claymore/Initialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 40, 105)
-
-/obj/item/claymore/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(BRUTELOSS)
 
 /obj/item/claymore/highlander //ALL COMMENTS MADE REGARDING THIS SWORD MUST BE MADE IN ALL CAPS
 	desc = "<b><i>THERE CAN BE ONLY ONE, AND IT WILL BE YOU!!!</i></b>\nActivate it in your hand to point to the nearest victim."
@@ -210,6 +200,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "katana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	force = 40
@@ -217,18 +209,63 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	w_class = WEIGHT_CLASS_HUGE
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 50
+	block_chance = 10
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
+	supports_variations = VOX_VARIATION
 
 /obj/item/katana/cursed
-	slot_flags = null
+	name = "ominous katana"
+	desc = "A japanese single-edged blade, once used to contain an ancient evil. The being within is grateful for being released, but beware: <b>generosity has a price.</b></span>"
+	icon_state = "ominous_katana"
+	item_state = "ominous_katana"
+	icon = 'icons/obj/lavaland/artefacts.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 35
+	armour_penetration = 30
+	max_integrity = 500
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	var/essence = 0//Used for blade abilities, mainly heals(If I can safely implement this I will nerf the damage slightly, and boost the selfdam)
+	var/list/nemesis_factions = list("mining", "boss")
+	var/faction_bonus_force = 25
 
-/obj/item/katana/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] stomach open with [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
-	return(BRUTELOSS)
+
+/obj/item/katana/cursed/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>To cut into the flesh of your target with this weapon is to feed the gluttonous emptiness within. Burn the blood of your enemies to replenish your own spent essence.</span>"
+
+/obj/item/katana/cursed/attack(mob/living/target, mob/living/user)
+	. = ..()
+	if(isliving(target) && target.stat != DEAD)
+		essence += rand(15, 20)
+
+/obj/item/katana/cursed/attack(mob/living/target, mob/living/carbon/human/user)
+	var/nemesis_faction = FALSE
+	if(LAZYLEN(nemesis_factions))
+		for(var/F in target.faction)
+			if(F in nemesis_factions)
+				nemesis_faction = TRUE
+				force += faction_bonus_force
+				nemesis_effects(user, target)
+				break
+	. = ..()
+	if(nemesis_faction)
+		force -= faction_bonus_force
+
+/obj/item/katana/cursed/proc/nemesis_effects(mob/living/user, mob/living/target)
+	return
+
+/obj/item/katana/cursed/attack(mob/target, mob/living/carbon/human/user)
+	if(user.mind && user.owns_soul())
+		to_chat(user, "<span class='warning'>You feel a terrible chill as the emptiness within [src] devours on your life force!</span>")
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+		user.apply_damage(rand(2,3), BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_HEAD, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_GROIN))
+	..()
 
 /obj/item/wirerod
 	name = "wired rod"
@@ -305,7 +342,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/throwing_star/magspear
 	name = "magnetic spear"
 	desc = "A reusable spear that is typically loaded into kinetic spearguns."
-	icon = 'icons/obj/ammo.dmi'
+	icon = 'icons/obj/ammo_bullets.dmi'
 	icon_state = "magspear"
 	throwforce = 25 //kills regular carps in one hit
 	force = 10
@@ -351,10 +388,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		hitsound = 'sound/weapons/genhit.ogg'
 		sharpness = IS_BLUNT
 
-/obj/item/switchblade/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] own throat with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS)
-
 /obj/item/phone
 	name = "red phone"
 	desc = "Should anything ever go wrong..."
@@ -368,12 +401,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("called", "rang")
 	hitsound = 'sound/weapons/ring.ogg'
 
-/obj/item/phone/suicide_act(mob/user)
-	if(locate(/obj/structure/chair/stool) in user.loc)
-		user.visible_message("<span class='suicide'>[user] begins to tie a noose with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	else
-		user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]'s cord! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return(OXYLOSS)
 
 /obj/item/cane
 	name = "cane"
@@ -433,9 +460,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "ectoplasm"
 
-/obj/item/ectoplasm/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is inhaling [src]! It looks like [user.p_theyre()] trying to visit the astral plane!</span>")
-	return (OXYLOSS)
 
 /obj/item/ectoplasm/angelic
 	icon = 'icons/obj/wizard.dmi'
@@ -491,36 +515,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/statuebust/Initialize()
 	. = ..()
 	AddComponent(/datum/component/art, impressiveness)
-	addtimer(CALLBACK(src, /datum.proc/_AddComponent, list(/datum/component/beauty, 1000)), 0)
+	AddElement(/datum/element/beauty, 1000)
 
 /obj/item/statuebust/hippocratic
 	name = "hippocrates bust"
 	desc = "A bust of the famous Greek physician Hippocrates of Kos, often referred to as the father of western medicine."
 	icon_state = "hippocratic"
 	impressiveness = 50
-
-/obj/item/tailclub
-	name = "tail club"
-	desc = "For the beating to death of lizards with their own tails."
-	icon_state = "tailclub"
-	force = 14
-	throwforce = 1 // why are you throwing a club do you even weapon
-	throw_speed = 1
-	throw_range = 1
-	attack_verb = list("clubbed", "bludgeoned")
-
-/obj/item/melee/chainofcommand/tailwhip
-	name = "liz o' nine tails"
-	desc = "A whip fashioned from the severed tails of lizards."
-	icon_state = "tailwhip"
-	item_state = "tailwhip"
-	item_flags = NONE
-
-/obj/item/melee/chainofcommand/tailwhip/kitty
-	name = "cat o' nine tails"
-	desc = "A whip fashioned from the severed tails of cats."
-	icon_state = "catwhip"
-	item_state = "catwhip"
 
 /obj/item/melee/skateboard
 	name = "improvised skateboard"
@@ -533,15 +534,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	attack_verb = list("smacked", "whacked", "slammed", "smashed")
 	///The vehicle counterpart for the board
 	var/board_item_type = /obj/vehicle/ridden/scooter/skateboard
-
-/obj/item/melee/skateboard/suicide_act(mob/living/carbon/user)				//WS Edit Begin - Skateboards can take you to the afterlife
-	user.visible_message("<span class='suicide'>[user] begins attempting to preform a double kickflip! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	if(prob(3))
-		user.dust()
-		user.visible_message("<span class='suicide'>[user] succeeds! [user.p_theyre()] ascends for a moment before exploding into a fine dust!</span>") //this is very likely to cause issues in the future, yell at the coder
-		for(var/mob/living/M in get_hearers_in_view(7,user))
-			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "Rad", /datum/mood_event/dkickflip)
-	return BRUTELOSS			//WS Edit End
 
 /obj/item/melee/skateboard/attack_self(mob/user)
 	var/obj/vehicle/ridden/scooter/skateboard/S = new board_item_type(get_turf(user))//this probably has fucky interactions with telekinesis but for the record it wasnt my fault
@@ -681,210 +673,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 			else
 				qdel(target)
 
-/obj/item/circlegame
-	name = "circled hand"
-	desc = "If somebody looks at this while it's below your waist, you get to bop them."
-	icon_state = "madeyoulook"
-	force = 0
-	throwforce = 0
-	item_flags = DROPDEL | ABSTRACT
-	attack_verb = list("bopped")
-
-/obj/item/circlegame/Initialize()
-	. = ..()
-	var/mob/living/owner = loc
-	if(!istype(owner))
-		return
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/ownerExamined)
-
-/obj/item/circlegame/Destroy()
-	var/mob/owner = loc
-	if(!istype(owner))
-		return
-	UnregisterSignal(owner, COMSIG_PARENT_EXAMINE)
-	. = ..()
-
-/// Stage 1: The mistake is made
-/obj/item/circlegame/proc/ownerExamined(mob/living/owner, mob/living/sucker)
-	SIGNAL_HANDLER
-
-	if(!istype(sucker) || !in_range(owner, sucker))
-		return
-	addtimer(CALLBACK(src, .proc/waitASecond, owner, sucker), 4)
-
-/// Stage 2: Fear sets in
-/obj/item/circlegame/proc/waitASecond(mob/living/owner, mob/living/sucker)
-	if(QDELETED(sucker) || QDELETED(src) || QDELETED(owner))
-		return
-
-	if(owner == sucker) // big mood
-		to_chat(owner, "<span class='danger'>Wait a second... you just looked at your own [src.name]!</span>")
-		addtimer(CALLBACK(src, .proc/selfGottem, owner), 10)
-	else
-		to_chat(sucker, "<span class='danger'>Wait a second... was that a-</span>")
-		addtimer(CALLBACK(src, .proc/GOTTEM, owner, sucker), 6)
-
-/// Stage 3A: We face our own failures
-/obj/item/circlegame/proc/selfGottem(mob/living/owner)
-	if(QDELETED(src) || QDELETED(owner))
-		return
-
-	playsound(get_turf(owner), 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-	owner.visible_message("<span class='danger'>[owner] shamefully bops [owner.p_them()]self with [owner.p_their()] [src.name].</span>", "<span class='userdanger'>You shamefully bop yourself with your [src.name].</span>", \
-		"<span class='hear'>You hear a dull thud!</span>")
-	log_combat(owner, owner, "bopped", src.name, "(self)")
-	owner.do_attack_animation(owner)
-	owner.apply_damage(100, STAMINA)
-	owner.Knockdown(10)
-	qdel(src)
-
-/// Stage 3B: We face our reckoning (unless we moved away or they're incapacitated)
-/obj/item/circlegame/proc/GOTTEM(mob/living/owner, mob/living/sucker)
-	if(QDELETED(sucker))
-		return
-
-	if(QDELETED(src) || QDELETED(owner))
-		to_chat(sucker, "<span class='warning'>Nevermind... must've been your imagination...</span>")
-		return
-
-	if(!in_range(owner, sucker) || !(owner.mobility_flags & MOBILITY_USE))
-		to_chat(sucker, "<span class='notice'>Phew... you moved away before [owner] noticed you saw [owner.p_their()] [src.name]...</span>")
-		return
-
-	to_chat(owner, "<span class='warning'>[sucker] looks down at your [src.name] before trying to avert [sucker.p_their()] eyes, but it's too late!</span>")
-	to_chat(sucker, "<span class='danger'><b>[owner] sees the fear in your eyes as you try to look away from [owner.p_their()] [src.name]!</b></span>")
-
-	owner.face_atom(sucker)
-	if(owner.client)
-		owner.client.give_award(/datum/award/achievement/misc/gottem, owner) // then everybody clapped
-
-	playsound(get_turf(owner), 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-	owner.do_attack_animation(sucker)
-
-	if(HAS_TRAIT(owner, TRAIT_HULK))
-		owner.visible_message("<span class='danger'>[owner] bops [sucker] with [owner.p_their()] [src.name] much harder than intended, sending [sucker.p_them()] flying!</span>", \
-			"<span class='danger'>You bop [sucker] with your [src.name] much harder than intended, sending [sucker.p_them()] flying!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", ignored_mobs=list(sucker))
-		to_chat(sucker, "<span class='userdanger'>[owner] bops you incredibly hard with [owner.p_their()] [src.name], sending you flying!</span>")
-		sucker.apply_damage(50, STAMINA)
-		sucker.Knockdown(50)
-		log_combat(owner, sucker, "bopped", src.name, "(setup- Hulk)")
-		var/atom/throw_target = get_edge_target_turf(sucker, owner.dir)
-		sucker.throw_at(throw_target, 6, 3, owner)
-	else
-		owner.visible_message("<span class='danger'>[owner] bops [sucker] with [owner.p_their()] [src.name]!</span>", "<span class='danger'>You bop [sucker] with your [src.name]!</span>", \
-			"<span class='hear'>You hear a dull thud!</span>", ignored_mobs=list(sucker))
-		sucker.apply_damage(15, STAMINA)
-		log_combat(owner, sucker, "bopped", src.name, "(setup)")
-		to_chat(sucker, "<span class='userdanger'>[owner] bops you with [owner.p_their()] [src.name]!</span>")
-	qdel(src)
-
-/obj/item/slapper
-	name = "slapper"
-	desc = "This is how real men fight."
-	icon_state = "latexballon"
-	item_state = "nothing"
-	force = 0
-	throwforce = 0
-	item_flags = DROPDEL | ABSTRACT
-	attack_verb = list("slapped")
-	hitsound = 'sound/effects/snap.ogg'
-
-/obj/item/slapper/attack(mob/M, mob/living/carbon/human/user)
-	if(ishuman(M))
-		var/mob/living/carbon/human/L = M
-		if(L && L.dna && L.dna.species)
-			L.dna.species.stop_wagging_tail(M)
-	user.do_attack_animation(M)
-	playsound(M, 'sound/weapons/slap.ogg', 50, TRUE, -1)
-	user.visible_message("<span class='danger'>[user] slaps [M]!</span>",
-	"<span class='notice'>You slap [M]!</span>",\
-	"<span class='hear'>You hear a slap.</span>")
-	return
-
-/obj/item/noogie
-	name = "noogie"
-	desc = "Get someone in an aggressive grab then use this on them to ruin their day."
-	icon_state = "latexballon"
-	force = 0
-	throwforce = 0
-	item_flags = DROPDEL | ABSTRACT
-
-/obj/item/noogie/attack(mob/living/carbon/target, mob/living/carbon/human/user)
-	if(!istype(target))
-		to_chat(user, "<span class='warning'>You don't think you can give this a noogie!</span>")
-		return
-
-	if(!(target?.get_bodypart(BODY_ZONE_HEAD)) || user.pulling != target || user.grab_state < GRAB_AGGRESSIVE || user.getStaminaLoss() > 80)
-		return FALSE
-
-	// [user] gives [target] a [prefix_desc] noogie[affix_desc]!
-	var/brutal_noogie = FALSE // was it an extra hard noogie?
-	var/prefix_desc = "rough"
-	var/affix_desc = ""
-	var/affix_desc_target = ""
-
-	if(HAS_TRAIT(target, TRAIT_ANTENNAE))
-		prefix_desc = "violent"
-		affix_desc = "on [target.p_their()] sensitive antennae"
-		affix_desc_target = "on your highly sensitive antennae"
-		brutal_noogie = TRUE
-	if(user.dna?.check_mutation(HULK))
-		prefix_desc = "sickeningly brutal"
-		brutal_noogie = TRUE
-
-	var/message_others = "[prefix_desc] noogie[affix_desc]"
-	var/message_target = "[prefix_desc] noogie[affix_desc_target]"
-
-	user.visible_message("<span class='danger'>[user] begins giving [target] a [message_others]!</span>", "<span class='warning'>You start giving [target] a [message_others]!</span>", vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=target)
-	to_chat(target, "<span class='userdanger'>[user] starts giving you a [message_target]!</span>")
-
-	if(!do_after(user, 1.5 SECONDS, target))
-		to_chat(user, "<span class='warning'>You fail to give [target] a noogie!</span>")
-		to_chat(target, "<span class='danger'>[user] fails to give you a noogie!</span>")
-		return
-
-	if(brutal_noogie)
-		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "noogie_harsh", /datum/mood_event/noogie_harsh)
-	else
-		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "noogie", /datum/mood_event/noogie)
-
-	noogie_loop(user, target, 0)
-
-/// The actual meat and bones of the noogie'ing
-/obj/item/noogie/proc/noogie_loop(mob/living/carbon/human/user, mob/living/carbon/target, iteration)
-	if(!(target?.get_bodypart(BODY_ZONE_HEAD)) || user.pulling != target)
-		return FALSE
-
-	if(user.getStaminaLoss() > 80)
-		to_chat(user, "<span class='warning'>You're too tired to continue giving [target] a noogie!</span>")
-		to_chat(target, "<span class='danger'>[user] is too tired to continue giving you a noogie!</span>")
-		return
-
-	var/damage = rand(1, 5)
-	if(HAS_TRAIT(target, TRAIT_ANTENNAE))
-		damage += rand(3,7)
-	if(user.dna?.check_mutation(HULK))
-		damage += rand(3,7)
-
-	if(damage >= 5)
-		target.emote("scream")
-
-	target.apply_damage(damage, BRUTE, BODY_ZONE_HEAD)
-	user.adjustStaminaLoss(iteration + 5)
-	playsound(get_turf(user), pick('sound/effects/rustle1.ogg','sound/effects/rustle2.ogg','sound/effects/rustle3.ogg','sound/effects/rustle4.ogg','sound/effects/rustle5.ogg'), 50)
-
-	if(prob(33))
-		user.visible_message("<span class='danger'>[user] continues noogie'ing [target]!</span>", "<span class='warning'>You continue giving [target] a noogie!</span>", vision_distance=COMBAT_MESSAGE_RANGE, ignored_mobs=target)
-		to_chat(target, "<span class='userdanger'>[user] continues giving you a noogie!</span>")
-
-	if(!do_after(user, 1 SECONDS + (iteration * 2), target))
-		to_chat(user, "<span class='warning'>You fail to give [target] a noogie!</span>")
-		to_chat(target, "<span class='danger'>[user] fails to give you a noogie!</span>")
-		return
-
-	iteration++
-	noogie_loop(user, target, iteration)
-
 /obj/item/proc/can_trigger_gun(mob/living/user)
 	if(!user.can_use_guns(src))
 		return FALSE
@@ -930,12 +718,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 //HF blade
 /obj/item/vibro_weapon
 	icon_state = "hfrequency0"
+	base_icon_state = "hfrequency"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "vibro sword"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
 	armour_penetration = 100
-	block_chance = 40
+	block_chance = 30
 	force = 20
 	throwforce = 20
 	throw_speed = 4
@@ -948,13 +737,13 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/vibro_weapon/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/vibro_weapon/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 20, 105)
-	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="hfrequency1")
+	AddComponent(/datum/component/two_handed, force_multiplier=2, icon_wielded="[base_icon_state]1")
 
 /// triggered on wield of two handed item
 /obj/item/vibro_weapon/proc/on_wield(obj/item/source, mob/user)
@@ -969,7 +758,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	wielded = FALSE
 
 /obj/item/vibro_weapon/update_icon_state()
-	icon_state = "hfrequency0"
+	icon_state = "[base_icon_state]0"
+	return ..()
 
 /obj/item/vibro_weapon/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(wielded)
@@ -984,3 +774,53 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 				owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
 				return 1
 	return 0
+
+/obj/item/legion_staff
+	icon_state = "legion_staff"
+	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
+	name = "legionnaire staff"
+	desc = "The remnants of a legionnaire, reconstructed around a pole of bone. The skulls it produces are loyal to the wielder, seeming to recognize them as their host body."
+	icon = 'icons/obj/guns/magic.dmi'
+	block_chance = 20
+	force = 20
+	throwforce = 10
+	throw_speed = 4
+	attack_verb = list("bit", "gnawed", "chomped")
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	hitsound = 'sound/weapons/bite.ogg'
+	var/next_use_time
+
+/obj/item/legion_staff/attack_self(mob/user)
+	if(next_use_time > world.time)
+		user.visible_message("<span class='warning'>[src] rattles in [user]'s hands, but nothing happens...</span>")
+		to_chat(user, "<span class='warning'><b>You need to wait longer to use this again.</b></span>")
+		return
+	user.visible_message("<span class='warning'>[user] raises the [src] and summons a legion skull!</span>")
+	for(var/i in 1 to 3)
+		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff/LegionSkull = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/staff(user.loc)
+		LegionSkull.faction = user.faction.Copy()
+		LegionSkull.friends += user
+	next_use_time = world.time + 6 SECONDS
+
+/obj/item/claymore/bone
+	name = "Bone Sword"
+	desc = "Jagged pieces of bone are tied to what looks like a goliaths femur."
+	icon_state = "bone_sword"
+	item_state = "bone_sword"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 15
+	throwforce = 10
+	armour_penetration = 15
+
+
+/obj/item/vibro_weapon/weak
+	armour_penetration = 10
+	block_chance = 10
+	force = 15
+	throwforce = 20
+

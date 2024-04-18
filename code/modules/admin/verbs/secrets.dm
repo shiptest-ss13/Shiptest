@@ -104,15 +104,6 @@
 				if (ACCESS_MAINT_TUNNELS in M.req_access)
 					M.req_access = list(ACCESS_BRIG)
 			message_admins("[key_name_admin(holder)] made all maint doors brig access-only.")
-		if("infinite_sec")
-			if(!is_debugger)
-				return
-			var/datum/job/J = SSjob.GetJob("Security Officer")
-			if(!J)
-				return
-			J.total_positions = -1
-			J.spawn_positions = -1
-			message_admins("[key_name_admin(holder)] has removed the cap on security officers.")
 		//Buttons for helpful stuff. This is where people land in the tgui
 		if("clear_virus")
 			var/choice = input("Are you sure you want to cure all disease?") in list("Yes", "Cancel")
@@ -147,19 +138,14 @@
 			else
 				alert("For some reason there's a SSticker, but not a game mode")
 		if("manifest")
-			var/dat = "<B>Showing Crew Manifest.</B><HR>"
-			dat += "<table cellspacing=5><tr><th>Name</th><th>Position</th></tr>"
-			for(var/datum/data/record/t in GLOB.data_core.general)
-				dat += "<tr><td>[t.fields["name"]]</td><td>[t.fields["rank"]]</td></tr>"
-			dat += "</table>"
-			holder << browse(dat, "window=manifest;size=440x410")
+			GLOB.crew_manifest_tgui.ui_interact(holder)
 		if("dna")
 			var/dat = "<B>Showing DNA from blood.</B><HR>"
 			dat += "<table cellspacing=5><tr><th>Name</th><th>DNA</th><th>Blood Type</th></tr>"
 			for(var/i in GLOB.human_list)
 				var/mob/living/carbon/human/H = i
 				if(H.ckey)
-					dat += "<tr><td>[H]</td><td>[H.dna.unique_enzymes]</td><td>[H.dna.blood_type]</td></tr>"
+					dat += "<tr><td>[H]</td><td>[H.dna.unique_enzymes]</td><td>[H.dna.blood_type.name]</td></tr>"
 			dat += "</table>"
 			holder << browse(dat, "window=DNA;size=440x410")
 		if("fingerprints")
@@ -186,25 +172,25 @@
 				for(var/mob/living/mob in thunderdome)
 					qdel(mob) //Clear mobs
 			for(var/obj/obj in thunderdome)
-				if(!istype(obj, /obj/machinery/camera) && !istype(obj, /obj/effect/abstract/proximity_checker))
+				if(!istype(obj, /obj/machinery/camera))
 					qdel(obj) //Clear objects
 
 			var/area/template = GLOB.areas_by_type[/area/tdome/arena_source]
 			template.copy_contents_to(thunderdome)
 		if("set_name")
-			var/new_name = input(holder, "Please input a new name for the station.", "What?", "") as text|null
+			var/new_name = input(holder, "Please input a new name for the sector.", "What?", "") as text|null
 			if(!new_name)
 				return
 			set_station_name(new_name)
-			log_admin("[key_name(holder)] renamed the station to \"[new_name]\".")
+			log_admin("[key_name(holder)] renamed the sector to \"[new_name]\".")
 			message_admins("<span class='adminnotice'>[key_name_admin(holder)] renamed the station to: [new_name].</span>")
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		if("reset_name")
 			var/new_name = new_station_name()
 			set_station_name(new_name)
-			log_admin("[key_name(holder)] reset the station name.")
-			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the station name.</span>")
-			priority_announce("[command_name()] has renamed the station to \"[new_name]\".")
+			log_admin("[key_name(holder)] reset the sector's name.")
+			message_admins("<span class='adminnotice'>[key_name_admin(holder)] reset the sector's name.</span>")
+			priority_announce("[command_name()] has renamed the sector to \"[new_name]\".")
 		//!fun! buttons.
 		if("virus")
 			if(!is_funmin)
@@ -262,20 +248,6 @@
 				return
 			holder.anon_names()
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Anonymous Names"))
-		if("tripleAI")
-			if(!is_funmin)
-				return
-			holder.triple_ai()
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Triple AI"))
-		if("onlyone")
-			if(!is_funmin)
-				return
-			var/response = alert("Delay by 40 seconds?", "There can, in fact, only be one", "Instant!", "40 seconds (crush the hope of a normal shift)")
-			if(response == "Instant!")
-				holder.only_one()
-			else
-				holder.only_one_delayed()
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("There Can Be Only One"))
 		if("guns")
 			if(!is_funmin)
 				return
@@ -317,26 +289,6 @@
 						SSevents.toggleWizardmode()
 						SSevents.resetFrequency()
 						SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Summon Events", "Disable"))
-		if("eagles")
-			if(!is_funmin)
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Egalitarian Station"))
-			for(var/obj/machinery/door/airlock/W in GLOB.machines)
-				var/area/airlock_area = get_area(W)
-				if(istype(airlock_area, /area/ship) && !istype(airlock_area, /area/ship/bridge) && !istype(airlock_area, /area/ship/crew) && !istype(airlock_area, /area/ship/security/prison))
-					W.req_access = list()
-			message_admins("[key_name_admin(holder)] activated Egalitarian Station mode")
-			priority_announce("CentCom airlock control override activated. Please take this time to get acquainted with your coworkers.", null, 'sound/ai/commandreport.ogg')
-		if("ancap")
-			if(!is_funmin)
-				return
-			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Anarcho-capitalist Station"))
-			SSeconomy.full_ancap = !SSeconomy.full_ancap
-			message_admins("[key_name_admin(holder)] toggled Anarcho-capitalist mode")
-			if(SSeconomy.full_ancap)
-				priority_announce("The NAP is now in full effect.", null, 'sound/ai/commandreport.ogg')
-			else
-				priority_announce("The NAP has been revoked.", null, 'sound/ai/commandreport.ogg')
 		if("blackout")
 			if(!is_funmin)
 				return
@@ -369,7 +321,7 @@
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Monkeyize All Humans"))
 			for(var/i in GLOB.human_list)
 				var/mob/living/carbon/human/H = i
-				INVOKE_ASYNC(H, /mob/living/carbon.proc/monkeyize)
+				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon, monkeyize))
 			ok = TRUE
 		if("traitor_all")
 			if(!is_funmin)
@@ -406,7 +358,9 @@
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60, 80)
 			message_admins("[key_name_admin(holder)] made everybody brain damaged")
 		if("floorlava")
-			SSweather.run_weather(/datum/weather/floor_is_lava)
+			/// Should point to a central mapzone.weather_controller, one doesn't exist in shiptest
+			WARNING("Floor lava bus is not implemented.")
+			return
 		if("anime")
 			if(!is_funmin)
 				return
@@ -424,7 +378,7 @@
 				var/mob/living/carbon/human/H = i
 				SEND_SOUND(H, sound('sound/ai/animes.ogg'))
 
-				if(H.dna.species.id == "human")
+				if(H.dna.species.id == SPECIES_HUMAN)
 					if(H.dna.features["tail_human"] == "None" || H.dna.features["ears"] == "None")
 						var/obj/item/organ/ears/cat/ears = new
 						var/obj/item/organ/tail/cat/tail = new

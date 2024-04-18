@@ -12,9 +12,9 @@ const HEALTH_COLOR_BY_LEVEL = [
   '#ed2814',
 ];
 
-const jobIsHead = jobId => jobId % 10 === 0;
+const jobIsHead = (jobId) => jobId % 10 === 0;
 
-const jobToColor = jobId => {
+const jobToColor = (jobId) => {
   if (jobId === 0) {
     return COLORS.department.captain;
   }
@@ -45,14 +45,10 @@ const healthToColor = (oxy, tox, burn, brute) => {
   return HEALTH_COLOR_BY_LEVEL[level];
 };
 
-const HealthStat = props => {
+const HealthStat = (props) => {
   const { type, value } = props;
   return (
-    <Box
-      inline
-      width={2}
-      color={COLORS.damageType[type]}
-      textAlign="center">
+    <Box inline width={2} color={COLORS.damageType[type]} textAlign="center">
       {value}
     </Box>
   );
@@ -60,11 +56,7 @@ const HealthStat = props => {
 
 export const CrewConsole = () => {
   return (
-    <Window
-      title="Crew Monitor"
-      width={800}
-      height={600}
-      resizable>
+    <Window title="Crew Monitor" width={800} height={600} resizable>
       <Window.Content scrollable>
         <Section minHeight="540px">
           <CrewTable />
@@ -80,27 +72,24 @@ const CrewTable = (props, context) => {
   return (
     <Table>
       <Table.Row>
-        <Table.Cell bold>
-          Name
-        </Table.Cell>
+        <Table.Cell bold>Name</Table.Cell>
         <Table.Cell bold collapsing />
         <Table.Cell bold collapsing textAlign="center">
           Vitals
         </Table.Cell>
-        <Table.Cell bold>
-          Position
-        </Table.Cell>
+        <Table.Cell bold>Position</Table.Cell>
         {!!data.link_allowed && (
           <Table.Cell bold collapsing>
             Tracking
           </Table.Cell>
         )}
       </Table.Row>
-      {sensors.map(sensor => (
+      {sensors.map((sensor) => (
         <Table.Row key={sensor.name}>
           <Table.Cell
             bold={jobIsHead(sensor.ijob)}
-            color={jobToColor(sensor.ijob)}>
+            color={jobToColor(sensor.ijob)}
+          >
             {sensor.name} ({sensor.assignment})
           </Table.Cell>
           <Table.Cell collapsing textAlign="center">
@@ -109,7 +98,9 @@ const CrewTable = (props, context) => {
                 sensor.oxydam,
                 sensor.toxdam,
                 sensor.burndam,
-                sensor.brutedam)} />
+                sensor.brutedam
+              )}
+            />
           </Table.Cell>
           <Table.Cell collapsing textAlign="center">
             {sensor.oxydam !== null ? (
@@ -122,21 +113,24 @@ const CrewTable = (props, context) => {
                 {'/'}
                 <HealthStat type="brute" value={sensor.brutedam} />
               </Box>
+            ) : sensor.life_status ? (
+              'Alive'
             ) : (
-              sensor.life_status ? 'Alive' : 'Dead'
+              'Dead'
             )}
           </Table.Cell>
-          <Table.Cell>
-            {sensor.pos_x !== null ? sensor.area : 'N/A'}
-          </Table.Cell>
+          <Table.Cell>{sensor.pos_x !== null ? sensor.area : 'N/A'}</Table.Cell>
           {!!data.link_allowed && (
             <Table.Cell collapsing>
               <Button
                 content="Track"
                 disabled={!sensor.can_track}
-                onClick={() => act('select_person', {
-                  name: sensor.name,
-                })} />
+                onClick={() =>
+                  act('select_person', {
+                    name: sensor.name,
+                  })
+                }
+              />
             </Table.Cell>
           )}
         </Table.Row>

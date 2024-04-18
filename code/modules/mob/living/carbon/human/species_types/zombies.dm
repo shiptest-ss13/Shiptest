@@ -2,9 +2,8 @@
 
 /datum/species/zombie
 	// 1spooky
-	name = "High-Functioning Zombie"
-	id = "zombie"
-	say_mod = "moans"
+	name = "\improper High-Functioning Zombie"
+	id = SPECIES_ZOMBIE
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	species_traits = list(NOBLOOD,NOZOMBIE,NOTRANSSTING)
@@ -17,17 +16,18 @@
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | ERT_SPAWN
 	bodytemp_normal = T0C // They have no natural body heat, the environment regulates body temp
 	bodytemp_heat_damage_limit = FIRE_MINIMUM_TEMPERATURE_TO_EXIST // Take damage at fire temp
-	bodytemp_cold_damage_limit = MINIMUM_TEMPERATURE_TO_MOVE // take damage below minimum movement temp
 
-/datum/species/zombie/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return ..()
+	species_chest = /obj/item/bodypart/chest/zombie
+	species_head = /obj/item/bodypart/head/zombie
+	species_l_arm = /obj/item/bodypart/l_arm/zombie
+	species_r_arm = /obj/item/bodypart/r_arm/zombie
+	species_l_leg = /obj/item/bodypart/leg/left/zombie
+	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
 /datum/species/zombie/infectious
-	name = "Infectious Zombie"
+	name = "\improper Infectious Zombie"
 	id = "memezombies"
-	limbs_id = "zombie"
+	examine_limb_id = "zombie"
 	mutanthands = /obj/item/zombie_hand
 	armor = 20 // 120 damage to KO a zombie, which kills it
 	speedmod = 1.6
@@ -87,13 +87,20 @@
 		infection.Insert(C)
 
 // Your skin falls off
-/datum/species/krokodil_addict
-	name = "Human"
-	id = "goofzombies"
-	limbs_id = "zombie" //They look like zombies
+/datum/species/human/krokodil_addict
+	name = "\improper Human"
+	id = SPECIES_GOOFZOMBIE
+	examine_limb_id = SPECIES_HUMAN
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
+
+	species_chest = /obj/item/bodypart/chest/zombie
+	species_head = /obj/item/bodypart/head/zombie
+	species_l_arm = /obj/item/bodypart/l_arm/zombie
+	species_r_arm = /obj/item/bodypart/r_arm/zombie
+	species_l_leg = /obj/item/bodypart/leg/left/zombie
+	species_r_leg = /obj/item/bodypart/leg/right/zombie
 
 #undef REGENERATION_DELAY

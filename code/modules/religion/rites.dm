@@ -76,3 +76,20 @@
 	human2borg.set_species(/datum/species/android)
 	human2borg.visible_message("<span class='notice'>[human2borg] has been converted by the rite of [name]!</span>")
 	return TRUE
+
+
+/*********Clockwork**********/
+
+/datum/religion_rites/transmute_brass
+	name = "Brass Transmutation"
+	desc = "Create brass from your sacrificed metal."
+	ritual_invocations = list("By the inner workings of our god...",
+						"... We call upon you, to give us the power...",
+						"... to transform the world around us, creating that which is pure...")
+	invoke_msg = "... From this precious brass we shall sculpt the world around us!!"
+	favor_cost = 60
+
+/datum/religion_rites/transmute_brass/invoke_effect(mob/living/user, obj/structure/altar_of_gods/AOG)
+	new /obj/item/stack/tile/bronze/thirty(get_turf(AOG))
+	to_chat(user, "<span class='notice'>Brass has been transmuted by the rite of [name]!</span>")
+	return TRUE

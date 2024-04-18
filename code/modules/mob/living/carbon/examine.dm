@@ -6,7 +6,7 @@
 	var/t_has = p_have()
 	var/t_is = p_are()
 
-	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!")
+	. = list("<span class='info'>This is [icon2html(src, user)] \a <EM>[src]</EM>!")
 	var/list/obscured = check_obscured_slots()
 
 	if (handcuffed)
@@ -35,8 +35,7 @@
 	var/list/msg = list("<span class='warning'>")
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
 	var/list/disabled = list()
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.bodypart_disabled)
 			disabled += BP
 		missing -= BP.body_zone
@@ -140,6 +139,6 @@
 		if(151 to INFINITY)
 			. += "[t_He] [t_is] covered in glistening dust!" //End WS edit
 
-	. += "*---------*</span>"
+	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)

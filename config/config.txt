@@ -1,9 +1,9 @@
 # You can use the "$include" directive to split your configs however you want
 
 $include game_options.txt
+$include client_features.txt
 $include dbconfig.txt
 $include comms.txt
-$include antag_rep.txt
 $include resources.txt
 $include interviews.txt
 $include atmos_mix.txt
@@ -69,18 +69,19 @@ ENABLE_LOCALHOST_RANK
 #USE_ACCOUNT_AGE_FOR_JOBS
 
 ## Unhash this to track player playtime in the database. Requires database to be enabled.
+## Playtime requirements for ship spawning and job selection is ignored unless this is enabled.
 #USE_EXP_TRACKING
-## Unhash this to enable playtime requirements for head jobs.
-#USE_EXP_RESTRICTIONS_HEADS
-## Unhash this to override head jobs' playtime requirements with this number of hours.
-## Leave this commented out to use the values defined in the job datums. Values in the datums are stored as minutes.
-#USE_EXP_RESTRICTIONS_HEADS_HOURS 3
-## Unhash this to change head jobs' playtime requirements so that they're based on department playtime, rather than crew playtime.
-#USE_EXP_RESTRICTIONS_HEADS_DEPARTMENT
-## Unhash this to enable playtime requirements for certain non-head jobs, like Engineer and Scientist.
-#USE_EXP_RESTRICTIONS_OTHER
-## Allows admins to bypass job playtime requirements.
+## Allows admins to bypass job and ship playtime requirements.
 #USE_EXP_RESTRICTIONS_ADMIN_BYPASS
+
+## The "base" minimum number of minutes as living to spawn a ship from the join menu.
+## Ships may have differing true values depending on the template's coefficient, defined in JSON.
+## The ship spawn playtime restriction is the ONLY restriction that applies for ship spawning.
+SHIP_SPAWN_BASE_EXP_MIN 600
+## The "base" minimum number of minutes as living to spawn into an officer job.
+## Ships may have differing true values depending on the template's coefficient, defined in JSON.
+## Once the ship has been spawned, this restriction will apply for any officer job being joined on a ship.
+OFFICER_JOIN_BASE_EXP_MIN 300
 
 ## log OOC channel
 LOG_OOC
@@ -158,6 +159,9 @@ LOG_SHUTTLE
 ## Enable the demo subsystem
 # DEMOS_ENABLED
 
+## Log all timers on timer auto reset
+# LOG_TIMERS_ON_BUCKET_RESET
+
 ##Log camera pictures - Must have picture logging enabled
 PICTURE_LOGGING_CAMERA
 
@@ -182,11 +186,8 @@ ID_CONSOLE_JOBSLOT_DELAY 30
 ## allow players to initiate a restart vote
 #ALLOW_VOTE_RESTART
 
-## allow players to initiate a mode-change vote
-#ALLOW_VOTE_MODE
-
-## allow players to initiate a map-change vote
-#ALLOW_VOTE_MAP
+## allow players to initiate a transfer vote
+#ALLOW_VOTE_TRANSFER
 
 ## min delay (deciseconds) between voting sessions (default 10 minutes)
 VOTE_DELAY 6000
@@ -207,7 +208,7 @@ VOTE_AUTOTRANSFER_INTERVAL 18000
 # DEFAULT_NO_VOTE
 
 ## disable abandon mob
-NORESPAWN
+#NORESPAWN
 
 ## disables calling del(src) on newmobs if they logout before spawnin in
 # DONT_DEL_NEWMOB
@@ -253,26 +254,29 @@ CHECK_RANDOMIZER
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 # SERVER ss13.example.com:2506
 
-## forum address
-# FORUMURL https://discord.gg/Zuv47eNuhE
+## Lore address
+# LOREURL https://shiptest.net/wiki/Lore_Primer
 
 ## Wiki address
-# WIKIURL https://shiptest.ga/wiki/
+# WIKIURL https://shiptest.net/wiki/
 
 ## Rules address
-# RULESURL https://shiptest.ga/wiki/Rules
+# RULESURL https://shiptest.net/wiki/Rules
 
 ## Github address
 # GITHUBURL https://github.com/Shiptest-SS13/Shiptest
 
 ## Discord address
-# DISCORDURL https://discord.gg/Zuv47eNuhE
+# DISCORDURL https://shiptest.net/discord
+
+## Map viewer address, will have `?=[map_short_name]` appended to it
+# MAPVIEWERURL https://shiptest.net/map
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
 ## This will take priority over the game logs address during reboot.
-## Example: https://shiptest.ga/stats/rounds/
-# ROUNDSTATSURL https://shiptest.ga/stats/rounds/
+## Example: https://shiptest.net/stats/rounds/
+# ROUNDSTATSURL https://shiptest.net/stats/rounds/
 
 ## Game Logs address
 ## Incase you don't have a fancy parsing system, but still want players to be able to find where you keep your server's logs.
@@ -302,19 +306,15 @@ CHECK_RANDOMIZER
 ## Uncomment this to forbid admins from possessing the singularity.
 #FORBID_SINGULO_POSSESSION
 
-## Uncomment to show a popup 'reply to' window to every non-admin that receives an adminPM.
-## The intention is to make adminPMs more visible. (although I fnd popups annoying so this defaults to off)
-#POPUP_ADMIN_PM
+## Uncomment to give admins the ability to send a maptext popup to players.
+## Only fires when an admin requests it, not every ahelp.
+POPUP_ADMIN_PM
 
 ## Uncomment to allow special 'Easter-egg' events on special holidays such as seasonal holidays and stuff like 'Talk Like a Pirate Day' :3 YAARRR
 ALLOW_HOLIDAYS
 
 ## Uncomment to show the names of the admin sending a pm from IRC instead of showing as a stealthmin.
 #SHOW_IRC_NAME
-
-## Defines the ticklimit for subsystem initialization (In percents of a byond tick). Lower makes world start smoother. Higher makes it faster.
-##This is currently a testing optimized setting. A good value for production would be 98.
-TICK_LIMIT_MC_INIT 500
 
 ##Defines the ticklag for the world. Ticklag is the amount of time between game ticks (aka byond ticks) (in 1/10ths of a second).
 ##	This also controls the client network update rate, as well as the default client fps
@@ -334,6 +334,9 @@ TICKLAG 0.5
 NOTE_FRESH_DAYS 91.31055
 ## Notes older then this will be completely faded out.
 NOTE_STALE_DAYS 365.2422
+
+## Uncomment to allow drastic performence enhancemet measures to turn on automatically once there are equal or more clients than the configured amount (will also prompt admin for veto)
+#AUTO_LAG_SWITCH_POP 75
 
 ##Note: all population caps can be used with each other if desired.
 
@@ -548,9 +551,6 @@ AUTO_PROFILE
 ## Uncomment to enable discord auto-roling when users link their BYOND and Discord accounts
 #ENABLE_DISCORD_AUTOROLE
 
-## Set to a value greater than zero to require a user to have at least this many hours of living role time to be assigned the role
-REQUIRED_LIVING_HOURS 0
-
 ## Add your discord bot token here. Make sure it has the ability to manage roles
 #DISCORD_TOKEN someDiscordToken
 
@@ -560,7 +560,31 @@ REQUIRED_LIVING_HOURS 0
 ## Add the ID of the role you want assigning here
 #DISCORD_ROLEID 000000000000000000
 
+## How long in seconds after which a hard delete is treated as causing lag. This can be a float and supports a precision as low as nanoseconds.
+#HARD_DELETES_OVERRUN_THRESHOLD 0.5
+
+## Once a typepath causes overrun from hard deletes this many times, stop hard deleting it on garbage collection failures. (set to 0 to disable)
+#HARD_DELETES_OVERRUN_LIMIT 0
+
 ## Respawn Timer for Respawn in deciseconds
 ## Setting it to 0 disables the respawn timer.
 ## THIS CONFIG DOES NOT OVERRIDE THE NORESPAWN FLAG
 RESPAWN_TIMER 600
+
+## If the number of controlled non-subshuttle ships in existence is greater than this number,
+## the shuttle creator and roundstart menu will stop new ships from being created.
+## If this is undesired, just set this to an arbitrarily high value.
+MAX_SHUTTLE_COUNT 20
+
+## Limits the maximum size in tiles of a custom shuttle.
+MAX_SHUTTLE_SIZE 300
+
+### ALL SETTINGS FOR SSmetrics ###
+## Uncomment the line below to enable SSmetrics sending data to ElasticSearch. You will need to fill in the other lines if you do
+#ELASTICSEARCH_METRICS_ENABLED
+
+## POST URL of your elasticsearch metrics. Include the IP, protocol, and datastream/index
+ELASTICSEARCH_METRICS_ENDPOINT http://10.0.0.40:9201/ss13-metrics-stream/_doc
+
+## ElasticSearch API key. This is formatted into the headers. Look at the ElasticSearch doc for how to make this
+ELASTICSEARCH_METRICS_APIKEY thisIsSomethingThatsBased64Encoded==

@@ -22,6 +22,7 @@
 	desc = "A \"replacement\" for the destructive analyzer with a slight tendency to catastrophically fail."
 	icon = 'icons/obj/machines/heavy_lathe.dmi'
 	icon_state = "h_lathe"
+	base_icon_state = "h_lathe"
 	density = TRUE
 	use_power = IDLE_POWER_USE
 	circuit = /obj/item/circuitboard/machine/experimentor
@@ -243,7 +244,7 @@
 
 /obj/machinery/rnd/experimentor/proc/experiment(exp,obj/item/exp_on)
 	recentlyExperimented = 1
-	icon_state = "h_lathe_wloop"
+	icon_state = "[base_icon_state]_wloop"
 	var/chosenchem
 	var/criticalReaction = is_type_in_typecache(exp_on,  critical_items_typecache)
 	////////////////////////////////////////////////////////////////////////////////////////////////
@@ -321,7 +322,7 @@
 			ejectItem(TRUE)
 		else if(prob(EFFECT_PROB_VERYLOW-badThingCoeff))
 			visible_message("<span class='danger'>[src]'s chemical chamber has sprung a leak!</span>")
-			chosenchem = pick(/datum/reagent/mutationtoxin/classic,/datum/reagent/nanomachines,/datum/reagent/toxin/acid)
+			chosenchem = pick(/datum/reagent/nanomachines,/datum/reagent/toxin/acid)
 			var/datum/reagents/R = new/datum/reagents(50)
 			R.my_atom = src
 			R.add_reagent(chosenchem , 50)
@@ -427,7 +428,7 @@
 		if(linked_console.linked_lathe)
 			var/datum/component/material_container/linked_materials = linked_console.linked_lathe.GetComponent(/datum/component/material_container)
 			for(var/material in exp_on.custom_materials)
-				linked_materials.insert_amount_mat( min((linked_materials.max_amount - linked_materials.total_amount), (exp_on.custom_materials[material])), material)
+				linked_materials.insert_amount_mat(min((linked_materials.max_amount - linked_materials.total_amount), (exp_on.custom_materials[material])), material)
 		if(prob(EFFECT_PROB_LOW) && criticalReaction)
 			visible_message("<span class='warning'>[src]'s crushing mechanism slowly and smoothly descends, flattening the [exp_on]!</span>")
 			new /obj/item/stack/sheet/plasteel(get_turf(pick(oview(1,src))))
@@ -509,12 +510,12 @@
 			investigate_log("Experimentor has drained power from its APC", INVESTIGATE_EXPERIMENTOR)
 		if(globalMalf == 99)
 			visible_message("<span class='warning'>[src] begins to glow and vibrate. It's going to blow!</span>")
-			addtimer(CALLBACK(src, .proc/boom), 50)
+			addtimer(CALLBACK(src, PROC_REF(boom)), 50)
 		if(globalMalf == 100)
 			visible_message("<span class='warning'>[src] begins to glow and vibrate. It's going to blow!</span>")
-			addtimer(CALLBACK(src, .proc/honk), 50)
+			addtimer(CALLBACK(src, PROC_REF(honk)), 50)
 
-	addtimer(CALLBACK(src, .proc/reset_exp), resetTime)
+	addtimer(CALLBACK(src, PROC_REF(reset_exp)), resetTime)
 
 /obj/machinery/rnd/experimentor/proc/boom()
 	explosion(src, 1, 5, 10, 5, 1)
@@ -524,11 +525,12 @@
 	new /obj/item/grown/bananapeel(loc)
 
 /obj/machinery/rnd/experimentor/proc/reset_exp()
-	update_icon()
+	update_appearance()
 	recentlyExperimented = FALSE
 
 /obj/machinery/rnd/experimentor/update_icon_state()
-	icon_state = "h_lathe"
+	icon_state = base_icon_state
+	return ..()
 
 /obj/machinery/rnd/experimentor/proc/warn_admins(user, ReactionName)
 	var/turf/T = get_turf(user)
@@ -576,7 +578,7 @@
 	revealed = TRUE
 	name = realName
 	cooldownMax = rand(60,300)
-	realProc = pick(.proc/teleport,.proc/explode,.proc/rapidDupe,.proc/petSpray,.proc/flash,.proc/clean,.proc/corgicannon)
+	realProc = pick(PROC_REF(teleport), PROC_REF(explode), PROC_REF(rapidDupe), PROC_REF(petSpray), PROC_REF(flash), PROC_REF(clean), PROC_REF(corgicannon))
 
 /obj/item/relic/attack_self(mob/user)
 	if(revealed)
@@ -587,7 +589,7 @@
 			cooldown = TRUE
 			call(src,realProc)(user)
 			if(!QDELETED(src))
-				addtimer(CALLBACK(src, .proc/cd), cooldownMax)
+				addtimer(CALLBACK(src, PROC_REF(cd)), cooldownMax)
 	else
 		to_chat(user, "<span class='notice'>You aren't quite sure what this is. Maybe R&D knows what to do with it?</span>")
 
@@ -604,7 +606,7 @@
 /obj/item/relic/proc/corgicannon(mob/user)
 	playsound(src, "sparks", rand(25,50), TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	var/mob/living/simple_animal/pet/dog/corgi/C = new/mob/living/simple_animal/pet/dog/corgi(get_turf(user))
-	C.throw_at(pick(oview(10,user)), 10, rand(3,8), callback = CALLBACK(src, .proc/throwSmoke, C))
+	C.throw_at(pick(oview(10,user)), 10, rand(3,8), callback = CALLBACK(src, PROC_REF(throwSmoke), C))
 	warn_admins(user, "Corgi Cannon", 0)
 
 /obj/item/relic/proc/clean(mob/user)
@@ -654,7 +656,7 @@
 
 /obj/item/relic/proc/explode(mob/user)
 	to_chat(user, "<span class='danger'>[src] begins to heat up!</span>")
-	addtimer(CALLBACK(src, .proc/do_explode, user), rand(35, 100))
+	addtimer(CALLBACK(src, PROC_REF(do_explode), user), rand(35, 100))
 
 /obj/item/relic/proc/do_explode(mob/user)
 	if(loc == user)
@@ -665,11 +667,11 @@
 
 /obj/item/relic/proc/teleport(mob/user)
 	to_chat(user, "<span class='notice'>[src] begins to vibrate!</span>")
-	addtimer(CALLBACK(src, .proc/do_the_teleport, user), rand(10, 30))
+	addtimer(CALLBACK(src, PROC_REF(do_the_teleport), user), rand(10, 30))
 
 /obj/item/relic/proc/do_the_teleport(mob/user)
 	var/turf/userturf = get_turf(user)
-	if(loc == user && !is_centcom_level(userturf.z)) //Because Nuke Ops bringing this back on their shuttle, then looting the ERT area is 2fun4you!
+	if(loc == user && !is_centcom_level(userturf)) //Because Nuke Ops bringing this back on their shuttle, then looting the ERT area is 2fun4you!
 		visible_message("<span class='notice'>[src] twists and bends, relocating itself!</span>")
 		throwSmoke(userturf)
 		do_teleport(user, userturf, 8, asoundin = 'sound/effects/phasein.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)

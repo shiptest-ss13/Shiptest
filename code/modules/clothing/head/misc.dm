@@ -1,14 +1,21 @@
 
 /obj/item/clothing/head/centhat
 	name = "\improper CentCom hat"
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
 	icon_state = "centcom"
 	desc = "It's good to be emperor."
 	item_state = "that"
 	flags_inv = 0
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 80
+
+/obj/item/clothing/head/centcom_cap
+	name = "\improper CentCom commander cap"
+	icon_state = "centcom_cap"
+	desc = "Worn by the finest of CentCom commanders. Inside the lining of the cap, lies two faint initials."
+	item_state = "that"
+	flags_inv = 0
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	strip_delay = (8 SECONDS)
 
 /obj/item/clothing/head/spacepolice
 	name = "space police cap"
@@ -41,11 +48,6 @@
 	icon_state = "redcoat"
 	desc = "<i>'I guess it's a redhead.'</i>"
 
-/obj/item/clothing/head/mailman
-	name = "mailman's hat"
-	icon_state = "mailman"
-	desc = "<i>'Right-on-time'</i> mail service head wear."
-
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
 	desc = "These were once used by plague doctors. They're pretty much useless."
@@ -63,7 +65,6 @@
 	name = "nurse's hat"
 	desc = "It allows quick identification of trained medical personnel."
 	icon_state = "nursehat"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/nurse
 
@@ -120,9 +121,8 @@
 
 /obj/item/clothing/head/rabbitears
 	name = "rabbit ears"
-	desc = "Wearing these makes you look useless, and only good for your sex appeal."
+	desc = "A headband with a pair of faux rabbit ears."
 	icon_state = "bunny"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/rabbit
 
@@ -149,7 +149,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src)
+	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src && !QDELETED(src)) //This can be called as a part of destroy
 		user.remove_language(/datum/language/piratespeak/, TRUE, TRUE, LANGUAGE_HAT)
 		to_chat(user, "<span class='boldnotice'>You can no longer speak like a pirate.</span>")
 
@@ -163,14 +163,12 @@
 	desc = "Yarr."
 	icon_state = "bandana"
 	item_state = "bandana"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/bowler
 	name = "bowler-hat"
 	desc = "Gentleman, elite aboard!"
 	icon_state = "bowler"
 	item_state = "bowler"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/witchwig
 	name = "witch costume wig"
@@ -184,14 +182,6 @@
 	desc = "Bkaw!"
 	icon_state = "chickenhead"
 	item_state = "chickensuit"
-	clothing_flags = SNUG_FIT
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/head/griffin
-	name = "griffon head"
-	desc = "Why not 'eagle head'? Who knows."
-	icon_state = "griffinhat"
-	item_state = "griffinhat"
 	clothing_flags = SNUG_FIT
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
@@ -227,15 +217,11 @@
 	icon_state = "fedora_beige"
 	item_state = "fedora_beige"
 
-/obj/item/clothing/head/fedora/suicide_act(mob/user)
-	if(user.gender == FEMALE)
-		return 0
-	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to be nice to girls.</span>")
-	user.say("M'lady.", forced = "fedora suicide")
-	sleep(10)
-	H.facial_hairstyle = "Neckbeard"
-	return(BRUTELOSS)
+/obj/item/clothing/head/fedora/solgov
+	name = "solarian hat"
+	icon_state = "hat_solgov"
+	item_state = "hat_solgov"
+	desc = "A slick blue hat used by both solarian civilians and physicists."
 
 /obj/item/clothing/head/sombrero
 	name = "sombrero"
@@ -267,15 +253,19 @@
 
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
-	desc = "A working man's cap."
+	desc = "A working man's hat."
 	icon_state = "flat_cap"
+	item_state = "detective"
+
+/obj/item/clothing/head/flatcap/solgov
+	name = "solarian flat cap"
+	desc = "A working solarian's hat, commonly used by Logistics Deck Officers."
+	icon_state = "flatcap_solgov"
 	item_state = "detective"
 
 /obj/item/clothing/head/hunter
 	name = "bounty hunting hat"
 	desc = "Ain't nobody gonna cheat the hangman in my town."
-	icon_state = "hunter"
-	item_state = "hunter"
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
@@ -292,7 +282,6 @@
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("warned", "cautioned", "smashed")
 	resistance_flags = NONE
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/santa
 	name = "santa hat"
@@ -307,7 +296,6 @@
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
 	icon_state = "jester_hat"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/jester/alt
 	icon_state = "jester2"
@@ -316,11 +304,6 @@
 	name = "rice hat"
 	desc = "Welcome to the rice fields, motherfucker."
 	icon_state = "rice_hat"
-
-/obj/item/clothing/head/lizard
-	name = "lizardskin cloche hat"
-	desc = "How many lizards died to make this hat? Not enough."
-	icon_state = "lizard"
 
 /obj/item/clothing/head/papersack
 	name = "paper sack hat"
@@ -340,7 +323,6 @@
 	icon_state = "crown"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/crown/fancy
 	name = "magnificent crown"
@@ -383,14 +365,13 @@
 
 /obj/item/clothing/head/frenchberet
 	name = "french beret"
-	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage military conflict, for some reason."
+	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage in military conflict, for some reason."
 	icon_state = "beret"
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
 	if (slot == ITEM_SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 
@@ -427,11 +408,6 @@
 	desc = "Signals that you follow the Jewish Halakha. Keeps the head covered and the soul extra-Orthodox."
 	icon_state = "kippah"
 
-/obj/item/clothing/head/medievaljewhat
-	name = "medieval Jewish hat"
-	desc = "A silly looking hat, intended to be placed on the heads of the station's oppressed religious minorities."
-	icon_state = "medievaljewhat"
-
 /obj/item/clothing/head/taqiyahwhite
 	name = "white taqiyah"
 	desc = "An extra-mustahabb way of showing your devotion to Allah."
@@ -453,7 +429,6 @@
 	item_state = "shrine_wig"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/intern
 	name = "\improper CentCom Head Intern beancap"
@@ -461,54 +436,11 @@
 	icon_state = "intern_hat"
 	item_state = "intern_hat"
 
-/obj/item/clothing/head/coordinator
-	name = "coordinator cap"
-	desc = "A cap for a party ooordinator, stylish!."
-	icon_state = "capcap"
-	item_state = "that"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-
 /obj/item/clothing/head/goatpelt
 	name = "goat pelt hat"
 	desc = "Fuzzy and Warm!"
 	icon_state = "goatpelt"
 	item_state = "goatpelt"
-
-/obj/item/clothing/head/goatpelt/king
-	name = "king goat pelt hat"
-	desc = "Fuzzy, Warm and Robust!"
-	icon_state = "goatpelt"
-	item_state = "goatpelt"
-	color = "#ffd700"
-	body_parts_covered = HEAD
-	armor = list("melee" = 60, "bullet" = 55, "laser" = 55, "energy" = 45, "bomb" = 100, "bio" = 20, "rad" = 20, "fire" = 100, "acid" = 100)
-	dog_fashion = null
-	resistance_flags = FIRE_PROOF
-
-/obj/item/clothing/head/goatpelt/king/equipped(mob/living/carbon/human/user, slot)
-	..()
-	if (slot == ITEM_SLOT_HEAD)
-		user.faction |= "goat"
-
-/obj/item/clothing/head/goatpelt/king/dropped(mob/living/carbon/human/user)
-	..()
-	if (user.head == src)
-		user.faction -= "goat"
-
-/obj/item/clothing/head/goatpope
-	name = "goat pope hat"
-	desc = "And on the seventh day King Goat said there will be cabbage!"
-	mob_overlay_icon = 'icons/mob/large-worn-icons/64x64/head.dmi'
-	icon_state = "goatpope"
-	item_state = "goatpope"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	resistance_flags = FLAMMABLE
-
-/obj/item/clothing/head/goatpope/equipped(mob/living/carbon/human/user, slot)
-	..()
-	if (slot == ITEM_SLOT_HEAD)
-		user.faction |= "goat"
 
 /obj/item/clothing/head/jackbros
 	name = "frosty hat"
@@ -516,15 +448,56 @@
 	icon_state = "JackFrostHat"
 	item_state = "JackFrostHat"
 
-/obj/item/clothing/head/aclfcap
+/obj/item/clothing/head/ngrcap
 	name = "2nd Battlegroup peaked cap"
-	desc = "A cap worn by officers of the Gorlex Marauders 2nd Battlegroup, or as they say, the ACLF."
-	icon = 'whitesands/icons/obj/clothing/hats.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/head.dmi'
-	icon_state = "aclfcap"
-	item_state = "aclfcap"
+	desc = "A cap worn by officers of the New Gorlex Republic's 2nd Battlegroup."
+	icon_state = "ngrcap"
+	item_state = "ngrcap"
 	flags_inv = 0
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	strip_delay = 60
 
+/obj/item/clothing/head/maidheadband/syndicate
+	name = "tactical maid headband"
+	desc = "Tacticute."
+	icon_state = "syndieheadband"
+	item_state = "syndieheadband"
+
+/obj/item/clothing/head/maidheadband/inteq
+	name = "inteq maid headband"
+	desc = "Tacticute."
+	icon_state = "inteqheadband"
+	item_state = "inteqheadband"
+
+/obj/item/clothing/head/inteq_peaked
+	name = "inteq peaked cap"
+	desc = "A peaked cap for Vanguards with a commanding authority, emblazoned with the golden badge of the IRMG."
+	icon_state = "inteq_peaked"
+	item_state = "inteq_peaked"
+	flags_inv = 0
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	strip_delay = 60
+
+/obj/item/clothing/head/maidheadband
+	name = "maid headband"
+	desc = "Just like from one of those chinese cartoons!"
+	icon_state = "maid_headband"
+
+/obj/item/clothing/head/cowboy
+	name = "cowboy hat"
+	desc = "A classic stetson hat, made from real imitation leather! Wearing it gives you a strong urge to yeehaw."
+	icon_state = "cowboy"
+
+	dog_fashion = /datum/dog_fashion/head/cowboy
+
+/obj/item/clothing/head/franks_hat
+	name = "Frank's hat"
+	desc = "You feel ashamed about what you had to do to get this hat"
+	icon_state = "cowboy"
+	item_state = "cowboy"
+
+/obj/item/clothing/head/solgov_surgery
+	name = "SolGov surgery cap"
+	desc = "It's a surgery cap utilized by solarian doctors."
+	icon_state = "solgov_surgery"
 

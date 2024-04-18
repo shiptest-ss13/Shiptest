@@ -45,11 +45,11 @@
 
 /obj/mecha/working/ripley/go_out()
 	..()
-	update_icon()
+	update_appearance()
 
 /obj/mecha/working/ripley/moved_inside(mob/living/carbon/human/H)
 	..()
-	update_icon()
+	update_appearance()
 
 /obj/mecha/working/ripley/check_for_internal_damage(list/possible_int_damage,ignore_threshold=null)
 	if (!enclosed)
@@ -146,10 +146,13 @@
 		else
 			var/obj/item/mecha_parts/mecha_equipment/drill/D = new
 			D.attach(src)
-
-	else //Add plasma cutter if no drill
-		var/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/P = new
-		P.attach(src)
+	else //Add a ranged option if no drill
+		if(prob(15)) // plas cutters for lucky fuckers
+			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma/plasmacutter = new
+			plasmacutter.attach(src)
+		else
+			var/obj/item/mecha_parts/mecha_equipment/weapon/energy/mecha_kineticgun/kinetic = new
+			kinetic.attach(src)
 
 	//Add ore box to cargo
 	cargo.Add(new /obj/structure/ore_box(src))
@@ -162,6 +165,35 @@
 
 	var/obj/item/mecha_parts/mecha_equipment/mining_scanner/scanner = new
 	scanner.attach(src)
+
+/obj/mecha/working/ripley/clip
+	desc = "An APLU utility mech, refitted with a lightweight pressurized cockpit and more powerful servos by the CLIP. While it preserves the Mk. I's speed, the overdriven motors tend to strain its power supply."
+	name = "\improper CLIP APLU Mk-IV \"Rogue\""
+	icon_state = "clipripley"
+	base_icon_state = "clipripley"
+	step_energy_drain = 15 //overdriven servos are less efficient
+	wreckage = /obj/structure/mecha_wreckage/ripley/clip
+	enclosed = TRUE
+	enter_delay = 20 //slower than a mk. I, faster than the armored Ripleys
+	silicon_icon_state = null
+
+/obj/mecha/working/ripley/cargo
+	desc = "An ailing, old, repurposed cargo hauler. Most of its equipment wires are frayed or missing and its frame is rusted."
+	name = "\improper APLU \"Big Bess\""
+	icon_state = "hauler"
+	base_icon_state = "hauler"
+	max_equip = 2
+	obj_integrity = 50 //Low starting health
+	max_integrity = 100 //Has half the health of a normal RIPLEY mech, so it's harder to use as a weapon.
+
+/obj/mecha/working/ripley/cargo/Initialize()
+	. = ..()
+	if(cell)
+		cell.charge = FLOOR(cell.charge * 0.25, 1) //Starts at very low charge
+
+	//Attach hydraulic clamp ONLY
+	var/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/HC = new
+	HC.attach(src)
 
 /obj/mecha/working/ripley/Exit(atom/movable/O)
 	if(O in cargo)
@@ -214,7 +246,7 @@
 /obj/mecha/working/ripley/relay_container_resist_act(mob/living/user, obj/O)
 	to_chat(user, "<span class='notice'>You lean on the back of [O] and start pushing so it falls out of [src].</span>")
 	if(do_after(user, 300, target = O))
-		if(!user || user.stat != CONSCIOUS || user.loc != src || O.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != src || O.loc != src)
 			return
 		to_chat(user, "<span class='notice'>You successfully pushed [O] out of [src]!</span>")
 		O.forceMove(drop_location())

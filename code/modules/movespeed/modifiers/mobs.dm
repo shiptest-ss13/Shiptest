@@ -1,6 +1,3 @@
-/datum/movespeed_modifier/obesity
-	multiplicative_slowdown = 1.5
-
 /datum/movespeed_modifier/monkey_reagent_speedmod
 	variable = TRUE
 
@@ -85,7 +82,7 @@
 	movetypes = GROUND
 	flags = IGNORE_NOSLOW
 
-/datum/movespeed_modifier/simplemob_varspeed
+/datum/movespeed_modifier/living_varspeed
 	variable = TRUE
 	flags = IGNORE_NOSLOW
 
@@ -111,3 +108,14 @@
 /datum/movespeed_modifier/mob_config_speedmod
 	variable = TRUE
 	flags = IGNORE_NOSLOW
+
+/datum/movespeed_modifier/mouse_cheese
+	multiplicative_slowdown = -1
+
+/datum/movespeed_modifier/bones
+	variable = TRUE
+	movetypes = GROUND
+	flags = IGNORE_NOSLOW
+
+/datum/movespeed_modifier/xeno_queen_loss
+	multiplicative_slowdown = 2

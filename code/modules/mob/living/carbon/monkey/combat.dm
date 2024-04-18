@@ -80,7 +80,7 @@
 	else if(istype(I, /obj/item/clothing))
 		var/obj/item/clothing/C = I
 		monkeyDrop(C)
-		addtimer(CALLBACK(src, .proc/pickup_and_wear, C), 5)
+		addtimer(CALLBACK(src, PROC_REF(pickup_and_wear), C), 5)
 		return TRUE
 
 	// EVERYTHING ELSE
@@ -92,10 +92,10 @@
 	blacklistItems[I] ++
 	return FALSE
 
-/mob/living/carbon/monkey/proc/pickup_and_wear(var/obj/item/clothing/C)
+/mob/living/carbon/monkey/proc/pickup_and_wear(obj/item/clothing/C)
 	if(!equip_to_appropriate_slot(C))
 		monkeyDrop(get_item_by_slot(C)) // remove the existing item if worn
-		addtimer(CALLBACK(src, .proc/equip_to_appropriate_slot, C), 5)
+		addtimer(CALLBACK(src, PROC_REF(equip_to_appropriate_slot), C), 5)
 
 /mob/living/carbon/monkey/resist_restraints()
 	var/obj/item/I = null
@@ -108,7 +108,7 @@
 		last_special = world.time + CLICK_CD_BREAKOUT
 		cuff_resist(I)
 
-/mob/living/carbon/monkey/proc/should_target(var/mob/living/L)
+/mob/living/carbon/monkey/proc/should_target(mob/living/L)
 	if(HAS_TRAIT(src, TRAIT_PACIFISM))
 		return FALSE
 
@@ -132,7 +132,7 @@
 				pickupTarget = null
 				pickupTimer = 0
 			else
-				INVOKE_ASYNC(src, .proc/walk2derpless, pickupTarget.loc)
+				INVOKE_ASYNC(src, PROC_REF(walk2derpless), pickupTarget.loc)
 				if(Adjacent(pickupTarget) || Adjacent(pickupTarget.loc)) // next to target
 					drop_all_held_items() // who cares about these items, i want that one!
 					if(isturf(pickupTarget.loc)) // on floor
@@ -144,7 +144,7 @@
 						if(!pickpocketing)
 							pickpocketing = TRUE
 							M.visible_message("<span class='warning'>[src] starts trying to take [pickupTarget] from [M]!</span>", "<span class='danger'>[src] tries to take [pickupTarget]!</span>")
-							INVOKE_ASYNC(src, .proc/pickpocket, M)
+							INVOKE_ASYNC(src, PROC_REF(pickpocket), M)
 			return TRUE
 
 	switch(mode)
@@ -152,7 +152,7 @@
 			if(enemies.len)
 				var/list/around = view(src, MONKEY_ENEMY_VISION) // scan for enemies
 				for(var/mob/living/L in around)
-					if( should_target(L) )
+					if(should_target(L))
 						if(L.stat == CONSCIOUS)
 							battle_screech()
 							retaliate(L)
@@ -180,7 +180,7 @@
 				return TRUE
 
 			if(target != null)
-				INVOKE_ASYNC(src, .proc/walk2derpless, target)
+				INVOKE_ASYNC(src, PROC_REF(walk2derpless), target)
 
 			// pickup any nearby weapon
 			if(!pickupTarget && prob(MONKEY_WEAPON_PROB))
@@ -246,7 +246,7 @@
 
 			// flee from anyone who attacked us and we didn't beat down
 			for(var/mob/living/L in around)
-				if( enemies[L] && L.stat == CONSCIOUS )
+				if(enemies[L] && L.stat == CONSCIOUS)
 					target = L
 
 			if(target != null)
@@ -265,7 +265,7 @@
 
 			if(target.pulledby != src && !istype(target.pulledby, /mob/living/carbon/monkey/))
 
-				INVOKE_ASYNC(src, .proc/walk2derpless, target.loc)
+				INVOKE_ASYNC(src, PROC_REF(walk2derpless), target.loc)
 
 				if(Adjacent(target) && isturf(target.loc))
 					a_intent = INTENT_GRAB
@@ -278,11 +278,11 @@
 						frustration = 0
 
 			else if(!disposing_body)
-				INVOKE_ASYNC(src, .proc/walk2derpless, bodyDisposal.loc)
+				INVOKE_ASYNC(src, PROC_REF(walk2derpless), bodyDisposal.loc)
 
 				if(Adjacent(bodyDisposal))
 					disposing_body = TRUE
-					addtimer(CALLBACK(src, .proc/stuff_mob_in), 5)
+					addtimer(CALLBACK(src, PROC_REF(stuff_mob_in)), 5)
 
 				else
 					var/turf/olddist = get_dist(src, bodyDisposal)
@@ -295,7 +295,7 @@
 
 	return IsStandingStill()
 
-/mob/living/carbon/monkey/proc/pickpocket(var/mob/M)
+/mob/living/carbon/monkey/proc/pickpocket(mob/M)
 	if(do_mob(src, M, MONKEY_ITEM_SNATCH_DELAY) && pickupTarget)
 		for(var/obj/item/I in M.held_items)
 			if(I == pickupTarget)
@@ -342,7 +342,7 @@
 
 	// if we arn't enemies, we were likely recruited to attack this target, jobs done if we calm down so go back to idle
 	if(!enemies[L])
-		if( target == L && prob(MONKEY_HATRED_REDUCTION_PROB) )
+		if(target == L && prob(MONKEY_HATRED_REDUCTION_PROB))
 			back_to_idle()
 		return // already de-aggroed
 
@@ -352,7 +352,7 @@
 	// if we are not angry at our target, go back to idle
 	if(enemies[L] <= 0)
 		enemies.Remove(L)
-		if( target == L )
+		if(target == L)
 			back_to_idle()
 
 // get angry are a mob
@@ -382,7 +382,7 @@
 
 /mob/living/carbon/monkey/attackby(obj/item/W, mob/user, params)
 	..()
-	if((W.force) && (!target) && (W.damtype != STAMINA) )
+	if((W.force) && (!target) && (W.damtype != STAMINA))
 		retaliate(user)
 
 /mob/living/carbon/monkey/bullet_act(obj/projectile/Proj)
@@ -400,16 +400,16 @@
 			retaliate(H)
 	..()
 
-/mob/living/carbon/monkey/Crossed(atom/movable/AM)
+/mob/living/carbon/monkey/on_entered(datum/source, atom/movable/AM)
+	. = ..()
 	if(!IsDeadOrIncap() && ismob(AM) && target)
 		var/mob/living/carbon/monkey/M = AM
 		if(!istype(M) || !M)
 			return
 		knockOver(M)
 		return
-	..()
 
-/mob/living/carbon/monkey/proc/monkeyDrop(var/obj/item/A)
+/mob/living/carbon/monkey/proc/monkeyDrop(obj/item/A)
 	if(A)
 		dropItemToGround(A, TRUE)
 		update_icons()

@@ -1,26 +1,18 @@
 /datum/job/qm
-	title = "Quartermaster"
-	department_head = list("Head of Personnel")
-	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the head of personnel"
-	selection_color = "#d7b088"
+	name = "Quartermaster"
 	wiki_page = "Quartermaster" //WS Edit - Wikilinks/Warning
-	special_notice = "You are not a head of staff. You answer to the Head of Personnel." //WS Edit - Wikilinks/Warning
-	exp_type_department = EXP_TYPE_SUPPLY // This is so the jobs menu can work properly
+	officer = TRUE
 
 	outfit = /datum/outfit/job/quartermaster
 
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT)
 	minimal_access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT)
-	paycheck = PAYCHECK_MEDIUM
-	paycheck_department = ACCOUNT_CAR
 
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
 
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
+	job_icon = "quartermaster"
 	jobtype = /datum/job/qm
 
 	belt = /obj/item/pda/quartermaster
@@ -35,17 +27,3 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1)
 
 	chameleon_extras = /obj/item/stamp/qm
-
-/datum/outfit/job/quartermaster/supplychief
-	name = "Quartermaster (Supply Chief)"
-	jobtype = /datum/job/qm
-
-	uniform = /obj/item/clothing/under/suit/qm
-	alt_uniform = null
-	suit = /obj/item/clothing/suit/toggle/lawyer/brown
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/laceup
-	l_hand = null
-	neck = /obj/item/clothing/neck/tie/brown
-	head = /obj/item/clothing/head/supply_chief
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo=1, /obj/item/clipboard=1)

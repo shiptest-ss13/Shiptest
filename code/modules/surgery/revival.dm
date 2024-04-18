@@ -18,7 +18,7 @@
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
-	if(target.suiciding || target.hellbound || HAS_TRAIT(target, TRAIT_HUSK))
+	if(target.hellbound || HAS_TRAIT(target, TRAIT_HUSK))
 		return FALSE
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)
@@ -26,10 +26,16 @@
 	return TRUE
 
 /datum/surgery_step/revive
-	name = "shock body"
-	implements = list(/obj/item/shockpaddles = 100, /obj/item/melee/baton = 75, /obj/item/gun/energy = 60)
+	name = "shock brain"
+	implements = list(
+		/obj/item/shockpaddles = 100,	//this is useful for reviving simepeople.
+		/obj/item/melee/baton = 40,		//i hate this a lot
+		/obj/item/gun/energy = 30,		//should be tasers only
+		/obj/item/inducer = 30)			//why not
+	time = 3 SECONDS
+	success_sound = 'sound/magic/lightningbolt.ogg'
+	failure_sound = 'sound/machines/defib_zap.ogg'
 	repeatable = TRUE
-	time = 120
 	experience_given = MEDICAL_SKILL_ADVANCED
 
 /datum/surgery_step/revive/tool_check(mob/user, obj/item/tool)
@@ -58,11 +64,16 @@
 		"<span class='notice'>[user] prepares to shock [target]'s brain with [tool].</span>")
 	target.notify_ghost_cloning("Someone is trying to zap your brain. Re-enter your corpse if you want to be revived!", source = target)
 
+/datum/surgery_step/revive/play_preop_sound(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
+	if(istype(tool, /obj/item/shockpaddles))
+		playsound(tool, 'sound/machines/defib_charge.ogg', 75, 0)
+	else
+		..()
+
 /datum/surgery_step/revive/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results)
 	display_results(user, target, "<span class='notice'>You successfully shock [target]'s brain with [tool]...</span>",
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool]...</span>",
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool]...</span>")
-	playsound(get_turf(target), 'sound/magic/lightningbolt.ogg', 50, TRUE)
 	target.adjustOxyLoss(-50, 0)
 	target.updatehealth()
 	if(target.revive(full_heal = FALSE, admin_revive = FALSE))
@@ -79,5 +90,5 @@
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool], but [target.p_they()] doesn't react.</span>",
 		"<span class='notice'>[user] send a powerful shock to [target]'s brain with [tool], but [target.p_they()] doesn't react.</span>")
 	playsound(get_turf(target), 'sound/magic/lightningbolt.ogg', 50, TRUE)
-	target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 15, 180)
+	target.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20, 180)
 	return FALSE

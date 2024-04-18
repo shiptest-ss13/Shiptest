@@ -1,6 +1,6 @@
 /obj/machinery/computer/apc_control
 	name = "power flow control console"
-	desc = "Used to remotely control the flow of power to different parts of the station."
+	desc = "Used to remotely control the flow of power to different parts of a power network."
 	icon_screen = "solar"
 	icon_keyboard = "power_key"
 	req_access = list(ACCESS_CE)
@@ -26,7 +26,7 @@
 				playsound(active_apc, 'sound/machines/boltsdown.ogg', 25, FALSE)
 				playsound(active_apc, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 			active_apc.locked = TRUE
-			active_apc.update_icon()
+			active_apc.update_appearance()
 			active_apc.remote_control = null
 			active_apc = null
 
@@ -37,7 +37,7 @@
 	..()
 
 /obj/machinery/computer/apc_control/proc/check_apc(obj/machinery/power/apc/APC)
-	return APC.get_virtual_z_level() == get_virtual_z_level() && !APC.malfhack && !APC.aidisabled && !(APC.obj_flags & EMAGGED) && !APC.machine_stat && !istype(APC.area, /area/ai_monitored) && !APC.area.outdoors
+	return APC.virtual_z() == virtual_z() && !APC.malfhack && !APC.aidisabled && !(APC.obj_flags & EMAGGED) && !APC.machine_stat && !istype(APC.area, /area/ai_monitored) && !APC.area.outdoors
 
 /obj/machinery/computer/apc_control/ui_interact(mob/user, datum/tgui/ui)
 	operator = user
@@ -114,7 +114,7 @@
 			log_game("[key_name(operator)] set the logs of [src] in [AREACOORD(src)] [should_log ? "On" : "Off"]")
 		if("restore-console")
 			restoring = TRUE
-			addtimer(CALLBACK(src, .proc/restore_comp), rand(3,5) * 9)
+			addtimer(CALLBACK(src, PROC_REF(restore_comp)), rand(3,5) * 9)
 		if("access-apc")
 			var/ref = params["ref"]
 			playsound(src, "terminal_type", 50, FALSE)
@@ -127,7 +127,7 @@
 				playsound(active_apc, 'sound/machines/boltsdown.ogg', 25, FALSE)
 				playsound(active_apc, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 				active_apc.locked = TRUE
-				active_apc.update_icon()
+				active_apc.update_appearance()
 				active_apc.remote_control = null
 				active_apc = null
 			APC.remote_control = src
@@ -140,7 +140,7 @@
 				playsound(APC, 'sound/machines/boltsup.ogg', 25, FALSE)
 				playsound(APC, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 			APC.locked = FALSE
-			APC.update_icon()
+			APC.update_appearance()
 			active_apc = APC
 		if("check-logs")
 			log_activity("Checked Logs")
@@ -154,7 +154,7 @@
 			if(!target)
 				return
 			target.vars[type] = target.setsubsystem(text2num(value))
-			target.update_icon()
+			target.update_appearance()
 			target.update()
 			var/setTo = ""
 			switch(target.vars[type])

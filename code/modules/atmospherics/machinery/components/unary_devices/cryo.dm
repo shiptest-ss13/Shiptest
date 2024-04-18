@@ -12,6 +12,7 @@
 	circuit = /obj/item/circuitboard/machine/cryo_tube
 	pipe_flags = PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY
 	occupant_typecache = list(/mob/living/carbon, /mob/living/simple_animal)
+	processing_flags = NONE
 
 	var/autoeject = TRUE
 	var/volume = 100
@@ -26,21 +27,21 @@
 	var/reagent_transfer = 0
 
 	var/obj/item/radio/radio
-	var/radio_key = /obj/item/encryptionkey/headset_med
-	var/radio_channel = RADIO_CHANNEL_MEDICAL
+	var/radio_key = /obj/item/encryptionkey/headset_com
+	var/radio_channel = RADIO_CHANNEL_COMMAND
 
 	var/running_anim = FALSE
 
 	var/escape_in_progress = FALSE
 	var/message_cooldown
 	var/breakout_time = 300
-	fair_market_price = 10
-	payment_department = ACCOUNT_MED
 
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/Initialize()
 	. = ..()
 	initialize_directions = dir
+	if(is_operational)
+		begin_processing()
 
 	radio = new(src)
 	radio.keyslot = new radio_key
@@ -52,7 +53,7 @@
 	var/oldoccupant = occupant
 	. = ..() // Parent proc takes care of removing occupant if necessary
 	if (AM == oldoccupant)
-		update_icon()
+		update_appearance()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/on_construction()
 	..(dir, dir)
@@ -101,7 +102,7 @@
 		beaker = null
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/update_icon()
-
+	. = ..()
 	cut_overlays()
 
 	if(panel_open)
@@ -136,7 +137,7 @@
 		occupant_overlay.dir = SOUTH
 		occupant_overlay.pixel_y = 22
 
-		if(on && !running_anim && is_operational())
+		if(on && !running_anim && is_operational)
 			icon_state = "pod-on"
 			running_anim = TRUE
 			run_anim(TRUE, occupant_overlay)
@@ -145,7 +146,7 @@
 			add_overlay(occupant_overlay)
 			add_overlay("cover-off")
 
-	else if(on && is_operational())
+	else if(on && is_operational)
 		icon_state = "pod-on"
 		add_overlay("cover-on")
 	else
@@ -153,7 +154,7 @@
 		add_overlay("cover-off")
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/proc/run_anim(anim_up, image/occupant_overlay)
-	if(!on || !occupant || !is_operational())
+	if(!on || !occupant || !is_operational)
 		running_anim = FALSE
 		return
 	cut_overlays()
@@ -165,32 +166,31 @@
 		occupant_overlay.pixel_y--
 	add_overlay(occupant_overlay)
 	add_overlay("cover-on")
-	addtimer(CALLBACK(src, .proc/run_anim, anim_up, occupant_overlay), 7, TIMER_UNIQUE)
+	addtimer(CALLBACK(src, PROC_REF(run_anim), anim_up, occupant_overlay), 7, TIMER_UNIQUE)
 
-/obj/machinery/atmospherics/components/unary/cryo_cell/nap_violation(mob/violator)
-	open_machine()
+/obj/machinery/atmospherics/components/unary/cryo_cell/on_set_is_operational(old_value)
+	if(old_value) //Turned off
+		on = FALSE
+		end_processing()
+		update_appearance()
+	else //Turned on
+		begin_processing()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/process()
 	..()
 
 	if(!on)
 		return
-	if(!is_operational())
-		on = FALSE
-		update_icon()
-		return
 	if(!occupant)
 		return
 
 	var/mob/living/mob_occupant = occupant
-	if(!check_nap_violations())
-		return
 	if(mob_occupant.stat == DEAD) // We don't bother with dead people.
 		return
 
 	if(mob_occupant.health >= mob_occupant.getMaxHealth()) // Don't bother with fully healed people.
 		on = FALSE
-		update_icon()
+		update_appearance()
 		playsound(src, 'sound/machines/cryo_warning.ogg', volume) // Bug the doctors.
 		var/msg = "Patient fully restored."
 		if(autoeject) // Eject if configured.
@@ -225,7 +225,7 @@
 
 	if(!nodes[1] || !airs[1] || air1.get_moles(GAS_O2) < 5) // Turn off if the machine won't work due to not having enough moles to operate.
 		on = FALSE
-		update_icon()
+		update_appearance()
 		return
 
 	if(occupant)
@@ -274,7 +274,7 @@
 		"<span class='notice'>You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='hear'>You hear a thump from [src].</span>")
 	if(do_after(user, breakout_time, target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src )
+		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return
 		user.visible_message("<span class='warning'>[user] successfully broke out of [src]!</span>", \
 			"<span class='notice'>You successfully break out of [src]!</span>")
@@ -320,7 +320,7 @@
 		|| default_change_direction_wrench(user, I) \
 		|| default_pry_open(I) \
 		|| default_deconstruction_crowbar(I))
-		update_icon()
+		update_appearance()
 		return
 	else if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		to_chat(user, "<span class='warning'>You can't access the maintenance panel while the pod is " \
@@ -398,7 +398,7 @@
 				on = FALSE
 			else if(!state_open)
 				on = TRUE
-			update_icon()
+			update_appearance()
 			. = TRUE
 		if("door")
 			if(state_open)
@@ -420,7 +420,7 @@
 /obj/machinery/atmospherics/components/unary/cryo_cell/CtrlClick(mob/user)
 	if(can_interact(user) && !state_open)
 		on = !on
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/AltClick(mob/user)

@@ -17,12 +17,14 @@
 	var/list/can_hold								//if this is set, only items, and their children, will fit
 	var/list/cant_hold								//if this is set, items, and their children, won't fit
 	var/list/exception_hold           //if set, these items will be the exception to the max size of object that can fit.
+	var/list/can_hold_trait							/// If set can only contain stuff with this single trait present.
 
 	var/can_hold_description
 
 	var/list/mob/is_using							//lazy list of mobs looking at the contents of this storage.
 
 	var/locked = FALSE								//when locked nothing can see inside or use it.
+	var/locked_flavor = "locked"					//prevents tochat messages related to locked from sending
 
 	var/max_w_class = WEIGHT_CLASS_SMALL			//max size of objects that will fit.
 	var/max_combined_w_class = 14					//max combined sizes of objects that will fit.
@@ -32,7 +34,7 @@
 
 	var/silent = FALSE								//whether this makes a message when things are put in.
 	var/click_gather = FALSE						//whether this can be clicked on items to pick it up rather than the other way around.
-	var/rustle_sound = TRUE							//play rustle sound on interact.
+	var/use_sound = "rustle"						//sound to play on interacting.
 	var/allow_quick_empty = FALSE					//allow empty verb which allows dumping on the floor of everything inside quickly.
 	var/allow_quick_gather = FALSE					//allow toggle mob verb which toggles collecting all items from a tile.
 
@@ -70,42 +72,42 @@
 	closer = new(null, src)
 	orient2hud()
 
-	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE, .proc/on_check)
-	RegisterSignal(parent, COMSIG_IS_STORAGE_LOCKED, .proc/check_locked)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_SHOW, .proc/signal_show_attempt)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_INSERT, .proc/signal_insertion_attempt)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_CAN_INSERT, .proc/signal_can_insert)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE_TYPE, .proc/signal_take_type)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_FILL_TYPE, .proc/signal_fill_type)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_SET_LOCKSTATE, .proc/set_locked)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE, .proc/signal_take_obj)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_QUICK_EMPTY, .proc/signal_quick_empty)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_FROM, .proc/signal_hide_attempt)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_ALL, .proc/close_all)
-	RegisterSignal(parent, COMSIG_TRY_STORAGE_RETURN_INVENTORY, .proc/signal_return_inv)
+	RegisterSignal(parent, COMSIG_CONTAINS_STORAGE, PROC_REF(on_check))
+	RegisterSignal(parent, COMSIG_IS_STORAGE_LOCKED, PROC_REF(check_locked))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_SHOW, PROC_REF(signal_show_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_INSERT, PROC_REF(signal_insertion_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_CAN_INSERT, PROC_REF(signal_can_insert))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE_TYPE, PROC_REF(signal_take_type))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_FILL_TYPE, PROC_REF(signal_fill_type))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_SET_LOCKSTATE, PROC_REF(set_locked))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_TAKE, PROC_REF(signal_take_obj))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_QUICK_EMPTY, PROC_REF(signal_quick_empty))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_FROM, PROC_REF(signal_hide_attempt))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_HIDE_ALL, PROC_REF(close_all))
+	RegisterSignal(parent, COMSIG_TRY_STORAGE_RETURN_INVENTORY, PROC_REF(signal_return_inv))
 
-	RegisterSignal(parent, COMSIG_TOPIC, .proc/topic_handle)
+	RegisterSignal(parent, COMSIG_TOPIC, PROC_REF(topic_handle))
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/attackby)
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(attackby))
 
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/on_attack_hand)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_PAW, .proc/on_attack_hand)
-	RegisterSignal(parent, COMSIG_ATOM_EMP_ACT, .proc/emp_act)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_GHOST, .proc/show_to_ghost)
-	RegisterSignal(parent, COMSIG_ATOM_ENTERED, .proc/refresh_mob_views)
-	RegisterSignal(parent, COMSIG_ATOM_EXITED, .proc/_remove_and_refresh)
-	RegisterSignal(parent, COMSIG_ATOM_CANREACH, .proc/canreach_react)
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_PAW, PROC_REF(on_attack_hand))
+	RegisterSignal(parent, COMSIG_ATOM_EMP_ACT, PROC_REF(emp_act))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_GHOST, PROC_REF(show_to_ghost))
+	RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(refresh_mob_views))
+	RegisterSignal(parent, COMSIG_ATOM_EXITED, PROC_REF(_remove_and_refresh))
+	RegisterSignal(parent, COMSIG_ATOM_CANREACH, PROC_REF(canreach_react))
 
-	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, .proc/preattack_intercept)
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/attack_self)
-	RegisterSignal(parent, COMSIG_ITEM_PICKUP, .proc/signal_on_pickup)
+	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(preattack_intercept))
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(attack_self))
+	RegisterSignal(parent, COMSIG_ITEM_PICKUP, PROC_REF(signal_on_pickup))
 
-	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, .proc/close_all)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_move)
+	RegisterSignal(parent, COMSIG_MOVABLE_POST_THROW, PROC_REF(close_all))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_move))
 
-	RegisterSignal(parent, COMSIG_CLICK_ALT, .proc/on_alt_click)
-	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, .proc/mousedrop_onto)
-	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO, .proc/mousedrop_receive)
+	RegisterSignal(parent, COMSIG_CLICK_ALT, PROC_REF(on_alt_click))
+	RegisterSignal(parent, COMSIG_MOUSEDROP_ONTO, PROC_REF(mousedrop_onto))
+	RegisterSignal(parent, COMSIG_MOUSEDROPPED_ONTO, PROC_REF(mousedrop_receive))
 
 	update_actions()
 
@@ -143,7 +145,7 @@
 		return
 	var/obj/item/I = parent
 	modeswitch_action = new(I)
-	RegisterSignal(modeswitch_action, COMSIG_ACTION_TRIGGER, .proc/action_trigger)
+	RegisterSignal(modeswitch_action, COMSIG_ACTION_TRIGGER, PROC_REF(action_trigger))
 	if(I.obj_flags & IN_INVENTORY)
 		var/mob/M = I.loc
 		if(!istype(M))
@@ -190,22 +192,22 @@
 			hide_from(L)
 
 /datum/component/storage/proc/attack_self(datum/source, mob/M)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
 	if((M.get_active_held_item() == parent) && allow_quick_empty)
-		quick_empty(M)
+		INVOKE_ASYNC(src, PROC_REF(quick_empty), M)
 
 /datum/component/storage/proc/preattack_intercept(datum/source, obj/O, mob/M, params)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
 		return FALSE
 	. = COMPONENT_NO_ATTACK
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
 	var/obj/item/I = O
 	if(collection_mode == COLLECT_ONE)
@@ -214,6 +216,10 @@
 		return
 	if(!isturf(I.loc))
 		return
+	INVOKE_ASYNC(src, PROC_REF(async_preattack_intercept), I, M)
+
+///async functionality from preattack_intercept
+/datum/component/storage/proc/async_preattack_intercept(obj/item/I, mob/M)
 	var/list/things = I.loc.contents.Copy()
 	if(collection_mode == COLLECT_SAME)
 		things = typecache_filter_list(things, typecacheof(I.type))
@@ -221,9 +227,12 @@
 	if(!len)
 		to_chat(M, "<span class='warning'>You failed to pick up anything with [parent]!</span>")
 		return
+	if(I.anchored)
+		to_chat(M, "<span class='warning'>\The [I] is stuck to the ground and cannot be picked up by [parent]!</span>")
+		return
 	var/datum/progressbar/progress = new(M, len, I.loc)
 	var/list/rejections = list()
-	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, .proc/handle_mass_pickup, things, I.loc, rejections, progress)))
+	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, PROC_REF(handle_mass_pickup), things, I.loc, rejections, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(M, "<span class='notice'>You put everything you could [insert_preposition] [parent].</span>")
@@ -274,14 +283,14 @@
 	if(!M.canUseStorage() || !A.Adjacent(M) || M.incapacitated())
 		return
 	if(locked)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
 	A.add_fingerprint(M)
 	to_chat(M, "<span class='notice'>You start dumping out [parent].</span>")
 	var/turf/T = get_turf(A)
 	var/list/things = contents()
 	var/datum/progressbar/progress = new(M, length(things), T)
-	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, .proc/mass_remove_from_storage, T, things, progress)))
+	while (do_after(M, 10, TRUE, T, FALSE, CALLBACK(src, PROC_REF(mass_remove_from_storage), T, things, progress)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -400,20 +409,27 @@
 	M.client.screen |= boxes
 	M.client.screen |= closer
 	M.client.screen |= real_location.contents
-	M.active_storage = src
+	M.set_active_storage(src)
 	LAZYOR(is_using, M)
+	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(mob_deleted))
 	return TRUE
 
+/datum/component/storage/proc/mob_deleted(datum/source)
+	SIGNAL_HANDLER
+	hide_from(source)
+
 /datum/component/storage/proc/hide_from(mob/M)
+	if(M.active_storage == src)
+		M.set_active_storage(null)
+	LAZYREMOVE(is_using, M)
+
+	UnregisterSignal(M, COMSIG_PARENT_QDELETING)
 	if(!M.client)
 		return TRUE
 	var/atom/real_location = real_location()
 	M.client.screen -= boxes
 	M.client.screen -= closer
 	M.client.screen -= real_location.contents
-	if(M.active_storage == src)
-		M.active_storage = null
-	LAZYREMOVE(is_using, M)
 	return TRUE
 
 /datum/component/storage/proc/close(mob/M)
@@ -493,6 +509,7 @@
 			cansee |= M
 		else
 			LAZYREMOVE(is_using, M)
+			UnregisterSignal(M, COMSIG_PARENT_QDELETING)
 	return cansee
 
 //Tries to dump content
@@ -501,7 +518,7 @@
 	var/atom/dump_destination = dest_object.get_dumping_location()
 	if(A.Adjacent(M) && dump_destination && M.Adjacent(dump_destination))
 		if(locked)
-			to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+			to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 			return FALSE
 		if(dump_destination.storage_contents_dump_act(src, M))
 			playsound(A, "rustle", 50, TRUE, -5)
@@ -558,7 +575,7 @@
 	to_chat(user, "<span class='notice'>[source] can hold: [can_hold_description]</span>")
 
 /datum/component/storage/proc/mousedrop_onto(datum/source, atom/over_object, mob/M)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	set waitfor = FALSE
 	. = COMPONENT_NO_MOUSEDROP
@@ -579,7 +596,7 @@
 	if(over_object == M)
 		user_show_to_mob(M)
 	if(!istype(over_object, /atom/movable/screen))
-		dump_content_at(over_object, M)
+		INVOKE_ASYNC(src, PROC_REF(dump_content_at), over_object, M)
 		return
 	if(A.loc != M)
 		return
@@ -590,15 +607,17 @@
 		return
 	A.add_fingerprint(M)
 
-/datum/component/storage/proc/user_show_to_mob(mob/M, force = FALSE)
+/datum/component/storage/proc/user_show_to_mob(mob/M, force = FALSE, silent = FALSE)
 	var/atom/A = parent
 	if(!istype(M))
 		return FALSE
 	A.add_fingerprint(M)
 	if(locked && !force)
-		to_chat(M, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(M, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return FALSE
 	if(force || M.CanReach(parent, view_only = TRUE))
+		if(use_sound && !silent)
+			playsound(A, use_sound, 50, TRUE, -5)
 		show_to(M)
 
 /datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/O, mob/M)
@@ -626,7 +645,7 @@
 	if(locked)
 		if(M && !stop_messages)
 			host.add_fingerprint(M)
-			to_chat(M, "<span class='warning'>[host] seems to be locked!</span>")
+			to_chat(M, "<span class='warning'>[host] seems to be [locked_flavor]!</span>")
 		return FALSE
 	if(real_location.contents.len >= max_items)
 		if(!stop_messages)
@@ -637,7 +656,7 @@
 			if(!stop_messages)
 				to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
 			return FALSE
-	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Items which this container can't hold.
+	if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT) || (can_hold_trait && !HAS_TRAIT(I, can_hold_trait))) //Items which this container can't hold.
 		if(!stop_messages)
 			to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
 		return FALSE
@@ -693,7 +712,7 @@
 /datum/component/storage/proc/mob_item_insertion_feedback(mob/user, mob/M, obj/item/I, override = FALSE)
 	if(silent && !override)
 		return
-	if(rustle_sound)
+	if(use_sound)
 		playsound(parent, "rustle", 50, TRUE, -5)
 	for(var/mob/viewing in viewers(user, null))
 		if(M == viewing)
@@ -706,7 +725,7 @@
 /datum/component/storage/proc/update_icon()
 	if(isobj(parent))
 		var/obj/O = parent
-		O.update_icon()
+		O.update_appearance()
 
 /datum/component/storage/proc/signal_insertion_attempt(datum/source, obj/item/I, mob/M, silent = FALSE, force = FALSE)
 	SIGNAL_HANDLER
@@ -723,7 +742,7 @@
 /datum/component/storage/proc/show_to_ghost(datum/source, mob/dead/observer/M)
 	SIGNAL_HANDLER
 
-	return user_show_to_mob(M, TRUE)
+	return user_show_to_mob(M, TRUE, TRUE)
 
 /datum/component/storage/proc/signal_show_attempt(datum/source, mob/showto, force = FALSE)
 	SIGNAL_HANDLER
@@ -764,7 +783,7 @@
 	return max(0, max_items - real_location.contents.len)
 
 /datum/component/storage/proc/signal_fill_type(datum/source, type, amount = 20, force = FALSE)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/atom/real_location = real_location()
 	if(!force)
@@ -772,13 +791,12 @@
 	for(var/i in 1 to amount)
 		if(!handle_item_insertion(new type(real_location), TRUE))
 			return i > 1 //return TRUE only if at least one insertion has been successful.
-		if(CHECK_TICK)
-			if(QDELETED(src))
-				return TRUE
+		if(QDELETED(src))
+			return TRUE
 	return TRUE
 
 /datum/component/storage/proc/on_attack_hand(datum/source, mob/user)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	var/atom/A = parent
 	if(!attack_hand_interact)
@@ -789,28 +807,27 @@
 		. = COMPONENT_NO_ATTACK_HAND
 		return
 
-	if(rustle_sound)
-		playsound(A, "rustle", 50, TRUE, -5)
-
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.l_store == A && !H.get_active_held_item())	//Prevents opening if it's in a pocket.
 			. = COMPONENT_NO_ATTACK_HAND
-			H.put_in_hands(A)
+			INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
 			H.l_store = null
 			return
 		if(H.r_store == A && !H.get_active_held_item())
 			. = COMPONENT_NO_ATTACK_HAND
-			H.put_in_hands(A)
+			INVOKE_ASYNC(H, TYPE_PROC_REF(/mob, put_in_hands), A)
 			H.r_store = null
 			return
 
 	if(A.loc == user)
 		. = COMPONENT_NO_ATTACK_HAND
 		if(locked)
-			to_chat(user, "<span class='warning'>[parent] seems to be locked!</span>")
+			to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		else
 			show_to(user)
+			if(use_sound)
+				playsound(A, use_sound, 50, TRUE, -5)
 
 /datum/component/storage/proc/signal_on_pickup(datum/source, mob/user)
 	SIGNAL_HANDLER
@@ -837,19 +854,21 @@
 	return hide_from(target)
 
 /datum/component/storage/proc/on_alt_click(datum/source, mob/user)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
+	INVOKE_ASYNC(src, PROC_REF(on_alt_click_async), source, user)
+
+/datum/component/storage/proc/on_alt_click_async(datum/source, mob/user)
 	if(!isliving(user) || !user.CanReach(parent) || user.incapacitated())
 		return
 	if(locked)
-		to_chat(user, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(user, "<span class='warning'>[parent] seems to be [locked_flavor]!</span>")
 		return
 
 	var/atom/A = parent
 	if(!quickdraw)
 		A.add_fingerprint(user)
 		user_show_to_mob(user)
-		playsound(A, "rustle", 50, TRUE, -5)
 		return
 
 	var/obj/item/I = locate() in real_location()

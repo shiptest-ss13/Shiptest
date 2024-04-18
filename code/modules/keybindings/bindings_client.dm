@@ -36,10 +36,10 @@
 		qdel(src)
 		return
 
-	//Focus Chat failsafe. Overrides movement checks to prevent WASD.
-	if(!prefs.hotkeys && length(_key) == 1 && _key != "Alt" && _key != "Ctrl" && _key != "Shift")
-		winset(src, null, "input.focus=true ; input.text=[url_encode(_key)]")
-		return
+	//Focus Chat failsafe. Overrides movement checks to prevent WASD. Should no longer be necessary.
+	// if(!prefs.hotkeys && length(_key) == 1 && _key != "Alt" && _key != "Ctrl" && _key != "Shift")
+	// 	winset(src, null, "input.focus=true ; input.text=[url_encode(_key)]")
+	// 	return
 
 	if(length(keys_held) >= HELD_KEY_BUFFER_LENGTH && !keys_held[_key])
 		keyUp(keys_held[1]) //We are going over the number of possible held keys, so let's remove the first one.
@@ -99,7 +99,7 @@
 	// can hold different keys and releasing any should be handled by the key binding specifically
 	for (var/kb_name in prefs.key_bindings[_key])
 		var/datum/keybinding/kb = GLOB.keybindings_by_name[kb_name]
-		if(kb.up(src))
+		if(kb.can_use(src) && kb.up(src))
 			break
 	holder?.key_up(_key, src)
 	mob.focus?.key_up(_key, src)

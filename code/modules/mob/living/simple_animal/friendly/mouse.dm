@@ -10,13 +10,10 @@ GLOBAL_LIST_INIT(mouse_comestible, typecacheof(list(
 		/obj/item/grown/sunflower,
 		/obj/item/cigbutt
 	)))
-GLOBAL_VAR_INIT(food_for_next_mouse, 0)
-
 GLOBAL_VAR_INIT(mouse_food_eaten, 0)
 GLOBAL_VAR_INIT(mouse_spawned, 0)
 GLOBAL_VAR_INIT(mouse_killed, 0)
 
-#define FOODPERMOUSE 35
 //WS Edit
 
 /mob/living/simple_animal/mouse
@@ -54,11 +51,12 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	var/full = FALSE //WS Edit
 	var/eating = FALSE //WS Edit
 	var/cheesed = FALSE //WS Edit
-	can_be_held = TRUE
 	held_state = "mouse_gray"
 
 /mob/living/simple_animal/mouse/Initialize()
 	. = ..()
+	GLOB.mouse_spawned += 1
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 	AddComponent(/datum/component/squeak, list('sound/effects/mousesqueek.ogg'=1), 100, extrarange = SHORT_RANGE_SOUND_EXTRARANGE) //as quiet as a mouse or whatever
 	if(!body_color)
 		body_color = pick( list("brown","gray","white") )
@@ -93,12 +91,12 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	else
 		..(gibbed)
 
-/mob/living/simple_animal/mouse/Crossed(AM as mob|obj)
-	if( ishuman(AM) )
+/mob/living/simple_animal/mouse/on_entered(datum/source, AM as mob|obj)
+	if(ishuman(AM))
 		if(!stat)
 			var/mob/M = AM
 			to_chat(M, "<span class='notice'>[icon2html(src, M)] Squeak!</span>")
-	..()
+	. = ..()
 
 /mob/living/simple_animal/mouse/handle_automated_action()
 	if(prob(chew_probability))
@@ -189,30 +187,18 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	if(istype(A, /obj/item/reagent_containers/food) && !(locate(/obj/structure/table) in get_turf(A)))
 		return TRUE
 
-/mob/living/simple_animal/mouse/proc/regen_health(amt = 5)
-	var/overheal = max(health + amt - maxHealth, 0)
-	adjustHealth(-amt)
-	GLOB.food_for_next_mouse += overheal
-	var/mice = FLOOR(GLOB.food_for_next_mouse / FOODPERMOUSE, 1)
-	if(!mice)
-		return
-
-	GLOB.mouse_spawned += mice
-	GLOB.food_for_next_mouse = max(GLOB.food_for_next_mouse - FOODPERMOUSE * mice, 0)
-	SSminor_mapping.trigger_migration(mice)
-
 /mob/living/simple_animal/mouse/proc/cheese_up()
 	if(cheesed)
 		return
 	cheesed = TRUE
-	regen_health(15)
+	adjustHealth(-15)
 	resize = 2
 	update_transform()
 	add_movespeed_modifier(/datum/movespeed_modifier/mouse_cheese)
 	maxHealth = 30
 	health = maxHealth
 	to_chat(src, "<span class='userdanger'>You ate cheese! You are now stronger, bigger and faster!</span>")
-	addtimer(CALLBACK(src, .proc/cheese_down), 3 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(cheese_down)), 3 MINUTES)
 
 /mob/living/simple_animal/mouse/proc/cheese_down()
 	cheesed = FALSE
@@ -224,7 +210,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	to_chat(src, "<span class='userdanger'>A feeling of sadness comes over you as the effects of the cheese wears off. You. Must. Get. More.</span>")
 
 /atom/proc/mouse_eat(mob/living/simple_animal/mouse/M)
-	M.regen_health()
+	M.adjustHealth(-5)
 	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/cheesewedge/mouse_eat(mob/living/simple_animal/mouse/M)
@@ -288,7 +274,7 @@ GLOBAL_VAR_INIT(mouse_killed, 0)
 	bitesize = 3
 	eatverb = "devour"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
-	foodtype = GROSS | MEAT | RAW
+	foodtype = GORE | MEAT | RAW
 	grind_results = list(/datum/reagent/blood = 20, /datum/reagent/liquidgibs = 5)
 
 /obj/item/reagent_containers/food/snacks/deadmouse/examine(mob/user)

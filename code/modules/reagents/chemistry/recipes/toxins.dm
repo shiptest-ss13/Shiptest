@@ -18,6 +18,11 @@
 	results = list(/datum/reagent/toxin/itching_powder = 3)
 	required_reagents = list(/datum/reagent/fuel = 1, /datum/reagent/ammonia = 1, /datum/reagent/medicine/charcoal = 1)
 
+/datum/chemical_reaction/sacid
+	results = list(/datum/reagent/toxin/acid = 7)
+	required_reagents = list(/datum/reagent/sulfur = 1, /datum/reagent/hydrogen = 2, /datum/reagent/oxygen = 4)
+	required_temp = 380
+
 /datum/chemical_reaction/facid
 	results = list(/datum/reagent/toxin/acid/fluacid = 4)
 	required_reagents = list(/datum/reagent/toxin/acid = 1, /datum/reagent/fluorine = 1, /datum/reagent/hydrogen = 1, /datum/reagent/potassium = 1)

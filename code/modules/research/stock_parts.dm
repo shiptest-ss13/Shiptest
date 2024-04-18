@@ -94,16 +94,6 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/matter_bin/bluespace(src)
 		new /obj/item/stock_parts/cell/bluespace(src)
 
-/obj/item/storage/part_replacer/cargo //used in a cargo crate
-
-/obj/item/storage/part_replacer/cargo/PopulateContents()
-	for(var/i in 1 to 10)
-		new /obj/item/stock_parts/capacitor(src)
-		new /obj/item/stock_parts/scanning_module(src)
-		new /obj/item/stock_parts/manipulator(src)
-		new /obj/item/stock_parts/micro_laser(src)
-		new /obj/item/stock_parts/matter_bin(src)
-
 /obj/item/storage/part_replacer/cyborg
 	name = "rapid part exchange device"
 	desc = "Special mechanical module made to store, sort, and apply standard machine parts."
@@ -121,11 +111,12 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon = 'icons/obj/stock_parts.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	var/rating = 1
+	var/part_behaviour
 
 /obj/item/stock_parts/Initialize()
 	. = ..()
-	pixel_x = rand(-5, 5)
-	pixel_y = rand(-5, 5)
+	pixel_x = base_pixel_x + rand(-5, 5)
+	pixel_y = base_pixel_y + rand(-5, 5)
 
 /obj/item/stock_parts/get_part_rating()
 	return rating
@@ -136,30 +127,35 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	name = "capacitor"
 	desc = "A basic capacitor used in the construction of a variety of devices."
 	icon_state = "capacitor"
+	part_behaviour = PART_CAPACITOR
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module
 	name = "scanning module"
 	desc = "A compact, high resolution scanning module used in the construction of certain devices."
 	icon_state = "scan_module"
+	part_behaviour = PART_SCANNER
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator
 	name = "micro-manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "micro_mani"
+	part_behaviour = PART_MANIPULATOR
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser
 	name = "micro-laser"
 	desc = "A tiny laser used in certain devices."
 	icon_state = "micro_laser"
+	part_behaviour = PART_LASER
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin
 	name = "matter bin"
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "matter_bin"
+	part_behaviour = PART_BIN
 	custom_materials = list(/datum/material/iron=80)
 
 //Rating 2

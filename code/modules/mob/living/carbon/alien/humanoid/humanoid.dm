@@ -6,6 +6,8 @@
 	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	limb_destroyer = 1
 	hud_type = /datum/hud/alien
+	melee_damage_lower = 20	//Refers to unarmed damage, aliens do unarmed attacks.
+	melee_damage_upper = 20
 	var/obj/item/r_store = null
 	var/obj/item/l_store = null
 	var/caste = ""
@@ -23,8 +25,8 @@
 		/obj/item/bodypart/head/alien,
 		/obj/item/bodypart/l_arm/alien,
 		/obj/item/bodypart/r_arm/alien,
-		/obj/item/bodypart/r_leg/alien,
-		/obj/item/bodypart/l_leg/alien,
+		/obj/item/bodypart/leg/right/alien,
+		/obj/item/bodypart/leg/left/alien,
 		)
 
 /mob/living/carbon/alien/humanoid/Initialize()
@@ -103,7 +105,7 @@
 	..()
 
 //For alien evolution/promotion/queen finder procs. Checks for an active alien of that type
-/proc/get_alien_type(var/alienpath)
+/proc/get_alien_type(alienpath)
 	for(var/mob/living/carbon/alien/humanoid/A in GLOB.alive_mob_list)
 		if(!istype(A, alienpath))
 			continue

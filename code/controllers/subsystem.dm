@@ -13,6 +13,9 @@
 	/// Name of the subsystem - you must change this
 	name = "fire coderbus"
 
+	/// The unique ID of the subsystem - you must change this
+	var/ss_id = "fire_coderbus_again"
+
 	/// Order of initialization. Higher numbers are initialized first, lower numbers later. Use or create defines such as [INIT_ORDER_DEFAULT] so we can see the order in one file.
 	var/init_order = INIT_ORDER_DEFAULT
 
@@ -24,6 +27,9 @@
 
 	/// [Subsystem Flags][SS_NO_INIT] to control binary behavior. Flags must be set at compile time or before preinit finishes to take full effect. (You can also restart the mc to force them to process again)
 	var/flags = 0
+
+	/// Which stage does this subsystem init at. Earlier stages can fire while later stages init.
+	var/init_stage = INITSTAGE_MAIN
 
 	/// This var is set to TRUE after the subsystem has been initialized.
 	var/initialized = FALSE
@@ -122,7 +128,8 @@
 	dequeue()
 	can_fire = 0
 	flags |= SS_NO_FIRE
-	Master.subsystems -= src
+	if (Master)
+		Master.subsystems -= src
 	return ..()
 
 //Queue it to run.
@@ -139,7 +146,7 @@
 		queue_node_priority = queue_node.queued_priority
 		queue_node_flags = queue_node.flags
 
-		if (queue_node_flags & SS_TICKER)
+		if (queue_node_flags & (SS_TICKER|SS_BACKGROUND) == SS_TICKER)
 			if ((SS_flags & (SS_TICKER|SS_BACKGROUND)) != SS_TICKER)
 				continue
 			if (queue_node_priority < SS_priority)
@@ -191,9 +198,9 @@
 		queue_next.queue_prev = queue_prev
 	if (queue_prev)
 		queue_prev.queue_next = queue_next
-	if (src == Master.queue_tail)
+	if (Master && (src == Master.queue_tail))
 		Master.queue_tail = queue_prev
-	if (src == Master.queue_head)
+	if (Master && (src == Master.queue_head))
 		Master.queue_head = queue_next
 	queued_time = 0
 	if (state == SS_QUEUED)
@@ -221,8 +228,9 @@
 	return time
 
 /datum/controller/subsystem/stat_entry(msg)
-	if(can_fire && !(SS_NO_FIRE & flags))
-		msg = "[round(cost,1)]ms|[round(tick_usage,1)]%([round(tick_overrun,1)]%)|[round(ticks,0.1)]\t[msg]"
+	if(can_fire && !(SS_NO_FIRE & flags) && init_stage <= Master.init_stage_completed)
+		var/f_space = "\u2007" //Figure space for visual alignment
+		msg = "[add_leading(round(cost,1),4,f_space)]ms|[add_leading(round(tick_usage,1),3,f_space)]%([add_leading(round(tick_overrun,1),3,f_space)]%)|[round(ticks,0.1)]\t[msg]"
 	else
 		msg = "OFFLINE\t[msg]"
 	return msg
@@ -259,3 +267,18 @@
 		if (NAMEOF(src, queued_priority)) //editing this breaks things.
 			return FALSE
 	. = ..()
+
+/**
+	* Returns the metrics for the subsystem.
+	*
+	* This can be overriden on subtypes for variables that could affect tick usage
+	* Example: ATs on SSair
+**/
+/datum/controller/subsystem/proc/get_metrics()
+	SHOULD_CALL_PARENT(TRUE)
+	// Please dont ever modify this. Youll break existing metrics and that will upset me.
+	var/list/out = list()
+	out["cost"] = cost
+	out["tick_usage"] = tick_usage
+	out["custom"] = list() // Override as needed on child
+	return out

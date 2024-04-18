@@ -171,7 +171,11 @@
 
 	//Item is handled and in slot, valid to call callback, for this proc should always be true
 	if(!not_handled)
-		I.equipped(src, slot, initial)
+		has_equipped(I, slot, initial)
+
+			// Send a signal for when we equip an item that used to cover our feet/shoes. Used for bloody feet
+		if((I.body_parts_covered & FEET) || (I.flags_inv | I.transparent_protection) & HIDESHOES)
+			SEND_SIGNAL(src, COMSIG_CARBON_EQUIP_SHOECOVER, I, slot, initial, redraw_mob, swap)
 
 	return not_handled //For future deeper overrides
 
@@ -262,6 +266,10 @@
 		if(!QDELETED(src))
 			update_inv_s_store()
 
+		// Send a signal for when we unequip an item that used to cover our feet/shoes. Used for bloody feet
+		if((I.body_parts_covered & FEET) || (I.flags_inv | I.transparent_protection) & HIDESHOES)
+			SEND_SIGNAL(src, COMSIG_CARBON_UNEQUIP_SHOECOVER, I, force, newloc, no_move, invdrop, silent)
+
 /mob/living/carbon/human/wear_mask_update(obj/item/I, toggle_off = 1)
 	if((I.flags_inv & (HIDEHAIR|HIDEFACIALHAIR)) || (initial(I.flags_inv) & (HIDEHAIR|HIDEFACIALHAIR)))
 		update_hair()
@@ -276,10 +284,6 @@
 /mob/living/carbon/human/head_update(obj/item/I, forced)
 	if((I.flags_inv & (HIDEHAIR|HIDEFACIALHAIR)) || forced)
 		update_hair()
-	else
-		var/obj/item/clothing/C = I
-		if(istype(C) && C.dynamic_hair_suffix)
-			update_hair()
 	if(I.flags_inv & HIDEEYES || forced)
 		update_inv_glasses()
 	if(I.flags_inv & HIDEEARS || forced)
@@ -299,7 +303,14 @@
 	if(!O)
 		return 0
 
-	return O.equip(src, visualsOnly, preference_source)
+	if (O.equip(src, visualsOnly, preference_source)) // Need the mob equipped to access its ID
+		var/datum/overmap/ship/controlled/ship = SSshuttle.get_ship(src)
+		if (ship)
+			var/obj/item/card/id/idcard = get_idcard(TRUE)
+			if (idcard)
+				idcard.add_ship_access(ship)
+
+		return TRUE
 
 
 //delete all equipment without dropping anything

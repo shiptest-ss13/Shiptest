@@ -3,14 +3,15 @@
 	dying_key = DYE_REGISTRY_UNDER
 	icon = 'icons/obj/clothing/under/color.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/under/color.dmi'
+	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/under/color/jumpskirt
 	body_parts_covered = CHEST|GROIN|ARMS
-	can_adjust = FALSE
-	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = TRUE
 
 /obj/item/clothing/under/color/random
 	icon_state = "random_jumpsuit"
+	mob_overlay_state = "rainbow" // if you somehow equip it like that
 
 /obj/item/clothing/under/color/random/Initialize()
 	..()
@@ -24,6 +25,7 @@
 
 /obj/item/clothing/under/color/jumpskirt/random
 	icon_state = "random_jumpsuit"		//Skirt variant needed
+	mob_overlay_state = "rainbow"
 
 /obj/item/clothing/under/color/jumpskirt/random/Initialize()
 	..()
@@ -161,7 +163,6 @@
 	icon_state = "teal_skirt"
 	item_state = "b_suit"
 
-
 /obj/item/clothing/under/color/lightpurple
 	name = "purple jumpsuit"
 	icon_state = "lightpurple"
@@ -191,6 +192,15 @@
 	name = "lightbrown jumpskirt"
 	icon_state = "lightbrown_skirt"
 	item_state = "lb_suit"
+
+/obj/item/clothing/under/color/khaki
+	name = "khaki jumpsuit"
+	icon_state = "khakij"
+	item_state = "lb_suit"
+
+/obj/item/clothing/under/color/khaki/buster
+	name = "buster jumpsuit"
+	desc = "There seems to be a large stain in the left pocket. Someone must have squashed a really big twinkie."
 
 /obj/item/clothing/under/color/brown
 	name = "brown jumpsuit"

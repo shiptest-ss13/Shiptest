@@ -1,0 +1,262 @@
+2022-01-01:
+  untrius:
+  - tweak: Elzu have standard blood
+  - bugfix: Elzu can no longer use a syringe for free charge
+2022-01-02:
+  Apogee-dev:
+  - rscadd: Added Hyena-class salvage ship for the Gorlex Marauders
+  - code_imp: added some new ship areas, a new carpet type, and wall numeral signs
+      for mappers
+  Kapu1178:
+  - rscadd: Actual Round Timer, a timer that keeps track of real life time.
+  - tweak: Renamed "Round Timer" to "Internal Round Timer"
+  - tweak: World Topic reports world.timeofday rather than world.time
+  - tweak: Status panel is perdy.
+  - imageadd: Kepori collar
+  Kapu1178, Kevinz, XSlayer300, Ryll/Shaps, Seris02, GoldenAlpharex:
+  - rscadd: Speech Format Help verb under the OOC tab.
+  - rscadd: Text emphasis. |italics|, \_underline_, +bold+
+  - rscadd: Emotes that start with an apostrophe wont format weirdly
+  - rscadd: You can now have custom say mods, and can use them to emote over radio.
+      say";screeches*HELP SHITSEC!" results in [Common] Joe screeches, "HELP SHITSEC!"
+  MarkSuckerberg:
+  - rscdel: For the time being, the Statio.3-class vessel has been discontinued from
+      civilian markets.
+  - bugfix: Cryopods are no longer buggy when missing a cryo control console.
+  tiramisuapimancer:
+  - bugfix: pubby thrusterz
+2022-01-03:
+  timberpoes, Ninjanomnom, CoffeeKat:
+  - bugfix: fixed pipelines
+2022-01-04:
+  E-MonaRhg:
+  - bugfix: Removed a stray pixel on the blood-red hardsuit helmet.
+  Kapu1178:
+  - bugfix: Patches up some runtimes
+  retlaw34:
+  - imageadd: New energy weapon sprites
+  - imageadd: Fixes a tiny error on defibs
+  swifterjack:
+  - rscadd: Added new job datums for GEC
+2022-01-05:
+  BigManMassive:
+  - tweak: Changes "free" value for seed vault vendors to 1
+  Dimasw99:
+  - tweak: Drones can be revived by humans too now
+  Kapu1178:
+  - rscadd: Clients no longer need to manually start their respawn timer
+  - rscadd: Admins can now bypass any respawn restrictions.
+  - admin: 'Gives R_DEBUG: Jump to Key, Jump to Coord, Jump to Area, and Admin Ghost.'
+  - admin: VVing a subsystem alerts admins.
+  - code_imp: VVing a reference now calls vv_alert_admins if it resolves as a datum.
+  francinum:
+  - bugfix: Icons should no longer experience layer issues or flicker.
+  tiramisuapimancer:
+  - tweak: goliaths can be handfed cactus fruit once more (they can still be fed meat)
+      (also they can be fed mushroom leaves)
+2022-01-06:
+  Imaginos16:
+  - imageadd: Resprites the turtlenecks!
+  Kapu1178:
+  - code_imp: Resolves lineending error
+  MarkSuckerberg:
+  - bugfix: Viewing a huge list of grouped runtimes should no longer hang the server.
+  MemedHams:
+  - tweak: Implements different ambience lists on different planetoids
+  - bugfix: adds and implements an explored subtype to rockplanet areas, preventing
+      the overwriting of rockplanet ruins during planetgen
+  - bugfix: switches areas of the ratvar lavaland ruin to the "explored" version
+  Omppusolttu:
+  - rscadd: Added a scrubber network to the Pubby
+  - rscdel: Removed AAC skip delay
+  zestybastard:
+  - imageadd: New sprites for the EVA suit.
+2022-01-07:
+  E-MonaRhg:
+  - tweak: Tweaked the cost of first-aid kit cargo orders to not allow for free money
+      generation.
+  MemedHams:
+  - bugfix: fixes vacuum spawning alongside the Fortress of Solitude ruin.
+2022-01-08:
+  Apogee-dev:
+  - rscadd: Added outfit datums to dwayne and kilo
+  - rscadd: Added scrubbers to kilo
+  - rscadd: Ported high-visibility jacket and evening gloves from Bay
+  - rscadd: Added three new items to loadout screen
+  Azarak:
+  - refactor: Space levels are now only defining physical levels, with traits being
+      relegated to real virtual levels, which are contained within a map zone which
+      is a collection of virtual levels.
+  tiramisuapimancer:
+  - balance: Kepori now take less damage from heat, and more from the cold, are thirty
+      kelvins warmer than humans, and start taking damage from heat and cold at temperatures
+      thirty kelvins higher than humans do. (Previously they were colder)
+2022-01-10:
+  Apogee-dev:
+  - rscadd: Added custom namelist & prefix generation for Dwayne and Kilo
+  PhoenixAM:
+  - tweak: Changes descriptions and instances with 'Aluminum' to be 'Aluminium' instead
+      for consistency.
+  tiramisuapimancer:
+  - tweak: Kepori language name changed to Teceti Unified Standard, it and the kepori
+      namegen get new syllables
+  - imageadd: teceti standard language icon
+2022-01-14:
+  Apogee-dev:
+  - tweak: Added Magnetic Cleavers and 10mm Design Disk to hyena
+  - rscadd: Added Cybersun field medic uniforms
+  Kapu1178:
+  - bugfix: chems call overdose_start again
+  - rscadd: Three Eye, a mysterious liquid from another realm...
+  - tweak: Changes some flags on plane_masters, as they appear to be inverted due
+      to a bug or something.
+  MarkSuckerberg:
+  - bugfix: Ruins spawn at weak energy signals again.
+  - tweak: Planet type selection probability now has minimums for planets that are
+      linked to the amount of ruins the planets have.
+  - bugfix: Probably a few more potential SGT/random ship deletion bugs have been
+      resolved.
+  MemedHams:
+  - tweak: shipcoins are now gained mostly based on time played, at a rate of 1.5
+      per minute. The reward on round-end is now 50 coins.
+  Omppusolttu:
+  - tweak: Minor changes to the Scrapper-B
+  ZephyrTFA:
+  - tweak: Ghostize and Re-Enter respect nullspace/existing ghosts
+2022-01-15:
+  AspEv, Ayy-Robotics, Azlan, E-MonaRhg:
+  - rscadd: Added Safety (and Syndie) Moth posters.
+  - imageadd: Added the sprites for Safety (and Syndie) Moth posters
+  - tweak: Demodularised all poster sprites.
+  francinum:
+  - bugfix: Ship names are now safety checked.
+2022-01-17:
+  retlaw34:
+  - bugfix: pill and pill b were buyable
+  - bugfix: they are still admin only
+2022-01-19:
+  Azarak:
+  - bugfix: Fixes singleton ruin areas that should be instantiated
+  Untrius & Tergius:
+  - tweak: Updated some drink flavors
+  martinlyra:
+  - tweak: Ship renaming is now logged to admins
+  - bugfix: Fixed few ship name sanitization edge cases
+2022-01-20:
+  retlaw34:
+  - imageadd: resprites the uzi and its ammo
+  triplezeta:
+  - bugfix: scrapper map cleaned up a bit
+2022-01-21:
+  Apogee-dev:
+  - rscadd: Added medic webbing and red nitrile gloves
+  - bugfix: Fixed bug that caused cybersun soft cap to turn invisible when unequipped
+  - tweak: Adjusted sprites for cybersun medic jumpsuit and skirt
+  Spc-Dragonfruits:
+  - imageadd: Resprited Stechkin & APS
+  Zevotech:
+  - rscadd: Vine Thud Emote
+  retlaw34:
+  - balance: AK-47s are sold out.
+  - balance: Additionally, NT-AKs are discontinued following record sales, but not
+      hitting sales projections.
+  untrius:
+  - tweak: Elzu can be the inducers they were born/grown to be
+2022-01-22:
+  Dimasw99:
+  - rscadd: TEG boards, freezer boards, plasma, T2 and T3 parts can be ordered on
+      the express console.
+  - rscadd: Pipe dispenser boards can now be printed at an autolathe. Can now also
+      be constructed/deconstructed.
+  - balance: Golems can drop part boxes including T4
+  - bugfix: RnD server board added to machinery category in the autolathe
+  MarkSuckerberg:
+  - rscdel: Removes shuttle previewing from the admin shuttle manipulator.
+  - refactor: Shuttles now load independently, instead of through one single port
+      specified in the shuttle subsystem for reasons beyond my comprehension.
+  - bugfix: Fixed the bug where you spawn on the wrong ship (caused by people trying
+      to create two ships at the sameish time)
+  PositiveEntropy:
+  - imageadd: Resprites the Peaked Caps
+  PowerfulBacon:
+  - rscadd: Ethereal dance grenade. If you find a uplink, you can buy it through there.
+  axietheaxolotl:
+  - imageadd: New sprite for Syndicate Captain's Vest and Cap
+  - tweak: Syndicate berets now use officer beret icons, for le edgy red on black.
+  fighterslam, Kapu1178, Azarak, Gandalf2k15, Rohesie:
+  - rscadd: You can adjust your current-tile location by "pixel shifting". Default
+      key is C, check your binds.
+  - code_imp: Added base_pixel vars to atom/movable, replaced most uses of initial(pixel).
+  francinum:
+  - admin: The MC tab's first few values are now visually aligned
+  retlaw34:
+  - imageadd: Almost every single computer sprite has been redone
+  untrius:
+  - bugfix: Couches rotate correctly
+2022-01-24:
+  AsciiSquid:
+  - rscadd: Kepori now know how to jump.
+  - tweak: Tackle/Pouncing now more accurately induces head trauma.
+  Kapu1178, Quantum_m, Ziiro, E-MonaRhg, Marksuckerburg:
+  - rscadd: Digitigrade legs now support some jumpsuits (more to be added later)
+  - rscadd: Digitigrade legs now support some hardsuits.
+  - rscadd: Almost every unique bodypart sprite is now a whole limb.
+  - rscadd: Limbgrower limbs are now a sickly green
+  - refactor: Digitigrade legs are now full limbs.
+  - refactor: Limbs retain information as they change owners
+  - refactor: Bodypart code is generally less ass
+  - code_imp: Support for bodytype-based clothing.
+  - bugfix: Lizard snoots no longer poke through hardsuit helmets
+  - bugfix: CHANGELING TRANSFORM FUNCTIONS PROPERLY
+  - rscdel: IPC and Super Soldier mutation toxin.
+  - code_imp: Krokodil victims are now a subtype of human
+  francinum:
+  - admin: Some admin verbs have had their requisite flags adjusted
+  - admin: R_DEBUG is granted access to silicon privilege
+2022-01-25:
+  Dimasw99:
+  - tweak: Curtains always remain density 0 now.
+  OrionTheFox:
+  - rscadd: Added a Whisper keybind (Default Y)!
+2022-01-26:
+  Kapu1178:
+  - code_imp: Extremely minor fix.
+2022-01-27:
+  Dimasw99:
+  - rscadd: Ship can be limited in the config file. Optional.
+  Kurgis:
+  - tweak: Added a few corner walls to the Tide-class so its areas counts as valid
+      rooms at roundstart.
+  Phoaly:
+  - rscadd: Added a new POI to the Ice Planet, located at icemoon_demonlab.dmm
+  - code_imp: Added an AREA to code/game/area/areas/ruins/icemoon.dm
+  - code_imp: Added the MAPTEMPLATE to whitesands/code/datums/ruins/icemoon.dm
+  benbot16:
+  - bugfix: fixes a few instances where silicons could teleport stuff out of machines.
+  retlaw34:
+  - imageadd: makes "ssu_classic" suit storages 3/4 and de-erisfy it
+2022-01-29:
+  MarkSuckerberg:
+  - bugfix: Custom shuttles can be built again.
+  - admin: setup_shuttle_ship() actually works to fix ships missing their overmap
+      token once again.
+  PetMudstone:
+  - bugfix: Fixed bug where pill bottles in ChemMasters didn't receive pills created
+      by them.
+  mc_meiler:
+  - tweak: Jelly and subtypes have their own tongue now
+  - bugfix: Jelly and Slimepeople can speak slime
+2022-01-30:
+  Apogee-dev:
+  - rscdel: Removed cargo consoles on Hyena
+  - tweak: Made Hyena's side airlock more practical to use
+2022-01-31:
+  benbot16:
+  - bugfix: Mechs can get hit by bullets again.
+  - bugfix: Spacepods can get hit by bullets again.
+  - bugfix: X-ray lasers can go through walls now.
+  retlaw34:
+  - bugfix: Some computer sprites were touched up
+  swifterjack:
+  - rscadd: Job datums for NSV Medical
+  - balance: Spitfire is now a Botany-Medical-Mining ship.

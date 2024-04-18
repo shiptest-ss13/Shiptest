@@ -67,16 +67,20 @@
 
 // Use this when setting the aiEye's location.
 // It will also stream the chunk that the new loc is in.
-
-/mob/camera/aiEye/proc/setLoc(T, force_update = FALSE)
+// WHEN FIRST SETTING A LOCATION, MAKE SURE TO `force_update = TRUE`. This needs to be done because otherwise we can't tell apart virtual level boundaries
+/mob/camera/aiEye/proc/setLoc(turf/T, force_update = FALSE)
 	if(ai)
 		if(!isturf(ai.loc))
 			return
 		T = get_turf(T)
-		if(!force_update && (T == get_turf(src)) )
+		if(!force_update && (T == get_turf(src)))
 			return //we are already here!
 		if (T)
-			forceMove(T)
+			if(!force_update)
+				var/datum/map_zone/mapzone = T.get_map_zone()
+				if(!mapzone?.is_in_bounds(T))//@azarak Give me a poke on discord if you see this, I'm *assuming* this is what you intended? (Added nullcheck)
+					return
+			abstract_move(T)
 		else
 			moveToNullspace()
 		if(use_static != USE_STATIC_NONE)
@@ -121,8 +125,15 @@
 		return ai.client
 	return null
 
-/mob/camera/aiEye/Destroy()
+/mob/camera/aiEye/Destroy(force)
 	if(ai)
+		if(ai.eyeobj == src)
+			if(!force)
+				setLoc(get_turf(ai), TRUE)
+				return QDEL_HINT_LETMELIVE
+			// We're being force deleted; clear the ai's reference to us and call view_core to have a new eye instantiated
+			ai.eyeobj = null
+			ai.view_core()
 		ai.all_eyes -= src
 		ai = null
 	for(var/V in visibleCameraChunks)
@@ -139,7 +150,7 @@
 /atom/proc/move_camera_by_click()
 	if(isAI(usr))
 		var/mob/living/silicon/ai/AI = usr
-		if(AI.eyeobj && (AI.multicam_on || (AI.client.eye == AI.eyeobj)) && (AI.eyeobj.get_virtual_z_level() == get_virtual_z_level()))
+		if(AI.eyeobj && (AI.multicam_on || (AI.client.eye == AI.eyeobj)) && (AI.eyeobj.virtual_z() == virtual_z()))
 			AI.cameraFollow = null
 			if (isturf(loc) || isturf(src))
 				AI.eyeobj.setLoc(src)

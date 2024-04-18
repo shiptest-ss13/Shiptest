@@ -29,7 +29,7 @@
 		death()
 
 
-/mob/living/simple_animal/hostile/illusion/proc/Copy_Parent(mob/living/original, life = 50, hp = 100, damage = 0, replicate = 0 )
+/mob/living/simple_animal/hostile/illusion/proc/Copy_Parent(mob/living/original, life = 50, hp = 100, damage = 0, replicate = 0)
 	appearance = original.appearance
 	parent_mob = original
 	setDir(original.dir)
@@ -40,8 +40,8 @@
 	multiply_chance = replicate
 	faction -= "neutral"
 	transform = initial(transform)
-	pixel_y = initial(pixel_y)
-	pixel_x = initial(pixel_x)
+	pixel_y = base_pixel_y
+	pixel_x = base_pixel_x
 
 /mob/living/simple_animal/hostile/illusion/examine(mob/user)
 	if(parent_mob)

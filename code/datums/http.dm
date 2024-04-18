@@ -41,7 +41,7 @@
 /datum/http_request/proc/build_options()
 	if(output_file)
 		return json_encode(list("output_filename"=output_file,"body_filename"=null))
-	return null
+	return "{}"
 
 /datum/http_request/proc/is_complete()
 	if (isnull(id))

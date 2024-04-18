@@ -11,6 +11,7 @@
 	idle_power_usage = 0
 	power_channel = AREA_USAGE_EQUIP
 	req_one_access = list(ACCESS_MEDICAL, ACCESS_HEADS, ACCESS_SECURITY) //used to control clamps
+	processing_flags = NONE
 /// The mount's defib
 	var/obj/item/defibrillator/defib
 /// if true, and a defib is loaded, it can't be removed without unlocking the clamps
@@ -73,12 +74,12 @@
 		if(defib)
 			to_chat(user, "<span class='warning'>There's already a defibrillator in [src]!</span>")
 			return
-		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
-			return
 		var/obj/item/defibrillator/D = I
 		if(!D.get_cell())
 			to_chat(user, "<span class='warning'>Only defibrilators containing a cell can be hooked up to [src]!</span>")
+			return
+		if(HAS_TRAIT(I, TRAIT_NODROP) || !user.transferItemToLoc(I, src))
+			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
 			return
 		user.visible_message("<span class='notice'>[user] hooks up [I] to [src]!</span>", \
 		"<span class='notice'>You press [I] into the mount, and it clicks into place.</span>")
@@ -86,7 +87,7 @@
 		// Make sure the defib is set before processing begins.
 		defib = I
 		begin_processing()
-		update_icon()
+		update_appearance()
 		return
 	else if(defib && I == defib.paddles)
 		defib.paddles.snap_back()
@@ -99,7 +100,7 @@
 				return
 			clamps_locked = !clamps_locked
 			to_chat(user, "<span class='notice'>Clamps [clamps_locked ? "" : "dis"]engaged.</span>")
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>Insufficient access.</span>")
 		return
@@ -122,7 +123,7 @@
 	"<span class='notice'>You override the locking clamps on [src]!</span>")
 	playsound(src, 'sound/machines/locktoggle.ogg', 50, TRUE)
 	clamps_locked = FALSE
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/machinery/defibrillator_mount/wrench_act(mob/living/user, obj/item/wrench/W)
@@ -158,7 +159,7 @@
 	// Make sure processing ends before the defib is nulled
 	end_processing()
 	defib = null
-	update_icon()
+	update_appearance()
 
 /obj/machinery/defibrillator_mount/charging
 	name = "PENLITE defibrillator mount"
@@ -167,12 +168,28 @@
 	idle_power_usage = 1
 	wallframe_type = /obj/item/wallframe/defib_mount/charging
 
+
+/obj/machinery/defibrillator_mount/charging/Initialize()
+	. = ..()
+	if(is_operational)
+		begin_processing()
+
+
+/obj/machinery/defibrillator_mount/charging/on_set_is_operational(old_value)
+	if(old_value) //Turned off
+		end_processing()
+	else //Turned on
+		begin_processing()
+
+
 /obj/machinery/defibrillator_mount/charging/process()
 	var/obj/item/stock_parts/cell/C = get_cell()
-	if(C && C.charge < C.maxcharge && is_operational())
+	if(!C || !is_operational)
+		return PROCESS_KILL
+	if(C.charge < C.maxcharge)
 		use_power(100)
 		C.give(80)
-		update_icon()
+		update_appearance()
 
 //wallframe, for attaching the mounts easily
 /obj/item/wallframe/defib_mount

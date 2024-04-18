@@ -31,28 +31,19 @@
 		return pda.owner
 	return if_no_id
 
-//repurposed proc. Now it combines get_id_name() and get_face_name() to determine a mob's name variable. Made into a separate proc as it'll be useful elsewhere
 /mob/living/carbon/human/get_visible_name()
-	var/face_name = get_face_name("")
-	var/id_name = get_id_name("")
 	if(name_override)
 		return name_override
-	if(face_name)
-		if(id_name && (id_name != face_name))
-			return "[face_name] (as [id_name])"
-		return face_name
-	if(id_name)
-		return id_name
-	return "Unknown"
+	return get_generic_name(lowercase = TRUE)
 
 //Returns "Unknown" if facially disfigured and real_name if not. Useful for setting name when Fluacided or when updating a human's name variable
-/mob/living/carbon/human/proc/get_face_name(if_no_face="Unknown")
-	if( wear_mask && (wear_mask.flags_inv&HIDEFACE) )	//Wearing a mask which hides our face, use id-name if possible
+/mob/living/carbon/human/proc/get_face_name(if_no_face = get_generic_name(lowercase = TRUE))
+	if(wear_mask && (wear_mask.flags_inv & HIDEFACE)) //Wearing a mask which hides our face, use id-name if possible
 		return if_no_face
-	if( head && (head.flags_inv&HIDEFACE) )
-		return if_no_face		//Likewise for hats
+	if(head && (head.flags_inv & HIDEFACE))
+		return if_no_face //Likewise for hats
 	var/obj/item/bodypart/O = get_bodypart(BODY_ZONE_HEAD)
-	if( !O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name )	//disfigured. use id-name if possible
+	if(!O || (HAS_TRAIT(src, TRAIT_DISFIGURED)) || (O.brutestate+O.burnstate)>2 || cloneloss>50 || !real_name) //disfigured. use id-name if possible
 		return if_no_face
 	return real_name
 
@@ -121,7 +112,7 @@
 		return FALSE
 	return TRUE//Humans can use guns and such
 
-/mob/living/carbon/human/reagent_check(datum/reagent/R)
+/mob/living/carbon/human/handled_by_species(datum/reagent/R)
 	return dna.species.handle_chemicals(R,src)
 	// if it returns 0, it will run the usual on_mob_life for that reagent. otherwise, it will stop after running handle_chemicals for the species.
 
@@ -146,10 +137,10 @@
 		to_chat(src, "<span class='warning'>You can't bring yourself to use a ranged weapon!</span>")
 		return FALSE
 
-/mob/living/carbon/human/get_bank_account(hand_first)
+/mob/living/carbon/human/proc/get_bank_account()
 	RETURN_TYPE(/datum/bank_account)
 	var/datum/bank_account/account
-	var/obj/item/card/id/I = get_idcard(hand_first)
+	var/obj/item/card/id/I = get_idcard()
 
 	if(I && I.registered_account)
 		account = I.registered_account
@@ -171,3 +162,66 @@
 		return TRUE
 	if(isclothing(wear_mask) && (wear_mask.clothing_flags & SCAN_REAGENTS))
 		return TRUE
+
+///copies over clothing preferences like underwear to another human
+/mob/living/carbon/human/proc/copy_clothing_prefs(mob/living/carbon/human/destination)
+	destination.underwear = underwear
+	destination.underwear_color = underwear_color
+	destination.undershirt = undershirt
+	destination.undershirt_color = undershirt_color
+	destination.socks = socks
+	destination.socks_color = socks_color
+	destination.jumpsuit_style = jumpsuit_style
+
+/mob/living/carbon/human/proc/get_age()
+	var/obscured = check_obscured_slots()
+	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	if((obscured & ITEM_SLOT_ICLOTHING) && skipface || isipc(src))
+		return ""
+	switch(age)
+		if(70 to INFINITY)
+			return "Geriatric"
+		if(60 to 70)
+			return "Elderly"
+		if(50 to 60)
+			return "Old"
+		if(40 to 50)
+			return "Middle-Aged"
+		if(24 to 40)
+			return "" //not necessary because this is basically the most common age range
+		if(18 to 24)
+			return "Young"
+		else
+			return "Puzzling"
+
+/mob/living/carbon/human/proc/get_generic_name(prefixed = FALSE, lowercase = FALSE)
+	var/obscured = check_obscured_slots()
+	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/hide_features = (obscured & ITEM_SLOT_ICLOTHING) && skipface
+	var/visible_adjective
+	if(generic_adjective && !hide_features)
+		visible_adjective = "[generic_adjective] "
+	var/visible_age = get_age()
+	if(visible_age)
+		visible_age = "[visible_age] "
+	var/visible_gender = get_gender()
+	var/final_string = "[visible_adjective][visible_age][dna.species.name] [visible_gender]"
+	if(prefixed)
+		final_string = "\A [final_string]"
+	return lowercase ? lowertext(final_string) : final_string
+
+/mob/living/carbon/human/proc/get_gender()
+	var/visible_gender = p_they()
+	switch(visible_gender)
+		if("he")
+			visible_gender = "Man"
+		if("she")
+			visible_gender = "Woman"
+		if("they")
+			if(ishuman(src))
+				visible_gender = "Person"
+			else
+				visible_gender = "Creature"
+		else
+			visible_gender = "Thing"
+	return visible_gender

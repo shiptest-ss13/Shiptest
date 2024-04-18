@@ -30,10 +30,7 @@
 	if(activated && reagents.total_volume <= reagents.maximum_volume) //this is also evaluated in add_reagent, but from my understanding proc calls are expensive
 		reagents.add_reagent(reagent_id, potency)
 
-/obj/structure/geyser/plunger_act(obj/item/plunger/P, mob/living/user, _reinforced)
-	if(!_reinforced)
-		to_chat(user, "<span class='warning'>The [P.name] isn't strong enough!</span>")
-		return
+/obj/structure/geyser/plunger_act(obj/item/plunger/P, mob/living/user)
 	if(activated)
 		to_chat(user, "<span class'warning'>The [name] is already active!</span>")
 		return
@@ -61,10 +58,9 @@
 	custom_materials = list(/datum/material/iron = 150) // WS Edit - Item Materials
 
 	var/plunge_mod = 1 //time*plunge_mod = total time we take to plunge an object
-	var/reinforced = FALSE //whether we do heavy duty stuff like geysers
 
 /obj/item/plunger/attack_obj(obj/O, mob/living/user)
-	if(!O.plunger_act(src, user, reinforced))
+	if(!O.plunger_act(src, user))
 		return ..()
 
 /obj/item/plunger/throw_impact(atom/hit_atom, datum/thrownthing/tt)
@@ -77,12 +73,3 @@
 			H.equip_to_slot_if_possible(src, ITEM_SLOT_MASK)
 			H.visible_message("<span class='warning'>The plunger slams into [H]'s face!</span>", "<span class='warning'>The plunger suctions to your face!</span>")
 
-/obj/item/plunger/reinforced
-	name = "reinforced plunger"
-	desc = "It's an M. 7 Reinforced Plunger© for heavy duty plunging."
-	icon_state = "reinforced_plunger"
-
-	reinforced = TRUE
-	plunge_mod = 0.8
-
-	custom_premium_price = 1200

@@ -107,6 +107,8 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		/obj/item/stack/sheet/metal/twenty = 1,
 		/obj/item/stack/sheet/mineral/plasma = 1,
 		/obj/item/sign = 1,
+		/obj/item/stack/tape/industrial = 1,
+		/obj/item/stack/tape/industrial/electrical = 1,
 
 		//assemblies
 		/obj/item/assembly/infra = 1,
@@ -136,13 +138,13 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		) = 1,
 
 	list(//misc
-		/obj/item/radio/off = 1,
+		/obj/item/radio = 1,
 		/obj/item/extinguisher = 1,
 		/obj/item/tank/internals/emergency_oxygen = 1,
 		/obj/item/bodybag = 1,
 		/obj/item/grenade/smokebomb = 1,
-		/obj/item/stack/spacecash/c10 = 1,
-		/obj/item/stack/sticky_tape = 1,
+		/obj/item/spacecash/bundle/pocketchange = 1,
+		/obj/item/stack/tape = 1,
 
 		//light sources
 		/obj/item/flashlight = 1,
@@ -231,6 +233,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			/obj/item/storage/box/donkpockets/donkpockethonk = 1,
 			) = 1,
 		/obj/item/reagent_containers/food/snacks/monkeycube = 1,
+		/obj/effect/spawner/lootdrop/ration = 1,
 		) = 8,
 
 	list(//fakeout items, keep this list at low relative weight

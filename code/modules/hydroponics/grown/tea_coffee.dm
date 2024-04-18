@@ -36,6 +36,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/medicine/synaptizine = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/toxin/teapowder = 0.1)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/tea/astra
 	seed = /obj/item/seeds/tea/astra
@@ -86,6 +87,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/medicine/ephedrine = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/toxin/coffeepowder = 0.1)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
 	seed = /obj/item/seeds/coffee/robusta

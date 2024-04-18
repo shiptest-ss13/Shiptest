@@ -87,6 +87,13 @@
 	icon_state = "nosmoking"
 	is_editable = TRUE
 
+/obj/structure/sign/warning/nosmoking/burnt
+	name = "\improper NO SMOKING sign"
+	sign_change_name = "Warning - No Smoking Burnt"
+	desc = "A warning sign with reads 'NO SMOKING'. It seems a bit seared."
+	icon_state = "nosmoking2_b"
+	is_editable = TRUE
+
 /obj/structure/sign/warning/radiation
 	name = "\improper HAZARDOUS RADIATION sign"
 	sign_change_name = "Warning - Radiation"
@@ -169,6 +176,13 @@
 	sign_change_name = "Warning - Hazardous Chemicals sign"
 	desc = "A sign that warns of potentially reactive chemicals nearby, be they explosive, flamable, or acidic."
 	icon_state = "chemdiamond"
+	is_editable = TRUE
+
+/obj/structure/sign/warning/incident
+	name = "\improper DAYS SINCE LAST INCIDENT sign"
+	sign_change_name = "0 Days Since Last Incident"
+	desc = "A sign marking time passed since the last safety incident. It's a new record!"
+	icon_state = "incident"
 	is_editable = TRUE
 
 ////MISC LOCATIONS

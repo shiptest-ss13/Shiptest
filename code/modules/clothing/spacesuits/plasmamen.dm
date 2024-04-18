@@ -1,4 +1,4 @@
- //Suits for the pink and grey skeletons! //EVA version no longer used in favor of the Jumpsuit version
+//Suits for the pink and grey skeletons! //EVA version no longer used in favor of the Jumpsuit version
 
 
 /obj/item/clothing/suit/space/eva/plasmaman
@@ -62,7 +62,7 @@
 	visor_flags_inv = HIDEEYES|HIDEFACE
 
 // WS Begin - plasmeme command helmets buff - used for RD bomb scanner
-/obj/item/clothing/head/helmet/space/plasmaman/proc/display_visor_message(var/msg)
+/obj/item/clothing/head/helmet/space/plasmaman/proc/display_visor_message(msg)
 	var/mob/wearer = loc
 	if(msg && ishuman(wearer))
 		wearer.show_message("[icon2html(src, wearer)]<b><span class='robot'>[msg]</span></b>", MSG_VISUAL)
@@ -71,7 +71,7 @@
 /obj/item/clothing/head/helmet/space/plasmaman/Initialize()
 	. = ..()
 	visor_toggling()
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/helmet/space/plasmaman/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))
@@ -83,10 +83,10 @@
 			to_chat(user, "<span class='notice'>Your helmet's torch can't pass through your welding visor!</span>")
 			helmet_on = FALSE
 			playsound(src, 'sound/mecha/mechmove03.ogg', 50, TRUE) //Visors don't just come from nothing
-			update_icon()
+			update_appearance()
 		else
 			playsound(src, 'sound/mecha/mechmove03.ogg', 50, TRUE) //Visors don't just come from nothing
-			update_icon()
+			update_appearance()
 
 /obj/item/clothing/head/helmet/space/plasmaman/update_overlays()
 	. = ..()
@@ -102,7 +102,7 @@
 				smile = TRUE
 				smile_color = CR.paint_color
 				to_chat(user, "You draw a smiley on the helmet visor.")
-				update_icon()
+				update_appearance()
 		else
 			to_chat(user, "<span class='warning'>Seems like someone already drew something on this helmet's visor!</span>")
 
@@ -121,7 +121,7 @@
 	. = ..()
 	if(smile && (clean_types & CLEAN_TYPE_PAINT))
 		smile = FALSE
-		update_icon()
+		update_appearance()
 		return TRUE
 
 /obj/item/clothing/head/helmet/space/plasmaman/attack_self(mob/user)
@@ -182,7 +182,7 @@
 
 /obj/item/clothing/head/helmet/space/plasmaman/viro
 	name = "virology plasma envirosuit helmet"
-	desc = "The helmet worn by the safest people on the station, those who are completely immune to the monstrosities they create."
+	desc = "The helmet worn by the safest people in virology, those who are completely immune to the monstrosities they create."
 	icon_state = "virologist_envirohelm"
 	item_state = "virologist_envirohelm"
 
@@ -326,7 +326,7 @@
 //bomb scanner for RD helmet
 /obj/item/clothing/head/helmet/space/plasmaman/rd/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, .proc/sense_explosion)
+	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(sense_explosion))
 
 /obj/item/clothing/head/helmet/space/plasmaman/rd/equipped(mob/living/carbon/human/user, slot)
 	..()
@@ -360,9 +360,3 @@
 	desc = "An envirosuit helmet made for the sanctioned plasmaman."
 	icon_state = "secmed_envirohelm"
 	item_state = "secmed_envirohelm"
-
-/obj/item/clothing/head/helmet/space/plasmaman/security/lieutenant //WS edit plasmaman customization
-	name = "lieutenants envirosuit helmet"
-	desc = "an envirosuit helmet made for the sentinel plasmaman."
-	icon_state = "lt_envirohelm"
-	item_state = "lt_envirohelm"

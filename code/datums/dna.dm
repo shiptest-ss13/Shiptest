@@ -3,7 +3,7 @@
 /datum/dna
 	var/unique_enzymes
 	var/uni_identity
-	var/blood_type
+	var/datum/blood_type/blood_type
 	var/datum/species/species = new /datum/species/human //The type of mutant race the player is if applicable (i.e. potato-man)
 	var/list/features = list("FFF") //first value is mutant color
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
@@ -15,6 +15,7 @@
 	var/default_mutation_genes[DNA_MUTATION_BLOCKS] //List of the default genes from this mutation to allow DNA Scanner highlighting
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
+	var/current_body_size = BODY_SIZE_NORMAL //This is a size multiplier, it starts at "1".
 
 
 	var/delete_species = TRUE //Set to FALSE when a body is scanned by a cloner to fix #38875. WS Edit - Cloning
@@ -65,6 +66,7 @@
 	new_dna.features = features.Copy()
 	new_dna.species = new species.type
 	new_dna.real_name = real_name
+	new_dna.update_body_size() //Must come after features.Copy()
 	new_dna.mutations = mutations.Copy()
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
@@ -290,6 +292,22 @@
 	return
 
 /////////////////////////// DNA MOB-PROCS //////////////////////
+/datum/dna/proc/update_body_size()
+	if(!holder)
+		return
+	var/desired_size = GLOB.body_sizes[features["body_size"]]
+
+	if(desired_size == current_body_size)
+		return
+
+	if(!features["body_size"])
+		return
+
+	var/change_multiplier = desired_size / current_body_size
+	var/translate = ((change_multiplier-1) * 32) * 0.5
+	holder.transform = holder.transform.Scale(change_multiplier)
+	holder.transform = holder.transform.Translate(0, translate)
+	current_body_size = desired_size
 
 /mob/proc/set_species(datum/species/mrace, icon_update = 1)
 	return
@@ -302,7 +320,7 @@
 			stored_dna.species = mrace //not calling any species update procs since we're a brain, not a monkey/human
 
 
-/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
 	if(mrace && has_dna())
 		var/datum/species/new_race
 		if(ispath(mrace))
@@ -315,19 +333,30 @@
 		dna.species.on_species_loss(src, new_race, pref_load)
 		var/datum/species/old_species = dna.species
 		dna.species = new_race
-		dna.species.on_species_gain(src, old_species, pref_load)
+//Solves quirk conflicts on species change if there's any
+		var/list/quirks_to_remove = list()
+		var/list/quirks_resolved = client?.prefs.handle_quirk_conflict("species", new_race, src)
+		for(var/datum/quirk/quirk_instance as anything in roundstart_quirks)
+			quirks_to_remove += quirk_instance.type
+		for(var/quirk_name in quirks_resolved)
+			var/datum/quirk/quirk_type = SSquirks.quirks[quirk_name]
+			quirks_resolved += quirk_type
+			quirks_resolved -= quirk_name
+		quirks_to_remove -= quirks_resolved
+		for(var/quirk_type in quirks_to_remove)
+			remove_quirk(quirk_type)
+		dna.species.on_species_gain(src, old_species, pref_load, robotic)
 		if(ishuman(src))
 			qdel(language_holder)
 			var/species_holder = initial(mrace.species_language_holder)
 			language_holder = new species_holder(src)
 		update_atom_languages()
 
-/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE)
+/mob/living/carbon/human/set_species(datum/species/mrace, icon_update = TRUE, pref_load = FALSE, robotic = FALSE)
+	robotic ||= fbp
 	..()
 	if(icon_update)
-		update_body()
 		update_hair()
-		update_body_parts()
 		update_mutations_overlay()// no lizard with human hulk overlay please.
 
 
@@ -659,12 +688,12 @@
 				spawn_gibs()
 				set_species(/datum/species/skeleton)
 				if(prob(90))
-					addtimer(CALLBACK(src, .proc/death), 30)
+					addtimer(CALLBACK(src, PROC_REF(death)), 30)
 					if(mind)
 						mind.hasSoul = FALSE
 			if(5)
 				to_chat(src, "<span class='phobia'>LOOK UP!</span>")
-				addtimer(CALLBACK(src, .proc/something_horrible_mindmelt), 30)
+				addtimer(CALLBACK(src, PROC_REF(something_horrible_mindmelt)), 30)
 
 
 /mob/living/carbon/human/proc/something_horrible_mindmelt()
@@ -675,4 +704,4 @@
 		eyes.Remove(src)
 		qdel(eyes)
 		visible_message("<span class='notice'>[src] looks up and their eyes melt away!</span>", "<span class>='userdanger'>I understand now.</span>")
-		addtimer(CALLBACK(src, .proc/adjustOrganLoss, ORGAN_SLOT_BRAIN, 200), 20)
+		addtimer(CALLBACK(src, PROC_REF(adjustOrganLoss), ORGAN_SLOT_BRAIN, 200), 20)

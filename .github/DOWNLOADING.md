@@ -1,3 +1,9 @@
+<!--
+
+IF YOU CAN READ THIS, THE OLD CONTENTS HAVE BEEN PRESERVED FOR LATER CORRECTION.
+DO NOT TRUST ANY LINKS IN THIS; AS THEY ARE NON-FUNCTIONAL AT TIME OF WRITING.
+THE LINKS COULD VERY EASILY BE TAKEN OVER BY A MALICIOUS PARTY THANKS.
+ 
 # DOWNLOADING
 There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at https://wiki.white-sands.space/Downloading_the_source_code
 
@@ -25,3 +31,5 @@ Use our docker image that tracks the master branch (See commits for build status
 ```
 docker run -d -p <your port>:1337 -v /path/to/your/config:/tgstation/config -v /path/to/your/data:/tgstation/data shiptestss13/shiptest <dream daemon options i.e. -public or -params>
 ```
+--!>
+## This file has been taken down due to the original website it linked to being taken offline. This should probably be updated at some point but I just work here.

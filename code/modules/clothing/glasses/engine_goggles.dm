@@ -25,7 +25,7 @@
 /obj/item/clothing/glasses/meson/engine/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/glasses/meson/engine/ComponentInitialize()
 	. = ..()
@@ -66,7 +66,7 @@
 		if(H.glasses == src)
 			H.update_sight()
 
-	update_icon()
+	update_appearance()
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -133,6 +133,7 @@
 
 /obj/item/clothing/glasses/meson/engine/update_icon_state()
 	icon_state = item_state = "trayson-[mode]"
+	return ..()
 
 /obj/item/clothing/glasses/meson/engine/tray //atmos techs have lived far too long without tray goggles while those damned engineers get their dual-purpose gogles all to themselves
 	name = "optical t-ray scanner"
@@ -150,6 +151,18 @@
 	desc = "Used to see the boundaries of shuttle regions."
 
 	modes = list(MODE_NONE = MODE_SHUTTLE, MODE_SHUTTLE = MODE_NONE)
+
+/obj/item/clothing/glasses/meson/prescription
+	name = "prescription optical meson scanner"
+	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This pair also corrects nearsightedness."
+	icon_state = "prescriptionmeson"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/meson/sunglasses
+	name = "optical meson scannerglasses"
+	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting conditions. This pair is built into a pair of sunglasses."
+	icon_state = "sunmeson"
+	flash_protect = FLASH_PROTECTION_FLASH
 
 #undef MODE_NONE
 #undef MODE_MESON

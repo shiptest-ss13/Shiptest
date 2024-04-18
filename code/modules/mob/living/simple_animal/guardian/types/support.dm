@@ -47,10 +47,11 @@
 	if(src.loc == summoner)
 		if(toggle)
 			a_intent = INTENT_HARM
-			speed = 0
+			speed = -2
 			damage_coeff = list(BRUTE = 0.7, BURN = 0.7, TOX = 0.7, CLONE = 0.7, STAMINA = 0, OXY = 0.7)
-			melee_damage_lower = 15
-			melee_damage_upper = 15
+			melee_damage_lower = 5
+			melee_damage_upper = 5
+			next_move_modifier = 0.3///attack as fast as you can click, but your actual hits are basically tickle damage :))
 			to_chat(src, "<span class='danger'><B>You switch to combat mode.</span></B>")
 			toggle = FALSE
 		else
@@ -92,7 +93,7 @@
 	name = "bluespace receiving pad"
 	icon = 'icons/turf/floors.dmi'
 	desc = "A receiving zone for bluespace teleportations."
-	icon_state = "light_on-w"
+	icon_state = "light_on_flicker-1"
 	light_range = MINIMUM_USEFUL_LIGHT_RANGE
 	density = FALSE
 	anchored = TRUE
@@ -100,7 +101,7 @@
 
 /obj/structure/receiving_pad/New(loc, mob/living/simple_animal/hostile/guardian/healer/G)
 	. = ..()
-	if(G.guardiancolor)
+	if(G?.guardiancolor)
 		add_atom_colour(G.guardiancolor, FIXED_COLOUR_PRIORITY)
 
 /obj/structure/receiving_pad/proc/disappear()
@@ -124,7 +125,7 @@
 		return
 
 	var/turf/T = get_turf(A)
-	if(beacon.get_virtual_z_level() != T.get_virtual_z_level())
+	if(beacon.virtual_z() != T.virtual_z())
 		to_chat(src, "<span class='danger'><B>The beacon is too far away to warp to!</span></B>")
 		return
 

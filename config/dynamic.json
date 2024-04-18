@@ -7,30 +7,8 @@
 			"weight": 5,
 			"required_candidates": 1,
 			"minimum_required_age": 0,
-			"requirements": [
-				10,
-				10,
-				10,
-				10,
-				10,
-				10,
-				10,
-				10,
-				10,
-				10
-			],
-			"antag_cap": [
-				1,
-				1,
-				1,
-				2,
-				2,
-				2,
-				3,
-				3,
-				3,
-				3
-			],
+			"requirements": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+			"antag_cap": [1, 1, 1, 2, 2, 2, 3, 3, 3, 3],
 			"protected_roles": [
 				"Prisoner",
 				"Security Officer",
@@ -43,9 +21,7 @@
 				"Research Director",
 				"Chief Medical Officer"
 			],
-			"restricted_roles": [
-				"Cyborg"
-			],
+			"restricted_roles": ["Cyborg"],
 			"autotraitor_cooldown": 450
 		}
 	},

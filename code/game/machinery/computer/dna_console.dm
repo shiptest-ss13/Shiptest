@@ -225,7 +225,7 @@
 		can_use_scanner = TRUE
 	else
 		can_use_scanner = FALSE
-		connected_scanner = null
+		set_connected_scanner(null)
 		is_viable_occupant = FALSE
 
 	// Check for a viable occupant in the scanner.
@@ -486,6 +486,8 @@
 			var/sequence = GET_GENE_STRING(path, scanner_occupant.dna)
 
 			var/newgene = params["gene"]
+			if(length(newgene) > 1) // Oh come on
+				return // fuck off
 			var/genepos = text2num(params["pos"])
 
 			// If the new gene is J, this means we're dealing with a JOKER
@@ -1024,7 +1026,7 @@
 				"UI"=scanner_occupant.dna.uni_identity,
 				"UE"=scanner_occupant.dna.unique_enzymes,
 				"name"=scanner_occupant.real_name,
-				"blood_type"=scanner_occupant.dna.blood_type)
+				"blood_type"=scanner_occupant.dna.blood_type.name)
 
 			return
 
@@ -1487,7 +1489,7 @@
 	if(!connected_scanner)
 		return FALSE
 
-	return (connected_scanner && connected_scanner.is_operational())
+	return (connected_scanner && connected_scanner.is_operational)
 
 /**
 	* Checks if there is a valid DNA Scanner occupant for genetic modification
@@ -1537,9 +1539,8 @@
 	for(var/direction in GLOB.cardinals)
 		test_scanner = locate(/obj/machinery/dna_scannernew, get_step(src, direction))
 		if(!isnull(test_scanner))
-			if(test_scanner.is_operational())
-				connected_scanner = test_scanner
-				connected_scanner.linked_console = src
+			if(test_scanner.is_operational)
+				set_connected_scanner(test_scanner)
 				return
 			else
 				broken_scanner = test_scanner
@@ -1547,8 +1548,7 @@
 	// Ultimately, if we have a broken scanner, we'll attempt to connect to it as
 	// a fallback case, but the code above will prefer a working scanner
 	if(!isnull(broken_scanner))
-		connected_scanner = broken_scanner
-		connected_scanner.linked_console = src
+		set_connected_scanner(broken_scanner)
 
 /**
 	* Called by connected DNA Scanners when their doors close.
@@ -1988,6 +1988,21 @@
 	tgui_view_state["storageConsSubMode"] = "mutations"
 	tgui_view_state["storageDiskSubMode"] = "mutations"
 
+
+
+/obj/machinery/computer/scan_consolenew/proc/set_connected_scanner(new_scanner)
+	if(connected_scanner)
+		UnregisterSignal(connected_scanner, COMSIG_PARENT_QDELETING)
+		if(connected_scanner.linked_console == src)
+			connected_scanner.set_linked_console(null)
+	connected_scanner = new_scanner
+	if(connected_scanner)
+		RegisterSignal(connected_scanner, COMSIG_PARENT_QDELETING, PROC_REF(react_to_scanner_del))
+		connected_scanner.set_linked_console(src)
+
+/obj/machinery/computer/scan_consolenew/proc/react_to_scanner_del(datum/source)
+	SIGNAL_HANDLER
+	set_connected_scanner(null)
 
 #undef INJECTOR_TIMEOUT
 #undef NUMBER_OF_BUFFERS

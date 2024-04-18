@@ -32,18 +32,12 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	stop_automated_movement_when_pulled = 1
 	blood_volume = BLOOD_VOLUME_NORMAL
-	var/obj/item/udder/udder = null
 
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/hostile/retaliate/goat/Initialize()
-	udder = new()
+	AddComponent(/datum/component/udder)
 	. = ..()
-
-/mob/living/simple_animal/hostile/retaliate/goat/Destroy()
-	qdel(udder)
-	udder = null
-	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/goat/Life()
 	. = ..()
@@ -57,7 +51,6 @@
 			LoseTarget()
 			src.visible_message("<span class='notice'>[src] calms down.</span>")
 	if(stat == CONSCIOUS)
-		udder.generateMilk()
 		eat_plants()
 		if(!pulledby)
 			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
@@ -89,14 +82,6 @@
 
 	if(eaten && prob(10))
 		say("Nom")
-
-/mob/living/simple_animal/hostile/retaliate/goat/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
-		udder.milkAnimal(O, user)
-		return 1
-	else
-		return ..()
-
 
 /mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
 	. = ..()
@@ -137,7 +122,6 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 50
 	maxHealth = 50
-	var/obj/item/udder/udder = null
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
 	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
@@ -146,20 +130,8 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 
 /mob/living/simple_animal/cow/Initialize()
-	udder = new()
+	AddComponent(/datum/component/udder)
 	. = ..()
-
-/mob/living/simple_animal/cow/Destroy()
-	qdel(udder)
-	udder = null
-	return ..()
-
-/mob/living/simple_animal/cow/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
-		udder.milkAnimal(O, user)
-		return 1
-	else
-		return ..()
 
 /mob/living/simple_animal/cow/tamed()
 	. = ..()
@@ -173,11 +145,6 @@
 	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 	D.drive_verb = "ride"
 
-/mob/living/simple_animal/cow/Life()
-	. = ..()
-	if(stat == CONSCIOUS)
-		udder.generateMilk()
-
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
 		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
@@ -185,7 +152,7 @@
 		to_chat(src, "<span class='userdanger'>You are tipped over by [M]!</span>")
 		Paralyze(60, ignore_canstun = TRUE)
 		icon_state = icon_dead
-		addtimer(CALLBACK(src, .proc/cow_tipped, M), rand(20,50))
+		addtimer(CALLBACK(src, PROC_REF(cow_tipped), M), rand(20,50))
 
 	else
 		..()
@@ -268,8 +235,8 @@
 
 /mob/living/simple_animal/chick/Initialize()
 	. = ..()
-	pixel_x = rand(-6, 6)
-	pixel_y = rand(0, 10)
+	pixel_x = base_pixel_x + rand(-6, 6)
+	pixel_y = base_pixel_y + rand(0, 10)
 
 /mob/living/simple_animal/chick/Life()
 	. =..()
@@ -363,8 +330,8 @@
 		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
-		E.pixel_x = rand(-6,6)
-		E.pixel_y = rand(-6,6)
+		E.pixel_x = E.base_pixel_x + rand(-6,6)
+		E.pixel_y = E.base_pixel_y + rand(-6,6)
 		if(eggsFertile)
 			if(chicken_count < MAX_CHICKENS && prob(25))
 				START_PROCESSING(SSobj, E)
@@ -381,29 +348,93 @@
 	else
 		STOP_PROCESSING(SSobj, src)
 
+//junglefowl
+/mob/living/simple_animal/hostile/retaliate/chicken
+	name = "\improper junglefowl"
+	desc = "A small, fierce, feathered beast."
+	gender = FEMALE
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	icon_state = "chicken_brown"
+	icon_living = "chicken_brown"
+	icon_dead = "chicken_brown_dead"
+	speak = list("Cluck!","BWAAAAARK BWAK BWAK BWAK!","Bwaak bwak.")
+	speak_emote = list("clucks","croons")
+	emote_hear = list("clucks.")
+	emote_see = list("pecks at the ground.","flaps its wings viciously.")
+	density = FALSE
+	speak_chance = 2
+	turns_per_move = 3
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/chicken = 2)
+	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
+	food_type = list(/obj/item/reagent_containers/food/snacks/grown/wheat)
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "gently pushes aside"
+	response_disarm_simple = "gently push aside"
+	response_harm_continuous = "scratches"
+	response_harm_simple = "scratch"
+	attack_verb_continuous = "scratches"
+	attack_verb_simple = "scratch"
+	health = 25
+	maxHealth = 25
+	var/eggsleft = 0
+	var/eggsFertile = TRUE
+	var/body_color
+	var/icon_prefix = "chicken"
+	pass_flags = PASSTABLE
+	mob_size = MOB_SIZE_SMALL
+	var/list/feedMessages = list("It clucks happily.","It clucks happily.")
+	var/list/layMessage = EGG_LAYING_MESSAGES
+	var/list/validColors = list("brown","black","white")
+	gold_core_spawnable = FRIENDLY_SPAWN
+	var/static/chicken_count = 0
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	melee_damage_lower = 3
+	melee_damage_upper = 10
 
-/obj/item/udder
-	name = "udder"
+	footstep_type = FOOTSTEP_MOB_CLAW
 
-/obj/item/udder/Initialize()
-	create_reagents(50)
-	reagents.add_reagent(/datum/reagent/consumable/milk, 20)
+/mob/living/simple_animal/hostile/retaliate/chicken/Initialize()
 	. = ..()
+	if(!body_color)
+		body_color = pick(validColors)
+	icon_state = "[icon_prefix]_[body_color]"
+	icon_living = "[icon_prefix]_[body_color]"
+	icon_dead = "[icon_prefix]_[body_color]_dead"
+	pixel_x = rand(-6, 6)
+	pixel_y = rand(0, 10)
+	++chicken_count
 
-/obj/item/udder/proc/generateMilk()
-	if(prob(5))
-		reagents.add_reagent(/datum/reagent/consumable/milk, rand(5, 10))
+/mob/living/simple_animal/hostile/retaliate/chicken/Destroy()
+	--chicken_count
+	return ..()
 
-/obj/item/udder/proc/milkAnimal(obj/O, mob/user)
-	var/obj/item/reagent_containers/glass/G = O
-	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span class='warning'>[O] is full.</span>")
-		return
-	var/transfered = reagents.trans_to(O, rand(5,10))
-	if(transfered)
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>You milk [src] using \the [O].</span>")
+/mob/living/simple_animal/hostile/retaliate/chicken/attackby(obj/item/O, mob/user, params)
+	if(is_type_in_list(O, food_type))
+		if(!stat && eggsleft < 8)
+			var/feedmsg = "[user] feeds [O] to [name]! [pick(feedMessages)]"
+			user.visible_message(feedmsg)
+			qdel(O)
+			eggsleft += rand(1, 4)
+		else
+			to_chat(user, "<span class='warning'>[name] doesn't seem hungry!</span>")
 	else
-		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+		..()
+
+/mob/living/simple_animal/hostile/retaliate/chicken/Life()
+	. =..()
+	if(!.)
+		return
+	if((!stat && prob(3) && eggsleft > 0) && egg_type)
+		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
+		eggsleft--
+		var/obj/item/E = new egg_type(get_turf(src))
+		E.pixel_x = E.base_pixel_x + rand(-6,6)
+		E.pixel_y = E.base_pixel_y + rand(-6,6)
+		if(eggsFertile)
+			if(chicken_count < MAX_CHICKENS && prob(25))
+				START_PROCESSING(SSobj, E)
+
 
 /mob/living/simple_animal/deer
 	name = "doe"
@@ -435,3 +466,4 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 	food_type = list(/obj/item/reagent_containers/food/snacks/grown/apple)
 	footstep_type = FOOTSTEP_MOB_SHOE
+

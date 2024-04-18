@@ -3,6 +3,8 @@
  *		Backpack
  *		Backpack Types
  *		Satchel Types
+ *		Messenger Bag Types
+ *		Duffel Types
  */
 
 /*
@@ -16,10 +18,15 @@
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	pickup_sound = "rustle"
+	drop_sound = "rustle"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
+	greyscale_icon_state = "backpack"
+	greyscale_colors = list(list(13, 17), list(12, 17), list(12, 21))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
@@ -27,6 +34,7 @@
 	STR.max_combined_w_class = 21
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 21
+	STR.use_sound = 'sound/items/storage/unzip.ogg'
 
 /*
  * Backpack Types
@@ -54,14 +62,6 @@
 	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
 	STR.max_combined_w_class = 35
 
-/obj/item/storage/backpack/holding/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
-	user.dropItemToGround(src, TRUE)
-	user.Stun(100, ignore_canstun = TRUE)
-	sleep(20)
-	playsound(src, "rustle", 50, TRUE, -5)
-	qdel(user)
-
 /obj/item/storage/backpack/santabag
 	name = "Santa's Gift Bag"
 	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"
@@ -79,12 +79,8 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 60
 
-/obj/item/storage/backpack/santabag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit...</span>")
-	return (OXYLOSS)
-
 /obj/item/storage/backpack/santabag/proc/regenerate_presents()
-	addtimer(CALLBACK(src, .proc/regenerate_presents), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(regenerate_presents)), 30 SECONDS)
 
 	var/mob/M = get(loc, /mob)
 	if(!istype(M))
@@ -143,7 +139,7 @@
 
 /obj/item/storage/backpack/industrial
 	name = "industrial backpack"
-	desc = "It's a tough backpack for the daily grind of station life."
+	desc = "It's a tough backpack for the daily grind of life as an engineer."
 	icon_state = "engiepack"
 	item_state = "engiepack"
 	resistance_flags = FIRE_PROOF
@@ -218,12 +214,14 @@
 	desc = "A trendy looking satchel."
 	icon_state = "satchel-norm"
 	item_state = "satchel-norm"
-	species_exception = list(/datum/species/teshari)	//WS edit - Tesh can use satchels
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(11, 12), list(17, 18), list(10, 11))
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/backpack/satchel/leather
 	name = "leather satchel"
 	desc = "It's a very fancy satchel made with fine leather."
-	icon = 'whitesands/icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "satchel"
 	item_state = "satchel"
 
@@ -312,12 +310,28 @@
 	STR.set_holdable(null, list(/obj/item/storage/backpack/satchel/flat)) //muh recursive backpacks)
 
 /obj/item/storage/backpack/satchel/flat/PopulateContents()
-	var/datum/supply_pack/costumes_toys/randomised/contraband/C = new
+	var/static/list/contraband = list(
+		/obj/item/poster/random_contraband,
+		/obj/item/poster/random_contraband,
+		/obj/item/reagent_containers/food/snacks/grown/cannabis,
+		/obj/item/reagent_containers/food/snacks/grown/cannabis/rainbow,
+		/obj/item/reagent_containers/food/snacks/grown/cannabis/white,
+		/obj/item/storage/box/fireworks/dangerous,
+		/obj/item/storage/pill_bottle/zoom,
+		/obj/item/storage/pill_bottle/happy,
+		/obj/item/storage/pill_bottle/lsd,
+		/obj/item/storage/pill_bottle/aranesp,
+		/obj/item/storage/pill_bottle/stimulant,
+		/obj/item/toy/cards/deck/syndicate,
+		/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+		/obj/item/clothing/under/syndicate/tacticool,
+		/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
+		/obj/item/clothing/mask/gas/syndicate,
+		/obj/item/clothing/neck/necklace/dope,
+		/obj/item/vending_refill/donksoft)
 	for(var/i in 1 to 2)
-		var/ctype = pick(C.contains)
+		var/ctype = pick(contraband)
 		new ctype(src)
-
-	qdel(C)
 
 /obj/item/storage/backpack/satchel/flat/with_tools/PopulateContents()
 	new /obj/item/stack/tile/plasteel(src)
@@ -328,17 +342,98 @@
 /obj/item/storage/backpack/satchel/flat/empty/PopulateContents()
 	return
 
+/*
+* Messenger Bag Types from Baystation
+*/
+
+/obj/item/storage/backpack/messenger
+	name = "messenger bag"
+	desc = "A sturdy backpack worn over one shoulder."
+	icon = 'icons/obj/storage.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	icon_state = "courierbag"
+	item_state = "courierbag"
+	greyscale_icon_state = "satchel"
+	greyscale_colors = list(list(15, 16), list(19, 13), list(13, 18))
+
+/obj/item/storage/backpack/messenger/chem
+	name = "chemistry messenger bag"
+	desc = "A sterile backpack worn over one shoulder. This one is in Chemistry colors."
+	icon_state = "courierbagchem"
+	item_state = "courierbagchem"
+
+/obj/item/storage/backpack/messenger/med
+	name = "medical messenger bag"
+	desc = "A sterile backpack worn over one shoulder used in medical departments."
+	icon_state = "courierbagmed"
+	item_state = "courierbagmed"
+
+/obj/item/storage/backpack/messenger/para
+	name = "paramedic messenger bag"
+	desc = "A fancy backpack worn over one shoulder. This one is in Paramedic colors."
+	icon_state = "courierbagpara"
+	item_state = "courierbagpara"
+
+/obj/item/storage/backpack/messenger/viro
+	name = "virology messenger bag"
+	desc = "A sterile backpack worn over one shoulder. This one is in Virology colors."
+	icon_state = "courierbagviro"
+	item_state = "courierbagviro"
+
+/obj/item/storage/backpack/messenger/tox
+	name = "science messenger bag"
+	desc = "A backpack worn over one shoulder. Useful for holding science materials."
+	icon_state = "courierbagtox"
+	item_state = "courierbagtox"
+
+/obj/item/storage/backpack/messenger/com
+	name = "captain's messenger bag"
+	desc = "A special backpack worn over one shoulder. This one is made specifically for officers."
+	icon_state = "courierbagcom"
+	item_state = "courierbagcom"
+
+/obj/item/storage/backpack/messenger/engi
+	name = "engineering messenger bag"
+	desc = "A strong backpack worn over one shoulder. This one is designed for Industrial work."
+	icon_state = "courierbagengi"
+	item_state = "courierbagengi"
+
+/obj/item/storage/backpack/messenger/hyd
+	name = "hydroponics messenger bag"
+	desc = "A backpack worn over one shoulder. This one is designed for plant-related work."
+	icon_state = "courierbaghyd"
+	item_state = "courierbaghyd"
+
+/obj/item/storage/backpack/messenger/sec
+	name = "security messenger bag"
+	desc = "A tactical backpack worn over one shoulder. This one is in Security colors."
+	icon_state = "courierbagsec"
+	item_state = "courierbagsec"
+
+/obj/item/storage/backpack/messenger/inteq
+	name = "inteq messenger bag"
+	desc = "A comfortable leather strapped messenger bag worn over one shoulder. This one denotes the wearer as an IRMG operator"
+	icon_state = "courierbaginteq"
+	item_state = "courierbaginteq"
+
+/*
+* Duffelbag Types
+*/
+
 /obj/item/storage/backpack/duffelbag
 	name = "duffel bag"
 	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel"
 	item_state = "duffel"
 	slowdown = 1
+	greyscale_colors = list(list(21, 11), list(14, 19), list(15, 16))
 
 /obj/item/storage/backpack/duffelbag/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_combined_w_class = 30
+	LAZYINITLIST(STR.exception_hold) // This code allows you to fit one mob holder into a duffel bag
+	STR.exception_hold += typecacheof(/obj/item/clothing/head/mob_holder)
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"
@@ -521,7 +616,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle/PopulateContents()
 	new /obj/item/ammo_box/magazine/smgm45(src)
 	new /obj/item/ammo_box/magazine/smgm45(src)
-	new /obj/item/gun/ballistic/automatic/c20r(src)
+	new /obj/item/gun/ballistic/automatic/smg/c20r(src)
 	new /obj/item/attachment/silencer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
@@ -539,7 +634,7 @@
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle/PopulateContents()
 	new /obj/item/clothing/shoes/magboots/syndie(src)
 	new /obj/item/storage/firstaid/tactical(src)
-	new /obj/item/gun/ballistic/automatic/l6_saw/toy(src)
+	new /obj/item/gun/ballistic/automatic/hmg/l6_saw/toy(src)
 	new /obj/item/ammo_box/foambox/riot(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/bioterrorbundle
@@ -549,7 +644,7 @@
 	new /obj/item/reagent_containers/spray/chemsprayer/bioterror(src)
 	new /obj/item/storage/box/syndie_kit/chemical(src)
 	new /obj/item/gun/syringe/syndicate(src)
-	new /obj/item/gun/ballistic/automatic/c20r/toy(src)
+	new /obj/item/gun/ballistic/automatic/smg/c20r/toy(src)
 	new /obj/item/storage/box/syringes(src)
 	new /obj/item/ammo_box/foambox/riot(src)
 	new /obj/item/grenade/chem_grenade/bioterrorfoam(src)
@@ -565,10 +660,9 @@
 		new /obj/item/grenade/c4/x4(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/firestarter
-	desc = "A large duffel bag containing a New Russian pyro backpack sprayer, Elite hardsuit, a Stechkin APS pistol, minibomb, ammo, and other equipment."
+	desc = "A large duffel bag containing a pyro backpack sprayer, Elite hardsuit, a Stechkin APS pistol, minibomb, ammo, and other equipment."
 
 /obj/item/storage/backpack/duffelbag/syndie/firestarter/PopulateContents()
-	new /obj/item/clothing/under/syndicate/soviet(src)
 	new /obj/item/watertank/op(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
 	new /obj/item/gun/ballistic/automatic/pistol/APS(src)

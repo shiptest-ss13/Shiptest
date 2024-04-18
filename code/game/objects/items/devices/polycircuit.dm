@@ -1,5 +1,6 @@
 /obj/item/stack/circuit_stack
 	name = "polycircuit aggregate"
+	singular_name = "polycircuit"
 	desc = "A dense, overdesigned cluster of electronics which attempted to function as a multipurpose circuit electronic. Circuits can be removed from it... if you don't bleed out in the process."
 	icon_state = "circuit_mess"
 	item_state = "rods"
@@ -16,10 +17,10 @@
 	if(user.get_inactive_held_item() != src)
 		return ..()
 	else
-		if(zero_amount())
+		if(is_zero_amount(delete_if_zero = TRUE))
 			return
 		chosen_circuit = input("What type of circuit would you like to remove?", "Choose a Circuit Type", chosen_circuit) in list("airlock","firelock","fire alarm","air alarm","APC","cancel")
-		if(zero_amount())
+		if(is_zero_amount(delete_if_zero = TRUE))
 			return
 		if(loc != user)
 			return

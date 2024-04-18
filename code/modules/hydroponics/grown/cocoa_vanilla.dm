@@ -40,6 +40,7 @@
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/vanilla = 0.25, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/medicine/antitoxin = 0.2)
+	research = PLANT_RESEARCH_TIER_0 //nothing new, technically
 
 /obj/item/reagent_containers/food/snacks/grown/vanillapod
 	seed = /obj/item/seeds/cocoapod/vanillapod
@@ -70,6 +71,7 @@
 	icon_grow = "bungotree-grow"
 	icon_dead = "bungotree-dead"
 	rarity = 15
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/bungofruit
 	seed = /obj/item/seeds/cocoapod/bungotree

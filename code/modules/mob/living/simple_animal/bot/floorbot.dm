@@ -9,8 +9,7 @@
 	health = 25
 	maxHealth = 25
 
-	radio_key = /obj/item/encryptionkey/headset_eng
-	radio_channel = RADIO_CHANNEL_ENGINEERING
+	radio_key = /obj/item/encryptionkey
 	bot_type = FLOOR_BOT
 	model = "Floorbot"
 	bot_core = /obj/machinery/bot_core/floorbot
@@ -41,11 +40,22 @@
 	#define REPLACE_TILE 6
 	#define TILE_EMAG 7
 
+/mob/living/simple_animal/bot/floorbot/rockplanet
+	name = "\improper Abandoned Floorbot"
+	desc = "Many years of abandonment has made this bot into a floor destroying robot! They look so excited!"
+	toolbox = /obj/item/storage/toolbox/syndicate/empty
+	toolbox_color = "s"
+	emagged = 2
+	remote_disabled = 1
+	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
+
 /mob/living/simple_animal/bot/floorbot/Initialize(mapload, new_toolbox_color)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
-	toolbox_color = new_toolbox_color
-	update_icon()
+	if(new_toolbox_color)
+		toolbox_color = new_toolbox_color
+	update_appearance()
 	var/datum/job/engineer/J = new/datum/job/engineer
 	access_card.access += J.get_access()
 	prev_access = access_card.access
@@ -55,11 +65,11 @@
 
 /mob/living/simple_animal/bot/floorbot/turn_on()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/floorbot/turn_off()
 	..()
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/floorbot/bot_reset()
 	..()
@@ -67,7 +77,7 @@
 	oldloc = null
 	ignore_list = list()
 	anchored = FALSE
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/floorbot/set_custom_texts()
 	text_hack = "You corrupt [name]'s construction protocols."
@@ -239,7 +249,7 @@
 				mode = BOT_REPAIRING
 				F.ReplaceWithLattice()
 				audible_message("<span class='danger'>[src] makes an excited booping sound.</span>")
-				addtimer(CALLBACK(src, .proc/go_idle), 0.5 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(go_idle)), 0.5 SECONDS)
 			path = list()
 			return
 		if(path.len == 0)
@@ -254,7 +264,7 @@
 				target = null
 				mode = BOT_IDLE
 				return
-		else if( !bot_move(target) )
+		else if(!bot_move(target))
 			target = null
 			mode = BOT_IDLE
 			return
@@ -357,13 +367,13 @@
 				if(specialtiles == 0)
 					speak("Requesting refill of custom floortiles to continue replacing.")
 	mode = BOT_IDLE
-	update_icon()
+	update_appearance()
 	anchored = FALSE
 	target = null
 
-/mob/living/simple_animal/bot/floorbot/update_icon()
+/mob/living/simple_animal/bot/floorbot/update_icon_state()
+	. = ..()
 	icon_state = "[toolbox_color]floorbot[on]"
-
 
 /mob/living/simple_animal/bot/floorbot/explode()
 	on = FALSE

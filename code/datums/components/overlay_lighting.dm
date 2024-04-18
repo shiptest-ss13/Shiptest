@@ -10,20 +10,20 @@
 #define SHORT_CAST 2
 
 /**
-  * Movable atom overlay-based lighting component.
-  *
-  * * Component works by applying a visual object to the parent target.
-  *
-  * * The component tracks the parent's loc to determine the current_holder.
-  * * The current_holder is either the parent or its loc, whichever is on a turf. If none, then the current_holder is null and the light is not visible.
-  *
-  * * Lighting works at its base by applying a dark overlay and "cutting" said darkness with light, adding (possibly colored) transparency.
-  * * This component uses the visible_mask visual object to apply said light mask on the darkness.
-  *
-  * * The main limitation of this system is that it uses a limited number of pre-baked geometrical shapes, but for most uses it does the job.
-  *
-  * * Another limitation is for big lights: you only see the light if you see the object emiting it.
-  * * For small objects this is good (you can't see them behind a wall), but for big ones this quickly becomes prety clumsy.
+ * Movable atom overlay-based lighting component.
+ *
+ * * Component works by applying a visual object to the parent target.
+ *
+ * * The component tracks the parent's loc to determine the current_holder.
+ * * The current_holder is either the parent or its loc, whichever is on a turf. If none, then the current_holder is null and the light is not visible.
+ *
+ * * Lighting works at its base by applying a dark overlay and "cutting" said darkness with light, adding (possibly colored) transparency.
+ * * This component uses the visible_mask visual object to apply said light mask on the darkness.
+ *
+ * * The main limitation of this system is that it uses a limited number of pre-baked geometrical shapes, but for most uses it does the job.
+ *
+ * * Another limitation is for big lights: you only see the light if you see the object emiting it.
+ * * For small objects this is good (you can't see them behind a wall), but for big ones this quickly becomes prety clumsy.
 */
 /datum/component/overlay_lighting
 	///How far the light reaches, float.
@@ -105,14 +105,14 @@
 /datum/component/overlay_lighting/RegisterWithParent()
 	. = ..()
 	if(directional)
-		RegisterSignal(parent, COMSIG_ATOM_DIR_CHANGE, .proc/on_parent_dir_change)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_parent_moved)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_RANGE, .proc/set_range)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_POWER, .proc/set_power)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_COLOR, .proc/set_color)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_ON, .proc/on_toggle)
-	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_FLAGS, .proc/on_light_flags_change)
-	RegisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT, .proc/on_parent_crafted)
+		RegisterSignal(parent, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_parent_dir_change))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_moved))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_RANGE, PROC_REF(set_range))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_POWER, PROC_REF(set_power))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_COLOR, PROC_REF(set_color))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_ON, PROC_REF(on_toggle))
+	RegisterSignal(parent, COMSIG_ATOM_SET_LIGHT_FLAGS, PROC_REF(on_light_flags_change))
+	RegisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT, PROC_REF(on_parent_crafted))
 	var/atom/movable/movable_parent = parent
 	if(movable_parent.light_flags & LIGHT_ATTACHED)
 		overlay_lighting_flags |= LIGHTING_ATTACHED
@@ -156,8 +156,7 @@
 
 ///Clears the affected_turfs lazylist, removing from its contents the effects of being near the light.
 /datum/component/overlay_lighting/proc/clean_old_turfs()
-	for(var/t in affected_turfs)
-		var/turf/lit_turf = t
+	for(var/turf/lit_turf as anything in affected_turfs)
 		lit_turf.dynamic_lumcount -= lum_power
 	affected_turfs = null
 
@@ -167,9 +166,12 @@
 	if(!current_holder)
 		return
 	var/atom/movable/light_source = GET_LIGHT_SOURCE
+	. = list()
 	for(var/turf/lit_turf in view(lumcount_range, get_turf(light_source)))
 		lit_turf.dynamic_lumcount += lum_power
-		LAZYADD(affected_turfs, lit_turf)
+		. += lit_turf
+	if(length(.))
+		affected_turfs = .
 
 
 ///Clears the old affected turfs and populates the new ones.
@@ -213,13 +215,13 @@
 		var/atom/movable/old_parent_attached_to = .
 		UnregisterSignal(old_parent_attached_to, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED))
 		if(old_parent_attached_to == current_holder)
-			RegisterSignal(old_parent_attached_to, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
-			RegisterSignal(old_parent_attached_to, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+			RegisterSignal(old_parent_attached_to, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+			RegisterSignal(old_parent_attached_to, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 	if(parent_attached_to)
 		if(parent_attached_to == current_holder)
 			UnregisterSignal(current_holder, list(COMSIG_PARENT_QDELETING, COMSIG_MOVABLE_MOVED))
-		RegisterSignal(parent_attached_to, COMSIG_PARENT_QDELETING, .proc/on_parent_attached_to_qdel)
-		RegisterSignal(parent_attached_to, COMSIG_MOVABLE_MOVED, .proc/on_parent_attached_to_moved)
+		RegisterSignal(parent_attached_to, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_attached_to_qdel))
+		RegisterSignal(parent_attached_to, COMSIG_MOVABLE_MOVED, PROC_REF(on_parent_attached_to_moved))
 	check_holder()
 
 
@@ -239,10 +241,10 @@
 		clean_old_turfs()
 		return
 	if(new_holder != parent && new_holder != parent_attached_to)
-		RegisterSignal(new_holder, COMSIG_PARENT_QDELETING, .proc/on_holder_qdel)
-		RegisterSignal(new_holder, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+		RegisterSignal(new_holder, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+		RegisterSignal(new_holder, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 		if(directional)
-			RegisterSignal(new_holder, COMSIG_ATOM_DIR_CHANGE, .proc/on_holder_dir_change)
+			RegisterSignal(new_holder, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_holder_dir_change))
 	if(overlay_lighting_flags & LIGHTING_ON)
 		make_luminosity_update()
 		add_dynamic_lumi()
@@ -407,8 +409,7 @@
 	. = lum_power
 	lum_power = new_lum_power
 	var/difference = . - lum_power
-	for(var/t in affected_turfs)
-		var/turf/lit_turf = t
+	for(var/turf/lit_turf as anything in affected_turfs)
 		lit_turf.dynamic_lumcount -= difference
 
 ///Here we append the behavior associated to changing lum_power.
@@ -443,6 +444,11 @@
 		return
 	if(current_direction == newdir)
 		return
+	if(!isnum(newdir))
+		if(istype(newdir, /datum))
+			var/datum/what = newdir
+			CRASH("set_direction called with a non-number arg, [what] of type [what.type]")
+		CRASH("set_direction called with a non-number arg, [newdir], a non-datum")
 	current_direction = newdir
 	cone.setDir(newdir)
 	if(overlay_lighting_flags & LIGHTING_ON)
@@ -455,7 +461,7 @@
 		return
 
 	UnregisterSignal(parent, COMSIG_ATOM_USED_IN_CRAFT)
-	RegisterSignal(new_craft, COMSIG_ATOM_USED_IN_CRAFT, .proc/on_parent_crafted)
+	RegisterSignal(new_craft, COMSIG_ATOM_USED_IN_CRAFT, PROC_REF(on_parent_crafted))
 	set_parent_attached_to(new_craft)
 
 #undef LIGHTING_ON

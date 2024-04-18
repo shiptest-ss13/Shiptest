@@ -11,6 +11,10 @@
 	var/datum/component/storage/detached_pockets
 	var/attachment_slot = CHEST
 
+/obj/item/clothing/accessory/Destroy()
+	set_detached_pockets(null)
+	return ..()
+
 /obj/item/clothing/accessory/proc/can_attach_accessory(obj/item/clothing/U, mob/user)
 	if(!attachment_slot || (U && U.body_parts_covered & attachment_slot))
 		return TRUE
@@ -23,7 +27,7 @@
 		if(SEND_SIGNAL(U, COMSIG_CONTAINS_STORAGE))
 			return FALSE
 		U.TakeComponent(storage)
-		detached_pockets = storage
+		set_detached_pockets(storage)
 	U.attached_accessory = src
 	forceMove(U)
 	layer = FLOAT_LAYER
@@ -66,6 +70,17 @@
 	U.attached_accessory = null
 	U.accessory_overlay = null
 
+/obj/item/clothing/accessory/proc/set_detached_pockets(new_pocket)
+	if(detached_pockets)
+		UnregisterSignal(detached_pockets, COMSIG_PARENT_QDELETING)
+	detached_pockets = new_pocket
+	if(detached_pockets)
+		RegisterSignal(detached_pockets, COMSIG_PARENT_QDELETING, PROC_REF(handle_pockets_del))
+
+/obj/item/clothing/accessory/proc/handle_pockets_del(datum/source)
+	SIGNAL_HANDLER
+	set_detached_pockets(null)
+
 /obj/item/clothing/accessory/proc/on_uniform_equip(obj/item/clothing/under/U, user)
 	return
 
@@ -99,6 +114,18 @@
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
 	attachment_slot = null
+
+/obj/item/clothing/accessory/maidapron/syndicate
+	name = "syndicate maid apron"
+	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
+	icon_state = "maidapronsynd"
+	item_state = "maidapronsynd"
+
+/obj/item/clothing/accessory/maidapron/inteq
+	name = "inteq maid apron"
+	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
+	icon_state = "inteqmaidapron"
+	item_state = "inteqmaidapron"
 
 //////////
 //Medals//
@@ -206,8 +233,36 @@
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of captaincy"
-	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to Nanotrasen, and their undisputable authority over their crew."
+	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to their ship, and their undisputable authority over their crew."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	var/obj/item/key/ship/shipkey
+
+/obj/item/clothing/accessory/medal/gold/captain/attackby(obj/item/key/ship/shipkey, mob/user, params)
+	if(!istype(shipkey))
+		return ..()
+
+	if(!QDELETED(src.shipkey))
+		to_chat(user, "<span class='notice'>[src] already contains [src.shipkey].</span>")
+		return TRUE
+
+	src.shipkey = shipkey
+	shipkey.forceMove(src)
+	to_chat(user, "<span class='notice'>You slot [shipkey] into [src].</span>")
+
+/obj/item/clothing/accessory/medal/gold/captain/AltClick(mob/user)
+	if(!shipkey || !Adjacent(user) || !isliving(user))
+		return ..()
+	shipkey.forceMove(get_turf(src))
+	user.put_in_hands(shipkey)
+	to_chat(user, "<span class='notice'>You remove [shipkey] from [src].</span>")
+	shipkey = null
+
+/obj/item/clothing/accessory/medal/gold/captain/examine(mob/user)
+	. = ..()
+	if(shipkey)
+		. += "[shipkey] could be removed by Alt Clicking."
+	else
+		. += "It has space for a ship key."
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
@@ -239,42 +294,42 @@
 
 /obj/item/clothing/accessory/armband
 	name = "red armband"
-	desc = "An fancy red armband!"
+	desc = "A fancy red armband!"
 	icon_state = "redband"
 	attachment_slot = null
 
 /obj/item/clothing/accessory/armband/deputy
 	name = "security deputy armband"
-	desc = "An armband, worn by personnel authorized to act as a deputy of station security."
+	desc = "An armband, worn by personnel authorized to act as a deputy of corporate security."
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is brown."
+	name = "brown armband"
+	desc = "A fancy brown armband!"
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
-	name = "engineering guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	name = "orange armband"
+	desc = "A fancy orange and yellow armband!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
-	name = "science guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is purple."
+	name = "purple armband"
+	desc = "A fancy purple armband!"
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
-	name = "hydroponics guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is green and blue."
+	name = "green and blue armband"
+	desc = "A fancy green and blue armband!"
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
-	name = "medical guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white."
+	name = "white armband"
+	desc = "A fancy white armband!"
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
-	name = "medical guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white and blue."
+	name = "white and blue armband"
+	desc = "A fancy white and blue armband!"
 	icon_state = "medblueband"
 
 //////////////
@@ -370,14 +425,23 @@
 	desc = "A hunter's talisman, some say the old gods smile on those who wear it."
 	icon_state = "talisman"
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
-	attachment_slot = null
+	attachment_slot = ARMS
+	above_suit = TRUE
+
+/obj/item/clothing/accessory/wolftalisman
+	name = "hunter's necklace"
+	desc = "A thick necklace woven from sinew and bits of wolfhide, adorned with a carved fang. Slaying such beasts is rumoured to elate the gods of old, and such an item proves your worth."
+	icon_state = "wolf_talisman"
+	armor = list("melee" = 15	, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 25, "acid" = 25)
+	attachment_slot = CHEST
+	above_suit = TRUE
 
 /obj/item/clothing/accessory/skullcodpiece
 	name = "skull codpiece"
-	desc = "A skull shaped ornament, intended to protect the important things in life."
+	desc = "A legion skull fitted to a codpiece, intended to protect the important things in life."
 	icon_state = "skull"
 	above_suit = TRUE
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 40, "acid" = 40)
 	attachment_slot = GROIN
 
 /obj/item/clothing/accessory/skilt
@@ -389,3 +453,88 @@
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 5, "energy" = 5, "bomb" = 20, "bio" = 20, "rad" = 5, "fire" = 0, "acid" = 25)
 	attachment_slot = GROIN
 
+/obj/item/clothing/accessory/holster
+	name = "shoulder holster"
+	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."
+	icon_state = "holster"
+	item_state = "holster"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster
+
+/obj/item/clothing/accessory/holster/detective
+	name = "detective's shoulder holster"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
+
+
+
+/obj/item/clothing/accessory/holster/detective/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/revolver/detective(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
+
+/obj/item/clothing/accessory/holster/nukie
+	name = "operative holster"
+	desc = "A deep shoulder holster capable of holding almost any form of ballistic weaponry."
+	w_class = WEIGHT_CLASS_BULKY
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/nukie
+
+/obj/item/clothing/accessory/holster/chameleon
+	name = "syndicate holster"
+	desc = "A two pouched hip holster that uses chameleon technology to disguise itself and any guns in it."
+	var/datum/action/item_action/chameleon/change/chameleon_action
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/chameleon
+
+/obj/item/clothing/accessory/holster/chameleon/Initialize()
+	. = ..()
+
+	chameleon_action = new(src)
+	chameleon_action.chameleon_type = /obj/item/clothing/accessory
+	chameleon_action.chameleon_name = "Accessory"
+	chameleon_action.initialize_disguises()
+
+/obj/item/clothing/accessory/holster/chameleon/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	chameleon_action.emp_randomise()
+
+/obj/item/clothing/accessory/holster/chameleon/broken/Initialize()
+	. = ..()
+	chameleon_action.emp_randomise(INFINITY)
+
+/obj/item/clothing/accessory/holster/marine
+	name = "marine's holster"
+	desc = "Wearing this makes you feel badass, but you suspect it's just a detective's holster from a surplus somewhere."
+
+/obj/item/clothing/accessory/holster/marine/Initialize()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/pistol/candor(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
+/obj/item/clothing/accessory/waistcoat/solgov
+	name = "solgov waistcoat"
+	desc = "A standard issue waistcoat in solgov colors."
+	icon_state = "solgov_waistcoat"
+
+//////////
+//RILENA//
+//////////
+
+/obj/item/clothing/accessory/rilena_pin
+	name = "RILENA: LMR Xader pin"
+	desc = "A pin that shows your love for the webseries RILENA."
+	icon_state = "rilena_pin"
+	above_suit = FALSE
+	minimize_when_attached = TRUE
+	attachment_slot = CHEST
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_equip(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "rilena_pin", /datum/mood_event/rilena_fan)
+
+/obj/item/clothing/accessory/rilena_pin/on_uniform_dropped(obj/item/clothing/under/U, user)
+	var/mob/living/L = user
+	if(HAS_TRAIT(L, TRAIT_FAN_RILENA))
+		SEND_SIGNAL(L, COMSIG_CLEAR_MOOD_EVENT, "rilena_pin")

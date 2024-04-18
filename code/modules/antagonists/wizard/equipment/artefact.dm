@@ -129,7 +129,7 @@
 		insaneinthemembrane.sanity = 0
 		for(var/lore in typesof(/datum/brain_trauma/severe))
 			C.gain_trauma(lore)
-		addtimer(CALLBACK(src, /obj/singularity/wizard.proc/deranged, C), 100)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/singularity/wizard, deranged), C), 100)
 
 /obj/singularity/wizard/proc/deranged(mob/living/carbon/C)
 	if(!C || C.stat == DEAD)
@@ -340,7 +340,7 @@
 			if(BODY_ZONE_PRECISE_EYES)
 				user.set_machine(src)
 				user.reset_perspective(target)
-				addtimer(CALLBACK(src, .proc/reset, user), 10 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(reset), user), 10 SECONDS)
 			if(BODY_ZONE_R_LEG,BODY_ZONE_L_LEG)
 				to_chat(user, "<span class='notice'>You move the doll's legs around.</span>")
 				var/turf/T = get_step(target,pick(GLOB.cardinals))
@@ -379,11 +379,6 @@
 	if(prob(20) || force)
 		var/area/A = get_area(src)
 		to_chat(victim, "<span class='notice'>You feel a dark presence from [A.name].</span>")
-
-/obj/item/voodoo/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] links the voodoo doll to [user.p_them()]self and sits on it, infinitely crushing [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	user.gib()
-	return(BRUTELOSS)
 
 /obj/item/voodoo/fire_act(exposed_temperature, exposed_volume)
 	if(target)
@@ -441,7 +436,7 @@
 	var/breakout = 0
 	while(breakout < 50)
 		var/turf/potential_T = find_safe_turf()
-		if(T.get_virtual_z_level() != potential_T.get_virtual_z_level() || abs(get_dist_euclidian(potential_T,T)) > 50 - breakout)
+		if(T.virtual_z() != potential_T.virtual_z() || abs(get_dist_euclidian(potential_T,T)) > 50 - breakout)
 			do_teleport(user, potential_T, channel = TELEPORT_CHANNEL_MAGIC)
 			T = potential_T
 			break

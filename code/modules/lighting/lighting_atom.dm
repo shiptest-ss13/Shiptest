@@ -26,9 +26,7 @@
 // Will update the light (duh).
 // Creates or destroys it if needed, makes it update values, makes sure it's got the correct source turf...
 /atom/proc/update_light()
-	set waitfor = FALSE
-	if (QDELETED(src))
-		return
+	SHOULD_NOT_SLEEP(TRUE)
 
 	if(light_system != STATIC_LIGHT)
 		CRASH("update_light() for [src] with following light_system value: [light_system]")
@@ -48,11 +46,11 @@
 
 
 /**
-  * Updates the atom's opacity value.
-  *
-  * This exists to act as a hook for associated behavior.
-  * It notifies (potentially) affected light sources so they can update (if needed).
-  */
+ * Updates the atom's opacity value.
+ *
+ * This exists to act as a hook for associated behavior.
+ * It notifies (potentially) affected light sources so they can update (if needed).
+ */
 /atom/proc/set_opacity(new_opacity)
 	if (new_opacity == opacity)
 		return
@@ -77,7 +75,6 @@
 	if(isnull(.))
 		return
 	recalculate_directional_opacity()
-
 
 /atom/movable/Moved(atom/OldLoc, Dir)
 	. = ..()

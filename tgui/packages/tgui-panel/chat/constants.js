@@ -28,10 +28,12 @@ export const MESSAGE_TYPE_INFO = 'info';
 export const MESSAGE_TYPE_WARNING = 'warning';
 export const MESSAGE_TYPE_DEADCHAT = 'deadchat';
 export const MESSAGE_TYPE_OOC = 'ooc';
+export const MESSAGE_TYPE_LOOC = 'looc';
 export const MESSAGE_TYPE_ADMINPM = 'adminpm';
 export const MESSAGE_TYPE_COMBAT = 'combat';
 export const MESSAGE_TYPE_ADMINCHAT = 'adminchat';
-export const MESSAGE_TYPE_MODCHAT = 'modchat';
+export const MESSAGE_TYPE_MENTORCHAT = 'mentorchat';
+export const MESSAGE_TYPE_PRAYER = 'prayer';
 export const MESSAGE_TYPE_EVENTCHAT = 'eventchat';
 export const MESSAGE_TYPE_ADMINLOG = 'adminlog';
 export const MESSAGE_TYPE_ATTACKLOG = 'attacklog';
@@ -58,31 +60,40 @@ export const MESSAGE_TYPES = [
     type: MESSAGE_TYPE_RADIO,
     name: 'Radio',
     description: 'All departments of radio messages',
-    selector: '.alert, .minorannounce, .syndradio, .centcomradio, .aiprivradio, .comradio, .secradio, .engradio, .medradio, .sciradio, .suppradio, .servradio, .radio, .deptradio, .binarysay, .newscaster',
+    selector:
+      '.alert, .minorannounce, .syndradio, .centcomradio, .aiprivradio, .comradio, .pirradio,  .clipradio, .irmgradio, .pgfradio, .ntradio, .radio, .deptradio, .binarysay, .newscaster, .resonate',
   },
   {
     type: MESSAGE_TYPE_INFO,
     name: 'Info',
     description: 'Non-urgent messages from the game and items',
-    selector: '.notice:not(.pm), .adminnotice, .info, .sinister, .cult, .infoplain',
+    selector:
+      '.notice:not(.pm), .adminnotice, .info, .sinister, .cult, .infoplain, .announce, .hear, .smallnotice, .holoparasite, .boldnotice',
   },
   {
     type: MESSAGE_TYPE_WARNING,
     name: 'Warnings',
     description: 'Urgent messages from the game and items',
-    selector: '.warning:not(.pm), .critical, .userdanger, .italics',
+    selector:
+      '.warning:not(.pm), .critical, .userdanger, .italics, .alertsyndie, .warningplain',
   },
   {
     type: MESSAGE_TYPE_DEADCHAT,
     name: 'Deadchat',
     description: 'All of deadchat',
-    selector: '.deadsay',
+    selector: '.deadsay, .ghostalert',
   },
   {
     type: MESSAGE_TYPE_OOC,
     name: 'OOC',
     description: 'The bluewall of global OOC messages',
-    selector: '.ooc, .adminooc',
+    selector: '.ooc, .adminooc, .adminobserverooc, .oocplain',
+  },
+  {
+    type: MESSAGE_TYPE_LOOC,
+    name: 'LOOC',
+    description: 'The bluewall of local LOOC messages',
+    selector: '.looc, .loocplain',
   },
   {
     type: MESSAGE_TYPE_ADMINPM,
@@ -110,10 +121,16 @@ export const MESSAGE_TYPES = [
     admin: true,
   },
   {
-    type: MESSAGE_TYPE_MODCHAT,
-    name: 'Mod Chat',
+    type: MESSAGE_TYPE_MENTORCHAT,
+    name: 'Mentor Chat',
     description: 'MSAY messages',
-    selector: '.mod_channel',
+    selector: '.mentor, .mentoradmin',
+    admin: true,
+  },
+  {
+    type: MESSAGE_TYPE_PRAYER,
+    name: 'Prayers',
+    description: 'Prayers from players',
     admin: true,
   },
   {

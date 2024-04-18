@@ -1,6 +1,6 @@
 /obj/item/gun/energy/kinetic_accelerator
-	name = "proto-kinetic accelerator"
-	desc = "A self recharging, ranged mining tool that does increased damage in low pressure."
+	name = "kinetic accelerator"
+	desc = "A self recharging, ranged self-defense and rock pulverizing tool that does increased damage in low pressure. EXOCON does not condone use of this weapon against other sentient life."
 	icon_state = "kineticgun"
 	item_state = "kineticgun"
 	ammo_type = list(/obj/item/ammo_casing/energy/kinetic)
@@ -11,6 +11,11 @@
 	automatic_charge_overlays = FALSE
 	internal_cell = TRUE //prevents you from giving it an OP cell - WS Edit
 	custom_price = 750
+	w_class = WEIGHT_CLASS_BULKY
+
+	muzzleflash_iconstate = "muzzle_flash_light"
+	muzzle_flash_color = COLOR_WHITE
+
 	var/overheat_time = 16
 	var/holds_charge = FALSE
 	var/unique_frequency = FALSE // modified by KA modkits
@@ -37,6 +42,10 @@
 		)
 	)
 
+/obj/item/gun/energy/kinetic_accelerator/shoot_with_empty_chamber(mob/living/user)
+	playsound(src, dry_fire_sound, 30, TRUE) //click sound but no to_chat message to cut on spam
+	return
+
 /obj/item/gun/energy/kinetic_accelerator/examine(mob/user)
 	. = ..()
 	if(max_mod_capacity)
@@ -48,11 +57,17 @@
 
 /obj/item/gun/energy/kinetic_accelerator/crowbar_act(mob/living/user, obj/item/I)
 	. = TRUE
-	if(modkits.len)
-		to_chat(user, "<span class='notice'>You pry the modifications out.</span>")
-		I.play_tool_sound(src, 100)
+	if(LAZYLEN(modkits))
+		var/list/choose_options = list()
 		for(var/obj/item/borg/upgrade/modkit/M in modkits)
-			M.uninstall(src)
+			choose_options += list(M.name = image(icon = M.icon, icon_state = M.icon_state))
+		var/picked_option = show_radial_menu(user, src, choose_options, radius = 38, require_near = TRUE)
+		if(picked_option)
+			to_chat(user, "<span class='notice'>You remove [picked_option].</span>")
+			I.play_tool_sound(src, 100)
+			for(var/obj/item/borg/upgrade/modkit/M in modkits)
+				if(M.name == picked_option)
+					M.uninstall(src)
 	else
 		to_chat(user, "<span class='notice'>There are no modifications currently installed.</span>")
 
@@ -82,11 +97,14 @@
 		M.modify_projectile(K)
 
 /obj/item/gun/energy/kinetic_accelerator/cyborg
+	name = "chassis_mounted kinetic accelerator"
+	icon_state = "kineticgun_b"
 	holds_charge = TRUE
 	unique_frequency = TRUE
 	max_mod_capacity = 80
 
 /obj/item/gun/energy/kinetic_accelerator/minebot
+	name = "chassis_mounted kinetic accelerator"
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
 	overheat_time = 20
 	holds_charge = TRUE
@@ -113,7 +131,7 @@
 	if(!QDELING(src) && !holds_charge)
 		// Put it on a delay because moving item from slot to hand
 		// calls dropped().
-		addtimer(CALLBACK(src, .proc/empty_if_not_held), 2)
+		addtimer(CALLBACK(src, PROC_REF(empty_if_not_held)), 2)
 
 /obj/item/gun/energy/kinetic_accelerator/proc/empty_if_not_held()
 	if(!ismob(loc))
@@ -122,7 +140,7 @@
 /obj/item/gun/energy/kinetic_accelerator/proc/empty()
 	if(cell)
 		cell.use(cell.charge)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/energy/kinetic_accelerator/proc/attempt_reload(recharge_time)
 	if(!cell)
@@ -144,7 +162,7 @@
 		carried = 1
 
 	deltimer(recharge_timerid)
-	recharge_timerid = addtimer(CALLBACK(src, .proc/reload), recharge_time * carried, TIMER_STOPPABLE)
+	recharge_timerid = addtimer(CALLBACK(src, PROC_REF(reload)), recharge_time * carried, TIMER_STOPPABLE)
 
 /obj/item/gun/energy/kinetic_accelerator/emp_act(severity)
 	return
@@ -155,7 +173,7 @@
 		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, TRUE)
 	else
 		to_chat(loc, "<span class='warning'>[src] silently charges up.</span>")
-	update_icon()
+	update_appearance()
 	overheat = FALSE
 
 /obj/item/gun/energy/kinetic_accelerator/update_overlays()
@@ -234,6 +252,26 @@
 	var/obj/effect/temp_visual/kinetic_blast/K = new /obj/effect/temp_visual/kinetic_blast(target_turf)
 	K.color = color
 
+//Mecha version of the KA projectile
+
+/obj/projectile/kinetic/mech
+	range = 5
+
+/obj/projectile/kinetic/mech/strike_thing(atom/target) //has no skill check for mechs
+	var/turf/target_turf = get_turf(target)
+	if(!target_turf)
+		target_turf = get_turf(src)
+	if(kinetic_gun)
+		var/list/mods = kinetic_gun.get_modkits()
+		for(var/obj/item/borg/upgrade/modkit/M in mods)
+			M.projectile_strike_predamage(src, target_turf, target, kinetic_gun)
+		for(var/obj/item/borg/upgrade/modkit/M in mods)
+			M.projectile_strike(src, target_turf, target, kinetic_gun)
+	if(ismineralturf(target_turf))
+		var/turf/closed/mineral/M = target_turf
+		M.gets_drilled(firer, TRUE)
+	var/obj/effect/temp_visual/kinetic_blast/K = new /obj/effect/temp_visual/kinetic_blast(target_turf)
+	K.color = color
 
 //Modkits
 /obj/item/borg/upgrade/modkit
@@ -410,7 +448,7 @@
 				M.gets_drilled(K.firer, TRUE)
 	if(modifier)
 		for(var/mob/living/L in range(1, target_turf) - K.firer - target)
-			var/armor = L.run_armor_check(K.def_zone, K.flag, "", "", K.armour_penetration)
+			var/armor = L.run_armor_check(K.def_zone, K.flag, K.armour_penetration, silent = TRUE)
 			L.apply_damage(K.damage*modifier, K.damage_type, K.def_zone, armor)
 			to_chat(L, "<span class='userdanger'>You're struck by a [K.name]!</span>")
 
@@ -516,7 +554,7 @@
 			var/kill_modifier = 1
 			if(K.pressure_decrease_active)
 				kill_modifier *= K.pressure_decrease
-			var/armor = L.run_armor_check(K.def_zone, K.flag, "", "", K.armour_penetration)
+			var/armor = L.run_armor_check(K.def_zone, K.flag, K.armour_penetration, silent = TRUE)
 			L.apply_damage(bounties_reaped[L.type]*kill_modifier, K.damage_type, K.def_zone, armor)
 
 /obj/item/borg/upgrade/modkit/bounty/proc/get_kill(mob/living/L)
@@ -547,6 +585,7 @@
 	desc = "Allows creatures normally incapable of firing guns to operate the weapon when installed."
 	cost = 20
 	denied_type = /obj/item/borg/upgrade/modkit/trigger_guard
+	custom_price = 1700
 
 /obj/item/borg/upgrade/modkit/trigger_guard/install(obj/item/gun/energy/kinetic_accelerator/KA, mob/user)
 	. = ..()
@@ -574,9 +613,14 @@
 	if(.)
 		KA.icon_state = chassis_icon
 		KA.name = chassis_name
+		KA.item_state = chassis_icon
+		if(iscarbon(KA.loc))
+			var/mob/living/carbon/holder = KA.loc
+			holder.update_inv_hands()
 
 /obj/item/borg/upgrade/modkit/chassis_mod/uninstall(obj/item/gun/energy/kinetic_accelerator/KA)
 	KA.icon_state = initial(KA.icon_state)
+	KA.item_state = initial(KA.item_state)
 	KA.name = initial(KA.name)
 	..()
 
@@ -605,3 +649,10 @@
 
 /obj/item/borg/upgrade/modkit/tracer/adjustable/attack_self(mob/user)
 	bolt_color = input(user,"","Choose Color",bolt_color) as color|null
+
+/obj/item/gun/energy/kinetic_accelerator/old
+	name = "proto-kinetic accelerator"
+	desc = "A self-recharging concussive blast mining tool, heavily used by Nanotrasen Mining Corps both for extracting minerals and dealing with unruly locals. NT's prototype line was produced with top-of-the-line cooling mechanisms. "
+	icon_state = "kineticgunold"
+	item_state = "kineticgunold"
+	overheat_time = 10

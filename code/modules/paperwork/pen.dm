@@ -29,10 +29,6 @@
 	var/font = PEN_FONT
 	embedding = list()
 
-/obj/item/pen/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is scribbling numbers all over [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit sudoku...</span>")
-	return(BRUTELOSS)
-
 /obj/item/pen/blue
 	desc = "It's a normal blue ink pen."
 	icon_state = "pen_blue"
@@ -168,6 +164,14 @@
 			O.desc = input
 			to_chat(user, "<span class='notice'>You have successfully changed \the [O.name]'s description.</span>")
 
+/obj/item/pen/get_writing_implement_details()
+	return list(
+		interaction_mode = MODE_WRITING,
+		font = font,
+		color = colour,
+		use_bold = FALSE,
+	)
+
 /*
  * Sleepypens
  */
@@ -206,14 +210,6 @@
 /obj/item/pen/edagger/get_sharpness()
 	return on * sharpness
 
-/obj/item/pen/edagger/suicide_act(mob/user)
-	. = BRUTELOSS
-	if(on)
-		user.visible_message("<span class='suicide'>[user] forcefully rams the pen into their mouth!</span>")
-	else
-		user.visible_message("<span class='suicide'>[user] is holding a pen up to their mouth! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		attack_self(user)
-
 /obj/item/pen/edagger/attack_self(mob/living/user)
 	if(on)
 		on = FALSE
@@ -238,7 +234,7 @@
 		playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
 		to_chat(user, "<span class='warning'>[src] is now active.</span>")
 	updateEmbedding()
-	update_icon()
+	update_appearance()
 
 /obj/item/pen/edagger/update_icon_state()
 	if(on)
@@ -250,6 +246,7 @@
 		item_state = initial(item_state)
 		lefthand_file = initial(lefthand_file)
 		righthand_file = initial(righthand_file)
+	return ..()
 
 /obj/item/pen/survival
 	name = "survival pen"
@@ -264,3 +261,13 @@
 	grind_results = list(/datum/reagent/iron = 2, /datum/reagent/iodine = 1)
 	tool_behaviour = TOOL_MINING //For the classic "digging out of prison with a spoon but you're in space so this analogy doesn't work" situation.
 	toolspeed = 10 //You will never willingly choose to use one of these over a shovel.
+
+/obj/item/pen/solgov
+	name = "\improper SolGov pen"
+	desc = "A pen with SolGov's insignia on the side."
+	icon_state = "pen-sg"
+
+/obj/item/pen/fountain/solgov
+	name = "\improper SolGov fountain pen"
+	desc = "A fancy fountain pen with SolGov's insignia emblazoned onto the wood."
+	icon_state = "pen-fountain-sg"

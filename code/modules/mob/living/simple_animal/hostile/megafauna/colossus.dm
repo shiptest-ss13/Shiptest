@@ -8,11 +8,11 @@ The colossus has a degree of sentience, proving this in speech during its attack
 It acts as a melee creature, chasing down and attacking its target while also using different attacks to augment its power that increase as it takes damage.
 
 The colossus' true danger lies in its ranged capabilities. It fires immensely damaging death bolts that penetrate all armor in a variety of ways:
- 1. The colossus fires death bolts in alternating patterns: the cardinal directions and the diagonal directions.
- 2. The colossus fires death bolts in a shotgun-like pattern, instantly downing anything unfortunate enough to be hit by all of them.
- 3. The colossus fires a spiral of death bolts.
+1. The colossus fires death bolts in alternating patterns: the cardinal directions and the diagonal directions.
+2. The colossus fires death bolts in a shotgun-like pattern, instantly downing anything unfortunate enough to be hit by all of them.
+3. The colossus fires a spiral of death bolts.
 At 33% health, the colossus gains an additional attack:
- 4. The colossus fires two spirals of death bolts, spinning in opposite directions.
+4. The colossus fires two spirals of death bolts, spinning in opposite directions.
 
 When a colossus dies, it leaves behind a chunk of glowing crystal known as a black box. Anything placed inside will carry over into future rounds.
 For instance, you could place a bag of holding into the black box, and then kill another colossus next round and retrieve the bag of holding from inside.
@@ -44,6 +44,7 @@ Difficulty: Very Hard
 	move_to_delay = 10
 	ranged = TRUE
 	pixel_x = -32
+	base_pixel_x = -32
 	del_on_death = TRUE
 	gps_name = "Angelic Signal"
 	achievement_type = /datum/award/achievement/boss/colossus_kill
@@ -131,8 +132,6 @@ Difficulty: Very Hard
 		if(H.mind)
 			if(istype(H.mind.martial_art, /datum/martial_art/the_sleeping_carp))
 				. = TRUE
-		if (is_species(H, /datum/species/golem/sand))
-			. = TRUE
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/alternating_dir_shots()
 	ranged_cooldown = world.time + 40
@@ -155,8 +154,8 @@ Difficulty: Very Hard
 	visible_message("<span class='colossus'>\"<b>Die.</b>\"</span>")
 
 	SLEEP_CHECK_DEATH(10)
-	INVOKE_ASYNC(src, .proc/spiral_shoot, FALSE)
-	INVOKE_ASYNC(src, .proc/spiral_shoot, TRUE)
+	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), FALSE)
+	INVOKE_ASYNC(src, PROC_REF(spiral_shoot), TRUE)
 
 /mob/living/simple_animal/hostile/megafauna/colossus/proc/spiral_shoot(negative = pick(TRUE, FALSE), counter_start = 8)
 	var/turf/start_turf = get_step(src, pick(GLOB.alldirs))
@@ -239,7 +238,7 @@ Difficulty: Very Hard
 /obj/effect/temp_visual/at_shield/Initialize(mapload, new_target)
 	. = ..()
 	target = new_target
-	INVOKE_ASYNC(src, /atom/movable/proc/orbit, target, 0, FALSE, 0, 0, FALSE, TRUE)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, orbit), target, 0, FALSE, 0, 0, FALSE, TRUE)
 
 /mob/living/simple_animal/hostile/megafauna/colossus/bullet_act(obj/projectile/P)
 	if(!stat)
@@ -269,10 +268,9 @@ Difficulty: Very Hard
 		else
 			SSexplosions.medturf += target
 
-
-
+//There can only ever be one blackbox, and we want to know if there already is one when we spawn
+GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 //Black Box
-
 /obj/machinery/smartfridge/black_box
 	name = "black box"
 	desc = "A completely indestructible chunk of crystal, rumoured to predate the start of this universe. It looks like you could store things inside it."
@@ -301,11 +299,9 @@ Difficulty: Very Hard
 
 /obj/machinery/smartfridge/black_box/Initialize()
 	. = ..()
-	var/static/obj/machinery/smartfridge/black_box/current
-	if(current && current != src)
-		qdel(src, force=TRUE)
-		return
-	current = src
+	if(GLOB.blackbox != src)
+		return INITIALIZE_HINT_QDEL_FORCE
+	GLOB.blackbox = src
 	ReadMemory()
 
 /obj/machinery/smartfridge/black_box/process()
@@ -350,6 +346,8 @@ Difficulty: Very Hard
 
 /obj/machinery/smartfridge/black_box/Destroy(force = FALSE)
 	if(force)
+		if(GLOB.blackbox == src)
+			GLOB.blackbox = null
 		for(var/thing in src)
 			qdel(thing)
 		return ..()
@@ -399,7 +397,6 @@ Difficulty: Very Hard
 	use_power = NO_POWER_USE
 	anchored = FALSE
 	density = TRUE
-	flags_1 = HEAR_1
 	var/activation_method
 	var/list/possible_methods = list(ACTIVATE_TOUCH, ACTIVATE_SPEECH, ACTIVATE_HEAT, ACTIVATE_BULLET, ACTIVATE_ENERGY, ACTIVATE_BOMB, ACTIVATE_MOB_BUMP, ACTIVATE_WEAPON, ACTIVATE_MAGIC)
 
@@ -413,6 +410,7 @@ Difficulty: Very Hard
 	. = ..()
 	if(!activation_method)
 		activation_method = pick(possible_methods)
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/machinery/anomalous_crystal/examine(mob/user)
 	. = ..()
@@ -763,6 +761,7 @@ Difficulty: Very Hard
 	START_PROCESSING(SSobj, src)
 
 /obj/structure/closet/stasis/Entered(atom/A)
+	. = ..()
 	if(isliving(A) && holder_animal)
 		var/mob/living/L = A
 		L.notransform = 1
@@ -773,7 +772,7 @@ Difficulty: Very Hard
 		holder_animal.mind.AddSpell(P)
 		remove_verb(holder_animal, /mob/living/verb/pulled)
 
-/obj/structure/closet/stasis/dump_contents(var/kill = 1)
+/obj/structure/closet/stasis/dump_contents(kill = 1)
 	STOP_PROCESSING(SSobj, src)
 	for(var/mob/living/L in src)
 		REMOVE_TRAIT(L, TRAIT_MUTE, STASIS_MUTE)

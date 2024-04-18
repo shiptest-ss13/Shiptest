@@ -44,6 +44,17 @@
 			M.add_fingerprint(user)
 			qdel(src)
 
+			return
+
+	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
+		to_chat(user, "<span class='notice'>You smash through the girder!</span>")
+		new /obj/item/stack/sheet/metal(get_turf(src))
+		W.play_tool_sound(src)
+		qdel(src)
+
+		return
+
+
 	else if(istype(W, /obj/item/stack))
 		if(iswallturf(loc))
 			to_chat(user, "<span class='warning'>There is already a wall present!</span>")
@@ -70,6 +81,8 @@
 					var/obj/structure/falsewall/iron/FW = new (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 5)
 					to_chat(user, "<span class='warning'>You need at least five rods to add plating!</span>")
@@ -104,6 +117,8 @@
 					var/obj/structure/falsewall/F = new (loc)
 					transfer_fingerprints_to(F)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need two sheets of metal to finish a wall!</span>")
@@ -134,6 +149,8 @@
 					var/obj/structure/falsewall/reinforced/FW = new (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(state == GIRDER_REINF)
 					if(S.get_amount() < 1)
@@ -178,6 +195,8 @@
 					var/obj/structure/FW = new F (loc)
 					transfer_fingerprints_to(FW)
 					qdel(src)
+
+					return
 			else
 				if(S.get_amount() < 2)
 					to_chat(user, "<span class='warning'>You need at least two sheets to add plating!</span>")
@@ -202,8 +221,6 @@
 					transfer_fingerprints_to(T)
 					qdel(src)
 				return
-
-		add_hiddenprint(user)
 
 	else if(istype(W, /obj/item/pipe))
 		var/obj/item/pipe/P = W
@@ -232,7 +249,8 @@
 			state = GIRDER_DISASSEMBLED
 			to_chat(user, "<span class='notice'>You disassemble the girder.</span>")
 			var/obj/item/stack/sheet/metal/M = new (loc, 2)
-			M.add_fingerprint(user)
+			if (!QDELETED(M)) // might be a stack that's been merged
+				M.add_fingerprint(user)
 			qdel(src)
 		return TRUE
 
@@ -289,7 +307,7 @@
 			qdel(src)
 		return TRUE
 
-/obj/structure/girder/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/girder/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if((mover.pass_flags & PASSGRILLE) || istype(mover, /obj/projectile))
 		return prob(girderpasschance)
@@ -325,6 +343,12 @@
 	girderpasschance = 0
 	max_integrity = 350
 
+/obj/structure/girder/reinforced/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		var/remains = pick(/obj/item/stack/rods, /obj/item/stack/sheet/metal)
+		new remains(loc, 2)
+	qdel(src)
+
 
 
 //////////////////////////////////////////// cult girder //////////////////////////////////////////////
@@ -353,6 +377,13 @@
 			var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 1)
 			transfer_fingerprints_to(R)
 			qdel(src)
+
+	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
+		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
+		var/obj/item/stack/sheet/runed_metal/R = new(drop_location(), 2)
+		transfer_fingerprints_to(R)
+		W.play_tool_sound(src)
+		qdel(src)
 
 	else if(istype(W, /obj/item/stack/sheet/runed_metal))
 		var/obj/item/stack/sheet/runed_metal/R = W
@@ -421,6 +452,13 @@
 			transfer_fingerprints_to(B)
 			qdel(src)
 
+	else if(istype(W, /obj/item/pickaxe/drill/jackhammer))
+		to_chat(user, "<span class='notice'>Your jackhammer smashes through the girder!</span>")
+		var/obj/item/stack/tile/bronze/B = new(drop_location(), 2)
+		transfer_fingerprints_to(B)
+		W.play_tool_sound(src)
+		qdel(src)
+
 	else if(istype(W, /obj/item/stack/tile/bronze))
 		var/obj/item/stack/tile/bronze/B = W
 		if(B.get_amount() < 2)
@@ -438,3 +476,4 @@
 
 	else
 		return ..()
+

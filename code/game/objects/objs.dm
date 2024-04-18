@@ -15,19 +15,25 @@
 	///Damage under this value will be completely ignored
 	var/damage_deflection = 0
 
-	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF
+	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 
 	var/acid_level = 0 //how much acid is on that obj
 
 	var/persistence_replacement //have something WAY too amazing to live to the next round? Set a new path here. Overuse of this var will make me upset.
-	var/current_skin //Has the item been reskinned?
-	var/list/unique_reskin //List of options to reskin.
+	//Allow the item to be reskinned again?
+	var/allow_post_reskins = FALSE
+	///Has the item been reskinned?
+	var/current_skin
+	///List of options to reskin.
+	var/list/unique_reskin
 
 	// Access levels, used in modules\jobs\access.dm
 	var/list/req_access
 	var/req_access_txt = "0"
 	var/list/req_one_access
 	var/req_one_access_txt = "0"
+	// If the object resides in a ship area, determines if the object also requires the ID to have access to the ship
+	var/req_ship_access = FALSE
 	/// Custom fire overlay icon
 	var/custom_fire_overlay
 
@@ -47,7 +53,7 @@
 			return FALSE
 	return ..()
 
-/obj/Initialize()
+/obj/Initialize(mapload)
 	if (islist(armor))
 		armor = getArmor(arglist(armor))
 	else if (!armor)
@@ -68,14 +74,9 @@
 				obj_flags &= ~string_to_objflag[flag]
 			else
 				obj_flags |= string_to_objflag[flag]
-	if((obj_flags & ON_BLUEPRINTS) && isturf(loc))
+	if((obj_flags & ON_BLUEPRINTS) && isturf(loc) && mapload)
 		var/turf/T = loc
-		T.add_blueprints_preround(src)
-
-	for(var/i = 1; i < SStextobfs.obf_string_list.len + 1; i++)
-		if(src.name == SStextobfs.obf_string_list[i][4])
-			src.name = SStextobfs.obf_string_list[i][1]
-			break
+		T.add_blueprints(src)
 
 /obj/Destroy(force=FALSE)
 	if(!ismachinery(src))
@@ -204,6 +205,7 @@
 	ui_interact(user)
 
 /mob/proc/unset_machine()
+	SIGNAL_HANDLER
 	if(!machine)
 		return
 	UnregisterSignal(machine, COMSIG_PARENT_QDELETING)
@@ -215,10 +217,12 @@
 	return
 
 /mob/proc/set_machine(obj/O)
+	if(QDELETED(src) || QDELETED(O))
+		return
 	if(machine)
 		unset_machine()
 	machine = O
-	RegisterSignal(O, COMSIG_PARENT_QDELETING, .proc/unset_machine)
+	RegisterSignal(O, COMSIG_PARENT_QDELETING, PROC_REF(unset_machine))
 	if(istype(O))
 		O.obj_flags |= IN_USE
 
@@ -334,28 +338,57 @@
 	if(unique_reskin && !current_skin && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY))
 		reskin_obj(user)
 
+/**
+ * Reskins object based on a user's choice
+ *
+ * Arguments:
+ * * M The mob choosing a reskin option
+*/
+
 /obj/proc/reskin_obj(mob/M)
 	if(!LAZYLEN(unique_reskin))
 		return
-	to_chat(M, "<b>Reskin options for [name]:</b>")
-	for(var/V in unique_reskin)
-		var/output = icon2html(src, M, unique_reskin[V])
-		to_chat(M, "[V]: <span class='reallybig'>[output]</span>")
 
-	var/choice = input(M,"Warning, you can only reskin [src] once!","Reskin Object") as null|anything in sortList(unique_reskin)
-	if(!QDELETED(src) && choice && !current_skin && !M.incapacitated() && in_range(M,src))
-		if(!unique_reskin[choice])
-			return
-		current_skin = choice
-		icon_state = unique_reskin[choice]
-		to_chat(M, "[src] is now skinned as '[choice].'")
+	var/list/items = list()
+	for(var/reskin_option in unique_reskin)
+		var/image/item_image = image(icon = src.icon, icon_state = unique_reskin[reskin_option])
+		items += list("[reskin_option]" = item_image)
+	sortList(items)
+
+	var/pick = show_radial_menu(M, src, items, custom_check = CALLBACK(src, PROC_REF(check_reskin_menu), M), radius = 38, require_near = TRUE)
+	if(!pick)
+		return
+	if(!unique_reskin[pick])
+		return
+	if(!allow_post_reskins)
+		current_skin = pick
+	icon_state = unique_reskin[pick]
+	to_chat(M, "[src] is now skinned as '[pick].'")
+	update_appearance()
+
+/**
+ * Checks if we are allowed to interact with a radial menu for reskins
+ *
+ * Arguments:
+ * * user The mob interacting with the menu
+*/
+/obj/proc/check_reskin_menu(mob/user)
+	if(QDELETED(src))
+		return FALSE
+	if(current_skin)
+		return FALSE
+	if(!istype(user))
+		return FALSE
+	if(user.incapacitated())
+		return FALSE
+	return TRUE
 
 /obj/analyzer_act(mob/living/user, obj/item/I)
 	if(atmosanalyzer_scan(user, src))
 		return TRUE
 	return ..()
 
-/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
+/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
 
 // Should move all contained objects to it's location.
@@ -412,5 +445,5 @@
 * Just add ,\n between each thing
 * generate_tgm_metadata(thing) handles everything inside the {} for you
 **/
-/obj/proc/on_object_saved(var/depth = 0)
+/obj/proc/on_object_saved(depth = 0)
 	return ""

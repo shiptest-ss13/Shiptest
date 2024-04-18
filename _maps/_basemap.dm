@@ -1,11 +1,15 @@
-// #define LOWMEMORYMODE //uncomment this to load centcom and runtime station and thats it.
+/// VERY IMPORTANT FOR RUNNING FAST IN PRODUCTION!
+/// If you define this flag, centcom will load. It's also supposed to preload planetoids, but that is disabled.
+//#define FULL_INIT
 
-#include "map_files\generic\CentCom.dmm"
+#ifdef FULL_INIT
+	#include "map_files\generic\CentCom.dmm"
+#else
+	#include "map_files\generic\blank.dmm"
+#endif
 
-#ifndef LOWMEMORYMODE
-	#ifdef ALL_MAPS
-		#ifdef CIBUILDING
-			#include "templates.dm"
-		#endif
+#ifdef ALL_MAPS
+	#ifdef CIBUILDING
+		#include "templates.dm"
 	#endif
 #endif

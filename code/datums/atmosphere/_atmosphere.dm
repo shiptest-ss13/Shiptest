@@ -1,6 +1,6 @@
 /datum/atmosphere
-	var/gas_string
 	var/id
+	var/gas_string
 
 	var/list/base_gases // A list of gases to always have
 	var/list/normal_gases // A list of allowed gases:base_amount
@@ -50,7 +50,6 @@
 	while(gasmix.return_pressure() > target_pressure)
 		gasmix.set_moles(gastype, gasmix.get_moles(gastype) - (gasmix.get_moles(gastype) * 0.1))
 	gasmix.set_moles(gastype, FLOOR(gasmix.get_moles(gastype), 0.1))
-
 	// Now finally lets make that string
 	var/list/gas_string_builder = list()
 	for(var/i in gasmix.get_gases())

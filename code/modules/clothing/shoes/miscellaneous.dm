@@ -1,15 +1,11 @@
 /obj/item/clothing/shoes/proc/step_action() //this was made to rewrite clown shoes squeaking
 	SEND_SIGNAL(src, COMSIG_SHOES_STEP_ACTION)
 
-/obj/item/clothing/shoes/sneakers/mime
-	name = "mime shoes"
-	icon_state = "mime"
-
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
 	name = "combat boots"
 	desc = "High speed, low drag combat boots."
-	icon_state = "jackboots"
-	item_state = "jackboots"
+	icon_state = "combat"
+	item_state = "combat"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
@@ -18,6 +14,7 @@
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 12 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/combat/sneakboots
 	name = "sneakboots"
@@ -53,6 +50,13 @@
 	permeability_coefficient = 0.9
 	can_be_tied = FALSE
 
+/obj/item/clothing/shoes/sandal/slippers
+	name = "patient slippers"
+	desc = "A white pair of easy slip on and off slippers. There are extra treads on the bottom."
+	icon_state = "whiteslippers"
+	item_state = "whiteslippers"
+	supports_variations = DIGITIGRADE_VARIATION
+
 /obj/item/clothing/shoes/sandal/marisa
 	desc = "A pair of magic black shoes."
 	name = "magic shoes"
@@ -78,6 +82,7 @@
 	can_be_bloody = FALSE
 	custom_price = 600
 	can_be_tied = FALSE
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/galoshes/dry
 	name = "absorbent galoshes"
@@ -136,7 +141,7 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "Ankle-high combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -147,6 +152,7 @@
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	can_be_tied = FALSE
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
@@ -163,6 +169,7 @@
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/workboots
 	name = "work boots"
@@ -176,6 +183,7 @@
 	equip_delay_other = 40
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/winterboots/ice_boots
 	name = "ice hiking boots"
@@ -186,7 +194,7 @@
 
 /obj/item/clothing/shoes/workboots/mining
 	name = "mining boots"
-	desc = "Steel-toed mining boots for mining in hazardous environments. Very good at keeping toes uncrushed."
+	desc = "Steel-toed mining boots for motility in hazardous environments. Very good at keeping toes uncrushed."
 	icon_state = "explorer"
 	resistance_flags = FIRE_PROOF
 
@@ -200,6 +208,7 @@
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 	lace_time = 10 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/cult/alt
 	name = "cultist boots"
@@ -240,10 +249,11 @@
 	item_state = "griffinboots"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 	lace_time = 8 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bhop
 	name = "jump boots"
-	desc = "A specialized pair of combat boots with a built-in propulsion system for rapid foward movement."
+	desc = "The EXOCOM's Cortez launch boot line represents a specialized pair of mining boots with a built-in propulsion system, designed for rapid foward movement."
 	icon_state = "jetboots"
 	item_state = "jetboots"
 	resistance_flags = FIRE_PROOF
@@ -252,10 +262,13 @@
 	permeability_coefficient = 0.05
 	strip_delay = 30
 	custom_price = 2500
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
 	var/jumpdistance = 5 //-1 from to see the actual distance, e.g 4 goes over 3 tiles
 	var/jumpspeed = 3
 	var/recharging_rate = 60 //default 6 seconds between each dash
 	var/recharging_time = 0 //time until next dash
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bhop/ui_action_click(mob/user, action)
 	if(!isliving(user))
@@ -274,24 +287,13 @@
 	else
 		to_chat(user, "<span class='warning'>Something prevents you from dashing forward!</span>")
 
-/obj/item/clothing/shoes/singery
-	name = "yellow performer's boots"
-	desc = "These boots were made for dancing."
-	icon_state = "ysing"
-	equip_delay_other = 50
-
-/obj/item/clothing/shoes/singerb
-	name = "blue performer's boots"
-	desc = "These boots were made for dancing."
-	icon_state = "bsing"
-	equip_delay_other = 50
-
 /obj/item/clothing/shoes/bronze
 	name = "bronze boots"
 	desc = "A giant, clunky pair of shoes crudely made out of bronze. Why would anyone wear these?"
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_treads"
 	lace_time = 8 SECONDS
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/bronze/Initialize()
 	. = ..()
@@ -356,25 +358,17 @@
 	active = TRUE
 	set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 	set_light_on(active)
-	addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(lightUp)), 0.5 SECONDS)
 
 /obj/item/clothing/shoes/kindleKicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
 		set_light_color(rgb(rand(0, 255), rand(0, 255), rand(0, 255)))
 		lightCycle++
-		addtimer(CALLBACK(src, .proc/lightUp), 0.5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(lightUp)), 0.5 SECONDS)
 	else
 		lightCycle = 0
 		active = FALSE
 		set_light_on(active)
-
-/obj/item/clothing/shoes/russian
-	name = "russian boots"
-	desc = "Comfy shoes."
-	icon_state = "rus_shoes"
-	item_state = "rus_shoes"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-	lace_time = 8 SECONDS
 
 /obj/item/clothing/shoes/cowboy
 	name = "cowboy boots"
@@ -386,6 +380,7 @@
 	var/list/occupants = list()
 	var/max_occupants = 4
 	can_be_tied = FALSE
+	greyscale_icon_state = "boots"
 
 /obj/item/clothing/shoes/cowboy/Initialize()
 	. = ..()
@@ -435,29 +430,9 @@
 
 /obj/item/clothing/shoes/cowboy/fancy
 	name = "bilton wrangler boots"
-	desc = "A pair of authentic haute couture boots from Japanifornia. You doubt they have ever been close to cattle."
+	desc = "A pair of authentic haute couture boots. You doubt they have ever been close to cattle."
 	icon_state = "cowboy_fancy"
 	permeability_coefficient = 0.08
-
-/obj/item/clothing/shoes/cowboy/lizard
-	name = "lizard skin boots"
-	desc = "You can hear a faint hissing from inside the boots; you hope it is just a mournful ghost."
-	icon_state = "lizardboots_green"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 0) //lizards like to stay warm
-
-/obj/item/clothing/shoes/cowboy/lizard/masterwork
-	name = "\improper Hugs-The-Feet lizard skin boots"
-	desc = "A pair of masterfully crafted lizard skin boots. Finally a good application for the station's most bothersome inhabitants."
-	icon_state = "lizardboots_blue"
-
-/obj/effect/spawner/lootdrop/lizardboots
-	name = "random lizard boot quality"
-	desc = "Which ever gets picked, the lizard race loses"
-	icon = 'icons/obj/clothing/shoes.dmi'
-	icon_state = "lizardboots_green"
-	loot = list(
-		/obj/item/clothing/shoes/cowboy/lizard = 7,
-		/obj/item/clothing/shoes/cowboy/lizard/masterwork = 1)
 
 /obj/item/clothing/shoes/cookflops
 	desc = "All this talk of antags, greytiding, and griefing... I just wanna grill for god's sake!"

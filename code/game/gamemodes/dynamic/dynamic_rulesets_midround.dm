@@ -63,7 +63,7 @@
 // Or autotator someone
 
 // IMPORTANT, since /datum/dynamic_ruleset/midround may accept candidates from both living, dead, and even antag players, you need to manually check whether there are enough candidates
-// (see /datum/dynamic_ruleset/midround/autotraitor/ready(var/forced = FALSE) for example)
+// (see /datum/dynamic_ruleset/midround/autotraitor/ready(forced = FALSE) for example)
 /datum/dynamic_ruleset/midround/ready(forced = FALSE)
 	if (!forced)
 		var/job_check = 0
@@ -189,7 +189,7 @@
 		if(issilicon(player)) // Your assigned role doesn't change when you are turned into a silicon.
 			living_players -= player
 			continue
-		if(is_centcom_level(player.z))
+		if(is_centcom_level(player))
 			living_players -= player // We don't autotator people in CentCom
 			continue
 		if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))
@@ -238,7 +238,7 @@
 		if(!isAI(player))
 			candidates -= player
 			continue
-		if(is_centcom_level(player.z))
+		if(is_centcom_level(player))
 			candidates -= player
 			continue
 		if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))

@@ -23,8 +23,7 @@
 	buckle_lying = 0
 	mob_size = MOB_SIZE_LARGE
 
-	radio_key = /obj/item/encryptionkey/headset_cargo
-	radio_channel = RADIO_CHANNEL_SUPPLY
+	radio_key = /obj/item/encryptionkey
 
 	bot_type = MULE_BOT
 	model = "MULE"
@@ -135,7 +134,7 @@
 		if(open)
 			turn_off()
 		else
-			update_icon() //this is also handled by turn_off(), so no need to call this twice.
+			update_appearance() //this is also handled by turn_off(), so no need to call this twice.
 	else if(istype(I, /obj/item/stock_parts/cell) && open)
 		if(cell)
 			to_chat(user, "<span class='warning'>[src] already has a power cell!</span>")
@@ -180,6 +179,7 @@
 	playsound(src, "sparks", 100, FALSE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /mob/living/simple_animal/bot/mulebot/update_icon_state() //if you change the icon_state names, please make sure to update /datum/wires/mulebot/on_pulse() as well. <3
+	. = ..()
 	icon_state = "[base_icon][on ? wires.is_cut(WIRE_AVOIDANCE) : 0]"
 
 /mob/living/simple_animal/bot/mulebot/update_overlays()
@@ -448,7 +448,7 @@
 
 	load = AM
 	mode = BOT_IDLE
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/mulebot/proc/load_mob(mob/living/M)
 	can_buckle = TRUE
@@ -469,7 +469,7 @@
 	if(QDELETED(load))
 		if(load) //if our thing was qdel'd, there's likely a leftover reference. just clear it and remove the overlay. we'll let the bot keep moving around to prevent it abruptly stopping somewhere.
 			load = null
-			update_icon()
+			update_appearance()
 		return
 
 	mode = BOT_IDLE
@@ -488,7 +488,7 @@
 	if(dirn) //move the thing to the delivery point.
 		cached_load.Move(get_step(loc,dirn), dirn)
 
-	update_icon()
+	update_appearance()
 
 /mob/living/simple_animal/bot/mulebot/get_status_tab_items()
 	. = ..()
@@ -578,7 +578,7 @@
 							buzz(SIGH)
 							mode = BOT_WAIT_FOR_NAV
 							blockcount = 0
-							addtimer(CALLBACK(src, .proc/process_blocked, next), 2 SECONDS)
+							addtimer(CALLBACK(src, PROC_REF(process_blocked), next), 2 SECONDS)
 							return
 						return
 				else
@@ -591,7 +591,7 @@
 
 		if(BOT_NAV)	// calculate new path
 			mode = BOT_WAIT_FOR_NAV
-			INVOKE_ASYNC(src, .proc/process_nav)
+			INVOKE_ASYNC(src, PROC_REF(process_nav))
 
 /mob/living/simple_animal/bot/mulebot/proc/process_blocked(turf/next)
 	calc_path(avoid=next)
@@ -639,7 +639,7 @@
 /mob/living/simple_animal/bot/mulebot/proc/start_home()
 	if(!on)
 		return
-	INVOKE_ASYNC(src, .proc/do_start_home)
+	INVOKE_ASYNC(src, PROC_REF(do_start_home))
 
 /mob/living/simple_animal/bot/mulebot/proc/do_start_home()
 	set_destination(home_destination)
@@ -648,7 +648,6 @@
 // called when bot reaches current target
 /mob/living/simple_animal/bot/mulebot/proc/at_target()
 	if(!reached_target)
-		radio_channel = RADIO_CHANNEL_SUPPLY //Supply channel
 		buzz(CHIME)
 		reached_target = TRUE
 
@@ -768,7 +767,7 @@
 	new /obj/item/stack/cable_coil/cut(Tsec)
 	if(cell)
 		cell.forceMove(Tsec)
-		cell.update_icon()
+		cell.update_appearance()
 		cell = null
 
 	do_sparks(3, TRUE, src)
@@ -776,17 +775,8 @@
 	new /obj/effect/decal/cleanable/oil(loc)
 	..()
 
-/mob/living/simple_animal/bot/mulebot/remove_air(amount) //To prevent riders suffocating
-	return loc ? loc.remove_air(amount) : null
-
-/mob/living/simple_animal/bot/mulebot/remove_air_ratio(ratio)
-	if(loc)
-		return loc.remove_air_ratio(ratio)
-	else
-		return null
-
-/mob/living/simple_animal/bot/mulebot/resist()
-	..()
+/mob/living/simple_animal/bot/mulebot/execute_resist()
+	. = ..()
 	if(load)
 		unload()
 
@@ -828,7 +818,7 @@
 
 	if(isobserver(AM))
 		visible_message("<span class='warning'>A ghostly figure appears on [src]!</span>")
-		RegisterSignal(AM, COMSIG_MOVABLE_MOVED, .proc/ghostmoved)
+		RegisterSignal(AM, COMSIG_MOVABLE_MOVED, PROC_REF(ghostmoved))
 		AM.forceMove(src)
 
 	else if(!wires.is_cut(WIRE_LOADCHECK))
@@ -853,7 +843,7 @@
 
 	load = AM
 	mode = BOT_IDLE
-	update_icon()
+	update_appearance()
 
 
 /mob/living/simple_animal/bot/mulebot/paranormal/update_overlays()

@@ -3,7 +3,7 @@
 	filedesc = "SiliConnect"
 	ui_header = "borg_mon.gif"
 	program_icon_state = "generic"
-	extended_desc = "This program allows for remote monitoring of station cyborgs."
+	extended_desc = "This program allows for remote monitoring of cyborgs."
 	requires_ntnet = TRUE
 	transfer_access = ACCESS_ROBOTICS
 	size = 5
@@ -72,7 +72,7 @@
 
 ///This proc is used to determin if a borg should be shown in the list (based on the borg's scrambledcodes var). Syndicate version overrides this to show only syndicate borgs.
 /datum/computer_file/program/borg_monitor/proc/evaluate_borg(mob/living/silicon/robot/R)
-	if((get_turf(computer)).get_virtual_z_level() != (get_turf(R)).get_virtual_z_level())
+	if((get_turf(computer)).virtual_z() != (get_turf(R)).virtual_z())
 		return FALSE
 	if(R.scrambledcodes)
 		return FALSE
@@ -98,7 +98,7 @@
 	tgui_id = "NtosCyborgRemoteMonitorSyndicate"
 
 /datum/computer_file/program/borg_monitor/syndicate/evaluate_borg(mob/living/silicon/robot/R)
-	if((get_turf(computer)).get_virtual_z_level() != (get_turf(R)).get_virtual_z_level())
+	if((get_turf(computer)).virtual_z() != (get_turf(R)).virtual_z())
 		return FALSE
 	if(!R.scrambledcodes)
 		return FALSE

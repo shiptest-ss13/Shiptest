@@ -67,31 +67,6 @@
 /proc/adminscrub(t,limit=MAX_MESSAGE_LEN)
 	return copytext((html_encode(strip_html_simple(t))),1,limit)
 
-//BeginWS edit - Chat markup
-//Credit to Aurorastation for the regex and idea for the proc
-//Should be in the form of "tag to be replaced" = list("replacement for beginning", "replacement for end")
-GLOBAL_LIST_INIT(markup_tags, list(
-	"/"  = list("<i>", "</i>"),
-	"**" = list("<b>", "</b>")
-))
-//Should be in the form of "((\\W|^)@)(\[^@\]*)(@(\\W|$)), "g"", where @ is the appropriate tag from markup_tags
-GLOBAL_LIST_INIT(markup_regex, list(
-	"/"  = new /regex("((\\W|^)_)(\[^_\]*)(_(\\W|$))", "g"),
-	"**" = new /regex("((\\W|^)\\*\\*)(\[^\\*\\*\]*)(\\*\\*(\\W|$))", "g")
-))
-
-/proc/process_chat_markup(var/message, var/list/ignore = list())
-	if(!CONFIG_GET(flag/chat_markup) || !message)
-		return message
-
-	var/regex/markup
-	for(var/tag in (GLOB.markup_tags - ignore))
-		markup = GLOB.markup_regex[tag]
-		message = markup.Replace_char(message, "$2[GLOB.markup_tags[tag][1]]$3[GLOB.markup_tags[tag][2]]$5")
-
-	return message
-//EndWS edit - Chat markup
-
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(text, max_length = 512, ascii_only = TRUE)
 	var/char_count = 0
@@ -137,12 +112,10 @@ GLOBAL_LIST_INIT(markup_regex, list(
 
 #define NO_CHARS_DETECTED 0
 #define SPACES_DETECTED 1
-#define SYMBOLS_DETECTED 2
-#define NUMBERS_DETECTED 3
-#define LETTERS_DETECTED 4
+#define CHARS_DETECTED 2
 
 //Filters out undesirable characters from names
-/proc/reject_bad_name(t_in, allow_numbers = FALSE, max_length = MAX_NAME_LEN, ascii_only = TRUE)
+/proc/reject_bad_name(t_in, max_length = MAX_NAME_LEN, ascii_only = TRUE)
 	if(!t_in)
 		return //Rejects the input if it is null
 
@@ -158,36 +131,6 @@ GLOBAL_LIST_INIT(markup_regex, list(
 		char = t_in[i]
 
 		switch(text2ascii(char))
-			// A  .. Z
-			if(65 to 90)			//Uppercase Letters
-				number_of_alphanumeric++
-				last_char_group = LETTERS_DETECTED
-
-			// a  .. z
-			if(97 to 122)			//Lowercase Letters
-				if(last_char_group == NO_CHARS_DETECTED || last_char_group == SPACES_DETECTED || last_char_group == SYMBOLS_DETECTED) //start of a word
-					char = uppertext(char)
-				number_of_alphanumeric++
-				last_char_group = LETTERS_DETECTED
-
-			// 0  .. 9
-			if(48 to 57)			//Numbers
-				if(last_char_group == NO_CHARS_DETECTED || !allow_numbers) //suppress at start of string
-					continue
-				number_of_alphanumeric++
-				last_char_group = NUMBERS_DETECTED
-
-			// '  -  .
-			if(39,45,46)			//Common name punctuation
-				if(last_char_group == NO_CHARS_DETECTED)
-					continue
-				last_char_group = SYMBOLS_DETECTED
-
-			// ~   |   @  :  #  $  %  &  *  +
-			if(126,124,64,58,35,36,37,38,42,43)			//Other symbols that we'll allow (mainly for AI)
-				if(last_char_group == NO_CHARS_DETECTED || !allow_numbers) //suppress at start of string
-					continue
-				last_char_group = SYMBOLS_DETECTED
 
 			//Space
 			if(32)
@@ -195,10 +138,30 @@ GLOBAL_LIST_INIT(markup_regex, list(
 					continue
 				last_char_group = SPACES_DETECTED
 
-			if(127 to INFINITY)
+			//A .. Z
+			if(65 to 90)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			//a .. z
+			if(97 to 122)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			//0 .. 9
+			if(48 to 57)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			// ' - . ~ | @ : # $ % & * +
+			if(39, 45, 46, 126, 124, 64, 58, 35, 36, 37, 38, 42, 43)
+				number_of_alphanumeric++
+				last_char_group = CHARS_DETECTED
+
+			if(127 to INFINITY) //this pulls non-ascii text from the name for now, since filtering that is much more of a headache
 				if(ascii_only)
 					continue
-				last_char_group = SYMBOLS_DETECTED //for now, we'll treat all non-ascii characters like symbols even though most are letters
+				last_char_group = CHARS_DETECTED //for now, we'll treat all non-ascii characters like symbols even though most are letters
 
 			else
 				continue
@@ -209,21 +172,16 @@ GLOBAL_LIST_INIT(markup_regex, list(
 			break
 
 	if(number_of_alphanumeric < 2)
-		return		//protects against tiny names like "A" and also names like "' ' ' ' ' ' ' '"
+		return		//protects against tiny names like "A"
 
 	if(last_char_group == SPACES_DETECTED)
-		t_out = copytext_char(t_out, 1, -1) //removes the last character (in this case a space)
-
-	for(var/bad_name in list("space","floor","wall","r-wall","monkey","unknown","inactive ai"))	//prevents these common metagamey names
-		if(cmptext(t_out,bad_name))
-			return	//(not case sensitive)
+		t_out = copytext_char(t_out, 1, -1) //pulls trailing spaces from the name
 
 	return t_out
 
 #undef NO_CHARS_DETECTED
 #undef SPACES_DETECTED
-#undef NUMBERS_DETECTED
-#undef LETTERS_DETECTED
+#undef CHARS_DETECTED
 
 
 
@@ -278,17 +236,35 @@ GLOBAL_LIST_INIT(markup_regex, list(
 			return copytext(text, 1, i + 1)
 	return ""
 
+//Returns a string with reserved characters and spaces after the first and last letters removed
+//Like trim(), but very slightly faster. worth it for niche usecases
+/proc/trim_reduced(text)
+	var/starting_coord = 1
+	var/text_len = length(text)
+	for (var/i in 1 to text_len)
+		if (text2ascii(text, i) > 32)
+			starting_coord = i
+			break
+
+	for (var/i = text_len, i >= starting_coord, i--)
+		if (text2ascii(text, i) > 32)
+			return copytext(text, starting_coord, i + 1)
+
+	if(starting_coord > 1)
+		return copytext(text, starting_coord)
+	return ""
+
 /**
-  * Truncate a string to the given length
-  *
-  * Will only truncate if the string is larger than the length and *ignores unicode concerns*
-  *
-  * This exists soley because trim does other stuff too.
-  *
-  * Arguments:
-  * * text - String
-  * * max_length - integer length to truncate at
-  */
+ * Truncate a string to the given length
+ *
+ * Will only truncate if the string is larger than the length and *ignores unicode concerns*
+ *
+ * This exists soley because trim does other stuff too.
+ *
+ * Arguments:
+ * * text - String
+ * * max_length - integer length to truncate at
+ */
 /proc/truncate(text, max_length)
 	if(length(text) > max_length)
 		return copytext(text, 1, max_length)
@@ -297,7 +273,7 @@ GLOBAL_LIST_INIT(markup_regex, list(
 /proc/trim(text, max_length)
 	if(max_length)
 		text = copytext_char(text, 1, max_length)
-	return trim_left(trim_right(text))
+	return trim_reduced(text)
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(t)
@@ -372,15 +348,34 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		. += string
 
 /proc/random_short_color()
-	return random_string(3, GLOB.hex_characters)
+	return num2text(rand(0, 4095), 3, 16)
+
+/proc/color_from_seed(seed)
+	seed = md5(seed)
+
+	var/red = num2text(hex2num(copytext(seed, 1, 3)), 2, 16)
+	var/green = num2text(hex2num(copytext(seed, 3, 5)), 2, 16)
+	var/blue = num2text(hex2num(copytext(seed, 5, 7)), 2, 16)
+
+	return red + green + blue
 
 /proc/random_color()
-	return random_string(6, GLOB.hex_characters)
+	return num2text(rand(0, 16777215), 6, 16)
 
-/proc/random_short_color_natural()	//For use in natural haircolors.
-	var red = num2text(rand(0,255), 1, 16)
-	var green = num2text(rand(0,128), 1, 16)	//Conversion to hex
-	var blue = "00"
+/proc/random_color_natural()	//For use in natural haircolors.
+	var/red = num2text(rand(0,255), 2, 16)
+	var/green = num2text(rand(0,128), 2, 16)	//Conversion to hex
+	var/blue = "00"
+
+	return red + green + blue
+
+/proc/color_natural_from_seed(seed)
+	seed = md5(seed)
+
+	var/red = num2text(hex2num(copytext(seed, 1, 3)), 2, 16)
+	var/green = num2text(hex2num(copytext(seed, 3, 5)) / 2, 2, 16)
+	var/blue = "00"
+
 	return red + green + blue
 
 //merges non-null characters (3rd argument) from "from" into "into". Returns result
@@ -579,7 +574,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 	t = parsemarkdown_basic_step1(t)
 
-	t = replacetext(t, regex("%s(?:ign)?(?=\\s|$)", "igm"), user ? "<font face=\"[SIGNFONT]\"><i>[user.real_name]</i></font>" : "<span class=\"paper_field\"></span>")
+	t = replacetext(t, regex("%s(?:ign)?(?=\\s|$)", "igm"), user ? "<font face=\"[SIGNATURE_FONT]\"><i>[user.real_name]</i></font>" : "<span class=\"paper_field\"></span>")
 	t = replacetext(t, regex("%f(?:ield)?(?=\\s|$)", "igm"), "<span class=\"paper_field\"></span>")
 
 	t = parsemarkdown_basic_step2(t)
@@ -768,6 +763,9 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 			base = text("[]\herself", rest)
 		if("hers")
 			base = text("[]\hers", rest)
+		else // Someone fucked up, if you're not a macro just go home yeah?
+			// This does technically break parsing, but at least it's better then what it used to do
+			return base
 
 	. = base
 	if(rest)
@@ -863,7 +861,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	catch
 		return
 
-/proc/num2loadingbar(percent as num, var/numSquares = 20, var/reverse = FALSE)
+/proc/num2loadingbar(percent as num, numSquares = 20, reverse = FALSE)
 	var/loadstring = ""
 	for (var/i in 1 to numSquares)
 		var/limit = reverse ? numSquares - percent*numSquares : percent*numSquares
@@ -884,3 +882,21 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 			continue
 		out += prob(replaceprob)? pick(replacementchars) : char
 	return out.Join("")
+
+//Very shitty proc that allows you to get the (mostly) pure text out of a book. There's probably something that can get this more cleanly or more efficiently, btu I don't care.
+/proc/strip_booktext(text, limit=MAX_MESSAGE_LEN)
+	var/start = findtext(text, ">")
+	var/end = findtext(text, "<", 2)
+	return strip_html(copytext_char(text, start, min(start + limit, end)))
+
+/// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
+/proc/sanitize_css_class_name(name)
+	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
+	return replacetext(name, regex, "")
+
+/proc/shuffletext(string)
+	. = ""
+	while(length(string))
+		var/pos = rand(1, length(string))
+		. += copytext(string, pos, pos+1)
+		string = splicetext(string, pos, pos+1, null)

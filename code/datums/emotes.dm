@@ -26,7 +26,7 @@
 	var/vary = FALSE	//used for the honk borg emote
 	var/only_forced_audio = FALSE //can only code call this event instead of the player.
 	var/cooldown = 0.8 SECONDS
-	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks") //WS Edit
+	var/static/regex/stop_bad_mime = regex(@"says|exclaims|yells|asks")
 
 /datum/emote/New()
 	if (ispath(mob_type_allowed_typecache))
@@ -61,7 +61,8 @@
 		return
 
 	user.log_message(msg, LOG_EMOTE)
-	var/dchatmsg = "<b>[user]</b> [msg]"
+	var/space = should_have_space_before_emote(html_encode(msg)[1]) ? " " : ""
+	var/dchatmsg = "<b>[user]</b>[space][msg]"
 
 	var/tmp_sound = get_sound(user)
 	if(tmp_sound && (!only_forced_audio || !intentional))
@@ -75,15 +76,15 @@
 			M.show_message("[FOLLOW_LINK(M, user)] [dchatmsg]")
 
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, audible_message_flags = EMOTE_MESSAGE)
+		user.audible_message(msg, deaf_message = "<span class='emote'>You see how <b>[user]</b> [msg]</span>", audible_message_flags = EMOTE_MESSAGE)
 	else
-		user.visible_message(msg, visible_message_flags = EMOTE_MESSAGE)
+		user.visible_message(msg, blind_message = "<span class='emote'>You hear how <b>[user]</b> [msg]</span>", visible_message_flags = EMOTE_MESSAGE)
 
 /// For handling emote cooldown, return true to allow the emote to happen
 /datum/emote/proc/check_cooldown(mob/user, intentional)
 	if(!intentional)
 		return TRUE
-	if(user.emotes_used && user.emotes_used[src] + cooldown > world.time)
+	if(user.emotes_used && user.emotes_used[src] && user.emotes_used[src] + cooldown > world.time)
 		return FALSE
 	if(!user.emotes_used)
 		user.emotes_used = list()
@@ -187,3 +188,16 @@
 			M.show_message(text)
 
 	visible_message(text)
+
+/**
+ * Returns a boolean based on whether or not the string contains a comma or an apostrophe,
+ * to be used for emotes to decide whether or not to have a space between the name of the user
+ * and the emote.
+ *
+ * Requires the message to be HTML decoded beforehand. Not doing it here for performance reasons.
+ *
+ * Returns TRUE if there should be a space, FALSE if there shouldn't.
+ */
+/proc/should_have_space_before_emote(string)
+	var/static/regex/no_spacing_emote_characters = regex(@"(,|')")
+	return no_spacing_emote_characters.Find(string) ? FALSE : TRUE

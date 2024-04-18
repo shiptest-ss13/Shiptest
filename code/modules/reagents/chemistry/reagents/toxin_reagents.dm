@@ -16,6 +16,11 @@
 		. = TRUE
 	..()
 
+/datum/reagent/toxin/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 0.05) * toxpwr)
+
 /datum/reagent/toxin/amatoxin
 	name = "Amatoxin"
 	description = "A powerful poison derived from certain species of mushroom."
@@ -50,6 +55,12 @@
 	C.apply_effect(5,EFFECT_IRRADIATE,0)
 	return ..()
 
+/datum/reagent/toxin/mutagen/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.mutation_roll(user)
+		mytray.adjustToxic(1.5) //It is still toxic, mind you, but not to the same degree
+
 #define LIQUID_PLASMA_BP (50+T0C)
 
 /datum/reagent/toxin/plasma
@@ -61,10 +72,8 @@
 	color = "#8228A0"
 	toxpwr = 3
 	material = /datum/material/plasma
-
-	//WS Begin - IPCs
-	process_flags = ORGANIC | SYNTHETIC //WS Edit - IPCs
-	//WS End
+	process_flags = ORGANIC | SYNTHETIC
+	accelerant_quality = 10
 
 /datum/reagent/toxin/plasma/on_mob_life(mob/living/carbon/C)
 	if(holder.has_reagent(/datum/reagent/medicine/epinephrine))
@@ -95,10 +104,18 @@
 		T.atmos_spawn_air("plasma=[reac_volume];TEMP=[temp]")
 
 /datum/reagent/toxin/plasma/expose_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with plasma is stronger than fuel!
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.adjust_fire_stacks(reac_volume / 5)
 		return
 	..()
+
+/datum/reagent/toxin/plasma/dip_object(obj/item/I, mob/user, obj/item/reagent_containers/H)
+	. = ..()
+	if(istype(I, /obj/item/stock_parts/manipulator))
+		H.reagents.add_reagent(/datum/reagent/stable_plasma, (H.reagents.remove_reagent(/datum/reagent/toxin/plasma, 10*I.get_part_rating())))
+		return TRUE
+	return
+
 
 /datum/reagent/toxin/hot_ice
 	name = "Hot Ice Slush"
@@ -162,11 +179,6 @@
 	toxpwr = 0
 	taste_description = "mint"
 
-/datum/reagent/toxin/minttoxin/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_FAT))
-		M.inflate_gib()
-	return ..()
-
 /datum/reagent/toxin/carpotoxin
 	name = "Carpotoxin"
 	description = "A deadly neurotoxin produced by the dreaded spess carp."
@@ -174,11 +186,6 @@
 	color = "#003333" // rgb: 0, 51, 51
 	toxpwr = 2
 	taste_description = "fish"
-
-/datum/reagent/toxin/carpotoxin/on_mob_metabolize(mob/living/carbon/M)
-	if(isfelinid(M))
-		toxpwr = 0
-	..()
 
 /datum/reagent/toxin/zombiepowder
 	name = "Zombie Powder"
@@ -279,10 +286,24 @@
 				var/damage = min(round(0.4*reac_volume, 0.1),10)
 				C.adjustToxLoss(damage)
 
+/datum/reagent/toxin/plantbgone/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 10))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 6))
+		mytray.adjustWeeds(-rand(4,8))
+
 /datum/reagent/toxin/plantbgone/weedkiller
 	name = "Weed Killer"
 	description = "A harmful toxic mixture to kill weeds. Do not ingest!"
 	color = "#4B004B" // rgb: 75, 0, 75
+
+//Weed Spray
+/datum/reagent/toxin/plantbgone/weedkiller/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 0.5))
+		mytray.adjustWeeds(-rand(1,2))
 
 /datum/reagent/toxin/pestkiller
 	name = "Pest Killer"
@@ -295,6 +316,12 @@
 	if(M.mob_biotypes & MOB_BUG)
 		var/damage = min(round(0.4*reac_volume, 0.1),10)
 		M.adjustToxLoss(damage)
+
+/datum/reagent/toxin/pestkiller/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type)))
+		mytray.adjustPests(-rand(1,2))
 
 /datum/reagent/toxin/spore
 	name = "Spore Toxin"
@@ -314,6 +341,7 @@
 	color = "#9ACD32"
 	toxpwr = 0.5
 	taste_description = "burning"
+	accelerant_quality = 10
 
 /datum/reagent/toxin/spore_burning/on_mob_life(mob/living/carbon/M)
 	M.adjust_fire_stacks(2)
@@ -344,7 +372,7 @@
 	..()
 
 /datum/reagent/toxin/fakebeer	//disguised as normal beer for use by emagged brobots
-	name = "Beer"
+	name = "Beer?"
 	description = "A specially-engineered sedative disguised as beer. It induces instant sleep in its target."
 	color = "#664300" // rgb: 102, 67, 0
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
@@ -426,9 +454,12 @@
 	overdose_threshold = 30
 	toxpwr = 0
 
+/datum/reagent/toxin/histamine/overdose_start(mob/living/M)
+	//Deliberately empty to make it a silent killer
+
 /datum/reagent/toxin/histamine/on_mob_life(mob/living/carbon/M)
-	if(prob(50))
-		switch(pick(1, 2, 3, 4))
+	if(prob(10))
+		switch(rand(1,4))
 			if(1)
 				to_chat(M, "<span class='danger'>You can barely see!</span>")
 				M.blur_eyes(3)
@@ -439,14 +470,13 @@
 			if(4)
 				if(prob(75))
 					to_chat(M, "<span class='danger'>You scratch at an itch.</span>")
-					M.adjustBruteLoss(2*REM, 0)
+					M.adjustBruteLoss(5, 0)
 					. = 1
 	..()
 
 /datum/reagent/toxin/histamine/overdose_process(mob/living/M)
-	M.adjustOxyLoss(2*REM, 0)
-	M.adjustBruteLoss(2*REM, FALSE, FALSE, BODYPART_ORGANIC)
-	M.adjustToxLoss(2*REM, 0)
+	M.adjustOxyLoss(1*REM, 0)
+	M.adjustToxLoss(1*REM, 0)
 	..()
 	. = 1
 
@@ -539,7 +569,7 @@
 	toxpwr = 0
 
 /datum/reagent/toxin/itching_powder/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
+	if((method == TOUCH || method == SMOKE) || method == VAPOR)
 		M.reagents?.add_reagent(/datum/reagent/toxin/itching_powder, reac_volume)
 
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)
@@ -860,6 +890,13 @@
 	reac_volume = round(reac_volume,0.1)
 	T.acid_act(acidpwr, reac_volume)
 
+/datum/reagent/toxin/acid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type)))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 1.5))
+		mytray.adjustWeeds(-rand(1,2))
+
 /datum/reagent/toxin/acid/fluacid
 	name = "Fluorosulfuric acid"
 	description = "Fluorosulfuric acid is an extremely corrosive chemical substance."
@@ -871,6 +908,13 @@
 	M.adjustFireLoss(current_cycle/10, 0)
 	. = 1
 	..()
+
+/datum/reagent/toxin/acid/fluacid/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustHealth(-round(chems.get_reagent_amount(type) * 2))
+		mytray.adjustToxic(round(chems.get_reagent_amount(type) * 3))
+		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/toxin/acid/nitracid
 	name = "Nitric acid"
@@ -989,3 +1033,14 @@
 		to_chat(M, "<span class='notice'>Ah, what was that? You thought you heard something...</span>")
 		M.confused += 5
 	return ..()
+
+/datum/reagent/toxin/lava_microbe
+	name = "Lavaland Microbes"
+	description = "Microbes isolated from the dirt."
+	taste_description = "grit"
+	taste_mult = 0.5
+	color = "#f7cd90"
+	toxpwr = 0
+
+/datum/reagent/toxin/lava_microbe/expose_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
+	M.ForceContractDisease(new /datum/disease/advance/random(2, 3), FALSE, TRUE)

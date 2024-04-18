@@ -15,12 +15,10 @@ export const NtosNetChat = (props, context) => {
     clients = [],
     messages = [],
   } = data;
-  const in_channel = (active_channel !== null);
-  const authorized = (authed || adminmode);
+  const in_channel = active_channel !== null;
+  const authorized = authed || adminmode;
   return (
-    <NtosWindow
-      width={900}
-      height={675}>
+    <NtosWindow width={900} height={675}>
       <NtosWindow.Content>
         <Section height="600px">
           <Table height="580px">
@@ -29,26 +27,31 @@ export const NtosNetChat = (props, context) => {
                 verticalAlign="top"
                 style={{
                   width: '200px',
-                }}>
-                <Box
-                  height="537px"
-                  overflowY="scroll">
+                }}
+              >
+                <Box height="537px" overflowY="scroll">
                   <Button.Input
                     fluid
                     content="New Channel..."
-                    onCommit={(e, value) => act('PRG_newchannel', {
-                      new_channel_name: value,
-                    })} />
-                  {all_channels.map(channel => (
+                    onCommit={(e, value) =>
+                      act('PRG_newchannel', {
+                        new_channel_name: value,
+                      })
+                    }
+                  />
+                  {all_channels.map((channel) => (
                     <Button
                       fluid
                       key={channel.chan}
                       content={channel.chan}
                       selected={channel.id === active_channel}
                       color="transparent"
-                      onClick={() => act('PRG_joinchannel', {
-                        id: channel.id,
-                      })} />
+                      onClick={() =>
+                        act('PRG_joinchannel', {
+                          id: channel.id,
+                        })
+                      }
+                    />
                   ))}
                 </Box>
                 <Button.Input
@@ -56,85 +59,82 @@ export const NtosNetChat = (props, context) => {
                   mt={1}
                   content={username + '...'}
                   currentValue={username}
-                  onCommit={(e, value) => act('PRG_changename', {
-                    new_name: value,
-                  })} />
+                  onCommit={(e, value) =>
+                    act('PRG_changename', {
+                      new_name: value,
+                    })
+                  }
+                />
                 {!!can_admin && (
                   <Button
                     fluid
                     bold
-                    content={"ADMIN MODE: " + (adminmode ? 'ON' : 'OFF')}
+                    content={'ADMIN MODE: ' + (adminmode ? 'ON' : 'OFF')}
                     color={adminmode ? 'bad' : 'good'}
-                    onClick={() => act('PRG_toggleadmin')} />
+                    onClick={() => act('PRG_toggleadmin')}
+                  />
                 )}
               </Table.Cell>
               <Table.Cell>
-                <Box
-                  height="560px"
-                  overflowY="scroll">
-                  {in_channel && (
-                    authorized ? (
-                      messages.map(message => (
-                        <Box
-                          key={message.msg}>
-                          {message.msg}
-                        </Box>
+                <Box height="560px" overflowY="scroll">
+                  {in_channel &&
+                    (authorized ? (
+                      messages.map((message) => (
+                        <Box key={message.msg}>{message.msg}</Box>
                       ))
                     ) : (
-                      <Box
-                        textAlign="center">
+                      <Box textAlign="center">
                         <Icon
                           name="exclamation-triangle"
                           mt={4}
-                          fontSize="40px" />
-                        <Box
-                          mt={1}
-                          bold
-                          fontSize="18px">
+                          fontSize="40px"
+                        />
+                        <Box mt={1} bold fontSize="18px">
                           THIS CHANNEL IS PASSWORD PROTECTED
                         </Box>
-                        <Box mt={1}>
-                          INPUT PASSWORD TO ACCESS
-                        </Box>
+                        <Box mt={1}>INPUT PASSWORD TO ACCESS</Box>
                       </Box>
-                    )
-                  )}
+                    ))}
                 </Box>
                 <Input
                   fluid
                   selfClear
                   mt={1}
-                  onEnter={(e, value) => act('PRG_speak', {
-                    message: value,
-                  })} />
+                  onEnter={(e, value) =>
+                    act('PRG_speak', {
+                      message: value,
+                    })
+                  }
+                />
               </Table.Cell>
               <Table.Cell
                 verticalAlign="top"
                 style={{
                   width: '150px',
-                }}>
-                <Box
-                  height="477px"
-                  overflowY="scroll">
-                  {clients.map(client => (
-                    <Box key={client.name}>
-                      {client.name}
-                    </Box>
+                }}
+              >
+                <Box height="477px" overflowY="scroll">
+                  {clients.map((client) => (
+                    <Box key={client.name}>{client.name}</Box>
                   ))}
                 </Box>
-                {(in_channel && authorized) && (
+                {in_channel && authorized && (
                   <>
                     <Button.Input
                       fluid
                       content="Save log..."
                       defaultValue="new_log"
-                      onCommit={(e, value) => act('PRG_savelog', {
-                        log_name: value,
-                      })} />
+                      onCommit={(e, value) =>
+                        act('PRG_savelog', {
+                          log_name: value,
+                        })
+                      }
+                    />
                     <Button.Confirm
                       fluid
                       content="Leave Channel"
-                      onClick={() => act('PRG_leavechannel')} />
+                      onClick={() => act('PRG_leavechannel')}
+                    />
                   </>
                 )}
                 {!!is_operator && authed && (
@@ -142,19 +142,26 @@ export const NtosNetChat = (props, context) => {
                     <Button.Confirm
                       fluid
                       content="Delete Channel"
-                      onClick={() => act('PRG_deletechannel')} />
+                      onClick={() => act('PRG_deletechannel')}
+                    />
                     <Button.Input
                       fluid
                       content="Rename Channel..."
-                      onCommit={(e, value) => act('PRG_renamechannel', {
-                        new_name: value,
-                      })} />
+                      onCommit={(e, value) =>
+                        act('PRG_renamechannel', {
+                          new_name: value,
+                        })
+                      }
+                    />
                     <Button.Input
                       fluid
                       content="Set Password..."
-                      onCommit={(e, value) => act('PRG_setpassword', {
-                        new_password: value,
-                      })} />
+                      onCommit={(e, value) =>
+                        act('PRG_setpassword', {
+                          new_password: value,
+                        })
+                      }
+                    />
                   </>
                 )}
               </Table.Cell>

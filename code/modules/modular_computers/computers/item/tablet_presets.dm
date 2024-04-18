@@ -1,7 +1,7 @@
 
 // This is literally the worst possible cheap tablet
 /obj/item/modular_computer/tablet/preset/cheap
-	desc = "A low-end tablet often seen among low ranked station personnel."
+	desc = "A low-end tablet often seen among low-ranking Nanotrasen personnel."
 
 /obj/item/modular_computer/tablet/preset/cheap/Initialize()
 	. = ..()
@@ -28,7 +28,6 @@
 	install_component(hard_drive)
 	install_component(new /obj/item/computer_hardware/network_card)
 	install_component(new /obj/item/computer_hardware/printer/mini)
-	hard_drive.store_file(new /datum/computer_file/program/bounty)
 	hard_drive.store_file(new /datum/computer_file/program/shipping)
 
 /// Given by the syndicate as part of the contract uplink bundle - loads in the Contractor Uplink.

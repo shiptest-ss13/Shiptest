@@ -8,6 +8,12 @@
 	max_integrity = 1
 	armor = list("melee" = 0, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
 	var/obj/item/holosign_creator/projector
+	var/lifespan = 5 MINUTES
+	var/death_time
+	var/infinite = FALSE //for infinite holosigns
+
+	var/countdown_color
+	var/obj/effect/countdown/holosign/countdown
 
 /obj/structure/holosign/New(loc, source_projector)
 	if(source_projector)
@@ -15,15 +21,36 @@
 		projector.signs += src
 	..()
 
-/obj/structure/holosign/Initialize()
+/obj/structure/holosign/Initialize(mapload, source, new_lifespan)
 	. = ..()
 	alpha = 0
 	SSvis_overlays.add_vis_overlay(src, icon, icon_state, ABOVE_MOB_LAYER, plane, dir, add_appearance_flags = RESET_ALPHA) //you see mobs under it, but you hit them like they are above it
+
+	if(!infinite)
+		START_PROCESSING(SSobj, src)
+
+		if(new_lifespan)
+			lifespan = new_lifespan
+		death_time = world.time + lifespan
+		countdown = new(src)
+		if(countdown_color)
+			countdown.color = countdown_color
+		countdown.start()
+
+/obj/structure/holosign/process()
+	if(countdown.invisibility && death_time < (world.time + 60 SECONDS))
+		countdown.invisibility = 0
+		playsound(src, 'sound/machines/triple_beep.ogg', 50, TRUE)
+
+	if(death_time < world.time)
+		playsound(src, 'sound/effects/empulse.ogg', 50, TRUE)
+		qdel(src)
 
 /obj/structure/holosign/Destroy()
 	if(projector)
 		projector.signs -= src
 		projector = null
+	qdel(countdown)
 	return ..()
 
 /obj/structure/holosign/attack_hand(mob/living/user)
@@ -46,17 +73,19 @@
 	desc = "The words flicker as if they mean nothing."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "holosign"
+	countdown_color = "#FCFF00"
 
 /obj/structure/holosign/barrier
 	name = "holobarrier"
 	desc = "A short holographic barrier which can only be passed by walking."
 	icon_state = "holosign_sec"
+	countdown_color = "#FF0000"
 	pass_flags_self = PASSTABLE | PASSGRILLE | PASSGLASS | LETPASSTHROW
 	density = TRUE
 	max_integrity = 20
 	var/allow_walk = TRUE //can we pass through it on walk intent
 
-/obj/structure/holosign/barrier/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/holosign/barrier/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
@@ -72,8 +101,10 @@
 	desc = "When it says walk it means walk."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "holosign"
+	countdown_color = "#FCFF00"
+	lifespan = 2 MINUTES
 
-/obj/structure/holosign/barrier/wetsign/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/holosign/barrier/wetsign/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(iscarbon(mover))
 		var/mob/living/carbon/C = mover
@@ -86,11 +117,13 @@
 	icon_state = "holosign_engi"
 	flags_1 = RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
 	rad_insulation = RAD_LIGHT_INSULATION
+	countdown_color = "#FF6600"
 
 /obj/structure/holosign/barrier/atmos
 	name = "holofirelock"
 	desc = "A holographic barrier resembling a firelock. Though it does not prevent solid objects from passing through, gas is kept out."
 	icon_state = "holo_firelock"
+	countdown_color = "#FFE156"
 	density = FALSE
 	anchored = TRUE
 	CanAtmosPass = ATMOS_PASS_NO
@@ -121,7 +154,9 @@
 	name = "\improper PENLITE holobarrier"
 	desc = "A holobarrier that uses biometrics to detect human viruses. Denies passing to personnel with easily-detected, malicious viruses. Good for quarantines."
 	icon_state = "holo_medical"
+	countdown_color = "#82B9FF"
 	alpha = 125 //lazy :)
+	lifespan = 10 MINUTES
 	var/force_allaccess = FALSE
 	var/buzzcd = 0
 
@@ -129,7 +164,7 @@
 	. = ..()
 	. += "<span class='notice'>The biometric scanners are <b>[force_allaccess ? "off" : "on"]</b>.</span>"
 
-/obj/structure/holosign/barrier/medical/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/holosign/barrier/medical/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(force_allaccess)
 		return TRUE
@@ -158,7 +193,7 @@
 	return TRUE
 
 /obj/structure/holosign/barrier/medical/attack_hand(mob/living/user)
-	if(CanPass(user) && user.a_intent == INTENT_HELP)
+	if(user.a_intent == INTENT_HELP && CanPass(user, get_dir(src, user)))
 		force_allaccess = !force_allaccess
 		to_chat(user, "<span class='warning'>You [force_allaccess ? "deactivate" : "activate"] the biometric scanners.</span>") //warning spans because you can make the station sick!
 	else
@@ -186,7 +221,7 @@
 			var/mob/living/M = user
 			M.electrocute_act(15,"Energy Barrier", flags = SHOCK_NOGLOVES)
 			shockcd = TRUE
-			addtimer(CALLBACK(src, .proc/cooldown), 5)
+			addtimer(CALLBACK(src, PROC_REF(cooldown)), 5)
 
 /obj/structure/holosign/barrier/cyborg/hacked/Bumped(atom/movable/AM)
 	if(shockcd)
@@ -198,4 +233,30 @@
 	var/mob/living/M = AM
 	M.electrocute_act(15,"Energy Barrier", flags = SHOCK_NOGLOVES)
 	shockcd = TRUE
-	addtimer(CALLBACK(src, .proc/cooldown), 5)
+	addtimer(CALLBACK(src, PROC_REF(cooldown)), 5)
+
+/* Infinite Holosigns for admin/etc use */
+
+/obj/structure/holosign/wetsign/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/wetsign/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/engineering/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/atmos/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/cyborg/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/medical/infinite
+	infinite = TRUE
+
+/obj/structure/holosign/barrier/cyborg/hacked/infinite
+	infinite = TRUE

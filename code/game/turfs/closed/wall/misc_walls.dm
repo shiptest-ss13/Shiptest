@@ -10,12 +10,9 @@
 	sheet_amount = 1
 	girder_type = /obj/structure/girder/cult
 
-/turf/closed/wall/mineral/cult/Initialize()
+/turf/closed/wall/mineral/cult/Initialize(mapload, inherited_virtual_z)
 	new /obj/effect/temp_visual/cult/turf(src)
 	. = ..()
-
-/turf/closed/wall/mineral/cult/devastate_wall()
-	new sheet_type(get_turf(src), sheet_amount)
 
 /turf/closed/wall/mineral/cult/Exited(atom/movable/AM, atom/newloc)
 	. = ..()
@@ -30,13 +27,13 @@
 /turf/closed/wall/mineral/cult/artificer
 	name = "runed stone wall"
 	desc = "A cold stone wall engraved with indecipherable symbols. Studying them causes your head to pound."
+	sheet_type = null
+	girder_type = null
 
-/turf/closed/wall/mineral/cult/artificer/break_wall()
+// no sheets, just a cult effect
+/turf/closed/wall/mineral/cult/artificer/create_sheets()
 	new /obj/effect/temp_visual/cult/turf(get_turf(src))
-	return null //excuse me we want no runed metal here
-
-/turf/closed/wall/mineral/cult/artificer/devastate_wall()
-	new /obj/effect/temp_visual/cult/turf(get_turf(src))
+	return
 
 /turf/closed/wall/vault
 	icon = 'icons/turf/walls.dmi'
@@ -62,6 +59,14 @@
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 45
 
+/turf/closed/wall/rust/yesdiag
+	icon_state = "rusty_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
+
+/turf/closed/wall/rust/icecropolis
+	baseturfs = /turf/open/indestructible/necropolis/air
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+
 /turf/closed/wall/r_wall/rust
 	name = "rusted reinforced wall"
 	desc = "A huge chunk of rusted reinforced metal."
@@ -70,6 +75,10 @@
 	base_icon_state = "rusty_reinforced_wall"
 	smoothing_flags = SMOOTH_BITMASK
 	hardness = 15
+
+/turf/closed/wall/r_wall/rust/yesdiag
+	icon_state = "rusty_reinforced_wall-255"
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_DIAGONAL_CORNERS
 
 /turf/closed/wall/mineral/bronze
 	name = "clockwork wall"
@@ -81,3 +90,11 @@
 	sheet_type = /obj/item/stack/tile/bronze
 	sheet_amount = 2
 	girder_type = /obj/structure/girder/bronze
+
+/turf/closed/wall/bathhouse
+	desc = "It's cool to the touch, pleasantly so."
+	icon = 'icons/turf/shuttleold.dmi'
+	icon_state = "block"
+	base_icon_state = "block"
+	smoothing_flags = NONE
+	canSmoothWith = null

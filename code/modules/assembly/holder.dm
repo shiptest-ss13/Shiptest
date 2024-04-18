@@ -14,6 +14,13 @@
 	var/obj/item/assembly/a_left = null
 	var/obj/item/assembly/a_right = null
 
+/obj/item/assembly_holder/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/item/assembly_holder/ComponentInitialize()
 	. = ..()
 	var/static/rotation_flags = ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_FLIP | ROTATION_VERBS
@@ -27,7 +34,7 @@
 	attach(A,user)
 	attach(A2,user)
 	name = "[A.name]-[A2.name] assembly"
-	update_icon()
+	update_appearance()
 	SSblackbox.record_feedback("tally", "assembly_made", 1, "[initial(A.name)]-[initial(A2.name)]")
 
 /obj/item/assembly_holder/proc/attach(obj/item/assembly/A, mob/user)
@@ -44,34 +51,38 @@
 		a_right = A
 	A.holder_movement()
 
-/obj/item/assembly_holder/update_icon()
-	cut_overlays()
-	if(a_left)
-		add_overlay("[a_left.icon_state]_left")
-		for(var/O in a_left.attached_overlays)
-			add_overlay("[O]_l")
+/obj/item/assembly_holder/update_appearance(updates=ALL)
+	. = ..()
+	master?.update_appearance(updates)
 
-	if(a_right)
-		if(a_right.is_position_sensitive)
-			add_overlay("[a_right.icon_state]_right")
-			for(var/O in a_right.attached_overlays)
-				add_overlay("[O]_r")
-		else
-			var/mutable_appearance/right = mutable_appearance(icon, "[a_right.icon_state]_left")
-			right.transform = matrix(-1, 0, 0, 0, 1, 0)
-			for(var/O in a_right.attached_overlays)
-				right.add_overlay("[O]_l")
-			add_overlay(right)
-
-	if(master)
-		master.update_icon()
-
-/obj/item/assembly_holder/Crossed(atom/movable/AM as mob|obj)
+/obj/item/assembly_holder/update_overlays()
 	. = ..()
 	if(a_left)
-		a_left.Crossed(AM)
+		. += "[a_left.icon_state]_left"
+		for(var/left_overlay in a_left.attached_overlays)
+			. += "[left_overlay]_l"
+	if(!a_right)
+		return
+
+	if(a_right.is_position_sensitive)
+		. += "[a_right.icon_state]_right"
+		for(var/right_overlay in a_right.attached_overlays)
+			. += "[right_overlay]_r"
+		return
+
+	var/mutable_appearance/right = mutable_appearance(icon, "[a_right.icon_state]_left")
+	right.transform = matrix(-1, 0, 0, 0, 1, 0)
+	for(var/right_overlay in a_right.attached_overlays)
+		right.add_overlay("[right_overlay]_l")
+	. += right
+
+
+/obj/item/assembly_holder/proc/on_entered(datum/source, atom/movable/AM as mob|obj)
+	SIGNAL_HANDLER
+	if(a_left)
+		a_left.on_entered(src, AM)
 	if(a_right)
-		a_right.Crossed(AM)
+		a_right.on_entered(src, AM)
 
 /obj/item/assembly_holder/on_found(mob/finder)
 	if(a_left)

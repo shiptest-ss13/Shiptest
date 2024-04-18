@@ -53,7 +53,7 @@
 		to_chat(user, "<span class='warning'>There is no power cell connected to \the [src].</span>")
 		return FALSE
 	else
-		if(user)
+		if(user && Adjacent(user) && !issiliconoradminghost(user))
 			user.put_in_hands(battery)
 			to_chat(user, "<span class='notice'>You detach \the [battery] from \the [src].</span>")
 		else

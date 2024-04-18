@@ -15,7 +15,7 @@
 	var/atom/selected
 	///Used to store when the next scan is available. Updated by the scan() proc.
 	var/next_scan = 0
-	///Used to keep track of the last value program_icon_state was set to, to prevent constant unnecessary update_icon() calls
+	///Used to keep track of the last value program_icon_state was set to, to prevent constant unnecessary update_appearance() calls
 	var/last_icon_state = ""
 	///Used by the tgui interface, themed NT or Syndicate.
 	var/arrowstyle = "ntosradarpointer.png"
@@ -74,13 +74,13 @@
 			scan()
 
 /**
-  *Updates tracking information of the selected target.
-  *
-  *The track() proc updates the entire set of information about the location
-  *of the target, including whether the Ntos window should use a pinpointer
-  *crosshair over the up/down arrows, or none in favor of a rotating arrow
-  *for far away targets. This information is returned in the form of a list.
-  *
+ *Updates tracking information of the selected target.
+ *
+ *The track() proc updates the entire set of information about the location
+ *of the target, including whether the Ntos window should use a pinpointer
+ *crosshair over the up/down arrows, or none in favor of a rotating arrow
+ *for far away targets. This information is returned in the form of a list.
+ *
 */
 /datum/computer_file/program/radar/proc/track()
 	var/atom/movable/signal = find_atom()
@@ -116,13 +116,13 @@
 	return trackinfo
 
 /**
-  *
-  *Checks the trackability of the selected target.
-  *
-  *If the target is on the computer's Z level, or both are on station Z
-  *levels, and the target isn't untrackable, return TRUE.
-  *Arguments:
-  **arg1 is the atom being evaluated.
+ *
+ *Checks the trackability of the selected target.
+ *
+ *If the target is on the computer's Z level, or both are on station Z
+ *levels, and the target isn't untrackable, return TRUE.
+ *Arguments:
+ **arg1 is the atom being evaluated.
 */
 /datum/computer_file/program/radar/proc/trackable(atom/movable/signal)
 	if(!signal || !computer)
@@ -131,33 +131,33 @@
 	var/turf/there = get_turf(signal)
 	if(!here || !there)
 		return FALSE //I was still getting a runtime even after the above check while scanning, so fuck it
-	return (there.get_virtual_z_level() == here.get_virtual_z_level())
+	return (there.virtual_z() == here.virtual_z())
 
 /**
-  *
-  *Runs a scan of all the trackable atoms.
-  *
-  *Checks each entry in the GLOB of the specific trackable atoms against
-  *the track() proc, and fill the objects list with lists containing the
-  *atoms' names and REFs. The objects list is handed to the tgui screen
-  *for displaying to, and being selected by, the user. A two second
-  *sleep is used to delay the scan, both for thematical reasons as well
-  *as to limit the load players may place on the server using these
-  *somewhat costly loops.
+ *
+ *Runs a scan of all the trackable atoms.
+ *
+ *Checks each entry in the GLOB of the specific trackable atoms against
+ *the track() proc, and fill the objects list with lists containing the
+ *atoms' names and REFs. The objects list is handed to the tgui screen
+ *for displaying to, and being selected by, the user. A two second
+ *sleep is used to delay the scan, both for thematical reasons as well
+ *as to limit the load players may place on the server using these
+ *somewhat costly loops.
 */
 /datum/computer_file/program/radar/proc/scan()
 	return
 
 /**
-  *
-  *Finds the atom in the appropriate list that the `selected` var indicates
-  *
-  *The `selected` var holds a REF, which is a string. A mob REF may be
-  *something like "mob_209". In order to find the actual atom, we need
-  *to search the appropriate list for the REF string. This is dependant
-  *on the program (Lifeline uses GLOB.human_list, while Fission360 uses
-  *GLOB.poi_list), but the result will be the same; evaluate the string and
-  *return an atom reference.
+ *
+ *Finds the atom in the appropriate list that the `selected` var indicates
+ *
+ *The `selected` var holds a REF, which is a string. A mob REF may be
+ *something like "mob_209". In order to find the actual atom, we need
+ *to search the appropriate list for the REF string. This is dependant
+ *on the program (Lifeline uses GLOB.human_list, while Fission360 uses
+ *GLOB.poi_list), but the result will be the same; evaluate the string and
+ *return an atom reference.
 */
 /datum/computer_file/program/radar/proc/find_atom()
 	return
@@ -174,7 +174,7 @@
 	if(!trackable(signal))
 		program_icon_state = "[initial(program_icon_state)]lost"
 		if(last_icon_state != program_icon_state)
-			computer.update_icon()
+			computer.update_appearance()
 			last_icon_state = program_icon_state
 		return
 
@@ -192,7 +192,7 @@
 			program_icon_state = "[initial(program_icon_state)]far"
 
 	if(last_icon_state != program_icon_state)
-		computer.update_icon()
+		computer.update_appearance()
 		last_icon_state = program_icon_state
 	computer.setDir(get_dir(here_turf, target_turf))
 

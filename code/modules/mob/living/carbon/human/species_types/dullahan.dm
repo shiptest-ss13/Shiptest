@@ -1,30 +1,25 @@
 /datum/species/dullahan
-	name = "Dullahan"
-	id = "dullahan"
+	name = "\improper Dullahan"
+	id = SPECIES_DULLAHAN
+	max_bodypart_count = 5 //No head
 	default_color = "FFFFFF"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 	inherent_traits = list(TRAIT_NOHUNGER,TRAIT_NOBREATH)
-	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None")
+	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", "body_size" = "Normal")
 	use_skintones = TRUE
 	mutantbrain = /obj/item/organ/brain/dullahan
 	mutanteyes = /obj/item/organ/eyes/dullahan
 	mutanttongue = /obj/item/organ/tongue/dullahan
 	mutantears = /obj/item/organ/ears/dullahan
-	limbs_id = "human"
+	examine_limb_id = SPECIES_HUMAN
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | ERT_SPAWN
 
 	var/obj/item/dullahan_relay/myhead
 
-
-/datum/species/dullahan/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return FALSE
-
 /datum/species/dullahan/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	. = ..()
-	H.flags_1 &= ~HEAR_1
+	H.lose_hearing_sensitivity(ORGAN_TRAIT)
 	var/obj/item/bodypart/head/head = H.get_bodypart(BODY_ZONE_HEAD)
 	if(head)
 		head.drop_limb()
@@ -37,7 +32,7 @@
 			D?.Trigger()
 
 /datum/species/dullahan/on_species_loss(mob/living/carbon/human/H)
-	H.flags_1 |= HEAR_1
+	H.become_hearing_sensitive(ORGAN_TRAIT)
 	H.reset_perspective(H)
 	if(myhead)
 		var/obj/item/dullahan_relay/DR = myhead
@@ -114,7 +109,6 @@
 /obj/item/dullahan_relay
 	name = "dullahan relay"
 	var/mob/living/owner
-	flags_1 = HEAR_1
 
 /obj/item/dullahan_relay/Initialize(mapload, mob/living/carbon/human/new_owner)
 	. = ..()
@@ -122,10 +116,11 @@
 		return INITIALIZE_HINT_QDEL
 	owner = new_owner
 	START_PROCESSING(SSobj, src)
-	RegisterSignal(owner, COMSIG_CLICK_SHIFT, .proc/examinate_check)
-	RegisterSignal(src, COMSIG_ATOM_HEARER_IN_VIEW, .proc/include_owner)
-	RegisterSignal(owner, COMSIG_LIVING_REGENERATE_LIMBS, .proc/unlist_head)
-	RegisterSignal(owner, COMSIG_LIVING_REVIVE, .proc/retrieve_head)
+	RegisterSignal(owner, COMSIG_CLICK_SHIFT, PROC_REF(examinate_check))
+	RegisterSignal(src, COMSIG_ATOM_HEARER_IN_VIEW, PROC_REF(include_owner))
+	RegisterSignal(owner, COMSIG_LIVING_REGENERATE_LIMBS, PROC_REF(unlist_head))
+	RegisterSignal(owner, COMSIG_LIVING_REVIVE, PROC_REF(retrieve_head))
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/item/dullahan_relay/process()
 	if(!istype(loc, /obj/item/bodypart/head) || QDELETED(owner))
@@ -161,4 +156,4 @@
 			D.myhead = null
 			owner.gib()
 	owner = null
-	..()
+	return ..()

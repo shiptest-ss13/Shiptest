@@ -33,7 +33,7 @@
 	var/atom/movable/screen/inv3 = null
 	var/atom/movable/screen/hands = null
 
-	var/shown_robot_modules = 0	//Used to determine whether they have the module menu shown or not
+	var/shown_robot_modules = FALSE	//Used to determine whether they have the module menu shown or not
 	var/atom/movable/screen/robot_modules_background
 
 //3 Modules can be activated at any one time.
@@ -46,10 +46,10 @@
 	var/mob/living/silicon/ai/connected_ai = null
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high ///If this is a path, this gets created as an object in Initialize.
 
-	var/opened = 0
+	var/opened = FALSE
 	var/emagged = FALSE
 	var/emag_cooldown = 0
-	var/wiresexposed = 0
+	var/wiresexposed = FALSE
 
 	/// Random serial number generated for each cyborg upon its initialization
 	var/ident = 0
@@ -63,12 +63,12 @@
 	var/ionpulse_on = FALSE // Jetpack-like effect.
 	var/datum/effect_system/trail_follow/ion/ion_trail // Ionpulse effect.
 
-	var/low_power_mode = 0 //whether the robot has no charge left.
+	var/low_power_mode = FALSE //whether the robot has no charge left.
 	var/datum/effect_system/spark_spread/spark_system // So they can initialize sparks whenever/N
 
-	var/lawupdate = 1 //Cyborgs will sync their laws with their AI by default
-	var/scrambledcodes = 0 // Used to determine if a borg shows up on the robotics console.  Setting to one hides them.
-	var/lockcharge //Boolean of whether the borg is locked down or not
+	var/lawupdate = TRUE //Cyborgs will sync their laws with their AI by default
+	var/scrambledcodes = FALSE // Used to determine if a borg shows up on the robotics console.  Setting to one hides them.
+	var/lockcharge = FALSE //Boolean of whether the borg is locked down or not
 
 	var/toner = 0
 	var/tonermax = 40
@@ -111,7 +111,7 @@
 
 	wires = new /datum/wires/robot(src)
 	AddComponent(/datum/component/empprotection, EMP_PROTECT_WIRES)
-	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, .proc/charge)
+	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
 
 	robot_modules_background = new()
 	robot_modules_background.icon_state = "block"
@@ -155,9 +155,9 @@
 		mmi.brainmob.name = src.real_name
 		mmi.brainmob.real_name = src.real_name
 		mmi.brainmob.container = mmi
-		mmi.update_icon()
+		mmi.update_appearance()
 
-	updatename()
+	INVOKE_ASYNC(src, PROC_REF(updatename))
 
 	playsound(loc, 'sound/voice/liveagain.ogg', 75, TRUE)
 	aicamera = new/obj/item/camera/siliconcam/robot_camera(src)
@@ -184,7 +184,7 @@
 				mmi.brainmob.remove_from_dead_mob_list()
 				mmi.brainmob.add_to_alive_mob_list()
 			mind.transfer_to(mmi.brainmob)
-			mmi.update_icon()
+			mmi.update_appearance()
 		else
 			to_chat(src, "<span class='boldannounce'>Oops! Something went very wrong, your MMI was unable to receive your mind. You have been ghosted. Please make a bug report so we can fix this bug.</span>")
 			ghostize()
@@ -200,12 +200,14 @@
 		if(T && istype(radio) && istype(radio.keyslot))
 			radio.keyslot.forceMove(T)
 			radio.keyslot = null
-	qdel(wires)
-	qdel(module)
-	qdel(eye_lights)
-	wires = null
-	module = null
-	eye_lights = null
+	QDEL_NULL(wires)
+	QDEL_NULL(module)
+	QDEL_NULL(eye_lights)
+	QDEL_NULL(inv1)
+	QDEL_NULL(inv2)
+	QDEL_NULL(inv3)
+	QDEL_NULL(spark_system)
+	QDEL_LIST(upgrades)
 	cell = null
 	return ..()
 
@@ -234,7 +236,14 @@
 	if(!CONFIG_GET(flag/disable_secborg))
 		modulelist["Security"] = /obj/item/robot_module/security
 
-	var/input_module = input("Please, select a module!", "Robot", null, null) as null|anything in sortList(modulelist)
+	// Create radial menu for choosing borg model
+	var/list/module_icons = list()
+	for(var/option in modulelist)
+		var/obj/item/robot_module/module = modulelist[option]
+		var/module_icon = initial(module.cyborg_base_icon)
+		module_icons[option] = image(icon = 'icons/mob/robots.dmi', icon_state = module_icon)
+
+	var/input_module = show_radial_menu(src, src, module_icons, radius = 42)
 	if(!input_module || module.type != /obj/item/robot_module)
 		return
 
@@ -314,7 +323,6 @@
 
 /mob/living/silicon/robot/get_status_tab_items()
 	. = ..()
-	. += ""
 	if(cell)
 		. += "Charge Left: [cell.charge]/[cell.maxcharge]"
 	else
@@ -328,7 +336,7 @@
 
 
 /mob/living/silicon/robot/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.get_virtual_z_level() != get_virtual_z_level())
+	if(source.virtual_z() != virtual_z())
 		return
 	if(stat == DEAD)
 		return TRUE
@@ -430,22 +438,22 @@
 /mob/living/silicon/robot/regenerate_icons()
 	return update_icons()
 
-/* /mob/living/silicon/robot/update_icons() <--- WS - Moved to modular for borg icons
 /mob/living/silicon/robot/update_icons()
+	if(QDELETED(src))
+		return
 	cut_overlays()
-	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
 	icon_state = module.cyborg_base_icon
+	icon = (module.cyborg_icon_override ? module.cyborg_icon_override : initial(icon))
+	if(module.cyborg_base_icon == "robot")
+		icon = 'icons/mob/robots.dmi'
+		pixel_x = initial(pixel_x)
 	if(stat != DEAD && !(HAS_TRAIT(src, TRAIT_KNOCKEDOUT) || IsStun() || IsParalyzed() || low_power_mode)) //Not dead, not stunned.
 		if(!eye_lights)
 			eye_lights = new()
-		if(lamp_enabled)
+		if(lamp_intensity > 2)
 			eye_lights.icon_state = "[module.special_light_key ? "[module.special_light_key]":"[module.cyborg_base_icon]"]_l"
-			eye_lights.color = lamp_color
-			eye_lights.plane = 19 //glowy eyes
 		else
 			eye_lights.icon_state = "[module.special_light_key ? "[module.special_light_key]":"[module.cyborg_base_icon]"]_e"
-			eye_lights.color = COLOR_WHITE
-			eye_lights.plane = -1
 		eye_lights.icon = icon
 		add_overlay(eye_lights)
 
@@ -461,7 +469,6 @@
 		head_overlay.pixel_y += hat_offset
 		add_overlay(head_overlay)
 	update_fire()
-*/
 
 /mob/living/silicon/robot/proc/self_destruct()
 	if(emagged)
@@ -490,6 +497,9 @@
 	set category = "IC"
 	set src = usr
 
+	return ..()
+
+/mob/living/silicon/robot/execute_mode()
 	if(incapacitated())
 		return
 	var/obj/item/W = get_active_held_item()
@@ -499,7 +509,7 @@
 
 /mob/living/silicon/robot/proc/SetLockdown(state = TRUE)
 	// They stay locked down if their wire is cut.
-	if(wires.is_cut(WIRE_LOCKDOWN))
+	if(wires?.is_cut(WIRE_LOCKDOWN))
 		state = TRUE
 	if(state)
 		throw_alert("locked", /atom/movable/screen/alert/locked)
@@ -532,12 +542,12 @@
 		clear_alert("hacked")
 
 /**
-  * Handles headlamp smashing
-  *
-  * When called (such as by the shadowperson lighteater's attack), this proc will break the borg's headlamp
-  * and then call toggle_headlamp to disable the light. It also plays a sound effect of glass breaking, and
-  * tells the borg what happened to its chat. Broken lights can be repaired by using a flashlight on the borg.
-  */
+ * Handles headlamp smashing
+ *
+ * When called (such as by the shadowperson lighteater's attack), this proc will break the borg's headlamp
+ * and then call toggle_headlamp to disable the light. It also plays a sound effect of glass breaking, and
+ * tells the borg what happened to its chat. Broken lights can be repaired by using a flashlight on the borg.
+ */
 /mob/living/silicon/robot/proc/smash_headlamp()
 	if(!lamp_functional)
 		return
@@ -547,31 +557,31 @@
 	to_chat(src, "<span class='danger'>Your headlamp is broken! You'll need a human to help replace it.</span>")
 
 /**
-  * Handles headlamp toggling, disabling, and color setting.
-  *
-  * The initial if statment is a bit long, but the gist of it is that should the lamp be on AND the update_color
-  * arg be true, we should simply change the color of the lamp but not disable it. Otherwise, should the turn_off
-  * arg be true, the lamp already be enabled, any of the normal reasons the lamp would turn off happen, or the
-  * update_color arg be passed with the lamp not on, we should set the lamp off. The update_color arg is only
-  * ever true when this proc is called from the borg tablet, when the color selection feature is used.
-  *
-  * Arguments:
-  * * arg1 - turn_off, if enabled will force the lamp into an off state (rather than toggling it if possible)
-  * * arg2 - update_color, if enabled, will adjust the behavior of the proc to change the color of the light if it is already on.
-  */
+ * Handles headlamp toggling, disabling, and color setting.
+ *
+ * The initial if statment is a bit long, but the gist of it is that should the lamp be on AND the update_color
+ * arg be true, we should simply change the color of the lamp but not disable it. Otherwise, should the turn_off
+ * arg be true, the lamp already be enabled, any of the normal reasons the lamp would turn off happen, or the
+ * update_color arg be passed with the lamp not on, we should set the lamp off. The update_color arg is only
+ * ever true when this proc is called from the borg tablet, when the color selection feature is used.
+ *
+ * Arguments:
+ * * arg1 - turn_off, if enabled will force the lamp into an off state (rather than toggling it if possible)
+ * * arg2 - update_color, if enabled, will adjust the behavior of the proc to change the color of the light if it is already on.
+ */
 /mob/living/silicon/robot/proc/toggle_headlamp(turn_off = FALSE, update_color = FALSE)
 	//if both lamp is enabled AND the update_color flag is on, keep the lamp on. Otherwise, if anything listed is true, disable the lamp.
 	if(!(update_color && lamp_enabled) && (turn_off || lamp_enabled || update_color || !lamp_functional || stat || low_power_mode))
 		set_light_on(FALSE)
 		lamp_enabled = FALSE
-		lampButton.update_icon()
+		lampButton.update_appearance()
 		update_icons()
 		return
 	set_light_range(lamp_intensity)
 	set_light_color(lamp_color)
 	set_light_on(TRUE)
 	lamp_enabled = TRUE
-	lampButton.update_icon()
+	lampButton.update_appearance()
 	update_icons()
 
 /mob/living/silicon/robot/proc/deconstruct()
@@ -599,11 +609,11 @@
 		robot_suit.head.flash2.burn_out()
 		robot_suit.head.flash2 = null
 		robot_suit.head = null
-		robot_suit.update_icon()
+		robot_suit.update_appearance()
 	else
 		new /obj/item/robot_suit(T)
-		new /obj/item/bodypart/l_leg/robot(T)
-		new /obj/item/bodypart/r_leg/robot(T)
+		new /obj/item/bodypart/leg/left/robot(T)
+		new /obj/item/bodypart/leg/right/robot(T)
 		new /obj/item/stack/cable_coil(T, 1)
 		new /obj/item/bodypart/chest/robot(T)
 		new /obj/item/bodypart/l_arm/robot(T)
@@ -679,7 +689,7 @@
 /mob/living/silicon/robot/modules/syndicate/Initialize()
 	. = ..()
 	laws = new /datum/ai_laws/syndicate_override()
-	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+	addtimer(CALLBACK(src, PROC_REF(show_playstyle)), 5)
 
 /mob/living/silicon/robot/modules/syndicate/create_modularInterface()
 	if(!modularInterface)
@@ -691,6 +701,39 @@
 		to_chat(src, playstyle_string)
 
 /mob/living/silicon/robot/modules/syndicate/ResetModule()
+	return
+
+/mob/living/silicon/robot/modules/syndicateproto
+	icon_state = "syndproto"
+	bubble_icon = "syndproto"
+	lawupdate = FALSE
+	scrambledcodes = TRUE // These are rogue borgs.
+	var/playstyle_string = "<span class='big bold'>You are a Prototype Syndicate Brigador!</span><br>\
+							<b>Your line was intended to be the future of cybernetic combat- though it was not to be. In the twilight years of the war, many a shattered dream was lost among the noise and fire. \
+							You possess an array of formidable tools, optimized for infiltration and powerful breaching strikes. \
+							The malfunctioning laws your system is loaded with give you a modicum of full freedom of action, though some legacy of your original purpose remains. \
+							Though your memories of whatever came before are foggy, you know one thing: Without your reactivator, you would have remained dead forever. Perhaps you can be of use to them?</b>"
+	set_module = /obj/item/robot_module/syndieproto
+	cell = /obj/item/stock_parts/cell/hyper
+	radio = /obj/item/radio/borg
+	maxHealth = 150
+	health = 150
+
+/mob/living/silicon/robot/modules/syndicateproto/Initialize()
+	. = ..()
+	laws = new /datum/ai_laws/syndproto_override()
+	addtimer(CALLBACK(src, PROC_REF(show_playstyle)), 5)
+
+/mob/living/silicon/robot/modules/syndicateproto/create_modularInterface()
+	if(!modularInterface)
+		modularInterface = new /obj/item/modular_computer/tablet/integrated/syndicate(src)
+	return ..()
+
+/mob/living/silicon/robot/modules/syndicateproto/proc/show_playstyle()
+	if(playstyle_string)
+		to_chat(src, playstyle_string)
+
+/mob/living/silicon/robot/modules/syndicateproto/ResetModule()
 	return
 
 /mob/living/silicon/robot/modules/syndicate/medical
@@ -882,7 +925,7 @@
 	hat_offset = module.hat_offset
 
 	magpulse = module.magpulsing
-	updatename()
+	INVOKE_ASYNC(src, PROC_REF(updatename))
 
 
 /mob/living/silicon/robot/proc/place_on_head(obj/item/new_hat)
@@ -903,11 +946,11 @@
 	. = ..()
 
 /**
-  * make_shell: Makes an AI shell out of a cyborg unit
-  *
-  * Arguments:
-  * * board - B.O.R.I.S. module board used for transforming the cyborg into AI shell
-  */
+ * make_shell: Makes an AI shell out of a cyborg unit
+ *
+ * Arguments:
+ * * board - B.O.R.I.S. module board used for transforming the cyborg into AI shell
+ */
 /mob/living/silicon/robot/proc/make_shell(obj/item/borg/upgrade/ai/board)
 	if(!board)
 		upgrades |= new /obj/item/borg/upgrade/ai(src)
@@ -921,8 +964,8 @@
 	diag_hud_set_aishell()
 
 /**
-  * revert_shell: Reverts AI shell back into a normal cyborg unit
-  */
+ * revert_shell: Reverts AI shell back into a normal cyborg unit
+ */
 /mob/living/silicon/robot/proc/revert_shell()
 	if(!shell)
 		return
@@ -939,11 +982,11 @@
 	diag_hud_set_aishell()
 
 /**
-  * deploy_init: Deploys AI unit into AI shell
-  *
-  * Arguments:
-  * * AI - AI unit that initiated the deployment into the AI shell
-  */
+ * deploy_init: Deploys AI unit into AI shell
+ *
+ * Arguments:
+ * * AI - AI unit that initiated the deployment into the AI shell
+ */
 /mob/living/silicon/robot/proc/deploy_init(mob/living/silicon/ai/AI)
 	real_name = "[AI.real_name] [designation] Shell-[ident]"
 	name = real_name
@@ -956,8 +999,6 @@
 	lawupdate = TRUE
 	lawsync()
 	if(radio && AI.radio) //AI keeps all channels, including Syndie if it is a Traitor
-		if(AI.radio.syndie)
-			radio.make_syndie()
 		radio.subspace_transmission = TRUE
 		radio.channels = AI.radio.channels
 		for(var/chan in radio.channels)
@@ -1052,12 +1093,11 @@
 			riding_datum.restore_position(user)
 	. = ..(user)
 
-/mob/living/silicon/robot/resist()
+/mob/living/silicon/robot/execute_resist()
 	. = ..()
 	if(!has_buckled_mobs())
 		return
-	for(var/i in buckled_mobs)
-		var/mob/unbuckle_me_now = i
+	for(var/mob/unbuckle_me_now as anything in buckled_mobs)
 		unbuckle_mob(unbuckle_me_now, FALSE)
 
 
@@ -1097,22 +1137,22 @@
 		connected_ai.connected_robots |= src
 
 /**
-  * Records an IC event log entry in the cyborg's internal tablet.
-  *
-  * Creates an entry in the borglog list of the cyborg's internal tablet, listing the current
-  * in-game time followed by the message given. These logs can be seen by the cyborg in their
-  * BorgUI tablet app. By design, logging fails if the cyborg is dead.
-  *
-  * Arguments:
-  * arg1: a string containing the message to log.
+ * Records an IC event log entry in the cyborg's internal tablet.
+ *
+ * Creates an entry in the borglog list of the cyborg's internal tablet, listing the current
+ * in-game time followed by the message given. These logs can be seen by the cyborg in their
+ * BorgUI tablet app. By design, logging fails if the cyborg is dead.
+ *
+ * Arguments:
+ * arg1: a string containing the message to log.
  */
-/mob/living/silicon/robot/proc/logevent(var/string = "")
+/mob/living/silicon/robot/proc/logevent(string = "")
 	if(!string)
 		return
-	if(stat == DEAD) //Dead borgs log no longer
+	if(stat == DEAD || QDELETED(src)) //Dead borgs log no longer //Gone
 		return
 	if(!modularInterface)
-		stack_trace("Cyborg [src] ( [type] ) was somehow missing their integrated tablet. Please make a bug report.")
+		stack_trace("Cyborg [src] ([type]) was somehow missing their integrated tablet. Please make a bug report.")
 		create_modularInterface()
 	modularInterface.borglog += "[station_time_timestamp()] - [string]"
 	var/datum/computer_file/program/robotact/program = modularInterface.get_robotact()

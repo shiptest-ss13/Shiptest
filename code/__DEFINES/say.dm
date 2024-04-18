@@ -58,6 +58,9 @@
 
 #define MODE_SING "sing"
 
+#define MODE_CUSTOM_SAY_EMOTE "custom_say"
+#define MODE_CUSTOM_SAY_ERASE_INPUT "erase_input"
+
 //Spans. Robot speech, italics, etc. Applied in compose_message().
 #define SPAN_ROBOT "robot"
 #define SPAN_YELL "yell"
@@ -68,10 +71,7 @@
 #define SPAN_COMMAND "command_headset"
 #define SPAN_CLOWN "clown"
 #define SPAN_SINGING "singing"
-
-//WS Spans - Begin
 #define SPAN_SGA "sga"
-//WS Spans - End
 
 //bitflag #defines for return value of the radio() proc.
 #define ITALICS (1<<0)
@@ -113,3 +113,4 @@
 
 //Used in visible_message_flags, audible_message_flags and runechat_flags
 #define EMOTE_MESSAGE (1<<0)
+#define LOOC_MESSAGE (1<<1)

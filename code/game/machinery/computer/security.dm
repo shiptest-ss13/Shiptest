@@ -30,6 +30,7 @@
 	icon_screen = "seclaptop"
 	icon_keyboard = "laptop_key"
 	pass_flags = PASSTABLE
+	unique_icon = TRUE
 
 //Someone needs to break down the dat += into chunks instead of long ass lines.
 /obj/machinery/computer/secure_data/ui_interact(mob/user)
@@ -189,34 +190,8 @@
 					if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
 						dat += "<font size='4'><b>Security Data</b></font>"
 						dat += "<br>Criminal Status: <A href='?src=[REF(src)];choice=Edit Field;field=criminal'>[active2.fields["criminal"]]</A>"
-						dat += "<br><br>Citations: <A href='?src=[REF(src)];choice=Edit Field;field=citation_add'>Add New</A>"
-
-						dat +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
-						<tr>
-						<th>Crime</th>
-						<th>Fine</th>
-						<th>Author</th>
-						<th>Time Added</th>
-						<th>Amount Due</th>
-						<th>Del</th>
-						</tr>"}
-						for(var/datum/data/crime/c in active2.fields["citation"])
-							var/owed = c.fine - c.paid
-							dat += {"<tr><td>[c.crimeName]</td>
-							<td>[c.fine] cr</td><td>[c.author]</td>
-							<td>[c.time]</td>"}
-							if(owed > 0)
-								dat += "<td>[owed] cr <A href='?src=[REF(src)];choice=Pay;field=citation_pay;cdataid=[c.dataId]'>\[Pay\]</A></td></td>"
-							else
-								dat += "<td>All Paid Off</td>"
-							dat += {"<td>
-							<A href='?src=[REF(src)];choice=Edit  Field;field=citation_delete;cdataid=[c.dataId]'>\[X\]</A>
-							</td>
-							</tr>"}
-						dat += "</table>"
 
 						dat += "<br><br>Crimes: <A href='?src=[REF(src)];choice=Edit Field;field=crim_add'>Add New</A>"
-
 
 						dat +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 						<tr>
@@ -268,9 +243,9 @@ What a mess.*/
 	. = ..()
 	if(.)
 		return .
-	if(!( GLOB.data_core.general.Find(active1) ))
+	if(!(GLOB.data_core.general.Find(active1)))
 		active1 = null
-	if(!( GLOB.data_core.security.Find(active2) ))
+	if(!(GLOB.data_core.security.Find(active2)))
 		active2 = null
 	if(usr.contents.Find(src) || (in_range(src, usr) && isturf(loc)) || issilicon(usr) || isAdminGhostAI(usr))
 		usr.set_machine(src)
@@ -346,45 +321,25 @@ What a mess.*/
 							active2 = E
 					screen = 3
 
-			if("Pay")
-				for(var/datum/data/crime/p in active2.fields["citation"])
-					if(p.dataId == text2num(href_list["cdataid"]))
-						var/obj/item/holochip/C = usr.is_holding_item_of_type(/obj/item/holochip)
-						if(C && istype(C))
-							var/pay = C.get_item_credit_value()
-							if(!pay)
-								to_chat(usr, "<span class='warning'>[C] doesn't seem to be worth anything!</span>")
-							else
-								var/diff = p.fine - p.paid
-								GLOB.data_core.payCitation(active2.fields["id"], text2num(href_list["cdataid"]), pay)
-								to_chat(usr, "<span class='notice'>You have paid [pay] credit\s towards your fine.</span>")
-								if (pay == diff || pay > diff || pay >= diff)
-									investigate_log("Citation Paid off: <strong>[p.crimeName]</strong> Fine: [p.fine] | Paid off by [key_name(usr)]", INVESTIGATE_RECORDS)
-									to_chat(usr, "<span class='notice'>The fine has been paid in full.</span>")
-								qdel(C)
-								playsound(src, "terminal_type", 25, FALSE)
-						else
-							to_chat(usr, "<span class='warning'>Fines can only be paid with holochips!</span>")
-
 			if("Print Record")
-				if(!( printing ))
+				if(!(printing))
 					printing = 1
 					GLOB.data_core.securityPrintCount++
 					playsound(loc, 'sound/items/poster_being_created.ogg', 100, TRUE)
 					sleep(30)
-					var/obj/item/paper/P = new /obj/item/paper( loc )
-					P.info = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
+					var/obj/item/paper/printed_paper = new /obj/item/paper(loc)
+					var/final_paper_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
 					if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))
-						P.info += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-						P.info += "\nSpecies: [active1.fields["species"]]<BR>"
-						P.info += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+						final_paper_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
+						final_paper_text += "\nSpecies: [active1.fields["species"]]<BR>"
+						final_paper_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
 					else
-						P.info += "<B>General Record Lost!</B><BR>"
+						final_paper_text += "<B>General Record Lost!</B><BR>"
 					if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
-						P.info += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
+						final_paper_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
 
-						P.info += "<BR>\n<BR>\nCrimes:<BR>\n"
-						P.info +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
+						final_paper_text += "<BR>\n<BR>\nCrimes:<BR>\n"
+						final_paper_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
 <th>Crime</th>
 <th>Details</th>
@@ -392,27 +347,28 @@ What a mess.*/
 <th>Time Added</th>
 </tr>"}
 						for(var/datum/data/crime/c in active2.fields["crim"])
-							P.info += "<tr><td>[c.crimeName]</td>"
-							P.info += "<td>[c.crimeDetails]</td>"
-							P.info += "<td>[c.author]</td>"
-							P.info += "<td>[c.time]</td>"
-							P.info += "</tr>"
-						P.info += "</table>"
+							final_paper_text += "<tr><td>[c.crimeName]</td>"
+							final_paper_text += "<td>[c.crimeDetails]</td>"
+							final_paper_text += "<td>[c.author]</td>"
+							final_paper_text += "<td>[c.time]</td>"
+							final_paper_text += "</tr>"
+						final_paper_text += "</table>"
 
-						P.info += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
+						final_paper_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
-							P.info += text("[]<BR>", active2.fields[text("com_[]", counter)])
+							final_paper_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
 							counter++
-						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, active1.fields["name"])
+						printed_paper.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, active1.fields["name"])
 					else
-						P.info += "<B>Security Record Lost!</B><BR>"
-						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, "Record Lost")
-					P.info += "</TT>"
-					P.update_icon()
+						final_paper_text += "<B>Security Record Lost!</B><BR>"
+						printed_paper.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, "Record Lost")
+					final_paper_text += "</TT>"
+					printed_paper.add_raw_text(final_paper_text)
+					printed_paper.update_appearance()
 					printing = null
 			if("Print Poster")
-				if(!( printing ))
+				if(!(printing))
 					var/wanted_name = stripped_input(usr, "Please enter an alias for the criminal:", "Print Wanted Poster", active1.fields["name"])
 					if(wanted_name)
 						var/default_description = "A poster declaring [wanted_name] to be a dangerous individual, wanted by Nanotrasen. Report any sightings to security immediately."
@@ -435,7 +391,7 @@ What a mess.*/
 								new /obj/item/poster/wanted(loc, photo.picture.picture_image, wanted_name, info, headerText)
 							printing = 0
 			if("Print Missing")
-				if(!( printing ))
+				if(!(printing))
 					var/missing_name = stripped_input(usr, "Please enter an alias for the missing person:", "Print Missing Persons Poster", active1.fields["name"])
 					if(missing_name)
 						var/default_description = "A poster declaring [missing_name] to be a missing individual, missed by Nanotrasen. Report any sightings to security immediately."
@@ -467,7 +423,7 @@ What a mess.*/
 				temp = "All Security records deleted."
 
 			if("Add Entry")
-				if(!( istype(active2, /datum/data/record) ))
+				if(!(istype(active2, /datum/data/record)))
 					return
 				var/a2 = active2
 				var/t1 = stripped_multiline_input("Add Comment:", "Secure. records", null, null)
@@ -476,7 +432,7 @@ What a mess.*/
 				var/counter = 1
 				while(active2.fields[text("com_[]", counter)])
 					counter++
-				active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [] [], []<BR>[]", src.authenticated, src.rank, station_time_timestamp(), time2text(world.realtime, "MMM DD"), GLOB.year_integer+540, t1)
+				active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [], []<BR>[]", src.authenticated, src.rank, station_time_timestamp(), sector_datestamp(shortened = TRUE), t1)
 
 			if("Delete Record (ALL)")
 				if(active1)
@@ -495,7 +451,7 @@ What a mess.*/
 					active2.fields[text("com_[]", href_list["del_c"])] = "<B>Deleted</B>"
 //RECORD CREATE
 			if("New Record (Security)")
-				if((istype(active1, /datum/data/record) && !( istype(active2, /datum/data/record) )))
+				if((istype(active1, /datum/data/record) && !(istype(active2, /datum/data/record))))
 					var/datum/data/record/R = new /datum/data/record()
 					R.fields["name"] = active1.fields["name"]
 					R.fields["id"] = active1.fields["id"]
@@ -675,45 +631,6 @@ What a mess.*/
 									return
 								GLOB.data_core.addCrimeDetails(active1.fields["id"], href_list["cdataid"], t1)
 								investigate_log("New Crime details: [t1] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-					if("citation_add")
-						if(istype(active1, /datum/data/record))
-							var/maxFine = CONFIG_GET(number/maxfine)
-
-							var/t1 = stripped_input(usr, "Please input citation crime:", "Secure. records", "", null)
-							var/fine = FLOOR(input(usr, "Please input citation fine, up to [maxFine]:", "Secure. records", 50) as num|null, 1)
-
-							if (isnull(fine))
-								return
-							fine = min(fine, maxFine)
-
-							if(fine < 0)
-								to_chat(usr, "<span class='warning'>You're pretty sure that's not how money works.</span>")
-								return
-
-							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
-								return
-
-							var/crime = GLOB.data_core.createCrimeEntry(t1, "", authenticated, station_time_timestamp(), fine)
-							for (var/obj/item/pda/P in GLOB.PDAs)
-								if(P.owner == active1.fields["name"])
-									var/message = "You have been fined [fine] credits for '[t1]'. Fines may be paid at security."
-									var/datum/signal/subspace/messaging/pda/signal = new(src, list(
-										"name" = "Security Citation",
-										"job" = "Citation Server",
-										"message" = message,
-										"targets" = list("[P.owner] ([P.ownjob])"),
-										"automated" = 1
-									))
-									signal.send_to_receivers()
-									usr.log_message("(PDA: Citation Server) sent \"[message]\" to [signal.format_target()]", LOG_PDA)
-							GLOB.data_core.addCitation(active1.fields["id"], crime)
-							investigate_log("New Citation: <strong>[t1]</strong> Fine: [fine] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-					if("citation_delete")
-						if(istype(active1, /datum/data/record))
-							if(href_list["cdataid"])
-								if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
-									return
-								GLOB.data_core.removeCitation(active1.fields["id"], href_list["cdataid"])
 					if("notes")
 						if(istype(active2, /datum/data/record))
 							var/t1 = stripped_input(usr, "Please summarize notes:", "Secure. records", active2.fields["notes"], null)

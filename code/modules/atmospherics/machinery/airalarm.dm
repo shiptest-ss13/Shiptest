@@ -44,6 +44,8 @@
 	icon = 'icons/obj/monitors.dmi'
 	icon_state = "alarm_bitem"
 	result_path = /obj/machinery/airalarm
+	pixel_shift = 28
+	inverse_pixel_shift = TRUE
 
 #define AALARM_MODE_SCRUBBING 1
 #define AALARM_MODE_VENTING 2 //makes draught
@@ -61,16 +63,26 @@
 	name = "air alarm"
 	desc = "A machine that monitors atmosphere levels. Goes off if the area is dangerous."
 	icon = 'icons/obj/monitors.dmi'
-	icon_state = "alarm0"
+	icon_state = "alarm"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 4
-	active_power_usage = 8
+	active_power_usage = 1200
 	power_channel = AREA_USAGE_ENVIRON
 	//req_access = list(ACCESS_ATMOSPHERICS)
 	max_integrity = 250
 	integrity_failure = 0.33
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 30)
 	resistance_flags = FIRE_PROOF
+	clicksound = 'sound/machines/terminal_select.ogg'
+	req_ship_access = TRUE
+
+	//Heating System
+	var/heating_manage = TRUE
+	var/heating_current_mode = "Idle"
+	var/heating_temp_inc = 0.5
+	var/heating_temp_minvalue = 288.15
+	var/heating_temp_maxvalue = 303.15
+	var/heating_temp_setpoint = T20C
 
 	FASTDMM_PROP(\
 		set_instance_vars(\
@@ -79,6 +91,8 @@
 		),\
 		dir_amount = 4\
 	)
+
+	COOLDOWN_DECLARE(decomp_alarm)
 
 	var/danger_level = 0
 	var/mode = AALARM_MODE_SCRUBBING
@@ -98,7 +112,6 @@
 		GAS_O2						= new/datum/tlv(16, 19, 40, 50), // Partial pressure, kpa
 		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
 		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
-		GAS_MIASMA					= new/datum/tlv/(-1, -1, 15, 30),
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
@@ -118,7 +131,6 @@
 		GAS_O2						= new/datum/tlv/no_checks,
 		GAS_N2						= new/datum/tlv/no_checks,
 		GAS_CO2						= new/datum/tlv/no_checks,
-		GAS_MIASMA					= new/datum/tlv/no_checks,
 		GAS_PLASMA					= new/datum/tlv/no_checks,
 		GAS_NITROUS					= new/datum/tlv/no_checks,
 		GAS_BZ						= new/datum/tlv/no_checks,
@@ -130,6 +142,7 @@
 		GAS_PLUOXIUM				= new/datum/tlv/no_checks,
 		GAS_FREON					= new/datum/tlv/no_checks
 	)
+	heating_manage = FALSE
 
 /obj/machinery/airalarm/kitchen_cold_room // Kitchen cold rooms start off at -80°C or 193.15°K.
 	TLV = list(
@@ -138,7 +151,6 @@
 		GAS_O2						= new/datum/tlv(16, 19, 135, 140), // Partial pressure, kpa
 		GAS_N2						= new/datum/tlv(-1, -1, 1000, 1000),
 		GAS_CO2						= new/datum/tlv(-1, -1, 5, 10),
-		GAS_MIASMA					= new/datum/tlv/(-1, -1, 2, 5),
 		GAS_PLASMA					= new/datum/tlv/dangerous,
 		GAS_NITROUS					= new/datum/tlv/dangerous,
 		GAS_BZ						= new/datum/tlv/dangerous,
@@ -150,6 +162,7 @@
 		GAS_PLUOXIUM				= new/datum/tlv(-1, -1, 1000, 1000), // Unlike oxygen, pluoxium does not fuel plasma/tritium fires
 		GAS_FREON					=  new/datum/tlv/dangerous
 	)
+	heating_manage = FALSE
 
 /obj/machinery/airalarm/unlocked
 	locked = FALSE
@@ -179,28 +192,21 @@
 /obj/machinery/airalarm/away //general away mission access
 	req_access = list(ACCESS_AWAY_GENERAL)
 
-/obj/machinery/airalarm/directional/north //Pixel offsets get overwritten on New()
-	dir = SOUTH
-	pixel_y = 24
-
-/obj/machinery/airalarm/directional/south
-	dir = NORTH
-	pixel_y = -24
-
-/obj/machinery/airalarm/directional/east
-	dir = WEST
-	pixel_x = 24
-
-/obj/machinery/airalarm/directional/west
-	dir = EAST
-	pixel_x = -24
+MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 
 //all air alarms in area are connected via magic
 /area
 	var/list/air_vent_names = list()
-	var/list/air_scrub_names = list()
+	var/list/air_vent_ids = list()
 	var/list/air_vent_info = list()
+
+	var/list/air_scrub_names = list()
+	var/list/air_scrub_ids = list()
 	var/list/air_scrub_info = list()
+
+	var/list/dp_air_vent_names = list()
+	var/list/dp_air_vent_ids = list()
+	var/list/dp_air_vent_info = list()
 
 /obj/machinery/airalarm/New(loc, ndir, nbuild)
 	..()
@@ -211,13 +217,11 @@
 	if(nbuild)
 		buildstage = 0
 		panel_open = TRUE
-		pixel_x = (dir & 3)? 0 : (dir == 4 ? -24 : 24)
-		pixel_y = (dir & 3)? (dir == 1 ? -24 : 24) : 0
 
 	if(name == initial(name))
 		name = "[get_area_name(src)] Air Alarm"
 
-	update_icon()
+	update_appearance()
 
 /obj/machinery/airalarm/Destroy()
 	SSradio.remove_object(src, frequency)
@@ -258,7 +262,7 @@
 /obj/machinery/airalarm/ui_data(mob/user)
 	var/data = list(
 		"locked" = locked,
-		"siliconUser" = user.has_unlimited_silicon_privilege,
+		"siliconUser" = user.has_unlimited_silicon_privilege && check_ship_ai_access(user),
 		"emagged" = (obj_flags & EMAGGED ? 1 : 0),
 		"danger_level" = danger_level,
 	)
@@ -266,6 +270,13 @@
 	var/area/A = get_area(src)
 	data["atmos_alarm"] = A.atmosalm
 	data["fire_alarm"] = A.fire
+	data["heating"] = list(
+		"mode" = heating_current_mode,
+		"enabled" = heating_manage,
+		"setPoint" = heating_temp_setpoint,
+		"minValue" = heating_temp_minvalue,
+		"maxValue" = heating_temp_maxvalue
+	)
 
 	var/turf/T = get_turf(src)
 	var/datum/gas_mixture/environment = T.return_air()
@@ -303,7 +314,9 @@
 
 	if(!locked || user.has_unlimited_silicon_privilege)
 		data["vents"] = list()
-		for(var/id_tag in A.air_vent_names)
+		for(var/id_tag in A.air_vent_ids)
+			if (id_tag == null)
+				continue
 			var/long_name = A.air_vent_names[id_tag]
 			var/list/info = A.air_vent_info[id_tag]
 			if(!info || info["frequency"] != frequency || info["has_aac"])
@@ -322,7 +335,9 @@
 					"intdefault"= (info["internal"] == 0)
 				))
 		data["scrubbers"] = list()
-		for(var/id_tag in A.air_scrub_names)
+		for(var/id_tag in A.air_scrub_ids)
+			if (id_tag == null)
+				continue
 			var/long_name = A.air_scrub_names[id_tag]
 			var/list/info = A.air_scrub_info[id_tag]
 			if(!info || info["frequency"] != frequency)
@@ -443,7 +458,16 @@
 			if(A.atmosalert(FALSE, src))
 				post_alert(0)
 			. = TRUE
-	update_icon()
+		if("heat_mode")
+			investigate_log("has had its heat mode by [key_name(usr)]",INVESTIGATE_ATMOS)
+			airalarm_toggleheat()
+			. = TRUE
+		if("heat_setpoint")
+			heating_temp_setpoint = params["setPoint"]
+			investigate_log("has had its setpoint changed to [heating_temp_setpoint] by [key_name(usr)]",INVESTIGATE_ATMOS)
+			. = TRUE
+
+	update_appearance()
 
 
 /obj/machinery/airalarm/proc/reset(wire)
@@ -451,7 +475,7 @@
 		if(WIRE_POWER)
 			if(!wires.is_cut(WIRE_POWER))
 				shorted = FALSE
-				update_icon()
+				update_appearance()
 		if(WIRE_AI)
 			if(!wires.is_cut(WIRE_AI))
 				aidisabled = FALSE
@@ -531,7 +555,6 @@
 					"power" = 1,
 					"set_filters" = list(
 						GAS_CO2,
-						GAS_MIASMA,
 						GAS_PLASMA,
 						GAS_H2O,
 						GAS_HYPERNOB,
@@ -633,20 +656,33 @@
 				icon_state = "alarm_b2"
 			if(0)
 				icon_state = "alarm_b1"
-		return
+		return ..()
 
+	icon_state = "alarm"
+	return ..()
+
+/obj/machinery/airalarm/update_overlays()
+	. = ..()
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
-		icon_state = "alarmp"
 		return
-
 	var/area/A = get_area(src)
-	switch(max(danger_level, A.atmosalm))
-		if(0)
-			icon_state = "alarm0"
-		if(1)
-			icon_state = "alarm2" //yes, alarm2 is yellow alarm
-		if(2)
-			icon_state = "alarm1"
+	var/perc_danger_level = max(danger_level, A.atmosalm)
+	if(!panel_open)
+		var/emissive_state
+		switch(perc_danger_level)
+			if(0)
+				emissive_state = "alarm0"
+			if(1)
+				emissive_state = "alarm1"
+			if(2)
+				emissive_state = "alarm2"
+
+		. += mutable_appearance(icon, emissive_state)
+		. += mutable_appearance(icon, "light_emissive", layer, EMISSIVE_PLANE)
+
+	if(perc_danger_level) //When there's any danger level, light up the "AIR" sign too
+		. += mutable_appearance(icon, "alarm_sign")
+		. += mutable_appearance(icon, "alarm_sign", layer, EMISSIVE_PLANE)
 
 /obj/machinery/airalarm/process()
 	if((machine_stat & (NOPOWER|BROKEN)) || shorted)
@@ -683,7 +719,55 @@
 	if(mode == AALARM_MODE_REPLACEMENT && environment_pressure < ONE_ATMOSPHERE * 0.05)
 		mode = AALARM_MODE_SCRUBBING
 		apply_mode(src)
+	if(heating_manage)
+		airalarm_heat()
 
+/obj/machinery/airalarm/proc/airalarm_toggleheat()
+	if(heating_manage)
+		if(heating_current_mode == "Heat")
+			visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
+			heating_current_mode = "Idle"
+			heating_manage = FALSE
+			return
+		else
+			heating_manage = FALSE
+			return
+	else
+		heating_manage = TRUE
+
+/obj/machinery/airalarm/proc/airalarm_heat()
+	var/wanted_mode = ""
+	var/turf/open/location = get_turf(src)
+	var/datum/gas_mixture/environment = location.return_air()
+	if(!isopenturf(get_turf(src)))
+		return
+	if(environment.return_temperature() >= (heating_temp_setpoint) & heating_current_mode == "Idle") // Quick kill the proc if not heating
+		return
+	if(environment.return_temperature() < (heating_temp_setpoint)) //Start heating
+		wanted_mode = "Heat"
+
+	if(environment.return_temperature() > (heating_temp_setpoint + 2)) //Allow for some over run, to stop flip-floping
+		wanted_mode = "Idle"
+
+	if(wanted_mode == "Idle" & heating_current_mode == "Heat")
+		visible_message("<span class='notice'>The air alarm makes a quiet click as it stops heating the area</span>")
+		playsound(src, 'sound/machines/terminal_off.ogg', 40)
+		heating_current_mode = "Idle"
+		use_power = IDLE_POWER_USE
+		return
+
+	if(wanted_mode == "Heat" & heating_current_mode == "Idle")
+		visible_message("<span class='notice'>The air alarm makes a quiet click as it starts heating the area</span>")
+		playsound(src, 'sound/machines/terminal_on.ogg', 40)
+		heating_current_mode = "Heat"
+		use_power = ACTIVE_POWER_USE
+
+	if(heating_current_mode == "Heat")
+		var/temperature = environment.return_temperature()
+		environment.adjust_heat(temperature += heating_temp_inc)
+
+	location.air = environment
+	location.air_update_turf(TRUE)
 
 /obj/machinery/airalarm/proc/post_alert(alert_level)
 	var/datum/radio_frequency/frequency = SSradio.return_frequency(alarm_frequency)
@@ -713,11 +797,11 @@
 	var/new_area_danger_level = 0
 	for(var/obj/machinery/airalarm/AA in A)
 		if (!(AA.machine_stat & (NOPOWER|BROKEN)) && !AA.shorted)
-			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0,1)
+			new_area_danger_level = clamp(max(new_area_danger_level, AA.danger_level), 0, 2)
 	if(A.atmosalert(new_area_danger_level,src)) //if area was in normal state or if area was in alert state
 		post_alert(new_area_danger_level)
 
-	update_icon()
+	update_appearance()
 
 /obj/machinery/airalarm/attackby(obj/item/W, mob/user, params)
 	switch(buildstage)
@@ -727,13 +811,13 @@
 				to_chat(user, "<span class='notice'>You cut the final wires.</span>")
 				new /obj/item/stack/cable_coil(loc, 5)
 				buildstage = 1
-				update_icon()
+				update_appearance()
 				return
 			else if(W.tool_behaviour == TOOL_SCREWDRIVER)  // Opening that Air Alarm up.
 				W.play_tool_sound(src)
 				panel_open = !panel_open
 				to_chat(user, "<span class='notice'>The wires have been [panel_open ? "exposed" : "unexposed"].</span>")
-				update_icon()
+				update_appearance()
 				return
 			else if(istype(W, /obj/item/card/id) || istype(W, /obj/item/pda))// trying to unlock the interface with an ID card
 				togglelock(user)
@@ -749,10 +833,10 @@
 				if (W.use_tool(src, user, 20))
 					if (buildstage == 1)
 						to_chat(user, "<span class='notice'>You remove the air alarm electronics.</span>")
-						new /obj/item/electronics/airalarm( src.loc )
+						new /obj/item/electronics/airalarm(src.loc)
 						playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 						buildstage = 0
-						update_icon()
+						update_appearance()
 				return
 
 			if(istype(W, /obj/item/stack/cable_coil))
@@ -773,14 +857,14 @@
 						shorted = 0
 						post_alert(0)
 						buildstage = 2
-						update_icon()
+						update_appearance()
 				return
 		if(0)
 			if(istype(W, /obj/item/electronics/airalarm))
 				if(user.temporarilyRemoveItemFromInventory(W))
 					to_chat(user, "<span class='notice'>You insert the circuit.</span>")
 					buildstage = 1
-					update_icon()
+					update_appearance()
 					qdel(W)
 				return
 
@@ -791,13 +875,13 @@
 				user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
 				"<span class='notice'>You adapt an air alarm circuit and slot it into the assembly.</span>")
 				buildstage = 1
-				update_icon()
+				update_appearance()
 				return
 
 			if(W.tool_behaviour == TOOL_WRENCH)
 				to_chat(user, "<span class='notice'>You detach \the [src] from the wall.</span>")
 				W.play_tool_sound(src)
-				new /obj/item/wallframe/airalarm( user.loc )
+				new /obj/item/wallframe/airalarm(user.loc)
 				qdel(src)
 				return
 
@@ -814,7 +898,7 @@
 			user.visible_message("<span class='notice'>[user] fabricates a circuit and places it into [src].</span>", \
 			"<span class='notice'>You adapt an air alarm circuit and slot it into the assembly.</span>")
 			buildstage = 1
-			update_icon()
+			update_appearance()
 			return TRUE
 	return FALSE
 
@@ -852,6 +936,12 @@
 			I.obj_integrity = I.max_integrity * 0.5
 		new /obj/item/stack/cable_coil(loc, 3)
 	qdel(src)
+
+/obj/machinery/airalarm/proc/handle_decomp_alarm()
+	if(!COOLDOWN_FINISHED(src, decomp_alarm))
+		return
+	playsound(loc, 'sound/machines/FireAlarm.ogg', 75)
+	COOLDOWN_START(src, decomp_alarm, 1 SECONDS)
 
 #undef AALARM_MODE_SCRUBBING
 #undef AALARM_MODE_VENTING

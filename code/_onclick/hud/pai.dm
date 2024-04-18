@@ -92,16 +92,6 @@
 		to_chat(src, "<span class='warning'>You are not being carried by anyone!</span>")
 		return 0
 
-/atom/movable/screen/pai/crew_manifest
-	name = "Crew Manifest"
-	icon_state = "manifest"
-
-/atom/movable/screen/pai/crew_manifest/Click()
-	if(!..())
-		return
-	var/mob/living/silicon/pai/pAI = usr
-	pAI.ai_roster()
-
 /atom/movable/screen/pai/state_laws
 	name = "State Laws"
 	icon_state = "state_laws"
@@ -207,11 +197,6 @@
 // Host Monitor
 	using = new /atom/movable/screen/pai/host_monitor()
 	using.screen_loc = ui_pai_host_monitor
-	static_inventory += using
-
-// Crew Manifest
-	using = new /atom/movable/screen/pai/crew_manifest()
-	using.screen_loc = ui_pai_crew_manifest
 	static_inventory += using
 
 // Laws

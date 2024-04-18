@@ -16,7 +16,6 @@
 	see_in_dark = 5
 	speak_chance = 1
 	turns_per_move = 10
-	can_be_held = TRUE
 	var/turns_since_scan = 0
 	var/obj/movement_target
 
@@ -30,10 +29,10 @@
 		turns_since_scan++
 		if(turns_since_scan > 5)
 			turns_since_scan = 0
-			if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc) ))
+			if((movement_target) && !(isturf(movement_target.loc) || ishuman(movement_target.loc)))
 				movement_target = null
 				stop_automated_movement = 0
-			if( !movement_target || !(movement_target.loc in oview(src, 3)) )
+			if(!movement_target || !(movement_target.loc in oview(src, 3)))
 				movement_target = null
 				stop_automated_movement = 0
 				for(var/obj/item/reagent_containers/food/snacks/S in oview(src,3))
@@ -68,13 +67,13 @@
 
 					if(isturf(movement_target.loc))
 						movement_target.attack_animal(src)
-					else if(ishuman(movement_target.loc) )
+					else if(ishuman(movement_target.loc))
 						if(prob(20))
 							manual_emote("stares at [movement_target.loc]'s [movement_target] with a sad puppy-face")
 
 		if(prob(1))
 			manual_emote(pick("dances around.","chases its tail!"))
-			INVOKE_ASYNC(GLOBAL_PROC, .proc/dance_rotate, src)
+			INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(dance_rotate), src)
 
 //Corgis and pugs are now under one dog subtype
 
@@ -138,6 +137,7 @@
 
 /mob/living/simple_animal/pet/dog/Initialize()
 	. = ..()
+	ADD_TRAIT(src, TRAIT_HOLDABLE, INNATE_TRAIT)
 	var/dog_area = get_area(src)
 	for(var/obj/structure/bed/dogbed/D in dog_area)
 		if(!D.owner)
@@ -318,7 +318,7 @@
 /mob/living/simple_animal/pet/dog/corgi/proc/place_on_head(obj/item/item_to_add, mob/user)
 
 	if(istype(item_to_add, /obj/item/grenade/c4)) // last thing he ever wears, I guess
-		INVOKE_ASYNC(item_to_add, /obj/item.proc/afterattack, src, user, 1)
+		INVOKE_ASYNC(item_to_add, TYPE_PROC_REF(/obj/item, afterattack), src, user, 1)
 		return
 
 	if(inventory_head)

@@ -55,7 +55,7 @@
 		core.overmind = src
 		blobs_legit += src
 		blob_core = core
-		core.update_icon()
+		core.update_appearance()
 	update_health_hud()
 	placed = 1
 	return 1
@@ -181,7 +181,7 @@
 	if(LAZYLEN(candidates)) //if we got at least one candidate, they're a blobbernaut now.
 		B.max_integrity = initial(B.max_integrity) * 0.25 //factories that produced a blobbernaut have much lower health
 		B.obj_integrity = min(B.obj_integrity, B.max_integrity)
-		B.update_icon()
+		B.update_appearance()
 		B.visible_message("<span class='warning'><b>The blobbernaut [pick("rips", "tears", "shreds")] its way out of the factory blob!</b></span>")
 		playsound(B.loc, 'sound/effects/splat.ogg', 50, TRUE)
 		var/mob/living/simple_animal/hostile/blob/blobbernaut/blobber = new /mob/living/simple_animal/hostile/blob/blobbernaut(get_turf(B))
@@ -254,12 +254,13 @@
 		to_chat(src, "<span class='notice'>Gained [B.point_return] resources from removing \the [B].</span>")
 	qdel(B)
 
-/mob/camera/blob/verb/expand_blob_power()
-	set category = "Blob"
-	set name = "Expand/Attack Blob ([BLOB_SPREAD_COST])"
-	set desc = "Attempts to create a new blob in this tile. If the tile isn't clear, instead attacks it, damaging mobs and objects and refunding [BLOB_ATTACK_REFUND] points."
-	var/turf/T = get_turf(src)
-	expand_blob(T)
+// commented out to fix errors with non-constant name/desc. Do we even need this code?
+// /mob/camera/blob/verb/expand_blob_power()
+// 	set category = "Blob"
+// 	set name = "Expand/Attack Blob ([BLOB_SPREAD_COST])"
+// 	set desc = "Attempts to create a new blob in this tile. If the tile isn't clear, instead attacks it, damaging mobs and objects and refunding [BLOB_ATTACK_REFUND] points."
+// 	var/turf/T = get_turf(src)
+// 	expand_blob(T)
 
 /mob/camera/blob/proc/expand_blob(turf/T)
 	if(world.time < last_attack)

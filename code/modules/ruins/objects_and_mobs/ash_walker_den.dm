@@ -19,6 +19,7 @@
 	var/datum/team/ashwalkers/ashies
 	var/last_act = 0
 	var/init_zlevel = 0		//This is my home, I refuse to settle anywhere else.
+	var/datum/linked_objective
 
 /obj/structure/lavaland/ash_walker/Initialize()
 	.=..()
@@ -26,8 +27,16 @@
 	ashies = new /datum/team/ashwalkers()
 	var/datum/objective/protect_object/objective = new
 	objective.set_target(src)
+	linked_objective = objective
 	ashies.objectives += objective
 	START_PROCESSING(SSprocessing, src)
+
+/obj/structure/lavaland/ash_walker/Destroy()
+	ashies.objectives -= linked_objective
+	ashies = null
+	QDEL_NULL(linked_objective)
+	STOP_PROCESSING(SSprocessing, src)
+	return ..()
 
 /obj/structure/lavaland/ash_walker/deconstruct(disassembled)
 	new /obj/item/assembly/signaler/anomaly (get_step(loc, pick(GLOB.alldirs)))
@@ -58,7 +67,7 @@
 					deadmind = H.get_ghost(FALSE, TRUE)
 				to_chat(deadmind, "Your body has been returned to the nest. You are being remade anew, and will awaken shortly. </br><b>Your memories will remain intact in your new body, as your soul is being salvaged</b>")
 				SEND_SOUND(deadmind, sound('sound/magic/enter_blood.ogg',volume=100))
-				addtimer(CALLBACK(src, .proc/remake_walker, H.mind, H.real_name), 20 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(remake_walker), H.mind, H.real_name), 20 SECONDS)
 				new /obj/effect/gibspawner/generic(get_turf(H))
 				qdel(H)
 				return
@@ -69,12 +78,6 @@
 				meat_counter++
 			visible_message("<span class='warning'>Serrated tendrils eagerly pull [H] to [src], tearing the body apart as its blood seeps over the eggs.</span>")
 			playsound(get_turf(src),'sound/magic/demon_consume.ogg', 100, TRUE)
-			var/deliverykey = H.fingerprintslast //key of whoever brought the body
-			var/mob/living/deliverymob = get_mob_by_key(deliverykey) //mob of said key
-			//there is a 40% chance that the Lava Lizard unlocks their respawn with each sacrifice
-			if(deliverymob && (deliverymob.mind?.has_antag_datum(/datum/antagonist/ashwalker)) && (deliverykey in ashies.players_spawned) && (prob(40)))
-				to_chat(deliverymob, "<span class='warning'><b>The Necropolis is pleased with your sacrifice. You feel confident your existence after death is secure.</b></span>")
-				ashies.players_spawned -= deliverykey
 			H.gib()
 			obj_integrity = min(obj_integrity + max_integrity*0.05,max_integrity)//restores 5% hp of tendril
 			for(var/mob/living/L in view(src, 5))
@@ -83,7 +86,7 @@
 				else
 					SEND_SIGNAL(L, COMSIG_ADD_MOOD_EVENT, "oogabooga", /datum/mood_event/sacrifice_bad)
 
-/obj/structure/lavaland/ash_walker/proc/remake_walker(var/datum/mind/oldmind, var/oldname)
+/obj/structure/lavaland/ash_walker/proc/remake_walker(datum/mind/oldmind, oldname)
 	var/mob/living/carbon/human/M = new /mob/living/carbon/human(get_step(loc, pick(GLOB.alldirs)))
 	M.set_species(/datum/species/lizard/ashwalker/kobold) //WS Edit - Kobold
 	M.real_name = oldname

@@ -100,7 +100,6 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	singular_name = "diamond"
 	sheettype = "diamond"
 	custom_materials = list(/datum/material/diamond=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
 	grind_results = list(/datum/reagent/carbon = 20)
 	point_value = 25
 	merge_type = /obj/item/stack/sheet/mineral/diamond
@@ -138,7 +137,6 @@ GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	singular_name = "uranium sheet"
 	sheettype = "uranium"
 	custom_materials = list(/datum/material/uranium=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
 	grind_results = list(/datum/reagent/uranium = 20)
 	point_value = 20
 	merge_type = /obj/item/stack/sheet/mineral/uranium
@@ -182,10 +180,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/plasma
 	material_type = /datum/material/plasma
 	walltype = /turf/closed/wall/mineral/plasma
-
-/obj/item/stack/sheet/mineral/plasma/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return TOXLOSS//dont you kids know that stuff is toxic?
 
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	new/datum/stack_recipe("plasma door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
@@ -238,6 +232,7 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 GLOBAL_LIST_INIT(gold_recipes, list ( \
 	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar/gold, 3), \
 	new/datum/stack_recipe("golden door", /obj/structure/mineral_door/gold, 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("chemical crate", /obj/structure/closet/crate/chem, 1, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("gold tile", /obj/item/stack/tile/mineral/gold, 1, 4, 20), \
 	new/datum/stack_recipe("blank plaque", /obj/item/plaque, 1), \
 	new/datum/stack_recipe("HoS Statue", /obj/structure/statue/gold/hos, 5, one_per_turf = 1, on_floor = 1), \
@@ -251,6 +246,21 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 /obj/item/stack/sheet/mineral/gold/get_main_recipes()
 	. = ..()
 	. += GLOB.gold_recipes
+
+/obj/item/stack/sheet/mineral/gold/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(item.tool_behaviour != TOOL_WIRECUTTER)
+		return
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	var/obj/item/result = new /obj/item/garnish/gold(drop_location())
+	var/give_to_user = user.is_holding(src)
+	use(1)
+	if(QDELETED(src) && give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
 
 /obj/item/stack/sheet/mineral/gold/fifty
 	amount = 50
@@ -292,6 +302,21 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	. = ..()
 	. += GLOB.silver_recipes
 
+/obj/item/stack/sheet/mineral/silver/attackby(obj/item/item, mob/user, params)
+	. = ..()
+	if(item.tool_behaviour != TOOL_WIRECUTTER)
+		return
+	playsound(src, 'sound/weapons/slice.ogg', 50, TRUE, -1)
+	to_chat(user, "<span class='notice'>You start whittling away some of [src]...</span>")
+	if(!do_after(user, 1 SECONDS, src))
+		return
+	var/obj/item/result = new /obj/item/garnish/silver(drop_location())
+	var/give_to_user = user.is_holding(src)
+	use(1)
+	if(QDELETED(src) && give_to_user)
+		user.put_in_hands(result)
+	to_chat(user, "<span class='notice'>You finish cutting [src]</span>")
+
 /obj/item/stack/sheet/mineral/silver/fifty
 	amount = 50
 
@@ -311,7 +336,7 @@ GLOBAL_LIST_INIT(silver_recipes, list ( \
 	singular_name = "bananium sheet"
 	sheettype = "bananium"
 	custom_materials = list(/datum/material/bananium=MINERAL_MATERIAL_AMOUNT)
-	novariants = TRUE
+
 	grind_results = list(/datum/reagent/consumable/banana = 20)
 	point_value = 50
 	merge_type = /obj/item/stack/sheet/mineral/bananium
@@ -385,9 +410,20 @@ GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/mineral/plastitanium
 	material_flags = MATERIAL_NO_EFFECTS
 	walltype = /turf/closed/wall/mineral/plastitanium
+	tableVariant = /obj/structure/table/chem
+
+/obj/item/stack/sheet/mineral/plastitanium/fifty
+	amount = 50
+
+/obj/item/stack/sheet/mineral/plastitanium/twenty
+	amount = 20
+
+/obj/item/stack/sheet/mineral/plastitanium/five
+	amount = 5
 
 GLOBAL_LIST_INIT(plastitanium_recipes, list ( \
 	new/datum/stack_recipe("plastitanium tile", /obj/item/stack/tile/mineral/plastitanium, 1, 4, 20), \
+	new/datum/stack_recipe("chemistry sink", /obj/structure/sink/chem, 1 , one_per_turf = TRUE, on_floor = TRUE, applies_mats = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/plastitanium/get_main_recipes()
@@ -429,11 +465,6 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
  * Adamantine
 */
 
-
-GLOBAL_LIST_INIT(adamantine_recipes, list(
-	new /datum/stack_recipe("incomplete servant golem shell", /obj/item/golem_shell/servant, req_amount=1, res_amount=1),
-	))
-
 /obj/item/stack/sheet/mineral/adamantine
 	name = "adamantine"
 	icon_state = "sheet-adamantine"
@@ -443,9 +474,8 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	merge_type = /obj/item/stack/sheet/mineral/adamantine
 	grind_results = list(/datum/reagent/liquidadamantine = 10)
 
-/obj/item/stack/sheet/mineral/adamantine/get_main_recipes()
-	. = ..()
-	. += GLOB.adamantine_recipes
+/obj/item/stack/sheet/mineral/adamantine/ten
+	amount = 10
 
 /*
  * Runite
@@ -461,6 +491,8 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	merge_type = /obj/item/stack/sheet/mineral/runite
 	material_type = /datum/material/runite
 
+/obj/item/stack/sheet/mineral/runite/ten
+	amount = 10
 
 /*
  * Mythril
@@ -473,6 +505,9 @@ GLOBAL_LIST_INIT(adamantine_recipes, list(
 	novariants = TRUE
 	custom_materials = list(/datum/material/mythril=MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/mineral/mythril
+
+/obj/item/stack/sheet/mineral/mythril/ten
+	amount = 10
 
 /*
  * Alien Alloy
@@ -506,7 +541,7 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 /obj/item/stack/sheet/mineral/coal
 	name = "coal"
 	desc = "Someone's gotten on the naughty list."
-	icon = 'icons/obj/mining.dmi'
+	icon = 'icons/obj/ores.dmi'
 	icon_state = "slag"
 	singular_name = "coal lump"
 	merge_type = /obj/item/stack/sheet/mineral/coal

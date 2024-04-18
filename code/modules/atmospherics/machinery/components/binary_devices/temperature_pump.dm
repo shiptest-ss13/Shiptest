@@ -1,5 +1,5 @@
 /obj/machinery/atmospherics/components/binary/temperature_pump
-	icon_state = "tpump_map-3"
+	icon_state = "tpump_on_map-3"
 	name = "temperature pump"
 	desc = "A pump that moves heat from one pipeline to another. The input will get cooler, and the output will get hotter."
 
@@ -18,22 +18,22 @@
 	if(can_interact(user))
 		on = !on
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/temperature_pump/AltClick(mob/user)
 	if(can_interact(user) && !(heat_transfer_rate == max_heat_transfer_rate))
 		heat_transfer_rate = max_heat_transfer_rate
 		investigate_log("was set to [heat_transfer_rate]% by [key_name(user)]", INVESTIGATE_ATMOS)
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/temperature_pump/update_icon_nopipes()
-	icon_state = "tpump_[on && is_operational() ? "on" : "off"]-[set_overlay_offset(piping_layer)]"
+	icon_state = "tpump_[on && is_operational ? "on" : "off"]-[set_overlay_offset(piping_layer)]"
 
 /obj/machinery/atmospherics/components/binary/temperature_pump/process_atmos()
 
-	if(!on || !is_operational())
+	if(!on || !is_operational)
 		return
 
 	var/datum/gas_mixture/air_input = airs[1]
@@ -91,4 +91,4 @@
 			if(.)
 				heat_transfer_rate = clamp(rate, 0, max_heat_transfer_rate)
 				investigate_log("was set to [heat_transfer_rate]% by [key_name(usr)]", INVESTIGATE_ATMOS)
-	update_icon()
+	update_appearance()

@@ -11,6 +11,8 @@
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	pickup_sound =  'sound/items/handling/device_pickup.ogg'
+	drop_sound = 'sound/items/handling/device_drop.ogg'
 	flags_1 = CONDUCT_1
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
@@ -33,7 +35,7 @@
 	if(log.len && !scanning)
 		scanning = 1
 		to_chat(user, "<span class='notice'>Printing report, please wait...</span>")
-		addtimer(CALLBACK(src, .proc/PrintReport), 100)
+		addtimer(CALLBACK(src, PROC_REF(PrintReport)), 100)
 	else
 		to_chat(user, "<span class='notice'>The scanner has no logs or is in use.</span>")
 
@@ -42,20 +44,21 @@
 
 /obj/item/detective_scanner/proc/PrintReport()
 	// Create our paper
-	var/obj/item/paper/P = new(get_turf(src))
+	var/obj/item/paper/report_paper = new(get_turf(src))
 
 	//This could be a global count like sec and med record printouts. See GLOB.data_core.medicalPrintCount AKA datacore.dm
 	var/frNum = ++forensicPrintCount
 
-	P.name = text("FR-[] 'Forensic Record'", frNum)
-	P.info = text("<center><B>Forensic Record - (FR-[])</B></center><HR><BR>", frNum)
-	P.info += jointext(log, "<BR>")
-	P.info += "<HR><B>Notes:</B><BR>"
-	P.update_icon()
+	report_paper.name = text("FR-[] 'Forensic Record'", frNum)
+	var/report_text = text("<center><B>Forensic Record - (FR-[])</B></center><HR><BR>", frNum)
+	report_text += jointext(log, "<BR>")
+	report_text += "<HR><B>Notes:</B><BR>"
+	report_paper.add_raw_text(report_text)
+	report_paper.update_appearance()
 
 	if(ismob(loc))
 		var/mob/M = loc
-		M.put_in_hands(P)
+		M.put_in_hands(report_paper)
 		to_chat(M, "<span class='notice'>Report printed. Log cleared.</span>")
 
 	// Clear the logs
@@ -114,8 +117,7 @@
 						if(R.data["blood_DNA"] && R.data["blood_type"])
 							var/blood_DNA = R.data["blood_DNA"]
 							var/blood_type = R.data["blood_type"]
-							LAZYINITLIST(blood)
-							blood[blood_DNA] = blood_type
+							LAZYSET(blood, blood_DNA, blood_type)
 
 		// We gathered everything. Create a fork and slowly display the results to the holder of the scanner.
 

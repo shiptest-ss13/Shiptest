@@ -1,29 +1,32 @@
 
-/mob/living/proc/run_armor_check(def_zone = null, attack_flag = "melee", absorb_text = null, soften_text = null, silent=FALSE, armour_penetration, penetrated_text)
-	var/armor = getarmor(def_zone, attack_flag)
+/mob/living/proc/run_armor_check(
+		def_zone = null, attack_flag = "melee", armour_penetration = 0,
+		silent = FALSE, absorb_text = null, soften_text = null, penetrated_text = null
+	)
+	var/base_armor = getarmor(def_zone, attack_flag)
+	// if negative or 0 armor, no modifications are necessary
+	if(base_armor <= 0)
+		return base_armor
 
-	if(armor <= 0)
-		return armor
-	if(silent)
-		return max(0, armor - armour_penetration)
-
-	//the if "armor" check is because this is used for everything on /living, including humans
-	if(armour_penetration)
-		armor = max(0, armor - armour_penetration)
-		if(penetrated_text)
-			to_chat(src, "<span class='userdanger'>[penetrated_text]</span>")
-		else
-			to_chat(src, "<span class='userdanger'>Your armor was penetrated!</span>")
-	else if(armor >= 100)
-		if(absorb_text)
-			to_chat(src, "<span class='notice'>[absorb_text]</span>")
-		else
-			to_chat(src, "<span class='notice'>Your armor absorbs the blow!</span>")
+	var/armor
+	if(armour_penetration >= 0)
+		armor = max(0, base_armor - armour_penetration)
 	else
-		if(soften_text)
-			to_chat(src, "<span class='warning'>[soften_text]</span>")
-		else
-			to_chat(src, "<span class='warning'>Your armor softens the blow!</span>")
+		// negative armor penetration increases the effect of armor
+		// armour penetration of -100 or lower would either divide by zero or give neg. armor (bad)
+		armor = armour_penetration > -100 ? base_armor * (100 / (100 + armour_penetration)) : 100
+
+	if(silent)
+		return armor
+
+	if(armor >= 100)
+		to_chat(src, "<span class='notice'>[absorb_text || "Your armor absorbs the blow!"]</span>")
+	else if(armour_penetration <= 0)
+		// armor has to be > 0 due to early return, and no armor pen, so blow was softened
+		to_chat(src, "<span class='warning'>[soften_text || "Your armor softens the blow!"]</span>")
+	else
+		// historic present
+		to_chat(src, "<span class='userdanger'>[penetrated_text || "Your armor is penetrated!"]</span>")
 	return armor
 
 /mob/living/proc/getarmor(def_zone, type)
@@ -48,10 +51,11 @@
 	return BULLET_ACT_HIT
 
 /mob/living/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
-	var/armor = run_armor_check(def_zone, P.flag, "","",P.armour_penetration)
+	var/armor = run_armor_check(def_zone, P.flag, P.armour_penetration, silent = TRUE)
 	var/on_hit_state = P.on_hit(src, armor, piercing_hit)
-	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK)
+	if(!P.nodamage && on_hit_state != BULLET_ACT_BLOCK && !QDELETED(src)) //QDELETED literally just for the instagib rifle. Yeah.
 		apply_damage(P.damage, P.damage_type, def_zone, armor)
+		recoil_camera(src, clamp((P.damage-armor)/4,0.5,10), clamp((P.damage-armor)/4,0.5,10), P.damage/8, P.Angle)
 		apply_effects(P.stun, P.knockdown, P.unconscious, P.irradiate, P.slur, P.stutter, P.eyeblur, P.drowsy, armor, P.stamina, P.jitter, P.paralyze, P.immobilize)
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
@@ -84,10 +88,15 @@
 							"<span class='userdanger'>You're hit by [I]!</span>")
 			if(!I.throwforce)
 				return
-			var/armor = run_armor_check(zone, "melee", "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].",I.armour_penetration)
+			var/armor = run_armor_check(
+				zone, "melee", I.armour_penetration, FALSE,
+				"Your armor has protected your [parse_zone(zone)].",
+				"Your armor has softened a hit to your [parse_zone(zone)]."
+			)
 			apply_damage(I.throwforce, dtype, zone, armor)
-			if(I.thrownby)
-				log_combat(I.thrownby, src, "threw and hit", I)
+			var/mob/thrown_by = I.thrownby?.resolve()
+			if(thrown_by)
+				log_combat(thrown_by, src, "threw and hit", I)
 		else
 			return 1
 	else
@@ -390,8 +399,8 @@
 		if((GLOB.cult_narsie.souls == GLOB.cult_narsie.soul_goal) && (GLOB.cult_narsie.resolved == FALSE))
 			GLOB.cult_narsie.resolved = TRUE
 			sound_to_playing_players('sound/machines/alarm.ogg')
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/cult_ending_helper, 1), 120)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/ending_helper), 270)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), 1), 120)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(ending_helper)), 270)
 	if(client)
 		makeNewConstruct(/mob/living/simple_animal/hostile/construct/harvester, src, cultoverride = TRUE)
 	else
@@ -414,7 +423,7 @@
 		return FALSE
 	if(get_eye_protection() < intensity && (override_blindness_check || !is_blind()))
 		overlay_fullscreen("flash", type)
-		addtimer(CALLBACK(src, .proc/clear_fullscreen, "flash", 25), 25)
+		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
 		return TRUE
 	return FALSE
 
@@ -434,10 +443,10 @@
 	setMovetype(movement_type & ~FLOATING) // If we were without gravity, the bouncing animation got stopped, so we make sure we restart the bouncing after the next movement.
 
 /** Handles exposing a mob to reagents.
-  *
-  * If the method is INGEST the mob tastes the reagents.
-  * If the method is VAPOR it incorporates permiability protection.
-  */
+ *
+ * If the method is INGEST the mob tastes the reagents.
+ * If the method is VAPOR it incorporates permiability protection.
+ */
 /mob/living/expose_reagents(list/reagents, datum/reagents/source, method=TOUCH, volume_modifier=1, show_message=TRUE)
 	if((. = ..()) & COMPONENT_NO_EXPOSE_REAGENTS)
 		return

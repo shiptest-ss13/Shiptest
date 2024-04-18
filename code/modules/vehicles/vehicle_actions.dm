@@ -15,8 +15,7 @@
 		grant_passenger_actions(i)	//refresh
 
 /obj/vehicle/proc/initialize_controller_action_type(actiontype, control_flag)
-	LAZYINITLIST(autogrant_actions_controller["[control_flag]"])
-	autogrant_actions_controller["[control_flag]"] += actiontype
+	LAZYADD(autogrant_actions_controller["[control_flag]"], actiontype)
 	for(var/i in occupants)
 		grant_controller_actions(i)	//refresh
 
@@ -226,5 +225,5 @@
 		if(locate(/obj/structure/table) in V.loc.contents)
 			V.grinding = TRUE
 			V.icon_state = "[V.board_icon]-grind"
-			addtimer(CALLBACK(V, /obj/vehicle/ridden/scooter/skateboard/.proc/grind), 2)
+			addtimer(CALLBACK(V, TYPE_PROC_REF(/obj/vehicle/ridden/scooter/skateboard, grind)), 2)
 		next_ollie = world.time + 5

@@ -16,19 +16,17 @@
 	tiled_dirt = FALSE
 
 
-/turf/open/floor/mineral/Initialize()
+/turf/open/floor/mineral/Initialize(mapload, inherited_virtual_z)
 	if(!broken_states)
 		broken_states = list("[initial(icon_state)]_dam")
 	. = ..()
 	icons = typelist("icons", icons)
 
 
-/turf/open/floor/mineral/update_icon()
-	if(!..())
-		return 0
-	if(!broken && !burnt)
-		if( !(icon_state in icons) )
-			icon_state = initial(icon_state)
+/turf/open/floor/mineral/update_icon_state()
+	if(!broken && !burnt && !(icon_state in icons))
+		icon_state = initial(icon_state)
+	return ..()
 
 //PLASMA
 
@@ -79,7 +77,7 @@
 
 /turf/open/floor/mineral/titanium
 	name = "shuttle floor"
-	icon = 'whitesands/icons/turf/floors/shuttle_floors.dmi'
+	icon = 'icons/turf/floors/shuttle_floors.dmi'
 	icon_state = "titanium"
 	floor_tile = /obj/item/stack/tile/mineral/titanium
 	broken_states = list("titanium_dam1","titanium_dam2","titanium_dam3","titanium_dam4","titanium_dam5")
@@ -89,32 +87,74 @@
 
 /turf/open/floor/mineral/titanium/yellow
 	icon_state = "titanium_yellow"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/yellow
 
 /turf/open/floor/mineral/titanium/yellow/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/mineral/titanium/blue
 	icon_state = "titanium_blue"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/blue
 
 /turf/open/floor/mineral/titanium/blue/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/mineral/titanium/white
 	icon_state = "titanium_white"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/white
 
 /turf/open/floor/mineral/titanium/white/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/mineral/titanium/purple
 	icon_state = "titanium_purple"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/purple
 
 /turf/open/floor/mineral/titanium/purple/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
+// OLD TITANIUM (titanium floor tiles before PR #50454)
+/turf/open/floor/mineral/titanium/tiled
+	name = "titanium tile"
+	icon_state = "titanium_tiled"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/tiled
+	broken_states = list("titanium_dam1_old","titanium_dam2_old","titanium_dam3_old","titanium_dam4_old","titanium_dam5_old")
+
+/turf/open/floor/mineral/titanium/tiled/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/mineral/titanium/tiled/yellow
+	icon_state = "titanium_tiled_yellow"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/tiled/yellow
+
+/turf/open/floor/mineral/titanium/tiled/yellow/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/mineral/titanium/tiled/blue
+	icon_state = "titanium_tiled_blue"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/tiled/blue
+
+/turf/open/floor/mineral/titanium/tiled/blue/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/mineral/titanium/tiled/white
+	icon_state = "titanium_tiled_white"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/tiled/white
+
+/turf/open/floor/mineral/titanium/tiled/white/airless
+	initial_gas_mix = AIRLESS_ATMOS
+
+/turf/open/floor/mineral/titanium/tiled/purple
+	icon_state = "titanium_tiled_purple"
+	floor_tile = /obj/item/stack/tile/mineral/titanium/tiled/purple
+
+/turf/open/floor/mineral/titanium/tiled/purple/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
 //PLASTITANIUM (syndieshuttle)
 /turf/open/floor/mineral/plastitanium
 	name = "shuttle floor"
-	icon = 'whitesands/icons/turf/floors/shuttle_floors.dmi'
+	icon = 'icons/turf/floors/shuttle_floors.dmi'
 	icon_state = "plastitanium"
 	floor_tile = /obj/item/stack/tile/mineral/plastitanium
 	broken_states = list("plastitanium_dam1","plastitanium_dam2","plastitanium_dam3","plastitanium_dam4","plastitanium_dam5")
@@ -124,6 +164,7 @@
 
 /turf/open/floor/mineral/plastitanium/red
 	icon_state = "plastitanium_red"
+	floor_tile = /obj/item/stack/tile/mineral/plastitanium/red
 
 /turf/open/floor/mineral/plastitanium/red/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -233,7 +274,7 @@
 	icons = list("alienpod1", "alienpod2", "alienpod3", "alienpod4", "alienpod5", "alienpod6", "alienpod7", "alienpod8", "alienpod9")
 	baseturfs = /turf/open/floor/plating/abductor2
 
-/turf/open/floor/mineral/abductor/Initialize()
+/turf/open/floor/mineral/abductor/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "alienpod[rand(1,9)]"
 

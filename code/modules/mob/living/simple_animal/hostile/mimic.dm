@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/mimic
 	name = "crate"
 	desc = "A rectangular steel crate."
-	icon = 'goon/icons/obj/crates.dmi'
+	icon = 'icons/obj/crates.dmi'
 	icon_state = "crate"
 	icon_living = "crate"
 
@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 		death()
 
 /mob/living/simple_animal/hostile/mimic/copy/death()
-	for(var/atom/movable/M in src)
+	for(var/atom/movable/M as anything in src)
 		M.forceMove(get_turf(src))
 	..()
 
@@ -243,19 +243,19 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 			var/obj/item/ammo_casing/energy/shot = Zapgun.ammo_type[Zapgun.select]
 			if(Zapgun.cell.charge >= shot.e_cost)
 				Zapgun.cell.use(shot.e_cost)
-				Zapgun.update_icon()
+				Zapgun.update_appearance()
 				..()
 	else if(Zapstick)
 		if(Zapstick.charges)
 			Zapstick.charges--
-			Zapstick.update_icon()
+			Zapstick.update_appearance()
 			..()
 	else if(Pewgun)
 		if(Pewgun.chambered)
 			if(Pewgun.chambered.BB)
 				qdel(Pewgun.chambered.BB)
 				Pewgun.chambered.BB = null //because qdel takes too long, ensures icon update
-				Pewgun.chambered.update_icon()
+				Pewgun.chambered.update_appearance()
 				..()
 			else
 				visible_message("<span class='danger'>The <b>[src]</b> clears a jam!</span>")
@@ -264,7 +264,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 			if(Pewgun.magazine && Pewgun.magazine.stored_ammo.len)
 				Pewgun.chambered = Pewgun.magazine.get_round(0)
 				Pewgun.chambered.forceMove(Pewgun)
-			Pewgun.update_icon()
+			Pewgun.update_appearance()
 		else if(Pewgun.magazine && Pewgun.magazine.stored_ammo.len) //only true for pumpguns i think
 			Pewgun.chambered = Pewgun.magazine.get_round(0)
 			Pewgun.chambered.forceMove(Pewgun)
@@ -311,11 +311,11 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 /mob/living/simple_animal/hostile/mimic/xenobio/death()
 	var/obj/structure/closet/crate/C = new(get_turf(src))
 	// Put loot in crate
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(C)
 	return ..()
 
-/mob/living/simple_animal/hostile/mimic/xenobio/CanAllowThrough(atom/movable/mover, turf/target)
+/mob/living/simple_animal/hostile/mimic/xenobio/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(istype(mover, /obj/structure/closet))
 		return FALSE
@@ -328,7 +328,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 		opened = TRUE
 		icon_state = "crateopen"
 		playsound(src, open_sound, 50, TRUE)
-		for(var/atom/movable/AM in src)
+		for(var/atom/movable/AM as anything in src)
 			AM.forceMove(loc)
 	else
 		density = TRUE

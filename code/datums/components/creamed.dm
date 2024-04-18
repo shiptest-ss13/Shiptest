@@ -5,10 +5,10 @@ GLOBAL_LIST_INIT(creamable, typecacheof(list(
 	/mob/living/silicon/ai)))
 
 /**
-  * Creamed component
-  *
-  * For when you have pie on your face
-  */
+ * Creamed component
+ *
+ * For when you have pie on your face
+ */
 /datum/component/creamed
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 
@@ -24,7 +24,7 @@ GLOBAL_LIST_INIT(creamable, typecacheof(list(
 
 	if(ishuman(parent))
 		var/mob/living/carbon/human/H = parent
-		if(H.dna.species.limbs_id == "lizard")
+		if(/obj/item/bodypart/head/lizard in H.bodyparts)
 			creamface.icon_state = "creampie_lizard"
 		else
 			creamface.icon_state = "creampie_human"
@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(creamable, typecacheof(list(
 	RegisterSignal(parent, list(
 		COMSIG_COMPONENT_CLEAN_ACT,
 		COMSIG_COMPONENT_CLEAN_FACE_ACT),
-		.proc/clean_up)
+		PROC_REF(clean_up))
 
 /datum/component/creamed/UnregisterFromParent()
 	UnregisterSignal(parent, list(

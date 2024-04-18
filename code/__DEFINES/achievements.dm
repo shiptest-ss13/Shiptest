@@ -67,5 +67,4 @@
 #define LEGION_SCORE "Legion Killed"
 #define SWARMER_BEACON_SCORE "Swarmer Beacs Killed"
 #define WENDIGO_SCORE "Wendigos Killed"
-#define KINGGOAT_SCORE "King Goat Killed"
 #define TENDRIL_CLEAR_SCORE "Tendrils Killed"

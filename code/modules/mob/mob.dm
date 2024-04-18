@@ -1,25 +1,29 @@
 /**
-  * Delete a mob
-  *
-  * Removes mob from the following global lists
-  * * GLOB.mob_list
-  * * GLOB.dead_mob_list
-  * * GLOB.alive_mob_list
-  * * GLOB.all_clockwork_mobs
-  * * GLOB.mob_directory
-  *
-  * Unsets the focus var
-  *
-  * Clears alerts for this mob
-  *
-  * Resets all the observers perspectives to the tile this mob is on
-  *
-  * qdels any client colours in place on this mob
-  *
-  * Ghostizes the client attached to this mob
-  *
-  * Parent call
-  */
+ * Delete a mob
+ *
+ * Removes mob from the following global lists
+ * * GLOB.mob_list
+ * * GLOB.dead_mob_list
+ * * GLOB.alive_mob_list
+ * * GLOB.all_clockwork_mobs
+ * * GLOB.mob_directory
+ *
+ * Unsets the focus var
+ *
+ * Clears alerts for this mob
+ *
+ * Resets all the observers perspectives to the tile this mob is on
+ *
+ * qdels any client colours in place on this mob
+ *
+ * Clears any refs to the mob inside its current location
+ *
+ * Ghostizes the client attached to this mob
+ *
+ * If our mind still exists, clear its current var to prevent harddels
+ *
+ * Parent call
+ */
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	remove_from_mob_list()
 	remove_from_dead_mob_list()
@@ -34,30 +38,38 @@
 		for(var/M in observers)
 			var/mob/dead/observe = M
 			observe.reset_perspective(null)
+	for(var/datum/atom_hud/hud as anything in GLOB.all_huds)
+		hud.remove_from_hud(src)
+		hud.remove_hud_from(src, TRUE)
 	qdel(hud_used)
 	QDEL_LIST(client_colours)
-	ghostize()
+	active_storage = null
+	unset_machine()
+	clear_client_in_contents() //Gotta do this here as well as Logout, since client will be null by the time it gets there, cause of that ghostize
+	ghostize() //False, since we're deleting it currently
+	if(mind?.current == src) //Let's just be safe yeah? This will occasionally be cleared, but not always. Can't do it with ghostize without changing behavior
+		mind.set_current(null)
 	return ..()
 
 
 /**
-  * Intialize a mob
-  *
-  * Sends global signal COMSIG_GLOB_MOB_CREATED
-  *
-  * Adds to global lists
-  * * GLOB.mob_list
-  * * GLOB.mob_directory (by tag)
-  * * GLOB.dead_mob_list - if mob is dead
-  * * GLOB.alive_mob_list - if the mob is alive
-  *
-  * Other stuff:
-  * * Sets the mob focus to itself
-  * * Generates huds
-  * * If there are any global alternate apperances apply them to this mob
-  * * set a random nutrition level
-  * * Intialize the movespeed of the mob
-  */
+ * Intialize a mob
+ *
+ * Sends global signal COMSIG_GLOB_MOB_CREATED
+ *
+ * Adds to global lists
+ * * GLOB.mob_list
+ * * GLOB.mob_directory (by tag)
+ * * GLOB.dead_mob_list - if mob is dead
+ * * GLOB.alive_mob_list - if the mob is alive
+ *
+ * Other stuff:
+ * * Sets the mob focus to itself
+ * * Generates huds
+ * * If there are any global alternate apperances apply them to this mob
+ * * set a random nutrition level
+ * * Intialize the movespeed of the mob
+ */
 /mob/Initialize()
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MOB_CREATED, src)
 	add_to_mob_list()
@@ -76,21 +88,22 @@
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
+	become_hearing_sensitive(ORGAN_TRAIT)
 
 /**
-  * Generate the tag for this mob
-  *
-  * This is simply "mob_"+ a global incrementing counter that goes up for every mob
-  */
+ * Generate the tag for this mob
+ *
+ * This is simply "mob_"+ a global incrementing counter that goes up for every mob
+ */
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
 
 /**
-  * Prepare the huds for this atom
-  *
-  * Goes through hud_possible list and adds the images to the hud_list variable (if not already
-  * cached)
-  */
+ * Prepare the huds for this atom
+ *
+ * Goes through hud_possible list and adds the images to the hud_list variable (if not already
+ * cached)
+ */
 /atom/proc/prepare_huds()
 	hud_list = list()
 	for(var/hud in hud_possible)
@@ -104,8 +117,8 @@
 				hud_list[hud] = I
 
 /**
-  * Some kind of debug verb that gives atmosphere environment details
-  */
+ * Some kind of debug verb that gives atmosphere environment details
+ */
 /mob/proc/Cell()
 	set category = "Admin"
 	set hidden = 1
@@ -124,14 +137,14 @@
 	to_chat(usr, t)
 
 /**
-  * Return the desc of this mob for a photo
-  */
+ * Return the desc of this mob for a photo
+ */
 /mob/proc/get_photo_description(obj/item/camera/camera)
 	return "a ... thing?"
 
 /**
-  * Show a message to this mob (visual or audible)
-  */
+ * Show a message to this mob (visual or audible)
+ */
 /mob/proc/show_message(msg, type, alt_msg, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
 	if(!client)
 		return
@@ -139,7 +152,7 @@
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
 
 	if(type)
-		if(type & MSG_VISUAL && is_blind() )//Vision related
+		if(type & MSG_VISUAL && is_blind())//Vision related
 			if(!alt_msg)
 				return
 			else
@@ -162,23 +175,23 @@
 	to_chat(src, msg)
 
 /**
-  * Generate a visible message from this atom
-  *
-  * Show a message to all player mobs who sees this atom
-  *
-  * Show a message to the src mob (if the src is a mob)
-  *
-  * Use for atoms performing visible actions
-  *
-  * message is output to anyone who can see, e.g. "The [src] does something!"
-  *
-  * Vars:
-  * * self_message (optional) is what the src mob sees e.g. "You do something!"
-  * * blind_message (optional) is what blind people will hear e.g. "You hear something!"
-  * * vision_distance (optional) define how many tiles away the message can be seen.
-  * * ignored_mob (optional) doesn't show any message to a given mob if TRUE.
-  */
-/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE)
+ * Generate a visible message from this atom
+ *
+ * Show a message to all player mobs who sees this atom
+ *
+ * Show a message to the src mob (if the src is a mob)
+ *
+ * Use for atoms performing visible actions
+ *
+ * message is output to anyone who can see, e.g. "The [src] does something!"
+ *
+ * Vars:
+ * * self_message (optional) is what the src mob sees e.g. "You do something!"
+ * * blind_message (optional) is what blind people will hear e.g. "You hear something!"
+ * * vision_distance (optional) define how many tiles away the message can be seen.
+ * * ignored_mob (optional) doesn't show any message to a given mob if TRUE.
+ */
+/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE, separation = " ")
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
@@ -191,71 +204,90 @@
 	if(self_message)
 		hearers -= src
 
-	var/raw_msg = message
-	if(visible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b> [message]</span>"
-
 	for(var/mob/M in hearers)
 		if(!M.client)
 			continue
 
-		//This entire if/else chain could be in two lines but isn't for readibilties sake.
 		var/msg = message
+
+		//This entire if/else chain could be in two lines but isn't for readibilties sake.
 		if(M.see_invisible < invisibility)//if src is invisible to M
 			msg = blind_message
 		else if(T != loc && T != src) //if src is inside something and not a turf.
 			msg = blind_message
 		else if(T.lighting_object && T.lighting_object.invisibility <= M.see_invisible && T.is_softly_lit()) //if it is too dark.
 			msg = blind_message
+		else if(visible_message_flags & EMOTE_MESSAGE)
+			var/shown_name = name
+			if(M.mind?.guestbook && ishuman(src))
+				var/mob/living/carbon/human/human_source = src
+				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.get_face_name())
+				if(known_name)
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
 		if(!msg)
 			continue
 
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags))
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
+			M.create_chat_message(src, raw_message = message, runechat_flags = visible_message_flags)
 
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
 
 ///Adds the functionality to self_message.
-/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE)
+/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, visible_message_flags = NONE, separation = " ")
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
 /**
-  * Show a message to all mobs in earshot of this atom
-  *
-  * Use for objects performing audible actions
-  *
-  * vars:
-  * * message is the message output to anyone who can hear.
-  * * deaf_message (optional) is what deaf people will see.
-  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
-  */
-/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs)
+ * Show a message to all mobs in earshot of this atom
+ *
+ * Use for objects performing audible actions
+ *
+ * vars:
+ * * message is the message output to anyone who can hear.
+ * * deaf_message (optional) is what deaf people will see.
+ * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
+ */
+/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs, separation = " ")
 	var/list/hearers = get_hearers_in_view(hearing_distance, src)
 	if(self_message)
 		hearers -= src
 	var/raw_msg = message
-	if(audible_message_flags & EMOTE_MESSAGE)
-		message = "<span class='emote'><b>[src]</b> [message]</span>"
 	for(var/mob/M in hearers)
-		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags))
-			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
-		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+		var/msg = raw_msg
+
+		//emote handling
+		if(audible_message_flags & EMOTE_MESSAGE)
+			var/shown_name = name
+			if(M.mind?.guestbook && ishuman(src))
+				var/mob/living/carbon/human/human_source = src
+				var/known_name = M.mind.guestbook.get_known_name(M, src, human_source.GetVoice())
+				if(known_name)
+					shown_name = known_name
+
+			msg = "<span class='emote'><b>[shown_name]</b>[separation][message]</span>"
+
+			if(runechat_prefs_check(M, audible_message_flags) && M.can_hear())
+				M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
+
+		M.show_message(msg, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
 /**
-  * Show a message to all mobs in earshot of this one
-  *
-  * This would be for audible actions by the src mob
-  *
-  * vars:
-  * * message is the message output to anyone who can hear.
-  * * self_message (optional) is what the src mob hears.
-  * * deaf_message (optional) is what deaf people will see.
-  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
-  */
-/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs)
+ * Show a message to all mobs in earshot of this one
+ *
+ * This would be for audible actions by the src mob
+ *
+ * vars:
+ * * message is the message output to anyone who can hear.
+ * * self_message (optional) is what the src mob hears.
+ * * deaf_message (optional) is what deaf people will see.
+ * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
+ */
+/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, audible_message_flags = NONE, list/ignored_mobs, separation = " ")
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
@@ -287,11 +319,11 @@
 	return
 
 /**
-  * This proc is called whenever someone clicks an inventory ui slot.
-  *
-  * Mostly tries to put the item into the slot if possible, or call attack hand
-  * on the item in the slot if the users active hand is empty
-  */
+ * This proc is called whenever someone clicks an inventory ui slot.
+ *
+ * Mostly tries to put the item into the slot if possible, or call attack hand
+ * on the item in the slot if the users active hand is empty
+ */
 /mob/proc/attack_ui(slot)
 	var/obj/item/W = get_active_held_item()
 	if(istype(W))
@@ -309,18 +341,18 @@
 	return 0
 
 /**
-  * Try to equip an item to a slot on the mob
-  *
-  * This is a SAFE proc. Use this instead of equip_to_slot()!
-  *
-  * set qdel_on_fail to have it delete W if it fails to equip
-  *
-  * set disable_warning to disable the 'you are unable to equip that' warning.
-  *
-  * unset redraw_mob to prevent the mob icons from being redrawn at the end.
-  *
-  * Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
-  */
+ * Try to equip an item to a slot on the mob
+ *
+ * This is a SAFE proc. Use this instead of equip_to_slot()!
+ *
+ * set qdel_on_fail to have it delete W if it fails to equip
+ *
+ * set disable_warning to disable the 'you are unable to equip that' warning.
+ *
+ * unset redraw_mob to prevent the mob icons from being redrawn at the end.
+ *
+ * Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
+ */
 /mob/proc/equip_to_slot_if_possible(obj/item/W, slot, qdel_on_fail = FALSE, disable_warning = FALSE, redraw_mob = TRUE, bypass_equip_delay_self = FALSE, initial = FALSE, swap = FALSE)
 	if(!istype(W))
 		return FALSE
@@ -335,35 +367,35 @@
 	return TRUE
 
 /**
-  * Actually equips an item to a slot (UNSAFE)
-  *
-  * This is an UNSAFE proc. It merely handles the actual job of equipping. All the checks on
-  * whether you can or can't equip need to be done before! Use mob_can_equip() for that task.
-  *
-  *In most cases you will want to use equip_to_slot_if_possible()
-  */
+ * Actually equips an item to a slot (UNSAFE)
+ *
+ * This is an UNSAFE proc. It merely handles the actual job of equipping. All the checks on
+ * whether you can or can't equip need to be done before! Use mob_can_equip() for that task.
+ *
+ *In most cases you will want to use equip_to_slot_if_possible()
+ */
 /mob/proc/equip_to_slot(obj/item/W, slot)
 	return
 
 /**
-  * Equip an item to the slot or delete
-  *
-  * This is just a commonly used configuration for the equip_to_slot_if_possible() proc, used to
-  * equip people when the round starts and when events happen and such.
-  *
-  * Also bypasses equip delay checks, since the mob isn't actually putting it on.
-  * Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
-  */
+ * Equip an item to the slot or delete
+ *
+ * This is just a commonly used configuration for the equip_to_slot_if_possible() proc, used to
+ * equip people when the round starts and when events happen and such.
+ *
+ * Also bypasses equip delay checks, since the mob isn't actually putting it on.
+ * Initial is used to indicate whether or not this is the initial equipment (job datums etc) or just a player doing it
+ */
 /mob/proc/equip_to_slot_or_del(obj/item/W, slot, initial = FALSE)
 	return equip_to_slot_if_possible(W, slot, TRUE, TRUE, FALSE, TRUE, initial)
 
 /**
-  * Auto equip the passed in item the appropriate slot based on equipment priority
-  *
-  * puts the item "W" into an appropriate slot in a human's inventory
-  *
-  * returns 0 if it cannot, 1 if successful
-  */
+ * Auto equip the passed in item the appropriate slot based on equipment priority
+ *
+ * puts the item "W" into an appropriate slot in a human's inventory
+ *
+ * returns 0 if it cannot, 1 if successful
+ */
 /mob/proc/equip_to_appropriate_slot(obj/item/W, swap=FALSE)
 	if(!istype(W))
 		return 0
@@ -387,37 +419,12 @@
 
 	return 0
 
-// Convinience proc.  Collects crap that fails to equip either onto the mob's back, or drops it.
-// Used in job equipping so shit doesn't pile up at the start loc.
-/mob/living/carbon/human/proc/equip_or_collect(var/obj/item/W, var/slot)
-	if(W.mob_can_equip(src, null, slot, TRUE, TRUE))
-		//Mob can equip.  Equip it.
-		equip_to_slot_or_del(W, slot)
-	else
-		//Mob can't equip it.  Put it in a bag B.
-		// Do I have a backpack?
-		var/obj/item/storage/B
-		if(istype(back,/obj/item/storage))
-			//Mob is wearing backpack
-			B = back
-		else
-			//not wearing backpack.  Check if player holding box
-			if(!is_holding_item_of_type(/obj/item/storage/box)) //If not holding box, give box
-				B = new /obj/item/storage/box(null) // Null in case of failed equip.
-				if(!put_in_hands(B))
-					return // box could not be placed in players hands.  I don't know what to do here...
-			//Now, B represents a container we can insert W into.
-			var/datum/component/storage/STR = B.GetComponent(/datum/component/storage)
-			if(STR.can_be_inserted(W, stop_messages=TRUE))
-				STR.handle_item_insertion(W,1)
-			return B
-
 /**
-  * Reset the attached clients perspective (viewpoint)
-  *
-  * reset_perspective() set eye to common default : mob on turf, loc otherwise
-  * reset_perspective(thing) set the eye to the thing (if it's equal to current default reset to mob perspective)
-  */
+ * Reset the attached clients perspective (viewpoint)
+ *
+ * reset_perspective() set eye to common default : mob on turf, loc otherwise
+ * reset_perspective(thing) set the eye to the thing (if it's equal to current default reset to mob perspective)
+ */
 /mob/proc/reset_perspective(atom/A)
 	if(client)
 		if(A)
@@ -455,41 +462,50 @@
 
 
 /**
-  * Examine a mob
-  *
-  * mob verbs are faster than object verbs. See
-  * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
-  * for why this isn't atom/verb/examine()
-  */
-/mob/verb/examinate(atom/A as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
+ * Examine a mob
+ *
+ * mob verbs are faster than object verbs. See
+ * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
+ * for why this isn't atom/verb/examine()
+ */
+/mob/verb/examinate(atom/examinify as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
 	set name = "Examine"
 	set category = "IC"
 
-	if(isturf(A) && !(sight & SEE_TURFS) && !(A in view(client ? client.view : world.view, src)))
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(run_examinate), examinify))
+
+/mob/proc/run_examinate(atom/examinify)
+
+	if(isturf(examinify) && !(sight & SEE_TURFS) && !(examinify in view(client ? client.view : world.view, src)))
 		// shift-click catcher may issue examinate() calls for out-of-sight turfs
 		return
 
-	if(is_blind() && !blind_examine_check(A)) //blind people see things differently (through touch)
+	if(is_blind() && !blind_examine_check(examinify)) //blind people see things differently (through touch)
 		return
 
-	face_atom(A)
+	face_atom(examinify)
+
 	var/list/result
 	if(client)
 		LAZYINITLIST(client.recent_examines)
-		if(isnull(client.recent_examines[A]) || client.recent_examines[A] < world.time)
-			result = A.examine(src)
-			client.recent_examines[A] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(A, COMSIG_PARENT_QDELETING, .proc/clear_from_recent_examines, override=TRUE) // to flush the value if deleted early
-			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, A), EXAMINE_MORE_TIME)
-			handle_eye_contact(A)
+		if(isnull(client.recent_examines[examinify]) || client.recent_examines[examinify] < world.time)
+			result = examinify.examine(src)
+			client.recent_examines[examinify] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
+			RegisterSignal(examinify, COMSIG_PARENT_QDELETING, PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
+			addtimer(CALLBACK(src, PROC_REF(clear_from_recent_examines), examinify), EXAMINE_MORE_TIME)
+			handle_eye_contact(examinify)
 		else
-			result = A.examine_more(src)
+			result = examinify.examine_more(src)
 	else
-		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
+		result = examinify.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
+	if(result.len)
+		for(var/i in 1 to (length(result) - 1))
+			result[i] += "\n"
 
-	to_chat(src, result.Join("\n"))
-	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
+	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+
+	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, examinify)
 
 
 /mob/proc/blind_examine_check(atom/examined_thing)
@@ -543,12 +559,12 @@
 	LAZYREMOVE(client.recent_examines, A)
 
 /**
-  * handle_eye_contact() is called when we examine() something. If we examine an alive mob with a mind who has examined us in the last second within 5 tiles, we make eye contact!
-  *
-  * Note that if either party has their face obscured, the other won't get the notice about the eye contact
-  * Also note that examine_more() doesn't proc this or extend the timer, just because it's simpler this way and doesn't lose much.
-  *	The nice part about relying on examining is that we don't bother checking visibility, because we already know they were both visible to each other within the last second, and the one who triggers it is currently seeing them
-  */
+ * handle_eye_contact() is called when we examine() something. If we examine an alive mob with a mind who has examined us in the last second within 5 tiles, we make eye contact!
+ *
+ * Note that if either party has their face obscured, the other won't get the notice about the eye contact
+ * Also note that examine_more() doesn't proc this or extend the timer, just because it's simpler this way and doesn't lose much.
+ *	The nice part about relying on examining is that we don't bother checking visibility, because we already know they were both visible to each other within the last second, and the one who triggers it is currently seeing them
+ */
 /mob/proc/handle_eye_contact(mob/living/examined_mob)
 	return
 
@@ -562,45 +578,21 @@
 	// check to see if their face is blocked or, if not, a signal blocks it
 	if(examined_mob.is_face_visible() && SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>You make eye contact with [examined_mob].</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	if(is_face_visible() && SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 		var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 3)
 
 /**
-  * Point at an atom
-  *
-  * mob verbs are faster than object verbs. See
-  * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
-  * for why this isn't atom/verb/pointed()
-  *
-  * note: ghosts can point, this is intended
-  *
-  * visible_message will handle invisibility properly
-  *
-  * overridden here and in /mob/dead/observer for different point span classes and sanity checks
-  */
-/mob/verb/pointed(atom/A as mob|obj|turf in view())
-	set name = "Point To"
-	set category = "Object"
-
-	if(!src || !isturf(src.loc))
-		return FALSE
-	if(client && !(A in view(client.view, src)))
-		return FALSE
-	if(istype(A, /obj/effect/temp_visual/point))
-		return FALSE
-
-	var/turf/tile = get_turf(A)
-	if (!tile)
-		return FALSE
-
-	var/turf/our_tile = get_turf(src)
-	var/obj/visual = new /obj/effect/temp_visual/point(our_tile, invisibility)
-	animate(visual, pixel_x = (tile.x - our_tile.x) * world.icon_size + A.pixel_x, pixel_y = (tile.y - our_tile.y) * world.icon_size + A.pixel_y, time = 1.7, easing = EASE_OUT)
-
-	return TRUE
+ * Called by using Activate Held Object with an empty hand/limb
+ *
+ * Does nothing by default. The intended use is to allow limbs to call their
+ * own attack_self procs. It is up to the individual mob to override this
+ * parent and actually use it.
+ */
+/mob/proc/limb_attack_self()
+	return
 
 ///Can this mob resist (default FALSE)
 /mob/proc/can_resist()
@@ -628,19 +620,41 @@
 
 ///Update the pulling hud icon
 /mob/proc/update_pull_hud_icon()
-	hud_used?.pull_icon?.update_icon()
+	hud_used?.pull_icon?.update_appearance()
 
 ///Update the resting hud icon
 /mob/proc/update_rest_hud_icon()
-	hud_used?.rest_icon?.update_icon()
+	hud_used?.rest_icon?.update_appearance()
 
 /**
-  * Verb to activate the object in your held hand
-  *
-  * Calls attack self on the item and updates the inventory hud for hands
-  */
+ * Verb to activate the object in your held hand
+ *
+ * Calls attack self on the item and updates the inventory hud for hands
+ */
 /mob/verb/mode()
 	set name = "Activate Held Object"
+	set category = "Object"
+	set src = usr
+
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_mode)))
+
+///proc version to finish /mob/verb/mode() execution. used in case the proc needs to be queued for the tick after its first called
+/mob/proc/execute_mode()
+	if(ismecha(loc))
+		return
+
+	if(incapacitated())
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		I.attack_self(src)
+		update_inv_hands()
+		return
+	limb_attack_self()
+
+/mob/verb/do_unique_action()
+	set name = "Do Unique Action"
 	set category = "Object"
 	set src = usr
 
@@ -652,14 +666,14 @@
 
 	var/obj/item/I = get_active_held_item()
 	if(I)
-		I.attack_self(src)
+		I.unique_action(src)
 		update_inv_hands()
 
 /**
-  * Get the notes of this mob
-  *
-  * This actually gets the mind datums notes
-  */
+ * Get the notes of this mob
+ *
+ * This actually gets the mind datums notes
+ */
 /mob/verb/memory()
 	set name = "Notes"
 	set category = "IC"
@@ -670,8 +684,8 @@
 		to_chat(src, "You don't have a mind datum for some reason, so you can't look at your notes, if you had any.")
 
 /**
-  * Add a note to the mind datum
-  */
+ * Add a note to the mind datum
+ */
 /mob/verb/add_memory(msg as message)
 	set name = "Add Note"
 	set category = "IC"
@@ -686,38 +700,65 @@
 	else
 		to_chat(src, "You don't have a mind datum for some reason, so you can't add a note to it.")
 
+///Shows guestbook tgui window
+/mob/verb/guestbook()
+	set name = "Guestbook"
+	set category = "IC"
+	set desc = "View your character's Guestbook."
+	// the reason why there are two observer checks in here is because the mind datum sometimes carries over to ghosts.
+	// this is something i should probably fix instead of adding a fallback check, but...
+	if(isobserver(src))
+		to_chat(src, span_warning("You have to be in the current round to do that!"))
+		return
+	if(!mind)
+		var/fail_message = "You have no mind!"
+		if(isobserver(src))
+			fail_message += " You have to be in the current round at some point to have one."
+		to_chat(src, span_warning(fail_message))
+		return
+	mind.guestbook.ui_interact(usr)
+
 /**
-  * Allows you to respawn, abandoning your current mob
-  *
-  * This sends you back to the lobby creating a new dead mob
-  *
-  * Only works if flag/norespawn is allowed in config
-  */
+ * Allows you to respawn, abandoning your current mob
+ *
+ * This sends you back to the lobby creating a new dead mob
+ *
+ * Only works if flag/norespawn is allowed in config
+ */
 /mob/verb/abandon_mob()
 	set name = "Respawn"
 	set category = "OOC"
 
-	if (CONFIG_GET(flag/norespawn))
-		return
-
-	if ((stat != DEAD || !( SSticker )))
+	if ((stat != DEAD || !(SSticker)) || !isobserver(usr))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
 
 	var/respawn_timer = CONFIG_GET(number/respawn_timer)
-	if(respawn_timer)
-		if(!SSticker.respawn_timer[client])
-			to_chat(usr, "<span class='boldnotice'>You have begun your respawn timer. You will be allowed to Respawn in [DisplayTimeText(respawn_timer)]</span>")
-			SSticker.respawn_timer[client] = world.time + respawn_timer
+	if(!respawn_timer)
+		return
+
+	var/admin_bypass = FALSE
+	if(client?.holder)
+		var/poll_client = tgui_alert(usr, "Would you like to use your rank to bypass a potential respawn timer?", "Admin Alert", list("Yes", "No"))
+		if(poll_client == "Yes")
+			admin_bypass = TRUE
+			message_admins("[key_name_admin(usr)] has used admin permissions to bypass respawn restrictions.")
+			log_game("key_name(usr) used admin permissions to bypass respawn restrictions.")
+
+	if (CONFIG_GET(flag/norespawn) && !admin_bypass)
+		return
+
+	var/usrkey = client?.ckey
+	if(!usrkey)
+		log_game("[key_name(usr)] AM failed due to disconnect.")
+
+	if(GLOB.respawn_timers[usrkey] && !admin_bypass)
+		var/time_left = GLOB.respawn_timers[usrkey] + respawn_timer - REALTIMEOFDAY
+		if(time_left > 0)
+			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(time_left)] left before you can respawn.</span>")
 			return
 
-		var/left = round(SSticker.respawn_timer[client] - world.time)
-		if(left > 0)
-			to_chat(usr, "<span class='boldnotice'>You still have [DisplayTimeText(left)] left before you can respawn.</span>")
-			return
-
-		// Their timer is up, let them through
-		SSticker.respawn_timer -= client
+	GLOB.respawn_timers -= usrkey
 
 	log_game("[key_name(usr)] used abandon mob.")
 
@@ -744,8 +785,8 @@
 
 
 /**
-  * Sometimes helps if the user is stuck in another perspective or camera
-  */
+ * Sometimes helps if the user is stuck in another perspective or camera
+ */
 /mob/verb/cancel_camera()
 	set name = "Cancel Camera View"
 	set category = "OOC"
@@ -765,12 +806,12 @@
 	set category = null
 	return
 /**
-  * Topic call back for any mob
-  *
-  * * Unset machines if "mach_close" sent
-  * * refresh the inventory of machines in range if "refresh" sent
-  * * handles the strip panel equip and unequip as well if "item" sent
-  */
+ * Topic call back for any mob
+ *
+ * * Unset machines if "mach_close" sent
+ * * refresh the inventory of machines in range if "refresh" sent
+ * * handles the strip panel equip and unequip as well if "item" sent
+ */
 /mob/Topic(href, href_list)
 	var/mob/user = usr
 
@@ -816,8 +857,8 @@
 	return
 
 /**
-  * Controls if a mouse drop succeeds (return null if it doesnt)
-  */
+ * Controls if a mouse drop succeeds (return null if it doesnt)
+ */
 /mob/MouseDrop(mob/M)
 	. = ..()
 	if(M != usr)
@@ -829,10 +870,10 @@
 	if(isAI(M))
 		return
 /**
-  * Handle the result of a click drag onto this mob
-  *
-  * For mobs this just shows the inventory
-  */
+ * Handle the result of a click drag onto this mob
+ *
+ * For mobs this just shows the inventory
+ */
 /mob/MouseDrop_T(atom/dropping, atom/user)
 	. = ..()
 	if(ismob(dropping) && dropping != user)
@@ -850,7 +891,8 @@
 
 /// Adds this list to the output to the stat browser
 /mob/proc/get_status_tab_items()
-	. = list()
+	. = list("") //we want to offset unique stuff from standard stuff
+	SEND_SIGNAL(src, COMSIG_MOB_GET_STATUS_TAB_ITEMS, .)
 
 /// Gets all relevant proc holders for the browser statpenl
 /mob/proc/get_proc_holders()
@@ -860,10 +902,10 @@
 	. += get_spells_for_statpanel(mob_spell_list)
 
 /**
-  * Convert a list of spells into a displyable list for the statpanel
-  *
-  * Shows charge and other important info
-  */
+ * Convert a list of spells into a displyable list for the statpanel
+ *
+ * Shows charge and other important info
+ */
 /mob/proc/get_spells_for_statpanel(list/spells)
 	var/list/L = list()
 	for(var/obj/effect/proc_holder/spell/S in spells)
@@ -881,15 +923,15 @@
 
 // facing verbs
 /**
-  * Returns true if a mob can turn to face things
-  *
-  * Conditions:
-  * * client.last_turn > world.time
-  * * not dead or unconcious
-  * * not anchored
-  * * no transform not set
-  * * we are not restrained
-  */
+ * Returns true if a mob can turn to face things
+ *
+ * Conditions:
+ * * client.last_turn > world.time
+ * * not dead or unconcious
+ * * not anchored
+ * * no transform not set
+ * * we are not restrained
+ */
 /mob/proc/canface()
 	if(world.time < client.last_turn)
 		return FALSE
@@ -997,7 +1039,7 @@
 			mob_spell_list -= S
 			qdel(S)
 	if(client)
-		client << output(null, "statbrowser:check_spells")
+		client.stat_panel.send_message("check_spells")
 
 ///Return any anti magic atom on this mob that matches the magic type
 /mob/proc/anti_magic_check(magic = TRUE, holy = FALSE, tinfoil = FALSE, chargecost = 1, self = FALSE)
@@ -1013,12 +1055,12 @@
 		return src
 
 /**
-  * Buckle to another mob
-  *
-  * You can buckle on mobs if you're next to them since most are dense
-  *
-  * Turns you to face the other mob too
-  */
+ * Buckle to another mob
+ *
+ * You can buckle on mobs if you're next to them since most are dense
+ *
+ * Turns you to face the other mob too
+ */
 /mob/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	if(M.buckled)
 		return FALSE
@@ -1071,10 +1113,10 @@
 /mob/proc/canUseStorage()
 	return FALSE
 /**
-  * Check if the other mob has any factions the same as us
-  *
-  * If exact match is set, then all our factions must match exactly
-  */
+ * Check if the other mob has any factions the same as us
+ *
+ * If exact match is set, then all our factions must match exactly
+ */
 /mob/proc/faction_check_mob(mob/target, exact_match)
 	if(exact_match) //if we need an exact match, we need to do some bullfuckery.
 		var/list/faction_src = faction.Copy()
@@ -1102,20 +1144,31 @@
 		return LAZYLEN(match_list)
 	return FALSE
 
+/mob/proc/update_joined_player_list(newname, oldname)
+	if(newname == oldname)
+		return
+	if(oldname)
+		GLOB.joined_player_list -= oldname
+	if(newname)
+		GLOB.joined_player_list[newname] = TRUE
+
 
 /**
-  * Fully update the name of a mob
-  *
-  * This will update a mob's name, real_name, mind.name, GLOB.data_core records, pda, id and traitor text
-  *
-  * Calling this proc without an oldname will only update the mob and skip updating the pda, id and records ~Carn
-  */
+ * Fully update the name of a mob
+ *
+ * This will update a mob's name, real_name, mind.name, GLOB.data_core records, pda, id and traitor text
+ *
+ * Calling this proc without an oldname will only update the mob and skip updating the pda, id and records ~Carn
+ */
 /mob/proc/fully_replace_character_name(oldname,newname)
 	log_message("[src] name changed from [oldname] to [newname]", LOG_OWNERSHIP)
 	if(!newname)
 		return 0
 
 	log_played_names(ckey,newname)
+
+	if(GLOB.joined_player_list[oldname])
+		update_joined_player_list(newname, oldname)
 
 	real_name = newname
 	name = newname
@@ -1149,7 +1202,7 @@
 	var/search_pda = 1
 
 	for(var/A in searching)
-		if( search_id && istype(A, /obj/item/card/id) )
+		if(search_id && istype(A, /obj/item/card/id))
 			var/obj/item/card/id/ID = A
 			if(ID.registered_name == oldname)
 				ID.registered_name = newname
@@ -1160,7 +1213,7 @@
 					break
 				search_id = 0
 
-		else if( search_pda && istype(A, /obj/item/pda) )
+		else if(search_pda && istype(A, /obj/item/pda))
 			var/obj/item/pda/PDA = A
 			if(PDA.owner == oldname)
 				PDA.owner = newname
@@ -1189,20 +1242,24 @@
 
 ///Update the mouse pointer of the attached client in this mob
 /mob/proc/update_mouse_pointer()
-	if (!client)
+	if(!client)
 		return
-	client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
+	if(client.mouse_pointer_icon != initial(client.mouse_pointer_icon))//only send changes to the client if theyre needed
+		client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
 	if(examine_cursor_icon && client.keys_held["Shift"]) //mouse shit is hardcoded, make this non hard-coded once we make mouse modifiers bindable
 		client.mouse_pointer_icon = examine_cursor_icon
-	else if (ismecha(loc))
-		var/obj/mecha/M = loc
-		if(M.mouse_pointer)
-			client.mouse_pointer_icon = M.mouse_pointer
-	else if (istype(loc, /obj/vehicle/sealed))
+	if(istype(loc, /obj/vehicle/sealed))
 		var/obj/vehicle/sealed/E = loc
 		if(E.mouse_pointer)
 			client.mouse_pointer_icon = E.mouse_pointer
+	if(client.mouse_override_icon)
+		client.mouse_pointer_icon = client.mouse_override_icon
 
+/mob/proc/update_names_joined_list(new_name, old_name)
+	if(old_name)
+		GLOB.real_names_joined -= old_name
+	if(new_name)
+		GLOB.real_names_joined[new_name] = TRUE
 
 ///This mob is abile to read books
 /mob/proc/is_literate()
@@ -1217,6 +1274,25 @@
 		return
 	return TRUE
 
+/mob/proc/can_write(obj/item/writing_instrument)
+	if(!istype(writing_instrument))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(!is_literate())
+		to_chat(src, span_warning("You try to write, but don't know how to spell anything!"))
+		return FALSE
+
+	var/pen_info = writing_instrument.get_writing_implement_details()
+	if(!pen_info || (pen_info["interaction_mode"] != MODE_WRITING))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(has_gravity())
+		return TRUE
+
+	return TRUE
+
 ///Can this mob hold items
 /mob/proc/can_hold_items()
 	return FALSE
@@ -1228,13 +1304,9 @@
 /mob/proc/get_id_in_hand()
 	return
 
-///Get the mob's probably linked bank account WS EDIT
-/mob/proc/get_bank_account(hand_first)
-	return
-
 /**
-  * Get the mob VV dropdown extras
-  */
+ * Get the mob VV dropdown extras
+ */
 /mob/vv_get_dropdown()
 	. = ..()
 	VV_DROPDOWN_OPTION("", "---------")
@@ -1303,8 +1375,8 @@
 		offer_control(src)
 
 /**
-  * extra var handling for the logging var
-  */
+ * extra var handling for the logging var
+ */
 /mob/vv_get_var(var_name)
 	switch(var_name)
 		if("logging")
@@ -1324,11 +1396,11 @@
 	H.open_language_menu(usr)
 
 ///Adjust the nutrition of a mob
-/mob/proc/adjust_nutrition(var/change) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
+/mob/proc/adjust_nutrition(change) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
 	nutrition = max(0, nutrition + change)
 
 ///Force set the mob nutrition
-/mob/proc/set_nutrition(var/change) //Seriously fuck you oldcoders.
+/mob/proc/set_nutrition(change) //Seriously fuck you oldcoders.
 	nutrition = max(0, change)
 
 
@@ -1363,3 +1435,64 @@
 /// Used for typing indicator, relevant on /living level
 /mob/proc/set_typing_indicator(state)
 	return
+
+/mob/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if(NAMEOF(src, control_object))
+			var/obj/O = var_value
+			if(!istype(O) || (O.obj_flags & DANGEROUS_POSSESSION))
+				return FALSE
+		if(NAMEOF(src, machine))
+			set_machine(var_value)
+			. =  TRUE
+		if(NAMEOF(src, focus))
+			set_focus(var_value)
+			. =  TRUE
+		if(NAMEOF(src, nutrition))
+			set_nutrition(var_value)
+			. =  TRUE
+		if(NAMEOF(src, stat))
+			set_stat(var_value)
+			. =  TRUE
+		if(NAMEOF(src, dizziness))
+			set_dizziness(var_value)
+			. =  TRUE
+		if(NAMEOF(src, eye_blind))
+			set_blindness(var_value)
+			. =  TRUE
+		if(NAMEOF(src, eye_blurry))
+			set_blurriness(var_value)
+			. =  TRUE
+
+	if(!isnull(.))
+		datum_flags |= DF_VAR_EDITED
+		return
+
+	var/slowdown_edit = (var_name == NAMEOF(src, cached_multiplicative_slowdown))
+	var/diff
+	if(slowdown_edit && isnum(cached_multiplicative_slowdown) && isnum(var_value))
+		remove_movespeed_modifier(/datum/movespeed_modifier/admin_varedit)
+		diff = var_value - cached_multiplicative_slowdown
+
+	. = ..()
+
+	if(. && slowdown_edit && isnum(diff))
+		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/admin_varedit, multiplicative_slowdown = diff)
+
+/mob/proc/set_active_storage(new_active_storage)
+	if(active_storage)
+		UnregisterSignal(active_storage, COMSIG_PARENT_QDELETING)
+	active_storage = new_active_storage
+	if(active_storage)
+		RegisterSignal(active_storage, COMSIG_PARENT_QDELETING, PROC_REF(active_storage_deleted))
+
+/mob/proc/active_storage_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_active_storage(null)
+
+///Clears the client in contents list of our current "eye". Prevents hard deletes
+/mob/proc/clear_client_in_contents()
+	if(client?.movingmob) //In the case the client was transferred to another mob and not deleted.
+		client.movingmob.client_mobs_in_contents -= src
+		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
+		client.movingmob = null

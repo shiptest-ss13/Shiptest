@@ -27,17 +27,17 @@
 			latches = "double_latch"
 			if(prob(1))
 				latches = "triple_latch"
-	update_icon()
+	update_appearance()
+
+/obj/item/storage/toolbox/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/toolbox.ogg'
 
 /obj/item/storage/toolbox/update_overlays()
 	. = ..()
 	if(has_latches)
 		. += latches
-
-
-/obj/item/storage/toolbox/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] robusts [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS)
 
 /obj/item/storage/toolbox/emergency
 	name = "emergency toolbox"
@@ -56,7 +56,7 @@
 			new /obj/item/flashlight/glowstick(src)
 		if(3)
 			new /obj/item/flashlight/flare(src)
-	new /obj/item/radio/off(src)
+	new /obj/item/radio(src)
 
 /obj/item/storage/toolbox/emergency/old
 	name = "rusty red toolbox"
@@ -179,6 +179,10 @@
 	new /obj/item/multitool/syndie(src) //WS End
 	new /obj/item/clothing/gloves/combat(src)
 
+/obj/item/storage/toolbox/syndicate/empty
+
+/obj/item/storage/toolbox/syndicate/empty/PopulateContents()
+	return
 /obj/item/storage/toolbox/drone
 	name = "mechanical toolbox"
 	icon_state = "blue"
@@ -222,21 +226,56 @@
 	new /obj/item/stack/cable_coil/white(src)
 
 /obj/item/storage/toolbox/ammo
-	name = "ammo box"
-	desc = "It contains a few clips."
+	name = "ammo can"
+	desc = "A metal container for storing multiple boxes of ammunition or grenades."
 	icon_state = "ammobox"
 	item_state = "ammobox"
 	drop_sound = 'sound/items/handling/ammobox_drop.ogg'
 	pickup_sound =  'sound/items/handling/ammobox_pickup.ogg'
+	material_flags = NONE
+	has_latches = FALSE
 
-/obj/item/storage/toolbox/ammo/PopulateContents()
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
-	new /obj/item/ammo_box/a762(src)
+/obj/item/storage/toolbox/ammo/a850r/PopulateContents()
+	name = "ammo can (8x50mmR)"
+	icon_state = "ammobox_850"
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/c8x50mm_box(src)
+
+/obj/item/storage/toolbox/ammo/a762_40/PopulateContents()
+	name = "ammo can (7.62x40mm CLIP)"
+	icon_state = "ammobox_762"
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/a762_40(src)
+
+/obj/item/storage/toolbox/ammo/a308/PopulateContents()
+	name = "ammo can (.308)"
+	icon_state = "ammobox_308"
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/a308(src)
+
+/obj/item/storage/toolbox/ammo/c45/PopulateContents()
+	name = "ammo can (.45)"
+	icon_state = "ammobox_45"
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/c45(src)
+
+/obj/item/storage/toolbox/ammo/c9mm/PopulateContents()
+	name = "ammo can (9mm)"
+	icon_state = "ammobox_9mm"
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/c9mm(src)
+
+/obj/item/storage/toolbox/ammo/c10mm/PopulateContents()
+	name = "ammo can (10mm)"
+	icon_state = "ammobox_10mm"
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/c10mm(src)
+
+/obj/item/storage/toolbox/ammo/shotgun/PopulateContents()
+	name = "ammo can (12ga)"
+	icon_state = "ammobox_12ga"
+	for (var/i in 1 to 4)
+		new /obj/item/ammo_box/a12g(src)
 
 /obj/item/storage/toolbox/infiltrator
 	name = "insidious case"
@@ -304,7 +343,7 @@
 			if(/obj/item/storage/toolbox/syndicate)
 				B.toolbox_color = "s"
 		user.put_in_hands(B)
-		B.update_icon()
+		B.update_appearance()
 		to_chat(user, "<span class='notice'>You add the tiles into the empty [name]. They protrude from the top.</span>")
 		qdel(src)
 	else

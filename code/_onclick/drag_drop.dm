@@ -15,20 +15,23 @@
 	if(!Adjacent(usr) || !over.Adjacent(usr))
 		return // should stop you from dragging through windows
 
-	over.MouseDrop_T(src,usr)
+	over.MouseDrop_T(src,usr,params)
 	return
 
 // receive a mousedrop
-/atom/proc/MouseDrop_T(atom/dropping, mob/user)
-	SEND_SIGNAL(src, COMSIG_MOUSEDROPPED_ONTO, dropping, user)
+/atom/proc/MouseDrop_T(atom/dropping, mob/user, params)
+	SEND_SIGNAL(src, COMSIG_MOUSEDROPPED_ONTO, dropping, user, params)
 	return
 
 
 /client
 	var/mouseControlObject = null
 
-/client/MouseDown(object, location, control, params)
-	if (mouse_down_icon)
+/client/MouseDown(datum/object, location, control, params)
+	if(QDELETED(object)) //Yep, you can click on qdeleted things before they have time to nullspace. Fun.
+		return
+	SEND_SIGNAL(src, COMSIG_CLIENT_MOUSEDOWN, object, location, control, params)
+	if(mouse_down_icon)
 		mouse_pointer_icon = mouse_down_icon
 	var/delay = mob.CanMobAutoclick(object, location, params)
 	if(delay)
@@ -42,7 +45,9 @@
 		active_mousedown_item.onMouseDown(object, location, params, mob)
 
 /client/MouseUp(object, location, control, params)
-	if (mouse_up_icon)
+	if(SEND_SIGNAL(src, COMSIG_CLIENT_MOUSEUP, object, location, control, params) & COMPONENT_CLIENT_MOUSEUP_INTERCEPT)
+		click_intercept_time = world.time
+	if(mouse_up_icon)
 		mouse_pointer_icon = mouse_up_icon
 	selected_target[1] = null
 	if(active_mousedown_item)
@@ -77,9 +82,6 @@
 /obj/item/proc/onMouseUp(object, location, params, mob)
 	return
 
-/obj/item/gun/CanItemAutoclick(object, location, params)
-	. = automatic
-
 /atom/proc/IsAutoclickable()
 	. = 1
 
@@ -89,23 +91,9 @@
 /atom/movable/screen/click_catcher/IsAutoclickable()
 	. = 1
 
-//WS Begin - Please fucking work for spacepod code
-/client/MouseMove(object,location,control,params)
-	mouseParams = params
-	mouseLocation = location
-	mouseObject = object
-	mouseControlObject = control
-	if(mob && LAZYLEN(mob.mousemove_intercept_objects))
-		for(var/datum/D in mob.mousemove_intercept_objects)
-			D.onMouseMove(object, location, control, params)
-	..()
-/datum/proc/onMouseMove(object, location, control, params)
-	return
-//WS End
-
 /client/MouseDrag(src_object,atom/over_object,src_location,over_location,src_control,over_control,params)
-	var/list/L = params2list(params)
-	if (L["middle"])
+	var/list/modifiers = params2list(params)
+	if (LAZYACCESS(modifiers, MIDDLE_CLICK))
 		if (src_object && src_location != over_location)
 			middragtime = world.time
 			middragatom = src_object
@@ -114,7 +102,13 @@
 			middragatom = null
 	mouseParams = params
 	mouseLocation = over_location
-	mouseObject = over_object
+	if(mouseObject != over_object)
+		if(mouseObject)
+			// unregister signal to current mouseObject
+			UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
+		mouseObject = over_object
+		// register signal to new mouseObject
+		RegisterSignal(mouseObject, COMSIG_PARENT_QDELETING, PROC_REF(clear_mouseObject))
 	mouseControlObject = over_control
 	if(selected_target[1] && over_object && over_object.IsAutoclickable())
 		selected_target[1] = over_object
@@ -122,6 +116,15 @@
 	if(active_mousedown_item)
 		active_mousedown_item.onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
 
+	SEND_SIGNAL(src, COMSIG_CLIENT_MOUSEDRAG, src_object, over_object, src_location, over_location, src_control, over_control, params)
+
+/client/proc/clear_mouseObject()
+	UnregisterSignal(mouseObject, COMSIG_PARENT_QDELETING)
+	mouseObject = null
+	mouseControlObject = null
+	mouseLocation = null
+	mouseParams = ""
+	return
 
 /obj/item/proc/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
 	return

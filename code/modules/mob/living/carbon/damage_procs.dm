@@ -1,6 +1,6 @@
 
 
-/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1) //WS change, adds bone break mod
+/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, break_modifier = 1)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!damage || (!forced && hit_percent <= 0))
@@ -25,12 +25,16 @@
 					update_damage_overlays()
 			else //no bodypart, we deal damage with a more general method.
 				adjustBruteLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 		if(BURN)
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, break_modifier))
 					update_damage_overlays()
 			else
 				adjustFireLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 		if(TOX)
 			adjustToxLoss(damage_amount, forced = forced)
 		if(OXY)
@@ -43,21 +47,21 @@
 					update_damage_overlays()
 			else
 				adjustStaminaLoss(damage_amount, forced = forced)
+			if(stat <= HARD_CRIT)
+				shake_animation(damage_amount)
 	return TRUE
 
 
 //These procs fetch a cumulative total damage from all bodyparts
 /mob/living/carbon/getBruteLoss()
 	var/amount = 0
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		amount += BP.brute_dam
 	return amount
 
 /mob/living/carbon/getFireLoss()
 	var/amount = 0
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		amount += BP.burn_dam
 	return amount
 
@@ -68,7 +72,9 @@
 	if(amount > 0)
 		take_overall_damage(amount, 0, 0, updating_health, required_status)
 	else
-		heal_overall_damage(abs(amount), 0, 0, required_status ? required_status : BODYPART_ORGANIC, updating_health)
+		if(!required_status)
+			required_status = forced ? null : BODYTYPE_ORGANIC
+		heal_overall_damage(abs(amount), 0, 0, required_status, updating_health)
 	return amount
 
 /mob/living/carbon/adjustFireLoss(amount, updating_health = TRUE, forced = FALSE, required_status)
@@ -77,7 +83,9 @@
 	if(amount > 0)
 		take_overall_damage(0, amount, 0, updating_health, required_status)
 	else
-		heal_overall_damage(0, abs(amount), 0, required_status ? required_status : BODYPART_ORGANIC, updating_health)
+		if(!required_status)
+			required_status = forced ? null : BODYTYPE_ORGANIC
+		heal_overall_damage(0, abs(amount), 0, required_status, updating_health)
 	return amount
 
 /mob/living/carbon/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE)
@@ -93,8 +101,7 @@
 
 /mob/living/carbon/getStaminaLoss()
 	. = 0
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		. += round(BP.stamina_dam * BP.stam_damage_coeff, DAMAGE_PRECISION)
 
 /mob/living/carbon/adjustStaminaLoss(amount, updating_health = TRUE, forced = FALSE)
@@ -114,37 +121,37 @@
 	adjustStaminaLoss(diff, updating_health, forced)
 
 /**
-  * If an organ exists in the slot requested, and we are capable of taking damage (we don't have [GODMODE] on), call the damage proc on that organ.
-  *
-  * Arguments:
-  * * slot - organ slot, like [ORGAN_SLOT_HEART]
-  * * amount - damage to be done
-  * * maximum - currently an arbitrarily large number, can be set so as to limit damage
-  */
+ * If an organ exists in the slot requested, and we are capable of taking damage (we don't have [GODMODE] on), call the damage proc on that organ.
+ *
+ * Arguments:
+ * * slot - organ slot, like [ORGAN_SLOT_HEART]
+ * * amount - damage to be done
+ * * maximum - currently an arbitrarily large number, can be set so as to limit damage
+ */
 /mob/living/carbon/adjustOrganLoss(slot, amount, maximum)
 	var/obj/item/organ/O = getorganslot(slot)
 	if(O && !(status_flags & GODMODE))
 		O.applyOrganDamage(amount, maximum)
 
 /**
-  * If an organ exists in the slot requested, and we are capable of taking damage (we don't have [GODMODE] on), call the set damage proc on that organ, which can
-  *	set or clear the failing variable on that organ, making it either cease or start functions again, unlike adjustOrganLoss.
-  *
-  * Arguments:
-  * * slot - organ slot, like [ORGAN_SLOT_HEART]
-  * * amount - damage to be set to
-  */
+ * If an organ exists in the slot requested, and we are capable of taking damage (we don't have [GODMODE] on), call the set damage proc on that organ, which can
+ *	set or clear the failing variable on that organ, making it either cease or start functions again, unlike adjustOrganLoss.
+ *
+ * Arguments:
+ * * slot - organ slot, like [ORGAN_SLOT_HEART]
+ * * amount - damage to be set to
+ */
 /mob/living/carbon/setOrganLoss(slot, amount)
 	var/obj/item/organ/O = getorganslot(slot)
 	if(O && !(status_flags & GODMODE))
 		O.setOrganDamage(amount)
 
 /**
-  * If an organ exists in the slot requested, return the amount of damage that organ has
-  *
-  * Arguments:
-  * * slot - organ slot, like [ORGAN_SLOT_HEART]
-  */
+ * If an organ exists in the slot requested, return the amount of damage that organ has
+ *
+ * Arguments:
+ * * slot - organ slot, like [ORGAN_SLOT_HEART]
+ */
 /mob/living/carbon/getOrganLoss(slot)
 	var/obj/item/organ/O = getorganslot(slot)
 	if(O)
@@ -152,35 +159,33 @@
 
 ////////////////////////////////////////////
 
-///Returns a list of damaged bodyparts
+//Returns a list of damaged bodyparts
 /mob/living/carbon/proc/get_damaged_bodyparts(brute = FALSE, burn = FALSE, stamina = FALSE, status)
 	var/list/obj/item/bodypart/parts = list()
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
-		if(status && (BP.status != status))
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(status && !(BP.bodytype & status))
 			continue
 		if((brute && BP.brute_dam) || (burn && BP.burn_dam) || (stamina && BP.stamina_dam))
 			parts += BP
 	return parts
 
-///Returns a list of damageable bodyparts
+//Returns a list of damageable bodyparts
 /mob/living/carbon/proc/get_damageable_bodyparts(status)
 	var/list/obj/item/bodypart/parts = list()
-	for(var/X in bodyparts)
-		var/obj/item/bodypart/BP = X
-		if(status && (BP.status != status))
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
+		if(status && !(BP.bodytype & status))
 			continue
 		if(BP.brute_dam + BP.burn_dam < BP.max_damage)
 			parts += BP
 	return parts
 
 /**
-  * Heals ONE bodypart randomly selected from damaged ones.
-  *
-  * It automatically updates damage overlays if necessary
-  *
-  * It automatically updates health status
-  */
+ * Heals ONE bodypart randomly selected from damaged ones.
+ *
+ * It automatically updates damage overlays if necessary
+ *
+ * It automatically updates health status
+ */
 /mob/living/carbon/heal_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status)
 	var/list/obj/item/bodypart/parts = get_damaged_bodyparts(brute,burn,stamina,required_status)
 	if(!parts.len)
@@ -193,18 +198,18 @@
 
 
 /**
-  * Damages ONE bodypart randomly selected from damagable ones.
-  *
-  * It automatically updates damage overlays if necessary
-  *
-  * It automatically updates health status
-  */
+ * Damages ONE bodypart randomly selected from damagable ones.
+ *
+ * It automatically updates damage overlays if necessary
+ *
+ * It automatically updates health status
+ */
 /mob/living/carbon/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, check_armor = FALSE)
 	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(required_status)
 	if(!parts.len)
 		return
 	var/obj/item/bodypart/picked = pick(parts)
-	if(picked.receive_damage(brute, burn, stamina,check_armor ? run_armor_check(picked, (brute ? "melee" : burn ? "fire" : stamina ? "bullet" : null)) : FALSE))
+	if(picked.receive_damage(brute, burn, stamina, check_armor ? run_armor_check(picked, (brute ? "melee" : burn ? "fire" : stamina ? "bullet" : null)) : FALSE))
 		update_damage_overlays()
 
 ///Heal MANY bodyparts, in random order
@@ -239,7 +244,7 @@
 
 	var/list/obj/item/bodypart/parts = get_damageable_bodyparts(required_status)
 	var/update = 0
-	while(parts.len && (brute > 0 || burn > 0 || stamina > 0))
+	while(length(parts) && (brute > 0 || burn > 0 || stamina > 0))
 		var/obj/item/bodypart/picked = pick(parts)
 		var/brute_per_part = round(brute/parts.len, DAMAGE_PRECISION)
 		var/burn_per_part = round(burn/parts.len, DAMAGE_PRECISION)

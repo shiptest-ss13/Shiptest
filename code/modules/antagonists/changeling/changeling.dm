@@ -147,13 +147,13 @@
 
 ///Handles stinging without verbs.
 /datum/antagonist/changeling/proc/stingAtom(mob/living/carbon/ling, atom/A)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(!chosen_sting || A == ling || !istype(ling) || ling.stat)
 		return
-	if(!chosen_sting.try_to_sting(ling, A))
-		return
-	ling.changeNext_move(CLICK_CD_MELEE)
+
+	INVOKE_ASYNC(chosen_sting, TYPE_PROC_REF(/datum/action/changeling/sting, try_to_sting), ling, A)
+
 	return COMSIG_MOB_CANCEL_CLICKON
 
 /datum/antagonist/changeling/proc/has_sting(datum/action/changeling/power)
@@ -358,7 +358,7 @@
 		if(B)
 			B.organ_flags &= ~ORGAN_VITAL
 			B.decoy_override = TRUE
-		RegisterSignal(C, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), .proc/stingAtom)
+		RegisterSignal(C, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(stingAtom))
 	var/mob/living/M = mob_override || owner.current
 	add_antag_hud(antag_hud_type, antag_hud_name, M)
 	handle_clown_mutation(M, "You have evolved beyond your clownish nature, allowing you to wield weapons without harming yourself.")
@@ -487,7 +487,7 @@
 /datum/antagonist/changeling/get_admin_commands()
 	. = ..()
 	if(stored_profiles.len && (owner.current.real_name != first_prof.name))
-		.["Transform to initial appearance."] = CALLBACK(src,.proc/admin_restore_appearance)
+		.["Transform to initial appearance."] = CALLBACK(src, PROC_REF(admin_restore_appearance))
 
 /datum/antagonist/changeling/proc/admin_restore_appearance(mob/admin)
 	if(!stored_profiles.len || !iscarbon(owner.current))
@@ -544,6 +544,11 @@
 	give_objectives = FALSE
 	show_in_roundend = FALSE //These are here for admin tracking purposes only
 	you_are_greet = FALSE
+
+	chem_storage = 25
+	geneticpoints = 2
+	chem_recharge_rate = 0.5
+	dna_max = 3
 
 /datum/antagonist/changeling/roundend_report()
 	var/list/parts = list()

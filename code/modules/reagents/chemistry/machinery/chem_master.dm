@@ -5,6 +5,7 @@
 	layer = BELOW_OBJ_LAYER
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "mixer0"
+	base_icon_state = "mixer"
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
 	resistance_flags = FIRE_PROOF | ACID_PROOF
@@ -72,15 +73,13 @@
 	if(A == beaker)
 		beaker = null
 		reagents.clear_reagents()
-		update_icon()
+		update_appearance()
 	else if(A == bottle)
 		bottle = null
 
 /obj/machinery/chem_master/update_icon_state()
-	if(beaker)
-		icon_state = "mixer1"
-	else
-		icon_state = "mixer0"
+	icon_state = "[base_icon_state][beaker ? 1 : 0]"
+	return ..()
 
 /obj/machinery/chem_master/update_overlays()
 	. = ..()
@@ -112,7 +111,7 @@
 		replace_beaker(user, B)
 		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
 		updateUsrDialog()
-		update_icon()
+		update_appearance()
 	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
 		if(bottle)
 			to_chat(user, "<span class='warning'>A pill bottle is already loaded into [src]!</span>")
@@ -132,14 +131,17 @@
 	replace_beaker(user)
 
 /obj/machinery/chem_master/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
-	if(!user)
+	if(!user || !can_interact(user))
 		return FALSE
 	if(beaker)
-		user.put_in_hands(beaker)
+		if(Adjacent(src, user) && !issiliconoradminghost(user))
+			user.put_in_hands(beaker)
+		else
+			beaker.forceMove(get_turf(src))
 		beaker = null
 	if(new_beaker)
 		beaker = new_beaker
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/machinery/chem_master/on_deconstruction()
@@ -306,6 +308,7 @@
 					/datum/component/storage)
 				if(STRB)
 					drop_threshold = STRB.max_items - bottle.contents.len
+					target_loc = bottle
 			for(var/i = 0; i < amount; i++)
 				if(i < drop_threshold)
 					P = new/obj/item/reagent_containers/pill(target_loc)
@@ -394,14 +397,14 @@
 
 /obj/machinery/chem_master/adjust_item_drop_location(atom/movable/AM) // Special version for chemmasters and condimasters
 	if (AM == beaker)
-		AM.pixel_x = -8
-		AM.pixel_y = 8
+		AM.pixel_x = AM.base_pixel_x - 8
+		AM.pixel_y = AM.base_pixel_y + 8
 		return null
 	else if (AM == bottle)
 		if (length(bottle.contents))
-			AM.pixel_x = -13
+			AM.pixel_x = AM.base_pixel_x - 13
 		else
-			AM.pixel_x = -7
+			AM.pixel_x = AM.base_pixel_x - 7
 		AM.pixel_y = -8
 		return null
 	else
@@ -409,8 +412,8 @@
 		for (var/i in 1 to 32)
 			. += hex2num(md5[i])
 		. = . % 9
-		AM.pixel_x = ((.%3)*6)
-		AM.pixel_y = -8 + (round( . / 3)*8)
+		AM.pixel_x = AM.base_pixel_x + ((.%3)*6)
+		AM.pixel_y = AM.base_pixel_y - 8 + (round(. / 3)*8)
 
 /obj/machinery/chem_master/condimaster
 	name = "CondiMaster 3000"

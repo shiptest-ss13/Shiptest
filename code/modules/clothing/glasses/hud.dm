@@ -6,7 +6,6 @@
 	///Used for topic calls. Just because you have a HUD display doesn't mean you should be able to interact with stuff.
 	var/hud_trait = null
 
-
 /obj/item/clothing/glasses/hud/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if(slot != ITEM_SLOT_EYES)
@@ -93,6 +92,7 @@
 	item_state = "glasses"
 	flash_protect = FLASH_PROTECTION_FLASH
 	tint = 1
+	glass_colour_type = /datum/client_colour/glass_colour/orange
 
 /obj/item/clothing/glasses/hud/security
 	name = "security HUD"
@@ -129,7 +129,20 @@
 /obj/item/clothing/glasses/hud/security/sunglasses/eyepatch
 	name = "eyepatch HUD"
 	desc = "A heads-up display that connects directly to the optical nerve of the user, replacing the need for that useless eyeball."
-	icon_state = "hudpatch"
+	icon_state = "hudpatch-0"
+	var/flipped = FALSE
+
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/AltClick(mob/user)
+	. = ..()
+	flipped = !flipped
+	to_chat(user, "<span class='notice'>You shift the hudpatch to cover the [flipped == 0 ? "right" : "left"] eye.</span>")
+	icon_state = "hudpatch-[flipped]"
+	item_state = "hudpatch-[flipped]"
+	update_appearance()
+
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch/examine(mob/user)
+	. = ..()
+	. += "It is currently aligned to the [flipped == 0 ? "right" : "left"] side."
 
 /obj/item/clothing/glasses/hud/security/sunglasses
 	name = "security HUDSunglasses"
@@ -199,7 +212,7 @@
 /obj/item/clothing/glasses/hud/toggle/thermal
 	name = "thermal HUD scanner"
 	desc = "Thermal imaging HUD in the shape of glasses."
-	icon_state = "thermal"
+	icon_state = "thermalgoggles"
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	vision_flags = SEE_MOBS
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
@@ -209,13 +222,13 @@
 	..()
 	switch (hud_type)
 		if (DATA_HUD_MEDICAL_ADVANCED)
-			icon_state = "meson"
+			icon_state = "mesongoggles"
 			change_glass_color(user, /datum/client_colour/glass_colour/green)
 		if (DATA_HUD_SECURITY_ADVANCED)
-			icon_state = "thermal"
+			icon_state = "thermalgoggles"
 			change_glass_color(user, /datum/client_colour/glass_colour/red)
 		else
-			icon_state = "purple"
+			icon_state = "scigoggles"
 			change_glass_color(user, /datum/client_colour/glass_colour/purple)
 	user.update_inv_glasses()
 
@@ -241,4 +254,24 @@
 	desc = "These sunglasses are special, and let you view potential criminals."
 	icon_state = "sun"
 	item_state = "sunglasses"
+
+/obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	name = "inteq ballistic HUD"
+	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
+	icon_state = "inteq_goggles"
+	item_state = "inteq_goggles"
+	supports_variations = KEPORI_VARIATION
+	glass_colour_type = /datum/client_colour/glass_colour/orange
+
+/obj/item/clothing/glasses/hud/health/prescription
+	name = "prescription health scanner HUD"
+	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their health status. This pair also helps nearsighted doctors."
+	icon_state = "prescriptionhealthhud"
+	vision_correction = 1
+
+/obj/item/clothing/glasses/hud/security/prescription
+	name = "prescription security HUD"
+	desc = "A heads-up display that scans the humanoids in view and provides accurate data about their ID status and security records. This pair also corrects nearsightedness."
+	icon_state = "prescriptionsecurityhud"
+	vision_correction = 1
 

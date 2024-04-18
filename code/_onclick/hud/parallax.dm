@@ -46,6 +46,10 @@
 
 /datum/hud/proc/apply_parallax_pref(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
+
+	if (SSlag_switch.measures[DISABLE_PARALLAX] && !HAS_TRAIT(viewmob, TRAIT_BYPASS_MEASURES))
+		return FALSE
+
 	var/client/C = screenmob.client
 	if(C.prefs)
 		var/pref = C.prefs.parallax
@@ -53,7 +57,7 @@
 			pref = PARALLAX_HIGH
 		switch(C.prefs.parallax)
 			if (PARALLAX_INSANE)
-				C.parallax_throttle = FALSE
+				C.parallax_throttle = PARALLAX_DELAY_DEFAULT
 				C.parallax_layers_max = 5
 				return TRUE
 
@@ -129,7 +133,7 @@
 	C.parallax_movedir = new_parallax_movedir
 	if (C.parallax_animate_timer)
 		deltimer(C.parallax_animate_timer)
-	var/datum/callback/CB = CALLBACK(src, .proc/update_parallax_motionblur, C, animatedir, new_parallax_movedir, newtransform)
+	var/datum/callback/CB = CALLBACK(src, PROC_REF(update_parallax_motionblur), C, animatedir, new_parallax_movedir, newtransform)
 	if(skip_windups)
 		CB.Invoke()
 	else
@@ -155,7 +159,8 @@
 
 		L.transform = newtransform
 
-		animate(L, transform = matrix(), time = T, loop = -1, flags = ANIMATION_END_NOW)
+		animate(L, transform = L.transform, time = 0, loop = -1, flags = ANIMATION_END_NOW)
+		animate(transform = matrix(), time = T)
 
 /datum/hud/proc/update_parallax()
 	var/client/C = mymob.client
@@ -223,10 +228,9 @@
 
 /atom/movable/proc/update_parallax_contents()
 	if(length(client_mobs_in_contents))
-		for(var/thing in client_mobs_in_contents)
-			var/mob/M = thing
-			if(M && M.client && M.hud_used && length(M.client.parallax_layers))
-				M.hud_used.update_parallax()
+		for(var/mob/client_mob as anything in client_mobs_in_contents)
+			if(length(client_mob?.client?.parallax_layers) && client_mob.hud_used)
+				client_mob.hud_used.update_parallax()
 
 /mob/proc/update_parallax_teleport()	//used for arrivals shuttle
 	if(client && client.eye && hud_used && length(client.parallax_layers))
@@ -293,13 +297,6 @@
 	blend_mode = BLEND_OVERLAY
 	speed = 3
 	layer = 3
-
-/atom/movable/screen/parallax_layer/random/space_gas
-	icon_state = "space_gas"
-
-/atom/movable/screen/parallax_layer/random/space_gas/Initialize(mapload, view)
-	. = ..()
-	src.add_atom_colour(SSparallax.random_parallax_color, ADMIN_COLOUR_PRIORITY)
 
 /atom/movable/screen/parallax_layer/random/asteroids
 	icon_state = "asteroids"

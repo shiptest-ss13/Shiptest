@@ -1,27 +1,19 @@
 /datum/job/lawyer
-	title = "Lawyer"
-	department_head = list("Head of Personnel")
-	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the head of personnel"
-	special_notice = "You are not a security officer. However, you represent the law and can defend those who are mishandled by security in court." //WS Edit - Wikilinks/Warning
+	name = "Lawyer"
 	wiki_page = "Lawyer" //WS Edit - Wikilinks/Warning
-	selection_color = "#bbe291"
 	var/lawyers = 0 //Counts lawyer amount
 
 	outfit = /datum/outfit/job/lawyer
 
 	access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
 	minimal_access = list(ACCESS_LAWYER, ACCESS_COURT, ACCESS_SEC_DOORS)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_LAWYER
 
 /datum/outfit/job/lawyer
 	name = "Lawyer"
+	job_icon = "lawyer"
 	jobtype = /datum/job/lawyer
 
 	belt = /obj/item/pda/lawyer
@@ -35,23 +27,3 @@
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	chameleon_extras = /obj/item/stamp/law
-
-
-/datum/outfit/job/lawyer/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	var/datum/job/lawyer/J = SSjob.GetJobType(jobtype)
-	J.lawyers++
-	if(J.lawyers>1)
-		uniform = /obj/item/clothing/under/rank/civilian/lawyer/purpsuit
-		suit = /obj/item/clothing/suit/toggle/lawyer/purple
-
-
-/datum/outfit/job/lawyer/corporaterepresentative
-	uniform = /obj/item/clothing/under/suit/black
-	suit = /obj/item/clothing/suit/toggle/lawyer/black
-	neck = /obj/item/clothing/neck/tie/blue
-	l_hand = /obj/item/clipboard
-	r_pocket = /obj/item/pen/fountain

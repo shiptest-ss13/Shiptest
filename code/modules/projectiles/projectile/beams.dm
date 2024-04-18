@@ -2,10 +2,21 @@
 	name = "laser"
 	icon_state = "laser"
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
-	damage = 20
+	damage = 25
+	armour_penetration = -5
 	damage_type = BURN
-	hitsound = 'sound/weapons/sear.ogg'
-	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+
+	hitsound = 'sound/weapons/gun/hit/energy_impact1.ogg'
+	hitsound_non_living = 'sound/weapons/effects/searwall.ogg'
+	hitsound_glass = 'sound/weapons/effects/searwall.ogg'
+	hitsound_stone = 'sound/weapons/sear.ogg'
+	hitsound_metal = 'sound/weapons/effects/searwall.ogg'
+	hitsound_wood = 'sound/weapons/sear.ogg'
+	hitsound_snow = 'sound/weapons/sear.ogg'
+
+	near_miss_sound = 'sound/weapons/gun/hit/energy_miss1.ogg'
+	ricochet_sound = 'sound/weapons/gun/hit/energy_ricochet1.ogg'
+
 	flag = "laser"
 	eyeblur = 2
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
@@ -14,14 +25,26 @@
 	light_power = 1
 	light_color = COLOR_SOFT_RED
 	ricochets_max = 50	//Honk!
-	ricochet_chance = 80
+	ricochet_chance = 90
 	reflectable = REFLECT_NORMAL
+
+/obj/projectile/beam/throw_atom_into_space()
+	return
 
 
 /obj/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
+
+/obj/projectile/beam/laser/eoehoma
+	damage = 25
+	armour_penetration = -10
+
+/obj/projectile/beam/laser/assault
+	icon_state = "heavylaser"
+	damage = 25
+	armour_penetration = 20
 
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
@@ -42,8 +65,19 @@
 /obj/projectile/beam/weak
 	damage = 15
 
+/obj/projectile/beam/weaker
+	damage = 10
+
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50
+
+/obj/projectile/beam/laser/weak/negative_ap
+	damage = 15
+	armour_penetration = -30
+	range = 9
+
+/obj/projectile/beam/laser/weak/negative_ap/low_range
+	range = 6
 
 /obj/projectile/beam/practice
 	name = "practice laser"
@@ -74,6 +108,7 @@
 	name = "disabler beam"
 	icon_state = "omnilaser"
 	damage = 30
+	armour_penetration = -20
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'
@@ -87,10 +122,17 @@
 /obj/projectile/beam/disabler/weak
 	damage = 15
 
+/obj/projectile/beam/disabler/weak/negative_ap
+	armour_penetration = -30
+	range = 9
+
+/obj/projectile/beam/disabler/weak/negative_ap/low_range
+	range = 6
+
 /obj/projectile/beam/pulse
 	name = "pulse"
 	icon_state = "u_laser"
-	damage = 50
+	damage = 40
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
 	tracer_type = /obj/effect/projectile/tracer/pulse
@@ -99,14 +141,16 @@
 
 /obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
-		if(isobj(target))
-			SSexplosions.medobj += target
-		else
-			SSexplosions.medturf += target
+	var/turf/targets_turf = target.loc
+	if(!isopenturf(targets_turf))
+		return
+	targets_turf.IgniteTurf(rand(8,22), "blue")
 
 /obj/projectile/beam/pulse/shotgun
 	damage = 40
+
+/obj/projectile/beam/pulse/condor
+	range = 128
 
 /obj/projectile/beam/pulse/heavy
 	name = "heavy pulse laser"
@@ -122,7 +166,7 @@
 /obj/projectile/beam/emitter
 	name = "emitter beam"
 	icon_state = "emitter"
-	damage = 30
+	damage = 60 //osha violation waiting to happen
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
 
@@ -212,3 +256,17 @@
 	if(isopenturf(target) || istype(target, /turf/closed/indestructible))//shrunk floors wouldnt do anything except look weird, i-walls shouldnt be bypassable
 		return
 	target.AddComponent(/datum/component/shrink, shrink_time)
+
+/obj/projectile/beam/emitter/hitscan
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser/emitter
+	muzzle_type = /obj/effect/projectile/muzzle/laser/emitter
+	impact_type = /obj/effect/projectile/impact/laser/emitter
+	impact_effect_type = null
+
+/obj/projectile/beam/emitter/hitscan/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	var/turf/targets_turf = target.loc
+	if(!isopenturf(targets_turf))
+		return
+	targets_turf.IgniteTurf(rand(8,22), "green")

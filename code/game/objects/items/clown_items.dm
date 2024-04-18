@@ -80,22 +80,10 @@
 	cleanspeed = 3 //Only the truest of mind soul and body get one of these
 	uses = 301
 
-/obj/item/soap/omega/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is using [src] to scrub themselves from the timeline! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	new /obj/structure/chrono_field(user.loc, user)
-	return MANUAL_SUICIDE
-
 /obj/item/paper/fluff/stations/soap
 	name = "ancient janitorial poem"
 	desc = "An old paper that has passed many hands."
-	info = "The legend of the omega soap</B><BR><BR> Essence of <B>potato</B>. Juice, not grind.<BR><BR> A <B>lizard's</B> tail, turned into <B>wine</B>.<BR><BR> <B>powder of monkey</B>, to help the workload.<BR><BR> Some <B>Krokodil</B>, because meth would explode.<BR><BR> <B>Nitric acid</B> and <B>Baldium</B>, for organic dissolving.<BR><BR> A cup filled with <B>Hooch</B>, for sinful absolving<BR><BR> Some <B>Bluespace Dust</B>, for removal of stains.<BR><BR> A syringe full of <B>Pump-up</B>, it's security's bane.<BR><BR> Add a can of <B>Space Cola</B>, because we've been paid.<BR><BR> <B>Heat</B> as hot as you can, let the soap be your blade.<BR><BR> <B>Ten units of each regent create a soap that could topple all others.</B>"
-
-
-/obj/item/soap/suicide_act(mob/user)
-	user.say(";FFFFFFFFFFFFFFFFUUUUUUUDGE!!", forced="soap suicide")
-	user.visible_message("<span class='suicide'>[user] lifts [src] to [user.p_their()] mouth and gnaws on it furiously, producing a thick froth! [user.p_they(TRUE)]'ll never get that BB gun now!</span>")
-	new /obj/effect/particle_effect/foam(loc)
-	return (TOXLOSS)
+	default_raw_text = "The legend of the omega soap</B><BR><BR> Essence of <B>potato</B>. Juice, not grind.<BR><BR> A <B>cactus</B> brew, fermented into <B>wine</B>.<BR><BR> <B>powder of monkey</B>, to help the workload.<BR><BR> Some <B>Krokodil</B>, because meth would explode.<BR><BR> <B>Nitric acid</B> and <B>Baldium</B>, for organic dissolving.<BR><BR> A cup filled with <B>Hooch</B>, for sinful absolving<BR><BR> Some <B>Bluespace Dust</B>, for removal of stains.<BR><BR> A syringe full of <B>Pump-up</B>, it's security's bane.<BR><BR> Add a can of <B>Space Cola</B>, because we've been paid.<BR><BR> <B>Heat</B> as hot as you can, let the soap be your blade.<BR><BR> <B>Ten units of each regent create a soap that could topple all others.</B>"
 
 /obj/item/soap/proc/decreaseUses(mob/user)
 	var/skillcheck = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
@@ -112,6 +100,8 @@
 	var/clean_speedies = cleanspeed * min(user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)+0.1,1) //less scaling for soapies
 	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
 	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
+	target.add_overlay(GLOB.cleaning_bubbles)
+	playsound(src, 'sound/misc/slip.ogg', 15, TRUE, -8)
 	if(user.client && ((target in user.client.screen) && !user.is_holding(target)))
 		to_chat(user, "<span class='warning'>You need to take that [target.name] off before cleaning it!</span>")
 	else if(istype(target, /obj/effect/decal/cleanable))
@@ -128,10 +118,8 @@
 		user.visible_message("<span class='warning'>\the [user] washes \the [target]'s mouth out with [src.name]!</span>", "<span class='notice'>You wash \the [target]'s mouth out with [src.name]!</span>") //washes mouth out with soap sounds better than 'the soap' here			if(user.zone_selected == "mouth")
 		if(H.lip_style)
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
-		H.lip_style = null //removes lipstick
-		H.update_body()
+			H.update_lips(null)
 		decreaseUses(user)
-		return
 	else if(istype(target, /obj/structure/window))
 		user.visible_message("<span class='notice'>[user] begins to clean \the [target.name] with [src]...</span>", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
 		if(do_after(user, clean_speedies, target = target))
@@ -151,6 +139,7 @@
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			decreaseUses(user)
+	target.cut_overlay(GLOB.cleaning_bubbles)
 	return
 
 
@@ -173,10 +162,15 @@
 	throw_speed = 3
 	throw_range = 7
 	attack_verb = list("HONKED")
+	///sound file given to the squeaky component we make in Initialize() so sub-types can specify their own sound
+	var/sound_file = 'sound/items/bikehorn.ogg'
 
 /obj/item/bikehorn/Initialize()
 	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/items/bikehorn.ogg'=1), 50, falloff_exponent = 20) //die off quick please)
+	var/list/sound_list = list()
+	sound_list[sound_file] = 1
+	//LoadComponent so child types dont stack squeak components
+	LoadComponent(/datum/component/squeak, sound_list, 50)
 
 /obj/item/bikehorn/attack(mob/living/carbon/M, mob/living/carbon/user)
 	if(user != M && ishuman(user))
@@ -185,21 +179,12 @@
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "honk", /datum/mood_event/honk)
 	return ..()
 
-/obj/item/bikehorn/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] solemnly points [src] at [user.p_their()] temple! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/items/bikehorn.ogg', 50, TRUE)
-	return (BRUTELOSS)
-
 //air horn
 /obj/item/bikehorn/airhorn
 	name = "air horn"
 	desc = "Damn son, where'd you find this?"
 	icon_state = "air_horn"
-
-/obj/item/bikehorn/airhorn/Initialize()
-	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/items/airhorn2.ogg'=1), 50, falloff_exponent = 20) //die off quick please)
-
+	sound_file = 'sound/items/airhorn2.ogg'
 //golden bikehorn
 /obj/item/bikehorn/golden
 	name = "golden bike horn"
@@ -227,7 +212,6 @@
 				continue
 		M.emote("flip")
 	flip_cooldown = world.time + 7
-
 //canned laughter
 /obj/item/reagent_containers/food/drinks/soda_cans/canned_laughter
 	name = "Canned Laughter"

@@ -41,6 +41,7 @@
 	mutatelist = list(/obj/item/seeds/berry/death)
 	reagents_add = list(/datum/reagent/toxin/cyanide = 0.15, /datum/reagent/toxin/staminatoxin = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 10 // Mildly poisonous berries are common in reality
+	research = PLANT_RESEARCH_TIER_1
 
 /obj/item/reagent_containers/food/snacks/grown/berries/poison
 	seed = /obj/item/seeds/berry/poison
@@ -67,6 +68,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/toxin/coniine = 0.08, /datum/reagent/toxin/staminatoxin = 0.1, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 30
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/berries/death
 	seed = /obj/item/seeds/berry/death
@@ -94,6 +96,7 @@
 	genes = list(/datum/plant_gene/trait/glow/white, /datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/uranium = 0.25, /datum/reagent/iodine = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/berries/glow
 	seed = /obj/item/seeds/berry/glow
@@ -135,6 +138,8 @@
 	icon_state = "cherry"
 	gender = PLURAL
 	filling_color = "#FF0000"
+	slice_path = /obj/item/garnish/cherry
+	slices_num = 3
 	bitesize_mod = 2
 	foodtype = FRUIT
 	grind_results = list(/datum/reagent/consumable/cherryjelly = 0)
@@ -152,6 +157,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.07, /datum/reagent/consumable/sugar = 0.07)
 	rarity = 10
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/bluecherries
 	seed = /obj/item/seeds/cherry/blue
@@ -177,6 +183,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/consumable/nutriment = 0.07, /datum/reagent/consumable/sugar = 0.07)
 	rarity = 10
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/cherrybulbs
 	seed = /obj/item/seeds/cherry/bulb
@@ -235,6 +242,7 @@
 	reagents_add = list(/datum/reagent/medicine/kelotane = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1, /datum/reagent/consumable/sugar = 0.1)
 	// No rarity: technically it's a beneficial mutant, but it's not exactly "new"...
 	mutatelist = list()
+	research = PLANT_RESEARCH_TIER_0//see above
 
 /obj/item/reagent_containers/food/snacks/grown/grapes/green
 	seed = /obj/item/seeds/grape/green

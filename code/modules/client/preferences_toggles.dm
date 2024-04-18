@@ -215,6 +215,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 		to_chat(usr, "You will no longer hear ambient sounds.")
 		usr.stop_sound_channel(CHANNEL_AMBIENCE)
 		usr.stop_sound_channel(CHANNEL_BUZZ)
+	usr.client.update_ambience_pref()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ambience", "[usr.client.prefs.toggles & SOUND_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/Settings/Sound/Toggle_Soundscape/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_AMBIENCE
@@ -231,7 +232,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_ship_ambience)()
 	else
 		to_chat(usr, "You will no longer hear ship ambience.")
 		usr.stop_sound_channel(CHANNEL_BUZZ)
-		usr.client.ambience_playing = 0
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ship Ambience", "[usr.client.prefs.toggles & SOUND_SHIP_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, I bet you read this comment expecting to see the same thing :^)
 /datum/verbs/menu/Settings/Sound/toggle_ship_ambience/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_SHIP_AMBIENCE
@@ -283,7 +283,6 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 /datum/verbs/menu/Settings/listen_ooc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_OOC
 
-//BeginWS Edit
 TOGGLE_CHECKBOX(/datum/verbs/menu/settings, listen_looc)()
 	set name = "Show/Hide LOOC"
 	set category = "Preferences"
@@ -294,7 +293,17 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/settings, listen_looc)()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing LOOC", "[usr.client.prefs.chat_toggles & CHAT_LOOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/Settings/listen_looc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_LOOC
-//EndWS Edit
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, chat_ghostckey)()
+	set name = "Show/Hide ckey in deadchat"
+	set category = "Preferences"
+	set desc = "Toggle if players will see your ckey in deadchat"
+	usr.client.prefs.chat_toggles ^= CHAT_GHOSTCKEY
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "Your ckey is [(usr.client.prefs.chat_toggles & CHAT_GHOSTCKEY) ? "now" : "no longer"] visible in deadchat.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle ckey in Deadchat", "[usr.client.prefs.toggles & CHAT_GHOSTCKEY ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/chat_ghostckey/Get_checked(client/C)
+	return C.prefs.chat_toggles & CHAT_GHOSTCKEY
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_bank_card)()
 	set name = "Show/Hide Income Updates"
@@ -323,7 +332,7 @@ GLOBAL_LIST_INIT(ghost_forms, sortList(list("ghost","ghostking","ghostian2","ske
 		prefs.save_preferences()
 		if(isobserver(mob))
 			var/mob/dead/observer/O = mob
-			O.update_icon(new_form)
+			O.update_icon(ALL, new_form)
 
 GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOST_ORBIT_SQUARE,GHOST_ORBIT_HEXAGON,GHOST_ORBIT_PENTAGON))
 
@@ -352,7 +361,7 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		prefs.save_preferences()
 		if(isobserver(mob))
 			var/mob/dead/observer/O = mob
-			O.update_icon()
+			O.update_appearance()
 
 /client/verb/pick_ghost_customization()
 	set name = "Ghost Customization"
@@ -535,4 +544,13 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		to_chat(src, "Custom Asay color is currently disabled by the server.")
 		return
 	prefs.asaycolor = initial(prefs.asaycolor)
+	prefs.save_preferences()
+
+/client/verb/toggle_whois_visibility()
+	set name = "Toggle WhoIs Visibilty"
+	set desc = "Toggles whether your ckey is visible in WhoIs topic calls"
+	set category = "Preferences"
+
+	prefs.whois_visible = !prefs.whois_visible
+	to_chat(src, span_notice("You are [(prefs.whois_visible ? "now" : "no longer")] visible to WhoIs topic calls."))
 	prefs.save_preferences()

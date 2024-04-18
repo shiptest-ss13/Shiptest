@@ -1,6 +1,3 @@
-#define TESLA_DEFAULT_POWER 1738260
-#define TESLA_MINI_POWER 869130
-
 //Zap constants, speeds up targeting
 #define BIKE (COIL + 1)
 #define COIL (ROD + 1)
@@ -73,13 +70,13 @@
 		pixel_x = 0
 		pixel_y = 0
 
-		tesla_zap(src, 7, TESLA_DEFAULT_POWER)
+		tesla_zap(src, 7, TESLA_DEFAULT_POWER, ZAP_TESLA_FLAGS)
 
 		pixel_x = -32
 		pixel_y = -32
 		for (var/ball in orbiting_balls)
 			var/range = rand(1, clamp(orbiting_balls.len, 3, 7))
-			tesla_zap(ball, range, TESLA_MINI_POWER/7*range)
+			tesla_zap(ball, range, TESLA_MINI_POWER/7*range, ZAP_TESLA_FLAGS)
 	else
 		energy = 0 // ensure we dont have miniballs of miniballs
 
@@ -89,7 +86,7 @@
 		. += "There are [orbiting_balls.len] mini-balls orbiting it."
 
 
-/obj/singularity/energy_ball/proc/move_the_basket_ball(var/move_amount)
+/obj/singularity/energy_ball/proc/move_the_basket_ball(move_amount)
 	//we face the last thing we zapped, so this lets us favor that direction a bit
 	var/move_bias = pick(GLOB.alldirs)
 	for(var/i in 0 to move_amount)
@@ -110,7 +107,7 @@
 		energy_to_raise = energy_to_raise * 1.25
 
 		playsound(src.loc, 'sound/magic/lightning_chargeup.ogg', 100, TRUE, extrarange = 30)
-		addtimer(CALLBACK(src, .proc/new_mini_ball), 100)
+		addtimer(CALLBACK(src, PROC_REF(new_mini_ball)), 100)
 
 	else if(energy < energy_to_lower && orbiting_balls.len)
 		energy_to_raise = energy_to_raise / 1.25
@@ -316,7 +313,7 @@
 	if(closest_type == LIVING)
 		var/mob/living/closest_mob = closest_atom
 		closest_mob.set_shocked()
-		addtimer(CALLBACK(closest_mob, /mob/living/proc/reset_shocked), 10)
+		addtimer(CALLBACK(closest_mob, TYPE_PROC_REF(/mob/living, reset_shocked)), 10)
 		var/shock_damage = (zap_flags & ZAP_MOB_DAMAGE) ? (min(round(power/600), 90) + rand(-5, 5)) : 0
 		closest_mob.electrocute_act(shock_damage, source, 1, SHOCK_TESLA | ((zap_flags & ZAP_MOB_STUN) ? NONE : SHOCK_NOSTUN))
 		if(issilicon(closest_mob))

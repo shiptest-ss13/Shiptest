@@ -8,8 +8,12 @@
 //extract implant
 /datum/surgery_step/extract_implant
 	name = "extract implant"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 65, /obj/item/kitchen/fork = 35)
-	time = 64
+	implements = list(
+		TOOL_HEMOSTAT = 100,
+		TOOL_CROWBAR = 40,
+		/obj/item/kitchen/fork = 33)
+	time = 6.4 SECONDS
+	success_sound = 'sound/surgery/hemostat1.ogg'
 	experience_given = MEDICAL_SKILL_MEDIUM
 	var/obj/item/implant/I = null
 
@@ -42,7 +46,7 @@
 		if(case && !case.imp)
 			case.imp = I
 			I.forceMove(case)
-			case.update_icon()
+			case.update_appearance()
 			display_results(user, target, "<span class='notice'>You place [I] into [case].</span>",
 				"<span class='notice'>[user] places [I] into [case]!</span>",
 				"<span class='notice'>[user] places it into [case]!</span>")
@@ -55,11 +59,12 @@
 
 /datum/surgery/implant_removal/mechanic
 	name = "implant removal"
-	requires_bodypart_type = BODYPART_ROBOTIC
+	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
 		/datum/surgery_step/open_hatch,
 		/datum/surgery_step/mechanic_unwrench,
 		/datum/surgery_step/extract_implant,
 		/datum/surgery_step/mechanic_wrench,
+		/datum/surgery_step/close_hatch,
 		/datum/surgery_step/mechanic_close)

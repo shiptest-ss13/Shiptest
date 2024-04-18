@@ -44,7 +44,7 @@
 
 /datum/chemical_reaction/reagent_explosion/rdx
 	results = list(/datum/reagent/rdx= 2)
-	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/acetone_oxide = 1 )
+	required_reagents = list(/datum/reagent/phenol = 2, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/acetone_oxide = 1)
 	required_temp = 404
 	strengthdiv = 6 //rdx deserves better than being just about equal to nitrous
 
@@ -87,12 +87,12 @@
 
 /datum/chemical_reaction/reagent_explosion/tatp
 	results = list(/datum/reagent/tatp= 1)
-	required_reagents = list(/datum/reagent/acetone_oxide = 1, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/pentaerythritol = 1 )
+	required_reagents = list(/datum/reagent/acetone_oxide = 1, /datum/reagent/toxin/acid/nitracid = 1, /datum/reagent/pentaerythritol = 1)
 	required_temp = 450
 	strengthdiv = 3
 
 /datum/chemical_reaction/reagent_explosion/tatp/New()
-	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateInfo)) //method used by secret sauce.
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(UpdateInfo))) //method used by secret sauce.
 
 /datum/chemical_reaction/reagent_explosion/tatp/proc/UpdateInfo() //note to the future: find the PR that refactors this so that we can port more of https://github.com/tgstation/tgstation/pull/50775
 	required_temp = 450 + rand(-49,49)  //this gets loaded only on round start
@@ -109,10 +109,10 @@
 	strengthdiv = 3
 
 /datum/chemical_reaction/reagent_explosion/tatp_explosion/New() //did i mention i have no idea what i am doing? - zeta
-	SSticker.OnRoundstart(CALLBACK(src,.proc/UpdateInfo))
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(UpdateInfo)))
 
 /datum/chemical_reaction/reagent_explosion/tatp_explosion/on_reaction(datum/reagents/holder, created_volume)
-	var/strengthdiv_adjust = created_volume / ( 2100 / initial(strengthdiv))
+	var/strengthdiv_adjust = created_volume / (2100 / initial(strengthdiv))
 	strengthdiv = max(initial(strengthdiv) - strengthdiv_adjust + 1.5 ,1.5) //Slightly better than nitroglycerin
 	. = ..()
 	return
@@ -122,11 +122,11 @@
 
 
 /datum/chemical_reaction/reagent_explosion/penthrite_explosion_epinephrine
-	required_reagents = list(/datum/reagent/medicine/C2/penthrite = 1, /datum/reagent/medicine/epinephrine = 1)
+	required_reagents = list(/datum/reagent/medicine/c2/penthrite = 1, /datum/reagent/medicine/epinephrine = 1)
 	strengthdiv = 5
 
 /datum/chemical_reaction/reagent_explosion/penthrite_explosion_atropine
-	required_reagents = list(/datum/reagent/medicine/C2/penthrite = 1, /datum/reagent/medicine/atropine = 1)
+	required_reagents = list(/datum/reagent/medicine/c2/penthrite = 1, /datum/reagent/medicine/atropine = 1)
 	strengthdiv = 5
 	modifier = 5
 
@@ -151,7 +151,7 @@
 			R.stun(20)
 			R.reveal(100)
 			R.adjustHealth(50)
-		addtimer(CALLBACK(src, .proc/divine_explosion, round(created_volume/48,1),get_turf(holder.my_atom)), 2 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(divine_explosion), round(created_volume/48,1),get_turf(holder.my_atom)), 2 SECONDS)
 	..()
 
 /datum/chemical_reaction/reagent_explosion/potassium_explosion/holyboom/proc/divine_explosion(size, turf/T)
@@ -162,22 +162,20 @@
 			C.adjust_fire_stacks(5)
 			C.IgniteMob()
 
-/*WS Edit - No Cobby
 /datum/chemical_reaction/gunpowder
 	results = list(/datum/reagent/gunpowder = 3)
-	required_reagents = list(/datum/reagent/saltpetre = 1, /datum/reagent/medicine/C2/multiver = 1, /datum/reagent/sulfur = 1)
+	required_reagents = list(/datum/reagent/saltpetre = 1, /datum/reagent/medicine/charcoal = 1, /datum/reagent/sulfur = 1)
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion
 	required_reagents = list(/datum/reagent/gunpowder = 1)
 	required_temp = 474
 	strengthdiv = 6
 	modifier = 1
-	mix_message = "<span class='boldannounce'>Sparks start flying around the blackpowder!</span>"
+	mix_message = "<span class='boldannounce'>Sparks start flying around the gunpowder!</span>"
 
-WS End*/
 
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
-	addtimer(CALLBACK(src, .proc/explode, holder, created_volume), rand(5,10) SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(explode), holder, created_volume), rand(5,10) SECONDS)
 
 /datum/chemical_reaction/thermite
 	results = list(/datum/reagent/thermite = 3)
@@ -292,7 +290,7 @@ WS End*/
 
 /datum/chemical_reaction/flash_powder
 	results = list(/datum/reagent/flash_powder = 3)
-	required_reagents = list(/datum/reagent/aluminium = 1, /datum/reagent/potassium = 1, /datum/reagent/sulfur = 1 )
+	required_reagents = list(/datum/reagent/aluminium = 1, /datum/reagent/potassium = 1, /datum/reagent/sulfur = 1)
 
 /datum/chemical_reaction/flash_powder/on_reaction(datum/reagents/holder, created_volume)
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
@@ -403,7 +401,7 @@ WS End*/
 
 /datum/chemical_reaction/napalm
 	results = list(/datum/reagent/napalm = 3)
-	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1 )
+	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1)
 
 /datum/chemical_reaction/cryostylane
 	results = list(/datum/reagent/cryostylane = 3)
@@ -462,14 +460,14 @@ WS End*/
 	var/T3 = created_volume * 120
 	var/added_delay = 0.5 SECONDS
 	if(created_volume >= 75)
-		addtimer(CALLBACK(src, .proc/zappy_zappy, holder, T1), added_delay)
+		addtimer(CALLBACK(src, PROC_REF(zappy_zappy), holder, T1), added_delay)
 		added_delay += 1.5 SECONDS
 	if(created_volume >= 40)
-		addtimer(CALLBACK(src, .proc/zappy_zappy, holder, T2), added_delay)
+		addtimer(CALLBACK(src, PROC_REF(zappy_zappy), holder, T2), added_delay)
 		added_delay += 1.5 SECONDS
 	if(created_volume >= 10)			//10 units minimum for lightning, 40 units for secondary blast, 75 units for tertiary blast.
-		addtimer(CALLBACK(src, .proc/zappy_zappy, holder, T3), added_delay)
-	addtimer(CALLBACK(src, .proc/explode, holder, created_volume), added_delay)
+		addtimer(CALLBACK(src, PROC_REF(zappy_zappy), holder, T3), added_delay)
+	addtimer(CALLBACK(src, PROC_REF(explode), holder, created_volume), added_delay)
 
 /datum/chemical_reaction/reagent_explosion/teslium_lightning/proc/zappy_zappy(datum/reagents/holder, power)
 	if(QDELETED(holder.my_atom))

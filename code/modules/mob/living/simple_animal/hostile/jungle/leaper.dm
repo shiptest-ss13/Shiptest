@@ -18,9 +18,11 @@
 	projectilesound = 'sound/weapons/pierce.ogg'
 	ranged_cooldown_time = 30
 	pixel_x = -16
+	base_pixel_x = -16
 	layer = LARGE_MOB_LAYER
 	speed = 10
 	stat_attack = HARD_CRIT
+	environment_smash = ENVIRONMENT_SMASH_WALLS
 	robust_searching = 1
 	var/hopping = FALSE
 	var/hop_cooldown = 0 //Strictly for player controlled leapers
@@ -80,15 +82,20 @@
 
 /obj/structure/leaper_bubble/Initialize()
 	. = ..()
-	float(on = TRUE)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/atom/movable, float), TRUE)
 	QDEL_IN(src, 100)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/leaper_bubble/Destroy()
 	new /obj/effect/temp_visual/leaper_projectile_impact(get_turf(src))
 	playsound(src,'sound/effects/snap.ogg',50, TRUE, -1)
 	return ..()
 
-/obj/structure/leaper_bubble/Crossed(atom/movable/AM)
+/obj/structure/leaper_bubble/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!istype(L, /mob/living/simple_animal/hostile/jungle/leaper))
@@ -101,7 +108,6 @@
 				var/mob/living/simple_animal/A = L
 				A.adjustHealth(25)
 			qdel(src)
-	return ..()
 
 /datum/reagent/toxin/leaper_venom
 	name = "Leaper venom"
@@ -123,7 +129,9 @@
 	icon_state = "lily_pad"
 	layer = BELOW_MOB_LAYER
 	pixel_x = -32
+	base_pixel_x = -32
 	pixel_y = -32
+	base_pixel_y = -32
 	duration = 30
 
 /mob/living/simple_animal/hostile/jungle/leaper/Initialize()
@@ -204,7 +212,7 @@
 	if(AIStatus == AI_ON && ranged_cooldown <= world.time)
 		projectile_ready = TRUE
 		update_icons()
-	throw_at(new_turf, max(3,get_dist(src,new_turf)), 1, src, FALSE, callback = CALLBACK(src, .proc/FinishHop))
+	throw_at(new_turf, max(3,get_dist(src,new_turf)), 1, src, FALSE, callback = CALLBACK(src, PROC_REF(FinishHop)))
 
 /mob/living/simple_animal/hostile/jungle/leaper/proc/FinishHop()
 	density = TRUE
@@ -214,18 +222,18 @@
 	playsound(src.loc, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 	if(target && AIStatus == AI_ON && projectile_ready && !ckey)
 		face_atom(target)
-		addtimer(CALLBACK(src, .proc/OpenFire, target), 5)
+		addtimer(CALLBACK(src, PROC_REF(OpenFire), target), 5)
 
 /mob/living/simple_animal/hostile/jungle/leaper/proc/BellyFlop()
 	var/turf/new_turf = get_turf(target)
 	hopping = TRUE
 	notransform = TRUE
 	new /obj/effect/temp_visual/leaper_crush(new_turf)
-	addtimer(CALLBACK(src, .proc/BellyFlopHop, new_turf), 30)
+	addtimer(CALLBACK(src, PROC_REF(BellyFlopHop), new_turf), 30)
 
 /mob/living/simple_animal/hostile/jungle/leaper/proc/BellyFlopHop(turf/T)
 	density = FALSE
-	throw_at(T, get_dist(src,T),1,src, FALSE, callback = CALLBACK(src, .proc/Crush))
+	throw_at(T, get_dist(src,T),1,src, FALSE, callback = CALLBACK(src, PROC_REF(Crush)))
 
 /mob/living/simple_animal/hostile/jungle/leaper/proc/Crush()
 	hopping = FALSE

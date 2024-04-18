@@ -7,12 +7,21 @@
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
 	baseturfs = /turf/open/floor/plating/lowpressure
 
+/turf/open/floor/plating/icemoon
+	icon_state = "plating"
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/open/floor/plating/icecropolis
+	icon_state = "plating"
+	baseturfs = /turf/open/indestructible/necropolis/air
+	initial_gas_mix = "o2=22;n2=82;TEMP=293.15"
+
 /turf/open/floor/plating/abductor
 	name = "alien floor"
 	icon_state = "alienpod1"
 	tiled_dirt = FALSE
 
-/turf/open/floor/plating/abductor/Initialize()
+/turf/open/floor/plating/abductor/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "alienpod[rand(1,9)]"
 
@@ -58,7 +67,7 @@
 	var/smooth_icon = 'icons/turf/floors/ash.dmi'
 
 
-/turf/open/floor/plating/ashplanet/Initialize()
+/turf/open/floor/plating/ashplanet/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags & SMOOTH_BITMASK)
 		var/matrix/M = new
@@ -108,7 +117,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/ashplanet/wateryrock/Initialize()
+/turf/open/floor/plating/ashplanet/wateryrock/Initialize(mapload, inherited_virtual_z)
 	icon_state = "[icon_state][rand(1, 9)]"
 	. = ..()
 
@@ -176,7 +185,7 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/ironsand/Initialize()
+/turf/open/floor/plating/ironsand/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	icon_state = "ironsand[rand(1,15)]"
 
@@ -189,8 +198,8 @@
 /turf/open/floor/plating/ice
 	name = "ice sheet"
 	desc = "A sheet of solid ice. Looks slippery."
-	icon = 'icons/turf/floors/ice_turf.dmi'
-	icon_state = "ice_turf-0"
+	icon = 'icons/turf/snow.dmi'
+	icon_state = "ice"
 	initial_gas_mix = FROZEN_ATMOS
 	initial_temperature = 180
 	planetary_atmos = TRUE
@@ -198,12 +207,12 @@
 	slowdown = 1
 	attachment_holes = FALSE
 	bullet_sizzle = TRUE
-	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
+	footstep = FOOTSTEP_ICE
+	barefootstep = FOOTSTEP_ICE
+	clawfootstep = FOOTSTEP_ICE
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/turf/open/floor/plating/ice/Initialize()
+/turf/open/floor/plating/ice/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	MakeSlippery(TURF_WET_PERMAFROST, INFINITY, 0, INFINITY, TRUE)
 
@@ -212,10 +221,16 @@
 
 /turf/open/floor/plating/ice/smooth
 	icon_state = "ice_turf-255"
+	icon = 'icons/turf/floors/ice_turf.dmi'
 	base_icon_state = "ice_turf"
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_ICE)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_ICE)
+
+/turf/open/floor/plating/ice/lit
+	light_range = 2
+	light_power = 1
+	light_color = LIGHT_COLOR_LIGHT_CYAN
 
 /turf/open/floor/plating/ice/colder
 	initial_temperature = 140
@@ -229,8 +244,23 @@
 /turf/open/floor/plating/ice/burn_tile()
 	return
 
+/turf/open/floor/plating/ice/iceberg
+	name = "cracked ice floor"
+	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
+	icon_state = "ice1"
+
+/turf/open/floor/plating/ice/iceberg/Initialize(mapload, inherited_virtual_z)
+	. = ..()
+	icon_state = "ice[rand(1,8)]"
+
+/turf/open/floor/plating/ice/iceberg/lit
+	light_range = 2
+	light_power = 1
 /turf/open/floor/plating/ice/icemoon
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/open/floor/plating/ice/airless
+	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/snowed
 	name = "snowed-over plating"
@@ -283,7 +313,7 @@
 	layer = HIGH_TURF_LAYER
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 
-/turf/open/floor/plating/grass/Initialize()
+/turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(smoothing_flags)
 		var/matrix/translation = new
@@ -305,3 +335,34 @@
 	clawfootstep = FOOTSTEP_SAND
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+
+/turf/open/floor/plating/grass/beach
+	baseturfs = /turf/open/floor/plating/beach/sand
+	planetary_atmos = TRUE
+
+/turf/open/floor/plating/grass/beach/lit
+	light_range = 2
+	light_power = 0.80
+
+
+
+/turf/open/floor/plating/moss
+	name = "mossy carpet"
+	desc = "When the forests burned away and the sky grew dark, the moss learned to feed on the falling ash."
+	baseturfs = /turf/open/floor/plating/ashplanet //explosions and damage can destroy the moss
+	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
+	planetary_atmos = TRUE
+	icon_state = "moss"
+	icon = 'icons/turf/lava_moss.dmi'
+	base_icon_state = "moss"
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_GRASS
+	barefootstep = FOOTSTEP_GRASS
+	clawfootstep = FOOTSTEP_GRASS
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	layer = HIGH_TURF_LAYER
+	gender = PLURAL
+	light_power = 1
+	light_range = 2
+	pixel_x = -9
+	pixel_y = -9

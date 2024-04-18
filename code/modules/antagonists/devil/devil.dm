@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 
 /datum/antagonist/devil/get_admin_commands()
 	. = ..()
-	.["Toggle ascendable"] = CALLBACK(src,.proc/admin_toggle_ascendable)
+	.["Toggle ascendable"] = CALLBACK(src, PROC_REF(admin_toggle_ascendable))
 
 
 /datum/antagonist/devil/proc/admin_toggle_ascendable(mob/admin)
@@ -311,9 +311,6 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 	if(A)
 		notify_ghosts("An arch devil has ascended in \the [A.name]. Reach out to the devil to be given a new shell for your soul.", source = owner.current, action=NOTIFY_ATTACK)
 	sleep(50)
-	if(!SSticker.mode.devil_ascended)
-		SSshuttle.emergency.request(null, set_coefficient = 0.3)
-	SSticker.mode.devil_ascended++
 	form = ARCH_DEVIL
 
 /datum/antagonist/devil/proc/remove_spells()
@@ -415,11 +412,11 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 		if(BANISH_FUNERAL_GARB)
 			if(ishuman(body))
 				var/mob/living/carbon/human/H = body
-				if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing/under/misc/burial))
+				if(H.w_uniform && istype(H.w_uniform, /obj/item/clothing/under/suit/white_on_white))
 					return 1
 				return 0
 			else
-				for(var/obj/item/clothing/under/misc/burial/B in range(0,body))
+				for(var/obj/item/clothing/under/suit/white_on_white/B in range(0,body))
 					if(B.loc == get_turf(B)) //Make sure it's not in someone's inventory or something.
 						return 1
 				return 0
@@ -455,7 +452,7 @@ GLOBAL_LIST_INIT(devil_suffix, list(" the Red", " the Soulless", " the Master", 
 		if(currentMob.mind != owner)
 			message_admins("[key_name_admin(owner)]'s devil resurrection failed due to becoming a new mob.  Aborting.")
 			return -1
-		currentMob.change_mob_type( /mob/living/carbon/human, targetturf, null, 1)
+		currentMob.change_mob_type(/mob/living/carbon/human, targetturf, null, 1)
 		var/mob/living/carbon/human/H = owner.current
 		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/civilian/lawyer/black(H), ITEM_SLOT_ICLOTHING)
 		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/laceup(H), ITEM_SLOT_FEET)

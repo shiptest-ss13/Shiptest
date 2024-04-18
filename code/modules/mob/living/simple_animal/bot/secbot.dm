@@ -11,7 +11,7 @@
 	pass_flags = PASSMOB
 
 	radio_key = /obj/item/encryptionkey/secbot //AI Priv + Security
-	radio_channel = RADIO_CHANNEL_SECURITY //Security channel
+	radio_channel = RADIO_CHANNEL_COMMAND //Security channel
 	bot_type = SEC_BOT
 	model = "Securitron"
 	bot_core_type = /obj/machinery/bot_core/secbot
@@ -40,7 +40,6 @@
 	var/fair_market_price_arrest = 25 // On arrest, charges the violator this much. If they don't have that much in their account, the securitron will beat them instead
 	var/fair_market_price_detain = 5 // Charged each time the violator is stunned on detain
 	var/weapon_force = 20 // Only used for NAP violation beatdowns on non-grievous securitrons
-	var/market_verb = "Suspect"
 	var/payment_department = ACCOUNT_SEC
 
 /mob/living/simple_animal/bot/secbot/beepsky
@@ -78,7 +77,7 @@
 /mob/living/simple_animal/bot/secbot/Initialize()
 	. = ..()
 	weapon = new baton_type()
-	update_icon()
+	update_appearance()
 	var/datum/job/detective/J = new/datum/job/detective
 	access_card.access += J.get_access()
 	prev_access = access_card.access
@@ -91,11 +90,11 @@
 	QDEL_NULL(weapon)
 	return ..()
 
-/mob/living/simple_animal/bot/secbot/update_icon()
+/mob/living/simple_animal/bot/secbot/update_icon_state()
 	if(mode == BOT_HUNT)
 		icon_state = "[initial(icon_state)]-c"
 		return
-	..()
+	return ..()
 
 /mob/living/simple_animal/bot/secbot/turn_off()
 	..()
@@ -174,7 +173,7 @@ Auto Patrol: []"},
 
 /mob/living/simple_animal/bot/secbot/proc/retaliate(mob/living/carbon/human/H)
 	var/judgement_criteria = judgement_criteria()
-	threatlevel = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+	threatlevel = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, PROC_REF(check_for_weapons)))
 	threatlevel += 6
 	if(threatlevel >= 4)
 		target = H
@@ -209,7 +208,7 @@ Auto Patrol: []"},
 	..()
 	if(W.tool_behaviour == TOOL_WELDER && user.a_intent != INTENT_HARM) // Any intent but harm will heal, so we shouldn't get angry.
 		return
-	if(W.tool_behaviour != TOOL_SCREWDRIVER && (W.force) && (!target) && (W.damtype != STAMINA) ) // Added check for welding tool to fix #2432. Welding tool behavior is handled in superclass.
+	if(W.tool_behaviour != TOOL_SCREWDRIVER && (W.force) && (!target) && (W.damtype != STAMINA)) // Added check for welding tool to fix #2432. Welding tool behavior is handled in superclass.
 		retaliate(user)
 		if(special_retaliate_after_attack(user))
 			return
@@ -222,7 +221,7 @@ Auto Patrol: []"},
 			oldtarget_name = user.name
 		audible_message("<span class='danger'>[src] buzzes oddly!</span>")
 		declare_arrests = FALSE
-		update_icon()
+		update_appearance()
 
 /mob/living/simple_animal/bot/secbot/bullet_act(obj/projectile/Proj)
 	if(istype(Proj , /obj/projectile/beam)||istype(Proj, /obj/projectile/bullet))
@@ -237,10 +236,7 @@ Auto Patrol: []"},
 	if(iscarbon(A))
 		var/mob/living/carbon/C = A
 		if(!C.IsParalyzed() || arrest_type)
-			if(!check_nap_violations())
-				stun_attack(A, TRUE)
-			else
-				stun_attack(A)
+			stun_attack(A)
 		else if(C.canBeHandcuffed() && !C.handcuffed)
 			cuff(A)
 	else
@@ -249,8 +245,9 @@ Auto Patrol: []"},
 /mob/living/simple_animal/bot/secbot/hitby(atom/movable/AM, skipcatch = FALSE, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
 	if(istype(AM, /obj/item))
 		var/obj/item/I = AM
-		if(I.throwforce < src.health && I.thrownby && ishuman(I.thrownby))
-			var/mob/living/carbon/human/H = I.thrownby
+		var/mob/thrown_by = I.thrownby?.resolve()
+		if(I.throwforce < src.health && thrown_by && ishuman(thrown_by))
+			var/mob/living/carbon/human/H = thrown_by
 			retaliate(H)
 	..()
 
@@ -259,10 +256,10 @@ Auto Patrol: []"},
 	playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
 	C.visible_message("<span class='danger'>[src] is trying to put zipties on [C]!</span>",\
 						"<span class='userdanger'>[src] is trying to put zipties on you!</span>")
-	addtimer(CALLBACK(src, .proc/attempt_handcuff, C), 60)
+	addtimer(CALLBACK(src, PROC_REF(attempt_handcuff), C), 60)
 
 /mob/living/simple_animal/bot/secbot/proc/attempt_handcuff(mob/living/carbon/C)
-	if( !on || !Adjacent(C) || !isturf(C.loc) ) //if he's in a closet or not adjacent, we cancel cuffing.
+	if(!on || !Adjacent(C) || !isturf(C.loc)) //if he's in a closet or not adjacent, we cancel cuffing.
 		return
 	if(!C.handcuffed)
 		C.set_handcuffed(new /obj/item/restraints/handcuffs/cable/zipties/used(C))
@@ -274,7 +271,7 @@ Auto Patrol: []"},
 	var/judgement_criteria = judgement_criteria()
 	playsound(src, 'sound/weapons/egloves.ogg', 50, TRUE, -1)
 	icon_state = "[initial(icon_state)]-c"
-	addtimer(CALLBACK(src, /atom/.proc/update_icon), 2)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 2)
 	var/threat = 5
 
 	if(harm)
@@ -283,11 +280,11 @@ Auto Patrol: []"},
 		C.stuttering = 5
 		C.Paralyze(100)
 		var/mob/living/carbon/human/H = C
-		threat = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+		threat = H.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, PROC_REF(check_for_weapons)))
 	else
 		C.Paralyze(100)
 		C.stuttering = 5
-		threat = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+		threat = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, PROC_REF(check_for_weapons)))
 
 	log_combat(src,C,"stunned")
 	if(declare_arrests)
@@ -319,10 +316,7 @@ Auto Patrol: []"},
 
 			if(target)		// make sure target exists
 				if(Adjacent(target) && isturf(target.loc))	// if right next to perp
-					if(!check_nap_violations())
-						stun_attack(target, TRUE)
-					else
-						stun_attack(target)
+					stun_attack(target)
 
 					mode = BOT_PREP_ARREST
 					set_anchored(TRUE)
@@ -342,7 +336,7 @@ Auto Patrol: []"},
 		if(BOT_PREP_ARREST)		// preparing to arrest target
 
 			// see if he got away. If he's no no longer adjacent or inside a closet or about to get up, we hunt again.
-			if( !Adjacent(target) || !isturf(target.loc) ||  target.AmountParalyzed() < 40)
+			if(!Adjacent(target) || !isturf(target.loc) ||  target.AmountParalyzed() < 40)
 				back_to_hunt()
 				return
 
@@ -366,9 +360,6 @@ Auto Patrol: []"},
 				return
 
 			if(target.handcuffed) //no target or target cuffed? back to idle.
-				if(!check_nap_violations())
-					stun_attack(target, TRUE)
-					return
 				back_to_idle()
 				return
 
@@ -396,13 +387,13 @@ Auto Patrol: []"},
 	target = null
 	last_found = world.time
 	frustration = 0
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 
 /mob/living/simple_animal/bot/secbot/proc/back_to_hunt()
 	anchored = FALSE
 	frustration = 0
 	mode = BOT_HUNT
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 // look for a criminal in view of the bot
 
 /mob/living/simple_animal/bot/secbot/proc/look_for_perp()
@@ -415,7 +406,7 @@ Auto Patrol: []"},
 		if((C.name == oldtarget_name) && (world.time < last_found + 100))
 			continue
 
-		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, PROC_REF(check_for_weapons)))
 
 		if(!threatlevel)
 			continue
@@ -430,12 +421,12 @@ Auto Patrol: []"},
 				playsound(src, pick('sound/voice/beepsky/criminal.ogg', 'sound/voice/beepsky/justice.ogg', 'sound/voice/beepsky/freeze.ogg'), 50, FALSE)
 			visible_message("<b>[src]</b> points at [C.name]!")
 			mode = BOT_HUNT
-			INVOKE_ASYNC(src, .proc/handle_automated_action)
+			INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 			break
 		else
 			continue
 
-/mob/living/simple_animal/bot/secbot/proc/check_for_weapons(var/obj/item/slot_item)
+/mob/living/simple_animal/bot/secbot/proc/check_for_weapons(obj/item/slot_item)
 	if(slot_item && (slot_item.item_flags & NEEDS_PERMIT))
 		return TRUE
 	return FALSE
@@ -453,11 +444,11 @@ Auto Patrol: []"},
 		new /obj/item/assembly/prox_sensor(Tsec)
 		var/obj/item/gun/energy/disabler/G = new (Tsec)
 		G.cell.charge = 0
-		G.update_icon()
+		G.update_appearance()
 		if(prob(50))
-			new /obj/item/bodypart/l_leg/robot(Tsec)
+			new /obj/item/bodypart/leg/left/robot(Tsec)
 			if(prob(25))
-				new /obj/item/bodypart/r_leg/robot(Tsec)
+				new /obj/item/bodypart/leg/right/robot(Tsec)
 		if(prob(25))//50% chance for a helmet OR vest
 			if(prob(50))
 				new /obj/item/clothing/head/helmet(Tsec)
@@ -479,55 +470,20 @@ Auto Patrol: []"},
 	new /obj/effect/decal/cleanable/oil(loc)
 	..()
 
-/mob/living/simple_animal/bot/secbot/attack_alien(var/mob/living/carbon/alien/user as mob)
+/mob/living/simple_animal/bot/secbot/attack_alien(mob/living/carbon/alien/user as mob)
 	..()
 	if(!isalien(target))
 		target = user
 		mode = BOT_HUNT
 
-/mob/living/simple_animal/bot/secbot/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/secbot/on_entered(datum/source, atom/movable/AM)
 	if(has_gravity() && ismob(AM) && target)
 		var/mob/living/carbon/C = AM
 		if(!istype(C) || !C || in_range(src, target))
 			return
 		knockOver(C)
 		return
-	..()
+	. = ..()
 
 /obj/machinery/bot_core/secbot
 	req_access = list(ACCESS_SECURITY)
-
-/// Returns false if the current target is unable to pay the fair_market_price for being arrested/detained
-/mob/living/simple_animal/bot/secbot/proc/check_nap_violations()
-	if(!SSeconomy.full_ancap)
-		return TRUE
-
-	if(target)
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			var/obj/item/card/id/I = H.get_idcard(TRUE)
-			if(I)
-				var/datum/bank_account/insurance = I.registered_account
-				if(!insurance)
-					say("[market_verb] NAP Violation: No bank account found.")
-					nap_violation(target)
-					return FALSE
-				else
-					var/fair_market_price = (arrest_type ? fair_market_price_detain : fair_market_price_arrest)
-					if(!insurance.adjust_money(-fair_market_price))
-						say("[market_verb] NAP Violation: Unable to pay.")
-						nap_violation(target)
-						return FALSE
-					var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
-					say("Thank you for your compliance. Your account been charged [fair_market_price] credits.")
-					if(D)
-						D.adjust_money(fair_market_price)
-			else
-				say("[market_verb] NAP Violation: No ID card found.")
-				nap_violation(target)
-				return FALSE
-	return TRUE
-
-/// Does nothing
-/mob/living/simple_animal/bot/secbot/proc/nap_violation(mob/violator)
-	return

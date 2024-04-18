@@ -13,9 +13,10 @@
 	miner_fluff_string = "<span class='holoparasite'>You encounter... Glass, a sharp, fragile attacker.</span>"
 	toggle_button_type = /atom/movable/screen/guardian/ToggleMode/Assassin
 	var/toggle = FALSE
-	var/stealthcooldown = 160
+	var/stealthcooldown = 100
 	var/atom/movable/screen/alert/canstealthalert
 	var/atom/movable/screen/alert/instealthalert
+	speed = -1
 
 /mob/living/simple_animal/hostile/guardian/assassin/Initialize()
 	. = ..()
@@ -73,7 +74,7 @@
 		obj_damage = 0
 		environment_smash = ENVIRONMENT_SMASH_NONE
 		new /obj/effect/temp_visual/guardian/phase/out(get_turf(src))
-		alpha = 15
+		alpha = 20
 		if(!forced)
 			to_chat(src, "<span class='danger'><B>You enter stealth, empowering your next attack.</span></B>")
 		updatestealthalert()

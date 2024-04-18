@@ -1,30 +1,24 @@
 /datum/job/bartender
-	title = "Bartender"
-	department_head = list("Head of Personnel")
-	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "the head of personnel"
-	selection_color = "#bbe291"
-	wiki_page = "Drinks" //WS Edit - Wikilinks/Warning
+	name = "Bartender"
+	wiki_page = "Drinks"
+
 
 	outfit = /datum/outfit/job/bartender
 
 	access = list(ACCESS_HYDROPONICS, ACCESS_BAR, ACCESS_KITCHEN, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM, ACCESS_THEATRE)
 	minimal_access = list(ACCESS_BAR, ACCESS_MINERAL_STOREROOM, ACCESS_THEATRE)
-	paycheck = PAYCHECK_EASY
-	paycheck_department = ACCOUNT_SRV
 	display_order = JOB_DISPLAY_ORDER_BARTENDER
 
 /datum/outfit/job/bartender
 	name = "Bartender"
+	job_icon = "bartender"
 	jobtype = /datum/job/bartender
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	belt = /obj/item/pda/bar
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/bartender
-	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple //WS Edit - Alt Uniforms
+	alt_uniform = /obj/item/clothing/under/rank/civilian/bartender/purple
 	alt_suit = /obj/item/clothing/suit/apron/purple_bartender
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)

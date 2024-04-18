@@ -45,7 +45,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	. = ..()
 	GLOB.start_landmarks_list += src
 	if(jobspawn_override)
-		LAZYADDASSOC(GLOB.jobspawn_overrides, name, src)
+		LAZYADDASSOCLIST(GLOB.jobspawn_overrides, name, src)
 	if(name != "start")
 		tag = "start*[name]"
 
@@ -187,7 +187,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/psychologist
 	name = "Psychologist"
-	icon_state = "Psychologist"
+	icon_state = "Curator"
 
 /obj/effect/landmark/start/chaplain
 	name = "Chaplain"
@@ -218,10 +218,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/brig_phys
 	name = "Brig Physician"
 	icon_state = "Brig Physician"
-
-/obj/effect/landmark/start/lieutenant
-	name = "SolGov Representative"		//WS Edit - SolGov Rep
-	icon_state = "SolGov Representative"		//WS Edit - SolGov Rep
 
 //Department Security spawns
 
@@ -293,14 +289,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.newplayer_start += loc
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/landmark/latejoin
-	name = "JoinLate"
-
-/obj/effect/landmark/latejoin/Initialize(mapload)
-	..()
-	SSjob.latejoin_trackers += loc
-
-
 //space carps, magicarps, lone ops, slaughter demons, possibly revenants spawn here
 /obj/effect/landmark/carpspawn
 	name = "carpspawn"
@@ -321,7 +309,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.xeno_spawn += loc
 	return INITIALIZE_HINT_QDEL
 
-//objects with the stationloving component (nuke disk) respawn here.
 //also blobs that have their spawn forcemoved (running out of time when picking their spawn spot), santa and respawning devils
 /obj/effect/landmark/blobstart
 	name = "blobstart"
@@ -353,13 +340,30 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	return INITIALIZE_HINT_QDEL
 
 /obj/effect/landmark/ert_spawn
-	name = "Emergencyresponseteam"
+	name = "Emergency response team spawn"
 	icon_state = "ert_spawn"
 
 /obj/effect/landmark/ert_spawn/Initialize(mapload)
 	..()
 	GLOB.emergencyresponseteamspawn += loc
 	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/ert_outpost_spawn
+	name = "Emergency response team outpost spawn"
+	icon_state = "ert_spawn"
+
+/obj/effect/landmark/ert_outpost_spawn/Initialize(mapload)
+	..()
+	GLOB.emergencyresponseteam_outpostspawn += loc
+	return INITIALIZE_HINT_QDEL
+
+/obj/effect/landmark/ert_shuttle_spawn
+	name = "Emergency response team shuttle spawn"
+	icon_state = "ert_spawn"
+
+/obj/effect/landmark/ert_shuttle_brief_spawn
+	name = "Emergency response team briefing officer spawn"
+	icon_state = "ert_brief_spawn"
 
 //ninja energy nets teleport victims here
 /obj/effect/landmark/holding_facility
@@ -441,3 +445,61 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "portal exit"
 	icon_state = "portal_exit"
 	var/id
+
+/obj/effect/landmark/subship
+	name = "subship dock"
+	icon_state = "subship_dock"
+	dir = NORTH
+	var/datum/map_template/shuttle/subship_template
+	var/offset_x = 0
+	var/offset_y = 0
+
+/obj/effect/landmark/subship/New(loc)
+	..(loc)
+	var/datum/map_template/shuttle/template = SSmapping.shuttle_templates[initial(subship_template.file_name)]
+	var/dock_x
+	var/dock_y
+	switch(dir) // This could definitely be optimized with matrix magic, but this will have to do for now.
+		if(NORTH)
+			dock_x = template.port_x_offset - 1
+			dock_y = template.port_y_offset - 1
+		if(EAST)
+			dock_x = template.port_y_offset - 1
+			dock_y = template.width - template.port_x_offset
+		if(SOUTH)
+			dock_x = template.width - template.port_x_offset
+			dock_y = template.height - template.port_y_offset
+		if(WEST)
+			dock_x = template.height - template.port_y_offset
+			dock_y = template.port_x_offset - 1
+	var/obj/docking_port/stationary/dock = new(locate(x + offset_x + dock_x, y + offset_y + dock_y, z))
+	dock.roundstart_template = subship_template
+	dock.load_template_on_initialize = FALSE
+	dock.dir = angle2dir_cardinal(dir2angle(template.port_dir)+dir2angle(dir))
+	switch(template.port_dir) // Setting the dock's bounding box vars
+		if(NORTH)
+			dock.width = template.width
+			dock.height = template.height
+			dock.dwidth = template.port_x_offset - 1
+			dock.dheight = template.port_y_offset - 1
+		if(EAST)
+			dock.width = template.height
+			dock.height = template.width
+			dock.dwidth = template.height - template.port_y_offset
+			dock.dheight = template.port_x_offset - 1
+		if(SOUTH)
+			dock.width = template.width
+			dock.height = template.height
+			dock.dwidth = template.width - template.port_x_offset
+			dock.dheight = template.height - template.port_y_offset
+		if(WEST)
+			dock.width = template.height
+			dock.height = template.width
+			dock.dwidth = template.port_y_offset - 1
+			dock.dheight = template.width - template.port_x_offset
+
+
+/obj/effect/landmark/subship/Destroy()
+	// Subship landmarks are in the bounding box of the subship, meaning that the landmark can be landed on which destroys it.
+	// I'm not sure landmarks destroyed on landing is intended behavior or not, so we're not destroying the dock on deletion just in case it is.
+	. = ..()

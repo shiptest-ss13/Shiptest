@@ -1,7 +1,7 @@
 /mob/living/carbon/Initialize()
 	. = ..()
 	create_reagents(1000)
-	assign_bodypart_ownership()
+	// assign_bodypart_ownership()
 	update_body_parts() //to update the carbon's new bodyparts appearance
 	GLOB.carbon_list += src
 
@@ -11,6 +11,7 @@
 
 	QDEL_LIST(hand_bodyparts)
 	QDEL_LIST(internal_organs)
+	internal_organs_slot.Cut()
 	QDEL_LIST(bodyparts)
 	QDEL_LIST(implants)
 	remove_from_all_data_huds()
@@ -27,16 +28,19 @@
 	if(!held_index)
 		held_index = (active_hand_index % held_items.len)+1
 
+	if(!isnum(held_index))
+		CRASH("You passed [held_index] into swap_hand instead of a number. WTF man")
+
 	var/oindex = active_hand_index
 	active_hand_index = held_index
 	if(hud_used)
 		var/atom/movable/screen/inventory/hand/H
 		H = hud_used.hand_slots["[oindex]"]
 		if(H)
-			H.update_icon()
+			H.update_appearance()
 		H = hud_used.hand_slots["[held_index]"]
 		if(H)
-			H.update_icon()
+			H.update_appearance()
 
 
 /mob/living/carbon/activate_hand(selhand) //l/r OR 1-held_items.len
@@ -83,20 +87,22 @@
 /mob/living/carbon/proc/toggle_throw_mode()
 	if(stat)
 		return
-	if(in_throw_mode)
-		throw_mode_off()
+	if(throw_mode)
+		throw_mode_off(THROW_MODE_TOGGLE)
 	else
-		throw_mode_on()
+		throw_mode_on(THROW_MODE_TOGGLE)
 
 
-/mob/living/carbon/proc/throw_mode_off()
-	in_throw_mode = 0
+/mob/living/carbon/proc/throw_mode_off(method)
+	if(throw_mode > method) //A toggle doesnt affect a hold
+		return
+	throw_mode = THROW_MODE_DISABLED
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_off"
 
 
-/mob/living/carbon/proc/throw_mode_on()
-	in_throw_mode = 1
+/mob/living/carbon/proc/throw_mode_on(mode = THROW_MODE_TOGGLE)
+	throw_mode = mode
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_on"
 
@@ -106,7 +112,7 @@
 
 /mob/living/carbon/throw_item(atom/target)
 	. = ..()
-	throw_mode_off()
+	throw_mode_off(THROW_MODE_TOGGLE)
 	if(!target || !isturf(loc))
 		return
 	if(istype(target, /atom/movable/screen))
@@ -133,6 +139,8 @@
 			var/turf/end_T = get_turf(target)
 			if(start_T && end_T)
 				log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+		do_attack_animation(target, no_effect = 1)
+		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, TRUE, -1)
 		visible_message("<span class='danger'>[src] throws [thrown_thing].</span>", \
 						"<span class='danger'>You throw [thrown_thing].</span>")
 		log_message("has thrown [thrown_thing]", LOG_ATTACK)
@@ -217,9 +225,16 @@
 		SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
 		return
 
+	if(href_list["show_paper_note"])
+		var/obj/item/paper/paper_note = locate(href_list["show_paper_note"])
+		if(!paper_note)
+			return
+
+		paper_note.show_through_camera(usr)
+
 /mob/living/carbon/on_fall()
 	. = ..()
-	loc.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
+	loc?.handle_fall(src)//it's loc so it doesn't call the mob's handle_fall which does nothing
 
 /mob/living/carbon/is_muzzled()
 	return(istype(src.wear_mask, /obj/item/clothing/mask/muzzle))
@@ -387,7 +402,7 @@
 
 	switch(rand(1,100)+modifier) //91-100=Nothing special happens
 		if(-INFINITY to 0) //attack yourself
-			INVOKE_ASYNC(I, /obj/item.proc/attack, src, src)
+			INVOKE_ASYNC(I, TYPE_PROC_REF(/obj/item, attack), src, src)
 		if(1 to 30) //throw it at yourself
 			I.throw_impact(src)
 		if(31 to 60) //Throw object in facing direction
@@ -402,17 +417,6 @@
 		if(61 to 90) //throw it down to the floor
 			var/turf/target = get_turf(loc)
 			I.safe_throw_at(target,I.throw_range,I.throw_speed,src, force = move_force)
-
-/mob/living/carbon/get_status_tab_items()
-	. = ..()
-	var/obj/item/organ/alien/plasmavessel/vessel = getorgan(/obj/item/organ/alien/plasmavessel)
-	if(vessel)
-		. += "Plasma Stored: [vessel.storedPlasma]/[vessel.max_plasma]"
-	var/obj/item/organ/dwarfgland/dwarfgland = getorgan(/obj/item/organ/dwarfgland)		// BeginWS Edit - Dwarf Alcohol Gland
-	if(dwarfgland)
-		. += "Alcohol Stored: [dwarfgland.stored_alcohol]/[dwarfgland.max_alcohol]"		// EndWS Edit
-	if(locate(/obj/item/assembly/health) in src)
-		. += "Health: [health]"
 
 /mob/living/carbon/get_proc_holders()
 	. = ..()
@@ -509,15 +513,14 @@
 	var/total_burn	= 0
 	var/total_brute	= 0
 	var/total_stamina = 0
-	for(var/X in bodyparts)	//hardcoded to streamline things a bit
-		var/obj/item/bodypart/BP = X
+	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		total_brute	+= (BP.brute_dam * BP.body_damage_coeff)
 		total_burn	+= (BP.burn_dam * BP.body_damage_coeff)
 		total_stamina += (BP.stamina_dam * BP.stam_damage_coeff)
 	set_health(round(maxHealth - getOxyLoss() - getToxLoss() - getCloneLoss() - total_burn - total_brute, DAMAGE_PRECISION))
 	staminaloss = round(total_stamina, DAMAGE_PRECISION)
 	update_stat()
-	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD*2) && stat == DEAD )
+	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD*2) && stat == DEAD)
 		become_husk("burn")
 
 	med_hud_set_health()
@@ -572,7 +575,7 @@
 		if(G.invis_override)
 			see_invisible = G.invis_override
 		else
-			see_invisible = min(G.invis_view, see_invisible)
+			see_invisible = max(G.invis_view, see_invisible)
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
 
@@ -822,7 +825,6 @@
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
 	if(admin_revive)
-		suiciding = FALSE
 		regenerate_limbs()
 		regenerate_organs()
 		set_handcuffed(null)
@@ -845,14 +847,14 @@
 
 /mob/living/carbon/proc/can_defib()
 	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
-	if(suiciding || hellbound || HAS_TRAIT(src, TRAIT_HUSK))
+	if (hellbound || HAS_TRAIT(src, TRAIT_HUSK))
 		return
 	if((getBruteLoss() >= MAX_REVIVE_BRUTE_DAMAGE) || (getFireLoss() >= MAX_REVIVE_FIRE_DAMAGE))
 		return
 	if(!heart || (heart.organ_flags & ORGAN_FAILING))
 		return
 	var/obj/item/organ/brain/BR = getorgan(/obj/item/organ/brain)
-	if(QDELETED(BR) || (BR.organ_flags & ORGAN_FAILING) || BR.suicided)
+	if(QDELETED(BR) || (BR.organ_flags & ORGAN_FAILING))
 		return
 	return TRUE
 
@@ -876,7 +878,7 @@
 		I.extinguish() //extinguishes our clothes
 	..()
 
-/mob/living/carbon/fakefire(var/fire_icon = "Generic_mob_burning")
+/mob/living/carbon/fakefire(fire_icon = "Generic_mob_burning")
 	var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/OnFire.dmi', fire_icon, -FIRE_LAYER)
 	new_fire_overlay.appearance_flags = RESET_COLOR
 	overlays_standing[FIRE_LAYER] = new_fire_overlay
@@ -967,43 +969,56 @@
 	if(href_list[VV_HK_MODIFY_BODYPART])
 		if(!check_rights(R_SPAWN))
 			return
-		var/edit_action = input(usr, "What would you like to do?","Modify Body Part") as null|anything in list("add","remove", "augment")
+		var/edit_action = input(usr, "What would you like to do?","Modify Body Part") as null|anything in list("replace","remove")
 		if(!edit_action)
 			return
 		var/list/limb_list = list()
-		if(edit_action == "remove" || edit_action == "augment")
+		if(edit_action == "remove")
 			for(var/obj/item/bodypart/B in bodyparts)
 				limb_list += B.body_zone
-			if(edit_action == "remove")
 				limb_list -= BODY_ZONE_CHEST
 		else
-			limb_list = list(BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-			for(var/obj/item/bodypart/B in bodyparts)
-				limb_list -= B.body_zone
-		var/result = input(usr, "Please choose which body part to [edit_action]","[capitalize(edit_action)] Body Part") as null|anything in sortList(limb_list)
+			limb_list = list(BODY_ZONE_HEAD, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_CHEST)
+		var/result = input(usr, "Please choose which bodypart to [edit_action]","[capitalize(edit_action)] Bodypart") as null|anything in sortList(limb_list)
 		if(result)
 			var/obj/item/bodypart/BP = get_bodypart(result)
-			switch(edit_action)
-				if("remove")
-					if(BP)
-						BP.drop_limb()
+			if(edit_action == "remove")
+				if(BP)
+					BP.drop_limb(TRUE)
+					admin_ticket_log("[key_name_admin(usr)] has removed [src]'s [parse_zone(BP.body_zone)]")
+				else
+					to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
+					admin_ticket_log("[key_name_admin(usr)] has attempted to modify the bodyparts of [src]")
+			else
+				var/list/limbtypes = list()
+				switch(result)
+					if(BODY_ZONE_CHEST)
+						limbtypes = typesof(/obj/item/bodypart/chest)
+					if(BODY_ZONE_R_ARM)
+						limbtypes = typesof(/obj/item/bodypart/r_arm)
+					if(BODY_ZONE_L_ARM)
+						limbtypes = typesof(/obj/item/bodypart/l_arm)
+					if(BODY_ZONE_HEAD)
+						limbtypes = typesof(/obj/item/bodypart/head)
+					if(BODY_ZONE_L_LEG)
+						limbtypes = typesof(/obj/item/bodypart/leg/left)
+					if(BODY_ZONE_R_LEG)
+						limbtypes = typesof(/obj/item/bodypart/leg/right)
+
+				if((edit_action == "add") && BP)
+					to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")
+				else
+					var/limb2add = input(usr, "Select a bodypart type to add", "Add/Replace Bodypart") as null|anything in sortList(limbtypes)
+					var/obj/item/bodypart/new_bp = new limb2add()
+
+					if(new_bp.replace_limb(src, TRUE, TRUE))
+						admin_ticket_log("key_name_admin(usr)] has replaced [src]'s [BP.type] with [new_bp.type]")
+						qdel(BP)
 					else
-						to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
-				if("add")
-					if(BP)
-						to_chat(usr, "<span class='boldwarning'>[src] already has such bodypart.</span>")
-					else
-						if(!regenerate_limb(result))
-							to_chat(usr, "<span class='boldwarning'>[src] cannot have such bodypart.</span>")
-				if("augment")
-					if(ishuman(src))
-						if(BP)
-							BP.change_bodypart_status(BODYPART_ROBOTIC, TRUE, TRUE)
-						else
-							to_chat(usr, "<span class='boldwarning'>[src] doesn't have such bodypart.</span>")
-					else
-						to_chat(usr, "<span class='boldwarning'>Only humans can be augmented.</span>")
-		admin_ticket_log("[key_name_admin(usr)] has modified the bodyparts of [src]")
+						to_chat(usr, "Failed to replace bodypart! They might be incompatible.")
+						admin_ticket_log("[key_name_admin(usr)] has attempted to modify the bodyparts of [src]")
+
+
 	if(href_list[VV_HK_MAKE_AI])
 		if(!check_rights(R_SPAWN))
 			return
@@ -1070,9 +1085,9 @@
 			new result(src, TRUE)
 
 /mob/living/carbon/has_mouth()
-	for(var/obj/item/bodypart/head/head in bodyparts)
-		if(head.mouth)
-			return TRUE
+	var/obj/item/bodypart/head/head = get_bodypart(BODY_ZONE_HEAD)
+	if(head && head.mouth)
+		return TRUE
 
 /mob/living/carbon/can_resist()
 	return bodyparts.len > 2 && ..()

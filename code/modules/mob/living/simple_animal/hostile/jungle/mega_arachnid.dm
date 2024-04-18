@@ -15,8 +15,10 @@
 	speed = 1
 	ranged = 1
 	pixel_x = -16
+	base_pixel_x = -16
 	move_to_delay = 10
 	aggro_vision_range = 9
+	environment_smash = ENVIRONMENT_SMASH_WALLS
 	speak_emote = list("chitters")
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	ranged_cooldown_time = 60
@@ -57,7 +59,7 @@
 /obj/projectile/mega_arachnid/on_hit(atom/target, blocked = FALSE)
 	if(iscarbon(target) && blocked < 100)
 		var/obj/item/restraints/legcuffs/beartrap/mega_arachnid/B = new /obj/item/restraints/legcuffs/beartrap/mega_arachnid(get_turf(target))
-		B.Crossed(target)
+		B.on_entered(src ,target)
 	..()
 
 /obj/item/restraints/legcuffs/beartrap/mega_arachnid

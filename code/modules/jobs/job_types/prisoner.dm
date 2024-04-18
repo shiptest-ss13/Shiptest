@@ -1,11 +1,5 @@
 /datum/job/prisoner
-	title = "Prisoner"
-	department_head = list("Head of Security")
-	faction = "Station"
-	total_positions = 0
-	spawn_positions = 2
-	supervisors = "the security team"
-	selection_color = "#ffe1c3"
+	name = "Prisoner"
 
 	outfit = /datum/outfit/job/prisoner
 
@@ -13,6 +7,7 @@
 
 /datum/outfit/job/prisoner
 	name = "Prisoner"
+	job_icon = "prisoner"
 
 	uniform = /obj/item/clothing/under/rank/prisoner
 	alt_uniform = /obj/item/clothing/under/rank/prisoner //WS Edit - Alt Uniforms
@@ -21,11 +16,3 @@
 	id = /obj/item/card/id/prisoner
 	ears = null
 	belt = null
-
-/datum/outfit/job/prisoner/protectedcustody
-	name = "Prisoner (Protected Custody)"
-
-	uniform = /obj/item/clothing/under/rank/prisoner/protected_custody
-	alt_uniform = /obj/item/clothing/under/rank/prisoner/protected_custody
-	alt_suit = null
-	shoes = /obj/item/clothing/shoes/sneakers/orange

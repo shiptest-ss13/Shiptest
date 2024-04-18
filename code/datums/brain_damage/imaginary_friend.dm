@@ -23,7 +23,7 @@
 		qdel(src)
 		return
 	if(!friend.client && friend_initialized)
-		addtimer(CALLBACK(src, .proc/reroll_friend), 600)
+		addtimer(CALLBACK(src, PROC_REF(reroll_friend)), 600)
 
 /datum/brain_trauma/special/imaginary_friend/on_death()
 	..()
@@ -89,12 +89,15 @@
 		to_chat(src, "<span class='notice'>You cannot directly influence the world around you, but you can see what [owner] cannot.</span>")
 
 /mob/camera/imaginary_friend/Initialize(mapload, _trauma)
+	if(!_trauma)
+		stack_trace("Imaginary friend created without trauma, wtf")
+		return INITIALIZE_HINT_QDEL
 	. = ..()
 
 	trauma = _trauma
 	owner = trauma.owner
 
-	setup_friend()
+	INVOKE_ASYNC(src, PROC_REF(setup_friend))
 
 	join = new
 	join.Grant(src)
@@ -105,7 +108,7 @@
 	var/gender = pick(MALE, FEMALE)
 	real_name = random_unique_name(gender)
 	name = real_name
-	human_image = get_flat_human_icon(null, pick(SSjob.occupations))
+	human_image = get_flat_human_icon(null, outfit_override = pick(subtypesof(/datum/outfit/job)))
 
 /mob/camera/imaginary_friend/proc/Show()
 	if(!client) //nobody home
@@ -131,7 +134,7 @@
 	client.images |= current_image
 
 /mob/camera/imaginary_friend/Destroy()
-	if(owner.client)
+	if(owner?.client)
 		owner.client.images.Remove(human_image)
 	if(client)
 		client.images.Remove(human_image)
@@ -173,7 +176,7 @@
 	if(owner.client)
 		var/mutable_appearance/MA = mutable_appearance('icons/mob/talk.dmi', src, "default[say_test(message)]", FLY_LAYER)
 		MA.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-		INVOKE_ASYNC(GLOBAL_PROC, /proc/flick_overlay, MA, list(owner.client), 30)
+		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), MA, list(owner.client), 30)
 
 	for(var/mob/M in GLOB.dead_mob_list)
 		var/link = FOLLOW_LINK(M, owner)
@@ -186,18 +189,17 @@
 		recall()
 		move_delay = world.time + 10
 		return FALSE
-	forceMove(NewLoc)
+	abstract_move(NewLoc)
 	move_delay = world.time + 1
 
-/mob/camera/imaginary_friend/forceMove(atom/destination)
-	dir = get_dir(get_turf(src), destination)
-	loc = destination
+/mob/camera/imaginary_friend/abstract_move(atom/destination)
+	. = ..()
 	Show()
 
 /mob/camera/imaginary_friend/proc/recall()
 	if(!owner || loc == owner)
 		return FALSE
-	forceMove(owner)
+	abstract_move(owner)
 
 /datum/action/innate/imaginary_join
 	name = "Join"

@@ -22,17 +22,16 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/item/shared_storage,
 		/obj/structure/extraction_point,
 		/obj/machinery/syndicatebomb,
-		/obj/item/hilbertshotel,
 		/obj/item/swapper,
 		/obj/docking_port,
 		/obj/machinery/launchpad,
 		/obj/machinery/disposal,
 		/obj/structure/disposalpipe,
-		/obj/item/hilbertshotel,
 		/obj/machinery/camera,
 		/obj/item/gps
 	)))
 
+/*
 /obj/docking_port/mobile/supply
 	name = "supply shuttle"
 	callTime = 600
@@ -66,6 +65,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 	if(mode != SHUTTLE_IDLE)
 		return 2
 	return ..()
+
 
 /obj/docking_port/mobile/supply/initiate_docking()
 	if(get_docked() == SSshuttle.supply_away_port) // Buy when we leave home.
@@ -194,3 +194,4 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 
 	SSshuttle.centcom_message = msg
 	investigate_log("Shuttle contents sold for [D.account_balance - presale_points] credits. Contents: [ex.exported_atoms ? ex.exported_atoms.Join(",") + "." : "none."] Message: [SSshuttle.centcom_message || "none."]", INVESTIGATE_CARGO)
+*/

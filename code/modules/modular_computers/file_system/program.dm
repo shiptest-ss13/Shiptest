@@ -64,7 +64,7 @@
 // Relays icon update to the computer.
 /datum/computer_file/program/proc/update_computer_icon()
 	if(computer)
-		computer.update_icon()
+		computer.update_appearance()
 
 // Attempts to create a log in global ntnet datum. Returns 1 on success, 0 on fail.
 /datum/computer_file/program/proc/generate_network_log(text)
@@ -156,15 +156,15 @@
 	return 0
 
 /**
-  *
-  *Called by the device when it is emagged.
-  *
-  *Emagging the device allows certain programs to unlock new functions. However, the program will
-  *need to be downloaded first, and then handle the unlock on their own in their run_emag() proc.
-  *The device will allow an emag to be run multiple times, so the user can re-emag to run the
-  *override again, should they download something new. The run_emag() proc should return TRUE if
-  *the emagging affected anything, and FALSE if no change was made (already emagged, or has no
-  *emag functions).
+ *
+ *Called by the device when it is emagged.
+ *
+ *Emagging the device allows certain programs to unlock new functions. However, the program will
+ *need to be downloaded first, and then handle the unlock on their own in their run_emag() proc.
+ *The device will allow an emag to be run multiple times, so the user can re-emag to run the
+ *override again, should they download something new. The run_emag() proc should return TRUE if
+ *the emagging affected anything, and FALSE if no change was made (already emagged, or has no
+ *emag functions).
 **/
 /datum/computer_file/program/proc/run_emag()
 	return FALSE
@@ -216,7 +216,7 @@
 				program_state = PROGRAM_STATE_BACKGROUND // Should close any existing UIs
 
 				computer.active_program = null
-				computer.update_icon()
+				computer.update_appearance()
 				ui.close()
 
 				if(user && istype(user))

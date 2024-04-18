@@ -37,6 +37,8 @@
 #define WIRE_LAYER 2.4
 //#define WIRE_BRIDGE_LAYER 2.44 //WS - Smartwire Revert - I went slightly insane adding all these comments
 #define WIRE_TERMINAL_LAYER 2.45
+#define UNDER_CATWALK 2.454
+#define CATWALK_LAYER 2.455
 #define GAS_SCRUBBER_LAYER 2.46
 #define GAS_PIPE_VISIBLE_LAYER 2.47
 #define GAS_FILTER_LAYER 2.48
@@ -47,7 +49,6 @@
 #define HIGH_SIGIL_LAYER 2.56
 
 #define BELOW_OPEN_DOOR_LAYER 2.6
-#define BLASTDOOR_LAYER 2.65
 #define OPEN_DOOR_LAYER 2.7
 #define DOOR_HELPER_LAYER 2.71 //keep this above OPEN_DOOR_LAYER
 #define PROJECTILE_HIT_THRESHHOLD_LAYER 2.75 //projectiles won't hit objects at or below this layer if possible
@@ -56,12 +57,13 @@
 #define BELOW_OBJ_LAYER 2.9
 #define LOW_ITEM_LAYER 2.95
 //#define OBJ_LAYER 3 //For easy recordkeeping; this is a byond define
-#define CLOSED_BLASTDOOR_LAYER 3.05
+#define RAILING_LAYER 3.08
 #define UNDERDOOR 3.09 //Just under a closed door
 #define CLOSED_DOOR_LAYER 3.1
 #define CLOSED_FIREDOOR_LAYER 3.11
-#define SHUTTER_LAYER 3.12 // HERE BE DRAGONS
 #define ABOVE_OBJ_LAYER 3.2
+#define BLASTDOOR_LAYER 3.21
+#define ABOVE_BLASTDOOR_LAYER 3.22
 #define ABOVE_WINDOW_LAYER 3.3
 #define SIGN_LAYER 3.4
 #define NOT_HIGH_OBJ_LAYER 3.5
@@ -69,7 +71,6 @@
 
 #define BELOW_MOB_LAYER 3.7
 #define LYING_MOB_LAYER 3.8
-#define SPACEPOD_LAYER 3.9 //WS - Spess pods
 //#define MOB_LAYER 4 //For easy recordkeeping; this is a byond define
 #define ABOVE_MOB_LAYER 4.1
 #define WALL_OBJ_LAYER 4.25
@@ -129,8 +130,6 @@
 #define CAMERA_STATIC_LAYER 19
 #define CAMERA_STATIC_RENDER_TARGET "CAMERA_STATIC_PLANE"
 
-#define RUNECHAT_PLANE 20
-
 //HUD layer defines
 
 #define FULLSCREEN_PLANE 31
@@ -142,6 +141,14 @@
 #define CURSE_LAYER 31.5
 #define FULLSCREEN_RENDER_TARGET "FULLSCREEN_PLANE"
 
+// Runechat Interlude
+#define RUNECHAT_PLANE 32
+
+// Plane for balloon text (text that fades up)
+#define BALLOON_CHAT_PLANE 33
+
+//HUD layer defines part two
+
 #define HUD_PLANE 42
 #define HUD_LAYER 42
 #define HUD_RENDER_TARGET "HUD_PLANE"
@@ -151,4 +158,7 @@
 
 #define SPLASHSCREEN_LAYER 54
 #define SPLASHSCREEN_PLANE 54
+
+#define ADMIN_POPUP_LAYER 1
+
 #define SPLASHSCREEN_RENDER_TARGET "SPLASHSCREEN_PLANE"

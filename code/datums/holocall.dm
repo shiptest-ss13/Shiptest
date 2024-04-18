@@ -9,7 +9,18 @@
 
 #define HOLORECORD_MAX_LENGTH 200
 
-/mob/camera/aiEye/remote/holo/setLoc()
+/mob/camera/aiEye/remote/holo
+	use_static = USE_STATIC_NONE
+	acceleration = FALSE
+	max_sprint = 10
+	sprint = 5
+
+/mob/camera/aiEye/remote/holo/update_remote_sight(mob/living/user)
+	user.sight = NONE
+	user.see_in_dark = 1
+	return TRUE
+
+/mob/camera/aiEye/remote/holo/setLoc(turf/T, force_update = FALSE)
 	. = ..()
 	var/obj/machinery/holopad/H = origin
 	H?.move_hologram(eye_user, loc)
@@ -32,7 +43,6 @@
 	var/datum/action/innate/end_holocall/hangup	//hangup action
 
 	var/call_start_time
-	var/head_call = FALSE //calls from a head of staff autoconnect, if the recieving pad is not secure.
 
 //creates a holocall made by `caller` from `calling_pad` to `callees`
 /datum/holocall/New(mob/living/caller, obj/machinery/holopad/calling_pad, list/callees, elevated_access = FALSE)
@@ -40,21 +50,13 @@
 	user = caller
 	calling_pad.outgoing_call = src
 	calling_holopad = calling_pad
-	head_call = elevated_access
 	dialed_holopads = list()
 
 	for(var/I in callees)
 		var/obj/machinery/holopad/H = I
-		if(!QDELETED(H) && H.is_operational())
+		if(!QDELETED(H) && H.is_operational)
 			dialed_holopads += H
-			if(head_call)
-				if(H.secure)
-					calling_pad.say("Auto-connection refused, falling back to call mode.")
-					H.say("Incoming call.")
-				else
-					H.say("Incoming connection.")
-			else
-				H.say("Incoming call.")
+			H.say("Incoming call.")
 			LAZYADD(H.holo_calls, src)
 
 	if(!dialed_holopads.len)
@@ -167,7 +169,7 @@
 	eye.name = "Camera Eye ([user.name])"
 	user.remote_control = eye
 	user.reset_perspective(eye)
-	eye.setLoc(H.loc)
+	eye.setLoc(H.loc, TRUE)
 
 	hangup = new(eye, src)
 	hangup.Grant(user)
@@ -178,13 +180,13 @@
 /datum/holocall/proc/Check()
 	for(var/I in dialed_holopads)
 		var/obj/machinery/holopad/H = I
-		if(!H.is_operational())
+		if(!H.is_operational)
 			ConnectionFailure(H)
 
 	if(QDELETED(src))
 		return FALSE
 
-	. = !QDELETED(user) && !user.incapacitated() && !QDELETED(calling_holopad) && calling_holopad.is_operational() && user.loc == calling_holopad.loc
+	. = !QDELETED(user) && !user.incapacitated() && !QDELETED(calling_holopad) && calling_holopad.is_operational && user.loc == calling_holopad.loc
 
 	if(.)
 		if(!connected_holopad)
@@ -226,8 +228,10 @@
 /obj/item/disk/holodisk
 	name = "holorecord disk"
 	desc = "Stores recorder holocalls."
-	icon_state = "holodisk"
-	obj_flags = UNIQUE_RENAME
+	random_color = FALSE
+	color = "#A7A3A6"
+	blueshift_pallete = FALSE
+	illustration = "holo"
 	custom_materials = list(/datum/material/iron = 100, /datum/material/glass = 100)
 	var/datum/holorecord/record
 	//Preset variables
@@ -237,7 +241,7 @@
 /obj/item/disk/holodisk/Initialize(mapload)
 	. = ..()
 	if(preset_record_text)
-		build_record()
+		INVOKE_ASYNC(src, PROC_REF(build_record))
 
 /obj/item/disk/holodisk/Destroy()
 	QDEL_NULL(record)
@@ -345,20 +349,11 @@
 /datum/preset_holoimage/engineer
 	outfit_type = /datum/outfit/job/engineer
 
-/datum/preset_holoimage/engineer/rig
-	outfit_type = /datum/outfit/job/engineer/gloved/rig
-
 /datum/preset_holoimage/engineer/ce
 	outfit_type = /datum/outfit/job/ce
 
-/datum/preset_holoimage/engineer/ce/rig
-	outfit_type = /datum/outfit/job/engineer/gloved/rig
-
 /datum/preset_holoimage/engineer/atmos
 	outfit_type = /datum/outfit/job/atmos
-
-/datum/preset_holoimage/engineer/atmos/rig
-	outfit_type = /datum/outfit/job/engineer/gloved/rig
 
 /datum/preset_holoimage/researcher
 	outfit_type = /datum/outfit/job/scientist
@@ -377,6 +372,9 @@
 
 /datum/preset_holoimage/clown
 	outfit_type = /datum/outfit/job/clown
+
+/datum/preset_holoimage/miner
+	outfit_type = /datum/outfit/job/miner
 
 /obj/item/disk/holodisk/donutstation/whiteship
 	name = "Blackbox Print-out #DS024"

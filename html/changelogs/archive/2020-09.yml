@@ -1,0 +1,183 @@
+2020-09-01:
+  TripleZeta:
+  - imageadd: New tool sprites (basic tools, power tools, analyzer, geiger counter,
+      tray)
+  - imagedel: Old tool sprites (duh)
+2020-09-03:
+  SynnGraffkin:
+  - bugfix: Extended airlock space for Singulo / Tesla templates for Box so generators
+      can actually be properly dragged out.
+  untrius:
+  - bugfix: SpiderOS has been patched.  All fear the clan!
+2020-09-04:
+  untrius:
+  - rscadd: Your selected character's name has been added to the job selection window
+2020-09-07:
+  MarkSuckerberg:
+  - bugfix: Bumping mechs into AAC-linked airlocks now cycles them as if it were a
+      person walking into them.
+  Shadowtail117:
+  - rscadd: Added sound effects for speaking into a radio and receiving a transmission
+      from a radio, ported from Baystation12.
+  untrius:
+  - bugfix: Atmos analyzer displays room pressure
+  - tweak: Atmos analyzer output is easier to read when used multiple times
+  - tweak: Ethereals can have facial hair
+2020-09-08:
+  untrius:
+  - rscadd: Ethereals' charge is now listed in the status tab
+2020-09-11:
+  AsciiSquid:
+  - rscadd: Added "emagged" category to autolathe designes
+  - balance: All lethal munitions in the lathe are moved to the "emagged" category
+  SynnGraffkin:
+  - rscadd: EVA access has been added to Security, Engineering, and Medical jobs during
+      skeleton shifts.
+  - tweak: Boxstation EVA has been completely redesigned.
+  deathride58:
+  - rscadd: Jukeboxes now have realtime directional audio, complete with occlusion
+      when you're far away or behind a wall.
+  - rscadd: More than one jukebox can play a song at a time now. Have up to 5 jukeboxes
+      playing at once!
+  - rscadd: Devs can now control the wet and dry channels of sounds played via playsound_local.
+      The new envwet and envdry arguments will control the volume of the wet and dry
+      track, respectively.
+  - code_imp: Jukeboxes have been turned into a subsystem. Track initialization, audio
+      playing, etc, are now handled via SSJukeboxes instead of via the jukebox object
+      procs.
+  - config: Jukebox tracks now require an additional ID field at the end of their
+      name. This will make it easier to add jukebox-style objects that are only capable
+      of playing specific songs, without worrying about copyright issues.
+  - balance: The jukebox now falls off over a greater distance. You can now actually
+      hear the jukebox while sitting in a far corner of the bar, or while passing
+      through the main hallways.
+  - bugfix: Jukeboxes now properly remove themselves from the active jukebox list
+      when destroyed
+  - tweak: Jukeboxes now have 6 audio channels available to them, up from the previous
+      accidental 2 and previously intended 5 channels.
+  - bugfix: Jukeboxes now work again on clients running versions higher than 512.1459.
+  - bugfix: People will no longer have their ears consumed by an eldritch god if multiple
+      jukeboxes are active and the first jukebox in the jukebox list stops playing,
+      then tries to play again
+  - tweak: Instead of the debug text for invalid jukebox behavior being printed to
+      world, the debug text is now restricted to the runtime panel.
+  - rscadd: Jukeboxes can be purchased from Cargo for $35,000. By Ignari-Coldstorm
+  - balance: More jobs can now interact with the Jukebox's playlist! Kitchen, Botany,
+      Cargo, Engineering, and Theater access can now modify the jukebox instead of
+      just bartender access. By Ignari-Coldstorm
+2020-09-13:
+  AsciiSquid:
+  - rscadd: Added "emagged" category to autolathe designes
+  - balance: All lethal munitions in the lathe are moved to the "emagged" category
+  Superyodeler:
+  - balance: reduced paramed access
+  SynnGraffkin:
+  - tweak: Spruced up space in Box AME, Singulo, Tesla templates.
+  - rscdel: Donutstation has been decommissioned.
+  Tallvisit:
+  - rscadd: Added suicide text to all Skateboards, and gave them a 3% chance to do
+      something extra.
+  TheNeoGamer42:
+  - imageadd: added a better allied cocktail sprite by Tergius
+  - imageadd: new sprites for quadsec, quintuplesec, manly dorf, and tequila sunrise
+      by Bunzel
+  - imagedel: the old allied cocktail, quinsec, quadsec, manly dorf, and tequila sunrise
+      sprites
+  untrius:
+  - bugfix: Tcomms machines now accept additional filtered frequencies.
+2020-09-15:
+  AsciiSquid:
+  - rscadd: Added supply requests for more ammunition.
+  - rscadd: Added box of slug rounds.
+  - imageadd: Added icon of new slug round box.
+2020-09-17:
+  MarkSuckerberg:
+  - bugfix: Bookworm now actually exists on all maps in the library.
+2020-09-19:
+  Maldaris:
+  - tweak: Removes explosions on abandoned crates if they've been unlocked
+2020-09-21:
+  Quantum-M, thatangryminer:
+  - rscadd: Green Hardhats, Safety Helmets, and Mining Helmets, and adds them to some
+      of the lockers.
+  - tweak: Updates sprites for hardhats.
+  - code_imp: Updated Hardhat code to not use the weird 0 and 1 numbers logic to look
+      for relevant icon states.
+2020-09-22:
+  ? ''
+  : - tweak: the hypospray mk2 now has a shortcut to switch modes
+    - balance: hot ice coffee is based.
+    - balance: dexalin plus purges lexorin now
+    - bugfix: hot ice coffee has its sprite again
+    - bugfix: 'Kryson: Syringe & dart projectiles now handle reagent transfer effects
+        as intended.'
+    - bugfix: 'Kryson: Also fixes reagent transfers from various other sources such
+        as sleepy pens and drink bottles.'
+    - balance: 'Kryson: As a result of the fix; Standard sized ~~syriniver~~ thializid
+        filled syringe projectiles no longer overdose the victim in one hit, unless
+        they already have poor liver health.'
+  untrius:
+  - bugfix: Skill cloak button on PDA fixed
+2020-09-24:
+  MarkSuckerberg:
+  - rscadd: TGchat, replacing goonchat
+  - rscadd: Browser stat console, which reduces the lag caused from the classic panel
+      immensely
+  - rscadd: Photocopier and shuttle UI
+  - tweak: Fax UI has been overhauled
+  - code_imp: Numerous TGUI upgrades to make life easier for TGUI development and
+      use
+  Superyodeler:
+  - balance: Nerfs shotguns
+  tiramisuapimancer:
+  - tweak: Felinids now like meat and dairy, and dislike vegetables and sugar
+  - code_imp: made the code for felinids immunity to carpotoxin less bad maybe????
+2020-09-25:
+  SynnGraffkin:
+  - bugfix: Addressed some minor issues with windows floating in space.
+2020-09-26:
+  Maldaris:
+  - rscadd: Steppy, the Cargonian Gator.
+  - rscadd: A contraband poster depicting Steppy and his slogan.
+  MarkSuckerberg:
+  - bugfix: You're not forced into wearing an alt title uniform when you don't have
+      the alt title selected.
+2020-09-27:
+  triplezeta:
+  - balance: tetracord + slime jelly produces one unit regen jelly instead of two
+  - bugfix: regen jelly is mixable with omnizine and slime jelly again
+2020-09-28:
+  Maldaris:
+  - bugfix: Observers and Lobby Players cannot vote for auto transfer votes.
+  - tweak: Auto-Transfer votes won't trigger if a transfer is already in progress.
+  MarkSuckerberg:
+  - bugfix: Lizard spines/tails and moth wings now update properly in character setup.
+  Silicons:
+  - rscadd: Baystation instruments are here!
+  - refactor: Existing instruments have been rolled into the new unified instruments
+      system.
+  - refactor: A sound subsystem has been added, SSsounds. Use it for persistent channel
+      management.
+  Superyodeler:
+  - tweak: startup timer starts after initialization
+  - config: startup timer starts after initialization
+2020-09-29:
+  Shadowtail117:
+  - tweak: Caltrops (like glass shards) will no longer paralyze you if you have the
+      Light Step trait.
+  - tweak: You will now take full damage if you move over caltrops if you are incapacitated,
+      even if you have the Light Step trait.
+  SynnGraffkin:
+  - bugfix: Deltastation blueprint was revised.
+  - bugfix: Derelict wiring has been updated by the drones designated there.
+  - rscadd: Re-adds the particle accelerator and singularity / tesla generator to
+      Deltastation.
+2020-09-30:
+  MaltVinegar:
+  - rscadd: adds the cat tongue and associated admin punishment
+  Shadowtail117:
+  - imageadd: Revamped the Gygax sprites.
+  SynnGraffkin:
+  - tweak: Pubby whiteship updated.
+  alexkar598:
+  - code_imp: Adds an auto-annotator for travis errors.

@@ -1,5 +1,11 @@
 import { useBackend } from '../backend';
-import { BlockQuote, Button, LabeledList, ProgressBar, Section } from '../components';
+import {
+  BlockQuote,
+  Button,
+  LabeledList,
+  ProgressBar,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const Intellicard = (props, context) => {
@@ -16,25 +22,24 @@ export const Intellicard = (props, context) => {
   } = data;
   const offline = isDead || isBraindead;
   return (
-    <Window
-      width={500}
-      height={500}
-      resizable>
+    <Window width={500} height={500} resizable>
       <Window.Content scrollable>
         <Section
-          title={name || "Empty Card"}
-          buttons={!!name && (
-            <Button
-              icon="trash"
-              content={wiping ? 'Stop Wiping' : 'Wipe'}
-              disabled={isDead}
-              onClick={() => act('wipe')} />
-          )}>
+          title={name || 'Empty Card'}
+          buttons={
+            !!name && (
+              <Button
+                icon="trash"
+                content={wiping ? 'Stop Wiping' : 'Wipe'}
+                disabled={isDead}
+                onClick={() => act('wipe')}
+              />
+            )
+          }
+        >
           {!!name && (
             <LabeledList>
-              <LabeledList.Item
-                label="Status"
-                color={offline ? 'bad' : 'good'}>
+              <LabeledList.Item label="Status" color={offline ? 'bad' : 'good'}>
                 {offline ? 'Offline' : 'Operation'}
               </LabeledList.Item>
               <LabeledList.Item label="Software Integrity">
@@ -54,18 +59,18 @@ export const Intellicard = (props, context) => {
                   icon="signal"
                   content="Wireless Activity"
                   selected={wireless}
-                  onClick={() => act('wireless')} />
+                  onClick={() => act('wireless')}
+                />
                 <Button
                   icon="microphone"
                   content="Subspace Radio"
                   selected={radio}
-                  onClick={() => act('radio')} />
+                  onClick={() => act('radio')}
+                />
               </LabeledList.Item>
               <LabeledList.Item label="Laws">
-                {laws.map(law => (
-                  <BlockQuote key={law}>
-                    {law}
-                  </BlockQuote>
+                {laws.map((law) => (
+                  <BlockQuote key={law}>{law}</BlockQuote>
                 ))}
               </LabeledList.Item>
             </LabeledList>

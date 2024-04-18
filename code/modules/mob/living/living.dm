@@ -9,6 +9,13 @@
 		diag_hud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+	if(speed)
+		update_living_varspeed()
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /mob/living/prepare_huds()
 	..()
@@ -44,6 +51,10 @@
 		S.sharerDies(FALSE)
 		S.removeSoulsharer(src) //If a sharer is destroy()'d, they are simply removed
 	sharedSoullinks = null
+
+	QDEL_LIST(surgeries)
+	QDEL_LIST(abilities) // so that the actions are deleted, which will clear refs to owner
+	QDEL_LIST(roundstart_quirks)
 	return ..()
 
 /mob/living/onZImpact(turf/T, levels)
@@ -82,6 +93,10 @@
 
 //Called when we bump onto a mob
 /mob/living/proc/MobBump(mob/M)
+	//No bumping/swapping/pushing others if you are on walk intent
+	if(m_intent == MOVE_INTENT_WALK)
+		return TRUE
+
 	//Even if we don't push/swap places, we "touched" them, so spread fire
 	spreadFire(M)
 
@@ -212,6 +227,7 @@
 		return
 	now_pushing = TRUE
 	var/dir_to_target = get_dir(src, AM)
+	dir_to_target = dir_to_target ? dir_to_target : dir //we will fall back to using the mob's dir if on same tile as obj
 
 	// If there's no dir_to_target then the player is on the same turf as the atom they're trying to push.
 	// This can happen when a player is stood on the same turf as a directional window. All attempts to push
@@ -303,7 +319,7 @@
 		if(!iscarbon(src))
 			M.LAssailant = null
 		else
-			M.LAssailant = usr
+			M.LAssailant = WEAKREF(usr)
 		if(isliving(M))
 			var/mob/living/L = M
 			SEND_SIGNAL(M, COMSIG_LIVING_GET_PULLED, src)
@@ -343,22 +359,22 @@
 	M.setDir(get_dir(M, src))
 	switch(M.dir)
 		if(NORTH)
-			animate(M, pixel_x = 0, pixel_y = offset, 3)
+			animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y + offset, 3)
 		if(SOUTH)
-			animate(M, pixel_x = 0, pixel_y = -offset, 3)
+			animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y - offset, 3)
 		if(EAST)
 			if(M.lying_angle == 270) //update the dragged dude's direction if we've turned
 				M.set_lying_angle(90)
-			animate(M, pixel_x = offset, pixel_y = 0, 3)
+			animate(M, pixel_x = M.base_pixel_x + offset, pixel_y = M.base_pixel_y, 3)
 		if(WEST)
 			if(M.lying_angle == 90)
 				M.set_lying_angle(270)
-			animate(M, pixel_x = -offset, pixel_y = 0, 3)
+			animate(M, pixel_x = M.base_pixel_x - offset, pixel_y = M.base_pixel_y, 3)
 
 /mob/living/proc/reset_pull_offsets(mob/living/M, override)
 	if(!override && M.buckled)
 		return
-	animate(M, pixel_x = 0, pixel_y = 0, 1)
+	animate(M, pixel_x = M.base_pixel_x, pixel_y = M.base_pixel_y, 1)
 
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
@@ -387,11 +403,14 @@
 /mob/living/pointed(atom/A as mob|obj|turf in view(client.view, src))
 	if(incapacitated())
 		return FALSE
+
+	return ..()
+
+/mob/living/_pointed(atom/pointing_at)
 	if(!..())
 		return FALSE
-	visible_message("<span class='name'>[src]</span> points at [A].", "<span class='notice'>You point at [A].</span>")
-	return TRUE
-
+	log_message("points at [pointing_at]", LOG_EMOTE)
+	visible_message("<span class='infoplain'>[span_name("[src]")] points at [pointing_at].</span>", span_notice("You point at [pointing_at]."))
 
 /mob/living/verb/succumb(whispered as null)
 	set hidden = TRUE
@@ -488,8 +507,7 @@
 
 /mob/living/proc/get_up(instant = FALSE)
 	set waitfor = FALSE
-	var/static/datum/callback/rest_checks = CALLBACK(src, .proc/rest_checks_callback)
-	if(!instant && !do_mob(src, src, 2 SECONDS, uninterruptible = TRUE, extra_checks = rest_checks))
+	if(!instant && !do_mob(src, src, 2 SECONDS, uninterruptible = TRUE, extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback))))
 		return
 	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED))
 		return
@@ -510,8 +528,7 @@
 
 /// Proc to append behavior related to lying down.
 /mob/living/proc/on_lying_down(new_lying_angle)
-	if(layer == initial(layer)) //to avoid things like hiding larvas.
-		layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
+	layer = LYING_MOB_LAYER //so mob lying always appear behind standing mobs
 	ADD_TRAIT(src, TRAIT_UI_BLOCKED, LYING_DOWN_TRAIT)
 	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, LYING_DOWN_TRAIT)
 	density = FALSE // We lose density and stop bumping passable dense things.
@@ -633,7 +650,6 @@
 	if(stat == DEAD && can_be_revived()) //in some cases you can't revive (e.g. no brain)
 		remove_from_dead_mob_list()
 		add_to_alive_mob_list()
-		set_suicide(FALSE)
 		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		updatehealth() //then we check if the mob should wake up.
 		update_sight()
@@ -645,7 +661,7 @@
 				var/obj/effect/proc_holder/spell/spell = S
 				spell.updateButtonIcon()
 		if(excess_healing)
-			INVOKE_ASYNC(src, .proc/emote, "gasp")
+			INVOKE_ASYNC(src, PROC_REF(emote), "gasp")
 			log_combat(src, src, "revived")
 
 /mob/living/proc/remove_CC()
@@ -658,8 +674,8 @@
 	SetUnconscious(0)
 
 
-/mob/living/Crossed(atom/movable/AM)
-	. = ..()
+/mob/living/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM, src)
@@ -697,6 +713,32 @@
 	jitteriness = 0
 	stop_sound_channel(CHANNEL_HEARTBEAT)
 
+//proc used to heal a mob, but only damage types specified.
+/mob/living/proc/specific_heal(blood_amt = 0, brute_amt = 0, fire_amt = 0, tox_amt = 0, oxy_amt = 0, clone_amt = 0, organ_amt = 0, stam_amt = 0, specific_revive = FALSE, specific_bones = FALSE)
+	if(iscarbon(src))
+		var/mob/living/carbon/C = src
+		if(!(C.dna?.species && (NOBLOOD in C.dna.species.species_traits)))
+			C.blood_volume += (blood_amt)
+
+		for(var/i in C.internal_organs)
+			var/obj/item/organ/O = i
+			if(O.organ_flags & ORGAN_SYNTHETIC)
+				continue
+			O.applyOrganDamage(organ_amt*-1)//1 = 5 organ damage healed
+
+		if(specific_bones)
+			for(var/obj/item/bodypart/B in C.bodyparts)
+				B.fix_bone()
+
+	if(specific_revive)
+		revive()
+
+	adjustBruteLoss(brute_amt*-1)
+	adjustFireLoss(fire_amt*-1)
+	adjustToxLoss(tox_amt*-1)
+	adjustOxyLoss(oxy_amt*-1)
+	adjustCloneLoss(clone_amt*-1)
+	adjustStaminaLoss(stam_amt*-1)
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
 /mob/living/proc/can_be_revived()
@@ -751,10 +793,8 @@
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
 	if(!has_gravity())
 		return
-	var/blood_exists = FALSE
+	var/blood_exists = locate(/obj/effect/decal/cleanable/blood/trail_holder) in start
 
-	for(var/obj/effect/decal/cleanable/trail_holder/C in start) //checks for blood splatter already on the floor
-		blood_exists = TRUE
 	if(isturf(start))
 		var/trail_type = getTrail()
 		if(trail_type)
@@ -771,9 +811,9 @@
 				if((newdir in GLOB.cardinals) && (prob(50)))
 					newdir = turn(get_dir(target_turf, start), 180)
 				if(!blood_exists)
-					new /obj/effect/decal/cleanable/trail_holder(start, get_static_viruses())
+					new /obj/effect/decal/cleanable/blood/trail_holder(start, get_static_viruses())
 
-				for(var/obj/effect/decal/cleanable/trail_holder/TH in start)
+				for(var/obj/effect/decal/cleanable/blood/trail_holder/TH in start)
 					if((!(newdir in TH.existing_dirs) || trail_type == "trails_1" || trail_type == "trails_2") && TH.existing_dirs.len <= 16) //maximum amount of overlays is 16 (all light & heavy directions filled)
 						TH.existing_dirs += newdir
 						TH.add_overlay(image('icons/effects/blood.dmi', trail_type, dir = newdir))
@@ -826,6 +866,10 @@
 	set name = "Resist"
 	set category = "IC"
 
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_resist)))
+
+///proc extender of [/mob/living/verb/resist] meant to make the process queable if the server is overloaded when the verb is called
+/mob/living/proc/execute_resist()
 	if(!can_resist())
 		return
 	changeNext_move(CLICK_CD_RESIST)
@@ -851,7 +895,6 @@
 		else if(last_special <= world.time)
 			resist_restraints() //trying to remove cuffs.
 
-
 /mob/proc/resist_grab(moving_resist)
 	return 1 //returning 0 means we successfully broke free
 
@@ -863,12 +906,6 @@
 			altered_grab_state++
 		var/resist_chance = BASE_GRAB_RESIST_CHANCE // see defines/combat.dm
 		resist_chance = max((resist_chance/altered_grab_state)-sqrt((getBruteLoss()+getFireLoss()+getOxyLoss()+getToxLoss()+getCloneLoss())*0.5+getStaminaLoss()), 0) //stamina loss is weighted twice as heavily as the other damage types in this calculation
-		//WS - Yuggolith tentacle grip/slip
-		if(issquidperson(pulledby))
-			resist_chance = resist_chance * 0.5
-		if(issquidperson(src))
-			resist_chance = resist_chance + (resist_chance * 0.5)
-		//WS - End
 		if(prob(resist_chance))
 			visible_message("<span class='danger'>[src] breaks free of [pulledby]'s grip!</span>", \
 							"<span class='danger'>You break free of [pulledby]'s grip!</span>", null, null, pulledby)
@@ -923,11 +960,11 @@
 	if(anchored || (buckled && buckled.anchored))
 		fixed = 1
 	if(on && !(movement_type & FLOATING) && !fixed)
-		animate(src, pixel_y = 2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
-		animate(pixel_y = -2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
+		animate(src, pixel_y = base_pixel_y + 2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
+		animate(pixel_y = base_pixel_y - 2, time = 10, loop = -1, flags = ANIMATION_RELATIVE)
 		setMovetype(movement_type | FLOATING)
 	else if(((!on || fixed) && (movement_type & FLOATING)))
-		animate(src, pixel_y = get_standard_pixel_y_offset(lying_angle), time = 10)
+		animate(src, pixel_y = base_pixel_y + get_standard_pixel_y_offset(lying_angle), time = 1 SECONDS)
 		setMovetype(movement_type & ~FLOATING)
 
 // The src mob is trying to strip an item from someone
@@ -1012,8 +1049,8 @@
 	var/amplitude = min(4, (jitteriness/100) + 1)
 	var/pixel_x_diff = rand(-amplitude, amplitude)
 	var/pixel_y_diff = rand(-amplitude/3, amplitude/3)
-	var/final_pixel_x = get_standard_pixel_x_offset(body_position == LYING_DOWN)
-	var/final_pixel_y = get_standard_pixel_y_offset(body_position == LYING_DOWN)
+	var/final_pixel_x = base_pixel_y + get_standard_pixel_x_offset(body_position == LYING_DOWN)
+	var/final_pixel_y = base_pixel_y + get_standard_pixel_y_offset(body_position == LYING_DOWN)
 	animate(src, pixel_x = pixel_x + pixel_x_diff, pixel_y = pixel_y + pixel_y_diff , time = 2, loop = 6)
 	animate(pixel_x = final_pixel_x , pixel_y = final_pixel_y , time = 2)
 	setMovetype(movement_type & ~FLOATING) // If we were without gravity, the bouncing animation got stopped, so we make sure to restart it in next life().
@@ -1047,9 +1084,9 @@
 	var/turf/T = get_turf(src)
 	if(!T)
 		return FALSE
-	if(is_centcom_level(T.z)) //dont detect mobs on centcom
+	if(is_centcom_level(T)) //dont detect mobs on centcom
 		return FALSE
-	if(is_away_level(T.z))
+	if(is_away_level(T))
 		return FALSE
 	if(user != null && src == user)
 		return FALSE
@@ -1227,7 +1264,7 @@
 //Mobs on Fire end
 
 // used by secbot and monkeys Crossed
-/mob/living/proc/knockOver(var/mob/living/carbon/C)
+/mob/living/proc/knockOver(mob/living/carbon/C)
 	if(C.key) //save us from monkey hordes
 		C.visible_message("<span class='warning'>[pick( \
 						"[C] dives out of [src]'s way!", \
@@ -1291,44 +1328,11 @@
 		if(client)
 			reset_perspective()
 
-
-/mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
-	if (registered_z != new_z)
-		if (registered_z)
-			SSmobs.clients_by_zlevel[registered_z] -= src
-		if (client)
-			if (new_z)
-				//Figure out how many clients were here before
-				var/oldlen = SSmobs.clients_by_zlevel[new_z].len
-				SSmobs.clients_by_zlevel[new_z] += src
-				for (var/I in length(SSidlenpcpool.idle_mobs_by_zlevel[new_z]) to 1 step -1) //Backwards loop because we're removing (guarantees optimal rather than worst-case performance), it's fine to use .len here but doesn't compile on 511
-					var/mob/living/simple_animal/SA = SSidlenpcpool.idle_mobs_by_zlevel[new_z][I]
-					if (SA)
-						if(oldlen == 0)
-							//Start AI idle if nobody else was on this z level before (mobs will switch off when this is the case)
-							SA.toggle_ai(AI_IDLE)
-
-						//If they are also within a close distance ask the AI if it wants to wake up
-						if(get_dist(get_turf(src), get_turf(SA)) < MAX_SIMPLEMOB_WAKEUP_RANGE)
-							SA.consider_wakeup() // Ask the mob if it wants to turn on it's AI
-					//They should clean up in destroy, but often don't so we get them here
-					else
-						SSidlenpcpool.idle_mobs_by_zlevel[new_z] -= SA
-
-
-			registered_z = new_z
-		else
-			registered_z = null
-
-/mob/living/onTransitZ(old_z,new_z)
-	..()
-	update_z(new_z)
-
 /mob/living/MouseDrop_T(atom/dropping, atom/user)
 	var/mob/living/U = user
 	if(isliving(dropping))
 		var/mob/living/M = dropping
-		if(M.can_be_held && U.pulling == M)
+		if(HAS_TRAIT(M, TRAIT_HOLDABLE) && U.pulling == M)
 			M.mob_try_pickup(U)//blame kevinz
 			return//dont open the mobs inventory if you are picking them up
 	. = ..()
@@ -1444,13 +1448,13 @@
 		CRASH(ERROR_ERROR_LANDMARK_ERROR)
 
 /**
-  * Changes the inclination angle of a mob, used by humans and others to differentiate between standing up and prone positions.
-  *
-  * In BYOND-angles 0 is NORTH, 90 is EAST, 180 is SOUTH and 270 is WEST.
-  * This usually means that 0 is standing up, 90 and 270 are horizontal positions to right and left respectively, and 180 is upside-down.
-  * Mobs that do now follow these conventions due to unusual sprites should require a special handling or redefinition of this proc, due to the density and layer changes.
-  * The return of this proc is the previous value of the modified lying_angle if a change was successful (might include zero), or null if no change was made.
-  */
+ * Changes the inclination angle of a mob, used by humans and others to differentiate between standing up and prone positions.
+ *
+ * In BYOND-angles 0 is NORTH, 90 is EAST, 180 is SOUTH and 270 is WEST.
+ * This usually means that 0 is standing up, 90 and 270 are horizontal positions to right and left respectively, and 180 is upside-down.
+ * Mobs that do now follow these conventions due to unusual sprites should require a special handling or redefinition of this proc, due to the density and layer changes.
+ * The return of this proc is the previous value of the modified lying_angle if a change was successful (might include zero), or null if no change was made.
+ */
 /mob/living/proc/set_lying_angle(new_lying)
 	if(new_lying == lying_angle)
 		return
@@ -1500,15 +1504,15 @@
 /**
  * get_body_temp_normal Returns the mobs normal body temperature with any modifications applied
  *
- * This applies the result from proc/get_body_temp_normal_change() against the BODYTEMP_NORMAL and returns the result
+ * This applies the result from proc/get_body_temp_normal_change() against the HUMAN_BODYTEMP_NORMAL and returns the result
  *
  * arguments:
  * * apply_change (optional) Default True This applies the changes to body temperature normal
  */
 /mob/living/proc/get_body_temp_normal(apply_change=TRUE)
 	if(!apply_change)
-		return BODYTEMP_NORMAL
-	return BODYTEMP_NORMAL + get_body_temp_normal_change()
+		return HUMAN_BODYTEMP_NORMAL
+	return HUMAN_BODYTEMP_NORMAL + get_body_temp_normal_change()
 
 ///Checks if the user is incapacitated or on cooldown.
 /mob/living/proc/can_look_up()
@@ -1526,8 +1530,8 @@
 	if(!can_look_up())
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
-	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_up) //We stop looking up if we move.
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/start_look_up) //We start looking again after we move.
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_look_up)) //We stop looking up if we move.
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_up)) //We start looking again after we move.
 	start_look_up()
 
 /mob/living/proc/start_look_up()
@@ -1571,8 +1575,8 @@
 	if(!can_look_up()) //if we cant look up, we cant look down.
 		return
 	changeNext_move(CLICK_CD_LOOK_UP)
-	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, .proc/stop_look_down) //We stop looking down if we move.
-	RegisterSignal(src, COMSIG_MOVABLE_MOVED, .proc/start_look_down) //We start looking again after we move.
+	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_look_down)) //We stop looking down if we move.
+	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(start_look_down)) //We start looking again after we move.
 	start_look_down()
 
 /mob/living/proc/start_look_down()
@@ -1762,7 +1766,7 @@
 	//this won't really work with species with more than 2 legs, but it'll function
 	if(broken_legs > 0)
 		var/broken_slowdown = 0
-		broken_slowdown += (default_num_legs - broken_legs) * 2
+		broken_slowdown += broken_legs
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bones, multiplicative_slowdown=broken_slowdown) //can't move fast with a broken leg
 	else
 		remove_movespeed_modifier(/datum/movespeed_modifier/bones)
@@ -1849,3 +1853,62 @@
 		add_overlay(bubble_overlay)
 	else
 		cut_overlay(bubble_overlay)
+
+/mob/living/remove_air(amount) //To prevent those in contents suffocating
+	return loc ? loc.remove_air(amount) : null
+
+/mob/living/remove_air_ratio(ratio)
+	return loc ? loc.remove_air_ratio(ratio) : null
+
+/mob/living/proc/seizure()
+	set waitfor = 0
+	if(!IsParalyzed() && stat == CONSCIOUS)
+		visible_message("<span class='danger'>\The [src] starts having a seizure!</span>", "<span class='userdanger'>Your muscles spasm violently!</span>")
+		var/howfuck = rand(8,16)
+		AdjustParalyzed(howfuck)
+		AdjustKnockdown(howfuck)
+		Jitter(rand(150,200))
+
+/**
+ * Sets the mob's speed variable and then calls update_living_varspeed().
+ *
+ * Sets the mob's speed variable, which does nothing by itself.
+ * It then calls update_living_varspeed(), which then actually applies the movespeed change.
+ * Arguments:
+ * * var_value - The new value of speed.
+ */
+/mob/living/proc/set_varspeed(var_value)
+	speed = var_value
+	update_living_varspeed()
+
+/**
+ * Applies the mob's speed variable to a movespeed modifier.
+ *
+ * Applies the speed variable to a movespeed variable.  If the speed is 0, removes the movespeed modifier.
+ */
+/mob/living/proc/update_living_varspeed()
+	if(speed == 0)
+		remove_movespeed_modifier(/datum/movespeed_modifier/living_varspeed)
+		return
+	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/living_varspeed, multiplicative_slowdown = speed)
+
+
+/**
+ * Applies the mob's speed variable to a movespeed modifier.
+ *
+ * Applies the speed variable to a movespeed variable.  If the speed is 0, removes the movespeed modifier.
+ */
+
+/mob/living/carbon/verb/open_close_eyes()
+	set category = "IC"
+	set name = "Open/Close Eyes"
+
+	if(HAS_TRAIT(src, TRAIT_EYESCLOSED))
+		REMOVE_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
+		src.cure_blind("[type]")
+		src.update_body()
+		return
+	ADD_TRAIT(src, TRAIT_EYESCLOSED, "[type]")
+	src.become_blind("[type]")
+	src.update_body()
+	return

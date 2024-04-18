@@ -4,7 +4,7 @@ GLOBAL_LIST(gang_tags)
 	name = "rune"
 	desc = "Graffiti. Damn kids."
 	icon = 'icons/effects/crayondecal.dmi'
-	icon_state = "rune1"
+	icon_state = "firedanger"
 	gender = NEUTER
 	plane = GAME_PLANE //makes the graffiti visible over a wall.
 	mergeable_decal = FALSE
@@ -16,7 +16,7 @@ GLOBAL_LIST(gang_tags)
 	. = ..()
 	if(e_name)
 		name = e_name
-	desc = "A [name] vandalizing the station."
+	desc = "A [name] vandalizing the local architecture."
 	if(alt_icon)
 		icon = alt_icon
 	if(type)
@@ -37,6 +37,7 @@ GLOBAL_LIST(gang_tags)
 	name = "Leet Like Jeff K gang tag"
 	desc = "Looks like someone's claimed this area for Leet Like Jeff K."
 	icon = 'icons/obj/gang/tags.dmi'
+	icon_state = "B_tag"
 	layer = BELOW_MOB_LAYER
 	var/datum/team/gang/my_gang
 
@@ -46,4 +47,4 @@ GLOBAL_LIST(gang_tags)
 
 /obj/effect/decal/cleanable/crayon/gang/Destroy()
 	LAZYREMOVE(GLOB.gang_tags, src)
-	..()
+	return ..()

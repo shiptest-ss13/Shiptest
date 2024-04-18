@@ -421,7 +421,7 @@
 	outer_plating_amount=1
 
 /datum/component/construction/mecha/gygax/action(datum/source, atom/used_atom, mob/user)
-	return check_step(used_atom,user)
+	return INVOKE_ASYNC(src, PROC_REF(check_step), used_atom, user)
 
 /datum/component/construction/mecha/gygax/custom_action(obj/item/I, mob/living/user, diff)
 	if(!..())
@@ -1054,7 +1054,7 @@
 			"key" = /obj/item/assembly/signaler/anomaly, //WS Edit - Any anomaly core for Phazons
 			"action" = ITEM_DELETE,
 			"back_key" = TOOL_WELDER,
-			"desc" = "Bluespace anomaly core socket is open.",
+			"desc" = "Anomaly core socket is open.",
 			"icon_state" = "phazon24"
 		)
 	)

@@ -19,7 +19,7 @@
 
 	new /obj/effect/temp_visual/monkeyify(loc)
 
-	transformation_timer = addtimer(CALLBACK(src, .proc/finish_monkeyize, tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
+	transformation_timer = addtimer(CALLBACK(src, PROC_REF(finish_monkeyize), tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
 
 /mob/living/carbon/proc/finish_monkeyize(tr_flags)
 	transformation_timer = null
@@ -42,7 +42,7 @@
 		cavity_object = CH.cavity_item
 		CH.cavity_item = null
 
-	var/mob/living/carbon/monkey/O = new /mob/living/carbon/monkey( loc )
+	var/mob/living/carbon/monkey/O = new /mob/living/carbon/monkey(loc)
 
 	// hash the original name?
 	if(tr_flags & TR_HASHNAME)
@@ -51,6 +51,7 @@
 
 	//handle DNA and other attributes
 	dna.transfer_identity(O)
+	O.set_species(/datum/species/monkey)
 	O.updateappearance(icon_update=0)
 
 	if(tr_flags & TR_KEEPSE)
@@ -58,8 +59,6 @@
 		O.dna.default_mutation_genes = dna.default_mutation_genes
 		O.dna.set_se(1, GET_INITIALIZED_MUTATION(RACEMUT))
 
-	if(suiciding)
-		O.set_suicide(suiciding)
 	if(hellbound)
 		O.hellbound = hellbound
 	O.a_intent = INTENT_HARM
@@ -93,7 +92,7 @@
 	if(tr_flags & TR_KEEPORGANS)
 		for(var/X in O.internal_organs)
 			var/obj/item/organ/I = X
-			I.Remove(O, 1)
+			I.Remove(O, TRUE)
 
 		if(mind)
 			mind.transfer_to(O)
@@ -106,11 +105,11 @@
 		for(var/X in internal_organs)
 			var/obj/item/organ/I = X
 			int_organs += I
-			I.Remove(src, 1)
+			I.Remove(src, TRUE)
 
 		for(var/X in int_organs)
 			var/obj/item/organ/I = X
-			I.Insert(O, 1)
+			I.Insert(O, TRUE)
 
 	var/obj/item/bodypart/chest/torso = O.get_bodypart(BODY_ZONE_CHEST)
 	if(cavity_object)
@@ -190,7 +189,7 @@
 	invisibility = INVISIBILITY_MAXIMUM
 	new /obj/effect/temp_visual/monkeyify/humanify(loc)
 
-	transformation_timer = addtimer(CALLBACK(src, .proc/finish_humanize, tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
+	transformation_timer = addtimer(CALLBACK(src, PROC_REF(finish_humanize), tr_flags), TRANSFORMATION_DURATION, TIMER_UNIQUE)
 
 /mob/living/carbon/proc/finish_humanize(tr_flags)
 	transformation_timer = null
@@ -213,7 +212,7 @@
 		cavity_object = CH.cavity_item
 		CH.cavity_item = null
 
-	var/mob/living/carbon/human/O = new( loc )
+	var/mob/living/carbon/human/O = new(loc)
 	for(var/obj/item/C in O.loc)
 		if(C.anchored)
 			continue
@@ -235,8 +234,6 @@
 		O.dna.set_se(0, GET_INITIALIZED_MUTATION(RACEMUT))
 		O.domutcheck()
 
-	if(suiciding)
-		O.set_suicide(suiciding)
 	if(hellbound)
 		O.hellbound = hellbound
 
@@ -326,6 +323,11 @@
 			for(var/datum/action/changeling/humanform/HF in changeling.purchasedpowers)
 				changeling.purchasedpowers -= HF
 				changeling.regain_powers()
+
+	if(O.dna.species && !istype(O.dna.species, /datum/species/monkey))
+		O.set_species(O.dna.species)
+	else
+		O.set_species(/datum/species/human)
 
 	O.a_intent = INTENT_HELP
 	if (tr_flags & TR_DEFAULTMSG)

@@ -41,13 +41,19 @@
 	STOP_PROCESSING(SSradiation, src)
 	..()
 
+// When somebody figured out how to harness the power of the sun for infinite fusion rads,
+// we had problems with radiation waves travelling across virtual zs. If a radiation wave
+// strikes a null turf (i.e. a z-level edge) or a rad_fullblocker turf (typically a virtual z edge)
+// propagation in that direction is stopped.
+/datum/radiation_wave/proc/is_valid_rad_turf(turf/r_turf)
+	return r_turf && !r_turf.rad_fullblocker
+
 /datum/radiation_wave/process()
 	master_turf = get_step(master_turf, move_dir)
-	if(!master_turf)
+	if(!is_valid_rad_turf(master_turf))
 		qdel(src)
 		return
 	steps++
-	var/list/atoms = get_rad_atoms()
 
 	var/strength
 	if(steps>1)
@@ -58,6 +64,8 @@
 	if(strength<RAD_BACKGROUND_RADIATION)
 		qdel(src)
 		return
+
+	var/list/atoms = get_rad_atoms()
 
 	if(radiate(atoms, FLOOR(min(strength,remaining_contam), 1)))
 		//oof ow ouch
@@ -80,8 +88,8 @@
 		place = cmaster_turf
 		for(var/i in 1 to distance)
 			place = get_step(place, dir)
-			if(!place)
-				break
+			if(!is_valid_rad_turf(place))
+				break // the break here is important. if a rad wave was travelling parallel to a virtual z edge, and the loop didn't break, it could "clip through"
 			atoms += get_rad_contents(place)
 
 	return atoms

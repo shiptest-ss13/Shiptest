@@ -6,8 +6,8 @@
 	strip_delay = 40
 	equip_delay_other = 40
 	cuttable = TRUE
-	clothamnt = 2
-	greyscale_colors = list(list(15, 19))
+	clothamnt = 1
+	greyscale_colors = list(list(15, 20), list(16, 21), list(14, 19))
 	greyscale_icon_state = "scarf"
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE)
@@ -21,13 +21,38 @@
 
 /obj/item/clothing/neck/tie
 	name = "tie"
-	desc = "A neosilk clip-on tie."
-	icon = 'icons/obj/clothing/neck.dmi'
-	icon_state = "bluetie"
+	desc = "A neosilk clip-on tie. Special material allows it to be reskinned by Alt-clicking it, but only once."
+	unique_reskin = list("red tie" = "redtie",
+						"orange tie" = "orangetie",
+						"green tie" = "greentie",
+						"light blue tie" = "lightbluetie",
+						"blue tie" = "bluetie",
+						"purple tie" = "purpletie",
+						"black tie" = "blacktie",
+						"orange tie" = "orangetie",
+						"light blue tie" = "lightbluetie",
+						"purple tie" = "purpletie",
+						"green tie" = "greentie",
+						"brown tie" = "browntie",
+						"rainbow tie" = "rainbow_tie",
+						"horrible tie" = "horribletie",
+						"transgender tie" = "transgender",
+						"pansexual tie" = "pansexual",
+						"nonbinary tie" = "nonbinary",
+						"bisexual tie" = "bisexual",
+						"lesbian tie" = "lesbian",
+						"intersex tie" = "intersex",
+						"gay tie" = "gay",
+						"genderfluid tie" = "genderfluid",
+						"asexual tie" = "asexual",
+						"genderfae tie" = "genderfae",
+						"ally tie" = "ally_tie"
+						)
+	icon_state = "rainbow_tie"
 	item_state = ""	//no inhands
 	w_class = WEIGHT_CLASS_SMALL
 	custom_price = 60
-	greyscale_colors = list(list(16, 20))
+	greyscale_colors = list(list(16, 20), list(16, 16), list(16, 18))
 	greyscale_icon_state = "tie"
 
 /obj/item/clothing/neck/tie/blue
@@ -41,6 +66,30 @@
 /obj/item/clothing/neck/tie/black
 	name = "black tie"
 	icon_state = "blacktie"
+//
+/obj/item/clothing/neck/tie/orange
+	name = "orange tie"
+	icon_state = "orangetie"
+
+/obj/item/clothing/neck/tie/light_blue
+	name = "light blue tie"
+	icon_state = "lightbluetie"
+
+/obj/item/clothing/neck/tie/purple
+	name = "purple tie"
+	icon_state = "purpletie"
+
+/obj/item/clothing/neck/tie/green
+	name = "green tie"
+	icon_state = "greentie"
+
+/obj/item/clothing/neck/tie/brown
+	name = "brown tie"
+	icon_state = "browntie"
+//
+/obj/item/clothing/neck/tie/rainbow
+	name = "rainbow tie"
+	icon_state = "rainbow_tie"
 
 /obj/item/clothing/neck/tie/horrible
 	name = "horrible tie"
@@ -51,16 +100,73 @@
 	name = "loose tie"
 	desc = "A loosely tied necktie, a perfect accessory for the over-worked detective."
 	icon_state = "detective"
+	unique_reskin = null
+
+/obj/item/clothing/neck/maid
+	name = "maid neck cover"
+	desc = "A neckpiece for a maid costume, it smells faintly of disappointment."
+	icon_state = "maid_neck"
+
+/obj/item/clothing/neck/tie/trans
+	name = "transgender tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the trans flag."
+	icon_state = "transgender"
+
+/obj/item/clothing/neck/tie/pan
+	name = "pansexual tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the pansexual flag."
+	icon_state = "pansexual"
+
+/obj/item/clothing/neck/tie/enby
+	name = "nonbinary tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the nonbinary flag."
+	icon_state = "nonbinary"
+
+/obj/item/clothing/neck/tie/bi
+	name = "bisexual tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the bisexual flag."
+	icon_state = "bisexual"
+
+/obj/item/clothing/neck/tie/lesbian
+	name = "lesbian tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the lesbian flag."
+	icon_state = "lesbian"
+
+/obj/item/clothing/neck/tie/intersex
+	name = "intersex tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the intersex flag."
+	icon_state = "intersex"
+
+/obj/item/clothing/neck/tie/gay
+	name = "gay tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the gay flag."
+	icon_state = "gay"
+
+/obj/item/clothing/neck/tie/genderfluid
+	name = "genderfluid tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the genderfluid flag."
+	icon_state = "genderfluid"
+
+/obj/item/clothing/neck/tie/asexual
+	name = "asexual tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the asexual flag."
+	icon_state = "asexual"
+
+/obj/item/clothing/neck/tie/genderfae
+	name = "genderfae tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the genderfae flag."
+	icon_state = "genderfae"
+
+/obj/item/clothing/neck/tie/ally_tie
+	name = "ally tie"
+	desc = "A neosilk clip-on tie. This one is in the colors of the ally flag."
+	icon_state = "ally_tie"
 
 /obj/item/clothing/neck/stethoscope
 	name = "stethoscope"
 	desc = "An outdated medical apparatus for listening to the sounds of the human body. It also makes you look like you know what you're doing."
 	icon_state = "stethoscope"
 	cuttable = FALSE
-
-/obj/item/clothing/neck/stethoscope/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts \the [src] to [user.p_their()] chest! It looks like [user.p_they()] wont hear much!</span>")
-	return OXYLOSS
 
 /obj/item/clothing/neck/stethoscope/attack(mob/living/carbon/human/M, mob/living/user)
 	if(ishuman(M) && isliving(user))
@@ -155,9 +261,16 @@
 	name = "christmas scarf"
 	icon_state = "christmasscarf"
 
+//Shemaghs to operate tactically in a operational tactical situation
+
+/obj/item/clothing/neck/shemagh
+	name = "shemagh"
+	desc = "An oversized shemagh, for those with a keen sense of fashion, or those operating tactically."
+	icon_state = "shemagh"
+
 //The three following scarves don't have the scarf subtype
 //This is because Ian can equip anything from that subtype
-//However, these 3 don't have corgi versions of their sprites
+//However, these 4 don't have corgi versions of their sprites
 /obj/item/clothing/neck/stripedredscarf
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
@@ -173,10 +286,17 @@
 	icon_state = "stripedbluescarf"
 	custom_price = 10
 
+/obj/item/clothing/neck/stripedsolgovscarf
+	name = "striped solgov scarf"
+	icon_state = "stripedsolgovscarf"
+	custom_price = 10
+
 /obj/item/clothing/neck/petcollar
 	name = "pet collar"
 	desc = "It's for pets. But some people wear it anyways for reasons unknown."
 	icon_state = "petcollar"
+	greyscale_colors = list(list(16,21), list(16,19), list(16,19))
+	greyscale_icon_state = "collar"
 	var/tagname = null
 
 
@@ -191,7 +311,6 @@
 /obj/item/clothing/neck/necklace/dope
 	name = "gold necklace"
 	desc = "Damn, it feels good to be a gangster."
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
 	cuttable = FALSE
 
@@ -262,7 +381,6 @@
 /obj/item/clothing/neck/beads
 	name = "plastic bead necklace"
 	desc = "A cheap, plastic bead necklace. Show team spirit! Collect them! Throw them away! The posibilites are endless!"
-	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "beads"
 	color = "#ffffff"
 	custom_price = 10
@@ -272,3 +390,46 @@
 /obj/item/clothing/neck/beads/Initialize()
 	. = ..()
 	color = color = pick("#ff0077","#d400ff","#2600ff","#00ccff","#00ff2a","#e5ff00","#ffae00","#ff0000", "#ffffff")
+
+/obj/item/clothing/neck/crystal_amulet
+	name = "crystal amulet"
+	desc = "A mysterious amulet which protects the user from hits, at the cost of itself."
+	icon_state = "crystal_talisman"
+	cuttable = FALSE
+	var/shield_state = "shieldsparkles"
+	var/shield_on = "shieldsparkles"
+	var/damage_to_take_on_hit = 40 //every time the owner is hit, how much damage to give to the amulet?
+
+
+//This is copied and pasted from the shield harsuit code, any issues here are also a issue there. Should I have done this? No, i shouldn't. Should this be a component? Yes, most likely. Do i want to touch DCS ever again? No.
+
+/obj/item/clothing/neck/crystal_amulet/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	var/datum/effect_system/spark_spread/quantum/spark_creator = new
+	spark_creator.set_up(2, 1, src)
+	spark_creator.start()
+	owner.visible_message("<span class='danger'>[owner]'s shields deflect [attack_text] in a shower of sparks!</span>")
+	take_damage(damage_to_take_on_hit)
+	playsound(src, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
+	return TRUE
+
+/obj/item/clothing/neck/crystal_amulet/examine(mob/user)
+	. = ..()
+	var/healthpercent = (obj_integrity/max_integrity) * 100
+	switch(healthpercent)
+		if(50 to 99)
+			. += "It looks slightly damaged."
+		if(25 to 50)
+			. += "It appears heavily damaged."
+		if(0 to 25)
+			. += "<span class='warning'>It's falling apart!</span>"
+
+/obj/item/clothing/neck/crystal_amulet/worn_overlays(isinhands)
+	. = ..()
+	if(!isinhands)
+		. += mutable_appearance('icons/effects/effects.dmi', shield_state, MOB_LAYER + 0.01)
+
+/obj/item/clothing/neck/crystal_amulet/obj_destruction(damage_flag)
+	visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
+	playsound(src,"shatter", 70)
+	new /obj/effect/decal/cleanable/glass/strange(get_turf(src))
+	return ..()

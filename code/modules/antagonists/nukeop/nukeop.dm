@@ -132,8 +132,8 @@
 
 /datum/antagonist/nukeop/get_admin_commands()
 	. = ..()
-	.["Send to base"] = CALLBACK(src,.proc/admin_send_to_base)
-	.["Tell code"] = CALLBACK(src,.proc/admin_tell_code)
+	.["Send to base"] = CALLBACK(src, PROC_REF(admin_send_to_base))
+	.["Tell code"] = CALLBACK(src, PROC_REF(admin_tell_code))
 
 /datum/antagonist/nukeop/proc/admin_send_to_base(mob/admin)
 	owner.current.forceMove(pick(GLOB.nukeop_start))
@@ -160,14 +160,14 @@
 /datum/antagonist/nukeop/leader/memorize_code()
 	..()
 	if(nuke_team && nuke_team.memorized_code)
-		var/obj/item/paper/P = new
-		P.info = "The nuclear authorization code is: <b>[nuke_team.memorized_code]</b>"
-		P.name = "nuclear bomb code"
+		var/obj/item/paper/nuke_code_paper = new
+		nuke_code_paper.add_raw_text("The nuclear authorization code is: <b>[nuke_team.memorized_code]</b>")
+		nuke_code_paper.name = "nuclear bomb code"
 		var/mob/living/carbon/human/H = owner.current
 		if(!istype(H))
-			P.forceMove(get_turf(H))
+			nuke_code_paper.forceMove(get_turf(H))
 		else
-			H.put_in_hands(P, TRUE)
+			H.put_in_hands(nuke_code_paper, TRUE)
 			H.update_icons()
 
 /datum/antagonist/nukeop/leader/give_alias()
@@ -190,7 +190,7 @@
 		else
 			H.put_in_hands(dukinuki, TRUE)
 	owner.announce_objectives()
-	addtimer(CALLBACK(src, .proc/nuketeam_name_assign), 1)
+	addtimer(CALLBACK(src, PROC_REF(nuketeam_name_assign)), 1)
 
 
 /datum/antagonist/nukeop/leader/proc/nuketeam_name_assign()
@@ -268,19 +268,6 @@
 		O.team = src
 		objectives += O
 
-/datum/team/nuclear/proc/disk_rescued()
-	for(var/obj/item/disk/nuclear/D in GLOB.poi_list)
-		//If emergency shuttle is in transit disk is only safe on it
-		if(SSshuttle.emergency.mode == SHUTTLE_ESCAPE)
-			if(!SSshuttle.emergency.is_in_shuttle_bounds(D))
-				return FALSE
-		//If shuttle escaped check if it's on centcom side
-		else if(SSshuttle.emergency.mode == SHUTTLE_ENDGAME)
-			if(!D.onCentCom())
-				return FALSE
-		else //Otherwise disk is safe when on station
-			return FALSE
-
 /datum/team/nuclear/proc/operatives_dead()
 	for(var/I in members)
 		var/datum/mind/operative_mind = I
@@ -289,8 +276,6 @@
 	return TRUE
 
 /datum/team/nuclear/proc/get_result()
-	var/evacuation = EMERGENCY_ESCAPED_OR_ENDGAMED
-	var/disk_rescued = disk_rescued()
 	var/station_was_nuked = SSticker.mode.station_was_nuked
 	var/nuke_off_station = SSticker.mode.nuke_off_station
 
@@ -298,16 +283,6 @@
 		return NUKE_RESULT_FLUKE
 	else if(station_was_nuked)
 		return NUKE_RESULT_NUKE_WIN
-	else if (!disk_rescued && !station_was_nuked && nuke_off_station)
-		return NUKE_RESULT_WRONG_STATION
-	else if ((disk_rescued && evacuation) && operatives_dead())
-		return NUKE_RESULT_CREW_WIN_SYNDIES_DEAD
-	else if (disk_rescued)
-		return NUKE_RESULT_CREW_WIN
-	else if (!disk_rescued && operatives_dead())
-		return NUKE_RESULT_DISK_LOST
-	else if (!disk_rescued && evacuation)
-		return NUKE_RESULT_DISK_STOLEN
 	else
 		return	//Undefined result
 

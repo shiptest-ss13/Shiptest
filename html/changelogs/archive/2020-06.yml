@@ -1,0 +1,141 @@
+2020-06-01:
+  CRITAWAKETS:
+  - rscadd: The lieutenant's security belt is pre-filled now, and has pepper spray!
+      Finally something good for lieutenants!
+  Picklesoup:
+  - tweak: Shifted some metacoin gain numbers around so getting them isn't as slow.
+  dinnerwoerror:
+  - rscadd: the commander pistol
+  - rscadd: commander pistol in warren den and head of shitcurity lockers
+  - rscadd: unloaded commander pistol in security gear lockers
+  - rscadd: commander ammunition in the armory
+  - rscadd: commander ammunition in the techwebs
+2020-06-03:
+  Victor239:
+  - rscadd: Semi-auto rounds and heavy laser autoturrets added to nuke operative uplink
+      for 8 and 12 TC respectively.
+  dinnerwoerror:
+  - balance: made the lieutenants relover less of a meme, or more of a meme depending
+      on your point of view
+2020-06-04:
+  MarkSuckerberg:
+  - tweak: The changelog now says waspstation instead of /tg/station
+  Vorak2:
+  - rscadd: A fast food restaurant has gone dark in your area the last message from
+      the establishment said something about plushies
+  - rscadd: A secure storage site that has been depowerd and abandoned for years has
+      floated into your area it is said to contain some rare items
+  - rscadd: an asteroid mining operation in your area has gone dark after reports
+      of monsters being active in the area bee on the lookout for it as the last report
+      stated they had a considerable amount of ores in the base
+2020-06-05:
+  ADepressedPyroshark:
+  - tweak: tweaked Abductors gear console now tells you that everything costs something
+2020-06-08:
+  Maldaris:
+  - imageadd: added asexual augment sprites for chest/head
+  Superyodeler:
+  - rscdel: Removed paramedic bowmans
+  Victor239:
+  - rscadd: A few more jumpsuit colours and suit styles now available as loadout options.
+2020-06-09:
+  Maldaris:
+  - rscadd: Spiderperson race
+  - rscadd: Player-spider specific structures for web and cocoon with better durability
+  Superyodeler:
+  - bugfix: fixes divide by zero runtime
+2020-06-11:
+  ADepressedPyroshark:
+  - tweak: pAI gets Crew Manifest and Digital Messenger for free
+  Chayse:
+  - rscadd: Assorted space-worthy helmets can now act as masks for internals.
+  - refactor: Internals code can now check any item with the ALLOWSINTERNALS flag
+      through the GET_INTERNAL_SLOTS define. For now this only checks head and mask
+      slots, since those are the most realistically speaking usable ones.
+  Maldaris:
+  - rscdel: Removed HoS Combat gloves for plasmaman only
+  SynnGraffkin:
+  - bugfix: Malfunctioning AIs will no longer be effectively blinded when choosing
+      to use the camera upgrade module.
+2020-06-12:
+  Superyodeler:
+  - tweak: stamina damage now stacks with normal damage for the purposes of damage
+      slowdown and stamina crit
+2020-06-18:
+  AsciiSquid:
+  - rscdel: Spectral blades no longer force-orbit on unwilling ghosts.
+  - tweak: Spectral blades can now ping ghosts twice as often.
+  CRITAWAKETS:
+  - bugfix: The Nanotrasen Nanite Bugfix Team has finally put out a patch to fix adrenal
+      programs in their nanites. It only took several months.
+  dinnerwoerror:
+  - tweak: the oh hi marg emergency shuttle
+2020-06-19:
+  Maldaris:
+  - spellcheck: Genetic Sequence Scanner now properly labeled scanner in protolathe.
+  - rscadd: Added Chief Medical Officer, Research Director, and Chief Engineer to
+      `protected_jobs` list for traitor game mode.
+2020-06-20:
+  BigFatAnimeTiddies:
+  - rscadd: New SMES room to Boxstation.
+  - rscdel: Smartwire has been yeeted to oblivion.
+  - tweak: All Nanotrasen brand stations have had their blueprints updated to use
+      a legacy wiring system.
+2020-06-22:
+  Superyodeler:
+  - bugfix: Removed more geneticist ties to science
+2020-06-23:
+  Epsilos:
+  - rscadd: Security officers and Wardens have a taser again! The HoS just has his
+      special gun as usual.
+  - rscadd: Cargo can now order tasers again! For 4000 points for two!
+  - balance: Tasers are no longer an instant spessman go horizontal, and should act
+      more like stunbatons.
+  Maldaris:
+  - balance: 'Traitor objective probabilities reworked: Murder 10%, Maroon 30%, Theft
+      60%'
+2020-06-24:
+  DerFlammenwerfer:
+  - rscadd: Added dwarves and their language, ported from Skyrats
+  - tweak: Dwarves do not require being drunk to communicate effectively in Common
+  - tweak: Dwarves are now slower, tougher, and stronger in a fist fight than humans
+  - bugfix: Dwarvish language now works properly.
+  - bugfix: Dwarves can no longer pass over tables as freely as walking.
+  Victor239:
+  - rscadd: Adds non-flashproof cheap sunglasses to ClothesMate and metacoins shop.
+2020-06-25:
+  AsciiSquid:
+  - rscadd: Added "nic catgrill gf" available in cargo.
+  BigFatAnimeTiddies:
+  - bugfix: We have sent the Engineering Intern who updated the blueprints for Box's
+      atmospherics to the Gulag for a bit because they forgot an important pipe.
+  DerFlammenwerfer:
+  - rscadd: Adds a status tab display for stored alcohol.
+  - tweak: Substantially buffs regen for having 400+ stored alcohol. Ultimately still
+      more useful for recovery than confrontation.
+  - tweak: Greatly lowers the toxin damage per cycle for alcohol deprivation. Was
+      10, now 2.5
+  Victor239:
+  - rscadd: Adds handshaking, headpatting and leg poking.
+2020-06-26:
+  BigFatAnimeTiddies:
+  - rscadd: The Atmospherics department on Meta have been given a second hardsuit
+      to fit their needs.
+  - tweak: The blueprints for Metastation have been updated to reduce the amount of
+      pipes in the Atmospherics department, encouraging experimentation. Additional
+      lighting has also been provided.
+2020-06-27:
+  Superyodeler:
+  - tweak: persistance controller only remembers 1 round (plus the current) for the
+      purposes of map votes
+  dinnerwoerror:
+  - rscadd: a bunch of cargo crates
+  - tweak: also the traitor surgical kit is actually useful
+2020-06-28:
+  MarkSuckerberg:
+  - tweak: enviroskirts are now linked to the suitskirt preference
+  SynnGraffkin:
+  - bugfix: Engineering units have been deployed to repair missing tile on Metastation.
+2020-06-29:
+  BigFatAnimeTiddies:
+  - bugfix: Fixes Nightmares spawning without Lighteater

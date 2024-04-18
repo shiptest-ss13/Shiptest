@@ -35,6 +35,18 @@
 	SEND_TEXT(world.log, text)
 #endif
 
+#if defined(REFERENCE_DOING_IT_LIVE)
+#define log_reftracker(msg) log_harddel("## REF SEARCH [msg]")
+
+/proc/log_harddel(text)
+	WRITE_LOG(GLOB.harddel_log, text)
+
+#elif defined(REFERENCE_TRACKING) // Doing it locally
+#define log_reftracker(msg) log_world("## REF SEARCH [msg]")
+
+#else //Not tracking at all
+#define log_reftracker(msg)
+#endif
 
 /* Items with ADMINPRIVATE prefixed are stripped from public logs. */
 /proc/log_admin(text)
@@ -59,7 +71,7 @@
 /proc/log_mentor(text)
 	GLOB.mentorlog.Add(text)
 	if (CONFIG_GET(flag/log_admin))
-		WRITE_FILE(GLOB.world_game_log, "\[[time_stamp()]]MENTOR: [text]")
+		WRITE_FILE(GLOB.world_game_log, "MENTOR: [text]")
 
 /* All other items are public. */
 /proc/log_game(text)
@@ -126,11 +138,9 @@
 	if (CONFIG_GET(flag/log_ooc))
 		WRITE_LOG(GLOB.world_game_log, "OOC: [text]")
 
-//BeginWS Edit
 /proc/log_looc(text)
 	if (CONFIG_GET(flag/log_ooc))
 		WRITE_LOG(GLOB.world_game_log, "LOOC: [text]")
-//EndWS Edit
 
 /proc/log_whisper(text)
 	if (CONFIG_GET(flag/log_whisper))
@@ -139,6 +149,10 @@
 /proc/log_emote(text)
 	if (CONFIG_GET(flag/log_emote))
 		WRITE_LOG(GLOB.world_game_log, "EMOTE: [text]")
+
+/proc/log_radio_emote(text)
+	if (CONFIG_GET(flag/log_emote))
+		WRITE_LOG(GLOB.world_game_log, "RADIO EMOTE: [text]")
 
 /proc/log_subtler(text)
 	if (CONFIG_GET(flag/log_emote))
@@ -172,7 +186,7 @@
 
 /proc/log_shuttle(text)
 	if (CONFIG_GET(flag/log_shuttle))
-		WRITE_LOG(GLOB.world_shuttle_log, "SHUTTLE: [text]")
+		WRITE_LOG(GLOB.world_shuttle_log, "OVERMAP: [text]")
 
 /proc/log_topic(text)
 	WRITE_LOG(GLOB.world_game_log, "TOPIC: [text]")

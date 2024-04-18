@@ -9,7 +9,6 @@
 	layer = BELOW_MOB_LAYER//icon draw layer
 	infra_luminosity = 15 //byond implementation is bugged.
 	force = 5
-	flags_1 = HEAR_1
 	light_system = MOVABLE_LIGHT
 	light_power = 0.8
 	light_range = 6
@@ -147,10 +146,13 @@
 	diag_hud_set_mechhealth()
 	diag_hud_set_mechcell()
 	diag_hud_set_mechstat()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
 
 /obj/mecha/update_icon_state()
 	if(silicon_pilot && silicon_icon_state)
 		icon_state = silicon_icon_state
+		return ..()
+	return ..()
 
 /obj/mecha/get_cell()
 	return cell
@@ -169,29 +171,40 @@
 	for(var/obj/item/mecha_parts/mecha_equipment/E in equipment)
 		E.detach(loc)
 		qdel(E)
-	if(cell)
-		qdel(cell)
-	if(scanmod)
-		qdel(scanmod)
-	if(capacitor)
-		qdel(capacitor)
-	if(internal_tank)
-		qdel(internal_tank)
 	if(AI)
 		AI.gib() //No wreck, no AI to recover
+		AI = null
 	STOP_PROCESSING(SSobj, src)
 	GLOB.poi_list.Remove(src)
 	equipment.Cut()
-	cell = null
-	scanmod = null
-	capacitor = null
-	internal_tank = null
+
+	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
+		diag_hud.remove_from_hud(src)
+
+	QDEL_NULL(cell)
+	QDEL_NULL(scanmod)
+	QDEL_NULL(capacitor)
+	QDEL_NULL(internal_tank)
+	QDEL_NULL(spark_system)
+	QDEL_NULL(smoke_system)
+	QDEL_NULL(radio)
+
+	QDEL_NULL(eject_action)
+	QDEL_NULL(internals_action)
+	QDEL_NULL(cycle_action)
+	QDEL_NULL(lights_action)
+	QDEL_NULL(stats_action)
+	QDEL_NULL(defense_action)
+	QDEL_NULL(overload_action)
+	QDEL_NULL(smoke_system)
+	QDEL_NULL(smoke_action)
+	QDEL_NULL(zoom_action)
+	QDEL_NULL(switch_damtype_action)
+	QDEL_NULL(phasing_action)
+	QDEL_NULL(strafing_action)
+
 	assume_air(cabin_air)
-	cabin_air = null
-	qdel(spark_system)
-	spark_system = null
-	qdel(smoke_system)
-	smoke_system = null
+	QDEL_NULL(cabin_air)
 
 	GLOB.mechas_list -= src //global mech list
 	return ..()
@@ -232,7 +245,7 @@
 	return internal_tank
 
 ///Adds a cell, for use in Map-spawned mechs, Nuke Ops mechs, and admin-spawned mechs. Mechs built by hand will replace this.
-/obj/mecha/proc/add_cell(var/obj/item/stock_parts/cell/C=null)
+/obj/mecha/proc/add_cell(obj/item/stock_parts/cell/C=null)
 	QDEL_NULL(cell)
 	if(C)
 		C.forceMove(src)
@@ -241,7 +254,7 @@
 	cell = new /obj/item/stock_parts/cell/high/plus(src)
 
 ///Adds a scanning module, for use in Map-spawned mechs, Nuke Ops mechs, and admin-spawned mechs. Mechs built by hand will replace this.
-/obj/mecha/proc/add_scanmod(var/obj/item/stock_parts/scanning_module/sm=null)
+/obj/mecha/proc/add_scanmod(obj/item/stock_parts/scanning_module/sm=null)
 	QDEL_NULL(scanmod)
 	if(sm)
 		sm.forceMove(src)
@@ -250,7 +263,7 @@
 	scanmod = new /obj/item/stock_parts/scanning_module(src)
 
 ///Adds a capacitor, for use in Map-spawned mechs, Nuke Ops mechs, and admin-spawned mechs. Mechs built by hand will replace this.
-/obj/mecha/proc/add_capacitor(var/obj/item/stock_parts/capacitor/cap=null)
+/obj/mecha/proc/add_capacitor(obj/item/stock_parts/capacitor/cap=null)
 	QDEL_NULL(capacitor)
 	if(cap)
 		cap.forceMove(src)
@@ -440,14 +453,12 @@
 /obj/mecha/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
 	if(speaker == occupant)
-		if(radio?.broadcasting)
-			radio.talk_into(speaker, text, , spans, message_language, message_mods)
 		//flick speech bubble
 		var/list/speech_bubble_recipients = list()
 		for(var/mob/M in get_hearers_in_view(7,src))
 			if(M.client)
 				speech_bubble_recipients.Add(M.client)
-		INVOKE_ASYNC(GLOBAL_PROC, /proc/flick_overlay, image('icons/mob/talk.dmi', src, "machine[say_test(raw_message)]",MOB_LAYER+1), speech_bubble_recipients, 30)
+		INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), image('icons/mob/talk.dmi', src, "machine[say_test(raw_message)]",MOB_LAYER+1), speech_bubble_recipients, 30)
 
 ////////////////////////////
 ///// Action processing ////
@@ -455,7 +466,7 @@
 
 
 /obj/mecha/proc/click_action(atom/target,mob/user,params)
-	if(!occupant || occupant != user )
+	if(!occupant || occupant != user)
 		return
 	if(!locate(/turf) in list(target,target.loc)) // Prevents inventory from being drilled
 		return
@@ -531,7 +542,7 @@
 		occupant_message("<span class='warning'>Air port connection has been severed!</span>")
 		log_message("Lost connection to gas port.", LOG_MECHA)
 
-/obj/mecha/Process_Spacemove(var/movement_dir = 0)
+/obj/mecha/Process_Spacemove(movement_dir = 0)
 	. = ..()
 	if(.)
 		return TRUE
@@ -632,7 +643,7 @@
 		play_stepsound()
 	step_silent = FALSE
 
-/obj/mecha/Bump(var/atom/obstacle)
+/obj/mecha/Bump(atom/obstacle)
 	if(phasing && get_charge() >= phasing_energy_drain && !throwing)
 		if(!can_move)
 			return
@@ -741,7 +752,7 @@
 	if(!..())
 		return
 
- //Transfer from core or card to mech. Proc is called by mech.
+//Transfer from core or card to mech. Proc is called by mech.
 	switch(interaction)
 		if(AI_TRANS_TO_CARD) //Upload AI from mech to AI card.
 			if(!construction_state) //Mech must be in maint mode to allow carding.
@@ -801,15 +812,16 @@
 	occupant = AI
 	silicon_pilot = TRUE
 	icon_state = initial(icon_state)
-	update_icon()
+	update_appearance()
 	playsound(src, 'sound/machines/windowdoor.ogg', 50, TRUE)
 	if(!internal_damage)
 		SEND_SOUND(occupant, sound('sound/mecha/nominal.ogg',volume=50))
 	AI.cancel_camera()
 	AI.controlled_mech = src
 	AI.remote_control = src
+	REMOVE_TRAIT(AI, TRAIT_HANDS_BLOCKED, ROUNDSTART_TRAIT)
 	AI.can_shunt = 0 //ONE AI ENTERS. NO AI LEAVES.
-	to_chat(AI, AI.can_dominate_mechs ? "<span class='announce'>Takeover of [name] complete! You are now loaded onto the onboard computer. Do not attempt to leave the station sector!</span>" :\
+	to_chat(AI, AI.can_dominate_mechs ? "<span class='announce'>Takeover of [name] complete! You are now loaded onto the onboard computer. Attempting to leave your transmission region will result in connection loss!</span>" :\
 		"<span class='notice'>You have been uploaded to a mech's onboard computer.</span>")
 	to_chat(AI, "<span class='reallybig boldnotice'>Use Middle-Mouse to activate mech functions and equipment. Click normally for AI interactions.</span>")
 	if(interaction == AI_TRANS_FROM_CARD)
@@ -909,7 +921,16 @@
 
 	visible_message("<span class='notice'>[user] starts to climb into [name].</span>")
 
-	if(do_after(user, enter_delay, target = src))
+	//check user for fast embark, divide enter_delay by 2, then pass final delay to do_after
+	var/final_delay = enter_delay
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.wear_suit)
+			var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+			if(S.clothing_flags & FAST_EMBARK)
+				final_delay = enter_delay/2
+
+	if(do_after(user, final_delay, target = src))
 		if(obj_integrity <= 0)
 			to_chat(user, "<span class='warning'>You cannot get in the [name], it has been destroyed!</span>")
 		else if(occupant)
@@ -982,7 +1003,7 @@
 	B.remote_control = src
 	B.update_mouse_pointer()
 	icon_state = initial(icon_state)
-	update_icon()
+	update_appearance()
 	setDir(dir_in)
 	log_message("[M] moved in as pilot.", LOG_MECHA)
 	if(!internal_damage)
@@ -994,7 +1015,15 @@
 /obj/mecha/container_resist_act(mob/living/user)
 	is_currently_ejecting = TRUE
 	to_chat(occupant, "<span class='notice'>You begin the ejection procedure. Equipment is disabled during this process. Hold still to finish ejecting.</span>")
-	if(do_after(occupant, has_gravity() ? exit_delay : 0 , target = src))
+	var/final_exit_delay = exit_delay
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(H.wear_suit)
+			var/obj/item/clothing/suit/S = H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
+			if(S.clothing_flags & FAST_EMBARK)
+				final_exit_delay = exit_delay/2
+
+	if(do_after(occupant, has_gravity() ? final_exit_delay : 0 , target = src))
 		to_chat(occupant, "<span class='notice'>You exit the mech.</span>")
 		go_out()
 	else
@@ -1002,6 +1031,7 @@
 	is_currently_ejecting = FALSE
 
 /obj/mecha/Exited(atom/movable/M, atom/newloc)
+	. = ..()
 	if(occupant && occupant == M) // The occupant exited the mech without calling go_out()
 		go_out(TRUE, newloc)
 
@@ -1044,6 +1074,7 @@
 				AI.linked_core = null
 				return
 			to_chat(AI, "<span class='notice'>Returning to core...</span>")
+			ADD_TRAIT(AI, TRAIT_HANDS_BLOCKED, ROUNDSTART_TRAIT) // Resets the AI's hand status
 			AI.controlled_mech = null
 			AI.remote_control = null
 			RemoveActions(occupant, 1)
@@ -1065,7 +1096,7 @@
 				L.forceMove(mmi)
 				L.reset_perspective()
 			mmi.set_mecha(null)
-			mmi.update_icon()
+			mmi.update_appearance()
 		icon_state = initial(icon_state)+"-open"
 		setDir(dir_in)
 
@@ -1137,7 +1168,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 ////// Ammo stuff /////
 ///////////////////////
 
-/obj/mecha/proc/ammo_resupply(var/obj/item/mecha_ammo/A, mob/user,var/fail_chat_override = FALSE)
+/obj/mecha/proc/ammo_resupply(obj/item/mecha_ammo/A, mob/user,fail_chat_override = FALSE)
 	if(!A.rounds)
 		if(!fail_chat_override)
 			to_chat(user, "<span class='warning'>This box of ammo is empty!</span>")
@@ -1150,7 +1181,7 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		if(istype(gun, /obj/item/mecha_parts/mecha_equipment/weapon/ballistic) && gun.ammo_type == A.ammo_type)
 			found_gun = TRUE
 			if(A.direct_load)
-				ammo_needed = initial(gun.projectiles) - gun.projectiles
+				ammo_needed = gun.projectiles_max - gun.projectiles
 			else
 				ammo_needed = gun.projectiles_cache_max - gun.projectiles_cache
 

@@ -27,28 +27,20 @@
 
 	var/clothing_flags = NONE
 
+	var/can_be_bloody = TRUE
+
 	//Var modification - PLEASE be careful with this I know who you are and where you live
 	var/list/user_vars_to_edit //VARNAME = VARVALUE eg: "name" = "butts"
 	var/list/user_vars_remembered //Auto built by the above + dropped() + equipped()
 
-	/// Needs to follow this syntax: either a list() with the x and y coordinates of the pixel you want to get the colour from, or a hexcolour. Colour one replaces red, two replaces blue, and three replaces green in the icon state.
-	var/list/greyscale_colors[3]
-	/// Needs to be a RGB-greyscale format icon state in all species' clothing icon files.
-	var/greyscale_icon_state
-
 	var/pocket_storage_component_path
-
-	//These allow head/mask items to dynamically alter the user's hair
-	// and facial hair, checking hair_extensions.dmi and facialhair_extensions.dmi
-	// for a state matching hair_state+dynamic_hair_suffix
-	// THESE OVERRIDE THE HIDEHAIR FLAGS
-	var/dynamic_hair_suffix = ""//head > mask for head hair
-	var/dynamic_fhair_suffix = ""//mask > head for facial hair
 
 	///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/armor_list = list()
 	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/durability_list = list()
+	/// If this can be eaten by a moth
+	var/moth_edible = TRUE
 
 /obj/item/clothing/Initialize()
 	if((clothing_flags & VOICEBOX_TOGGLABLE))
@@ -56,6 +48,8 @@
 	. = ..()
 	if(ispath(pocket_storage_component_path))
 		LoadComponent(pocket_storage_component_path)
+	if(can_be_bloody && ((body_parts_covered & FEET) || (flags_inv & HIDESHOES)))
+		LoadComponent(/datum/component/bloodysoles)
 
 /obj/item/clothing/MouseDrop(atom/over_object)
 	. = ..()
@@ -77,7 +71,7 @@
 	foodtype = CLOTH
 
 /obj/item/clothing/attack(mob/M, mob/user, def_zone)
-	if(user.a_intent != INTENT_HARM && ismoth(M))
+	if(user.a_intent != INTENT_HARM && moth_edible && ismoth(M))
 		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
 		clothing_as_food.name = name
 		if(clothing_as_food.attack(M, user, def_zone))
@@ -86,23 +80,27 @@
 	else
 		return ..()
 
-/obj/item/clothing/attackby(obj/item/W, mob/user, params)
-	if(W.get_sharpness() && cuttable)
-		if (alert(user, "Are you sure you want to cut the [src] into strips?", "Cut clothing:", "Yes", "No") != "Yes")
+/obj/item/clothing/attackby(obj/item/tool, mob/user, params)
+	if(tool.get_sharpness() && cuttable)
+		if(tgui_alert(user, "Are you sure you want to cut \the [src] into strips?", "Cut clothing:", list("Yes", "No")) != "Yes")
+			return
+		if(QDELETED(src))
 			return
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 100, TRUE)
-		to_chat(user, "<span class='notice'>You cut the [src] into strips with [W].</span>")
-		var/obj/item/stack/sheet/cotton/cloth/C = new (get_turf(src), clothamnt)
-		user.put_in_hands(C)
+		to_chat(user, "<span class='notice'>You cut the [src] into strips with [tool].</span>")
+		var/obj/item/stack/sheet/cotton/cloth/cloth = new (get_turf(src), clothamnt)
+		user.put_in_hands(cloth)
 		qdel(src)
 
-	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cotton/cloth))
-		var/obj/item/stack/sheet/cotton/cloth/C = W
-		C.use(1)
+	if(damaged_clothes && istype(tool, /obj/item/stack/sheet/cotton/cloth))
+		var/obj/item/stack/sheet/cotton/cloth/cloth = tool
+		if(!cloth.use(1))
+			to_chat(user, "<span class='notice'>You fail to fix the damage on [src].</span>")
+			return TRUE
 		update_clothes_damaged_state(FALSE)
 		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>You fix the damage on [src] with [C].</span>")
-		return 1
+		to_chat(user, "<span class='notice'>You fix the damage on [src] with [cloth].</span>")
+		return TRUE
 	return ..()
 
 /obj/item/clothing/Destroy()
@@ -120,14 +118,6 @@
 					user.vars[variable] = user_vars_remembered[variable]
 		user_vars_remembered = initial(user_vars_remembered) // Effectively this sets it to null.
 
-	if((HIDEJUMPSUIT in flags_inv) || (LEGS & body_parts_covered))	//WS start - Digitigrade magboots
-		var/mob/living/carbon/human/H = user
-		if(H.get_item_by_slot(ITEM_SLOT_FEET))
-			var/obj/item/clothing/shoes/S = H.get_item_by_slot(ITEM_SLOT_FEET)
-			if(("legs" in H.dna.species.mutant_bodyparts) && H.dna.features["legs"] == "Digitigrade Legs")
-				if((DIGITIGRADE_SHOE & S.obj_flags) || (DIGITIGRADE_COMPATIBLE & S.obj_flags))
-					S.digi_alt(H, 0)								//WS end - Digitigrade magboots
-
 /obj/item/clothing/equipped(mob/user, slot)
 	..()
 	if (!istype(user))
@@ -138,14 +128,6 @@
 				if(variable in user.vars)
 					LAZYSET(user_vars_remembered, variable, user.vars[variable])
 					user.vv_edit_var(variable, user_vars_to_edit[variable])
-
-	if((HIDEJUMPSUIT in flags_inv) || (LEGS & body_parts_covered))	//WS start - Digitigrade magboots
-		var/mob/living/carbon/human/H = user
-		if(H.get_item_by_slot(ITEM_SLOT_FEET))
-			var/obj/item/clothing/shoes/S = H.get_item_by_slot(ITEM_SLOT_FEET)
-			if(("legs" in H.dna.species.mutant_bodyparts) && H.dna.features["legs"] == "Digitigrade Legs")
-				if((DIGITIGRADE_SHOE & S.obj_flags) || (DIGITIGRADE_COMPATIBLE & S.obj_flags))
-					S.digi_alt(H, 1)								//WS end - Digitigrade magboots
 
 /obj/item/clothing/examine(mob/user)
 	. = ..()
@@ -225,13 +207,13 @@
 		to_chat(usr, "[readout.Join()]")
 
 /**
-  * Rounds armor_value to nearest 10, divides it by 10 and then expresses it in roman numerals up to 10
-  *
-  * Rounds armor_value to nearest 10, divides it by 10
-  * and then expresses it in roman numerals up to 10
-  * Arguments:
-  * * armor_value - Number we're converting
-  */
+ * Rounds armor_value to nearest 10, divides it by 10 and then expresses it in roman numerals up to 10
+ *
+ * Rounds armor_value to nearest 10, divides it by 10
+ * and then expresses it in roman numerals up to 10
+ * Arguments:
+ * * armor_value - Number we're converting
+ */
 /obj/item/clothing/proc/armor_to_protection_class(armor_value)
 	armor_value = round(armor_value,10) / 10
 	switch (armor_value)
@@ -264,24 +246,28 @@
 		var/mob/M = loc
 		to_chat(M, "<span class='warning'>Your [name] starts to fall apart!</span>")
 
+//This mostly exists so subtypes can call appriopriate update icon calls on the wearer.
 /obj/item/clothing/proc/update_clothes_damaged_state(damaging = TRUE)
-	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
-	var/static/list/damaged_clothes_icons = list()
 	if(damaging)
 		damaged_clothes = 1
-		var/icon/damaged_clothes_icon = damaged_clothes_icons[index]
-		if(!damaged_clothes_icon)
-			damaged_clothes_icon = icon(initial(icon), initial(icon_state), , 1)	//we only want to apply damaged effect to the initial icon_state for each object
-			damaged_clothes_icon.Blend("#fff", ICON_ADD) 	//fills the icon_state with white (except where it's transparent)
-			damaged_clothes_icon.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_MULTIPLY) //adds damage effect and the remaining white areas become transparant
-			damaged_clothes_icon = fcopy_rsc(damaged_clothes_icon)
-			damaged_clothes_icons[index] = damaged_clothes_icon
-		add_overlay(damaged_clothes_icon, 1)
 	else
 		damaged_clothes = 0
-		cut_overlay(damaged_clothes_icons[index], TRUE)
 
+/obj/item/clothing/update_overlays()
+	. = ..()
+	if(!damaged_clothes)
+		return
 
+	var/index = "[REF(initial(icon))]-[initial(icon_state)]"
+	var/static/list/damaged_clothes_icons = list()
+	var/icon/damaged_clothes_icon = damaged_clothes_icons[index]
+	if(!damaged_clothes_icon)
+		damaged_clothes_icon = icon(initial(icon), initial(icon_state), , 1) //we only want to apply damaged effect to the initial icon_state for each object
+		damaged_clothes_icon.Blend("#fff", ICON_ADD) //fills the icon_state with white (except where it's transparent)
+		damaged_clothes_icon.Blend(icon('icons/effects/item_damage.dmi', "itemdamaged"), ICON_MULTIPLY) //adds damage effect and the remaining white areas become transparant
+		damaged_clothes_icon = fcopy_rsc(damaged_clothes_icon)
+		damaged_clothes_icons[index] = damaged_clothes_icon
+	. += damaged_clothes_icon
 /*
 * SEE_SELF  // can see self, no matter what
 * SEE_MOBS  // can see all mobs, no matter what
@@ -292,21 +278,37 @@
 * BLIND     // can't see anything
 */
 
-/proc/generate_female_clothing(index,t_color,icon,type)
-	var/icon/female_clothing_icon	= icon("icon"=icon, "icon_state"=t_color)
-	var/icon/female_s				= icon("icon"='icons/mob/clothing/under/masking_helpers.dmi', "icon_state"="[(type == FEMALE_UNIFORM_FULL) ? "female_full" : "female_top"]")
-	female_clothing_icon.Blend(female_s, ICON_MULTIPLY)
-	female_clothing_icon 			= fcopy_rsc(female_clothing_icon)
-	GLOB.female_clothing_icons[index] = female_clothing_icon
-
-/obj/item/clothing/proc/generate_species_clothing(file2use, state2use, species)
-	var/icon/human_clothing_icon = icon(file2use, state2use)
-
-	if(!greyscale_colors || !greyscale_icon_state)
-		GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = human_clothing_icon
+/obj/item/proc/generate_species_clothing(file2use, state2use, layer, datum/species/mob_species)
+	if(!icon_exists(file2use, state2use))
 		return
 
-	var/icon/species_icon = icon(species, greyscale_icon_state)
+	var/icon/human_clothing_icon = icon(file2use, state2use)
+
+	if("[layer]" in mob_species.offset_clothing)
+		// This code taken from Baystation 12
+		var/icon/final_I = icon('icons/blanks/32x32.dmi', "nothing")
+		var/list/shifts = mob_species.offset_clothing["[layer]"]
+
+		// Apply all pixel shifts for each direction.
+		for(var/shift_facing in shifts)
+			var/list/facing_list = shifts[shift_facing]
+			var/use_dir = text2num(shift_facing)
+			var/icon/equip = icon(file2use, icon_state = state2use, dir = use_dir)
+			var/icon/canvas = icon('icons/blanks/32x32.dmi', "nothing")
+			canvas.Blend(equip, ICON_OVERLAY, facing_list["x"]+1, facing_list["y"]+1)
+			final_I.Insert(canvas, dir = use_dir)
+		final_I = fcopy_rsc(final_I)
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = final_I
+		return TRUE
+
+	if(!greyscale_colors || !greyscale_icon_state)
+		GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = human_clothing_icon
+		return
+
+	if(!icon_exists(mob_species.species_clothing_path, greyscale_icon_state))
+		return
+
+	var/icon/species_icon = icon(mob_species.species_clothing_path, greyscale_icon_state)
 	var/list/final_list = list()
 	for(var/i in 1 to 3)
 		if(length(greyscale_colors) < i)
@@ -320,7 +322,9 @@
 
 	species_icon.MapColors(final_list[1], final_list[2], final_list[3])
 	species_icon = fcopy_rsc(species_icon)
-	GLOB.species_clothing_icons[species]["[file2use]-[state2use]"] = species_icon
+	GLOB.species_clothing_icons[mob_species.id]["[file2use]-[state2use]"] = species_icon
+
+	return TRUE
 
 /obj/item/clothing/under/verb/toggle()
 	set name = "Adjust Suit Sensors"
@@ -408,12 +412,9 @@
 		return
 	adjusted = !adjusted
 	if(adjusted)
-		if(fitted != FEMALE_UNIFORM_TOP)
-			fitted = NO_FEMALE_UNIFORM
 		if(!alt_covers_chest) // for the special snowflake suits that expose the chest when adjusted
 			body_parts_covered &= ~CHEST
 	else
-		fitted = initial(fitted)
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 	return adjusted

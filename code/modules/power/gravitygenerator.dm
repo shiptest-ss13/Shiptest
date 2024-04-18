@@ -1,9 +1,6 @@
-
 //
 // Gravity Generator
 //
-
-GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding new gravity generators to the list, and keying it with the z level.
 
 #define POWER_IDLE 0
 #define POWER_UP 1
@@ -46,6 +43,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 
 /obj/machinery/gravity_generator/update_icon_state()
 	icon_state = "[get_status()]_[sprite_number]"
+	return ..()
 
 /obj/machinery/gravity_generator/proc/get_status()
 	return "off"
@@ -59,13 +57,14 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 	obj_break()
 
 /obj/machinery/gravity_generator/proc/set_fix()
-	machine_stat &= ~BROKEN
+	set_machine_stat(machine_stat & ~BROKEN)
 
 /obj/machinery/gravity_generator/part/Destroy()
 	if(main_part)
 		qdel(main_part)
 	set_broken()
 	return ..()
+
 
 //
 // Part generator which is mostly there for looks
@@ -87,6 +86,11 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 	..()
 	if(main_part && !(main_part.machine_stat & BROKEN))
 		main_part.set_broken()
+
+/// Used to eat args
+/obj/machinery/gravity_generator/part/proc/on_update_icon(obj/machinery/gravity_generator/source, updates, updated)
+	SIGNAL_HANDLER
+	return update_appearance(updates)
 
 //
 // Generator which spawns with the station.
@@ -125,11 +129,16 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 	var/current_overlay = null
 	var/broken_state = 0
 	var/setting = 1	//Gravity value when on
+	/// The mapzone we give gravity to
+	var/datum/map_zone/mapzone
 
 /obj/machinery/gravity_generator/main/Destroy() // If we somehow get deleted, remove all of our other parts.
 	investigate_log("was destroyed!", INVESTIGATE_GRAVITY)
 	on = FALSE
-	update_list()
+
+	if(mapzone)
+		mapzone.gravity_generators -= src
+
 	for(var/obj/machinery/gravity_generator/part/O in parts)
 		O.main_part = null
 		if(!QDESTROYING(O))
@@ -154,8 +163,8 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 		part.sprite_number = count
 		part.main_part = src
 		parts += part
-		part.update_icon()
-		part.RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, /atom/proc/update_icon)
+		part.update_appearance()
+		part.RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, TYPE_PROC_REF(/obj/machinery/gravity_generator/part, on_update_icon))
 
 /obj/machinery/gravity_generator/main/proc/connected_parts()
 	return parts.len == 8
@@ -178,7 +187,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 		if(M.machine_stat & BROKEN)
 			M.set_fix()
 	broken_state = FALSE
-	update_icon()
+	update_appearance()
 	set_power()
 
 // Interaction
@@ -191,14 +200,14 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 				to_chat(user, "<span class='notice'>You secure the screws of the framework.</span>")
 				I.play_tool_sound(src)
 				broken_state++
-				update_icon()
+				update_appearance()
 				return
 		if(GRAV_NEEDS_WELDING)
 			if(I.tool_behaviour == TOOL_WELDER)
 				if(I.use_tool(src, user, 0, volume=50, amount=1))
 					to_chat(user, "<span class='notice'>You mend the damaged framework.</span>")
 					broken_state++
-					update_icon()
+					update_appearance()
 				return
 		if(GRAV_NEEDS_PLASTEEL)
 			if(istype(I, /obj/item/stack/sheet/plasteel))
@@ -208,7 +217,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 					to_chat(user, "<span class='notice'>You add the plating to the framework.</span>")
 					playsound(src.loc, 'sound/machines/click.ogg', 75, TRUE)
 					broken_state++
-					update_icon()
+					update_appearance()
 				else
 					to_chat(user, "<span class='warning'>You need 10 sheets of plasteel!</span>")
 				return
@@ -271,7 +280,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 
 	charging_state = new_state ? POWER_UP : POWER_DOWN // Startup sequence animation.
 	investigate_log("is now [charging_state == POWER_UP ? "charging" : "discharging"].", INVESTIGATE_GRAVITY)
-	update_icon()
+	update_appearance()
 
 // Set the state of the gravity.
 /obj/machinery/gravity_generator/main/proc/set_state(new_state)
@@ -292,7 +301,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 				investigate_log("was brought offline and there is now no gravity for this level.", INVESTIGATE_GRAVITY)
 				message_admins("The gravity generator was brought offline with no backup generator. [ADMIN_VERBOSEJMP(src)]")
 
-	update_icon()
+	update_appearance()
 	update_list()
 	src.updateUsrDialog()
 	if(alert)
@@ -351,7 +360,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 	var/sound/alert_sound = sound('sound/effects/alert.ogg')
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
-		if(M.get_virtual_z_level() != get_virtual_z_level() && !(SSmapping.level_trait(z, ZTRAITS_STATION) && SSmapping.level_trait(M.z, ZTRAITS_STATION)))
+		if(M.virtual_z() != virtual_z() && !(virtual_level_trait(ZTRAIT_STATION) && M.virtual_level_trait(ZTRAIT_STATION)))
 			continue
 		M.update_gravity(M.mob_has_gravity())
 		if(M.client)
@@ -359,30 +368,22 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 			M.playsound_local(T, null, 100, 1, 0.5, S = alert_sound)
 
 /obj/machinery/gravity_generator/main/proc/gravity_in_level()
-	var/turf/T = get_turf(src)
-	if(!T)
+	if(!mapzone)
 		return FALSE
-	if(GLOB.gravity_generators["[T.get_virtual_z_level()]"])
-		return length(GLOB.gravity_generators["[T.get_virtual_z_level()]"])
-	return FALSE
+	return length(mapzone.gravity_generators)
 
 /obj/machinery/gravity_generator/main/proc/update_list()
-	var/turf/T = get_turf(src.loc)
-	if(T)
-		var/list/z_list = list()
-		// Multi-Z, station gravity generator generates gravity on all ZTRAIT_STATION z-levels.
-		if(SSmapping.level_trait(T.z, ZTRAIT_STATION))
-			for(var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
-				z_list += z
-		else
-			z_list += T.z
-		for(var/z in z_list)
-			if(!GLOB.gravity_generators["[z]"])
-				GLOB.gravity_generators["[z]"] = list()
-			if(on)
-				GLOB.gravity_generators["[z]"] |= src
-			else
-				GLOB.gravity_generators["[z]"] -= src
+	var/turf/T = get_turf(src)
+
+	var/datum/map_zone/found_mapzone = T.get_map_zone()
+	if(mapzone == found_mapzone)
+		return
+	if(mapzone && found_mapzone != mapzone)
+		mapzone.gravity_generators -= src
+
+	mapzone = found_mapzone
+	if(found_mapzone)
+		mapzone.gravity_generators += src
 
 /obj/machinery/gravity_generator/main/proc/change_setting(value)
 	if(value != setting)
@@ -393,7 +394,7 @@ GLOBAL_LIST_EMPTY(gravity_generators) // We will keep track of this by adding ne
 
 /obj/item/paper/guides/jobs/engi/gravity_gen
 	name = "paper- 'Generate your own gravity!'"
-	info = {"<h1>Gravity Generator Instructions For Dummies</h1>
+	default_raw_text = {"<h1>Gravity Generator Instructions For Dummies</h1>
 	<p>Surprisingly, gravity isn't that hard to make! All you have to do is inject deadly radioactive minerals into a ball of
 	energy and you have yourself gravity! You can turn the machine on or off when required but you must remember that the generator
 	will EMIT RADIATION when charging or discharging, you can tell it is charging or discharging by the noise it makes, so please WEAR PROTECTIVE CLOTHING.</p>

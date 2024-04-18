@@ -40,7 +40,7 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
-	faction = list(ROLE_SYNDICATE)
+	faction = list(FACTION_ANTAG_SYNDICATE)
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	del_on_death = 1
@@ -314,3 +314,32 @@
 /mob/living/simple_animal/hostile/viscerator/Initialize()
 	. = ..()
 	AddComponent(/datum/component/swarming)
+
+/mob/living/simple_animal/hostile/syndicate/melee/sword/space/oldcode
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+	icon = 'icons/mob/simple_human.dmi'
+	icon_state = "oldcode_syndicate_csaber"
+	icon_living = "oldcode_syndicate_csaber"
+	name = "Syndicate Spaceman"
+	desc = "Death to IS-Nanotrasen."
+	maxHealth = 170
+	health = 170
+	armour_penetration = 20
+	light_color = LIGHT_COLOR_BLUE
+	sord = /obj/effect/light_emitter/blue_energy_sword
+	projectile_deflect_chance = 10
+
+/mob/living/simple_animal/hostile/syndicate/ranged/space/oldcode
+	icon = 'icons/mob/simple_human.dmi'
+	icon_state = "oldcode_syndicate_gun"
+	icon_living = "oldcode_syndicate_gun"
+	name = "Syndicate Spaceman"
+	desc = "Death to IS-Nanotrasen."
+	maxHealth = 170
+	health = 170
+
+/obj/effect/light_emitter/blue_energy_sword
+	set_luminosity = 2
+	set_cap = 2.5
+	light_color = LIGHT_COLOR_BLUE

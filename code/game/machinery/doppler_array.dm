@@ -4,7 +4,7 @@
 	name = "tachyon-doppler array"
 	desc = "A highly precise directional sensor array which measures the release of quants from decaying tachyons. The doppler shifting of the mirror-image formed by these quants can reveal the size, location and temporal affects of energetic disturbances within a large radius ahead of the array.\n"
 	icon = 'icons/obj/machines/research.dmi'
-	icon_state = "tdoppler"
+	base_icon_state = "tdoppler"
 	density = TRUE
 	verb_say = "states coldly"
 	var/cooldown = 10
@@ -19,13 +19,13 @@
 
 /obj/machinery/doppler_array/Initialize()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, .proc/sense_explosion)
-	RegisterSignal(src, COMSIG_MOVABLE_SET_ANCHORED, .proc/power_change)
+	RegisterSignal(SSdcs, COMSIG_GLOB_EXPLOSION, PROC_REF(sense_explosion))
+	RegisterSignal(src, COMSIG_MOVABLE_SET_ANCHORED, PROC_REF(power_change))
 	printer_ready = world.time + PRINTER_TIMEOUT
 
 /obj/machinery/doppler_array/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE,null,null,CALLBACK(src,.proc/rot_message))
+	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE,null,null,CALLBACK(src, PROC_REF(rot_message)))
 
 /datum/data/tachyon_record
 	name = "Log Recording"
@@ -98,20 +98,20 @@
 	if(record)
 		name = "paper - [record.name]"
 
-		info += {"<h2>[record.name]</h2>
+		add_raw_text ({"<h2>[record.name]</h2>
 		<ul><li>Timestamp: [record.timestamp]</li>
 		<li>Coordinates: [record.coordinates]</li>
 		<li>Displacement: [record.displacement] seconds</li>
 		<li>Epicenter Radius: [record.factual_radius["epicenter_radius"]]</li>
 		<li>Outer Radius: [record.factual_radius["outer_radius"]]</li>
-		<li>Shockwave Radius: [record.factual_radius["shockwave_radius"]]</li></ul>"}
+		<li>Shockwave Radius: [record.factual_radius["shockwave_radius"]]</li></ul>"})
 
 		if(length(record.theory_radius))
-			info += {"<ul><li>Theoretical Epicenter Radius: [record.theory_radius["epicenter_radius"]]</li>
+			add_raw_text({"<ul><li>Theoretical Epicenter Radius: [record.theory_radius["epicenter_radius"]]</li>
 			<li>Theoretical Outer Radius: [record.theory_radius["outer_radius"]]</li>
-			<li>Theoretical Shockwave Radius: [record.theory_radius["shockwave_radius"]]</li></ul>"}
+			<li>Theoretical Shockwave Radius: [record.theory_radius["shockwave_radius"]]</li></ul>"})
 
-		update_icon()
+		update_appearance()
 
 /obj/machinery/doppler_array/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WRENCH)
@@ -136,7 +136,7 @@
 	if(machine_stat & NOPOWER)
 		return FALSE
 	var/turf/zone = get_turf(src)
-	if(zone.get_virtual_z_level() != epicenter.get_virtual_z_level())
+	if(zone.virtual_z() != epicenter.virtual_z())
 		return FALSE
 
 	if(next_announce > world.time)
@@ -187,11 +187,10 @@
 
 /obj/machinery/doppler_array/update_icon_state()
 	if(machine_stat & BROKEN)
-		icon_state = "[initial(icon_state)]-broken"
-	else if(powered())
-		icon_state = initial(icon_state)
-	else
-		icon_state = "[initial(icon_state)]-off"
+		icon_state = "[base_icon_state]-broken"
+		return ..()
+	icon_state = "[base_icon_state][powered() ? null : "-off"]"
+	return ..()
 
 /obj/machinery/doppler_array/research
 	name = "tachyon-doppler research array"
@@ -223,29 +222,20 @@
 
 	var/point_gain = 0
 	/*****The Point Calculator*****/
-	if(orig_light_range < 10)
+	if(orig_light_range < 5)
 		say("Explosion not large enough for research calculations.")
 		return
-	else if(orig_light_range < 4500)
-		point_gain = (83300 * orig_light_range) / (orig_light_range + 3000)
-	else
-		point_gain = TECHWEB_BOMB_POINTCAP
-
-	/*****The Point Capper*****/
+	else if(orig_light_range < BOMB_TARGET_SIZE) // we want to give fewer points if below the target; this curve does that
+		point_gain = (BOMB_TARGET_POINTS * orig_light_range ** BOMB_SUB_TARGET_EXPONENT) / (BOMB_TARGET_SIZE**BOMB_SUB_TARGET_EXPONENT)
+	else // once we're at the target, switch to a hyperbolic function so we can't go too far above it, but bigger bombs always get more points
+		point_gain = (BOMB_TARGET_POINTS * 2 * orig_light_range) / (orig_light_range + BOMB_TARGET_SIZE)
 	if(point_gain > linked_techweb.largest_bomb_value)
-		if(point_gain <= TECHWEB_BOMB_POINTCAP || linked_techweb.largest_bomb_value < TECHWEB_BOMB_POINTCAP)
-			var/old_tech_largest_bomb_value = linked_techweb.largest_bomb_value //held so we can pull old before we do math
-			linked_techweb.largest_bomb_value = point_gain
-			point_gain -= old_tech_largest_bomb_value
-			point_gain = min(point_gain,TECHWEB_BOMB_POINTCAP)
-		else
-			linked_techweb.largest_bomb_value = TECHWEB_BOMB_POINTCAP
-			point_gain = 1000
-		var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_SCI)
-		if(D)
-			D.adjust_money(point_gain)
-			linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, point_gain)
-			say("Explosion details and mixture analyzed and sold to the highest bidder for [point_gain] cr, with a reward of [point_gain] points.")
+		var/old_tech_largest_bomb_value = linked_techweb.largest_bomb_value //held so we can pull old before we do math
+		linked_techweb.largest_bomb_value = point_gain
+		point_gain -= old_tech_largest_bomb_value
+		new /obj/item/spacecash(get_dumping_location(), point_gain)
+		linked_techweb.add_point_type(TECHWEB_POINT_TYPE_DEFAULT, point_gain)
+		say("Explosion details and mixture analyzed and sold to the highest bidder for [point_gain] cr, with a reward of [point_gain] points.")
 
 	else //you've made smaller bombs
 		say("Data already captured. Aborting.")

@@ -6,6 +6,8 @@
 /obj/item/clothing/suit/apron
 	name = "apron"
 	desc = "A basic blue apron."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "apron"
 	item_state = "apron"
 	blood_overlay_type = "armor"
@@ -19,16 +21,6 @@
 	item_state = "hort_waders"
 	body_parts_covered = CHEST|GROIN|LEGS
 	permeability_coefficient = 0.5
-
-//Captain
-/obj/item/clothing/suit/captunic
-	name = "captain's parade tunic"
-	desc = "Worn by a Captain to show their class."
-	icon_state = "captunic"
-	item_state = "bio_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	flags_inv = HIDEJUMPSUIT
-	allowed = list(/obj/item/disk, /obj/item/stamp, /obj/item/reagent_containers/food/drinks/flask, /obj/item/melee, /obj/item/storage/lockbox/medal, /obj/item/assembly/flash/handheld, /obj/item/storage/box/matches, /obj/item/lighter, /obj/item/clothing/mask/cigarette, /obj/item/storage/fancy/cigarettes, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 //Chef
 /obj/item/clothing/suit/toggle/chef
@@ -84,9 +76,45 @@
 /obj/item/clothing/suit/hazardvest
 	name = "hazard vest"
 	desc = "A high-visibility vest used in work zones."
+	icon = 'icons/obj/clothing/suits/utility.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/utility.dmi'
 	icon_state = "hazard"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/hazardvest/solgov
+	name = "SolGov hazard vest"
+	desc = "A high-visibility vest used in work zones by solarian engineers."
+	icon_state = "hazard_solgov"
+	item_state = "hazard_solgov"
+	blood_overlay_type = "armor"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/hazard
+	name = "high-visibility jacket"
+	desc = "A highlighter-yellow jacket with reflective stripes."
+	icon_state = "jacket_hazard"
+	item_state = "jacket_hazard"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	togglename = "zipper"
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
+	resistance_flags = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
+
+/obj/item/clothing/suit/toggle/industrial
+	name = "industrial jacket"
+	desc = "A black bomber jacket with high-visibility markings."
+	icon_state = "highvis"
+	item_state = "highvis"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	togglename = "zipper"
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/radio)
 	resistance_flags = NONE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
@@ -113,6 +141,53 @@
 	icon_state = "suitjacket_black"
 	item_state = "ro_suit"
 
+/obj/item/clothing/suit/toggle/lawyer/burgundy
+	name = "burgundy suit jacket"
+	desc = "A burgundy suit jacket. Makes you want to psychoanalyze."
+	icon_state = "suitjacket_burgundy"
+	item_state = "suitjacket_burgundy"
+
+/obj/item/clothing/suit/toggle/lawyer/navy
+	name = "navy suit jacket"
+	desc = "An orderly dress jacket."
+	icon_state = "suitjacket_navy"
+	item_state = "suitjacket_navy"
+
+/obj/item/clothing/suit/toggle/lawyer/charcoal
+	name = "charcoal suit jacket"
+	desc = "An enterprising dress jacket."
+	icon_state = "suitjacket_charcoal"
+	item_state = "suitjacket_charcoal"
+
+/obj/item/clothing/suit/toggle/lawyer/cmo
+	name = "light blue suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_cmo"
+
+/obj/item/clothing/suit/toggle/lawyer/medical
+	name = "saturated blue suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_medical"
+
+/obj/item/clothing/suit/toggle/lawyer/science
+	name = "purple suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_science"
+
+/obj/item/clothing/suit/toggle/lawyer/brown
+	name = "brown suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_brown"
+
+/obj/item/clothing/suit/toggle/lawyer/orange
+	name = "orange suit jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_orange"
+
+/obj/item/clothing/suit/toggle/lawyer/atmos
+	name = "light blue jacket"
+	desc = "A foppish dress jacket."
+	icon_state = "suitjacket_light_blue"
 
 //Mime
 /obj/item/clothing/suit/toggle/suspenders
@@ -123,29 +198,6 @@
 	blood_overlay_type = "armor" //it's the less thing that I can put here
 	togglename = "straps"
 
-//Security
-/obj/item/clothing/suit/armor/vest/security
-	icon = 'whitesands/icons/obj/clothing/under/security.dmi'
-	mob_overlay_icon = 'whitesands/icons/mob/clothing/under/security.dmi'
-
-/obj/item/clothing/suit/armor/vest/security/officer
-	name = "security officer's jacket"
-	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
-	icon_state = "officerjacket"
-	body_parts_covered = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/vest/security/warden
-	name = "warden's jacket"
-	desc = "Perfectly suited for the warden that wants to leave an impression of style on those who visit the brig."
-	icon_state = "wardenjacket"
-	body_parts_covered = CHEST|ARMS
-
-/obj/item/clothing/suit/armor/vest/security/hos
-	name = "head of security's jacket"
-	desc = "This piece of clothing was specifically designed for asserting superior authority."
-	icon_state = "hosjacket"
-	body_parts_covered = CHEST|ARMS
-
 //Surgeon
 /obj/item/clothing/suit/apron/surgical
 	name = "surgical apron"
@@ -153,34 +205,82 @@
 	icon_state = "surgical"
 	allowed = list(/obj/item/scalpel, /obj/item/cautery, /obj/item/hemostat, /obj/item/retractor)
 
-//Curator
-/obj/item/clothing/suit/curator
-	name = "treasure hunter's coat"
-	desc = "Both fashionable and lightly armoured, this jacket is favoured by treasure hunters the galaxy over."
-	icon_state = "curator"
-	item_state = "curator"
+//SolGov suits
+
+/obj/item/clothing/suit/solgov
+	name = "SolGov robe"
+	desc = "A set of plain SolGov robes, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_robe"
+	item_state = "solgov_robe"
+
+/obj/item/clothing/suit/solgov/dress
+	name = "SolGov dress"
+	desc = "A plain SolGov dress, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN
+	icon_state = "solgov_dress"
+	item_state = "solgov_dress"
+
+/obj/item/clothing/suit/solgov/suit
+	name = "SolGov suit"
+	desc = "A formal SolGov suit, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN
+	icon_state = "solgov_suit"
+	item_state = "solgov_suit"
+
+/obj/item/clothing/suit/solgov/bureaucrat
+	name = "SolGov bureaucrat robe"
+	desc = "A set of unique SolGov robes, utilized by Solarian Bureaucrats."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_bureaucrat_robe"
+	item_state = "solgov_bureaucrat_robe"
+
+/obj/item/clothing/suit/solgov/overcoat
+	name = "SolGov overcoat"
+	desc = "A traditional solarian overcoat, used by cilivians and ship crews alike."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_overcoat"
+	item_state = "solgov_overcoat"
+	supports_variations = DIGITIGRADE_VARIATION
+
+/obj/item/clothing/suit/solgov/jacket
+	name = "SolGov jacket"
+	desc = "A plain SolGov jacket, commonly used by civilians."
+	body_parts_covered = CHEST|GROIN|ARMS
+	icon_state = "solgov_jacket"
+	item_state = "solgov_jacket"
+
+/obj/item/clothing/suit/toggle/solgov
+	name = "\improper SolGov coat"
+	desc = "An armored coat worn for special occasions. This one is dyed in SolGov blue."
+	body_parts_covered = CHEST|GROIN|ARMS|HANDS
+	icon_state = "coat_solgov"
+	item_state = "coat_solgov"
 	blood_overlay_type = "coat"
-	body_parts_covered = CHEST|ARMS
-	allowed = list(/obj/item/tank/internals, /obj/item/melee/curator_whip)
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 25, "energy" = 35, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
-	cold_protection = CHEST|ARMS
-	heat_protection = CHEST|ARMS
+	togglename = "buttons"
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
+/obj/item/clothing/suit/toggle/solgov/terragov
+	name = "\improper Terragov coat"
+	desc = "An armored coat worn for special occasions. This one is still dyed in original TerraGov green."
+	icon_state = "coat_terragov"
+	item_state = "coat_terragov"
 
-//Robotocist
+/obj/item/clothing/suit/hooded/enginseer
+	name = "enginseer regalia"
+	desc = "You hold the secrets of the Machine."
+	icon_state = "enginseer"
+	item_state = "enginseer"
+	hoodtype = /obj/item/clothing/head/hooded/enginseer
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+	flags_inv = HIDESHOES|HIDEJUMPSUIT|HIDEGLOVES
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/gun, /obj/item/melee, /obj/item/nullrod, /obj/item/radio, /obj/item/storage/book)
 
-/obj/item/clothing/suit/hooded/techpriest
-	name = "techpriest robes"
-	desc = "For those who REALLY love their toasters."
-	icon_state = "techpriest"
-	item_state = "techpriest"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	hoodtype = /obj/item/clothing/head/hooded/techpriest
-
-/obj/item/clothing/head/hooded/techpriest
-	name = "techpriest's hood"
-	desc = "A hood for those who REALLY love their toasters."
-	icon_state = "techpriesthood"
-	item_state = "techpriesthood"
+/obj/item/clothing/head/hooded/enginseer
+	name = "enginseer's hood"
+	desc = "You are honored that they require your skills."
+	icon_state = "enginseerhood"
+	item_state = "enginseerhood"
 	body_parts_covered = HEAD
-	flags_inv = HIDEHAIR|HIDEEARS
+	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
+

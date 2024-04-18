@@ -72,6 +72,11 @@ Contents:
 	cell.name = "black power cell"
 	cell.icon_state = "bscell"
 
+/obj/item/clothing/suit/space/space_ninja/Destroy()
+	QDEL_NULL(spark_system)
+	QDEL_NULL(cell)
+	return ..()
+
 // Space Suit temperature regulation and power usage
 /obj/item/clothing/suit/space/space_ninja/process()
 	var/mob/living/carbon/human/user = src.loc
@@ -92,7 +97,7 @@ Contents:
 			cell.charge = 0
 			cancel_stealth()
 
-	user.adjust_bodytemperature(BODYTEMP_NORMAL - user.bodytemperature)
+	user.adjust_bodytemperature(HUMAN_BODYTEMP_NORMAL - user.bodytemperature)
 
 //Simply deletes all the attachments and self, killing all related procs.
 /obj/item/clothing/suit/space/space_ninja/proc/terminate()

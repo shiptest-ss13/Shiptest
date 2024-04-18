@@ -11,12 +11,17 @@
 	state_open = TRUE
 	circuit = /obj/item/circuitboard/machine/cyborgrecharger
 	occupant_typecache = list(/mob/living/silicon/robot, /mob/living/carbon/human)
+	processing_flags = NONE
 	var/recharge_speed
 	var/repairs
 
+
 /obj/machinery/recharge_station/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
+	if(is_operational)
+		begin_processing()
+
 
 /obj/machinery/recharge_station/RefreshParts()
 	recharge_speed = 0
@@ -35,10 +40,15 @@
 		if(repairs)
 			. += "<span class='notice'>[src] has been upgraded to support automatic repairs.</span>"
 
-/obj/machinery/recharge_station/process()
-	if(!is_operational())
-		return
 
+/obj/machinery/recharge_station/on_set_is_operational(old_value)
+	if(old_value) //Turned off
+		end_processing()
+	else //Turned on
+		begin_processing()
+
+
+/obj/machinery/recharge_station/process()
 	if(occupant)
 		process_occupant()
 	return 1
@@ -89,13 +99,11 @@
 		add_fingerprint(occupant)
 
 /obj/machinery/recharge_station/update_icon_state()
-	if(is_operational())
-		if(state_open)
-			icon_state = "borgcharger0"
-		else
-			icon_state = (occupant ? "borgcharger1" : "borgcharger2")
-	else
-		icon_state = (state_open ? "borgcharger-u0" : "borgcharger-u1")
+	if(!is_operational)
+		icon_state = "borgcharger-u[state_open ? 0 : 1]"
+		return ..()
+	icon_state = "borgcharger[state_open ? 0 : (occupant ? 1 : 2)]"
+	return ..()
 
 /obj/machinery/recharge_station/proc/process_occupant()
 	if(!occupant)

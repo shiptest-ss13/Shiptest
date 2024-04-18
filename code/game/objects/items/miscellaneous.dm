@@ -61,7 +61,7 @@
 			msg = "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from Central Command.  Message as follows: <span class='bold'>Item request received. Your package is inbound, please stand back from the landing site.</span> Message ends.\""
 	to_chat(M, msg)
 
-	new /obj/effect/DPtarget(get_turf(src), pod)
+	new /obj/effect/pod_landingzone(get_turf(src), pod)
 
 /obj/item/choice_beacon/hero
 	name = "heroic beacon"
@@ -84,7 +84,7 @@
 
 /obj/item/storage/box/hero/PopulateContents()
 	new /obj/item/clothing/head/fedora/curator(src)
-	new /obj/item/clothing/suit/curator(src)
+	new /obj/item/clothing/suit/armor/curator(src)
 	new /obj/item/clothing/under/rank/civilian/curator/treasure_hunter(src)
 	new /obj/item/clothing/shoes/workboots/mining(src)
 	new /obj/item/melee/curator_whip(src)
@@ -118,6 +118,23 @@
 	new /obj/item/clothing/mask/gas/carp(src)
 	new /obj/item/kitchen/knife/hunting(src)
 	new /obj/item/storage/box/papersack/meat(src)
+	new /obj/item/fishing_rod(src)
+	new /obj/item/fishing_line(src)
+	new /obj/item/fishing_hook(src)
+
+/obj/item/storage/box/hero/ghostbuster
+	name = "Spectre Inspector - 1980's."
+
+/obj/item/storage/box/hero/ghostbuster/PopulateContents()
+	new /obj/item/choice_beacon/ouija(src)
+	new /obj/item/clothing/glasses/welding/ghostbuster(src)
+	new /obj/item/storage/belt/fannypack/bustin(src)
+	new /obj/item/clothing/gloves/color/black(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/under/color/khaki/buster(src)
+	new /obj/item/grenade/chem_grenade/ghostbuster(src)
+	new /obj/item/grenade/chem_grenade/ghostbuster(src)
+	new /obj/item/grenade/chem_grenade/ghostbuster(src)
 
 /obj/item/choice_beacon/augments
 	name = "augment beacon"
@@ -152,13 +169,6 @@
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("skubbed")
 
-/obj/item/skub/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] has declared themself as anti-skub! The skub tears them apart!</span>")
-
-	user.gib()
-	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE, -1)
-	return MANUAL_SUICIDE
-
 /obj/item/virgin_mary
 	name = "\proper a picture of the virgin mary"
 	desc = "A small, cheap icon depicting the virgin mother."
@@ -189,7 +199,7 @@
 
 	to_chat(joe, "<span class='notice'>As you burn the picture, a nickname comes to mind...</span>")
 	var/nickname = stripped_input(joe, "Pick a nickname", "Mafioso Nicknames", null, NICKNAME_CAP, TRUE)
-	nickname = reject_bad_name(nickname, allow_numbers = FALSE, max_length = NICKNAME_CAP, ascii_only = TRUE)
+	nickname = reject_bad_name(nickname, max_length = NICKNAME_CAP, ascii_only = TRUE)
 	if(!nickname)
 		return
 	var/new_name
@@ -206,13 +216,82 @@
 
 #undef NICKNAME_CAP
 
-/obj/item/virgin_mary/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] starts saying their Hail Mary's at a terrifying pace! It looks like [user.p_theyre()] trying to enter the afterlife!</span>")
-	user.say("Hail Mary, full of grace, the Lord is with thee. Blessed are thou amongst women, and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners, now and at the hour of our death. Amen. ", forced = /obj/item/virgin_mary)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), 75)
-	addtimer(CALLBACK(user, /atom/movable/proc/say, "O my Mother, preserve me this day from mortal sin..."), 50)
-	return MANUAL_SUICIDE
+/obj/item/choice_beacon/ouija
+	name = "spirit board delivery beacon"
+	desc = "Ghost communication on demand! It is unclear how this thing is still operational."
 
-/obj/item/virgin_mary/proc/manual_suicide(mob/living/user)
-	user.adjustOxyLoss(200)
-	user.death(0)
+/obj/item/choice_beacon/ouija/generate_display_names()
+	var/static/list/ouija_spaghetti_list
+	if(!ouija_spaghetti_list)
+		ouija_spaghetti_list = list()
+		var/list/templist = list(/obj/structure/spirit_board)
+		for(var/V in templist)
+			var/atom/A = V
+			ouija_spaghetti_list[initial(A.name)] = A
+	return ouija_spaghetti_list
+
+/obj/structure/legionpike
+	name = "legion on a spear"
+	desc = "EXTREME interior decorating. You can feel it watching you."
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "headpike-legion"
+	density = FALSE
+	anchored = TRUE
+	light_color = "#8B0000"
+	light_power = 2
+	light_range = 2
+
+//rare and valulable gems- designed to eventually be used for archeology, or to be given as opposed to money as loot. Auctioned off at export, or kept as a trophy.
+/obj/item/gem/rupee
+	name = "\improper Ruperium Crystal"
+	desc = "An exotic crystalline compound rarely found all over the frontier of known space. Has few practical uses, but the resonating properties it possesses make it highly valued in the creation of designer instruments."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "rupee"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/fdiamond
+	name = "\improper Frost Diamond"
+	desc = "A rare form of crystalline carbon, most commonly found in the inner stone of crashed comets. Though asteroid mining long devalued more common forms of diamond, this one remains exclusive."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "diamond"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/amber
+	name = "\improper Draconic Amber"
+	desc = "The final decompositional result of a dragon's white-hot blood. Cherished by inner-world gemcutters for its soft warmth and faint glow."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "amber"
+	light_range = 2
+	light_power = 2
+	light_color = "#FFBF00"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/bloodstone
+	name = "\improper Ichorium"
+	desc = "A strange substance, known to coalesce in the presence of otherwordly phenomena. Could probably fetch a good price for this."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "red"
+	light_range = 2
+	light_power = 3
+	light_color = "#800000"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/phoron
+	name = "\improper Stabilized Phoron"
+	desc = "When under incredible pressure during formation, plasma crystal is occasionally known to transform into this substance. Famed both for exceptional durability and uncommon beauty."
+	icon = 'icons/obj/gems.dmi'
+	icon_state = "phoron"
+	light_range = 2
+	light_power = 2
+	light_color = "#62326a"
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gem/void
+	name = "\improper Null Crystal"
+	desc = "A shard of stellar energy, shaped into crystal. These strange objects occasionally appear spontaneously in the deepest, darkest depths of space. Despite it's incredible value, it seems far lighter than it should be."
+	icon = 'icons/obj/gems.dmi'
+	icon_state ="void"
+	light_range = 2
+	light_power = 1
+	light_color = "#4785a4"
+	w_class = WEIGHT_CLASS_SMALL

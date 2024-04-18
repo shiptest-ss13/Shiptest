@@ -24,16 +24,16 @@
 				if((HAS_TRAIT(user, TRAIT_DUMB) || HAS_TRAIT(user, TRAIT_CLUMSY)) && prob(50))
 					to_chat(user, "<span class='warning'>Your hand slips, setting off the trigger!</span>")
 					pulse(FALSE)
-		update_icon()
+		update_appearance()
 		playsound(src, 'sound/weapons/handcuffs.ogg', 30, TRUE, -3)
 
-/obj/item/assembly/mousetrap/update_icon()
-	if(armed)
-		icon_state = "mousetraparmed"
-	else
-		icon_state = "mousetrap"
-	if(holder)
-		holder.update_icon()
+/obj/item/assembly/mousetrap/update_icon_state()
+	icon_state = "mousetrap[armed ? "armed" : ""]"
+	return ..()
+
+/obj/item/assembly/mousetrap/update_icon(updates=ALL)
+	. = ..()
+	holder?.update_icon(updates)
 
 /obj/item/assembly/mousetrap/proc/triggered(mob/target, type = "feet")
 	if(!armed)
@@ -44,7 +44,7 @@
 		if(HAS_TRAIT(H, TRAIT_PIERCEIMMUNE))
 			playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 			armed = FALSE
-			update_icon()
+			update_appearance()
 			pulse(FALSE)
 			return FALSE
 		switch(type)
@@ -65,7 +65,7 @@
 		M.splat()
 	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
 	armed = FALSE
-	update_icon()
+	update_appearance()
 	pulse(FALSE)
 
 
@@ -85,7 +85,7 @@
 			return
 		to_chat(user, "<span class='notice'>You disarm [src].</span>")
 	armed = !armed
-	update_icon()
+	update_appearance()
 	playsound(src, 'sound/weapons/handcuffs.ogg', 30, TRUE, -3)
 
 
@@ -105,7 +105,8 @@
 	return ..()
 
 
-/obj/item/assembly/mousetrap/Crossed(atom/movable/AM as mob|obj)
+/obj/item/assembly/mousetrap/on_entered(datum/source, atom/movable/AM as mob|obj)
+	. = ..()
 	if(armed)
 		if(ismob(AM))
 			var/mob/MM = AM
@@ -113,16 +114,15 @@
 				if(ishuman(AM))
 					var/mob/living/carbon/H = AM
 					if(H.m_intent == MOVE_INTENT_RUN)
-						triggered(H)
+						INVOKE_ASYNC(src, PROC_REF(triggered), H)
 						H.visible_message(
 							"<span class='warning'>[H] accidentally steps on [src].</span>",
 							"<span class='warning'>You accidentally step on [src]</span>"
 						)
 				else if(ismouse(MM))
-					triggered(MM)
+					INVOKE_ASYNC(src, PROC_REF(triggered), MM)
 		else if(AM.density) // For mousetrap grenades, set off by anything heavy
-			triggered(AM)
-	..()
+			INVOKE_ASYNC(src, PROC_REF(triggered), AM)
 
 
 /obj/item/assembly/mousetrap/on_found(mob/finder)

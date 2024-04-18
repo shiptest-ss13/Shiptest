@@ -31,10 +31,11 @@
 	actions_types = list(/datum/action/item_action/organ_action/use)
 	var/inert = 0
 	var/preserved = 0
+	var/crackle_animation = TRUE //shows the red "crackle" overlay when not inert
 
 /obj/item/organ/regenerative_core/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/inert_check), 2400)
+	addtimer(CALLBACK(src, PROC_REF(inert_check)), 2400)
 
 /obj/item/organ/regenerative_core/proc/inert_check()
 	if(!preserved)
@@ -43,7 +44,7 @@
 /obj/item/organ/regenerative_core/proc/preserved(implanted = 0)
 	inert = FALSE
 	preserved = TRUE
-	update_icon()
+	update_appearance()
 	desc = "All that remains of a hivelord. It is preserved, allowing you to use it to heal completely without danger of decay."
 	if(implanted)
 		SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "implanted"))
@@ -55,13 +56,18 @@
 	name = "decayed regenerative core"
 	desc = "All that remains of a hivelord. It has decayed, and is completely useless."
 	SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "inert"))
-	update_icon()
+	update_appearance()
 
 /obj/item/organ/regenerative_core/ui_action_click()
 	if(inert)
 		to_chat(owner, "<span class='notice'>[src] breaks down as it tries to activate.</span>")
 	else
-		owner.revive(full_heal = TRUE, admin_revive = FALSE)
+		owner.adjustBruteLoss(-100) //previously heal proc
+		owner.adjustFireLoss(-100)
+		owner.adjustOxyLoss(-50)
+		owner.adjustToxLoss(-50)
+		if(owner.dna.species.id != SPECIES_IPC)
+			owner.adjustCloneLoss(10) //dont abuse it or take cloneloss (organic only)
 	qdel(src)
 
 /obj/item/organ/regenerative_core/on_life()
@@ -116,6 +122,13 @@
 	desc = "A strange rock that crackles with power. It can be used to heal completely, but it will rapidly decay into uselessness."
 	icon_state = "legion_soul"
 	grind_results = list(/datum/reagent/ash = 30)
+	var/list/preserved_grind_results
+	var/list/unpreserved_grind_results
+
+/obj/item/organ/regenerative_core/legion/Initialize()
+	. = ..()
+	preserved_grind_results = list(/datum/reagent/medicine/soulus = rand(5, 30), /datum/reagent/ash = 30)
+	unpreserved_grind_results = list(/datum/reagent/medicine/soulus = 30, /datum/reagent/blood = rand(5, 15))
 
 /obj/item/organ/regenerative_core/legion/grind_requirements(obj/machinery/reagentgrinder/R)
 	return !inert
@@ -124,21 +137,22 @@
 	if(inert) // Sanity check
 		return -1
 	if (preserved)
-		grind_results = list(/datum/reagent/medicine/soulus = rand(5, 30), /datum/reagent/ash = 30)
+		grind_results = preserved_grind_results
 	else
-		grind_results = list(/datum/reagent/medicine/soulus = 30, /datum/reagent/blood = rand(5, 15))
+		grind_results = unpreserved_grind_results
 	. = ..()
 
 /obj/item/organ/regenerative_core/legion/Initialize()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/organ/regenerative_core/update_icon_state()
-	icon_state = inert ? "legion_soul_inert" : "legion_soul"
+	icon_state = inert ? "[icon_state]_inert" : "[icon_state]"
+	return ..()
 
 /obj/item/organ/regenerative_core/update_overlays()
 	. = ..()
-	if(!inert && !preserved)
+	if(!inert && !preserved && crackle_animation)
 		. += "legion_soul_crackle"
 
 /obj/item/organ/regenerative_core/legion/go_inert()
@@ -148,3 +162,41 @@
 /obj/item/organ/regenerative_core/legion/preserved(implanted = 0)
 	..()
 	desc = "[src] has been stabilized. It is preserved, allowing you to use it to heal completely without danger of decay."
+
+/*************************Crystal heart ************************/
+/obj/item/organ/regenerative_core/legion/crystal
+	name = "crystal heart"
+	desc = "A strange rock in the shape of a heart symbol. Applying will repair your body with crystals, but may have additional side effects. It seems it can't survive for very long outside a host."
+	icon_state = "crystal_heart"
+	crackle_animation = FALSE
+
+/obj/item/organ/regenerative_core/legion/crystal/Initialize()
+	. = ..()
+	preserved_grind_results = list(/datum/reagent/medicine/soulus = rand(1, 30), /datum/reagent/ash = 30, /datum/reagent/determination = 1)
+	unpreserved_grind_results = list(/datum/reagent/medicine/soulus = 30, /datum/reagent/blood = rand(5, 15), /datum/reagent/determination = 1)
+
+/obj/item/organ/regenerative_core/legion/crystal/applyto(atom/target, mob/user)
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		if(inert)
+			to_chat(user, "<span class='notice'>[src] has broken and can no longer be used to heal.</span>")
+			return
+		else
+			if(H.stat == DEAD)
+				to_chat(user, "<span class='notice'>[src] is useless on the dead.</span>")
+				return
+			if(H != user)
+				H.visible_message("<span class='notice'>[user] forces [H] to apply [src]... Cancer like crystals grow on and reinforce [H.p_them()]!</span>")
+				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
+			else
+				to_chat(user, "<span class='notice'>You start to apply [src] on yourself. Cancer like crystals hold you together and add something to you to keep yourself moving, but for how long?</span>")
+				SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
+			H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
+			H.reagents.add_reagent(/datum/reagent/determination, 4)
+			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "core", /datum/mood_event/healsbadman) //Now THIS is a miner buff (fixed - nerf)
+			qdel(src)
+
+/obj/item/organ/regenerative_core/legion/crystal/update_icon_state()
+	if(preserved)
+		icon_state = "crystal_heart_preserved"
+	return ..()

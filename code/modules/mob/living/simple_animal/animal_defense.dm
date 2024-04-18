@@ -60,7 +60,7 @@
 			to_chat(M, "<span class='danger'>You [response_disarm_simple] [name]!</span>")
 			log_combat(M, src, "disarmed")
 		else
-			var/damage = rand(15, 30)
+			var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 			visible_message("<span class='danger'>[M] slashes at [src]!</span>", \
 							"<span class='userdanger'>You're slashed at by [M]!</span>", null, COMBAT_MESSAGE_RANGE, M)
 			to_chat(M, "<span class='danger'>You slash at [src]!</span>")
@@ -81,21 +81,21 @@
 	. = ..()
 	if(.)
 		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
-		return attack_threshold_check(damage, M.melee_damage_type)
+		return attack_threshold_check(damage, M.melee_damage_type, armour_pen = M.armour_penetration)
 
 /mob/living/simple_animal/attack_slime(mob/living/simple_animal/slime/M)
 	if(..()) //successful slime attack
 		var/damage = rand(15, 25)
 		if(M.is_adult)
 			damage = rand(20, 35)
-		return attack_threshold_check(damage)
+		return attack_threshold_check(damage, M.melee_damage_type, armour_pen = M.armour_penetration)
 
 /mob/living/simple_animal/attack_drone(mob/living/simple_animal/drone/M)
 	if(M.a_intent == INTENT_HARM) //No kicking dogs even as a rogue drone. Use a weapon.
 		return
 	return ..()
 
-/mob/living/simple_animal/proc/attack_threshold_check(damage, damagetype = BRUTE, armorcheck = "melee")
+/mob/living/simple_animal/proc/attack_threshold_check(damage, damagetype = BRUTE, armor_type = "melee", armour_pen = 0)
 	var/temp_damage = damage
 	if(!damage_coeff[damagetype])
 		temp_damage = 0
@@ -106,7 +106,7 @@
 		visible_message("<span class='warning'>[src] looks unharmed!</span>")
 		return FALSE
 	else
-		apply_damage(damage, damagetype, null, getarmor(null, armorcheck))
+		apply_damage(damage, damagetype, null, run_armor_check(null, armor_type, armour_pen, silent=TRUE))
 		return TRUE
 
 /*		WS Edit - Whitesands

@@ -36,18 +36,12 @@
 
 /obj/item/storage/box/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 
-/obj/item/storage/box/suicide_act(mob/living/carbon/user)
-	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-	if(myhead)
-		user.visible_message("<span class='suicide'>[user] puts [user.p_their()] head into \the [src], and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		myhead.dismember()
-		myhead.forceMove(src)//force your enemies to kill themselves with your head collection box!
-		playsound(user, "desceration-01.ogg", 50, TRUE, -1)
-		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] beating [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return BRUTELOSS
+/obj/item/storage/box/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/box/update_overlays()
 	. = ..()
@@ -105,7 +99,7 @@
 	for(var/i in 1 to 7)
 		new /obj/item/disk/data(src)
 
-
+//guys why are my tests failing
 /obj/item/storage/box/disks_plantgene
 	name = "plant data disks box"
 	illustration = "disk_kit"
@@ -127,9 +121,11 @@
 	var/mask_type = /obj/item/clothing/mask/breath
 	var/internal_type = /obj/item/tank/internals/emergency_oxygen
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
+	var/radio_type = /obj/item/radio
 
 /obj/item/storage/box/survival/PopulateContents()
 	new mask_type(src)
+	new radio_type(src)
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -137,10 +133,6 @@
 		new internal_type(src)
 	else
 		new /obj/item/tank/internals/plasmaman/belt(src)
-
-/obj/item/storage/box/survival/radio/PopulateContents()
-	..() // we want the survival stuff too.
-	new /obj/item/radio/off(src)
 
 // Mining survival box
 /obj/item/storage/box/survival/mining
@@ -154,10 +146,6 @@
 /obj/item/storage/box/survival/engineer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
-/obj/item/storage/box/survival/engineer/radio/PopulateContents()
-	..() // we want the regular items too.
-	new /obj/item/radio/off(src)
-
 // Syndie survival box
 /obj/item/storage/box/survival/syndie
 	mask_type = /obj/item/clothing/mask/gas/syndicate
@@ -168,13 +156,18 @@
 /obj/item/storage/box/survival/security
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 
-/obj/item/storage/box/survival/security/radio/PopulateContents()
-	..() // we want the regular stuff too
-	new /obj/item/radio/off(src)
-
 // Medical survival box
 /obj/item/storage/box/survival/medical
 	mask_type = /obj/item/clothing/mask/breath/medical
+
+/obj/item/storage/box/survival/clip
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi //clip actually cares about their personnel
+
+/obj/item/storage/box/survival/clip/balaclava
+	mask_type = /obj/item/clothing/mask/gas/sechailer/balaclava
+
+/obj/item/storage/box/survival/clip/balaclava
+	internal_type = /obj/item/tank/internals/emergency_oxygen/double
 
 /obj/item/storage/box/gloves
 	name = "box of latex gloves"
@@ -237,7 +230,7 @@
 
 /obj/item/storage/box/beakers/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/glass/beaker( src )
+		new /obj/item/reagent_containers/glass/beaker(src)
 
 /obj/item/storage/box/beakers/bluespace
 	name = "box of bluespace beakers"
@@ -260,7 +253,7 @@
 
 /obj/item/storage/box/hypospray
 	name = "hypospray mk. II kit"
-	icon = 'whitesands/icons/obj/storage.dmi'		//WS Edit - Suitcases
+	icon = 'icons/obj/storage.dmi'		//WS Edit - Suitcases
 	icon_state = "medbriefcase"
 	illustration = null
 
@@ -288,7 +281,7 @@
 
 /obj/item/storage/box/medigels/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/medigel( src )
+		new /obj/item/reagent_containers/medigel(src)
 
 /obj/item/storage/box/injectors
 	name = "box of DNA injectors"
@@ -465,7 +458,7 @@
 
 /obj/item/storage/box/cups/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/food/drinks/sillycup( src )
+		new /obj/item/reagent_containers/food/drinks/sillycup(src)
 
 /obj/item/storage/box/donkpockets
 	name = "box of donk-pockets"
@@ -780,6 +773,13 @@
 	for(var/i in 1 to 7)
 		new /obj/item/light/bulb(src)
 
+/obj/item/storage/box/flares
+	name = "box of flares"
+	illustration = "firecracker"
+
+/obj/item/storage/box/flares/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/deputy
 	name = "box of deputy armbands"
@@ -815,10 +815,6 @@
 	icon_state = "hugbox"
 	illustration = "heart"
 	foldable = null
-
-/obj/item/storage/box/hug/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] clamps the box of hugs on [user.p_their()] jugular! Guess it wasn't such a hugbox after all..</span>")
-	return (BRUTELOSS)
 
 /obj/item/storage/box/hug/attack_self(mob/user)
 	..()
@@ -886,12 +882,23 @@
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells."
-	icon_state = "rubbershot_box"
+	icon_state = "beanbag_box"
 	illustration = null
 
 /obj/item/storage/box/beanbag/PopulateContents()
 	for(var/i in 1 to 6)
 		new /obj/item/ammo_casing/shotgun/beanbag(src)
+
+/obj/item/storage/box/slugshot
+	name = "box of 12-gauge slug shotgun shells"
+	desc = "a box full of slug shots, designed for riot shotguns"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "slugshot_box"
+	illustration = null
+
+/obj/item/storage/box/slugshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun(src)
 
 /obj/item/storage/box/actionfigure
 	name = "box of action figures"
@@ -929,10 +936,11 @@
 		icon_state = "[item_state]"
 	else
 		icon_state = "[item_state]_closed"
+	return ..()
 
 /obj/item/storage/box/papersack/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))
-		var/choice = show_radial_menu(user, src , papersack_designs, custom_check = CALLBACK(src, .proc/check_menu, user, W), radius = 36, require_near = TRUE)
+		var/choice = show_radial_menu(user, src , papersack_designs, custom_check = CALLBACK(src, PROC_REF(check_menu), user, W), radius = 36, require_near = TRUE)
 		if(!choice)
 			return FALSE
 		if(icon_state == "paperbag_[choice]")
@@ -969,12 +977,12 @@
 	return ..()
 
 /**
-  * check_menu: Checks if we are allowed to interact with a radial menu
-  *
-  * Arguments:
-  * * user The mob interacting with a menu
-  * * P The pen used to interact with a menu
-  */
+ * check_menu: Checks if we are allowed to interact with a radial menu
+ *
+ * Arguments:
+ * * user The mob interacting with a menu
+ * * P The pen used to interact with a menu
+ */
 /obj/item/storage/box/papersack/proc/check_menu(mob/user, obj/item/pen/P)
 	if(!istype(user))
 		return FALSE
@@ -1121,7 +1129,7 @@
 	new /obj/item/reagent_containers/food/snacks/meat/slab/bear(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
-	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+	new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/meatball(src)
@@ -1131,7 +1139,7 @@
 
 /obj/item/storage/box/ingredients/exotic/PopulateContents()
 	for(var/i in 1 to 2)
-		new /obj/item/reagent_containers/food/snacks/carpmeat(src)
+		new /obj/item/reagent_containers/food/snacks/fishmeat/carp(src)
 		new /obj/item/reagent_containers/food/snacks/grown/soybeans(src)
 		new /obj/item/reagent_containers/food/snacks/grown/cabbage(src)
 	new /obj/item/reagent_containers/food/snacks/grown/chili(src)
@@ -1148,11 +1156,94 @@
 	name = "\proper the liberator's legacy"
 	desc = "A box containing a gift for worthy golems."
 	illustration = "scicircuit"
+	custom_price = 2000
 
 /obj/item/storage/box/rndboards/PopulateContents()
 	new /obj/item/circuitboard/machine/protolathe(src)
 	new /obj/item/circuitboard/machine/destructive_analyzer(src)
 	new /obj/item/circuitboard/machine/circuit_imprinter(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndboards/old
+	name = "\proper Nanotrasen R&D Construction Kit"
+	desc = "A set of boards for constructing prototype design lathes, dating from a prewar Nanotrasen labratory. These ones are unbraked, and can produce any of the designs in their database without limit."
+
+//departmental RND kits, for shiptests.
+/obj/item/storage/box/rndmining
+	name = "\proper QWIK-RND: M.I.D.A.S. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print resource-extraction and finance related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndmining/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/cargo(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/cargo(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndengi
+	name = "\proper QWIK-RND: A.T.L.A.S. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print maintenance, construction, and repair related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndengi/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/engineering(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/engi(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndmed
+	name = "\proper QWIK-RND: C.A.R.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print medical and pharmaceutical care related designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndmed/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/medical(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/med(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndsec
+	name = "\proper QWIK-RND: P.E.A.C.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print military designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndsec/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/security(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/sec(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndciv
+	name = "\proper QWIK-RND: H.O.M.E. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of service industry designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndciv/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/service(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/civ(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndbasic
+	name = "\proper QWIK-RND: B.A.S.I.C. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print a variety of low-tier miscellaneous designs."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndbasic/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/basic(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/basic(src)
+	new /obj/item/circuitboard/computer/rdconsole(src)
+
+/obj/item/storage/box/rndsci
+	name = "\proper QWIK-RND: K.N.O.W. Module"
+	desc = "A set of boards for constructing prototype design lathes. These ones are braked to only print designs related to high-level scientific disciplines."
+	illustration = "scicircuit"
+
+/obj/item/storage/box/rndsci/PopulateContents()
+	new /obj/item/circuitboard/machine/protolathe/department/science(src)
+	new /obj/item/circuitboard/machine/destructive_analyzer(src)
+	new /obj/item/circuitboard/machine/circuit_imprinter/department/science(src)
 	new /obj/item/circuitboard/computer/rdconsole(src)
 
 /obj/item/storage/box/silver_sulf
@@ -1194,6 +1285,32 @@
 		/obj/item/stock_parts/matter_bin = 3)
 	generate_items_inside(items_inside,src)
 
+/obj/item/storage/box/stockparts/t2
+	name = "box of T2 stock parts"
+	desc = "Contains a variety of advanced stock parts."
+
+/obj/item/storage/box/stockparts/t2/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/adv = 2,
+		/obj/item/stock_parts/scanning_module/adv = 2,
+		/obj/item/stock_parts/manipulator/nano = 2,
+		/obj/item/stock_parts/micro_laser/high = 2,
+		/obj/item/stock_parts/matter_bin/adv = 2)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/stockparts/t3
+	name = "box of T3 stock parts"
+	desc = "Contains a variety of super stock parts."
+
+/obj/item/storage/box/stockparts/t3/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/stock_parts/capacitor/super = 2,
+		/obj/item/stock_parts/scanning_module/phasic = 2,
+		/obj/item/stock_parts/manipulator/pico = 2,
+		/obj/item/stock_parts/micro_laser/ultra = 2,
+		/obj/item/stock_parts/matter_bin/super = 2)
+	generate_items_inside(items_inside,src)
+
 /obj/item/storage/box/stockparts/deluxe
 	name = "box of deluxe stock parts"
 	desc = "Contains a variety of deluxe stock parts."
@@ -1201,11 +1318,11 @@
 
 /obj/item/storage/box/stockparts/deluxe/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/stock_parts/capacitor/quadratic = 3,
-		/obj/item/stock_parts/scanning_module/triphasic = 3,
-		/obj/item/stock_parts/manipulator/femto = 3,
-		/obj/item/stock_parts/micro_laser/quadultra = 3,
-		/obj/item/stock_parts/matter_bin/bluespace = 3)
+		/obj/item/stock_parts/capacitor/quadratic = 2,
+		/obj/item/stock_parts/scanning_module/triphasic = 2,
+		/obj/item/stock_parts/manipulator/femto = 2,
+		/obj/item/stock_parts/micro_laser/quadultra = 2,
+		/obj/item/stock_parts/matter_bin/bluespace = 2)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/dishdrive
@@ -1222,6 +1339,43 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stock_parts/matter_bin = 2,
 		/obj/item/screwdriver = 1)
+	generate_items_inside(items_inside,src)
+
+//It's a maid costume from the IRMG and Syndicate, what else.
+/obj/item/storage/box/inteqmaid
+	name = "IRMG non standard issue maid outfit"
+	desc = "A box containing a 'tactical' and 'practical' maid outfit from the IRMG."
+
+/obj/item/storage/box/inteqmaid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband/inteq = 1,
+		/obj/item/clothing/under/syndicate/inteq/skirt/maid = 1,
+		/obj/item/clothing/gloves/combat/maid/inteq = 1,)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/syndimaid
+	name = "Syndicate maid outfit"
+	desc = "A box containing a 'tactical' and 'practical' maid outfit."
+	icon_state = "syndiebox"
+
+/obj/item/storage/box/syndimaid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband/syndicate = 1,
+		/obj/item/clothing/under/syndicate/skirt/maid = 1,
+		/obj/item/clothing/gloves/combat/maid = 1,)
+	generate_items_inside(items_inside,src)
+
+// because i have no idea where the fuck to put this
+/obj/item/storage/box/maid
+	name = "Maid box"
+	desc = "Contains a maid outfit"
+
+/obj/item/storage/box/maid/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/clothing/head/maidheadband = 1,
+		/obj/item/clothing/under/costume/maid = 1,
+		/obj/item/clothing/gloves/maid = 1,
+		/obj/item/clothing/neck/maid = 1,)
 	generate_items_inside(items_inside,src)
 
 /obj/item/storage/box/material
@@ -1265,7 +1419,7 @@
 		/obj/item/construction/rcd/combat/admin=1,\
 		/obj/item/pipe_dispenser=1,\
 		/obj/item/card/emag=1,\
-		/obj/item/stack/spacecash/c1000=50,\
+		/obj/item/spacecash/bundle/c10000=5,\
 		/obj/item/healthanalyzer/advanced=1,\
 		/obj/item/disk/tech_disk/debug=1,\
 		/obj/item/uplink/debug=1,\
@@ -1394,3 +1548,54 @@
 		/obj/item/stack/wrapping_paper/small=1
 		)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/coffeepack
+	icon_state = "arabica_beans"
+	name = "arabica beans"
+	desc = "A bag containing fresh, dry coffee arabica beans. Ethically sourced and packaged by Donk! Co."
+	illustration = null
+	icon = 'icons/obj/food/containers.dmi'
+	var/beantype = /obj/item/reagent_containers/food/snacks/grown/coffee
+
+/obj/item/storage/box/cofeepack/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 5
+	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/grown/coffee))
+
+/obj/item/storage/box/coffeepack/PopulateContents()
+	var/static/items_inside = list(
+		/obj/item/reagent_containers/food/snacks/grown/coffee = 5,
+		/obj/item/reagent_containers/food/snacks/grown/coffee/robusta = 5)
+	generate_items_inside(items_inside,src)
+
+/obj/item/storage/box/coffeepack/robusta
+	icon_state = "robusta_beans"
+	name = "robusta beans"
+	desc = "A bag containing fresh, dry coffee robusta beans. Ethically sourced and packaged by Donk! Co."
+	beantype = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
+
+
+/*
+ * Coffee condiments display -- someone can make this fancy eventually, i cant fucking figure it out for the life of me -- it exists in TG
+ */
+
+/obj/item/storage/box/coffee_condi_display
+	name = "coffee condiments display"
+	desc = "A neat small box, holding all your favorite coffee condiments."
+
+/obj/item/storage/box/coffee_condi_display/Initialize(mapload)
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 14
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/food/condiment/pack/sugar,
+		/obj/item/reagent_containers/food/condiment/pack/creamer,
+		/obj/item/reagent_containers/food/condiment/pack/astrotame,
+	))
+
+/obj/item/storage/box/coffee_condi_display/PopulateContents()
+	for(var/i in 1 to 4)
+		new /obj/item/reagent_containers/food/condiment/pack/sugar(src)
+		new /obj/item/reagent_containers/food/condiment/pack/creamer(src)
+		new /obj/item/reagent_containers/food/condiment/pack/astrotame(src)

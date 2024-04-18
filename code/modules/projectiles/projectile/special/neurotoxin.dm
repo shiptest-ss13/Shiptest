@@ -1,9 +1,10 @@
 /obj/projectile/bullet/neurotoxin
 	name = "neurotoxin spit"
 	icon_state = "neurotoxin"
-	damage = 5
+	damage = 20
 	damage_type = TOX
-	paralyze = 100
+	paralyze = 5
+	flag = "bio"
 
 /obj/projectile/bullet/neurotoxin/on_hit(atom/target, blocked = FALSE)
 	if(isalien(target))

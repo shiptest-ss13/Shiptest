@@ -49,6 +49,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/ammonia = 0.2, /datum/reagent/chlorine = 0.1, /datum/reagent/consumable/nutriment = 0.2)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/pumpkin/blumpkin
 	seed = /obj/item/seeds/pumpkin/blumpkin

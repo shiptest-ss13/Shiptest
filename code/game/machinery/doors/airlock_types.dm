@@ -6,36 +6,33 @@
 	icon = 'icons/obj/doors/airlocks/station/command.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_com
 	normal_integrity = 450
-	hatch_colour = "#446892"
 
 /obj/machinery/door/airlock/solgov
 	icon = 'icons/obj/doors/airlocks/station/solgov.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_sgv
 	normal_integrity = 450
-	hatch_colour = "#526280"
 
 /obj/machinery/door/airlock/security
 	icon = 'icons/obj/doors/airlocks/station/security.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_sec
 	normal_integrity = 450
-	hatch_colour = "#c82b2b"
+
+/obj/machinery/door/airlock/security/brig //fulltile cell doors because of shuttle shenanigans
+	var/id = null
 
 /obj/machinery/door/airlock/engineering
 	icon = 'icons/obj/doors/airlocks/station/engineering.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_eng
-	hatch_colour = "#caa638"
 
 /obj/machinery/door/airlock/medical
 	icon = 'icons/obj/doors/airlocks/station/medical.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_med
-	hatch_colour = "#d2d2d2"
 
 /obj/machinery/door/airlock/maintenance
 	name = "maintenance access"
 	icon = 'icons/obj/doors/airlocks/station/maintenance.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_mai
 	normal_integrity = 250
-	hatch_colour = "#7d7d7d"
 
 /obj/machinery/door/airlock/maintenance/external
 	name = "external airlock access"
@@ -47,34 +44,28 @@
 	name = "mining airlock"
 	icon = 'icons/obj/doors/airlocks/station/mining.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_min
-	hatch_colour = "#c29142"
 
 /obj/machinery/door/airlock/atmos
 	name = "atmospherics airlock"
 	icon = 'icons/obj/doors/airlocks/station/atmos.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_atmo
-	hatch_colour = "#caa638"
 
 /obj/machinery/door/airlock/research
 	icon = 'icons/obj/doors/airlocks/station/research.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_research
-	hatch_colour = "#d2d2d2"
 
 /obj/machinery/door/airlock/freezer
 	name = "freezer airlock"
 	icon = 'icons/obj/doors/airlocks/station/freezer.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_fre
-	hatch_colour = "#ffffff"
 
 /obj/machinery/door/airlock/science
 	icon = 'icons/obj/doors/airlocks/station/science.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_science
-	hatch_colour = "#d2d2d2"
 
 /obj/machinery/door/airlock/virology
 	icon = 'icons/obj/doors/airlocks/station/virology.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_viro
-	hatch_colour = "#d2d2d2"
 
 //////////////////////////////////
 /*
@@ -92,30 +83,19 @@
 	req_access = list(ACCESS_SYNDICATE)
 	has_hatch = FALSE
 
-/obj/machinery/door/airlock/glass/incinerator/syndicatelava_interior
-	name = "Turbine Interior Airlock"
-	id_tag = INCINERATOR_SYNDICATELAVA_AIRLOCK_INTERIOR
-
-/obj/machinery/door/airlock/glass/incinerator/syndicatelava_exterior
-	name = "Turbine Exterior Airlock"
-	id_tag = INCINERATOR_SYNDICATELAVA_AIRLOCK_EXTERIOR
-
 /obj/machinery/door/airlock/command/glass
 	opacity = FALSE
 	glass = TRUE
 	normal_integrity = 400
-	hatch_colour = "#345882"
 
 /obj/machinery/door/airlock/solgov/glass
 	opacity = FALSE
 	glass = TRUE
 	normal_integrity = 400
-	hatch_colour = "#526280"
 
 /obj/machinery/door/airlock/engineering/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#caa638"
 
 /obj/machinery/door/airlock/engineering/glass/critical
 	critical_machine = TRUE //stops greytide virus from opening & bolting doors in critical positions, such as the SM chamber.
@@ -124,17 +104,19 @@
 	opacity = FALSE
 	glass = TRUE
 	normal_integrity = 400
-	hatch_colour = "#b81b1b"
+
+/obj/machinery/door/airlock/security/brig/glass //more brig doors
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
 
 /obj/machinery/door/airlock/medical/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#d2d2d2"
 
 /obj/machinery/door/airlock/research/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#d2d2d2"
 
 /obj/machinery/door/airlock/research/glass/incinerator
 	autoclose = FALSE
@@ -154,12 +136,10 @@
 /obj/machinery/door/airlock/mining/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#c29142"
 
 /obj/machinery/door/airlock/atmos/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#caa638"
 
 /obj/machinery/door/airlock/atmos/glass/critical
 	critical_machine = TRUE //stops greytide virus from opening & bolting doors in critical positions, such as the SM chamber.
@@ -167,17 +147,14 @@
 /obj/machinery/door/airlock/science/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#d2d2d2"
 
 /obj/machinery/door/airlock/virology/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#d2d2d2"
 
 /obj/machinery/door/airlock/maintenance/glass
 	opacity = FALSE
 	glass = TRUE
-	hatch_colour = "#7d7d7d"
 
 /obj/machinery/door/airlock/maintenance/external/glass
 	opacity = FALSE
@@ -268,7 +245,7 @@
 		DA.glass = TRUE
 	if(heat_proof)
 		DA.heat_proof_finished = TRUE
-	DA.update_icon()
+	DA.update_appearance()
 	DA.update_name()
 	qdel(src)
 
@@ -322,8 +299,8 @@
 /obj/machinery/door/airlock/titanium
 	name = "shuttle airlock"
 	assemblytype = /obj/structure/door_assembly/door_assembly_titanium
-	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi'
-	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'icons/obj/doors/airlocks/shuttle/shuttle.dmi'
+	overlays_file = 'icons/obj/doors/airlocks/shuttle/old_overlays.dmi'
 	normal_integrity = 400
 	has_hatch = FALSE
 
@@ -351,7 +328,7 @@
 	icon = 'icons/obj/doors/airlocks/station2/glass.dmi'
 	overlays_file = 'icons/obj/doors/airlocks/station2/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_public
-	hatch_colour = "#eaeaea"
+	req_ship_access = FALSE
 
 /obj/machinery/door/airlock/public/glass
 	opacity = FALSE
@@ -384,6 +361,8 @@
 	note_overlay_file = 'icons/obj/doors/airlocks/external/overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_ext
 	has_hatch = FALSE
+	doorOpen = 'sound/machines/airlocks/external/airlock_ext_open.ogg'
+	doorClose = 'sound/machines/airlocks/external/airlock_ext_close.ogg'
 
 /obj/machinery/door/airlock/external/glass
 	opacity = FALSE
@@ -468,8 +447,8 @@
 
 /obj/machinery/door/airlock/shuttle
 	name = "shuttle airlock"
-	icon = 'whitesands/icons/obj/doors/airlocks/shuttle/shuttle.dmi' //WS Edit - Classic Shuttle
-	overlays_file = 'whitesands/icons/obj/doors/airlocks/shuttle/overlays.dmi'
+	icon = 'icons/obj/doors/airlocks/shuttle/shuttle.dmi' //WS Edit - Classic Shuttle //I'm leaving this. Your hubris will be remembered.
+	overlays_file = 'icons/obj/doors/airlocks/shuttle/old_overlays.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_shuttle
 	has_hatch = FALSE
 
@@ -543,7 +522,7 @@
 			SEND_SOUND(L, sound(pick('sound/hallucinations/turn_around1.ogg','sound/hallucinations/turn_around2.ogg'),0,1,50))
 			flash_color(L, flash_color="#960000", flash_time=20)
 			L.Paralyze(40)
-			L.throw_at(throwtarget, 5, 1,src)
+			L.throw_at(throwtarget, 5, 1)
 		return 0
 
 /obj/machinery/door/airlock/cult/proc/conceal()
@@ -552,7 +531,7 @@
 	name = "airlock"
 	desc = "It opens and closes."
 	stealthy = TRUE
-	update_icon()
+	update_appearance()
 
 /obj/machinery/door/airlock/cult/proc/reveal()
 	icon = initial(icon)
@@ -560,7 +539,7 @@
 	name = initial(name)
 	desc = initial(desc)
 	stealthy = initial(stealthy)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/door/airlock/cult/narsie_act()
 	return
@@ -618,3 +597,23 @@
 
 /obj/machinery/door/airlock/glass_large/narsie_act()
 	return
+
+//////////////////////////////////
+/*
+	Outpost Airlocks
+*/
+
+/obj/machinery/door/airlock/outpost //secure anti-tiding airlock
+	icon = 'icons/obj/doors/airlocks/centcom/centcom.dmi'
+	overlays_file = 'icons/obj/doors/airlocks/centcom/overlays.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_centcom //all of the above needs to be changed if editing the icon
+	desc = "It opens and closes. Effectively impervious to conventional methods of destruction."
+	normal_integrity = INFINITY
+	explosion_block = INFINITY
+	has_hatch = FALSE
+	req_one_access_txt = "101" //109 for command areas
+
+/obj/machinery/door/airlock/outpost/attackby(obj/item/C, mob/user, params) //maintenance panel cannot be opened
+	if(C.tool_behaviour == TOOL_SCREWDRIVER)
+		return
+	..()

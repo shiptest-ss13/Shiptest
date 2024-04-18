@@ -26,10 +26,6 @@
 /obj/item/instrument/proc/should_stop_playing(mob/user)
 	return user.incapacitated() || !((loc == user) || (isturf(loc) && Adjacent(user)))		// sorry, no more TK playing.
 
-/obj/item/instrument/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS)
-
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
@@ -79,7 +75,7 @@
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	icon_state = "headphones"
-	item_state = "headphones"
+	item_state = "earmuffs"
 	slot_flags = ITEM_SLOT_EARS | ITEM_SLOT_HEAD
 	force = 0
 	w_class = WEIGHT_CLASS_SMALL
@@ -89,22 +85,22 @@
 /obj/item/instrument/piano_synth/headphones/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/update_icon_updates_onmob)
-	RegisterSignal(src, COMSIG_SONG_START, .proc/start_playing)
-	RegisterSignal(src, COMSIG_SONG_END, .proc/stop_playing)
+	RegisterSignal(src, COMSIG_SONG_START, PROC_REF(start_playing))
+	RegisterSignal(src, COMSIG_SONG_END, PROC_REF(stop_playing))
 
 /**
-  * Called by a component signal when our song starts playing.
-  */
+ * Called by a component signal when our song starts playing.
+ */
 /obj/item/instrument/piano_synth/headphones/proc/start_playing()
 	icon_state = "[initial(icon_state)]_on"
-	update_icon()
+	update_appearance()
 
 /**
-  * Called by a component signal when our song stops playing.
-  */
+ * Called by a component signal when our song stops playing.
+ */
 /obj/item/instrument/piano_synth/headphones/proc/stop_playing()
 	icon_state = "[initial(icon_state)]"
-	update_icon()
+	update_appearance()
 
 /obj/item/instrument/piano_synth/headphones/spacepods
 	name = "\improper Nanotrasen space pods"
@@ -253,7 +249,7 @@
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)
 	. = ..()
-	RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+	RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
 /obj/item/instrument/harmonica/dropped(mob/M)
 	. = ..()
@@ -301,3 +297,24 @@
 			var/atom/A = V
 			instruments[initial(A.name)] = A
 	return instruments
+
+/obj/item/choice_beacon/rnd
+	name = "C.R.E.W.M.A.T.E type R&D Choice Beacon"
+	desc = "This aging launch beacon summons a limited production RND package from a nearby orbital satellite, delivered via impact pod."
+	icon_state = "gangtool-sus"
+
+/obj/item/choice_beacon/rnd/generate_display_names()
+	var/static/list/rndboxes
+	if(!rndboxes)
+		rndboxes = list()
+		var/list/templist = list(/obj/item/storage/box/rndengi,
+							/obj/item/storage/box/rndsec,
+							/obj/item/storage/box/rndmining,
+							/obj/item/storage/box/rndmed,
+							/obj/item/storage/box/rndsci,
+							/obj/item/storage/box/rndciv
+							)
+		for(var/V in templist)
+			var/atom/A = V
+			rndboxes[initial(A.name)] = A
+	return rndboxes

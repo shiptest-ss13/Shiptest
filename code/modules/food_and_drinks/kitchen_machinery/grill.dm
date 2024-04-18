@@ -20,11 +20,13 @@
 /obj/machinery/grill/update_icon_state()
 	if(grilled_item)
 		icon_state = "grill"
+		return ..()
 	else if(grill_fuel)
 		icon_state = "grill_on"
+		return ..()
 	else
 		icon_state = "grill_open"
-
+	return ..()
 /obj/machinery/grill/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/stack/sheet/mineral/coal) || istype(I, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/S = I
@@ -35,7 +37,7 @@
 		else
 			grill_fuel += (50 * stackamount)
 		S.use(stackamount)
-		update_icon()
+		update_appearance()
 		return
 	if(I.resistance_flags & INDESTRUCTIBLE)
 		to_chat(user, "<span class='warning'>You don't feel it would be wise to grill [I]...</span>")
@@ -55,7 +57,7 @@
 				grilled_item = food_item
 				grilled_item.foodtype |= GRILLED
 				to_chat(user, "<span class='notice'>You put the [grilled_item] on [src].</span>")
-				update_icon()
+				update_appearance()
 				grill_loop.start()
 				return
 		else
@@ -63,13 +65,13 @@
 				grill_fuel += (20 * (I.reagents.get_reagent_amount(/datum/reagent/consumable/monkey_energy)))
 				to_chat(user, "<span class='notice'>You pour the Monkey Energy in [src].</span>")
 				I.reagents.remove_reagent(/datum/reagent/consumable/monkey_energy, I.reagents.get_reagent_amount(/datum/reagent/consumable/monkey_energy))
-				update_icon()
+				update_appearance()
 				return
 	..()
 
 /obj/machinery/grill/process()
 	..()
-	update_icon()
+	update_appearance()
 	if(!grill_fuel)
 		return
 	else
@@ -88,11 +90,12 @@
 	if(AM == grilled_item)
 		finish_grill()
 		grilled_item = null
-	..()
+	. = ..()
 
 /obj/machinery/grill/Destroy()
-	grilled_item = null
-	. = ..()
+	QDEL_NULL(grilled_item)
+	QDEL_NULL(grill_loop)
+	return ..()
 
 /obj/machinery/grill/handle_atom_del(atom/A)
 	if(A == grilled_item)
@@ -118,7 +121,7 @@
 	if(grilled_item)
 		to_chat(user, "<span class='notice'>You take out [grilled_item] from [src].</span>")
 		grilled_item.forceMove(drop_location())
-		update_icon()
+		update_appearance()
 		return
 	return ..()
 
@@ -144,3 +147,34 @@
 
 /obj/machinery/grill/unwrenched
 	anchored = FALSE
+
+//I JUST WANNYA GWIWW FOW GAWD'S SAKE
+
+/obj/machinery/grill/cat
+	name = "catgrill"
+	desc = "Is this what the youngins are into now?"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "catgrill_open"
+	anchored = FALSE
+
+/obj/machinery/grill/cat/update_icon_state()
+	if(grilled_item)
+		icon_state = "catgrill"
+	else if(grill_fuel)
+		icon_state = "catgrill_on"
+	else
+		icon_state = "catgrill_open"
+	return ..()
+
+/obj/machinery/grill/cat/proc/owoify()
+	var/static/regex/owo = new("r|l", "g")
+	var/static/regex/oWo = new("R|L", "g")
+	var/static/regex/Nya = new("N(a|e|i|o|u)", "g")
+	// Forgive me marg for I have sinned
+	grilled_item.name = owo.Replace(grilled_item.name, "w")
+	grilled_item.name = oWo.Replace(grilled_item.name, "w")
+	grilled_item.name = Nya.Replace(grilled_item.name, "Ny$1")
+
+/obj/machinery/grill/cat/finish_grill()
+	..()
+	owoify()

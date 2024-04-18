@@ -49,6 +49,7 @@
 	if (A)
 		A.air_vent_names -= id_tag
 		A.air_vent_info -= id_tag
+		deallocate_nameid(A.air_vent_ids, id_tag)
 	if(aac)
 		aac.vents -= src
 
@@ -68,7 +69,7 @@
 		icon_state = "vent_welded"
 		return
 
-	if(!nodes[1] || !on || !is_operational())
+	if(!nodes[1] || !on || !is_operational)
 		if(icon_state == "vent_welded")
 			icon_state = "vent_off"
 			return
@@ -95,10 +96,10 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/process_atmos()
 	..()
-	if(!is_operational())
+	if(!is_operational)
 		return
 	if(!nodes[1])
-		on = FALSE
+		return
 	if(!on || welded)
 		return
 
@@ -163,7 +164,8 @@
 
 	var/area/A = get_area(src)
 	if(!A.air_vent_names[id_tag])
-		name = "\improper [A.name] vent pump #[A.air_vent_names.len + 1]"
+		var/nameid = allocate_nameid(A.air_vent_ids, id_tag)
+		name = "\improper [A.name] vent pump #[nameid]"
 		A.air_vent_names[id_tag] = name
 	A.air_vent_info[id_tag] = signal.data
 
@@ -180,7 +182,7 @@
 	..()
 
 /obj/machinery/atmospherics/components/unary/vent_pump/receive_signal(datum/signal/signal)
-	if(!is_operational())
+	if(!is_operational)
 		return
 	// log_admin("DEBUG \[[world.timeofday]\]: /obj/machinery/atmospherics/components/unary/vent_pump/receive_signal([signal.debug_print()])")
 	if(!signal.data["tag"] || (signal.data["tag"] != id_tag) || (signal.data["sigtype"]!="command"))
@@ -248,7 +250,7 @@
 
 		// log_admin("DEBUG \[[world.timeofday]\]: vent_pump/receive_signal: unknown command \"[signal.data["command"]]\"\n[signal.debug_print()]")
 	broadcast_status()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/components/unary/vent_pump/welder_act(mob/living/user, obj/item/I)
 	..()
@@ -262,7 +264,7 @@
 		else
 			user.visible_message("<span class='notice'>[user] unwelded the vent.</span>", "<span class='notice'>You unweld the vent.</span>", "<span class='hear'>You hear welding.</span>")
 			welded = FALSE
-		update_icon()
+		update_appearance()
 		pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
 		pipe_vision_img.plane = ABOVE_HUD_PLANE
 		investigate_log("was [welded ? "welded shut" : "unwelded"] by [key_name(user)]", INVESTIGATE_ATMOS)
@@ -271,7 +273,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational())
+	if(. && on && is_operational)
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 
@@ -292,7 +294,7 @@
 		return
 	user.visible_message("<span class='warning'>[user] furiously claws at [src]!</span>", "<span class='notice'>You manage to clear away the stuff blocking the vent.</span>", "<span class='hear'>You hear loud scraping noises.</span>")
 	welded = FALSE
-	update_icon()
+	update_appearance()
 	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
 	pipe_vision_img.plane = ABOVE_HUD_PLANE
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, TRUE)
@@ -310,7 +312,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/layer1
 	piping_layer = 1
-	icon_state = "vent_map-1"
+	icon_state = "vent_map-2"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/layer2
 	piping_layer = 2
@@ -326,7 +328,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1
 	piping_layer = 1
-	icon_state = "vent_map_on-1"
+	icon_state = "vent_map_on-2"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2
 	piping_layer = 2
@@ -356,7 +358,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer1
 	piping_layer = 1
-	icon_state = "vent_map_siphon_on-1"
+	icon_state = "vent_map_siphon_on-2"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/on/layer2
 	piping_layer = 2
@@ -404,7 +406,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/layer4
 	piping_layer = 4
-	icon_state = "map_vent-4"
+	icon_state = "vent_map-4"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on
 	on = TRUE
@@ -416,7 +418,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/on/layer4
 	piping_layer = 4
-	icon_state = "map_vent_on-4"
+	icon_state = "vent_map_on-4"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon
 	pump_direction = SIPHONING
@@ -430,7 +432,7 @@
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/layer4
 	piping_layer = 4
-	icon_state = "map_vent-4"
+	icon_state = "vent_map-4"
 
 /obj/machinery/atmospherics/components/unary/vent_pump/high_volume/siphon/on
 	on = TRUE

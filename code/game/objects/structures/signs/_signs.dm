@@ -1,5 +1,5 @@
 /obj/structure/sign
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "backing"
 	name = "sign backing"
 	desc = "A plastic sign backing, use a pen to change the decal. It can be detached from the wall with a wrench."
@@ -22,7 +22,7 @@
 /obj/item/sign
 	name = "sign backing"
 	desc = "A plastic sign backing, use a pen to change the decal. It can be placed on a wall."
-	icon = 'icons/obj/decals.dmi'
+	icon = 'icons/obj/structures/signs/sign.dmi'
 	icon_state = "backing"
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/plastic = 2000)
@@ -47,10 +47,10 @@
 	user.examinate(src)
 
 /**
-  * This proc populates GLOBAL_LIST_EMPTY(editable_sign_types)
-  *
-  * The first time a pen is used on any sign, this populates GLOBAL_LIST_EMPTY(editable_sign_types), creating a global list of all the signs that you can set a sign backing to with a pen.
-  */
+ * This proc populates GLOBAL_LIST_EMPTY(editable_sign_types)
+ *
+ * The first time a pen is used on any sign, this populates GLOBAL_LIST_EMPTY(editable_sign_types), creating a global list of all the signs that you can set a sign backing to with a pen.
+ */
 /proc/populate_editable_sign_types()
 	for(var/s in subtypesof(/obj/structure/sign))
 		var/obj/structure/sign/potential_sign = s
@@ -61,6 +61,9 @@
 
 /obj/structure/sign/wrench_act(mob/living/user, obj/item/wrench/I)
 	. = ..()
+	//If it's not buildable, just make them hit it with the wrench.
+	if(!buildable_sign)
+		return FALSE
 	user.visible_message(
 		"<span class='notice'>[user] starts removing [src]...</span>", \
 		"<span class='notice'>You start unfastening [src].</span>")
@@ -94,7 +97,7 @@
 	user.visible_message(
 		"<span class='notice'>[user] starts repairing [src]...</span>", \
 		"<span class='notice'>You start repairing [src].</span>")
-	if(!I.use_tool(src, user, 4 SECONDS, volume =50 ))
+	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
 		"<span class='notice'>[user] finishes repairing [src].</span>", \
@@ -114,7 +117,7 @@
 	user.visible_message(
 		"<span class='notice'>[user] starts repairing [src]...</span>", \
 		"<span class='notice'>You start repairing [src].</span>")
-	if(!I.use_tool(src, user, 4 SECONDS, volume =50 ))
+	if(!I.use_tool(src, user, 4 SECONDS, volume =50))
 		return TRUE
 	user.visible_message(
 		"<span class='notice'>[user] finishes repairing [src].</span>", \
@@ -231,3 +234,76 @@
 	desc = "A sign with the Donk Co. logo on it. Fight for your Donk Pockets!"
 	icon_state = "donkco"
 	is_editable = TRUE
+
+// some solgov stuff
+/obj/structure/sign/solgov_seal
+	name = "Seal of the solarian government"
+	desc = "A seal emblazened with a gold trim depicting the star, sol."
+	icon = 'icons/obj/solgov_logos.dmi'
+	icon_state = "solgovseal"
+	pixel_y = 27
+
+/obj/structure/sign/solgov_flag
+	name = "solgov banner"
+	desc = "A large flag displaying the logo of solgov, the local government of the sol system."
+	icon = 'icons/obj/solgov_logos.dmi'
+	icon_state = "solgovflag-left"
+
+// clip seal
+/obj/structure/sign/clip
+	name = "Banner of the Confederated League of Independent Planets"
+	desc = "A seal representing the many colonies comprising the League."
+	icon_state = "clip"
+
+//Numeral signs
+
+/obj/structure/sign/number
+	name = "zero"
+	desc = "A numeral sign."
+	icon = 'icons/turf/decals.dmi'
+	icon_state = "0"
+
+/obj/structure/sign/number/one
+	name = "one"
+	icon_state = "1"
+
+/obj/structure/sign/number/two
+	name = "two"
+	icon_state = "2"
+
+/obj/structure/sign/number/three
+	name = "three"
+	icon_state = "3"
+
+/obj/structure/sign/number/four
+	name = "four"
+	icon_state = "4"
+
+/obj/structure/sign/number/five
+	name = "five"
+	icon_state = "5"
+
+/obj/structure/sign/number/six
+	name = "six"
+	icon_state = "6"
+
+/obj/structure/sign/number/seven
+	name = "seven"
+	icon_state = "7"
+
+/obj/structure/sign/number/eight
+	name = "eight"
+	icon_state = "8"
+
+/obj/structure/sign/number/nine
+	name = "nine"
+	icon_state = "9"
+
+/obj/structure/sign/number/random
+	name = "numeral sign"
+	icon_state = "0"
+
+/obj/structure/sign/number/random/Initialize()
+	icon_state = "[rand(0, 9)]"
+	update_icon_state()
+	. = ..()

@@ -52,13 +52,14 @@
 #define HIDESUITSTORAGE (1<<1)
 #define HIDEJUMPSUIT (1<<2)	//these first four are only used in exterior suits
 #define HIDESHOES (1<<3)
-#define HIDEMASK (1<<4)	//these last six are only used in masks and headgear.
-#define HIDEEARS (1<<5)	// (ears means headsets and such)
-#define HIDEEYES (1<<6)	// Whether eyes and glasses are hidden
-#define HIDEFACE (1<<7)	// Whether we appear as unknown.
+#define HIDEMASK (1<<4)		//these last six are only used in masks and headgear.
+#define HIDEEARS (1<<5)		// (ears means headsets and such)
+#define HIDEEYES (1<<6)		// Whether eyes and glasses are hidden
+#define HIDEFACE (1<<7)		// Whether we appear as unknown.
 #define HIDEHAIR (1<<8)
 #define HIDEFACIALHAIR (1<<9)
 #define HIDENECK (1<<10)
+#define HIDEHORNS (1<<11) 	// Used for hiding Sarathi horns.
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)
@@ -83,19 +84,17 @@
 #define LEFT_HANDS 1
 #define RIGHT_HANDS 2
 
-//flags for female outfits: How much the game can safely "take off" the uniform without it looking weird
-#define NO_FEMALE_UNIFORM 0
-#define FEMALE_UNIFORM_FULL 1
-#define FEMALE_UNIFORM_TOP 2
-
 //flags for alternate styles: These are hard sprited so don't set this if you didn't put the effort in
 #define NORMAL_STYLE 0
 #define ALT_STYLE 1
 #define DIGITIGRADE_STYLE 2
 
-//flags for outfits that have mutantrace variants (try not to use this): Currently only needed if you're trying to add tight fitting bootyshorts
-#define NO_MUTANTRACE_VARIATION 0
-#define MUTANTRACE_VARIATION 1
+//This system takes priority over Sprite Sheets.
+#define NO_VARIATION (1<<0)
+#define DIGITIGRADE_VARIATION (1<<1)
+#define DIGITIGRADE_VARIATION_NO_NEW_ICON (1<<2)
+#define VOX_VARIATION (1<<3)
+#define KEPORI_VARIATION (1<<4)
 
 #define NOT_DIGITIGRADE 0
 #define FULL_DIGITIGRADE 1
@@ -161,6 +160,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/gun/ballistic,
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
+	/obj/item/flamethrower,
 	/obj/item/kitchen/knife/combat,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,

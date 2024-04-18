@@ -5,7 +5,7 @@
 	icon_state = "bow"
 	item_state = "pipebow"
 	load_sound = null
-	fire_sound = 'whitesands/sound/weapons/bowfire.ogg'
+	fire_sound = 'sound/weapons/bowfire.ogg'
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
@@ -17,12 +17,9 @@
 	bolt_type = BOLT_TYPE_NO_BOLT
 	var/drawn = FALSE
 
-/obj/item/gun/ballistic/bow/update_icon()
+/obj/item/gun/ballistic/bow/update_icon_state()
 	. = ..()
-	if(!chambered)
-		icon_state = "[initial(icon_state)]"
-	else
-		icon_state = "[initial(icon_state)]_[drawn]"
+	icon_state = chambered ? "bow_[drawn]" : "bow"
 
 /obj/item/gun/ballistic/bow/chamber_round(keep_bullet = FALSE, spin_cylinder, replace_new_round)
 	if(chambered || !magazine)
@@ -31,13 +28,13 @@
 		chambered = magazine.get_round(TRUE)
 		chambered.forceMove(src)
 
-/obj/item/gun/ballistic/bow/attack_self(mob/user)
+/obj/item/gun/ballistic/bow/unique_action(mob/living/user)
 	if(chambered)
 		to_chat(user, "<span class='notice'>You [drawn ? "release" : "draw"] [src]'s string.</span>")
 		if(!drawn)
-			playsound(src, 'whitesands/sound/weapons/bowdraw.ogg', 75, 0)
+			playsound(src, 'sound/weapons/bowdraw.ogg', 75, 0)
 		drawn = !drawn
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/bow/afterattack(atom/target, mob/living/user, flag, params, passthrough = FALSE)
 	if(!chambered)
@@ -47,14 +44,14 @@
 		return
 	drawn = FALSE
 	. = ..() //fires, removing the arrow
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/bow/shoot_with_empty_chamber(mob/living/user)
 	return //so clicking sounds please
 
 /obj/item/ammo_casing/caseless/arrow/despawning/dropped()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/floor_vanish), 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(floor_vanish)), 5 SECONDS)
 
 /obj/item/ammo_casing/caseless/arrow/despawning/proc/floor_vanish()
 	if(isturf(loc))
@@ -85,3 +82,23 @@
 
 /obj/item/storage/bag/quiver/despawning
 	arrow_path = /obj/item/ammo_casing/caseless/arrow/despawning
+
+/obj/item/gun/ballistic/bow/ashen
+	name = "Bone Bow"
+	desc = "Some sort of primitive projectile weapon made of bone and wrapped sinew."
+	icon_state = "ashenbow"
+	item_state = "ashenbow"
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 8
+
+/obj/item/gun/ballistic/bow/pipe
+	name = "Pipe Bow"
+	desc = "A crude projectile weapon made from silk string, pipe and lots of bending."
+	icon_state = "pipebow"
+	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
+	force = 7
+
+/obj/item/storage/bag/quiver/empty
+	name = "leather quiver"
+	desc = "A quiver made from the hide of some animal. Used to hold arrows."
+	arrow_path = null

@@ -33,6 +33,9 @@
 	user.get_mentor_say()
 	return TRUE
 
+/datum/keybinding/admin/mentor_say/can_use(client/user)
+	return check_mentor(user)
+
 /datum/keybinding/admin/admin_ghost
 	hotkey_keys = list("F5")
 	name = "admin_ghost"

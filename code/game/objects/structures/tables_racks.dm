@@ -36,15 +36,22 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TABLES)
 	canSmoothWith = list(SMOOTH_GROUP_TABLES)
+	/// The type created when this table is flipped
+	var/flipped_table_type = /obj/structure/flippedtable
+	/// Whether or not this table can actually be flipped. TODO: Make setting flipped_table_type to null do this instead and remove this var
+	var/can_flip = TRUE
 
 /obj/structure/table/examine(mob/user)
 	. = ..()
 	. += deconstruction_hints(user)
+	if(can_flip)
+		. += "<span class='notice'>You can flip it by control shift-clicking the table.</span>"
 
 /obj/structure/table/proc/deconstruction_hints(mob/user)
 	return "<span class='notice'>The top is <b>screwed</b> on, but the main <b>bolts</b> are also visible.</span>"
 
 /obj/structure/table/update_icon()
+	. = ..()
 	if(smoothing_flags & (SMOOTH_CORNERS|SMOOTH_BITMASK))
 		QUEUE_SMOOTH(src)
 		QUEUE_SMOOTH_NEIGHBORS(src)
@@ -91,7 +98,7 @@
 /obj/structure/table/attack_tk()
 	return FALSE
 
-/obj/structure/table/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/table/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
@@ -151,6 +158,7 @@
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_headsmash)
 
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
+	var/list/modifiers = params2list(params)
 	if(!(flags_1 & NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
 		if(I.tool_behaviour == TOOL_SCREWDRIVER && deconstruction_ready)
 			to_chat(user, "<span class='notice'>You start disassembling [src]...</span>")
@@ -206,13 +214,12 @@
 
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location(), silent = FALSE))
-			var/list/click_params = params2list(params)
 			//Center the icon where the user clicked.
-			if(!click_params || !click_params["icon-x"] || !click_params["icon-y"])
+			if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
 				return
 			//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
-			I.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
-			I.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
+			I.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+			I.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 			AfterPutItemOnTable(I, user)
 			return TRUE
 	else
@@ -220,6 +227,28 @@
 
 /obj/structure/table/proc/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	return
+
+/obj/structure/table/CtrlShiftClick(mob/living/user) // table flipping
+	. = ..()
+	if(!istype(user) || !user.can_interact_with(src))
+		return
+	if(can_flip)
+		user.visible_message("<span class='danger'>[user] starts flipping [src]!</span>", "<span class='notice'>You start flipping over the [src]!</span>")
+		if(do_after(user, max_integrity/4))
+			var/obj/structure/flippedtable/flipped = new flipped_table_type(src.loc)
+			flipped.name = "flipped [src.name]"
+			flipped.desc = "[src.desc] It is flipped!"
+			flipped.icon_state = src.base_icon_state
+			var/new_dir = get_dir(user, flipped)
+			flipped.dir = new_dir
+			if(new_dir == NORTH)
+				flipped.layer = BELOW_MOB_LAYER
+			flipped.max_integrity = src.max_integrity
+			flipped.obj_integrity = src.obj_integrity
+			flipped.table_type = src.type
+			user.visible_message("<span class='danger'>[user] flips over the [src]!</span>", "<span class='notice'>You flip over the [src]!</span>")
+			playsound(src, 'sound/items/trayhit2.ogg', 100)
+			qdel(src)
 
 /obj/structure/table/deconstruct(disassembled = TRUE, wrench_disassembly = 0)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -244,6 +273,17 @@
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	buildstack = null //No buildstack, so generate from mat datums
 
+/obj/structure/table/chem
+	name = "chemistry counter"
+	desc = "A square piece of metal designed to be resistant to any chemical spill."
+	icon = 'icons/obj/smooth_structures/table_chem.dmi'
+	icon_state = "table_chem-0"
+	base_icon_state = "table_chem"
+	smoothing_groups = list(SMOOTH_GROUP_CHEM_TABLES)
+	canSmoothWith = list(SMOOTH_GROUP_CHEM_TABLES)
+	buildstack = /obj/item/stack/sheet/mineral/plastitanium
+	can_flip = FALSE
+
 ///Table on wheels
 /obj/structure/table/rolling
 	name = "Rolling table"
@@ -254,12 +294,13 @@
 	canSmoothWith = null
 	icon = 'icons/obj/smooth_structures/rollingtable.dmi'
 	icon_state = "rollingtable"
+	can_flip = FALSE
 	var/list/attached_items = list()
 
 /obj/structure/table/rolling/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	. = ..()
 	attached_items += I
-	RegisterSignal(I, COMSIG_MOVABLE_MOVED, .proc/RemoveItemFromTable) //Listen for the pickup event, unregister on pick-up so we aren't moved
+	RegisterSignal(I, COMSIG_MOVABLE_MOVED, PROC_REF(RemoveItemFromTable)) //Listen for the pickup event, unregister on pick-up so we aren't moved
 
 /obj/structure/table/rolling/proc/RemoveItemFromTable(datum/source, newloc, dir)
 	SIGNAL_HANDLER
@@ -271,6 +312,9 @@
 
 /obj/structure/table/rolling/Moved(atom/OldLoc, Dir)
 	. = ..()
+	//Nullspaced
+	if(!loc)
+		return
 	for(var/mob/M in OldLoc.contents)//Kidnap everyone on top
 		M.forceMove(loc)
 	for(var/x in attached_items)
@@ -295,24 +339,31 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	var/list/debris = list()
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/structure/table/glass/Initialize()
 	. = ..()
 	debris += new frame
 	debris += new /obj/item/shard
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/table/glass/Destroy()
 	QDEL_LIST(debris)
 	. = ..()
 
-/obj/structure/table/glass/Crossed(atom/movable/AM)
-	. = ..()
+/obj/structure/table/glass/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(flags_1 & NODECONSTRUCT_1)
 		return
 	if(!isliving(AM))
 		return
 	// Don't break if they're just flying past
 	if(AM.throwing)
-		addtimer(CALLBACK(src, .proc/throw_check, AM), 5)
+		addtimer(CALLBACK(src, PROC_REF(throw_check), AM), 5)
 	else
 		check_break(AM)
 
@@ -375,6 +426,8 @@
 	smoothing_groups = list(SMOOTH_GROUP_WOOD_TABLES) //Don't smooth with SMOOTH_GROUP_TABLES
 	canSmoothWith = list(SMOOTH_GROUP_WOOD_TABLES)
 
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
+
 /obj/structure/table/wood/narsie_act(total_override = TRUE)
 	if(!total_override)
 		..()
@@ -412,58 +465,54 @@
 	icon = smooth_icon
 
 /obj/structure/table/wood/fancy/black
-	icon_state = "fancy_table_black"
 	base_icon_state = "fancy_table_black"
 	buildstack = /obj/item/stack/tile/carpet/black
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_black.dmi'
 
 /obj/structure/table/wood/fancy/blue
-	icon_state = "fancy_table_blue"
 	base_icon_state = "fancy_table_blue"
 	buildstack = /obj/item/stack/tile/carpet/blue
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_blue.dmi'
 
 /obj/structure/table/wood/fancy/cyan
-	icon_state = "fancy_table_cyan"
 	base_icon_state = "fancy_table_cyan"
 	buildstack = /obj/item/stack/tile/carpet/cyan
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_cyan.dmi'
 
 /obj/structure/table/wood/fancy/green
-	icon_state = "fancy_table_green"
 	base_icon_state = "fancy_table_green"
 	buildstack = /obj/item/stack/tile/carpet/green
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_green.dmi'
 
 /obj/structure/table/wood/fancy/orange
-	icon_state = "fancy_table_orange"
 	base_icon_state = "fancy_table_orange"
 	buildstack = /obj/item/stack/tile/carpet/orange
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_orange.dmi'
 
 /obj/structure/table/wood/fancy/purple
-	icon_state = "fancy_table_purple"
 	base_icon_state = "fancy_table_purple"
 	buildstack = /obj/item/stack/tile/carpet/purple
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_purple.dmi'
 
 /obj/structure/table/wood/fancy/red
-	icon_state = "fancy_table_red"
 	base_icon_state = "fancy_table_red"
 	buildstack = /obj/item/stack/tile/carpet/red
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
 
 /obj/structure/table/wood/fancy/royalblack
-	icon_state = "fancy_table_royalblack"
 	base_icon_state = "fancy_table_royalblack"
 	buildstack = /obj/item/stack/tile/carpet/royalblack
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblack.dmi'
 
 /obj/structure/table/wood/fancy/royalblue
-	icon_state = "fancy_table_royalblue"
 	base_icon_state = "fancy_table_royalblue"
 	buildstack = /obj/item/stack/tile/carpet/royalblue
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
+
+/obj/structure/table/wood/fancy/red_gold
+	base_icon_state = "fancy_table_red"
+	buildstack = /obj/item/stack/tile/carpet/red_gold
+	smooth_icon = 'icons/obj/smooth_structures/fancy_table_red.dmi'
 
 /*
  * Reinforced tables
@@ -479,6 +528,7 @@
 	max_integrity = 200
 	integrity_failure = 0.25
 	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
+	can_flip = FALSE //It's bolted to the ground mate
 
 /obj/structure/table/reinforced/deconstruction_hints(mob/user)
 	if(deconstruction_ready)
@@ -526,15 +576,16 @@
 /obj/structure/table/optable
 	name = "operating table"
 	desc = "Used for advanced medical procedures."
-	icon = 'icons/obj/surgery.dmi'
-	icon_state = "optable"
+	icon = 'icons/obj/surgery_table.dmi'
+	icon_state = "surgery_table"
 	buildstack = /obj/item/stack/sheet/mineral/silver
 	smoothing_flags = NONE
 	smoothing_groups = null
 	canSmoothWith = null
-	can_buckle = 1
-	buckle_lying = NO_BUCKLE_LYING
-	buckle_requires_restraints = TRUE
+	can_buckle = TRUE
+	buckle_lying = 90 //I don't see why you wouldn't be lying down while buckled to it
+	buckle_requires_restraints = FALSE
+	can_flip = FALSE
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
 
@@ -560,10 +611,21 @@
 /obj/structure/table/optable/proc/get_patient()
 	var/mob/living/carbon/M = locate(/mob/living/carbon) in loc
 	if(M)
-		if(M.resting)
-			patient = M
+		if(M.resting || M.buckled == src)
+			set_patient(M)
 	else
-		patient = null
+		set_patient(null)
+
+/obj/structure/table/optable/proc/set_patient(new_patient)
+	if(patient)
+		UnregisterSignal(patient, COMSIG_PARENT_QDELETING)
+	patient = new_patient
+	if(patient)
+		RegisterSignal(patient, COMSIG_PARENT_QDELETING, PROC_REF(patient_deleted))
+
+/obj/structure/table/optable/proc/patient_deleted(datum/source)
+	SIGNAL_HANDLER
+	set_patient(null)
 
 /obj/structure/table/optable/proc/check_eligible_patient()
 	get_patient()
@@ -591,7 +653,7 @@
 	. = ..()
 	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
 
-/obj/structure/rack/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/structure/rack/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
@@ -600,7 +662,7 @@
 
 /obj/structure/rack/MouseDrop_T(obj/O, mob/user)
 	. = ..()
-	if ((!( istype(O, /obj/item) ) || user.get_active_held_item() != O))
+	if ((!(istype(O, /obj/item)) || user.get_active_held_item() != O))
 		return
 	if(!user.dropItemToGround(O))
 		return
@@ -615,7 +677,9 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+		W.pixel_x = pick(9,0,-9)
+		W.pixel_y = pick(10,1)
+		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)
@@ -665,6 +729,7 @@
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron=2000)
 	var/building = FALSE
+	var/obj/construction_type = /obj/structure/rack
 
 /obj/item/rack_parts/attackby(obj/item/W, mob/user, params)
 	if (W.tool_behaviour == TOOL_WRENCH)
@@ -674,16 +739,59 @@
 		. = ..()
 
 /obj/item/rack_parts/attack_self(mob/user)
+	if(locate(construction_type) in get_turf(user))
+		balloon_alert(user, "no room!")
+		return
 	if(building)
 		return
 	building = TRUE
-	to_chat(user, "<span class='notice'>You start constructing a rack...</span>")
+	to_chat(user, "<span class='notice'>You start assembling [src]...</span>")
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
-		var/obj/structure/rack/R = new /obj/structure/rack(user.loc)
+		var/obj/structure/R = new construction_type(user.loc)
 		user.visible_message("<span class='notice'>[user] assembles \a [R].\
 			</span>", "<span class='notice'>You assemble \a [R].</span>")
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE
+
+/obj/structure/table/wood/reinforced //a reinforced version of the regular wooden table, primarily for use in solgov outposts or ships
+	name = "reinforced wooden table"
+	desc = "A reinforced version of the four-legged wooden table. Likely as easy to burn as a normal one."
+	icon = 'icons/obj/smooth_structures/reinforced_wood_table.dmi'
+	icon_state = "reinforced_wood_table-0"
+	base_icon_state = "reinforced_wood_table"
+	deconstruction_ready = 0
+	buildstack = /obj/item/stack/sheet/plasteel
+	resistance_flags = FLAMMABLE
+	max_integrity = 200
+	integrity_failure = 0.25
+	armor = list("melee" = 10, "bullet" = 30, "laser" = 30, "energy" = 100, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70) //trolld
+	can_flip = FALSE //same as reinforced and theres no sprites for it
+
+	hitsound_type = PROJECTILE_HITSOUND_WOOD
+
+/obj/structure/table/wood/reinforced/deconstruction_hints(mob/user)
+	if(deconstruction_ready)
+		return "<span class='notice'>The top cover has been <i>pried</i> loose and the main frame's <b>bolts</b> are exposed.</span>"
+	else
+		return "<span class='notice'>The top cover is firmly stuck on, but could be <i>pried</i> off with considerable effort.</span>"
+
+/obj/structure/table/wood/reinforced/attackby(obj/item/W, mob/user, params)
+	if(W.tool_behaviour == TOOL_CROWBAR && user.a_intent != INTENT_HELP)
+		if(!W.tool_start_check(user, amount=0))
+			return
+
+		if(deconstruction_ready)
+			to_chat(user, "<span class='notice'>You begin levering the top cover back in place...</span>")
+			if (W.use_tool(src, user, 50, volume=50))
+				to_chat(user, "<span class='notice'>You pry the top cover back into place.</span>")
+				deconstruction_ready = 0
+		else
+			to_chat(user, "<span class='notice'>You start prying off the top cover...</span>")
+			if (W.use_tool(src, user, 50, volume=50))
+				to_chat(user, "<span class='notice'>You pry off the top cover.</span>")
+				deconstruction_ready = 1
+	else
+		. = ..()

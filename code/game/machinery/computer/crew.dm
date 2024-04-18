@@ -12,6 +12,16 @@
 
 	light_color = LIGHT_COLOR_BLUE
 
+/obj/machinery/computer/crew/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/crew/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/crew/syndie
 	icon_keyboard = "syndie_key"
 
@@ -22,59 +32,8 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 
 /datum/crewmonitor
 	var/list/ui_sources = list() //List of user -> ui source
-	var/list/jobs
 	var/list/data_by_z = list()
 	var/list/last_update = list()
-
-/datum/crewmonitor/New()
-	. = ..()
-
-	var/list/jobs = new/list()
-	jobs["Captain"] = 00
-	jobs["Head of Personnel"] = 02
-	jobs["SolGov Representative"] = 05		//WS Edit - SolGov Rep
-	jobs["Head of Security"] = 10
-	jobs["Warden"] = 11
-	jobs["Security Officer"] = 12
-	jobs["Detective"] = 13
-	jobs["Brig Physician"] = 14
-	jobs["Chief Medical Officer"] = 20
-	jobs["Chemist"] = 21
-	jobs["Virologist"] = 22
-	jobs["Medical Doctor"] = 23
-	jobs["Paramedic"] = 24
-	jobs["Research Director"] = 30
-	jobs["Scientist"] = 31
-	jobs["Roboticist"] = 32
-	jobs["Geneticist"] = 33
-	jobs["Chief Engineer"] = 40
-	jobs["Station Engineer"] = 41
-	jobs["Atmospheric Technician"] = 42
-	jobs["Quartermaster"] = 51
-	jobs["Shaft Miner"] = 52
-	jobs["Cargo Technician"] = 53
-	jobs["Bartender"] = 61
-	jobs["Cook"] = 62
-	jobs["Botanist"] = 63
-	jobs["Curator"] = 64
-	jobs["Chaplain"] = 65
-	jobs["Clown"] = 66
-	jobs["Mime"] = 67
-	jobs["Janitor"] = 68
-	jobs["Lawyer"] = 69
-	jobs["Psychologist"] = 70
-	jobs["Admiral"] = 200
-	jobs["CentCom Commander"] = 210
-	jobs["Custodian"] = 211
-	jobs["Medical Officer"] = 212
-	jobs["Research Officer"] = 213
-	jobs["Emergency Response Team Commander"] = 220
-	jobs["Security Response Officer"] = 221
-	jobs["Engineer Response Officer"] = 222
-	jobs["Medical Response Officer"] = 223
-	jobs["Assistant"] = 999 //Unknowns/custom jobs should appear after civilians, and before assistants
-
-	src.jobs = jobs
 
 /datum/crewmonitor/Destroy()
 	return ..()
@@ -85,6 +44,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		ui = new(user, src, "CrewConsole")
 		ui.open()
 
+/datum/crewmonitor/ui_close(mob/user)
+	ui_sources -= user
+	return ..()
+
 /datum/crewmonitor/proc/show(mob/M, source)
 	ui_sources[M] = source
 	ui_interact(M)
@@ -93,11 +56,11 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	return ui_sources[user]
 
 /datum/crewmonitor/ui_data(mob/user)
-	var/z = user.get_virtual_z_level()
+	var/z = user.virtual_z()
+	var/turf/T = get_turf(user)
 	if(!z)
-		var/turf/T = get_turf(user)
-		z = T.get_virtual_z_level()
-	var/list/zdata = update_data(z, SSmapping.level_trait(z, ZTRAIT_STATION))
+		z = T.virtual_z()
+	var/list/zdata = update_data(z, T.virtual_level_trait(ZTRAIT_STATION))
 	. = list()
 	.["sensors"] = zdata
 	.["link_allowed"] = isAI(user)
@@ -107,22 +70,23 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		return data_by_z["[z]"]
 
 	var/list/results = list()
-	var/obj/item/clothing/under/U
-	var/obj/item/card/id/I
-	var/turf/pos
-	var/ijob
-	var/name
-	var/assignment
-	var/oxydam
-	var/toxdam
-	var/burndam
-	var/brutedam
-	var/area
-	var/pos_x
-	var/pos_y
-	var/life_status
 
 	for(var/i in GLOB.human_list)
+		var/obj/item/clothing/under/U
+		var/obj/item/card/id/I
+		var/turf/pos
+		var/ijob = JOB_DISPLAY_ORDER_DEFAULT
+		var/name = "Unknown"
+		var/assignment
+		var/oxydam
+		var/toxdam
+		var/burndam
+		var/brutedam
+		var/area
+		var/pos_x
+		var/pos_y
+		var/life_status
+
 		var/mob/living/carbon/human/H = i
 		var/nanite_sensors = FALSE
 		if(H in SSnanites.nanite_monitored_mobs)
@@ -130,7 +94,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 		// Check if their z-level is correct and if they are wearing a uniform.
 		// Accept H.z==0 as well in case the mob is inside an object.
 		// Accept any station zlevel if the console user is on a station zlevel
-		if ((H.z == 0 || H.get_virtual_z_level() == z || (station && SSmapping.level_trait(H.z, ZTRAIT_STATION))) && (istype(H.w_uniform, /obj/item/clothing/under) || nanite_sensors))
+		if ((H.z == 0 || H.virtual_z() == z || (station && H.virtual_level_trait(ZTRAIT_STATION))) && (istype(H.w_uniform, /obj/item/clothing/under) || nanite_sensors))
 			U = H.w_uniform
 
 			// Are the suit sensors on?
@@ -138,7 +102,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 				pos = H.z == 0 || (nanite_sensors || U.sensor_mode == SENSOR_COORDS) ? get_turf(H) : null
 
 				// Special case: If the mob is inside an object confirm the z-level on turf level.
-				if (H.z == 0 && (!pos || (pos.get_virtual_z_level() != z)))
+				if (H.z == 0 && (!pos || (pos.virtual_z() != z)))
 					continue
 
 				I = H.wear_id ? H.wear_id.GetID() : null
@@ -146,27 +110,18 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 				if (I)
 					name = I.registered_name
 					assignment = I.assignment
-					ijob = jobs[I.GetJobName()] //Why didn't it do this already - WS Edit - Alt Titles
-				else
-					name = "Unknown"
-					assignment = ""
-					ijob = 80
+					if(I.assignment in GLOB.name_occupations)
+						var/datum/job/assigned_job = GLOB.name_occupations[I.assignment]
+						ijob = assigned_job.display_order
 
 				if (nanite_sensors || U.sensor_mode >= SENSOR_LIVING)
 					life_status = ((H.stat < DEAD) ? TRUE : FALSE) //So anything less that dead is marked as alive. (Soft crit, concious, unconcious)
-				else
-					life_status = null
 
 				if (nanite_sensors || U.sensor_mode >= SENSOR_VITALS)
 					oxydam = round(H.getOxyLoss(),1)
 					toxdam = round(H.getToxLoss(),1)
 					burndam = round(H.getFireLoss(),1)
 					brutedam = round(H.getBruteLoss(),1)
-				else
-					oxydam = null
-					toxdam = null
-					burndam = null
-					brutedam = null
 
 				if (nanite_sensors || U.sensor_mode >= SENSOR_COORDS)
 					if (!pos)
@@ -174,14 +129,10 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 					area = get_area_name(H, TRUE)
 					pos_x = pos.x
 					pos_y = pos.y
-				else
-					area = null
-					pos_x = null
-					pos_y = null
 
 				results[++results.len] = list("name" = name, "assignment" = assignment, "ijob" = ijob, "life_status" = life_status, "oxydam" = oxydam, "toxdam" = toxdam, "burndam" = burndam, "brutedam" = brutedam, "area" = area, "pos_x" = pos_x, "pos_y" = pos_y, "can_track" = H.can_track(null))
 
-	data_by_z["[z]"] = sortTim(results,/proc/sensor_compare)
+	data_by_z["[z]"] = sortTim(results, /proc/sensor_compare)
 	last_update["[z]"] = world.time
 
 	return results

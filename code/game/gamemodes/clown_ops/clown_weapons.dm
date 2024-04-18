@@ -70,11 +70,18 @@
 	light_color = COLOR_YELLOW
 	var/next_trombone_allowed = 0
 
-/obj/item/melee/transforming/energy/sword/bananium/ComponentInitialize()
+/obj/item/melee/transforming/energy/sword/bananium/Initialize()
 	. = ..()
-	AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
-	var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
-	slipper.signal_enabled = active
+	adjust_slipperiness()
+
+/* Adds or removes a slippery component, depending on whether the sword
+ * is active or not.
+ */
+/obj/item/melee/transforming/energy/sword/proc/adjust_slipperiness()
+	if(active)
+		AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
+	else
+		qdel(GetComponent(/datum/component/slippery))
 
 /obj/item/melee/transforming/energy/sword/bananium/attack(mob/living/M, mob/living/user)
 	..()
@@ -97,20 +104,11 @@
 	return ..()
 
 /obj/item/melee/transforming/energy/sword/bananium/transform_weapon(mob/living/user, supress_message_text)
-	..()
-	var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
-	slipper.signal_enabled = active
+	. = ..()
+	adjust_slipperiness()
 
 /obj/item/melee/transforming/energy/sword/bananium/ignition_effect(atom/A, mob/user)
 	return ""
-
-/obj/item/melee/transforming/energy/sword/bananium/suicide_act(mob/user)
-	if(!active)
-		transform_weapon(user, TRUE)
-	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku, but the blade slips off of [user.p_them()] harmlessly!</span>")
-	var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
-	slipper.Slip(src, user)
-	return SHAME
 
 //BANANIUM SHIELD
 
@@ -127,22 +125,28 @@
 	on_throwforce = 0
 	on_throw_speed = 1
 
-/obj/item/shield/energy/bananium/ComponentInitialize()
+/obj/item/shield/energy/bananium/Initialize()
 	. = ..()
-	AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
-	var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
-	slipper.signal_enabled = active
+	adjust_slipperiness()
+
+/* Adds or removes a slippery component, depending on whether the shield
+ * is active or not.
+ */
+/obj/item/shield/energy/bananium/proc/adjust_slipperiness()
+	if(active)
+		AddComponent(/datum/component/slippery, 60, GALOSHES_DONT_HELP)
+	else
+		qdel(GetComponent(/datum/component/slippery))
 
 /obj/item/shield/energy/bananium/attack_self(mob/living/carbon/human/user)
-	..()
-	var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
-	slipper.signal_enabled = active
+	. = ..()
+	adjust_slipperiness()
 
 /obj/item/shield/energy/bananium/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
 	if(active)
 		if(iscarbon(thrower))
 			var/mob/living/carbon/C = thrower
-			C.throw_mode_on() //so they can catch it on the return.
+			C.throw_mode_on(THROW_MODE_TOGGLE) //so they can catch it on the return.
 	return ..()
 
 /obj/item/shield/energy/bananium/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -151,8 +155,9 @@
 		if(iscarbon(hit_atom) && !caught)//if they are a carbon and they didn't catch it
 			var/datum/component/slippery/slipper = GetComponent(/datum/component/slippery)
 			slipper.Slip(src, hit_atom)
-		if(thrownby && !caught)
-			addtimer(CALLBACK(src, /atom/movable.proc/throw_at, thrownby, throw_range+2, throw_speed, null, TRUE), 1)
+		var/mob/thrown_by = thrownby?.resolve()
+		if(thrown_by && !caught)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, throw_at), thrown_by, throw_range+2, throw_speed, null, TRUE), 1)
 	else
 		return ..()
 
@@ -179,8 +184,6 @@
 	bomb.det_time = det_time
 	if(iscarbon(loc))
 		to_chat(loc, "<span class='danger'>[src] begins to beep.</span>")
-		var/mob/living/carbon/C = loc
-		C.throw_mode_on()
 	bomb.preprime(loc, null, FALSE)
 
 /obj/item/grown/bananapeel/bombanana/ComponentInitialize()
@@ -190,12 +193,6 @@
 /obj/item/grown/bananapeel/bombanana/Destroy()
 	. = ..()
 	QDEL_NULL(bomb)
-
-/obj/item/grown/bananapeel/bombanana/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is deliberately slipping on the [src.name]! It looks like \he's trying to commit suicide.</span>")
-	playsound(loc, 'sound/misc/slip.ogg', 50, TRUE, -1)
-	bomb.preprime(user, 0, FALSE)
-	return (BRUTELOSS)
 
 //TEARSTACHE GRENADE
 
@@ -209,7 +206,7 @@
 	var/myloc = get_turf(src)
 	. = ..()
 	for(var/mob/living/carbon/M in view(6, myloc))
-		if(!istype(M.wear_mask, /obj/item/clothing/mask/gas/clown_hat) && !istype(M.wear_mask, /obj/item/clothing/mask/gas/mime) )
+		if(!istype(M.wear_mask, /obj/item/clothing/mask/gas/clown_hat) && !istype(M.wear_mask, /obj/item/clothing/mask/gas/mime))
 			if(!M.wear_mask || M.dropItemToGround(M.wear_mask))
 				var/obj/item/clothing/mask/fakemoustache/sticky/the_stash = new /obj/item/clothing/mask/fakemoustache/sticky()
 				M.equip_to_slot_or_del(the_stash, ITEM_SLOT_MASK, TRUE, TRUE, TRUE, TRUE)
@@ -220,7 +217,7 @@
 /obj/item/clothing/mask/fakemoustache/sticky/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)
-	addtimer(CALLBACK(src, .proc/unstick), unstick_time)
+	addtimer(CALLBACK(src, PROC_REF(unstick)), unstick_time)
 
 /obj/item/clothing/mask/fakemoustache/sticky/proc/unstick()
 	REMOVE_TRAIT(src, TRAIT_NODROP, STICKY_MOUSTACHE_TRAIT)

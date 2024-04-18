@@ -34,7 +34,7 @@ Burning extracts:
 /obj/item/slimecross/burning/grey/do_effect(mob/user)
 	var/mob/living/simple_animal/slime/S = new(get_turf(user),"grey")
 	S.visible_message("<span class='danger'>A baby slime emerges from [src], and it nuzzles [user] before burbling hungrily!</span>")
-	S.Friends[user] = 20 //Gas, gas, gas
+	S.set_friendship(user, 20) //Gas, gas, gas
 	S.bodytemperature = T0C + 400 //We gonna step on the gas.
 	S.set_nutrition(S.get_hunger_nutrition()) //Tonight, we fight!
 	..()
@@ -71,8 +71,9 @@ Burning extracts:
 	for(var/turf/open/T in range(3, get_turf(user)))
 		T.MakeSlippery(TURF_WET_PERMAFROST, min_wet_time = 10, wet_time_to_add = 5)
 	for(var/mob/living/carbon/M in range(5, get_turf(user)))
-		if(M != user)
-			M.bodytemperature = BODYTEMP_COLD_DAMAGE_LIMIT + 10 //Not quite cold enough to hurt.
+		if(M != user && iscarbon(M))
+			var/mob/living/carbon/C = M
+			M.bodytemperature = C.dna.species.bodytemp_cold_damage_limit + 10 //Not quite cold enough to hurt.
 			to_chat(M, "<span class='danger'>You feel a chill run down your spine, and the floor feels a bit slippery with frost...</span>")
 	..()
 
@@ -82,7 +83,7 @@ Burning extracts:
 
 /obj/item/slimecross/burning/metal/do_effect(mob/user)
 	for(var/turf/closed/wall/W in range(1,get_turf(user)))
-		W.dismantle_wall(1)
+		W.dismantle_wall(devastated = TRUE)
 		playsound(W, 'sound/effects/break_stone.ogg', 50, TRUE)
 	user.visible_message("<span class='danger'>[src] pulses violently, and shatters the walls around it!</span>")
 	..()
@@ -200,10 +201,10 @@ Burning extracts:
 	for(var/mob/living/simple_animal/slime/S in view(7, get_turf(user)))
 		if(user in S.Friends)
 			var/friendliness = S.Friends[user]
-			S.Friends = list()
-			S.Friends[user] = friendliness
+			S.clear_friends()
+			S.set_friendship(user, friendliness)
 		else
-			S.Friends = list()
+			S.clear_friends()
 		S.rabid = 1
 		S.visible_message("<span class='danger'>The [S] is driven into a dangerous frenzy!</span>")
 	..()
@@ -260,7 +261,7 @@ Burning extracts:
 
 /obj/item/slimecross/burning/oil/do_effect(mob/user)
 	user.visible_message("<span class='warning'>[user] activates [src]. It's going to explode!</span>", "<span class='danger'>You activate [src]. It crackles in anticipation</span>")
-	addtimer(CALLBACK(src, .proc/boom), 50)
+	addtimer(CALLBACK(src, PROC_REF(boom)), 50)
 
 /obj/item/slimecross/burning/oil/proc/boom()
 	var/turf/T = get_turf(src)

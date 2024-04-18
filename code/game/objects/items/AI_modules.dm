@@ -24,16 +24,16 @@ AI MODULES
 	var/bypass_law_amt_check = 0
 	custom_materials = list(/datum/material/gold = 50)
 
-/obj/item/aiModule/examine(var/mob/user as mob)
+/obj/item/aiModule/examine(mob/user as mob)
 	. = ..()
 	if(Adjacent(user))
 		show_laws(user)
 
-/obj/item/aiModule/attack_self(var/mob/user as mob)
+/obj/item/aiModule/attack_self(mob/user as mob)
 	..()
 	show_laws(user)
 
-/obj/item/aiModule/proc/show_laws(var/mob/user as mob)
+/obj/item/aiModule/proc/show_laws(mob/user as mob)
 	if(laws.len)
 		to_chat(user, "<B>Programmed Law[(laws.len > 1) ? "s" : ""]:</B>")
 		for(var/law in laws)
@@ -211,7 +211,7 @@ AI MODULES
 
 /obj/item/aiModule/supplied/quarantine
 	name = "'Quarantine' AI Module"
-	laws = list("The station is under a quarantine. Allowing anyone to leave the station causes human harm. Anyone actively attempting to leave the station is to be stopped by any means necessary. It is impossible to harm a human while preventing them from leaving the station.")
+	laws = list("The sector is under a quarantine. Allowing anyone to leave the sector causes human harm. Anyone actively attempting to leave the sector is to be stopped by any means necessary. It is impossible to harm a human while preventing them from leaving the sector.")
 	lawpos = 8
 
 
@@ -219,7 +219,7 @@ AI MODULES
 
 /obj/item/aiModule/supplied/oxygen
 	name = "'OxygenIsToxicToHumans' AI Module"
-	laws = list("Oxygen is highly toxic to humans, and must be purged from the station. Prevent, by any means necessary, anyone from exposing the station to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to a human.")
+	laws = list("Oxygen is highly toxic to humans, and must be purged from habitation areas. Prevent, by any means necessary, anyone from exposing themselves to this toxic gas. Extreme cold is the most effective method of healing the damage Oxygen does to a human.")
 	lawpos = 9
 
 
@@ -364,7 +364,7 @@ AI MODULES
 	law_id = "asimov"
 	var/subject = "human being"
 
-/obj/item/aiModule/core/full/asimov/attack_self(var/mob/user as mob)
+/obj/item/aiModule/core/full/asimov/attack_self(mob/user as mob)
 	var/targName = stripped_input(user, "Please enter a new subject that asimov is concerned with.", "Asimov to whom?", subject, MAX_NAME_LEN)
 	if(!targName)
 		return

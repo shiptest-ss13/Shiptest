@@ -38,12 +38,12 @@
 		return ELEMENT_INCOMPATIBLE
 
 	if(isitem(target))
-		RegisterSignal(target, COMSIG_MOVABLE_IMPACT_ZONE, .proc/checkEmbedMob)
-		RegisterSignal(target, COMSIG_MOVABLE_IMPACT, .proc/checkEmbedOther)
-		RegisterSignal(target, COMSIG_ELEMENT_ATTACH, .proc/severancePackage)
-		RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/examined)
-		RegisterSignal(target, COMSIG_EMBED_TRY_FORCE, .proc/tryForceEmbed)
-		RegisterSignal(target, COMSIG_ITEM_DISABLE_EMBED, .proc/detachFromWeapon)
+		RegisterSignal(target, COMSIG_MOVABLE_IMPACT_ZONE, PROC_REF(checkEmbedMob))
+		RegisterSignal(target, COMSIG_MOVABLE_IMPACT, PROC_REF(checkEmbedOther))
+		RegisterSignal(target, COMSIG_ELEMENT_ATTACH, PROC_REF(severancePackage))
+		RegisterSignal(target, COMSIG_PARENT_EXAMINE, PROC_REF(examined))
+		RegisterSignal(target, COMSIG_EMBED_TRY_FORCE, PROC_REF(tryForceEmbed))
+		RegisterSignal(target, COMSIG_ITEM_DISABLE_EMBED, PROC_REF(detachFromWeapon))
 		if(!initialized)
 			src.embed_chance = embed_chance
 			src.fall_chance = fall_chance
@@ -60,7 +60,7 @@
 			initialized = TRUE
 	else
 		payload_type = projectile_payload
-		RegisterSignal(target, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/checkEmbedProjectile)
+		RegisterSignal(target, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(checkEmbedProjectile))
 
 
 /datum/element/embed/Detach(obj/target)
@@ -81,7 +81,7 @@
 	var/actual_chance = embed_chance
 
 	if(!weapon.isEmbedHarmless()) // all the armor in the world won't save you from a kick me sign
-		var/armor = max(victim.run_armor_check(hit_zone, "bullet", silent=TRUE), victim.run_armor_check(hit_zone, "bomb", silent=TRUE)) // we'll be nice and take the better of bullet and bomb armor
+		var/armor = max(victim.run_armor_check(hit_zone, "bullet", silent = TRUE), victim.run_armor_check(hit_zone, "bomb", silent = TRUE)) // we'll be nice and take the better of bullet and bomb armor
 
 		if(armor) // we only care about armor penetration if there's actually armor to penetrate
 			var/pen_mod = -armor + weapon.armour_penetration // even a little bit of armor can make a big difference for shrapnel with large negative armor pen
@@ -171,49 +171,45 @@
 		examine_list += "[I] has a fine point, and could probably embed in someone if thrown properly!"
 
 /**
-  * checkEmbedProjectile() is what we get when a projectile with a defined shrapnel_type impacts a target.
-  *
-  * If we hit a valid target (carbon or closed turf), we create the shrapnel_type object and immediately call tryEmbed() on it, targeting what we impacted. That will lead
-  *	it to call tryForceEmbed() on its own embed element (it's out of our hands here, our projectile is done), where it will run through all the checks it needs to.
-  */
-/datum/element/embed/proc/checkEmbedProjectile(obj/projectile/P, atom/movable/firer, atom/hit)
+ * checkEmbedProjectile() is what we get when a projectile with a defined shrapnel_type impacts a target.
+ *
+ * If we hit a valid target (carbon or closed turf), we create the shrapnel_type object and immediately call tryEmbed() on it, targeting what we impacted. That will lead
+ *	it to call tryForceEmbed() on its own embed element (it's out of our hands here, our projectile is done), where it will run through all the checks it needs to.
+ */
+/datum/element/embed/proc/checkEmbedProjectile(obj/projectile/P, atom/movable/firer, atom/hit, angle, hit_zone)
 	SIGNAL_HANDLER
 
-	if(!iscarbon(hit) && !isclosedturf(hit))
+	if(!iscarbon(hit))
 		Detach(P)
 		return // we don't care
 
 	var/obj/item/payload = new payload_type(get_turf(hit))
-	var/did_embed
-	if(iscarbon(hit))
-		var/mob/living/carbon/C = hit
-		var/obj/item/bodypart/limb = C.get_bodypart(C.check_limb_hit(P.def_zone))
-		did_embed = payload.tryEmbed(limb)
-	else
-		did_embed = payload.tryEmbed(hit)
+	var/mob/living/carbon/C = hit
+	var/obj/item/bodypart/limb = C.get_bodypart(hit_zone)
+	if(!limb)
+		limb = C.get_bodypart()
 
-	if(!did_embed)
+	if(!payload.tryEmbed(limb))
 		payload.failedEmbed()
 	Detach(P)
 
 /**
-  * tryForceEmbed() is called here when we fire COMSIG_EMBED_TRY_FORCE from [/obj/item/proc/tryEmbed]. Mostly, this means we're a piece of shrapnel from a projectile that just impacted something, and we're trying to embed in it.
-  *
-  * The reason for this extra mucking about is avoiding having to do an extra hitby(), and annoying the target by impacting them once with the projectile, then again with the shrapnel (which likely represents said bullet), and possibly
-  * AGAIN if we actually embed. This way, we save on at least one message. Runs the standard embed checks on the mob/turf.
-  *
-  * Arguments:
-  * * I- what we're trying to embed, obviously
-  * * target- what we're trying to shish-kabob, either a bodypart, a carbon, or a closed turf
-  * * hit_zone- if our target is a carbon, try to hit them in this zone, if we don't have one, pick a random one. If our target is a bodypart, we already know where we're hitting.
-  * * forced- if we want this to succeed 100%
-  */
+ * tryForceEmbed() is called here when we fire COMSIG_EMBED_TRY_FORCE from [/obj/item/proc/tryEmbed]. Mostly, this means we're a piece of shrapnel from a projectile that just impacted something, and we're trying to embed in it.
+ *
+ * The reason for this extra mucking about is avoiding having to do an extra hitby(), and annoying the target by impacting them once with the projectile, then again with the shrapnel (which likely represents said bullet), and possibly
+ * AGAIN if we actually embed. This way, we save on at least one message. Runs the standard embed checks on the mob/turf.
+ *
+ * Arguments:
+ * * I- what we're trying to embed, obviously
+ * * target- what we're trying to shish-kabob, either a bodypart, a carbon, or a closed turf
+ * * hit_zone- if our target is a carbon, try to hit them in this zone, if we don't have one, pick a random one. If our target is a bodypart, we already know where we're hitting.
+ * * forced- if we want this to succeed 100%
+ */
 /datum/element/embed/proc/tryForceEmbed(obj/item/I, atom/target, hit_zone, forced=FALSE)
 	SIGNAL_HANDLER
 
 	var/obj/item/bodypart/limb
 	var/mob/living/carbon/C
-	var/turf/closed/T
 
 	if(!forced && !prob(embed_chance))
 		return
@@ -225,11 +221,8 @@
 			hit_zone = limb.body_zone
 	else if(isbodypart(target))
 		limb = target
+		hit_zone = limb.body_zone
 		C = limb.owner
-	else if(isclosedturf(target))
-		T = target
 
 	if(C)
 		return checkEmbedMob(I, C, hit_zone, forced=TRUE)
-	else if(T)
-		return checkEmbedOther(I, T, forced=TRUE)

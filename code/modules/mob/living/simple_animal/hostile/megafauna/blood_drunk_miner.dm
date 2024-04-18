@@ -40,6 +40,7 @@ Difficulty: Medium
 	ranged = TRUE
 	ranged_cooldown_time = 16
 	pixel_x = -16
+	base_pixel_x = -16
 	crusher_loot = list(/obj/item/melee/transforming/cleaving_saw, /obj/item/gun/energy/kinetic_accelerator, /obj/item/crusher_trophy/miner_eye)
 	loot = list(/obj/item/melee/transforming/cleaving_saw, /obj/item/gun/energy/kinetic_accelerator)
 	wander = FALSE
@@ -133,7 +134,7 @@ Difficulty: Medium
 		new /obj/effect/temp_visual/dir_setting/miner_death(loc, dir)
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/Move(atom/newloc)
-	if(dashing || (newloc && newloc.get_virtual_z_level() == get_virtual_z_level() && (islava(newloc) || ischasm(newloc)))) //we're not stupid!
+	if(dashing || (newloc && newloc.virtual_z() == virtual_z() && (islava(newloc) || ischasm(newloc)))) //we're not stupid!
 		return FALSE
 	return ..()
 
@@ -181,7 +182,7 @@ Difficulty: Medium
 		wander = TRUE
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/dash_attack()
-	INVOKE_ASYNC(src, .proc/dash, target)
+	INVOKE_ASYNC(src, PROC_REF(dash), target)
 	shoot_ka()
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/shoot_ka()
@@ -263,7 +264,7 @@ Difficulty: Medium
 
 /obj/effect/temp_visual/dir_setting/miner_death/Initialize(mapload, set_dir)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fade_out)
+	INVOKE_ASYNC(src, PROC_REF(fade_out))
 
 /obj/effect/temp_visual/dir_setting/miner_death/proc/fade_out()
 	var/matrix/M = new
@@ -284,14 +285,15 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter/AttackingTarget()
 	. = ..()
 	if(. && prob(12))
-		INVOKE_ASYNC(src, .proc/dash)
+		INVOKE_ASYNC(src, PROC_REF(dash))
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/doom
 	name = "hostile-environment miner"
 	desc = "A miner destined to hop across dimensions for all eternity, hunting anomalous creatures."
 	speed = 8
 	move_to_delay = 8
-	ranged_cooldown_time = 8
-	dash_cooldown = 8
+	ranged_cooldown_time = 15
+	dash_cooldown = 15
+	aggro_vision_range = 3
 
 #undef MINER_DASH_RANGE

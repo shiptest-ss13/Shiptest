@@ -25,8 +25,8 @@
 
 /obj/item/chainsaw/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/chainsaw/ComponentInitialize()
 	. = ..()
@@ -44,18 +44,6 @@
 	SIGNAL_HANDLER
 
 	wielded = FALSE
-
-/obj/item/chainsaw/suicide_act(mob/living/carbon/user)
-	if(on)
-		user.visible_message("<span class='suicide'>[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, TRUE)
-		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-		if(myhead)
-			myhead.dismember()
-	else
-		user.visible_message("<span class='suicide'>[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-		playsound(src, 'sound/weapons/genhit1.ogg', 100, TRUE)
-	return(BRUTELOSS)
 
 /obj/item/chainsaw/attack_self(mob/user)
 	on = !on

@@ -5,8 +5,10 @@
 	desc = "A machine with a centrifuge installed into it. It produces smoke with any reagents you put into the machine."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "smoke0"
+	base_icon_state = "smoke"
 	density = TRUE
 	circuit = /obj/item/circuitboard/machine/smoke_machine
+	processing_flags = NONE
 
 	var/efficiency = 10
 	var/on = FALSE
@@ -35,15 +37,16 @@
 	AddComponent(/datum/component/plumbing/simple_demand)
 	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
 		reagents.maximum_volume += REAGENTS_BASE_VOLUME * B.rating
+	if(is_operational)
+		begin_processing()
+
 
 /obj/machinery/smoke_machine/update_icon_state()
-	if((!is_operational()) || (!on) || (reagents.total_volume == 0))
-		if (panel_open)
-			icon_state = "smoke0-o"
-		else
-			icon_state = "smoke0"
-	else
-		icon_state = "smoke1"
+	if((!is_operational) || (!on) || (reagents.total_volume == 0))
+		icon_state = "[base_icon_state]0[panel_open ? "-o" : null]"
+		return ..()
+	icon_state = "[base_icon_state]1"
+	return ..()
 
 /obj/machinery/smoke_machine/RefreshParts()
 	var/new_volume = REAGENTS_BASE_VOLUME
@@ -63,18 +66,24 @@
 		max_range += M.rating
 	max_range = max(3, max_range)
 
+
+/obj/machinery/smoke_machine/on_set_is_operational(old_value)
+	if(old_value) //Turned off
+		end_processing()
+	else //Turned on
+		begin_processing()
+
+
 /obj/machinery/smoke_machine/process()
 	..()
-	if(!is_operational())
-		return
 	if(reagents.total_volume == 0)
 		on = FALSE
-		update_icon()
+		update_appearance()
 		return
 	var/turf/T = get_turf(src)
 	var/smoke_test = locate(/obj/effect/particle_effect/smoke) in T
 	if(on && !smoke_test)
-		update_icon()
+		update_appearance()
 		var/datum/effect_system/smoke_spread/chem/smoke_machine/smoke = new()
 		smoke.set_up(reagents, setting*3, efficiency, T)
 		smoke.start()
@@ -132,7 +141,7 @@
 	switch(action)
 		if("purge")
 			reagents.clear_reagents()
-			update_icon()
+			update_appearance()
 			. = TRUE
 		if("setting")
 			var/amount = text2num(params["amount"])
@@ -141,7 +150,7 @@
 				. = TRUE
 		if("power")
 			on = !on
-			update_icon()
+			update_appearance()
 			if(on)
 				message_admins("[ADMIN_LOOKUPFLW(usr)] activated a smoke machine that contains [english_list(reagents.reagent_list)] at [ADMIN_VERBOSEJMP(src)].")
 				log_game("[key_name(usr)] activated a smoke machine that contains [english_list(reagents.reagent_list)] at [AREACOORD(src)].")

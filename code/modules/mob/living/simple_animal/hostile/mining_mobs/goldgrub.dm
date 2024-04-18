@@ -2,12 +2,14 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub
 	name = "goldgrub"
 	desc = "A worm that grows fat from eating everything in its sight. Seems to enjoy precious metals and other shiny things, hence the name."
-	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
-	icon_state = "Goldgrub"
-	icon_living = "Goldgrub"
-	icon_aggro = "Goldgrub_alert"
-	icon_dead = "Goldgrub_dead"
+	icon = 'icons/mob/lavaland/lavaland_monsters_wide.dmi'
+	icon_state = "goldgrub"
+	icon_living = "goldgrub"
+	icon_aggro = "goldgrub_alert"
+	icon_dead = "goldgrub_dead"
 	icon_gib = "syndicate_gib"
+	pixel_x = -12
+	base_pixel_x = -12
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	vision_range = 2
 	aggro_vision_range = 9
@@ -128,7 +130,7 @@
 			retreat_distance = 10
 			minimum_distance = 10
 			if(will_burrow)
-				addtimer(CALLBACK(src, .proc/Burrow), chase_time)
+				addtimer(CALLBACK(src, PROC_REF(Burrow)), chase_time)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/AttackingTarget()
 	if(istype(target, /obj/item/stack/ore))
@@ -149,7 +151,7 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/proc/barf_contents()
 	visible_message("<span class='danger'>[src] spits out its consumed ores!</span>")
 	playsound(src, 'sound/effects/splat.ogg', 50, TRUE)
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		AM.forceMove(loc)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/proc/Burrow()//Begin the chase to kill the goldgrub in time

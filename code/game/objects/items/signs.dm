@@ -34,7 +34,7 @@
 		return ..()
 
 /obj/item/picket_sign/attack_self(mob/living/carbon/human/user)
-	if( last_wave + 20 < world.time )
+	if(last_wave + 20 < world.time)
 		last_wave = world.time
 		if(label)
 			user.visible_message("<span class='warning'>[user] waves around \the \"[label]\" sign.</span>")

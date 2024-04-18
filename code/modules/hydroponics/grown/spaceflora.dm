@@ -13,7 +13,12 @@
 	harvest_message_high = "You pick a pair of void melons."
 	regrowth_time_low = 4800
 	regrowth_time_high = 7200
+	num_sprites = 1
 
+/obj/structure/flora/ash/space/voidmelon/Initialize()
+	. = ..()
+	base_icon = "melon"
+	icon_state = base_icon
 /obj/item/seeds/voidmelon
 	name = "pack of voidmelon seeds"
 	desc = "These seeds grow into voidmelon plants."
@@ -27,6 +32,7 @@
 	icon_dead = "voidmelon-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/oxygen = 0.1, /datum/reagent/consumable/nutriment = 0.05)
+	research = PLANT_RESEARCH_TIER_2
 
 /obj/item/reagent_containers/food/snacks/grown/voidmelon
 	seed = /obj/item/seeds/voidmelon

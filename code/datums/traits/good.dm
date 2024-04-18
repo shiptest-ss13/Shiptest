@@ -5,7 +5,7 @@
 	name = "Alcohol Tolerance"
 	desc = "You become drunk more slowly and suffer fewer drawbacks from alcohol."
 	value = 1
-	mob_trait = TRAIT_ALCOHOL_TOLERANCE
+	mob_traits = list(TRAIT_ALCOHOL_TOLERANCE)
 	gain_text = "<span class='notice'>You feel like you could drink a whole keg!</span>"
 	lose_text = "<span class='danger'>You don't feel as resistant to alcohol anymore. Somehow.</span>"
 	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
@@ -32,7 +32,7 @@
 	name = "Drunken Resilience"
 	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
 	value = 2
-	mob_trait = TRAIT_DRUNK_HEALING
+	mob_traits = list(TRAIT_DRUNK_HEALING)
 	gain_text = "<span class='notice'>You feel like a drink would do you good.</span>"
 	lose_text = "<span class='danger'>You no longer feel like drinking would ease your pain.</span>"
 	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
@@ -42,21 +42,22 @@
 	// Whitesands Start - Prevent Prosthetic healing from liquor
 	switch(C.drunkenness)
 		if (6 to 40)
-			C.adjustBruteLoss(-0.1, FALSE, FALSE, BODYPART_ORGANIC)
-			C.adjustFireLoss(-0.05, FALSE, FALSE, BODYPART_ORGANIC)
+			C.adjustBruteLoss(-0.1, FALSE, FALSE, BODYTYPE_ORGANIC)
+			C.adjustFireLoss(-0.05, FALSE, FALSE, BODYTYPE_ORGANIC)
 		if (41 to 60)
-			C.adjustBruteLoss(-0.4, FALSE, FALSE, BODYPART_ORGANIC)
-			C.adjustFireLoss(-0.2, FALSE, FALSE, BODYPART_ORGANIC)
+			C.adjustBruteLoss(-0.4, FALSE, FALSE, BODYTYPE_ORGANIC)
+			C.adjustFireLoss(-0.2, FALSE, FALSE, BODYTYPE_ORGANIC)
 		if (61 to INFINITY)
-			C.adjustBruteLoss(-0.8, FALSE, FALSE, BODYPART_ORGANIC)
-			C.adjustFireLoss(-0.4, FALSE, FALSE, BODYPART_ORGANIC)
+			C.adjustBruteLoss(-0.8, FALSE, FALSE, BODYTYPE_ORGANIC)
+			C.adjustFireLoss(-0.4, FALSE, FALSE, BODYTYPE_ORGANIC)
 	// Whitesands End - Prevent Prosthetic healing from liquor
 
 /datum/quirk/empath
 	name = "Empath"
 	desc = "Whether it's a sixth sense or careful study of body language, it only takes you a quick glance at someone to understand how they feel."
 	value = 2
-	mob_trait = TRAIT_EMPATH
+	mood_quirk = TRUE
+	mob_traits = list(TRAIT_EMPATH)
 	gain_text = "<span class='notice'>You feel in tune with those around you.</span>"
 	lose_text = "<span class='danger'>You feel isolated from others.</span>"
 	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."
@@ -65,7 +66,7 @@
 	name = "Clown Fan"
 	desc = "You enjoy clown antics and get a mood boost from wearing your clown pin."
 	value = 1
-	mob_trait = TRAIT_FAN_CLOWN
+	mob_traits = list(TRAIT_FAN_CLOWN)
 	gain_text = "<span class='notice'>You are a big fan of clowns.</span>"
 	lose_text = "<span class='danger'>The clown doesn't seem so great.</span>"
 	medical_record_text = "Patient reports being a big fan of clowns."
@@ -81,11 +82,31 @@
 	var/datum/atom_hud/fan = GLOB.huds[DATA_HUD_FAN]
 	fan.add_hud_to(H)
 
+/datum/quirk/fan_rilena
+	name = "RILENA Super Fan"
+	desc = "You are a major fan of the popular webseries RILENA: LMR. You get a mood boost from plushies of your favorite characters, and wearing your Xader pin."
+	value = 1
+	mob_traits = list(TRAIT_FAN_RILENA)
+	gain_text = "<span class='notice'>You are a huge fan of a certain combination webcomic and bullet hell game.</span>"
+	gain_text = "<span class='danger'>Suddenly, bullet hell games and webcomics don't seem all that interesting anymore...</span>"
+	medical_record_text = "Patient reports being a huge fan of RILENA."
+
+/datum/quirk/fan_rilena/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/clothing/accessory/rilena_pin/B = new(get_turf(H))
+	var/list/slots = list (
+		"backpack" = ITEM_SLOT_BACKPACK,
+		"hands" = ITEM_SLOT_HANDS,
+	)
+	H.equip_in_one_of_slots(B, slots , qdel_on_fail = TRUE)
+	var/datum/atom_hud/fan = GLOB.huds[DATA_HUD_FAN]
+	fan.add_hud_to(H)
+
 /datum/quirk/fan_mime
 	name = "Mime Fan"
 	desc = "You enjoy mime antics and get a mood boost from wearing your mime pin."
 	value = 1
-	mob_trait = TRAIT_FAN_MIME
+	mob_traits = list(TRAIT_FAN_MIME)
 	gain_text = "<span class='notice'>You are a big fan of the Mime.</span>"
 	lose_text = "<span class='danger'>The mime doesn't seem so great.</span>"
 	medical_record_text = "Patient reports being a big fan of mimes."
@@ -105,7 +126,7 @@
 	name = "Freerunning"
 	desc = "You're great at quick moves! You can climb tables more quickly."
 	value = 2
-	mob_trait = TRAIT_FREERUNNING
+	mob_traits = list(TRAIT_FREERUNNING)
 	gain_text = "<span class='notice'>You feel lithe on your feet!</span>"
 	lose_text = "<span class='danger'>You feel clumsy again.</span>"
 	medical_record_text = "Patient scored highly on cardio tests."
@@ -114,7 +135,7 @@
 	name = "Friendly"
 	desc = "You give the best hugs, especially when you're in the right mood."
 	value = 1
-	mob_trait = TRAIT_FRIENDLY
+	mob_traits = list(TRAIT_FRIENDLY)
 	gain_text = "<span class='notice'>You want to hug someone.</span>"
 	lose_text = "<span class='danger'>You no longer feel compelled to hug others.</span>"
 	mood_quirk = TRUE
@@ -124,7 +145,7 @@
 	name = "Jolly"
 	desc = "You sometimes just feel happy, for no reason at all."
 	value = 1
-	mob_trait = TRAIT_JOLLY
+	mob_traits = list(TRAIT_JOLLY)
 	mood_quirk = TRUE
 	medical_record_text = "Patient demonstrates constant euthymia irregular for environment. It's a bit much, to be honest."
 
@@ -134,9 +155,9 @@
 
 /datum/quirk/light_step
 	name = "Light Step"
-	desc = "You walk with a gentle step; footsteps and stepping on sharp objects is quieter and less painful."
+	desc = "You walk with a gentle step; footsteps and stepping on sharp objects is quieter and less painful. Also, your hands and clothes will not get messed in case of stepping in blood."
 	value = 1
-	mob_trait = TRAIT_LIGHT_STEP
+	mob_traits = list(TRAIT_LIGHT_STEP)
 	gain_text = "<span class='notice'>You walk with a little more litheness.</span>"
 	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
@@ -151,7 +172,7 @@
 	name = "Musician"
 	desc = "You can tune handheld musical instruments to play melodies that clear certain negative effects and soothe the soul."
 	value = 1
-	mob_trait = TRAIT_MUSICIAN
+	mob_traits = list(TRAIT_MUSICIAN)
 	gain_text = "<span class='notice'>You know everything about musical instruments.</span>"
 	lose_text = "<span class='danger'>You forget how musical instruments work.</span>"
 	medical_record_text = "Patient brain scans show a highly-developed auditory pathway."
@@ -169,7 +190,7 @@
 	name = "Night Vision"
 	desc = "You can see slightly more clearly in full darkness than most people."
 	value = 1
-	mob_trait = TRAIT_NIGHT_VISION
+	mob_traits = list(TRAIT_NIGHT_VISION)
 	gain_text = "<span class='notice'>The shadows seem a little less dark.</span>"
 	lose_text = "<span class='danger'>Everything seems a little darker.</span>"
 	medical_record_text = "Patient's eyes show above-average acclimation to darkness."
@@ -185,7 +206,7 @@
 	name = "Photographer"
 	desc = "You carry your camera and personal photo album everywhere you go and can snap photos faster."
 	value = 1
-	mob_trait = TRAIT_PHOTOGRAPHER
+	mob_traits = list(TRAIT_PHOTOGRAPHER)
 	gain_text = "<span class='notice'>You know everything about photography.</span>"
 	lose_text = "<span class='danger'>You forget how photo cameras work.</span>"
 	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
@@ -216,21 +237,21 @@
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds."
 	value = 2
-	mob_trait = TRAIT_SELF_AWARE
+	mob_traits = list(TRAIT_SELF_AWARE)
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "You can conceal yourself in danger. Ctrl-shift-click a closed locker to jump into it, as long as you have access."
 	value = 2
-	mob_trait = TRAIT_SKITTISH
+	mob_traits = list(TRAIT_SKITTISH)
 	medical_record_text = "Patient demonstrates a high aversion to danger and has described hiding in containers out of fear."
 
 /datum/quirk/spiritual
 	name = "Spiritual"
 	desc = "You hold a spiritual belief, whether in God, nature or the arcane rules of the universe. You gain comfort from the presence of holy people, and believe that your prayers are more special than others."
 	value = 1
-	mob_trait = TRAIT_SPIRITUAL
+	mob_traits = list(TRAIT_SPIRITUAL)
 	gain_text = "<span class='notice'>You have faith in a higher power.</span>"
 	lose_text = "<span class='danger'>You lose faith!</span>"
 	medical_record_text = "Patient reports a belief in a higher power."
@@ -244,7 +265,7 @@
 	name = "Tagger"
 	desc = "You're an experienced artist. People will actually be impressed by your graffiti, and you can get twice as many uses out of drawing supplies."
 	value = 1
-	mob_trait = TRAIT_TAGGER
+	mob_traits = list(TRAIT_TAGGER)
 	gain_text = "<span class='notice'>You know how to tag walls efficiently.</span>"
 	lose_text = "<span class='danger'>You forget how to tag walls properly.</span>"
 	medical_record_text = "Patient was recently seen for possible paint huffing incident."
@@ -260,6 +281,6 @@
 	name = "Voracious"
 	desc = "Nothing gets between you and your food. You eat faster and can binge on junk food! Being fat suits you just fine."
 	value = 1
-	mob_trait = TRAIT_VORACIOUS
+	mob_traits = list(TRAIT_VORACIOUS)
 	gain_text = "<span class='notice'>You feel HONGRY.</span>"
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"

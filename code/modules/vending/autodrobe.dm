@@ -9,11 +9,6 @@
 	products = list(
 		/obj/item/clothing/suit/chickensuit = 1,
 		/obj/item/clothing/head/chicken = 1,
-		/obj/item/clothing/under/rank/civilian/clown/blue = 1,
-		/obj/item/clothing/under/rank/civilian/clown/green = 1,
-		/obj/item/clothing/under/rank/civilian/clown/yellow = 1,
-		/obj/item/clothing/under/rank/civilian/clown/orange = 1,
-		/obj/item/clothing/under/rank/civilian/clown/purple = 1,
 		/obj/item/clothing/under/costume/gladiator = 1,
 		/obj/item/clothing/head/helmet/gladiator = 1,
 		/obj/item/clothing/under/rank/command/captain/suit = 1,
@@ -49,9 +44,6 @@
 		/obj/item/clothing/under/costume/owl = 1,
 		/obj/item/clothing/mask/gas/owl_mask = 1,
 		/obj/item/clothing/suit/toggle/owlwings/griffinwings = 1,
-		/obj/item/clothing/under/costume/griffin = 1,
-		/obj/item/clothing/shoes/griffin = 1,
-		/obj/item/clothing/head/griffin = 1,
 		/obj/item/clothing/suit/apron = 1,
 		/obj/item/clothing/under/suit/waiter = 1,
 		/obj/item/clothing/suit/jacket/miljacket = 1,
@@ -60,8 +52,7 @@
 		/obj/item/clothing/head/pirate = 1,
 		/obj/item/clothing/head/bandana = 1,
 		/obj/item/clothing/head/bandana = 1,
-		/obj/item/clothing/under/costume/soviet = 1,
-		/obj/item/clothing/head/ushanka = 1,
+		/obj/item/clothing/head/trapper = 1,
 		/obj/item/clothing/suit/imperium_monk = 1,
 		/obj/item/clothing/mask/gas/cyborg = 1,
 		/obj/item/clothing/suit/chaplainsuit/holidaypriest = 1,
@@ -74,9 +65,6 @@
 		/obj/item/clothing/suit/wizrobe/fake = 1,
 		/obj/item/clothing/head/wizard/fake = 1,
 		/obj/item/staff = 3,
-		/obj/item/clothing/mask/gas/sexyclown = 1,
-		/obj/item/clothing/under/rank/civilian/clown/sexy = 1,
-		/obj/item/clothing/mask/gas/sexymime = 1,
 		/obj/item/clothing/under/rank/civilian/mime/sexy = 1,
 		/obj/item/clothing/under/rank/civilian/mime/skirt = 1,
 		/obj/item/clothing/mask/rat/bat = 1,
@@ -95,18 +83,15 @@
 		/obj/item/clothing/suit/poncho = 1,
 		/obj/item/clothing/suit/poncho/green = 1,
 		/obj/item/clothing/suit/poncho/red = 1,
+		/obj/item/clothing/head/maidheadband = 1,
 		/obj/item/clothing/under/costume/maid = 1,
+		/obj/item/clothing/gloves/maid = 1,
+		/obj/item/clothing/neck/maid = 1,
 		/obj/item/clothing/under/rank/civilian/janitor/maid = 1,
 		/obj/item/clothing/glasses/cold=1,
 		/obj/item/clothing/glasses/heat=1,
 		/obj/item/clothing/suit/whitedress = 1,
-		/obj/item/clothing/under/rank/civilian/clown/jester = 1,
 		/obj/item/clothing/head/jester = 1,
-		/obj/item/clothing/under/costume/villain = 1,
-		/obj/item/clothing/shoes/singery = 1,
-		/obj/item/clothing/under/costume/singer/yellow = 1,
-		/obj/item/clothing/shoes/singerb = 1,
-		/obj/item/clothing/under/costume/singer/blue = 1,
 		/obj/item/clothing/suit/hooded/carp_costume = 1,
 		/obj/item/clothing/suit/hooded/ian_costume = 1,
 		/obj/item/clothing/suit/hooded/bee_costume = 1,
@@ -128,6 +113,8 @@
 	contraband = list(
 		/obj/item/clothing/suit/judgerobe = 1,
 		/obj/item/clothing/head/powdered_wig = 1,
+		/obj/item/clothing/accessory/fan_mime_pin = 1,
+		/obj/item/clothing/accessory/fan_clown_pin = 1,
 		/obj/item/gun/magic/wand/nothing = 2,
 		/obj/item/clothing/glasses/sunglasses/garb = 2,
 		/obj/item/clothing/glasses/blindfold = 1,
@@ -135,20 +122,16 @@
 	premium = list(
 		/obj/item/clothing/suit/pirate/captain = 2,
 		/obj/item/clothing/head/pirate/captain = 2,
-		/obj/item/clothing/under/rank/civilian/clown/rainbow = 1,
 		/obj/item/clothing/head/helmet/roman/fake = 1,
 		/obj/item/clothing/head/helmet/roman/legionnaire/fake = 1,
 		/obj/item/clothing/under/costume/roman = 1,
 		/obj/item/clothing/shoes/roman = 1,
 		/obj/item/shield/riot/roman/fake = 1,
-		/obj/item/clothing/suit/chaplainsuit/clownpriest = 1,
-		/obj/item/clothing/head/clownmitre = 1,
 		/obj/item/skub = 1,
 		/obj/item/clothing/suit/hooded/mysticrobe = 1)
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 180
 	extra_price = 360
-	payment_department = ACCOUNT_SRV
 	light_mask="theater-light-mask"
 
 /obj/machinery/vending/autodrobe/canLoadItem(obj/item/I,mob/user)

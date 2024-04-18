@@ -1,18 +1,18 @@
 /obj/item/clothing/under/plasmaman/medical
 	name = "medical plasma envirosuit"
-	desc = "A suit designed for the station's more plasma-based doctors."
+	desc = "A suit designed for the sector's more plasma-based doctors."
 	icon_state = "doctor_envirosuit"
 	item_state = "doctor_envirosuit"
 
 /obj/item/clothing/under/plasmaman/paramedic
 	name = "paramedic envirosuit"
-	desc = "A suit designed for the station's plasmaman paramedics."
+	desc = "A suit designed for the rare breed of plasmamen paramedics."
 	icon_state = "paramedic_envirosuit"
 	item_state = "paramedic_envirosuit"
 
 /obj/item/clothing/under/plasmaman/science
 	name = "science plasma envirosuit"
-	desc = "A plasmaman envirosuit designed for scientists."
+	desc = "A plasmaman envirosuit designed for scientific personnel."
 	icon_state = "scientist_envirosuit"
 	item_state = "scientist_envirosuit"
 
@@ -24,7 +24,7 @@
 
 /obj/item/clothing/under/plasmaman/viro
 	name = "virology plasma envirosuit"
-	desc = "The suit worn by the safest people on the station, those who are completely immune to the monstrosities they create."
+	desc = "The suit worn by the safest people in virology, those who are completely immune to the monstrosities they create."
 	icon_state = "virologist_envirosuit"
 	item_state = "virologist_envirosuit"
 
@@ -54,13 +54,13 @@
 
 /obj/item/clothing/under/plasmaman/medical/skirt //WS edit plasmaman customization
 	name = "medical plasma enviroskirt"
-	desc = "A skirt designed for the station's more plasma-based doctors."
+	desc = "A skirt designed for the sector's more plasma-based doctors."
 	icon_state = "doctor_enviroskirt"
 	item_state = "doctor_enviroskirt"
 
 /obj/item/clothing/under/plasmaman/paramedic/skirt //WS edit plasmaman customization
 	name = "paramedic enviroskirt"
-	desc = "A skirt designed for the station's plasmaman paramedics."
+	desc = "A suit and attached skirt designed for plasmamen who specialize in paramedical rescue."
 	icon_state = "paramedic_enviroskirt"
 	item_state = "paramedic_enviroskirt"
 
@@ -78,7 +78,7 @@
 
 /obj/item/clothing/under/plasmaman/viro/skirt //WS edit plasmaman customization
 	name = "virology plasma enviroskirt"
-	desc = "The kilt worn by the safest people on the station, those who are completely immune to the monstrosities they create."
+	desc = "A liquid-repelling sterile kilt worn by the safest people in virology, those who are completely immune to the monstrosities they create."
 	icon_state = "virologist_enviroskirt"
 	item_state = "virologist_enviroskirt"
 

@@ -13,16 +13,26 @@
 	var/obj/item/assembly_holder/bombassembly = null   //The first part of the bomb is an assembly holder, holding an igniter+some device
 	var/obj/item/tank/bombtank = null //the second part of the bomb is a plasma tank
 
+/obj/item/onetankbomb/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/item/onetankbomb/IsSpecialAssembly()
 	return TRUE
 
 /obj/item/onetankbomb/examine(mob/user)
 	return bombtank.examine(user)
 
+/obj/item/onetankbomb/update_icon(updates)
+	icon = bombtank?.icon || initial(icon)
+	return ..()
+
 /obj/item/onetankbomb/update_icon_state()
-	if(bombtank)
-		icon = bombtank.icon
-		icon_state = bombtank.icon_state
+	icon_state = bombtank?.icon_state || initial(icon_state)
+	return ..()
 
 /obj/item/onetankbomb/update_overlays()
 	. = ..()
@@ -78,10 +88,10 @@
 
 //Assembly / attached device memes
 
-/obj/item/onetankbomb/Crossed(atom/movable/AM as mob|obj) //for mousetraps
-	. = ..()
+/obj/item/onetankbomb/proc/on_entered(datum/source, atom/movable/AM as mob|obj) //for mousetraps
+	SIGNAL_HANDLER
 	if(bombassembly)
-		bombassembly.Crossed(AM)
+		bombassembly.on_entered(src, AM)
 
 /obj/item/onetankbomb/on_found(mob/finder) //for mousetraps
 	if(bombassembly)
@@ -135,7 +145,7 @@
 	master = bomb
 
 	forceMove(bomb)
-	bomb.update_icon()
+	bomb.update_appearance()
 
 	user.put_in_hands(bomb)		//Equips the bomb if possible, or puts it on the floor.
 	to_chat(user, "<span class='notice'>You attach [assembly] to [src].</span>")

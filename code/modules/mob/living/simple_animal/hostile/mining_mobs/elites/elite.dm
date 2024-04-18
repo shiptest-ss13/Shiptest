@@ -11,10 +11,10 @@
 	robust_searching = TRUE
 	ranged_ignores_vision = TRUE
 	ranged = TRUE
-	obj_damage = 5
+	obj_damage = 100
 	vision_range = 6
 	aggro_vision_range = 18
-	environment_smash = ENVIRONMENT_SMASH_NONE  //This is to prevent elites smashing up the mining station, we'll make sure they can smash minerals fine below.
+	environment_smash = ENVIRONMENT_SMASH_MINERALS  //This is to prevent elites smashing up the mining station, we'll make sure they can smash minerals fine below.
 	harm_intent_damage = 0 //Punching elites gets you nowhere
 	stat_attack = HARD_CRIT
 	layer = LARGE_MOB_LAYER
@@ -54,7 +54,7 @@
 		M.gets_drilled()
 
 //Elites can't talk (normally)!
-/mob/living/simple_animal/hostile/asteroid/elite/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/simple_animal/hostile/asteroid/elite/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(can_talk)
 		. = ..()
 		return TRUE
@@ -68,19 +68,18 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	icon_icon = 'icons/mob/actions/actions_elites.dmi'
 	button_icon_state = ""
 	background_icon_state = "bg_default"
-	var/mob/living/simple_animal/hostile/asteroid/elite/M
 	var/chosen_message
 	var/chosen_attack_num = 0
 
 /datum/action/innate/elite_attack/Grant(mob/living/L)
-	if(istype(L, /mob/living/simple_animal/hostile/asteroid/elite))
-		M = L
-		return ..()
-	return FALSE
+	if(!istype(L, /mob/living/simple_animal/hostile/asteroid/elite))
+		return FALSE
+	return ..()
 
 /datum/action/innate/elite_attack/Activate()
-	M.chosen_attack = chosen_attack_num
-	to_chat(M, chosen_message)
+	var/mob/living/simple_animal/hostile/asteroid/elite/elite_owner = owner
+	elite_owner.chosen_attack = chosen_attack_num
+	to_chat(elite_owner, chosen_message)
 
 //The Pulsing Tumor, the actual "spawn-point" of elites, handles the spawning, arena, and procs for dealing with basic scenarios.
 
@@ -92,6 +91,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	icon = 'icons/obj/lavaland/tumor.dmi'
 	icon_state = "tumor"
 	pixel_x = -16
+	base_pixel_x = -16
 	light_color = COLOR_SOFT_RED
 	light_range = 3
 	anchored = TRUE
@@ -117,15 +117,15 @@ While using this makes the system rely on OnFire, it still gives options for tim
 				if(boosted)
 					mychild.playsound_local(get_turf(mychild), 'sound/effects/magic.ogg', 40, 0)
 					to_chat(mychild, "<b>Someone has activated your tumor.  You will be returned to fight shortly, get ready!</b>")
-				addtimer(CALLBACK(src, .proc/return_elite), 30)
-				INVOKE_ASYNC(src, .proc/arena_checks)
+				addtimer(CALLBACK(src, PROC_REF(return_elite)), 30)
+				INVOKE_ASYNC(src, PROC_REF(arena_checks))
 			if(TUMOR_INACTIVE)
 				activity = TUMOR_ACTIVE
 				var/mob/dead/observer/elitemind = null
 				visible_message("<span class='boldwarning'>[src] begins to convulse.  Your instincts tell you to step back.</span>")
 				activator = user
 				if(!boosted)
-					addtimer(CALLBACK(src, .proc/spawn_elite), 30)
+					addtimer(CALLBACK(src, PROC_REF(spawn_elite)), 30)
 					return
 				visible_message("<span class='boldwarning'>Something within [src] stirs...</span>")
 				var/list/candidates = pollCandidatesForMob("Do you want to play as a lavaland elite?", ROLE_SENTIENCE, null, ROLE_SENTIENCE, 50, src, POLL_IGNORE_SENTIENCE_POTION)
@@ -134,7 +134,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 					elitemind = pick(candidates)
 					elitemind.playsound_local(get_turf(elitemind), 'sound/effects/magic.ogg', 40, 0)
 					to_chat(elitemind, "<b>You have been chosen to play as a Lavaland Elite.\nIn a few seconds, you will be summoned on Lavaland as a monster to fight your activator, in a fight to the death.\nYour attacks can be switched using the buttons on the top left of the HUD, and used by clicking on targets or tiles similar to a gun.\nWhile the opponent might have an upper hand with  powerful mining equipment and tools, you have great power normally limited by AI mobs.\nIf you want to win, you'll have to use your powers in creative ways to ensure the kill.  It's suggested you try using them all as soon as possible.\nShould you win, you'll receive extra information regarding what to do after.  Good luck!</b>")
-					addtimer(CALLBACK(src, .proc/spawn_elite, elitemind), 100)
+					addtimer(CALLBACK(src, PROC_REF(spawn_elite), elitemind), 100)
 				else
 					visible_message("<span class='boldwarning'>The stirring stops, and nothing emerges.  Perhaps try again later.</span>")
 					activity = TUMOR_INACTIVE
@@ -150,7 +150,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 		mychild.sentience_act()
 		notify_ghosts("\A [mychild] has been awakened in \the [get_area(src)]!", source = mychild, action = NOTIFY_ORBIT, flashwindow = FALSE, header = "Lavaland Elite awakened")
 	icon_state = "tumor_popped"
-	INVOKE_ASYNC(src, .proc/arena_checks)
+	INVOKE_ASYNC(src, PROC_REF(arena_checks))
 
 /obj/structure/elite_tumor/proc/return_elite()
 	mychild.forceMove(loc)
@@ -198,11 +198,11 @@ While using this makes the system rely on OnFire, it still gives options for tim
 /obj/structure/elite_tumor/proc/arena_checks()
 	if(activity != TUMOR_ACTIVE || QDELETED(src))
 		return
-	INVOKE_ASYNC(src, .proc/fighters_check)  //Checks to see if our fighters died.
-	INVOKE_ASYNC(src, .proc/arena_trap)  //Gets another arena trap queued up for when this one runs out.
-	INVOKE_ASYNC(src, .proc/border_check)  //Checks to see if our fighters got out of the arena somehow.
+	INVOKE_ASYNC(src, PROC_REF(fighters_check))  //Checks to see if our fighters died.
+	INVOKE_ASYNC(src, PROC_REF(arena_trap))  //Gets another arena trap queued up for when this one runs out.
+	INVOKE_ASYNC(src, PROC_REF(border_check))  //Checks to see if our fighters got out of the arena somehow.
 	if(!QDELETED(src))
-		addtimer(CALLBACK(src, .proc/arena_checks), 50)
+		addtimer(CALLBACK(src, PROC_REF(arena_checks)), 50)
 
 /obj/structure/elite_tumor/proc/fighters_check()
 	if(activator != null && activator.stat == DEAD || activity == TUMOR_ACTIVE && QDELETED(activator))
@@ -235,17 +235,16 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, 0, 50, TRUE, TRUE)
 	visible_message("<span class='boldwarning'>[src] begins to convulse violently before beginning to dissipate.</span>")
 	visible_message("<span class='boldwarning'>As [src] closes, something is forced up from down below.</span>")
-	var/obj/structure/closet/crate/necropolis/tendril/lootbox = new /obj/structure/closet/crate/necropolis/tendril(loc)
+	var/obj/structure/closet/crate/necropolis/tendril/greater/lootbox = new /obj/structure/closet/crate/necropolis/tendril/greater(loc)
 	if(!boosted)
 		mychild = null
 		activator = null
 		qdel(src)
 		return
-	var/lootpick = rand(1, 2)
-	if(lootpick == 1 && mychild.loot_drop != null)
+	if(mychild.loot_drop != null)
 		new mychild.loot_drop(lootbox)
-	else
-		new /obj/item/tumor_shard(lootbox)
+		if(prob(25))
+			new /obj/item/tumor_shard(lootbox)
 	mychild = null
 	activator = null
 	qdel(src)
@@ -262,7 +261,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 		mychild.playsound_local(get_turf(mychild), 'sound/effects/magic.ogg', 40, 0)
 		to_chat(mychild, "<span class='boldwarning'>As the life in the activator's eyes fade, the forcefield around you dies out and you feel your power subside.\nDespite this inferno being your home, you feel as if you aren't welcome here anymore.\nWithout any guidance, your purpose is now for you to decide.</span>")
 		to_chat(mychild, "<b>Your max health has been halved, but can now heal by standing on your tumor.  Note, it's your only way to heal.\nBear in mind, if anyone interacts with your tumor, you'll be resummoned here to carry out another fight.  In such a case, you will regain your full max health.\nAlso, be weary of your fellow inhabitants, they likely won't be happy to see you!</b>")
-		to_chat(mychild, "<span class='big bold'>Note that you are a lavaland monster, and thus not allied to the station.  You should not cooperate or act friendly with any station crew unless under extreme circumstances!</span>")
+		to_chat(mychild, "<span class='big bold'>Note that you are an alien entity, and thus not allied to the sector. Your path now is up to you.</span>")
 
 /obj/item/tumor_shard
 	name = "tumor shard"
@@ -327,7 +326,7 @@ While using this makes the system rely on OnFire, it still gives options for tim
 	ourelite = null
 	return ..()
 
-/obj/effect/temp_visual/elite_tumor_wall/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/effect/temp_visual/elite_tumor_wall/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(mover == ourelite || mover == activator)
 		return FALSE

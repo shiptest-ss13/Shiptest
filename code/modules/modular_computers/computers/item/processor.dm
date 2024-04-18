@@ -8,6 +8,7 @@
 	icon_state_unpowered = null
 	icon_state_menu = null
 	hardware_flag = 0
+	req_ship_access = TRUE // Used inside modular computer consoles
 
 	var/obj/machinery/modular_computer/machinery_computer = null
 
@@ -37,7 +38,7 @@
 	integrity_failure = machinery_computer.integrity_failure
 	base_active_power_usage = machinery_computer.base_active_power_usage
 	base_idle_power_usage = machinery_computer.base_idle_power_usage
-	machinery_computer.RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, /atom/proc/update_icon) //when we update_icon, also update the computer
+	machinery_computer.RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, TYPE_PROC_REF(/obj/machinery/modular_computer, relay_icon_update)) //when we update_icon, also update the computer
 
 /obj/item/modular_computer/processor/relay_qdel()
 	qdel(machinery_computer)
@@ -53,7 +54,7 @@
 	if(!machinery_computer)
 		return
 	..()
-	machinery_computer.update_icon()
+	machinery_computer.update_appearance()
 	return
 
 /obj/item/modular_computer/processor/attack_ghost(mob/user)

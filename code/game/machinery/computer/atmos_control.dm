@@ -7,6 +7,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "gsensor1"
 	resistance_flags = FIRE_PROOF
+	interacts_with_air = TRUE
 
 	var/on = TRUE
 
@@ -44,6 +45,7 @@
 
 /obj/machinery/air_sensor/update_icon_state()
 	icon_state = "gsensor[on]"
+	return ..()
 
 /obj/machinery/air_sensor/process_atmos()
 	if(on)
@@ -71,13 +73,13 @@
 	frequency = new_frequency
 	radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
 
-/obj/machinery/air_sensor/Initialize()
+/obj/machinery/air_sensor/Initialize(mapload)
 	. = ..()
-	SSair.atmos_air_machinery += src
+	SSair.start_processing_machine(src, mapload)
 	set_frequency(frequency)
 
 /obj/machinery/air_sensor/Destroy()
-	SSair.atmos_air_machinery -= src
+	SSair.stop_processing_machine(src)
 	SSradio.remove_object(src, frequency)
 	return ..()
 
@@ -88,7 +90,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 
 /obj/machinery/computer/atmos_control
 	name = "atmospherics monitoring"
-	desc = "Used to monitor the station's atmospherics sensors."
+	desc = "Used to monitor nearby atmospherics sensors."
 	icon_screen = "tank"
 	icon_keyboard = "atmos_key"
 	circuit = /obj/item/circuitboard/computer/atmos_control
@@ -151,7 +153,7 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 		return
 
 	var/id_tag = signal.data["id_tag"]
-	if(!id_tag || !sensors.Find(id_tag))
+	if(!id_tag || !(id_tag in sensors))
 		return
 
 	sensor_information[id_tag] = signal.data
@@ -192,12 +194,32 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 	sensors = list(ATMOS_GAS_MONITOR_SENSOR_O2 = "Oxygen Tank")
 	circuit = /obj/item/circuitboard/computer/atmos_control/tank/oxygen_tank
 
+/obj/machinery/computer/atmos_control/tank/oxygen_tank/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_control/tank/oxygen_tank/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/atmos_control/tank/toxin_tank
 	name = "Plasma Supply Control"
 	input_tag = ATMOS_GAS_MONITOR_INPUT_TOX
 	output_tag = ATMOS_GAS_MONITOR_OUTPUT_TOX
 	sensors = list(ATMOS_GAS_MONITOR_SENSOR_TOX = "Plasma Tank")
 	circuit = /obj/item/circuitboard/computer/atmos_control/tank/toxin_tank
+
+/obj/machinery/computer/atmos_control/tank/toxin_tank/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_control/tank/toxin_tank/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/atmos_control/tank/air_tank
 	name = "Mixed Air Supply Control"
@@ -206,12 +228,32 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 	sensors = list(ATMOS_GAS_MONITOR_SENSOR_AIR = "Air Mix Tank")
 	circuit = /obj/item/circuitboard/computer/atmos_control/tank/air_tank
 
+/obj/machinery/computer/atmos_control/tank/air_tank/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_control/tank/air_tank/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/atmos_control/tank/mix_tank
 	name = "Gas Mix Tank Control"
 	input_tag = ATMOS_GAS_MONITOR_INPUT_MIX
 	output_tag = ATMOS_GAS_MONITOR_OUTPUT_MIX
 	sensors = list(ATMOS_GAS_MONITOR_SENSOR_MIX = "Gas Mix Tank")
 	circuit = /obj/item/circuitboard/computer/atmos_control/tank/mix_tank
+
+/obj/machinery/computer/atmos_control/tank/mix_tank/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_control/tank/mix_tank/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/atmos_control/tank/nitrous_tank
 	name = "Nitrous Oxide Supply Control"
@@ -220,6 +262,16 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 	sensors = list(ATMOS_GAS_MONITOR_SENSOR_N2O = "Nitrous Oxide Tank")
 	circuit = /obj/item/circuitboard/computer/atmos_control/tank/nitrous_tank
 
+/obj/machinery/computer/atmos_control/tank/nitrous_tank/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_control/tank/nitrous_tank/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/atmos_control/tank/nitrogen_tank
 	name = "Nitrogen Supply Control"
 	input_tag = ATMOS_GAS_MONITOR_INPUT_N2
@@ -227,12 +279,32 @@ GLOBAL_LIST_EMPTY(atmos_air_controllers)
 	sensors = list(ATMOS_GAS_MONITOR_SENSOR_N2 = "Nitrogen Tank")
 	circuit = /obj/item/circuitboard/computer/atmos_control/tank/nitrogen_tank
 
+/obj/machinery/computer/atmos_control/tank/nitrogen_tank/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_control/tank/nitrogen_tank/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/atmos_control/tank/carbon_tank
 	name = "Carbon Dioxide Supply Control"
 	input_tag = ATMOS_GAS_MONITOR_INPUT_CO2
 	output_tag = ATMOS_GAS_MONITOR_OUTPUT_CO2
 	sensors = list(ATMOS_GAS_MONITOR_SENSOR_CO2 = "Carbon Dioxide Tank")
 	circuit = /obj/item/circuitboard/computer/atmos_control/tank/carbon_tank
+
+/obj/machinery/computer/atmos_control/tank/carbon_tank/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/atmos_control/tank/carbon_tank/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 // This hacky madness is the evidence of the fact that a lot of machines were never meant to be constructable, im so sorry you had to see this
 /obj/machinery/computer/atmos_control/tank/proc/reconnect(mob/user)

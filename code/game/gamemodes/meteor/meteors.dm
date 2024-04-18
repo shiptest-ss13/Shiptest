@@ -39,57 +39,20 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	for(var/i = 0; i < number; i++)
 		spawn_meteor(meteortypes)
 
-/proc/spawn_meteor(list/meteortypes)
+/proc/spawn_meteor(list/meteortypes, datum/virtual_level/vlevel, padding = MAP_EDGE_PAD)
 	var/turf/pickedstart
 	var/turf/pickedgoal
 	var/max_i = 10//number of tries to spawn meteor.
 	while(!isspaceturf(pickedstart))
 		var/startSide = pick(GLOB.cardinals)
-		var/startZ = pick(SSmapping.levels_by_trait(ZTRAIT_STATION))
-		pickedstart = spaceDebrisStartLoc(startSide, startZ)
-		pickedgoal = spaceDebrisFinishLoc(startSide, startZ)
+		pickedstart = vlevel.get_side_turf(startSide, padding)
+		pickedgoal = vlevel.get_side_turf(REVERSE_DIR(startSide), padding)
 		max_i--
 		if(max_i<=0)
 			return
 	var/Me = pickweight(meteortypes)
 	var/obj/effect/meteor/M = new Me(pickedstart, pickedgoal)
 	M.dest = pickedgoal
-
-/proc/spaceDebrisStartLoc(startSide, Z)
-	var/starty
-	var/startx
-	switch(startSide)
-		if(NORTH)
-			starty = world.maxy-(TRANSITIONEDGE+1)
-			startx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
-		if(EAST)
-			starty = rand((TRANSITIONEDGE+1),world.maxy-(TRANSITIONEDGE+1))
-			startx = world.maxx-(TRANSITIONEDGE+1)
-		if(SOUTH)
-			starty = (TRANSITIONEDGE+1)
-			startx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
-		if(WEST)
-			starty = rand((TRANSITIONEDGE+1), world.maxy-(TRANSITIONEDGE+1))
-			startx = (TRANSITIONEDGE+1)
-	. = locate(startx, starty, Z)
-
-/proc/spaceDebrisFinishLoc(startSide, Z)
-	var/endy
-	var/endx
-	switch(startSide)
-		if(NORTH)
-			endy = (TRANSITIONEDGE+1)
-			endx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
-		if(EAST)
-			endy = rand((TRANSITIONEDGE+1), world.maxy-(TRANSITIONEDGE+1))
-			endx = (TRANSITIONEDGE+1)
-		if(SOUTH)
-			endy = world.maxy-(TRANSITIONEDGE+1)
-			endx = rand((TRANSITIONEDGE+1), world.maxx-(TRANSITIONEDGE+1))
-		if(WEST)
-			endy = rand((TRANSITIONEDGE+1),world.maxy-(TRANSITIONEDGE+1))
-			endx = world.maxx-(TRANSITIONEDGE+1)
-	. = locate(endx, endy, Z)
 
 ///////////////////////
 //The meteor effect
@@ -221,7 +184,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 			if((M.orbiting) && (SSaugury.watchers[M]))
 				continue
 			var/turf/T = get_turf(M)
-			if(!T || T.get_virtual_z_level() != src.get_virtual_z_level())
+			if(!T || T.virtual_z() != src.virtual_z())
 				continue
 			var/dist = get_dist(M.loc, src.loc)
 			shake_camera(M, dist > 20 ? 2 : 4, dist > 20 ? 1 : 3)
@@ -370,6 +333,29 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 	..()
 	if(prob(20))
 		explosion(src.loc,2,4,6,8)
+
+/obj/effect/meteor/carp
+	name = "high velocity space carp"
+	desc = "What the devil?"
+	icon_state = "carp"
+	hits = 1
+	hitpwr = 0
+	pass_flags = PASSTABLE
+	meteorsound = 'sound/effects/blobattack.ogg'
+	meteordrop = list(/mob/living/simple_animal/hostile/carp)
+	dropamt = 1
+
+/obj/effect/meteor/carp/big
+	name = "high velocity space carp"
+	desc = "What the devil?"
+	icon = 'icons/mob/broadMobs.dmi'
+	icon_state = "megacarp"
+	hits = 1
+	hitpwr = 1
+	pass_flags = PASSTABLE
+	meteordrop = list(/mob/living/simple_animal/hostile/carp/megacarp)
+	dropamt = 1
+
 
 //////////////////////////
 //Spookoween meteors

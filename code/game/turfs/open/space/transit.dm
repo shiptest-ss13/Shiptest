@@ -27,33 +27,32 @@
 	dir = EAST
 
 /turf/open/space/transit/Entered(atom/movable/AM, atom/OldLoc)
-	..()
+	. = ..()
 	if(!locate(/obj/structure/lattice) in src)
-		throw_atom_into_space(AM)
+		AM.throw_atom_into_space()
 
-/atom/proc/throw_atom_into_space(atom/movable/AM)
-	set waitfor = FALSE
-	if(!AM || istype(AM, /obj/docking_port))
+/atom/proc/throw_atom_into_space()
+	if(flags_1 & INITIALIZED_1)
 		return
-	if(AM.loc != src) 	// Multi-tile objects are "in" multiple locs but its loc is it's true placement.
-		return			// Don't move multi tile objects if their origin isnt in transit
-	if(iseffect(AM))
+	qdel(src)
+
+/obj/throw_atom_into_space()
+	if(resistance_flags & HYPERSPACE_PROOF)
 		return
-	if(isliving(AM))
-		var/mob/living/poor_soul = AM			// This may not seem like much, but if you toss someone out
-		poor_soul.apply_damage_type(50, BRUTE)	// and they go through like four tiles, they're goners
-		return
-	qdel(AM)
+	return ..()
+
+/mob/living/throw_atom_into_space()
+	apply_damage_type(25, BRUTE)	// This may not seem like much, but if you toss someone out and they go through like four tiles, they're goners
 
 /turf/open/space/transit/CanBuildHere()
 	return SSshuttle.is_in_shuttle_bounds(src)
 
 
-/turf/open/space/transit/Initialize()
+/turf/open/space/transit/Initialize(mapload, inherited_virtual_z)
 	. = ..()
-	update_icon()
+	update_appearance()
 	for(var/atom/movable/AM in src)
-		throw_atom_into_space(AM)
+		AM.throw_atom_into_space()
 
 /turf/open/space/transit/update_icon()
 	. = ..()
@@ -61,6 +60,7 @@
 
 /turf/open/space/transit/update_icon_state()
 	icon_state = "speedspace_ns_[get_transit_state(src)]"
+	return ..()
 
 /proc/get_transit_state(turf/T)
 	var/p = 9

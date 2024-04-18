@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/cockroach
 	name = "cockroach"
-	desc = "This station is just crawling with bugs."
+	desc = "This sector is just crawling with bugs."
 	icon_state = "cockroach"
 	icon_dead = "cockroach"
 	health = 1
@@ -61,7 +61,7 @@
 		return
 	..()
 
-/mob/living/simple_animal/hostile/cockroach/Crossed(var/atom/movable/AM)
+/mob/living/simple_animal/hostile/cockroach/on_entered(datum/source, atom/movable/AM)
 	. = ..()
 	if(ismob(AM))
 		if(isliving(AM))

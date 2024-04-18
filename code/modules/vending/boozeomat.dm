@@ -6,6 +6,9 @@
 	products = list(
 		/obj/item/reagent_containers/food/drinks/drinkingglass = 30,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 12,
+		/obj/item/reagent_containers/food/drinks/modglass/small = 10,
+		/obj/item/reagent_containers/food/drinks/modglass = 10,
+		/obj/item/reagent_containers/food/drinks/modglass/large = 10,
 		/obj/item/reagent_containers/food/drinks/flask = 3,
 		/obj/item/reagent_containers/food/drinks/ice = 10,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 4,
@@ -32,10 +35,16 @@
 		/obj/item/reagent_containers/food/drinks/bottle/hcider = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/absinthe = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/grappa = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/amaretto = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/sake = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/applejack = 5,
+		/obj/item/reagent_containers/food/drinks/bottle/coconut = 5,
 		/obj/item/reagent_containers/food/drinks/bottle = 15,
-		/obj/item/reagent_containers/food/drinks/bottle/small = 15
+		/obj/item/reagent_containers/food/drinks/bottle/small = 15,
+		/obj/item/garnish/olives = 10,
+		/obj/item/garnish/umbrellared = 10,
+		/obj/item/garnish/umbrellablue = 10,
+		/obj/item/garnish/umbrellagreen = 10
 	)
 	contraband = list(
 		/obj/item/reagent_containers/food/drinks/mug/tea = 12,
@@ -45,40 +54,17 @@
 		/obj/item/reagent_containers/food/drinks/bottle/champagne = 5,
 		/obj/item/reagent_containers/food/drinks/bottle/trappist = 5)
 
-	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?"
+	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty 'round this sector?"
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
 	req_access = list(ACCESS_BAR)
 	refill_canister = /obj/item/vending_refill/boozeomat
 	default_price = 120
 	extra_price = 200
-	payment_department = ACCOUNT_SRV
 	light_mask = "boozeomat-light-mask"
 
 /obj/machinery/vending/boozeomat/all_access
 	desc = "A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one. This model appears to have no access restrictions."
 	req_access = null
-
-/obj/machinery/vending/boozeomat/pubby_maint //abandoned bar on Pubbystation
-	products = list(/obj/item/reagent_containers/food/drinks/bottle/whiskey = 1,
-			/obj/item/reagent_containers/food/drinks/bottle/absinthe = 1,
-			/obj/item/reagent_containers/food/drinks/bottle/limejuice = 1,
-			/obj/item/reagent_containers/food/drinks/bottle/cream = 1,
-			/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 1,
-			/obj/item/reagent_containers/food/drinks/drinkingglass = 10,
-			/obj/item/reagent_containers/food/drinks/ice = 3,
-			/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 6,
-			/obj/item/reagent_containers/food/drinks/flask = 1)
-	req_access = null
-	age_restrictions = FALSE
-
-/obj/machinery/vending/boozeomat/pubby_captain //Captain's quarters on Pubbystation
-	products = list(/obj/item/reagent_containers/food/drinks/bottle/rum = 1,
-					/obj/item/reagent_containers/food/drinks/bottle/wine = 1,
-					/obj/item/reagent_containers/food/drinks/ale = 1,
-					/obj/item/reagent_containers/food/drinks/drinkingglass = 6,
-					/obj/item/reagent_containers/food/drinks/ice = 1,
-					/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 4);
-	req_access = list(ACCESS_CAPTAIN)
 
 /obj/machinery/vending/boozeomat/syndicate_access
 	req_access = list(ACCESS_SYNDICATE)

@@ -7,6 +7,8 @@
 	flags_ricochet = RICOCHET_HARD
 	ricochet_chance_mod = 0.5
 
+	hitsound_type = PROJECTILE_HITSOUND_METAL
+
 	var/climb_time = 20
 	var/climbable = FALSE
 	var/mob/living/structureclimber
@@ -47,6 +49,8 @@
 /obj/structure/MouseDrop_T(atom/movable/O, mob/user)
 	. = ..()
 	if(!climbable)
+		return
+	if(get_turf(src) == O.loc) //makes so you can't drag yourself into the same structure to climb again, making you move off it.
 		return
 	if(user == O && isliving(O))
 		var/mob/living/L = O

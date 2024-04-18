@@ -1,16 +1,21 @@
 import { useBackend } from '../backend';
-import { Box, Button, Dropdown, Flex, Icon, LabeledList, Modal, Section } from '../components';
+import {
+  Box,
+  Button,
+  Dropdown,
+  Flex,
+  Icon,
+  LabeledList,
+  Modal,
+  Section,
+} from '../components';
 import { Window } from '../layouts';
 
 export const ShuttleConsole = (props, context) => {
   const { act, data } = useBackend(context);
-  const {
-    authorization_required,
-  } = data;
+  const { authorization_required } = data;
   return (
-    <Window
-      width={350}
-      height={230}>
+    <Window width={350} height={230}>
       {!!authorization_required && (
         <Modal
           ml={1}
@@ -19,27 +24,23 @@ export const ShuttleConsole = (props, context) => {
           height={12}
           fontSize="28px"
           fontFamily="monospace"
-          textAlign="center">
+          textAlign="center"
+        >
           <Flex>
             <Flex.Item mt={2}>
-              <Icon
-                name="minus-circle" />
+              <Icon name="minus-circle" />
             </Flex.Item>
-            <Flex.Item
-              mt={2}
-              ml={2}
-              color="bad">
+            <Flex.Item mt={2} ml={2} color="bad">
               {'SHUTTLE LOCKED'}
             </Flex.Item>
           </Flex>
-          <Box
-            fontSize="18px"
-            mt={4}>
+          <Box fontSize="18px" mt={4}>
             <Button
               lineHeight="40px"
               icon="arrow-circle-right"
               content="Request Authorization"
-              color="bad" />
+              color="bad"
+            />
           </Box>
         </Modal>
       )}
@@ -51,21 +52,21 @@ export const ShuttleConsole = (props, context) => {
 };
 
 const getLocationNameById = (locations, id) => {
-  return locations?.find(location => location.id === id)?.name;
+  return locations?.find((location) => location.id === id)?.name;
 };
 
 const getLocationIdByName = (locations, name) => {
-  return locations?.find(location => location.name === name)?.id;
+  return locations?.find((location) => location.name === name)?.id;
 };
 
 const STATUS_COLOR_KEYS = {
-  "In Transit": "good",
-  "Idle": "average",
-  "Igniting": "average",
-  "Recharging": "average",
-  "Missing": "bad",
-  "Unauthorized Access": "bad",
-  "Locked": "bad",
+  'In Transit': 'good',
+  'Idle': 'average',
+  'Igniting': 'average',
+  'Recharging': 'average',
+  'Missing': 'bad',
+  'Unauthorized Access': 'bad',
+  'Locked': 'bad',
 };
 
 const ShuttleConsoleContent = (props, context) => {
@@ -81,72 +82,68 @@ const ShuttleConsoleContent = (props, context) => {
   } = data;
   return (
     <Section>
-      <Box
-        bold
-        fontSize="26px"
-        textAlign="center"
-        fontFamily="monospace">
-        {timer_str || "00:00"}
+      <Box bold fontSize="26px" textAlign="center" fontFamily="monospace">
+        {timer_str || '00:00'}
       </Box>
-      <Box
-        textAlign="center"
-        fontSize="14px"
-        mb={1}>
-        <Box
-          inline
-          bold>
+      <Box textAlign="center" fontSize="14px" mb={1}>
+        <Box inline bold>
           STATUS:
         </Box>
-        <Box
-          inline
-          color={STATUS_COLOR_KEYS[status] || "bad"}
-          ml={1}>
-          {status || "Not Available"}
+        <Box inline color={STATUS_COLOR_KEYS[status] || 'bad'} ml={1}>
+          {status || 'Not Available'}
         </Box>
       </Box>
-      <Section
-        title="Shuttle Controls"
-        level={2}>
+      <Section title="Shuttle Controls" level={2}>
         <LabeledList>
           <LabeledList.Item label="Location">
-            {docked_location || "Not Available"}
+            {docked_location || 'Not Available'}
           </LabeledList.Item>
           <LabeledList.Item label="Destination">
-            {locations.length===0 && (
-              <Box
-                mb={1.7}
-                color="bad">
+            {(locations.length === 0 && (
+              <Box mb={1.7} color="bad">
                 Not Available
               </Box>
-            ) || locations.length===1 &&(
-              <Box
-                mb={1.7}
-                color="average">
-                {getLocationNameById(locations, destination)}
-              </Box>
-            ) || (
-              <Dropdown
-                mb={1.7}
-                over
-                width="240px"
-                options={locations.map(location => location.name)}
-                disabled={locked || authorization_required}
-                selected={getLocationNameById(locations, destination) || "Select a Destination"}
-                onSelected={value => act('set_destination', {
-                  destination: getLocationIdByName(locations, value),
-                })} />)}
+            )) ||
+              (locations.length === 1 && (
+                <Box mb={1.7} color="average">
+                  {getLocationNameById(locations, destination)}
+                </Box>
+              )) || (
+                <Dropdown
+                  mb={1.7}
+                  over
+                  width="240px"
+                  options={locations.map((location) => location.name)}
+                  disabled={locked || authorization_required}
+                  selected={
+                    getLocationNameById(locations, destination) ||
+                    'Select a Destination'
+                  }
+                  onSelected={(value) =>
+                    act('set_destination', {
+                      destination: getLocationIdByName(locations, value),
+                    })
+                  }
+                />
+              )}
           </LabeledList.Item>
         </LabeledList>
         <Button
           fluid
           content="Depart"
-          disabled={!getLocationNameById(locations, destination)
-            || locked || authorization_required}
+          disabled={
+            !getLocationNameById(locations, destination) ||
+            locked ||
+            authorization_required
+          }
           icon="arrow-up"
           textAlign="center"
-          onClick={() => act('move', {
-            shuttle_id: destination,
-          })} />
+          onClick={() =>
+            act('move', {
+              shuttle_id: destination,
+            })
+          }
+        />
       </Section>
     </Section>
   );

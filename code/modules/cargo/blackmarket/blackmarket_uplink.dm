@@ -23,7 +23,7 @@
 			viewing_category = categories[1]
 
 /obj/item/blackmarket_uplink/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/holochip) || istype(I, /obj/item/stack/spacecash) || istype(I, /obj/item/coin))
+	if(istype(I, /obj/item/holochip) || istype(I, /obj/item/spacecash/bundle) || istype(I, /obj/item/coin))
 		var/worth = I.get_item_credit_value()
 		if(!worth)
 			to_chat(user, "<span class='warning'>[I] doesn't seem to be worth anything!</span>")
@@ -79,7 +79,7 @@
 					"id" = I.type,
 					"name" = I.name,
 					"cost" = I.price,
-					"amount" = I.stock,
+					"amount" = I.unlimited ? "INF" : I.stock,
 					"desc" = I.desc || I.name
 				))
 	return data

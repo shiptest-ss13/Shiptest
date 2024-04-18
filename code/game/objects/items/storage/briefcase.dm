@@ -1,7 +1,7 @@
 /obj/item/storage/briefcase
 	name = "briefcase"
 	desc = "It's made of AUTHENTIC faux-leather and has a price-tag still attached. Its owner must be a real professional."
-	icon = 'whitesands/icons/obj/storage.dmi' //WS edit - Better briefcases
+	icon = 'icons/obj/storage.dmi' //WS edit - Better briefcases
 	icon_state = "briefcase"
 	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
@@ -21,6 +21,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 21
+	STR.use_sound = 'sound/items/storage/briefcase.ogg'
 
 /obj/item/storage/briefcase/PopulateContents()
 	new /obj/item/pen(src)

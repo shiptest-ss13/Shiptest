@@ -5,16 +5,17 @@
 	icon_state = "engine"
 	thermal_conductivity = 0.025
 	heat_capacity = INFINITY
-	floor_tile = /obj/item/stack/rods
+	floor_tile = /obj/item/stack/sheet/metal
 	footstep = FOOTSTEP_PLATING
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 
+
 /turf/open/floor/engine/examine(mob/user)
 	. += ..()
-	. += "<span class='notice'>The reinforcement rods are <b>wrenched</b> firmly in place.</span>"
+	. += "<span class='notice'>The reinforcement sheet is <b>wrenched</b> firmly in place.</span>"
 
 /turf/open/floor/engine/airless
 	initial_gas_mix = AIRLESS_ATMOS
@@ -30,20 +31,26 @@
 		..()
 	return //unplateable
 
+/turf/open/floor/engine/temperature_expose()
+	return //inflammable
+
 /turf/open/floor/engine/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	return
 
 /turf/open/floor/engine/crowbar_act(mob/living/user, obj/item/I)
 	return
 
+/turf/open/floor/engine/handle_decompression_floor_rip(sum)
+	return
+
 /turf/open/floor/engine/wrench_act(mob/living/user, obj/item/I)
 	..()
-	to_chat(user, "<span class='notice'>You begin removing rods...</span>")
+	to_chat(user, "<span class='notice'>You begin removing the sheet...</span>")
 	if(I.use_tool(src, user, 30, volume=80))
 		if(!istype(src, /turf/open/floor/engine))
 			return TRUE
 		if(floor_tile)
-			new floor_tile(src, 2)
+			new floor_tile(src, 1)
 		ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 	return TRUE
 
@@ -122,6 +129,9 @@
 	name = "air floor"
 	initial_gas_mix = ATMOS_TANK_AIRMIX
 
+/turf/open/floor/engine/fuel
+	name = "fuel mix floor"
+	initial_gas_mix = ATMOS_TANK_FUEL
 
 
 /turf/open/floor/engine/cult
@@ -132,7 +142,7 @@
 	var/obj/effect/cult_turf/overlay/floor/bloodcult/realappearance
 
 
-/turf/open/floor/engine/cult/Initialize()
+/turf/open/floor/engine/cult/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	new /obj/effect/temp_visual/cult/turf/floor(src)
 	realappearance = new /obj/effect/cult_turf/overlay/floor/bloodcult(src)

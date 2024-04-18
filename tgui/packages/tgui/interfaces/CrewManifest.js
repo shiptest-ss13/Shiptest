@@ -1,51 +1,45 @@
-import { useBackend } from "../backend";
-import { Icon, Section, Table } from "../components";
-import { Window } from "../layouts";
-
-const commandJobs = [
-  "Captain",
-  "Head of Personnel",
-  "Head of Security",
-  "Chief Engineer",
-  "Research Director",
-  "Chief Medical Officer",
-];
+import { decodeHtmlEntities } from 'common/string';
+import { useBackend } from '../backend';
+import { Icon, Section, Table } from '../components';
+import { Window } from '../layouts';
 
 export const CrewManifest = (props, context) => {
-  const { data: { manifest, positions } } = useBackend(context);
+  const {
+    data: { manifest },
+  } = useBackend(context);
 
   return (
     <Window title="Crew Manifest" width={350} height={500}>
       <Window.Content scrollable>
         {Object.entries(manifest).map(([department, crew]) => (
           <Section
-            className={"CrewManifest--" + department}
+            className={'CrewManifest--' + department}
             key={department}
-            title={department}
+            title={decodeHtmlEntities(department)}
           >
             <Table>
               {Object.entries(crew).map(([crewIndex, crewMember]) => (
                 <Table.Row key={crewIndex}>
-                  <Table.Cell className={"CrewManifest__Cell"}>
+                  <Table.Cell className={'CrewManifest__Cell'}>
                     {crewMember.name}
                   </Table.Cell>
                   <Table.Cell
                     className={
-                      "CrewManifest__Cell CrewManifest__Cell--"
-                      + (crewMember.rank === "Captain" ? "Captain" : "Command")
+                      'CrewManifest__Cell CrewManifest__Cell--' +
+                      (crewMember.rank === 'Captain' ? 'Captain' : 'Command')
                     }
                     collapsing
                   >
-                    {commandJobs.includes(crewMember.rank) && (
+                    {!!crewMember.officer && (
                       <Icon
                         name={
-                          crewMember.rank === "Captain" ? "star" : "chevron-up"
+                          crewMember.rank === 'Captain' ? 'star' : 'chevron-up'
                         }
                       />
                     )}
                   </Table.Cell>
                   <Table.Cell
-                    className={"CrewManifest__Cell"}
+                    className={'CrewManifest__Cell'}
                     collapsing
                     color="label"
                   >

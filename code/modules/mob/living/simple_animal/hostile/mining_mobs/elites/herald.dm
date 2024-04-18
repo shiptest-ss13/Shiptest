@@ -4,26 +4,29 @@
 #define HERALD_MIRROR 4
 
 /**
-  * # Herald
-  *
-  * A slow-moving projectile user with a few tricks up it's sleeve.  Less unga-bunga than Colossus, with more cleverness in it's fighting style.
-  * As it's health gets lower, the amount of projectiles fired per-attack increases.
-  * It's attacks are as follows:
-  * - Fires three projectiles in a a given direction.
-  * - Fires a spread in every cardinal and diagonal direction at once, then does it again after a bit.
-  * - Shoots a single, golden bolt.  Wherever it lands, the herald will be teleported to the location.
-  * - Spawns a mirror which reflects projectiles directly at the target.
-  * Herald is a more concentrated variation of the Colossus fight, having less projectiles overall, but more focused attacks.
-  */
+ * # Herald
+ *
+ * A slow-moving projectile user with a few tricks up it's sleeve.  Less unga-bunga than Colossus, with more cleverness in it's fighting style.
+ * As it's health gets lower, the amount of projectiles fired per-attack increases.
+ * It's attacks are as follows:
+ * - Fires three projectiles in a a given direction.
+ * - Fires a spread in every cardinal and diagonal direction at once, then does it again after a bit.
+ * - Shoots a single, golden bolt.  Wherever it lands, the herald will be teleported to the location.
+ * - Spawns a mirror which reflects projectiles directly at the target.
+ * Herald is a more concentrated variation of the Colossus fight, having less projectiles overall, but more focused attacks.
+ */
 
 /mob/living/simple_animal/hostile/asteroid/elite/herald
 	name = "herald"
 	desc = "A monstrous beast which fires deadly projectiles at threats and prey."
+	icon = 'icons/mob/lavaland/lavaland_elites_64.dmi'
 	icon_state = "herald"
 	icon_living = "herald"
 	icon_aggro = "herald"
 	icon_dead = "herald_dying"
 	icon_gib = "syndicate_gib"
+	pixel_x = -16
+	base_pixel_x = -16
 	health_doll_icon = "herald"
 	maxHealth = 800
 	health = 800
@@ -53,14 +56,14 @@
 /mob/living/simple_animal/hostile/asteroid/elite/herald/death()
 	. = ..()
 	if(!is_mirror)
-		addtimer(CALLBACK(src, .proc/become_ghost), 8)
+		addtimer(CALLBACK(src, PROC_REF(become_ghost)), 8)
 	if(my_mirror != null)
 		qdel(my_mirror)
 
 /mob/living/simple_animal/hostile/asteroid/elite/herald/proc/become_ghost()
 	icon_state = "herald_ghost"
 
-/mob/living/simple_animal/hostile/asteroid/elite/herald/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/simple_animal/hostile/asteroid/elite/herald/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	. = ..()
 	playsound(get_turf(src), 'sound/magic/clockwork/invoke_general.ogg', 20, TRUE)
 
@@ -123,7 +126,7 @@
 		if(HERALD_MIRROR)
 			herald_mirror()
 
-/mob/living/simple_animal/hostile/asteroid/elite/herald/proc/shoot_projectile(turf/marker, set_angle, var/is_teleshot)
+/mob/living/simple_animal/hostile/asteroid/elite/herald/proc/shoot_projectile(turf/marker, set_angle, is_teleshot)
 	var/turf/startloc = get_turf(src)
 	var/obj/projectile/herald/H = null
 	if(!is_teleshot)
@@ -142,13 +145,13 @@
 	var/target_turf = get_turf(target)
 	var/angle_to_target = Get_Angle(src, target_turf)
 	shoot_projectile(target_turf, angle_to_target, FALSE)
-	addtimer(CALLBACK(src, .proc/shoot_projectile, target_turf, angle_to_target, FALSE), 2)
-	addtimer(CALLBACK(src, .proc/shoot_projectile, target_turf, angle_to_target, FALSE), 4)
+	addtimer(CALLBACK(src, PROC_REF(shoot_projectile), target_turf, angle_to_target, FALSE), 2)
+	addtimer(CALLBACK(src, PROC_REF(shoot_projectile), target_turf, angle_to_target, FALSE), 4)
 	if(health < maxHealth * 0.5)
 		playsound(get_turf(src), 'sound/magic/clockwork/invoke_general.ogg', 20, TRUE)
-		addtimer(CALLBACK(src, .proc/shoot_projectile, target_turf, angle_to_target, FALSE), 10)
-		addtimer(CALLBACK(src, .proc/shoot_projectile, target_turf, angle_to_target, FALSE), 12)
-		addtimer(CALLBACK(src, .proc/shoot_projectile, target_turf, angle_to_target, FALSE), 14)
+		addtimer(CALLBACK(src, PROC_REF(shoot_projectile), target_turf, angle_to_target, FALSE), 10)
+		addtimer(CALLBACK(src, PROC_REF(shoot_projectile), target_turf, angle_to_target, FALSE), 12)
+		addtimer(CALLBACK(src, PROC_REF(shoot_projectile), target_turf, angle_to_target, FALSE), 14)
 
 /mob/living/simple_animal/hostile/asteroid/elite/herald/proc/herald_circleshot()
 	var/static/list/directional_shot_angles = list(0, 45, 90, 135, 180, 225, 270, 315)
@@ -165,11 +168,11 @@
 	if(!is_mirror)
 		icon_state = "herald_enraged"
 	playsound(get_turf(src), 'sound/magic/clockwork/invoke_general.ogg', 20, TRUE)
-	addtimer(CALLBACK(src, .proc/herald_circleshot), 5)
+	addtimer(CALLBACK(src, PROC_REF(herald_circleshot)), 5)
 	if(health < maxHealth * 0.5)
 		playsound(get_turf(src), 'sound/magic/clockwork/invoke_general.ogg', 20, TRUE)
-		addtimer(CALLBACK(src, .proc/herald_circleshot), 15)
-	addtimer(CALLBACK(src, .proc/unenrage), 20)
+		addtimer(CALLBACK(src, PROC_REF(herald_circleshot)), 15)
+	addtimer(CALLBACK(src, PROC_REF(unenrage)), 20)
 
 /mob/living/simple_animal/hostile/asteroid/elite/herald/proc/herald_teleshot(target)
 	ranged_cooldown = world.time + 30
@@ -195,6 +198,9 @@
 	health = 60
 	maxHealth = 60
 	icon_state = "herald_mirror"
+	icon_aggro = "herald_mirror"
+	pixel_x = -16
+	base_pixel_x = -16
 	deathmessage = "shatters violently!"
 	deathsound = 'sound/effects/glassbr1.ogg'
 	movement_type = FLYING
@@ -203,7 +209,7 @@
 	var/mob/living/simple_animal/hostile/asteroid/elite/herald/my_master = null
 
 /mob/living/simple_animal/hostile/asteroid/elite/herald/mirror/Initialize()
-	..()
+	. = ..()
 	toggle_ai(AI_OFF)
 
 /mob/living/simple_animal/hostile/asteroid/elite/herald/mirror/Destroy()
@@ -250,7 +256,7 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "herald_cloak"
 	body_parts_covered = CHEST|GROIN|ARMS
-	hit_reaction_chance = 10
+	hit_reaction_chance = 25
 
 /obj/item/clothing/neck/cloak/herald_cloak/proc/reactionshot(mob/living/carbon/owner)
 	var/static/list/directional_shot_angles = list(0, 45, 90, 135, 180, 225, 270, 315)
@@ -272,4 +278,4 @@
 	owner.visible_message("<span class='danger'>[owner]'s [src] emits a loud noise as [owner] is struck!</span>")
 	var/static/list/directional_shot_angles = list(0, 45, 90, 135, 180, 225, 270, 315)
 	playsound(get_turf(owner), 'sound/magic/clockwork/invoke_general.ogg', 20, TRUE)
-	addtimer(CALLBACK(src, .proc/reactionshot, owner), 10)
+	addtimer(CALLBACK(src, PROC_REF(reactionshot), owner), 10)

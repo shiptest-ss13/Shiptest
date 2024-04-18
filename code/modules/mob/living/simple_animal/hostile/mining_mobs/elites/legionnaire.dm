@@ -4,17 +4,17 @@
 #define SPEW_SMOKE 4
 
 /**
-  * # Legionnaire
-  *
-  * A towering skeleton, embodying the power of Legion.
-  * As it's health gets lower, the head does more damage.
-  * It's attacks are as follows:
-  * - Charges at the target after a telegraph, throwing them across the arena should it connect.
-  * - Legionnaire's head detaches, attacking as it's own entity.  Has abilities of it's own later into the fight.  Once dead, regenerates after a brief period.  If the skill is used while the head is off, it will be killed.
-  * - Leaves a pile of bones at your location.  Upon using this skill again, you'll swap locations with the bone pile.
-  * - Spews a cloud of smoke from it's maw, wherever said maw is.
-  * A unique fight incorporating the head mechanic of legion into a whole new beast.  Combatants will need to make sure the tag-team of head and body don't lure them into a deadly trap.
-  */
+ * # Legionnaire
+ *
+ * A towering skeleton, embodying the power of Legion.
+ * As it's health gets lower, the head does more damage.
+ * It's attacks are as follows:
+ * - Charges at the target after a telegraph, throwing them across the arena should it connect.
+ * - Legionnaire's head detaches, attacking as it's own entity.  Has abilities of it's own later into the fight.  Once dead, regenerates after a brief period.  If the skill is used while the head is off, it will be killed.
+ * - Leaves a pile of bones at your location.  Upon using this skill again, you'll swap locations with the bone pile.
+ * - Spews a cloud of smoke from it's maw, wherever said maw is.
+ * A unique fight incorporating the head mechanic of legion into a whole new beast.  Combatants will need to make sure the tag-team of head and body don't lure them into a deadly trap.
+ */
 
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire
 	name = "legionnaire"
@@ -104,9 +104,9 @@
 		T = get_step(T, dir_to_target)
 	playsound(src,'sound/magic/demon_attack1.ogg', 200, 1)
 	visible_message("<span class='boldwarning'>[src] prepares to charge!</span>")
-	addtimer(CALLBACK(src, .proc/legionnaire_charge_2, dir_to_target, 0), 5)
+	addtimer(CALLBACK(src, PROC_REF(legionnaire_charge_2), dir_to_target, 0), 5)
 
-/mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/legionnaire_charge_2(var/move_dir, var/times_ran)
+/mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/legionnaire_charge_2(move_dir, times_ran)
 	if(times_ran >= 4)
 		return
 	var/turf/T = get_step(get_turf(src), move_dir)
@@ -132,7 +132,7 @@
 		L.safe_throw_at(throwtarget, 10, 1, src)
 		L.Paralyze(20)
 		L.adjustBruteLoss(50)
-	addtimer(CALLBACK(src, .proc/legionnaire_charge_2, move_dir, (times_ran + 1)), 2)
+	addtimer(CALLBACK(src, PROC_REF(legionnaire_charge_2), move_dir, (times_ran + 1)), 2)
 
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/head_detach(target)
 	ranged_cooldown = world.time + 10
@@ -160,7 +160,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/onHeadDeath()
 	myhead = null
-	addtimer(CALLBACK(src, .proc/regain_head), 50)
+	addtimer(CALLBACK(src, PROC_REF(regain_head)), 50)
 
 /mob/living/simple_animal/hostile/asteroid/elite/legionnaire/proc/regain_head()
 	has_head = TRUE
@@ -285,10 +285,10 @@
 	icon = 'icons/obj/lavaland/elite_trophies.dmi'
 	icon_state = "legionnaire_spine"
 	denied_type = /obj/item/crusher_trophy/legionnaire_spine
-	bonus_value = 20
+	bonus_value = 50//These skulls are a joke, so this bonus value had to be put on steroidal emergency treatment
 
 /obj/item/crusher_trophy/legionnaire_spine/effect_desc()
-	return "mark detonation to have a <b>[bonus_value]%</b> chance to summon a loyal legion skull"
+	return "waveform collapse to have a <b>[bonus_value]%</b> chance to summon a loyal legion skull"
 
 /obj/item/crusher_trophy/legionnaire_spine/on_mark_detonation(mob/living/target, mob/living/user)
 	if(!rand(1, 100) <= bonus_value || target.stat == DEAD)

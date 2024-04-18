@@ -17,7 +17,7 @@ GLOBAL_PROTECT(VVpixelmovement)
 //FALSE = no subtypes, strict exact type pathing (or the type doesn't have subtypes)
 //TRUE = Yes subtypes
 //NULL = User cancelled at the prompt or invalid type given
-/client/proc/vv_subtype_prompt(var/type)
+/client/proc/vv_subtype_prompt(type)
 	if (!ispath(type))
 		return
 	var/list/subtypes = subtypesof(type)
@@ -208,7 +208,7 @@ GLOBAL_PROTECT(VVpixelmovement)
 	if(default == VV_NUM)
 		var/dir_text = ""
 		var/tdir = variable
-		if(tdir > 0 && tdir < 16)
+		if(tdir > 0 && tdir < 32)
 			if(tdir & 1)
 				dir_text += "NORTH"
 			if(tdir & 2)
@@ -217,6 +217,10 @@ GLOBAL_PROTECT(VVpixelmovement)
 				dir_text += "EAST"
 			if(tdir & 8)
 				dir_text += "WEST"
+			if(tdir & 16)
+				dir_text += "UP"
+			if(tdir & 32)
+				dir_text += "DOWN"
 
 		if(dir_text)
 			to_chat(usr, "If a direction, direction is: [dir_text]", confidential = TRUE)
@@ -330,7 +334,7 @@ GLOBAL_PROTECT(VVpixelmovement)
 
 	if(default == VV_NUM)
 		var/dir_text = ""
-		if(var_value > 0 && var_value < 16)
+		if(var_value > 0 && var_value < 32)
 			if(var_value & 1)
 				dir_text += "NORTH"
 			if(var_value & 2)
@@ -339,6 +343,10 @@ GLOBAL_PROTECT(VVpixelmovement)
 				dir_text += "EAST"
 			if(var_value & 8)
 				dir_text += "WEST"
+			if(var_value & 16)
+				dir_text += "UP"
+			if(var_value & 32)
+				dir_text += "DOWN"
 
 		if(dir_text)
 			to_chat(src, "If a direction, direction is: [dir_text]", confidential = TRUE)
@@ -383,7 +391,7 @@ GLOBAL_PROTECT(VVpixelmovement)
 	vv_update_display(O, "varedited", VV_MSG_EDITED)
 	log_world("### VarEdit by [key_name(src)]: [O.type] [variable]=[var_value] => [var_new]")
 	log_admin("[key_name(src)] modified [original_name]'s [variable] from [html_encode("[var_value]")] to [html_encode("[var_new]")]")
-	var/msg = "[key_name_admin(src)] modified [original_name]'s [variable] from [var_value] to [var_new]"
+	var/msg = "[key_name_admin(src)] modified [original_name]'s [variable] from [var_value ? var_value : "NULL"] to [var_new]"
 	message_admins(msg)
 	admin_ticket_log(O, msg)
 	return TRUE

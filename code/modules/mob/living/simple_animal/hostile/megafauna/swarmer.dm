@@ -103,9 +103,8 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 /mob/living/simple_animal/hostile/swarmer/ai/Initialize()
 	. = ..()
 	ToggleLight() //so you can see them eating you out of house and home/shooting you/stunlocking you for eternity
-	LAZYINITLIST(GLOB.AISwarmersByType[type])
-	GLOB.AISwarmers += src
-	GLOB.AISwarmersByType[type] += src
+	LAZYADD(GLOB.AISwarmers, src)
+	GLOB.AISwarmersByType[type] += list(src)
 
 
 /mob/living/simple_animal/hostile/swarmer/ai/Destroy()
@@ -130,12 +129,12 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 
 /mob/living/simple_animal/hostile/swarmer/ai/Move(atom/newloc)
 	if(newloc)
-		if(newloc.get_virtual_z_level() == get_virtual_z_level()) //so these actions are Z-specific
+		if(newloc.virtual_z() == virtual_z()) //so these actions are Z-specific
 			if(islava(newloc))
 				var/turf/open/lava/L = newloc
 				if(!L.is_safe())
 					StartAction(20)
-					new /obj/structure/lattice/catwalk/swarmer_catwalk(newloc)
+					new /obj/structure/catwalk/swarmer_catwalk(newloc)
 					return FALSE
 
 			if(ischasm(newloc) && !throwing)
@@ -148,7 +147,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 /mob/living/simple_animal/hostile/swarmer/ai/proc/StartAction(deci = 0)
 	stop_automated_movement = TRUE
 	AIStatus = AI_OFF
-	addtimer(CALLBACK(src, .proc/EndAction), deci)
+	addtimer(CALLBACK(src, PROC_REF(EndAction)), deci)
 
 
 /mob/living/simple_animal/hostile/swarmer/ai/proc/EndAction()
@@ -281,7 +280,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 
 //SWARMER CATWALKS
 //Used so they can survive lavaland better
-/obj/structure/lattice/catwalk/swarmer_catwalk
+/obj/structure/catwalk/swarmer_catwalk
 	name = "swarmer catwalk"
 	desc = "A catwalk-like mesh, produced by swarmers to allow them to navigate hostile terrain."
 	icon = 'icons/obj/smooth_structures/swarmer_catwalk.dmi'

@@ -1,0 +1,138 @@
+2022-09-01:
+  tiramisuapimancer:
+  - tweak: gamer shirt now depicts Super Weasel Kid
+2022-09-04:
+  nefarious6th:
+  - imageadd: resprites the plant dna manipulator
+  phoaly:
+  - rscadd: Glaive-class SRM ship added
+2022-09-07:
+  nefarious6th:
+  - imageadd: resprited some snacks
+  triplezeta:
+  - bugfix: ruin shuttles work again
+  - bugfix: titanium windows can be built again
+2022-09-09:
+  Apogee-dev:
+  - bugfix: IRMG Vanguards have finally been issued their proper headsets
+  Ebin-Halcyon:
+  - imageadd: IRMG Clothing have gotten a slight tweak to their color and look.
+  MemedHams:
+  - tweak: Dwarves now enter a metabolic frenzy when above 400 alchohol. This triggers
+      their regen and rapidly increases body temp. When body temp gets too high, they
+      start taking heavy burn damage. Ride the lightning!
+  - tweak: Dwarf alchohol level now rapidly decreases when above 400.
+  - tweak: Dwarf speed is 10% higher.
+  - tweak: better dwarf names.
+  - tweak: Dwarves no longer starve to death while ssd.
+  - tweak: Dwarves now slur their words with much lower intensity while drunk.
+  - balance: Dwarves now gain nutrition when very hungry and drunk.
+  - balance: Dwarves now take 50% more stamina damage, and have 30% longer stuns
+  - balance: Dwarf regen power greatly reduced.
+  - balance: Dwarf 0-alchohol damage greatly reduced. Instead, they now rapidly lose
+      nutriment, take stam damage, and randomly get blurred vision. Fun!
+  - tweak: alcohol now affects the power of dwarf regen slightly, based on drink quality.
+  - code_imp: adds a stamina mod to species.
+  PiperDoots:
+  - imageadd: added blush screen to IPCs
+  Ryll-Ryll, Memed Hams:
+  - rscadd: The Kiss of Death, a legendary lipstick rumoured to provide heart-stopping
+      beauty.
+  - code_imp: emote items moved to the emotes.dm file
+  - code_imp: ports tg's rework of the give system
+  Yellow-Mushroom:
+  - rscdel: The NT Synapse-Class has been deleted
+  nefarious6th:
+  - imageadd: resprited produce harvests
+  retlaw34:
+  - rscadd: Three new planets
+  - rscadd: New planet gen. Most planets now have a biome gen, meaning planets will
+      now have more variance
+  - imageadd: New rock walls by Any%
+  - tweak: Trees now turn transparent if something is behind them.
+  - bugfix: reebe should now be admin spawnable
+  - rscadd: tropical lobtrosity
+  - code_imp: new config option for controlling overmap encounter default sizes
+  triplezeta:
+  - tweak: internals connection will persist for a moment after you take your breathing
+      apparatus off
+  - bugfix: taking off any mask-slot item while you have an internals-flagged helmet
+      on no longer shuts off your internals
+  - bugfix: turning on your internals will no longer scrungle your headbandana
+  - bugfix: bubbleblowers and smokers will no longer have their internals shut off
+      when they run out of bubblegum or smokes
+2022-09-10:
+  Apogee-dev:
+  - tweak: Modified Hyena RnD and medical equipment
+  - tweak: Replaced Hyena tinyfans with shield wall generators
+  - balance: Replaced Hyena stechkins with pump shotgun
+2022-09-14:
+  retlaw34:
+  - code_imp: Several code issues have been adressed
+2022-09-15:
+  Recoherent:
+  - rscadd: Elzuosa resprite by any%! Everyone's favorite crystal plant furries now
+      have a proper look! Make sure to adjust any current elzu characters you have,
+      as this adds a lot of customization.
+  - rscadd: Elzu now have horns and tails that can be changed; horn sprites by any%
+      and tail sprites by Recoherent.
+  - tweak: Elzu are no longer restricted to an arbitrary set of colors, and can be
+      set to whatever you desire, so long as it isn't too dark; this still works with
+      multitools and emags.
+  - tweak: Elzu glow has been toned down significantly, and is no longer eye-searing.
+  - tweak: Elzu can now have their eye color changed independently of their base color.
+  - tweak: Elzu no longer have the agender trait; feel free to keep them on Other
+      if you still want gender-neutral pronouns, but the other options are fully available.
+  triplezeta:
+  - bugfix: vox sprites work again :)
+2022-09-17:
+  triplezeta:
+  - bugfix: suit items show up again
+2022-09-19:
+  Bjarl:
+  - rscadd: new area def files + comments on the old one. You probably won't see this
+      in game.
+  PrefabQuasar:
+  - tweak: wood railings and corner railings are now craftable
+  - tweak: railings can now be rotated in all 8 directions
+  - bugfix: stairs have been re-added to the floor painter
+  nefarious6th:
+  - imageadd: resprited wooden tvs and glass display cases
+  tmtmtl30:
+  - tweak: The outpost cargo catalog has been recategorized entirely, and should hopefully
+      be more user-friendly.
+  - tweak: Access restrictions have been removed from purchased crates.
+  - tweak: Purchased crates may no longer have erroneous manifests; they will now
+      always contain the full contents of the purchased pack.
+  - tweak: Internals and plasmaman refill crates no longer come with air; instead,
+      purchase a canister of gas along with your tanks.
+  - balance: Many packs have had their prices changed to better fit our ideal price-scaling.
+  - balance: Material export prices have been reduced across the board, with plasma
+      sheets in particular receiving a heavy nerf to their export price.
+  - refactor: Cargo pack categories now exist in their own files.
+2022-09-22:
+  TetraZeta, tmtmtl30:
+  - imageadd: new ammo casing sprites, courtesy of TetraZeta
+  - tweak: ammo casing sprites moved to their own file
+  - tweak: shotgun shell sprites moved to their OWN own file
+  - tweak: ammo casings now automatically rotate using transforms instead of dirs
+2022-09-23:
+  Recoherent:
+  - admin: skull tissue
+2022-09-24:
+  martinlyra:
+  - tweak: Addressed improper use of a space turf type on some maps
+  retlaw34, tetrazeta, Imaginos16 or axietheaxolotl (same person):
+  - rscdel: Space Russian
+  - rscadd: Frontiersmen
+  - tweak: Mosin Nagant is now a hunting rifle
+  - rscadd: SolGov now uses the Swiss Cheese
+  - rscadd: Smile rifle and Two Bore gun for the Saint Roumain Milita
+  - soundadd: Wincheter has a proper racking sound effect
+  - rscadd: Resprites vest, bulletproof, riot armor
+  - rscdel: Terragov laser rifles
+2022-09-26:
+  Recoherent:
+  - tweak: IPCs can have a little pronoun choice, as a treat. Please check and tweak
+      those for your IPC characters, and remember that you can set it to 'Other' to
+      keep they/them.

@@ -1,0 +1,215 @@
+2022-02-03:
+  Apogee-dev:
+  - rscadd: Added a large amount of new random ship names.
+  - tweak: Added namelists, prefix, and ship limit of 1 to the Kugelblitz.
+  Ebin-Halcyon:
+  - imageadd: Kepori color matrix clothing has been resprited.
+2022-02-04:
+  Kapu1178:
+  - bugfix: Krokodil zombie heads and chests render again
+  - code_imp: Bodypart code simplified a bit
+  MarkSuckerberg:
+  - code_imp: Adds strict mapping checks to unit tests.
+  Phoaly:
+  - rscadd: Added a new map "maps\randomruins\iceruins\icemoon_surface_corporate_rejects.dmm"
+  - code_imp: Added a datum and several areas for the map in "whitesands\code\datums\ruins\icemoon.dm"
+      and "code\game\area\areas\ruins\icemoon.dm" respectively.
+  quin:
+  - imageadd: Updates the syndicate hardsuit sprite with a new look.
+  - bugfix: Fixes the syndicate hardsuits spawning in as the wrong sprite to the current
+      mode.
+2022-02-05:
+  ? ''
+  : - tweak: Cleans up the game tips.
+  AsciiSquid:
+  - tweak: Independent ships now stock independent hardsuits to avoid copyright infringement
+      with NT.
+  sunofang:
+  - rscadd: Added a radiation ruin. Better pack radsuits!
+2022-02-06:
+  MarkSuckerberg:
+  - tweak: The overmap now appears to smoothly loop
+  - tweak: The overmap is now stored in a virtual z-level
+  - server: Overmap size is now configurable
+  - tweak: Loadouts are now limited by a config-set number instead of the amount of
+      metacoins you could spend.
+  - tweak: All loadout items spawn in a box now instead of attempting to equip stuff.
+      meh.
+  - rscdel: Metacoins and Antag Tokens (latter never used)
+  - rscdel: Custom OOC colours/extra character slots have been removed. Sorry, but
+      they just don't work now.
+  - server: SQL change dropping metacoins/antag tokens, updates config with max loadout
+      items value
+2022-02-07:
+  Kapu1178, Tiviplus:
+  - rscadd: Landing on a planet now prints a unique name on all shuttle occupant's
+      screens.
+  - code_imp: TGMC screen alerts.
+  retlaw34:
+  - rscadd: grinding toner carts give 40u iodine now
+2022-02-08:
+  Phoaly:
+  - tweak: Tweaked the NT Deserter Vault Ruin on the Icemoon.
+  retlaw34:
+  - imageadd: new cryo computer and pod sprites
+  - imageadd: update nt command stuff
+2022-02-09:
+  E-MonaRhg:
+  - bugfix: Underwear no longer clips through certain clothes.
+  - tweak: Wearing skirts no longer breaks digitigrade legs.
+  Kapu1178:
+  - bugfix: Augment Manipulator works again
+  ZephyrTFA:
+  - rscadd: Chisels!
+2022-02-10:
+  PrefabQuasar:
+  - rscadd: Added proper glass and rglass floor tiles
+  Vexylius:
+  - admin: added Add-PB-Bypass and Revoke-PB-Bypass verbs for admins
+2022-02-11:
+  MrStonedOne, LemonInTheDark:
+  - code_imp: Master Controller fix
+  Ms-Mee:
+  - tweak: Changed the ghetto seed extraction sound effect for wrenches.
+  - bugfix: Plants can be sliced again.
+2022-02-12:
+  Phoaly:
+  - rscadd: Adds A new ruin to the Icemoon, the Bloody Hallow.
+  - code_imp: Adds areas and a datum for the Icecropolis (Bloody Hallow) map.
+  - refactor: Refactors a death proc making a specific set of doors open into a mapper
+      helper object anyone can use.
+  - tweak: tweaked icemoon ashdrake map to use new code refactor.
+  - rscadd: Adds new component file to the DME for the refactor to work.
+2022-02-13:
+  benbot16:
+  - bugfix: Reflectors on shuttles rotate properly now.
+2022-02-14:
+  Azarak, Qustinnus, comma, mattroks101, metalgearsloth, tichys:
+  - rscadd: A shit ton of clicky noises
+  - rscadd: Guns now have pickup noises
+  - soundadd: more ambience
+  - imageadd: some buttons got new sprotses
+  retlaw34:
+  - rscadd: Adds a telecomms floor
+  - imageadd: new table sprites
+  - bugfix: ak47 no longer fits in the belt slot, but fits on backs like they are
+      supposed to
+2022-02-15:
+  Crossedfall, Mark Suckerberg:
+  - server: Python version bumped to 3.9.10
+  Kapu1178:
+  - code_imp: AS anything's alot of for loops
+  - bugfix: Closets and their subtypes no longer provide EMP protection to mobs inside.
+  MarkSuckerberg:
+  - bugfix: Minor SQL errors that prevented deaths from being properly logged.
+  PositiveEntropy, SmArtKar, axietheaxolotl:
+  - imageadd: Resprites Black Gloves and Jackboots
+  Randomguy523:
+  - bugfix: IPCs should no longer lose their ability to speak EAL at random.
+  - code_imp: Added a language holder for IPCs, removed forced span in favor of robotic
+      voicebox.
+2022-02-16:
+  Apogee-dev:
+  - rscadd: Added new ammunition variants for 9mm, 10mm, .45, and 5.56mm HITP caseless
+  - rscadd: Added ammunition for all basic faction handguns to the seclathe with a
+      new research node
+  - rscadd: Basic handgun and shotgun ammunition for all basic faction handguns can
+      now be printed at the autolathe
+  - tweak: Replaced .38 speedloaders on the autolathe with ammo boxes
+  - balance: Nerfed 10mm and .45 to do slightly more damage than 9mm
+  - balance: Improved Commander magazine capacity
+  - balance: Removed AP factor and nerfed base damage for 5.56mm HITP Caseless ammo
+  - balance: Buffed improvised shotgun shells to do the same maximum damage as buckshot.
+      Accuracy and damage falloff still limit their real damage output.
+  - imageadd: Added new ammo box sprites for all variants of 9mm, 10mm, .45, and 5.56mm
+      HITP caseless
+  Kapu1178:
+  - code_imp: Harddel fixes
+  - bugfix: riding component causing thousands of runtimes due to a bad signal
+  PrefabQuasar:
+  - tweak: Minor fixes and edits to the Tide-class, Hightide-class, Metis-class, Lamia-class,
+      Bogatyr-class, and Wright-class
+  - tweak: Remodels the Trunktide-class
+  - tweak: Remodels the High-class
+  - bugfix: hightide-class rnd console board is back
+2022-02-17:
+  Kurgis:
+  - bugfix: Metis-class no longer has a duplicate area on the other side of the ship.
+  MarkSuckerberg:
+  - bugfix: Map exporting now no longer crops off the bottom row of tiles
+  - tweak: Map exporting now saves all items a carbon/human has and dumps them on
+      the floor where they were.
+  - tweak: Less overzealous CHECK_TICKing of the map exporter to make it not slow
+      as heck- benchmarking to see if this is worth it or not incomplete
+  - bugfix: Potentially makes empty-space docking less jank?
+  - bugfix: Shuttle engines no longer are forced to harddel.
+  - tweak: Makes "fake" shuttle engines even less functional than they already were.
+      Consider removing completely in the future?
+  PrefabQuasar:
+  - rscadd: Added the Holofield Generator (with placeholder sprites), an atmos-blocking
+      field projector.
+  - bugfix: Autolathe shock wire now... actually shocks
+  triplezeta:
+  - rscadd: jungle and rockplanet have blacklists now
+2022-02-18:
+  Ebin-Halcyon:
+  - rscadd: Inteq risk management group sprites and items
+  MemedHams:
+  - tweak: unstationed large sections of the code
+  - tweak: fixed a few extremely mild spacing and grammar errors
+  francinum:
+  - bugfix: Big bundle of misc fixes
+  - rscdel: Ore Silos can no longer accept money for material transfers
+  - balance: Deep Core Mining equipment is nonfunctional, pending removal.
+  - bugfix: Express Cargo Consoles should render properly outside of ships.
+  - bugfix: GPS units should be less likely to experience UI failures.
+  - bugfix: One flavor of Slimegirl Trafficking has been fixed.
+2022-02-19:
+  Apogee-dev:
+  - rscadd: Added CMC and crew pinpointer to Osprey
+  - rscadd: Added food processor and improved ingredient stock to Osprey kitchen
+  - tweak: Switched Osprey's RnD kit to science lathe instead of omnilathe
+  - tweak: Replaced Osprey engine room's exterior wall with standard titanium, enabling
+      possible expansion
+  - tweak: Limited Osprey to 1 ship per round
+  - rscdel: Removed cargo selling pad from Osprey and gave QM bonus $500 for the selling
+      console
+  Azarak:
+  - rscadd: Turfs can now be ignited and will slowly burn, igniting anyone on them
+  - rscadd: Hotspots have 30% chance to ignite a turf, making fiery explosions leave
+      cool residual flame.
+  - balance: Flamethrowers have been reworked to use chemicals instead and now leave
+      fire and hotspots on the turfs. They require an open reagent container instead
+      of plasma tank now.
+  - balance: Firealarms now trigger from 80C upwards (from 200C) or -10C downwards
+      (from -3C). They also trigger immediately when they're on a turf fire
+  retlaw34:
+  - rscadd: jungleplanets now can have a bunch of vines
+  - rscadd: jungle planets now emit light
+  - bugfix: jungle turfs no longer lead to space
+  - admin: Adds a new select equipment menu
+  - admin: Makes the outfit manager tgui. You probably didn't even know this existed
+      did you?
+2022-02-21:
+  TheNeoGamer42:
+  - rscdel: Antimatter Engines and their cargo packs have been removed from the game,
+      and if they did exist, cannot be sold anymore.
+  untrius:
+  - server: made the jukebox readme more clear
+2022-02-24:
+  francinum:
+  - admin: unfucks various verbs reliant on TGUI for non-'admin' admins.
+  martinlyra & retlaw34:
+  - tweak: Changed the TEG's UI to tgUI
+  - imageadd: The TEG's visuals have been completely redone. Sprites by Pawn.
+  retlaw34:
+  - imageadd: default title screen changed
+  - imageadd: Extended creidts banner changed
+  - rscadd: Adds new victorian lab/longcoats! Now you can really recreate a mad scientist!
+2022-02-25:
+  swifterjack:
+  - rscadd: Iguana
+2022-02-27:
+  retlaw34:
+  - rscadd: Bubble B
+  - balance: Several tweaks to the bubble class, including 2 special RCDs.

@@ -39,7 +39,7 @@
 		if(!limb)
 			replace_limb(zone)
 			return
-		if((limb.get_damage() >= (limb.max_damage / 2)) || (limb.status == BODYPART_ROBOTIC))
+		if((limb.get_damage() >= (limb.max_damage / 2)) || (!IS_ORGANIC_LIMB(limb)))
 			replace_limb(zone, limb)
 			return
 
@@ -58,7 +58,7 @@
 		return
 
 	var/obj/item/bodypart/chest/chest = owner.get_bodypart(BODY_ZONE_CHEST)
-	if((chest.get_damage() >= (chest.max_damage / 4)) || (chest.status == BODYPART_ROBOTIC))
+	if((chest.get_damage() >= (chest.max_damage / 4)) || (!IS_ORGANIC_LIMB(chest)))
 		replace_chest(chest)
 		return
 
@@ -107,7 +107,7 @@
 	else
 		to_chat(owner, "<span class='warning'>You feel a weird rumble behind your eye sockets...</span>")
 
-	addtimer(CALLBACK(src, .proc/finish_replace_eyes), rand(100, 200))
+	addtimer(CALLBACK(src, PROC_REF(finish_replace_eyes)), rand(100, 200))
 
 /obj/item/organ/heart/gland/heal/proc/finish_replace_eyes()
 	var/eye_type = /obj/item/organ/eyes
@@ -125,7 +125,7 @@
 	else
 		to_chat(owner, "<span class='warning'>You feel a weird tingle in your [parse_zone(body_zone)]... even if you don't have one.</span>")
 
-	addtimer(CALLBACK(src, .proc/finish_replace_limb, body_zone), rand(150, 300))
+	addtimer(CALLBACK(src, PROC_REF(finish_replace_limb), body_zone), rand(150, 300))
 
 /obj/item/organ/heart/gland/heal/proc/finish_replace_limb(body_zone)
 	owner.visible_message("<span class='warning'>With a loud snap, [owner]'s [parse_zone(body_zone)] rapidly grows back from [owner.p_their()] body!</span>",
@@ -155,10 +155,10 @@
 		if(owner.reagents.has_reagent(R.type))
 			keep_going = TRUE
 	if(keep_going)
-		addtimer(CALLBACK(src, .proc/keep_replacing_blood), 30)
+		addtimer(CALLBACK(src, PROC_REF(keep_replacing_blood)), 30)
 
 /obj/item/organ/heart/gland/heal/proc/replace_chest(obj/item/bodypart/chest/chest)
-	if(chest.status == BODYPART_ROBOTIC)
+	if(!IS_ORGANIC_LIMB(chest))
 		owner.visible_message("<span class='warning'>[owner]'s [chest.name] rapidly expels its mechanical components, replacing them with flesh!</span>", "<span class='userdanger'>Your [chest.name] rapidly expels its mechanical components, replacing them with flesh!</span>")
 		playsound(owner, 'sound/magic/clockwork/anima_fragment_attack.ogg', 50, TRUE)
 		var/list/dirs = GLOB.alldirs.Copy()

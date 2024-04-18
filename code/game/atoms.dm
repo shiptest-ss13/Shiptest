@@ -1,9 +1,9 @@
 /**
-  * The base type for nearly all physical objects in SS13
+ * The base type for nearly all physical objects in SS13
 
-  * Lots and lots of functionality lives here, although in general we are striving to move
-  * as much as possible to the components/elements system
-  */
+ * Lots and lots of functionality lives here, although in general we are striving to move
+ * as much as possible to the components/elements system
+ */
 /atom
 	layer = TURF_LAYER
 	plane = GAME_PLANE
@@ -45,8 +45,6 @@
 	var/list/atom_colours
 
 
-	///overlays that should remain on top and not normally removed when using cut_overlay functions, like c4.
-	var/list/priority_overlays
 	/// a very temporary list of overlays to remove
 	var/list/remove_overlays
 	/// a very temporary list of overlays to add
@@ -57,8 +55,6 @@
 	///overlays managed by [update_overlays][/atom/proc/update_overlays] to prevent removing overlays that weren't added by the same proc
 	var/list/managed_overlays
 
-	///Proximity monitor associated with this atom
-	var/datum/proximity_monitor/proximity_monitor
 	///Cooldown tick timer for buckle messages
 	var/buckle_message_cooldown = 0
 	///Last fingerprints to touch this atom
@@ -70,8 +66,6 @@
 	var/custom_price
 	///Economy cost of item in premium vendor
 	var/custom_premium_price
-	///Whether spessmen with an ID with an age below AGE_MINOR (20 by default) can buy this item
-	var/age_restricted = FALSE
 
 	//List of datums orbiting this atom
 	var/datum/component/orbiter/orbiters
@@ -139,22 +133,47 @@
 	var/list/smoothing_groups = null
 	///List of smoothing groups this atom can smooth with. If this is null and atom is smooth, it smooths only with itself.
 	var/list/canSmoothWith = null
+
+	/// The icon file of the connector to use when smoothing.
+	/// Use of connectors requires the smoothing flags SMOOTH_BITMASK and SMOOTH_CONNECTORS.
+	var/connector_icon = null
+	/// The icon state prefix used for connectors. Equivalent to the base_icon_state.
+	var/connector_icon_state = null
+	/// Typecache of atom types that this wall will NOT form connector overlays into when smoothing.
+	/// Types should set this equal to a list; this list is, on init, used to create a typecache that is itself cached by SSicon_smooth.
+	var/list/no_connector_typecache = null
+	/// If true, the typecache constructed for no_connector_typecache will NOT include subtypes.
+	var/connector_strict_typing = FALSE
+	/// The current connector junction, saved to stop overlay changes if none are necessary.
+	var/connector_junction = null
+	/// The current connector overlay appearance. Saved so that it can be cut when necessary.
+	var/connector_overlay
+
 	///Reference to atom being orbited
 	var/atom/orbit_target
+	///Default X pixel offset
+	var/base_pixel_x
+	///Default Y pixel offset
+	var/base_pixel_y
+
+	///Wanted sound when hit by a projectile
+	var/hitsound_type = PROJECTILE_HITSOUND_NON_LIVING
+	///volume wanted for being hit
+	var/hitsound_volume = 50
 
 /**
-  * Called when an atom is created in byond (built in engine proc)
-  *
-  * Not a lot happens here in SS13 code, as we offload most of the work to the
-  * [Intialization][/atom/proc/Initialize] proc, mostly we run the preloader
-  * if the preloader is being used and then call [InitAtom][/datum/controller/subsystem/atoms/proc/InitAtom] of which the ultimate
-  * result is that the Intialize proc is called.
-  *
-  * We also generate a tag here if the DF_USE_TAG flag is set on the atom
-  */
+ * Called when an atom is created in byond (built in engine proc)
+ *
+ * Not a lot happens here in SS13 code, as we offload most of the work to the
+ * [Intialization][/atom/proc/Initialize] proc, mostly we run the preloader
+ * if the preloader is being used and then call [InitAtom][/datum/controller/subsystem/atoms/proc/InitAtom] of which the ultimate
+ * result is that the Intialize proc is called.
+ *
+ * We also generate a tag here if the DF_USE_TAG flag is set on the atom
+ */
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
-	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()
+	if(GLOB.use_preloader && src.type == GLOB._preloader_path)//in case the instanciated atom is creating other atoms in New()
 		world.preloader_load(src)
 
 	if(datum_flags & DF_USE_TAG)
@@ -168,41 +187,41 @@
 			return
 
 /**
-  * The primary method that objects are setup in SS13 with
-  *
-  * we don't use New as we have better control over when this is called and we can choose
-  * to delay calls or hook other logic in and so forth
-  *
-  * During roundstart map parsing, atoms are queued for intialization in the base atom/New(),
-  * After the map has loaded, then Initalize is called on all atoms one by one. NB: this
-  * is also true for loading map templates as well, so they don't Initalize until all objects
-  * in the map file are parsed and present in the world
-  *
-  * If you're creating an object at any point after SSInit has run then this proc will be
-  * immediately be called from New.
-  *
-  * mapload: This parameter is true if the atom being loaded is either being intialized during
-  * the Atom subsystem intialization, or if the atom is being loaded from the map template.
-  * If the item is being created at runtime any time after the Atom subsystem is intialized then
-  * it's false.
-  *
-  * You must always call the parent of this proc, otherwise failures will occur as the item
-  * will not be seen as initalized (this can lead to all sorts of strange behaviour, like
-  * the item being completely unclickable)
-  *
-  * You must not sleep in this proc, or any subprocs
-  *
-  * Any parameters from new are passed through (excluding loc), naturally if you're loading from a map
-  * there are no other arguments
-  *
-  * Must return an [initialization hint][INITIALIZE_HINT_NORMAL] or a runtime will occur.
-  *
-  * Note: the following functions don't call the base for optimization and must copypasta handling:
-  * * [/turf/Initialize]
-  * * [/turf/open/space/Initialize]
-  */
+ * The primary method that objects are setup in SS13 with
+ *
+ * we don't use New as we have better control over when this is called and we can choose
+ * to delay calls or hook other logic in and so forth
+ *
+ * During roundstart map parsing, atoms are queued for intialization in the base atom/New(),
+ * After the map has loaded, then Initalize is called on all atoms one by one. NB: this
+ * is also true for loading map templates as well, so they don't Initalize until all objects
+ * in the map file are parsed and present in the world
+ *
+ * If you're creating an object at any point after SSInit has run then this proc will be
+ * immediately be called from New.
+ *
+ * mapload: This parameter is true if the atom being loaded is either being intialized during
+ * the Atom subsystem intialization, or if the atom is being loaded from the map template.
+ * If the item is being created at runtime any time after the Atom subsystem is intialized then
+ * it's false.
+ *
+ * You must always call the parent of this proc, otherwise failures will occur as the item
+ * will not be seen as initalized (this can lead to all sorts of strange behaviour, like
+ * the item being completely unclickable)
+ *
+ * You must not sleep in this proc, or any subprocs
+ *
+ * Any parameters from new are passed through (excluding loc), naturally if you're loading from a map
+ * there are no other arguments
+ *
+ * Must return an [initialization hint][INITIALIZE_HINT_NORMAL] or a runtime will occur.
+ *
+ * Note: the following functions don't call the base for optimization and must copypasta handling:
+ * * [/turf/Initialize]
+ * * [/turf/open/space/Initialize]
+ */
 /atom/proc/Initialize(mapload, ...)
-	//SHOULD_NOT_SLEEP(TRUE)
+	SHOULD_NOT_SLEEP(TRUE)
 	SHOULD_CALL_PARENT(TRUE)
 	if(flags_1 & INITIALIZED_1)
 		stack_trace("Warning: [src]([type]) initialized multiple times!")
@@ -219,17 +238,24 @@
 		update_light()
 
 	if (length(smoothing_groups))
-		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		// There used to be a sort here to prevent duplicate bitflag signatures
+		// in the bitflag list cache; the cost of always timsorting every group list every time added up.
+		// The sort now only happens if the initial key isn't found. This leads to some duplicate keys.
+		// /tg/ has a better approach; a unit test to see if any atoms have mis-sorted smoothing_groups
+		// or canSmoothWith. This is a better idea than what I do, and should be done instead.
 		SET_BITFLAG_LIST(smoothing_groups)
 	if (length(canSmoothWith))
-		sortTim(canSmoothWith)
-		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		// If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF)
 			smoothing_flags |= SMOOTH_OBJ
 		SET_BITFLAG_LIST(canSmoothWith)
+	if (length(no_connector_typecache))
+		no_connector_typecache = SSicon_smooth.get_no_connector_typecache(src.type, no_connector_typecache, connector_strict_typing)
 
-	var/area/ship/current_ship_area = get_area(src)
-	if(!mapload && istype(current_ship_area) && current_ship_area.mobile_port)
-		connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.get_docked())
+	if(!mapload)
+		var/area/ship/current_ship_area = get_area(src)
+		if(istype(current_ship_area) && current_ship_area.mobile_port)
+			connect_to_shuttle(current_ship_area.mobile_port, current_ship_area.mobile_port.docked)
 
 	var/temp_list = list()
 	for(var/i in custom_materials)
@@ -243,16 +269,16 @@
 	return INITIALIZE_HINT_NORMAL
 
 /**
-  * Late Intialization, for code that should run after all atoms have run Intialization
-  *
-  * To have your LateIntialize proc be called, your atoms [Initalization][/atom/proc/Initialize]
-  *  proc must return the hint
-  * [INITIALIZE_HINT_LATELOAD] otherwise you will never be called.
-  *
-  * useful for doing things like finding other machines on GLOB.machines because you can guarantee
-  * that all atoms will actually exist in the "WORLD" at this time and that all their Intialization
-  * code has been run
-  */
+ * Late Intialization, for code that should run after all atoms have run Intialization
+ *
+ * To have your LateIntialize proc be called, your atoms [Initalization][/atom/proc/Initialize]
+ *  proc must return the hint
+ * [INITIALIZE_HINT_LATELOAD] otherwise you will never be called.
+ *
+ * useful for doing things like finding other machines on GLOB.machines because you can guarantee
+ * that all atoms will actually exist in the "WORLD" at this time and that all their Intialization
+ * code has been run
+ */
 /atom/proc/LateInitialize()
 	set waitfor = FALSE
 
@@ -261,15 +287,15 @@
 	return
 
 /**
-  * Top level of the destroy chain for most atoms
-  *
-  * Cleans up the following:
-  * * Removes alternate apperances from huds that see them
-  * * qdels the reagent holder from atoms if it exists
-  * * clears the orbiters list
-  * * clears overlays and priority overlays
-  * * clears the light object
-  */
+ * Top level of the destroy chain for most atoms
+ *
+ * Cleans up the following:
+ * * Removes alternate apperances from huds that see them
+ * * qdels the reagent holder from atoms if it exists
+ * * clears the orbiters list
+ * * clears overlays and priority overlays
+ * * clears the light object
+ */
 /atom/Destroy()
 	if(alternate_appearances)
 		for(var/K in alternate_appearances)
@@ -282,7 +308,6 @@
 	orbiters = null // The component is attached to us normaly and will be deleted elsewhere
 
 	LAZYCLEARLIST(overlays)
-	LAZYCLEARLIST(priority_overlays)
 	LAZYCLEARLIST(managed_overlays)
 
 	for(var/i in targeted_by)
@@ -312,19 +337,19 @@
 	P.setAngle(new_angle_s)
 	return TRUE
 
-///Can the mover object pass this atom, while heading for the target turf
-/atom/proc/CanPass(atom/movable/mover, turf/target)
+/// Whether the mover object can avoid being blocked by this atom, while arriving from (or leaving through) the border_dir.
+/atom/proc/CanPass(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_BE_PURE(TRUE)
 	if(mover.movement_type & PHASING)
 		return TRUE
-	. = CanAllowThrough(mover, target)
+	. = CanAllowThrough(mover, border_dir)
 	// This is cheaper than calling the proc every time since most things dont override CanPassThrough
 	if(!mover.generic_canpass)
-		return mover.CanPassThrough(src, target, .)
+		return mover.CanPassThrough(src, REVERSE_DIR(border_dir), .)
 
 /// Returns true or false to allow the mover to move through src
-/atom/proc/CanAllowThrough(atom/movable/mover, turf/target)
+/atom/proc/CanAllowThrough(atom/movable/mover, border_dir)
 	SHOULD_CALL_PARENT(TRUE)
 	//SHOULD_BE_PURE(TRUE)
 	if(mover.pass_flags & pass_flags_self)
@@ -334,21 +359,21 @@
 	return !density
 
 /**
-  * Is this atom currently located on centcom
-  *
-  * Specifically, is it on the z level and within the centcom areas
-  *
-  * You can also be in a shuttleshuttle during endgame transit
-  *
-  * Used in gamemode to identify mobs who have escaped and for some other areas of the code
-  * who don't want atoms where they shouldn't be
-  */
+ * Is this atom currently located on centcom
+ *
+ * Specifically, is it on the z level and within the centcom areas
+ *
+ * You can also be in a shuttleshuttle during endgame transit
+ *
+ * Used in gamemode to identify mobs who have escaped and for some other areas of the code
+ * who don't want atoms where they shouldn't be
+ */
 /atom/proc/onCentCom()
 	var/turf/T = get_turf(src)
 	if(!T)
 		return FALSE
 
-	if(is_reserved_level(T.z))
+	if(is_reserved_level(T))
 		for(var/A in SSshuttle.mobile)
 			var/obj/docking_port/mobile/M = A
 			if(M.launch_status == ENDGAME_TRANSIT)
@@ -357,7 +382,7 @@
 					if(T in shuttle_area)
 						return TRUE
 
-	if(!is_centcom_level(T.z))//if not, don't bother
+	if(!is_centcom_level(T))//if not, don't bother
 		return FALSE
 
 	//Check for centcom itself
@@ -374,18 +399,18 @@
 					return TRUE
 
 /**
-  * Is the atom in any of the centcom syndicate areas
-  *
-  * Either in the syndie base on centcom, or any of their shuttles
-  *
-  * Also used in gamemode code for win conditions
-  */
+ * Is the atom in any of the centcom syndicate areas
+ *
+ * Either in the syndie base on centcom, or any of their shuttles
+ *
+ * Also used in gamemode code for win conditions
+ */
 /atom/proc/onSyndieBase()
 	var/turf/T = get_turf(src)
 	if(!T)
 		return FALSE
 
-	if(!is_centcom_level(T.z))//if not, don't bother
+	if(!is_centcom_level(T))//if not, don't bother
 		return FALSE
 
 	if(istype(T.loc, /area/shuttle/syndicate) || istype(T.loc, /area/syndicate_mothership))
@@ -394,18 +419,18 @@
 	return FALSE
 
 /**
-  * Is the atom in an away mission
-  *
-  * Must be in the away mission z-level to return TRUE
-  *
-  * Also used in gamemode code for win conditions
-  */
+ * Is the atom in an away mission
+ *
+ * Must be in the away mission z-level to return TRUE
+ *
+ * Also used in gamemode code for win conditions
+ */
 /atom/proc/onAwayMission()
 	var/turf/T = get_turf(src)
 	if(!T)
 		return FALSE
 
-	if(is_away_level(T.z))
+	if(is_away_level(T))
 		return TRUE
 
 	return FALSE
@@ -417,17 +442,17 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_HULK_ATTACK, user)
 
 /**
-  * Ensure a list of atoms/reagents exists inside this atom
-  *
-  * Goes throught he list of passed in parts, if they're reagents, adds them to our reagent holder
-  * creating the reagent holder if it exists.
-  *
-  * If the part is a moveable atom and the  previous location of the item was a mob/living,
-  * it calls the inventory handler transferItemToLoc for that mob/living and transfers the part
-  * to this atom
-  *
-  * Otherwise it simply forceMoves the atom into this atom
-  */
+ * Ensure a list of atoms/reagents exists inside this atom
+ *
+ * Goes throught he list of passed in parts, if they're reagents, adds them to our reagent holder
+ * creating the reagent holder if it exists.
+ *
+ * If the part is a moveable atom and the  previous location of the item was a mob/living,
+ * it calls the inventory handler transferItemToLoc for that mob/living and transfers the part
+ * to this atom
+ *
+ * Otherwise it simply forceMoves the atom into this atom
+ */
 /atom/proc/CheckParts(list/parts_list, datum/crafting_recipe/R)
 	SEND_SIGNAL(src, COMSIG_ATOM_CHECKPARTS, parts_list, R)
 	if(parts_list)
@@ -510,17 +535,17 @@
 	return reagents && (reagents.flags & DRAINABLE)
 
 /** Handles exposing this atom to a list of reagents.
-  *
-  * Sends COMSIG_ATOM_EXPOSE_REAGENTS
-  * Calls expose_atom() for every reagent in the reagent list.
-  *
-  * Arguments:
-  * - [reagents][/list]: The list of reagents the atom is being exposed to.
-  * - [source][/datum/reagents]: The reagent holder the reagents are being sourced from.
-  * - method: How the atom is being exposed to the reagents.
-  * - volume_modifier: Volume multiplier.
-  * - show_message: Whether to display anything to mobs when they are exposed.
-  */
+ *
+ * Sends COMSIG_ATOM_EXPOSE_REAGENTS
+ * Calls expose_atom() for every reagent in the reagent list.
+ *
+ * Arguments:
+ * - [reagents][/list]: The list of reagents the atom is being exposed to.
+ * - [source][/datum/reagents]: The reagent holder the reagents are being sourced from.
+ * - method: How the atom is being exposed to the reagents.
+ * - volume_modifier: Volume multiplier.
+ * - show_message: Whether to display anything to mobs when they are exposed.
+ */
 /atom/proc/expose_reagents(list/reagents, datum/reagents/source, method=TOUCH, volume_modifier=1, show_message=TRUE)
 	if((. = SEND_SIGNAL(src, COMSIG_ATOM_EXPOSE_REAGENTS, reagents, source, method, volume_modifier, show_message)) & COMPONENT_NO_EXPOSE_REAGENTS)
 		return
@@ -533,23 +558,20 @@
 /atom/proc/AllowDrop()
 	return FALSE
 
-/atom/proc/CheckExit()
-	return TRUE
-
 ///Is this atom within 1 tile of another atom
 /atom/proc/HasProximity(atom/movable/AM as mob|obj)
 	return
 
 /**
-  * React to an EMP of the given severity
-  *
-  * Default behaviour is to send the [COMSIG_ATOM_EMP_ACT] signal
-  *
-  * If the signal does not return protection, and there are attached wires then we call
-  * [emp_pulse][/datum/wires/proc/emp_pulse] on the wires
-  *
-  * We then return the protection value
-  */
+ * React to an EMP of the given severity
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_EMP_ACT] signal
+ *
+ * If the signal does not return protection, and there are attached wires then we call
+ * [emp_pulse][/datum/wires/proc/emp_pulse] on the wires
+ *
+ * We then return the protection value
+ */
 /atom/proc/emp_act(severity)
 	var/protection = SEND_SIGNAL(src, COMSIG_ATOM_EMP_ACT, severity)
 	if(!(protection & EMP_PROTECT_WIRES) && istype(wires))
@@ -570,6 +592,33 @@
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, P, def_zone)
 	. = P.on_hit(src, 0, def_zone, piercing_hit)
 
+/atom/proc/bullet_hit_sfx(obj/projectile/hitting_projectile)
+	var/selected_sound = ""
+
+	if(!hitsound_volume)
+		return FALSE
+	if(!hitsound_volume)
+		return FALSE
+
+	switch(hitsound_type)
+		if(PROJECTILE_HITSOUND_FLESH)
+			selected_sound = hitting_projectile.hitsound
+		if(PROJECTILE_HITSOUND_NON_LIVING)
+			selected_sound = hitting_projectile.hitsound_non_living
+		if(PROJECTILE_HITSOUND_GLASS)
+			selected_sound = hitting_projectile.hitsound_glass
+		if(PROJECTILE_HITSOUND_STONE)
+			selected_sound = hitting_projectile.hitsound_stone
+		if(PROJECTILE_HITSOUND_METAL)
+			selected_sound = hitting_projectile.hitsound_metal
+		if(PROJECTILE_HITSOUND_WOOD)
+			selected_sound = hitting_projectile.hitsound_wood
+		if(PROJECTILE_HITSOUND_SNOW)
+			selected_sound = hitting_projectile.hitsound_snow
+
+	playsound(src, selected_sound, hitsound_volume, TRUE)
+	return TRUE
+
 ///Return true if we're inside the passed in atom
 /atom/proc/in_contents_of(container)//can take class or object instance as argument
 	if(ispath(container))
@@ -580,16 +629,16 @@
 	return FALSE
 
 /**
-  * Get the name of this object for examine
-  *
-  * You can override what is returned from this proc by registering to listen for the
-  * [COMSIG_ATOM_GET_EXAMINE_NAME] signal
-  */
+ * Get the name of this object for examine
+ *
+ * You can override what is returned from this proc by registering to listen for the
+ * [COMSIG_ATOM_GET_EXAMINE_NAME] signal
+ */
 /atom/proc/get_examine_name(mob/user)
-	. = "\a [src]"
+	. = "\a <b>[src]</b>"
 	var/list/override = list(gender == PLURAL ? "some" : "a", " ", "[name]")
 	if(article)
-		. = "[article] [src]"
+		. = "[article] <b>[src]</b>"
 		override[EXAMINE_POSITION_ARTICLE] = article
 	if(SEND_SIGNAL(src, COMSIG_ATOM_GET_EXAMINE_NAME, user, override) & COMPONENT_EXNAME_CHANGED)
 		. = override.Join("")
@@ -599,15 +648,19 @@
 	return "[icon2html(src, user)] [thats? "That's ":""][get_examine_name(user)]"
 
 /**
-  * Called when a mob examines (shift click or verb) this atom
-  *
-  * Default behaviour is to get the name and icon of the object and it's reagents where
-  * the [TRANSPARENT] flag is set on the reagents holder
-  *
-  * Produces a signal [COMSIG_PARENT_EXAMINE]
-  */
+ * Called when a mob examines (shift click or verb) this atom
+ *
+ * Default behaviour is to get the name and icon of the object and it's reagents where
+ * the [TRANSPARENT] flag is set on the reagents holder
+ *
+ * Produces a signal [COMSIG_PARENT_EXAMINE]
+ */
 /atom/proc/examine(mob/user)
-	. = list("[get_examine_string(user, TRUE)].")
+	var/examine_string = get_examine_string(user, thats = TRUE)
+	if(examine_string)
+		. = list("[examine_string].")
+	else
+		. = list()
 
 	if(desc)
 		. += desc
@@ -640,18 +693,52 @@
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
+/**
+ * Updates the appearence of the icon
+ *
+ * Mostly delegates to update_name, update_desc, and update_icon
+ *
+ * Arguments:
+ * - updates: A set of bitflags dictating what should be updated. Defaults to [ALL]
+ */
+/atom/proc/update_appearance(updates=ALL)
+	SHOULD_NOT_SLEEP(TRUE)
+	SHOULD_CALL_PARENT(TRUE)
+
+	. = NONE
+	updates &= ~SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_APPEARANCE, updates)
+	if(updates & UPDATE_NAME)
+		. |= update_name(updates)
+	if(updates & UPDATE_DESC)
+		. |= update_desc(updates)
+	if(updates & UPDATE_ICON)
+		. |= update_icon(updates)
+
+/// Updates the name of the atom
+/atom/proc/update_name(updates=ALL)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_NAME, updates)
+
+/// Updates the description of the atom
+/atom/proc/update_desc(updates=ALL)
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_DESC, updates)
+
 /// Updates the icon of the atom
-/atom/proc/update_icon()
+/atom/proc/update_icon(updates=ALL)
 	SIGNAL_HANDLER
+	SHOULD_CALL_PARENT(TRUE)
 
-	var/signalOut = SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_ICON)
-	. = FALSE
-
-	if(!(signalOut & COMSIG_ATOM_NO_UPDATE_ICON_STATE))
+	. = NONE
+	updates &= ~SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_ICON, updates)
+	if(updates & UPDATE_ICON_STATE)
 		update_icon_state()
-		. = TRUE
+		. |= UPDATE_ICON_STATE
 
-	if(!(signalOut & COMSIG_ATOM_NO_UPDATE_OVERLAYS))
+	if(updates & UPDATE_OVERLAYS)
+		if(LAZYLEN(managed_vis_overlays))
+			SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
+
 		var/list/new_overlays = update_overlays()
 		if(managed_overlays)
 			cut_overlay(managed_overlays)
@@ -659,25 +746,27 @@
 		if(length(new_overlays))
 			managed_overlays = new_overlays
 			add_overlay(new_overlays)
-		. = TRUE
+		. |= UPDATE_OVERLAYS
 
-	SEND_SIGNAL(src, COMSIG_ATOM_UPDATED_ICON, signalOut, .)
+	. |= SEND_SIGNAL(src, COMSIG_ATOM_UPDATED_ICON, updates, .)
 
 /// Updates the icon state of the atom
 /atom/proc/update_icon_state()
+	SHOULD_CALL_PARENT(TRUE)
+	return SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_ICON_STATE)
 
 /// Updates the overlays of the atom
 /atom/proc/update_overlays()
-	SHOULD_CALL_PARENT(1)
+	SHOULD_CALL_PARENT(TRUE)
 	. = list()
 	SEND_SIGNAL(src, COMSIG_ATOM_UPDATE_OVERLAYS, .)
 
 /**
-  * An atom we are buckled or is contained within us has tried to move
-  *
-  * Default behaviour is to send a warning that the user can't move while buckled as long
-  * as the [buckle_message_cooldown][/atom/var/buckle_message_cooldown] has expired (50 ticks)
-  */
+ * An atom we are buckled or is contained within us has tried to move
+ *
+ * Default behaviour is to send a warning that the user can't move while buckled as long
+ * as the [buckle_message_cooldown][/atom/var/buckle_message_cooldown] has expired (50 ticks)
+ */
 /atom/proc/relaymove(mob/living/user, direction)
 	if(buckle_message_cooldown <= world.time)
 		buckle_message_cooldown = world.time + 50
@@ -689,20 +778,20 @@
 	return //For handling the effects of explosions on contents that would not normally be effected
 
 /**
-  * React to being hit by an explosion
-  *
-  * Default behaviour is to call [contents_explosion][/atom/proc/contents_explosion] and send the [COMSIG_ATOM_EX_ACT] signal
-  */
+ * React to being hit by an explosion
+ *
+ * Default behaviour is to call [contents_explosion][/atom/proc/contents_explosion] and send the [COMSIG_ATOM_EX_ACT] signal
+ */
 /atom/proc/ex_act(severity, target)
 	set waitfor = FALSE
 	contents_explosion(severity, target)
 	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
 
 /**
-  * React to a hit by a blob objecd
-  *
-  * default behaviour is to send the [COMSIG_ATOM_BLOB_ACT] signal
-  */
+ * React to a hit by a blob objecd
+ *
+ * default behaviour is to send the [COMSIG_ATOM_BLOB_ACT] signal
+ */
 /atom/proc/blob_act(obj/structure/blob/B)
 	SEND_SIGNAL(src, COMSIG_ATOM_BLOB_ACT, B)
 	return
@@ -712,24 +801,24 @@
 	return
 
 /**
-  * React to being hit by a thrown object
-  *
-  * Default behaviour is to call [hitby_react][/atom/proc/hitby_react] on ourselves after 2 seconds if we are dense
-  * and under normal gravity.
-  *
-  * Im not sure why this the case, maybe to prevent lots of hitby's if the thrown object is
-  * deleted shortly after hitting something (during explosions or other massive events that
-  * throw lots of items around - singularity being a notable example)
-  */
+ * React to being hit by a thrown object
+ *
+ * Default behaviour is to call [hitby_react][/atom/proc/hitby_react] on ourselves after 2 seconds if we are dense
+ * and under normal gravity.
+ *
+ * Im not sure why this the case, maybe to prevent lots of hitby's if the thrown object is
+ * deleted shortly after hitting something (during explosions or other massive events that
+ * throw lots of items around - singularity being a notable example)
+ */
 /atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
-		addtimer(CALLBACK(src, .proc/hitby_react, AM), 2)
+		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
 
 /**
-  * We have have actually hit the passed in atom
-  *
-  * Default behaviour is to move back from the item that hit us
-  */
+ * We have have actually hit the passed in atom
+ *
+ * Default behaviour is to move back from the item that hit us
+ */
 /atom/proc/hitby_react(atom/movable/AM)
 	if(AM && isturf(AM.loc))
 		step(AM, turn(AM.dir, 180))
@@ -742,7 +831,7 @@
 /mob/living/proc/get_blood_dna_list()
 	if(get_blood_id() != /datum/reagent/blood)
 		return
-	return list("ANIMAL DNA" = "Y-")
+	return list("ANIMAL DNA" = get_blood_type("Y-"))
 
 ///Get the mobs dna list
 /mob/living/carbon/get_blood_dna_list()
@@ -756,10 +845,10 @@
 	return blood_dna
 
 /mob/living/carbon/alien/get_blood_dna_list()
-	return list("UNKNOWN DNA" = "X*")
+	return list("UNKNOWN DNA" = get_blood_type("X"))
 
 /mob/living/silicon/get_blood_dna_list()
-	return list("MOTOR OIL" = "SAE 5W-30") //just a little flavor text.
+	return list("SYNTHETIC COOLANT" = get_blood_type("Coolant"))
 
 ///to add a mob's dna info into an object's blood_dna list.
 /atom/proc/transfer_mob_blood_dna(mob/living/L)
@@ -796,43 +885,43 @@
 	return
 
 /**
-  * Respond to the singularity pulling on us
-  *
-  * Default behaviour is to send [COMSIG_ATOM_SING_PULL] and return
-  */
+ * Respond to the singularity pulling on us
+ *
+ * Default behaviour is to send [COMSIG_ATOM_SING_PULL] and return
+ */
 /atom/proc/singularity_pull(obj/singularity/S, current_size)
 	SEND_SIGNAL(src, COMSIG_ATOM_SING_PULL, S, current_size)
 
 
 /**
-  * Respond to acid being used on our atom
-  *
-  * Default behaviour is to send [COMSIG_ATOM_ACID_ACT] and return
-  */
+ * Respond to acid being used on our atom
+ *
+ * Default behaviour is to send [COMSIG_ATOM_ACID_ACT] and return
+ */
 /atom/proc/acid_act(acidpwr, acid_volume)
 	SEND_SIGNAL(src, COMSIG_ATOM_ACID_ACT, acidpwr, acid_volume)
 
 /**
-  * Respond to an emag being used on our atom
-  *
-  * Default behaviour is to send [COMSIG_ATOM_EMAG_ACT] and return
-  */
+ * Respond to an emag being used on our atom
+ *
+ * Default behaviour is to send [COMSIG_ATOM_EMAG_ACT] and return
+ */
 /atom/proc/emag_act(mob/user)
 	SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT, user)
 
 /**
-  * Respond to a radioactive wave hitting this atom
-  *
-  * Default behaviour is to send [COMSIG_ATOM_RAD_ACT] and return
-  */
+ * Respond to a radioactive wave hitting this atom
+ *
+ * Default behaviour is to send [COMSIG_ATOM_RAD_ACT] and return
+ */
 /atom/proc/rad_act(strength)
 	SEND_SIGNAL(src, COMSIG_ATOM_RAD_ACT, strength)
 
 /**
-  * Respond to narsie eating our atom
-  *
-  * Default behaviour is to send [COMSIG_ATOM_NARSIE_ACT] and return
-  */
+ * Respond to narsie eating our atom
+ *
+ * Default behaviour is to send [COMSIG_ATOM_NARSIE_ACT] and return
+ */
 /atom/proc/narsie_act()
 	SEND_SIGNAL(src, COMSIG_ATOM_NARSIE_ACT)
 
@@ -843,51 +932,51 @@
 
 
 /**
-  * Respond to an RCD acting on our item
-  *
-  * Default behaviour is to send [COMSIG_ATOM_RCD_ACT] and return FALSE
-  */
+ * Respond to an RCD acting on our item
+ *
+ * Default behaviour is to send [COMSIG_ATOM_RCD_ACT] and return FALSE
+ */
 /atom/proc/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	SEND_SIGNAL(src, COMSIG_ATOM_RCD_ACT, user, the_rcd, passed_mode)
 	return FALSE
 
 /**
-  * Respond to a electric bolt action on our item
-  *
-  * Default behaviour is to return, we define here to allow for cleaner code later on
-  */
+ * Respond to a electric bolt action on our item
+ *
+ * Default behaviour is to return, we define here to allow for cleaner code later on
+ */
 /atom/proc/zap_act(power, zap_flags, shocked_targets)
 	return
 
 
 /**
-  * Implement the behaviour for when a user click drags a storage object to your atom
-  *
-  * This behaviour is usually to mass transfer, but this is no longer a used proc as it just
-  * calls the underyling /datum/component/storage dump act if a component exists
-  *
-  * TODO these should be purely component items that intercept the atom clicks higher in the
-  * call chain
-  */
+ * Implement the behaviour for when a user click drags a storage object to your atom
+ *
+ * This behaviour is usually to mass transfer, but this is no longer a used proc as it just
+ * calls the underyling /datum/component/storage dump act if a component exists
+ *
+ * TODO these should be purely component items that intercept the atom clicks higher in the
+ * call chain
+ */
 /atom/proc/storage_contents_dump_act(obj/item/storage/src_object, mob/user)
 	if(GetComponent(/datum/component/storage))
 		return component_storage_contents_dump_act(src_object, user)
 	return FALSE
 
 /**
-  * Implement the behaviour for when a user click drags another storage item to you
-  *
-  * In this case we get as many of the tiems from the target items compoent storage and then
-  * put everything into ourselves (or our storage component)
-  *
-  * TODO these should be purely component items that intercept the atom clicks higher in the
-  * call chain
-  */
+ * Implement the behaviour for when a user click drags another storage item to you
+ *
+ * In this case we get as many of the tiems from the target items compoent storage and then
+ * put everything into ourselves (or our storage component)
+ *
+ * TODO these should be purely component items that intercept the atom clicks higher in the
+ * call chain
+ */
 /atom/proc/component_storage_contents_dump_act(datum/component/storage/src_object, mob/user)
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, progress)))
+	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, TYPE_PROC_REF(/datum/component/storage, handle_mass_item_insertion), things, src_object, user, progress)))
 		stoplag(1)
 	progress.end_progress()
 	to_chat(user, "<span class='notice'>You dump as much of [src_object.parent]'s contents [STR.insert_preposition]to [src] as you can.</span>")
@@ -903,45 +992,35 @@
 	return null
 
 /**
-  * This proc is called when an atom in our contents has it's [Destroy][/atom/Destroy] called
-  *
-  * Default behaviour is to simply send [COMSIG_ATOM_CONTENTS_DEL]
-  */
+ * This proc is called when an atom in our contents has it's [Destroy][/atom/Destroy] called
+ *
+ * Default behaviour is to simply send [COMSIG_ATOM_CONTENTS_DEL]
+ */
 /atom/proc/handle_atom_del(atom/A)
 	SEND_SIGNAL(src, COMSIG_ATOM_CONTENTS_DEL, A)
 
 /**
-  * called when the turf the atom resides on is ChangeTurfed
-  *
-  * Default behaviour is to loop through atom contents and call their HandleTurfChange() proc
-  */
-/atom/proc/HandleTurfChange(turf/T)
-	for(var/a in src)
-		var/atom/A = a
-		A.HandleTurfChange(T)
-
-/**
-  * the vision impairment to give to the mob whose perspective is set to that atom
-  *
-  * (e.g. an unfocused camera giving you an impaired vision when looking through it)
-  */
+ * the vision impairment to give to the mob whose perspective is set to that atom
+ *
+ * (e.g. an unfocused camera giving you an impaired vision when looking through it)
+ */
 /atom/proc/get_remote_view_fullscreens(mob/user)
 	return
 
 /**
-  * the sight changes to give to the mob whose perspective is set to that atom
-  *
-  * (e.g. A mob with nightvision loses its nightvision while looking through a normal camera)
-  */
+ * the sight changes to give to the mob whose perspective is set to that atom
+ *
+ * (e.g. A mob with nightvision loses its nightvision while looking through a normal camera)
+ */
 /atom/proc/update_remote_sight(mob/living/user)
 	return
 
 
 /**
-  * Hook for running code when a dir change occurs
-  *
-  * Not recommended to use, listen for the [COMSIG_ATOM_DIR_CHANGE] signal instead (sent by this proc)
-  */
+ * Hook for running code when a dir change occurs
+ *
+ * Not recommended to use, listen for the [COMSIG_ATOM_DIR_CHANGE] signal instead (sent by this proc)
+ */
 /atom/proc/setDir(newdir)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ATOM_DIR_CHANGE, dir, newdir)
@@ -952,10 +1031,10 @@
 	return
 
 /**
-  * Called when the atom log's in or out
-  *
-  * Default behaviour is to call on_log on the location this atom is in
-  */
+ * Called when the atom log's in or out
+ *
+ * Default behaviour is to call on_log on the location this atom is in
+ */
 /atom/proc/on_log(login)
 	if(loc)
 		loc.on_log(login)
@@ -1011,13 +1090,13 @@
 
 
 /**
-  * Wash this atom
-  *
-  * This will clean it off any temporary stuff like blood. Override this in your item to add custom cleaning behavior.
-  * Returns true if any washing was necessary and thus performed
-  * Arguments:
-  * * clean_types: any of the CLEAN_ constants
-  */
+ * Wash this atom
+ *
+ * This will clean it off any temporary stuff like blood. Override this in your item to add custom cleaning behavior.
+ * Returns true if any washing was necessary and thus performed
+ * Arguments:
+ * * clean_types: any of the CLEAN_ constants
+ */
 /atom/proc/wash(clean_types)
 	. = FALSE
 	if(SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, clean_types))
@@ -1029,16 +1108,16 @@
 		return TRUE
 
 /**
-  * call back when a var is edited on this atom
-  *
-  * Can be used to implement special handling of vars
-  *
-  * At the atom level, if you edit a var named "color" it will add the atom colour with
-  * admin level priority to the atom colours list
-  *
-  * Also, if GLOB.Debug2 is FALSE, it sets the [ADMIN_SPAWNED_1] flag on [flags_1][/atom/var/flags_1], which signifies
-  * the object has been admin edited
-  */
+ * call back when a var is edited on this atom
+ *
+ * Can be used to implement special handling of vars
+ *
+ * At the atom level, if you edit a var named "color" it will add the atom colour with
+ * admin level priority to the atom colours list
+ *
+ * Also, if GLOB.Debug2 is FALSE, it sets the [ADMIN_SPAWNED_1] flag on [flags_1][/atom/var/flags_1], which signifies
+ * the object has been admin edited
+ */
 /atom/vv_edit_var(var_name, var_value)
 	if(!GLOB.Debug2)
 		flags_1 |= ADMIN_SPAWNED_1
@@ -1048,10 +1127,10 @@
 			add_atom_colour(color, ADMIN_COLOUR_PRIORITY)
 
 /**
-  * Return the markup to for the dropdown list for the VV panel for this atom
-  *
-  * Override in subtypes to add custom VV handling in the VV panel
-  */
+ * Return the markup to for the dropdown list for the VV panel for this atom
+ *
+ * Override in subtypes to add custom VV handling in the VV panel
+ */
 /atom/vv_get_dropdown()
 	. = ..()
 	VV_DROPDOWN_OPTION("", "---------")
@@ -1132,7 +1211,7 @@
 		if(newname)
 			vv_auto_rename(newname)
 
-	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_VAREDIT))
+	if(href_list[VV_HK_EDIT_FILTERS] && check_rights(R_ADMIN|R_DEBUG) && check_rights(R_VAREDIT)) //This needs to be like this due to the fact that I'm not coding a fucking UI state for R_VV for ONE BUTTON.
 		var/client/C = usr.client
 		C?.open_filter_editor(src)
 
@@ -1153,45 +1232,49 @@
 	name = newname
 
 /**
-  * An atom has entered this atom's contents
-  *
-  * Default behaviour is to send the [COMSIG_ATOM_ENTERED]
-  */
-/atom/Entered(atom/movable/AM, atom/oldLoc)
-	SEND_SIGNAL(src, COMSIG_ATOM_ENTERED, AM, oldLoc)
+ * An atom has entered this atom's contents
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_ENTERED]
+ */
+/atom/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	SEND_SIGNAL(src, COMSIG_ATOM_ENTERED, arrived, old_loc, old_locs)
 
 /**
-  * An atom is attempting to exit this atom's contents
-  *
-  * Default behaviour is to send the [COMSIG_ATOM_EXIT]
-  *
-  * Return value should be set to FALSE if the moving atom is unable to leave,
-  * otherwise leave value the result of the parent call
-  */
-/atom/Exit(atom/movable/AM, atom/newLoc)
-	. = ..()
-	if(SEND_SIGNAL(src, COMSIG_ATOM_EXIT, AM, newLoc) & COMPONENT_ATOM_BLOCK_EXIT)
+ * An atom is attempting to exit this atom's contents
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_EXIT]
+ *
+ * Return value should be set to FALSE if the moving atom is unable to leave,
+ * otherwise leave value the result of the parent call
+ */
+/atom/Exit(atom/movable/leaving, direction)
+	// Don't call `..()` here, otherwise `Uncross()` gets called.
+	// See the doc comment on `Uncross()` to learn why this is bad.
+
+	if(SEND_SIGNAL(src, COMSIG_ATOM_EXIT, leaving, direction) & COMPONENT_ATOM_BLOCK_EXIT)
 		return FALSE
 
+	return TRUE
+
 /**
-  * An atom has exited this atom's contents
-  *
-  * Default behaviour is to send the [COMSIG_ATOM_EXITED]
-  */
-/atom/Exited(atom/movable/AM, atom/newLoc)
-	SEND_SIGNAL(src, COMSIG_ATOM_EXITED, AM, newLoc)
+ * An atom has exited this atom's contents
+ *
+ * Default behaviour is to send the [COMSIG_ATOM_EXITED]
+ */
+/atom/Exited(atom/movable/gone, direction)
+	SEND_SIGNAL(src, COMSIG_ATOM_EXITED, gone, direction)
 
 ///Return atom temperature
 /atom/proc/return_temperature()
 	return
 
 /**
-  *Tool behavior procedure. Redirects to tool-specific procs by default.
-  *
-  * You can override it to catch all tool interactions, for use in complex deconstruction procs.
-  *
-  * Must return  parent proc ..() in the end if overridden
-  */
+ *Tool behavior procedure. Redirects to tool-specific procs by default.
+ *
+ * You can override it to catch all tool interactions, for use in complex deconstruction procs.
+ *
+ * Must return  parent proc ..() in the end if overridden
+ */
 /atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
 	switch(tool_type)
 		if(TOOL_CROWBAR)
@@ -1258,6 +1341,9 @@
 /atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock)
 	return
 
+/atom/proc/disconnect_from_shuttle(obj/docking_port/mobile/port)
+	return
+
 /// Generic logging helper
 /atom/proc/log_message(message, message_type, color=null, log_globally=TRUE)
 	if(!log_globally)
@@ -1303,15 +1389,23 @@
 			log_mecha(log_text)
 		if(LOG_SHUTTLE)
 			log_shuttle(log_text)
+		if(LOG_RADIO_EMOTE)
+			log_radio_emote(log_text)
+		if(LOG_MSAY)
+			log_mentor(log_text)
+		if(LOG_LOOC)
+			log_looc(log_text)
+		if(LOG_SUBTLER)
+			log_subtler(log_text)
 		else
 			stack_trace("Invalid individual logging type: [message_type]. Defaulting to [LOG_GAME] (LOG_GAME).")
 			log_game(log_text)
 
 /// Helper for logging chat messages or other logs with arbitrary inputs (e.g. announcements)
-/atom/proc/log_talk(message, message_type, tag=null, log_globally=TRUE, forced_by=null)
+/atom/proc/log_talk(message, message_type, tag=null, log_globally=TRUE, forced_by=null, custom_say_emote = null)
 	var/prefix = tag ? "([tag]) " : ""
 	var/suffix = forced_by ? " FORCED by [forced_by]" : ""
-	log_message("[prefix]\"[message]\"[suffix]", message_type, log_globally=log_globally)
+	log_message("[prefix][custom_say_emote ? "*[custom_say_emote]*, " : ""]\"[message]\"[suffix]", message_type, log_globally=log_globally)
 
 /// Helper for logging of messages with only one sender and receiver
 /proc/log_directed_talk(atom/source, atom/target, message, message_type, tag)
@@ -1324,15 +1418,15 @@
 		target.log_talk(message, message_type, tag="[tag] from [key_name(source)]", log_globally=FALSE)
 
 /**
-  * Log a combat message in the attack log
-  *
-  * Arguments:
-  * * atom/user - argument is the actor performing the action
-  * * atom/target - argument is the target of the action
-  * * what_done - is a verb describing the action (e.g. punched, throwed, kicked, etc.)
-  * * atom/object - is a tool with which the action was made (usually an item)
-  * * addition - is any additional text, which will be appended to the rest of the log line
-  */
+ * Log a combat message in the attack log
+ *
+ * Arguments:
+ * * atom/user - argument is the actor performing the action
+ * * atom/target - argument is the target of the action
+ * * what_done - is a verb describing the action (e.g. punched, throwed, kicked, etc.)
+ * * atom/object - is a tool with which the action was made (usually an item)
+ * * addition - is any additional text, which will be appended to the rest of the log line
+ */
 /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	var/ssource = key_name(user)
 	var/starget = key_name(target)
@@ -1432,7 +1526,7 @@
 	if(custom_materials) //Only runs if custom materials existed at first. Should usually be the case but check anyways
 		for(var/i in custom_materials)
 			var/datum/material/custom_material = SSmaterials.GetMaterialRef(i)
-			custom_material.on_removed(src, material_flags) //Remove the current materials
+			custom_material.on_removed(src, custom_materials[i] * material_modifier, material_flags) //Remove the current materials
 
 	if(!length(materials))
 		return
@@ -1446,20 +1540,26 @@
 			custom_material.on_applied(src, materials[custom_material] * multiplier * material_modifier, material_flags)
 		custom_materials[custom_material] += materials[x] * multiplier
 
+/// Returns the indice in filters of the given filter name.
+/// If it is not found, returns null.
+/atom/proc/get_filter_index(name)
+	return filter_data?.Find(name)
+
 /**
-  * Returns true if this atom has gravity for the passed in turf
-  *
-  * Sends signals [COMSIG_ATOM_HAS_GRAVITY] and [COMSIG_TURF_HAS_GRAVITY], both can force gravity with
-  * the forced gravity var
-  *
-  * Gravity situations:
-  * * No gravity if you're not in a turf
-  * * No gravity if this atom is in is a space turf
-  * * Gravity if the area it's in always has gravity
-  * * Gravity if there's a gravity generator on the z level
-  * * Gravity if the Z level has an SSMappingTrait for ZTRAIT_GRAVITY
-  * * otherwise no gravity
-  */
+ * Returns true if this atom has gravity for the passed in turf
+ *
+ * Sends signals [COMSIG_ATOM_HAS_GRAVITY] and [COMSIG_TURF_HAS_GRAVITY], both can force gravity with
+ * the forced gravity var
+ *
+ * Gravity situations:
+ * * No gravity if you're not in a turf
+ * * No gravity if this atom is in is a space turf
+ * * Gravity if the area it's in always has gravity
+ * * Gravity if there's a gravity generator on the z level
+ * * Gravity if there is a ship gravity generator in a ship
+ * * Gravity if the Z level has an SSMappingTrait for ZTRAIT_GRAVITY
+ * * otherwise no gravity
+ */
 /atom/proc/has_gravity(turf/T)
 	if(!T || !isturf(T))
 		T = get_turf(src)
@@ -1487,22 +1587,33 @@
 	if(A.has_gravity) // Areas which always has gravity
 		return A.has_gravity
 	else
-		// There's a gravity generator on our z level
-		if(GLOB.gravity_generators["[T.get_virtual_z_level()]"])
-			var/max_grav = 0
-			for(var/obj/machinery/gravity_generator/main/G in GLOB.gravity_generators["[T.get_virtual_z_level()]"])
+		// See if there's a gravity generator on our map zone
+		var/datum/map_zone/mapzone = T.get_map_zone()
+		var/max_grav = T.virtual_level_trait(ZTRAIT_GRAVITY)
+		if(mapzone?.gravity_generators.len)
+			for(var/obj/machinery/gravity_generator/main/G as anything in mapzone.gravity_generators)
 				max_grav = max(G.setting,max_grav)
-			return max_grav
-	return SSmapping.level_trait(T.z, ZTRAIT_GRAVITY)
+		// Check for ship-based gravity
+		var/area/ship/ship = A
+		if(istype(ship))
+			var/obj/docking_port/mobile/shuttle = ship.mobile_port
+			if(shuttle)
+				for(var/datum/weakref/weakref as anything in shuttle.gravgen_list)
+					var/obj/machinery/power/ship_gravity/SG = weakref.resolve()
+					if(!SG)
+						shuttle.gravgen_list -= weakref
+						continue
+					max_grav = max(SG.active,max_grav)
+		return max_grav
 
 /**
-  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
-  *
-  * This is where you can put extra information on something that may be superfluous or not important in critical gameplay
-  * moments, while allowing people to manually double-examine to take a closer look
-  *
-  * Produces a signal [COMSIG_PARENT_EXAMINE_MORE]
-  */
+ * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)
+ *
+ * This is where you can put extra information on something that may be superfluous or not important in critical gameplay
+ * moments, while allowing people to manually double-examine to take a closer look
+ *
+ * Produces a signal [COMSIG_PARENT_EXAMINE_MORE]
+ */
 /atom/proc/examine_more(mob/user)
 	. = list()
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE_MORE, user, .)
@@ -1517,11 +1628,11 @@
 	var/client/usr_client = usr.client
 	var/list/paramslist = list()
 	if(href_list["statpanel_item_shiftclick"])
-		paramslist["shift"] = "1"
+		paramslist[SHIFT_CLICK] = "1"
 	if(href_list["statpanel_item_ctrlclick"])
-		paramslist["ctrl"] = "1"
+		paramslist[CTRL_CLICK] = "1"
 	if(href_list["statpanel_item_altclick"])
-		paramslist["alt"] = "1"
+		paramslist[ALT_CLICK] = "1"
 	if(href_list["statpanel_item_click"])
 		// first of all make sure we valid
 		var/mouseparams = list2params(paramslist)
@@ -1531,3 +1642,72 @@
 ///Called when something resists while this atom is its loc
 /atom/proc/container_resist_act(mob/living/user)
 
+///Setter for the "base_pixel_x" var to append behavior related to it's changing
+/atom/proc/set_base_pixel_x(new_value)
+	if(base_pixel_x == new_value)
+		return
+	. = base_pixel_x
+	base_pixel_x = new_value
+
+	pixel_x = pixel_x + base_pixel_x - .
+
+///Setter for the "base_pixel_y" var to append behavior related to it's changing
+/atom/proc/set_base_pixel_y(new_value)
+	if(base_pixel_y == new_value)
+		return
+	. = base_pixel_y
+	base_pixel_y = new_value
+
+	pixel_y = pixel_y + base_pixel_y - .
+
+//Update the screentip to reflect what we're hoverin over
+/atom/MouseEntered(location, control, params)
+	SSmouse_entered.hovers[usr.client] = src
+
+/// Fired whenever this atom is the most recent to be hovered over in the tick.
+/// Preferred over MouseEntered if you do not need information such as the position of the mouse.
+/// Especially because this is deferred over a tick, do not trust that `client` is not null.
+/atom/proc/on_mouse_enter(client/client)
+	SHOULD_NOT_SLEEP(TRUE)
+
+	var/mob/user = client?.mob
+	if(isnull(user))
+		return
+
+	// Face directions on harm intent
+	if(user.face_mouse)
+		user.face_atom(src)
+
+	//Screentips
+	var/datum/hud/active_hud = user?.hud_used
+	if(active_hud)
+		if(!user.client?.prefs.screentip_pref || (flags_1 & NO_SCREENTIPS_1))
+			active_hud.screentip_text.maptext = ""
+		else
+			//We inline a MAPTEXT() here, because there's no good way to statically add to a string like this
+			active_hud.screentip_text.maptext = "<span class='maptext' style='text-align: center; font-size: 32px; color: [user.client.prefs.screentip_color]'>[get_screentip_name(client)]</span>"
+
+/// Returns the atom name that should be used on screentip
+/atom/proc/get_screentip_name(client/hovering_client)
+	return name
+
+///Called whenever a player is spawned on the same turf as this atom.
+/atom/proc/join_player_here(mob/M)
+	// By default, just place the mob on the same turf as the marker or whatever.
+	M.forceMove(get_turf(src))
+
+/*
+* Used to set something as 'open' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setOpened()
+	return
+
+/*
+* Used to set something as 'closed' if it's being used as a supplypod
+*
+* Override this if you want an atom to be usable as a supplypod.
+*/
+/atom/proc/setClosed()
+	return

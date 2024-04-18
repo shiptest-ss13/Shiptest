@@ -7,6 +7,9 @@
 
 	var/update = TRUE
 
+	///Is this pipeline being reconstructed?
+	var/building = FALSE
+
 /datum/pipeline/New()
 	other_airs = list()
 	members = list()
@@ -15,21 +18,48 @@
 
 /datum/pipeline/Destroy()
 	SSair.networks -= src
-	if(air && air.return_volume())
+	if(building)
+		SSair.remove_from_expansion(src)
+	if(air?.return_volume())
 		temporarily_store_air()
 	for(var/obj/machinery/atmospherics/pipe/P in members)
 		P.parent = null
+		if(QDELETED(P))
+			continue
+		SSair.add_to_rebuild_queue(P)
+	members.Cut()
 	for(var/obj/machinery/atmospherics/components/C in other_atmosmch)
 		C.nullifyPipenet(src)
+	other_atmosmch.Cut()
 	return ..()
 
 /datum/pipeline/process()
-	if(update)
-		update = FALSE
-		reconcile_air()
+	if(!update || building)
+		return
+	reconcile_air()
 	update = air.react(src)
 
 /datum/pipeline/proc/build_pipeline(obj/machinery/atmospherics/base)
+	if(QDELETED(base))
+		return
+	building = TRUE
+	var/volume = 0
+	if(istype(base, /obj/machinery/atmospherics/pipe))
+		var/obj/machinery/atmospherics/pipe/considered_pipe = base
+		volume = considered_pipe.volume
+		members += considered_pipe
+		if(considered_pipe.air_temporary)
+			air = considered_pipe.air_temporary
+			considered_pipe.air_temporary = null
+	else
+		addMachineryMember(base)
+	if(!air)
+		air = new
+	air.set_volume(volume)
+	SSair.add_to_expansion(src, base)
+
+///Has the same effect as build_pipeline(), but this doesn't queue its work, so overrun abounds. It's useful for the pregame
+/datum/pipeline/proc/build_pipeline_blocking(obj/machinery/atmospherics/base)
 	var/volume = 0
 	if(istype(base, /obj/machinery/atmospherics/pipe))
 		var/obj/machinery/atmospherics/pipe/E = base
@@ -43,34 +73,35 @@
 	if(!air)
 		air = new
 	var/list/possible_expansions = list(base)
-	while(possible_expansions.len>0)
+	while(length(possible_expansions))
 		for(var/obj/machinery/atmospherics/borderline in possible_expansions)
 			var/list/result = borderline.pipeline_expansion(src)
-			if(result?.len > 0)
-				for(var/obj/machinery/atmospherics/P in result)
-					if(istype(P, /obj/machinery/atmospherics/pipe))
-						var/obj/machinery/atmospherics/pipe/item = P
-						if(!members.Find(item))
+			if(!length(result))
+				continue
+			for(var/obj/machinery/atmospherics/considered_device in result)
+				if(!istype(considered_device, /obj/machinery/atmospherics/pipe))
+					considered_device.setPipenet(src, borderline)
+					addMachineryMember(considered_device)
+					continue
 
-							if(item.parent)
-								var/static/pipenetwarnings = 10
-								if(pipenetwarnings > 0)
-									log_mapping("build_pipeline(): [item.type] added to a pipenet while still having one. (pipes leading to the same spot stacking in one turf) around [AREACOORD(item)].")
-									pipenetwarnings--
-									if(pipenetwarnings == 0)
-										log_mapping("build_pipeline(): further messages about pipenets will be suppressed")
-							members += item
-							possible_expansions += item
+				var/obj/machinery/atmospherics/pipe/item = considered_device
+				if(item in members)
+					continue
 
-							volume += item.volume
-							item.parent = src
+				if(item.parent)
+					log_mapping("Possible doubled atmosmachine found at [AREACOORD(item)] with other contents: [json_encode(item.loc.contents)]")
+					item.stack_trace("Possible doubled atmosmachine found")
+					continue
 
-							if(item.air_temporary)
-								air.merge(item.air_temporary)
-								item.air_temporary = null
-					else
-						P.setPipenet(src, borderline)
-						addMachineryMember(P)
+				members += item
+				possible_expansions += item
+
+				volume += item.volume
+				item.parent = src
+
+				if(item.air_temporary)
+					air.merge(item.air_temporary)
+					item.air_temporary = null
 
 			possible_expansions -= borderline
 
@@ -81,7 +112,7 @@
 	var/list/returned_airs = C.returnPipenetAirs(src)
 	if (!length(returned_airs) || (null in returned_airs))
 		stack_trace("addMachineryMember: Nonexistent (empty list) or null machinery gasmix added to pipeline datum from [C] \
-		which is of type [C.type]. Nearby: ([C.x], [C.y], [C.z])")
+		which is of type [C.type]. QDELETED: [QDELETED(C) ? "true" : "false"].")
 	other_airs |= returned_airs
 
 /datum/pipeline/proc/addMember(obj/machinery/atmospherics/A, obj/machinery/atmospherics/N)
@@ -96,7 +127,7 @@
 				continue
 			var/datum/pipeline/E = I.parent
 			merge(E)
-		if(!members.Find(P))
+		if(!(P in members))
 			members += P
 			air.set_volume(air.return_volume() + P.volume)
 	else
@@ -205,7 +236,7 @@
 	. = other_airs + air
 	if(null in .)
 		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air().")
-		listclearnulls(.)
+		return listclearnulls(.)
 
 /datum/pipeline/proc/empty()
 	for(var/datum/gas_mixture/GM in get_all_connected_airs())
@@ -227,13 +258,11 @@
 				if(V.on)
 					PL |= V.parents[1]
 					PL |= V.parents[2]
-//BeginWS Edit - Porting Relief Valves
 			else if (istype(atmosmch,/obj/machinery/atmospherics/components/binary/relief_valve))
 				var/obj/machinery/atmospherics/components/binary/relief_valve/V = atmosmch
 				if(V.opened)
 					PL |= V.parents[1]
 					PL |= V.parents[2]
-//EndWS Edit - Porting Relief Valves
 			else if (istype(atmosmch, /obj/machinery/atmospherics/components/unary/portables_connector))
 				var/obj/machinery/atmospherics/components/unary/portables_connector/C = atmosmch
 				if(C.connected_device)

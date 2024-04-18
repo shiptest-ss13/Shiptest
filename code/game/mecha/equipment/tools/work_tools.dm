@@ -332,7 +332,7 @@
 
 
 
-/obj/item/mecha_parts/mecha_equipment/rcd/do_after_cooldown(var/atom/target)
+/obj/item/mecha_parts/mecha_equipment/rcd/do_after_cooldown(atom/target)
 	. = ..()
 
 /obj/item/mecha_parts/mecha_equipment/rcd/Topic(href,href_list)
@@ -377,7 +377,7 @@
 
 /obj/item/mecha_parts/mecha_equipment/cable_layer/attach()
 	..()
-	event = chassis.events.addEvent("onMove", CALLBACK(src, .proc/layCable))
+	event = chassis.events.addEvent("onMove", CALLBACK(src, PROC_REF(layCable)))
 	return
 
 /obj/item/mecha_parts/mecha_equipment/cable_layer/detach()
@@ -389,7 +389,7 @@
 		chassis.events.clearEvent("onMove",event)
 	return ..()
 
-/obj/item/mecha_parts/mecha_equipment/cable_layer/action(var/obj/item/stack/cable_coil/target)
+/obj/item/mecha_parts/mecha_equipment/cable_layer/action(obj/item/stack/cable_coil/target)
 	if(!action_checks(target))
 		return
 	if(istype(target) && target.amount)
@@ -449,7 +449,7 @@
 /obj/item/mecha_parts/mecha_equipment/cable_layer/proc/reset()
 	last_piece = null
 
-/obj/item/mecha_parts/mecha_equipment/cable_layer/proc/dismantleFloor(var/turf/new_turf)
+/obj/item/mecha_parts/mecha_equipment/cable_layer/proc/dismantleFloor(turf/new_turf)
 	if(isfloorturf(new_turf))
 		var/turf/open/floor/T = new_turf
 		if(!isplatingturf(T))
@@ -458,7 +458,7 @@
 			T.make_plating()
 	return !new_turf.intact
 
-/obj/item/mecha_parts/mecha_equipment/cable_layer/proc/layCable(var/turf/new_turf)
+/obj/item/mecha_parts/mecha_equipment/cable_layer/proc/layCable(turf/new_turf)
 	if(equip_ready || !istype(new_turf) || !dismantleFloor(new_turf))
 		return reset()
 	var/fdirn = turn(chassis.dir,180)
@@ -470,13 +470,13 @@
 	var/obj/structure/cable/NC = new(new_turf, "red")
 	NC.d1 = 0
 	NC.d2 = fdirn
-	NC.update_icon()
+	NC.update_appearance()
 
 	var/datum/powernet/PN
 	if(last_piece && last_piece.d2 != chassis.dir)
 		last_piece.d1 = min(last_piece.d2, chassis.dir)
 		last_piece.d2 = max(last_piece.d2, chassis.dir)
-		last_piece.update_icon()
+		last_piece.update_appearance()
 		PN = last_piece.powernet
 
 	if(!PN)
@@ -492,22 +492,26 @@
 //WS Edit End - Readded from Smartwire Revert
 
 //Dunno where else to put this so shrug
-/obj/item/mecha_parts/mecha_equipment/ripleyupgrade
-	name = "Ripley MK-II Conversion Kit"
-	desc = "A pressurized canopy attachment kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the slower, but space-worthy MK-II design. This kit cannot be removed, once applied."
+/obj/item/mecha_parts/mecha_equipment/conversion_kit
+	name = "Mecha Conversion Kit"
+	desc = "A perfectly generic conversion kit for a perfectly generic mecha. How did you even get this?"
 	icon_state = "ripleyupgrade"
+	var/source_mech = list(null) //must be a list due to the mining ripley existing
+	var/result_mech = null
 
-/obj/item/mecha_parts/mecha_equipment/ripleyupgrade/can_attach(obj/mecha/working/ripley/M)
-	if(M.type != /obj/mecha/working/ripley)
-		to_chat(loc, "<span class='warning'>This conversion kit can only be applied to APLU MK-I models.</span>")
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/can_attach(obj/mecha/M)
+	if (!(M.type in source_mech))
+		to_chat(loc, "<span class='warning'>This conversion kit can not be applied to this model.</span>")
 		return FALSE
-	if(M.cargo.len)
-		to_chat(loc, "<span class='warning'>[M]'s cargo hold must be empty before this conversion kit can be applied.</span>")
-		return FALSE
+	if(M.type == /obj/mecha/working/ripley)
+		var/obj/mecha/working/ripley/R = M
+		if(R.cargo.len)
+			to_chat(loc, "<span class='warning'>[R]'s cargo hold must be empty before this conversion kit can be applied.</span>")
+			return FALSE
 	if(!M.maint_access) //non-removable upgrade, so lets make sure the pilot or owner has their say.
 		to_chat(loc, "<span class='warning'>[M] must have maintenance protocols active in order to allow this conversion kit.</span>")
 		return FALSE
-	if(M.occupant) //We're actualy making a new mech and swapping things over, it might get weird if players are involved
+	if(M.occupant) //We're actually making a new mech and swapping things over, it might get weird if players are involved
 		to_chat(loc, "<span class='warning'>[M] must be unoccupied before this conversion kit can be applied.</span>")
 		return FALSE
 	if(!M.cell) //Turns out things break if the cell is missing
@@ -515,8 +519,8 @@
 		return FALSE
 	return TRUE
 
-/obj/item/mecha_parts/mecha_equipment/ripleyupgrade/attach(obj/mecha/M)
-	var/obj/mecha/working/ripley/mkii/N = new /obj/mecha/working/ripley/mkii(get_turf(M),1)
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/attach(obj/mecha/M)
+	var/obj/mecha/N = new result_mech(get_turf(M),1)
 	if(!N)
 		return
 	QDEL_NULL(N.cell)
@@ -546,9 +550,28 @@
 	N.maint_access = M.maint_access
 	N.strafe = M.strafe
 	N.obj_integrity = M.obj_integrity //This is not a repair tool
-	if (M.name != "\improper APLU MK-I \"Ripley\"")
-		N.name = M.name
 	M.wreckage = 0
 	qdel(M)
 	playsound(get_turf(N),'sound/items/ratchet.ogg',50,TRUE)
 	return
+
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley
+	name = "Ripley MK-II Conversion Kit"
+	desc = "A pressurized canopy attachment kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the slower, but space-worthy MK-II design. This kit cannot be removed, once applied."
+	icon_state = "ripleyupgrade"
+	source_mech = list(/obj/mecha/working/ripley, /obj/mecha/working/ripley/mining)
+	result_mech = /obj/mecha/working/ripley/mkii
+
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
+	name = "CLIP Ripley MK-IV Conversion Kit"
+	desc = "A CLIP-custom lightweight canopy kit for an Autonomous Power Loader Unit \"Ripley\" MK-I mecha, to convert it to the mobile and spaceworthy Mk-IV design. This kit cannot be removed, once applied."
+	icon_state = "clipupgrade"
+	source_mech = list(/obj/mecha/working/ripley, /obj/mecha/working/ripley/mining)
+	result_mech = /obj/mecha/working/ripley/clip
+
+/obj/item/mecha_parts/mecha_equipment/conversion_kit/paladin
+	name = "CLIP Paladin Conversion Kit"
+	desc = "A CLIP-custom conversion kit for a Durand combat exosuit, to convert it to the specialized Paladin anti-xenofauna exosuit."
+	icon_state = "clipupgrade"
+	source_mech = list(/obj/mecha/combat/durand)
+	result_mech = /obj/mecha/combat/durand/clip

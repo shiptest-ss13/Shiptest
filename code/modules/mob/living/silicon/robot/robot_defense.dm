@@ -237,7 +237,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 
 	if(istype(W, /obj/item/computer_hardware/hard_drive/portable)) //Allows borgs to install new programs with human help
 		if(!modularInterface)
-			stack_trace("Cyborg [src] ( [type] ) was somehow missing their integrated tablet. Please make a bug report.")
+			stack_trace("Cyborg [src] ([type]) was somehow missing their integrated tablet. Please make a bug report.")
 			create_modularInterface()
 		var/obj/item/computer_hardware/hard_drive/portable/floppy = W
 		if(modularInterface.install_component(floppy, user))
@@ -292,7 +292,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 	add_fingerprint(user)
 	if(opened && !wiresexposed && !issilicon(user))
 		if(cell)
-			cell.update_icon()
+			cell.update_appearance()
 			cell.add_fingerprint(user)
 			user.put_in_active_hand(cell)
 			to_chat(user, "<span class='notice'>You remove \the [cell].</span>")
@@ -308,7 +308,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 		return
 	spark_system.start()
 	step_away(src, user, 15)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/_step_away, src, get_turf(user), 15), 3)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_step_away), src, get_turf(user), 15), 3)
 
 /mob/living/silicon/robot/fire_act()
 	if(!on_fire) //Silicons don't gain stacks from hotspots, but hotspots can ignite them

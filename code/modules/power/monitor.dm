@@ -2,7 +2,7 @@
 
 /obj/machinery/computer/monitor
 	name = "power monitoring console"
-	desc = "It monitors power levels across the station."
+	desc = "It monitors power levels on it's assigned network."
 	icon_screen = "power"
 	icon_keyboard = "power_key"
 	light_color = LIGHT_COLOR_YELLOW
@@ -20,6 +20,16 @@
 	var/record_interval = 50
 	var/next_record = 0
 	var/is_secret_monitor = FALSE
+
+/obj/machinery/computer/monitor/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/monitor/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
 
 /obj/machinery/computer/monitor/secret //Hides the power monitor (such as ones on ruins & CentCom) from PDA's to prevent metagaming.
 	name = "outdated power monitoring console"

@@ -24,6 +24,8 @@
 	var/cable = 1
 	var/list/debris = list()
 
+	hitsound_type = PROJECTILE_HITSOUND_GLASS
+
 /obj/machinery/door/window/Initialize(mapload, set_dir)
 	. = ..()
 	flags_1 &= ~PREVENT_CLICK_UNDER_1
@@ -39,6 +41,12 @@
 	if(cable)
 		debris += new /obj/item/stack/cable_coil(src, cable)
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_EXIT = PROC_REF(on_exit),
+	)
+
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/machinery/door/window/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/ntnet_interface)
@@ -52,10 +60,8 @@
 	return ..()
 
 /obj/machinery/door/window/update_icon_state()
-	if(density)
-		icon_state = base_state
-	else
-		icon_state = "[base_state]open"
+	. = ..()
+	icon_state = "[base_state][density ? null : "open"]"
 
 /obj/machinery/door/window/proc/open_and_close()
 	if(!open())
@@ -69,9 +75,9 @@
 		close()
 
 /obj/machinery/door/window/Bumped(atom/movable/AM)
-	if( operating || !density )
+	if(operating || !density)
 		return
-	if (!( ismob(AM) ))
+	if (!(ismob(AM)))
 		if(ismecha(AM))
 			var/obj/mecha/mecha = AM
 			if(mecha.occupant && allowed(mecha.occupant))
@@ -79,7 +85,7 @@
 			else
 				do_animate("deny")
 		return
-	if (!( SSticker ))
+	if (!(SSticker))
 		return
 	var/mob/M = AM
 	if(HAS_TRAIT(M, TRAIT_HANDS_BLOCKED) || ((isdrone(M) || iscyborg(M)) && M.stat != CONSCIOUS))
@@ -87,7 +93,7 @@
 	bumpopen(M)
 
 /obj/machinery/door/window/bumpopen(mob/user)
-	if( operating || !density )
+	if(operating || !density)
 		return
 	add_fingerprint(user)
 	if(!requiresID())
@@ -99,11 +105,12 @@
 		do_animate("deny")
 	return
 
-/obj/machinery/door/window/CanAllowThrough(atom/movable/mover, turf/target)
+/obj/machinery/door/window/CanAllowThrough(atom/movable/mover, border_dir)
 	. = ..()
 	if(.)
 		return
-	if(get_dir(loc, target) == dir) //Make sure looking at appropriate border
+
+	if(border_dir == dir)
 		return FALSE
 
 	if(istype(mover, /obj/structure/window))
@@ -125,12 +132,21 @@
 /obj/machinery/door/window/CanAStarPass(obj/item/card/id/ID, to_dir)
 	return !density || (dir != to_dir) || (check_access(ID) && hasPower())
 
-/obj/machinery/door/window/CheckExit(atom/movable/mover, turf/target)
-	if((pass_flags_self & mover.pass_flags) || ((pass_flags_self & LETPASSTHROW) && mover.throwing))
-		return TRUE
-	if(get_dir(loc, target) == dir)
-		return !density
-	return TRUE
+/obj/machinery/door/window/proc/on_exit(datum/source, atom/movable/leaving, direction)
+	SIGNAL_HANDLER
+
+	if(leaving.movement_type & PHASING)
+		return
+
+	if(leaving == src)
+		return // Let's not block ourselves.
+
+	if((pass_flags_self & leaving.pass_flags) || ((pass_flags_self & LETPASSTHROW) && leaving.throwing))
+		return
+
+	if(direction == dir && density)
+		leaving.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
 
 /obj/machinery/door/window/open(forced=FALSE)
 	if (operating) //doors can still open when emag-disabled
@@ -251,7 +267,7 @@
 						WA.set_anchored(TRUE)
 						WA.state= "02"
 						WA.setDir(dir)
-						WA.update_icon()
+						WA.update_appearance()
 						WA.created_name = name
 
 						if(obj_flags & EMAGGED)
@@ -327,11 +343,11 @@
 				return
 
 			if(density)
-				INVOKE_ASYNC(src, .proc/open)
+				INVOKE_ASYNC(src, PROC_REF(open))
 			else
-				INVOKE_ASYNC(src, .proc/close)
+				INVOKE_ASYNC(src, PROC_REF(close))
 		if("touch")
-			INVOKE_ASYNC(src, .proc/open_and_close)
+			INVOKE_ASYNC(src, PROC_REF(open_and_close))
 
 /obj/machinery/door/window/brigdoor
 	name = "secure door"

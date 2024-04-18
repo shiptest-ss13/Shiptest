@@ -6,15 +6,15 @@
 //Drone shells
 
 /** Drone Shell: Ghost role item for drones
-  *
-  * A simple mob spawner item that transforms into a maintenance drone
-  * Resepcts drone minimum age
-  */
+ *
+ * A simple mob spawner item that transforms into a maintenance drone
+ * Resepcts drone minimum age
+ */
 
 /obj/effect/mob_spawn/drone
 	name = "drone shell"
 	mob_name = "drone"                                                                              //WS Edit - Adding missing var
-	desc = "A shell of a maintenance drone, an expendable robot built to perform station repairs."
+	desc = "A shell of a maintenance drone, an expendable robot built to perform repairs to remote installations."
 	icon = 'icons/mob/drone.dmi'
 	icon_state = "drone_maint_hat" //yes reuse the _hat state.
 	layer = BELOW_MOB_LAYER
@@ -29,7 +29,7 @@
 	. = ..()
 	var/area/A = get_area(src)
 	if(A)
-		notify_ghosts("A drone shell has been created in \the [A.name].", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_DRONE, notify_suiciders = FALSE)
+		notify_ghosts("A drone shell has been created in \the [A.name].", source = src, action=NOTIFY_ATTACK, flashwindow = FALSE, ignore_key = POLL_IGNORE_DRONE)
 	GLOB.poi_list |= src
 
 /obj/effect/mob_spawn/drone/Destroy()

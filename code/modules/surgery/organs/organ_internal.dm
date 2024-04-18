@@ -28,20 +28,17 @@
 
 	var/useable = TRUE
 	var/list/food_reagents = list(/datum/reagent/consumable/nutriment = 5)
-
-	//WS Begin - IPCS
 	var/vital = 0
 	//Was this organ implanted/inserted/etc, if true will not be removed during species change.
 	var/external = FALSE
 	//whether to call Remove() when qdeling the organ.
 	var/remove_on_qdel = TRUE
 	var/synthetic = FALSE // To distinguish between organic and synthetic organs
-	//WS End
 
 /obj/item/organ/Initialize()
 	. = ..()
 	if(organ_flags & ORGAN_EDIBLE)
-		AddComponent(/datum/component/edible, food_reagents, null, RAW | MEAT | GROSS, null, 10, null, null, null, CALLBACK(src, .proc/OnEatFrom))
+		AddComponent(/datum/component/edible, food_reagents, null, RAW | MEAT | GORE, null, 10, null, null, null, CALLBACK(src, PROC_REF(OnEatFrom)))
 
 	///When you take a bite you cant jam it in for surgery anymore.
 /obj/item/organ/proc/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
@@ -52,7 +49,11 @@
 	if(replaced)
 		replaced.Remove(M, special = 1)
 		if(drop_if_replaced)
-			replaced.forceMove(get_turf(M))
+			var/dest = get_turf(M)
+			if(dest)
+				replaced.forceMove(get_turf(M))
+			else
+				qdel(replaced)
 		else
 			qdel(replaced)
 
@@ -155,11 +156,11 @@
 	applyOrganDamage(d - damage)
 
 /** check_damage_thresholds
-  * input: M (a mob, the owner of the organ we call the proc on)
-  * output: returns a message should get displayed.
-  * description: By checking our current damage against our previous damage, we can decide whether we've passed an organ threshold.
-  *				 If we have, send the corresponding threshold message to the owner, if such a message exists.
-  */
+ * input: M (a mob, the owner of the organ we call the proc on)
+ * output: returns a message should get displayed.
+ * description: By checking our current damage against our previous damage, we can decide whether we've passed an organ threshold.
+ *				 If we have, send the corresponding threshold message to the owner, if such a message exists.
+ */
 /obj/item/organ/proc/check_damage_thresholds(M)
 	if(damage == prev_damage)
 		return
@@ -188,39 +189,36 @@
 	return 0
 
 /mob/living/carbon/regenerate_organs()
-	if(dna?.species)
-		dna.species.regenerate_organs(src)
-		return
+	if(!getorganslot(ORGAN_SLOT_LUNGS))
+		var/obj/item/organ/lungs/L = new()
+		L.Insert(src)
 
-	else
-		if(!getorganslot(ORGAN_SLOT_LUNGS))
-			var/obj/item/organ/lungs/L = new()
-			L.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_HEART))
+		var/obj/item/organ/heart/H = new()
+		H.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_HEART))
-			var/obj/item/organ/heart/H = new()
-			H.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_TONGUE))
+		var/obj/item/organ/tongue/T = new()
+		T.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_TONGUE))
-			var/obj/item/organ/tongue/T = new()
-			T.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_EYES))
+		var/obj/item/organ/eyes/E = new()
+		E.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_EYES))
-			var/obj/item/organ/eyes/E = new()
-			E.Insert(src)
+	if(!getorganslot(ORGAN_SLOT_EARS))
+		var/obj/item/organ/ears/ears = new()
+		ears.Insert(src)
 
-		if(!getorganslot(ORGAN_SLOT_EARS))
-			var/obj/item/organ/ears/ears = new()
-			ears.Insert(src)
-
+/mob/living/carbon/human/regenerate_organs()
+	dna.species.regenerate_organs(src, robotic = fbp)
 
 /** get_availability
-  * returns whether the species should innately have this organ.
-  *
-  * regenerate organs works with generic organs, so we need to get whether it can accept certain organs just by what this returns.
-  * This is set to return true or false, depending on if a species has a specific organless trait. stomach for example checks if the species has NOSTOMACH and return based on that.
-  * Arguments:
-  * S - species, needed to return whether the species has an organ specific trait
-  */
+ * returns whether the species should innately have this organ.
+ *
+ * regenerate organs works with generic organs, so we need to get whether it can accept certain organs just by what this returns.
+ * This is set to return true or false, depending on if a species has a specific organless trait. stomach for example checks if the species has NOSTOMACH and return based on that.
+ * Arguments:
+ * S - species, needed to return whether the species has an organ specific trait
+ */
 /obj/item/organ/proc/get_availability(datum/species/S)
 	return TRUE

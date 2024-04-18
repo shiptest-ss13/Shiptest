@@ -31,7 +31,7 @@
 
 /datum/action/proc/link_to(Target)
 	target = Target
-	RegisterSignal(Target, COMSIG_ATOM_UPDATED_ICON, .proc/OnUpdatedIcon)
+	RegisterSignal(Target, COMSIG_ATOM_UPDATED_ICON, PROC_REF(OnUpdatedIcon))
 
 /datum/action/Destroy()
 	if(owner)
@@ -47,7 +47,7 @@
 				return
 			Remove(owner)
 		owner = M
-		RegisterSignal(owner, COMSIG_PARENT_QDELETING, .proc/owner_deleted)
+		RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(owner_deleted))
 
 		//button id generation
 		var/counter = 0
@@ -160,13 +160,11 @@
 /datum/action/item_action/New(Target)
 	..()
 	var/obj/item/I = target
-	LAZYINITLIST(I.actions)
-	I.actions += src
+	LAZYADD(I.actions, src)
 
 /datum/action/item_action/Destroy()
 	var/obj/item/I = target
-	I.actions -= src
-	UNSETEMPTY(I.actions)
+	LAZYREMOVE(I.actions, src)
 	return ..()
 
 /datum/action/item_action/Trigger()
@@ -324,6 +322,26 @@
 			return 0
 	return ..()
 
+/datum/action/item_action/berserk_mode
+	name = "Berserk"
+	desc = "Increase your movement and melee speed while also increasing your melee armor for a short amount of time."
+	icon_icon = 'icons/mob/actions/actions_items.dmi'
+	button_icon_state = "berserk_mode"
+	background_icon_state = "bg_demon"
+
+/datum/action/item_action/berserk_mode/Trigger()
+	if(istype(target, /obj/item/clothing/head/helmet/space/hardsuit/berserker))
+		var/obj/item/clothing/head/helmet/space/hardsuit/berserker/berzerk = target
+		if(berzerk.berserk_active)
+			to_chat(owner, "<span class='warning'>You are already berserk!</span>")
+			return
+		if(berzerk.berserk_charge < 100)
+			to_chat(owner, "<span class='warning'>You don't have a full charge.</span>")
+			return
+		berzerk.berserk_mode(owner)
+		return
+	..()
+
 /datum/action/item_action/toggle_helmet_flashlight
 	name = "Toggle Helmet Flashlight"
 
@@ -339,9 +357,6 @@
 	..()
 	name = "Toggle [target.name]"
 	button.name = name
-
-/datum/action/item_action/halt
-	name = "HALT!"
 
 /datum/action/item_action/toggle_voice_box
 	name = "Toggle Voice Box"
@@ -757,3 +772,17 @@
 	target.layer = old_layer
 	target.plane = old_plane
 	current_button.appearance_cache = target.appearance
+
+/datum/action/item_action/activate_lanternbang
+	name = "Activate Lanternbang"
+	check_flags = AB_CHECK_HANDS_BLOCKED | AB_CHECK_IMMOBILE
+
+/datum/action/item_action/activate_lanternbang/Trigger()
+	if(istype(target, /obj/item/flashlight/lantern/lanternbang))
+		var/obj/item/flashlight/lantern/lanternbang/L = target
+		if(L.cooldown)
+			to_chat(owner, "<span class='warning'>The lanternbang is still on cooldown!</span>")
+			return
+		to_chat(owner, "<span class='warning'>You overload the lanternbang!</span>")
+		L.activate()
+		return

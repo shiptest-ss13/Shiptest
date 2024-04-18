@@ -44,8 +44,8 @@ Borg Hypospray
 
 /obj/item/reagent_containers/borghypo/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	QDEL_LIST(reagent_list)
 	return ..()
-
 
 /obj/item/reagent_containers/borghypo/process() //Every [recharge_time] seconds, recharge some reagents for the cyborg
 	charge_tick++
@@ -53,7 +53,7 @@ Borg Hypospray
 		regenerate_reagents()
 		charge_tick = 0
 
-	//update_icon()
+	//update_appearance()
 	return 1
 
 // Use this to add more chemicals for the borghypo to produce.
@@ -176,7 +176,7 @@ Borg Shaker
 /obj/item/reagent_containers/borghypo/borgshaker
 	name = "cyborg shaker"
 	desc = "An advanced drink synthesizer and mixer."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "shaker"
 	possible_transfer_amounts = list(5,10,20)
 	charge_cost = 20 //Lots of reagents all regenerating at once, so the charge cost is lower. They also regenerate faster.
@@ -243,7 +243,7 @@ Borg Shaker
 /obj/item/reagent_containers/borghypo/borgshaker/hacked
 	name = "cyborg shaker"
 	desc = "Will mix drinks that knock them dead."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "threemileislandglass"
 	possible_transfer_amounts = list(5,10,20)
 	charge_cost = 20 //Lots of reagents all regenerating at once, so the charge cost is lower. They also regenerate faster.

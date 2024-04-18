@@ -5,9 +5,11 @@
 
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "navbeacon0-f"
+	base_icon_state = "navbeacon"
 	name = "navigation beacon"
 	desc = "A radio beacon used for bot navigation and crew wayfinding."
-	layer = LOW_OBJ_LAYER
+	plane = FLOOR_PLANE
+	layer = UNDER_CATWALK
 	max_integrity = 500
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 70, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
 
@@ -43,11 +45,11 @@
 	glob_lists_deregister()
 	return ..()
 
-/obj/machinery/navbeacon/onTransitZ(old_z, new_z)
-	if (GLOB.navbeacons["[old_z]"])
-		GLOB.navbeacons["[old_z]"] -= src
-	if (GLOB.navbeacons["[new_z]"])
-		GLOB.navbeacons["[new_z]"] += src
+/obj/machinery/navbeacon/on_virtual_z_change(new_virtual_z, previous_virtual_z)
+	if(previous_virtual_z)
+		LAZYREMOVEASSOC(GLOB.navbeacons, "[previous_virtual_z]", src)
+	if(new_virtual_z)
+		LAZYADDASSOCLIST(GLOB.navbeacons, "[new_virtual_z]", src)
 	..()
 
 // set the transponder codes assoc list from codes_txt
@@ -69,19 +71,18 @@
 			codes[e] = "1"
 
 /obj/machinery/navbeacon/proc/glob_lists_deregister()
-	if (GLOB.navbeacons["[z]"])
-		GLOB.navbeacons["[z]"] -= src //Remove from beacon list, if in one.
+	LAZYREMOVE(GLOB.navbeacons["[virtual_z()]"], src)
 	GLOB.deliverybeacons -= src
 	GLOB.deliverybeacontags -= location
 	GLOB.wayfindingbeacons -= src
 
-/obj/machinery/navbeacon/proc/glob_lists_register(var/init=FALSE)
+/obj/machinery/navbeacon/proc/glob_lists_register(init=FALSE)
 	if(!init)
 		glob_lists_deregister()
+	if(!codes)
+		return
 	if(codes["patrol"])
-		if(!GLOB.navbeacons["[z]"])
-			GLOB.navbeacons["[z]"] = list()
-		GLOB.navbeacons["[z]"] += src //Register with the patrol list!
+		LAZYADD(GLOB.navbeacons["[virtual_z()]"], src)
 	if(codes["delivery"])
 		GLOB.deliverybeacons += src
 		GLOB.deliverybeacontags += location
@@ -90,7 +91,8 @@
 
 // update the icon_state
 /obj/machinery/navbeacon/update_icon_state()
-	icon_state = "navbeacon[open]"
+	icon_state = "[base_icon_state][open]"
+	return ..()
 
 /obj/machinery/navbeacon/attackby(obj/item/I, mob/user, params)
 	var/turf/T = loc
@@ -102,7 +104,7 @@
 
 		user.visible_message("<span class='notice'>[user] [open ? "opens" : "closes"] the beacon's cover.</span>", "<span class='notice'>You [open ? "open" : "close"] the beacon's cover.</span>")
 
-		update_icon()
+		update_appearance()
 
 	else if (istype(I, /obj/item/card/id)||istype(I, /obj/item/pda))
 		if(open)

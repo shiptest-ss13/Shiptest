@@ -1,11 +1,21 @@
-/proc/get_step_multiz(ref, dir)
-	if(dir & UP)
-		dir &= ~UP
-		return get_step(SSmapping.get_turf_above(get_turf(ref)), dir)
-	if(dir & DOWN)
-		dir &= ~DOWN
-		return get_step(SSmapping.get_turf_below(get_turf(ref)), dir)
-	return get_step(ref, dir)
+/proc/get_step_multiz(atom/ref, dir)
+	// multiz dir is just the up/down dir flags
+	var/multiz_dir = dir & (UP|DOWN)
+	// while the passed dir is normalized to just the cardinals
+	dir &= ~(UP|DOWN)
+	var/turf/my_turf = get_step(ref, dir)
+	if(isnull(my_turf))
+		return
+	switch(multiz_dir)
+		// the old version of this code prioritized UP over DOWN when
+		// both were passed. i don't want to fuck with that, so here it is preserved
+		if(UP|DOWN)
+			return my_turf.above()
+		if(UP)
+			return my_turf.above()
+		if(DOWN)
+			return my_turf.below()
+	return my_turf
 
 /proc/get_dir_multiz(turf/us, turf/them)
 	us = get_turf(us)
@@ -28,7 +38,13 @@
 		return (dir | get_dir(us, them))
 
 /turf/proc/above()
-	return get_step_multiz(src, UP)
+	var/datum/virtual_level/zone = get_virtual_level()
+	if (!zone)
+		return
+	return zone.get_above_turf(src)
 
 /turf/proc/below()
-	return get_step_multiz(src, DOWN)
+	var/datum/virtual_level/zone = get_virtual_level()
+	if (!zone)
+		return
+	return zone.get_below_turf(src)

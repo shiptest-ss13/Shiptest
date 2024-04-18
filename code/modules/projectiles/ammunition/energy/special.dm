@@ -3,6 +3,14 @@
 	select_name = "ion"
 	fire_sound = 'sound/weapons/ionrifle.ogg'
 
+/obj/item/ammo_casing/energy/ion/cheap
+	e_cost = 833
+
+/obj/item/ammo_casing/energy/flora/revolution
+	projectile_type = /obj/projectile/energy/florarevolution
+	select_name = "revolution"
+	e_cost = 250
+
 /obj/item/ammo_casing/energy/ion/hos
 	projectile_type = /obj/projectile/ion/weak
 	e_cost = 2000
@@ -30,7 +38,7 @@
 /obj/item/ammo_casing/energy/temp
 	projectile_type = /obj/projectile/temp
 	select_name = "freeze"
-	e_cost = 250
+	e_cost = 2500
 	fire_sound = 'sound/weapons/pulse3.ogg'
 
 /obj/item/ammo_casing/energy/temp/hot
@@ -65,13 +73,21 @@
 /obj/item/ammo_casing/energy/instakill/red
 	projectile_type = /obj/projectile/beam/instakill/red
 
-/obj/item/ammo_casing/energy/tesla_revolver
-	fire_sound = 'sound/magic/lightningbolt.ogg'
-	e_cost = 2000
-	select_name = "stun"
-	projectile_type = /obj/projectile/energy/tesla/revolver
+/obj/item/ammo_casing/energy/tesla_cannon
+	fire_sound = 'sound/magic/lightningshock.ogg'
+	e_cost = 300
+	select_name = "shock"
+	projectile_type = /obj/projectile/energy/tesla_cannon
+	delay = 1
 
 /obj/item/ammo_casing/energy/shrink
 	projectile_type = /obj/projectile/beam/shrink
 	select_name = "shrink ray"
 	e_cost = 2000
+
+/obj/item/ammo_casing/energy/buster
+	projectile_type = /obj/projectile/energy/buster
+	select_name = "T4L1 buster replica"
+	e_cost = 100 //should have a lot of energy
+	fire_sound = 'sound/effects/empulse.ogg'
+	delay = 3 SECONDS

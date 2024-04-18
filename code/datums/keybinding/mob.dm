@@ -296,3 +296,26 @@
 		return
 	user.body_l_leg()
 	return TRUE
+
+/datum/keybinding/mob/pixel_shift
+	hotkey_keys = list("C")
+	name = "pixel_shift"
+	full_name = "Pixel shift"
+	description = "Displace your sprite within your current tile"
+	keybind_signal = COMSIG_KB_MOB_PIXELSHIFT_DOWN
+
+/datum/keybinding/mob/pixel_shift/down(client/user)
+	. = ..()
+	if(.)
+		return
+	var/mob/M = user.mob
+	M.shifting = TRUE
+	return TRUE
+
+/datum/keybinding/mob/pixel_shift/up(client/user)
+	. = ..()
+	if(.)
+		return
+	var/mob/M = user.mob
+	M.shifting = FALSE
+	return TRUE

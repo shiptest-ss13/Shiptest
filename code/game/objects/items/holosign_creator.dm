@@ -137,3 +137,21 @@
 		for(var/H in signs)
 			qdel(H)
 		to_chat(user, "<span class='notice'>You clear all active holograms.</span>")
+
+/obj/item/holosign_creator/janibarrier/infinite
+	holosign_type = /obj/structure/holosign/barrier/wetsign/infinite
+
+/obj/item/holosign_creator/security/infinite
+	holosign_type = /obj/structure/holosign/barrier/infinite
+
+/obj/item/holosign_creator/engineering/infinite
+	holosign_type = /obj/structure/holosign/barrier/engineering/infinite
+
+/obj/item/holosign_creator/atmos/infinite
+	holosign_type = /obj/structure/holosign/barrier/atmos/infinite
+
+/obj/item/holosign_creator/medical/infinite
+	holosign_type = /obj/structure/holosign/barrier/medical/infinite
+
+/obj/item/holosign_creator/cyborg/infinite
+	holosign_type = /obj/structure/holosign/barrier/cyborg/infinite

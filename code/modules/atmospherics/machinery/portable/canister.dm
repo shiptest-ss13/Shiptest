@@ -3,6 +3,7 @@
 /obj/machinery/portable_atmospherics/canister
 	name = "canister"
 	desc = "A canister for the storage of gas."
+	icon = 'icons/obj/nutanks.dmi'
 	icon_state = "yellow"
 	density = TRUE
 	base_icon_state = "yellow" //Used to make dealing with breaking the canister less hellish.
@@ -51,7 +52,6 @@
 		"stimulum" = /obj/machinery/portable_atmospherics/canister/stimulum,
 		"pluoxium" = /obj/machinery/portable_atmospherics/canister/pluoxium,
 		"caution" = /obj/machinery/portable_atmospherics/canister,
-		"miasma" = /obj/machinery/portable_atmospherics/canister/miasma,
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon
 	)
 
@@ -140,13 +140,6 @@
 	gas_type = GAS_H2O
 	filled = 1
 
-/obj/machinery/portable_atmospherics/canister/miasma
-	name = "miasma canister"
-	desc = "Miasma. Makes you wish your nose were blocked."
-	icon_state = "miasma"
-	gas_type = GAS_MIASMA
-	filled = 1
-
 /obj/machinery/portable_atmospherics/canister/freon
 	name = "freon canister"
 	desc = "Freon. Can absorb heat"
@@ -175,7 +168,7 @@
 	timing = !timing
 	if(timing)
 		valve_timer = world.time + (timer_set * 10)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/portable_atmospherics/canister/proto
 	name = "prototype canister"
@@ -207,7 +200,7 @@
 		air_contents.copy_from(existing_mixture)
 	else
 		create_gas()
-	update_icon()
+	update_appearance()
 
 
 /obj/machinery/portable_atmospherics/canister/proc/create_gas()
@@ -226,6 +219,7 @@
 /obj/machinery/portable_atmospherics/canister/update_icon_state()
 	if(machine_stat & BROKEN)
 		icon_state = "[icon_state]-1"
+	return ..()
 
 /obj/machinery/portable_atmospherics/canister/update_overlays()
 	. = ..()
@@ -233,17 +227,14 @@
 		. += "can-open"
 	if(connected_port)
 		. += "can-connector"
-	/*WS Edit - Use our overlays
-	var/pressure = air_contents.return_pressure()
-	if(pressure >= 40 * ONE_ATMOSPHERE)
-		. += "can-o3"
-	else if(pressure >= 10 * ONE_ATMOSPHERE)
-		. += "can-o2"
-	else if(pressure >= 5 * ONE_ATMOSPHERE)
-		. += "can-o1"
-	else if(pressure >= 10)
-		. += "can-o0"
-	WS End */
+	if(machine_stat & BROKEN)
+		return
+	var/pressure = air_contents?.return_pressure()
+	var/pressure_display = round(pressure / 500)
+	if(pressure_display > 10)
+		pressure_display = 10
+	if(pressure > 100)
+		. += "can-o" + num2text(pressure_display)
 
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -303,7 +294,7 @@
 	if(.)
 		if(close_valve)
 			valve_open = FALSE
-			update_icon()
+			update_appearance()
 			investigate_log("Valve was <b>closed</b> by [key_name(user)].", INVESTIGATE_ATMOS)
 		else if(valve_open && holding)
 			investigate_log("[key_name(user)] started a transfer into [holding].", INVESTIGATE_ATMOS)
@@ -324,7 +315,7 @@
 		if(air_contents.release_gas_to(target_air, release_pressure) && !holding)
 			air_update_turf()
 
-	update_icon()
+	update_appearance()
 
 /obj/machinery/portable_atmospherics/canister/ui_state(mob/user)
 	return GLOB.physical_state
@@ -469,4 +460,4 @@
 					investigate_log("[key_name(usr)] removed the [holding], leaving the valve open and transferring into the <span class='boldannounce'>air</span>.", INVESTIGATE_ATMOS)
 				replace_tank(usr, FALSE)
 				. = TRUE
-	update_icon()
+	update_appearance()

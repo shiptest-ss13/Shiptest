@@ -1,10 +1,15 @@
 //Ranged
-/obj/projectile/guardian
+/obj/projectile/guardian//now featuring anime-accurate unpredictable richochet. Hit your master! Hit yourself! Salt in dchat when your own richochet puts you into crit.
 	name = "crystal spray"
 	icon_state = "guardian"
-	damage = 5
+	damage = 15
 	damage_type = BRUTE
 	armour_penetration = 100
+	ricochets_max = 2
+	ricochet_chance = 65
+	ricochet_auto_aim_range = 0
+	ricochet_incidence_leeway = 50
+	projectile_piercing = PASSMOB
 
 /mob/living/simple_animal/hostile/guardian/ranged
 	a_intent = INTENT_HELP
@@ -28,6 +33,7 @@
 	toggle_button_type = /atom/movable/screen/guardian/ToggleMode
 	var/list/snares = list()
 	var/toggle = FALSE
+	speed = -2//very fast!
 
 /mob/living/simple_animal/hostile/guardian/ranged/ToggleMode()
 	if(loc == summoner)
@@ -110,9 +116,16 @@
 	var/mob/living/simple_animal/hostile/guardian/spawner
 	invisibility = INVISIBILITY_ABSTRACT
 
-
-/obj/effect/snare/Crossed(AM as mob|obj)
+/obj/effect/snare/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+/obj/effect/snare/proc/on_entered(datum/source, AM as mob|obj)
+	SIGNAL_HANDLER
 	if(isliving(AM) && spawner && spawner.summoner && AM != spawner && !spawner.hasmatchingsummoner(AM))
 		to_chat(spawner.summoner, "<span class='danger'><B>[AM] has crossed surveillance snare, [name].</span></B>")
 		var/list/guardians = spawner.summoner.hasparasites()

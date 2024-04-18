@@ -17,6 +17,16 @@
 	req_access = list(ACCESS_TCOMSAT)
 	circuit = /obj/item/circuitboard/computer/comm_server
 
+/obj/machinery/computer/telecomms/server/retro
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-retro"
+	deconpath = /obj/structure/frame/computer/retro
+
+/obj/machinery/computer/telecomms/server/solgov
+	icon = 'icons/obj/machines/retro_computer.dmi'
+	icon_state = "computer-solgov"
+	deconpath = /obj/structure/frame/computer/solgov
+
 /obj/machinery/computer/telecomms/server/ui_interact(mob/user)
 	. = ..()
 	var/dat = "<TITLE>Telecommunication Server Monitor</TITLE><center><b>Telecommunications Server Monitor</b></center>"

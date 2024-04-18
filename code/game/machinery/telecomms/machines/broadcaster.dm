@@ -33,8 +33,9 @@ GLOBAL_VAR_INIT(message_delay, 0) // To make sure restarting the recentmessages 
 		original.data["compression"] = signal.data["compression"]
 
 	var/turf/T = get_turf(src)
-	if (T)
-		signal.levels |= T.get_virtual_z_level()
+	var/datum/map_zone/mapzone = T.get_map_zone()
+	if (mapzone)
+		signal.map_zones |= mapzone
 
 	var/signal_message = "[signal.frequency]:[signal.data["message"]]:[signal.data["name"]]"
 	if(signal_message in GLOB.recentmessages)
@@ -48,7 +49,7 @@ GLOBAL_VAR_INIT(message_delay, 0) // To make sure restarting the recentmessages 
 
 	if(!GLOB.message_delay)
 		GLOB.message_delay = TRUE
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/end_message_delay), 1 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(end_message_delay)), 1 SECONDS)
 
 	/* --- Do a snazzy animation! --- */
 	flick("broadcaster_send", src)

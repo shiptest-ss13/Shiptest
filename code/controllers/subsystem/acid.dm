@@ -11,6 +11,11 @@ SUBSYSTEM_DEF(acid)
 	msg = "P:[length(processing)]"
 	return ..()
 
+/datum/controller/subsystem/acid/get_metrics()
+	. = ..()
+	var/list/cust = list()
+	cust["processing"] = length(processing)
+	.["custom"] = cust
 
 /datum/controller/subsystem/acid/fire(resumed = 0)
 	if (!resumed)
@@ -30,7 +35,7 @@ SUBSYSTEM_DEF(acid)
 
 		if(O.acid_level && O.acid_processing())
 		else
-			O.cut_overlay(GLOB.acid_overlay, TRUE)
+			O.update_appearance()
 			processing -= O
 
 		if (MC_TICK_CHECK)

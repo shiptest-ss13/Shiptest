@@ -30,6 +30,7 @@
 		if(isturf(target) && reagents.reagent_list.len && thrownby)
 			log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
 			message_admins("[ADMIN_LOOKUPFLW(thrownby)] splashed (thrown) [english_list(reagents.reagent_list)] on [target] at [ADMIN_VERBOSEJMP(target)].")
+			playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 		reagents.expose(M, TOUCH)
 		log_combat(user, M, "splashed", R)
 		reagents.clear_reagents()
@@ -48,7 +49,7 @@
 			log_combat(user, M, "fed", reagents.log_list())
 		else
 			to_chat(user, "<span class='notice'>You swallow a gulp of [src].</span>")
-		addtimer(CALLBACK(reagents, /datum/reagents.proc/trans_to, M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
+		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents, trans_to), M, 5, TRUE, TRUE, FALSE, user, FALSE, INGEST), 5)
 		playsound(M.loc,'sound/items/drink.ogg', rand(10,50), TRUE)
 
 /obj/item/reagent_containers/glass/afterattack(obj/target, mob/user, proximity)
@@ -70,6 +71,7 @@
 
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to [target].</span>")
+		playsound(src, 'sound/items/glass_transfer.ogg', 50, 1)
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
@@ -83,12 +85,16 @@
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
 
-	else if(reagents.total_volume)
-		if(user.a_intent == INTENT_HARM)
-			user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-								"<span class='notice'>You splash the contents of [src] onto [target].</span>")
-			reagents.expose(target, TOUCH)
-			reagents.clear_reagents()
+	else if(reagents.total_volume && is_drainable())
+		switch(user.a_intent)
+			if(INTENT_HELP)
+				attempt_pour(target, user)
+			if(INTENT_HARM)
+				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
+									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				reagents.expose(target, TOUCH)
+				reagents.clear_reagents()
+				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)
 
 /obj/item/reagent_containers/glass/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()
@@ -119,6 +125,8 @@
 	fill_icon_thresholds = list(1, 40, 60, 80, 100)
 	can_have_cap = TRUE
 	cap_icon_state = "beaker_cap"
+	drop_sound = 'sound/items/handling/beaker_drop.ogg'
+	pickup_sound =  'sound/items/handling/beaker_pickup.ogg'
 	cap_on = TRUE
 
 /obj/item/reagent_containers/glass/beaker/get_part_rating()
@@ -205,6 +213,9 @@
 	name = "epinephrine reserve tank"
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 50)
 
+/obj/item/reagent_containers/glass/beaker/large/fuel
+	list_reagents = list(/datum/reagent/fuel = 100)
+
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
 
@@ -273,7 +284,7 @@
 	. = ..()
 	reagents.flags = initial(reagent_flags)
 
-/obj/item/reagent_containers/glass/bucket/equip_to_best_slot(var/mob/M)
+/obj/item/reagent_containers/glass/bucket/equip_to_best_slot(mob/M)
 	if(reagents.total_volume) //If there is water in a bucket, don't quick equip it to the head
 		var/index = slot_equipment_priority.Find(ITEM_SLOT_HEAD)
 		slot_equipment_priority.Remove(ITEM_SLOT_HEAD)
@@ -281,3 +292,60 @@
 		slot_equipment_priority.Insert(index, ITEM_SLOT_HEAD)
 		return
 	return ..()
+
+/obj/item/reagent_containers/glass/filter
+	name = "seperatory funnel"
+	desc = "A crude tool created by welding several beakers together. It would probably be useful for seperating reagents."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "beakerfilter"
+	item_state = "beaker"
+	volume = 100
+	amount_per_transfer_from_this = 10
+	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 100)
+	fill_icon_thresholds = list(1, 40, 60, 80, 100)
+	can_have_cap = TRUE
+	cap_icon_state = "beakerfilter_cap"
+	cap_on = TRUE
+
+/obj/item/reagent_containers/glass/filter/afterattack(obj/target, mob/user, proximity) //overrides the standard version of this, only difference is that it only transfers one chem at a time
+	if((!proximity) || !check_allowed_items(target,target_self=1))
+		return
+
+	if(!spillable)
+		return
+
+	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
+		if(!reagents.total_volume)
+			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			return
+
+		if(target.reagents.holder_full())
+			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			return
+		to_chat(user, "<span class='notice'>You begin to drain something from [src].")
+		if(do_after(user, 25, target = src))
+			var/trans = reagents.trans_id_to(target, reagents.get_master_reagent_id(), amount_per_transfer_from_this,)
+			to_chat(user, "<span class='notice'>You filter off [trans] unit\s of the solution into [target].</span>")
+
+	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
+		if(!target.reagents.total_volume)
+			to_chat(user, "<span class='warning'>[target] is empty and can't be refilled!</span>")
+			return
+
+		if(reagents.holder_full())
+			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			return
+
+		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, transfered_by = user)
+		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
+
+	else if(reagents.total_volume)
+		switch(user.a_intent)
+			if(INTENT_HELP)
+				attempt_pour(target, user)
+			if(INTENT_HARM)
+				user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
+									"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+				reagents.expose(target, TOUCH)
+				reagents.clear_reagents()
+				playsound(src, 'sound/items/glass_splash.ogg', 50, 1)

@@ -27,19 +27,16 @@
 
 	var/list/atmos_overlay_types //gas IDs of current active gas overlays
 
-/turf/open/Initialize()
-	if(!blocks_air)
-		air = new(2500,src)
-		air.copy_from_turf(src)
-		update_air_ref(planetary_atmos ? 1 : 2)
-	. = ..()
+/turf/open/Initialize(mapload, inherited_virtual_z)
+	air = new(2500,src)
+	air.copy_from_turf(src)
+	update_air_ref(planetary_atmos ? AIR_REF_PLANETARY_TURF : AIR_REF_OPEN_TURF)
+	return ..()
 
 /turf/open/Destroy()
 	if(active_hotspot)
 		QDEL_NULL(active_hotspot)
 	return ..()
-
-/turf/proc/update_air_ref()
 
 /////////////////GAS MIXTURE PROCS///////////////////
 
@@ -49,53 +46,35 @@
 /turf/open/assume_air_moles(datum/gas_mixture/giver, moles)
 	if(!giver)
 		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(giver, air, moles / giver.total_moles()))
-	else
-		giver.transfer_to(air, moles)
-		update_visuals()
+	giver.transfer_to(air, moles)
 	return TRUE
 
 /turf/open/assume_air_ratio(datum/gas_mixture/giver, ratio)
 	if(!giver)
 		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(giver, air, ratio))
-	else
-		giver.transfer_ratio_to(air, ratio)
-		update_visuals()
+	giver.transfer_ratio_to(air, ratio)
 	return TRUE
 
 /turf/open/transfer_air(datum/gas_mixture/taker, moles)
 	if(!taker || !return_air()) // shouldn't transfer from space
 		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(air, taker, moles / air.total_moles()))
-	else
-		air.transfer_to(taker, moles)
-		update_visuals()
+	air.transfer_to(taker, moles)
 	return TRUE
 
 /turf/open/transfer_air_ratio(datum/gas_mixture/taker, ratio)
 	if(!taker || !return_air())
 		return FALSE
-	if(SSair.thread_running())
-		SSair.deferred_airs += list(list(air, taker, ratio))
-	else
-		air.transfer_ratio_to(taker, ratio)
-		update_visuals()
+	air.transfer_ratio_to(taker, ratio)
 	return TRUE
 
 /turf/open/remove_air(amount)
 	var/datum/gas_mixture/ours = return_air()
 	var/datum/gas_mixture/removed = ours.remove(amount)
-	update_visuals()
 	return removed
 
 /turf/open/remove_air_ratio(ratio)
 	var/datum/gas_mixture/ours = return_air()
 	var/datum/gas_mixture/removed = ours.remove_ratio(ratio)
-	update_visuals()
 	return removed
 
 /turf/open/proc/copy_air_with_tile(turf/open/T)
@@ -189,26 +168,23 @@
 /////////////////////////////SIMULATION///////////////////////////////////
 
 /turf/proc/process_cell(fire_count)
-
 /turf/open/proc/equalize_pressure_in_zone(cyclenum)
-/turf/open/proc/consider_firelocks(turf/T2)
-	var/reconsider_adj = FALSE
-	for(var/obj/machinery/door/firedoor/FD in T2)
-		if((FD.flags_1 & ON_BORDER_1) && get_dir(T2, src) != FD.dir)
-			continue
-		FD.emergency_pressure_stop()
-		reconsider_adj = TRUE
+
+/turf/proc/consider_firelocks(turf/T2) //TODO: Find out why this sometimes gets called. Possibly to do with atmos adjacency not being updated in auxmos?
+/turf/open/consider_firelocks(turf/T2)
+	if(blocks_air)
+		return
+	for(var/obj/machinery/airalarm/alarm in src)
+		alarm.handle_decomp_alarm()
 	for(var/obj/machinery/door/firedoor/FD in src)
-		if((FD.flags_1 & ON_BORDER_1) && get_dir(src, T2) != FD.dir)
-			continue
 		FD.emergency_pressure_stop()
-		reconsider_adj = TRUE
-	if(reconsider_adj)
-		T2.ImmediateCalculateAdjacentTurfs() // We want those firelocks closed yesterday.
+	for(var/obj/machinery/door/firedoor/FD in T2)
+		FD.emergency_pressure_stop()
 
 /turf/proc/handle_decompression_floor_rip()
+
 /turf/open/floor/handle_decompression_floor_rip(sum)
-	if(sum > 20 && prob(clamp(sum / 10, 0, 30)))
+	if(sum > 20 && prob(clamp(sum / 10, 0, 30)) && !blocks_air)
 		remove_tile()
 
 /turf/open/process_cell(fire_count)
@@ -225,16 +201,19 @@
 		pressure_difference = difference
 
 /turf/open/proc/high_pressure_movements()
-	var/atom/movable/M
+	if(blocks_air)
+		return
 	var/multiplier = 1
 	if(locate(/obj/structure/rack) in src)
 		multiplier *= 0.1
 	else if(locate(/obj/structure/table) in src)
 		multiplier *= 0.2
-	for(var/thing in src)
-		M = thing
-		if (!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired)
+	for(var/atom/movable/M as anything in src)
+		if(!M.anchored && !M.pulledby && M.last_high_pressure_movement_air_cycle < SSair.times_fired && (M.flags_1 & INITIALIZED_1) && !QDELETED(M))
 			M.experience_pressure_difference(pressure_difference * multiplier, pressure_direction, 0, pressure_specific_target)
+
+	if(pressure_difference > 100)
+		new /obj/effect/temp_visual/dir_setting/space_wind(src, pressure_direction, clamp(round(sqrt(pressure_difference) * 2), 10, 255))
 
 /atom/movable/var/pressure_resistance = 10
 /atom/movable/var/last_high_pressure_movement_air_cycle = 0
@@ -260,7 +239,7 @@
 			if(throw_target && (get_dir(src, throw_target) & direction))
 				throw_turf = get_turf(throw_target)
 			var/throw_speed = clamp(round(move_force / 3000), 1, 10)
-			throw_at(throw_turf, move_force / 3000, throw_speed)
+			throw_at(throw_turf, move_force / 3000, throw_speed, quickstart = FALSE)
 		else if(move_force > 0)
 			step(src, direction)
 		last_high_pressure_movement_air_cycle = SSair.times_fired

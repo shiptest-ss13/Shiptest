@@ -11,6 +11,8 @@
 	can_have_cap = TRUE
 	cap_icon_state = "bottle_cap"
 	cap_on = TRUE
+	drop_sound = 'sound/items/handling/beaker_drop.ogg'
+	pickup_sound =  'sound/items/handling/beaker_pickup.ogg'
 
 /obj/item/reagent_containers/glass/bottle/epinephrine
 	name = "epinephrine bottle"
@@ -85,7 +87,7 @@
 /obj/item/reagent_containers/glass/bottle/adminordrazine
 	name = "Adminordrazine Bottle"
 	desc = "A small bottle. Contains the liquid essence of the gods."
-	icon = 'icons/obj/drinks.dmi'
+	icon = 'icons/obj/drinks/drinks.dmi'
 	icon_state = "holyflask"
 	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 	can_have_cap = FALSE
@@ -273,6 +275,12 @@
 	desc = "A small bottle containing Bio Virus Antidote Kit."
 	list_reagents = list(/datum/reagent/vaccine/fungal_tb = 30)
 
+/obj/item/reagent_containers/glass/bottle/necropolis_seed
+	name = "bowl of blood"
+	desc = "A clay bowl containing a fledgling spire, preserved in blood. When consumed, allows the user to transform into an avatar of the Necropolis. A robust virologist may be able to unlock its full potential..."
+	icon_state = "mortar_bone"
+	spawned_disease = /datum/disease/advance/necropolis
+
 //Oldstation.dmm chemical storage bottles
 
 /obj/item/reagent_containers/glass/bottle/hydrogen
@@ -378,3 +386,92 @@
 /obj/item/reagent_containers/glass/bottle/thermite
 	name = "thermite bottle"
 	list_reagents = list(/datum/reagent/thermite = 30)
+
+/obj/item/reagent_containers/glass/bottle/nitroglycerin
+	name = "nitroglycerin bottle"
+	desc = "A small bottle. A red warning label alerts you to the fact that it contains nitrated glycerol."
+	list_reagents = list(/datum/reagent/nitroglycerin = 30)
+
+/obj/item/reagent_containers/glass/bottle/epinephrine
+	name = "epinephrine bottle"
+	desc = "A small bottle. Contains epinephrine - used to stabilize patients."
+	volume = 50
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 50)
+
+/obj/item/reagent_containers/glass/bottle/bicaridine
+	name = "bicaridine bottle"
+	desc = "A small bottle. Contains bicaridine, used to treat minor bruising."
+	volume = 50
+	list_reagents = list(/datum/reagent/medicine/bicaridine = 50)
+
+/obj/item/reagent_containers/glass/bottle/kelotane
+	name = "kelotane bottle"
+	desc = "A small bottle. Contains kelotane, used for minor burns and skin damage."
+	volume = 50
+	list_reagents = list(/datum/reagent/medicine/kelotane = 50)
+
+/obj/item/reagent_containers/glass/bottle/antitoxin
+	name = "dylovene bottle"
+	desc = "A small bottle. Contains dylovene, used to treat minor poisoning."
+	volume = 50
+	list_reagents = list(/datum/reagent/medicine/antitoxin = 50)
+
+/obj/item/reagent_containers/glass/bottle/dexalin
+	name = "dexalin bottle"
+	desc = "A small bottle. Contains dexalin, used to treat minor oxygen deprivation."
+	volume = 50
+	list_reagents = list(/datum/reagent/medicine/dexalin = 50)
+
+/obj/item/reagent_containers/glass/bottle/epinephrine/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/bicaridine/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/kelotane/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/antitoxin/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/dexalin/sleeper
+	cap_on = FALSE
+
+/obj/item/reagent_containers/glass/bottle/morphine/sleeper
+	cap_on = FALSE
+
+//types of syrups
+
+/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/caramel
+	name = "bottle of caramel syrup"
+	desc = "A pump bottle containing caramalized sugar, also known as caramel. Do not lick."
+	list_reagents = list(/datum/reagent/consumable/caramel = 50)
+
+/obj/item/reagent_containers/food/drinks/bottle/syrup_bottle/liqueur
+	name = "bottle of coffee liqueur syrup"
+	desc = "A pump bottle containing mexican coffee-flavoured liqueur syrup. In production since 1936, HONK."
+	list_reagents = list(/datum/reagent/consumable/ethanol/kahlua = 50)
+
+//Coffeepots: for reference, a standard cup is 30u, to allow 20u for sugar/sweetener/milk/creamer
+/obj/item/reagent_containers/food/drinks/bottle/coffeepot
+	icon = 'icons/obj/food/containers.dmi'
+	name = "coffeepot"
+	desc = "A large pot for dispensing that ambrosia of corporate life known to mortals only as coffee. Contains 4 standard cups."
+	volume = 120
+	icon_state = "coffeepot"
+	fill_icon_state = "coffeepot"
+	fill_icon_thresholds = list(0, 1, 30, 60, 100)
+
+/obj/item/reagent_containers/glass/coffee_cup
+	name = "coffee cup"
+	desc = "A heat-formed plastic coffee cup. Can theoretically be used for other hot drinks, if you're feeling adventurous."
+	icon = 'icons/obj/machines/coffeemaker.dmi'
+	icon_state = "coffee_cup_e"
+	base_icon_state = "coffee_cup"
+	possible_transfer_amounts = list(10)
+	volume = 30
+	spillable = TRUE
+
+/obj/item/reagent_containers/glass/coffee_cup/update_icon_state()
+	icon_state = reagents.total_volume ? base_icon_state : "[base_icon_state]_e"
+	return ..()

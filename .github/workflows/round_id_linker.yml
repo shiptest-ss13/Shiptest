@@ -5,8 +5,9 @@ on:
 
 jobs:
   link_rounds:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: shiptest-ss13/round_linker@master
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: shiptest-ss13/round_linker@v2.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          link-url: "https://shiptest.net/stats/rounds/"

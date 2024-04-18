@@ -4,7 +4,7 @@
 /datum/species/shadow
 	// Humans cursed to stay in the darkness, lest their life forces drain. They regain health in shadow and die in light.
 	name = "???"
-	id = "shadow"
+	id = SPECIES_SHADOW
 	sexes = 0
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/shadow
 	species_traits = list(NOBLOOD,NOEYESPRITES)
@@ -14,6 +14,13 @@
 	mutanteyes = /obj/item/organ/eyes/night_vision
 	species_language_holder = /datum/language_holder/shadowpeople
 
+	species_chest = /obj/item/bodypart/chest/shadow
+	species_head = /obj/item/bodypart/head/shadow
+	species_l_arm = /obj/item/bodypart/l_arm/shadow
+	species_r_arm = /obj/item/bodypart/r_arm/shadow
+	species_l_leg = /obj/item/bodypart/leg/left/shadow
+	species_r_leg = /obj/item/bodypart/leg/right/shadow
+
 
 /datum/species/shadow/spec_life(mob/living/carbon/human/H)
 	var/turf/T = H.loc
@@ -21,19 +28,13 @@
 		var/light_amount = T.get_lumcount()
 
 		if(light_amount > SHADOW_SPECIES_LIGHT_THRESHOLD) //if there's enough light, start dying
-			H.take_overall_damage(1,1, 0, BODYPART_ORGANIC)
+			H.take_overall_damage(1,1, 0, BODYTYPE_ORGANIC)
 		else if (light_amount < SHADOW_SPECIES_LIGHT_THRESHOLD) //heal in the dark
-			H.heal_overall_damage(1,1, 0, BODYPART_ORGANIC)
-
-/datum/species/shadow/check_roundstart_eligible()
-	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
-		return TRUE
-	return ..()
+			H.heal_overall_damage(1,1, 0, BODYTYPE_ORGANIC)
 
 /datum/species/shadow/nightmare
 	name = "Nightmare"
 	id = "nightmare"
-	limbs_id = "shadow"
 	burnmod = 1.5
 	no_equip = list(ITEM_SLOT_MASK, ITEM_SLOT_OCLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING, ITEM_SLOT_SUITSTORE)
 	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYESPRITES)
@@ -212,7 +213,7 @@
 		var/obj/item/pda/PDA = O
 		PDA.set_light_on(FALSE)
 		PDA.set_light_range(0) //It won't be turning on again.
-		PDA.update_icon()
+		PDA.update_appearance()
 		visible_message("<span class='danger'>The light in [PDA] shorts out!</span>")
 	else
 		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")

@@ -21,11 +21,12 @@
 /// Macro from Lummox used to get height from a MeasureText proc
 #define WXH_TO_HEIGHT(x)			text2num(copytext(x, findtextEx(x, "x") + 1))
 
+#define MAPTEXT(text) {"<span class='maptext'>[##text]</span>"}//tg's maptext define.
 /**
-  * # Chat Message Overlay
-  *
-  * Datum for generating a message overlay on the map
-  */
+ * # Chat Message Overlay
+ *
+ * Datum for generating a message overlay on the map
+ */
 /datum/chatmessage
 	/// The visual element of the chat messsage
 	var/image/message
@@ -47,15 +48,15 @@
 	var/static/current_z_idx = 0
 
 /**
-  * Constructs a chat message overlay
-  *
-  * Arguments:
-  * * text - The text content of the overlay
-  * * target - The target atom to display the overlay at
-  * * owner - The mob that owns this overlay, only this mob will be able to view it
-  * * extra_classes - Extra classes to apply to the span that holds the text
-  * * lifespan - The lifespan of the message in deciseconds
-  */
+ * Constructs a chat message overlay
+ *
+ * Arguments:
+ * * text - The text content of the overlay
+ * * target - The target atom to display the overlay at
+ * * owner - The mob that owns this overlay, only this mob will be able to view it
+ * * extra_classes - Extra classes to apply to the span that holds the text
+ * * lifespan - The lifespan of the message in deciseconds
+ */
 /datum/chatmessage/New(text, atom/target, mob/owner, list/extra_classes = list(), lifespan = CHAT_MESSAGE_LIFESPAN)
 	. = ..()
 	if (!istype(target))
@@ -64,7 +65,7 @@
 		stack_trace("/datum/chatmessage created with [isnull(owner) ? "null" : "invalid"] mob owner")
 		qdel(src)
 		return
-	INVOKE_ASYNC(src, .proc/generate_image, text, target, owner, extra_classes, lifespan)
+	INVOKE_ASYNC(src, PROC_REF(generate_image), text, target, owner, extra_classes, lifespan)
 
 /datum/chatmessage/Destroy()
 	if (owned_by)
@@ -78,27 +79,27 @@
 	return ..()
 
 /**
-  * Calls qdel on the chatmessage when its parent is deleted, used to register qdel signal
-  */
+ * Calls qdel on the chatmessage when its parent is deleted, used to register qdel signal
+ */
 /datum/chatmessage/proc/on_parent_qdel()
 	SIGNAL_HANDLER
 
 	qdel(src)
 
 /**
-  * Generates a chat message image representation
-  *
-  * Arguments:
-  * * text - The text content of the overlay
-  * * target - The target atom to display the overlay at
-  * * owner - The mob that owns this overlay, only this mob will be able to view it
-  * * extra_classes - Extra classes to apply to the span that holds the text
-  * * lifespan - The lifespan of the message in deciseconds
-  */
+ * Generates a chat message image representation
+ *
+ * Arguments:
+ * * text - The text content of the overlay
+ * * target - The target atom to display the overlay at
+ * * owner - The mob that owns this overlay, only this mob will be able to view it
+ * * extra_classes - Extra classes to apply to the span that holds the text
+ * * lifespan - The lifespan of the message in deciseconds
+ */
 /datum/chatmessage/proc/generate_image(text, atom/target, mob/owner, list/extra_classes, lifespan)
 	// Register client who owns this message
 	owned_by = owner.client
-	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, .proc/on_parent_qdel)
+	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_qdel))
 
 	// Clip message
 	var/maxlen = owned_by.prefs.max_chat_length
@@ -117,7 +118,7 @@
 
 	// Reject whitespace
 	var/static/regex/whitespace = new(@"^\s*$")
-	if (whitespace.Find(text))
+	if (text in whitespace)
 		qdel(src)
 		return
 
@@ -126,18 +127,25 @@
 		extra_classes |= "small"
 
 	// Append radio icon if from a virtual speaker
-	if (extra_classes.Find("virtual-speaker"))
+	if ("virtual-speaker" in extra_classes)
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "radio")
 		text =  "\icon[r_icon]&nbsp;[text]"
-	else if (extra_classes.Find("emote"))
+	else if ("emote" in extra_classes)
 		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "emote")
 		text =  "\icon[r_icon]&nbsp;[text]"
+	else if("looc" in extra_classes)
+		var/image/r_icon = image('icons/UI_Icons/chat/chat_icons.dmi', icon_state = "looc")
+		text =  "\icon[r_icon]&nbsp;[text]"
 
-	// We dim italicized text to make it more distinguishable from regular text
-	var/tgt_color = extra_classes.Find("italics") ? target.chat_color_darkened : target.chat_color
+	var/tgt_color = target.chat_color
+	if("looc" in extra_classes)
+		tgt_color = GLOB.LOOC_COLOR || GLOB.normal_looc_colour
+	else if("italics" in extra_classes)
+		// We dim italicized text to make it more distinguishable from regular text
+		tgt_color = target.chat_color_darkened
 
 	// Approximate text height
-	var/complete_text = "<span class='center maptext [extra_classes.Join(" ")]' style='color: [tgt_color]'>[text]</span>"
+	var/complete_text = "<span class='center maptext [extra_classes.Join(" ")]' style='color: [tgt_color]'>[target.say_emphasis(text)]</span>"
 	var/mheight = WXH_TO_HEIGHT(owned_by.MeasureText(complete_text, null, CHAT_MESSAGE_WIDTH))
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 
@@ -174,7 +182,7 @@
 	message.maptext = complete_text
 
 	// View the message
-	LAZYADDASSOC(owned_by.seen_messages, message_loc, src)
+	LAZYADDASSOCLIST(owned_by.seen_messages, message_loc, src)
 	owned_by.images |= message
 	animate(message, alpha = 255, time = CHAT_MESSAGE_SPAWN_TIME)
 
@@ -183,27 +191,29 @@
 	enter_subsystem()
 
 /**
-  * Applies final animations to overlay CHAT_MESSAGE_EOL_FADE deciseconds prior to message deletion,
-  * sets time for scheduling deletion and re-enters the runechat SS for qdeling
-  *
-  * Arguments:
-  * * fadetime - The amount of time to animate the message's fadeout for
-  */
+ * Applies final animations to overlay CHAT_MESSAGE_EOL_FADE deciseconds prior to message deletion,
+ * sets time for scheduling deletion and re-enters the runechat SS for qdeling
+ *
+ * Arguments:
+ * * fadetime - The amount of time to animate the message's fadeout for
+ */
 /datum/chatmessage/proc/end_of_life(fadetime = CHAT_MESSAGE_EOL_FADE)
 	eol_complete = scheduled_destruction + fadetime
 	animate(message, alpha = 0, time = fadetime, flags = ANIMATION_PARALLEL)
 	enter_subsystem(eol_complete) // re-enter the runechat SS with the EOL completion time to QDEL self
 
 /**
-  * Creates a message overlay at a defined location for a given speaker
-  *
-  * Arguments:
-  * * speaker - The atom who is saying this message
-  * * message_language - The language that the message is said in
-  * * raw_message - The text content of the message
-  * * spans - Additional classes to be added to the message
-  */
+ * Creates a message overlay at a defined location for a given speaker
+ *
+ * Arguments:
+ * * speaker - The atom who is saying this message
+ * * message_language - The language that the message is said in
+ * * raw_message - The text content of the message
+ * * spans - Additional classes to be added to the message
+ */
 /mob/proc/create_chat_message(atom/movable/speaker, datum/language/message_language, raw_message, list/spans, runechat_flags = NONE)
+	if(SSlag_switch.measures[DISABLE_RUNECHAT] && !HAS_TRAIT(speaker, TRAIT_BYPASS_MEASURES))
+		return
 	// Ensure the list we are using, if present, is a copy so we don't modify the list provided to us
 	spans = spans ? spans.Copy() : list()
 
@@ -221,6 +231,8 @@
 	// Display visual above source
 	if(runechat_flags & EMOTE_MESSAGE)
 		new /datum/chatmessage(raw_message, speaker, src, list("emote", "italics"))
+	else if(runechat_flags & LOOC_MESSAGE)
+		new /datum/chatmessage(raw_message, speaker, src, list("looc", "italics"))
 	else
 		new /datum/chatmessage(lang_treat(speaker, message_language, raw_message, spans, null, TRUE), speaker, src, spans)
 
@@ -232,24 +244,24 @@
 #define CM_COLOR_LUM_MAX 0.75
 
 /**
-  * Gets a color for a name, will return the same color for a given string consistently within a round.atom
-  *
-  * Note that this proc aims to produce pastel-ish colors using the HSL colorspace. These seem to be favorable for displaying on the map.
-  *
-  * Arguments:
-  * * name - The name to generate a color for
-  * * sat_shift - A value between 0 and 1 that will be multiplied against the saturation
-  * * lum_shift - A value between 0 and 1 that will be multiplied against the luminescence
-  */
-/datum/chatmessage/proc/colorize_string(name, sat_shift = 1, lum_shift = 1)
+ * Gets a color for a name, will return the same color for a given string consistently within a round.atom
+ *
+ * Note that this proc aims to produce pastel-ish colors using the HSL colorspace. These seem to be favorable for displaying on the map.
+ *
+ * Arguments:
+ * * name - The name to generate a color for
+ * * sat_shift - A value between 0 and 1 that will be multiplied against the saturation
+ * * lum_shift - A value between 0 and 1 that will be multiplied against the luminescence
+ */
+/proc/colorize_string(name, sat_shift = 1, lum_shift = 1, sat_min = CM_COLOR_SAT_MIN, sat_max = CM_COLOR_SAT_MAX, lum_min = CM_COLOR_LUM_MIN, lum_max = CM_COLOR_LUM_MAX)
 	// seed to help randomness
 	var/static/rseed = rand(1,26)
 
 	// get hsl using the selected 6 characters of the md5 hash
 	var/hash = copytext(md5(name + GLOB.round_id), rseed, rseed + 6)
 	var/h = hex2num(copytext(hash, 1, 3)) * (360 / 255)
-	var/s = (hex2num(copytext(hash, 3, 5)) >> 2) * ((CM_COLOR_SAT_MAX - CM_COLOR_SAT_MIN) / 63) + CM_COLOR_SAT_MIN
-	var/l = (hex2num(copytext(hash, 5, 7)) >> 2) * ((CM_COLOR_LUM_MAX - CM_COLOR_LUM_MIN) / 63) + CM_COLOR_LUM_MIN
+	var/s = (hex2num(copytext(hash, 3, 5)) >> 2) * ((sat_max - sat_min) / 63) + sat_min
+	var/l = (hex2num(copytext(hash, 5, 7)) >> 2) * ((lum_max - lum_min) / 63) + lum_min
 
 	// adjust for shifts
 	s *= clamp(sat_shift, 0, 1)

@@ -4,12 +4,11 @@
 /obj/machinery/mineral/ore_redemption
 	name = "ore redemption machine"
 	desc = "A machine that accepts ore and instantly transforms it into workable material sheets. Points for ore are generated based on type and can be redeemed at a mining equipment vendor."
-	icon = 'whitesands/icons/obj/machines/orm.dmi' // WS Edit - Directional ORM Sprites
+	icon = 'icons/obj/machines/orm.dmi' // WS Edit - Directional ORM Sprites
 	icon_state = "ore_redemption"
 	density = TRUE
 	input_dir = NORTH
 	output_dir = SOUTH
-	req_access = list(ACCESS_MINERAL_STOREROOM)
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/circuitboard/machine/ore_redemption
 	needs_item_input = TRUE
@@ -18,9 +17,13 @@
 	var/points = 0
 	var/ore_multiplier = 1
 	var/point_upgrade = 1
+	var/list/ore_values = list(/datum/material/iron = 1, /datum/material/glass = 1,  /datum/material/plasma = 15,  /datum/material/silver = 16, /datum/material/gold = 18, /datum/material/titanium = 30, /datum/material/uranium = 30, /datum/material/diamond = 50, /datum/material/bluespace = 50, /datum/material/bananium = 60)
+	/// Variable that holds a timer which is used for callbacks to `send_console_message()`. Used for preventing multiple calls to this proc while the ORM is eating a stack of ores.
+	var/console_notify_timer
 	var/datum/techweb/stored_research
 	var/obj/item/disk/design_disk/inserted_disk
 	var/datum/component/remote_materials/materials
+	var/direction_to_edit = ORM_BOTH //ORM_INPUT is 1, ORM_OUTPUT is 2, any other value is ORM_BOTH (defaults to 0) (should only ever be either 0, 1, or 2, but won't completely break if something weird happens and it becomes >2 or <0)
 
 /obj/machinery/mineral/ore_redemption/Initialize(mapload)
 	. = ..()
@@ -47,7 +50,13 @@
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Smelting <b>[ore_multiplier]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.</span>"
 	if(panel_open)
-		. += "<span class='notice'>Alt-click to rotate the input and output direction.</span>"
+		if(direction_to_edit == ORM_INPUT)
+			. += "<span class='notice'>Alt-click to rotate the input direction.</span>"
+		else if (direction_to_edit == ORM_OUTPUT)
+			. += "<span class='notice'>Alt-click to rotate the output direction.</span>"
+		else //defaults to both
+			. += "<span class='notice'>Alt-click to rotate the input and output direction.</span>"
+		. += "<span class='notice'>Use a multitool to change the rotation mode.</span>"
 
 /obj/machinery/mineral/ore_redemption/proc/smelt_ore(obj/item/stack/ore/O)
 	if(QDELETED(O))
@@ -143,6 +152,19 @@
 	if(!powered())
 		return ..()
 
+	if(istype(W, /obj/item/multitool))
+		if(panel_open)
+			direction_to_edit++ //toggles through whether alt+click will rotate input AND output, or either input OR output
+			if(direction_to_edit > ORM_OUTPUT)
+				direction_to_edit = ORM_BOTH
+			if(direction_to_edit == ORM_INPUT)
+				to_chat(user, "<span class='notice'>You change [src]'s I/O settings. you will now only change the input direction.</span>")
+			else if(direction_to_edit == ORM_OUTPUT)
+				to_chat(user, "<span class='notice'>You change [src]'s I/O settings, you will now only change the output direction.</span>")
+			else //defaults to both
+				to_chat(user, "<span class='notice'>You change [src]'s I/O settings, you will now change the input and output directions.</span>")
+			return
+
 	if(istype(W, /obj/item/disk/design_disk))
 		if(user.transferItemToLoc(W, src))
 			inserted_disk = W
@@ -161,9 +183,16 @@
 	if(!user.canUseTopic(src, BE_CLOSE))
 		return
 	if(panel_open)
-		input_dir = turn(input_dir, -90)
-		output_dir = turn(output_dir, -90)
-		to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)].</span>")
+		if(direction_to_edit == ORM_INPUT)
+			input_dir = turn(input_dir, -90)
+			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)].</span>")
+		else if(direction_to_edit == ORM_OUTPUT)
+			output_dir = turn(output_dir, -90)
+			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the output to [dir2text(output_dir)].</span>")
+		else //defaults to both
+			input_dir = turn(input_dir, -90)
+			output_dir = turn(output_dir, -90)
+			to_chat(user, "<span class='notice'>You change [src]'s I/O settings, setting the input to [dir2text(input_dir)] and the output to [dir2text(output_dir)].</span>")
 		unregister_input_turf() // someone just rotated the input and output directions, unregister the old turf
 		register_input_turf() // register the new one
 		return TRUE
@@ -176,10 +205,7 @@
 
 /obj/machinery/mineral/ore_redemption/ui_data(mob/user)
 	var/list/data = list()
-	var/datum/bank_account/user_account = user.get_bank_account()
 	data["unclaimedPoints"] = points
-	if (user_account)
-		data["userCash"] = user_account.account_balance
 
 	data["materials"] = list()
 	var/datum/component/material_container/mat_container = materials.mat_container
@@ -189,12 +215,12 @@
 			var/amount = mat_container.materials[M]
 			var/sheet_amount = amount / MINERAL_MATERIAL_AMOUNT
 			var/ref = REF(M)
-			data["materials"] += list(list("name" = M.name, "id" = ref, "amount" = sheet_amount, "value" = mat_container.get_material_cost(M, MINERAL_MATERIAL_AMOUNT)))
+			data["materials"] += list(list("name" = M.name, "id" = ref, "amount" = sheet_amount, "value" = ore_values[M.type]))
 
 		data["alloys"] = list()
 		for(var/v in stored_research.researched_designs)
 			var/datum/design/D = SSresearch.techweb_design_by_id(v)
-			data["alloys"] += list(list("name" = D.name, "id" = D.id, "amount" = can_smelt_alloy(D), "value" = mat_container.get_material_list_cost(D.materials)))
+			data["alloys"] += list(list("name" = D.name, "id" = D.id, "amount" = can_smelt_alloy(D)))
 
 	if (!mat_container)
 		data["disconnected"] = "local mineral storage is unavailable"
@@ -234,7 +260,6 @@
 				to_chat(usr, "<span class='warning'>No points to claim.</span>")
 			return TRUE
 		if("Release")
-			var/obj/item/card/id/I = usr.get_idcard(TRUE)
 			if(!mat_container)
 				return
 			if(materials.on_hold())
@@ -261,7 +286,7 @@
 
 				var/sheets_to_remove = round(min(desired,50,stored_amount))
 
-				var/count = mat_container.retrieve_sheets(sheets_to_remove, mat, get_step(src, output_dir), I?.registered_account)
+				var/count = mat_container.retrieve_sheets(sheets_to_remove, mat, get_step(src, output_dir))
 				var/list/mats = list()
 				mats[mat] = MINERAL_MATERIAL_AMOUNT
 				materials.silo_log(src, "released", -count, "sheets", mats)
@@ -296,20 +321,15 @@
 			var/datum/design/alloy = stored_research.isDesignResearchedID(alloy_id)
 			var/mob/M = usr
 			var/obj/item/card/id/I = M.get_idcard(TRUE)
-			var/datum/bank_account/user_account = I?.registered_account
 			if((check_access(I) || allowed(usr)) && alloy)
 				var/smelt_amount = can_smelt_alloy(alloy)
-				if(mat_container.linked_account && !(obj_flags & EMAGGED))
-					var/cost = mat_container.get_material_list_cost(alloy.materials)
-					if(cost)
-						smelt_amount = min(smelt_amount, FLOOR(user_account?.account_balance / cost, 1))
 				var/desired = 0
 				if (params["sheets"])
 					desired = text2num(params["sheets"])
 				else
 					desired = input("How many sheets?", "How many sheets would you like to smelt?", 1) as null|num
 				var/amount = round(min(desired,50,smelt_amount))
-				mat_container.use_materials(alloy.materials, amount, user_account, !(obj_flags & EMAGGED))
+				mat_container.use_materials(alloy.materials, amount)
 				materials.silo_log(src, "released", -amount, "sheets", alloy.materials)
 				var/output
 				if(ispath(alloy.build_path, /obj/item/stack/sheet))
@@ -326,11 +346,10 @@
 	..()
 
 /obj/machinery/mineral/ore_redemption/update_icon_state()
-	// WS Start - Directional ORM Sprites
 	if (panel_open)
 		icon_state = "[initial(icon_state)]-open"
-	// WS End - Directional ORM Sprites
 	if(powered())
 		icon_state = initial(icon_state)
 	else
 		icon_state = "[initial(icon_state)]-off"
+	return ..()

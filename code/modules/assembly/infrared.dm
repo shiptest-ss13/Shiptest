@@ -22,7 +22,7 @@
 /obj/item/assembly/infra/ComponentInitialize()
 	. = ..()
 	var/static/rotation_flags = ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_FLIP | ROTATION_VERBS
-	AddComponent(/datum/component/simple_rotation, rotation_flags, after_rotation=CALLBACK(src,.proc/after_rotation))
+	AddComponent(/datum/component/simple_rotation, rotation_flags, after_rotation=CALLBACK(src, PROC_REF(after_rotation)))
 
 /obj/item/assembly/infra/proc/after_rotation()
 	refreshBeam()
@@ -42,7 +42,7 @@
 		return FALSE //Cooldown check
 	on = !on
 	refreshBeam()
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/item/assembly/infra/toggle_secure()
@@ -53,22 +53,23 @@
 	else
 		QDEL_LIST(beams)
 		STOP_PROCESSING(SSobj, src)
-	update_icon()
+	update_appearance()
 	return secured
 
-/obj/item/assembly/infra/update_icon()
-	cut_overlays()
-	attached_overlays = list()
-	if(on)
-		add_overlay("infrared_on")
-		attached_overlays += "infrared_on"
-		if(visible && secured)
-			add_overlay("infrared_visible")
-			attached_overlays += "infrared_visible"
+/obj/item/assembly/infra/update_appearance(updates=ALL)
+	. = ..()
+	holder?.update_appearance(updates)
 
-	if(holder)
-		holder.update_icon()
-	return
+/obj/item/assembly/infra/update_overlays()
+	. = ..()
+	attached_overlays = list()
+	if(!on)
+		return
+	. += "infrared_on"
+	attached_overlays += "infrared_on"
+	if(visible && secured)
+		. += "infrared_visible"
+		attached_overlays += "infrared_visible"
 
 /obj/item/assembly/infra/dropped()
 	. = ..()
@@ -161,11 +162,11 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_ATOM_EXITED)
-	RegisterSignal(newloc, COMSIG_ATOM_EXITED, .proc/check_exit)
+	RegisterSignal(newloc, COMSIG_ATOM_EXITED, PROC_REF(check_exit))
 	listeningTo = newloc
 
 /obj/item/assembly/infra/proc/check_exit(datum/source, atom/movable/offender)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
 
 	if(QDELETED(src))
 		return
@@ -175,7 +176,7 @@
 		var/obj/item/I = offender
 		if (I.item_flags & ABSTRACT)
 			return
-	return refreshBeam()
+	INVOKE_ASYNC(src, PROC_REF(refreshBeam))
 
 /obj/item/assembly/infra/setDir()
 	. = ..()
@@ -211,7 +212,7 @@
 			visible = !visible
 			. = TRUE
 
-	update_icon()
+	update_appearance()
 	refreshBeam()
 
 /***************************IBeam*********************************/
@@ -226,12 +227,19 @@
 	pass_flags_self = LETPASSTHROW
 	var/obj/item/assembly/infra/master
 
-/obj/effect/beam/i_beam/Crossed(atom/movable/AM as mob|obj)
+/obj/effect/beam/i_beam/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/effect/beam/i_beam/proc/on_entered(datum/source, atom/movable/AM as mob|obj)
+	SIGNAL_HANDLER
 	if(istype(AM, /obj/effect/beam))
 		return
 	if (isitem(AM))
 		var/obj/item/I = AM
 		if (I.item_flags & ABSTRACT)
 			return
-	master.trigger_beam(AM, get_turf(src))
+	INVOKE_ASYNC(master, TYPE_PROC_REF(/obj/item/assembly/infra, trigger_beam), AM, get_turf(src))

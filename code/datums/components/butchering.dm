@@ -1,9 +1,15 @@
 /datum/component/butchering
-	var/speed = 80 //time in deciseconds taken to butcher something
-	var/effectiveness = 100 //percentage effectiveness; numbers above 100 yield extra drops
-	var/bonus_modifier = 0 //percentage increase to bonus item chance
-	var/butcher_sound = 'sound/weapons/slice.ogg' //sound played when butchering
+	/// Time in deciseconds taken to butcher something
+	var/speed = 8 SECONDS
+	/// Percentage effectiveness; numbers above 100 yield extra drops
+	var/effectiveness = 100
+	/// Percentage increase to bonus item chance
+	var/bonus_modifier = 0
+	/// Sound played when butchering
+	var/butcher_sound = 'sound/weapons/slice.ogg'
+	/// Whether or not this component can be used to butcher currently. Used to temporarily disable butchering
 	var/butchering_enabled = TRUE
+	/// Whether or not this component is compatible with blunt tools.
 	var/can_be_blunt = FALSE
 
 /datum/component/butchering/Initialize(_speed, _effectiveness, _bonus_modifier, _butcher_sound, disabled, _can_be_blunt)
@@ -20,7 +26,7 @@
 	if(_can_be_blunt)
 		can_be_blunt = _can_be_blunt
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/onItemAttack)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(onItemAttack))
 
 /datum/component/butchering/proc/onItemAttack(obj/item/source, mob/living/M, mob/living/user)
 	SIGNAL_HANDLER
@@ -29,7 +35,7 @@
 		return
 	if(M.stat == DEAD && (M.butcher_results || M.guaranteed_butcher_results)) //can we butcher it?
 		if(butchering_enabled && (can_be_blunt || source.get_sharpness()))
-			INVOKE_ASYNC(src, .proc/startButcher, source, M, user)
+			INVOKE_ASYNC(src, PROC_REF(startButcher), source, M, user)
 			return COMPONENT_ITEM_NO_ATTACK
 
 	if(ishuman(M) && source.force && source.get_sharpness())
@@ -39,7 +45,7 @@
 				user.show_message("<span class='warning'>[H]'s neck has already been already cut, you can't make the bleeding any worse!</span>", MSG_VISUAL, \
 								"<span class='warning'>Their neck has already been already cut, you can't make the bleeding any worse!</span>")
 				return COMPONENT_ITEM_NO_ATTACK
-			INVOKE_ASYNC(src, .proc/startNeckSlice, source, H, user)
+			INVOKE_ASYNC(src, PROC_REF(startNeckSlice), source, H, user)
 			return COMPONENT_ITEM_NO_ATTACK
 
 /datum/component/butchering/proc/startButcher(obj/item/source, mob/living/M, mob/living/user)
@@ -114,15 +120,20 @@
 	. = ..()
 	if(. == COMPONENT_INCOMPATIBLE)
 		return
-	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/onCrossed)
 
-/datum/component/butchering/recycler/proc/onCrossed(datum/source, mob/living/L)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddComponent(/datum/component/connect_loc_behalf, parent, loc_connections)
+
+/datum/component/butchering/recycler/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
 
-	if(!istype(L))
+	if(!isliving(arrived))
 		return
+	var/mob/living/victim = arrived
 	var/obj/machinery/recycler/eater = parent
 	if(eater.safety_mode || (eater.machine_stat & (BROKEN|NOPOWER))) //I'm so sorry.
 		return
-	if(L.stat == DEAD && (L.butcher_results || L.guaranteed_butcher_results))
-		Butcher(parent, L)
+	if(victim.stat == DEAD && (victim.butcher_results || victim.guaranteed_butcher_results))
+		Butcher(parent, victim)

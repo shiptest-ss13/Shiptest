@@ -1,93 +1,50 @@
 /datum/job
-	//The name of the job , used for preferences, bans and more. Make sure you know what you're doing before changing this.
-	var/title = "NOPE"
+	///The name of the job , used for preferences, bans and more. Make sure you know what you're doing before changing this.
+	var/name = "NOPE"
+
+	///Basically determines whether or not more of the job can be opened.
+	var/officer = FALSE
+
+	///The outfit this job will recieve upon joining.
+	var/datum/outfit/job/outfit = null
 
 	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
 	var/list/minimal_access = list()		//Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
 	var/list/access = list()				//Useful for servers which either have fewer players, so each person needs to fill more than one role, or servers which like to give more access, so players can't hide forever in their super secure departments (I'm looking at you, chemistry!)
 
-	//Determines who can demote this position
-	var/department_head = list()
-
-	//Tells the given channels that the given mob is the new department head. See communications.dm for valid channels.
-	var/list/head_announce = null
-
 	//Bitflags for the job
 	var/auto_deadmin_role_flags = NONE
-
-	//Players will be allowed to spawn in as jobs that are set to "Station"
-	var/faction = "None"
-
-	//How many players can be this job
-	var/total_positions = 0
-
-	//How many players can spawn in as this job
-	var/spawn_positions = 0
-
-	//How many players have this job
-	var/current_positions = 0
-
-	//Supervisors, who this person answers to directly
-	var/supervisors = ""
-
-	//Sellection screen color
-	var/selection_color = "#ffffff"
-
-
-	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
-	var/req_admin_notify
 
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
 	var/minimal_player_age = 0
 
-	var/outfit = null
-
-	var/exp_requirements = 0
-
-	var/exp_type = ""
-	var/exp_type_department = ""
-
-	//A special, very large and noticeable message for certain roles reminding them of something important. Ex: "Blueshields are not security"
-	var/special_notice = ""
-
-	// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
+	/// A link to the relevant wiki related to the job. Ex: "Space_law" would link to wiki.blah/Space_law
 	var/wiki_page = ""
-
-	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
-	//can be overridden by antag_rep.txt config
-	var/antag_rep = 10
-
-	var/paycheck = PAYCHECK_MINIMAL
-	var/paycheck_department = ACCOUNT_CIV
 
 	var/list/mind_traits // Traits added to the mind of the mob assigned this job
 
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
-
 	///Levels unlocked at roundstart in physiology
 	var/list/roundstart_experience
-	/// Should this job be allowed to be picked for the bureaucratic error event?
-	var/allow_bureaucratic_error = TRUE
 
-/datum/job/New()
-	. = ..()
-	var/list/jobs_changes = GetMapChanges()
-	if(!jobs_changes)
+/datum/job/New(new_name, datum/outfit/new_outfit)
+	if(new_name)
+		name = new_name
+		outfit = new_outfit
+		register()
+
+/datum/job/proc/register()
+	GLOB.occupations += src
+	if(name in GLOB.name_occupations)
 		return
-	if(isnum(jobs_changes["additional_access"]))
-		access += jobs_changes["additional_access"]
-	if(isnum(jobs_changes["additional_minimal_access"]))
-		minimal_access += jobs_changes["additional_minimal_access"]
-	if(isnum(jobs_changes["spawn_positions"]))
-		spawn_positions = jobs_changes["spawn_positions"]
-	if(isnum(jobs_changes["total_positions"]))
-		total_positions = jobs_changes["total_positions"]
+
+	GLOB.name_occupations[name] = src
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 //do actions on H but send messages to M as the key may not have been transferred_yet
-/datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
+/datum/job/proc/after_spawn(mob/living/H, mob/M)
 	//do actions on H but send messages to M as the key may not have been transferred_yet
 	if(mind_traits)
 		for(var/t in mind_traits)
@@ -97,77 +54,19 @@
 		for(var/i in roundstart_experience)
 			experiencer.mind.adjust_experience(i, roundstart_experience[i], TRUE)
 
-
-	if(!ishuman(H))
+	if(!iscarbon(H))
 		return
-	var/mob/living/carbon/human/human = H
-	var/list/gear_leftovers
-	if(M.client && (M.client.prefs.equipped_gear && M.client.prefs.equipped_gear.len))
+	var/mob/living/carbon/spawnee = H
+	if(M.client && (M.client.prefs.equipped_gear && length(M.client.prefs.equipped_gear)))
+		var/obj/item/storage/box/loadout_dumper = new()
 		for(var/gear in M.client.prefs.equipped_gear)
-			var/datum/gear/G = GLOB.gear_datums[gear]
-			if(G)
-				var/permitted = FALSE
-
-				if(G.allowed_roles && H.mind && (H.mind.assigned_role in G.allowed_roles))
-					permitted = TRUE
-				else if(!G.allowed_roles)
-					permitted = TRUE
-				else
-					permitted = FALSE
-
-				if(G.species_blacklist && (human.dna.species.id in G.species_blacklist))
-					permitted = FALSE
-
-				if(G.species_whitelist && !(human.dna.species.id in G.species_whitelist))
-					permitted = FALSE
-
-				if(!permitted)
-					to_chat(M, "<span class='warning'>Your current species or role does not permit you to spawn with [gear]!</span>")
-					continue
-				//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
-				if(G.slot == ITEM_SLOT_ICLOTHING)
-					continue // Handled in pre_equip
-				//EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
-				if(G.slot)
-					if(!H.equip_to_slot_or_del(G.spawn_item(H, owner = H), G.slot))
-						LAZYADD(gear_leftovers, G)
-				else
-					LAZYADD(gear_leftovers, G)
-			else
-				M.client.prefs.equipped_gear -= gear
-
-	if(gear_leftovers?.len)
-		for(var/datum/gear/G in gear_leftovers)
-			var/metadata = M.client.prefs.equipped_gear[G.display_name]
-			var/item = G.spawn_item(null, metadata, owner = H)
-			var/atom/placed_in = human.equip_or_collect(item)
-
-			if(istype(placed_in))
-				if(isturf(placed_in))
-					to_chat(M, "<span class='notice'>Placing [G.display_name] on [placed_in]!</span>")
-				else
-					to_chat(M, "<span class='noticed'>Placing [G.display_name] in [placed_in.name]]")
-				continue
-
-			if(H.equip_to_appropriate_slot(item))
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in your inventory!</span>")
-				continue
-			if(H.put_in_hands(item))
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in your hands!</span>")
-				continue
-
-			var/obj/item/storage/B = (locate() in H)
-			if(B)
-				G.spawn_item(B, metadata, owner = H)
-				to_chat(M, "<span class='notice'>Placing [G.display_name] in [B.name]!</span>")
-				continue
-
-			to_chat(M, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no hands free and no backpack or this is a bug.</span>")
-			qdel(item)
-
-/datum/job/proc/announce(mob/living/carbon/human/H)
-	if(head_announce)
-		announce_head(H, head_announce)
+			var/datum/gear/new_gear = GLOB.gear_datums[gear]
+			new_gear.spawn_item(loadout_dumper, spawnee)
+		var/datum/component/storage/back_storage = spawnee.back.GetComponent(/datum/component/storage)
+		if(back_storage)
+			back_storage.handle_item_insertion(loadout_dumper, TRUE)
+		else if(!spawnee.put_in_hands(loadout_dumper, TRUE))
+			to_chat(spawnee, "Unable to place loadout box.")
 
 /datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
 	return FALSE
@@ -176,40 +75,64 @@
 /datum/job/proc/special_check_latejoin(client/C)
 	return TRUE
 
-/datum/job/proc/GetAntagRep()
-	. = CONFIG_GET(keyed_list/antag_rep)[lowertext(title)]
-	if(. == null)
-		return antag_rep
+//Gives the player the stuff he should have with his rank
+/datum/job/proc/EquipRank(mob/living/living_mob, datum/overmap/ship/controlled/ship)
+	living_mob.job = name
+
+	SEND_SIGNAL(living_mob, COMSIG_JOB_RECEIVED, living_mob.job)
+
+	if(living_mob.mind)
+		living_mob.mind.assigned_role = name
+
+	to_chat(living_mob, "<b>You are the [name].</b>")
+
+	var/new_mob = equip(living_mob, null, null, null, living_mob.client)//silicons override this proc to return a mob
+	if(ismob(new_mob))
+		living_mob = new_mob
+
+	if(living_mob.client.holder)
+		if(CONFIG_GET(flag/auto_deadmin_players) || (living_mob.client.prefs?.toggles & DEADMIN_ALWAYS))
+			living_mob.client.holder.auto_deadmin()
+
+	radio_help_message(living_mob)
+	//WS Begin - Wikilinks
+	if(wiki_page)
+		to_chat(living_mob, "<span class='notice'><a href=[CONFIG_GET(string/wikiurl)]/[wiki_page]>Wiki Page</a></span>")
+	//WS End
+
+	var/related_policy = get_policy(name)
+	if(related_policy)
+		to_chat(living_mob,related_policy)
+	if(ishuman(living_mob))
+		var/mob/living/carbon/human/wageslave = living_mob
+		living_mob.add_memory("Your account ID is [wageslave.account_id].")
+	if(living_mob)
+		after_spawn(living_mob, living_mob) // note: this happens before the mob has a key! living_mob will always have a client, H might not.
+
+	if (ship)
+		var/obj/item/card/id/idcard = living_mob.get_idcard(TRUE)
+		if (idcard)
+			idcard.add_ship_access(ship)
+
+	return living_mob
+
 
 //Don't override this unless the job transforms into a non-human (Silicons do this for example)
-/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
+/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, datum/outfit/outfit_override = null, client/preference_source)
 	if(!H)
 		return FALSE
-	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
-		if(H.dna.species.id != "human")
-			H.set_species(/datum/species/human)
-			H.apply_pref_name("human", preference_source)
 	if(!visualsOnly)
 		var/datum/bank_account/bank_account = new(H.real_name, src)
-		bank_account.payday(STARTING_PAYCHECKS, TRUE)
+		bank_account.adjust_money(officer ? 250 : 100, "starting_money") //just a little bit of money for you
 		H.account_id = bank_account.account_id
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
 
-	// WS Edit - Alt-Job Titles
-	if(outfit && preference_source?.prefs?.alt_titles_preferences[title] && !outfit_override)
-		var/outfitholder = "[outfit]/[ckey(preference_source.prefs.alt_titles_preferences[title])]"
-		if(text2path(outfitholder) || !outfitholder)
-			outfit_override = text2path(outfitholder)
 	if(outfit_override || outfit)
 		H.equipOutfit(outfit_override ? outfit_override : outfit, visualsOnly, preference_source)
-	// WS Edit - Alt-Job Titles
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
-
-	if(!visualsOnly && announce)
-		announce(H)
 
 /datum/job/proc/get_access()
 	if(!config)	//Needed for robots.
@@ -224,11 +147,6 @@
 
 	if(CONFIG_GET(flag/everyone_has_maint_access)) //Config has global maint access set
 		. |= list(ACCESS_MAINT_TUNNELS)
-
-/datum/job/proc/announce_head(mob/living/carbon/human/H, channels) //tells the given channel that the given mob is the new department head. See communications.dm for valid channels.
-	if(H && GLOB.announcement_systems.len)
-		//timer because these should come after the captain announcement
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/addtimer, CALLBACK(pick(GLOB.announcement_systems), /obj/machinery/announcement_system/proc/announce, "NEWHEAD", H.real_name, H.job, channels), 1))
 
 //If the configuration option is set to require players to be logged as old enough to play certain jobs, then this proc checks that they are, otherwise it just returns 1
 /datum/job/proc/player_old_enough(client/C)
@@ -252,32 +170,8 @@
 
 	return max(0, minimal_player_age - C.player_age)
 
-/datum/job/proc/config_check()
-	return TRUE
-
-/datum/job/proc/map_check()
-	var/list/job_changes = GetMapChanges()
-	if(!job_changes)
-		return FALSE
-	return TRUE
-
-/**
-  * Gets the changes dictionary made to the job template by the map config. Returns null if job is removed.
-  */
-/datum/job/proc/GetMapChanges()
-	var/string_type = "[type]"
-	var/list/splits = splittext(string_type, "/")
-	var/endpart = splits[splits.len]
-
-
-	var/list/job_changes
-	if(!(endpart in job_changes))
-		return list()
-
-	return job_changes[endpart]
-
 /datum/job/proc/radio_help_message(mob/M)
-	to_chat(M, "<b>Prefix your message with :h to speak on your department's radio. To see other prefixes, look closely at your headset.</b>")
+	to_chat(M, "<b>Your ship most likely does not have telecomms. Prefix your message with :L or :R, depending on the hand you're holding the radio with, to speak with a handheld radio. Otherwise, you can speak with your headset by prefixing your message with :h.</b>")
 
 /datum/outfit/job
 	name = "Standard Gear"
@@ -294,6 +188,13 @@
 	var/satchel  = /obj/item/storage/backpack/satchel
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
 	var/courierbag = /obj/item/storage/backpack/messenger
+
+	///The icon this outfit's ID will have when shown on a sechud and ID cards. See [icons\mob\hud.dmi] for a list of icons. Leave null for default.
+	var/job_icon
+	// the background of the job icon
+	var/faction_icon
+	// if there is an id, this will get automatically applied to an id's assignment variable
+	var/id_assignment
 
 	var/alt_uniform
 
@@ -332,21 +233,6 @@
 				holder = "[alt_uniform]"
 		if(PREF_GREYSUIT)
 			holder = "/obj/item/clothing/under/color/grey"
-		//WS Edit - Fix Loadout Uniforms not spawning ID/PDA
-		if(PREF_LOADOUT)
-			if (preference_source == null)
-				holder = "[uniform]" // Who are we getting the loadout pref from anyways?
-			else
-				var/datum/pref_loadout_uniform = null
-				for(var/gear in preference_source.prefs.equipped_gear)
-					var/datum/gear/G = GLOB.gear_datums[gear]
-					if (G.slot == ITEM_SLOT_ICLOTHING)
-						pref_loadout_uniform = G.path
-				if (pref_loadout_uniform == null)
-					holder = "[uniform]"
-				else
-					uniform = pref_loadout_uniform
-		// EndWS Edit - Fix Loadout Uniforms not spawning ID/PDA
 		else
 			holder = "[uniform]"
 
@@ -378,23 +264,26 @@
 	if(visualsOnly)
 		return
 
-	var/datum/job/J = SSjob.GetJobType(jobtype)
+	var/datum/job/J = GLOB.type_occupations[jobtype]
 	if(!J)
-		J = SSjob.GetJob(H.job)
+		J = GLOB.name_occupations[H.job]
 
 	var/obj/item/card/id/C = H.wear_id
 	if(istype(C))
 		C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		//WS begin - Alt job titles
-		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
-			C.assignment = preference_source.prefs.alt_titles_preferences[J.title]
+		if(H.job)
+			C.assignment = H.job
 		else
-			C.assignment = J.title
-		//WS end
+			C.assignment = J.name
 		if(H.age)
 			C.registered_age = H.age
+		C.job_icon = job_icon
+		C.faction_icon = faction_icon
+		C.update_appearance()
+		if(id_assignment)
+			C.assignment = id_assignment
 		C.update_label()
 		for(var/A in SSeconomy.bank_accounts)
 			var/datum/bank_account/B = A
@@ -407,12 +296,10 @@
 	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
 	if(istype(PDA))
 		PDA.owner = H.real_name
-		//WS begin - Alt job titles
-		if(preference_source && preference_source.prefs && preference_source.prefs.alt_titles_preferences[J.title])
-			PDA.ownjob = preference_source.prefs.alt_titles_preferences[J.title]
+		if(H.job)
+			PDA.ownjob = H.job
 		else
-			PDA.ownjob = J.title
-		//WS end
+			PDA.ownjob = J.name
 		PDA.update_label()
 
 /datum/outfit/job/get_chameleon_disguise_info()

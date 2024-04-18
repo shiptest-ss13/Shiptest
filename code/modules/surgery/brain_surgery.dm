@@ -14,9 +14,15 @@
 
 /datum/surgery_step/fix_brain
 	name = "fix brain"
-	implements = list(TOOL_HEMOSTAT = 85, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15) //don't worry, pouring some alcohol on their open brain will get that chance to 100
+	implements = list(
+		TOOL_HEMOSTAT = 85,
+		TOOL_SCREWDRIVER = 40,
+		/obj/item/pen = 5) //don't worry, pouring some alcohol on their open brain will get that chance to 100 //will it? i don't know.
 	repeatable = TRUE
-	time = 100 //long and complicated
+	time = 10 SECONDS //long and complicated
+	preop_sound = 'sound/surgery/hemostat1.ogg'
+	success_sound = 'sound/surgery/hemostat1.ogg'
+	failure_sound = 'sound/surgery/organ2.ogg'
 	experience_given = 0 // per_trauma
 
 /datum/surgery/brain_surgery/can_start(mob/user, mob/living/carbon/target)

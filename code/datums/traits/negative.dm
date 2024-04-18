@@ -65,7 +65,7 @@
 	name = "Deaf"
 	desc = "You are incurably deaf."
 	value = -2
-	mob_trait = TRAIT_DEAF
+	mob_traits = list(TRAIT_DEAF)
 	gain_text = "<span class='danger'>You can't hear anything.</span>"
 	lose_text = "<span class='notice'>You're able to hear again!</span>"
 	medical_record_text = "Patient's cochlear nerve is incurably damaged."
@@ -73,7 +73,7 @@
 /datum/quirk/depression
 	name = "Depression"
 	desc = "You sometimes just hate life."
-	mob_trait = TRAIT_DEPRESSION
+	mob_traits = list(TRAIT_DEPRESSION)
 	value = -1
 	gain_text = "<span class='danger'>You start feeling depressed.</span>"
 	lose_text = "<span class='notice'>You no longer feel depressed.</span>" //if only it were that easy!
@@ -123,20 +123,20 @@
 			//Security/Command
 			if("Captain")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/flask/gold
-			if("Head of Security")
-				heirloom_type = /obj/item/book/manual/wiki/security_space_law
+//			if("Head of Security")
+//				heirloom_type = /obj/item/book/manual/wiki/security_space_law
 			if("Head of Personnel")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/trophy/silver_cup
-			if("Warden")
-				heirloom_type = /obj/item/book/manual/wiki/security_space_law
+//			if("Warden")
+//				heirloom_type = /obj/item/book/manual/wiki/security_space_law
 			if("Security Officer")
-				heirloom_type = pick(/obj/item/book/manual/wiki/security_space_law, /obj/item/clothing/head/beret/sec)
+				heirloom_type = pick(/obj/item/clothing/head/beret/sec)
 			if("Detective")
 				heirloom_type = /obj/item/reagent_containers/food/drinks/bottle/whiskey
 			if("Lawyer")
-				heirloom_type = pick(/obj/item/gavelhammer, /obj/item/book/manual/wiki/security_space_law)
+				heirloom_type = pick(/obj/item/gavelhammer)
 			if("Brig Physician") //WS edit - Brig Physicians
-				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller, /obj/item/book/manual/wiki/security_space_law) //WS edit - Brig Physicians
+				heirloom_type = pick(/obj/item/clothing/neck/stethoscope, /obj/item/roller) //WS edit - Brig Physicians
 			if("Prisoner")
 				heirloom_type = /obj/item/pen/blue
 			//RnD
@@ -214,7 +214,7 @@
 	name = "Frail"
 	desc = "Your bones might as well be made of glass! Your limbs can take less damage before they become disabled."
 	value = -2
-	mob_trait = TRAIT_EASYLIMBDISABLE
+	mob_traits = list(TRAIT_EASYLIMBDISABLE)
 	gain_text = "<span class='danger'>You feel frail.</span>"
 	lose_text = "<span class='notice'>You feel sturdy again.</span>"
 	medical_record_text = "Patient has unusually frail bones, recommend calcium-rich diet."
@@ -223,7 +223,7 @@
 	name = "Heavy Sleeper"
 	desc = "You sleep like a rock! Whenever you're put to sleep or knocked unconscious, you take a little bit longer to wake up."
 	value = -1
-	mob_trait = TRAIT_HEAVY_SLEEPER
+	mob_traits = list(TRAIT_HEAVY_SLEEPER)
 	gain_text = "<span class='danger'>You feel sleepy.</span>"
 	lose_text = "<span class='notice'>You feel awake again.</span>"
 	medical_record_text = "Patient has abnormal sleep study results and is difficult to wake up."
@@ -232,6 +232,7 @@
 	name = "Hypersensitive"
 	desc = "For better or worse, everything seems to affect your mood more than it should."
 	value = -1
+	mood_quirk = TRUE
 	gain_text = "<span class='danger'>You seem to make a big deal out of everything.</span>"
 	lose_text = "<span class='notice'>You don't seem to make a big deal out of everything anymore.</span>"
 	medical_record_text = "Patient demonstrates a high level of emotional volatility."
@@ -251,7 +252,7 @@
 	name = "Light Drinker"
 	desc = "You just can't handle your drinks and get drunk very quickly."
 	value = -1
-	mob_trait = TRAIT_LIGHT_DRINKER
+	mob_traits = list(TRAIT_LIGHT_DRINKER)
 	gain_text = "<span class='notice'>Just the thought of drinking alcohol makes your head spin.</span>"
 	lose_text = "<span class='danger'>You're no longer severely affected by alcohol.</span>"
 	medical_record_text = "Patient demonstrates a low tolerance for alcohol. (Wimp)"
@@ -263,16 +264,64 @@
 	gain_text = "<span class='danger'>Things far away from you start looking blurry.</span>"
 	lose_text = "<span class='notice'>You start seeing faraway things normally again.</span>"
 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
+	var/obj/item/glasses
+	var/where
 
 /datum/quirk/nearsighted/add()
 	quirk_holder.become_nearsighted(ROUNDSTART_TRAIT)
 
 /datum/quirk/nearsighted/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/glasses/regular/glasses = new(get_turf(H))
-	H.put_in_hands(glasses)
-	H.equip_to_slot(glasses, ITEM_SLOT_EYES)
-	H.regenerate_icons() //this is to remove the inhand icon, which persists even if it's not in their hands
+	var/obj/item/glasses_type
+
+	switch(quirk_holder.mind.assigned_role)
+		//Security
+		if("Head of Security")
+			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
+		if("Warden")
+			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
+		if("Security Officer")
+			glasses_type = /obj/item/clothing/glasses/hud/security/prescription
+		//Science
+		if("Research Director")
+			glasses_type = /obj/item/clothing/glasses/science/prescription
+		if("Scientist")
+			glasses_type = /obj/item/clothing/glasses/science/prescription
+		if("Chemist")
+			glasses_type = /obj/item/clothing/glasses/science/prescription
+		//Health
+		if("Chief Medical Officer")
+			glasses_type = /obj/item/clothing/glasses/hud/health/prescription
+		if("Medical Doctor")
+			glasses_type = /obj/item/clothing/glasses/hud/health/prescription
+		//Meson
+		if("Chief Engineer")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+		if("Station Engineer")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+		if("Atmospheric Technician")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+		if("Shaft Miner")
+			glasses_type = /obj/item/clothing/glasses/meson/prescription
+
+	if(!glasses_type)
+		glasses_type = /obj/item/clothing/glasses/regular
+	glasses = new glasses_type(get_turf(quirk_holder))
+	var/list/slots = list(
+		"on your face, silly!" = ITEM_SLOT_EYES,
+		"in your left pocket." = ITEM_SLOT_LPOCKET,
+		"in your right pocket." = ITEM_SLOT_RPOCKET,
+		"in your backpack." = ITEM_SLOT_BACKPACK,
+		"in your hands." = ITEM_SLOT_HANDS
+	)
+	where = H.equip_in_one_of_slots(glasses, slots, FALSE) || "at your feet, don't drop them next time!"
+
+/datum/quirk/nearsighted/post_add()
+	if(where == "in your backpack.")
+		var/mob/living/carbon/human/H = quirk_holder
+		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
+
+	to_chat(quirk_holder, "<span class='notice'>There is a set of profession-assigned prescription glasses [where] These are valuable equipment for someone nearsighted like you. Keep them safe and clean! It's unlikely there are any spares.</span>")
 
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"
@@ -285,6 +334,8 @@
 	if(H.dna.species.id in list("shadow", "nightmare"))
 		return //we're tied with the dark, so we don't get scared of it; don't cleanse outright to avoid cheese
 	var/turf/T = get_turf(quirk_holder)
+	if(!T)
+		return //why is this happening?
 	var/lums = T.get_lumcount()
 	if(lums <= 0.2)
 		if(quirk_holder.m_intent == MOVE_INTENT_RUN)
@@ -298,7 +349,7 @@
 	name = "Pacifist"
 	desc = "The thought of violence makes you sick. So much so, in fact, that you can't hurt anyone."
 	value = -2
-	mob_trait = TRAIT_PACIFISM
+	mob_traits = list(TRAIT_PACIFISM)
 	gain_text = "<span class='danger'>You feel repulsed by the thought of violence!</span>"
 	lose_text = "<span class='notice'>You think you can defend yourself again.</span>"
 	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
@@ -341,54 +392,21 @@
 	name = "Poor Aim"
 	desc = "You're terrible with guns and can't line up a straight shot to save your life. Dual-wielding is right out."
 	value = -1
-	mob_trait = TRAIT_POOR_AIM
+	mob_traits = list(TRAIT_POOR_AIM)
 	medical_record_text = "Patient possesses a strong tremor in both hands."
 
 /datum/quirk/prosopagnosia
 	name = "Prosopagnosia"
 	desc = "You have a mental disorder that prevents you from being able to recognize faces at all."
 	value = -1
-	mob_trait = TRAIT_PROSOPAGNOSIA
+	mob_traits = list(TRAIT_PROSOPAGNOSIA)
 	medical_record_text = "Patient suffers from prosopagnosia and cannot recognize faces."
-
-/datum/quirk/prosthetic_limb
-	name = "Prosthetic Limb"
-	desc = "An accident caused you to lose one of your limbs. Because of this, you now have a random prosthetic!"
-	value = -1
-	var/slot_string = "limb"
-	medical_record_text = "During physical examination, patient was found to have a prosthetic limb."
-
-/datum/quirk/prosthetic_limb/on_spawn()
-	var/limb_slot = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/bodypart/old_part = H.get_bodypart(limb_slot)
-	var/obj/item/bodypart/prosthetic
-	switch(limb_slot)
-		if(BODY_ZONE_L_ARM)
-			prosthetic = new/obj/item/bodypart/l_arm/robot/surplus(quirk_holder)
-			slot_string = "left arm"
-		if(BODY_ZONE_R_ARM)
-			prosthetic = new/obj/item/bodypart/r_arm/robot/surplus(quirk_holder)
-			slot_string = "right arm"
-		if(BODY_ZONE_L_LEG)
-			prosthetic = new/obj/item/bodypart/l_leg/robot/surplus(quirk_holder)
-			slot_string = "left leg"
-		if(BODY_ZONE_R_LEG)
-			prosthetic = new/obj/item/bodypart/r_leg/robot/surplus(quirk_holder)
-			slot_string = "right leg"
-	prosthetic.replace_limb(H)
-	qdel(old_part)
-	H.regenerate_icons()
-
-/datum/quirk/prosthetic_limb/post_add()
-	to_chat(quirk_holder, "<span class='boldannounce'>Your [slot_string] has been replaced with a surplus prosthetic. It is fragile and will easily come apart under duress. Additionally, \
-	you need to use a welding tool and cables to repair it, instead of bruise packs and ointment.</span>")
 
 /datum/quirk/pushover
 	name = "Pushover"
 	desc = "Your first instinct is always to let people push you around. Resisting out of grabs will take conscious effort."
 	value = -2
-	mob_trait = TRAIT_GRABWEAKNESS
+	mob_traits = list(TRAIT_GRABWEAKNESS)
 	gain_text = "<span class='danger'>You feel like a pushover.</span>"
 	lose_text = "<span class='notice'>You feel like standing up for yourself.</span>"
 	medical_record_text = "Patient presents a notably unassertive personality and is easy to manipulate."
@@ -425,14 +443,16 @@
 	gain_text = "<span class='danger'>You start worrying about what you're saying.</span>"
 	lose_text = "<span class='notice'>You feel easier about talking again.</span>" //if only it were that easy!
 	medical_record_text = "Patient is usually anxious in social encounters and prefers to avoid them."
+	mob_traits = list(TRAIT_ANXIOUS)
 	var/dumb_thing = TRUE
 
 /datum/quirk/social_anxiety/add()
-	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT, .proc/eye_contact)
-	RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
+	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT, PROC_REF(eye_contact))
+	RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, PROC_REF(looks_at_floor))
 
 /datum/quirk/social_anxiety/remove()
-	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
+	if(quirk_holder)
+		UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
 /datum/quirk/social_anxiety/on_process()
 	var/nearby_people = 0
@@ -459,7 +479,7 @@
 	if(prob(85) || (istype(mind_check) && mind_check.mind))
 		return
 
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, quirk_holder, "<span class='smallnotice'>You make eye contact with [A].</span>"), 3)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, "<span class='smallnotice'>You make eye contact with [A].</span>"), 3)
 
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	SIGNAL_HANDLER
@@ -484,7 +504,7 @@
 			msg += "causing you to freeze up!"
 
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "anxiety_eyecontact", /datum/mood_event/anxiety_eyecontact)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, quirk_holder, "<span class='userdanger'>[msg]</span>"), 3) // so the examine signal has time to fire and this will print after
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, "<span class='userdanger'>[msg]</span>"), 3) // so the examine signal has time to fire and this will print after
 	return COMSIG_BLOCK_EYECONTACT
 
 /datum/mood_event/anxiety_eyecontact
@@ -551,7 +571,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(world.time > next_process)
 		next_process = world.time + process_interval
-		if(!H.reagents.addiction_list.Find(reagent_instance))
+		if(!(reagent_instance in H.reagents.addiction_list))
 			if(QDELETED(reagent_instance))
 				reagent_instance = new reagent_type()
 			else
@@ -597,7 +617,8 @@
 	name = "Unstable"
 	desc = "Due to past troubles, you are unable to recover your sanity if you lose it. Be very careful managing your mood!"
 	value = -2
-	mob_trait = TRAIT_UNSTABLE
+	mood_quirk = TRUE
+	mob_traits = list(TRAIT_UNSTABLE)
 	gain_text = "<span class='danger'>There's a lot on your mind right now.</span>"
 	lose_text = "<span class='notice'>Your mind finally feels calm.</span>"
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
@@ -605,7 +626,7 @@
 /datum/quirk/bad_touch
 	name = "Bad Touch"
 	desc = "You don't like hugs. You'd really prefer if people just left you alone."
-	mob_trait = TRAIT_BADTOUCH
+	mob_traits = list(TRAIT_BADTOUCH)
 	value = -1
 	gain_text = "<span class='danger'>You just want people to leave you alone.</span>"
 	lose_text = "<span class='notice'>You could use a big hug.</span>"
@@ -613,10 +634,11 @@
 	mood_quirk = TRUE
 
 /datum/quirk/bad_touch/add()
-	RegisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT), .proc/uncomfortable_touch)
+	RegisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT), PROC_REF(uncomfortable_touch))
 
 /datum/quirk/bad_touch/remove()
-	UnregisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT))
+	if(quirk_holder)
+		UnregisterSignal(quirk_holder, list(COMSIG_LIVING_GET_PULLED, COMSIG_CARBON_HUGGED, COMSIG_CARBON_HEADPAT))
 
 /datum/quirk/bad_touch/proc/uncomfortable_touch()
 	SIGNAL_HANDLER

@@ -19,9 +19,29 @@
 	var/projectile = /obj/projectile/beam/disabler
 	var/fair_market_projectile = /obj/projectile/bullet/c38 // For shooting the worst scumbags of all: the poor
 
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet
+	name = "\improper Abandoned ED-209 Robot"
+	desc = "A security robot. It looks like they have a loose trigger finger."
+	health = 60
+	maxHealth = 60
+	icon_state = "red209"
+	shoot_sound = 'sound/weapons/laser.ogg'
+	projectile = /obj/projectile/beam/scatter
+	emagged = 2
+	remote_disabled = 1
+	locked = TRUE
+	faction = list("mining", "silicon" , "turret")
+	declare_arrests = FALSE
+
+/mob/living/simple_animal/bot/secbot/ed209/rockplanet/stun_attack(atom/A)
+	if(!on)
+		return
+	shootAt(A)
+
 /mob/living/simple_animal/bot/secbot/ed209/Initialize(mapload)
 	. = ..()
-	set_weapon() //giving it the right projectile and firing sound.
+	set_weapon()
+
 
 /mob/living/simple_animal/bot/secbot/ed209/bot_reset()
 	..()
@@ -44,9 +64,9 @@
 		var/threatlevel = 0
 		if(C.incapacitated())
 			continue
-		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, .proc/check_for_weapons))
+		threatlevel = C.assess_threat(judgement_criteria, weaponcheck=CALLBACK(src, PROC_REF(check_for_weapons)))
 		//speak(C.real_name + text(": threat: []", threatlevel))
-		if(threatlevel < 4 )
+		if(threatlevel < 4)
 			continue
 		var/dst = get_dist(src, C)
 		if(dst <= 1 || dst > 7)

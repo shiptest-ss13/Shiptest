@@ -14,6 +14,13 @@
 	if(maker)
 		maker.interact()
 
+/obj/structure/door_assembly/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/simple_rotation, ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS, null, CALLBACK(src, PROC_REF(can_be_rotated)))
+
+/obj/structure/door_assembly/proc/can_be_rotated(mob/user, rotation_type)
+	return !anchored
+
 /datum/airlock_maker
 	var/obj/structure/door_assembly/linked = null
 
@@ -25,7 +32,7 @@
 
 	var/doorname = "airlock"
 
-/datum/airlock_maker/New(var/atom/target_loc)
+/datum/airlock_maker/New(atom/target_loc)
 	linked = new(target_loc)
 	linked.maker = src
 	linked.set_anchored(FALSE)
@@ -70,7 +77,7 @@
 	dat += "</table><hr><a href='?src=[REF(src)];done'>Finalize Airlock Construction</a> | <a href='?src=[REF(src)];cancel'>Cancel and Destroy Airlock</a>"
 	usr << browse(dat,"window=airlockmaker")
 
-/datum/airlock_maker/Topic(var/href,var/list/href_list)
+/datum/airlock_maker/Topic(href,list/href_list)
 	if(!usr)
 		return
 	if(!src || !linked || !linked.loc)

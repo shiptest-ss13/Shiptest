@@ -31,6 +31,10 @@
 /obj/effect/projectile/tracer/laser/blue
 	icon_state = "beam_blue"
 
+/obj/effect/projectile/tracer/laser/emitter
+	name = "emitter beam"
+	icon_state = "emitter"
+
 /obj/effect/projectile/tracer/disabler
 	name = "disabler"
 	icon_state = "beam_omni"
@@ -66,3 +70,12 @@
 
 /obj/effect/projectile/tracer/wormhole
 	icon_state = "wormhole_g"
+
+/obj/effect/projectile/tracer/kalix
+	icon_state = "beam_kalix"
+
+/obj/effect/projectile/tracer/pgf
+	icon_state = "beam_pgf"
+
+/obj/effect/projectile/tracer/pgf/rifle
+	icon_state = "beam_pgf_rifle"

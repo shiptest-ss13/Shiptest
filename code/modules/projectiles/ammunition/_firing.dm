@@ -10,15 +10,19 @@
 				spread = round(1 - 0.5) * distro
 		if(!throw_proj(target, targloc, user, params, spread))
 			return FALSE
-
 	else
 		if(isnull(BB))
 			return FALSE
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
 		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, spread, zone_override, params, distro)
 
+	if(click_cooldown_override)
+		user.changeNext_move(click_cooldown_override)
+	else
+		user.changeNext_move(CLICK_CD_RANGE)
+
 	user.newtonian_move(get_dir(target, user))
-	update_icon()
+	update_appearance()
 	return TRUE
 
 /obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", atom/fired_from)
@@ -30,8 +34,13 @@
 	if (zone_override)
 		BB.def_zone = zone_override
 	else
-		BB.def_zone = user.zone_selected
+		if(user)
+			BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
+
+	if(isgun(fired_from))
+		var/obj/item/gun/G = fired_from
+		BB.damage *= G.projectile_damage_multiplier
 
 	if(reagents && BB.reagents)
 		reagents.trans_to(BB, reagents.total_volume, transfered_by = user) //For chemical darts/bullets
@@ -56,6 +65,23 @@
 		BB.preparePixelProjectile(target, user, params, spread)
 	BB.fire(null, direct_target)
 	BB = null
+	return TRUE
+
+#define BULLET_POP_CHANCE 30
+
+/obj/item/ammo_casing/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	if(!prob(BULLET_POP_CHANCE) || !BB)
+		return
+	ready_proj()
+	BB.trajectory_ignore_forcemove = TRUE
+	BB.forceMove(get_turf(src))
+	BB.trajectory_ignore_forcemove = FALSE
+	BB.starting = get_turf(src)
+	BB.fire(rand(0,360))
+	BB = null
+	playsound(src, 'sound/weapons/gun/pistol/shot.ogg', 100, TRUE)
+	update_appearance()
 	return TRUE
 
 /obj/item/ammo_casing/proc/spread(turf/target, turf/current, distro)

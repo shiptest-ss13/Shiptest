@@ -16,11 +16,11 @@
 
 	area_type = /area
 	protected_areas = list(/area/space)
-	target_trait = ZTRAIT_STATION
 
 	overlay_layer = ABOVE_OPEN_TURF_LAYER //Covers floors only
 	overlay_plane = FLOOR_PLANE
 	immunity_type = "lava"
+	multiply_blend_on_main_stage = TRUE
 
 
 /datum/weather/floor_is_lava/weather_act(mob/living/L)

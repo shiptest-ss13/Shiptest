@@ -5,7 +5,7 @@
 	multiplicative_slowdown = 3
 
 /datum/movespeed_modifier/status_effect/lightpink
-	multiplicative_slowdown = -0.5
+	multiplicative_slowdown = -0.25
 	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/status_effect/tarfoot

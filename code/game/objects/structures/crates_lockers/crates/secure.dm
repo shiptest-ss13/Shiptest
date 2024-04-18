@@ -13,10 +13,11 @@
 	. = ..()
 	if(broken)
 		. += "securecrateemag"
-	else if(locked)
+		return
+	if(locked)
 		. += "securecrater"
-	else
-		. += "securecrateg"
+		return
+	. += "securecrateg"
 
 /obj/structure/closet/crate/secure/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	if(prob(tamperproof) && damage_amount >= DAMAGE_PRECISION)
@@ -29,7 +30,7 @@
 	if(user)
 		to_chat(user, "<span class='danger'>The crate's anti-tamper system activates!</span>")
 		log_bomber(user, "has detonated a", src)
-	for(var/atom/movable/AM in src)
+	for(var/atom/movable/AM as anything in src)
 		qdel(AM)
 	explosion(get_turf(src), 0, 1, 5, 5)
 	qdel(src)
@@ -50,18 +51,18 @@
 	icon_state = "secgearcrate"
 
 /obj/structure/closet/crate/secure/hydroponics
-	desc = "A crate with a lock on it, painted in the scheme of the station's botanists."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotrasen's hydroponics division."
 	name = "secure hydroponics crate"
 	icon_state = "hydrosecurecrate"
 
 /obj/structure/closet/crate/secure/engineering
-	desc = "A crate with a lock on it, painted in the scheme of the station's engineers."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotrasen's engineering division."
 	name = "secure engineering crate"
 	icon_state = "engi_secure_crate"
 
 /obj/structure/closet/crate/secure/science
 	name = "secure science crate"
-	desc = "A crate with a lock on it, painted in the scheme of the station's scientists."
+	desc = "A crate with a lock on it, painted in the scheme of the Nanotrasen's research & development division."
 	icon_state = "scisecurecrate"
 
 /obj/structure/closet/crate/secure/owned
@@ -92,7 +93,7 @@
 						user.visible_message("<span class='notice'>[user] unlocks [src]'s privacy lock.</span>",
 										"<span class='notice'>You unlock [src]'s privacy lock.</span>")
 						privacy_lock = FALSE
-						update_icon()
+						update_appearance()
 					else if(!silent)
 						to_chat(user, "<span class='notice'>Bank account does not match with buyer!</span>")
 				else if(!silent)
@@ -102,3 +103,9 @@
 		else if(!silent)
 			to_chat(user, "<span class='warning'>[src] is broken!</span>")
 	else ..()
+
+/obj/structure/closet/crate/secure/exo
+	desc = "A lock-enabled crate used to carry EXOCON merchandise destined for export to potential buyers."
+	name = "EXOCON storage crate"
+	icon = 'icons/obj/crates.dmi'
+	icon_state = "exocrate"

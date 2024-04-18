@@ -23,7 +23,7 @@
 	if(can_interact(user))
 		on = !on
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/AltClick(mob/user)
@@ -31,7 +31,7 @@
 		target_temperature = max_temperature
 		investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
 		to_chat(user, "<span class='notice'>You set the target temperature on [src] to [target_temperature] K.</span>")
-		update_icon()
+		update_appearance()
 	return ..()
 
 
@@ -44,9 +44,9 @@
 		. += "The sensor's settings can be changed by using a multitool on the device."
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/update_icon_nopipes()
-	if(on && is_operational() && is_gas_flowing)
+	if(on && is_operational && is_gas_flowing)
 		icon_state = "tgate_flow-[set_overlay_offset(piping_layer)]"
-	else if(on && is_operational() && !is_gas_flowing)
+	else if(on && is_operational && !is_gas_flowing)
 		icon_state = "tgate_on-[set_overlay_offset(piping_layer)]"
 	else
 		icon_state = "tgate_off-[set_overlay_offset(piping_layer)]"
@@ -54,7 +54,7 @@
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/process_atmos()
 
-	if(!on || !is_operational())
+	if(!on || !is_operational)
 		return
 
 	var/datum/gas_mixture/air1 = airs[1]
@@ -108,11 +108,11 @@
 			if(.)
 				target_temperature = clamp(minimum_temperature, temperature, max_temperature)
 				investigate_log("was set to [target_temperature] K by [key_name(usr)]", INVESTIGATE_ATMOS)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/components/binary/temperature_gate/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational())
+	if(. && on && is_operational)
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 

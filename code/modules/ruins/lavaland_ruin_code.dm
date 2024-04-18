@@ -3,6 +3,8 @@
 ///Wizard tower item
 /obj/item/disk/design_disk/adv/knight_gear
 	name = "Magic Disk of Smithing"
+	illustration = "sword"
+	color = "#6F6F6F"
 
 /obj/item/disk/design_disk/adv/knight_gear/Initialize()
 	. = ..()
@@ -18,93 +20,11 @@
 	name = "seed vault seeds"
 	lootcount = 1
 
-	loot = list(/obj/item/seeds/gatfruit = 10,
+	loot = list(/obj/item/seeds/random = 10,
 				/obj/item/seeds/cherry/bomb = 10,
 				/obj/item/seeds/berry/glow = 10,
 				/obj/item/seeds/sunflower/moonflower = 8
 				)
-
-//Free Golems
-
-/obj/item/disk/design_disk/golem_shell
-	name = "Golem Creation Disk"
-	desc = "A gift from the Liberator."
-	icon_state = "datadisk1"
-	max_blueprints = 1
-
-/obj/item/disk/design_disk/golem_shell/Initialize()
-	. = ..()
-	var/datum/design/golem_shell/G = new
-	blueprints[1] = G
-
-/datum/design/golem_shell
-	name = "Golem Shell Construction"
-	desc = "Allows for the construction of a Golem Shell."
-	id = "golem"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 40000)
-	build_path = /obj/item/golem_shell
-	category = list("Imported")
-
-/obj/item/golem_shell
-	name = "incomplete free golem shell"
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "construct"
-	desc = "The incomplete body of a golem. Add ten sheets of any mineral to finish."
-	var/shell_type = /obj/effect/mob_spawn/human/golem
-	var/has_owner = FALSE //if the resulting golem obeys someone
-	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/golem_shell/attackby(obj/item/I, mob/user, params)
-	..()
-	var/static/list/golem_shell_species_types = list(
-		/obj/item/stack/sheet/metal	                = /datum/species/golem,
-		/obj/item/stack/sheet/glass 	            = /datum/species/golem/glass,
-		/obj/item/stack/sheet/plasteel 	            = /datum/species/golem/plasteel,
-		/obj/item/stack/sheet/mineral/sandstone	    = /datum/species/golem/sand,
-		/obj/item/stack/sheet/mineral/plasma	    = /datum/species/golem/plasma,
-		/obj/item/stack/sheet/mineral/diamond	    = /datum/species/golem/diamond,
-		/obj/item/stack/sheet/mineral/gold	        = /datum/species/golem/gold,
-		/obj/item/stack/sheet/mineral/silver	    = /datum/species/golem/silver,
-		/obj/item/stack/sheet/mineral/uranium	    = /datum/species/golem/uranium,
-		/obj/item/stack/sheet/mineral/bananium	    = /datum/species/golem/bananium,
-		/obj/item/stack/sheet/mineral/titanium	    = /datum/species/golem/titanium,
-		/obj/item/stack/sheet/mineral/plastitanium	= /datum/species/golem/plastitanium,
-		/obj/item/stack/sheet/mineral/abductor	    = /datum/species/golem/alloy,
-		/obj/item/stack/sheet/mineral/wood	        = /datum/species/golem/wood,
-		/obj/item/stack/sheet/bluespace_crystal	    = /datum/species/golem/bluespace,
-		/obj/item/stack/sheet/runed_metal	        = /datum/species/golem/runic,
-		/obj/item/stack/medical/gauze	            = /datum/species/golem/cloth,
-		/obj/item/stack/sheet/cotton/cloth          = /datum/species/golem/cloth,
-		/obj/item/stack/sheet/mineral/adamantine	= /datum/species/golem/adamantine,
-		/obj/item/stack/sheet/plastic	            = /datum/species/golem/plastic,
-		/obj/item/stack/tile/bronze					= /datum/species/golem/bronze,
-		/obj/item/stack/sheet/cardboard				= /datum/species/golem/cardboard,
-		/obj/item/stack/sheet/leather				= /datum/species/golem/leather,
-		/obj/item/stack/sheet/bone					= /datum/species/golem/bone,
-		/obj/item/stack/sheet/durathread			= /datum/species/golem/durathread,
-		/obj/item/stack/sheet/cotton/durathread		= /datum/species/golem/durathread,
-		/obj/item/stack/sheet/mineral/snow			= /datum/species/golem/snow,
-		/obj/item/stack/sheet/capitalisium			= /datum/species/golem/capitalist,
-		/obj/item/stack/sheet/stalinium				= /datum/species/golem/soviet)
-
-	if(istype(I, /obj/item/stack))
-		var/obj/item/stack/O = I
-		var/species = golem_shell_species_types[O.merge_type]
-		if(species)
-			if(O.use(10))
-				to_chat(user, "<span class='notice'>You finish up the golem shell with ten sheets of [O].</span>")
-				new shell_type(get_turf(src), species, user)
-				qdel(src)
-			else
-				to_chat(user, "<span class='warning'>You need at least ten sheets to finish a golem!</span>")
-		else
-			to_chat(user, "<span class='warning'>You can't build a golem out of this kind of material!</span>")
-
-//made with xenobiology, the golem obeys its creator
-/obj/item/golem_shell/servant
-	name = "incomplete servant golem shell"
-	shell_type = /obj/effect/mob_spawn/human/golem/servant
 
 ///Syndicate Listening Post
 
@@ -116,8 +36,8 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "You are a syndicate science technician, employed in a top secret research facility developing biological weapons."
-	flavour_text = "Unfortunately, your hated enemy, Nanotrasen, has begun mining in this sector. Continue your research as best you can, and try to keep a low profile."
-	important_info = "The base is rigged with explosives, DO NOT abandon it or let it fall into enemy hands!"
+	flavour_text = "Reports of potential Nanotrasen fleet movement in your sector prompted you to initiate Operation Smokescreen, killing base power and taking your crew into cryosleep. You've awoken an unknown amount of time later as base security initiates an emergency reboot. Keep vigilant for whatever reawoke you, continue your research as best you can, and try to keep a low profile."
+	important_info = "Prevent yourself and any Syndicate assets from being taken by Corporate forces."
 	outfit = /datum/outfit/lavaland_syndicate
 	assignedrole = "Lavaland Syndicate"
 
@@ -142,15 +62,15 @@
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms
 	name = "Syndicate Comms Agent"
-	short_desc = "You are a syndicate comms agent, employed in a top secret research facility developing biological weapons."
-	flavour_text = "Unfortunately, your hated enemy, Nanotrasen, has begun mining in this sector. Monitor enemy activity as best you can, and try to keep a low profile. Use the communication equipment to provide support to any field agents, and sow disinformation to throw Nanotrasen off your trail. Do not let the base fall into enemy hands!"
-	important_info = "DO NOT abandon the base."
+	short_desc = "You are a syndicate communications agent, employed in a top secret research facility developing biological weapons."
+	flavour_text = "Reports of potential Nanotrasen fleet movement in your sector prompted you to initiate Operation Smokescreen, killing base power and taking your crew into cryosleep. You've awoken an unknown amount of time later as base security initiates an emergency reboot. Keep vigilant for whatever reawoke you, and try to keep a low profile. Use the communication equipment to monitor any local activity. Anyone nearby is presumed to be an agent of Nanotrasen: Sow disinformation to throw them off your trail. Do not let the base fall into enemy hands!"
+	important_info = "Prevent yourself and any Syndicate assets from being taken by Corporate forces."
 	outfit = /datum/outfit/lavaland_syndicate/comms
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space
-	short_desc = "You are a syndicate agent, assigned to a small listening post station situated near your hated enemy's top secret research facility: Space Station 13."
-	flavour_text = "Monitor enemy activity as best you can, and try to keep a low profile. Monitor enemy activity as best you can, and try to keep a low profile. Use the communication equipment to provide support to any field agents, and sow disinformation to throw Nanotrasen off your trail. Do not let the base fall into enemy hands!"
-	important_info = "DO NOT abandon the base."
+	short_desc = "You are a deep-cover syndicate agent, assigned to a small military listening post intended to keep an eye on Nanotrasen activity in the area. Increased military operations prompted you to follow Smokescreen protocol and go into cryosleep, leaving your base on minimal power."
+	flavour_text = "Your base's emergency security system has reawoken you and brought the facility back to full power- It can only be presumed Nanotrasen personnel are close to locating you. Monitor any local activity as best you can, and try to keep a low profile. Use the communication equipment to attempt parlance, and sow disinformation to throw Nanotrasen off your trail."
+	important_info = "Prevent yourself and any Syndicate assets from being taken by Corporate forces."
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space/Initialize()
 	. = ..()

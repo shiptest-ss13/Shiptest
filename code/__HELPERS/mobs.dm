@@ -1,46 +1,35 @@
-/proc/random_blood_type()
-	return pick(4;"O-", 36;"O+", 3;"A-", 28;"A+", 1;"B-", 20;"B+", 1;"AB-", 5;"AB+")
+/proc/random_prosthetic()
+	. = list(BODY_ZONE_L_ARM = PROSTHETIC_NORMAL, BODY_ZONE_R_ARM = PROSTHETIC_NORMAL, BODY_ZONE_L_LEG = PROSTHETIC_NORMAL, BODY_ZONE_R_LEG = PROSTHETIC_NORMAL)
+	.[pick(.)] = PROSTHETIC_ROBOTIC
 
 /proc/random_eye_color()
 	switch(pick(20;"brown",20;"hazel",20;"grey",15;"blue",15;"green",1;"amber",1;"albino"))
 		if("brown")
-			return "630"
+			return "663300"
 		if("hazel")
-			return "542"
+			return "554422"
 		if("grey")
-			return pick("666","777","888","999","aaa","bbb","ccc")
+			return pick("666666","777777","888888","999999","aaaaaa","bbbbbb","cccccc")
 		if("blue")
-			return "36c"
+			return "3366cc"
 		if("green")
-			return "060"
+			return "006600"
 		if("amber")
-			return "fc0"
+			return "ffcc00"
 		if("albino")
-			return pick("c","d","e","f") + pick("0","1","2","3","4","5","6","7","8","9") + pick("0","1","2","3","4","5","6","7","8","9")
+			return pick("cc","dd","ee","ff") + pick("00","11","22","33","44","55","66","77","88","99") + pick("00","11","22","33","44","55","66","77","88","99")
 		else
-			return "000"
+			return "000000"
 
 /proc/random_underwear(gender)
 	if(!GLOB.underwear_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list, GLOB.underwear_m, GLOB.underwear_f)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.underwear_m)
-		if(FEMALE)
-			return pick(GLOB.underwear_f)
-		else
-			return pick(GLOB.underwear_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/underwear, GLOB.underwear_list)
+	return pick(GLOB.underwear_list)
 
-/proc/random_undershirt(gender)
+/proc/random_undershirt()
 	if(!GLOB.undershirt_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list, GLOB.undershirt_m, GLOB.undershirt_f)
-	switch(gender)
-		if(MALE)
-			return pick(GLOB.undershirt_m)
-		if(FEMALE)
-			return pick(GLOB.undershirt_f)
-		else
-			return pick(GLOB.undershirt_list)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/undershirt, GLOB.undershirt_list)
+	return pick(GLOB.undershirt_list)
 
 /proc/random_socks()
 	if(!GLOB.socks_list.len)
@@ -55,8 +44,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
 	if(!GLOB.tails_list_lizard.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/lizard, GLOB.tails_list_lizard)
-	if(!GLOB.snouts_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/snouts, GLOB.snouts_list)
+	if(!GLOB.face_markings_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/face_markings, GLOB.face_markings_list)
 	if(!GLOB.horns_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/horns, GLOB.horns_list)
 	if(!GLOB.ears_list.len)
@@ -83,16 +72,62 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_screens, GLOB.ipc_screens_list)
 	if(!GLOB.ipc_antennas_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_antennas_list)
+	if(!GLOB.ipc_tail_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_antennas, GLOB.ipc_tail_list)
 	if(!GLOB.ipc_chassis_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/ipc_chassis, GLOB.ipc_chassis_list)
 	if(!GLOB.spider_legs_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_legs, GLOB.spider_legs_list)
 	if(!GLOB.spider_spinneret_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_spinneret, GLOB.spider_spinneret_list)
-	if(!GLOB.spider_mandibles_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/spider_mandibles, GLOB.spider_mandibles_list)
+	if(!GLOB.kepori_feathers_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_feathers_list)
+	if(!GLOB.kepori_tail_feathers_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/kepori_feathers, GLOB.kepori_tail_feathers_list)
+	if(!GLOB.vox_head_quills_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_head_quills, GLOB.vox_head_quills_list)
+	if(!GLOB.vox_neck_quills_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/vox_neck_quills, GLOB.vox_neck_quills_list)
+	if(!GLOB.elzu_horns_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/elzu_horns, GLOB.elzu_horns_list)
+	if(!GLOB.tails_list_elzu.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/elzu, GLOB.tails_list_elzu)
 	//For now we will always return none for tail_human and ears.
-	return(list("mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)], "tail_lizard" = pick(GLOB.tails_list_lizard), "tail_human" = "None", "wings" = "None", "snout" = pick(GLOB.snouts_list), "horns" = pick(GLOB.horns_list), "ears" = "None", "frills" = pick(GLOB.frills_list), "spines" = pick(GLOB.spines_list), "body_markings" = pick(GLOB.body_markings_list), "legs" = "Normal Legs", "caps" = pick(GLOB.caps_list), "moth_wings" = pick(GLOB.moth_wings_list), "moth_fluff" = pick(GLOB.moth_fluff_list), "moth_markings" = pick(GLOB.moth_markings_list), "squid_face" = pick(GLOB.squid_face_list), "ipc_screen" = pick(GLOB.ipc_screens_list), "ipc_antenna" = pick(GLOB.ipc_antennas_list),"ipc_chassis" = pick(GLOB.ipc_chassis_list), "spider_legs" = pick(GLOB.spider_legs_list), "spider_spinneret" = pick(GLOB.spider_spinneret_list), "spider_mandibles" = pick(GLOB.spider_mandibles_list),  "flavor_text" = ""))
+	//if you don't keep this alphabetised I'm going to personally steal your shins and sell them online
+	return list(
+		"body_markings" = pick(GLOB.body_markings_list),
+		"body_size" = pick(GLOB.body_sizes),
+		"ears" = "None",
+		"elzu_horns" = pick(GLOB.elzu_horns_list),
+		"ethcolor" = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)],
+		"flavor_text" = "",
+		"frills" = pick(GLOB.frills_list),
+		"horns" = pick(GLOB.horns_list),
+		"ipc_antenna" = pick(GLOB.ipc_antennas_list),
+		"ipc_brain" = pick(GLOB.ipc_brain_list),
+		"ipc_chassis" = pick(GLOB.ipc_chassis_list),
+		"ipc_screen" = pick(GLOB.ipc_screens_list),
+		"kepori_body_feathers" = pick(GLOB.kepori_body_feathers_list),
+		"kepori_feathers" = pick(GLOB.kepori_feathers_list),
+		"kepori_tail_feathers" = pick(GLOB.kepori_tail_feathers_list),
+		"legs" = "Normal Legs",
+		"mcolor" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		"mcolor2" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
+		"moth_fluff" = pick(GLOB.moth_fluff_list),
+		"moth_markings" = pick(GLOB.moth_markings_list),
+		"moth_wings" = pick(GLOB.moth_wings_list),
+		"face_markings" = pick(GLOB.face_markings_list),
+		"spider_legs" = pick(GLOB.spider_legs_list),
+		"spider_spinneret" = pick(GLOB.spider_spinneret_list),
+		"spines" = pick(GLOB.spines_list),
+		"squid_face" = pick(GLOB.squid_face_list),
+		"tail_human" = "None",
+		"tail_lizard" = pick(GLOB.tails_list_lizard),
+		"tail_elzu" = pick(GLOB.tails_list_elzu),
+		"vox_head_quills" = pick(GLOB.vox_head_quills_list),
+		"vox_neck_quills" = pick(GLOB.vox_neck_quills_list),
+		"wings" = "None",
+	)
 
 /proc/random_hairstyle(gender)
 	switch(gender)
@@ -136,23 +171,23 @@
 		if(!findname(.))
 			break
 
-/proc/random_unique_ethereal_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(ethereal_name())
-
-		if(!findname(.))
-			break
-
-/proc/random_unique_moth_name(attempts_to_find_unique_name=10)
-	for(var/i in 1 to attempts_to_find_unique_name)
-		. = capitalize(pick(GLOB.moth_first)) + " " + capitalize(pick(GLOB.moth_last))
-
-		if(!findname(.))
-			break
-
 /proc/random_unique_squid_name(attempts_to_find_unique_name=10)
 	for(var/i in 1 to attempts_to_find_unique_name)
 		. = capitalize(squid_name())
+
+		if(!findname(.))
+			break
+
+/proc/random_unique_kepori_name(attempts_to_find_unique_name=10)
+	for(var/i in 1 to attempts_to_find_unique_name)
+		. = capitalize(kepori_name())
+
+		if(!findname(.))
+			break
+
+/proc/random_unique_vox_name(attempts_to_find_unique_name=10)
+	for(var/i in 1 to attempts_to_find_unique_name)
+		. = capitalize(vox_name())
 
 		if(!findname(.))
 			break
@@ -174,6 +209,12 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"african1",
 	"african2"
 	)))
+
+/proc/pick_species_adjective(mob/living/carbon/human/H)
+	if(isipc(H))
+		return pick(GLOB.ipc_preference_adjectives)
+	else
+		return pick(GLOB.preference_adjectives)
 
 GLOBAL_LIST_EMPTY(species_list)
 
@@ -201,9 +242,14 @@ GLOBAL_LIST_EMPTY(species_list)
 			return "unknown"
 
 ///Timed action involving two mobs, the user and the target.
-/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_mob(mob/user , mob/target, time = 3 SECONDS, uninterruptible = FALSE, progress = TRUE, datum/callback/extra_checks = null, ignore_loc_change = FALSE)
 	if(!user || !target)
 		return FALSE
+
+	if(target && INTERACTING_WITH(user, target))
+		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
+		return
+
 	var/user_loc = user.loc
 
 	var/drifting = FALSE
@@ -212,6 +258,8 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	var/target_loc = target.loc
 
+	LAZYADD(user.do_afters, target)
+	LAZYADD(target.targeted_by, user)
 	var/holding = user.get_active_held_item()
 	var/datum/progressbar/progbar
 	if (progress)
@@ -234,12 +282,19 @@ GLOBAL_LIST_EMPTY(species_list)
 			drifting = FALSE
 			user_loc = user.loc
 
-		if((!drifting && user.loc != user_loc) || target.loc != target_loc || user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
+
+		if(!ignore_loc_change && ((!drifting && user.loc != user_loc) || target.loc != target_loc))
+			. = FALSE
+			break
+
+		if(user.get_active_held_item() != holding || user.incapacitated() || (extra_checks && !extra_checks.Invoke()))
 			. = FALSE
 			break
 	if(!QDELETED(progbar))
 		progbar.end_progress()
-
+	if(!QDELETED(target))
+		LAZYREMOVE(user.do_afters, target)
+		LAZYREMOVE(target.targeted_by, user)
 
 //some additional checks as a callback for for do_afters that want to break on losing health or on the mob taking action
 /mob/proc/break_do_after_checks(list/checked_health, check_clicks)
@@ -256,9 +311,14 @@ GLOBAL_LIST_EMPTY(species_list)
 	return ..()
 
 ///Timed action involving one mob user. Target is optional.
-/proc/do_after(mob/user, var/delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
+/proc/do_after(mob/user, delay, needhand = TRUE, atom/target = null, progress = TRUE, datum/callback/extra_checks = null)
 	if(!user)
 		return FALSE
+
+	if(target && INTERACTING_WITH(user, target))
+		to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
+		return
+
 	var/atom/Tloc = null
 	if(target && !isturf(target))
 		Tloc = target.loc
@@ -345,6 +405,14 @@ GLOBAL_LIST_EMPTY(species_list)
 		targets = list(targets)
 	if(!length(targets))
 		return FALSE
+
+	for(var/i in targets)
+		var/mob/living/target = i
+		if(INTERACTING_WITH(user, target))
+			to_chat(user, "<span class='warning'>You're already interacting with [target]!</span>")
+			return
+
+
 	var/user_loc = user.loc
 
 	var/drifting = FALSE
@@ -354,6 +422,8 @@ GLOBAL_LIST_EMPTY(species_list)
 	var/list/originalloc = list()
 	for(var/atom/target in targets)
 		originalloc[target] = target.loc
+		LAZYADD(user.do_afters, target)
+		LAZYADD(target.targeted_by, user)
 
 	var/holding = user.get_active_held_item()
 	var/datum/progressbar/progbar
@@ -384,6 +454,12 @@ GLOBAL_LIST_EMPTY(species_list)
 					break mainloop
 	if(!QDELETED(progbar))
 		progbar.end_progress()
+
+	for(var/thing in targets)
+		var/atom/target = thing
+		if(!QDELETED(target))
+			LAZYREMOVE(user.do_afters, target)
+			LAZYREMOVE(target.targeted_by, user)
 
 /proc/is_species(A, species_datum)
 	. = FALSE
@@ -579,13 +655,13 @@ GLOBAL_LIST_EMPTY(species_list)
 		if(check_mind)
 			if(!A.mind)
 				continue
-		if(z && A.get_virtual_z_level() != z) //if a Z level was specified, AND the AI is not on the same level
+		if(z && A.virtual_z() != z) //if a Z level was specified, AND the AI is not on the same level
 			continue
 		. += A
 	return .
 
 //Find an active ai with the least borgs. VERBOSE PROCNAME HUH!
-/proc/select_active_ai_with_fewest_borgs(var/z)
+/proc/select_active_ai_with_fewest_borgs(z)
 	var/mob/living/silicon/ai/selected
 	var/list/active = active_ais(FALSE, z)
 	for(var/mob/living/silicon/ai/A in active)
@@ -603,7 +679,7 @@ GLOBAL_LIST_EMPTY(species_list)
 			. = pick(borgs)
 	return .
 
-/proc/select_active_ai(mob/user, var/z = null)
+/proc/select_active_ai(mob/user, z = null)
 	var/list/ais = active_ais(FALSE, z)
 	if(ais.len)
 		if(user)
@@ -611,3 +687,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		else
 			. = pick(ais)
 	return .
+
+/// Gets the client of the mob, allowing for mocking of the client.
+/// You only need to use this if you know you're going to be mocking clients somewhere else.
+#define GET_CLIENT(mob) (##mob.client || ##mob.mock_client)

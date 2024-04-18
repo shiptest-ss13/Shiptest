@@ -1,0 +1,104 @@
+/**
+ * Copyright (c) 2020 Aleksej Komarov
+ * SPDX-License-Identifier: MIT
+ */
+
+@use 'sass:color';
+@use 'sass:meta';
+
+@use '../colors.scss' with (
+  $primary: #d19c55,
+  $label: #d19c55,
+  $good: rgba(178, 95, 51, 0.5),
+  // $fg-map-keys: (),
+  // $bg-map-keys: (),
+);
+@use '../base.scss' with (
+  $color-bg: #b25f33,
+  $color-bg-grad-spread: 0%
+);
+
+.theme-ntos_terminal {
+  // Atomic classes
+  @include meta.load-css('../atomic/color.scss');
+
+  // Components
+  @include meta.load-css(
+    '../components/Button.scss',
+    $with: (
+      'color-default': rgba(178, 95, 51, 0.5),
+      'color-disabled': rgba(0, 0, 0, 0),
+      'color-selected': rgba(178, 95, 51, 0.5)
+    )
+  );
+  @include meta.load-css(
+    '../components/Input.scss',
+    $with: ('border-color': colors.$primary)
+  );
+  @include meta.load-css(
+    '../components/ProgressBar.scss',
+    $with: (
+      'background-color': rgba(93, 59, 35, 0.8),
+      'color-default-fill': rgba(178, 95, 51, 0.5)
+    )
+  );
+  @include meta.load-css('../components/Modal.scss');
+  @include meta.load-css('../components/Section.scss');
+
+  // Layouts
+  @include meta.load-css('../layouts/Layout.scss');
+  @include meta.load-css('../layouts/Window.scss');
+  @include meta.load-css(
+    '../layouts/TitleBar.scss',
+    $with: ('background-color': rgba(99, 56, 33, 0.5))
+  );
+
+  .Layout__content {
+    //background-image: none;
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(black, 0.15),
+        rgba(black, 0.15) 1px,
+        transparent 2.5px,
+        transparent 5px
+      ),
+      radial-gradient(rgba(178, 95, 51, 0.75), black 170%);
+    background-size: 100%, 100%;
+    background-position: center, center;
+  }
+
+  .Button {
+    font: Inconsolata;
+    color: #d19c55;
+  }
+  .Button:hover {
+    background-color: rgba(178, 95, 51, 0.25);
+    transition: 0.1s;
+  }
+  .Button--selected {
+    color: #d19c55;
+  }
+
+  body {
+    //background-color: black;
+    color: white;
+    font: 1.3rem Inconsolata;
+
+    //font: bold 12px Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  }
+  .Section {
+    color: #d19c55;
+  }
+  .Tab {
+    color: #d19c55;
+  }
+  .Tab--selected {
+    color: #d19c55;
+    border: 1px solid #d19c55;
+    background-color: rgba(178, 95, 51, 0.25);
+  }
+  ::selection {
+    background: #0080ff;
+    text-shadow: none;
+  }
+}

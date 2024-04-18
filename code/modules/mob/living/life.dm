@@ -17,19 +17,9 @@
 			send2tgs_adminless_only("Mob", msg, R_ADMIN)
 			log_game("[key_name(src)] was found to have no .loc with an attached client.")
 
-		// This is a temporary error tracker to make sure we've caught everything
-		else if (registered_z != T.z)
-#ifdef TESTING
-			message_admins("[ADMIN_LOOKUPFLW(src)] has somehow ended up in Z-level [T.z] despite being registered in Z-level [registered_z]. If you could ask them how that happened and notify coderbus, it would be appreciated.")
-#endif
-			log_game("Z-TRACKING: [src] has somehow ended up in Z-level [T.z] despite being registered in Z-level [registered_z].")
-			update_z(T.z)
-	else if (registered_z)
-		log_game("Z-TRACKING: [src] of type [src.type] has a Z-registration despite not having a client.")
-		update_z(null)
-
 	if (notransform)
 		return
+
 	if(!loc)
 		return
 
@@ -90,9 +80,9 @@
 
 	if(loc_temp < bodytemperature) // it is cold here
 		if(!on_fire) // do not reduce body temp when on fire
-			adjust_bodytemperature(max((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, BODYTEMP_COOLING_MAX))
+			adjust_bodytemperature(max((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_COOLING_MAX))
 	else // this is a hot place
-		adjust_bodytemperature(min((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, BODYTEMP_HEATING_MAX))
+		adjust_bodytemperature(min((loc_temp - bodytemperature) / BODYTEMP_DIVISOR, HUMAN_BODYTEMP_HEATING_MAX))
 
 /mob/living/proc/handle_fire()
 	if(fire_stacks < 0) //If we've doused ourselves in water to avoid fire, dry off slowly
@@ -140,7 +130,7 @@
 /mob/living/proc/gravity_animate()
 	if(!get_filter("gravity"))
 		add_filter("gravity",1,list("type"="motion_blur", "x"=0, "y"=0))
-	INVOKE_ASYNC(src, .proc/gravity_pulse_animation)
+	INVOKE_ASYNC(src, PROC_REF(gravity_pulse_animation))
 
 /mob/living/proc/gravity_pulse_animation()
 	animate(get_filter("gravity"), y = 1, time = 10)

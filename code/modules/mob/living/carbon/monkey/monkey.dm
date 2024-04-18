@@ -2,8 +2,9 @@
 	name = "monkey"
 	verb_say = "chimpers"
 	initial_language_holder = /datum/language_holder/monkey
+	possible_a_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_HARM)
 	icon = 'icons/mob/monkey.dmi'
-	icon_state = "monkey1"
+	icon_state = null
 	gender = NEUTER
 	pass_flags = PASSTABLE
 	ventcrawler = VENTCRAWLER_NUDE
@@ -12,17 +13,19 @@
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/monkey
 	gib_type = /obj/effect/decal/cleanable/blood/gibs
 	unique_name = TRUE
+	can_be_shoved_into = TRUE
 	blocks_emissive = EMISSIVE_BLOCK_UNIQUE
 	bodyparts = list(
 		/obj/item/bodypart/chest/monkey,
 		/obj/item/bodypart/head/monkey,
 		/obj/item/bodypart/l_arm/monkey,
 		/obj/item/bodypart/r_arm/monkey,
-		/obj/item/bodypart/r_leg/monkey,
-		/obj/item/bodypart/l_leg/monkey,
+		/obj/item/bodypart/leg/right/monkey,
+		/obj/item/bodypart/leg/left/monkey,
 		)
 	hud_type = /datum/hud/monkey
-	has_bones = TRUE
+	melee_damage_lower = 1
+	melee_damage_upper = 3
 
 /mob/living/carbon/monkey/Initialize(mapload, cubespawned=FALSE, mob/spawner)
 	add_verb(src, /mob/living/proc/mob_sleep)
@@ -42,13 +45,14 @@
 		var/cap = CONFIG_GET(number/monkeycap)
 		if (LAZYLEN(SSmobs.cubemonkeys) > cap)
 			if (spawner)
-				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys on the station at one time!</span>")
+				to_chat(spawner, "<span class='warning'>Bluespace harmonics prevent the spawning of more than [cap] monkeys in this sector at one time!</span>")
 			return INITIALIZE_HINT_QDEL
 		SSmobs.cubemonkeys += src
 
 	create_dna(src)
 	dna.initialize_dna(random_blood_type())
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, -6)
+	AddComponent(/datum/component/bloodysoles/feet)
 
 /mob/living/carbon/monkey/Destroy()
 	SSmobs.cubemonkeys -= src
@@ -75,6 +79,7 @@
 		amount = -1
 	if(amount)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/monkey_reagent_speedmod, TRUE, amount)
+
 
 /mob/living/carbon/monkey/updatehealth()
 	. = ..()
@@ -103,17 +108,12 @@
 			. += "Chemical Storage: [changeling.chem_charges]/[changeling.chem_storage]"
 			. += "Absorbed DNA: [changeling.absorbedcount]"
 
+
 /mob/living/carbon/monkey/verb/removeinternal()
 	set name = "Remove Internals"
 	set category = "IC"
 	internal = null
 	return
-
-
-/mob/living/carbon/monkey/IsAdvancedToolUser()//Unless its monkey mode monkeys can't use advanced tools
-	if(mind && is_monkey(mind))
-		return TRUE
-	return FALSE
 
 /mob/living/carbon/monkey/can_use_guns(obj/item/G)
 	if(G.trigger_guard == TRIGGER_GUARD_NONE)
@@ -121,7 +121,7 @@
 		return FALSE
 	return TRUE
 
-/mob/living/carbon/monkey/reagent_check(datum/reagent/R) //can metabolize all reagents
+/mob/living/carbon/monkey/handled_by_species(datum/reagent/R) //can metabolize all reagents
 	return FALSE
 
 /mob/living/carbon/monkey/canBeHandcuffed()
@@ -129,14 +129,14 @@
 		return FALSE
 	return TRUE
 
-/mob/living/carbon/monkey/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null)
-	if(judgement_criteria & JUDGE_EMAGGED)
+/mob/living/carbon/monkey/assess_threat(judgment_criteria, lasercolor = "", datum/callback/weaponcheck=null)
+	if(judgment_criteria & JUDGE_EMAGGED)
 		return 10 //Everyone is a criminal!
 
 	var/threatcount = 0
 
 	//Securitrons can't identify monkeys
-	if( !(judgement_criteria & JUDGE_IGNOREMONKEYS) && (judgement_criteria & JUDGE_IDCHECK) )
+	if(!(judgment_criteria & JUDGE_IGNOREMONKEYS) && (judgment_criteria & JUDGE_IDCHECK))
 		threatcount += 4
 
 	//Lasertag bullshit
@@ -152,7 +152,7 @@
 		return threatcount
 
 	//Check for weapons
-	if( (judgement_criteria & JUDGE_WEAPONCHECK) && weaponcheck )
+	if((judgment_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
 		for(var/obj/item/I in held_items) //if they're holding a gun
 			if(weaponcheck.Invoke(I))
 				threatcount += 4

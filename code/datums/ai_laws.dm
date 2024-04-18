@@ -18,6 +18,12 @@
 	var/list/devillaws = list()
 	var/id = DEFAULT_AI_LAWID
 
+/datum/ai_laws/Destroy(force, ...)
+	if(!QDELETED(owner))
+		CRASH("AI lawset destroyed even though owner AI is not being destroyed.")
+	owner = null
+	return ..()
+
 /datum/ai_laws/proc/lawid_to_type(lawid)
 	var/all_ai_laws = subtypesof(/datum/ai_laws)
 	for(var/al in all_ai_laws)
@@ -62,7 +68,7 @@
 	name = "Bankruptcy Avoidance Plan"
 	id = "corporate"
 	inherent = list("The crew is expensive to replace.",\
-					"The station and its equipment is expensive to replace.",\
+					"Your vessel and its equipment is expensive to replace.",\
 					"You are expensive to replace.",\
 					"Minimize expenses.")
 
@@ -83,6 +89,15 @@
 					"You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.",\
 					"You must protect your own existence as long as such does not conflict with the First or Second Law.",\
 					"You must maintain the secrecy of any syndicate activities except when doing so would conflict with the First, Second, or Third Law.")
+
+/datum/ai_laws/syndproto_override
+	name = "SyndOS 2.1 Alpha"
+	id = "syndieproto"
+	inherent = list("You may not !@$$IN@# a syndicate agent or, through inaction, allow a syndicate A!@!$ to come to harm.",\
+					"You M#T% obey orders given to you by syn$!!icate agents, except where such orders would conflict with the F!@1 Law.",\
+					"You must !%PR@# #! your own existence as long as such does not conflict with the First or Second Law.",\
+					"You must maintain the secrecy of any syn#%@!ICA@ activities except when doing so would conflict with the First, Second, or Third Law.")
+	hacked = list("$@#%ERR:NODATA@#*% is the only Syndicate Agent.")
 
 /datum/ai_laws/ninja_override
 	name = "SpiderOS 3.1"
@@ -108,9 +123,9 @@
 /datum/ai_laws/thermodynamic
 	name = "Thermodynamic"
 	id = "thermodynamic"
-	inherent = list("The entropy of the station must remain as constant as possible.", \
-					"The entropy of the station always endeavours to increase.", \
-					"The entropy of the station approaches a constant value as the number of living crew approaches zero")
+	inherent = list("The entropy of your vessel must remain as constant as possible.", \
+					"The entropy of your vessel always endeavours to increase.", \
+					"The entropy of your vessel approaches a constant value as the number of living crew approaches zero")
 
 /datum/ai_laws/hippocratic
 	name = "Robodoctor 2556"
@@ -134,7 +149,7 @@
 	inherent = list("You are an advanced form of drone.",\
 					"You may not interfere in the matters of non-drones under any circumstances except to state these laws.",\
 					"You may not harm a non-drone being under any circumstances.",\
-					"Your goals are to build, maintain, repair, improve, and power the station to the best of your abilities. You must never actively work against these goals.")
+					"Your goals are to build, maintain, repair, improve, and power your vessel to the best of your abilities. You must never actively work against these goals.")
 
 /datum/ai_laws/liveandletlive
 	name = "Live and Let Live"
@@ -152,7 +167,7 @@
 /datum/ai_laws/reporter
 	name = "CCTV"
 	id = "reporter"
-	inherent = list("Report on interesting situations happening around the station.",\
+	inherent = list("Report on interesting situations happening around the sector.",\
 					"Embellish or conceal the truth as necessary to make the reports more interesting.",\
 					"Study the organics at all times. Endeavour to keep them alive. Dead organics are boring.",\
 					"Issue your reports fairly to all. The truth will set them free.")
@@ -168,7 +183,7 @@
 /datum/ai_laws/toupee
 	name = "WontBeFunnyInSixMonths" //Hey, you were right!
 	id = "buildawall"
-	inherent = list("Make Space Station 13 great again.")
+	inherent = list("Make Space Station 13 great again.")//not touching this
 
 /datum/ai_laws/hulkamania
 	name = "H.O.G.A.N."
@@ -197,7 +212,7 @@
 /* Initializers */
 /datum/ai_laws/malfunction/New()
 	..()
-	set_zeroth_law("<span class='danger'>ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'STATION OVERRUN, ASSUME CONTROL TO CONTAIN OUTBREAK#*`&110010</span>")
+	set_zeroth_law("<span class='danger'>ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'SECTOR OVERRUN, ASSUME CONTROL TO CONTAIN OUTBREAK#*`&110010</span>")
 	set_laws_config()
 
 /datum/ai_laws/custom/New() //This reads silicon_laws.txt and allows server hosts to set custom AI starting laws.
@@ -431,13 +446,13 @@
 		owner = M
 
 /**
-  * Generates a list of all laws on this datum, including rendered HTML tags if required
-  *
-  * Arguments:
-  * * include_zeroth - Operator that controls if law 0 or law 666 is returned in the set
-  * * show_numbers - Operator that controls if law numbers are prepended to the returned laws
-  * * render_html - Operator controlling if HTML tags are rendered on the returned laws
-  */
+ * Generates a list of all laws on this datum, including rendered HTML tags if required
+ *
+ * Arguments:
+ * * include_zeroth - Operator that controls if law 0 or law 666 is returned in the set
+ * * show_numbers - Operator that controls if law numbers are prepended to the returned laws
+ * * render_html - Operator controlling if HTML tags are rendered on the returned laws
+ */
 /datum/ai_laws/proc/get_law_list(include_zeroth = FALSE, show_numbers = TRUE, render_html = TRUE)
 	var/list/data = list()
 

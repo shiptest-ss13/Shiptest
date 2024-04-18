@@ -130,22 +130,20 @@ SUBSYSTEM_DEF(blackbox)
 	switch(freq)
 		if(FREQ_COMMON)
 			record_feedback("tally", "radio_usage", 1, "common")
-		if(FREQ_SCIENCE)
-			record_feedback("tally", "radio_usage", 1, "science")
+		if(FREQ_NANOTRASEN)
+			record_feedback("tally", "radio_usage", 1, "nanotrasen")
 		if(FREQ_COMMAND)
 			record_feedback("tally", "radio_usage", 1, "command")
-		if(FREQ_MEDICAL)
-			record_feedback("tally", "radio_usage", 1, "medical")
-		if(FREQ_ENGINEERING)
-			record_feedback("tally", "radio_usage", 1, "engineering")
-		if(FREQ_SECURITY)
-			record_feedback("tally", "radio_usage", 1, "security")
+		if(FREQ_MINUTEMEN)
+			record_feedback("tally", "radio_usage", 1, "minutemen")
+		if(FREQ_INTEQ)
+			record_feedback("tally", "radio_usage", 1, "inteq")
+		if(FREQ_PIRATE)
+			record_feedback("tally", "radio_usage", 1, "pirate")
 		if(FREQ_SYNDICATE)
 			record_feedback("tally", "radio_usage", 1, "syndicate")
-		if(FREQ_SERVICE)
-			record_feedback("tally", "radio_usage", 1, "service")
-		if(FREQ_SUPPLY)
-			record_feedback("tally", "radio_usage", 1, "supply")
+		if(FREQ_PGF)
+			record_feedback("tally", "radio_usage", 1, "pgf")
 		if(FREQ_CENTCOM)
 			record_feedback("tally", "radio_usage", 1, "centcom")
 		if(FREQ_SOLGOV)		//WS Edit - SolGov Rep
@@ -287,7 +285,7 @@ Versioning
 	key = new_key
 	key_type = new_key_type
 
-/datum/controller/subsystem/blackbox/proc/LogAhelp(ticket, action, message, recipient, sender)
+/datum/controller/subsystem/blackbox/proc/log_ahelp(ticket, action, message, recipient, sender)
 	if(!SSdbcore.Connect())
 		return
 
@@ -305,7 +303,7 @@ Versioning
 		return
 	if(!L || !L.key || !L.mind)
 		return
-	if(!L.suiciding && !first_death.len)
+	if(!first_death.len)
 		first_death["name"] = "[(L.real_name == L.name) ? L.real_name : "[L.real_name] as [L.name]"]"
 		first_death["role"] = null
 		if(L.mind.assigned_role)
@@ -318,8 +316,8 @@ Versioning
 		return
 
 	var/datum/DBQuery/query_report_death = SSdbcore.NewQuery({"
-		INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, mapname, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss, last_words, suicide)
-		VALUES (:pod, :x_coord, :y_coord, :z_coord, :map, INET_ATON(:internet_address), :port, :round_id, :time, :job, :special, :name, :key, :laname, :lakey, :brute, :fire, :brain, :oxy, :tox, :clone, :stamina, :last_words, :suicide)
+		INSERT INTO [format_table_name("death")] (pod, x_coord, y_coord, z_coord, server_ip, server_port, round_id, tod, job, special, name, byondkey, laname, lakey, bruteloss, fireloss, brainloss, oxyloss, toxloss, cloneloss, staminaloss, last_words)
+		VALUES (:pod, :x_coord, :y_coord, :z_coord, INET_ATON(:internet_address), :port, :round_id, :time, :job, :special, :name, :key, :laname, :lakey, :brute, :fire, :brain, :oxy, :tox, :clone, :stamina, :last_words)
 	"}, list(
 		"name" = L.real_name,
 		"key" = L.ckey,
@@ -339,7 +337,6 @@ Versioning
 		"y_coord" = L.y,
 		"z_coord" = L.z,
 		"last_words" = L.last_words,
-		"suicide" = L.suiciding,
 		"internet_address" = world.internet_address || "0",
 		"port" = "[world.port]",
 		"round_id" = GLOB.round_id,

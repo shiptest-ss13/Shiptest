@@ -110,7 +110,7 @@
 
 /obj/machinery/power/deck_relay/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/find_relays), 30)
+	addtimer(CALLBACK(src, PROC_REF(find_relays)), 30)
 
 ///Handles re-acquiring + merging powernets found by find_relays()
 /obj/machinery/power/deck_relay/proc/refresh()
@@ -144,13 +144,13 @@
 	if(C?.powernet)
 		connect_to_network(FALSE)
 
-	below = locate(/obj/machinery/power/deck_relay) in(SSmapping.get_turf_below(T))
-	above = locate(/obj/machinery/power/deck_relay) in(SSmapping.get_turf_above(T))
+	below = locate(/obj/machinery/power/deck_relay) in(T.below())
+	above = locate(/obj/machinery/power/deck_relay) in(T.above())
 	if(below || above)
 		icon_state = "cablerelay-on"
 		if(above)
 			above.below = src
 		if(below)
 			below.above = src
-		addtimer(CALLBACK(src, .proc/refresh), 20) //Wait a bit so we can find the one below, then get powering
+		addtimer(CALLBACK(src, PROC_REF(refresh)), 20) //Wait a bit so we can find the one below, then get powering
 	return TRUE

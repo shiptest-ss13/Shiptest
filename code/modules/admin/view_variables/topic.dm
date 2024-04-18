@@ -1,7 +1,7 @@
 //DO NOT ADD MORE TO THIS FILE.
 //Use vv_do_topic() for datums!
 /client/proc/view_var_Topic(href, href_list, hsrc)
-	if( (usr.client != src) || !src.holder || !holder.CheckAdminHref(href, href_list))
+	if((usr.client != src) || !src.holder || !holder.CheckAdminHref(href, href_list))
 		return
 	var/target = GET_VV_TARGET
 	vv_do_basic(target, href_list, href)
@@ -12,6 +12,9 @@
 		vv_do_list(target, href_list)
 	if(href_list["Vars"])
 		debug_variables(locate(href_list["Vars"]))
+		var/datum/href_target = locate(href_list["Vars"])
+		if(istype(href_target))//We can VV lists. Stop screaming so much.
+			href_target.vv_alert_admins()
 
 //Stuff below aren't in dropdowns/etc.
 
@@ -29,7 +32,7 @@
 				return
 
 			var/new_name = stripped_input(usr,"What would you like to name this mob?","Input a name",M.real_name,MAX_NAME_LEN)
-			if( !new_name || !M )
+			if(!new_name || !M)
 				return
 
 			message_admins("Admin [key_name_admin(usr)] renamed [key_name_admin(M)] to [new_name].")

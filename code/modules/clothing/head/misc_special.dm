@@ -2,7 +2,7 @@
  * Contents:
  *		Welding mask
  *		Cakehat
- *		Ushanka
+ *		trapper
  *		Pumpkin head
  *		Kitty ears
  *		Cardborg disguise
@@ -110,11 +110,11 @@
 	..()
 
 /*
- * Ushanka
+ * Trapper Hat
  */
-/obj/item/clothing/head/ushanka
-	name = "ushanka"
-	desc = "Perfect for winter in Siberia, da?"
+/obj/item/clothing/head/trapper
+	name = "trapper hat"
+	desc = "Perfect for the cold weather."
 	icon_state = "ushankadown"
 	item_state = "ushankadown"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -122,19 +122,19 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 
-	dog_fashion = /datum/dog_fashion/head/ushanka
+	dog_fashion = /datum/dog_fashion/head/trapper
 
-/obj/item/clothing/head/ushanka/attack_self(mob/user)
+/obj/item/clothing/head/trapper/attack_self(mob/user)
 	if(earflaps)
 		src.icon_state = "ushankaup"
 		src.item_state = "ushankaup"
 		earflaps = 0
-		to_chat(user, "<span class='notice'>You raise the ear flaps on the ushanka.</span>")
+		to_chat(user, "<span class='notice'>You raise the ear flaps on the trapper.</span>")
 	else
 		src.icon_state = "ushankadown"
 		src.item_state = "ushankadown"
 		earflaps = 1
-		to_chat(user, "<span class='notice'>You lower the ear flaps on the ushanka.</span>")
+		to_chat(user, "<span class='notice'>You lower the ear flaps on the trapper.</span>")
 
 /*
  * Pumpkin head
@@ -167,22 +167,19 @@
 	desc = "A pair of kitty ears. Meow!"
 	icon_state = "kitty"
 	color = "#999999"
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/kitty
 
-/obj/item/clothing/head/kitty/equipped(mob/living/carbon/human/user, slot)
+/obj/item/clothing/head/kitty/visual_equipped(mob/living/carbon/human/user, slot)
 	if(ishuman(user) && slot == ITEM_SLOT_HEAD)
-		update_icon(user)
+		update_icon(ALL, user)
 		user.update_inv_head() //Color might have been changed by update_icon.
 	..()
 
-/obj/item/clothing/head/kitty/update_icon(mob/living/carbon/human/user)
+/obj/item/clothing/head/kitty/update_icon(updates=ALL, mob/living/carbon/human/user)
+	. = ..()
 	if(ishuman(user))
 		add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)
-
-/obj/item/clothing/head/kitty/genuine
-	desc = "A pair of kitty ears. A tag on the inside says \"Hand made from real cats.\""
 
 /obj/item/clothing/head/hardhat/reindeer
 	name = "novelty reindeer hat"
@@ -192,7 +189,6 @@
 	flags_inv = 0
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	light_range = 1 //luminosity when on
-	dynamic_hair_suffix = ""
 
 	dog_fashion = /datum/dog_fashion/head/reindeer
 
@@ -226,13 +222,13 @@
 	icon_state = "hair_vlong"
 	item_state = "pwig"
 	flags_inv = HIDEHAIR
-	color = "#000"
+	color = "#000000"
 	var/hairstyle = "Very Long Hair"
 	var/adjustablecolor = TRUE //can color be changed manually?
 
 /obj/item/clothing/head/wig/Initialize(mapload)
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/wig/update_icon_state()
 	var/datum/sprite_accessory/S = GLOB.hairstyles_list[hairstyle]
@@ -242,6 +238,7 @@
 	else
 		icon = S.icon
 		icon_state = S.icon_state
+	return ..()
 
 /obj/item/clothing/head/wig/worn_overlays(isinhands = FALSE, file2use)
 	. = list()
@@ -264,7 +261,7 @@
 		user.visible_message("<span class='notice'>[user] changes \the [src]'s hairstyle to [new_style].</span>", "<span class='notice'>You change \the [src]'s hairstyle to [new_style].</span>")
 	if(newcolor && newcolor != color) // only update if necessary
 		add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
-	update_icon()
+	update_appearance()
 
 /obj/item/clothing/head/wig/afterattack(mob/living/carbon/human/target, mob/user)
 	. = ..()
@@ -272,17 +269,17 @@
 		to_chat(user, "<span class='notice'>You adjust the [src] to look just like [target.name]'s [target.hairstyle].</span>")
 		add_atom_colour("#[target.hair_color]", FIXED_COLOUR_PRIORITY)
 		hairstyle = target.hairstyle
-		update_icon()
+		update_appearance()
 
 /obj/item/clothing/head/wig/random/Initialize(mapload)
 	hairstyle = pick(GLOB.hairstyles_list - "Bald") //Don't want invisible wig
-	add_atom_colour("#[random_short_color()]", FIXED_COLOUR_PRIORITY)
+	add_atom_colour("#[random_color_natural()]", FIXED_COLOUR_PRIORITY)
 	. = ..()
 
 /obj/item/clothing/head/wig/natural
 	name = "natural wig"
 	desc = "A bunch of hair without a head attached. This one changes color to match the hair of the wearer. Nothing natural about that."
-	color = "#FFF"
+	color = "#FFFFFF"
 	adjustablecolor = FALSE
 	custom_price = 100
 
@@ -290,12 +287,12 @@
 	hairstyle = pick(GLOB.hairstyles_list - "Bald")
 	. = ..()
 
-/obj/item/clothing/head/wig/natural/equipped(mob/living/carbon/human/user, slot)
+/obj/item/clothing/head/wig/natural/visual_equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(ishuman(user) && slot == ITEM_SLOT_HEAD)
 		if (color != "#[user.hair_color]") // only update if necessary
 			add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)
-			update_icon()
+			update_appearance()
 		user.update_inv_head()
 
 /obj/item/clothing/head/bronze
@@ -321,7 +318,7 @@
 /obj/item/clothing/head/foilhat/Initialize(mapload)
 	. = ..()
 	if(!warped)
-		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD,  6, TRUE, null, CALLBACK(src, .proc/warp_up))
+		AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD,  6, TRUE, null, CALLBACK(src, PROC_REF(warp_up)))
 	else
 		warp_up()
 
@@ -376,3 +373,4 @@
 	. = ..()
 	if(!warped)
 		warp_up()
+

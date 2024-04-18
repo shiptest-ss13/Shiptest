@@ -4,7 +4,7 @@
 /obj/machinery/power/solar
 	name = "solar panel"
 	desc = "A solar panel. Generates electricity when in contact with sunlight."
-	icon = 'goon/icons/obj/power.dmi'
+	icon = 'icons/obj/machines/oldsolars.dmi'
 	icon_state = "sp_base"
 	density = TRUE
 	use_power = NO_POWER_USE
@@ -33,9 +33,10 @@
 	panel.layer = FLY_LAYER
 	Make(S)
 	connect_to_network()
-	RegisterSignal(SSsun, COMSIG_SUN_MOVED, .proc/queue_update_solar_exposure)
+	RegisterSignal(SSsun, COMSIG_SUN_MOVED, PROC_REF(queue_update_solar_exposure))
 
 /obj/machinery/power/solar/Destroy()
+	UnregisterSignal(SSsun, COMSIG_SUN_MOVED)
 	unset_control() //remove from control computer
 	return ..()
 
@@ -109,6 +110,9 @@
 
 /obj/machinery/power/solar/update_overlays()
 	. = ..()
+	//This can get called while it's not initialized
+	if(!panel)
+		return
 	var/matrix/turner = matrix()
 	turner.Turn(azimuth_current)
 	panel.transform = turner
@@ -131,12 +135,31 @@
 	if(azimuth_current != azimuth_target)
 		azimuth_current = azimuth_target
 		occlusion_setup()
-		update_icon()
+		update_appearance()
 		needs_to_update_solar_exposure = TRUE
 
 ///trace towards sun to see if we're in shadow
 /obj/machinery/power/solar/proc/occlusion_setup()
 	obscured = TRUE
+
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if(sun_type == STATIC_OBSCURED)
+		return
+		// go straight to jail
+	if(sun_type == STATIC_EXPOSED)
+		var/turf/loc_turf = loc
+		loc_turf = loc_turf && loc_turf.above()
+		if (!loc_turf)
+			var/count = 0
+			for(var/turf/other_turf in orange(1, src))
+				count += !isgroundlessturf(other_turf)
+			if (count >= 9)
+				return
+		else if(!isopenturf(loc_turf))
+			return
+		obscured = FALSE
+		return
+		// do not continue
 
 	var/distance = OCCLUSION_DISTANCE
 	var/target_x = round(sin(SSsun.azimuth), 0.01)
@@ -161,6 +184,11 @@
 	sunfrac = 0
 	if(obscured)
 		return 0
+
+	var/sun_type = virtual_level_trait(ZTRAIT_SUN_TYPE)
+	if (sun_type == STATIC_EXPOSED)
+		sunfrac = 1
+		return 1
 
 	var/sun_azimuth = SSsun.azimuth
 	if(azimuth_current == sun_azimuth) //just a quick optimization for the most frequent case
@@ -203,7 +231,7 @@
 /obj/item/solar_assembly
 	name = "solar panel assembly"
 	desc = "A solar panel assembly kit, allows constructions of a solar panel, or with a tracking circuit board, a solar tracker."
-	icon = 'goon/icons/obj/power.dmi'
+	icon = 'icons/obj/machines/oldsolars.dmi'
 	icon_state = "sp_base"
 	item_state = "electropack"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -292,7 +320,7 @@
 /obj/machinery/power/solar_control
 	name = "solar panel control"
 	desc = "A controller for solar panel arrays."
-	icon = 'icons/obj/computer.dmi'
+	icon = 'icons/obj/machines/computer.dmi'
 	icon_state = "computer"
 	density = TRUE
 	use_power = IDLE_POWER_USE
@@ -315,7 +343,7 @@
 /obj/machinery/power/solar_control/Initialize()
 	. = ..()
 	azimuth_rate = SSsun.base_rotation
-	RegisterSignal(SSsun, COMSIG_SUN_MOVED, .proc/timed_track)
+	RegisterSignal(SSsun, COMSIG_SUN_MOVED, PROC_REF(timed_track))
 	connect_to_network()
 	if(powernet)
 		set_panels(azimuth_target)
@@ -325,6 +353,7 @@
 		M.unset_control()
 	if(connected_tracker)
 		connected_tracker.unset_control()
+	UnregisterSignal(SSsun, COMSIG_SUN_MOVED)
 	return ..()
 
 //search for unconnected panels and trackers in the computer powernet and connect them
@@ -349,8 +378,8 @@
 	. += mutable_appearance(icon, icon_keyboard)
 	if(machine_stat & BROKEN)
 		. += mutable_appearance(icon, "[icon_state]_broken")
-	else
-		. += mutable_appearance(icon, icon_screen)
+		return
+	. += mutable_appearance(icon, icon_screen)
 
 /obj/machinery/power/solar_control/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -411,26 +440,26 @@
 		if(I.use_tool(src, user, 20, volume=50))
 			if (src.machine_stat & BROKEN)
 				to_chat(user, "<span class='notice'>The broken glass falls out.</span>")
-				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer( src.loc )
-				new /obj/item/shard( src.loc )
-				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control( A )
+				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer(src.loc)
+				new /obj/item/shard(src.loc)
+				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control(A)
 				for (var/obj/C in src)
 					C.forceMove(drop_location())
 				A.circuit = M
 				A.state = 3
-				A.icon_state = "3"
 				A.set_anchored(TRUE)
+				A.update_appearance()
 				qdel(src)
 			else
 				to_chat(user, "<span class='notice'>You disconnect the monitor.</span>")
-				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer( src.loc )
-				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control( A )
+				var/obj/structure/frame/computer/A = new /obj/structure/frame/computer(src.loc)
+				var/obj/item/circuitboard/computer/solar_control/M = new /obj/item/circuitboard/computer/solar_control(A)
 				for (var/obj/C in src)
 					C.forceMove(drop_location())
 				A.circuit = M
 				A.state = 4
-				A.icon_state = "4"
 				A.set_anchored(TRUE)
+				A.update_appearance()
 				qdel(src)
 	else if(user.a_intent != INTENT_HARM && !(I.item_flags & NOBLUDGEON))
 		attack_hand(user)
@@ -485,7 +514,7 @@
 
 /obj/item/paper/guides/jobs/engi/solars
 	name = "paper- 'Going green! Setup your own solar array instructions.'"
-	info = "<h1>Welcome</h1><p>At greencorps we love the environment, and space. With this package you are able to help mother nature and produce energy without any usage of fossil fuel or plasma! Singularity energy is dangerous while solar energy is safe, which is why it's better. Now here is how you setup your own solar array.</p><p>You can make a solar panel by wrenching the solar assembly onto a cable node. Adding a glass panel, reinforced or regular glass will do, will finish the construction of your solar panel. It is that easy!</p><p>Now after setting up 19 more of these solar panels you will want to create a solar tracker to keep track of our mother nature's gift, the sun. These are the same steps as before except you insert the tracker equipment circuit into the assembly before performing the final step of adding the glass. You now have a tracker! Now the last step is to add a computer to calculate the sun's movements and to send commands to the solar panels to change direction with the sun. Setting up the solar computer is the same as setting up any computer, so you should have no trouble in doing that. You do need to put a wire node under the computer, and the wire needs to be connected to the tracker.</p><p>Congratulations, you should have a working solar array. If you are having trouble, here are some tips. Make sure all solar equipment are on a cable node, even the computer. You can always deconstruct your creations if you make a mistake.</p><p>That's all to it, be safe, be green!</p>"
+	default_raw_text = "<h1>Welcome</h1><p>At greencorps we love the environment, and space. With this package you are able to help mother nature and produce energy without any usage of fossil fuel or plasma! Singularity energy is dangerous while solar energy is safe, which is why it's better. Now here is how you setup your own solar array.</p><p>You can make a solar panel by wrenching the solar assembly onto a cable node. Adding a glass panel, reinforced or regular glass will do, will finish the construction of your solar panel. It is that easy!</p><p>Now after setting up 19 more of these solar panels you will want to create a solar tracker to keep track of our mother nature's gift, the sun. These are the same steps as before except you insert the tracker equipment circuit into the assembly before performing the final step of adding the glass. You now have a tracker! Now the last step is to add a computer to calculate the sun's movements and to send commands to the solar panels to change direction with the sun. Setting up the solar computer is the same as setting up any computer, so you should have no trouble in doing that. You do need to put a wire node under the computer, and the wire needs to be connected to the tracker.</p><p>Congratulations, you should have a working solar array. If you are having trouble, here are some tips. Make sure all solar equipment are on a cable node, even the computer. You can always deconstruct your creations if you make a mistake.</p><p>That's all to it, be safe, be green!</p>"
 
 #undef SOLAR_GEN_RATE
 #undef OCCLUSION_DISTANCE

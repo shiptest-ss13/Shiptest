@@ -6,13 +6,17 @@ SUBSYSTEM_DEF(icon_smooth)
 	flags = SS_TICKER
 
 	///Blueprints assemble an image of what pipes/manifolds/wires look like on initialization, and thus should be taken after everything's been smoothed
-	var/list/blueprint_queue = list()
 	var/list/smooth_queue = list()
 	var/list/deferred = list()
 
+	/// An associative list matching atom types to their typecaches of connector exceptions. Their no_connector_typecache var is overridden to the
+	/// element in this list associated with their type; if no such element exists, and their no_connector_typecache is nonempty, the typecache is created
+	/// according to the type's default value for no_connector_typecache, that typecache is added to this list, and the variable is set to that typecache.
+	var/list/type_no_connector_typecaches = list()
+
 /datum/controller/subsystem/icon_smooth/fire()
 	var/list/cached = smooth_queue
-	while(length(cached))
+	while(cached.len)
 		var/atom/smoothing_atom = cached[length(cached)]
 		cached.len--
 		if(QDELETED(smoothing_atom) || !(smoothing_atom.smoothing_flags & SMOOTH_QUEUED))
@@ -38,23 +42,13 @@ SUBSYSTEM_DEF(icon_smooth)
 	var/list/queue = smooth_queue
 	smooth_queue = list()
 
-	while(length(queue))
+	while(queue.len)
 		var/atom/smoothing_atom = queue[length(queue)]
 		queue.len--
 		if(QDELETED(smoothing_atom) || !(smoothing_atom.smoothing_flags & SMOOTH_QUEUED) || smoothing_atom.z <= 2)
 			continue
 		smoothing_atom.smooth_icon()
 		CHECK_TICK
-
-	queue = blueprint_queue
-	blueprint_queue = list()
-
-	for(var/item in queue)
-		var/atom/movable/movable_item = item
-		if(!isturf(movable_item.loc))
-			continue
-		var/turf/item_loc = movable_item.loc
-		item_loc.add_blueprints(movable_item)
 
 	return ..()
 
@@ -70,5 +64,13 @@ SUBSYSTEM_DEF(icon_smooth)
 /datum/controller/subsystem/icon_smooth/proc/remove_from_queues(atom/thing)
 	thing.smoothing_flags &= ~SMOOTH_QUEUED
 	smooth_queue -= thing
-	blueprint_queue -= thing
 	deferred -= thing
+
+/datum/controller/subsystem/icon_smooth/proc/get_no_connector_typecache(cache_key, list/no_connector_types, connector_strict_typing)
+	var/list/cached_typecache = type_no_connector_typecaches[cache_key]
+	if(cached_typecache)
+		return cached_typecache
+
+	var/list/new_typecache = typecacheof(no_connector_types, only_root_path = connector_strict_typing)
+	type_no_connector_typecaches[cache_key] = new_typecache
+	return new_typecache

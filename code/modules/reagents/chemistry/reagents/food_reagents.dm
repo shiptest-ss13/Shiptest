@@ -118,18 +118,18 @@
 			F.fry(volume)
 			F.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
 
-/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+/datum/reagent/consumable/cooking_oil/expose_mob(mob/living/M, method = TOUCH, method = SMOKE, reac_volume, show_message = 1, touch_protection = 0)
 	if(!istype(M))
 		return
 	var/boiling = FALSE
 	if(holder && holder.chem_temp >= fry_temperature)
 		boiling = TRUE
-	if(method != VAPOR && method != TOUCH) //Directly coats the mob, and doesn't go into their bloodstream
+	if(method != VAPOR && method != TOUCH && method != SMOKE) //Directly coats the mob, and doesn't go into their bloodstream
 		return ..()
 	if(!boiling)
 		return TRUE
 	var/oil_damage = ((holder.chem_temp / fry_temperature) * 0.33) //Damage taken per unit
-	if(method == TOUCH)
+	if(method == TOUCH || method == SMOKE)
 		oil_damage *= 1 - M.get_permeability_protection()
 	var/FryLoss = round(min(38, oil_damage * reac_volume))
 	if(!HAS_TRAIT(M, TRAIT_OIL_FRIED))
@@ -139,7 +139,7 @@
 			M.emote("scream")
 		playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 		ADD_TRAIT(M, TRAIT_OIL_FRIED, "cooking_oil_react")
-		addtimer(CALLBACK(M, /mob/living/proc/unfry_mob), 3)
+		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, unfry_mob)), 3)
 	if(FryLoss)
 		M.adjustFireLoss(FryLoss)
 	return TRUE
@@ -172,6 +172,12 @@
 	M.AdjustSleeping(40)
 	..()
 	. = 1
+
+/datum/reagent/consumable/sugar/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
+	. = ..()
+	if(chems.has_reagent(type, 1))
+		mytray.adjustWeeds(rand(2,3))
+		mytray.adjustPests(rand(1,2))
 
 /datum/reagent/consumable/virus_food
 	name = "Virus Food"
@@ -281,7 +287,7 @@
 		return
 
 	var/mob/living/carbon/victim = M
-	if(method == TOUCH || method == VAPOR)
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
 		var/pepper_proof = victim.is_pepper_proof()
 
 		//check for protection
@@ -294,7 +300,7 @@
 			victim.confused = max(M.confused, 5) // 10 seconds
 			victim.Knockdown(3 SECONDS)
 			victim.add_movespeed_modifier(/datum/movespeed_modifier/reagent/pepperspray)
-			addtimer(CALLBACK(victim, /mob.proc/remove_movespeed_modifier, /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
+			addtimer(CALLBACK(victim, TYPE_PROC_REF(/mob, remove_movespeed_modifier), /datum/movespeed_modifier/reagent/pepperspray), 10 SECONDS)
 		victim.update_damage_hud()
 	if(method == INGEST)
 		if(!holder.has_reagent(/datum/reagent/consumable/milk))
@@ -325,19 +331,6 @@
 		return
 	if(M.has_bane(BANE_SALT))
 		M.mind.disrupt_spells(-200)
-	if (issquidperson(M))
-		if(reac_volume < 5)
-			return
-		if (method == INGEST)
-			to_chat(M, "<span class='danger'>Your tongue shrivels as you taste the salt!</span>")
-			M.adjustFireLoss(reac_volume/2, TRUE)
-		else if (method == TOUCH)
-			M.adjustFireLoss(reac_volume/2, TRUE)
-			if(!M.incapacitated())
-				var/obj/item/I = M.get_active_held_item()
-				M.throw_item(get_ranged_target_turf(M, pick(GLOB.alldirs), rand(1, 3)))
-				to_chat(M, "<span class='warning'>The salt causes your arm to spasm! It burns!</span>")
-				M.log_message("threw [I] due to a Muscle Spasm", INDIVIDUAL_ATTACK_LOG)
 
 /datum/reagent/consumable/sodiumchloride/expose_turf(turf/T, reac_volume) //Creates an umbra-blocking salt pile
 	if(!istype(T))
@@ -438,7 +431,7 @@
 	var/obj/effect/hotspot/hotspot = (locate(/obj/effect/hotspot) in T)
 	if(hotspot)
 		var/datum/gas_mixture/lowertemp = T.return_air()
-		lowertemp.set_temperature(max( min(lowertemp.return_temperature()-2000,lowertemp.return_temperature() / 2) ,TCMB))
+		lowertemp.set_temperature(max(min(lowertemp.return_temperature()-2000,lowertemp.return_temperature() / 2) ,TCMB))
 		lowertemp.react(src)
 		qdel(hotspot)
 
@@ -568,7 +561,7 @@
 	..()
 
 /datum/reagent/consumable/honey/expose_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH)))
+	if(iscarbon(M) && (method in list(TOUCH, VAPOR, PATCH, SMOKE)))
 		var/mob/living/carbon/C = M
 		for(var/s in C.surgeries)
 			var/datum/surgery/S = s
@@ -680,7 +673,7 @@
 /datum/reagent/consumable/tinlux/proc/add_reagent_light(mob/living/living_holder)
 	var/obj/effect/dummy/lighting_obj/moblight/mob_light_obj = living_holder.mob_light(2)
 	LAZYSET(mobs_affected, living_holder, mob_light_obj)
-	RegisterSignal(living_holder, COMSIG_PARENT_QDELETING, .proc/on_living_holder_deletion)
+	RegisterSignal(living_holder, COMSIG_PARENT_QDELETING, PROC_REF(on_living_holder_deletion))
 
 /datum/reagent/consumable/tinlux/proc/remove_reagent_light(mob/living/living_holder)
 	UnregisterSignal(living_holder, COMSIG_PARENT_QDELETING)
@@ -711,26 +704,31 @@
 	color = "#eef442" // rgb: 238, 244, 66
 	taste_description = "mournful honking"
 
-
 /datum/reagent/consumable/liquidelectricity
 	name = "Liquid Electricity"
-	description = "The blood of Ethereals, and the stuff that keeps them going. Great for them, horrid for anyone else."
+	description = "A glowing, viscous substance that radiates pure energy." //this is no longer Elzousa blood
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#97ee63"
 	taste_description = "pure electricity"
-
-/datum/reagent/consumable/liquidelectricity/expose_mob(mob/living/M, method=TOUCH, reac_volume) //can't be on life because of the way blood works.
-	if((method == INGEST || method == INJECT || method == PATCH) && iscarbon(M))
-		var/mob/living/carbon/C = M
-		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
-		if(istype(stomach))
-			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/liquidelectricity/on_mob_life(mob/living/carbon/M)
 	if(prob(25) && !isethereal(M))
 		M.electrocute_act(rand(10,15), "Liquid Electricity in their body", 1) //lmao at the newbs who eat energy bars
 		playsound(M, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 	return ..()
+
+/datum/reagent/consumable/electrolytes
+	name = "Electrolytes"
+	description = "It's what crystal-plant-dragons crave."
+	nutriment_factor = 5 * REAGENTS_METABOLISM
+	color = "#8effdd"
+
+/datum/reagent/consumable/electrolytes/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	if((method == INGEST || method == INJECT || method == PATCH) && iscarbon(M))
+		var/mob/living/carbon/C = M
+		var/obj/item/organ/stomach/ethereal/stomach = C.getorganslot(ORGAN_SLOT_STOMACH)
+		if(istype(stomach))
+			stomach.adjust_charge(reac_volume * REM * ETHEREAL_CHARGE_SCALING_MULTIPLIER)	  //WS Edit -- Ethereal Charge Scaling
 
 /datum/reagent/consumable/astrotame
 	name = "Astrotame"
@@ -800,3 +798,68 @@
 	color = "#78280A" // rgb: 120 40, 10
 	taste_mult = 2.5 //sugar's 1.5, capsacin's 1.5, so a good middle ground.
 	taste_description = "smokey sweetness"
+
+/datum/reagent/consumable/laughsyrup
+	name = "Laughin' Syrup"
+	description = "The product of juicing Laughin' Peas. Fizzy, and seems to change flavour based on what it's used with!"
+	nutriment_factor = 5 * REAGENTS_METABOLISM
+	color = "#803280"
+	taste_mult = 2
+	taste_description = "fizzy sweetness"
+
+/datum/reagent/consumable/pyre_elementum
+	name = "Pyre Elementum"
+	description = "This is what makes Fireblossoms even hotter."
+	color = "#d30639"
+	taste_description = "burning heat"
+	taste_mult = 8.0
+	nutriment_factor = -1 * REAGENTS_METABOLISM
+	var/ingested = FALSE
+
+/datum/reagent/consumable/pyre_elementum/expose_mob(mob/living/M, method=TOUCH, reac_volume)
+	if(method == INGEST)
+		ingested = TRUE
+		return
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "pyre_elementum", /datum/mood_event/irritate, name)		// Applied if not eaten
+	if(method == TOUCH || method == SMOKE || method == VAPOR)
+		M.adjust_fire_stacks(reac_volume / 5)
+		return
+	..()
+
+/datum/reagent/consumable/pyre_elementum/on_mob_life(mob/living/carbon/M)
+	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, M.get_body_temp_normal())		// Doesn't kill you like capsaicin
+	if(!ingested)							// Unless you didn't eat it
+		M.adjustFireLoss(0.25*REM, 0)
+	..()
+
+/datum/reagent/consumable/pyre_elementum/on_mob_end_metabolize(mob/living/M)
+	SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "pyre_elementum")
+	..()
+
+/datum/reagent/consumable/fervor
+	name = "Fervor Ignium"
+	description = "Healing chem made from mushrooms."
+	color = "#b6a076"
+	taste_description = "mushrooms"
+	nutriment_factor = -1 * REAGENTS_METABOLISM
+
+/datum/reagent/consumable/fervor/on_mob_life(mob/living/carbon/M)
+	if(prob(80))
+		M.adjustBruteLoss(-2*REM, 0)
+		M.adjustFireLoss(-2*REM, 0)
+	M.adjustStaminaLoss(-5*REM, 0)
+	..()
+
+/datum/reagent/consumable/cheese_spread
+	name = "Cheese Spread"
+	description = "I cant believe its not cheese!"
+	color = "#FBDB65"
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	taste_mult = 2
+	taste_description = "cheese"
+
+/datum/reagent/consumable/peanut_butter
+	name = "Peanut Butter"
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	taste_description = "peanut"
+	reagent_state = SOLID

@@ -44,7 +44,7 @@
 											"<span class='userdanger'>[user] tries to squirt something into your eyes, but fails!</span>")
 
 					to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution.</span>")
-					update_icon()
+					update_appearance()
 					return
 			else if(isalien(target)) //hiss-hiss has no eyes!
 				to_chat(target, "<span class='danger'>[target] does not seem to have any eyes!</span>")
@@ -57,14 +57,14 @@
 			var/mob/M = target
 			var/R
 			if(reagents)
-				for(var/datum/reagent/A in src.reagents.reagent_list)
+				for(var/datum/reagent/A as anything in src.reagents.reagent_list)
 					R += "[A] ([num2text(A.volume)]),"
 
 			log_combat(user, M, "squirted", R)
 
 		trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution.</span>")
-		update_icon()
+		update_appearance()
 
 	else
 
@@ -80,11 +80,12 @@
 
 		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the solution.</span>")
 
-		update_icon()
+		update_appearance()
 
 /obj/item/reagent_containers/dropper/update_overlays()
 	. = ..()
-	if(reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "dropper")
-		filling.color = mix_color_from_reagents(reagents.reagent_list)
-		. += filling
+	if(!reagents.total_volume)
+		return
+	var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "dropper")
+	filling.color = mix_color_from_reagents(reagents.reagent_list)
+	. += filling

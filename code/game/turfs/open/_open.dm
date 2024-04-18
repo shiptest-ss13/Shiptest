@@ -1,3 +1,7 @@
+#define IGNITE_TURF_CHANCE 30
+#define IGNITE_TURF_LOW_POWER 8
+#define IGNITE_TURF_HIGH_POWER 22
+
 /turf/open
 	plane = FLOOR_PLANE
 
@@ -15,6 +19,8 @@
 	var/barefootstep = null
 	var/clawfootstep = null
 	var/heavyfootstep = null
+	/// Reference to the turf fire on the turf
+	var/obj/effect/abstract/turf_fire/turf_fire
 
 /turf/open/ComponentInitialize()
 	. = ..()
@@ -76,7 +82,7 @@
 	var/sound
 
 /turf/open/indestructible/sound/Entered(atom/movable/AM)
-	..()
+	. = ..()
 	if(ismob(AM))
 		playsound(src,sound,50,TRUE)
 
@@ -93,7 +99,10 @@
 	heavyfootstep = FOOTSTEP_LAVA
 	tiled_dirt = FALSE
 
-/turf/open/indestructible/necropolis/Initialize()
+/turf/open/indestructible/necropolis/icecropolis
+	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
+
+/turf/open/indestructible/necropolis/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(prob(12))
 		icon_state = "necro[rand(2,3)]"
@@ -118,7 +127,7 @@
 	smoothing_flags = SMOOTH_CORNERS
 	tiled_dirt = FALSE
 
-/turf/open/indestructible/hierophant/two
+/turf/open/indestructible/hierophant/two //I assume this exists to bypass turf smoothing to make patterns in the floor of the arena. cool!
 
 /turf/open/indestructible/hierophant/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	return FALSE
@@ -149,11 +158,10 @@
 	baseturfs = /turf/open/indestructible/airblock
 
 /turf/open/Initalize_Atmos(times_fired)
-	if(!blocks_air)
-		if(!istype(air,/datum/gas_mixture/turf))
-			air = new(2500,src)
-		air.copy_from_turf(src)
-		update_air_ref(planetary_atmos ? 1 : 2)
+	if(!istype(air,/datum/gas_mixture/turf))
+		air = new(2500, src)
+	air.copy_from_turf(src)
+	update_air_ref(planetary_atmos ? AIR_REF_PLANETARY_TURF : AIR_REF_OPEN_TURF)
 
 	update_visuals()
 
@@ -169,6 +177,11 @@
 /turf/open/proc/TakeTemperature(temp)
 	air.set_temperature(air.return_temperature() + temp)
 	air_update_turf()
+
+/turf/open/temperature_expose()
+	if(prob(IGNITE_TURF_CHANCE))
+		IgniteTurf(rand(IGNITE_TURF_LOW_POWER,IGNITE_TURF_HIGH_POWER))
+	return ..()
 
 /turf/open/proc/freon_gas_act()
 	for(var/obj/I in contents)
@@ -189,8 +202,7 @@
 		M.apply_water()
 
 	wash(CLEAN_WASH)
-	for(var/am in src)
-		var/atom/movable/movable_content = am
+	for(var/atom/movable/movable_content as anything in src)
 		if(ismopable(movable_content)) // Will have already been washed by the wash call above at this point.
 			continue
 		movable_content.wash(CLEAN_WASH)
@@ -233,7 +245,7 @@
 			lube |= SLIDE_ICE
 
 		if(lube&SLIDE)
-			new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 4), 1, FALSE, CALLBACK(C, /mob/living/carbon/.proc/spin, 1, 1))
+			new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 4), 1, FALSE, CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, spin), 1, 1))
 		else if(lube&SLIDE_ICE)
 			if(C.force_moving) //If we're already slipping extend it
 				qdel(C.force_moving)
@@ -254,8 +266,20 @@
 
 /turf/open/rad_act(pulse_strength)
 	. = ..()
-	if (air.get_moles(GAS_CO2) && air.get_moles(GAS_O2))
+	if (air?.get_moles(GAS_CO2) && air?.get_moles(GAS_O2))
 		pulse_strength = min(pulse_strength,air.get_moles(GAS_CO2)*1000,air.get_moles(GAS_O2)*2000) //Ensures matter is conserved properly
 		air.set_moles(GAS_CO2, max(air.get_moles(GAS_CO2)-(pulse_strength/1000),0))
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))
 		air.adjust_moles(GAS_PLUOXIUM, pulse_strength/4000)
+
+/turf/open/IgniteTurf(power, fire_color)
+	if(turf_fire)
+		turf_fire.AddPower(power)
+		return
+	if(isgroundlessturf(src))
+		return
+	new /obj/effect/abstract/turf_fire(src, power, fire_color)
+
+#undef IGNITE_TURF_CHANCE
+#undef IGNITE_TURF_LOW_POWER
+#undef IGNITE_TURF_HIGH_POWER

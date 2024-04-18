@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(tgui_Topic(href_list))
 		return
 	if(href_list["reload_statbrowser"])
-		src << browse(file('html/statbrowser.html'), "window=statbrowser")
+		stat_panel.reinitialize()
 	// Log all hrefs
 	log_href("[src] (usr:[usr]\[[COORD(usr)]\]) : [hsrc ? "[hsrc] " : ""][href]")
 
@@ -91,13 +91,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			cmd_mentor_pm(M,null)
 		else
 			cmd_mentor_pm(href_list["mentor_msg"],null)
-		return
-
-	// Mentor Follow
-	if(href_list["mentor_follow"])
-		var/mob/living/M = locate(href_list["mentor_follow"])
-		if(istype(M))
-			mentor_follow(M)
 		return
 
 	//byond bug ID:2256651
@@ -137,7 +130,16 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(QDELETED(real_src))
 			return
 
+	//fun fact: Topic() acts like a verb and is executed at the end of the tick like other verbs. So we have to queue it if the server is
+	//overloaded
+	if(hsrc && hsrc != holder && DEFAULT_TRY_QUEUE_VERB(VERB_CALLBACK(src, PROC_REF(_Topic), hsrc, href, href_list)))
+		return
 	..()	//redirect to hsrc.Topic()
+
+///dumb workaround because byond doesnt seem to recognize the PROC_REF(Topic()) typepath for /datum/proc/Topic() from the client Topic,
+///so we cant queue it without this
+/client/proc/_Topic(datum/hsrc, href, list/href_list)
+	return hsrc.Topic(href, href_list)
 
 /client/proc/is_content_unlocked()
 	if(!prefs.unlock_content)
@@ -217,11 +219,16 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
 
-	// Instantiate tgui panel
-	tgui_panel = new(src)
+	// Instantiate stat panel
+	stat_panel = new(src, "statbrowser")
+	stat_panel.subscribe(src, PROC_REF(on_stat_panel_message))
 
-	GLOB.ahelp_tickets.ClientLogin(src)
+	// Instantiate tgui panel
+	tgui_panel = new(src, "browseroutput")
+
+	GLOB.ahelp_tickets.client_login(src)
 	GLOB.interviews.client_login(src)
+	GLOB.requests.client_login(src)
 	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
 	holder = GLOB.admin_datums[ckey]
@@ -280,11 +287,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			if(!I || I == src)
 				continue
 			var/client/C = I
-			if(C.key && (C.key != key) )
+			if(C.key && (C.key != key))
 				var/matches
-				if( (C.address == address) )
+				if((C.address == address))
 					matches += "IP ([address])"
-				if( (C.computer_id == computer_id) )
+				if((C.computer_id == computer_id))
 					if(matches)
 						matches += " and "
 					matches += "ID ([computer_id])"
@@ -301,9 +308,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		reconnecting = TRUE
 		player_details = GLOB.player_details[ckey]
 		player_details.byond_version = full_version
+		player_details.last_known_ip = address
 	else
 		player_details = new(ckey)
 		player_details.byond_version = full_version
+		player_details.last_known_ip = address
 		GLOB.player_details[ckey] = player_details
 
 
@@ -334,9 +343,15 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(SSinput.initialized)
 		set_macros()
 
+	// Initialize stat panel
+	stat_panel.initialize(
+		inline_html = file2text('html/statbrowser.html'),
+		inline_js = file2text('html/statbrowser.js'),
+		inline_css = file2text('html/statbrowser.css'),
+	)
+	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
+
 	// Initialize tgui panel
-	src << browse(file('html/statbrowser.html'), "window=statbrowser")
-	addtimer(CALLBACK(src, .proc/check_panel_loaded), 30 SECONDS)
 	tgui_panel.initialize()
 
 	if(alert_mob_dupe_login)
@@ -386,13 +401,15 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			qdel(src)
 			return 0
 
-	if( (world.address == address || !address) && !GLOB.host )
+	if((world.address == address || !address) && !GLOB.host)
 		GLOB.host = key
 		world.update_status()
 
 	if(holder)
 		add_admin_verbs()
-		to_chat(src, get_message_output("memo"))
+		var/memo_message = get_message_output("memo")
+		if(memo_message)
+			to_chat(src, memo_message)
 		adminGreet()
 
 	if(mentor && !holder) //WS Edit - Mentors
@@ -444,9 +461,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	if(CONFIG_GET(flag/autoconvert_notes))
 		convert_notes_sql(ckey)
-	to_chat(src, get_message_output("message", ckey))
+	var/user_messages = get_message_output("message", ckey)
+	if(user_messages)
+		to_chat(src, user_messages)
 	if(!winexists(src, "asset_cache_browser")) // The client is using a custom skin, tell them.
 		to_chat(src, "<span class='warning'>Unable to access asset cache browser, if you are using a custom skin file, please allow DS to download the updated version, if you are not, then make a bug report. This is not a critical issue but can cause issues with resource downloading, as it is impossible to know when extra resources arrived to you.</span>")
+
+	update_ambience_pref()
 
 
 	//This is down here because of the browse() calls in tooltip/New()
@@ -461,6 +482,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	view_size.setZoomMode()
 	fit_viewport()
 	Master.UpdateTickRate()
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CLIENT_CONNECT, src)
 
 //////////////
 //DISCONNECT//
@@ -481,11 +503,14 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	GLOB.clients -= src
 	GLOB.directory -= ckey
 	log_access("Logout: [key_name(src)]")
-	GLOB.ahelp_tickets.ClientLogout(src)
+	GLOB.ahelp_tickets.client_logout(src)
 	GLOB.interviews.client_logout(src)
+	GLOB.requests.client_logout(src)
 	SSserver_maint.UpdateHubStatus()
 	if(credits)
 		QDEL_LIST(credits)
+	if(obj_window)
+		QDEL_NULL(obj_window)
 	if(holder)
 		adminGreet(1)
 		holder.owner = null
@@ -503,17 +528,24 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 				"Someone come hold me :(",\
 				"I need someone on me :(",\
 				"What happened? Where has everyone gone?",\
-				"Forever alone :("\
+				"Forever alone :(",\
+				"All Alone On A Late Night :^(",\
+				"Love me, feed me, don't leave me :("\
 			)
 
 			send2tgs("Server", "[cheesy_message] (No admins online)")
 	QDEL_LIST_ASSOC_VAL(char_render_holders)
 	if(movingmob != null)
-		movingmob.client_mobs_in_contents -= mob
-		UNSETEMPTY(movingmob.client_mobs_in_contents)
+		LAZYREMOVE(movingmob.client_mobs_in_contents, mob)
+		movingmob = null
+	active_mousedown_item = null
+	QDEL_NULL(view_size)
+	QDEL_NULL(void)
+	QDEL_NULL(tooltips)
+	SSambience.ambience_listening_clients -= src
 	seen_messages = null
 	Master.UpdateTickRate()
-	. = ..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
+	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening
 	return QDEL_HINT_HARDDEL_NOW
 
 /client/proc/set_client_age_from_db(connectiontopic)
@@ -559,7 +591,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return
 
 	//If we aren't an admin, and the flag is set
-	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey])
+	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey] && !(ckey in GLOB.bunker_passthrough))
 		var/living_recs = CONFIG_GET(number/panic_bunker_living)
 		//Relies on pref existing, but this proc is only called after that occurs, so we're fine.
 		var/minutes = get_exp_living(pure_numeric = TRUE)
@@ -596,6 +628,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(!account_join_date)
 			account_join_date = "Error"
 			account_age = -1
+		else if(ckey in GLOB.bunker_passthrough)
+			GLOB.bunker_passthrough -= ckey
 	qdel(query_client_in_db)
 	var/datum/DBQuery/query_get_client_age = SSdbcore.NewQuery(
 		"SELECT firstseen, DATEDIFF(Now(),firstseen), accountjoindate, DATEDIFF(Now(),accountjoindate) FROM [format_table_name("player")] WHERE ckey = :ckey",
@@ -820,25 +854,37 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		ip_intel = res.intel
 
 /client/Click(atom/object, atom/location, control, params)
-	var/ab = FALSE
-	var/list/L = params2list(params)
+	if(click_intercept_time)
+		if(click_intercept_time >= world.time)
+			click_intercept_time = 0 //Reset and return. Next click should work, but not this one.
+			return
+		click_intercept_time = 0 //Just reset. Let's not keep re-checking forever.
 
-	var/dragged = L["drag"]
-	if(dragged && !L[dragged])
+	var/ab = FALSE
+	var/list/modifiers = params2list(params)
+
+	var/button_clicked = LAZYACCESS(modifiers, "button")
+
+	var/dragged = LAZYACCESS(modifiers, DRAG)
+	if(dragged && button_clicked != dragged)
 		return
 
-	if (object && object == middragatom && L["left"])
+	if (object && object == middragatom && button_clicked == LEFT_CLICK)
 		ab = max(0, 5 SECONDS-(world.time-middragtime)*0.1)
 
 	var/mcl = CONFIG_GET(number/minute_click_limit)
 	if (!holder && mcl)
 		var/minute = round(world.time, 600)
+
 		if (!clicklimiter)
 			clicklimiter = new(LIMITER_SIZE)
+
 		if (minute != clicklimiter[CURRENT_MINUTE])
 			clicklimiter[CURRENT_MINUTE] = minute
 			clicklimiter[MINUTE_COUNT] = 0
-		clicklimiter[MINUTE_COUNT] += 1+(ab)
+
+		clicklimiter[MINUTE_COUNT] += 1 + (ab)
+
 		if (clicklimiter[MINUTE_COUNT] > mcl)
 			var/msg = "Your previous click was ignored because you've done too many in a minute."
 			if (minute != clicklimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
@@ -859,23 +905,26 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/second = round(world.time, 10)
 		if (!clicklimiter)
 			clicklimiter = new(LIMITER_SIZE)
+
 		if (second != clicklimiter[CURRENT_SECOND])
 			clicklimiter[CURRENT_SECOND] = second
 			clicklimiter[SECOND_COUNT] = 0
-		clicklimiter[SECOND_COUNT] += 1+(!!ab)
+
+		clicklimiter[SECOND_COUNT] += 1 + (!!ab)
+
 		if (clicklimiter[SECOND_COUNT] > scl)
-			to_chat(src, "<span class='danger'>Your previous click was ignored because you've done too many in a second</span>")
+			to_chat(src, span_danger("Your previous click was ignored because you've done too many in a second"))
 			return
 
+	//check if the server is overloaded and if it is then queue up the click for next tick
+	//yes having it call a wrapping proc on the subsystem is fucking stupid glad we agree unfortunately byond insists its reasonable
+	if(!QDELETED(object) && TRY_QUEUE_VERB(VERB_CALLBACK(object, TYPE_PROC_REF(/atom, _Click), location, control, params), VERB_OVERTIME_QUEUE_THRESHOLD, SSinput, control))
+		return
+
 	if (prefs.hotkeys)
-		// If hotkey mode is enabled, then clicking the map will automatically
-		// unfocus the text bar. This removes the red color from the text bar
-		// so that the visual focus indicator matches reality.
-		winset(src, null, "input.background-color=[COLOR_INPUT_DISABLED]")
-
+		winset(src, null, "input.focus=false")
 	else
-		winset(src, null, "input.focus=true input.background-color=[COLOR_INPUT_ENABLED]")
-
+		winset(src, null, "input.focus=true")
 	..()
 
 /client/proc/add_verbs_from_config()
@@ -902,7 +951,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 #if (PRELOAD_RSC == 0)
 	var/static/next_external_rsc = 0
 	var/list/external_rsc_urls = CONFIG_GET(keyed_list/external_rsc_urls)
-	if(length(external_rsc_urls.len))
+	if(length(external_rsc_urls))
 		next_external_rsc = WRAP(next_external_rsc+1, 1, external_rsc_urls.len+1)
 		preload_rsc = external_rsc_urls[next_external_rsc]
 #endif
@@ -914,7 +963,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 		//Precache the client with all other assets slowly, so as to not block other browse() calls
 		if (CONFIG_GET(flag/asset_simple_preload))
-			addtimer(CALLBACK(SSassets.transport, /datum/asset_transport.proc/send_assets_slow, src, SSassets.transport.preload), 5 SECONDS)
+			addtimer(CALLBACK(SSassets.transport, TYPE_PROC_REF(/datum/asset_transport, send_assets_slow), src, SSassets.transport.preload), 5 SECONDS)
 
 		#if (PRELOAD_RSC == 0)
 		for (var/name in GLOB.vox_sounds)
@@ -946,14 +995,14 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	view_size.setTo(clamp(change, min, max), clamp(change, min, max))
 
 /**
-  * Updates the keybinds for special keys
-  *
-  * Handles adding macros for the keys that need it
-  * And adding movement keys to the clients movement_keys list
-  * At the time of writing this, communication(OOC, Say, IC) require macros
-  * Arguments:
-  * * direct_prefs - the preference we're going to get keybinds from
-  */
+ * Updates the keybinds for special keys
+ *
+ * Handles adding macros for the keys that need it
+ * And adding movement keys to the clients movement_keys list
+ * At the time of writing this, communication(OOC, Say, IC) require macros
+ * Arguments:
+ * * direct_prefs - the preference we're going to get keybinds from
+ */
 /client/proc/update_special_keybinds(datum/preferences/direct_prefs)
 	var/datum/preferences/D = prefs || direct_prefs
 	if(!D?.key_bindings)
@@ -978,6 +1027,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=looc")
 				if("Me")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=me")
+				if("Whisper")
+					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=whisper")
 
 /client/proc/change_view(new_size)
 	if (isnull(new_size))
@@ -990,7 +1041,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/mob/living/M = mob
 		M.update_damage_hud()
 	if (prefs.auto_fit_viewport)
-		addtimer(CALLBACK(src,.verb/fit_viewport,10)) //Delayed to avoid wingets from Login calls.
+		addtimer(CALLBACK(src, VERB_REF(fit_viewport), 1 SECONDS)) //Delayed to avoid wingets from Login calls.
 
 /client/proc/generate_clickcatcher()
 	if(!void)
@@ -1038,12 +1089,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	var/list/verbstoprocess = verbs.Copy()
 	if(mob?.client?.prefs.broadcast_login_logout)
 		verbstoprocess += mob.verbs
-		for(var/AM in mob.contents)
-			var/atom/movable/thing = AM
+		for(var/atom/movable/thing as anything in mob.contents)
 			verbstoprocess += thing.verbs
 	panel_tabs.Cut() // panel_tabs get reset in init_verbs on JS side anyway
-	for(var/thing in verbstoprocess)
-		var/procpath/verb_to_init = thing
+	for(var/procpath/verb_to_init as anything in verbstoprocess)
 		if(!verb_to_init)
 			continue
 		if(verb_to_init.hidden)
@@ -1052,16 +1101,16 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			continue
 		panel_tabs |= verb_to_init.category
 		verblist[++verblist.len] = list(verb_to_init.category, verb_to_init.name)
-	src << output("[url_encode(json_encode(panel_tabs))];[url_encode(json_encode(verblist))]", "statbrowser:init_verbs")
+	src.stat_panel.send_message("init_verbs", list(panel_tabs = panel_tabs, verblist = verblist))
 
 /client/proc/check_panel_loaded()
-	if(statbrowser_ready)
+	if(stat_panel.is_ready())
 		return
 	to_chat(src, "<span class='userdanger'>Statpanel failed to load, click <a href='?src=[REF(src)];reload_statbrowser=1'>here</a> to reload the panel </span>")
 
 /**
-  * Initializes dropdown menus on client
-  */
+ * Initializes dropdown menus on client
+ */
 /client/proc/initialize_menus()
 	var/list/topmenus = GLOB.menulist[/datum/verbs/menu]
 	for (var/thing in topmenus)
@@ -1088,3 +1137,28 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	if(holder)
 		holder.filteriffic = new /datum/filter_editor(in_atom)
 		holder.filteriffic.ui_interact(mob)
+
+/client/proc/update_ambience_pref()
+	if(prefs.toggles & SOUND_AMBIENCE)
+		if(SSambience.ambience_listening_clients[src] > world.time)
+			return // If already properly set we don't want to reset the timer.
+		SSambience.ambience_listening_clients[src] = world.time + 10 SECONDS //Just wait 10 seconds before the next one aight mate? cheers.
+	else
+		SSambience.ambience_listening_clients -= src
+
+/**
+ * Handles incoming messages from the stat-panel TGUI.
+ */
+/client/proc/on_stat_panel_message(type, payload)
+	switch(type)
+		if("Update-Verbs")
+			init_verbs()
+		if("Remove-Tabs")
+			panel_tabs -= payload["tab"]
+		if("Send-Tabs")
+			panel_tabs |= payload["tab"]
+		if("Reset-Tabs")
+			panel_tabs = list()
+		if("Set-Tab")
+			stat_tab = payload["tab"]
+			SSstatpanels.immediate_send_stat_data(src)

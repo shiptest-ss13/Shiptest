@@ -44,6 +44,10 @@
 	required_reagents = list(/datum/reagent/consumable/flour = 10)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
 
+/datum/chemical_reaction/lightbeer
+	results = list(/datum/reagent/consumable/ethanol/beer/light = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/beer = 1, /datum/reagent/water = 4) //fifth of the boozepower, so light beer is one parts beer and four parts water
+
 /datum/chemical_reaction/vodka
 	results = list(/datum/reagent/consumable/ethanol/vodka = 10)
 	required_reagents = list(/datum/reagent/consumable/potato_juice = 10)
@@ -227,6 +231,23 @@
 /datum/chemical_reaction/pina_colada
 	results = list(/datum/reagent/consumable/ethanol/pina_colada = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 1, /datum/reagent/consumable/pineapplejuice = 3, /datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/limejuice = 1)
+
+/datum/chemical_reaction/mudders_milk
+	results = list(/datum/reagent/consumable/ethanol/mudders_milk = 6)
+	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/ethanol/irish_cream = 3, /datum/reagent/consumable/ethanol/beer = 2)
+	required_catalysts = list(/datum/reagent/consumable/ethanol/creme_de_cacao = 1)
+
+/datum/chemical_reaction/bullet_hell
+	results = list(/datum/reagent/consumable/ethanol/bullethell = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/fuel = 2, /datum/reagent/consumable/ethanol/absinthe = 3)
+
+/datum/chemical_reaction/shotinthedark
+	results = list(/datum/reagent/consumable/ethanol/shotinthedark = 10)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/consumable/ethanol/tequila = 5, /datum/reagent/gold = 3)
+
+/datum/chemical_reaction/homesick
+	results = list(/datum/reagent/consumable/ethanol/homesick = 15)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_coconut = 5, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/ethanol/creme_de_menthe = 5)
 
 ////DRINKS THAT REQUIRED IMPROVED SPRITES BELOW:: -Agouri/////
 
@@ -436,7 +457,7 @@
 
 /datum/chemical_reaction/stinger
 	results = list(/datum/reagent/consumable/ethanol/stinger = 15)
-	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 10, /datum/reagent/consumable/ethanol/creme_de_menthe = 5 )
+	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 10, /datum/reagent/consumable/ethanol/creme_de_menthe = 5)
 
 /datum/chemical_reaction/quintuplesec
 	results = list(/datum/reagent/consumable/ethanol/quintuple_sec = 15)
@@ -564,11 +585,6 @@
 	results = list(/datum/reagent/consumable/ethanol/blazaam = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 2, /datum/reagent/consumable/peachjuice = 1, /datum/reagent/bluespace = 1)
 
-/datum/chemical_reaction/planet_cracker
-	results = list(/datum/reagent/consumable/ethanol/planet_cracker = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol/champagne = 2, /datum/reagent/consumable/ethanol/lizardwine = 2, /datum/reagent/consumable/eggyolk = 1, /datum/reagent/gold = 1)
-	mix_message = "The liquid's color starts shifting as the nanogold is alternately corroded and redeposited."
-
 /datum/chemical_reaction/red_queen
 	results = list(/datum/reagent/consumable/red_queen = 10)
 	required_reagents = list(/datum/reagent/consumable/tea = 6, /datum/reagent/mercury = 2, /datum/reagent/consumable/blackpepper = 1, /datum/reagent/growthserum = 1)
@@ -576,3 +592,91 @@
 /datum/chemical_reaction/mauna_loa
 	results = list(/datum/reagent/consumable/ethanol/mauna_loa = 5)
 	required_reagents = list(/datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/ethanol/kahlua = 1, /datum/reagent/consumable/ethanol/bahama_mama = 2)
+
+/datum/chemical_reaction/drink/godfather
+	results = list(/datum/reagent/consumable/ethanol/godfather = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 1, /datum/reagent/consumable/ethanol/whiskey = 1)
+
+/datum/chemical_reaction/drink/godmother
+	results = list(/datum/reagent/consumable/ethanol/godmother = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 1, /datum/reagent/consumable/ethanol/vodka = 1)
+
+/datum/chemical_reaction/drink/amaretto_alexander
+	results = list(/datum/reagent/consumable/ethanol/amaretto_alexander = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 1, /datum/reagent/consumable/ethanol/creme_de_cacao = 1, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/ginger_amaretto
+	results = list(/datum/reagent/consumable/ethanol/ginger_amaretto = 4)
+	required_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 1, /datum/reagent/consumable/sol_dry = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/lemonjuice = 1)
+
+/datum/chemical_reaction/spriters_bane
+	results = list(/datum/reagent/consumable/ethanol/spriters_bane = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/fernet = 1, /datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/ethanol/black_russian = 1)
+	mix_message = "The solution begins to bubble over and coats the glass in a black outline."
+
+/datum/chemical_reaction/freezer_burn
+	results = list(/datum/reagent/consumable/ethanol/freezer_burn = 2)
+	required_reagents = list(/datum/reagent/consumable/ethanol/sbiten = 1, /datum/reagent/consumable/ethanol/mojito = 1)
+	mix_message = "The glass heats up and cools down at the same time!"
+
+/datum/chemical_reaction/out_of_touch
+	results = list(/datum/reagent/consumable/ethanol/out_of_touch = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/screwdrivercocktail = 2, /datum/reagent/consumable/ethanol/margarita = 1)
+	mix_message = "The solution seems to settle just in time to be a tasty drink."
+
+/datum/chemical_reaction/darkest_chocolate
+	results = list(/datum/reagent/consumable/ethanol/darkest_chocolate = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/black_russian = 2, /datum/reagent/consumable/ethanol/creme_de_cacao = 2, /datum/reagent/consumable/ethanol/irishcarbomb = 1)
+	mix_message = "The area around the glass seems to darken as the mixture forms!"
+
+/datum/chemical_reaction/archmagus_brew
+	results = list(/datum/reagent/consumable/ethanol/archmagus_brew = 4)
+	required_reagents = list(/datum/reagent/consumable/ethanol/wizz_fizz = 2, /datum/reagent/consumable/ethanol/crevice_spike = 1, /datum/reagent/consumable/ethanol/stinger = 1)
+	mix_message = "The mixture bubbles intensely before settling in the glass."
+
+/datum/chemical_reaction/out_of_lime
+	results = list(/datum/reagent/consumable/ethanol/out_of_lime = 4)
+	required_reagents = list(/datum/reagent/consumable/lemonade = 1, /datum/reagent/consumable/ethanol/beer/green = 1, /datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/ethanol/out_of_touch = 1)
+	mix_message = "The glass cycles through different colors before settling on one."
+
+/datum/chemical_reaction/cogchamp
+	results = list(/datum/reagent/consumable/ethanol/cogchamp = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol/screwdrivercocktail = 1)
+	mix_message = "You hear faint sounds of gears turning as it mixes."
+	mix_sound = 'sound/effects/clockcult_gateway_closing.ogg'
+
+/datum/chemical_reaction/ash_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/ash_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/absinthe = 3, /datum/reagent/ash = 1, /datum/reagent/drug/mushroomhallucinogen = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/weather/ashstorm/inside/weak_end.ogg'
+
+/datum/chemical_reaction/ice_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/ice_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/sake = 3, /datum/reagent/polar_bear_fur = 1, /datum/reagent/consumable/frostoil = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/effects/glassbr3.ogg'
+
+/datum/chemical_reaction/shock_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/shock_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/lemonjuice = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/machines/defib_zap.ogg'
+
+/datum/chemical_reaction/hearth_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/hearth_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/hcider = 3, /datum/reagent/consumable/pyre_elementum = 1, /datum/reagent/fuel = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/items/welder.ogg'
+
+/datum/chemical_reaction/force_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/force_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 3, /datum/reagent/calcium = 1, /datum/reagent/consumable/spacemountainwind = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/magic/forcewall.ogg'
+
+/datum/chemical_reaction/prism_wine
+	results = list(/datum/reagent/consumable/ethanol/trickwine/prism_wine = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/toxin/plasma = 1, /datum/reagent/consumable/tinlux = 1)
+	required_container = /obj/structure/fermenting_barrel/distiller
+	mix_sound ='sound/weapons/laser.ogg'

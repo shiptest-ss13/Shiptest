@@ -158,7 +158,7 @@
 					dat += "<br><b>Medical Robots:</b>"
 					var/bdat = null
 					for(var/mob/living/simple_animal/bot/medbot/M in GLOB.alive_mob_list)
-						if(M.get_virtual_z_level() != src.get_virtual_z_level())
+						if(M.virtual_z() != src.virtual_z())
 							continue	//only find medibots on the same z-level as the computer
 						var/turf/bl = get_turf(M)
 						if(bl)	//if it can't find a turf for the medibot, then it probably shouldn't be showing up
@@ -442,8 +442,8 @@
 				screen = 4
 
 			else if(href_list["new"])
-				if((istype(active1, /datum/data/record) && !( istype(active2, /datum/data/record) )))
-					var/datum/data/record/R = new /datum/data/record(  )
+				if((istype(active1, /datum/data/record) && !(istype(active2, /datum/data/record))))
+					var/datum/data/record/R = new /datum/data/record()
 					R.fields["name"] = active1.fields["name"]
 					R.fields["id"] = active1.fields["id"]
 					R.name = text("Medical Record #[]", R.fields["id"])
@@ -472,7 +472,7 @@
 				var/counter = 1
 				while(active2.fields[text("com_[]", counter)])
 					counter++
-				active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [] [], []<BR>[]", authenticated, rank, station_time_timestamp(), time2text(world.realtime, "MMM DD"), GLOB.year_integer+540, t1)
+				active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [], []<BR>[]", authenticated, rank, station_time_timestamp(), sector_datestamp(), t1)
 
 			else if(href_list["del_c"])
 				if((istype(active2, /datum/data/record) && active2.fields[text("com_[]", href_list["del_c"])]))
@@ -490,7 +490,7 @@
 						active2 = R
 					else
 						//Foreach continue //goto(3229)
-				if(!( active2 ))
+				if(!(active2))
 					temp = text("Could not locate record [].", sanitize(t1))
 				else
 					for(var/datum/data/record/E in GLOB.data_core.general)
@@ -501,31 +501,32 @@
 					screen = 4
 
 			else if(href_list["print_p"])
-				if(!( printing ))
+				if(!(printing))
 					printing = 1
 					GLOB.data_core.medicalPrintCount++
 					playsound(loc, 'sound/items/poster_being_created.ogg', 100, TRUE)
 					sleep(30)
-					var/obj/item/paper/P = new /obj/item/paper( loc )
-					P.info = "<CENTER><B>Medical Record - (MR-[GLOB.data_core.medicalPrintCount])</B></CENTER><BR>"
+					var/obj/item/paper/printed_paper = new /obj/item/paper(loc)
+					var/final_paper_text = "<CENTER><B>Medical Record - (MR-[GLOB.data_core.medicalPrintCount])</B></CENTER><BR>"
 					if(active1 in GLOB.data_core.general)
-						P.info += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-						P.info += "\nSpecies: [active1.fields["species"]]<BR>"
-						P.info += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+						final_paper_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
+						final_paper_text += "\nSpecies: [active1.fields["species"]]<BR>"
+						final_paper_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
 					else
-						P.info += "<B>General Record Lost!</B><BR>"
+						final_paper_text += "<B>General Record Lost!</B><BR>"
 					if(active2 in GLOB.data_core.medical)
-						P.info += text("<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: []<BR>\nDNA: []<BR>\n<BR>\nMinor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nMajor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nAllergies: []<BR>\nDetails: []<BR>\n<BR>\nCurrent Diseases: [] (per disease info placed in log/comment section)<BR>\nDetails: []<BR>\n<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["blood_type"], active2.fields["b_dna"], active2.fields["mi_dis"], active2.fields["mi_dis_d"], active2.fields["ma_dis"], active2.fields["ma_dis_d"], active2.fields["alg"], active2.fields["alg_d"], active2.fields["cdi"], active2.fields["cdi_d"], active2.fields["notes"])
+						final_paper_text += text("<BR>\n<CENTER><B>Medical Data</B></CENTER><BR>\nBlood Type: []<BR>\nDNA: []<BR>\n<BR>\nMinor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nMajor Disabilities: []<BR>\nDetails: []<BR>\n<BR>\nAllergies: []<BR>\nDetails: []<BR>\n<BR>\nCurrent Diseases: [] (per disease info placed in log/comment section)<BR>\nDetails: []<BR>\n<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["blood_type"], active2.fields["b_dna"], active2.fields["mi_dis"], active2.fields["mi_dis_d"], active2.fields["ma_dis"], active2.fields["ma_dis_d"], active2.fields["alg"], active2.fields["alg_d"], active2.fields["cdi"], active2.fields["cdi_d"], active2.fields["notes"])
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
-							P.info += text("[]<BR>", active2.fields[text("com_[]", counter)])
+							final_paper_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
 							counter++
-						P.name = text("MR-[] '[]'", GLOB.data_core.medicalPrintCount, active1.fields["name"])
+						printed_paper.name = text("MR-[] '[]'", GLOB.data_core.medicalPrintCount, active1.fields["name"])
 					else
-						P.info += "<B>Medical Record Lost!</B><BR>"
-						P.name = text("MR-[] '[]'", GLOB.data_core.medicalPrintCount, "Record Lost")
-					P.info += "</TT>"
-					P.update_icon()
+						final_paper_text += "<B>Medical Record Lost!</B><BR>"
+						printed_paper.name = text("MR-[] '[]'", GLOB.data_core.medicalPrintCount, "Record Lost")
+					final_paper_text += "</TT>"
+					printed_paper.add_raw_text(final_paper_text)
+					printed_paper.update_appearance()
 					printing = null
 
 	add_fingerprint(usr)
@@ -548,7 +549,8 @@
 					if(3)
 						R.fields["age"] = rand(AGE_MIN, AGE_MAX)
 					if(4)
-						R.fields["blood_type"] = random_blood_type()
+						var/datum/blood_type/blood = random_blood_type()
+						R.fields["blood_type"] = blood.name
 					if(5)
 						R.fields["p_stat"] = pick("*Unconscious*", "Active", "Physically Unfit")
 					if(6)
@@ -576,3 +578,4 @@
 	icon_screen = "medlaptop"
 	icon_keyboard = "laptop_key"
 	pass_flags = PASSTABLE
+	unique_icon = TRUE

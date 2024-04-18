@@ -27,6 +27,7 @@
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/toxin/acid/fluacid = 0.5, /datum/reagent/toxin/acid = 0.5)
 	rarity = 20
+	research = PLANT_RESEARCH_TIER_3
 
 /obj/item/reagent_containers/food/snacks/grown/nettle // "snack"
 	seed = /obj/item/seeds/nettle
@@ -46,10 +47,6 @@
 	attack_verb = list("stung")
 	wine_power = 20
 	wine_flavor = "tingling itchiness" //WS edit: new wine flavors
-
-/obj/item/reagent_containers/food/snacks/grown/nettle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is eating some of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	return (BRUTELOSS|TOXLOSS)
 
 /obj/item/reagent_containers/food/snacks/grown/nettle/pickup(mob/living/user)
 	..()

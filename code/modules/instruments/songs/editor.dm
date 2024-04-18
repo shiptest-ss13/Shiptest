@@ -1,6 +1,6 @@
 /**
-  * Returns the HTML for the status UI for this song datum.
-  */
+ * Returns the HTML for the status UI for this song datum.
+ */
 /datum/song/proc/instrument_status_ui()
 	. = list()
 	. += "<div class='statusDisplay'>"
@@ -88,8 +88,8 @@
 	popup.open()
 
 /**
-  * Parses a song the user has input into lines and stores them.
-  */
+ * Parses a song the user has input into lines and stores them.
+ */
 /datum/song/proc/ParseSong(text)
 	set waitfor = FALSE
 	//split into lines
@@ -160,7 +160,7 @@
 		tempo = sanitize_tempo(tempo + text2num(href_list["tempo"]))
 
 	else if(href_list["play"])
-		INVOKE_ASYNC(src, .proc/start_playing, usr)
+		INVOKE_ASYNC(src, PROC_REF(start_playing), usr)
 
 	else if(href_list["newline"])
 		var/newline = html_encode(input("Enter your line: ", parent.name) as text|null)

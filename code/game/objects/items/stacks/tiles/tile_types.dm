@@ -11,21 +11,28 @@
 	throw_speed = 3
 	throw_range = 7
 	max_amount = 60
-	var/turf_type = null
-	var/mineralType = null
 	novariants = TRUE
-	var/human_maxHealth = 100
+	/// What type of turf does this tile produce.
+	var/turf_type = null
+	/// Determines certain welder interactions.
+	var/mineralType = null
+	/// Cached associative lazy list to hold the radial options for tile reskinning. See tile_reskinning.dm for more information. Pattern: list[type] -> image
+	var/list/tile_reskin_types
+
 
 /obj/item/stack/tile/Initialize(mapload, amount)
 	. = ..()
 	pixel_x = rand(-3, 3)
 	pixel_y = rand(-3, 3) //randomize a little
+	if(tile_reskin_types)
+		tile_reskin_types = tile_reskin_list(tile_reskin_types)
+
 
 /obj/item/stack/tile/examine(mob/user)
 	. = ..()
 	if(throwforce && !is_cyborg) //do not want to divide by zero or show the message to borgs who can't throw
 		var/verb
-		switch(CEILING(human_maxHealth / throwforce, 1)) //throws to crit a human
+		switch(CEILING(MAX_LIVING_HEALTH / throwforce, 1)) //throws to crit a human
 			if(1 to 3)
 				verb = "superb"
 			if(4 to 6)
@@ -39,6 +46,7 @@
 		if(!verb)
 			return
 		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
+
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
 
@@ -119,6 +127,60 @@
 	item_state = "tile-wood"
 	turf_type = /turf/open/floor/wood
 	resistance_flags = FLAMMABLE
+	color = WOOD_COLOR_GENERIC
+	tile_reskin_types = list(
+		/obj/item/stack/tile/wood,
+		/obj/item/stack/tile/wood/mahogany,
+		/obj/item/stack/tile/wood/maple,
+		/obj/item/stack/tile/wood/ebony,
+		/obj/item/stack/tile/wood/walnut,
+		/obj/item/stack/tile/wood/bamboo,
+		/obj/item/stack/tile/wood/birch,
+		/obj/item/stack/tile/wood/yew
+		)
+
+/obj/item/stack/tile/wood/mahogany
+	name = "mahogany wood floor tile"
+	color = WOOD_COLOR_RICH
+	turf_type = /turf/open/floor/wood/mahogany
+	merge_type = /obj/item/stack/tile/wood/mahogany
+
+
+/obj/item/stack/tile/wood/maple
+	name = "maple wood floor tile"
+	color = WOOD_COLOR_PALE
+	turf_type = /turf/open/floor/wood/maple
+	merge_type = /obj/item/stack/tile/wood/maple
+
+/obj/item/stack/tile/wood/ebony
+	name = "ebony wood floor tile"
+	color = WOOD_COLOR_BLACK
+	turf_type = /turf/open/floor/wood/ebony
+	merge_type = /obj/item/stack/tile/wood/ebony
+
+/obj/item/stack/tile/wood/walnut
+	name = "walnut wood floor tile"
+	color = WOOD_COLOR_CHOCOLATE
+	turf_type = /turf/open/floor/wood/walnut
+	merge_type = /obj/item/stack/tile/wood/walnut
+
+/obj/item/stack/tile/wood/bamboo
+	name = "bamboo wood floor tile"
+	color = WOOD_COLOR_PALE2
+	turf_type = /turf/open/floor/wood/bamboo
+	merge_type = /obj/item/stack/tile/wood/bamboo
+
+/obj/item/stack/tile/wood/birch
+	name = "birch wood floor tile"
+	color = WOOD_COLOR_PALE3
+	turf_type = /turf/open/floor/wood/bamboo
+	merge_type = /obj/item/stack/tile/wood/bamboo
+
+/obj/item/stack/tile/wood/yew
+	name = "yew wood floor tile"
+	color = WOOD_COLOR_YELLOW
+	turf_type = /turf/open/floor/wood/yew
+	merge_type = /obj/item/stack/tile/wood/yew
 
 //Basalt
 /obj/item/stack/tile/basalt
@@ -139,6 +201,13 @@
 	turf_type = /turf/open/floor/carpet
 	resistance_flags = FLAMMABLE
 	tableVariant = /obj/structure/table/wood/fancy
+
+/obj/item/stack/tile/carpet/red_gold
+	name = "fancy red carpet"
+	icon_state = "tile-carpet-red_gold"
+	item_state = "tile-carpet-red_gold"
+	turf_type = /turf/open/floor/carpet/red_gold
+	tableVariant = /obj/structure/table/wood/fancy/red_gold
 
 /obj/item/stack/tile/carpet/black
 	name = "black carpet"
@@ -221,6 +290,40 @@
 	item_state = "tile-carpet-orange"
 	turf_type = /turf/open/floor/carpet/donk
 
+/obj/item/stack/tile/carpet/nanoweave
+	name = "nanoweave carpet"
+	icon = 'icons/obj/tiles.dmi'
+	desc = "A piece of nanoweave carpet."
+	icon_state = "dark_carpet_tile"
+	custom_materials = list(/datum/material/iron=500, /datum/material/plasma=500) //basically tiles made of plasteel
+	resistance_flags = FIRE_PROOF
+	turf_type = /turf/open/floor/carpet/nanoweave
+
+/obj/item/stack/tile/carpet/nanoweave/red
+	name = "nanoweave carpet (red)"
+	icon_state = "red_carpet_tile"
+	turf_type = /turf/open/floor/carpet/nanoweave/red
+
+/obj/item/stack/tile/carpet/nanoweave/blue
+	name = "nanoweave carpet (blue)"
+	icon_state = "blue_carpet_tile"
+	turf_type = /turf/open/floor/carpet/nanoweave/blue
+
+/obj/item/stack/tile/carpet/nanoweave/purple
+	name = "nanoweave carpet (purple)"
+	icon_state = "purple_carpet_tile"
+	turf_type = /turf/open/floor/carpet/nanoweave/purple
+
+/obj/item/stack/tile/carpet/nanoweave/orange
+	name = "nanoweave carpet (orange)"
+	icon_state = "orange_carpet_tile"
+	turf_type = /turf/open/floor/carpet/nanoweave/orange
+
+/obj/item/stack/tile/carpet/nanoweave/beige
+	name = "nanoweave carpet (beige)"
+	icon_state = "beige_carpet_tile"
+	turf_type = /turf/open/floor/carpet/nanoweave/beige
+
 /obj/item/stack/tile/carpet/fifty
 	amount = 50
 
@@ -300,6 +403,11 @@
 	item_state = "tile-bcircuit"
 	turf_type = /turf/open/floor/circuit
 	custom_materials = list(/datum/material/iron = 500, /datum/material/glass = 500) // WS Edit - Item Materials
+	tile_reskin_types = list(
+		/obj/item/stack/tile/circuit,
+		/obj/item/stack/tile/circuit/green,
+		/obj/item/stack/tile/circuit/red
+		)
 
 /obj/item/stack/tile/circuit/green
 	name = "green circuit tile"
@@ -331,6 +439,11 @@
 	icon_state = "tile_pod"
 	item_state = "tile-pod"
 	turf_type = /turf/open/floor/pod
+	tile_reskin_types = list(
+		/obj/item/stack/tile/pod,
+		/obj/item/stack/tile/pod/light,
+		/obj/item/stack/tile/pod/dark
+		)
 
 /obj/item/stack/tile/pod/light
 	name = "light pod floor tile"
@@ -361,6 +474,15 @@
 	mineralType = "metal"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
+	color = COLOR_FLOORTILE_GRAY
+	tile_reskin_types = list(
+		/obj/item/stack/tile/plasteel,
+		/obj/item/stack/tile/plasteel/dark,
+		/obj/item/stack/tile/plasteel/white,
+		/obj/item/stack/tile/plasteel/tech,
+		/obj/item/stack/tile/plasteel/tech/grid,
+		/obj/item/stack/tile/plasteel/tech/techmaint
+		)
 
 /obj/item/stack/tile/plasteel/cyborg
 	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
@@ -374,6 +496,45 @@
 	icon_state = "tile_plastic"
 	custom_materials = list(/datum/material/plastic=500)
 	turf_type = /turf/open/floor/plastic
+
+/obj/item/stack/tile/plasteel/dark
+	name = "dark tile"
+	turf_type = /turf/open/floor/plasteel/dark
+	merge_type = /obj/item/stack/tile/plasteel/dark
+	color = COLOR_TILE_GRAY
+
+/obj/item/stack/tile/plasteel/white
+	name = "white tile"
+	turf_type = /turf/open/floor/plasteel/white
+	merge_type = /obj/item/stack/tile/plasteel/white
+	color = COLOR_WHITE
+
+/obj/item/stack/tile/plasteel/grimy
+	name = "grimy floor tile"
+	turf_type = /turf/open/floor/plasteel/grimy
+	merge_type = /obj/item/stack/tile/plasteel/grimy
+	color = null
+
+/obj/item/stack/tile/plasteel/tech
+	name = "techfloor tile"
+	icon_state = "tile_podlight"
+	turf_type = /turf/open/floor/plasteel/tech
+	merge_type = /obj/item/stack/tile/plasteel/tech
+	color = null
+
+/obj/item/stack/tile/plasteel/tech/grid
+	name = "techfloor grid tile"
+	icon_state = "tile_poddark"
+	turf_type = /turf/open/floor/plasteel/tech/grid
+	merge_type = /obj/item/stack/tile/plasteel/tech/grid
+	color = null
+
+/obj/item/stack/tile/plasteel/tech/techmaint
+	name = "techmaint tile"
+	icon_state = "tile_pod"
+	turf_type = /turf/open/floor/plasteel/tech/techmaint
+	merge_type = /obj/item/stack/tile/plasteel/tech/techmaint
+	color = null
 
 /obj/item/stack/tile/material
 	name = "floor tile"
@@ -393,3 +554,17 @@
 
 /obj/item/stack/tile/eighties/loaded
 	amount = 15
+
+/obj/item/stack/tile/glass
+	name = "glass tile"
+	singular_name = "glass floor tile"
+	desc = "The glass you walk on."
+	icon_state = "glass_tile"
+	turf_type = /turf/open/floor/glass
+
+/obj/item/stack/tile/glass/reinforced
+	name = "reinforced glass tile"
+	singular_name = "reinforced glass tile"
+	desc = "The glass you walk on."
+	icon_state = "rglass_tile"
+	turf_type = /turf/open/floor/glass/reinforced

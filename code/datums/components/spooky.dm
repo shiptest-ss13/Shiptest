@@ -2,10 +2,14 @@
 	var/too_spooky = TRUE //will it spawn a new instrument?
 
 /datum/component/spooky/Initialize()
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/spectral_attack)
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(spectral_attack))
 
 /datum/component/spooky/proc/spectral_attack(datum/source, mob/living/carbon/C, mob/user)
-	SIGNAL_HANDLER_DOES_SLEEP
+	SIGNAL_HANDLER
+
+	INVOKE_ASYNC(src, PROC_REF(spectral_attack_async), source, C, user)
+
+/datum/component/spooky/proc/spectral_attack_async(datum/source, mob/living/carbon/C, mob/user)
 
 	if(ishuman(user)) //this weapon wasn't meant for mortals.
 		var/mob/living/carbon/human/U = user
@@ -27,7 +31,7 @@
 			H.Paralyze(15) //zombies can't resist the doot
 		C.Jitter(35)
 		C.stuttering = 20
-		if((!istype(H.dna.species, /datum/species/skeleton)) && (!istype(H.dna.species, /datum/species/golem)) && (!istype(H.dna.species, /datum/species/android)) && (!istype(H.dna.species, /datum/species/jelly)))
+		if((!istype(H.dna.species, /datum/species/skeleton)) && (!istype(H.dna.species, /datum/species/android)) && (!istype(H.dna.species, /datum/species/jelly)))
 			C.adjustStaminaLoss(25) //boneless humanoids don't lose the will to live
 		to_chat(C, "<font color='red' size='4'><B>DOOT</B></font>")
 		spectral_change(H)
@@ -37,7 +41,7 @@
 		C.stuttering = 20
 
 /datum/component/spooky/proc/spectral_change(mob/living/carbon/human/H, mob/user)
-	if((H.getStaminaLoss() > 95) && (!istype(H.dna.species, /datum/species/skeleton)) && (!istype(H.dna.species, /datum/species/golem)) && (!istype(H.dna.species, /datum/species/android)) && (!istype(H.dna.species, /datum/species/jelly)))
+	if((H.getStaminaLoss() > 95) && (!istype(H.dna.species, /datum/species/skeleton)) && (!istype(H.dna.species, /datum/species/android)) && (!istype(H.dna.species, /datum/species/jelly)))
 		H.Paralyze(20)
 		H.set_species(/datum/species/skeleton)
 		H.visible_message("<span class='warning'>[H] has given up on life as a mortal.</span>")

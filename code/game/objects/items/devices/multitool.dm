@@ -13,10 +13,10 @@
 /obj/item/multitool
 	name = "multitool"
 	desc = "Used for pulsing wires to test which to cut. Not recommended by doctors."
-	icon = 'whitesands/icons/obj/tools.dmi' //WS Edit - Better Tool Sprites
+	icon = 'icons/obj/tools.dmi'
 	icon_state = "multitool"
-	lefthand_file = 'whitesands/icons/mob/inhands/equipment/tools_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/equipment/tools_righthand.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	force = 5
 	w_class = WEIGHT_CLASS_SMALL
 	tool_behaviour = TOOL_MULTITOOL
@@ -35,11 +35,6 @@
 /obj/item/multitool/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Its buffer [buffer ? "contains [buffer]." : "is empty."]</span>"
-
-/obj/item/multitool/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] puts the [src] to [user.p_their()] chest. It looks like [user.p_theyre()] trying to pulse [user.p_their()] heart off!</span>")
-	return OXYLOSS//theres a reason it wasnt recommended by doctors
-
 
 // Syndicate device disguised as a multitool; it will turn red when an AI camera is nearby.
 
@@ -88,7 +83,7 @@
 	if(eye.eye_user)
 		eye.setLoc(get_turf(src))
 	multitool_detect()
-	update_icon()
+	update_appearance()
 	track_cooldown = world.time + track_delay
 
 /obj/item/multitool/ai_detect/proc/toggle_hud(mob/user)
@@ -173,3 +168,16 @@
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "multitool_cyborg"
 	toolspeed = 0.5
+
+/obj/item/multitool/syndie
+	name = "suspicious-looking multitool"
+	desc = "A darkened multitool with a matte finish and an ominous glowing screen."
+	icon_state = "multitool_syndie"
+	toolspeed = 0.5
+
+/obj/item/multitool/old
+	desc = "Used for pulsing wires to test which to cut. This one looks... 'retro'. It wasn't recommended by doctors then and won't be recommended by doctors now."
+	icon = 'icons/obj/device.dmi'
+	icon_state = "hypertool"
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'

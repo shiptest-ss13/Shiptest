@@ -100,9 +100,9 @@
 	var/outfit_type = outfit_options[selected]
 	if(!outfit_type)
 		return FALSE
-	var/datum/outfit/job/O = new outfit_type()
-	var/list/outfit_types = O.get_chameleon_disguise_info()
-	var/datum/job/job_datum = SSjob.GetJobType(O.jobtype)
+	var/datum/outfit/job/outfit = new outfit_type()
+	var/list/outfit_types = outfit.get_chameleon_disguise_info()
+	var/datum/job/job_datum = GLOB.type_occupations[outfit.jobtype]
 
 	for(var/V in user.chameleon_item_actions)
 		var/datum/action/item_action/chameleon/change/A = V
@@ -119,22 +119,41 @@
 				break
 
 	//hardsuit helmets/suit hoods
-	if(O.toggle_helmet && (ispath(O.suit, /obj/item/clothing/suit/space/hardsuit) || ispath(O.suit, /obj/item/clothing/suit/hooded)) && ishuman(user))
+	if(outfit.toggle_helmet && (ispath(outfit.suit, /obj/item/clothing/suit/space/hardsuit) || ispath(outfit.suit, /obj/item/clothing/suit/hooded)) && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		//make sure they are actually wearing the suit, not just holding it, and that they have a chameleon hat
 		if(istype(H.wear_suit, /obj/item/clothing/suit/chameleon) && istype(H.head, /obj/item/clothing/head/chameleon))
 			var/helmet_type
-			if(ispath(O.suit, /obj/item/clothing/suit/space/hardsuit))
-				var/obj/item/clothing/suit/space/hardsuit/hardsuit = O.suit
+			if(ispath(outfit.suit, /obj/item/clothing/suit/space/hardsuit))
+				var/obj/item/clothing/suit/space/hardsuit/hardsuit = outfit.suit
 				helmet_type = initial(hardsuit.helmettype)
 			else
-				var/obj/item/clothing/suit/hooded/hooded = O.suit
+				var/obj/item/clothing/suit/hooded/hooded = outfit.suit
 				helmet_type = initial(hooded.hoodtype)
 
 			if(helmet_type)
 				var/obj/item/clothing/head/chameleon/hat = H.head
 				hat.chameleon_action.update_look(user, helmet_type)
-	qdel(O)
+
+	// ID card sechud
+	if(outfit.job_icon)
+		if(!ishuman(user))
+			return
+		var/mob/living/carbon/human/H = user
+		var/obj/item/card/id/card = H.wear_id
+		var/datum/job/J = GLOB.type_occupations[outfit.jobtype] // i really hope your outfit/job has a jobtype
+		if(!card)
+			return
+		var/old_assignment = card.assignment
+		card.job_icon = outfit.job_icon
+		card.faction_icon = outfit.faction_icon
+		card.assignment = J.name
+		card.update_appearance()
+		card.assignment = old_assignment
+		card.name = "[(istype(src, /obj/item/card/id/syndicate)) ? "[initial(name)]" : "access card"][(!old_assignment) ? "" : " ([old_assignment])"]"
+		H.sec_hud_set_ID()
+
+	qdel(outfit)
 	return TRUE
 
 
@@ -223,7 +242,7 @@
 		var/obj/item/clothing/I = target
 		I.item_state = initial(picked_item.item_state)
 		I.mob_overlay_icon = initial(picked_item.mob_overlay_icon)
-		if(istype(I, /obj/item/clothing) && istype(initial(picked_item), /obj/item/clothing))
+		if(istype(I, /obj/item/clothing) && istype(picked_item, /obj/item/clothing))
 			var/obj/item/clothing/CL = I
 			var/obj/item/clothing/PCL = picked_item
 			CL.flags_cover = initial(PCL.flags_cover)
@@ -236,7 +255,7 @@
 	select_look(owner)
 	return 1
 
-/datum/action/item_action/chameleon/change/proc/emp_randomise(var/amount = EMP_RANDOMISE_TIME)
+/datum/action/item_action/chameleon/change/proc/emp_randomise(amount = EMP_RANDOMISE_TIME)
 	START_PROCESSING(SSprocessing, src)
 	random_look(owner)
 
@@ -259,7 +278,6 @@
 	if(istype(agent_card))
 		var/obj/item/card/id/copied_card = picked_item
 		agent_card.uses_overlays = initial(copied_card.uses_overlays)
-		agent_card.id_type_name = initial(copied_card.id_type_name)
 		if(!agent_card.forged)
 			agent_card.registered_name = initial(copied_card.registered_name)
 			agent_card.assignment = initial(copied_card.assignment)
@@ -272,20 +290,20 @@
 	var/obj/item/card/id/syndicate/agent_card = target
 	if(istype(agent_card) && istype(job_datum))
 		agent_card.forged = TRUE
-		agent_card.assignment = job_datum.title
+		agent_card.assignment = job_datum.name
 
 /datum/action/item_action/chameleon/change/pda/update_item(obj/item/picked_item)
 	..()
 	var/obj/item/pda/agent_pda = target
 	if(istype(agent_pda))
 		agent_pda.update_label()
-		agent_pda.update_icon()
+		agent_pda.update_appearance()
 
 /datum/action/item_action/chameleon/change/pda/apply_job_data(datum/job/job_datum)
 	..()
 	var/obj/item/pda/agent_pda = target
 	if(istype(agent_pda) && istype(job_datum))
-		agent_pda.ownjob = job_datum.title
+		agent_pda.ownjob = job_datum.name
 
 
 /obj/item/clothing/under/chameleon
@@ -323,8 +341,10 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/suit/chameleon
-	name = "armor"
-	desc = "A slim armored vest that protects against most types of damage."
+	name = "armor vest"
+	desc = "A slim Type I armored vest that provides decent protection against most types of damage."
+	icon = 'icons/obj/clothing/suits/armor.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suits/armor.dmi'
 	icon_state = "armor"
 	item_state = "armor"
 	blood_overlay_type = "armor"
@@ -352,9 +372,9 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/clothing/glasses/chameleon
-	name = "Optical Meson Scanner"
+	name = "optical meson scanner"
 	desc = "Used by engineering and mining staff to see basic structural and terrain layouts through walls, regardless of lighting condition."
-	icon_state = "meson"
+	icon_state = "mesongoggles"
 	item_state = "meson"
 	resistance_flags = NONE
 	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
@@ -489,7 +509,6 @@
 /obj/item/clothing/mask/chameleon/attack_self(mob/user)
 	voice_change = !voice_change
 	to_chat(user, "<span class='notice'>The voice changer is now [voice_change ? "on" : "off"]!</span>")
-
 
 /obj/item/clothing/mask/chameleon/drone
 	//Same as the drone chameleon hat, undroppable and no protection

@@ -3,7 +3,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 8
 	},
 /obj/item/trash/can,
@@ -19,7 +19,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
 "aE" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/item/stack/sheet/mineral/wood,
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -45,7 +45,7 @@
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/has_grav/transport18mid)
 "aZ" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/airless,
@@ -53,16 +53,14 @@
 "ba" = (
 /obj/structure/lattice,
 /obj/structure/grille/broken,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "bh" = (
 /obj/structure/cable/cyan{
 	icon_state = "6-10"
 	},
 /obj/item/stack/cable_coil/cut/red,
-/obj/machinery/light/small/built{
-	dir = 1
-	},
+/obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
@@ -79,10 +77,10 @@
 "cN" = (
 /obj/structure/lattice,
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "dp" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -106,7 +104,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "dH" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -127,7 +125,7 @@
 /turf/template_noop,
 /area/template_noop)
 "et" = (
-/obj/machinery/light/broken,
+/obj/machinery/light/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/vomit/old,
 /obj/item/trash/plate{
@@ -154,13 +152,13 @@
 /area/ruin/space/transport18aft)
 "eS" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/stripes/full,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
 "eY" = (
 /obj/item/wallframe/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -183,14 +181,14 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
 "fy" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -241,11 +239,9 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
 "gD" = (
-/obj/machinery/light/broken{
-	dir = 1
-	},
+/obj/machinery/light/broken/directional/north,
 /obj/machinery/suit_storage_unit/open,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -254,7 +250,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "gY" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom,
+/obj/item/radio/intercom/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -285,15 +281,15 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "iW" = (
-/obj/machinery/light/small/broken,
-/obj/effect/turf_decal/bot,
+/obj/machinery/light/small/broken/directional/south,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/plumbing/tank,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "iZ" = (
-/obj/machinery/power/apc/auto_name/west,
+/obj/machinery/power/apc/auto_name/directional/west,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -304,8 +300,8 @@
 /area/ruin/space/has_grav/transport18mid)
 "jl" = (
 /obj/item/trash/can,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "jq" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 4;
@@ -322,11 +318,11 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
-/obj/machinery/light/small,
+/obj/machinery/light/small/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -347,17 +343,15 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "jV" = (
-/obj/machinery/power/shuttle/engine/liquid{
-	dir = 4;
-	fuel_reagents = list(/datum/reagent/consumable/ethanol/beer = 50);
-	name = "modified thruster"
+/obj/machinery/power/shuttle/engine/liquid/beer{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/space/transport18aft)
 "km" = (
 /obj/item/stack/sheet/metal,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "kC" = (
 /obj/structure/fluff/broken_flooring{
 	dir = 4;
@@ -371,7 +365,7 @@
 /area/ruin/space/transport18aft)
 "kK" = (
 /obj/machinery/suit_storage_unit/open,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 6
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -387,16 +381,14 @@
 /area/ruin/space/transport18aft)
 "la" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "lf" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/turf_decal/bot,
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/plumbing/tank,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -408,7 +400,7 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
@@ -438,7 +430,7 @@
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/wallframe/airalarm{
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/machinery/button/door{
 	id = "transp19";
@@ -479,18 +471,20 @@
 /area/ruin/space/has_grav/transport18mid)
 "mj" = (
 /obj/item/stack/rods,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "mt" = (
 /obj/machinery/door/poddoor/multi_tile/three_tile_hor{
 	id = "transp19"
 	},
-/obj/effect/turf_decal/stripes/full,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
 "mA" = (
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -505,9 +499,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -524,7 +516,7 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
@@ -549,7 +541,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
 "nx" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/plumbing/tank,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -562,7 +554,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "nL" = (
 /obj/structure/bed,
-/obj/machinery/light,
+/obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/airless,
@@ -573,7 +565,7 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
@@ -586,10 +578,8 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
 /obj/item/stack/sheet/mineral/wood,
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/floor/plasteel/dark/airless,
@@ -598,7 +588,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
@@ -632,7 +622,7 @@
 /obj/structure/sign/warning/vacuum{
 	pixel_x = -32
 	},
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -641,8 +631,8 @@
 /area/ruin/space/has_grav/transport18mid)
 "oT" = (
 /obj/structure/girder,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "po" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -657,15 +647,13 @@
 	},
 /area/ruin/space/transport18aft)
 "pE" = (
-/obj/machinery/power/shuttle/engine/liquid{
-	dir = 4;
-	fuel_reagents = list(/datum/reagent/consumable/ethanol/beer = 50);
-	name = "modified thruster"
+/obj/machinery/power/shuttle/engine/liquid/beer{
+	dir = 4
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
 "pF" = (
-/obj/effect/turf_decal/stripes/full,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -684,7 +672,7 @@
 	icon_state = "plating"
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space)
 "qJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -694,17 +682,17 @@
 /area/ruin/space/has_grav/transport18mid)
 "qM" = (
 /obj/structure/frame/machine,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 9
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/transport18aft)
 "qY" = (
-/obj/machinery/light/broken,
-/obj/machinery/power/apc/auto_name/south,
+/obj/machinery/light/broken/directional/south,
+/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
-/obj/effect/turf_decal/stripes/red/line,
+/obj/effect/turf_decal/industrial/fire,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -725,9 +713,7 @@
 /area/ruin/space/transport18aft)
 "rV" = (
 /obj/structure/table/reinforced,
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/item/trash/plate{
 	pixel_x = -5
 	},
@@ -749,19 +735,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/transport18mid)
-"tu" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -794,10 +768,8 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "ur" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/turf_decal/bot,
+/obj/machinery/light/small/directional/north,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -808,7 +780,7 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
@@ -847,11 +819,11 @@
 	icon_state = "pile"
 	},
 /turf/template_noop,
-/area/template_noop)
+/area/space)
 "vN" = (
 /obj/item/clothing/gloves/color/fyellow/old,
 /obj/item/stack/cable_coil/cyan,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -869,13 +841,22 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/ruin/space/transport18aft)
+"wj" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "transp19_windows";
+	dir = 4
+	},
+/obj/structure/grille,
+/obj/item/shard,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/transport18mid)
 "wu" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -887,17 +868,18 @@
 	},
 /area/ruin/space/transport18aft)
 "wC" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/reagent_dispensers/beerkeg,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "wD" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
-	},
 /obj/structure/grille/broken,
 /obj/item/shard,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "transp19_windows";
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
 "wN" = (
@@ -940,10 +922,10 @@
 	icon_state = "plating"
 	},
 /obj/structure/lattice,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "xD" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -952,8 +934,8 @@
 	dir = 4;
 	icon_state = "pile"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "yv" = (
 /obj/structure/girder,
 /turf/open/floor/plating{
@@ -1038,9 +1020,11 @@
 /area/ruin/space/has_grav/transport18mid)
 "Ah" = (
 /obj/structure/table/reinforced,
-/obj/item/radio/intercom/wideband,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/radio/intercom/wideband/table{
+	dir = 1
+	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
 "AU" = (
@@ -1059,15 +1043,15 @@
 /area/ruin/space/has_grav/transport18mid)
 "Bv" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/small/broken,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "BD" = (
 /obj/item/stack/ducts/fifty,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -1084,8 +1068,8 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/transport18mid)
 "CH" = (
-/obj/machinery/light/small,
-/obj/effect/turf_decal/bot,
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -1101,8 +1085,8 @@
 	dir = 4;
 	icon_state = "singular"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "Dh" = (
 /obj/structure/cable/cyan{
 	icon_state = "4-8"
@@ -1128,9 +1112,7 @@
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/transport18mid)
 "Dr" = (
-/obj/machinery/light/dim{
-	dir = 1
-	},
+/obj/machinery/light/dim/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/carpet/airless,
@@ -1143,27 +1125,21 @@
 /area/ruin/space/has_grav/transport18mid)
 "DF" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "DM" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "EB" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
+/obj/machinery/light/small/broken/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
@@ -1227,19 +1203,18 @@
 	dir = 4;
 	icon_state = "singular"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "Gq" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
-	},
 /obj/structure/grille,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "transp19_windows";
+	dir = 4
+	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
 "Hd" = (
-/obj/machinery/light/dim{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/vomit/old,
@@ -1249,11 +1224,19 @@
 "Hr" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/space/transport18aft)
+"Hy" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "transp19_windows";
+	dir = 4
+	},
+/obj/structure/grille,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/transport18mid)
 "HN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/paper/crumpled/fluff{
-	info = "Well, journal, it's just you, me, and twelve tons of beer. Haven't heard back from the engineer in about a day since he cooked up that crazy plan to fuel the thrusters with beer, so I reckon I'll go out with a bang. At least I'll die happy."
+	default_raw_text = "Well, journal, it's just you, me, and twelve tons of beer. Haven't heard back from the engineer in about a day since he cooked up that crazy plan to fuel the thrusters with beer, so I reckon I'll go out with a bang. At least I'll die happy."
 	},
 /obj/item/trash/can{
 	pixel_x = -7;
@@ -1280,10 +1263,14 @@
 	state_open = 1
 	},
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/stripes/full,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
+"IF" = (
+/obj/item/stack/sheet/metal,
+/turf/template_noop,
+/area/space)
 "IG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1313,7 +1300,7 @@
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
 "Jl" = (
-/obj/machinery/power/apc/auto_name/east,
+/obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -1325,7 +1312,7 @@
 "Jx" = (
 /obj/item/stack/cable_coil/cut/yellow,
 /turf/template_noop,
-/area/template_noop)
+/area/space)
 "JM" = (
 /obj/item/construction/plumbing,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1335,7 +1322,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/public,
+/obj/machinery/door/airlock/public{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -1363,6 +1352,9 @@
 	},
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
+"Le" = (
+/turf/open/space,
+/area/space)
 "Lg" = (
 /obj/structure/chair/comfy/shuttle,
 /obj/effect/decal/cleanable/dirt,
@@ -1389,8 +1381,8 @@
 	dir = 4;
 	icon_state = "plating"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "LI" = (
 /obj/structure/door_assembly/door_assembly_hatch,
 /obj/item/stack/cable_coil/cut/red,
@@ -1403,11 +1395,17 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/transport18aft)
-"MA" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/small/built{
-	dir = 1
+"Mz" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "transp19_windows";
+	dir = 4
 	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/transport18mid)
+"MA" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -1429,8 +1427,8 @@
 /area/ruin/space/has_grav/transport18mid)
 "ND" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "NH" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 1
@@ -1440,7 +1438,8 @@
 /area/ruin/space/has_grav/transport18mid)
 "Oi" = (
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "transp19_windows"
+	id = "transp19_windows";
+	dir = 4
 	},
 /obj/structure/grille/broken,
 /turf/open/floor/plating/airless,
@@ -1477,19 +1476,19 @@
 	dir = 8;
 	icon_state = "plating"
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "PJ" = (
 /obj/structure/lattice,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "PV" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/trash/can,
 /turf/open/floor/carpet/blue/airless,
 /area/ruin/space/has_grav/transport18mid)
 "PW" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1550,13 +1549,13 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/transport18mid)
 "Si" = (
-/obj/effect/turf_decal/stripes/full,
+/obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/transport18mid)
 "Sr" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -1572,7 +1571,7 @@
 	broken = 1;
 	desc = "Oh no, seven years of bad luck!";
 	icon_state = "mirror_broke";
-	pixel_y = 24
+	pixel_y = 25
 	},
 /obj/structure/sink{
 	pixel_y = 20
@@ -1597,9 +1596,7 @@
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
 "TD" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
+/obj/machinery/light/broken/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fluff/paper/stack{
@@ -1609,7 +1606,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "TU" = (
 /obj/item/wallframe/apc,
-/obj/effect/turf_decal/stripes/red/line{
+/obj/effect/turf_decal/industrial/fire{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1643,8 +1640,8 @@
 /area/ruin/space/has_grav/transport18mid)
 "Va" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/bot,
-/obj/machinery/light/small/broken,
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -1661,8 +1658,8 @@
 	icon_state = "plating"
 	},
 /obj/structure/lattice,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "Wb" = (
 /obj/structure/girder,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1713,11 +1710,11 @@
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
 /obj/item/storage/cans/sixbeer,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/large{
 	name = "damp crate"
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small/broken/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
 /area/ruin/space/has_grav/transport18mid)
@@ -1733,7 +1730,7 @@
 /area/ruin/space/has_grav/transport18mid)
 "YJ" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark/airless,
@@ -1745,7 +1742,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/transport18aft)
 "Zn" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /obj/machinery/plumbing/tank,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1760,8 +1757,8 @@
 /area/ruin/space/transport18aft)
 "ZH" = (
 /obj/item/stack/sheet/mineral/titanium,
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space,
+/area/space)
 "ZX" = (
 /obj/structure/girder,
 /obj/item/stack/sheet/mineral/titanium,
@@ -2134,7 +2131,7 @@ eg
 Jx
 eg
 eg
-km
+IF
 PJ
 eg
 PJ
@@ -2328,7 +2325,7 @@ xm
 kR
 rF
 Hr
-eg
+Le
 LE
 kC
 Xb
@@ -2708,7 +2705,7 @@ rC
 IT
 IT
 TZ
-tu
+Kv
 TZ
 PJ
 eg
@@ -3087,7 +3084,7 @@ eg
 eg
 TZ
 TZ
-yG
+wj
 tJ
 TZ
 TZ
@@ -3345,13 +3342,13 @@ eg
 eg
 eg
 XU
-tY
+Mz
 tY
 jz
 jz
 jz
 yG
-tY
+Mz
 XU
 eg
 eg
@@ -3378,8 +3375,8 @@ eg
 eg
 eg
 eg
-tY
-tY
+Mz
+Hy
 Gq
 wD
 Oi

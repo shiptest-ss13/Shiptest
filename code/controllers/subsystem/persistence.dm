@@ -1,5 +1,3 @@
-#define FILE_ANTAG_REP "data/AntagReputation.json"
-
 SUBSYSTEM_DEF(persistence)
 	name = "Persistence"
 	init_order = INIT_ORDER_PERSISTENCE
@@ -8,26 +6,24 @@ SUBSYSTEM_DEF(persistence)
 	var/list/saved_messages = list()
 	var/list/saved_modes = list(1,2,3)
 	var/list/saved_trophies = list()
-	var/list/antag_rep = list()
-	var/list/antag_rep_change = list()
 	var/list/obj/structure/sign/picture_frame/photo_frames
 	var/list/obj/item/storage/photo_album/photo_albums
 	var/list/obj/structure/sign/painting/painting_frames = list()
 	var/list/paintings = list()
 
 /datum/controller/subsystem/persistence/Initialize()
-	LoadPoly()
+	LoadPolly()
 	LoadTrophies()
 	LoadRecentModes()
 	LoadPhotoPersistence()
-	if(CONFIG_GET(flag/use_antag_rep))
-		LoadAntagReputation()
 	LoadRandomizedRecipes()
 	LoadPaintings()
+	load_custom_outfits()
+	LoadPanicBunker()
 	return ..()
 
-/datum/controller/subsystem/persistence/proc/LoadPoly()
-	for(var/mob/living/simple_animal/parrot/Poly/P in GLOB.alive_mob_list)
+/datum/controller/subsystem/persistence/proc/LoadPolly()
+	for(var/mob/living/simple_animal/parrot/Polly/P in GLOB.alive_mob_list)
 		twitterize(P.speech_buffer, "polytalk")
 		break //Who's been duping the bird?!
 
@@ -59,16 +55,6 @@ SUBSYSTEM_DEF(persistence)
 		return
 	saved_modes = json["data"]
 
-/datum/controller/subsystem/persistence/proc/LoadAntagReputation()
-	var/json = file2text(FILE_ANTAG_REP)
-	if(!json)
-		var/json_file = file(FILE_ANTAG_REP)
-		if(!fexists(json_file))
-			WARNING("Failed to load antag reputation. File likely corrupt.")
-			return
-		return
-	antag_rep = json_decode(json)
-
 /datum/controller/subsystem/persistence/proc/SetUpTrophies(list/trophy_items)
 	for(var/A in GLOB.trophy_cases)
 		var/obj/structure/displaycase/trophy/T = A
@@ -93,16 +79,16 @@ SUBSYSTEM_DEF(persistence)
 		T.showpiece = new /obj/item/showpiece_dummy(T, path)
 		T.trophy_message = chosen_trophy["message"]
 		T.placer_key = chosen_trophy["placer_key"]
-		T.update_icon()
+		T.update_appearance()
 
 /datum/controller/subsystem/persistence/proc/CollectData()
 	CollectTrophies()
 	CollectRoundtype()
 	SavePhotoPersistence()						//THIS IS PERSISTENCE, NOT THE LOGGING PORTION.
-	if(CONFIG_GET(flag/use_antag_rep))
-		CollectAntagReputation()
 	SaveRandomizedRecipes()
 	SavePaintings()
+	save_custom_outfits()
+	SavePanicBunker()
 
 /datum/controller/subsystem/persistence/proc/GetPhotoAlbums()
 	var/album_path = file("data/photo_albums.json")
@@ -209,26 +195,14 @@ SUBSYSTEM_DEF(persistence)
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
 
-/datum/controller/subsystem/persistence/proc/CollectAntagReputation()
-	var/ANTAG_REP_MAXIMUM = CONFIG_GET(number/antag_rep_maximum)
-
-	for(var/p_ckey in antag_rep_change)
-//		var/start = antag_rep[p_ckey]
-		antag_rep[p_ckey] = max(0, min(antag_rep[p_ckey]+antag_rep_change[p_ckey], ANTAG_REP_MAXIMUM))
-
-//		WARNING("AR_DEBUG: [p_ckey]: Committed [antag_rep_change[p_ckey]] reputation, going from [start] to [antag_rep[p_ckey]]")
-
-	antag_rep_change = list()
-
-	fdel(FILE_ANTAG_REP)
-	text2file(json_encode(antag_rep), FILE_ANTAG_REP)
-
-
 /datum/controller/subsystem/persistence/proc/LoadRandomizedRecipes()
 	var/json_file = file("data/RandomizedChemRecipes.json")
 	var/json
 	if(fexists(json_file))
 		json = json_decode(file2text(json_file))
+
+	if(!GLOB.chemical_reactions_list)
+		build_chemical_reactions_list()
 
 	for(var/randomized_type in subtypesof(/datum/chemical_reaction/randomized))
 		var/datum/chemical_reaction/randomized/R = new randomized_type
@@ -280,3 +254,34 @@ SUBSYSTEM_DEF(persistence)
 	var/json_file = file("data/paintings.json")
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(paintings))
+
+/datum/controller/subsystem/persistence/proc/load_custom_outfits()
+	var/file = file("data/custom_outfits.json")
+	if(!fexists(file))
+		return
+	var/outfits_json = file2text(file)
+	var/list/outfits = json_decode(outfits_json)
+	if(!islist(outfits))
+		return
+
+	for(var/outfit_data in outfits)
+		if(!islist(outfit_data))
+			continue
+
+		var/outfittype = text2path(outfit_data["outfit_type"])
+		if(!ispath(outfittype, /datum/outfit))
+			continue
+		var/datum/outfit/outfit = new outfittype
+		if(!outfit.load_from(outfit_data))
+			continue
+		GLOB.custom_outfits += outfit
+
+/datum/controller/subsystem/persistence/proc/save_custom_outfits()
+	var/file = file("data/custom_outfits.json")
+	fdel(file)
+
+	var/list/data = list()
+	for(var/datum/outfit/outfit in GLOB.custom_outfits)
+		data += list(outfit.get_json_data())
+
+	WRITE_FILE(file, json_encode(data))

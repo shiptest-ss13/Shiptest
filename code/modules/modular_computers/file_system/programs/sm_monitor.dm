@@ -27,7 +27,7 @@
 		ui_header = "smmon_[last_status].gif"
 		program_icon_state = "smmon_[last_status]"
 		if(istype(computer))
-			computer.update_icon()
+			computer.update_appearance()
 
 /datum/computer_file/program/supermatter_monitor/run_program(mob/living/user)
 	. = ..(user)
@@ -36,23 +36,25 @@
 	refresh()
 
 /datum/computer_file/program/supermatter_monitor/kill_program(forced = FALSE)
+	for(var/supermatter in supermatters)
+		clear_supermatter(supermatter)
 	supermatters = null
 	..()
 
 // Refreshes list of active supermatter crystals
 /datum/computer_file/program/supermatter_monitor/proc/refresh()
+	for(var/supermatter in supermatters)
+		clear_supermatter(supermatter)
 	supermatters = list()
 	var/turf/T = get_turf(ui_host())
 	if(!T)
 		return
 	for(var/obj/machinery/power/supermatter_crystal/S in GLOB.machines)
 		// Delaminating, not within coverage, not on a tile.
-		if (!isturf(S.loc) || !S.get_virtual_z_level() == T.get_virtual_z_level())
+		if (!isturf(S.loc) || !S.virtual_z() == T.virtual_z())
 			continue
 		supermatters.Add(S)
-
-	if(!(active in supermatters))
-		active = null
+		RegisterSignal(S, COMSIG_PARENT_QDELETING, PROC_REF(react_to_del))
 
 /datum/computer_file/program/supermatter_monitor/proc/get_status()
 	. = SUPERMATTER_INACTIVE
@@ -60,21 +62,21 @@
 		. = max(., S.get_status())
 
 /**
-  * Sets up the signal listener for Supermatter delaminations.
-  *
-  * Unregisters any old listners for SM delams, and then registers one for the SM refered
-  * to in the `active` variable. This proc is also used with no active SM to simply clear
-  * the signal and exit.
+ * Sets up the signal listener for Supermatter delaminations.
+ *
+ * Unregisters any old listners for SM delams, and then registers one for the SM refered
+ * to in the `active` variable. This proc is also used with no active SM to simply clear
+ * the signal and exit.
  */
 /datum/computer_file/program/supermatter_monitor/proc/set_signals()
 	if(active)
-		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_ALARM, .proc/send_alert, override = TRUE)
-		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_START_ALARM, .proc/send_start_alert, override = TRUE)
+		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_ALARM, PROC_REF(send_alert), override = TRUE)
+		RegisterSignal(active, COMSIG_SUPERMATTER_DELAM_START_ALARM, PROC_REF(send_start_alert), override = TRUE)
 
 /**
-  * Removes the signal listener for Supermatter delaminations from the selected supermatter.
-  *
-  * Pretty much does what it says.
+ * Removes the signal listener for Supermatter delaminations from the selected supermatter.
+ *
+ * Pretty much does what it says.
  */
 /datum/computer_file/program/supermatter_monitor/proc/clear_signals()
 	if(active)
@@ -82,12 +84,12 @@
 		UnregisterSignal(active, COMSIG_SUPERMATTER_DELAM_START_ALARM)
 
 /**
-  * Sends an SM delam alert to the computer.
-  *
-  * Triggered by a signal from the selected supermatter, this proc sends a notification
-  * to the computer if the program is either closed or minimized. We do not send these
-  * notifications to the comptuer if we're the active program, because engineers fixing
-  * the supermatter probably don't need constant beeping to distract them.
+ * Sends an SM delam alert to the computer.
+ *
+ * Triggered by a signal from the selected supermatter, this proc sends a notification
+ * to the computer if the program is either closed or minimized. We do not send these
+ * notifications to the comptuer if we're the active program, because engineers fixing
+ * the supermatter probably don't need constant beeping to distract them.
  */
 /datum/computer_file/program/supermatter_monitor/proc/send_alert()
 	if(!computer.get_ntnet_status())
@@ -97,13 +99,13 @@
 		alert_pending = TRUE
 
 /**
-  * Sends an SM delam start alert to the computer.
-  *
-  * Triggered by a signal from the selected supermatter at the start of a delamination,
-  * this proc sends a notification to the computer if this program is the active one.
-  * We do this so that people carrying a tablet with NT CIMS open but with the NTOS window
-  * closed will still get one audio alert. This is not sent to computers with the program
-  * minimized or closed to avoid double-notifications.
+ * Sends an SM delam start alert to the computer.
+ *
+ * Triggered by a signal from the selected supermatter at the start of a delamination,
+ * this proc sends a notification to the computer if this program is the active one.
+ * We do this so that people carrying a tablet with NT CIMS open but with the NTOS window
+ * closed will still get one audio alert. This is not sent to computers with the program
+ * minimized or closed to avoid double-notifications.
  */
 /datum/computer_file/program/supermatter_monitor/proc/send_start_alert()
 	if(!computer.get_ntnet_status())
@@ -138,7 +140,9 @@
 			for(var/gasid in air.get_gases())
 				gasdata.Add(list(list(
 				"name"= GLOB.gas_data.names[gasid],
-				"amount" = round(100*air.get_moles(gasid)/air.total_moles(),0.01))))
+				"amount" = round(100*air.get_moles(gasid)/air.total_moles(),0.01),
+				"id" = gasid
+				)))
 
 		else
 			for(var/gasid in air.get_gases())
@@ -183,3 +187,13 @@
 					active = S
 					set_signals()
 			return TRUE
+
+/datum/computer_file/program/supermatter_monitor/proc/react_to_del(datum/source)
+	SIGNAL_HANDLER
+	clear_supermatter(source)
+
+/datum/computer_file/program/supermatter_monitor/proc/clear_supermatter(matter)
+	supermatters -= matter
+	if(matter == active)
+		active = null
+	UnregisterSignal(matter, COMSIG_PARENT_QDELETING)

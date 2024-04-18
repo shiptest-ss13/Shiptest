@@ -23,7 +23,7 @@
 	maxHealth = 60
 	health = 60
 	speed = 0
-
+	mob_size = MOB_SIZE_LARGE
 	obj_damage = 60
 	melee_damage_lower = 20
 	melee_damage_upper = 30
@@ -38,7 +38,7 @@
 	minbodytemp = 0
 	maxbodytemp = 1500
 
-	faction = list("russian")
+	faction = list("mining")
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -81,15 +81,16 @@
 	icon_living = "snowbear"
 	icon_dead = "snowbear_dead"
 	desc = "It's a polar bear, in space, but not actually in space."
+	environment_smash = ENVIRONMENT_SMASH_MINERALS
 	weather_immunities = list("snow")
 
-/mob/living/simple_animal/hostile/bear/russian
+/mob/living/simple_animal/hostile/bear/frontier
 	name = "combat bear"
 	desc = "A ferocious brown bear decked out in armor plating, a red star with yellow outlining details the shoulder plating."
 	icon_state = "combatbear"
 	icon_living = "combatbear"
 	icon_dead = "combatbear_dead"
-	faction = list("russian")
+	faction = list(FACTION_ANTAG_FRONTIERSMEN)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/bear = 5, /obj/item/clothing/head/bearpelt = 1, /obj/item/bear_armor = 1)
 	melee_damage_lower = 25
 	melee_damage_upper = 35
@@ -99,10 +100,21 @@
 	armored = TRUE
 	gold_core_spawnable = HOSTILE_SPAWN
 
+/mob/living/simple_animal/hostile/bear/cave
+	name = "brown bear"
+	desc = "A ferocious brown bear, ready to maul."
+	icon_state = "brownbear"
+	icon_living = "brownbear"
+	icon_dead = "brownbear_dead"
+	icon_gib = "brownbear_gib"
+	maxHealth = 70
+	health = 70
+	faction = list("mining")
+
 /obj/item/bear_armor
 	name = "pile of bear armor"
 	desc = "A scattered pile of various shaped armor pieces fitted for a bear, some duct tape, and a nail filer. Crude instructions \
-		are written on the back of one of the plates in russian. This seems like an awful idea."
+		are written on the back of one of the plates. This seems like an awful idea."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "bear_armor_upgrade"
 
@@ -129,7 +141,7 @@
 	icon_living = "butterbear"
 	icon_dead = "butterbear_dead"
 	desc = "I can't believe its not a bear!"
-	faction = list("neutral", "russian")
+	faction = list("neutral", FACTION_ANTAG_FRONTIERSMEN)
 	obj_damage = 11
 	melee_damage_lower = 1
 	melee_damage_upper = 1
@@ -162,7 +174,7 @@
 	B.brainmob.mind.transfer_to(src)
 	to_chat(src, "<span class='big bold'>You are a butter bear!</span><b> You're a mostly harmless bear/butter hybrid that everyone loves. People can take bites out of you if they're hungry, but you regenerate health \
 	so quickly that it generally doesn't matter. You're remarkably resilient to any damage besides this and it's hard for you to really die at all. You should go around and bring happiness and \
-	free butter to the station!</b>")
+	free butter to the universe!</b>")
 	var/new_name = stripped_input(src, "Enter your name, or press \"Cancel\" to stick with Terrygold.", "Name Change")
 	if(new_name)
 		to_chat(src, "<span class='notice'>Your name is now <b>\"new_name\"</b>!</span>")

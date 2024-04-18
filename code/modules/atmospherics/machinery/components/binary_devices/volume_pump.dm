@@ -32,7 +32,7 @@
 	if(can_interact(user))
 		on = !on
 		investigate_log("was turned [on ? "on" : "off"] by [key_name(user)]", INVESTIGATE_ATMOS)
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/volume_pump/AltClick(mob/user)
@@ -40,7 +40,7 @@
 		transfer_rate = MAX_TRANSFER_RATE
 		investigate_log("was set to [transfer_rate] L/s by [key_name(user)]", INVESTIGATE_ATMOS)
 		to_chat(user, "<span class='notice'>You maximize the volume output on [src] to [transfer_rate] L/s.</span>")
-		update_icon()
+		update_appearance()
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/volume_pump/Destroy()
@@ -48,11 +48,11 @@
 	return ..()
 
 /obj/machinery/atmospherics/components/binary/volume_pump/update_icon_nopipes()
-	icon_state = on && is_operational() ? "volpump_on-[set_overlay_offset(piping_layer)]" : "volpump_off-[set_overlay_offset(piping_layer)]"
+	icon_state = on && is_operational ? "volpump_on-[set_overlay_offset(piping_layer)]" : "volpump_off-[set_overlay_offset(piping_layer)]"
 
 /obj/machinery/atmospherics/components/binary/volume_pump/process_atmos()
 //	..()
-	if(!on || !is_operational())
+	if(!on || !is_operational)
 		return
 
 	var/datum/gas_mixture/air1 = airs[1]
@@ -143,7 +143,7 @@
 			if(.)
 				transfer_rate = clamp(rate, 0, MAX_TRANSFER_RATE)
 				investigate_log("was set to [transfer_rate] L/s by [key_name(usr)]", INVESTIGATE_ATMOS)
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/components/binary/volume_pump/receive_signal(datum/signal/signal)
 	if(!signal.data["tag"] || (signal.data["tag"] != id) || (signal.data["sigtype"]!="command"))
@@ -169,11 +169,11 @@
 		return //do not update_icon
 
 	broadcast_status()
-	update_icon()
+	update_appearance()
 
 /obj/machinery/atmospherics/components/binary/volume_pump/can_unwrench(mob/user)
 	. = ..()
-	if(. && on && is_operational())
+	if(. && on && is_operational)
 		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
 		return FALSE
 
@@ -198,7 +198,7 @@
 
 /obj/machinery/atmospherics/components/binary/volume_pump/on
 	on = TRUE
-	icon_state = "volpump_on_map"
+	icon_state = "volpump_map-2"
 
 /obj/machinery/atmospherics/components/binary/volume_pump/on/layer2
 	piping_layer = 2

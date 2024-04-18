@@ -26,14 +26,14 @@
 
 /mob/living/simple_animal/hostile/zombie/Initialize(mapload)
 	. = ..()
-	setup_visuals()
+	INVOKE_ASYNC(src, PROC_REF(setup_visuals))
 
 /mob/living/simple_animal/hostile/zombie/proc/setup_visuals()
 	var/datum/preferences/dummy_prefs = new
 	dummy_prefs.pref_species = new /datum/species/zombie
 	dummy_prefs.randomise[RANDOM_BODY] = TRUE
 	if(zombiejob)
-		var/datum/job/J = SSjob.GetJob(zombiejob)
+		var/datum/job/J = GLOB.name_occupations[zombiejob]
 		var/datum/outfit/O
 		if(J.outfit)
 			O = new J.outfit
@@ -57,3 +57,12 @@
 	. = ..()
 	corpse.forceMove(drop_location())
 	corpse.create()
+
+/mob/living/simple_animal/hostile/zombie/kudzu
+	name = "shambling bramble"
+	desc = "A shambling mass of vibrant vines and rotting flesh. "
+	melee_damage_lower = 15
+	melee_damage_upper = 25
+	attack_verb_continuous = "lashes"
+	attack_verb_simple = "lash"
+	attack_sound = 'sound/weapons/bladeslice.ogg'

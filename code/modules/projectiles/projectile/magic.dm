@@ -24,7 +24,7 @@
 				if(L.hellbound && L.stat == DEAD)
 					return BULLET_ACT_BLOCK
 				if(L.revive(full_heal = TRUE, admin_revive = TRUE))
-					L.grab_ghost(force = TRUE) // even suicides
+					L.grab_ghost(force = TRUE)
 					to_chat(L, "<span class='notice'>You rise with a start, you're undead!!!</span>")
 				else if(L.stat != DEAD)
 					to_chat(L, "<span class='notice'>You feel great!</span>")
@@ -134,7 +134,7 @@
 	T.ChangeTurf(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 	D.Open()
 
-/obj/projectile/magic/door/proc/OpenDoor(var/obj/machinery/door/D)
+/obj/projectile/magic/door/proc/OpenDoor(obj/machinery/door/D)
 	if(istype(D, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/A = D
 		A.locked = FALSE
@@ -273,9 +273,8 @@
 			A.copy_to(new_mob, icon_updates=0)
 
 			var/mob/living/carbon/human/H = new_mob
-			H.update_body()
 			H.update_hair()
-			H.update_body_parts()
+			H.update_body_parts(TRUE)
 			H.dna.update_dna_identity()
 
 	if(!new_mob)
@@ -313,7 +312,7 @@
 	target.animate_atom_living(firer)
 	..()
 
-/atom/proc/animate_atom_living(var/mob/living/owner = null)
+/atom/proc/animate_atom_living(mob/living/owner = null)
 	if((isitem(src) || isstructure(src)) && !is_type_in_list(src, GLOB.protected_objects))
 		if(istype(src, /obj/structure/statue/petrified))
 			var/obj/structure/statue/petrified/P = src
@@ -418,12 +417,13 @@
 		for(var/atom/movable/AM in contents)
 			locker_temp_instance.insert(AM)
 		locker_temp_instance.welded = weld
-		locker_temp_instance.update_icon()
+		locker_temp_instance.update_appearance()
 	created = TRUE
 	return ..()
 
 /obj/projectile/magic/locker/Destroy()
 	locker_suck = FALSE
+	RemoveElement(/datum/element/connect_loc, projectile_connections) //We do this manually so the forcemoves don't "hit" us. This behavior is kinda dumb, someone refactor this
 	for(var/atom/movable/AM in contents)
 		AM.forceMove(get_turf(src))
 	. = ..()
@@ -438,14 +438,14 @@
 /obj/structure/closet/decay/Initialize()
 	. = ..()
 	if(auto_destroy)
-		addtimer(CALLBACK(src, .proc/bust_open), 5 MINUTES)
-	addtimer(CALLBACK(src, .proc/magicly_lock), 5)
+		addtimer(CALLBACK(src, PROC_REF(bust_open)), 5 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(magicly_lock)), 5)
 
 /obj/structure/closet/decay/proc/magicly_lock()
 	if(!welded)
 		return
 	icon_state = magic_icon
-	update_icon()
+	update_appearance()
 
 /obj/structure/closet/decay/after_weld(weld_state)
 	if(weld_state)
@@ -453,7 +453,7 @@
 
 /obj/structure/closet/decay/proc/decay()
 	animate(src, alpha = 0, time = 30)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 30)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), 30)
 
 /obj/structure/closet/decay/open(mob/living/user, force = FALSE)
 	. = ..()
@@ -461,12 +461,12 @@
 		if(icon_state == magic_icon) //check if we used the magic icon at all before giving it the lesser magic icon
 			unmagify()
 		else
-			addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(decay)), 15 SECONDS)
 
 /obj/structure/closet/decay/proc/unmagify()
 	icon_state = weakened_icon
-	update_icon()
-	addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
+	update_appearance()
+	addtimer(CALLBACK(src, PROC_REF(decay)), 15 SECONDS)
 	icon_welded = "welded"
 
 /obj/projectile/magic/flying
@@ -556,7 +556,32 @@
 		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
 			spell.charge_counter = spell.charge_max
 			spell.recharging = FALSE
-			spell.update_icon()
+			spell.update_appearance()
+
+/obj/projectile/magic/fortify
+	name = "bolt of light"
+	icon_state = "spark"
+
+/obj/projectile/magic/fortify/on_hit(target)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/L = target
+		if(L.anti_magic_check() || !L.mind || !L.mind.hasSoul)
+			L.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			return BULLET_ACT_BLOCK
+		to_chat(L, "<span class='greentext'>You feel your body flood with magical strength! Your flesh feels cleansed, and somehow... tougher.</span>")
+		L.maxHealth += 20
+		L.heal_overall_damage(20, 20)
+		L.apply_damage(-200, CLONE)//cleanses cellular damage
+		if(L.mind.hasSoul == FALSE)//restores consumed souls
+			to_chat(L, "<span class='nicegreen'>You feel a warm light in your chest... the [src] has restored something you'd long forgotten.</span>")
+			L.mind.hasSoul = TRUE
+			if(L.hellbound == 1)
+				L.hellbound = 0//devil economy in shambles
+		for(var/obj/effect/proc_holder/spell/spell in L.mind.spell_list)
+			spell.charge_counter = spell.charge_max
+			spell.recharging = FALSE
+			spell.update_appearance()
 
 /obj/projectile/magic/wipe
 	name = "bolt of possession"
@@ -577,7 +602,7 @@
 		possession_test(M)
 		return BULLET_ACT_HIT
 
-/obj/projectile/magic/wipe/proc/possession_test(var/mob/living/carbon/M)
+/obj/projectile/magic/wipe/proc/possession_test(mob/living/carbon/M)
 	var/datum/brain_trauma/special/imaginary_friend/trapped_owner/trauma = M.gain_trauma(/datum/brain_trauma/special/imaginary_friend/trapped_owner)
 	var/poll_message = "Do you want to play as [M.real_name]?"
 	if(M.mind && M.mind.assigned_role)
@@ -693,7 +718,7 @@
 			return BULLET_ACT_BLOCK
 	var/turf/T = get_turf(target)
 	for(var/i=0, i<50, i+=10)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/explosion, T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(explosion), T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
 
 //still magic related, but a different path
 

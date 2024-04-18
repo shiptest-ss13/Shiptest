@@ -31,6 +31,10 @@ check_regex.py - Run regex expression tests on all DM code inside current
         modification, or removal. Good if you want to track down errors
         caused by commit or PR changes.
 
+    --github-actions
+        An output option to format the output in a way that Github Actions
+        can parse and show as annotations in the PR.
+
 Copyright 2021 Martin Lyrå
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -99,6 +103,12 @@ options.add_argument(
     dest="log_changes_only",
     default=False,
     action="store_true")
+options.add_argument(
+    "--github-actions",
+    dest="github_actions",
+    default=False,
+    action="store_true"
+)
 
 args = options.parse_args()
 
@@ -387,6 +397,8 @@ def collect_candidate_files(directory, extensions):
             if is_a_match(file):
                 full_path = os.path.join(path, file)
                 full_path = os.path.normpath(full_path)
+                if os.name == "nt":
+                    full_path = full_path.replace('\\', '/')
                 candidates[len(candidates) + 1] = full_path
     return candidates
 
@@ -394,16 +406,17 @@ def collect_candidate_files(directory, extensions):
 class RegexStandardAnalyzer:
     def __init__(self) -> None:
         self.ignore_comments = False
+        self.invalid_encoding = 0
         self.line_comment_regex_expression = regex.compile(r'^\s*\/\/')
 
     def ___is_a_line_comment(self, line) -> bool:
         return self.line_comment_regex_expression.match(line)
 
-    def ___test_content_lines(self, results, key, lines):
-        matched = [None] * len(self.expressions)
-        for i in range(0, len(self.expressions)):
-            matched[i] = []
+    def ___empty_match_list(self) -> List:
+        return [[] for _ in range(0, len(self.expressions))]
 
+    def ___test_content_lines(self, results, key, lines):
+        matched = self.___empty_match_list()
         is_comment_block = False
 
         enumeration = list()
@@ -435,10 +448,20 @@ class RegexStandardAnalyzer:
         return matched
 
     def ___test_file(self, results, file):
-        contents = []
-        with open(file, 'rt', encoding=preferred_encoding) as f:
-            contents = f.readlines()
-        return self.___test_content_lines(results, file, contents)
+        try:
+            contents = []
+            with open(file, 'rt', encoding=preferred_encoding) as f:
+                contents = f.readlines()
+            return self.___test_content_lines(results, file, contents)
+        except UnicodeDecodeError as _:
+            self.invalid_encoding += 1
+            output_write(" - Not encoded with %s!: %s" % (
+                    preferred_encoding,
+                    file
+                ),
+                colour=Fore.RED
+            )
+            return self.___empty_match_list()
 
     def ___create_data_sets(self) -> Tuple[Dict, Dict]:
         results = list()
@@ -626,7 +649,7 @@ if __name__ == "__main__":
                 # the lists below, as each file can have more than one
                 # hunk. Which index will go back to 0 several times
                 if line.is_added:
-                    to_add[line.target_line_no] = line.value
+                    to_add[line.target_line_no - 1] = line.value
                 if line.is_removed:
                     to_remove[line.source_line_no] = line.value
 
@@ -751,35 +774,54 @@ if __name__ == "__main__":
                 list(added_matches[jj].keys()),
                 list(removed_matches[jj].keys())
             )
+        all_files = sorted(all_files)
         files_count = len(all_files)
 
         # Collect subitems first, depending on changes
         to_show = list()
         if files_count:
-            for (index, file) in enumerate(all_files):
+            for f in all_files:
                 lines = []
                 show_items = []
                 inner_prefix = ""
 
-                matches = (matched_files[file] if file in matched_files else [])
-                adds = (added_matches[jj][file] if file in added_matches[jj] else [])
-                removes = (removed_matches[jj][file] if file in removed_matches[jj] else [])
+                matches = (matched_files[f] if f in matched_files else [])
+                adds = (added_matches[jj][f] if f in added_matches[jj] else [])
+                removes = (removed_matches[jj][f] if f in removed_matches[jj] else [])
 
+                if len(adds) or len(removes):
+                    before = [
+                        line_no
+                        for line_no in matches
+                        if (not line_no in adds) or (line_no in removes)
+                    ]
+                    show_items.append("Before  (%4i): %s" % (len(before), before))
                 if len(matches):
                     show_items.append("Current (%4i): %s" % (len(matches), matches))
                 if len(adds):
                     show_items.append("+++++++ (%4i): %s" % (len(adds), adds))
+                    #Github actions annotations
+                    if args.github_actions and matching != RESULT_OK:
+                        for line_no in adds:
+                            output_write("::error file=%s,line=%i,title=Check Regex::%s added to here, remove or update check_regex.yml" % (
+                                f,
+                                line_no,
+                                standard.message
+                            ), to_stdout=True, to_file=False)
                     inner_prefix = prefix
                 if len(removes):
                     show_items.append("------- (%4i): %s" % (len(removes), removes))
+                    #Github actions annotations
+                    if args.github_actions and matching != RESULT_OK:
+                        for line_no in removes:
+                            output_write("::error file=%s,line=%i,title=Check Regex::%s removed from here, update check_regex.yml" % (
+                                f,
+                                line_no,
+                                standard.message
+                            ), to_stdout=True, to_file=False)
                     inner_prefix = prefix
 
-                lines.append(
-                    "%2s %s" % (
-                        "\u2500\u252C",
-                        file
-                    )
-                )
+                lines.append("%2s %s" % ("\u2500\u252C", f))
                 for nn in range(0, len(show_items)):
                     inner_branch = "\u251C" if nn < len(show_items) - 1 else "\u2514"
                     lines.append("%2s %s" % (
@@ -853,6 +895,17 @@ if __name__ == "__main__":
                 Fore.GREEN,
             to_file= False
         )
+
+    fail_files = analyser.invalid_encoding
+    if fail_files > 0:
+        output_write(
+            "\nThere are %d file(s) not encoded with \"%s\", please fix those shown in \"Analysizing\" stage!" % (
+                fail_files,
+                preferred_encoding
+            ),
+            colour=Fore.RED
+        )
+
     output_write("\nThis script completed in %7.3f seconds"
         % (time.time() - start_time)
     )
@@ -871,4 +924,4 @@ if __name__ == "__main__":
     output_file.close()
     output_file = None
 
-    exit(failure > 0)
+    exit(failure > 0 or fail_files > 0)

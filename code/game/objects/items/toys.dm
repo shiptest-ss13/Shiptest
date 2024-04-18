@@ -68,7 +68,7 @@
 			A.reagents.trans_to(src, 10, transfered_by = user)
 			to_chat(user, "<span class='notice'>You fill the balloon with the contents of [A].</span>")
 			desc = "A translucent balloon with some form of liquid sloshing around in it."
-			update_icon()
+			update_appearance()
 
 /obj/item/toy/waterballoon/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/glass))
@@ -81,7 +81,7 @@
 				desc = "A translucent balloon with some form of liquid sloshing around in it."
 				to_chat(user, "<span class='notice'>You fill the balloon with the contents of [I].</span>")
 				I.reagents.trans_to(src, 10, transfered_by = user)
-				update_icon()
+				update_appearance()
 	else if(I.get_sharpness())
 		balloon_burst()
 	else
@@ -106,13 +106,13 @@
 		qdel(src)
 
 /obj/item/toy/waterballoon/update_icon_state()
-	if(src.reagents.total_volume >= 1)
+	if(reagents.total_volume >= 1)
 		icon_state = "waterballoon"
 		item_state = "balloon"
 	else
 		icon_state = "waterballoon-e"
 		item_state = "balloon-empty"
-
+	return ..()
 #define BALLOON_COLORS list("red", "blue", "green", "yellow")
 
 /obj/item/toy/balloon
@@ -178,51 +178,6 @@
 	icon = 'icons/obj/singularity.dmi'
 	icon_state = "singularity_s1"
 
-/obj/item/toy/spinningtoy/suicide_act(mob/living/carbon/human/user)
-	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
-	if(!myhead)
-		user.visible_message("<span class='suicide'>[user] tries consuming [src]... but [user.p_they()] [user.p_have()] no mouth!</span>") // and i must scream
-		return SHAME
-	user.visible_message("<span class='suicide'>[user] consumes [src]! It looks like [user.p_theyre()] trying to commit suicicide!</span>")
-	playsound(user, 'sound/items/eatfood.ogg', 50, TRUE)
-	user.adjust_nutrition(50) // mmmm delicious
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (3SECONDS))
-	return MANUAL_SUICIDE
-
-/**
-  * Internal function used in the toy singularity suicide
-  *
-  * Cavity implants the toy singularity into the body of the user (arg1), and kills the user.
-  * Makes the user vomit and receive 120 suffocation damage if there already is a cavity implant in the user.
-  * Throwing the singularity away will cause the user to start choking themself to death.
-  * Arguments:
-  * * user - Whoever is doing the suiciding
-  */
-/obj/item/toy/spinningtoy/proc/manual_suicide(mob/living/carbon/human/user)
-	if(!user)
-		return
-	if(!user.is_holding(src)) // Half digestion? Start choking to death
-		user.visible_message("<span class='suicide'>[user] panics and starts choking [user.p_them()]self to death!</span>")
-		user.adjustOxyLoss(200)
-		user.death(FALSE) // unfortunately you have to handle the suiciding yourself with a manual suicide
-		user.ghostize(FALSE) // get the fuck out of our body
-		return
-	var/obj/item/bodypart/chest/CH = user.get_bodypart(BODY_ZONE_CHEST)
-	if(CH.cavity_item) // if he's (un)bright enough to have a round and full belly...
-		user.visible_message("<span class='danger'>[user] regurgitates [src]!</span>") // I swear i dont have a fetish
-		user.vomit(100, TRUE, distance = 0)
-		user.adjustOxyLoss(120)
-		user.dropItemToGround(src) // incase the crit state doesn't drop the singulo to the floor
-		user.set_suicide(FALSE)
-		return
-	user.transferItemToLoc(src, user, TRUE)
-	CH.cavity_item = src // The mother came inside and found Andy, dead with a HUGE belly full of toys
-	user.adjustOxyLoss(200) // You know how most small toys in the EU have that 3+ onion head icon and a warning that says "Unsuitable for children under 3 years of age due to small parts - choking hazard"? This is why.
-	user.death(FALSE)
-	user.ghostize(FALSE)
-
-
-
 /*
  * Toy gun: Why isnt this an /obj/item/gun?
  */
@@ -262,7 +217,7 @@
 			to_chat(user, text("<span class='notice'>You reload [] cap\s.</span>", 7 - src.bullets))
 			A.amount_left -= 7 - src.bullets
 			src.bullets = 7
-		A.update_icon()
+		A.update_appearance()
 		return 1
 	else
 		return ..()
@@ -298,6 +253,7 @@
 
 /obj/item/toy/ammo/gun/update_icon_state()
 	icon_state = "357OLD-[amount_left]"
+	return ..()
 
 /obj/item/toy/ammo/gun/examine(mob/user)
 	. = ..()
@@ -310,8 +266,8 @@
 	name = "toy sword"
 	desc = "A cheap, plastic replica of an energy sword. Realistic sounds! Ages 8 and up."
 	icon = 'icons/obj/transforming_energy.dmi'
-	icon_state = "sword0"
-	item_state = "sword0"
+	icon_state = "sword"
+	item_state = "sword"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	var/active = 0
@@ -321,7 +277,7 @@
 	var/saber_color
 
 /obj/item/toy/sword/attack_self(mob/user)
-	active = !( active )
+	active = !(active)
 	if (active)
 		to_chat(user, "<span class='notice'>You extend the plastic blade with a quick flick of your wrist.</span>")
 		playsound(user, 'sound/weapons/saberon.ogg', 20, TRUE)
@@ -335,8 +291,8 @@
 	else
 		to_chat(user, "<span class='notice'>You push the plastic blade back down into the handle.</span>")
 		playsound(user, 'sound/weapons/saberoff.ogg', 20, TRUE)
-		icon_state = "sword0"
-		item_state = "sword0"
+		icon_state = "sword"
+		item_state = "sword"
 		w_class = WEIGHT_CLASS_SMALL
 	add_fingerprint(user)
 
@@ -403,7 +359,7 @@
 		active = TRUE
 		playsound(src, 'sound/effects/pope_entry.ogg', 100)
 		Rumble()
-		addtimer(CALLBACK(src, .proc/stopRumble), 600)
+		addtimer(CALLBACK(src, PROC_REF(stopRumble)), 600)
 	else
 		to_chat(user, "<span class='warning'>[src] is already active!</span>")
 
@@ -463,6 +419,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced")
 	hitsound = 'sound/weapons/bladeslice.ogg'
+	supports_variations = VOX_VARIATION
 
 /*
  * Snap pops
@@ -475,6 +432,13 @@
 	icon_state = "snappop"
 	w_class = WEIGHT_CLASS_TINY
 	var/ash_type = /obj/effect/decal/cleanable/ash
+
+/obj/item/toy/snappop/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/toy/snappop/proc/pop_burst(n=3, c=1)
 	var/datum/effect_system/spark_spread/s = new()
@@ -493,8 +457,8 @@
 	if(!..())
 		pop_burst()
 
-/obj/item/toy/snappop/Crossed(H as mob|obj)
-	. = ..()
+/obj/item/toy/snappop/proc/on_entered(datum/source, H as mob|obj)
+	SIGNAL_HANDLER
 	if(ishuman(H) || issilicon(H)) //i guess carp and shit shouldn't set them off
 		var/mob/living/carbon/M = H
 		if(issilicon(H) || M.m_intent == MOVE_INTENT_RUN)
@@ -511,7 +475,7 @@
 
 /obj/effect/decal/cleanable/ash/snappop_phoenix/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, .proc/respawn), respawn_time)
+	addtimer(CALLBACK(src, PROC_REF(respawn)), respawn_time)
 
 /obj/effect/decal/cleanable/ash/snappop_phoenix/proc/respawn()
 	new /obj/item/toy/snappop/phoenix(get_turf(src))
@@ -540,7 +504,7 @@
 		activation_message(user)
 		playsound(loc, 'sound/machines/click.ogg', 20, TRUE)
 
-		INVOKE_ASYNC(src, .proc/do_toy_talk, user)
+		INVOKE_ASYNC(src, PROC_REF(do_toy_talk), user)
 
 		cooldown = TRUE
 		addtimer(VARSET_CALLBACK(src, cooldown, FALSE), recharge_time)
@@ -640,10 +604,6 @@
 	var/card_throw_range = 7
 	var/list/card_attack_verb = list("attacked")
 
-/obj/item/toy/cards/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] is slitting [user.p_their()] wrists with \the [src]! It looks like [user.p_they()] [user.p_have()] a crummy hand!</span>")
-	playsound(src, 'sound/items/cardshuffle.ogg', 50, TRUE)
-	return BRUTELOSS
 
 /obj/item/toy/cards/proc/apply_card_vars(obj/item/toy/cards/newobj, obj/item/toy/cards/sourceobj) // Applies variables for supporting multiple types of card deck
 	if(!istype(sourceobj))
@@ -657,7 +617,6 @@
 	icon_state = "deck_nanotrasen_full"
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0
-	var/obj/machinery/computer/holodeck/holo = null // Holodeck cards should not be infinite
 	var/list/cards = list()
 
 /obj/item/toy/cards/deck/Initialize()
@@ -689,8 +648,6 @@
 		to_chat(user, "<span class='warning'>There are no more cards to draw!</span>")
 		return
 	var/obj/item/toy/cards/singlecard/H = new/obj/item/toy/cards/singlecard(user.loc)
-	if(holo)
-		holo.spawned += H // track them leaving the holodeck
 	choice = cards[1]
 	H.cardname = choice
 	H.parentdeck = src
@@ -700,7 +657,7 @@
 	H.pickup(user)
 	user.put_in_hands(H)
 	user.visible_message("<span class='notice'>[user] draws a card from the deck.</span>", "<span class='notice'>You draw a card from the deck.</span>")
-	update_icon()
+	update_appearance()
 	return H
 
 /obj/item/toy/cards/deck/update_icon_state()
@@ -713,6 +670,7 @@
 			icon_state = "deck_[deckstyle]_low"
 		else
 			icon_state = "deck_[deckstyle]_empty"
+	return ..()
 
 /obj/item/toy/cards/deck/attack_self(mob/user)
 	if(cooldown < world.time - 50)
@@ -733,7 +691,7 @@
 			qdel(SC)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
-		update_icon()
+		update_appearance()
 	else if(istype(I, /obj/item/toy/cards/cardhand))
 		var/obj/item/toy/cards/cardhand/CH = I
 		if(CH.parentdeck == src)
@@ -745,7 +703,7 @@
 			qdel(CH)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
-		update_icon()
+		update_appearance()
 	else
 		return ..()
 
@@ -773,7 +731,7 @@
 	name = "hand of cards"
 	desc = "A number of cards not in a deck, customarily held in ones hand."
 	icon = 'icons/obj/toy.dmi'
-	icon_state = "none"
+	icon_state = "nothing"
 	w_class = WEIGHT_CLASS_TINY
 	var/list/currenthand = list()
 	var/choice = null
@@ -855,8 +813,8 @@
 	newobj.resistance_flags = sourceobj.resistance_flags
 
 /**
-  * This proc updates the sprite for when you create a hand of cards
-  */
+ * This proc updates the sprite for when you create a hand of cards
+ */
 /obj/item/toy/cards/cardhand/proc/update_sprite()
 	cut_overlays()
 	var/overlay_cards = currenthand.len
@@ -1070,7 +1028,7 @@
 			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
 				// Short delay to match up with the explosion sound
 				// Shakes player camera 2 squares for 1 second.
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/shake_camera, M, 2, 1), 0.8 SECONDS)
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(shake_camera), M, 2, 1), 0.8 SECONDS)
 
 	else
 		to_chat(user, "<span class='alert'>Nothing happens.</span>")
@@ -1388,7 +1346,6 @@
 	name = "Security Officer action figure"
 	icon_state = "secofficer"
 	toysay = "I am the law!"
-	toysound = 'sound/runtime/complionator/dredd.ogg'
 
 /obj/item/toy/figure/virologist
 	name = "Virologist action figure"
@@ -1400,6 +1357,27 @@
 	icon_state = "warden"
 	toysay = "Seventeen minutes for coughing at an officer!"
 
+/obj/item/toy/figure/inteq
+	name = "Enforcer action figure"
+	icon_state = "inteq"
+	toysay = "Fuck you, pay me."
+
+/obj/item/toy/figure/vanguard
+	name = "Vanguard action figure"
+	icon_state = "vanguard"
+	toysay = "I'm too old for this shit."
+
+/obj/item/toy/figure/tali
+	name = "T4L1 action figure"
+	desc = "An action figure modeled after a recurring miniboss from the popular combination webcomic and video game RILENA. Unfortunately, the gun arm does not function."
+	icon_state = "tali"
+	toysay = "I'll take you down this time!"
+
+/obj/item/toy/figure/kari
+	name = "knockoff RILENA action figure"
+	desc = "An action figure that seems to be labeled as 'Kari' from RAYALA: RUNNING FROM EVIL. Unfortunately, the gun arm does not function."
+	icon_state = "kari"
+	toysay = "I will defeat you for good!"
 
 /obj/item/toy/dummy
 	name = "ventriloquist dummy"
@@ -1426,7 +1404,7 @@
 	say(message, language)
 	return NOPASS
 
-/obj/item/toy/dummy/GetVoice()
+/obj/item/toy/dummy/GetVoice(if_no_voice = "Unknown")
 	return doll_name
 
 /obj/item/toy/seashell
@@ -1456,7 +1434,7 @@
 	if(cooldown <= world.time)
 		cooldown = (world.time + 300)
 		user.visible_message("<span class='notice'>[user] adjusts the dial on [src].</span>")
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/items/radiostatic.ogg', 50, FALSE), 0.5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/items/radiostatic.ogg', 50, FALSE), 0.5 SECONDS)
 	else
 		to_chat(user, "<span class='warning'>The dial on [src] jams up</span>")
 		return
@@ -1471,4 +1449,4 @@
 /obj/item/toy/braintoy/attack_self(mob/user)
 	if(cooldown <= world.time)
 		cooldown = (world.time + 10)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/effects/blobattack.ogg', 50, FALSE), 0.5 SECONDS)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), src, 'sound/effects/blobattack.ogg', 50, FALSE), 0.5 SECONDS)

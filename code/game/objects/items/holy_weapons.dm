@@ -14,7 +14,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain
 	name = "crusader armour"
 	desc = "God wills it!"
-	icon_state = "knight_templar"
+	icon_state = "chaplain_templar"
 	item_state = "knight_templar"
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 	slowdown = 0
@@ -69,7 +69,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/studentuni
 	name = "student robe"
 	desc = "The uniform of a bygone institute of learning."
-	icon_state = "studentuni"
+	icon_state = "chaplain_studentuni"
 	item_state = "studentuni"
 	body_parts_covered = ARMS|CHEST
 	allowed = list(/obj/item/storage/book/bible, /obj/item/nullrod, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
@@ -83,7 +83,6 @@
 	item_state = "cage"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	dynamic_hair_suffix = ""
 
 /obj/item/storage/box/holy/sentinel
 	name = "Stone Sentinel Kit"
@@ -101,7 +100,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/ancient
 	name = "ancient armour"
 	desc = "Defend the treasure..."
-	icon_state = "knight_ancient"
+	icon_state = "chaplain_ancient"
 	item_state = "knight_ancient"
 
 /obj/item/storage/box/holy/witchhunter
@@ -114,7 +113,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/witchhunter
 	name = "witchunter garb"
 	desc = "This worn outfit saw much use back in the day."
-	icon_state = "witchhunter"
+	icon_state = "chaplain_witchhunter"
 	item_state = "witchhunter"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 
@@ -144,7 +143,7 @@
 /obj/item/clothing/suit/armor/riot/chaplain/adept
 	name = "adept robes"
 	desc = "The ideal outfit for burning the unfaithful."
-	icon_state = "crusader"
+	icon_state = "chaplain_crusader"
 	item_state = "crusader"
 
 /obj/item/storage/box/holy/follower
@@ -208,20 +207,16 @@
 	. = ..()
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
 
-/obj/item/nullrod/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!</span>")
-	return (BRUTELOSS|FIRELOSS)
-
 /obj/item/nullrod/attack_self(mob/user)
 	if(user.mind && (user.mind.holy_role) && !reskinned)
 		reskin_holy_weapon(user)
 
 /**
-  * reskin_holy_weapon: Shows a user a list of all available nullrod reskins and based on his choice replaces the nullrod with the reskinned version
-  *
-  * Arguments:
-  * * M The mob choosing a nullrod reskin
-  */
+ * reskin_holy_weapon: Shows a user a list of all available nullrod reskins and based on his choice replaces the nullrod with the reskinned version
+ *
+ * Arguments:
+ * * M The mob choosing a nullrod reskin
+ */
 /obj/item/nullrod/proc/reskin_holy_weapon(mob/M)
 	if(GLOB.holy_weapon_type)
 		return
@@ -234,7 +229,7 @@
 			nullrod_icons += list(initial(rodtype.name) = image(icon = initial(rodtype.icon), icon_state = initial(rodtype.icon_state)))
 
 	nullrod_icons = sortList(nullrod_icons)
-	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, .proc/check_menu, M), radius = 42, require_near = TRUE)
+	var/choice = show_radial_menu(M, src , nullrod_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), M), radius = 42, require_near = TRUE)
 	if(!choice || !check_menu(M))
 		return
 
@@ -250,11 +245,11 @@
 		M.put_in_active_hand(holy_weapon)
 
 /**
-  * check_menu: Checks if we are allowed to interact with a radial menu
-  *
-  * Arguments:
-  * * user The mob interacting with a menu
-  */
+ * check_menu: Checks if we are allowed to interact with a radial menu
+ *
+ * Arguments:
+ * * user The mob interacting with a menu
+ */
 /obj/item/nullrod/proc/check_menu(mob/user)
 	if(!istype(user))
 		return FALSE
@@ -291,7 +286,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	force = 5
 	slot_flags = ITEM_SLOT_BACK
-	block_chance = 50
+	block_chance = 40
 	var/shield_icon = "shield-red"
 
 /obj/item/nullrod/staff/worn_overlays(isinhands)
@@ -310,6 +305,8 @@
 	item_state = "claymore_gold"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	pickup_sound =  'sound/items/handling/knife2_pickup.ogg'
+	drop_sound = 'sound/items/handling/metal_drop.ogg'
 	name = "holy claymore"
 	desc = "A weapon fit for a crusade!"
 	w_class = WEIGHT_CLASS_HUGE
@@ -360,6 +357,7 @@
 	icon_state = "katana"
 	item_state = "katana"
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	supports_variations = VOX_VARIATION
 
 /obj/item/nullrod/claymore/multiverse
 	name = "extradimensional blade"
@@ -389,8 +387,8 @@
 
 /obj/item/nullrod/claymore/saber/pirate
 	name = "nautical energy sword"
-	icon_state = "cutlass1"
-	item_state = "cutlass1"
+	icon_state = "cutlassred"
+	item_state = "cutlassred"
 	desc = "Convincing HR that your religion involved piracy was no mean feat."
 
 /obj/item/nullrod/sord
@@ -449,7 +447,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	name = "possessed blade"
-	desc = "When the station falls into chaos, it's nice to have a friend by your side."
+	desc = "When the world falls into chaos, it's nice to have a friend by your side."
 	attack_verb = list("chopped", "sliced", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	var/possessed = FALSE
@@ -503,6 +501,30 @@
 	hitsound = 'sound/weapons/chainsawhit.ogg'
 	tool_behaviour = TOOL_SAW
 	toolspeed = 0.5 //faster than normal saw
+
+/obj/item/nullrod/scythe/talking/necro
+	desc = "An ancient weapon flush with the souls of the fallen. The blood of the necropolis has suffused it over time immemorial, granting a toothy bite."
+	force = 35
+	block_chance = 35
+	hitsound = 'sound/weapons/pierce_slow.ogg'
+	armour_penetration = 20// lower ap than the original possessed sword, go figure. The justification is that this has a serrated blade
+	chaplain_spawnable = FALSE
+	attack_verb = list("gnawed", "munched on", "chewed", "rended", "chomped")
+	name = "possessed greatsword"
+	var/bleed_stacks_per_hit = 2 //this effect has rapid scaling and is an instant down pretty much, I'll crib it since it can trigger on non-fauna
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/nullrod/scythe/talking/necro/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>This weapon applies a growing blood curse on attack. Though it slowly fades, fully manifesting it causes your target's blood to violently explode, creating a lethal burst of damage.</span>"
+
+/obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
+	..()
+	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
+	if(!B)
+		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
+	else
+		B.add_stacks(bleed_stacks_per_hit)
 
 /obj/item/nullrod/hammmer
 	icon_state = "hammeron"
@@ -568,7 +590,7 @@
 
 /obj/item/nullrod/whip
 	name = "holy whip"
-	desc = "What a terrible night to be on Space Station 13."
+	desc = "What a terrible night to be on Space Station 13."//very classic, it stays
 	icon_state = "chain"
 	item_state = "chain"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'

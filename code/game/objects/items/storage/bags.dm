@@ -50,11 +50,6 @@
 	STR.max_items = 30
 	STR.set_holdable(null, list(/obj/item/disk/nuclear))
 
-/obj/item/storage/bag/trash/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] puts [src] over [user.p_their()] head and starts chomping at the insides! Disgusting!</span>")
-	playsound(loc, 'sound/items/eatfood.ogg', 50, TRUE, -1)
-	return (TOXLOSS)
-
 /obj/item/storage/bag/trash/update_icon_state()
 	switch(contents.len)
 		if(20 to INFINITY)
@@ -65,6 +60,7 @@
 			icon_state = "[initial(icon_state)]1"
 		else
 			icon_state = "[initial(icon_state)]"
+	return ..()
 
 /obj/item/storage/bag/trash/cyborg
 	insertable = FALSE
@@ -73,7 +69,7 @@
 	if(insertable)
 		J.put_in_cart(src, user)
 		J.mybag=src
-		J.update_icon()
+		J.update_appearance()
 	else
 		to_chat(user, "<span class='warning'>You are unable to fit your [name] into the [J.name].</span>")
 		return
@@ -100,11 +96,10 @@
 /obj/item/storage/bag/ore
 	name = "mining satchel"
 	desc = "This little bugger can be used to store and transport ores."
-	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "minebag"
-	//WS end
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+	supports_variations = VOX_VARIATION
 	component_type = /datum/component/storage/concrete/stack
 	var/spam_protection = FALSE //If this is TRUE, the holder won't receive any messages when they fail to pick up ore through crossing it
 	var/mob/listeningTo
@@ -124,7 +119,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_ores)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(Pickup_ores))
 	listeningTo = user
 
 /obj/item/storage/bag/ore/dropped()
@@ -172,10 +167,8 @@
 /obj/item/storage/bag/ore/holding //miners, your messiah has arrived
 	name = "mining satchel of holding"
 	desc = "A revolution in convenience, this satchel allows for huge amounts of ore storage. It's been outfitted with anti-malfunction safety measures."
-	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "minebagbs"
-	//WS end
 
 /obj/item/storage/bag/ore/holding/ComponentInitialize()
 	. = ..()
@@ -190,11 +183,10 @@
 
 /obj/item/storage/bag/plants
 	name = "plant bag"
-	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "plantbag"
-	//WS end
 	resistance_flags = FLAMMABLE
+	supports_variations = VOX_VARIATION
 
 /obj/item/storage/bag/plants/ComponentInitialize()
 	. = ..()
@@ -223,7 +215,7 @@
 	if(usr.incapacitated())
 		return
 	for(var/obj/item/O in contents)
-		seedify(O, 1)
+		seedify(O, 1, FALSE, TRUE)
 
 // -----------------------------
 //        Sheet Snatcher
@@ -292,6 +284,30 @@
 		/obj/item/spellbook
 		))
 
+//Medicine bag
+
+/obj/item/storage/bag/medical
+	name = "medicine bag"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "medbag"
+	desc = "A bag for storing syringes, sutures, ointments, and pills."
+	w_class = WEIGHT_CLASS_NORMAL
+	resistance_flags = FLAMMABLE
+
+/obj/item/storage/bag/medical/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 200
+	STR.max_items = 15
+	STR.insert_preposition = "in"
+	STR.set_holdable(list(
+		/obj/item/reagent_containers/pill,
+		/obj/item/reagent_containers/medigel,
+		/obj/item/reagent_containers/syringe,
+		/obj/item/stack/medical,
+		/obj/item/reagent_containers/chem_pack //IV bags of blood and such. I don't know why you're carrying them around, but you never know!
+		))
+
 /*
  * Trays - Agouri
  */
@@ -319,7 +335,7 @@
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_QUICK_EMPTY)
 	// Make each item scatter a bit
 	for(var/obj/item/I in oldContents)
-		INVOKE_ASYNC(src, .proc/do_scatter, I)
+		INVOKE_ASYNC(src, PROC_REF(do_scatter), I)
 
 	if(prob(50))
 		playsound(M, 'sound/items/trayhit1.ogg', 50, TRUE)
@@ -329,7 +345,7 @@
 	if(ishuman(M) || ismonkey(M))
 		if(prob(10))
 			M.Paralyze(40)
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bag/tray/proc/do_scatter(obj/item/I)
 	for(var/i in 1 to rand(1,2))
@@ -347,11 +363,11 @@
 
 /obj/item/storage/bag/tray/Entered()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bag/tray/Exited()
 	. = ..()
-	update_icon()
+	update_appearance()
 
 /obj/item/storage/bag/tray/cafeteria
 	name = "cafeteria tray"
@@ -365,10 +381,8 @@
 
 /obj/item/storage/bag/chemistry
 	name = "chemistry bag"
-	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "chembag"
-	//WS end
 	desc = "A bag for storing pills, patches, and bottles."
 	resistance_flags = FLAMMABLE
 
@@ -395,10 +409,8 @@
 
 /obj/item/storage/bag/bio
 	name = "bio bag"
-	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "virobag"
-	//WS end
 	desc = "A bag for the safe transportation and disposal of biowaste and other biological materials."
 	resistance_flags = FLAMMABLE
 
@@ -428,10 +440,8 @@
 
 /obj/item/storage/bag/construction
 	name = "construction bag"
-	//WS Begin - Better bag sprites
-	icon = 'whitesands/icons/obj/bags.dmi'
+	icon = 'icons/obj/bags.dmi'
 	icon_state = "engbag"
-	//WS end
 	desc = "A bag for storing small construction components."
 	resistance_flags = FLAMMABLE
 
@@ -450,5 +460,61 @@
 		/obj/item/stack/cable_coil,
 		/obj/item/circuitboard,
 		/obj/item/electronics,
-		/obj/item/wallframe/camera
+		/obj/item/wallframe/camera,
+		/obj/item/stack/rods,
+		/obj/item/light,
+		/obj/item/pipe,
+		/obj/item/stack/sheet/glass
 		))
+
+/obj/item/storage/bag/construction/holding
+	name = "construction bag of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "engibs"
+	desc = "A bag for storing construction equipment. With the help of bluespace, you'll be building more airlocks and cameras then ever before."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/construction/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 150
+
+/obj/item/storage/bag/plants/holding
+	name = "harvest carrier of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "plantbs"
+	desc = "A bag for storing agricultural goods, augmented with bluespace technology. A glorious melon-carrying chariot, worthy of a true botanist."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/plants/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 200
+
+/obj/item/storage/bag/chemistry/holding
+	name = "chemistry satchel of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "chembs"
+	desc = "A bag for storing varied chemical goods, optimized with bluespace technology to allow the resident chemist to carry their entire lab around with them."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/chemistry/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 75
+
+/obj/item/storage/bag/bio/holding
+	name = "biohazard container of holding"
+	icon = 'icons/obj/bags.dmi'
+	icon_state = "biobagbs"
+	desc = "A bag designed to safely contain biologically-hazardous objects. This bag has been outfitted with a bluespace storage well, and can carry considerably more then it's actual size."
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_POCKETS
+
+/obj/item/storage/bag/bio/holding/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/storage = GetComponent(/datum/component/storage)
+	storage.max_combined_w_class = INFINITY
+	storage.max_items = 150

@@ -2,7 +2,6 @@
 	name = "pressure plate"
 	desc = "An electronic device that triggers when stepped on. Ctrl-Click to toggle the pressure plate off and on."
 	icon = 'icons/obj/puzzle_small.dmi'
-	item_state = "flash"
 	icon_state = "pressureplate"
 	layer = LOW_OBJ_LAYER
 	var/trigger_mob = TRUE
@@ -31,10 +30,15 @@
 		sigdev.frequency = roundstart_signaller_freq
 
 	AddElement(/datum/element/undertile, tile_overlay = tile_overlay, use_anchor = TRUE)
-	RegisterSignal(src, COMSIG_OBJ_HIDE, .proc/ToggleActive)
+	RegisterSignal(src, COMSIG_OBJ_HIDE, PROC_REF(ToggleActive))
 
-/obj/item/pressure_plate/Crossed(atom/movable/AM)
-	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/item/pressure_plate/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!can_trigger || !active)
 		return
 	if(trigger_item && !istype(AM, specific_item))
@@ -45,7 +49,7 @@
 	else if(!trigger_item)
 		return
 	can_trigger = FALSE
-	addtimer(CALLBACK(src, .proc/trigger), trigger_delay)
+	addtimer(CALLBACK(src, PROC_REF(trigger)), trigger_delay)
 
 /obj/item/pressure_plate/proc/trigger()
 	can_trigger = TRUE

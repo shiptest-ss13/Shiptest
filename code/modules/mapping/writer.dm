@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 	var/depth = maxz - minz
 
 	//Step 0: Calculate the amount of letters we need (26 ^ n > turf count)
-	var/turfsNeeded = width * height
+	var/turfsNeeded = (width + 1) * (height + 1)
 	var/layers = FLOOR(log(GLOB.save_file_chars.len, turfsNeeded) + 0.999,1)
 
 	//Step 1: Run through the area and generate file data
@@ -52,38 +52,40 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 	for(var/z in 0 to depth)
 		for(var/x in 0 to width)
 			contents += "\n([x + 1],1,[z + 1]) = {\"\n"
-			for(var/y in height to 1 step -1)
+			for(var/y in height to 0 step -1)
 				CHECK_TICK
 				//====Get turfs Data====
-				var/turf/place = locate((minx + x), (miny + y), (minz + z))
-				var/area/location
-				var/list/objects
-				var/area/place_area = get_area(place)
+				var/turf/place_turf = locate((minx + x), (miny + y), (minz + z))
+				var/turf_type = /turf/template_noop
+				var/area/place_area = get_area(place_turf)
+				var/area_type = /area/template_noop
+				var/is_shuttle_area = istype(place_area, /area/shuttle)
 				//If there is nothing there, save as a noop (For odd shapes)
-				if(!place)
-					place = /turf/template_noop
-					location = /area/template_noop
-					objects = list()
+				if(!place_turf)
+					turf_type = /turf/template_noop
+					area_type = /area/template_noop
+					place_turf = null
 				//Ignore things in space, must be a space turf
-				else if(istype(place, /turf/open/space) && !(save_flag & SAVE_SPACE))
-					place = /turf/template_noop
-					location = /area/template_noop
-				//Stuff to add
-				else
-					location = place_area.type
-					objects = place
-					place = place.type
+				else if(istype(place_turf, /turf/open/space) && !(save_flag & SAVE_SPACE))
+					turf_type = /turf/template_noop
+					area_type = /area/template_noop
 				//====Saving shuttles only / non shuttles only====
-				var/is_shuttle_area = istype(location, /area/shuttle)
-				if((is_shuttle_area && shuttle_area_flag == SAVE_SHUTTLEAREA_IGNORE) || (!is_shuttle_area && shuttle_area_flag == SAVE_SHUTTLEAREA_ONLY))
-					place = /turf/template_noop
-					location = /area/template_noop
-					objects = list()
+				else if((is_shuttle_area && shuttle_area_flag == SAVE_SHUTTLEAREA_IGNORE) || (!is_shuttle_area && shuttle_area_flag == SAVE_SHUTTLEAREA_ONLY))
+					turf_type = /turf/template_noop
+					area_type = /area/template_noop
+				//Stuff to add
+				else if(save_flag & SAVE_TURFS)
+					turf_type = place_turf.type
+					area_type = place_area.type
+
 				//====For toggling not saving areas and turfs====
 				if(!(save_flag & SAVE_AREAS))
-					location = /area/template_noop
-				if(!(save_flag & SAVE_TURFS))
-					place = /turf/template_noop
+					area_type = /area/template_noop
+				else if(turf_type != /turf/template_noop)
+					//====Saving turfs====
+					var/turf_metadata = generate_tgm_metadata(place_turf)
+					var/custom_data = place_turf.on_turf_saved()
+					turf_type = "[turf_type][turf_metadata][custom_data ? ",\n[custom_data]" : ""]"
 				//====Generate Header Character====
 				var/header_char = calculate_tgm_header_index(index, layers)	//The characters of the header
 				var/current_header = "(\n"										//The actual stuff inside the header
@@ -91,7 +93,7 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 				var/empty = TRUE
 				//====SAVING OBJECTS====
 				if(save_flag & SAVE_OBJECTS)
-					for(var/obj/thing in objects)
+					for(var/obj/thing in place_turf)
 						CHECK_TICK
 						if(thing.type in obj_blacklist)
 							continue
@@ -105,14 +107,25 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 							current_header += "[custom_data ? ",\n[custom_data]" : ""]"
 				//====SAVING MOBS====
 				if(save_flag & SAVE_MOBS)
-					for(var/mob/living/thing in objects)
+					for(var/mob/living/thing in place_turf)
 						CHECK_TICK
 						if(istype(thing, /mob/living/carbon))		//Ignore people, but not animals
+							for(var/obj/object in thing.contents)
+								if(object.type in obj_blacklist)
+									continue
+								var/metadata = generate_tgm_metadata(object)
+								current_header += "[empty?"":",\n"][object.type][metadata]"
+								empty = FALSE
+								//====SAVING SPECIAL DATA====
+								//This is what causes lockers and machines to save stuff inside of them
+								if(save_flag & SAVE_OBJECT_PROPERTIES)
+									var/custom_data = object.on_object_saved()
+									current_header += "[custom_data ? ",\n[custom_data]" : ""]"
 							continue
 						var/metadata = generate_tgm_metadata(thing)
 						current_header += "[empty?"":",\n"][thing.type][metadata]"
 						empty = FALSE
-				current_header += "[empty?"":",\n"][place],\n[location])\n"
+				current_header += "[empty?"":",\n"][turf_type],\n[area_type])\n"
 				//====Fill the contents file====
 				//Compression is done here
 				var/position_of_header = header_dat.Find(current_header)
@@ -136,7 +149,6 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 	if(!vars_to_save)
 		return
 	for(var/V in O.vars)
-		CHECK_TICK
 		if(!(V in vars_to_save))
 			continue
 		var/value = O.vars[V]
@@ -170,7 +182,6 @@ GLOBAL_LIST_INIT(save_file_chars, list(
 /proc/calculate_tgm_header_index(index, layers)
 	var/output = ""
 	for(var/i in 1 to layers)
-		CHECK_TICK
 		var/l = GLOB.save_file_chars.len
 		var/c = FLOOR((index-1) / (l ** (i - 1)), 1)
 		c = (c % l) + 1

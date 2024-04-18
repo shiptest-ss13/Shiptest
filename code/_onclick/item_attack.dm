@@ -1,12 +1,12 @@
 /**
-  * This is the proc that handles the order of an item_attack.
-  *
-  * The order of procs called is:
-  * * [/atom/proc/tool_act] on the target. If it returns TRUE, the chain will be stopped.
-  * * [/obj/item/proc/pre_attack] on src. If this returns TRUE, the chain will be stopped.
-  * * [/atom/proc/attackby] on the target. If it returns TRUE, the chain will be stopped.
-  * * [/obj/item/proc/afterattack]. The return value does not matter.
-  */
+ * This is the proc that handles the order of an item_attack.
+ *
+ * The order of procs called is:
+ * * [/atom/proc/tool_act] on the target. If it returns TRUE, the chain will be stopped.
+ * * [/obj/item/proc/pre_attack] on src. If this returns TRUE, the chain will be stopped.
+ * * [/atom/proc/attackby] on the target. If it returns TRUE, the chain will be stopped.
+ * * [/obj/item/proc/afterattack]. The return value does not matter.
+ */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
@@ -26,30 +26,30 @@
 	interact(user)
 
 /**
-  * Called on the item before it hits something
-  *
-  * Arguments:
-  * * atom/A - The atom about to be hit
-  * * mob/living/user - The mob doing the htting
-  * * params - click params such as alt/shift etc
-  *
-  * See: [/obj/item/proc/melee_attack_chain]
-  */
+ * Called on the item before it hits something
+ *
+ * Arguments:
+ * * atom/A - The atom about to be hit
+ * * mob/living/user - The mob doing the htting
+ * * params - click params such as alt/shift etc
+ *
+ * See: [/obj/item/proc/melee_attack_chain]
+ */
 /obj/item/proc/pre_attack(atom/A, mob/living/user, params) //do stuff before attackby!
 	if(SEND_SIGNAL(src, COMSIG_ITEM_PRE_ATTACK, A, user, params) & COMPONENT_NO_ATTACK)
 		return TRUE
 	return FALSE //return TRUE to avoid calling attackby after this proc does stuff
 
 /**
-  * Called on an object being hit by an item
-  *
-  * Arguments:
-  * * obj/item/W - The item hitting this atom
-  * * mob/user - The wielder of this item
-  * * params - click params such as alt/shift etc
-  *
-  * See: [/obj/item/proc/melee_attack_chain]
-  */
+ * Called on an object being hit by an item
+ *
+ * Arguments:
+ * * obj/item/W - The item hitting this atom
+ * * mob/user - The wielder of this item
+ * * params - click params such as alt/shift etc
+ *
+ * See: [/obj/item/proc/melee_attack_chain]
+ */
 /atom/proc/attackby(obj/item/W, mob/user, params)
 	if(SEND_SIGNAL(src, COMSIG_PARENT_ATTACKBY, W, user, params) & COMPONENT_NO_AFTERATTACK)
 		return TRUE
@@ -87,12 +87,12 @@
 			return TRUE
 
 /**
-  * Called from [/mob/living/attackby]
-  *
-  * Arguments:
-  * * mob/living/M - The mob being hit by this item
-  * * mob/living/user - The mob hitting with this item
-  */
+ * Called from [/mob/living/attackby]
+ *
+ * Arguments:
+ * * mob/living/M - The mob being hit by this item
+ * * mob/living/user - The mob hitting with this item
+ */
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
@@ -150,7 +150,7 @@
 	take_damage(I.force, I.damtype, "melee", 1)
 
 /mob/living/attacked_by(obj/item/I, mob/living/user)
-	var/armor_value = run_armor_check(armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
+	var/armor_value = run_armor_check(attack_flag = "melee", armour_penetration = I.armour_penetration)		//WS Edit - Simplemobs can have armor
 	send_item_attack_message(I, user)
 	if(I.force)
 		apply_damage(I.force, I.damtype, break_modifier = I.force, blocked = armor_value) //Bone break modifier = item force
@@ -170,14 +170,14 @@
 		return ..()
 
 /**
-  * Last proc in the [/obj/item/proc/melee_attack_chain]
-  *
-  * Arguments:
-  * * atom/target - The thing that was hit
-  * * mob/user - The mob doing the hitting
-  * * proximity_flag - is 1 if this afterattack was called on something adjacent, in your square, or on your person.
-  * * click_parameters - is the params string from byond [/atom/proc/Click] code, see that documentation.
-  */
+ * Last proc in the [/obj/item/proc/melee_attack_chain]
+ *
+ * Arguments:
+ * * atom/target - The thing that was hit
+ * * mob/user - The mob doing the hitting
+ * * proximity_flag - is 1 if this afterattack was called on something adjacent, in your square, or on your person.
+ * * click_parameters - is the params string from byond [/atom/proc/Click] code, see that documentation.
+ */
 /obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
@@ -213,3 +213,4 @@
 	visible_message("<span class='danger'>[attack_message]</span>",\
 		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
 	return 1
+

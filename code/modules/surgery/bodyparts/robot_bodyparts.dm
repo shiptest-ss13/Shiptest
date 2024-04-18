@@ -13,12 +13,16 @@
 /obj/item/bodypart/l_arm/robot
 	name = "cyborg left arm"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
+	limb_id = "robotic"
 	attack_verb = list("slapped", "punched")
 	item_state = "buildpipe"
-	icon = 'icons/mob/augmentation/augments.dmi'
+	static_icon =  'icons/mob/augmentation/augments.dmi'
+	icon = null
 	flags_1 = CONDUCT_1
 	icon_state = "borg_l_arm"
-	status = BODYPART_ROBOTIC
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -36,10 +40,14 @@
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	attack_verb = list("slapped", "punched")
 	item_state = "buildpipe"
-	icon = 'icons/mob/augmentation/augments.dmi'
+	static_icon =  'icons/mob/augmentation/augments.dmi'
+	icon = null
+	limb_id = "robotic"
 	flags_1 = CONDUCT_1
 	icon_state = "borg_r_arm"
-	status = BODYPART_ROBOTIC
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -52,15 +60,19 @@
 	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
-/obj/item/bodypart/l_leg/robot
+/obj/item/bodypart/leg/left/robot
 	name = "cyborg left leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	attack_verb = list("kicked", "stomped")
 	item_state = "buildpipe"
-	icon = 'icons/mob/augmentation/augments.dmi'
+	static_icon =  'icons/mob/augmentation/augments.dmi'
+	icon = null
+	limb_id = "robotic"
 	flags_1 = CONDUCT_1
 	icon_state = "borg_l_leg"
-	status = BODYPART_ROBOTIC
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -73,15 +85,19 @@
 	medium_burn_msg = ROBOTIC_MEDIUM_BURN_MSG
 	heavy_burn_msg = ROBOTIC_HEAVY_BURN_MSG
 
-/obj/item/bodypart/r_leg/robot
+/obj/item/bodypart/leg/right/robot
 	name = "cyborg right leg"
 	desc = "A skeletal limb wrapped in pseudomuscles, with a low-conductivity case."
 	attack_verb = list("kicked", "stomped")
 	item_state = "buildpipe"
-	icon = 'icons/mob/augmentation/augments.dmi'
+	static_icon =  'icons/mob/augmentation/augments.dmi'
+	icon = null
+	limb_id = "robotic"
 	flags_1 = CONDUCT_1
 	icon_state = "borg_r_leg"
-	status = BODYPART_ROBOTIC
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -98,10 +114,14 @@
 	name = "cyborg torso"
 	desc = "A heavily reinforced case containing cyborg logic boards, with space for a standard power cell."
 	item_state = "buildpipe"
-	icon = 'icons/mob/augmentation/augments.dmi'
+	static_icon = 'icons/mob/augmentation/augments.dmi'
+	icon = null
+	limb_id = "robotic"
 	flags_1 = CONDUCT_1
 	icon_state = "borg_chest"
-	status = BODYPART_ROBOTIC
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -199,10 +219,14 @@
 	name = "cyborg head"
 	desc = "A standard reinforced braincase, with spine-plugged neural socket and sensor gimbals."
 	item_state = "buildpipe"
-	icon = 'icons/mob/augmentation/augments.dmi'
+	static_icon = 'icons/mob/augmentation/augments.dmi'
+	limb_id = "robotic"
+	icon = null
 	flags_1 = CONDUCT_1
 	icon_state = "borg_head"
-	status = BODYPART_ROBOTIC
+	is_dimorphic = FALSE
+	should_draw_greyscale = FALSE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
 
 	brute_reduction = 5
 	burn_reduction = 4
@@ -296,7 +320,7 @@
 /obj/item/bodypart/l_arm/robot/surplus
 	name = "surplus prosthetic left arm"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
-	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
 	max_damage = 20
@@ -304,27 +328,217 @@
 /obj/item/bodypart/r_arm/robot/surplus
 	name = "surplus prosthetic right arm"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
-	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
 	max_damage = 20
 
-/obj/item/bodypart/l_leg/robot/surplus
+/obj/item/bodypart/leg/left/robot/surplus
 	name = "surplus prosthetic left leg"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
-	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
 	max_damage = 20
 
-/obj/item/bodypart/r_leg/robot/surplus
+/obj/item/bodypart/leg/right/robot/surplus
 	name = "surplus prosthetic right leg"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
-	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	static_icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	brute_reduction = 0
 	burn_reduction = 0
 	max_damage = 20
 
+// Lizard Robotic (Synths)
+/obj/item/bodypart/chest/robot/lizard
+	name = "prosthetic lizard chest"
+	is_dimorphic = TRUE
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+	acceptable_bodytype = BODYTYPE_HUMANOID
+
+/obj/item/bodypart/head/robot/lizard
+	name = "prosthetic lizard head"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/lizard
+	name = "prosthetic lizard left arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/lizard
+	name = "prosthetic lizard right arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/lizard
+	name = "prosthetic lizard left leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/lizard
+	name = "prosthetic lizard right leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+// Surplus Lizard Robotic
+/obj/item/bodypart/l_arm/robot/surplus/lizard
+	name = "surplus prosthetic lizard left arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/surplus/lizard
+	name = "surplus prosthetic lizard right arm"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/surplus/lizard
+	name = "surplus prosthetic lizard left leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/surplus/lizard
+	name = "surplus prosthetic lizard right leg"
+	icon = 'icons/mob/augmentation/augments_lizard.dmi'
+	should_draw_greyscale = TRUE
+	overlay_icon_state = TRUE
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/surplus/lizard/digitigrade
+	name = "surplus prosthetic digitigrade lizard left leg"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+/obj/item/bodypart/leg/right/robot/surplus/lizard/digitigrade
+	name = "surplus prosthetic digitigrade lizard right leg"
+	bodytype = BODYTYPE_HUMANOID | BODYTYPE_ROBOTIC | BODYTYPE_DIGITIGRADE
+
+//Kepori Robotic
+/obj/item/bodypart/chest/robot/kepori
+	name = "prosthetic kepori chest"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+	acceptable_bodytype = BODYTYPE_KEPORI
+
+/obj/item/bodypart/head/robot/kepori
+	name = "prosthetic kepori head"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/kepori
+	name = "prosthetic kepori left arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/kepori
+	name = "prosthetic kepori right arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/kepori
+	name = "prosthetic kepori left leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/kepori
+	name = "prosthetic kepori right leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+//Surplus Kepori Robotic
+/obj/item/bodypart/l_arm/robot/surplus/kepori
+	name = "surplus prosthetic kepori left arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/surplus/kepori
+	name = "surplus prosthetic kepori right arm"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/surplus/kepori
+	name = "surplus prosthetic kepori left leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/surplus/kepori
+	name = "surplus prosthetic kepori right leg"
+	static_icon = 'icons/mob/augmentation/augments_kepori.dmi'
+	bodytype = BODYTYPE_KEPORI | BODYTYPE_ROBOTIC
+
+
+// Vox Robotic
+/obj/item/bodypart/chest/robot/vox
+	name = "prosthetic vox chest"
+	is_dimorphic = TRUE
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+	acceptable_bodytype = BODYTYPE_VOX
+
+/obj/item/bodypart/head/robot/vox
+	name = "prosthetic vox head"
+	is_dimorphic = TRUE
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/l_arm/robot/vox
+	name = "prosthetic vox left arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/vox
+	name = "prosthetic vox right arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/vox
+	name = "prosthetic vox left leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/vox
+	name = "prosthetic vox right leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+// Surplus Vox Robotic
+/obj/item/bodypart/l_arm/robot/surplus/vox
+	name = "surplus prosthetic vox left arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/r_arm/robot/surplus/vox
+	name = "surplus prosthetic vox right arm"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/left/robot/surplus/vox
+	name = "surplus prosthetic vox left leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
+
+/obj/item/bodypart/leg/right/robot/surplus/vox
+	name = "surplus prosthetic vox right leg"
+	static_icon = 'icons/mob/augmentation/augments_vox.dmi'
+	bodytype = BODYTYPE_VOX | BODYTYPE_ROBOTIC
 
 #undef ROBOTIC_LIGHT_BRUTE_MSG
 #undef ROBOTIC_MEDIUM_BRUTE_MSG

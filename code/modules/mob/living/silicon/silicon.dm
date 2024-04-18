@@ -13,7 +13,7 @@
 	mob_biotypes = MOB_ROBOTIC
 	deathsound = 'sound/voice/borg_deathsound.ogg'
 	speech_span = SPAN_ROBOT
-	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 | HEAR_1 | RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
+	flags_1 = PREVENT_CONTENTS_EXPLOSION_1 | RAD_PROTECT_CONTENTS_1 | RAD_NO_CONTAMINATE_1
 	examine_cursor_icon = null
 	var/datum/ai_laws/laws = null//Now... THEY ALL CAN ALL HAVE LAWS
 	var/last_lawchange_announce = 0
@@ -47,6 +47,8 @@
 	var/interaction_range = 7			//wireless control range
 	var/obj/item/pda/ai/aiPDA
 
+	var/list/ship_access = list() // Internal access to ships
+
 /mob/living/silicon/Initialize()
 	. = ..()
 	GLOB.silicon_mobs += src
@@ -69,6 +71,7 @@
 	QDEL_NULL(aicamera)
 	QDEL_NULL(builtInCamera)
 	QDEL_NULL(aiPDA)
+	QDEL_NULL(laws)
 	GLOB.silicon_mobs -= src
 	return ..()
 
@@ -96,7 +99,7 @@
 	if(in_cooldown)
 		return
 
-	addtimer(CALLBACK(src, .proc/show_alarms), 3 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(show_alarms)), 3 SECONDS)
 
 /mob/living/silicon/proc/show_alarms()
 	if(alarms_to_show.len < 5)
@@ -335,18 +338,6 @@
 
 	usr << browse(list, "window=laws")
 
-/mob/living/silicon/proc/ai_roster()
-	if(!client)
-		return
-	if(world.time < client.crew_manifest_delay)
-		return
-	client.crew_manifest_delay = world.time + (1 SECONDS)
-
-	if(!GLOB.crew_manifest_tgui)
-		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
-
-	GLOB.crew_manifest_tgui.ui_interact(src)
-
 /mob/living/silicon/proc/set_autosay() //For allowing the AI and borgs to set the radio behavior of auto announcements (state laws, arrivals).
 	if(!radio)
 		to_chat(src, "<span class='alert'>Radio not detected.</span>")
@@ -446,5 +437,15 @@
 /mob/living/silicon/on_standing_up()
 	return // Silicons are always standing by default.
 
-/mob/living/silicon/get_bank_account() /// WS Edit - Silicons can buy and use materials
-	return SSeconomy.get_dep_account(ACCOUNT_CIV)
+// Silicon equivalent of ID card ship access procs
+/mob/living/silicon/proc/add_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		ship_access += ship
+
+/mob/living/silicon/proc/remove_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		ship_access -= ship
+
+/mob/living/silicon/proc/has_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		return ship_access.Find(ship)

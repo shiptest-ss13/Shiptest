@@ -12,16 +12,17 @@
 	var/can_contaminate
 
 /datum/component/radioactive/Initialize(_strength=0, _source, _half_life=RAD_HALF_LIFE, _can_contaminate=TRUE)
-	strength = _strength
+	// shouldn't ever happen, but it pays to be a little careful
+	strength = min(_strength, INFINITY)
 	source = _source
 	hl3_release_date = _half_life
 	can_contaminate = _can_contaminate
 	if(istype(parent, /atom))
-		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/rad_examine)
-		RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/rad_clean)
+		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(rad_examine))
+		RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(rad_clean))
 		if(istype(parent, /obj/item))
-			RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/rad_attack)
-			RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ, .proc/rad_attack)
+			RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(rad_attack))
+			RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ, PROC_REF(rad_attack))
 	else
 		return COMPONENT_INCOMPATIBLE
 	if(strength > RAD_MINIMUM_CONTAMINATION)
@@ -30,7 +31,7 @@
 	//This relies on parent not being a turf or something. IF YOU CHANGE THAT, CHANGE THIS
 	var/atom/movable/master = parent
 	master.add_filter("rad_glow", 2, list("type" = "outline", "color" = "#39ff1430", "size" = 2))
-	addtimer(CALLBACK(src, .proc/glow_loop, master), rand(1,19))//Things should look uneven
+	addtimer(CALLBACK(src, PROC_REF(glow_loop), master), rand(1,19))//Things should look uneven
 	START_PROCESSING(SSradiation, src)
 
 /datum/component/radioactive/Destroy()
@@ -76,11 +77,11 @@
 		out += "The air around [master] feels warm"
 	switch(strength)
 		if(RAD_AMOUNT_LOW to RAD_AMOUNT_MEDIUM)
-			out += "[length(out) ? " and it " : "[master] "]feels weird to look at."
+			out += "[length(out) ? " and it " : "[master] "]feels weird to look at"
 		if(RAD_AMOUNT_MEDIUM to RAD_AMOUNT_HIGH)
-			out += "[length(out) ? " and it " : "[master] "]seems to be glowing a bit."
+			out += "[length(out) ? " and it " : "[master] "]seems to be glowing a bit"
 		if(RAD_AMOUNT_HIGH to INFINITY) //At this level the object can contaminate other objects
-			out += "[length(out) ? " and it " : "[master] "]hurts to look at."
+			out += "[length(out) ? " and it " : "[master] "]hurts to look at"
 	if(!LAZYLEN(out))
 		return
 	out += "."

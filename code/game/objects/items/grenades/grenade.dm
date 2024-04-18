@@ -35,14 +35,6 @@
 	var/shrapnel_radius
 	var/shrapnel_initialized
 
-/obj/item/grenade/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	playsound(src, 'sound/items/eatfood.ogg', 50, TRUE)
-	preprime(user, det_time)
-	user.transferItemToLoc(src, user, TRUE)//>eat a grenade set to 5 seconds >rush captain
-	sleep(det_time)//so you dont die instantly
-	return BRUTELOSS
-
 /obj/item/grenade/deconstruct(disassembled = TRUE)
 	if(!disassembled)
 		prime()
@@ -103,7 +95,7 @@
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	SEND_SIGNAL(src, COMSIG_GRENADE_ARMED, det_time, delayoverride)
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/proc/prime()
 	if(shrapnel_type && shrapnel_radius && !shrapnel_initialized) // add a second check for adding the component in case whatever triggered the grenade went straight to prime (badminnery for example)

@@ -1,5 +1,5 @@
 SUBSYSTEM_DEF(redbot)
-	name = "Bot Comms"
+	name = "Redbot"
 	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/redbot/Initialize(timeofday)
@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(redbot)
 		world.Export(query)
 	return ..()
 
-/datum/controller/subsystem/redbot/proc/send_discord_message(var/channel, var/message, var/priority_type)
+/datum/controller/subsystem/redbot/proc/send_discord_message(channel, message, priority_type)
 	var/bot_ip = CONFIG_GET(string/bot_ip)
 	var/list/adm = get_admin_counts()
 	var/list/allmins = adm["present"]

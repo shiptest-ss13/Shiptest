@@ -69,13 +69,13 @@
 	switch(action)
 		if("regimeset")
 			power_station.engaged = FALSE
-			power_station.teleporter_hub.update_icon()
+			power_station.teleporter_hub.update_appearance()
 			power_station.teleporter_hub.calibrated = FALSE
 			reset_regime()
 			. = TRUE
 		if("settarget")
 			power_station.engaged = FALSE
-			power_station.teleporter_hub.update_icon()
+			power_station.teleporter_hub.update_appearance()
 			power_station.teleporter_hub.calibrated = FALSE
 			set_target(usr)
 			. = TRUE
@@ -89,8 +89,8 @@
 
 			say("Processing hub calibration to target...")
 			calibrating = TRUE
-			power_station.update_icon()
-			addtimer(CALLBACK(src, .proc/finish_calibration), 50 * (3 - power_station.teleporter_hub.accuracy)) //Better parts mean faster calibration
+			power_station.update_appearance()
+			addtimer(CALLBACK(src, PROC_REF(finish_calibration)), 50 * (3 - power_station.teleporter_hub.accuracy)) //Better parts mean faster calibration
 			. = TRUE
 
 /obj/machinery/computer/teleporter/proc/finish_calibration()
@@ -100,7 +100,7 @@
 		say("Calibration complete.")
 	else
 		say("Error: Unable to detect hub.")
-	power_station.update_icon()
+	power_station.update_appearance()
 
 /obj/machinery/computer/teleporter/proc/check_hub_connection()
 	if(!power_station)
@@ -161,19 +161,19 @@
 		log_game("[key_name(user)] has set the teleporter target to [target_station] at [AREACOORD(T)]")
 		target = target_station.teleporter_hub
 		target_station.linked_stations |= power_station
-		target_station.machine_stat &= ~NOPOWER
+		target_station.set_machine_stat(target_station.machine_stat & ~NOPOWER)
 		if(target_station.teleporter_hub)
-			target_station.teleporter_hub.machine_stat &= ~NOPOWER
-			target_station.teleporter_hub.update_icon()
+			target_station.teleporter_hub.set_machine_stat(target_station.teleporter_hub.machine_stat & ~NOPOWER)
+			target_station.teleporter_hub.update_appearance()
 		if(target_station.teleporter_console)
-			target_station.teleporter_console.machine_stat &= ~NOPOWER
-			target_station.teleporter_console.update_icon()
+			target_station.teleporter_console.set_machine_stat(target_station.teleporter_console.machine_stat & ~NOPOWER)
+			target_station.teleporter_console.update_appearance()
 
 /obj/machinery/computer/teleporter/proc/is_eligible(atom/movable/AM)
 	var/turf/T = get_turf(AM)
 	if(!T)
 		return FALSE
-	if(is_centcom_level(T.z) || is_away_level(T.z))
+	if(is_centcom_level(T) || is_away_level(T))
 		return FALSE
 	var/area/A = get_area(T)
 	if(!A ||(A.area_flags & NOTELEPORT))

@@ -22,7 +22,6 @@
 	if(client)
 		remove_from_current_living_players()
 
-
 ///Adds the mob reference to the list of all the dead mobs. If mob is cliented, it adds it to the list of all dead player-mobs.
 /mob/proc/add_to_dead_mob_list()
 	if(QDELETED(src))
@@ -42,6 +41,10 @@
 /mob/proc/add_to_player_list()
 	SHOULD_CALL_PARENT(TRUE)
 	GLOB.player_list |= src
+	if(client.holder)
+		GLOB.keyloop_list |= src
+	else if(stat != DEAD || !SSlag_switch?.measures[DISABLE_DEAD_KEYLOOP])
+		GLOB.keyloop_list |= src
 	if(!SSticker?.mode)
 		return
 	if(stat == DEAD)
@@ -53,6 +56,7 @@
 /mob/proc/remove_from_player_list()
 	SHOULD_CALL_PARENT(TRUE)
 	GLOB.player_list -= src
+	GLOB.keyloop_list -= src
 	if(!SSticker?.mode)
 		return
 	if(stat == DEAD)

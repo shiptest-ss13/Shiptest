@@ -41,7 +41,7 @@
 
 /atom/movable/proc/mouse_buckle_handling(mob/living/M, mob/living/user)
 	if(can_buckle && istype(M) && istype(user))
-		if(user_buckle_mob(M, user))
+		if(user_buckle_mob(M, user, check_loc = FALSE))
 			return TRUE
 
 /atom/movable/proc/has_buckled_mobs()
@@ -74,8 +74,11 @@
 			var/mob/living/L = M.pulledby
 			L.reset_pull_offsets(M, TRUE)
 
-	if(!check_loc && M.loc != loc)
-		M.forceMove(loc)
+	if (CanPass(M, get_dir(loc, M)))
+		M.Move(loc)
+	else
+		if (!check_loc && M.loc != loc)
+			M.forceMove(loc)
 
 	M.buckling = null
 	M.set_buckled(src)
@@ -128,14 +131,14 @@
 /atom/movable/proc/post_unbuckle_mob(mob/living/M)
 
 /**
-  * Simple helper proc that runs a suite of checks to test whether it is possible or not to buckle the target mob to src.
-  *
-  * Returns FALSE if any conditions that should prevent buckling are satisfied. Returns TRUE otherwise.
-  * Arguments:
-  * * target - Target mob to check against buckling to src.
-  * * force - Whether or not the buckle should be forced. If TRUE, ignores src's can_buckle var.
-  * * check_loc - Whether to do a proximity check or not. The proximity check looks for target.loc == src.loc.
-  */
+ * Simple helper proc that runs a suite of checks to test whether it is possible or not to buckle the target mob to src.
+ *
+ * Returns FALSE if any conditions that should prevent buckling are satisfied. Returns TRUE otherwise.
+ * Arguments:
+ * * target - Target mob to check against buckling to src.
+ * * force - Whether or not the buckle should be forced. If TRUE, ignores src's can_buckle var.
+ * * check_loc - Whether to do a proximity check or not. The proximity check looks for target.loc == src.loc.
+ */
 /atom/movable/proc/is_buckle_possible(mob/living/target, force = FALSE, check_loc = TRUE)
 	// Make sure target is mob/living
 	if(!istype(target))
@@ -168,14 +171,14 @@
 	return TRUE
 
 /**
-  * Simple helper proc that runs a suite of checks to test whether it is possible or not for user to buckle target mob to src.
-  *
-  * Returns FALSE if any conditions that should prevent buckling are satisfied. Returns TRUE otherwise.
-  * Arguments:
-  * * target - Target mob to check against buckling to src.
-  * * user - The mob who is attempting to buckle the target to src.
-  * * check_loc - Whether to do a proximity check or not when calling is_buckle_possible().
-  */
+ * Simple helper proc that runs a suite of checks to test whether it is possible or not for user to buckle target mob to src.
+ *
+ * Returns FALSE if any conditions that should prevent buckling are satisfied. Returns TRUE otherwise.
+ * Arguments:
+ * * target - Target mob to check against buckling to src.
+ * * user - The mob who is attempting to buckle the target to src.
+ * * check_loc - Whether to do a proximity check or not when calling is_buckle_possible().
+ */
 /atom/movable/proc/is_user_buckle_possible(mob/living/target, mob/user, check_loc = TRUE)
 	// Standard adjacency and other checks.
 	if(!Adjacent(user) || !Adjacent(target) || !isturf(user.loc) || user.incapacitated() || target.anchored)

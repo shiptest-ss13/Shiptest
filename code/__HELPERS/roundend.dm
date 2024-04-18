@@ -11,11 +11,6 @@
 	// All but npcs sublists and ghost category contain only mobs with minds
 	var/list/file_data = list("escapees" = list("humans" = list(), "silicons" = list(), "others" = list(), "npcs" = list()), "abandoned" = list("humans" = list(), "silicons" = list(), "others" = list(), "npcs" = list()), "ghosts" = list(), "additional data" = list())
 	var/num_survivors = 0 //Count of non-brain non-camera mobs with mind that are alive
-	var/num_escapees = 0 //Above and on centcom z
-	var/num_shuttle_escapees = 0 //Above and on escape shuttle
-	var/list/area/shuttle_areas
-	if(SSshuttle && SSshuttle.emergency)
-		shuttle_areas = SSshuttle.emergency.shuttle_areas
 
 	for(var/mob/M in GLOB.mob_list)
 		var/list/mob_data = list()
@@ -32,11 +27,6 @@
 			mob_data["ckey"] = M.mind.key
 			if(M.stat != DEAD && !isbrain(M) && !iscameramob(M))
 				num_survivors++
-				if(EMERGENCY_ESCAPED_OR_ENDGAMED && (M.onCentCom() || M.onSyndieBase()))
-					num_escapees++
-					escape_status = "escapees"
-					if(shuttle_areas[get_area(M)])
-						num_shuttle_escapees++
 			if(isliving(M))
 				var/mob/living/L = M
 				mob_data["location"] = get_area(L)
@@ -74,7 +64,7 @@
 			var/name_to_use = initial(M.name)
 			if(ishuman(M))
 				name_to_use = "Unknown Human" //Monkeymen and other mindless corpses
-			if(npc_nest.Find(name_to_use))
+			if(name_to_use in npc_nest)
 				file_data["[escape_status]"]["npcs"][name_to_use] += 1
 			else
 				file_data["[escape_status]"]["npcs"][name_to_use] = 1
@@ -94,20 +84,15 @@
 	WRITE_FILE(json_file, json_encode(file_data))
 
 	SSblackbox.record_feedback("nested tally", "round_end_stats", num_survivors, list("survivors", "total"))
-	SSblackbox.record_feedback("nested tally", "round_end_stats", num_escapees, list("escapees", "total"))
 	SSblackbox.record_feedback("nested tally", "round_end_stats", GLOB.joined_player_list.len, list("players", "total"))
 	SSblackbox.record_feedback("nested tally", "round_end_stats", GLOB.joined_player_list.len - num_survivors, list("players", "dead"))
 	. = list()
 	.[POPCOUNT_SURVIVORS] = num_survivors
-	.[POPCOUNT_ESCAPEES] = num_escapees
-	.[POPCOUNT_SHUTTLE_ESCAPEES] = num_shuttle_escapees
 	.["station_integrity"] = station_integrity
 
 /datum/controller/subsystem/ticker/proc/gather_antag_data()
 	var/team_gid = 1
 	var/list/team_ids = list()
-
-	var/list/greentexters = list()//WS Edit - Metacoin
 
 	for(var/datum/antagonist/A in GLOB.antagonists)
 		if(!A.owner)
@@ -128,27 +113,12 @@
 				team_ids[T] = team_gid++
 			antag_info["team"]["id"] = team_ids[T]
 
-		var/greentexted = TRUE
-
 		if(A.objectives.len)
 			for(var/datum/objective/O in A.objectives)
 				var/result = O.check_completion() ? "SUCCESS" : "FAIL"
 
-				if (result == "FAIL")
-					greentexted = FALSE
-
 				antag_info["objectives"] += list(list("objective_type"=O.type,"text"=O.explanation_text,"result"=result))
 		SSblackbox.record_feedback("associative", "antagonists", 1, antag_info)
-
-		if (greentexted)
-			if (A.owner && A.owner.key)
-				if (A.type != /datum/antagonist/custom)
-					var/client/C = GLOB.directory[ckey(A.owner.key)]
-					if (C)
-						greentexters |= C
-
-	for (var/client/C in greentexters)
-		C.process_greentext(world.time - SSticker.round_start_time <= 300 SECONDS, world.time - SSticker.round_start_time)
 
 /datum/controller/subsystem/ticker/proc/record_nuke_disk_location()
 	var/obj/item/disk/nuclear/N = locate() in GLOB.poi_list
@@ -215,7 +185,6 @@
 
 	for(var/client/C in GLOB.clients)
 		C.playtitlemusic(40)
-		C.process_endround_metacoin(speed_round, world.time - SSticker.round_start_time)
 
 		if(speed_round)
 			C.give_award(/datum/award/achievement/misc/speed_round, C.mob)
@@ -284,7 +253,7 @@
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
-			Reboot("Station destroyed by Nuclear Device.", "nuke")
+			Reboot("Sector destroyed by Nuclear Device.", "nuke")
 		else
 			Reboot("Round ended.", "proper completion")
 	else
@@ -328,20 +297,16 @@
 
 /datum/controller/subsystem/ticker/proc/survivor_report(popcount)
 	var/list/parts = list()
-	var/station_evacuated = EMERGENCY_ESCAPED_OR_ENDGAMED
 
 	if(GLOB.round_id)
 		var/statspage = CONFIG_GET(string/roundstatsurl)
 		var/info = statspage ? "<a href='?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id
 		parts += "[FOURSPACES]Round ID: <b>[info]</b>"
-	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
+	parts += "[FOURSPACES]Shift Duration: <B>[DisplayTimeText(REALTIMEOFDAY - SSticker.round_start_timeofday)]</B>"
 	parts += "[FOURSPACES]Station Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
 	var/total_players = GLOB.joined_player_list.len
 	if(total_players)
 		parts+= "[FOURSPACES]Total Population: <B>[total_players]</B>"
-		if(station_evacuated)
-			parts += "<BR>[FOURSPACES]Evacuation Rate: <B>[popcount[POPCOUNT_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_ESCAPEES]/total_players)]%)</B>"
-			parts += "[FOURSPACES](on emergency shuttle): <B>[popcount[POPCOUNT_SHUTTLE_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_SHUTTLE_ESCAPEES]/total_players)]%)</B>"
 		parts += "[FOURSPACES]Survival Rate: <B>[popcount[POPCOUNT_SURVIVORS]] ([PERCENT(popcount[POPCOUNT_SURVIVORS]/total_players)]%)</B>"
 		if(SSblackbox.first_death)
 			var/list/ded = SSblackbox.first_death
@@ -414,33 +379,15 @@
 	var/list/parts = list()
 	var/mob/M = C.mob
 	if(M.mind && !isnewplayer(M))
+		var/datum/overmap/ship/controlled/original_ship = M.mind.original_ship?.resolve()
+		var/location = original_ship ? "aboard [original_ship]" : "in [station_name()]"
 		if(M.stat != DEAD && !isbrain(M))
-			if(EMERGENCY_ESCAPED_OR_ENDGAMED)
-				if(!M.onCentCom() && !M.onSyndieBase())
-					parts += "<div class='panel stationborder'>"
-					parts += "<span class='marooned'>You managed to survive, but were marooned on [station_name()]...</span>"
-				else
-					parts += "<div class='panel greenborder'>"
-					parts += "<span class='greentext'>You managed to survive the events on [station_name()] as [M.real_name].</span>"
-			else
-				parts += "<div class='panel greenborder'>"
-				parts += "<span class='greentext'>You managed to survive the events on [station_name()] as [M.real_name].</span>"
+			parts += "<div class='panel greenborder'>"
+			parts += "<span class='greentext'>You managed to survive the events [location] as [M.real_name].</span>"
 
 		else
 			parts += "<div class='panel redborder'>"
-			parts += "<span class='redtext'>You did not survive the events on [station_name()]...</span>"
-
-		if(CONFIG_GET(flag/allow_crew_objectives))
-			if(M.mind.current && LAZYLEN(M.mind.crew_objectives))
-				for(var/datum/objective/crew/CO in M.mind.crew_objectives)
-					if(CO.check_completion())
-						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='greentext'><B>Success!</B></span><br>"
-						var/speed_round = FALSE
-						if(world.time - SSticker.round_start_time <= 300 SECONDS)
-							speed_round = TRUE
-						C.inc_metabalance(METACOIN_CO_REWARD(speed_round, world.time - SSticker.round_start_time), reason="Completed your crew objective!")
-					else
-						parts += "<br><br><B>Your optional objective</B>: [CO.explanation_text] <span class='redtext'><B>Failed.</B></span><br>"
+			parts += "<span class='redtext'>You did not survive the events [location]...</span>"
 
 	else
 		parts += "<div class='panel stationborder'>"

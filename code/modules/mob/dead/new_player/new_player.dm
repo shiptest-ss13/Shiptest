@@ -17,6 +17,9 @@
 	//Used to make sure someone doesn't get spammed with messages if they're ineligible for roles
 	var/ineligible_for_roles = FALSE
 
+	/// is this an auth server
+	var/auth_check = FALSE
+
 /mob/dead/new_player/Initialize()
 	if(client && SSticker.state == GAME_STATE_STARTUP)
 		var/atom/movable/screen/splash/S = new(client, TRUE, TRUE)
@@ -42,9 +45,20 @@
 	return
 
 /**
-  * This proc generates the panel that opens to all newly joining players, allowing them to join, observe, view polls, view the current crew manifest, and open the character customization menu.
-  */
+ * This proc generates the panel that opens to all newly joining players, allowing them to join, observe, view polls, view the current crew manifest, and open the character customization menu.
+ */
 /mob/dead/new_player/proc/new_player_panel()
+	if(auth_check)
+		return
+
+	if(CONFIG_GET(flag/auth_only))
+		if(client?.holder && CONFIG_GET(flag/auth_admin_testing))
+			to_chat(src, "<span class='userdanger'>This server is allowed to be used for admin testing. Please ensure you are able to clean up anything you do. If the server needs to be restarted contact someone with TGS access.</span>")
+		else
+			to_chat(src, "<span class='userdanger'>This server is for authentication only.</span>")
+			auth_check = TRUE
+			return
+
 	if (client?.interviewee)
 		return
 
@@ -111,6 +125,9 @@
 		return output
 
 /mob/dead/new_player/Topic(href, href_list[])
+	if(auth_check)
+		return
+
 	if(src != usr)
 		return 0
 
@@ -196,11 +213,17 @@
 
 //When you cop out of the round (NB: this HAS A SLEEP FOR PLAYER INPUT IN IT)
 /mob/dead/new_player/proc/make_me_an_observer()
+	if(auth_check)
+		return
+
 	if(QDELETED(src) || !src.client)
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to play this round!","Player Setup","Yes","No")
+	var/less_input_message
+	if(SSlag_switch.measures[DISABLE_DEAD_KEYLOOP])
+		less_input_message = " - Notice: Observer freelook is currently disabled."
+	var/this_is_like_playing_right = tgui_alert(src, "Are you sure you wish to observe? You will [CONFIG_GET(flag/norespawn) ? "not " : "" ]be able to respawn later.[less_input_message]", "Player Setup", list("Yes","No"))
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY
@@ -217,9 +240,6 @@
 	to_chat(src, "<span class='notice'>Now teleporting.</span>")
 	if (O)
 		observer.forceMove(O.loc)
-	else
-		to_chat(src, "<span class='notice'>Teleporting failed. Ahelp an admin please</span>")
-		stack_trace("There's no freaking observer landmark available on this map or you're making observers before the map is initialised")
 	observer.key = key
 	observer.client = client
 	observer.set_ghost_appearance()
@@ -227,10 +247,10 @@
 		observer.real_name = observer.client.prefs.real_name
 		observer.name = observer.real_name
 		observer.client.init_verbs()
-	observer.update_icon()
+	observer.update_appearance()
 	observer.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	QDEL_NULL(mind)
+	deadchat_broadcast(" has observed.", "<b>[observer.real_name]</b>", follow_target = observer, turf_target = get_turf(observer), message_type = DEADCHAT_DEATHRATTLE)
 	qdel(src)
 	return TRUE
 
@@ -250,72 +270,69 @@
 			return "[jobtitle] is already filled to capacity."
 	return "Error: Unknown job availability."
 
-/mob/dead/new_player/proc/IsJobUnavailable(rank, obj/structure/overmap/ship/simulated/ship, latejoin = FALSE)
-	var/datum/job/job = SSjob.GetJob(rank)
+/mob/dead/new_player/proc/IsJobUnavailable(datum/job/job, datum/overmap/ship/controlled/ship, check_playtime, latejoin = FALSE)
 	if(!job)
 		return JOB_UNAVAILABLE_GENERIC
-	if(!(ship?.job_slots[rank] > 0))
+	if(!(ship.job_slots[job] > 0))
 		return JOB_UNAVAILABLE_SLOTFULL
-	if(is_banned_from(ckey, rank))
+	if(is_banned_from(ckey, job.name))
 		return JOB_UNAVAILABLE_BANNED
 	if(QDELETED(src))
 		return JOB_UNAVAILABLE_GENERIC
 	if(!job.player_old_enough(client))
 		return JOB_UNAVAILABLE_ACCOUNTAGE
-	if(job.required_playtime_remaining(client))
+	if(check_playtime && !ship.source_template.has_job_playtime(client, job))
 		return JOB_UNAVAILABLE_PLAYTIME
 	if(latejoin && !job.special_check_latejoin(client))
 		return JOB_UNAVAILABLE_GENERIC
 	return JOB_AVAILABLE
 
-/mob/dead/new_player/proc/AttemptLateSpawn(rank, obj/structure/overmap/ship/simulated/ship)
-	var/error = IsJobUnavailable(rank, ship)
-	if(error != JOB_AVAILABLE)
-		alert(src, get_job_unavailable_error_message(error, rank))
-		return FALSE
+/mob/dead/new_player/proc/AttemptLateSpawn(datum/job/job, datum/overmap/ship/controlled/ship, check_playtime = TRUE)
+	if(auth_check)
+		return
 
-	if(SSticker.late_join_disabled)
-		alert(src, "An administrator has disabled late join spawning.")
+	if(!client.prefs.randomise[RANDOM_NAME]) // do they have random names enabled
+		var/name = client.prefs.real_name
+		if(GLOB.real_names_joined.Find(name)) // is there someone who spawned with the same name
+			to_chat(usr, "<span class='warning'>Someone has spawned with this name already.")
+			return FALSE
+
+	var/error = IsJobUnavailable(job, ship, check_playtime)
+	if(error != JOB_AVAILABLE)
+		alert(src, get_job_unavailable_error_message(error, job))
 		return FALSE
 
 	//Removes a job slot
-	ship.job_slots[rank]--
+	ship.job_slots[job]--
 
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
 	SSticker.queue_delay = 4
 
-	SSjob.AssignRole(src, rank, 1)
-
-	var/mob/living/character = create_character(TRUE)	//creates the human and transfers vars and mind
-	var/equip = SSjob.EquipRank(character, rank, TRUE)
+	var/mob/living/carbon/human/character = create_character(TRUE)	//creates the human and transfers vars and mind
+	var/equip = job.EquipRank(character, ship)
 	if(isliving(equip))	//Borgs get borged in the equip, so we need to make sure we handle the new mob.
 		character = equip
 
-	var/datum/job/job = SSjob.GetJob(rank)
-
 	if(job && !job.override_latejoin_spawn(character))
-		SSjob.SendToLateJoin(character, destination = pick(ship.shuttle.spawn_points))
+		var/atom/spawn_point = pick(ship.shuttle_port.spawn_points)
+		spawn_point.join_player_here(character)
 		var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 		Spl.Fade(TRUE)
 		character.playsound_local(get_turf(character), 'sound/voice/ApproachingTG.ogg', 25)
 
 		character.update_parallax_teleport()
 
-	SSticker.minds += character.mind
 	character.client.init_verbs() // init verbs for the late join
-	var/mob/living/carbon/human/humanc
-	if(ishuman(character))
-		humanc = character	//Let's retypecast the var to be human,
 
-	if(humanc)	//These procs all expect humans
-		ship.manifest_inject(humanc, client)
+	if(ishuman(character))	//These procs all expect humans
+		var/mob/living/carbon/human/humanc = character
+		ship.manifest_inject(humanc, client, job)
 		GLOB.data_core.manifest_inject(humanc, client)
-		AnnounceArrival(humanc, rank)
+		ship.add_mob_to_crew_guestbook(humanc)
+		AnnounceArrival(humanc, job.name, ship)
 		AddEmploymentContract(humanc)
-		if(GLOB.highlander)
-			to_chat(humanc, "<span class='userdanger'><i>THERE CAN BE ONLY ONE!!!</i></span>")
-			humanc.make_scottish()
+		SSblackbox.record_feedback("tally", "species_spawned", 1, humanc.dna.species.name)
 
 		if(GLOB.summon_guns_triggered)
 			give_guns(humanc)
@@ -323,22 +340,16 @@
 			give_magic(humanc)
 		if(GLOB.curse_of_madness_triggered)
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
+		if(CONFIG_GET(flag/roundstart_traits))
+			SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
 
 	GLOB.joined_player_list += character.ckey
 
-	if(CONFIG_GET(flag/allow_latejoin_antagonists) && humanc)	//Borgs aren't allowed to be antags. Will need to be tweaked if we get true latejoin ais.
-		if(SSshuttle.emergency)
-			switch(SSshuttle.emergency.mode)
-				if(SHUTTLE_RECALL, SHUTTLE_IDLE)
-					SSticker.mode.make_antag_chance(humanc)
-				if(SHUTTLE_CALL)
-					if(SSshuttle.emergency.timeLeft(1) > initial(SSshuttle.emergencyCallTime)*0.5)
-						SSticker.mode.make_antag_chance(humanc)
+	log_manifest(character.mind.key, character.mind, character, TRUE)
 
-	if(humanc && CONFIG_GET(flag/roundstart_traits))
-		SSquirks.AssignQuirks(humanc, humanc.client, TRUE)
-
-	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
+	if(length(ship.job_slots) > 1 && ship.job_slots[1] == job) // if it's the "captain" equivalent job of the ship. checks to make sure it's not a one-job ship
+		minor_announce("[job.name] [character.real_name] on deck!", zlevel = ship.shuttle_port.virtual_z())
+	return TRUE
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -348,54 +359,28 @@
 			employmentCabinet.addFile(employee)
 
 /mob/dead/new_player/proc/LateChoices()
-	var/list/shuttle_choices = list("Purchase ship..." = "Purchase") //Dummy for purchase option
-
-	for(var/obj/structure/overmap/ship/simulated/S in SSovermap.overmap_objects)
-		if(length(S.shuttle.spawn_points) < 1)
-			continue
-		shuttle_choices[S.name + " ([S.shuttle.source_template.short_name ? S.shuttle.source_template.short_name : "Unknown-class"])"] = S //Try to get the class name
-
-	var/obj/structure/overmap/ship/simulated/selected_ship = shuttle_choices[tgui_input_list(src, "Select ship to spawn on.", "Welcome, [client.prefs.real_name].", shuttle_choices)]
-	if(!selected_ship)
+	if(auth_check)
 		return
 
-	if(selected_ship == "Purchase")
-		var/obj/docking_port/mobile/M = tgui_input_list(src, "Please select ship to purchase!", "Welcome, [client.prefs.real_name].", SSmapping.ship_purchase_list)
-		if(!M)
-			return LateChoices()
-		var/price = SSmapping.ship_purchase_list[M]
-		if(SSdbcore.IsConnected() && usr.client.get_metabalance() < price)
-			alert(src, "You have insufficient metabalance to cover this purchase! (Price: [price])")
-			return
-		close_spawn_windows()
-		to_chat(usr, "<span class='danger'>Your [M.name] is being prepared. Please be patient!</span>")
-		var/obj/docking_port/mobile/target = SSshuttle.action_load(M)
-		if(!istype(target))
-			to_chat(usr, "<span class='danger'>There was an error loading the ship (You have not been charged). Please contact admins!</span>")
-			return
-		usr.client.inc_metabalance(-price, TRUE, "buying [M.name]")
-		if(!AttemptLateSpawn(target.current_ship.job_slots[1], target.current_ship)) //Try to spawn as the first listed job in the job slots (usually captain)
-			to_chat(usr, "<span class='danger'>Ship spawned, but you were unable to be spawned. You can likely try to spawn in the ship through joining normally, but if not, please contact an admin.</span>")
-			new_player_panel()
+	if(!can_join_round(FALSE))
 		return
 
-	var/list/job_choices = list()
-	for(var/job in selected_ship.job_slots)
-		if(selected_ship.job_slots[job] < 1)
-			continue
-		job_choices["[job] ([selected_ship.job_slots[job]] positions)"] = job
+	if(!GLOB.ship_select_tgui)
+		GLOB.ship_select_tgui = new /datum/ship_select(src)
 
-	var/selected_job = job_choices[tgui_input_list(src, "Select job.", "Welcome, [client.prefs.real_name].", job_choices)]
-	if(!selected_job)
-		return LateChoices() //Send them back to shuttle selection
+	GLOB.ship_select_tgui.ui_interact(src)
+
+/mob/dead/new_player/proc/can_join_round(silent = FALSE)
+	if(SSlag_switch.measures[DISABLE_NON_OBSJOBS])
+		if(silent)
+			return
+		to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
+		return
 
 	if(!SSticker?.IsRoundInProgress())
-		to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
-		return
-
-	if(!GLOB.enter_allowed)
-		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
-		return
+		if(!silent)
+			to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
+		return FALSE
 
 	var/relevant_cap
 	var/hpc = CONFIG_GET(number/hard_popcap)
@@ -407,16 +392,20 @@
 
 	if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
 		if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
-			to_chat(usr, "<span class='warning'>Server is full.</span>")
-			return
-
-	AttemptLateSpawn(selected_job, selected_ship)
+			if(!silent)
+				to_chat(usr, "<span class='warning'>Server is full.</span>")
+			return FALSE
+	return TRUE
 
 /mob/dead/new_player/proc/create_character(transfer_after)
+	if(auth_check)
+		return
+
 	spawning = 1
 	close_spawn_windows()
 
 	var/mob/living/carbon/human/H = new(loc)
+	GLOB.joined_player_list += ckey
 
 	var/frn = CONFIG_GET(flag/force_random_names)
 	var/admin_anon_names = SSticker.anonymousnames
@@ -437,12 +426,15 @@
 		is_antag = TRUE
 
 	client.prefs.copy_to(H, antagonist = is_antag)
+	update_names_joined_list(H.real_name)
 	H.dna.update_dna_identity()
 	if(mind)
 		if(transfer_after)
 			mind.late_joiner = TRUE
-		mind.active = 0					//we wish to transfer the key manually
-		mind.transfer_to(H)					//won't transfer key since the mind is not active
+		mind.active = FALSE //we wish to transfer the key manually
+		mind.original_character_slot_index = client.prefs.default_slot
+		mind.transfer_to(H) //won't transfer key since the mind is not active
+		mind.set_original_character(H)
 
 	H.name = real_name
 	client.init_verbs()
@@ -452,6 +444,9 @@
 		transfer_character()
 
 /mob/dead/new_player/proc/transfer_character()
+	if(auth_check)
+		return
+
 	. = new_character
 	if(.)
 		new_character.key = key		//Manually transfer the key to log them in,
@@ -488,49 +483,28 @@
 // Doing so would previously allow you to roll for antag, then send you back to lobby if you didn't get an antag role
 // This also does some admin notification and logging as well, as well as some extra logic to make sure things don't go wrong
 /mob/dead/new_player/proc/check_preferences()
-	if(!client)
-		return FALSE //Not sure how this would get run without the mob having a client, but let's just be safe.
-	if(client.prefs.joblessrole != RETURNTOLOBBY)
-		return TRUE
-	// If they have antags enabled, they're potentially doing this on purpose instead of by accident. Notify admins if so.
-	var/has_antags = FALSE
-	if(client.prefs.be_special.len > 0)
-		has_antags = TRUE
-	if(client.prefs.job_preferences.len == 0)
-		if(!ineligible_for_roles)
-			to_chat(src, "<span class='danger'>You have no jobs enabled, along with return to lobby if job is unavailable. This makes you ineligible for any round start role, please update your job preferences.</span>")
-		ineligible_for_roles = TRUE
-		ready = PLAYER_NOT_READY
-		if(has_antags)
-			log_admin("[src.ckey] just got booted back to lobby with no jobs, but antags enabled.")
-			message_admins("[src.ckey] just got booted back to lobby with no jobs enabled, but antag rolling enabled. Likely antag rolling abuse.")
-
-		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
 	return TRUE
 
 /**
-  * Prepares a client for the interview system, and provides them with a new interview
-  *
-  * This proc will both prepare the user by removing all verbs from them, as well as
-  * giving them the interview form and forcing it to appear.
-  */
+ * Prepares a client for the interview system, and provides them with a new interview
+ *
+ * This proc will both prepare the user by removing all verbs from them, as well as
+ * giving them the interview form and forcing it to appear.
+ */
 /mob/dead/new_player/proc/register_for_interview()
 	// First we detain them by removing all the verbs they have on client
-	for (var/v in client.verbs)
-		var/procpath/verb_path = v
-		if (!(verb_path in GLOB.stat_panel_verbs))
-			remove_verb(client, verb_path)
+	for (var/procpath/client_verb as anything in client.verbs)
+		if(client_verb in GLOB.client_verbs_required)
+			continue
+		remove_verb(client, client_verb)
 
 	// Then remove those on their mob as well
-	for (var/v in verbs)
-		var/procpath/verb_path = v
-		if (!(verb_path in GLOB.stat_panel_verbs))
-			remove_verb(src, verb_path)
+	for (var/procpath/verb_path as anything in verbs)
+		remove_verb(src, verb_path)
 
 	// Then we create the interview form and show it to the client
 	var/datum/interview/I = GLOB.interviews.interview_for_client(client)
-	if (I)
-		I.ui_interact(src)
+	I?.ui_interact(src)
 
 	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
 	add_verb(src, /mob/dead/new_player/proc/open_interview)

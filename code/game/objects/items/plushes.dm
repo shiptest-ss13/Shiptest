@@ -375,8 +375,9 @@
 			mood_message = null
 	cheer_up()
 
-/obj/item/toy/plush/proc/update_desc()
+/obj/item/toy/plush/update_desc()
 	desc = normal_desc
+	. = ..()
 	if(mood_message)
 		desc += mood_message
 
@@ -601,69 +602,6 @@
 	icon_state = "realgoat"
 	squeak_override = list('sound/items/goatsound.ogg'=1)
 
-/obj/item/toy/plush/goatplushie/angry/kinggoat
-	name = "King Goat Plushie"
-	desc = "A plushie depicting the king of all goats."
-	icon_state = "kinggoat"
-	throwforce = 25
-	force = 25
-	attack_verb = list("chomped")
-	gender = MALE
-
-/obj/item/toy/plush/goatplushie/angry/kinggoat/ascendedkinggoat
-	name = "Ascended King Goat Plushie"
-	desc = "A plushie depicting the god of all goats."
-	icon_state = "ascendedkinggoat"
-	throwforce = 30
-	force = 30
-	divine = TRUE
-
-/obj/item/toy/plush/goatplushie/angry/kinggoat/ascendedkinggoat/attackby(obj/item/I,mob/living/user,params)
-	if(I.get_sharpness())
-		user.visible_message("<span class='notice'>[user] attempts to destroy [src]!</span>", "<span class='suicide'>[I] bounces off [src]'s back before breaking into millions of pieces... [src] glares at [user]!</span>") // You fucked up now son
-		I.play_tool_sound(src)
-		qdel(I)
-		user.gib()
-
-/obj/item/toy/plush/goatplushie/angry/kinggoat/attackby(obj/item/I,mob/living/user,params)
-	if(I.get_sharpness())
-		user.visible_message("<span class='notice'>[user] rips [src] to shreds!</span>", "<span class='notice'>[src]'s death has attracted the attention of the king goat plushie guards!</span>")
-		I.play_tool_sound(src)
-		qdel(src)
-		var/turf/location = get_turf(user)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-		new/obj/item/toy/plush/goatplushie/angry/guardgoat(location)
-	if(istype(I, /obj/item/reagent_containers/food/snacks/grown/cabbage))
-		user.visible_message("<span class='notice'>[user] watches as [src] takes a bite out of the cabbage!</span>", "<span class='notice'>[src]'s fur starts glowing. It seems they have ascended!</span>")
-		playsound(src, 'sound/items/eatfood.ogg', 50, 1)
-		qdel(I)
-		qdel(src)
-		var/turf/location = get_turf(user)
-		new/obj/item/toy/plush/goatplushie/angry/kinggoat/ascendedkinggoat(location)
-
-
-/obj/item/toy/plush/goatplushie/angry/guardgoat
-	name = "guard goat plushie"
-	desc = "A plushie depicting one of the King Goat's guards, tasked to protect the king at all costs."
-	icon_state = "guardgoat"
-	throwforce = 10
-
-/obj/item/toy/plush/goatplushie/angry/guardgoat/masterguardgoat
-	name = "royal guard goat plushie"
-	desc = "A plushie depicting one of the royal King Goat's guards, tasked to protecting the king at all costs and training new goat guards."
-	icon_state = "royalguardgoat"
-	throwforce = 15
-
 /obj/item/toy/plush/moth
 	name = "moth plushie"
 	desc = "A plushie depicting an adorable mothperson, featuring realistic mothperson agony sounds every time you hug it."
@@ -671,25 +609,97 @@
 	item_state = "moffplush"
 	attack_verb = list("fluttered", "flapped")
 	squeak_override = list('sound/voice/moth/scream_moth.ogg'=1)
-///Used to track how many people killed themselves with item/toy/plush/moth
-	var/suicide_count = 0
 
-/obj/item/toy/plush/moth/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] stares deeply into the eyes of [src] and it begins consuming [user.p_them()]!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	suicide_count++
-	if(suicide_count < 3)
-		desc = "A plushie depicting an unsettling mothperson. After killing [suicide_count] [suicide_count == 1 ? "person" : "people"] it's not looking so huggable now..."
-	else
-		desc = "A plushie depicting a creepy mothperson. It's killed [suicide_count] people! I don't think I want to hug it any more!"
-		divine = TRUE
-		resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
-	playsound(src, 'sound/hallucinations/wail.ogg', 50, TRUE, -1)
-	var/list/available_spots = get_adjacent_open_turfs(loc)
-	if(available_spots.len) //If the user is in a confined space the plushie will drop normally as the user dies, but in the open the plush is placed one tile away from the user to prevent squeak spam
-		var/turf/open/random_open_spot = pick(available_spots)
-		forceMove(random_open_spot)
-	user.dust(just_ash = FALSE, drop_items = TRUE)
-	return MANUAL_SUICIDE
+
+/obj/item/toy/plush/moth/monarch
+	name = "monarch moth plushie"
+	desc = "An adorable mothperson plushy. It's an important bug!"
+	icon_state = "moffplush_monarch"
+
+/obj/item/toy/plush/moth/luna
+	name = "luna moth plushie"
+	desc = "An adorable mothperson plushy. It's a lunar bug!"
+	icon_state = "moffplush_luna"
+
+/obj/item/toy/plush/moth/atlas
+	name = "atlas moth plushie"
+	desc = "An adorable mothperson plushy. It's a wide bug!"
+	icon_state = "moffplush_atlas"
+
+/obj/item/toy/plush/moth/redish
+	name = "redish moth plushie"
+	desc = "An adorable mothperson plushy. It's a red bug!"
+	icon_state = "moffplush_redish"
+
+/obj/item/toy/plush/moth/royal
+	name = "royal moth plushie"
+	desc = "An adorable mothperson plushy. It's a royal bug!"
+	icon_state = "moffplush_royal"
+
+/obj/item/toy/plush/moth/gothic
+	name = "gothic moth plushie"
+	desc = "An adorable mothperson plushy. It's a dark bug!"
+	icon_state = "moffplush_gothic"
+
+/obj/item/toy/plush/moth/lovers
+	name = "lovers moth plushie"
+	desc = "An adorable mothperson plushy. It's a loveley bug!"
+	icon_state = "moffplush_lovers"
+
+/obj/item/toy/plush/moth/whitefly
+	name = "whitefly moth plushie"
+	desc = "An adorable mothperson plushy. It's a shy bug!"
+	icon_state = "moffplush_whitefly"
+
+/obj/item/toy/plush/moth/punished
+	name = "punished moth plushie"
+	desc = "An adorable mothperson plushy. It's a sad bug... that's quite sad actually."
+	icon_state = "moffplush_punished"
+
+/obj/item/toy/plush/moth/firewatch
+	name = "firewatch moth plushie"
+	desc = "An adorable mothperson plushy. It's a firey bug!"
+	icon_state = "moffplush_firewatch"
+
+/obj/item/toy/plush/moth/deadhead
+	name = "deadhead moth plushie"
+	desc = "An adorable mothperson plushy. It's a silent bug!"
+	icon_state = "moffplush_deadhead"
+
+/obj/item/toy/plush/moth/poison
+	name = "poison moth plushie"
+	desc = "An adorable mothperson plushy. It's a toxic bug!"
+	icon_state = "moffplush_poison"
+
+/obj/item/toy/plush/moth/ragged
+	name = "ragged moth plushie"
+	desc = "An adorable mothperson plushy. It's a robust bug!"
+	icon_state = "moffplush_ragged"
+
+/obj/item/toy/plush/moth/snow
+	name = "snow moth plushie"
+	desc = "An adorable mothperson plushy. It's a cool bug!"
+	icon_state = "moffplush_snow"
+
+/obj/item/toy/plush/moth/clockwork
+	name = "clockwork moth plushie"
+	desc = "An adorable mothperson plushy. It's a precise bug!"
+	icon_state = "moffplush_clockwork"
+
+/obj/item/toy/plush/moth/moonfly
+	name = "moonfly moth plushie"
+	desc = "An adorable mothperson plushy. It's a nightly bug!"
+	icon_state = "moffplush_moonfly"
+
+/obj/item/toy/plush/moth/error
+	name = "error moth plushie"
+	desc = "An adorable mothperson plushy. It's a debuggable bug!"
+	icon_state = "moffplush_random"
+
+/obj/item/toy/plush/moth/rainbow
+	name = "rainbow moth plushie"
+	desc = "An adorable mothperson plushy. It's a colorful bug!"
+	icon_state = "moffplush_rainbow"
 
 /obj/item/toy/plush/spider
 	name = "spider plushie"
@@ -726,3 +736,130 @@
 		user.visible_message("<span class='notice'>[user] sprays plastic webbing out from [src]!</span>", "<span class='notice'>You squeeze [src] and plastic webbing fires out!")
 		new /obj/effect/decal/cleanable/sprayweb(A)
 		spraycharges--
+
+/obj/item/toy/plush/hornet
+	name = "strange bug plushie"
+	desc = "A cute, soft plush of a long-horned bug."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plushie_hornet"
+	attack_verb = list("poked", "shaws")
+	squeak_override = list('sound/hornetnoises/hornet_gitgud.ogg'=1, 'sound/hornetnoises/hornet_SHAW.ogg'=10) //i have no clue how this works, the intended effect is that "git gud" will play 1 out of 11 times
+	gender = FEMALE
+
+/obj/item/toy/plush/hornet/gay
+	name = "gay bug plushie"
+	desc = "A cute, soft plush of a long-horned bug. Her cloak is in the colors of the lesbian pride flag."
+	icon_state = "plushie_gayhornet"
+
+/obj/item/toy/plush/knight
+	name = "odd bug plushie"
+	desc = "A cute, soft plush of a little bug. It sounds like this one didn't come with a voice box."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plushie_knight"
+	attack_verb = list("poked")
+	should_squeak = FALSE
+
+/obj/item/toy/plush/flushed
+	name = "flushed plushie"
+	desc = "Hgrgrhrhg cute."
+	icon_state = "flushplush"
+
+/obj/item/toy/plush/blahaj
+	name = "Solarian Marine Society mascot plushie"
+	desc = "The adorable little mascot of the solarian marine society. Popular with vampires."
+	icon_state = "blahaj"
+	item_state = "blahaj"
+	lefthand_file = 'icons/mob/inhands/misc/plushes_lefthand.dmi' //todo: sort the god damn plushie inhands
+	righthand_file = 'icons/mob/inhands/misc/plushes_righthand.dmi'
+
+/obj/item/toy/plush/rilena
+	name = "Ri plushie"
+	desc = "A plush of the protagonist of the popular combination video game series and webcomic RILENA."// Makes the iconic hurt sound from the game!" //sadly does not :pensive:
+	icon_state = "rilenaplush_ri"
+	attack_verb = list("blasted", "shot", "shmupped")
+	//squeak_override = list('sound/voice/ //kepori lack a voice :(
+	gender = FEMALE
+
+/obj/item/toy/plush/tali
+	name = "T4L1 plushie"
+	desc = "A surprisingly soft plushie of a recurring miniboss from the popular combination video game series and webcomic RILENA. The cannon arm does not function."
+	icon_state = "rilenaplush_t4l1"
+	attack_verb = list("blasted", "shot", "cannoned")
+	gender = FEMALE
+
+/obj/item/toy/plush/sharai
+	name = "Sharai plushie"
+	desc = "A plushie of the four winged kepori boss from the popular combination video game series and webcomic RILENA."
+	icon_state = "rilenaplush_sharai"
+	attack_verb = list("blasted", "shot", "radial bursted")
+	gender = FEMALE
+
+/obj/item/toy/plush/xader
+	name = "Xader plushie"
+	desc = "A plushie of the recurring transdimensional transgender shopkeep from the popular webseries RILENA."
+	icon_state = "rilenaplush_xader"
+	gender = FEMALE
+
+/obj/item/toy/plush/mora
+	name = "Mora plushie"
+	desc = "A plushie of Mora from the popular webseries RILENA."
+	icon_state = "rilenaplush_mora"
+	gender = FEMALE
+
+/obj/item/toy/plush/kari
+	name = "knockoff RILENA plushie"
+	desc = "A plushie of a FBP Kepori. The tag calls it 'Kari' and claims it to be from 'RAYALA: RUNNING FROM EVIL'. The cannon arm does not function."
+	icon_state = "fbplush"
+	gender = FEMALE
+
+/obj/item/toy/plush/among
+	name = "amoung pequeño"
+	desc = "A little pill shaped guy, with a price tag of 3€."
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "plushie_among"
+	attack_verb = list("killed","stabbed","shot","slapped","stung", "ejected")
+	squeak_override = list('sound/hornetnoises/agoguskill.ogg')
+	var/random_among = TRUE //if the (among) uses random coloring
+	var/rare_among = 1 //chance for rare color variant
+
+
+	var/static/list/among_colors = list(\
+		"red" = "#c51111",
+		"blue" = "#123ed1",
+		"green" = "#117f2d",
+		"pink" = "#ed54ba",
+		"orange" = "#ef7d0d",
+		"yellow" = "#f5f557",
+		"black" = "#3f474e",
+		"white" = "#d6e0f0",
+		"purple" = "#6b2fbb",
+		"brown" = "#71491e",
+		"cyan" = "#39FEDD",
+		"lime" = "#4EEF38",
+	)
+	var/static/list/among_colors_rare = list(\
+		"puce" = "#CC8899",
+	)
+
+/obj/item/toy/plush/among/Initialize(mapload)
+	. = ..()
+	among_randomify(rare_among)
+
+/obj/item/toy/plush/among/proc/among_randomify(rare_among)
+	if(random_among)
+		var/among_color
+		if(prob(rare_among))
+			among_color = pick(among_colors_rare)
+			add_atom_colour(among_colors_rare[among_color], FIXED_COLOUR_PRIORITY)
+		else
+			among_color = pick(among_colors)
+			add_atom_colour(among_colors[among_color], FIXED_COLOUR_PRIORITY)
+		add_among_overlay()
+
+/obj/item/toy/plush/among/proc/add_among_overlay()
+	if(!random_among)
+		return
+	cut_overlays()
+	var/mutable_appearance/base_overlay_among = mutable_appearance(icon, "plushie_among_visor")
+	base_overlay_among.appearance_flags = RESET_COLOR
+	add_overlay(base_overlay_among)

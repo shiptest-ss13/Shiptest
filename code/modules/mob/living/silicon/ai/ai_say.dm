@@ -1,4 +1,4 @@
-/mob/living/silicon/ai/say(message, bubble_type,var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/silicon/ai/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(parent && istype(parent) && parent.stat != DEAD) //If there is a defined "parent" AI, it is actually an AI, and it is alive, anything the AI tries to say is said by the parent instead.
 		parent.say(message, language)
 		return
@@ -125,7 +125,7 @@
 	log_game("[key_name(src)] made a vocal announcement with the following message: [message].")
 
 	for(var/word in words)
-		play_vox_word(word, src.get_virtual_z_level(), null)
+		play_vox_word(word, src.virtual_z(), null)
 
 
 /proc/play_vox_word(word, z_level, mob/only_listener)
@@ -144,7 +144,7 @@
 			for(var/mob/M in GLOB.player_list)
 				if(M.can_hear() && (M.client.prefs.toggles & SOUND_ANNOUNCEMENTS))
 					var/turf/T = get_turf(M)
-					if(T.get_virtual_z_level() == z_level)
+					if(T.virtual_z() == z_level)
 						SEND_SOUND(M, voice)
 		else
 			SEND_SOUND(only_listener, voice)

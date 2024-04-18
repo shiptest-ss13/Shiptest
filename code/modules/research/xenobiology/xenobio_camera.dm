@@ -10,7 +10,7 @@
 	allowed_area = A.name
 	. = ..()
 
-/mob/camera/aiEye/remote/xenobio/setLoc(var/t)
+/mob/camera/aiEye/remote/xenobio/setLoc(t)
 	var/area/new_area = get_area(t)
 	if(new_area && new_area.name == allowed_area || new_area && (new_area.area_flags & XENOBIOLOGY_COMPATIBLE))
 		return ..()
@@ -119,12 +119,12 @@
 		hotkey_help.Grant(user)
 		actions += hotkey_help
 
-	RegisterSignal(user, COMSIG_XENO_SLIME_CLICK_CTRL, .proc/XenoSlimeClickCtrl)
-	RegisterSignal(user, COMSIG_XENO_SLIME_CLICK_ALT, .proc/XenoSlimeClickAlt)
-	RegisterSignal(user, COMSIG_XENO_SLIME_CLICK_SHIFT, .proc/XenoSlimeClickShift)
-	RegisterSignal(user, COMSIG_XENO_TURF_CLICK_SHIFT, .proc/XenoTurfClickShift)
-	RegisterSignal(user, COMSIG_XENO_TURF_CLICK_CTRL, .proc/XenoTurfClickCtrl)
-	RegisterSignal(user, COMSIG_XENO_MONKEY_CLICK_CTRL, .proc/XenoMonkeyClickCtrl)
+	RegisterSignal(user, COMSIG_XENO_SLIME_CLICK_CTRL, PROC_REF(XenoSlimeClickCtrl))
+	RegisterSignal(user, COMSIG_XENO_SLIME_CLICK_ALT, PROC_REF(XenoSlimeClickAlt))
+	RegisterSignal(user, COMSIG_XENO_SLIME_CLICK_SHIFT, PROC_REF(XenoSlimeClickShift))
+	RegisterSignal(user, COMSIG_XENO_TURF_CLICK_SHIFT, PROC_REF(XenoTurfClickShift))
+	RegisterSignal(user, COMSIG_XENO_TURF_CLICK_CTRL, PROC_REF(XenoTurfClickCtrl))
+	RegisterSignal(user, COMSIG_XENO_MONKEY_CLICK_CTRL, PROC_REF(XenoMonkeyClickCtrl))
 
 	//Checks for recycler on every interact, prevents issues with load order on certain maps.
 	if(!connected_recycler)
@@ -169,28 +169,6 @@
 		current_potion = O
 		to_chat(user, "<span class='notice'>You load [O] in the console's potion slot[replaced ? ", replacing the one that was there before" : ""].</span>")
 		return
-	else if(istype(O, /obj/item/slime_extract))
-		var/obj/item/slime_extract/E = O
-		if(!SSresearch.slime_already_researched[E.type])
-			if(!E.research)
-				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>[src] buzzes and displays a message: Invalid extract! (You shouldn't be seeing this. If you are, tell someone.)</span>")
-				return
-			if(E.Uses <= 0)
-				playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>[src] buzzes and displays a message: Extract consumed - no research available.</span>")
-				return
-			else
-				playsound(src, 'sound/machines/ping.ogg', 50, 3, -1)
-				visible_message("<span class='notice'>You insert [E] into a slot on the [src]. It pings and prints out some research notes worth [E.research] points!</span>")
-				new /obj/item/research_notes(drop_location(), E.research, "xenobiology")
-				SSresearch.slime_already_researched[E.type] = TRUE
-				qdel(O)
-				return
-		else
-			visible_message("<span class='notice'>[src] buzzes and displays a message: Slime extract already researched!</span>")
-			playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 3, -1)
-			return
 	..()
 
 /obj/machinery/computer/camera_advanced/xenobio/multitool_act(mob/living/user, obj/item/multitool/I)
@@ -263,7 +241,7 @@
 		if(X.monkeys >= 1)
 			var/mob/living/carbon/monkey/food = new /mob/living/carbon/monkey(remote_eye.loc, TRUE, owner)
 			if (!QDELETED(food))
-				food.LAssailant = C
+				food.LAssailant = WEAKREF(C)
 				X.monkeys--
 				X.monkeys = round(X.monkeys, 0.1)		//Prevents rounding errors
 				to_chat(owner, "<span class='notice'>[X] now has [X.monkeys] monkeys stored.</span>")
@@ -465,7 +443,7 @@
 		if(X.monkeys >= 1)
 			var/mob/living/carbon/monkey/food = new /mob/living/carbon/monkey(T, TRUE, C)
 			if (!QDELETED(food))
-				food.LAssailant = C
+				food.LAssailant = WEAKREF(C)
 				X.monkeys--
 				X.monkeys = round(X.monkeys, 0.1)		//Prevents rounding errors
 				to_chat(C, "<span class='notice'>[X] now has [X.monkeys] monkeys stored.</span>")

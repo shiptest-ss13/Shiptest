@@ -3,38 +3,34 @@
 GLOBAL_VAR(restart_counter)
 
 /**
-  * World creation
-  *
-  * Here is where a round itself is actually begun and setup.
-  * * db connection setup
-  * * config loaded from files
-  * * loads admins
-  * * Sets up the dynamic menu system
-  * * and most importantly, calls initialize on the master subsystem, starting the game loop that causes the rest of the game to begin processing and setting up
-  *
-  *
-  * Nothing happens until something moves. ~Albert Einstein
-  *
-  * For clarity, this proc gets triggered later in the initialization pipeline, it is not the first thing to happen, as it might seem.
-  *
-  * Initialization Pipeline:
-  *		Global vars are new()'ed, (including config, glob, and the master controller will also new and preinit all subsystems when it gets new()ed)
-  *		Compiled in maps are loaded (mainly centcom). all areas/turfs/objs/mobs(ATOMs) in these maps will be new()ed
-  *		world/New() (You are here)
-  *		Once world/New() returns, client's can connect.
-  *		1 second sleep
-  *		Master Controller initialization.
-  *		Subsystem initialization.
-  *			Non-compiled-in maps are maploaded, all atoms are new()ed
-  *			All atoms in both compiled and uncompiled maps are initialized()
-  */
+ * World creation
+ *
+ * Here is where a round itself is actually begun and setup.
+ * * db connection setup
+ * * config loaded from files
+ * * loads admins
+ * * Sets up the dynamic menu system
+ * * and most importantly, calls initialize on the master subsystem, starting the game loop that causes the rest of the game to begin processing and setting up
+ *
+ *
+ * Nothing happens until something moves. ~Albert Einstein
+ *
+ * For clarity, this proc gets triggered later in the initialization pipeline, it is not the first thing to happen, as it might seem.
+ *
+ * Initialization Pipeline:
+ *		Global vars are new()'ed, (including config, glob, and the master controller will also new and preinit all subsystems when it gets new()ed)
+ *		Compiled in maps are loaded (mainly centcom). all areas/turfs/objs/mobs(ATOMs) in these maps will be new()ed
+ *		world/New() (You are here)
+ *		Once world/New() returns, client's can connect.
+ *		1 second sleep
+ *		Master Controller initialization.
+ *		Subsystem initialization.
+ *			Non-compiled-in maps are maploaded, all atoms are new()ed
+ *			All atoms in both compiled and uncompiled maps are initialized()
+ */
 /world/New()
-	//Keep the auxtools stuff at the top
-	AUXTOOLS_CHECK(AUXMOS)
-
-	enable_debugger()
-
 	log_world("World loaded at [time_stamp()]!")
+	SSmetrics.world_init_time = REALTIMEOFDAY // Important
 
 	make_datum_references_lists()	//initialises global lists for referencing frequently used datums (so that we only ever do it once)
 
@@ -83,6 +79,10 @@ GLOBAL_VAR(restart_counter)
 	HandleTestRun()
 	#endif
 
+	#ifdef AUTOWIKI
+	setup_autowiki()
+	#endif
+
 /world/proc/InitTgs()
 	TgsNew(new /datum/tgs_event_handler/impl, TGS_SECURITY_TRUSTED)
 	GLOB.revdata.load_tgs_info()
@@ -94,11 +94,11 @@ GLOBAL_VAR(restart_counter)
 	CONFIG_SET(number/round_end_countdown, 0)
 	var/datum/callback/cb
 #ifdef UNIT_TESTS
-	cb = CALLBACK(GLOBAL_PROC, /proc/RunUnitTests)
+	cb = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(RunUnitTests))
 #else
 	cb = VARSET_CALLBACK(SSticker, force_ending, TRUE)
 #endif
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, /proc/addtimer, cb, 10 SECONDS))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_addtimer), cb, 10 SECONDS))
 
 
 /world/proc/SetupLogs()
@@ -149,6 +149,9 @@ GLOBAL_VAR(restart_counter)
 	GLOB.test_log = "[GLOB.log_directory]/tests.log"
 	start_log(GLOB.test_log)
 #endif
+#ifdef REFERENCE_DOING_IT_LIVE
+	GLOB.harddel_log = "[GLOB.log_directory]/harddels.log"
+#endif
 	start_log(GLOB.world_game_log)
 	start_log(GLOB.world_attack_log)
 	start_log(GLOB.world_pda_log)
@@ -161,7 +164,8 @@ GLOBAL_VAR(restart_counter)
 	start_log(GLOB.tgui_log)
 	start_log(GLOB.world_shuttle_log)
 
-	GLOB.changelog_hash = md5('html/changelog.html') //for telling if the changelog has changed recently
+	var/latest_changelog = file("[global.config.directory]/../html/changelogs/archive/" + time2text(world.timeofday, "YYYY-MM") + ".yml")
+	GLOB.changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for telling if the changelog has changed recently
 	if(fexists(GLOB.config_error_log))
 		fcopy(GLOB.config_error_log, "[GLOB.log_directory]/config_error.log")
 		fdel(GLOB.config_error_log)
@@ -242,11 +246,11 @@ GLOBAL_VAR(restart_counter)
 
 	TgsReboot()
 
-	#ifdef UNIT_TESTS
+#ifdef UNIT_TESTS
 	FinishTestRun()
 	return
-	#endif
 
+#else
 	if(TgsAvailable())
 		var/do_hard_reboot
 		// check the hard reboot counter
@@ -270,25 +274,22 @@ GLOBAL_VAR(restart_counter)
 
 	log_world("World rebooted at [time_stamp()]")
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
-	AUXTOOLS_SHUTDOWN(AUXMOS)
 	..()
+
+#endif //ifdef UNIT_TESTS
 
 /world/Del()
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate
-	AUXTOOLS_SHUTDOWN(AUXMOS)
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
-		call(debug_server, "auxtools_shutdown")()
+		LIBCALL(debug_server, "auxtools_shutdown")()
 	..()
 
 /world/proc/update_status()
 
 	var/list/features = list()
 
-	if(GLOB.master_mode)
-		features += GLOB.master_mode
-
-	if (!GLOB.enter_allowed)
+	if(LAZYACCESS(SSlag_switch.measures, DISABLE_NON_OBSJOBS))
 		features += "closed"
 
 	var/s = ""
@@ -298,20 +299,25 @@ GLOBAL_VAR(restart_counter)
 		if (server_name)
 			s += "<b>[server_name]</b> &#8212; "
 		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
-		if(CONFIG_GET(flag/allow_vote_mode))
-			features += "vote"
-		if(CONFIG_GET(flag/allow_ai))
-			features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
+
+	var/discord_url
+	var/github_url
+	if(isnull(config))
+		discord_url = "https://shiptest.net/discord"
+		github_url = "https://github.com/shiptest-ss13/Shiptest"
+	else
+		discord_url = CONFIG_GET(string/discordurl)
+		github_url = CONFIG_GET(string/githuburl)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://discord.gg/Zuv47eNuhE\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"[discord_url]\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")"
 	s += " ("
-	s += "<a href=\"https://github.com/shiptest-ss13/Shiptest\">"
+	s += "<a href=\"[github_url]\">"
 	s += "Github"
 	s += "</a>"
 	s += ")"
@@ -349,10 +355,7 @@ GLOBAL_VAR(restart_counter)
 
 /world/proc/incrementMaxZ()
 	maxz++
-	SSmobs.MaxZChanged()
-	SSidlenpcpool.MaxZChanged()
 	world.refresh_atmos_grid()
-
 
 /world/proc/change_fps(new_value = 20)
 	if(new_value <= 0)
