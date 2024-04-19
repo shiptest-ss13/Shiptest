@@ -1,0 +1,5 @@
+author: Sun-Soaked
+changes:
+  - {bugfix: planetary static anomalies no longer drop a broken spawner.}
+  - {code_imp: mob spawners now store a weakref on their spawned object}
+delete-after: true
