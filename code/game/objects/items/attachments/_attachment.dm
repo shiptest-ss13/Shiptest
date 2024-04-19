@@ -7,6 +7,7 @@
 	var/list/valid_parents = list()
 	var/list/signals = list()
 
+	var/has_toggle = FALSE
 	var/toggled = FALSE
 
 	var/datum/component/attachment/attachment_comp

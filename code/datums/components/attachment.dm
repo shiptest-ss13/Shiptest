@@ -47,16 +47,17 @@
 
 /datum/component/attachment
 	var/slot
+	var/has_toggle
 	var/list/valid_parent_types
 	var/datum/callback/on_attach
 	var/datum/callback/on_detach
 	var/datum/callback/on_toggle
 	var/datum/callback/on_preattack
 	var/list/datum/action/actions
-	var/has_toggle = FALSE
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
+		has_toggle = FALSE,
 		valid_parent_types = list(/obj/item/gun),
 		datum/callback/on_attach = null,
 		datum/callback/on_detach = null,
@@ -69,6 +70,7 @@
 		return COMPONENT_INCOMPATIBLE
 
 	src.slot = slot
+	src.has_toggle = has_toggle
 	src.valid_parent_types = valid_parent_types
 	src.on_attach = on_attach
 	src.on_detach = on_detach
