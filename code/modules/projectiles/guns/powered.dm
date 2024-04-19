@@ -2,21 +2,6 @@
 	mag_type = /obj/item/ammo_box/magazine/gauss
 	can_suppress = FALSE
 
-	var/obj/item/stock_parts/cell/cell
-	var/cell_type = /obj/item/stock_parts/cell/gun
-	var/charge_sections = 3
-	var/empty_battery_sound = FALSE // play empty alarm if no battery
-
-	var/shaded_charge = FALSE //if this gun uses a stateful charge bar for more detail
-	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_appearance()?
-
-	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
-	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
-	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
-	var/unscrewing_time = 2 SECONDS ///Time it takes to unscrew the cell
-	var/sound_volume = 40 //Volume of loading/unloading cell sounds
-
-
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()
 	if(cell_type)

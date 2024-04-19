@@ -9,37 +9,10 @@
 
 	has_safety = TRUE
 	safety = TRUE
-
-	var/obj/item/stock_parts/cell/gun/cell //What type of power cell this uses
-	var/cell_type = /obj/item/stock_parts/cell/gun
-	var/modifystate = 0
-	var/list/ammo_type = list(/obj/item/ammo_casing/energy)
-	var/select = 1 //The state of the select fire switch. Determines from the ammo_type list what kind of shot is fired next.
-	var/can_charge = TRUE //Can it be charged in a recharger?
-	var/automatic_charge_overlays = TRUE	//Do we handle overlays with base update_appearance()?
-	var/charge_sections = 4
 	ammo_x_offset = 2
-	var/shaded_charge = FALSE //if this gun uses a stateful charge bar for more detail
-	var/selfcharge = 0
-	var/charge_tick = 0
-	var/charge_delay = 4
-	var/use_cyborg_cell = FALSE //whether the gun's cell drains the cyborg user's cell to recharge
-	var/dead_cell = FALSE //set to true so the gun is given an empty cell
 
-	var/internal_cell = FALSE ///if the gun's cell cannot be replaced
-	var/small_gun = FALSE ///if the gun is small and can only fit the small gun cell
-	var/big_gun = FALSE ///if the gun is big and can fit the comically large gun cell
-	var/unscrewing_time = 20 ///Time it takes to unscrew the cell
-
-	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
-	var/tac_reloads = FALSE
-	///If we allow tacitcal reloads, how long should it take to reload?
-	var/tactical_reload_delay  = 1.2 SECONDS
-
-	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg' //Sound when inserting magazine. UPDATE PLEASE
-	var/eject_sound = 'sound/weapons/gun/general/magazine_remove_full.ogg' //Sound of ejecting a cell. UPDATE PLEASE
-	var/sound_volume = 40 //Volume of loading/unloading sounds
-	var/load_sound_vary = TRUE //Should the load/unload sounds vary?
+	tac_reloads = FALSE
+	tactical_reload_delay  = 1.2 SECONDS
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
