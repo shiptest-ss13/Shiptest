@@ -79,6 +79,9 @@
 	/// The index for our current scar slot, so we don't have to constantly check the savefile (unlike the slots themselves, this index is independent of selected char slot, and increments whenever a valid char is joined with)
 	var/current_scar_slot_index
 
+	/// Guestbook datum, in case we actually make use of the guestbook mechanics
+	var/datum/guestbook/guestbook
+
 	///Skill multiplier, adjusts how much xp you get/loose from adjust_xp. Dont override it directly, add your reason to experience_multiplier_reasons and use that as a key to put your value in there.
 	var/experience_multiplier = 1
 	///Skill multiplier list, just slap your multiplier change onto this with the type it is coming from as key.
@@ -95,6 +98,7 @@
 	key = _key
 	soulOwner = src
 	martial_art = default_martial_art
+	guestbook = new()
 	init_known_skills()
 
 /datum/mind/Destroy()
@@ -102,6 +106,7 @@
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
 	QDEL_NULL(language_holder)
+	QDEL_NULL(guestbook)
 	set_current(null)
 	soulOwner = null
 	return ..()
