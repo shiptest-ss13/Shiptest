@@ -65,9 +65,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/machinery/status_display/shuttle{
 	pixel_x = 32
 	},
@@ -1684,7 +1682,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/light_switch{
 	pixel_y = 22
 	},
@@ -2310,7 +2308,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/landmark/start/assistant,
 /obj/machinery/camera/autoname,
 /obj/machinery/status_display/shuttle{
@@ -2897,9 +2895,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "rw" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "rB" = (
@@ -5981,7 +5977,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -6885,9 +6881,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Tq" = (
