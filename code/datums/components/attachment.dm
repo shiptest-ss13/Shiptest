@@ -75,7 +75,7 @@
 	src.on_toggle = on_toggle
 	src.on_preattack = on_preattack
 
-	ADD_TRAIT(parent, TRAIT_ATTACHABLE, REF(src))
+	ADD_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, PROC_REF(try_attach))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, PROC_REF(try_detach))
 	if(has_toggle)
@@ -88,7 +88,7 @@
 		RegisterSignal(parent, signal, signals[signal])
 
 /datum/component/attachment/Destroy(force, silent)
-	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, REF(src))
+	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	if(actions && length(actions))
 		var/obj/item/gun/parent = src.parent
 		parent.actions -= actions
