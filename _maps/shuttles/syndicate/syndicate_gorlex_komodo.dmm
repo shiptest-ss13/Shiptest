@@ -1707,9 +1707,6 @@
 	},
 /obj/machinery/light/directional/north,
 /obj/machinery/firealarm/directional/east,
-/obj/item/storage/box/firingpins{
-	pixel_x = -12
-	},
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
 "qz" = (
@@ -1776,9 +1773,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
 "qZ" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/directional/west,
 /turf/open/floor/carpet/red_gold,
@@ -2737,7 +2732,7 @@
 	},
 /obj/structure/guncase,
 /obj/structure/railing,
-/obj/item/gun/ballistic/automatic/smg/c20r/unrestricted,
+/obj/item/gun/ballistic/automatic/smg/c20r,
 /obj/machinery/light/directional/east,
 /turf/open/floor/pod/dark,
 /area/ship/security/armory)
