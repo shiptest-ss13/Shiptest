@@ -23,13 +23,13 @@
 	src.valid_types = valid_types
 	src.slot_offsets = slot_offsets
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/handle_attack)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/handle_examine)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, .proc/handle_examine_more)
-	RegisterSignal(parent, COMSIG_PARENT_QDELETING, .proc/handle_qdel)
-	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, .proc/handle_item_pre_attack)
-	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, .proc/handle_ctrl_shift_click)
-	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, .proc/handle_overlays)
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_attack))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(handle_examine))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
+	RegisterSignal(parent, COMSIG_PARENT_QDELETING, PROC_REF(handle_qdel))
+	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
+	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
+	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
 
 /datum/component/attachment_holder/proc/handle_overlays(obj/item/parent, list/overlays)
 	SIGNAL_HANDLER
@@ -66,7 +66,7 @@
 /datum/component/attachment_holder/proc/handle_ctrl_shift_click(obj/item/parent, mob/user)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, .proc/do_attachment_radial, parent, user)
+	INVOKE_ASYNC(src, PROC_REF(do_attachment_radial), parent, user)
 
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
 	var/list/attachments_as_list = attachments_to_list()
@@ -133,11 +133,11 @@
 		return
 
 	if(item.tool_behaviour == TOOL_CROWBAR && length(attachments))
-		INVOKE_ASYNC(src, .proc/handle_detach, parent, item, user)
+		INVOKE_ASYNC(src, PROC_REF(handle_detach), parent, item, user)
 		return TRUE
 
 	if(HAS_TRAIT(item, TRAIT_ATTACHABLE) && length(attachments) < max_attachments)
-		INVOKE_ASYNC(src, .proc/do_attach, item, user)
+		INVOKE_ASYNC(src, PROC_REF(do_attach), item, user)
 		return TRUE
 
 	for(var/obj/item/attach as anything in attachments)

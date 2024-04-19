@@ -17,10 +17,10 @@
 		/datum/component/attachment, \
 		slot, \
 		valid_parents, \
-		CALLBACK(src, .proc/Attach), \
-		CALLBACK(src, .proc/Detach), \
-		CALLBACK(src, .proc/Toggle), \
-		CALLBACK(src, .proc/PreAttack), \
+		CALLBACK(src, PROC_REF(Attach)), \
+		CALLBACK(src, PROC_REF(Detach)), \
+		CALLBACK(src, PROC_REF(Toggle)), \
+		CALLBACK(src, PROC_REF(PreAttack)), \
 		signals)
 
 /obj/item/attachment/proc/Toggle(obj/item/gun/gun, mob/user)

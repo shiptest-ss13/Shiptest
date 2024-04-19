@@ -75,12 +75,12 @@
 	src.on_preattack = on_preattack
 
 	ADD_TRAIT(parent, TRAIT_ATTACHABLE, src)
-	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, .proc/try_attach)
-	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, .proc/try_detach)
-	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, .proc/try_toggle)
-	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, .proc/relay_pre_attack)
-	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, .proc/update_overlays)
-	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, .proc/send_slot)
+	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, PROC_REF(try_attach))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, PROC_REF(try_detach))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
 
 	for(var/signal in signals)
 		RegisterSignal(parent, signal, signals[signal])
@@ -96,7 +96,7 @@
 /datum/component/attachment/proc/try_toggle(obj/item/parent, obj/item/holder, mob/user)
 	SIGNAL_HANDLER
 
-	INVOKE_ASYNC(src, .proc/do_toggle, parent, holder, user)
+	INVOKE_ASYNC(src, PROC_REF(do_toggle), parent, holder, user)
 
 
 /datum/component/attachment/proc/do_toggle(obj/item/parent, obj/item/holder, mob/user)
