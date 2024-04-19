@@ -53,6 +53,7 @@
 	var/datum/callback/on_toggle
 	var/datum/callback/on_preattack
 	var/list/datum/action/actions
+	var/has_toggle = FALSE
 
 /datum/component/attachment/Initialize(
 		slot = ATTACHMENT_SLOT_RAIL,
@@ -74,10 +75,11 @@
 	src.on_toggle = on_toggle
 	src.on_preattack = on_preattack
 
-	ADD_TRAIT(parent, TRAIT_ATTACHABLE, src)
+	ADD_TRAIT(parent, TRAIT_ATTACHABLE, REF(src))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, PROC_REF(try_attach))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, PROC_REF(try_detach))
-	RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
+	if(has_toggle)
+		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_UPDATE_OVERLAY, PROC_REF(update_overlays))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_GET_SLOT, PROC_REF(send_slot))
@@ -86,7 +88,7 @@
 		RegisterSignal(parent, signal, signals[signal])
 
 /datum/component/attachment/Destroy(force, silent)
-	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, src)
+	REMOVE_TRAIT(parent, TRAIT_ATTACHABLE, REF(src))
 	if(actions && length(actions))
 		var/obj/item/gun/parent = src.parent
 		parent.actions -= actions

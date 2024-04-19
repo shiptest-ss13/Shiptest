@@ -47,20 +47,20 @@
 	return ..()
 
 /obj/item/gun/ballistic/automatic/powered/proc/insert_cell(mob/user, obj/item/stock_parts/cell/gun/C)
-	if(small_gun && !istype(C, /obj/item/stock_parts/cell/gun/mini))
-		to_chat(user, "<span class='warning'>[C] doesn't seem to fit into [src]...</span>")
+	if(mag_size == MAG_SIZE_SMALL && !istype(C, /obj/item/stock_parts/cell/gun/mini))
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
-	if(!big_gun && istype(C, /obj/item/stock_parts/cell/gun/large))
-		to_chat(user, "<span class='warning'>[C] doesn't seem to fit into [src]...</span>")
+	if(mag_size == MAG_SIZE_LARGE && !istype(C, /obj/item/stock_parts/cell/gun/large))
+		to_chat(user, "<span class='warning'>\The [C] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
 	if(user.transferItemToLoc(C, src))
 		cell = C
-		to_chat(user, "<span class='notice'>You load [C] into [src].</span>")
+		to_chat(user, "<span class='notice'>You load the [C] into \the [src].</span>")
 		playsound(src, load_sound, sound_volume, load_sound_vary)
 		update_appearance()
 		return TRUE
 	else
-		to_chat(user, "<span class='warning'>You cannot seem to get [src] out of your hands!</span>")
+		to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 		return FALSE
 
 /obj/item/gun/ballistic/automatic/powered/proc/eject_cell(mob/user, obj/item/stock_parts/cell/gun/tac_load = null)

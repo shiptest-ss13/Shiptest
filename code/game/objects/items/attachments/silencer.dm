@@ -11,12 +11,6 @@
 		return FALSE
 	gun.suppressed = TRUE
 
-/obj/item/attachment/silencer/Toggle(obj/item/gun/gun, mob/user)
-	. = ..()
-	// TODO: Consider making attachments that dont toggle a custom subtype
-	if(toggled)
-		Toggle(gun, user)
-
 /obj/item/attachment/silencer/Detach(obj/item/gun/gun, mob/user)
 	. = ..()
 	if(!gun.can_unsuppress)
