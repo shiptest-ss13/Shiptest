@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_NORMAL
-	var/select = 1
+	var/firemode_select = 1
 	can_suppress = TRUE
 	burst_size = 3
 	fire_delay = 2
@@ -23,9 +23,9 @@
 
 /obj/item/gun/ballistic/automatic/update_overlays()
 	. = ..()
-	if(!select)
+	if(!firemode_select)
 		. += "[initial(icon_state)]_semi"
-	if(select == 1)
+	if(firemode_select == 1)
 		. += "[initial(icon_state)]_burst"
 
 /obj/item/gun/ballistic/automatic/ui_action_click(mob/user, actiontype)
@@ -36,8 +36,8 @@
 
 /obj/item/gun/ballistic/automatic/proc/burst_select()
 	var/mob/living/carbon/human/user = usr
-	select = !select
-	if(!select)
+	firemode_select = !firemode_select
+	if(!firemode_select)
 		burst_size = 1
 		fire_delay = 0
 		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")

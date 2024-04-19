@@ -16,7 +16,7 @@
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
 	cell_type = /obj/item/stock_parts/cell/gun/mini
-	small_gun = TRUE
+	mag_size = MAG_SIZE_SMALL
 	throwforce = 11 //This is funny, trust me.
 	ammo_x_offset = 2
 	charge_sections = 3
@@ -180,7 +180,7 @@
 	item_state = "gun"
 	ammo_x_offset = 2
 	charge_sections = 6
-	small_gun = TRUE
+	mag_size = MAG_SIZE_SMALL
 
 	wield_delay = 0.2 SECONDS
 	wield_slowdown = 0.15

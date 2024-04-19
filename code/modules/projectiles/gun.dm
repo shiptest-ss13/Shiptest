@@ -21,7 +21,7 @@
 	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	trigger_guard = TRIGGER_GUARD_NORMAL
 
-	/// The manufacturer of this weapon. For flavor mostly. If none, this will not show.
+	///The manufacturer of this weapon. For flavor mostly. If none, this will not show.
 	var/manufacturer = MANUFACTURER_NONE
 
 /*
@@ -64,9 +64,9 @@
 	var/sawn_desc = null
 	var/sawn_off = FALSE
 
-	// true if the gun is wielded via twohanded component, shouldnt affect anything else
+	//true if the gun is wielded via twohanded component, shouldnt affect anything else
 	var/wielded = FALSE
-	// true if the gun is wielded after delay, should affects accuracy
+	//true if the gun is wielded after delay, should affects accuracy
 	var/wielded_fully = FALSE
 	///Slowdown for wielding
 	var/wield_slowdown = 0.1
@@ -78,9 +78,10 @@
 /*
  *  Stats
 */
-	var/projectile_damage_multiplier = 1	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
 	var/weapon_weight = WEAPON_LIGHT
-	// Speed someone can be flung if its point blank
+	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
+	var/projectile_damage_multiplier = 1
+	//Speed someone can be flung if its point blank
 	var/pb_knockback = 0
 
 	//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
@@ -114,32 +115,32 @@
 /*
  *  Overlay
 */
-	//used for positioning ammo count overlay on sprite
+	///Used for positioning ammo count overlay on sprite
 	var/ammo_x_offset = 0
 	var/ammo_y_offset = 0
 
 /*
  *  Attachment
 */
-	/// The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
+	///The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
 	var/list/valid_attachments = list()
-	/// Reference to our attachment holder to prevent subtypes having to call GetComponent
+	///Reference to our attachment holder to prevent subtypes having to call GetComponent
 	var/datum/component/attachment_holder/attachment_holder
-	/// Maximum number of attachments allowed
+	///Maximum number of attachments allowed
 	var/attachment_max = 0
-	/// Number of attachments that can fit on a given slot
+	///Number of attachments that can fit on a given slot
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
-	/// Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
+	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
 	var/list/slot_offsets = list()
 
 /*
  *  Zooming
 */
-	//whether the gun generates a Zoom action on creation
+	///Whether the gun generates a Zoom action on creation
 	var/zoomable = FALSE
 	//Zoom toggle
 	var/zoomed = FALSE
-	//Distance in TURFs to move the user's screen forward (the "zoom" effect)
+	///Distance in TURFs to move the user's screen forward (the "zoom" effect)
 	var/zoom_amt = 3
 	var/zoom_out_amt = 0
 	var/datum/action/toggle_scope_zoom/azoom
@@ -155,7 +156,7 @@
 	var/safety_wording = "safety"
 
 /*
- *  Ballistic.. For now
+ *  Ballistic... For now
 */
 	///sound when inserting magazine
 	var/load_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
@@ -243,7 +244,7 @@
 	var/tactical_reload_delay  = 1 SECONDS
 
 /*
- * Enegry,.. For now
+ * Enegry and powered... For now
 */
 	//What type of power cell this uses
 	var/obj/item/stock_parts/cell/gun/cell
@@ -268,16 +269,14 @@
 	//set to true so the gun is given an empty cell
 	var/dead_cell = FALSE
 
-		// play empty alarm if no battery
+	//play empty alarm if no battery
 	var/empty_battery_sound = FALSE
 	///if the gun's cell cannot be replaced
 	var/internal_cell = FALSE
 
-	///if the gun is small and can only fit the small gun cell
-	var/small_gun = FALSE
-	//if the gun is big and can fit the comically large gun cell
-	var/big_gun = FALSE
-	///Time it takes to unscrew the cell
+	///Used for large and small cells
+	var/mag_size = MAG_SIZE_MEDIUM
+	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
 	//Volume of loading/unloading cell sounds
 	var/sound_volume = 40

@@ -7,7 +7,7 @@
 	ammo_x_offset = 2
 	ammo_y_offset = 2
 	w_class = WEIGHT_CLASS_HUGE
-	big_gun = TRUE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
+	mag_size = MAG_SIZE_LARGE //yes, you can put the comically large cell in it. No, you aren't getting it roundstart. You slut.
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/ion)
