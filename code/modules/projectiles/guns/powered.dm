@@ -1,6 +1,7 @@
 /obj/item/gun/ballistic/automatic/powered
 	mag_type = /obj/item/ammo_box/magazine/gauss
 	can_suppress = FALSE
+	charge_sections = 3
 
 /obj/item/gun/ballistic/automatic/powered/Initialize()
 	. = ..()

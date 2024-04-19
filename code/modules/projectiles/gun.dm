@@ -268,6 +268,8 @@
 	//set to true so the gun is given an empty cell
 	var/dead_cell = FALSE
 
+		// play empty alarm if no battery
+	var/empty_battery_sound = FALSE
 	///if the gun's cell cannot be replaced
 	var/internal_cell = FALSE
 
@@ -276,33 +278,9 @@
 	//if the gun is big and can fit the comically large gun cell
 	var/big_gun = FALSE
 	///Time it takes to unscrew the cell
-	var/unscrewing_time = 20
-
-/*
- * Powered.. For now
-*/
-	var/obj/item/stock_parts/cell/cell
-	var/cell_type = /obj/item/stock_parts/cell/gun
-	var/charge_sections = 3
-	// play empty alarm if no battery
-	var/empty_battery_sound = FALSE
-
-	//if this gun uses a stateful charge bar for more detail
-	var/shaded_charge = FALSE
-	//Do we handle overlays with base update_appearance()?
-	var/automatic_charge_overlays = TRUE
-
-	//if the gun's cell cannot be replaced
-	var/internal_cell = FALSE
-	//if the gun is small and can only fit the small gun cell
-	var/small_gun = FALSE
-	//if the gun is big and can fit the comically large gun cell
-	var/big_gun = FALSE
-	//Time it takes to unscrew the cell
 	var/unscrewing_time = 2 SECONDS
 	//Volume of loading/unloading cell sounds
 	var/sound_volume = 40
-
 
 /obj/item/gun/Initialize()
 	. = ..()
