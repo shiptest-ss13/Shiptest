@@ -17,12 +17,16 @@
 	attachment_comp = AddComponent( \
 		/datum/component/attachment, \
 		slot, \
+		has_toggle, \
 		valid_parents, \
 		CALLBACK(src, PROC_REF(Attach)), \
 		CALLBACK(src, PROC_REF(Detach)), \
 		CALLBACK(src, PROC_REF(Toggle)), \
 		CALLBACK(src, PROC_REF(PreAttack)), \
 		signals)
+
+/obj/item/attachment/Destroy()
+	qdel(attachment_comp)
 
 /obj/item/attachment/proc/Toggle(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
