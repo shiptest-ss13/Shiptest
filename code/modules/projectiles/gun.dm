@@ -4,6 +4,8 @@
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "detective"
 	item_state = "gun"
+	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT
 	custom_materials = list(/datum/material/iron=2000)
@@ -16,69 +18,80 @@
 	attack_verb = list("struck", "hit", "bashed")
 	pickup_sound = 'sound/items/handling/gun_pickup.ogg'
 	drop_sound = 'sound/items/handling/gun_drop.ogg'
+	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
+	trigger_guard = TRIGGER_GUARD_NORMAL
 
 	/// The manufacturer of this weapon. For flavor mostly. If none, this will not show.
 	var/manufacturer = MANUFACTURER_NONE
 
+/*
+ *  Muzzle
+*/
+	///Effect for the muzzle flash of the gun.
+	var/obj/effect/muzzle_flash/muzzle_flash
+	///Icon state of the muzzle flash effect.
+	var/muzzleflash_iconstate
+	///Brightness of the muzzle flash effect.
+	var/muzzle_flash_lum = 3
+	///Color of the muzzle flash effect.
+	var/muzzle_flash_color = COLOR_VERY_SOFT_YELLOW
+
+/*
+ *  Firing
+*/
 	var/fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	var/vary_fire_sound = TRUE
 	var/fire_sound_volume = 50
 	var/dry_fire_sound = 'sound/weapons/gun/general/dry_fire.ogg'
-	var/dry_fire_text = "click"				//change this on non-gun things
-	var/suppressed = null					//whether or not a message is displayed when fired
+	//change this on non-gun things
+	var/dry_fire_text = "click"
+
+/*
+ *  Reloading
+*/
+	var/obj/item/ammo_casing/chambered = null
+
+/*
+ *  Operation
+*/
+	//whether or not a message is displayed when fired
+	var/suppressed = null
 	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
 	var/can_unsuppress = TRUE
-	var/obj/item/ammo_casing/chambered = null
-	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
-	var/sawn_desc = null					//description change if weapon is sawn-off
+	//description change if weapon is sawn-off
+	var/sawn_desc = null
 	var/sawn_off = FALSE
-	var/burst_size = 1						//how large a burst is
-	var/fire_delay = 0						//rate of fire for burst firing and semi auto
-	var/firing_burst = 0					//Prevent the weapon from firing again while already firing
-	var/semicd = 0							//cooldown handler
-	var/weapon_weight = WEAPON_LIGHT
-	var/dual_wield_spread = 24			//additional spread when dual wielding
-	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
 
+	// true if the gun is wielded via twohanded component, shouldnt affect anything else
+	var/wielded = FALSE
+	// true if the gun is wielded after delay, should affects accuracy
+	var/wielded_fully = FALSE
+	///Slowdown for wielding
+	var/wield_slowdown = 0.1
+	///How long between wielding and firing in tenths of seconds
+	var/wield_delay	= 0.4 SECONDS
+	///Storing value for above
+	var/wield_time = 0
+
+/*
+ *  Stats
+*/
 	var/projectile_damage_multiplier = 1	//Alters projectile damage multiplicatively based on this value. Use it for "better" or "worse" weapons that use the same ammo.
-
-	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
-
-	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
-	var/ammo_y_offset = 0
-
-	//Zooming
-	var/zoomable = FALSE //whether the gun generates a Zoom action on creation
-	var/zoomed = FALSE //Zoom toggle
-	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
-	var/zoom_out_amt = 0
-	var/datum/action/toggle_scope_zoom/azoom
-
+	var/weapon_weight = WEAPON_LIGHT
+	// Speed someone can be flung if its point blank
 	var/pb_knockback = 0
 
-
-	// ATTACHMENT STUFF RIGHT HERE //
-	/// The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
-	var/list/valid_attachments = list()
-	/// Reference to our attachment holder to prevent subtypes having to call GetComponent
-	var/datum/component/attachment_holder/attachment_holder
-	/// Maximum number of attachments allowed
-	var/attachment_max = 0
-	/// Number of attachments that can fit on a given slot
-	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
-	/// Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
-	var/list/slot_offsets = list()
-	var/wielded = FALSE // true if the gun is wielded via twohanded component, shouldnt affect anything else
-
-	var/wielded_fully = FALSE // true if the gun is wielded after delay, should affects accuracy
-
+	//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
+	var/randomspread = 1
 	///How much the bullet scatters when fired while wielded.
 	var/spread	= 4
 	///How much the bullet scatters when fired while unwielded.
 	var/spread_unwielded = 12
+	//additional spread when dual wielding
+	var/dual_wield_spread = 24
+
 
 	///Screen shake when the weapon is fired while wielded.
 	var/recoil = 0
@@ -89,28 +102,55 @@
 	///this is how much deviation the gun recoil can have, recoil pushes the screen towards the reverse angle you shot + some deviation which this is the max.
 	var/recoil_deviation = 22.5
 
-	///Slowdown for wielding
-	var/wield_slowdown = 0.1
-	///How long between wielding and firing in tenths of seconds
-	var/wield_delay	= 0.4 SECONDS
-	///Storing value for above
-	var/wield_time = 0
+	//how large a burst is
+	var/burst_size = 1
+	//rate of fire for burst firing and semi auto
+	var/fire_delay = 0
+	//Prevent the weapon from firing again while already firing
+	var/firing_burst = 0
+	//cooldown handler
+	var/semicd = 0
 
-	///Effect for the muzzle flash of the gun.
-	var/obj/effect/muzzle_flash/muzzle_flash
-	///Icon state of the muzzle flash effect.
-	var/muzzleflash_iconstate
-	///Brightness of the muzzle flash effect.
-	var/muzzle_flash_lum = 3
-	///Color of the muzzle flash effect.
-	var/muzzle_flash_color = COLOR_VERY_SOFT_YELLOW
+/*
+ *  Overlay
+*/
+	//used for positioning ammo count overlay on sprite
+	var/ammo_x_offset = 0
+	var/ammo_y_offset = 0
 
-	//gun saftey
+/*
+ *  Attachment
+*/
+	/// The types of attachments allowed, a list of types. SUBTYPES OF AN ALLOWED TYPE ARE ALSO ALLOWED
+	var/list/valid_attachments = list()
+	/// Reference to our attachment holder to prevent subtypes having to call GetComponent
+	var/datum/component/attachment_holder/attachment_holder
+	/// Maximum number of attachments allowed
+	var/attachment_max = 0
+	/// Number of attachments that can fit on a given slot
+	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
+	/// Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
+	var/list/slot_offsets = list()
+
+/*
+ *  Zooming
+*/
+	//whether the gun generates a Zoom action on creation
+	var/zoomable = FALSE
+	//Zoom toggle
+	var/zoomed = FALSE
+	//Distance in TURFs to move the user's screen forward (the "zoom" effect)
+	var/zoom_amt = 3
+	var/zoom_out_amt = 0
+	var/datum/action/toggle_scope_zoom/azoom
+
+/*
+ * Saftey
+*/
 	///Does this gun have a saftey and thus can toggle it?
 	var/has_safety = FALSE
 	///If the saftey on? If so, we can't fire the weapon
 	var/safety = FALSE
-
 	///The wording of safety. Useful for guns that have a non-standard safety system, like a revolver
 	var/safety_wording = "safety"
 
@@ -120,10 +160,10 @@
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	build_zooming()
-	attachment_holder = AddComponent(/datum/component/attachment_holder, attachment_max, slot_available, valid_attachments, slot_offsets)
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
+	attachment_holder = AddComponent(/datum/component/attachment_holder, attachment_max, slot_available, valid_attachments, slot_offsets)
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
