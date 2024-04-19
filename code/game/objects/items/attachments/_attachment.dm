@@ -27,6 +27,8 @@
 
 /obj/item/attachment/Destroy()
 	qdel(attachment_comp)
+	attachment_comp = NULL
+	. = ..()
 
 /obj/item/attachment/proc/Toggle(obj/item/gun/gun, mob/user)
 	SHOULD_CALL_PARENT(TRUE)
