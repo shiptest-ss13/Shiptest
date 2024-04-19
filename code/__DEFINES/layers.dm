@@ -130,6 +130,9 @@
 #define CAMERA_STATIC_LAYER 19
 #define CAMERA_STATIC_RENDER_TARGET "CAMERA_STATIC_PLANE"
 
+///Wants to be part of the game plane, but also wants to draw above literally everything else
+#define HIGH_GAME_PLANE 30
+
 //HUD layer defines
 
 #define FULLSCREEN_PLANE 31
