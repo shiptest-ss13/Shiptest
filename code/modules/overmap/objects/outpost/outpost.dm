@@ -121,16 +121,14 @@
 		// fun fact: "Hutton" is in last_names
 		person_name = pick(GLOB.last_names)
 	else
-		switch(rand(1, 5))
+		switch(rand(1, 4))
 			if(1)
-				person_name = pick(GLOB.moth_last)
-			if(2)
 				person_name = pick(prob(50) ? GLOB.lizard_names_male : GLOB.lizard_names_female)
-			if(3)
+			if(2)
 				person_name = pick(GLOB.spider_last)
-			if(4)
+			if(3)
 				person_name = kepori_name()
-			if(5)
+			if(4)
 				person_name = vox_name()
 
 	return "[person_name] [pick(GLOB.station_suffixes)]"
