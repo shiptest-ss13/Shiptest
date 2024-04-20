@@ -14,8 +14,6 @@ GLOBAL_LIST_INIT(lizard_names_female, world.file2list("strings/names/lizard_fema
 GLOBAL_LIST_INIT(clown_names, world.file2list("strings/names/clown.txt"))
 GLOBAL_LIST_INIT(mime_names, world.file2list("strings/names/mime.txt"))
 GLOBAL_LIST_INIT(carp_names, world.file2list("strings/names/carp.txt"))
-GLOBAL_LIST_INIT(moth_first, world.file2list("strings/names/moth_first.txt"))
-GLOBAL_LIST_INIT(moth_last, world.file2list("strings/names/moth_last.txt"))
 GLOBAL_LIST_INIT(plasmaman_names, world.file2list("strings/names/plasmaman.txt"))
 GLOBAL_LIST_INIT(squid_names, world.file2list("strings/names/squid.txt"))
 GLOBAL_LIST_INIT(posibrain_names, world.file2list("strings/names/posibrain.txt"))
