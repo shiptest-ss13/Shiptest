@@ -247,7 +247,7 @@
 		else
 			return
 
-		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator)) //placing an item into the pocket is 4 times faster
+		if(do_mob(usr, src, POCKET_STRIP_DELAY/delay_denominator, hidden = TRUE)) //placing an item into the pocket is 4 times faster
 			if(pocket_item)
 				if(pocket_item == (pocket_id == ITEM_SLOT_RPOCKET ? r_store : l_store)) //item still in the pocket we search
 					dropItemToGround(pocket_item)
@@ -1298,7 +1298,7 @@
 	race = /datum/species/dullahan
 
 /mob/living/carbon/human/species/ethereal
-	race = /datum/species/ethereal
+	race = /datum/species/elzuose
 
 /mob/living/carbon/human/species/fly
 	race = /datum/species/fly

@@ -36,17 +36,6 @@
 		var/mob/living/carbon/human/H = C
 		handle_mutant_bodyparts(H)
 
-/datum/species/moth/random_name(gender,unique,lastname)
-	if(unique)
-		return random_unique_moth_name()
-
-	var/randname = moth_name()
-
-	if(lastname)
-		randname += " [lastname]"
-
-	return randname
-
 /datum/species/handle_fire(mob/living/carbon/human/H, no_protection = FALSE)
 	. = ..()
 	if(.) //if the mob is immune to fire, don't burn wings off.

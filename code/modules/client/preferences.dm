@@ -425,9 +425,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
 			dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color_2;task=input'>Change</a><BR>"
 
-			if(istype(pref_species, /datum/species/ethereal)) //not the best thing to do tbf but I dont know whats better.
+			if(istype(pref_species, /datum/species/elzuose)) //not the best thing to do tbf but I dont know whats better.
 
-				dat += "<h3>Ethereal Color</h3>"
+				dat += "<h3>Elzuosa Color</h3>"
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["ethcolor"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=color_ethereal;task=input'>Change</a><BR>"
 
@@ -1821,7 +1821,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("color_ethereal")
-					var/new_etherealcolor = input(user, "Choose your elzuosa color:", "Character Preference","#"+features["ethcolor"]) as color|null
+					var/new_etherealcolor = input(user, "Choose your elzuose color:", "Character Preference","#"+features["ethcolor"]) as color|null
 					if(new_etherealcolor)
 						var/temp_hsv = RGBtoHSV(new_etherealcolor)
 						if(ReadHSV(temp_hsv)[3] >= ReadHSV("#505050")[3]) // elzu colors should be bright
