@@ -28,4 +28,4 @@
 	if(LAZYACCESS(modifiers, LEFT_CLICK))
 		object.set_light(light_range, light_power, light_color)
 	if(LAZYACCESS(modifiers, RIGHT_CLICK))
-		object.set_light(0,0,0, COLOR_WHITE)
+		object.set_light(0,0,COLOR_WHITE)
