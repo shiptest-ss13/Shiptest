@@ -41,6 +41,20 @@
 	ammo_x_offset = 2
 	charge_sections = 4
 
+/obj/item/gun/energy/pulse/prize/Initialize()
+	. = ..()
+	GLOB.poi_list += src
+	var/turf/T = get_turf(src)
+
+	message_admins("A pulse rifle prize has been created at [ADMIN_VERBOSEJMP(T)]")
+	log_game("A pulse rifle prize has been created at [AREACOORD(T)]")
+
+	notify_ghosts("Someone won a pulse rifle as a prize!", source = src, action = NOTIFY_ORBIT, header = "Pulse rifle prize")
+
+/obj/item/gun/energy/pulse/prize/Destroy()
+	GLOB.poi_list -= src
+	. = ..()
+
 /obj/item/gun/energy/pulse/pistol
 	name = "pulse pistol"
 	desc = "A pulse rifle in an easily concealed handgun package with low capacity."
