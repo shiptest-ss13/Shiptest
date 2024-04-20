@@ -576,6 +576,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-6"
 	},
+/obj/item/cigbutt,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "hU" = (
@@ -1219,7 +1220,7 @@
 	layer = 2.04
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_x = 25
+	pixel_x = 24
 	},
 /obj/structure/sign/directions/evac{
 	dir = 4;
@@ -1822,6 +1823,7 @@
 	pixel_y = 20
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/item/cigbutt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
 "yn" = (
@@ -1882,9 +1884,7 @@
 /obj/structure/sign/painting/library{
 	pixel_y = -30
 	},
-/obj/structure/chair/sofa/red/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/red/right/directional/north,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "yH" = (
@@ -1892,9 +1892,7 @@
 	dir = 2;
 	color = "#543C30"
 	},
-/obj/structure/chair/sofa/red{
-	dir = 1
-	},
+/obj/structure/chair/sofa/red/directional/north,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "yL" = (
@@ -1959,6 +1957,7 @@
 /obj/effect/turf_decal/dept/cargo{
 	dir = 4
 	},
+/obj/item/cigbutt,
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
 "zC" = (
@@ -2100,10 +2099,8 @@
 	dir = 9;
 	color = "#543C30"
 	},
-/obj/structure/chair/sofa/red/left{
-	dir = 4
-	},
 /obj/machinery/firealarm/directional/west,
+/obj/structure/chair/sofa/red/left/directional/east,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "BA" = (
@@ -2357,9 +2354,6 @@
 /area/ship/external/dark)
 "Fb" = (
 /obj/machinery/light/directional/east,
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#543C30"
@@ -2368,6 +2362,7 @@
 	dir = 8;
 	color = "#543C30"
 	},
+/obj/structure/chair/comfy/grey/directional/west,
 /turf/open/floor/wood/walnut,
 /area/ship/hallway/central)
 "Fw" = (
@@ -2425,9 +2420,7 @@
 	color = "#543C30"
 	},
 /obj/machinery/light/dim/directional/west,
-/obj/structure/chair/sofa/red{
-	dir = 4
-	},
+/obj/structure/chair/sofa/red/directional/east,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "Gd" = (
@@ -3045,6 +3038,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/oil,
+/obj/item/cigbutt,
 /turf/open/floor/plating,
 /area/ship/maintenance/aft)
 "NM" = (
@@ -3162,7 +3156,7 @@
 	layer = 2.91
 	},
 /obj/structure/sign/warning/nosmoking/circle{
-	pixel_x = 30
+	pixel_x = 24
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/toilet)
@@ -3288,9 +3282,7 @@
 	color = "#543C30"
 	},
 /obj/machinery/newscaster/directional/west,
-/obj/structure/chair/sofa/red/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/red/corner/directional/north,
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "Ry" = (
