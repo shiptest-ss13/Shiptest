@@ -103,9 +103,7 @@
 /turf/closed/indestructible/riveted,
 /area/ctf)
 "agb" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -421,7 +419,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/control)
 "akA" = (
-/obj/structure/chair/comfy/brown,
+/obj/structure/chair/comfy/orange/directional/south,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/control)
 "akB" = (
@@ -465,7 +463,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/control)
 "akG" = (
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/south{
 	color = "#596479"
 	},
 /turf/open/floor/plasteel/grimy,
@@ -613,9 +611,8 @@
 	},
 /area/centcom/control)
 "alw" = (
-/obj/structure/chair/comfy/brown{
-	buildstackamount = 0;
-	dir = 1
+/obj/structure/chair/comfy/orange/directional/north{
+	buildstackamount = 0
 	},
 /turf/open/floor/plasteel/grimy,
 /area/centcom/control)
@@ -954,9 +951,7 @@
 /turf/open/floor/wood,
 /area/centcom/ferry)
 "aoC" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "aoD" = (
@@ -965,9 +960,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "aoE" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "aoF" = (
@@ -986,9 +979,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "aoH" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
@@ -1001,9 +992,8 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "aoK" = (
-/obj/structure/chair/comfy/brown{
-	color = "#596479";
-	dir = 1
+/obj/structure/chair/comfy/orange/directional/north{
+	color = "#596479"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -1029,9 +1019,7 @@
 /turf/open/floor/wood,
 /area/centcom/ferry)
 "aoZ" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -1059,9 +1047,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "apb" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "apc" = (
@@ -1566,7 +1552,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/supply)
 "asx" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_x = -32
 	},
@@ -1577,7 +1563,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "asy" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
@@ -1749,18 +1735,14 @@
 /turf/open/floor/plating/airless,
 /area/syndicate_mothership/control)
 "aup" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_x = -32
 	},
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "auq" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
 "aus" = (
@@ -3551,9 +3533,7 @@
 /area/abductor_ship)
 "aJQ" = (
 /obj/effect/landmark/thunderdome/admin,
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/plasteel/grimy,
 /area/tdome/tdomeadmin)
 "aJY" = (
@@ -3929,7 +3909,7 @@
 /area/centcom/evac)
 "aLE" = (
 /obj/structure/table,
-/obj/item/radio/off,
+/obj/item/radio,
 /turf/open/floor/mineral/titanium/blue,
 /area/centcom/evac)
 "aLF" = (
@@ -3955,7 +3935,7 @@
 /area/centcom/evac)
 "aLJ" = (
 /obj/structure/table,
-/obj/item/radio/off,
+/obj/item/radio,
 /obj/machinery/light/directional/east,
 /turf/open/floor/mineral/titanium/blue,
 /area/centcom/evac)
@@ -4504,9 +4484,8 @@
 /turf/open/floor/wood,
 /area/centcom/holding)
 "aPj" = (
-/obj/structure/chair/comfy/brown{
-	color = "#596479";
-	dir = 4
+/obj/structure/chair/comfy/orange/directional/east{
+	color = "#596479"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/centcom/ferry)
@@ -5340,7 +5319,7 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "aUp" = (
-/obj/item/gun/energy/pulse/carbine/loyalpin,
+/obj/item/gun/energy/pulse/carbine,
 /obj/item/flashlight/seclite,
 /obj/structure/table/reinforced,
 /obj/machinery/airalarm/directional/south,
@@ -6975,9 +6954,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ctf)
 "cEn" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /obj/effect/turf_decal/corner/transparent/neutral{
 	dir = 1
 	},
@@ -7558,9 +7535,8 @@
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "ebb" = (
-/obj/structure/chair/comfy/brown{
-	color = "#66b266";
-	dir = 1
+/obj/structure/chair/comfy/orange/directional/north{
+	color = "#66b266"
 	},
 /obj/effect/turf_decal/corner/opaque/green{
 	dir = 1
@@ -10815,9 +10791,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "kJi" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /obj/machinery/light/directional/south,
 /obj/machinery/status_display/evac{
 	pixel_y = -32
@@ -13219,7 +13193,7 @@
 /turf/open/floor/wood/walnut,
 /area/centcom)
 "pwJ" = (
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/south{
 	color = "#596479"
 	},
 /obj/effect/turf_decal/corner/transparent/neutral{

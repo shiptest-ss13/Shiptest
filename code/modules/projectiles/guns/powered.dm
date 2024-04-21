@@ -52,10 +52,6 @@
 /obj/item/gun/ballistic/automatic/powered/get_cell()
 	return cell
 
-/obj/item/gun/ballistic/automatic/powered/nopin
-	pin = null
-	spawnwithmagazine = FALSE
-
 //the things below were taken from energy gun code. blame whoever coded this, not me
 /obj/item/gun/ballistic/automatic/powered/attackby(obj/item/A, mob/user, params)
 	if (!internal_cell && istype(A, /obj/item/stock_parts/cell/gun))

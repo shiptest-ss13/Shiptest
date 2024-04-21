@@ -26,7 +26,7 @@
 	var/atom/movable/screen/buildmode/preview_item/preview
 
 /datum/buildmode/New(client/c)
-	mode = new /datum/buildmode_mode/basic(src)
+	mode = new /datum/buildmode_mode/advanced(src)
 	holder = c
 	buttons = list()
 	li_cb = CALLBACK(src, PROC_REF(post_login))
@@ -36,6 +36,7 @@
 	holder.screen += buttons
 	holder.click_intercept = src
 	mode.enter_mode(src)
+	modebutton.update_appearance()
 
 /datum/buildmode/proc/quit()
 	mode.exit_mode(src)
