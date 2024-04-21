@@ -281,12 +281,6 @@
 	contains = list(/obj/item/ammo_box/c556mmHITP/rubbershot)
 	cost = 250
 
-/datum/supply_pack/ammo/miniguncell
-	name = "Mini Weapon Cell Crate"
-	desc = "Contains a minature weapon cell, compatible with the miniature energy gun."
-	contains = list(/obj/item/stock_parts/cell/gun/mini)
-	cost = 250
-
 /datum/supply_pack/ammo/guncell
 	name = "Weapon Cell Crate"
 	desc = "Contains a weapon cell, compatible with laser guns."
