@@ -27,7 +27,7 @@
 
 /obj/item/attachment/Destroy()
 	qdel(attachment_comp)
-	attachment_comp = NULL
+	attachment_comp = null
 	. = ..()
 
 /obj/item/attachment/proc/Toggle(obj/item/gun/gun, mob/user)
