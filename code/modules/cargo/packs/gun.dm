@@ -186,6 +186,6 @@
 /datum/supply_pack/gun/e40
 	name = "E-40 Hybrid Assault Rifle Crate"
 	desc = "Contains an antiquated dual mode automatic rifle capable of firing both ballistic rounds and lasers. Chambered in .299 Eoehoma caseless."
-	cost = 8000
+	cost = 8500
 	contains = list(/obj/item/gun/ballistic/automatic/assault/e40)
 	crate_name = "hybrid auto rifle crate"
