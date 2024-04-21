@@ -31,9 +31,9 @@
 	output += "! scope='col' style='width:150px; background-color:#FFDD66;' |Name\n"
 	output += "! class='unsortable' scope='col' style='width:150px; background-color:#FFDD66;' |Recipe\n"
 	output += "! class='unsortable' scope='col' style='background-color:#FFDD66;' |Description\n"
-	output += "! scope='col' style='background-color: #FFEE88;' | Metabolization Rate\n"
-	output += "! scope='col' style='background-color: #FFEE88;' | Overdose Threshold\n"
-	output += "! scope='col' style='background-color: #FFEE88;' | Addiction Threshold\n"
+	output += "! scope='col' | Metabolization Rate\n"
+	output += "! scope='col' | Overdose Threshold\n"
+	output += "! scope='col' | Addiction Threshold\n"
 	output += "|-\n"
 
 	reagents = sortList(reagents, /proc/cmp_typepaths_asc)
