@@ -61,6 +61,16 @@
 	if(!power_efficiency)
 		power_efficiency = 1
 
+/// Stores the LTSRBT Data in the uplink for linking
+/obj/machinery/ltsrbt/attackby(obj/item/O, mob/user, params)
+	if(istype(O, /obj/item/blackmarket_uplink))
+		var/obj/item/blackmarket_uplink/uplink = O
+		uplink.target = src
+		to_chat(user, "<span class='notice'>[src] linked to [O].</span>")
+		return TRUE
+
+	return ..()
+
 /// Adds /datum/blackmarket_purchase to queue unless the machine is free, then it sets the purchase to be instantly recieved
 /obj/machinery/ltsrbt/proc/add_to_queue(datum/blackmarket_purchase/purchase)
 	if(!recharge_cooldown && !recieving && !transmitting)

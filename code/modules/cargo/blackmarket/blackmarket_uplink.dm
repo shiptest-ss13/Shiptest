@@ -13,6 +13,8 @@
 	var/money = 0
 	/// List of typepaths for "/datum/blackmarket_market"s that this uplink can access.
 	var/list/accessible_markets = list(/datum/blackmarket_market/blackmarket)
+	// Linked LTSRBT for uplink to send to.
+	var/obj/machinery/ltsrbt/target
 
 /obj/item/blackmarket_uplink/Initialize()
 	. = ..()
@@ -52,6 +54,10 @@
 	holochip.name = "washed " + holochip.name
 	user.put_in_hands(holochip)
 	to_chat(user, "<span class='notice'>You withdraw [amount_to_remove] credits into a holochip.</span>")
+
+/obj/item/blackmarket_uplink/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>It's LTSRBT link [target ? "contains [target]." : "is empty."]</span>"
 
 /obj/item/blackmarket_uplink/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
