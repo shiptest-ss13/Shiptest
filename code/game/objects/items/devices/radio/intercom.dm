@@ -9,6 +9,7 @@
 	dog_fashion = null
 	unscrewed = FALSE
 	var/obj/item/wallframe/wallframe = /obj/item/wallframe/intercom
+	listening = TRUE
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 31)
 
