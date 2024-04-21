@@ -76,7 +76,7 @@
 
 /datum/map_template/ruin/rockplanet/shippingdock
 	name = "Abandoned Shipping Dock"
-	description = "An abandoned shipping dock used by small cargo freighters and smugglers alike."
+	description = "An abandoned shipping dock used by small cargo freighters and smugglers alike. Some malicious group seems to have trapped the place to eliminate scavengers."
 	id = "rockplanet_shippingdock"
 	suffix = "rockplanet_shippingdock.dmm"
 
