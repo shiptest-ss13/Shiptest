@@ -1,4 +1,12 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ae" = (
+/obj/effect/turf_decal/road,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ah" = (
 /obj/effect/turf_decal/road,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -248,16 +256,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"cq" = (
-/obj/effect/turf_decal/road,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "ct" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/mechanical,
@@ -409,6 +407,13 @@
 	},
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/ruin/rockplanet/shippingdock)
+"ec" = (
+/obj/item/mine/proximity/explosive/sting/live,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ee" = (
 /obj/effect/turf_decal/road{
 	dir = 1
@@ -440,14 +445,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"eu" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mine/proximity/explosive/sting/live,
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "ey" = (
 /obj/effect/turf_decal/industrial/warning/dust,
 /turf/open/floor/concrete{
@@ -485,17 +482,13 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"eS" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mine/pressure/explosive/live,
-/turf/open/floor/plasteel/mono/dark,
-/area/ruin/rockplanet/shippingdockwarehouse)
-"eX" = (
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1
+"eT" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
 	},
-/turf/open/floor/plating,
-/area/ruin/rockplanet/shippingdock)
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "eY" = (
 /obj/effect/turf_decal/road,
 /obj/effect/turf_decal/trimline/opaque/white/corner,
@@ -632,13 +625,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"gf" = (
-/obj/effect/decal/cleanable/crayon,
-/turf/open/floor/concrete/slab_1{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "gh" = (
 /obj/machinery/button/door{
 	pixel_y = 24;
@@ -648,7 +634,7 @@
 	light_range = 2;
 	light_power = 0.6
 	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/shippingdockwarehouse)
 "gm" = (
 /obj/machinery/power/floodlight{
 	anchored = 1
@@ -749,14 +735,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"hf" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "hh" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -787,14 +765,6 @@
 /obj/item/candle{
 	pixel_x = -12
 	},
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"hq" = (
-/obj/effect/turf_decal/road,
-/obj/effect/decal/cleanable/plasma,
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
@@ -840,6 +810,18 @@
 "hG" = (
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"hH" = (
+/obj/effect/turf_decal/road/line/edge/opaque/yellow{
+	dir = 1
+	},
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1
+	},
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "hL" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -982,15 +964,6 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/shippingdockoffice)
-"iT" = (
-/obj/structure/sign/departments/drop{
-	pixel_x = 32
-	},
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "jk" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-6"
@@ -1061,16 +1034,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"jH" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/plasma,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "jK" = (
 /mob/living/simple_animal/bot/mulebot{
 	name = "\improper Punished MULEbot"
@@ -1080,16 +1043,6 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"jL" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete/slab_1{
 	light_power = 0.6;
 	light_range = 2
 	},
@@ -1344,18 +1297,6 @@
 	},
 /turf/open/floor/hangar/plasteel/white,
 /area/ruin/rockplanet/shippingdock)
-"lF" = (
-/obj/effect/turf_decal/road/line/edge/opaque/yellow{
-	dir = 1
-	},
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1
-	},
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "lM" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
 	dir = 4
@@ -1385,6 +1326,11 @@
 /obj/item/modular_computer/laptop/preset/civilian,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/rockplanet/shippingdockoffice)
+"lV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/pressure/explosive/live,
+/turf/open/floor/plasteel/mono/dark,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "lZ" = (
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
@@ -1692,6 +1638,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"ot" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/item/mine/pressure/explosive/fire/live,
+/turf/open/floor/plasteel/dark,
+/area/ruin/rockplanet/shippingdockcustoms)
 "ou" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1785,14 +1738,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"pA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/robot_debris/limb,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "pB" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-9"
@@ -1822,21 +1767,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/shippingdocksecure)
-"pR" = (
-/obj/effect/decal/cleanable/shreds{
-	pixel_x = 7;
-	pixel_y = -8
-	},
-/obj/effect/decal/cleanable/shreds{
-	pixel_y = 7
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockplanet{
-	icon_state = "platingdmg2";
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "pS" = (
 /obj/structure/flora/grass/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
@@ -1883,25 +1813,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"qd" = (
-/obj/effect/decal/cleanable/shreds{
-	pixel_y = 6;
-	pixel_x = -7
-	},
-/turf/open/floor/plating/rockplanet{
-	icon_state = "platingdmg1";
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"qe" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mine/proximity/explosive/sting/live,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "qi" = (
 /obj/effect/turf_decal/industrial/stand_clear{
 	dir = 8
@@ -1943,6 +1854,14 @@
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"qJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/proximity/explosive/sting/live,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "qL" = (
@@ -1991,6 +1910,12 @@
 	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"rd" = (
+/obj/effect/turf_decal/industrial/outline/red,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/hangar/plasteel/white,
+/area/ruin/rockplanet/shippingdock)
 "re" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2020,13 +1945,6 @@
 /obj/item/gun/ballistic/automatic/pistol/tec9,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdocksecure)
-"rH" = (
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "rK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -2183,15 +2101,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"sG" = (
-/obj/effect/decal/cleanable/shreds,
-/obj/effect/decal/cleanable/plasma,
-/turf/open/floor/plating/rockplanet{
-	icon_state = "platingdmg2";
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+"sF" = (
+/obj/item/toy/snappop,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "sL" = (
 /obj/machinery/button/door{
 	dir = 4;
@@ -2344,11 +2257,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/shippingdockwarehouse)
-"tD" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/toy/snappop,
-/turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "tM" = (
 /obj/item/stack/ore/salvage/scraptitanium,
@@ -2696,17 +2604,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"wx" = (
-/obj/effect/decal/cleanable/shreds{
-	pixel_y = 10
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plating/rockplanet{
-	icon_state = "platingdmg1";
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "wy" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
 	dir = 1
@@ -2725,11 +2622,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"wD" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mine/pressure/explosive/live,
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/shippingdockwarehouse)
 "wE" = (
 /obj/effect/turf_decal/trimline/opaque/white/corner{
 	dir = 1
@@ -2891,13 +2783,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"xH" = (
-/obj/effect/decal/cleanable/plasma,
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "xQ" = (
 /obj/effect/turf_decal/road/line/edge/opaque/yellow{
 	dir = 1
@@ -2932,13 +2817,6 @@
 /turf/open/floor/concrete/slab_4{
 	light_power = 0.6;
 	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"xX" = (
-/obj/item/pickaxe,
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "xY" = (
@@ -3024,6 +2902,10 @@
 	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"yM" = (
+/obj/item/mine/pressure/explosive/live,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "yN" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -3043,19 +2925,6 @@
 	dir = 1
 	},
 /turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"yU" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/item/restraints/legcuffs/beartrap{
-	armed = 1
-	},
-/turf/open/floor/concrete/slab_4{
 	light_power = 0.6;
 	light_range = 2
 	},
@@ -3300,10 +3169,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ruin/rockplanet/shippingdockoffice)
-"AM" = (
-/obj/item/toy/snappop,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/shippingdockwarehouse)
 "AQ" = (
 /obj/effect/turf_decal/road/stripes{
 	dir = 4
@@ -3436,6 +3301,14 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"BT" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/robot_debris/limb,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ce" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -3487,6 +3360,13 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"CG" = (
+/obj/effect/decal/cleanable/crayon,
+/turf/open/floor/concrete/slab_1{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "CH" = (
 /obj/structure/fence/post{
 	dir = 8
@@ -3526,11 +3406,28 @@
 	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"CQ" = (
+/obj/effect/decal/cleanable/shreds,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating/rockplanet{
+	icon_state = "platingdmg2";
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "CT" = (
 /obj/structure/table,
 /obj/item/flashlight/lamp,
 /turf/open/floor/carpet/nanoweave/purple,
 /area/ruin/rockplanet/shippingdockoffice)
+"CU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "CV" = (
 /obj/structure/closet/crate/large,
 /obj/item/bot_assembly/floorbot,
@@ -3564,6 +3461,11 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"DC" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/pressure/explosive/live,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "DE" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -3631,6 +3533,17 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"En" = (
+/obj/effect/turf_decal/road/edge{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/robot_debris/down,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ev" = (
 /turf/open/floor/concrete{
 	light_range = 2;
@@ -3692,6 +3605,13 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"EQ" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/concrete/slab_2{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ER" = (
 /obj/structure/closet/crate,
 /turf/open/floor/hangar/plasteel/dark,
@@ -3715,6 +3635,12 @@
 /obj/effect/turf_decal/industrial/outline,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"Fd" = (
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1
+	},
+/turf/open/floor/plating,
+/area/ruin/rockplanet/shippingdock)
 "Fg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3817,14 +3743,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"FL" = (
-/obj/effect/turf_decal/road/line/edge/opaque/yellow,
-/obj/effect/decal/cleanable/plasma,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "FM" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -3878,6 +3796,14 @@
 /obj/structure/flora/rock/pile/rockplanet,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"FW" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "FX" = (
 /obj/effect/decal/cleanable/crayon,
 /turf/open/floor/concrete{
@@ -3911,6 +3837,13 @@
 /turf/open/floor/concrete/slab_1{
 	light_power = 0.6;
 	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Gm" = (
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Gr" = (
@@ -3957,25 +3890,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/rockplanet/shippingdocksecure)
-"GI" = (
-/obj/item/clothing/shoes/magboots{
-	name = "charred magboots"
-	},
-/obj/effect/decal/cleanable/shreds{
-	pixel_x = -8;
-	pixel_y = 17
-	},
-/obj/effect/decal/cleanable/shreds{
-	pixel_y = -9;
-	pixel_x = 15
-	},
-/obj/effect/decal/cleanable/plasma,
-/turf/open/floor/plating/rockplanet{
-	icon_state = "platingdmg3";
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "GM" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -4032,10 +3946,6 @@
 	dir = 1
 	},
 /area/ruin/rockplanet/shippingdock)
-"Hn" = (
-/obj/item/mine/pressure/explosive/live,
-/turf/open/floor/concrete/pavement,
-/area/ruin/rockplanet/shippingdockwarehouse)
 "Ho" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -4268,6 +4178,15 @@
 /obj/item/stack/sheet/plasteel/twenty,
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"JH" = (
+/obj/structure/sign/departments/drop{
+	pixel_x = 32
+	},
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "JI" = (
 /obj/structure/chair/plastic,
 /turf/open/floor/plating,
@@ -4425,6 +4344,16 @@
 	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Lj" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Ln" = (
 /obj/effect/turf_decal/number/left_one,
 /obj/effect/turf_decal/number/right_one,
@@ -4510,18 +4439,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockcustoms)
-"LZ" = (
-/obj/item/mine/pressure/explosive/live,
-/turf/open/floor/plasteel/tech/grid,
-/area/ruin/rockplanet/shippingdockwarehouse)
-"Mb" = (
-/obj/effect/decal/cleanable/robot_debris/old,
-/obj/effect/decal/cleanable/plasma,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Mg" = (
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdocksecure)
@@ -4534,6 +4451,14 @@
 /obj/structure/flora/tree/cactus,
 /turf/open/floor/plating/asteroid/rockplanet/cracked/lit,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Mo" = (
+/obj/effect/turf_decal/road/line/edge/opaque/yellow,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Mt" = (
 /obj/effect/turf_decal/trimline/opaque/white/filled/line{
 	dir = 4
@@ -4541,13 +4466,6 @@
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
 	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"Mu" = (
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "Mv" = (
@@ -4830,13 +4748,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"OM" = (
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete/slab_4{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "OO" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/door/airlock/grunge{
@@ -4854,6 +4765,13 @@
 /obj/effect/turf_decal/industrial/stand_clear,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"OW" = (
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/concrete/slab_4{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Pb" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -4874,6 +4792,11 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Pe" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/toy/snappop,
+/turf/open/floor/plasteel/tech/grid,
+/area/ruin/rockplanet/shippingdockwarehouse)
 "Pf" = (
 /obj/machinery/door/airlock/external{
 	dir = 4
@@ -4886,8 +4809,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockoffice)
-"Pm" = (
-/obj/effect/decal/cleanable/dirt/dust,
+"Pj" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
 /obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/concrete/pavement{
 	light_power = 0.6;
@@ -4931,7 +4856,7 @@
 	light_range = 2;
 	light_power = 0.6
 	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/shippingdockwarehouse)
 "Pw" = (
 /obj/machinery/light/dim/directional/east,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4961,6 +4886,10 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/concrete/pavement,
+/area/ruin/rockplanet/shippingdockwarehouse)
+"PB" = (
+/obj/item/mine/pressure/explosive/live,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
 "PE" = (
@@ -5063,18 +4992,21 @@
 /obj/structure/barricade/sandbags,
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"QQ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
+"QF" = (
+/obj/structure/railing{
+	dir = 1
 	},
+/obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/concrete/slab_1{
 	light_power = 0.6;
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"QS" = (
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete/slab_2{
+"QQ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/concrete/slab_1{
 	light_power = 0.6;
 	light_range = 2
 	},
@@ -5171,6 +5103,17 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood,
 /area/ruin/rockplanet/shippingdockoffice)
+"Sn" = (
+/obj/effect/decal/cleanable/shreds{
+	pixel_y = 6;
+	pixel_x = -7
+	},
+/turf/open/floor/plating/rockplanet{
+	icon_state = "platingdmg1";
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "So" = (
 /obj/effect/turf_decal/trimline/opaque/white/warning{
 	dir = 1
@@ -5334,6 +5277,35 @@
 /obj/item/stock_parts/cell/empty,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/shippingdock)
+"Tn" = (
+/obj/effect/turf_decal/road,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Tr" = (
+/obj/item/clothing/shoes/magboots{
+	name = "charred magboots"
+	},
+/obj/effect/decal/cleanable/shreds{
+	pixel_x = -8;
+	pixel_y = 17
+	},
+/obj/effect/decal/cleanable/shreds{
+	pixel_y = -9;
+	pixel_x = 15
+	},
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/plating/rockplanet{
+	icon_state = "platingdmg3";
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Tv" = (
 /obj/effect/turf_decal/box/corners,
 /turf/open/floor/plasteel/mono/dark,
@@ -5386,7 +5358,7 @@
 	light_range = 2;
 	light_power = 0.6
 	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
+/area/ruin/rockplanet/shippingdockwarehouse)
 "TH" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 1
@@ -5413,6 +5385,13 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/glass,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Ua" = (
+/obj/item/mine/pressure/explosive/rusty/live,
 /turf/open/floor/concrete{
 	light_range = 2;
 	light_power = 0.6
@@ -5582,6 +5561,17 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"Vc" = (
+/obj/effect/decal/cleanable/shreds{
+	pixel_y = 10
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rockplanet{
+	icon_state = "platingdmg1";
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Vf" = (
 /obj/structure/poddoor_assembly,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5665,13 +5655,6 @@
 	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"Wa" = (
-/obj/item/mine/proximity/explosive/sting/live,
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "Wb" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -5685,14 +5668,6 @@
 /turf/open/floor/concrete/slab_3{
 	light_power = 0.6;
 	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"Wd" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/robot_debris/limb,
-/turf/open/floor/concrete{
-	light_range = 2;
-	light_power = 0.6
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "We" = (
@@ -5787,17 +5762,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"WL" = (
-/obj/effect/turf_decal/road/edge{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/robot_debris/down,
-/obj/effect/decal/cleanable/plasma,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "WO" = (
 /obj/machinery/light/broken/directional/north,
 /turf/open/floor/plasteel/tech/grid,
@@ -5823,12 +5787,6 @@
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
-"Xb" = (
-/obj/effect/turf_decal/industrial/outline/red,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/hangar/plasteel/white,
-/area/ruin/rockplanet/shippingdock)
 "Xe" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
@@ -5948,16 +5906,6 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"XM" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/obj/item/mine/pressure/explosive/rusty/live,
-/turf/open/floor/concrete/pavement{
-	light_power = 0.6;
-	light_range = 2
-	},
-/area/overmap_encounter/planetoid/rockplanet/explored)
 "XO" = (
 /turf/open/floor/plasteel/dark,
 /area/ruin/rockplanet/shippingdockoffice)
@@ -5969,6 +5917,14 @@
 /obj/effect/spawner/lootdrop/maintenance/eight,
 /turf/open/floor/plasteel/mono/white,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"XR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/pressure/explosive/rusty/live,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "XU" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/girder/displaced,
@@ -6072,6 +6028,22 @@
 /obj/effect/decal/cleanable/wrapping,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"Yv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/item/mine/proximity/explosive/sting/live,
+/turf/open/floor/concrete/pavement{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
+"Yw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/robot_debris/limb,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "Yx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -6108,6 +6080,13 @@
 	},
 /turf/open/floor/plasteel/mono/dark,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"YE" = (
+/obj/item/pickaxe,
+/turf/open/floor/concrete{
+	light_range = 2;
+	light_power = 0.6
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "YG" = (
 /obj/vehicle/ridden/atv{
 	dir = 8
@@ -6141,13 +6120,19 @@
 	light_range = 2
 	},
 /area/overmap_encounter/planetoid/rockplanet/explored)
-"YT" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+"YP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 1
 	},
-/obj/item/mine/pressure/explosive/fire/live,
-/turf/open/floor/plasteel/dark,
-/area/ruin/rockplanet/shippingdockcustoms)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/item/restraints/legcuffs/beartrap{
+	armed = 1
+	},
+/turf/open/floor/concrete/slab_4{
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "YZ" = (
 /obj/effect/turf_decal/industrial/outline/red,
 /obj/item/stack/sheet/mineral/gold/five,
@@ -6274,6 +6259,21 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/ruin/rockplanet/shippingdockwarehouse)
+"ZU" = (
+/obj/effect/decal/cleanable/shreds{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/effect/decal/cleanable/shreds{
+	pixel_y = 7
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating/rockplanet{
+	icon_state = "platingdmg2";
+	light_power = 0.6;
+	light_range = 2
+	},
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "ZZ" = (
 /obj/effect/turf_decal/industrial/warning/fulltile,
 /obj/structure/cable{
@@ -7277,7 +7277,7 @@ ib
 jD
 Ev
 zH
-rH
+eT
 xi
 xi
 xi
@@ -7461,7 +7461,7 @@ gG
 hN
 NR
 KA
-QS
+EQ
 ZL
 NR
 KA
@@ -7587,7 +7587,7 @@ dw
 lp
 ED
 se
-rH
+eT
 xi
 su
 rN
@@ -8127,7 +8127,7 @@ mU
 Ti
 ED
 MA
-QS
+EQ
 QQ
 yN
 KS
@@ -8256,7 +8256,7 @@ xi
 Wh
 cZ
 mx
-Xb
+rd
 px
 mI
 mU
@@ -8374,7 +8374,7 @@ zU
 MA
 Ev
 MA
-hf
+CU
 jD
 ib
 ib
@@ -8857,7 +8857,7 @@ xi
 xi
 xi
 xi
-rH
+eT
 mU
 mU
 ED
@@ -8958,7 +8958,7 @@ Dv
 Ov
 Ov
 Ov
-gf
+CG
 WT
 Wj
 zU
@@ -9014,7 +9014,7 @@ im
 So
 xi
 mU
-Pm
+XR
 xc
 AG
 ir
@@ -9041,7 +9041,7 @@ NR
 zU
 zU
 gG
-OM
+OW
 ZL
 NR
 zU
@@ -9196,7 +9196,7 @@ MA
 Ov
 Ov
 hN
-hf
+CU
 Ev
 MA
 MA
@@ -9229,7 +9229,7 @@ Ev
 zH
 mU
 mU
-rH
+eT
 xi
 xi
 xi
@@ -9478,7 +9478,7 @@ JQ
 MA
 wY
 Ev
-OM
+OW
 Tc
 Ev
 Ev
@@ -9681,14 +9681,14 @@ Ov
 hN
 Ov
 Hk
-eX
+Fd
 mC
 Ly
 Ly
 Jd
 xi
 mU
-qe
+Yv
 mU
 xi
 wj
@@ -9697,7 +9697,7 @@ xy
 Jz
 nP
 rY
-YT
+ot
 LY
 ch
 SM
@@ -9707,7 +9707,7 @@ nB
 lg
 MA
 Ev
-OM
+OW
 Gk
 Ww
 Kh
@@ -9744,7 +9744,7 @@ Wn
 Wn
 jD
 Ev
-eu
+qJ
 Cx
 ZK
 ZK
@@ -9754,7 +9754,7 @@ KA
 NR
 Ov
 zU
-QS
+EQ
 tx
 Ly
 Ly
@@ -9774,7 +9774,7 @@ NE
 OO
 JD
 Kx
-yU
+YP
 jv
 jZ
 pD
@@ -10049,7 +10049,7 @@ Wn
 XB
 pi
 Wn
-jL
+QF
 NR
 Ov
 MA
@@ -10224,7 +10224,7 @@ vM
 zU
 Wc
 zU
-OM
+OW
 NR
 KA
 ey
@@ -10280,7 +10280,7 @@ hN
 CW
 KA
 Ov
-QS
+EQ
 Ov
 hN
 KA
@@ -10304,7 +10304,7 @@ Ov
 Ov
 ey
 zH
-rH
+eT
 Td
 xi
 bo
@@ -10459,7 +10459,7 @@ HN
 HN
 HN
 VX
-iT
+JH
 IY
 Wn
 Wn
@@ -10520,8 +10520,8 @@ Br
 wB
 MA
 MA
-xX
-Wd
+YE
+Yw
 MA
 Ev
 MA
@@ -10572,7 +10572,7 @@ Oa
 Oa
 Oa
 eR
-cq
+Tn
 Oa
 IV
 IV
@@ -10590,16 +10590,16 @@ xi
 mU
 xi
 xi
-rH
+eT
 xi
 Br
 IV
 Oa
-hq
+ae
 Oa
-hq
+ae
 ud
-xH
+Gm
 MA
 Ev
 Ev
@@ -10672,8 +10672,8 @@ qo
 Ty
 wq
 mU
-pR
-WL
+ZU
+En
 ud
 MA
 Ev
@@ -10715,7 +10715,7 @@ Ev
 zH
 mU
 mU
-rH
+eT
 xi
 xi
 GO
@@ -10733,7 +10733,7 @@ xi
 GO
 ve
 xQ
-Pm
+XR
 mU
 mU
 mU
@@ -10746,12 +10746,12 @@ xi
 GO
 hr
 ju
-sG
-GI
-wx
-jH
+CQ
+Tr
+Vc
+Lj
 MA
-Mu
+Ua
 Ev
 jD
 Wn
@@ -10821,10 +10821,10 @@ Gs
 Gs
 MX
 Xx
-Mb
-qd
-pA
-jH
+FW
+Sn
+BT
+Lj
 Ev
 MA
 Ev
@@ -10897,7 +10897,7 @@ Ev
 MA
 vt
 kw
-FL
+Mo
 HM
 ED
 MA
@@ -11086,7 +11086,7 @@ GP
 GP
 ib
 Pn
-Wa
+ec
 zH
 xi
 xi
@@ -11322,7 +11322,7 @@ TE
 PP
 NB
 LS
-AM
+sF
 LS
 jE
 IS
@@ -11333,11 +11333,11 @@ LS
 LS
 aA
 eP
-LZ
+yM
 LS
 LS
 rS
-tD
+Pe
 jE
 jE
 LS
@@ -11388,7 +11388,7 @@ ib
 CH
 MA
 zH
-rH
+eT
 xi
 xi
 TA
@@ -11424,7 +11424,7 @@ FD
 xi
 xi
 xi
-XM
+Pj
 MA
 MA
 Ev
@@ -11470,7 +11470,7 @@ qo
 Ty
 og
 JL
-Hn
+PB
 lZ
 ZE
 es
@@ -11543,7 +11543,7 @@ mU
 xi
 GO
 hr
-lF
+hH
 UX
 lZ
 Yz
@@ -11566,7 +11566,7 @@ wM
 bZ
 pz
 Yz
-wD
+DC
 ms
 Rz
 ve
@@ -11704,8 +11704,8 @@ IS
 LS
 IS
 IS
-tD
-LZ
+Pe
+yM
 mV
 bV
 bV
@@ -11841,13 +11841,13 @@ MA
 MA
 MA
 MA
-hf
+CU
 Ev
 Ev
 en
 Fb
 Wl
-eS
+lV
 Vt
 UT
 ZA
@@ -12158,7 +12158,7 @@ MA
 MA
 Ev
 Ev
-Mu
+Ua
 Ev
 Ev
 Ev
@@ -12225,7 +12225,7 @@ MA
 MA
 MA
 MA
-Mu
+Ua
 MA
 Ev
 Ev
