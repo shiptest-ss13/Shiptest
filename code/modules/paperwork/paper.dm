@@ -489,8 +489,8 @@
 		var/obj/item/clipboard/clipboard = loc
 		// This is just so you can still use a stamp if you're holding one. Otherwise, it'll
 		// use the clipboard's pen, if applicable.
-		if(!istype(holding, /obj/item/stamp) && clipboard.haspen)
-			holding = clipboard.haspen
+		if(!istype(holding, /obj/item/stamp) && clipboard.pen)
+			holding = clipboard.pen
 	data["held_item_details"] = istype(holding) ? holding.get_writing_implement_details() : null
 
 
@@ -562,8 +562,8 @@
 				var/obj/item/clipboard/clipboard = loc
 				// This is just so you can still use a stamp if you're holding one. Otherwise, it'll
 				// use the clipboard's pen, if applicable.
-				if(!istype(holding, /obj/item/stamp) && clipboard.haspen)
-					holding = clipboard.haspen
+				if(!istype(holding, /obj/item/stamp) && clipboard.pen)
+					holding = clipboard.pen
 
 			// As of the time of writing, can_write outputs a message to the user so we don't have to.
 			if(!user.can_write(holding))
@@ -602,8 +602,8 @@
 				var/obj/item/clipboard/clipboard = loc
 				// This is just so you can still use a stamp if you're holding one. Otherwise, it'll
 				// use the clipboard's pen, if applicable.
-				if(!istype(holding, /obj/item/stamp) && clipboard.haspen)
-					holding = clipboard.haspen
+				if(!istype(holding, /obj/item/stamp) && clipboard.pen)
+					holding = clipboard.pen
 
 			// As of the time of writing, can_write outputs a message to the user so we don't have to.
 			if(!user.can_write(holding))

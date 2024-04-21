@@ -577,11 +577,32 @@
 	name = "fortune cookie"
 	desc = "A true prophecy in each cookie!"
 	icon_state = "fortune_cookie"
+	trash = /obj/item/paper/paperslip
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
 	filling_color = "#F4A460"
 	tastes = list("cookie" = 1)
 	foodtype = GRAIN | SUGAR
+
+/obj/item/reagent_containers/food/snacks/fortunecookie/proc/get_fortune()
+	var/atom/drop_location = drop_location()
+	var/obj/item/paper/fortune = locate(/obj/item/paper) in src
+	// If a fortune exists, use that.
+	if (fortune)
+		fortune.forceMove(drop_location)
+		return fortune
+
+	// Otherwise, use a generic one
+	var/obj/item/paper/paperslip/fortune_slip = new trash(drop_location)
+	fortune_slip.name = "fortune slip"
+	// if someone adds lottery tickets in the future, be sure to add random numbers to this
+	fortune_slip.add_raw_text(pick(GLOB.wisdoms))
+
+	return fortune_slip
+
+/obj/item/reagent_containers/food/snacks/fortunecookie/generate_trash()
+	if(trash)
+		get_fortune()
 
 /obj/item/reagent_containers/food/snacks/poppypretzel
 	name = "poppy pretzel"

@@ -1,7 +1,7 @@
-/obj/item/clothing/suit/hooded/hoodie/
+/obj/item/clothing/suit/hooded/hoodie
 	name = "hoodie"
 	desc = "HOW"
-	hoodtype = /obj/item/clothing/head/hooded/hood/
+	hoodtype = /obj/item/clothing/head/hooded/hood
 	body_parts_covered = CHEST|ARMS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/exo/large
 	allowed = list(	/obj/item/flashlight,
@@ -15,7 +15,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //it's just a hoodie.
 	supports_variations = KEPORI_VARIATION
 
-/obj/item/clothing/head/hooded/hood/
+/obj/item/clothing/head/hooded/hood
 	name = "hood"
 	desc = "HOW"
 	body_parts_covered = HEAD
@@ -85,13 +85,11 @@
 /obj/item/clothing/head/hooded/hood/fbp
 	name = "\improper FBP kepori hood"
 	desc = "A hood for your FBP hoodie."
-	icon_state = "hoodie_fbp"
 	item_state = "hoodie_fbp"
 
 /obj/item/clothing/suit/hooded/hoodie/rilena
 	name = "K4L1 hoodie"
 	desc = "A hoodie themed to look like K4L1 from the popular webseries RILENA. It has a comfy pocket for keeping your hands warm."
-	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 	hoodtype = /obj/item/clothing/head/hooded/hood/rilena
 
@@ -112,6 +110,5 @@
 /obj/item/clothing/head/hooded/hood/rilena
 	name = "RILENA: LMR K4L1 hood"
 	desc = "A hood for your RILENA themed hoodie."
-	icon_state = "hoodie_rilena"
 	item_state = "hoodie_rilena"
 

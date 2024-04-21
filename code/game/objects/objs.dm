@@ -364,7 +364,7 @@
 		current_skin = pick
 	icon_state = unique_reskin[pick]
 	to_chat(M, "[src] is now skinned as '[pick].'")
-	update_icon_state()
+	update_appearance()
 
 /**
  * Checks if we are allowed to interact with a radial menu for reskins
@@ -388,7 +388,7 @@
 		return TRUE
 	return ..()
 
-/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
+/obj/proc/plunger_act(obj/item/plunger/P, mob/living/user)
 	return
 
 // Should move all contained objects to it's location.

@@ -132,7 +132,6 @@
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = 180
 	extra_price = 360
-	payment_department = ACCOUNT_SRV
 	light_mask="theater-light-mask"
 
 /obj/machinery/vending/autodrobe/canLoadItem(obj/item/I,mob/user)

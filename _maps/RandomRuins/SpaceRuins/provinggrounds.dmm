@@ -208,7 +208,7 @@
 /area/ruin/space/has_grav/syndicircle/halls)
 "gi" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/syndicate/red,
+/obj/item/folder/documents/syndicate/red,
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/syndicircle/winter)
 "gp" = (
@@ -323,7 +323,7 @@
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/syndicircle/winter)
 "iR" = (
-/obj/effect/mine/shrapnel,
+/obj/item/mine/pressure/explosive/shrapnel/live,
 /obj/item/stack/tile/mineral/snow,
 /obj/machinery/light/dim/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -648,7 +648,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/syndicircle/winter)
 "tf" = (
-/obj/effect/mine/shrapnel,
+/obj/item/mine/pressure/explosive/shrapnel/live,
 /obj/item/stack/tile/mineral/snow,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/snow/atmosphere,
@@ -1924,7 +1924,7 @@
 "XA" = (
 /obj/structure/rack,
 /obj/item/ammo_box/foambox/riot,
-/obj/item/gun/ballistic/automatic/toy/pistol/riot/unrestricted,
+/obj/item/gun/ballistic/automatic/toy/pistol/riot,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},

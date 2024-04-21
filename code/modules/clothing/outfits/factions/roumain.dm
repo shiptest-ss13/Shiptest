@@ -17,6 +17,7 @@
 
 /datum/outfit/job/roumain/assistant
 	name = "Saint-Roumain Militia - Shadow"
+	id_assignment = "Shadow"
 	jobtype = /datum/job/assistant
 	job_icon = "assistant"
 
@@ -31,6 +32,7 @@
 
 /datum/outfit/job/roumain/captain
 	name = "Saint-Roumain Militia - Hunter Montagne"
+	id_assignment = "Hunter Montagne"
 	job_icon = "captain"
 	jobtype = /datum/job/captain
 
@@ -54,6 +56,7 @@
 
 /datum/outfit/job/roumain/security
 	name = "Saint-Roumain Militia - Hunter"
+	id_assignment = "Hunter"
 	jobtype = /datum/job/officer
 	job_icon = "securityofficer"
 
@@ -75,6 +78,7 @@
 
 /datum/outfit/job/roumain/doctor
 	name = "Saint-Roumain Militia - Hunter Doctor"
+	id_assignment = "Hunter Doctor"
 	job_icon = "medicaldoctor"
 	jobtype = /datum/job/doctor
 

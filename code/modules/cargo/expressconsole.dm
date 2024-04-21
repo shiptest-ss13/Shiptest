@@ -65,13 +65,7 @@
 	return ..()
 
 /obj/machinery/computer/cargo/express/attackby(obj/item/W, mob/living/user, params)
-	var/value = 0
-	if(istype(W, /obj/item/spacecash/bundle))
-		var/obj/item/spacecash/bundle/C = W
-		value = C.value
-	else if(istype(W, /obj/item/holochip))
-		var/obj/item/holochip/H = W
-		value = H.credits
+	var/value = W.get_item_credit_value()
 	if(value && charge_account)
 		charge_account.adjust_money(value)
 		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")

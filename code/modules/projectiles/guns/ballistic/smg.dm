@@ -15,13 +15,28 @@
 	eject_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/smg_unload.ogg'
 
+/obj/item/gun/ballistic/automatic/smg/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = 1
+	var/total_recoil = recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_recoil += gunslinger_bonus
+		total_recoil = clamp(total_recoil,0,INFINITY)
+	return total_recoil
+
+/obj/item/gun/ballistic/automatic/smg/calculate_spread(mob/user, bonus_spread)
+	var/gunslinger_bonus = 4
+	var/total_spread = bonus_spread
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_spread += gunslinger_bonus
+		total_spread = clamp(total_spread,0,INFINITY)
+	return total_spread
+
 /obj/item/gun/ballistic/automatic/smg/proto
 	name = "\improper Nanotrasen Saber SMG"
 	desc = "A prototype full-auto 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors and a folding stock."
 	icon_state = "saber"
 	actions_types = list()
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
-	pin = null
 	bolt_type = BOLT_TYPE_LOCKING
 	mag_display = TRUE
 	manufacturer = MANUFACTURER_NANOTRASEN_OLD
@@ -29,9 +44,6 @@
 /obj/item/gun/ballistic/automatic/smg/proto/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/smg/c20r
 	name = "\improper C-20r SMG"
@@ -51,9 +63,6 @@
 /obj/item/gun/ballistic/automatic/smg/c20r/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.13 SECONDS)
-
-/obj/item/gun/ballistic/automatic/smg/c20r/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/smg/c20r/Initialize()
 	. = ..()
@@ -144,7 +153,6 @@
 	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
 	burst_size = 3
 	fire_delay = 2
-	pin = /obj/item/firing_pin/implant/pindicate
 	mag_display = TRUE
 	empty_indicator = TRUE
 	fire_sound = 'sound/weapons/gun/rifle/shot_alt.ogg'
@@ -157,14 +165,6 @@
 /obj/item/gun/ballistic/automatic/smg/m90/Initialize()
 	. = ..()
 	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher(src)
-	update_appearance()
-
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/ballistic/automatic/smg/m90/unrestricted/Initialize()
-	. = ..()
-	underbarrel = new /obj/item/gun/ballistic/revolver/grenadelauncher/unrestricted(src)
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/smg/m90/afterattack(atom/target, mob/living/user, flag, params)
@@ -243,7 +243,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5
 	name = "\improper CM-5"
-	desc = "The standard issue SMG of the CMM. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
+	desc = "The standard issue SMG of CLIP. One of the few firearm designs that were left mostly intact from the designs found on the UNSV Lichtenstein. Chambered in 9mm."
 	icon_state = "cm5"
 	item_state = "cm5"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
@@ -257,6 +257,22 @@
 
 /obj/item/gun/ballistic/automatic/smg/cm5/no_mag
 	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact
+	name = "\improper CM-5c"
+	desc = "The compact conversion of the CM-5. While not exactly restricted, it is looked down upon due to CLIP's doctrine on medium-longrange combat, however it excels at close range and is very lightweight. You feel like this gun is mildly unfinished. Chambered in 9mm."
+	w_class = WEIGHT_CLASS_NORMAL
+	spread = 25
+	spread_unwielded = 40
+
+	recoil = 1
+	recoil_unwielded = 2
+	wield_delay = 0.2 SECONDS
+	wield_slowdown = 0.15
+
+/obj/item/gun/ballistic/automatic/smg/cm5/compact/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.8 SECONDS)
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"
@@ -339,17 +355,25 @@
 
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = 1
 	var/total_recoil = recoil_bonus
 	if(!stock_folded)
 		total_recoil += stock_recoil_bonus
-		total_recoil = clamp(total_recoil,0,INFINITY)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_recoil += gunslinger_bonus
+
+	total_recoil = clamp(total_recoil,0,INFINITY)
 	return total_recoil
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/calculate_spread(mob/user, bonus_spread)
+	var/gunslinger_bonus = 4
 	var/total_spread = bonus_spread
 	if(!stock_folded)
 		total_spread += stock_spread_bonus
-		total_spread = clamp(total_spread,0,INFINITY)
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger penalty
+		total_spread += gunslinger_bonus
+
+	total_spread = clamp(total_spread,0,INFINITY)
 	return total_spread
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine/update_icon_state()
