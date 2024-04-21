@@ -161,6 +161,12 @@
 	contains = list(/obj/item/ammo_box/magazine/p16)
 	cost = 1000
 
+/datum/supply_pack/ammo/e40_ammo
+	name = "E-40 Eoehoma .299 Caseless Magazine Crate"
+	desc = "Contains a Eoehoma .299 caseless magazine for the E-40 hybrid rifle, containing thirty rounds."
+	contains = list(/obj/item/ammo_box/magazine/e40)
+	cost = 1000
+
 /datum/supply_pack/ammo/a850r_ammo
 	name = "8x50mmR En Bloc Clip Crate"
 	desc = "Contains a 8x50mmR en bloc clip for rifles like the illestren rifle, containing five rounds."
@@ -273,6 +279,12 @@
 	name = "5.56 Caseless Rubber Ammo Box Crate"
 	desc = "Contains a fifty-round 5.56 caseless box loaded with less-than-lethal rubber rounds."
 	contains = list(/obj/item/ammo_box/c556mmHITP/rubbershot)
+	cost = 250
+
+/datum/supply_pack/ammo/miniguncell
+	name = "Mini Weapon Cell Crate"
+	desc = "Contains a minature weapon cell, compatible with the miniature energy gun."
+	contains = list(/obj/item/stock_parts/cell/gun/mini)
 	cost = 250
 
 /datum/supply_pack/ammo/guncell

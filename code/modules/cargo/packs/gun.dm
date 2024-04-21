@@ -60,6 +60,13 @@
 	contains = list(/obj/item/gun/energy/laser)
 	crate_name = "laser crate"
 
+/datum/supply_pack/gun/e10
+	name = "E-10 Laser Pistol Crate"
+	desc = "Contains an antiquated, but still lethal Eoehoma E-10 laser pistol."
+	cost = 750
+	contains = list(/obj/item/gun/energy/laser/e10)
+	crate_name = "laser pistol crate"
+
 /datum/supply_pack/gun/mini_energy
 	name = "Mini Energy Gun Crate"
 	desc = "Contains a small, versatile energy gun, capable of firing both nonlethal and lethal blasts, but with a limited power cell."
@@ -73,6 +80,14 @@
 	cost = 1250
 	contains = list(/obj/item/gun/energy/e_gun)
 	crate_name = "energy gun crate"
+	crate_type = /obj/structure/closet/crate/secure/plasma
+
+/datum/supply_pack/gun/e11
+	name = "E-11 Clearence Crate"
+	desc = "Contains an antiquated Eoehoma E-11 energy gun, capable of firing both nonlethal and lethal blasts of light. The price has been repeatedly marked down, but it's still likely not worth the cost."
+	cost = 500
+	contains = list(/obj/item/gun/energy/e_gun/e11)
+	crate_name = "E-11 energy gun crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/gun/ion
@@ -96,6 +111,13 @@
 	cost = 3000
 	contains = list(/obj/item/gun/energy/kalix)
 	crate_name = "beam rifle crate"
+
+/datum/supply_pack/gun/e50
+	name = "E-50 Energy Emitter Crate"
+	desc = "Contains an Eoehoma E-50 energy emitter gun. Despite it's extreme age, this laser cannon can put out some exceptional hurt."
+	cost = 6000
+	contains = list(/obj/item/gun/energy/laser/e50)
+	crate_name = "E-50 energy emitter crate"
 
 /*
 		Shotguns
@@ -160,3 +182,10 @@
 	cost = 5000
 	contains = list(/obj/item/gun/ballistic/automatic/assault/skm)
 	crate_name = "auto rifle crate"
+
+/datum/supply_pack/gun/e40
+	name = "E-40 Hybrid Assault Rifle Crate"
+	desc = "Contains an antiquated dual mode automatic rifle capable of firing both ballistic rounds and lasers. Chambered in .299 Eoehoma caseless."
+	cost = 8000
+	contains = list(/obj/item/gun/ballistic/automatic/assault/e40)
+	crate_name = "hybrid auto rifle crate"
