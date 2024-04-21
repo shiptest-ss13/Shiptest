@@ -83,7 +83,7 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/gun/e11
-	name = "E-11 Clearence Crate"
+	name = "E-11 Clearance Crate"
 	desc = "Contains an antiquated Eoehoma E-11 energy gun, capable of firing both nonlethal and lethal blasts of light. The price has been repeatedly marked down, but it's still likely not worth the cost."
 	cost = 500
 	contains = list(/obj/item/gun/energy/e_gun/e11)
