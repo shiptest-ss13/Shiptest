@@ -783,7 +783,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/liz/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
 		. = "<span class='rose'>[user] spits fire at [A], igniting it.</span>"
-		playsound(src, 'sound/magic/fireball.ogg', 10, TRUE)
+		playsound(src, 'sound/voice/lizard/firespit.ogg', 20, TRUE)
 
 /obj/item/lighter/enigma
 	name = "\improper Enigma Shipworks Lighter"
