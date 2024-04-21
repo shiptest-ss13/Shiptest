@@ -37,10 +37,8 @@
 
 /obj/machinery/ltsrbt/Initialize()
 	. = ..()
-	SSblackmarket.telepads += src
 
 /obj/machinery/ltsrbt/Destroy()
-	SSblackmarket.telepads -= src
 	// Bye bye orders.
 	if(SSblackmarket.telepads.len)
 		for(var/datum/blackmarket_purchase/P in queue)

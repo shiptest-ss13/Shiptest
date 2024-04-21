@@ -58,7 +58,7 @@
 
 /obj/item/blackmarket_uplink/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It's LTSRBT link [target ? "contains [target]." : "is empty."]</span>"
+	. += "<span class='notice'>It's LTSRBT link [target ? "contains a [target]." : "is empty."]</span>"
 
 /obj/item/blackmarket_uplink/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -94,7 +94,7 @@
 /obj/item/blackmarket_uplink/ui_static_data(mob/user)
 	var/list/data = list()
 	data["delivery_method_description"] = SSblackmarket.shipping_method_descriptions
-	data["ltsrbt_built"] = SSblackmarket.telepads.len
+	data["ltsrbt_built"] = target
 	data["markets"] = list()
 	for(var/M in accessible_markets)
 		var/datum/blackmarket_market/BM = SSblackmarket.markets[M]
