@@ -1,9 +1,17 @@
+
+#define FIREMODE_SEMIAUTO "semi-automatic"
+#define FIREMODE_BURST "burst fire"
+#define FIREMODE_FULLAUTO "full-automatic"
+#define FIREMODE_OTHER "misc. fire"
+
 /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_NORMAL
 	var/select = 1
 	can_suppress = TRUE
 	burst_size = 3
 	fire_delay = 2
+	current_firemode = FIREMODE_SEMIAUTO
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	semi_auto = TRUE
 	fire_sound = 'sound/weapons/gun/smg/shot.ogg'
@@ -30,12 +38,22 @@
 
 /obj/item/gun/ballistic/automatic/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle_firemode))
-		burst_select()
+		fire_select(user)
 	else
 		..()
+//wewish
+/obj/item/gun/ballistic/automatic/proc/fire_select(mob/user)
+	var/mob/living/carbon/human/user = user
 
-/obj/item/gun/ballistic/automatic/proc/burst_select()
-	var/mob/living/carbon/human/user = usr
+
+
+	//current_firemode = FIREMODE_SEMIAUTO
+	//gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+
+	var/index = gun_firemodes[current_firemode]
+	index++
+	current_firemode = gun_firemodes[index]
+//wawa
 	select = !select
 	if(!select)
 		burst_size = 1
