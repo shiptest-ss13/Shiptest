@@ -11,6 +11,36 @@
 	stock_max = 5
 	availability_prob = 80
 
+/datum/blackmarket_item/clothing/crown
+	name = "Crown"
+	desc = "A beautiful golden crown, rich with history and pedigree. I'm sure they won't miss it."
+	item = /obj/item/clothing/head/crown/fancy
+
+	price_min = 1000
+	price_max = 2000
+	stock_max = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/clothing/galaxy_blue
+	name = "Blue Galaxy Suit"
+	desc = "A handsome silk suit, treated with a finish of bluespace dust for an out of this world sheen."
+	item = /obj/item/clothing/under/rank/civilian/lawyer/galaxy
+
+	price_min = 500
+	price_max = 2000
+	stock = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/clothing/galaxy_red
+	name = "Red Galaxy Suit"
+	desc = "A handsome silk suit, treated with a finish of telecrystal dust. It cuts a menacing figure."
+	item = /obj/item/clothing/under/rank/civilian/lawyer/galaxy/red
+
+	price_min = 500
+	price_max = 2000
+	stock = 1
+	availability_prob = 20
+
 /datum/blackmarket_item/clothing/durathread_vest
 	name = "Durathread Vest"
 	desc = "Don't let them tell you this stuff is \"Like asbestos\" or \"Pulled from the market for safety concerns\". It could be the difference between a robusting and a retaliation."
