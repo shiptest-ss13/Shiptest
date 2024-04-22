@@ -141,7 +141,7 @@
 	item = /obj/item/clothing/suit/space/hardsuit/combatmedic
 
 	price_min = 1000
-	price_max = 1750
+	price_max = 2500
 	stock_max = 2
 	availability_prob = 40
 

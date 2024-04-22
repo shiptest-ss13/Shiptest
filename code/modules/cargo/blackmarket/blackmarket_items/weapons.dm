@@ -61,3 +61,5 @@
 	price_max = 3000
 	stock_max = 1
 	availability_prob = 5
+
+
