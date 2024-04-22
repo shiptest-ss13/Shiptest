@@ -17,6 +17,8 @@
 	var/short_name
 	var/list/job_slots = list()
 	var/list/name_categories = list("GENERAL")
+	/// The icon state the ship usesship_generic
+	var/token_icon_state = "ship_generic"
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
 	/// The full name of the ship's faction.
