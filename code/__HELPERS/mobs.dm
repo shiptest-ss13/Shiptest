@@ -300,10 +300,14 @@ GLOBAL_LIST_EMPTY(species_list)
 
 	var/datum/progressbar/progbar
 	var/datum/cogbar/cog
+
 	if(progress)
-		progbar = new(user, delay, target || user)
+		if(user.client)
+			progbar = new(user, delay, target || user)
+
 		if(!hidden && delay >= 1 SECONDS)
 			cog = new(user)
+
 	var/endtime = world.time + delay
 	var/starttime = world.time
 	. = TRUE
@@ -337,6 +341,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		progbar.end_progress()
 
 	cog?.remove()
+	
 	if(interaction_key)
 		LAZYREMOVE(user.do_afters, interaction_key)
 
