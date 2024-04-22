@@ -16,7 +16,7 @@
 	desc = "Yeehaw, hardboiled friends! This holster is the first step in your dream of becoming a detective and being allowed to shoot real guns!"
 	item = /obj/item/clothing/accessory/holster
 
-	price_min = 400
+	price_min = 200
 	price_max = 800
 	stock_max = 8
 	availability_prob = 60
@@ -51,7 +51,8 @@
 	desc = "This easily hidden satchel can become a versatile tool to anybody with the desire to keep certain items out of sight and out of mind."
 	item = /obj/item/storage/backpack/satchel/flat/empty
 
-	price_min = 750
+	price_min = 250
 	price_max = 1000
 	stock_max = 2
 	availability_prob = 30
+
