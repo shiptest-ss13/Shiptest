@@ -2,6 +2,7 @@
 	name = "Laser Sight"
 	desc = "This laser sight is designed to be rail-mounted on a compatible firearm to provide increased accuracy."
 	icon_state = "laserpointer"
+	has_toggle = TRUE
 
 /obj/item/attachment/laser_sight/Toggle(obj/item/gun/gun, mob/user)
 	. = ..()

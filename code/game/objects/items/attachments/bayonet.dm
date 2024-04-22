@@ -4,6 +4,7 @@
 	icon_state = "ebayonet"
 	force = 2
 
+	has_toggle = TRUE
 	var/force_on = 20
 	var/extended = FALSE
 	var/reach_extended = 2
