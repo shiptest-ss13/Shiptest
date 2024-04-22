@@ -56,3 +56,43 @@
 	stock_max = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/misc/organs
+	name = "Organ Freezer"
+	desc = "Need some fresh organs in a jiffy? We got you covered. Make good use of them. Someone died to get these to you."
+	item = /obj/structure/closet/crate/freezer/surplus_limbs/organs
+
+	price_min = 1000
+	price_max = 3000
+	stock_max = 3
+	availability_prob = 30
+
+/datum/blackmarket_item/misc/abandoned_crate
+	name = "Abandoned Crate"
+	desc = "Why, it could be \"anything\". Are you feeling lucky?"
+	item = /obj/structure/closet/crate/secure/loot
+
+	price_min = 250
+	price_max = 500
+	stock_min = 5
+	stock_max = 10
+	availability_prob = 50
+
+/datum/blackmarket_item/misc/spygass
+	name = "Spy Glass Kit"
+	desc = "A set of trick glasses and a linked camera. Suit and dashing shades not included."
+	item = /obj/item/storage/box/rxglasses/spyglasskit
+
+	price_min = 250
+	price_max = 1000
+	stock_max = 3
+	availability_prob = 30
+
+/datum/blackmarket_item/misc/bepis_disk
+	name = "BEPIS Technology Disk"
+	desc = "An ancient technology disk containing some probably useful data. No refunds."
+	item = /obj/item/disk/tech_disk/major
+
+	price_min = 250
+	price_max = 1000
+	stock_max = 10
+	availability_prob = 30
