@@ -160,22 +160,3 @@
 	cost = 5000
 	contains = list(/obj/item/gun/ballistic/automatic/assault/skm)
 	crate_name = "auto rifle crate"
-
-/*
-		Firing pins
-*/
-
-/datum/supply_pack/gun/firingpins
-	name = "Standard Firing Pins Crate"
-	desc = "Upgrade your arsenal with 10 standard firing pins."
-	cost = 2000
-	contains = list(/obj/item/storage/box/firingpins,
-					/obj/item/storage/box/firingpins)
-	crate_name = "firing pins crate"
-
-/datum/supply_pack/gun/lasertag_pins
-	name = "Laser Tag Firing Pins Crate"
-	desc = "Three laser tag firing pins used in laser-tag units to ensure users are wearing their vests."
-	cost = 1500
-	contains = list(/obj/item/storage/box/lasertagpins)
-	crate_name = "laser tag pin crate"

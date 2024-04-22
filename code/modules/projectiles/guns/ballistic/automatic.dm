@@ -91,7 +91,6 @@
 	desc = "A heavily-modified .50 BMG anti-material rifle utilized by Syndicate agents. Requires both hands to fire."
 	can_suppress = TRUE
 	can_unsuppress = TRUE
-	pin = /obj/item/firing_pin/implant/pindicate
 
 // Old Semi-Auto Rifle //
 
