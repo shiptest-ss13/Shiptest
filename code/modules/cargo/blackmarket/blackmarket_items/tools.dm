@@ -51,7 +51,7 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/tools/syndi_toolbox
+/datum/blackmarket_item/tool/syndi_toolbox
 	name = "Syndicate Toolbox"
 	desc = "A set of specialized tools, built to precision perfection and certified by the GEC."
 	item = /obj/item/storage/toolbox/syndicate
@@ -101,7 +101,7 @@
 	stock_max = 3
 	availability_prob = 50
 
-/datum/blackmarket_item/tools/thermal_eyepatch
+/datum/blackmarket_item/tool/thermal_eyepatch
 	name = "Thermal Eyepatch"
 	desc = "A thermal eyepatch, capable of tracking the heat signatures of living beings through solid objects."
 	item = /obj/item/clothing/glasses/thermal/eyepatch
@@ -111,7 +111,7 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/tools/jumpboots
+/datum/blackmarket_item/tool/jumpboots
 	name = "Jump Boots"
 	desc = "Jump ahead of the competition with these specialized mining boots!"
 	item = /obj/item/clothing/shoes/bhop
@@ -121,7 +121,7 @@
 	stock_max = 3
 	availability_prob = 30
 
-/datum/blackmarket_item/tools/rocket_gloves
+/datum/blackmarket_item/tool/rocket_gloves
 	name = "Rocket Gloves"
 	desc = "The pinacle of tackling technology, no one will be able to resist a tackle from these rocket propelled gloves. Make sure not to miss though, we don't sell wheelchairs."
 	item = /obj/item/clothing/gloves/tackler/rocket
@@ -131,7 +131,7 @@
 	stock_max = 2
 	availability_prob = 30
 
-/datum/blackmarket_item/tools/chem_master
+/datum/blackmarket_item/tool/chem_master
 	name = "Chem Master Board"
 	desc = "A Chem Master board, capable of seperating and packaging reagents. Perfect for any aspiring at home chemist."
 	item = /obj/item/circuitboard/machine/chem_master
@@ -141,7 +141,7 @@
 	stock = 1
 	availability_prob = 30
 
-/datum/blackmarket_item/tools/rcd
+/datum/blackmarket_item/tool/rcd
 	name = "Rapid Construction Device"
 	desc = "Borrowed from a GEC construction site, this handy device will make building a cinch."
 	item = /obj/item/construction/rcd

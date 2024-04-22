@@ -29,7 +29,9 @@ SUBSYSTEM_DEF(blackmarket)
 			if(!markets[M])
 				stack_trace("SSblackmarket: Item [I] available in market that does not exist.")
 				continue
-			markets[M].add_item(item)
+			markets[M].add_item(item,FALSE)
+			if(I.pair_item)
+				markets[M].add_item(I.pair_item,TRUE)
 		qdel(I)
 	. = ..()
 

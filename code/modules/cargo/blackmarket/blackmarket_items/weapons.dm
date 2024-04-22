@@ -62,14 +62,25 @@
 	stock_max = 1
 	availability_prob = 10
 
-/datum/blackmarket_item/weapons/himehabu
+/datum/blackmarket_item/weapon/himehabu
 	name = "Himehabu Pistol"
 	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
 	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
+	pair_item = /datum/blackmarket_item/weapon/himehabu_mag
 
 	price_min = 100
 	price_max = 600
 	stock_max = 6
-	availability_prob = 50
+	availability_prob = 100
+
+/datum/blackmarket_item/weapon/himehabu_mag
+	name = "Himehabu Magazines"
+	desc = "Compact .22lr magazines for use in the Himehabu pistol."
+	item = /obj/item/ammo_box/magazine/m22lr
+
+	price_min = 100
+	price_max = 200
+	stock_max = 6
+	availability_prob = 0
 
 

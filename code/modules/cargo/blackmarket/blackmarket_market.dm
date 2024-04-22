@@ -13,8 +13,8 @@
 	var/list/categories	= list()
 
 /// Adds item to the available items and add it's category if it is not in categories yet.
-/datum/blackmarket_market/proc/add_item(datum/blackmarket_item/item)
-	if(!prob(initial(item.availability_prob)))
+/datum/blackmarket_market/proc/add_item(datum/blackmarket_item/item, paired)
+	if(!prob(initial(item.availability_prob)) && !paired)
 		return FALSE
 
 	if(ispath(item))
