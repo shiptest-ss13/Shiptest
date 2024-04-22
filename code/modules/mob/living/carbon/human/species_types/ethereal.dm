@@ -1,8 +1,8 @@
-#define ETHEREAL_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
+#define ELZUOSE_EMAG_COLORS list("#00ffff", "#ffc0cb", "#9400D3", "#4B0082", "#0000FF", "#00FF00", "#FFFF00", "#FF7F00", "#FF0000")
 
-/datum/species/ethereal
+/datum/species/elzuose
 	name = "\improper Elzuose"
-	id = SPECIES_ETHEREAL
+	id = SPECIES_ELZUOSE
 	attack_verb = "burn"
 	attack_sound = 'sound/weapons/etherealhit.ogg'
 	miss_sound = 'sound/weapons/etherealmiss.ogg'
@@ -47,12 +47,12 @@
 	var/drain_time = 0 //used to keep ethereals from spam draining power sources
 	var/obj/effect/dummy/lighting_obj/ethereal_light
 
-/datum/species/ethereal/Destroy(force)
+/datum/species/elzuose/Destroy(force)
 	if(ethereal_light)
 		QDEL_NULL(ethereal_light)
 	return ..()
 
-/datum/species/ethereal/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
+/datum/species/elzuose/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
 	if(!ishuman(C))
 		return
@@ -66,16 +66,16 @@
 	//The following code is literally only to make admin-spawned ethereals not be black.
 	C.dna.features["mcolor"] = C.dna.features["ethcolor"] //Ethcolor and Mut color are both dogshit and will be replaced
 	for(var/obj/item/bodypart/BP as anything in C.bodyparts)
-		if(BP.limb_id == SPECIES_ETHEREAL)
+		if(BP.limb_id == SPECIES_ELZUOSE)
 			BP.update_limb(is_creating = TRUE)
 
-/datum/species/ethereal/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
+/datum/species/elzuose/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
 	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
 	QDEL_NULL(ethereal_light)
 	return ..()
 
-/datum/species/ethereal/random_name(gender,unique,lastname)
+/datum/species/elzuose/random_name(gender,unique,lastname)
 	if(unique)
 		return random_unique_lizard_name(gender)
 
@@ -86,7 +86,7 @@
 
 	return randname
 
-/datum/species/ethereal/spec_updatehealth(mob/living/carbon/human/H)
+/datum/species/elzuose/spec_updatehealth(mob/living/carbon/human/H)
 	. = ..()
 	if(!ethereal_light)
 		return
@@ -108,7 +108,7 @@
 	H.update_body()
 	H.update_hair()
 
-/datum/species/ethereal/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
+/datum/species/elzuose/proc/health_adjusted_color(mob/living/carbon/human/H, default_color)
 	var/health_percent = max(H.health, 0) / 100
 
 	var/static/unhealthy_color_red_part   = GETREDPART(unhealthy_color)
@@ -126,7 +126,7 @@
 	)
 	return result
 
-/datum/species/ethereal/proc/set_ethereal_light(mob/living/carbon/human/H, current_color)
+/datum/species/elzuose/proc/set_ethereal_light(mob/living/carbon/human/H, current_color)
 	if(!ethereal_light)
 		return
 
@@ -137,7 +137,7 @@
 
 	ethereal_light.set_light_range_power_color(light_range, light_power, current_color)
 
-/datum/species/ethereal/proc/on_emp_act(mob/living/carbon/human/H, severity)
+/datum/species/elzuose/proc/on_emp_act(mob/living/carbon/human/H, severity)
 	EMPeffect = TRUE
 	spec_updatehealth(H)
 	to_chat(H, "<span class='notice'>You feel the light of your body leave you.</span>")
@@ -147,7 +147,7 @@
 		if(EMP_HEAVY)
 			addtimer(CALLBACK(src, PROC_REF(stop_emp), H), 20 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //We're out for 20 seconds
 
-/datum/species/ethereal/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
+/datum/species/elzuose/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
 	if(emag_effect)
 		return
 	emag_effect = TRUE
@@ -157,54 +157,54 @@
 	handle_emag(H)
 	addtimer(CALLBACK(src, PROC_REF(stop_emag), H), 30 SECONDS) //Disco mode for 30 seconds! This doesn't affect the ethereal at all besides either annoying some players, or making someone look badass.
 
-/datum/species/ethereal/spec_life(mob/living/carbon/human/H)
+/datum/species/elzuose/spec_life(mob/living/carbon/human/H)
 	.=..()
 	handle_charge(H)
 
-/datum/species/ethereal/proc/stop_emp(mob/living/carbon/human/H)
+/datum/species/elzuose/proc/stop_emp(mob/living/carbon/human/H)
 	EMPeffect = FALSE
 	spec_updatehealth(H)
 	to_chat(H, "<span class='notice'>You feel more energized as your shine comes back.</span>")
 
-/datum/species/ethereal/proc/handle_emag(mob/living/carbon/human/H)
+/datum/species/elzuose/proc/handle_emag(mob/living/carbon/human/H)
 	if(!emag_effect)
 		return
-	current_color = pick(ETHEREAL_EMAG_COLORS)
+	current_color = pick(ELZUOSE_EMAG_COLORS)
 	spec_updatehealth(H)
 	addtimer(CALLBACK(src, PROC_REF(handle_emag), H), 5) //Call ourselves every 0.5 seconds to change color
 
-/datum/species/ethereal/proc/stop_emag(mob/living/carbon/human/H)
+/datum/species/elzuose/proc/stop_emag(mob/living/carbon/human/H)
 	emag_effect = FALSE
 	spec_updatehealth(H)
 	H.visible_message("<span class='danger'>[H] stops flickering and goes back to their normal state!</span>")
 
-/datum/species/ethereal/proc/handle_charge(mob/living/carbon/human/H)
+/datum/species/elzuose/proc/handle_charge(mob/living/carbon/human/H)
 	brutemod = 1.25
 	switch(get_charge(H))
-		if(ETHEREAL_CHARGE_NONE to ETHEREAL_CHARGE_LOWPOWER)
-			if(get_charge(H) == ETHEREAL_CHARGE_NONE)
-				H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 3)
+		if(ELZUOSE_CHARGE_NONE to ELZUOSE_CHARGE_LOWPOWER)
+			if(get_charge(H) == ELZUOSE_CHARGE_NONE)
+				H.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 3)
 			else
-				H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 2)
+				H.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 2)
 			if(H.health > 10.5)
 				apply_damage(0.2, TOX, null, null, H)
 			brutemod = 1.75
-		if(ETHEREAL_CHARGE_LOWPOWER to ETHEREAL_CHARGE_NORMAL)
-			H.throw_alert("ethereal_charge", /atom/movable/screen/alert/etherealcharge, 1)
+		if(ELZUOSE_CHARGE_LOWPOWER to ELZUOSE_CHARGE_NORMAL)
+			H.throw_alert("ELZUOSE_CHARGE", /atom/movable/screen/alert/etherealcharge, 1)
 			brutemod = 1.5
-		if(ETHEREAL_CHARGE_FULL to ETHEREAL_CHARGE_OVERLOAD)
+		if(ELZUOSE_CHARGE_FULL to ELZUOSE_CHARGE_OVERLOAD)
 			H.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 1)
 			brutemod = 1.5
-		if(ETHEREAL_CHARGE_OVERLOAD to ETHEREAL_CHARGE_DANGEROUS)
+		if(ELZUOSE_CHARGE_OVERLOAD to ELZUOSE_CHARGE_DANGEROUS)
 			H.throw_alert("ethereal_overcharge", /atom/movable/screen/alert/ethereal_overcharge, 2)
 			brutemod = 1.75
 			if(prob(10)) //10% each tick for ethereals to explosively release excess energy if it reaches dangerous levels
 				discharge_process(H)
 		else
-			H.clear_alert("ethereal_charge")
+			H.clear_alert("ELZUOSE_CHARGE")
 			H.clear_alert("ethereal_overcharge")
 
-/datum/species/ethereal/proc/discharge_process(mob/living/carbon/human/H)
+/datum/species/elzuose/proc/discharge_process(mob/living/carbon/human/H)
 	to_chat(H, "<span class='warning'>You begin to lose control over your charge!</span>")
 	H.visible_message("<span class='danger'>[H] begins to spark violently!</span>")
 	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
@@ -215,9 +215,9 @@
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		playsound(H, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
 		H.cut_overlay(overcharge)
-		tesla_zap(H, 2, (stomach.crystal_charge / ETHEREAL_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
+		tesla_zap(H, 2, (stomach.crystal_charge / ELZUOSE_CHARGE_SCALING_MULTIPLIER) * 50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
-			stomach.adjust_charge(ETHEREAL_CHARGE_FULL - stomach.crystal_charge)
+			stomach.adjust_charge(ELZUOSE_CHARGE_FULL - stomach.crystal_charge)
 		to_chat(H, "<span class='warning'>You violently discharge energy!</span>")
 		H.visible_message("<span class='danger'>[H] violently discharges energy!</span>")
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
@@ -228,13 +228,13 @@
 		H.Paralyze(100)
 		return
 
-/datum/species/ethereal/proc/get_charge(mob/living/carbon/H) //this feels like it should be somewhere else. Eh?
+/datum/species/elzuose/proc/get_charge(mob/living/carbon/H) //this feels like it should be somewhere else. Eh?
 	var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 	if(istype(stomach))
 		return stomach.crystal_charge
-	return ETHEREAL_CHARGE_NONE
+	return ELZUOSE_CHARGE_NONE
 
-/datum/species/ethereal/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
+/datum/species/elzuose/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, intent, mob/living/carbon/human/H)
 	if(istype(I, /obj/item/multitool))
 		if(user.a_intent == INTENT_HARM)
 			. = ..() // multitool beatdown

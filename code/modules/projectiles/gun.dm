@@ -1,6 +1,5 @@
 
 #define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.6
-#define FIRING_PIN_REMOVAL_DELAY 50
 
 /obj/item/gun
 	name = "gun"
@@ -34,7 +33,6 @@
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
 	var/can_unsuppress = TRUE
-	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	var/sawn_desc = null					//description change if weapon is sawn-off
@@ -53,7 +51,6 @@
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
 	var/list/attachment_options = list()	//This.. works for now.. gun refactor soon
-	var/obj/item/firing_pin/pin = /obj/item/firing_pin //standard firing pin for most guns
 
 	var/can_flashlight = FALSE //if a flashlight can be added or removed if it already has one.
 	var/obj/item/flashlight/seclite/gun_light
@@ -126,8 +123,6 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
-	if(pin)
-		pin = new pin(src)
 	if(gun_light)
 		alight = new(src)
 	muzzle_flash = new(src, muzzleflash_iconstate)
@@ -170,8 +165,6 @@
 	user.remove_movespeed_modifier(/datum/movespeed_modifier/gun)
 
 /obj/item/gun/Destroy()
-	if(isobj(pin)) //Can still be the initial path, then we skip
-		QDEL_NULL(pin)
 	if(gun_light)
 		QDEL_NULL(gun_light)
 	if(bayonet)
@@ -187,8 +180,6 @@
 	return ..()
 
 /obj/item/gun/handle_atom_del(atom/A)
-	if(A == pin)
-		pin = null
 	if(A == chambered)
 		chambered = null
 		update_appearance()
@@ -200,12 +191,6 @@
 
 /obj/item/gun/examine(mob/user)
 	. = ..()
-	if(pin)
-		. += "It has \a [pin] installed."
-		. += "<span class='info'>[pin] looks like it could be removed with some <b>tools</b>.</span>"
-	else
-		. += "It doesn't have a <b>firing pin</b> installed, and won't fire."
-
 	if(gun_light)
 		. += "It has \a [gun_light] [can_flashlight ? "" : "permanently "]mounted on it."
 		if(can_flashlight) //if it has a light and this is false, the light is permanent.
@@ -327,9 +312,6 @@
 		shoot_with_empty_chamber(user)
 		return
 
-	if(check_botched(user))
-		return
-
 	if(weapon_weight == WEAPON_HEAVY && (!wielded))
 		to_chat(user, "<span class='warning'>You need a more secure grip to fire [src]!</span>")
 		return
@@ -347,33 +329,6 @@
 				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread), loop_counter)
 
 	return process_fire(target, user, TRUE, params, null, bonus_spread)
-
-/obj/item/gun/proc/check_botched(mob/living/user, params)
-	if(clumsy_check)
-		if(istype(user))
-			if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>You shoot yourself in the foot with [src]!</span>")
-				var/shot_leg = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-				process_fire(user, user, FALSE, params, shot_leg)
-				SEND_SIGNAL(user, COMSIG_MOB_CLUMSY_SHOOT_FOOT)
-				user.dropItemToGround(src, TRUE)
-				return TRUE
-
-/obj/item/gun/can_trigger_gun(mob/living/user)
-	. = ..()
-	if(!handle_pins(user))
-		return FALSE
-
-/obj/item/gun/proc/handle_pins(mob/living/user)
-	if(pin)
-		if(pin.pin_auth(user) || (pin.obj_flags & EMAGGED))
-			return TRUE
-		else
-			pin.auth_fail(user)
-			return FALSE
-	else
-		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
-	return FALSE
 
 /obj/item/gun/proc/recharge_newshot()
 	return
@@ -571,40 +526,6 @@
 	else if(picked_option == "Knife")
 		return remove_gun_attachment(user, I, bayonet, "unfix")
 
-/obj/item/gun/welder_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(.)
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, 5, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is spliced out of [src] by [user], melting part of the pin in the process.</span>",
-								"<span class='warning'>You splice [pin] out of [src] with [I], melting part of the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
-
-/obj/item/gun/wirecutter_act(mob/living/user, obj/item/I)
-	. = ..()
-	if(.)
-		return
-	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		return
-	if(pin && user.is_holding(src))
-		user.visible_message("<span class='warning'>[user] attempts to remove [pin] from [src] with [I].</span>",
-		"<span class='notice'>You attempt to remove [pin] from [src]. (It will take [DisplayTimeText(FIRING_PIN_REMOVAL_DELAY)].)</span>", null, 3)
-		if(I.use_tool(src, user, FIRING_PIN_REMOVAL_DELAY, volume = 50))
-			if(!pin) //check to see if the pin is still there, or we can spam messages by clicking multiple times during the tool delay
-				return
-			user.visible_message("<span class='notice'>[pin] is ripped out of [src] by [user], mangling the pin in the process.</span>",
-								"<span class='warning'>You rip [pin] out of [src] with [I], mangling the pin in the process.</span>", null, 3)
-			QDEL_NULL(pin)
-			return TRUE
-
 /obj/item/gun/proc/remove_gun_attachment(mob/living/user, obj/item/tool_item, obj/item/item_to_remove, removal_verb)
 	if(tool_item)
 		tool_item.play_tool_sound(src)
@@ -801,11 +722,6 @@
 #undef BRAINS_BLOWN_THROW_RANGE
 #undef BRAINS_BLOWN_THROW_SPEED
 
-/obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
-	if(pin)
-		qdel(pin)
-	pin = new /obj/item/firing_pin
-
 //Happens before the actual projectile creation
 /obj/item/gun/proc/before_firing(atom/target,mob/user)
 	return
@@ -979,5 +895,4 @@
 		azoom = new()
 		azoom.gun = src
 
-#undef FIRING_PIN_REMOVAL_DELAY
 #undef DUALWIELD_PENALTY_EXTRA_MULTIPLIER

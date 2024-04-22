@@ -91,7 +91,7 @@
 		return
 	if(target.stat != CONSCIOUS)	//Only conscious people can dance
 		return
-	if(!target || isethereal(target))	//Non humans and non etherals can't dance
+	if(!target || iselzuose(target))	//Non humans and non etherals can't dance
 		return
 
 	var/distance = max(0,get_dist(get_turf(src), target_turf))

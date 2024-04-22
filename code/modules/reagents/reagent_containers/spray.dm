@@ -2,7 +2,7 @@
 	name = "spray bottle"
 	desc = "A spray bottle, with an unscrewable top."
 	icon = 'icons/obj/janitor.dmi'
-	icon_state = "sprayer_large"
+	icon_state = "sprayer"
 	item_state = "cleaner"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
@@ -162,7 +162,7 @@
 /obj/item/reagent_containers/spray/cleaner
 	name = "space cleaner"
 	desc = "BLAM!-brand non-foaming space cleaner!"
-	icon_state = "cleaner"
+	icon_state = "sprayer"
 	volume = 100
 	list_reagents = list(/datum/reagent/space_cleaner = 100)
 	amount_per_transfer_from_this = 2
@@ -388,13 +388,3 @@
 		if("sprayer_med_blue")
 			item_state = "sprayer_med_blue"
 	M.update_inv_hands()
-
-/*WS Begin - No Cobby
-
-/obj/item/reagent_containers/spray/hercuri
-	name = "medical spray (hercuri)"
-	desc = "A medical spray bottle.This one contains hercuri, a medicine used to negate the effects of dangerous high-temperature environments. Careful not to freeze the patient!"
-	icon_state = "sprayer_large"
-	list_reagents = list(/datum/reagent/medicine/c2/hercuri = 100)
-
-WS End */
