@@ -23,7 +23,7 @@
 
 /datum/blackmarket_item/misc/holywater
 	name = "Flask of holy water"
-	desc = "Father Lootius' own brand of ready-made holy water."
+	desc = "Father Fictus' own brand of ready-made holy water."
 	item = /obj/item/reagent_containers/food/drinks/bottle/holywater
 
 	price_min = 400
