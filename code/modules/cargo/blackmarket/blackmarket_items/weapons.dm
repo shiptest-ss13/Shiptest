@@ -48,7 +48,7 @@
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
 	item = /obj/item/gun/ballistic/derringer
-	price_min = 400
+	price_min = 100
 	price_max = 600
 	stock_max = 6
 	availability_prob = 50
@@ -60,6 +60,16 @@
 	price_min = 1000
 	price_max = 3000
 	stock_max = 1
-	availability_prob = 5
+	availability_prob = 10
+
+/datum/blackmarket_item/weapons/himehabu
+	name = "Himehabu Pistol"
+	desc = "Great things come in small packages. The Himehabu is perfect for all your espionage needs. Chambered in .22lr."
+	item = /obj/item/gun/ballistic/automatic/pistol/himehabu
+
+	price_min = 100
+	price_max = 600
+	stock_max = 6
+	availability_prob = 50
 
 

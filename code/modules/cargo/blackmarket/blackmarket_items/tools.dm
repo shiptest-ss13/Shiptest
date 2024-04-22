@@ -41,6 +41,16 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/tools/combat_wrench
+	name = "Combat Wrench"
+	desc = "Under fire while doing repairs? With this dual purpose wrench, never be caught unprepared again!"
+	item = /obj/item/wrench/combat
+
+	price_min = 500
+	price_max = 2500
+	stock = 1
+	availability_prob = 20
+
 /datum/blackmarket_item/tools/syndi_toolbox
 	name = "Syndicate Toolbox"
 	desc = "A set of specialized tools, built to precision perfection and certified by the GEC."
