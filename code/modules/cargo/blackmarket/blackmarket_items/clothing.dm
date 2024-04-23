@@ -13,7 +13,7 @@
 
 /datum/blackmarket_item/clothing/crown
 	name = "Crown"
-	desc = "A beautiful golden crown, rich with history and pedigree. I'm sure they won't miss it."
+	desc = "A beautiful golden crown, rich with history and pedigree. Better worn than left to collect dust in a museum, right?"
 	item = /obj/item/clothing/head/crown/fancy
 
 	price_min = 1000
@@ -98,14 +98,25 @@
 	return B
 
 /datum/blackmarket_item/clothing/gezena_armor
-	name = "Raksha-plating vest"
-	desc = "Genuine armor vests used by the PGF Marine Corp. This is hot merchandise, so we need to move it fast."
+	name = "Raksha-Plating vest"
+	desc = "Genuine armor vests used by the PGF Marine Corp. If a military guy in a cape comes by, play dumb."
 	item = /obj/item/clothing/suit/armor/gezena/marine
+	pair_item = /datum/blackmarket_item/clothing/gezena_helmet
 
-	price_min = 1500
-	price_max = 2000
-	stock_max = 2
+	price_min = 750
+	price_max = 1500
+	stock_max = 3
 	availability_prob = 20
+
+/datum/blackmarket_item/clothing/gezena_helmet
+	name = "Raksha-Helm"
+	desc = "A helmet used by the PGF Marine Corp. They won't miss it. Not like there's much to protect up there anyways."
+	item = /obj/item/clothing/head/helmet/gezena
+
+	price_min = 500
+	price_max = 600
+	stock_max = 3
+	availability_prob = 0
 
 /datum/blackmarket_item/clothing/full_spacesuit_set
 	name = "\improper Nanotrasen Branded Spacesuit Box"
@@ -136,8 +147,8 @@
 	availability_prob = 70
 
 /datum/blackmarket_item/clothing/combatmedic_suit
-	name = "Combat Medic hardsuit"
-	desc = "A discarded combat medic hardsuit, found in the ruins of a carpet bombed xeno hive. Definately used, but as sturdy as an anchor."
+	name = "Combat Medic Hardsuit"
+	desc = "A discarded combat medic hardsuit, found in the ruins of a carpet bombed xeno hive. Definetely used, but as sturdy as an anchor."
 	item = /obj/item/clothing/suit/space/hardsuit/combatmedic
 
 	price_min = 1000
@@ -146,7 +157,7 @@
 	availability_prob = 40
 
 /datum/blackmarket_item/clothing/ramzi_suit
-	name = "Rusted Red hardsuit"
+	name = "Rusted Red Hardsuit"
 	desc = "A vintage ICW Era Gorlex Maruader hardsuit. The previous owner said we could have it when we pried it off their cold dead hands. Dry cleaning not included."
 	item = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 
@@ -156,7 +167,7 @@
 	availability_prob = 30
 
 /datum/blackmarket_item/clothing/frontiersmen_hardsuit
-	name = "Frontiersmen hardsuit"
+	name = "Frontiersmen Hardsuit"
 	desc = "An old, if not durable hardsuit typically used by the Frontiersmen. We accept no liability if you're shot by CLIP while wearing this."
 	item = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
