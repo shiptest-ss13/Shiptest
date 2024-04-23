@@ -63,7 +63,7 @@
 	stock_max = 6
 	availability_prob = 50
 
-/datum/blackmarket_item/weapon/derringer
+/datum/blackmarket_item/weapon/golden
 	name = "Golden Derringer"
 	desc = "A rare custom-made concealable weapon designed to fire illegal .357 rounds."
 	item = /obj/item/gun/ballistic/derringer/gold
