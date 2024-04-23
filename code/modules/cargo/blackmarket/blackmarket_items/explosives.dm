@@ -74,3 +74,14 @@
 	stock_max = 7
 	availability_prob = 50
 
+/datum/blackmarket_item/explosive/rpg
+	name = "PML-9 RPG"
+	desc = "Offically, it's an anti-armor RPG launcher. Technically, it's anti-everything. Most things don't enjoy being hit in the face with high explosives."
+	item = /obj/item/gun/ballistic/rocketlauncher
+
+	price_min = 2000
+	price_max = 5000
+	stock_min = 2
+	stock_max = 5
+	availability_prob = 20
+

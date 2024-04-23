@@ -97,7 +97,7 @@
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
 
 	price_min = 400
-	price_max = 2600
+	price_max = 1500
 	stock_max = 3
 	availability_prob = 20
 
@@ -128,7 +128,7 @@
 
 	price_min = 100
 	price_max = 1000
-	stock_max = 3
+	stock = 3
 	availability_prob = 30
 
 /datum/blackmarket_item/tool/rocket_gloves
@@ -138,7 +138,7 @@
 
 	price_min = 500
 	price_max = 2000
-	stock_max = 2
+	stock_max = 3
 	availability_prob = 30
 
 /datum/blackmarket_item/tool/chem_master
@@ -168,5 +168,6 @@
 
 	price_min = 100
 	price_max = 700
+	stock_min = 3
 	stock_max = 6
-	availability_prob = 40
+	availability_prob = 60

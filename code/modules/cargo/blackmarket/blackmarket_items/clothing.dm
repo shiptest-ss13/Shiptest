@@ -68,7 +68,8 @@
 
 	price_min = 100
 	price_max = 400
-	stock_max = 3
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 80
 
 /datum/blackmarket_item/clothing/degraded_armor_set/spawn_item(loc)
@@ -86,7 +87,7 @@
 
 	price_min = 1000
 	price_max = 1750
-	stock_max = 2
+	stock_max = 3
 	availability_prob = 50
 
 /datum/blackmarket_item/clothing/frontiersmen_armor_set/spawn_item(loc)
@@ -153,25 +154,25 @@
 
 	price_min = 1000
 	price_max = 2500
-	stock_max = 2
-	availability_prob = 40
+	stock_max = 3
+	availability_prob = 30
 
 /datum/blackmarket_item/clothing/ramzi_suit
 	name = "Rusted Red Hardsuit"
 	desc = "A vintage ICW Era Gorlex Maruader hardsuit. The previous owner said we could have it when we pried it off their cold dead hands. Dry cleaning not included."
 	item = /obj/item/clothing/head/helmet/space/hardsuit/syndi/ramzi
 
-	price_min = 1250
+	price_min = 1500
 	price_max = 2500
 	stock = 1
 	availability_prob = 30
 
 /datum/blackmarket_item/clothing/frontiersmen_hardsuit
 	name = "Frontiersmen Hardsuit"
-	desc = "An old, if not durable hardsuit typically used by the Frontiersmen. We accept no liability if you're shot by CLIP while wearing this."
+	desc = "An old but durable hardsuit typically used by the Frontiersmen. We accept no liability if you're shot by CLIP while wearing this."
 	item = /obj/item/clothing/suit/space/hardsuit/security/independent/frontier
 
 	price_min = 1000
 	price_max = 2000
-	stock_max = 2
-	availability_prob = 30
+	stock_max = 3
+	availability_prob = 40

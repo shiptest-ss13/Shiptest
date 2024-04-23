@@ -111,7 +111,7 @@
 	price_min = 250
 	price_max = 750
 	stock = 5
-	availability_prob = 40
+	availability_prob = 60
 
 /datum/blackmarket_item/weapon/e40
 	name = "E-40 Hybrid Assault Rifle"
@@ -126,7 +126,7 @@
 
 /datum/blackmarket_item/weapon/e40_mag
 	name = "Eoehoma .299 Caseless Magazine"
-	desc = "30 round magazines for the E-40 Hybrid Rifle."
+	desc = "A 30 round magazine for the E-40 Hybrid Rifle."
 	item = /obj/item/ammo_box/magazine/e40
 
 	price_min = 750
@@ -194,7 +194,17 @@
 	price_max = 1250
 	stock_min = 2
 	stock_max = 5
-	availability_prob = 50
+	availability_prob = 60
+
+/datum/blackmarket_item/weapon/combat_shotgun
+	name = "Combat Shotgun"
+	desc = "Are your arms tired from pumping Hunter's Pride shotguns? This semi-automatic combat shotgun will make killing a breeze."
+	item = /obj/item/gun/ballistic/shotgun/automatic/combat
+
+	price_min = 2000
+	price_max = 4000
+	stock_max = 3
+	availability_prob = 40
 
 
 

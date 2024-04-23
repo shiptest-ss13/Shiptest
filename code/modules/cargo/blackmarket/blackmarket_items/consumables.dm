@@ -54,7 +54,7 @@
 
 /datum/blackmarket_item/consumable/morphine
 	name = "Morphine Bottle"
-	desc = "Medicinal? Recreational? You decide!"
+	desc = "Medicinal? Recreational? You can decide with this 30u bottle of morphine!"
 	item = /obj/item/reagent_containers/glass/bottle/morphine
 
 	price_min = 50
@@ -120,7 +120,8 @@
 
 	price_min = 25
 	price_max = 100
-	stock_max = 10
+	stock_min = 10
+	stock_max = 20
 	availability_prob = 40
 
 /datum/blackmarket_item/consumable/berries/spawn_item(loc)
@@ -146,7 +147,7 @@
 	item = /obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko
 
 	price_min = 10
-	price_max = 20
+	price_max = 50
 	stock_min = 10
 	stock_max = 20
 	availability_prob = 50

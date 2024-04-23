@@ -58,7 +58,7 @@
 
 /datum/blackmarket_item/misc/organs
 	name = "Organ Freezer"
-	desc = "Need some fresh organs in a jiffy? We got you covered. Make good use of them. Someone died to get these to you."
+	desc = "Need some fresh organs in a jiffy? We got you covered. Make good use of them, someone died to get these to you."
 	item = /obj/structure/closet/crate/freezer/surplus_limbs/organs
 
 	price_min = 1000
@@ -68,14 +68,13 @@
 
 /datum/blackmarket_item/misc/abandoned_crate
 	name = "Abandoned Crate"
-	desc = "Why, it could be \"anything\". Are you feeling lucky?"
+	desc = "Why, it could be anything. Are you feeling lucky?"
 	item = /obj/structure/closet/crate/secure/loot
 
 	price_min = 250
 	price_max = 500
-	stock_min = 5
-	stock_max = 10
-	availability_prob = 50
+	availability_prob = 100
+	unlimited =  TRUE
 
 /datum/blackmarket_item/misc/spygass
 	name = "Spy Glass Kit"
@@ -95,4 +94,4 @@
 	price_min = 250
 	price_max = 1000
 	stock_max = 10
-	availability_prob = 30
+	availability_prob = 40

@@ -27,7 +27,7 @@
 	item = /obj/item/circuitboard/machine/shuttle/engine/electric
 
 	price_min = 2000
-	price_max = 400
+	price_max = 4000
 	stock_max = 5
 	availability_prob = 100
 
