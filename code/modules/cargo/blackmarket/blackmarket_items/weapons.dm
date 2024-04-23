@@ -154,22 +154,6 @@
 	stock_max = 2
 	availability_prob = 20
 
-// /datum/blackmarket_item/weapon/corrupt_gun_cell
-// 	name = "Damaged Weapon Cell"
-// 	desc = "These got a bit dinged up in their crate after a close shave with GOLD inspectors. The cells are probably still safe to use though."
-// 	item = /obj/item/stock_parts/cell/gun
-
-// 	price_min = 250
-// 	price_max = 500
-// 	stock_min = 4
-// 	stock_max = 10
-// 	availability_prob = 40
-
-// /datum/blackmarket_item/weapon/corrupt_gun_cell/spawn_item(loc)
-// 	var/stock_parts/cell/gun = Cell()
-// 	Cell.corrupt()
-// 	return new berries(loc)
-
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
 	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase into distribution. But we happen know a guy."
