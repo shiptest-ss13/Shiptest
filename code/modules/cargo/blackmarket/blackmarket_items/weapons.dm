@@ -319,7 +319,7 @@
 
 /datum/blackmarket_item/weapon/scout
 	name = "HP Scout"
-	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Sidenote, scouts are also vulnerable to ambushes."
+	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Try not to tunnel vision with the scope like the last guy.."
 	item = /obj/item/gun/ballistic/rifle/scout
 	pair_item = /datum/blackmarket_item/weapon/scout_stripper
 
@@ -330,7 +330,7 @@
 
 /datum/blackmarket_item/weapon/scout_stripper
 	name = ".300 Magnum Stripper Clip"
-	desc = "5 round .300 Magnun stripper clips for use with the HP Scout."
+	desc = "A 5 round .300 Magnum stripper clips for use with the HP Scout."
 	item = /obj/item/ammo_box/a300
 
 	price_min = 500
