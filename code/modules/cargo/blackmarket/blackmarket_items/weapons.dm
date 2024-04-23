@@ -206,4 +206,73 @@
 	stock_max = 2
 	availability_prob = 30
 
+/datum/blackmarket_item/weapon/model_h
+	name = "Model H"
+	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
+	item = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
+	pair_item = /obj/item/ammo_box/magazine/modelh
+
+	price_min = 2000
+	price_max = 4000
+	stock = 2
+	availability_prob = 35
+
+/datum/blackmarket_item/consumable/model_h/spawn_item(loc)
+	var/model_h = pick(list(/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns,
+				/obj/item/gun/ballistic/automatic/powered/gauss/modelh))
+	return new model_h(loc)
+
+/datum/blackmarket_item/weapon/model_h_mag
+	name = "Model H Magazine"
+	desc = "A 10 round magazine for Model H slug pistol."
+	item = /obj/item/ammo_box/magazine/modelh
+
+	price_min = 500
+	price_max = 1000
+	stock_max = 4
+	availability_prob = 0
+
+/datum/blackmarket_item/weapon/sgg
+	name = "SSG-669C Rotary Sniper Rifle"
+	desc = "I could tell you it's full name, but we'd be here all day. It's a sniper rifle. It shoots people from far away. Chambered in 8x58mm."
+	item = /obj/item/gun/ballistic/rifle/solgov
+	pair_item = /datum/blackmarket_item/weapon/sgg_stripper
+
+	price_min = 3000
+	price_max = 5000
+	stock = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/weapon/sgg_stripper
+	name = "8x58 Stripper Clip"
+	desc = "A five round 8x58mm stripper clip for use with the SGG-669C."
+	item = /obj/item/ammo_box/a858
+
+	price_min = 500
+	price_max = 1000
+	stock_min = 4
+	stock_max = 6
+	availability_prob = 0
+
+/datum/blackmarket_item/weapon/pistole_c
+	name = "Pistole C"
+	desc = "Pistole Compact? Pistole Caseless? Pistole Cheese? Fuck if I know. All I know is these little numbers pack a nasty sting. Chambered in 5.56 caseless."
+	item = /obj/item/gun/ballistic/automatic/pistol/solgov/old
+	pair_item =
+
+	price_min = 900
+	price_max = 1250
+	stock_max = 3
+	availability_prob = 30
+
+/datum/blackmarket_item/weapon/pistole_c_mag
+	name = "5.56 Caseless Magazine"
+	desc = "A 12 round magazine for the Pistole Cheese."
+	item = /obj/item/ammo_box/magazine/pistol556mm
+
+	price_min = 250
+	price_max = 750
+	stock_max = 2
+	availability_prob = 0
+
 
