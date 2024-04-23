@@ -239,7 +239,7 @@
 	pair_item = /datum/blackmarket_item/weapon/sgg_stripper
 
 	price_min = 3000
-	price_max = 5000
+	price_max = 6000
 	stock = 1
 	availability_prob = 20
 
@@ -273,6 +273,70 @@
 	price_min = 250
 	price_max = 750
 	stock_max = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/weapon/proto_gauss
+	name = "Prototype Gauss Rifle"
+	desc = "A prototype gauss rifle made by Nanotrasen. Perfect for making swiss cheese out of people. Chambered in ferromagnetic pellets."
+	item = /obj/item/gun/ballistic/automatic/powered/gauss
+	pair_item = /datum/blackmarket_item/weapon/proto_gauss_mag
+
+	price_min = 4000
+	price_max = 6000
+	stock = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/weapon/proto_gauss_mag
+	name = "Prototype Gauss Rifle Magazine"
+	desc = "A 30 round ferromagnetic pellet magazine for the prototype gauss rifle."
+	item = /obj/item/ammo_box/magazine/gauss
+
+	price_min = 750
+	price_max = 1250
+	stock_max = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/weapon/tec
+	name = "TEC-9 Machine Pistol"
+	desc = "Hallelujah! It's raining lead! This 9mm machine pistol is capable of spitting out bullets at rapid pace."
+	item = /obj/item/gun/ballistic/automatic/pistol/tec9
+	pair_item = /datum/blackmarket_item/weapon/tec_mag
+
+	price_min = 2000
+	price_max = 3250
+	stock_max = 2
+	availability_prob = 35
+
+/datum/blackmarket_item/weapon/tec_mag
+	name = "TEC-9 AP Magazine"
+	desc = "A 20 round magazine of AP ammo for the TEC-9 machine pistol."
+	item = /obj/item/ammo_box/magazine/tec9
+
+	price_min = 600
+	price_max = 1000
+	stock_max = 2
+	availability_prob = 0
+
+/datum/blackmarket_item/weapon/scout
+	name = "HP Scout"
+	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Sidenote, scouts are also vulnerable to ambushes."
+	item = /obj/item/gun/ballistic/rifle/scout
+	pair_item = /datum/blackmarket_item/weapon/scout_stripper
+
+	price_min = 3500
+	price_max = 6500
+	stock = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/weapon/scout_stripper
+	name = ".300 Magnum Stripper Clip"
+	desc = "5 round .300 Magnun stripper clips for use with the HP Scout."
+	item = /obj/item/ammo_box/a30
+
+	price_min = 500
+	price_max = 100
+	stock_min = 4
+	stock_max = 6
 	availability_prob = 0
 
 
