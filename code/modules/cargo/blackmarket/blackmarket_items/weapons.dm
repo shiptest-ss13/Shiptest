@@ -54,16 +54,6 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/emp_grenade
-	name = "EMP Grenade"
-	desc = "Use this grenade for SHOCKING results!"
-	item = /obj/item/grenade/empgrenade
-
-	price_min = 100
-	price_max = 400
-	stock_max = 2
-	availability_prob = 50
-
 /datum/blackmarket_item/weapon/derringer
 	name = "Derringer"
 	desc = "A concealable handgun small enough to hide nearly anywhere. Uses .38 revolver rounds."
@@ -163,7 +153,7 @@
 	price_min = 2500
 	price_max = 4200
 	stock_max = 2
-	availability_prob = 20
+	availability_prob = 25
 
 /datum/blackmarket_item/weapon/saber_mag
 	name = "Saber 9mm SMG Magazines"
