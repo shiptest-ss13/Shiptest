@@ -86,3 +86,12 @@
 	stock_max = 3
 	availability_prob = 30
 
+/datum/blackmarket_item/misc/ripley_mk_4
+	name = "Ripley Mk IV Upgrade Kit"
+	desc = "Pimp out your Ripley to the CLIP Mark IV Rogue Model today! Killjoy bureaucrats not included, thank god."
+	item = /obj/item/mecha_parts/mecha_equipment/conversion_kit/ripley/clip
+
+	price_min = 1500
+	price_max = 2500
+	stock_max = 3
+	availability_prob = 30

@@ -196,6 +196,14 @@
 	stock_max = 3
 	availability_prob = 40
 
+/datum/blackmarket_item/weapon/mecha_weapon_bay
+	name = "Concealed Weapons Bay"
+	desc = "Ripley with a laser cannon? Odysseus with a missile rack? Sky's the limit with this omni-compatible weapons bay! (Missiles and lasers not included)"
+	item = /obj/item/mecha_parts/concealed_weapon_bay
 
+	price_min = 1250
+	price_max = 2000
+	stock_max = 2
+	availability_prob = 30
 
 
