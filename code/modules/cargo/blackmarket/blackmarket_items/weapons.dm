@@ -175,16 +175,6 @@
 	stock = 2
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/bioterror_foam
-	name = "Bioterror Foam Sprayer"
-	desc = "Banned in at least 17 jurisdictions for being \"cruel\",\"inhumane\", and \"causing indiscriminate lifelong generational health complications\". Though if you actually cared about those things, you wouldn't be shopping here in the first place."
-	item = /obj/item/reagent_containers/spray/chemsprayer/bioterror
-
-	price_min = 3000
-	price_max = 6000
-	stock = 1
-	availability_prob = 20
-
 /datum/blackmarket_item/weapon/sawn_illestren
 	name = "Sawn off Illestren Rifle"
 	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
