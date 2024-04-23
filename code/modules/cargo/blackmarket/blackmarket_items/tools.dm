@@ -164,7 +164,7 @@
 /datum/blackmarket_item/tool/suppressor
 	name = "Suppressor"
 	desc = "A suppressor, for when you to keep your murder on the down low."
-	item = new /obj/item/suppressor
+	item = /obj/item/suppressor
 
 	price_min = 100
 	price_max = 700
