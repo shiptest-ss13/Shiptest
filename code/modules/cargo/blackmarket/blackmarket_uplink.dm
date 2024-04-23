@@ -2,7 +2,7 @@
 	name = "Black Market Uplink"
 	icon = 'icons/obj/blackmarket.dmi'
 	icon_state = "uplink"
-	desc = "A jury rigged uplink capable of accessing illcit or grey market vendors. There's a port on side for linking it to a LTSRBT for more practical shipping."
+	desc = "A jury rigged uplink capable of accessing illicit or grey market vendors. There's a port on side for linking it to a LTSRBT for more practical shipping."
 
 	// UI variables.
 	var/viewing_category
