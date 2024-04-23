@@ -1,7 +1,7 @@
 /obj/item/attachment
 	name = "broken attachment"
 	desc = "alert coders"
-	icon = 'icons/obj/attachments.dmi'
+	icon = 'icons/obj/guns/attachments.dmi'
 
 	var/slot = ATTACHMENT_SLOT_RAIL
 	var/list/valid_parents = list()
