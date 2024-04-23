@@ -406,7 +406,7 @@
 			/datum/species/human = 50,
 			/datum/species/lizard = 20,
 			/datum/species/ipc = 10,
-			/datum/species/ethereal = 10,
+			/datum/species/elzuose = 10,
 			/datum/species/moth = 5,
 			/datum/species/spider = 5
 		)

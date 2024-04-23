@@ -217,7 +217,6 @@
 //	righthand_file = 'icons/mob/inhands/faction/clip/gezena_righthand.dmi'
 	icon_state = "clip_cap"
 	item_state = "bluecloth"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/clip/corpsman
 	name = "\improper CLIP Minutemen corpsman cap"
@@ -234,8 +233,6 @@
 	name = "CLIP Minutemen officer's slouch hat"
 	desc = "A commanding slouch hat adorned with a officer's badge, used by the CLIP Minutemen."
 	icon_state = "clip_officer_hat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
-	strip_delay = 60
 
 /obj/item/clothing/head/clip/boonie
 	name = "CLIP Minutemen boonie hat"
@@ -246,7 +243,6 @@
 	name = "general's bicorne"
 	desc = "A fancy bicorne used by generals of the CLIP Minutemen."
 	icon_state = "clip_general_hat"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/head/helmet/bulletproof/x11/clip
 	name = "\improper Minutemen X11 Helmet"
@@ -292,8 +288,6 @@
 
 	icon_state = "clip_fedora"
 	item_state = "detective"
-
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50) //dets hat is armored for some reaon
 
 /obj/item/clothing/head/flatcap/clip
 	name = "GOLD flatcap"
