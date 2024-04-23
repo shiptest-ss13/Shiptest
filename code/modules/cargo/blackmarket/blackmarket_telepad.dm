@@ -27,7 +27,7 @@
 	/// Current recharge progress.
 	var/recharge_cooldown = 0
 	/// Base recharge time which is used to get recharge_time.
-	var/base_recharge_time = 100
+	var/base_recharge_time = 10
 	/// Current /datum/blackmarket_purchase being recieved.
 	var/recieving
 	/// Current /datum/blackmarket_purchase being sent to the target uplink.
@@ -47,9 +47,9 @@
 
 /obj/machinery/ltsrbt/RefreshParts()
 	recharge_time = base_recharge_time
-	// On tier 4 recharge_time should be 20 and by default it is 80 as scanning modules should be tier 1.
+	// On tier 4 recharge_time should be 2 and by default it is 8 as scanning modules should be tier 1.
 	for(var/obj/item/stock_parts/scanning_module/scan in component_parts)
-		recharge_time -= scan.rating * 10
+		recharge_time -= scan.rating
 	recharge_cooldown = recharge_time
 
 	power_efficiency = 0

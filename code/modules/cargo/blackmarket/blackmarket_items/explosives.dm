@@ -35,7 +35,7 @@
 /datum/blackmarket_item/explosive/c4
 	name = "C4"
 	desc = "Looking to make an explosive entrance? These plastic explosives are perfect for the job."
-	item = obj/item/grenade/c4
+	item = /obj/item/grenade/c4
 
 	price_min = 100
 	price_max = 400
@@ -46,7 +46,7 @@
 /datum/blackmarket_item/explosive/x4
 	name = "X4"
 	desc = "X4 Plastic Explosives! Better than W4, worse than Y4."
-	item = obj/item/grenade/c4/x4
+	item = /obj/item/grenade/c4/x4
 
 	price_min = 400
 	price_max = 700
