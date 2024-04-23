@@ -86,12 +86,3 @@
 	stock_max = 3
 	availability_prob = 30
 
-/datum/blackmarket_item/misc/bepis_disk
-	name = "BEPIS Technology Disk"
-	desc = "An ancient technology disk containing some probably useful data. No refunds."
-	item = /obj/item/disk/tech_disk/major
-
-	price_min = 250
-	price_max = 1000
-	stock_max = 10
-	availability_prob = 40
