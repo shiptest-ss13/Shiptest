@@ -210,7 +210,7 @@
 	name = "Model H"
 	desc = "A Model H slug pistol. The H stands for Hurt. Chambered in ferromagnetic slugs."
 	item = /obj/item/gun/ballistic/automatic/powered/gauss/modelh
-	pair_item = /obj/item/ammo_box/magazine/modelh
+	pair_item = /datum/blackmarket_item/weapon/model_h_mag
 
 	price_min = 2000
 	price_max = 4000
