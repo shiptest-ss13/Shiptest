@@ -139,7 +139,6 @@
 	icon_state = "m90"
 	item_state = "m90"
 	mag_type = /obj/item/ammo_box/magazine/m556
-	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
 	burst_size = 3
@@ -209,7 +208,6 @@
 	icon_state = "firestorm"
 	item_state = "firestorm"
 	mag_type = /obj/item/ammo_box/magazine/c45_firestorm_mag
-	can_suppress = FALSE
 	special_mags = TRUE
 	burst_size = 1
 	actions_types = list()

@@ -1,7 +1,6 @@
 /obj/item/gun/ballistic/automatic
 	w_class = WEIGHT_CLASS_NORMAL
 	var/firemode_select = 1
-	can_suppress = TRUE
 	burst_size = 3
 	fire_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -89,8 +88,6 @@
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
 	name = "syndicate sniper rifle"
 	desc = "A heavily-modified .50 BMG anti-material rifle utilized by Syndicate agents. Requires both hands to fire."
-	can_suppress = TRUE
-	can_unsuppress = TRUE
 
 // Old Semi-Auto Rifle //
 
@@ -103,8 +100,6 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
 	fire_delay = 10
 	burst_size = 1
-	can_unsuppress = TRUE
-	can_suppress = TRUE
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
@@ -119,7 +114,6 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/recharge
 	fire_delay = 2
-	can_suppress = FALSE
 	burst_size = 0
 	actions_types = list()
 	fire_sound = 'sound/weapons/laser.ogg'

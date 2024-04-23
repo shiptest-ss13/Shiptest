@@ -56,10 +56,8 @@
 */
 	//whether or not a message is displayed when fired
 	var/suppressed = null
-	var/can_suppress = FALSE
 	var/suppressed_sound = 'sound/weapons/gun/general/heavy_shot_suppressed.ogg'
 	var/suppressed_volume = 60
-	var/can_unsuppress = TRUE
 	//description change if weapon is sawn-off
 	var/sawn_desc = null
 	var/sawn_off = FALSE

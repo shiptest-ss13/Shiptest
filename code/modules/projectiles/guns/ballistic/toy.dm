@@ -8,7 +8,6 @@
 	force = 0
 	throwforce = 0
 	burst_size = 3
-	can_suppress = TRUE
 	item_flags = NONE
 	casing_ejector = FALSE
 	manufacturer = MANUFACTURER_NANOTRASEN
@@ -50,7 +49,6 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	item_flags = NONE
 	casing_ejector = FALSE
-	can_suppress = FALSE
 	pb_knockback = 0
 	recoil = -10 //its a toy...
 	recoil_unwielded = -10
@@ -81,7 +79,6 @@
 /obj/item/gun/ballistic/automatic/smg/c20r/toy
 	name = "donksoft SMG"
 	desc = "A bullpup two-round burst toy SMG, designated 'C-20r'. Ages 8 and up."
-	can_suppress = FALSE
 	item_flags = NONE
 	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
 	fire_sound = 'sound/items/syringeproj.ogg'
@@ -101,7 +98,6 @@
 	name = "donksoft LMG"
 	desc = "A heavily modified toy light machine gun, designated 'L6 SAW'. Ages 8 and up."
 	fire_sound = 'sound/items/syringeproj.ogg'
-	can_suppress = FALSE
 	item_flags = NONE
 	mag_type = /obj/item/ammo_box/magazine/toy/m762
 	casing_ejector = FALSE

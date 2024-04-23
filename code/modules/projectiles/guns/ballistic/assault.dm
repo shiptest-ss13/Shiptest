@@ -163,7 +163,6 @@
 	icon_state = "e40"
 	item_state = "e40"
 	mag_type = /obj/item/ammo_box/magazine/e40
-	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	var/obj/item/gun/energy/laser/e40_laser_secondary/secondary
 

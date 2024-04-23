@@ -153,7 +153,6 @@
 	item_state = "l6closedmag"
 	base_icon_state = "l6"
 	mag_type = /obj/item/ammo_box/magazine/mm712x82
-	can_suppress = FALSE
 	spread = 7
 	bolt_type = BOLT_TYPE_OPEN
 	mag_display = TRUE
