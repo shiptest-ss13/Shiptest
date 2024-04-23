@@ -89,7 +89,17 @@
 	price_min = 100
 	price_max = 600
 	stock_max = 10
-	availability_prob = 30
+	availability_prob = 50
+
+/datum/blackmarket_item/tools/thermite_jug
+	name = "Thermite Jug"
+	desc = "An extra large 150u jug of thermite. For those hard to reach places."
+	item = /obj/item/reagent_containers/glass/chem_jug/thermite
+
+	price_min = 400
+	price_max = 2600
+	stock_max = 3
+	availability_prob = 20
 
 /datum/blackmarket_item/tool/science_goggles
 	name = "Science Goggles"
@@ -150,3 +160,13 @@
 	price_max = 3000
 	stock = 1
 	availability_prob = 30
+
+/datum/blackmarket_item/tool/suppressor
+	name = "Suppressor"
+	desc = "A suppressor, for when you to keep your murder on the down low."
+	item = new /obj/item/suppressor
+
+	price_min = 100
+	price_max = 700
+	stock_max = 6
+	availability_prob = 40
