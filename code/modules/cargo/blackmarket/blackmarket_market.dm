@@ -20,14 +20,15 @@
 	if(ispath(item))
 		item = new item()
 
-	if(item.pair_item)
-		add_item(item.pair_item, TRUE)
-
 	if(!(item.category in categories))
 		categories += item.category
 		available_items[item.category] = list()
 
 	available_items[item.category] += item
+
+	if(item.pair_item)
+		add_item(item.pair_item, TRUE)
+
 	return TRUE
 
 /// Handles buying the item, this is mainly for future use and moving the code away from the uplink.
