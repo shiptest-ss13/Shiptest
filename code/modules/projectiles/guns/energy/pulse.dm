@@ -24,26 +24,6 @@
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
 
-/obj/item/gun/energy/pulse/prize
-	pin = /obj/item/firing_pin
-
-/obj/item/gun/energy/pulse/prize/Initialize()
-	. = ..()
-	GLOB.poi_list += src
-	var/turf/T = get_turf(src)
-
-	message_admins("A pulse rifle prize has been created at [ADMIN_VERBOSEJMP(T)]")
-	log_game("A pulse rifle prize has been created at [AREACOORD(T)]")
-
-	notify_ghosts("Someone won a pulse rifle as a prize!", source = src, action = NOTIFY_ORBIT, header = "Pulse rifle prize")
-
-/obj/item/gun/energy/pulse/prize/Destroy()
-	GLOB.poi_list -= src
-	. = ..()
-
-/obj/item/gun/energy/pulse/loyalpin
-	pin = /obj/item/firing_pin
-
 /obj/item/gun/energy/pulse/carbine
 	name = "pulse carbine"
 	desc = "A next-generation pulse weapon for Nanotrasen's security forces. High production costs and logistical issues have limited its deployment to specialist Loss Prevention and Emergency Response units."
@@ -61,8 +41,19 @@
 	ammo_x_offset = 2
 	charge_sections = 4
 
-/obj/item/gun/energy/pulse/carbine/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
+/obj/item/gun/energy/pulse/prize/Initialize()
+	. = ..()
+	GLOB.poi_list += src
+	var/turf/T = get_turf(src)
+
+	message_admins("A pulse rifle prize has been created at [ADMIN_VERBOSEJMP(T)]")
+	log_game("A pulse rifle prize has been created at [AREACOORD(T)]")
+
+	notify_ghosts("Someone won a pulse rifle as a prize!", source = src, action = NOTIFY_ORBIT, header = "Pulse rifle prize")
+
+/obj/item/gun/energy/pulse/prize/Destroy()
+	GLOB.poi_list -= src
+	. = ..()
 
 /obj/item/gun/energy/pulse/pistol
 	name = "pulse pistol"
@@ -75,9 +66,6 @@
 	cell_type = /obj/item/stock_parts/cell/pulse/pistol
 	ammo_x_offset = 2
 	charge_sections = 4
-
-/obj/item/gun/energy/pulse/pistol/loyalpin
-	pin = /obj/item/firing_pin/implant/mindshield
 
 /obj/item/gun/energy/pulse/destroyer
 	name = "pulse destroyer"
