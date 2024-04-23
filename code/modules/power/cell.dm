@@ -419,6 +419,9 @@
 	charge = 0
 	update_appearance()
 
+/obj/item/stock_parts/cell/gun/corrupt()
+	return
+
 /obj/item/stock_parts/cell/gun/update_appearance()
 	cut_overlays()
 	if(grown_battery)
