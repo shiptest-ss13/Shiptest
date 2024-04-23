@@ -16,7 +16,7 @@
 	reach = toggled ? reach : initial(reach)
 	force = toggled ? force : initial(force)
 
-	playsound(gun, 'sound/weapons/batonextend.ogg')
+	playsound(gun, 'sound/weapons/batonextend.ogg', 30)
 	user.visible_message("[user] [toggled ? "expands" : "retracts"] [user.p_their()] [src].", "You [toggled ? "expand" : "retract"] \the [src].")
 
 /obj/item/attachment/bayonet/PreAttack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
