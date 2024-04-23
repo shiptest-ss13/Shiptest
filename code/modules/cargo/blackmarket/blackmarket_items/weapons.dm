@@ -157,13 +157,18 @@
 /datum/blackmarket_item/weapon/corrupt_gun_cell
 	name = "Damaged Weapon Cell"
 	desc = "These got a bit dinged up in their crate after a close shave with GOLD inspectors. The cells are probably still safe to use though."
-	item = /obj/item/stock_parts/cell/gun/corrupt
+	item = /obj/item/stock_parts/cell/gun
 
 	price_min = 250
 	price_max = 500
 	stock_min = 4
 	stock_max = 10
 	availability_prob = 40
+
+/datum/blackmarket_item/weapon/corrupt_gun_cell/spawn_item(loc)
+	var/stock_parts/cell/gun = C()
+	c.corrupt()
+	return new berries(loc)
 
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
@@ -206,16 +211,16 @@
 	stock = 1
 	availability_prob = 20
 
-/datum/blackmarket_item/weapon/sawn_illestren
-	name = "Sawn off Illestren Rifle"
-	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
-	item = /obj/item/gun/ballistic/rifle/illestren/sawoff
+// /datum/blackmarket_item/weapon/sawn_illestren
+// 	name = "Sawn off Illestren Rifle"
+// 	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
+// 	item = /obj/item/gun/ballistic/rifle/illestren/sawoff
 
-	price_min = 600
-	price_max = 1250
-	stock_min = 2
-	stock_max = 5
-	availability_prob = 50
+// 	price_min = 600
+// 	price_max = 1250
+// 	stock_min = 2
+// 	stock_max = 5
+// 	availability_prob = 50
 
 
 
