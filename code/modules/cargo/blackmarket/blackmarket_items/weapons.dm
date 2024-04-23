@@ -156,7 +156,7 @@
 
 /datum/blackmarket_item/weapon/saber_smg
 	name = "Saber 9mm SMG"
-	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase into distribution. But we happen know a guy."
+	desc = "A prototype 9mm submachine gun. Most of these never got past the RND phase and into distribution. But we happen know a guy."
 	item = /obj/item/gun/ballistic/automatic/smg/proto
 	pair_item = /datum/blackmarket_item/weapon/saber_mag
 
@@ -182,12 +182,12 @@
 
 	price_min = 2500
 	price_max = 5000
-	stock = 1
+	stock = 2
 	availability_prob = 20
 
 /datum/blackmarket_item/weapon/bioterror_foam
 	name = "Bioterror Foam Sprayer"
-	desc = "Banned in at least 17 jurisdictions for being 'cruel', 'inhumane', and 'causing indiscriminate lifelong generational health complications'. Though if you actually cared about those things, you wouldn't be shopping here in the first place."
+	desc = "Banned in at least 17 jurisdictions for being \"cruel\",\"inhumane\", and \"causing indiscriminate lifelong generational health complications\". Though if you actually cared about those things, you wouldn't be shopping here in the first place."
 	item = /obj/item/reagent_containers/spray/chemsprayer/bioterror
 
 	price_min = 3000
@@ -195,16 +195,16 @@
 	stock = 1
 	availability_prob = 20
 
-// /datum/blackmarket_item/weapon/sawn_illestren
-// 	name = "Sawn off Illestren Rifle"
-// 	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
-// 	item = /obj/item/gun/ballistic/rifle/illestren/sawoff
+/datum/blackmarket_item/weapon/sawn_illestren
+	name = "Sawn off Illestren Rifle"
+	desc = "We had to saw down the barrels on these to fit them in the smuggling compartment. They don't aim too good, but it still packs a good punch."
+	item = /obj/item/gun/ballistic/rifle/illestren/sawn
 
-// 	price_min = 600
-// 	price_max = 1250
-// 	stock_min = 2
-// 	stock_max = 5
-// 	availability_prob = 50
+	price_min = 600
+	price_max = 1250
+	stock_min = 2
+	stock_max = 5
+	availability_prob = 50
 
 
 
