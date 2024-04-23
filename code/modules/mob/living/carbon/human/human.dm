@@ -1298,7 +1298,7 @@
 	race = /datum/species/dullahan
 
 /mob/living/carbon/human/species/ethereal
-	race = /datum/species/ethereal
+	race = /datum/species/elzuose
 
 /mob/living/carbon/human/species/fly
 	race = /datum/species/fly
