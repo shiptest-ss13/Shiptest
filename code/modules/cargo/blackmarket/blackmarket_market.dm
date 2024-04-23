@@ -20,6 +20,9 @@
 	if(ispath(item))
 		item = new item()
 
+	if(item.pair_item)
+		add_item(item.pair_item, TRUE)
+
 	if(!(item.category in categories))
 		categories += item.category
 		available_items[item.category] = list()

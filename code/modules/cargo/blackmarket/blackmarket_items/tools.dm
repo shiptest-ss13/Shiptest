@@ -41,7 +41,7 @@
 	stock_max = 3
 	availability_prob = 40
 
-/datum/blackmarket_item/tools/combat_wrench
+/datum/blackmarket_item/tool/combat_wrench
 	name = "Combat Wrench"
 	desc = "Under fire while doing repairs? With this dual purpose wrench, never be caught unprepared again!"
 	item = /obj/item/wrench/combat
@@ -91,7 +91,7 @@
 	stock_max = 10
 	availability_prob = 50
 
-/datum/blackmarket_item/tools/thermite_jug
+/datum/blackmarket_item/tool/thermite_jug
 	name = "Thermite Jug"
 	desc = "An extra large 150u jug of thermite. For those hard to reach places."
 	item = /obj/item/reagent_containers/glass/chem_jug/thermite
