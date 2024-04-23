@@ -217,7 +217,7 @@
 	stock = 2
 	availability_prob = 35
 
-/datum/blackmarket_item/consumable/model_h/spawn_item(loc)
+/datum/blackmarket_item/weapon/model_h/spawn_item(loc)
 	var/model_h = pick(list(/obj/item/gun/ballistic/automatic/powered/gauss/modelh/suns,
 				/obj/item/gun/ballistic/automatic/powered/gauss/modelh))
 	return new model_h(loc)
