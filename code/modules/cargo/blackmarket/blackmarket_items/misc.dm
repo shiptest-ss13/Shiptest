@@ -95,3 +95,30 @@
 	price_max = 2500
 	stock_max = 3
 	availability_prob = 30
+
+/datum/blackmarket_item/misc/secret_docs
+	name = "Classified Documents"
+	desc = "Good people died to get these. Luckily, we aren't good people."
+	item = /obj/item/documents
+
+	price_min = 2000
+	price_max = 10000
+	stock = 1
+	availability_prob = 40
+
+/datum/blackmarket_item/consumable/secret_docs/spawn_item(loc)
+	var/docs = pick(list(/obj/item/documents/nanotrasen,
+				/obj/item/documents/solgov,
+				/obj/item/documents/terragov,
+				/obj/item/documents/syndicate/red))
+	return new docs(loc)
+
+/datum/blackmarket_item/misc/black_box
+	name = "Blackbox"
+	desc = "Recorded in here is final moments of some poor souls who are no longer with us. We suggest watching it with friends and popcorn."
+	item = /obj/item/blackbox
+
+	price_min = 1000
+	price_max = 10000
+	stock = 1
+	availability_prob = 40
