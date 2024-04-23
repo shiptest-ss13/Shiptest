@@ -112,12 +112,12 @@
 	update_appearance()
 
 ///Handles all the logic needed for magazine insertion
-/obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/AM, display_message = TRUE)
-	if(!istype(AM, mag_type))
-		to_chat(user, "<span class='warning'>\The [AM] doesn't seem to fit into \the [src]...</span>")
+/obj/item/gun/ballistic/proc/insert_magazine(mob/user, obj/item/ammo_box/magazine/inserted_mag, display_message = TRUE)
+	if(!istype(inserted_mag, mag_type))
+		to_chat(user, "<span class='warning'>\The [inserted_mag] doesn't seem to fit into \the [src]...</span>")
 		return FALSE
-	if(user.transferItemToLoc(AM, src))
-		magazine = AM
+	if(user.transferItemToLoc(inserted_mag, src))
+		magazine = inserted_mag
 		if (display_message)
 			to_chat(user, "<span class='notice'>You load a new [magazine_wording] into \the [src].</span>")
 		if (magazine.ammo_count())

@@ -36,10 +36,8 @@
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
 
-/obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
-	. = ..()
-	var/obj/item/attachment/silencer/silencer = new(src)
-	attachment_holder.do_attach(silencer, null)
+/obj/item/gun/ballistic/automatic/pistol/suppressed
+	default_attachments= list(/obj/item/attachment/silencer)
 
 /obj/item/gun/ballistic/automatic/pistol/suns
 	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."

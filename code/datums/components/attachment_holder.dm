@@ -13,6 +13,7 @@
 	list/slot_room = null,
 	list/valid_types = null,
 	list/slot_offsets = null,
+	list/default_attachments = null
 	)
 
 	if(!isgun(parent))
@@ -30,6 +31,10 @@
 	RegisterSignal(parent, COMSIG_ITEM_PRE_ATTACK, PROC_REF(handle_item_pre_attack))
 	RegisterSignal(parent, COMSIG_CLICK_CTRL_SHIFT, PROC_REF(handle_ctrl_shift_click))
 	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(handle_overlays))
+
+	if(default_attachments)
+		for(var/obj/item/attachment/attachment in default_attachments)
+			INVOKE_ASYNC(src, PROC_REF(do_attach), attachment, null)
 
 /datum/component/attachment_holder/proc/handle_overlays(obj/item/parent, list/overlays)
 	SIGNAL_HANDLER
@@ -79,7 +84,7 @@
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
 	examine_list += "<span class='notice'>It has [max_attachments] attachment-slot\s.</span>"
-	examine_list += "<span class='notice'>\t[max_attachments - length(attachments)] attachment-slot\s remain."
+	examine_list += "<span class='notice'>[max_attachments - length(attachments)] attachment-slot\s remain."
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
