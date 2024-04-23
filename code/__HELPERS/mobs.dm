@@ -341,7 +341,7 @@ GLOBAL_LIST_EMPTY(species_list)
 		progbar.end_progress()
 
 	cog?.remove()
-	
+
 	if(interaction_key)
 		LAZYREMOVE(user.do_afters, interaction_key)
 
