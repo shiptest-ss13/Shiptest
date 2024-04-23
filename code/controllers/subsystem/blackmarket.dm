@@ -89,4 +89,3 @@ SUBSYSTEM_DEF(blackmarket)
 		return FALSE
 	queued_purchases += P
 	return TRUE
-
