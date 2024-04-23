@@ -331,10 +331,10 @@
 /datum/blackmarket_item/weapon/scout_stripper
 	name = ".300 Magnum Stripper Clip"
 	desc = "5 round .300 Magnun stripper clips for use with the HP Scout."
-	item = /obj/item/ammo_box/a30
+	item = /obj/item/ammo_box/a300
 
 	price_min = 500
-	price_max = 100
+	price_max = 1000
 	stock_min = 4
 	stock_max = 6
 	availability_prob = 0
