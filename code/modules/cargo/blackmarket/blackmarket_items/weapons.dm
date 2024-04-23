@@ -258,7 +258,7 @@
 	name = "Pistole C"
 	desc = "Pistole Compact? Pistole Caseless? Pistole Cheese? Fuck if I know. All I know is these little numbers pack a nasty sting. Chambered in 5.56 caseless."
 	item = /obj/item/gun/ballistic/automatic/pistol/solgov/old
-	pair_item =
+	pair_item = /datum/blackmarket_item/weapon/pistole_c_mag
 
 	price_min = 900
 	price_max = 1250
