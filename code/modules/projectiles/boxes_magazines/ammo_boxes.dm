@@ -3,7 +3,8 @@
 /obj/item/ammo_box/a357
 	name = "speed loader (.357)"
 	desc = "A 7-round speed loader for quickly reloading .357 revolvers. These rounds do good damage with average performance against armor."
-	icon_state = "357"
+	icon_state = "speedloader_357-7"
+	base_icon_state = "speedloader_357"
 	ammo_type = /obj/item/ammo_casing/a357
 	caliber = ".357"
 	max_ammo = 7
@@ -56,7 +57,8 @@
 /obj/item/ammo_box/c38
 	name = "speed loader (.38 special)"
 	desc = "A 6-round speed loader for quickly reloading .38 special revolvers. These rounds do okay damage, but struggle against armor."
-	icon_state = "38"
+	icon_state = "speedloader_38-6"
+	base_icon_state = "speedloader_38"
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = ".38"
 	max_ammo = 6
@@ -111,7 +113,8 @@
 /obj/item/ammo_box/vickland_a308
 	name = "stripper clip  (.308)"
 	desc = "A 5-round stripper clip for the Vickland Battle Rifle. The Vickland itself has a 10 round capacity, so keep in mind two of these are needed to fully reload it. These rounds do good damage with significant armor penetration."
-	icon_state = "308"
+	icon_state = "stripper_308-5"
+	base_icon_state = "stripper_308"
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
@@ -149,7 +152,8 @@
 /obj/item/ammo_box/amagpellet_claris
 	name = "\improper Claris speed loader (ferromagnetic pellet)"
 	desc = "A 22-round speed loader for quickly reloading the Claris rifle. Ferromagnetic pellets do okay damage with significant armor penetration."
-	icon_state = "claris-sl"
+	icon_state = "claris-sl-1"
+	base_icon_state = "claris-sl"
 	ammo_type = /obj/item/ammo_casing/caseless/gauss
 	max_ammo = 22
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
@@ -388,7 +392,8 @@
 /obj/item/ammo_box/c45_speedloader
 	name = "speed loader (.45)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "38"
+	icon_state = "speedloader_38-6"
+	base_icon_state = "speedloader_38"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
 	max_ammo = 6

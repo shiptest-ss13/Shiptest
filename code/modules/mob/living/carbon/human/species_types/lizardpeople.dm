@@ -1,7 +1,7 @@
 /datum/species/lizard
 	// Reptilian humanoids with scaled skin and tails.
 	name = "\improper Sarathi"
-	id = SPECIES_LIZARD
+	id = SPECIES_SARATHI
 	default_color = "00FF00"
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,SCLERA,EMOTE_OVERLAY,MUTCOLORS_SECONDARY)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_REPTILE
@@ -110,7 +110,7 @@ Lizard subspecies: ASHWALKERS
 /datum/species/lizard/ashwalker
 	name = "Ash Walker"
 	id = SPECIES_ASHWALKER
-	examine_limb_id = SPECIES_LIZARD
+	examine_limb_id = SPECIES_SARATHI
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
@@ -121,7 +121,7 @@ Lizard subspecies: ASHWALKERS
 /datum/species/lizard/ashwalker/kobold
 	name = "Kobold"
 	id = SPECIES_KOBOLD
-	examine_limb_id = SPECIES_LIZARD
+	examine_limb_id = SPECIES_SARATHI
 	species_traits = list(MUTCOLORS,EYECOLOR,LIPS, NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_CHUNKYFINGERS,TRAIT_NOBREATH)
 	species_language_holder = /datum/language_holder/lizard/ash
