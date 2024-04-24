@@ -1176,22 +1176,19 @@
 /area/ship/crew/canteen)
 "pw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/clothing/under/rank/civilian/chef,
-/obj/item/clothing/under/suit/charcoal,
-/obj/item/clothing/under/suit/sl,
-/obj/item/clothing/under/suit/waiter,
-/obj/item/clothing/under/suit/waiter/syndicate,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/accessory/waistcoat,
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable/green{
 	icon_state = "0-6"
 	},
 /obj/structure/closet/wall/directional/north{
-	name = "Spare Clothing"
+	name = "Telecommunication Equipment"
 	},
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
+/obj/item/radio,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/cryo)
 "pJ" = (
@@ -3286,14 +3283,9 @@
 /turf/open/floor/wood/mahogany,
 /area/ship/crew/canteen)
 "Ry" = (
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
-/obj/item/radio,
 /obj/structure/closet/crate/wooden{
-	anchored = 1
+	anchored = 1;
+	name = "suits crate"
 	},
 /obj/machinery/light_switch{
 	dir = 8;
@@ -3306,6 +3298,17 @@
 /obj/machinery/firealarm/directional/east,
 /obj/structure/extinguisher_cabinet/directional/west,
 /obj/machinery/airalarm/directional/south,
+/obj/item/clothing/accessory/waistcoat,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/under/suit/waiter/syndicate,
+/obj/item/clothing/under/suit/waiter,
+/obj/item/clothing/under/suit/sl,
+/obj/item/clothing/under/suit/charcoal,
+/obj/item/clothing/under/rank/civilian/chef,
+/obj/item/clothing/gloves/color/evening,
+/obj/item/clothing/gloves/color/evening,
 /turf/open/floor/carpet/nanoweave,
 /area/ship/crew/cryo)
 "Rz" = (
