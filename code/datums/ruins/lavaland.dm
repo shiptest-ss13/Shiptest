@@ -96,10 +96,10 @@
 	suffix = "lavaland_surface_dwarffortress.dmm"
 	allow_duplicates = FALSE
 
-/datum/map_template/ruin/lavaland/ashwalker_shrine
-	name = "Ashwalker shrine"
-	id = "ashwalker_shrine"
-	description = "A destroyed ashwalker village. What even happened here?"
+/datum/map_template/ruin/lavaland/buried_shrine
+	name = "Buried shrine"
+	id = "buried_shrine"
+	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_ashwalker_shrine.dmm"
 
 /datum/map_template/ruin/lavaland/spookycrash
