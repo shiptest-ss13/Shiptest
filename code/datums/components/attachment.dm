@@ -63,7 +63,7 @@
 		datum/callback/on_detach = null,
 		datum/callback/on_toggle = null,
 		datum/callback/on_preattack = null,
-		list/signals = null,
+		list/signals = null
 	)
 
 	if(!isitem(parent))

@@ -29,9 +29,9 @@
 	var/recharge_timerid
 
 	valid_attachments = list(
-		/obj/item/attachment/bayonet
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/rail_light
 	)
-	attachment_max = 1
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1
 	)

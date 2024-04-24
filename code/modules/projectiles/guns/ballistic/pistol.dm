@@ -42,6 +42,19 @@
 /obj/item/gun/ballistic/automatic/pistol/suns
 	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
 	icon_state = "pistol_suns"
+	valid_attachments = list(
+		/obj/item/attachment/silencer
+	)
+	attachment_max = 1
+	slot_available = list(
+		ATTACHMENT_SLOT_MUZZLE = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_MUZZLE = list(
+			"x" = 24,
+			"y" = 18,
+		)
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"

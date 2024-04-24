@@ -5,7 +5,6 @@
 	var/max_attachments = 2
 	var/list/slot_room = null
 	var/list/slot_offsets = null
-
 	var/list/obj/item/attachments = list()
 
 /datum/component/attachment_holder/Initialize(
@@ -39,7 +38,7 @@
 /datum/component/attachment_holder/proc/handle_overlays(obj/item/parent, list/overlays)
 	SIGNAL_HANDLER
 
-	for(var/obj/item/attach as anything in attachments)
+	for(var/obj/item/attachment/attach as anything in attachments)
 		var/slot = SEND_SIGNAL(attach, COMSIG_ATTACHMENT_GET_SLOT)
 		slot = attachment_slot_from_bflag(slot)
 		var/list/attach_overlays = list()
@@ -47,7 +46,7 @@
 		for(var/mutable_appearance/overlay as anything in attach_overlays)
 			if(slot_offsets && slot_offsets[slot])
 				var/matrix/overlay_matrix = new
-				overlay_matrix.Translate(slot_offsets[slot]["x"], slot_offsets[slot]["y"])
+				overlay_matrix.Translate(slot_offsets[slot]["x"] - attach.pixel_shift_x, slot_offsets[slot]["y"] - attach.pixel_shift_y)
 				overlay.transform = overlay_matrix
 			overlays += overlay
 
@@ -60,11 +59,13 @@
 	attachments = null
 	return ..()
 
-/datum/component/attachment_holder/proc/attachments_to_list()
+/datum/component/attachment_holder/proc/attachments_to_list(only_toggles = FALSE)
 	. = list()
-	for(var/obj/item/attach as anything in attachments)
+	for(var/obj/item/attachment/attach as anything in attachments)
 		if(attach.name in .)
 			stack_trace("two attachments with same name; this shouldn't happen and will cause failures")
+			continue
+		if(only_toggles && attach.has_toggle)
 			continue
 		.[attach.name] = attach
 
@@ -74,7 +75,7 @@
 	INVOKE_ASYNC(src, PROC_REF(do_attachment_radial), parent, user)
 
 /datum/component/attachment_holder/proc/do_attachment_radial(obj/item/parent, mob/user)
-	var/list/attachments_as_list = attachments_to_list()
+	var/list/attachments_as_list = attachments_to_list(TRUE)
 	var/selection = show_radial_menu(user, parent, attachments_as_list)
 	var/obj/item/attach = attachments_as_list[selection]
 	if(!attach)
@@ -101,6 +102,9 @@
 /datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
 	slot = attachment_slot_from_bflag(slot)
+	if(!(attachment.type in valid_types))
+		to_chat(user, "<span class='notice'>[attachment] is not a valid attachment for this [parent]!</span>")
+		return
 	if(!slot_room[slot])
 		to_chat(user, "<span class='notice'>[parent] does not contain room for [attachment]!</span>")
 		return

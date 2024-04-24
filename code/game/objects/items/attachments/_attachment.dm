@@ -12,6 +12,11 @@
 
 	var/datum/component/attachment/attachment_comp
 
+	///Determines the amount of pixels to move the icon state for the overlay. in the x direction
+	var/pixel_shift_x = 16
+	///Determines the amount of pixels to move the icon state for the overlay. in the y direction
+	var/pixel_shift_y = 16
+
 /obj/item/attachment/Initialize()
 	. = ..()
 	attachment_comp = AddComponent( \

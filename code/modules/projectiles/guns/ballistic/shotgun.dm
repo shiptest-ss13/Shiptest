@@ -124,8 +124,6 @@
 	recoil = 1
 	recoil_unwielded = 4
 	wield_delay = 0.65 SECONDS
-
-/obj/item/gun/ballistic/shotgun/automatic
 	manufacturer = MANUFACTURER_NANOTRASEN
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user)

@@ -125,6 +125,27 @@
 	spread = 8
 	spread_unwielded = 15
 
+	valid_attachments = list(
+		/obj/item/attachment/bayonet,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/scope
+	)
+	attachment_max = 2
+	slot_available = list(
+		ATTACHMENT_SLOT_RAIL = 1,
+		ATTACHMENT_SLOT_SCOPE = 1
+	)
+	slot_offsets = list(
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 24,
+			"y" = 13,
+		),
+		ATTACHMENT_SLOT_SCOPE = list(
+			"x" = 15,
+			"y" = 24,
+		)
+	)
+
 /obj/item/gun/ballistic/automatic/assault/swiss_cheese/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.65 SECONDS)

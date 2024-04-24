@@ -27,7 +27,7 @@
 
 /datum/crafting_recipe/energy_bayonet
 	name = "Plasma Bayonet"
-	result = /obj/item/attachment/bayonet
+	result = /obj/item/attachment/e_bayonet
 	reqs = list(
 		/obj/item/kitchen/knife/combat = 1,
 		/obj/item/stack/cable_coil = 30,

@@ -1,4 +1,4 @@
-/obj/item/attachment/bayonet
+/obj/item/attachment/e_bayonet
 	name = "bayonet"
 	desc = "Stabby-Stabby"
 	icon_state = "ebayonet"
@@ -10,7 +10,7 @@
 	var/reach_extended = 2
 	var/force_extended = 10
 
-/obj/item/attachment/bayonet/Toggle(obj/item/gun/gun, mob/user)
+/obj/item/attachment/e_bayonet/Toggle(obj/item/gun/gun, mob/user)
 	. = ..()
 
 	reach = toggled ? reach : initial(reach)
@@ -19,7 +19,7 @@
 	playsound(gun, 'sound/weapons/batonextend.ogg', 30)
 	user.visible_message("[user] [toggled ? "expands" : "retracts"] [user.p_their()] [src].", "You [toggled ? "expand" : "retract"] \the [src].")
 
-/obj/item/attachment/bayonet/PreAttack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
+/obj/item/attachment/e_bayonet/PreAttack(obj/item/gun/gun, atom/target, mob/living/user, list/params)
 	// Call our melee chain if they are are trying to melee attack something they can reach
 	if(user.a_intent == INTENT_HARM && user.CanReach(target, src, TRUE))
 		if(target == user && toggled)
@@ -36,3 +36,20 @@
 			return COMPONENT_NO_ATTACK
 		melee_attack_chain(user, target, params)
 		return COMPONENT_NO_ATTACK
+
+/obj/item/attachment/bayonet
+	name = "bayonet"
+	desc = "Stabby-Stabby"
+	icon_state = "bayonet"
+	var/extra_force = 10
+
+/obj/item/attachment/bayonet/Attach(obj/item/gun/gun, mob/user)
+	. = ..()
+	gun.force += extra_force
+	gun.hitsound = 'sound/weapons/bladeslice.ogg'
+
+/obj/item/attachment/bayonet/Detach(obj/item/gun/gun, mob/user)
+	. = ..()
+	gun.force -= extra_force
+	gun.hitsound = initial(gun.hitsound)
+	return TRUE
