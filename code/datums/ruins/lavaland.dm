@@ -100,7 +100,7 @@
 	name = "Buried Shrine"
 	id = "buried_shrine"
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
-	suffix = "lavaland_surface_ashwalker_shrine.dmm"
+	suffix = "lavaland_surface_buried_shrine.dmm"
 
 /datum/map_template/ruin/lavaland/spookycrash
 	name = "Spooky Crash"
