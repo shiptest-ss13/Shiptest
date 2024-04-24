@@ -35,7 +35,7 @@
 	description = "CentCom's security forces are going through budget cuts. You will be paid if you ship a set of spears."
 	reward = 2000
 	required_count = 5
-	wanted_types = list(/obj/item/spear)
+	wanted_types = list(/obj/item/melee/spear)
 
 /datum/bounty/item/assistant/toolbox
 	name = "Toolboxes"

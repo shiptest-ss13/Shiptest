@@ -531,7 +531,7 @@
 	loot = list(/obj/item/stack/sheet/mineral/snow{amount = 25} = 10,
 				/obj/item/toy/snowball = 15,
 				/obj/item/shovel = 10,
-				/obj/item/spear = 8,
+				/obj/item/melee/spear = 8,
 				)
 
 //special items//--

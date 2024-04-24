@@ -657,7 +657,7 @@
 				gloves = /obj/item/clothing/gloves/bracer
 			if(prob(45))
 				back = pickweight(list(
-					/obj/item/spear/bonespear = 3,
+					/obj/item/melee/spear/bonespear = 3,
 					/obj/item/melee/axe/bone = 2
 					)
 				)
@@ -789,7 +789,7 @@
 				gloves = /obj/item/clothing/gloves/bracer
 			if(prob(5))
 				back = pickweight(list(
-					/obj/item/spear/bonespear = 3,
+					/obj/item/melee/spear/bonespear = 3,
 					/obj/item/melee/axe/bone = 2
 					)
 				)

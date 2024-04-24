@@ -61,7 +61,7 @@
 
 /datum/crafting_recipe/bonespear
 	name = "Bone Spear"
-	result = /obj/item/spear/bonespear
+	result = /obj/item/melee/spear/bonespear
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)
@@ -87,21 +87,21 @@
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
 	time = 65
-	reqs = list(/obj/item/spear = 1,
+	reqs = list(/obj/item/melee/spear = 1,
 				/obj/item/bodypart/head = 1)
 	parts = list(/obj/item/bodypart/head = 1,
-			/obj/item/spear = 1)
-	blacklist = list(/obj/item/spear/explosive, /obj/item/spear/bonespear)
+			/obj/item/melee/spear = 1)
+	blacklist = list(/obj/item/melee/spear/explosive, /obj/item/melee/spear/bonespear)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
 	time = 65
-	reqs = list(/obj/item/spear/bonespear = 1,
+	reqs = list(/obj/item/melee/spear/bonespear = 1,
 				/obj/item/bodypart/head = 1)
 	parts = list(/obj/item/bodypart/head = 1,
-			/obj/item/spear/bonespear = 1)
+			/obj/item/melee/spear/bonespear = 1)
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
 

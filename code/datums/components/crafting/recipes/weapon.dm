@@ -12,11 +12,11 @@
 
 /datum/crafting_recipe/lance
 	name = "Explosive Lance (Grenade)"
-	result = /obj/item/spear/explosive
-	reqs = list(/obj/item/spear = 1,
+	result = /obj/item/melee/spear/explosive
+	reqs = list(/obj/item/melee/spear = 1,
 				/obj/item/grenade = 1)
-	blacklist = list(/obj/item/spear/bonespear)
-	parts = list(/obj/item/spear = 1,
+	blacklist = list(/obj/item/melee/spear/bonespear)
+	parts = list(/obj/item/melee/spear = 1,
 				/obj/item/grenade = 1)
 	time = 15
 	category = CAT_WEAPONRY
@@ -211,7 +211,7 @@
 
 /datum/crafting_recipe/spear
 	name = "Spear"
-	result = /obj/item/spear
+	result = /obj/item/melee/spear
 	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
 				/obj/item/shard = 1,
 				/obj/item/stack/rods = 1)

@@ -1,5 +1,5 @@
 //spears
-/obj/item/spear
+/obj/item/melee/spear
 	icon_state = "spearglass0"
 	icon = 'icons/obj/weapon/spear.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
@@ -22,17 +22,17 @@
 	species_exception = list(/datum/species/kepori)
 	var/icon_prefix = "spearglass"
 
-/obj/item/spear/ComponentInitialize()
+/obj/item/melee/spear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 	AddComponent(/datum/component/jousting)
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]1")
 
-/obj/item/spear/update_icon_state()
+/obj/item/melee/spear/update_icon_state()
 	icon_state = "[icon_prefix]0"
 	return ..()
 
-/obj/item/spear/CheckParts(list/parts_list)
+/obj/item/melee/spear/CheckParts(list/parts_list)
 	var/obj/item/shard/tip = locate() in parts_list
 	if (istype(tip, /obj/item/shard/plasma))
 		throwforce = 21
@@ -45,7 +45,7 @@
 /*
  * Bone Spear
  */
-/obj/item/spear/bonespear	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
+/obj/item/melee/spear/bonespear	//Blatant imitation of spear, but made out of bone. Not valid for explosive modification.
 	icon_state = "bone_spear0"
 	name = "bone spear"
 	base_icon_state = "bone_spear0"
@@ -55,11 +55,11 @@
 	force = 11
 	throwforce = 21
 
-/obj/item/spear/bonespear/ComponentInitialize()
+/obj/item/melee/spear/bonespear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=19, icon_wielded="[icon_prefix]1")
 
-/obj/item/spear/explosive
+/obj/item/melee/spear/explosive
 	name = "explosive lance"
 	icon_state = "spearbomb0"
 	base_icon_state = "spearbomb"
@@ -68,39 +68,39 @@
 	var/war_cry = "AAAAARGH!!!"
 	var/wielded = FALSE // track wielded status on item
 
-/obj/item/spear/explosive/Initialize(mapload)
+/obj/item/melee/spear/explosive/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	set_explosive(new /obj/item/grenade/iedcasing/spawned()) //For admin-spawned explosive lances
 
-/obj/item/spear/explosive/ComponentInitialize()
+/obj/item/melee/spear/explosive/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=18, icon_wielded="[icon_prefix]1")
 
 /// triggered on wield of two handed item
-/obj/item/spear/explosive/proc/on_wield(obj/item/source, mob/user)
+/obj/item/melee/spear/explosive/proc/on_wield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	wielded = TRUE
 
 /// triggered on unwield of two handed item
-/obj/item/spear/explosive/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/melee/spear/explosive/proc/on_unwield(obj/item/source, mob/user)
 	SIGNAL_HANDLER
 
 	wielded = FALSE
 
-/obj/item/spear/explosive/proc/set_explosive(obj/item/grenade/G)
+/obj/item/melee/spear/explosive/proc/set_explosive(obj/item/grenade/G)
 	if(explosive)
 		QDEL_NULL(explosive)
 	G.forceMove(src)
 	explosive = G
 	desc = "A makeshift spear with [G] attached to it"
 
-/obj/item/spear/explosive/CheckParts(list/parts_list)
+/obj/item/melee/spear/explosive/CheckParts(list/parts_list)
 	var/obj/item/grenade/G = locate() in parts_list
 	if(G)
-		var/obj/item/spear/lancePart = locate() in parts_list
+		var/obj/item/melee/spear/lancePart = locate() in parts_list
 		var/datum/component/two_handed/comp_twohand = lancePart.GetComponent(/datum/component/two_handed)
 		if(comp_twohand)
 			var/lance_wielded = comp_twohand.force_wielded
@@ -114,11 +114,11 @@
 		qdel(lancePart)
 	..()
 
-/obj/item/spear/explosive/examine(mob/user)
+/obj/item/melee/spear/explosive/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click to set your war cry.</span>"
 
-/obj/item/spear/explosive/AltClick(mob/user)
+/obj/item/melee/spear/explosive/AltClick(mob/user)
 	if(user.canUseTopic(src, BE_CLOSE))
 		..()
 		if(istype(user) && loc == user)
@@ -126,7 +126,7 @@
 			if(input)
 				src.war_cry = input
 
-/obj/item/spear/explosive/afterattack(atom/movable/AM, mob/user, proximity)
+/obj/item/melee/spear/explosive/afterattack(atom/movable/AM, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return

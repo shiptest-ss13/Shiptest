@@ -15,7 +15,7 @@
 
 /obj/item/wirerod/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/shard))
-		var/obj/item/spear/S = new /obj/item/spear
+		var/obj/item/melee/spear/S = new /obj/item/melee/spear
 
 		remove_item_from_storage(user)
 		if (!user.transferItemToLoc(I, S))
