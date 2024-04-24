@@ -69,7 +69,7 @@
 	item = /obj/item/gun/ballistic/derringer/gold
 	price_min = 1000
 	price_max = 3000
-	stock_max = 1
+	stock = 1
 	availability_prob = 10
 
 /datum/blackmarket_item/weapon/himehabu
@@ -85,7 +85,7 @@
 
 /datum/blackmarket_item/weapon/himehabu_mag
 	name = "Himehabu Magazines"
-	desc = "Compact .22lr magazines for use in the Himehabu pistol."
+	desc = "Compact 10 round .22lr magazines for use in the Himehabu pistol."
 	item = /obj/item/ammo_box/magazine/m22lr
 
 	price_min = 100
@@ -203,7 +203,7 @@
 
 	price_min = 1250
 	price_max = 2000
-	stock_max = 2
+	stock_max = 3
 	availability_prob = 30
 
 /datum/blackmarket_item/weapon/model_h
@@ -244,7 +244,7 @@
 	availability_prob = 20
 
 /datum/blackmarket_item/weapon/sgg_stripper
-	name = "8x58 Stripper Clip"
+	name = "8x58mm Stripper Clip"
 	desc = "A five round 8x58mm stripper clip for use with the SGG-669C."
 	item = /obj/item/ammo_box/a858
 
@@ -288,7 +288,7 @@
 
 /datum/blackmarket_item/weapon/proto_gauss_mag
 	name = "Prototype Gauss Rifle Magazine"
-	desc = "A 30 round ferromagnetic pellet magazine for the prototype gauss rifle."
+	desc = "A 25 round ferromagnetic pellet magazine for the prototype gauss rifle."
 	item = /obj/item/ammo_box/magazine/gauss
 
 	price_min = 750
@@ -302,8 +302,8 @@
 	item = /obj/item/gun/ballistic/automatic/pistol/tec9
 	pair_item = /datum/blackmarket_item/weapon/tec_mag
 
-	price_min = 2000
-	price_max = 3250
+	price_min = 1500
+	price_max = 2750
 	stock_max = 2
 	availability_prob = 35
 
@@ -319,11 +319,11 @@
 
 /datum/blackmarket_item/weapon/scout
 	name = "HP Scout"
-	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Try not to tunnel vision with the scope like the last guy.."
+	desc = "A scoped rifle chambered in .300 Magnum. As the name would imply, perfect for scouts. Try not to tunnel vision with the scope like the last guy."
 	item = /obj/item/gun/ballistic/rifle/scout
 	pair_item = /datum/blackmarket_item/weapon/scout_stripper
 
-	price_min = 3500
+	price_min = 4000
 	price_max = 6500
 	stock = 1
 	availability_prob = 20

@@ -19,8 +19,8 @@
 
 	stock_min = 2
 	stock_max = 3
-	price_min = 400
-	price_max = 700
+	price_min = 200
+	price_max = 500
 	availability_prob = 50
 
 /datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
@@ -44,7 +44,7 @@
 
 /datum/blackmarket_item/consumable/pumpup
 	name = "Maintenance Pump-Up"
-	desc = "Resist any Baton stun with this handy device!"
+	desc = "Resist any Baton stun with this handy instant tetanus free injector!."
 	item = /obj/item/reagent_containers/hypospray/medipen/pumpup
 
 	stock_max = 3
