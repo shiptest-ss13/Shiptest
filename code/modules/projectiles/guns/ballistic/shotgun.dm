@@ -663,12 +663,9 @@
 	inhand_y_dimension = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/beacon
 	fire_sound = 'sound/weapons/gun/revolver/shot_hunting.ogg'
-	can_be_sawn_off=TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
-	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BACK
 	obj_flags = UNIQUE_RENAME
 	semi_auto = TRUE
 	can_be_sawn_off = TRUE
