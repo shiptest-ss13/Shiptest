@@ -4,7 +4,7 @@
 /datum/blackmarket_item/consumable/donk_pocket_box
 	name = "Box of Donk Pockets"
 	desc = "A well packaged box containing the favourite snack of every spacefarer."
-	item = /obj/item/storage/box/donkpockets
+	item = /obj/effect/spawner/lootdrop/donkpockets
 
 	stock_min = 2
 	stock_max = 5
@@ -41,6 +41,27 @@
 	price_min = 10
 	price_max = 60
 	availability_prob = 50
+
+/datum/blackmarket_item/consumable/trickwine
+	name = "Trickwine"
+	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
+	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
+
+	price_min = 200
+	price_max = 600
+	stock_min = 3
+	stock_max = 7
+	availability_prob = 40
+
+/datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
+	var/trickwine = pick(list(/datum/reagent/consumable/ethanol/trickwine/ash_wine,
+						/datum/reagent/consumable/ethanol/trickwine/ice_wine,
+						/datum/reagent/consumable/ethanol/trickwine/shock_wine,
+						/datum/reagent/consumable/ethanol/trickwine/hearth_wine,
+						/datum/reagent/consumable/ethanol/trickwine/force_wine,
+						/datum/reagent/consumable/ethanol/trickwine/prism_wine))
+	return new trickwine(loc)
+
 
 /datum/blackmarket_item/consumable/pumpup
 	name = "Maintenance Pump-Up"
@@ -135,11 +156,10 @@
 	desc = "PGF military surplus rations. What's in them? Who knows. Surprise is the spice of life after all."
 	item = /obj/effect/spawner/lootdrop/ration
 
-	price_min = 200
+	price_min = 150
 	price_max = 400
-	stock_min = 5
-	stock_max = 15
 	availability_prob = 80
+	unlimited =  TRUE
 
 /datum/blackmarket_item/consumable/thirteenloko
 	name = "Can of Thirteen Loko"

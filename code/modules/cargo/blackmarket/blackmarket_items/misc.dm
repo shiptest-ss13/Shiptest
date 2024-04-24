@@ -21,20 +21,25 @@
 	stock_max = 8
 	availability_prob = 60
 
-/datum/blackmarket_item/misc/holywater
-	name = "Flask of holy water"
-	desc = "Father Fictus' own brand of ready-made holy water."
-	item = /obj/item/reagent_containers/food/drinks/bottle/holywater
+/datum/blackmarket_item/misc/trickwine
+	name = "Trickwine"
+	desc = "The SRM keeps the recipes for their trickwines a closely guarded secret. The Hunters carrying those bottles? Less so."
+	item = /datum/reagent/consumable/ethanol/trickwine/ash_wine
 
-	price_min = 400
+	price_min = 200
 	price_max = 600
-	stock_max = 3
+	stock_min = 3
+	stock_max = 7
 	availability_prob = 40
 
-/datum/blackmarket_item/misc/holywater/spawn_item(loc)
-	if (prob(6.66))
-		return new /obj/item/reagent_containers/glass/beaker/unholywater(loc)
-	return ..()
+/datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
+	var/trickwine = pick(list(/datum/reagent/consumable/ethanol/trickwine/ash_wine,
+						/datum/reagent/consumable/ethanol/trickwine/ice_wine,
+						/datum/reagent/consumable/ethanol/trickwine/shock_wine,
+						/datum/reagent/consumable/ethanol/trickwine/hearth_wine,
+						/datum/reagent/consumable/ethanol/trickwine/force_wine,
+						/datum/reagent/consumable/ethanol/trickwine/prism_wine))
+	return new trickwine(loc)
 
 /datum/blackmarket_item/misc/strange_seed
 	name = "Strange Seeds"
