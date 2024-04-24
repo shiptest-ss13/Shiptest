@@ -97,7 +97,7 @@
 	allow_duplicates = FALSE
 
 /datum/map_template/ruin/lavaland/buried_shrine
-	name = "Buried shrine"
+	name = "Buried Shrine"
 	id = "buried_shrine"
 	description = "An ancient temple belonging to some long-gone inhabitants, wrecked and buried by the volcanic activity of it's home planet."
 	suffix = "lavaland_surface_ashwalker_shrine.dmm"
