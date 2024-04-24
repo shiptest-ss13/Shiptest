@@ -53,7 +53,7 @@
 	stock_max = 7
 	availability_prob = 40
 
-/datum/blackmarket_item/consumable/suspicious_pills/spawn_item(loc)
+/datum/blackmarket_item/consumable/trickwine/spawn_item(loc)
 	var/trickwine = pick(list(/datum/reagent/consumable/ethanol/trickwine/ash_wine,
 						/datum/reagent/consumable/ethanol/trickwine/ice_wine,
 						/datum/reagent/consumable/ethanol/trickwine/shock_wine,

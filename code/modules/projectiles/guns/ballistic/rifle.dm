@@ -118,7 +118,7 @@
 	desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
 	item_state = "illestren_sawn"
 	sawn_off = TRUE
-	weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_MEDIUM
 
 
 /obj/item/gun/ballistic/rifle/solgov
