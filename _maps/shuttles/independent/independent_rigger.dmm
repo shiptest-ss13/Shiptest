@@ -351,12 +351,10 @@
 /obj/item/reagent_containers/syringe{
 	pixel_x = 7
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_door = "med_wall";
 	locked = 0;
 	name = "mortuary locker";
-	pixel_x = 28;
 	req_access_txt = "5"
 	},
 /obj/effect/turf_decal/corner/opaque/green{
@@ -392,9 +390,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ship/medical)
 "fn" = (
-/obj/structure/chair/sofa/left{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/left/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "fp" = (
@@ -657,11 +653,9 @@
 /obj/effect/turf_decal/borderfloor{
 	dir = 4
 	},
-/obj/structure/closet/wall{
-	dir = 8;
+/obj/structure/closet/wall/directional/east{
 	icon_door = "white_wall";
-	name = "medical closet";
-	pixel_x = 28
+	name = "medical closet"
 	},
 /obj/item/storage/backpack/satchel/med,
 /obj/item/clothing/shoes/sneakers/white,
@@ -760,10 +754,16 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/crew)
 "jx" = (
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable{
-	icon_state = "0-4"
+	icon_state = "4-8"
 	},
+/obj/structure/closet/wall/orange/directional/north{
+	name = "fuel supply"
+	},
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/plasma/fifty,
+/obj/effect/turf_decal/radiation,
+/obj/effect/turf_decal/industrial/outline/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "jy" = (
@@ -1008,16 +1008,13 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 28
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/central)
 "mH" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_y = 28;
 	req_access_txt = "1"
 	},
 /obj/item/gun/ballistic/shotgun/flamingarrow,
@@ -1424,10 +1421,9 @@
 /turf/open/floor/engine/hull,
 /area/ship/external)
 "sq" = (
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "red_wall";
-	name = "security closet";
-	pixel_y = 28
+	name = "security closet"
 	},
 /obj/item/storage/backpack/security,
 /obj/item/clothing/gloves/fingerless,
@@ -1599,10 +1595,9 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over,
-/obj/structure/closet/wall{
+/obj/structure/closet/wall/directional/north{
 	icon_door = "yellow_wall";
-	name = "engineering closet";
-	pixel_y = 28
+	name = "engineering closet"
 	},
 /obj/item/storage/backpack/industrial,
 /obj/item/clothing/shoes/workboots,
@@ -1982,12 +1977,10 @@
 	pixel_x = -4;
 	pixel_y = 5
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "med_wall";
 	locked = 0;
 	name = "medical locker";
-	pixel_y = -28;
 	req_access_txt = "5"
 	},
 /obj/effect/turf_decal/corner/opaque/green/border{
@@ -2334,8 +2327,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/machinery/light/small/directional/north,
 /obj/structure/catwalk/over,
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/plating,
 /area/ship/engineering/atmospherics)
 "BZ" = (
@@ -2439,11 +2432,9 @@
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_y = -28;
 	req_access_txt = "1"
 	},
 /obj/item/flashlight/seclite,
@@ -2462,13 +2453,17 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "DE" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/structure/sign/warning/nosmoking{
-	pixel_y = 32
-	},
 /obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "DG" = (
@@ -2885,11 +2880,9 @@
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "armor locker";
-	pixel_y = -28;
 	req_access_txt = "1"
 	},
 /obj/item/clothing/suit/armor/vest/alt,
@@ -3077,11 +3070,9 @@
 /obj/effect/turf_decal/corner/opaque/red{
 	dir = 8
 	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_state = "sec_wall";
 	name = "firearms locker";
-	pixel_y = -28;
 	req_access_txt = "1"
 	},
 /obj/item/storage/belt/security,
@@ -3160,9 +3151,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
@@ -3274,10 +3263,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
 	},
-/obj/structure/closet/firecloset/wall{
-	dir = 1;
-	pixel_y = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/central)
 "NU" = (
@@ -3434,12 +3420,10 @@
 	},
 /obj/effect/turf_decal/corner/opaque/white/mono,
 /obj/item/roller,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
+/obj/structure/closet/secure_closet/wall/directional/south{
 	icon_door = "med_wall";
 	locked = 0;
 	name = "medical locker";
-	pixel_y = -28;
 	req_access_txt = "5"
 	},
 /obj/item/roller,
@@ -3599,11 +3583,9 @@
 /obj/item/clothing/head/HoS/cowboy,
 /obj/item/ammo_box/c38,
 /obj/item/ammo_box/c38,
-/obj/structure/closet/secure_closet/wall{
-	dir = 4;
+/obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "solgov_wall";
 	name = "first mate's closet";
-	pixel_x = -28;
 	req_access_txt = "57"
 	},
 /turf/open/floor/carpet/blue,
@@ -3685,9 +3667,7 @@
 /area/ship/maintenance/central)
 "Sa" = (
 /obj/machinery/light/directional/south,
-/obj/structure/chair/sofa/right{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/right/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "Sh" = (
@@ -3766,11 +3746,9 @@
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/clothing/head/caphat/cowboy,
 /obj/item/gun/ballistic/automatic/pistol/candor,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
+/obj/structure/closet/secure_closet/wall/directional/east{
 	icon_state = "solgov_wall";
 	name = "captain's closet";
-	pixel_x = 28;
 	req_access_txt = "20"
 	},
 /obj/item/ammo_box/magazine/m45,
@@ -4036,11 +4014,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/structure/closet/crate,
-/obj/item/stack/sheet/mineral/uranium/five,
-/obj/item/stack/sheet/mineral/plasma/fifty,
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/radiation,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-5"
+	},
+/obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
 "Vo" = (
@@ -4149,10 +4127,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/cargo)
 "WG" = (
-/obj/structure/closet/secure_closet/wall{
+/obj/structure/closet/secure_closet/wall/directional/north{
 	icon_state = "sec_wall";
 	name = "ammunition locker";
-	pixel_y = 28;
 	req_access_txt = "1"
 	},
 /obj/item/ammo_box/c38_box,
@@ -4183,6 +4160,9 @@
 "WM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering/engine)
@@ -4482,9 +4462,8 @@
 	dir = 4
 	},
 /obj/structure/catwalk/over,
-/obj/structure/closet/wall/orange{
-	name = "tool closet";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "tool closet"
 	},
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/belt/utility,
