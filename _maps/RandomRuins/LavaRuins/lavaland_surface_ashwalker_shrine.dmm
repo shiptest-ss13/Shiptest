@@ -1,12 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"au" = (
-/obj/structure/flora/ash/fern,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+"at" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 6
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/buried_shrine)
 "aD" = (
 /obj/structure/flora/rock/hell,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"aL" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "aP" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -15,7 +21,7 @@
 	dir = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "be" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 8
@@ -24,21 +30,14 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "bp" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_x = 1
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"bP" = (
-/obj/structure/stone_tile,
-/obj/structure/stone_tile{
-	dir = 4
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "bW" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava/orange,
@@ -56,22 +55,18 @@
 	},
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "ch" = (
 /obj/structure/table/wood,
 /obj/item/stack/sheet/bone,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"ci" = (
-/obj/structure/flora/tree/dead/barren,
-/turf/open/floor/plating/grass/lava/orange,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "cn" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "cv" = (
 /turf/open/floor/plating/grass/lava,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -87,20 +82,20 @@
 "cD" = (
 /obj/structure/table/wood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "cN" = (
 /obj/item/reagent_containers/food/snacks/grown/apple{
 	pixel_x = 12
 	},
 /turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "df" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_y = -1
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "dg" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
@@ -111,27 +106,33 @@
 /obj/structure/flora/tree/dead/barren,
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
+"dn" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 5
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
 "dA" = (
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
 /obj/structure/stone_tile/block/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "dB" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_x = -3
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "dD" = (
 /turf/closed/indestructible/riveted/boss,
 /area/overmap_encounter/planetoid/lava/explored)
 "dF" = (
 /obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/overmap_encounter/planetoid/cave/explored)
 "dG" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -139,7 +140,7 @@
 	pixel_x = 2
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "dQ" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -147,7 +148,7 @@
 	pixel_x = -4
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "dS" = (
 /obj/structure/destructible/tribal_torch{
 	pixel_y = 13
@@ -155,12 +156,17 @@
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "dX" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"ed" = (
+/obj/structure/stone_tile/slab,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
 "ee" = (
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -172,14 +178,14 @@
 /obj/structure/stone_tile/slab/burnt,
 /obj/item/gem/amber,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "eI" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"eS" = (
+/area/ruin/unpowered/buried_shrine)
+"eJ" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile{
 	dir = 8
@@ -193,7 +199,7 @@
 /obj/structure/chair/pew/left,
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "fh" = (
 /obj/structure/flora/ash/cap_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -206,7 +212,7 @@
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "fB" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/cracked,
@@ -214,15 +220,28 @@
 	pixel_y = 13
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "fL" = (
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "fY" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"gl" = (
+/obj/structure/stone_tile/cracked,
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/buried_shrine)
 "gt" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -231,14 +250,14 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "gz" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "gE" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
@@ -250,14 +269,14 @@
 	dir = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "gH" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_y = -6
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "gW" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -284,26 +303,30 @@
 	pixel_x = 7
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"hp" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "hz" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
 	},
 /obj/structure/chair/wood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"hQ" = (
-/obj/structure/flora/tree/dead/tall/grey,
-/turf/open/floor/plating/grass/lava/orange,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"hN" = (
+/obj/structure/stone_tile/surrounding,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
 "hW" = (
 /obj/structure/stone_tile/center/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "ic" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "ii" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -330,7 +353,7 @@
 	},
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "iK" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -339,13 +362,17 @@
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"iV" = (
-/obj/structure/stone_tile/cracked{
-	dir = 1
+/area/ruin/unpowered/buried_shrine)
+"iL" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"iO" = (
+/obj/structure/flora/ausbushes/genericbush/hell,
+/turf/open/floor/plating/grass/lava,
+/area/ruin/unpowered/buried_shrine)
 "jo" = (
 /obj/structure/destructible/tribal_torch{
 	pixel_y = 13
@@ -353,13 +380,17 @@
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"jt" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "jy" = (
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "jI" = (
 /obj/structure/flora/ash/tall_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -370,7 +401,7 @@
 	},
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "jM" = (
 /obj/structure/table/wood,
 /obj/item/stack/sheet/bone,
@@ -378,39 +409,51 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "jY" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "kp" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"kt" = (
+/obj/structure/stone_tile/block{
+	dir = 4
+	},
+/obj/structure/stone_tile/block/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
+"kw" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
 "kC" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
 	},
 /obj/structure/chair/wood/wings,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "kJ" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_y = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "kW" = (
 /obj/structure/stone_tile/block/cracked,
 /obj/structure/stone_tile/block/cracked{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "kZ" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -422,6 +465,10 @@
 /obj/structure/table/wood,
 /obj/item/kitchen/knife/combat/bone,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"lm" = (
+/obj/structure/flora/rock/pile/lava,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "lo" = (
 /obj/structure/stone_tile/center/burnt{
@@ -429,25 +476,27 @@
 	pixel_x = 9
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "lJ" = (
 /obj/structure/stone_tile{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"lW" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/buried_shrine)
+"lM" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"lO" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "me" = (
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"mm" = (
-/obj/structure/flora/rock/lava,
-/turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "mn" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -455,13 +504,13 @@
 /obj/structure/stone_tile/center/cracked,
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "mr" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "mv" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /obj/structure/stone_tile/center/burnt{
@@ -469,6 +518,10 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"mM" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "nh" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -478,31 +531,27 @@
 	dir = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "nq" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"nz" = (
-/obj/structure/flora/ausbushes/grassybush/hell,
-/turf/open/floor/plating/grass/lava/orange,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "nP" = (
 /obj/structure/stone_tile/block/cracked,
 /obj/structure/stone_tile/center{
 	pixel_y = -6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "nX" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "oi" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 4
@@ -511,7 +560,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "ol" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 1
@@ -520,7 +569,7 @@
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "om" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -528,7 +577,7 @@
 	pixel_y = 3
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "on" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -536,18 +585,23 @@
 	pixel_y = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "oH" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
 /obj/structure/stone_tile/center/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "oL" = (
 /obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/grass/lava,
 /area/overmap_encounter/planetoid/lava/explored)
+"pu" = (
+/obj/structure/stone_tile/block/cracked,
+/obj/item/stack/sheet/mineral/wood,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
 "pK" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -555,14 +609,22 @@
 	pixel_x = -8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"pU" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
+"qh" = (
+/obj/structure/flora/rock/pile/lava,
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
 "qi" = (
 /obj/structure/chair/pew/right{
 	dir = 1
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "qp" = (
 /obj/structure/destructible/tribal_torch{
 	pixel_y = 13
@@ -570,7 +632,7 @@
 /obj/structure/stone_tile/center,
 /obj/structure/stone_tile/surrounding,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "qt" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -579,19 +641,9 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "qw" = (
 /obj/structure/fluff/drake_statue,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
-"qB" = (
-/obj/structure/flora/ausbushes/ywflowers/hell,
-/turf/open/floor/plating/grass/lava/orange,
-/area/overmap_encounter/planetoid/lava/explored)
-"qF" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 6
-	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "qO" = (
@@ -609,20 +661,11 @@
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"re" = (
-/obj/structure/flora/tree/dead/tall/grey,
-/turf/open/floor/plating/grass/lava/purple,
-/area/overmap_encounter/planetoid/lava/explored)
-"rj" = (
-/obj/structure/stone_tile/cracked{
-	dir = 4
-	},
+/area/ruin/unpowered/buried_shrine)
+"rh" = (
+/obj/structure/stone_tile,
 /obj/structure/stone_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile/cracked{
-	dir = 8
+	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -638,7 +681,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "rt" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -646,13 +689,17 @@
 	pixel_x = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"rA" = (
+/obj/structure/flora/ash/fern,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "rD" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 4
 	},
 /turf/closed/mineral/random/volcanic,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "rH" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -666,20 +713,49 @@
 	pixel_x = -1
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "rP" = (
 /obj/structure/flora/ash/leaf_shroom,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
-"se" = (
-/obj/structure/stone_tile/block{
-	dir = 4
+"sl" = (
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	pixel_x = 17;
+	pixel_y = -17
 	},
-/obj/structure/stone_tile/block/cracked{
-	dir = 8
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1;
+	pixel_x = 17;
+	pixel_y = -17
 	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4;
+	pixel_x = 17;
+	pixel_y = -17
+	},
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8;
+	pixel_x = 17;
+	pixel_y = -17
+	},
+/obj/structure/stone_tile/center{
+	pixel_x = 17;
+	pixel_y = -17
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"sq" = (
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
+"sr" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
 "sv" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
@@ -688,27 +764,27 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "sy" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "sB" = (
 /obj/structure/stone_tile{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "sD" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_x = 10
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "sJ" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -717,7 +793,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "sL" = (
 /obj/structure/stone_tile/block,
 /obj/item/claymore/bone{
@@ -728,9 +804,8 @@
 	pixel_x = -12;
 	pixel_y = 16
 	},
-/obj/effect/decal/cleanable/blood/gibs/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "sS" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/stone_tile/center,
@@ -741,7 +816,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "td" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -749,34 +824,40 @@
 	pixel_x = 4
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"tA" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "tE" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "tL" = (
 /obj/structure/stone_tile/block{
 	dir = 1
 	},
 /obj/structure/stone_tile,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "uf" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 5
 	},
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "uK" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
 	},
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "uP" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
@@ -785,7 +866,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "uS" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bottle/potion,
@@ -798,7 +879,7 @@
 	pixel_y = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "vg" = (
 /obj/structure/stone_tile/block{
 	dir = 8
@@ -807,7 +888,7 @@
 	pixel_x = -8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "vi" = (
 /obj/structure/stone_tile/cracked{
 	dir = 8
@@ -827,7 +908,20 @@
 	},
 /obj/structure/destructible/tribal_torch,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"vs" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 4
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/buried_shrine)
+"vJ" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/pup{
+	pixel_x = 0
+	},
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
 "vO" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -835,15 +929,9 @@
 	pixel_x = -2
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "vR" = (
 /obj/structure/flora/ash/fern,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
-"vU" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 8
-	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "wb" = (
@@ -851,18 +939,16 @@
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"wh" = (
+/obj/structure/flora/ash/cap_shroom,
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
 "wj" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bowl/mushroom_bowl,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"wk" = (
-/obj/structure/stone_tile/cracked{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "wl" = (
 /obj/structure/stone_tile/cracked{
 	dir = 8
@@ -871,7 +957,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "wt" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -880,34 +966,38 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "wy" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"wG" = (
-/obj/structure/flora/rock/pile/lava,
-/turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"wz" = (
+/turf/closed/indestructible/riveted/boss,
+/area/overmap_encounter/planetoid/cave/explored)
 "wM" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"wQ" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "wS" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 5
 	},
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"xe" = (
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "xs" = (
 /obj/structure/stone_tile/surrounding,
@@ -916,7 +1006,7 @@
 	pixel_y = 14
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "xJ" = (
 /obj/structure/flora/ash/stem_shroom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -942,6 +1032,23 @@
 	dir = 5
 	},
 /turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"yh" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/buried_shrine)
+"yy" = (
+/obj/structure/flora/tree/dead/tall/grey,
+/turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
 "yz" = (
 /obj/structure/table/wood,
@@ -956,17 +1063,21 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "yF" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "yJ" = (
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
+"yL" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/grass/lava,
+/area/ruin/unpowered/buried_shrine)
 "yM" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -974,18 +1085,18 @@
 	pixel_y = -8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "zg" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 10
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "zB" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "zL" = (
 /obj/structure/flora/rock/lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -1002,7 +1113,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ab" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -1011,20 +1122,38 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ad" = (
 /obj/structure/stone_tile/cracked{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Aw" = (
+/turf/closed/indestructible/riveted/boss,
+/area/ruin/unpowered/buried_shrine)
 "Ay" = (
 /obj/structure/flora/ausbushes/fernybush/hell,
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
+"Az" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 8
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"AA" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "Bc" = (
 /obj/structure/stone_tile/surrounding,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"Bl" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava,
 /area/overmap_encounter/planetoid/lava/explored)
 "Bm" = (
 /obj/structure/stone_tile/slab/cracked,
@@ -1034,7 +1163,7 @@
 /obj/structure/chair/pew,
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "BA" = (
 /obj/structure/stone_tile/center,
 /obj/structure/stone_tile/surrounding_tile{
@@ -1044,31 +1173,43 @@
 	dir = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "BF" = (
 /obj/structure/stone_tile/block,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"BJ" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"BL" = (
+/obj/structure/stone_tile/cracked,
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 8
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/buried_shrine)
 "BZ" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Cm" = (
 /obj/structure/flora/ausbushes/ywflowers/hell,
 /turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/lava/explored)
-"Ct" = (
-/obj/structure/stone_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile/cracked{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Cv" = (
 /obj/structure/stone_tile{
 	dir = 4
@@ -1077,13 +1218,13 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "CD" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "CE" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -1091,7 +1232,7 @@
 	pixel_y = -5
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "CF" = (
 /obj/structure/destructible/tribal_torch{
 	pixel_y = 14
@@ -1099,7 +1240,7 @@
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "CM" = (
 /turf/open/floor/plating/ashplanet/ash,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1112,13 +1253,17 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "CU" = (
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Do" = (
 /obj/structure/flora/ausbushes/hell,
+/turf/open/floor/plating/grass/lava/orange,
+/area/overmap_encounter/planetoid/lava/explored)
+"Dp" = (
+/obj/structure/flora/ash/fireblossom,
 /turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "DB" = (
@@ -1130,18 +1275,18 @@
 	},
 /obj/structure/stone_tile/surrounding_tile/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ee" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /obj/structure/stone_tile/center/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ef" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Eh" = (
 /turf/closed/mineral/random/volcanic,
 /area/overmap_encounter/planetoid/lava/explored)
@@ -1154,7 +1299,10 @@
 	dir = 8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Ex" = (
+/turf/open/floor/plating/grass/lava,
+/area/ruin/unpowered/buried_shrine)
 "Ez" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -1168,7 +1316,11 @@
 	pixel_y = 13
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Fc" = (
+/obj/structure/flora/ash/tall_shroom,
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
 "Fo" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 8
@@ -1177,7 +1329,7 @@
 	dir = 6
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Fq" = (
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 8
@@ -1190,16 +1342,12 @@
 	},
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Fw" = (
 /obj/structure/destructible/tribal_torch,
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"FA" = (
-/obj/structure/stone_tile/cracked,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "FC" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -1209,7 +1357,7 @@
 	pixel_y = 11
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "FD" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -1219,25 +1367,28 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"FM" = (
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"Gh" = (
+/obj/structure/flora/ash/leaf_shroom,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "Gm" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
 /obj/structure/stone_tile/center/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Go" = (
 /obj/structure/table_frame/wood,
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"Gr" = (
-/obj/structure/flora/ash/fireblossom,
-/turf/open/floor/plating/grass/lava/orange,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "GB" = (
 /obj/structure/flora/ausbushes/genericbush/hell,
 /obj/item/reagent_containers/food/snacks/grown/apple{
@@ -1245,14 +1396,17 @@
 	pixel_y = -6
 	},
 /turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "GL" = (
 /obj/structure/chair/pew{
 	dir = 1
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"GO" = (
+/turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
 "GT" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 4
@@ -1262,14 +1416,17 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Hh" = (
 /obj/structure/stone_tile/slab/cracked,
 /obj/item/pickaxe/rusted{
 	pixel_x = 3
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Hp" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ht" = (
 /obj/structure/flora/ausbushes/grassybush/hell,
 /turf/open/floor/plating/grass/lava,
@@ -1282,20 +1439,14 @@
 	dir = 6
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Hw" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
 	},
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"HO" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ii" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/structure/stone_tile/surrounding_tile{
@@ -1323,19 +1474,13 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/overmap_encounter/planetoid/lava/explored)
-"Iq" = (
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 8
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
 "Iz" = (
 /obj/structure/stone_tile/center,
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "IL" = (
 /obj/structure/stone_tile{
 	dir = 1
@@ -1345,12 +1490,28 @@
 	},
 /obj/structure/stone_tile,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Ja" = (
+/obj/structure/flora/ash/stem_shroom,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "Jh" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"Jk" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"Jr" = (
+/obj/structure/stone_tile/cracked{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Jv" = (
 /turf/open/floor/plating/ashplanet/rocky,
@@ -1362,18 +1523,22 @@
 	pixel_y = -8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "JJ" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"JL" = (
+/obj/structure/flora/ausbushes/ywflowers/hell,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "Ka" = (
 /obj/structure/stone_tile/surrounding,
 /obj/structure/fluff/drake_statue,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Kt" = (
 /obj/structure/stone_tile/cracked{
 	dir = 8
@@ -1382,75 +1547,95 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Kz" = (
 /obj/structure/chair/pew/left{
 	dir = 1
 	},
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"KD" = (
+/obj/structure/stone_tile/cracked,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Lu" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Lx" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 5
 	},
 /obj/structure/chair/wood,
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "LC" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/pup{
 	pixel_x = 0
 	},
 /turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "LJ" = (
 /obj/structure/table/wood,
 /obj/item/candle,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "LK" = (
 /turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/lava/explored)
+"LL" = (
+/obj/structure/stone_tile/cracked{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "LP" = (
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
 /turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "LW" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"LY" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "Mc" = (
 /obj/structure/chair/pew/right,
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"Md" = (
+/obj/structure/stone_tile/surrounding_tile/cracked,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Mt" = (
 /obj/structure/flora/ash/cap_shroom,
 /turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/overmap_encounter/planetoid/cave/explored)
 "Mx" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "MQ" = (
 /turf/template_noop,
 /area/template_noop)
-"MU" = (
-/obj/structure/stone_tile/block/cracked,
-/obj/item/stack/sheet/mineral/wood,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
 "Ni" = (
 /obj/structure/stone_tile/cracked{
 	dir = 1
@@ -1469,15 +1654,15 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "NK" = (
 /obj/item/stack/sheet/bone,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "NN" = (
 /obj/structure/stone_tile/block/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "NY" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 10
@@ -1487,36 +1672,42 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ot" = (
 /obj/structure/stone_tile/surrounding_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"OM" = (
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "OO" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "OT" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile/cracked{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Ps" = (
+/turf/closed/mineral/random/volcanic,
+/area/ruin/unpowered/buried_shrine)
 "Qb" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bottle/potion,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Qf" = (
 /obj/structure/stone_tile{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"Qj" = (
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/moss,
+/area/ruin/unpowered/buried_shrine)
+"QR" = (
+/obj/structure/flora/tree/dead/tall/grey,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "Rd" = (
 /obj/structure/stone_tile/block{
@@ -1526,28 +1717,41 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Rl" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_x = -9
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"RD" = (
+/obj/structure/table/wood,
+/obj/item/crusher_trophy/legion_skull,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"RF" = (
+/obj/structure/flora/ausbushes/fullgrass/hell,
+/turf/open/floor/plating/grass/lava,
+/area/ruin/unpowered/buried_shrine)
 "RK" = (
 /obj/structure/stone_tile,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "RN" = (
 /obj/structure/stone_tile/surrounding/cracked{
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Sa" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 4
 	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/lava/explored)
+"Sj" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "Sn" = (
@@ -1557,7 +1761,7 @@
 	pixel_x = 9
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "So" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile/cracked{
@@ -1577,7 +1781,7 @@
 	pixel_y = 6
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "SA" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -1585,59 +1789,55 @@
 	pixel_x = 6
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "SJ" = (
 /obj/item/reagent_containers/food/snacks/grown/apple{
 	pixel_y = 12;
 	pixel_x = 11
 	},
 /turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/lava/explored)
-"SU" = (
-/obj/structure/stone_tile/surrounding_tile/cracked,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "SV" = (
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Td" = (
+/mob/living/simple_animal/hostile/asteroid/hivelord/legion/tendril,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"Tg" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/pup{
-	pixel_x = 0
-	},
-/obj/structure/flora/ausbushes/sparsegrass/hell,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Tp" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 9
 	},
 /obj/structure/stone_tile/block/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Tu" = (
 /obj/item/reagent_containers/food/snacks/grown/apple{
 	pixel_y = 16
 	},
 /turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ty" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_x = 5
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"TI" = (
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 4
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
 "TO" = (
 /obj/structure/stone_tile/block{
 	dir = 8
 	},
 /obj/structure/stone_tile/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ua" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 1
@@ -1650,7 +1850,20 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Ur" = (
+/obj/structure/stone_tile/cracked{
+	dir = 8
+	},
+/obj/structure/stone_tile,
+/obj/structure/stone_tile{
+	dir = 4
+	},
+/obj/structure/stone_tile{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/ruin/unpowered/buried_shrine)
 "UB" = (
 /obj/item/clothing/suit/armor/curator,
 /obj/item/clothing/head/fedora/curator{
@@ -1661,14 +1874,10 @@
 	},
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "UF" = (
 /obj/structure/flora/tree/dead/hell,
 /turf/open/floor/plating/grass/lava,
-/area/overmap_encounter/planetoid/lava/explored)
-"Va" = (
-/obj/structure/flora/ausbushes/grassybush/hell,
-/turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
 "Vt" = (
 /obj/structure/stone_tile/center/burnt{
@@ -1676,17 +1885,11 @@
 	pixel_y = -3
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "VG" = (
 /obj/structure/table_frame/wood,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"VW" = (
-/obj/structure/stone_tile/block/cracked{
-	dir = 5
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Wd" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
@@ -1694,12 +1897,16 @@
 	pixel_x = 6
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Ws" = (
 /obj/structure/stone_tile/cracked{
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"WD" = (
+/obj/structure/flora/tree/dead/barren,
+/turf/open/floor/plating/grass/lava/orange,
 /area/overmap_encounter/planetoid/lava/explored)
 "WG" = (
 /obj/structure/stone_tile/block{
@@ -1710,6 +1917,12 @@
 	pixel_y = 11
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/unpowered/buried_shrine)
+"WP" = (
+/obj/structure/stone_tile/block/cracked{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "WZ" = (
 /obj/structure/stone_tile/surrounding/cracked{
@@ -1717,7 +1930,7 @@
 	},
 /obj/structure/stone_tile/center,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Xh" = (
 /obj/structure/stone_tile/block{
 	dir = 4
@@ -1726,30 +1939,34 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Xn" = (
 /obj/structure/destructible/tribal_torch,
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Xr" = (
 /obj/structure/stone_tile/center/burnt{
 	fall_on_cross = 1;
 	pixel_y = 6
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Xv" = (
 /obj/structure/stone_tile/center/burnt,
 /obj/structure/stone_tile/surrounding/burnt,
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "XA" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"XK" = (
+/obj/structure/flora/ausbushes/sparsegrass/hell,
+/turf/open/floor/plating/moss,
+/area/overmap_encounter/planetoid/cave/explored)
 "Ye" = (
 /obj/structure/flora/ash/fireblossom,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
@@ -1760,20 +1977,20 @@
 	pixel_y = -8
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Yh" = (
 /obj/structure/stone_tile/slab/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Yp" = (
 /obj/structure/stone_tile/surrounding_tile,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
-"YE" = (
-/obj/structure/flora/ash/stem_shroom,
-/turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"Yw" = (
+/obj/structure/flora/tree/dead/hell,
+/turf/open/floor/plating/grass/lava,
+/area/ruin/unpowered/buried_shrine)
 "YK" = (
 /obj/structure/destructible/tribal_torch{
 	pixel_y = 13
@@ -1783,7 +2000,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Zk" = (
 /obj/structure/stone_tile{
 	dir = 8
@@ -1792,11 +2009,11 @@
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Zl" = (
 /obj/structure/flora/ash/cacti,
 /turf/open/floor/plating/moss,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "Zo" = (
 /obj/item/stack/sheet/bluespace_crystal/five{
 	pixel_x = -7
@@ -1812,11 +2029,15 @@
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
+"ZB" = (
+/obj/structure/flora/rock/hell,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
+/area/overmap_encounter/planetoid/cave/explored)
 "ZE" = (
 /obj/structure/stone_tile/surrounding/cracked,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "ZK" = (
 /obj/structure/stone_tile/slab/cracked{
 	dir = 1
@@ -1825,7 +2046,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 "ZV" = (
 /obj/structure/flora/ausbushes/genericbush/hell,
 /turf/open/floor/plating/grass/lava,
@@ -1837,7 +2058,7 @@
 	pixel_x = -4
 	},
 /turf/open/lava/smooth/lava_land_surface,
-/area/overmap_encounter/planetoid/lava/explored)
+/area/ruin/unpowered/buried_shrine)
 
 (1,1,1) = {"
 CU
@@ -2277,7 +2498,7 @@ MQ
 Eh
 Eh
 Ht
-cv
+Bl
 Jv
 Ez
 fq
@@ -2302,18 +2523,18 @@ MQ
 MQ
 MQ
 nh
-lW
+jt
 Eh
 Eh
-Qj
+oL
 LK
 aD
 nh
+LK
+Sj
 nh
-wQ
 nh
-nh
-lW
+jt
 MQ
 MQ
 MQ
@@ -2356,7 +2577,7 @@ MQ
 MQ
 MQ
 MQ
-lW
+jt
 nh
 nh
 nh
@@ -2366,14 +2587,14 @@ nh
 nh
 Eh
 Eh
-YE
-LK
+Ja
+OM
 dF
 nh
 nh
 nh
 nh
-nh
+LK
 nh
 nh
 nh
@@ -2428,17 +2649,17 @@ aD
 nh
 nh
 Eh
-LK
-Va
-LK
-LK
-Qj
-LK
+OM
+hp
+OM
+OM
+XK
+OM
 LK
 nh
 aD
 nh
-wQ
+Sj
 MQ
 MQ
 MQ
@@ -2460,7 +2681,7 @@ MQ
 MQ
 "}
 (11,1,1) = {"
-re
+yy
 iw
 Do
 yJ
@@ -2479,10 +2700,10 @@ MQ
 MQ
 nh
 nh
-wQ
+lO
 nh
 nh
-wQ
+lO
 Eh
 Eh
 nh
@@ -2491,15 +2712,15 @@ Eh
 Eh
 Eh
 Eh
-LK
-Qj
-LK
-LK
+OM
+XK
+OM
+OM
 dF
+OM
+lO
 LK
-Qj
-LK
-Qj
+lO
 nh
 nh
 MQ
@@ -2547,7 +2768,7 @@ nh
 nh
 Eh
 nh
-wQ
+Sj
 nh
 Eh
 Eh
@@ -2556,8 +2777,8 @@ Eh
 Eh
 Eh
 Mt
-LK
-LK
+OM
+OM
 Eh
 Eh
 Eh
@@ -2601,7 +2822,7 @@ nh
 Eh
 Eh
 nh
-wQ
+Sj
 nh
 nh
 LK
@@ -2618,8 +2839,8 @@ Eh
 Eh
 Eh
 Eh
-Va
-LK
+hp
+OM
 dF
 Eh
 Eh
@@ -2627,11 +2848,11 @@ Eh
 Eh
 aD
 nh
-wQ
+Sj
 nh
 Eh
 nh
-wQ
+Sj
 nh
 MQ
 MQ
@@ -2658,7 +2879,7 @@ MQ
 MQ
 MQ
 MQ
-lW
+jt
 nh
 Eh
 nh
@@ -2666,10 +2887,10 @@ nh
 nh
 nh
 Eh
-LK
-Qj
-Qj
-LK
+OM
+XK
+XK
+OM
 Eh
 Eh
 Eh
@@ -2680,9 +2901,9 @@ Eh
 Eh
 Eh
 Eh
-LK
-LK
-LK
+OM
+OM
+OM
 Eh
 Eh
 Eh
@@ -2694,7 +2915,7 @@ Eh
 Eh
 nh
 nh
-lW
+jt
 MQ
 MQ
 MQ
@@ -2724,28 +2945,28 @@ nh
 nh
 Eh
 Eh
-lW
+jt
 nh
 Eh
 Eh
-Va
-LK
+hp
+OM
 Mt
-LK
+OM
 Eh
 Eh
 Eh
-dD
-dD
-dD
-dD
-dD
+Aw
+Aw
+Aw
+Aw
+Aw
 Eh
 Eh
-YE
-Qj
-LK
-au
+Ja
+XK
+OM
+rA
 Eh
 Eh
 Eh
@@ -2783,31 +3004,31 @@ MQ
 MQ
 MQ
 nh
-wQ
+Sj
 nh
 Eh
 Eh
 Eh
 Eh
-LK
-LK
-LK
-Qj
+OM
+OM
+OM
+XK
 Eh
 Eh
-dD
-dD
-dD
-ee
-ee
-ee
-dD
-dD
-dD
+Aw
+Aw
+Aw
+FM
+FM
+FM
+Aw
+Aw
+Aw
 Eh
 Eh
-Va
-Qj
+hp
+XK
 Mt
 Eh
 Eh
@@ -2851,26 +3072,26 @@ Eh
 Eh
 Eh
 dF
-Qj
-Qj
-LK
+XK
+XK
+OM
 Eh
 Eh
-dD
-dD
-wG
-ee
-ee
-Ht
+Aw
+Aw
+qh
+FM
+FM
+RF
 Cm
-oL
-Eh
-dD
-dD
+yL
+Ps
+Aw
+Aw
 Eh
 dF
-LK
-Va
+OM
+hp
 Eh
 Eh
 Eh
@@ -2910,38 +3131,38 @@ nh
 aD
 Eh
 Eh
-dD
-au
-LK
-Va
-LK
+wz
+rA
+OM
+hp
+OM
 Eh
 Eh
-dD
-dD
-Eh
+Aw
+Aw
+Ps
 Cm
-cv
+Ex
 cN
 SJ
-ZV
+iO
+Ps
+Ps
+Ps
+Aw
+Aw
+Eh
+OM
+OM
+OM
 Eh
 Eh
 Eh
-dD
-dD
-Eh
-LK
-LK
-LK
 Eh
 Eh
 Eh
 Eh
-Eh
-Eh
-Eh
-lW
+jt
 nh
 nh
 nh
@@ -2971,40 +3192,40 @@ nh
 nh
 nh
 Eh
-dD
-dD
-LK
-LK
-Qj
-YE
+wz
+wz
+OM
+OM
+XK
+Ja
 Eh
 Eh
-dD
-Eh
-oL
-ZV
-cv
-UF
+Aw
+Ps
+yL
+iO
+Ex
+Yw
 Tu
-oL
+yL
 Cm
 OO
-Eh
-ee
-dD
-Eh
-Eh
-Qj
-Va
+Ps
+FM
+Aw
 Eh
 Eh
+XK
+hp
 Eh
 Eh
 Eh
 Eh
 Eh
 Eh
-wQ
+Eh
+Eh
+Sj
 nh
 nh
 MQ
@@ -3029,36 +3250,36 @@ MQ
 MQ
 MQ
 MQ
-wQ
+Sj
 nh
 nh
 Eh
-dD
-Va
-Qj
-LK
-LK
+wz
+hp
+XK
+OM
+OM
 Eh
 Eh
 Eh
-dD
-Eh
+Aw
+Ps
 OO
-dD
-dD
+Aw
+Aw
 GB
-oL
-Ht
-dD
-dD
+yL
+RF
+Aw
+Aw
 Yh
-ee
-dD
+FM
+Aw
 Eh
 Eh
-LK
-YE
-LK
+OM
+Ja
+OM
 Eh
 Eh
 Eh
@@ -3094,39 +3315,39 @@ nh
 nh
 nh
 nh
-wQ
-LK
-LK
-LK
+Sj
+OM
+OM
+OM
 Mt
-LK
+OM
 Eh
 Eh
-dD
-dD
-Eh
-Eh
-dD
-dD
-Eh
-Eh
+Aw
+Aw
+Ps
+Ps
+Aw
+Aw
+Ps
+Ps
 Cm
-dD
-dD
+Aw
+Aw
 NK
-ee
-dD
-dD
+FM
+Aw
+Aw
 Eh
 Eh
-LK
-Qj
+OM
+XK
 Eh
 Eh
 Eh
 Eh
-dD
-dD
+wz
+wz
 Eh
 Eh
 nh
@@ -3152,44 +3373,44 @@ nh
 nh
 Eh
 Eh
-lW
+jt
 nh
 Eh
 Eh
 Eh
 dF
-Va
-LK
-dD
-dD
+hp
+OM
+wz
+wz
 Eh
 Eh
-dD
-ee
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-oL
-Eh
-Eh
+Aw
+FM
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+yL
+Ps
+Ps
 XA
-ee
-wG
-dD
+FM
+qh
+Aw
 Eh
 Eh
-dD
-dD
+wz
+wz
 Eh
 Eh
 Eh
 Eh
 Eh
-dD
-dD
+wz
+wz
 Eh
 nh
 nh
@@ -3218,44 +3439,44 @@ Eh
 Eh
 Eh
 Eh
-dD
-LK
-LK
-Qj
-dD
-dD
+wz
+OM
+OM
+XK
+wz
+wz
 Eh
 Eh
-dD
-wG
+Aw
+qh
 JJ
-Td
+kw
 ZE
-Eh
-Eh
-Eh
-Eh
-Eh
+Ps
+Ps
+Ps
+Ps
+Ps
 tE
-Td
+kw
 NK
-ee
-dD
+FM
+Aw
 Eh
 Eh
-dD
-dD
+wz
+wz
 Eh
 Eh
 Eh
 Eh
 Eh
-YE
-dD
+Ja
+wz
 nh
 nh
 nh
-lW
+jt
 MQ
 MQ
 MQ
@@ -3278,22 +3499,31 @@ nh
 nh
 Eh
 Eh
-dD
-dD
-dD
-LK
-rP
-LK
+wz
+wz
+wz
+OM
+Gh
+OM
 Eh
 Eh
 Eh
 Eh
-dD
-ee
+Aw
+FM
 XA
 NK
-Td
+kw
 nX
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+FM
+Aw
 Eh
 Eh
 Eh
@@ -3301,22 +3531,13 @@ Eh
 Eh
 Eh
 Eh
-ee
-dD
 Eh
 Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Qj
-dD
-dD
+XK
+wz
+wz
 nh
-wQ
+Sj
 nh
 MQ
 MQ
@@ -3337,46 +3558,46 @@ nh
 nh
 nh
 nh
-lW
+jt
 Eh
-dD
-dD
-Qj
-LK
-LK
-LK
-Eh
-Eh
+wz
+wz
+XK
+OM
+OM
+OM
 Eh
 Eh
 Eh
-dD
-dD
-dD
-dD
+Eh
+Eh
+Aw
+Aw
+Aw
+Aw
 Yh
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Aw
+Aw
+Aw
+Aw
 Eh
 Eh
 Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-dD
 Eh
 Eh
 Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Va
+hp
 dF
-dD
+wz
 aD
 nh
 nh
@@ -3401,45 +3622,45 @@ Eh
 nh
 Eh
 Eh
-dD
-Va
-LK
-Qj
-LK
+wz
+hp
+OM
+XK
+OM
 Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-Ii
-Ua
-dD
-dD
-dD
+Aw
+Aw
+Aw
+sl
+lM
+Aw
+Aw
+Aw
+Ps
+Ps
+Ps
+Aw
+Aw
+Aw
+sl
+lM
+Aw
+Aw
+Aw
 Eh
 Eh
 Eh
-dD
-dD
-dD
-Ii
-Ua
-dD
-dD
-dD
 Eh
 Eh
 Eh
 Eh
-Eh
-Eh
-Eh
-LK
-Qj
-dD
-dD
+OM
+XK
+wz
+wz
 nh
 nh
 nh
@@ -3458,50 +3679,50 @@ MQ
 MQ
 MQ
 nh
-wQ
+Sj
 Eh
 Eh
 Eh
-dD
-dD
+wz
+wz
 Mt
-LK
-LK
+OM
+OM
 Eh
 Eh
 Eh
 Eh
 Eh
-Eh
+Ps
 JJ
 jy
-rH
-kZ
-dD
-Eh
-Eh
-Eh
-Td
-vi
+Az
+TI
+Aw
+Ps
+Ps
+Ps
+kw
+Ur
 eI
 Kz
-dD
-rH
-kZ
+Aw
+Az
+TI
 BF
 sB
-dD
-dD
+Aw
+Aw
 Eh
 Eh
 Eh
 Eh
 Eh
 Eh
-Va
-LK
-Qj
-dD
+hp
+OM
+XK
+wz
 nh
 nh
 nh
@@ -3518,52 +3739,52 @@ MQ
 MQ
 MQ
 MQ
-lW
+jt
 nh
 nh
 nh
 Eh
 Eh
-dD
-LK
-LK
-Qj
+wz
+OM
+OM
+XK
 dF
 Eh
 Eh
 Eh
 Eh
-Eh
-Eh
+Ps
+Ps
 nk
 sB
 rp
 rp
-dD
+Aw
 zB
 BF
 tE
-So
-vi
+gl
+Ur
 jy
 GL
-dD
+Aw
 rp
 rp
 nX
 SV
 ZK
-dD
-dD
+Aw
+Aw
 Eh
 Eh
 Eh
 Eh
 Eh
 Eh
-au
-Qj
-dD
+rA
+XK
+wz
 nh
 nh
 nh
@@ -3586,49 +3807,49 @@ nh
 Eh
 Eh
 Eh
-dD
-LK
-LK
-LK
+wz
+OM
+OM
+OM
 Eh
 Eh
 Eh
 Eh
 Eh
-Eh
+Ps
 Cv
 Qf
 wl
 nX
-dD
-dD
+Aw
+Aw
 BZ
-MU
-gW
+pu
+yh
 wy
 Yh
 jy
 qi
-dD
-dD
+Aw
+Aw
 jy
 SV
 Bc
 SV
-Eh
-dD
-dD
-Eh
-Eh
+Ps
+Aw
+Aw
 Eh
 Eh
 Eh
-YE
-Va
-dD
-wQ
+Eh
+Eh
+Ja
+hp
+wz
+Sj
 nh
-lW
+jt
 nh
 MQ
 MQ
@@ -3648,50 +3869,50 @@ Eh
 Eh
 Eh
 dF
-Va
-Qj
-LK
+hp
+XK
+OM
 Eh
 Eh
 Eh
 Eh
 Eh
 Eh
-Eh
-cn
+Ps
+sr
 SV
 Qf
-Eh
-dD
+Ps
+Aw
 YK
 tE
-vi
+Ur
 nX
-SV
+ed
 XA
-gW
+yh
 JJ
 fB
-dD
+Aw
 sB
 JJ
 SV
 nX
-Eh
-Eh
-dD
-Eh
-Eh
-Eh
+Ps
+Ps
+Aw
 Eh
 Eh
 Eh
-LK
-Va
+Eh
+Eh
+Eh
+OM
+hp
 nh
+lO
 nh
-nh
-wQ
+Sj
 MQ
 MQ
 MQ
@@ -3708,48 +3929,48 @@ nh
 LK
 Eh
 Eh
-Qj
-LK
-LK
-YE
+XK
+OM
+OM
+Ja
 Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-Eh
+Aw
+Aw
+Aw
+Ps
 ZE
 cn
 SV
-Eh
-dD
-Eh
+Ps
+Aw
+Ps
 nk
 ic
 SV
-Bc
+hN
 SV
 nX
-Td
-Td
-dD
+kw
+kw
+Aw
 cn
-Td
+kw
 rp
 Ws
-dD
-dD
-dD
-dD
+Aw
+Aw
+Aw
+Aw
 Eh
 Eh
 Eh
 Eh
 Eh
-LK
-LK
+OM
+OM
 nh
 nh
 nh
@@ -3767,52 +3988,52 @@ MQ
 MQ
 nh
 nh
-Qj
-rP
-LK
-LK
-Qj
+lO
+Gh
+OM
+OM
+XK
 Eh
 Eh
 Eh
 Eh
 Eh
 Eh
-dD
+Aw
 cD
-dD
-dD
-dD
+Aw
+Aw
+Aw
 nX
-Td
-Eh
-Eh
-Eh
-So
+kw
+Ps
+Ps
+Ps
+gl
 ZE
 Yh
 SV
 JJ
-gW
-vi
-So
-Td
+yh
+Ur
+gl
+kw
 ta
 zQ
 ta
 Ad
-dD
+Aw
 Go
 ch
-dD
+Aw
 Eh
 Eh
 Eh
 Eh
 Eh
-Qj
+XK
+OM
 LK
-nh
 nh
 aD
 nh
@@ -3830,9 +4051,9 @@ MQ
 aD
 nh
 nh
-LK
-Va
-LK
+OM
+hp
+OM
 Eh
 Eh
 dD
@@ -3840,42 +4061,42 @@ dD
 Eh
 Eh
 Eh
-dD
-Td
+Aw
+kw
 BF
 ta
 mr
 Mx
 Yh
-Eh
-Eh
-Eh
-Eh
-vi
+Ps
+Ps
+Ps
+Ps
+Ur
 XA
-gW
+yh
 ZE
-vi
+Ur
 jY
 nk
-gW
+yh
 SV
 SV
 SV
-Eh
-dD
+Ps
+Aw
 RK
 Ad
-dD
+Aw
 Eh
 Eh
 Eh
-dD
-dD
+wz
+wz
 Mt
-Qj
+XK
 nh
-nh
+lO
 nh
 nh
 MQ
@@ -3892,7 +4113,7 @@ MQ
 nh
 nh
 nh
-Qj
+XK
 Mt
 Eh
 Eh
@@ -3901,40 +4122,40 @@ dD
 dD
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 Yh
 jy
 wy
 NN
 XA
 Ad
-dD
-dD
-Eh
-Eh
-Eh
+Aw
+Aw
+Ps
+Ps
+Ps
 tE
 dA
 SV
-Td
-So
-gW
-dD
-dD
-Eh
-Eh
-Eh
-Eh
+kw
+gl
+yh
+Aw
+Aw
+Ps
+Ps
+Ps
+Ps
 cn
 lJ
-dD
-dD
+Aw
+Aw
 Eh
 Eh
-dD
-dD
-Va
+wz
+wz
+hp
 Eh
 Eh
 aD
@@ -3952,9 +4173,9 @@ MQ
 MQ
 MQ
 nh
-wQ
+Sj
 nh
-Qj
+XK
 Eh
 Eh
 Eh
@@ -3963,35 +4184,35 @@ Eh
 Eh
 Eh
 Eh
-dD
+Aw
 LJ
-Td
+kw
 NN
 rp
 jy
 qp
-dD
-dD
-dD
-dD
-dD
-Eh
+Aw
+Aw
+Aw
+Aw
+Aw
+Ps
 nk
 dX
-Eh
+Ps
 rD
-dD
-dD
-dD
-dD
-dD
-Eh
-Eh
+Aw
+Aw
+Aw
+Aw
+Aw
+Ps
+Ps
 SV
 BF
 RK
 Ws
-dD
+Aw
 Eh
 Eh
 Eh
@@ -4002,7 +4223,7 @@ nh
 nh
 nh
 jI
-lW
+jt
 MQ
 MQ
 MQ
@@ -4016,7 +4237,7 @@ MQ
 nh
 nh
 LK
-LK
+OM
 Eh
 Eh
 Eh
@@ -4025,35 +4246,35 @@ Eh
 Eh
 Eh
 Eh
-dD
+Aw
 VG
-Td
-Eh
-Eh
-Eh
-dD
-dD
+kw
+Ps
+Ps
+Ps
+Aw
+Aw
 yz
 uS
 gE
-dD
-dD
+Aw
+Aw
 SV
-Td
-Eh
-dD
-dD
+kw
+Ps
+Aw
+Aw
 yF
 vg
 sy
-dD
-dD
-Td
+Aw
+Aw
+kw
 tE
 BF
 sB
-Td
-dD
+kw
+Aw
 Eh
 Eh
 Eh
@@ -4077,56 +4298,56 @@ MQ
 nh
 nh
 LK
-Va
+LY
 Eh
 Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-dD
-dD
-dD
-dD
-Eh
-Eh
-dD
-dD
-dD
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
+Ps
+Ps
+Aw
+Aw
+Aw
 Yh
 gt
 iK
-Eh
-dD
+Ps
+Aw
 SV
 ol
 nX
-dD
-Eh
+Aw
+Ps
 FC
 sv
 sL
-dD
-dD
-dD
+Aw
+Aw
+Aw
 SV
 nk
-dD
-dD
-dD
-dD
-dD
-dD
-dD
-wQ
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
+Sj
 nh
 jI
-wQ
+Sj
 nh
 nh
-wQ
+Sj
 nh
 MQ
 MQ
@@ -4138,54 +4359,54 @@ MQ
 MQ
 nh
 nh
-Qj
+lO
 Eh
 Eh
 Eh
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 SV
 SV
 vo
-dD
+Aw
 wM
-Eh
-Eh
-Td
+Ps
+Ps
+kw
 rp
 IL
-dD
+Aw
 kW
 Gm
-ee
-Eh
-dD
+FM
+Ps
+Aw
 yb
 gz
 be
-dD
-Eh
+Aw
+Ps
 iB
 WG
 Yp
-dD
+Aw
 Ot
 dS
 fx
 Kt
-Td
-Eh
-dD
-Eh
-Eh
+kw
+Ps
+Aw
+Ps
+Ps
 BA
-dD
-dD
-lW
+Aw
+Aw
+jt
 nh
-wk
+Jk
 nh
 aD
 nh
@@ -4198,61 +4419,61 @@ MQ
 (39,1,1) = {"
 MQ
 MQ
-lW
-wQ
-wQ
+jt
+Sj
+Sj
 Eh
 Eh
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 wM
 uP
-cD
+RD
 jy
-dD
+Aw
 BF
-Td
+kw
 eI
 Hw
 BF
 jy
-dD
-dD
+Aw
+Aw
 yM
 bp
 on
-dD
-ee
+Aw
+FM
 Vt
-ee
-dD
-ee
+FM
+Aw
+FM
 Xr
-Eh
-dD
-dD
+Ps
+Aw
+Aw
 ZE
 ta
 GT
 mv
-Td
-Eh
-dD
-Eh
+kw
+Ps
+Aw
+Ps
 nX
 Lu
 Fw
-dD
-dD
-bP
-Ct
+Aw
+Aw
+rh
+xe
 dD
 nh
 nh
 nh
-wQ
+Sj
 MQ
 MQ
 MQ
@@ -4267,7 +4488,7 @@ nh
 Eh
 Eh
 Eh
-dD
+Aw
 SV
 hz
 wj
@@ -4278,40 +4499,40 @@ aP
 ta
 nX
 SV
-XA
+BJ
 ta
 tL
-dD
-Eh
-ee
+Aw
+Ps
+FM
 Ty
-ee
-ee
+FM
+FM
 Yf
 sD
 hn
 td
 dB
 Sn
-dD
+Aw
 Eu
 rp
 hW
 OT
 jy
-Td
+kw
 Hh
 UB
 SV
 Jh
 SV
 JJ
-vU
+iL
 BF
-Iq
-HO
+tA
+WP
 Sa
-iV
+Jr
 nh
 nh
 nh
@@ -4329,7 +4550,7 @@ Eh
 Eh
 ee
 Eh
-dD
+Aw
 EE
 Lx
 Qb
@@ -4343,19 +4564,19 @@ Ka
 SV
 uf
 jy
-dD
-Eh
-ee
+Aw
+Ps
+FM
 Yf
 Rl
 lo
 Xv
-ee
-ee
-ee
-ee
+FM
+FM
+FM
+FM
 SA
-dD
+Aw
 bY
 nP
 hW
@@ -4369,11 +4590,11 @@ nk
 nX
 mr
 ZE
-Sa
-se
+vs
+kt
 ha
 ha
-wQ
+Sj
 nh
 nh
 nh
@@ -4384,14 +4605,14 @@ MQ
 (42,1,1) = {"
 MQ
 MQ
-wQ
+Sj
 nh
 Eh
 Eh
 ee
-wG
 ee
-dD
+ee
+Aw
 tE
 qt
 VG
@@ -4405,37 +4626,37 @@ SV
 nX
 rp
 wt
-dD
-ee
-ee
+Aw
+FM
+FM
 om
-Eh
-ee
+Ps
+FM
 kJ
-ee
-ee
+FM
+FM
 Jw
 dG
 vO
-dD
+Aw
 DB
 ta
 fL
 NN
 jy
-Eh
+Ps
 SV
-Eh
+Ps
 tE
 rp
 SV
 RN
 rp
-qF
-SU
-VW
+at
+Md
+dn
 dg
-FA
+KD
 nh
 nh
 nh
@@ -4453,52 +4674,52 @@ ee
 ee
 ee
 ee
-dD
-dD
+Aw
+Aw
 nq
 kC
 wj
 jy
-dD
+Aw
 BF
-Td
+kw
 jy
 WZ
 NN
 jy
-dD
-dD
-Eh
+Aw
+Aw
+Ps
 CE
 pK
-dD
-ee
+Aw
+FM
 gH
-ee
-dD
+FM
+Aw
 df
-ee
-ee
-dD
-dD
+FM
+FM
+Aw
+Aw
 JJ
 rp
 NY
 FD
-Eh
-Eh
-dD
+Ps
+Ps
+Aw
 mr
 Yh
 mr
 Xn
-dD
-dD
-eS
-rj
+Aw
+Aw
+eJ
+LL
 dD
 nh
-wQ
+Sj
 nh
 nh
 MQ
@@ -4516,45 +4737,45 @@ nh
 ee
 ee
 ee
-dD
-dD
+Aw
+Aw
 nX
 SV
 kp
-dD
+Aw
 nq
 ta
-Td
+kw
 ic
 ta
 qV
-dD
+Aw
 Ad
 wS
 ZX
-ee
-dD
+FM
+Aw
 oi
 uK
 Fo
-dD
+Aw
 dQ
 rt
 rM
 Wd
-dD
+Aw
 Nk
 CF
 BF
 jy
-Td
-Eh
-dD
+kw
+Ps
+Aw
 CT
-Td
+kw
 mn
-dD
-dD
+Aw
+Aw
 Eh
 Eh
 Eh
@@ -4575,52 +4796,52 @@ nh
 nh
 nh
 nh
-nh
-mm
+zL
 ee
 ee
-dD
-dD
-dD
-dD
-dD
-dD
-dD
+ee
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
 RN
 ZE
-dD
-dD
-dD
+Aw
+Aw
+Aw
 JJ
 Qf
-ee
-ee
-dD
+FM
+FM
+Aw
 SV
 Tp
 nX
-dD
-ee
-ee
-ee
+Aw
+FM
+FM
+FM
 Xr
-dD
-dD
-dD
+Aw
+Aw
+Aw
 XA
 SV
-dD
-dD
-dD
-dD
-dD
-dD
-dD
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
+Aw
 Eh
 Eh
 Eh
 Eh
-lW
+jt
 nh
 nh
 nh
@@ -4634,9 +4855,9 @@ MQ
 MQ
 MQ
 nh
-lW
+jt
 nh
-aD
+nh
 nh
 ee
 ee
@@ -4645,35 +4866,35 @@ Eh
 Eh
 Eh
 Eh
-dD
+Aw
 VG
 aP
 rp
 rp
 sJ
-dD
-dD
+Aw
+Aw
 Zo
 jY
 zg
-dD
-dD
+Aw
+Aw
 XA
 mr
 SV
-dD
-dD
+Aw
+Aw
 Hv
 em
 Fq
-dD
-dD
+Aw
+Aw
 ic
 SV
 BF
 Qf
 Qf
-dD
+Aw
 Eh
 Eh
 Eh
@@ -4698,7 +4919,7 @@ MQ
 nh
 nh
 nh
-wQ
+Sj
 nh
 ee
 ee
@@ -4707,35 +4928,35 @@ Eh
 Eh
 Eh
 Eh
-dD
+Aw
 LJ
 Td
 zg
 ta
 eI
 YK
-dD
-dD
-dD
-dD
-dD
-Eh
+Aw
+Aw
+Aw
+Aw
+Aw
+Ps
 tE
 Ee
 nk
-Eh
-dD
-dD
-dD
-dD
-dD
+Ps
+Aw
+Aw
+Aw
+Aw
+Aw
 xs
 lJ
 tE
 nq
 sB
 lJ
-dD
+Aw
 Eh
 Eh
 Eh
@@ -4769,42 +4990,42 @@ dD
 dD
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 Yh
 jy
 jY
 BF
-Eh
-Eh
-dD
-dD
-Eh
-Eh
-Eh
+Ps
+Ps
+Aw
+Aw
+Ps
+Ps
+Ps
 SV
 Uf
 SV
-Eh
-Eh
-Eh
-dD
-dD
-Td
+Ps
+Ps
+Ps
+Aw
+Aw
+kw
 lJ
 Yh
 wM
 lJ
 sB
-dD
-dD
+Aw
+Aw
 ee
 Eh
 dD
 dD
-lW
+jt
 nh
-wQ
+Sj
 nh
 nh
 nh
@@ -4825,40 +5046,40 @@ nh
 nh
 nh
 ee
-mm
+ee
 ee
 dD
 dD
 Eh
 Eh
 Eh
-dD
+Aw
 Lu
 NN
 LW
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
 me
-So
+gl
 RK
-vi
+Ur
 JJ
 Ws
-vi
-Eh
-Eh
+Ur
+Ps
+Ps
 SV
 SV
 SV
 Ab
-dD
+Aw
 Qf
 sJ
-dD
+Aw
 ee
 ee
 Eh
@@ -4884,9 +5105,9 @@ MQ
 MQ
 MQ
 nh
-lW
+jt
 nh
-nh
+zL
 ee
 ee
 ee
@@ -4894,38 +5115,38 @@ Eh
 Eh
 Eh
 Eh
-dD
+Aw
 VG
-dD
-dD
-dD
-Eh
-Eh
+Aw
+Aw
+Aw
+Ps
+Ps
 nk
-Eh
-So
+Ps
+gl
 RN
 Ws
 ZE
 SV
 Yh
-vi
+Ur
 tE
-Eh
-Eh
-Eh
+Ps
+Ps
+Ps
 Xh
 rp
 Ad
-dD
+Aw
 jM
 LJ
-dD
+Aw
 ee
 ee
-mm
 ee
-nh
+ee
+lm
 nh
 nh
 nh
@@ -4945,48 +5166,48 @@ MQ
 MQ
 MQ
 MQ
-wQ
+Sj
 nh
 nh
 nh
 Eh
 ee
-wG
+ee
 ee
 Eh
 Eh
 Eh
-dD
-dD
-dD
-Eh
-Eh
-Eh
+Aw
+Aw
+Aw
+Ps
+Ps
+Ps
 tE
 me
-dD
-Td
-vi
+Aw
+kw
+Ur
 nX
 SV
-Bc
+hN
 SV
 Ws
-So
-Eh
-dD
-Eh
+gl
+Ps
+Aw
+Ps
 Ad
 ta
 cn
-dD
-dD
-dD
-dD
+Aw
+Aw
+Aw
+Aw
 ee
 ee
 ee
-wQ
+Sj
 nh
 jI
 nh
@@ -5019,41 +5240,41 @@ Eh
 Eh
 Eh
 Eh
-dD
-Eh
-Eh
+Aw
+Ps
+Ps
 wb
 SV
 RK
 JJ
-dD
+Aw
 qp
 RN
 Qf
 nX
 SV
 XA
-vi
-Td
+Ur
+kw
 jo
-dD
+Aw
 cn
 ZE
 SV
 XA
-Eh
-Eh
-dD
-ee
-wG
+Ps
+Ps
+Aw
 ee
 ee
-Eh
-aD
+ee
+ee
+zL
 nh
 nh
 nh
-wQ
+nh
+Sj
 nh
 MQ
 MQ
@@ -5081,31 +5302,31 @@ nh
 Eh
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 Yh
 nX
 XA
 ZE
 tE
-dD
-dD
+Aw
+Aw
 eZ
 BF
 jY
-Td
+kw
 nX
 jy
 Kz
-dD
-dD
+Aw
+Aw
 jy
 SV
 Bc
-Eh
-Eh
-dD
-dD
+Ps
+Ps
+Aw
+Aw
 ee
 Eh
 Eh
@@ -5113,7 +5334,7 @@ Eh
 Eh
 nh
 nh
-lW
+jt
 nh
 nh
 nh
@@ -5135,7 +5356,7 @@ MQ
 MQ
 nh
 nh
-wQ
+Sj
 nh
 nh
 nh
@@ -5144,28 +5365,28 @@ nh
 Eh
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 SV
 Ef
 lJ
 ta
 ta
-dD
+Aw
 Bz
 BF
 nk
-vi
+Ur
 jJ
 jy
 GL
-dD
+Aw
 ta
 TO
 Yh
 SV
-Eh
-Eh
+Ps
+Ps
 Eh
 Eh
 Eh
@@ -5207,26 +5428,26 @@ nh
 Eh
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 Yh
 jy
-Ii
-Ua
-dD
+sl
+lM
+Aw
 Mc
 BF
 XA
-So
+BL
 ZE
 jy
 qi
-dD
-Ii
-Ua
+Aw
+sl
+lM
 BF
-Eh
-Eh
+Ps
+Ps
 Eh
 Eh
 Eh
@@ -5265,30 +5486,30 @@ MQ
 MQ
 nh
 nh
-lW
+jt
 Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-rH
-kZ
-dD
-dD
-dD
+Aw
+Aw
+Aw
+Az
+TI
+Aw
+Aw
+Aw
 ic
-Td
-vi
-dD
-dD
-dD
-rH
-kZ
-dD
-dD
-dD
+kw
+Ur
+Aw
+Aw
+Aw
+Az
+TI
+Aw
+Aw
+Aw
 Eh
 Eh
 Eh
@@ -5324,9 +5545,9 @@ MQ
 MQ
 MQ
 MQ
+MQ
 nh
-nh
-wQ
+Sj
 Eh
 Eh
 Eh
@@ -5334,21 +5555,21 @@ Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-dD
-Eh
+Aw
+Aw
+Aw
+Aw
+Ps
 tE
-Td
+kw
 nk
 me
 XA
-Eh
-dD
-dD
-dD
-dD
+Ps
+Aw
+Aw
+Aw
+Aw
 Eh
 Eh
 Eh
@@ -5357,7 +5578,7 @@ Eh
 Eh
 Eh
 nh
-wQ
+Sj
 nh
 aD
 nh
@@ -5385,9 +5606,9 @@ MQ
 MQ
 MQ
 MQ
+MQ
 nh
 nh
-nh
 Eh
 Eh
 nh
@@ -5396,26 +5617,26 @@ Eh
 Eh
 Eh
 Eh
-dD
-Td
-Eh
-Eh
-Eh
-Td
-So
+Aw
+kw
+Ps
+Ps
+Ps
+Ps
+gl
 XA
-So
-Td
+gl
+Ps
+Ps
+Ps
+kw
+kw
+Aw
 Eh
 Eh
-Td
-Td
-dD
 Eh
 Eh
-Eh
-Eh
-nz
+mM
 yJ
 Eh
 Eh
@@ -5454,32 +5675,32 @@ nh
 nh
 nh
 Eh
-dD
-dD
+wz
+wz
 Eh
 Eh
-dD
-Td
-Td
-Eh
-Eh
-Eh
-Ad
-Td
-Ws
-Eh
-Eh
-Eh
-Eh
-Td
-dD
+Aw
+kw
+kw
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+kw
+Aw
 Eh
 Eh
 dD
 dD
 bW
 bW
-qB
+Eh
 Eh
 aD
 nh
@@ -5516,35 +5737,35 @@ MQ
 MQ
 nh
 Eh
-dD
-dD
+wz
+wz
 Eh
 Eh
-dD
-Td
-Td
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Eh
-Td
-dD
+Aw
+kw
+kw
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+Ps
+kw
+Aw
 Eh
 Eh
 dD
 dD
 yJ
-yJ
+JL
 Do
 Eh
 Eh
-nh
+Eh
 MQ
 MQ
 MQ
@@ -5579,33 +5800,33 @@ MQ
 nh
 Eh
 Eh
-nh
-nh
+Hp
+Hp
 Eh
-dD
-dD
-Td
-Eh
-dD
-dD
-Eh
-Eh
-Eh
-dD
-dD
-Eh
-Eh
-dD
-dD
+Aw
+Aw
+kw
+Ps
+Aw
+Aw
+Ps
+Ps
+Ps
+Aw
+Aw
+Ps
+Ps
+Aw
+Aw
 Eh
 yJ
 yJ
 yJ
-nz
-Gr
+mM
+Dp
 yJ
 yJ
-bW
+Eh
 MQ
 MQ
 MQ
@@ -5641,24 +5862,24 @@ MQ
 nh
 Eh
 Eh
-aD
-nh
+ZB
+Hp
 Eh
 Eh
-dD
-Td
-Eh
-dD
-dD
-Mt
-Qj
-Qj
-dD
-dD
-Eh
-Td
-dD
-nz
+Aw
+kw
+Ps
+Aw
+Aw
+wh
+pU
+pU
+Aw
+Aw
+Ps
+kw
+Aw
+mM
 yJ
 bW
 yJ
@@ -5699,37 +5920,37 @@ MQ
 MQ
 MQ
 MQ
-wQ
+Sj
 nh
 nh
 Eh
 Eh
-nh
-nh
+Hp
+Hp
 Eh
-dD
-dD
-Eh
-Eh
-Eh
-LK
-Qj
-Tg
-LK
-Mt
-Eh
-Eh
-dD
+Aw
+Aw
+Ps
+Ps
+Ps
+GO
+pU
+vJ
+GO
+wh
+Ps
+Ps
+Aw
 yJ
 yJ
 yJ
 yJ
-ci
+WD
 yJ
 bW
 yJ
 bW
-nz
+mM
 MQ
 MQ
 MQ
@@ -5766,32 +5987,32 @@ nh
 nh
 Eh
 Eh
-nh
-lW
+Hp
+aL
 Eh
 Eh
-dD
-Eh
+Aw
+Ps
 LC
-dF
-LK
+Fc
+GO
 LP
-dF
-Qj
-Qj
-rP
-dD
-dD
-Gr
+Fc
+pU
+pU
+sq
+Aw
+Aw
+Dp
 Do
 bW
 bW
 yJ
 Ay
-qB
+JL
 yJ
 yJ
-qB
+JL
 MQ
 MQ
 MQ
@@ -5827,32 +6048,32 @@ nh
 nh
 nh
 Eh
-nh
-wQ
+Hp
+AA
 Eh
 Eh
 Eh
-dD
-dD
+Aw
+Aw
 Zl
-LK
-Tg
-Qj
-LK
-Qj
+GO
+vJ
+pU
+GO
+pU
 LC
-dD
-dD
+Aw
+Aw
 yJ
 yJ
-qB
+JL
 yJ
-nz
-yJ
-yJ
+mM
 yJ
 yJ
-hQ
+yJ
+yJ
+QR
 yJ
 MQ
 MQ
@@ -5885,25 +6106,25 @@ MQ
 MQ
 MQ
 nh
-lW
-wQ
+jt
+Sj
 nh
 nh
-nh
-nh
+Hp
+Hp
 Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-rP
-Qj
+Aw
+Aw
+Aw
+sq
+pU
 Zl
-dD
-dD
-dD
+Aw
+Aw
+Aw
 yJ
 bW
 yJ
@@ -5913,7 +6134,7 @@ yJ
 yJ
 yJ
 yJ
-nz
+mM
 bW
 MQ
 MQ
@@ -5959,11 +6180,11 @@ Eh
 Eh
 Eh
 Eh
-dD
-dD
-dD
-dD
-dD
+Aw
+Aw
+Aw
+Aw
+Aw
 yJ
 yJ
 bW
@@ -6023,19 +6244,19 @@ Eh
 Eh
 Eh
 Eh
-nz
+mM
 yJ
 yJ
 Do
 yJ
-nz
+mM
 yJ
 yJ
 yJ
 bW
 yJ
 yJ
-Gr
+Dp
 yJ
 yJ
 MQ
@@ -6090,11 +6311,11 @@ bW
 yJ
 yJ
 yJ
-Gr
+Dp
 bW
 bW
 yJ
-qB
+JL
 yJ
 bW
 yJ
@@ -6137,7 +6358,7 @@ MQ
 MQ
 MQ
 nh
-wQ
+Sj
 nh
 Eh
 Eh
@@ -6151,13 +6372,13 @@ bW
 yJ
 yJ
 yJ
-ci
+WD
 yJ
 yJ
 yJ
 yJ
 yJ
-hQ
+QR
 bW
 bW
 MQ
@@ -6206,19 +6427,19 @@ Eh
 bW
 bW
 yJ
-Gr
-nz
+Dp
+mM
 Do
 bW
 bW
 Ay
 bW
-qB
+JL
 yJ
 Do
 yJ
 yJ
-nz
+mM
 yJ
 MQ
 MQ
@@ -6266,14 +6487,14 @@ nh
 nh
 Eh
 Eh
-qB
+JL
 Ay
 yJ
-ci
-qB
+WD
+JL
 yJ
 yJ
-nz
+mM
 bW
 bW
 bW
@@ -6334,13 +6555,13 @@ bW
 bW
 bW
 yJ
-hQ
+QR
 yJ
 bW
-nz
+mM
 yJ
 bW
-nz
+mM
 MQ
 MQ
 MQ
