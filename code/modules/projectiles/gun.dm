@@ -236,7 +236,7 @@
 	///time of the most recent rack, used for cooldown purposes
 	var/recent_rack = 0
 	///Whether the gun can be sawn off by sawing tools
-	var/can_be_sawn_off  = FALSE
+	var/can_be_sawn_off = FALSE
 
 	///Whether the gun can be tacloaded by slapping a fresh magazine directly on it
 	var/tac_reloads = TRUE
