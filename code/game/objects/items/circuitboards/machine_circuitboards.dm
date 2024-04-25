@@ -645,7 +645,7 @@
 		/obj/machinery/vending/security = "SecTech",
 		/obj/machinery/vending/modularpc = "Deluxe Silicate Selections",
 		/obj/machinery/vending/custom = "Custom Vendor",
-		/obj/machinery/vending/mining_equipment = "Mining Equipment")
+		/obj/machinery/vending/mining_equipment = "Frontier equipment vendor")
 
 /obj/item/circuitboard/machine/vendor/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
