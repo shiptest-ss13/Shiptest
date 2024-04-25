@@ -29,10 +29,6 @@
 	var/deity_name = "Christ"
 	force_string = "holy"
 
-/obj/item/storage/book/bible/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, TRUE)
-
 /obj/item/storage/book/bible/koran
 	name = "Koran"
 	icon_state = "koran"

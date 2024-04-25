@@ -65,10 +65,6 @@
 	var/reskinned = FALSE
 	var/chaplain_spawnable = TRUE
 
-/obj/item/nullrod/Initialize()
-	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
-
 /obj/item/nullrod/godhand
 	icon_state = "disintegrate"
 	item_state = "disintegrate"
