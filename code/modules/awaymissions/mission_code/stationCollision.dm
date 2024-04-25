@@ -14,27 +14,6 @@
  *		Modified Nar'Sie
  */
 
-
-
-/*
- * Landmarks - Instead of spawning a new object type, I'll spawn the bible using a landmark!
- */
-/obj/effect/landmark/sc_bible_spawner
-	name = "Safecode hint spawner"
-
-/obj/effect/landmark/sc_bible_spawner/Initialize()
-	..()
-	var/obj/item/storage/book/bible/B = new /obj/item/storage/book/bible/booze(loc)
-	B.name = "The Holy book of the Geometer"
-	B.deity_name = "Narsie"
-	B.icon_state = "melted"
-	B.item_state = "melted"
-	B.lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
-	B.righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
-	new /obj/item/paper/fluff/awaymissions/stationcollision/safehint_paper_bible(B)
-	new /obj/item/pen(B)
-	return INITIALIZE_HINT_QDEL
-
 /*
  * Guns - I'm making these specifically so that I dont spawn a pile of fully loaded weapons on the map.
  */

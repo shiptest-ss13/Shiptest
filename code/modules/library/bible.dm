@@ -1,9 +1,10 @@
 //need to refactor this.
-GLOBAL_LIST_INIT(biblenames, list("Bible", "Quran", "Scrapbook", "Burning Bible", "Clown Bible", "Banana Bible", "Creeper Bible", "White Bible", "Holy Light", "The God Delusion", "Tome", "The King in Yellow", "Ithaqua", "Scientology", "Melted Bible", "Necronomicon", "Insulationism", "Guru Granth Sahib"))
+GLOBAL_LIST_INIT(biblenames, list("Hail to the Stars", "The History of the SRM", "Text of the Blueflame"))
 //If you get these two lists not matching in size, there will be runtimes and I will hurt you in ways you couldn't even begin to imagine
 // if your bible has no custom itemstate, use one of the existing ones
-GLOBAL_LIST_INIT(biblestates, list("bible", "koran", "scrapbook", "burning", "honk1", "honk2", "creeper", "white", "holylight", "atheist", "tome", "kingyellow", "ithaqua", "scientology", "melted", "necronomicon", "insuls", "gurugranthsahib"))
-GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning", "honk1", "honk2", "creeper", "white", "holylight", "atheist", "tome", "kingyellow", "ithaqua", "scientology", "melted", "necronomicon", "kingyellow", "gurugranthsahib"))
+GLOBAL_LIST_INIT(biblestates, list("book6", "book2", "book4"))
+GLOBAL_LIST_INIT(bibleitemstates, list("book6", "book2", "book4"))
+
 /obj/item/storage/book
 	name = "hollowed book"
 	desc = "I guess someone didn't like it."
@@ -24,8 +25,8 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	to_chat(user, "<span class='notice'>The pages of [title] have been cut out!</span>")
 
 /obj/item/storage/book/bible
-	name = "bible"
-	desc = "Apply to head repeatedly."
+	name = "ancient text of worship"
+	desc = "Completely ruined by age, nothing is understandable"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "bible"
 	item_state = "bible"
@@ -35,19 +36,20 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	var/deity_name = "Christ"
 	force_string = "holy"
 
-/obj/item/storage/book/bible/koran
-	name = "Koran"
-	icon_state = "koran"
-	item_state = "koran"
-	deity_name = "Allah"
-
-/obj/item/storage/book/bible/booze
-	desc = "To be applied to the head repeatedly."
-
 /obj/item/storage/book/bible/booze/PopulateContents()
 	new /obj/item/reagent_containers/food/drinks/bottle/whiskey(src)
 
-/obj/item/storage/book/bible/syndicate
-	name = "Syndicate Tome"
-	icon_state ="ebook"
-	deity_name = "The Syndicate"
+
+/obj/item/book/bible
+	name = "ancient text of worship"
+	desc = "Completely ruined by age, nothing is understandable"
+
+/obj/item/book/bible/srm
+	name = "History of the srm"
+
+/obj/item/book/bible/stars
+	name = "Hail to the stars"
+
+/obj/item/book/bible/blueflame
+	name = "History of the blueflame"
+	desc = "I need to learn more about these folk"
