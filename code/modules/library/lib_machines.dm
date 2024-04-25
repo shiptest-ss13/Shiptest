@@ -340,7 +340,6 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 		if(7)
 			dat += "<h3>NTGanda(tm) Universal Printing Module</h3>"
 			dat += "What would you like to print?<BR>"
-			dat += "<A href='?src=[REF(src)];printbible=1'>\[Bible\]</A><BR>"
 			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
 		if(8)
 			dat += "<h3>Accessing Forbidden Lore Vault v 1.3</h3>"
@@ -512,17 +511,6 @@ GLOBAL_LIST(cachedbooks) // List of our cached book datums
 					log_paper("[key_name(usr)] has printed \"[title]\" (id: [id]) by [author] from a book management console.")
 				break
 			qdel(query_library_print)
-	if(href_list["printbible"])
-		if(cooldown < world.time)
-			var/obj/item/storage/book/bible/B = new /obj/item/storage/book/bible(src.loc)
-			if(GLOB.bible_icon_state && GLOB.bible_item_state)
-				B.icon_state = GLOB.bible_icon_state
-				B.item_state = GLOB.bible_item_state
-				B.name = GLOB.bible_name
-				B.deity_name = GLOB.deity
-			cooldown = world.time + PRINTER_COOLDOWN
-		else
-			say("Printer currently unavailable, please wait a moment.")
 	add_fingerprint(usr)
 	updateUsrDialog()
 

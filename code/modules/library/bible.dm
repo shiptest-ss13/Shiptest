@@ -1,10 +1,3 @@
-//need to refactor this.
-GLOBAL_LIST_INIT(biblenames, list("Hail to the Stars", "The History of the SRM", "Text of the Blueflame"))
-//If you get these two lists not matching in size, there will be runtimes and I will hurt you in ways you couldn't even begin to imagine
-// if your bible has no custom itemstate, use one of the existing ones
-GLOBAL_LIST_INIT(biblestates, list("book6", "book2", "book4"))
-GLOBAL_LIST_INIT(bibleitemstates, list("book6", "book2", "book4"))
-
 /obj/item/storage/book
 	name = "hollowed book"
 	desc = "I guess someone didn't like it."
@@ -32,13 +25,10 @@ GLOBAL_LIST_INIT(bibleitemstates, list("book6", "book2", "book4"))
 	item_state = "bible"
 	lefthand_file = 'icons/mob/inhands/misc/books_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/books_righthand.dmi'
-	var/mob/affecting = null
-	var/deity_name = "Christ"
 	force_string = "holy"
 
 /obj/item/storage/book/bible/booze/PopulateContents()
 	new /obj/item/reagent_containers/food/drinks/bottle/whiskey(src)
-
 
 /obj/item/book/bible
 	name = "ancient text of worship"
@@ -46,10 +36,18 @@ GLOBAL_LIST_INIT(bibleitemstates, list("book6", "book2", "book4"))
 
 /obj/item/book/bible/srm
 	name = "History of the srm"
+	desc = "The pages are blank. There must have been a misprint."
+	icon_state = "book6"
+	item_state = "book6"
 
 /obj/item/book/bible/stars
 	name = "Hail to the stars"
+	desc = "The pages are blank. There must have been a misprint."
+	icon_state = "book2"
+	item_state = "book2"
 
 /obj/item/book/bible/blueflame
 	name = "History of the blueflame"
-	desc = "I need to learn more about these folk"
+	desc = "The pages are blank. There must have been a misprint."
+	icon_state = "book4"
+	item_state = "book4"
