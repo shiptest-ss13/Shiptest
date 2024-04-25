@@ -10,15 +10,15 @@
 /obj/item/ammo_box/generic/attackby(obj/item/attacking_obj, mob/user, params, silent, replace_spent)
 	. = ..()
 
-	if(!ammo_set && istype(attacking_obj, /obj/item/ammo_casing) && !ammo_type)
+	if(!ammo_set && istype(attacking_obj, /obj/item/ammo_casing))
 		var/obj/item/ammo_casing/ammo_load = attacking_obj.type
 		ammo_type = ammo_load
 		ammo_set = TRUE
 		to_chat(user, "<span class='notice'>You fold the box to hold [attacking_obj]!</span>")
 
-/obj/item/ammo_box/generic/examine(mob/user)
-	. = ..()
-	. += "[ammo_set ? "It doesn't have an ammo type set. Use a bullet on the box to set it." : "It's folded to hold [ammo_type]"]."
+// /obj/item/ammo_box/generic/examine(mob/user)
+// 	. = ..()
+// 	. += "[ammo_set ? "It doesn't have an ammo type set. Use a bullet on the box to set it." : "It's folded to hold [ammo_type]"]."
 
 
 
