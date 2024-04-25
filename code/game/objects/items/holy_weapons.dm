@@ -1,37 +1,5 @@
 // CHAPLAIN CUSTOM ARMORS //
 
-/obj/item/choice_beacon/holy
-	name = "armaments beacon"
-	desc = "Contains a set of armaments for the chaplain."
-
-/obj/item/choice_beacon/holy/canUseBeacon(mob/living/user)
-	if(user.mind && user.mind.holy_role)
-		return ..()
-	else
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, TRUE)
-		return FALSE
-
-/obj/item/choice_beacon/holy/generate_display_names()
-	var/static/list/holy_item_list
-	if(!holy_item_list)
-		holy_item_list = list()
-		var/list/templist = typesof(/obj/item/storage/box/holy)
-		for(var/V in templist)
-			var/atom/A = V
-			holy_item_list[initial(A.name)] = A
-	return holy_item_list
-
-/obj/item/choice_beacon/holy/spawn_option(obj/choice,mob/living/M)
-	if(!GLOB.holy_armor_type)
-		..()
-		playsound(src, 'sound/effects/pray_chaplain.ogg', 40, TRUE)
-		SSblackbox.record_feedback("tally", "chaplain_armor", 1, "[choice]")
-		GLOB.holy_armor_type = choice
-	else
-		to_chat(M, "<span class='warning'>A selection has already been made. Self-Destructing...</span>")
-		return
-
-
 /obj/item/storage/box/holy
 	name = "Witchhunter Kit"
 
