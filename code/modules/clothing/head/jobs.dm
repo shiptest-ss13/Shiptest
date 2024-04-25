@@ -274,7 +274,7 @@
 #undef DRILL_YELLING
 #undef DRILL_CANADIAN
 
-/obj/item/clothing/head/witchunter_hat
+/obj/item/clothing/head/witchunter
 	name = "witchunter hat"
 	desc = "This hat saw much use back in the day."
 	icon_state = "witchhunterhat"
