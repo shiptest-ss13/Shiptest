@@ -32,10 +32,8 @@
 	},
 /obj/item/clothing/neck/stripedredscarf,
 /obj/item/clothing/neck/tie/red,
-/obj/structure/closet/wall/red{
-	dir = 8;
+/obj/structure/closet/wall/red/directional/east{
 	name = "Captain's Locker";
-	pixel_x = 30;
 	req_access_txt = "20"
 	},
 /obj/item/storage/belt/sabre,
@@ -84,10 +82,9 @@
 /obj/item/shovel/spade,
 /obj/item/cultivator,
 /obj/item/reagent_containers/glass/bucket,
-/obj/structure/closet/wall/white{
+/obj/structure/closet/wall/white/directional/north{
 	color = "#50C878";
-	name = "Produce Production Locker";
-	pixel_y = 30
+	name = "Produce Production Locker"
 	},
 /obj/item/storage/box/disks_plantgene,
 /obj/item/clothing/gloves/botanic_leather,
@@ -128,11 +125,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/closet/wall{
-	dir = 8;
+/obj/structure/closet/wall/directional/east{
 	icon_door = "orange_wall";
-	name = "Mining equipment";
-	pixel_x = 29
+	name = "Mining equipment"
 	},
 /obj/item/gps/mining,
 /obj/item/pickaxe,
@@ -236,9 +231,8 @@
 /obj/item/folder/red,
 /obj/item/laser_pointer/red,
 /obj/item/clipboard,
-/obj/structure/closet/wall/red{
-	name = "Psychologists Locker";
-	pixel_y = 28
+/obj/structure/closet/wall/red/directional/north{
+	name = "Psychologists Locker"
 	},
 /obj/item/clothing/head/suns,
 /obj/item/clothing/gloves/suns/xo,
@@ -506,9 +500,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 8
 	},
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 29
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
 /obj/structure/catwalk/over,
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 1
@@ -571,9 +563,8 @@
 /obj/item/clothing/glasses/hud/health/sunglasses,
 /obj/item/clothing/neck/stripedredscarf,
 /obj/item/clothing/neck/stripedbluescarf,
-/obj/structure/closet/wall/red{
-	name = "Lead Doctor's Locker";
-	pixel_y = 28
+/obj/structure/closet/wall/red/directional/north{
+	name = "Lead Doctor's Locker"
 	},
 /obj/item/reagent_containers/food/drinks/bottle/holywater,
 /obj/item/clothing/suit/armor/vest/security/brig_phys{
@@ -671,10 +662,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/white{
-	dir = 8;
-	name = "Bartenders Clothing";
-	pixel_x = 30
+/obj/structure/closet/wall/white/directional/east{
+	name = "Bartenders Clothing"
 	},
 /obj/item/clothing/under/rank/civilian/bartender/skirt,
 /obj/item/clothing/under/rank/civilian/bartender,
@@ -742,9 +731,8 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "fJ" = (
-/obj/structure/closet/wall/orange{
-	name = "fuel locker";
-	pixel_y = 28
+/obj/structure/closet/wall/orange/directional/north{
+	name = "fuel locker"
 	},
 /obj/item/stack/sheet/mineral/uranium/five{
 	pixel_x = 2
@@ -1002,8 +990,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/white{
-	pixel_y = 26;
+/obj/structure/closet/wall/white/directional/north{
 	name = "bureaucratic supplies"
 	},
 /obj/item/paper_bin,
@@ -1174,9 +1161,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/directional/east,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "iv" = (
@@ -1528,7 +1513,9 @@
 	name = "Engineering storage";
 	pixel_x = 23
 	},
-/obj/machinery/space_heater,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "mv" = (
@@ -1743,9 +1730,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/corner{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/corner/directional/north,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "or" = (
@@ -1886,6 +1871,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
+/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "qa" = (
@@ -2279,7 +2265,7 @@
 /area/ship/hallway/central)
 "up" = (
 /obj/machinery/light/directional/north,
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "uA" = (
@@ -2327,10 +2313,8 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall/white{
-	dir = 4;
-	name = "Cooks Clothing";
-	pixel_x = -30
+/obj/structure/closet/wall/white/directional/west{
+	name = "Cooks Clothing"
 	},
 /obj/item/book/manual/wiki/cooking,
 /obj/item/clothing/under/rank/civilian/chef,
@@ -2362,9 +2346,8 @@
 /turf/open/floor/plating,
 /area/ship/engineering)
 "vs" = (
-/obj/structure/closet/wall/orange{
-	name = "Engineering locker";
-	pixel_y = 30
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Engineering locker"
 	},
 /obj/machinery/atmospherics/pipe/simple/orange/hidden{
 	dir = 8
@@ -2501,9 +2484,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 31
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /obj/structure/catwalk/over,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2512,11 +2493,11 @@
 /area/ship/engineering)
 "wM" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
+/obj/structure/rack,
 /obj/item/clothing/mask/gas/suns,
 /obj/item/clothing/mask/gas/suns,
 /obj/item/clothing/mask/gas/suns,
 /obj/item/holosign_creator/atmos,
-/obj/structure/rack,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "wQ" = (
@@ -2547,10 +2528,8 @@
 /area/ship/hallway/central)
 "xh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/wall{
-	dir = 1;
-	name = "Patient Clothing Closet";
-	pixel_y = -30
+/obj/structure/closet/wall/directional/south{
+	name = "Patient Clothing Closet"
 	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/item/clothing/under/rank/medical/gown,
@@ -2686,6 +2665,9 @@
 	pixel_y = 7
 	},
 /obj/item/storage/toolbox/mechanical,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "yA" = (
@@ -2889,9 +2871,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen)
 "Bq" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/right/directional/north,
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -2905,9 +2885,7 @@
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 8
 	},
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/item/toy/plush/snakeplushie,
 /turf/open/floor/carpet/red,
 /area/ship/crew/office)
@@ -3107,9 +3085,7 @@
 /turf/open/floor/wood/walnut,
 /area/ship/crew/canteen/kitchen)
 "Ee" = (
-/obj/structure/chair/sofa{
-	dir = 1
-	},
+/obj/structure/chair/sofa/brown/directional/north,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "EJ" = (
@@ -3133,18 +3109,15 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/corner{
-	dir = 4
-	},
+/obj/structure/chair/sofa/brown/corner/directional/east,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
 "Fh" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/wall/orange{
-	name = "Emergency Engineering";
-	pixel_y = 30
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Emergency Engineering"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
@@ -3399,11 +3372,9 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
-/obj/structure/closet/wall{
-	dir = 8;
+/obj/structure/closet/wall/directional/east{
 	icon_door = "orange_wall";
-	name = "Mining equipment";
-	pixel_x = 29
+	name = "Mining equipment"
 	},
 /obj/item/gps/mining,
 /obj/item/pickaxe,
@@ -3860,12 +3831,9 @@
 /turf/open/floor/carpet/red,
 /area/ship/crew/office)
 "Mb" = (
-/obj/machinery/portable_atmospherics/canister/air,
-/obj/effect/turf_decal/corner_techfloor_grid/diagonal{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/generic,
 /obj/machinery/light/small/directional/south,
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "Mc" = (
@@ -4052,9 +4020,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/red,
 /area/ship/crew/office)
@@ -4187,7 +4153,7 @@
 	pixel_y = 9
 	},
 /obj/item/radio/intercom/wideband/directional/north,
-/obj/machinery/fax,
+/obj/machinery/fax/syndicate,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
@@ -4488,10 +4454,8 @@
 	name = "butlers's uniform"
 	},
 /obj/item/clothing/under/suit/waiter/syndicate,
-/obj/structure/closet/wall/red{
-	dir = 8;
-	name = "Uniform Closet";
-	pixel_x = 30
+/obj/structure/closet/wall/red/directional/east{
+	name = "Uniform Closet"
 	},
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
@@ -4613,9 +4577,8 @@
 /turf/open/floor/plasteel/tech,
 /area/ship/medical)
 "Tt" = (
-/obj/structure/closet/wall/orange{
-	name = "Chemical Closet";
-	pixel_y = 30
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Chemical Closet"
 	},
 /obj/item/storage/bag/chemistry,
 /obj/item/clothing/glasses/sunglasses/chemical,
@@ -4738,10 +4701,7 @@
 /obj/item/ammo_box/magazine/m10mm,
 /obj/item/kitchen/knife/combat/survival,
 /obj/item/kitchen/knife/combat/survival,
-/obj/structure/closet/secure_closet/wall{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/closet/secure_closet/wall/directional/east,
 /turf/open/floor/wood/walnut,
 /area/ship/bridge)
 "Uu" = (
@@ -4978,6 +4938,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/glass,
+/obj/machinery/space_heater,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
 "WE" = (
@@ -5085,10 +5046,8 @@
 /obj/item/radio,
 /obj/item/radio,
 /obj/item/radio,
-/obj/structure/closet/wall{
-	dir = 8;
-	name = "Uniform closet";
-	pixel_x = 32
+/obj/structure/closet/wall/directional/east{
+	name = "Uniform closet"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
@@ -5212,10 +5171,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 1;
-	name = "Kitchen Freezer";
-	pixel_y = -30
+/obj/structure/closet/secure_closet/freezer/wall/directional/south{
+	name = "Kitchen Freezer"
 	},
 /obj/effect/turf_decal/trimline/opaque/brown/filled/line,
 /obj/structure/table/wood/reinforced,
@@ -5256,7 +5213,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
 /obj/structure/catwalk/over,
-/obj/structure/reagent_dispensers/fueltank,
 /turf/open/floor/plating,
 /area/ship/engineering)
 "Zj" = (
@@ -5279,6 +5235,42 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/cargo)
+"Zq" = (
+/obj/structure/closet/wall/orange{
+	name = "Engineering locker";
+	pixel_y = 30
+	},
+/obj/machinery/atmospherics/pipe/simple/orange/hidden{
+	dir = 8
+	},
+/obj/item/tank/internals/oxygen,
+/obj/item/storage/toolbox/syndicate{
+	name = "syndicate toolbox";
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/utility/syndicate,
+/obj/structure/catwalk/over,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 8
+	},
+/obj/item/storage/box/stockparts/t2,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/gloves/suns/yellow,
+/obj/item/clothing/shoes/jackboots/suns,
+/obj/item/clothing/suit/toggle/suns/workervest,
+/obj/item/clothing/under/syndicate/suns/workerjumpsuit,
+/obj/item/clothing/mask/gas/suns,
+/obj/item/clothing/head/safety_helmet/suns,
+/obj/item/clothing/glasses/meson/engine,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "Zu" = (
 /obj/effect/turf_decal/siding/wood/corner,
 /obj/effect/turf_decal/siding/wood{
@@ -5805,7 +5797,7 @@ vh
 ZU
 gB
 It
-vs
+Zq
 yb
 mt
 Mb

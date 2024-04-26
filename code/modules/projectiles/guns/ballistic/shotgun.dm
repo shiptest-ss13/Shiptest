@@ -1,5 +1,6 @@
 /obj/item/gun/ballistic/shotgun
 	name = "shotgun"
+	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
 	item_state = "shotgun"
 	fire_sound = 'sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
@@ -40,6 +41,14 @@
 			process_fire(user, user, FALSE)
 			return TRUE
 	return FALSE
+
+/obj/item/gun/ballistic/shotgun/calculate_recoil(mob/user, recoil_bonus = 0)
+	var/gunslinger_bonus = -1
+	var/total_recoil = recoil_bonus
+	if(HAS_TRAIT(user, TRAIT_GUNSLINGER)) //gunslinger bonus
+		total_recoil += gunslinger_bonus
+		total_recoil = clamp(total_recoil,0,INFINITY)
+	return total_recoil
 
 // BRIMSTONE SHOTGUN //
 
@@ -154,9 +163,6 @@
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 	semi_auto = TRUE
 
-/obj/item/gun/ballistic/shotgun/automatic/dual_tube/mindshield
-	pin = /obj/item/firing_pin/implant/mindshield
-
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click to pump it.</span>"
@@ -225,16 +231,12 @@
 	wield_slowdown = 0.6
 	wield_delay = 0.65 SECONDS
 
-/obj/item/gun/ballistic/shotgun/bulldog/unrestricted
-	pin = /obj/item/firing_pin
-
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
 	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
 	icon_state = "bulldog-inteq"
 	item_state = "bulldog-inteq"
 	mag_type = /obj/item/ammo_box/magazine/m12g
-	pin = /obj/item/firing_pin
 	manufacturer = MANUFACTURER_INTEQ
 
 /obj/item/gun/ballistic/shotgun/bulldog/suns
@@ -245,12 +247,11 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/minutemen //TODO: REPATH
 	name = "\improper CM-15"
-	desc = "A standard-issue shotgun of the Colonial Minutemen, most often used by boarding crews. Only compatible with specialized 8-round magazines."
+	desc = "A standard-issue shotgun of CLIP, most often used by boarding crews. Only compatible with specialized 8-round magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mag_type = /obj/item/ammo_box/magazine/cm15_mag
 	icon_state = "cm15"
 	item_state = "cm15"
-	pin = /obj/item/firing_pin
 	empty_alarm = FALSE
 	empty_indicator = FALSE
 	special_mags = FALSE
@@ -436,6 +437,7 @@
 	name = "hook modified sawn-off shotgun"
 	desc = "Range isn't an issue when you can bring your victim to you."
 	icon_state = "hookshotgun"
+	icon = 'icons/obj/guns/projectile.dmi'
 	item_state = "shotgun"
 	load_sound = 'sound/weapons/gun/shotgun/insert_shell.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bounty
@@ -609,18 +611,6 @@
 	recoil = 0
 	recoil_unwielded = 2
 
-//sawn off
-	weapon_weight = WEAPON_MEDIUM
-
-	wield_slowdown = 0.25
-	wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
-
-	spread = 4
-	spread_unwielded = 12
-
-	recoil = 1
-	recoil_unwielded = 2
-
 /obj/item/gun/ballistic/shotgun/flamingarrow/update_icon_state()
 	. = ..()
 	if(current_skin)
@@ -628,6 +618,31 @@
 	else
 		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""]"
 
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/rack(mob/user = null)
+	. = ..()
+	if(!wielded)
+		SpinAnimation(7,1)
+
+
+/obj/item/gun/ballistic/shotgun/flamingarrow/sawoff(mob/user)
+	. = ..()
+	if(.)
+		var/obj/item/ammo_box/magazine/internal/tube = magazine
+		tube.max_ammo = 7
+
+		item_state = "flamingarrow_sawn"
+		mob_overlay_state = item_state
+		weapon_weight = WEAPON_MEDIUM
+
+		wield_slowdown = 0.25
+		wield_delay = 0.2 SECONDS //THE COWBOY RIFLE
+
+		spread = 4
+		spread_unwielded = 12
+
+		recoil = 0
+		recoil_unwielded = 3
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/factory
 	desc = "A sturdy and lightweight lever-action rifle with hand-stamped Hunter's Pride marks on the receiver. This example has been kept in excellent shape and may as well be fresh out of the workshop. Chambered in .38."
@@ -639,6 +654,7 @@
 	. = ..()
 	if(.)
 		item_state = "flamingarrow_factory_sawn"
+		mob_overlay_state = item_state
 
 /obj/item/gun/ballistic/shotgun/flamingarrow/bolt
 	name = "HP Flaming Bolt"
@@ -651,6 +667,7 @@
 	. = ..()
 	if(.)
 		item_state = "flamingbolt_sawn"
+		mob_overlay_state = item_state
 
 //Elephant Gun
 /obj/item/gun/ballistic/shotgun/doublebarrel/twobore

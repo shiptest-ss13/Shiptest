@@ -174,6 +174,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "bj" = (
@@ -873,10 +874,7 @@
 /turf/open/floor/plasteel/tech/techmaint,
 /area/outpost/security)
 "ga" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1;
-	pixel_y = 4
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/lounge)
@@ -1014,10 +1012,7 @@
 /turf/open/floor/wood/walnut,
 /area/outpost/crew/bar)
 "hJ" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4;
-	pixel_x = -4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /obj/machinery/light/dim/directional/west{
 	bulb_power = 0.7
 	},
@@ -1658,6 +1653,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 6
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "mm" = (
@@ -2273,6 +2269,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 1
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "pv" = (
@@ -3814,6 +3811,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
 	dir = 9
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "zw" = (
@@ -5899,6 +5897,7 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "OR" = (
@@ -6660,6 +6659,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer2{
 	dir = 1
 	},
+/obj/effect/landmark/ert_outpost_spawn,
 /turf/open/floor/plasteel/tech,
 /area/outpost/security/armory)
 "Ti" = (
@@ -7459,8 +7459,10 @@
 /area/outpost/security/armory)
 "XG" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax/ruin,
 /obj/machinery/light/directional/south,
+/obj/machinery/fax/admin/outpost{
+	pixel_y = 5
+	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/outpost/security)
 "XI" = (

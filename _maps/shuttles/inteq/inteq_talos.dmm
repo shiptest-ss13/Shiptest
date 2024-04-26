@@ -65,9 +65,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
+/obj/structure/chair/comfy/grey/directional/west,
 /obj/machinery/status_display/shuttle{
 	pixel_x = 32
 	},
@@ -162,9 +160,7 @@
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "aV" = (
@@ -1160,7 +1156,7 @@
 /area/ship/hallway/central)
 "hK" = (
 /obj/structure/table/reinforced,
-/obj/machinery/fax,
+/obj/machinery/fax/inteq,
 /obj/machinery/button/door{
 	id = "talos_bridge";
 	name = "Bridge Shutters";
@@ -1317,15 +1313,9 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/item/analyzer{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
-	dir = 1
+/obj/machinery/power/ship_gravity,
+/obj/structure/cable{
+	icon_state = "0-4"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -1540,6 +1530,13 @@
 	icon_state = "2-4"
 	},
 /obj/effect/turf_decal/number/five,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable/yellow{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "jT" = (
@@ -1685,7 +1682,7 @@
 /obj/effect/turf_decal/corner/opaque/brown{
 	dir = 4
 	},
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/machinery/light_switch{
 	pixel_y = 22
 	},
@@ -1900,7 +1897,7 @@
 /area/ship/hallway/central)
 "ml" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,
@@ -2311,7 +2308,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/chair/sofa/left,
+/obj/structure/chair/sofa/brown/left/directional/south,
 /obj/effect/landmark/start/assistant,
 /obj/machinery/camera/autoname,
 /obj/machinery/status_display/shuttle{
@@ -2728,10 +2725,8 @@
 /obj/structure/catwalk/over/plated_catwalk,
 /obj/structure/railing,
 /obj/machinery/airalarm/directional/north,
-/obj/structure/closet/wall{
-	dir = 4;
-	icon_door = "grey_wall";
-	pixel_x = -32
+/obj/structure/closet/wall/directional/west{
+	icon_door = "grey_wall"
 	},
 /obj/item/radio/headset,
 /obj/item/radio/headset,
@@ -2757,6 +2752,19 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ship/cargo)
+"qD" = (
+/obj/structure/railing,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 6
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/plating,
+/area/ship/engineering)
 "qF" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -2887,9 +2895,7 @@
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "rw" = (
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
 "rB" = (
@@ -3595,7 +3601,7 @@
 /obj/item/clothing/head/hardhat/white,
 /obj/item/clothing/head/beret/sec/inteq,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/combat,
 /obj/item/megaphone/cargo{
 	name = "engineering megaphone"
@@ -3787,9 +3793,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
 "wQ" = (
@@ -3815,9 +3819,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/obj/structure/closet/emcloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/north,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/central)
 "xb" = (
@@ -4531,6 +4533,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
@@ -5624,6 +5629,9 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
+/obj/item/kitchen/knife/combat/survival,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
 "JT" = (
@@ -5819,7 +5827,13 @@
 /obj/item/assembly/igniter{
 	pixel_y = 6
 	},
-/obj/structure/cable/yellow,
+/obj/item/analyzer{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-5"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering)
 "Lu" = (
@@ -5963,7 +5977,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
@@ -6234,16 +6248,9 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
 "OG" = (
-/obj/structure/cable/yellow{
-	icon_state = "2-4"
-	},
 /obj/structure/railing,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4,
-/obj/structure/catwalk/over,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 6
-	},
-/turf/open/floor/plating,
+/turf/open/floor/plasteel/tech,
 /area/ship/engineering)
 "OK" = (
 /obj/machinery/cryopod{
@@ -6874,9 +6881,7 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/chair/comfy/black{
-	dir = 1
-	},
+/obj/structure/chair/comfy/grey/directional/north,
 /turf/open/floor/carpet/orange,
 /area/ship/bridge)
 "Tq" = (
@@ -7500,7 +7505,7 @@
 	name = "equipment locker";
 	req_access_txt = "1"
 	},
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/storage/belt/security/webbing/inteq,
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
 /obj/item/storage/box/handcuffs,
@@ -7554,7 +7559,7 @@
 /area/ship/crew/canteen)
 "Yz" = (
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq,
-/obj/item/clothing/mask/gas/sechailer/inteq,
+/obj/item/clothing/mask/gas/sechailer/balaclava/inteq,
 /obj/item/clothing/gloves/tackler/combat/insulated,
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/belt/military/assault,
@@ -7941,7 +7946,7 @@ sV
 sV
 AO
 cj
-ek
+qD
 jS
 AZ
 gV

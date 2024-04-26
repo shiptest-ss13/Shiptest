@@ -185,6 +185,10 @@
 /// just check density
 #define ATMOS_PASS_DENSITY -2
 
+// Adjacency flags
+#define ATMOS_ADJACENT_ANY (1<<0)
+#define ATMOS_ADJACENT_FIRELOCK (1<<1)
+
 #define CANATMOSPASS(A, O) (A.CanAtmosPass == ATMOS_PASS_PROC ? A.CanAtmosPass(O) : (A.CanAtmosPass == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPass))
 #define CANVERTICALATMOSPASS(A, O) (A.CanAtmosPassVertical == ATMOS_PASS_PROC ? A.CanAtmosPass(O, TRUE) : (A.CanAtmosPassVertical == ATMOS_PASS_DENSITY ? !A.density : A.CanAtmosPassVertical))
 
@@ -327,6 +331,13 @@
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)
+
+// Flag for update_air_ref()
+#define AIR_REF_CLOSED_TURF -1
+#define AIR_REF_SPACE_TURF 0
+
+#define AIR_REF_PLANETARY_TURF (1<<0) //SIMULATION_DIFFUSE 0b1
+#define AIR_REF_OPEN_TURF (1<<1) //SIMULATION_ALL 0b10
 
 //HELPERS
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \

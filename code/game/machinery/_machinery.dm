@@ -172,6 +172,8 @@ Class Procs:
 /obj/machinery/LateInitialize()
 	. = ..()
 	power_change()
+	become_area_sensitive(ROUNDSTART_TRAIT)
+  
 	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(enter_area))
 	RegisterSignal(src, COMSIG_EXIT_AREA, PROC_REF(exit_area))
 
@@ -187,6 +189,7 @@ Class Procs:
 	GLOB.machines.Remove(src)
 	end_processing()
 	dropContents()
+	lose_area_sensitivity(ROUNDSTART_TRAIT)
 	QDEL_NULL(circuit)
 	QDEL_LIST(component_parts)
 	set_no_power()

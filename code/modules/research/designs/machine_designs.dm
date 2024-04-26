@@ -247,7 +247,6 @@
 	build_path = /obj/item/circuitboard/machine/rdserver
 	category = list("Research Machinery", "initial", "Equipment")
 
-
 /datum/design/board/mechfab
 	name = "Machine Design (Exosuit Fabricator Board)"
 	desc = "The circuit board for an Exosuit Fabricator."
@@ -470,6 +469,14 @@
 	build_path = /obj/item/circuitboard/machine/grounding_rod
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/ship_gravity
+	name = "Machine Design (Ship Gravity Generator Board)"
+	desc = "The circuit board for a ship-sized gravity generator."
+	id = "ship_gravity"
+	build_type = AUTOLATHE | IMPRINTER
+	build_path = /obj/item/circuitboard/machine/ship_gravity
+	category = list("Misc. Machinery", "initial", "Equipment")
 
 /datum/design/board/ntnet_relay
 	name = "Machine Design (NTNet Relay Board)"

@@ -1,5 +1,5 @@
 /datum/species/ipc // im fucking lazy mk2 and cant get sprites to normally work
-	name = "\improper Integrated Positronic Chassis" //inherited from the real species, for health scanners and things
+	name = "\improper Positronic" //inherited from the real species, for health scanners and things
 	id = SPECIES_IPC
 	sexes = FALSE
 	species_age_min = 0
@@ -133,7 +133,7 @@
 	icon_state = "wire1"
 
 /obj/item/apc_powercord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	if((!istype(target, /obj/machinery/power/apc) && !isethereal(target)) || !ishuman(user) || !proximity_flag)
+	if((!istype(target, /obj/machinery/power/apc) && !iselzuose(target)) || !ishuman(user) || !proximity_flag)
 		return ..()
 	user.changeNext_move(CLICK_CD_MELEE)
 	var/mob/living/carbon/human/H = user
@@ -155,7 +155,7 @@
 			to_chat(user, "<span class='warning'>There is not enough charge to draw from that APC.</span>")
 			return
 
-	if(isethereal(target))
+	if(iselzuose(target))
 		var/mob/living/carbon/human/target_ethereal = target
 		var/obj/item/organ/stomach/ethereal/eth_stomach = target_ethereal.getorganslot(ORGAN_SLOT_STOMACH)
 		if(target_ethereal.nutrition > 0 && eth_stomach)
@@ -207,7 +207,7 @@
 			if(A.crystal_charge == 0)
 				to_chat(H, "<span class='warning'>[A] is completely drained!</span>")
 				break
-			siphon_amt = A.crystal_charge <= (2 * ETHEREAL_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (2 * ETHEREAL_CHARGE_SCALING_MULTIPLIER)
+			siphon_amt = A.crystal_charge <= (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER) ? A.crystal_charge : (2 * ELZUOSE_CHARGE_SCALING_MULTIPLIER)
 			A.adjust_charge(-1 * siphon_amt)
 			H.nutrition += (siphon_amt)
 			if(H.nutrition > NUTRITION_LEVEL_WELL_FED)

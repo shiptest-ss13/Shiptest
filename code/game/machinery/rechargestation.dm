@@ -1,7 +1,7 @@
 /obj/machinery/recharge_station
 	name = "cyborg recharging station"
 	desc = "This device recharges cyborgs and resupplies them with materials."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/obj/machines/borgcharger.dmi'
 	icon_state = "borgcharger0"
 	density = FALSE
 	use_power = IDLE_POWER_USE

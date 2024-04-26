@@ -110,7 +110,7 @@
 
 /datum/component/weather_announcer/proc/time_till_storm()
 	var/datum/weather_controller/local_weather_controller = SSmapping.get_map_zone_weather_controller(parent)
-	if(!local_weather_controller.next_weather)
+	if(!local_weather_controller?.next_weather)
 		return null
 	for(var/type_index in local_weather_controller.current_weathers)
 		var/datum/weather/check_weather = local_weather_controller.current_weathers[type_index]

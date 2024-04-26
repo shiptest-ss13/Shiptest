@@ -12,7 +12,9 @@
 	var/polldesc
 	/// If TRUE, gives the team members "[role] [random last name]" style names
 	var/random_names = FALSE
-	/// If TRUE, the admin who created the response team will be spawned in the briefing room in their preferred briefing outfit (assuming they're a ghost)
+	/// If TRUE, special slots (that are not the leader) will use a predefined limit
+	var/limit_slots = FALSE
+	/// If TRUE, the admin who created the response team will be spawned in the briefing room (or in the shuttle) in their preferred briefing outfit (assuming they're a ghost)
 	var/spawn_admin = FALSE
 	/// If TRUE, we try and pick one of the most experienced players who volunteered to fill the leader slot
 	var/leader_experience = TRUE
@@ -51,7 +53,7 @@
 
 /datum/ert/marine
 	leader_role = /datum/antagonist/ert/marine
-	roles = list(/datum/antagonist/ert/marine/security, /datum/antagonist/ert/marine/engineer, /datum/antagonist/ert/marine/medic)
+	roles = list(/datum/antagonist/ert/marine/security, /datum/antagonist/ert/marine/engineer = 1, /datum/antagonist/ert/marine/medic = 1)
 	rename_team = "Marine Squad"
 	polldesc = "an 'elite' Nanotrasen Strike Team"
 	opendoors = FALSE
@@ -102,7 +104,7 @@
 	teamsize = 4
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/lp/lieutenant
-	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic, /datum/antagonist/ert/lp/engineer)
+	roles = list(/datum/antagonist/ert/lp, /datum/antagonist/ert/lp/medic = 1, /datum/antagonist/ert/lp/engineer = 1)
 	rename_team = "Loss Prevention Team"
 	polldesc = "a Nanotrasen loss prevention team"
 
@@ -140,46 +142,53 @@
 /datum/ert/solgov/inspector/New()
 	mission = "Conduct a routine review on [station_name()]'s vessels."
 
-// Minutemen
+// CLIP
 
 /datum/ert/minutemen
+	teamsize = 5
+	opendoors = FALSE
+	leader_role = /datum/antagonist/ert/minutemen/leader
+	/// TODO: figure out a way to fill in at least one rifleman first
+	roles = list(/datum/antagonist/ert/minutemen, /datum/antagonist/ert/minutemen/corpsman = 1, /datum/antagonist/ert/minutemen/engi = 1, /datum/antagonist/ert/minutemen/gunner = 1)
+	mission = "Keep the peace in sector affairs"
+	rename_team = "CLIP Minutemen Squadron"
+	polldesc = "a CLIP Minutemen squadron"
+	ert_template = /datum/map_template/shuttle/subshuttles/crux
+
+//quick infantry - for use when you need to throw minutemen somewhere fast but dont want ANY preperation at all
+/datum/ert/minutemen/quick
 	teamsize = 4
 	opendoors = FALSE
 	leader_role = /datum/antagonist/ert/minutemen/leader
 	roles = list(/datum/antagonist/ert/minutemen)
-	mission = "Keep the peace in sector affairs"
-	rename_team = "Generic Minutemen Team"
-	polldesc = "a Minutemen emergency team"
+	mission = "Resolve the conflict at hand"
+	polldesc = "a CLIP Minutemen emergency team"
 	random_names = TRUE
-	ert_template = /datum/map_template/shuttle/subshuttles/crux
 
 
 /datum/ert/minutemen/bard
 	leader_role = /datum/antagonist/ert/minutemen/bard/leader
-	roles = list(/datum/antagonist/ert/minutemen/bard)
-	rename_team = "Minutemen BARD Team"
-	polldesc = "a Minutemen biohazard removal team"
+	roles = list(/datum/antagonist/ert/minutemen/bard, /datum/antagonist/ert/minutemen/bard/medic = 1, /datum/antagonist/ert/minutemen/bard/flamer = 1)
+	rename_team = "CLIP Minutemen BARD Squadron"
+	polldesc = "a CLIP Minutemen biohazard removal team"
 
 /datum/ert/minutemen/riot
 	teamsize = 6
 	leader_role = /datum/antagonist/ert/minutemen/riot/leader
 	roles = list(/datum/antagonist/ert/minutemen/riot)
-	rename_team = "Minutemen Riot Control Team"
-	polldesc = "a Minutemen riot control team"
+	rename_team = "CLIP Minutemen Riot Control Squadron"
+	polldesc = "a CLIP Minutemen riot control team"
 
-/datum/ert/minutemen/piratehunters
-	leader_role = /datum/antagonist/ert/minutemen/piratehunters/leader
-	roles = list(/datum/antagonist/ert/minutemen/piratehunters)
-	mission = "Eliminate pirate presence within the sector."
-	rename_team = "Minutemen Pirate Hunter Team"
-	polldesc = "a fireteam of Minutemen pirate hunters"
+/datum/ert/minutemen/eva
+	leader_role = /datum/antagonist/ert/minutemen/eva/leader
+	roles = list(/datum/antagonist/ert/minutemen/eva)
 
 /datum/ert/minutemen/inspector
 	teamsize = 1
 	leader_role = /datum/antagonist/ert/official/minutemen
 	roles = list(/datum/antagonist/ert/official/minutemen)
-	rename_team = "Minutemen GOLD Inspector"
-	polldesc = "a Minutemen inspector"
+	rename_team = "CLIP Minutemen GOLD Inspector"
+	polldesc = "a CLIP Minutemen inspector"
 
 // Syndicate
 
@@ -195,7 +204,7 @@
 
 /datum/ert/syndicate/gorlex
 	leader_role = /datum/antagonist/ert/syndicate/gorlex/leader
-	roles = list(/datum/antagonist/ert/syndicate/gorlex, /datum/antagonist/ert/syndicate/gorlex/pointman, /datum/antagonist/ert/syndicate/gorlex/medic, /datum/antagonist/ert/syndicate/gorlex/sniper)
+	roles = list(/datum/antagonist/ert/syndicate/gorlex, /datum/antagonist/ert/syndicate/gorlex/pointman = 1, /datum/antagonist/ert/syndicate/gorlex/medic = 1, /datum/antagonist/ert/syndicate/gorlex/sniper = 1)
 	mission = "Serve the interests of the 2nd Battlegroup."
 	rename_team = "2nd Battlegroup Squad"
 	polldesc = "a loyalist Gorlex squad"
