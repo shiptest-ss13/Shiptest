@@ -3,7 +3,7 @@
 	desc = "A generic, unbranded box of ammo. It doesn't have great capacity, but it can hold a variety of different calibers."
 	max_ammo = 20
 	start_empty = TRUE
-	icon_state = "10mmbox-surplus"
+	icon_state = "generic-ammo"
 	/// Does the box currently have an ammo type set?
 	var/ammo_set = FALSE
 	/// Name of the currently set ammo type
@@ -39,7 +39,7 @@
 
 /obj/item/ammo_box/generic/examine(mob/user)
 	. = ..()
-	. += span_notice("[ammo_set ? "It's set to hold [ammo_name]\s" : "It doesn't have an ammo type set. Use a bullet on the box to set it."].")
+	. += span_notice("[ammo_set ? "It's set to hold [ammo_name]\s." : "It doesn't have an ammo type set. Use a bullet on the box to set it."]")
 	. += span_notice("You can use a pen on it to rename the box.")
 
 
