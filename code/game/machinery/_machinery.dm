@@ -173,7 +173,6 @@ Class Procs:
 	. = ..()
 	power_change()
 	become_area_sensitive(ROUNDSTART_TRAIT)
-  
 	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(enter_area))
 	RegisterSignal(src, COMSIG_EXIT_AREA, PROC_REF(exit_area))
 
