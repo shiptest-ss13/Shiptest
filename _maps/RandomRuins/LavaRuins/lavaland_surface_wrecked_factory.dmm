@@ -1327,10 +1327,10 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/lavaland/factory/dorms)
 "rh" = (
-/obj/structure/chair/sofa/right{
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/sofa/brown/corpo/right{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
 "rj" = (
@@ -1655,13 +1655,13 @@
 /turf/open/floor/concrete/pavement,
 /area/overmap_encounter/planetoid/lava/explored)
 "vP" = (
-/obj/structure/chair/comfy/lime,
 /mob/living/simple_animal/hostile/nanotrasen/elite{
 	name = "Manager"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
+/obj/structure/chair/comfy/beige,
 /turf/open/floor/carpet/blue,
 /area/ruin/lavaland/factory/manager_office)
 "vQ" = (
@@ -1892,8 +1892,8 @@
 /obj/effect/turf_decal/trimline/opaque/lime/warning{
 	dir = 1
 	},
-/obj/item/gun/ballistic/automatic/smg/proto/unrestricted,
 /obj/item/ammo_box/magazine/smgm9mm,
+/obj/item/gun/ballistic/automatic/smg/proto,
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/factory/dorms)
 "zC" = (
@@ -3157,7 +3157,7 @@
 /area/overmap_encounter/planetoid/lava/explored)
 "Rn" = (
 /obj/effect/turf_decal/siding/wood,
-/obj/structure/chair/comfy/black{
+/obj/structure/chair/comfy/blue{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -3174,14 +3174,14 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/ruin/lavaland/factory/adminstrative)
 "RF" = (
-/obj/structure/chair/sofa/left{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/light/directional/south,
+/obj/structure/chair/sofa/brown/corpo/left{
+	dir = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/factory/manager_office)
 "RI" = (
