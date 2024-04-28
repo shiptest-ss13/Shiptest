@@ -731,7 +731,7 @@
 	name = "hand of cards"
 	desc = "A number of cards not in a deck, customarily held in ones hand."
 	icon = 'icons/obj/toy.dmi'
-	icon_state = "none"
+	icon_state = "nothing"
 	w_class = WEIGHT_CLASS_TINY
 	var/list/currenthand = list()
 	var/choice = null
@@ -1404,7 +1404,7 @@
 	say(message, language)
 	return NOPASS
 
-/obj/item/toy/dummy/GetVoice()
+/obj/item/toy/dummy/GetVoice(if_no_voice = "Unknown")
 	return doll_name
 
 /obj/item/toy/seashell

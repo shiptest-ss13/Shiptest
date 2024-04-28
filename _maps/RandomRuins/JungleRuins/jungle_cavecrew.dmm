@@ -465,10 +465,8 @@
 /area/ship/storage)
 "fv" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall/red{
-	dir = 1;
-	name = "Bartender's locker";
-	pixel_y = -28
+/obj/structure/closet/wall/red/directional/south{
+	name = "Bartender's locker"
 	},
 /obj/item/clothing/under/suit/waiter/syndicate,
 /obj/item/clothing/suit/apron/purple_bartender,
@@ -664,9 +662,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
 "iE" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
-	},
+/obj/structure/chair/comfy/grey/directional/east,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -1029,10 +1025,7 @@
 /obj/structure/sign/poster/contraband/lusty_xenomorph{
 	pixel_y = 32
 	},
-/obj/structure/closet/secure_closet/freezer/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/secure_closet/freezer/wall/directional/west,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
 /obj/item/reagent_containers/food/snacks/rationpack,
@@ -2585,10 +2578,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood/corner,
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/east{
 	buildstackamount = 0;
-	color = "#c45c57";
-	dir = 4
+	color = "#c45c57"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood{
@@ -2857,10 +2849,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/item/reagent_containers/syringe/contraband/bath_salts{
 	pixel_y = 6;
 	pixel_x = -4
@@ -3773,9 +3762,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/obj/structure/chair/comfy/brown{
-	color = "#66b266";
-	dir = 4
+/obj/structure/chair/comfy/orange/directional/east{
+	color = "#66b266"
 	},
 /obj/item/book/manual/wiki/surgery{
 	pixel_x = 10;

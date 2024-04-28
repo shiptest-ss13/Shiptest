@@ -14,4 +14,3 @@
 	contraband = list(/obj/item/assembly/health = 3)
 	default_price = 400
 	extra_price = 600
-	payment_department = ACCOUNT_SCI

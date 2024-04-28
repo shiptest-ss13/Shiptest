@@ -6,9 +6,9 @@
 	product_ads = "Feel robust with your toys!;Express your inner child today!;Toy weapons don't kill people, but valid hunters do!;Who needs responsibilities when you have toy weapons?;Make your next murder FUN!"
 	vend_reply = "Come back for more!"
 	circuit = /obj/item/circuitboard/machine/vending/syndicatedonksofttoyvendor
-	products = list(/obj/item/gun/ballistic/automatic/toy/unrestricted = 10,
-					/obj/item/gun/ballistic/automatic/toy/pistol/unrestricted = 10,
-					/obj/item/gun/ballistic/shotgun/toy/unrestricted = 10,
+	products = list(/obj/item/gun/ballistic/automatic/toy = 10,
+					/obj/item/gun/ballistic/automatic/toy/pistol = 10,
+					/obj/item/gun/ballistic/shotgun/toy = 10,
 					/obj/item/toy/sword = 10,
 					/obj/item/ammo_box/foambox = 20,
 					/obj/item/toy/foamblade = 10,
@@ -17,8 +17,8 @@
 					/obj/item/clothing/head/syndicatefake = 5) //OPS IN DORMS oh wait it's just an assistant
 	contraband = list(
 		/obj/item/gun/ballistic/shotgun/toy/crossbow = 10,   //Congrats, you unlocked the +18 setting!
-		/obj/item/gun/ballistic/automatic/smg/c20r/toy/unrestricted/riot = 10,
-		/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy/unrestricted/riot = 10,
+		/obj/item/gun/ballistic/automatic/smg/c20r/toy = 10,
+		/obj/item/gun/ballistic/automatic/hmg/l6_saw/toy = 10,
 		/obj/item/ammo_box/foambox/riot = 20,
 		/obj/item/toy/katana = 10,
 		/obj/item/dualsaber/toy = 5,
@@ -28,5 +28,4 @@
 	refill_canister = /obj/item/vending_refill/donksoft
 	default_price = 150
 	extra_price = 300
-	payment_department = ACCOUNT_SRV
 	light_mask = "donksoft-light-mask"

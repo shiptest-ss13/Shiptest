@@ -210,11 +210,6 @@
 	. = ..()
 	update_owner(M)
 
-/obj/structure/bed/alien
-	name = "resting contraption"
-	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
-	icon_state = "abed"
-
 //Double Beds, for luxurious sleeping, i.e. the captain and maybe heads - no quirky refrence here. Move along
 /obj/structure/bed/double
 	name = "double bed"

@@ -4522,7 +4522,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/lab)
 "rQ" = (
-/obj/structure/chair/comfy/black,
+/obj/structure/chair/comfy/grey/directional/south,
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel,
@@ -4615,10 +4615,7 @@
 	},
 /area/ruin/space/has_grav/singularitylab)
 "sr" = (
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/wall/directional/west,
 /obj/item/reagent_containers/food/drinks/flask,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
@@ -6228,9 +6225,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/cargo)
 "zo" = (
-/obj/structure/chair/comfy/brown{
-	dir = 1
-	},
+/obj/structure/chair/comfy/orange/directional/north,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "zq" = (
@@ -6496,9 +6491,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab)
 "Ao" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /obj/effect/turf_decal/industrial/warning{
 	dir = 1
 	},
@@ -7551,9 +7544,7 @@
 /turf/open/floor/plasteel/tech,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Ed" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "Ef" = (
@@ -8959,10 +8950,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/singularitylab/reactor)
 "Jk" = (
-/obj/structure/closet/wall{
-	dir = 4;
-	pixel_x = -32
-	},
+/obj/structure/closet/wall/directional/west,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Jl" = (
@@ -9132,7 +9120,7 @@
 /obj/item/clothing/under/rank/rnd/scientist,
 /obj/item/clothing/shoes/sneakers/white,
 /obj/effect/gibspawner,
-/obj/item/gun/energy/lasercannon/unrestricted{
+/obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
 	icon_state = "pulse";
 	name = "NT-LS-1013"
@@ -9871,9 +9859,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/space/has_grav/singularitylab/lab)
 "Mo" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/singularitylab/civvie)
 "Mq" = (
@@ -10940,7 +10926,7 @@
 "PZ" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/north,
-/obj/item/gun/energy/lasercannon/unrestricted{
+/obj/item/gun/energy/lasercannon{
 	desc = "An advanced laser cannon, a laser etched inscription in the handle states 'NT-LS-1013'. The casing is made of a lightweight alloy.";
 	icon_state = "pulse";
 	name = "NT-LS-1013"
