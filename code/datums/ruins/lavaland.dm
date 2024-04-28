@@ -135,5 +135,5 @@
 /datum/map_template/ruin/lavaland/wrecked_factory
 	name = "Wrecked Factory"
 	id = "wreck_factory"
-	description = "A long since abandoned Nanotrasen processing facility. The area appears to be uninhabited and in disrepair, but it's security systems remain surprisingly intact."
+	description = "A  Nanotrasen processing facility, assaulted by a pirate raid that has killed most of the staff. The offices however, remain unbreached for now."
 	suffix = "lavaland_surface_wrecked_factory.dmm"
