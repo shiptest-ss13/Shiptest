@@ -61,6 +61,10 @@
 /obj/structure/janitorialcart,
 /turf/open/floor/plasteel/sepia,
 /area/space)
+"az" = (
+/obj/machinery/vending/snack/random,
+/turf/open/floor/wood/walnut,
+/area/space)
 "aB" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
@@ -435,6 +439,12 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"ct" = (
+/obj/structure/chair/sofa/purple/right{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "cu" = (
 /obj/structure/urinal{
 	pixel_y = 28
@@ -1575,6 +1585,11 @@
 	},
 /turf/open/space/basic,
 /area/space)
+"jT" = (
+/obj/item/bedsheet/syndie,
+/obj/structure/bed,
+/turf/open/floor/wood/walnut,
+/area/space)
 "jW" = (
 /obj/machinery/computer/crew/syndie{
 	dir = 4
@@ -1752,6 +1767,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"lK" = (
+/obj/structure/railing,
+/obj/structure/chair/sofa/purple/left{
+	dir = 1
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "lN" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
@@ -2688,6 +2710,10 @@
 "tg" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/open/floor/plasteel/dark,
+/area/space)
+"th" = (
+/obj/structure/table/greyscale,
+/turf/open/floor/wood/walnut,
 /area/space)
 "tn" = (
 /obj/machinery/atmospherics/components/unary/tank/toxins{
@@ -3944,6 +3970,10 @@
 /obj/structure/chair/sofa/brown/directional/north,
 /turf/open/floor/carpet/red,
 /area/ship/crew/canteen)
+"Ei" = (
+/obj/structure/closet,
+/turf/open/floor/wood/walnut,
+/area/space)
 "Eo" = (
 /obj/structure/closet/crate/bin{
 	pixel_y = 4
@@ -3960,6 +3990,12 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
+/area/space)
+"EE" = (
+/obj/structure/chair/sofa/purple{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
 /area/space)
 "EJ" = (
 /obj/machinery/power/shuttle/engine/fueled/plasma{
@@ -4205,6 +4241,11 @@
 	},
 /turf/open/floor/carpet/red,
 /area/ship/bridge)
+"FZ" = (
+/obj/structure/bed,
+/obj/item/bedsheet/syndie,
+/turf/open/floor/wood/walnut,
+/area/space)
 "Ga" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -4737,6 +4778,13 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/engineering)
+"Kw" = (
+/obj/structure/railing,
+/obj/structure/chair/sofa/purple/corner{
+	dir = 8
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "Kx" = (
 /obj/effect/turf_decal/trimline/opaque/purple/filled/line{
 	dir = 10
@@ -5490,6 +5538,10 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"PE" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood/walnut,
+/area/space)
 "PL" = (
 /turf/open/floor/plasteel/stairs{
 	dir = 1;
@@ -5586,6 +5638,10 @@
 /obj/effect/turf_decal/trimline/opaque/black/line,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"Qi" = (
+/obj/machinery/vending/cola/random,
+/turf/open/floor/wood/walnut,
+/area/space)
 "Qj" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -6295,6 +6351,13 @@
 /obj/effect/turf_decal/trimline/opaque/black/line,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/central)
+"VG" = (
+/obj/structure/railing,
+/obj/structure/chair/sofa/purple{
+	dir = 1
+	},
+/turf/open/floor/wood/walnut,
+/area/space)
 "VL" = (
 /obj/machinery/cryopod,
 /turf/open/floor/pod/dark,
@@ -22871,10 +22934,10 @@ DN
 DN
 Sl
 Sl
-kx
-kx
-kx
-kx
+FZ
+iw
+Sl
+Ei
 Sl
 Sl
 JQ
@@ -23025,12 +23088,12 @@ DN
 DN
 DN
 Sl
+jT
 kx
+FZ
+Sl
 kx
-kx
-kx
-kx
-kx
+Ei
 Sl
 Sl
 JQ
@@ -23180,13 +23243,13 @@ Sl
 hi
 Sl
 Sl
+iw
 kx
 kx
 kx
 kx
 kx
-kx
-kx
+Ei
 Sl
 JQ
 JQ
@@ -23335,13 +23398,13 @@ gw
 gw
 Eu
 Sl
+jT
 kx
 kx
+Sl
 kx
 kx
-kx
-kx
-kx
+Ei
 Sl
 JQ
 JQ
@@ -23490,13 +23553,13 @@ gw
 gw
 Eu
 Sl
+Sl
 kx
+Sl
+Sl
+Sl
 kx
-kx
-kx
-kx
-kx
-kx
+Sl
 Sl
 JQ
 JQ
@@ -23802,11 +23865,11 @@ Eu
 Sl
 kx
 kx
+iw
+lK
+Qi
 kx
-kx
-kx
-kx
-kx
+pA
 Sl
 JQ
 JQ
@@ -23957,11 +24020,11 @@ Eu
 CY
 kx
 kx
+iw
+VG
+az
 kx
-kx
-kx
-kx
-kx
+Eo
 Sl
 JQ
 JQ
@@ -24111,12 +24174,12 @@ gw
 Eu
 Sl
 kx
+ct
+EE
+Kw
+PE
 kx
-kx
-kx
-kx
-kx
-kx
+th
 Sl
 JQ
 JQ
