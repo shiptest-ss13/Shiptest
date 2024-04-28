@@ -89,10 +89,8 @@
 	dir = 4;
 	color = "#808080"
 	},
-/obj/structure/closet/wall/red{
-	dir = 8;
+/obj/structure/closet/wall/red/directional/east{
 	name = "armory locker";
-	pixel_x = 28;
 	req_one_access_txt = "1"
 	},
 /obj/item/storage/box/slugshot,
@@ -1151,18 +1149,13 @@
 "sw" = (
 /obj/effect/turf_decal/siding/wood/end,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/wall{
-	dir = 8;
-	icon_door = "grey_wall";
-	pixel_x = 28
+/obj/structure/closet/wall/directional/east{
+	icon_door = "grey_wall"
 	},
 /obj/item/flashlight/lantern{
 	pixel_x = 8
 	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
+/obj/item/radio/old{
 	pixel_x = -5;
 	pixel_y = -2
 	},
@@ -1474,10 +1467,7 @@
 "wx" = (
 /obj/structure/catwalk/over,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/machinery/atmospherics/pipe/simple/orange/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -2015,10 +2005,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/closet/emcloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/emcloset/wall/directional/west,
 /obj/item/skub{
 	pixel_x = -5;
 	pixel_y = 6
@@ -2124,10 +2111,8 @@
 	dir = 8;
 	color = "#808080"
 	},
-/obj/structure/closet/wall/red{
-	dir = 4;
+/obj/structure/closet/wall/red/directional/west{
 	name = "armory locker";
-	pixel_x = -28;
 	req_one_access_txt = "1"
 	},
 /obj/item/storage/belt/military,
@@ -2428,10 +2413,7 @@
 /area/overmap_encounter/planetoid/beachplanet/explored)
 "KC" = (
 /obj/structure/catwalk/over,
-/obj/structure/closet/firecloset/wall{
-	dir = 4;
-	pixel_x = -28
-	},
+/obj/structure/closet/firecloset/wall/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -2769,7 +2751,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib2-old"
 	},
-/obj/structure/chair/comfy/black{
+/obj/structure/chair/comfy/grey/directional/south{
 	desc = "It looks incredibly comfy, and expensive. Theres a little note on the side, explaining how its made of %100 real cow skin.";
 	name = "Cowskin chair"
 	},
@@ -2844,10 +2826,8 @@
 	dir = 4;
 	color = "#A47449"
 	},
-/obj/structure/closet/wall{
-	name = "uniform closet";
-	dir = 4;
-	pixel_x = -28
+/obj/structure/closet/wall/directional/west{
+	name = "uniform closet"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -2950,10 +2930,7 @@
 /turf/open/floor/plasteel/tech/grid,
 /area/ruin/beach/starwalker)
 "SS" = (
-/obj/structure/closet/emcloset/wall{
-	dir = 8;
-	pixel_x = 32
-	},
+/obj/structure/closet/emcloset/wall/directional/east,
 /obj/item/stack/sticky_tape,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod,
@@ -3103,7 +3080,7 @@
 /obj/structure/cable/blue{
 	icon_state = "2-8"
 	},
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = -7
 	},
 /turf/open/floor/plating{
@@ -3363,10 +3340,8 @@
 	dir = 6;
 	color = "#808080"
 	},
-/obj/structure/closet/wall/red{
-	dir = 8;
+/obj/structure/closet/wall/red/directional/east{
 	name = "armory locker";
-	pixel_x = 28;
 	req_one_access_txt = "1"
 	},
 /obj/structure/railing,

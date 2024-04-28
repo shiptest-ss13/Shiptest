@@ -4,7 +4,7 @@ GLOBAL_LIST(gang_tags)
 	name = "rune"
 	desc = "Graffiti. Damn kids."
 	icon = 'icons/effects/crayondecal.dmi'
-	icon_state = "rune1"
+	icon_state = "firedanger"
 	gender = NEUTER
 	plane = GAME_PLANE //makes the graffiti visible over a wall.
 	mergeable_decal = FALSE
@@ -37,6 +37,7 @@ GLOBAL_LIST(gang_tags)
 	name = "Leet Like Jeff K gang tag"
 	desc = "Looks like someone's claimed this area for Leet Like Jeff K."
 	icon = 'icons/obj/gang/tags.dmi'
+	icon_state = "B_tag"
 	layer = BELOW_MOB_LAYER
 	var/datum/team/gang/my_gang
 

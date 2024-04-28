@@ -65,7 +65,7 @@
 
 
 /obj/item/dualsaber/update_icon_state()
-	icon_state = wielded ? "dualsaber[saber_color][wielded]" : "dualsaber0"
+	icon_state = wielded ? "dualsaber[saber_color]" : "dualsaber"
 	return ..()
 
 /obj/item/dualsaber/Initialize()

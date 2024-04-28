@@ -38,6 +38,8 @@
 
 /obj/item/ammo_box/Initialize()
 	. = ..()
+	if(!base_icon_state)
+		base_icon_state = icon_state
 	if (!bullet_cost)
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]
@@ -150,9 +152,9 @@
 	var/shells_left = LAZYLEN(stored_ammo)
 	switch(multiple_sprites)
 		if(AMMO_BOX_PER_BULLET)
-			icon_state = "[initial(icon_state)]-[shells_left]"
+			icon_state = "[base_icon_state]-[shells_left]"
 		if(AMMO_BOX_FULL_EMPTY)
-			icon_state = "[initial(icon_state)]-[shells_left ? "[max_ammo]" : "0"]"
+			icon_state = "[base_icon_state]-[shells_left ? "1" : "0"]"
 	return ..()
 
 /// Updates the amount of material in this ammo box according to how many bullets are left in it.

@@ -618,7 +618,6 @@
 "cY" = (
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
 	},
@@ -632,6 +631,10 @@
 	pixel_x = -23;
 	id = "kiloengine"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/ship_gravity,
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
 "cZ" = (
@@ -650,10 +653,9 @@
 /turf/open/floor/carpet,
 /area/ship/crew)
 "da" = (
-/obj/structure/chair/comfy/brown{
+/obj/structure/chair/comfy/orange/directional/north{
 	buildstackamount = 0;
-	color = "#c45c57";
-	dir = 1
+	color = "#c45c57"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/status_display{
@@ -1225,7 +1227,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/sofa/right,
+/obj/structure/chair/sofa/brown/right/directional/south,
 /turf/open/floor/wood{
 	icon_state = "wood-broken3"
 	},
@@ -1434,9 +1436,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 2
 	},
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+/obj/structure/chair/sofa/brown/left/directional/west,
 /turf/open/floor/wood{
 	icon_state = "wood-broken6"
 	},
@@ -1608,7 +1608,7 @@
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/structure/chair/sofa/corner,
+/obj/structure/chair/sofa/brown/corner/directional/south,
 /obj/machinery/firealarm/directional/north,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/wood{
@@ -1840,6 +1840,9 @@
 /obj/effect/turf_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/ship/engineering/engine)
@@ -2267,11 +2270,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
 /obj/item/storage/belt/utility,
-/obj/item/radio/off{
+/obj/item/radio{
 	pixel_x = -3;
 	pixel_y = 3
 	},
-/obj/item/radio/off,
+/obj/item/radio,
 /obj/effect/turf_decal/industrial/hatch/yellow,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/cargo)

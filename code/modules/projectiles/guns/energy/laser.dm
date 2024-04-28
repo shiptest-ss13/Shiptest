@@ -18,7 +18,6 @@
 	name = "practice laser gun"
 	desc = "A modified version of the L-204 laser gun, this one fires less concentrated energy bolts designed for target practice."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice)
-	clumsy_check = TRUE
 	item_flags = NONE
 
 /obj/item/gun/energy/laser/retro
@@ -75,7 +74,6 @@
 	item_state = "shotgun"
 	desc = "A combat shotgun gutted and refitted with an internal laser system. Can switch between taser and scattered disabler shots."
 	shaded_charge = 0
-	pin = /obj/item/firing_pin/implant/mindshield
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/scatter, /obj/item/ammo_casing/energy/electrode)
 	manufacturer = MANUFACTURER_NONE
 
@@ -93,12 +91,8 @@
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/accelerator)
-	pin = null
 	ammo_x_offset = 3
 	manufacturer = MANUFACTURER_SHARPLITE
-
-/obj/item/gun/energy/lasercannon/unrestricted
-	pin = /obj/item/firing_pin
 
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/projectile/beam/laser/accelerator
@@ -123,7 +117,6 @@
 	icon_state = "xray"
 	item_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
-	pin = null
 	ammo_x_offset = 3
 
 ////////Laser Tag////////////////////
@@ -134,8 +127,6 @@
 	desc = "A retro laser gun modified to fire harmless blue beams of light. Sound effects included!"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag)
 	item_flags = NONE
-	clumsy_check = FALSE
-	pin = /obj/item/firing_pin/tag/blue
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
@@ -149,8 +140,6 @@
 	desc = "A retro laser gun modified to fire harmless beams red of light. Sound effects included!"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag)
 	item_flags = NONE
-	clumsy_check = FALSE
-	pin = /obj/item/firing_pin/tag/red
 	ammo_x_offset = 2
 	selfcharge = TRUE
 	manufacturer = MANUFACTURER_NONE
@@ -187,7 +176,6 @@
 
 /obj/item/gun/energy/laser/iot/lethal
 	desc = "An energy shotgun with an integrated computer system for surveillance and statistics tracking. This one appears to be modified to fire lethal beams."
-	icon_state = "iotshotgun_lethal"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultima)
 
 /obj/item/gun/energy/laser/hitscanpistol

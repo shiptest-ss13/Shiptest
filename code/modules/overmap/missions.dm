@@ -63,7 +63,7 @@
 	return ..()
 
 /datum/mission/proc/turn_in()
-	servant.ship_account.adjust_money(value)
+	servant.ship_account.adjust_money(value, "mission")
 	qdel(src)
 
 /datum/mission/proc/give_up()

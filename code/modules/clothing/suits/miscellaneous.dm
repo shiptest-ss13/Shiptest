@@ -65,6 +65,7 @@
 	desc = "Suit for a cyborg costume."
 	icon_state = "death"
 	item_state = "death"
+	mob_overlay_state = "cardborg"
 	flags_1 = CONDUCT_1
 	fire_resist = T0C+5200
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
@@ -511,8 +512,9 @@
 
 /obj/item/clothing/suit/caution
 	name = "wet floor sign"
-	desc = "Caution! Wet Floor!"
+	desc = "No running."
 	icon_state = "caution"
+	icon = 'icons/obj/janitor.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	force = 1
@@ -657,13 +659,6 @@
 	item_state = "mystichood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK
-
-/obj/item/clothing/suit/coordinator
-	name = "coordinator jacket"
-	desc = "A jacket for a party ooordinator, stylish!."
-	icon_state = "capformal"
-	item_state = "capspacesuit"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 25, "energy" = 35, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/suit/hawaiian
 	name = "hawaiian overshirt"

@@ -84,7 +84,7 @@
 
 /datum/biome/lavaland
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1
+		/turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit = 1,
 	)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(
@@ -93,17 +93,22 @@
 		/obj/structure/flora/ash/fern = 5,
 		/obj/structure/flora/ash/fireblossom = 1,
 		/obj/structure/flora/ash/puce = 5,
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
+		/obj/structure/flora/rock/hell = 20,
+		/obj/structure/elite_tumor = 4,
+		/obj/structure/geyser/random = 4,
+		/obj/effect/spawner/lootdrop/anomaly/lava = 2,
 		/obj/structure/flora/rock/hell = 14,
 		/obj/structure/vein = 5,
 		/obj/structure/vein/classtwo = 2,
 		/obj/structure/elite_tumor = 2,
 		/obj/structure/geyser/random = 2,
 		/obj/structure/vein/classthree = 1,
+		/obj/effect/spawner/minefield = 1,
 		/obj/effect/spawner/lootdrop/anomaly/lava = 1,
-
 	)
 	mob_spawn_chance = 4
 	mob_spawn_list = list(
@@ -250,14 +255,17 @@
 		/obj/structure/flora/ash/cacti = 1,
 		/obj/structure/flora/ash/tall_shroom = 2,
 		/obj/structure/flora/ash/fern = 2,
-		/obj/structure/flora/ash/puce = 2
+		/obj/structure/flora/ash/puce = 2,
+		/obj/item/mine/proximity/explosive/live = 1,
+		/obj/item/mine/pressure/explosive/rusty/live = 1
 	)
 
 /datum/biome/cave/lavaland/rocky
 	open_turf_types = list(/turf/open/floor/plating/asteroid/purple = 1)
 	flora_spawn_list = list(
-		/obj/structure/flora/rock/pile/lava = 1,
-		/obj/structure/flora/rock/lava = 1
+		/obj/structure/flora/rock/pile/lava = 3,
+		/obj/structure/flora/rock/lava = 3,
+		/obj/item/mine/pressure/explosive/rusty/live = 1
 	)
 	flora_spawn_chance = 5
 
@@ -271,6 +279,7 @@
 		/obj/structure/flora/ash/cap_shroom = 2,
 		/obj/structure/flora/ash/stem_shroom = 2,
 		/obj/structure/flora/ash/cacti = 1,
+		/obj/item/mine/pressure/explosive/rusty/live = 1,
 		/obj/structure/flora/ash/tall_shroom = 2
 	)
 
