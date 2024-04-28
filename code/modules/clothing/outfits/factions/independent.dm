@@ -642,7 +642,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	accessory = /obj/item/clothing/accessory/waistcoat
 
-/datum/outfit/job/independent/bartender/disarmed
+/datum/outfit/job/independent/bartender/disarmed //No armor, no shotgun ammo.
 	name = "Independent - Bartender (Disarmed)"
 
 	suit = null
