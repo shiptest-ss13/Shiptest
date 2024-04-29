@@ -7,32 +7,10 @@
 #define COMSIG_ATTACHMENT_UPDATE_OVERLAY "attach-overlay"
 
 #define COMSIG_ATTACHMENT_GET_SLOT "attach-slot-who"
-	#define ATTACHMENT_SLOT_MUZZLE "attach-slot-muzzle"
-	#define ATTACHMENT_SLOT_SCOPE "attach-slot-scope"
-	#define ATTACHMENT_SLOT_GRIP "attach-slot-grip"
-	#define ATTACHMENT_SLOT_RAIL "attach-slot-rail"
-
-/proc/attachment_slot_to_bflag(slot)
-	switch(slot)
-		if(ATTACHMENT_SLOT_MUZZLE)
-			return (1<<0)
-		if(ATTACHMENT_SLOT_SCOPE)
-			return (1<<1)
-		if(ATTACHMENT_SLOT_GRIP)
-			return (1<<2)
-		if(ATTACHMENT_SLOT_RAIL)
-			return (1<<3)
-
-/proc/attachment_slot_from_bflag(slot)
-	switch(slot)
-		if(1<<0)
-			return ATTACHMENT_SLOT_MUZZLE
-		if(1<<1)
-			return ATTACHMENT_SLOT_SCOPE
-		if(1<<2)
-			return ATTACHMENT_SLOT_GRIP
-		if(1<<3)
-			return ATTACHMENT_SLOT_RAIL
+#define ATTACHMENT_SLOT_MUZZLE "attach-slot-muzzle"
+#define ATTACHMENT_SLOT_SCOPE "attach-slot-scope"
+#define ATTACHMENT_SLOT_GRIP "attach-slot-grip"
+#define ATTACHMENT_SLOT_RAIL "attach-slot-rail"
 
 #define COMSIG_ATTACHMENT_TOGGLE "attach-toggle"
 
@@ -150,4 +128,4 @@
 
 /datum/component/attachment/proc/send_slot(obj/item/parent)
 	SIGNAL_HANDLER
-	return attachment_slot_to_bflag(slot)
+	return slot
