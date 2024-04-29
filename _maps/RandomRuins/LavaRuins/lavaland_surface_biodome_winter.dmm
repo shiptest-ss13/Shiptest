@@ -41,6 +41,7 @@
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/winter_biodome)
 "ai" = (
@@ -66,12 +67,11 @@
 "am" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold/half,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "an" = (
-/obj/structure/chair/comfy/brown{
-	dir = 4
-	},
+/obj/structure/chair/comfy/orange/directional/east,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/cabin)
 "ao" = (
@@ -96,13 +96,8 @@
 /area/ruin/unpowered/winter_biodome/cabin)
 "aq" = (
 /obj/structure/railing/corner/wood,
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	name = "bridge"
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 4
 	},
 /area/ruin/unpowered/winter_biodome)
 "ar" = (
@@ -115,13 +110,8 @@
 /area/ruin/unpowered/winter_biodome/entrance)
 "as" = (
 /obj/structure/railing/wood,
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	name = "bridge"
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 8
 	},
 /area/ruin/unpowered/winter_biodome)
 "at" = (
@@ -131,6 +121,9 @@
 "au" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "av" = (
@@ -299,6 +292,9 @@
 "aP" = (
 /obj/structure/flora/grass/green,
 /obj/machinery/light/directional/east,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/winter_biodome)
 "aQ" = (
@@ -313,9 +309,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface/lit,
 /area/overmap_encounter/planetoid/lava/explored)
 "bb" = (
-/obj/structure/chair/sofa{
-	dir = 8
-	},
+/obj/structure/chair/sofa/blue/directional/west,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "bl" = (
@@ -336,6 +330,7 @@
 /obj/effect/turf_decal/corner/opaque/solgovblue/three_quarters{
 	dir = 4
 	},
+/obj/structure/filingcabinet/double,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "bv" = (
@@ -397,6 +392,9 @@
 /area/ruin/unpowered/winter_biodome/engineering)
 "bM" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/winter_biodome/entrance)
 "bN" = (
@@ -428,6 +426,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/airalarm/directional/west,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "cj" = (
@@ -454,6 +453,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/fluff/paper/stack{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "cT" = (
@@ -556,16 +558,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
 /obj/effect/decal/cleanable/blood,
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/wood{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	name = "bridge"
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 4
 	},
 /area/ruin/unpowered/winter_biodome)
 "eb" = (
@@ -595,6 +593,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/sauna)
+"eX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "ff" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
@@ -634,6 +638,12 @@
 /obj/structure/fluff/hedge/opaque,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/living_quarters)
+"gx" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "gz" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/half{
 	dir = 8
@@ -641,6 +651,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
 	},
+/obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "gE" = (
@@ -843,6 +854,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer4{
 	dir = 4
 	},
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "kB" = (
@@ -868,9 +882,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/engineering)
 "kT" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/directional/west,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/cabin)
 "kX" = (
@@ -970,6 +982,12 @@
 /obj/effect/turf_decal/solgov/wood/bottom_center,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/living_quarters)
+"nZ" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "on" = (
 /obj/structure/flora/tree/dead_pine,
 /turf/open/floor/plating/grass/lava/orange,
@@ -1024,9 +1042,7 @@
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/winter_biodome)
 "pM" = (
-/obj/structure/chair/comfy/brown{
-	dir = 8
-	},
+/obj/structure/chair/comfy/orange/old/alt/directional/north,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "pQ" = (
@@ -1108,9 +1124,8 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/firecloset/wall{
-	pixel_y = 32
-	},
+/obj/structure/closet/firecloset/wall/directional/north,
+/obj/structure/fluff/paper/stack,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "rt" = (
@@ -1144,17 +1159,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 9
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/wood{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	name = "bridge"
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 8
 	},
 /area/ruin/unpowered/winter_biodome)
 "rY" = (
@@ -1205,6 +1215,12 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/sauna)
+"tC" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "tO" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -1334,6 +1350,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/drip,
+/obj/structure/fluff/paper/stack{
+	dir = 5
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "xv" = (
@@ -1526,13 +1545,9 @@
 /obj/structure/railing/corner/wood{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 6
-	},
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/wood{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	name = "bridge"
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 8
 	},
 /area/ruin/unpowered/winter_biodome)
 "BV" = (
@@ -1554,6 +1569,30 @@
 /obj/structure/flora/ash/fern,
 /turf/open/floor/plating/grass/lava/purple,
 /area/overmap_encounter/planetoid/lava/explored)
+"CF" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"CI" = (
+/obj/structure/railing/corner/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "CJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1572,6 +1611,13 @@
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/ruin/unpowered/winter_biodome/engineering)
+"De" = (
+/obj/structure/flora/bush,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "Dt" = (
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered/winter_biodome/entrance)
@@ -1674,6 +1720,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/winter_biodome)
 "Gf" = (
@@ -1697,6 +1744,11 @@
 	pixel_x = 11;
 	pixel_y = 10
 	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
+"Go" = (
+/obj/structure/flora/tree/pine,
+/obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/winter_biodome)
 "Gq" = (
@@ -1728,6 +1780,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/winter_biodome/engineering)
+"Hd" = (
+/obj/effect/turf_decal/corner/opaque/solgovgold/three_quarters,
+/obj/structure/fluff/paper/stack{
+	dir = 8
+	},
+/turf/open/floor/plasteel/white,
+/area/ruin/unpowered/winter_biodome/living_quarters)
 "Hh" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -1856,6 +1915,12 @@
 /obj/item/coin/gold,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/sauna)
+"KI" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "KS" = (
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/sauna)
@@ -1892,6 +1957,7 @@
 /area/ruin/unpowered/winter_biodome/engineering)
 "Mf" = (
 /obj/structure/railing/corner/wood,
+/obj/effect/turf_decal/siding/wood,
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/winter_biodome)
 "Ml" = (
@@ -1924,10 +1990,7 @@
 /area/ruin/unpowered/winter_biodome/engineering)
 "MB" = (
 /obj/effect/turf_decal/corner/opaque/solgovgold/diagonal,
-/obj/structure/closet/emcloset/wall{
-	dir = 1;
-	pixel_y = -32
-	},
+/obj/structure/closet/emcloset/wall/directional/south,
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/entrance)
 "MJ" = (
@@ -1971,9 +2034,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/structure/chair/sofa/right{
-	dir = 8
-	},
+/obj/structure/chair/sofa/blue/right/directional/west,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "Np" = (
@@ -2001,6 +2062,10 @@
 /obj/structure/flora/ash/cap_shroom,
 /turf/open/floor/plating/moss,
 /area/overmap_encounter/planetoid/lava/explored)
+"Op" = (
+/obj/structure/chair/comfy/orange/old/alt/directional/south,
+/turf/open/floor/wood,
+/area/ruin/unpowered/winter_biodome/living_quarters)
 "Os" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
 /obj/machinery/airalarm/directional/north,
@@ -2013,6 +2078,7 @@
 /obj/structure/sign/solgov_flag{
 	pixel_y = 29
 	},
+/obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/pod/dark,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "OB" = (
@@ -2051,9 +2117,7 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/entrance)
 "OU" = (
-/obj/structure/chair/sofa/left{
-	dir = 8
-	},
+/obj/structure/chair/sofa/blue/left/directional/west,
 /turf/open/floor/wood,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "Pa" = (
@@ -2148,6 +2212,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/broken/directional/north,
+/obj/structure/fluff/paper/stack{
+	dir = 6
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "QK" = (
@@ -2310,6 +2377,12 @@
 "Ub" = (
 /turf/open/floor/plating/asteroid/basalt/lava,
 /area/overmap_encounter/planetoid/lava/explored)
+"Uo" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/winter_biodome)
 "Up" = (
 /obj/machinery/airalarm/directional/east,
 /obj/structure/closet/firecloset,
@@ -2398,18 +2471,17 @@
 /area/ruin/unpowered/winter_biodome)
 "VK" = (
 /obj/structure/railing/corner/wood,
-/obj/effect/turf_decal/siding/wood{
-	dir = 10
-	},
 /obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/wood{
-	initial_gas_mix = "o2=22;n2=82;TEMP=180";
-	name = "bridge"
+/turf/open/floor/plasteel/stairs/wood{
+	dir = 4
 	},
 /area/ruin/unpowered/winter_biodome)
 "VP" = (
 /obj/effect/turf_decal/corner/opaque/solgovblue/diagonal,
 /obj/machinery/light/directional/west,
+/obj/item/ammo_box/magazine/pistol556mm{
+	pixel_x = 7
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "VY" = (
@@ -2497,6 +2569,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/blood/drip,
+/obj/structure/fluff/paper/stack{
+	dir = 10
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
 "Yv" = (
@@ -2529,6 +2604,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
+	},
+/obj/structure/fluff/paper/stack{
+	dir = 1
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/unpowered/winter_biodome/living_quarters)
@@ -3079,8 +3157,8 @@ aw
 aw
 ax
 Ar
-ax
-ax
+nZ
+Uo
 eg
 af
 ax
@@ -3124,7 +3202,7 @@ aw
 aw
 al
 aq
-bw
+De
 af
 ax
 ax
@@ -3299,7 +3377,7 @@ ax
 ax
 ax
 aP
-ah
+CI
 ax
 ax
 aw
@@ -3308,10 +3386,10 @@ aw
 aw
 ax
 bw
-HP
-aO
-ax
-ax
+Go
+CF
+nZ
+Uo
 PH
 ax
 aO
@@ -3355,7 +3433,7 @@ ax
 Mf
 dU
 VK
-ax
+eX
 ax
 ax
 aO
@@ -3575,7 +3653,7 @@ bn
 FY
 rJ
 BU
-ax
+eX
 aw
 aw
 Ss
@@ -3616,10 +3694,10 @@ ax
 tO
 Wg
 bx
-ax
-ax
-ax
-ax
+tC
+gx
+gx
+KI
 aw
 aw
 aw
@@ -4096,7 +4174,7 @@ ax
 zf
 gt
 gt
-pM
+Op
 pu
 pM
 gt
@@ -4280,7 +4358,7 @@ Bw
 mb
 QI
 lq
-SY
+Hd
 lF
 lF
 lF
