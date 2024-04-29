@@ -177,7 +177,7 @@
 
 /obj/item/clothing/glasses/hud/security/sunglasses/ngr
 	name = "NGR modified mesons"
-	desc = "A modified version of widely-used optical meson scanners with a flash-proof tint and integrated security HUD. Unfortunately the opaque visor disables the meson functionality."
+	desc = "A modified version of widely-used optical meson scanners, with a flash-proof tint and integrated security HUD. Unfortunately, the opaque visor disables the meson functionality."
 	icon_state = "ngr_goggles"
 	item_state = "ngr_goggles"
 	icon = 'icons/obj/clothing/faction/ngr/eyes.dmi'
