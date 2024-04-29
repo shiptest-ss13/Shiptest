@@ -1,5 +1,5 @@
 /datum/species/moth
-	name = "\improper Mothman"
+	name = "\improper Mothperson"
 	id = SPECIES_MOTH
 	default_color = "00FF00"
 	species_traits = list(LIPS, NOEYESPRITES, TRAIT_ANTENNAE, HAIR, EMOTE_OVERLAY)
@@ -35,17 +35,6 @@
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		handle_mutant_bodyparts(H)
-
-/datum/species/moth/random_name(gender,unique,lastname)
-	if(unique)
-		return random_unique_moth_name()
-
-	var/randname = moth_name()
-
-	if(lastname)
-		randname += " [lastname]"
-
-	return randname
 
 /datum/species/handle_fire(mob/living/carbon/human/H, no_protection = FALSE)
 	. = ..()
