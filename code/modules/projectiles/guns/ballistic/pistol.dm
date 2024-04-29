@@ -33,27 +33,36 @@
 
 	muzzleflash_iconstate = "muzzle_flash_light"
 
-/obj/item/gun/ballistic/automatic/pistol/no_mag
-	spawnwithmagazine = FALSE
-
-/obj/item/gun/ballistic/automatic/pistol/suppressed
-	default_attachments= list(/obj/item/attachment/silencer)
-
-/obj/item/gun/ballistic/automatic/pistol/suns
-	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
-	icon_state = "pistol_suns"
 	valid_attachments = list(
-		/obj/item/attachment/silencer
+		/obj/item/attachment/silencer,
+		/obj/item/attachment/laser_sight,
+		/obj/item/attachment/rail_light,
+		/obj/item/attachment/bayonet
 	)
 	slot_available = list(
-		ATTACHMENT_SLOT_MUZZLE = 1
+		ATTACHMENT_SLOT_MUZZLE = 1,
+		ATTACHMENT_SLOT_RAIL = 1
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
 			"x" = 26,
 			"y" = 20,
+		),
+		ATTACHMENT_SLOT_RAIL = list(
+			"x" = 19,
+			"y" = 18,
 		)
 	)
+
+/obj/item/gun/ballistic/automatic/pistol/no_mag
+	spawnwithmagazine = FALSE
+
+/obj/item/gun/ballistic/automatic/pistol/suppressed
+	default_attachments = list(/obj/item/attachment/silencer)
+
+/obj/item/gun/ballistic/automatic/pistol/suns
+	desc = "A small, easily concealable 10mm handgun that bears Scarborough Arms stamps. It is painted in the colors of SUNS."
+	icon_state = "pistol_suns"
 
 /obj/item/gun/ballistic/automatic/pistol/candor
 	name = "\improper Candor"

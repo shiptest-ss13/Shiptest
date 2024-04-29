@@ -62,7 +62,7 @@
 		if(attach.name in .)
 			stack_trace("two attachments with same name; this shouldn't happen and will cause failures")
 			continue
-		if(only_toggles && attach.has_toggle)
+		if(only_toggles && !attach.has_toggle)
 			continue
 		.[attach.name] = attach
 

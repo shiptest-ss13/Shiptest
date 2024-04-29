@@ -42,6 +42,8 @@
 	desc = "Stabby-Stabby"
 	icon_state = "bayonet"
 	var/extra_force = 10
+	pixel_shift_x = 1
+	pixel_shift_y = 4
 
 /obj/item/attachment/bayonet/Attach(obj/item/gun/gun, mob/user)
 	. = ..()

@@ -4,6 +4,7 @@
 	slot = ATTACHMENT_SLOT_SCOPE
 	var/zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	var/zoom_out_amt = 5
+	has_toggle = FALSE
 
 
 /obj/item/attachment/scope/Attach(obj/item/gun/gun, mob/user)
