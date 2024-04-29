@@ -275,7 +275,7 @@
 #undef DRILL_CANADIAN
 
 /obj/item/clothing/head/witchhunter
-	name = "witchhunter hat"
+	name = "flamebearer hat"
 	desc = "This hat saw much use back in the day."
 	icon_state = "witchhunterhat"
 	item_state = "witchhunterhat"

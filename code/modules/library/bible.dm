@@ -39,8 +39,7 @@
 /obj/item/book/bible/srm
 	name = "Liber Incendium"
 	desc = "Otherwise known as the Book of Conflagration. The pages are blank. There must have been a misprint."
-	icon_state = "book6"
-	item_state = "book6"
+	icon_state = "bookfireball"
 
 /datum/outfit/job/roumain/flamebearer
 	name = "Saint-Roumain Militia - Flamebearer"
@@ -60,9 +59,8 @@
 
 /obj/item/book/bible/stars
 	name = "Hail to the stars"
-	desc = "The grand text of the Stjarn. Its the collective research, history, and practices of the group. The pages are blank. There must have been a misprint."
+	desc = "The grand text of the Stjarn. Its the collective research, history, and practices of the group. The Stjarn are well known for having some of the brighest minds. The pages are blank. There must have been a misprint."
 	icon_state = "book2"
-	item_state = "book2"
 
 // Stjärnforskare. Swedish for star scientist. On the nose
 /datum/outfit/job/chaplain/star
@@ -92,7 +90,6 @@
 	name = "History of the blueflame"
 	desc = "The text of the Astrometry Initiative. The pages are blank. There must have been a misprint."
 	icon_state = "book4"
-	item_state = "book4"
 
 /obj/item/clothing/accessory/blueflame
 	name = "Blueflame Pin"
