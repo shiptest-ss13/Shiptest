@@ -37,6 +37,7 @@
 
 	for(var/obj/item/attachment/attach as anything in attachments)
 		var/slot = SEND_SIGNAL(attach, COMSIG_ATTACHMENT_GET_SLOT)
+		slot = attachment_slot_from_bflag(slot)
 		var/list/attach_overlays = list()
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_UPDATE_OVERLAY, attach_overlays)
 		for(var/mutable_appearance/overlay as anything in attach_overlays)
@@ -89,9 +90,6 @@
 /datum/component/attachment_holder/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	if(!length(attachments))
 		return
-	for(slot_room)
-		if(slot_room[slot])
-			examine_list += "<span class='notice'>It has room for [slot_room[slot]] more attachments on this slot.</span>"
 	examine_list += "<span class='notice'>It has the following attachments:</span>"
 	for(var/obj/item/attach as anything in attachments)
 		examine_list += "<span class='notice'>\t- [attach.name]</span>"
@@ -101,6 +99,7 @@
 
 /datum/component/attachment_holder/proc/do_attach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
+	slot = attachment_slot_from_bflag(slot)
 	if(!(attachment.type in valid_types))
 		to_chat(user, "<span class='notice'>[attachment] is not a valid attachment for this [parent]!</span>")
 		return
@@ -116,6 +115,7 @@
 
 /datum/component/attachment_holder/proc/do_detach(obj/item/attachment, mob/user)
 	var/slot = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_GET_SLOT)
+	slot = attachment_slot_from_bflag(slot)
 	if(slot in slot_room)
 		slot_room[slot]++
 	. = SEND_SIGNAL(attachment, COMSIG_ATTACHMENT_DETACH, parent, user)
