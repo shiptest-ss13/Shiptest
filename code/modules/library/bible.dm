@@ -35,8 +35,8 @@
 	desc = "Completely ruined by age, nothing is understandable"
 
 /obj/item/book/bible/srm
-	name = "History of the srm"
-	desc = "The pages are blank. There must have been a misprint."
+	name = "Liber Incendium"
+	desc = "Otherwise known as the Book of Conflagration. The pages are blank. There must have been a misprint."
 	icon_state = "book6"
 	item_state = "book6"
 

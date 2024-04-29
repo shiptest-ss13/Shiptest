@@ -464,8 +464,6 @@
 	name = "detective's shoulder holster"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/holster/detective
 
-
-
 /obj/item/clothing/accessory/holster/detective/Initialize()
 	. = ..()
 	new /obj/item/gun/ballistic/revolver/detective(src)
