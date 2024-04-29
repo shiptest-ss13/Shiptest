@@ -80,15 +80,18 @@
 	parent.update_icon()
 
 /datum/component/attachment_holder/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
-	for(slot_room)
-		if(slot_room[slot])
-			examine_list += "<span class='notice'>It has room for [slot_room[slot]] more attachments on this slot</span>"
+	if(length(attachments))
+		examine_list += "<span class='notice'>It has [length(attachments)] attachments.</span>"
+
 	for(var/obj/item/attach as anything in attachments)
 		SEND_SIGNAL(attach, COMSIG_ATTACHMENT_EXAMINE, user, examine_list)
 
 /datum/component/attachment_holder/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
 	if(!length(attachments))
 		return
+	for(slot_room)
+		if(slot_room[slot])
+			examine_list += "<span class='notice'>It has room for [slot_room[slot]] more attachments on this slot.</span>"
 	examine_list += "<span class='notice'>It has the following attachments:</span>"
 	for(var/obj/item/attach as anything in attachments)
 		examine_list += "<span class='notice'>\t- [attach.name]</span>"
