@@ -93,3 +93,15 @@
 	display_name = "face with tears of joy mask"
 	path = /obj/item/clothing/mask/joy
 	slot = ITEM_SLOT_MASK
+
+/datum/gear/accessory/srm
+	display_name = "Religion - Ashen Pendant"
+	path = /obj/item/clothing/accessory/srm
+
+/datum/gear/accessory/cosmo
+	display_name = "Religion - Stjarn Patch"
+	path = /obj/item/clothing/accessory/cosmo
+
+/datum/gear/accessory/blueflame
+	display_name = "Religion - Blueflame Pin"
+	path = /obj/item/clothing/accessory/blueflame

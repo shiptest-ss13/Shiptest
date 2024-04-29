@@ -4,7 +4,7 @@
 	name = "Witchhunter Kit"
 
 /obj/item/storage/box/holy/PopulateContents()
-	new /obj/item/clothing/head/witchunter(src)
+	new /obj/item/clothing/head/witchhunter(src)
 	new /obj/item/clothing/suit/armor/witchhunter(src)
 
 

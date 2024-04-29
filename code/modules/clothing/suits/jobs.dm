@@ -285,7 +285,7 @@
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACE|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/armor/witchhunter
-	name = "witchunter garb"
+	name = "witchhunter garb"
 	desc = "This worn outfit saw much use back in the day."
 	icon_state = "chaplain_witchhunter"
 	item_state = "witchhunter"
