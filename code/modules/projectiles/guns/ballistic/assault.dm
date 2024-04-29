@@ -130,7 +130,6 @@
 		/obj/item/attachment/rail_light,
 		/obj/item/attachment/scope
 	)
-	attachment_max = 2
 	slot_available = list(
 		ATTACHMENT_SLOT_RAIL = 1,
 		ATTACHMENT_SLOT_SCOPE = 1

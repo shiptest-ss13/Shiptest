@@ -45,7 +45,6 @@
 	valid_attachments = list(
 		/obj/item/attachment/silencer
 	)
-	attachment_max = 1
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1
 	)

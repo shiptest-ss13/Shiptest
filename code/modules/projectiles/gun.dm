@@ -126,8 +126,6 @@
 	var/list/valid_attachments = list()
 	///Reference to our attachment holder to prevent subtypes having to call GetComponent
 	var/datum/component/attachment_holder/attachment_holder
-	///Maximum number of attachments allowed
-	var/attachment_max = 0
 	///Number of attachments that can fit on a given slot
 	var/list/slot_available = ATTACHMENT_DEFAULT_SLOT_AVAILABLE
 	///Offsets for the slots on this gun. should be indexed by SLOT and then by X/Y
@@ -290,7 +288,7 @@
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
-	attachment_holder = AddComponent(/datum/component/attachment_holder, attachment_max, slot_available, valid_attachments, slot_offsets, default_attachments)
+	attachment_holder = AddComponent(/datum/component/attachment_holder, slot_available, valid_attachments, slot_offsets, default_attachments)
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item

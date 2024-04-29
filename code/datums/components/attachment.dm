@@ -58,6 +58,8 @@
 	ADD_TRAIT(parent, TRAIT_ATTACHABLE, "attachable")
 	RegisterSignal(parent, COMSIG_ATTACHMENT_ATTACH, PROC_REF(try_attach))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_DETACH, PROC_REF(try_detach))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE, PROC_REF(handle_examine))
+	RegisterSignal(parent, COMSIG_ATTACHMENT_EXAMINE_MORE, PROC_REF(handle_examine_more))
 	if(has_toggle)
 		RegisterSignal(parent, COMSIG_ATTACHMENT_TOGGLE, PROC_REF(try_toggle))
 	RegisterSignal(parent, COMSIG_ATTACHMENT_PRE_ATTACK, PROC_REF(relay_pre_attack))
@@ -119,6 +121,14 @@
 
 	parent.forceMove(holder.drop_location())
 	return TRUE
+
+/datum/component/attachment/proc/handle_examine(obj/item/parent, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+
+/datum/component/attachment/proc/handle_examine_more(obj/item/parent, mob/user, list/examine_list)
+	SIGNAL_HANDLER
+
+	examine_list += parent.name
 
 /datum/component/attachment/proc/relay_pre_attack(obj/item/parent, obj/item/gun, atom/target_atom, mob/user, params)
 	SIGNAL_HANDLER_DOES_SLEEP
