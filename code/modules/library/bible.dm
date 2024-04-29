@@ -19,7 +19,7 @@
 
 /obj/item/storage/book/bible
 	name = "ancient text of worship"
-	desc = "Completely ruined by age, nothing is understandable"
+	desc = "Completely ruined by age, nothing is understandable. This one is hollowed out."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "bible"
 	item_state = "bible"
@@ -41,6 +41,11 @@
 	desc = "Otherwise known as the Book of Conflagration. The pages are blank. There must have been a misprint."
 	icon_state = "bookfireball"
 
+/obj/item/clothing/accessory/srm
+	name = "Ashen Sachet"
+	desc = "A small sachet filled with ashes. These are most commonly ancient-growth tree or a slain predetor the owner hunted themselves, each having a diffrent meaning to the "
+
+/*
 /datum/outfit/job/roumain/flamebearer
 	name = "Saint-Roumain Militia - Flamebearer"
 	id_assignment = "flamebearer"
@@ -50,11 +55,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	suit = /obj/item/clothing/suit/armor/witchhunter
 	head = /obj/item/clothing/head/witchhunter
-
-/obj/item/clothing/accessory/srm
-	name = "Ashen Sachet"
-	desc = "A small sachet filled with ashes. These are most commonly ancient-growth tree or a slain predetor the owner hunted themselves, each having a diffrent meaning to the "
-
+*/
 // STJARN COLLECTIVE
 
 /obj/item/book/bible/stars
@@ -62,19 +63,10 @@
 	desc = "The grand text of the Stjarn. Its the collective research, history, and practices of the group. The Stjarn are well known for having some of the brighest minds. The pages are blank. There must have been a misprint."
 	icon_state = "book2"
 
-// Stjärnforskare. Swedish for star scientist. On the nose
-/datum/outfit/job/chaplain/star
-	name = "Stjarn Seer"
-	neck = /obj/item/bedsheet/cosmos
-	backpack_contents = list(
-		/obj/item/starmap = 1,
-		/obj/item/binoculars/sextant = 1
-		)
-
 /obj/item/clothing/accessory/cosmo
 	name = "Stjarn Patch"
 	desc = "A delicate hand stiched patch of the star system the wearer was born from. Underneath the art is written: HAIL TO THE STARS."
-
+/*
 // karta. Swedish for map
 /obj/item/starmap
 	name = "sector star karta"
@@ -84,6 +76,15 @@
 	name = "engraved sextant"
 	desc = "Its engraved in star maps of the most populated sectors."
 
+// Stjärnforskare. Swedish for star scientist. On the nose
+/datum/outfit/job/chaplain/star
+	name = "Stjarn Seer"
+	neck = /obj/item/bedsheet/cosmos
+	backpack_contents = list(
+		/obj/item/starmap = 1,
+		/obj/item/binoculars/sextant = 1
+		)
+*/
 // BLUEFLAME
 
 /obj/item/book/bible/blueflame
@@ -95,6 +96,8 @@
 	name = "Blueflame Pin"
 	desc = "A steel pin that has been blued to mimic the color of the Blueflames worshiped star."
 
+/*
 /obj/item/clothing/neck/cloak/blueflame
 
 /datum/outfit/job/chaplain/blueflame
+*/
