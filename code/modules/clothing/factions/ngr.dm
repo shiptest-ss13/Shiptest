@@ -128,7 +128,8 @@
 	desc = "An envirohelmet designed for phorids of the New Gorlex Republic, with intimidating blood-red stripes."
 	icon_state = "ngr_envirohelm"
 	item_state = "ngr_envirohelm"
-
+	icon = 'icons/obj/clothing/faction/ngr/head.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/ngr/head.dmi'
 
 /////////
 //Hats//
